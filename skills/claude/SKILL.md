@@ -137,6 +137,15 @@ Load documents based on the task:
 3. **Load topic docs**: Based on code content (async, unsafe, CLI, etc.)
 4. **Report findings**: Use pattern IDs for clarity
 
+### For Static Website Generation
+
+When building static websites or blogs with Rust tooling, consult the
+[Cobalt Static Site Generation Guide](guides/16-cobalt-static-site-generation.md).
+Cobalt is a Rust-native static site generator using Liquid templates. The guide
+covers project setup, content authoring, Liquid templating, deployment, and
+extending Cobalt programmatically in Rust. Concept cards for Cobalt are available
+in `concept-cards/cobalt/` for deeper reference.
+
 ## Critical Rules (Always Apply)
 
 These rules should be followed in ALL Rust code without needing to load documents:
