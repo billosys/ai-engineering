@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["to_object"],"macro":["object"],"mod":["model","partials","reflection"],"struct":["Error","Object","Parser","ParserBuilder","Template"],"trait":["ObjectView","ValueView"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["cleanup_path","copy_file","find_project_file","read_file","write_document_file"],"struct":["Files","FilesBuilder","FilesIterator"]};

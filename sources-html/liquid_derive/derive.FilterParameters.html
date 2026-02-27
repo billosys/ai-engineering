@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Implements `FilterParameters`, as well as two of the traits it requires (`Display` and `FilterParametersReflection`) and its evaluated counterpart."><title>FilterParameters in liquid_derive - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../static.files/rustdoc-ca0dd0c4.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="liquid_derive" data-themes="" data-resource-suffix="" data-rustdoc-version="1.93.0 (254b59607 2026-01-19)" data-channel="1.93.0" data-search-js="search-9e2438ea.js" data-stringdex-js="stringdex-a3946164.js" data-settings-js="settings-c38705f0.js" ><script src="../static.files/storage-e2aeef58.js"></script><script defer src="sidebar-items.js"></script><script defer src="../static.files/main-a410ff4d.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-044be391.svg"></head><body class="rustdoc derive"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">FilterParameters</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../liquid_derive/index.html">liquid_<wbr>derive</a><span class="version">0.26.10</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Filter<wbr>Parameters</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#argument-type" title="Argument Type">Argument Type</a></li><li><a href="#examples" title="Examples">Examples</a></li></ul></section><div id="rustdoc-modnav"><h2 class="in-crate"><a href="index.html">In crate liquid_<wbr>derive</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="index.html">liquid_derive</a></div><h1>Derive Macro <span class="derive">Filter<wbr>Parameters</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../src/liquid_derive/lib.rs.html#134-137">Source</a> </span></div><pre class="rust item-decl"><code>#[derive(FilterParameters)]
+{
+    <span class="comment">// Attributes available to this derive:</span>
+    #[parameter]
+    #[evaluated]
+}
+</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Implements <code>FilterParameters</code>, as well as two of the traits it requires
+(<code>Display</code> and <code>FilterParametersReflection</code>) and its evaluated counterpart.</p>
+<p>Before declaring the struct, the <code>#[evaluated = "..."]</code> attribute may be
+used to rename the evaluated counterpart (defaults to this struct’s name
+prepended by “Evaluated”). This may be useful to avoid name collisions.</p>
+<p>Each parameter has the following structure:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[parameter(...)]
+</span>NAME: TYPE</code></pre></div>
+<p><code>NAME</code> will be the name of the parameter (although it may be renamed
+if it collides with a rust keyword, see below for more information).</p>
+<p><code>TYPE</code> will be either <code>Expression</code> or <code>Option&lt;Expression&gt;</code>, marking the
+parameter, respectively, as either required or optional. Note <code>Expression</code>
+here is the type <code>::liquid_core::runtime::Expression</code>.</p>
+<p>Inside the <code>#[parameter(...)]</code> attribute there may be some information
+about the parameter, such as:
+- <code>description</code> -&gt; (REQUIRED) the description of this parameter for
+<code>FilterReflection</code>
+- <code>rename</code> -&gt; overrides <code>NAME</code> as the liquid name of the parameter
+(to avoid collisions with rust keywords)
+- <code>mode</code> -&gt; either “keyword” or “positional” (defaults to “positional”)
+- <code>arg_type</code> -&gt; a shortcut to unwrap the content of a value while evaluating
+the argument (defaults to “any”). See below for more information.</p>
+<h2 id="argument-type"><a class="doc-anchor" href="#argument-type">§</a>Argument Type</h2>
+<p>If you want to only accept a certain type of <code>Value</code> for a given argument,
+you may mark its type with <code>arg_type = "..."</code>. This will take away the burden
+and boilerplate of handling errors and unwrapping the liquid <code>Value</code> into a rust
+type.</p>
+<p>Right now, there is a default <code>arg_type</code>, “any”, that accepts any value, as well
+as other 6 types, one for each type of <code>Scalar</code>:
+- “any” -&gt; any <code>Value</code> is accepted, this is the default option and <code>evaluate</code> will
+only convert <code>Expression</code> to <code>Value</code>.
+- “integer” -&gt; only <code>Scalar(Integer)</code> is accepted, <code>evaluate</code> will unwrap <code>Value</code>
+into <code>i64</code>.
+- “float” -&gt; only <code>Scalar(Float)</code> is accepted, <code>evaluate</code> will unwrap <code>Value</code>
+into <code>f64</code>.
+- “bool” -&gt; only <code>Scalar(Bool)</code> is accepted, <code>evaluate</code> will unwrap <code>Value</code>
+into <code>bool</code>.
+- “date” -&gt; only <code>Scalar(Date)</code> is accepted, <code>evaluate</code> will unwrap <code>Value</code>
+into <code>Date</code>.
+- “str” -&gt; only <code>Scalar(Str)</code> is accepted, <code>evaluate</code> will unwrap <code>Value</code>
+into <code>KStringCow</code>.</p>
+<h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
+<p>From slice filter:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(Debug, FilterParameters)]
+</span><span class="kw">struct </span>SliceArgs {
+    <span class="attr">#[parameter(
+        description = <span class="string">"The offset of the slice."</span>,
+        arg_type = <span class="string">"integer" </span><span class="comment">// Only integer scalars are accepted
+    </span>)]
+    </span>offset: Expression, <span class="comment">// Required parameter named `offset`
+
+    </span><span class="attr">#[parameter(
+        description = <span class="string">"The length of the slice."</span>,
+        arg_type = <span class="string">"integer" </span><span class="comment">// Only integer scalars are accepted
+    </span>)]
+    </span>length: <span class="prelude-ty">Option</span>&lt;Expression&gt;, <span class="comment">// Optional parameter named `length`
+</span>}</code></pre></div>
+<p>From test filter:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(Debug, FilterParameters)]
+</span><span class="comment">// The evaluated counterpart of this `FilterParameters` would have been
+// `EvaluatedTestMixedFilterParameters`, but because of this attribute
+// it will be named `TestMixedFilterParametersEvaluated` instead.
+</span><span class="attr">#[evaluated(TestMixedFilterParametersEvaluated)]
+</span><span class="kw">struct </span>TestMixedFilterParameters {
+    <span class="attr">#[parameter(
+        description = <span class="string">"1"</span>,
+        arg_type = <span class="string">"integer"</span>, <span class="comment">// Only integer scalars are accepted
+        </span>mode = <span class="string">"keyword" </span><span class="comment">// This is a keyword parameter
+    </span>)]
+    </span>a: <span class="prelude-ty">Option</span>&lt;Expression&gt;, <span class="comment">// Optional parameter named `a`
+
+    </span><span class="attr">#[parameter(
+        description = <span class="string">"2"</span>,
+        arg_type = <span class="string">"bool" </span><span class="comment">// Only boolean scalars are accepted
+    </span>)]
+    </span>b: Expression, <span class="comment">// Required parameter named `b`
+
+    </span><span class="attr">#[parameter(
+        description = <span class="string">"3"</span>,
+        arg_type = <span class="string">"float"</span>, <span class="comment">// Only floating point scalars are accepted
+        </span>mode = <span class="string">"keyword" </span><span class="comment">// This is a keyword parameter
+    </span>)]
+    </span>c: <span class="prelude-ty">Option</span>&lt;Expression&gt;, <span class="comment">// Optional parameter named `c`
+
+    </span><span class="attr">#[parameter(
+        description = <span class="string">"4"</span>,
+        arg_type = <span class="string">"date" </span><span class="comment">// Only date scalars are accepted
+    </span>)]
+    </span>d: Expression, <span class="comment">// Required parameter named `d`
+
+    </span><span class="attr">#[parameter(
+        description = <span class="string">"5"</span>,
+        arg_type = <span class="string">"str" </span><span class="comment">// Only string scalars are accepted
+    </span>)]
+    </span>e: <span class="prelude-ty">Option</span>&lt;Expression&gt;, <span class="comment">// Optional parameter named `e`
+
+    </span><span class="attr">#[parameter(
+        rename = <span class="string">"type"</span>, <span class="comment">// Will override field name in liquid
+        </span>description = <span class="string">"6"</span>,
+        arg_type = <span class="string">"any"</span>, <span class="comment">// Any `Value` is accepted. This is the same as not defining `arg_type`
+        </span>mode = <span class="string">"keyword" </span><span class="comment">// This is a keyword parameter
+    </span>)]
+    </span>f: Expression, <span class="comment">// Required parameter named `type` (see `rename` in attribute)
+</span>}</code></pre></div></div></details></section></div></main></body></html>

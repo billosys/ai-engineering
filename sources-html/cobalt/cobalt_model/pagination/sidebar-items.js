@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["DateIndex","Include"],"fn":["is_date_index_sorted"],"struct":["PaginationConfig"]};

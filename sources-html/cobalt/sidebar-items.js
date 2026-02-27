@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["build","classify_path"],"mod":["cobalt_model","error"],"struct":["Error","SyntaxHighlight"]};

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["Permalink","SassOutputStyle","SortOrder","SourceFormat"],"mod":["files","pagination","permalink","slug"],"struct":["Assets","AssetsBuilder","Collection","Config","DateTime","Document","Frontmatter","Liquid","LiquidBuilder","Markdown","MarkdownBuilder","Minify","SassBuilder","SassCompiler","Site"]};

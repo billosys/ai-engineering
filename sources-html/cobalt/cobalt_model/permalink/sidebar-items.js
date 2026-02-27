@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["explode_permalink","format_url_as_file"]};

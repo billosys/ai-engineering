@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="A trait that holds a filter, ready to evaluate."><title>Filter in liquid_core::parser - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../static.files/rustdoc-ca0dd0c4.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="liquid_core" data-themes="" data-resource-suffix="" data-rustdoc-version="1.93.0 (254b59607 2026-01-19)" data-channel="1.93.0" data-search-js="search-9e2438ea.js" data-stringdex-js="stringdex-a3946164.js" data-settings-js="settings-c38705f0.js" ><script src="../../static.files/storage-e2aeef58.js"></script><script defer src="sidebar-items.js"></script><script defer src="../../static.files/main-a410ff4d.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-044be391.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">Filter</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../liquid_core/index.html">liquid_<wbr>core</a><span class="version">0.26.11</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Filter</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#deriving" title="Deriving">Deriving</a></li><li><a href="#examples" title="Examples">Examples</a></li></ul><h3><a href="#required-methods">Required Methods</a></h3><ul class="block"><li><a href="#tymethod.evaluate" title="evaluate">evaluate</a></li></ul><h3><a href="#implementors">Implementors</a></h3></section><div id="rustdoc-modnav"><h2><a href="index.html">In liquid_<wbr>core::<wbr>parser</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../index.html">liquid_core</a>::<wbr><a href="index.html">parser</a></div><h1>Trait <span class="trait">Filter</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../src/liquid_core/parser/filter.rs.html#143-146">Source</a> </span></div><pre class="rust item-decl"><code>pub trait Filter:
+    <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>
+    + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a>
+    + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a>
+    + <a class="trait" href="https://doc.rust-lang.org/1.93.0/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> {
+    // Required method
+    fn <a href="#tymethod.evaluate" class="fn">evaluate</a>(
+        &amp;self,
+        input: &amp;dyn <a class="trait" href="../model/trait.ValueView.html" title="trait liquid_core::model::ValueView">ValueView</a>,
+        runtime: &amp;dyn <a class="trait" href="../runtime/trait.Runtime.html" title="trait liquid_core::runtime::Runtime">Runtime</a>,
+    ) -&gt; <a class="type" href="../error/type.Result.html" title="type liquid_core::error::Result">Result</a>&lt;<a class="enum" href="../model/enum.Value.html" title="enum liquid_core::model::Value">Value</a>&gt;;
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>A trait that holds a filter, ready to evaluate.</p>
+<h2 id="deriving"><a class="doc-anchor" href="#deriving">§</a>Deriving</h2>
+<p>You cannot derive <code>Filter</code>, as it would go against the very point of creating your own filter.
+You can, however, derive some other traits that are necessary in order to implement it.</p>
+<p>In order to implement this trait, the struct must also implement <code>Debug</code> and <code>Display</code>, as well
+as either <code>Default</code> or <code>From&lt;T&gt;</code> (where T is the FilterParameters struct), respectively, in a
+filter without or with parameters.</p>
+<p>For <code>Debug</code> and <code>Default</code>, one may use rust’s <code>#[derive(Debug)]</code> and <code>#[derive(Default)]</code> macros.
+For <code>Display</code> and <code>From&lt;T&gt;</code>, one may use <code>liquid-derive</code>’s <code>#[derive(Display_filter)]</code> and
+<code>#[derive(FromFilterParameters)]</code>.</p>
+<p>Note, however, that you may need helper attributes like <code>#[name = "..."]</code> and <code>#[parameters]</code> for
+using liquid-derive<code>'s macros. See documentation on </code>liquid-derive` for more information.</p>
+<h2 id="examples"><a class="doc-anchor" href="#examples">§</a>Examples</h2>
+<p>Filter for filter with no arguments:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(Debug, Default, Display_filter)]
+#[name = <span class="string">"abs"</span>] </span><span class="comment">// The name of the filter, for `Display_filter`.
+</span><span class="kw">struct </span>AbsFilter; <span class="comment">// There are no parameters, so implements `Default`.
+
+</span><span class="kw">impl </span>Filter <span class="kw">for </span>AbsFilter {
+    <span class="kw">fn </span>evaluate(<span class="kw-2">&amp;</span><span class="self">self</span>, input: <span class="kw-2">&amp;</span><span class="kw">dyn  </span>ValueView, _runtime: <span class="kw-2">&amp;</span><span class="kw">dyn </span>Runtime) -&gt; <span class="prelude-ty">Result</span>&lt;Value&gt; {
+        <span class="comment">// Implementation of the filter here
+    </span>}
+}</code></pre></div>
+<p>Filter for filter with arguments:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(Debug, FromFilterParameters, Display_filter)]
+#[name = <span class="string">"at_least"</span>] </span><span class="comment">// The name of the filter for derives
+</span><span class="kw">struct </span>AtLeastFilter { <span class="comment">// There are parameters, so derives `FromFilterParameters`.
+    </span><span class="attr">#[parameters] </span><span class="comment">// Mark the FilterParameters struct for derives
+    </span>args: AtLeastArgs, <span class="comment">// A struct that implements `FilterParameters`
+</span>}
+
+<span class="kw">impl </span>Filter <span class="kw">for </span>AtLeastFilter {
+    <span class="kw">fn </span>evaluate(<span class="kw-2">&amp;</span><span class="self">self</span>, input: <span class="kw-2">&amp;</span>ValueView, runtime: <span class="kw-2">&amp;</span><span class="kw">dyn </span>Runtime) -&gt; <span class="prelude-ty">Result</span>&lt;Value&gt; {
+        <span class="comment">// Evaluate the `FilterParameters`
+        </span><span class="kw">let </span>args = <span class="self">self</span>.args.evaluate(runtime)<span class="question-mark">?</span>;
+
+        <span class="comment">// Implementation of the filter here
+    </span>}
+}</code></pre></div>
+<p>Filter for a configurable filter:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[derive(Debug, Display_filter)]
+#[name = <span class="string">"example"</span>] </span><span class="comment">// The name of the filter for `Display`
+// Because construction happens manually (without derive) in `FilterParser`
+// no need to derive neither `Default` nor `FromFilterParameters`.
+</span><span class="kw">struct </span>ExampleFilter {
+    <span class="attr">#[parameters] </span><span class="comment">// Mark the FilterParameters struct for `Display`
+    </span>args: ExampleArgs, <span class="comment">// A struct that implements `FilterParameters`
+    </span>state: i32, <span class="comment">// See `ParseFilter` example for runtime
+</span>}
+
+<span class="kw">impl </span>Filter <span class="kw">for </span>AtLeastFilter {
+    <span class="kw">fn </span>evaluate(<span class="kw-2">&amp;</span><span class="self">self</span>, input: <span class="kw-2">&amp;</span><span class="kw">dyn </span>ValueView, runtime: <span class="kw-2">&amp;</span><span class="kw">dyn </span>Runtime) -&gt; <span class="prelude-ty">Result</span>&lt;Value&gt; {
+        <span class="comment">// Evaluate the `FilterParameters`
+        </span><span class="kw">let </span>args = <span class="self">self</span>.args.evaluate(runtime)<span class="question-mark">?</span>;
+
+        <span class="comment">// Implementation of the filter here
+    </span>}
+}</code></pre></div></div></details><h2 id="required-methods" class="section-header">Required Methods<a href="#required-methods" class="anchor">§</a></h2><div class="methods"><section id="tymethod.evaluate" class="method"><a class="src rightside" href="../../src/liquid_core/parser/filter.rs.html#145">Source</a><h4 class="code-header">fn <a href="#tymethod.evaluate" class="fn">evaluate</a>(
+    &amp;self,
+    input: &amp;dyn <a class="trait" href="../model/trait.ValueView.html" title="trait liquid_core::model::ValueView">ValueView</a>,
+    runtime: &amp;dyn <a class="trait" href="../runtime/trait.Runtime.html" title="trait liquid_core::runtime::Runtime">Runtime</a>,
+) -&gt; <a class="type" href="../error/type.Result.html" title="type liquid_core::error::Result">Result</a>&lt;<a class="enum" href="../model/enum.Value.html" title="enum liquid_core::model::Value">Value</a>&gt;</h4></section></div><h2 id="implementors" class="section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"></div><script src="../../trait.impl/liquid_core/parser/filter/trait.Filter.js" async></script></section></div></main></body></html>
