@@ -1,0 +1,84 @@
+=== Practical Typography Conversion Report ===
+Timestamp: 2026-03-01T13:00:15.061587
+
+HTML files input:  156
+MD files output:   156
+
+✅ Soft hyphen audit: PASS (zero soft hyphens)
+✅ Chrome residue check: PASS
+✅ Navigation residue check: PASS
+⚠️  Broken internal .md links (5):
+   - free-fonts.md: [free fonts are garbage.](why-google-fonts-arent-really-open-source.md)
+   - the-scorpion-express.md: [just as terrible](why-google-fonts-arent-really-open-source.md)
+   - times-new-roman-alternatives.md: [has long been rejected](%0Ahttp://www.fayit.eu/text/burgess_no_designer/burgess_no_designer.md)
+   - to-pay-or-not-to-pay.md: [**HELP KEEP THIS BOOK ALIVE**](graylist.md)
+   - websites.md: [Google Fonts.](why-google-fonts-arent-really-open-source.md)
+
+
+--- Spot-check samples (first 20 lines) ---
+
+### advocate.md ###
+---
+title: "Advocate"
+source: "Butterick's Practical Typography"
+author: "Matthew Butterick"
+url: "https://practicaltypography.com/advocate.html"
+---
+
+<div id="content">
+
+<div id="doc">
+
+Advocate
+
+<div style="text-align:center">
+
+<div class="type-specimen">
+
+[](http://typo.la/ats)
+
+</div>
+
+### afterword.md ###
+---
+title: "Afterword"
+source: "Butterick's Practical Typography"
+author: "Matthew Butterick"
+url: "https://practicaltypography.com/afterword.html"
+---
+
+<div id="content">
+
+<div id="doc">
+
+Afterword
+
+“I’ve got a <span class="no-hyphens">question.”</span>
+
+I was at a fancy law firm in downtown Los Angeles. A few minutes were left in my lunchtime talk about typography. As a rule, that’s the moment when skeptics step forward to lob their rhetorical challenges. But the voice belonged to a senior partner. I hoped for the <span class="no-hyphens">best.</span>
+
+“Sure, go ahead,” I <span class="no-hyphens">said.</span>
+
+“It’s great that you’re into typography, but <span class="no-hyphens">really—</span>
+
+### hierarchical-headings.md ###
+---
+title: "Hierarchical Headings"
+source: "Butterick's Practical Typography"
+author: "Matthew Butterick"
+url: "https://practicaltypography.com/hierarchical-headings.html"
+---
+
+<div id="content">
+
+<div id="doc">
+
+hierarchical headingsConsider tiered numbers
+
+Traditionally, hierarchical headings start with roman numerals at the top level (I, II, III); then switch to capital letters (A, B, C); then numerals (1, 2, 3); then lowercase letters (a, b, c); then romanettes (i, ii, iii); and then variations of the above using two parentheses instead of one, or other barely visible <span class="no-hyphens">changes.</span>
+
+This is a terrible way to label hierarchical <span class="no-hyphens">headings.</span>
+
+1.  Yes, that’s what they’re called—romanettes.
+
+    Roman numerals and romanettes stink. They’re difficult to read. (Quick, what number is XLIX?) They’re easy to confuse at a glance. (II vs. III, IV vs. VI, XXI vs. XII.) If what we mean by I, II, III is 1, 2, 3, then let’s just say <span class="no-hyphens">so.</span>
