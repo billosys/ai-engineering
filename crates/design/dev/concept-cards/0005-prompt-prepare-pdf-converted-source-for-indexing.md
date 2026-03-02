@@ -17,7 +17,7 @@ I have a book that was converted from PDF to Markdown using a converter tool (li
 ```
 ./sources-md/<SourceSlug>/
   ├── book.md              (complete book in one file)
-  ├── book.json            (metadata from converter with TOC)
+  ├── metadata.json            (metadata from converter with TOC)
   └── images/              (directory with all extracted images)
       ├── _page_1_Picture_1.jpeg
       ├── _page_2_Picture_1.jpeg
@@ -56,13 +56,13 @@ These need to be updated to point to the `./images/` subdirectory:
 - Execute the script you just created
 - Verify the output shows the expected number of image references updated
 
-## Step 2: Analyze Book Structure Using book.json
+## Step 2: Analyze Book Structure Using metadata.json
 
 Before splitting, extract chapter information from the converter's metadata.
 
-**Task 2a: Parse book.json table of contents**
+**Task 2a: Parse metadata.json table of contents**
 
-- Read `sources-md/<SourceSlug>/book.json`
+- Read `sources-md/<SourceSlug>/metadata.json`
 - Extract the `table_of_contents` array
 - Identify chapter entries (look for patterns like "Chapter X", "Abstract and Keywords", or other chapter markers)
 - For each chapter entry, extract:
@@ -77,14 +77,14 @@ Before splitting, extract chapter information from the converter's metadata.
 
 **Task 2b: Create chapter mapping**
 
-- Cross-reference book.json TOC with actual headings in `book.md`
+- Cross-reference metadata.json TOC with actual headings in `book.md`
 - For each chapter:
   - Find the corresponding heading line in book.md
   - Record: chapter number, title, PDF page, markdown line number
-  - Note any chapters in book.json that don't appear in book.md (or vice versa)
+  - Note any chapters in metadata.json that don't appear in book.md (or vice versa)
 - Report the complete mapping:
   - Chapter number → Title → PDF page → Markdown line
-  - Any discrepancies between book.json and book.md
+  - Any discrepancies between metadata.json and book.md
 
 ## Step 3: Split Book into Chapters
 
@@ -94,7 +94,7 @@ After analyzing the structure, split `book.md` into individual chapter files usi
 
 - Script name: `scripts/split-<SourceSlug>.py`
 - The script should:
-  - Read `sources-md/<SourceSlug>/book.json` to get PDF page numbers
+  - Read `sources-md/<SourceSlug>/metadata.json` to get PDF page numbers
   - Read `sources-md/<SourceSlug>/book.md` to get content
   - Use the chapter mapping from Step 2b
   - Extract frontmatter (everything before the first chapter) to: `sources-md/<SourceSlug>/00-frontmatter.md`
@@ -116,7 +116,7 @@ After analyzing the structure, split `book.md` into individual chapter files usi
 ---
 title: [full chapter name]
 chapter_number: [integer]
-pdf_page: [page number from book.json]
+pdf_page: [page number from metadata.json]
 book_md_line: [line number in book.md]
 ---
 
@@ -132,21 +132,21 @@ book_md_line: [line number in book.md]
   - Confirm frontmatter was extracted
   - Confirm all chapters were split correctly
   - Show the list of created files with PDF page mappings
-  - Validate chapter count matches book.json TOC count
+  - Validate chapter count matches metadata.json TOC count
 
 **Task 3c: Create validation report**
 
-- Compare created chapter files against book.json TOC
+- Compare created chapter files against metadata.json TOC
 - Report:
-  - Total chapters in book.json: X
+  - Total chapters in metadata.json: X
   - Total chapter files created: Y
   - Match status: ✓ or ✗
   - Any missing chapters or extra files
 
 ## Important Notes
 
-- **book.json is the source of truth** for PDF page numbers - always use it when available
-- **Fallback**: If book.json doesn't have useful TOC data, fall back to regex pattern matching (see Troubleshooting)
+- **metadata.json is the source of truth** for PDF page numbers - always use it when available
+- **Fallback**: If metadata.json doesn't have useful TOC data, fall back to regex pattern matching (see Troubleshooting)
 - **Image references**: After splitting, all chapter files will have image references pointing to `./images/` relative to the chapter file location. This is correct - don't change it.
 - **No subdirectory**: Create all chapter files directly in `sources-md/<SourceSlug>/` - don't create a `chapters/` subdirectory.
 - **Preserve content**: Don't modify chapter content except for adding the metadata header.
@@ -165,7 +165,7 @@ After all three steps complete, the directory structure should look like:
 ```
 sources-md/<SourceSlug>/
 ├── book.md                        (updated with image paths)
-├── book.json                      (unchanged)
+├── metadata.json                      (unchanged)
 ├── images/                        (unchanged)
 │   └── ... (all images)
 ├── 00-frontmatter.md             (NEW - includes PDF page reference)
@@ -185,7 +185,7 @@ After completing all three steps:
 1. Show the total number of image references updated
 2. Show the chapter mapping (number → title → PDF page → file)
 3. Show the total number of chapter files created
-4. Verify chapter count matches book.json TOC
+4. Verify chapter count matches metadata.json TOC
 5. Show a sample of the first chapter file (first 25 lines, showing metadata header)
 6. Confirm that the source is ready for concept extraction or full-text indexing
 
@@ -200,7 +200,7 @@ After completing all three steps:
    - `21st-century-classroom`
    - `neo-riemannian-handbook`
    - `quantum-mechanics-sakurai`
-3. **Prerequisites**: Ensure the directory structure exists with `book.md`, `book.json`, and `images/` directory
+3. **Prerequisites**: Ensure the directory structure exists with `book.md`, `metadata.json`, and `images/` directory
 4. **Model recommendation**: Sonnet is sufficient for this task (Opus not required)
 5. **Expected time**: 5-10 minutes total for all three steps
 
@@ -213,7 +213,7 @@ I have a book that was converted from PDF to Markdown using a converter tool (li
 
 ./sources-md/music-theory-basics/
   ├── book.md              (complete book in one file)
-  ├── book.json            (metadata from converter with TOC)
+  ├── metadata.json            (metadata from converter with TOC)
   └── images/              (directory with all extracted images)
       ├── _page_1_Picture_1.jpeg
       ├── _page_2_Picture_1.jpeg
@@ -235,7 +235,7 @@ After running this prompt, your source will be ready for:
 
 ## Troubleshooting
 
-### Issue: book.json has no useful TOC data
+### Issue: metadata.json has no useful TOC data
 
 **Symptoms**: The table_of_contents array is empty or doesn't contain chapter entries
 
@@ -248,7 +248,7 @@ After running this prompt, your source will be ready for:
 
 ### Issue: TOC entries don't match book.md headings
 
-**Symptoms**: book.json says 35 chapters but book.md only has 30 chapter headings
+**Symptoms**: metadata.json says 35 chapters but book.md only has 30 chapter headings
 
 **Solution**:
 
@@ -257,13 +257,13 @@ After running this prompt, your source will be ready for:
 - Manually identify which TOC entries are actual chapters vs. front/back matter
 - Adjust the chapter detection logic accordingly
 
-### Issue: No chapters detected in book.json
+### Issue: No chapters detected in metadata.json
 
 **Symptoms**: No entries in TOC match common chapter patterns
 
 **Solution**: Ask Claude Code to:
 
-- Show the first 20 TOC entries from book.json
+- Show the first 20 TOC entries from metadata.json
 - Identify what pattern the source uses for divisions (e.g., "Part X", "Section X", "Abstract and Keywords")
 - Manually specify the pattern to look for
 
@@ -291,7 +291,7 @@ After running this prompt, your source will be ready for:
 
 **Solution**:
 
-- Check if book.json page_id is 0-indexed or 1-indexed
+- Check if metadata.json page_id is 0-indexed or 1-indexed
 - Check if PDF includes many front-matter pages before Chapter 1
 - Verify a few PDF page numbers manually by checking book.md content
 - Adjust if converter used a different page numbering scheme
@@ -306,7 +306,7 @@ After running this prompt, your source will be ready for:
 - **PDF page numbers are critical** - they enable academic citation and cross-referencing with the original source
 - The metadata headers in chapter files will be used by concept extraction to populate PDF page fields
 
-## Benefits of Using book.json
+## Benefits of Using metadata.json
 
 - **More reliable**: No regex pattern matching needed
 - **Complete data**: Get PDF page numbers automatically
