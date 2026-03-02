@@ -2,7 +2,7 @@
 
 ## 4. Competency Questions
 
-55 questions across five types and three tiers. These define what the knowledge base must be able to answer and drive extraction priorities.
+56 questions across five types and three tiers. These define what the knowledge base must be able to answer and drive extraction priorities.
 
 ### 4.1 Foundational Tier — Core Vocabulary and First Principles
 
@@ -14,6 +14,7 @@
 4. What are the three components of HSL, and why is HSL more useful than hex notation for palette construction?
 5. What are the basic anatomical parts of a letterform (baseline, x-height, cap height, ascender, descender, counter)?
 6. What distinguishes a serif typeface from a sans-serif, and what are the historical/functional reasons for each?
+56. What typographic conventions and details — such as proper quotation marks, correct dash usage, appropriate sentence spacing, and considered hyphenation — distinguish professionally typeset text from default or amateur formatting, and why do they matter for perceived quality?
 7. What is a grid system, and what problem does it solve in visual composition?
 8. What is an affordance (in Norman's corrected sense), and how does it differ from a signifier?
 9. What is a design token, and how does it differ from a hard-coded value?

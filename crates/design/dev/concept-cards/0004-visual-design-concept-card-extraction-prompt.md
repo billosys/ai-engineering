@@ -1,8 +1,18 @@
 # Visual Design Concept Card Extraction Prompt
 
-Version: 2
+Version: 3
 
 **Copy this prompt and fill in the bracketed fields for each new source.**
+
+**Changelog from v2:**
+
+- Typed relationship semantics clarified: `prerequisites` vs `extends` vs `related` vs `contrasts_with` with examples (Section 9.2, item 10)
+- Added guidance for prescription-heavy sources (Section 9.2, item 11)
+- Tier assignment explicitly documented as absolute, not source-relative (Section 9.2, item 12)
+- Relationship field comments added to Combined Concept Card Template
+- CQ phrasing consistency validation added (Section 10.2.1)
+- New CQ 56 added: typographic correctness/composition
+- Practical Typography added to Section 6.2 source-specific notes
 
 **Changelog from v1:**
 
@@ -94,7 +104,7 @@ Save these notes — they become the source-specific guidance for agent instruct
 1. `crates/design/dev/0004-phase-0-section-1-background.md` — Target user profile and project context.
 2. `crates/design/dev/0005-phase-0-section-2-domain-taxonomy.md` — The 13 categories across 4 layers. Every card gets exactly one `category`.
 3. `crates/design/dev/0006-phase-0-section-3-tier-definitions.md` — Foundational / intermediate / advanced criteria and per-category tier table.
-4. `crates/design/dev/0007-phase-0-section-4-competency-questions.md` — The 55 CQs. Every card must list at least one in `answers_questions`. Note high-priority CQs in Section 4.4.
+4. `crates/design/dev/0007-phase-0-section-4-competency-questions.md` — The 56 CQs. Every card must list at least one in `answers_questions`. Note high-priority CQs in Section 4.4.
 
 **After reading**: You should know the taxonomy, tier criteria, CQs, and target user. You do not need to hold these files in context for the rest of the process — re-read specific sections as needed.
 
@@ -137,7 +147,7 @@ Read through `sources-md/[source-slug]/` and produce:
 - Which CQs does this source help answer?
 - Which concepts are needed for each CQ?
 - Are high-priority CQs (Section 4.4) addressed?
-- Coverage gaps? (Expected — no single source covers all 55 CQs.)
+- Coverage gaps? (Expected — no single source covers all 56 CQs.)
 
 ### Step 4.3: Plan Agent Assignments
 
@@ -226,13 +236,13 @@ aliases:
   - [alternative names, abbreviations, notational forms]
 
 # === TYPED RELATIONSHIPS ===
-prerequisites:
+prerequisites:       # B requires understanding A — "you need A first"
   - [concept-slug]
-extends:
+extends:             # B is a specialisation of A — "B is a kind of A"
   - [concept-slug]
-related:
+related:             # A and B inform each other — lateral, no dependency
   - [concept-slug]
-contrasts_with:
+contrasts_with:      # A and B are easily confused or represent opposing approaches
   - [concept-slug]
 
 # === COMPETENCY QUESTIONS ===
@@ -456,7 +466,7 @@ echo "---"
 cat /tmp/answered-cqs.txt
 ```
 
-This is a **report**, not a pass/fail. No single source is expected to cover all 55 CQs.
+This is a **report**, not a pass/fail. No single source is expected to cover all 56 CQs.
 
 ### Rosetta Stone Coverage
 

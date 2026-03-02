@@ -17,7 +17,23 @@ After each extraction wave, verify:
 - [ ] High-priority CQs (Section 4.4) have MULTIPLE cards contributing to the answer
 - [ ] No CQ requires concepts that haven't been extracted yet (or flag as "Wave N dependency")
 
-Note: CQ coverage is validated **across sources**, not within a single source. No single source is expected to cover all 55 CQs. After each extraction, generate a CQ coverage report showing which CQs are now answered. Maintain a cumulative tracker at `concept-cards/cq-coverage-tracker.md` that maps each CQ to the cards (across all sources) that answer it.
+Note: CQ coverage is validated **across sources**, not within a single source. No single source is expected to cover all 56 CQs. After each extraction, generate a CQ coverage report showing which CQs are now answered. Maintain a cumulative tracker at `concept-cards/cq-coverage-tracker.md` that maps each CQ to the cards (across all sources) that answer it.
+
+### 10.2.1 CQ Phrasing Consistency
+
+After each extraction, verify that all `answers_questions` entries use canonical CQ phrasing:
+
+```bash
+# Extract all CQ strings from this source's cards
+grep -h "answers_questions:" -A 20 concept-cards/$SOURCE_SLUG/*.md \
+  | grep "^  - " | sed 's/^  - //' | sort | uniq -c | sort -rn
+
+# Compare against canonical CQ list
+# Each unique string should match a CQ in 0007 exactly
+# Flag any string that doesn't match — likely a paraphrase that needs correction
+```
+
+CQ strings must be copied exactly from Section 4, not paraphrased. Paraphrased CQs break aggregation in the CQ coverage tracker.
 
 ### 10.3 Rosetta Stone Coverage
 
