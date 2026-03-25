@@ -928,11 +928,13 @@ async function loadData(url) {
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for `===`, `??`, `?.`, and early returns
-- **API Design**: See `02-api-design.md` for return value conventions and consistent types
-- **Values & References**: See `04-values-references.md` for mutation discipline and defensive copying
-- **Async & Concurrency**: See `07-async-concurrency.md` for async iteration, concurrency limits, and cancellation
-- **Anti-Patterns**: See `09-anti-patterns.md` for common error handling mistakes
+- **Core Idioms**: See `01-core-idioms.md` for `===` (ID-02), `??` (ID-03), `?.` (ID-04), early returns (ID-26)
+- **API Design**: See `02-api-design.md` for return value conventions (ID-04, ID-23, ID-24) and consistent types
+- **Values & References**: See `04-values-references.md` for mutation discipline (ID-12, ID-13) and defensive copying
+- **Type Discipline**: See `05-type-discipline.md` for runtime validation (ID-29) and `typeof` guards (ID-01)
+- **Functions & Closures**: See `06-functions-closures.md` for closure capture in async callbacks (ID-06–10)
+- **Async & Concurrency**: See `07-async-concurrency.md` for concurrency limits (ID-17), cancellation (ID-23–26), and combinators (ID-13–16) — those idioms cross-reference ID-13–22 here for error behavior
+- **Anti-Patterns**: See `09-anti-patterns.md` for ID-18, 19, 20, 21, 22, 24, 36 (error handling anti-patterns)
 - **Deno**: See `12-deno/01-runtime-basics.md` for Deno-specific error handling and permissions
 
 ---

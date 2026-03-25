@@ -1109,13 +1109,14 @@ for (const item of largeArray) {
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for `Map`/`Set`, `for-of` vs `.forEach()`, named exports
-- **API Design**: See `02-api-design.md` for module interface design and tree shaking
-- **Values & References**: See `04-values-references.md` for `structuredClone()`, spread, `Object.freeze()`
-- **Type Discipline**: See `05-type-discipline.md` for TypedArrays and `Map`/`Set` as typed collections
-- **Functions & Closures**: See `06-functions-closures.md` for generators, closures, and higher-order functions
-- **Async & Concurrency**: See `07-async-concurrency.md` for parallel vs sequential `await`, Workers, streams
-- **Anti-Patterns**: See `09-anti-patterns.md` for common performance anti-patterns
+- **Core Idioms**: See `01-core-idioms.md` for `Map`/`Set` (ID-16), `for-of` vs `.forEach()` (ID-25), named exports (ID-07), `structuredClone()` (ID-23)
+- **API Design**: See `02-api-design.md` for module interface design (ID-06–10), tree shaking (ID-07, ID-08)
+- **Error Handling**: See `03-error-handling.md` for validation patterns (ID-23, ID-24) — validate at boundaries, trust within
+- **Values & References**: See `04-values-references.md` for `structuredClone()` (ID-09), spread (ID-06), `Object.freeze()` (ID-16–19), `delete` avoidance (ID-19 here cross-refs ID-14 there)
+- **Type Discipline**: See `05-type-discipline.md` for TypedArrays (ID-27) and `Map`/`Set` as typed collections (ID-26)
+- **Functions & Closures**: See `06-functions-closures.md` for generators (ID-05), closures (ID-06–09), and higher-order functions (ID-20–24)
+- **Async & Concurrency**: See `07-async-concurrency.md` for parallel vs sequential `await` (ID-13, ID-18), Workers (ID-30), streams (ID-27–29)
+- **Anti-Patterns**: See `09-anti-patterns.md` for ID-17, 34 (performance-related anti-patterns)
 
 ---
 

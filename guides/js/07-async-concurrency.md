@@ -1104,12 +1104,13 @@ document.addEventListener("mousemove", (e) => trackMouse(e.pageX, e.pageY));
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for `for-of` vs `.forEach()`, `??`, `?.`
-- **API Design**: See `02-api-design.md` for async function return conventions (ID-25)
-- **Error Handling**: See `03-error-handling.md` for async error patterns (ID-13–22, ID-27–28)
-- **Values & References**: See `04-values-references.md` for mutation discipline in async contexts
-- **Functions & Closures**: See `06-functions-closures.md` for closure capture in callbacks (ID-06–10)
-- **Anti-Patterns**: See `09-anti-patterns.md` for async anti-patterns
+- **Core Idioms**: See `01-core-idioms.md` for `for-of` vs `.forEach()` (ID-25), `??` (ID-03), `?.` (ID-04)
+- **API Design**: See `02-api-design.md` for async function return conventions (ID-25), Promise-only APIs (ID-25 here cross-refs ID-25 there)
+- **Error Handling**: See `03-error-handling.md` for async error patterns (ID-13–22, ID-27–28 there) — this guide cross-references those by ID at each overlap point
+- **Values & References**: See `04-values-references.md` for mutation discipline in async contexts (ID-12–14)
+- **Functions & Closures**: See `06-functions-closures.md` for closure capture in callbacks (ID-06–10), generators (ID-05), and `this` binding (ID-16–18)
+- **Performance**: See `08-performance.md` for lazy evaluation (ID-14–15) and allocation discipline (ID-24)
+- **Anti-Patterns**: See `09-anti-patterns.md` for ID-18, 19, 20, 21, 22, 23 (async anti-patterns)
 - **Deno**: See `12-deno/01-runtime-basics.md` for Deno-specific async APIs
 
 ---

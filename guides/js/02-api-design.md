@@ -975,13 +975,13 @@ class Histogram extends Map {
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for `const`/`let`, equality, destructuring, ESM basics
-- **Error Handling**: See `03-error-handling.md` for error types, try/catch, and Result patterns
-- **Values & References**: See `04-values-references.md` for mutation discipline, copying, and immutability
-- **Type Discipline**: See `05-type-discipline.md` for JSDoc annotations and runtime type checking
-- **Functions & Closures**: See `06-functions-closures.md` for closures, higher-order functions, and composition
-- **Async & Concurrency**: See `07-async-concurrency.md` for Promise patterns, async iteration, and concurrency
-- **Anti-Patterns**: See `09-anti-patterns.md` for common JavaScript API design mistakes
+- **Core Idioms**: See `01-core-idioms.md` for `const`/`let` (ID-01), equality (ID-02), destructuring (ID-06), ESM (ID-08), named exports (ID-07)
+- **Error Handling**: See `03-error-handling.md` for throwing in constructors (ID-15 here cross-refs ID-23, ID-24 there), async error patterns
+- **Values & References**: See `04-values-references.md` for mutation discipline (ID-12–14), `Object.freeze()` (ID-16), property mechanics (ID-20–23)
+- **Type Discipline**: See `05-type-discipline.md` for JSDoc annotations (ID-16–20) and discriminated unions (ID-24–25)
+- **Functions & Closures**: See `06-functions-closures.md` for closures (ID-06–09), generators (ID-05), and `this` binding (ID-16–18)
+- **Async & Concurrency**: See `07-async-concurrency.md` for async return conventions (ID-25 here cross-refs ID-11 there)
+- **Anti-Patterns**: See `09-anti-patterns.md` for ID-24, 25, 26, 27 (API design anti-patterns)
 - **Deno**: See `12-deno/01-runtime-basics.md` for Deno-specific API patterns
 
 ---

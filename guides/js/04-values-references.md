@@ -877,12 +877,13 @@ other.shared;             // "original"
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for `const`/`let`, `===`, `structuredClone()`, `Object.freeze()`
-- **API Design**: See `02-api-design.md` for return value conventions and factory patterns
-- **Error Handling**: See `03-error-handling.md` for validation at boundaries
-- **Type Discipline**: See `05-type-discipline.md` for JSDoc annotations and runtime type checks
-- **Functions & Closures**: See `06-functions-closures.md` for closure capture and variable binding
-- **Anti-Patterns**: See `09-anti-patterns.md` for common mutation bugs
+- **Core Idioms**: See `01-core-idioms.md` for `const`/`let` (ID-01, ID-14), `===` (ID-02), `structuredClone()` (ID-23), `Object.freeze()` (ID-15)
+- **API Design**: See `02-api-design.md` for return value conventions (ID-04, ID-23, ID-24) and factory patterns (ID-11, ID-13)
+- **Error Handling**: See `03-error-handling.md` for validation at boundaries (ID-23, ID-24)
+- **Type Discipline**: See `05-type-discipline.md` for `typeof` guards (ID-01–03), JSDoc annotations (ID-16–20), and `Object.freeze()` for enums (ID-30)
+- **Functions & Closures**: See `06-functions-closures.md` for closure capture (ID-06–10) and scope mechanics (ID-11–15)
+- **Async & Concurrency**: See `07-async-concurrency.md` for mutation discipline in async contexts (ID-17 references run-to-completion)
+- **Anti-Patterns**: See `09-anti-patterns.md` for ID-14, 15, 16, 35 (mutation and copying anti-patterns)
 
 ---
 

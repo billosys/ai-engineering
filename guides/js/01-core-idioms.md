@@ -942,11 +942,12 @@ for (const item of items) {
 
 ## Related Guidelines
 
-- **Error Handling**: See `03-error-handling.md` for `try`/`catch`, custom errors, and Result patterns
-- **Values & References**: See `04-values-references.md` for mutation discipline, copying, and immutability
-- **Functions & Closures**: See `06-functions-closures.md` for closures, higher-order functions, and composition
+- **Error Handling**: See `03-error-handling.md` for `try`/`catch`, custom errors, and validation (ID-23, ID-24 reference this guide's boundary patterns)
+- **Values & References**: See `04-values-references.md` for mutation discipline, copying, and immutability (ID-04, ID-06, ID-09 extend ID-14, ID-15, ID-23 here)
+- **Type Discipline**: See `05-type-discipline.md` for runtime type checks and JSDoc (ID-22 extends ID-03, ID-04 here)
+- **Functions & Closures**: See `06-functions-closures.md` for closures, `this` binding, and higher-order functions (ID-02, ID-03 extend ID-09 here)
 - **Async & Concurrency**: See `07-async-concurrency.md` for Promises, `async`/`await`, and concurrency
-- **Anti-Patterns**: See `09-anti-patterns.md` for common JavaScript footguns
+- **Anti-Patterns**: See `09-anti-patterns.md` for ID-01, 03, 11, 28, 29, 33 (amplify patterns from this guide)
 - **Deno**: See `12-deno/01-runtime-basics.md` for Deno permissions, APIs, and configuration
 - **No-Node Boundary**: See `14-no-node-boundary.md` for what "no Node.js" means in practice
 

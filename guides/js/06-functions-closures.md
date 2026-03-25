@@ -1014,13 +1014,13 @@ const factorial = function fact(n) {
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for `const`/`let`, arrow vs `function`, `for-of` vs `.forEach()`
-- **API Design**: See `02-api-design.md` for parameter design, options objects, and iterator protocol
-- **Error Handling**: See `03-error-handling.md` for async error patterns and callback errors
-- **Values & References**: See `04-values-references.md` for mutation discipline and defensive copying
-- **Type Discipline**: See `05-type-discipline.md` for JSDoc annotations and duck typing
-- **Async & Concurrency**: See `07-async-concurrency.md` for async functions, `await`, and Promises
-- **Anti-Patterns**: See `09-anti-patterns.md` for common closure and `this` bugs
+- **Core Idioms**: See `01-core-idioms.md` for `const`/`let` (ID-01), arrow vs `function` (ID-09), `for-of` vs `.forEach()` (ID-25), early returns (ID-26)
+- **API Design**: See `02-api-design.md` for parameter design (ID-01–03), options objects, iterator protocol (ID-20–22), and factory patterns (ID-11, ID-13, ID-14)
+- **Error Handling**: See `03-error-handling.md` for async error patterns (ID-19–22) and callback error handling (ID-18)
+- **Values & References**: See `04-values-references.md` for mutation discipline (ID-12–14), defensive copying (ID-13), and binding vs value (ID-04–05)
+- **Type Discipline**: See `05-type-discipline.md` for JSDoc annotations (ID-16–20), duck typing (ID-06), and discriminated unions (ID-24–25)
+- **Async & Concurrency**: See `07-async-concurrency.md` for async functions (ID-10–12), `await` patterns (ID-13, ID-18), and async generators (ID-20)
+- **Anti-Patterns**: See `09-anti-patterns.md` for ID-07, 08, 09, 10, 12, 13 (closure and `this` anti-patterns)
 
 ---
 

@@ -963,11 +963,12 @@ Direction.DIAGONAL = "diagonal"; // TypeError in strict mode
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for `===`, `??`, `?.`, `const`/`let`
-- **API Design**: See `02-api-design.md` for return value conventions and parameter patterns
-- **Error Handling**: See `03-error-handling.md` for validation and typed error hierarchies
-- **Values & References**: See `04-values-references.md` for mutation discipline, `Object.freeze()`, and property mechanics
-- **Anti-Patterns**: See `09-anti-patterns.md` for coercion traps and type-unsafe patterns
+- **Core Idioms**: See `01-core-idioms.md` for `===` (ID-02), `??` (ID-03), `?.` (ID-04), `const`/`let` (ID-01), `Map`/`Set` (ID-16)
+- **API Design**: See `02-api-design.md` for return value conventions (ID-04, ID-23–25) and discriminated dispatch (ID-24–25 here)
+- **Error Handling**: See `03-error-handling.md` for validation at boundaries (ID-23, ID-24) and typed error hierarchies (ID-05, ID-06)
+- **Values & References**: See `04-values-references.md` for `Object.freeze()` (ID-16–19), property descriptors (ID-20–23), and equality (ID-24–26)
+- **Functions & Closures**: See `06-functions-closures.md` for `this` binding rules (ID-16–18) and generator functions (ID-05)
+- **Anti-Patterns**: See `09-anti-patterns.md` for ID-01, 02, 04, 05, 06 (coercion and type-checking anti-patterns)
 - **Biome**: See `13-biome/02-lint-rules.md` for types-domain rules and exhaustive switch enforcement
 - **Deno**: See `12-deno/01-runtime-basics.md` for `deno check`, LSP configuration, and `.d.ts` wiring
 
