@@ -98,16 +98,18 @@ function search(query) {
   return db.query(query);
 }
 
-// Bad — returns object on success, false on failure
+// Bad — returns object on success, boolean on failure
 function findUser(id) {
   if (!users.has(id)) return false; // type mismatch
   return users.get(id);
 }
 
-// Bad — returns string or array depending on input
+// Bad — sometimes number, sometimes null, sometimes string
 function parse(input) {
-  if (typeof input === "string") return input.split(",");
-  return input; // sometimes string[], sometimes who-knows-what
+  if (!input) return null;
+  const n = Number(input);
+  if (Number.isNaN(n)) return input; // string fallback
+  return n;
 }
 ```
 
@@ -796,46 +798,7 @@ JSON.stringify(config); // {"theme":"dark","customHeader":null}
 
 ---
 
-## ID-25: Never Return Different Types from the Same Function
-
-**Strength**: MUST
-
-**Summary**: A function must return the same type across all code paths. Use `undefined`/`null` for absence, not a different type.
-
-```js
-// Good — always string | undefined
-function getLabel(id) {
-  return labels.get(id); // Map.get returns V | undefined
-}
-
-// Good — always Array (possibly empty)
-function getResults(query) {
-  if (!query) return [];
-  return db.search(query);
-}
-
-// Bad — string on success, boolean on failure
-function getLabel(id) {
-  if (!labels.has(id)) return false;
-  return labels.get(id);
-}
-
-// Bad — sometimes number, sometimes null, sometimes string
-function parse(input) {
-  if (!input) return null;
-  const n = Number(input);
-  if (Number.isNaN(n)) return input; // string fallback
-  return n;
-}
-```
-
-**Rationale**: Mixed return types force callers into defensive type checking and produce fragile code. Consistent types enable chaining, composition, and reliable destructuring (Exploring JS Ch. 37; Eloquent JS Ch. 3).
-
-**See also**: ID-04
-
----
-
-## ID-26: Async Functions Always Return Promises — No Callback Alternatives
+## ID-25: Async Functions Always Return Promises — No Callback Alternatives
 
 **Strength**: MUST
 
@@ -863,7 +826,7 @@ export function fetchUser(id, callback) {
 
 ---
 
-## ID-27: Use Symbols for Non-Enumerable Metadata Properties
+## ID-26: Use Symbols for Non-Enumerable Metadata Properties
 
 **Strength**: CONSIDER
 
@@ -897,7 +860,7 @@ class Collection {
 
 ---
 
-## ID-28: Proxy-Based Validation at API Boundaries
+## ID-27: Proxy-Based Validation at API Boundaries
 
 **Strength**: CONSIDER
 
@@ -936,7 +899,7 @@ set(target, prop, value) {
 
 ---
 
-## ID-29: Prefer Composition over Inheritance
+## ID-28: Prefer Composition over Inheritance
 
 **Strength**: SHOULD
 
@@ -1003,11 +966,10 @@ class Histogram extends Map {
 | 22 | Many-times iterables over one-time | SHOULD | Fresh iterator per `[Symbol.iterator]()` call |
 | 23 | `undefined` for "no meaningful value" | SHOULD | Matches language default and built-in methods |
 | 24 | `null` for explicit modeled absence | CONSIDER | Serializes to JSON, signals intentional emptiness |
-| 25 | Never return mixed types | MUST | Consistent shape enables composition |
-| 26 | Async = Promise, no callback alternative | MUST | Single interface, callers choose consumption style |
-| 27 | Symbols for metadata properties | CONSIDER | Non-enumerable, clash-free, hidden from JSON |
-| 28 | Proxy validation at API boundaries | CONSIDER | `set` trap + `Reflect.set()` for immediate constraint checks |
-| 29 | Composition over inheritance | SHOULD | Delegation wraps selectively; inheritance exposes everything |
+| 25 | Async = Promise, no callback alternative | MUST | Single interface, callers choose consumption style |
+| 26 | Symbols for metadata properties | CONSIDER | Non-enumerable, clash-free, hidden from JSON |
+| 27 | Proxy validation at API boundaries | CONSIDER | `set` trap + `Reflect.set()` for immediate constraint checks |
+| 28 | Composition over inheritance | SHOULD | Delegation wraps selectively; inheritance exposes everything |
 
 ---
 
