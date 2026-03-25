@@ -87,7 +87,7 @@ function setTitle(title) {
 }
 ```
 
-**Why it's wrong**: `||` uses boolean coercion: 7 values are falsy (`false`, `0`, `-0`, `0n`, `NaN`, `""`, `null`, `undefined`). When `0` is a valid volume level or `""` is a valid empty title, `||` silently replaces them with the default. This is one of the most common bugs in AI-generated code (Exploring JS Ch. 14; JS Definitive Guide, §4.13.2).
+**Why it's wrong**: `||` uses boolean coercion: 8 values are falsy (`false`, `0`, `-0`, `0n`, `NaN`, `""`, `null`, `undefined`). When `0` is a valid volume level or `""` is a valid empty title, `||` silently replaces them with the default. This is one of the most common bugs in AI-generated code (Exploring JS Ch. 14; JS Definitive Guide, §4.13.2).
 
 **Fix**: `01-core-idioms.md` ID-03.
 
@@ -128,10 +128,10 @@ Number.isNaN(NaN);        // true — the only true positive
 **Summary**: `parseInt` without a radix infers the base from the string prefix. Always pass `10`.
 
 ```js
-// Anti-pattern — radix inference
-parseInt("08");         // may return 0 in pre-ES5 (octal)
-parseInt("0x1F");       // 31 — hex inferred from "0x"
+// Anti-pattern — radix inference and silent truncation
+parseInt("0x1F");       // 31 — hex inferred from "0x" prefix
 parseInt("123abc");     // 123 — silently ignores trailing characters
+parseInt("  42  ");     // 42 — silently trims whitespace
 
 // Fix — explicit radix
 parseInt("08", 10);     // always 8
@@ -326,9 +326,11 @@ function calculate(items) {
 }
 ```
 
-**Why it's wrong**: In non-strict mode, assignment to an undeclared name creates a property on `globalThis`. This pollutes the global namespace, creates action-at-a-distance bugs, and persists beyond the function call. ESM is always strict, so this throws `ReferenceError` in modules — but scripts and `eval` are still vulnerable. The global object is, as Rauschmayer puts it, "a mistake that JavaScript can't get rid of" (Exploring JS Ch. 14; Deep JS Ch. 5).
+**Why it's wrong**: In non-strict mode, assignment to an undeclared name creates a property on `globalThis`. This pollutes the global namespace, creates action-at-a-distance bugs, and persists beyond the function call. The global object is, as Rauschmayer puts it, "a mistake that JavaScript can't get rid of" (Exploring JS Ch. 14; Deep JS Ch. 5).
 
-**Fix**: `01-core-idioms.md` ID-01. Use ESM (always strict mode) for implicit protection.
+**In our target environment** (Deno + ESM), this is caught automatically — ESM is always strict mode, so undeclared assignment throws `ReferenceError`. The entry earns MUST-AVOID because the pattern still bites in `eval()`, REPL sessions, and any non-module `<script>` context. Understanding it explains a class of legacy bugs and why strict mode exists.
+
+**Fix**: `01-core-idioms.md` ID-01. ESM strict mode provides implicit protection.
 
 ---
 
@@ -339,23 +341,35 @@ function calculate(items) {
 **Summary**: Declaring a variable with the same name as an outer-scope variable hides the outer one silently.
 
 ```js
-// Anti-pattern — inner result shadows outer result
+// Anti-pattern 1 — shadow hides outer, adjustment lost
 let result = computeInitial();
 if (needsAdjustment) {
-  const result = adjust(result);  // ReferenceError! reading own TDZ'd binding
-  // Even without TDZ, this declares a NEW variable, not modifying the outer one
+  const result = computeAdjusted();  // NEW variable — outer result unchanged
+  console.log(result);               // the adjusted value (local)
 }
-console.log(result);  // still the initial value — adjustment was lost
+console.log(result);  // still the initial value — adjustment was silently lost
+
+// Anti-pattern 2 — shadow + TDZ self-reference (different bug)
+let result = computeInitial();
+if (needsAdjustment) {
+  const result = adjust(result);  // ReferenceError! the inner `result` is in TDZ
+  // The `result` in adjust(result) refers to the inner binding, not the outer one
+}
 
 // Fix — use distinct names
 let result = computeInitial();
 if (needsAdjustment) {
-  const adjusted = adjust(result);
+  const adjusted = adjust(result);  // reads outer result, stores in new name
   result = adjusted;
 }
 ```
 
-**Why it's wrong**: The inner `const result` creates a new binding that shadows the outer `result`. The programmer may intend to modify the outer variable but instead creates an independent local that is discarded when the block exits. Combined with TDZ, reading the outer `result` inside the initializer of the inner `const result` throws `ReferenceError` (Exploring JS Ch. 13; JS Definitive Guide, §3.10.1).
+**Two distinct bugs here**:
+
+1. **Shadow hides outer** (Anti-pattern 1): The inner `const result` creates a new binding. The programmer intends to update the outer variable but instead creates an independent local that is discarded when the block exits.
+2. **Shadow + TDZ** (Anti-pattern 2): When the inner binding's initializer references `result`, it refers to the inner `const result` which is still in its Temporal Dead Zone — not the outer `result`. This throws `ReferenceError`.
+
+Both are prevented by using distinct variable names (Exploring JS Ch. 13; JS Definitive Guide, §3.10.1).
 
 **Fix**: `06-functions-closures.md` ID-14. Biome's `noShadowRestrictedNames` rule catches some cases.
 
@@ -471,11 +485,11 @@ original.user.name;  // "Alice" — independent
 
 ---
 
-## ID-17: `.sort()` Mutates in Place
+## ID-17: `.sort()` Mutates in Place and Defaults to String Comparison
 
 **Strength**: SHOULD-AVOID
 
-**Summary**: `Array.prototype.sort()` sorts the array in place and returns the same array reference. It does not return a new array.
+**Summary**: `.sort()` mutates the original array AND defaults to lexicographic (string) comparison — two footguns in one method call.
 
 ```js
 // Anti-pattern — original is mutated
@@ -495,7 +509,12 @@ original;  // [3, 1, 2] — unchanged
 const sorted = [...original].sort((a, b) => a - b);
 ```
 
-**Why it's wrong**: `.sort()` returns the same mutated reference. Code like `const sorted = arr.sort()` mutates `arr` AND aliases `sorted` to it. The default comparator converts elements to strings, so `[10, 9, 2].sort()` produces `[10, 2, 9]` — always provide a comparator for numbers (Exploring JS Ch. 34; JS Definitive Guide, §7.8.6).
+**Two distinct bugs here**:
+
+1. **Mutation**: `.sort()` returns the same mutated reference. `const sorted = arr.sort()` mutates `arr` AND aliases `sorted` to it — the original is destroyed.
+2. **Default comparator**: Without a comparator, `.sort()` converts elements to strings and sorts lexicographically. `[10, 9, 2].sort()` produces `[10, 2, 9]` because `"10" < "2"` in string comparison. This is disproportionately common in AI-generated code — always provide a numeric comparator: `(a, b) => a - b`.
+
+(Exploring JS Ch. 34; JS Definitive Guide, §7.8.6). Biome's `useArraySortCompare` rule catches the missing comparator.
 
 **Fix**: `04-values-references.md` ID-15.
 
@@ -583,29 +602,44 @@ async function handleRequest(req) {
 
 ---
 
-## ID-21: Mixing Callbacks and Promises
+## ID-21: Synchronous Throws in Promise-Returning Functions
 
 **Strength**: SHOULD-AVOID
 
-**Summary**: A function must be either callback-based or Promise-based, never both. Synchronous throws in Promise-returning functions escape the chain.
+**Summary**: A function that returns a Promise must not throw synchronously. Sync throws escape the Promise chain — callers' `.catch()` never sees them.
 
 ```js
 // Anti-pattern — sync throw escapes the Promise chain
 function fetchData(url) {
-  validateUrl(url);              // throws synchronously
+  validateUrl(url);              // throws synchronously — escapes .catch()
   return fetch(url).then((r) => r.json());
 }
-// Caller's .catch() never sees the validateUrl error
+fetchData(badUrl).catch(handleError);  // validateUrl's throw is NOT caught here
 
-// Fix — wrap in async function
+// Fix — async function: sync throws become rejections
 async function fetchData(url) {
-  validateUrl(url);              // throw becomes rejection
+  validateUrl(url);              // throw becomes rejection — caught by .catch()
   const r = await fetch(url);
   return r.json();
 }
+
+// Anti-pattern — dual-mode API (callback + Promise)
+function readConfig(path, callback) {
+  const promise = Deno.readTextFile(path).then(JSON.parse);
+  if (callback) {
+    promise.then((data) => callback(null, data)).catch((err) => callback(err));
+  }
+  return promise;
+}
+
+// Fix — Promise-only API
+async function readConfig(path) {
+  const raw = await Deno.readTextFile(path);
+  return JSON.parse(raw);
+}
 ```
 
-**Why it's wrong**: Promise-based functions must never throw synchronous exceptions. Callers set up `.catch()` handlers, not `try/catch` around the call. A synchronous throw escapes the Promise machinery entirely (Exploring JS Ch. 43; JS Definitive Guide, §13.2).
+**Why it's wrong**: Two anti-patterns share a root cause — mixing error models. (1) Synchronous throws in Promise-returning functions escape the chain because callers set up `.catch()`, not `try/catch` around the call. (2) Dual-mode APIs (accepting both a callback and returning a Promise) double the surface area and confuse error handling. In both cases, pick one model: `async` functions handle both cases correctly (Exploring JS Ch. 43; JS Definitive Guide, §13.2).
 
 **Fix**: `03-error-handling.md` ID-18.
 
@@ -620,24 +654,24 @@ async function fetchData(url) {
 ```js
 // Anti-pattern — pyramid of doom with Promises
 fetchUser(id).then((user) => {
-  fetchOrders(user.id).then((orders) => {
-    fetchItems(orders[0].id).then((items) => {
-      process(items);
+  fetchPosts(user.id).then((posts) => {
+    fetchComments(posts[0].id).then((comments) => {
+      render(comments);
     });
   });
 });
 
-// Fix — flat chain
+// Fix — flat chain (note: examples are illustrative; guard empty arrays in production)
 fetchUser(id)
-  .then((user) => fetchOrders(user.id))
-  .then((orders) => fetchItems(orders[0].id))
-  .then((items) => process(items));
+  .then((user) => fetchPosts(user.id))
+  .then((posts) => fetchComments(posts[0].id))
+  .then((comments) => render(comments));
 
 // Better — async/await
 const user = await fetchUser(id);
-const orders = await fetchOrders(user.id);
-const items = await fetchItems(orders[0].id);
-process(items);
+const posts = await fetchPosts(user.id);
+const comments = await fetchComments(posts[0].id);
+render(comments);
 ```
 
 **Why it's wrong**: Nested `.then()` calls lose error propagation (the outer chain doesn't see inner rejections) and recreate the indentation pyramid that Promises were designed to eliminate. Promise flattening makes chaining work — returning a Promise from `.then()` automatically resolves it before the next `.then()` fires (Exploring JS Ch. 43; JS Definitive Guide, §13.2).
@@ -943,8 +977,8 @@ export function getSecret() { return secret; }
 const { readFile } = require("fs");
 module.exports = { process };
 
-// Fix
-import { readFile } from "node:fs/promises";
+// Fix — Deno-native ESM
+const data = await Deno.readTextFile("./input.txt");
 export function process(data) { /* ... */ }
 ```
 
@@ -1062,8 +1096,6 @@ try {
 
 ---
 
----
-
 ## Best Practices Summary
 
 ### Quick Reference Table
@@ -1086,11 +1118,11 @@ try {
 | 14 | Mutating function arguments | MUST-AVOID | Caller's data destroyed |
 | 15 | `const` = immutable | SHOULD-AVOID | Binding frozen, value mutable |
 | 16 | Shallow copy surprise | SHOULD-AVOID | Nested refs shared |
-| 17 | `.sort()` mutates in place | SHOULD-AVOID | Returns same ref; default is string sort |
+| 17 | `.sort()` mutates + string default | SHOULD-AVOID | Returns same ref; default is lexicographic |
 | 18 | Sequential `await` (independent) | MUST-AVOID | Serializes parallel work |
 | 19 | `.map(async fn)` without `all()` | MUST-AVOID | Returns `Promise[]` not values |
 | 20 | Fire-and-forget promises | MUST-AVOID | Unhandled rejections crash Deno |
-| 21 | Mixing callbacks and promises | SHOULD-AVOID | Sync throws escape chain |
+| 21 | Sync throws in Promise functions | SHOULD-AVOID | Sync throws escape `.catch()` chain |
 | 22 | `.then()` nesting | SHOULD-AVOID | Recreates callback hell |
 | 23 | `fetch()` without `signal` | SHOULD-AVOID | Uncancellable requests |
 | 24 | Mixed return/throw error channels | MUST-AVOID | Callers need two patterns |
