@@ -37,6 +37,8 @@ await retry(fetchData, { maxAttempts: 5, backoff: "exponential" });
 const bannedSet = new Set(bannedList);
 ```
 
+**Comment style convention**: Use `/** ... */` (JSDoc) for documentation on exports — these are read by `deno doc`, IDE hover, and JSR. Use `//` for inline explanations inside function bodies. Don't use `/** */` for inline comments that aren't JSDoc — it misleads readers into thinking the comment is tool-readable documentation.
+
 **Rationale**: Haverbeke's comment examples in Eloquent JS illustrate the spectrum: a block comment explaining the provenance of a mysterious constant is valuable; a comment that restates `x = x + 1` is noise. The code's *what* should be self-evident from naming and structure. Comments capture the *why* that code cannot express (Eloquent JS Ch. 2; Exploring JS Ch. 9).
 
 ---
@@ -330,17 +332,17 @@ export async function getActiveSessions(userId) { /* ... */ }
  * @returns {Function} The debounced function.
  *
  * @example
- * const search = debounce(async (query) => {
- *   const results = await fetch(`/api/search?q=${query}`);
- *   displayResults(await results.json());
- * }, 300);
+ * ```js
+ * import { debounce } from "./timing.js";
  *
- * input.addEventListener("input", (e) => search(e.target.value));
+ * const search = debounce((query) => console.log(`Searching: ${query}`), 300);
+ * search("hello");
+ * ```
  */
 export function debounce(fn, wait) { /* ... */ }
 ```
 
-**Bonus**: `deno test --doc` extracts `@example` blocks and runs them as tests. Documentation examples that are also tests cannot silently become stale.
+**Bonus**: `deno test --doc` extracts triple-backtick code blocks from JSDoc comments and runs them as tests. The code block must be a fenced code block (` ```js `) inside the JSDoc — not just `@example` text. This means documentation examples are verified at CI time and cannot silently become stale.
 
 **Rationale**: Examples show the API in context — how it's called, what the typical arguments look like, and how the result is used. This is especially valuable for functions with options objects, callbacks, or multi-step usage patterns.
 
@@ -404,7 +406,7 @@ export function parseCSV(csv, options = {}) { /* ... */ }
 **What tools extract**:
 - `deno doc` → module docs, export summaries, parameter types and descriptions
 - IDE hover → first sentence of JSDoc block
-- `deno test --doc` → `@example` blocks as executable tests
+- `deno test --doc` → triple-backtick code blocks in JSDoc as executable tests
 - JSR → auto-generated documentation pages from JSDoc
 
 **Rationale**: JSR auto-generates documentation from published code. Well-documented modules on JSR are the ecosystem standard. `deno test --doc` collapses the distinction between examples and tests — documentation examples that compile and run correctly are verified at CI time.
@@ -456,14 +458,6 @@ function check(u, r) {
 function canUserAccessResource(user, resource) {
   return user.role === "admin" || resource.ownerId === user.id;
 }
-
-// Bad — comment explains what the code does
-// Filter out inactive users and get their emails
-const emails = users.filter(u => u.active).map(u => u.email);
-
-// Good — intermediate variable names explain each step
-const activeUsers = users.filter((user) => user.active);
-const activeEmails = activeUsers.map((user) => user.email);
 ```
 
 **Rationale**: Rauschmayer presents naming conventions as a community-wide readability contract. `camelCase` signals a variable or function; `PascalCase` signals a class; `ALL_CAPS` signals a constant. Each convention carries semantic information without a comment. The goal is code where the "what" is self-evident, so comments can focus exclusively on the "why" (Exploring JS Ch. 9).
@@ -477,22 +471,24 @@ const activeEmails = activeUsers.map((user) => user.email);
 **Summary**: A named constant documents its purpose. A magic number documents nothing.
 
 ```js
-// Bad — what is 429? what is 5? what is 1000?
-if (response.status === 429) {
+// Bad — what is 5? what is 1000? what is 0.7?
+if (attempt < 5) {
   await delay(1000);
-  if (attempt < 5) return retry();
+  if (score > 0.7) return accept();
 }
 
 // Good — names explain everything
-const TOO_MANY_REQUESTS = 429;
-const RETRY_DELAY_MS = 1000;
 const MAX_RETRY_ATTEMPTS = 5;
+const RETRY_DELAY_MS = 1000;
+const CONFIDENCE_THRESHOLD = 0.7;
 
-if (response.status === TOO_MANY_REQUESTS) {
+if (attempt < MAX_RETRY_ATTEMPTS) {
   await delay(RETRY_DELAY_MS);
-  if (attempt < MAX_RETRY_ATTEMPTS) return retry();
+  if (score > CONFIDENCE_THRESHOLD) return accept();
 }
 ```
+
+**Note**: Well-known standard constants (HTTP status codes like `429`, exit codes like `1`) are acceptable as literals with a brief comment — `if (response.status === 429) // Too Many Requests` is often clearer than a named constant because the numeric code is the standard identifier. Apply named constants to domain-specific values whose meaning isn't self-evident from context.
 
 **Rationale**: Constants are searchable (find all uses of `MAX_RETRY_ATTEMPTS`), changeable in one place, and self-documenting. Magic values require the reader to understand the domain context to interpret them.
 
@@ -554,7 +550,7 @@ function doStuff(x) { /* ... */ }
 function run(config) { /* ... */ }
 ```
 
-**Rationale**: `parseConfig` documents that the function takes raw text and produces a config object — no JSDoc needed for the basic contract. `process(data)` could mean anything; the reader must inspect the implementation or read the JSDoc to understand what it does (Exploring JS Ch. 9; Deep JS Ch. 21).
+**Rationale**: `parseConfig` documents that the function takes raw text and produces a config object — no JSDoc needed for the basic contract. `process(data)` could mean anything; the reader must inspect the implementation or read the JSDoc to understand what it does (Exploring JS Ch. 9; Deep JS, function naming rules).
 
 **See also**: `02-api-design.md` ID-16, ID-17
 
@@ -799,7 +795,7 @@ const config = loadConfig(path);
 
 - [Deno — Documentation Generation](https://docs.deno.com/runtime/reference/cli/doc/)
 - [JSR — Auto-Generated Documentation](https://jsr.io/)
-- [MDN — JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
+- [TypeScript — JSDoc Supported Types](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
 - *Exploring JavaScript* (ES2025) — Axel Rauschmayer
 - *Deep JavaScript* — Axel Rauschmayer
 - *JavaScript: The Definitive Guide* (7th ed.) — David Flanagan
