@@ -10,6 +10,7 @@ mkdir -p "$OUTPUT_DIR"
 #
 # --llm_service marker.services.claude.ClaudeService
 
+source .venv/bin/activate
 marker_single \
   --output_format markdown \
   --output_dir "$OUTPUT_DIR" \
@@ -21,5 +22,13 @@ marker_single \
 ./scripts/process-pdf.sh \
 sources-pdf/\[1905\]\ Munsell\ -\ Munsell\ color\ system.pdf \
 sources-md/munsell-colour-system/
+
+scripts/process-pdf.sh \
+  ~/Dropbox/Apps/Oxford\ University\ Press/\[2012]\ Gollin\ -\ The\ Oxford\ Handbook\ of\ Neo-Riemannian\ Music\ Theories.pdf \
+  sources-md/neo-riemannian-handbook/
+
+scripts/process-pdf.sh \
+  ~/Dropbox/Apps/Oxford\ University\ Press/\[2013]\ Caplin\ -\ Analyzing\ Classical\ Form\ -\ An\ Approach\ for\ the\ Classroom.pdf  \
+  sources-md/analyzing-classical-form/
 
 EXAMPLES
