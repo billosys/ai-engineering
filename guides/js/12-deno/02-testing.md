@@ -63,16 +63,21 @@ Deno.test({
   },
 });
 
-// Skip a test
+// Skip a test — options form
+Deno.test({ name: "flaky on CI", ignore: true, fn: () => { /* ... */ } });
+
+// Skip — static method form (verify availability in your Deno version)
 Deno.test.ignore("flaky on CI", () => { /* ... */ });
 
 // Focus during development (suite ALWAYS fails when any only is present)
-Deno.test.only("debugging this test", () => { /* ... */ });
+Deno.test({ name: "debugging this", only: true, fn: () => { /* ... */ } });
 ```
 
 **Key options**: `name`, `fn`, `permissions`, `ignore`, `only`, `sanitizeResources`, `sanitizeOps`, `sanitizeExit`.
 
-**Rationale**: The options form is required for permission-restricted tests and for controlling sanitizers. `Deno.test.only()` is a debugging aid — the suite intentionally fails when any `only` is active, preventing accidental commit of focused tests (Deno test runner docs).
+**Note**: The `{ ignore: true }` and `{ only: true }` options object form is supported in all Deno versions. The `Deno.test.ignore()` and `Deno.test.only()` static method forms were added later — verify availability in your Deno version. When in doubt, use the options form.
+
+**Rationale**: The options form is required for permission-restricted tests and for controlling sanitizers. `only: true` is a debugging aid — the suite intentionally fails when any `only` is active, preventing accidental commit of focused tests (Deno test runner docs).
 
 ---
 
@@ -160,13 +165,15 @@ Deno.test("leaks a file handle", async () => {
   // forgot file.close() — sanitizer flags this
 });
 
-// Good — explicit cleanup
+// Good — explicit cleanup with high-level API
 Deno.test("reads file cleanly", async () => {
   const file = await Deno.open("data.txt");
   try {
-    const content = await file.readable.getReader().read();
-    // ... assertions ...
+    // Read the entire file via the stream
+    const content = new TextDecoder().decode(await new Response(file.readable).arrayBuffer());
+    assertEquals(content.length > 0, true);
   } finally {
+    // file.readable consumption closes the resource, but explicit close is safe
     file.close();
   }
 });
@@ -352,7 +359,7 @@ Deno.test("callback is called", async () => {
 });
 ```
 
-**Rationale**: `unreachable()` throws unconditionally — it marks code paths that should be dead. `fail()` throws an `AssertionError` with a custom message. Both are cleaner than `throw new Error("should not reach here")` because they are semantic and searchable (Deno @std/assert docs).
+**Rationale**: `unreachable()` throws unconditionally — it marks code paths that should be dead. `fail()` throws an `AssertionError` with a custom message (note: `@std/assert` uses the spelling `AssertionError` — this is the library's actual class name). Both are cleaner than `throw new Error("should not reach here")` because they are semantic and searchable (Deno @std/assert docs).
 
 ---
 
@@ -532,7 +539,7 @@ Deno.test("process order", () => {
 });
 ```
 
-**Rationale**: Deno's native test API is explicit — no hidden lifecycle hooks. Setup is a function call; teardown is a `finally` block or `afterEach` (with BDD). This makes test execution predictable and debuggable. For teams that need `beforeEach`/`afterEach`, use `@std/testing/bdd` (ID-13) or `Deno.test.beforeEach()` (Deno test runner docs).
+**Rationale**: Deno's native test API is explicit — no hidden lifecycle hooks. Setup is a function call; teardown is a `finally` block or `afterEach` (with BDD). This makes test execution predictable and debuggable. For teams that need `beforeEach`/`afterEach`, use `@std/testing/bdd` (ID-13) (Deno test runner docs).
 
 ---
 
@@ -621,16 +628,11 @@ try {
 } finally {
   s.restore();
 }
-
-// Good — using declaration (auto-cleanup at block exit)
-{
-  using s = stub(Deno, "readTextFile", () => Promise.resolve("{}"));
-  const config = await loadConfig("./config.json");
-  assertEquals(config, {});
-} // s.restore() called automatically here
 ```
 
-**Rationale**: A stub on `fetch` or `Deno.readTextFile` that isn't restored will affect every subsequent test in the file. `try/finally` is deterministic. The `using` declaration (if supported in your Deno version) provides the same guarantee with less boilerplate (Deno @std/testing/mock docs).
+**Note on `using` declarations**: If `@std/testing/mock`'s stub return value implements `Symbol.dispose` (the TC39 Explicit Resource Management protocol), you can use `using s = stub(...)` for automatic cleanup at block exit. Verify this with your version of `@std/testing` before relying on it — if `Symbol.dispose` is not implemented, `using` will silently skip restoration, which is exactly the bug this entry warns against. When in doubt, use `try/finally`.
+
+**Rationale**: A stub on `fetch` or `Deno.readTextFile` that isn't restored will affect every subsequent test in the file. `try/finally` is deterministic and works in all versions (Deno @std/testing/mock docs).
 
 ---
 
@@ -648,13 +650,14 @@ Deno.test("AST output matches snapshot", async (t) => {
   await assertSnapshot(t, ast);
 });
 
-// First run: creates __snapshots__/parser_test.ts.snap
+// First run: creates __snapshots__/parser_test.js.snap (matches test file extension)
 // Subsequent runs: compares against stored snapshot
 ```
 
 ```sh
 # Update snapshots after intentional changes
-deno test --update
+deno test -- --update
+# Note: the -- separator passes --update to the test, not to deno test itself
 ```
 
 **Rationale**: Snapshots are useful for large, complex outputs (ASTs, rendered HTML, API response shapes) where writing manual assertions is impractical. The test context `t` is required — snapshot identity is tied to the test name. Store snapshot files in version control (Deno @std/testing/snapshot docs).
