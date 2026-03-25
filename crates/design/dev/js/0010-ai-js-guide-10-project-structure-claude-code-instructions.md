@@ -188,7 +188,10 @@ Each idiom entry has:
 
 End with:
 - Quick Reference Table
-- Related Guidelines (using correct guide slugs from the list above)
+- Related Guidelines — use the format introduced in Guide 09:
+  list specific ID numbers per guide so readers can navigate directly
+  (e.g., "See `02-api-design.md` for ID-06, 07, 08, 09 (module
+  interface design)"). This is more useful than vague cross-references.
 - External References
 
 ## Proposed idiom list
