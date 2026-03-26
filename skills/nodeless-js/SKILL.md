@@ -28,27 +28,29 @@ This project writes **plain JavaScript** (no TypeScript) targeting **Deno** with
 
 The inline content below is enough to write correct code. Load the full guide files when you need deeper rationale, edge cases, or comprehensive examples.
 
+Note: document paths are relative to the project root.
+
 | Task | Load These Documents |
 |------|---------------------|
-| **Any JS code** | `09-anti-patterns.md` (always load first) |
-| **New module from scratch** | `01-core-idioms.md`, `10-project-structure.md`, `02-api-design.md` |
-| **Implementing a new feature** | `01-core-idioms.md`, `06-functions-closures.md`, `09-anti-patterns.md` |
-| **API design** | `02-api-design.md`, `06-functions-closures.md`, `05-type-discipline.md` |
-| **Error handling** | `03-error-handling.md`, `07-async-concurrency.md` |
-| **Refactoring** | `09-anti-patterns.md`, `01-core-idioms.md`, `04-values-references.md` |
-| **Code review / quality audit** | `09-anti-patterns.md`, `01-core-idioms.md`, `08-performance.md` |
-| **Writing or improving tests** | `12-deno/12-02-testing.md`, `03-error-handling.md` |
-| **Debugging failing tests** | `12-deno/12-02-testing.md`, `03-error-handling.md`, `07-async-concurrency.md` |
-| **Performance review** | `08-performance.md`, `07-async-concurrency.md` |
-| **Documentation** | `11-documentation.md`, `05-type-discipline.md` |
-| **Dependency decisions** | `10-project-structure.md`, `12-deno/12-01-runtime-basics.md` |
-| **Task runner / deno.json** | `12-deno/12-03-task-runner.md` |
-| **Publishing to JSR** | `12-deno/12-04-publishing.md`, `11-documentation.md`, `05-type-discipline.md` |
-| **Converting Node/TS code** | `12-deno/12-01-runtime-basics.md`, `01-core-idioms.md`, `14-no-node-boundary.md` *(not yet written — see interim rules below)* |
-| **Async & concurrency** | `07-async-concurrency.md`, `03-error-handling.md` |
-| **Values, mutation, copying** | `04-values-references.md`, `01-core-idioms.md` |
-| **Type discipline / JSDoc** | `05-type-discipline.md`, `11-documentation.md` |
-| **Biome lint/format** | `13-biome/` *(not yet written — see interim rules below)* |
+| **Any JS code** | `guides/js/09-anti-patterns.md` (always load first) |
+| **New module from scratch** | `guides/js/01-core-idioms.md`, `guides/js/10-project-structure.md`, `guides/js/02-api-design.md` |
+| **Implementing a new feature** | `guides/js/01-core-idioms.md`, `guides/js/06-functions-closures.md`, `guides/js/09-anti-patterns.md` |
+| **API design** | `guides/js/02-api-design.md`, `guides/js/06-functions-closures.md`, `guides/js/05-type-discipline.md` |
+| **Error handling** | `guides/js/03-error-handling.md`, `guides/js/07-async-concurrency.md` |
+| **Refactoring** | `guides/js/09-anti-patterns.md`, `guides/js/01-core-idioms.md`, `guides/js/04-values-references.md` |
+| **Code review / quality audit** | `guides/js/09-anti-patterns.md`, `guides/js/01-core-idioms.md`, `guides/js/08-performance.md` |
+| **Writing or improving tests** | `guides/js/12-deno/12-02-testing.md`, `guides/js/03-error-handling.md` |
+| **Debugging failing tests** | `guides/js/12-deno/12-02-testing.md`, `guides/js/03-error-handling.md`, `guides/js/07-async-concurrency.md` |
+| **Performance review** | `guides/js/08-performance.md`, `guides/js/07-async-concurrency.md` |
+| **Documentation** | `guides/js/11-documentation.md`, `guides/js/05-type-discipline.md` |
+| **Dependency decisions** | `guides/js/10-project-structure.md`, `guides/js/12-deno/12-01-runtime-basics.md` |
+| **Task runner / deno.json** | `guides/js/12-deno/12-03-task-runner.md` |
+| **Publishing to JSR** | `guides/js/12-deno/12-04-publishing.md`, `guides/js/11-documentation.md`, `guides/js/05-type-discipline.md` |
+| **Converting Node/TS code** | `guides/js/12-deno/12-01-runtime-basics.md`, `guides/js/01-core-idioms.md`, `guides/js/14-no-node-boundary.md` *(not yet written — see interim rules below)* |
+| **Async & concurrency** | `guides/js/07-async-concurrency.md`, `guides/js/03-error-handling.md` |
+| **Values, mutation, copying** | `guides/js/04-values-references.md`, `guides/js/01-core-idioms.md` |
+| **Type discipline / JSDoc** | `guides/js/05-type-discipline.md`, `guides/js/11-documentation.md` |
+| **Biome lint/format** | `guides/js/13-biome/` *(not yet written — see interim rules below)* |
 
 ---
 
@@ -56,8 +58,8 @@ The inline content below is enough to write correct code. Load the full guide fi
 
 ### Writing New Code
 
-1. **Load anti-patterns first**: Read `09-anti-patterns.md` — know what to avoid before writing a line
-2. **Load core idioms**: Read `01-core-idioms.md` for declarations, naming, control flow
+1. **Load anti-patterns first**: Read `guides/js/09-anti-patterns.md` — know what to avoid before writing a line
+2. **Load core idioms**: Read `guides/js/01-core-idioms.md` for declarations, naming, control flow
 3. **Load topic-specific docs**: Based on what you're building (API design, async, etc.)
 4. **Structure the module**: `mod.js` entry point, flat-by-feature layout, named exports only
 5. **Write code**: Guard clauses at boundaries, `async`/`await`, `Error.cause`, JSDoc on exports
@@ -561,7 +563,7 @@ Current rule: no `package.json`, no `node_modules`, no `npm` scripts, no CommonJ
 
 ### Task: "Write a module that fetches and caches API responses"
 
-1. **Load**: `09-anti-patterns.md`, `01-core-idioms.md`, `07-async-concurrency.md`, `03-error-handling.md`
+1. **Load**: `guides/js/09-anti-patterns.md`, `guides/js/01-core-idioms.md`, `guides/js/07-async-concurrency.md`, `guides/js/03-error-handling.md`
 2. **Apply**:
    - Named exports, `function` declarations for public API
    - `async`/`await` with `AbortSignal` on all `fetch()` calls
@@ -573,7 +575,7 @@ Current rule: no `package.json`, no `node_modules`, no `npm` scripts, no CommonJ
 
 ### Task: "Design a config loader API"
 
-1. **Load**: `02-api-design.md`, `06-functions-closures.md`, `03-error-handling.md`, `05-type-discipline.md`
+1. **Load**: `guides/js/02-api-design.md`, `guides/js/06-functions-closures.md`, `guides/js/03-error-handling.md`, `guides/js/05-type-discipline.md`
 2. **Apply**:
    - `loadConfig(path)` returns parsed config or throws with `Error.cause` wrapping `SyntaxError`/`Deno.errors.NotFound`
    - Return `undefined` (not throw) if config file is optional and absent
@@ -583,7 +585,7 @@ Current rule: no `package.json`, no `node_modules`, no `npm` scripts, no CommonJ
 
 ### Task: "Add tests for an HTTP handler"
 
-1. **Load**: `12-deno/12-02-testing.md`, `03-error-handling.md`
+1. **Load**: `guides/js/12-deno/12-02-testing.md`, `guides/js/03-error-handling.md`
 2. **Apply**:
    - `Deno.test("handler returns 200 for valid request", async () => { ... })`
    - Construct `new Request("http://localhost/api/users")` directly — no server needed
@@ -594,7 +596,7 @@ Current rule: no `package.json`, no `node_modules`, no `npm` scripts, no CommonJ
 
 ### Task: "Refactor a Node.js module to project idioms"
 
-1. **Load**: `12-deno/12-01-runtime-basics.md`, `01-core-idioms.md`, `09-anti-patterns.md`
+1. **Load**: `guides/js/12-deno/12-01-runtime-basics.md`, `guides/js/01-core-idioms.md`, `guides/js/09-anti-patterns.md`
 2. **Apply**:
    - Replace `require()` → `import`, `module.exports` → `export`
    - Replace `__dirname` → `import.meta.dirname`, `process.env` → `Deno.env.get()`
@@ -606,7 +608,7 @@ Current rule: no `package.json`, no `node_modules`, no `npm` scripts, no CommonJ
 
 ### Task: "Set up a new Deno project from scratch"
 
-1. **Load**: `10-project-structure.md`, `12-deno/12-03-task-runner.md`, `01-core-idioms.md`
+1. **Load**: `guides/js/10-project-structure.md`, `guides/js/12-deno/12-03-task-runner.md`, `guides/js/01-core-idioms.md`
 2. **Apply**:
    - Create `deno.json` with `imports`, `tasks` (dev, test, check, lint, fmt, ci), `compilerOptions`
    - Create `biome.json` for lint/format
@@ -618,7 +620,7 @@ Current rule: no `package.json`, no `node_modules`, no `npm` scripts, no CommonJ
 
 ### Task: "Performance review of an async data pipeline"
 
-1. **Load**: `08-performance.md`, `07-async-concurrency.md`, `09-anti-patterns.md`
+1. **Load**: `guides/js/08-performance.md`, `guides/js/07-async-concurrency.md`, `guides/js/09-anti-patterns.md`
 2. **Apply**:
    - Check for sequential `await` on independent ops → convert to `Promise.all()`
    - Check for `.map(async fn)` without `Promise.all()` wrapping
