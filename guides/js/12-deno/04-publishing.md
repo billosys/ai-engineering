@@ -48,10 +48,12 @@ Target environment: **Deno**, **JSR** (not npm), **ESM-only**, **no TypeScript**
 - **Major** (`2.0.0`): Breaking changes to the public API
 - **Minor** (`1.3.0`): New features, backwards-compatible
 - **Patch** (`1.2.4`): Bug fixes, backwards-compatible
-- **`0.x.y`**: Unstable — breaking changes allowed at minor bumps
+- **`0.x.y`**: Unstable — breaking changes allowed at minor bumps (see ID-14)
 - **Pre-release**: `1.0.0-alpha.1`, `1.0.0-rc.1` for pre-release versions
 
-**Rationale**: Once published, a version is **immutable** — it cannot be changed, replaced, or deleted. If you publish a mistake, you must bump the version and publish again. Use `--dry-run` (ID-11) to catch issues before committing to a version number (JSR registry docs).
+Consumers depend on semver ranges (`^1.0.0`). Breaking the semver contract causes unexpected breakage for downstream users. The `@std` standard library tracks stability per-package — `1.0.0+` packages are stable; `0.x` packages are experimental.
+
+**Rationale**: Once published, a version is **immutable** — it cannot be changed, replaced, or deleted. If you publish a mistake, you must bump the version and publish again. Use `--dry-run` (ID-08) to catch issues before committing to a version number (JSR registry docs; Deno standard library docs).
 
 ---
 
@@ -276,7 +278,7 @@ export function parsePort(input) {
 }
 ```
 
-**What "slow types" means**: JSR needs to generate `.d.ts` type declarations for consumers. For TypeScript, this is automatic. For plain JS, JSR relies on JSDoc annotations to infer types. If an exported function lacks `@param`/`@returns`, the type cannot be fully resolved, and `deno publish` will flag it.
+**What "slow types" means**: JSR needs to generate `.d.ts` type declarations for consumers. Without explicit type annotations, JSR would have to run the full TypeScript compiler's type inference engine to figure out the types — which is slow (hence "slow types"). With explicit annotations (`@param`, `@returns` in JSDoc, or type annotations in TypeScript), JSR can extract types quickly ("fast types") without running inference. For plain JS, this means JSDoc annotations are mandatory on all exports. If an exported function lacks `@param`/`@returns`, the type cannot be fully resolved, and `deno publish` will flag it.
 
 **What to annotate**: Every exported function, class, constant, and type alias needs JSDoc type annotations. Internal (non-exported) code does not need annotations for JSR — but it may still benefit from them for `deno check`.
 
@@ -366,37 +368,7 @@ deno publish
 
 ---
 
-## ID-14: Semantic Versioning — The Standard Contract
-
-**Strength**: MUST
-
-**Summary**: Follow semver strictly. Breaking changes = major bump. New features = minor. Bug fixes = patch.
-
-```jsonc
-// 0.x — unstable, API may change
-{ "version": "0.3.0" }
-
-// 1.0.0 — first stable release
-{ "version": "1.0.0" }
-
-// 1.1.0 — new feature, backwards-compatible
-{ "version": "1.1.0" }
-
-// 2.0.0 — breaking change
-{ "version": "2.0.0" }
-
-// Pre-release
-{ "version": "1.0.0-alpha.1" }
-{ "version": "1.0.0-rc.1" }
-```
-
-**The `0.x` convention**: During early development, use `0.x.y`. Breaking changes at minor bumps are expected. Promote to `1.0.0` when the API is stable.
-
-**Rationale**: Consumers depend on semver ranges (`^1.0.0`). Breaking the semver contract causes unexpected breakage for downstream users. The `@std` standard library tracks stability per-package using the same convention — `1.0.0+` packages are stable; `0.x` packages are experimental (JSR registry docs; Deno standard library docs).
-
----
-
-## ID-15: `0.x.y` Versions — Breaking Changes at Minor Bumps
+## ID-14: `0.x.y` Versions — Breaking Changes at Minor Bumps
 
 **Strength**: SHOULD
 
@@ -412,7 +384,7 @@ deno publish
 
 ---
 
-## ID-16: Module-Level JSDoc for JSR Pages
+## ID-15: Module-Level JSDoc for JSR Pages
 
 **Strength**: SHOULD
 
@@ -438,11 +410,11 @@ export async function sha512(data) { /* ... */ }
 
 ---
 
-## ID-17: `@example` Blocks Render on JSR and Are Testable
+## ID-16: `@example` Blocks Render on JSR and Are Testable
 
 **Strength**: SHOULD
 
-**Summary**: JSDoc `@example` blocks with fenced code render as examples on JSR and can be verified with `deno test --doc`.
+**Summary**: JSDoc `@example` blocks with fenced code render as examples on JSR and can be verified with `deno test --doc`. The `@example` tag labels the block for JSR rendering; the fenced code block is what `deno test --doc` extracts and executes.
 
 ```js
 /**
@@ -474,50 +446,14 @@ deno test --doc crypto.js
 
 ---
 
-## ID-18: The Pre-Publish Checklist — A Concrete Pipeline
+## ID-17: The Pre-Publish Pipeline — Checklist as a Task
 
 **Strength**: SHOULD
 
-**Summary**: Run this pipeline before every publish. Define it as a `deno task`.
+**Summary**: Define a `publish` task that runs the full quality pipeline before publishing. One command, checks always run.
 
 ```jsonc
 // deno.json
-{
-  "tasks": {
-    "prepublish": "biome ci && deno check **/*.js && deno test --allow-all --doc && deno publish --dry-run",
-    "publish": "deno task prepublish && deno publish"
-  }
-}
-```
-
-**The pipeline, step by step**:
-
-| Step | Command | What it catches |
-|------|---------|----------------|
-| 1. Lint + fmt | `biome ci` | Style violations, lint errors |
-| 2. Type-check | `deno check **/*.js` | Type errors in JSDoc annotations |
-| 3. Test + doc-test | `deno test --allow-all --doc` | Broken tests, stale examples |
-| 4. Dry-run | `deno publish --dry-run` | Missing exports, slow types, metadata issues |
-| 5. Publish | `deno publish` | Upload to JSR |
-
-```sh
-# Run the full pipeline
-deno task publish
-```
-
-**Rationale**: Each step catches a different class of issue. `biome ci` catches formatting/lint. `deno check` catches type errors. `deno test --doc` catches stale examples. `--dry-run` catches JSR-specific issues (missing types on exports, bad metadata). The pipeline uses `&&` so it stops at the first failure — no point type-checking if lint fails.
-
-**See also**: `12-deno/03-task-runner.md` ID-07, ID-19
-
----
-
-## ID-19: A `publish` Task in `deno.json`
-
-**Strength**: SHOULD
-
-**Summary**: Define a `publish` task that runs the full pre-publish pipeline and publishes in one command.
-
-```jsonc
 {
   "tasks": {
     "prepublish": "biome ci && deno check **/*.js && deno test --allow-all --doc && deno publish --dry-run",
@@ -531,13 +467,25 @@ deno task publish
 deno task publish
 ```
 
-**Rationale**: Making `publish` a task ensures the pre-publish checks always run — nobody can accidentally skip them by running `deno publish` directly. The task is the single source of truth for the release process.
+**The pipeline, step by step**:
 
-**See also**: `12-deno/03-task-runner.md` ID-01, ID-18
+| Step | Command | What it catches |
+|------|---------|----------------|
+| 1. Lint + fmt | `biome ci` | Style violations, lint errors |
+| 2. Type-check | `deno check **/*.js` | Type errors in JSDoc annotations |
+| 3. Test + doc-test | `deno test --allow-all --doc` | Broken tests, stale examples |
+| 4. Dry-run | `deno publish --dry-run` | Missing exports, slow types, metadata issues |
+| 5. Publish | `deno publish` | Upload to JSR |
+
+**Why a task, not manual steps**: Making `publish` a task ensures the pre-publish checks always run — nobody can accidentally skip them by running `deno publish` directly. The pipeline uses `&&` so it stops at the first failure. Each step catches a different class of issue.
+
+**Rationale**: `biome ci` catches formatting/lint. `deno check` catches type errors. `deno test --doc` catches stale examples. `--dry-run` catches JSR-specific issues (missing types on exports, bad metadata). The task is the single source of truth for the release process.
+
+**See also**: `12-deno/03-task-runner.md` ID-07, ID-19
 
 ---
 
-## ID-20: Workspace Publishing — Members Publish Independently
+## ID-18: Workspace Publishing — Members Publish Independently
 
 **Strength**: CONSIDER
 
@@ -580,7 +528,7 @@ deno publish --cwd packages/core
 
 ---
 
-## ID-21: `license` Field
+## ID-19: `license` Field
 
 **Strength**: SHOULD
 
@@ -606,7 +554,7 @@ deno publish --cwd packages/core
 | ID | Pattern | Strength | Key Insight |
 |----|---------|----------|-------------|
 | 01 | `name` — scoped identifier | MUST | `@scope/package` format required |
-| 02 | `version` — semver | MUST | Immutable once published |
+| 02 | `version` — semver | MUST | Immutable once published; full semver contract |
 | 03 | `exports` — public API map | MUST | Only exported paths are importable |
 | 04 | `exports` enforces boundary | SHOULD | Internal files are truly private |
 | 05 | Subpath exports | SHOULD | Multi-entrypoint packages |
@@ -618,14 +566,12 @@ deno publish --cwd packages/core
 | 11 | JSDoc → JSR docs | SHOULD | Auto-generated; write for the registry |
 | 12 | Create scope first | MUST | All JSR packages are scoped |
 | 13 | Immutable versions | SHOULD | Can't fix in place; must bump version |
-| 14 | Semver contract | MUST | Breaking = major; features = minor; fixes = patch |
-| 15 | `0.x.y` for unstable | SHOULD | Breaking changes at minor bumps allowed |
-| 16 | Module-level `@module` JSDoc | SHOULD | Becomes module overview on JSR |
-| 17 | `@example` blocks | SHOULD | Render on JSR + testable with `--doc` |
-| 18 | Pre-publish checklist | SHOULD | lint → typecheck → test → dry-run → publish |
-| 19 | `publish` task | SHOULD | One command; checks always run |
-| 20 | Workspace publishing | CONSIDER | Members publish independently |
-| 21 | `license` field | SHOULD | Displayed on JSR; SPDX identifier |
+| 14 | `0.x.y` for unstable | SHOULD | Breaking changes at minor bumps allowed |
+| 15 | Module-level `@module` JSDoc | SHOULD | Becomes module overview on JSR |
+| 16 | `@example` blocks | SHOULD | Render on JSR + testable with `--doc` |
+| 17 | Pre-publish pipeline as task | SHOULD | lint → typecheck → test → dry-run → publish |
+| 18 | Workspace publishing | CONSIDER | Members publish independently |
+| 19 | `license` field | SHOULD | Displayed on JSR; SPDX identifier |
 
 ### Publishing Quick Reference
 
