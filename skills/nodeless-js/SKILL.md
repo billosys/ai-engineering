@@ -28,7 +28,7 @@ This project writes **plain JavaScript** (no TypeScript) targeting **Deno** with
 
 The inline content below is enough to write correct code. Load the full guide files when you need deeper rationale, edge cases, or comprehensive examples.
 
-Note: document paths are relative to the project root.
+Note: document paths in this skill are relative to the project root. (The project root directory is `ai-design` and this `SKILL.md` file is in `ai-design/skills/nodeless-js`, with the guides it points to being in `ai-design/guides/js`.)
 
 | Task | Load These Documents |
 |------|---------------------|
