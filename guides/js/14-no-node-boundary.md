@@ -18,9 +18,11 @@ const { readFile } = require("fs");
 const utils = require("./utils");
 
 // Deno (use instead)
-import { readFile } from "node:fs/promises";  // if compat needed
 const text = await Deno.readTextFile("./data.txt");  // preferred
 import { transform } from "./utils.js";  // extension required
+
+// Compat only (when migrating incrementally):
+import { readFile } from "node:fs/promises";
 ```
 
 **Why not Node.js**: `require()` is synchronous, runtime-evaluated, prevents tree shaking, and is not available in ESM. Deno uses ESM exclusively.
@@ -207,14 +209,27 @@ biome.json    # lint + format in one file
 **Summary**: TypeScript/JSDoc compiler options go in `deno.json`, not a separate `tsconfig.json`.
 
 ```jsonc
-// Deno (use instead)
+// Node.js (avoid) — tsconfig.json
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "checkJs": true
+  }
+}
+
+// Deno (use instead) — deno.json
 {
   "compilerOptions": {
     "checkJs": true,
     "strict": true
+    // target and module are handled by the Deno runtime — no need to specify
   }
 }
 ```
+
+**Key mappings**: `strict`, `checkJs`, `lib`, `jsx`, `jsxImportSource` transfer directly. `target`, `module`, `moduleResolution`, and `outDir` are not needed — Deno handles these at runtime.
 
 **See also**: `12-deno/01-runtime-basics.md` ID-15
 
@@ -230,9 +245,11 @@ biome.json    # lint + format in one file
 // Node.js (avoid)
 const port = process.env.PORT || 3000;
 
-// Deno (use instead)
+// Deno (use instead) — also uses ?? instead of || to preserve 0 as valid
 const port = Number(Deno.env.get("PORT") ?? "8080");
 ```
+
+**Two improvements in one**: The Deno version replaces `process.env` with `Deno.env.get()` AND replaces `||` with `??` to preserve falsy-but-valid values like `0`. See `01-core-idioms.md` ID-03.
 
 **Requires**: `--allow-env` (or `--allow-env=PORT` for granular access).
 
@@ -475,27 +492,25 @@ Deno.test("adds correctly", () => { assertEquals(1 + 2, 3); });
 
 ---
 
-## ID-22: No ESLint — Use Biome
+## ID-22: No ESLint / No Prettier — Use Biome
 
 **Strength**: MUST-AVOID
 
-**Summary**: Biome replaces ESLint with a faster, unified lint + format tool.
+**Summary**: Biome replaces both ESLint and Prettier with a single tool — faster, unified, one config.
 
-**See also**: `13-biome/01-setup.md` ID-01, ID-02
+```sh
+# Node.js (avoid)
+eslint --fix src/ && prettier --write src/    # two tools, two configs, two passes
 
----
+# Deno (use instead)
+biome check --write                           # one tool, one config, one pass
+```
 
-## ID-23: No Prettier — Use Biome
-
-**Strength**: MUST-AVOID
-
-**Summary**: Biome replaces Prettier with 97%+ output compatibility and significantly faster execution.
-
-**See also**: `13-biome/01-setup.md` ID-01, `13-biome/03-formatting.md` ID-12
+**See also**: `13-biome/01-setup.md` ID-01, ID-02, `13-biome/03-formatting.md` ID-12
 
 ---
 
-## ID-24: No `npx` — Use `deno run` with Specifiers
+## ID-23: No `npx` — Use `deno run` with Specifiers
 
 **Strength**: SHOULD-AVOID
 
@@ -513,7 +528,7 @@ deno run -A npm:create-vite@latest
 
 ---
 
-## ID-25: `npm:` Specifier — The Acceptable Escape Hatch
+## ID-24: `npm:` Specifier — The Acceptable Escape Hatch
 
 **Strength**: CONSIDER-AVOIDING
 
@@ -536,7 +551,7 @@ import { assertEquals } from "jsr:@std/assert@^1.0.0";
 
 ---
 
-## ID-26: `node:` Specifier — Available but Not Preferred
+## ID-25: `node:` Specifier — Available but Not Preferred
 
 **Strength**: CONSIDER-AVOIDING
 
@@ -560,7 +575,7 @@ const url = new URL("./data.txt", import.meta.url);
 
 ---
 
-## ID-27: `nodeModulesDir` — Last Resort for Compat
+## ID-26: `nodeModulesDir` — Last Resort for Compat
 
 **Strength**: CONSIDER-AVOIDING
 
@@ -608,12 +623,11 @@ const url = new URL("./data.txt", import.meta.url);
 | 19 | Error-first callbacks | MUST-AVOID | `async`/`await` |
 | 20 | `process.nextTick` | SHOULD-AVOID | `queueMicrotask()` |
 | 21 | Jest/Mocha/Vitest | MUST-AVOID | `Deno.test()` + `@std/assert` |
-| 22 | ESLint | MUST-AVOID | Biome |
-| 23 | Prettier | MUST-AVOID | Biome |
-| 24 | `npx` | SHOULD-AVOID | `deno run npm:tool` |
-| 25 | `npm:` (when JSR exists) | CONSIDER-AVOIDING | `jsr:` specifiers |
-| 26 | `node:` built-ins | CONSIDER-AVOIDING | Deno/Web APIs |
-| 27 | `nodeModulesDir` | CONSIDER-AVOIDING | Global cache (default) |
+| 22 | ESLint + Prettier | MUST-AVOID | Biome (`biome check --write`) |
+| 23 | `npx` | SHOULD-AVOID | `deno run npm:tool` |
+| 24 | `npm:` (when JSR exists) | CONSIDER-AVOIDING | `jsr:` specifiers |
+| 25 | `node:` built-ins | CONSIDER-AVOIDING | Deno/Web APIs |
+| 26 | `nodeModulesDir` | CONSIDER-AVOIDING | Global cache (default) |
 
 ### Comprehensive Node.js → Deno Replacement Table
 
@@ -628,7 +642,7 @@ const url = new URL("./data.txt", import.meta.url);
 | | `node_modules` | Global cache | 12-01 ID-23 |
 | | `npm install` | `deno add` | 12-03 ID-01 |
 | | `npm run` | `deno task` | 12-03 ID-01 |
-| | `npx tool` | `deno run npm:tool` | — |
+| | `npx tool` | `deno run npm:tool` | 12-03 ID-11 |
 | **Globals** | `process.env.X` | `Deno.env.get("X")` | 12-01 ID-08 |
 | | `process.argv.slice(2)` | `Deno.args` | 12-01 ID-09 |
 | | `process.exit(n)` | `Deno.exit(n)` | 12-01 ID-09 |
@@ -646,7 +660,7 @@ const url = new URL("./data.txt", import.meta.url);
 | **Streams** | Node `Readable`/`Writable` | `ReadableStream`/`WritableStream` | 07 ID-27 |
 | | Node `Transform` | `TransformStream` | 07 ID-28 |
 | | `.pipe()` | `.pipeThrough()`/`.pipeTo()` | 07 ID-28 |
-| **Events** | `EventEmitter` | `EventTarget` + `CustomEvent` | — |
+| **Events** | `EventEmitter` | `EventTarget` + `CustomEvent` | 12-01 ID-11 |
 | | `process.nextTick` | `queueMicrotask()` | 07 ID-04 |
 | **Patterns** | Error-first callbacks | `async`/`await` | 07 ID-09 |
 | | `callback(err, result)` | `try { await fn() }` | 03 ID-14 |
