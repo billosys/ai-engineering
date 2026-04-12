@@ -73,7 +73,7 @@ Target environment: **Deno** + **Biome**, **ESM-only**, **no TypeScript** (plain
 }
 ```
 
-**Rationale**: Nursery rules require explicit opt-in on stable releases (they are enabled by default only on nightly builds). Many type-aware and domain-specific rules (e.g., `noFloatingPromises`, `useExhaustiveSwitchCases`) are currently in nursery. Expect breaking changes when upgrading Biome (Biome nursery rules docs).
+**Rationale**: Nursery rules require explicit opt-in on stable releases (they are enabled by default only on nightly builds). Many type-aware and domain-specific rules (e.g., `noFloatingPromises`, `useExhaustiveSwitchCases`) are currently in nursery. Expect breaking changes when upgrading Biome. See ID-09 for enabling types-domain nursery rules specifically (Biome nursery rules docs).
 
 ---
 
@@ -114,7 +114,7 @@ Target environment: **Deno** + **Biome**, **ESM-only**, **no TypeScript** (plain
           "level": "warn",               // long form: severity + options
           "fix": "safe"
         },
-        "noNonNullAssertion": "off"      // disable this rule
+        "noUselessElse": "off"           // disable this rule (example)
       },
       "correctness": {
         "noUnusedVariables": {
@@ -220,7 +220,7 @@ Individual rule config overrides group config.
 {
   "linter": {
     "domains": {
-      "types": "all"    // "recommended" activates nothing (all rules are nursery)
+      "types": "all"    // currently most types-domain rules are nursery; use "all" to enable them
     }
   }
 }
@@ -349,13 +349,15 @@ import { unused } from "./utils.js"; // biome: lint/correctness/noUnusedImports
 | Rule | Group | What it catches | Guide reference |
 |------|-------|----------------|-----------------|
 | `noShadowRestrictedNames` | `suspicious` | Shadowing `undefined`, `NaN`, `Infinity`, etc. | 09 ID-12 |
-| `useArraySortCompare` | `nursery` | `.sort()` without comparator (lexicographic trap) | 09 ID-17 |
+| `useArraySortCompare` | `nursery`* | `.sort()` without comparator (lexicographic trap) | 09 ID-17 |
 | `noDebugger` | `suspicious` | `debugger` statements left in code | — |
 | `useIsNan` | `correctness` | `x === NaN` (always false) vs `Number.isNaN()` | 05 ID-11 |
 | `noCompareNegZero` | `correctness` | `x === -0` vs `Object.is()` | 05 ID-12 |
 | `useValidTypeof` | `correctness` | `typeof x === "undefined"` typos | 05 ID-01 |
 | `noConsole` | `suspicious` | `console.log` left in production code | — |
 | `useNamingConvention` | `style` | Enforces camelCase/PascalCase/UPPER_CASE | 01 ID-12 |
+
+*`useArraySortCompare` may have graduated from nursery in recent Biome versions — verify with `biome lint --list-rules` or the [Biome rules page](https://biomejs.dev/linter/rules/). If it's now in a stable group, no nursery opt-in is needed.
 
 **Configuration example**:
 ```jsonc
@@ -391,7 +393,7 @@ biome check --write
 # In editor: source.fixAll.biome applies safe fixes on save
 ```
 
-**Examples of safe fixes**: Removing unused imports, replacing `==` with `===`, replacing `var` with `const`/`let`, removing `debugger` statements, adding missing semicolons.
+**Examples of safe fixes**: Removing unused imports, replacing `==` with `===`, removing `debugger` statements, adding missing semicolons. Note: `var` → `const`/`let` conversion is classified as safe because Biome only applies it when it can verify that the TDZ behavior change won't affect the code (the `var` was never accessed before its declaration).
 
 **Rationale**: Safe fixes can be applied automatically in CI and on save without human review. They never change what the program does — only how it looks or how it avoids obvious bugs (Biome safe fixes docs).
 
@@ -538,7 +540,7 @@ export function log(msg) {
     "enabled": true,
     "actions": {
       "source": {
-        "useSortedKeys": "on"     // sort object keys
+        "useSortedKeys": "on"     // sort object literal keys (JS) and JSON keys
       }
     }
   }
@@ -632,7 +634,7 @@ export function log(msg) {
 - **Type Discipline**: See `05-type-discipline.md` for discriminated unions (ID-24–25), `deno check` (ID-20) — connects to types domain
 - **Anti-Patterns**: See `09-anti-patterns.md` for `==` (ID-01), `var` (ID-28), shadowing (ID-12), `.sort()` (ID-17) — patterns Biome catches
 - **Documentation**: See `11-documentation.md` for "comments explain why" (ID-01) — connects to mandatory suppression reasons
-- **Biome Setup**: See `13-biome/13-01-setup.md` for installation (ID-04), `biome.json` (ID-06), CLI commands (ID-10–14)
+- **Biome Setup**: See `13-biome/01-setup.md` for installation (ID-04), `biome.json` (ID-06), CLI commands (ID-10–14)
 - **Biome Formatting**: See `13-biome/03-formatting.md` for formatter options, Prettier compat
 
 ---
