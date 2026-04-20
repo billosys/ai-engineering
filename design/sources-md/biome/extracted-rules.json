@@ -1,0 +1,3173 @@
+{
+  "total": 394,
+  "categories": {
+    "performance": [
+      {
+        "name": "noAccumulatingSpread",
+        "category": "performance",
+        "description": "Disallow the use of spread (...) syntax on accumulators.",
+        "recommended": true,
+        "invalid": "var a = ['a', 'b', 'c'];\na.reduce((acc, val) => [...acc, val], []);",
+        "valid": "var a = ['a', 'b', 'c'];\na.reduce((acc, val) => {acc.push(val); return acc}, []);"
+      },
+      {
+        "name": "noAwaitInLoops",
+        "category": "performance",
+        "description": "Disallow await inside loops.",
+        "recommended": false,
+        "invalid": "async function invalid() {\n    for (const thing of things) {\n        const result = await asyncWork();\n    }\n}",
+        "valid": "async function valid() {\n    await Promise.all(things.map((thing) => asyncWork(thing)))\n}"
+      },
+      {
+        "name": "noBarrelFile",
+        "category": "performance",
+        "description": "Disallow the use of barrel file.",
+        "recommended": false,
+        "invalid": "export * from \"foo\";\nexport * from \"bar\";",
+        "valid": "export type * from \"foo\";\nexport type { foo } from \"foo\";"
+      },
+      {
+        "name": "noDelete",
+        "category": "performance",
+        "description": "Disallow the use of the delete operator.",
+        "recommended": false,
+        "invalid": "const arr = [1, 2, 3];\ndelete arr[0];",
+        "valid": "const foo = new Set([1,2,3]);\nfoo.delete(1);"
+      },
+      {
+        "name": "noDynamicNamespaceImportAccess",
+        "category": "performance",
+        "description": "Disallow accessing namespace imports dynamically.",
+        "recommended": true,
+        "invalid": "import * as foo from \"foo\"\nfoo[\"bar\"]",
+        "valid": "import * as foo from \"foo\"\nfoo.bar"
+      },
+      {
+        "name": "noImgElement",
+        "category": "performance",
+        "description": "Prevent usage of <img> element in a Next.js project.",
+        "recommended": true,
+        "invalid": "<img alt=\"Foo\" />",
+        "valid": "<img />"
+      },
+      {
+        "name": "noNamespaceImport",
+        "category": "performance",
+        "description": "Disallow the use of namespace imports.",
+        "recommended": false,
+        "invalid": "import * as foo from \"foo\";",
+        "valid": "import { foo } from \"foo\"\nimport type { bar } from \"bar\"\nimport type * as baz from \"baz\""
+      },
+      {
+        "name": "noReExportAll",
+        "category": "performance",
+        "description": "Avoid re-export all.",
+        "recommended": false,
+        "invalid": "export * from \"foo\";",
+        "valid": "export { foo } from \"foo\";"
+      },
+      {
+        "name": "noUnwantedPolyfillio",
+        "category": "performance",
+        "description": "Prevent duplicate polyfills from Polyfill.io.",
+        "recommended": true,
+        "invalid": "<script src='https://polyfill.io/v3/polyfill.min.js?features=AbortController,Object.fromEntries'></script>",
+        "valid": "<>\n  <script src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=AbortController'></script>\n  <script src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=IntersectionObserver'></script>\n  <Script src='https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=IntersectionObserver' />\n  <Script src='https://polyfill-fastly.io/v3/polyfill.min.js?features=IntersectionObserver' />\n</>"
+      },
+      {
+        "name": "useGoogleFontPreconnect",
+        "category": "performance",
+        "description": "Ensure the preconnect attribute is used when using Google Fonts.",
+        "recommended": true,
+        "invalid": "<link href=\"https://fonts.gstatic.com\"/>",
+        "valid": "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\"/>"
+      },
+      {
+        "name": "useSolidForComponent",
+        "category": "performance",
+        "description": "Enforce using Solid's <For /> component for mapping an array to JSX elements.",
+        "recommended": false,
+        "invalid": "let Component = (props) => <ol>{props.data.map(d => <li>{d.text}</li>)}</ol>;",
+        "valid": "let Component = (props) => <ol><For each={props.data}>{d => <li>{d.text}</li>}</For></ol>;"
+      },
+      {
+        "name": "useTopLevelRegex",
+        "category": "performance",
+        "description": "Require regex literals to be declared at the top level.",
+        "recommended": false,
+        "invalid": "function foo(someString) {\n    return /[a-Z]*/.test(someString)\n}",
+        "valid": "const REGEX = /[a-Z]*/;\n\nfunction foo(someString) {\n    return REGEX.test(someString)\n}"
+      }
+    ],
+    "complexity": [
+      {
+        "name": "noAdjacentSpacesInRegex",
+        "category": "complexity",
+        "description": "Disallow unclear usage of consecutive space characters in regular expression literals",
+        "recommended": true,
+        "invalid": "/   /",
+        "valid": "/foo {2}bar/"
+      },
+      {
+        "name": "noArguments",
+        "category": "complexity",
+        "description": "Disallow the use of arguments.",
+        "recommended": true,
+        "invalid": "function f() {\n   console.log(arguments);\n}",
+        "valid": ""
+      },
+      {
+        "name": "noBannedTypes",
+        "category": "complexity",
+        "description": "Disallow primitive type aliases and misleading types.",
+        "recommended": true,
+        "invalid": "let foo: String = \"bar\";",
+        "valid": "const foo: string = \"bar\";"
+      },
+      {
+        "name": "noCommaOperator",
+        "category": "complexity",
+        "description": "Disallow comma operator.",
+        "recommended": true,
+        "invalid": "const foo = (doSomething(), 0);",
+        "valid": "for(a = 0, b = 0; (a + b) < 10; a++, b += 2) {}"
+      },
+      {
+        "name": "noEmptyTypeParameters",
+        "category": "complexity",
+        "description": "Disallow empty type parameters in type aliases and interfaces.",
+        "recommended": true,
+        "invalid": "interface Foo<> {}",
+        "valid": "interface Foo {}"
+      },
+      {
+        "name": "noExcessiveLinesPerFunction",
+        "category": "complexity",
+        "description": "Restrict the number of lines of code in a function.",
+        "recommended": false,
+        "invalid": "function foo () {\n  const x = 0;\n  const y = 1;\n  const z = 2;\n  return x + y + z;\n};",
+        "valid": "function foo () {\n    const x = 0;\n    const y = 1;\n};"
+      },
+      {
+        "name": "noExcessiveNestedTestSuites",
+        "category": "complexity",
+        "description": "This rule enforces a maximum depth to nested describe() in test files.",
+        "recommended": false,
+        "invalid": "describe('foo', () => {\n  describe('bar', () => {\n    describe('baz', () => {\n      describe('qux', () => {\n        describe('quxx', () => {\n          describe('too many', () => {\n            it('should get something', () => {\n              expect(getSomething()).toBe('Something');\n            });\n          });\n        });\n      });\n    });\n  });\n});",
+        "valid": "describe('foo', () => {\n  describe('bar', () => {\n    it('should get something', () => {\n      expect(getSomething()).toBe('Something');\n    });\n  });\n  describe('qux', () => {\n    it('should get something', () => {\n      expect(getSomething()).toBe('Something');\n    });\n  });\n});"
+      },
+      {
+        "name": "noExtraBooleanCast",
+        "category": "complexity",
+        "description": "Disallow unnecessary boolean casts",
+        "recommended": true,
+        "invalid": "if (!Boolean(foo)) {\n}",
+        "valid": "Boolean(!x);\n!x;\n!!x;"
+      },
+      {
+        "name": "noFlatMapIdentity",
+        "category": "complexity",
+        "description": "Disallow to use unnecessary callback on flatMap.",
+        "recommended": true,
+        "invalid": "array.flatMap((arr) => arr);",
+        "valid": "array.flatMap((arr) => arr * 2);"
+      },
+      {
+        "name": "noForEach",
+        "category": "complexity",
+        "description": "Prefer for...of statement instead of Array.forEach.",
+        "recommended": false,
+        "invalid": "els.forEach((el) => {\n  f(el);\n})",
+        "valid": "els.forEach((el, i) => {\n  f(el, i)\n})"
+      },
+      {
+        "name": "noImplicitCoercions",
+        "category": "complexity",
+        "description": "Disallow shorthand type conversions.",
+        "recommended": false,
+        "invalid": "!!foo;",
+        "valid": "Boolean(foo);"
+      },
+      {
+        "name": "noStaticOnlyClass",
+        "category": "complexity",
+        "description": "This rule reports when a class has no non-static members, such as for a class used exclusively as a static namespace.",
+        "recommended": true,
+        "invalid": "class X {\n  static foo = false;\n  static bar() {};\n}",
+        "valid": "const X = {\n  foo: false,\n  bar() {}\n};"
+      },
+      {
+        "name": "noThisInStatic",
+        "category": "complexity",
+        "description": "Disallow this and super in static contexts.",
+        "recommended": true,
+        "invalid": "class A {\n    static CONSTANT = 0;\n\n    static foo() {\n        this.CONSTANT;\n    }\n }",
+        "valid": "class B extends A {\n    static ANOTHER_CONSTANT = A.CONSTANT + 1;\n\n    static foo() {\n        A.CONSTANT;\n        B.ANOTHER_CONSTANT;\n    }\n\n    bar() {\n        this.property;\n    }\n}"
+      },
+      {
+        "name": "noUselessCatchBinding",
+        "category": "complexity",
+        "description": "Disallow unused catch bindings.",
+        "recommended": false,
+        "invalid": "try {\n    // Do something\n} catch (unused) {}",
+        "valid": "try {\n    // Do something\n} catch (used) {\n    console.error(used);\n}"
+      },
+      {
+        "name": "noUselessCatch",
+        "category": "complexity",
+        "description": "Disallow unnecessary catch clauses.",
+        "recommended": true,
+        "invalid": "try {\n    doSomething();\n} catch(e) {\n    throw e;\n}",
+        "valid": "try {\n    doSomething();\n} catch(e) {\n    doSomethingWhenCatch();\n    throw e;\n}"
+      },
+      {
+        "name": "noUselessConstructor",
+        "category": "complexity",
+        "description": "Disallow unnecessary constructors.",
+        "recommended": true,
+        "invalid": "class A {\n    constructor (a) {}\n}",
+        "valid": "class A {\n    constructor (prop) {\n        this.prop = prop;\n    }\n}"
+      },
+      {
+        "name": "noUselessContinue",
+        "category": "complexity",
+        "description": "Avoid using unnecessary continue.",
+        "recommended": true,
+        "invalid": "loop: for (let i = 0; i < 5; i++) {\n  continue loop;\n}",
+        "valid": "while (i) {\n  if (i > 5) {\n    continue;\n  }\n  console.log(i);\n  i--;\n}\n\nloop: while (1) {\n  forLoop: for (let i = 0; i < 5; i++) {\n    if (someCondition) {\n      continue loop;\n    }\n  }\n}"
+      },
+      {
+        "name": "noUselessEmptyExport",
+        "category": "complexity",
+        "description": "Disallow empty exports that don't change anything in a module file.",
+        "recommended": true,
+        "invalid": "import { A } from \"module\";\nexport {};",
+        "valid": "export {};"
+      },
+      {
+        "name": "noUselessEscapeInRegex",
+        "category": "complexity",
+        "description": "Disallow unnecessary escape sequence in regular expression literals.",
+        "recommended": true,
+        "invalid": "/\\a/;",
+        "valid": "/\\^\\d\\b/"
+      },
+      {
+        "name": "noUselessFragments",
+        "category": "complexity",
+        "description": "Disallow unnecessary fragments",
+        "recommended": true,
+        "invalid": "<>\n    <>foo</>\n    <SomeComponent />\n</>",
+        "valid": "<>\nfoo\n</>"
+      },
+      {
+        "name": "noUselessLabel",
+        "category": "complexity",
+        "description": "Disallow unnecessary labels.",
+        "recommended": true,
+        "invalid": "loop: while(a) {\n    break loop;\n}",
+        "valid": "outer: while(a) {\n    while(b) {\n        break outer;\n    }\n}"
+      },
+      {
+        "name": "noUselessLoneBlockStatements",
+        "category": "complexity",
+        "description": "Disallow unnecessary nested block statements.",
+        "recommended": true,
+        "invalid": "{}",
+        "valid": "while (foo) {\n  bar();\n}"
+      },
+      {
+        "name": "noUselessRename",
+        "category": "complexity",
+        "description": "Disallow renaming import, export, and destructured assignments to the same name.",
+        "recommended": true,
+        "invalid": "import { foo as foo } from \"bar\";",
+        "valid": "import { foo as bar } from \"baz\";"
+      },
+      {
+        "name": "noUselessStringConcat",
+        "category": "complexity",
+        "description": "Disallow unnecessary concatenation of string or template literals.",
+        "recommended": false,
+        "invalid": "const a = \"a\" + \"b\";",
+        "valid": "const a = 1 + 1;"
+      },
+      {
+        "name": "noUselessStringRaw",
+        "category": "complexity",
+        "description": "Disallow unnecessary String.raw function in template string literals without any escape sequence.",
+        "recommended": true,
+        "invalid": "String.raw`a`;",
+        "valid": "String.raw`\\n ${a}`;"
+      },
+      {
+        "name": "noUselessSwitchCase",
+        "category": "complexity",
+        "description": "Disallow useless case in switch statements.",
+        "recommended": true,
+        "invalid": "switch (foo) {\n    case 0:\n    default:\n        break;\n    case 1:\n        break;\n}",
+        "valid": "switch (foo) {\n    case 0:\n        break;\n    default:\n        break;\n}"
+      },
+      {
+        "name": "noUselessTernary",
+        "category": "complexity",
+        "description": "Disallow ternary operators when simpler alternatives exist.",
+        "recommended": true,
+        "invalid": "var a = x ? true : true;",
+        "valid": "var a = x === 2 ? 'Yes' : 'No';"
+      },
+      {
+        "name": "noUselessThisAlias",
+        "category": "complexity",
+        "description": "Disallow useless this aliasing.",
+        "recommended": true,
+        "invalid": "class A {\n    method() {\n        const self = this;\n        return () => {\n            return self;\n        }\n    }\n}",
+        "valid": "class A {\n    method() {\n        const self = this;\n        return function() {\n            this.g();\n            return self;\n        }\n    }\n}"
+      },
+      {
+        "name": "noUselessTypeConstraint",
+        "category": "complexity",
+        "description": "Disallow using any or unknown as type constraint.",
+        "recommended": true,
+        "invalid": "interface FooAny<T extends any> {}",
+        "valid": "interface Foo<T> {}\n\ntype Bar<T> = {};"
+      },
+      {
+        "name": "noUselessUndefinedInitialization",
+        "category": "complexity",
+        "description": "Disallow initializing variables to undefined.",
+        "recommended": true,
+        "invalid": "var a = undefined;",
+        "valid": "var a = 1;"
+      },
+      {
+        "name": "noUselessUndefined",
+        "category": "complexity",
+        "description": "Disallow the use of useless undefined.",
+        "recommended": false,
+        "invalid": "let foo = undefined;",
+        "valid": "let foo;\nconst {foo} = bar;\nfunction foo() {\n  return;\n}\nfunction* foo() {\n  yield;\n}\nfunction foo(bar) {}\nfunction foo({bar}) {}\nfoo();"
+      },
+      {
+        "name": "useArrowFunction",
+        "category": "complexity",
+        "description": "Use arrow functions over function expressions.",
+        "recommended": true,
+        "invalid": "const z = function() {\n    return 0;\n}",
+        "valid": "const f = function() {\n    return this.prop;\n}"
+      },
+      {
+        "name": "useDateNow",
+        "category": "complexity",
+        "description": "Use Date.now() to get the number of milliseconds since the Unix Epoch.",
+        "recommended": true,
+        "invalid": "const foo = new Date().getTime();",
+        "valid": "const foo = Date.now();"
+      },
+      {
+        "name": "useFlatMap",
+        "category": "complexity",
+        "description": "Promotes the use of .flatMap() when map().flat() are used together.",
+        "recommended": true,
+        "invalid": "const array = [\"split\", \"the text\", \"into words\"];\narray.map(sentence => sentence.split(' ')).flat();",
+        "valid": "const array = [\"split\", \"the text\", \"into words\"];\narray.map(sentence => sentence.split(' ')).flat(2);"
+      },
+      {
+        "name": "useIndexOf",
+        "category": "complexity",
+        "description": "Prefer Array#{indexOf,lastIndexOf}() over Array#{findIndex,findLastIndex}() when looking for the index of an item.",
+        "recommended": true,
+        "invalid": "const index = foo.findIndex(x => x === 'foo');",
+        "valid": "const index = foo.indexOf('foo');"
+      },
+      {
+        "name": "useLiteralKeys",
+        "category": "complexity",
+        "description": "Enforce the usage of a literal access to properties over computed property access.",
+        "recommended": true,
+        "invalid": "a.b[\"c\"];",
+        "valid": "a[\"c\" + \"d\"];\na[d.c];"
+      },
+      {
+        "name": "useMaxParams",
+        "category": "complexity",
+        "description": "Enforce a maximum number of parameters in function definitions.",
+        "recommended": false,
+        "invalid": "function foo(a, b, c, d, e, f, g, h) {\n    // too many parameters\n}",
+        "valid": "function foo(a, b, c) {\n    // within limit\n}"
+      },
+      {
+        "name": "useNumericLiterals",
+        "category": "complexity",
+        "description": "Disallow parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals",
+        "recommended": true,
+        "invalid": "parseInt(\"111110111\", 2);",
+        "valid": "parseInt(1);\nparseInt(1, 3);\nNumber.parseInt(1);\nNumber.parseInt(1, 3);\n\n0b111110111 === 503;\n0o767 === 503;\n0x1F7 === 503;\n\na[parseInt](1,2);\n\nparseInt(foo);\nparseInt(foo, 2);\nNumber.parseInt(foo);\nNumber.parseInt(foo, 2);"
+      },
+      {
+        "name": "useOptionalChain",
+        "category": "complexity",
+        "description": "Enforce using concise optional chain instead of chained logical expressions.",
+        "recommended": true,
+        "invalid": "foo && foo.bar && foo.bar.baz && foo.bar.baz.buzz",
+        "valid": "foo && bar;"
+      },
+      {
+        "name": "useRegexLiterals",
+        "category": "complexity",
+        "description": "Enforce the use of the regular expression literals instead of the RegExp constructor if possible.",
+        "recommended": true,
+        "invalid": "new RegExp(\"abc\", \"u\");",
+        "valid": "/abc/u;\n\nnew RegExp(\"abc\", flags);"
+      },
+      {
+        "name": "useSimpleNumberKeys",
+        "category": "complexity",
+        "description": "Disallow number literal object member names which are not base 10 or use underscore as separator.",
+        "recommended": true,
+        "invalid": "({ 0x1: 1 });",
+        "valid": "({ 0: \"zero\" });\n({ 122: \"integer\" });\n({ 1.22: \"floating point\" });\n({ 3.1e12: \"floating point with e\" });"
+      },
+      {
+        "name": "useSimplifiedLogicExpression",
+        "category": "complexity",
+        "description": "Discard redundant terms from logical expressions.",
+        "recommended": false,
+        "invalid": "const boolExp = true;\nconst r = true && boolExp;",
+        "valid": "const boolExpr3 = true;\nconst boolExpr4 = false;\nconst r5 = !(boolExpr1 && boolExpr2);\nconst boolExpr5 = true;\nconst boolExpr6 = false;"
+      },
+      {
+        "name": "useWhile",
+        "category": "complexity",
+        "description": "Enforce the use of while loops instead of for loops when the initializer and update expressions are not needed.",
+        "recommended": false,
+        "invalid": "for (; x.running;) {\n    x.step();\n}",
+        "valid": "for (let x = 0; x < 10; i++) {}"
+      }
+    ],
+    "suspicious": [
+      {
+        "name": "noAlert",
+        "category": "suspicious",
+        "description": "Disallow the use of alert, confirm, and prompt.",
+        "recommended": false,
+        "invalid": "alert(\"here!\");",
+        "valid": "customAlert(\"Something happened!\");"
+      },
+      {
+        "name": "noApproximativeNumericConstant",
+        "category": "suspicious",
+        "description": "Use standard constants instead of approximated literals.",
+        "recommended": true,
+        "invalid": "let x = 3.141;",
+        "valid": "let x = Math.PI;\nlet y = 3.14;"
+      },
+      {
+        "name": "noArrayIndexKey",
+        "category": "suspicious",
+        "description": "Discourage the usage of Array index in keys.",
+        "recommended": true,
+        "invalid": "something.forEach((Element, index) => {\n    <Component key={index} >foo</Component>\n});",
+        "valid": "something.forEach((item) => {\n    <Component key={item.id} >foo</Component>\n});"
+      },
+      {
+        "name": "noAssignInExpressions",
+        "category": "suspicious",
+        "description": "Disallow assignments in expressions.",
+        "recommended": true,
+        "invalid": "let a, b;\na = (b = 1) + 1;",
+        "valid": "let a;\na = 1;"
+      },
+      {
+        "name": "noAsyncPromiseExecutor",
+        "category": "suspicious",
+        "description": "Disallows using an async function as a Promise executor.",
+        "recommended": true,
+        "invalid": "new Promise(async function foo(resolve, reject) {})",
+        "valid": "new Promise((resolve, reject) => {})\n  new Promise((resolve, reject) => {}, async function unrelated() {})\n  new Foo(async (resolve, reject) => {})\n  new Foo((( (resolve, reject) => {} )))"
+      },
+      {
+        "name": "noBitwiseOperators",
+        "category": "suspicious",
+        "description": "Disallow bitwise operators.",
+        "recommended": false,
+        "invalid": "let x = y | z;",
+        "valid": "let x = y || z;"
+      },
+      {
+        "name": "noCatchAssign",
+        "category": "suspicious",
+        "description": "Disallow reassigning exceptions in catch clauses.",
+        "recommended": true,
+        "invalid": "try {\n\n} catch (e) {\n  e;\n  e = 10;\n}",
+        "valid": "try {\n\n} catch (e) {\n  let e = 10;\n  e = 100;\n}"
+      },
+      {
+        "name": "noClassAssign",
+        "category": "suspicious",
+        "description": "Disallow reassigning class members.",
+        "recommended": true,
+        "invalid": "class A {}\nA = 0;",
+        "valid": "let A = class A {}\nA = 0; // A is a variable."
+      },
+      {
+        "name": "noCommentText",
+        "category": "suspicious",
+        "description": "Prevent comments from being inserted as text nodes",
+        "recommended": true,
+        "invalid": "<div>// comment</div>;",
+        "valid": "<>\n   <div>{/* comment */}</div>;\n   <div>{/** comment */}</div>;\n   <div className={\"cls\" /* comment */}></div>;\n   <div>text {/* comment */}</div>;\n   <div>{/* comment */} text</div>;\n</>"
+      },
+      {
+        "name": "noCompareNegZero",
+        "category": "suspicious",
+        "description": "Disallow comparing against -0",
+        "recommended": true,
+        "invalid": "(1 >= -0)",
+        "valid": "(1 >= 0)"
+      },
+      {
+        "name": "noConfusingLabels",
+        "category": "suspicious",
+        "description": "Disallow labeled statements that are not loops.",
+        "recommended": true,
+        "invalid": "label: f();",
+        "valid": "outer: while (a) {\n    while(b) {\n        break outer;\n    }\n}"
+      },
+      {
+        "name": "noConfusingVoidType",
+        "category": "suspicious",
+        "description": "Disallow void type outside of generic or return types.",
+        "recommended": true,
+        "invalid": "let foo: void;",
+        "valid": "function foo(): void {};"
+      },
+      {
+        "name": "noConstEnum",
+        "category": "suspicious",
+        "description": "Disallow TypeScript const enum",
+        "recommended": true,
+        "invalid": "const enum Status {\n  Open,\n  Close,\n}",
+        "valid": "enum Status {\n  Open,\n  Close,\n}"
+      },
+      {
+        "name": "noConstantBinaryExpressions",
+        "category": "suspicious",
+        "description": "Disallow expressions where the operation doesn't affect the value",
+        "recommended": false,
+        "invalid": "const value1 = +x == null;",
+        "valid": "const value1 = x == null;"
+      },
+      {
+        "name": "noControlCharactersInRegex",
+        "category": "suspicious",
+        "description": "Prevents from having control characters and some escape sequences that match control characters in regular expression literals.",
+        "recommended": true,
+        "invalid": "var pattern1 = /\\x00/;",
+        "valid": "var pattern1 = /\\x20/;\nvar pattern2 = /\\u0020/;\nvar pattern3 = /\\u{20}/u;\nvar pattern4 = /\\t/;\nvar pattern5 = /\\n/;"
+      },
+      {
+        "name": "noDebugger",
+        "category": "suspicious",
+        "description": "Disallow the use of debugger",
+        "recommended": true,
+        "invalid": "debugger;",
+        "valid": "const test = { debugger: 1 };\ntest.debugger;"
+      },
+      {
+        "name": "noDocumentCookie",
+        "category": "suspicious",
+        "description": "Disallow direct assignments to document.cookie.",
+        "recommended": true,
+        "invalid": "document.cookie = \"foo=bar\";",
+        "valid": "const array = document.cookie.split(\"; \");"
+      },
+      {
+        "name": "noDocumentImportInPage",
+        "category": "suspicious",
+        "description": "Prevents importing next/document outside of pages/_document.jsx in Next.js projects.",
+        "recommended": true,
+        "invalid": "",
+        "valid": "import { Document, Html } from 'next/document'\n\nexport default class MyDocument extends Document {\n  render() {\n    return (\n      <Html lang=\"en\">\n        {/* */}\n      </Html>\n    )\n  }\n}"
+      },
+      {
+        "name": "noDoubleEquals",
+        "category": "suspicious",
+        "description": "Require the use of === and !==.",
+        "recommended": true,
+        "invalid": "foo == bar",
+        "valid": "foo == null"
+      },
+      {
+        "name": "noDuplicateAtImportRules",
+        "category": "suspicious",
+        "description": "Disallow duplicate @import rules.",
+        "recommended": true,
+        "invalid": "@import 'a.css';\n@import 'a.css';",
+        "valid": "@import 'a.css';\n@import 'b.css';"
+      },
+      {
+        "name": "noDuplicateCase",
+        "category": "suspicious",
+        "description": "Disallow duplicate case labels.",
+        "recommended": true,
+        "invalid": "switch (a) {\n    case 1:\n        break;\n    case 1:\n        break;\n    default:\n        break;\n}",
+        "valid": "switch (a) {\n    case 1:\n        break;\n    case 2:\n        break;\n    default:\n        break;\n}"
+      },
+      {
+        "name": "noDuplicateClassMembers",
+        "category": "suspicious",
+        "description": "Disallow duplicate class members.",
+        "recommended": true,
+        "invalid": "class Foo {\n  bar() { }\n  bar() { }\n}",
+        "valid": "class Foo {\n  bar() { }\n  qux() { }\n}"
+      },
+      {
+        "name": "noDuplicateCustomProperties",
+        "category": "suspicious",
+        "description": "Disallow duplicate custom properties within declaration blocks.",
+        "recommended": true,
+        "invalid": "a { --custom-property: pink; --custom-property: orange;  }",
+        "valid": "a { --custom-property: pink; }"
+      },
+      {
+        "name": "noDuplicateElseIf",
+        "category": "suspicious",
+        "description": "Disallow duplicate conditions in if-else-if chains",
+        "recommended": true,
+        "invalid": "if (a) {\n    foo();\n} else if (b) {\n    bar();\n} else if (b) {\n    baz();\n}",
+        "valid": "if (a) {\n    foo();\n} else if (b) {\n    bar();\n} else if (c) {\n    baz();\n}"
+      },
+      {
+        "name": "noDuplicateFields",
+        "category": "suspicious",
+        "description": "No duplicated fields in GraphQL operations.",
+        "recommended": true,
+        "invalid": "query {\n  users {\n    id\n    name\n    email\n    name\n  }\n}",
+        "valid": "query {\n  users {\n    id\n    name\n    email\n  }\n}"
+      },
+      {
+        "name": "noDuplicateFontNames",
+        "category": "suspicious",
+        "description": "Disallow duplicate names within font families.",
+        "recommended": true,
+        "invalid": "a { font-family: \"Lucida Grande\", 'Arial', sans-serif, sans-serif; }",
+        "valid": "a { font-family: \"Lucida Grande\", \"Arial\", sans-serif; }\nb { font: normal 14px/32px -apple-system, BlinkMacSystemFont, sans-serif; }\nc { font-family: SF Mono, Liberation Mono, sans-serif; }\nd { font: 1em SF Mono, Liberation Mono, sans-serif; }"
+      },
+      {
+        "name": "noDuplicateJsxProps",
+        "category": "suspicious",
+        "description": "Prevents JSX properties to be assigned multiple times.",
+        "recommended": true,
+        "invalid": "<Hello name=\"John\" name=\"John\" />",
+        "valid": "<Hello firstname=\"John\" lastname=\"Doe\" />"
+      },
+      {
+        "name": "noDuplicateParameters",
+        "category": "suspicious",
+        "description": "Disallow duplicate function parameter name.",
+        "recommended": true,
+        "invalid": "var f = function(a, b, b) {}",
+        "valid": "function i(i, b, c) {}\nvar j = function (j, b, c) {};\nfunction k({ k, b }, { c, d }) {}\nfunction l([, l]) {}\nfunction foo([[a, b], [c, d]]) {}"
+      },
+      {
+        "name": "noDuplicateProperties",
+        "category": "suspicious",
+        "description": "Disallow duplicate properties within declaration blocks.",
+        "recommended": true,
+        "invalid": "a {\n  color: pink;\n  color: orange;\n}",
+        "valid": "a {\n  color: pink;\n  background: orange;\n}"
+      },
+      {
+        "name": "noDuplicateSelectorsKeyframeBlock",
+        "category": "suspicious",
+        "description": "Disallow duplicate selectors within keyframe blocks.",
+        "recommended": true,
+        "invalid": "@keyframes foo { from {} from {} }",
+        "valid": "@keyframes foo { 0% {} 100% {} }"
+      },
+      {
+        "name": "noDuplicateTestHooks",
+        "category": "suspicious",
+        "description": "A describe block should not contain duplicate hooks.",
+        "recommended": true,
+        "invalid": "describe('foo', () => {\n  beforeEach(() => {\n    // some setup\n  });\n  beforeEach(() => {\n    // some setup\n  });\n  test('foo_test', () => {\n   // some test\n  });\n});",
+        "valid": "describe('foo', () => {\n  beforeEach(() => {\n    // some setup\n  });\n  test('foo_test', () => {\n    // some test\n  });\n});"
+      },
+      {
+        "name": "noEmptyBlockStatements",
+        "category": "suspicious",
+        "description": "Disallow empty block statements and static blocks.",
+        "recommended": false,
+        "invalid": "function emptyFunctionBody () {}",
+        "valid": "function foo () {\n    doSomething();\n}"
+      },
+      {
+        "name": "noEmptyBlock",
+        "category": "suspicious",
+        "description": "Disallow CSS empty blocks.",
+        "recommended": true,
+        "invalid": "p {}",
+        "valid": "p {\n  color: red;\n}"
+      },
+      {
+        "name": "noEmptyInterface",
+        "category": "suspicious",
+        "description": "Disallow the declaration of empty interfaces.",
+        "recommended": true,
+        "invalid": "interface A {}",
+        "valid": "interface A {\n  prop: string;\n}\n\n// Allow empty interfaces that extend a type.\ninterface B extends A {}\n\n// Allow empty interfaces in ambient modules\ndeclare module \"mod\" {\n  interface C {}\n}"
+      },
+      {
+        "name": "noEmptySource",
+        "category": "suspicious",
+        "description": "Disallow empty sources.",
+        "recommended": false,
+        "invalid": "",
+        "valid": "query Member {}"
+      },
+      {
+        "name": "noEvolvingTypes",
+        "category": "suspicious",
+        "description": "Disallow variables from evolving into any type through reassignments.",
+        "recommended": false,
+        "invalid": "let a;",
+        "valid": "let a: number;\nlet b = 1;\nvar c : string;\nvar d = \"abn\";\nconst e: never[] = [];\nconst f = [null];\nconst g = ['1'];\nconst h = [1];\nlet workspace: Workspace | null = null;"
+      },
+      {
+        "name": "noExplicitAny",
+        "category": "suspicious",
+        "description": "Disallow the any type usage.",
+        "recommended": true,
+        "invalid": "let variable: any = 1;",
+        "valid": "let variable: number = 1;\nlet variable2 = 1;"
+      },
+      {
+        "name": "noExportsInTest",
+        "category": "suspicious",
+        "description": "Disallow using export or module.exports in files containing tests",
+        "recommended": true,
+        "invalid": "export function myHelper() {}\ndescribe('a test', () => {\n    expect(1).toBe(1);\n});",
+        "valid": "function myHelper() {}\ndescribe('a test', () => {\n    expect(1).toBe(1);\n});"
+      },
+      {
+        "name": "noExtraNonNullAssertion",
+        "category": "suspicious",
+        "description": "Prevents the wrong usage of the non-null assertion operator (!) in TypeScript files.",
+        "recommended": true,
+        "invalid": "const bar = foo!!.bar;",
+        "valid": "const bar = foo!.bar;\n\nobj?.string!.trim();\n\nfunction fn(key: string | null) {\n  const obj = {};\n  return obj?.[key!];\n}"
+      },
+      {
+        "name": "noFallthroughSwitchClause",
+        "category": "suspicious",
+        "description": "Disallow fallthrough of switch clauses.",
+        "recommended": true,
+        "invalid": "switch (bar) {\n\tcase 0:\n\t\ta();\n\tcase 1:\n\t\tb();\n}",
+        "valid": "switch (foo) {\n\tcase 1:\n    case 2:\n\t\tdoSomething();\n\t\tbreak;\n    case 3: {\n        if (cond) {\n            break;\n        } else {\n            break;\n        }\n    }\n\tcase 4:\n\t\tdoSomething();\n}"
+      },
+      {
+        "name": "noFocusedTests",
+        "category": "suspicious",
+        "description": "Disallow focused tests.",
+        "recommended": true,
+        "invalid": "describe.only(\"foo\", () => {});",
+        "valid": "test(\"foo\", () => {});"
+      },
+      {
+        "name": "noFunctionAssign",
+        "category": "suspicious",
+        "description": "Disallow reassigning function declarations.",
+        "recommended": true,
+        "invalid": "function foo() { };\nfoo = bar;",
+        "valid": "function foo() {\n    var foo = bar;\n }"
+      },
+      {
+        "name": "noGlobalAssign",
+        "category": "suspicious",
+        "description": "Disallow assignments to native objects and read-only global variables.",
+        "recommended": true,
+        "invalid": "Object = null;",
+        "valid": "a = 0;"
+      },
+      {
+        "name": "noGlobalIsFinite",
+        "category": "suspicious",
+        "description": "Use Number.isFinite instead of global isFinite.",
+        "recommended": true,
+        "invalid": "isFinite(false); // true",
+        "valid": "Number.isFinite(false); // false"
+      },
+      {
+        "name": "noGlobalIsNan",
+        "category": "suspicious",
+        "description": "Use Number.isNaN instead of global isNaN.",
+        "recommended": true,
+        "invalid": "isNaN({}); // true",
+        "valid": "Number.isNaN({}); // false"
+      },
+      {
+        "name": "noHeadImportInDocument",
+        "category": "suspicious",
+        "description": "Prevent using the next/head module in pages/_document.js on Next.js projects.",
+        "recommended": true,
+        "invalid": "",
+        "valid": "// pages/_document.js\nimport Document, { Html, Head, Main, NextScript } from \"next/document\";\n\nclass MyDocument extends Document {\n  static async getInitialProps(ctx) {\n    //...\n  }\n\n  render() {\n    return (\n      <Html>\n        <Head></Head>\n      </Html>\n    );\n  }\n}\n\nexport default MyDocument;"
+      },
+      {
+        "name": "noImplicitAnyLet",
+        "category": "suspicious",
+        "description": "Disallow use of implicit any type on variable declarations.",
+        "recommended": true,
+        "invalid": "var a;\na = 2;",
+        "valid": "var a = 1;\nlet a:number;\nvar b: number\nvar b =10;"
+      },
+      {
+        "name": "noImportantInKeyframe",
+        "category": "suspicious",
+        "description": "Disallow invalid !important within keyframe declarations",
+        "recommended": true,
+        "invalid": "@keyframes foo {\n    from {\n      opacity: 0;\n    }\n    to {\n      opacity: 1 !important;\n    }\n}",
+        "valid": "@keyframes foo {\n    from {\n      opacity: 0;\n    }\n    to {\n      opacity: 1;\n    }\n}"
+      },
+      {
+        "name": "noIrregularWhitespace",
+        "category": "suspicious",
+        "description": "Disallows the use of irregular whitespace characters.",
+        "recommended": true,
+        "invalid": "let\u000bcount;",
+        "valid": "const count = 1;"
+      },
+      {
+        "name": "noLabelVar",
+        "category": "suspicious",
+        "description": "Disallow labels that share a name with a variable",
+        "recommended": true,
+        "invalid": "const x1 = \"test\";\nx1: expr;",
+        "valid": "const x = \"test\";\nz: expr;"
+      },
+      {
+        "name": "noMisleadingCharacterClass",
+        "category": "suspicious",
+        "description": "Disallow characters made with multiple code points in character class syntax.",
+        "recommended": true,
+        "invalid": "/^[A\u0301]$/u;",
+        "valid": "/^[abc]$/;\n/^[\ud83d\udc4d]$/u;\n/^[\\q{\ud83d\udc76\ud83c\udffb}]$/v;"
+      },
+      {
+        "name": "noMisleadingInstantiator",
+        "category": "suspicious",
+        "description": "Enforce proper usage of new and constructor.",
+        "recommended": true,
+        "invalid": "interface I {\n  new (): I;\n  constructor(): void;\n}",
+        "valid": "declare class C {\n  constructor();\n}\n\ninterface I {\n  new (): C;\n}"
+      },
+      {
+        "name": "noMisplacedAssertion",
+        "category": "suspicious",
+        "description": "Checks that the assertion function, for example expect, is placed inside an it() function call.",
+        "recommended": false,
+        "invalid": "describe(\"describe\", () => {\n    expect()\n})",
+        "valid": "import assert from \"node:assert\";\ndescribe(\"describe\", () => {\n    it(\"it\", () => {\n        assert.equal()\n    })\n})"
+      },
+      {
+        "name": "noMisrefactoredShorthandAssign",
+        "category": "suspicious",
+        "description": "Disallow shorthand assign when variable appears on both sides.",
+        "recommended": true,
+        "invalid": "a += a + b",
+        "valid": "a += b"
+      },
+      {
+        "name": "noNonNullAssertedOptionalChain",
+        "category": "suspicious",
+        "description": "Disallow non-null assertions after optional chaining expressions.",
+        "recommended": true,
+        "invalid": "obj?.prop!;",
+        "valid": "obj?.prop;"
+      },
+      {
+        "name": "noOctalEscape",
+        "category": "suspicious",
+        "description": "Disallow octal escape sequences in string literals",
+        "recommended": true,
+        "invalid": "const foo = \"Copyright \\251\";",
+        "valid": "const foo = \"Copyright \\u00A9\"; // unicode escape\nconst bar = \"Copyright \\xA9\"; // hexadecimal escape"
+      },
+      {
+        "name": "noPrototypeBuiltins",
+        "category": "suspicious",
+        "description": "Disallow direct use of Object.prototype builtins.",
+        "recommended": true,
+        "invalid": "var invalid = foo.hasOwnProperty(\"bar\");",
+        "valid": "var valid = Object.hasOwn(foo, \"bar\");\nvar valid = Object.prototype.isPrototypeOf.call(foo, bar);\nvar valid = {}.propertyIsEnumerable.call(foo, \"bar\");"
+      },
+      {
+        "name": "noReactForwardRef",
+        "category": "suspicious",
+        "description": "Replaces usages of forwardRef with passing ref as a prop.",
+        "recommended": false,
+        "invalid": "import { forwardRef } from \"react\";\n\nconst MyInput = forwardRef(function MyInput(props, ref) {\n  return <input ref={ref} {...props} />;\n});",
+        "valid": "function MyInput({ ref, ...props }) {\n  return <input ref={ref} {...props} />;\n}"
+      },
+      {
+        "name": "noReactSpecificProps",
+        "category": "suspicious",
+        "description": "Prevents React-specific JSX properties from being used.",
+        "recommended": true,
+        "invalid": "<Hello className=\"John\" />",
+        "valid": "<Hello class=\"Doe\" />"
+      },
+      {
+        "name": "noRedeclare",
+        "category": "suspicious",
+        "description": "Disallow variable, function, class, and type redeclarations in the same scope.",
+        "recommended": true,
+        "invalid": "var a = 3;\nvar a = 10;",
+        "valid": "var a = 3;\na = 10;"
+      },
+      {
+        "name": "noShorthandPropertyOverrides",
+        "category": "suspicious",
+        "description": "Disallow shorthand properties that override related longhand properties.",
+        "recommended": true,
+        "invalid": "a { padding-left: 10px; padding: 20px; }",
+        "valid": "a { padding: 10px; padding-left: 20px; }"
+      },
+      {
+        "name": "noSparseArray",
+        "category": "suspicious",
+        "description": "Prevents the use of sparse arrays (arrays with holes).",
+        "recommended": true,
+        "invalid": "[1,,2]",
+        "valid": "[1, undefined, 2]"
+      },
+      {
+        "name": "noSuspiciousSemicolonInJsx",
+        "category": "suspicious",
+        "description": "It detects possible \"wrong\" semicolons inside JSX elements.",
+        "recommended": true,
+        "invalid": "const Component = () => {\n  return (\n    <div>\n      <div />;\n    </div>\n );\n}",
+        "valid": "const Component = () => {\n  return (\n    <div>\n      <div />\n      ;\n    </div>\n  );\n}\nconst Component2 = () => {\n  return (\n    <div>\n      <span>;</span>\n    </div>\n  );\n}"
+      },
+      {
+        "name": "noTemplateCurlyInString",
+        "category": "suspicious",
+        "description": "Disallow template literal placeholder syntax in regular strings.",
+        "recommended": true,
+        "invalid": "const a = \"Hello ${name}!\";",
+        "valid": "const a = `Hello ${name}!`;\nconst a = `Time: ${12 * 60 * 60 * 1000}`;\n\nconst a = templateFunction`Hello ${name}`;"
+      },
+      {
+        "name": "noThenProperty",
+        "category": "suspicious",
+        "description": "Disallow then property.",
+        "recommended": true,
+        "invalid": "export {then};",
+        "valid": "export {then as success};"
+      },
+      {
+        "name": "noTsIgnore",
+        "category": "suspicious",
+        "description": "Prevents the use of the TypeScript directive @ts-ignore.",
+        "recommended": true,
+        "invalid": "// @ts-ignore\nlet foo;",
+        "valid": "// @ts-expect-error\nlet foo;"
+      },
+      {
+        "name": "noUnassignedVariables",
+        "category": "suspicious",
+        "description": "Disallow let or var variables that are read but never assigned.",
+        "recommended": false,
+        "invalid": "let status;\nif (status === 'ready') {\n    console.log('Status is ready');\n}",
+        "valid": "let message = \"hello\";\nconsole.log(message);\n\nlet user;\nuser = getUser();\nconsole.log(user.name);\n\nlet count;\ncount = 0;\ncount++;"
+      },
+      {
+        "name": "noUnknownAtRules",
+        "category": "suspicious",
+        "description": "Disallow unknown at-rules.",
+        "recommended": true,
+        "invalid": "@uNkNoWn {}",
+        "valid": "@charset 'UTF-8';"
+      },
+      {
+        "name": "noUnsafeDeclarationMerging",
+        "category": "suspicious",
+        "description": "Disallow unsafe declaration merging between interfaces and classes.",
+        "recommended": true,
+        "invalid": "interface Foo {\n    f(): void\n}\n\nclass Foo {}\n\nconst foo = new Foo();\nfoo.f(); // Runtime Error: Cannot read properties of undefined.",
+        "valid": "interface Foo {}\nclass Bar implements Foo {}"
+      },
+      {
+        "name": "noUnsafeNegation",
+        "category": "suspicious",
+        "description": "Disallow using unsafe negation.",
+        "recommended": true,
+        "invalid": "!1 in [1,2];",
+        "valid": "-1 in [1,2];\n~1 in [1,2];\ntypeof 1 in [1,2];\nvoid 1 in [1,2];\ndelete 1 in [1,2];\n+1 instanceof [1,2];"
+      },
+      {
+        "name": "noUnusedExpressions",
+        "category": "suspicious",
+        "description": "Disallow expression statements that are neither a function call nor an assignment.",
+        "recommended": false,
+        "invalid": "0",
+        "valid": "{} // In this context, this is a block statement, not an object literal\n\n{ myLabel: foo() } // In this context, this is a block statement with a label and expression, not an object literal\n\nfunction namedFunctionDeclaration () {}\n\n(function aGenuineIIFE () {}());\n\nf()\n\na = 0\n\nnew C\n\ndelete a.b\n\nvoid a"
+      },
+      {
+        "name": "noUselessEscapeInString",
+        "category": "suspicious",
+        "description": "Disallow unnecessary escapes in string literals.",
+        "recommended": true,
+        "invalid": "a::after {\n  content: \"\\z\"\n}",
+        "valid": "a::after {\n  content: \"\\\"\"\n}"
+      },
+      {
+        "name": "noUselessRegexBackrefs",
+        "category": "suspicious",
+        "description": "Disallow useless backreferences in regular expression literals that always match an empty string.",
+        "recommended": true,
+        "invalid": "/(a)|b\\1/;",
+        "valid": "/(a)\\1/;"
+      },
+      {
+        "name": "noVar",
+        "category": "suspicious",
+        "description": "Disallow the use of var",
+        "recommended": false,
+        "invalid": "var foo = 1;",
+        "valid": "const foo = 1;\nlet bar = 1;"
+      },
+      {
+        "name": "useAdjacentOverloadSignatures",
+        "category": "suspicious",
+        "description": "Disallow the use of overload signatures that are not next to each other.",
+        "recommended": true,
+        "invalid": "type Foo = {\n  foo_type(s: string): void;\n  foo_type(n: number): void;\n  bar_type(): void;\n  foo_type(sn: string | number): void;\n};",
+        "valid": "declare namespace Foo {\n  export function foo_declare(s: string): void;\n  export function foo_declare(n: number): void;\n  export function foo_declare(sn: string | number): void;\n  export function bar_declare(): void;\n}"
+      },
+      {
+        "name": "useAwait",
+        "category": "suspicious",
+        "description": "Ensure async functions utilize await.",
+        "recommended": false,
+        "invalid": "async function fetchData() {\n// Missing `await` for the promise returned by `fetch`\n  return fetch('/data');\n}",
+        "valid": "async function fetchData() {\n  const response = await fetch('/data');\n  const data = await response.json();\n  return data;\n}\n\n// This rule does not warn about non-async functions\nfunction processData() {\n  return compute(data);\n}\n\n// Nor does it warn about empty `async` functions\nasync function noop() { }\n\n// Async generators that use `yield*` with an async iterable\nasync function* delegateToAsyncIterable() {\n  yield* otherAsyncIterable();\n}"
+      },
+      {
+        "name": "useDefaultSwitchClauseLast",
+        "category": "suspicious",
+        "description": "Enforce default clauses in switch statements to be last",
+        "recommended": true,
+        "invalid": "switch (foo) {\n    default:\n        break;\n    case 0:\n        break;\n}",
+        "valid": "switch (foo) {\n    case 0:\n        break;\n    case 1:\n    default:\n        break;\n}"
+      },
+      {
+        "name": "useDeprecatedDate",
+        "category": "suspicious",
+        "description": "Require the @deprecated directive to specify a deletion date.",
+        "recommended": false,
+        "invalid": "query {\n  member @deprecated(reason: \"Use `members` instead\") {\n    id\n  }\n}",
+        "valid": "query {\n  member @deprecated(reason: \"Use `members` instead\", deletionDate: \"2099-12-25\") {\n    id\n  }\n}"
+      },
+      {
+        "name": "useErrorMessage",
+        "category": "suspicious",
+        "description": "Enforce passing a message value when creating a built-in error.",
+        "recommended": false,
+        "invalid": "throw Error();",
+        "valid": "throw Error('Unexpected property.');"
+      },
+      {
+        "name": "useGetterReturn",
+        "category": "suspicious",
+        "description": "Enforce get methods to always return a value.",
+        "recommended": true,
+        "invalid": "class Person {\n    get firstName() {}\n}",
+        "valid": "class Person {\n    get firstName() {\n        return this.fullname.split(\" \")[0];\n    }\n}"
+      },
+      {
+        "name": "useGoogleFontDisplay",
+        "category": "suspicious",
+        "description": "Enforces the use of a recommended display strategy with Google Fonts.",
+        "recommended": true,
+        "invalid": "<link href=\"https://fonts.googleapis.com/css2?family=Krona+One\" />",
+        "valid": "<link href=\"https://fonts.googleapis.com/css2?family=Krona+One&display=optional\" rel=\"stylesheet\" />"
+      },
+      {
+        "name": "useGuardForIn",
+        "category": "suspicious",
+        "description": "Require for-in loops to include an if statement.",
+        "recommended": false,
+        "invalid": "for (key in foo) {\n  doSomething(key);\n}",
+        "valid": "for (key in foo) {\n  if (Object.hasOwn(foo, key)) {\n   doSomething(key);\n  }\n}"
+      },
+      {
+        "name": "useIsArray",
+        "category": "suspicious",
+        "description": "Use Array.isArray() instead of instanceof Array.",
+        "recommended": true,
+        "invalid": "const xs = [];\nif (xs instanceof Array) {}",
+        "valid": "const xs = [];\nif (Array.isArray(xs)) {}"
+      },
+      {
+        "name": "useIterableCallbackReturn",
+        "category": "suspicious",
+        "description": "Enforce consistent return values in iterable callbacks.",
+        "recommended": true,
+        "invalid": "[].map(() => {\n    // Missing return value\n});",
+        "valid": "[].map(() => {\n    return 1; // Correctly returns a value\n});"
+      },
+      {
+        "name": "useNamespaceKeyword",
+        "category": "suspicious",
+        "description": "Require using the namespace keyword over the module keyword to declare TypeScript namespaces.",
+        "recommended": true,
+        "invalid": "module Example {}",
+        "valid": "namespace Example {}"
+      },
+      {
+        "name": "useNumberToFixedDigitsArgument",
+        "category": "suspicious",
+        "description": "Enforce using the digits argument with Number#toFixed().",
+        "recommended": false,
+        "invalid": "const string = number.toFixed();",
+        "valid": "const string = foo.toFixed(0);"
+      },
+      {
+        "name": "useStaticResponseMethods",
+        "category": "suspicious",
+        "description": "Use static Response methods instead of new Response() constructor when possible.",
+        "recommended": false,
+        "invalid": "new Response(JSON.stringify({ value: 1 }));",
+        "valid": "// JSON.stringify() with a replacer function\nnew Response(JSON.stringify({ value: 0 }, () => {}))"
+      }
+    ],
+    "nursery": [
+      {
+        "name": "noAmbiguousAnchorText",
+        "category": "nursery",
+        "description": "Disallow ambiguous anchor descriptions.",
+        "recommended": false,
+        "invalid": "<a>learn more</a>",
+        "valid": "<a>documentation</a>"
+      },
+      {
+        "name": "noBeforeInteractiveScriptOutsideDocument",
+        "category": "nursery",
+        "description": "Prevent usage of next/script's beforeInteractive strategy outside of pages/_document.js in a Next.js project.",
+        "recommended": false,
+        "invalid": "// pages/index.jsx\nimport Script from 'next/script'\n\nexport default function Index() {\n  return (\n    <div>\n      <Script\n        src=\"https://example.com/script.js\"\n        strategy=\"beforeInteractive\"\n      ></Script>\n    </div>\n  )\n}",
+        "valid": "// pages/_document.jsx\nimport { Html, Head, Main, NextScript } from 'next/document'\nimport Script from 'next/script'\n\nexport default function Document() {\n    return (\n        <Html>\n            <Head />\n            <body>\n                <Main />\n                <NextScript />\n                <Script\n                  src=\"https://example.com/script.js\"\n                  strategy=\"beforeInteractive\"\n                ></Script>\n            </body>\n        </Html>\n    )\n}"
+      },
+      {
+        "name": "noConditionalExpect",
+        "category": "nursery",
+        "description": "Disallow conditional expect() calls inside tests.",
+        "recommended": false,
+        "invalid": "test(\"conditional expect\", async ({ page }) => {\n    if (someCondition) {\n        await expect(page).toHaveTitle(\"Title\");\n    }\n});",
+        "valid": "test(\"unconditional expect\", async ({ page }) => {\n    await expect(page).toHaveTitle(\"Title\");\n});"
+      },
+      {
+        "name": "noContinue",
+        "category": "nursery",
+        "description": "Disallow continue statements.",
+        "recommended": false,
+        "invalid": "let sum = 0,\n    i;\n\nfor(i = 0; i < 10; i++) {\n    if(i >= 5) {\n        continue;\n    }\n\n    sum += i;\n}",
+        "valid": "let sum = 0,\n    i;\n\nfor(i = 0; i < 10; i++) {\n    if(i < 5) {\n        sum += i;\n    }\n}"
+      },
+      {
+        "name": "noDeprecatedMediaType",
+        "category": "nursery",
+        "description": "Disallow deprecated media types.",
+        "recommended": false,
+        "invalid": "@media tv {}",
+        "valid": "@media screen {}"
+      },
+      {
+        "name": "noDivRegex",
+        "category": "nursery",
+        "description": "Disallow equal signs explicitly at the beginning of regular expressions.",
+        "recommended": false,
+        "invalid": "function bar() {\n  return /=foo/;\n}",
+        "valid": "function bar() {\n  return /[=]foo/;\n}"
+      },
+      {
+        "name": "noDrizzleDeleteWithoutWhere",
+        "category": "nursery",
+        "description": "Require .where() to be called when using .delete() with Drizzle ORM.",
+        "recommended": false,
+        "invalid": "await db.delete(users);",
+        "valid": "await db.delete(users).where(eq(users.id, 1));"
+      },
+      {
+        "name": "noDrizzleUpdateWithoutWhere",
+        "category": "nursery",
+        "description": "Require .where() to be called when using .update() with Drizzle ORM.",
+        "recommended": false,
+        "invalid": "await db.update(users).set({ name: \"John\" });",
+        "valid": "await db.update(users).set({ name: \"John\" }).where(eq(users.id, 1));"
+      },
+      {
+        "name": "noDuplicateArgumentNames",
+        "category": "nursery",
+        "description": "Require all argument names for fields & directives to be unique.",
+        "recommended": false,
+        "invalid": "query {\n  field(arg1: \"value\", arg1: \"value\")\n}",
+        "valid": "query {\n  field(arg1: \"value\", arg2: \"value\")\n}"
+      },
+      {
+        "name": "noDuplicateAttributes",
+        "category": "nursery",
+        "description": "Disallow duplication of attributes.",
+        "recommended": false,
+        "invalid": "<div foo=\"a\" foo=\"b\"></div>",
+        "valid": "<div foo=\"a\" bar=\"b\"></div>"
+      },
+      {
+        "name": "noDuplicateEnumValueNames",
+        "category": "nursery",
+        "description": "Require all enum value names to be unique.",
+        "recommended": false,
+        "invalid": "enum A {\n  TEST\n  OTHER\n  TEST\n}",
+        "valid": "enum A {\n  TEST\n  OTHER\n}"
+      },
+      {
+        "name": "noDuplicateEnumValues",
+        "category": "nursery",
+        "description": "Disallow duplicate enum member values.",
+        "recommended": false,
+        "invalid": "enum E {\n  A = 0,\n  B = 0,\n}",
+        "valid": "enum E {\n  A = 0,\n  B = 1,\n}"
+      },
+      {
+        "name": "noDuplicateFieldDefinitionNames",
+        "category": "nursery",
+        "description": "Require all fields of a type to be unique.",
+        "recommended": false,
+        "invalid": "type SomeObject {\n  foo: String\n  foo: String\n}",
+        "valid": "type SomeObject {\n  foo: String\n  bar: String\n}"
+      },
+      {
+        "name": "noDuplicateGraphqlOperationName",
+        "category": "nursery",
+        "description": "Enforce unique operation names across a GraphQL document.",
+        "recommended": false,
+        "invalid": "query user {\n  user {\n    id\n  }\n}\n\nquery user {\n  me {\n    id\n  }\n}",
+        "valid": "query user {\n  user {\n    id\n  }\n}\n\nquery me {\n  me {\n    id\n  }\n}"
+      },
+      {
+        "name": "noDuplicateInputFieldNames",
+        "category": "nursery",
+        "description": "Require fields within an input object to be unique.",
+        "recommended": false,
+        "invalid": "query {\n  field(arg: { f1: \"value\", f1: \"value\" })\n}",
+        "valid": "query {\n  field(arg: { f1: \"value\", f2: \"value\" })\n}"
+      },
+      {
+        "name": "noDuplicateVariableNames",
+        "category": "nursery",
+        "description": "Require all variable definitions to be unique.",
+        "recommended": false,
+        "invalid": "query ($x: Int, $x: Int) {\n  field\n}",
+        "valid": "query ($x: Int, $y: Int) {\n  field\n}"
+      },
+      {
+        "name": "noDuplicatedSpreadProps",
+        "category": "nursery",
+        "description": "Disallow JSX prop spreading the same identifier multiple times.",
+        "recommended": false,
+        "invalid": "<div {...props} something=\"else\" {...props} />",
+        "valid": "<div something=\"else\" {...props} />"
+      },
+      {
+        "name": "noEqualsToNull",
+        "category": "nursery",
+        "description": "Require the use of === or !== for comparison with null.",
+        "recommended": false,
+        "invalid": "foo == null;",
+        "valid": "foo === null;"
+      },
+      {
+        "name": "noExcessiveClassesPerFile",
+        "category": "nursery",
+        "description": "Enforce a maximum number of classes per file.",
+        "recommended": false,
+        "invalid": "class Foo {}\nclass Bar {}",
+        "valid": "class Foo {}"
+      },
+      {
+        "name": "noExcessiveLinesPerFile",
+        "category": "nursery",
+        "description": "Restrict the number of lines in a file.",
+        "recommended": false,
+        "invalid": ".a { color: red; }\n.b { color: blue; }\n.c { color: green; }",
+        "valid": ".a { color: red; }\n.b { color: blue; }"
+      },
+      {
+        "name": "noFloatingClasses",
+        "category": "nursery",
+        "description": "Disallow new operators outside of assignments or comparisons.",
+        "recommended": false,
+        "invalid": "new Thing();",
+        "valid": "const thing = new Thing();"
+      },
+      {
+        "name": "noForIn",
+        "category": "nursery",
+        "description": "Disallow iterating using a for-in loop.",
+        "recommended": false,
+        "invalid": "for (const i in array) {\n  console.log(i, array[i]);\n}",
+        "valid": "for (const value of array) {\n  console.log(value);\n}"
+      },
+      {
+        "name": "noHexColors",
+        "category": "nursery",
+        "description": "Disallow hex colors.",
+        "recommended": false,
+        "invalid": "a { color: #000; }",
+        "valid": "a { color: black; }"
+      },
+      {
+        "name": "noIncrementDecrement",
+        "category": "nursery",
+        "description": "Disallows the usage of the unary operators ++ and --.",
+        "recommended": false,
+        "invalid": "let foo = 0;\nfoo++;",
+        "valid": "let foo = 0;\nfoo += 1;"
+      },
+      {
+        "name": "noInlineStyles",
+        "category": "nursery",
+        "description": "Disallow the use of inline styles.",
+        "recommended": false,
+        "invalid": "<div style={{ color: \"red\" }}>Error</div>",
+        "valid": "<div className=\"text-red\">Error</div>"
+      },
+      {
+        "name": "noJsxPropsBind",
+        "category": "nursery",
+        "description": "Disallow .bind(), arrow functions, or function expressions in JSX props",
+        "recommended": false,
+        "invalid": "<Foo onClick={this._handleClick.bind(this)}></Foo>",
+        "valid": "<Foo onClick={this._handleClick}></Foo>"
+      },
+      {
+        "name": "noLeakedRender",
+        "category": "nursery",
+        "description": "Prevent problematic leaked values from being rendered.",
+        "recommended": false,
+        "invalid": "const Component = () => {\n  const count = 0;\n  return <div>{count && <span>Count: {count}</span>}</div>;\n}",
+        "valid": "const Component = () => {\n  const count = 0;\n  return <div>{count > 0 && <span>Count: {count}</span>}</div>;\n}"
+      },
+      {
+        "name": "noMultiAssign",
+        "category": "nursery",
+        "description": "Disallow use of chained assignment expressions",
+        "recommended": false,
+        "invalid": "const foo = bar = \"baz\";",
+        "valid": "const foo = \"baz\";\nconst bar = \"baz\";"
+      },
+      {
+        "name": "noMultiStr",
+        "category": "nursery",
+        "description": "Disallow creating multiline strings by escaping newlines.",
+        "recommended": false,
+        "invalid": "const foo =\n    \"Line 1\\n\\\nLine 2\";",
+        "valid": "const foo = \"Line 1\\nLine 2\";"
+      },
+      {
+        "name": "noNestedPromises",
+        "category": "nursery",
+        "description": "Disallow nested .then() or .catch() promise calls.",
+        "recommended": false,
+        "invalid": "doThing().then(function() { return a.then() })",
+        "valid": "// Simple returns\ndoThing().then(function() { return 4 })\ndoThing().then(() => 4)"
+      },
+      {
+        "name": "noParametersOnlyUsedInRecursion",
+        "category": "nursery",
+        "description": "Disallow function parameters that are only used in recursive calls.",
+        "recommended": false,
+        "invalid": "function factorial(n, acc) {\n    if (n === 0) return 1;\n    return factorial(n - 1, acc);\n}",
+        "valid": "function factorial(n, acc) {\n    if (n === 0) return acc;\n    return factorial(n - 1, acc * n);\n}"
+      },
+      {
+        "name": "noPlaywrightElementHandle",
+        "category": "nursery",
+        "description": "Disallow usage of element handles (page.$() and page.$$()).",
+        "recommended": false,
+        "invalid": "const button = await page.$('button');",
+        "valid": "const button = page.locator('button');\nawait button.click();"
+      },
+      {
+        "name": "noPlaywrightEval",
+        "category": "nursery",
+        "description": "Disallow usage of page.$eval() and page.$$eval().",
+        "recommended": false,
+        "invalid": "await page.$eval('.foo', el => el.textContent);",
+        "valid": "const text = await page.locator('.foo').evaluate(el => el.textContent);"
+      },
+      {
+        "name": "noPlaywrightForceOption",
+        "category": "nursery",
+        "description": "Disallow usage of the { force: true } option.",
+        "recommended": false,
+        "invalid": "await page.locator('button').click({ force: true });",
+        "valid": "await page.locator('button').click();"
+      },
+      {
+        "name": "noPlaywrightMissingAwait",
+        "category": "nursery",
+        "description": "Enforce Playwright async APIs to be awaited or returned.",
+        "recommended": false,
+        "invalid": "test('example', async ({ page }) => {\n    expect(page.getByRole('button')).toBeVisible();\n});",
+        "valid": "test('example', async ({ page }) => {\n    await expect(page.getByRole('button')).toBeVisible();\n});"
+      },
+      {
+        "name": "noPlaywrightNetworkidle",
+        "category": "nursery",
+        "description": "Disallow usage of the networkidle option.",
+        "recommended": false,
+        "invalid": "await page.waitForLoadState('networkidle');",
+        "valid": "await page.waitForLoadState('load');"
+      },
+      {
+        "name": "noPlaywrightPagePause",
+        "category": "nursery",
+        "description": "Disallow using page.pause().",
+        "recommended": false,
+        "invalid": "await page.pause();",
+        "valid": "test('example', async ({ page }) => {\n    await page.click('button');\n    await expect(page.locator('.result')).toBeVisible();\n});"
+      },
+      {
+        "name": "noPlaywrightUselessAwait",
+        "category": "nursery",
+        "description": "Disallow unnecessary await for Playwright methods that don't return promises.",
+        "recommended": false,
+        "invalid": "await page.locator('.my-element');",
+        "valid": "page.locator('.my-element');\nawait page.locator('.my-element').click();"
+      },
+      {
+        "name": "noPlaywrightWaitForNavigation",
+        "category": "nursery",
+        "description": "Disallow using page.waitForNavigation().",
+        "recommended": false,
+        "invalid": "await page.waitForNavigation();",
+        "valid": "await page.waitForURL('/home');"
+      },
+      {
+        "name": "noPlaywrightWaitForSelector",
+        "category": "nursery",
+        "description": "Disallow using page.waitForSelector().",
+        "recommended": false,
+        "invalid": "await page.waitForSelector('.submit-button');",
+        "valid": "await page.locator('.submit-button').click();"
+      },
+      {
+        "name": "noPlaywrightWaitForTimeout",
+        "category": "nursery",
+        "description": "Disallow using page.waitForTimeout().",
+        "recommended": false,
+        "invalid": "await page.waitForTimeout(5000);",
+        "valid": "await page.waitForLoadState();"
+      },
+      {
+        "name": "noProto",
+        "category": "nursery",
+        "description": "Disallow the use of the deprecated __proto__ object property.",
+        "recommended": false,
+        "invalid": "obj.__proto__ = a;",
+        "valid": "const a = Object.getPrototypeOf(obj);"
+      },
+      {
+        "name": "noRedundantDefaultExport",
+        "category": "nursery",
+        "description": "Checks if a default export exports the same symbol as a named export.",
+        "recommended": false,
+        "invalid": "export const foo = 42;\nexport default foo;",
+        "valid": "export const foo = 42;\nexport default 42;"
+      },
+      {
+        "name": "noReturnAssign",
+        "category": "nursery",
+        "description": "Disallow assignments in return statements.",
+        "recommended": false,
+        "invalid": "function f(a) {\n    return a = 1;\n}",
+        "valid": "function f(a) {\n    a = 1;\n    return a;\n}"
+      },
+      {
+        "name": "noRootType",
+        "category": "nursery",
+        "description": "Disallow the usage of specified root types",
+        "recommended": false,
+        "invalid": "type Mutation {\n  createUser(input: CreateUserInput!): User!\n}",
+        "valid": "type Query {\n  users: [User!]!\n}"
+      },
+      {
+        "name": "noScriptUrl",
+        "category": "nursery",
+        "description": "Disallow javascript: URLs in HTML.",
+        "recommended": false,
+        "invalid": "<a href=\"javascript:void(0)\">Click me</a>",
+        "valid": "<a href=\"https://example.com\">Click me</a>\n<a href=\"/path/to/page\">Click me</a>\n<a href=\"#section\">Click me</a>\n<span href=\"javascript:void(0)\">Not a real href</span>"
+      },
+      {
+        "name": "noShadow",
+        "category": "nursery",
+        "description": "Disallow variable declarations from shadowing variables declared in the outer scope.",
+        "recommended": false,
+        "invalid": "const foo = \"bar\";\nif (true) {\n   const foo = \"baz\";\n}",
+        "valid": "const foo = \"bar\";\nif (true) {\n   const qux = \"baz\";\n}"
+      },
+      {
+        "name": "noSyncScripts",
+        "category": "nursery",
+        "description": "Prevent the usage of synchronous scripts.",
+        "recommended": false,
+        "invalid": "<script src=\"\"></script>",
+        "valid": "<script src=\"\" async></script>\n<script src=\"\" defer></script>\n<script src=\"\" type=\"module\"></script>"
+      },
+      {
+        "name": "noTernary",
+        "category": "nursery",
+        "description": "Disallow ternary operators.",
+        "recommended": false,
+        "invalid": "const foo = isBar ? baz : qux;",
+        "valid": "let foo;\n\nif (isBar) {\n\tfoo = baz;\n} else {\n\tfoo = qux;\n}"
+      },
+      {
+        "name": "noUndeclaredEnvVars",
+        "category": "nursery",
+        "description": "Disallow the use of undeclared environment variables.",
+        "recommended": false,
+        "invalid": "const value = process.env.MY_VAR;",
+        "valid": "// NODE_ENV is always allowed\nconst value = process.env.NODE_ENV;"
+      },
+      {
+        "name": "noUnknownAttribute",
+        "category": "nursery",
+        "description": "Disallow unknown DOM properties.",
+        "recommended": false,
+        "invalid": "<div allowTransparency=\"true\" />",
+        "valid": "<div className=\"foo\" />"
+      },
+      {
+        "name": "noUnnecessaryConditions",
+        "category": "nursery",
+        "description": "Disallow unnecessary type-based conditions that can be statically determined as redundant.",
+        "recommended": false,
+        "invalid": "function head<T>(items: T[]) {\n  if (items) {  // This check is unnecessary\n    return items[0].toUpperCase();\n  }\n}",
+        "valid": "function head<T>(items: T[] | null) {\n  if (items) {  // This check is necessary\n    return items[0].toUpperCase();\n  }\n}"
+      },
+      {
+        "name": "noUselessReturn",
+        "category": "nursery",
+        "description": "Disallow redundant return statements.",
+        "recommended": false,
+        "invalid": "function foo() {\n    return;\n}",
+        "valid": "function foo() {\n    return 5;\n}"
+      },
+      {
+        "name": "noVueOptionsApi",
+        "category": "nursery",
+        "description": "Disallow the use of Vue Options API.",
+        "recommended": false,
+        "invalid": "import { defineComponent } from 'vue'\n\ndefineComponent({\n  name: 'MyComponent',\n  data() {\n    return { count: 0 }\n  }\n})",
+        "valid": ""
+      },
+      {
+        "name": "noVueRefAsOperand",
+        "category": "nursery",
+        "description": "Disallow the use of value wrapped by ref()(Composition API) as operand",
+        "recommended": false,
+        "invalid": "import { ref } from \"vue\"\n\nconst count = ref(0)\ncount++",
+        "valid": "import { ref } from \"vue\"\n\nconst count = ref(0)\ncount.value++"
+      },
+      {
+        "name": "useArraySome",
+        "category": "nursery",
+        "description": "Prefer Array.prototype.some() over verbose existence checks.",
+        "recommended": false,
+        "invalid": "array.filter(predicate).length > 0;",
+        "valid": "array.some(predicate);"
+      },
+      {
+        "name": "useBaseline",
+        "category": "nursery",
+        "description": "Disallow CSS properties, values, at-rules, functions, and selectors that are not part of the configured Baseline.",
+        "recommended": false,
+        "invalid": "a {\n  backdrop-filter: blur(4px);\n}",
+        "valid": "a { color: red; }"
+      },
+      {
+        "name": "useConsistentEnumValueType",
+        "category": "nursery",
+        "description": "Disallow enums from having both number and string members.",
+        "recommended": false,
+        "invalid": "enum Status {\n  Unknown,\n  Closed = 1,\n  Open = 'open',\n}",
+        "valid": "enum Status {\n  Unknown = 0,\n  Closed = 1,\n  Open = 2,\n}"
+      },
+      {
+        "name": "useConsistentGraphqlDescriptions",
+        "category": "nursery",
+        "description": "Require all descriptions to follow the same style (either block or inline) to maintain consistency and improve readability across the schema.",
+        "recommended": false,
+        "invalid": "enum EnumValue {\n  \"this is a description\"\n  DEFAULT\n}",
+        "valid": "enum EnumValue {\n  \"\"\"\n  this is a description\n  \"\"\"\n  DEFAULT\n}"
+      },
+      {
+        "name": "useConsistentMethodSignatures",
+        "category": "nursery",
+        "description": "Enforce consistent use of either method signatures or function properties within interfaces and type aliases.",
+        "recommended": false,
+        "invalid": "interface Example {\n  methodFunc(arg: string): number;\n}",
+        "valid": "interface Prop {\n  propFunc: (arg: string) => number;\n}"
+      },
+      {
+        "name": "useDestructuring",
+        "category": "nursery",
+        "description": "Require destructuring from arrays and/or objects",
+        "recommended": false,
+        "invalid": "var foo = array[0];",
+        "valid": "var [foo] = array;"
+      },
+      {
+        "name": "useErrorCause",
+        "category": "nursery",
+        "description": "Enforce that new Error() is thrown with the original error as cause.",
+        "recommended": false,
+        "invalid": "try {\n  // ...\n} catch (err) {\n  throw new Error(err.message);\n}",
+        "valid": "try {\n  // ...\n} catch (err) {\n  throw new Error(\"Something went wrong\", { cause: err });\n}\n\ntry {\n    throw \"Not a rethrow, so it's ignored when nested\";\n} catch (err) {\n    const fn = () => {\n        throw new Error(\"New unrelated error\");\n    }\n    fn();\n}"
+      },
+      {
+        "name": "useExpect",
+        "category": "nursery",
+        "description": "Ensure that test functions contain at least one expect() or similar assertion.",
+        "recommended": false,
+        "invalid": "test(\"no assertion\", async ({ page }) => {\n    await page.goto(\"/\");\n    await page.click(\"button\");\n});",
+        "valid": "test(\"has assertion\", async ({ page }) => {\n    await page.goto(\"/\");\n    await expect(page).toHaveTitle(\"Title\");\n});"
+      },
+      {
+        "name": "useExplicitType",
+        "category": "nursery",
+        "description": "Enforce types in functions, methods, variables, and parameters.",
+        "recommended": false,
+        "invalid": "// Should indicate that no value is returned (void)\nfunction test() {\n  return;\n}",
+        "valid": "// No return value should be expected (void)\nfunction test(): void {\n  return;\n}"
+      },
+      {
+        "name": "useGlobalThis",
+        "category": "nursery",
+        "description": "Enforce the use of globalThis over window, self, and global.",
+        "recommended": false,
+        "invalid": "window.foo;",
+        "valid": "globalThis.foo;"
+      },
+      {
+        "name": "useImportsFirst",
+        "category": "nursery",
+        "description": "Enforce that all imports appear at the top of the module.",
+        "recommended": false,
+        "invalid": "import { foo } from \"foo\";\nconst bar = 1;\nimport { baz } from \"baz\";",
+        "valid": "import { foo } from \"foo\";\nimport { bar } from \"bar\";\nconst baz = 1;"
+      },
+      {
+        "name": "useInlineScriptId",
+        "category": "nursery",
+        "description": "Enforce id attribute on next/script components with inline content or dangerouslySetInnerHTML.",
+        "recommended": false,
+        "invalid": "import Script from 'next/script'\n\nexport default function Page() {\n  return (\n     <Script>{`console.log('Hello world!');`}</Script>\n  )\n}",
+        "valid": "import Script from 'next/script'\n\nexport default function Page() {\n  return (\n     <Script id=\"my-script\">{`console.log('Hello world!');`}</Script>\n  )\n}"
+      },
+      {
+        "name": "useInputName",
+        "category": "nursery",
+        "description": "Require mutation argument to be always called \"input\"",
+        "recommended": false,
+        "invalid": "type Mutation {\n  SetMessage(message: InputMessage): String\n}",
+        "valid": "type Mutation {\n  SetMessage(input: SetMessageInput): String\n}"
+      },
+      {
+        "name": "useLoneAnonymousOperation",
+        "category": "nursery",
+        "description": "Disallow anonymous operations when more than one operation specified in document.",
+        "recommended": false,
+        "invalid": "query {\n  fieldA\n}\n\nquery B {\n  fieldB\n}",
+        "valid": "query A {\n  fieldA\n}\n\nquery B {\n  fieldB\n}"
+      },
+      {
+        "name": "useLoneExecutableDefinition",
+        "category": "nursery",
+        "description": "Require queries, mutations, subscriptions or fragments each to be located in separate files.",
+        "recommended": false,
+        "invalid": "query Foo {\n  id\n}\n\nfragment Bar on Baz {\n  id\n}",
+        "valid": "query Foo {\n  id\n}"
+      },
+      {
+        "name": "useNamedCaptureGroup",
+        "category": "nursery",
+        "description": "Enforce using named capture groups in regular expression.",
+        "recommended": false,
+        "invalid": "/(ba[rz])/;",
+        "valid": "/(?<id>ba[rz])/;\n/(?:ba[rz])/;\n/ba[rz]/;\n/(?<year>[0-9]{4})-(?<month>[0-9]{2})/;\nnew RegExp(\"(?<id>foo)\");\nnew RegExp(pattern);"
+      },
+      {
+        "name": "useNullishCoalescing",
+        "category": "nursery",
+        "description": "Enforce using the nullish coalescing operator (??) instead of logical or (||).",
+        "recommended": false,
+        "invalid": "declare const maybeString: string | null;\nconst value = maybeString || 'default'; // should use ??",
+        "valid": "// Already using ??\ndeclare const maybeString: string | null;\nconst value = maybeString ?? 'default';"
+      },
+      {
+        "name": "usePlaywrightValidDescribeCallback",
+        "category": "nursery",
+        "description": "Enforce valid describe() callback.",
+        "recommended": false,
+        "invalid": "test.describe('suite', async () => {\n    test('one', async ({ page }) => {});\n});",
+        "valid": "test.describe('suite', () => {\n    test('one', async ({ page }) => {});\n    test('two', async ({ page }) => {});\n});"
+      },
+      {
+        "name": "useSpread",
+        "category": "nursery",
+        "description": "Enforce the use of the spread operator over .apply().",
+        "recommended": false,
+        "invalid": "foo.apply(null, args);",
+        "valid": "foo(...args);\n\nobj.foo(...args);\n\nfoo.apply(obj, [1, 2, 3]);"
+      },
+      {
+        "name": "useUnicodeRegex",
+        "category": "nursery",
+        "description": "Enforce the use of the u or v flag for regular expressions.",
+        "recommended": false,
+        "invalid": "/foo/;",
+        "valid": "/foo/u;\n/foo/v;\n/foo/giu;\nnew RegExp(\"foo\", \"u\");\nnew RegExp(\"foo\", \"giv\");\nnew RegExp(\"foo\", flags); // dynamic flags are ignored"
+      },
+      {
+        "name": "useVueMultiWordComponentNames",
+        "category": "nursery",
+        "description": "Enforce multi-word component names in Vue components.",
+        "recommended": false,
+        "invalid": "import { defineComponent } from \"vue\";\nexport default defineComponent({\n  name: \"Header\"\n});",
+        "valid": "export default {\n  name: \"my-component\"\n};"
+      }
+    ],
+    "a11y": [
+      {
+        "name": "noAriaHiddenOnFocusable",
+        "category": "a11y",
+        "description": "Enforce that aria-hidden=\"true\" is not set on focusable elements.",
+        "recommended": true,
+        "invalid": "<div aria-hidden=\"true\" tabIndex=\"0\" />",
+        "valid": "<button aria-hidden=\"true\" tabIndex=\"-1\" />"
+      },
+      {
+        "name": "noAriaUnsupportedElements",
+        "category": "a11y",
+        "description": "Enforce that elements that do not support ARIA roles, states, and properties do not have those attributes.",
+        "recommended": true,
+        "invalid": "<meta charset=\"UTF-8\" role=\"meta\" />",
+        "valid": "<meta charset=\"UTF-8\" />"
+      },
+      {
+        "name": "noAutofocus",
+        "category": "a11y",
+        "description": "Enforce that autoFocus prop is not used on elements.",
+        "recommended": true,
+        "invalid": "<input autoFocus />",
+        "valid": "<input />"
+      },
+      {
+        "name": "noDistractingElements",
+        "category": "a11y",
+        "description": "Enforces that no distracting elements are used.",
+        "recommended": true,
+        "invalid": "<marquee />",
+        "valid": "<div />"
+      },
+      {
+        "name": "noHeaderScope",
+        "category": "a11y",
+        "description": "The scope prop should be used only on <th> elements.",
+        "recommended": true,
+        "invalid": "<div scope={scope} />",
+        "valid": "<th scope={scope}></th>"
+      },
+      {
+        "name": "noInteractiveElementToNoninteractiveRole",
+        "category": "a11y",
+        "description": "Enforce that non-interactive ARIA roles are not assigned to interactive HTML elements.",
+        "recommended": true,
+        "invalid": "<input role=\"img\" />;",
+        "valid": "<input role=\"button\" />;"
+      },
+      {
+        "name": "noLabelWithoutControl",
+        "category": "a11y",
+        "description": "Enforce that a label element or component has a text label and an associated input.",
+        "recommended": true,
+        "invalid": "<label for=\"js_id\" />;",
+        "valid": "<label for=\"js_id\" aria-label=\"A label\" />;\n<label for=\"js_id\" aria-labelledby=\"A label\" />;\n<label htmlFor=\"js_id\" aria-label=\"A label\" />;\n<label htmlFor=\"js_id\" aria-labelledby=\"A label\" />;\n<label>A label<input /></label>;\n<label>A label<textarea /></label>;\n<label><img alt=\"A label\" /><input /></label>;"
+      },
+      {
+        "name": "noNoninteractiveElementInteractions",
+        "category": "a11y",
+        "description": "Disallow use event handlers on non-interactive elements.",
+        "recommended": false,
+        "invalid": "<div onClick={() => {}}>button</div>",
+        "valid": "<button onClick={() => { }}>button</button>"
+      },
+      {
+        "name": "noNoninteractiveElementToInteractiveRole",
+        "category": "a11y",
+        "description": "Enforce that interactive ARIA roles are not assigned to non-interactive HTML elements.",
+        "recommended": true,
+        "invalid": "<h1 role=\"button\">Some text</h1>",
+        "valid": "<span role=\"button\">Some text</span>"
+      },
+      {
+        "name": "noNoninteractiveTabindex",
+        "category": "a11y",
+        "description": "Enforce that tabIndex is not assigned to non-interactive HTML elements.",
+        "recommended": true,
+        "invalid": "<div tabIndex=\"0\" />",
+        "valid": "<div />"
+      },
+      {
+        "name": "noPositiveTabindex",
+        "category": "a11y",
+        "description": "Prevent the usage of positive integers on tabIndex property",
+        "recommended": true,
+        "invalid": "<div tabIndex={1}>foo</div>",
+        "valid": "<div tabIndex=\"0\" />"
+      },
+      {
+        "name": "noRedundantAlt",
+        "category": "a11y",
+        "description": "Enforce img alt prop does not contain the word \"image\", \"picture\", or \"photo\".",
+        "recommended": true,
+        "invalid": "<img src=\"src\" alt=\"photo content\" />;",
+        "valid": "<>\n\t<img src=\"src\" alt=\"alt\" />\n\t<img src=\"src\" alt={photo} />\n\t<img src=\"bar\" aria-hidden alt=\"Picture of me taking a photo of an image\" />\n</>"
+      },
+      {
+        "name": "noRedundantRoles",
+        "category": "a11y",
+        "description": "Enforce explicit role property is not the same as implicit/default role property on an element.",
+        "recommended": true,
+        "invalid": "<article role='article'></article>",
+        "valid": "<article role='presentation'></article>"
+      },
+      {
+        "name": "noStaticElementInteractions",
+        "category": "a11y",
+        "description": "Enforce that static, visible elements (such as <div>) that have click handlers use the valid role attribute.",
+        "recommended": true,
+        "invalid": "<div onClick={() => {}}></div>;",
+        "valid": "<>\n    <div role=\"button\" onClick={() => {}}></div>\n    <span role=\"scrollbar\" onClick={() => {}}></span>\n    <a href=\"http://example.com\" onClick={() => {}}></a>\n</>"
+      },
+      {
+        "name": "noSvgWithoutTitle",
+        "category": "a11y",
+        "description": "Enforces the usage of the title element for the svg element.",
+        "recommended": true,
+        "invalid": "<svg>foo</svg>",
+        "valid": "<svg>\n    <title>Pass</title>\n    <circle />\n</svg>"
+      },
+      {
+        "name": "useAltText",
+        "category": "a11y",
+        "description": "Enforce that all elements that require alternative text have meaningful information to relay back to the end user.",
+        "recommended": true,
+        "invalid": "<img src=\"image.png\" />",
+        "valid": "<img src=\"image.png\" alt=\"image alt\" />"
+      },
+      {
+        "name": "useAnchorContent",
+        "category": "a11y",
+        "description": "Enforce that anchors have content and that the content is accessible to screen readers.",
+        "recommended": true,
+        "invalid": "<a />",
+        "valid": "<a>content</a>"
+      },
+      {
+        "name": "useAriaActivedescendantWithTabindex",
+        "category": "a11y",
+        "description": "Enforce that tabIndex is assigned to non-interactive HTML elements with aria-activedescendant.",
+        "recommended": true,
+        "invalid": "<div aria-activedescendant={someID} />",
+        "valid": "<div aria-activedescendant={someID} tabIndex={0} />"
+      },
+      {
+        "name": "useAriaPropsForRole",
+        "category": "a11y",
+        "description": "Enforce that elements with ARIA roles must have all required ARIA attributes for that role.",
+        "recommended": true,
+        "invalid": "<span role=\"checkbox\"></span>",
+        "valid": "<span role=\"checkbox\" aria-checked=\"true\"></span>"
+      },
+      {
+        "name": "useAriaPropsSupportedByRole",
+        "category": "a11y",
+        "description": "Enforce that ARIA properties are valid for the roles that are supported by the element.",
+        "recommended": true,
+        "invalid": "<a href=\"#\" aria-checked />",
+        "valid": "<>\n    <a href=\"#\" aria-expanded />\n    <img alt=\"foobar\" aria-hidden />\n    <div role=\"heading\" aria-level=\"1\" />\n</>"
+      },
+      {
+        "name": "useButtonType",
+        "category": "a11y",
+        "description": "Enforces the usage of the attribute type for the element button",
+        "recommended": true,
+        "invalid": "<button>Do something</button>",
+        "valid": "<>\n    <button type=\"button\">Do something</button>\n    <button type={buttonType}>Do something</button>\n</>"
+      },
+      {
+        "name": "useFocusableInteractive",
+        "category": "a11y",
+        "description": "Elements with an interactive role and interaction handlers must be focusable.",
+        "recommended": true,
+        "invalid": "<div role=\"button\" />",
+        "valid": "<div role=\"button\" tabIndex={0} />"
+      },
+      {
+        "name": "useGenericFontNames",
+        "category": "a11y",
+        "description": "Disallow a missing generic family keyword within font families.",
+        "recommended": true,
+        "invalid": "a { font-family: Arial; }",
+        "valid": "a { font-family: \"Lucida Grande\", \"Arial\", sans-serif; }"
+      },
+      {
+        "name": "useHeadingContent",
+        "category": "a11y",
+        "description": "Enforce that heading elements (h1, h2, etc.) have content and that the content is accessible to screen readers. Accessible means that it is not hidden using the aria-hidden prop.",
+        "recommended": true,
+        "invalid": "<h1 />",
+        "valid": "<h1>heading</h1>"
+      },
+      {
+        "name": "useHtmlLang",
+        "category": "a11y",
+        "description": "Enforce that html element has lang attribute.",
+        "recommended": true,
+        "invalid": "<html></html>",
+        "valid": "<html lang=\"en\"></html>"
+      },
+      {
+        "name": "useIframeTitle",
+        "category": "a11y",
+        "description": "Enforces the usage of the attribute title for the element iframe.",
+        "recommended": true,
+        "invalid": "<iframe />",
+        "valid": "<>\n  <iframe title=\"This is a unique title\" />\n  <iframe title={uniqueTitle} />\n  <iframe {...props} />\n</>"
+      },
+      {
+        "name": "useKeyWithClickEvents",
+        "category": "a11y",
+        "description": "Enforce onClick is accompanied by at least one of the following: onKeyUp, onKeyDown, onKeyPress.",
+        "recommended": true,
+        "invalid": "<div onClick={() => {}} />",
+        "valid": "<div onClick={() => {}} onKeyDown={handleKeyDown} />"
+      },
+      {
+        "name": "useKeyWithMouseEvents",
+        "category": "a11y",
+        "description": "Enforce onMouseOver / onMouseOut are accompanied by onFocus / onBlur.",
+        "recommended": true,
+        "invalid": "<div onMouseOver={() => {}} />",
+        "valid": "<>\n  <div onMouseOver={() => {}} onFocus={() => {}} />\n  <div onMouseOut={() => {}} onBlur={() => {}} />\n  <div onMouseOver={() => {}} {...otherProps} />\n  <div onMouseOut={() => {}} {...otherProps} />\n  <div onMouseOver={() => {}} onFocus={() => {}} {...otherProps} />\n  <div onMouseOut={() => {}} onBlur={() => {}} {...otherProps} />\n</>"
+      },
+      {
+        "name": "useMediaCaption",
+        "category": "a11y",
+        "description": "Enforces that audio and video elements must have a track for captions.",
+        "recommended": true,
+        "invalid": "<video />",
+        "valid": "<audio>\n\t\t<track kind=\"captions\" {...props} />\n\t</audio>"
+      },
+      {
+        "name": "useSemanticElements",
+        "category": "a11y",
+        "description": "It detects the use of role attributes in JSX elements and suggests using semantic elements instead.",
+        "recommended": true,
+        "invalid": "<div role=\"checkbox\"></div>",
+        "valid": "<>\n  <input type=\"checkbox\">label</input>\n  <hr/>\n  <div role=\"status\"></div>\n</>;"
+      },
+      {
+        "name": "useValidAnchor",
+        "category": "a11y",
+        "description": "Enforce that all anchors are valid, and they are navigable elements.",
+        "recommended": true,
+        "invalid": "<a href={null}>navigate here</a>",
+        "valid": "<a href=\"https://example.com\" onClick={something}>navigate here</a>"
+      },
+      {
+        "name": "useValidAriaRole",
+        "category": "a11y",
+        "description": "Elements with ARIA roles must use a valid, non-abstract ARIA role.",
+        "recommended": true,
+        "invalid": "<div role=\"datepicker\"></div>",
+        "valid": "<>\n  <div role=\"button\"></div>\n  <div role={role}></div>\n  <div></div>\n</>"
+      },
+      {
+        "name": "useValidAriaValues",
+        "category": "a11y",
+        "description": "Enforce that ARIA state and property values are valid.",
+        "recommended": true,
+        "invalid": "<span role=\"checkbox\" aria-checked=\"test\">some text</span>",
+        "valid": "<>\n    <span role=\"checkbox\" aria-checked={checked} >some text</span>\n    <span aria-labelledby=\"fooId barId\" >some text</span>\n</>"
+      },
+      {
+        "name": "useValidAutocomplete",
+        "category": "a11y",
+        "description": "Use valid values for the autocomplete attribute on input elements.",
+        "recommended": true,
+        "invalid": "<input type=\"text\" autocomplete=\"incorrect\" />",
+        "valid": "<>\n  <input type=\"text\" autocomplete=\"name\" />\n  <MyInput autocomplete=\"incorrect\" />\n</>"
+      },
+      {
+        "name": "useValidLang",
+        "category": "a11y",
+        "description": "Ensure that the attribute passed to the lang attribute is a correct ISO language and/or country.",
+        "recommended": true,
+        "invalid": "<html lang=\"lorem\" />",
+        "valid": "<Html lang=\"en-babab\" />"
+      }
+    ],
+    "security": [
+      {
+        "name": "noBlankTarget",
+        "category": "security",
+        "description": "Disallow target=\"_blank\" attribute without rel=\"noopener\".",
+        "recommended": true,
+        "invalid": "<a href='http://external.link' target='_blank'>child</a>",
+        "valid": "<a href='http://external.link' rel='noopener' target='_blank'>child</a>"
+      },
+      {
+        "name": "noGlobalEval",
+        "category": "security",
+        "description": "Disallow the use of global eval().",
+        "recommended": true,
+        "invalid": "eval(\"var a = 0\");",
+        "valid": "let foo = globalThis;\nfoo.eval(\"let a = 0;\");"
+      },
+      {
+        "name": "noSecrets",
+        "category": "security",
+        "description": "Disallow usage of sensitive data such as API keys and tokens.",
+        "recommended": false,
+        "invalid": "const secret = \"AKIA1234567890EXAMPLE\";",
+        "valid": "const nonSecret = \"hello world\";"
+      }
+    ],
+    "style": [
+      {
+        "name": "noCommonJs",
+        "category": "style",
+        "description": "Disallow use of CommonJs module system in favor of ESM style imports.",
+        "recommended": false,
+        "invalid": "require('node:fs');",
+        "valid": "import fs from 'node:fs';"
+      },
+      {
+        "name": "noDefaultExport",
+        "category": "style",
+        "description": "Disallow default exports.",
+        "recommended": false,
+        "invalid": "export default function f() {};",
+        "valid": "export function f () {};\nexport class C {};\nexport { default as X } from \"mod\";"
+      },
+      {
+        "name": "noDescendingSpecificity",
+        "category": "style",
+        "description": "Disallow a lower specificity selector from coming after a higher specificity selector.",
+        "recommended": true,
+        "invalid": "b a { color: red; }\na { color: red; }",
+        "valid": "a { color: red; }\nb a { color: red; }"
+      },
+      {
+        "name": "noDoneCallback",
+        "category": "style",
+        "description": "Disallow using a callback in asynchronous tests and hooks.",
+        "recommended": false,
+        "invalid": "beforeEach((done) => {\n    // ...\n});",
+        "valid": "beforeEach(async () => {\n    // ...\n});"
+      },
+      {
+        "name": "noEnum",
+        "category": "style",
+        "description": "Disallow TypeScript enum.",
+        "recommended": false,
+        "invalid": "enum Foo {\n    BAR = 'bar',\n    BAZ = 'baz',\n}",
+        "valid": "const Foo = {\n    BAR: 'bar',\n    BAZ: 'baz',\n} as const"
+      },
+      {
+        "name": "noExportedImports",
+        "category": "style",
+        "description": "Disallow exporting an imported variable.",
+        "recommended": false,
+        "invalid": "import { A } from \"mod\";\nexport { A };",
+        "valid": "export { A } from \"mod\";\nexport * as ns from \"mod\";\nexport { default as D } from \"mod\";"
+      },
+      {
+        "name": "noHeadElement",
+        "category": "style",
+        "description": "Prevent usage of <head> element in a Next.js project.",
+        "recommended": true,
+        "invalid": "function Index() {\n  return (\n    <head>\n      <title>Invalid</title>\n    </head>\n  )\n}",
+        "valid": "import Head from 'next/head'\n\nfunction Index() {\n  return (\n    <Head>\n      <title>All good!</title>\n    </Head>\n  )\n}"
+      },
+      {
+        "name": "noImplicitBoolean",
+        "category": "style",
+        "description": "Disallow implicit true values on JSX boolean attributes",
+        "recommended": false,
+        "invalid": "<input disabled />",
+        "valid": "<input disabled={false} />"
+      },
+      {
+        "name": "noInferrableTypes",
+        "category": "style",
+        "description": "Disallow type annotations for variables, parameters, and class properties initialized with a literal expression.",
+        "recommended": false,
+        "invalid": "const variable: 1 = 1;",
+        "valid": "const variable: number = 1;"
+      },
+      {
+        "name": "noJsxLiterals",
+        "category": "style",
+        "description": "Disallow string literals inside JSX elements.",
+        "recommended": false,
+        "invalid": "<div>Hello World</div>",
+        "valid": "<div>{'Hello World'}</div>"
+      },
+      {
+        "name": "noMagicNumbers",
+        "category": "style",
+        "description": "Reports usage of \"magic numbers\" \u2014 numbers used directly instead of being assigned to named constants.",
+        "recommended": false,
+        "invalid": "let total = price * 1.23; // Magic number for tax rate",
+        "valid": "const TAX_RATE = 1.23;\nlet total = price * TAX_RATE;"
+      },
+      {
+        "name": "noNamespace",
+        "category": "style",
+        "description": "Disallow the use of TypeScript's namespaces.",
+        "recommended": false,
+        "invalid": "module foo {}",
+        "valid": "import foo from 'foo';\nexport { bar };"
+      },
+      {
+        "name": "noNegationElse",
+        "category": "style",
+        "description": "Disallow negation in the condition of an if statement if it has an else clause.",
+        "recommended": false,
+        "invalid": "if (!cond) { f();} else { g();}",
+        "valid": "if (!cond) { f(); }"
+      },
+      {
+        "name": "noNestedTernary",
+        "category": "style",
+        "description": "Disallow nested ternary expressions.",
+        "recommended": false,
+        "invalid": "const thing = foo ? bar : baz === qux ? quxx : foobar;",
+        "valid": "const thing = foo ? bar : foobar;"
+      },
+      {
+        "name": "noNonNullAssertion",
+        "category": "style",
+        "description": "Disallow non-null assertions using the ! postfix operator.",
+        "recommended": true,
+        "invalid": "interface Example {\n  property?: string;\n}\ndeclare const foo: Example;\nconst includesBaz = foo.property!.includes('baz');",
+        "valid": "interface Example {\n  property?: string;\n}\n\ndeclare const foo: Example;\nconst includesBaz = foo.property?.includes('baz') ?? false;"
+      },
+      {
+        "name": "noParameterAssign",
+        "category": "style",
+        "description": "Disallow reassigning function parameters.",
+        "recommended": false,
+        "invalid": "function f(param) {\n    param = 13;\n}",
+        "valid": "function f(param) {\n    let local = param;\n}"
+      },
+      {
+        "name": "noParameterProperties",
+        "category": "style",
+        "description": "Disallow the use of parameter properties in class constructors.",
+        "recommended": false,
+        "invalid": "class A {\n    constructor(readonly name: string) {}\n}",
+        "valid": "class A {\n    constructor(name: string) {}\n}"
+      },
+      {
+        "name": "noProcessEnv",
+        "category": "style",
+        "description": "Disallow the use of process.env.",
+        "recommended": false,
+        "invalid": "if (process.env.NODE_ENV === 'development') {\n  // ...\n}",
+        "valid": "const config = require('./config');\nif (config.NODE_ENV === 'development') {\n  // ...\n}"
+      },
+      {
+        "name": "noRestrictedGlobals",
+        "category": "style",
+        "description": "This rule allows you to specify global variable names that you don\u2019t want to use in your application.",
+        "recommended": false,
+        "invalid": "console.log(event)",
+        "valid": "function f(event) {\n    console.log(event)\n}"
+      },
+      {
+        "name": "noRestrictedImports",
+        "category": "style",
+        "description": "Disallow specified modules when loaded by import or require.",
+        "recommended": false,
+        "invalid": "import \"lodash\";",
+        "valid": "import \"allowed-import\";\nconst myImport = await import(\"allowed-import\");\nconst myImport = require(\"allowed-import\");"
+      },
+      {
+        "name": "noShoutyConstants",
+        "category": "style",
+        "description": "Disallow the use of constants which its value is the upper-case version of its name.",
+        "recommended": false,
+        "invalid": "const FOO = \"FOO\";\nconsole.log(FOO);",
+        "valid": "let FOO = \"FOO\";\nconsole.log(FOO);"
+      },
+      {
+        "name": "noSubstr",
+        "category": "style",
+        "description": "Enforce the use of String.slice() over String.substr() and String.substring().",
+        "recommended": false,
+        "invalid": "foo.substr();",
+        "valid": "foo.slice(beginIndex, endIndex);"
+      },
+      {
+        "name": "noUnusedTemplateLiteral",
+        "category": "style",
+        "description": "Disallow template literals if interpolation and special-character handling are not needed",
+        "recommended": false,
+        "invalid": "const foo = `bar`",
+        "valid": "const foo = `bar\nhas newline`;"
+      },
+      {
+        "name": "noUselessElse",
+        "category": "style",
+        "description": "Disallow else block when the if block breaks early.",
+        "recommended": false,
+        "invalid": "while (x > 0) {\n    if (f(x)) {\n        break;\n    } else {\n        x++\n    }\n}",
+        "valid": "function f(x) {\n    if (x < 0) {\n        return 0;\n    }\n    return x;\n}"
+      },
+      {
+        "name": "noYodaExpression",
+        "category": "style",
+        "description": "Disallow the use of yoda expressions.",
+        "recommended": false,
+        "invalid": "if (\"red\" == value) {}",
+        "valid": "if (value === \"red\") {}"
+      },
+      {
+        "name": "useArrayLiterals",
+        "category": "style",
+        "description": "Disallow Array constructors.",
+        "recommended": true,
+        "invalid": "const xs = Array();",
+        "valid": "const xs = Array(65000);"
+      },
+      {
+        "name": "useAsConstAssertion",
+        "category": "style",
+        "description": "Enforce the use of as const over literal type and type annotation.",
+        "recommended": false,
+        "invalid": "let bar: 2 = 2;",
+        "valid": "let foo = 'bar';\nlet foo = 'bar' as const;\nlet foo: 'bar' = 'bar' as const;\nlet bar = 'bar' as string;\nlet foo = { bar: 'baz' };"
+      },
+      {
+        "name": "useAtIndex",
+        "category": "style",
+        "description": "Use at() instead of integer index access.",
+        "recommended": false,
+        "invalid": "const foo = array[array.length - 1];",
+        "valid": "const foo = array.at(-1);"
+      },
+      {
+        "name": "useCollapsedElseIf",
+        "category": "style",
+        "description": "Enforce using else if instead of nested if in else clauses.",
+        "recommended": false,
+        "invalid": "if (condition) {\n    // ...\n} else {\n    if (anotherCondition) {\n        // ...\n    }\n}",
+        "valid": "if (condition) {\n    // ...\n} else if (anotherCondition) {\n    // ...\n}"
+      },
+      {
+        "name": "useCollapsedIf",
+        "category": "style",
+        "description": "Enforce using single if instead of nested if clauses.",
+        "recommended": false,
+        "invalid": "if (condition) {\n    if (anotherCondition) {\n        // ...\n    }\n}",
+        "valid": "if (condition && anotherCondition) {\n    // ...\n}"
+      },
+      {
+        "name": "useComponentExportOnlyModules",
+        "category": "style",
+        "description": "Enforce declaring components only within modules that export React Components exclusively.",
+        "recommended": false,
+        "invalid": "export const foo = () => {};\nexport const Bar = () => <></>;",
+        "valid": "export default function Foo() {\n    return <></>;\n}"
+      },
+      {
+        "name": "useConsistentArrayType",
+        "category": "style",
+        "description": "Require consistently using either T[] or Array<T>",
+        "recommended": false,
+        "invalid": "let invalid: Array<foo>;",
+        "valid": "const valid: Array<string | number> = ['a', 'b'];\nconst valid: Array<{ prop: string }> = [{ prop: 'a' }];\nconst valid: Array<() => void> = [() => {}];\nconst valid: MyType[] = ['a', 'b'];\nconst valid: string[] = ['a', 'b'];\nconst valid: readonly string[] = ['a', 'b'];"
+      },
+      {
+        "name": "useConsistentArrowReturn",
+        "category": "style",
+        "description": "Enforce consistent arrow function bodies.",
+        "recommended": false,
+        "invalid": "const bar = () => {\n     return {\n         bar: {\n             foo: 1,\n             bar: 2,\n         }\n     };\n };",
+        "valid": "const foo = () => 0;\nconst bar = () => { \"use strict\"; return 1 }\nconst baz = () => { /* intentional */ return x }\nconst qux = () => ({ a: 1 })   // already concise with parens"
+      },
+      {
+        "name": "useConsistentBuiltinInstantiation",
+        "category": "style",
+        "description": "Enforce the use of new for all builtins, except String, Number and Boolean.",
+        "recommended": false,
+        "invalid": "const text = new String(10);",
+        "valid": "const text = String(10);"
+      },
+      {
+        "name": "useConsistentCurlyBraces",
+        "category": "style",
+        "description": "This rule enforces consistent use of curly braces inside JSX attributes and JSX children.",
+        "recommended": false,
+        "invalid": "<Foo>{'Hello world'}</Foo>",
+        "valid": "<>\n    <Foo>Hello world</Foo>\n    <Foo foo=\"bar\" />\n    <Foo foo={5} />\n    <Foo foo={<Bar />} />\n</>"
+      },
+      {
+        "name": "useConsistentMemberAccessibility",
+        "category": "style",
+        "description": "Require consistent accessibility modifiers on class properties and methods.",
+        "recommended": false,
+        "invalid": "class Animal {\n  public constructor(breed, name) {\n    // ...\n  }\n}",
+        "valid": "class Animal {\n  constructor(\n    private breed,\n    name,\n  ) {\n    this.animalName = name;\n  }\n  private animalName: string; // Property\n  get name(): string {\n    // get accessor\n    return this.animalName;\n  }\n  set name(value: string) {\n    // set accessor\n    this.animalName = value;\n  }\n  protected walk() {\n    // method\n  }\n}"
+      },
+      {
+        "name": "useConsistentObjectDefinitions",
+        "category": "style",
+        "description": "Require the consistent declaration of object literals. Defaults to explicit definitions.",
+        "recommended": false,
+        "invalid": "let foo = 1;\nlet invalid = {\n    foo: foo\n};",
+        "valid": "let foo = 1;\nlet valid = {\n    foo,\n    bar() { return \"bar\"; },\n};"
+      },
+      {
+        "name": "useConsistentTypeDefinitions",
+        "category": "style",
+        "description": "Enforce type definitions to consistently use either interface or type.",
+        "recommended": false,
+        "invalid": "type Point = { x: number; y: number; };",
+        "valid": "interface Point {\n  x: number;\n  y: number;\n}"
+      },
+      {
+        "name": "useConst",
+        "category": "style",
+        "description": "Require const declarations for variables that are only assigned once.",
+        "recommended": true,
+        "invalid": "let a = 3;\nconsole.log(a);",
+        "valid": "let a = 2;\na = 3;\nconsole.log(a);"
+      },
+      {
+        "name": "useDefaultParameterLast",
+        "category": "style",
+        "description": "Enforce default function parameters and optional function parameters to be last.",
+        "recommended": false,
+        "invalid": "function f(a = 0, b) {}",
+        "valid": "function f(a, b = 0) {}"
+      },
+      {
+        "name": "useDefaultSwitchClause",
+        "category": "style",
+        "description": "Require the default clause in switch statements.",
+        "recommended": false,
+        "invalid": "switch (a) {\n    case 1:\n        /* code */\n        break;\n}",
+        "valid": "switch (a) {\n    case 1:\n        /* code */\n        break;\n    default:\n        /* code */\n        break;\n}"
+      },
+      {
+        "name": "useDeprecatedReason",
+        "category": "style",
+        "description": "Require specifying the reason argument when using @deprecated directive",
+        "recommended": true,
+        "invalid": "query {\n  member @deprecated\n}",
+        "valid": "query {\n  member @deprecated(reason: \"Why?\")\n}"
+      },
+      {
+        "name": "useEnumInitializers",
+        "category": "style",
+        "description": "Require that each enum member value be explicitly initialized.",
+        "recommended": false,
+        "invalid": "enum Version {\n    V1,\n}",
+        "valid": "enum Status {\n    Open = 1,\n    Close = 2,\n}"
+      },
+      {
+        "name": "useExplicitLengthCheck",
+        "category": "style",
+        "description": "Enforce explicitly comparing the length, size, byteLength or byteOffset property of a value.",
+        "recommended": false,
+        "invalid": "const isEmpty = !foo.length;",
+        "valid": "const isEmpty = foo.length === 0;"
+      },
+      {
+        "name": "useExponentiationOperator",
+        "category": "style",
+        "description": "Disallow the use of Math.pow in favor of the ** operator.",
+        "recommended": true,
+        "invalid": "const foo = Math.pow(2, 8);",
+        "valid": "const foo = 2 ** 8;\n\nconst bar = a ** b;\n\nlet baz = (a + b) ** (c + d);\n\nlet quux = (-1) ** n;"
+      },
+      {
+        "name": "useExportType",
+        "category": "style",
+        "description": "Promotes the use of export type for types.",
+        "recommended": true,
+        "invalid": "interface I {}\nexport { I };",
+        "valid": "class C {}\nfunction f() {}\nexport { C, f };"
+      },
+      {
+        "name": "useExportsLast",
+        "category": "style",
+        "description": "Require that all exports are declared after all non-export statements.",
+        "recommended": false,
+        "invalid": "export const a = 1;\nconst b = 2;",
+        "valid": "const a = 1;\nexport const b = 2;"
+      },
+      {
+        "name": "useForOf",
+        "category": "style",
+        "description": "Prefer using for...of loops over standard for loops where possible.",
+        "recommended": false,
+        "invalid": "for (let i = 0; i < array.length; i++) {\n  console.log(array[i]);\n}",
+        "valid": "for (let item of array) {\n   console.log(item);\n }"
+      },
+      {
+        "name": "useGraphqlNamingConvention",
+        "category": "style",
+        "description": "Validates that all enum values are capitalized.",
+        "recommended": false,
+        "invalid": "enum MyEnum {\n value\n}",
+        "valid": "enum MyEnum {\n VALUE\n}"
+      },
+      {
+        "name": "useGroupedAccessorPairs",
+        "category": "style",
+        "description": "Enforce that getters and setters for the same property are adjacent in class and object definitions.",
+        "recommended": false,
+        "invalid": "class User {\n  get name() { return this._name; }\n  constructor() {}\n  set name(value) { this._name = value; }\n}",
+        "valid": "class User {\n  get name() { return this._name; }\n  set name(value) { this._name = value; }\n  get age() { return this._age; }\n  set age(age) { this._age = age; }\n}"
+      },
+      {
+        "name": "useImportType",
+        "category": "style",
+        "description": "Promotes the use of import type for types.",
+        "recommended": true,
+        "invalid": "import { A } from \"./mod.js\";\ntype TypeOfA = typeof A;\nlet a: A;",
+        "valid": "import type { A } from \"./mod.js\";\nlet a: A;"
+      },
+      {
+        "name": "useLiteralEnumMembers",
+        "category": "style",
+        "description": "Require all enum members to be literal values.",
+        "recommended": true,
+        "invalid": "const x = 2;\nenum Computed {\n    A,\n    B = x,\n}",
+        "valid": "enum Direction {\n    Left,\n    Right,\n}"
+      },
+      {
+        "name": "useNodeAssertStrict",
+        "category": "style",
+        "description": "Promotes the usage of node:assert/strict over node:assert.",
+        "recommended": false,
+        "invalid": "import * as assert from \"node:assert\"",
+        "valid": "import * as assert from \"node:assert/strict\""
+      },
+      {
+        "name": "useNodejsImportProtocol",
+        "category": "style",
+        "description": "Enforces using the node: protocol for Node.js builtin modules.",
+        "recommended": true,
+        "invalid": "import fs from 'fs';",
+        "valid": "import fs from 'node:fs';\n\nimport os from 'node:os';\n\nimport path from 'node:path';"
+      },
+      {
+        "name": "useNumberNamespace",
+        "category": "style",
+        "description": "Use the Number properties instead of global ones.",
+        "recommended": false,
+        "invalid": "parseInt(\"1\"); // true",
+        "valid": "Number.parseInt(\"1\"); // false"
+      },
+      {
+        "name": "useNumericSeparators",
+        "category": "style",
+        "description": "Enforce the use of numeric separators in numeric literals.",
+        "recommended": false,
+        "invalid": "var a = 1234567890;",
+        "valid": "var a = 1_234_567_890;"
+      },
+      {
+        "name": "useObjectSpread",
+        "category": "style",
+        "description": "Prefer object spread over Object.assign() when constructing new objects.",
+        "recommended": false,
+        "invalid": "Object.assign({}, foo);",
+        "valid": "({ ...foo });"
+      },
+      {
+        "name": "useReactFunctionComponents",
+        "category": "style",
+        "description": "Enforce that components are defined as functions and never as classes.",
+        "recommended": false,
+        "invalid": "class Foo extends React.Component {\n  render() {\n    return (\n      <div>This is a class component.</div>\n    );\n  }\n}",
+        "valid": "function Foo() {\n  return <div>This is a function component.</div>;\n}"
+      },
+      {
+        "name": "useReadonlyClassProperties",
+        "category": "style",
+        "description": "Enforce marking members as readonly if they are never modified outside the constructor.",
+        "recommended": false,
+        "invalid": "class Container {\n    private onlyModifiedInConstructor = 1;\n    constructor(\n        member1: number,\n    ) {\n        this.onlyModifiedInConstructor = onlyModifiedInConstructor;\n    }\n}",
+        "valid": "class Container {\n    private readonly neverModifiedMember = true;\n    private readonly onlyModifiedInConstructor: number;\n    readonly #neverModifiedPrivateField = 3;\n\n    public constructor(\n        onlyModifiedInConstructor: number,\n        private readonly neverModifiedParameter: string,\n    ) {\n        this.onlyModifiedInConstructor = onlyModifiedInConstructor;\n    }\n}"
+      },
+      {
+        "name": "useSelfClosingElements",
+        "category": "style",
+        "description": "Prevent extra closing tags for components without children.",
+        "recommended": false,
+        "invalid": "<div></div>",
+        "valid": "<div />"
+      },
+      {
+        "name": "useShorthandAssign",
+        "category": "style",
+        "description": "Require assignment operator shorthand where possible.",
+        "recommended": false,
+        "invalid": "a = a + 1;",
+        "valid": "a += 1;"
+      },
+      {
+        "name": "useShorthandFunctionType",
+        "category": "style",
+        "description": "Enforce using function types instead of object type with call signatures.",
+        "recommended": true,
+        "invalid": "interface Example {\n  (): string;\n}",
+        "valid": "type Example = () => string;"
+      },
+      {
+        "name": "useSingleVarDeclarator",
+        "category": "style",
+        "description": "Disallow multiple variable declarations in the same variable statement",
+        "recommended": false,
+        "invalid": "let foo = 0, bar, baz;",
+        "valid": "const foo = 0;\nlet bar;\nlet baz;"
+      },
+      {
+        "name": "useSymbolDescription",
+        "category": "style",
+        "description": "Require a description parameter for the Symbol().",
+        "recommended": false,
+        "invalid": "Symbol();",
+        "valid": "Symbol('description');"
+      },
+      {
+        "name": "useTemplate",
+        "category": "style",
+        "description": "Prefer template literals over string concatenation.",
+        "recommended": true,
+        "invalid": "const s = foo + \"baz\";",
+        "valid": "let s = \"foo\" + \"bar\" + `baz`;"
+      },
+      {
+        "name": "useThrowNewError",
+        "category": "style",
+        "description": "Require new when throwing an error.",
+        "recommended": false,
+        "invalid": "throw Error();",
+        "valid": "throw new Error();"
+      },
+      {
+        "name": "useThrowOnlyError",
+        "category": "style",
+        "description": "Disallow throwing non-Error values.",
+        "recommended": false,
+        "invalid": "throw undefined;",
+        "valid": "throw new Error();"
+      },
+      {
+        "name": "useTrimStartEnd",
+        "category": "style",
+        "description": "Enforce the use of String.trimStart() and String.trimEnd() over String.trimLeft() and String.trimRight().",
+        "recommended": false,
+        "invalid": "const foo = bar.trimLeft();",
+        "valid": "const foo = bar.trimStart();"
+      },
+      {
+        "name": "useUnifiedTypeSignatures",
+        "category": "style",
+        "description": "Disallow overload signatures that can be unified into a single signature.",
+        "recommended": false,
+        "invalid": "function f(a: number): void;\nfunction f(a: string): void;",
+        "valid": "function f(a: number | string): void {}"
+      }
+    ],
+    "correctness": [
+      {
+        "name": "noConstAssign",
+        "category": "correctness",
+        "description": "Prevents from having const variables being re-assigned.",
+        "recommended": true,
+        "invalid": "const a = 1;\na = 4;",
+        "valid": "const a = 10;\nlet b = 10;\nb = 20;"
+      },
+      {
+        "name": "noConstantCondition",
+        "category": "correctness",
+        "description": "Disallow constant expressions in conditions",
+        "recommended": true,
+        "invalid": "if (false) {\n    doSomethingUnfinished();\n}",
+        "valid": "if (x === 0) {\n    doSomething();\n}\n\nfor (;;) {\n    doSomethingForever();\n}\n\nwhile (typeof x === \"undefined\") {\n    doSomething();\n}\n\ndo {\n    doSomething();\n} while (x);\n\nvar result = x !== 0 ? a : b;\n\n// Exception\nwhile (true) {\n    if (x) { break; }\n    x = f();\n}"
+      },
+      {
+        "name": "noConstantMathMinMaxClamp",
+        "category": "correctness",
+        "description": "Disallow the use of Math.min and Math.max to clamp a value where the result itself is constant.",
+        "recommended": true,
+        "invalid": "Math.min(0, Math.max(100, x));",
+        "valid": "Math.min(100, Math.max(0, x));"
+      },
+      {
+        "name": "noConstructorReturn",
+        "category": "correctness",
+        "description": "Disallow returning a value from a constructor.",
+        "recommended": true,
+        "invalid": "class A {\n    constructor() {\n        return 0;\n    }\n}",
+        "valid": "class A {\n    constructor() {}\n}"
+      },
+      {
+        "name": "noEmptyCharacterClassInRegex",
+        "category": "correctness",
+        "description": "Disallow empty character classes in regular expression literals.",
+        "recommended": true,
+        "invalid": "/^a[]/.test(\"a\"); // false",
+        "valid": "/^a[xy]/.test(\"ay\"); // true"
+      },
+      {
+        "name": "noEmptyPattern",
+        "category": "correctness",
+        "description": "Disallows empty destructuring patterns.",
+        "recommended": true,
+        "invalid": "var {} = foo;",
+        "valid": "var {a = {}} = foo;\nvar {a, b = {}} = foo;\nvar {a = []} = foo;\nfunction foo({a = {}}) {}\nfunction foo({a = []}) {}\nvar [a] = foo;"
+      },
+      {
+        "name": "noGlobalDirnameFilename",
+        "category": "correctness",
+        "description": "Disallow the use of __dirname and __filename in the global scope.",
+        "recommended": false,
+        "invalid": "const dirname = __dirname;",
+        "valid": "const dirname = import.meta.dirname\nconst filename = import.meta.filename\nconst foo = {__filename: import.meta.filename };\nif (import.meta.dirname.startsWith(\"/project/src/\")) {}"
+      },
+      {
+        "name": "noGlobalObjectCalls",
+        "category": "correctness",
+        "description": "Disallow calling global object properties as functions",
+        "recommended": true,
+        "invalid": "var math = Math();",
+        "valid": "function area(r) {\n    return Math.PI * r * r;\n}\n\nvar object = JSON.parse(\"{}\");\n\nvar value = Reflect.get({ x: 1, y: 2 }, \"x\");\n\nvar first = Atomics.load(foo, 0);\n\nvar segmenterFr = new Intl.Segmenter(\"fr\", { granularity: \"word\" });"
+      },
+      {
+        "name": "noInnerDeclarations",
+        "category": "correctness",
+        "description": "Disallow function and var declarations that are accessible outside their block.",
+        "recommended": true,
+        "invalid": "if (test) {\n    var x = 1;\n}",
+        "valid": "// inside a module, function declarations are block-scoped and thus allowed.\nif (test) {\n    function f() {}\n}\nexport {}"
+      },
+      {
+        "name": "noInvalidBuiltinInstantiation",
+        "category": "correctness",
+        "description": "Ensure that builtins are correctly instantiated.",
+        "recommended": true,
+        "invalid": "const text = new BigInt(1);",
+        "valid": "const text = BigInt(1);"
+      },
+      {
+        "name": "noInvalidConstructorSuper",
+        "category": "correctness",
+        "description": "Prevents the incorrect use of super() inside classes. It also checks whether a call super() is missing from classes that extends other constructors.",
+        "recommended": true,
+        "invalid": "class A {\n    constructor() {\n        super();\n    }\n}",
+        "valid": "export default class A extends B {\n    constructor() {\n        super();\n    }\n}"
+      },
+      {
+        "name": "noInvalidDirectionInLinearGradient",
+        "category": "correctness",
+        "description": "Disallow non-standard direction values for linear gradient functions.",
+        "recommended": true,
+        "invalid": ".foo { background: linear-gradient(top, #fff, #000); }",
+        "valid": ".foo { background: linear-gradient(to top, #fff, #000); }"
+      },
+      {
+        "name": "noInvalidGridAreas",
+        "category": "correctness",
+        "description": "Disallows invalid named grid areas in CSS Grid Layouts.",
+        "recommended": true,
+        "invalid": "a { grid-template-areas: \"a a\"\n                         \"b b b\"; }",
+        "valid": "a { grid-template-areas: \"a a a\"\n                         \"b b b\"; }"
+      },
+      {
+        "name": "noInvalidPositionAtImportRule",
+        "category": "correctness",
+        "description": "Disallow the use of @import at-rules in invalid positions.",
+        "recommended": true,
+        "invalid": "a {}\n@import 'foo.css';",
+        "valid": "@import 'foo.css';\na {}"
+      },
+      {
+        "name": "noInvalidUseBeforeDeclaration",
+        "category": "correctness",
+        "description": "Disallow the use of variables, function parameters, classes, and enums before their declaration",
+        "recommended": true,
+        "invalid": "function f() {\n    console.log(x);\n    let x;\n}",
+        "valid": "f();\nfunction f() {}"
+      },
+      {
+        "name": "noMissingVarFunction",
+        "category": "correctness",
+        "description": "Disallow missing var function for css variables.",
+        "recommended": true,
+        "invalid": "a {\n  --foo: red;\n  color: --foo;\n}",
+        "valid": "p {\n  color: var(--foo);\n}"
+      },
+      {
+        "name": "noNestedComponentDefinitions",
+        "category": "correctness",
+        "description": "Disallows defining React components inside other components.",
+        "recommended": false,
+        "invalid": "function ParentComponent() {\n  function ChildComponent() {\n    return <div>Hello</div>;\n  }\n\n  return <ChildComponent />;\n}",
+        "valid": "function ChildComponent() {\n  return <div>Hello</div>;\n}\n\nfunction ParentComponent() {\n  return <ChildComponent />;\n}"
+      },
+      {
+        "name": "noNextAsyncClientComponent",
+        "category": "correctness",
+        "description": "Prevent client components from being async functions.",
+        "recommended": false,
+        "invalid": "\"use client\";\n\nexport default async function MyComponent() {\n  return <div>Hello</div>;\n}",
+        "valid": "\"use client\";\n\nexport default function MyComponent() {\n  return <div>Hello</div>;\n}"
+      },
+      {
+        "name": "noNodejsModules",
+        "category": "correctness",
+        "description": "Forbid the use of Node.js builtin modules.",
+        "recommended": false,
+        "invalid": "import fs from \"fs\";",
+        "valid": "import fs from \"fs-custom\";"
+      },
+      {
+        "name": "noNonoctalDecimalEscape",
+        "category": "correctness",
+        "description": "Disallow \\8 and \\9 escape sequences in string literals.",
+        "recommended": true,
+        "invalid": "const x = \"\\8\";",
+        "valid": "const x = \"8\";"
+      },
+      {
+        "name": "noPrecisionLoss",
+        "category": "correctness",
+        "description": "Disallow literal numbers that lose precision",
+        "recommended": true,
+        "invalid": "const x = 9007199254740993",
+        "valid": "const x = 12345\nconst x = 123.456\nconst x = 123e34\nconst x = 12300000000000000000000000\nconst x = 0x1FFFFFFFFFFFFF\nconst x = 9007199254740991\nconst x = 9007_1992547409_91"
+      },
+      {
+        "name": "noProcessGlobal",
+        "category": "correctness",
+        "description": "Disallow the use of process global.",
+        "recommended": false,
+        "invalid": "const foo = process.env.FOO;",
+        "valid": "import process from \"node:process\";\n\nconst foo = process.env.FOO;"
+      },
+      {
+        "name": "noQwikUseVisibleTask",
+        "category": "correctness",
+        "description": "Disallow useVisibleTask$() functions in Qwik components.",
+        "recommended": true,
+        "invalid": "useVisibleTask$(() => {\n  console.log('Component is visible');\n});",
+        "valid": "useTask$(() => {\n  console.log('Task executed');\n});"
+      },
+      {
+        "name": "noReactPropAssignments",
+        "category": "correctness",
+        "description": "Disallow assigning to React component props.",
+        "recommended": false,
+        "invalid": "function Foo(props) {\n\tprops.bar = \"Hello \" + props.bar;\n\n\treturn <div>{props.bar}</div>\n}",
+        "valid": "const Foo = function({bar}) {\n   bar = \"Hello \" + bar;\n   return <div>{bar}</div>\n }"
+      },
+      {
+        "name": "noRenderReturnValue",
+        "category": "correctness",
+        "description": "Prevent the usage of the return value of React.render.",
+        "recommended": true,
+        "invalid": "const foo = ReactDOM.render(<div />, document.body);",
+        "valid": "ReactDOM.render(<div />, document.body);"
+      },
+      {
+        "name": "noRestrictedElements",
+        "category": "correctness",
+        "description": "Disallow the use of configured elements.",
+        "recommended": false,
+        "invalid": "<input />",
+        "valid": "<TextField />"
+      },
+      {
+        "name": "noSelfAssign",
+        "category": "correctness",
+        "description": "Disallow assignments where both sides are exactly the same.",
+        "recommended": true,
+        "invalid": "a = a;",
+        "valid": "a &= a;\nvar a = a;\nlet a = a;\nconst a = a;\n[a, b] = [b, a];"
+      },
+      {
+        "name": "noSetterReturn",
+        "category": "correctness",
+        "description": "Disallow returning a value from a setter",
+        "recommended": true,
+        "invalid": "class A {\n    set foo(x) {\n        return x;\n    }\n}",
+        "valid": "// early-return\nclass A {\n    set foo(x) {\n        if (x) {\n            return;\n        }\n    }\n}"
+      },
+      {
+        "name": "noSolidDestructuredProps",
+        "category": "correctness",
+        "description": "Disallow destructuring props inside JSX components in Solid projects.",
+        "recommended": false,
+        "invalid": "let Component = ({}) => <div />;",
+        "valid": "let Component = (props) => <div />;"
+      },
+      {
+        "name": "noStringCaseMismatch",
+        "category": "correctness",
+        "description": "Disallow comparison of expressions modifying the string case with non-compliant value.",
+        "recommended": true,
+        "invalid": "if (s.toUpperCase() === \"Abc\") {}",
+        "valid": "if (s.toUpperCase() === \"ABC\") {}\nwhile (s.toLowerCase() === \"abc\") {}\nfor (;s.toLocaleLowerCase() === \"ABC\";) {}\nwhile (s.toLocaleUpperCase() === \"abc\") {}\nfor (let s = \"abc\"; s === \"abc\"; s = s.toUpperCase()) {}"
+      },
+      {
+        "name": "noSwitchDeclarations",
+        "category": "correctness",
+        "description": "Disallow lexical declarations in switch clauses.",
+        "recommended": true,
+        "invalid": "switch (foo) {\n    case 0:\n        const x = 1;\n        break;\n    case 2:\n        x; // `x` can be used while it is not initialized\n        break;\n}",
+        "valid": "switch (foo) {\n    case 0: {\n        const x = 1;\n        break;\n    }\n    case 1:\n        // `x` is not visible here\n        break;\n}"
+      },
+      {
+        "name": "noUndeclaredVariables",
+        "category": "correctness",
+        "description": "Prevents the usage of variables that haven't been declared inside the document.",
+        "recommended": false,
+        "invalid": "foobar;",
+        "valid": "type B<T> = PromiseLike<T>"
+      },
+      {
+        "name": "noUnknownFunction",
+        "category": "correctness",
+        "description": "Disallow unknown CSS value functions.",
+        "recommended": true,
+        "invalid": "a { transform: unknown(1); }",
+        "valid": "a { transform: scale(1); }"
+      },
+      {
+        "name": "noUnknownMediaFeatureName",
+        "category": "correctness",
+        "description": "Disallow unknown media feature names.",
+        "recommended": true,
+        "invalid": "@media screen and (unknown > 320px) {}",
+        "valid": "@media screen and (width > 320px) {}"
+      },
+      {
+        "name": "noUnknownProperty",
+        "category": "correctness",
+        "description": "Disallow unknown properties.",
+        "recommended": true,
+        "invalid": "a {\n  colr: blue;\n}",
+        "valid": "a {\n  color: green;\n}"
+      },
+      {
+        "name": "noUnknownPseudoClass",
+        "category": "correctness",
+        "description": "Disallow unknown pseudo-class selectors.",
+        "recommended": true,
+        "invalid": "a:unknown {}",
+        "valid": "a:hover {}"
+      },
+      {
+        "name": "noUnknownPseudoElement",
+        "category": "correctness",
+        "description": "Disallow unknown pseudo-element selectors.",
+        "recommended": true,
+        "invalid": "a::pseudo {}",
+        "valid": "a:before {}"
+      },
+      {
+        "name": "noUnknownTypeSelector",
+        "category": "correctness",
+        "description": "Disallow unknown type selectors.",
+        "recommended": true,
+        "invalid": "unknown {}",
+        "valid": "input {}"
+      },
+      {
+        "name": "noUnknownUnit",
+        "category": "correctness",
+        "description": "Disallow unknown CSS units.",
+        "recommended": true,
+        "invalid": "a {\n  width: 10pixels;\n}",
+        "valid": "a {\n  width: 10px;\n}"
+      },
+      {
+        "name": "noUnmatchableAnbSelector",
+        "category": "correctness",
+        "description": "Disallow unmatchable An+B selectors.",
+        "recommended": true,
+        "invalid": "a:nth-child(0) {}",
+        "valid": "a:nth-child(1) {}"
+      },
+      {
+        "name": "noUnreachableSuper",
+        "category": "correctness",
+        "description": "Ensures the super() constructor is called exactly once on every code path in a class constructor before this is accessed if the class has a superclass",
+        "recommended": true,
+        "invalid": "class A extends B {\n    constructor() {}\n}",
+        "valid": "export default class A extends B {\n    constructor() {\n        super();\n    }\n}"
+      },
+      {
+        "name": "noUnsafeFinally",
+        "category": "correctness",
+        "description": "Disallow control flow statements in finally blocks.",
+        "recommended": true,
+        "invalid": "(() => {\n    try {\n        return 1; // 1 is returned but suspended until finally block ends\n    } catch(err) {\n        return 2;\n    } finally {\n        return 3; // 3 is returned before 1, which we did not expect\n    }\n})();",
+        "valid": "let foo = function() {\n    try {\n        return 1;\n    } catch(err) {\n        return 2;\n    } finally {\n        console.log(\"hola!\");\n    }\n};"
+      },
+      {
+        "name": "noUnsafeOptionalChaining",
+        "category": "correctness",
+        "description": "Disallow the use of optional chaining in contexts where the undefined value is not allowed.",
+        "recommended": true,
+        "invalid": "1 in obj?.foo;",
+        "valid": "(obj?.foo)?.();\nobj?.foo();\n(obj?.foo ?? bar)();\nobj?.foo.bar;\nobj.foo?.bar;\nfoo?.()?.bar;"
+      },
+      {
+        "name": "noUnusedFunctionParameters",
+        "category": "correctness",
+        "description": "Disallow unused function parameters.",
+        "recommended": true,
+        "invalid": "function foo(myVar) {\n    console.log('foo');\n}",
+        "valid": "function foo(myVar) {\n    console.log(myVar);\n}"
+      },
+      {
+        "name": "noUnusedImports",
+        "category": "correctness",
+        "description": "Disallow unused imports.",
+        "recommended": true,
+        "invalid": "import A from 'mod';",
+        "valid": "import { A, type B } from 'mod';\n\nfunction f(arg: B): A {\n    return new A(arg);\n}"
+      },
+      {
+        "name": "noUnusedLabels",
+        "category": "correctness",
+        "description": "Disallow unused labels.",
+        "recommended": true,
+        "invalid": "LOOP: for (const x of xs) {\n    if (x > 0) {\n        break;\n    }\n    f(x);\n}",
+        "valid": "LOOP: for (const x of xs) {\n    if (x > 0) {\n        break LOOP;\n    }\n    f(x);\n}"
+      },
+      {
+        "name": "noUnusedPrivateClassMembers",
+        "category": "correctness",
+        "description": "Disallow unused private class members",
+        "recommended": true,
+        "invalid": "class OnlyWrite {\n  #usedOnlyInWrite = 5;\n\n  method() {\n       this.#usedOnlyInWrite = 212;\n  }\n}",
+        "valid": "class UsedMember {\n  #usedMember = 42;\n\n  method() {\n       return this.#usedMember;\n  }\n}"
+      },
+      {
+        "name": "noUnusedVariables",
+        "category": "correctness",
+        "description": "Disallow unused variables.",
+        "recommended": true,
+        "invalid": "let a = 4;\na++;",
+        "valid": "function foo(b) {\n    console.log(b)\n};\nfoo();"
+      },
+      {
+        "name": "noVoidTypeReturn",
+        "category": "correctness",
+        "description": "Disallow returning a value from a function with the return type 'void'",
+        "recommended": true,
+        "invalid": "class A {\n    f(): void {\n        return undefined;\n    }\n}",
+        "valid": "class A {\n    f() {\n        return undefined;\n    }\n}"
+      },
+      {
+        "name": "noVueDataObjectDeclaration",
+        "category": "correctness",
+        "description": "Enforce that Vue component data options are declared as functions.",
+        "recommended": true,
+        "invalid": "// component-local data via function\nexport default {\n  /* \u2717 BAD */\n  data: { foo: null },\n};",
+        "valid": "// component-local data via function\nexport default {\n  /* \u2713 GOOD */\n  data() {\n    return { foo: null };\n  }\n};"
+      },
+      {
+        "name": "noVueReservedProps",
+        "category": "correctness",
+        "description": "Disallow reserved names to be used as props.",
+        "recommended": true,
+        "invalid": "import {defineComponent} from 'vue';\n\nexport default defineComponent({\n    props: [\n        'key',\n    ]\n});",
+        "valid": "import {defineComponent} from 'vue';\n\nexport default defineComponent({\n    props: ['foo']\n});"
+      },
+      {
+        "name": "noVueSetupPropsReactivityLoss",
+        "category": "correctness",
+        "description": "Disallow destructuring of props passed to setup in Vue projects.",
+        "recommended": false,
+        "invalid": "export default {\n  setup({ count }) {\n    return () => h('div', count);\n  }\n}",
+        "valid": "export default {\n  setup(props) {\n    return () => h('div', props.count);\n  }\n}"
+      },
+      {
+        "name": "useExhaustiveDependencies",
+        "category": "correctness",
+        "description": "Enforce correct dependency usage within React hooks.",
+        "recommended": true,
+        "invalid": "import { useEffect } from \"react\";\n\nfunction component() {\n  let a = 1;\n  useEffect(() => {\n    console.log(a);\n  }, []);\n}",
+        "valid": "import { useEffect } from \"react\";\n\nfunction component() {\n  let a = 1;\n  useEffect(() => {\n    console.log(a);\n  }, [a]);\n}"
+      },
+      {
+        "name": "useGraphqlNamedOperations",
+        "category": "correctness",
+        "description": "Enforce specifying the name of GraphQL operations.",
+        "recommended": true,
+        "invalid": "query {}",
+        "valid": "query Human {\n  name\n}"
+      },
+      {
+        "name": "useHookAtTopLevel",
+        "category": "correctness",
+        "description": "Enforce that all React hooks are being called from the Top Level component functions.",
+        "recommended": true,
+        "invalid": "function Component1({ a }) {\n    if (a == 1) {\n        useEffect();\n    }\n}",
+        "valid": "function Component1() {\n    useEffect();\n}"
+      },
+      {
+        "name": "useImageSize",
+        "category": "correctness",
+        "description": "Enforces that <img> elements have both width and height attributes.",
+        "recommended": true,
+        "invalid": "<img src=\"/image.png\"/>",
+        "valid": "<img width=\"200\" height=\"600\" src=\"/static/images/portrait-01.webp\" />"
+      },
+      {
+        "name": "useImportExtensions",
+        "category": "correctness",
+        "description": "Enforce file extensions for relative imports.",
+        "recommended": false,
+        "invalid": "import \"./foo\";",
+        "valid": "import \"biome\";"
+      },
+      {
+        "name": "useIsNan",
+        "category": "correctness",
+        "description": "Require calls to isNaN() when checking for NaN.",
+        "recommended": true,
+        "invalid": "123 == NaN",
+        "valid": "if (Number.isNaN(123) !== true) {}\n\nfoo(Number.NaN / 2)\n\nswitch(foo) {}"
+      },
+      {
+        "name": "useJsonImportAttributes",
+        "category": "correctness",
+        "description": "Enforces the use of with { type: \"json\" } for JSON module imports.",
+        "recommended": false,
+        "invalid": "import jsonData from './data.json';",
+        "valid": "import jsonData from './data.json' with { type: \"json\" };\n\nimport jsonData from './data.json' with { type: \"json\", other: \"value\" };\n\nimport code from './script.js'; // Not a JSON import"
+      },
+      {
+        "name": "useJsxKeyInIterable",
+        "category": "correctness",
+        "description": "Disallow missing key props in iterators/collection literals.",
+        "recommended": true,
+        "invalid": "[<Hello />];",
+        "valid": "[<Hello key=\"first\" />, <Hello key=\"second\" />, <Hello key=\"third\" />];\n{items.map(item => <li key={item.id}>{item}</li>)}"
+      },
+      {
+        "name": "useParseIntRadix",
+        "category": "correctness",
+        "description": "Enforce the consistent use of the radix argument when using parseInt().",
+        "recommended": true,
+        "invalid": "parseInt(\"071\");",
+        "valid": "parseInt(\"071\", 10);\nparseInt(\"071\", 8);\nparseFloat(someValue);"
+      },
+      {
+        "name": "useQwikClasslist",
+        "category": "correctness",
+        "description": "Prefer using the class prop as a classlist over the classnames helper.",
+        "recommended": true,
+        "invalid": "<div class={classnames({ active: true, disabled: false })} />",
+        "valid": "<div class={{ active: true, disabled: false }} />"
+      },
+      {
+        "name": "useQwikMethodUsage",
+        "category": "correctness",
+        "description": "Disallow use* hooks outside of component$ or other use* hooks in Qwik applications.",
+        "recommended": true,
+        "invalid": "import { useSignal } from \"@builder.io/qwik\";\n\nexport const Counter = () => {\n  const count = useSignal(0);\n};",
+        "valid": "import { component$, useSignal } from \"@builder.io/qwik\";\n\nexport const Counter = component$(() => {\n  const count = useSignal(0);\n});\n\nexport const useCounter = () => {\n  const count = useSignal(0);\n  return count;\n};"
+      },
+      {
+        "name": "useQwikValidLexicalScope",
+        "category": "correctness",
+        "description": "Disallow unserializable expressions in Qwik dollar ($) scopes.",
+        "recommended": true,
+        "invalid": "// Arrow function assigned without wrapping it in $(...)\nconst handleClick = () => {\n  console.log(\"clicked\");\n};",
+        "valid": "const handleClick = $(() => {\n  // Valid: only using serializable variables or props\n  console.log(\"clicked\");\n});"
+      },
+      {
+        "name": "useSingleJsDocAsterisk",
+        "category": "correctness",
+        "description": "Enforce JSDoc comment lines to start with a single asterisk, except for the first one.",
+        "recommended": false,
+        "invalid": "/**\n** Description\n*/",
+        "valid": "/**\n * Description\n * @public\n */"
+      },
+      {
+        "name": "useUniqueElementIds",
+        "category": "correctness",
+        "description": "Prevent the usage of static string literal id attribute on elements.",
+        "recommended": false,
+        "invalid": "<div id=\"foo\">bar</div>;",
+        "valid": "const id = useId();\n<div id={id}>bar</div>;"
+      },
+      {
+        "name": "useValidForDirection",
+        "category": "correctness",
+        "description": "Enforce \"for\" loop update clause moving the counter in the right direction.",
+        "recommended": true,
+        "invalid": "for (var i = 0; i < 10; i--) {\n}",
+        "valid": "for (var i = 0; i < 10; i++) {\n}"
+      },
+      {
+        "name": "useValidTypeof",
+        "category": "correctness",
+        "description": "This rule checks that the result of a typeof expression is compared to a valid value.",
+        "recommended": true,
+        "invalid": "typeof foo === \"strnig\";",
+        "valid": "typeof foo === \"string\";"
+      },
+      {
+        "name": "useYield",
+        "category": "correctness",
+        "description": "Require generator functions to contain yield.",
+        "recommended": true,
+        "invalid": "function* foo() {\n  return 10;\n}",
+        "valid": "function* foo() {\n  yield 5;\n  return 10;\n}\n\nfunction foo() {\n  return 10;\n}\n\n// This rule does not warn on empty generator functions.\nfunction* foo() { }"
+      }
+    ]
+  }
+}

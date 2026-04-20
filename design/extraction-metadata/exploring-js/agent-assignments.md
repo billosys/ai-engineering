@@ -1,0 +1,63 @@
+# Agent Assignments for Exploring JavaScript Extraction
+
+## Agent 1: Background, First Steps, Variables & Values (Ch. 3-14)
+- Ch 3: Why JavaScript? (~5-6 cards)
+- Ch 4: The Nature of JavaScript (~8-9 cards)
+- Ch 5: History and Evolution of JavaScript (~7-8 cards)
+- Ch 6: New JavaScript Features (~8-10 cards)
+- Ch 7: FAQ: JavaScript (~4-5 cards)
+- Ch 8: Using JavaScript: the big picture (~5-6 cards)
+- Ch 9: Syntax (~10-12 cards)
+- Ch 10: Consoles: interactive JavaScript command lines (~4-5 cards)
+- Ch 11: Assertion API (~5-6 cards)
+- Ch 12: Getting started with exercises (~4-5 cards)
+- Ch 13: Variables and assignment (~12-14 cards)
+- Ch 14: Values (~11-13 cards)
+**Target: ~90-110 cards**
+
+## Agent 2: Primitive Values (Ch. 15-24)
+- Ch 15: Operators (~10-12 cards)
+- Ch 16: The non-values undefined and null (~7-8 cards)
+- Ch 17: Booleans (~8-9 cards)
+- Ch 18: Numbers (~13-15 cards)
+- Ch 19: Math (~8-10 cards)
+- Ch 20: Bigints (advanced) (~9-11 cards)
+- Ch 21: Unicode (advanced) (~7-8 cards)
+- Ch 22: Strings (~12-14 cards)
+- Ch 23: Using template literals and tagged templates (~9-11 cards)
+- Ch 24: Symbols (~6-7 cards)
+**Target: ~90-110 cards**
+
+## Agent 3: Control Flow, Functions, Modularity (Ch. 25-31)
+- Ch 25: Control flow statements (~12-14 cards)
+- Ch 26: Exception handling (~10-12 cards)
+- Ch 27: Callable values (~14-16 cards)
+- Ch 28: Evaluating code dynamically (advanced) (~5-6 cards)
+- Ch 29: Modules (~14-16 cards)
+- Ch 30: Objects (~14-16 cards)
+- Ch 31: Classes (~15-18 cards)
+**Target: ~95-115 cards**
+
+## Agent 4: Collections (Ch. 32-40)
+- Ch 32: Synchronous iteration (~13-15 cards)
+- Ch 33: Synchronous generators (advanced) (~10-12 cards)
+- Ch 34: Arrays (~16-18 cards)
+- Ch 35: Typed Arrays (advanced) (~11-13 cards)
+- Ch 36: Maps (~11-13 cards)
+- Ch 37: WeakMaps (advanced) (~8-9 cards)
+- Ch 38: Sets (~12-14 cards)
+- Ch 39: WeakSets (advanced) (~5-6 cards)
+- Ch 40: Destructuring (~11-13 cards)
+**Target: ~98-115 cards**
+
+## Agent 5: Async, Standard Library, Next Steps (Ch. 41-49)
+- Ch 41: A roadmap for asynchronous programming (~6-7 cards)
+- Ch 42: Foundations of asynchronous programming (~8-10 cards)
+- Ch 43: Promises for asynchronous programming (~16-18 cards)
+- Ch 44: Async functions (~12-14 cards)
+- Ch 45: Asynchronous iteration (~10-12 cards)
+- Ch 46: Regular expressions (~16-18 cards)
+- Ch 47: Dates (~8-9 cards)
+- Ch 48: Creating and parsing JSON (~9-11 cards)
+- Ch 49: Next steps: overview of web development (~12-14 cards)
+**Target: ~100-115 cards**
