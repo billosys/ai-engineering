@@ -1,2 +1,4 @@
-/workbench
+workbench
+old
 /.claude
+/scripts/*.py
