@@ -6,10 +6,12 @@ This index is automatically generated. Do not edit manually.
 
 | Number | Title | State | Updated |
 |--------|-------|-------|----------|
+| 0002 | Go LLM coding guides: the real contenders | Final | 2026-04-20 |
 | 0001 | Research foundation for a visual design knowledge base | Final | 2026-02-28 |
 
 ## Documents by State
 
 ### Final
 
+- [0002 - Go LLM coding guides: the real contenders](06-final/0002-go-llm-coding-guides-the-real-contenders.md)
 - [0001 - Research foundation for a visual design knowledge base](06-final/0001-research-foundation-for-a-visual-design-knowledge-base.md)
