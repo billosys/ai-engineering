@@ -666,7 +666,7 @@ func doWork() error {
 }
 ```
 
-**Rationale**: An interface value is two words (type descriptor, data pointer). `iface == nil` compares both. `return someTypedNilPointer` fills the type word even when the data word is zero, so the resulting interface is non-nil. The idiomatic fix is to never return a concrete-typed nil pointer as an error; return the untyped `nil` literal instead. Uber §Pointers to Interfaces describes the two-word model; this gotcha is a direct consequence of it. See also Effective Go and the Go FAQ ("Why is my nil error value not equal to nil?"). (Uber Style Guide §Pointers to Interfaces; Go FAQ §Why is my nil error value not equal to nil?).
+**Rationale**: An interface value is two words (type descriptor, data pointer). `iface == nil` compares both. `return someTypedNilPointer` fills the type word even when the data word is zero, so the resulting interface is non-nil — the caller's `if err != nil` check then passes, and any subsequent method call on the typed-nil dereferences a nil pointer and panics. The idiomatic fix is mechanical: when the return type is an interface, return the untyped `nil` literal, never a zero-valued typed variable. Branch on the concrete value and `return nil` when there is no error. Uber §Pointers to Interfaces describes the two-word model; this gotcha is a direct consequence of it. See also Effective Go and the Go FAQ ("Why is my nil error value not equal to nil?"). (Uber Style Guide §Pointers to Interfaces; Go FAQ §Why is my nil error value not equal to nil?; also corroborated by `cc-skills-golang/skills/golang-safety/references/nil-safety.md` + `skills/golang-troubleshooting/references/common-go-bugs.md` and `claude-skills/references/gotchas.md`).
 
 **See also**: IM-10, IM-28
 
@@ -1323,6 +1323,64 @@ sort.Slice(users, func(i, j int) bool {
 
 ---
 
+## IM-34: Segregated Role Interfaces over a Fat CRUD Interface
+
+**Strength**: SHOULD
+
+**Summary**: Rather than declaring one `Repository` interface with every CRUD/search/count method, declare a single-method role interface per operation (`Creator`, `Reader`, `Updater`, `Deleter`, `Lister`) and compose only the ones a given consumer actually needs (`ReadWriter`, `FullRepository`). This is the concrete, copy-pasteable realization of "keep interfaces small" in the repository-layer context that Go codebases routinely need.
+
+```go
+// Bad: Fat interface
+type BadRepository interface {
+    Create(item Item) error
+    Read(id string) (Item, error)
+    Update(item Item) error
+    Delete(id string) error
+    List() ([]Item, error)
+    Search(query string) ([]Item, error)
+    Count() (int, error)
+}
+
+// Good: Segregated interfaces
+type Creator interface {
+    Create(item Item) error
+}
+
+type Reader interface {
+    Read(id string) (Item, error)
+}
+
+type Updater interface {
+    Update(item Item) error
+}
+
+type Deleter interface {
+    Delete(id string) error
+}
+
+type Lister interface {
+    List() ([]Item, error)
+}
+
+// Compose only what you need
+type ReadWriter interface {
+    Reader
+    Creator
+}
+
+type FullRepository interface {
+    Creator
+    Reader
+    Updater
+    Deleter
+    Lister
+}
+```
+
+**Rationale**: A consumer that only needs to read should depend on `Reader`, not on a seven-method `BadRepository` whose `Update`, `Delete`, `Search`, and `Count` it never uses. Segregated interfaces make mocks trivial (one method each), let callers compose the exact capability set they need, and avoid forcing every implementation to stub out methods that are irrelevant to it. This extends IM-03 (keep interfaces small) and IM-05 (compose by embedding) into a named pattern for the common CRUD case. Source: `jeffallan-claude-skills/skills/golang-pro/references/interfaces.md` (via `jeffallan-claude-skills/skills-accepted.md` §Interface Segregation).
+
+**See also**: IM-03, IM-05, IM-02
+
 ---
 
 ## Best Practices Summary
@@ -1364,6 +1422,7 @@ sort.Slice(users, func(i, j int) bool {
 | 31 | Generics over `any` + type switch | CONSIDER | Type-safe and faster; skip if one type |
 | 32 | Avoid test-only interfaces for production types | SHOULD-AVOID | Test the real implementation |
 | 33 | Method values for callbacks; expressions rarely | CONSIDER | `defer f.Close`; `Type.Method` is uncommon |
+| 34 | Segregated role interfaces | SHOULD | Per-op `Creator`/`Reader` compose |
 
 ---
 

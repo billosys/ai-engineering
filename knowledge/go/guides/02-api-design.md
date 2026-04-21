@@ -1085,6 +1085,96 @@ req := http.Request{http.MethodGet, u, proto, protoMajor, /* ... */}
 
 ---
 
+## API-41: Functional Options over Positional Parameters or Struct-Field Defaults
+
+**Strength**: SHOULD
+
+**Summary**: For constructors with more than a couple of optional parameters, expose an `Option` type plus `With*` helpers and accept `opts ...Option`. Avoid long positional signatures or large config structs full of zero-value fields.
+
+```go
+// Good: functional options
+type Option func(*Server)
+
+func WithTimeout(d time.Duration) Option {
+    return func(s *Server) { s.timeout = d }
+}
+
+func WithLogger(l *slog.Logger) Option {
+    return func(s *Server) { s.logger = l }
+}
+
+func NewServer(addr string, opts ...Option) *Server {
+    s := &Server{
+        addr:    addr,
+        timeout: 30 * time.Second,
+        logger:  slog.Default(),
+    }
+    for _, opt := range opts {
+        opt(s)
+    }
+    return s
+}
+
+// Usage is clean and extensible
+srv := NewServer("localhost:8080",
+    WithTimeout(60*time.Second),
+    WithLogger(logger),
+)
+
+// Bad: positional parameters or large struct with zero values
+func NewServer(addr string, timeout time.Duration, logger *slog.Logger, tls *tls.Config) *Server {
+    // Adding new options requires new parameters or breaks existing calls
+}
+```
+
+**Rationale**: Options keep the required arguments obvious at the call site while letting optional behavior grow without breaking existing callers. Defaults live next to the constructor rather than at every call site, and each `With*` helper gets its own doc comment describing units and semantics. Adding a new option is a non-breaking change (claude-skills (saisudhir14)/references/patterns.md).
+
+**See also**: API-05, API-06, API-07
+
+---
+
+## API-42: Dependency Injection over Package-Level Globals
+
+**Strength**: SHOULD
+
+**Summary**: Pass collaborators such as databases, caches, and loggers as explicit constructor arguments on a struct. Do not reach for package-level `var` state initialized in `init()`.
+
+```go
+// Good: dependency injection
+type Server struct {
+    db     *sql.DB
+    cache  Cache
+    logger *slog.Logger
+}
+
+func NewServer(db *sql.DB, cache Cache, logger *slog.Logger) *Server {
+    return &Server{db: db, cache: cache, logger: logger}
+}
+
+func (s *Server) GetUser(ctx context.Context, id string) (*User, error) {
+    // Dependencies are explicit; easy to mock in tests
+    return s.db.QueryRowContext(ctx, "SELECT * FROM users WHERE id=$1", id).Scan()
+}
+
+// Bad: mutable globals
+var db *sql.DB
+
+func init() {
+    db, _ = sql.Open("postgres", os.Getenv("DSN"))
+}
+
+func GetUser(id string) (*User, error) {
+    // GetUser implicitly depends on global db; hard to test
+    return db.QueryRow("SELECT * FROM users WHERE id=$1", id).Scan()
+}
+```
+
+**Rationale**: Explicit dependencies make the API's requirements legible and let tests substitute fakes or mocks without global teardown. `init()`-populated globals swallow errors, create hidden ordering constraints between packages, and prevent running two configurations side by side in the same process (claude-skills (saisudhir14)/references/patterns.md).
+
+**See also**: API-08, API-11, API-12
+
+---
+
 ---
 
 ## Best Practices Summary
@@ -1133,6 +1223,8 @@ req := http.Request{http.MethodGet, u, proto, protoMajor, /* ... */}
 | 38 | Avoid bare `bool` parameters | SHOULD-AVOID | Named enum at call sites |
 | 39 | Doc comments on exported fields | SHOULD | Units, defaults, requiredness |
 | 40 | Named fields in struct literals | MUST | Survives reorderings |
+| 41 | Functional options | SHOULD | Extensible without breaking signatures |
+| 42 | Dependency injection, not globals | SHOULD | Explicit deps, testable |
 
 ---
 

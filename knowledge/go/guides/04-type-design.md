@@ -1178,6 +1178,162 @@ func Divide(a, b float64) (quotient, remainder float64, err error) {
 
 ---
 
+## TD-37: Validated Types for Domain Invariants
+
+**Strength**: SHOULD
+
+**Summary**: Wrap primitives that must satisfy invariants in a struct with an unexported field and a constructor that validates. Once constructed, consumers can trust the value without re-validating.
+
+```go
+// Bad — email is a raw string; every consumer must re-validate (or won't).
+func SendEmail(to string, body string) error { /* ... */ }
+
+// Good — validated type enforces the constraint at the boundary.
+type Email struct {
+    address string // unexported: can only be created via constructor
+}
+
+func NewEmail(raw string) (Email, error) {
+    if !isValidEmail(raw) {
+        return Email{}, fmt.Errorf("invalid email: %s", raw)
+    }
+    return Email{address: raw}, nil
+}
+```
+
+**Rationale**: Pushing validation into the constructor means the invariant holds for every `Email` value in the program — callers stop defensively re-checking. The unexported field makes the zero `Email{}` unusable by design, which is the right trade here because "no email" should be explicit (`*Email` or `sql.Null...`), not a silently-empty value that sneaks through (`cc-skills-golang/skills/golang-design-patterns/references/architecture.md`).
+
+**See also**: TD-01, TD-06, TD-10
+
+---
+
+## TD-38: Reserve Enum Zero Value for Unknown or Invalid
+
+**Strength**: SHOULD
+
+**Summary**: Reserve `iota == 0` for an explicit `Unknown`/`Invalid` sentinel so uninitialized fields and missing wire-format values don't silently pass as a valid enum. Pair with a `String()` method that maps unset values to `"unknown"`.
+
+```go
+// Bad — zero value is a real status; a forgotten assignment looks "Active".
+type Status int
+const (
+    Active   Status = iota // 0
+    Inactive               // 1
+)
+
+// Good — 0 is explicitly unset; String() handles unknown values gracefully.
+type Status int
+const (
+    StatusUnknown  Status = iota // 0 — explicit unset sentinel
+    StatusActive                 // 1
+    StatusInactive               // 2
+)
+
+func (s Status) String() string {
+    switch s {
+    case StatusActive:
+        return "active"
+    case StatusInactive:
+        return "inactive"
+    default:
+        return "unknown"
+    }
+}
+```
+
+**Rationale**: Uninitialized struct fields and missing JSON values default to 0; if 0 is also a valid enum, the bug is invisible. Reserving 0 for `Unknown` forces callers to set the status explicitly and lets validators reject the sentinel at the boundary. The `String()` default case keeps logs safe even when an unexpected int arrives from the wire (`cc-skills-golang + claude-skills (saisudhir14)`; sources: `cc-skills-golang/skills/golang-design-patterns/references/architecture.md`, `claude-skills/references/patterns.md`).
+
+**See also**: TD-12, TD-13
+
+---
+
+## TD-39: Explicit Defaults in Code over Struct-Tag Reflection
+
+**Strength**: SHOULD
+
+**Summary**: Initialize default values in a constructor or factory, not through reflection-based struct tags that run at load time. Explicit code defaults are visible, compile-checked, and searchable.
+
+```go
+// Bad — default hidden in a tag, applied by a reflection helper at runtime.
+type Config struct {
+    Port int `default:"8080"`
+}
+
+// Good — default is ordinary Go, visible at the call site and type-checked.
+func NewConfig() Config {
+    return Config{Port: 8080}
+}
+```
+
+**Rationale**: Reflection-based defaults force the reader to know the helper library's conventions, tie the type to a specific framework, and surface typos (`defualt:"8080"`) at runtime rather than at compile time. A constructor puts the default where a Go reader already looks for initialization, and it composes cleanly with validation and derived fields (`cc-skills-golang/skills/golang-design-patterns/references/architecture.md`).
+
+**See also**: TD-01, TD-18
+
+---
+
+## TD-40: Lazy Initialization for a Useful Zero Value
+
+**Strength**: CONSIDER
+
+**Summary**: Guard map/slice fields with nil checks inside mutating methods so the zero-value struct is immediately usable without a constructor. This mirrors stdlib types like `bytes.Buffer` and `sync.Mutex`.
+
+```go
+// Bad — zero value is broken; the nil map panics on the first write.
+type Registry struct {
+    items map[string]Item
+}
+
+// var r Registry; r.items["x"] = item  // panic: assignment to entry in nil map
+
+// Good — lazy initialization keeps `var r Registry` usable.
+func (r *Registry) Register(name string, item Item) {
+    if r.items == nil {
+        r.items = make(map[string]Item)
+    }
+    r.items[name] = item
+}
+```
+
+**Rationale**: A useful zero value lets callers write `var r Registry` without ceremony and removes a class of "forgot to call `NewX`" bugs. Use this when the field is internal and writes all go through methods — if the field is exported or read concurrently, prefer a constructor or `sync.Once`, since repeated nil checks on hot concurrent paths are both racy and wasteful (`cc-skills-golang/skills/golang-safety/references/nil-safety.md`).
+
+**See also**: TD-01, TD-05, TD-08
+
+---
+
+## TD-41: Use the Narrowest Generic Constraint That Compiles
+
+**Strength**: SHOULD
+
+**Summary**: Pick the smallest constraint that satisfies the operations your function actually performs. Prefer `any`, `comparable`, and `cmp.Ordered` before reaching for custom union constraints.
+
+```go
+// Bad — restricts callers to int and string even though only == is used.
+func Contains[T interface{ ~int | ~string }](s []T, v T) bool {
+    for _, x := range s {
+        if x == v {
+            return true
+        }
+    }
+    return false
+}
+
+// Good — comparable is the minimal constraint that supports ==.
+func Contains[T comparable](s []T, v T) bool {
+    for _, x := range s {
+        if x == v {
+            return true
+        }
+    }
+    return false
+}
+```
+
+**Rationale**: Over-constraining limits reuse and forces callers to duplicate the function (or convert their types) for no benefit. Walk the ladder — `any` for pass-through, `comparable` for `==`/map keys, `cmp.Ordered` for `<`/`>`, a method-set interface for behavior — and only write a type-union constraint when the implementation truly needs those concrete operations (`golang-skills (cxuu)/skills/go-generics/references/CONSTRAINTS.md`).
+
+**See also**: TD-26, TD-27, TD-28
+
+---
+
 ---
 
 ## Best Practices Summary
@@ -1222,6 +1378,11 @@ func Divide(a, b float64) (quotient, remainder float64, err error) {
 | 34 | Constructor only if nontrivial | SHOULD | Struct literals for the trivial case |
 | 35 | Constructors return concrete | SHOULD | Accept interfaces, return concrete |
 | 36 | Named returns for clarity only | SHOULD-AVOID | Don't enable naked returns |
+| 37 | Validated domain types | SHOULD | Unexported field + validating constructor |
+| 38 | Enum zero = Unknown | SHOULD | Catches uninitialized fields |
+| 39 | Explicit defaults in code | SHOULD | Over reflection struct tags |
+| 40 | Lazy-init for zero-value usability | CONSIDER | Match `bytes.Buffer` idiom |
+| 41 | Narrowest generic constraint | SHOULD | `comparable`/`cmp.Ordered` first |
 
 ---
 

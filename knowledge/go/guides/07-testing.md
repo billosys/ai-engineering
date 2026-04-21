@@ -1668,6 +1668,154 @@ BenchmarkGood-4  500000000    3.25 ns/op
 
 ---
 
+## TE-40: Deterministic Concurrency Tests with `testing/synctest`
+
+**Strength**: SHOULD (Go 1.25+)
+
+**Summary**: For concurrent code that depends on timing, run the test inside a `synctest.Test(t, func(t *testing.T) { ... })` bubble. Inside the bubble, time is synthetic and advances only when every goroutine in the bubble is blocked, so `time.Sleep` and `context.WithTimeout` become deterministic and instant.
+
+```go
+// Bad: flaky timing-dependent test
+func TestTimeout(t *testing.T) {
+    ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+    defer cancel()
+
+    time.Sleep(4 * time.Second) // real time, test is slow and flaky
+    if ctx.Err() != nil {
+        t.Fatal("unexpected timeout")
+    }
+}
+
+// Good: deterministic with synthetic time
+func TestTimeout(t *testing.T) {
+    synctest.Test(t, func(t *testing.T) {
+        ctx, cancel := context.WithTimeout(t.Context(), 5*time.Second)
+        defer cancel()
+
+        time.Sleep(4 * time.Second) // instant in synthetic time
+        if ctx.Err() != nil {
+            t.Fatal("unexpected timeout")
+        }
+    })
+}
+```
+
+**Rationale**: `testing/synctest` removes the two things that make concurrent tests flaky: wall-clock timing and scheduling non-determinism. Real `time.Sleep` calls execute instantly because the fake clock only moves when all bubbled goroutines are blocked, and tests no longer race with real-world CPU contention. Use it whenever a test would otherwise need `time.Sleep` or a generous timeout to "let things happen" (claude-skills (saisudhir14)/skills/go-testing/SKILL.md).
+
+---
+
+## TE-41: Benchmark with `b.Loop()` Instead of Manual `b.N` Loops
+
+**Strength**: SHOULD (Go 1.24+)
+
+**Summary**: Prefer `for b.Loop()` over `for i := 0; i < b.N; i++` in new benchmarks. `b.Loop()` runs setup exactly once (no `b.ResetTimer()` needed) and guarantees the compiler cannot optimize away the loop body.
+
+```go
+// Bad: error-prone, setup included in timing
+func BenchmarkOld(b *testing.B) {
+    input := setupInput() // counted in benchmark time!
+    b.ResetTimer()
+    for i := 0; i < b.N; i++ {
+        process(input) // compiler might optimize away
+    }
+}
+
+// Good: clean and correct (Go 1.24+)
+func BenchmarkNew(b *testing.B) {
+    input := setupInput() // setup runs once, excluded from timing
+    for b.Loop() {
+        process(input) // compiler cannot optimize away
+    }
+}
+```
+
+**Rationale**: `b.Loop()` encodes the two easy-to-forget rules of `b.N` benchmarks — exclude setup from timing, and keep the compiler from deleting work whose result is unused — directly in the loop form. Setup before `for b.Loop()` runs once and is not measured, and the runtime keeps arguments live so dead-code elimination cannot invalidate the benchmark. Use the `b.N` form from TE-38 only when maintaining older code (claude-skills (saisudhir14)/skills/go-testing/SKILL.md).
+
+**See also**: TE-38, TE-39
+
+---
+
+## TE-42: Prefer `T.Context()` and `T.Chdir()` over Manual Setup/Teardown
+
+**Strength**: SHOULD (Go 1.24+)
+
+**Summary**: Use `t.Context()` for any context a test needs to cancel, and `t.Chdir()` when a test must run in a different working directory. Both hook into the test's lifecycle automatically — no manual `cancel()`, no save/restore of the previous working directory.
+
+```go
+// Bad: no test-scoped context
+func TestWithTimeout(t *testing.T) {
+    ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+    defer cancel()
+    // Context doesn't know it's in a test; may outlive test
+}
+
+// Good: test-scoped (Go 1.24+)
+func TestWithTimeout(t *testing.T) {
+    ctx := t.Context() // canceled after test, before cleanup
+    result, err := doWork(ctx)
+    // ...
+}
+
+// Bad: global side effect
+func TestReadConfig(t *testing.T) {
+    oldDir, _ := os.Getwd()
+    os.Chdir("testdata")
+    // forgetting to restore causes test pollution
+    os.Chdir(oldDir)
+}
+
+// Good: automatic restore (Go 1.24+)
+func TestReadConfig(t *testing.T) {
+    t.Chdir("testdata")
+    data, _ := os.ReadFile("config.json")
+    // directory automatically restored after test
+}
+```
+
+**Rationale**: `t.Context()` is canceled after the test body returns but before `t.Cleanup` functions run, which is exactly what test-scoped work needs — no bespoke `context.WithTimeout` + `defer cancel()` pair. `t.Chdir` records the old working directory and restores it via `Cleanup`, so a panic or early return cannot leave the process in the wrong directory and poison later tests. Both APIs make the hermeticity rule in TE-32 a one-liner (claude-skills (saisudhir14)/skills/go-testing/SKILL.md).
+
+**See also**: TE-32, TE-33
+
+---
+
+## TE-43: Expose Acceptance Tests in a Companion `*test` Package
+
+**Strength**: CONSIDER
+
+**Summary**: If you own an interface that others implement, ship a companion `xxxtest` package whose exported `Verify(impl) error` exercises the contract. External implementers then get a one-line acceptance test. Return `error`, not `t.Fatal`, so the caller chooses how to report failures.
+
+```go
+// Bad: No standard way for external implementations to validate correctness
+// External package has no way to verify they implement your interface correctly
+
+// Good: Export validation in a companion *test package
+package storagetest
+
+func Verify(b storage.Backend) error {
+    if err := verifyRoundTrip(b); err != nil {
+        return fmt.Errorf("round-trip: %w", err)
+    }
+    if err := verifyNotFound(b); err != nil {
+        return fmt.Errorf("not-found: %w", err)
+    }
+    return nil
+}
+
+// External implementer uses it
+func TestMyBackend(t *testing.T) {
+    b := mybackend.New(t)
+    if err := storagetest.Verify(b); err != nil {
+        t.Errorf("MyBackend failed acceptance: %v", err)
+    }
+}
+```
+
+**Rationale**: The contract of an interface is a property of *every* implementation, so the tests belong next to the interface, not copy-pasted into each implementer. Returning `error` (rather than taking `*testing.T` and calling `t.Fatal`) keeps the helper usable from benchmarks, from integration harnesses, and from implementations that want to keep going after a single failure — the caller still decides between `t.Errorf`, `t.Fatal`, or logging. This is the same shape as the stdlib's `testing/fstest.TestFS` (golang-skills (cxuu)/skills/go-testing/references/VALIDATION-APIS.md).
+
+**See also**: TE-31
+
+---
+
 ---
 
 ## Best Practices Summary
@@ -1715,6 +1863,10 @@ BenchmarkGood-4  500000000    3.25 ns/op
 | 37 | Integration tests: build tags or `testing.Short` | CONSIDER | Keep unit tests fast |
 | 38 | `BenchmarkXxx(b *testing.B)`, loop `b.N` | SHOULD | `b.ResetTimer`, `b.ReportAllocs` |
 | 39 | Benchmarks back performance claims | SHOULD | Before/after numbers, not argument |
+| 40 | `testing/synctest` for timing tests | SHOULD | Synthetic time, deterministic |
+| 41 | `b.Loop()` over manual `b.N` | SHOULD | Setup excluded, compiler can't DCE |
+| 42 | `T.Context()` / `T.Chdir()` | SHOULD | Self-cleaning scoped helpers |
+| 43 | `*test`-package acceptance helpers | CONSIDER | Return `error`, not `t.Fatal` |
 
 ---
 

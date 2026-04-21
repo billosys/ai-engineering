@@ -46,7 +46,7 @@ func main() {
 }
 ```
 
-**Why it's wrong**: Uber §Avoid `init()` requires that any `init()` "be completely deterministic, regardless of program environment or invocation... avoid depending on the ordering or side-effects of other `init()` functions... avoid accessing or manipulating global or environment state... avoid I/O." Functions that violate these rules "likely belong as a helper to be called as part of `main()`." `init()` has no way to return an error, so failures become panics or silently swallowed errors. Tests cannot substitute a different config, because `init()` has already run by the time `TestMain` is entered (Uber Style Guide §Avoid `init()`; Google Best Practices §Program initialization).
+**Rationale**: Uber §Avoid `init()` requires that any `init()` "be completely deterministic, regardless of program environment or invocation... avoid depending on the ordering or side-effects of other `init()` functions... avoid accessing or manipulating global or environment state... avoid I/O." Functions that violate these rules "likely belong as a helper to be called as part of `main()`." `init()` has no way to return an error, so failures become panics or silently swallowed errors. Tests cannot substitute a different config, because `init()` has already run by the time `TestMain` is entered (Uber Style Guide §Avoid `init()`; Google Best Practices §Program initialization).
 
 **See also**: AP-02, AP-13, AP-14
 
@@ -103,7 +103,7 @@ func (p *Poller) Shutdown() {
 }
 ```
 
-**Why it's wrong**: Uber §No goroutines in `init()` states that "`init()` functions should not spawn goroutines... If a package has need of a background goroutine, it must expose an object that is responsible for managing a goroutine's lifetime. The object must provide a method (`Close`, `Stop`, `Shutdown`, etc) that signals the background goroutine to stop, and waits for it to exit." Fire-and-forget goroutines in `init()` prevent clean shutdown, mask leaks during testing, and make the package coupling implicit (Uber Style Guide §No goroutines in init(); Uber Style Guide §Don't fire-and-forget goroutines).
+**Rationale**: Uber §No goroutines in `init()` states that "`init()` functions should not spawn goroutines... If a package has need of a background goroutine, it must expose an object that is responsible for managing a goroutine's lifetime. The object must provide a method (`Close`, `Stop`, `Shutdown`, etc) that signals the background goroutine to stop, and waits for it to exit." Fire-and-forget goroutines in `init()` prevent clean shutdown, mask leaks during testing, and make the package coupling implicit (Uber Style Guide §No goroutines in init(); Uber Style Guide §Don't fire-and-forget goroutines).
 
 **See also**: AP-01, AP-14, AP-15
 
@@ -141,7 +141,7 @@ func main() {
 }
 ```
 
-**Why it's wrong**: Uber §Don't Panic: "Code running in production must avoid panics. Panics are a major source of cascading failures. If an error occurs, the function must return an error and allow the caller to decide how to handle it." Google Decisions §Don't panic: "Do not use `panic` for normal error handling. Instead, use `error` and multiple return values." Panics propagate across goroutines, bypass deferred cleanup in unrelated code paths, and force recovery boilerplate on every consumer (Uber Style Guide §Don't Panic; Google Decisions §Don't panic; Google Best Practices §When to panic).
+**Rationale**: Uber §Don't Panic: "Code running in production must avoid panics. Panics are a major source of cascading failures. If an error occurs, the function must return an error and allow the caller to decide how to handle it." Google Decisions §Don't panic: "Do not use `panic` for normal error handling. Instead, use `error` and multiple return values." Panics propagate across goroutines, bypass deferred cleanup in unrelated code paths, and force recovery boilerplate on every consumer (Uber Style Guide §Don't Panic; Google Decisions §Don't panic; Google Best Practices §When to panic).
 
 **See also**: AP-04, AP-05, AP-07
 
@@ -176,7 +176,7 @@ func Find(tree *Node, key string) (*Node, error) {
 }
 ```
 
-**Why it's wrong**: Google Best Practices §Program checks and panics warns against using `recover` to avoid crashes: "resist the temptation to recover panics to avoid crashes, as doing so can result in propagating a corrupted state. The further you are from the panic, the less you know about the state of the program, which could be holding locks or other resources." The one acceptable pattern — a parser that panics internally and converts to an error at the package boundary — requires that "these panics are never allowed to escape across package boundaries" (Google Best Practices §When to panic; Google Best Practices §Program checks and panics; Uber Style Guide §Don't Panic).
+**Rationale**: Google Best Practices §Program checks and panics warns against using `recover` to avoid crashes: "resist the temptation to recover panics to avoid crashes, as doing so can result in propagating a corrupted state. The further you are from the panic, the less you know about the state of the program, which could be holding locks or other resources." The one acceptable pattern — a parser that panics internally and converts to an error at the package boundary — requires that "these panics are never allowed to escape across package boundaries" (Google Best Practices §When to panic; Google Best Practices §Program checks and panics; Uber Style Guide §Don't Panic).
 
 **See also**: AP-03, AP-05
 
@@ -208,7 +208,7 @@ func Version(o *servicepb.Object) (*version.Version, error) {
 var defaultVersion = version.MustParse("1.2.3")
 ```
 
-**Why it's wrong**: Google Decisions §Must functions: "In general, they should only be called early on program startup, not on things like user input where normal Go error handling is preferred... These helpers should not be called in places where it's difficult to ensure an error would be caught or in a context where an error should be checked (e.g., in many request handlers)." A `Must` call with runtime input turns a validation failure into a server-wide crash (Google Decisions §Must functions; Uber Style Guide §Don't Panic).
+**Rationale**: Google Decisions §Must functions: "In general, they should only be called early on program startup, not on things like user input where normal Go error handling is preferred... These helpers should not be called in places where it's difficult to ensure an error would be caught or in a context where an error should be checked (e.g., in many request handlers)." A `Must` call with runtime input turns a validation failure into a server-wide crash (Google Decisions §Must functions; Uber Style Guide §Don't Panic).
 
 **See also**: AP-03, AP-06
 
@@ -256,7 +256,7 @@ func main() {
 }
 ```
 
-**Why it's wrong**: Uber §Exit in Main: "Call one of `os.Exit` or `log.Fatal*` **only in `main()`**. All other functions should return errors to signal failure." Early exits make deferred cleanup unreachable and make any non-`main` package impossible to reuse as a library. A helper that exits on failure cannot be called from a test without terminating the test process (Uber Style Guide §Exit in Main).
+**Rationale**: Uber §Exit in Main: "Call one of `os.Exit` or `log.Fatal*` **only in `main()`**. All other functions should return errors to signal failure." Early exits make deferred cleanup unreachable and make any non-`main` package impossible to reuse as a library. A helper that exits on failure cannot be called from a test without terminating the test process (Uber Style Guide §Exit in Main).
 
 **See also**: AP-03, AP-05
 
@@ -290,7 +290,7 @@ sidecars := sidecar.New()
 _ = sidecars.Register("cloudlogger", cloudlogger.New())
 ```
 
-**Why it's wrong**: Google Best Practices §Global state: "Libraries should not force their clients to use APIs that rely on global state. They are advised not to expose APIs or export package level variables that control behavior for all clients as parts of their API." Global state creates order-dependent tests, prevents parallelism, and collapses under multi-tenant or multi-config workloads. Uber §Avoid Mutable Globals gives the same guidance: "Avoid mutating global variables, instead opting for dependency injection" (Google Best Practices §Global state; Uber Style Guide §Avoid Mutable Globals).
+**Rationale**: Google Best Practices §Global state: "Libraries should not force their clients to use APIs that rely on global state. They are advised not to expose APIs or export package level variables that control behavior for all clients as parts of their API." Global state creates order-dependent tests, prevents parallelism, and collapses under multi-tenant or multi-config workloads. Uber §Avoid Mutable Globals gives the same guidance: "Avoid mutating global variables, instead opting for dependency injection" (Google Best Practices §Global state; Uber Style Guide §Avoid Mutable Globals).
 
 **See also**: AP-01, AP-08, AP-09
 
@@ -336,7 +336,7 @@ func TestSigner(t *testing.T) {
 }
 ```
 
-**Why it's wrong**: Uber §Avoid Mutable Globals presents this exact refactor as the motivating example: "Avoid mutating global variables, instead opting for dependency injection. This applies to function pointers as well as other kinds of values." A per-instance field scopes the override to one test; a package variable leaks across the whole test binary (Uber Style Guide §Avoid Mutable Globals; Google Best Practices §Global state).
+**Rationale**: Uber §Avoid Mutable Globals presents this exact refactor as the motivating example: "Avoid mutating global variables, instead opting for dependency injection. This applies to function pointers as well as other kinds of values." A per-instance field scopes the override to one test; a package variable leaks across the whole test binary (Uber Style Guide §Avoid Mutable Globals; Google Best Practices §Global state).
 
 **See also**: AP-07, AP-09
 
@@ -371,7 +371,7 @@ func main() {
 }
 ```
 
-**Why it's wrong**: Google Best Practices §Major forms of package state APIs lists "Registries for callbacks and similar behaviors" as a problematic form: "A client could call `Register` in `func init`, before flags are parsed, or after `main`. The stage at which a function is called affects error handling... Aborting is not appropriate for general-purpose library functions that can be used at any stage." Import-time registration makes ordering invisible, testing order-dependent, and replacement impossible (Google Best Practices §Major forms of package state APIs; Uber Style Guide §Avoid `init()`).
+**Rationale**: Google Best Practices §Major forms of package state APIs lists "Registries for callbacks and similar behaviors" as a problematic form: "A client could call `Register` in `func init`, before flags are parsed, or after `main`. The stage at which a function is called affects error handling... Aborting is not appropriate for general-purpose library functions that can be used at any stage." Import-time registration makes ordering invisible, testing order-dependent, and replacement impossible (Google Best Practices §Major forms of package state APIs; Uber Style Guide §Avoid `init()`).
 
 **See also**: AP-01, AP-07
 
@@ -406,7 +406,7 @@ var buf *bytes.Buffer
 n, _ := buf.Write(p) // never returns a non-nil error, per the docs
 ```
 
-**Why it's wrong**: Google Decisions §Handle errors: "It is not usually appropriate to discard errors using `_` variables... In the rare circumstance where it is appropriate to ignore or discard an error... an accompanying comment should explain why this is safe." `errcheck` and `staticcheck` flag blanket discards; a comment is the difference between silent data loss and an informed choice (Google Decisions §Handle errors; Effective Go §Errors).
+**Rationale**: Google Decisions §Handle errors: "It is not usually appropriate to discard errors using `_` variables... In the rare circumstance where it is appropriate to ignore or discard an error... an accompanying comment should explain why this is safe." `errcheck` and `staticcheck` flag blanket discards; a comment is the difference between silent data loss and an informed choice (Google Decisions §Handle errors; Effective Go §Errors).
 
 **See also**: AP-11, AP-12, AP-21
 
@@ -434,7 +434,7 @@ if err != nil {
 // Resulting chain: "process request: new store: open: no space left on device"
 ```
 
-**Why it's wrong**: Uber §Error Wrapping: "When adding context to returned errors, keep the context succinct by avoiding phrases like 'failed to', which state the obvious and pile up as the error percolates up through the stack... However once the error is sent to another system, it should be clear the message is an error (e.g. an `err` tag or 'Failed' prefix in logs)." The error type already signals failure; every wrap should narrow the location, not repeat the conclusion (Uber Style Guide §Error Wrapping; Google Best Practices §Adding information to errors).
+**Rationale**: Uber §Error Wrapping: "When adding context to returned errors, keep the context succinct by avoiding phrases like 'failed to', which state the obvious and pile up as the error percolates up through the stack... However once the error is sent to another system, it should be clear the message is an error (e.g. an `err` tag or 'Failed' prefix in logs)." The error type already signals failure; every wrap should narrow the location, not repeat the conclusion (Uber Style Guide §Error Wrapping; Google Best Practices §Adding information to errors).
 
 **See also**: AP-10, AP-12
 
@@ -468,7 +468,7 @@ if err := os.Open(path); err != nil {
 }
 ```
 
-**Why it's wrong**: Google Best Practices §Adding information to errors: "Don't add an annotation if its sole purpose is to indicate a failure without adding new information. The presence of an error sufficiently conveys the failure to the caller... `return fmt.Errorf('failed: %v', err) // just return err instead`." Also, avoid redundancy: "When adding information to errors, avoid redundant information that the underlying error already provides" — the `os` package already includes the path in its errors (Google Best Practices §Adding information to errors).
+**Rationale**: Google Best Practices §Adding information to errors: "Don't add an annotation if its sole purpose is to indicate a failure without adding new information. The presence of an error sufficiently conveys the failure to the caller... `return fmt.Errorf('failed: %v', err) // just return err instead`." Also, avoid redundancy: "When adding information to errors, avoid redundant information that the underlying error already provides" — the `os` package already includes the path in its errors (Google Best Practices §Adding information to errors).
 
 **See also**: AP-10, AP-11
 
@@ -511,7 +511,7 @@ if errors.As(err, &pe) {
 }
 ```
 
-**Why it's wrong**: Google Best Practices §Error structure: "If callers need to interrogate the error (e.g., distinguish different error conditions), give the error value structure so that this can be done programmatically rather than having the caller perform string matching." An error's message is for humans; matching it couples two packages through a string. `errors.Is` and `errors.As` make the contract explicit and refactor-safe (Google Best Practices §Error structure; Uber Style Guide §Error Types).
+**Rationale**: Google Best Practices §Error structure: "If callers need to interrogate the error (e.g., distinguish different error conditions), give the error value structure so that this can be done programmatically rather than having the caller perform string matching." An error's message is for humans; matching it couples two packages through a string. `errors.Is` and `errors.As` make the contract explicit and refactor-safe (Google Best Practices §Error structure; Uber Style Guide §Error Types).
 
 **See also**: AP-10, AP-14
 
@@ -542,7 +542,7 @@ if !ok {
 return Parse(v)
 ```
 
-**Why it's wrong**: Google Decisions §In-band errors: "Failing to check for an in-band error value can lead to bugs and can attribute errors to the wrong function... a function should return an additional value to indicate whether its other return values are valid. This return value may be an error or a boolean." The two-return form prevents `Parse(Lookup(k))`, because the compiler sees the arity mismatch (Google Decisions §In-band errors; Effective Go §Multiple return values).
+**Rationale**: Google Decisions §In-band errors: "Failing to check for an in-band error value can lead to bugs and can attribute errors to the wrong function... a function should return an additional value to indicate whether its other return values are valid. This return value may be an error or a boolean." The two-return form prevents `Parse(Lookup(k))`, because the compiler sees the arity mismatch (Google Decisions §In-band errors; Effective Go §Multiple return values).
 
 **See also**: AP-10, AP-13
 
@@ -601,7 +601,7 @@ close(stop)
 <-done
 ```
 
-**Why it's wrong**: Uber §Don't fire-and-forget goroutines: "every goroutine: must have a predictable time at which it will stop running; or there must be a way to signal to the goroutine that it should stop. In both cases, there must be a way for code to block and wait for the goroutine to finish." Google Decisions §Goroutine lifetimes: "When you spawn goroutines, make it clear when or whether they exit. Goroutines can leak by blocking on channel sends or receives. The garbage collector will not terminate a goroutine blocked on a channel even if no other goroutine has a reference to the channel." Use `goleak` to catch leaks in tests (Uber Style Guide §Don't fire-and-forget goroutines; Google Decisions §Goroutine lifetimes).
+**Rationale**: Uber §Don't fire-and-forget goroutines: "every goroutine: must have a predictable time at which it will stop running; or there must be a way to signal to the goroutine that it should stop. In both cases, there must be a way for code to block and wait for the goroutine to finish." Google Decisions §Goroutine lifetimes: "When you spawn goroutines, make it clear when or whether they exit. Goroutines can leak by blocking on channel sends or receives. The garbage collector will not terminate a goroutine blocked on a channel even if no other goroutine has a reference to the channel." Use `goleak` to catch leaks in tests (Uber Style Guide §Don't fire-and-forget goroutines; Google Decisions §Goroutine lifetimes).
 
 **See also**: AP-02, AP-16, AP-17
 
@@ -654,7 +654,7 @@ for {
 }
 ```
 
-**Why it's wrong**: Uber §Don't fire-and-forget goroutines and Google Decisions §Goroutine lifetimes both require an explicit synchronization mechanism ("Use a `sync.WaitGroup` to wait for multiple goroutines to complete... Add another `chan struct{}` that the goroutine closes when it's done"). The "Bad" example in Uber's guide is literally `time.Sleep(delay)` inside a for-loop; the "Good" fix uses a `time.Ticker` inside a `select` with a stop channel. Sleeping is neither test-deterministic nor resource-aware (Uber Style Guide §Don't fire-and-forget goroutines; Google Decisions §Goroutine lifetimes).
+**Rationale**: Uber §Don't fire-and-forget goroutines and Google Decisions §Goroutine lifetimes both require an explicit synchronization mechanism ("Use a `sync.WaitGroup` to wait for multiple goroutines to complete... Add another `chan struct{}` that the goroutine closes when it's done"). The "Bad" example in Uber's guide is literally `time.Sleep(delay)` inside a for-loop; the "Good" fix uses a `time.Ticker` inside a `select` with a stop channel. Sleeping is neither test-deterministic nor resource-aware (Uber Style Guide §Don't fire-and-forget goroutines; Google Decisions §Goroutine lifetimes).
 
 **See also**: AP-15, AP-17, AP-33
 
@@ -702,7 +702,7 @@ q = q[1:]
 mu.Unlock()
 ```
 
-**Why it's wrong**: Google Decisions §Goroutine lifetimes refers to "condition variables" and channel-based blocking as the expected synchronization primitives. Busy-waiting on a shared variable without synchronization is a classic data race (flagged by `-race`), and even with atomics the constant polling is pure overhead. The point of goroutines and channels is that a blocked goroutine costs almost nothing — take the blocking (Google Decisions §Goroutine lifetimes; Effective Go §Concurrency).
+**Rationale**: Google Decisions §Goroutine lifetimes refers to "condition variables" and channel-based blocking as the expected synchronization primitives. Busy-waiting on a shared variable without synchronization is a classic data race (flagged by `-race`), and even with atomics the constant polling is pure overhead. The point of goroutines and channels is that a blocked goroutine costs almost nothing — take the blocking (Google Decisions §Goroutine lifetimes; Effective Go §Concurrency).
 
 **See also**: AP-15, AP-16
 
@@ -735,7 +735,7 @@ case <-ctx.Done():
 }
 ```
 
-**Why it's wrong**: Uber §Channel Size is One or None: "Channels should usually have a size of one or be unbuffered... Any other size must be subject to a high level of scrutiny. Consider how the size is determined, what prevents the channel from filling up under load and blocking writers, and what happens when this occurs." A buffered channel with an arbitrary size creates backpressure problems that are invisible until traffic grows (Uber Style Guide §Channel Size is One or None).
+**Rationale**: Uber §Channel Size is One or None: "Channels should usually have a size of one or be unbuffered... Any other size must be subject to a high level of scrutiny. Consider how the size is determined, what prevents the channel from filling up under load and blocking writers, and what happens when this occurs." A buffered channel with an arbitrary size creates backpressure problems that are invisible until traffic grows (Uber Style Guide §Channel Size is One or None).
 
 **See also**: AP-15, AP-17
 
@@ -776,7 +776,7 @@ func (m *SMap) Get(k string) string {
 }
 ```
 
-**Why it's wrong**: Uber §Zero-value Mutexes are Valid: "Do not embed the mutex on the struct, even if the struct is not exported... The `Mutex` field, and the `Lock` and `Unlock` methods are unintentionally part of the exported API of `SMap`... The mutex and its methods are implementation details of `SMap` hidden from its callers." A non-embedded, unexported mutex keeps the synchronization strategy private (Uber Style Guide §Zero-value Mutexes are Valid).
+**Rationale**: Uber §Zero-value Mutexes are Valid: "Do not embed the mutex on the struct, even if the struct is not exported... The `Mutex` field, and the `Lock` and `Unlock` methods are unintentionally part of the exported API of `SMap`... The mutex and its methods are implementation details of `SMap` hidden from its callers." A non-embedded, unexported mutex keeps the synchronization strategy private (Uber Style Guide §Zero-value Mutexes are Valid).
 
 **See also**: AP-20, AP-22
 
@@ -818,7 +818,7 @@ func (c *Counter) Inc() {
 }
 ```
 
-**Why it's wrong**: Google Decisions §Copying: "synchronization objects such as `sync.Mutex` must not be copied... In general, do not copy a value of type `T` if its methods are associated with the pointer type, `*T`. Invoking a method that takes a value receiver can hide the copy. When you author an API, you should generally take and return pointer types if your structs contain fields that should not be copied." `go vet` reports copied locks; treat it as an error (Google Decisions §Copying; Uber Style Guide §Zero-value Mutexes are Valid).
+**Rationale**: Google Decisions §Copying: "synchronization objects such as `sync.Mutex` must not be copied... In general, do not copy a value of type `T` if its methods are associated with the pointer type, `*T`. Invoking a method that takes a value receiver can hide the copy. When you author an API, you should generally take and return pointer types if your structs contain fields that should not be copied." `go vet` reports copied locks; treat it as an error (Google Decisions §Copying; Uber Style Guide §Zero-value Mutexes are Valid).
 
 **See also**: AP-19, AP-22
 
@@ -860,7 +860,7 @@ default:
 }
 ```
 
-**Why it's wrong**: Uber §Handle Type Assertion Failures: "The single return value form of a type assertion will panic on an incorrect type. Therefore, always use the 'comma ok' idiom." A panicking assertion deep in request processing becomes an unrecovered 500. The comma-ok form is one extra variable and one extra line; use it (Uber Style Guide §Handle Type Assertion Failures).
+**Rationale**: Uber §Handle Type Assertion Failures: "The single return value form of a type assertion will panic on an incorrect type. Therefore, always use the 'comma ok' idiom." A panicking assertion deep in request processing becomes an unrecovered 500. The comma-ok form is one extra variable and one extra line; use it (Uber Style Guide §Handle Type Assertion Failures).
 
 **See also**: AP-03, AP-04
 
@@ -890,7 +890,7 @@ type Server struct {
 }
 ```
 
-**Why it's wrong**: Uber §Zero-value Mutexes are Valid: "The zero-value of `sync.Mutex` and `sync.RWMutex` is valid, so you almost never need a pointer to a mutex." The same principle applies to `bytes.Buffer`, `strings.Builder`, and most other value-useful types: reach for a pointer only when you need shared state across copies or when the type documents that a pointer is required (Uber Style Guide §Zero-value Mutexes are Valid; Effective Go §Allocation with new).
+**Rationale**: Uber §Zero-value Mutexes are Valid: "The zero-value of `sync.Mutex` and `sync.RWMutex` is valid, so you almost never need a pointer to a mutex." The same principle applies to `bytes.Buffer`, `strings.Builder`, and most other value-useful types: reach for a pointer only when you need shared state across copies or when the type documents that a pointer is required (Uber Style Guide §Zero-value Mutexes are Valid; Effective Go §Allocation with new).
 
 **See also**: AP-19, AP-20
 
@@ -932,7 +932,7 @@ const (
 )
 ```
 
-**Why it's wrong**: Uber §Start Enums at One: "The standard way of introducing enumerations in Go is to declare a custom type and a `const` group with `iota`. Since variables have a 0 default value, you should usually start your enums on a non-zero value." There are legitimate cases where the zero value is the desired default (e.g., `LogToStdout`), but they should be an explicit design choice, not an accident (Uber Style Guide §Start Enums at One).
+**Rationale**: Uber §Start Enums at One: "The standard way of introducing enumerations in Go is to declare a custom type and a `const` group with `iota`. Since variables have a 0 default value, you should usually start your enums on a non-zero value." There are legitimate cases where the zero value is the desired default (e.g., `LogToStdout`), but they should be an explicit design choice, not an accident (Uber Style Guide §Start Enums at One).
 
 **See also**: AP-24
 
@@ -982,7 +982,7 @@ type User struct {
 u := User{Status: StatusActive} // typo caught at compile time
 ```
 
-**Why it's wrong**: Uber §Start Enums at One and the broader Go community convention introduce enums as a custom type plus a `const` group with `iota`, not as a set of string literals. A typed enum gives you exhaustiveness via `switch`, zero-cost substitution for `fmt.Stringer`, and compile-time rejection of invalid values (Uber Style Guide §Start Enums at One; Effective Go §Constants).
+**Rationale**: Uber §Start Enums at One and the broader Go community convention introduce enums as a custom type plus a `const` group with `iota`, not as a set of string literals. A typed enum gives you exhaustiveness via `switch`, zero-cost substitution for `fmt.Stringer`, and compile-time rejection of invalid values (Uber Style Guide §Start Enums at One; Effective Go §Constants).
 
 **See also**: AP-23
 
@@ -1024,7 +1024,7 @@ func (u *User) Rename(s string) error {
 }
 ```
 
-**Why it's wrong**: Google Decisions §Getters: "Function and method names should not use a `Get` or `get` prefix, unless the underlying concept uses the word 'get' (e.g. an HTTP GET). Prefer starting the name with the noun directly, for example use `Counts` over `GetCounts`." Uber §Function Names and Effective Go §Getters both reject the prefix. Auto-generating pass-through getters and setters on every field is a Java-ism; Go callers access fields directly unless the type needs mediation (Google Decisions §Getters; Effective Go §Getters).
+**Rationale**: Google Decisions §Getters: "Function and method names should not use a `Get` or `get` prefix, unless the underlying concept uses the word 'get' (e.g. an HTTP GET). Prefer starting the name with the noun directly, for example use `Counts` over `GetCounts`." Uber §Function Names and Effective Go §Getters both reject the prefix. Auto-generating pass-through getters and setters on every field is a Java-ism; Go callers access fields directly unless the type needs mediation (Google Decisions §Getters; Effective Go §Getters).
 
 **See also**: AP-26, AP-30
 
@@ -1067,7 +1067,7 @@ type Connection struct{}
 // call site: sqldb.Connection
 ```
 
-**Why it's wrong**: Google Decisions §Repetition: "When naming exported symbols, the name of the package is always visible outside your package, so redundant information between the two should be reduced or eliminated." Examples listed include `widget.NewWidget` → `widget.New` and "`DBConnection` in package `sqldb`" → "`Connection` in package `sqldb`." Every repetition lengthens call sites without adding information (Google Decisions §Repetition; Google Best Practices §Avoid repetition; Effective Go §Package names).
+**Rationale**: Google Decisions §Repetition: "When naming exported symbols, the name of the package is always visible outside your package, so redundant information between the two should be reduced or eliminated." Examples listed include `widget.NewWidget` → `widget.New` and "`DBConnection` in package `sqldb`" → "`Connection` in package `sqldb`." Every repetition lengthens call sites without adding information (Google Decisions §Repetition; Google Best Practices §Avoid repetition; Effective Go §Package names).
 
 **See also**: AP-25, AP-27, AP-30
 
@@ -1099,7 +1099,7 @@ package strutil
 func Reverse(s string) string { /* ... */ }
 ```
 
-**Why it's wrong**: Google Decisions §Interfaces: "Focus on the required behavior rather than just abstract named patterns like 'service' or 'repository' and the like." Google Best Practices §Avoid unnecessary interfaces: "Don't confuse the concept with the keyword: Just because you are designing a 'service' or a 'repository' or similar pattern doesn't mean you need a named interface type (e.g., `type Service interface`). Focus on the behavior and its concrete implementation first." Generic suffixes are the Java/C#-style architectural nouns that Go's concrete, behavior-first design rejects (Google Decisions §Interfaces; Google Best Practices §Avoid unnecessary interfaces).
+**Rationale**: Google Decisions §Interfaces: "Focus on the required behavior rather than just abstract named patterns like 'service' or 'repository' and the like." Google Best Practices §Avoid unnecessary interfaces: "Don't confuse the concept with the keyword: Just because you are designing a 'service' or a 'repository' or similar pattern doesn't mean you need a named interface type (e.g., `type Service interface`). Focus on the behavior and its concrete implementation first." Generic suffixes are the Java/C#-style architectural nouns that Go's concrete, behavior-first design rejects (Google Decisions §Interfaces; Google Best Practices §Avoid unnecessary interfaces).
 
 **See also**: AP-26, AP-28, AP-30
 
@@ -1134,7 +1134,7 @@ strutil.Reverse(name)
 yamlutil.Parse(data, &cfg)
 ```
 
-**Why it's wrong**: Google Best Practices §Util packages: "Naming a package just `util`, `helper`, `common` or similar is usually a poor choice... Uninformative names make the code harder to read, and if used too broadly they are liable to cause needless import conflicts." Uber §Package Names: package names must not be "'common', 'util', 'shared', or 'lib'. These are bad, uninformative names." A descriptive short name — `spannertest`, `elliptic`, `httputil` — tells the reader something at the call site (Google Best Practices §Util packages; Uber Style Guide §Package Names).
+**Rationale**: Google Best Practices §Util packages: "Naming a package just `util`, `helper`, `common` or similar is usually a poor choice... Uninformative names make the code harder to read, and if used too broadly they are liable to cause needless import conflicts." Uber §Package Names: package names must not be "'common', 'util', 'shared', or 'lib'. These are bad, uninformative names." A descriptive short name — `spannertest`, `elliptic`, `httputil` — tells the reader something at the call site (Google Best Practices §Util packages; Uber Style Guide §Package Names).
 
 **See also**: AP-26, AP-27
 
@@ -1165,7 +1165,7 @@ var r io.Reader = NewBuffer()
 func Open(name string) (*File, error) { /* ... */ }   // concrete *File
 ```
 
-**Why it's wrong**: Google Decisions §Interfaces: "Functions should take interfaces as arguments but return concrete types... Returning concrete types allows the caller to have access to every public method and field of that specific implementation, not just the subset of methods defined in a pre-chosen interface. The caller can still pass that concrete result into any other function that expects an interface. Sometimes returning an interface is acceptable for encapsulation (e.g., `error` interface), and certain constructs like command, chaining, factory, and strategy patterns" (Google Decisions §Interfaces; Google Best Practices §Designing effective interfaces).
+**Rationale**: Google Decisions §Interfaces: "Functions should take interfaces as arguments but return concrete types... Returning concrete types allows the caller to have access to every public method and field of that specific implementation, not just the subset of methods defined in a pre-chosen interface. The caller can still pass that concrete result into any other function that expects an interface. Sometimes returning an interface is acceptable for encapsulation (e.g., `error` interface), and certain constructs like command, chaining, factory, and strategy patterns" (Google Decisions §Interfaces; Google Best Practices §Designing effective interfaces).
 
 **See also**: AP-30, AP-31
 
@@ -1209,7 +1209,7 @@ type userLookup interface {  // only the methods admin actually uses
 func HandleAdminRequest(u userLookup, id int) { /* ... */ }
 ```
 
-**Why it's wrong**: Google Best Practices §Interface ownership and visibility: "The consumer defines the interface: In Go, interfaces generally belong in the package that uses them, not the package that implements them. The consumer should define only the methods they actually use, adhering to the idea that 'the bigger the interface, the weaker the abstraction.'" Google Decisions §Interfaces: "Avoid creating interfaces until a real need exists... Do not wrap RPC clients in new manual interfaces just for the sake of abstraction or testing." Exported producer interfaces couple every consumer to a shape the producer chose (Google Decisions §Interfaces; Google Best Practices §Avoid unnecessary interfaces; Google Best Practices §Interface ownership and visibility).
+**Rationale**: Google Best Practices §Interface ownership and visibility: "The consumer defines the interface: In Go, interfaces generally belong in the package that uses them, not the package that implements them. The consumer should define only the methods they actually use, adhering to the idea that 'the bigger the interface, the weaker the abstraction.'" Google Decisions §Interfaces: "Avoid creating interfaces until a real need exists... Do not wrap RPC clients in new manual interfaces just for the sake of abstraction or testing." Exported producer interfaces couple every consumer to a shape the producer chose (Google Decisions §Interfaces; Google Best Practices §Avoid unnecessary interfaces; Google Best Practices §Interface ownership and visibility).
 
 **See also**: AP-29, AP-31
 
@@ -1255,7 +1255,7 @@ func handle(e Event) {
 }
 ```
 
-**Why it's wrong**: Google Decisions §Use any: prefer `any` over `interface{}` for the same semantics, but this is a spelling decision — the underlying advice is to avoid the empty interface when a real type is known. Google Decisions §Generics: "Do not use generics just because you are implementing an algorithm or data structure that does not care about the type of its member elements... instead of relying on the `any` type and excessive type switching, consider generics." An `any`-heavy API is Python-in-Go: the compile-time benefits evaporate (Google Decisions §Use any; Google Decisions §Generics; Google Best Practices §Avoid unnecessary interfaces).
+**Rationale**: Google Decisions §Use any: prefer `any` over `interface{}` for the same semantics, but this is a spelling decision — the underlying advice is to avoid the empty interface when a real type is known. Google Decisions §Generics: "Do not use generics just because you are implementing an algorithm or data structure that does not care about the type of its member elements... instead of relying on the `any` type and excessive type switching, consider generics." An `any`-heavy API is Python-in-Go: the compile-time benefits evaporate (Google Decisions §Use any; Google Decisions §Generics; Google Best Practices §Avoid unnecessary interfaces).
 
 **See also**: AP-21, AP-29
 
@@ -1308,7 +1308,7 @@ func Describe(v any) string {
 }
 ```
 
-**Why it's wrong**: Google Decisions §Generics: "In many applications, a conventional approach using existing language features (slices, maps, interfaces, and so on) works just as well without the added complexity, so be wary of premature use... instead of relying on the `any` type and excessive type switching, consider generics." Google Best Practices §When to panic notes that `reflect` itself panics on misuse, because "the standard library panics on API misuse" — using `reflect` inherits that fragility. Generics preserve types; `reflect` discards them (Google Decisions §Generics; Google Best Practices §When to panic).
+**Rationale**: Google Decisions §Generics: "In many applications, a conventional approach using existing language features (slices, maps, interfaces, and so on) works just as well without the added complexity, so be wary of premature use... instead of relying on the `any` type and excessive type switching, consider generics." Google Best Practices §When to panic notes that `reflect` itself panics on misuse, because "the standard library panics on API misuse" — using `reflect` inherits that fragility. Generics preserve types; `reflect` discards them (Google Decisions §Generics; Google Best Practices §When to panic).
 
 **See also**: AP-31
 
@@ -1351,7 +1351,7 @@ for _, v := range items {
 }
 ```
 
-**Why it's wrong**: This is the single most common concurrency bug in Go before 1.22. The `go.dev/blog` announcement and the release notes for Go 1.22 describe the semantics change. For code that targets 1.22+ (declared by `go 1.22` in `go.mod`), the bug is gone; for older targets, pass the loop variable as a parameter or shadow it. Either way, be aware that reading a closure over a ranged variable in older code bases is an immediate red flag. Compiler and `go vet` both help (`loopclosure` check) (Go 1.22 release notes; Go Wiki §CommonMistakes).
+**Rationale**: This is the single most common concurrency bug in Go before 1.22. The `go.dev/blog` announcement and the release notes for Go 1.22 describe the semantics change. For code that targets 1.22+ (declared by `go 1.22` in `go.mod`), the bug is gone; for older targets, pass the loop variable as a parameter or shadow it. Either way, be aware that reading a closure over a ranged variable in older code bases is an immediate red flag. Compiler and `go vet` both help (`loopclosure` check) (Go 1.22 release notes; Go Wiki §CommonMistakes).
 
 **See also**: AP-15, AP-34
 
@@ -1394,7 +1394,7 @@ func (s *Server) inner(ctx context.Context, req *Request) {
 }
 ```
 
-**Why it's wrong**: Google Best Practices §Shadowing presents this exact bug: "Attempt to conditionally cap the deadline... BUG: 'ctx' here again means the context that the caller provided. The above buggy code compiled because both ctx and cancel were used inside the if statement." The fix is to declare `cancel` outside and use `=` to reassign, or to restructure so the context replacement is unconditional (Google Best Practices §Shadowing).
+**Rationale**: Google Best Practices §Shadowing presents this exact bug: "Attempt to conditionally cap the deadline... BUG: 'ctx' here again means the context that the caller provided. The above buggy code compiled because both ctx and cancel were used inside the if statement." The fix is to declare `cancel` outside and use `=` to reassign, or to restructure so the context replacement is unconditional (Google Best Practices §Shadowing).
 
 **See also**: AP-35, AP-33
 
@@ -1442,7 +1442,7 @@ type Foo struct {
 }
 ```
 
-**Why it's wrong**: Uber §Avoid Using Built-In Names: "Depending on context, reusing these identifiers as names will either shadow the original within the current lexical scope (and any nested scopes) or make affected code confusing. In the best case, the compiler will complain; in the worst case, such code may introduce latent, hard-to-grep bugs." Google Best Practices §Shadowing: "It is not a good idea to use variables with the same name as standard packages other than very small scopes, because that renders free functions and values from that package inaccessible." `go vet`'s shadow checker flags many cases (Uber Style Guide §Avoid Using Built-In Names; Google Best Practices §Shadowing).
+**Rationale**: Uber §Avoid Using Built-In Names: "Depending on context, reusing these identifiers as names will either shadow the original within the current lexical scope (and any nested scopes) or make affected code confusing. In the best case, the compiler will complain; in the worst case, such code may introduce latent, hard-to-grep bugs." Google Best Practices §Shadowing: "It is not a good idea to use variables with the same name as standard packages other than very small scopes, because that renders free functions and values from that package inaccessible." `go vet`'s shadow checker flags many cases (Uber Style Guide §Avoid Using Built-In Names; Google Best Practices §Shadowing).
 
 **See also**: AP-34, AP-36
 
@@ -1493,7 +1493,7 @@ func load(path string) (*Config, error) {
 }
 ```
 
-**Why it's wrong**: Google Decisions §Indent error flow: "Go code is written with the success path aligned to the left, and the failure paths increasingly to the right." Uber §Reduce Nesting: "Code should reduce nesting where possible by handling error cases/special conditions first and returning early or continuing the loop. Reduce the amount of code that is nested multiple levels." Deep nesting is the single most common readability problem reviewers flag in Go (Google Decisions §Indent error flow; Uber Style Guide §Reduce Nesting).
+**Rationale**: Google Decisions §Indent error flow: "Go code is written with the success path aligned to the left, and the failure paths increasingly to the right." Uber §Reduce Nesting: "Code should reduce nesting where possible by handling error cases/special conditions first and returning early or continuing the loop. Reduce the amount of code that is nested multiple levels." Deep nesting is the single most common readability problem reviewers flag in Go (Google Decisions §Indent error flow; Uber Style Guide §Reduce Nesting).
 
 **See also**: AP-37, AP-21
 
@@ -1551,7 +1551,7 @@ if b {
 }
 ```
 
-**Why it's wrong**: Uber §Unnecessary Else: "If a variable is set in both branches of an if, it can be replaced with a single if." Google Decisions §Indent error flow also calls out the equivalent pattern: "Code that runs if the terminal condition is not met should appear after the `if` block, and should not be indented in an `else` clause." Unnecessary `else` is extra indentation, extra braces, and an extra level of cognitive load for the reader (Uber Style Guide §Unnecessary Else; Google Decisions §Indent error flow).
+**Rationale**: Uber §Unnecessary Else: "If a variable is set in both branches of an if, it can be replaced with a single if." Google Decisions §Indent error flow also calls out the equivalent pattern: "Code that runs if the terminal condition is not met should appear after the `if` block, and should not be indented in an `else` clause." Unnecessary `else` is extra indentation, extra braces, and an extra level of cognitive load for the reader (Uber Style Guide §Unnecessary Else; Google Decisions §Indent error flow).
 
 **See also**: AP-36
 
@@ -1575,7 +1575,7 @@ s := strconv.FormatBool(b)
 s := strconv.FormatFloat(f, 'g', -1, 64)
 ```
 
-**Why it's wrong**: Uber §Prefer strconv over fmt: "When converting primitives to/from strings, `strconv` is faster than `fmt`." The Uber benchmark shows `strconv.Itoa` at 64 ns/op / 1 alloc vs. `fmt.Sprint` at 143 ns/op / 2 allocs. On a hot path — parsing logs, building keys, formatting many rows — the difference adds up (Uber Style Guide §Prefer strconv over fmt).
+**Rationale**: Uber §Prefer strconv over fmt: "When converting primitives to/from strings, `strconv` is faster than `fmt`." The Uber benchmark shows `strconv.Itoa` at 64 ns/op / 1 alloc vs. `fmt.Sprint` at 143 ns/op / 2 allocs. On a hot path — parsing logs, building keys, formatting many rows — the difference adds up (Uber Style Guide §Prefer strconv over fmt).
 
 **See also**: AP-39, AP-40
 
@@ -1600,7 +1600,7 @@ for i := 0; i < b.N; i++ {
 }
 ```
 
-**Why it's wrong**: Uber §Avoid repeated string-to-byte conversions: "Do not create byte slices from a fixed string repeatedly. Instead, perform the conversion once and capture the result." Uber's benchmark shows the per-iteration cost drops from ~22 ns/op to ~3 ns/op — roughly 7× — simply by hoisting the conversion (Uber Style Guide §Avoid repeated string-to-byte conversions).
+**Rationale**: Uber §Avoid repeated string-to-byte conversions: "Do not create byte slices from a fixed string repeatedly. Instead, perform the conversion once and capture the result." Uber's benchmark shows the per-iteration cost drops from ~22 ns/op to ~3 ns/op — roughly 7× — simply by hoisting the conversion (Uber Style Guide §Avoid repeated string-to-byte conversions).
 
 **See also**: AP-38, AP-40
 
@@ -1632,7 +1632,7 @@ for _, e := range entries {
 }
 ```
 
-**Why it's wrong**: Uber §Prefer Specifying Container Capacity: "Specify container capacity where possible in order to allocate memory for the container up front. This minimizes subsequent allocations (by copying and resizing of the container) as elements are added." The benchmark difference for slice preallocation is order-of-magnitude (2.48s vs 0.21s in the Uber numbers). Map capacity hints are softer — they size the hashmap's bucket count — but still reduce rehashing (Uber Style Guide §Specifying Slice Capacity; Uber Style Guide §Specifying Map Capacity Hints; Google Decisions §Size hints).
+**Rationale**: Uber §Prefer Specifying Container Capacity: "Specify container capacity where possible in order to allocate memory for the container up front. This minimizes subsequent allocations (by copying and resizing of the container) as elements are added." The benchmark difference for slice preallocation is order-of-magnitude (2.48s vs 0.21s in the Uber numbers). Map capacity hints are softer — they size the hashmap's bucket count — but still reduce rehashing (Uber Style Guide §Specifying Slice Capacity; Uber Style Guide §Specifying Map Capacity Hints; Google Decisions §Size hints).
 
 **See also**: AP-38, AP-39
 
@@ -1666,7 +1666,7 @@ func TestFoo(t *testing.T) {
 }
 ```
 
-**Why it's wrong**: Uber §Don't Panic explicitly addresses the testing case: "Even in tests, prefer `t.Fatal` or `t.FailNow` over panics to ensure that the test is marked as failed." A panic in a test can skip other tests in the package, confuse test frameworks, and hide parallel-test interactions (Uber Style Guide §Don't Panic).
+**Rationale**: Uber §Don't Panic explicitly addresses the testing case: "Even in tests, prefer `t.Fatal` or `t.FailNow` over panics to ensure that the test is marked as failed." A panic in a test can skip other tests in the package, confuse test frameworks, and hide parallel-test interactions (Uber Style Guide §Don't Panic).
 
 **See also**: AP-03, AP-04
 
@@ -1695,7 +1695,7 @@ type Stock struct {
 // JSON: {"price": 137, "name": "UBER"}
 ```
 
-**Why it's wrong**: Uber §Use field tags in marshaled structs: "When declaring a struct type that is marshaled to JSON, YAML, or other formats that support tag-based field naming, annotate it with the relevant tags. Rationale: The serialized form of the structure is a contract between different systems. Changes to the structure of the serialized form -- including field names -- break this contract. Specifying field names inside tags makes the contract explicit, and it guards against accidentally breaking the contract by refactoring or renaming fields" (Uber Style Guide §Use field tags in marshaled structs).
+**Rationale**: Uber §Use field tags in marshaled structs: "When declaring a struct type that is marshaled to JSON, YAML, or other formats that support tag-based field naming, annotate it with the relevant tags. Rationale: The serialized form of the structure is a contract between different systems. Changes to the structure of the serialized form -- including field names -- break this contract. Specifying field names inside tags makes the contract explicit, and it guards against accidentally breaking the contract by refactoring or renaming fields" (Uber Style Guide §Use field tags in marshaled structs).
 
 **See also**: AP-26
 
@@ -1724,7 +1724,7 @@ const errUserNotFound = "user %s not found at %d"
 return fmt.Errorf(errUserNotFound, name, id)
 ```
 
-**Why it's wrong**: Uber §Format Strings outside Printf: "If you declare format strings for Printf-style functions outside a string literal, make them const values. This helps `go vet` perform static analysis of the format string." Vet's format-string check is one of Go's most useful static diagnostics; don't defeat it by computing format strings (Uber Style Guide §Format Strings outside Printf).
+**Rationale**: Uber §Format Strings outside Printf: "If you declare format strings for Printf-style functions outside a string literal, make them const values. This helps `go vet` perform static analysis of the format string." Vet's format-string check is one of Go's most useful static diagnostics; don't defeat it by computing format strings (Uber Style Guide §Format Strings outside Printf).
 
 **See also**: AP-38
 
@@ -1757,7 +1757,7 @@ if err := emitMetrics(); err != nil {
 }
 ```
 
-**Why it's wrong**: Uber §Handle Errors Once: "Regardless of how the caller handles the error, it should typically handle each error only once. The caller should not, for example, log the error and then return it, because *its* callers may handle the error as well... **Bad**: Log the error and return it. Callers further up the stack will likely take a similar action with the error. Doing so makes a lot of noise in the application logs for little value." Pick one layer — usually the boundary, like an HTTP handler — to log (Uber Style Guide §Handle Errors Once).
+**Rationale**: Uber §Handle Errors Once: "Regardless of how the caller handles the error, it should typically handle each error only once. The caller should not, for example, log the error and then return it, because *its* callers may handle the error as well... **Bad**: Log the error and return it. Callers further up the stack will likely take a similar action with the error. Doing so makes a lot of noise in the application logs for little value." Pick one layer — usually the boundary, like an HTTP handler — to log (Uber Style Guide §Handle Errors Once).
 
 **See also**: AP-11, AP-12
 
@@ -1818,9 +1818,278 @@ var mu sync.Mutex
 var count int // zero by default
 ```
 
-**Why it's wrong**: Every section of the Uber and Google guides is, in aggregate, a rebuttal of non-Go idioms. Google Decisions §Interfaces: "Focus on the required behavior rather than just abstract named patterns like 'service' or 'repository' and the like." Google Decisions §Generics: "In many applications, a conventional approach using existing language features (slices, maps, interfaces, and so on) works just as well without the added complexity, so be wary of premature use." Uber §Zero-value Mutexes and Uber §Package Names and Google §Getters all push toward a concrete, behavior-first, tooling-friendly style. When a Go reviewer says "this looks Java-ish," they usually mean: too many interfaces, too many layers, getters and setters where fields would do, factories that don't need to exist, and architecture-by-noun instead of behavior-by-function (Google Decisions §Interfaces; Google Best Practices §Avoid unnecessary interfaces; Uber Style Guide §Package Names; Uber Style Guide §Zero-value Mutexes are Valid).
+**Rationale**: Every section of the Uber and Google guides is, in aggregate, a rebuttal of non-Go idioms. Google Decisions §Interfaces: "Focus on the required behavior rather than just abstract named patterns like 'service' or 'repository' and the like." Google Decisions §Generics: "In many applications, a conventional approach using existing language features (slices, maps, interfaces, and so on) works just as well without the added complexity, so be wary of premature use." Uber §Zero-value Mutexes and Uber §Package Names and Google §Getters all push toward a concrete, behavior-first, tooling-friendly style. When a Go reviewer says "this looks Java-ish," they usually mean: too many interfaces, too many layers, getters and setters where fields would do, factories that don't need to exist, and architecture-by-noun instead of behavior-by-function (Google Decisions §Interfaces; Google Best Practices §Avoid unnecessary interfaces; Uber Style Guide §Package Names; Uber Style Guide §Zero-value Mutexes are Valid).
 
 **See also**: AP-25, AP-26, AP-27, AP-28, AP-30, AP-31
+
+---
+
+## AP-46: Never Build SQL by String Concatenation — Use Placeholders
+
+**Strength**: MUST-NOT
+
+**Summary**: Pass user input through placeholders; never concatenate into the SQL string.
+
+```go
+// Bad — SQL injection vulnerability
+query := fmt.Sprintf("SELECT * FROM users WHERE email = '%s'", email)
+
+// Good — parameterized
+err := db.GetContext(ctx, &user,
+    "SELECT id, name, email FROM users WHERE email = $1", email)
+```
+
+**Rationale**: Placeholders let the driver bind values safely and keep user-controlled data out of the SQL grammar. Any concatenation path — `fmt.Sprintf`, `+`, `strings.Builder` — eventually leaks an attacker-controlled string into a parsed query, opening the door to injection. Parameterized queries are the only defense that scales across drivers, dialects, and input types (source: `cc-skills-golang/skills/golang-security/references/injection.md`).
+
+---
+
+## AP-47: Always defer rows.Close() on sql.Rows
+
+**Strength**: MUST
+
+**Summary**: `sql.Rows` holds a pooled connection until closed — defer `rows.Close()` immediately after a successful `QueryContext`.
+
+```go
+// Bad — connection leak
+rows, err := db.Query("SELECT id FROM users")
+if err != nil { return err }
+for rows.Next() { /* ... */ }
+// rows never closed
+
+// Good
+rows, err := db.QueryContext(ctx, "SELECT id FROM users")
+if err != nil { return err }
+defer rows.Close()
+for rows.Next() { /* ... */ }
+if err := rows.Err(); err != nil { return err }
+```
+
+**Rationale**: The `*sql.Rows` value owns a connection from the pool until closed, and GC will not reclaim it fast enough under load. Forgetting `rows.Close()` causes the pool to exhaust, new queries to block, and the service to appear deadlocked. `defer rows.Close()` on the line immediately after the error check is the only safe pattern (source: `cc-skills-golang/skills/golang-database/SKILL.md`).
+
+---
+
+## AP-48: AES-ECB Mode Reveals Plaintext Patterns — Use GCM
+
+**Strength**: MUST-NOT
+
+**Summary**: Raw `block.Encrypt` is ECB mode, which reveals plaintext patterns. Wrap the block cipher in GCM for authenticated encryption.
+
+```go
+// Bad — ECB mode reveals patterns in structured data
+block, _ := aes.NewCipher(key)
+// using block.Encrypt directly == ECB mode
+
+// Good — GCM provides authenticated encryption
+aead, _ := cipher.NewGCM(block)
+nonce := make([]byte, aead.NonceSize())
+rand.Read(nonce)
+ciphertext := aead.Seal(nonce, nonce, plaintext, nil)
+```
+
+**Rationale**: ECB encrypts each block independently, so identical plaintext blocks produce identical ciphertext blocks — structure leaks even without a key. GCM is randomized and authenticated, covering confidentiality and integrity in a single primitive. Calling `block.Encrypt` directly is almost never what you want; reach for `cipher.NewGCM` instead (source: `cc-skills-golang/skills/golang-security/references/cryptography.md`).
+
+---
+
+## AP-49: Never Reuse an AES-GCM Nonce
+
+**Strength**: MUST-NOT
+
+**Summary**: Generate a fresh random nonce per encryption — reusing a nonce with AES-GCM destroys confidentiality and authentication.
+
+```go
+// Bad — static or reused nonce
+nonce := []byte("fixed_nonce!")
+
+// Good — random nonce per encryption
+nonce := make([]byte, 12) // 96-bit for GCM
+rand.Read(nonce)
+```
+
+**Rationale**: GCM's security relies on the `(key, nonce)` pair being unique; reusing a nonce with the same key fully breaks the authenticator and leaks the XOR of plaintexts. The correct pattern is a 96-bit nonce (`make([]byte, 12)`) freshly read from `crypto/rand.Read` for every encryption operation. Never hardcode, derive, or counter nonces without a cryptographer signing off (source: `cc-skills-golang/skills/golang-security/references/cryptography.md`).
+
+---
+
+## AP-50: InsecureSkipVerify: true is Not an Acceptable Default
+
+**Strength**: MUST-NOT
+
+**Summary**: Disabling TLS certificate verification opens the client to man-in-the-middle attacks; pin a minimum TLS version and curve set instead.
+
+```go
+// Bad — disables certificate verification
+transport := &http.Transport{
+    TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+}
+
+// Good — verified TLS with safe defaults
+func secureConfig() *tls.Config {
+    return &tls.Config{
+        MinVersion:       tls.VersionTLS12,
+        CurvePreferences: []tls.CurveID{tls.X25519, tls.CurveP256},
+    }
+}
+```
+
+**Rationale**: `InsecureSkipVerify: true` accepts any certificate, including attacker-presented ones — it is the TLS equivalent of turning off authentication entirely. Production code should instead pin `MinVersion: tls.VersionTLS12` (or later) and a safe curve list, and use a proper CA bundle or certificate pinning. If a self-signed cert is needed for tests, scope the relaxed config to the test binary only (source: `cc-skills-golang/skills/golang-security/references/cryptography.md`).
+
+---
+
+## AP-51: math/rand is Predictable — Use crypto/rand for Secrets
+
+**Strength**: MUST
+
+**Summary**: `math/rand` is deterministic from its seed; anything security-relevant (tokens, nonces, keys) must use `crypto/rand`.
+
+```go
+// Bad — predictable output
+import "math/rand"
+bytes := make([]byte, 16)
+rand.Read(bytes)
+
+// Good — cryptographically secure
+import "crypto/rand"
+_, err := rand.Read(bytes)
+```
+
+**Rationale**: `math/rand` produces a repeatable sequence an attacker can predict after observing a handful of outputs; it is only suitable for non-security uses like shuffling or jitter. `crypto/rand.Read` pulls from the OS CSPRNG and is the correct source for tokens, session IDs, GCM nonces, and key material. Import-path discipline — reach for `crypto/rand` whenever the output will be trusted — is the easiest way to avoid the trap (source: `cc-skills-golang/skills/golang-security/references/cryptography.md`).
+
+---
+
+## AP-52: filepath.Join Does Not Confine Paths — Use os.Root or Prefix-Check
+
+**Strength**: MUST
+
+**Summary**: `filepath.Join` cleans `..` but doesn't confine the result to the base; verify the cleaned path starts with the base, or use `os.Root` (Go 1.24+).
+
+```go
+// Bad — user escapes the base directory
+base := "/srv/files"
+userInput := "../../etc/passwd"
+path := filepath.Join(base, userInput) // "/etc/passwd"
+
+// Good — verify the result stays within the base
+func safePath(base, userInput string) (string, error) {
+    path := filepath.Join(base, userInput)
+    if !strings.HasPrefix(filepath.Clean(path),
+        filepath.Clean(base)+string(os.PathSeparator)) {
+        return "", fmt.Errorf("path traversal attempt: %s", userInput)
+    }
+    return path, nil
+}
+
+// Good (Go 1.24+) — OS-level confinement
+root, err := os.OpenRoot(base)
+if err != nil { return err }
+defer root.Close()
+f, err := root.Open(userInput) // cannot escape root directory
+```
+
+**Rationale**: `filepath.Join` resolves `..` but happily returns paths above the base, so joining user input with a trusted prefix does nothing to prevent traversal. The two safe options are an explicit prefix check after `filepath.Clean`, or — on Go 1.24+ — `os.OpenRoot` which enforces confinement at the OS layer so no manual validation is needed. Prefer `os.Root` for new code; the prefix check is the backport-friendly fallback (source: `cc-skills-golang/skills/golang-security/references/filesystem.md` + `claude-skills (saisudhir14)/skills/go-security/SKILL.md`).
+
+---
+
+## AP-53: Pin the JWT Signing Algorithm
+
+**Strength**: MUST
+
+**Summary**: JWT validation must assert the signing algorithm — otherwise an attacker can switch RS256 to HS256 and sign with the public key.
+
+```go
+// Bad — parse without algorithm check; library trusts token's "alg" header
+token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+    return publicKey, nil
+})
+
+// Good — pin the signing method before trusting the token
+token, err := jwt.ParseWithClaims(tokenString, &jwt.RegisteredClaims{},
+    func(token *jwt.Token) (interface{}, error) {
+        // Pin signing algorithm — prevents algorithm confusion
+        if _, ok := token.Method.(*jwt.SigningMethodRSA); !ok {
+            return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+        }
+        return publicKey, nil
+    },
+    jwt.WithIssuer("your-issuer"),
+    jwt.WithAudience("your-audience"),
+    jwt.WithExpirationRequired(),
+)
+```
+
+**Rationale**: Without an algorithm check, a JWT library may accept whatever `alg` the token itself advertises — classic algorithm-confusion lets an attacker flip RS256 to HS256 and sign with the RSA public key as if it were an HMAC secret. Pinning the method type inside the key function closes the hole, and adding `WithIssuer`, `WithAudience`, and `WithExpirationRequired` tightens validation further. Never trust `token.Header["alg"]` to pick a verification key (source: `cc-skills-golang/skills/golang-security/references/architecture.md`).
+
+---
+
+## AP-54: Server-Side Identity, Never a Client-Supplied Header
+
+**Strength**: MUST-NOT
+
+**Summary**: Headers like `X-Is-Admin` or `X-User-ID` can be forged by any HTTP client; identity must be derived from a server-validated token.
+
+```go
+// Bad — trusting client-provided identity
+func badHandler(w http.ResponseWriter, r *http.Request) {
+    if r.Header.Get("X-Is-Admin") == "true" {
+        adminPanel(w, r)
+    }
+}
+
+// Good — server-side identity verification
+func goodHandler(w http.ResponseWriter, r *http.Request) {
+    claims := r.Context().Value(userClaimsKey).(*jwt.RegisteredClaims)
+    if !hasRole(claims.Subject, "admin") {
+        http.Error(w, "Forbidden", http.StatusForbidden)
+        return
+    }
+    adminPanel(w, r)
+}
+```
+
+**Rationale**: Anyone can set arbitrary request headers with `curl -H`, so `X-Is-Admin` or `X-User-ID` convey no authority whatsoever. Authorization must come from a cryptographically verified identity — a JWT validated by middleware, mTLS peer certificates, or a signed session cookie — attached to `r.Context()` so handlers read a trusted value. If a reverse proxy injects identity headers, the backend must also verify a shared secret or mTLS binding; otherwise any direct connection bypasses it (source: `cc-skills-golang/skills/golang-security/references/architecture.md`).
+
+---
+
+## AP-55: strings.Trim Takes a Cutset, Not a Prefix
+
+**Strength**: MUST
+
+**Summary**: `strings.Trim` takes a *set of characters*, not a substring — use `TrimPrefix`/`TrimSuffix` to remove literal prefixes or suffixes.
+
+```go
+// Bad — strips any chars in {a,p,l,i,c,t,o,n,/} from both ends
+s := strings.Trim("application/json", "application/")
+// Result: "js"
+
+// Good — removes the literal prefix
+s := strings.TrimPrefix("application/json", "application/")
+// Result: "json"
+```
+
+**Rationale**: The second argument to `strings.Trim` is a cutset — each character is trimmed independently from both ends, not matched as a substring. Developers routinely mistake it for a prefix/suffix operation and ship subtly wrong code that passes happy-path tests. Reach for `strings.TrimPrefix` or `strings.TrimSuffix` whenever the intent is to remove a literal string (source: `cc-skills-golang/skills/golang-troubleshooting/references/common-go-bugs.md`).
+
+---
+
+## AP-56: Bounds-Check Integer Conversions of External Input
+
+**Strength**: MUST
+
+**Summary**: Go integer conversions silently truncate; bounds-check before converting from external input.
+
+```go
+// Bad — silent truncation
+var big int64 = 256
+small := int8(big)    // 0 — overflowed
+n32 := int32(math.MaxInt64) // -1 — wrapped
+
+// Good — check bounds before converting
+func safeIntToInt32(n int64) (int32, error) {
+    if n < math.MinInt32 || n > math.MaxInt32 {
+        return 0, fmt.Errorf("value %d overflows int32", n)
+    }
+    return int32(n), nil
+}
+```
+
+**Rationale**: Numeric conversions in Go do not panic on overflow — they silently wrap or truncate, so a length field from a decoded protocol message can land in a 32-bit slot as a negative number and bypass size checks. Any value originating from user input, file formats, or the network must be range-checked before narrowing the type. Wrap the check in a helper so the conversion is never written inline (source: `cc-skills-golang/skills/golang-troubleshooting/references/common-go-bugs.md`).
 
 ---
 
@@ -1877,6 +2146,17 @@ var count int // zero by default
 | 43 | Dynamic `Printf` format strings | SHOULD-AVOID | `go vet` can't check; use `const` |
 | 44 | Log + return the same error | SHOULD-AVOID | Handle each error once |
 | 45 | Java/C++/Python style in Go | SHOULD-AVOID | Follow Go idioms, not transplanted ones |
+| 46 | Placeholders, never string-concat SQL | MUST-NOT | SQL injection by definition |
+| 47 | Always `defer rows.Close()` | MUST | Connection leak otherwise |
+| 48 | AES-GCM, never ECB | MUST-NOT | ECB leaks plaintext patterns |
+| 49 | Fresh nonce per AES-GCM encryption | MUST-NOT | Reuse breaks auth + confidentiality |
+| 50 | Never `InsecureSkipVerify: true` | MUST-NOT | MITM wide open |
+| 51 | `crypto/rand` for secrets | MUST | `math/rand` is predictable |
+| 52 | `os.Root` or prefix-check for paths | MUST | `filepath.Join` doesn't confine |
+| 53 | Pin JWT signing algorithm | MUST | Prevents alg-confusion attack |
+| 54 | Server-side identity, never `X-Is-Admin` | MUST-NOT | Headers are forgeable |
+| 55 | `TrimPrefix` not `Trim` for affixes | MUST | `Trim` cutset bites |
+| 56 | Bounds-check int conversions | MUST | Silent truncation |
 
 ---
 

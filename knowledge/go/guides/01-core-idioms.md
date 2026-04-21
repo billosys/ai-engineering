@@ -1231,6 +1231,119 @@ func NewClient(addr string) (*Client, error) { /* ... */ }
 
 ---
 
+## CI-43: Type Switch Over Repeated Type Assertions
+
+**Strength**: CONSIDER
+
+**Summary**: When dispatching on an interface's dynamic type across several cases, use a single type switch rather than a chain of `v.(T)` assertions.
+
+```go
+// Good — single dispatch
+switch v := v.(type) {
+case string: return v
+case int:    return strconv.Itoa(v)
+}
+
+// Bad — evaluates interface multiple times
+if s, ok := v.(string); ok { return s }
+if i, ok := v.(int); ok { return strconv.Itoa(i) }
+```
+
+**Rationale**: A type switch resolves the dynamic type exactly once and dispatches directly to the matching case. A chain of comma-ok assertions forces the runtime down the slower type-check path once per branch, which adds up inside hot loops. Prefer the switch when three or more types are under consideration (paraphrased from cc-skills-golang/skills/golang-performance/references/cpu.md).
+
+---
+
+## CI-44: Modern slog Logging over Legacy log.Printf
+
+**Strength**: SHOULD
+
+**Summary**: Reach for `log/slog` (Go 1.21+) with structured key-value pairs instead of printf-style `log.Printf`, and wire a `slog.LevelVar` so the level can change at runtime.
+
+```go
+// Good — structured logging with slog
+logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+slog.SetDefault(logger)
+slog.Info("user logged in", "user_id", userID, "ip", ip)
+
+// Good — dynamic level control at runtime
+var programLevel = new(slog.LevelVar)
+logger = slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{
+    Level: programLevel,
+}))
+slog.SetDefault(logger)
+
+func enableDebug() {
+    programLevel.Set(slog.LevelDebug) // flip without restarting
+}
+
+// Bad — printf-style, unstructured
+log.Printf("user %s logged in from %s", userID, ip)
+```
+
+**Rationale**: Structured attributes are machine-parseable, grep-friendly, and survive round-trips through log aggregators, whereas interpolated strings have to be re-parsed downstream. A shared `slog.LevelVar` lets an admin endpoint or signal handler raise verbosity in production without a redeploy. `log/slog` is standard library in Go 1.21+, so there is no dependency cost for adopting it (paraphrased from golang-skills (cxuu)/skills/go-logging/references/LOGGING-PATTERNS.md).
+
+---
+
+## CI-45: Deterministic Map Iteration via Sorted Keys
+
+**Strength**: SHOULD
+
+**Summary**: When iteration order matters (tests, diffable output, deterministic hashes), collect keys with `slices.Sorted(maps.Keys(m))` instead of ranging over the map directly.
+
+```go
+// Good — sort keys if order matters
+m := map[string]int{"z": 1, "a": 2, "m": 3}
+keys := slices.Sorted(maps.Keys(m))
+var results []int
+for _, k := range keys {
+    results = append(results, m[k]) // consistent order
+}
+
+// Bad — assumes iteration order
+m := map[string]int{"z": 1, "a": 2, "m": 3}
+var results []int
+for k, v := range m {
+    _ = k
+    results = append(results, v) // order varies between runs
+}
+```
+
+**Rationale**: Go deliberately randomizes map iteration to prevent callers from depending on any particular order. The Go 1.22+ combination of `maps.Keys` (returning an iterator) and `slices.Sorted` (collecting an iterator into a sorted slice) expresses "iterate in sorted order" in one line with no manual `sort.Strings` step. Reach for it whenever your output is compared, hashed, or read by humans (paraphrased from claude-skills (saisudhir14)/references/gotchas.md).
+
+---
+
+## CI-46: Per-Iteration Cleanup via Anonymous Function in Loops
+
+**Strength**: SHOULD
+
+**Summary**: `defer` runs at function return, not at loop-iteration end. Wrap the loop body in an immediately-invoked anonymous function when a resource must be released on each pass.
+
+```go
+// Good — anonymous function closes per iteration
+for _, name := range files {
+    func() {
+        f, err := os.Open(name)
+        if err != nil {
+            return
+        }
+        defer f.Close() // runs at end of each iteration
+        process(f)
+    }()
+}
+
+// Bad — defer delays cleanup until all files processed
+for _, name := range files {
+    f, err := os.Open(name)
+    if err != nil {
+        continue
+    }
+    defer f.Close() // doesn't run until loop exits!
+    process(f)      // may process many files with handles open
+}
+```
+
+**Rationale**: A naked `defer` inside a loop accumulates on the function's defer stack, so file handles, locks, or transactions pile up until the enclosing function returns — a common source of "too many open files" and lock-contention bugs. Wrapping the body in `func() { ... }()` gives each iteration its own function scope, so the `defer` fires promptly. The cost is a single extra closure call per iteration, which is negligible next to the I/O being guarded (paraphrased from claude-skills (saisudhir14)/references/gotchas.md).
+
 ---
 
 ## Best Practices Summary
@@ -1281,6 +1394,10 @@ func NewClient(addr string) (*Client, error) { /* ... */ }
 | 40 | Name unused params `_` | CONSIDER | Or comment naked literals |
 | 41 | No Yoda conditions | SHOULD | Go forbids assignment in `if` |
 | 42 | Doc comments: full sentences | SHOULD | Start with the identifier name |
+| 43 | Type switch over repeated `.(T)` | CONSIDER | One dispatch vs N assertions |
+| 44 | `slog` over legacy `log.Printf` | SHOULD | Structured, dynamic levels |
+| 45 | Sort keys for stable map iteration | SHOULD | Iteration order is randomized |
+| 46 | Anon-func wrapper for per-iter defer | SHOULD | `defer` runs at function return |
 
 ---
 

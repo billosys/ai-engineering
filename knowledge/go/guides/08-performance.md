@@ -1159,6 +1159,584 @@ Parse-8      2.00 ± 0%     1.00 ± 0%    -50.00%  (p=0.000 n=10+10)
 
 ---
 
+## PF-35: Compile Regexps Once at Package Scope
+
+**Strength**: MUST
+
+**Summary**: Compile regular expressions once at package level rather than on every call. Package-level `regexp.MustCompile` catches invalid patterns at startup and is safe for concurrent use.
+
+```go
+// Bad — compiled on every call (~5,700ns each)
+func isValid(email string) bool {
+    re := regexp.MustCompile(`^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$`)
+    return re.MatchString(email)
+}
+
+// Good — compiled once, safe for concurrent use
+var emailRegex = regexp.MustCompile(`^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$`)
+
+func isValid(email string) bool { return emailRegex.MatchString(email) }
+```
+
+**Rationale**: `regexp.Compile` parses a pattern into a state machine (~5,700ns) while a match itself costs only ~450ns; per-call compilation wastes 10-12× the work and allocates on every hit. Hoisting to package scope compiles exactly once at program start, and the returned `*Regexp` is safe for concurrent use across goroutines (`cc-skills-golang/skills/golang-performance/references/caching.md`).
+
+**See also**: PF-18, PF-22
+
+---
+
+## PF-36: Reuse a Slice's Backing Array with `append(s[:0], ...)`
+
+**Strength**: CONSIDER
+
+**Summary**: Reset a slice's length to zero to reuse its backing array instead of allocating a fresh slice header and array.
+
+```go
+// Bad — allocates new slice, old one becomes garbage
+mode = []T{item}
+
+// Good — reuses existing backing array (0 allocations)
+mode = append(mode[:0], item)
+```
+
+**Rationale**: Reslicing to zero length (`s[:0]`) retains the original backing array's capacity, so `append` writes in place and avoids both the allocation and the subsequent GC cost. This is most useful in hot loops that repeatedly rebuild a short working slice on the same receiver (`cc-skills-golang/skills/golang-performance/references/memory.md`).
+
+**See also**: PF-09, PF-12
+
+---
+
+## PF-37: Preallocate and Index Directly When Output Length is Known
+
+**Strength**: CONSIDER
+
+**Summary**: When output length equals input length, preallocate with `make([]T, n)` and assign by index — skip the per-element `append` overhead.
+
+```go
+// Bad — append overhead per element (bounds check, length increment)
+result := make([]T, 0, len(input))
+for i := range input { result = append(result, transform(input[i])) }
+
+// Good — direct assignment
+result := make([]T, len(input))
+for i := range input { result[i] = transform(input[i]) }
+```
+
+**Rationale**: `append` still performs per-element work (length bump, bounds check, possible growth re-check) even with capacity already reserved; when the final size is known exactly, indexed assignment is strictly cheaper. This wins only in tight loops where the extra instructions per element matter (`cc-skills-golang/skills/golang-performance/references/memory.md`).
+
+**See also**: PF-09
+
+---
+
+## PF-38: Destructure the Map in `range`, Don't Re-Index
+
+**Strength**: SHOULD
+
+**Summary**: Capture the value directly from `range`, don't re-index the map inside the loop body.
+
+```go
+// Bad — two lookups per iteration
+for k := range in { result[k] = fn(in[k]) }
+
+// Good — single lookup
+for k, v := range in { result[k] = fn(v) }
+```
+
+**Rationale**: `for k := range m { use(m[k]) }` performs two hash lookups per iteration — one to iterate and one to fetch — while `for k, v := range m` returns the value essentially for free. The two-variable form is also clearer about which values the loop depends on (`cc-skills-golang/skills/golang-performance/references/memory.md`).
+
+---
+
+## PF-39: Avoid Interface Boxing in Hot Paths
+
+**Strength**: CONSIDER
+
+**Summary**: Passing concrete types through `any` forces heap allocation for boxing; use typed parameters or generics in hot paths.
+
+```go
+// Bad — boxes each int, allocates per call
+func sum(values []any) int { ... }
+
+// Good — no boxing, no allocation
+func sum(values []int) int { ... }
+
+// Good — generic, still no boxing
+func sum[T ~int | ~int64](values []T) T { ... }
+```
+
+**Rationale**: Converting a concrete non-pointer value to `any`/`interface{}` generally forces a heap allocation for the interface's value word, plus a type-assertion cost on the way out. Generics preserve the flexibility of a single implementation while keeping the call monomorphized and allocation-free (`cc-skills-golang/skills/golang-performance/references/memory.md`).
+
+**See also**: PF-30
+
+---
+
+## PF-40: Release Backing Arrays by Cloning Small Subslices of Large Buffers
+
+**Strength**: SHOULD
+
+**Summary**: A small subslice of a large slice keeps the full backing array alive; copy (or `slices.Clone` / `strings.Clone`, or use a three-index slice) to release it.
+
+```go
+// Bad — retains entire megabyte-sized backing array
+func getHeader(data []byte) []byte { return data[:16] }
+
+// Good — independent copy, original can be GC'd
+func getHeader(data []byte) []byte {
+    header := make([]byte, 16)
+    copy(header, data[:16])
+    return header
+}
+
+// Good (Go 1.20+) — for strings
+func extractID(msg string) string { return strings.Clone(msg[:8]) }
+
+// Good — three-index slice forces append to allocate instead of aliasing
+a := []int{1, 2, 3}
+b := a[:2:2] // len=2, cap=2
+b = append(b, 4) // new backing array; a stays [1, 2, 3]
+```
+
+**Rationale**: Slice and string headers share the backing array with their parent, so a short-lived 16-byte view of a 1 MB buffer pins the full megabyte until the view itself is released. `slices.Clone` / `strings.Clone` produce independent copies, and the three-index expression `a[:len:len]` forces any subsequent `append` to allocate rather than overwrite the parent's tail (`cc-skills-golang + claude-skills (saisudhir14)`).
+
+**See also**: PF-08, PF-11
+
+---
+
+## PF-41: Order Struct Fields Largest-to-Smallest for Alignment
+
+**Strength**: CONSIDER
+
+**Summary**: Reorder struct fields from largest to smallest to minimize padding and shrink the in-memory footprint.
+
+```go
+// Bad — 24 bytes (10 bytes data + 14 bytes padding)
+type Bad struct {
+    a bool    // 1 byte + 7 padding
+    b int64   // 8 bytes
+    c bool    // 1 byte + 3 padding
+    d int32   // 4 bytes
+}
+
+// Good — 16 bytes (10 bytes data + 6 bytes padding)
+type Good struct {
+    b int64   // 8 bytes
+    d int32   // 4 bytes
+    a bool    // 1 byte
+    c bool    // 1 byte + 2 padding
+}
+```
+
+**Rationale**: The Go compiler inserts padding between fields to satisfy each type's alignment requirement, and reordering from widest to narrowest collapses that padding into a single tail region. Run `fieldalignment` from `golang.org/x/tools/go/analysis/passes/fieldalignment` to detect waste automatically, but only act on hot types — for cold structs, source readability still wins (`cc-skills-golang + claude-skills (saisudhir14)`).
+
+**See also**: PF-26
+
+---
+
+## PF-42: Pad Hot Concurrent Fields to a Cache Line
+
+**Strength**: CONSIDER
+
+**Summary**: When multiple goroutines concurrently update different variables that share the same 64-byte cache line, pad to separate them.
+
+```go
+// Bad — a and b on same cache line, cores fight for it
+type Counters struct { a, b int64 }
+
+// Good — separate cache lines, no interference
+type Counters struct {
+    a int64    // 8 bytes
+    _ [56]byte // 64 - 8 = 56 bytes padding
+    b int64    // 8 bytes
+}
+```
+
+**Rationale**: Concurrent writes to variables co-located in a single cache line cause each core's write to invalidate the other's cache, producing "false sharing" slowdowns that no amount of lock tuning will fix. Padding each hot counter to a full cache line eliminates the contention, but the extra memory and obscurity are only worth it when profiling (e.g. `perf c2c`) confirms the contention (`cc-skills-golang/skills/golang-performance/references/cpu.md`).
+
+---
+
+## PF-43: Iterate 2D Data in Row-Major Order
+
+**Strength**: SHOULD
+
+**Summary**: Iterate 2D arrays in row-first order because Go stores them in row-major layout; column-first traversal causes cache misses.
+
+```go
+// Bad — column-first, jumps across memory (~10M cache misses)
+for col := 0; col < 1024; col++ {
+    for row := 0; row < 1024; row++ {
+        sum += matrix[row][col]
+    }
+}
+
+// Good — row-first, sequential access (~125K cache misses)
+for row := 0; row < 1024; row++ {
+    for col := 0; col < 1024; col++ {
+        sum += matrix[row][col]
+    }
+}
+```
+
+**Rationale**: Sequential memory access lets the CPU prefetcher pull the next cache line before the loop needs it, so a well-ordered traversal runs largely out of L1/L2; column-first hops across stride-size gaps and defeats prefetching. The difference is often 10-50× purely from cache effects, without changing the arithmetic at all (`cc-skills-golang/skills/golang-performance/references/cpu.md`).
+
+**See also**: PF-44
+
+---
+
+## PF-44: Allocate 2D Matrices as a Single Backing Slice
+
+**Strength**: CONSIDER
+
+**Summary**: Allocate a single backing slice for a 2D matrix and reslice rows, rather than allocating each row separately.
+
+```go
+// Bad — N separate allocations, poor cache locality
+matrix := make([][]float64, rows)
+for i := range matrix { matrix[i] = make([]float64, cols) }
+
+// Good — single contiguous allocation, cache-friendly
+data := make([]float64, rows*cols)
+matrix := make([][]float64, rows)
+for i := range matrix { matrix[i] = data[i*cols : (i+1)*cols] }
+```
+
+**Rationale**: Per-row allocations scatter the rows across the heap, so traversing rows in order still jumps to arbitrary addresses and thrashes the cache. A single contiguous backing array keeps consecutive rows physically adjacent and combines `rows+1` allocations into one (`cc-skills-golang/skills/golang-performance/references/cpu.md`).
+
+**See also**: PF-43
+
+---
+
+## PF-45: Value Receivers Keep Fluent Chains Inlineable
+
+**Strength**: CONSIDER
+
+**Summary**: Value receivers let the compiler inline fluent method chains; pointer receivers add indirection that blocks inlining.
+
+```go
+// Bad — pointer receiver, indirection prevents inlining
+func (c *config) WithTimeout(d time.Duration) *config { c.timeout = d; return c }
+
+// Good — value receiver, fully inlineable fluent chain
+func (c config) WithTimeout(d time.Duration) config { c.timeout = d; return c }
+```
+
+**Rationale**: For small, copy-cheap config or option types used in builder chains, a value receiver lets the compiler inline the entire chain and eliminate every intermediate write; a pointer receiver forces a load-modify-store per step and blocks inlining across the call. This is a niche tuning knob — prefer pointer receivers anywhere mutation or aliasing matters (see PF-16) (`cc-skills-golang/skills/golang-performance/references/cpu.md`).
+
+**See also**: PF-16
+
+---
+
+## PF-46: Keep Hot-Path Functions Free of Side-Effecting Calls
+
+**Strength**: CONSIDER
+
+**Summary**: Keep hot-path functions small and free of log/metric side effects — those calls block inlining.
+
+```go
+// Bad — log call prevents inlining
+func abs(x int) int {
+    if x < 0 {
+        log.Printf("negative: %d", x)
+        return -x
+    }
+    return x
+}
+
+// Good — simple enough to inline
+func abs(x int) int {
+    if x < 0 { return -x }
+    return x
+}
+```
+
+**Rationale**: The Go inliner has a tight budget and refuses any function that contains calls to non-inlineable helpers such as `log.Printf`, `fmt.Sprintf`, or unbounded loops. Moving logging and metrics to the caller (or behind a cheap level check) restores inlining of the arithmetic core, which `-gcflags="-m"` will confirm (`cc-skills-golang/skills/golang-performance/references/cpu.md`).
+
+**See also**: PF-27, PF-28
+
+---
+
+## PF-47: Multiple Accumulators for Instruction-Level Parallelism
+
+**Strength**: CONSIDER (avoid without profile evidence)
+
+**Summary**: Split a summing loop into several independent accumulators so the CPU can execute additions in parallel through its pipeline.
+
+```go
+// Bad — sequential dependency, CPU pipeline stalls
+var total int64
+for _, v := range data { total += v }
+
+// Good — 4 independent accumulators
+var s0, s1, s2, s3 int64
+limit := len(data) - len(data)%4
+for i := 0; i < limit; i += 4 {
+    s0 += data[i]; s1 += data[i+1]; s2 += data[i+2]; s3 += data[i+3]
+}
+for i := limit; i < len(data); i++ { s0 += data[i] }
+total := s0 + s1 + s2 + s3
+```
+
+**Rationale**: A single accumulator creates a tight data dependency between iterations that a superscalar CPU cannot overlap; four independent accumulators let the pipeline issue four adds per cycle, typically gaining 2-4× on tight arithmetic loops. This obscures the code meaningfully, so only apply it when a profile points at the specific loop (`cc-skills-golang/skills/golang-performance/references/cpu.md`).
+
+**See also**: PF-01, PF-34
+
+---
+
+## PF-48: Include a Preemption Point in Pure-Arithmetic Tight Loops
+
+**Strength**: CONSIDER
+
+**Summary**: Pure-arithmetic tight loops can starve the scheduler; include a non-inlineable function call so the runtime can preempt the goroutine.
+
+```go
+// Potential starvation — pure computation, no function calls
+for { x = x*a + b }
+
+// Safe — non-inlined call triggers preemption check
+for item := range work {
+    processBatch(item) // function call = preemption point
+}
+```
+
+**Rationale**: Go 1.14+ has asynchronous preemption via signals, but an extremely tight, fully-inlined arithmetic loop can still monopolize a P for long enough to delay GC or other goroutines. Introducing a non-inlined call (or a `//go:noinline` helper) gives the runtime a clean preemption point without materially affecting throughput (`cc-skills-golang/skills/golang-performance/references/cpu.md`).
+
+**See also**: PF-24
+
+---
+
+## PF-49: Cursor-Based Pagination over SQL `OFFSET`
+
+**Strength**: SHOULD
+
+**Summary**: For large paginated datasets, filter by a sortable column (cursor) rather than using SQL `OFFSET`.
+
+```go
+// Bad — OFFSET re-scans rows, O(offset + limit)
+SELECT * FROM events ORDER BY created_at LIMIT 100 OFFSET 10000
+
+// Good — cursor-based, O(limit) regardless of depth
+SELECT * FROM events WHERE created_at > $1 ORDER BY created_at LIMIT 100
+```
+
+**Rationale**: `OFFSET` forces the database to fetch and discard every skipped row, so the cost of page N grows linearly with N and becomes catastrophic on deep pagination. A cursor keyed on an indexed, strictly-ordered column lets the planner do a single index seek and stays O(limit) no matter how far the client has scrolled (`cc-skills-golang/skills/golang-database/references/performance.md`).
+
+---
+
+## PF-50: Drain the HTTP Response Body Before Close
+
+**Strength**: MUST
+
+**Summary**: Even when ignoring a response, drain the body before closing — the connection only returns to the pool once the body is fully read.
+
+```go
+resp, err := client.Get(url)
+if err != nil { return err }
+defer resp.Body.Close()
+_, _ = io.Copy(io.Discard, resp.Body) // drain to enable connection reuse
+```
+
+**Rationale**: `net/http`'s transport can only recycle a keep-alive connection once the entire response body has been consumed; closing early forces the transport to discard the TCP (and TLS) state and start a fresh handshake on the next request. `io.Copy(io.Discard, resp.Body)` before `Close` is cheap and unlocks the keep-alive path that `MaxIdleConnsPerHost` is tuned for (`cc-skills-golang/skills/golang-performance/references/io-networking.md`).
+
+**See also**: PF-51
+
+---
+
+## PF-51: Tune `http.Transport.MaxIdleConnsPerHost` for Service Calls
+
+**Strength**: SHOULD
+
+**Summary**: The default transport allows only 2 idle connections per host — tune it for high-concurrency service-to-service calls.
+
+```go
+// Bad — default transport, only 2 idle connections per host
+client := &http.Client{}
+
+// Good — tuned for high-concurrency
+client := &http.Client{
+    Timeout: 30 * time.Second,
+    Transport: &http.Transport{
+        MaxIdleConns:          100,
+        MaxIdleConnsPerHost:   20, // default is 2
+        MaxConnsPerHost:       50,
+        IdleConnTimeout:       90 * time.Second,
+        TLSHandshakeTimeout:   5 * time.Second,
+        ResponseHeaderTimeout: 10 * time.Second,
+    },
+}
+```
+
+**Rationale**: Under concurrent load against a small set of backends, `MaxIdleConnsPerHost=2` starves the pool and forces repeated TCP+TLS handshakes for the same host, which dominates latency. Raising it (20-50 is typical for service-to-service clients) keeps enough warm connections around to absorb bursts while the other timeouts bound pathological cases (`cc-skills-golang/skills/golang-performance/references/io-networking.md`).
+
+**See also**: PF-50
+
+---
+
+## PF-52: Stream Instead of `io.ReadAll` for Large Payloads
+
+**Strength**: MUST
+
+**Summary**: `io.ReadAll` buffers the entire stream into memory; use `bufio.Scanner` or `io.Copy` for large inputs.
+
+```go
+// Bad — 2GB file becomes a 2GB allocation
+data, _ := io.ReadAll(f)
+
+// Good — process line by line, constant memory
+scanner := bufio.NewScanner(f)
+for scanner.Scan() { processLine(scanner.Bytes()) }
+
+// Good — stream between reader and writer
+io.Copy(w, resp.Body)
+```
+
+**Rationale**: `io.ReadAll` grows an internal buffer up to the full payload size, so a 2 GB HTTP body or file becomes a 2 GB spike in the heap and an easy OOM on any untrusted input. `bufio.Scanner` and `io.Copy` process the stream in a fixed-size window, keeping memory essentially constant regardless of input size (`cc-skills-golang/skills/golang-performance/references/io-networking.md`).
+
+**See also**: PF-19, PF-29
+
+---
+
+## PF-53: Build a Lookup Map for Repeated Membership Tests
+
+**Strength**: SHOULD
+
+**Summary**: Membership tests against the same collection should use a `map[T]struct{}` built once — not repeated linear scans.
+
+```go
+// Bad — O(n*m), per-element linear scan
+for _, item := range subset {
+    if !Contains(collection, item) { return false }
+}
+
+// Good — O(n+m), build map once
+seen := make(map[T]struct{}, len(collection))
+for _, item := range collection { seen[item] = struct{}{} }
+for _, item := range subset {
+    if _, ok := seen[item]; !ok { return false }
+}
+```
+
+**Rationale**: `slices.Contains` is O(n); nesting it inside another loop turns the work into O(n·m), which explodes on even moderately sized inputs. A one-pass `map[T]struct{}` converts the whole problem to O(n+m), and using `struct{}` (0 bytes) instead of `bool` (1 byte plus alignment) keeps the map's value footprint at zero (`cc-skills-golang/skills/golang-performance/references/caching.md`).
+
+**See also**: PF-10
+
+---
+
+## PF-54: Use `slog.LogAttrs` with Typed Attributes for Debug-Level Logging
+
+**Strength**: SHOULD
+
+**Summary**: `logger.Debug(fmt.Sprintf(...))` formats even when the message will be dropped by the level; use `slog` typed attributes so formatting is deferred.
+
+```go
+// Bad — fmt.Sprintf runs BEFORE the logger checks the level
+logger.Debug(fmt.Sprintf("processing item %d with data %v", item.ID, item.Data))
+
+// Good — slog defers formatting until level check passes
+slog.Debug("processing item",
+    slog.Int("id", item.ID),
+    slog.Any("data", item.Data))
+
+// Best — LogAttrs: zero allocations when level is disabled
+slog.LogAttrs(ctx, slog.LevelDebug, "processing item",
+    slog.Int("id", item.ID))
+```
+
+**Rationale**: `fmt.Sprintf` runs its formatting and allocation work unconditionally, before the logger ever checks whether the level is enabled — so a "disabled" debug line still pays the full cost. `slog.LogAttrs` with typed attributes defers formatting until after the handler's `Enabled` check and is zero-allocation when the level filters the record out (`cc-skills-golang/skills/golang-performance/references/runtime.md`).
+
+**See also**: PF-28
+
+---
+
+## PF-55: Let Go 1.25 Set `GOMAXPROCS` from the cgroup Limit
+
+**Strength**: SHOULD (Go 1.25+)
+
+**Summary**: Go 1.25 automatically adjusts `GOMAXPROCS` based on container CPU limits without manual configuration.
+
+```go
+// Bad: manual tuning required (pre-Go 1.25)
+func init() {
+    numCPU := runtime.NumCPU() // always container's full CPU count
+    runtime.GOMAXPROCS(numCPU / 2) // must guess at container limits
+}
+
+// Good: automatic in Go 1.25+
+// No configuration needed; GOMAXPROCS respects cgroup limits
+// and adjusts if limits change dynamically
+```
+
+**Rationale**: Before Go 1.25, `runtime.NumCPU` reported the host's full CPU count, which made containerized binaries over-parallelize and thrash against their cgroup CPU quota — hence the crop of "automaxprocs" libraries. Go 1.25 reads the cgroup limit directly on Linux and updates `GOMAXPROCS` dynamically when the limit changes, so manual tuning (or a third-party shim) is no longer needed (`claude-skills (saisudhir14)/skills/go-performance/SKILL.md`).
+
+---
+
+## PF-56: Use `runtime.AddCleanup` over `runtime.SetFinalizer`
+
+**Strength**: SHOULD (Go 1.24+)
+
+**Summary**: Prefer `runtime.AddCleanup` (Go 1.24+) over `SetFinalizer` for cleanup; it supports multiple cleanups and avoids cycle leaks.
+
+```go
+// Bad: SetFinalizer with cycle leak risk
+type Resource struct {
+    handle uintptr
+}
+
+func NewResource() *Resource {
+    r := &Resource{handle: allocHandle()}
+    runtime.SetFinalizer(r, func(r *Resource) {
+        freeHandle(r.handle)
+    })
+    return r
+}
+
+// Good: runtime.AddCleanup (Go 1.24+)
+func NewResource() *Resource {
+    r := &Resource{handle: allocHandle()}
+    runtime.AddCleanup(r, func(handle uintptr) {
+        freeHandle(handle)
+    }, r.handle)
+    return r
+}
+```
+
+**Rationale**: `SetFinalizer` allows only one finalizer per object, rejects interior pointers, and resurrects objects through at least two GC cycles, so a finalizer that captures its own argument can form a cycle that never collects. `runtime.AddCleanup` accepts multiple cleanups per object, runs against a separate closure value (so no self-cycle), and releases the object in a single GC pass (`claude-skills (saisudhir14)/skills/go-performance/SKILL.md`).
+
+---
+
+## PF-57: `weak.Pointer` for Caches That Must Not Prevent GC
+
+**Strength**: CONSIDER (Go 1.24+)
+
+**Summary**: Use `weak.Pointer[T]` (Go 1.24+) for caches that should not prevent garbage collection.
+
+```go
+// Bad: strong references keep objects alive indefinitely
+type Cache struct {
+    mu    sync.Mutex
+    items map[string]*ExpensiveResource // objects never GC'd
+}
+
+// Good: weak references allow GC
+type Cache struct {
+    mu    sync.Mutex
+    items map[string]weak.Pointer[ExpensiveResource]
+}
+
+func (c *Cache) Get(key string) *ExpensiveResource {
+    c.mu.Lock()
+    defer c.mu.Unlock()
+    if wp, ok := c.items[key]; ok {
+        if r := wp.Value(); r != nil {
+            return r
+        }
+        delete(c.items, key) // remove if GC'd
+    }
+    return nil
+}
+```
+
+**Rationale**: A cache keyed on strong pointers pins every entry until it is explicitly evicted, which turns a "nice-to-have" cache into an unbounded memory leak under long-lived processes. `weak.Pointer[T]` holds a reference the GC is free to collect when nothing else points to the value; `Value()` returns `nil` after collection, letting the cache self-prune on miss (`claude-skills (saisudhir14)/skills/go-performance/SKILL.md`).
+
+**See also**: PF-13
+
+---
+
 ---
 
 ## Best Practices Summary
@@ -1201,6 +1779,29 @@ Parse-8      2.00 ± 0%     1.00 ± 0%    -50.00%  (p=0.000 n=10+10)
 | 32 | Avoid slice-type conversions in inner loops | SHOULD | `[]byte` ↔ `string` copies each time |
 | 33 | Use zero-value types when usable | SHOULD | Skip a `new` allocation |
 | 34 | `benchstat` with `-count=10` | SHOULD | Single runs are noise; need significance |
+| 35 | Package-level `regexp.MustCompile` | MUST | 10-12× vs per-call compile |
+| 36 | `append(s[:0], ...)` to reuse backing | CONSIDER | Zero allocs on reset |
+| 37 | Preallocated index over `append` | CONSIDER | No per-element bounds check |
+| 38 | Destructure map in `range` | SHOULD | One lookup, not two |
+| 39 | Avoid `any` boxing in hot paths | CONSIDER | Generics or typed params |
+| 40 | Clone small subslices of big buffers | SHOULD | Release backing; `s[:n:n]` |
+| 41 | Reorder struct fields for alignment | CONSIDER | `fieldalignment` finds these |
+| 42 | Cache-line padding on hot fields | CONSIDER | Only when profiling shows contention |
+| 43 | Row-major 2D traversal | SHOULD | 10-50× cache-friendly |
+| 44 | Contiguous 2D backing slice | CONSIDER | One alloc, rows adjacent |
+| 45 | Value receivers for fluent chains | CONSIDER | Keeps chain inlineable |
+| 46 | No logging in inlineable hot funcs | CONSIDER | Blocks the inliner |
+| 47 | Multi-accumulator for ILP | CONSIDER-AVOID | 4 accums → 2-4× pipelined |
+| 48 | Preemption point in tight loops | CONSIDER | Lets scheduler in |
+| 49 | Cursor pagination over `OFFSET` | SHOULD | O(limit), not O(offset+limit) |
+| 50 | Drain `resp.Body` before `Close` | MUST | Enables connection reuse |
+| 51 | Tune `MaxIdleConnsPerHost` | SHOULD | Default of 2 is too low |
+| 52 | Stream instead of `io.ReadAll` | MUST | Prevents OOM on large payloads |
+| 53 | Lookup map over repeated `Contains` | SHOULD | O(n+m), not O(n×m) |
+| 54 | `slog.LogAttrs` for debug | SHOULD | Defers formatting past level check |
+| 55 | Go 1.25 auto-GOMAXPROCS | SHOULD | Drops manual cgroup tuning |
+| 56 | `runtime.AddCleanup` over `SetFinalizer` | SHOULD | Multi-cleanup, no cycle leak |
+| 57 | `weak.Pointer` for caches | CONSIDER | Don't block GC |
 
 ---
 

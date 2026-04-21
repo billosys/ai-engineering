@@ -1219,6 +1219,66 @@ if !strings.Contains(err.Error(), "not found") {
 
 ---
 
+## EH-36: Preallocate Sentinel Errors Instead of `fmt.Errorf` in Hot Paths
+
+**Strength**: SHOULD
+
+**Summary**: For predictable errors returned from hot paths, declare a package-level sentinel with `errors.New` rather than constructing the error inline with `fmt.Errorf`. The sentinel is allocated once at package init; `fmt.Errorf` allocates on every call.
+
+```go
+// Good — preallocated sentinel, zero-allocation
+var ErrNegative = errors.New("value is negative")
+
+func validate(x int) error {
+    if x < 0 {
+        return ErrNegative
+    }
+    return nil
+}
+
+// Bad — allocates every call
+func validate(x int) error {
+    if x < 0 {
+        return fmt.Errorf("value is negative")
+    }
+    return nil
+}
+```
+
+**Rationale**: `fmt.Errorf` allocates memory on every call — both for the formatted string and for the wrapping `*fmt.wrapError` or `*errors.errorString`. A package-level sentinel is allocated once at init and reused for every failing call, and it also gives callers a stable value to match with `errors.Is`. Reserve `fmt.Errorf` for the case where you actually need to interpolate dynamic context into the message (cc-skills-golang/skills/golang-performance/references/memory.md).
+
+**See also**: EH-04, EH-05, EH-15
+
+---
+
+## EH-37: Check the Error Before Using the Result
+
+**Strength**: MUST
+
+**Summary**: When a function returns `(result, error)`, inspect the error before touching the result. On the error path the result may be the zero value, a nil pointer, or otherwise invalid — reading it first can panic or silently propagate garbage.
+
+```go
+// Good — check err first; f is only used once err is known to be nil
+f, err := os.Open("file.txt")
+if err != nil {
+    return err
+}
+fmt.Println(f.Name()) // safe: err was nil, so f is valid
+
+// Bad — uses f before the error check; panics if f is nil
+f, err := os.Open("file.txt")
+fmt.Println(f.Name())
+if err != nil {
+    return err
+}
+```
+
+**Rationale**: Go's multi-return convention gives the callee permission to return a zero-valued result alongside a non-nil error, and most of the standard library does exactly that (`os.Open`, `net.Dial`, `json.Unmarshal` targets, etc.). Using the result before the error check is a latent nil-dereference or silent-bad-data bug. Go 1.25 added a compiler/vet diagnostic that flags this pattern, so code that ignored it before will now fail to build clean — but the rule predates the tooling and applies to every `(T, error)` return (claude-skills (saisudhir14)/references/gotchas.md).
+
+**See also**: EH-01, EH-19
+
+---
+
 ---
 
 ## Best Practices Summary
@@ -1262,6 +1322,8 @@ if !strings.Contains(err.Error(), "not found") {
 | 33 | Don't wrap `io.EOF` without meaning | SHOULD | `==` compares break silently |
 | 34 | Nil map/slice/channel panics are bugs | MUST | Initialize or guard; don't recover |
 | 35 | Test error semantics, not strings | SHOULD | `errors.Is` / presence boolean |
+| 36 | Sentinel over `fmt.Errorf` in hot paths | SHOULD | Zero-alloc on predictable errors |
+| 37 | Check error before using result | MUST | Go 1.25 enforces |
 
 ---
 

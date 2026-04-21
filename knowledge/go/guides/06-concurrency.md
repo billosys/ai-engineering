@@ -1589,6 +1589,468 @@ _ = data
 
 ---
 
+## CC-38: Nil the Channel After Close to Disable a select Case
+
+**Strength**: SHOULD
+
+**Summary**: After a channel is closed, reads from it return the zero value immediately, so a `select` case over that channel fires continuously and pegs a CPU. Set the channel variable to `nil` once you observe the closed signal — a nil channel blocks forever in `select`, cleanly disabling the case.
+
+```go
+// Bad — after ch is closed, this loops at 100% CPU
+for {
+    select {
+    case v := <-ch:
+        process(v)   // keeps firing with zero values
+    case <-done:
+        return
+    }
+}
+
+// Good — nil the channel after it closes
+for {
+    select {
+    case v, ok := <-ch:
+        if !ok {
+            ch = nil // nil channel blocks forever, disables this case
+            continue
+        }
+        process(v)
+    case <-done:
+        return
+    }
+}
+```
+
+**Rationale**: A closed channel is *always* ready to receive (it yields the zero value with `ok=false`), so in a `select` its case is selectable on every iteration and starves the other cases. Assigning `nil` takes the case out of the random selection set without changing the loop structure, letting the `select` continue servicing remaining channels until `done` fires (cc-skills-golang/skills/golang-troubleshooting/references/common-go-bugs.md).
+
+**See also**: CC-28, CC-29, CC-30
+
+---
+
+## CC-39: Reuse a time.Timer Instead of time.After in select Loops
+
+**Strength**: SHOULD
+
+**Summary**: `time.After` inside a `select` loop allocates a fresh timer on every iteration; each one stays referenced by the runtime until it fires, producing a slow leak under load. Create a single `time.Timer` outside the loop and `Reset` it on each branch so only one timer ever exists.
+
+```go
+// Bad — leaks a timer on every iteration until it fires
+for {
+    select {
+    case msg := <-ch:
+        handle(msg)
+    case <-time.After(5 * time.Second):
+        handleTimeout()
+    }
+}
+
+// Good — reuse the timer
+timer := time.NewTimer(5 * time.Second)
+defer timer.Stop()
+for {
+    select {
+    case msg := <-ch:
+        if !timer.Stop() { <-timer.C }
+        timer.Reset(5 * time.Second)
+        handle(msg)
+    case <-timer.C:
+        handleTimeout()
+        timer.Reset(5 * time.Second)
+    }
+}
+```
+
+**Rationale**: `time.After` is fine for one-shot uses but in a hot `select` loop every call creates a timer that cannot be garbage collected until its deadline elapses — memory grows proportionally to iteration rate times timeout. Reusing a single `time.Timer` with `Reset` keeps the timer count at one regardless of loop speed; the `!timer.Stop()` drain pattern avoids a stale value sitting on `timer.C` (cc-skills-golang/skills/golang-concurrency/references/channels-and-select.md).
+
+**See also**: CC-31
+
+---
+
+## CC-40: Use Directional Channel Types in Function Signatures
+
+**Strength**: SHOULD
+
+**Summary**: Declare channel parameters as `chan<- T` (send-only) or `<-chan T` (receive-only) to document the function's role and let the compiler reject misuse such as a consumer accidentally closing or sending on its input.
+
+```go
+// Bad — caller could accidentally close or send on a receive-only channel
+func consume(ch chan int) { ... }
+
+// Good — compiler enforces correct usage
+func produce(ch chan<- int) { ... } // send-only
+func consume(ch <-chan int) { ... } // receive-only
+```
+
+**Rationale**: A bidirectional `chan T` in a parameter is an API that allows every operation, including `close`, which is almost always wrong for a consumer and gets the ownership rule in CC-28 violated. Directional types push the constraint into the type system so the compiler, not code review, catches the mistake (cc-skills-golang/skills/golang-concurrency/references/channels-and-select.md).
+
+**See also**: CC-27, CC-28
+
+---
+
+## CC-41: wg.Add Before Launching the Goroutine, Not Inside It
+
+**Strength**: MUST
+
+**Summary**: Call `wg.Add(1)` on the goroutine that *launches* the worker, before the `go` statement. Calling `Add` from inside the new goroutine races with `wg.Wait` — the waiter may observe a zero counter and return before any worker has had a chance to increment it.
+
+```go
+// Bad — Add inside the goroutine
+var wg sync.WaitGroup
+for i := 0; i < n; i++ {
+    go func() {
+        wg.Add(1) // may run after wg.Wait() returns
+        defer wg.Done()
+        doWork()
+    }()
+}
+wg.Wait()
+
+// Good
+for i := 0; i < n; i++ {
+    wg.Add(1) // called BEFORE launching the goroutine
+    go func() {
+        defer wg.Done()
+        doWork()
+    }()
+}
+wg.Wait()
+```
+
+**Rationale**: `WaitGroup.Wait` returns when the counter reaches zero; if every `Add` happens asynchronously from within the goroutine, the first call to `Wait` can legally see zero and proceed, even though the goroutines have not yet started. The bug is timing-dependent and typically only surfaces under load or on slower machines. Always pair `Add` with the `go` statement that launches the work (cc-skills-golang/skills/golang-troubleshooting/references/common-go-bugs.md).
+
+**See also**: CC-04, CC-02
+
+---
+
+## CC-42: Every Goroutine Needs Its Own defer recover
+
+**Strength**: MUST
+
+**Summary**: `recover` only catches panics in the *same* goroutine that defers it. A parent's `recover` cannot save a child goroutine that panics — the unhandled panic crashes the whole process. Every goroutine that can panic must install its own `defer func() { recover() }()`.
+
+```go
+// Bad — parent recover() cannot catch child panic
+func main() {
+    defer func() { recover() }() // never catches child panic
+    go func() { panic("crash!") }() // crashes the program
+    time.Sleep(time.Second)
+}
+
+// Good — each goroutine recovers its own panics
+go func() {
+    defer func() {
+        if r := recover(); r != nil {
+            log.Printf("goroutine recovered: %v", r)
+        }
+    }()
+    doWork(ctx)
+}()
+```
+
+**Rationale**: Panic propagation is per-goroutine: the runtime walks only the panicking goroutine's defer stack, so a protective `recover` elsewhere is invisible. For long-running services this means a single buggy handler can take down every other in-flight request. Wrap goroutine entry points with a recovery helper and log the stack so the bug is still visible (cc-skills-golang/skills/golang-concurrency/references/channels-and-select.md).
+
+**See also**: CC-01, CC-02
+
+---
+
+## CC-43: Always defer cancel() on Derived Contexts
+
+**Strength**: MUST
+
+**Summary**: Every `context.WithCancel`, `WithTimeout`, or `WithDeadline` returns a `cancel` function whose call releases the associated timer and tracker goroutine. Discarding it — typically with `_` — leaks those resources even when the deadline expires naturally.
+
+```go
+// Bad — cancel is discarded, resources leak
+func fetch(ctx context.Context) error {
+    ctx, _ = context.WithTimeout(ctx, 5*time.Second)
+    return doWork(ctx)
+}
+
+// Good — defer cancel immediately
+func fetch(ctx context.Context) error {
+    ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+    defer cancel()
+    return doWork(ctx)
+}
+```
+
+**Rationale**: Derived contexts allocate bookkeeping (a timer for deadlines, a child registered on the parent's cancel tree) that is only reclaimed when `cancel` runs. Relying on the deadline alone still leaks the parent-tree entry, and `go vet` now flags the pattern. Adopt the reflex of writing `defer cancel()` on the line immediately after `WithTimeout`/`WithCancel`/`WithDeadline` (cc-skills-golang/skills/golang-context/references/cancellation.md).
+
+**See also**: CC-13
+
+---
+
+## CC-44: Thread Context Through with *Context Method Variants
+
+**Strength**: SHOULD
+
+**Summary**: When you have a `ctx`, use the context-aware downstream API: `http.NewRequestWithContext`, `db.QueryContext`, `db.ExecContext`, and so on. Context-less variants ignore cancellation, so a client disconnect or upstream timeout does not free the in-flight work.
+
+```go
+// Bad — downstream call ignores the request context
+func (c *PaymentClient) Charge(ctx context.Context, amount int) error {
+    req, _ := http.NewRequest("POST", c.url+"/charge", body)
+    return c.client.Do(req)
+}
+
+// Good — all downstream operations respect the context
+func (c *PaymentClient) Charge(ctx context.Context, amount int) error {
+    req, err := http.NewRequestWithContext(ctx, "POST", c.url+"/charge", body)
+    if err != nil { return fmt.Errorf("creating request: %w", err) }
+    return c.client.Do(req)
+}
+```
+
+**Rationale**: Propagating the context is the mechanism by which cancellation and deadlines reach the socket or database driver. A call made with `http.NewRequest` (no context) will run to completion even after the caller has disconnected, holding a connection open and burning downstream capacity. The `*Context` variants thread the signal the whole way down (cc-skills-golang/skills/golang-context/references/http-services.md).
+
+**See also**: CC-03, CC-08, CC-13
+
+---
+
+## CC-45: Use an Unexported Named Type for Context Keys
+
+**Strength**: MUST
+
+**Summary**: `context.Value` lookups are keyed by Go equality on the key. Two packages using the same `string` literal will collide. Declare an unexported named type in your package and use typed constants as keys so the type itself is unique.
+
+```go
+// Bad — string keys collide across packages
+ctx = context.WithValue(ctx, "trace_id", traceID)
+
+// Good — unexported key type prevents collisions
+type contextKey string
+const traceIDKey contextKey = "trace_id"
+
+func WithTraceID(ctx context.Context, traceID string) context.Context {
+    return context.WithValue(ctx, traceIDKey, traceID)
+}
+```
+
+**Rationale**: Go equality on interface values compares both dynamic type and value; an unexported type cannot be named from outside the package, so no foreign caller can construct a colliding key even with the same underlying string. This is both a correctness fix (packages can't clobber each other) and a mild encapsulation win — consumers must go through your accessor functions (cc-skills-golang/skills/golang-context/references/values-tracing.md).
+
+**See also**: CC-10
+
+---
+
+## CC-46: Detach Cancellation with context.WithoutCancel for Fire-and-Forget
+
+**Strength**: CONSIDER
+
+**Summary**: Background work spawned from a request handler — audit logs, analytics events — usually shouldn't die when the client disconnects, but also shouldn't lose the trace IDs and user info carried on the request context. `context.WithoutCancel` (Go 1.21+) keeps the values while detaching cancellation.
+
+```go
+// Bad — background audit log dies if the client disconnects
+go h.auditService.LogOrderCreated(ctx, order)
+
+// Good — detach cancellation, keep trace values
+auditCtx := context.WithoutCancel(ctx)
+go h.auditService.LogOrderCreated(auditCtx, order)
+```
+
+**Rationale**: If you forward `ctx` directly the background goroutine is cancelled the moment the handler returns — a surprise that loses audit entries under normal traffic. Switching to `context.Background()` fixes the cancellation but drops `trace_id`, `user_id`, and any other request-scoped values, hurting observability. `WithoutCancel` is the precise tool: same value chain, no cancellation propagation. Pair with a bounded background pool (CC-50) so detached work can't spawn unboundedly (cc-skills-golang/skills/golang-context/references/cancellation.md).
+
+**See also**: CC-43, CC-50
+
+---
+
+## CC-47: Graceful Shutdown via signal.NotifyContext
+
+**Strength**: SHOULD
+
+**Summary**: Wire `signal.NotifyContext` to SIGINT/SIGTERM at program start, block `main` on `<-ctx.Done()`, then call `srv.Shutdown` with its own bounded timeout context so in-flight requests drain before the process exits.
+
+```go
+// Bad: no graceful shutdown
+func main() {
+    srv := &http.Server{Addr: ":8080"}
+    go srv.ListenAndServe()
+    // Server runs forever; no way to drain connections
+}
+
+// Good: graceful shutdown
+func main() {
+    ctx, stop := signal.NotifyContext(context.Background(),
+        syscall.SIGINT, syscall.SIGTERM)
+    defer stop()
+    
+    srv := &http.Server{Addr: ":8080", Handler: handler}
+    
+    go func() {
+        if err := srv.ListenAndServe(); err != http.ErrServerClosed {
+            slog.Error("server error", "err", err)
+            stop()
+        }
+    }()
+    
+    slog.Info("server started", "addr", ":8080")
+    <-ctx.Done()
+    slog.Info("shutting down")
+    
+    shutdownCtx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+    defer cancel()
+    
+    if err := srv.Shutdown(shutdownCtx); err != nil {
+        slog.Error("shutdown error", "err", err)
+    }
+}
+```
+
+**Rationale**: Without this pattern the orchestrator's SIGTERM becomes an abrupt kill: open connections are reset, requests fail with truncated bodies, and post-commit side effects may be half-applied. `signal.NotifyContext` gives you a single context whose cancellation means "start shutdown"; a separate timeout context bounds the drain so a stuck handler can't keep the process alive forever. The server's `ListenAndServe` returns `http.ErrServerClosed` on a clean shutdown, which is not an error condition (claude-skills (saisudhir14)/references/patterns.md).
+
+**See also**: CC-01, CC-03, CC-13
+
+---
+
+## CC-48: Channels of Channels for Non-Blocking Reply Routing
+
+**Strength**: CONSIDER
+
+**Summary**: When a server goroutine multiplexes many concurrent requests, embed a reply channel inside the request struct. Each client owns the path its answer returns on, so the server can reply without a shared response queue, mutex, or map of correlation IDs.
+
+```go
+// Bad: Requires mutex-based request/response queuing
+type Request struct {
+    args []int
+    // caller has no direct path for reply
+}
+
+type result struct {
+    err error
+    val int
+}
+
+var responses = make(chan result)
+
+// Good: Channels of channels for natural request/response multiplexing
+type Request struct {
+    args       []int
+    f          func([]int) int
+    resultChan chan int
+}
+
+request := &Request{[]int{3, 4, 5}, sum, make(chan int)}
+clientRequests <- request
+fmt.Printf("answer: %d\n", <-request.resultChan)
+
+func handle(queue chan *Request) {
+    for req := range queue {
+        req.resultChan <- req.f(req.args)
+    }
+}
+```
+
+**Rationale**: A single shared response channel forces callers to demultiplex by inspecting IDs, reintroducing the mutex you were trying to avoid. Putting the reply channel on the request makes the response path implicit in the message, which also generalises cleanly to rate limiting and worker pools — the reply channel is just another field. Pattern comes from Effective Go but is rarely shown with an explicit contrast (golang-skills (cxuu)/skills/go-concurrency/references/ADVANCED-PATTERNS.md).
+
+**See also**: CC-25, CC-33
+
+---
+
+## CC-49: Partition CPU-Bound Work with runtime.NumCPU and WaitGroup
+
+**Strength**: CONSIDER
+
+**Summary**: For CPU-bound work on independent data (vector operations, matrix transforms, batch encoding), split the range into `runtime.NumCPU()` chunks and process them concurrently with a `WaitGroup`. Use `runtime.GOMAXPROCS(0)` instead if you want to honour operator tuning rather than hardware.
+
+```go
+// Bad: Sequential processing doesn't use available cores
+func (v Vector) DoAll(u Vector) {
+    for i := 0; i < len(v); i++ {
+        v[i] += u.Op(v[i])
+    }
+}
+
+// Good: Parallel processing leverages all CPU cores
+func (v Vector) DoAll(u Vector) {
+    numCPU := runtime.NumCPU()
+    var wg sync.WaitGroup
+    wg.Add(numCPU)
+    for i := 0; i < numCPU; i++ {
+        go func(i int) {
+            defer wg.Done()
+            v.DoSome(i*len(v)/numCPU, (i+1)*len(v)/numCPU, u)
+        }(i)
+    }
+    wg.Wait()
+}
+```
+
+**Rationale**: Go's scheduler won't parallelise a single tight loop — only the program can, by splitting the work. One goroutine per core is the sweet spot for CPU-bound tasks: more goroutines add scheduling overhead without adding parallelism, and fewer leaves cores idle. Prefer `runtime.GOMAXPROCS(0)` when you run in cgroups or containers where the operator has capped parallelism below the hardware core count. The pattern is inappropriate for IO-bound work, where the concurrency level should come from target latency, not CPU count (golang-skills (cxuu)/skills/go-concurrency/references/ADVANCED-PATTERNS.md).
+
+**See also**: CC-33, CC-50
+
+---
+
+## CC-50: Bound Concurrency with a Buffered-Channel Semaphore
+
+**Strength**: MUST
+
+**Summary**: Never launch one goroutine per input item unbounded. A buffered channel of capacity `maxWorkers` used as a semaphore — send before `go`, receive on exit — caps how many workers run at once and prevents memory and downstream-resource exhaustion.
+
+```go
+// Bad: Spawns len(items) goroutines at once — can exhaust memory
+var wg sync.WaitGroup
+for _, item := range items {
+    wg.Add(1)
+    go func(it Item) {
+        defer wg.Done()
+        process(it)
+    }(item)
+}
+wg.Wait()
+
+// Good: Semaphore limits concurrency to maxWorkers
+var wg sync.WaitGroup
+sem := make(chan struct{}, maxWorkers)
+for _, item := range items {
+    wg.Add(1)
+    sem <- struct{}{}
+    go func(it Item) {
+        defer wg.Done()
+        defer func() { <-sem }()
+        process(it)
+    }(item)
+}
+wg.Wait()
+```
+
+**Rationale**: Unbounded goroutine spawning is the canonical way to take down a Go service: one request with a big slice can allocate gigabytes of goroutine stacks, open more DB connections than the pool permits, or saturate an upstream service. A buffered channel is the smallest semaphore primitive in the language — the send blocks when `maxWorkers` tokens are held, providing natural backpressure without any extra coordination (golang-skills (cxuu)/skills/go-concurrency/references/ADVANCED-PATTERNS.md).
+
+**See also**: CC-33, CC-46
+
+---
+
+## CC-51: Always defer wg.Done() in the Goroutine
+
+**Strength**: MUST
+
+**Summary**: Place `defer wg.Done()` as the first line of every goroutine you launch against a `WaitGroup`. Any path that returns without calling `Done` — an early return, a panic, a forgotten branch — leaves the counter positive and `wg.Wait` deadlocks forever.
+
+```go
+// Bad: Missing wg.Done() — deadlocks
+var wg sync.WaitGroup
+wg.Add(1)
+go func() {
+    doWork()
+    // forgot to call wg.Done()
+}()
+wg.Wait() // blocks forever
+
+// Good: Always defer wg.Done()
+var wg sync.WaitGroup
+wg.Add(1)
+go func() {
+    defer wg.Done()
+    doWork()
+}()
+wg.Wait()
+```
+
+**Rationale**: `WaitGroup.Wait` only returns when the internal counter hits zero, so a single missed `Done` means permanent blocking — which in production looks like a hung shutdown or a leaked request handler. `defer` makes correctness structural: it runs on every exit path, including panics, which is also why it composes cleanly with goroutine-local `recover` (see CC-42) (golang-skills (cxuu)/skills/go-concurrency/references/ADVANCED-PATTERNS.md).
+
+**See also**: CC-04, CC-41, CC-42
+
+---
+
 ---
 
 ## Best Practices Summary
@@ -1634,6 +2096,20 @@ _ = data
 | 35 | `t.Fatal` only from the test goroutine | MUST | `t.Error` / `t.Errorf` from workers |
 | 36 | `go test -race` in CI | SHOULD | Empirical check for data races |
 | 37 | Happens-before through sync primitives | CONSIDER | Channels, mutex, Once, WaitGroup — not timing |
+| 38 | `ch = nil` to disable closed case | SHOULD | Avoids 100% CPU busy loop |
+| 39 | `time.Timer` reuse over `time.After` | SHOULD | `time.After` leaks timers |
+| 40 | Directional channels in signatures | SHOULD | `chan<- T`, `<-chan T` |
+| 41 | `wg.Add` before goroutine launch | MUST | Inside-goroutine races `Wait` |
+| 42 | Per-goroutine `defer recover` | MUST | Parent can't catch child panics |
+| 43 | Always `defer cancel()` | MUST | Derived contexts leak timers |
+| 44 | `*Context` method variants | SHOULD | Propagates cancellation |
+| 45 | Unexported context key type | MUST | Prevents package collisions |
+| 46 | `context.WithoutCancel` for detached work | CONSIDER | Keeps values, drops cancel |
+| 47 | `signal.NotifyContext` for shutdown | SHOULD | Clean drain on SIGINT/SIGTERM |
+| 48 | Channels of channels | CONSIDER | Per-caller reply path |
+| 49 | Partition CPU work by `NumCPU` | CONSIDER | Parallel map over range |
+| 50 | Bounded-semaphore concurrency | MUST | Unbounded spawns exhaust memory |
+| 51 | Always `defer wg.Done()` | MUST | Survives panics; avoids deadlock |
 
 ---
 
