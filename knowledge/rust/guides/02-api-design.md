@@ -1,52 +1,32 @@
 # API Design Guidelines
 
-Comprehensive guidelines for designing public APIs in Rust, based on the official Rust API Guidelines from the Rust library team.
-
----
+Patterns for designing public Rust APIs: naming, signatures, trait impls, construction, error surfaces, documentation, and future-proofing. Distilled from the Rust API Guidelines (the C-* guidelines) and the Pragmatic Rust library checklist (the M-* guidelines). Type-internal concerns (newtypes, `#[non_exhaustive]`, `Debug`/`Display` on domain types) live in `05-type-design.md`; this guide covers how types *connect* at an API boundary.
 
 
 ## API-01: Abstractions Don't Visibly Nest
 
-**Strength**: MUST
+**Strength**: SHOULD
 
-**Summary**: Avoid exposing nested or complex parameterized types in primary API surface.
+**Summary**: Keep public type signatures flat. Service-like types should not nest type parameters, and user-visible types should expose at most one level of generic nesting.
 
 ```rust
-// Bad - excessive nesting and parameters
-struct Matrix<T, const R: usize, const C: usize, S: Storage<T, R, C>> {
-    data: S,
-    _phantom: PhantomData<T>,
-}
-
+// ❌ BAD: callers must name every layer
 pub struct App {
-    // Users must name this complex type!
     matrix: Matrix<f32, 4, 4, ArrayStorage<f32, 4, 4>>,
 }
 
-// Good - hide complexity
-pub struct Matrix4x4 {
-    // Implementation uses generics internally
-    inner: MatrixImpl<f32, 4, 4>,
-}
+// ✅ GOOD: hide the internal parameterization
+pub struct Matrix4x4 { inner: MatrixImpl<f32, 4, 4> }
+pub struct App       { matrix: Matrix4x4 }
 
-pub struct App {
-    matrix: Matrix4x4,  // Simple!
-}
-
-// Good - container allows user-provided nesting
-pub struct List<T> {
-    items: Vec<T>,
-}
-
-pub struct App {
-    // User chose this nesting, it's not forced by our API
-    lists: List<Rc<RefCell<Item>>>,
-}
+// ✅ OK: one level of nesting chosen by the caller
+pub struct List<T> { items: Vec<T> }
+let lists: List<Rc<RefCell<Item>>> = List { items: vec![] };
 ```
 
-**Rationale**: Type parameters create cognitive load, especially when nested. Service-level types should not nest on their own volition. Limit nesting to 1 level deep for primary APIs.
+**Rationale**: Every type parameter in a public signature is cognitive load and a hazard for rustdoc readability. Internal generics are fine; exposing them forces every consumer to name types they don't care about.
 
-**See also**: M-SIMPLE-ABSTRACTIONS, M-ABSTRACTIONS-DONT-NEST
+**See also**: M-SIMPLE-ABSTRACTIONS
 
 ---
 
@@ -54,575 +34,366 @@ pub struct App {
 
 **Strength**: SHOULD
 
-**Summary**: Functions should borrow inputs and return owned outputs by default.
+**Summary**: Default to `&T` / `&str` / `&[T]` on inputs and owned `T` / `String` / `Vec<T>` on outputs; return a borrow only when it is a view into an input.
 
 ```rust
-// ✅ GOOD: Borrow input, return owned
-fn process(input: &str) -> String {
-    input.to_uppercase()
-}
+// ✅ Borrow input, return owned
+pub fn upper(s: &str) -> String { s.to_uppercase() }
 
-// ✅ GOOD: Return reference when returning part of input
-fn first_word(s: &str) -> &str {
+// ✅ Return a borrow that refers back into an input
+pub fn first_word(s: &str) -> &str {
     s.split_whitespace().next().unwrap_or("")
 }
 
-// ✅ GOOD: Accept generic for flexibility
-fn greet(name: impl AsRef<str>) -> String {
-    format!("Hello, {}!", name.as_ref())
-}
-
-// Works with both:
-greet("world");              // &str
-greet(String::from("world")); // String
-
-// ❌ AVOID: Forcing ownership when not needed
-fn process(input: String) -> String {  // Caller must give up String
-    input.to_uppercase()
-}
+// ❌ Force ownership the function doesn't need
+pub fn upper_bad(s: String) -> String { s.to_uppercase() }
 ```
+
+**Rationale**: Borrowing inputs is the maximally flexible signature — it works with owned values (via auto-deref) and with slices. Returning owned data is almost always what the caller wants; lifetimes on return types lock callers into a specific borrow graph.
+
+**See also**: C-CALLER-CONTROL, ID-borrowed-types (core-idioms)
 
 ---
 
-## API-03: Accept impl AsRef<> Where Feasible
+## API-03: Accept `impl AsRef<T>` Where Feasible
 
 **Strength**: SHOULD
 
-**Summary**: Function parameters should accept `impl AsRef<T>` for types with clear reference hierarchies.
+**Summary**: For path, string, and byte-slice parameters, accept `impl AsRef<Path>`, `impl AsRef<str>`, or `impl AsRef<[u8]>` so callers can pass either owned or borrowed data. Do not propagate `AsRef` into struct fields.
 
 ```rust
-// Bad - forces caller to convert
-pub fn read_file(path: &Path) -> Result<String, Error> {
-    // Caller must call .as_ref() on String
+use std::path::{Path, PathBuf};
+
+// ✅ Function signature: accept anything path-like
+pub fn read_file(path: impl AsRef<Path>) -> std::io::Result<String> {
+    std::fs::read_to_string(path.as_ref())
 }
 
-pub fn print_message(msg: &str) {
-    // Caller must call .as_ref() on String
-}
+read_file("config.toml");
+read_file(String::from("data.json"));
+read_file(&PathBuf::from("./file"));
 
-// Good - accept AsRef
-pub fn read_file(path: impl AsRef<Path>) -> Result<String, Error> {
-    let path = path.as_ref();
-    std::fs::read_to_string(path)
-}
+// ❌ Don't make struct fields generic over AsRef
+pub struct Config<P: AsRef<Path>> { path: P }   // infects every consumer
 
-pub fn print_message(msg: impl AsRef<str>) {
-    println!("{}", msg.as_ref());
-}
-
-// Usage - works with both owned and borrowed
-read_file("config.toml");           // &str
-read_file(String::from("data.json")); // String
-read_file(&PathBuf::from("./file")); // &PathBuf
-
-// Don't infect struct fields with AsRef
-pub struct Config {
-    // Bad
-    path: impl AsRef<Path>,  // Doesn't work!
-    
-    // Good
-    path: PathBuf,  // Store owned data
-}
+// ✅ Store an owned, concrete type
+pub struct Config { path: PathBuf }
 ```
 
-**Rationale**: `impl AsRef<T>` provides ergonomics without runtime cost. The compiler monomorphizes each version, so there's no dynamic dispatch.
+**Rationale**: `impl AsRef<T>` monomorphizes — it is ergonomic without runtime cost. In field positions, the same bound forces every downstream type to carry the parameter, and the generality is wasted because the struct stores the value anyway.
 
-**See also**: M-IMPL-ASREF
+**See also**: C-GENERIC, M-IMPL-ASREF
 
 ---
 
-## API-04: Accept impl IO Traits Where Feasible
+## API-04: Accept `impl Read` / `impl Write` (Sans-IO)
 
 **Strength**: SHOULD
 
-**Summary**: Functions needing one-shot I/O should accept trait objects (`impl Read`, `impl AsyncRead`) rather than concrete types.
+**Summary**: Functions that perform one-shot I/O should accept `impl Read` or `impl Write` (or their async cousins) rather than concrete types like `File`.
 
 ```rust
 use std::io::Read;
 
-// Bad - forces file I/O even if data is in memory
-pub fn parse_config(file: File) -> Result<Config, Error> {
-    let mut content = String::new();
-    file.read_to_string(&mut content)?;
-    // ...
+// ✅ Works with files, sockets, stdin, in-memory buffers, cursors
+pub fn parse_config<R: Read>(mut source: R) -> Result<Config, ConfigError> {
+    let mut buf = String::new();
+    source.read_to_string(&mut buf)?;
+    Config::from_str(&buf)
 }
 
-// Good - accepts any Read source
-pub fn parse_config(mut source: impl Read) -> Result<Config, Error> {
-    let mut content = String::new();
-    source.read_to_string(&mut content)?;
-    // ...
-}
-
-// Works with:
-parse_config(File::open("config.toml")?);       // File
-parse_config(TcpStream::connect("...")?);        // Network
-parse_config(std::io::stdin());                  // Stdin  
-parse_config(&b"key=value"[..]);                 // In-memory bytes
-parse_config(std::io::Cursor::new(vec));         // Cursor
-
-// Async version
-use futures::io::AsyncRead;
-
-pub async fn parse_config_async(
-    mut source: impl AsyncRead + Unpin
-) -> Result<Config, Error> {
-    let mut content = String::new();
-    source.read_to_string(&mut content).await?;
-    // ...
-}
+parse_config(std::fs::File::open("c.toml")?);
+parse_config(&b"key=value"[..]);
+parse_config(std::io::Cursor::new(vec![b'x']));
 ```
 
-**Rationale**: Separating business logic from I/O provides N×M composability—any parser works with any I/O source. Makes testing easier (use in-memory data) and supports more use cases without code changes.
+**Rationale**: Sans-IO separates business logic from transport. Any parser works with any source; tests pass in-memory buffers; benchmarks use `Cursor`. This is the single biggest reusability lever in library design.
 
-**See also**: M-IMPL-IO, sans-io pattern
+**See also**: C-RW-VALUE, M-IMPL-IO
 
 ---
 
-## API-05: Accept impl RangeBounds<> Where Feasible
+## API-05: Accept `impl RangeBounds<T>` for Ranges
 
 **Strength**: MUST
 
-**Summary**: Functions accepting ranges must use `RangeBounds<T>` or `Range<T>`, not separate low/high parameters.
+**Summary**: Functions taking a range should accept `impl RangeBounds<T>` — never two loose endpoints or a tuple.
 
 ```rust
-// Bad - hand-rolled range parameters
-pub fn select_range(low: usize, high: usize) { /* ... */ }
-pub fn select_range(range: (usize, usize)) { /* ... */ }
-
-// Acceptable - forces specific syntax
-pub fn select_range(range: Range<usize>) { /* ... */ }
-// Caller must use: select_range(1..3)
-
-// Best - accepts any range type
 use std::ops::RangeBounds;
 
-pub fn select_any(range: impl RangeBounds<usize>) { /* ... */ }
+// ✅ Accepts every range form
+pub fn select<R: RangeBounds<usize>>(&self, range: R) -> &[Item] { /* ... */ todo!() }
 
-// Caller can use any of:
-select_any(1..3);      // Range
-select_any(1..=3);     // RangeInclusive
-select_any(1..);       // RangeFrom
-select_any(..3);       // RangeTo
-select_any(..);        // RangeFull
+self.select(1..3);
+self.select(1..=3);
+self.select(1..);
+self.select(..3);
+self.select(..);
+
+// ❌ Hand-rolled endpoints
+pub fn select_bad(&self, low: usize, high: usize) -> &[Item] { todo!() }
 ```
 
-**Rationale**: Rust's range types are expressive and standard. Using `RangeBounds` provides maximum flexibility while maintaining clear semantics.
+**Rationale**: Rust's range literals are expressive and canonical. `RangeBounds` covers all five forms with a single signature; anything else either loses expressiveness (`Range<usize>` rejects `..`) or reinvents the wheel.
 
 **See also**: M-IMPL-RANGEBOUNDS
 
 ---
 
-## API-06: All Public Types Implement Debug
+## API-06: Public Types Implement `Debug`, Never Empty
 
 **Strength**: MUST
 
-**Summary**: Every public type should implement Debug for debugging and error reporting.
+**Summary**: Every public type implements `Debug`, and the rendering always carries structural information — even for empty values.
 
 ```rust
-// Good - derived Debug
+// ✅ Default: derive
 #[derive(Debug)]
-pub struct User {
-    pub name: String,
-    pub email: String,
-}
+pub struct Endpoint { url: String, timeout: std::time::Duration }
 
-// Good - custom Debug for sensitive data
-pub struct Credentials {
-    username: String,
-    password: String,
-}
+// ✅ Empty values must still render informatively
+assert_eq!(format!("{:?}", Vec::<i32>::new()), "[]");
+assert_eq!(format!("{:?}", ""), "\"\"");
 
-impl fmt::Debug for Credentials {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+// ✅ Sensitive fields: manual Debug with redaction, verified in tests
+pub struct Credentials { username: String, password: String }
+
+impl std::fmt::Debug for Credentials {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("Credentials")
             .field("username", &self.username)
             .field("password", &"<redacted>")
             .finish()
     }
 }
-
-// Good - Debug representation is never empty
-let empty: Vec<i32> = vec![];
-assert_eq!(format!("{:?}", empty), "[]");
-
-let empty_str = "";
-assert_eq!(format!("{:?}", empty_str), "\"\"");
 ```
 
-**Rationale**: Debug is essential for error messages, logging, and development. It should never be omitted from public types.
+**Rationale**: `Debug` is assumed — by `assert_eq!`, logging frameworks, `dbg!`, and derive chains. An omitted `Debug` impl silently breaks downstream ergonomics because the orphan rule prevents users from adding it. An empty `Debug` output ("") loses the type-shape signal that makes the output useful. Full type-specific guidance (secret redaction, tests) lives in TD-12.
 
-**See also**: C-DEBUG, C-DEBUG-NONEMPTY guidelines
+**See also**: C-DEBUG, C-DEBUG-NONEMPTY, M-PUBLIC-DEBUG, TD-12
 
 ---
 
-## API-07: Avoid Smart Pointers in APIs
+## API-07: Don't Expose Smart Pointer Wrappers
 
 **Strength**: MUST
 
-**Summary**: Don't expose Arc<T>, Rc<T>, Box<T>, or RefCell<T> in public APIs—use clean interfaces with &T, &mut T, or T.
+**Summary**: `Arc<T>`, `Rc<T>`, `Box<T>`, `RefCell<T>`, `Mutex<T>` are implementation details. Don't put them in public parameter or return types — keep them inside the type.
 
 ```rust
-// Bad - exposing implementation details
-pub fn process_shared(data: Arc<Mutex<Shared>>) -> Box<Processed> {
-    // Forces all callers to use Arc<Mutex<>>!
-}
+// ❌ Infectious wrapper in the signature
+pub fn start(config: Rc<RefCell<Config>>) -> Arc<Server> { todo!() }
 
-pub fn initialize(config: Rc<RefCell<Config>>) -> Arc<Server> {
-    // Infectious complexity
-}
-
-// Good - simple API boundaries
-pub fn process_data(data: &Data) -> Processed {
-    // Internally we might use Arc, but don't expose it
-}
-
-pub fn store_config(config: Config) -> Result<(), Error> {
-    // Clean ownership transfer
-}
-
-// If internal Arc is needed, hide it
-pub struct Server {
-    inner: Arc<ServerInner>,  // Hidden implementation detail
-}
+// ✅ Clean boundary; wrapper is internal
+pub struct Server { inner: Arc<ServerInner> }
 
 impl Server {
     pub fn new(config: Config) -> Self {
-        Self {
-            inner: Arc::new(ServerInner::new(config))
-        }
+        Self { inner: Arc::new(ServerInner::new(config)) }
     }
-    
-    // Clean methods, Arc is invisible
-    pub fn start(&self) -> Result<(), Error> {
-        self.inner.start()
-    }
+    pub fn start(&self) -> Result<(), ServerError> { self.inner.start() }
 }
 
-// Clone gives a new handle, not a deep copy
+// Cheap handle-clone (see API-30)
 impl Clone for Server {
-    fn clone(&self) -> Self {
-        Self {
-            inner: Arc::clone(&self.inner)
-        }
-    }
+    fn clone(&self) -> Self { Self { inner: Arc::clone(&self.inner) } }
 }
 ```
 
-**Rationale**: Smart pointers are implementation details that create friction for callers. Multiple crates disagreeing about wrapper types makes composition impossible. Hide wrappers behind clean APIs.
+**Rationale**: Two crates that disagree about which wrapper to use cannot compose. Callers should see `&T`, `&mut T`, or `T` and let the library decide how to share state internally.
 
 **See also**: M-AVOID-WRAPPERS
 
 ---
 
-## API-08: Avoid Stringly-Typed APIs
+## API-08: Use Named Types, Not `bool` or `Option`, for Parameters
 
 **Strength**: SHOULD
 
-**Summary**: Use enums and types instead of strings for finite choices.
+**Summary**: Prefer enums and structs over `bool`, `u8`, or `Option` for public arguments whose meaning isn't obvious at the call site.
 
 ```rust
-// ❌ BAD: String for finite options
-pub fn set_log_level(level: &str) {
-    match level {
-        "debug" | "DEBUG" => { /* ... */ }
-        "info" | "INFO" => { /* ... */ }
-        _ => panic!("unknown level"),  // Runtime error!
-    }
-}
+// ❌ Unclear at the call site
+create_widget(true, false);
+set_log_level("debug");                 // stringly-typed
 
-// ✅ GOOD: Enum for type safety
+// ✅ Enum: meaning is explicit and extensible
+pub enum Size  { Small, Medium, Large }
+pub enum Shape { Round, Square }
+pub fn create_widget(size: Size, shape: Shape) -> Widget { /* ... */ todo!() }
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-pub enum LogLevel {
-    Debug,
-    Info,
-    Warn,
-    Error,
-}
+pub enum LogLevel { Debug, Info, Warn, Error }
 
-pub fn set_log_level(level: LogLevel) {
-    match level {
-        LogLevel::Debug => { /* ... */ }
-        LogLevel::Info => { /* ... */ }
-        LogLevel::Warn => { /* ... */ }
-        LogLevel::Error => { /* ... */ }
-    }
-}
-
-// Provide FromStr if users need to parse from config:
 impl std::str::FromStr for LogLevel {
     type Err = ParseLogLevelError;
-    
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        match s.to_lowercase().as_str() {
+        match s.to_ascii_lowercase().as_str() {
             "debug" => Ok(LogLevel::Debug),
-            "info" => Ok(LogLevel::Info),
+            "info"  => Ok(LogLevel::Info),
             "warn" | "warning" => Ok(LogLevel::Warn),
             "error" => Ok(LogLevel::Error),
-            _ => Err(ParseLogLevelError(s.to_string())),
+            _ => Err(ParseLogLevelError(s.into())),
         }
     }
 }
 ```
 
+**Rationale**: Named types self-document, resist parameter-swap bugs, and are extensible (add `ExtraLarge` without touching call sites). Strings pay validation cost at runtime; enums pay it at the boundary once. Full discussion lives in TD-01.
+
+**See also**: C-CUSTOM-TYPE, TD-01
+
 ---
 
-## API-09: Binary Number Types Provide Formatting Traits
+## API-09: Binary Types Implement `Binary`/`Octal`/`Hex`
 
 **Strength**: SHOULD
 
-**Summary**: Implement `Binary`, `Octal`, `LowerHex`, `UpperHex` for types representing binary data or bitflags.
+**Summary**: Types representing bit patterns (flags, masks, hardware registers) should implement `Binary`, `Octal`, `LowerHex`, and `UpperHex`. Do not implement them for semantic quantities (nanoseconds, dollars).
 
 ```rust
 use std::fmt;
 
-// Good - bitflags with formatting
 #[derive(Clone, Copy, Debug)]
 pub struct Permissions(u32);
 
-impl Permissions {
-    pub const READ: Self = Permissions(0b001);
-    pub const WRITE: Self = Permissions(0b010);
-    pub const EXECUTE: Self = Permissions(0b100);
-}
+impl fmt::Binary   for Permissions { fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result { fmt::Binary::fmt(&self.0, f) } }
+impl fmt::Octal    for Permissions { fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result { fmt::Octal::fmt(&self.0, f) } }
+impl fmt::LowerHex for Permissions { fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result { fmt::LowerHex::fmt(&self.0, f) } }
+impl fmt::UpperHex for Permissions { fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result { fmt::UpperHex::fmt(&self.0, f) } }
 
-impl fmt::Binary for Permissions {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        fmt::Binary::fmt(&self.0, f)
-    }
-}
+println!("{:b} {:o} {:x} {:X}", p, p, p, p);
 
-impl fmt::LowerHex for Permissions {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        fmt::LowerHex::fmt(&self.0, f)
-    }
-}
-
-impl fmt::UpperHex for Permissions {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        fmt::UpperHex::fmt(&self.0, f)
-    }
-}
-
-impl fmt::Octal for Permissions {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        fmt::Octal::fmt(&self.0, f)
-    }
-}
-
-// Usage
-let perms = Permissions::READ | Permissions::EXECUTE;
-println!("{:b}", perms);   // Binary: 101
-println!("{:o}", perms);   // Octal: 5
-println!("{:x}", perms);   // Lowercase hex: 5
-println!("{:X}", perms);   // Uppercase hex: 5
-
-// Don't implement for numeric quantities
-pub struct Nanoseconds(u64);
-// This is a quantity, not bit manipulation data
-// Don't implement Binary, Octal, Hex
+// ❌ Don't implement these for a quantity
+pub struct Nanoseconds(u64); // no Binary/Hex — it's not a bit pattern
 ```
 
-**Rationale**: Binary number formatting is essential for debugging bit-level operations but inappropriate for semantic numeric types.
+**Rationale**: Bitwise formatting is essential when debugging masks and flag combinations, misleading when the value is a numeric count.
+
+**See also**: C-NUM-FMT
 
 ---
 
----
-
-## API-10: Builder Pattern for Complex Construction
-
-**Strength**: CONSIDER
-
-**Summary**: Use the builder pattern for types that have many optional configuration parameters.
-
-```rust
-// Good - builder for complex type
-pub struct Server {
-    host: String,
-    port: u16,
-    timeout: Duration,
-    max_connections: usize,
-}
-
-pub struct ServerBuilder {
-    host: String,
-    port: u16,
-    timeout: Option<Duration>,
-    max_connections: Option<usize>,
-}
-
-impl ServerBuilder {
-    pub fn new(host: impl Into<String>) -> Self {
-        ServerBuilder {
-            host: host.into(),
-            port: 8080,
-            timeout: None,
-            max_connections: None,
-        }
-    }
-
-    pub fn port(mut self, port: u16) -> Self {
-        self.port = port;
-        self
-    }
-
-    pub fn timeout(mut self, timeout: Duration) -> Self {
-        self.timeout = Some(timeout);
-        self
-    }
-
-    pub fn max_connections(mut self, max: usize) -> Self {
-        self.max_connections = Some(max);
-        self
-    }
-
-    pub fn build(self) -> Server {
-        Server {
-            host: self.host,
-            port: self.port,
-            timeout: self.timeout.unwrap_or(Duration::from_secs(30)),
-            max_connections: self.max_connections.unwrap_or(100),
-        }
-    }
-}
-
-// Usage - clean chaining
-let server = ServerBuilder::new("localhost")
-    .port(3000)
-    .timeout(Duration::from_secs(60))
-    .build();
-```
-
-**Rationale**: Builders provide a clean API for constructing complex objects with many optional parameters and defaults.
-
-**See also**: C-BUILDER guideline
-
----
-
-## API-11: Builders with Required Parameters
+## API-10: Builder for 3+ Optional Parameters
 
 **Strength**: SHOULD
 
-**Summary**: Required parameters should be passed when creating the builder, not as setter methods.
+**Summary**: When construction has three or more optional parameters (or conditional validation), provide a builder. Required parameters go into the builder's constructor, not into setter methods.
 
 ```rust
-// Bad - required params as setters
-impl ConfigBuilder {
-    pub fn new() -> Self { /* ... */ }
-    pub fn logger(mut self, logger: Logger) -> Self { /* required! */ }
-    pub fn timeout(mut self, timeout: Duration) -> Self { /* optional */ }
+use std::time::Duration;
+
+pub struct Server { /* ... */ }
+
+pub struct ServerBuilder {
+    host: String, port: u16,
+    max_connections: usize, timeout: Duration, tls: Option<TlsConfig>,
 }
 
-// Good - required params in builder constructor
-#[derive(Debug, Clone)]
-pub struct ConfigDeps {
-    pub logger: Logger,
-    pub config_path: PathBuf,
-}
-
-// Support convenient conversions
-impl From<Logger> for ConfigDeps {
-    fn from(logger: Logger) -> Self {
+impl ServerBuilder {
+    pub fn new(host: impl Into<String>, port: u16) -> Self {
         Self {
-            logger,
-            config_path: PathBuf::from("config.toml"),
+            host: host.into(), port,
+            max_connections: 100, timeout: Duration::from_secs(30), tls: None,
         }
     }
+    pub fn max_connections(mut self, n: usize)       -> Self { self.max_connections = n; self }
+    pub fn timeout(mut self, d: Duration)            -> Self { self.timeout = d; self }
+    pub fn tls(mut self, cfg: TlsConfig)             -> Self { self.tls = Some(cfg); self }
+
+    pub fn build(self) -> Result<Server, BuildError> {
+        if self.timeout.is_zero() { return Err(BuildError::ZeroTimeout); }
+        Ok(Server { /* ... */ })
+    }
 }
 
+let server = ServerBuilder::new("localhost", 8080)
+    .timeout(Duration::from_secs(60))
+    .build()?;
+```
+
+**Rationale**: Builders prevent constructor combinatorial explosion (2^n for n optional params), centralize validation in `build`, and let new options be added without breaking call sites. Put required inputs in `new` so an empty `build()` cannot succeed with a half-constructed value. For deeper discussion and the consuming-vs-mutable-borrow tradeoff, see TD-10.
+
+**See also**: C-BUILDER, M-INIT-BUILDER, TD-10
+
+---
+
+## API-11: Builder Required-Parameters Go in the Constructor
+
+**Strength**: SHOULD
+
+**Summary**: If the builder needs several required inputs, group them into a deps struct and accept `impl Into<Deps>` so callers can pass either the struct or a tuple.
+
+```rust
+#[derive(Debug, Clone)]
+pub struct ConfigDeps { pub logger: Logger, pub config_path: PathBuf }
+
+impl From<Logger> for ConfigDeps {
+    fn from(logger: Logger) -> Self { Self { logger, config_path: "config.toml".into() } }
+}
 impl From<(Logger, PathBuf)> for ConfigDeps {
-    fn from((logger, config_path): (Logger, PathBuf)) -> Self {
-        Self { logger, config_path }
-    }
+    fn from((logger, config_path): (Logger, PathBuf)) -> Self { Self { logger, config_path } }
 }
 
 impl Config {
     pub fn builder(deps: impl Into<ConfigDeps>) -> ConfigBuilder {
-        let deps = deps.into();
-        ConfigBuilder::new(deps)
+        ConfigBuilder::new(deps.into())
     }
 }
 
-// Usage - multiple ergonomic options
-let cfg1 = Config::builder(logger).build();
-let cfg2 = Config::builder((logger, path)).build();
-let cfg3 = Config::builder(ConfigDeps { logger, config_path }).build();
+let cfg = Config::builder(logger).build();
+let cfg = Config::builder((logger.clone(), path)).build();
 ```
 
-**Rationale**: Required parameters in constructors prevent incomplete builders at compile time. The `impl Into<Deps>` pattern provides ergonomics while maintaining type safety.
+**Rationale**: Required inputs at the top mean `build()` can never be called on a half-initialized value. The `impl Into<Deps>` layer preserves ergonomic call sites while keeping a single source of truth for what must be provided.
 
-**See also**: M-INIT-BUILDER, fundle crate
+**See also**: M-INIT-BUILDER, API-12
 
 ---
 
-## API-12: Cascaded Initialization for Complex Hierarchies
+## API-12: Cascaded Initialization for Many Parameters
 
 **Strength**: SHOULD
 
-**Summary**: Types requiring 4+ parameters should cascade initialization through helper types rather than long parameter lists.
+**Summary**: When four or more required parameters cluster semantically, group them into intermediate types rather than a long parameter list.
 
 ```rust
-// Bad - primitive obsession and long parameter list
+// ❌ Long, order-sensitive parameter list
 impl Deposit {
-    pub fn new(
-        bank_name: &str,
-        customer_name: &str,
-        currency_name: &str,
-        currency_amount: u64,
-    ) -> Self {
-        // Easy to confuse parameters!
-    }
+    pub fn new(bank: &str, customer: &str, currency: &str, amount: u64) -> Self { todo!() }
 }
 
-// Good - cascaded through strong types
-pub struct Account {
-    bank: Bank,
-    customer: Customer,
-}
+// ✅ Cascaded: group related inputs into named types
+pub struct Account  { bank: Bank, customer: Customer }
+pub struct Currency { name: String, amount: u64 }
 
-pub struct Currency {
-    name: String,
-    amount: u64,
-}
+impl Account  { pub fn new(bank: Bank, customer: Customer) -> Self { Self { bank, customer } } }
+impl Currency { pub fn new(name: String, amount: u64) -> Self { Self { name, amount } } }
 
 impl Deposit {
-    pub fn new(account: Account, amount: Currency) -> Self {
-        Self { account, amount }
-    }
-}
-
-impl Account {
-    pub fn new(bank: Bank, customer: Customer) -> Self {
-        Self { bank, customer }
-    }
+    pub fn new(account: Account, amount: Currency) -> Self { Self { account, amount } }
 }
 ```
 
-**Rationale**: Grouping related parameters semantically prevents parameter confusion and creates reusable types. Combines well with the newtype pattern.
+**Rationale**: Parameter-swap bugs scale with list length. Named intermediate types both prevent them and become reusable primitives in their own right.
 
-**See also**: M-INIT-CASCADED, C-NEWTYPE
+**See also**: M-INIT-CASCADED
 
 ---
 
-## API-13: Collections Implement FromIterator and Extend
+## API-13: Collections Implement `FromIterator` and `Extend`
 
 **Strength**: MUST
 
-**Summary**: Collection types should support construction from and extension by iterators. Collection types should implement FromIterator for construction and Extend for adding items.
+**Summary**: Any type that semantically contains a sequence should implement `FromIterator` (for `collect`) and `Extend` (for adding items).
 
 ```rust
-use std::iter::FromIterator;
-
-// Good - collection implements both traits
-pub struct MyVec<T> {
-    items: Vec<T>,
-}
+pub struct MyVec<T> { items: Vec<T> }
 
 impl<T> FromIterator<T> for MyVec<T> {
     fn from_iter<I: IntoIterator<Item = T>>(iter: I) -> Self {
-        MyVec {
-            items: iter.into_iter().collect(),
-        }
+        Self { items: iter.into_iter().collect() }
     }
 }
 
@@ -632,511 +403,179 @@ impl<T> Extend<T> for MyVec<T> {
     }
 }
 
-// Usage - collect into custom collection
-let my_vec: MyVec<i32> = (0..10).collect();
-
-// Usage - extend existing collection
-let mut my_vec = MyVec { items: vec![1, 2, 3] };
-my_vec.extend(vec![4, 5, 6]);
-
-// Usage - partition
-let (evens, odds): (MyVec<_>, MyVec<_>) = 
-    (0..10).partition(|n| n % 2 == 0);
-
-// Usage - unzip
-let pairs = vec![(1, 'a'), (2, 'b'), (3, 'c')];
-let (nums, chars): (MyVec<_>, MyVec<_>) = pairs.into_iter().unzip();
+let v: MyVec<i32> = (0..10).collect();
+let (evens, odds): (MyVec<_>, MyVec<_>) = (0..10).partition(|n| n % 2 == 0);
 ```
 
-```rust
-use std::iter::FromIterator;
+**Rationale**: Without these, a collection can't participate in `collect`, `partition`, `unzip`, or `chain` — the idioms that make iterators fluent. Implementation is mechanical; absence is an ecosystem bug.
 
-// Good - implement FromIterator
-pub struct MyCollection<T> {
-    items: Vec<T>,
-}
-
-impl<T> FromIterator<T> for MyCollection<T> {
-    fn from_iter<I: IntoIterator<Item = T>>(iter: I) -> Self {
-        MyCollection {
-            items: iter.into_iter().collect(),
-        }
-    }
-}
-
-// Good - implement Extend
-impl<T> Extend<T> for MyCollection<T> {
-    fn extend<I: IntoIterator<Item = T>>(&mut self, iter: I) {
-        self.items.extend(iter);
-    }
-}
-
-// Usage becomes ergonomic
-let items: MyCollection<i32> = vec![1, 2, 3].into_iter().collect();
-let more: MyCollection<i32> = (0..10).collect();
-
-let mut collection = MyCollection::from_iter(vec![1, 2, 3]);
-collection.extend(vec![4, 5, 6]);
-```
-
-**Rationale**: These traits enable collections to work seamlessly with iterator methods like `collect()`, `partition()`, and `unzip()`, making them first-class citizens in the Rust ecosystem. These traits enable collections to work seamlessly with iterators, unlocking powerful composition patterns.
-
-**See also**: C-COLLECT guideline
+**See also**: C-COLLECT
 
 ---
 
-## API-14: Complex Type Construction Has Builders
-
-**Strength**: SHOULD
-
-**Summary**: Types with 4+ optional initialization parameters should provide builders instead of multiple constructors.
-
-```rust
-// Bad - too many permutations
-impl Config {
-    pub fn new() -> Self { /* ... */ }
-    pub fn with_a(a: A) -> Self { /* ... */ }
-    pub fn with_b(b: B) -> Self { /* ... */ }
-    pub fn with_a_b(a: A, b: B) -> Self { /* ... */ }
-    pub fn with_a_c(a: A, c: C) -> Self { /* ... */ }
-    // 16 permutations for 4 optional params!
-}
-
-// Good - builder pattern
-impl Config {
-    pub fn new() -> Self { /* minimal config */ }
-    pub fn builder() -> ConfigBuilder { 
-        ConfigBuilder::default() 
-    }
-}
-
-impl ConfigBuilder {
-    pub fn a(mut self, a: A) -> Self { 
-        self.a = Some(a); 
-        self 
-    }
-    
-    pub fn b(mut self, b: B) -> Self { 
-        self.b = Some(b); 
-        self 
-    }
-    
-    pub fn c(mut self, c: C) -> Self { 
-        self.c = Some(c); 
-        self 
-    }
-    
-    pub fn build(self) -> Config {
-        Config {
-            a: self.a,
-            b: self.b,
-            c: self.c,
-        }
-    }
-}
-
-// Usage
-let config = Config::builder()
-    .a(value_a)
-    .c(value_c)
-    .build();
-```
-
-**Rationale**: Builders prevent combinatorial explosion of constructors and provide clear, chainable initialization. The threshold is 4+ optional parameters (types with 2 optional params can use inherent methods).
-
-**See also**: M-INIT-BUILDER, dependency injection pattern
-
----
-
-## API-15: Constructors Are Static Inherent Methods
+## API-14: Constructors Are Static Inherent Methods
 
 **Strength**: MUST
 
-**Summary**: Constructors should be static inherent methods named `new` or following specific patterns. Use static methods named `new`, `with_*`, or `from_*` for constructors.
+**Summary**: Name the primary constructor `new`. Use domain verbs for I/O resources (`open`, `connect`, `bind`). Use `with_*` for constructor variants and `from_*` for conversions that can't be a `From` impl.
 
 ```rust
-// Good - primary constructor
 impl<T> Vec<T> {
-    pub fn new() -> Vec<T> {
-        Vec { /* ... */ }
-    }
+    pub fn new() -> Vec<T>                 { /* ... */ Vec { /* ... */ } }
+    pub fn with_capacity(cap: usize) -> Vec<T> { /* ... */ todo!() }
 }
 
-let v = Vec::new();  // Concise with full type import
-
-// Good - secondary constructors with detail
-impl Config {
-    pub fn new() -> Self {
-        Config::default()
-    }
-    
-    pub fn with_capacity(capacity: usize) -> Self {
-        Config {
-            items: Vec::with_capacity(capacity),
-            ..Default::default()
-        }
-    }
-    
-    pub fn with_timeout(timeout: Duration) -> Self {
-        Config {
-            timeout,
-            ..Default::default()
-        }
-    }
-}
-
-// Good - conversion constructors
-impl Error {
-    pub fn from_raw_os_error(code: i32) -> Error {
-        // ...
-    }
-}
-
-impl String {
-    pub fn from_utf8(bytes: Vec<u8>) -> Result<String, FromUtf8Error> {
-        // ...
-    }
-}
-
-// Good - resource constructors use domain names
 impl File {
-    pub fn open<P: AsRef<Path>>(path: P) -> io::Result<File> {
-        // "open" is more appropriate than "new" for files
-    }
+    pub fn open<P: AsRef<Path>>(p: P) -> std::io::Result<File> { /* ... */ todo!() }
+    pub fn create<P: AsRef<Path>>(p: P) -> std::io::Result<File> { /* ... */ todo!() }
 }
 
-impl TcpStream {
-    pub fn connect<A: ToSocketAddrs>(addr: A) -> io::Result<TcpStream> {
-        // "connect" better describes TCP semantics
-    }
-}
-
-// Good - both new and Default
-#[derive(Default)]
-pub struct Logger {
-    level: LogLevel,
+impl std::io::Error {
+    // from_* because the source integer alone doesn't determine an encoding —
+    // From<i32> would be ambiguous
+    pub fn from_raw_os_error(code: i32) -> std::io::Error { /* ... */ todo!() }
 }
 
 impl Logger {
-    pub fn new() -> Self {
-        Self::default()
-    }
+    pub fn new() -> Self { Self::default() }   // both new() and Default
 }
 ```
 
-```rust
-// Good - primary constructor
-impl<T> Vec<T> {
-    pub fn new() -> Vec<T> { /* ... */ }
-    pub fn with_capacity(capacity: usize) -> Vec<T> { /* ... */ }
-}
+**Rationale**: `new` is the canonical entry point — users look for it first. `from_` earns its keep where `From<T>` cannot apply: unsafe conversions (`Box::from_raw`), conversions with extra arguments (`u64::from_str_radix`), or source types whose bit representation is ambiguous (`u64::from_be`). Keep both `new()` and `Default` when both make sense and let them agree.
 
-// Good - domain-specific constructor names
-impl File {
-    pub fn open<P: AsRef<Path>>(path: P) -> io::Result<File> { /* ... */ }
-    pub fn create<P: AsRef<Path>>(path: P) -> io::Result<File> { /* ... */ }
-}
-
-impl TcpStream {
-    pub fn connect<A: ToSocketAddrs>(addr: A) -> io::Result<TcpStream> { /* ... */ }
-}
-
-// Good - conversion constructors
-impl String {
-    pub fn from_utf8(vec: Vec<u8>) -> Result<String, FromUtf8Error> { /* ... */ }
-}
-
-impl Error {
-    pub fn from_raw_os_error(code: i32) -> Error { /* ... */ }
-}
-
-// Good - both new() and Default
-impl Config {
-    pub fn new() -> Self {
-        Self::default()
-    }
-}
-```
-
-**Rationale**: Static constructors work well with Rust's type imports and provide clear, discoverable API surface. Static inherent methods combine well with type name imports, creating concise and readable construction syntax.
-
-**See also**: C-CTOR, C-COMMON-TRAITS, C-CTOR guideline, builder pattern
+**See also**: C-CTOR
 
 ---
 
-## API-16: Conversion Method Naming (as_, to_, into_)
+## API-15: Conversion Method Naming — `as_` / `to_` / `into_`
 
 **Strength**: MUST
 
-**Summary**: Use `as_` for free borrowed-to-borrowed, `to_` for expensive conversions, and `into_` for consuming conversions.
+**Summary**: Name conversions by cost and ownership. `as_` is a free borrow-to-borrow; `to_` is an expensive conversion; `into_` consumes the input. The `mut` qualifier attaches where it appears in the return type: `as_mut_slice`, not `as_slice_mut`.
 
 ```rust
-// Good - as_ for free, non-consuming conversions
 impl str {
-    pub fn as_bytes(&self) -> &[u8] { /* ... */ }
+    pub fn as_bytes(&self) -> &[u8]        { /* ... */ todo!() }   // free
+    pub fn to_lowercase(&self) -> String   { /* ... */ todo!() }   // expensive
+    pub fn to_owned(&self) -> String       { /* ... */ todo!() }   // expensive, borrowed → owned
 }
 
-// Good - to_ for expensive conversions (may allocate)
-impl str {
-    pub fn to_lowercase(&self) -> String { /* ... */ }
-    pub fn to_owned(&self) -> String { /* ... */ }
-}
-
-// Good - into_ for consuming conversions
 impl String {
-    pub fn into_bytes(self) -> Vec<u8> { /* ... */ }
+    pub fn into_bytes(self) -> Vec<u8>     { /* ... */ todo!() }   // consumes
 }
 
-// Good - into_inner for wrapper types
-impl BufReader<R> {
-    pub fn into_inner(self) -> R { /* ... */ }
+impl<R> BufReader<R> {
+    pub fn into_inner(self) -> R           { /* ... */ todo!() }   // unwrap a single-field wrapper
 }
 
-// Bad - misleading names
+// ❌ Name lies about cost
 impl str {
-    pub fn to_bytes(&self) -> &[u8] { /* ... */ }  // Should be as_bytes (free)
-    pub fn as_lowercase(&self) -> String { /* ... */ }  // Should be to_lowercase (expensive)
+    pub fn to_bytes(&self) -> &[u8]        { todo!() }             // should be as_bytes
+    pub fn as_lowercase(&self) -> String   { todo!() }             // should be to_lowercase
 }
 ```
 
-**Rationale**: These prefixes provide clear expectations about cost and ownership. Users can optimize based on whether a conversion is free (`as_`), expensive (`to_`), or consuming (`into_`).
+**Rationale**: The prefix is a contract. `as_` promises zero cost; writing `as_` on an expensive operation mis-trains every reader.
 
-**See also**: C-CONV guideline, From/Into traits
+**See also**: C-CONV
 
 ---
 
-## API-17: Conversions Live on the Most Specific Type
+## API-16: Conversions Live on the More Specific Type
 
 **Strength**: SHOULD
 
-**Summary**: Place conversion methods on the more specific type in the conversion pair. Place conversion methods on the more specific of the two types involved.
+**Summary**: Between two types where one carries additional invariants, put both directions of conversion on the specific type.
 
 ```rust
-// Good - conversions on the more specific type (str)
+// str carries a UTF-8 invariant that [u8] does not → conversions live on str
 impl str {
-    // str is more specific than &[u8] (adds UTF-8 constraint)
-    pub fn as_bytes(&self) -> &[u8] {
-        // str → [u8]
-        unsafe { self.as_bytes() }
-    }
-    
-    pub fn from_utf8(bytes: &[u8]) -> Result<&str, Utf8Error> {
-        // [u8] → str
-        // ...
-    }
+    pub fn as_bytes(&self) -> &[u8]                        { /* ... */ todo!() }
+    pub fn from_utf8(b: &[u8]) -> Result<&str, std::str::Utf8Error> { /* ... */ todo!() }
 }
 
-// Bad - would pollute [u8] with endless conversions
-// impl [u8] {
-//     pub fn as_str(&self) -> Result<&str, Utf8Error> { }
-//     pub fn as_os_str(&self) -> Result<&OsStr, _> { }
-//     pub fn as_c_str(&self) -> Result<&CStr, _> { }
-//     // This would be overwhelming
-// }
-
-// Good - PathBuf is more specific than OsString
+// PathBuf is more specific than OsString → PathBuf owns the conversions
 impl PathBuf {
-    pub fn from_os_string(s: OsString) -> PathBuf {
-        PathBuf { inner: s }
-    }
-    
-    pub fn into_os_string(self) -> OsString {
-        self.inner
-    }
-}
-
-// Good - String is more specific than Vec<u8>
-impl String {
-    pub fn from_utf8(vec: Vec<u8>) -> Result<String, FromUtf8Error> {
-        // ...
-    }
-    
-    pub fn into_bytes(self) -> Vec<u8> {
-        // ...
-    }
+    pub fn into_os_string(self) -> OsString                { /* ... */ todo!() }
 }
 ```
 
-```rust
-// Good - str is more specific than &[u8]
-impl str {
-    pub fn as_bytes(&self) -> &[u8] { /* ... */ }
-    pub fn from_utf8(bytes: &[u8]) -> Result<&str, Utf8Error> { /* ... */ }
-}
+**Rationale**: If every more-specific type pushed its conversion onto `[u8]`, the byte-slice API would drown in specialized helpers. Keeping the conversion on the invariant-carrying side concentrates related methods and leaves general types uncluttered.
 
-// Bad - pollutes the less specific type
-impl [u8] {
-    pub fn to_str(&self) -> Result<&str, Utf8Error> { /* ... */ }  // Don't do this
-}
-
-// Good - Path is more specific than &OsStr
-impl Path {
-    pub fn new<S: AsRef<OsStr> + ?Sized>(s: &S) -> &Path { /* ... */ }
-    pub fn as_os_str(&self) -> &OsStr { /* ... */ }
-}
-```
-
-**Rationale**: This prevents cluttering general types with specialized conversions while keeping related conversions discoverable on the type that provides the guarantees. Keeping conversions on the specific type avoids polluting general types with countless conversion methods and makes the API more discoverable.
-
-**See also**: C-CONV-SPECIFIC, C-CONV-SPECIFIC guideline
+**See also**: C-CONV-SPECIFIC
 
 ---
 
-## API-18: Conversions Use Standard Traits
+## API-17: Implement `From` / `TryFrom`, Never `Into` / `TryInto`
 
 **Strength**: MUST
 
-**Summary**: Use `From`, `TryFrom`, `AsRef`, `AsMut` traits for conversions, never implement `Into` or `TryInto` directly.
+**Summary**: Implement `From` (or `TryFrom`) — the reverse direction comes free through blanket impls. Implementing `Into` directly skips the `From` impl that everyone else expects.
 
 ```rust
-// Good - implement From, get Into for free
 impl From<u16> for u32 {
-    fn from(small: u16) -> u32 {
-        small as u32
-    }
+    fn from(n: u16) -> u32 { n as u32 }
 }
-
-// From provides a blanket Into impl automatically:
-// let x: u32 = 100u16.into();
-
-// Good - TryFrom for fallible conversions
-use std::convert::TryFrom;
+// `let x: u32 = 100u16.into();` — works automatically
 
 impl TryFrom<u32> for u16 {
     type Error = std::num::TryFromIntError;
-    
-    fn try_from(big: u32) -> Result<u16, Self::Error> {
-        if big <= u16::MAX as u32 {
-            Ok(big as u16)
-        } else {
-            Err(/* ... */)
-        }
-    }
+    fn try_from(n: u32) -> Result<u16, Self::Error> { u16::try_from(n) }
 }
 
-// Usage
-let big: u32 = 100_000;
-match u16::try_from(big) {
-    Ok(small) => println!("Converted: {}", small),
-    Err(e) => println!("Too large: {}", e),
-}
-
-// Good - AsRef for cheap reference conversions
-impl AsRef<str> for String {
-    fn as_ref(&self) -> &str {
-        self
-    }
-}
-
-impl AsRef<Path> for PathBuf {
-    fn as_ref(&self) -> &Path {
-        self
-    }
-}
-
-// This enables generic APIs like:
-fn open_file<P: AsRef<Path>>(path: P) -> std::io::Result<File> {
-    File::open(path.as_ref())
-}
-
-// Can be called with String, &str, PathBuf, &Path, etc.
-open_file("file.txt");
-open_file(String::from("file.txt"));
-open_file(PathBuf::from("file.txt"));
-
-// Bad - implementing Into directly
-impl Into<u32> for MyType {  // DON'T DO THIS
-    fn into(self) -> u32 {
-        // Implement From instead
-    }
-}
-
-// Bad - implementing TryInto directly
-impl TryInto<u16> for MyType {  // DON'T DO THIS
-    type Error = MyError;
-    fn try_into(self) -> Result<u16, Self::Error> {
-        // Implement TryFrom instead
-    }
-}
+// ❌ Do not implement directly
+impl Into<u32> for MyType { fn into(self) -> u32 { todo!() } }
+impl TryInto<u16> for MyType { type Error = MyError; fn try_into(self) -> Result<u16, MyError> { todo!() } }
 ```
 
-**Rationale**: `From` and `TryFrom` provide blanket implementations of `Into` and `TryInto` automatically. Implementing the latter directly would be redundant and could cause confusion.
+**Rationale**: `From` gives you `Into` for free; only one direction needs code. Implementing `Into` directly is redundant and denies the reverse-lookup that users rely on.
 
-**See also**: C-CONV-TRAITS, C-CONV for method naming conventions
+**See also**: C-CONV-TRAITS
 
 ---
 
-## API-19: Data Structures Implement Serde Traits
+## API-18: Serde Impls Live Behind a `serde` Feature
 
 **Strength**: SHOULD
 
-**Summary**: Types representing data structures should implement `Serialize` and `Deserialize`, typically behind a feature flag.
+**Summary**: Data-structure types should support `serde::Serialize` and `Deserialize` gated on an optional feature named exactly `serde`.
 
-```rust
-// In Cargo.toml
+```toml
 [dependencies]
 serde = { version = "1.0", optional = true, features = ["derive"] }
 
 [features]
 default = []
-serde = ["dep:serde"]
+serde   = ["dep:serde"]
+```
 
-// In lib.rs - with derive
-#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+```rust
+#[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Config {
-    pub host: String,
-    pub port: u16,
-    pub timeout_ms: u64,
-}
-
-// In lib.rs - manual implementation
-use serde::{Serialize, Deserialize};
-
-pub struct UserId(pub u64);
-
-#[cfg(feature = "serde")]
-impl Serialize for UserId {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        serializer.serialize_u64(self.0)
-    }
-}
-
-#[cfg(feature = "serde")]
-impl<'de> Deserialize<'de> for UserId {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        u64::deserialize(deserializer).map(UserId)
-    }
+    pub host: String, pub port: u16, pub timeout_ms: u64,
 }
 ```
 
-**Rationale**: Serde is the de facto standard for serialization in Rust. Optional implementation allows users who don't need serialization to avoid the compile-time cost.
+**Rationale**: Serde is the de-facto serialization boundary in the Rust ecosystem. Opt-in via feature avoids forcing the compile cost on users who don't need it, and the feature name `serde` (not `serde_support`, not `with-serde`) matches the ecosystem convention and Cargo's implicit feature for optional dependencies.
+
+**See also**: C-SERDE, C-FEATURE
 
 ---
 
----
-
-## API-20: Destructors Never Fail
+## API-19: Destructors Never Fail, Never Block
 
 **Strength**: MUST
 
-**Summary**: Drop implementations must not panic. Provide separate cleanup methods for fallible operations.
+**Summary**: `Drop` impls must not panic and should not block. Provide a separate `close`/`shutdown` method that returns `Result` when teardown can fail.
 
 ```rust
-// Good - Drop never fails, separate close() for fallible cleanup
-pub struct Connection {
-    socket: TcpStream,
-    closed: bool,
-}
+use std::net::{Shutdown, TcpStream};
+
+pub struct Connection { socket: TcpStream, closed: bool }
 
 impl Connection {
-    // Explicit close that can fail
-    pub fn close(mut self) -> io::Result<()> {
+    // ✅ Explicit, fallible teardown
+    pub fn close(mut self) -> std::io::Result<()> {
         if !self.closed {
             self.socket.shutdown(Shutdown::Both)?;
             self.closed = true;
@@ -1148,1980 +587,1135 @@ impl Connection {
 impl Drop for Connection {
     fn drop(&mut self) {
         if !self.closed {
-            // Best-effort cleanup, ignore errors
-            let _ = self.socket.shutdown(Shutdown::Both);
+            let _ = self.socket.shutdown(Shutdown::Both);  // best-effort, swallow
         }
     }
 }
 
-// Bad - Drop that can panic
+// ❌ Panicking drop — aborts on double-panic, undebuggable
 impl Drop for BadConnection {
-    fn drop(&mut self) {
-        self.socket.shutdown(Shutdown::Both).unwrap();  // Can panic!
-    }
+    fn drop(&mut self) { self.socket.shutdown(Shutdown::Both).unwrap(); }
 }
 ```
 
-**Rationale**: Drop is called during panicking. A failing destructor during panic causes the program to abort.
+**Rationale**: `Drop` runs during unwinding; a panic inside `Drop` while already panicking aborts the process. A blocking `Drop` turns a test timeout or a CTRL-C into a deadlock. Users who need to observe teardown errors call `close`; the `Drop` impl is purely defensive.
 
-**See also**: C-DTOR-FAIL guideline
+**See also**: C-DTOR-FAIL, C-DTOR-BLOCK
 
 ---
 
-## API-21: Document Public APIs
+## API-20: Document Every Public Item With an Example
 
 **Strength**: MUST
 
-**Summary**: Every public item should have documentation.
+**Summary**: Every public item gets a rustdoc comment. Functions that return `Result` get an `# Errors` section; functions that can panic get a `# Panics` section; `unsafe` functions get a `# Safety` section. Examples use `?`, not `unwrap`.
 
 ```rust
-/// A thread-safe counter with atomic operations.
-/// 
+/// A thread-safe counter with atomic increment and read.
+///
 /// # Examples
-/// 
+///
 /// ```
-/// use my_crate::Counter;
-/// 
+/// # use my_crate::Counter;
 /// let counter = Counter::new();
-/// counter.increment();
+/// let prev = counter.increment();
+/// assert_eq!(prev, 0);
 /// assert_eq!(counter.get(), 1);
 /// ```
 #[derive(Debug)]
-pub struct Counter {
-    value: AtomicU64,
-}
+pub struct Counter { /* ... */ }
 
 impl Counter {
-    /// Creates a new counter starting at zero.
-    pub fn new() -> Self {
-        Self { value: AtomicU64::new(0) }
-    }
-    
-    /// Increments the counter by one.
-    /// 
-    /// Returns the previous value.
-    /// 
+    /// Parses a counter value from a string.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`ParseCounterError`] if `s` is not a non-negative integer.
+    ///
     /// # Examples
-    /// 
+    ///
     /// ```
+    /// # use std::error::Error;
     /// # use my_crate::Counter;
-    /// let counter = Counter::new();
-    /// let prev = counter.increment();
-    /// assert_eq!(prev, 0);
-    /// assert_eq!(counter.get(), 1);
+    /// # fn main() -> Result<(), Box<dyn Error>> {
+    /// let c = Counter::from_str("42")?;
+    /// assert_eq!(c.get(), 42);
+    /// # Ok(())
+    /// # }
     /// ```
-    pub fn increment(&self) -> u64 {
-        self.value.fetch_add(1, Ordering::SeqCst)
-    }
-    
-    /// Returns the current value.
-    pub fn get(&self) -> u64 {
-        self.value.load(Ordering::SeqCst)
-    }
+    pub fn from_str(s: &str) -> Result<Self, ParseCounterError> { /* ... */ todo!() }
 }
 ```
+
+**Rationale**: Documentation is the API, not a companion to it. Examples are copy-pasted, so `unwrap` in an example teaches `unwrap` as the shape of error handling. The three canonical section names (`Errors`, `Panics`, `Safety`) are searched for by every Rust developer. Full doc-comment structure lives in guide `13-documentation.md`.
+
+**See also**: C-EXAMPLE, C-QUESTION-MARK, C-FAILURE
 
 ---
 
-## API-22: Error Types Are Meaningful
+## API-21: Hyperlink Between Doc Items
 
-**Strength**: MUST
+**Strength**: SHOULD
 
-**Summary**: Error types must implement Error, Send, Sync and should never be `()`. Error messages should be lowercase without trailing punctuation.
+**Summary**: Use rustdoc's intra-doc link syntax (`` [`Type`] ``, `` [`Type::method`] ``) to cross-reference types, methods, and modules in prose. Link externally to RFCs, specs, and crates.
 
 ```rust
-use std::fmt;
-use std::error::Error;
-
-// Good - proper error type
-#[derive(Debug)]
-pub struct ParseError {
-    line: usize,
-    column: usize,
-    message: String,
-}
-
-impl fmt::Display for ParseError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "parse error at {}:{}: {}",
-               self.line, self.column, self.message)
-    }
-}
-
-impl Error for ParseError {}
-
-// Error messages: lowercase, no trailing punctuation
-// Good: "unexpected end of file"
-// Good: "invalid UTF-8 sequence of 2 bytes from index 5"
-// Bad: "Unexpected end of file."
-// Bad: "Invalid UTF-8!"
-
-// Good - error with source tracking
-#[derive(Debug)]
-pub struct ConfigError {
-    source: Option<Box<dyn Error + Send + Sync>>,
-}
-
-impl Error for ConfigError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        self.source.as_ref().map(|e| e.as_ref() as &(dyn Error + 'static))
-    }
-}
-
-// Bad - unit type as error
-fn parse(input: &str) -> Result<Data, ()> { /* ... */ }  // Never use () as error!
-
-// Bad - error type not Send + Sync
-struct BadError {
-    handle: Rc<RefCell<File>>,  // Not Send or Sync!
-}
+/// Builds a [`Request`] with sensible defaults.
+///
+/// See the [`Client::send`] documentation for how requests are dispatched,
+/// and [RFC 7230] for HTTP/1.1 message syntax.
+///
+/// [`Request`]: crate::Request
+/// [`Client::send`]: crate::Client::send
+/// [RFC 7230]: https://datatracker.ietf.org/doc/html/rfc7230
+pub struct RequestBuilder { /* ... */ }
 ```
 
-**Rationale**: Meaningful error types enable proper error handling, chaining, and debugging. Send + Sync requirements enable multithreaded error handling.
+**Rationale**: Navigable documentation is 10x more useful than flat prose. Intra-doc links are checked by `cargo doc`, so broken references fail CI instead of rotting silently.
 
-**See also**: C-GOOD-ERR guideline, 03-error-handling.md
+**See also**: C-LINK
 
 ---
 
-## API-23: Error Types Are Meaningful and Well-Behaved
+## API-22: Hide Implementation Noise with `#[doc(hidden)]`
+
+**Strength**: SHOULD
+
+**Summary**: Use `#[doc(hidden)]` on public-but-not-API items (derive plumbing, `From<PrivateError>` impls, re-exports required for macro hygiene). Use `pub(crate)` for items that need crate-internal access but no external visibility.
+
+```rust
+pub struct PublicError { /* ... */ }
+
+// Private type kept out of the API surface
+struct PrivateError;
+
+// Required to make `?` work internally, but consumers should never see it
+#[doc(hidden)]
+impl From<PrivateError> for PublicError {
+    fn from(_: PrivateError) -> PublicError { PublicError { /* ... */ } }
+}
+
+// A helper used by the `my_macro!` expansion — still callable as `__my_macro_internal`
+// but not shown in rustdoc
+#[doc(hidden)]
+pub fn __my_macro_internal(s: &str) -> u64 { s.parse().unwrap_or(0) }
+```
+
+**Rationale**: Without `#[doc(hidden)]`, rustdoc lists every macro helper and cross-trait impl, burying the actual API. `pub(crate)` goes further by making the item invisible outside the crate; the two are complementary.
+
+**See also**: C-HIDDEN
+
+---
+
+## API-23: Error Types Are Concrete, Meaningful, and Well-Behaved
 
 **Strength**: MUST
 
-**Summary**: Error types must implement `Error`, `Send`, `Sync`, and have good `Display` messages.
+**Summary**: Public fallible functions return a named error type that implements `std::error::Error + Display + Debug + Send + Sync`. Never return `Box<dyn Error>` or `String` from a library boundary. Never use `()` as an error type.
 
 ```rust
-use std::error::Error;
-use std::fmt;
-
-// Good - comprehensive error type
-#[derive(Debug)]
-pub enum ParseError {
-    InvalidFormat { line: usize, column: usize },
-    UnexpectedEof,
-    InvalidCharacter(char),
+#[derive(Debug, thiserror::Error)]
+pub enum ConnectError {
+    #[error("invalid address: {0}")]
+    InvalidAddress(#[from] std::net::AddrParseError),
+    #[error("connection refused")]
+    ConnectionRefused,
+    #[error("timeout after {0:?}")]
+    Timeout(std::time::Duration),
+    #[error("TLS error: {0}")]
+    Tls(#[from] TlsError),
 }
 
-impl fmt::Display for ParseError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            ParseError::InvalidFormat { line, column } => {
-                write!(f, "invalid format at line {}, column {}", line, column)
-            }
-            ParseError::UnexpectedEof => {
-                write!(f, "unexpected end of file")
-            }
-            ParseError::InvalidCharacter(ch) => {
-                write!(f, "invalid character '{}'", ch)
-            }
-        }
-    }
-}
+pub fn connect(addr: &str) -> Result<Connection, ConnectError> { /* ... */ todo!() }
 
-impl Error for ParseError {}
-
-// Automatically Send + Sync because all fields are
-
-// Good - unit struct error when no data needed
-#[derive(Debug)]
-pub struct ConnectionClosed;
-
-impl fmt::Display for ConnectionClosed {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "connection closed")
-    }
-}
-
-impl Error for ConnectionClosed {}
-
-// Bad - using () as error type
-fn parse() -> Result<Data, ()> {  // DON'T DO THIS
-    // ...
-}
-// Problems:
-// - () doesn't implement Error
-// - () doesn't implement Display
-// - unhelpful Debug output
-// - can't use with error handling libraries
-// - can't use with ? operator in functions returning other errors
-
-// Good - trait object errors must be Send + Sync + 'static
-fn get_error() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
-    Err(Box::new(ParseError::UnexpectedEof))
-}
-
-// This allows downcasting
-fn handle_error(e: Box<dyn Error + Send + Sync + 'static>) {
-    if let Some(parse_err) = e.downcast_ref::<ParseError>() {
-        match parse_err {
-            ParseError::UnexpectedEof => {
-                eprintln!("File ended too soon");
-            }
-            _ => {}
-        }
-    }
+// Callers can match on specific variants
+match connect("localhost:8080") {
+    Ok(c) => use_connection(c),
+    Err(ConnectError::Timeout(d)) => retry_longer(d),
+    Err(ConnectError::ConnectionRefused) => fallback(),
+    Err(other) => return Err(other.into()),
 }
 ```
 
-**Rationale**: Well-behaved errors integrate with error handling libraries, work across threads, can be used in `async` contexts, and provide good developer experience.
+Error messages are lowercase, no trailing punctuation: `"unexpected end of file"`, not `"Unexpected end of file."`.
+
+**Rationale**: `Box<dyn Error>` discards every typed handling opportunity; `String` discards `source()`; `()` fails to implement `Error` at all. A concrete enum gives callers control, composes with `#[from]`, and survives logging and downcasting. Deeper error-design discussion lives in `03-error-handling.md`.
 
 **See also**: C-GOOD-ERR
 
 ---
 
-## API-24: Error Types for Public APIs
+## API-24: Essential Functionality Is an Inherent Method
 
 **Strength**: MUST
 
-**Summary**: Public functions should return specific error types, not strings or boxes.
+**Summary**: Core operations on a type are inherent methods, not trait methods. If a trait is part of the public API, its implementation should forward to the inherent method.
 
 ```rust
-// ❌ BAD: Opaque error
-pub fn connect(addr: &str) -> Result<Connection, Box<dyn std::error::Error>> {
-    todo!()
-}
+// ❌ Trait-gated core operation — callers must import the trait
+pub trait Download { fn download(&self, url: &str) -> Result<Vec<u8>, HttpError>; }
+impl Download for HttpClient { fn download(&self, url: &str) -> Result<Vec<u8>, HttpError> { todo!() } }
 
-// ❌ BAD: String error
-pub fn connect(addr: &str) -> Result<Connection, String> {
-    todo!()
-}
-
-// ✅ GOOD: Specific error type
-#[derive(Debug, thiserror::Error)]
-pub enum ConnectError {
-    #[error("invalid address: {0}")]
-    InvalidAddress(#[from] std::net::AddrParseError),
-    
-    #[error("connection refused")]
-    ConnectionRefused,
-    
-    #[error("timeout after {0:?}")]
-    Timeout(Duration),
-    
-    #[error("TLS error: {0}")]
-    Tls(#[from] TlsError),
-}
-
-pub fn connect(addr: &str) -> Result<Connection, ConnectError> {
-    todo!()
-}
-
-// Users can now match on specific errors:
-match connect("localhost:8080") {
-    Ok(conn) => use_connection(conn),
-    Err(ConnectError::Timeout(d)) => retry_with_longer_timeout(d),
-    Err(ConnectError::ConnectionRefused) => try_fallback_server(),
-    Err(e) => return Err(e.into()),
-}
-```
-
----
-
-## API-25: Essential Functionality Should Be Inherent
-
-**Strength**: MUST
-
-**Summary**: Core functionality must be implemented as inherent methods; trait implementations should forward to inherent methods.
-
-```rust
-// Bad - essential functionality only in trait
-pub struct HttpClient {
-    client: reqwest::Client,
-}
-
-trait Download {
-    fn download_file(&self, url: &str) -> Result<Vec<u8>, Error>;
-}
-
-impl Download for HttpClient {
-    fn download_file(&self, url: &str) -> Result<Vec<u8>, Error> {
-        // Core logic here - not discoverable!
-    }
-}
-
-// Users must know to import the trait
-use crate::Download; // Not obvious!
-client.download_file(url);
-
-// Good - inherent methods for core functionality
+// ✅ Inherent method is discoverable via `client.<tab>`
 impl HttpClient {
-    pub fn new() -> Self { /* ... */ }
-    
-    // Core functionality is inherent - easily discoverable
-    pub fn download_file(&self, url: &str) -> Result<Vec<u8>, Error> {
-        // Core logic here
-    }
+    pub fn download(&self, url: &str) -> Result<Vec<u8>, HttpError> { /* ... */ todo!() }
 }
 
-// Trait forwards to inherent impl
+// Optional trait forwards to the inherent method
 impl Download for HttpClient {
-    fn download_file(&self, url: &str) -> Result<Vec<u8>, Error> {
-        Self::download_file(self, url)
+    fn download(&self, url: &str) -> Result<Vec<u8>, HttpError> {
+        HttpClient::download(self, url)
     }
 }
-
-// Users can use directly without trait imports
-let client = HttpClient::new();
-client.download_file(url); // Just works!
 ```
 
-**Rationale**: Inherent methods appear in IDE autocomplete and don't require trait imports. Users can discover functionality naturally. Traits should extend types, not replace their core API.
+**Rationale**: Inherent methods appear in IDE completion and rustdoc for the type; trait methods require the caller to find and import the trait. Duplicating the impl via forwarding costs two lines and buys discoverability.
 
-**See also**: M-ESSENTIAL-FN-INHERENT, C-METHOD
+**See also**: C-METHOD, M-ESSENTIAL-FN-INHERENT
 
 ---
 
-## API-26: Expose Intermediate Results
+## API-25: Prefer Methods to Free Functions When the Receiver Is Clear
 
-**Strength**: CONSIDER
+**Strength**: SHOULD
 
-**Summary**: When computing a result, expose useful intermediate values to avoid duplicate work.
+**Summary**: If an operation has a natural primary argument, make it a method. Free functions are for operations with no clear receiver or that combine equally-specific types.
 
 ```rust
-// Good - returns index for insertion point if not found
-pub fn binary_search<T>(vec: &[T], item: &T) -> Result<usize, usize>
-where
-    T: Ord,
-{
-    // Ok(index) if found
-    // Err(index) where item should be inserted if not found
+// ✅ Method — autoborrow, discoverable, concise
+impl Config {
+    pub fn load(&mut self, path: &Path) -> Result<(), ConfigError> { /* ... */ todo!() }
+    pub fn save(&self, path: &Path)     -> Result<(), ConfigError> { /* ... */ todo!() }
+    pub fn validate(&self)              -> Result<(), ValidationError> { /* ... */ todo!() }
 }
+config.load(&path)?;
 
-// Good - returns intermediate parsing info on error
-pub struct FromUtf8Error {
-    bytes: Vec<u8>,
-    error: Utf8Error,
-}
+// ❌ Free function — verbose, requires import, loses autoborrow
+pub fn load_config(config: &mut Config, path: &Path) -> Result<(), ConfigError> { todo!() }
+load_config(&mut config, &path)?;
 
+// ✅ Free function: no clear receiver
+pub fn merge(a: &Config, b: &Config) -> Config { todo!() }
+```
+
+Choose the receiver deliberately: `&self` for reads, `&mut self` for in-place mutation, `self` for consuming transforms, no `self` for associated functions.
+
+**Rationale**: Methods autoborrow, appear in rustdoc on the type page, and don't need a `use`. Free functions remain correct for symmetric or receiver-less operations.
+
+**See also**: C-METHOD, M-REGULAR-FN
+
+---
+
+## API-26: Caller Decides Where Data Lives
+
+**Strength**: SHOULD
+
+**Summary**: Take parameters by value when the function genuinely needs ownership, by reference when it doesn't. Don't accept `&T` only to clone internally — let the caller move if they have a surplus.
+
+```rust
+// ❌ Unnecessary clone
+fn store(b: &Bar) { let b = b.clone(); internal.insert(b); }
+
+// ✅ Take ownership — caller clones if they still need the value
+fn store(b: Bar) { internal.insert(b); }
+
+// ❌ Consume when borrowing would suffice
+fn peek(b: Bar) -> bool { b.is_valid() }
+
+// ✅ Borrow
+fn peek(b: &Bar) -> bool { b.is_valid() }
+```
+
+Do not use `T: Copy` as a bound to signal "cheap to copy" — use it only when the function actually needs copy semantics.
+
+**Rationale**: Every mandatory clone is a performance and ownership tax the caller can't escape. Matching the signature to real usage lets the caller decide whether to move, borrow, or clone.
+
+**See also**: C-CALLER-CONTROL
+
+---
+
+## API-27: Expose Intermediate Results
+
+**Strength**: SHOULD
+
+**Summary**: When a function computes useful byproducts, return them. Don't force the caller to repeat the work.
+
+```rust
+// ✅ Returns the insertion point on miss, not just a bool
+pub fn binary_search<T: Ord>(xs: &[T], needle: &T) -> Result<usize, usize> { /* ... */ todo!() }
+
+// ✅ Error carries the invalid-byte offset AND returns ownership of the input
+pub struct FromUtf8Error { bytes: Vec<u8>, error: std::str::Utf8Error }
 impl FromUtf8Error {
-    pub fn into_bytes(self) -> Vec<u8> {
-        self.bytes  // Return the original bytes
-    }
-
-    pub fn utf8_error(&self) -> Utf8Error {
-        self.error  // Expose parsing details
-    }
+    pub fn into_bytes(self) -> Vec<u8>            { self.bytes }
+    pub fn utf8_error(&self) -> std::str::Utf8Error { self.error }
 }
 
-// Good - returns previous value
+// ✅ Returns the previous value, not just whether insertion happened
 impl<K, V> HashMap<K, V> {
-    pub fn insert(&mut self, k: K, v: V) -> Option<V> {
-        // Returns the old value if key existed
-    }
+    pub fn insert(&mut self, k: K, v: V) -> Option<V> { /* ... */ todo!() }
 }
 ```
 
-**Rationale**: Exposing intermediate results prevents users from having to redo expensive computations and provides more context for error handling.
+**Rationale**: Returning only `bool` or `()` discards data the caller might need. Binary search that returns `Option<usize>` forces a second search for the insertion point; `from_utf8` that only returns `Utf8Error` strands the caller's original buffer.
 
-**See also**: C-INTERMEDIATE guideline
-
----
-
-## API-27: Extension Traits for Foreign Types
-
-**Strength**: CONSIDER
-
-**Summary**: Add methods to external types via extension traits.
-
-```rust
-/// Extension methods for `Option<String>`.
-pub trait OptionStringExt {
-    /// Returns the string or an empty string if None.
-    fn unwrap_or_empty(self) -> String;
-    
-    /// Returns true if the option contains a non-empty string.
-    fn is_non_empty(&self) -> bool;
-}
-
-impl OptionStringExt for Option<String> {
-    fn unwrap_or_empty(self) -> String {
-        self.unwrap_or_default()
-    }
-    
-    fn is_non_empty(&self) -> bool {
-        self.as_ref().map_or(false, |s| !s.is_empty())
-    }
-}
-
-// Usage (after `use OptionStringExt`):
-let name: Option<String> = None;
-let display = name.unwrap_or_empty();
-```
+**See also**: C-INTERMEDIATE
 
 ---
 
-## API-28: Functions Do Not Take Out-Parameters
+## API-28: Return Compound Values — No Out-Parameters
 
 **Strength**: MUST
 
-**Summary**: Return multiple values as tuples or structs, not via mutable out-parameters.
+**Summary**: Return tuples or structs instead of mutating out-parameters. The only legitimate exception is a caller-owned buffer that the function fills.
 
 ```rust
-// Good - return tuple
-pub fn split_name(full_name: &str) -> (String, String) {
-    let parts: Vec<_> = full_name.split_whitespace().collect();
-    (parts[0].to_string(), parts[1].to_string())
-}
+// ✅ Return multiple values
+pub fn parse_header(data: &[u8]) -> Result<(Header, usize), ParseError> { /* ... */ todo!() }
 
-let (first, last) = split_name("John Doe");
+// ✅ Struct for richer returns
+pub struct ParseOutcome { pub value: f64, pub unit: String, pub warnings: Vec<String> }
+pub fn parse(input: &str) -> Result<ParseOutcome, ParseError> { /* ... */ todo!() }
 
-// Good - return struct for many values
-pub struct ParseResult {
-    pub value: f64,
-    pub unit: String,
-    pub precision: usize,
-}
+// ❌ Out-parameter style — not idiomatic in Rust
+pub fn parse_header_bad(data: &[u8], header: &mut Header) -> Result<usize, ParseError> { todo!() }
 
-pub fn parse_measurement(input: &str) -> Result<ParseResult, Error> {
-    // ...
-}
-
-// Bad - out-parameter style
-pub fn split_name_bad(full_name: &str, first: &mut String, last: &mut String) {
-    // DON'T DO THIS in Rust
-}
-
-// Exception - reusing buffers for performance
-pub fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
-    // This is OK because caller owns the buffer
-    // and wants to reuse it across multiple reads
-}
-
-// Good - builder pattern for complex output
-pub struct QueryBuilder {
-    results: Vec<Row>,
-}
-
-impl QueryBuilder {
-    pub fn execute(mut self, query: &str) -> Result<Self, Error> {
-        // Populate self.results
-        Ok(self)
-    }
-    
-    pub fn into_results(self) -> Vec<Row> {
-        self.results
-    }
+// ✅ Legitimate exception: filling a caller-owned buffer
+impl<R> std::io::Read for R { /* ... */
+    fn read(&mut self, buf: &mut [u8]) -> std::io::Result<usize>;
 }
 ```
 
-**Rationale**: Rust's efficient return value optimization means returning structs or tuples is cheap. Out-parameters would be a C-ism that doesn't align with Rust's ownership model.
+**Rationale**: Tuple and struct returns compile to the same code as out-parameters — Rust's return-value optimization handles the copy. Out-params only make sense when the memory is semantically owned by the caller (a buffer to fill, not a value to produce).
 
 **See also**: C-NO-OUT
 
 ---
 
-## API-29: Functions Take R: Read and W: Write by Value
+## API-29: Generic Reader/Writer Parameters Take by Value
 
-**Strength**: SHOULD
+**Strength**: MUST
 
-**Summary**: Generic reader/writer functions should take by value, leveraging the blanket impls that allow passing `&mut` references.
+**Summary**: Functions generic over `R: Read` or `W: Write` take the reader/writer by value. Callers pass `&mut r` when they need to retain ownership — the `impl Read for &mut R` blanket impl makes that work.
 
 ```rust
 use std::io::{Read, Write};
 
-// Good - takes by value, can still be called with &mut
-pub fn copy<R: Read, W: Write>(reader: R, writer: W) -> io::Result<u64> {
-    // Because of impls: impl<R: Read> Read for &mut R
-    //                   impl<W: Write> Write for &mut W
-    // Users can pass &mut file if they want to reuse it
+pub fn parse<R: Read>(mut r: R) -> Result<Data, Error> {
+    let mut buf = String::new();
+    r.read_to_string(&mut buf)?;
+    parse_str(&buf)
 }
 
-// Usage
-let mut file = File::open("data.txt")?;
-copy(&mut file, &mut stdout())?;  // Can pass &mut
-copy(file, stdout())?;             // Or consume
+// One-shot consume
+parse(std::fs::File::open("data.txt")?)?;
 
-// In docs, remind users they can pass &mut:
-/// Copies data from reader to writer.
-///
-/// This function takes ownership of both reader and writer. To reuse
-/// them afterward, pass them by mutable reference (`&mut file`).
+// Retain ownership
+let mut f = std::fs::File::open("data.txt")?;
+parse(&mut f)?;
+parse(&mut f)?;
 ```
 
-**Rationale**: Taking by value is more flexible—callers can choose to pass owned values or `&mut` references as needed.
+Document the pattern in rustdoc: `"pass `&mut reader` if you need to reuse the reader."`
 
-**See also**: C-RW-VALUE guideline
-
----
-
-## API-30: Functions With Clear Receiver Are Methods
-
-**Strength**: SHOULD
-
-**Summary**: If a function clearly operates on a specific type, make it a method rather than a free function.
-
-```rust
-// Good - method style
-impl Foo {
-    pub fn process(&self, widget: Widget) -> Result<(), Error> {
-        // ...
-    }
-}
-
-let foo = Foo::new();
-foo.process(widget)?;  // Clear, concise
-
-// Bad - free function style
-pub fn process_foo(foo: &Foo, widget: Widget) -> Result<(), Error> {
-    // ...
-}
-
-process_foo(&foo, widget)?;  // Less clear
-
-// Advantages of methods:
-// 1. No imports needed (just need the type in scope)
-// 2. Autoborrowing (can call on &foo, &mut foo, foo)
-// 3. Discoverable via foo.<tab> in editors
-// 4. Self notation clarifies ownership
-
-impl Parser {
-    // Clear ownership semantics
-    pub fn parse(self) -> Result<Ast, Error> { /* consumes parser */ }
-    pub fn peek(&self) -> Option<Token> { /* borrows */ }
-    pub fn advance(&mut self) -> Option<Token> { /* mutable borrow */ }
-}
-```
-
-**Rationale**: Methods provide better ergonomics, discoverability, and clarity about ownership.
-
-**See also**: C-METHOD
-
----
-
-## API-31: Functions with Clear Receivers Are Methods
-
-**Strength**: SHOULD
-
-**Summary**: When a function operates on a specific type, make it a method rather than a free function.
-
-```rust
-// Good - methods for type-specific operations
-impl Configuration {
-    pub fn load(&mut self, path: &Path) -> Result<()> { /* ... */ }
-    pub fn save(&self, path: &Path) -> Result<()> { /* ... */ }
-    pub fn validate(&self) -> Result<()> { /* ... */ }
-}
-
-// Bad - free functions when methods would be clearer
-pub fn load_configuration(config: &mut Configuration, path: &Path) -> Result<()> { /* ... */ }
-pub fn save_configuration(config: &Configuration, path: &Path) -> Result<()> { /* ... */ }
-
-// Usage comparison
-config.load(path)?;  // Clear and concise
-load_configuration(&mut config, path)?;  // Verbose and awkward
-```
-
-**Rationale**: Methods don't need imports, support auto-borrowing, appear in rustdoc for the type, and use clean `self` notation.
-
-**See also**: C-METHOD guideline
-
----
-
-## API-32: Generic Reader/Writer Functions Take by Value
-
-**Strength**: MUST
-
-**Summary**: Functions accepting `R: Read` or `W: Write` should take them by value, not by reference.
-
-```rust
-use std::io::{self, Read, Write};
-
-// Good - takes Read by value
-pub fn parse_data<R: Read>(mut reader: R) -> io::Result<Data> {
-    let mut buffer = String::new();
-    reader.read_to_string(&mut buffer)?;
-    // parse buffer...
-    Ok(Data {})
-}
-
-// Good - takes Write by value
-pub fn write_data<W: Write>(mut writer: W, data: &Data) -> io::Result<()> {
-    writer.write_all(data.as_bytes())?;
-    writer.flush()?;
-    Ok(())
-}
-
-// Why this works - standard library implements Read/Write for &mut T
-impl<R: Read + ?Sized> Read for &mut R { /* ... */ }
-impl<W: Write + ?Sized> Write for &mut W { /* ... */ }
-
-// Usage - can pass file directly
-let file = File::open("data.txt")?;
-parse_data(file)?;
-
-// Usage - can pass mutable reference when needed
-let mut file = File::create("output.txt")?;
-write_data(&mut file, &data)?;  // Can reuse file after this
-
-// More writes to the same file
-write_data(&mut file, &other_data)?;
-write_data(&mut file, &more_data)?;
-
-// Documentation should mention this pattern
-/// Parse data from a reader.
-///
-/// This function takes the reader by value. If you need to reuse
-/// the reader after calling this function, pass `&mut reader` instead.
-pub fn parse_data<R: Read>(mut reader: R) -> io::Result<Data> {
-    // ...
-}
-```
-
-**Rationale**: Taking by value allows the function to accept both owned values and mutable references through the blanket impl. This provides maximum flexibility to callers.
+**Rationale**: Taking by value accepts both owned and `&mut`-borrowed forms through a single signature. Taking by reference forces every caller to borrow, even when they have a one-shot value.
 
 **See also**: C-RW-VALUE
 
 ---
 
-## API-33: Getter Naming
-
-**Strength**: SHOULD
-
-**Summary**: Omit the `get_` prefix for getters unless there's a compelling reason.
-
-```rust
-// Good - simple, clean getters
-pub struct Person {
-    name: String,
-    age: u32,
-}
-
-impl Person {
-    pub fn name(&self) -> &str {
-        &self.name
-    }
-
-    pub fn age(&self) -> u32 {
-        self.age
-    }
-
-    pub fn name_mut(&mut self) -> &mut String {
-        &mut self.name
-    }
-}
-
-// Good - use get_ when there's a single obvious thing to "get"
-use std::cell::Cell;
-let cell = Cell::new(5);
-let value = cell.get();  // Obvious what we're getting
-
-// Good - get_unchecked for unsafe variants
-fn get(&self, index: usize) -> Option<&T>;
-unsafe fn get_unchecked(&self, index: usize) -> &T;
-
-// Bad - unnecessary get_ prefix
-impl Person {
-    pub fn get_name(&self) -> &str { /* ... */ }  // Just use name()
-    pub fn get_age(&self) -> u32 { /* ... */ }     // Just use age()
-}
-```
-
-**Rationale**: Rust's method syntax makes it clear you're accessing a field. The `get_` prefix adds verbosity without clarity.
-
-**See also**: C-GETTER guideline
-
----
-
-## API-34: Implement Common Traits Eagerly
+## API-30: Services Implement Shared-Ownership `Clone`
 
 **Strength**: MUST
 
-**Summary**: Implement Copy, Clone, Debug, Default, and other common traits for public types whenever semantically appropriate.
+**Summary**: Heavyweight service types (connection pools, background runtimes, shared caches) implement `Clone` using an inner `Arc` — cloning produces a new handle to the same state, not a deep copy.
 
 ```rust
-// Good - eagerly implement common traits
-#[derive(Copy, Clone, Debug, PartialEq, Eq, Hash)]
-pub struct Point {
-    pub x: i32,
-    pub y: i32,
-}
+struct ServiceInner { config: Config, pool: ConnectionPool }
 
-// Good - implement both Default and new()
-#[derive(Default)]
-pub struct Config {
-    timeout: u64,    // defaults to 0
-    retries: u32,    // defaults to 0
-}
-
-impl Config {
-    pub fn new() -> Self {
-        Self::default()
-    }
-}
-
-// Good - custom Default for better defaults
-pub struct ServerOptions {
-    pub host: String,
-    pub port: u16,
-}
-
-impl Default for ServerOptions {
-    fn default() -> Self {
-        Self {
-            host: String::from("localhost"),
-            port: 8080,
-        }
-    }
-}
-
-// Bad - missing common traits makes type hard to use
-pub struct Data {
-    value: i32,
-}
-// No Clone, Debug, PartialEq, etc. - users can't easily work with this type
-```
-
-**Rationale**: Due to the orphan rule, downstream crates cannot add these implementations. Providing them upfront maximizes interoperability.
-
-**See also**: C-COMMON-TRAITS guideline
-
----
-
-## API-35: Implement Standard Traits
-
-**Strength**: SHOULD
-
-**Summary**: Implement common traits to make types work with the ecosystem.
-
-```rust
-// Essential traits for most types
-#[derive(Debug, Clone, PartialEq, Eq)]
-pub struct UserId(u64);
-
-// Additional traits based on usage:
-#[derive(
-    Debug,      // Required for {:?} formatting
-    Clone,      // Explicit duplication
-    Copy,       // Implicit copy (for small types)
-    PartialEq,  // == and != comparison
-    Eq,         // Marker: equality is reflexive
-    PartialOrd, // <, >, <=, >= comparison
-    Ord,        // Total ordering (for sorting, BTreeMap)
-    Hash,       // For HashMap/HashSet keys
-    Default,    // T::default() construction
-)]
-pub struct Point { x: i32, y: i32 }
-
-// Display for user-facing output
-use std::fmt;
-
-impl fmt::Display for UserId {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "user:{}", self.0)
-    }
-}
-
-// FromStr for parsing
-use std::str::FromStr;
-
-impl FromStr for UserId {
-    type Err = ParseUserIdError;
-    
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let id = s.strip_prefix("user:")
-            .ok_or(ParseUserIdError::MissingPrefix)?
-            .parse()
-            .map_err(ParseUserIdError::InvalidNumber)?;
-        Ok(UserId(id))
-    }
-}
-```
-
----
-
-## API-36: Iterator Method Naming
-
-**Strength**: MUST
-
-**Summary**: Use `iter()`, `iter_mut()`, and `into_iter()` for iterator-producing methods on collections.
-
-```rust
-// Good - standard iterator naming
-impl<T> Vec<T> {
-    pub fn iter(&self) -> Iter<'_, T> { /* ... */ }
-    pub fn iter_mut(&mut self) -> IterMut<'_, T> { /* ... */ }
-    pub fn into_iter(self) -> IntoIter<T> { /* ... */ }
-}
-
-// Good - iterator type names match methods
-pub struct Iter<'a, T> { /* ... */ }
-pub struct IterMut<'a, T> { /* ... */ }
-pub struct IntoIter<T> { /* ... */ }
-
-// Good - specialized iterators have descriptive names
-impl<K, V> HashMap<K, V> {
-    pub fn keys(&self) -> Keys<'_, K, V> { /* ... */ }
-    pub fn values(&self) -> Values<'_, K, V> { /* ... */ }
-}
-
-// Bad - non-standard iterator names
-impl<T> MyCollection<T> {
-    pub fn get_iterator(&self) -> Iter<T> { /* ... */ }  // Should be iter()
-    pub fn to_iter(self) -> IntoIter<T> { /* ... */ }    // Should be into_iter()
-}
-```
-
-**Rationale**: Consistent iterator naming makes collections immediately familiar and enables generic code to work across different collection types.
-
-**See also**: C-ITER, C-ITER-TY guidelines
-
----
-
-## API-37: Method Receiver Guidelines
-
-**Strength**: SHOULD
-
-**Summary**: Choose the right `self` receiver for each method.
-
-```rust
-impl MyType {
-    // &self: Read-only access, most common
-    fn len(&self) -> usize {
-        self.data.len()
-    }
-    
-    // &mut self: Mutates in place
-    fn push(&mut self, item: T) {
-        self.data.push(item);
-    }
-    
-    // self: Consumes the value, transforms it
-    fn into_inner(self) -> Vec<T> {
-        self.data
-    }
-    
-    // No self: Associated function (constructor, utility)
-    fn new() -> Self {
-        Self { data: Vec::new() }
-    }
-}
-```
-
----
-
-## API-38: Naming Conventions
-
-**Strength**: MUST
-
-**Summary**: Follow Rust's standard naming conventions consistently.
-
-```rust
-// ✅ CORRECT naming conventions
-
-// Types: UpperCamelCase
-struct HttpRequest { }
-enum ConnectionState { }
-trait Serialize { }
-type UserId = u64;
-
-// Functions/methods: snake_case
-fn process_request() { }
-fn is_empty(&self) -> bool { }
-
-// Constants: SCREAMING_SNAKE_CASE
-const MAX_CONNECTIONS: usize = 100;
-static DEFAULT_TIMEOUT: Duration = Duration::from_secs(30);
-
-// Modules: snake_case
-mod http_client;
-mod error_handling;
-
-// Type parameters: single uppercase or CamelCase
-fn parse<T: FromStr>(s: &str) -> T { }
-fn convert<Source, Target>(s: Source) -> Target { }
-
-// Lifetimes: short lowercase, 'a is conventional
-fn longest<'a>(x: &'a str, y: &'a str) -> &'a str { }
-```
-
----
-
-## API-39: Naming Conventions (RFC 430)
-
-**Strength**: MUST
-
-**Summary**: Follow Rust's established naming conventions for all public items.
-
-```rust
-// Good - proper casing for different items
-pub struct HttpClient { /* ... */ }          // UpperCamelCase for types
-pub trait Serialize { /* ... */ }             // UpperCamelCase for traits
-pub enum Color { Red, Green, Blue }           // UpperCamelCase for types and variants
-pub fn parse_config() -> Config { /* ... */ } // snake_case for functions
-pub const MAX_SIZE: usize = 1024;             // SCREAMING_SNAKE_CASE for constants
-
-// Good - acronyms are treated as one word
-pub struct Uuid;  // not UUID
-pub fn is_xid_start() -> bool { /* ... */ }  // not is_XID_start
-
-// Bad - incorrect casing
-pub struct HTTP_Client { /* ... */ }  // should be HttpClient
-pub fn ParseConfig() { /* ... */ }    // should be parse_config
-```
-
-**Rationale**: Consistent naming conventions make Rust code instantly recognizable and reduce cognitive load when reading code from different sources.
-
-**See also**: RFC 430, 01-core-idioms.md
-
----
-
-## API-40: Newtypes Provide Static Distinctions
-
-**Strength**: SHOULD
-
-**Summary**: Use newtype pattern to create distinct types that prevent mixing up similar values.
-
-```rust
-// Good - newtype prevents mixing units
-pub struct Celsius(pub f64);
-pub struct Fahrenheit(pub f64);
-
-impl Celsius {
-    pub fn to_fahrenheit(self) -> Fahrenheit {
-        Fahrenheit(self.0 * 9.0 / 5.0 + 32.0)
-    }
-}
-
-// Type system prevents errors
-fn boil_water(temp: Celsius) {
-    if temp.0 >= 100.0 {
-        println!("Water is boiling!");
-    }
-}
-
-boil_water(Celsius(100.0));  // OK
-// boil_water(Fahrenheit(212.0));  // Compile error!
-
-// Good - newtype for validation
-pub struct EmailAddress(String);
-
-impl EmailAddress {
-    pub fn new(email: String) -> Result<Self, ValidationError> {
-        if email.contains('@') {
-            Ok(EmailAddress(email))
-        } else {
-            Err(ValidationError::InvalidEmail)
-        }
-    }
-
-    pub fn as_str(&self) -> &str {
-        &self.0
-    }
-}
-```
-
-**Rationale**: Newtypes provide type safety at compile time with zero runtime cost, preventing entire classes of bugs.
-
-**See also**: C-NEWTYPE guideline, 05-type-design.md
-
----
-
-## API-41: No Out-Parameters
-
-**Strength**: MUST
-
-**Summary**: Return multiple values via tuples or structs, not out-parameters.
-
-```rust
-// Good - return tuple
-pub fn parse_header(data: &[u8]) -> Result<(Header, usize), ParseError> {
-    // Returns both the parsed header and bytes consumed
-}
-
-// Good - return struct for many values
-pub struct ParseResult {
-    pub header: Header,
-    pub bytes_consumed: usize,
-    pub warnings: Vec<String>,
-}
-
-pub fn parse_with_details(data: &[u8]) -> Result<ParseResult, ParseError> { /* ... */ }
-
-// Bad - out-parameter pattern
-pub fn parse_header_bad(data: &[u8], header: &mut Header) -> Result<usize, ParseError> {
-    // Modifies header, returns bytes consumed
-}
-
-// Exception: reusing buffers for performance
-pub fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
-    // This is OK - the buffer is owned by caller for reuse
-}
-```
-
-**Rationale**: Rust's tuple and struct types are efficiently compiled. Out-parameters are less ergonomic and less idiomatic than returning compound values.
-
-**See also**: C-NO-OUT guideline
-
----
-
-## API-42: Only Smart Pointers Implement Deref
-
-**Strength**: MUST
-
-**Summary**: `Deref` and `DerefMut` should only be implemented for smart pointer types. Deref and DerefMut should only be implemented for smart pointer types.
-
-```rust
-// Good - smart pointers implement Deref
-impl<T: ?Sized> Deref for Box<T> {
-    type Target = T;
-    fn deref(&self) -> &T { /* ... */ }
-}
-
-impl<T: ?Sized> Deref for Arc<T> {
-    type Target = T;
-    fn deref(&self) -> &T { /* ... */ }
-}
-
-impl Deref for String {
-    type Target = str;
-    fn deref(&self) -> &str { /* ... */ }
-}
-
-// String is a smart pointer to str
-
-// Bad - using Deref for conversions
-struct Degrees(f64);
-struct Radians(f64);
-
-// DON'T DO THIS
-// impl Deref for Degrees {
-//     type Target = Radians;
-//     fn deref(&self) -> &Radians {
-//         // This is an abuse of Deref
-//     }
-// }
-
-// Good - explicit conversion instead
-impl Degrees {
-    pub fn to_radians(&self) -> Radians {
-        Radians(self.0 * PI / 180.0)
-    }
-}
-```
-
-```rust
-use std::ops::Deref;
-
-// Good - Deref for smart pointers
-impl<T> Deref for Box<T> {
-    type Target = T;
-    fn deref(&self) -> &T { /* ... */ }
-}
-
-impl<T> Deref for Rc<T> {
-    type Target = T;
-    fn deref(&self) -> &T { /* ... */ }
-}
-
-impl Deref for String {
-    type Target = str;
-    fn deref(&self) -> &str { /* ... */ }
-}
-
-// Bad - Deref for non-smart-pointer types
-struct User {
-    name: String,
-}
-
-impl Deref for User {
-    type Target = String;  // Don't do this!
-    fn deref(&self) -> &String {
-        &self.name
-    }
-}
-```
-
-**Rationale**: Deref is used implicitly by the compiler in many contexts. It's designed specifically for smart pointers to provide transparent access to the contained value.
-
-**See also**: C-DEREF, C-DEREF guideline, 11-anti-patterns.md (Deref polymorphism)
-
----
-
-## API-43: Operator Overloads Are Unsurprising
-
-**Strength**: MUST
-
-**Summary**: Only implement operator traits when the operation genuinely resembles the operator's mathematical or logical meaning.
-
-```rust
-use std::ops::{Add, Mul, BitOr};
-
-// Good - clear mathematical meaning
-#[derive(Copy, Clone)]
-pub struct Vector3 {
-    x: f64,
-    y: f64,
-    z: f64,
-}
-
-impl Add for Vector3 {
-    type Output = Vector3;
-
-    fn add(self, other: Vector3) -> Vector3 {
-        Vector3 {
-            x: self.x + other.x,
-            y: self.y + other.y,
-            z: self.z + other.z,
-        }
-    }
-}
-
-// Good - BitOr for flag combination
-bitflags! {
-    struct Permissions: u32 {
-        const READ = 0b001;
-        const WRITE = 0b010;
-        const EXECUTE = 0b100;
-    }
-}
-
-let perms = Permissions::READ | Permissions::WRITE;  // Makes sense!
-
-// Bad - surprising operator use
-impl Add for HttpRequest {
-    // Adding HTTP requests? What does that even mean?
-}
-
-impl Mul for Logger {
-    // Multiplying loggers? Confusing!
-}
-```
-
-**Rationale**: Operator overloading should follow the principle of least surprise. Operators come with strong mathematical and logical expectations.
-
-**See also**: C-OVERLOAD guideline
-
----
-
-## API-44: Prefer Concrete Types over Generics
-
-**Strength**: SHOULD
-
-**Summary**: When designing dependencies, prefer concrete types > generics > dyn Trait.
-
-```rust
-// Bad - dyn Trait in API
-pub async fn start_service(db: Rc<dyn Database>) {
-    // Problems: not object-safe, requires wrapper, infectious
-}
-
-// Bad - trait with generic not needed
-trait Database {
-    async fn store(&self, obj: Object);  // Not object-safe!
-}
-
-// Good - concrete type with inherent methods
-pub struct MyDatabase {
-    connection: Connection,
-}
-
-impl MyDatabase {
-    pub fn new(url: &str) -> Self { /* ... */ }
-    
-    pub async fn store(&self, obj: Object) {
-        // Direct implementation
-    }
-    
-    pub async fn load(&self, id: Id) -> Option<Object> {
-        // Direct implementation  
-    }
-}
-
-// Usage
-async fn start_service(db: MyDatabase) {
-    // Simple and direct!
-}
-
-// If trait abstraction is needed, provide narrow traits
-pub trait StoreObject {
-    fn store(&self, obj: Object) -> impl Future<Output = ()>;
-}
-
-pub trait LoadObject {
-    fn load(&self, id: Id) -> impl Future<Output = Option<Object>>;
-}
-
-impl StoreObject for MyDatabase { /* ... */ }
-impl LoadObject for MyDatabase { /* ... */ }
-
-// Use generics when needed, not dyn
-async fn process<D: StoreObject + LoadObject>(db: D) {
-    // Works with any implementation
-}
-```
-
-**Rationale**: Concrete types are easier to use and understand. Generics are better than trait objects for flexibility. Use trait objects only when generics cause excessive nesting.
-
-**See also**: M-DI-HIERARCHY, M-MOCKABLE-SYSCALLS
-
----
-
-## API-45: Provide `Default` Implementations
-
-**Strength**: SHOULD
-
-**Summary**: Implement `Default` when there's a sensible "empty" or "default" value.
-
-```rust
-#[derive(Debug)]
-pub struct Config {
-    pub timeout: Duration,
-    pub retries: u32,
-    pub verbose: bool,
-}
-
-impl Default for Config {
-    fn default() -> Self {
-        Self {
-            timeout: Duration::from_secs(30),
-            retries: 3,
-            verbose: false,
-        }
-    }
-}
-
-// Enables convenient patterns:
-let config = Config::default();
-let config = Config { verbose: true, ..Default::default() };
-
-// Works with Option::unwrap_or_default()
-fn get_config() -> Option<Config> { None }
-let config = get_config().unwrap_or_default();
-
-// For simple cases, derive it:
-#[derive(Debug, Default)]
-pub struct Counter {
-    value: u64,  // Defaults to 0
-}
-```
-
----
-
-## API-46: Sealed Traits for Extensible-but-Closed APIs
-
-**Strength**: CONSIDER
-
-**Summary**: Seal traits when you want to add methods without breaking changes.
-
-```rust
-// Public trait that external code can't implement
-mod private {
-    pub trait Sealed {}
-}
-
-/// A database backend.
-/// 
-/// This trait is sealed and cannot be implemented outside this crate.
-pub trait Backend: private::Sealed {
-    fn execute(&self, query: &str) -> Result<(), Error>;
-    
-    // Can add new methods in future versions without breaking changes
-    fn execute_batch(&self, queries: &[&str]) -> Result<(), Error> {
-        for q in queries {
-            self.execute(q)?;
-        }
-        Ok(())
-    }
-}
-
-// Only your types can implement it:
-pub struct PostgresBackend { /* ... */ }
-
-impl private::Sealed for PostgresBackend {}
-impl Backend for PostgresBackend {
-    fn execute(&self, query: &str) -> Result<(), Error> {
-        todo!()
-    }
-}
-```
-
----
-
-## API-47: Services Are Cloneable
-
-**Strength**: MUST
-
-**Summary**: Service types and thread singletons must implement shared-ownership `Clone` semantics using the Arc<Inner> pattern.
-
-```rust
-// Internal state
-struct ServiceInner {
-    config: Config,
-    connection: Connection,
-}
-
-// Public service
 #[derive(Clone)]
-pub struct Service {
-    inner: Arc<ServiceInner>,
-}
+pub struct Service { inner: std::sync::Arc<ServiceInner> }
 
 impl Service {
     pub fn new(config: Config) -> Self {
-        Self {
-            inner: Arc::new(ServiceInner {
-                config,
-                connection: Connection::new(),
-            })
-        }
+        Self { inner: std::sync::Arc::new(ServiceInner { config, pool: ConnectionPool::new() }) }
     }
-    
-    // Methods forward to inner
-    pub fn process(&self, data: &Data) -> Result<(), Error> {
+    pub fn process(&self, data: &Data) -> Result<Outcome, ServiceError> {
         self.inner.process(data)
     }
 }
 
-// Usage - can be freely cloned and shared
-struct App {
-    service_a: ServiceA,
-    service_b: ServiceB,
-}
-
-impl App {
-    fn init() -> Self {
-        let common = CommonService::new();
-        
-        // Both services get a clone (cheap Arc clone)
-        let service_a = ServiceA::new(&common);
-        let service_b = ServiceB::new(&common);
-        
-        Self { service_a, service_b }
-    }
-}
-
-impl ServiceA {
-    pub fn new(common: &CommonService) -> Self {
-        Self {
-            common: common.clone(), // Cheap!
-        }
-    }
-}
+// Consumers clone freely — one service, many handles
+let s = Service::new(cfg);
+let handler_a = ComponentA::new(s.clone());
+let handler_b = ComponentB::new(s.clone());
 ```
 
-**Rationale**: Services are typically heavyweight and shared. Clone semantics let them be passed around ergonomically without actual duplication. The Arc is hidden from users.
+**Rationale**: A service is almost always shared; if `Clone` deep-copied the pool, nothing would work. The `Arc` is invisible to the consumer — they see `Clone` that acts like any other.
 
 **See also**: M-SERVICES-CLONE
 
 ---
 
-## API-48: Smart Pointers Do Not Add Inherent Methods
+## API-31: Smart Pointers Don't Gain Inherent Methods — Use Associated Functions
 
 **Strength**: MUST
 
-**Summary**: Smart pointer types should not have inherent methods (except constructors) that could be confused with methods on the inner type.
+**Summary**: Types that implement `Deref` (smart pointers, string types, collections) should not add inherent methods that take `self`, because they conflict with Deref-forwarded calls. Use associated functions that take the pointer by name.
 
 ```rust
-// Good - associated function, not method
+// ✅ Associated function — the call site makes the receiver type unambiguous
 impl<T: ?Sized> Box<T> {
-    pub fn into_raw(b: Box<T>) -> *mut T {
-        // Takes Box<T>, not &self
-        Box::into_raw(b)
-    }
+    pub fn into_raw(b: Box<T>) -> *mut T { /* ... */ todo!() }
 }
+let b: Box<String> = Box::new("x".into());
+let ptr = Box::into_raw(b);
 
-// Usage is unambiguous
-let boxed_str: Box<str> = Box::new("hello");
-let ptr = Box::into_raw(boxed_str);  // Clearly operates on Box
+// ❌ If `into_raw` were a method, which type owns it?
+// b.into_raw()        // Box<String>::into_raw or String::into_raw (if that existed)?
 
-// Bad - if it were a method
-// impl<T: ?Sized> Box<T> {
-//     pub fn into_raw(self) -> *mut T { /* ... */ }
-// }
-// 
-// let boxed_str: Box<str> = /* ... */;
-// boxed_str.into_raw()  // Is this a method on str or Box<str>?
-
-// Good - Rc/Arc pattern
+// Same pattern for Rc/Arc
 use std::rc::Rc;
+let r = Rc::new(String::from("hello"));
+let count = Rc::strong_count(&r);
+let raw   = Rc::into_raw(r);
 
-let shared = Rc::new(String::from("hello"));
-let ptr = Rc::into_raw(shared);  // Clearly operates on Rc
-let count = Rc::strong_count(&shared);  // Associated function
-
-// Good - constructors as inherent methods are fine
-impl<T> Box<T> {
-    pub fn new(value: T) -> Box<T> {
-        // Constructors don't conflict with inner type
-        Box::new(value)
-    }
-}
+// Constructors are fine as inherent — there's nothing to collide with yet
+impl<T> Box<T> { pub fn new(v: T) -> Self { Box::new(v) } }
 ```
 
-**Rationale**: Smart pointers implement `Deref`, so method calls are automatically delegated to the inner type. Inherent methods on the smart pointer would create ambiguity about which type's method is being called.
+Corollary: only implement `Deref` and `DerefMut` for genuine smart pointers (`Box`, `Rc`, `Arc`, `Cow`, `String` → `str`, `Vec` → `[T]`, `MutexGuard`). Using `Deref` for inheritance or subtyping between domain types — the "Deref polymorphism" anti-pattern — confuses method resolution and silently inserts dereferences users can't predict.
+
+**Rationale**: Method-resolution order searches `Self`, then the `Deref::Target`. Inherent methods on `Box<T>` that take `self` make the call `b.into_raw()` ambiguous between `Box` and `T`. Associated functions sidestep the problem by naming the type at the call site.
 
 **See also**: C-SMART-PTR, C-DEREF
 
 ---
 
-## API-49: Smart Pointers Don't Add Inherent Methods
+## API-32: Operator Overloads Are Unsurprising
 
 **Strength**: MUST
 
-**Summary**: Smart pointer types should not have inherent methods that could be confused with methods on the pointed-to type.
+**Summary**: Only implement `Add`, `Mul`, `BitOr`, etc., when the operation genuinely resembles the operator's mathematical or logical meaning — with expected properties like associativity and commutativity.
 
 ```rust
-// Good - associated function, not method
-impl<T> Box<T> {
-    pub fn into_raw(b: Box<T>) -> *mut T { /* ... */ }
+use std::ops::Add;
+
+// ✅ Vector addition — associative, commutative
+#[derive(Clone, Copy)]
+pub struct Vec3 { x: f64, y: f64, z: f64 }
+
+impl Add for Vec3 {
+    type Output = Vec3;
+    fn add(self, o: Vec3) -> Vec3 {
+        Vec3 { x: self.x + o.x, y: self.y + o.y, z: self.z + o.z }
+    }
 }
 
-// Usage is unambiguous
-let boxed = Box::new("hello");
-let ptr = Box::into_raw(boxed);  // Clearly a Box method
+// ✅ BitOr on a bitflag set
+let perms = Permissions::READ | Permissions::WRITE;
 
-// Bad - if this were an inherent method
-impl<T> Box<T> {
-    pub fn into_raw(self) -> *mut T { /* ... */ }  // Don't do this!
-}
-
-// Would be confusing:
-let boxed = Box::new(my_struct);
-boxed.some_method();  // Is this on Box or my_struct?
-boxed.into_raw();     // Is this on Box or my_struct?
+// ❌ Surprising
+impl Add for HttpRequest { /* ... */ }   // what does adding requests mean?
+impl Mul for Logger      { /* ... */ }   // ???
 ```
 
-**Rationale**: Smart pointers use Deref to transparently access the inner type. Inherent methods would be ambiguous with methods on the inner type.
+**Rationale**: Operators come with strong user expectations. Overloading them for unrelated concepts produces unreadable code and misleads consumers who rely on algebraic properties.
 
-**See also**: C-SMART-PTR guideline
+**See also**: C-OVERLOAD
 
 ---
 
-## API-50: Traits Should Be Object-Safe When Useful
+## API-33: Getters Omit the `get_` Prefix
 
 **Strength**: SHOULD
 
-**Summary**: If a trait might be used as a trait object, ensure it's object-safe. Use `where Self: Sized` to exclude specific methods from trait objects.
+**Summary**: Name getters after the field: `name()`, not `get_name()`. The mutable variant gets a `_mut` suffix: `name_mut()`. The bare name `get` is reserved for types with a single obvious thing to retrieve (`Cell::get`).
 
 ```rust
-// Good - object-safe trait
-pub trait Draw {
-    fn draw(&self, canvas: &mut Canvas);
-    fn bounds(&self) -> Rectangle;
+pub struct Person { name: String, age: u32 }
+
+impl Person {
+    pub fn name(&self) -> &str                  { &self.name }
+    pub fn name_mut(&mut self) -> &mut String   { &mut self.name }
+    pub fn age(&self) -> u32                    { self.age }
 }
 
-// Can use as trait object
-let shapes: Vec<Box<dyn Draw>> = vec![
-    Box::new(Circle { /* ... */ }),
-    Box::new(Rectangle { /* ... */ }),
-];
+// ✅ Bare `get` on single-purpose wrappers
+std::cell::Cell::new(5).get();
 
-// Good - mixed object-safe and generic methods
-pub trait Iterator {
-    type Item;
-
-    // Object-safe
-    fn next(&mut self) -> Option<Self::Item>;
-
-    // Not object-safe, but excluded from trait object
-    fn collect<B: FromIterator<Self::Item>>(self) -> B
-    where
-        Self: Sized,
-    {
-        // ...
-    }
+// ✅ Unsafe opt-out variant for validated access
+impl<T> Vec<T> {
+    fn get(&self, i: usize) -> Option<&T>              { self.as_slice().get(i) }
+    unsafe fn get_unchecked(&self, i: usize) -> &T     { self.as_slice().get_unchecked(i) }
 }
 
-// Bad - unnecessarily not object-safe
-pub trait Process {
-    fn process<T: Data>(&self, data: T);  // Generic method prevents trait objects
-}
+// ❌ get_ prefix
+impl Person { pub fn get_name(&self) -> &str { &self.name } }  // drop the prefix
 ```
 
-**Rationale**: Trait objects enable heterogeneous collections and dynamic dispatch. Making traits object-safe when appropriate provides flexibility.
+**Rationale**: Method syntax already signals retrieval; `get_` is redundant noise inherited from Java/C#. Dropping it keeps signatures short and reads as natural English.
 
-**See also**: C-OBJECT guideline
+**See also**: C-GETTER
 
 ---
 
-## API-51: Types Are Send and Sync Where Possible
+## API-34: Iterator Methods Are `iter`/`iter_mut`/`into_iter`
 
 **Strength**: MUST
 
-**Summary**: Types should be `Send` and `Sync` unless they genuinely can't be safely used across threads.
+**Summary**: Collections provide the canonical trio: `iter(&self) -> Iter<'_, T>`, `iter_mut(&mut self) -> IterMut<'_, T>`, and `into_iter(self) -> IntoIter<T>`. The iterator type name matches the method name.
 
 ```rust
-// Good - automatically Send + Sync
-pub struct Data {
-    values: Vec<i32>,
-    count: usize,
-}
-// Vec and usize are Send + Sync, so Data is too
+pub struct MyList<T> { /* ... */ }
 
-// Good - explicitly not Send/Sync when necessary
-use std::rc::Rc;
+pub struct Iter<'a, T>    { /* ... */ ph: std::marker::PhantomData<&'a T> }
+pub struct IterMut<'a, T> { /* ... */ ph: std::marker::PhantomData<&'a mut T> }
+pub struct IntoIter<T>    { /* ... */ items: Vec<T> }
 
-pub struct Shared {
-    inner: Rc<String>,
-}
-// Rc is not Send/Sync, so Shared isn't either
-
-// Good - manually implementing Send/Sync for raw pointers
-pub struct MyBox<T> {
-    ptr: *mut T,
+impl<T> MyList<T> {
+    pub fn iter(&self) -> Iter<'_, T>              { /* ... */ todo!() }
+    pub fn iter_mut(&mut self) -> IterMut<'_, T>   { /* ... */ todo!() }
+    pub fn into_iter(self) -> IntoIter<T>          { /* ... */ todo!() }
 }
 
-unsafe impl<T: Send> Send for MyBox<T> {}
-unsafe impl<T: Sync> Sync for MyBox<T> {}
+// Heterogeneous views get descriptive names
+impl<K, V> std::collections::HashMap<K, V> {
+    pub fn keys(&self)   -> std::collections::hash_map::Keys<'_, K, V>   { /* ... */ todo!() }
+    pub fn values(&self) -> std::collections::hash_map::Values<'_, K, V> { /* ... */ todo!() }
+}
+```
 
-// Testing Send and Sync
+**Rationale**: The pattern is universal in std — breaking it makes generic code that expects `iter()` stop working on your type, and surprises every user who expected to just call `.iter()`. Domain-specific iterators (`bytes`, `chars`, `keys`) are named for what they yield.
+
+**See also**: C-ITER, C-ITER-TY
+
+---
+
+## API-35: Naming Follows RFC 430
+
+**Strength**: MUST
+
+**Summary**: `UpperCamelCase` for types, traits, and enum variants; `snake_case` for functions, methods, and modules; `SCREAMING_SNAKE_CASE` for consts and statics. Acronyms count as one word: `Uuid`, `Http`, `Xid`.
+
+```rust
+// ✅ Canonical casing
+pub struct HttpClient;
+pub enum ColorSpace { Srgb, DisplayP3 }
+pub trait Serialize { fn serialize(&self) -> String; }
+pub fn parse_config() -> Config { todo!() }
+pub const MAX_CONNECTIONS: usize = 100;
+pub static DEFAULT_TIMEOUT: std::time::Duration = std::time::Duration::from_secs(30);
+
+mod http_client;
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str { if x.len() > y.len() { x } else { y } }
+fn parse<T: std::str::FromStr>(s: &str) -> Result<T, T::Err> { s.parse() }
+
+// ❌ Wrong casing
+pub struct HTTPClient;      // acronym should be Http
+pub fn ParseConfig() { }    // should be parse_config
+```
+
+Error types follow verb-object-error order: `ParseIntError`, `JoinPathsError` — not `IntParseError`.
+
+**Rationale**: Consistency lets readers identify what kind of item a name refers to at a glance, and lets code from different crates compose visually. Word-order consistency inside a crate matters more than picking any specific order.
+
+**See also**: C-CASE, C-WORD-ORDER, RFC 430
+
+---
+
+## API-36: Cargo Feature Names Are Bare
+
+**Strength**: SHOULD
+
+**Summary**: Feature names are the bare thing they enable — `serde`, `std`, `tokio` — not `use-serde`, `with-tokio`, or `no-std`. Features must be additive.
+
+```toml
+# ✅ Idiomatic
+[features]
+default = ["std"]
+std     = []
+serde   = ["dep:serde"]
+tokio   = ["dep:tokio"]
+
+# ❌ Placeholders and negatives
+[features]
+use-serde = ["dep:serde"]           # drop `use-`
+with-tokio = ["dep:tokio"]          # drop `with-`
+no-std = []                          # negatives break additivity
+```
+
+**Rationale**: Cargo creates an implicit feature with the dependency's bare name for optional dependencies; matching that convention is what downstream users search for. Negative feature names ("no-std") cannot be composed — enabling them in one dependency disables the code everywhere.
+
+**See also**: C-FEATURE
+
+---
+
+## API-37: Newtypes for Type-Safe Distinctions
+
+**Strength**: SHOULD
+
+**Summary**: Wrap a primitive in a named struct whenever the value carries a unit, an ID role, or a validity invariant. The wrapper is free at runtime; full discussion lives in TD-03.
+
+```rust
+pub struct Miles(pub f64);
+pub struct Kilometers(pub f64);
+
+impl Miles {
+    pub fn to_km(self) -> Kilometers { Kilometers(self.0 * 1.60934) }
+}
+
+fn too_far(d: Miles) -> bool { d.0 > 100.0 }
+// too_far(Kilometers(200.0));       // compile error
+too_far(Kilometers(200.0).to_miles());
+
+pub struct EmailAddress(String);
+impl EmailAddress {
+    pub fn new(s: String) -> Result<Self, InvalidEmail> {
+        if s.contains('@') { Ok(Self(s)) } else { Err(InvalidEmail) }
+    }
+    pub fn as_str(&self) -> &str { &self.0 }
+}
+```
+
+**Rationale**: Unit confusion, argument-swap bugs, and un-validated inputs collapse into one pattern. In an API context, newtypes also hide representation — consumers depend on the wrapper, not the inner type.
+
+**See also**: C-NEWTYPE, M-STRONG-TYPES, TD-03
+
+---
+
+## API-38: Types Are `Send` + `Sync` Where Possible
+
+**Strength**: MUST
+
+**Summary**: Public types should be `Send` and `Sync` unless the design genuinely forbids it. Futures and any type held across `.await` must be `Send` for work-stealing runtimes. Assert thread-safety with a compile-time check.
+
+```rust
+// ✅ Automatically Send + Sync
+pub struct Request { url: String, headers: Vec<(String, String)> }
+
+// Compile-time assertion
 #[cfg(test)]
 mod tests {
-    use super::*;
-    
-    #[test]
-    fn test_send() {
-        fn assert_send<T: Send>() {}
-        assert_send::<Data>();
-    }
-    
-    #[test]
-    fn test_sync() {
-        fn assert_sync<T: Sync>() {}
-        assert_sync::<Data>();
+    fn assert_send<T: Send>() {}
+    fn assert_sync<T: Sync>() {}
+    #[test] fn request_is_send_sync() {
+        assert_send::<super::Request>();
+        assert_sync::<super::Request>();
     }
 }
 
-// Bad - unnecessarily opting out
+// ❌ Don't opt out gratuitously
 pub struct Config {
     name: String,
-    // _marker: PhantomData<*const ()>,  // DON'T DO THIS
+    _not_sync: std::marker::PhantomData<*const ()>,   // blocks Sync for no reason
 }
-// This would make Config not Send/Sync for no reason
 ```
 
-**Rationale**: `Send` and `Sync` are fundamental to Rust's concurrency story. Types that can't be sent across threads or shared between threads are severely limited in their usefulness.
+**Rationale**: `!Send` types are infectious across `.await` points — one `Rc` inside a future taints the whole thing and makes it incompatible with Tokio. Compile-time assertions catch accidental regressions from adding an `Rc` or raw-pointer field.
 
-**See also**: C-SEND-SYNC
+**See also**: C-SEND-SYNC, M-TYPES-SEND
 
 ---
 
-## API-52: Types Eagerly Implement Common Traits
+## API-39: Validate Inputs — Prefer Static Types, Then Runtime Checks, Then `_unchecked` Opt-Outs
 
 **Strength**: MUST
 
-**Summary**: Implement all applicable common traits from `std` to maximize interoperability with the ecosystem.
+**Summary**: Rust APIs reject the robustness principle. Validate at the boundary, in this order of preference: (1) static enforcement via types; (2) dynamic check returning `Result`/`Option`; (3) `debug_assert!` for expensive checks; (4) `_unchecked` (often `unsafe`) variants for opt-out.
 
 ```rust
-// Good - comprehensive trait implementations
-#[derive(Clone, Debug, PartialEq, Eq, Hash)]
-pub struct UserId(u64);
+// (1) Static: the type rules out invalid inputs
+pub struct Ascii(u8);
+impl Ascii { pub fn new(b: u8) -> Option<Self> { (b < 128).then_some(Self(b)) } }
+fn process(a: Ascii) { /* ... */ }
 
-#[derive(Clone, Debug, PartialEq)]
-pub struct User {
-    pub id: UserId,
-    pub name: String,
-    pub email: String,
+// (2) Dynamic with Result
+pub fn connect(addr: &str, port: u16) -> Result<Connection, ConnectError> {
+    if port == 0            { return Err(ConnectError::InvalidPort); }
+    if addr.trim().is_empty() { return Err(ConnectError::InvalidAddress); }
+    /* ... */ todo!()
 }
 
-impl Default for User {
-    fn default() -> Self {
-        User {
-            id: UserId(0),
-            name: String::new(),
-            email: String::new(),
-        }
-    }
+// (3) debug_assert! for expensive invariant checks
+pub fn merge(a: &Sorted<i32>, b: &Sorted<i32>) -> Vec<i32> {
+    debug_assert!(a.is_sorted() && b.is_sorted());
+    /* ... */ todo!()
 }
 
-// Good - Display for user-facing output
-impl std::fmt::Display for UserId {
-    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "User({})", self.0)
-    }
-}
-
-// Bad - missing important traits
-pub struct Point {
-    x: f64,
-    y: f64,
-}
-// Missing: Clone, Debug, PartialEq, Default
-// This limits Point's usefulness in collections, testing, etc.
-
-// Good - implementing both Default and new
-#[derive(Clone, Debug, Default)]
-pub struct Config {
-    pub timeout: u64,
-    pub retries: u32,
-}
-
-impl Config {
-    pub fn new() -> Self {
-        // Delegates to Default, or vice versa
-        Self::default()
-    }
+// (4) _unchecked opt-out — usually unsafe
+impl String {
+    pub fn from_utf8(v: Vec<u8>) -> Result<Self, std::string::FromUtf8Error> { /* ... */ todo!() }
+    pub unsafe fn from_utf8_unchecked(v: Vec<u8>) -> Self { /* ... */ todo!() }
 }
 ```
 
-**Rationale**: Without these traits, your types can't be used in common patterns. For example, types need `Clone` for `Vec`, `Debug` for `assert_eq!`, `Hash` for `HashMap` keys.
+Validate at the API boundary, not in a subroutine five calls deep — fail the 500-item batch on the first bad element before you start processing.
 
-**See also**: C-COMMON-TRAITS in API Guidelines, C-DEBUG for Debug implementation requirements, C-SEND-SYNC for thread safety traits
+**Rationale**: Static enforcement has negligible runtime cost and catches bugs at compile time. Dynamic checks surface the failure cleanly via `Result`. `debug_assert!` lets you keep checks in tests without paying for them in release. `_unchecked` gives informed users an escape.
+
+**See also**: C-VALIDATE
 
 ---
 
-## API-53: Use `impl Trait` in Return Position Judiciously
+## API-40: Concrete Types > Generics > `dyn Trait`
+
+**Strength**: SHOULD
+
+**Summary**: For dependency injection, prefer the simplest escalation that works. Start with concrete types, graduate to generics with narrow trait bounds, fall back to `dyn Trait` only when generic nesting becomes unreadable.
+
+```rust
+// Level 1: concrete type — simplest and most readable
+pub struct MyDatabase { /* ... */ }
+impl MyDatabase {
+    pub async fn store(&self, obj: Object) -> Result<(), DbError> { /* ... */ todo!() }
+    pub async fn load(&self, id: Id)       -> Option<Object>      { /* ... */ todo!() }
+}
+pub async fn run(db: MyDatabase) { /* ... */ }
+
+// Level 2: narrow traits + generics when a second impl becomes necessary
+pub trait Store  { fn store(&self, o: Object) -> impl Future<Output = Result<(), DbError>>; }
+pub trait Load   { fn load(&self, id: Id)     -> impl Future<Output = Option<Object>>;      }
+
+pub async fn run_g<D: Store + Load>(db: D) { /* ... */ }
+
+// Level 3: dyn Trait only when generics force unreadable nesting
+pub async fn run_dyn(db: Arc<dyn StoreAndLoad + Send + Sync>) { /* ... */ }
+```
+
+**Rationale**: Concrete types compile the fastest, produce the clearest error messages, and read most directly. Generics buy flexibility at the cost of signature complexity. `dyn Trait` buys heterogeneity at the cost of object-safety constraints and dynamic dispatch. Moving up the ladder is easy; moving down is a breaking change.
+
+**See also**: C-GENERIC, M-DI-HIERARCHY
+
+---
+
+## API-41: Use Generics to Minimize Parameter Assumptions
+
+**Strength**: SHOULD
+
+**Summary**: Replace concrete-type parameters with the narrowest trait bound the function actually needs: `impl IntoIterator<Item = T>` instead of `&[T]`, `impl AsRef<Path>` instead of `&Path`.
+
+```rust
+// ❌ Only accepts Vec<i64>
+fn sum_bad(c: &Vec<i64>) -> i64 { c.iter().sum() }
+
+// ✅ Works on Vec, slice, array, HashSet drain, ranges, ...
+fn sum<I: IntoIterator<Item = i64>>(iter: I) -> i64 { iter.into_iter().sum() }
+
+sum(vec![1, 2, 3]);
+sum([1, 2, 3]);
+sum(1..=10);
+
+// ✅ Generic path parameter accepts &str, String, Path, PathBuf, OsString, ...
+pub fn read_config<P: AsRef<std::path::Path>>(p: P) -> Result<Config, ConfigError> { todo!() }
+```
+
+Don't generalize past what the function actually needs — `fn len<C: std::ops::Index<usize>>` is spurious if the function only calls `.len()`.
+
+**Rationale**: Narrow generic bounds accept every concrete type that satisfies them, with static dispatch and no runtime cost. Monomorphization costs binary size, so don't generalize where it buys nothing.
+
+**See also**: C-GENERIC
+
+---
+
+## API-42: Design Traits for Object Safety When Useful
+
+**Strength**: SHOULD
+
+**Summary**: If a trait might be used as `Box<dyn Trait>` or `&dyn Trait`, make it object-safe. Generic or `Self`-returning methods go behind `where Self: Sized`.
+
+```rust
+pub trait Draw {
+    fn draw(&self, canvas: &mut Canvas);
+    fn bounds(&self) -> Rect;
+}
+let shapes: Vec<Box<dyn Draw>> = vec![Box::new(Circle::new(1.0)), Box::new(Square::new(2.0))];
+
+// Mixed: object-safe core + static-dispatch conveniences
+pub trait Iterator {
+    type Item;
+    fn next(&mut self) -> Option<Self::Item>;                   // object-safe
+
+    fn collect<B: FromIterator<Self::Item>>(self) -> B
+    where Self: Sized,                                          // excluded from dyn
+    { /* ... */ todo!() }
+}
+```
+
+Full trait-design discussion (coherence, blanket impls, associated types) lives in `06-traits.md`.
+
+**Rationale**: Object-safe traits enable heterogeneous collections and dynamic dispatch — `dyn Draw` over shapes, `dyn Write` over sinks. Losing the ability is a one-way door; reclaiming it later is a breaking change.
+
+**See also**: C-OBJECT
+
+---
+
+## API-43: Sealed Traits Control the Implementation Surface
 
 **Strength**: CONSIDER
 
-**Summary**: `-> impl Trait` hides the concrete type — use when that's desirable.
+**Summary**: When a trait is intended for internal implementors only (wire formats, backends, primitive selectors), seal it with a private supertrait. Document the seal.
 
 ```rust
-// ✅ GOOD: Complex iterator type hidden
-pub fn items(&self) -> impl Iterator<Item = &Item> {
+mod private { pub trait Sealed {} }
+
+/// A database backend.
+///
+/// This trait is sealed; implementing it outside `my_crate` is not supported.
+pub trait Backend: private::Sealed {
+    fn execute(&self, query: &str) -> Result<(), DbError>;
+    fn execute_batch(&self, queries: &[&str]) -> Result<(), DbError> {
+        queries.iter().try_for_each(|q| self.execute(q))
+    }
+}
+
+pub struct Postgres;
+impl private::Sealed for Postgres {}
+impl Backend for Postgres { fn execute(&self, _: &str) -> Result<(), DbError> { Ok(()) } }
+```
+
+**Rationale**: A sealed trait can gain required methods in a non-breaking release (only internal impls need updating). The tradeoff: downstream crates can't implement the trait, so seal only what is genuinely a closed set.
+
+**See also**: C-SEALED
+
+---
+
+## API-44: Hide Return-Type Noise With Newtypes or `impl Trait`
+
+**Strength**: SHOULD
+
+**Summary**: Don't return `Enumerate<Skip<I>>` or other adapter chains from a public API — wrap in a newtype or use `-> impl Trait` so the concrete type is not part of the contract.
+
+```rust
+use std::iter::{Enumerate, Skip};
+
+// ❌ Exposes the adapter stack — changing it is a breaking change
+pub fn transform_leaky<I: Iterator>(i: I) -> Enumerate<Skip<I>> { i.skip(3).enumerate() }
+
+// ✅ Newtype wraps the chain — can be Debug, Clone, combined with other trait bounds
+pub struct Transform<I>(Enumerate<Skip<I>>);
+impl<I: Iterator> Iterator for Transform<I> {
+    type Item = (usize, I::Item);
+    fn next(&mut self) -> Option<Self::Item> { self.0.next() }
+}
+pub fn transform<I: Iterator>(i: I) -> Transform<I> { Transform(i.skip(3).enumerate()) }
+
+// ✅ impl Trait — even more opaque; good for closures and simple cases
+pub fn items(&self) -> impl Iterator<Item = &Item> + '_ {
     self.data.iter().filter(|i| i.is_active())
 }
 
-// ✅ GOOD: Closure type (unnameable)
-pub fn make_adder(n: i32) -> impl Fn(i32) -> i32 {
-    move |x| x + n
-}
-
-// ❌ QUESTIONABLE: Simple type hidden unnecessarily
-pub fn get_names(&self) -> impl Iterator<Item = &str> {
-    self.names.iter().map(String::as_str)
-}
-
-// ✅ BETTER: Return concrete type when simple
-pub fn get_names(&self) -> std::slice::Iter<'_, String> {
-    self.names.iter()
-}
-
-// Or document the hidden type:
-/// Returns an iterator over active items.
-/// 
-/// The concrete iterator type is an implementation detail.
-pub fn items(&self) -> impl Iterator<Item = &Item> {
-    // ...
-}
+pub fn make_adder(n: i32) -> impl Fn(i32) -> i32 { move |x| x + n }
 ```
+
+`impl Trait` trades expressiveness for concision: it cannot name the type for consumers (so they can't put it in a `struct` field) and cannot express trait combinations that aren't in the signature (`impl Iterator<Item=T> + Debug + Clone` is possible, but unwieldy).
+
+**Rationale**: A visible adapter stack freezes implementation choices at the API boundary. A newtype gives you room to change the underlying pipeline without breaking callers. `impl Trait` is even tighter when the type need not be named.
+
+**See also**: C-NEWTYPE-HIDE
 
 ---
 
-## API-54: Use bitflags for Flag Sets
+## API-45: Extension Traits for Foreign Types
 
-**Strength**: MUST
+**Strength**: CONSIDER
 
-**Summary**: Use the `bitflags` crate for sets of boolean flags, not enums.
+**Summary**: To add methods to a type defined in another crate (including std), declare a trait with the methods and implement it for the foreign type. Name it with an `Ext` suffix.
 
 ```rust
-use bitflags::bitflags;
-
-// Good - bitflags for multiple flags
-bitflags! {
-    pub struct OpenOptions: u32 {
-        const READ = 0b0001;
-        const WRITE = 0b0010;
-        const CREATE = 0b0100;
-        const TRUNCATE = 0b1000;
-    }
+/// Extension methods for [`Option<String>`].
+pub trait OptionStringExt {
+    /// Returns `true` if this contains a non-empty string.
+    fn is_non_empty(&self) -> bool;
+    /// Returns the string, defaulting to empty.
+    fn unwrap_or_empty(self) -> String;
 }
 
-pub fn open(path: &Path, options: OpenOptions) -> Result<File> {
-    if options.contains(OpenOptions::READ) {
-        // Handle read
-    }
-    if options.contains(OpenOptions::WRITE) {
-        // Handle write
-    }
-    // ...
+impl OptionStringExt for Option<String> {
+    fn is_non_empty(&self) -> bool       { self.as_ref().is_some_and(|s| !s.is_empty()) }
+    fn unwrap_or_empty(self) -> String   { self.unwrap_or_default() }
 }
 
-// Usage - combine flags with |
-open(path, OpenOptions::READ | OpenOptions::WRITE)?;
-
-// Bad - enum can only represent one choice
-pub enum OpenOption {
-    Read,
-    Write,
-    Create,
-    Truncate,
-}
-
-// Can't represent "read AND write"
+// Downstream:
+// use my_crate::OptionStringExt;
+// name.is_non_empty();
 ```
 
-**Rationale**: Bitflags efficiently represent combinations of boolean flags and provide a type-safe, ergonomic API.
-
-**See also**: C-BITFLAG guideline
+**Rationale**: The orphan rule prevents inherent-method additions to foreign types; extension traits are the safe, scoped alternative. Users opt in via `use`, so there's no risk of accidental override.
 
 ---
 
-## API-55: Use Custom Types, Not bool or Option
+## API-46: Don't Leak External Types Into Public APIs
 
 **Strength**: SHOULD
 
-**Summary**: Prefer explicit enums or structs over bool/Option parameters when the meaning isn't immediately obvious.
+**Summary**: Prefer `std` types at the API boundary. If you expose a type from a third-party crate in a public signature, that crate becomes a public dependency — pinning you to its semver and blocking your 1.0.
 
 ```rust
-// Good - explicit types convey meaning
-pub enum Size {
-    Small,
-    Medium,
-    Large,
-}
+// ❌ Exposes url::Url in the public surface — url is now a public dep
+pub fn request(url: url::Url) -> Response { /* ... */ todo!() }
 
-pub enum Shape {
-    Round,
-    Square,
-}
+// ✅ Accept a string and parse internally, or expose your own type
+pub fn request(url: &str) -> Result<Response, UrlError> { /* ... */ todo!() }
 
-pub fn create_widget(size: Size, shape: Shape) -> Widget {
-    // Clear what each parameter means
-}
-
-let w = create_widget(Size::Large, Shape::Round);
-
-// Bad - unclear booleans
-pub fn create_widget_bad(large: bool, round: bool) -> Widget {
-    // What does each bool mean? Have to check docs
-}
-
-let w = create_widget_bad(true, false);  // What does this mean?
-
-// Good - enum instead of Option when meaning is specific
-pub enum Validation {
-    Strict,
-    Lenient,
-}
-
-pub fn parse(input: &str, validation: Validation) -> Result<Data> { /* ... */ }
-
-// Bad - Option doesn't convey the meaning clearly
-pub fn parse_bad(input: &str, strict: Option<bool>) -> Result<Data> { /* ... */ }
+// ✅ If the external type is genuinely the boundary (e.g., serde), feature-gate it
+#[cfg(feature = "serde")]
+pub fn from_value(v: serde_json::Value) -> Result<Self, DeserError> { todo!() }
 ```
 
-**Rationale**: Custom types make code self-documenting and easier to extend. Adding a third size or shape is straightforward with enums.
+Watch out for sneaky public dependencies: `impl From<other_crate::Error> for MyError` makes `other_crate` public even if the variant holding it is private.
 
-**See also**: C-CUSTOM-TYPE guideline
+**Rationale**: A stable (>= 1.0) crate must have only stable public dependencies. Leaked types also fragment the ecosystem — if two crates expose different major versions of the same dependency, their types are incompatible.
+
+**See also**: C-STABLE, M-DONT-LEAK-TYPES
 
 ---
 
-## API-56: Use Generics to Minimize Assumptions
+## API-47: Macros Mirror Rust Syntax
 
 **Strength**: SHOULD
 
-**Summary**: Prefer generic type parameters with trait bounds over concrete types to maximize reusability.
+**Summary**: Macro input should look like the Rust code it produces: use `struct`, `enum`, `const`, and punctuation (semicolons for constants, commas for arguments) that match the output. Support attributes, visibility, and arbitrary scopes.
 
 ```rust
-use std::io::Write;
-
-// Good - generic over any writer
-pub fn write_header<W: Write>(writer: W, header: &Header) -> io::Result<()> {
-    // Works with files, network sockets, in-memory buffers, etc.
-}
-
-// Bad - assumes specific type
-pub fn write_header_bad(writer: &mut File, header: &Header) -> io::Result<()> {
-    // Only works with File, can't use with Vec<u8> or TcpStream
-}
-
-// Good - generic over iteration
-pub fn process<I>(items: I)
-where
-    I: IntoIterator<Item = Data>,
-{
-    for item in items {
-        // Process item
+// ✅ Syntax mirrors the generated output
+bitflags::bitflags! {
+    #[derive(Default, Debug)]
+    pub struct Flags: u8 {
+        #[cfg(windows)] const CONTROL = 0b0001;
+        #[cfg(unix)]    const TERMINAL = 0b0010;
+        const COMMON = 0b0100;
     }
 }
 
-// Now works with Vec, slice, HashSet, custom collections, etc.
-
-// Good - AsRef for path-like arguments
-pub fn read_config<P: AsRef<Path>>(path: P) -> Result<Config> {
-    let path = path.as_ref();
-    // Works with &str, String, Path, PathBuf, etc.
+// Private variant
+bitflags::bitflags! {
+    struct PrivateFlags: u8 { const A = 0b0001; }
 }
+
+// ❌ Ad-hoc DSL that users have to memorize
+// flag_struct! { name=Flags ty=u8 A=1 B=2 C=4 }
 ```
 
-**Rationale**: Generics enable reuse across multiple types while maintaining type safety and performance through monomorphization.
+A well-behaved macro:
+- Uses familiar keywords (`struct`, `const`) — **C-EVOCATIVE**
+- Passes attributes through to generated items — **C-MACRO-ATTR**
+- Works at module scope *and* inside functions (avoid `super::` in generated code) — **C-ANYWHERE**
+- Accepts a visibility specifier (`$vis:vis`) — **C-MACRO-VIS**
+- Accepts all `$t:ty` forms: primitives, paths, generics — **C-MACRO-TY**
 
-**See also**: C-GENERIC guideline
+**Rationale**: Users shouldn't have to learn a new micro-language for each macro. If the generated code is Rust, the invocation should feel like writing Rust.
+
+**See also**: C-EVOCATIVE, C-MACRO-ATTR, C-ANYWHERE, C-MACRO-VIS, C-MACRO-TY
 
 ---
 
-## API-57: Use Standard Conversion Traits
-
-**Strength**: MUST
-
-**Summary**: Implement From/TryFrom, AsRef/AsMut for conversions. Never implement Into/TryInto directly.
-
-```rust
-// Good - implement From, get Into for free
-impl From<u16> for u32 {
-    fn from(small: u16) -> Self {
-        small as u32
-    }
-}
-
-// Good - TryFrom for fallible conversions
-use std::convert::TryFrom;
-
-impl TryFrom<u32> for u16 {
-    type Error = std::num::TryFromIntError;
-
-    fn try_from(large: u32) -> Result<Self, Self::Error> {
-        u16::try_from(large)
-    }
-}
-
-// Good - AsRef for flexible APIs
-fn open_file<P: AsRef<Path>>(path: P) -> io::Result<File> {
-    File::open(path.as_ref())
-}
-
-// Now can call with &str, String, Path, PathBuf, etc.
-open_file("file.txt");
-open_file(String::from("file.txt"));
-
-// Bad - implementing Into directly
-impl Into<u32> for MyType {  // Don't do this!
-    fn into(self) -> u32 { /* ... */ }
-}
-
-// Instead, implement From:
-impl From<MyType> for u32 {
-    fn from(value: MyType) -> u32 { /* ... */ }
-}
-```
-
-**Rationale**: From/Into have blanket implementations. Implementing From automatically provides Into for free.
-
-**See also**: C-CONV-TRAITS guideline
-
----
-
-## API-58: Validate Arguments
-
-**Strength**: MUST
-
-**Summary**: Functions should validate their inputs and enforce invariants.
-
-```rust
-// Good - static validation through types
-pub struct NonZeroU32(u32);
-
-impl NonZeroU32 {
-    pub fn new(value: u32) -> Option<Self> {
-        if value != 0 {
-            Some(NonZeroU32(value))
-        } else {
-            None
-        }
-    }
-
-    pub fn get(self) -> u32 {
-        self.0
-    }
-}
-
-// Good - dynamic validation with clear errors
-pub fn connect(addr: &str, port: u16) -> Result<Connection, ConnectError> {
-    if port == 0 {
-        return Err(ConnectError::InvalidPort);
-    }
-
-    if addr.is_empty() {
-        return Err(ConnectError::InvalidAddress);
-    }
-
-    // Proceed with connection
-}
-
-// Good - opt-out validation with _unchecked
-pub fn get(&self, index: usize) -> Option<&T> {
-    if index < self.len() {
-        Some(&self.items[index])
-    } else {
-        None
-    }
-}
-
-pub unsafe fn get_unchecked(&self, index: usize) -> &T {
-    // No bounds checking - caller must ensure validity
-    &self.items[index]
-}
-```
-
-**Rationale**: Rust enforces correctness. Validating inputs catches bugs early and prevents invalid states.
-
-**See also**: C-VALIDATE guideline
-
----
-
-## API-59: Validate Early, Fail Fast
+## API-48: Crate-Level Documentation and Metadata
 
 **Strength**: SHOULD
 
-**Summary**: Check invariants at API boundaries, not deep in implementation.
+**Summary**: `lib.rs` starts with a `//!` module doc: overview, one motivating example, pointers to the main entry types. `Cargo.toml` carries full metadata for discoverability on crates.io.
 
 ```rust
-// ❌ BAD: Error discovered deep in call stack
-pub fn process_batch(items: Vec<Item>) -> Result<(), ProcessError> {
-    for item in items {
-        self.process_one(item)?;  // Might fail on item 500
-    }
-    Ok(())
-}
+//! # my_crate
+//!
+//! `my_crate` parses and validates foo configurations.
+//!
+//! ## Quick start
+//!
+//! ```
+//! use my_crate::Config;
+//! # fn main() -> Result<(), Box<dyn std::error::Error>> {
+//! let cfg = Config::from_str("host = 'example.com'\nport = 8080\n")?;
+//! assert_eq!(cfg.host(), "example.com");
+//! # Ok(())
+//! # }
+//! ```
+//!
+//! See [`Config`] for the full API.
+```
 
-// ✅ GOOD: Validate upfront
-pub fn process_batch(items: Vec<Item>) -> Result<(), ProcessError> {
-    // Validate all items first
-    for (i, item) in items.iter().enumerate() {
-        item.validate()
-            .map_err(|e| ProcessError::InvalidItem { index: i, source: e })?;
-    }
-    
-    // Now process (won't fail validation)
-    for item in items {
-        self.process_one_unchecked(item);
-    }
-    Ok(())
-}
+```toml
+[package]
+name = "my_crate"
+version = "0.3.0"
+authors = ["Jane Doe <jane@example.com>"]
+license = "MIT OR Apache-2.0"
+description = "Parses and validates foo configurations."
+repository = "https://github.com/jane/my_crate"
+keywords = ["config", "foo", "parsing"]
+categories = ["config", "parser-implementations"]
+readme = "README.md"
+# Only set `documentation` if docs are hosted off docs.rs.
+# Only set `homepage` if there's a separate site distinct from the repo.
+```
 
-// ✅ GOOD: Use types that enforce validity
-pub struct ValidatedItem { /* private fields */ }
+Tag every release with an annotated tag (`git tag -a v0.3.0 -m "..."`), and maintain `CHANGELOG.md` with breaking changes clearly called out (per RFC 1105).
 
-impl ValidatedItem {
-    pub fn new(item: Item) -> Result<Self, ValidationError> {
-        // Validate here, once
-        todo!()
-    }
-}
+**Rationale**: Crate-level docs are the first page users see on docs.rs. Missing metadata means the crate doesn't surface in search. Annotated tags survive operations that strip lightweight tags.
 
-pub fn process_batch(items: Vec<ValidatedItem>) {
-    // Can't receive invalid items!
-    for item in items {
-        self.process_one(item);
+**See also**: C-CRATE-DOC, C-METADATA, C-RELNOTES
+
+---
+
+## API-49: License Dual MIT OR Apache-2.0
+
+**Strength**: SHOULD
+
+**Summary**: Unless you have a specific reason to choose otherwise, dual-license under MIT OR Apache-2.0 — the Rust project's own licensing and the ecosystem default.
+
+```toml
+[package]
+license = "MIT OR Apache-2.0"
+```
+
+Include both `LICENSE-MIT` and `LICENSE-APACHE` in the repo root. Add a contribution clause to the README:
+
+```text
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
+dual licensed as above, without any additional terms or conditions.
+```
+
+**Rationale**: MIT-only is permissive but lacks patent provisions; Apache-2.0-only imposes restrictions that some users reject. Dual licensing gives downstream consumers the choice. Apache-2.0-only is explicitly *not* recommended for maximum compatibility.
+
+**See also**: C-PERMISSIVE
+
+---
+
+## API-50: FFI Escape Hatches for Native Handles
+
+**Strength**: SHOULD
+
+**Summary**: Types that wrap an OS handle or FFI pointer must provide `unsafe fn from_native(h: Native) -> Self` plus `fn into_native(self) -> Native` and `fn to_native(&self) -> Native`. Document the safety contract on `from_native`.
+
+```rust
+pub struct Handle { raw: std::os::raw::c_int /* HNATIVE */ }
+
+impl Handle {
+    pub fn new() -> Self { /* ... */ todo!() }
+
+    /// Wrap a native handle obtained elsewhere.
+    ///
+    /// # Safety
+    ///
+    /// * `raw` must be a valid, currently-open handle.
+    /// * The handle must not be closed by another path while this wrapper is live.
+    /// * Ownership of `raw` is transferred to the returned `Handle`.
+    pub unsafe fn from_native(raw: std::os::raw::c_int) -> Self { Self { raw } }
+
+    pub fn into_native(self) -> std::os::raw::c_int {
+        let raw = self.raw;
+        std::mem::forget(self);     // don't run Drop
+        raw
     }
+
+    pub fn to_native(&self) -> std::os::raw::c_int { self.raw }
 }
 ```
 
----
+**Rationale**: Systems code often sources handles from platform APIs the library doesn't wrap. Without escape hatches, users are forced into unsafe transmutes. With them, interop is explicit and the safety contract is documented. FFI-specific patterns (`#[repr(C)]`, UTF-8 round-tripping) live in `09-unsafe-ffi.md`.
+
+**See also**: M-ESCAPE-HATCHES
+
+
+## API Design Checklist
+
+Before publishing a public type or function, walk this list:
+
+```rust
+// 1. Name — RFC 430 casing? verb-object-error for errors? feature names bare?
+// 2. Parameters — borrow vs own matches actual need? impl AsRef / Read / RangeBounds?
+// 3. Return type — compound via tuple/struct, never out-param (except buffer fill)?
+// 4. Errors — concrete enum? Error + Display + Debug + Send + Sync? not `()`?
+// 5. Traits implemented — Debug? Clone? PartialEq? Default? Send + Sync?
+// 6. Construction — `new` inherent? builder when 3+ optional params?
+// 7. Validation — static type first, then Result, then debug_assert!, then _unchecked?
+// 8. Documentation — every pub item? # Errors / # Panics / # Safety as needed? `?` in examples?
+// 9. Hidden details — #[doc(hidden)] on bridging impls? pub(crate) on internals?
+// 10. Future-proofing — sealed traits? newtype-hide on complex returns? no leaked external types?
+```
+
 
 ## Summary Table
 
 | Pattern | Strength | Key Principle |
 |---------|----------|---------------|
-| Builders for 4+ optional params | SHOULD | Prevent constructor explosion |
-| Required params in builder constructor | SHOULD | Compile-time completeness checking |
-| Cascaded initialization | SHOULD | Group related parameters |
-| Don't nest abstractions | MUST | Keep type signatures simple |
-| Avoid smart pointers in APIs | MUST | Hide implementation details |
-| Concrete > Generic > dyn | SHOULD | Escalate abstraction as needed |
-| Accept impl AsRef | SHOULD | Ergonomic without cost |
-| Accept impl RangeBounds | MUST | Use standard range types |
-| Services are cloneable | MUST | Arc<Inner> pattern |
-| Accept impl Read/Write | SHOULD | Sans-IO for composability |
-| Essential methods inherent | MUST | Discoverability |
+| API-01 Abstractions don't visibly nest | SHOULD | Keep public signatures flat |
+| API-02 Accept borrowed, return owned | SHOULD | `&T` in, `T` out |
+| API-03 Accept `impl AsRef<T>` | SHOULD | Ergonomic path/str/bytes params |
+| API-04 Accept `impl Read`/`Write` | SHOULD | Sans-IO for composability |
+| API-05 Accept `impl RangeBounds<T>` | MUST | One signature for all range forms |
+| API-06 Debug on all public types | MUST | Never empty, redact secrets |
+| API-07 Hide smart-pointer wrappers | MUST | `Arc`/`Rc`/`Box` are internal |
+| API-08 Named types over bool/Option | SHOULD | Enums, not ambiguous primitives |
+| API-09 Binary/Octal/Hex for bit types | SHOULD | Bitflag formatting, not quantities |
+| API-10 Builder for 3+ optional params | SHOULD | Chainable, validating `build` |
+| API-11 Required params in builder ctor | SHOULD | Compile-time completeness |
+| API-12 Cascade 4+ required params | SHOULD | Group into named types |
+| API-13 `FromIterator` + `Extend` | MUST | `collect`/`partition`/`unzip` support |
+| API-14 Constructors are static inherent | MUST | `new`, `open`, `with_*`, `from_*` |
+| API-15 `as_`/`to_`/`into_` naming | MUST | Cost + ownership in the name |
+| API-16 Conversions on specific type | SHOULD | Keep general types uncluttered |
+| API-17 Impl `From`, never `Into` | MUST | Blanket `Into` comes free |
+| API-18 Serde behind `serde` feature | SHOULD | Opt-in, exact feature name |
+| API-19 Destructors don't fail or block | MUST | Separate `close` returning `Result` |
+| API-20 Document every public item | MUST | Errors/Panics/Safety, `?` in examples |
+| API-21 Hyperlink doc prose | SHOULD | Intra-doc links, checked by rustdoc |
+| API-22 `#[doc(hidden)]` for plumbing | SHOULD | Hide bridging impls from docs |
+| API-23 Concrete, well-behaved errors | MUST | `Error + Display + Debug + Send + Sync` |
+| API-24 Essential fns are inherent | MUST | Discoverable without trait import |
+| API-25 Methods when receiver is clear | SHOULD | Autoborrow, rustdoc, `use`-free |
+| API-26 Caller controls data placement | SHOULD | No hidden clones, no `Copy`-as-hint |
+| API-27 Expose intermediate results | SHOULD | Don't discard useful byproducts |
+| API-28 No out-parameters | MUST | Tuples/structs — RVO handles it |
+| API-29 Reader/writer by value | MUST | `&mut R: Read` blanket impl |
+| API-30 Services implement shared Clone | MUST | `Arc<Inner>` pattern |
+| API-31 Smart pointers use static fns | MUST | `Box::into_raw(b)`, not `b.into_raw()` |
+| API-32 Operator overloads unsurprising | MUST | Math-like semantics only |
+| API-33 Getters omit `get_` | SHOULD | `name()`, `name_mut()` |
+| API-34 `iter`/`iter_mut`/`into_iter` | MUST | Plus matching type names |
+| API-35 RFC 430 naming | MUST | `UpperCamelCase`, `snake_case`, etc. |
+| API-36 Bare feature names | SHOULD | `serde`, not `use-serde` |
+| API-37 Newtypes for distinctions | SHOULD | Zero-cost compile-time safety |
+| API-38 Types are `Send` + `Sync` | MUST | Futures especially; assert at compile |
+| API-39 Validate inputs strictly | MUST | Static > runtime > `debug_assert!` > `_unchecked` |
+| API-40 Concrete > generic > `dyn` | SHOULD | Escalate only as needed |
+| API-41 Generics minimize assumptions | SHOULD | `IntoIterator`, `AsRef<Path>` |
+| API-42 Object-safe traits when useful | SHOULD | `where Self: Sized` for extensions |
+| API-43 Sealed traits for closed sets | CONSIDER | Private supertrait |
+| API-44 Hide return-type noise | SHOULD | Newtype or `impl Trait` |
+| API-45 Extension traits for foreign types | CONSIDER | `*Ext` naming |
+| API-46 Don't leak external types | SHOULD | std types at boundaries |
+| API-47 Macros mirror Rust syntax | SHOULD | `struct`, `$vis`, attribute passthrough |
+| API-48 Crate-level docs + metadata | SHOULD | `//!` doc, full `Cargo.toml` |
+| API-49 Dual MIT OR Apache-2.0 | SHOULD | Ecosystem default |
+| API-50 FFI escape hatches | SHOULD | `unsafe from_native`, `into_native`, `to_native` |
+
 
 ## Related Guidelines
 
-- **Type Design**: See `05-type-design.md` for newtype pattern
-- **Error Handling**: See `03-error-handling.md` for Result patterns
-- **Testing**: See `04-ownership-borrowing.md` for mockable patterns
+- **Core Idioms**: See `01-core-idioms.md` for borrowed-type parameters, `Default`, and derive choice.
+- **Error Handling**: See `03-error-handling.md` for error-type anatomy, `#[from]`, and `?` ergonomics.
+- **Ownership and Borrowing**: See `04-ownership-borrowing.md` for how ownership shapes signatures.
+- **Type Design**: See `05-type-design.md` for newtypes, `#[non_exhaustive]`, `bitflags`, struct bounds, and `PhantomData`.
+- **Traits**: See `06-traits.md` for trait coherence, blanket impls, and associated types vs generic params.
+- **Concurrency and Async**: See `07-concurrency-async.md` for `Send`/`Sync` implications and `!Send` futures.
+- **Unsafe and FFI**: See `09-unsafe-ffi.md` for `#[repr(C)]`, FFI string passing, and soundness obligations.
+- **Anti-Patterns**: See `11-anti-patterns.md` for Deref polymorphism and other traps this guide warns against.
+- **Project Structure**: See `12-project-structure.md` for workspace layout, feature organization, and crate splitting.
+- **Documentation**: See `13-documentation.md` for the full rustdoc template.
+
 
 ## External References
 
-- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/)
-- Pragmatic Rust: M-INIT-BUILDER, M-SIMPLE-ABSTRACTIONS, M-SERVICES-CLONE
+- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) — the canonical C-* checklist
+- [Rust API Guidelines Checklist](https://rust-lang.github.io/api-guidelines/checklist.html) — quick reference
+- [RFC 430 — Finalizing naming conventions](https://github.com/rust-lang/rfcs/blob/master/text/0430-finalizing-naming-conventions.md)
+- [RFC 199 — Ownership variants for iterator methods](https://github.com/rust-lang/rfcs/blob/master/text/0199-ownership-variants.md)
+- [RFC 1105 — API evolution (breaking changes)](https://github.com/rust-lang/rfcs/blob/master/text/1105-api-evolution.md)
+- [RFC 1574 — API documentation conventions](https://github.com/rust-lang/rfcs/blob/master/text/1574-more-api-documentation-conventions.md)
+- [RFC 1687 — Crate-level documentation](https://github.com/rust-lang/rfcs/blob/master/text/1687-crates-io-default-ranking.md)
+- [The Cargo Book — Features](https://doc.rust-lang.org/cargo/reference/features.html)
+- [`std::error::Error`](https://doc.rust-lang.org/std/error/trait.Error.html), [`std::convert::From`](https://doc.rust-lang.org/std/convert/trait.From.html), [`std::ops::RangeBounds`](https://doc.rust-lang.org/std/ops/trait.RangeBounds.html)
+- Pragmatic Rust Guidelines: M-SIMPLE-ABSTRACTIONS, M-AVOID-WRAPPERS, M-DI-HIERARCHY, M-INIT-BUILDER, M-INIT-CASCADED, M-SERVICES-CLONE, M-IMPL-ASREF, M-IMPL-RANGEBOUNDS, M-IMPL-IO, M-ESSENTIAL-FN-INHERENT, M-PUBLIC-DEBUG, M-PUBLIC-DISPLAY, M-REGULAR-FN, M-STRONG-TYPES, M-DONT-LEAK-TYPES, M-ESCAPE-HATCHES, M-TYPES-SEND

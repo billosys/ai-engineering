@@ -1,328 +1,178 @@
 # Documentation Guidelines
 
-Best practices for writing excellent Rust documentation with rustdoc.
+Patterns for writing Rust documentation with rustdoc: the mechanics of doc comments and the `#[doc]` attribute, the canonical section structure (`# Examples`, `# Errors`, `# Panics`, `# Safety`), doctest directives and conventions, intra-doc links, re-export inlining, rustdoc lints, and the supporting Cargo metadata that makes a crate discoverable on crates.io and docs.rs.
 
 
-## DC-01: Added
-
-**Strength**: SHOULD
-
-**Summary**: 
-
----
-
-## DC-02: All Public Items Have Examples
+## DC-01: Every Public Item Has Documentation
 
 **Strength**: MUST
 
-**Summary**: Every public function, method, type, trait, and macro should have a rustdoc example.
+**Summary**: Every public function, method, type, trait, macro, and module gets at least a one-sentence summary. Enforce it with `#![warn(missing_docs)]`.
 
 ```rust
-/// Parses a configuration file.
+// ❌ BAD: no documentation
+pub fn process(input: &str) -> Result<Output, Error> {
+    todo!()
+}
+
+// ✅ GOOD: summary sentence is sufficient for simple helpers
+/// Parses `input` and returns the processed output.
+pub fn process(input: &str) -> Result<Output, Error> {
+    todo!()
+}
+```
+
+```rust
+// At the crate root — make the compiler enforce the rule
+#![warn(missing_docs)]
+#![warn(rustdoc::missing_crate_level_docs)]
+```
+
+**Rationale**: Public API without documentation forces readers into the source. `missing_docs` (shared with rustc) and `missing_crate_level_docs` (rustdoc-only) catch the omission at build time. The summary is the contract; if there isn't one yet, there isn't a stable API yet.
+
+**See also**: DC-02, DC-16
+
+---
+
+## DC-02: `///` Documents the Next Item, `//!` Documents the Enclosing Item
+
+**Strength**: MUST
+
+**Summary**: Use `///` (outer) before an item, and `//!` (inner) at the top of `lib.rs` or a module to document the module/crate itself.
+
+```rust
+// ✅ GOOD: `//!` at the top of lib.rs documents the crate
+//! Fast, ergonomic HTTP client.
+//!
+//! See the [`Client`] type for the main entry point.
+
+/// Documents the function it precedes.
+pub fn connect() { /* ... */ }
+
+// ✅ GOOD: `//!` inside a module documents that module
+pub mod parser {
+    //! Parsers for configuration formats.
+
+    /// Documents `Parser`.
+    pub struct Parser;
+}
+
+// ❌ BAD: `///` at the top of lib.rs documents "the next item"
+// and leaves the crate root undocumented.
+```
+
+**Rationale**: Both forms desugar to `#[doc = "..."]` — `///` to the outer attribute on the following item, `//!` to an inner attribute on the enclosing item. Using the wrong one silently misfiles your documentation.
+
+**See also**: DC-03, DC-26
+
+---
+
+## DC-03: The First Sentence Is ~15 Words on One Line
+
+**Strength**: MUST
+
+**Summary**: The first sentence before the first blank line is the summary shown in module listings and search — keep it to roughly 15 words on a single line.
+
+```rust
+// ✅ GOOD: summary fits on one line
+/// Opens a file in read-only mode at `path`.
+pub fn open_file(path: &str) -> Result<File, Error> { todo!() }
+
+// ❌ BAD: summary wraps to multiple lines, creating widows in listings
+/// Opens a file at the specified path for reading and returns a File handle
+/// that can be used to read the contents of the file from disk.
+pub fn open_file2(path: &str) -> Result<File, Error> { todo!() }
+```
+
+**Rationale**: Rustdoc extracts everything before the first blank line as the summary. If that wraps in the module overview, each item in the list becomes harder to skim. Put detail in a second paragraph.
+
+**See also**: M-FIRST-DOC-SENTENCE, DC-04
+
+---
+
+## DC-04: Use the Canonical Sections
+
+**Strength**: MUST
+
+**Summary**: Use these Markdown H1 sections, in this order: `# Examples`, `# Errors`, `# Panics`, `# Safety`. Include each one when it applies.
+
+```rust
+/// Parses a configuration file at `path`.
 ///
-/// # Arguments
-///
-/// * `path` - Path to the configuration file
+/// Reads the file, parses it as TOML, and validates it against the schema.
 ///
 /// # Examples
 ///
 /// ```
-/// use myapp::parse_config;
-///
 /// # fn main() -> Result<(), Box<dyn std::error::Error>> {
-/// let config = parse_config("config.toml")?;
-/// assert_eq!(config.timeout, 30);
+/// let config = my_crate::parse_config("app.toml")?;
+/// assert_eq!(config.port, 8080);
 /// # Ok(())
 /// # }
 /// ```
+///
+/// # Errors
+///
+/// Returns an error if the file cannot be read, the TOML is malformed,
+/// or a required field is missing.
+///
+/// # Panics
+///
+/// Panics if `path` contains interior NUL bytes.
+pub fn parse_config(path: &str) -> Result<Config, Error> { todo!() }
+```
+
+```rust
+/// Reads a `T` from the raw pointer.
+///
+/// # Safety
+///
+/// `ptr` must be non-null, properly aligned for `T`, and point to a valid,
+/// initialized `T`. If `T` is not `Copy`, the caller must not use the
+/// original value afterwards.
+pub unsafe fn read_ptr<T>(ptr: *const T) -> T { unsafe { ptr.read() } }
+```
+
+**Rationale**: Consistent section names are how the whole ecosystem (including lint tooling like `clippy::missing_errors_doc`, `missing_panics_doc`, and `missing_safety_doc`) finds failure-mode documentation. Follow the order: Examples, Errors, Panics, Safety.
+
+**See also**: M-CANONICAL-DOCS, C-FAILURE, DC-05, DC-06, DC-07
+
+---
+
+## DC-05: Document Every `Result` With an `# Errors` Section
+
+**Strength**: MUST
+
+**Summary**: Every function returning `Result` lists the conditions under which it returns `Err` and what the error reflects.
+
+```rust
+/// Reads exactly `n` bytes from `reader` into `buf`.
 ///
 /// # Errors
 ///
 /// Returns an error if:
-/// - The file doesn't exist or can't be read
-/// - The file contains invalid TOML syntax
-/// - Required fields are missing
-pub fn parse_config(path: &str) -> Result<Config, Error> {
-    // ...
-}
-
-/// A connection to a database.
-///
-/// # Examples
-///
-/// ```
-/// use mydb::Connection;
-///
-/// # fn main() -> Result<(), Box<dyn std::error::Error>> {
-/// let conn = Connection::open("database.db")?;
-/// conn.execute("CREATE TABLE users (id INTEGER, name TEXT)")?;
-/// # Ok(())
-/// # }
-/// ```
-pub struct Connection {
-    // ...
-}
-
-/// Iterator over the elements of a collection.
-///
-/// # Examples
-///
-/// ```
-/// use mycollection::MyVec;
-///
-/// let vec = MyVec::from([1, 2, 3, 4, 5]);
-/// 
-/// for item in vec.iter() {
-///     println!("{}", item);
-/// }
-///
-/// // Or collect into a Vec
-/// let items: Vec<_> = vec.iter().collect();
-/// assert_eq!(items, vec![&1, &2, &3, &4, &5]);
-/// ```
-pub struct Iter<'a, T> {
-    // ...
+/// - The reader reaches EOF before `n` bytes have been read
+///   ([`io::ErrorKind::UnexpectedEof`]).
+/// - An I/O error occurs during reading (propagated from `reader`).
+pub fn read_exact<R: std::io::Read>(reader: &mut R, buf: &mut [u8]) -> std::io::Result<()> {
+    reader.read_exact(buf)
 }
 ```
 
-```rust
-/// Example with error handling using ?
-///
-/// ```
-/// # use std::error::Error;
-/// # fn main() -> Result<(), Box<dyn Error>> {
-/// let result = some_operation()?;
-/// assert_eq!(result, expected_value);
-/// # Ok(())
-/// # }
-/// ```
+**Rationale**: Users need to know which variants they have to handle and which causes are retryable. Empty "Errors" sections or "returns an error if something goes wrong" are worse than nothing.
 
-/// Example with setup code hidden from docs
-///
-/// ```
-/// use mylib::Widget;
-///
-/// # let window = create_test_window();
-/// # let canvas = window.canvas();
-/// let widget = Widget::new();
-/// widget.draw(&mut canvas);
-/// # drop(window);
-/// ```
-```
-
-**Rationale**: Examples show how to use the API and serve as documentation tests.
-
-**See also**: C-EXAMPLE
+**See also**: C-FAILURE, DC-15, EH guide
 
 ---
 
-## DC-03: Avoid Over-Formatting
-
-**Strength**: SHOULD
-
-**Summary**: Minimize use of bold, headers, and bullets in documentation; prefer natural prose.
-
-```rust
-// WRONG - over-formatted
-/// **Process** user data
-///
-/// ## Features
-/// - Validates input
-/// - **Normalizes** data
-/// - Stores in database
-///
-/// ## Returns
-/// `Result<User, Error>`
-pub fn process_user(data: UserData) -> Result<User, Error> { }
-
-// CORRECT - natural prose
-/// Processes user data by validating input, normalizing fields, and storing
-/// the result in the database.
-///
-/// Returns the created user record or an error if validation fails.
-pub fn process_user(data: UserData) -> Result<User, Error> { }
-
-// Lists are OK when actually listing items
-/// Supported formats:
-/// - TOML
-/// - JSON
-/// - YAML
-pub fn parse_config(path: &Path) -> Config { }
-```
-
-**Rationale**: Heavy formatting makes documentation feel like a marketing page rather than technical reference. Natural prose is more readable.
-
-**See also**: M-FIRST-DOC-SENTENCE
-
----
-
-## DC-04: Changed
-
-**Strength**: SHOULD
-
-**Summary**: 
-
-**Rationale**: Clear changelog helps users understand what changed and whether to upgrade.
-
-**See also**: C-RELNOTES
-
----
-
-## DC-05: Crate Docs Are Thorough With Examples
+## DC-06: Document Every Panic With a `# Panics` Section
 
 **Strength**: MUST
 
-**Summary**: Every crate should have comprehensive crate-level documentation explaining purpose, usage, and providing examples.
+**Summary**: If the function can panic for any reason other than a caller-provided closure misbehaving, list the conditions.
 
 ```rust
-//! # My HTTP Client
-//!
-//! A fast, ergonomic HTTP client for Rust.
-//!
-//! ## Features
-//!
-//! - Async/await support with tokio
-//! - Automatic retries and timeouts
-//! - Cookie management
-//! - Connection pooling
-//!
-//! ## Quick Start
-//!
-//! ```rust
-//! use my_http::Client;
-//!
-//! # async fn example() -> Result<(), Box<dyn std::error::Error>> {
-//! let client = Client::new();
-//! let response = client.get("https://api.example.com/data").await?;
-//! println!("Status: {}", response.status());
-//! # Ok(())
-//! # }
-//! ```
-//!
-//! ## Configuration
-//!
-//! Customize the client with a builder:
-//!
-//! ```rust
-//! use my_http::{Client, Duration};
-//!
-//! let client = Client::builder()
-//!     .timeout(Duration::from_secs(30))
-//!     .max_retries(3)
-//!     .build();
-//! ```
-//!
-//! ## Error Handling
-//!
-//! All fallible operations return `Result<T, Error>`:
-//!
-//! ```rust
-//! use my_http::{Client, Error};
-//!
-//! # async fn example() -> Result<(), Error> {
-//! let client = Client::new();
-//! 
-//! match client.get("https://api.example.com/data").await {
-//!     Ok(response) => println!("Success: {}", response.text().await?),
-//!     Err(Error::Timeout) => println!("Request timed out"),
-//!     Err(Error::Network(e)) => println!("Network error: {}", e),
-//!     Err(e) => println!("Other error: {}", e),
-//! }
-//! # Ok(())
-//! # }
-//! ```
-
-// Crate code follows...
-```
-
-**Rationale**: Crate-level docs are the first thing users see. They should enable quick evaluation and getting started.
-
-**See also**: C-CRATE-DOC
-
----
-
-## DC-06: Deprecated
-
-**Strength**: SHOULD
-
-**Summary**: 
-
----
-
-## DC-07: Doc Aliases
-
-**Strength**: CONSIDER
-
-**Summary**: Add search aliases for discoverability.
-
-```rust
-/// A first-in, first-out queue.
-///
-/// Also known as a FIFO queue or simply a queue.
-#[doc(alias = "FIFO")]
-#[doc(alias = "queue")]
-pub struct Queue<T> { /* ... */ }
-
-/// Removes and returns the first element.
-///
-/// This is also known as "dequeue" in some contexts.
-#[doc(alias = "dequeue")]
-#[doc(alias = "pop_front")]
-pub fn pop(&mut self) -> Option<T> { todo!() }
-
-// Users can now find Queue by searching:
-// - Queue
-// - FIFO
-// - queue
-```
-
----
-
-## DC-08: Document All Significant Changes
-
-**Strength**: MUST
-
-**Summary**: Maintain a CHANGELOG.md documenting all user-visible changes.
-
----
-
-## DC-09: Document Errors, Panics, and Safety
-
-**Strength**: MUST
-
-**Summary**: Use "Errors", "Panics", and "Safety" sections to document failure conditions.
-
-```rust
-/// Reads exactly `n` bytes from the reader.
-///
-/// # Arguments
-///
-/// * `n` - Number of bytes to read
-///
-/// # Errors
-///
-/// This function returns an error if:
-/// - The reader reaches EOF before reading `n` bytes
-/// - An I/O error occurs during reading
-///
-/// # Examples
-///
-/// ```
-/// use std::io::Read;
-/// # use std::error::Error;
-/// # fn main() -> Result<(), Box<dyn Error>> {
-/// let mut reader = "hello world".as_bytes();
-/// let mut buffer = [0u8; 5];
-/// read_exact(&mut reader, &mut buffer, 5)?;
-/// assert_eq!(&buffer, b"hello");
-/// # Ok(())
-/// # }
-/// ```
-pub fn read_exact<R: Read>(reader: &mut R, buf: &mut [u8], n: usize) -> io::Result<()> {
-    // ...
-}
-
-/// Inserts an element at the given position.
+/// Inserts `element` at `index`, shifting later elements right.
 ///
 /// # Panics
 ///
@@ -330,1284 +180,1063 @@ pub fn read_exact<R: Read>(reader: &mut R, buf: &mut [u8], n: usize) -> io::Resu
 ///
 /// # Examples
 ///
-/// ```
-/// let mut vec = vec![1, 2, 3];
-/// vec.insert(1, 4);
-/// assert_eq!(vec, vec![1, 4, 2, 3]);
-/// ```
-///
-/// Panicking example:
-///
 /// ```should_panic
-/// let mut vec = vec![1, 2, 3];
-/// vec.insert(10, 4);  // Panics!
+/// let mut v = vec![1, 2, 3];
+/// v.insert(10, 4); // index out of bounds
 /// ```
-pub fn insert(&mut self, index: usize, element: T) {
-    assert!(index <= self.len());
-    // ...
-}
-
-/// Reads data from raw memory.
-///
-/// # Safety
-///
-/// Callers must ensure that:
-/// - `ptr` points to valid, initialized memory
-/// - `ptr` is properly aligned for type `T`
-/// - The memory at `ptr` will not be accessed after this call
-/// - If `T` is not `Copy`, the caller must not use the original value
-///
-/// # Examples
-///
-/// ```
-/// # use std::ptr;
-/// let x = 42;
-/// let ptr = &x as *const i32;
-/// 
-/// unsafe {
-///     let value = ptr::read(ptr);
-///     assert_eq!(value, 42);
-/// }
-/// ```
-pub unsafe fn read<T>(ptr: *const T) -> T {
-    // ...
+pub fn insert<T>(v: &mut Vec<T>, index: usize, element: T) {
+    v.insert(index, element);
 }
 ```
 
-**Rationale**: Documenting failure modes helps users write correct code and handle edge cases.
+**Rationale**: A panic in library code terminates the caller's thread. Users can only avoid it if the condition is documented. Exhaustive coverage isn't required (you don't have to warn that a user-supplied `Display` impl could panic), but every panic you *can* describe should be documented.
 
 **See also**: C-FAILURE
 
 ---
 
-## DC-10: Document Sections
-
-**Strength**: SHOULD
-
-**Summary**: Use standard sections for comprehensive documentation.
-
-```rust
-/// Parses a date string into a `DateTime` object.
-///
-/// Accepts dates in ISO 8601 format (YYYY-MM-DD) with optional
-/// time component (HH:MM:SS).
-///
-/// # Arguments
-///
-/// * `input` - A string slice containing the date to parse
-/// * `timezone` - Optional timezone for interpretation
-///
-/// # Returns
-///
-/// A `DateTime` in the specified or UTC timezone.
-///
-/// # Errors
-///
-/// Returns `ParseError::InvalidFormat` if the string doesn't match
-/// the expected format.
-///
-/// Returns `ParseError::OutOfRange` if the date components are invalid
-/// (e.g., month 13).
-///
-/// # Panics
-///
-/// Panics if the system clock is unavailable (extremely rare).
-///
-/// # Examples
-///
-/// ```
-/// use my_crate::parse_date;
-///
-/// let date = parse_date("2024-01-15", None)?;
-/// assert_eq!(date.year(), 2024);
-/// assert_eq!(date.month(), 1);
-/// assert_eq!(date.day(), 15);
-/// # Ok::<(), my_crate::ParseError>(())
-/// ```
-///
-/// With timezone:
-///
-/// ```
-/// use my_crate::{parse_date, Timezone};
-///
-/// let date = parse_date("2024-01-15", Some(Timezone::EST))?;
-/// # Ok::<(), my_crate::ParseError>(())
-/// ```
-///
-/// # See Also
-///
-/// * [`parse_datetime`] - For full datetime parsing
-/// * [`DateTime::parse`] - The underlying parsing method
-pub fn parse_date(input: &str, timezone: Option<Timezone>) -> Result<DateTime, ParseError> {
-    todo!()
-}
-```
-
----
-
-## DC-11: Document Trait Implementors
-
-**Strength**: SHOULD
-
-**Summary**: Document trait requirements and provide implementation guidance.
-
-```rust
-/// A trait for types that can be converted to bytes.
-///
-/// # Implementing
-///
-/// Implementations should ensure that:
-///
-/// 1. The returned bytes represent the value completely
-/// 2. The encoding is deterministic (same input → same output)
-/// 3. The encoding is reasonably efficient
-///
-/// # Examples
-///
-/// Implementing for a custom type:
-///
-/// ```
-/// use my_crate::ToBytes;
-///
-/// struct Point { x: i32, y: i32 }
-///
-/// impl ToBytes for Point {
-///     fn to_bytes(&self) -> Vec<u8> {
-///         let mut bytes = Vec::with_capacity(8);
-///         bytes.extend_from_slice(&self.x.to_le_bytes());
-///         bytes.extend_from_slice(&self.y.to_le_bytes());
-///         bytes
-///     }
-/// }
-/// ```
-///
-/// # Provided Implementations
-///
-/// This trait is implemented for:
-///
-/// * All primitive integer types
-/// * `String` and `&str` (as UTF-8)
-/// * `Vec<u8>` and `&[u8]` (identity)
-pub trait ToBytes {
-    /// Converts this value to a byte vector.
-    fn to_bytes(&self) -> Vec<u8>;
-}
-```
-
----
-
-## DC-12: Documentation Checklist
-
-**Strength**: SHOULD
-
-**Summary**: 
-
-```rust
-/// Summary sentence in one line, approximately 15 words maximum.
-///
-/// Extended description providing more context about what this item does,
-/// when to use it, and how it fits into the larger system.
-///
-/// # Examples
-///
-/// ```
-/// use my_crate::Item;
-///
-/// let item = Item::new();
-/// assert!(item.is_valid());
-/// ```
-///
-/// # Errors
-///
-/// (For Result-returning functions)
-/// Returns an error if...
-///
-/// # Panics
-///
-/// (When applicable)
-/// Panics if...
-///
-/// # Safety
-///
-/// (For unsafe functions - required)
-/// The caller must ensure...
-pub fn item() -> Result<T, E> {
-    // ...
-}
-```
-
----
-
-## DC-13: Documentation Has Canonical Sections
+## DC-07: `unsafe fn` Requires a `# Safety` Section
 
 **Strength**: MUST
 
-**Summary**: Use standard sections in a consistent order for comprehensive documentation.
+**Summary**: Every `unsafe fn` must document the invariants the caller must uphold. No exceptions.
 
 ```rust
-/// Parses a configuration file from the given path.
-///
-/// This function reads the file and parses it as TOML format. The configuration
-/// is validated against the expected schema.
-///
-/// # Examples
-///
-/// ```
-/// use my_crate::parse_config;
-///
-/// let config = parse_config("app.toml")?;
-/// assert_eq!(config.timeout, Duration::from_secs(30));
-/// ```
-///
-/// # Errors
-///
-/// Returns an error if:
-/// - The file cannot be read (I/O error)
-/// - The file contains invalid TOML syntax
-/// - Required configuration fields are missing
-///
-/// # Panics
-///
-/// Panics if the path contains invalid Unicode characters.
+/// Reads `T` from `ptr` without moving or dropping it.
 ///
 /// # Safety
 ///
-/// (Only for unsafe functions)
-/// The caller must ensure that the file path points to a valid location.
-pub fn parse_config(path: &Path) -> Result<Config, ConfigError> {
-    // ...
-}
+/// The caller must ensure that:
+/// * `ptr` is non-null and properly aligned for `T`.
+/// * `ptr` points to a valid, initialized instance of `T`.
+/// * The memory referenced by `ptr` is valid for reads of `size_of::<T>()`
+///   bytes.
+/// * If `T` is not `Copy`, the caller does not use the value at `ptr`
+///   afterwards.
+pub unsafe fn read<T>(ptr: *const T) -> T { unsafe { ptr.read() } }
 ```
 
-**See also**: M-CANONICAL-DOCS, C-FAILURE
+**Rationale**: Without a `# Safety` section an `unsafe fn` cannot be used soundly. `clippy::missing_safety_doc` catches the omission; enable it. The corresponding `// SAFETY:` comment in the *caller* site should be able to cite this list directly.
+
+**See also**: C-FAILURE, guide 09 (unsafe-ffi)
 
 ---
 
-## DC-14: Documentation Tests as Integration Tests
+## DC-08: Every Public Item Has an Example
 
 **Strength**: SHOULD
 
-**Summary**: Use doc tests to ensure examples stay correct.
+**Summary**: Give every public function, method, type, trait, and macro an `# Examples` section that shows *why* you'd call it, not just *how*.
 
 ```rust
-/// Adds two numbers.
+/// Returns a builder for a new HTTP client.
 ///
 /// # Examples
 ///
 /// ```
-/// # // Hidden setup lines start with #
-/// use my_crate::add;
-///
-/// assert_eq!(add(2, 2), 4);
-/// assert_eq!(add(-1, 1), 0);
+/// use my_http::Client;
+/// # use std::time::Duration;
+/// let client = Client::builder()
+///     .timeout(Duration::from_secs(30))
+///     .build();
+/// let _ = client;
 /// ```
-///
-/// Overflow handling:
-///
-/// ```
-/// use my_crate::add;
-///
-/// // Large numbers work correctly
-/// assert_eq!(add(i32::MAX - 1, 1), i32::MAX);
-/// ```
-///
-/// ```should_panic
-/// use my_crate::add;
-///
-/// // This panics on overflow in debug builds
-/// add(i32::MAX, 1);
-/// ```
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b  // Note: This doesn't actually panic, example is illustrative
-}
-
-// Run doc tests with: cargo test --doc
+pub fn builder() -> ClientBuilder { ClientBuilder::new() }
 ```
+
+**Rationale**: Examples are the most-read part of any docs page and the most likely to be copied. A mechanical "call the function" example teaches nothing; a motivating example ("with a custom timeout", "collected into a Vec") is what users actually need. Examples are also doctests — they compile and run as part of `cargo test`, so they keep working as the API evolves.
+
+**See also**: C-EXAMPLE, DC-09, DC-10
 
 ---
 
-## DC-15: Error Type Documentation
-
-**Strength**: SHOULD
-
-**Summary**: Document error types with causes and handling guidance.
-
-```rust
-/// Errors that can occur during parsing.
-///
-/// # Handling
-///
-/// Most parsing errors are recoverable. Check the error variant
-/// to determine appropriate handling:
-///
-/// ```
-/// use my_crate::{parse, ParseError};
-///
-/// match parse(input) {
-///     Ok(data) => process(data),
-///     Err(ParseError::InvalidSyntax { line, .. }) => {
-///         eprintln!("Syntax error on line {}", line);
-///     }
-///     Err(ParseError::Io(e)) => {
-///         eprintln!("I/O error: {}", e);
-///     }
-///     Err(e) => {
-///         eprintln!("Unexpected error: {}", e);
-///     }
-/// }
-/// # fn process(_: ()) {}
-/// # let input = "";
-/// ```
-#[derive(Debug, thiserror::Error)]
-pub enum ParseError {
-    /// Invalid syntax in the input.
-    ///
-    /// Contains the line number and column where the error was detected.
-    #[error("invalid syntax at {line}:{column}: {message}")]
-    InvalidSyntax {
-        line: usize,
-        column: usize,
-        message: String,
-    },
-    
-    /// The input ended unexpectedly.
-    ///
-    /// This usually means the input is incomplete (e.g., unclosed bracket).
-    #[error("unexpected end of input, expected {expected}")]
-    UnexpectedEof { expected: String },
-    
-    /// An I/O error occurred while reading input.
-    #[error("I/O error: {0}")]
-    Io(#[from] std::io::Error),
-}
-```
-
----
-
-## DC-16: Every Public Item Needs Documentation
+## DC-09: Examples Use `?`, Not `unwrap` or `try!`
 
 **Strength**: MUST
 
-**Summary**: Document all public items with at least a one-line summary.
+**Summary**: Example code is copied verbatim. Use `?` inside a hidden `fn main() -> Result<...>` or with a trailing hidden `Ok::<(), E>(())`, not `unwrap`.
 
 ```rust
-// ❌ BAD: No documentation
-pub fn process(input: &str) -> Result<Output, Error> {
-    todo!()
-}
-
-// ✅ GOOD: Clear, concise documentation
-/// Processes the input string and returns parsed output.
-///
-/// # Errors
-///
-/// Returns an error if the input is malformed or empty.
-pub fn process(input: &str) -> Result<Output, Error> {
-    todo!()
-}
-
-// ✅ GOOD: Module-level documentation
-//! Parser module for handling input data.
-//!
-//! This module provides utilities for parsing various input formats
-//! including JSON, XML, and custom DSLs.
-
-pub mod json;
-pub mod xml;
-pub mod dsl;
-
-// ✅ GOOD: Type documentation
-/// A configuration for the parser.
-///
-/// Contains settings that control parsing behavior including
-/// strictness, encoding, and error handling.
-#[derive(Debug, Clone)]
-pub struct Config {
-    /// Whether to fail on first error or collect all errors.
-    pub strict: bool,
-    
-    /// Maximum recursion depth for nested structures.
-    pub max_depth: usize,
-}
-```
-
----
-
-## DC-17: Examples in Documentation
-
-**Strength**: SHOULD
-
-**Summary**: Provide runnable examples for public API.
-
-```rust
-/// Creates a new buffer with the specified capacity.
+// ✅ GOOD: hidden main, `?` at the ergonomics layer users should learn
+/// Loads configuration from disk.
 ///
 /// # Examples
 ///
-/// Basic usage:
-///
 /// ```
-/// use my_crate::Buffer;
-///
-/// let buffer = Buffer::with_capacity(1024);
-/// assert!(buffer.capacity() >= 1024);
+/// # fn main() -> Result<(), Box<dyn std::error::Error>> {
+/// let cfg = my_crate::load_config("app.toml")?;
+/// assert_eq!(cfg.port, 8080);
+/// # Ok(())
+/// # }
 /// ```
-///
-/// Growing the buffer:
-///
-/// ```
-/// use my_crate::Buffer;
-///
-/// let mut buffer = Buffer::with_capacity(10);
-/// buffer.extend(b"hello world - this is longer than 10 bytes");
-/// assert!(buffer.capacity() > 10);
-/// ```
-pub fn with_capacity(cap: usize) -> Self {
-    todo!()
-}
+pub fn load_config(path: &str) -> Result<Config, Error> { todo!() }
+```
 
-// ✅ Examples that should compile but not run
-/// ```no_run
-/// use my_crate::connect;
+```rust
+// ✅ GOOD: equivalent shorthand since Rust 1.34 — no explicit main
+/// ```
+/// let n: u32 = "42".parse()?;
+/// assert_eq!(n, 42);
+/// # Ok::<(), std::num::ParseIntError>(())
+/// ```
+```
+
+```rust
+// ❌ BAD: teaches unwrap as the default error-handling pattern
+/// ```
+/// let cfg = my_crate::load_config("app.toml").unwrap();
+/// ```
+```
+
+**Rationale**: Using `unwrap()` in docs teaches users that `unwrap` is the normal way to handle `Result`. `try!` has been deprecated since Rust 1.13. The hidden-line technique (`# `) keeps the example readable while still compiling as a real test.
+
+**See also**: C-QUESTION-MARK, C-EXAMPLE
+
+---
+
+## DC-10: Hide Boilerplate with `#` Lines
+
+**Strength**: SHOULD
+
+**Summary**: Prefix setup lines with `# ` to compile them but not render them. Use this to remove `use` statements, `fn main()` wrappers, mock setup, and `Ok(())` returns.
+
+```rust
+/// Sends a request over an established connection.
 ///
-/// // This would actually connect to a server
-/// let conn = connect("localhost:8080")?;
+/// # Examples
+///
+/// ```
+/// # struct Connection;
+/// # struct Request;
+/// # impl Connection {
+/// #     fn send(&self, _: Request) -> Result<(), std::io::Error> { Ok(()) }
+/// # }
+/// # let connection = Connection;
+/// # let request = Request;
+/// let response = connection.send(request)?;
 /// # Ok::<(), std::io::Error>(())
 /// ```
+pub fn dummy() {}
+```
 
-// ✅ Examples that should fail to compile
-/// ```compile_fail
-/// use my_crate::ImmutableData;
-///
-/// let data = ImmutableData::new();
-/// data.modify();  // This should not compile!
-/// ```
-
-// ✅ Examples that demonstrate expected panic
-/// ```should_panic
-/// use my_crate::divide;
-///
-/// divide(1, 0);  // Panics on division by zero
-/// ```
-
-// ✅ Hiding boilerplate in examples
-/// ```
-/// # use my_crate::{Config, Error};
-/// # fn main() -> Result<(), Error> {
-/// let config = Config::from_file("config.toml")?;
-/// println!("Loaded: {:?}", config);
-/// # Ok(())
-/// # }
+```rust
+// ## is the escape — it renders as `# ` (useful for shell prompts in docs).
+/// ```text
+/// ## cd target/doc
 /// ```
 ```
 
+**Rationale**: Doc tests are compiled as real programs, but most of the scaffolding (imports, error wrappers, test setup) clutters the rendered output. `# ` keeps tests honest without making examples unreadable.
+
+**See also**: DC-09, "Easy doc initialization"
+
 ---
 
-## DC-18: Examples Should Compile
+## DC-11: Doctest Directives Control Compilation and Execution
 
 **Strength**: SHOULD
 
-**Summary**: Doc examples should be valid, runnable code unless explicitly marked as pseudocode.
+**Summary**: Use code-block attributes to tell rustdoc how a block should behave: `no_run`, `should_panic`, `compile_fail`, `ignore`, `text`, or an edition tag.
 
 ```rust
-/// Processes user data.
-///
-/// # Examples
-///
-/// ```
-/// use my_crate::process_user;
-///
-/// let user = User::new("alice");
-/// let result = process_user(user)?;
-/// # Ok::<(), Box<dyn std::error::Error>>(())
-/// ```
-///
-/// For testing purposes, you can use a mock:
-///
-/// ```
-/// # use my_crate::*;
-/// let (processor, mock) = Processor::new_mocked();
-/// mock.set_user_data(test_data);
-/// assert!(processor.validate());
-/// ```
-pub fn process_user(user: User) -> Result<(), Error> {
-    // ...
-}
-
-// Use `no_run` for examples that shouldn't execute
-/// Connects to a remote server.
-///
-/// # Examples
+/// Opens a TCP connection. The example compiles but we don't actually dial out.
 ///
 /// ```no_run
-/// let client = connect("api.example.com:443")?;
+/// let stream = std::net::TcpStream::connect("example.com:80")?;
+/// # Ok::<(), std::io::Error>(())
 /// ```
-pub fn connect(addr: &str) -> Result<Client, Error> {
-    // ...
-}
+pub fn connect() {}
 
-// Use `ignore` for pseudocode
-/// Complex algorithm outline.
-///
-/// # Algorithm
-///
-/// ```ignore
-/// for each item:
-///     if condition(item):
-///         process(item)
-/// ```
-pub fn algorithm() { }
-```
-
-**Rationale**: Runnable examples serve as tests and documentation. They verify code examples stay current as the API evolves.
-
-**See also**: C-EXAMPLE
-
----
-
-## DC-19: Examples Use ?, Not try! or unwrap
-
-**Strength**: MUST
-
-**Summary**: Example code should use `?` operator, not the deprecated `try!` macro or `unwrap()`.
-
-```rust
-// GOOD - using ? operator
-/// Reads configuration from a file.
-///
-/// # Examples
-///
-/// ```
-/// # use std::error::Error;
-/// # fn main() -> Result<(), Box<dyn Error>> {
-/// let config = myapp::load_config("app.toml")?;
-/// assert_eq!(config.port, 8080);
-/// # Ok(())
-/// # }
-/// ```
-pub fn load_config(path: &str) -> Result<Config, Error> {
-    // ...
-}
-
-// BAD - using try! macro (deprecated since Rust 1.13)
-/// ```
-/// # use std::error::Error;
-/// # fn main() -> Result<(), Box<dyn Error>> {
-/// let config = try!(myapp::load_config("app.toml"));  // DON'T DO THIS
-/// # Ok(())
-/// # }
-/// ```
-
-// BAD - using unwrap
-/// ```
-/// let config = myapp::load_config("app.toml").unwrap();  // DON'T DO THIS
-/// ```
-
-// GOOD - multiple ? operations
-/// ```
-/// # use std::error::Error;
-/// # fn main() -> Result<(), Box<dyn Error>> {
-/// let data = std::fs::read_to_string("input.txt")?;
-/// let parsed = parse_data(&data)?;
-/// let result = process(parsed)?;
-/// assert_eq!(result.status, "ok");
-/// # Ok(())
-/// # }
-/// ```
-```
-
-```rust
-// In test code (not example code)
-#[test]
-fn test_something() {
-    let result = some_operation().unwrap();
-    assert_eq!(result, expected);
-}
-
-// When documenting panic behavior
-/// # Panics
-///
-/// Panics if the value is out of range.
+/// Panics if the index is out of bounds.
 ///
 /// ```should_panic
-/// mylib::get_item(1000);  // Panics!
+/// let v = vec![1, 2, 3];
+/// let _ = v[10];
 /// ```
+pub fn panicking_index() {}
+
+/// The type system guarantees this value cannot be mutated.
+///
+/// ```compile_fail
+/// let x = 1;
+/// x = 2; // cannot assign twice to immutable variable
+/// ```
+pub fn immutability_proof() {}
+
+/// Non-Rust snippet; rendered verbatim, not compiled.
+///
+/// ```text
+/// error[E0308]: mismatched types
+/// ```
+pub fn rendering_a_diagnostic() {}
+
+/// Compile with the 2024 edition regardless of the crate's edition.
+///
+/// ```edition2024
+/// async fn example() {}
+/// ```
+pub fn edition_specific() {}
 ```
 
-**Rationale**: Examples should demonstrate best practices and compile without warnings.
+**Rationale**: Defaults are runnable, compiled doctests. Use `no_run` for network/IO, `should_panic` when the panic is the point, `compile_fail` to assert an invariant the type system enforces, `text` for non-Rust output, and `ignore` only as a last resort (it's rarely what you want — prefer `text` or hiding lines with `#`). Edition tags pin a specific edition for a block.
 
-**See also**: C-QUESTION-MARK
+**See also**: DC-06 (`should_panic` for panic examples), DC-19 (rustdoc lints catch typos like `should-panic`)
 
 ---
 
-## DC-20: Feature-Gated Documentation
-
-**Strength**: SHOULD
-
-**Summary**: Document feature requirements for conditional items.
-
-```rust
-/// Async parser implementation.
-///
-/// This is only available with the `async` feature enabled.
-///
-/// # Feature
-///
-/// This requires the `async` feature:
-///
-/// ```toml
-/// [dependencies]
-/// my_crate = { version = "1.0", features = ["async"] }
-/// ```
-///
-/// # Examples
-///
-/// ```ignore
-/// use my_crate::AsyncParser;
-///
-/// #[tokio::main]
-/// async fn main() {
-///     let parser = AsyncParser::new();
-///     let result = parser.parse("input").await?;
-/// }
-/// ```
-#[cfg(feature = "async")]
-#[cfg_attr(docsrs, doc(cfg(feature = "async")))]
-pub struct AsyncParser { /* ... */ }
-```
-
----
-
-## DC-21: First Sentence is One Line, ~15 Words
+## DC-12: Use Intra-Doc Links for Cross-References
 
 **Strength**: MUST
 
-**Summary**: The first sentence becomes the summary—keep it to one line and approximately 15 words.
+**Summary**: Link to other items by Rust path using `[Type]`, `[`Type`]`, `[Type::method]`, or `[crate::module::Type]` — not by manual URL.
 
 ```rust
-/// Opens a file at the specified path for reading.
+/// An HTTP connection.
 ///
-/// This function will attempt to open the file in read-only mode. If the file
-/// does not exist, it will return an error.
+/// Create one with [`Client::connect`] or [`Client::builder`]. Errors
+/// are reported as [`Error`], which wraps [`std::io::Error`] for
+/// transport-level failures.
 ///
-/// # Examples
-///
-/// ```
-/// let file = open_file("config.toml")?;
-/// ```
-pub fn open_file(path: &str) -> Result<File, Error> {
-    // ...
-}
+/// See also [`Response`] and the [`crate::auth`] module.
+pub struct Connection;
 
-// WRONG - first sentence too long
-/// Opens a file at the specified path for reading and returns a File handle that can be used to read the contents of the file.
-pub fn open_file(path: &str) -> Result<File, Error> {
-    // Summary wraps awkwardly in listings
+impl Client {
+    /// Creates a connection. For TLS, see [`Self::connect_tls`].
+    pub fn connect() -> Result<Connection, Error> { todo!() }
+    /// Creates a TLS-encrypted connection.
+    pub fn connect_tls() -> Result<Connection, Error> { todo!() }
 }
+# pub struct Client;
+# pub struct Response;
+# #[derive(Debug)] pub enum Error {}
+# pub mod auth {}
 ```
 
-**Rationale**: Rustdoc extracts the first sentence for module listings and search results. Keeping it to one line (~15 words) makes documentation skimmable.
+```rust
+// Disambiguate namespaces when a name exists as multiple kinds
+/// See [`struct@Foo`] for the struct and [`fn@Foo`] for the constructor.
+/// Or use the suffix forms: [`Foo()`] for the function, [`some_macro!`]
+/// for a macro.
 
-**See also**: M-FIRST-DOC-SENTENCE
+// Backticks are stripped — `[`Vec`]` renders as code AND links
+/// Returns a [`Vec<T>`] collecting the items.
+
+// Fragment specifiers link to a section
+/// See [formatting parameters] for the full syntax.
+///
+/// [formatting parameters]: std::fmt#formatting-parameters
+```
+
+**Rationale**: Intra-doc links are checked at doc-build time — a broken link is a `rustdoc::broken_intra_doc_links` warning. They survive refactoring (a renamed item updates its links), follow re-exports, and produce correct URLs regardless of where the docs are hosted. `#[doc(hidden)]` items are *not* linkable.
+
+**See also**: C-LINK, DC-13, DC-19
 
 ---
 
-## DC-22: Fixed
+## DC-13: Hyperlink Liberally in Prose
 
 **Strength**: SHOULD
 
-**Summary**: 
+**Summary**: Sprinkle intra-doc links through prose — every type name, method reference, and related-item mention should be a link.
+
+```rust
+/// Sends a GET request to `url` and returns the [`Response`].
+///
+/// Returns [`Error::InvalidUrl`] if `url` doesn't parse, or
+/// [`Error::Timeout`] if the deadline elapses. See [`Self::post`] for
+/// POST requests and [`ClientBuilder::timeout`] for configuring the
+/// deadline.
+pub async fn get(&self, url: &str) -> Result<Response, Error> { todo!() }
+# pub struct Response;
+# pub enum Error { InvalidUrl, Timeout }
+# pub struct ClientBuilder;
+# impl ClientBuilder { pub fn timeout(self, _: std::time::Duration) -> Self { self } }
+```
+
+**Rationale**: Rustdoc already auto-links types that appear in the function signature, so prose is where you add value — linking to *related* items the signature doesn't reveal. The `rustdoc::redundant_explicit_links` lint warns when you write `[`Foo`](Foo)` where `[`Foo`]` would do.
+
+**See also**: C-LINK, DC-12
 
 ---
 
-## DC-23: Include All Common Metadata
+## DC-14: Use Lists and Headers Sparingly
+
+**Strength**: SHOULD
+
+**Summary**: Rust docs favor prose. Use bullets only when you're genuinely enumerating items, and avoid `**bold**` for emphasis.
+
+```rust
+// ❌ BAD: over-formatted, reads like marketing
+/// **Process** user data
+///
+/// ## Features
+/// - Validates input
+/// - **Normalizes** data
+/// - Stores in database
+pub fn process_user() {}
+
+// ✅ GOOD: natural prose
+/// Validates the user, normalizes their profile fields, and persists the
+/// result to the database.
+pub fn process_user_2() {}
+
+// ✅ OK: a bullet list that really is a list
+/// Supported configuration formats:
+/// - TOML
+/// - JSON
+/// - YAML
+pub fn parse_config() {}
+```
+
+**Rationale**: The canonical-sections model (`# Examples`, `# Errors`, etc.) provides the structure. Additional headers and bullet lists usually just add noise.
+
+---
+
+## DC-15: Describe Parameters in Prose, Not Tables
+
+**Strength**: SHOULD
+
+**Summary**: Weave parameter descriptions into the summary and extended docs. Don't build a `# Parameters` table.
+
+```rust
+// ❌ BAD: Java/C#-style parameter table
+/// Copies a file.
+///
+/// # Parameters
+/// - `src`: source path
+/// - `dst`: destination path
+/// - `overwrite`: whether to overwrite
+pub fn copy_file(src: &std::path::Path, dst: &std::path::Path, overwrite: bool) {}
+
+// ✅ GOOD: prose that mentions the parameter names
+/// Copies the file at `src` to `dst`. If `overwrite` is `true`, an
+/// existing file at `dst` is replaced; otherwise the function errors.
+pub fn copy_file2(src: &std::path::Path, dst: &std::path::Path, overwrite: bool) {}
+```
+
+**Rationale**: The signature already shows the types. Prose can explain the interactions (`overwrite: true` vs. `false`) that a table can't. Inline backtick-quoted names make the connection to the signature obvious.
+
+---
+
+## DC-16: Document Public Fields and Enum Variants
+
+**Strength**: SHOULD
+
+**Summary**: Every `pub` field, enum variant, and associated constant deserves its own doc comment.
+
+```rust
+/// Client configuration.
+#[derive(Debug, Clone)]
+pub struct Config {
+    /// Server hostname or IP. Required.
+    pub host: String,
+
+    /// Port, defaults to `443` for TLS.
+    pub port: u16,
+
+    /// Connect deadline. `None` disables the timeout.
+    pub timeout: Option<std::time::Duration>,
+}
+
+/// Possible parse errors.
+#[non_exhaustive]
+#[derive(Debug)]
+pub enum ParseError {
+    /// The input contained a character not allowed by the grammar.
+    InvalidChar { line: usize, column: usize },
+
+    /// The input ended before a complete value was parsed.
+    UnexpectedEof,
+
+    /// An underlying I/O error occurred.
+    Io(std::io::Error),
+}
+```
+
+**Rationale**: `missing_docs` will catch undocumented public fields if enabled at the crate root. Each variant in an error enum carries a distinct meaning; users need to match on the right one.
+
+---
+
+## DC-17: Crate-Level Docs Are the Front Page
 
 **Strength**: MUST
 
-**Summary**: Cargo.toml should include complete metadata for crates.io publication.
-
-**Rationale**: Good metadata helps users discover and evaluate your crate.
-
-**See also**: C-METADATA
-
----
-
-## DC-24: Link to Related Items
-
-**Strength**: SHOULD
-
-**Summary**: Use intra-doc links to connect related documentation. Link to related types, functions, and modules using rustdoc link syntax.
+**Summary**: `lib.rs` opens with `//!` documentation that gives a tagline, a minimal runnable example, and pointers to the main types.
 
 ```rust
-/// A parser for JSON data.
-///
-/// This is the primary parser for JSON format. For XML parsing,
-/// see [`XmlParser`]. For a unified interface, see the [`Parse`] trait.
-///
-/// # Related
-///
-/// * [`Parser::new`] - Create a new parser
-/// * [`Parse::parse`] - The parsing method
-/// * [`crate::error::ParseError`] - Error type
-pub struct JsonParser { /* ... */ }
+//! # `my_http` — Ergonomic async HTTP client
+//!
+//! A small, `tokio`-based HTTP client with connection pooling, automatic
+//! retries, and a typed response API.
+//!
+//! ## Quick start
+//!
+//! ```
+//! # async fn example() -> Result<(), Box<dyn std::error::Error>> {
+//! let client = my_http::Client::new();
+//! let body = client.get("https://example.com/").await?.text().await?;
+//! println!("{body}");
+//! # Ok(()) }
+//! ```
+//!
+//! ## Where to go next
+//!
+//! - [`Client`] — the main entry point
+//! - [`ClientBuilder`] — configuration
+//! - [`Error`] — error type and variants
+//! - The [`auth`] module for credential handling
 
-impl JsonParser {
-    /// Creates a new parser with default settings.
-    ///
-    /// For custom configuration, use [`JsonParser::with_config`].
-    pub fn new() -> Self { todo!() }
-    
-    /// Creates a new parser with the given configuration.
-    ///
-    /// See [`Config`] for available options.
-    pub fn with_config(config: Config) -> Self { todo!() }
-}
+#![warn(missing_docs)]
+#![warn(rustdoc::broken_intra_doc_links)]
 
-// Link syntax:
-// [`Type`] - link to type
-// [`Type::method`] - link to method
-// [`module::Type`] - link to type in module
-// [`crate::Type`] - link to type in crate root
-// [link text](`Type`) - custom link text
-```
-
-```rust
-/// Configuration for HTTP clients.
-///
-/// Created using [`ClientBuilder`] and passed to [`Client::new()`].
-///
-/// See also: [`ServerConfig`], [`parse_config()`]
-///
-/// [`ClientBuilder`]: crate::ClientBuilder
-/// [`Client::new()`]: crate::Client::new
-/// [`ServerConfig`]: crate::ServerConfig
-/// [`parse_config()`]: crate::parse_config
-pub struct ClientConfig {
-    // ...
-}
-
-// Intra-doc link syntax (preferred)
-/// See [`Config`] for configuration options.
-///
-/// Related: [`process`], [`validate`]
-pub fn parse_config() -> Config {
-    // ...
+pub struct Client;
+pub struct ClientBuilder;
+#[derive(Debug)] pub enum Error {}
+pub mod auth {
+    //! Credentials and signing helpers.
 }
 ```
 
-**See also**: C-LINK
+**Rationale**: The crate root is the first thing docs.rs shows. Users evaluate the crate from that page; if it's empty they close the tab. The quick-start example also smoke-tests the top-level API.
+
+**See also**: C-CRATE-DOC, DC-26
 
 ---
 
-## DC-25: Mark pub use with #[doc(inline)]
-
-**Strength**: SHOULD
-
-**Summary**: Re-exported items should use `#[doc(inline)]` to appear naturally in documentation.
-
-```rust
-// WRONG - creates opaque "Re-exports" section
-pub use other_crate::ImportantType;
-
-// CORRECT - inlines documentation
-#[doc(inline)]
-pub use other_crate::ImportantType;
-
-// For glob re-exports (when necessary)
-#[doc(inline)]
-pub use internal::*;
-
-// Don't inline external crates (make it clear they're external)
-pub use std::io::Error;  // No inline - clearly external
-```
-
-**Rationale**: Inline documentation makes re-exported items feel like first-class citizens of your module rather than external imports.
-
-**See also**: M-DOC-INLINE
-
----
-
-## DC-26: Module and Crate Documentation
-
-**Strength**: SHOULD
-
-**Summary**: Document modules and crates with `//!` comments.
-
-```rust
-// src/lib.rs
-//! # My Crate
-//!
-//! `my_crate` provides utilities for parsing and formatting data.
-//!
-//! ## Quick Start
-//!
-//! ```
-//! use my_crate::{parse, format};
-//!
-//! let data = parse("input")?;
-//! let output = format(&data);
-//! # Ok::<(), my_crate::Error>(())
-//! ```
-//!
-//! ## Features
-//!
-//! - **Fast parsing**: Zero-copy parsing where possible
-//! - **Flexible formatting**: Multiple output formats supported
-//! - **Async support**: Optional async API with `async` feature
-//!
-//! ## Feature Flags
-//!
-//! - `async`: Enable async API (requires tokio)
-//! - `serde`: Enable serialization support
-//!
-//! ## Modules
-//!
-//! - [`parser`]: Input parsing utilities
-//! - [`formatter`]: Output formatting utilities
-//! - [`error`]: Error types
-
-pub mod parser;
-pub mod formatter;
-pub mod error;
-
-// src/parser.rs
-//! Parsing utilities for various input formats.
-//!
-//! This module provides parsers for JSON, XML, and custom formats.
-//! All parsers implement the [`Parse`] trait.
-//!
-//! # Examples
-//!
-//! ```
-//! use my_crate::parser::{JsonParser, Parse};
-//!
-//! let parser = JsonParser::new();
-//! let result = parser.parse(r#"{"key": "value"}"#)?;
-//! # Ok::<(), my_crate::Error>(())
-//! ```
-
-pub trait Parse { /* ... */ }
-pub struct JsonParser { /* ... */ }
-```
-
----
-
-## DC-27: Module Template
-
-**Strength**: SHOULD
-
-**Summary**: 
-
-```rust
-//! One-line summary of what this module provides.
-//!
-//! Extended description explaining the module's purpose, design decisions,
-//! and how to use it effectively.
-//!
-//! # Examples
-//!
-//! ```
-//! use my_crate::my_module::{Thing, do_thing};
-//!
-//! let thing = Thing::new();
-//! do_thing(&thing)?;
-//! # Ok::<(), Box<dyn std::error::Error>>(())
-//! ```
-//!
-//! # Design
-//!
-//! (Optional) Explain key design decisions or architectural patterns used
-//! in this module.
-
-pub struct Thing { /* ... */ }
-pub fn do_thing(t: &Thing) -> Result<(), Error> { /* ... */ }
-```
-
----
-
-## DC-28: Modules Have Comprehensive Documentation
+## DC-18: Document Modules Like Mini-Crates
 
 **Strength**: MUST
 
-**Summary**: All public modules must have `//!` documentation covering purpose, usage, and examples.
+**Summary**: Every public module gets a `//!` header: what it contains, when to use it, at least one example.
 
 ```rust
-//! Configuration parsing and validation.
-//!
-//! This module provides types and functions for working with application
-//! configuration files. It supports TOML format and includes validation
-//! for common configuration errors.
-//!
-//! # Examples
-//!
-//! ```
-//! use my_crate::config::{Config, load_config};
-//!
-//! let config = load_config("app.toml")?;
-//! println!("Server: {}", config.server_url);
-//! ```
-//!
-//! # Configuration Format
-//!
-//! The configuration file should be in TOML format:
-//!
-//! ```toml
-//! server_url = "https://api.example.com"
-//! timeout_seconds = 30
-//! max_retries = 3
-//! ```
-//!
-//! # Error Handling
-//!
-//! All functions return detailed errors that indicate the specific problem,
-//! including file location and line numbers for parsing errors.
+pub mod config {
+    //! Configuration loading and validation.
+    //!
+    //! Parses TOML and YAML into a typed [`Config`] tree, merging in
+    //! environment-variable overrides (prefixed with `MYAPP_`).
+    //!
+    //! # Examples
+    //!
+    //! ```
+    //! # fn main() -> Result<(), Box<dyn std::error::Error>> {
+    //! # std::env::set_var("MYAPP_PORT", "9090");
+    //! let cfg = my_crate::config::load_toml("app.toml")?;
+    //! assert_eq!(cfg.port, 9090); // env override wins
+    //! # Ok(()) }
+    //! ```
 
-pub struct Config { /* ... */ }
-pub fn load_config(path: &Path) -> Result<Config, ConfigError> { /* ... */ }
+    # pub struct Config { pub port: u16 }
+    # pub fn load_toml(_: &str) -> Result<Config, std::io::Error> { Ok(Config { port: 9090 }) }
+}
 ```
+
+**Rationale**: `std::fmt`, `std::pin`, and `std::option` are the canonical examples of good module docs. They explain *why the module exists* in addition to what it contains. `rustdoc::missing_crate_level_docs` enforces crate-level docs; `missing_docs` enforces per-module docs when modules are public.
 
 **See also**: M-MODULE-DOCS
 
 ---
 
-## DC-29: Parameters Are Explained in Prose
+## DC-19: Turn On the Rustdoc Lints
 
 **Strength**: SHOULD
 
-**Summary**: Don't create parameter tables; explain parameter usage in the description.
+**Summary**: Enable `missing_docs`, `broken_intra_doc_links`, `invalid_codeblock_attributes`, and friends at the crate root.
 
 ```rust
-// WRONG - parameter table
-/// Copies a file.
-///
-/// # Parameters
-/// - src: The source file path
-/// - dst: The destination file path
-/// - overwrite: Whether to overwrite existing files
-fn copy_file(src: &Path, dst: &Path, overwrite: bool) { }
-
-// CORRECT - prose explanation
-/// Copies a file from `src` to `dst`.
-///
-/// If `overwrite` is true, any existing file at `dst` will be replaced.
-/// Otherwise, the function returns an error if `dst` already exists.
-fn copy_file(src: &Path, dst: &Path, overwrite: bool) { }
+#![warn(missing_docs)]                             // every public item has docs
+#![warn(rustdoc::missing_crate_level_docs)]        // lib.rs has //! docs
+#![deny(rustdoc::broken_intra_doc_links)]          // [`Foo`] must resolve
+#![warn(rustdoc::private_intra_doc_links)]         // don't link from pub to priv
+#![warn(rustdoc::invalid_codeblock_attributes)]    // catch `should-panic` typos
+#![warn(rustdoc::invalid_html_tags)]               // `<h1>` without `</h1>`
+#![warn(rustdoc::invalid_rust_codeblocks)]         // rustdoc can still parse them
+#![warn(rustdoc::bare_urls)]                       // `http://...` -> `<http://...>`
+#![warn(rustdoc::unescaped_backticks)]             // `` `foo(a, b) ``
+#![warn(rustdoc::redundant_explicit_links)]        // `[`Foo`](Foo)` -> `[`Foo`]`
 ```
 
-**Rationale**: Rust documentation style favors natural language over structured tables. Parameters are typically clear from their names and types.
+```rust
+// Namespacing rule: only `missing_docs` is un-prefixed (it's shared with rustc).
+// Everything else is `rustdoc::lint_name`.
+#![warn(missing_docs)]                     // ✅ correct (shared)
+#![warn(broken_intra_doc_links)]           // ❌ wrong — unknown lint to rustc
+#![warn(rustdoc::broken_intra_doc_links)]  // ✅ correct
+```
 
-**See also**: M-CANONICAL-DOCS
+**Rationale**: Rustdoc lints (except `missing_docs`) only run during `cargo doc`, so CI must include a doc build. Denying `broken_intra_doc_links` is the single highest-value change you can make — it turns documentation rot into a build error.
+
+**See also**: DC-12, DC-22
 
 ---
 
-## DC-30: Prose Contains Hyperlinks
-
-**Strength**: SHOULD
-
-**Summary**: Link to related types, functions, and external resources throughout documentation.
-
-```rust
-/// A connection to a remote server.
-///
-/// Created using [`Client::connect`] or [`Client::builder`].
-///
-/// # Examples
-///
-/// ```
-/// use myclient::Client;
-///
-/// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
-/// let client = Client::new();
-/// let conn = client.connect("example.com:80").await?;
-/// # Ok(())
-/// # }
-/// ```
-///
-/// See also:
-/// - [`Client`] - for creating connections
-/// - [`Response`] - for reading response data
-pub struct Connection {
-    // ...
-}
-
-/// Sends a GET request to the specified URL.
-///
-/// Returns a [`Response`] on success.
-///
-/// # Errors
-///
-/// Returns [`Error::InvalidUrl`] if the URL is malformed.
-/// Returns [`Error::Timeout`] if the request times out.
-///
-/// See [`Client::post`] for sending POST requests.
-///
-/// # Examples
-///
-/// ```
-/// # use myclient::Client;
-/// # async fn example() -> Result<(), Box<dyn std::error::Error>> {
-/// let client = Client::new();
-/// let response = client.get("https://api.example.com/users").await?;
-/// # Ok(())
-/// # }
-/// ```
-pub async fn get(&self, url: &str) -> Result<Response, Error> {
-    // ...
-}
-```
-
-```rust
-/// Links to items in the same module
-/// [`Config`] or [`Config::new`]
-///
-/// Links to items in other modules
-/// [`crate::http::Client`]
-/// [`super::Error`]
-///
-/// Links with custom text
-/// [configuration object][`Config`]
-/// [the `connect` method][`Client::connect`]
-///
-/// Links to external documentation
-/// See the [Rust Book](https://doc.rust-lang.org/book/)
-/// 
-/// Links to traits and methods
-/// Implements [`Iterator::next`]
-/// See [`std::io::Read`]
-```
-
-```rust
-/// Returns a [`Config`] with default settings.
-///
-/// Use [`Config::builder`] for customization.
-```
-
-```rust
-/// Returns a [`Config`](crate::config::Config) instance.
-```
-
-**Rationale**: Links make documentation navigable and help users discover related functionality.
-
-**See also**: C-LINK
-
----
-
-## DC-31: README and Documentation Sync
+## DC-20: `#[doc = ...]` and `#[doc = include_str!(...)]`
 
 **Strength**: CONSIDER
 
-**Summary**: Keep README and crate docs in sync.
+**Summary**: `///` is sugar for `#[doc = "..."]`. Drop to the attribute form to build docs dynamically — most usefully to share a README.
 
 ```rust
-// src/lib.rs
-#![doc = include_str!("../README.md")]
+// Sugar equivalence
+/// This is a doc comment.
+fn a() {}
 
-// This includes the entire README as crate documentation
-// Pros: Single source of truth
-// Cons: README must be valid rustdoc (links, examples, etc.)
+#[doc = " This is a doc comment."]
+fn b() {}
+
+// Multiple #[doc] attributes are merged
+#[doc = "Processes"]
+#[doc = " input data and"]
+#[doc = " returns the result."]
+fn c() {}
 ```
 
----
-
-## DC-32: Removed
-
-**Strength**: SHOULD
-
-**Summary**: 
-
----
-
-## DC-33: Rustdoc Hides Implementation Details
-
-**Strength**: SHOULD
-
-**Summary**: Use `#[doc(hidden)]` and `pub(crate)` to hide implementation details from public documentation.
+```rust
+// Single source of truth for README and crate-level docs
+#![doc = include_str!("../README.md")]
+```
 
 ```rust
-pub struct MyType {
-    pub public_field: i32,
-    
-    // Private fields are automatically hidden
-    private_field: String,
-}
+// Test that the README's code blocks compile, without polluting the crate
+#[cfg(doctest)]
+#[doc = include_str!("../README.md")]
+pub struct ReadmeDoctests;
+```
 
-/// Public error type shown in docs
-pub enum PublicError {
-    Network(NetworkError),
-    Parse(ParseError),
-}
+**Rationale**: `#[doc = include_str!("../README.md")]` keeps the README and the crate's front page in sync — users see the same content on GitHub and docs.rs. Wrap with `#[cfg(doctest)]` on a dummy type if you just want the README's examples tested without making the README your crate-level docs.
 
-/// Internal error type
-struct InternalError {
-    // ...
-}
+**See also**: DC-17, DC-31
 
-// Hide conversion implementation from docs
+---
+
+## DC-21: `#[doc(hidden)]` Hides Items From Docs
+
+**Strength**: SHOULD
+
+**Summary**: Use `#[doc(hidden)]` to keep an item out of the rendered docs without changing its visibility. Use `pub(crate)` when the item should actually be private.
+
+```rust
+pub struct PublicError(InternalError);
+struct InternalError;
+
+// This impl is a public API detail but users will never name `InternalError`.
+// Hide it from the rendered docs but keep it callable.
 #[doc(hidden)]
 impl From<InternalError> for PublicError {
-    fn from(err: InternalError) -> PublicError {
-        PublicError::Network(NetworkError::from(err))
-    }
+    fn from(e: InternalError) -> Self { PublicError(e) }
 }
 
-// Public module shown in docs
-pub mod client {
-    pub struct Client {
-        // Use pub(crate) for internal use without showing in docs
-        pub(crate) connection_pool: ConnectionPool,
-    }
-}
-
-// Hide entire module from docs
+// Items that must be `pub` so macros in the same crate can reach them,
+// but that aren't part of the public API.
 #[doc(hidden)]
-pub mod internal {
-    // Internal utilities that must be public for cross-crate use
-    // but shouldn't appear in user-facing docs
+pub mod __private {
+    pub fn macro_helper() {}
 }
 
-// Conditional compilation for test utilities
-#[cfg(test)]
-pub mod test_utils {
-    // Only compiled during tests, not shown in docs
-}
+// If the item doesn't need to be public at all, use `pub(crate)`.
+pub(crate) fn internal_helper() {}
 ```
 
-**Rationale**: Users should only see the API they need, not implementation details.
+**Rationale**: `#[doc(hidden)]` is a documentation-only marker: the item remains callable and is still part of the semver surface. `pub(crate)` is the real access restriction. Reach for `#[doc(hidden)]` only when visibility can't be reduced (macro internals, required trait impls).
 
-**See also**: C-HIDDEN
+**See also**: C-HIDDEN, DC-22
 
 ---
 
-## DC-34: Security
+## DC-22: `#[doc(inline)]` and `#[doc(no_inline)]` Control Re-Export Rendering
 
 **Strength**: SHOULD
 
-**Summary**: 
+**Summary**: Use `#[doc(inline)]` on a `pub use` to present the item as if it were defined here. Use `#[doc(no_inline)]` to keep it in the opaque "Re-exports" section.
+
+```rust
+// Private module — items are automatically inlined at the re-export site
+mod inner {
+    /// The main client type.
+    pub struct Client;
+}
+pub use self::inner::Client;
+
+// Public module — default is NOT inlined (you'd see "Re-exports: pub use ...")
+pub mod detail {
+    /// Low-level parser.
+    pub struct Parser;
+}
+
+// Force inlining so `Parser` appears at the crate root alongside native items
+#[doc(inline)]
+pub use self::detail::Parser;
+
+// External dependency (Rust 2018+) — NOT inlined by default, add #[doc(inline)]
+// explicitly if you want the re-export to feel like a first-class item.
+#[doc(inline)]
+pub use serde_json::Value as Json;
+
+// Large re-export list — keep out of the flat item listing
+#[doc(no_inline)]
+pub use self::detail::*;
+```
+
+**Rationale**: The default inlining rules are: inline from private modules, don't inline from public modules, don't inline external dependencies (since Rust 2018). Override those defaults when the default presentation obscures your intended API shape — `#[doc(inline)]` on a facade-pattern re-export, `#[doc(no_inline)]` when a glob re-export would flood the page.
+
+**See also**: M-DOC-INLINE
 
 ---
 
-## DC-35: Unsafe Documentation Requirements
+## DC-23: Search Aliases with `#[doc(alias = "...")]`
+
+**Strength**: CONSIDER
+
+**Summary**: Add `#[doc(alias)]` attributes so users find items under alternate names — protocol-level names, FFI bindings, acronyms.
+
+```rust
+/// A first-in, first-out queue.
+#[doc(alias = "FIFO")]
+#[doc(alias = "queue")]
+pub struct Fifo<T> { /* ... */ items: Vec<T> }
+
+// FFI: wrap a C function while keeping the C name discoverable
+impl Fifo<()> {
+    /// Enqueues an item.
+    #[doc(alias = "lib_fifo_push")]
+    pub fn push(&mut self, _item: ()) { /* ... */ }
+}
+
+// Equivalent list syntax
+#[doc(alias("FIFO", "queue"))]
+pub struct Fifo2<T> { items: Vec<T> }
+```
+
+**Rationale**: Aliases affect only the search index — the canonical name is unchanged. Especially valuable for FFI bindings, where users know the C function name but not the Rust wrapper, and for well-known acronyms (`FIFO`, `UUID`, `URL`).
+
+---
+
+## DC-24: Feature-Gate with `#[doc(cfg(...))]`
+
+**Strength**: SHOULD
+
+**Summary**: For items behind Cargo features, use `#[cfg_attr(docsrs, doc(cfg(feature = "...")))]` so docs.rs renders a "Available on crate feature `x` only" banner.
+
+```rust
+// lib.rs — enable the feature-gating attribute on docs.rs
+#![cfg_attr(docsrs, feature(doc_cfg))]
+
+/// Async parser, available behind the `async` feature.
+#[cfg(feature = "async")]
+#[cfg_attr(docsrs, doc(cfg(feature = "async")))]
+pub struct AsyncParser { /* ... */ }
+```
+
+```toml
+# Cargo.toml — build docs with all features and the `docsrs` cfg set
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+```
+
+**Rationale**: Without `doc(cfg)`, a user on docs.rs sees `AsyncParser` with no indication it requires a feature flag, tries to use it, and gets a confusing "not found" error. The banner tells them exactly what to enable. The `doc_cfg` feature is unstable, so gate it behind `#[cfg(docsrs)]` and only use nightly on docs.rs.
+
+**See also**: DC-26
+
+---
+
+## DC-25: `#[cfg(doc)]` for Platform-Independent Docs
+
+**Strength**: CONSIDER
+
+**Summary**: Use `#[cfg(any(target_os = "...", doc))]` to make platform-specific items appear in documentation on all platforms.
+
+```rust
+/// Windows-only handle wrapper.
+#[cfg(any(windows, doc))]
+pub struct WindowsHandle(usize);
+
+/// Unix-only file descriptor wrapper.
+#[cfg(any(unix, doc))]
+pub struct UnixFd(i32);
+```
+
+**Rationale**: Rustdoc sets `cfg(doc)` whenever it's building documentation. Adding `, doc` to a `cfg` predicate keeps the item visible in docs even when the build target wouldn't normally include it. Note that `cfg(doc)` is not passed to doctests — they still obey the real build configuration.
+
+---
+
+## DC-26: Fill In All the Cargo Metadata
 
 **Strength**: MUST
 
-**Summary**: Unsafe functions require a `# Safety` section.
+**Summary**: A publishable crate sets `description`, `license`, `repository`, `keywords`, `categories`, `readme`, `rust-version`, and (when needed) `documentation`, `homepage`, and docs.rs metadata.
+
+```toml
+[package]
+name          = "my_http"
+version       = "0.3.0"
+edition       = "2021"
+rust-version  = "1.75"
+description   = "An ergonomic async HTTP client built on tokio."
+license       = "MIT OR Apache-2.0"
+repository    = "https://github.com/example/my_http"
+readme        = "README.md"
+keywords      = ["http", "client", "async", "tokio"]
+categories    = ["web-programming::http-client", "asynchronous"]
+
+# Only set these if they differ from the defaults:
+# documentation = "https://docs.example.com/my_http"   # default is docs.rs
+# homepage      = "https://my-http.example.com"        # default is repository
+
+[package.metadata.docs.rs]
+all-features     = true
+rustdoc-args     = ["--cfg", "docsrs"]
+default-target   = "x86_64-unknown-linux-gnu"
+```
+
+**Rationale**: Good metadata is what makes your crate discoverable on crates.io and what lets docs.rs build correct documentation. The `documentation` field is only needed if you're hosting docs outside docs.rs; `homepage` is only for a distinct project site (not a duplicate of the repo URL).
+
+**See also**: C-METADATA, guide 12 (project-structure)
+
+---
+
+## DC-27: Link to the Playground and External Docs
+
+**Strength**: CONSIDER
+
+**Summary**: Set crate-level doc attributes for a logo, favicon, and (for user-facing examples) a playground URL.
 
 ```rust
-/// Reads a value from the raw pointer.
+#![doc(
+    html_logo_url = "https://example.com/my_http/logo.svg",
+    html_favicon_url = "https://example.com/my_http/favicon.ico",
+    html_root_url = "https://docs.rs/my_http/0.3.0",
+)]
+```
+
+**Rationale**: `html_root_url` is only needed when rustdoc can't infer where your crate's docs live (for crates not on docs.rs, or when external tools consume the docs). Set a logo if the crate has a brand, otherwise leave the defaults alone — a bland default is better than a stretched ad.
+
+---
+
+## DC-28: Maintain a CHANGELOG and Tag Releases
+
+**Strength**: MUST
+
+**Summary**: Every release gets a CHANGELOG entry and an annotated Git tag. Breaking changes are called out explicitly.
+
+```markdown
+# Changelog
+
+All notable changes to this project will be documented in this file.
+The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and the project adheres to [Semantic Versioning](https://semver.org/).
+
+## [0.3.0] - 2026-04-20
+
+### Added
+- `Client::builder` for configuring timeouts and retries.
+
+### Changed
+- **Breaking:** `Client::get` now returns `Response` instead of `String`.
+  Call `.text().await?` on the result to restore the previous behavior.
+
+### Fixed
+- Resolved a deadlock in the connection pool under high concurrency.
+
+## [0.2.0] - 2026-01-15
+...
+```
+
+```bash
+# Annotated tags survive `git describe` and carry the release message
+git tag -a -m "Release 0.3.0" 0.3.0
+git push --tags
+```
+
+**Rationale**: Users need to know what changed before upgrading. Annotated tags carry metadata that lightweight tags don't, and several Git commands skip unannotated ones.
+
+**See also**: C-RELNOTES
+
+---
+
+## DC-29: Document Trait Contracts and Implementation Requirements
+
+**Strength**: SHOULD
+
+**Summary**: On a public trait, document the invariants implementers must uphold, the default-method behavior, and which methods are required vs. provided.
+
+```rust
+/// A stable, deterministic byte encoding.
 ///
-/// # Safety
+/// # Implementing
 ///
-/// The caller must ensure that:
+/// Implementations must ensure:
 ///
-/// * `ptr` is non-null
-/// * `ptr` is properly aligned for `T`
-/// * `ptr` points to a valid, initialized instance of `T`
-/// * The memory referenced by `ptr` is not mutated during this call
-/// * The memory referenced by `ptr` is valid for reads of `size_of::<T>()` bytes
+/// 1. Equal values produce equal byte sequences (determinism).
+/// 2. The encoding fully represents the value — round-tripping via
+///    [`Self::from_bytes`] yields an equal value.
+/// 3. Implementations are panic-free on well-formed input.
+///
+/// The blanket `impl<T: AsRef<[u8]>>` handles anything already byte-like;
+/// prefer implementing directly on your concrete type otherwise.
+pub trait ToBytes {
+    /// Encodes `self` into a byte sequence.
+    fn to_bytes(&self) -> Vec<u8>;
+
+    /// Decodes a byte sequence into `Self`.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if `bytes` is not a valid encoding.
+    fn from_bytes(bytes: &[u8]) -> Result<Self, std::io::Error>
+    where
+        Self: Sized;
+}
+```
+
+**Rationale**: A trait is a contract. Without the "Implementing" section, users have to guess whether the trait requires total functions, panic-freedom, or particular ordering. State the invariants so implementers can comply and callers can rely on them.
+
+---
+
+## DC-30: Easy Doc Initialization With Hidden Helpers
+
+**Strength**: CONSIDER
+
+**Summary**: When a type is expensive to construct, wrap each doc example in a hidden helper `fn` so callers see only the relevant call.
+
+```rust
+pub struct Connection { /* many fields */ }
+pub struct Request;
+pub struct Response;
+
+impl Connection {
+    /// Sends `request` and returns the server's response.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// # struct Connection; struct Request; struct Response;
+    /// # impl Connection { fn send(&self, _: Request) -> Response { Response } }
+    /// # fn call_send(connection: Connection, request: Request) {
+    /// let response = connection.send(request);
+    /// # let _ = response;
+    /// # }
+    /// ```
+    pub fn send(&self, _request: Request) -> Response { Response }
+}
+```
+
+**Rationale**: The example compiles (proving the method call is valid) without forcing every reader to scroll past three lines of setup. The trade-off is that any assertions inside the hidden function compile but never *run* — for testable assertions, fall back to a `#[doc(hidden)]` public helper constructor.
+
+---
+
+## DC-31: Keep README and Crate Docs in Sync
+
+**Strength**: CONSIDER
+
+**Summary**: `#![doc = include_str!("../README.md")]` makes the README the single source of truth for both the GitHub landing page and the docs.rs front page.
+
+```rust
+// lib.rs
+#![doc = include_str!("../README.md")]
+#![warn(missing_docs)]
+
+// If the README uses `cargo` code blocks or GitHub-flavored features
+// that rustdoc can't parse, confine the inclusion to the doctest:
+#[cfg(doctest)]
+#[doc = include_str!("../README.md")]
+pub struct ReadmeDoctests;
+```
+
+**Rationale**: Drift between README and crate docs is a steady source of confusion. Including the README directly eliminates it. Caveats: the README must be valid rustdoc Markdown, intra-doc links must work relative to the crate, and code blocks must compile as doctests (or be marked `text` / `ignore`).
+
+---
+
+## DC-32: Prefer `--document-private-items` for Internal Docs
+
+**Strength**: CONSIDER
+
+**Summary**: Run `cargo doc --document-private-items` to generate internal documentation; tune `private_intra_doc_links` accordingly.
+
+```bash
+# Internal docs (includes private items, marked with a lock icon)
+cargo doc --document-private-items --open
+
+# Public docs (what users see on docs.rs)
+cargo doc --no-deps --open
+```
+
+```rust
+// If some public item genuinely needs to link to a private one, acknowledge it
+#![allow(rustdoc::private_intra_doc_links)]
+```
+
+**Rationale**: Internal docs are a useful onboarding tool for larger codebases. The `private_intra_doc_links` lint catches the case where a public item links to a private one — such a link works when the user runs `cargo doc` locally with `--document-private-items`, but breaks on docs.rs where only the public view is built.
+
+---
+
+## DC-33: Enable Scraped Examples for Real-World Usage
+
+**Strength**: CONSIDER
+
+**Summary**: Enable rustdoc's scraped-examples feature so code in `examples/` auto-appears on the docs for items it uses.
+
+```toml
+# Cargo.toml
+[package.metadata.docs.rs]
+cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
+```
+
+```bash
+# Locally
+cargo doc -Zunstable-options -Zrustdoc-scrape-examples
+```
+
+**Rationale**: Scraped examples let the code in your `examples/` directory double as documentation. Rustdoc pulls snippets that call each public item (up to five per item, smallest first, one visible by default with the rest under a toggle). Currently unstable — requires nightly — but widely used on docs.rs.
+
+---
+
+## Documentation Checklist
+
+A one-shot template for documenting a public item. Delete sections that don't apply.
+
+```rust
+/// Summary sentence in one line, ~15 words or fewer.
+///
+/// Extended description: what this does, when to use it, and how it
+/// relates to [`Neighbor`] types via intra-doc links.
 ///
 /// # Examples
 ///
 /// ```
-/// use my_crate::read_ptr;
-///
-/// let value = 42i32;
-/// let ptr = &value as *const i32;
-///
-/// // SAFETY: ptr is valid, aligned, and points to initialized data
-/// let read_value = unsafe { read_ptr(ptr) };
-/// assert_eq!(read_value, 42);
+/// # fn main() -> Result<(), Box<dyn std::error::Error>> {
+/// use my_crate::item;
+/// let value = item("input")?;
+/// assert_eq!(value.status(), "ok");
+/// # Ok(()) }
 /// ```
-pub unsafe fn read_ptr<T>(ptr: *const T) -> T {
-    ptr.read()
-}
+///
+/// # Errors
+///
+/// (For Result-returning functions.) Returns [`Error::InvalidInput`] if
+/// `input` is empty, [`Error::Io`] if disk I/O fails.
+///
+/// # Panics
+///
+/// (When applicable.) Panics if the global allocator fails.
+///
+/// # Safety
+///
+/// (Required for `unsafe fn`.) The caller must ensure that `input`
+/// points to a valid, initialized buffer of at least `len` bytes.
+pub fn item(input: &str) -> Result<Value, Error> { todo!() }
+# struct Neighbor; struct Value; impl Value { fn status(&self) -> &str { "ok" } }
+# enum Error { InvalidInput, Io }
 ```
 
----
+Reference checklist:
+
+1. First sentence ≤ 15 words, one line (DC-03).
+2. Extended description uses intra-doc links for every type mentioned (DC-12, DC-13).
+3. `# Examples` uses `?`, not `unwrap`; hides boilerplate with `#` lines (DC-09, DC-10).
+4. `# Errors` / `# Panics` / `# Safety` present when applicable (DC-05, DC-06, DC-07).
+5. Every `pub` field and variant has its own doc comment (DC-16).
+6. Crate-level and module-level `//!` docs exist (DC-17, DC-18).
+7. Crate-root attribute block enables the rustdoc lints (DC-19).
+8. Cargo.toml has full metadata and docs.rs configuration (DC-26).
+
+
+## Module Template
+
+Drop this at the top of a new module; delete the sections that don't apply.
+
+```rust
+//! Short one-sentence summary of what this module provides.
+//!
+//! Extended description: what kinds of types live here, the problem this
+//! module solves, and how it relates to sibling modules via
+//! [`crate::sibling`] links.
+//!
+//! # Examples
+//!
+//! ```
+//! # fn main() -> Result<(), Box<dyn std::error::Error>> {
+//! use my_crate::my_module::{Thing, do_thing};
+//!
+//! let thing = Thing::new();
+//! do_thing(&thing)?;
+//! # Ok(()) }
+//! ```
+//!
+//! # Design
+//!
+//! (Optional.) Key architectural decisions — zero-copy parsing, single
+//! dispatch point, cancellation strategy — anything that informs how
+//! callers should reason about the module.
+//!
+//! # Feature flags
+//!
+//! (Optional.) This module is available when the `foo` feature is enabled.
+
+#![warn(missing_docs)]
+
+/// A thing this module operates on.
+pub struct Thing { /* ... */ }
+
+impl Thing {
+    /// Constructs a new `Thing` with default settings.
+    pub fn new() -> Self { Self {} }
+}
+
+/// Does the thing.
+///
+/// # Errors
+///
+/// Returns an error if the thing is in an invalid state.
+pub fn do_thing(_: &Thing) -> Result<(), std::io::Error> { Ok(()) }
+```
+
 
 ## Summary Table
 
 | Pattern | Strength | Key Principle |
 |---------|----------|---------------|
-| First sentence ~15 words | MUST | Enables skimming |
-| Canonical sections | MUST | Standard structure |
-| Module docs comprehensive | MUST | Purpose, usage, examples |
-| #[doc(inline)] for re-exports | SHOULD | Natural integration |
-| Parameters in prose | SHOULD | Not table format |
-| Examples compile | SHOULD | Living documentation |
-| Minimize formatting | SHOULD | Natural prose |
-| Link related items | SHOULD | Navigation |
+| DC-01 Every public item documented | MUST | `#![warn(missing_docs)]` at the crate root |
+| DC-02 `///` vs `//!` | MUST | Outer documents next item, inner documents enclosing |
+| DC-03 First sentence ≤ 15 words | MUST | Summary line stays on one line in listings |
+| DC-04 Canonical sections | MUST | `# Examples` → `# Errors` → `# Panics` → `# Safety` |
+| DC-05 `# Errors` section on `Result` | MUST | Document which variants occur and why |
+| DC-06 `# Panics` section | MUST | Every documented panic condition |
+| DC-07 `# Safety` required on `unsafe fn` | MUST | Enumerate every caller obligation |
+| DC-08 Every item has an example | SHOULD | Show *why*, not just *how* |
+| DC-09 Examples use `?`, not `unwrap` | MUST | Hidden `fn main() -> Result<...>` pattern |
+| DC-10 Hide boilerplate with `#` | SHOULD | Compile but don't render setup lines |
+| DC-11 Doctest directives | SHOULD | `no_run`, `should_panic`, `compile_fail`, `text` |
+| DC-12 Intra-doc links | MUST | `[`Type`]`, `[Type::method]`, `[crate::path]` |
+| DC-13 Hyperlink in prose | SHOULD | Every type/method mention is a link |
+| DC-15 Parameters in prose | SHOULD | No parameter tables |
+| DC-17 Crate-level `//!` docs | MUST | Tagline, quick-start example, top-level pointers |
+| DC-18 Module-level `//!` docs | MUST | Every public module has a header |
+| DC-19 Enable rustdoc lints | SHOULD | Deny `broken_intra_doc_links`, warn on the rest |
+| DC-20 `#[doc = include_str!]` | CONSIDER | Share a README as crate-level docs |
+| DC-21 `#[doc(hidden)]` for noise | SHOULD | Hide from docs; use `pub(crate)` for real privacy |
+| DC-22 `#[doc(inline)]` / `no_inline` | SHOULD | Present re-exports as first-class or as a block |
+| DC-23 `#[doc(alias)]` for search | CONSIDER | FFI names, acronyms, alternate spellings |
+| DC-24 `#[doc(cfg(feature = ...))]` | SHOULD | Show feature gates in docs.rs |
+| DC-26 Cargo metadata complete | MUST | description, license, repository, keywords, categories |
+| DC-28 CHANGELOG + annotated tags | MUST | Label breaking changes explicitly |
 
-## Documentation Checklist
-
-```rust
-/// Summary sentence in one line, approximately 15 words maximum.
-///
-/// Extended description providing more context about what this item does,
-/// when to use it, and how it fits into the larger system.
-///
-/// # Examples
-///
-/// ```
-/// use my_crate::Item;
-///
-/// let item = Item::new();
-/// assert!(item.is_valid());
-/// ```
-///
-/// # Errors
-///
-/// (For Result-returning functions)
-/// Returns an error if...
-///
-/// # Panics
-///
-/// (When applicable)
-/// Panics if...
-///
-/// # Safety
-///
-/// (For unsafe functions - required)
-/// The caller must ensure...
-pub fn item() -> Result<T, E> {
-    // ...
-}
-```
-
-## Module Template
-
-```rust
-//! One-line summary of what this module provides.
-//!
-//! Extended description explaining the module's purpose, design decisions,
-//! and how to use it effectively.
-//!
-//! # Examples
-//!
-//! ```
-//! use my_crate::my_module::{Thing, do_thing};
-//!
-//! let thing = Thing::new();
-//! do_thing(&thing)?;
-//! # Ok::<(), Box<dyn std::error::Error>>(())
-//! ```
-//!
-//! # Design
-//!
-//! (Optional) Explain key design decisions or architectural patterns used
-//! in this module.
-
-pub struct Thing { /* ... */ }
-pub fn do_thing(t: &Thing) -> Result<(), Error> { /* ... */ }
-```
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for Debug trait
-- **API Design**: See `02-api-design.md` for clear interfaces
-- **Error Handling**: See `03-error-handling.md` for error documentation
+- **Core Idioms**: See `01-core-idioms.md` for `Debug`/`Display` impls that the docs describe.
+- **API Design**: See `02-api-design.md` for naming and signature patterns that shape the docs.
+- **Error Handling**: See `03-error-handling.md` for the error types the `# Errors` section describes.
+- **Type Design**: See `05-type-design.md` for invariants that the `# Safety` section enforces.
+- **Project Structure**: See `12-project-structure.md` for the Cargo.toml metadata and repository layout that support DC-26.
+
 
 ## External References
 
-- [Rustdoc Book](https://doc.rust-lang.org/rustdoc/)
-- [API Guidelines - Documentation](https://rust-lang.github.io/api-guidelines/documentation.html)
-- Pragmatic Rust: M-FIRST-DOC-SENTENCE, M-MODULE-DOCS, M-CANONICAL-DOCS
+- [The Rustdoc Book](https://doc.rust-lang.org/rustdoc/) — authoritative reference for doc comments, doctests, intra-doc links, `#[doc]` attributes, re-export inlining, lints, and advanced features.
+- [Rust API Guidelines — Documentation](https://rust-lang.github.io/api-guidelines/documentation.html) — C-CRATE-DOC, C-EXAMPLE, C-QUESTION-MARK, C-FAILURE, C-LINK, C-METADATA, C-RELNOTES, C-HIDDEN.
+- [The Rust Programming Language — Chapter 14.2: Publishing a Crate to Crates.io](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html) — Cargo metadata, crate-level docs, tagging releases.
+- [RFC 1574 — API Documentation Conventions](https://rust-lang.github.io/rfcs/1574-more-api-documentation-conventions.html) — "Link all the things."
+- [RFC 1687 — Crate-Level Documentation](https://rust-lang.github.io/rfcs/1687-crates-io-default-ranking.html) — what belongs on the front page.
+- [docs.rs: About](https://docs.rs/about) — feature builds, `[package.metadata.docs.rs]` configuration, `--cfg docsrs`.
+- Pragmatic Rust Guidelines: M-CANONICAL-DOCS, M-DOC-INLINE, M-FIRST-DOC-SENTENCE, M-MODULE-DOCS.

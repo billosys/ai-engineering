@@ -797,6 +797,134 @@ fn write_large_dataset(data: &[Item]) {
 
 ---
 
+## CLI-57: User-Friendly Panic Messages with `human-panic`
+
+**Strength**: CONSIDER
+
+**Summary**: Rust's default panic output (`thread 'main' panicked at ...`) is developer noise to an end user. `human_panic::setup_panic!()` replaces it with a short, actionable message and a path to a crash report file.
+
+```rust
+// ❌ BAD: a user-visible panic looks like this by default
+// thread 'main' panicked at 'index out of bounds: the len is 0 but the index is 0',
+// src/main.rs:42:5
+// note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+// ✅ GOOD: wrap main with human_panic's setup
+use human_panic::setup_panic;
+
+fn main() {
+    setup_panic!();           // only active in release builds by default
+
+    if let Err(e) = run() {
+        eprintln!("Error: {e:#}");
+        std::process::exit(1);
+    }
+}
+// User now sees:
+//   Well, this is embarrassing.
+//   my-tool had a problem and crashed. To help us diagnose the problem
+//   you can send us a crash report.
+//   We have generated a report file at "/tmp/report-1e2f....toml"
+//   ...
+```
+
+```rust
+// ✅ GOOD: customize the metadata shown in the crash report
+use human_panic::{setup_panic, Metadata};
+
+fn main() {
+    setup_panic!(Metadata {
+        name: env!("CARGO_PKG_NAME").into(),
+        version: env!("CARGO_PKG_VERSION").into(),
+        authors: "team@example.com".into(),
+        homepage: "https://example.com/my-tool/issues".into(),
+    });
+    // ...
+}
+```
+
+**Rationale**: End users who see `thread 'main' panicked at...` assume the tool is broken and have no idea what to do next. `human-panic` gives them a sentence they can understand and a report file they can attach to a bug ticket. The macro is a no-op in debug builds, so your iteration loop still shows the panic backtrace; only the shipped binary gets the friendly treatment. Pair this with `setup_panic!` early in `main`, before any work starts, so a panic during argument parsing is still caught.
+
+**See also**:
+- CLI-17: User-friendly error messages
+- CLI-19: Distinguish user errors from system errors
+
+---
+
+## CLI-58: Interactive Prompts with `dialoguer`
+
+**Strength**: CONSIDER
+
+**Summary**: For anything richer than a yes/no prompt (passwords, multi-select, fuzzy selection, validated input), use `dialoguer` rather than hand-rolling `io::stdin().read_line`. It handles raw mode, secret input, arrow-key navigation, and terminal restoration.
+
+```rust
+use dialoguer::{Confirm, Input, Password, Select, MultiSelect, theme::ColorfulTheme};
+
+// ✅ GOOD: confirm before a destructive operation
+fn confirm_delete(n: usize) -> std::io::Result<bool> {
+    Confirm::with_theme(&ColorfulTheme::default())
+        .with_prompt(format!("Delete {n} files?"))
+        .default(false)
+        .interact()
+}
+
+// ✅ GOOD: password without echo
+fn prompt_password() -> std::io::Result<String> {
+    Password::with_theme(&ColorfulTheme::default())
+        .with_prompt("Password")
+        .with_confirmation("Repeat password", "Passwords don't match")
+        .interact()
+}
+
+// ✅ GOOD: validated input
+fn prompt_port() -> std::io::Result<u16> {
+    Input::<u16>::new()
+        .with_prompt("Port")
+        .default(8080)
+        .validate_with(|p: &u16| -> Result<(), &str> {
+            if *p >= 1024 { Ok(()) } else { Err("pick a port >= 1024") }
+        })
+        .interact_text()
+}
+
+// ✅ GOOD: pick one from a list
+fn pick_format() -> std::io::Result<usize> {
+    let items = &["json", "yaml", "toml"];
+    Select::with_theme(&ColorfulTheme::default())
+        .with_prompt("Output format")
+        .items(items)
+        .default(0)
+        .interact()
+}
+```
+
+```rust
+// ✅ GOOD: fall back to non-interactive when stdin isn't a tty
+use std::io::IsTerminal;
+
+fn delete(files: &[std::path::PathBuf], assume_yes: bool) -> anyhow::Result<()> {
+    let confirmed = if assume_yes || !std::io::stdin().is_terminal() {
+        assume_yes            // in scripts: require --yes, never prompt
+    } else {
+        Confirm::new()
+            .with_prompt(format!("Delete {} files?", files.len()))
+            .default(false)
+            .interact()?
+    };
+    if !confirmed { anyhow::bail!("aborted"); }
+    // ... delete ...
+    Ok(())
+}
+```
+
+**Rationale**: `read_line` gives you a newline-terminated string, nothing else. Password entry needs to disable terminal echo; a `Select` needs raw mode to read arrow keys; validation with "please try again" needs a loop with proper prompt redraw. `dialoguer` encapsulates all of this and restores the terminal on drop (crucial if the user Ctrl-Cs mid-prompt). The non-negotiable complement is CLI-25 and CLI-46: never prompt in a non-tty context — check `is_terminal()` and require an explicit `--yes` or `--force` flag instead.
+
+**See also**:
+- CLI-25: Confirmation prompts
+- CLI-46 (08-advanced-topics): Piping, stdin, and terminal detection
+
+---
+
 ## Best Practices Summary
 
 | Pattern | Strength | Key Takeaway |
@@ -809,6 +937,8 @@ fn write_large_dataset(data: &[Item]) {
 | CLI-26 | CONSIDER | Provide structured formats (JSON, CSV) for automation |
 | CLI-27 | MUST | Data to stdout, messages/errors to stderr |
 | CLI-28 | CONSIDER | Buffer output for performance, flush for real-time |
+| CLI-57 | CONSIDER | Friendly crash messages with human-panic |
+| CLI-58 | CONSIDER | Rich interactive prompts with dialoguer |
 
 ## Related Guidelines
 

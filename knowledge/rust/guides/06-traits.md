@@ -1,42 +1,43 @@
 # Trait Design and Implementation
 
-Guidelines for designing traits, implementing them effectively, and using trait objects.
+Guidelines for designing traits, implementing them well, and using trait objects. Covers trait-as-interface vs trait-as-bound framing, associated types vs generics, coherence and blanket impls, object safety, auto traits, operator overloads, extension traits, and the generic-machinery features (supertraits, `where` clauses, HRTBs, `dyn` upcasting) that make them fit together.
 
 
 ## TR-01: `impl Trait` in Argument Position
 
 **Strength**: SHOULD
 
-**Summary**: Use `impl Trait` for simpler function signatures.
+**Summary**: Use `impl Trait` for single-use generic parameters; use a named type parameter `<T>` when callers need to refer to the type.
 
 ```rust
-// ✅ CLEANER: impl Trait
-fn process(iter: impl Iterator<Item = i32>) -> i32 {
+// ✅ GOOD: concise for a throwaway bound
+fn sum(iter: impl Iterator<Item = i32>) -> i32 {
     iter.sum()
 }
 
-// EQUIVALENT but verbose:
-fn process<I: Iterator<Item = i32>>(iter: I) -> i32 {
+// Equivalent — verbose for the same meaning
+fn sum_generic<I: Iterator<Item = i32>>(iter: I) -> i32 {
     iter.sum()
 }
 
-// ✅ Multiple bounds
+// ✅ GOOD: multiple `impl Trait` compose
 fn send_all(items: impl IntoIterator<Item = impl AsRef<str>>) {
     for item in items {
         send(item.as_ref());
     }
 }
 
-// ⚠️ LIMITATION: Can't specify the concrete type
-fn process(iter: impl Iterator<Item = i32>) {
-    // Caller can't use turbofish: process::<std::vec::IntoIter<i32>>(...)
-}
+// ❌ LIMITATION: callers can't turbofish `impl Trait`
+fn process(iter: impl Iterator<Item = i32>) { /* ... */ }
+// process::<std::vec::IntoIter<i32>>(v);   // not allowed
 
-// Use generics when callers need to specify type:
-fn process<I: Iterator<Item = i32>>(iter: I) {
-    // Caller CAN use: process::<std::vec::IntoIter<i32>>(...)
-}
+// ✅ Use a named parameter when the caller benefits from naming T
+fn process_named<I: Iterator<Item = i32>>(iter: I) { /* ... */ }
 ```
+
+**Rationale**: `impl Trait` in argument position is sugar for an anonymous generic parameter — monomorphized the same way, with the same zero-cost abstraction. Switch to a named `<T>` when you need turbofish, a `where` clause that references the type, or the type repeats in the signature.
+
+**See also**: TR-10, API-41
 
 ---
 
@@ -44,194 +45,194 @@ fn process<I: Iterator<Item = i32>>(iter: I) {
 
 **Strength**: CONSIDER
 
-**Summary**: Implement traits for all types meeting certain bounds.
+**Summary**: Implement a trait for every type meeting a bound; this is how standard ergonomics like `ToString` / `Into` work.
 
 ```rust
 use std::fmt::Display;
 
-// ✅ BLANKET IMPL: Any Display type can be logged
-trait Loggable {
+// ✅ Blanket impl — anything Display automatically gains `.log()`
+pub trait Loggable {
     fn log(&self);
 }
-
-impl<T: Display> Loggable for T {
-    fn log(&self) {
-        println!("[LOG] {}", self);
-    }
+impl<T: Display + ?Sized> Loggable for T {
+    fn log(&self) { println!("[LOG] {self}"); }
 }
 
-// Now any Display type has .log():
-"hello".log();
-42.log();
+"hello".log();   // works
+42.log();        // works
 
-// ✅ BLANKET IMPL: References implement trait if T does
+// ✅ Blanket impl for references — enables `&T: MyTrait` when `T: MyTrait`
 impl<T: MyTrait + ?Sized> MyTrait for &T {
-    fn method(&self) {
-        (**self).method()
-    }
+    fn method(&self) { (**self).method() }
 }
 
-// ✅ BLANKET IMPL: Box<T> implements trait if T does
+// ✅ Blanket impl for Box — forwarding through the pointer
 impl<T: MyTrait + ?Sized> MyTrait for Box<T> {
-    fn method(&self) {
-        (**self).method()
-    }
+    fn method(&self) { (**self).method() }
 }
 
-// ⚠️ CAUTION: Blanket impls can conflict
-// If you have `impl<T: A> MyTrait for T` and `impl<T: B> MyTrait for T`
-// they conflict for any T that implements both A and B
+// ❌ CAUTION: blanket impls are final for your trait
+// If you later add `impl MyTrait for String`, it conflicts with the
+// blanket above (since String: Display). Pick one discipline and stick to it.
 ```
+
+**Rationale**: Blanket impls give users implementations "for free" when a bound holds. They also lock you in — adding a specific impl later that overlaps is a breaking change. Use them when you want universal coverage (ext traits, conversion traits), not when some types need bespoke behavior.
+
+**See also**: TR-03 (orphan rule interaction), TR-05 (extension traits lean on blanket impls)
 
 ---
 
-## TR-03: Coherence and Orphan Rules
+## TR-03: Coherence and the Orphan Rule
 
 **Strength**: MUST
 
-**Summary**: You can only implement traits when you "own" either the trait or the type.
+**Summary**: You can implement a trait for a type only if you own the trait, the type, or both. This is the orphan rule, and it guarantees every `(Trait, Type)` pair has at most one implementation in the entire program.
 
 ```rust
-// ✅ CAN: Your trait on foreign type
-pub trait MyTrait { }
-impl MyTrait for String { }  // OK: You own MyTrait
+pub trait MyTrait {}
 
-// ✅ CAN: Foreign trait on your type
+// ✅ Your trait, foreign type
+impl MyTrait for String {}
+
+// ✅ Foreign trait, your type
 pub struct MyType;
-impl std::fmt::Display for MyType { }  // OK: You own MyType
-
-// ❌ CANNOT: Foreign trait on foreign type
-impl std::fmt::Display for String { }  // ERROR: Orphan rule
-
-// ✅ WORKAROUND: Newtype wrapper
-pub struct MyString(String);
-impl std::fmt::Display for MyString {
+impl std::fmt::Display for MyType {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        // Custom formatting
-        write!(f, "MyString({})", self.0)
+        write!(f, "MyType")
     }
 }
 
-// ✅ SPECIAL CASE: Blanket with local trait
+// ❌ Foreign trait, foreign type — orphan rule violation
+// impl std::fmt::Display for Vec<u8> {}
+
+// ✅ Workaround: newtype wrapper
+pub struct MyBytes(pub Vec<u8>);
+impl std::fmt::Display for MyBytes {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{} bytes", self.0.len())
+    }
+}
+
+// ✅ Blanket impl counts as "owning" through the trait
 pub trait MyExt {
     fn my_method(&self);
 }
-impl<T: std::fmt::Display> MyExt for T {  // OK: You own MyExt
-    fn my_method(&self) {
-        println!("Extended: {}", self);
-    }
+impl<T: std::fmt::Display + ?Sized> MyExt for T {
+    fn my_method(&self) { println!("ext: {self}"); }
 }
 ```
 
+**Rationale**: Without the orphan rule, two crates could both `impl Trait for Foo` and the compiler would have no principled way to pick. The newtype workaround (wrap in a `struct MyWrapper(Foreign)`) is the canonical escape hatch when you need both-foreign combinations — see TD-03.
+
+**See also**: TR-05 (extension traits), TD-03 (newtype pattern)
+
 ---
 
-## TR-04: Essential Functionality Should be Inherent
+## TR-04: Essential Functionality Is Inherent
 
 **Strength**: MUST
 
-**Summary**: Types should implement core functionality inherently; trait implementations should forward to inherent methods.
+**Summary**: Put a type's core methods in an inherent `impl` block. Trait impls should forward to inherent methods, not carry the primary implementation.
 
 ```rust
-// Bad - essential functionality only in traits
-struct HttpClient {}
+// ❌ BAD: core method only reachable via trait
+pub struct HttpClient { /* ... */ }
+
+pub trait Download {
+    fn download_file(&self, url: &str);
+}
 
 impl Download for HttpClient {
-    fn download_file(&self, url: impl AsRef<str>) {
-        // Core logic buried in trait implementation
-        // Users must `use Download` to access this!
+    fn download_file(&self, url: &str) {
+        // Users must `use Download;` to find this method at all.
     }
 }
 
-// Good - essential functionality is inherent
-struct HttpClient {}
-
+// ✅ GOOD: core method inherent; trait forwards
 impl HttpClient {
-    // Core functionality available without imports
-    pub fn download_file(&self, url: impl AsRef<str>) {
-        // ... download logic
+    pub fn download_file(&self, url: &str) {
+        // real logic here
     }
 }
 
-// Trait implementation forwards to inherent method
 impl Download for HttpClient {
-    fn download_file(&self, url: impl AsRef<str>) {
-        // Simply forward to the inherent implementation
-        Self::download_file(self, url)
+    fn download_file(&self, url: &str) {
+        HttpClient::download_file(self, url)
     }
 }
 ```
 
-**Rationale**: Offloading essential functionality into traits means users must discover and import the right traits to use your type. Inherent methods are immediately discoverable and don't require trait imports.
+**Rationale**: Inherent methods are discoverable without trait imports, appear prominently in rustdoc, and work with autocomplete out of the box. Use traits to express shared contracts across types, not to hide your type's own API behind an import requirement.
 
-**See also**: M-ESSENTIAL-FN-INHERENT, Rust API Guidelines C-CONV
+**See also**: M-ESSENTIAL-FN-INHERENT, API-24
 
 ---
 
-## TR-05: Extension Traits
+## TR-05: Extension Traits for Foreign Types
 
 **Strength**: CONSIDER
 
-**Summary**: Add methods to foreign types without newtype wrappers.
+**Summary**: Add convenience methods to types you don't own with an `*Ext` trait plus a blanket impl. Users `use YourExt;` to enable them.
 
 ```rust
-// ✅ Extension trait for Option<String>
-pub trait OptionStringExt {
-    fn or_empty(self) -> String;
-    fn is_blank(&self) -> bool;
+// ✅ Extension trait with the `*Ext` naming convention
+pub trait StrExt {
+    fn truncate_to(&self, n: usize) -> &str;
 }
 
-impl OptionStringExt for Option<String> {
-    fn or_empty(self) -> String {
-        self.unwrap_or_default()
-    }
-    
-    fn is_blank(&self) -> bool {
-        self.as_ref().map_or(true, |s| s.trim().is_empty())
+impl StrExt for str {
+    fn truncate_to(&self, n: usize) -> &str {
+        match self.char_indices().nth(n) {
+            Some((i, _)) => &self[..i],
+            None => self,
+        }
     }
 }
 
-// ✅ Extension trait for iterators
-pub trait IteratorExt: Iterator {
-    fn try_collect_vec(self) -> Result<Vec<Self::Item>, Error>
-    where
-        Self: Sized,
-        Self::Item: TryInto<Output, Error = Error>;
+// ✅ Typical shape: base trait + Ext trait with default methods
+pub trait AsyncRead {
+    fn poll_read(/* ... */) -> /* ... */ { todo!() }
 }
 
-impl<I: Iterator> IteratorExt for I {
-    fn try_collect_vec(self) -> Result<Vec<Self::Item>, Error>
+pub trait AsyncReadExt: AsyncRead {
+    fn read_to_end<'a>(&'a mut self, buf: &'a mut Vec<u8>)
     where
         Self: Sized,
-        Self::Item: TryInto<Output, Error = Error>,
     {
-        self.collect()
+        /* default implementation in terms of poll_read */
     }
 }
 
-// Usage requires importing the trait:
-use my_crate::OptionStringExt;
+// Blanket impl: everyone who implements the base trait gets the Ext trait
+impl<T: AsyncRead + ?Sized> AsyncReadExt for T {}
 
-let name: Option<String> = None;
-println!("{}", name.or_empty());
+// Usage requires bringing the trait into scope
+use some_crate::StrExt;
+let s = "hello world";
+let t = s.truncate_to(5);
 ```
+
+**Rationale**: Extension traits give you API growth without requiring a newtype wrapper or violating coherence. The `*Ext` convention signals "this trait exists only to decorate another type with methods." Pair with a blanket impl so users don't have to implement the Ext trait themselves.
+
+**See also**: TR-02, TR-03, API-45
 
 ---
 
-## TR-06: Forwarding Implementations
+## TR-06: Forwarding Implementations for Wrapper Types
 
 **Strength**: SHOULD
 
-**Summary**: When implementing traits on wrapper types, forward to the inner implementation.
+**Summary**: When you wrap a type, forward common traits (`Debug`, `Clone`, `Display`, `PartialEq`, etc.) to the inner value so the wrapper composes cleanly.
 
 ```rust
 use std::fmt;
 
-struct Logged<T> {
+pub struct Logged<T> {
     inner: T,
     name: String,
 }
 
-// Forward Debug to inner type
+// ✅ Forward Debug when T: Debug
 impl<T: fmt::Debug> fmt::Debug for Logged<T> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("Logged")
@@ -241,293 +242,189 @@ impl<T: fmt::Debug> fmt::Debug for Logged<T> {
     }
 }
 
-// Forward Clone when inner is Clone
+// ✅ Forward Clone when T: Clone
 impl<T: Clone> Clone for Logged<T> {
     fn clone(&self) -> Self {
-        Self {
-            inner: self.inner.clone(),
-            name: self.name.clone(),
-        }
+        Self { inner: self.inner.clone(), name: self.name.clone() }
+    }
+}
+
+// ✅ Generic container: forward via iterator shape
+impl<T> Extend<T> for Logged<Vec<T>> {
+    fn extend<I: IntoIterator<Item = T>>(&mut self, iter: I) {
+        self.inner.extend(iter);
     }
 }
 ```
 
-**Rationale**: Wrapper types should behave like their inner types where appropriate. Forwarding implementations maintains expected behavior and allows wrappers to compose.
+**Rationale**: Wrappers should behave as much like their inner type as the domain allows; forwarding `Debug`/`Clone`/`Default` keeps them usable in generic contexts. Do **not** reach for `Deref` to forward every method — see TR-21.
+
+**See also**: TR-21, TD-03 (newtypes)
 
 ---
 
----
-
-## TR-07: Generic Traits vs Associated Types
+## TR-07: Associated Types vs Generic Parameters
 
 **Strength**: SHOULD
 
-**Summary**: Use associated types for "output" types, generics for "input" types.
+**Summary**: Associated types when each implementor has one canonical choice; generic parameters when multiple implementations make sense.
 
 ```rust
-// ✅ ASSOCIATED TYPE: One output type per implementation
-trait Iterator {
+// ✅ Associated type — each iterator yields exactly one Item
+pub trait Iterator {
     type Item;
     fn next(&mut self) -> Option<Self::Item>;
 }
+// impl Iterator for Counter { type Item = u32; ... }
+// You can't have two Iterator impls for Counter with different Items.
 
-// Vec<i32> has ONE iterator item type: i32
-// You can't implement Iterator twice for different Item types
-
-// ✅ GENERIC PARAMETER: Multiple implementations possible
-trait From<T> {
+// ✅ Generic parameter — String: From<&str>, From<char>, From<Box<str>>, ...
+pub trait From<T> {
     fn from(value: T) -> Self;
 }
 
-// String can implement From<&str>, From<char>, From<Vec<u8>>, etc.
-// Multiple implementations for different T
-
-// Decision guide:
-// Q: "For a given type, is there ONE X or MANY X?"
-// ONE → Associated type
-// MANY → Generic parameter
-
-// ✅ COMBINED: Both can be used together
-trait Converter<Input> {  // Generic: many input types
-    type Output;          // Associated: one output per Input
-    type Error;           // Associated: one error per Input
-    
+// ✅ Mix: generic input, associated output/error
+pub trait Converter<Input> {
+    type Output;
+    type Error;
     fn convert(&self, input: Input) -> Result<Self::Output, Self::Error>;
 }
+
+// ❌ AVOID: a generic parameter where an associated type is needed
+pub trait BadIterator<Item> {            // forces callers to track Item
+    fn next(&mut self) -> Option<Item>;  // ambiguous: `Vec<u8>.next::<u8>()`?
+}
 ```
+
+**Rationale**: Associated types express a functional dependency — "for this impl, there's one Item." That lets call sites write `v.next()` without a turbofish. Generic parameters are right when the same `Self` type legitimately has multiple implementations (conversions, arithmetic across types).
+
+**See also**: TD-15 (type-design angle on this same choice)
 
 ---
 
-## TR-08: Implement Common Derive Traits
-
-**Strength**: MUST
-
-**Summary**: Types should derive or implement Clone, Debug, PartialEq, and other common traits where applicable.
-
-```rust
-// Good - comprehensive trait implementations
-#[derive(Clone, Debug, PartialEq, Eq, Hash)]
-pub struct Point {
-    x: i32,
-    y: i32,
-}
-
-// Good - selective traits for types with interior mutability
-use std::cell::RefCell;
-
-#[derive(Debug)]  // Debug but not Clone/PartialEq
-pub struct Counter {
-    count: RefCell<u32>,
-}
-
-impl Counter {
-    pub fn increment(&self) {
-        *self.count.borrow_mut() += 1;
-    }
-}
-
-// Good - custom implementations when derive doesn't work
-use std::fmt;
-
-pub struct CustomPoint {
-    x: f64,
-    y: f64,
-}
-
-impl Clone for CustomPoint {
-    fn clone(&self) -> Self {
-        CustomPoint {
-            x: self.x,
-            y: self.y,
-        }
-    }
-}
-
-impl fmt::Debug for CustomPoint {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        f.debug_struct("CustomPoint")
-            .field("x", &self.x)
-            .field("y", &self.y)
-            .finish()
-    }
-}
-
-// PartialEq for f64 needs custom logic
-impl PartialEq for CustomPoint {
-    fn eq(&self, other: &Self) -> bool {
-        (self.x - other.x).abs() < f64::EPSILON &&
-        (self.y - other.y).abs() < f64::EPSILON
-    }
-}
-
-// Good - Default implementation
-#[derive(Clone, Debug, Default, PartialEq)]
-pub struct Config {
-    timeout: u64,
-    retries: u32,
-}
-
-// Or manual Default
-impl Default for Config {
-    fn default() -> Self {
-        Config {
-            timeout: 30,
-            retries: 3,
-        }
-    }
-}
-```
-
-```rust
-// Don't clone file handles
-pub struct FileHandle {
-    fd: RawFd,
-}
-
-// Don't clone database connections
-pub struct DbConnection {
-    conn: *mut sqlite3,
-}
-
-// Don't clone mutex guards
-// (MutexGuard doesn't implement Clone by design)
-```
-
-**See also**: C-COMMON-TRAITS
-
----
-
-## TR-09: Implement Display for User-Facing Types
+## TR-08: Eagerly Implement Common Traits
 
 **Strength**: SHOULD
 
-**Summary**: Types that users will see should implement Display with clear, helpful messages.
+**Summary**: Public types should derive or implement the standard suite — `Debug`, `Clone`, `Copy` (where cheap), `PartialEq`, `Eq`, `Hash`, `Default`, `PartialOrd`, `Ord`, `Display` (where readable).
 
 ```rust
-use std::fmt;
-
-// Good - Display for error types
-#[derive(Debug)]
-pub enum ValidationError {
-    TooShort { min: usize, actual: usize },
-    TooLong { max: usize, actual: usize },
-    InvalidCharacter { ch: char, position: usize },
-}
-
-impl fmt::Display for ValidationError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            ValidationError::TooShort { min, actual } => {
-                write!(f, "input too short: expected at least {} characters, got {}", min, actual)
-            }
-            ValidationError::TooLong { max, actual } => {
-                write!(f, "input too long: expected at most {} characters, got {}", max, actual)
-            }
-            ValidationError::InvalidCharacter { ch, position } => {
-                write!(f, "invalid character '{}' at position {}", ch, position)
-            }
-        }
-    }
-}
-
-// Good - Display for domain types
-pub struct EmailAddress(String);
-
-impl fmt::Display for EmailAddress {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", self.0)
-    }
-}
-
-impl fmt::Debug for EmailAddress {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "EmailAddress(\"{}\")", self.0)
-    }
-}
-
-// Usage shows the difference:
-let email = EmailAddress("user@example.com".to_string());
-println!("{}", email);     // user@example.com
-println!("{:?}", email);   // EmailAddress("user@example.com")
-
-// Good - Display for IDs
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub struct UserId(u64);
 
-impl fmt::Display for UserId {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "User#{}", self.0)
-    }
+#[derive(Debug, Clone, Default)]
+pub struct Config {
+    timeout: Option<std::time::Duration>,
+    retries: Option<u32>,
 }
 
-impl fmt::Debug for UserId {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "UserId({})", self.0)
-    }
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum Status { Pending, Active, Completed }
+
+impl Default for Status {
+    fn default() -> Self { Status::Pending }
 }
 
-// Bad - Display same as Debug
-impl fmt::Display for UserId {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        fmt::Debug::fmt(self, f)  // Don't do this
+// Custom when derive doesn't fit — e.g., floats
+#[derive(Debug, Clone, Copy)]
+pub struct Temperature(f64);
+
+impl PartialEq for Temperature {
+    fn eq(&self, other: &Self) -> bool { self.0 == other.0 }
+}
+impl PartialOrd for Temperature {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        self.0.partial_cmp(&other.0)
     }
 }
 ```
 
 ```rust
-let value = EmailAddress("test@example.com".to_string());
-
-// Display: clean for users
-assert_eq!(format!("{}", value), "test@example.com");
-
-// Debug: structural for developers
-assert_eq!(format!("{:?}", value), "EmailAddress(\"test@example.com\")");
+// ✅ Don't derive traits that are semantically wrong
+pub struct FileHandle { fd: std::os::fd::RawFd }          // no Clone — FDs aren't copyable
+pub struct DbConnection { conn: *mut sqlite3::sqlite3 }   // no Clone — handles aren't shareable
+// MutexGuard intentionally doesn't implement Clone
 ```
 
-**Rationale**: Display provides clean output for users while Debug is for developers.
+**Rationale**: A `UserId` without `Hash` can't key a `HashMap`. A `Config` without `Default` forces every caller to fill in all fields. Missing `Debug` breaks `assert_eq!`, `dbg!`, and `thiserror`. These traits are the ambient contract users expect; not deriving them is a decision that should be justified.
+
+**See also**: C-COMMON-TRAITS, TD-12, TD-13, TD-14
 
 ---
 
----
-
-## TR-10: Keep Trait Bounds Minimal
+## TR-09: Trait Definition — Behavior, Not Data
 
 **Strength**: SHOULD
 
-**Summary**: Only require trait bounds that are actually needed for the implementation.
+**Summary**: Traits describe behavior, not storage. Prefer abstract capabilities over getter/setter pairs, and provide useful defaults where possible.
 
 ```rust
-// Bad - unnecessary bounds
-struct Container<T: Clone + Debug> {
+// ❌ BAD: trait as data accessor pair
+pub trait HasName {
+    fn get_name(&self) -> &str;
+    fn set_name(&mut self, name: &str);
+}
+
+// ✅ GOOD: trait as a behavior
+pub trait Named {
+    fn name(&self) -> &str;
+}
+
+// ✅ Default methods in terms of required methods
+pub trait Greet {
+    fn name(&self) -> &str;                        // required
+
+    fn greet(&self) -> String {                    // default
+        format!("Hello, {}!", self.name())
+    }
+}
+
+// ✅ Associated types scope the trait's output vocabulary
+pub trait Parser {
+    type Output;
+    type Error;
+    fn parse(&self, input: &str) -> Result<Self::Output, Self::Error>;
+}
+
+// ✅ Default methods can be overridden when a type has a faster path
+pub trait Drawable {
+    fn draw(&self, canvas: &mut Canvas);
+    fn draw_at(&self, canvas: &mut Canvas, x: i32, y: i32) {
+        canvas.translate(x, y);
+        self.draw(canvas);
+        canvas.translate(-x, -y);
+    }
+}
+```
+
+**Rationale**: Traits coupling directly to storage (get/set pairs) are rarely abstractable — each type ends up with a slightly different notion of "the name." A behavior-shaped trait (`Named`, `Greet`, `Drawable`) composes with blanket impls, default methods, and generic code. Reserve data-shaped interfaces for concrete structs.
+
+**See also**: TR-12 (narrow traits), TR-20 (supertraits)
+
+---
+
+## TR-10: Keep Trait Bounds Minimal and Scoped
+
+**Strength**: SHOULD
+
+**Summary**: Put bounds on `impl` blocks and individual methods — not on type definitions. Use `where` clauses when bounds grow beyond a trivial list.
+
+```rust
+// ❌ BAD: bounds on the struct definition leak to every use
+pub struct Container<T: Clone + Debug + PartialEq> {
     items: Vec<T>,
 }
 
-impl<T: Clone + Debug> Container<T> {
-    pub fn new() -> Self {
-        Self { items: Vec::new() }
-    }
-    
-    pub fn add(&mut self, item: T) {
-        // Doesn't use Clone or Debug!
-        self.items.push(item);
-    }
-}
-
-// Good - bounds only where needed
-struct Container<T> {
+// ✅ GOOD: unbounded definition, bounds on relevant impls only
+pub struct Container<T> {
     items: Vec<T>,
 }
 
 impl<T> Container<T> {
-    pub fn new() -> Self {
-        Self { items: Vec::new() }
-    }
-    
-    pub fn add(&mut self, item: T) {
-        self.items.push(item);
-    }
+    pub fn new() -> Self { Self { items: Vec::new() } }
+    pub fn push(&mut self, item: T) { self.items.push(item); }
 }
 
-// Add bounds only for specific methods
 impl<T: Clone> Container<T> {
     pub fn duplicate_last(&mut self) {
         if let Some(last) = self.items.last() {
@@ -536,18 +433,26 @@ impl<T: Clone> Container<T> {
     }
 }
 
-impl<T: Debug> Container<T> {
+impl<T: std::fmt::Debug> Container<T> {
     pub fn debug_print(&self) {
-        for item in &self.items {
-            println!("{:?}", item);
-        }
+        for item in &self.items { println!("{item:?}"); }
     }
+}
+
+// ✅ GOOD: `where` clause when bounds get complex
+fn merge<K, V, I>(map: &mut std::collections::HashMap<K, V>, iter: I)
+where
+    K: std::hash::Hash + Eq + Clone,
+    V: Clone,
+    I: IntoIterator<Item = (K, V)>,
+{
+    for (k, v) in iter { map.insert(k, v); }
 }
 ```
 
-**Rationale**: Overly restrictive trait bounds limit your type's usability. Users can't use `Container<NotClone>` even if they never call `duplicate_last()`. Place bounds on implementations, not type definitions.
+**Rationale**: Bounds on the type definition cascade into every function signature that mentions the type — even ones that don't need the bound. Bound each `impl` or method individually so `Container<RawFd>` remains usable if you never call `duplicate_last`. `where` clauses make complex bounds readable and play nicer with associated types.
 
-**See also**: Generic Programming best practices
+**See also**: TD-09 (struct bound hygiene), API-41
 
 ---
 
@@ -555,49 +460,44 @@ impl<T: Debug> Container<T> {
 
 **Strength**: CONSIDER
 
-**Summary**: Traits with no methods that mark type properties.
+**Summary**: Method-less traits mark type properties — stdlib's `Copy`, `Send`, `Sync`, `Sized`, `Unpin` are marker traits, and you can define your own for domain invariants.
 
 ```rust
-// Standard marker traits:
-// - Send: Safe to transfer between threads
-// - Sync: Safe to share references between threads
-// - Copy: Implicitly copied on assignment
-// - Sized: Has known size at compile time
-// - Unpin: Can be moved after being pinned
+// Standard markers you rely on constantly
+// - Sized:   size known at compile time (implicit on all generic params)
+// - Copy:    bitwise-copyable (must also be Clone, no Drop)
+// - Send:    safe to transfer ownership across threads
+// - Sync:    safe to share &T across threads (T: Sync iff &T: Send)
+// - Unpin:   not address-sensitive; pinning has no effect
 
-// ✅ Custom marker trait
-trait ThreadSafeCache: Send + Sync {}
-
-// Blanket impl for qualifying types
+// ✅ Your own marker for a type-level invariant
+pub trait ThreadSafeCache: Send + Sync {}
 impl<T: Send + Sync> ThreadSafeCache for T {}
 
-// ✅ Marker for type-level flags
-trait Validated {}
+// ✅ Typestate marker (see TD-11 for full pattern)
+use std::marker::PhantomData;
+pub struct Unvalidated;
+pub struct Validated;
 
-struct Email<V> {
+pub struct Email<State> {
     value: String,
-    _marker: std::marker::PhantomData<V>,
+    _state: PhantomData<State>,
 }
-
-struct Unvalidated;
-struct ValidatedMarker;
 
 impl Email<Unvalidated> {
-    fn validate(self) -> Result<Email<ValidatedMarker>, ValidationError> {
-        // validation logic
-        Ok(Email {
-            value: self.value,
-            _marker: std::marker::PhantomData,
-        })
+    pub fn validate(self) -> Result<Email<Validated>, ValidationError> {
+        /* ... */ Ok(Email { value: self.value, _state: PhantomData })
     }
 }
 
-impl Email<ValidatedMarker> {
-    fn send(&self) {
-        // Can only send validated emails
-    }
+impl Email<Validated> {
+    pub fn send(&self) { /* only validated emails reach here */ }
 }
 ```
+
+**Rationale**: Marker traits carry no runtime cost — they're purely compile-time assertions. Use them to collapse a bundle of bounds into a named concept (`ThreadSafeCache = Send + Sync`), to pin down invariants at the type level, or to enable downstream impls to opt in or out.
+
+**See also**: TR-13 (auto traits), TD-11 (typestate), TD-24 (`PhantomPinned`)
 
 ---
 
@@ -605,168 +505,194 @@ impl Email<ValidatedMarker> {
 
 **Strength**: SHOULD
 
-**Summary**: When designing trait hierarchies, prefer multiple narrow traits over one wide trait.
+**Summary**: Split large traits into small ones. Depend on just the capability you need; combine narrow traits via supertraits when a type needs the whole set.
 
 ```rust
-// Bad - one wide trait forces users to implement everything
+// ❌ BAD: one mega-trait forces users to implement everything
 trait Database {
-    async fn store_object(&self, id: Id, obj: Object);
-    async fn load_object(&self, id: Id) -> Object;
-    async fn delete_object(&self, id: Id);
-    async fn update_config(&self, file: PathBuf);
+    async fn store(&self, id: Id, obj: Object) -> Result<(), DbError>;
+    async fn load(&self, id: Id) -> Result<Object, DbError>;
+    async fn delete(&self, id: Id) -> Result<(), DbError>;
+    async fn update_config(&self, file: std::path::PathBuf);
 }
 
-// Good - narrow traits allow selective implementation
-trait StoreObject {
-    async fn store_object(&self, id: Id, obj: Object);
-}
+// ✅ GOOD: one capability per trait
+trait Store  { async fn store(&self, id: Id, obj: Object) -> Result<(), DbError>; }
+trait Load   { async fn load(&self, id: Id) -> Result<Object, DbError>; }
+trait Delete { async fn delete(&self, id: Id) -> Result<(), DbError>; }
 
-trait LoadObject {
-    async fn load_object(&self, id: Id) -> Object;
-}
+// ✅ Combine with a supertrait alias when callers need the full set
+trait DataAccess: Store + Load + Delete {}
+impl<T: Store + Load + Delete> DataAccess for T {}
 
-trait DeleteObject {
-    async fn delete_object(&self, id: Id);
-}
-
-// Combine via supertrait when needed
-trait DataAccess: StoreObject + LoadObject + DeleteObject {}
-
-// Users can depend on just what they need
-async fn read_database(x: impl LoadObject) { 
-    // Only requires LoadObject, not full Database
-}
+// Functions depend on just what they need
+async fn read_only(db: impl Load) { /* only `load` available */ }
+async fn full_access(db: impl DataAccess) { /* all three */ }
 ```
 
-**Rationale**: Narrow traits give users flexibility to implement only what they need and allow code to depend on minimal interfaces. They compose better and are easier to mock for testing.
+**Rationale**: Narrow traits follow the interface-segregation principle: callers specify minimum requirements, mocks in tests become trivial, and implementors can provide subsets. The supertrait `DataAccess` is an "aggregator" trait that documents the combined capability without forcing a single huge implementation block.
 
-**See also**: M-DI-HIERARCHY, Interface Segregation Principle
+**See also**: TR-20 (supertraits), M-DI-HIERARCHY
 
 ---
 
-## TR-13: Negative Trait Bounds (Unstable Pattern)
+## TR-13: Auto Traits and Negative Implementations
 
 **Strength**: CONSIDER
 
-**Summary**: Rust doesn't have negative bounds, but you can work around it.
+**Summary**: `Send`, `Sync`, `Unpin`, `UnwindSafe`, and `RefUnwindSafe` are *auto traits* — implemented automatically when every field implements them. Negative impls (`impl !Trait for T`) override that propagation.
 
 ```rust
-// Can't write: impl<T: !Copy> MyTrait for T
+use std::marker::PhantomData;
 
-// ✅ WORKAROUND: Use auto traits (limited)
-// Some types automatically implement Send/Sync/Unpin
-// If your type contains !Send, it's !Send
-
-// ✅ WORKAROUND: Sealed helper trait
-mod private {
-    pub trait NotCopy {}
+// A struct is automatically Send + Sync because every field is
+struct Stats {
+    data: Vec<i32>,   // Send + Sync
+    count: usize,     // Send + Sync
 }
 
-impl private::NotCopy for String {}
-impl private::NotCopy for Vec<u8> {}
-// Don't impl for Copy types
+// A struct becomes !Sync automatically because Rc<T> is !Sync
+struct NotSync {
+    shared: std::rc::Rc<i32>,
+}
 
-trait OnlyForNonCopy: private::NotCopy {
-    fn move_out(self);
+// Raw pointers opt out via negative impls in std:
+//   impl<T: ?Sized> !Send for *const T {}
+//   impl<T: ?Sized> !Send for *mut T   {}
+// So any type containing *mut T is !Send by default.
+pub struct RawOwned<T> {
+    ptr: *mut T,
+    _owns: PhantomData<T>,
+}
+// RawOwned<T> is !Send even if T: Send.
+
+// ✅ When you know the invariant holds, re-assert with unsafe
+//    (e.g., the pointer is exclusively owned by self)
+unsafe impl<T: Send> Send for RawOwned<T> {}
+unsafe impl<T: Sync> Sync for RawOwned<T> {}
+
+// Unpin is the same mechanism — opt out with PhantomPinned
+use std::marker::PhantomPinned;
+pub struct SelfRef {
+    data: String,
+    ptr: *const u8,
+    _pin: PhantomPinned,   // makes the whole type !Unpin
 }
 ```
 
+**Rationale**: Auto traits are the main reason Rust concurrency "just works" for the easy cases — you don't declare that `Vec<u32>` is `Send`, the compiler infers it from its fields. Negative impls (in stable Rust: via stdlib on `*const T` / `*mut T`, or via `PhantomPinned` for `Unpin`) are how the compiler knows to stop the propagation. When you `unsafe impl Send/Sync` to re-enable, you're promising the invariant holds.
+
+**See also**: TR-11, TD-24 (`PhantomPinned`), 07-concurrency-async
+
 ---
 
-## TR-14: Object Safety
+## TR-14: Object Safety / `dyn` Compatibility
 
 **Strength**: MUST
 
-**Summary**: Traits must be "object-safe" to use as `dyn Trait`.
+**Summary**: To be used as `dyn Trait`, a trait must be object-safe — no generic methods, no `Self`-returning methods, no `Self: Sized` requirements on required methods. Gate non-object-safe methods behind `where Self: Sized`.
 
 ```rust
-// ✅ OBJECT-SAFE: Can be used as dyn Trait
-trait Draw {
+// ✅ Object-safe
+pub trait Draw {
     fn draw(&self, canvas: &mut Canvas);
-    fn bounding_box(&self) -> Rect;
-}
-
-fn draw_all(shapes: &[Box<dyn Draw>]) {
-    for shape in shapes {
-        shape.draw(&mut canvas);
-    }
-}
-
-// ❌ NOT OBJECT-SAFE: Generic method
-trait Serialize {
-    fn serialize<W: Write>(&self, writer: W);  // Generic!
-}
-// Error: cannot use `dyn Serialize`
-
-// ❌ NOT OBJECT-SAFE: Returns Self
-trait Clone {
-    fn clone(&self) -> Self;  // Returns Self!
-}
-// Error: cannot use `dyn Clone`
-
-// ❌ NOT OBJECT-SAFE: Associated const or type with bounds
-trait BadTrait {
-    const SIZE: usize;  // Associated const
-    type Output: Clone; // Bounded associated type
-}
-```
-
-```rust
-trait Serializable {
-    // Object-safe version
-    fn serialize_to(&self, writer: &mut dyn Write) -> Result<(), Error>;
-}
-
-trait SerializableExt: Serializable {
-    // Non-object-safe convenience method
-    fn serialize<W: Write>(&self, mut writer: W) -> Result<(), Error> {
-        self.serialize_to(&mut writer)
-    }
-}
-
-impl<T: Serializable> SerializableExt for T {}
-```
-
----
-
-## TR-15: Object Safety Considerations
-
-**Strength**: MUST
-
-**Summary**: Traits used as trait objects must be object-safe: no generic methods, no `Self: Sized` bounds, methods return simple types.
-
-```rust
-// Object-safe trait
-trait Drawable {
-    fn draw(&self);
     fn bounds(&self) -> Rect;
 }
 
-// Can use as trait object
-let objects: Vec<Box<dyn Drawable>> = vec![
-    Box::new(Circle { radius: 10 }),
-    Box::new(Rectangle { width: 20, height: 30 }),
+let shapes: Vec<Box<dyn Draw>> = vec![
+    Box::new(Circle { radius: 10.0 }),
+    Box::new(Rectangle { width: 20.0, height: 15.0 }),
 ];
 
-// Not object-safe - generic method
-trait Container {
-    fn add<T>(&mut self, item: T); // ❌ generic method
+// ❌ Not object-safe: generic method
+pub trait Serialize {
+    fn serialize<W: std::io::Write>(&self, w: W);
+}
+// let _: &dyn Serialize;   // error: cannot be made into an object
+
+// ❌ Not object-safe: returns Self
+pub trait Duplicate {
+    fn duplicate(&self) -> Self;
 }
 
-// Not object-safe - returns Self
-trait Cloneable {
-    fn clone_box(&self) -> Self; // ❌ returns Self
+// ✅ Mixed — object-safe core, non-object-safe extensions gated on Sized
+pub trait Iterator {
+    type Item;
+    fn next(&mut self) -> Option<Self::Item>;  // object-safe
+
+    fn map<B, F>(self, f: F) -> Map<Self, F>
+    where
+        Self: Sized,                            // excluded from vtable
+        F: FnMut(Self::Item) -> B,
+    { /* ... */ todo!() }
 }
 
-// Object-safe version
-trait CloneableObject {
-    fn clone_box(&self) -> Box<dyn CloneableObject>;
+// ✅ Object-safe serialization: accept a trait object for the sink
+pub trait Serializable {
+    fn serialize_to(&self, w: &mut dyn std::io::Write) -> std::io::Result<()>;
 }
 ```
 
-**Rationale**: Object safety rules ensure trait objects can be used with dynamic dispatch. The compiler cannot generate vtables for generic methods or methods that return `Self` in unknown sizes.
+**Rationale**: The vtable behind `dyn Trait` needs a fixed layout — one function pointer per method, with a known calling convention. Generic methods would need infinite vtable slots; `-> Self` would need to know the concrete size. Gating the non-object-safe parts with `Self: Sized` lets the core trait stay dyn-compatible while still offering rich chainable methods on concrete impls.
 
-**See also**: [Object Safety](https://doc.rust-lang.org/reference/items/traits.html#object-safety)
+**See also**: TR-15, TR-17, TD-27
+
+---
+
+## TR-15: Trait Object Forms — `&dyn`, `Box<dyn>`, `Rc<dyn>`, `Arc<dyn>`
+
+**Strength**: SHOULD
+
+**Summary**: Choose the pointer type based on ownership and sharing needs; `dyn Trait` is unsized so it always appears behind a pointer.
+
+```rust
+// &dyn Trait — borrowed, zero-cost, most common for parameters
+fn render(shape: &dyn Draw, canvas: &mut Canvas) {
+    shape.draw(canvas);
+}
+
+// &mut dyn Trait — exclusive borrow of a trait object
+fn mutate(item: &mut dyn Update) {
+    item.tick();
+}
+
+// Box<dyn Trait> — owned, single-owner, heap-allocated
+let plugins: Vec<Box<dyn Plugin>> = vec![
+    Box::new(AuthPlugin),
+    Box::new(LoggingPlugin),
+];
+
+// Rc<dyn Trait> — shared ownership, single-threaded
+let node: std::rc::Rc<dyn Node> = std::rc::Rc::new(LeafNode);
+let also: std::rc::Rc<dyn Node> = node.clone();
+
+// Arc<dyn Trait> — shared ownership, thread-safe
+let handler: std::sync::Arc<dyn EventHandler + Send + Sync>
+    = std::sync::Arc::new(MyHandler);
+
+// Lifetime annotations on trait objects
+let shape: &'static dyn Draw = &STATIC_CIRCLE;   // lives forever
+let tmp:   &dyn Draw         = &local_circle;    // borrowed from local
+```
+
+```rust
+// ❌ dyn Trait on its own is unsized — always behind a pointer
+// let x: dyn Draw = Circle { radius: 1.0 };   // error: Sized not satisfied
+
+// ✅ Use a helper when you need a heterogeneous owned collection
+pub struct Scene {
+    items: Vec<Box<dyn Draw>>,
+}
+impl Scene {
+    pub fn add<T: Draw + 'static>(&mut self, item: T) {
+        self.items.push(Box::new(item));
+    }
+}
+```
+
+**Rationale**: Each form expresses a different ownership shape: `&dyn` borrows, `Box<dyn>` owns once, `Rc<dyn>` / `Arc<dyn>` share. The `'static` bound on `Scene::add` is necessary because the trait object doesn't retain a named lifetime for its data. Reach for `&dyn` first; escalate only when ownership demands it.
+
+**See also**: TR-22 (extra bounds on trait objects), TR-24 (upcasting), OB-22
 
 ---
 
@@ -774,610 +700,429 @@ trait CloneableObject {
 
 **Strength**: MUST
 
-**Summary**: Only implement operator traits when the operation naturally corresponds to the operator.
+**Summary**: Implement `std::ops` traits only when the operator reads naturally and obeys the usual algebraic laws. Never use `+` to mean "append", "log", or "merge".
 
 ```rust
 use std::ops::{Add, Mul, Neg};
 
-// Good - Vector addition
+// ✅ GOOD: vector arithmetic reads like math
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub struct Vector2D {
-    x: f64,
-    y: f64,
-}
+pub struct Vec2 { x: f64, y: f64 }
 
-impl Add for Vector2D {
-    type Output = Vector2D;
-    
-    fn add(self, other: Vector2D) -> Vector2D {
-        Vector2D {
-            x: self.x + other.x,
-            y: self.y + other.y,
-        }
+impl Add for Vec2 {
+    type Output = Vec2;
+    fn add(self, rhs: Vec2) -> Vec2 {
+        Vec2 { x: self.x + rhs.x, y: self.y + rhs.y }
     }
 }
 
-// Good - Scalar multiplication
-impl Mul<f64> for Vector2D {
-    type Output = Vector2D;
-    
-    fn mul(self, scalar: f64) -> Vector2D {
-        Vector2D {
-            x: self.x * scalar,
-            y: self.y * scalar,
-        }
-    }
+impl Mul<f64> for Vec2 {
+    type Output = Vec2;
+    fn mul(self, s: f64) -> Vec2 { Vec2 { x: self.x * s, y: self.y * s } }
 }
 
-// Good - Negation
-impl Neg for Vector2D {
-    type Output = Vector2D;
-    
-    fn neg(self) -> Vector2D {
-        Vector2D {
-            x: -self.x,
-            y: -self.y,
-        }
-    }
+impl Neg for Vec2 {
+    type Output = Vec2;
+    fn neg(self) -> Vec2 { Vec2 { x: -self.x, y: -self.y } }
 }
 
-// Usage is intuitive
-let v1 = Vector2D { x: 1.0, y: 2.0 };
-let v2 = Vector2D { x: 3.0, y: 4.0 };
-let v3 = v1 + v2;          // Vector addition
-let v4 = v1 * 2.0;         // Scalar multiplication
-let v5 = -v1;              // Negation
+let a = Vec2 { x: 1.0, y: 2.0 };
+let b = Vec2 { x: 3.0, y: 4.0 };
+let _c = a + b;   // vector addition
+let _d = a * 2.0; // scalar multiplication
+let _e = -a;      // negation
 
-// Bad - misleading operator overload
-use std::ops::Add;
-
-pub struct Logger {
-    messages: Vec<String>,
-}
-
-// DON'T DO THIS - + doesn't mean "log"
+// ❌ BAD: + means "log this"
+pub struct Logger { msgs: Vec<String> }
 impl Add<String> for Logger {
     type Output = Logger;
-    
-    fn add(mut self, message: String) -> Logger {
-        self.messages.push(message);
-        self
-    }
+    fn add(mut self, m: String) -> Logger { self.msgs.push(m); self }
 }
+// let log = Logger { msgs: vec![] } + "oops".to_string();   // unreadable
 
-// Confusing usage
-let logger = Logger::new() + "message".to_string();
-
-// Good - use a clear method instead
+// ✅ Use a named method
 impl Logger {
-    pub fn log(&mut self, message: String) {
-        self.messages.push(message);
-    }
-}
-
-// Bad - unexpected behavior
-impl Add for Configuration {
-    type Output = Configuration;
-    
-    fn add(self, other: Configuration) -> Configuration {
-        // Merging configs with + is unexpected
-        // Use a merge() method instead
-    }
+    pub fn log(&mut self, m: String) { self.msgs.push(m); }
 }
 ```
 
 ```rust
-// Addition should be commutative (where sensible)
-assert_eq!(a + b, b + a);
-
-// Addition should be associative
-assert_eq!((a + b) + c, a + (b + c));
-
-// Multiplication should distribute over addition
-assert_eq!(a * (b + c), a * b + a * c);
-
-// Identity elements
-assert_eq!(a + 0, a);
-assert_eq!(a * 1, a);
+// Expected algebraic properties for numeric-looking types
+assert_eq!(a + b, b + a);              // commutative
+assert_eq!((a + b) * 2.0, a * 2.0 + b * 2.0);  // distributive
+assert_eq!(a + Vec2 { x: 0.0, y: 0.0 }, a);     // identity
 ```
 
-**Rationale**: Operators carry strong semantic expectations. Violating these expectations makes code confusing and error-prone.
+**Rationale**: Operators carry strong cross-language expectations — readers assume `a + b` is associative, commutative, and zero-cost. Breaking those expectations turns code into a puzzle. Keep `+`, `*`, `-`, `[]` for their mathematical meanings and use methods (`.append`, `.log`, `.merge`) for domain operations.
 
-**See also**: C-OVERLOAD
+**See also**: API-32, C-OP-TRAITS
 
 ---
 
-## TR-17: Prefer Concrete Types > Generics > dyn Trait
+## TR-17: Concrete > Generic > `dyn`
 
 **Strength**: SHOULD
 
-**Summary**: Use concrete types when possible, generics when flexibility is needed, and trait objects (`dyn Trait`) only when necessary to avoid excessive nesting.
+**Summary**: Default to concrete types. Reach for generics when callers need flexibility; reach for trait objects only when generics would produce unmanageable nesting or when you genuinely need runtime type mixing.
 
 ```rust
-// Best - concrete type
-struct MyService {
+// ✅ Best: concrete type — simplest, fastest
+pub struct Service {
     db: PostgresDatabase,
 }
 
-// Good - generic for flexibility without nesting issues
-struct MyService<T: LoadObject> {
-    db: T,
+// ✅ Generic: flexibility without runtime cost, monomorphized
+pub struct Service<D: Database> {
+    db: D,
 }
 
-async fn read_database(x: impl LoadObject) {
-    // Generic parameter, compiles to monomorphized code
+// ⚠️ Consider dyn when generics nest excessively or types are open-ended
+pub struct Service {
+    db: Box<dyn Database>,      // erase one level of generics
 }
 
-// Consider - when generics cause excessive nesting
-// Instead of Service<Backend<Store<Config>>>
-struct DynamicDataAccess {
-    inner: Arc<dyn DataAccess>,
-}
-
-impl DynamicDataAccess {
-    pub fn new<T: DataAccess + 'static>(db: T) -> Self {
-        Self {
-            inner: Arc::new(db),
-        }
-    }
-}
-
-// Then use concrete type
-struct MyService {
-    db: DynamicDataAccess,
-}
+// ✅ Heterogeneous collection — only dyn works here
+let plugins: Vec<Box<dyn Plugin>> = load_plugins();
 ```
 
-**Rationale**: - Concrete types are simple and have zero runtime overhead
-- Generics enable flexibility and are zero-cost abstractions (monomorphized)
-- Trait objects (`dyn Trait`) have small runtime cost but prevent type nesting explosion
+```rust
+// Cost summary:
+//  concrete T     : zero runtime cost, zero flexibility
+//  impl Trait / T : zero runtime cost (monomorphized), generic flexibility
+//                   — compile time and binary size can grow
+//  dyn Trait      : small vtable indirection, no inlining through boundary
+//                   — one function body, open-ended extensibility
+```
 
-Use trait objects when:
-- Generic type parameters would nest excessively (3+ levels)
-- Runtime polymorphism is genuinely needed
-- Compile times are becoming problematic from monomorphization
+**Rationale**: Generics are zero-cost abstraction but they propagate into every caller and can explode compile times when deeply nested. Trait objects have a tiny runtime cost (one indirect call) but collapse an arbitrary set of types into a single function body. Escalate only when the next rung gives you something the previous rung can't.
 
-**See also**: M-DI-HIERARCHY, M-SIMPLE-ABSTRACTIONS
+**See also**: TR-14, TR-15, API-40, M-SIMPLE-ABSTRACTIONS
 
 ---
 
-## TR-18: Provide From Conversions for Related Types
+## TR-18: `From` / `TryFrom` for Conversions
 
 **Strength**: SHOULD
 
-**Summary**: Implement From<T> to enable ergonomic conversions and interoperability.
+**Summary**: Implement `From<T>` for infallible conversions and `TryFrom<T>` for fallible ones. `Into`, `try_into`, and the `?` operator all fall out for free.
 
 ```rust
-// Good - From for owned conversions
+// ✅ Infallible conversion
+pub struct EmailAddress(String);
+
 impl From<String> for EmailAddress {
-    fn from(s: String) -> Self {
-        EmailAddress(s)
-    }
+    fn from(s: String) -> Self { EmailAddress(s) }
 }
 
-// Now works with .into() and ?
-fn create_user(email: String) -> Result<User, Error> {
-    let email_addr: EmailAddress = email.into();
-    Ok(User { email: email_addr })
+// Now .into() and `?` through From work
+fn make_user(email: String) -> User {
+    User { email: email.into() }
 }
 
-// Good - From for copying conversions
-impl From<u32> for u64 {
-    fn from(small: u32) -> u64 {
-        small as u64
-    }
+// ✅ Widening integer conversions
+// (std already provides u32 -> u64; this is the pattern)
+impl From<u32> for MyIndex {
+    fn from(small: u32) -> MyIndex { MyIndex(small as u64) }
 }
 
-let big: u64 = 100u32.into();
-
-// Good - From for enums wrapping types
+// ✅ Wrapping related types in an enum
 pub enum IpAddr {
-    V4(Ipv4Addr),
-    V6(Ipv6Addr),
+    V4(std::net::Ipv4Addr),
+    V6(std::net::Ipv6Addr),
+}
+impl From<std::net::Ipv4Addr> for IpAddr {
+    fn from(a: std::net::Ipv4Addr) -> Self { IpAddr::V4(a) }
+}
+impl From<std::net::Ipv6Addr> for IpAddr {
+    fn from(a: std::net::Ipv6Addr) -> Self { IpAddr::V6(a) }
 }
 
-impl From<Ipv4Addr> for IpAddr {
-    fn from(addr: Ipv4Addr) -> IpAddr {
-        IpAddr::V4(addr)
-    }
-}
+// ✅ Error-type From impls let `?` bubble naturally
+pub enum AppError { Io(std::io::Error), Json(serde_json::Error) }
+impl From<std::io::Error>    for AppError { fn from(e: std::io::Error)    -> Self { AppError::Io(e)   } }
+impl From<serde_json::Error> for AppError { fn from(e: serde_json::Error) -> Self { AppError::Json(e) } }
 
-impl From<Ipv6Addr> for IpAddr {
-    fn from(addr: Ipv6Addr) -> IpAddr {
-        IpAddr::V6(addr)
-    }
-}
-
-// Usage with ?
-fn parse_ip(s: &str) -> Result<IpAddr, ParseError> {
-    if s.contains(':') {
-        let v6: Ipv6Addr = s.parse()?;
-        Ok(v6.into())  // Automatically converts to IpAddr
-    } else {
-        let v4: Ipv4Addr = s.parse()?;
-        Ok(v4.into())
-    }
-}
-
-// Good - From for error types
-impl From<std::io::Error> for AppError {
-    fn from(err: std::io::Error) -> AppError {
-        AppError::Io(err)
-    }
-}
-
-impl From<serde_json::Error> for AppError {
-    fn from(err: serde_json::Error) -> AppError {
-        AppError::Json(err)
-    }
-}
-
-// Now ? works seamlessly
-fn load_data(path: &str) -> Result<Data, AppError> {
-    let contents = std::fs::read_to_string(path)?;  // io::Error → AppError
-    let data = serde_json::from_str(&contents)?;     // json::Error → AppError
+fn load(path: &str) -> Result<Data, AppError> {
+    let s = std::fs::read_to_string(path)?;   // io::Error -> AppError
+    let data = serde_json::from_str(&s)?;      // serde::Error -> AppError
     Ok(data)
 }
 
-// Bad - requiring explicit conversion
-fn load_data_bad(path: &str) -> Result<Data, AppError> {
-    let contents = std::fs::read_to_string(path)
-        .map_err(AppError::Io)?;  // Manual conversion
-    let data = serde_json::from_str(&contents)
-        .map_err(AppError::Json)?;  // Manual conversion
-    Ok(data)
-}
-```
-
-```rust
-// Use From for infallible conversions
-impl From<u16> for u32 {
-    fn from(small: u16) -> u32 {
-        small as u32  // Always succeeds
-    }
-}
-
-// Use TryFrom for fallible conversions
+// ✅ Fallible conversion: TryFrom
 impl TryFrom<u32> for u16 {
-    type Error = TryFromIntError;
-    
-    fn try_from(big: u32) -> Result<u16, Self::Error> {
-        if big <= u16::MAX as u32 {
-            Ok(big as u16)
-        } else {
-            Err(/* ... */)
-        }
-    }
+    type Error = std::num::TryFromIntError;
+    fn try_from(n: u32) -> Result<u16, Self::Error> { /* provided by std */ todo!() }
 }
 ```
 
-```rust
-// AsRef - cheap reference conversion
-impl AsRef<str> for String {
-    fn as_ref(&self) -> &str {
-        &self
-    }
-}
+**Rationale**: Implement `From`, never `Into` — the blanket `impl<T, U: From<T>> Into<U> for T` gives you `.into()` for free. Use `TryFrom` for anything that can fail (parsing, narrowing, validation) and keep the `Error` type descriptive. This is the idiom that makes `?` and `thiserror::Error(#[from])` feel seamless.
 
-// From - owned conversion
-impl From<&str> for String {
-    fn from(s: &str) -> String {
-        s.to_owned()
-    }
-}
-```
-
-**Rationale**: From enables implicit conversion with `.into()` and the `?` operator, making APIs more ergonomic.
-
-**See also**: C-CONV-TRAITS
+**See also**: API-17, EH-09, C-CONV-TRAITS
 
 ---
 
-## TR-19: Sealed Traits Protect Against Downstream Implementations
+## TR-19: Sealed Traits for Closed Implementation Sets
 
 **Strength**: CONSIDER
 
-**Summary**: Use the sealed trait pattern to prevent external implementations while preserving the ability to add methods.
+**Summary**: When a trait should be implementable only inside your crate, require a private supertrait. Downstream users can call the trait's methods but not `impl` it.
 
 ```rust
-// Good - sealed trait pattern
-/// This trait is sealed and cannot be implemented outside this crate.
-pub trait Operation: private::Sealed {
-    fn execute(&self) -> Result<(), Error>;
-    
-    // Can add methods in minor versions without breaking changes
-    fn validate(&self) -> bool {
-        true
-    }
-    
-    // Private methods not shown in public docs
-    #[doc(hidden)]
-    fn internal_id(&self) -> u64;
-}
-
-// Implementations in this crate
-pub struct Add;
-pub struct Subtract;
-
-impl Operation for Add {
-    fn execute(&self) -> Result<(), Error> {
-        // ...
-    }
-    
-    fn internal_id(&self) -> u64 { 1 }
-}
-
-impl Operation for Subtract {
-    fn execute(&self) -> Result<(), Error> {
-        // ...
-    }
-    
-    fn internal_id(&self) -> u64 { 2 }
-}
-
-// Private module prevents external implementation
 mod private {
     pub trait Sealed {}
-    
-    impl Sealed for super::Add {}
-    impl Sealed for super::Subtract {}
 }
 
-// External crates cannot implement Operation:
-// impl Operation for MyType {}  // Error: private::Sealed not in scope
-
-// Benefits:
-// 1. Can add methods to Operation without breaking change
-// 2. Can change method signatures (if not public)
-// 3. Can add private methods
-// 4. Exhaustive matching is sound
-
-fn process(op: &dyn Operation) {
-    match op {
-        // Compiler knows all implementations are in this crate
-        _ if op.internal_id() == 1 => println!("Add"),
-        _ if op.internal_id() == 2 => println!("Subtract"),
-        _ => unreachable!(),
-    }
+/// This trait is sealed; you cannot implement it from another crate.
+pub trait Protocol: private::Sealed {
+    fn handshake(&self);
 }
+
+pub struct Http;
+pub struct Grpc;
+
+impl private::Sealed for Http {}
+impl private::Sealed for Grpc {}
+
+impl Protocol for Http { fn handshake(&self) { /* ... */ } }
+impl Protocol for Grpc { fn handshake(&self) { /* ... */ } }
+
+// In a downstream crate:
+// impl Protocol for MyCustom {}     // error: Sealed is not in scope
 ```
 
-```rust
-/// Represents a database operation.
-///
-/// This trait is sealed and cannot be implemented outside of this crate.
-/// See the [list of implementors](#implementors) for available operations.
-pub trait Operation: private::Sealed {
-    // ...
-}
-```
+**Rationale**: Sealed traits let you add required methods in minor versions without breaking downstream implementors — there are none. They also enable exhaustive reasoning (the set of impls is known). Use them for protocol enumerations, supported-type lists, and anywhere "extend via impl" would break your invariants. See TD-26 for the type-design angle.
 
-**Rationale**: Sealed traits enable non-breaking evolution while maintaining backwards compatibility.
-
-**See also**: C-SEALED
+**See also**: TD-26, C-SEALED, API-43
 
 ---
 
-## TR-20: Supertraits for Trait Composition
+## TR-20: Supertraits for Composition
 
 **Strength**: SHOULD
 
-**Summary**: Use supertraits when a trait requires another trait's functionality.
+**Summary**: When trait `A` requires functionality from trait `B`, declare it with `trait A: B { ... }`. Methods from `B` are then available inside `A`'s default methods and in generic code bounded by `A`.
 
 ```rust
-use std::fmt::Debug;
+use std::fmt::{Debug, Display};
 use std::hash::Hash;
 
-// ✅ GOOD: Require Debug for better error messages
-trait Repository: Debug {
+// ✅ Require Debug for better errors
+pub trait Repository: Debug {
     fn save(&mut self, item: &Item) -> Result<(), SaveError>;
 }
 
-// ✅ GOOD: Compose multiple requirements
-trait CacheKey: Clone + Hash + Eq + Debug {}
-
-// Blanket impl: anything meeting requirements is a CacheKey
+// ✅ Alias trait: anything meeting the bundle is a CacheKey
+pub trait CacheKey: Clone + Hash + Eq + Debug {}
 impl<T: Clone + Hash + Eq + Debug> CacheKey for T {}
 
-// ✅ GOOD: Standard supertrait pattern
-trait Error: Debug + std::fmt::Display {
+// ✅ Standard library pattern
+pub trait Error: Debug + Display {
     fn source(&self) -> Option<&(dyn Error + 'static)> { None }
 }
 
-// Usage:
-fn log_error<E: Error>(e: &E) {
-    // Can use both Debug and Display
-    println!("Error: {}", e);
-    println!("Debug: {:?}", e);
+// ✅ Supertrait methods are visible inside default-method bodies
+pub trait OutlinePrint: Display {
+    fn outline_print(&self) {
+        let s = self.to_string();               // via Display
+        let bar = "*".repeat(s.len() + 4);
+        println!("{bar}\n* {s} *\n{bar}");
+    }
 }
 ```
 
+**Rationale**: Supertraits replace "one giant trait" with composable building blocks and let default methods leverage external capabilities. Use them when your trait genuinely needs the functionality; resist bundling traits together just to reduce typing at use-site — that's what aliases and `where` clauses are for.
+
+**See also**: TR-12 (narrow traits), TR-09
+
 ---
 
-## TR-21: The `Deref` Trait (Use Sparingly)
+## TR-21: `Deref` Is for Smart Pointers, Not Inheritance
 
-**Strength**: CONSIDER
+**Strength**: AVOID (as inheritance), CONSIDER (for genuine smart pointers)
 
-**Summary**: `Deref` is for smart pointer types, not inheritance.
+**Summary**: Implement `Deref` only when your type is a pointer-like wrapper that logically refers to a `Target`. Do not use `Deref` to forward methods from a contained struct — that's fake inheritance, and it doesn't work for trait bounds.
 
 ```rust
 use std::ops::Deref;
 
-// ✅ CORRECT: Smart pointer pattern
-struct MyBox<T>(T);
-
+// ✅ CORRECT: smart pointer — MyBox<T> logically IS a pointer to T
+pub struct MyBox<T>(T);
 impl<T> Deref for MyBox<T> {
     type Target = T;
-    fn deref(&self) -> &T {
-        &self.0
-    }
+    fn deref(&self) -> &T { &self.0 }
 }
 
-// Enables: *my_box, my_box.method_on_t()
+// std follows the same rule: Vec<T>: Deref<Target=[T]>, String: Deref<Target=str>
 
-// ✅ CORRECT: String is a smart pointer to str
-// String implements Deref<Target = str>
-let s = String::from("hello");
-let len = s.len();  // Calls str::len() via Deref
+// ❌ BAD: fake inheritance
+pub struct Animal { species: String }
+impl Animal { pub fn speak(&self) { println!("{}!", self.species); } }
 
-// ❌ WRONG: Deref for "inheritance"
-struct Dog {
-    animal: Animal,
-}
-
+pub struct Dog { animal: Animal }
 impl Deref for Dog {
     type Target = Animal;
-    fn deref(&self) -> &Animal {
-        &self.animal  // DON'T DO THIS
-    }
+    fn deref(&self) -> &Animal { &self.animal }
 }
-// This is anti-pattern! Use composition + delegation instead.
+// dog.speak() compiles — but:
+//   - Dog is NOT Animal; generic functions over &Animal won't accept &Dog
+//   - Traits implemented on Animal are NOT implemented on Dog
+//   - `self` inside speak() is &Animal, not &Dog — surprising to readers
+
+// ✅ Instead: explicit delegation (or the `delegate` / `ambassador` crates)
+impl Dog {
+    pub fn speak(&self) { self.animal.speak(); }
+}
 ```
+
+**Rationale**: `Deref` is a contract that says "this type is a pointer; dereferencing yields a `Target`." Using it to emulate OO inheritance breaks every expectation: no subtyping, no trait forwarding, surprising `self` semantics, and rustdoc doesn't inline the delegated methods. If you want method delegation, write it explicitly or use a delegation crate. Main treatment of the anti-pattern is in guide 11 (AP-14).
+
+**See also**: AP-14 (guide 11), TR-06 (forwarding traits, not methods), TD-03
 
 ---
 
-## TR-22: Trait Definition Basics
+## TR-22: Extra Bounds on Trait Objects (`dyn Trait + Send + Sync`)
 
 **Strength**: SHOULD
 
-**Summary**: Design traits around behavior, not data.
+**Summary**: Auto traits can be added as extra bounds on a trait object. Use them on returned / stored trait objects to keep types `Send`, `Sync`, or `'static` for concurrent code and downcasting.
 
 ```rust
-// ❌ BAD: Trait as data interface (getter/setter)
-trait HasName {
-    fn get_name(&self) -> &str;
-    fn set_name(&mut self, name: &str);
+use std::error::Error;
+
+// ✅ Single-threaded boxed error — the bare minimum
+fn parse(s: &str) -> Result<i32, Box<dyn Error>> {
+    Ok(s.parse()?)
 }
 
-// ✅ GOOD: Trait as behavior interface
-trait Named {
+// ✅ Send: can cross threads (e.g., returned from a tokio task)
+async fn load() -> Result<Data, Box<dyn Error + Send>> { todo!() }
+
+// ✅ Send + Sync: shareable — the common std-style error shape
+pub fn read_config() -> Result<Config, Box<dyn Error + Send + Sync>> { todo!() }
+
+// ✅ Send + Sync + 'static: also downcastable via Error::downcast_ref
+pub fn handler() -> Result<(), Box<dyn Error + Send + Sync + 'static>> { todo!() }
+
+// ✅ Storing trait objects in shared state
+use std::sync::Arc;
+pub struct Router {
+    handlers: Vec<Arc<dyn Handler + Send + Sync>>,
+}
+
+// Lifetime form for non-'static trait objects
+pub fn borrow_handler<'a>(h: &'a dyn Handler) -> &'a dyn Handler { h }
+```
+
+```rust
+// ❌ BAD: missing Send makes this unusable in a `tokio::spawn`
+async fn bad() -> Result<Data, Box<dyn Error>> { todo!() }
+// the future returned from bad() is `!Send` if awaited with a !Send error
+
+// ✅ Add + Send (and + Sync if shared)
+async fn good() -> Result<Data, Box<dyn Error + Send + Sync>> { todo!() }
+```
+
+**Rationale**: A bare `Box<dyn Error>` is neither `Send` nor `Sync`, so it poisons any containing future. Adding `+ Send + Sync` is how you keep async and multi-threaded code working across `.await` points and `std::thread::spawn`. The `+ 'static` bound is required if you want to call `Error::downcast_ref::<T>` (downcasting needs a static TypeId).
+
+**See also**: TR-13 (auto traits), TR-15, EH-10, API-38
+
+---
+
+## TR-23: Higher-Ranked Trait Bounds (`for<'a>`)
+
+**Strength**: CONSIDER
+
+**Summary**: Use `for<'a>` when a bound must hold for *every* lifetime — most commonly with closures that take references.
+
+```rust
+// ✅ A callback that must work for any borrow lifetime
+fn call_with_str<F>(f: F) -> usize
+where
+    F: for<'a> Fn(&'a str) -> usize,
+{
+    let owned = String::from("hello");
+    let a = f(&owned);                      // borrows for a short lifetime
+    let b = f("static literal");            // borrows for 'static
+    a + b
+}
+
+// The caller passes a closure whose lifetime parameter is universal
+let n = call_with_str(|s| s.len());
+
+// ✅ Without for<'a>, this wouldn't type-check:
+//    fn bad<F, 'a>(f: F) where F: Fn(&'a str) -> usize
+//    — the caller would have to commit to a single 'a before passing f.
+
+// ✅ HRTBs appear implicitly in Fn trait bounds — you see them spelled out
+//    when the compiler asks for help, or when you name a complex closure type.
+
+// ✅ HRTBs on trait objects
+let printer: Box<dyn for<'a> Fn(&'a str)> = Box::new(|s| println!("{s}"));
+printer("owned".to_string().as_str());
+printer("static");
+```
+
+**Rationale**: Most closure bounds don't need explicit HRTBs because `Fn(&str)` is sugar for `for<'a> Fn(&'a str)`. You see them explicitly when the function is itself generic over lifetimes and needs the closure to work for any of them — for example, iterator adapters, parser combinators, and `serde` visitor APIs. Spelling them out can also be required to disambiguate when the compiler can't infer universality.
+
+**See also**: OB-09 (lifetime elision), The Rust Reference §Trait Bounds
+
+---
+
+## TR-24: `dyn` Upcasting (Rust 2024)
+
+**Strength**: CONSIDER
+
+**Summary**: As of Rust 1.86 (edition 2024), a `&dyn SubTrait` / `Box<dyn SubTrait>` can be upcast directly to `&dyn SuperTrait` via a normal coercion.
+
+```rust
+trait Animal {
     fn name(&self) -> &str;
 }
 
-trait Greet {
-    fn greet(&self) -> String {
-        format!("Hello, {}!", self.name())
-    }
-    
-    fn name(&self) -> &str;  // Required method
+trait Dog: Animal {
+    fn breed(&self) -> &str;
 }
 
-// ✅ GOOD: Trait with associated types
-trait Parser {
-    type Output;
-    type Error;
-    
-    fn parse(&self, input: &str) -> Result<Self::Output, Self::Error>;
+struct Labrador;
+impl Animal for Labrador { fn name(&self) -> &str { "Rex" } }
+impl Dog for Labrador    { fn breed(&self) -> &str { "Labrador" } }
+
+// ✅ Rust 2024+ : direct upcast
+fn print_name(d: &dyn Dog) {
+    let a: &dyn Animal = d;       // works — upcast coercion
+    println!("{}", a.name());
 }
 
-// ✅ GOOD: Trait with default implementations
-trait Drawable {
-    fn draw(&self, canvas: &mut Canvas);
-    
-    fn draw_with_offset(&self, canvas: &mut Canvas, x: i32, y: i32) {
-        canvas.translate(x, y);
-        self.draw(canvas);
-        canvas.translate(-x, -y);
-    }
-}
+// ✅ Also works for Box<dyn>
+let boxed: Box<dyn Dog> = Box::new(Labrador);
+let _animal: Box<dyn Animal> = boxed;   // upcast
+
+// Pre-2024 workaround (no longer required):
+// trait Dog: Animal {
+//     fn as_animal(&self) -> &dyn Animal;
+// }
+// impl Dog for Labrador {
+//     fn as_animal(&self) -> &dyn Animal { self }
+// }
 ```
+
+**Rationale**: Before trait-object upcasting stabilized, users had to write explicit `as_super` methods or use `std::any::Any` acrobatics to move between a child and parent trait object. The 2024-edition feature makes the subtype relationship of trait objects match what the type system already allowed for references to concrete types. Prefer the direct coercion on any new codebase targeting `edition = "2024"`.
+
+**See also**: TR-14, TR-20, Rust 1.86 release notes, RFC 3324
 
 ---
 
-## TR-23: Trait Objects vs Generics
+## TR-25: Use `dyn Trait` for Runtime Polymorphism
 
 **Strength**: SHOULD
 
-**Summary**: Generics for performance, trait objects for flexibility.
+**Summary**: Reach for trait objects when you need heterogeneous collections, plugin-style extensibility, or when monomorphization would blow up binary size or compile time.
 
 ```rust
-// ✅ GENERIC: Monomorphized, zero-cost
-fn process_generic<T: Process>(items: &[T]) {
-    for item in items {
-        item.process();
-    }
-}
-// Compiler generates specialized code for each T
-
-// ✅ TRAIT OBJECT: Dynamic dispatch, one function
-fn process_dynamic(items: &[Box<dyn Process>]) {
-    for item in items {
-        item.process();  // Virtual call
-    }
-}
-// One function handles all types
-
-// ✅ TRAIT OBJECT: Heterogeneous collection
-let shapes: Vec<Box<dyn Draw>> = vec![
-    Box::new(Circle::new()),
-    Box::new(Rectangle::new()),
-    Box::new(Triangle::new()),
-];
-// Can't do this with generics!
-
-// ✅ GENERIC: Homogeneous collection
-let circles: Vec<Circle> = vec![
-    Circle::new(),
-    Circle::new(),
-];
-```
-
----
-
-## TR-24: Types Eagerly Implement Common Traits
-
-**Strength**: SHOULD
-
-**Summary**: Public types should derive or implement common traits where applicable: `Copy`, `Clone`, `Eq`, `PartialEq`, `Ord`, `PartialOrd`, `Hash`, `Default`, `Debug`, `Display`.
-
-```rust
-// Good - comprehensive trait implementations
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
-pub struct UserId(String);
-
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
-pub enum Status {
-    Pending,
-    Active,
-    Completed,
-}
-
-// Default when it makes sense
-impl Default for Status {
-    fn default() -> Self {
-        Status::Pending
-    }
-}
-
-// Display for user-facing types
-impl std::fmt::Display for Status {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            Status::Pending => write!(f, "pending"),
-            Status::Active => write!(f, "active"),
-            Status::Completed => write!(f, "completed"),
-        }
-    }
-}
-```
-
-**Rationale**: Users expect common traits to be implemented. Missing implementations force users to work around limitations or implement wrappers. These traits enable use in standard collections, comparison operations, and debugging.
-
-**See also**: C-COMMON-TRAITS, M-PUBLIC-DEBUG
-
----
-
-## TR-25: Use dyn Trait for Runtime Polymorphism
-
-**Strength**: SHOULD
-
-**Summary**: Use trait objects (dyn Trait) for heterogeneous collections or when type erasure is needed.
-
-```rust
-// Good - trait object for plugins
+// ✅ Plugin manager — impls registered at runtime
 pub trait Plugin {
     fn name(&self) -> &str;
-    fn execute(&mut self) -> Result<(), Error>;
+    fn execute(&mut self) -> Result<(), PluginError>;
 }
 
 pub struct PluginManager {
@@ -1385,210 +1130,149 @@ pub struct PluginManager {
 }
 
 impl PluginManager {
-    pub fn register(&mut self, plugin: Box<dyn Plugin>) {
-        self.plugins.push(plugin);
-    }
-    
-    pub fn run_all(&mut self) -> Result<(), Error> {
-        for plugin in &mut self.plugins {
-            plugin.execute()?;
-        }
+    pub fn register(&mut self, p: Box<dyn Plugin>) { self.plugins.push(p); }
+    pub fn run_all(&mut self) -> Result<(), PluginError> {
+        for p in &mut self.plugins { p.execute()?; }
         Ok(())
     }
 }
 
-// Good - trait object for rendering
-pub trait Drawable {
-    fn draw(&self, canvas: &mut Canvas);
-    fn bounds(&self) -> Rect;
-}
-
+// ✅ Heterogeneous scene — multiple shape types in one Vec
 pub struct Scene {
-    objects: Vec<Box<dyn Drawable>>,
+    items: Vec<Box<dyn Draw>>,
 }
-
 impl Scene {
+    pub fn add<T: Draw + 'static>(&mut self, t: T) {
+        self.items.push(Box::new(t));
+    }
     pub fn render(&self, canvas: &mut Canvas) {
-        for obj in &self.objects {
-            obj.draw(canvas);
-        }
-    }
-    
-    pub fn add<T: Drawable + 'static>(&mut self, obj: T) {
-        self.objects.push(Box::new(obj));
+        for item in &self.items { item.draw(canvas); }
     }
 }
 
-// Usage
-let mut scene = Scene { objects: Vec::new() };
-scene.add(Circle { radius: 10.0 });
-scene.add(Rectangle { width: 20.0, height: 15.0 });
-scene.add(Triangle { /* ... */ });
-scene.render(&mut canvas);
-
-// Good - trait object in return position
-pub fn load_config(path: &str) -> Result<(), Box<dyn Error>> {
-    let contents = std::fs::read_to_string(path)?;
-    let config: Config = toml::from_str(&contents)?;
-    // Can return different error types
-    Ok(())
-}
-
-// Good - trait object for callbacks
-pub struct EventHandler {
+// ✅ Callbacks with heterogeneous closures
+pub struct Events {
     handlers: Vec<Box<dyn FnMut(&Event) + Send>>,
 }
-
-impl EventHandler {
-    pub fn register<F>(&mut self, handler: F)
-    where
-        F: FnMut(&Event) + Send + 'static,
-    {
-        self.handlers.push(Box::new(handler));
-    }
-    
-    pub fn trigger(&mut self, event: &Event) {
-        for handler in &mut self.handlers {
-            handler(event);
-        }
+impl Events {
+    pub fn on<F: FnMut(&Event) + Send + 'static>(&mut self, f: F) {
+        self.handlers.push(Box::new(f));
     }
 }
 ```
 
-```rust
-// Must be object-safe
-// Must specify lifetime if needed
-let handler: &dyn Handler;           // Lifetime inferred
-let handler: &'static dyn Handler;   // Explicit lifetime
-let handler: Box<dyn Handler>;       // Owned
+**Rationale**: Generics demand you know every concrete type at compile time. Trait objects are the answer for open-ended sets — plugins you load at runtime, UI trees with mixed components, callbacks from arbitrary closures. Accept the one-indirect-call cost in exchange for runtime flexibility; when static dispatch would work, follow TR-17 and prefer it.
 
-// Common bounds for trait objects
-Box<dyn Error>                       // Basic
-Box<dyn Error + Send>                // Thread-safe
-Box<dyn Error + Send + Sync>         // Fully thread-safe
-Box<dyn Error + Send + Sync + 'static>  // Can downcast
-```
-
-**Rationale**: Trait objects provide runtime polymorphism when compile-time polymorphism (generics) isn't sufficient.
+**See also**: TR-15, TR-17, TR-22
 
 ---
 
----
-
-## TR-26: Use Extension Traits for Optional Functionality
+## TR-26: Use Custom Traits to Tame Complex Bounds
 
 **Strength**: CONSIDER
 
-**Summary**: Provide optional functionality through extension traits to avoid tight coupling.
+**Summary**: When a bound gets repeated across many impl blocks — especially one involving `Fn` traits — introduce a named trait with a blanket impl. The name becomes documentation and the bound becomes readable.
 
 ```rust
-// Good - extension trait pattern
-pub trait AsyncRead {
-    fn poll_read(
-        self: Pin<&mut Self>,
-        cx: &mut Context<'_>,
-        buf: &mut [u8],
-    ) -> Poll<io::Result<usize>>;
+use std::fmt::Display;
+
+pub struct Error;
+pub enum Status { Ok, Warn, Fail }
+
+// ❌ BEFORE: verbose bounds repeated everywhere
+pub struct Value<G, S, T>
+where
+    G: FnMut() -> Result<T, Error>,
+    S: Fn(&T) -> Status,
+    T: Display,
+{
+    getter: G,
+    status: S,
 }
 
-// Extension trait for convenience methods
-pub trait AsyncReadExt: AsyncRead {
-    fn read<'a>(&'a mut self, buf: &'a mut [u8]) -> Read<'a, Self>
-    where
-        Self: Unpin,
-    {
-        Read { reader: self, buf }
-    }
-    
-    fn read_exact<'a>(&'a mut self, buf: &'a mut [u8]) -> ReadExact<'a, Self>
-    where
-        Self: Unpin,
-    {
-        ReadExact { reader: self, buf }
-    }
+impl<G, S, T> Value<G, S, T>
+where
+    G: FnMut() -> Result<T, Error>,       // repeated
+    S: Fn(&T) -> Status,
+    T: Display,
+{
+    pub fn refresh(&mut self) -> Result<T, Error> { (self.getter)() }
 }
 
-// Blanket implementation
-impl<T: AsyncRead + ?Sized> AsyncReadExt for T {}
-
-// Users get extension methods automatically
-async fn example<R: AsyncRead + Unpin>(reader: &mut R) {
-    let mut buf = [0u8; 1024];
-    reader.read(&mut buf).await?;  // From AsyncReadExt
+// ✅ AFTER: a Getter trait names the concept; T is now G::Output
+pub trait Getter {
+    type Output: Display;
+    fn get(&mut self) -> Result<Self::Output, Error>;
 }
 
-// Good - serde extension pattern
-#[cfg(feature = "serde")]
-pub trait SerializeExt: Serialize {
-    fn to_json_string(&self) -> Result<String, serde_json::Error> {
-        serde_json::to_string(self)
-    }
-    
-    fn to_json_pretty(&self) -> Result<String, serde_json::Error> {
-        serde_json::to_string_pretty(self)
-    }
+impl<F, T> Getter for F
+where
+    F: FnMut() -> Result<T, Error>,
+    T: Display,
+{
+    type Output = T;
+    fn get(&mut self) -> Result<T, Error> { self() }
 }
 
-#[cfg(feature = "serde")]
-impl<T: Serialize> SerializeExt for T {}
-
-// Good - iterator extension pattern
-pub trait IteratorExt: Iterator {
-    fn collect_vec(self) -> Vec<Self::Item>
-    where
-        Self: Sized,
-    {
-        self.collect()
-    }
-    
-    fn join(mut self, sep: &str) -> String
-    where
-        Self: Sized,
-        Self::Item: std::fmt::Display,
-    {
-        let mut result = String::new();
-        if let Some(first) = self.next() {
-            result.push_str(&first.to_string());
-            for item in self {
-                result.push_str(sep);
-                result.push_str(&item.to_string());
-            }
-        }
-        result
-    }
+pub struct Value2<G: Getter, S: Fn(&G::Output) -> Status> {
+    getter: G,
+    status: S,
 }
-
-impl<T: Iterator> IteratorExt for T {}
 ```
 
-**Rationale**: Extension traits provide optional ergonomics without coupling core functionality to convenience methods.
+**Rationale**: Long bounds appearing on every `impl` block are a readability tax — and they leak into public docs. Promoting the bound to a named trait drops one type parameter, documents the role, and opens space for specialized implementations beyond the closure blanket impl. The downside is discoverability: make sure your rustdoc mentions that closures implement the trait automatically.
 
----
+**See also**: TR-02, TR-10, design-patterns "trait for bounds"
+
 
 ## Summary Table
 
-| Pattern | Strength | Key Insight |
-|---------|----------|-------------|
-| Essential functionality inherent | MUST | Don't hide core methods in trait impls |
-| Narrow traits | SHOULD | Prefer `StoreObject + LoadObject` over `Database` |
-| Implement common traits | SHOULD | `Debug`, `Clone`, `Eq`, `Hash`, etc. |
-| Concrete > Generic > dyn | SHOULD | Avoid trait objects unless needed |
-| Object safety | MUST | Know the rules when using `dyn Trait` |
-| Forward trait impls | SHOULD | Wrappers should behave like their inner type |
-| Minimal trait bounds | SHOULD | Bound implementations, not type definitions |
+| Pattern | Strength | Key Principle |
+|---------|----------|---------------|
+| TR-01 `impl Trait` in arg position | SHOULD | Anonymous generic for throwaway bounds |
+| TR-02 Blanket implementations | CONSIDER | `impl<T: Bound> MyTrait for T` — final, use deliberately |
+| TR-03 Coherence / orphan rule | MUST | Own the trait or the type; newtype escape hatch |
+| TR-04 Essential functionality is inherent | MUST | Trait impls forward to inherent methods |
+| TR-05 Extension traits for foreign types | CONSIDER | `*Ext` + blanket impl |
+| TR-06 Forwarding on wrappers | SHOULD | Forward `Debug`/`Clone`/... to inner type |
+| TR-07 Associated types vs generics | SHOULD | One canonical choice → associated; many → generic |
+| TR-08 Eagerly implement common traits | SHOULD | `Debug`/`Clone`/`Eq`/`Hash`/`Default`/`Display` |
+| TR-09 Traits describe behavior | SHOULD | Not getter/setter data shapes |
+| TR-10 Minimal, scoped bounds | SHOULD | Bounds on impls and methods, not definitions |
+| TR-11 Marker traits | CONSIDER | `Copy`/`Send`/`Sync`/`Unpin` + your own |
+| TR-12 Narrow traits over wide | SHOULD | Interface segregation; aggregate via supertraits |
+| TR-13 Auto traits + negative impls | CONSIDER | `Send`/`Sync`/`Unpin` propagate; `PhantomPinned`, `!Send` opt out |
+| TR-14 Object safety | MUST | No generic methods, no `-> Self`; gate with `Self: Sized` |
+| TR-15 Trait object forms | SHOULD | `&dyn` / `Box<dyn>` / `Rc<dyn>` / `Arc<dyn>` |
+| TR-16 Operator overloads unsurprising | MUST | Math semantics only, never "append" or "log" |
+| TR-17 Concrete > generic > `dyn` | SHOULD | Escalate only as needed |
+| TR-18 `From` / `TryFrom` conversions | SHOULD | Drives `?` and `.into()` for free |
+| TR-19 Sealed traits | CONSIDER | Private supertrait closes the impl set |
+| TR-20 Supertraits for composition | SHOULD | `trait Sub: Super` |
+| TR-21 `Deref` for smart pointers only | AVOID | Not for fake inheritance — see guide 11 |
+| TR-22 Extra bounds on trait objects | SHOULD | `Box<dyn Error + Send + Sync + 'static>` |
+| TR-23 Higher-ranked trait bounds | CONSIDER | `for<'a> Fn(&'a T)` — universal over lifetimes |
+| TR-24 `dyn` upcasting (Rust 2024) | CONSIDER | `&dyn Sub` coerces to `&dyn Super` directly |
+| TR-25 `dyn Trait` for runtime polymorphism | SHOULD | Heterogeneous collections, plugins, callbacks |
+| TR-26 Custom traits tame complex bounds | CONSIDER | `Getter` trait hides `FnMut() -> Result<...>` |
 
----
 
 ## Related Guidelines
 
-- **API Design**: See `02-api-design.md` for API composition patterns
-- **Type Design**: See `05-type-design.md` for when to use traits vs concrete types
-- **Anti-patterns**: See `11-anti-patterns.md` for trait-related mistakes
+- **Core Idioms**: See `01-core-idioms.md` for `Default`, derive choice, and common-trait idioms.
+- **API Design**: See `02-api-design.md` for object-safe public traits (API-42), sealed traits (API-43), and `From`/`Into` conventions (API-17).
+- **Ownership and Borrowing**: See `04-ownership-borrowing.md` for variance, lifetime parameters on trait objects, and smart-pointer selection (OB-22).
+- **Type Design**: See `05-type-design.md` for the type-design framing of associated types (TD-15), sealed traits (TD-26), object safety (TD-27), and `PhantomPinned` (TD-24).
+- **Anti-Patterns**: See `11-anti-patterns.md` for the full treatment of `Deref` polymorphism (AP-14) and other trait-related mistakes.
 
----
 
 ## External References
 
-- [Rust API Guidelines - C-COMMON-TRAITS](https://rust-lang.github.io/api-guidelines/interoperability.html#c-common-traits)
-- [Object Safety](https://doc.rust-lang.org/reference/items/traits.html#object-safety)
-- Pragmatic Rust Guidelines: M-ESSENTIAL-FN-INHERENT, M-DI-HIERARCHY
+- [Rust API Guidelines — Interoperability](https://rust-lang.github.io/api-guidelines/interoperability.html) — C-COMMON-TRAITS, C-CONV-TRAITS, C-SEALED, C-OP-TRAITS
+- [The Rust Reference — Traits](https://doc.rust-lang.org/reference/items/traits.html) and [Object Safety](https://doc.rust-lang.org/reference/items/traits.html#object-safety)
+- [The Rust Reference — Special Types and Traits](https://doc.rust-lang.org/reference/special-types-and-traits.html) — auto traits, `Send`/`Sync`, `Sized`, `?Sized`
+- [The Rust Programming Language — Advanced Traits](https://doc.rust-lang.org/book/ch20-03-advanced-traits.html) and [Trait Objects](https://doc.rust-lang.org/book/ch18-02-trait-objects.html)
+- [The Rustonomicon — Higher-Rank Trait Bounds](https://doc.rust-lang.org/nomicon/hrtb.html) and [Subtyping and Variance](https://doc.rust-lang.org/nomicon/subtyping.html)
+- [Rust 1.86 release notes — `dyn` upcasting](https://blog.rust-lang.org/2025/04/03/Rust-1.86.0.html)
+- [`std::marker`](https://doc.rust-lang.org/std/marker/index.html) — `Send`, `Sync`, `Sized`, `Unpin`, `PhantomData`, `PhantomPinned`
+- Pragmatic Rust Guidelines: M-ESSENTIAL-FN-INHERENT, M-DI-HIERARCHY, M-SIMPLE-ABSTRACTIONS, C-COMMON-TRAITS, C-CONV-TRAITS, C-SEALED, C-OP-TRAITS

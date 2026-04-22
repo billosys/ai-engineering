@@ -12,6 +12,8 @@ Comprehensive best practices for Cargo, Rust's package manager. These guides pro
 | **[04: Publishing](./04-cargo-publishing.md)** | crates.io, SemVer, versioning, releases | Before publishing your first crate or making a release |
 | **[05: Configuration](./05-cargo-configuration.md)** | .cargo/config.toml, environment variables, targets | When customizing Cargo for your project or machine |
 | **[06: Advanced](./06-cargo-advanced.md)** | Build optimization, CI/CD, unstable features, diagnostics | When optimizing builds or setting up sophisticated workflows |
+| **[07: Lints and Formatters](./07-lints-and-formatters.md)** | clippy usage, `[lints]` table, rustfmt, CI enforcement | When setting up lint/format policy across a project or workspace |
+| **[08: Manifest and Workspace (Advanced)](./08-manifest-and-workspace-advanced.md)** | Cargo.toml structure/style, `[patch]`, virtual/rooted workspaces, ecosystem tools | When designing a workspace or auditing a `Cargo.toml` |
 
 ## 🎯 Quick Decision Tree
 
@@ -67,6 +69,15 @@ Comprehensive best practices for Cargo, Rust's package manager. These guides pro
 ### Manage dependencies strategically
 → **[06: Advanced](./06-cargo-advanced.md)** - CG-A-11, CG-A-12
 
+### Configure clippy and rustfmt
+→ **[07: Lints and Formatters](./07-lints-and-formatters.md)** - CG-L-01 through CG-L-06, CG-F-01 through CG-F-03
+
+### Design a workspace or use `[patch]`
+→ **[08: Manifest and Workspace (Advanced)](./08-manifest-and-workspace-advanced.md)** - CG-W-01 through CG-W-05, CG-M-03
+
+### Audit a Cargo.toml or know ecosystem tools
+→ **[08: Manifest and Workspace (Advanced)](./08-manifest-and-workspace-advanced.md)** - CG-M-01, CG-M-02, CG-ECO-01
+
 ## 📖 Pattern Naming Convention
 
 All patterns follow the format: `[PREFIX]-[NUMBER]: [Pattern Name]`
@@ -81,6 +92,11 @@ All patterns follow the format: `[PREFIX]-[NUMBER]: [Pattern Name]`
 | `CG-PUB-XX` | Publishing | crates.io and versioning |
 | `CG-CF-XX` | Configuration | Project and user configuration |
 | `CG-A-XX` | Advanced | Optimization, CI/CD, diagnostics |
+| `CG-L-XX` | Lints and Formatters | clippy usage and lint configuration |
+| `CG-F-XX` | Lints and Formatters | rustfmt usage and configuration |
+| `CG-M-XX` | Manifest/Workspace (Adv.) | Cargo.toml structure, style, overrides |
+| `CG-W-XX` | Manifest/Workspace (Adv.) | Workspace layout and resolver behaviour |
+| `CG-ECO-XX` | Manifest/Workspace (Adv.) | Ecosystem tooling |
 
 ### Strength Indicators
 
@@ -253,4 +269,4 @@ These guides are provided as educational material for the Rust community.
 
 **Version**: 2.0.0
 
-**Guides Included**: 6 (Basics, Build System, Plugins, Publishing, Configuration, Advanced)
+**Guides Included**: 8 (Basics, Build System, Plugins, Publishing, Configuration, Advanced, Lints & Formatters, Manifest & Workspace Advanced)

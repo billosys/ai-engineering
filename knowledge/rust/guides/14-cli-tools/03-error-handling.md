@@ -508,6 +508,132 @@ $ my-tool input.txt | grep pattern
 
 ---
 
+## CLI-55: Return `ExitCode` from `main` Instead of Calling `exit`
+
+**Strength**: SHOULD
+
+**Summary**: Prefer `fn main() -> ExitCode` over `std::process::exit(...)`. Returning from main runs destructors (flushing stdout, unwinding temp-file guards); `exit` does not.
+
+```rust
+// ❌ BAD: std::process::exit skips destructors — BufWriter output may be lost
+use std::io::{self, Write, BufWriter};
+
+fn main() {
+    let stdout = io::stdout();
+    let mut out = BufWriter::new(stdout.lock());
+    writeln!(out, "critical data").unwrap();
+    if trouble() {
+        std::process::exit(1); // BufWriter never flushed → data loss
+    }
+}
+
+// ✅ GOOD: return an ExitCode; destructors run on the way out
+use std::process::ExitCode;
+
+fn main() -> ExitCode {
+    match run() {
+        Ok(()) => ExitCode::SUCCESS,
+        Err(e) => {
+            eprintln!("Error: {e:#}");
+            ExitCode::from(1)
+        }
+    }
+    // stdout / BufWriter / TempDir all drop here before the process exits
+}
+
+fn run() -> anyhow::Result<()> { /* ... */ Ok(()) }
+```
+
+```rust
+// ✅ GOOD: sysexits-style codes via ExitCode + a CliError::exit_code method
+use std::process::ExitCode;
+
+fn main() -> ExitCode {
+    match run() {
+        Ok(()) => ExitCode::SUCCESS,
+        Err(e) => {
+            eprintln!("Error: {e:#}");
+            ExitCode::from(e.exit_code() as u8) // see CLI-19
+        }
+    }
+}
+
+// ✅ GOOD: when you truly need to exit from deep inside (e.g., signal handler),
+// std::process::exit is the correct tool — just flush anything important first.
+fn on_second_ctrl_c() -> ! {
+    let _ = std::io::stdout().flush();
+    std::process::exit(130) // 128 + SIGINT
+}
+```
+
+**Rationale**: `std::process::exit` immediately terminates the process without running destructors or unwinding the stack. That means a `BufWriter` wrapping stdout may swallow its last write, a `TempDir` guard may leave files behind, and a lock file may never be removed. Returning `ExitCode` (stable since Rust 1.61) gives you the same control over the exit code with none of those costs. Keep `exit` for the narrow cases where you cannot return — inside a signal handler, in a forked child, or in a thread whose panic you want to turn into an immediate kill.
+
+**See also**:
+- CLI-04: Entry point and main function structure
+- CLI-16: Exit codes
+- CLI-43 (08-advanced-topics): Signal handling and graceful shutdown
+
+---
+
+## CLI-56: Treat `BrokenPipe` as a Clean Exit
+
+**Strength**: SHOULD
+
+**Summary**: When a downstream consumer (`... | head -1`) closes its end of the pipe, the next write to stdout returns `ErrorKind::BrokenPipe`. Don't print that as an error — just exit quietly.
+
+```rust
+// ❌ BAD: `my-tool | head -1` prints a loud, confusing error
+fn main() -> anyhow::Result<()> {
+    for i in 0..1_000_000 {
+        println!("{i}"); // panics (unwrap inside println!) once head closes stdin
+    }
+    Ok(())
+}
+
+// ✅ GOOD: write through a handle so you can inspect errors
+use std::io::{self, Write};
+
+fn main() -> std::process::ExitCode {
+    if let Err(e) = run() {
+        if e.kind() == io::ErrorKind::BrokenPipe {
+            return std::process::ExitCode::SUCCESS; // downstream is happy; so are we
+        }
+        eprintln!("Error: {e}");
+        return std::process::ExitCode::from(74); // EX_IOERR
+    }
+    std::process::ExitCode::SUCCESS
+}
+
+fn run() -> io::Result<()> {
+    let stdout = io::stdout();
+    let mut out = stdout.lock();
+    for i in 0..1_000_000 {
+        writeln!(out, "{i}")?;  // ? propagates BrokenPipe cleanly
+    }
+    Ok(())
+}
+```
+
+```rust
+// ✅ GOOD: library-style helper — use anywhere you write to stdout in a loop
+fn print_or_stop(out: &mut impl Write, line: &str) -> io::Result<bool> {
+    match writeln!(out, "{line}") {
+        Ok(()) => Ok(true),
+        Err(e) if e.kind() == io::ErrorKind::BrokenPipe => Ok(false),
+        Err(e) => Err(e),
+    }
+}
+```
+
+**Rationale**: `head`, `less`, `grep -m`, and countless other pipeline consumers close stdin as soon as they have what they need. The writer sees `EPIPE` on its next write. POSIX tools like `cat` silently exit 0 in that situation — users expect the same from your tool. Rust's `println!` panics on I/O error, which makes this even worse: the pipe close turns into a panic backtrace on stderr. Use `writeln!` on a locked handle and handle `BrokenPipe` as a sentinel that means "downstream stopped listening, we're done."
+
+**See also**:
+- CLI-20: Error output to stderr
+- CLI-46 (08-advanced-topics): Piping, stdin, and terminal detection
+- CLI-27: Stdout vs stderr usage
+
+---
+
 ## Best Practices Summary
 
 | Pattern | Strength | Key Takeaway |
@@ -517,6 +643,8 @@ $ my-tool input.txt | grep pattern
 | CLI-18 | SHOULD | Add context with anyhow or custom types |
 | CLI-19 | SHOULD | Distinguish user errors from system errors |
 | CLI-20 | MUST | Always write errors to stderr, not stdout |
+| CLI-55 | SHOULD | Return ExitCode from main — don't skip destructors |
+| CLI-56 | SHOULD | BrokenPipe on stdout is a clean exit, not an error |
 
 ## Related Guidelines
 

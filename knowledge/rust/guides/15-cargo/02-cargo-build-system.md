@@ -616,6 +616,177 @@ env:
 
 ---
 
+## CG-BS-13: Use `dep:` Prefix and Weak Features for Clean Optional-Dep APIs
+
+**Strength**: SHOULD
+
+**Summary**: Use `dep:<crate>` (Rust 1.60+) to suppress the implicit feature that an optional dependency creates, and `<crate>?/<feature>` to enable a dependency's feature *only if* that dependency is already active elsewhere.
+
+```toml
+# ❌ BAD: implicit features leak internal deps as public API
+[dependencies]
+ravif = { version = "0.6", optional = true }
+rgb   = { version = "0.8", optional = true }
+
+[features]
+avif = ["ravif", "rgb"]
+# Problem: users can write `features = ["ravif"]` or `features = ["rgb"]` directly.
+# These become part of your SemVer contract forever.
+
+# ✅ GOOD: dep: prefix hides the implicit features
+[dependencies]
+ravif = { version = "0.6", optional = true }
+rgb   = { version = "0.8", optional = true }
+
+[features]
+avif = ["dep:ravif", "dep:rgb"]
+# Now only `avif` is a feature name. `ravif` and `rgb` are implementation details.
+
+# ✅ GOOD: weak features — "enable serde on rgb, but only if the user already pulled in rgb"
+[dependencies]
+serde = { version = "1", optional = true }
+rgb   = { version = "0.8", optional = true }
+
+[features]
+serde = ["dep:serde", "rgb?/serde"]
+# With `?/`: enabling `serde` does NOT pull in rgb. But if rgb is active
+# (via some other feature), it gains its serde impl.
+
+# ❌ BAD: strong reference pulls in the optional dep
+[features]
+serde = ["dep:serde", "rgb/serde"]   # forces rgb to be compiled
+```
+
+```rust
+// Consumer perspective — what users see on docs.rs:
+// Features:
+//   - `avif` — enable AVIF decoding
+//   - `serde` — serde::Serialize/Deserialize for public types
+// (no mysterious `ravif` / `rgb` features polluting the list)
+```
+
+**Rationale**: Every feature name is public API. Accidentally exposing an optional dep as a feature means you cannot remove or rename that dep without a SemVer break. The `dep:` prefix keeps internal optional deps internal. Weak features (`?/`) are the right tool for "if the user uses crate X, add integration Y" — a very common pattern for serde/tokio/rayon integrations.
+
+**See also**: CG-BS-01 (additive features), CG-PUB-04 (SemVer — features are public API)
+
+---
+
+## CG-BS-14: Test Feature Combinations with `cargo hack`
+
+**Strength**: SHOULD (for libraries)
+
+**Summary**: A library with N independent features has 2^N possible feature subsets. `cargo hack --each-feature` and `--feature-powerset` enumerate them so you catch "missing feature flag" bugs before your users do.
+
+```bash
+# Install once
+cargo install cargo-hack
+
+# ✅ GOOD: verify every single-feature build compiles
+cargo hack check --each-feature --no-dev-deps
+# Equivalent to running `cargo check --no-default-features --features=<F>` for every F.
+
+# ✅ GOOD: also check --no-default-features and --all-features
+cargo hack check --feature-powerset --depth 2 --no-dev-deps
+# `--depth 2` = all pairs; full powerset is 2^N builds, use sparingly
+
+# ✅ GOOD: common CI matrix for a library
+cargo hack check --each-feature --no-dev-deps --rust-version
+# --rust-version also checks against your declared MSRV
+
+# ✅ GOOD: verify MSRV across features
+cargo hack check --each-feature --rust-version --ignore-private
+
+# ❌ BAD: testing only default features
+cargo test
+# Hides bugs like: "this code compiles only because another feature brought std::X"
+```
+
+```toml
+# The bugs cargo-hack catches look like this:
+[features]
+default = ["std"]
+std = []
+async = ["dep:tokio"]
+
+# Somewhere in src/lib.rs:
+#   use std::collections::HashMap;    // oops — only works when "std" is on
+#   pub async fn run() { /* ... */ } // oops — compiles without "async" because of tokio transitive
+```
+
+**Rationale**: Feature unification (CG-BS-01) means your tests usually run with *all* features you use enabled somewhere. That masks bugs where a `use` or a type requires a feature you forgot to gate. `cargo hack --each-feature` rebuilds with each single feature, surfacing these bugs. Binaries rarely need this; libraries that expose optional integrations almost always do. For large feature sets, use `--depth 2` to test all pairs instead of the full powerset.
+
+**See also**: CG-BS-01 (additive features), CG-A-05 (feature unification), CG-A-09 (multi-Rust testing)
+
+---
+
+## CG-BS-15: Target-Specific Dependencies with `[target.'cfg(...)'.dependencies]`
+
+**Strength**: SHOULD
+
+**Summary**: Scope platform-specific dependencies with `[target.'cfg(...)'.dependencies]` so they only appear in the dependency graph on matching targets. This is distinct from target-specific *rustflags* in `.cargo/config.toml`.
+
+```toml
+# ✅ GOOD: platform-specific deps
+[target.'cfg(unix)'.dependencies]
+nix = "0.29"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = ["Win32_Foundation"] }
+
+# ✅ GOOD: architecture or family targeting
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "0.2"
+js-sys       = "0.3"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tokio = { version = "1", features = ["full"] }
+
+# ✅ GOOD: combine with any/all/not
+[target.'cfg(any(target_os = "linux", target_os = "macos"))'.dependencies]
+libc = "0.2"
+
+# ✅ GOOD: explicit target triple (rare, usually cfg() is better)
+[target.x86_64-pc-windows-gnu.dependencies]
+winapi = { version = "0.3", features = ["winuser"] }
+
+# ✅ GOOD: also applies to dev/build deps
+[target.'cfg(unix)'.build-dependencies]
+pkg-config = "0.3"
+
+[target.'cfg(windows)'.dev-dependencies]
+windows-test-helpers = "0.1"
+
+# ❌ BAD: using cfg(feature = ...) here — this is NOT allowed
+[target.'cfg(feature = "async")'.dependencies]
+tokio = "1"
+# Cargo rejects this: feature-gated deps go in [features], not [target.cfg].
+
+# ❌ BAD: always including a platform-specific dep
+[dependencies]
+windows-sys = "0.59"    # Gets pulled into Linux/macOS builds too
+```
+
+```rust
+// In code, gate usage with cfg attributes that mirror the Cargo.toml cfg:
+#[cfg(unix)]
+use nix::unistd;
+
+#[cfg(windows)]
+use windows_sys::Win32::Foundation;
+
+#[cfg(target_arch = "wasm32")]
+mod wasm;
+
+#[cfg(not(target_arch = "wasm32"))]
+mod native;
+```
+
+**Rationale**: Target-specific deps keep the dependency graph minimal on each target — Windows builds don't pull in Linux-only crates, WASM builds skip tokio. The cfg predicate supports `unix`, `windows`, `target_os`, `target_arch`, `target_family`, `target_env`, `target_pointer_width`, and combinators (`any`, `all`, `not`). Feature-gated dependencies are a *different* mechanism (`[features]` + `optional = true`); Cargo explicitly rejects `cfg(feature = ...)` in target tables to keep the two concepts separate.
+
+**See also**: CG-BS-02 (optional deps), CG-CF-06 (target-specific rustflags), cargo reference: Platform-specific dependencies
+
+---
+
 ## Best Practices Summary
 
 ### Quick Reference Table
@@ -634,6 +805,9 @@ env:
 | Native library linking | MUST | Use links key and proper rustc-link-lib directives |
 | -sys crate convention | SHOULD | Separate unsafe FFI from safe wrappers |
 | Incremental compilation | SHOULD | Enable for dev, disable for CI and release |
+| dep:/weak features | SHOULD | Hide internal optional deps; use `?/` for "if already active" |
+| cargo hack feature matrix | SHOULD | Enumerate feature subsets for libraries |
+| Target-specific deps | SHOULD | `[target.'cfg(...)'.dependencies]` for platform-only crates |
 
 ---
 

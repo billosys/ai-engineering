@@ -343,6 +343,72 @@ sudo mv my-tool /usr/local/bin/
 
 ---
 
+## CLI-59: Generate Man Pages with `clap_mangen`
+
+**Strength**: CONSIDER
+
+**Summary**: Produce `roff`-format man pages from your clap `Command` at build time so packagers can install `my-tool(1)` alongside the binary. The source of truth stays in one place: the clap definitions.
+
+```toml
+# Cargo.toml
+[build-dependencies]
+clap        = { version = "4", features = ["derive"] }
+clap_mangen = "0.2"
+```
+
+```rust
+// ✅ GOOD: build.rs emits a man page next to the binary
+// Share the CLI definition between build.rs and main.rs via a `src/cli.rs`
+// module that only defines the `Command` (no runtime dependencies).
+use std::{env, fs, path::PathBuf};
+
+include!("src/cli.rs"); // exposes `fn build_cli() -> clap::Command`
+
+fn main() -> std::io::Result<()> {
+    let Some(outdir) = env::var_os("OUT_DIR") else { return Ok(()); };
+    let outdir = PathBuf::from(outdir);
+
+    let cmd = build_cli();
+    let man = clap_mangen::Man::new(cmd);
+
+    let mut buf = Vec::new();
+    man.render(&mut buf)?;
+    fs::write(outdir.join("my-tool.1"), buf)?;
+
+    // cargo:warning shows the path so packagers can find it
+    println!("cargo:warning=man page generated at {}", outdir.join("my-tool.1").display());
+    Ok(())
+}
+```
+
+```rust
+// ✅ GOOD: walk subcommands so each gets its own man page
+fn render_all(cmd: clap::Command, outdir: &std::path::Path) -> std::io::Result<()> {
+    let name = cmd.get_name().to_string();
+    let subs: Vec<_> = cmd.get_subcommands().cloned().collect();
+
+    let mut buf = Vec::new();
+    clap_mangen::Man::new(cmd).render(&mut buf)?;
+    std::fs::write(outdir.join(format!("{name}.1")), buf)?;
+
+    for sub in subs {
+        let sub_name = format!("{name}-{}", sub.get_name());
+        let sub = sub.name(sub_name.clone());
+        render_all(sub, outdir)?;
+    }
+    Ok(())
+}
+```
+
+**Rationale**: Packagers (Debian, Homebrew, Arch) expect a man page in the tarball; without one, users who run `man my-tool` get nothing and reviewers mark the package as incomplete. Handwriting `.1` files doubles as documentation debt — they drift out of sync with the actual flags. `clap_mangen` reads the same `Command` your binary uses to parse arguments, so every flag, description, default, and possible-value list ends up in the rendered page automatically. Generate at build time into `$OUT_DIR`, then copy into the release artifact; your CI (CLI-42) picks it up along with the binary.
+
+**See also**:
+- CLI-14: Help text and documentation
+- CLI-42: cargo-binstall compatibility
+- CLI-44 (08-advanced-topics): Shell completion generation
+
+---
+
 ## Best Practices Summary
 
 | Pattern | Strength | Key Takeaway |
@@ -351,6 +417,7 @@ sudo mv my-tool /usr/local/bin/
 | CLI-40 | SHOULD | Configure release profiles appropriately |
 | CLI-41 | CONSIDER | Design for cross-compilation, document requirements |
 | CLI-42 | CONSIDER | Make tool compatible with cargo-binstall |
+| CLI-59 | CONSIDER | Generate man pages from clap with clap_mangen |
 
 ## Related Guidelines
 

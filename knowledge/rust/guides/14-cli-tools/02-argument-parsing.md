@@ -928,6 +928,137 @@ Build date: 2024-01-15
 
 ---
 
+## CLI-53: Use `ValueEnum` for Closed-Set String Arguments
+
+**Strength**: SHOULD
+
+**Summary**: When an argument accepts a fixed set of string values, derive `ValueEnum` on an enum and use that enum as the field type. You get exhaustive match in the handler, auto-generated `possible_values` in `--help`, and validation at parse time.
+
+```rust
+use clap::{Parser, ValueEnum};
+
+// ❌ BAD: stringly-typed, no help enumeration, manual validation
+#[derive(Parser)]
+struct Cli {
+    #[arg(long, default_value = "auto")]
+    color: String,
+}
+fn main() {
+    let cli = Cli::parse();
+    match cli.color.as_str() {
+        "auto" | "always" | "never" => { /* ... */ }
+        other => { eprintln!("bad value: {other}"); std::process::exit(2); }
+    }
+}
+
+// ✅ GOOD: ValueEnum — validated at parse time, exhaustive at use site
+#[derive(Copy, Clone, Debug, ValueEnum)]
+enum ColorMode { Auto, Always, Never }
+
+#[derive(Parser)]
+struct Cli {
+    /// When to use color
+    #[arg(long, value_enum, default_value_t = ColorMode::Auto)]
+    color: ColorMode,
+}
+
+fn main() {
+    let cli = Cli::parse();
+    match cli.color {                  // compiler enforces exhaustiveness
+        ColorMode::Auto   => { /* ... */ }
+        ColorMode::Always => { /* ... */ }
+        ColorMode::Never  => { /* ... */ }
+    }
+}
+```
+
+```rust
+// ✅ GOOD: customize the strings, add aliases, hide a variant
+use clap::{Parser, ValueEnum, builder::PossibleValue};
+
+#[derive(Clone, Debug)]
+enum Format { Json, Yaml, Toml, Internal }
+
+impl ValueEnum for Format {
+    fn value_variants<'a>() -> &'a [Self] {
+        &[Self::Json, Self::Yaml, Self::Toml, Self::Internal]
+    }
+    fn to_possible_value(&self) -> Option<PossibleValue> {
+        Some(match self {
+            Self::Json     => PossibleValue::new("json"),
+            Self::Yaml     => PossibleValue::new("yaml").alias("yml"),
+            Self::Toml     => PossibleValue::new("toml"),
+            Self::Internal => return None,   // hidden from --help and rejected
+        })
+    }
+}
+```
+
+**Rationale**: Variants are lowercased kebab-case by default (`LongName` → `long-name`), help text automatically lists the options, and `default_value_t = Enum::Variant` works without a `Display` impl because `ValueEnum` supplies its own rendering. Use `#[value(skip)]` (or `to_possible_value → None` in a manual impl) to keep an internal variant out of the CLI surface. Prefer this over `value_parser = ["a", "b", "c"]`: the enum gives the same validation plus an exhaustive match at the handler.
+
+**See also**:
+- CLI-11: Value validation and custom parsers
+- TD-06 (05-type-design): Use enums for mutually exclusive states
+
+---
+
+## CLI-54: Choose the Right `ArgAction`
+
+**Strength**: SHOULD
+
+**Summary**: `#[arg]` fields default to `ArgAction::Set`, which stores a single value with last-write-wins. Reach for other variants when the semantics differ: `SetTrue`/`SetFalse` for flags, `Count` for `-vvv`, `Append` for repeated options.
+
+```rust
+use clap::{Parser, ArgAction};
+
+#[derive(Parser)]
+struct Cli {
+    // Store one value; repeats overwrite (default — usually implicit)
+    #[arg(long, action = ArgAction::Set)]
+    config: Option<std::path::PathBuf>,
+
+    // Boolean flag: present ⇒ true (the default for `bool` fields)
+    #[arg(short, long, action = ArgAction::SetTrue)]
+    verbose: bool,
+
+    // Inverse: default `true`, `--no-color` sets it false
+    #[arg(long = "no-color", action = ArgAction::SetFalse)]
+    color: bool,
+
+    // Count occurrences: -v, -vv, -vvv → 1, 2, 3
+    #[arg(short, long, action = ArgAction::Count)]
+    verbosity: u8,
+
+    // Collect every occurrence: --include a --include b → vec!["a", "b"]
+    #[arg(long, action = ArgAction::Append)]
+    include: Vec<String>,
+}
+```
+
+```rust
+// ✅ GOOD: the derive macro infers many of these — make sure the inference matches intent
+#[derive(Parser)]
+struct Inferred {
+    verbose: bool,           // inferred as SetTrue
+    files: Vec<String>,      // inferred as Append
+    config: Option<String>,  // inferred as Set
+}
+```
+
+```rust
+// ❌ BAD: `bool` with Set — requires `--verbose=true`, not `--verbose`
+#[arg(long, action = clap::ArgAction::Set)]
+verbose: bool,
+```
+
+**Rationale**: `ArgAction` controls whether clap consumes a value, whether repeats overwrite or accumulate, and whether the arg is a built-in exit action (`Help`, `Version`). The derive macro infers a reasonable action from the field type (`bool` → `SetTrue`, `Vec<T>` → `Append`, `T` → `Set`, `u8`/`u16` with `action = Count` → `Count`); overriding is only necessary when the intent differs from the field type, or when you want `--no-feature` semantics (`SetFalse` with a default of `true`).
+
+**See also**:
+- CLI-08: Boolean flags
+- CLI-09: Multiple values and collections
+
+---
+
 ## Best Practices Summary
 
 | Pattern | Strength | Key Takeaway |
@@ -943,6 +1074,8 @@ Build date: 2024-01-15
 | CLI-13 | CONSIDER | Express arg relationships with requires/conflicts_with |
 | CLI-14 | MUST | Comprehensive help text is essential |
 | CLI-15 | MUST | Always include version information |
+| CLI-53 | SHOULD | ValueEnum for closed-set string arguments |
+| CLI-54 | SHOULD | Pick ArgAction deliberately — SetTrue / Count / Append / SetFalse |
 
 ## Related Guidelines
 

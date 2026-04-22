@@ -1,908 +1,578 @@
 # Error Handling Guidelines
 
-Comprehensive patterns for error handling in Rust, including Result, custom error types, and backtrace management.
+Patterns for designing and propagating errors in Rust: when to return `Result` vs panic, how to shape error types (`thiserror` for libraries, `anyhow` for applications), how to add context, chain sources, capture backtraces, stay exception-safe under unwinding, and marshal errors across an FFI boundary. Emphasis is on making errors actionable for callers and cheap for the happy path.
 
 
-## EH-01: `From` Implementations for Error Conversion
-
-**Strength**: SHOULD
-
-**Summary**: Implement `From` to enable automatic error conversion with `?`.
-
-```rust
-#[derive(Debug, thiserror::Error)]
-pub enum AppError {
-    #[error("I/O error: {0}")]
-    Io(#[from] std::io::Error),  // #[from] generates From impl
-    
-    #[error("JSON error: {0}")]
-    Json(#[from] serde_json::Error),
-    
-    #[error("HTTP error: {0}")]
-    Http(#[from] reqwest::Error),
-}
-
-// Now ? automatically converts:
-fn fetch_data() -> Result<Data, AppError> {
-    let response = reqwest::blocking::get(url)?;  // Http variant
-    let text = std::fs::read_to_string(path)?;    // Io variant
-    let data = serde_json::from_str(&text)?;      // Json variant
-    Ok(data)
-}
-
-// Manual From implementation:
-impl From<CustomError> for AppError {
-    fn from(e: CustomError) -> Self {
-        AppError::Custom { 
-            message: e.message,
-            code: e.code,
-        }
-    }
-}
-```
-
----
-
-## EH-02: `Option` vs `Result` Decision
-
-**Strength**: SHOULD
-
-**Summary**: Use `Option` for "not found", `Result` for "something went wrong".
-
-```rust
-// ✅ Option: Absence is normal, not an error
-fn find_user(id: UserId) -> Option<User> {
-    users.get(&id).cloned()
-}
-
-// ✅ Result: Failure needs explanation
-fn load_user(id: UserId) -> Result<User, UserError> {
-    let row = db.query("SELECT * FROM users WHERE id = ?", &[&id])
-        .map_err(UserError::Database)?;
-    
-    match row {
-        Some(r) => Ok(parse_user(r)?),
-        None => Err(UserError::NotFound(id)),
-    }
-}
-
-// Converting between them:
-fn get_or_error(opt: Option<T>) -> Result<T, MyError> {
-    opt.ok_or(MyError::NotFound)
-}
-
-fn get_or_none(result: Result<T, E>) -> Option<T> {
-    result.ok()
-}
-```
-
----
-
-## EH-03: Applications May Use Anyhow or Derivatives
-
-**Strength**: CONSIDER
-
-**Summary**: Application crates (not libraries) may use anyhow, eyre, or similar for simplified error handling.
-
-```rust
-// For applications (binaries), this is acceptable:
-use eyre::Result;
-
-fn start_application() -> Result<()> {
-    let config = load_config()?;  // Any error type works
-    let db = connect_database(&config.db_url)?;  // Different error type
-    start_server(config, db)?;  // Yet another error type
-    Ok(())
-}
-
-// For libraries, use proper error types:
-pub struct LibraryError { /* ... */ }
-
-pub fn library_function() -> Result<Data, LibraryError> {
-    // Never use anyhow/eyre in public library APIs
-}
-```
-
-**Rationale**: Applications are the final layer—they don't need to expose their errors to callers. Error aggregation crates like anyhow provide convenient ergonomics for application logic.
-
-**See also**: M-APP-ERROR
-
----
-
-## EH-04: Avoid `unwrap()` and `expect()` in Libraries
-
-**Strength**: SHOULD
-
-**Summary**: Libraries should propagate errors, not panic.
-
-```rust
-// ❌ BAD: Library panics on error
-pub fn parse_config(s: &str) -> Config {
-    serde_json::from_str(s).unwrap()  // Panics on invalid JSON!
-}
-
-// ✅ GOOD: Library returns Result
-pub fn parse_config(s: &str) -> Result<Config, ConfigError> {
-    serde_json::from_str(s).map_err(ConfigError::Json)
-}
-
-// ✅ ACCEPTABLE: expect() with proof it can't fail
-pub fn compile_regex() -> Regex {
-    // This regex is a literal, so we know it's valid
-    Regex::new(r"^\d{4}-\d{2}-\d{2}$")
-        .expect("hardcoded regex is valid")
-}
-
-// ✅ ACCEPTABLE: expect() with clear precondition
-impl MyVec<T> {
-    /// Returns the first element.
-    /// 
-    /// # Panics
-    /// Panics if the vector is empty.
-    pub fn first(&self) -> &T {
-        self.data.first().expect("MyVec is never empty")
-    }
-}
-```
-
----
-
-## EH-05: Capture Backtraces When Creating Errors
+## EH-01: `Result` for Recoverable Failures, `panic!` for Bugs
 
 **Strength**: MUST
 
-**Summary**: Always capture a backtrace when constructing error instances, including in From implementations.
+**Summary**: Return `Result` when the caller can reasonably handle the failure at runtime. Panic only when you have detected a bug, an impossible state, or a contract violation that no caller can act on.
 
 ```rust
-use std::backtrace::Backtrace;
-
-pub struct DatabaseError {
-    kind: ErrorKind,
-    backtrace: Backtrace,
+// ✅ GOOD: file missing / malformed — the caller can handle it
+pub fn read_config(path: &Path) -> Result<Config, ConfigError> {
+    let contents = std::fs::read_to_string(path)?;
+    toml::from_str(&contents).map_err(ConfigError::parse)
 }
 
-impl DatabaseError {
-    pub(crate) fn connection_failed(err: std::io::Error) -> Self {
-        Self {
-            kind: ErrorKind::Connection(err),
-            backtrace: Backtrace::capture(),  // Capture here!
-        }
-    }
+// ✅ GOOD: an index-out-of-bounds is a caller bug — panic is correct
+pub fn divide_by(x: u32, y: u32) -> u32 {
+    assert!(y != 0, "divide_by called with y == 0 (contract violation)");
+    x / y
 }
 
-// Capture in From implementations too
-impl From<std::io::Error> for DatabaseError {
-    fn from(err: std::io::Error) -> Self {
-        Self {
-            kind: ErrorKind::Io(err),
-            backtrace: Backtrace::capture(),  // And here!
-        }
-    }
+// ❌ BAD: panicking on an expected runtime condition
+pub fn read_config_bad(path: &Path) -> Config {
+    let contents = std::fs::read_to_string(path)
+        .expect("config must exist");         // user may legitimately not have it
+    toml::from_str(&contents).unwrap()
 }
 
-// Helper macro to reduce boilerplate
-macro_rules! bail {
-    ($kind:expr) => {
-        return Err(DatabaseError {
-            kind: $kind,
-            backtrace: Backtrace::capture(),
-        })
-    };
-}
-
-fn process_query() -> Result<(), DatabaseError> {
-    if condition_failed {
-        bail!(ErrorKind::InvalidQuery);
-    }
-    Ok(())
+// ❌ BAD: inventing an error variant for a bug the caller cannot act on
+pub fn first(data: &[i32]) -> Result<i32, Error> {
+    if data.is_empty() { return Err(Error::EmptyData); }  // should be a debug_assert
+    Ok(data[0])
 }
 ```
 
-**Rationale**: Backtraces are invaluable for debugging, especially in async code where errors travel through many stack frames. Capture is cheap when `RUST_BACKTRACE` is not set (just a few CPU instructions).
+**Rationale**: Pragmatic Rust's M-PANIC-IS-STOP / M-PANIC-ON-BUG frames this cleanly: panics are "stop the program now," not a control-flow mechanism. If the failure is inherent (parsing, I/O, network, validation of external input), return `Result`. If the failure proves a bug in the caller or the library itself, panic — introducing an `Error` variant for it creates impossible-to-handle error-handling code.
 
-**See also**: M-ERRORS-CANONICAL-STRUCTS
-
----
-
-## EH-06: Consider a Private bail!() Macro
-
-**Strength**: CONSIDER
-
-**Summary**: For crates with many error sites, create a private `bail!()` macro to reduce boilerplate.
-
-```rust
-// Define macro in error module
-macro_rules! bail {
-    ($kind:expr) => {
-        return Err($crate::error::MyError {
-            kind: $kind,
-            backtrace: std::backtrace::Backtrace::capture(),
-        })
-    };
-}
-
-pub(crate) use bail;
-
-// Usage throughout crate
-fn process_request(req: &Request) -> Result<Response, MyError> {
-    if !req.is_valid() {
-        bail!(ErrorKind::InvalidRequest);
-    }
-    
-    let user = authenticate(req)?;
-    if !user.has_permission() {
-        bail!(ErrorKind::PermissionDenied {
-            user: user.name.clone()
-        });
-    }
-    
-    Ok(Response::ok())
-}
-```
-
-**Rationale**: Reduces error construction boilerplate while ensuring backtraces are always captured. Keeps error handling concise and consistent.
-
-**See also**: M-ERRORS-CANONICAL-STRUCTS
+**See also**: EH-02, EH-03, M-PANIC-IS-STOP, M-PANIC-ON-BUG
 
 ---
 
-## EH-07: Define Custom Error Types for Libraries
+## EH-02: The Three Valid Reasons to Panic
 
 **Strength**: SHOULD
 
-**Summary**: Libraries should define their own error types, not use `Box<dyn Error>`.
+**Summary**: A panic is justifiable in exactly three cases: a detected bug, a mathematically impossible state, or the user explicitly asked for panicking semantics.
 
 ```rust
-// ❌ OPAQUE: Users can't match on error kinds
-pub fn parse(input: &str) -> Result<Ast, Box<dyn std::error::Error>> {
-    // ...
+use std::sync::LazyLock;
+
+// 1. BUG — an invariant the type itself guarantees was violated somehow
+impl<T> NonEmpty<T> {
+    pub fn first(&self) -> &T {
+        self.inner.first()
+            .expect("NonEmpty invariant: constructor rejects empty input")
+    }
 }
 
-// ✅ GOOD: Using thiserror for custom errors
+// 2. IMPOSSIBLE — the Result variant is unreachable given the inputs
+static DATE_RE: LazyLock<regex::Regex> = LazyLock::new(|| {
+    regex::Regex::new(r"^\d{4}-\d{2}-\d{2}$")
+        .expect("hardcoded regex is valid")      // literal input, cannot fail
+});
+
+// 3. USER-REQUESTED — the API contract says "panic on misuse", documented
+impl<T> MyVec<T> {
+    /// # Panics
+    /// Panics if the vector is empty.
+    pub fn head(&self) -> &T {
+        self.first().expect("MyVec::head called on empty vector")
+    }
+
+    /// Non-panicking counterpart.
+    pub fn try_head(&self) -> Option<&T> { self.first() }
+}
+
+// Const context is the fourth, narrow case: Result cannot be used in const fn.
+const BITS: u32 = const { u32::from_str_radix("1010", 2).unwrap() };
+```
+
+**Rationale**: Anything outside these categories is either "bad input" (which wants `Result`) or "dangerous operation" (which is not the same as `unsafe` or `panic`). Always pair a panicking method with a `try_` alternative when feasible (EH-18) and document `# Panics` (EH-14).
+
+**See also**: EH-01, EH-14, EH-18
+
+---
+
+## EH-03: Prefer Correct-by-Construction Over Panics
+
+**Strength**: SHOULD
+
+**Summary**: If you find yourself reaching for `assert!` or `panic!`, first consider whether the type system can rule out the bad state entirely.
+
+```rust
+use std::num::NonZeroU32;
+
+// ❌ Runtime panic — caller sees it only when they hit it
+pub fn divide(x: u32, y: u32) -> u32 {
+    assert!(y != 0);
+    x / y
+}
+
+// ✅ Correct-by-construction — impossible to call with zero
+pub fn divide_nz(x: u32, y: NonZeroU32) -> u32 { x / y.get() }
+
+// ❌ Panic on empty input
+pub fn first_char_panic(s: &str) -> char {
+    s.chars().next().expect("non-empty string required")
+}
+
+// ✅ The type encodes the invariant
+pub struct NonEmptyStr(str);            // DST newtype, constructor enforces non-empty
+pub fn first_char(s: &NonEmptyStr) -> char {
+    // SAFETY: constructor guarantees at least one char.
+    unsafe { s.0.chars().next().unwrap_unchecked() }
+}
+```
+
+**Rationale**: Runtime panics fail at runtime — always worse than a compile error. When the invariant is cheap to carry in a type (`NonZero*`, newtypes, enums for state machines — see guide 05 TD-03, TD-06), prefer that over a panicking guard.
+
+**See also**: EH-02, guide 05 TD-03, TD-06, TD-20
+
+---
+
+## EH-04: Libraries Define Their Own Error Types
+
+**Strength**: MUST
+
+**Summary**: Public library APIs return a named, matchable error type — not `Box<dyn Error>` and not `anyhow::Error`.
+
+```rust
+// ❌ OPAQUE: callers cannot react to specific failures
+pub fn parse(input: &str) -> Result<Ast, Box<dyn std::error::Error>> { todo!() }
+
+// ❌ OPAQUE (and pulls anyhow into your public API)
+pub fn parse(input: &str) -> anyhow::Result<Ast> { todo!() }
+
+// ✅ GOOD: named type — callers can pattern-match, log, retry, wrap
 use thiserror::Error;
 
 #[derive(Debug, Error)]
+#[non_exhaustive]
 pub enum ParseError {
     #[error("unexpected token '{found}' at position {position}, expected {expected}")]
-    UnexpectedToken {
-        found: String,
-        expected: String,
-        position: usize,
-    },
-    
+    UnexpectedToken { found: String, expected: String, position: usize },
+
     #[error("unexpected end of input")]
     UnexpectedEof,
-    
-    #[error("invalid number: {0}")]
+
+    #[error("invalid number")]
     InvalidNumber(#[from] std::num::ParseIntError),
-    
-    #[error("I/O error: {0}")]
+
+    #[error("I/O error")]
     Io(#[from] std::io::Error),
 }
 
-pub fn parse(input: &str) -> Result<Ast, ParseError> {
-    // ...
-}
-
-// Users can now match on specific errors:
-match parse(input) {
-    Ok(ast) => process(ast),
-    Err(ParseError::UnexpectedEof) => eprintln!("Input incomplete"),
-    Err(ParseError::InvalidNumber(e)) => eprintln!("Bad number: {e}"),
-    Err(e) => eprintln!("Parse failed: {e}"),
-}
+pub fn parse(input: &str) -> Result<Ast, ParseError> { todo!() }
 ```
+
+**Rationale**: A library's error type is part of its public contract. Consumers need to match on failure modes, add context, or translate into their own error. `Box<dyn Error>` erases that contract; `anyhow::Error` forces the library's choice of error framework onto every downstream user.
+
+**See also**: EH-05, EH-11, M-APP-ERROR, C-GOOD-ERR
 
 ---
 
-## EH-08: Display Must Follow Rust Conventions
+## EH-05: Applications Can Use `anyhow` / `eyre`
+
+**Strength**: CONSIDER
+
+**Summary**: Binaries — the leaf of the dependency graph — may use `anyhow::Result` (or `eyre::Result`) for convenient, context-rich error aggregation. Libraries must not.
+
+```rust
+use anyhow::{bail, ensure, Context, Result};
+
+fn main() -> Result<()> {
+    let path = std::env::var("CONFIG_PATH")
+        .context("CONFIG_PATH not set")?;
+
+    let contents = std::fs::read_to_string(&path)
+        .with_context(|| format!("failed to read {path}"))?;
+
+    ensure!(contents.len() < 1_000_000, "config file too large: {} bytes", contents.len());
+
+    if contents.trim().is_empty() { bail!("config file is empty"); }
+
+    let cfg: Config = toml::from_str(&contents)
+        .with_context(|| format!("failed to parse {path}"))?;
+
+    run(cfg).context("server crashed")
+}
+```
+
+```rust
+// ❌ In a LIBRARY — forces anyhow on every consumer, loses matchability
+pub fn parse_config(path: &Path) -> anyhow::Result<Config> { todo!() }
+```
+
+**Rationale**: An application is the end of the call chain — its errors are printed, not matched. `anyhow` gives you `.context()`, `bail!`, `ensure!`, and nicely formatted error chains for free. In a library, however, the error type is part of your API; using `anyhow` hides it.
+
+**See also**: EH-04, EH-08, M-APP-ERROR
+
+---
+
+## EH-06: `Option` vs `Result` Decision
+
+**Strength**: SHOULD
+
+**Summary**: Use `Option` when absence is a normal outcome with one self-evident reason. Use `Result` when failure has multiple reasons or benefits from a message.
+
+```rust
+// ✅ Option — only one possible reason for absence ("not in the map")
+fn find_user(id: UserId, users: &HashMap<UserId, User>) -> Option<&User> {
+    users.get(&id)
+}
+
+// ✅ Result — multiple failure modes that deserve distinction
+fn parse_port(s: &str) -> Result<u16, ParsePortError> {
+    let n: u16 = s.parse().map_err(|_| ParsePortError::InvalidFormat)?;
+    if n < 1024 { return Err(ParsePortError::Reserved(n)); }
+    Ok(n)
+}
+
+// ❌ Option loses information — caller cannot tell why it failed
+fn parse_port_bad(s: &str) -> Option<u16> {
+    let n: u16 = s.parse().ok()?;
+    if n < 1024 { return None; }   // "reserved" and "not a number" conflated
+    Some(n)
+}
+
+// Conversion idioms
+fn to_result<T>(o: Option<T>) -> Result<T, NotFound> { o.ok_or(NotFound) }
+fn to_option<T, E>(r: Result<T, E>) -> Option<T>     { r.ok() }
+```
+
+**Rationale**: `Option` is the right tool when the failure needs no explanation; `Result` when it does. Don't flatten a genuinely-multi-mode failure into `Option<T>` — callers have to guess.
+
+**See also**: EH-32
+
+---
+
+## EH-07: Avoid `unwrap()` and `expect()` in Library Code
+
+**Strength**: SHOULD
+
+**Summary**: Libraries propagate errors. `unwrap()`/`expect()` is acceptable only when the success is provable at the call site — and even then, `expect` with a justifying message is preferable to `unwrap`.
+
+```rust
+// ❌ BAD: library panics on malformed user input
+pub fn parse_config(s: &str) -> Config {
+    serde_json::from_str(s).unwrap()
+}
+
+// ✅ GOOD: library returns Result
+pub fn parse_config(s: &str) -> Result<Config, ConfigError> {
+    serde_json::from_str(s).map_err(ConfigError::json)
+}
+
+// ✅ ACCEPTABLE: literal input — infallibility is provable
+use std::sync::LazyLock;
+static DATE_RE: LazyLock<regex::Regex> =
+    LazyLock::new(|| regex::Regex::new(r"^\d{4}-\d{2}-\d{2}$")
+        .expect("hardcoded regex is valid"));
+
+// ✅ ACCEPTABLE: invariant enforced elsewhere — document the Panics section
+impl<T> NonEmpty<T> {
+    /// # Panics
+    /// Never — the constructor rejects empty vectors.
+    pub fn first(&self) -> &T {
+        self.inner.first().expect("NonEmpty invariant")
+    }
+}
+
+// ✅ ACCEPTABLE in tests
+#[test]
+fn parses_a_valid_config() {
+    let cfg: Config = serde_json::from_str(VALID).unwrap();
+    assert_eq!(cfg.port, 8080);
+}
+```
+
+**Rationale**: Every `unwrap` in library code is a latent panic in someone else's application. `expect` at least documents the assumption, making the panic diagnosable when it fires.
+
+---
+
+## EH-08: Use `?` for Propagation
 
 **Strength**: MUST
 
-**Summary**: Error Display implementations should provide a summary sentence, then backtrace, then cause chain.
+**Summary**: Propagate errors with `?`, not explicit `match`. The `?` operator calls `From` for you to convert error types.
 
 ```rust
-use std::backtrace::Backtrace;
+// ❌ VERBOSE
+fn fetch(url: &str) -> Result<User, AppError> {
+    let response = match http::get(url) {
+        Ok(r) => r,
+        Err(e) => return Err(e.into()),
+    };
+    let body = match response.text() {
+        Ok(b) => b,
+        Err(e) => return Err(e.into()),
+    };
+    match serde_json::from_str(&body) {
+        Ok(u) => Ok(u),
+        Err(e) => Err(e.into()),
+    }
+}
+
+// ✅ CONCISE
+fn fetch(url: &str) -> Result<User, AppError> {
+    let response = http::get(url)?;
+    let body = response.text()?;
+    let user = serde_json::from_str(&body)?;
+    Ok(user)
+}
+
+// ? also works on Option, shorting out with None
+fn first_word(s: &str) -> Option<&str> {
+    let w = s.split_whitespace().next()?;
+    Some(w.trim_end_matches('.'))
+}
+```
+
+**Rationale**: `?` is the canonical propagation form. It applies `From::from` to the error, which is why implementing `From<UpstreamError>` for your error type (EH-09) makes `?` just work across type boundaries.
+
+---
+
+## EH-09: Error Conversion via `From`
+
+**Strength**: MUST
+
+**Summary**: Implement `From<UpstreamError>` for your error type. `?` calls it automatically; a `#[from]` attribute in `thiserror` generates it.
+
+```rust
+use thiserror::Error;
+
+#[derive(Debug, Error)]
+#[non_exhaustive]
+pub enum AppError {
+    #[error("I/O error")]
+    Io(#[from] std::io::Error),            // auto From<io::Error>
+
+    #[error("parse error")]
+    Parse(#[from] std::num::ParseIntError),
+
+    #[error("config missing key '{0}'")]
+    MissingKey(String),                    // no From — constructed by hand
+}
+
+// Manual equivalent when not using thiserror:
+impl From<std::io::Error> for AppError {
+    fn from(e: std::io::Error) -> Self { AppError::Io(e) }
+}
+
+// Now ? automatically converts both:
+fn read_number(path: &str) -> Result<i32, AppError> {
+    let s = std::fs::read_to_string(path)?;    // io::Error → AppError
+    let n: i32 = s.trim().parse()?;            // ParseIntError → AppError
+    Ok(n)
+}
+```
+
+**Rationale**: `From` is the type-system hook that makes `?` ergonomic. Without it, every call site needs a `.map_err(...)`. With it, propagation is free. Pair each `From` with a matching `#[error(...)]` message so the source chain displays usefully.
+
+**See also**: EH-08, EH-12, C-CONV-TRAITS
+
+---
+
+## EH-10: Error Types Implement `std::error::Error`
+
+**Strength**: MUST
+
+**Summary**: Every public error type must implement `Error` plus `Debug`, `Display`, `Send`, and `Sync`. `Error` requires `Display + Debug`; `Send + Sync` lets errors cross threads.
+
+```rust
 use std::fmt;
+
+#[derive(Debug)]
+pub struct EmptyInput;
+
+impl fmt::Display for EmptyInput {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str("input was empty")
+    }
+}
+
+impl std::error::Error for EmptyInput {}
+
+// The full contract any public error type should satisfy:
+//    Error + Debug + Display + Send + Sync + 'static
+// Automatic as long as every field is Send + Sync + 'static.
+fn is_ok<E: std::error::Error + Send + Sync + 'static>(_: &E) {}
+```
+
+**Rationale**: `Display` is for users (see guide 05 TD-13 — `Error: Display + Debug` is what makes error types renderable). `Debug` is for programmers. `Send + Sync + 'static` is what `anyhow::Error`, `Box<dyn Error + Send + Sync>`, and most async error plumbing demand. Skipping any of these breaks composition with the ecosystem.
+
+**See also**: EH-14, guide 05 TD-12, TD-13, C-GOOD-ERR
+
+---
+
+## EH-11: Don't Expose `ErrorKind` Directly
+
+**Strength**: MUST
+
+**Summary**: Keep the failure-mode enum private. Expose helper methods (`is_not_found`, `source`, accessors) instead of letting callers match on every variant.
+
+```rust
+use std::path::PathBuf;
 
 pub struct ConfigError {
     kind: ErrorKind,
-    backtrace: Backtrace,
+    backtrace: std::backtrace::Backtrace,
 }
 
-impl fmt::Display for ConfigError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        // 1. Summary sentence
+#[derive(Debug)]
+pub(crate) enum ErrorKind {                     // pub(crate) — internal only
+    NotFound(PathBuf),
+    Parse { path: PathBuf, line: usize, msg: String },
+    Io(std::io::Error),
+}
+
+impl ConfigError {
+    pub fn is_not_found(&self) -> bool { matches!(self.kind, ErrorKind::NotFound(_)) }
+    pub fn is_parse_error(&self) -> bool { matches!(self.kind, ErrorKind::Parse { .. }) }
+
+    pub fn path(&self) -> Option<&Path> {
         match &self.kind {
-            ErrorKind::NotFound(path) => {
-                write!(f, "Configuration file not found: {}", path.display())?;
-            }
-            ErrorKind::ParseError { line, msg } => {
-                write!(f, "Parse error at line {}: {}", line, msg)?;
-            }
-        }
-        
-        // 2. Backtrace (if available)
-        if self.backtrace.status() == std::backtrace::BacktraceStatus::Captured {
-            write!(f, "\n\n{}", self.backtrace)?;
-        }
-        
-        Ok(())
-    }
-}
-
-// Debug should include both Display and full backtrace
-impl fmt::Debug for ConfigError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}\n{}", self, self.backtrace)
-    }
-}
-
-impl std::error::Error for ConfigError {
-    // Provide source for error chain
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        match &self.kind {
-            ErrorKind::NotFound(e) => Some(e),
+            ErrorKind::NotFound(p) | ErrorKind::Parse { path: p, .. } => Some(p),
             _ => None,
         }
     }
 }
+
+// Adding a new ErrorKind variant is no longer a breaking change.
 ```
 
-**Rationale**: Consistent error formatting helps debugging. Display shows user-facing message; Debug includes full backtrace; source() enables error chain traversal.
+**Rationale**: A public variant list locks your failure taxonomy forever — adding a variant forces a major version bump. Hide the enum and provide intention-revealing queries. If you must expose the enum, mark it `#[non_exhaustive]` (EH-13).
 
-**See also**: M-ERRORS-CANONICAL-STRUCTS, M-PUBLIC-DISPLAY
+**See also**: EH-13, EH-15, M-ERRORS-CANONICAL-STRUCTS
 
 ---
 
-## EH-09: Document Error Conditions
-
-**Strength**: MUST
-
-**Summary**: Document when functions can return errors using an "Errors" section in rustdoc.
-
-```rust
-/// Loads configuration from a TOML file.
-///
-/// # Arguments
-///
-/// * `path` - Path to the configuration file
-///
-/// # Errors
-///
-/// This function will return an error if:
-/// - The file does not exist or cannot be read
-/// - The file contains invalid TOML syntax
-/// - Required fields are missing from the configuration
-///
-/// # Examples
-///
-/// ```
-/// use myapp::Config;
-///
-/// let config = Config::load("config.toml")?;
-/// # Ok::<(), Box<dyn std::error::Error>>(())
-/// ```
-pub fn load(path: &str) -> Result<Config, ConfigError> {
-    // ...
-}
-
-/// Reads exactly `buf.len()` bytes from the reader.
-///
-/// # Errors
-///
-/// If this function encounters an EOF before filling the buffer,
-/// it returns an error of kind `ErrorKind::UnexpectedEof`.
-///
-/// If any other I/O error is encountered, it is returned directly.
-pub fn read_exact(&mut self, buf: &mut [u8]) -> io::Result<()> {
-    // ...
-}
-
-/// Parses a network address from a string.
-///
-/// # Errors
-///
-/// Returns `ParseError::InvalidFormat` if the input is not in the
-/// format "host:port".
-///
-/// Returns `ParseError::InvalidPort` if the port number is not a
-/// valid u16 or is in the reserved range (< 1024).
-pub fn parse_address(s: &str) -> Result<SocketAddr, ParseError> {
-    // ...
-}
-```
-
-**Rationale**: Documenting error conditions helps users write correct error handling code and understand what can go wrong.
-
-**See also**: C-FAILURE
-
----
-
-## EH-10: Document Panic Conditions
-
-**Strength**: MUST
-
-**Summary**: Document when functions may panic using a "Panics" section in rustdoc.
-
-```rust
-/// Inserts an element at position `index` within the vector.
-///
-/// # Panics
-///
-/// Panics if `index > len`.
-///
-/// # Examples
-///
-/// ```
-/// let mut vec = vec![1, 2, 3];
-/// vec.insert(1, 4);
-/// assert_eq!(vec, &[1, 4, 2, 3]);
-/// ```
-pub fn insert(&mut self, index: usize, element: T) {
-    assert!(index <= self.len(), "index out of bounds");
-    // ...
-}
-
-/// Returns the value at the given index, or panics.
-///
-/// # Panics
-///
-/// Panics if the index is out of bounds.
-///
-/// For a non-panicking alternative, see [`get`](#method.get).
-pub fn index(&self, index: usize) -> &T {
-    &self.data[index]
-}
-
-/// Divides two numbers.
-///
-/// # Panics
-///
-/// Panics if `divisor` is zero.
-pub fn divide(dividend: f64, divisor: f64) -> f64 {
-    assert!(divisor != 0.0, "division by zero");
-    dividend / divisor
-}
-```
-
-```rust
-// Don't need to document this panic - it's from caller's code
-pub fn with_formatter<F>(f: F) 
-where 
-    F: Fn(&str) -> String 
-{
-    let result = f("input");
-    println!("{}", result);
-}
-```
-
-**Rationale**: Panics are exceptional control flow that users need to be aware of to write robust code.
-
-**See also**: C-FAILURE
-
----
-
-## EH-11: Don't Expose ErrorKind Directly
-
-**Strength**: MUST
-
-**Summary**: Keep error enums private; expose helper methods to check error types.
-
-```rust
-// Bad - exposing enum directly
-pub enum ErrorKind {
-    Io(std::io::Error),
-    Protocol,
-}
-
-pub struct HttpError {
-    pub kind: ErrorKind,  // Public!
-}
-
-// Users write brittle code
-match error.kind {
-    ErrorKind::Io(_) => { /* ... */ }
-    ErrorKind::Protocol => { /* ... */ }
-    // Breaks when you add new variants!
-}
-
-// Good - hide enum, expose methods
-pub struct HttpError {
-    kind: ErrorKind,  // Private!
-    backtrace: Backtrace,
-}
-
-#[derive(Debug)]
-pub(crate) enum ErrorKind {
-    Io(std::io::Error),
-    Protocol,
-}
-
-impl HttpError {
-    pub fn is_io(&self) -> bool {
-        matches!(self.kind, ErrorKind::Io(_))
-    }
-    
-    pub fn is_protocol(&self) -> bool {
-        matches!(self.kind, ErrorKind::Protocol)
-    }
-    
-    // Can add more variants without breaking callers!
-}
-
-// Usage - stable API
-if error.is_io() {
-    // Handle I/O errors
-}
-```
-
-**Rationale**: Exposing error enums forces exhaustive matching in caller code, making adding new error variants a breaking change. Helper methods provide stable API.
-
-**See also**: M-ERRORS-CANONICAL-STRUCTS
-
----
-
-## EH-12: Error Context and Chaining
+## EH-12: Add Context When You Add a Layer
 
 **Strength**: SHOULD
 
-**Summary**: Add context to errors as they propagate up.
+**Summary**: Don't pass a raw `io::Error` up four layers. Either wrap it with domain-specific context (`thiserror` `#[source]`) or attach a `.context(...)` message (`anyhow`).
 
 ```rust
-// ❌ BAD: Raw error with no context
+// ❌ Raw error — "No such file" but which file?
 fn process_file(path: &Path) -> Result<Data, std::io::Error> {
-    let contents = std::fs::read_to_string(path)?;  // "No such file"
-    // User has no idea WHICH file
+    let contents = std::fs::read_to_string(path)?;
     todo!()
 }
 
-// ✅ GOOD: Error with context
-fn process_file(path: &Path) -> Result<Data, anyhow::Error> {
-    let contents = std::fs::read_to_string(path)
-        .with_context(|| format!("Failed to read {}", path.display()))?;
-    // Error: "Failed to read /etc/config.toml: No such file or directory"
-    todo!()
-}
+// ✅ thiserror: structured wrapping with a source chain
+use thiserror::Error;
 
-// ✅ GOOD: With thiserror, wrap errors
-#[derive(Debug, thiserror::Error)]
+#[derive(Debug, Error)]
 pub enum ProcessError {
     #[error("failed to read {path}")]
     ReadFile {
         path: PathBuf,
-        #[source]
+        #[source]                              // exposed via Error::source()
         source: std::io::Error,
     },
-    // ...
+    #[error("failed to parse {path}")]
+    Parse { path: PathBuf, #[source] source: serde_json::Error },
 }
 
 fn process_file(path: &Path) -> Result<Data, ProcessError> {
     let contents = std::fs::read_to_string(path)
-        .map_err(|source| ProcessError::ReadFile { 
-            path: path.to_owned(), 
-            source 
-        })?;
-    todo!()
+        .map_err(|source| ProcessError::ReadFile { path: path.to_owned(), source })?;
+    serde_json::from_str(&contents)
+        .map_err(|source| ProcessError::Parse { path: path.to_owned(), source })
+}
+
+// ✅ anyhow (applications): free-form string context
+use anyhow::{Context, Result};
+fn process_file_app(path: &Path) -> Result<Data> {
+    let contents = std::fs::read_to_string(path)
+        .with_context(|| format!("failed to read {}", path.display()))?;
+    let data = serde_json::from_str(&contents)
+        .with_context(|| format!("failed to parse {}", path.display()))?;
+    Ok(data)
 }
 ```
 
----
-
-## EH-13: Error Conversions Use From Trait
-
-**Strength**: MUST
-
-**Summary**: Implement `From<OtherError>` to enable `?` operator and error conversion chains.
-
-```rust
-use std::io;
-use std::num::ParseIntError;
-
-#[derive(Debug)]
-pub enum AppError {
-    Io(io::Error),
-    Parse(ParseIntError),
-    Custom(String),
-}
-
-// Implement From for automatic conversion
-impl From<io::Error> for AppError {
-    fn from(err: io::Error) -> AppError {
-        AppError::Io(err)
-    }
-}
-
-impl From<ParseIntError> for AppError {
-    fn from(err: ParseIntError) -> AppError {
-        AppError::Parse(err)
-    }
-}
-
-// Now ? operator works seamlessly
-fn read_number_from_file(path: &str) -> Result<i32, AppError> {
-    let contents = std::fs::read_to_string(path)?;  // io::Error → AppError
-    let number = contents.trim().parse()?;          // ParseIntError → AppError
-    Ok(number)
-}
-
-// Using thiserror crate (recommended)
-use thiserror::Error;
-
-#[derive(Error, Debug)]
-pub enum AppError {
-    #[error("IO error: {0}")]
-    Io(#[from] io::Error),  // Automatically implements From
-    
-    #[error("parse error: {0}")]
-    Parse(#[from] ParseIntError),
-    
-    #[error("{0}")]
-    Custom(String),
-}
-
-// Same function works without manual From implementations
-fn read_number_from_file(path: &str) -> Result<i32, AppError> {
-    let contents = std::fs::read_to_string(path)?;
-    let number = contents.trim().parse()?;
-    Ok(number)
-}
-```
-
-**Rationale**: `From` implementations enable the `?` operator to automatically convert between error types, making error propagation ergonomic.
-
-**See also**: C-CONV-TRAITS
+**Rationale**: An error message is only as useful as the context it carries. Wrap at every layer where the calling code introduces new information (a filename, a request ID, a retry count). Use `with_context` rather than `context` when the message requires allocation — the closure isn't called on the happy path.
 
 ---
 
-## EH-14: Error Handling in `main()`
+## EH-13: Mark Public Error Enums `#[non_exhaustive]`
 
 **Strength**: SHOULD
 
-**Summary**: Return `Result` from `main()` for proper error reporting.
+**Summary**: If you must expose variants, add `#[non_exhaustive]` so adding a variant later isn't a breaking change.
 
 ```rust
-// ❌ POOR: Manual error handling
-fn main() {
-    if let Err(e) = run() {
-        eprintln!("Error: {e}");
-        std::process::exit(1);
-    }
-}
-
-// ✅ GOOD: Return Result from main
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let config = load_config()?;
-    run_server(config)?;
-    Ok(())
-}
-
-// ✅ BETTER: With anyhow for nice error display
-fn main() -> anyhow::Result<()> {
-    let config = load_config()
-        .context("Failed to load configuration")?;
-    run_server(config)?;
-    Ok(())
-}
-
-// ✅ BEST: Custom error handling with exit codes
-fn main() -> ExitCode {
-    match run() {
-        Ok(()) => ExitCode::SUCCESS,
-        Err(e) => {
-            eprintln!("Error: {e:#}");  // {:#} for full error chain
-            ExitCode::FAILURE
-        }
-    }
-}
-```
-
----
-
-## EH-15: Error Types Implement std::error::Error
-
-**Strength**: MUST
-
-**Summary**: All error types must implement the `Error` trait, `Display`, `Debug`, `Send`, and `Sync`.
-
-```rust
-use std::error::Error;
-use std::fmt;
-
-// Good - complete error type
-#[derive(Debug)]
-pub enum ConfigError {
-    IoError(std::io::Error),
-    ParseError { line: usize, message: String },
-    MissingField(String),
-}
-
-impl fmt::Display for ConfigError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            ConfigError::IoError(e) => write!(f, "IO error: {}", e),
-            ConfigError::ParseError { line, message } => {
-                write!(f, "parse error at line {}: {}", line, message)
-            }
-            ConfigError::MissingField(field) => {
-                write!(f, "missing required field: {}", field)
-            }
-        }
-    }
-}
-
-impl Error for ConfigError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match self {
-            ConfigError::IoError(e) => Some(e),
-            _ => None,
-        }
-    }
-}
-
-// Automatically Send + Sync if all fields are
-
-// Good - unit struct error
-#[derive(Debug, Clone, Copy)]
-pub struct EmptyInputError;
-
-impl fmt::Display for EmptyInputError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "input was empty")
-    }
-}
-
-impl Error for EmptyInputError {}
-
-// Bad - using () as error type
-fn parse_config(s: &str) -> Result<Config, ()> {  // DON'T DO THIS
-    // Problems:
-    // - Can't use with ? in functions returning other errors
-    // - No error message
-    // - Can't use with error handling libraries
-    // - Unhelpful to users
-}
-
-// Good - specific error type
-fn parse_config(s: &str) -> Result<Config, ConfigError> {
-    // Now users can:
-    // - Pattern match on error variants
-    // - Get useful error messages
-    // - Use ? operator
-    // - Chain with other Result types
-}
-```
-
-```rust
-// Minimum requirements for any error type
-pub trait MyError: 
-    Error +           // std::error::Error
-    Debug +           // Debugging output
-    Display +         // User-facing messages  
-    Send +            // Can send across threads
-    Sync              // Can share across threads
-{}
-```
-
-**Rationale**: Following these conventions ensures errors work with error handling libraries like `anyhow`, `thiserror`, and `eyre`, and can be used in concurrent contexts.
-
-**See also**: C-GOOD-ERR
-
----
-
-## EH-16: Error Types Should Be Enum-Based
-
-**Strength**: SHOULD
-
-**Summary**: Use enums to represent different error cases, allowing callers to handle specific errors differently.
-
-```rust
-// Good - enum with variants for different cases
-#[derive(Debug)]
+#[derive(Debug, thiserror::Error)]
+#[non_exhaustive]                              // callers must include _ arm
 pub enum DatabaseError {
-    ConnectionFailed { 
-        host: String, 
-        port: u16, 
-        source: std::io::Error 
-    },
-    QueryFailed { 
-        query: String, 
-        reason: String 
-    },
-    Timeout { 
-        operation: String, 
-        duration: std::time::Duration 
-    },
-    RecordNotFound { 
-        table: String, 
-        id: i64 
-    },
+    #[error("connection failed")]
+    ConnectionFailed(#[source] std::io::Error),
+
+    #[error("query timed out after {duration:?}")]
+    Timeout { duration: std::time::Duration },
+
+    #[error("record not found: {0}")]
+    NotFound(String),
 }
 
-impl fmt::Display for DatabaseError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            DatabaseError::ConnectionFailed { host, port, source } => {
-                write!(f, "failed to connect to {}:{}: {}", host, port, source)
-            }
-            DatabaseError::QueryFailed { query, reason } => {
-                write!(f, "query failed: {}: {}", query, reason)
-            }
-            DatabaseError::Timeout { operation, duration } => {
-                write!(f, "operation '{}' timed out after {:?}", operation, duration)
-            }
-            DatabaseError::RecordNotFound { table, id } => {
-                write!(f, "record {} not found in table '{}'", id, table)
-            }
-        }
-    }
-}
-
-// Usage - caller can handle specific cases
-match database.fetch_user(id) {
-    Ok(user) => println!("Found user: {}", user.name),
-    Err(DatabaseError::RecordNotFound { .. }) => {
-        println!("User not found, creating new one");
-        database.create_user(id)?;
-    }
-    Err(DatabaseError::Timeout { .. }) => {
-        println!("Timeout, retrying...");
-        database.fetch_user(id)?;
-    }
-    Err(e) => return Err(e),
-}
-
-// Bad - opaque error with only string
-#[derive(Debug)]
-pub struct DatabaseError {
-    message: String,
-}
-
-// Caller can't distinguish between different error cases
-// Can only examine the string message
-```
-
-```rust
-#[derive(Debug)]
-pub enum ParseError {
-    // Struct-style for multiple fields
-    InvalidFormat { 
-        line: usize, 
-        column: usize, 
-        expected: String 
-    },
-    
-    // Tuple-style for single wrapped error
-    Io(std::io::Error),
-    
-    // Unit-style when no additional data needed
-    UnexpectedEof,
+// Consumer code is forced to carry a catch-all
+match err {
+    DatabaseError::ConnectionFailed(_) => retry(),
+    DatabaseError::Timeout { .. }      => retry(),
+    DatabaseError::NotFound(_)         => create(),
+    _ => log_unexpected(),                     // forward-compatible
 }
 ```
 
-**Rationale**: Enum-based errors enable pattern matching, provide structured data, and allow callers to handle different cases appropriately.
+**Rationale**: Without `#[non_exhaustive]`, downstream `match` statements must be exhaustive — adding a variant is a breaking change. With it, the compiler forces callers to handle the "new variant" case up front, freeing you to grow the enum. See guide 05 TD-07.
+
+**See also**: EH-11, guide 05 TD-07
 
 ---
 
----
-
-## EH-17: Errors Are Canonical Structs
+## EH-14: Document Errors, Panics, and Safety
 
 **Strength**: MUST
 
-**Summary**: Errors should be situation-specific structs containing a Backtrace, upstream cause, and helper methods—not bare enums.
+**Summary**: Public fallible functions must document an `# Errors` section. Panicking functions need a `# Panics` section. `unsafe` functions need a `# Safety` section.
+
+```rust
+/// Parses a network address from a string.
+///
+/// # Errors
+///
+/// - [`ParseError::InvalidFormat`] if the input is not `"host:port"`.
+/// - [`ParseError::InvalidPort`] if the port is not a valid `u16`
+///   or falls in the reserved range (`< 1024`).
+pub fn parse_address(s: &str) -> Result<SocketAddr, ParseError> { todo!() }
+
+/// Inserts an element at `index`, shifting later elements right.
+///
+/// # Panics
+///
+/// Panics if `index > self.len()`.
+pub fn insert(&mut self, index: usize, element: T) { /* ... */ }
+
+/// # Safety
+///
+/// The caller must ensure `ptr` is non-null, aligned, and points to a
+/// valid `T` that will not be accessed through another reference during
+/// this call.
+pub unsafe fn from_raw(ptr: *mut T) -> Self { /* ... */ todo!() }
+```
+
+**Rationale**: These three sections are load-bearing rustdoc conventions (C-FAILURE). The tool-chain parses them; developers grep for them; `# Errors` in particular is the only place a caller can learn what to handle short of reading the source.
+
+**See also**: guide 13 on documentation, C-FAILURE
+
+---
+
+## EH-15: Errors Are Canonical Structs with Backtraces
+
+**Strength**: SHOULD
+
+**Summary**: For crates that care about diagnostics, prefer a `struct { kind: ErrorKind, backtrace: Backtrace }` shape over a bare enum. It gives you a stable public type, private variants (EH-11), and always-on backtraces.
 
 ```rust
 use std::backtrace::Backtrace;
+use std::fmt;
 
-// Bad - bare enum, no backtrace or context
-pub enum ConfigError {
-    NotFound,
-    ParseError,
-    InvalidFormat,
-}
-
-// Good - canonical struct with full context
 pub struct ConfigError {
     kind: ErrorKind,
     backtrace: Backtrace,
@@ -911,163 +581,171 @@ pub struct ConfigError {
 #[derive(Debug)]
 pub(crate) enum ErrorKind {
     NotFound(std::io::Error),
-    ParseError(toml::de::Error),
+    Parse(toml::de::Error),
     InvalidFormat { field: String, reason: String },
 }
 
 impl ConfigError {
     pub(crate) fn not_found(err: std::io::Error) -> Self {
-        Self {
-            kind: ErrorKind::NotFound(err),
-            backtrace: Backtrace::capture(),
-        }
+        Self { kind: ErrorKind::NotFound(err), backtrace: Backtrace::capture() }
     }
-    
-    pub(crate) fn parse_error(err: toml::de::Error) -> Self {
-        Self {
-            kind: ErrorKind::ParseError(err),
-            backtrace: Backtrace::capture(),
-        }
+    pub(crate) fn parse(err: toml::de::Error) -> Self {
+        Self { kind: ErrorKind::Parse(err), backtrace: Backtrace::capture() }
     }
-    
-    pub(crate) fn invalid_format(field: String, reason: String) -> Self {
-        Self {
-            kind: ErrorKind::InvalidFormat { field, reason },
-            backtrace: Backtrace::capture(),
-        }
-    }
-    
-    // Public helper methods for error inspection
-    pub fn is_not_found(&self) -> bool {
-        matches!(self.kind, ErrorKind::NotFound(_))
-    }
-    
-    pub fn is_parse_error(&self) -> bool {
-        matches!(self.kind, ErrorKind::ParseError(_))
-    }
+    pub fn is_not_found(&self) -> bool { matches!(self.kind, ErrorKind::NotFound(_)) }
+    pub fn backtrace(&self) -> &Backtrace { &self.backtrace }
 }
 
-impl std::fmt::Debug for ConfigError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}\n{}", self, self.backtrace)
-    }
-}
-
-impl std::fmt::Display for ConfigError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl fmt::Display for ConfigError { /* see EH-17 */
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match &self.kind {
-            ErrorKind::NotFound(e) => 
-                write!(f, "Configuration file not found: {}", e),
-            ErrorKind::ParseError(e) => 
-                write!(f, "Failed to parse configuration: {}", e),
+            ErrorKind::NotFound(_)              => f.write_str("configuration file not found"),
+            ErrorKind::Parse(_)                 => f.write_str("failed to parse configuration"),
             ErrorKind::InvalidFormat { field, reason } =>
-                write!(f, "Invalid configuration field '{}': {}", field, reason),
+                write!(f, "invalid field {field}: {reason}"),
         }
+    }
+}
+
+impl fmt::Debug for ConfigError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{self}\n{}", self.backtrace)
     }
 }
 
 impl std::error::Error for ConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ErrorKind::NotFound(e) => Some(e),
-            ErrorKind::ParseError(e) => Some(e),
+            ErrorKind::NotFound(e)       => Some(e),
+            ErrorKind::Parse(e)          => Some(e),
             ErrorKind::InvalidFormat { .. } => None,
         }
     }
 }
-
-// Implement From for upstream errors
-impl From<std::io::Error> for ConfigError {
-    fn from(err: std::io::Error) -> Self {
-        Self::not_found(err)
-    }
-}
-
-impl From<toml::de::Error> for ConfigError {
-    fn from(err: toml::de::Error) -> Self {
-        Self::parse_error(err)
-    }
-}
 ```
 
-**Rationale**: Struct-based errors provide comprehensive debugging information. The internal `ErrorKind` enum groups failure modes while keeping future-proofing (callers use `is_xxx()` methods, not exhaustive matches).
+**Rationale**: A canonical struct gives you control: variant additions don't break callers (EH-11), backtraces are always present, and you can implement `Debug` to include the backtrace for logs without polluting `Display`. See the Common Patterns section at the end for the full reusable template.
 
-**See also**: M-ERRORS-CANONICAL-STRUCTS
+**See also**: EH-16, EH-17, M-ERRORS-CANONICAL-STRUCTS
 
 ---
 
-## EH-18: Errors Expose Source Chain
+## EH-16: Capture a Backtrace When the Error Is Born
 
-**Strength**: SHOULD
+**Strength**: MUST
 
-**Summary**: Implement `Error::source()` to expose the underlying cause of the error.
+**Summary**: Call `Backtrace::capture()` in every error constructor and in every `From` impl. Capture is free when `RUST_BACKTRACE` is unset, but invaluable when it's set.
 
 ```rust
-use std::error::Error;
-use std::fmt;
+use std::backtrace::Backtrace;
 
-#[derive(Debug)]
-pub enum AppError {
-    ConfigLoad { source: std::io::Error },
-    ConfigParse { source: toml::de::Error },
-    DatabaseConnect { url: String, source: sqlx::Error },
-}
-
-impl Error for AppError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        match self {
-            AppError::ConfigLoad { source } => Some(source),
-            AppError::ConfigParse { source } => Some(source),
-            AppError::DatabaseConnect { source, .. } => Some(source),
-        }
+impl DatabaseError {
+    pub(crate) fn connection_failed(err: std::io::Error) -> Self {
+        Self { kind: ErrorKind::Connection(err), backtrace: Backtrace::capture() }
     }
 }
 
-impl fmt::Display for AppError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match self {
-            AppError::ConfigLoad { .. } => {
-                write!(f, "failed to load configuration file")
-            }
-            AppError::ConfigParse { .. } => {
-                write!(f, "failed to parse configuration")
-            }
-            AppError::DatabaseConnect { url, .. } => {
-                write!(f, "failed to connect to database at {}", url)
-            }
-        }
+impl From<std::io::Error> for DatabaseError {
+    fn from(err: std::io::Error) -> Self {
+        // Capture HERE — the ? site is where the error was born
+        Self { kind: ErrorKind::Io(err), backtrace: Backtrace::capture() }
     }
 }
 
-// Usage - can walk the error chain
-fn print_error_chain(mut err: &dyn Error) {
-    eprintln!("Error: {}", err);
-    while let Some(source) = err.source() {
-        eprintln!("  Caused by: {}", source);
-        err = source;
-    }
+// A private bail! macro makes "construct + capture" a one-liner
+macro_rules! bail {
+    ($kind:expr) => {
+        return Err($crate::DatabaseError {
+            kind: $kind,
+            backtrace: std::backtrace::Backtrace::capture(),
+        });
+    };
 }
 
-// With thiserror, this is automatic
-#[derive(Error, Debug)]
-pub enum AppError {
-    #[error("failed to load configuration file")]
-    ConfigLoad {
-        #[source]  // Automatically implements source()
-        source: std::io::Error,
-    },
-    
-    #[error("failed to parse configuration")]
-    ConfigParse {
-        #[source]
-        source: toml::de::Error,
-    },
+fn do_query() -> Result<(), DatabaseError> {
+    if !is_valid() { bail!(ErrorKind::InvalidQuery); }
+    Ok(())
 }
 ```
 
-**Rationale**: Exposing the source chain helps with debugging by preserving the full context of what went wrong.
+**Rationale**: `Backtrace::capture()` reads an env var; if backtraces are disabled it returns immediately. Capturing at construction means the stack is still the original stack — not a flattened chain of `?` returns. On stable Rust, `std::backtrace::Backtrace` is the canonical API.
+
+**See also**: EH-15, EH-17, M-ERRORS-CANONICAL-STRUCTS
 
 ---
+
+## EH-17: `Display` Renders the Summary, `Debug` Renders Everything
+
+**Strength**: MUST
+
+**Summary**: `Display` writes one line of prose — the cause chain is exposed via `source()`. `Debug` may additionally render the backtrace.
+
+```rust
+use std::fmt;
+
+impl fmt::Display for ConfigError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match &self.kind {
+            ErrorKind::NotFound(_) => f.write_str("configuration file not found"),
+            ErrorKind::Parse(_)    => f.write_str("failed to parse configuration"),
+            ErrorKind::InvalidFormat { field, reason } =>
+                write!(f, "invalid field '{field}': {reason}"),
+        }
+    }
+}
+
+impl fmt::Debug for ConfigError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{self}\n{}", self.backtrace)
+    }
+}
+
+// Walking the chain — the canonical consumer pattern
+fn log_chain(err: &dyn std::error::Error) {
+    eprintln!("error: {err}");
+    let mut cur = err.source();
+    while let Some(e) = cur {
+        eprintln!("  caused by: {e}");
+        cur = e.source();
+    }
+}
+```
+
+**Rationale**: `Display` is the one-line summary that ends up in user-facing logs. The full chain is reconstructable from `Error::source()`. Duplicating the chain into `Display` (e.g., `write!(f, "{}: {}", self, source)`) double-prints when a consumer walks the chain themselves.
+
+**See also**: EH-10, guide 05 TD-13, M-PUBLIC-DISPLAY
+
+---
+
+## EH-18: Provide Fallible and Panicking Variants
+
+**Strength**: CONSIDER
+
+**Summary**: When a panicking operation is convenient but a `Result` version is sometimes needed, provide both — name the fallible one with `try_`.
+
+```rust
+impl<T> Stack<T> {
+    /// # Panics
+    /// Panics if the stack is empty.
+    pub fn pop(&mut self) -> T {
+        self.try_pop().expect("pop on empty stack")
+    }
+
+    /// Non-panicking counterpart.
+    pub fn try_pop(&mut self) -> Option<T> { self.inner.pop() }
+}
+
+// Std library precedent
+// let v = vec![1, 2, 3];
+// v[99]             // panics
+// v.get(99)         // Option<&T>
+// str::from_utf8    // Result
+// str::from_utf8_unchecked  // unsafe, no check — the _unchecked convention (C-VALIDATE)
+```
+
+**Rationale**: Panicking variants are ergonomic for tests, REPLs, and provable-success call sites; fallible variants are required in production paths. Give consumers both; the `try_` prefix is the standard Rust convention.
+
+**See also**: EH-02, C-VALIDATE
 
 ---
 
@@ -1075,280 +753,127 @@ pub enum AppError {
 
 **Strength**: SHOULD
 
-**Summary**: Use `new() -> Result<Self, Error>` or `try_new()` for fallible construction.
+**Summary**: When construction validates input, return `Result` from `new`. Reserve `try_new` for when an infallible `new` exists alongside.
 
 ```rust
-// ✅ OPTION A: new() returns Result (when construction usually can fail)
-pub struct Config {
-    // ...
-}
-
+// Option A: construction is usually fallible — new returns Result
 impl Config {
     pub fn new(path: &Path) -> Result<Self, ConfigError> {
-        let contents = std::fs::read_to_string(path)?;
-        let parsed = toml::from_str(&contents)?;
-        Ok(Self { /* ... */ })
+        let s = std::fs::read_to_string(path)?;
+        toml::from_str(&s).map_err(ConfigError::parse)
     }
 }
 
-// ✅ OPTION B: try_new() for fallible, new() for infallible
+// Option B: infallible new + checked try_new (std-style)
 pub struct PositiveInt(i32);
 
 impl PositiveInt {
-    /// Creates a new PositiveInt.
-    /// 
     /// # Panics
     /// Panics if `value <= 0`.
     pub fn new(value: i32) -> Self {
         Self::try_new(value).expect("value must be positive")
     }
-    
-    /// Creates a new PositiveInt, returning `None` if value is not positive.
     pub fn try_new(value: i32) -> Option<Self> {
-        if value > 0 {
-            Some(Self(value))
-        } else {
-            None
-        }
+        (value > 0).then_some(Self(value))
     }
 }
 
-// ✅ OPTION C: FromStr for parsing
+// Option C: FromStr for string parsing
 impl std::str::FromStr for Config {
     type Err = ConfigError;
-    
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        toml::from_str(s).map_err(ConfigError::Parse)
+        toml::from_str(s).map_err(ConfigError::parse)
     }
 }
 ```
 
----
-
-## EH-20: Implement `std::error::Error` for Custom Errors
-
-**Strength**: MUST
-
-**Summary**: Custom error types must implement `Error` to work with `?` and error handling ecosystem.
-
-```rust
-use std::error::Error;
-use std::fmt;
-
-#[derive(Debug)]
-pub struct MyError {
-    message: String,
-    source: Option<Box<dyn Error + Send + Sync>>,
-}
-
-impl fmt::Display for MyError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", self.message)
-    }
-}
-
-impl Error for MyError {
-    fn source(&self) -> Option<&(dyn Error + 'static)> {
-        self.source.as_ref().map(|e| e.as_ref() as _)
-    }
-}
-
-// Much easier with thiserror:
-#[derive(Debug, thiserror::Error)]
-#[error("{message}")]
-pub struct MyError {
-    message: String,
-    #[source]
-    source: Option<Box<dyn Error + Send + Sync>>,
-}
-```
+**Rationale**: Library constructors that touch I/O or validate input almost always need `Result`. Panicking constructors belong only where the invariant is statically obvious (literals, tests) or where the std convention expects them. See guide 05 TD-03 for validated-newtype constructors.
 
 ---
 
-## EH-21: Prefer Result Over Option for Errors
-
-**Strength**: SHOULD
-
-**Summary**: Use `Result` with meaningful errors rather than `Option` when an operation can fail for multiple reasons.
-
-```rust
-// Good - Result with informative error
-fn parse_port(s: &str) -> Result<u16, ParsePortError> {
-    let num: u16 = s.parse()
-        .map_err(|_| ParsePortError::InvalidFormat)?;
-    
-    if num < 1024 {
-        return Err(ParsePortError::ReservedPort(num));
-    }
-    
-    Ok(num)
-}
-
-#[derive(Debug)]
-pub enum ParsePortError {
-    InvalidFormat,
-    ReservedPort(u16),
-}
-
-// Bad - Option loses information
-fn parse_port_bad(s: &str) -> Option<u16> {
-    let num: u16 = s.parse().ok()?;
-    if num < 1024 {
-        return None;  // Why did it fail? Who knows!
-    }
-    Some(num)
-}
-
-// Good - Option when there's truly only one failure mode
-fn first_word(s: &str) -> Option<&str> {
-    s.split_whitespace().next()
-    // Only fails if string is empty - Option is appropriate
-}
-
-// Good - Result when multiple things can go wrong
-fn connect_to_database(url: &str) -> Result<Connection, DbError> {
-    // Can fail for many reasons:
-    // - Invalid URL format
-    // - Network unreachable
-    // - Authentication failed
-    // - Database doesn't exist
-    // Using Result lets us distinguish these
-}
-```
-
-**Rationale**: `Result` forces callers to think about error cases and provides information about what went wrong.
-
----
-
----
-
-## EH-22: Provide Contextual Helper Methods
-
-**Strength**: SHOULD
-
-**Summary**: Error types should provide methods to access contextual information.
-
-```rust
-pub struct ConfigError {
-    kind: ErrorKind,
-    backtrace: Backtrace,
-}
-
-enum ErrorKind {
-    NotFound { path: PathBuf },
-    ParseError { path: PathBuf, line: usize },
-}
-
-impl ConfigError {
-    // Type checking methods
-    pub fn is_not_found(&self) -> bool {
-        matches!(self.kind, ErrorKind::NotFound { .. })
-    }
-    
-    // Context accessors
-    pub fn config_path(&self) -> Option<&Path> {
-        match &self.kind {
-            ErrorKind::NotFound { path } => Some(path),
-            ErrorKind::ParseError { path, .. } => Some(path),
-        }
-    }
-    
-    pub fn line_number(&self) -> Option<usize> {
-        match &self.kind {
-            ErrorKind::ParseError { line, .. } => Some(*line),
-            _ => None,
-        }
-    }
-}
-
-// Usage
-match load_config() {
-    Err(e) if e.is_not_found() => {
-        println!("Config not found at {:?}", e.config_path());
-    }
-    Err(e) => {
-        if let Some(line) = e.line_number() {
-            println!("Parse error at line {}", line);
-        }
-    }
-    Ok(config) => { /* ... */ }
-}
-```
-
-**Rationale**: Helper methods provide stable access to error context without exposing internal structure. Enables better error handling and logging.
-
-**See also**: M-ERRORS-CANONICAL-STRUCTS
-
----
-
-## EH-23: Provide Fallible and Infallible Variants
+## EH-20: Return the Consumed Argument on Error
 
 **Strength**: CONSIDER
 
-**Summary**: For operations that might panic, consider providing both panicking and `Result`-returning variants.
+**Summary**: If a fallible function takes an owned argument, return that argument inside the error on failure — so the caller can retry without cloning.
 
 ```rust
-// Panicking variant
-impl<T> Vec<T> {
-    /// Removes and returns the element at position `index`.
-    ///
-    /// # Panics
-    ///
-    /// Panics if `index` is out of bounds.
-    pub fn remove(&mut self, index: usize) -> T {
-        assert!(index < self.len());
-        // ...
-    }
-}
+// ❌ Caller must clone before every attempt
+pub fn send(value: String) -> Result<(), SendError> { /* ... */ Err(SendError) }
+pub struct SendError;
 
-// Could provide Result variant (though std doesn't)
-impl<T> Vec<T> {
-    /// Attempts to remove and return the element at position `index`.
-    ///
-    /// # Errors
-    ///
-    /// Returns `Err` if `index` is out of bounds.
-    pub fn try_remove(&mut self, index: usize) -> Result<T, IndexError> {
-        if index < self.len() {
-            Ok(self.remove(index))
-        } else {
-            Err(IndexError { index, len: self.len() })
-        }
-    }
-}
+let mut v = long_string.clone();             // wasted clone on the happy path
+while send(v.clone()).is_err() { /* ... */ }
 
-// Real example from std - slice indexing
-impl<T> [T] {
-    // Panicking version
-    pub fn get_unchecked(&self, index: usize) -> &T {
-        unsafe { &*self.as_ptr().add(index) }
-    }
-    
-    // Result version
-    pub fn get(&self, index: usize) -> Option<&T> {
-        if index < self.len() {
-            Some(&self[index])
-        } else {
-            None
-        }
-    }
+// ✅ Hand the value back on failure — no pre-emptive cloning
+pub fn send(value: String) -> Result<(), SendError> {
+    if nondeterministic_fail() { Err(SendError(value)) } else { Ok(()) }
 }
+pub struct SendError(pub String);
+
+let mut value = long_string;
+let ok = 'retry: {
+    for _ in 0..3 {
+        value = match send(value) {
+            Ok(()) => break 'retry true,
+            Err(SendError(v)) => v,          // recover the move
+        };
+    }
+    false
+};
 ```
 
-**Rationale**: Provides ergonomics for cases where panicking is acceptable while still supporting error handling when needed.
+**Rationale**: Standard-library precedent is `String::from_utf8` returning `FromUtf8Error` with `.into_bytes()` giving the original `Vec<u8>` back. Moves are cheap; forcing callers to clone pre-emptively is expensive and ugly. Apply this whenever a function's argument is large, owned, and the operation can be retried.
+
+**See also**: `String::from_utf8`, `mpsc::SendError`
 
 ---
 
-## EH-24: Sensitive Data in Errors
+## EH-21: Provide Contextual Helper Methods
+
+**Strength**: SHOULD
+
+**Summary**: Expose context via methods (`path()`, `line()`, `is_timeout()`) rather than forcing callers into the internal variant.
+
+```rust
+impl ConfigError {
+    pub fn is_not_found(&self) -> bool { matches!(self.kind, ErrorKind::NotFound { .. }) }
+    pub fn is_parse_error(&self) -> bool { matches!(self.kind, ErrorKind::Parse { .. }) }
+
+    pub fn path(&self) -> Option<&Path> {
+        match &self.kind {
+            ErrorKind::NotFound { path } | ErrorKind::Parse { path, .. } => Some(path),
+            _ => None,
+        }
+    }
+
+    pub fn line(&self) -> Option<usize> {
+        if let ErrorKind::Parse { line, .. } = &self.kind { Some(*line) } else { None }
+    }
+}
+
+// Stable consumer pattern
+match load_config() {
+    Err(e) if e.is_not_found() => eprintln!("missing: {:?}", e.path()),
+    Err(e) => eprintln!("failed at line {:?}: {e}", e.line()),
+    Ok(cfg) => run(cfg),
+}
+```
+
+**Rationale**: Helpers give callers a stable query surface without exposing `ErrorKind` (EH-11). Adding variants later only requires adding methods, never breaks existing consumers.
+
+---
+
+## EH-22: Redact Sensitive Data in Error `Display` and `Debug`
 
 **Strength**: MUST
 
-**Summary**: Error types containing sensitive data must implement custom Display/Debug that redacts secrets.
+**Summary**: Errors leak into logs. Any error type holding tokens, passwords, API keys, or PII must implement `Display` and `Debug` manually to redact — and test the redaction.
 
 ```rust
 pub struct AuthError {
     kind: ErrorKind,
-    backtrace: Backtrace,
+    backtrace: std::backtrace::Backtrace,
 }
 
 enum ErrorKind {
@@ -1359,534 +884,631 @@ enum ErrorKind {
 impl std::fmt::Display for AuthError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ErrorKind::InvalidToken { .. } => {
-                write!(f, "Invalid authentication token")
-                // Don't include the actual token!
-            }
-            ErrorKind::InvalidPassword { username, .. } => {
-                write!(f, "Invalid password for user '{}'", username)
-                // Don't include the password!
-            }
+            ErrorKind::InvalidToken { .. } =>
+                f.write_str("invalid authentication token"),
+            ErrorKind::InvalidPassword { username, .. } =>
+                write!(f, "invalid password for user '{username}'"),
         }
     }
 }
 
 impl std::fmt::Debug for AuthError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        // Debug also redacts sensitive data
-        write!(f, "{}\n{}", self, self.backtrace)
+        // Debug also redacts — no #[derive(Debug)]!
+        write!(f, "{self}\n{}", self.backtrace)
     }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    
     #[test]
-    fn test_sensitive_data_not_leaked() {
-        let password = "super_secret_123";
-        let error = AuthError::invalid_password(
-            "alice".to_string(),
-            password.to_string(),
-        );
-        
-        let display = format!("{}", error);
-        let debug = format!("{:?}", error);
-        
-        assert!(!display.contains(password));
-        assert!(!debug.contains(password));
+    fn secrets_are_never_rendered() {
+        let e = AuthError::invalid_password("alice".into(), "hunter2".into());
+        let d = format!("{e}");
+        let b = format!("{e:?}");
+        assert!(!d.contains("hunter2"));
+        assert!(!b.contains("hunter2"));
     }
 }
 ```
 
-**Rationale**: Errors often end up in logs. Leaking passwords, tokens, or API keys in error messages creates security vulnerabilities.
+**Rationale**: `#[derive(Debug)]` is the usual culprit — it prints every field. Errors flow into logs, crash reports, issue trackers. Manual `Debug` + a redaction test is the only durable defense. See guide 05 TD-12 for the same pattern on non-error types.
 
-**See also**: M-PUBLIC-DEBUG, M-PUBLIC-DISPLAY
+**See also**: guide 05 TD-12, M-PUBLIC-DEBUG
 
 ---
 
-## EH-25: Separate Error Types for Different Contexts
+## EH-23: Separate Error Types per Context
 
 **Strength**: SHOULD
 
-**Summary**: Create distinct error types for different API contexts rather than one global error enum.
+**Summary**: Don't lump unrelated failures into one global error enum. Create a `ConfigError`, a `DatabaseError`, a `DownloadError` — share variants only when the contexts genuinely overlap.
 
 ```rust
-// Bad - one error to rule them all
-pub enum GlobalError {
-    // Download errors
-    NetworkTimeout,
-    InvalidUrl,
-    
-    // VM errors  
-    VmStartFailed,
-    OutOfMemory,
-    
-    // Config errors
-    ConfigNotFound,
-    ParseError,
+// ❌ one error to rule them all
+pub enum AppError {
+    ConfigNotFound, ConfigParseError,
+    DbConnection, DbTimeout, DbNotFound,
+    HttpTimeout, HttpInvalidUrl,
+    VmOutOfMemory, VmStartFailed,
+    // ... grows unboundedly
 }
 
-pub fn download_iso() -> Result<(), GlobalError> { /* ... */ }
-pub fn start_vm() -> Result<(), GlobalError> { /* ... */ }
+// ✅ context-specific
+pub struct ConfigError   { kind: ConfigKind,   backtrace: Backtrace }
+pub struct DatabaseError { kind: DatabaseKind, backtrace: Backtrace }
+pub struct DownloadError { kind: DownloadKind, backtrace: Backtrace }
 
-// Good - separate error types per context
-pub struct DownloadError { /* ... */ }
-pub struct VmError { /* ... */ }
-pub struct ConfigError { /* ... */ }
+pub fn load_config() -> Result<Config, ConfigError> { todo!() }
+pub fn start_vm()    -> Result<Vm,     VmError>     { todo!() }
+pub fn download()    -> Result<(),     DownloadError> { todo!() }
 
-pub fn download_iso() -> Result<(), DownloadError> { /* ... */ }
-pub fn start_vm() -> Result<(), VmError> { /* ... */ }
-pub fn load_config() -> Result<Config, ConfigError> { /* ... */ }
-
-// Related contexts can share error types
-pub struct ParseError { /* ... */ }
-
-pub fn parse_json(s: &str) -> Result<Value, ParseError> { /* ... */ }
-pub fn parse_toml(s: &str) -> Result<Value, ParseError> { /* ... */ }
-```
-
-**Rationale**: Context-specific errors are more precise and maintainable. Global error enums grow unwieldy and mix unrelated failure modes. Error types should be general enough to be reused but specific enough to be meaningful.
-
-**See also**: M-ERRORS-CANONICAL-STRUCTS
-
----
-
-## EH-26: The `?` Operator for Propagation
-
-**Strength**: MUST
-
-**Summary**: Use `?` to propagate errors up the call stack.
-
-```rust
-// ❌ VERBOSE: Manual propagation
-fn fetch_user(id: i32) -> Result<User, Error> {
-    let response = match http_client.get(url) {
-        Ok(r) => r,
-        Err(e) => return Err(e.into()),
-    };
-    let body = match response.text() {
-        Ok(b) => b,
-        Err(e) => return Err(e.into()),
-    };
-    match serde_json::from_str(&body) {
-        Ok(user) => Ok(user),
-        Err(e) => Err(e.into()),
-    }
-}
-
-// ✅ CONCISE: ? operator
-fn fetch_user(id: i32) -> Result<User, Error> {
-    let response = http_client.get(url)?;
-    let body = response.text()?;
-    let user = serde_json::from_str(&body)?;
-    Ok(user)
-}
-
-// ✅ EVEN MORE CONCISE: Chained
-fn fetch_user(id: i32) -> Result<User, Error> {
-    Ok(serde_json::from_str(&http_client.get(url)?.text()?)?)
+// The top-level binary aggregates, if it wants to:
+#[derive(thiserror::Error, Debug)]
+pub enum AppError {
+    #[error(transparent)] Config(#[from] ConfigError),
+    #[error(transparent)] Db(#[from] DatabaseError),
+    #[error(transparent)] Download(#[from] DownloadError),
 }
 ```
 
+**Rationale**: A global error enum becomes a dumping ground — consumers get forced into variants they can't handle. Context-specific errors keep the failure surface small and matchable; the binary's top-level error composes them.
+
 ---
 
-## EH-27: The Full Error Template
+## EH-24: `ok_or` / `ok_or_else` to Convert `Option` to `Result`
 
 **Strength**: SHOULD
 
-**Summary**: 
+**Summary**: Use `ok_or` when the error is a simple value; `ok_or_else` when constructing the error is non-trivial (allocation, capture, time).
 
 ```rust
-use std::backtrace::Backtrace;
-use std::fmt;
-
-pub struct MyError {
-    kind: ErrorKind,
-    backtrace: Backtrace,
+// Simple error value — ok_or
+fn find(id: UserId, m: &HashMap<UserId, User>) -> Result<User, NotFound> {
+    m.get(&id).cloned().ok_or(NotFound)
 }
 
-#[derive(Debug)]
-pub(crate) enum ErrorKind {
-    Variant1(UpstreamError),
-    Variant2 { field: String },
+// Allocating message — ok_or_else (closure only runs on None)
+fn config_value(key: &str) -> Result<String, ConfigError> {
+    std::env::var(key).ok().ok_or_else(|| ConfigError::missing(key.to_owned()))
 }
 
-impl MyError {
-    pub(crate) fn variant1(err: UpstreamError) -> Self {
-        Self {
-            kind: ErrorKind::Variant1(err),
-            backtrace: Backtrace::capture(),
-        }
-    }
-    
-    pub fn is_variant1(&self) -> bool {
-        matches!(self.kind, ErrorKind::Variant1(_))
-    }
-}
-
-impl fmt::Display for MyError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match &self.kind {
-            ErrorKind::Variant1(e) => write!(f, "Description: {}", e),
-            ErrorKind::Variant2 { field } => write!(f, "Description: {}", field),
-        }
-    }
-}
-
-impl fmt::Debug for MyError {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}\n{}", self, self.backtrace)
-    }
-}
-
-impl std::error::Error for MyError {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        match &self.kind {
-            ErrorKind::Variant1(e) => Some(e),
-            _ => None,
-        }
-    }
-}
-
-impl From<UpstreamError> for MyError {
-    fn from(err: UpstreamError) -> Self {
-        Self::variant1(err)
-    }
+// ❌ DON'T use ok_or with allocation — the string is built every call
+fn bad(key: &str) -> Result<String, ConfigError> {
+    std::env::var(key).ok().ok_or(ConfigError::missing(format!("missing {key}")))
 }
 ```
+
+**Rationale**: `ok_or` takes its argument eagerly — you pay the cost even on the `Some` branch. `ok_or_else` is lazy. Same rule applies to `unwrap_or` vs `unwrap_or_else`.
 
 ---
 
-## EH-28: Use ? Operator for Propagation
+## EH-25: `#[must_use]` on Fallible Return Types
 
-**Strength**: MUST
+**Strength**: SHOULD
 
-**Summary**: Use `?` to propagate errors, avoid explicit match or `unwrap()` in library code.
+**Summary**: `Result` is already `#[must_use]`. For custom fallible return types (or for functions where ignoring the `Result` is a bug you want to flag), add `#[must_use]` with a reason.
 
 ```rust
-// Good - using ? operator
-fn load_config(path: &str) -> Result<Config, ConfigError> {
-    let contents = std::fs::read_to_string(path)?;
-    let config = toml::from_str(&contents)?;
-    Ok(config)
+// Result already carries must_use. Custom types need it explicitly:
+#[must_use = "a TransactionReceipt must be committed or rolled back"]
+pub struct TransactionReceipt { /* ... */ }
+
+// Sometimes a function's Result is more important than the default warning:
+impl Config {
+    #[must_use = "ignoring save() may silently drop config changes"]
+    pub fn save(&self) -> Result<(), SaveError> { todo!() }
 }
 
-// Bad - explicit match
-fn load_config_bad(path: &str) -> Result<Config, ConfigError> {
-    let contents = match std::fs::read_to_string(path) {
-        Ok(s) => s,
-        Err(e) => return Err(ConfigError::from(e)),
-    };
-    let config = match toml::from_str(&contents) {
-        Ok(c) => c,
-        Err(e) => return Err(ConfigError::from(e)),
-    };
-    Ok(config)
-}
-
-// Bad - unwrap in library code
-fn load_config_worse(path: &str) -> Config {
-    let contents = std::fs::read_to_string(path).unwrap();  // DON'T DO THIS
-    toml::from_str(&contents).unwrap()
-}
-
-// Good - ? with Option
-fn find_user(users: &[User], id: UserId) -> Option<&User> {
-    let user = users.iter().find(|u| u.id == id)?;
-    Some(user)
-}
-
-// Good - converting Option to Result
-fn get_user(users: &[User], id: UserId) -> Result<&User, Error> {
-    users
-        .iter()
-        .find(|u| u.id == id)
-        .ok_or(Error::UserNotFound(id))
-}
+// Usage: the following emits an unused_must_use warning
+// config.save();
 ```
 
+**Rationale**: Silent `Result` drops are one of the top sources of production bugs. The default lint catches many; a tailored message flags the rest more loudly.
+
+---
+
+## EH-26: Return `Result` from `main`
+
+**Strength**: SHOULD
+
+**Summary**: Let `main` return `Result` (or `anyhow::Result`) so `?` works and the runtime prints the error for you.
+
 ```rust
-// OK - in tests
-#[test]
-fn test_parse() {
-    let result = parse_input("valid").unwrap();
-    assert_eq!(result, expected);
-}
-
-// OK - with documented justification
-fn process_ascii(s: &str) -> &str {
-    // SAFETY: Input is guaranteed to be ASCII by type system
-    // (assuming we have a newtype that enforces this)
-    std::str::from_utf8(&s.as_bytes()[0..10]).unwrap()
-}
-
-// Good - use expect() with message in non-library code
+// ❌ manual error handling
 fn main() {
-    let config = load_config("config.toml")
-        .expect("Failed to load config.toml");
-}
-```
-
-**Rationale**: The `?` operator makes error handling concise and clear, while preserving the error chain.
-
----
-
----
-
-## EH-29: Use `#[must_use]` on Error-Returning Functions
-
-**Strength**: SHOULD
-
-**Summary**: Mark functions whose return value should not be ignored.
-
-```rust
-// ✅ GOOD: Compiler warns if Result is ignored
-#[must_use]
-pub fn save(&self) -> Result<(), SaveError> {
-    // ...
+    if let Err(e) = run() {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    }
 }
 
-// Usage:
-config.save();  // WARNING: unused Result that must be used
-
-// ✅ GOOD: On the Result type itself (already done in std)
-#[must_use = "this `Result` may be an `Err` variant, which should be handled"]
-pub enum Result<T, E> { ... }
-
-// ✅ GOOD: Custom message
-#[must_use = "this returns a new string and does not modify the original"]
-pub fn to_uppercase(&self) -> String { ... }
-```
-
-**Rationale**: Prevents silent failures where errors are accidentally ignored.
-
----
-
----
-
-## EH-30: Use `anyhow` for Application Error Handling
-
-**Strength**: SHOULD
-
-**Summary**: Applications can use `anyhow::Result` for convenient error handling.
-
-```rust
-use anyhow::{Context, Result, bail, ensure};
-
-fn main() -> Result<()> {
-    let config = load_config()
-        .context("Failed to load configuration")?;
-    
-    run_server(config)
-        .context("Server crashed")?;
-    
+// ✅ Result-returning main
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    run()?;
     Ok(())
 }
 
-fn load_config() -> Result<Config> {
-    let path = std::env::var("CONFIG_PATH")
-        .context("CONFIG_PATH not set")?;
-    
-    let contents = std::fs::read_to_string(&path)
-        .with_context(|| format!("Failed to read {path}"))?;
-    
-    // bail! for early return with error
-    if contents.is_empty() {
-        bail!("Config file is empty");
+// ✅ anyhow for full context chain rendering
+fn main() -> anyhow::Result<()> {
+    let cfg = load_config().context("failed to load configuration")?;
+    run(cfg).context("server crashed")?;
+    Ok(())
+}
+
+// ✅ ExitCode when you need precise control
+use std::process::ExitCode;
+fn main() -> ExitCode {
+    match run() {
+        Ok(()) => ExitCode::SUCCESS,
+        Err(e) => { eprintln!("error: {e:#}"); ExitCode::FAILURE }   // {:#} = chain
     }
-    
-    // ensure! for assertions that return errors
-    ensure!(contents.len() < 1_000_000, "Config file too large");
-    
-    let config: Config = toml::from_str(&contents)?;
-    Ok(config)
 }
 ```
 
+**Rationale**: A `Result`-returning `main` has two benefits: `?` works at the top level, and the runtime prints the error's `Debug` impl (including the backtrace if present) on failure. `anyhow::Result` elevates this with chain-aware rendering.
+
 ---
 
-## EH-31: Use `Result` for Recoverable Errors, `panic!` for Bugs
+## EH-27: Unsafe Code Must Be Exception-Safe
 
 **Strength**: MUST
 
-**Summary**: `Result` for expected failures, `panic!` only for programming errors.
+**Summary**: Unsafe code must maintain memory safety across every possible panic point — this is *minimal exception safety*. User-provided closures, `Clone`, `Ord::cmp`, debug-mode arithmetic, and allocator failure can all unwind.
 
 ```rust
-// ✅ CORRECT: File not found is expected, use Result
-fn read_config(path: &Path) -> Result<Config, ConfigError> {
-    let contents = std::fs::read_to_string(path)?;
-    toml::from_str(&contents).map_err(ConfigError::Parse)
-}
+use std::ptr;
 
-// ✅ CORRECT: Invalid index is a bug, panic is appropriate
-fn get_unchecked(slice: &[i32], index: usize) -> i32 {
-    assert!(index < slice.len(), "index out of bounds: bug in caller");
-    slice[index]
-}
-
-// ❌ WRONG: Panicking on expected error
-fn read_config(path: &Path) -> Config {
-    let contents = std::fs::read_to_string(path)
-        .expect("config file must exist");  // User might not have it!
-    toml::from_str(&contents).unwrap()
-}
-
-// ❌ WRONG: Result for invariant violation
-fn process(data: &[i32]) -> Result<i32, Error> {
-    if data.is_empty() {
-        // This is a bug in the caller, not a runtime error
-        return Err(Error::EmptyData);  // Should be panic or assert
+// ❌ EXCEPTION-UNSAFE: clone() may panic, length set too early,
+//    drop() then reads uninitialized memory.
+impl<T: Clone> MyVec<T> {
+    unsafe fn push_all_bad(&mut self, src: &[T]) {
+        self.reserve(src.len());
+        let end = self.as_mut_ptr().add(self.len());
+        self.set_len(self.len() + src.len());    // BUG: too early
+        for (i, x) in src.iter().enumerate() {
+            ptr::write(end.add(i), x.clone());   // clone may panic!
+        }
     }
-    Ok(data[0])
+}
+
+// ✅ Fix: update length per iteration — drop sees only initialized slots
+impl<T: Clone> MyVec<T> {
+    unsafe fn push_all(&mut self, src: &[T]) {
+        self.reserve(src.len());
+        let start_len = self.len();
+        let end = self.as_mut_ptr().add(start_len);
+        for (i, x) in src.iter().enumerate() {
+            ptr::write(end.add(i), x.clone());   // panic → length still tracks init'd
+            self.set_len(start_len + i + 1);
+        }
+    }
 }
 ```
 
+**Rationale**: The Nomicon defines minimal exception safety: "never violate memory safety on panic." Unsafe code that temporarily breaks invariants must restore them before any potentially-panicking call — either by ordering (finish all panics before touching invariants) or by a guard struct whose `Drop` restores invariants (EH-28). Maximal exception safety — the program still behaves correctly — is a stronger target for safe code.
+
+**See also**: EH-28, EH-29, guide 09 on unsafe, Nomicon §7
+
 ---
 
-## EH-32: Use ok_or/ok_or_else to Convert Option to Result
+## EH-28: The Guard Pattern Is Rust's `finally`
+
+**Strength**: CONSIDER
+
+**Summary**: When an operation leaves a data structure temporarily invalid, store the in-flight state in a guard struct whose `Drop` restores the invariant — whether the code completes or panics.
+
+```rust
+use std::ptr;
+
+// BinaryHeap::sift_up holds a logical "hole" while comparing. If Ord::cmp
+// panics mid-operation, the hole must be refilled or the heap is corrupt.
+struct Hole<'a, T: 'a> {
+    data: &'a mut [T],
+    elt: Option<T>,        // the removed element
+    pos: usize,            // the index of the hole
+}
+
+impl<'a, T> Drop for Hole<'a, T> {
+    fn drop(&mut self) {
+        // SAFETY: pos is in bounds; elt is always Some until Drop runs.
+        unsafe {
+            let p = self.pos;
+            ptr::write(&mut self.data[p], self.elt.take().unwrap());
+        }
+    }
+}
+
+// If the comparison closure panics while Hole is alive, Drop still runs
+// and the element is written back — the heap stays valid.
+```
+
+**Rationale**: Rust has no `try { } finally { }`. The guard pattern is the idiomatic substitute — `Drop` always runs during unwinding. Use it any time you remove/move a value into a temporary that needs to be restored on panic.
+
+**See also**: EH-27, Nomicon §7
+
+---
+
+## EH-29: Use `catch_unwind` Only at Trust Boundaries
+
+**Strength**: CONSIDER
+
+**Summary**: `std::panic::catch_unwind` is for thread-top-level isolation and for catching panics at FFI boundaries — not for routine error handling.
+
+```rust
+use std::panic::{catch_unwind, AssertUnwindSafe};
+
+// ✅ FFI boundary — a panic across the C ABI is undefined behavior
+#[no_mangle]
+pub extern "C" fn my_library_call(input: *const u8, len: usize) -> i32 {
+    let result = catch_unwind(AssertUnwindSafe(|| {
+        // ... Rust logic that could panic ...
+        process(input, len)
+    }));
+    match result {
+        Ok(Ok(()))  => 0,
+        Ok(Err(_))  => 1,                // normal error
+        Err(_panic) => -1,               // panic, absorbed at boundary
+    }
+}
+
+// ✅ Worker-thread isolation — one task's panic shouldn't kill the pool
+let result = catch_unwind(|| run_task());
+
+// ❌ BAD: using catch_unwind as try/catch for recoverable errors
+fn bad_parse(s: &str) -> Option<i32> {
+    catch_unwind(|| s.parse().unwrap()).ok().flatten()  // use Result instead
+}
+```
+
+**Rationale**: Two facts constrain `catch_unwind`: (1) with `panic = "abort"` it does nothing — the process dies — so code must never *rely* on it for correctness; (2) unwinding is expensive — the runtime optimizes for the no-panic case. Reserve it for "this panic must not escape" boundaries: FFI exports, thread roots, plugin hosts.
+
+**See also**: EH-27, EH-30, EH-31, Nomicon §7
+
+---
+
+## EH-30: Know Your `panic` Strategy: `abort` vs `unwind`
 
 **Strength**: SHOULD
 
-**Summary**: When converting `Option` to `Result`, use `ok_or` or `ok_or_else` rather than matching.
+**Summary**: `panic = "unwind"` (default for most targets) runs destructors and is catchable; `panic = "abort"` terminates immediately. Your crate's behavior — and correctness — must not depend on the caller's choice.
+
+```toml
+# Cargo.toml — application-level choice
+[profile.release]
+panic = "abort"           # smaller binaries, no unwinding machinery
+
+[profile.dev]
+panic = "unwind"          # default; tests use unwind even with abort in release
+```
 
 ```rust
-// Good - using ok_or
-fn get_config_value(key: &str) -> Result<String, ConfigError> {
-    std::env::var(key)
-        .ok()  // Result → Option
-        .ok_or(ConfigError::MissingKey(key.to_string()))
-}
+// A library cannot assume unwinding runs — code must be correct with either.
+// This is WHY:
+// - Drop may not run on panic (if abort is active, nothing runs)
+// - catch_unwind is a no-op with abort
+// - Poisoning (EH-31) is based on drop-during-unwind, so it silently
+//   doesn't engage under abort
+```
 
-// Good - using ok_or_else for lazy evaluation
-fn get_user(id: UserId, db: &Database) -> Result<User, AppError> {
-    db.users
-        .get(&id)
-        .cloned()
-        .ok_or_else(|| AppError::UserNotFound { 
-            id, 
-            searched_at: Utc::now() 
-        })
-}
+**Rationale**: Libraries are configured by their consumer. `panic = "abort"` makes `catch_unwind` a no-op and prevents `Drop` from running — so correctness-critical cleanup must never rely on panic unwinding. Treat panic as "stop the program" (M-PANIC-IS-STOP) and you are correct under both strategies.
 
-// Bad - explicit match
-fn get_config_value_bad(key: &str) -> Result<String, ConfigError> {
-    match std::env::var(key).ok() {
-        Some(v) => Ok(v),
-        None => Err(ConfigError::MissingKey(key.to_string())),
+**See also**: EH-29, EH-31
+
+---
+
+## EH-31: Poison State After Panic in Shared Data
+
+**Strength**: CONSIDER
+
+**Summary**: For types that survive panics (typically behind a `Mutex` / `RwLock` / long-lived reference), mark the state *poisoned* so future operations refuse (or explicitly acknowledge) a potentially inconsistent state.
+
+```rust
+use std::sync::Mutex;
+
+// std's Mutex is the canonical poisoning example:
+let m = Mutex::new(0i32);
+
+// std::thread::spawn(|| {
+//     let _g = m.lock().unwrap();
+//     panic!("boom");
+// }).join().ok();
+
+// Now m.lock() returns Err(PoisonError) — the data may be mid-mutation.
+match m.lock() {
+    Ok(g)  => println!("clean: {g}"),
+    Err(p) => {
+        // Explicit: "I accept the risk" — get the data anyway
+        let g = p.into_inner();
+        println!("poisoned but recovered: {g}");
     }
 }
 
-// Good - chaining conversions
-fn parse_env_port() -> Result<u16, AppError> {
-    std::env::var("PORT")
-        .ok()
-        .ok_or(AppError::MissingEnvVar("PORT"))?
-        .parse()
-        .map_err(|_| AppError::InvalidPort)
+// Roll your own: an in-flight flag that a guard struct sets/clears
+pub struct Poisoned<T> { value: T, poisoned: bool }
+
+impl<T> Poisoned<T> {
+    pub fn update(&mut self, f: impl FnOnce(&mut T)) -> Result<(), Poison> {
+        if self.poisoned { return Err(Poison); }
+        struct Guard<'a, T> { p: &'a mut Poisoned<T> }
+        impl<T> Drop for Guard<'_, T> {
+            fn drop(&mut self) { self.p.poisoned = std::thread::panicking(); }
+        }
+        let g = Guard { p: self };
+        f(&mut g.p.value);
+        std::mem::forget(g);                     // no panic → don't poison
+        Ok(())
+    }
 }
 ```
 
-```rust
-// ok_or - error is simple
-option.ok_or(404)
+**Rationale**: Poisoning is not about memory safety (that is guaranteed by minimal exception safety, EH-27) — it is about *logic safety*. After a panic, a data structure may be half-updated; poisoning forces a conscious decision before re-using it.
 
-// ok_or_else - error involves allocation or computation  
-option.ok_or_else(|| format!("Not found: {}", id))
-option.ok_or_else(|| Error::new(Utc::now()))
+**See also**: EH-27, EH-28, Nomicon §7 "Poisoning"
+
+---
+
+## EH-32: Marshal Errors Across FFI Boundaries
+
+**Strength**: SHOULD
+
+**Summary**: Rust errors cannot cross the C ABI as `Result`. Convert to one of: (a) an integer error code, (b) an integer code plus a getter for a description string, or (c) a `#[repr(C)]` mirror struct.
+
+```rust
+use std::os::raw::{c_char, c_int};
+
+// === Strategy A: flat enum → integer code
+#[repr(i32)]
+pub enum DbError { Ok = 0, ReadOnly = 1, Io = 2, Corrupted = 3 }
+
+impl From<DbError> for c_int {
+    fn from(e: DbError) -> c_int { e as c_int }
+}
+
+// === Strategy B: structured enum → code + accessor function
+pub enum ParseError { BadChar { line: u32, ch: char }, Eof }
+
+#[no_mangle]
+pub extern "C" fn parse_error_code(e: &ParseError) -> c_int {
+    match e {
+        ParseError::BadChar { .. } => 1,
+        ParseError::Eof            => 2,
+    }
+}
+
+// Returns an owned, null-terminated C string. Caller must call `parse_error_free`.
+#[no_mangle]
+pub extern "C" fn parse_error_message(e: &ParseError) -> *mut c_char {
+    let msg = match e {
+        ParseError::BadChar { line, ch } => format!("bad '{ch}' at line {line}\0"),
+        ParseError::Eof                  => "unexpected end of input\0".to_owned(),
+    };
+    std::ffi::CString::new(msg.trim_end_matches('\0')).unwrap().into_raw()
+}
+
+#[no_mangle]
+pub unsafe extern "C" fn parse_error_free(p: *mut c_char) {
+    if !p.is_null() { drop(std::ffi::CString::from_raw(p)); }
+}
+
+// === Strategy C: #[repr(C)] mirror struct for structural errors
+struct Internal { expected: char, line: u32, ch: u16 }
+
+#[repr(C)]
+pub struct c_parse_error { pub expected: c_char, pub line: u32, pub ch: u16 }
+
+impl From<Internal> for c_parse_error {
+    fn from(e: Internal) -> Self {
+        c_parse_error { expected: e.expected as c_char, line: e.line, ch: e.ch }
+    }
+}
+
+// === Every #[no_mangle] export must catch panics (EH-29)
 ```
 
-**Rationale**: These methods are more concise and idiomatic than explicit matching.
+**Rationale**: C callers have no concept of `Result`, `Error`, or unwinding. Flatten errors to the model C understands, document ownership for any allocated strings (the caller frees via a paired function), and always wrap the Rust body in `catch_unwind` (EH-29) — unwinding across the C ABI is UB.
+
+**See also**: EH-29, guide 09 on unsafe/FFI
 
 ---
 
----
+## EH-33: Consider a Private `bail!` Macro
 
-## Summary Table
+**Strength**: CONSIDER
 
-| Pattern | Strength | Key Principle |
-|---------|----------|---------------|
-| Errors are canonical structs | MUST | Backtrace + internal enum + helpers |
-| Don't expose ErrorKind | MUST | Provide is_xxx() methods instead |
-| Separate error types per context | SHOULD | Avoid global error enums |
-| Capture backtraces | MUST | In constructors and From impls |
-| Contextual helper methods | SHOULD | Stable access to error details |
-| Anyhow for applications only | CONSIDER | Never in libraries |
-| Display follows conventions | MUST | Summary + backtrace + cause |
-| Redact sensitive data | MUST | Test that secrets don't leak |
-| Consider bail!() macro | CONSIDER | For crates with many error sites |
+**Summary**: For crates with many error-construction sites, a private `bail!` macro makes "construct kind + capture backtrace + return" a one-liner.
+
+```rust
+// crate::error
+macro_rules! bail {
+    ($kind:expr) => {
+        return Err($crate::error::MyError {
+            kind: $kind,
+            backtrace: std::backtrace::Backtrace::capture(),
+        });
+    };
+}
+pub(crate) use bail;
+
+// Usage
+fn handle(req: &Request) -> Result<Response, MyError> {
+    if !req.is_valid() {
+        bail!(ErrorKind::InvalidRequest);
+    }
+    let user = authenticate(req)?;
+    if !user.has_permission() {
+        bail!(ErrorKind::PermissionDenied { user: user.name.clone() });
+    }
+    Ok(Response::ok())
+}
+```
+
+**Rationale**: Backtrace capture (EH-16) is easy to forget. A `bail!` macro makes the correct construction the path of least resistance. Keep it `pub(crate)` — it's an implementation aid, not API.
+
+**See also**: EH-16
+
 
 ## Common Patterns
 
 ### The Full Error Template
 
+A reusable skeleton for a library's canonical error type. Follow EH-15, EH-16, EH-17 together:
+
 ```rust
 use std::backtrace::Backtrace;
 use std::fmt;
 
+// ===== 1. Public error struct — opaque to consumers =====
 pub struct MyError {
     kind: ErrorKind,
     backtrace: Backtrace,
 }
 
+// ===== 2. Internal variants — pub(crate) so callers can't match them =====
 #[derive(Debug)]
 pub(crate) enum ErrorKind {
-    Variant1(UpstreamError),
-    Variant2 { field: String },
+    Upstream(UpstreamError),
+    Validation { field: String, reason: String },
+    NotFound,
 }
 
+// ===== 3. Constructors — each captures a Backtrace =====
 impl MyError {
-    pub(crate) fn variant1(err: UpstreamError) -> Self {
+    pub(crate) fn upstream(err: UpstreamError) -> Self {
+        Self { kind: ErrorKind::Upstream(err), backtrace: Backtrace::capture() }
+    }
+    pub(crate) fn validation(field: String, reason: String) -> Self {
         Self {
-            kind: ErrorKind::Variant1(err),
+            kind: ErrorKind::Validation { field, reason },
             backtrace: Backtrace::capture(),
         }
     }
-    
-    pub fn is_variant1(&self) -> bool {
-        matches!(self.kind, ErrorKind::Variant1(_))
+    pub(crate) fn not_found() -> Self {
+        Self { kind: ErrorKind::NotFound, backtrace: Backtrace::capture() }
     }
+
+    // ===== 4. Public query methods — stable even as variants evolve =====
+    pub fn is_not_found(&self)   -> bool { matches!(self.kind, ErrorKind::NotFound) }
+    pub fn is_validation(&self)  -> bool { matches!(self.kind, ErrorKind::Validation { .. }) }
+    pub fn field(&self) -> Option<&str> {
+        if let ErrorKind::Validation { field, .. } = &self.kind { Some(field) } else { None }
+    }
+    pub fn backtrace(&self) -> &Backtrace { &self.backtrace }
 }
 
+// ===== 5. Display — one-line summary. source() carries the chain. =====
 impl fmt::Display for MyError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match &self.kind {
-            ErrorKind::Variant1(e) => write!(f, "Description: {}", e),
-            ErrorKind::Variant2 { field } => write!(f, "Description: {}", field),
+            ErrorKind::Upstream(_)      => f.write_str("upstream call failed"),
+            ErrorKind::Validation { field, reason } =>
+                write!(f, "validation failed for '{field}': {reason}"),
+            ErrorKind::NotFound         => f.write_str("not found"),
         }
     }
 }
 
+// ===== 6. Debug includes the backtrace. NEVER #[derive(Debug)] — would leak fields. =====
 impl fmt::Debug for MyError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}\n{}", self, self.backtrace)
+        write!(f, "{self}\n{}", self.backtrace)
     }
 }
 
+// ===== 7. Error::source exposes the cause chain =====
 impl std::error::Error for MyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ErrorKind::Variant1(e) => Some(e),
-            _ => None,
+            ErrorKind::Upstream(e) => Some(e),
+            _                       => None,
         }
     }
 }
 
+// ===== 8. From impls — enable ? propagation =====
 impl From<UpstreamError> for MyError {
-    fn from(err: UpstreamError) -> Self {
-        Self::variant1(err)
-    }
+    fn from(err: UpstreamError) -> Self { Self::upstream(err) }
 }
+
+// ===== 9. Optional: private bail! macro for terse construction =====
+macro_rules! bail {
+    ($kind:expr) => {
+        return Err(MyError {
+            kind: $kind,
+            backtrace: Backtrace::capture(),
+        });
+    };
+}
+pub(crate) use bail;
+
+// ===== 10. MSRV-safe note =====
+// `std::backtrace::Backtrace` is stable since Rust 1.65. If your MSRV
+// predates it, gate the field behind a `cfg` or omit it.
+
+#[derive(Debug)]
+pub struct UpstreamError;
+impl fmt::Display for UpstreamError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.write_str("upstream") }
+}
+impl std::error::Error for UpstreamError {}
 ```
+
+
+## Summary Table
+
+| Pattern | Strength | Key Principle |
+|---------|----------|---------------|
+| EH-01 Result for recoverable, panic for bugs | MUST | Don't invent Err variants for invariant violations |
+| EH-02 Three valid reasons to panic | SHOULD | Bug, impossible, user-requested |
+| EH-03 Correct-by-construction over panics | SHOULD | Encode invariants in types |
+| EH-04 Libraries define their own error types | MUST | Never `Box<dyn Error>` or `anyhow` in public APIs |
+| EH-05 Applications may use anyhow/eyre | CONSIDER | Binaries only — never libraries |
+| EH-07 Avoid unwrap/expect in libraries | SHOULD | Use `expect` with justification if you must |
+| EH-08 Use `?` for propagation | MUST | Never manual match-and-return |
+| EH-09 Error conversion via `From` | MUST | Drives `?`; `#[from]` in thiserror |
+| EH-10 Error types implement `std::error::Error` | MUST | `+ Debug + Display + Send + Sync + 'static` |
+| EH-11 Don't expose ErrorKind directly | MUST | Provide `is_*` helpers instead |
+| EH-12 Add context when you add a layer | SHOULD | `#[source]` or `.with_context(\|\| ...)` |
+| EH-13 `#[non_exhaustive]` on public error enums | SHOULD | Future-compatible variants |
+| EH-14 Document Errors, Panics, Safety | MUST | Rustdoc sections are load-bearing |
+| EH-15 Errors are canonical structs | SHOULD | `kind` + `backtrace` + helpers |
+| EH-16 Capture a Backtrace when born | MUST | Constructors and From impls |
+| EH-17 Display summary, Debug full | MUST | `source()` carries the chain |
+| EH-18 Fallible and panicking variants | CONSIDER | `try_` prefix for fallible |
+| EH-20 Return consumed argument on error | CONSIDER | Caller retries without cloning |
+| EH-22 Redact sensitive data in errors | MUST | Manual Display+Debug and test |
+| EH-23 Separate error types per context | SHOULD | Avoid global error enums |
+| EH-25 `#[must_use]` on fallible returns | SHOULD | Catch silently-dropped Results |
+| EH-26 Return Result from main | SHOULD | `anyhow::Result` for chain rendering |
+| EH-27 Unsafe code must be exception-safe | MUST | Minimal safety: no UB on unwind |
+| EH-28 Guard pattern is Rust's finally | CONSIDER | Drop restores invariants on panic |
+| EH-29 catch_unwind only at trust boundaries | CONSIDER | FFI exports, thread roots |
+| EH-30 Know your panic strategy | SHOULD | Don't rely on unwinding for correctness |
+| EH-31 Poison state after panic | CONSIDER | Force a conscious re-use decision |
+| EH-32 Marshal errors across FFI | SHOULD | Integer codes or `#[repr(C)]` mirror |
+| EH-33 Consider a private bail! macro | CONSIDER | Correct-by-default construction |
+
 
 ## Related Guidelines
 
-- **Core Idioms**: See `01-core-idioms.md` for panic vs Result
-- **API Design**: See `02-api-design.md` for Result in APIs
-- **Documentation**: See `13-documentation.md` for documenting errors
+- **Core Idioms**: See `01-core-idioms.md` for panic-vs-Result decision and `?` usage in idiomatic code.
+- **API Design**: See `02-api-design.md` for fallible constructors, `try_` naming, and returning references-vs-owned values alongside errors.
+- **Type Design**: See `05-type-design.md` — especially TD-12 (Debug), TD-13 (Display), TD-07 (`#[non_exhaustive]`), TD-03 (validated newtypes), TD-20 (`NonZero*`).
+- **Traits**: See `06-traits.md` for trait-object error usage (`Box<dyn Error + Send + Sync>`), coherence, and blanket impls.
+- **Concurrency and Async**: See `07-concurrency-async.md` for `Send + Sync + 'static` error bounds in spawned tasks.
+- **Unsafe and FFI**: See `09-unsafe-ffi.md` for the unsafe exception-safety rules (EH-27, EH-28) in depth, and the FFI marshalling story (EH-32).
+- **Documentation**: See `13-documentation.md` for the `# Errors`, `# Panics`, `# Safety` rustdoc conventions.
+
 
 ## External References
 
-- [Rust Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
-- [std::error::Error](https://doc.rust-lang.org/std/error/trait.Error.html)
-- Pragmatic Rust: M-ERRORS-CANONICAL-STRUCTS, M-APP-ERROR
+- [The Rust Book, Ch. 9 — Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+- [`std::error::Error`](https://doc.rust-lang.org/std/error/trait.Error.html) and [`std::backtrace::Backtrace`](https://doc.rust-lang.org/std/backtrace/struct.Backtrace.html)
+- [`std::panic::catch_unwind`](https://doc.rust-lang.org/std/panic/fn.catch_unwind.html)
+- [The Rustonomicon, Ch. 7 — Unwinding](https://doc.rust-lang.org/nomicon/unwinding.html) and [Exception Safety](https://doc.rust-lang.org/nomicon/exception-safety.html) and [Poisoning](https://doc.rust-lang.org/nomicon/poisoning.html)
+- [Rust Design Patterns — Return consumed argument on error](https://rust-unofficial.github.io/patterns/idioms/on-stack-dyn-dispatch.html) and [Error Handling in FFI](https://rust-unofficial.github.io/patterns/patterns/ffi/errors.html)
+- [Rust API Guidelines — Dependability](https://rust-lang.github.io/api-guidelines/dependability.html) (C-VALIDATE, C-DTOR-FAIL) and [Documentation](https://rust-lang.github.io/api-guidelines/documentation.html) (C-QUESTION-MARK, C-FAILURE)
+- [`thiserror`](https://docs.rs/thiserror) and [`anyhow`](https://docs.rs/anyhow)
+- Pragmatic Rust Guidelines: M-PANIC-IS-STOP, M-PANIC-ON-BUG, M-APP-ERROR, M-ERRORS-CANONICAL-STRUCTS, M-PUBLIC-DEBUG, M-PUBLIC-DISPLAY
+- Rust API Guidelines: C-GOOD-ERR, C-FAILURE, C-QUESTION-MARK, C-CONV-TRAITS, C-VALIDATE

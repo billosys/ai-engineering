@@ -514,6 +514,135 @@ version = "0.1.0"
 
 ---
 
+## CG-B-13: Know the Everyday Cargo Command Set
+
+**Strength**: SHOULD
+
+**Summary**: Reach for the right cargo subcommand for each task — `check` for type-checking, `clippy` for lints, `fmt` for style, `test` for correctness, `doc` for docs, `tree` for dependency inspection, `build`/`run` only when you need the artifact.
+
+```bash
+# ✅ Fast feedback loop (no codegen)
+cargo check --workspace --all-targets   # type-check everything
+cargo clippy --workspace --all-targets -- -D warnings
+cargo fmt --all --check                 # verify formatting (CI mode)
+cargo fmt --all                         # apply formatting
+
+# ✅ Correctness
+cargo test --workspace                  # run unit + integration + doctests
+cargo test --doc                        # doctests only
+cargo test -- --nocapture               # show prints from passing tests
+cargo nextest run                       # faster test runner (install: cargo-nextest)
+
+# ✅ Artifacts
+cargo build --release
+cargo run --release -- arg1 arg2        # forwards args after `--` to your binary
+
+# ✅ Docs
+cargo doc --no-deps --open              # build + open your crate's docs
+cargo doc --workspace --document-private-items
+
+# ✅ Dependency inspection
+cargo tree                              # whole dep graph
+cargo tree -e features                  # show features flowing through the graph
+cargo tree -i serde                     # inverse: who pulls in serde?
+cargo tree -d                           # find duplicate versions
+cargo metadata --format-version 1       # machine-readable project info
+
+# ✅ Benchmarks and examples
+cargo bench                             # requires #[bench] harness or criterion
+cargo run --example demo                # run examples/demo.rs
+cargo run --bin server                  # pick binary when crate has several
+
+# ✅ Installation
+cargo install ripgrep                   # install binary crate into ~/.cargo/bin
+cargo install --path .                  # install this crate
+cargo install --locked some-tool        # use committed Cargo.lock
+
+# ❌ BAD: using `cargo build` as a fast feedback tool
+cargo build    # Produces an artifact you won't run — `cargo check` is ~3x faster
+
+# ❌ BAD: running full tests when you only need a quick compile check
+cargo test     # full codegen for an unrelated change — use `cargo check` first
+```
+
+**Rationale**: `cargo check` skips code generation and is the fastest way to catch type errors. `cargo clippy` is a superset of `cargo check` plus lints. `cargo test` is the slowest (full codegen + execution). Layer them fast-to-slow in your feedback loop: `check` → `clippy` → `test`. `cargo tree` is indispensable for diagnosing version skew and feature propagation; `cargo metadata` is the stable JSON interface for tooling (see CG-P-04).
+
+**See also**: CG-B-14 (target selection), CG-BS-14 (feature combinatorics), CG-A-08 (CI pipeline), CG-ECO-* (ecosystem tooling in 07-lints-and-formatters.md)
+
+---
+
+## CG-B-14: Select the Right Target — `--bin`, `--example`, `--test`, `--bench`
+
+**Strength**: SHOULD
+
+**Summary**: Cargo understands five target kinds (lib, bin, example, test, bench). Use the matching flag to scope commands to a single target instead of rebuilding the world.
+
+```
+my-crate/
+├── src/
+│   ├── lib.rs              # the [lib] target
+│   ├── main.rs             # default [[bin]] named after the package
+│   └── bin/
+│       ├── server.rs       # [[bin]] name = "server"
+│       └── migrate.rs      # [[bin]] name = "migrate"
+├── examples/
+│   └── quickstart.rs       # [[example]]
+├── tests/
+│   └── smoke.rs            # [[test]] — integration test
+└── benches/
+    └── parse.rs            # [[bench]]
+```
+
+```bash
+# ✅ GOOD: scope to a specific binary
+cargo run --bin server              # runs src/bin/server.rs
+cargo run --bin server -- --port 8080
+
+# ✅ GOOD: run an example (examples are *not* published as binaries)
+cargo run --example quickstart
+cargo build --examples              # compile all examples (CI sanity check)
+
+# ✅ GOOD: run a single integration test file
+cargo test --test smoke             # only tests/smoke.rs
+cargo test --test smoke -- --nocapture my_case
+
+# ✅ GOOD: run a specific benchmark
+cargo bench --bench parse
+
+# ✅ GOOD: target selection across a workspace
+cargo check -p my-crate --lib --tests --examples
+
+# ❌ BAD: ambiguous invocation in multi-bin crate
+cargo run                           # fails: "`cargo run` could not determine which binary to run"
+# Fix: cargo run --bin server
+
+# ❌ BAD: putting runnable demos in src/bin
+# src/bin/demo.rs  — gets installed by `cargo install`, shows up in --bin completions
+# Prefer: examples/demo.rs — compiled on demand, not installed
+```
+
+```toml
+# Cargo.toml — explicit target config when you need non-default behavior
+[[bin]]
+name = "server"
+path = "src/bin/server.rs"
+required-features = ["server"]      # only built when "server" feature is active
+
+[[example]]
+name = "advanced"
+required-features = ["full"]
+
+[[bench]]
+name = "parse"
+harness = false                     # use criterion instead of libtest
+```
+
+**Rationale**: Blind `cargo test` or `cargo build` rebuilds every target in the package. Scoping with `--bin`/`--example`/`--test`/`--bench` saves seconds-to-minutes on each invocation. Examples belong in `examples/` so they don't get installed by `cargo install`; integration tests belong in `tests/` so each file gets its own binary (isolating global state). `required-features` lets you gate a binary or example on a feature without breaking `cargo build` in the default config.
+
+**See also**: CG-B-03 (standard layout), CG-BS-02 (optional deps + features), cargo reference: Cargo Targets
+
+---
+
 ## Best Practices Summary
 
 ### Quick Reference Table
@@ -531,6 +660,8 @@ version = "0.1.0"
 | Workspaces | SHOULD | Manage multi-crate projects efficiently |
 | Workspace inheritance | SHOULD | Define common dependencies once at workspace level |
 | Binary vs library | MUST | Choose based on executable vs reusable code needs |
+| Everyday command set | SHOULD | check → clippy → test fast-to-slow; tree for deps |
+| Target selection | SHOULD | Use --bin/--example/--test/--bench to scope commands |
 
 ---
 

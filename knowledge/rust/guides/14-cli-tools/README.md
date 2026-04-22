@@ -45,7 +45,7 @@ Hello Alice!
 
 ## Guide Structure
 
-This guide is organized into 9 focused sections covering 52 patterns (CLI-01 through CLI-52):
+This guide is organized into 9 focused sections covering 57 patterns (CLI-01 through CLI-59, with CLI-47 and CLI-48 consolidated into 08-advanced-topics during the 2026-04 regeneration):
 
 ### [01. Project Setup](01-project-setup.md) (CLI-01 to CLI-04)
 
@@ -58,7 +58,7 @@ Essential patterns for structuring Rust CLI applications.
 
 **Key takeaway**: Keep `main.rs` thin, put logic in library modules, expose a testable API.
 
-### [02. Argument Parsing](02-argument-parsing.md) (CLI-05 to CLI-15)
+### [02. Argument Parsing](02-argument-parsing.md) (CLI-05 to CLI-15, plus CLI-53, CLI-54)
 
 Core patterns for parsing command-line arguments using clap's derive API.
 
@@ -73,10 +73,12 @@ Core patterns for parsing command-line arguments using clap's derive API.
 - **CLI-13**: Argument Groups and Relationships [CONSIDER]
 - **CLI-14**: Help Text and Documentation [MUST]
 - **CLI-15**: Version Information [MUST]
+- **CLI-53**: Use `ValueEnum` for Closed-Set String Arguments [SHOULD]
+- **CLI-54**: Choose the Right `ArgAction` [SHOULD]
 
 **Key takeaway**: Never use `std::env::args()`. Always use clap derive for type-safe, validated argument parsing.
 
-### [03. Error Handling](03-error-handling.md) (CLI-16 to CLI-20)
+### [03. Error Handling](03-error-handling.md) (CLI-16 to CLI-20, plus CLI-55, CLI-56)
 
 Patterns for handling and reporting errors in command-line applications.
 
@@ -85,10 +87,12 @@ Patterns for handling and reporting errors in command-line applications.
 - **CLI-18**: Error Context for CLI Operations [SHOULD]
 - **CLI-19**: Distinguish User Errors from System Errors [SHOULD]
 - **CLI-20**: Error Output to Stderr [MUST]
+- **CLI-55**: Return `ExitCode` from `main` Instead of Calling `exit` [SHOULD]
+- **CLI-56**: Treat `BrokenPipe` as a Clean Exit [SHOULD]
 
-**Key takeaway**: Exit 0 for success, non-zero for errors. Write errors to stderr with clear, actionable messages.
+**Key takeaway**: Exit 0 for success, non-zero for errors. Write errors to stderr with clear, actionable messages. Return `ExitCode` so `Drop` runs.
 
-### [04. Output and User Experience](04-output-and-ux.md) (CLI-21 to CLI-28)
+### [04. Output and User Experience](04-output-and-ux.md) (CLI-21 to CLI-28, plus CLI-57, CLI-58)
 
 Patterns for creating polished, user-friendly command-line interfaces.
 
@@ -100,6 +104,8 @@ Patterns for creating polished, user-friendly command-line interfaces.
 - **CLI-26**: Structured Output (JSON, CSV) [CONSIDER]
 - **CLI-27**: Stdout vs Stderr Usage [MUST]
 - **CLI-28**: Buffered vs Unbuffered Output [CONSIDER]
+- **CLI-57**: User-Friendly Panic Messages with `human-panic` [CONSIDER]
+- **CLI-58**: Interactive Prompts with `dialoguer` [CONSIDER]
 
 **Key takeaway**: Data to stdout, everything else to stderr. Support both human and machine formats.
 
@@ -127,7 +133,7 @@ Patterns for testing command-line applications.
 
 **Key takeaway**: Test your CLI end-to-end with `assert_cmd`. Test argument parsing explicitly.
 
-### [07. Distribution and Packaging](07-distribution.md) (CLI-39 to CLI-42)
+### [07. Distribution and Packaging](07-distribution.md) (CLI-39 to CLI-42, plus CLI-59)
 
 Patterns for distributing and packaging command-line tools.
 
@@ -135,21 +141,20 @@ Patterns for distributing and packaging command-line tools.
 - **CLI-40**: Release Profile Configuration [SHOULD]
 - **CLI-41**: Cross-Compilation Considerations [CONSIDER]
 - **CLI-42**: cargo-binstall Compatibility [CONSIDER]
+- **CLI-59**: Generate Man Pages with `clap_mangen` [CONSIDER]
 
-**Key takeaway**: Optimize release builds for size. Support cross-compilation and pre-built binaries.
+**Key takeaway**: Optimize release builds for size. Ship man pages and support cross-compilation.
 
-### [08. Advanced Topics](08-advanced-topics.md) (CLI-43 to CLI-48)
+### [08. Advanced Topics](08-advanced-topics.md) (CLI-43 to CLI-46)
 
 Advanced patterns for sophisticated command-line applications.
 
-- **CLI-43**: Signal Handling (Ctrl-C, SIGTERM) [SHOULD]
-- **CLI-44**: Shell Completion Generation [CONSIDER]
-- **CLI-45**: Plugin Architectures [CONSIDER]
-- **CLI-46**: Async CLI Applications [CONSIDER]
-- **CLI-47**: Cross-Platform Considerations [SHOULD]
-- **CLI-48**: Piping and Stdin/Stdout Integration [SHOULD]
+- **CLI-43**: Signal Handling and Graceful Shutdown [SHOULD]
+- **CLI-44**: Shell Completion Generation with `clap_complete` [CONSIDER]
+- **CLI-45**: Cross-Platform CLI Behavior [SHOULD]
+- **CLI-46**: Piping, Stdin, and Terminal Detection [SHOULD]
 
-**Key takeaway**: Handle signals gracefully. Support stdin/stdout for Unix-style composition.
+**Key takeaway**: Handle signals gracefully. Detect TTYs before colouring or prompting. Support stdin/stdout for Unix-style composition.
 
 ### [09. Common Pitfalls](09-common-pitfalls.md) (CLI-49 to CLI-52)
 
@@ -202,8 +207,12 @@ Anti-patterns and pitfalls to avoid when building command-line tools.
 | CLI-37 | Test errors | [06-testing.md](06-testing.md#cli-37) |
 | CLI-40 | Release profiles | [07-distribution.md](07-distribution.md#cli-40) |
 | CLI-43 | Signal handling | [08-advanced-topics.md](08-advanced-topics.md#cli-43) |
-| CLI-47 | Cross-platform | [08-advanced-topics.md](08-advanced-topics.md#cli-47) |
-| CLI-48 | Stdin/stdout support | [08-advanced-topics.md](08-advanced-topics.md#cli-48) |
+| CLI-45 | Cross-platform | [08-advanced-topics.md](08-advanced-topics.md#cli-45) |
+| CLI-46 | Piping and stdin/stdout support | [08-advanced-topics.md](08-advanced-topics.md#cli-46) |
+| CLI-53 | `ValueEnum` for closed-set args | [02-argument-parsing.md](02-argument-parsing.md#cli-53) |
+| CLI-54 | Correct `ArgAction` choice | [02-argument-parsing.md](02-argument-parsing.md#cli-54) |
+| CLI-55 | Return `ExitCode` from `main` | [03-error-handling.md](03-error-handling.md#cli-55) |
+| CLI-56 | `BrokenPipe` is a clean exit | [03-error-handling.md](03-error-handling.md#cli-56) |
 
 ### AVOID Patterns (Anti-patterns)
 
@@ -441,6 +450,6 @@ This guide is part of the Rust Guidelines series. For updates or corrections, pl
 
 ---
 
-**Last Updated**: 2026-01-09  
-**Guide Version**: 1.0  
-**Compatible with**: Rust 1.74+, Clap 4.5+
+**Last Updated**: 2026-04-22  
+**Guide Version**: 2.0 (2026-04 regeneration)  
+**Compatible with**: Rust 1.85+ (edition 2024), Clap 4.5+

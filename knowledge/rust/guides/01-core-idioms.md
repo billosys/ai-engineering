@@ -1,123 +1,13 @@
 # Core Rust Idioms
 
-Essential Rust idioms that every Rust programmer should know. These patterns represent fundamental best practices for writing idiomatic Rust code.
-
----
+Foundational idioms every Rust programmer uses daily: naming and casing discipline, constructor and iterator conventions, ownership-shaped patterns like `mem::take`, closure capture control, RAII, `Option`/`Result` combinators, `format!` and `let-else`, plus the style-guide rules (indentation, trailing commas, attribute placement, imports, lint overrides) that `rustfmt` and `clippy` enforce. Type-level design (newtypes, enums, traits) lives in `05-type-design.md`; this guide covers the day-to-day idioms that shape readable Rust code.
 
 
-## ID-01: `#[non_exhaustive]` for Public Enums and Structs
+## ID-02: `mem::take` and `mem::replace` to Move Out of `&mut`
 
 **Strength**: SHOULD
 
-**Summary**: Mark public types with `#[non_exhaustive]` to allow future additions.
-
-```rust
-// In a library crate:
-
-#[non_exhaustive]
-#[derive(Debug, Clone)]
-pub enum Error {
-    NotFound,
-    PermissionDenied,
-    // Future versions can add variants without breaking changes
-}
-
-#[non_exhaustive]
-#[derive(Debug, Clone)]
-pub struct Config {
-    pub timeout: Duration,
-    pub retries: u32,
-    // Future versions can add fields
-}
-
-// Users of the library must handle unknown variants:
-match error {
-    Error::NotFound => { /* ... */ }
-    Error::PermissionDenied => { /* ... */ }
-    _ => { /* Handle future variants */ }  // Required!
-}
-
-// Users cannot construct the struct directly:
-let config = Config { timeout, retries };  // ERROR
-// Must use constructor:
-let config = Config::new(timeout, retries);
-```
-
-**Rationale**: Adding enum variants or struct fields is normally a breaking change. `#[non_exhaustive]` allows evolution without major version bumps.
-
----
-
----
-
-## ID-02: `mem::take` and `mem::replace`
-
-**Strength**: SHOULD
-
-**Summary**: Use `mem::take` or `mem::replace` to move values out of mutable references, particularly when working with enums.
-
-```rust
-use std::mem;
-
-// Good - using mem::take to transform an enum
-enum State {
-    Idle,
-    Processing { data: Vec<u8> },
-    Done,
-}
-
-impl State {
-    fn start_processing(&mut self, new_data: Vec<u8>) {
-        // Take the old state, leaving Idle in its place
-        let old_state = mem::take(self);
-
-        match old_state {
-            State::Idle => {
-                *self = State::Processing { data: new_data };
-            }
-            State::Processing { mut data } => {
-                data.extend(new_data);
-                *self = State::Processing { data };
-            }
-            State::Done => {
-                *self = State::Idle;
-            }
-        }
-    }
-}
-
-// Good - using mem::replace when you need the old value
-fn update_config(config: &mut String, new_value: String) -> String {
-    mem::replace(config, new_value)
-}
-
-// Bad - doesn't compile without mem::take/replace
-enum StateBad {
-    Idle,
-    Processing { data: Vec<u8> },
-}
-
-impl StateBad {
-    fn bad_update(&mut self) {
-        // Error: cannot move out of `*self`
-        // match *self {
-        //     StateBad::Processing { data } => { /* ... */ }
-        //     _ => {}
-        // }
-    }
-}
-```
-
-**Rationale**: `mem::take` allows you to move a value out of a mutable reference by replacing it with `Default::default()`. This is essential for transforming enums and avoiding borrow checker issues.
-
-**See also**: `mem::swap`, Option::take, 11-anti-patterns.md (clone to satisfy borrow checker)
-
----
-
-## ID-03: `mem::take` and `mem::replace` for Owned Values in Enums
-
-**Strength**: SHOULD
-
-**Summary**: Use `mem::take` or `mem::replace` to move values out of mutable references.
+**Summary**: Use `std::mem::take` or `std::mem::replace` to move a value out of a mutable reference — essential for transforming enums without cloning.
 
 ```rust
 use std::mem;
@@ -129,133 +19,103 @@ enum State {
 }
 
 impl State {
-    // ❌ BAD: Clone to satisfy borrow checker
-    fn transition_to_ready(&mut self, data: Vec<u8>) {
+    // ❌ BAD: clone to satisfy the borrow checker
+    fn to_ready_bad(&mut self, data: Vec<u8>) {
         if let State::Loading { url } = self {
-            let url_clone = url.clone();  // Unnecessary clone!
+            let url = url.clone();          // unnecessary allocation
             *self = State::Ready { data };
-            log::info!("Loaded from {}", url_clone);
+            log::info!("loaded from {url}");
         }
     }
 
-    // ✅ GOOD: mem::take to move out
-    fn transition_to_ready(&mut self, data: Vec<u8>) {
+    // ✅ GOOD: mem::take moves the String out, leaves String::default()
+    fn to_ready(&mut self, data: Vec<u8>) {
         if let State::Loading { url } = self {
-            let url = mem::take(url);  // Takes ownership, leaves empty String
+            let url = mem::take(url);       // zero-cost for String
             *self = State::Ready { data };
-            log::info!("Loaded from {}", url);
+            log::info!("loaded from {url}");
         }
     }
+}
+
+// mem::replace returns the old value — use when you need both
+fn swap_config(current: &mut String, new: String) -> String {
+    mem::replace(current, new)
 }
 ```
 
-**Rationale**: Avoids cloning when you need to move a value out of a mutable reference. Zero-cost for types where `Default` is cheap (String, Vec, Option).
+**Rationale**: `mem::take` replaces a value behind `&mut` with `T::default()` and returns the old value; `mem::replace` lets you supply any replacement. Both avoid the "cannot move out of borrowed content" error without cloning. They're free for `String`, `Vec`, `Option`, and other cheap-default types.
+
+**See also**: `Option::take`, ID-35 (temporary mutability), 11-anti-patterns.md (clone to satisfy borrow checker)
 
 ---
 
----
-
-## ID-04: Ad-hoc Conversions Follow as_/to_/into_ Conventions
+## ID-04: Ad-hoc Conversions Follow `as_` / `to_` / `into_`
 
 **Strength**: MUST
 
-**Summary**: Use prefix conventions that communicate cost and ownership semantics.
+**Summary**: Conversion prefixes communicate cost and ownership: `as_` is free and borrowed, `to_` allocates, `into_` consumes `self`.
 
 ```rust
-// as_* - free, borrowed to borrowed
+// ✅ GOOD: cost-signalling prefixes
+
 impl str {
-    pub fn as_bytes(&self) -> &[u8] {
-        // Zero cost - just reinterprets the reference
-        unsafe { self.as_bytes() }
-    }
+    // as_* — free, borrowed → borrowed
+    pub fn as_bytes(&self) -> &[u8] { /* reinterpret */ todo!() }
+
+    // to_* — expensive, creates owned data
+    pub fn to_lowercase(&self) -> String { /* allocates, iterates */ todo!() }
 }
 
-// to_* - expensive, creates owned data
-impl str {
-    pub fn to_lowercase(&self) -> String {
-        // Allocates new String, iterates through chars
-        // Unicode-aware conversion
-        self.chars()
-            .flat_map(|c| c.to_lowercase())
-            .collect()
-    }
-    
-    pub fn to_string(&self) -> String {
-        // Allocates and copies
-        String::from(self)
-    }
-}
-
-// into_* - consumes self, transfers ownership
 impl String {
-    pub fn into_bytes(self) -> Vec<u8> {
-        // Takes ownership, no allocation
-        // Just transfers the Vec<u8> inside String
-        self.into_bytes()
-    }
+    // into_* — consumes self, transfers ownership
+    pub fn into_bytes(self) -> Vec<u8> { /* zero-cost move */ todo!() }
 }
 
-impl<T> Vec<T> {
-    pub fn into_boxed_slice(self) -> Box<[T]> {
-        // Consumes Vec, returns Box
-        self.into_boxed_slice()
-    }
+// ❌ BAD: prefix misleads about cost
+impl std::path::Path {
+    pub fn to_os_str(&self) -> &std::ffi::OsStr { todo!() }   // should be as_os_str
+    pub fn as_path_buf(&self) -> std::path::PathBuf { todo!() } // should be to_path_buf
 }
 
-// Bad examples
-impl Path {
-    // Bad - should be as_os_str (free operation)
-    pub fn to_os_str(&self) -> &OsStr { /* ... */ }
-    
-    // Bad - should be to_path_buf (expensive clone)
-    pub fn as_path_buf(&self) -> PathBuf { /* ... */ }
-}
-
-// Good - f64 conversions
+// Copy types use to_* even though the receiver is by value
 impl f64 {
-    // to_* is correct - input is Copy type being converted
-    pub fn to_radians(self) -> f64 {
-        self * (PI / 180.0)
-    }
-    
-    pub fn to_degrees(self) -> f64 {
-        self * (180.0 / PI)
-    }
+    pub fn to_radians(self) -> f64 { self * std::f64::consts::PI / 180.0 }
+    pub fn to_degrees(self) -> f64 { self * 180.0 / std::f64::consts::PI }
 }
 ```
 
-**Rationale**: These prefixes provide immediate clarity about the cost and ownership implications of a conversion, helping developers write efficient code without consulting documentation.
+**Rationale**: These prefixes are codified in the Rust API Guidelines (C-CONV). Picking the right one tells the caller the cost without reading the implementation.
 
-**See also**: C-CONV-TRAITS for `From`/`Into`/`AsRef`/`AsMut` trait implementations, C-GETTER for getter naming conventions
+**See also**: C-CONV, ID-20 (getters), 02-api-design.md (`From`/`Into`)
 
 ---
 
-## ID-05: All Magic Values Must Be Documented
+## ID-05: Document Every Magic Value
 
 **Strength**: MUST
 
-**Summary**: Hardcoded constants must have comments explaining why the value was chosen, side effects of changing it, and external dependencies.
+**Summary**: Hardcoded constants must explain *why* the value was chosen, what breaks if it changes, and any external dependency.
 
 ```rust
-// Bad - no explanation
+// ❌ BAD: naked literal, no context
 const TIMEOUT: u64 = 86400;
 
-// Better - inline comment
-// Wait at most a day; based on api.foo.com timeout policies
+// Better — inline rationale
+// Wait at most a day; matches api.foo.com's request lifetime policy.
 const TIMEOUT: u64 = 60 * 60 * 24;
 
-// Best - named constant with full documentation
+// ✅ GOOD: named, typed, documented
 /// How long we wait for the upstream server.
 ///
-/// This value is large enough to ensure the server can finish processing.
-/// Setting this too low might cause us to abort valid requests.
-/// Based on `api.foo.com` timeout policies.
-const UPSTREAM_SERVER_TIMEOUT: Duration = Duration::from_secs(60 * 60 * 24);
-
-wait_timeout(UPSTREAM_SERVER_TIMEOUT).await
+/// Chosen to exceed the worst-case processing time observed on
+/// `api.foo.com`. Reducing this risks aborting valid long-running
+/// requests; increasing it risks holding connection slots too long.
+const UPSTREAM_SERVER_TIMEOUT: std::time::Duration =
+    std::time::Duration::from_secs(60 * 60 * 24);
 ```
 
-**Rationale**: Magic values become maintenance hazards when their purpose is unclear. Documentation prevents future developers (including yourself) from accidentally breaking assumptions or external integrations.
+**Rationale**: Magic numbers become maintenance hazards. A comment explaining the *reason* lets the next reader (including future you) change the value safely.
 
 **See also**: M-DOCUMENTED-MAGIC
 
@@ -265,31 +125,29 @@ wait_timeout(UPSTREAM_SERVER_TIMEOUT).await
 
 **Strength**: MUST
 
-**Summary**: Symbol names should be free of uninformative words like `Service`, `Manager`, `Factory`.
+**Summary**: Names like `Service`, `Manager`, `Helper`, `Factory` add no information. Name types after what they actually are or do.
 
 ```rust
-// Bad - weasel words add no information
-struct BookingService {
-    bookings: Vec<Booking>
-}
+// ❌ BAD: weasel words
+pub struct BookingService { bookings: Vec<Booking> }
+pub struct ConnectionManager { /* pool */ }
+pub struct UserFactory;
 
-struct BookingManager {
-    bookings: Vec<Booking>
-}
+// ✅ GOOD: the name describes the thing
+pub struct Bookings { items: Vec<Booking> }
+pub struct ConnectionPool { /* ... */ }
+pub struct UserBuilder { /* ... */ }
 
-// Good - descriptive names
-struct Bookings {
-    items: Vec<Booking>
-}
+// When you need to accept a factory as a parameter, use a closure type
+pub fn with_user<F: Fn() -> User>(_make: F) { /* ... */ }
 
-struct BookingDispatcher {
-    queue: Vec<Booking>
-}
+struct Booking;
+struct User;
 ```
 
-**Rationale**: Terms like "Service", "Manager", and "Factory" are vague and don't convey what the type actually does. Use specific names that describe the type's purpose. For builders, use the `Builder` suffix (e.g., `FooBuilder`, not `FooFactory`).
+**Rationale**: `Service`, `Manager`, and `Factory` are common in languages with rigid class hierarchies. Rust types are free to be named after their purpose: a collection of bookings is `Bookings`, a connection pool is `ConnectionPool`, a factory is a `Builder` or an `impl Fn() -> T`.
 
-**See also**: M-CONCISE-NAMES, Builder pattern
+**See also**: M-CONCISE-NAMES, ID-10 (Builder)
 
 ---
 
@@ -297,141 +155,74 @@ struct BookingDispatcher {
 
 **Strength**: MUST
 
-**Summary**: Follow Rust's standard casing conventions for all identifiers.
+**Summary**: `UpperCamelCase` for types and enum variants; `snake_case` for functions, methods, variables, fields, modules, and macros; `SCREAMING_SNAKE_CASE` for `const` and immutable `static`. Acronyms in type names are capitalized as one word (`HttpResponse`, not `HTTPResponse`).
 
 ```rust
-// Good - proper casing
-pub struct HttpResponse {
-    status_code: u16,
+// ✅ GOOD
+pub struct HttpResponse {          // UpperCamelCase, acronym as word
+    status_code: u16,              // snake_case field
     body: String,
 }
 
-impl HttpResponse {
-    pub fn new(status_code: u16) -> Self {
-        HttpResponse {
-            status_code,
-            body: String::new(),
-        }
-    }
-    
-    pub fn with_body(status_code: u16, body: String) -> Self {
-        HttpResponse { status_code, body }
-    }
-}
+pub enum Direction { North, South, East, West }   // UpperCamelCase variants
 
 const MAX_RETRIES: u32 = 3;
-const DEFAULT_TIMEOUT_MS: u64 = 5000;
+static DEFAULT_NAME: &str = "unnamed";
 
-// Bad - incorrect casing
-pub struct HTTPResponse { // Should be HttpResponse
-    StatusCode: u16,      // Should be status_code
-    Body: String,         // Should be body
+fn parse_url(input: &str) -> HttpResponse { /* ... */ todo!() }
+mod network_io { /* snake_case module */ }
+macro_rules! my_macro { () => {}; }
+
+// ❌ BAD
+pub struct HTTPResponse {          // acronym in caps
+    StatusCode: u16,               // PascalCase field
+    Body: String,
 }
+const maxRetries: u32 = 3;         // wrong case for const
+fn ParseUrl() {}                   // wrong case for fn
 ```
 
-**Rationale**: Consistent naming makes code instantly recognizable as idiomatic Rust and improves cross-project readability.
+**Rationale**: The compiler's default lints (`non_camel_case_types`, `non_snake_case`, `non_upper_case_globals`) enforce these conventions — disabling them is almost always wrong. Consistent casing makes Rust code scannable at a glance and lets autocomplete work predictably across crates.
+
+**See also**: ID-25 (word order), Rust API Guidelines C-CASE
 
 ---
 
-## ID-08: Collections as Smart Pointers
+## ID-08: Owned Collections Simplify Lifetimes
 
 **Strength**: CONSIDER
 
-**Summary**: Understand that `Vec<T>` and `String` are smart pointers that own heap data; use them to avoid explicit lifetime annotations.
+**Summary**: `Vec<T>`, `String`, and `Box<T>` own heap data, so structs that hold them need no lifetime parameters. Prefer owned collections in fields unless zero-copy is a measured requirement.
 
 ```rust
-// Good - Vec owns the data, no lifetime needed
+// ✅ GOOD: owned — no lifetime on the struct
 pub struct UserDatabase {
     users: Vec<String>,
 }
 
 impl UserDatabase {
-    pub fn new() -> Self {
-        Self { users: Vec::new() }
-    }
-
-    pub fn add_user(&mut self, name: String) {
-        self.users.push(name);
-    }
+    pub fn new() -> Self { Self { users: Vec::new() } }
+    pub fn add(&mut self, name: String) { self.users.push(name); }
 }
 
-// Alternative with slice requires lifetime
+// ❌ AWKWARD: borrowing forces lifetime parameters everywhere
 pub struct UserDatabaseRef<'a> {
     users: &'a [String],
 }
-
-// Good - use owned collections to simplify APIs
-pub struct DataProcessor {
-    buffer: Vec<u8>,
-}
-
-impl DataProcessor {
-    pub fn process(&mut self, data: &[u8]) {
-        self.buffer.extend_from_slice(data);
-        // Process buffer...
-    }
-}
+// every function, every caller, every impl must carry `'a`
 ```
 
-**Rationale**: Using owned collections trades a small heap allocation for simpler code without lifetime parameters. This is often the right trade-off for struct fields.
+**Rationale**: The heap allocation is almost always cheaper than the cognitive cost of pervasive lifetime parameters. Reach for borrowed fields only when profiling shows allocation pressure or when the type is a genuine short-lived view (like an iterator).
 
-**See also**: Ownership patterns in 04-ownership-borrowing.md
+**See also**: 04-ownership-borrowing.md
 
 ---
 
-## ID-09: Constructor Conventions
+## ID-10: `new` and `Default` for Simple Construction
 
 **Strength**: SHOULD
 
-**Summary**: Use `new()` as the canonical constructor name; use `with_capacity()`, `from_*()`, or other descriptive names for alternate constructors.
-
-```rust
-// Good - standard constructor pattern
-pub struct Connection {
-    host: String,
-    port: u16,
-}
-
-impl Connection {
-    pub fn new(host: String, port: u16) -> Self {
-        Self { host, port }
-    }
-
-    pub fn with_default_port(host: String) -> Self {
-        Self { host, port: 8080 }
-    }
-}
-
-// Good - constructor that can fail
-pub struct Config {
-    data: String,
-}
-
-impl Config {
-    pub fn new(path: &str) -> Result<Self, std::io::Error> {
-        let data = std::fs::read_to_string(path)?;
-        Ok(Self { data })
-    }
-}
-
-// Good - multiple constructors with clear names
-impl Vec<u8> {
-    pub fn new() -> Self { /* ... */ }
-    pub fn with_capacity(capacity: usize) -> Self { /* ... */ }
-}
-```
-
-**Rationale**: The `new()` convention is widely understood in the Rust ecosystem. It's not a language feature but a strong community convention that improves code readability.
-
-**See also**: Builder pattern in RustDesignPatterns.pdf, Default trait
-
----
-
-## ID-10: Constructors via `new` and `Default`
-
-**Strength**: SHOULD
-
-**Summary**: Use `fn new() -> Self` for primary construction, implement `Default` when zero/empty makes sense.
+**Summary**: Rust has no constructor keyword — the convention is an associated function `fn new(...) -> Self`. Implement `Default` when a zero/empty instance makes sense; if `new()` takes no arguments it must agree with `Default::default()`.
 
 ```rust
 pub struct Config {
@@ -441,1132 +232,587 @@ pub struct Config {
 }
 
 impl Config {
-    /// Creates a new Config with the given timeout.
+    /// Creates a `Config` with the given timeout and conventional defaults.
     pub fn new(timeout_ms: u64) -> Self {
-        Self {
-            timeout_ms,
-            retries: 3,
-            verbose: false,
-        }
+        Self { timeout_ms, retries: 3, verbose: false }
     }
 }
 
 impl Default for Config {
     fn default() -> Self {
-        Self {
-            timeout_ms: 5000,
-            retries: 3,
-            verbose: false,
-        }
+        Self { timeout_ms: 5_000, retries: 3, verbose: false }
     }
 }
 
-// Usage:
-let config = Config::new(1000);
-let default_config = Config::default();
-let partial = Config { verbose: true, ..Default::default() };
+// Alternate constructors use descriptive names (with_, from_)
+impl Config {
+    pub fn with_retries(retries: u32) -> Self {
+        Self { retries, ..Self::default() }
+    }
+}
+
+// Derive Default when every field's default is correct
+#[derive(Default)]
+pub struct Counter {
+    count: u64,
+    reset_at: Option<std::time::Instant>,
+}
+
+let c1 = Config::new(1_000);
+let c2 = Config::default();
+let c3 = Config { verbose: true, ..Config::default() };
 ```
 
-**Rationale**: - `new` is the conventional constructor name in Rust
-- `Default` enables `..Default::default()` syntax and works with generic code
-- If `new()` takes no arguments, it should behave identically to `Default::default()`
+**Rationale**: `new` is expected by every Rust consumer; `Default` plugs into generic code (`Option::unwrap_or_default`, `mem::take`, struct update syntax). For construction with many optional parameters, reach for the Builder pattern (TD-10).
 
-**See also**: Builder pattern for complex construction
+**See also**: TD-10 (Builder), ID-31 (constructors as associated fn), C-CTOR, C-COMMON-TRAITS
 
 ---
 
-## ID-11: Derive Common Traits
+## ID-13: Programming Bugs Panic, Recoverable Failures Return `Result`
 
-**Strength**: SHOULD
+**Strength**: MUST
 
-**Summary**: Derive `Debug`, `Clone`, `PartialEq`, etc. when semantically appropriate.
+**Summary**: Panic on contract violations (the caller did something the function forbids). Return `Result` for conditions the caller can reasonably handle.
 
 ```rust
-// ❌ INCOMPLETE: Missing useful derives
-struct Point {
-    x: f64,
-    y: f64,
+// ❌ BAD: contract violation dressed up as a recoverable error
+fn divide_by(x: u32, y: u32) -> Result<u32, DivisionError> {
+    if y == 0 { return Err(DivisionError::DivideByZero); }
+    Ok(x / y)
 }
 
-// ✅ COMPLETE: Derive what makes sense
-#[derive(Debug, Clone, Copy, PartialEq)]
-struct Point {
-    x: f64,
-    y: f64,
+// ✅ GOOD: contract violation panics with a clear message
+fn divide_by(x: u32, y: u32) -> u32 {
+    assert!(y != 0, "divide_by: y must be non-zero (got {x}/{y})");
+    x / y
 }
 
-// For types that can be hashed (require Eq for HashMap keys):
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
-struct UserId(u64);
+// ✅ BETTER: make the bug unrepresentable at the type level
+use std::num::NonZeroU32;
 
-// For serialization (with serde):
-#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
-struct Config {
-    name: String,
-    value: i32,
+fn divide_by_nz(x: u32, y: NonZeroU32) -> u32 {
+    x / y.get()
+}
+
+#[derive(Debug)]
+pub enum DivisionError { DivideByZero }
+```
+
+```rust
+// ✅ Recoverable — the caller might have a corrupt or absent file
+fn parse_config(path: &std::path::Path) -> Result<Config, std::io::Error> {
+    let _content = std::fs::read_to_string(path)?;
+    /* ... */
+    Ok(Config::default())
 }
 ```
 
-**Rationale**: These traits enable debugging, collections, testing, and serialization. Deriving them costs nothing if unused but enables many use cases.
+**Rationale**: Panics signal *the program has a bug*; `Result` signals *a normal failure mode the caller is responsible for*. Conflating the two pollutes error types with impossible variants and blurs responsibility.
+
+**See also**: ID-28, M-PANIC-ON-BUG, 03-error-handling.md
 
 ---
 
----
+## ID-15: Feature Names Without Placeholder Prefixes
 
-## ID-12: Destructors for Finalization (RAII)
+**Strength**: MUST
 
-**Strength**: SHOULD
+**Summary**: Don't prefix Cargo features with `use-` or `with-`. Name the feature after what it enables.
 
-**Summary**: Use `Drop` to ensure cleanup happens regardless of exit path.
+```toml
+# ❌ BAD: Cargo.toml
+[features]
+default  = ["use-std"]
+use-std  = []
+with-serde = ["dep:serde"]
+
+# ✅ GOOD
+[features]
+default = ["std"]
+std     = []
+serde   = ["dep:serde"]
+
+[dependencies]
+serde = { version = "1", optional = true }
+```
 
 ```rust
-struct TempFile {
+// In lib.rs — gated on the feature name directly
+#![cfg_attr(not(feature = "std"), no_std)]
+
+#[cfg(feature = "serde")]
+mod serde_support;
+```
+
+**Rationale**: Cargo implicitly creates a feature with the dependency's own name for every optional dependency. Manual features should follow the same convention so downstream `features = [...]` arrays read uniformly.
+
+**See also**: C-FEATURE
+
+---
+
+## ID-18: Finalize Resources in Destructors (RAII)
+
+**Strength**: MUST
+
+**Summary**: Rust has no `finally`. Put cleanup in `Drop::drop` so it runs on every exit path — normal return, early `?`, and unwinding panic.
+
+```rust
+use std::path::PathBuf;
+
+pub struct TempFile {
     path: PathBuf,
 }
 
 impl TempFile {
-    fn new() -> std::io::Result<Self> {
+    pub fn new() -> std::io::Result<Self> {
         let path = std::env::temp_dir().join(uuid::Uuid::new_v4().to_string());
         std::fs::File::create(&path)?;
         Ok(Self { path })
     }
-    
-    fn path(&self) -> &Path {
-        &self.path
-    }
+    pub fn path(&self) -> &std::path::Path { &self.path }
 }
 
 impl Drop for TempFile {
     fn drop(&mut self) {
-        // Cleanup runs even on panic or early return
+        // Runs on normal return, ?-propagation, or unwinding panic
         let _ = std::fs::remove_file(&self.path);
     }
 }
 
-fn process() -> Result<(), Error> {
+fn process() -> std::io::Result<()> {
     let temp = TempFile::new()?;
     write_data(temp.path())?;
-    process_data(temp.path())?;
-    // TempFile automatically deleted when `temp` goes out of scope
+    run_analysis(temp.path())?;
     Ok(())
-}
-```
-
----
-
-## ID-13: Detected Programming Bugs are Panics, Not Errors
-
-**Strength**: MUST
-
-**Summary**: When an unrecoverable programming error is detected, panic immediately—don't return a Result.
-
-```rust
-// Bad - contract violation returns an error
-fn divide_by(x: u32, y: u32) -> Result<u32, DivisionError> {
-    if y == 0 {
-        return Err(DivisionError::DivideByZero);
-    }
-    Ok(x / y)
+    // TempFile::drop runs here — even if write_data or run_analysis failed
 }
 
-// Good - contract violation panics
-fn divide_by(x: u32, y: u32) -> u32 {
-    if y == 0 {
-        panic!("divide_by: y cannot be zero");
-    }
-    x / y
-}
-
-// Alternative - make it correct by construction
-struct NonZeroU32(u32);
-
-impl NonZeroU32 {
-    pub fn new(value: u32) -> Option<Self> {
-        if value == 0 { None } else { Some(Self(value)) }
-    }
-    
-    pub fn get(&self) -> u32 { self.0 }
-}
-
-fn divide_by(x: u32, y: NonZeroU32) -> u32 {
-    x / y.get()
-}
-```
-
-**Rationale**: Programming errors cannot be handled at runtime—there's no valid recovery path. Returning an error for contract violations creates impossible error-handling code. Use the type system to prevent invalid states when possible (correct by construction).
-
-**See also**: M-PANIC-ON-BUG, newtype pattern
-
----
-
-## ID-14: Easy Documentation Initialization
-
-**Strength**: SHOULD
-
-**Summary**: Structure code examples in documentation to allow easy copy-paste testing; include all necessary imports.
-
-```rust
-/// A connection to a remote server.
-///
-/// # Examples
-///
-/// ```
-/// use mylib::Connection;
-///
-/// let conn = Connection::new("localhost", 8080);
-/// conn.send("Hello").expect("send failed");
-/// ```
-pub struct Connection {
-    host: String,
-    port: u16,
-}
-
-impl Connection {
-    pub fn new(host: &str, port: u16) -> Self {
-        Self {
-            host: host.to_string(),
-            port,
-        }
-    }
-
-    pub fn send(&self, _msg: &str) -> Result<(), std::io::Error> {
-        Ok(())
-    }
-}
-
-// Good - example with full context
-/// Process a configuration file.
-///
-/// # Examples
-///
-/// ```
-/// # use std::error::Error;
-/// # fn main() -> Result<(), Box<dyn Error>> {
-/// use mylib::process_config;
-///
-/// let result = process_config("config.toml")?;
-/// println!("Processed: {:?}", result);
-/// # Ok(())
-/// # }
-/// ```
-pub fn process_config(_path: &str) -> Result<String, std::io::Error> {
-    Ok(String::from("processed"))
-}
-
-// Bad - incomplete example that won't compile
-/// Does something useful.
-///
-/// # Examples
-///
-/// ```
-/// do_something();  // Where does this come from? Missing use statement!
-/// ```
-pub fn do_something() {}
-```
-
-**Rationale**: Documentation examples are tested by `cargo test`. Making them complete and copy-paste ready improves both documentation quality and test coverage.
-
-**See also**: 13-documentation.md, rustdoc guidelines
-
----
-
-## ID-15: Feature Names Are Free of Placeholder Words
-
-**Strength**: MUST
-
-**Summary**: Don't use words like `use-` or `with-` in feature names. Name features directly after what they enable.
-
-```rust
-// Good - Cargo.toml
-[features]
-default = ["std"]
-std = []
-serde = ["dep:serde"]
-
-[dependencies]
-serde = { version = "1.0", optional = true }
-
-// Bad - Cargo.toml
-[features]
-default = ["use-std"]  // Don't add "use-"
-use-std = []           // Just call it "std"
-with-serde = ["dep:serde"]  // Just call it "serde"
-```
-
-```rust
-// Good - enabling std library support
-// In lib.rs
-#![no_std]
-
-#[cfg(feature = "std")]
-extern crate std;
-
-#[cfg(feature = "std")]
-pub fn read_file(path: &str) -> std::io::Result<String> {
-    std::fs::read_to_string(path)
-}
-
-// Usage in dependent crate's Cargo.toml
-[dependencies]
-my-crate = { version = "1.0", features = ["std"] }  // Clean and simple
-```
-
-**Rationale**: Cargo automatically creates implicit features for optional dependencies using the dependency name. Explicit features should follow the same convention for consistency.
-
----
-
-## ID-16: FFI Error Handling
-
-**Strength**: MUST
-
-**Summary**: FFI functions should be `unsafe` and return error codes or use out-parameters; never panic or unwind across FFI boundaries.
-
-```rust
-// Good - FFI function with error handling
-#[no_mangle]
-pub unsafe extern "C" fn process_data(
-    data: *const u8,
-    len: usize,
-    out: *mut u8,
-    out_len: *mut usize,
-) -> i32 {
-    // Validate pointers
-    if data.is_null() || out.is_null() || out_len.is_null() {
-        return -1; // Error code for null pointer
-    }
-
-    // Use catch_unwind to prevent panics from crossing FFI boundary
-    let result = std::panic::catch_unwind(|| {
-        let input = std::slice::from_raw_parts(data, len);
-        // Process data...
-        0 // Success
-    });
-
-    result.unwrap_or(-2) // Error code for panic
-}
-
-// Bad - can panic across FFI boundary
-#[no_mangle]
-pub extern "C" fn bad_process(data: *const u8, len: usize) {
-    // Missing 'unsafe'
-    let slice = unsafe { std::slice::from_raw_parts(data, len) };
-    slice[1000]; // Can panic! Undefined behavior if called from C
-}
-```
-
-**Rationale**: Panics/unwinding across FFI boundaries is undefined behavior. Always catch panics and convert them to error codes when crossing language boundaries.
-
-**See also**: 09-unsafe-ffi.md, catch_unwind documentation
-
----
-
-## ID-17: FFI String Handling
-
-**Strength**: MUST
-
-**Summary**: Use `CStr`/`CString` for C string interop; always validate UTF-8 when converting to Rust strings.
-
-```rust
-use std::ffi::{CStr, CString};
-use std::os::raw::c_char;
-
-// Good - accepting C string from external code
-#[no_mangle]
-pub unsafe extern "C" fn print_message(msg: *const c_char) -> i32 {
-    if msg.is_null() {
-        return -1;
-    }
-
-    let c_str = CStr::from_ptr(msg);
-
-    match c_str.to_str() {
-        Ok(rust_str) => {
-            println!("{}", rust_str);
-            0
-        }
-        Err(_) => -2, // Invalid UTF-8
-    }
-}
-
-// Good - passing Rust string to C
-fn create_c_string(s: &str) -> Result<CString, std::ffi::NulError> {
-    CString::new(s)
-}
-
-// Example usage
-fn call_c_function(name: &str) {
-    let c_name = CString::new(name).expect("CString creation failed");
-    unsafe {
-        // some_c_function(c_name.as_ptr());
-    }
-    // c_name is automatically freed when dropped
-}
-
-// Bad - assumes valid UTF-8 without checking
-#[no_mangle]
-pub unsafe extern "C" fn bad_print(msg: *const c_char) {
-    let c_str = CStr::from_ptr(msg);
-    let rust_str = c_str.to_str().unwrap(); // Can panic!
-    println!("{}", rust_str);
-}
-```
-
-**Rationale**: C strings are null-terminated and may not be valid UTF-8. Always validate and handle errors when converting between C and Rust strings.
-
-**See also**: 09-unsafe-ffi.md, 03-error-handling.md
-
----
-
-## ID-18: Finalization in Destructors (RAII)
-
-**Strength**: MUST
-
-**Summary**: Use the `Drop` trait to ensure resources are properly cleaned up; rely on RAII for resource management.
-
-```rust
-// Good - RAII pattern ensures cleanup
-pub struct FileGuard {
-    file: std::fs::File,
-    path: std::path::PathBuf,
-}
-
-impl Drop for FileGuard {
-    fn drop(&mut self) {
-        println!("Closing file: {:?}", self.path);
-        // File is automatically closed when dropped
-    }
-}
-
-// Good - lock guard pattern
+// Guard pattern: lock-like APIs return a Drop-guard that releases on scope exit
 use std::sync::Mutex;
 
-fn update_shared_data(mutex: &Mutex<Vec<i32>>, value: i32) {
-    let mut data = mutex.lock().unwrap();
-    data.push(value);
-    // Lock automatically released when guard is dropped
-}
+fn push(m: &Mutex<Vec<i32>>, v: i32) {
+    let mut guard = m.lock().unwrap();      // acquires
+    guard.push(v);
+}                                            // guard drops → releases lock
 
-// Bad - manual cleanup is error-prone
-pub struct ResourceBad {
-    handle: i32,
-}
-
-impl ResourceBad {
-    pub fn cleanup(&mut self) {
-        // Easy to forget to call!
-    }
-}
+fn write_data(_: &std::path::Path) -> std::io::Result<()> { Ok(()) }
+fn run_analysis(_: &std::path::Path) -> std::io::Result<()> { Ok(()) }
 ```
 
-**Rationale**: RAII ensures resources are cleaned up even in the presence of panics or early returns. This is a fundamental Rust pattern inherited from C++.
+**Rationale**: Manual cleanup is forgotten, skipped on early return, and skipped entirely on panic. Wrapping the resource in a type that owns the cleanup moves that responsibility from every call site into one `Drop` impl. This is the foundation of `MutexGuard`, `File`, `BufWriter`, `ScopeGuard`, and most of the ecosystem's resource management.
 
-**See also**: RAII Guards pattern in RustDesignPatterns.pdf, 07-concurrency-async.md
+**Caveats**: Destructors do *not* run if the process aborts (`std::process::abort`, double panic, SIGKILL). Don't rely on `Drop` for critical external effects (database commits, file syncs) — do those explicitly and treat `Drop` as a best-effort cleanup.
+
+**See also**: TD-05 (private fields protect invariants), 07-concurrency-async.md (lock guards)
 
 ---
 
-## ID-19: First Sentence is One Line, ~15 Words
+## ID-20: Getter Names Match the Field
 
 **Strength**: MUST
 
-**Summary**: The first sentence of documentation becomes the summary—keep it to one line and approximately 15 words.
+**Summary**: Drop the `get_` prefix. `self.timeout()` is a getter for `timeout`. Use `_mut` suffix for mutable access and reserve `get` for contexts where one canonical access exists (like `Cell::get`) or where the operation can fail (`slice::get`).
 
 ```rust
-/// Opens a file at the specified path and returns a handle.
-///
-/// This function will create the file if it doesn't exist and will
-/// truncate it if it does. The file is opened in write-only mode.
-///
-/// # Errors
-///
-/// Returns an error if the path is invalid or permissions are insufficient.
-pub fn open_file(path: &Path) -> Result<File, IoError> {
-    // ...
-}
+use std::time::Duration;
+use std::net::SocketAddr;
 
-// Bad - first sentence too long, breaks visual flow
-/// Opens a file at the specified path and returns a handle to that file which can then be used for various I/O operations.
-pub fn open_file(path: &Path) -> Result<File, IoError> {
-    // ...
-}
-```
-
-**Rationale**: Rust documentation extracts the first sentence for module summaries. Keeping it to one line (~15 words) makes API documentation easily skimmable and maintains a clean visual hierarchy.
-
-**See also**: M-FIRST-DOC-SENTENCE
-
----
-
-## ID-20: Getter Names Follow Rust Convention
-
-**Strength**: MUST
-
-**Summary**: Avoid `get_` prefix except for specific cases; getters are just named after the field.
-
-```rust
-// Good - idiomatic getters
 pub struct Connection {
     timeout: Duration,
     address: SocketAddr,
 }
 
 impl Connection {
-    // Simple field access - no get_ prefix
-    pub fn timeout(&self) -> Duration {
-        self.timeout
-    }
-    
-    // Mutable access follows same pattern
-    pub fn timeout_mut(&mut self) -> &mut Duration {
-        &mut self.timeout
-    }
-    
-    // Returns reference to field
-    pub fn address(&self) -> &SocketAddr {
-        &self.address
-    }
+    // ✅ GOOD: field-named getters
+    pub fn timeout(&self) -> Duration { self.timeout }
+    pub fn address(&self) -> &SocketAddr { &self.address }
+    pub fn timeout_mut(&mut self) -> &mut Duration { &mut self.timeout }
 }
 
-// Bad - unnecessary get_ prefix
+// ❌ BAD: redundant get_ prefix
 impl Connection {
-    pub fn get_timeout(&self) -> Duration { // Don't do this
-        self.timeout
-    }
-    
-    pub fn get_address(&self) -> &SocketAddr { // Don't do this
-        &self.address
-    }
+    pub fn get_timeout(&self) -> Duration { self.timeout }
+    pub fn get_address(&self) -> &SocketAddr { &self.address }
 }
 
-// Good - get_ is appropriate for Cell/RefCell
-use std::cell::Cell;
-
-impl Cell<T> {
-    pub fn get(&self) -> T where T: Copy {
-        // Only one obvious thing to "get" from a Cell
-        // get_ prefix makes sense here
-    }
+// ✅ GOOD: `get` is fine when the operation is partial or there's one obvious thing
+impl<T> std::cell::Cell<T> where T: Copy {
+    pub fn get(&self) -> T { /* sole payload */ todo!() }
 }
 
-// Good - unchecked variants
-impl<T> [T] {
-    pub fn get(&self, index: usize) -> Option<&T> { /* ... */ }
-    
-    pub fn get_mut(&mut self, index: usize) -> Option<&mut T> { /* ... */ }
-    
-    pub unsafe fn get_unchecked(&self, index: usize) -> &T { /* ... */ }
-    
-    pub unsafe fn get_unchecked_mut(&mut self, index: usize) -> &mut T { /* ... */ }
-}
+// slice::get returns Option — the name signals bounds-checking
+// slice::get_unchecked is unsafe indexing
 ```
 
-**Rationale**: The `get_` prefix is redundant in most cases. Rust's type system makes getters obvious without the prefix, reducing verbosity.
+**Rationale**: `get_` is redundant noise. Field-named getters compose cleanly at call sites (`user.name().trim()`), and the `_mut` suffix is the standard signal for mutable access.
+
+**See also**: C-GETTER, ID-23 (iterator method pairs)
 
 ---
 
-## ID-21: Iterate Over `Option` When Useful
+## ID-22: Iterate Over `Option`
 
 **Strength**: CONSIDER
 
-**Summary**: `Option` implements `IntoIterator`, enabling elegant compositions.
+**Summary**: `Option<T>` implements `IntoIterator` — treat it as a zero-or-one element iterator when composing with iterator combinators.
 
 ```rust
-// Extend a vec with an optional element:
-let extra: Option<i32> = Some(42);
-let mut numbers = vec![1, 2, 3];
-numbers.extend(extra);  // numbers is now [1, 2, 3, 42]
+// Extend a Vec with a maybe-present value
+let turing: Option<&str> = Some("Turing");
+let mut logicians = vec!["Curry", "Kleene", "Markov"];
+logicians.extend(turing);                 // pushes "Turing" iff Some
 
-// Chain with other iterators:
-let required = vec!["a", "b"];
-let optional: Option<&str> = Some("c");
-for item in required.iter().chain(optional.iter()) {
-    println!("{item}");
+// Chain an Option onto an iterator
+let extras: Option<&str> = Some("Church");
+for name in logicians.iter().chain(extras.iter()) {
+    println!("{name}");
 }
 
-// Filter map pattern:
-let values: Vec<Option<i32>> = vec![Some(1), None, Some(2)];
-let sum: i32 = values.into_iter().flatten().sum();  // 3
+// Flatten out a Vec<Option<T>> — Option implements IntoIterator
+let values: Vec<Option<i32>> = vec![Some(1), None, Some(2), None, Some(3)];
+let sum: i32 = values.into_iter().flatten().sum();    // 6
+
+// Prefer `if let Some(x) = opt` over `for x in opt` for simple conditional use
+// Prefer `std::iter::once(x)` when the value is always present
 ```
 
-**Rationale**: Treating `Option` as a zero-or-one element iterator enables composition with standard iterator methods.
+**Rationale**: `Option::iter`, `Option::into_iter`, and `.flatten()` let you compose optional values with the rest of the iterator ecosystem without branching. This keeps code linear — no `if let` pyramids in the middle of a pipeline.
+
+**See also**: ID-27 (combinators), Iterator::filter_map
 
 ---
 
----
-
-## ID-22: Iterating Over Option
-
-**Strength**: CONSIDER
-
-**Summary**: Use `Option::iter()` or `Option::iter_mut()` to convert an Option into a 0 or 1 element iterator.
-
-```rust
-// Good - chaining Option with iterators
-fn process_optional_items(opt: Option<i32>, items: Vec<i32>) -> Vec<i32> {
-    opt.iter()
-        .chain(items.iter())
-        .copied()
-        .collect()
-}
-
-// Good - flat mapping over Options
-fn get_user_emails(users: Vec<Option<User>>) -> Vec<String> {
-    users.into_iter()
-        .flat_map(|opt| opt.iter())
-        .map(|user| user.email.clone())
-        .collect()
-}
-
-// Alternative using filter_map
-fn get_user_emails_alt(users: Vec<Option<User>>) -> Vec<String> {
-    users.into_iter()
-        .filter_map(|opt| opt)
-        .map(|user| user.email)
-        .collect()
-}
-
-// Good - for loop over Option
-fn print_if_some(value: Option<i32>) {
-    for v in value.iter() {
-        println!("Value: {}", v);
-    }
-}
-
-struct User {
-    email: String,
-}
-```
-
-**Rationale**: Treating Options as iterators allows seamless integration with iterator chains. This can be more elegant than explicit `match` or `if let` in certain contexts.
-
-**See also**: `Option::into_iter()`, iterator combinators in 08-performance.md
-
----
-
-## ID-23: Iterator Methods Follow iter/iter_mut/into_iter Pattern
+## ID-23: Collections Expose `iter` / `iter_mut` / `into_iter`
 
 **Strength**: MUST
 
-**Summary**: For collections containing elements of type `U`, provide three standard iterator methods.
+**Summary**: A collection of `T` provides three iterator entry points: `iter()` yields `&T`, `iter_mut()` yields `&mut T`, `into_iter()` yields `T` (consumes the collection).
 
 ```rust
-impl<T> Container<T> {
-    // Borrows elements immutably
-    fn iter(&self) -> Iter<'_, T> 
-    // where Iter: Iterator<Item = &T>
-    
-    // Borrows elements mutably  
-    fn iter_mut(&mut self) -> IterMut<'_, T>
-    // where IterMut: Iterator<Item = &mut T>
-    
-    // Consumes container, transfers ownership
-    fn into_iter(self) -> IntoIter<T>
-    // where IntoIter: Iterator<Item = T>
+pub struct MyList<T> { items: Vec<T> }
+
+impl<T> MyList<T> {
+    pub fn iter(&self) -> std::slice::Iter<'_, T> { self.items.iter() }
+    pub fn iter_mut(&mut self) -> std::slice::IterMut<'_, T> { self.items.iter_mut() }
+    pub fn into_iter(self) -> std::vec::IntoIter<T> { self.items.into_iter() }
 }
+
+// Consumers pick the access mode they need
+let mut list = MyList { items: vec![1, 2, 3] };
+
+for v in list.iter()     { println!("{v}"); }   // & — borrow each
+for v in list.iter_mut() { *v *= 2; }           // &mut — mutate in place
+for v in list.into_iter() { println!("{v}"); }  // T — consumes list
+
+// str is a special case: it's not a homogeneous collection, so instead of
+// iter() it offers chars(), bytes(), lines(), split(...) — each with a
+// specific interpretation
 ```
 
-```rust
-// Good - standard collection iterator pattern
-pub struct MyCollection<T> {
-    items: Vec<T>,
-}
+**Rationale**: This triplet is assumed by every consumer: `for x in &coll`, `for x in &mut coll`, and `for x in coll` all just work when you follow it (the `IntoIterator` impls on `&C`, `&mut C`, and `C` delegate to `iter`/`iter_mut`/`into_iter` respectively).
 
-pub struct Iter<'a, T> {
-    inner: std::slice::Iter<'a, T>,
-}
-
-pub struct IterMut<'a, T> {
-    inner: std::slice::IterMut<'a, T>,
-}
-
-pub struct IntoIter<T> {
-    inner: std::vec::IntoIter<T>,
-}
-
-impl<T> MyCollection<T> {
-    pub fn iter(&self) -> Iter<'_, T> {
-        Iter {
-            inner: self.items.iter(),
-        }
-    }
-    
-    pub fn iter_mut(&mut self) -> IterMut<'_, T> {
-        IterMut {
-            inner: self.items.iter_mut(),
-        }
-    }
-    
-    pub fn into_iter(self) -> IntoIter<T> {
-        IntoIter {
-            inner: self.items.into_iter(),
-        }
-    }
-}
-
-// Implement Iterator for each type
-impl<'a, T> Iterator for Iter<'a, T> {
-    type Item = &'a T;
-    
-    fn next(&mut self) -> Option<Self::Item> {
-        self.inner.next()
-    }
-}
-
-impl<'a, T> Iterator for IterMut<'a, T> {
-    type Item = &'a mut T;
-    
-    fn next(&mut self) -> Option<Self::Item> {
-        self.inner.next()
-    }
-}
-
-impl<T> Iterator for IntoIter<T> {
-    type Item = T;
-    
-    fn next(&mut self) -> Option<Self::Item> {
-        self.inner.next()
-    }
-}
-
-// Usage examples
-let mut collection = MyCollection { items: vec![1, 2, 3] };
-
-// Borrow elements immutably
-for item in collection.iter() {
-    println!("{}", item);
-}
-
-// Borrow elements mutably
-for item in collection.iter_mut() {
-    *item *= 2;
-}
-
-// Consume collection
-for item in collection.into_iter() {
-    println!("{}", item);
-}
-// collection is now moved and can't be used
-```
-
-```rust
-// str is NOT a simple homogeneous collection
-impl str {
-    // Not iter(), because str has nuanced interpretation
-    pub fn bytes(&self) -> Bytes<'_> { /* ... */ }
-    pub fn chars(&self) -> Chars<'_> { /* ... */ }
-    pub fn lines(&self) -> Lines<'_> { /* ... */ }
-}
-```
-
-**Rationale**: This pattern is so ubiquitous that developers expect it. It provides consistency across all collections and enables generic code.
-
-**See also**: C-ITER-TY for naming the iterator types themselves
+**See also**: C-ITER, ID-24 (iterator type naming)
 
 ---
 
-## ID-24: Iterator Type Names Match Producing Methods
+## ID-24: Iterator Type Names Match the Producing Method
 
 **Strength**: SHOULD
 
-**Summary**: An `into_iter()` method should return an `IntoIter` type, `iter()` returns `Iter`, etc.
+**Summary**: `iter()` returns a type called `Iter`; `iter_mut()` returns `IterMut`; `into_iter()` returns `IntoIter`. Domain iterators follow the same shape (`Keys`, `Values`, `Drain`, ...).
 
 ```rust
-// Good - consistent naming
+// Standard library
 impl<T> Vec<T> {
-    pub fn iter(&self) -> Iter<'_, T> { /* ... */ }
-    pub fn iter_mut(&mut self) -> IterMut<'_, T> { /* ... */ }
-    pub fn into_iter(self) -> IntoIter<T> { /* ... */ }
+    pub fn iter(&self) -> std::slice::Iter<'_, T> { todo!() }
+    pub fn iter_mut(&mut self) -> std::slice::IterMut<'_, T> { todo!() }
+    pub fn into_iter(self) -> std::vec::IntoIter<T> { todo!() }
+    pub fn drain<R>(&mut self, _range: R) -> std::vec::Drain<'_, T> { todo!() }
 }
 
-impl<K, V> BTreeMap<K, V> {
-    pub fn keys(&self) -> Keys<'_, K, V> { /* ... */ }
-    pub fn values(&self) -> Values<'_, K, V> { /* ... */ }
-    pub fn iter(&self) -> Iter<'_, K, V> { /* ... */ }
+// Function-named iterator
+pub struct PercentEncode<'a> { /* ... */ _p: std::marker::PhantomData<&'a ()> }
+
+pub fn percent_encode(_input: &str) -> PercentEncode<'_> {
+    PercentEncode { _p: std::marker::PhantomData }
 }
-
-// Good - function returning iterator
-use url::percent_encoding;
-
-fn percent_encode(input: &str) -> PercentEncode<'_> {
-    percent_encoding::percent_encode(input.as_bytes())
-}
-
-// The type name matches the function name pattern
-pub struct PercentEncode<'a> { /* ... */ }
 ```
 
-**Rationale**: When type names match method names, documentation and error messages are more intuitive. The pattern `module::TypeName` makes it clear where the iterator came from.
+**Rationale**: Matching type names to method names makes rustdoc, error messages, and `use` paths predictable. It also signals that the type is an iterator — no further explanation needed.
 
 ---
 
-## ID-25: Names Use Consistent Word Order
+## ID-25: Consistent Word Order in Names
 
 **Strength**: SHOULD
 
-**Summary**: Within a crate (and ideally ecosystem-wide), use consistent word ordering in type and function names.
+**Summary**: Within a crate, keep word order consistent for related types. Standard library uses `Parse<Thing>Error`, `Into<Thing>`, `From<Thing>`.
 
 ```rust
-// Good - consistent verb-object-error order (from std)
+// ✅ GOOD: consistent Parse<T>Error ordering, as stdlib does
 pub struct ParseBoolError;
 pub struct ParseCharError;
 pub struct ParseFloatError;
 pub struct ParseIntError;
-pub struct ParseAddrError;  // Hypothetical, consistent with others
 
-// Bad - inconsistent ordering
+// ❌ BAD: every combination imaginable
 pub struct ParseBoolError;
-pub struct CharParseError;   // Wrong - breaks pattern
-pub struct ErrorParseFloat;  // Wrong - breaks pattern
+pub struct CharParseError;
+pub struct ErrorParseFloat;
 
-// Good - consistent noun-direction order
-pub struct IntoIter<T>;
-pub struct IntoKeys<K, V>;
-pub struct IntoValues<K, V>;
-
-// Bad - inconsistent  
-pub struct IntoIter<T>;
-pub struct KeysInto<K, V>;   // Wrong - breaks pattern
-
-// Good - error type patterns
-pub enum Error {
-    Io(io::Error),
-    Parse(ParseError),
-    Network(NetworkError),
-    Database(DatabaseError),
-}
-
-// Good - consistent builder method order
+// ✅ GOOD: with_<thing> builder methods
 impl RequestBuilder {
-    pub fn with_header(self, key: &str, value: &str) -> Self { /* ... */ }
-    pub fn with_timeout(self, duration: Duration) -> Self { /* ... */ }
-    pub fn with_body(self, body: String) -> Self { /* ... */ }
-    // All use "with_" prefix consistently
+    pub fn with_header(self, _k: &str, _v: &str) -> Self { self }
+    pub fn with_timeout(self, _d: std::time::Duration) -> Self { self }
+    pub fn with_body(self, _body: String) -> Self { self }
 }
+
+struct RequestBuilder;
 ```
 
-**Rationale**: Consistent word order makes APIs more predictable and easier to discover through autocomplete. When adding new items, developers can guess their names correctly.
-
-**See also**: Standard library error types for examples, C-CASE for overall naming conventions
+**Rationale**: Consistent word order makes autocomplete predictable and makes new additions guessable. If `ParseIntError` exists, a user looking for the float equivalent will type `ParseF` before `Float`.
 
 ---
 
-## ID-26: On-Stack Dynamic Dispatch
+## ID-26: On-Stack Dispatch via Enums, Not Trait Objects
 
 **Strength**: CONSIDER
 
-**Summary**: Use enums instead of trait objects when the set of types is closed and you want stack allocation.
+**Summary**: When the set of implementing types is closed and fits in source, prefer an enum with an inherent `impl` over `Box<dyn Trait>`. Enums dispatch statically, allocate on the stack, and enable exhaustive matching.
 
 ```rust
-// Good - stack-allocated enum dispatch
-enum Operation {
+// ✅ Closed set — enum dispatch is zero-cost, stack-allocated
+pub enum Operation {
     Add(i32),
-    Multiply(i32),
-    Divide(i32),
+    Mul(i32),
+    Div(i32),
 }
 
 impl Operation {
-    fn apply(&self, value: i32) -> i32 {
+    pub fn apply(&self, value: i32) -> i32 {
         match self {
             Operation::Add(x) => value + x,
-            Operation::Multiply(x) => value * x,
-            Operation::Divide(x) => value / x,
+            Operation::Mul(x) => value * x,
+            Operation::Div(x) => value / x,
         }
     }
 }
 
-fn process(ops: &[Operation], initial: i32) -> i32 {
-    ops.iter().fold(initial, |acc, op| op.apply(acc))
+pub fn run(ops: &[Operation], seed: i32) -> i32 {
+    ops.iter().fold(seed, |acc, op| op.apply(acc))
 }
 
-// Alternative - heap-allocated trait object
-trait OperationTrait {
-    fn apply(&self, value: i32) -> i32;
+// Use Box<dyn Trait> when the set of types is open (plugins) or when
+// consumers outside your crate can add implementations.
+pub trait Op { fn apply(&self, value: i32) -> i32; }
+
+pub fn run_dyn(ops: &[Box<dyn Op>], seed: i32) -> i32 {
+    ops.iter().fold(seed, |acc, op| op.apply(acc))
 }
-
-fn process_dynamic(ops: &[Box<dyn OperationTrait>], initial: i32) -> i32 {
-    ops.iter().fold(initial, |acc, op| op.apply(acc))
-}
-
-// Usage shows the difference
-let stack_ops = vec![
-    Operation::Add(5),
-    Operation::Multiply(2),
-]; // Allocated on stack (in Vec, but items are stack-sized)
-
-// vs
-let heap_ops: Vec<Box<dyn OperationTrait>> = vec![
-    Box::new(AddOp(5)),
-    Box::new(MulOp(2)),
-]; // Each item heap-allocated
 ```
 
-**Rationale**: Enums provide zero-cost abstraction for closed type sets with better cache locality and no heap allocation. Use trait objects when you need an open set of types or plugin architectures.
+**Rationale**: Enums give you static dispatch, exhaustive match checking, and no heap traffic. Trait objects are the right tool when the type set is genuinely open (user-extensible plugins) or when you need to store a heterogeneous collection of unrelated types that only share a behavior.
 
-**See also**: 06-traits.md (trait objects), 08-performance.md
+**See also**: TD-27 (object safety), 06-traits.md
 
 ---
 
-## ID-27: Option and Result Combinators
+## ID-27: `Option` / `Result` Combinators Over `match`
 
 **Strength**: SHOULD
 
-**Summary**: Use `?`, `map`, `and_then`, `unwrap_or` instead of verbose `match`.
+**Summary**: Use `?`, `map`, `and_then`, `ok_or`, `unwrap_or_else` to compose `Option` and `Result` values. Reserve `match` for situations where you genuinely need exhaustive multi-arm handling.
 
 ```rust
-// ❌ VERBOSE: Nested matches
-fn get_user_email(id: i32) -> Option<String> {
+// ❌ VERBOSE
+fn user_email(id: i32) -> Option<String> {
     match find_user(id) {
-        Some(user) => {
-            match user.email {
-                Some(email) => Some(email.to_lowercase()),
-                None => None,
-            }
-        }
+        Some(user) => match user.email {
+            Some(email) => Some(email.to_lowercase()),
+            None => None,
+        },
         None => None,
     }
 }
 
-// ✅ CONCISE: Combinators
-fn get_user_email(id: i32) -> Option<String> {
-    find_user(id)?
-        .email
-        .map(|e| e.to_lowercase())
+// ✅ CONCISE
+fn user_email(id: i32) -> Option<String> {
+    find_user(id)?.email.map(|e| e.to_lowercase())
 }
 
-// Common patterns:
-let value = opt.unwrap_or(default);           // Provide default
-let value = opt.unwrap_or_else(|| compute()); // Lazy default
-let value = opt.ok_or(Error::NotFound)?;      // Convert to Result
-let mapped = result.map_err(|e| wrap(e))?;    // Transform error
+// Common shapes
+// opt.unwrap_or(default)              — eager default
+// opt.unwrap_or_else(|| compute())    — lazy default
+// opt.ok_or(Error::NotFound)?         — Option → Result, propagate
+// res.map_err(Error::from)?           — convert error and propagate
+// res.ok()                            — Result → Option, discard error
+// res.and_then(|x| x.validate())      — chain fallible step
+
+struct User { email: Option<String> }
+fn find_user(_id: i32) -> Option<User> { None }
 ```
+
+**Rationale**: Combinators read top-to-bottom as the transformation pipeline, while nested `match` forces the reader to track success/failure through each level. `?` in particular is the idiomatic way to propagate errors — only write `match` on `Result` when you need to do real work on the error.
+
+**See also**: 03-error-handling.md
 
 ---
 
-## ID-28: Panic Means 'Stop the Program'
+## ID-28: A Panic Means "Stop the Program"
 
 **Strength**: MUST
 
-**Summary**: Panics are not exceptions—they signal immediate program termination and should not be caught for error handling.
+**Summary**: Panics are not exceptions. Don't panic for recoverable failures, and don't design code that assumes panics will be caught.
 
 ```rust
-// Bad - using panic for error handling
-fn parse_config(path: &str) -> Config {
-    let content = std::fs::read_to_string(path)
-        .unwrap(); // Don't panic on I/O errors!
-    // ...
+// ❌ BAD: panic on a recoverable I/O failure
+fn load_config(path: &str) -> Config {
+    let text = std::fs::read_to_string(path).unwrap();  // PANICS
+    parse(&text).unwrap()                                // PANICS
 }
 
-// Good - return Result for recoverable errors
-fn parse_config(path: &str) -> Result<Config, ConfigError> {
-    let content = std::fs::read_to_string(path)?;
-    // ...
-    Ok(config)
+// ✅ GOOD: return Result
+fn load_config(path: &str) -> Result<Config, LoadError> {
+    let text = std::fs::read_to_string(path).map_err(LoadError::Io)?;
+    parse(&text).map_err(LoadError::Parse)
 }
 
-// Acceptable panic - programming error detected
-fn divide_by(x: u32, y: u32) -> u32 {
-    if y == 0 {
-        panic!("divide_by called with y=0, this is a programming error");
-    }
-    x / y
+// ✅ Acceptable panic: an invariant the caller was responsible for upholding
+fn take_first(xs: &[i32]) -> i32 {
+    assert!(!xs.is_empty(), "take_first: empty slice");
+    xs[0]
 }
+
+#[derive(Debug)]
+enum LoadError { Io(std::io::Error), Parse(String) }
+struct Config;
+fn parse(_: &str) -> Result<Config, String> { Ok(Config) }
 ```
 
-**Rationale**: Panics cannot be reliably caught (especially with `panic = "abort"`), and assuming they will be caught leads to fragile code. Use `Result` for recoverable errors, panic only for unrecoverable programming errors.
+**Rationale**: With `panic = "abort"` the program simply terminates; with unwinding, `catch_unwind` exists but it's for very narrow use cases (test frameworks, FFI boundaries). Code that expects panics to be routinely caught is fragile.
 
-**See also**: M-PANIC-IS-STOP, M-PANIC-ON-BUG
+**See also**: ID-13, M-PANIC-IS-STOP, 03-error-handling.md
 
 ---
 
-## ID-29: Pass Variables to Closures
+## ID-29: Pass Variables to Closures via Block-Scoped Rebinding
 
 **Strength**: SHOULD
 
-**Summary**: Use `move` closures to transfer ownership into the closure; clone before the closure if you need to keep the original.
+**Summary**: When a `move` closure needs some variables moved, others cloned, and others borrowed, use a block expression to rebind them before the closure — keep the preparation local and the names clean.
 
 ```rust
+use std::rc::Rc;
 use std::thread;
 
-// Good - move ownership into closure
-fn spawn_greeting_thread(name: String) -> thread::JoinHandle<()> {
-    thread::spawn(move || {
-        println!("Hello, {}!", name);
-    })
+// ✅ GOOD: clear, local rebinding
+let num1 = Rc::new(1);
+let num2 = Rc::new(2);
+let num3 = Rc::new(3);
+
+let closure = {
+    // num1 is moved (captured by move)
+    let num2 = num2.clone();      // cloned
+    let num3 = num3.as_ref();     // borrowed
+    move || *num1 + *num2 + *num3
+};
+
+// ❌ BAD: _cloned / _borrowed names pollute the outer scope
+let num2_cloned = num2.clone();
+let num3_borrowed = num3.as_ref();
+let bad = move || *num2_cloned + *num3_borrowed;
+
+// Threading — `move` captures everything the closure mentions
+fn spawn_worker(data: Vec<u8>) -> thread::JoinHandle<usize> {
+    thread::spawn(move || data.len())
 }
 
-// Good - clone before moving when you need both
-fn spawn_and_keep(name: String) -> thread::JoinHandle<()> {
-    let name_clone = name.clone();
-    let handle = thread::spawn(move || {
-        println!("Thread: {}", name_clone);
-    });
-    println!("Main: {}", name); // Can still use original
-    handle
+// Clone before `move` when the original must live on
+fn spawn_and_keep(name: String) -> (String, thread::JoinHandle<()>) {
+    let for_thread = name.clone();
+    let handle = thread::spawn(move || println!("thread: {for_thread}"));
+    (name, handle)
 }
-
-// Good - move multiple values
-fn spawn_processor(data: Vec<u8>, config: Config) -> thread::JoinHandle<ProcessResult> {
-    thread::spawn(move || {
-        process(&data, &config)
-    })
-}
-
-// Bad - borrowing in a thread won't compile
-fn bad_spawn(name: String) -> thread::JoinHandle<()> {
-    thread::spawn(|| {
-        // println!("Hello, {}!", name); // Error: may outlive borrowed value
-    })
-}
-
-struct Config;
-struct ProcessResult;
-fn process(_data: &[u8], _config: &Config) -> ProcessResult { ProcessResult }
 ```
 
-**Rationale**: The `move` keyword transfers ownership to the closure, which is essential for thread safety and avoiding lifetime issues. Clone explicitly when you need both owned and moved values.
+**Rationale**: Without this pattern you end up with `foo_cloned`, `foo_borrowed`, and `foo_for_thread` names leaking into the surrounding function. The block-expression rebinding co-locates the capture preparation with the closure.
 
-**See also**: 07-concurrency-async.md, closure captures
+**See also**: ID-35 (temporary mutability), 07-concurrency-async.md
 
 ---
 
-## ID-30: Prefer `Option<T>` over Sentinel Values
+## ID-30: `Option<T>` Instead of Sentinel Values
 
 **Strength**: MUST
 
-**Summary**: Use `Option` to represent absence, not magic values like `-1` or `""`.
+**Summary**: Represent absence with `Option`, not a magic value like `-1`, `""`, or `u32::MAX`.
 
 ```rust
-// ❌ BAD: Sentinel values
-struct User {
-    name: String,
-    age: i32,        // -1 means "unknown"
-    email: String,   // "" means "not provided"
+// ❌ BAD: sentinels require documentation and get forgotten
+pub struct User {
+    pub name: String,
+    pub age: i32,       // -1 means "unknown"
+    pub email: String,  // "" means "not provided"
 }
 
-// ✅ GOOD: Option for optional values
-struct User {
-    name: String,
-    age: Option<u32>,        // None means "unknown"
-    email: Option<String>,   // None means "not provided"
+// ✅ GOOD: absence is in the type
+pub struct UserGood {
+    pub name: String,
+    pub age: Option<u32>,
+    pub email: Option<String>,
 }
 
-// Usage is explicit:
-match user.age {
-    Some(age) => println!("Age: {age}"),
-    None => println!("Age unknown"),
+// Consumers must handle absence explicitly
+fn describe(u: &UserGood) -> String {
+    match u.age {
+        Some(a) => format!("{} ({a})", u.name),
+        None => format!("{} (age unknown)", u.name),
+    }
 }
 ```
 
-**Rationale**: Sentinel values require documentation and can be forgotten. `Option` makes absence explicit in the type system and forces handling.
+**Rationale**: Sentinel values silently coexist with valid values — nothing stops `age: -1` from being added into a sum or compared with `<`. `Option` forces the absence case to be acknowledged at every use site.
+
+**See also**: TD-20 (`NonZeroU32`), 03-error-handling.md
 
 ---
 
----
-
-## ID-31: Prefer Regular Functions Over Associated Functions
+## ID-31: Prefer Free Functions Over Associated Functions for Unrelated Work
 
 **Strength**: SHOULD
 
-**Summary**: Use regular functions for general computation; reserve associated functions primarily for instance creation.
+**Summary**: Associated functions belong to the type — use them for constructors and trait implementations. Put general-purpose helpers at module scope as free functions.
 
 ```rust
-struct Database;
+pub struct Database;
 
 impl Database {
-    // Good - constructor as associated function
-    pub fn new() -> Self { 
-        Self 
-    }
-    
-    // Good - method on instance
-    pub fn query(&self) {
-        // ...
-    }
-    
-    // Bad - unrelated functionality as associated function
-    fn check_parameters(p: &str) {
-        // This doesn't need to be under Database!
+    // ✅ Constructor — belongs on the type
+    pub fn new() -> Self { Self }
+
+    // ✅ Method — operates on an instance
+    pub fn query(&self, _sql: &str) -> Vec<Row> { vec![] }
+}
+
+// ❌ BAD: general helper masquerading as associated fn
+impl Database {
+    fn valid_identifier(s: &str) -> bool {
+        s.chars().all(|c| c.is_ascii_alphanumeric() || c == '_')
     }
 }
 
-// Good - regular function for general logic
-fn check_parameters(p: &str) {
-    // ...
+// ✅ GOOD: free function
+pub fn is_valid_identifier(s: &str) -> bool {
+    s.chars().all(|c| c.is_ascii_alphanumeric() || c == '_')
 }
 
-// Acceptable - trait associated function
-trait Default {
-    fn default() -> Self;
-}
+struct Row;
 ```
 
-**Rationale**: Regular functions are first-class citizens in Rust and reduce unnecessary noise (`Database::check_parameters()` vs `check_parameters()`). Associated functions make sense for constructors and trait implementations, but general logic should be standalone.
+**Rationale**: Associated functions are pulled into everyone's `Database::valid_identifier` namespace whether they want them or not; free functions live at module scope where they're found by module path. The convention is: associated fn only when the function conceptually belongs to the type.
 
 **See also**: M-REGULAR-FN
-
----
-
-## ID-32: Privacy for Extensibility (`non_exhaustive`)
-
-**Strength**: SHOULD
-
-**Summary**: Use `#[non_exhaustive]` on enums and structs in public APIs to allow adding variants/fields without breaking changes.
-
-```rust
-// Good - non_exhaustive enum allows adding variants
-#[non_exhaustive]
-pub enum Error {
-    Io(std::io::Error),
-    Parse(String),
-    // Can add more variants in the future without breaking users
-}
-
-// Users must use a wildcard pattern
-fn handle_error(err: Error) {
-    match err {
-        Error::Io(e) => println!("IO: {}", e),
-        Error::Parse(s) => println!("Parse: {}", s),
-        _ => println!("Other error"), // Required because of #[non_exhaustive]
-    }
-}
-
-// Good - non_exhaustive struct allows adding fields
-#[non_exhaustive]
-pub struct Config {
-    pub timeout: u64,
-    pub retries: u32,
-}
-
-impl Config {
-    pub fn new() -> Self {
-        Self {
-            timeout: 30,
-            retries: 3,
-        }
-    }
-}
-
-// Users cannot construct directly (must use constructor)
-// let config = Config { timeout: 10, retries: 5 }; // Error: cannot create non-exhaustive struct
-
-// Bad - exhaustive enum breaks when adding variants
-pub enum ErrorBad {
-    Io(std::io::Error),
-    Parse(String),
-}
-
-// If we add a variant later, this match breaks:
-fn handle_error_bad(err: ErrorBad) {
-    match err {
-        ErrorBad::Io(e) => println!("IO: {}", e),
-        ErrorBad::Parse(s) => println!("Parse: {}", s),
-        // Compiles now, but breaks if we add ErrorBad::Network later
-    }
-}
-```
-
-**Rationale**: `#[non_exhaustive]` allows library authors to add enum variants or struct fields in minor version bumps without breaking API compatibility.
-
-**See also**: 02-api-design.md, semver compatibility
 
 ---
 
@@ -1574,456 +820,596 @@ fn handle_error_bad(err: ErrorBad) {
 
 **Strength**: CONSIDER
 
-**Summary**: When a function consumes an argument and can fail, return it in the error.
+**Summary**: When a function consumes an argument by value and can fail, return the argument inside the error so the caller can retry or recover.
 
 ```rust
-// ❌ LOSSY: Argument consumed even on failure
-fn send_message(msg: Message) -> Result<(), SendError> {
-    // If this fails, `msg` is lost!
-    network.send(&msg)?;
-    Ok(())
+pub struct Message(pub String);
+
+#[derive(Debug)]
+pub struct SendError {
+    pub message: Message,               // returned to the caller
+    pub source: std::io::Error,
 }
 
-// ✅ RECOVERABLE: Return argument in error
-struct SendError {
-    message: Message,
-    cause: std::io::Error,
-}
-
-fn send_message(msg: Message) -> Result<(), SendError> {
-    match network.send(&msg) {
+pub fn send(msg: Message) -> Result<(), SendError> {
+    match try_write(&msg.0) {
         Ok(()) => Ok(()),
-        Err(cause) => Err(SendError { message: msg, cause }),
+        Err(source) => Err(SendError { message: msg, source }),
     }
 }
 
-// Caller can retry:
-let mut msg = create_message();
-for attempt in 0..3 {
-    match send_message(msg) {
+// Caller can retry without pre-cloning the message
+let mut msg = Message(String::from("hello"));
+for _ in 0..3 {
+    match send(msg) {
         Ok(()) => break,
-        Err(e) => {
-            msg = e.message;  // Recover the message
-            log::warn!("Retry {}: {}", attempt, e.cause);
-        }
+        Err(e) => msg = e.message,
     }
 }
+
+fn try_write(_: &str) -> Result<(), std::io::Error> { Ok(()) }
 ```
 
-**Rationale**: Lets callers recover from errors without cloning arguments preemptively. See `String::from_utf8` for a stdlib example.
+**Rationale**: Without this pattern, callers must `clone()` arguments preemptively "in case" the call fails. Returning the value on error lets them pay that cost only when needed. The standard library uses this pattern in `String::from_utf8` (`FromUtf8Error` contains the original `Vec<u8>`).
+
+**See also**: 03-error-handling.md
 
 ---
 
----
-
-## ID-34: String Concatenation with `format!`
+## ID-34: Build Strings with `format!`
 
 **Strength**: SHOULD
 
-**Summary**: Use `format!` macro for string concatenation instead of manual `push_str` calls when readability matters.
+**Summary**: Prefer `format!` or `write!` over manual `push_str` chains. `String` concatenation with `+` is fine for two pieces.
 
 ```rust
-// Good - clear and readable
-fn create_greeting(name: &str, age: u32) -> String {
-    format!("Hello, {}! You are {} years old.", name, age)
+// ❌ VERBOSE: manual push_str
+fn greet_bad(name: &str, age: u32) -> String {
+    let mut s = String::from("Hello, ");
+    s.push_str(name);
+    s.push_str("! You are ");
+    s.push_str(&age.to_string());
+    s.push_str(" years old.");
+    s
 }
 
-// Bad - verbose and error-prone
-fn create_greeting_bad(name: &str, age: u32) -> String {
-    let mut result = String::from("Hello, ");
-    result.push_str(name);
-    result.push_str("! You are ");
-    result.push_str(&age.to_string());
-    result.push_str(" years old.");
-    result
+// ✅ GOOD: format! reads like the output
+fn greet(name: &str, age: u32) -> String {
+    format!("Hello, {name}! You are {age} years old.")
 }
 
-// Note: For performance-critical code with many concatenations, consider using a String with push_str
+// When writing into an existing buffer, use write!
+use std::fmt::Write;
+fn append_greeting(buf: &mut String, name: &str) {
+    write!(buf, "Hello, {name}!").expect("writing to String cannot fail");
+}
+
+// Two-piece concatenation: + is concise and clear
+let full = first_name.to_string() + " " + last_name;
+
+// For performance-critical assembly with known capacity, reserve up front
+fn csv_row(fields: &[&str]) -> String {
+    let cap = fields.iter().map(|s| s.len() + 1).sum();
+    let mut row = String::with_capacity(cap);
+    for (i, f) in fields.iter().enumerate() {
+        if i > 0 { row.push(','); }
+        row.push_str(f);
+    }
+    row
+}
+
+let first_name = "Ada";
+let last_name = "Lovelace";
 ```
 
-**Rationale**: The `format!` macro is more readable, less error-prone, and handles allocations efficiently. While `push_str` might be marginally faster in tight loops, `format!` is preferred for clarity.
+**Rationale**: `format!` is readable and handles `Display` / `Debug` formatting uniformly. Don't micro-optimize into `push_str` chains without a measured reason — the generated code is often similar, and `format!` is less error-prone.
 
-**See also**: `write!` macro for writing to strings, performance considerations in 08-performance.md
+**See also**: `std::fmt::Write`, 08-performance.md
 
 ---
 
-## ID-35: Temporary Mutability
+## ID-35: Temporary Mutability via Block or Shadowing
 
 **Strength**: SHOULD
 
-**Summary**: Limit mutable binding scope, then rebind as immutable. Use block scope to limit the lifetime of mutable bindings when you need temporary mutation.
+**Summary**: Scope mutation to the setup phase, then rebind as immutable. Two forms: inner-block with returned value, or shadow with a new `let`.
 
 ```rust
-// ✅ PATTERN 1: Nested scope
+// Pattern 1 — nested block, returns the value
 let data = {
     let mut temp = fetch_data();
     temp.sort();
     temp.dedup();
-    temp  // Moved out as immutable
+    temp                            // block evaluates to `temp`
 };
-// `data` is now immutable
+// `data` is immutable from here
 
-// ✅ PATTERN 2: Rebinding
+// Pattern 2 — shadow with let
 let mut data = fetch_data();
 data.sort();
 data.dedup();
-let data = data;  // Shadow as immutable
-// `data` is now immutable
+let data = data;                    // rebind as immutable
+// `data` is immutable from here
 
-// ✅ PATTERN 3: Builder/method chain
-let data = fetch_data()
+// Pattern 3 — chain into a collect (no `mut` at all)
+let data: Vec<_> = fetch_data()
     .into_iter()
-    .sorted()
-    .dedup()
-    .collect::<Vec<_>>();
+    .filter(|x| *x > 0)
+    .collect();
+
+fn fetch_data() -> Vec<i32> { vec![3, 1, 2, 1] }
 ```
 
-```rust
-// Good - limit scope of mutability
-fn create_sorted_unique_list(items: Vec<i32>) -> Vec<i32> {
-    let mut items = items;
-    items.sort();
-    items.dedup();
-    items  // Immutable from here, but we can return it
-}
+**Rationale**: Limiting mutability to the preparation phase signals intent, prevents accidental later mutation, and enables the compiler to catch mistakes. Both patterns compile to identical code — pick whichever reads better in context.
 
-// Good - shadowing for temporary mutation
-fn process_data(data: Vec<u8>) -> Vec<u8> {
-    let mut data = data;
-    data.reverse();
-
-    let data = data; // Shadow with immutable binding
-
-    // Use immutable data from here
-    transform(data)
-}
-
-// Good - inner scope for temporary mutation
-fn build_message(mut parts: Vec<String>) -> String {
-    {
-        let mut parts = parts;  // Temporary mutable scope
-        parts.sort();
-        parts.dedup();
-        // parts is dropped here
-    }
-    parts.join(", ")
-}
-
-// Alternative - use into_iter to consume and rebuild
-fn transform_list(items: Vec<i32>) -> Vec<String> {
-    items.into_iter()
-        .map(|x| x.to_string())
-        .collect()
-}
-
-fn transform(_data: Vec<u8>) -> Vec<u8> { vec![] }
-```
-
-**Rationale**: Signals that mutation is complete. Prevents accidental modification later. Enables compiler optimizations.
-
---- Limiting the scope of mutability makes code easier to reason about and prevents accidental mutation. Rust's ownership system makes this pattern safe and efficient.
-
-**See also**: Immutability by default, functional patterns in 08-performance.md
+**See also**: ID-29 (block-scoped closure capture)
 
 ---
 
-## ID-36: The Default Trait
+## ID-38: `let ... else` for Pattern-Matched Early Return
 
 **Strength**: SHOULD
 
-**Summary**: Implement `Default` for types that have a sensible default value; use `#[derive(Default)]` when possible.
+**Summary**: Use `let PATTERN = expr else { diverge; }` to destructure when the happy path must continue and any other pattern must exit (return, break, continue, panic).
 
 ```rust
-// Good - derive when all fields are Default
-#[derive(Default)]
-pub struct ConnectionConfig {
-    timeout: u64,        // defaults to 0
-    retries: u32,        // defaults to 0
-    enabled: bool,       // defaults to false
-}
-
-// Good - manual implementation for custom defaults
-pub struct ServerConfig {
-    host: String,
-    port: u16,
-}
-
-impl Default for ServerConfig {
-    fn default() -> Self {
-        Self {
-            host: String::from("localhost"),
-            port: 8080,
-        }
-    }
-}
-
-// Usage
-let config = ServerConfig::default();
-let another = ServerConfig { port: 9000, ..Default::default() };
-```
-
-**Rationale**: `Default` is used throughout the standard library and enables struct update syntax. It's clearer than having a `new()` that takes no arguments.
-
-**See also**: Constructor conventions, Builder pattern
-
----
-
-## ID-37: Use `format!` for String Concatenation
-
-**Strength**: SHOULD
-
-**Summary**: Prefer `format!` over manual string building for readability.
-
-```rust
-// ❌ VERBOSE: Manual concatenation
-fn greeting(name: &str, age: u32) -> String {
-    let mut result = "Hello, ".to_string();
-    result.push_str(name);
-    result.push_str("! You are ");
-    result.push_str(&age.to_string());
-    result.push_str(" years old.");
-    result
-}
-
-// ✅ CLEAR: format! macro
-fn greeting(name: &str, age: u32) -> String {
-    format!("Hello, {name}! You are {age} years old.")
-}
-```
-
-```rust
-// For maximum performance with known capacity:
-fn build_csv_row(fields: &[&str]) -> String {
-    let mut result = String::with_capacity(fields.iter().map(|s| s.len() + 1).sum());
-    for (i, field) in fields.iter().enumerate() {
-        if i > 0 { result.push(','); }
-        result.push_str(field);
-    }
-    result
-}
-
-// For simple two-string concatenation (slightly faster):
-let full = first.to_string() + &second;
-```
-
-**Rationale**: `format!` is readable and handles Display/Debug formatting. Performance difference is negligible for most use cases.
-
----
-
----
-
-## ID-38: Use `let else` for Early Returns
-
-**Strength**: SHOULD
-
-**Summary**: `let ... else` combines pattern matching with early return.
-
-```rust
-// ❌ VERBOSE: Match for early return
+// ❌ VERBOSE: match just to early-return
 fn process_user(id: Option<i32>) -> Result<User, Error> {
     let id = match id {
         Some(id) => id,
         None => return Err(Error::MissingId),
     };
-    // ... use id
+    lookup(id)
 }
 
 // ✅ CONCISE: let-else
-fn process_user(id: Option<i32>) -> Result<User, Error> {
+fn process_user_good(id: Option<i32>) -> Result<User, Error> {
     let Some(id) = id else {
         return Err(Error::MissingId);
     };
-    // ... use id
+    lookup(id)
 }
 
-// Works with any pattern:
-fn parse_point(s: &str) -> Option<(i32, i32)> {
-    let [x, y] = s.split(',').collect::<Vec<_>>()[..] else {
+// Works with any refutable pattern
+fn parse_pair(s: &str) -> Option<(&str, &str)> {
+    let Some((k, v)) = s.split_once('=') else {
         return None;
     };
-    Some((x.parse().ok()?, y.parse().ok()?))
+    Some((k.trim(), v.trim()))
 }
+
+struct User;
+enum Error { MissingId }
+fn lookup(_: i32) -> Result<User, Error> { Ok(User) }
 ```
 
-**Rationale**: Reduces nesting and clearly separates the "happy path" from error handling.
+**Rationale**: `let ... else` keeps the happy path at the current indentation level. The `else` block must diverge (`return`, `break`, `continue`, `panic!`, `std::process::exit`, etc.) — the compiler checks this.
 
 ---
 
----
-
-## ID-39: Use Borrowed Types for Arguments
+## ID-39: Prefer Borrowed Types for Function Arguments
 
 **Strength**: MUST
 
-**Summary**: Prefer `&str` over `&String`, `&[T]` over `&Vec<T>`, and `&T` over `&Box<T>` for function parameters.
+**Summary**: Take `&str`, `&[T]`, and `&T` instead of `&String`, `&Vec<T>`, and `&Box<T>`. Deref coercion lets the former accept the latter for free; the reverse requires allocation.
 
 ```rust
-// Good - accepts both String and &str
-fn print_message(msg: &str) {
-    println!("{}", msg);
+// ❌ BAD: &String can only accept &String
+fn count_vowels_bad(word: &String) -> usize {
+    word.chars().filter(|c| "aeiou".contains(*c)).count()
+}
+// count_vowels_bad("literal");            // ERROR: &str does not coerce to &String
+
+// ✅ GOOD: &str accepts &String, &str, Box<str>, slice-of-split, everything
+fn count_vowels(word: &str) -> usize {
+    word.chars().filter(|c| "aeiou".contains(*c)).count()
 }
 
-// Usage flexibility
-let owned = String::from("hello");
-let borrowed = "world";
-print_message(&owned);
-print_message(borrowed);
+let s = String::from("cautious");
+count_vowels(&s);                        // &String → &str via Deref
+count_vowels("elephant");                // &'static str
+for word in s.split(' ') { count_vowels(word); }   // &str from split
 
-// Bad - only accepts &String
-fn print_message_bad(msg: &String) {
-    println!("{}", msg);
-}
+// Same rule for slices
+fn total(values: &[i32]) -> i32 { values.iter().sum() }
 
-// Good - accepts any slice
-fn sum(values: &[i32]) -> i32 {
-    values.iter().sum()
-}
-
-// Bad - only accepts Vec
-fn sum_bad(values: &Vec<i32>) -> i32 {
-    values.iter().sum()
-}
+total(&vec![1, 2, 3]);                   // &Vec<i32> → &[i32]
+total(&[1, 2, 3]);                       // &[i32; 3] → &[i32]
 ```
 
-**Rationale**: Using borrowed types allows callers to pass owned or borrowed data without additional conversions. This follows the Deref coercion rules and makes APIs more flexible and ergonomic.
+**Rationale**: `&String` is two levels of indirection (reference to a `String`, which itself holds a pointer). `&str` is one. Beyond layout, `&str` is strictly more general — any `&String` coerces to `&str`, but `&str` cannot coerce back without allocating. Clippy's `ptr_arg` lint catches `&String` / `&Vec<T>` automatically.
 
-**See also**: Deref coercion, API Guidelines on flexibility
+**Clippy**: `clippy::ptr_arg`
+
+**See also**: ID-08 (owned collections for fields), 04-ownership-borrowing.md
 
 ---
 
-## ID-40: Use Borrowed Types for Function Arguments
+## ID-41: Iterator Chains Over Manual Loops
 
 **Strength**: SHOULD
 
-**Summary**: Accept `&str` over `&String`, `&[T]` over `&Vec<T>`, `&T` over `&Box<T>`.
+**Summary**: Express transformations as iterator chains (`map`, `filter`, `fold`, `collect`) rather than imperative `for` loops with mutable accumulators.
 
 ```rust
-// ❌ AVOID: Overly specific parameter types
-fn process(data: &Vec<i32>) { /* ... */ }
-fn greet(name: &String) { /* ... */ }
+struct Person { name: String, age: u32 }
 
-// ✅ PREFER: Borrowed slices accept more input types
-fn process(data: &[i32]) { /* ... */ }
-fn greet(name: &str) { /* ... */ }
-
-// Now both work:
-greet("literal");                    // &str
-greet(&String::from("owned"));       // &String coerces to &str
-process(&[1, 2, 3]);                 // array
-process(&vec![1, 2, 3]);             // Vec coerces to &[T]
-```
-
-**Rationale**: `&str` and `&[T]` are strictly more flexible. They accept the owned types via deref coercion while also accepting literals and slices. Using `&String` forces callers to allocate unnecessarily.
-
-**Clippy**: clippy::ptr_arg
-
----
-
-## ID-41: Use Iterators and Combinators
-
-**Strength**: SHOULD
-
-**Summary**: Prefer iterator chains over manual loops for transformations.
-
-```rust
-// ❌ IMPERATIVE: Manual loop
-fn get_adult_names(people: &[Person]) -> Vec<String> {
+// ❌ IMPERATIVE: mutable state, multiple branches
+fn adult_names_bad(people: &[Person]) -> Vec<String> {
     let mut names = Vec::new();
-    for person in people {
-        if person.age >= 18 {
-            names.push(person.name.clone());
+    for p in people {
+        if p.age >= 18 {
+            names.push(p.name.clone());
         }
     }
     names
 }
 
-// ✅ FUNCTIONAL: Iterator chain
-fn get_adult_names(people: &[Person]) -> Vec<String> {
+// ✅ FUNCTIONAL: linear pipeline
+fn adult_names(people: &[Person]) -> Vec<String> {
     people.iter()
         .filter(|p| p.age >= 18)
         .map(|p| p.name.clone())
         .collect()
 }
 
-// ✅ ALSO GOOD: Early return with find
-fn find_admin(users: &[User]) -> Option<&User> {
+// Reach for a specialized adapter when one fits
+fn first_admin<'a>(users: &'a [User]) -> Option<&'a User> {
     users.iter().find(|u| u.is_admin)
 }
 
-// ✅ ALSO GOOD: Combining iterators
-fn merge_sorted(a: &[i32], b: &[i32]) -> Vec<i32> {
-    let mut result: Vec<_> = a.iter().chain(b).copied().collect();
-    result.sort();
-    result
+fn sum_positives(xs: &[i32]) -> i32 {
+    xs.iter().filter(|x| **x > 0).sum()
 }
+
+struct User { is_admin: bool }
 ```
 
-**Rationale**: Iterator chains are often more readable, enable lazy evaluation, and can be better optimized by the compiler.
+**Rationale**: Iterator chains are lazy (allocations only in the final `collect`), compose into the rest of the ecosystem, and the compiler inlines them to loops as tight as hand-written code. When a loop contains side effects across many branches, imperative form may still be clearer — pick the form that communicates intent.
+
+**See also**: 08-performance.md (zero-cost abstractions)
 
 ---
 
----
-
-## ID-42: Use Type Aliases for Complex Types
+## ID-42: Type Aliases for Unwieldy Types
 
 **Strength**: CONSIDER
 
-**Summary**: Create type aliases when types become unwieldy.
+**Summary**: Introduce a `type` alias when a compound type repeats, but remember aliases are transparent — they don't create a new type (use a newtype for that, see TD-03).
 
 ```rust
-// ❌ REPETITIVE: Same complex type everywhere
-fn process(
-    callback: Box<dyn Fn(&str) -> Result<Vec<u8>, Box<dyn std::error::Error + Send + Sync>> + Send + Sync>
+// ❌ REPETITIVE
+fn register(
+    cb: Box<dyn Fn(&str) -> Result<Vec<u8>, Box<dyn std::error::Error + Send + Sync>> + Send + Sync>,
 ) { /* ... */ }
 
-// ✅ CLEARER: Type alias
-type ProcessResult = Result<Vec<u8>, Box<dyn std::error::Error + Send + Sync>>;
+// ✅ CLEARER
+type BoxError = Box<dyn std::error::Error + Send + Sync>;
+type ProcessResult = Result<Vec<u8>, BoxError>;
 type ProcessCallback = Box<dyn Fn(&str) -> ProcessResult + Send + Sync>;
 
-fn process(callback: ProcessCallback) { /* ... */ }
+fn register(cb: ProcessCallback) { /* ... */ }
 
-// Also useful for domain concepts:
+// ⚠️ Aliases are transparent — they do NOT prevent mixing
 type UserId = u64;
-type Timestamp = i64;
+type OrderId = u64;
 
-fn get_user_activity(user: UserId, since: Timestamp) -> Vec<Activity> {
-    // ...
-}
+fn get_user(id: UserId) {}
+// let oid: OrderId = 1;
+// get_user(oid);    // ← compiles! UserId and OrderId are both u64
+
+// Use a newtype when type distinction matters — see TD-03
 ```
 
-**Rationale**: Reduces repetition, improves readability, creates vocabulary for your domain. Note: type aliases are transparent (unlike newtypes).
+**Rationale**: Type aliases give you domain vocabulary and shorten signatures, but they don't enforce anything. If you want to prevent mixing `UserId` and `OrderId`, reach for a newtype (TD-03).
+
+**See also**: TD-03 (newtypes), TD-16 (hide implementation)
 
 ---
 
+## ID-43: Handle Reserved-Word Collisions with Raw Identifiers
+
+**Strength**: MUST
+
+**Summary**: When you need an identifier that collides with a Rust keyword, use a raw identifier `r#keyword` or a trailing underscore `keyword_`. Never misspell.
+
+```rust
+// ✅ GOOD: raw identifier preserves the intended name
+let r#type = "keyword";
+fn r#match(input: &str) -> bool { !input.is_empty() }
+
+struct Config {
+    r#type: String,          // field named "type"
+    r#mod: bool,             // field named "mod"
+}
+
+// ✅ ALSO ACCEPTABLE: trailing underscore
+let type_ = "keyword";
+fn match_(input: &str) -> bool { !input.is_empty() }
+
+// ❌ BAD: misspelling harms searchability
+let typ = "keyword";         // don't
+let krate = "my-crate";      // don't — the real word is "crate"
+fn mtch(input: &str) -> bool { false } // don't
+```
+
+**Rationale**: Misspelled identifiers can't be found with a straightforward grep for the real word, and they signal "I worked around a compiler restriction" rather than "I'm naming this thing precisely." Raw identifiers are purpose-built for this; the trailing underscore is the conventional fallback.
+
 ---
 
-## Best Practices Summary
+## ID-44: Follow `rustfmt` — 4 Spaces, 100 Columns, Trailing Commas
 
-### Quick Reference Table
+**Strength**: MUST
 
-| Pattern | Strength | Key Insight |
-|---------|----------|-------------|
-| Avoid weasel words | MUST | Use specific names, not "Service", "Manager", "Factory" |
-| Panic = stop program | MUST | Never use panic for error handling |
-| Programming bugs panic | MUST | Contract violations should panic, not return errors |
-| Regular > associated fn | SHOULD | Keep associated functions for constructors/traits |
-| First doc sentence ~15 words | MUST | Enables scannable documentation |
-| Document magic values | MUST | Explain why, side effects, external deps |
-| Public types have Debug | MUST | Use custom impl for sensitive data |
+**Summary**: Use `rustfmt` defaults: 4 spaces (never tabs), 100-column line width, block indent, trailing commas on multi-line comma-separated lists, at most one blank line between items.
+
+```rust
+// ✅ GOOD: block indent, trailing comma on multi-line
+fn register(
+    name: &str,
+    handler: Box<dyn Fn(&str) + Send>,
+    timeout: std::time::Duration,
+) -> Result<(), RegisterError> {
+    // 4-space indent, 100-col max
+    Ok(())
+}
+
+let array = [
+    first_element,
+    second_element,
+    third_element,
+];
+
+// ❌ BAD: visual indent aligns to the delimiter
+fn register(name: &str,
+            handler: Box<dyn Fn(&str) + Send>,
+            timeout: std::time::Duration)
+           -> Result<(), RegisterError> {
+    Ok(())
+}
+
+struct RegisterError;
+const first_element: i32 = 1;
+const second_element: i32 = 2;
+const third_element: i32 = 3;
+```
+
+```text
+// Rule of thumb for the breaks
+// - one-line fits in 100 cols → keep on one line, no trailing comma
+// - doesn't fit → break after (, each element block-indented 4 spaces,
+//   closing delimiter on its own line at the parent's indent,
+//   trailing comma on the last element
+```
+
+**Rationale**: Block indent produces smaller diffs — renaming `register` doesn't reindent every argument. Trailing commas on multi-line lists mean adding or removing items touches exactly one line. These are `rustfmt`'s defaults; the entire ecosystem has settled on them.
+
+**See also**: 10-tooling.md (`rustfmt` configuration)
 
 ---
+
+## ID-45: Sort and Group Imports
+
+**Strength**: SHOULD
+
+**Summary**: Split imports into groups (stdlib, external crates, current crate), version-sort within each group, and let `rustfmt` handle the layout. Prefer nested `use` over many parallel `use` lines.
+
+```rust
+// ✅ GOOD: grouped, version-sorted, nested where it shortens
+use std::collections::{BTreeMap, HashMap};
+use std::io::{self, Read, Write};
+use std::path::PathBuf;
+
+use serde::{Deserialize, Serialize};
+use tokio::sync::mpsc;
+
+use crate::error::Error;
+use crate::model::{Order, OrderId, User, UserId};
+
+// ❌ BAD: ungrouped, unsorted, no nesting
+use crate::model::User;
+use std::io::Read;
+use serde::Serialize;
+use std::collections::HashMap;
+use crate::model::Order;
+use std::io::Write;
+use crate::error::Error;
+use serde::Deserialize;
+```
+
+**Rationale**: Grouped imports make dependencies at a glance: stdlib usage, third-party crates, and the current crate's own modules. Nesting (`io::{self, Read, Write}`) compresses related imports from the same path into one line. `rustfmt` with `group_imports = "StdExternalCrate"` enforces this automatically.
+
+**See also**: ID-44, 10-tooling.md
+
+---
+
+## ID-46: Attribute Placement and Derive Combining
+
+**Strength**: SHOULD
+
+**Summary**: Put each attribute on its own line above the item it decorates, with doc comments before attributes. Combine multiple `derive` attributes into a single `#[derive(...)]`.
+
+```rust
+// ✅ GOOD
+/// A user record.
+///
+/// Values are validated on construction.
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+#[repr(C)]
+pub struct User {
+    pub id: u64,
+    pub name: String,
+}
+
+// Inner attributes go at the top of the item they apply to
+pub mod net {
+    #![allow(dead_code)]
+    // ...
+}
+
+// ❌ BAD: multiple derives instead of one
+#[derive(Debug)]
+#[derive(Clone)]
+#[derive(PartialEq)]
+pub struct User2 { pub id: u64 }
+
+// ❌ BAD: attribute and item on one line
+#[derive(Debug)] pub struct User3 { pub id: u64 }
+```
+
+**Rationale**: Each attribute on its own line makes diffs clean — adding or removing one trait from a derive is a one-line change. Combining derives into one `#[derive(...)]` is the standard style; tooling (including `rustfmt`) assumes it.
+
+**See also**: ID-44, TD-14 (common derives)
+
+---
+
+## ID-47: Prefer `#[expect(...)]` Over `#[allow(...)]`
+
+**Strength**: SHOULD
+
+**Summary**: When overriding a lint in a specific location, use `#[expect(lint, reason = "...")]`. It produces a warning if the lint *doesn't* fire, so stale suppressions surface instead of accumulating.
+
+```rust
+// ❌ BAD: silent forever, even after the underlying issue is fixed
+#[allow(clippy::unused_async)]
+pub async fn handler(req: Request) -> Response {
+    process(req)
+}
+
+// ✅ GOOD: warns if the lint stops firing
+#[expect(
+    clippy::unused_async,
+    reason = "handler trait requires async, I/O will be added soon",
+)]
+pub async fn handler2(req: Request) -> Response {
+    process(req)
+}
+
+// ✅ `#[allow]` still has its place: generated code and macro expansions
+// where the lint cannot be reliably predicted per-call.
+#[allow(dead_code)]
+mod generated { /* macro output */ }
+
+struct Request;
+struct Response;
+fn process(_: Request) -> Response { Response }
+```
+
+**Rationale**: `#[allow]` is write-only — once added, it's invisible forever. `#[expect]` turns that around: the compiler warns you when the suppression is no longer needed, so lint-debt doesn't accumulate.
+
+**See also**: M-LINT-OVERRIDE-EXPECT, 10-tooling.md
+
+---
+
+## ID-48: Prefer Expression-Oriented Style
+
+**Strength**: SHOULD
+
+**Summary**: `if`, `match`, `loop`, and blocks are expressions in Rust — use them to initialize bindings directly instead of declaring uninitialized `let` and assigning in branches.
+
+```rust
+// ❌ IMPERATIVE: uninit let + branch assignment
+let x;
+if condition() {
+    x = 1;
+} else {
+    x = 0;
+}
+
+// ✅ EXPRESSION: if as a value
+let x = if condition() { 1 } else { 0 };
+
+// match as an initializer
+let kind = match parse_kind(&input) {
+    Some(k) => k,
+    None => Kind::Default,
+};
+
+// loop returns its `break` value
+let first_match = loop {
+    if let Some(c) = iter.next() {
+        if c.is_alphabetic() { break Some(c); }
+    } else {
+        break None;
+    }
+};
+
+// Block as an initializer — the last expression is the value
+let scaled = {
+    let base = measure();
+    base * 2 + 1
+};
+
+fn condition() -> bool { true }
+enum Kind { Default }
+fn parse_kind(_: &str) -> Option<Kind> { None }
+fn measure() -> i32 { 10 }
+let input = String::new();
+let mut iter = "abc".chars();
+```
+
+**Rationale**: Expression-oriented code eliminates a class of bugs (uninit reads, missing else branches) and makes control flow visible in a single scan. Reach for imperative form only when the body has substantial statements on both branches.
+
+---
+
+
+## Summary Table
+
+| Pattern | Strength | Key Principle |
+|---------|----------|---------------|
+| ID-02 `mem::take` / `mem::replace` | SHOULD | Move out of `&mut` without cloning |
+| ID-04 `as_` / `to_` / `into_` naming | MUST | Prefix signals cost and ownership |
+| ID-05 Document magic values | MUST | Explain why, not just what |
+| ID-06 Avoid weasel words | MUST | `Bookings`, not `BookingService` |
+| ID-07 Casing follows RFC 430 | MUST | `UpperCamelCase`, `snake_case`, `SCREAMING_SNAKE_CASE` |
+| ID-08 Owned collections in fields | CONSIDER | Trade a heap slot for no lifetimes |
+| ID-10 `new` and `Default` | SHOULD | Standard construction entry points |
+| ID-13 Bugs panic, errors return | MUST | Contract violation vs. recoverable failure |
+| ID-15 Feature names without `use-` / `with-` | MUST | Name features after what they enable |
+| ID-18 RAII finalization | MUST | Cleanup in `Drop`, not on every exit path |
+| ID-20 Field-named getters | MUST | Drop `get_`, use `_mut` suffix |
+| ID-22 Iterate over `Option` | CONSIDER | Zero-or-one element iterator |
+| ID-23 `iter` / `iter_mut` / `into_iter` | MUST | Standard collection iterator triplet |
+| ID-24 Iterator type names | SHOULD | `Iter`, `IterMut`, `IntoIter` |
+| ID-25 Consistent word order | SHOULD | `ParseBoolError` / `ParseIntError` |
+| ID-26 Enums over `Box<dyn>` for closed sets | CONSIDER | Static dispatch, stack allocation |
+| ID-27 `Option` / `Result` combinators | SHOULD | `?`, `map`, `and_then` over `match` |
+| ID-28 Panic means stop | MUST | Don't catch for control flow |
+| ID-29 Closure capture via block rebinding | SHOULD | Keep prep local to the closure |
+| ID-30 `Option` over sentinels | MUST | Absence belongs in the type |
+| ID-31 Free fn over associated fn | SHOULD | Associated fn = belongs to the type |
+| ID-33 Return consumed args on error | CONSIDER | Enables retry without pre-cloning |
+| ID-34 `format!` for string building | SHOULD | Readable, handles `Display`/`Debug` |
+| ID-35 Temporary mutability | SHOULD | Scope mutation to setup only |
+| ID-38 `let ... else` | SHOULD | Destructure + early return, flat happy path |
+| ID-39 Borrowed types for arguments | MUST | `&str`, `&[T]`, `&T` |
+| ID-41 Iterator chains over loops | SHOULD | Functional pipeline, lazy, inlined |
+| ID-42 Type aliases for complex types | CONSIDER | Aliases are transparent, not newtypes |
+| ID-43 Raw identifiers for keyword collisions | MUST | `r#type`, not `typ` |
+| ID-44 `rustfmt` defaults | MUST | 4 spaces, 100 cols, trailing commas |
+| ID-45 Sort and group imports | SHOULD | stdlib / external / crate, version-sorted |
+| ID-46 Attribute placement and derive combining | SHOULD | One attribute per line, one `derive` |
+| ID-47 `#[expect]` over `#[allow]` | SHOULD | Stale suppressions surface automatically |
+| ID-48 Expression-oriented style | SHOULD | `if`, `match`, `loop`, block return values |
+
 
 ## Related Guidelines
 
-- **Error Handling**: See `03-error-handling.md` for Result/Option patterns
-- **Type Design**: See `05-type-design.md` for newtypes and strong typing
-- **Documentation**: See `13-documentation.md` for comprehensive doc patterns
-- **Anti-patterns**: See `11-anti-patterns.md` for common mistakes
+- **API Design**: See `02-api-design.md` for argument conventions, return types, and public-surface shaping.
+- **Error Handling**: See `03-error-handling.md` for how `Result`, `?`, and error-type design expand on ID-13, ID-27, ID-28, ID-33.
+- **Type Design**: See `05-type-design.md` for newtypes, enums-as-state-machines, `#[non_exhaustive]`, and the `Debug`/`Display`/`Default` conventions that back ID-10.
+- **Traits**: See `06-traits.md` for object safety and the trait-design story behind ID-26.
+- **Anti-patterns**: See `11-anti-patterns.md` for `clone()`-to-satisfy-borrow-checker, deref polymorphism, and other mistakes related to ID-02 and ID-39.
 
----
 
 ## External References
 
+- [The Rust Book](https://doc.rust-lang.org/book/)
 - [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/)
-- [Rust Style Guide](https://doc.rust-lang.org/nightly/style-guide/)
-- Pragmatic Rust Guidelines: M-CONCISE-NAMES, M-PANIC-IS-STOP, M-PANIC-ON-BUG, M-REGULAR-FN, M-DOCUMENTED-MAGIC, M-PUBLIC-DEBUG
+- [The Rust Style Guide](https://doc.rust-lang.org/nightly/style-guide/)
+- [Rust Design Patterns](https://rust-unofficial.github.io/patterns/)
+- [RFC 430 — Naming Conventions](https://github.com/rust-lang/rfcs/blob/master/text/0430-finalizing-naming-conventions.md)
+- [Clippy Lint Index](https://rust-lang.github.io/rust-clippy/master/)
+- Pragmatic Rust Guidelines: M-CONCISE-NAMES, M-DOCUMENTED-MAGIC, M-PANIC-IS-STOP, M-PANIC-ON-BUG, M-REGULAR-FN, M-LINT-OVERRIDE-EXPECT, M-STATIC-VERIFICATION, M-UPSTREAM-GUIDELINES
+- Rust API Guidelines checklist items: C-CASE, C-CONV, C-GETTER, C-ITER, C-CTOR, C-COMMON-TRAITS, C-FEATURE
