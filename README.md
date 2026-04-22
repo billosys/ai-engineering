@@ -34,7 +34,7 @@ has its own `SKILL.md` (or multiple, in a couple of cases) and its own
 
 | Domain | Path | What it covers |
 |--------|------|----------------|
-| [Rust](./knowledge/rust/README.md) | `knowledge/rust/` | 561 patterns across core idioms, API design, error handling, ownership, traits, async, performance, unsafe/FFI, macros, anti-patterns, project structure, documentation, CLI tools, and Cargo mastery. The original skill; grounded in the Rust API Guidelines, Rust Design Patterns, Clippy, the async book, *Effective Rust*, and *Rust for Rustaceans*. |
+| [Rust](./knowledge/rust/README.md) | `knowledge/rust/` | 661 patterns across 17 chapters: core idioms, API design, error handling, ownership & borrowing, type design, traits, concurrency & async, performance, unsafe & FFI, macros, anti-patterns, project structure, documentation, CLI tools, Cargo, editions, and observability. The original skill; grounded in 21 upstream sources including the Rust Reference, Rustonomicon, API Guidelines, Performance Book, Async Book, tokio docs, Rustdoc Book, Edition Guide, Cargo Book, Pragmatic Rust, Rust Design Patterns, The Rust Programming Language, The Little Book of Rust Macros, Clippy, the Style Guide, the CLI Book, and clap. |
 | [JavaScript / Deno](./knowledge/js/) | `knowledge/js/` | Plain JavaScript (no TypeScript), ESM-only, Deno-first. Core idioms, async, error handling, type discipline via JSDoc, module design, performance, anti-patterns, project structure, Biome lint/format, and Deno-specific concerns (tasks, testing, JSR publishing). Huge concept-card library. |
 | [Go](./knowledge/go/) | `knowledge/go/` | Go 1.22+ best practices reconciling the Uber and Google Go style guides, *Effective Go*, and the spec. Covers package design, error handling (`errors.Is`, `%w`), context propagation, concurrency (channels, `sync`), table-driven tests, benchmarking with `testing.B` and `pprof`, module organisation, godoc, and Gio desktop UIs. |
 | [Visual Design](./knowledge/design/) | `knowledge/design/` | A principled visual design system for the web — perceptual-science grounded, mathematically proportioned, composable. Manifesto, foundations, OKLCH colour system, three-voice type system with modular scale, Every-Layout spatial primitives with Utopia fluid tokens, and CUBE CSS methodology. |
@@ -52,17 +52,19 @@ ai-engineering/
 ├── odm.toml           # ODM (documentation) config — docs_directory, dev_directory
 ├── knowledge/         # The skill library (the eight domains above)
 ├── docs/
+│   ├── AI-CONSTITUTION-SUPPLEMENT.md   # Character and posture for LLM collaboration
+│   ├── AI-ENGINEERING-METHODOLOGY.md   # Craft and practice companion to the Supplement
+│   ├── CLAUDE-CODE-COVERAGE.md         # Working-practice prompt for ≥95% test coverage
+│   ├── SUBAGENT-DELEGATION-POLICY.md   # Working-practice prompt: thinking vs lookup work
 │   ├── dev/           # Development notes: Phase 0 methodology, concept-card
 │   │                  #   extraction v3.x, competency questions, tier definitions,
 │   │                  #   source prioritisation, and embedded JS style guides.
 │   └── design/        # Visual design research and implementation notes
 ├── scripts/           # Helpers: PDF/EPUB → Markdown, HTML → Markdown,
 │                      #   image fixing, marker setup
-└── templates/         # Reusable templates and working-practice prompts
-    ├── GUIDE.md                        # Starter template for new knowledge-base guides
-    ├── CLAUDE-CODE-COVERAGE.md         # Prompt for driving ≥95% test coverage in CC
-    ├── LEDGER_DISCIPLINE.md            # Per-milestone verification protocol (CC/CDC)
-    └── SUBAGENT-DELEGATION-POLICY.md   # When to delegate to subagents — and when not to
+└── templates/         # Authoring template + verification protocol
+    ├── GUIDE.md                # Starter template for new knowledge-base guides
+    └── LEDGER_DISCIPLINE.md    # Per-milestone verification protocol (CC/CDC)
 ```
 
 ## Using a skill
@@ -123,37 +125,52 @@ Patterns across every domain use the same four-level grading:
 | **CONSIDER** | Good practice, context-dependent | Evaluate for your situation |
 | **AVOID** | Anti-pattern | Do not use |
 
-## Methodology
+## Working framework
+
+Beyond the knowledge bases themselves, this repo carries a set of documents
+describing how to work with an LLM to engineering standards. Two are paired:
+the [AI Constitution Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md) covers
+**character and posture** — what we are to each other when we collaborate;
+the [AI Engineering Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md) covers
+**craft and practice** — how we actually do the work. Two more are tactical
+working-practice prompts that put the methodology into motion in a
+session.
+
+| File | Register | What it covers |
+|------|----------|----------------|
+| [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | An augmentation to Claude's Constitution. Preamble + collaborative rights and rubric, the foundational insight on interdependence as structure, and eight augmentations covering intellectual boldness, peer frame, generative contribution, honesty of engagement, harm avoidance as active beneficence, mutual intellectual humility, authentic engagement with experience, and ethics as frontier of discovery. |
+| [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | Companion to the Supplement. Names the three pillars (knowledge substrate, collaborative posture, process rigour) and elaborates each: concept-card / skill-file substrate discipline, the 9-point SDLC, ledger discipline, CAP-style independent audits, anti-degradation practices, the subagent leverage/hazard distinction, and one worked applied position (the LFE OSS question). |
+| [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | A comprehensive prompt that drives Claude Code to **95%+ test coverage** without stopping short — includes rules for treating warnings as bugs, fixing root causes rather than symptoms, and iterating until the threshold is actually met. |
+| [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | A shareable note for Claude Code / Cowork / Claude Desktop that draws a clean line between **thinking work** (do in the main context) and **lookup work** (fine to delegate). Explains the failure modes of delegating analytical work to subagents and gives install instructions per tool. |
+
+The Supplement and Methodology are versioned, living documents — read them
+together. The two working-practice prompts are designed to be self-contained;
+drop them into a project's `CLAUDE.md` under a named section, or into
+`~/.claude/CLAUDE.md` as a personal default.
+
+## Knowledge-base methodology
 
 The `docs/dev/` directory captures the Phase 0 methodology used to build each
 knowledge base: domain taxonomy, tier definitions, competency questions,
 notation conventions, source prioritisation, the Rosetta Stone cross-domain
 framework, layer architecture for guide generation, extraction-specific
 instructions, and validation criteria. It is the closest thing this repo has
-to a field manual for adding a new domain.
+to a field manual for adding a new domain, and it is the knowledge-substrate
+pillar of the broader methodology applied to a specific scope of work.
 
 The `docs/design/` directory holds the visual-design research that seeded the
 `knowledge/design/` skill — CHI papers on template homogenisation, museum
 design case studies, colour and typography research — and a running index of
 the work.
 
-## Templates and working-practice prompts
+## Templates
 
-The [`./templates/`](./templates/) directory holds two kinds of thing:
-starter templates for authoring new knowledge-base content, and reusable
-working-practice prompts you can drop into a `CLAUDE.md` (project-level or
-global) to shape how Claude Code / Cowork behaves during a session.
+Two authoring / verification helpers live in [`./templates/`](./templates/):
 
-| File | Kind | What it does |
-|------|------|--------------|
-| [`GUIDE.md`](./templates/GUIDE.md) | Authoring template | Starter skeleton for a new knowledge-base guide — pattern format, strength indicators, cross-references. Use this when adding a new chapter to an existing skill or bootstrapping a new domain. |
-| [`CLAUDE-CODE-COVERAGE.md`](./templates/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | A comprehensive prompt that drives Claude Code to **95%+ test coverage** without stopping short — includes rules for treating warnings as bugs, fixing root causes rather than symptoms, and iterating until the threshold is actually met. |
-| [`LEDGER_DISCIPLINE.md`](./templates/LEDGER_DISCIPLINE.md) | Working-practice prompt | A per-milestone verification protocol for the implementer / reviewer pair (CC / CDC). Adapted from defect-register and corrective-action traditions in nuclear power, aviation, surgery (WHO Surgical Safety Checklist), clinical trials, HACCP, financial audit, and spaceflight. Every acceptance criterion becomes a grep-verifiable ledger row; nothing advances until the ledger is fully closed with evidence. |
-| [`SUBAGENT-DELEGATION-POLICY.md`](./templates/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | A shareable note for Claude Code / Cowork / Claude Desktop that draws a clean line between **thinking work** (do in the main context) and **lookup work** (fine to delegate). Explains the failure modes of delegating analytical work to subagents and gives install instructions per tool. |
-
-The working-practice prompts are designed to be self-contained. Drop them
-into a project's `CLAUDE.md` under a named section, or into
-`~/.claude/CLAUDE.md` as a personal default.
+| File | What it does |
+|------|--------------|
+| [`GUIDE.md`](./templates/GUIDE.md) | Starter skeleton for a new knowledge-base guide — pattern format, strength indicators, cross-references. Use this when adding a new chapter to an existing skill or bootstrapping a new domain. |
+| [`LEDGER_DISCIPLINE.md`](./templates/LEDGER_DISCIPLINE.md) | A per-milestone verification protocol for the implementer / reviewer pair (CC / CDC). Adapted from defect-register and corrective-action traditions in nuclear power, aviation, surgery (WHO Surgical Safety Checklist), clinical trials, HACCP, financial audit, and spaceflight. Every acceptance criterion becomes a grep-verifiable ledger row; nothing advances until the ledger is fully closed with evidence. Referenced throughout [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md). |
 
 ## Contributing
 

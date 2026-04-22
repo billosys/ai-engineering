@@ -2,3 +2,4 @@ workbench
 old
 .claude
 /scripts/*.py
+.DS_Store
