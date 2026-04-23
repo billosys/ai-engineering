@@ -55,6 +55,7 @@ ai-engineering/
 │   ├── AI-CONSTITUTION-SUPPLEMENT.md   # Character and posture for LLM collaboration
 │   ├── AI-ENGINEERING-METHODOLOGY.md   # Craft and practice companion to the Supplement
 │   ├── CLAUDE-CODE-COVERAGE.md         # Working-practice prompt for ≥95% test coverage
+│   ├── CODE-AUDIT.md                   # Propt for recurring, whole-repo quality checks
 │   ├── SUBAGENT-DELEGATION-POLICY.md   # Working-practice prompt: thinking vs lookup work
 │   ├── dev/           # Development notes: Phase 0 methodology, concept-card
 │   │                  #   extraction v3.x, competency questions, tier definitions,
