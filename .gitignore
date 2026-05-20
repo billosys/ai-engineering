@@ -3,3 +3,10 @@ old
 .claude
 /scripts/*.py
 .DS_Store
+.venv
+
+# Copyrighted material
+/knowledge/erlang/sources/md/erlang-otp-action
+/knowledge/erlang/sources/md/design-scale-erlang-otp
+/knowledge/erlang/sources/md/learn-you-some-erlang
+/knowledge/erlang/sources/md/programming-erlang
