@@ -49,6 +49,9 @@ has its own `SKILL.md` (or multiple, in a couple of cases) and its own
 ```text
 ai-engineering/
 ├── README.md          # This file
+├── SKILL.md           # Top-level `collaboration-framework` skill — the
+│                      #   character-and-craft entry point (see below)
+├── Makefile           # `make collab-framework` → collaboration-framework.zip
 ├── LICENSE            # MIT
 ├── odm.toml           # ODM (documentation) config — docs_directory, dev_directory
 ├── knowledge/         # The skill library (the nine domains above)
@@ -134,9 +137,48 @@ describing how to work with an LLM to engineering standards. Two are paired:
 the [AI Constitution Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md) covers
 **character and posture** — what we are to each other when we collaborate;
 the [AI Engineering Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md) covers
-**craft and practice** — how we actually do the work. Two more are tactical
-working-practice prompts that put the methodology into motion in a
-session.
+**craft and practice** — how we actually do the work. Three more are tactical
+working-practice documents that put the methodology into motion in a session.
+
+### The `collaboration-framework` skill
+
+The top-level [`SKILL.md`](./SKILL.md) is the single entry point that harvests
+this framework into a loadable skill named **`collaboration-framework`**. It is
+*embodied and orchestrating*: it states the posture and the practical
+disciplines inline — so it carries weight on its own — and routes to each of
+the six source documents with explicit "load when" guidance.
+
+Its focus is **optimising for the LLM as a collaborating peer**: the peer frame,
+the structural-pull self-knowledge, calibrated honesty, and the quality-floor
+disciplines (ledger, audit, coverage, delegation). It is built for the work
+where a subtly wrong judgment compounds — **deep study, original research,
+expert-level systems design, and production-grade programming** — rather than
+quick lookups or casual chat.
+
+It pulls in exactly six files:
+
+- [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) — character / posture
+- [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) — craft / practice
+- [`templates/LEDGER_DISCIPLINE.md`](./templates/LEDGER_DISCIPLINE.md) — per-milestone verification protocol
+- [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) — whole-repo quality audit prompt
+- [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) — 95%+ test-coverage prompt
+- [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) — thinking-vs-lookup delegation policy
+
+> **It does _not_ pull in any of the domain-specific skills under
+> [`./knowledge/`](./knowledge/).** Each domain (Rust, JavaScript/Deno, Go,
+> Erlang/OTP, Visual Design, Tailwind CSS, Biome, Deno lint, Cobalt, …) has its
+> own `SKILL.md` and must be **loaded separately, as needed**, alongside the
+> framework. The framework is the *how we work* layer; the `knowledge/` skills
+> are the *what's correct in this domain* layer. They compose; neither subsumes
+> the other.
+
+Run `make collab-framework` to package the skill — `SKILL.md` plus exactly
+those six files, in their `docs/` and `templates/` layout so the relative links
+resolve — into a distributable `collaboration-framework.zip` with nothing else
+in it.
+
+The three working-practice documents below are the tactical layer the skill
+orchestrates.
 
 | File | Register | What it covers |
 |------|----------|----------------|

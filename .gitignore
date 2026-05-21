@@ -5,6 +5,10 @@ old
 .DS_Store
 .venv
 
+# Build artifacts from `make collab-framework`
+/build
+/collaboration-framework.zip
+
 # Copyrighted material
 /knowledge/erlang/sources/md/erlang-otp-action
 /knowledge/erlang/sources/md/design-scale-erlang-otp
