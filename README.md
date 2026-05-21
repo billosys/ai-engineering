@@ -98,6 +98,31 @@ system prompt. Sensible starting points:
    prevent mistakes
 3. Topic-specific guides as the task demands
 
+### Packaging a skill as a zip
+
+The [`Makefile`](./Makefile) bundles any skill into a self-contained,
+distributable zip. Each zip is named after the `name:` declared in the skill's
+frontmatter, wraps its contents in a `<name>/` directory, and contains exactly
+the `SKILL.md` plus its sibling `guides/` dir — nothing else (no
+`concept-cards/`, `sources/`, or `extraction-metadata/`).
+
+```sh
+make go            # -> go-guidelines.zip      (knowledge/go/SKILL.md + guides/)
+make rust          # -> rust-guidelines.zip
+make erlang        # -> erlang-guidelines.zip
+make design        # -> visual-design-system.zip
+make biome         # -> biome-js-linter.zip AND biome-linter.zip (two skills)
+make skills        # -> every per-domain zip
+make all           # -> skills + collaboration-framework.zip
+make help          # -> list every target
+make clean         # -> remove build/ and all generated zips
+```
+
+The full target list — `rust`, `go`, `js`, `erlang`, `cobalt`, `design`,
+`tailwindcss`, `deno`, `biome`, plus `collab-framework` — is shown by
+`make help`. (`biome` ships two distinct skills, so its target builds two zips;
+`lfe` has no `SKILL.md` yet, so it has no target.)
+
 ## Skill anatomy
 
 Every knowledge base follows the same basic shape, so once you've learned one,

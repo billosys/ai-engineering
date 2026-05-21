@@ -5,9 +5,9 @@ old
 .DS_Store
 .venv
 
-# Build artifacts from `make collab-framework`
+# Build artifacts from the packaging targets (make collab-framework, make skills, …)
 /build
-/collaboration-framework.zip
+/*.zip
 
 # Copyrighted material
 /knowledge/erlang/sources/md/erlang-otp-action
