@@ -1,7 +1,7 @@
 ---
 concept: Binary Matching Efficiency
 slug: binary-matching-efficiency
-category: data-structures
+category: performance
 subcategory: binary-operations
 tier: foundational
 source: "Erlang Efficiency Guide"

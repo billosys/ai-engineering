@@ -1,7 +1,7 @@
 ---
 concept: Message Sending Cost
 slug: message-sending-cost
-category: process-management
+category: performance
 subcategory: null
 tier: foundational
 source: "Erlang Efficiency Guide"

@@ -1,7 +1,7 @@
 ---
 concept: Match Context
 slug: match-context
-category: data-structures
+category: performance
 subcategory: binary-types
 tier: intermediate
 source: "Erlang Efficiency Guide"

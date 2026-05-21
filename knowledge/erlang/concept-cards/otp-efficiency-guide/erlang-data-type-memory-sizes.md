@@ -1,7 +1,7 @@
 ---
 concept: Erlang Data Type Memory Sizes
 slug: erlang-data-type-memory-sizes
-category: memory-management
+category: performance
 subcategory: data-representation
 tier: foundational
 source: "Erlang Efficiency Guide"

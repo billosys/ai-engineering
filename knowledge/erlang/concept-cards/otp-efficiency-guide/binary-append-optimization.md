@@ -1,7 +1,7 @@
 ---
 concept: Binary Append Optimization
 slug: binary-append-optimization
-category: memory-management
+category: performance
 subcategory: binary-memory-layout
 tier: advanced
 source: "Erlang Efficiency Guide"

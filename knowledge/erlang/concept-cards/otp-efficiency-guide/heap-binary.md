@@ -1,7 +1,7 @@
 ---
 concept: Heap Binary
 slug: heap-binary
-category: data-structures
+category: performance
 subcategory: binary-types
 tier: foundational
 source: "Erlang Efficiency Guide"

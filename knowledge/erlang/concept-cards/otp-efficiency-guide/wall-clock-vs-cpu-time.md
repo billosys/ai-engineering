@@ -4,7 +4,7 @@ concept: Wall-Clock vs CPU Time Measurement
 slug: wall-clock-vs-cpu-time
 
 # === CLASSIFICATION ===
-category: performance-methodology
+category: performance
 subcategory: null
 tier: intermediate
 

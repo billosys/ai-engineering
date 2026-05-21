@@ -4,7 +4,7 @@ concept: Memory Profiling
 slug: memory-profiling
 
 # === CLASSIFICATION ===
-category: performance-methodology
+category: performance
 subcategory: null
 tier: intermediate
 

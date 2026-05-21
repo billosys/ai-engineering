@@ -1,7 +1,7 @@
 ---
 concept: Erlang Process Creation
 slug: erlang-process-creation
-category: process-management
+category: performance
 subcategory: null
 tier: foundational
 source: "Erlang Efficiency Guide"

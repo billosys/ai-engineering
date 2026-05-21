@@ -1,7 +1,7 @@
 ---
 concept: Pattern Matching Optimization
 slug: pattern-matching-optimization
-category: compiler-optimization
+category: performance
 subcategory: clause-ordering
 tier: intermediate
 source: "Erlang Efficiency Guide"

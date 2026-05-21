@@ -1,7 +1,7 @@
 ---
 concept: ETS Key Usage and Indexing
 slug: ets-key-usage-and-indexing
-category: data-structures
+category: performance
 subcategory: ets
 tier: intermediate
 source: "Erlang Efficiency Guide"

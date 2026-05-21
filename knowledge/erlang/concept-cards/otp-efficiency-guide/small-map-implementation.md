@@ -1,7 +1,7 @@
 ---
 concept: Small Map Implementation
 slug: small-map-implementation
-category: data-structures
+category: performance
 subcategory: maps
 tier: intermediate
 source: "Erlang Efficiency Guide"

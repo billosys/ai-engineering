@@ -1,7 +1,7 @@
 ---
 concept: Refc Binary
 slug: refc-binary
-category: data-structures
+category: performance
 subcategory: binary-types
 tier: foundational
 source: "Erlang Efficiency Guide"

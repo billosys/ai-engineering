@@ -1,7 +1,7 @@
 ---
 concept: Maps as Dictionaries
 slug: maps-as-dictionaries
-category: data-structures
+category: data-types
 subcategory: maps
 tier: intermediate
 source: "Erlang Efficiency Guide"

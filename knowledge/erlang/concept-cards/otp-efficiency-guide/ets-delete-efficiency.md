@@ -1,7 +1,7 @@
 ---
 concept: ETS Delete Efficiency
 slug: ets-delete-efficiency
-category: data-structures
+category: performance
 subcategory: ets
 tier: foundational
 source: "Erlang Efficiency Guide"

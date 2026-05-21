@@ -1,7 +1,7 @@
 ---
 concept: Atom Creation Safety
 slug: atom-creation-safety
-category: common-pitfalls
+category: anti-patterns
 subcategory: resource-exhaustion
 tier: intermediate
 source: "Erlang Efficiency Guide"

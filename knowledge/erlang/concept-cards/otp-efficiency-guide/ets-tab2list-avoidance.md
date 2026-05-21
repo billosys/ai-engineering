@@ -1,7 +1,7 @@
 ---
 concept: ETS tab2list Avoidance
 slug: ets-tab2list-avoidance
-category: data-structures
+category: performance
 subcategory: ets
 tier: intermediate
 source: "Erlang Efficiency Guide"

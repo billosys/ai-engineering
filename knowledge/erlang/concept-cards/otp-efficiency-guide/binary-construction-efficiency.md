@@ -1,7 +1,7 @@
 ---
 concept: Binary Construction Efficiency
 slug: binary-construction-efficiency
-category: data-structures
+category: performance
 subcategory: binary-operations
 tier: foundational
 source: "Erlang Efficiency Guide"

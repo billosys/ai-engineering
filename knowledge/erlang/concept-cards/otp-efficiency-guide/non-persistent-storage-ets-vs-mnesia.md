@@ -1,7 +1,7 @@
 ---
 concept: Non-Persistent Storage ETS vs Mnesia
 slug: non-persistent-storage-ets-vs-mnesia
-category: data-structures
+category: performance
 subcategory: ets
 tier: foundational
 source: "Erlang Efficiency Guide"

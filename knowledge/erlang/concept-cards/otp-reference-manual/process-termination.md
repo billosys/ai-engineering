@@ -33,7 +33,7 @@ related:
   - exit-signals
   - links
   - monitors
-  - error-handling-processes
+  - error-handling-between-processes
 contrasts_with: []
 
 # === COMPETENCY QUESTIONS ===

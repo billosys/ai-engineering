@@ -1,7 +1,7 @@
 ---
 concept: bin_opt_info Compiler Option
 slug: bin-opt-info
-category: compiler-optimization
+category: performance
 subcategory: binary-optimization
 tier: advanced
 source: "Erlang Efficiency Guide"

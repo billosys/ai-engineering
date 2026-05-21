@@ -31,7 +31,7 @@ prerequisites: []
 extends: []
 related:
   - bit-syntax-segments
-  - binary-comprehensions
+  - binary-comprehension
   - guard-expressions
 contrasts_with: []
 

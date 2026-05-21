@@ -1,7 +1,7 @@
 ---
 concept: Mnesia Transactions vs Dirty Operations
 slug: mnesia-transactions-vs-dirty
-category: data-structures
+category: performance
 subcategory: mnesia
 tier: advanced
 source: "Erlang Efficiency Guide"

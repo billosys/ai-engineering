@@ -1,7 +1,7 @@
 ---
 concept: Function Call Performance
 slug: function-call-performance
-category: compiler-optimization
+category: performance
 subcategory: call-dispatch
 tier: intermediate
 source: "Erlang Efficiency Guide"

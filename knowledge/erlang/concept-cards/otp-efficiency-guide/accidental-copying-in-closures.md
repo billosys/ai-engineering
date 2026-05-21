@@ -1,7 +1,7 @@
 ---
 concept: Accidental Copying in Closures
 slug: accidental-copying-in-closures
-category: common-pitfalls
+category: performance
 subcategory: process-spawning
 tier: intermediate
 source: "Erlang Efficiency Guide"

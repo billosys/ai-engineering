@@ -1,7 +1,7 @@
 ---
 concept: Length Function Cost
 slug: length-function-cost
-category: common-pitfalls
+category: performance
 subcategory: list-operations
 tier: foundational
 source: "Erlang Efficiency Guide"

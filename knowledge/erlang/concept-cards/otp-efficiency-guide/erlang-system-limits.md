@@ -1,7 +1,7 @@
 ---
 concept: Erlang System Limits
 slug: erlang-system-limits
-category: system-configuration
+category: performance
 subcategory: runtime-limits
 tier: foundational
 source: "Erlang Efficiency Guide"

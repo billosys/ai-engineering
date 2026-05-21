@@ -1,7 +1,7 @@
 ---
 concept: Body-Recursive vs Tail-Recursive List Functions
 slug: body-vs-tail-recursive-list-functions
-category: data-structures
+category: performance
 subcategory: list-operations
 tier: intermediate
 source: "Erlang Efficiency Guide"

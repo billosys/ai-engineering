@@ -1,7 +1,7 @@
 ---
 concept: Initial Heap Size Tuning
 slug: initial-heap-size-tuning
-category: memory-management
+category: performance
 subcategory: null
 tier: intermediate
 source: "Erlang Efficiency Guide"

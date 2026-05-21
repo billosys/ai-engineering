@@ -1,7 +1,7 @@
 ---
 concept: Size vs Typed Size BIFs
 slug: size-vs-typed-size-bifs
-category: common-pitfalls
+category: performance
 subcategory: type-safety
 tier: foundational
 source: "Erlang Efficiency Guide"

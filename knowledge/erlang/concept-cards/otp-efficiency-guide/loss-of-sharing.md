@@ -1,7 +1,7 @@
 ---
 concept: Loss of Sharing
 slug: loss-of-sharing
-category: memory-management
+category: performance
 subcategory: null
 tier: intermediate
 source: "Erlang Efficiency Guide"

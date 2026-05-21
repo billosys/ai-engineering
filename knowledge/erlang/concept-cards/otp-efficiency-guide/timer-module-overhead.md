@@ -1,7 +1,7 @@
 ---
 concept: Timer Module Overhead
 slug: timer-module-overhead
-category: common-pitfalls
+category: performance
 subcategory: process-bottlenecks
 tier: intermediate
 source: "Erlang Efficiency Guide"

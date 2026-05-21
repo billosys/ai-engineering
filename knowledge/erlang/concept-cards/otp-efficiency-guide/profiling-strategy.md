@@ -4,7 +4,7 @@ concept: Profiling Strategy
 slug: profiling-strategy
 
 # === CLASSIFICATION ===
-category: performance-methodology
+category: performance
 subcategory: null
 tier: foundational
 

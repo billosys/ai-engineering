@@ -1,7 +1,7 @@
 ---
 concept: Mnesia Secondary Index
 slug: mnesia-secondary-index
-category: data-structures
+category: performance
 subcategory: mnesia
 tier: advanced
 source: "Erlang Efficiency Guide"

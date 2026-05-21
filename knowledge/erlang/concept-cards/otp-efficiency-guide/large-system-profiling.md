@@ -4,7 +4,7 @@ concept: Large-System Profiling
 slug: large-system-profiling
 
 # === CLASSIFICATION ===
-category: performance-methodology
+category: performance
 subcategory: null
 tier: advanced
 

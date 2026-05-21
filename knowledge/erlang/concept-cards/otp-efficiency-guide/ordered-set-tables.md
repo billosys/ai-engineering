@@ -1,7 +1,7 @@
 ---
 concept: Ordered Set Tables
 slug: ordered-set-tables
-category: data-structures
+category: performance
 subcategory: ets
 tier: intermediate
 source: "Erlang Efficiency Guide"

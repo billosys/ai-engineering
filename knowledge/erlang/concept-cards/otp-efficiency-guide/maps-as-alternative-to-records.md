@@ -1,7 +1,7 @@
 ---
 concept: Maps as Alternative to Records
 slug: maps-as-alternative-to-records
-category: data-structures
+category: data-types
 subcategory: maps
 tier: intermediate
 source: "Erlang Efficiency Guide"

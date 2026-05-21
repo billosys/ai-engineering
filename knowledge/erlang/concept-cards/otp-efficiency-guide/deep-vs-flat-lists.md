@@ -1,7 +1,7 @@
 ---
 concept: Deep vs Flat Lists
 slug: deep-vs-flat-lists
-category: data-structures
+category: performance
 subcategory: list-operations
 tier: intermediate
 source: "Erlang Efficiency Guide"

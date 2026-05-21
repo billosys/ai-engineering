@@ -4,7 +4,7 @@ concept: Profiling Analysis
 slug: profiling-analysis
 
 # === CLASSIFICATION ===
-category: performance-methodology
+category: performance
 subcategory: null
 tier: intermediate
 

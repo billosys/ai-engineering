@@ -1,7 +1,7 @@
 ---
 concept: Compiler Binary Optimization
 slug: compiler-binary-optimization
-category: compiler-optimization
+category: performance
 subcategory: binary-optimization
 tier: advanced
 source: "Erlang Efficiency Guide"

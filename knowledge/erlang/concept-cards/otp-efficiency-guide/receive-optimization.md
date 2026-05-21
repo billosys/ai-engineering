@@ -1,7 +1,7 @@
 ---
 concept: Receive Optimization
 slug: receive-optimization
-category: compiler-optimization
+category: performance
 subcategory: null
 tier: intermediate
 source: "Erlang Efficiency Guide"

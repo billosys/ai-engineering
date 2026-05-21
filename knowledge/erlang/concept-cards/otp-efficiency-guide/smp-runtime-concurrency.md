@@ -1,7 +1,7 @@
 ---
 concept: SMP Runtime Concurrency
 slug: smp-runtime-concurrency
-category: system-configuration
+category: performance
 subcategory: null
 tier: advanced
 source: "Erlang Efficiency Guide"

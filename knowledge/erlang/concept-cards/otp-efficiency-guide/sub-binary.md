@@ -1,7 +1,7 @@
 ---
 concept: Sub Binary
 slug: sub-binary
-category: data-structures
+category: performance
 subcategory: binary-types
 tier: intermediate
 source: "Erlang Efficiency Guide"

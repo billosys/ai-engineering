@@ -35,7 +35,7 @@ related:
   - binary
   - triple-quoted-string
   - sigil
-  - escape-sequence
+  - escape-sequences
   - numeric-notation
 contrasts_with:
   - atom

@@ -1,7 +1,7 @@
 ---
 concept: ETS Select/Match Operations
 slug: ets-select-match-operations
-category: data-structures
+category: performance
 subcategory: ets
 tier: intermediate
 source: "Erlang Efficiency Guide"

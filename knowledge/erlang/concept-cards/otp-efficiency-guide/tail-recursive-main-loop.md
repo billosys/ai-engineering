@@ -1,7 +1,7 @@
 ---
 concept: Tail-Recursive Main Loop
 slug: tail-recursive-main-loop
-category: process-management
+category: performance
 subcategory: null
 tier: foundational
 source: "Erlang Efficiency Guide"

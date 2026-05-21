@@ -4,7 +4,7 @@ concept: Driver Binary Handling
 slug: driver-binary-handling
 
 # === CLASSIFICATION ===
-category: system-configuration
+category: performance
 subcategory: drivers
 tier: advanced
 

@@ -1,7 +1,7 @@
 ---
 concept: Maps vs Records
 slug: maps-vs-records
-category: data-structures
+category: data-types
 subcategory: maps
 tier: foundational
 source: "Erlang Efficiency Guide"

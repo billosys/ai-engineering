@@ -1,7 +1,7 @@
 ---
 concept: Map Syntax Efficiency
 slug: map-syntax-efficiency
-category: compiler-optimization
+category: performance
 subcategory: maps
 tier: intermediate
 source: "Erlang Efficiency Guide"

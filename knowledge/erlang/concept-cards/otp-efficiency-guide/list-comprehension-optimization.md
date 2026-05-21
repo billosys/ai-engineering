@@ -1,7 +1,7 @@
 ---
 concept: List Comprehension Optimization
 slug: list-comprehension-optimization
-category: compiler-optimization
+category: performance
 subcategory: list-optimization
 tier: intermediate
 source: "Erlang Efficiency Guide"

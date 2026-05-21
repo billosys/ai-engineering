@@ -1,7 +1,7 @@
 ---
 concept: Large Map Implementation
 slug: large-map-implementation
-category: data-structures
+category: performance
 subcategory: maps
 tier: advanced
 source: "Erlang Efficiency Guide"

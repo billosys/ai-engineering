@@ -1,7 +1,7 @@
 ---
 concept: recv_opt_info Compiler Option
 slug: recv-opt-info
-category: compiler-optimization
+category: performance
 subcategory: null
 tier: intermediate
 source: "Erlang Efficiency Guide"

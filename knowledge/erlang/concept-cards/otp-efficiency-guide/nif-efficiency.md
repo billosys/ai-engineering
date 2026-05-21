@@ -1,7 +1,7 @@
 ---
 concept: NIF Efficiency
 slug: nif-efficiency
-category: common-pitfalls
+category: performance
 subcategory: native-code
 tier: advanced
 source: "Erlang Efficiency Guide"

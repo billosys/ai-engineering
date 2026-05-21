@@ -1,7 +1,7 @@
 ---
 concept: Forced Copying
 slug: forced-copying
-category: memory-management
+category: performance
 subcategory: binary-memory-layout
 tier: advanced
 source: "Erlang Efficiency Guide"

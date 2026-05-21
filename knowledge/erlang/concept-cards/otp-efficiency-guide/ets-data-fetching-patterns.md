@@ -1,7 +1,7 @@
 ---
 concept: ETS Data Fetching Patterns
 slug: ets-data-fetching-patterns
-category: data-structures
+category: performance
 subcategory: ets
 tier: intermediate
 source: "Erlang Efficiency Guide"

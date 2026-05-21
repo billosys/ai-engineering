@@ -1,7 +1,7 @@
 ---
 concept: Maps as Sets
 slug: maps-as-sets
-category: data-structures
+category: data-types
 subcategory: maps
 tier: intermediate
 source: "Erlang Efficiency Guide"

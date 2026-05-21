@@ -1,7 +1,7 @@
 ---
 concept: Setelement Optimization
 slug: setelement-optimization
-category: compiler-optimization
+category: performance
 subcategory: tuple-operations
 tier: intermediate
 source: "Erlang Efficiency Guide"

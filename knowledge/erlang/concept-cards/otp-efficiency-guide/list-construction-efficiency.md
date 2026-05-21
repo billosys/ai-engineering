@@ -1,7 +1,7 @@
 ---
 concept: List Construction Efficiency
 slug: list-construction-efficiency
-category: data-structures
+category: performance
 subcategory: list-operations
 tier: foundational
 source: "Erlang Efficiency Guide"

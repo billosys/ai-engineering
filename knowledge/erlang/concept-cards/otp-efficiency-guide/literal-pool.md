@@ -1,7 +1,7 @@
 ---
 concept: Literal Pool
 slug: literal-pool
-category: memory-management
+category: performance
 subcategory: null
 tier: intermediate
 source: "Erlang Efficiency Guide"

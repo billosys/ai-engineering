@@ -32,7 +32,7 @@ extends:
   - string
 related:
   - sigil
-  - escape-sequence
+  - escape-sequences
 contrasts_with: []
 
 # === COMPETENCY QUESTIONS ===

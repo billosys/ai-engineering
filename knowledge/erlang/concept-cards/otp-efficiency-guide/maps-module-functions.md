@@ -1,7 +1,7 @@
 ---
 concept: Maps Module Functions
 slug: maps-module-functions
-category: compiler-optimization
+category: performance
 subcategory: maps
 tier: advanced
 source: "Erlang Efficiency Guide"

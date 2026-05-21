@@ -30,7 +30,7 @@ prerequisites:
 extends: []
 related:
   - triple-quoted-string
-  - escape-sequence
+  - escape-sequences
 contrasts_with: []
 
 # === COMPETENCY QUESTIONS ===

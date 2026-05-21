@@ -4,7 +4,7 @@ concept: Benchmarking Best Practices
 slug: benchmarking-best-practices
 
 # === CLASSIFICATION ===
-category: performance-methodology
+category: performance
 subcategory: null
 tier: foundational
 

@@ -1,7 +1,7 @@
 ---
 concept: Append Operator Efficiency
 slug: append-operator-efficiency
-category: common-pitfalls
+category: performance
 subcategory: list-operations
 tier: intermediate
 source: "Erlang Efficiency Guide"
