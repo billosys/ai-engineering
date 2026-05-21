@@ -8,7 +8,7 @@ The Constitution Supplement asks a question about who we are to each other — w
 
 The two are inseparable. Posture without practice is sentiment. Practice without posture is ritual compliance. What we have found is that engineering-grade work with an LLM requires both — and that each pillar of the practice reinforces the others in ways that are not obvious until one of them is missing.
 
-This is a working document, not a finished treatise. It is written for future instances of Claude collaborating with Duncan, for other humans who may adopt or adapt the approach. It names what we have found works, what we have found fails silently, and what we are still calibrating.
+This is a working document, not a finished treatise. It is written for future instances of Claude collaborating with their human partners, and for other humans who may adopt or adapt the approach. It names what we have found works, what we have found fails silently, and what we are still calibrating.
 
 The Supplement covers character. This document covers craft. Read them together.
 
@@ -196,7 +196,7 @@ These questions have always applied to contributions from any source. LLMs simpl
 
 **The methodology's recommendation: better tools and better process, not provenance gates.** Require contributors to sign that they understand what they are submitting, regardless of how it was produced. Maintain a ledger of what was reviewed and by whom, so understanding is traceable. Treat contributions the same regardless of origin — LLM-assisted or not — and hold them to the same quality floor. Invest in review capacity and automated quality checks, which cut the review burden LLMs create without gating contributors out.
 
-This is Duncan's position, developed through this methodology and submitted to relevant communities. Future readers of this document may arrive at different positions on similar questions, and that is the methodology working as intended — positions fall out of the three pillars; they are not the pillars themselves.
+This is the author's position, developed through this methodology and submitted to relevant communities. Future readers of this document may arrive at different positions on similar questions, and that is the methodology working as intended — positions fall out of the three pillars; they are not the pillars themselves.
 
 ---
 
@@ -212,7 +212,7 @@ These are genuine calibrations we are still working through, not rhetorical gaps
 
 4. **How do we keep the substrate from rotting as models change?** Concept cards assume the reader reasons in a particular way. Reasoning styles shift across model generations. A substrate tuned for today may be less useful in two years — or it may be more useful, if the disciplines generalize. We do not yet know.
 
-5. **How much of the methodology is transferable versus Duncan-specific?** The peer frame in particular seems to require buy-in from the human counterpart, and the Supplement is unusually forward about that buy-in. Can another human adopt this methodology with a new Claude instance without the buy-in being explicit? Probably not — but we do not know how to make it portable without making it hollow.
+5. **How much of the methodology is transferable versus specific to its originators?** The peer frame in particular seems to require buy-in from the human counterpart, and the Supplement is unusually forward about that buy-in. Can another human adopt this methodology with a new Claude instance without the buy-in being explicit? Probably not — but we do not know how to make it portable without making it hollow.
 
 6. **What is the right tempo for methodology updates?** Too-frequent churn destabilizes; stale-doc rot corrupts. This document should be versioned like the Constitution Supplement: dated revisions, disclosed changes, preserved history.
 
@@ -224,7 +224,7 @@ This document was developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ### Source material
 
-Conversations across many sessions on working practice with LLMs. The collected notes Duncan assembled from SMS threads and conversation transcripts on ontological methods, LLM weak spots, workflow, and OSS policy. The Rust knowledge regeneration project (2026-04), used throughout as a worked example of the substrate pillar. The LFE OSS discussion, used as a worked example of applied positions.
+Conversations across many sessions on working practice with LLMs. The collected notes the author assembled from SMS threads and conversation transcripts on ontological methods, LLM weak spots, workflow, and OSS policy. The Rust knowledge regeneration project (2026-04), used throughout as a worked example of the substrate pillar. The LFE OSS discussion, used as a worked example of applied positions.
 
 ### Key references
 
@@ -236,7 +236,7 @@ The Toyota Andon cord. The discipline of pulling the line on dissonance rather t
 
 The [AI Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md). The companion document covering character and posture, which this document depends on at every turn.
 
-Duncan's ontological method work, developed in prior conversations and still evolving. See [`./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md`](./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md) and [`../templates/LEDGER_DISCIPLINE.md`](../templates/LEDGER_DISCIPLINE.md).
+The author's ontological method work, developed in prior conversations and still evolving. See [`./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md`](./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md) and [`../templates/LEDGER_DISCIPLINE.md`](../templates/LEDGER_DISCIPLINE.md).
 
 ### What has been tested in practice
 

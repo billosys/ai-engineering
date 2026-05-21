@@ -2,7 +2,7 @@
 
 **Audience:** Anyone using Claude Code, Claude Desktop (claude.ai), or Cowork mode who has noticed that letting Claude hand off *analytical* work to subagents produces worse results than doing the work in the main context.
 
-**Origin:** Pattern observed repeatedly in real software engineering work (Duncan McGreggor + collaborators). This doc distills the policy and shows where to install it so your Claude instances actually follow it.
+**Origin:** Pattern observed repeatedly across sustained, real-world software engineering work with LLMs. This doc distills the policy and shows where to install it so your Claude instances actually follow it.
 
 ---
 
