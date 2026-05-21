@@ -28,7 +28,7 @@ looking at now.
 
 ## The skill library
 
-All eight knowledge bases live under [`./knowledge/`](./knowledge). Each one
+All nine knowledge bases live under [`./knowledge/`](./knowledge). Each one
 has its own `SKILL.md` (or multiple, in a couple of cases) and its own
 `README.md` where applicable.
 
@@ -37,6 +37,7 @@ has its own `SKILL.md` (or multiple, in a couple of cases) and its own
 | [Rust](./knowledge/rust/README.md) | `knowledge/rust/` | 661 patterns across 17 chapters: core idioms, API design, error handling, ownership & borrowing, type design, traits, concurrency & async, performance, unsafe & FFI, macros, anti-patterns, project structure, documentation, CLI tools, Cargo, editions, and observability. The original skill; grounded in 21 upstream sources including the Rust Reference, Rustonomicon, API Guidelines, Performance Book, Async Book, tokio docs, Rustdoc Book, Edition Guide, Cargo Book, Pragmatic Rust, Rust Design Patterns, The Rust Programming Language, The Little Book of Rust Macros, Clippy, the Style Guide, the CLI Book, and clap. |
 | [JavaScript / Deno](./knowledge/js/) | `knowledge/js/` | Plain JavaScript (no TypeScript), ESM-only, Deno-first. Core idioms, async, error handling, type discipline via JSDoc, module design, performance, anti-patterns, project structure, Biome lint/format, and Deno-specific concerns (tasks, testing, JSR publishing). Huge concept-card library. |
 | [Go](./knowledge/go/) | `knowledge/go/` | Go 1.22+ best practices reconciling the Uber and Google Go style guides, *Effective Go*, and the spec. Covers package design, error handling (`errors.Is`, `%w`), context propagation, concurrency (channels, `sync`), table-driven tests, benchmarking with `testing.B` and `pprof`, module organisation, godoc, and Gio desktop UIs. |
+| [Erlang / OTP](./knowledge/erlang/) | `knowledge/erlang/` | Erlang/OTP 27+ best practices: 278 patterns across 17 chapters — core idioms, API design, error handling, data & types, functions & pattern matching, processes & concurrency, OTP behaviours, supervision & applications, fault tolerance (let-it-crash), performance, anti-patterns (with a dedicated AI-misuse subset), project structure, documentation (`-doc`/`-moduledoc`), production ops (recon, tracing, crash dumps), testing (EUnit / Common Test / PropEr), distribution, and tooling (rebar3, dialyzer, xref). Grounded in the Erlang Programming Rules, the OTP Design Principles, Reference Manual, and Efficiency Guide, Inaka's and nuex's style guides, *Erlang in Anger*, *Learn You Some Erlang*, and the EDoc guide, plus the books *Programming Erlang*, *Erlang and OTP in Action*, and *Designing for Scalability with Erlang/OTP*. |
 | [Visual Design](./knowledge/design/) | `knowledge/design/` | A principled visual design system for the web — perceptual-science grounded, mathematically proportioned, composable. Manifesto, foundations, OKLCH colour system, three-voice type system with modular scale, Every-Layout spatial primitives with Utopia fluid tokens, and CUBE CSS methodology. |
 | [Tailwind CSS v4](./knowledge/tailwindcss/) | `knowledge/tailwindcss/` | Tailwind v4 with CSS-native configuration: `@import "tailwindcss"`, `@theme`, `@utility`, `@custom-variant`, `@variant`, `@source`, container queries, dark mode, responsive design. v3 → v4 breaking changes are called out explicitly. |
 | [Biome](./knowledge/biome/) | `knowledge/biome/` | Two skills: a **JS-only linter** skill distilling 257 language-level rules (no React / Node / JSX / CSS), and a **web linter** skill covering the full 394-rule set including a11y, CSS, and performance. |
@@ -50,7 +51,7 @@ ai-engineering/
 ├── README.md          # This file
 ├── LICENSE            # MIT
 ├── odm.toml           # ODM (documentation) config — docs_directory, dev_directory
-├── knowledge/         # The skill library (the eight domains above)
+├── knowledge/         # The skill library (the nine domains above)
 ├── docs/
 │   ├── AI-CONSTITUTION-SUPPLEMENT.md   # Character and posture for LLM collaboration
 │   ├── AI-ENGINEERING-METHODOLOGY.md   # Craft and practice companion to the Supplement
