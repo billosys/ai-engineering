@@ -1,20 +1,21 @@
 # Known Extraction Gaps
 
-Concepts referenced by existing cards' typed relationships but not yet extracted as
-cards of their own. The references are kept intact (they encode real relationships);
-these are candidates for a future extraction pass. Each maps to a real Erlang/OTP
-topic, so they are legitimate cards-to-be, not noise.
+All cross-reference gaps identified in the audit have been resolved. Cross-reference
+resolution across the KB is currently **0 unresolved**. This file is kept as a log.
 
-| missing slug | referenced by | likely home (source / chapter) |
-|--------------|---------------|--------------------------------|
-| `bif-name-clash-resolution` | otp-reference-manual/auto-imported-bifs | Reference Manual → 01 core-idioms / 05 functions |
-| `changing-a-supervisor` | otp-design-principles/synchronized-code-replacement | Design Principles (release handling) → 08 supervision |
-| `expressions-in-patterns` | otp-reference-manual/patterns-in-expressions | Reference Manual → 05 functions-pattern-matching |
-| `function-calls` | auto-imported-bifs, built-in-functions, function-evaluation | Reference Manual → 05 functions-pattern-matching |
-| `module-dependencies` | otp-design-principles/application-upgrade-file | Design Principles (appup/relup) → 12 project-structure |
-| `string-prefix-in-patterns` | otp-reference-manual/patterns-in-expressions | Reference Manual (`"prefix" ++ Rest`) → 05 functions-pattern-matching |
+## Resolved — gap cards extracted (source-faithful, v3 template)
 
-Resolved (were typos, now fixed):
+| slug | source / section | source_slug |
+|------|------------------|-------------|
+| `function-calls` | Reference Manual → Expressions → "Function Calls" | otp-reference-manual |
+| `bif-name-clash-resolution` | Reference Manual → "Local Function Names Clashing With Auto-Imported BIFs" | otp-reference-manual |
+| `expressions-in-patterns` | Reference Manual → Patterns → "Expressions in Patterns" | otp-reference-manual |
+| `string-prefix-in-patterns` | Reference Manual → Patterns → "String Prefix in Patterns" | otp-reference-manual |
+| `changing-a-supervisor` | Design Principles → Appup Cookbook → "Changing a Supervisor" | otp-design-principles |
+| `module-dependencies` | Design Principles → Appup Cookbook → "Module Dependencies" | otp-design-principles |
+
+## Resolved — typos fixed (reference retargeted to existing card)
+
 - `binary-comprehensions` → `binary-comprehension`
 - `escape-sequence` → `escape-sequences`
 - `error-handling-processes` → `error-handling-between-processes`
