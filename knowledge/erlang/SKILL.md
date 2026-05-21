@@ -19,9 +19,9 @@ description: |
 
 # Erlang Coding Guidelines Skill
 
-> STATUS: DRAFT ROUTER over a skeleton. Guide chapters are scaffolded but not yet
-> populated (see `workbench/PLAN.md`). Selection tables and pattern-ID ranges are
-> the intended structure; ID ranges firm up as chapters are filled.
+> STATUS: complete — all 17 guide chapters are populated (278 patterns), each
+> conforming to the GOOD/BAD contract enforced by `tools/lint_examples.py`.
+> Load `11-anti-patterns.md` first on any task.
 
 ## Overview
 
