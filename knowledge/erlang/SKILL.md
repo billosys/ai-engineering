@@ -8,11 +8,10 @@ description: |
   Use when: writing new Erlang code, refactoring existing Erlang, reviewing
   Erlang for issues, designing module APIs and return conventions, modelling
   data with records/maps/binaries and dialyzer typespecs, designing processes
-  and message protocols (links, monitors, selective receive), writing OTP
-  behaviours (gen_server, gen_statem, gen_event), building supervision trees
+  and message protocols, writing OTP
+  behaviours, building supervision trees
   and applications/releases, applying let-it-crash fault tolerance, profiling
-  and tuning on the BEAM (ETS, binaries, memory), diagnosing live systems
-  (tracing, recon, crash dumps, overload), writing eunit/common_test/PropEr
+  and tuning on the BEAM, diagnosing live systems, writing eunit/common_test/PropEr
   tests, documenting with EDoc and OTP-27 -doc attributes, running distributed
   Erlang, or wiring the rebar3 + dialyzer + xref + elvis + erlfmt toolchain.
 ---
