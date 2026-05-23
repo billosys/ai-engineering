@@ -4,7 +4,7 @@ How to make Erlang fast without guessing: profile first, then attack real bottle
 
 Target environment: **Erlang/OTP 27+**. Default toolchain: **rebar3** · **dialyzer + xref** · **elvis + erlfmt** · **eunit + common_test + PropEr** · **EDoc / -doc attributes**.
 
-Grounded in: the Erlang Efficiency Guide (Profiling, Common Caveats, Constructing and Matching Binaries, List Handling, Tables and Databases), Designing for Scalability with Erlang/OTP, and Erlang in Anger.
+Grounded in: the Erlang Efficiency Guide (Profiling, Common Caveats, Constructing and Matching Binaries, List Handling, Tables and Databases), the ERTS User's Guide (Time and Time Correction in Erlang), Designing for Scalability with Erlang/OTP, and Erlang in Anger.
 
 ---
 
@@ -390,6 +390,77 @@ handle_call({job, J}, _From, S) ->
 
 ---
 
+## PF-19: Measure Elapsed Time with Monotonic Time
+
+**Strength**: SHOULD
+
+**Summary**: Time durations with `erlang:monotonic_time/1`, never by subtracting two system-time (wall-clock) samples — system time can warp and the difference becomes meaningless.
+
+```erlang
+%% Bad - subtract wall-clock samples to time work: a backward time warp corrupts the result
+T0 = erlang:system_time(millisecond),
+Result = do_work(),
+Elapsed = erlang:system_time(millisecond) - T0.   %% can be wrong, even negative
+
+%% Good - monotonic time never warps; it is the correct clock for durations
+T0 = erlang:monotonic_time(millisecond),
+Result = do_work(),
+Elapsed = erlang:monotonic_time(millisecond) - T0.
+```
+
+**Rationale**: Erlang monotonic time is "a monotonically increasing time" that never leaps, whereas Erlang system time tracks POSIX wall-clock and "may or may not align with OS system time" — it can warp forwards or backwards (ERTS User's Guide, *Time and Time Correction in Erlang*). A difference of two system-time samples therefore does **not** reliably correspond to elapsed time. Use `erlang:monotonic_time/1` with an explicit time unit; for benchmarking (PF-03), take `erlang:monotonic_time(native)` and convert with `erlang:convert_time_unit/3` for the best available resolution. (A negative value from `monotonic_time/0` is not a bug — it is a documented memory optimisation; only the *difference* is meaningful.)
+
+**See also**: PF-03, PF-20, PF-21
+
+---
+
+## PF-20: Replace `erlang:now/0` with the Modern Time API
+
+**Strength**: SHOULD
+
+**Summary**: `erlang:now/0` is deprecated, serialises through a global lock, and can *freeze for years* on a backward time warp; split its uses across the purpose-built time functions.
+
+```erlang
+%% Bad - erlang:now/0: a global lock, time-warp-unsafe, and overloaded for three unrelated jobs
+Ts     = erlang:now(),   %% used as a wall-clock timestamp...
+Uniq   = erlang:now().   %% ...and as a monotonically increasing unique value
+
+%% Good - pick the function built for each job
+Wall   = erlang:system_time(millisecond),      %% wall-clock / POSIX time (or erlang:timestamp/0)
+Dur0   = erlang:monotonic_time(),              %% durations (PF-19)
+Uniq2  = erlang:unique_integer([monotonic]).   %% strictly increasing unique values
+```
+
+**Rationale**: `erlang:now/0` was three things at once — a wall-clock timestamp, a source of strictly increasing unique values, and a globally serialised counter — and the source states plainly: "Do not use `erlang:now/0`" (ERTS User's Guide, *Time and Time Correction*). Because it must never go backwards, a backward OS time leap can make it stall — the guide warns it can freeze "for years, decades, and even longer." The global lock also caps throughput on multicore systems. The new API separates the concerns: `system_time/1` (or `timestamp/0`) for wall-clock, `monotonic_time/1` for durations, and `unique_integer/1` for unique values.
+
+**See also**: PF-19, PF-21
+
+---
+
+## PF-21: Reconstruct Wall-Clock Time with the Contemporaneous Offset
+
+**Strength**: CONSIDER
+
+**Summary**: Erlang system time = monotonic time + time offset; since the offset can move (multi-time-warp is the OTP-26 default), don't add the *current* offset to an *old* monotonic stamp — capture the offset together, or store system time directly.
+
+```erlang
+%% Bad - store a monotonic stamp, later add the current offset: the offset may have moved
+Mono = erlang:monotonic_time(),
+%% ...much later, in another mode/run...
+Wall = Mono + erlang:time_offset().   %% wrong wall-clock once the offset has changed
+
+%% Good - capture the offset at the same instant (or just store system time if that is all you need)
+Mono   = erlang:monotonic_time(),
+Offset = erlang:time_offset(),         %% taken together with Mono
+Wall   = Mono + Offset.                %% reconstructs the wall-clock at that instant
+```
+
+**Rationale**: "Current Erlang system time is determined by adding the current Erlang monotonic time with current time offset" (ERTS User's Guide, *Time and Time Correction*). Since OTP 26 the default is multi-time-warp mode, in which "the time offset can change at any time without limitations." Reconstructing wall-clock by adding *today's* offset to a monotonic value captured earlier therefore yields the wrong answer once the offset has shifted. If you need both a warp-immune duration and a wall-clock label for the same event, record the monotonic value and the offset together; if you only need wall-clock, store `erlang:system_time/1` directly. (Legacy code that is not time-warp-safe can be run with `erl +C no_time_warp`, but the source strongly encourages making code time-warp-safe instead.)
+
+**See also**: PF-19, PF-20, `16-distribution.md`
+
+---
+
 ## Summary Table
 
 | Pattern | Strength | Key Insight |
@@ -412,6 +483,9 @@ handle_call({job, J}, _From, S) ->
 | PF-16 Short/yielding NIFs | CONSIDER | Long NIFs stall a scheduler |
 | PF-17 Hibernate idle processes | CONSIDER | Reclaim heap across large idle fleets |
 | PF-18 Back-pressure | CONSIDER | Bound queues; `call` over unbounded `cast` |
+| PF-19 Monotonic time for durations | SHOULD | System time warps; monotonic time does not |
+| PF-20 Retire `erlang:now/0` | SHOULD | Split into `system_time`/`monotonic_time`/`unique_integer` |
+| PF-21 Wall-clock from monotonic | CONSIDER | Capture the offset together; it can move |
 
 ## Related Guidelines
 

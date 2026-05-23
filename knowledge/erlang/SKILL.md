@@ -18,7 +18,7 @@ description: |
 
 # Erlang Coding Guidelines Skill
 
-> STATUS: complete — all 17 guide chapters are populated (278 patterns), each
+> STATUS: complete — all 17 guide chapters are populated (281 patterns), each
 > conforming to the GOOD/BAD contract enforced by `tools/lint_examples.py`.
 > Load `11-anti-patterns.md` first on any task.
 
