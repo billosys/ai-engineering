@@ -88,6 +88,28 @@ Substrate that the authors do not use themselves. If the cards and skill files a
 
 ## Part III — Process Rigour
 
+### The scales of work
+
+Before the sequence, the units it operates on. Every project decomposes along three scales of work. We name them once, here, and reuse the names across every project, team, and session — because the failure mode this section exists to kill is re-inventing the vocabulary each time, so that the same idea is a "phase" in one project, a "chunk" in the next, and a "milestone" in a third. Constant names are what let a plan written for one project be picked up and read, without translation, by anyone starting the next.
+
+The three scales, largest to smallest:
+
+**Project.** The whole effort — the thing with a name, a goal, and a definition of done. A project is approached through the first three SDLC steps: research, project definition, design doc. Its output is not code but boundaries and architecture: what we are building, what we are explicitly not, and how the pieces fit. A project is planned by breaking it into arcs.
+
+**Arc.** A set of related slices with a beginning and an end — the body of work that delivers one coherent capability. An arc is the unit at which you check that the slices *compose*: that together they add up to the capability and that none is missing. It is approached through arc-and-slice breakdown (SDLC step 4): decide which slices the arc needs, what order they land in, and which are load-bearing for which. An arc is too big to hold in one branch or one context — it is a planning unit, not an execution unit.
+
+**Slice.** The unit of execution — the work that lands in a single branch as one mergeable diff. A slice does one thing, end to end, and is sized so it can be reviewed in a single pass and held in a single context: roughly 500 lines of diff as a loose target, never a hard rule. The slice is where ledger discipline attaches — one slice, one ledger — and where the work actually gets written, tested, and reviewed. It is approached through a per-slice implementation plan (SDLC step 5): a short list of steps with acceptance criteria that become the ledger's rows. If a slice will not fit in one branch, it was two slices.
+
+Two more words name things *inside* a slice, not scales of their own:
+
+**Step.** A single item in a slice's implementation plan — the fine-grained unit of work, and what the ledger's rows verify. Steps are how a slice is planned and tracked; they do not cross slice boundaries.
+
+**Iteration.** A refinement pass on a slice whose delivery does not yet meet its acceptance criteria. The word is reserved for this and only this — the fix loop on an in-progress slice, never a unit of planning. The budget is five iterations per slice (see ledger discipline); needing more is a signal the slice was too large or under-specified, not a licence to keep grinding.
+
+Read together: *a project bends through several arcs; each arc is cut into slices; a slice is planned as a handful of steps, and if its delivery misses spec it is refined over a bounded number of iterations.*
+
+The names are chosen to be descriptive on sight and to avoid collision with the vocabulary of any specific methodology — we are pragmatic about practice, not aligned to a school. For collaborators arriving with Agile or Scrum habits, the rough translation is: project ≈ epic, arc ≈ feature, slice ≈ the branch- or PR-sized unit those frameworks never named cleanly (often mislabelled "feature," or split awkwardly across "stories" and "tasks"). The translation is a courtesy for onboarding, not an adoption of those frameworks. In particular we keep "iteration" well away from any planning sense: it earns its keep as the name for the fix loop, which is where the five-iteration budget lives.
+
 ### The 9-point SDLC
 
 The sequence below is the backbone discipline. Each step catches a different scale of drift.
@@ -95,8 +117,8 @@ The sequence below is the backbone discipline. Each step catches a different sca
 1. **Research and brainstorm.** Open-ended surface mapping. What is the actual shape of the thing? What are the neighbors, predecessors, failure modes in adjacent domains?
 2. **Project definition.** Bounded scope. What are we doing, what are we not doing, and what is the smallest complete thing?
 3. **Design doc.** Architectural commitments. What are the pieces, how do they fit, what are the trade-offs, what are the alternatives considered and rejected?
-4. **Phase and milestone breakdown.** Sequencing. Which pieces land when; which are load-bearing for which.
-5. **Per-milestone implementation plan.** Concrete steps. What gets written, what gets tested, what gets reviewed before moving on.
+4. **Arc and slice breakdown.** Sequencing. Which slices land when; which are load-bearing for which.
+5. **Per-slice implementation plan.** Concrete steps. What gets written, what gets tested, what gets reviewed before moving on.
 6. **Self-review.** First pass by the author. Catches the embarrassing things.
 7. **Peer review.** Second eyes. Catches what the author cannot see.
 8. **Review feedback loop.** Iteration. Not "comment dumped, comment closed" — genuine convergence.
@@ -108,7 +130,7 @@ Skipping a step does not just forgo its value; it routes errors of that altitude
 
 ### Ledger discipline
 
-A running record of decisions: what, when, why, by whom. The ledger prevents re-litigation of settled questions, makes drift visible (the doc said X in Phase 1; we are now doing Y — was that a conscious change or an unconscious one?), and allows handoffs between humans and across sessions without destroying context.
+A running record of decisions: what, when, why, by whom. The ledger prevents re-litigation of settled questions, makes drift visible (the doc said X in an early arc; we are now doing Y — was that a conscious change or an unconscious one?), and allows handoffs between humans and across sessions without destroying context.
 
 Without a ledger, every session reopens questions that were already answered. With one, the conversation picks up where it left off — for an LLM, for a human, for any collaborator reading later.
 
@@ -136,7 +158,7 @@ Four specific habits that guard the quality floor.
 
 **Disclosed deferral.** If something is not done, it is named and tracked. Never buried in prose, never implied. "I did not do X" is stronger than "X is out of scope" (which is often a retcon).
 
-**Silent-drop detection.** At the end of a phase, diff the original scope against the delivered work. Anything missing was either disclosed (fine), deferred with rationale (fine), or dropped silently (not fine). The third category is the one the methodology is designed to eliminate.
+**Silent-drop detection.** At the close of every slice — and again when an arc closes — diff the original scope against the delivered work. Anything missing was either disclosed (fine), deferred with rationale (fine), or dropped silently (not fine). The third category is the one the methodology is designed to eliminate.
 
 **Writing to the floor, not the ceiling.** Name what the work actually achieves, not what it could achieve in the best case. The ceiling is aspirational; the floor is what the collaborator can rely on.
 
@@ -258,4 +280,20 @@ Portable versions of the methodology for other human collaborators without the C
 
 ---
 
-_The methodology is a living document. This version: 1.0, 2026-04-22._
+## Version History
+
+### Version 1.1 — June 2026
+
+Added **The scales of work** (Part III), establishing a constant vocabulary for the three scales every project decomposes into — **project**, **arc**, **slice** — plus two reserved terms for units *inside* a slice, **step** and **iteration**. The section defines each scale, how it is approached and planned, and how it maps to the SDLC steps and to ledger discipline. The 9-point SDLC was reconciled to the new terms (steps 4 and 5 became "arc and slice breakdown" and "per-slice implementation plan"), and the remaining loose uses of "phase" in Part III were brought into the single vocabulary.
+
+The rev was catalysed by a recurring cross-project failure: with no terminology carried between projects, each one re-invented its own words for the same scales — "milestone," "chunk," "step," "iteration," "phase" — chosen differently each time and colliding both with each other and with other methodologies' vocabulary. The sharpest collision was internal: "milestone" named the level-2 sequencing unit in this document and the level-1 ledger-bearing unit in `LEDGER_DISCIPLINE.md`. This rev resolves that on this document's side; the companion swap in `LEDGER_DISCIPLINE.md` ("milestone" → "slice," including the `milestones/` ledger-path convention) is tracked as the paired follow-up and is not yet applied.
+
+The *how* of the work — ledger discipline, right-sized branches, the SDLC — was already settled before this rev. The change names the scales; it does not alter the process.
+
+### Version 1.0 — April 2026
+
+Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on the [AI Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md). Established the three pillars (knowledge substrate, collaborative posture, process rigour), the 9-point SDLC, ledger discipline, CAP-style independent audits, the anti-degradation practices, the subagent leverage/hazard distinction, and the LFE OSS applied position.
+
+---
+
+_The methodology is a living document. This version: 1.1, 2026-06-01._
