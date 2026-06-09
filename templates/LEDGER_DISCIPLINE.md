@@ -1,22 +1,22 @@
 # LEDGER_DISCIPLINE.md
 
-> Per-milestone verification discipline for CC (implementer) and CDC (reviewer).
-> Load this skill at the start of any milestone that has an associated ledger.
-> This document describes the protocol; the ledger itself is per-milestone and lives elsewhere.
+> Per-slice verification discipline for CC (implementer) and CDC (reviewer).
+> Load this skill at the start of any slice that has an associated ledger.
+> This document describes the protocol; the ledger itself is per-slice and lives elsewhere.
 
 ## What this is
 
-Ledger discipline is a per-milestone verification practice adapted from the
+Ledger discipline is a per-slice verification practice adapted from the
 defect-register and corrective-action traditions used in nuclear power,
 surgery (WHO Surgical Safety Checklist), aviation, clinical trials, food
 safety (HACCP), financial audit, and human spaceflight. The practice has a
 century of precedent and decades of randomised-controlled evidence. See the
 companion writeup and sourcebook for full citations.
 
-The short version: every acceptance criterion for a milestone is enumerated
+The short version: every acceptance criterion for a slice is enumerated
 as a ledger item with a grep-verifiable definition of done. CC works against
 the ledger and reports a disposition for every item. CDC verifies every
-disposition independently against the actual commit state. No milestone
+disposition independently against the actual commit state. No slice
 advances until the ledger is fully closed.
 
 The practice exists because registers alone produce compliance theatre.
@@ -28,12 +28,12 @@ from closure — is where the discipline actually lives.
 
 ## The ledger format
 
-Each milestone has a ledger. The ledger is a table with one row per
+Each slice has a ledger. The ledger is a table with one row per
 acceptance criterion. Minimum columns:
 
 | Col         | Meaning                                                    |
 |-------------|------------------------------------------------------------|
-| ID          | Unique identifier (F-1, F-2, … or milestone-specific).     |
+| ID          | Unique identifier (F-1, F-2, … or slice-specific).     |
 | Criterion   | The acceptance criterion, as a single observable claim.    |
 | Verify      | The command / grep / test that verifies it. Must be exec.  |
 | Significance| serious / correctness-grade / polish.                      |
@@ -44,7 +44,7 @@ acceptance criterion. Minimum columns:
 
 Rules:
 
-1. **Every row must reach a final status before the milestone advances.**
+1. **Every row must reach a final status before the slice advances.**
    Final status is one of: `done`, `deferred`, `no-op`. `open` is not a
    final status.
 
@@ -53,14 +53,14 @@ Rules:
    an acceptable disposition.
 
 3. **`deferred` requires a reason and a re-entry condition.** "Blocked on
-   integration milestone X" is acceptable. "Later" is not.
+   integration slice X" is acceptable. "Later" is not.
 
 4. **`no-op` requires a rationale.** "Design decision: the invariant is
    documented rather than enforced because [specific reason]" is acceptable.
    "Not needed" is not.
 
 5. **Missing rows are ledger bugs.** If the ledger has 24 rows at start of
-   milestone and 22 rows at close, the 2 missing rows are defects in the
+   slice and 22 rows at close, the 2 missing rows are defects in the
    closing report, not omissions. Silent drops are the named failure mode
    this protocol prevents.
 
@@ -70,11 +70,11 @@ Rules:
 
 ## CC protocol
 
-When CC receives a milestone prompt that references this skill:
+When CC receives a slice prompt that references this skill:
 
 1. **Read the ledger before writing any code.** The ledger is not a
    checklist to tick off at the end. It is the specification of what the
-   milestone means by "done." If a criterion is unclear, ask for
+   slice means by "done." If a criterion is unclear, ask for
    clarification before implementing.
 
 2. **Work against the ledger, not around it.** If during implementation you
@@ -106,7 +106,7 @@ When CC receives a milestone prompt that references this skill:
 
 ## CDC protocol
 
-When CDC reviews a closed milestone ledger:
+When CDC reviews a closed slice ledger:
 
 1. **Count the rows.** The closing report's row count must match the
    opening ledger's row count. Missing rows are a ledger bug and must be
@@ -143,25 +143,27 @@ When CDC reviews a closed milestone ledger:
    Run workspace-wide greps to detect this.
 
 8. **Record what worked.** At the end of the ledger, add a "What Worked"
-   section capturing patterns or practices that made this milestone close
+   section capturing patterns or practices that made this slice close
    cleanly. This is the Safety-II complement to the defect ledger and
    prevents the protocol from becoming purely reactive.
 
 ## Iteration budget
 
-Five iterations per milestone. Not four, not ten. The cap is deliberate.
+Five iterations per slice. Not four, not ten. The cap is deliberate.
 
-- If a milestone closes in 1–3 iterations, that is normal and expected.
-- If it takes 4–5, the milestone was probably too large or under-specified,
-  and the next milestone's ledger should be tightened in response.
+- If a slice closes in 1–3 iterations, that is normal and expected.
+- If it takes 4–5, the slice was probably too large or under-specified,
+  and the next slice's ledger should be tightened in response.
 - If it reaches iteration 5 without convergence, stop. Do not iterate a
   sixth time on the same ledger in the same session. Options:
-  a. Rework the milestone scope (usually the right answer).
+  a. Rework the slice scope (usually the right answer).
   b. Start a new CC session with fresh context (if context length is
      suspected as the problem).
   c. Escalate to a methodology review (if the same failure pattern is
-     recurring across milestones, which points at a structural rather
+     recurring across slices, which points at a structural rather
      than tactical issue).
+- Some situations will dictate an override by the operator; in that event,
+  keep an open mind, but provide feedback if it doesn't seem justified.
 
 The empirical basis for this cap is both the self-debugging literature
 (Chen et al. ICLR 2024: "successful debugging processes mostly end within
@@ -186,7 +188,7 @@ Acceptable mitigations:
   rows, not the number of open issues (counter-intuitively, most of the
   review value is in checking the claims that look resolved, not in
   discussing the ones that are obviously still open).
-- The iteration budget is per-milestone, not per-CC-attempt — CDC's
+- The iteration budget is per-slice, not per-CC-attempt — CDC's
   rejection of a softpedalled row counts as a new iteration.
 
 ## Failure modes this protocol prevents
@@ -208,7 +210,7 @@ Acceptable mitigations:
 ## Failure modes this protocol does NOT prevent
 
 1. **Wrong ledger.** If the ledger does not capture the true acceptance
-   criteria of the milestone, the protocol will faithfully verify against
+   criteria of the slice, the protocol will faithfully verify against
    the wrong target. Ledger quality is upstream of protocol quality.
 2. **Adversarial closure.** If CC or CDC deliberately falsifies evidence,
    the protocol assumes good faith. This is acceptable in the CC+CDC
@@ -219,12 +221,14 @@ Acceptable mitigations:
    patterns. The "What Worked" section is a partial mitigation; genuine
    systemic issues may still require out-of-band review.
 
-## Appendix: Per-milestone ledger template
+## Appendix: Per-slice ledger template
 
-A new milestone ledger starts as a minimal markdown table. Copy, fill in,
-and commit to the project as `milestones/<N>-<name>-ledger.md`:
+A new slice ledger starts as a minimal markdown table. Copy, fill in,
+and commit it as the `ledger.md` in the slice's directory, per the default
+layout in [`../docs/AI-ENGINEERING-METHODOLOGY.md`](../docs/AI-ENGINEERING-METHODOLOGY.md)
+— e.g. `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/ledger.md`:
 
-    # Milestone <N>: <name>
+    # Slice <N>: <name>
 
     ## Ledger
 
@@ -235,11 +239,15 @@ and commit to the project as `milestones/<N>-<name>-ledger.md`:
 
     ## What Worked
 
-    _(Filled in at milestone close. Patterns, practices, or decisions that
-    made the milestone close cleanly and should be preserved or
+    _(Filled in at slice close. Patterns, practices, or decisions that
+    made the slice close cleanly and should be preserved or
     generalised.)_
 
     ## Closure
 
     Closed at commit <SHA> on <date>. CDC verification: <name/session>.
     Total rows: <N>. Done: <n>. Deferred: <n>. No-op: <n>.
+
+---
+
+_Terminology aligned to [`../docs/AI-ENGINEERING-METHODOLOGY.md`](../docs/AI-ENGINEERING-METHODOLOGY.md) on 2026-06-08: the level-1 ledger-bearing unit is **slice**, not "milestone." This closes the paired follow-up flagged in the methodology's v1.1 and v1.2 version history (the `milestones/` ledger-path convention is now `arcNN-<slug>/sliceNN-<slug>/ledger.md`). The protocol itself — grep-verifiable rows, evidence-backed closure, CC/CDC separation, the five-iteration cap — is unchanged._
