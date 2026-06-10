@@ -11,7 +11,12 @@ sources:
   - https://raw.githubusercontent.com/blencorp/claude-code-kit/refs/heads/main/cli/kits/tailwindcss/skills/tailwindcss/SKILL.md
   - https://raw.githubusercontent.com/einverne/dotfiles/refs/heads/master/claude/skills/tailwindcss/SKILL.md
 version: 2.0.0
+license: MIT
 tailwind_version: ">=4.0"
+metadata:
+  hermes:
+    tags: [tailwind, css, utility-first, responsive, dark-mode, theme, v4]
+    category: web-frontend
 ---
 
 # Tailwind CSS v4 — Claude Code Skill

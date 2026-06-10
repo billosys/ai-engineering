@@ -7,6 +7,7 @@ description: >
   Node.js-specific, or TypeScript type-system rules. Use when writing, reviewing,
   or refactoring vanilla JavaScript to catch bugs, avoid pitfalls, and enforce
   idiomatic style.
+license: MIT
 metadata:
   version: "1.0.0"
   domain: linting
@@ -15,6 +16,9 @@ metadata:
   scope: review
   output-format: guidance
   related-skills: javascript-pro, biome-js-linter
+  hermes:
+    tags: [deno, lint, javascript, ecmascript, code-quality, vanilla-js]
+    category: linting
 ---
 
 # Deno JS Linter — Claude Code Skill

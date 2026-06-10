@@ -8,6 +8,12 @@ description: |
   code to project idioms, doing code quality audits, performance reviews, improving
   documentation, making dependency decisions, configuring Biome lint/format, enforcing
   the no-Node boundary, or answering JS design questions.
+version: 1.0.0
+license: MIT
+metadata:
+  hermes:
+    tags: [javascript, deno, esm, jsr, biome, async, jsdoc]
+    category: web-frontend
 ---
 
 # JavaScript Skill — Project Style Reference

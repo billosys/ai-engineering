@@ -1,0 +1,41 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "Systems Programming",
+      "skills": [
+        "rust-guidelines",
+        "erlang-guidelines",
+        "go-guidelines"
+      ]
+    },
+    {
+      "title": "Web & Frontend",
+      "skills": [
+        "javascript-deno-guidelines",
+        "visual-design-system",
+        "tailwindcss"
+      ]
+    },
+    {
+      "title": "Linting & Code Quality",
+      "skills": [
+        "biome-js-linter",
+        "biome-linter",
+        "deno-js-linter"
+      ]
+    },
+    {
+      "title": "Static Sites",
+      "skills": [
+        "cobalt-guidelines"
+      ]
+    },
+    {
+      "title": "Engineering Framework",
+      "skills": [
+        "collaboration-framework"
+      ]
+    }
+  ]
+}

@@ -7,6 +7,7 @@ description: >
   framework-specific rules. Use when writing, reviewing, or refactoring vanilla
   JavaScript to catch bugs, avoid pitfalls, enforce idiomatic style, simplify
   code, and prevent performance or security issues.
+license: MIT
 metadata:
   version: "1.0.0"
   domain: linting
@@ -15,6 +16,9 @@ metadata:
   scope: review
   output-format: guidance
   related-skills: javascript-pro, biome-web-linter
+  hermes:
+    tags: [biome, lint, javascript, ecmascript, code-quality, vanilla-js]
+    category: linting
 ---
 
 # Biome JS Linter — Claude Code Skill

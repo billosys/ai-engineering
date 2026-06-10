@@ -15,6 +15,12 @@ description: |
   extending Cobalt programmatically in Rust via `cobalt::Config`,
   `liquid::ParserBuilder`, `Template`, `Object`/`Value`, and the
   `ObjectView`/`ValueView` traits.
+version: 1.0.0
+license: MIT
+metadata:
+  hermes:
+    tags: [cobalt, ssg, static-site, liquid, rust, templates]
+    category: static-sites
 ---
 
 # Cobalt Static Site Generator Skill

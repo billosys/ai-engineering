@@ -16,6 +16,12 @@ description: |
   work needs the quality floor protected against silent drift.
   Does NOT load any domain skill under ./knowledge/ — those are per-language /
   per-domain and are loaded separately, as needed.
+version: 1.0.0
+license: MIT
+metadata:
+  hermes:
+    tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
+    category: meta-skills
 ---
 
 # Collaboration Framework Skill

@@ -7,6 +7,7 @@ description: >
   enforce style consistency, improve accessibility, avoid performance pitfalls,
   and prevent security vulnerabilities. Covers correctness, suspicious patterns,
   style, complexity, a11y, performance, and security categories.
+license: MIT
 metadata:
   version: "1.0.0"
   domain: linting
@@ -15,6 +16,9 @@ metadata:
   scope: review
   output-format: guidance
   related-skills: javascript-pro
+  hermes:
+    tags: [biome, lint, javascript, typescript, jsx, css, a11y, code-quality]
+    category: linting
 ---
 
 # Biome Linter — Claude Code Skill
