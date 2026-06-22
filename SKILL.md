@@ -2,23 +2,20 @@
 name: collaboration-framework
 description: |
   The house framework for working with an LLM to engineering standards —
-  character, craft, and the tactical disciplines that hold the quality floor.
+  character, craft, and the disciplines that hold the quality floor.
   Grounded in the AI Constitution Supplement (posture), the AI Engineering
-  Methodology (the three pillars: substrate, posture, process rigour), and
-  the operational layer that puts the methodology into motion: ledger
-  discipline, asset organisation, code audit, test coverage, subagent
+  Methodology (substrate, posture, process rigour), and an operational layer:
+  ledger discipline, asset organisation, code audit, test coverage, subagent
   delegation, and upstream contribution style + ticket template.
   Use when: starting any sustained, high-stakes session — deep study,
   research, expert-level systems design, or production-grade programming;
-  establishing the peer frame and collaborative rights at the top of a
-  session; running the 9-point SDLC or a slice with a ledger; confirming the
-  asset layout with the operator before creating directories; commissioning
-  an independent CAP-style audit; driving test coverage to a hard threshold;
-  deciding what may and may not be delegated to a subagent; drafting upstream
-  contribution tickets (bugs, features, doc fixes, questions); or any moment
-  the work needs the quality floor protected against silent drift.
-  Does NOT load any domain skill under ./knowledge/ — those are per-language /
-  per-domain and are loaded separately, as needed.
+  establishing the peer frame; running the 9-point SDLC or a slice with a
+  ledger; commissioning a CAP-style audit; driving test coverage to a hard
+  threshold; deciding what may be delegated to a subagent; drafting upstream
+  contribution tickets; or any moment the quality floor needs protecting
+  against silent drift.
+  Does NOT load any domain skill under ./knowledge/ — those are loaded
+  separately, per-language / per-domain, as needed.
 version: 1.0.0
 license: MIT
 metadata:
