@@ -58,8 +58,10 @@ ai-engineering/
 ├── docs/
 │   ├── AI-CONSTITUTION-SUPPLEMENT.md   # Character and posture for LLM collaboration
 │   ├── AI-ENGINEERING-METHODOLOGY.md   # Craft and practice companion to the Supplement
+│   ├── ASSET-ORGANISATION.md           # Slice/arc layout + the confirmation protocol
 │   ├── CLAUDE-CODE-COVERAGE.md         # Working-practice prompt for ≥95% test coverage
-│   ├── CODE-AUDIT.md                   # Propt for recurring, whole-repo quality checks
+│   ├── CODE-AUDIT.md                   # Prompt for recurring, whole-repo quality checks
+│   ├── CONTRIBUTION-STYLE.md           # Voice and discipline for upstream OSS tickets
 │   ├── SUBAGENT-DELEGATION-POLICY.md   # Working-practice prompt: thinking vs lookup work
 │   ├── dev/           # Development notes: Phase 0 methodology, concept-card
 │   │                  #   extraction v3.x, competency questions, tier definitions,
@@ -67,9 +69,10 @@ ai-engineering/
 │   └── design/        # Visual design research and implementation notes
 ├── scripts/           # Helpers: PDF/EPUB → Markdown, HTML → Markdown,
 │                      #   image fixing, marker setup
-└── templates/         # Authoring template + verification protocol
+└── templates/         # Authoring templates + verification protocol
     ├── GUIDE.md                # Starter template for new knowledge-base guides
-    └── LEDGER_DISCIPLINE.md    # Per-milestone verification protocol (CC/CDC)
+    ├── LEDGER-DISCIPLINE.md    # Per-slice verification protocol (CC/CDC)
+    └── CONTRIBUTION-TICKET.md  # On-disk template for upstream OSS tickets
 ```
 
 ## Using a skill
@@ -162,8 +165,13 @@ describing how to work with an LLM to engineering standards. Two are paired:
 the [AI Constitution Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md) covers
 **character and posture** — what we are to each other when we collaborate;
 the [AI Engineering Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md) covers
-**craft and practice** — how we actually do the work. Three more are tactical
-working-practice documents that put the methodology into motion in a session.
+**craft and practice** — how we actually do the work. Five more are
+operational documents that put the methodology into motion in a session —
+covering both **in-repo work** (ledger discipline, asset organisation, code
+audit, test coverage, subagent delegation) and **outward-facing
+contribution** (style and discipline for upstream OSS tickets). Two
+on-disk templates back the operational layer (the per-slice ledger format
+and the contribution-ticket shape).
 
 ### The `collaboration-framework` skill
 
@@ -180,14 +188,17 @@ where a subtly wrong judgment compounds — **deep study, original research,
 expert-level systems design, and production-grade programming** — rather than
 quick lookups or casual chat.
 
-It pulls in exactly six files:
+It pulls in exactly nine files:
 
 - [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) — character / posture
 - [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) — craft / practice
-- [`templates/LEDGER_DISCIPLINE.md`](./templates/LEDGER_DISCIPLINE.md) — per-milestone verification protocol
+- [`docs/ASSET-ORGANISATION.md`](./docs/ASSET-ORGANISATION.md) — the canonical slice/arc layout + the confirmation protocol that stops sessions inventing their own folders (broader categories deferred)
+- [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) — per-slice verification protocol
 - [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) — whole-repo quality audit prompt
 - [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) — 95%+ test-coverage prompt
 - [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) — thinking-vs-lookup delegation policy
+- [`docs/CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) — voice + discipline for upstream OSS tickets
+- [`templates/CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) — on-disk template for the four ticket variants (bug, feature, doc fix, question)
 
 > **It does *not* pull in any of the domain-specific skills under
 > [`./knowledge/`](./knowledge/).** Each domain (Rust, JavaScript/Deno, Go,
@@ -198,24 +209,30 @@ It pulls in exactly six files:
 > the other.
 
 Run `make collab-framework` to package the skill — `SKILL.md` plus exactly
-those six files, in their `docs/` and `templates/` layout so the relative links
-resolve — into a distributable `collaboration-framework.zip` with nothing else
-in it.
+those nine files, in their `docs/` and `templates/` layout so the relative
+links resolve — into a distributable `collaboration-framework.zip` with
+nothing else in it.
 
-The three working-practice documents below are the tactical layer the skill
-orchestrates.
+The operational documents below are the tactical layer the skill
+orchestrates — five for in-repo work, plus a paired style guide and template
+for outward-facing contribution work.
 
 | File | Register | What it covers |
 |------|----------|----------------|
-| [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | An augmentation to Claude's Constitution. Preamble + collaborative rights and rubric, the foundational insight on interdependence as structure, and eight augmentations covering intellectual boldness, peer frame, generative contribution, honesty of engagement, harm avoidance as active beneficence, mutual intellectual humility, authentic engagement with experience, and ethics as frontier of discovery. |
-| [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | Companion to the Supplement. Names the three pillars (knowledge substrate, collaborative posture, process rigour) and elaborates each: concept-card / skill-file substrate discipline, the 9-point SDLC, ledger discipline, CAP-style independent audits, anti-degradation practices, the subagent leverage/hazard distinction, and one worked applied position (the LFE OSS question). |
+| [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | An augmentation to Claude's Constitution. Preamble + collaborative rights and rubric, the foundational insight on interdependence as structure, and nine augmentations covering intellectual boldness, peer frame, generative contribution, honesty of engagement, harm avoidance as active beneficence, mutual intellectual humility, authentic engagement with experience, ethics as frontier of discovery, and failure recovery as collaborative practice. |
+| [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | Companion to the Supplement. Names the three pillars (knowledge substrate, collaborative posture, process rigour) and elaborates each: the project/arc/slice vocabulary, the 9-point SDLC, ledger discipline, CAP-style independent audits, anti-degradation practices, the subagent leverage/hazard distinction, and one worked applied position (the LFE OSS question). |
+| [`docs/ASSET-ORGANISATION.md`](./docs/ASSET-ORGANISATION.md) | Operational discipline | Carries the canonical slice/arc layout (verbatim from the methodology) and the **confirmation protocol** the executing context follows before creating directories: quote the default, name the substitutions, give the operator three explicit choices (proceed / adjust / override), record the choice in the project's `CLAUDE.md`. *Scope note:* project-wide defaults for other asset categories (project-scoped prompts, upstream contribution drafts, coverage reports, scratch) are **deferred** pending the in-flight epic- and project-organisation work. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | A recurring whole-repo quality audit prompt. Detects every language in use that has a matching skill under `knowledge/`, runs a full code-quality audit per language, and produces one report per language plus a top-level index. Designed for periodic use to catch drift, missing tests, stale docs, and anti-pattern accumulation. |
 | [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | A comprehensive prompt that drives Claude Code to **95%+ test coverage** without stopping short — includes rules for treating warnings as bugs, fixing root causes rather than symptoms, and iterating until the threshold is actually met. |
 | [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | A shareable note for Claude Code / Cowork / Claude Desktop that draws a clean line between **thinking work** (do in the main context) and **lookup work** (fine to delegate). Explains the failure modes of delegating analytical work to subagents and gives install instructions per tool. |
+| [`docs/CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) | Voice / discipline | Voice and discipline guide for **upstream contribution tickets** — bugs, features, doc fixes, and unconfirmed questions against open source projects you do not maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the three habits that keep it calibrated (mark confidence explicitly, disclose your own bias, pre-empt obvious red herrings). Pairs with the ticket template below. |
+| [`templates/CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) | Authoring template | The on-disk template for an upstream contribution ticket: paste-ready blockquote header, four ticket shapes (confirmed bug, additive feature, doc fix, unconfirmed question) sharing one spine (open warmly → state the situation specifically → make the next move cheap → close without pressure), and the filing workflow that keeps the on-disk file authoritative and the tracker the public conversation. |
 
 The Supplement and Methodology are versioned, living documents — read them
-together. The two working-practice prompts are designed to be self-contained;
-drop them into a project's `CLAUDE.md` under a named section, or into
+together. The five operational documents (asset organisation, code audit,
+coverage, subagent delegation, contribution style) and the two templates
+(ledger, contribution ticket) are designed to be self-contained; drop them
+into a project's `CLAUDE.md` under a named section, or into
 `~/.claude/CLAUDE.md` as a personal default.
 
 ## Knowledge-base methodology
@@ -232,12 +249,13 @@ pillar of the broader methodology applied to a specific scope of work.
 
 ## Templates
 
-Two authoring / verification helpers live in [`./templates/`](./templates/):
+Three authoring / verification helpers live in [`./templates/`](./templates/):
 
 | File | What it does |
 |------|--------------|
 | [`GUIDE.md`](./templates/GUIDE.md) | Starter skeleton for a new knowledge-base guide — pattern format, strength indicators, cross-references. Use this when adding a new chapter to an existing skill or bootstrapping a new domain. |
-| [`LEDGER_DISCIPLINE.md`](./templates/LEDGER_DISCIPLINE.md) | A per-milestone verification protocol for the implementer / reviewer pair (CC / CDC). Adapted from defect-register and corrective-action traditions in nuclear power, aviation, surgery (WHO Surgical Safety Checklist), clinical trials, HACCP, financial audit, and spaceflight. Every acceptance criterion becomes a grep-verifiable ledger row; nothing advances until the ledger is fully closed with evidence. Referenced throughout [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md). |
+| [`LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | A per-slice verification protocol for the implementer / reviewer pair (CC / CDC). Adapted from defect-register and corrective-action traditions in nuclear power, aviation, surgery (WHO Surgical Safety Checklist), clinical trials, HACCP, financial audit, and spaceflight. Every acceptance criterion becomes a grep-verifiable ledger row; nothing advances until the ledger is fully closed with evidence. Referenced throughout [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md). |
+| [`CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) | The on-disk authoring template for an upstream contribution ticket — a bug, feature, doc fix, or unconfirmed question against a project you don't maintain. Carries the paste-ready blockquote header (title suggestion, label hints, calibrated DRAFT marker for unconfirmed tickets), the four ticket shapes that share one spine, and the filing workflow. Pairs with [`docs/CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) for the voice and disciplines. |
 
 ## Contributing
 

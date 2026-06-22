@@ -1,4 +1,4 @@
-# LEDGER_DISCIPLINE.md
+# LEDGER-DISCIPLINE.md
 
 > Per-slice verification discipline for CC (implementer) and CDC (reviewer).
 > Load this skill at the start of any slice that has an associated ledger.

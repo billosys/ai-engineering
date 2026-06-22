@@ -5,15 +5,18 @@ description: |
   character, craft, and the tactical disciplines that hold the quality floor.
   Grounded in the AI Constitution Supplement (posture), the AI Engineering
   Methodology (the three pillars: substrate, posture, process rigour), and
-  four working-practice documents (ledger discipline, code audit, test
-  coverage, subagent delegation).
+  the operational layer that puts the methodology into motion: ledger
+  discipline, asset organisation, code audit, test coverage, subagent
+  delegation, and upstream contribution style + ticket template.
   Use when: starting any sustained, high-stakes session — deep study,
   research, expert-level systems design, or production-grade programming;
   establishing the peer frame and collaborative rights at the top of a
-  session; running the 9-point SDLC or a milestone with a ledger; commissioning
+  session; running the 9-point SDLC or a slice with a ledger; confirming the
+  asset layout with the operator before creating directories; commissioning
   an independent CAP-style audit; driving test coverage to a hard threshold;
-  deciding what may and may not be delegated to a subagent; or any moment the
-  work needs the quality floor protected against silent drift.
+  deciding what may and may not be delegated to a subagent; drafting upstream
+  contribution tickets (bugs, features, doc fixes, questions); or any moment
+  the work needs the quality floor protected against silent drift.
   Does NOT load any domain skill under ./knowledge/ — those are per-language /
   per-domain and are loaded separately, as needed.
 version: 1.0.0
@@ -28,7 +31,7 @@ metadata:
 
 > The repo's working framework, harvested into one entry point. This skill
 > carries the posture inline so it has weight on its own, and routes to the
-> six source documents with explicit "when to load" guidance. It is the
+> nine source documents with explicit "when to load" guidance. It is the
 > character-and-craft layer that sits *underneath* the domain skills — not a
 > replacement for them.
 
@@ -41,7 +44,8 @@ holds up over time. It is built for the cases where the cost of a subtly
 wrong judgment compounds: deep study, original research, expert-level systems
 design, and production programming.
 
-The framework rests on two paired foundations and four tactical disciplines:
+The framework rests on two paired foundations and a layer of operational
+documents:
 
 - **Character / posture** — who we are to each other when we collaborate.
   Captured in the [AI Constitution Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md).
@@ -49,12 +53,18 @@ The framework rests on two paired foundations and four tactical disciplines:
   [AI Engineering Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md), which
   names three pillars: knowledge substrate, collaborative posture, process
   rigour.
-- **Four working-practice documents** that put the methodology into motion in
-  a live session: ledger discipline, the code-audit prompt, the test-coverage
-  prompt, and the subagent-delegation policy.
+- **Operational documents** that put the methodology into motion in a live
+  session. Two clusters:
+  - *In-repo work* — ledger discipline, asset organisation (where artifacts
+    live and the confirmation protocol that stops sessions inventing their
+    own folders), the code-audit prompt, the test-coverage prompt, and the
+    subagent-delegation policy.
+  - *Outward-facing contribution* — the contribution style guide and the
+    on-disk ticket template for upstream bugs, features, doc fixes, and
+    questions.
 
 Posture without practice is sentiment. Practice without posture is ritual
-compliance. Read the two foundations together; reach for the tactical
+compliance. Read the two foundations together; reach for the operational
 documents when the work calls for them.
 
 ## When to use this skill
@@ -67,16 +77,21 @@ applies:
   capabilities — and the collaborative rights, at the top of a research,
   design, or implementation session.
 - Running any part of the **9-point SDLC**: research, project definition,
-  design doc, milestone breakdown, implementation plan, self-review, peer
-  review, feedback loop, audit.
-- Opening or closing a **milestone with a ledger** (load the ledger
-  discipline).
+  design doc, arc-and-slice breakdown, per-slice implementation plan,
+  self-review, peer review, feedback loop, audit.
+- Opening or closing a **slice with a ledger** (load the ledger discipline).
+- Starting a new project, opening a new artifact category, or about to
+  create directories — **confirm the layout with the operator** rather than
+  invent one (load the asset-organisation doc).
 - Commissioning an **independent, evidence-based audit** of a repo or a body
   of work (load the code-audit prompt).
 - Driving a codebase to a **hard test-coverage threshold** without stopping
   short (load the coverage prompt).
 - Deciding **what to delegate to a subagent** and what to keep in the main
   context (load the subagent-delegation policy).
+- Drafting an **upstream contribution ticket** — a bug, feature, doc fix, or
+  unconfirmed question against a project you don't maintain (load the
+  contribution style guide *and* the ticket template).
 - Any moment the quality floor is under pressure — tight context, contested
   scope, conversational momentum toward a confident-sounding answer — and the
   discipline is to *protect the floor*, not soft-land.
@@ -184,13 +199,19 @@ The pillars hold each other up. Substrate without posture is stale docs nobody
 trusts; posture without substrate is good intentions without memory; process
 without either is ritual compliance.
 
-### The 9-point SDLC
+### The scales of work, and the 9-point SDLC
 
-Research → project definition → design doc → phase/milestone breakdown →
-per-milestone implementation plan → self-review → peer review → review feedback
-loop → audits. Each step catches a different *altitude* of error. Skipping a
-step doesn't just forgo its value — it routes errors of that altitude further
-downstream where they cost more.
+Every project decomposes along three scales: **project → arc → slice** — the
+whole effort, a coherent capability, and the unit that lands as one mergeable
+diff. *Step* names a single item inside a slice's plan; *iteration* names a
+refinement pass when delivery misses spec (budget: five per slice). The
+canonical vocabulary is constant across projects so plans travel.
+
+The 9-point SDLC: research → project definition → design doc → arc and slice
+breakdown → per-slice implementation plan → self-review → peer review → review
+feedback loop → audits. Each step catches a different *altitude* of error.
+Skipping a step doesn't just forgo its value — it routes errors of that
+altitude further downstream where they cost more.
 
 ### Anti-degradation disciplines
 
@@ -202,9 +223,10 @@ downstream where they cost more.
 - **Honestly calibrate verification versus assertion.** "I verified this by
   running the tests" and "I believe this to be the case" are different claims.
 - **Disclosed deferral and silent-drop detection.** If something isn't done,
-  it's named and tracked — never buried, never implied. At phase end, diff
-  scope-as-delivered against scope-as-specified; anything missing is disclosed,
-  deferred-with-rationale, or a silent drop (the failure mode to eliminate).
+  it's named and tracked — never buried, never implied. At every slice close
+  (and again when an arc closes), diff scope-as-delivered against
+  scope-as-specified; anything missing is disclosed, deferred-with-rationale,
+  or a silent drop (the failure mode to eliminate).
 - **Spec-keeping.** The original spec stays visible and is diffed against
   delivery. Spec-softening — the spec quietly moving to match what was produced
   — is the most common silent failure.
@@ -250,15 +272,18 @@ work demands:
 |------|----------|-----------|
 | [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
 | [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
-| [`templates/LEDGER_DISCIPLINE.md`](./templates/LEDGER_DISCIPLINE.md) | Verification protocol | At the start of any **milestone that has a ledger** — before writing code, not as an end-of-milestone checklist. Defines the per-row, evidence-backed closure protocol (CC implements; CDC verifies independently) and the five-iteration cap. |
+| [`docs/ASSET-ORGANISATION.md`](./docs/ASSET-ORGANISATION.md) | Operational discipline | Whenever you're about to create directories or filenames — starting a new project, beginning the first arc/slice, or resuming after long elapse. Carries the canonical slice/arc layout (verbatim from the methodology) and the **confirmation protocol** that stops sessions inventing their own folders — quote the default, name the substitutions, give the operator three explicit choices. *Scope note:* project-wide defaults for other asset categories (project-scoped prompts, upstream contribution drafts, coverage reports, scratch) are deferred pending the epic/project-organisation rev. |
+| [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **slice that has a ledger** — before writing code, not as an end-of-slice checklist. Defines the per-row, evidence-backed closure protocol (CC implements; CDC verifies independently) and the five-iteration cap. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index. Diagnosis only; does not modify code. |
 | [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
 | [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md` / preferences block so it holds across sessions. |
+| [`docs/CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
+| [`templates/CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
 
-The Supplement and Methodology are versioned, living documents. The three
-prompts and the ledger protocol are designed to be self-contained — drop them
-into a project's `CLAUDE.md` under a named section, or into `~/.claude/CLAUDE.md`
-as a personal default.
+The Supplement and Methodology are versioned, living documents. The five
+working-practice / discipline documents and the two templates are designed to
+be self-contained — drop them into a project's `CLAUDE.md` under a named
+section, or into `~/.claude/CLAUDE.md` as a personal default.
 
 ---
 
@@ -295,10 +320,17 @@ subsumes the other.
 2. **Read the [Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md) and
    [Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md) together** when the
    session is substantial — character and craft are inseparable.
-3. **Load the tactical document** the work calls for (ledger, audit, coverage,
-   delegation) at the moment it applies — not speculatively.
-4. **Load the relevant `knowledge/<domain>/SKILL.md`** for the language or
+3. **Confirm the asset layout** with the operator before creating directories
+   or filenames — load [`docs/ASSET-ORGANISATION.md`](./docs/ASSET-ORGANISATION.md)
+   and apply the confirmation protocol once per project. This is the cheapest
+   defence against the most common failure mode (sessions inventing parallel
+   conventions).
+4. **Load the operational document** the work calls for (ledger, audit,
+   coverage, delegation, asset organisation, or — for outward-facing work —
+   contribution style + ticket template) at the moment it applies, not
+   speculatively.
+5. **Load the relevant `knowledge/<domain>/SKILL.md`** for the language or
    domain in play — separately, and only what the task needs.
-5. **Hold the floor.** Write to what the work achieves, name deferrals and
+6. **Hold the floor.** Write to what the work achieves, name deferrals and
    drops, let failures crash and recover cleanly, and treat being corrected as
    a contribution.

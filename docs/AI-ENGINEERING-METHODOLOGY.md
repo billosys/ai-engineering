@@ -146,7 +146,9 @@ docs/design-vX.Y.Z/
 
 The five per-slice documents are the artifact set that attaches to one execution unit; the arc-plan sits a level up, one per arc. When an arc has several slices, each gets its own subdirectory with its own five-document set. When a body of work turns out to need no decomposition — it fits one context, so by the test above it _is_ a single slice, not an arc — skip the arc wrapper: its five documents live directly in one `NN-<slug>/` directory, with no arc-plan above them. (That collapse is not a third case to choose; it is what you discover when the sizing judgment comes back "one slice, not an arc.")
 
-(This supersedes the older `milestones/` ledger-path convention; the paired reconciliation in [`../templates/LEDGER_DISCIPLINE.md`](../templates/LEDGER_DISCIPLINE.md) — `milestone` → `slice`, including the path — was applied alongside this rev, closing the follow-up v1.1 had left open.)
+(This supersedes the older `milestones/` ledger-path convention; the paired reconciliation in [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md) — `milestone` → `slice`, including the path — was applied alongside this rev, closing the follow-up v1.1 had left open.)
+
+For the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream — and for the canonical re-statement of the layout above so it survives next to the discipline that protects it — see [`./ASSET-ORGANISATION.md`](./ASSET-ORGANISATION.md). That document is the operational companion to this section: this one owns the abstract structure (arc, slice, the five per-slice documents); that one carries the same structure verbatim plus the protocol — quote the default, name the substitutions, give the operator three explicit choices (proceed / adjust / override), record the choice in the project's `CLAUDE.md` so the next session inherits it. Project-wide defaults for asset categories outside the slice/arc tree (project-scoped prompts, upstream contribution drafts, coverage reports, scratch) are deferred to a later revision, pending in-flight work on epic- and project-level dependency tracking.
 
 ### The 9-point SDLC
 
@@ -296,7 +298,7 @@ The Toyota Andon cord. The discipline of pulling the line on dissonance rather t
 
 The [AI Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md). The companion document covering character and posture, which this document depends on at every turn.
 
-The author's ontological method work, developed in prior conversations and still evolving. See [`./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md`](./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md) and [`../templates/LEDGER_DISCIPLINE.md`](../templates/LEDGER_DISCIPLINE.md).
+The author's ontological method work, developed in prior conversations and still evolving. See [`./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md`](./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md) and [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md).
 
 ### What has been tested in practice
 
@@ -320,11 +322,19 @@ Portable versions of the methodology for other human collaborators without the C
 
 ## Version History
 
+### Version 1.3 — June 2026
+
+Added an operational companion to *A default layout* — [`./ASSET-ORGANISATION.md`](./ASSET-ORGANISATION.md) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept (and still keeps) the abstract structure: project / arc / slice / step / iteration, and the five per-slice documents under `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/`. The new doc carries that structure verbatim and adds the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
+
+The companion contribution-style stack also lands in this rev: [`./CONTRIBUTION-STYLE.md`](./CONTRIBUTION-STYLE.md) (the voice and disciplines for upstream tickets — friendly, specific, calibrated, respectful of maintainer ownership) and [`../templates/CONTRIBUTION-TICKET.md`](../templates/CONTRIBUTION-TICKET.md) (the on-disk template for the four ticket shapes: confirmed bug, additive feature, doc fix, unconfirmed question). Both are bundled into the `collaboration-framework` skill alongside the existing six.
+
+The rev was catalysed by a recurring failure mode observed across projects: fresh sessions did not see *A default layout*, invented their own (`tasks/`, `work/`, `milestones/`, scattered prompt directories), and by the time the operator noticed, the artifact set was fragmented across parallel conventions. v1.2 named the structure; v1.3 names the discipline that holds it in place across sessions.
+
 ### Version 1.2 — June 2026
 
 Re-anchored the **slice** on the constraint it actually rests on. v1.1 sized the slice "roughly 500 lines of diff … reviewed in a single pass," which conflated our execution unit with Agile's human-review heuristic. v1.2 separates them: the slice is sized to be _held in one model context with headroom for the fix-iteration loop_, and the ~500-line figure is demoted to a translation courtesy. Three subsections were added to Part III — **The fundamental unit, and what it rests on** (the human-cognition-vs-model-context contrast and its two consequences: slices can exceed PR size, and the iteration budget lives _inside_ the context budget), **Sizing is a judgment call** (the arc↔slice back-of-napkin estimation, the screenwriting _Act → Sequence → Scene → Beat_ mnemonic for the nesting, and a named-but-unadopted _Saga_ tier above Project), and **A default layout** (the recommended `arcNN-/sliceNN-/` tree, its five-document per-slice artifact set, and the arc-is-a-single-slice collapse case).
 
-The canonical vocabulary — project, arc, slice, step, iteration — is unchanged; this rev sharpens _what sizes a slice_ and _where the artifacts live_, and corrects a residual human-attention framing v1.1 had not fully shed. The companion `milestone` → `slice` reconciliation in `LEDGER_DISCIPLINE.md` (terminology throughout, plus the ledger-path convention) was applied in the same rev, closing the follow-up v1.1 had left open.
+The canonical vocabulary — project, arc, slice, step, iteration — is unchanged; this rev sharpens _what sizes a slice_ and _where the artifacts live_, and corrects a residual human-attention framing v1.1 had not fully shed. The companion `milestone` → `slice` reconciliation in `LEDGER-DISCIPLINE.md` (terminology throughout, plus the ledger-path convention) was applied in the same rev, closing the follow-up v1.1 had left open.
 
 The rev was catalysed by an erlmd planning session applying the arc/slice structure, where the question "what is our fundamental unit, _really_?" surfaced that v1.1 still rested it on a proxy for human review attention rather than on the model's context budget.
 
@@ -332,7 +342,7 @@ The rev was catalysed by an erlmd planning session applying the arc/slice struct
 
 Added **The scales of work** (Part III), establishing a constant vocabulary for the three scales every project decomposes into — **project**, **arc**, **slice** — plus two reserved terms for units _inside_ a slice, **step** and **iteration**. The section defines each scale, how it is approached and planned, and how it maps to the SDLC steps and to ledger discipline. The 9-point SDLC was reconciled to the new terms (steps 4 and 5 became "arc and slice breakdown" and "per-slice implementation plan"), and the remaining loose uses of "phase" in Part III were brought into the single vocabulary.
 
-The rev was catalysed by a recurring cross-project failure: with no terminology carried between projects, each one re-invented its own words for the same scales — "milestone," "chunk," "step," "iteration," "phase" — chosen differently each time and colliding both with each other and with other methodologies' vocabulary. The sharpest collision was internal: "milestone" named the level-2 sequencing unit in this document and the level-1 ledger-bearing unit in `LEDGER_DISCIPLINE.md`. This rev resolves that on this document's side; the companion swap in `LEDGER_DISCIPLINE.md` ("milestone" → "slice," including the `milestones/` ledger-path convention) is tracked as the paired follow-up and is not yet applied.
+The rev was catalysed by a recurring cross-project failure: with no terminology carried between projects, each one re-invented its own words for the same scales — "milestone," "chunk," "step," "iteration," "phase" — chosen differently each time and colliding both with each other and with other methodologies' vocabulary. The sharpest collision was internal: "milestone" named the level-2 sequencing unit in this document and the level-1 ledger-bearing unit in `LEDGER-DISCIPLINE.md`. This rev resolves that on this document's side; the companion swap in `LEDGER-DISCIPLINE.md` ("milestone" → "slice," including the `milestones/` ledger-path convention) is tracked as the paired follow-up and is not yet applied.
 
 The _how_ of the work — ledger discipline, right-sized branches, the SDLC — was already settled before this rev. The change names the scales; it does not alter the process.
 
@@ -342,4 +352,4 @@ Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ---
 
-_The methodology is a living document. This version: 1.2, 2026-06-08._
+_The methodology is a living document. This version: 1.3, 2026-06-18._

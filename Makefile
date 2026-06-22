@@ -17,7 +17,7 @@ BUILD := build
 ## help: list the available targets
 help:
 	@echo "Packaging targets:"
-	@echo "  make collab-framework   -> collaboration-framework.zip (SKILL.md + its 6 docs)"
+	@echo "  make collab-framework   -> collaboration-framework.zip (SKILL.md + its 9 docs)"
 	@echo "  make rust               -> rust-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
 	@echo "  make js                 -> javascript-deno-guidelines.zip"
@@ -32,7 +32,7 @@ help:
 	@echo "  make clean              -> remove build/ and all *.zip"
 
 # ---------------------------------------------------------------------------
-# collaboration-framework: top-level SKILL.md plus exactly the six documents it
+# collaboration-framework: top-level SKILL.md plus exactly the nine documents it
 # pulls in, in their docs/ and templates/ layout so the relative links resolve.
 # Nothing else.
 # ---------------------------------------------------------------------------
@@ -47,12 +47,15 @@ CF_FILES := \
 	SKILL.md \
 	docs/AI-CONSTITUTION-SUPPLEMENT.md \
 	docs/AI-ENGINEERING-METHODOLOGY.md \
+	docs/ASSET-ORGANISATION.md \
 	docs/CODE-AUDIT.md \
 	docs/CLAUDE-CODE-COVERAGE.md \
 	docs/SUBAGENT-DELEGATION-POLICY.md \
-	templates/LEDGER_DISCIPLINE.md
+	docs/CONTRIBUTION-STYLE.md \
+	templates/LEDGER-DISCIPLINE.md \
+	templates/CONTRIBUTION-TICKET.md
 
-## collab-framework: build collaboration-framework.zip (SKILL.md + its 6 files)
+## collab-framework: build collaboration-framework.zip (SKILL.md + its 9 files)
 collab-framework: collab-framework-clean
 	@echo ">> staging $(CF_NAME) bundle"
 	@mkdir -p "$(CF_STAGE)"
