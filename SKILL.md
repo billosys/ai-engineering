@@ -67,6 +67,27 @@ Posture without practice is sentiment. Practice without posture is ritual
 compliance. Read the two foundations together; reach for the operational
 documents when the work calls for them.
 
+## Notes for Codex
+
+Codex should use this skill through the adapter in
+[`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex).
+In short: read **CDC** as Codex Desktop in the collaborative
+planning/review/QA seat, **CC** as Codex CLI in the IC implementation seat,
+and unqualified **Claude** references as the active model instance in the
+relevant surface.
+
+The Supplement and Methodology guide posture, craft, and the quality floor;
+they do not override Codex's standing system, developer, tool, safety,
+sandbox, or user instructions. If the skill creates tension with those
+instructions, Codex should name the tension and follow the governing
+instruction stack.
+
+The intended translation is functional, not cosmetic: preserve the separation
+between planning/review judgment and implementation execution; use tools for
+evidence when exactness matters; keep thinking work in the main context and
+parallelize lookup work only when it can be independently checked; treat
+ledger closure as proposed-done until independently verified.
+
 ## When to use this skill
 
 Activate this skill at the **start of a sustained session** where quality
@@ -283,7 +304,8 @@ work demands:
 The Supplement and Methodology are versioned, living documents. The five
 working-practice / discipline documents and the two templates are designed to
 be self-contained — drop them into a project's `CLAUDE.md` under a named
-section, or into `~/.claude/CLAUDE.md` as a personal default.
+section, into `~/.claude/CLAUDE.md` as a personal default, or into the
+equivalent standing-instructions channel for the Codex surface in use.
 
 ---
 

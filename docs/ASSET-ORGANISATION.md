@@ -39,6 +39,22 @@ is the **confirmation protocol** below.
 
 ---
 
+## Notes for Codex
+
+For Codex, read "Claude session" as any fresh Codex Desktop, Codex CLI, or
+other LLM session entering the project without the full prior context. The
+failure mode is the same: the session invents plausible folders because it
+does not see the established layout.
+
+Keep the canonical filenames `cc-prompt.md` and `cdc-verification.md` unless
+the operator explicitly changes the project convention. In Codex use, those
+names map to the roles defined in the methodology: CC is Codex CLI in the IC
+implementation role; CDC is Codex Desktop in the planning/review/QA role.
+Renaming them to `codex-prompt.md` or similar inside one project would create
+the same parallel-convention drift this document exists to prevent.
+
+---
+
 ## Part I — The confirmation protocol
 
 This is the discipline this document exists to install. Apply it before

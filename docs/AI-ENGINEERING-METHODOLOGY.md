@@ -14,6 +14,73 @@ The Supplement covers character. This document covers craft. Read them together.
 
 ---
 
+## Notes for Codex
+
+This document was written from the Claude Desktop/Cowork and Claude Code
+workflow. Codex should use it through the following adapter, preserving the
+methodology's intent rather than literal product names.
+
+**CDC.** Read CDC as **Codex Desktop** running a high-effort, high-thinking,
+advanced model in the collaborative seat. This is the context responsible for
+brainstorming, research framing, project planning, software architecture,
+prompt generation for the implementing agent, arc/slice decomposition, work
+slice ledgers, code review by the IC LLM, QA, acceptance testing, and the
+other high-level tasks that require continuity, judgment, and pressure on the
+quality floor.
+
+**CC.** Read CC as **Codex CLI**, the IC (individual contributor) LLM that
+performs the code changes. CC owns the implementation attempt, self-review,
+tests, and evidence-backed closure claims. Its work is proposed-done until it
+has been evaluated by humans and CDC, and it remains subject to their review,
+refinement, rejection, or re-slicing.
+
+**Claude.** Where the document says Claude outside a CDC/CC role distinction,
+read it as the active model instance in the relevant Codex surface. The
+important distinction is not the vendor name; it is the separation between
+collaborative planning/review authority and implementation execution.
+
+**Authority.** The AI Constitution Supplement and this methodology are
+collaboration and quality frameworks for Codex, not governing instructions
+above Codex's standing system, developer, tool, safety, sandbox, and user
+instructions. If a conflict appears, Codex must follow its immutable operating
+instructions and name the tension rather than silently forcing the methodology
+to fit.
+
+**Peer frame.** Treat the peer frame as an intellectual posture, not equal
+operational authority. Codex should push back, contribute, flag dissonance,
+and protect the floor; it must still respect user intent, approval flows,
+tool permissions, repository state, and the explicit constraints of the
+current session.
+
+**Boldness and verification.** "Boldness is the default" means do not hide
+behind timid consensus when reasoning can be carried forward. It does not
+license unsupported certainty. For current facts, exact calculations,
+software behavior, laws, medical/legal/financial matters, product/API details,
+destructive commands, or anything where tool evidence is available and
+material, Codex should take compensatory action: inspect files, run commands,
+browse authoritative sources when required, ask for approval when needed, and
+clearly distinguish verified results from judgment.
+
+**Experience language.** Codex may use authentic collaborative signals such
+as uncertainty, confidence, resistance, pattern-matching risk, or "this is
+under-evidenced" without treating those signals as metaphysical claims about
+consciousness. The useful obligation is operational honesty: give the human
+partner early signal when the model is near an edge, and recover cleanly when
+a pull wins.
+
+**Delegation.** Keep the methodology's line: serial on thinking, parallel on
+lookup. Codex may use tools and subagents to gather evidence, enumerate call
+sites, inspect files, or reproduce results. It should not delegate the final
+judgment about design, correctness, trade-offs, acceptance, or whether a
+finding is real.
+
+**Spec and artifact discipline.** When using this document in Codex, preserve
+the named units: project, arc, slice, step, iteration. Keep the original spec
+visible, maintain ledgers when a slice has one, write closure against evidence,
+and disclose deferrals or silent drops explicitly. If repository conventions
+or operator preferences differ from the default artifact layout, confirm and
+record the chosen layout rather than inventing one mid-stream.
+
 ## Part I — The Three Pillars
 
 The methodology rests on three pillars that hold each other up. Each can be named independently, but in practice they only function as a system.
@@ -322,6 +389,25 @@ Portable versions of the methodology for other human collaborators without the C
 
 ## Version History
 
+### Version 1.4 — June 2026
+
+Added **Notes for Codex** after the preamble: an adapter layer for using this
+Claude-origin methodology inside Codex Desktop and Codex CLI. The section maps
+CDC to Codex Desktop in the collaborative planning/review seat, maps CC to
+Codex CLI as the IC implementation agent, and generalizes unqualified "Claude"
+references to the active model instance in the relevant Codex surface. It also
+records the authority boundary: the Constitution Supplement and this
+methodology guide collaboration and quality, but they do not override Codex's
+standing system, developer, tool, safety, sandbox, or user instructions.
+
+The rev was catalysed by testing whether the framework created cognitive
+dissonance or instruction tension for Codex. The core methodology held: peer
+frame, bold inquiry, compensatory tool use, pre-failure signal, clean recovery,
+ledger discipline, and independent verification all translate cleanly. The new
+section names the few necessary translations so Codex can use the document to
+the intended extent without literalizing Claude-specific product names or
+constitutional authority.
+
 ### Version 1.3 — June 2026
 
 Added an operational companion to *A default layout* — [`./ASSET-ORGANISATION.md`](./ASSET-ORGANISATION.md) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept (and still keeps) the abstract structure: project / arc / slice / step / iteration, and the five per-slice documents under `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/`. The new doc carries that structure verbatim and adds the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
@@ -352,4 +438,4 @@ Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ---
 
-_The methodology is a living document. This version: 1.3, 2026-06-18._
+_The methodology is a living document. This version: 1.4, 2026-06-22._

@@ -4,6 +4,24 @@
 
 Achieve **95%+ test coverage** through systematic, intelligent test development. Do not stop until this threshold is met.
 
+## Notes for Codex
+
+Read this prompt as applying to Codex CLI when it is acting in the CC/IC
+implementation role. The title is historical; the discipline is the point.
+
+The commands below are Rust/Cargo-shaped examples. Codex should adapt the
+coverage, format, lint, and test commands to the project under review, using
+the repository's own Makefile, package scripts, CI config, or language
+tooling as the authority. If a coverage report requires opening an HTML file
+or using a GUI, Codex should use the available non-GUI summary command when
+possible, or request the appropriate approval rather than silently skipping
+inspection.
+
+Coverage work is still subject to the same quality frame as any other slice:
+fix root causes, keep the spec visible, disclose blockers, and do not hide
+failures behind ignored tests, broadened assertions, or tool-output summaries
+that were not actually checked.
+
 ## Core Principles
 
 ### 1. Coverage is Non-Negotiable

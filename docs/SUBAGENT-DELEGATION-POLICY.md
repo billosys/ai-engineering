@@ -73,6 +73,26 @@ Cowork honors the CD persistence channels above *and* has a per-user preferences
 
 Cowork also has an auto-memory system that persists facts across conversations. The policy above can be saved as a memory entry, but note: memory is loaded via an index, so a paste-into-preferences install is more reliable for a *rule* than a memory entry — memory is for facts-to-recall, preferences is for always-apply rules.
 
+### Codex Desktop / Codex CLI
+
+For Codex, install the policy wherever the active Codex surface reads standing
+project or user instructions. If no persistent instruction channel is in use,
+paste the policy block into the first message of the session and explicitly
+ask Codex to follow it.
+
+The tool names differ by environment, but the line is the same. Parallel tool
+calls are appropriate for lookup: grepping, listing files, reading independent
+files, enumerating call sites, or fetching documentation that the main context
+will evaluate. Subagents or delegated contexts, when available, should be used
+the same way: evidence collection and enumeration, not design, implementation,
+review judgment, or acceptance decisions.
+
+In Codex Desktop, the practical phrasing is:
+
+> Follow the Subagent Delegation Policy: keep thinking/edit/review judgment in
+> this context; use parallel tools or subagents only for lookup work whose
+> results you will independently inspect.
+
 ### For one-off or high-stakes conversations
 
 If you can't install the policy persistently (e.g., you're using a shared account, or you just want to be sure), paste the policy block at the start of your first message in the conversation. Reliability is highest when the policy is in the immediate context. Persistent install is just a scale mechanism so you don't have to paste every time.

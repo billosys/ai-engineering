@@ -26,6 +26,26 @@ verification culture around the register — explicit closure criteria,
 separation of identification from closure, effectiveness review distinct
 from closure — is where the discipline actually lives.
 
+## Notes for Codex
+
+For Codex, read **CC** as Codex CLI in the IC implementation role and **CDC**
+as Codex Desktop in the collaborative planning/review/QA role. The role split
+matters more than the product names: implementation claims are proposed-done
+until independently verified by a reviewing context or human.
+
+If the same Codex surface performs both implementation and review, preserve
+as much separation as the environment allows: re-read the ledger from the
+opening state, rerun the Verify commands, inspect the actual diff, and treat
+the closing report as evidence to check rather than as a summary to trust.
+When possible, use a fresh context, a separate thread, or a human reviewer
+for the CDC pass.
+
+Codex must also respect its approval and sandbox model. A Verify command that
+requires escalation, network access, GUI access, or writes outside the
+workspace is still the right kind of evidence, but it must be run through the
+available approval flow or recorded as blocked with a concrete reason and
+re-entry condition.
+
 ## The ledger format
 
 Each slice has a ledger. The ledger is a table with one row per
