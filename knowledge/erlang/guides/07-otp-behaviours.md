@@ -112,13 +112,31 @@ gen_server:cast(?MODULE, {log, Event}).           %% genuinely fire-and-forget
 handle_call({fetch, Url}, _From, State) ->
     {reply, slow_http_get(Url), State}.            %% every other caller is blocked meanwhile
 
-%% Good - hand the work to a task and reply later with gen_server:reply/2
-handle_call({fetch, Url}, From, State) ->
-    spawn(fun() -> gen_server:reply(From, slow_http_get(Url)) end),
-    {noreply, State}.
+%% Good - track the worker; reply on success, and reply on worker crash too
+handle_call({fetch, Url}, From, State = #{tasks := Tasks}) ->
+    Parent = self(),
+    {_Pid, Ref} = spawn_monitor(fun() ->
+        Parent ! {fetch_result, Ref, slow_http_get(Url)}
+    end),
+    {noreply, State#{tasks := Tasks#{Ref => From}}};
+
+handle_info({fetch_result, Ref, Result}, State = #{tasks := Tasks0}) ->
+    {From, Tasks1} = maps:take(Ref, Tasks0),
+    demonitor(Ref, [flush]),
+    gen_server:reply(From, Result),
+    {noreply, State#{tasks := Tasks1}};
+
+handle_info({'DOWN', Ref, process, _Pid, Reason}, State = #{tasks := Tasks0}) ->
+    case maps:take(Ref, Tasks0) of
+        {From, Tasks1} ->
+            gen_server:reply(From, {error, Reason}),
+            {noreply, State#{tasks := Tasks1}};
+        error ->
+            {noreply, State}
+    end.
 ```
 
-**Rationale**: The behaviour's loop is single-threaded over the mailbox: while a callback runs, no other request is served and the mailbox grows. Blocking in `handle_call` turns one slow dependency into a stalled server and a cascade of `call` timeouts. Return `{noreply, State}` and answer with `gen_server:reply/2` from a spawned worker, or use a separate pool.
+**Rationale**: The behaviour's loop is single-threaded over the mailbox: while a callback runs, no other request is served and the mailbox grows. Blocking in `handle_call` turns one slow dependency into a stalled server and a cascade of `call` timeouts. Return `{noreply, State}` and answer with `gen_server:reply/2` from a tracked worker; in production, make that worker supervised, monitored, bounded, or part of a pool so slow work is not merely moved from the server mailbox into an untracked process.
 
 **See also**: BEH-04, BEH-06, `09-fault-tolerance.md`
 
