@@ -46,6 +46,46 @@ analysis is **dialyzer + xref**, the default style/format pair is **elvis + erlf
 the default test stack is **eunit + common_test + PropEr**, and the default
 documentation mechanism is **EDoc plus the OTP-27 `-doc` / `-moduledoc` attributes**.
 
+## Notes for Codex
+
+Use this skill as Erlang domain guidance under the collaboration-framework
+Codex adapter. The guide vocabulary is Claude/CC-compatible, but the operating
+translation is straightforward: Codex should load the anti-patterns guide first,
+then the topic guides needed for the task, and should keep final design,
+correctness, review, and acceptance judgment in the main context.
+
+Before applying the OTP 27+ defaults mechanically, inspect the project itself:
+`rebar.config`, `rebar.lock`, `erlang.mk`, `.tool-versions`, CI files, release
+config, and existing source conventions. If the project is pinned to an older
+OTP, uses Erlang.mk, omits PropEr, or has different formatter/linter gates, the
+project's declared toolchain wins. Use the guides to reason about the tradeoff
+and name any drift from the default rather than silently rewriting the project
+around this skill.
+
+The generated `erlang-guidelines.zip` contains the entry point and `guides/`
+only. The repo form also exposes `sources/`, `concept-cards/`,
+`extraction-metadata/`, `tools/`, and `workbench/`. Treat those as repo-only
+supporting material: useful for deeper provenance, edge-case rationale, or
+maintaining the skill, but not required for normal use of the packaged skill.
+
+Strength indicators are domain commitments, not permission to ignore session
+constraints. **MUST** and **AVOID** should be treated as strong Erlang/OTP
+rules, especially for safety, security, and correctness, but Codex must still
+respect user intent, repository state, approval flows, sandbox limits, and any
+explicit project compatibility constraints.
+
+The "let it crash" rule is an Erlang design principle, not a blanket excuse to
+leak unsafe failures. Validate untrusted data at boundaries, fail politely at
+user-facing boundaries, and let supervised internal processes crash only when
+that crash is the cleanest way to preserve a known-good state.
+
+Operational and live-system guidance requires extra care in Codex. Remote
+shells, tracing against a running node, `observer`, distributed-node access,
+network operations, and GUI inspection are guidance patterns until the user has
+explicitly asked for them and the current tool permissions allow them. Prefer
+static inspection, local tests, logs, crash dumps, and reproducible commands
+unless live access is clearly part of the task.
+
 ## When to Use This Skill
 
 Activate this skill when the task involves:
