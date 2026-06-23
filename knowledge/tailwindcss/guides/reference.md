@@ -1,5 +1,9 @@
 # Tailwind CSS v4 Reference for Claude Code SKILL.md
 
+## Notes for Codex
+
+This reference was originally titled and phrased for Claude Code. When using it from Codex, treat "Claude Code" as "Codex" and use the snippets as Tailwind v4 guidance, not as Claude-specific workflow instructions.
+
 > **Purpose:** This document distills the official Tailwind CSS v4.x documentation into a
 > comprehensive reference that Claude Code can use as source material when building a
 > Tailwind CSS SKILL.md. Everything here is verified v4 syntax. Do NOT mix with v3
@@ -871,7 +875,7 @@ const colors = {
 
 ---
 
-## 11. Key Patterns for Claude Code
+## 11. Key Patterns for Codex and Other AI Assistants
 
 ### Standard HTML Setup
 ```html

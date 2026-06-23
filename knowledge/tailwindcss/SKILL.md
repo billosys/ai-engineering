@@ -21,6 +21,10 @@ metadata:
 
 # Tailwind CSS v4 — Claude Code Skill
 
+## Notes for Codex
+
+This skill was originally assembled from Claude Code-oriented sources. Use the guidance directly in Codex; the `sources` URLs are provenance only, and the local reference file lives at `knowledge/tailwindcss/guides/reference.md`.
+
 > **Tailwind CSS v4** (released January 2025, current stable v4.2) uses a **CSS-first
 > configuration** approach. This skill covers v4 exclusively. All theme customization
 > happens in CSS via `@theme`, not in `tailwind.config.js`.
@@ -101,10 +105,10 @@ npx @tailwindcss/cli -i app.css -o dist/app.css --watch
 
 A comprehensive Tailwind CSS v4.2 reference document is available at:
 ```
-../../guides/tailwindcss-v4/reference.md
+knowledge/tailwindcss/guides/reference.md
 ```
 
-(Relative to this SKILL.md file.)
+(Relative to the repository root.)
 
 **When to consult the reference:**
 - You need the exact list of values for a specific utility (e.g., all `blur-*` sizes, all `cursor-*` options)
@@ -118,7 +122,7 @@ A comprehensive Tailwind CSS v4.2 reference document is available at:
 - Common component patterns (cards, navs, forms, grids) are already here
 - The v3→v4 migration table at the top of this file covers the most common pitfalls
 
-Read the reference with the `view` tool if you need detail beyond what this skill file provides.
+Read the reference file if you need detail beyond what this skill file provides.
 
 ## Theme System (`@theme`)
 
