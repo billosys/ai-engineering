@@ -1,5 +1,9 @@
 # Cargo Mastery Guides - FINAL CHECKPOINT
 
+## Notes for Codex
+
+This checkpoint was originally written for Claude Code. When using it from Codex, treat every "Claude Code" reference as "Codex" and follow the same pattern-ID and strength-indicator workflow.
+
 ## Status: ✅ COMPLETE (100%)
 **Date**: 2026-01-09
 **Session**: 2 (Continuation)
