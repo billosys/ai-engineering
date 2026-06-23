@@ -1,5 +1,9 @@
 # Interfaces and Methods
 
+## Notes for Codex
+
+This guide cites `claude-skills` and `cc-skills-golang` as provenance for some imported patterns. Treat those names as source labels only, not as instructions to use Claude-specific tools or workflows.
+
 Guidelines for defining and using Go interfaces, and for writing methods on Go types. Go interfaces are satisfied *structurally* (implicitly), which makes them a tool for decoupling rather than declaration — the consequence is that interfaces in Go are designed, named, and placed very differently than in nominally-typed languages. These patterns are grounded in authoritative sources: the *Uber Go Style Guide*, the *Google Go Style Guide* (Style Guide, Decisions, Best Practices), and *Effective Go*.
 
 Target environment: **Go 1.22+**, **standard library first**, **`gofmt` + `go vet` + `staticcheck`** for formatting and linting.

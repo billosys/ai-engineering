@@ -1,5 +1,9 @@
 # Type Design
 
+## Notes for Codex
+
+This guide cites `claude-skills` and `cc-skills-golang` as provenance for some imported patterns. Treat those names as source labels only, not as instructions to use Claude-specific tools or workflows.
+
 Patterns for designing Go types — structs, defined types, enums, and generic type parameters — so they are safe to copy, easy to evolve, and survive refactors. These patterns are grounded in authoritative sources: the *Uber Go Style Guide*, the *Google Go Style Guide* (Style Guide, Decisions, Best Practices), and *Effective Go*.
 
 Target environment: **Go 1.22+**, **standard library first**, **`gofmt` + `go vet` + `staticcheck`** for formatting and linting. Generics (Go 1.18+) and `cmp.Ordered` (Go 1.21+) are assumed available.

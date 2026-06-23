@@ -1,5 +1,9 @@
 # Go API Design
 
+## Notes for Codex
+
+This guide cites `claude-skills` and `cc-skills-golang` as provenance for some imported patterns. Treat those names as source labels only, not as instructions to use Claude-specific tools or workflows.
+
 How to shape the exported surface of a Go package: function signatures, constructors, options, interfaces returned versus accepted, and the documentation contract callers rely on. These patterns are grounded in the *Uber Go Style Guide*, the *Google Go Style Guide* (Style Guide, Decisions, Best Practices), and *Effective Go*.
 
 Target environment: **Go 1.22+**, **standard library first**, **`gofmt` + `go vet` + `staticcheck`** for formatting and linting.

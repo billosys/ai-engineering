@@ -1,5 +1,9 @@
 # Performance
 
+## Notes for Codex
+
+This guide cites `claude-skills` and `cc-skills-golang` as provenance for some imported patterns. Treat those names as source labels only, not as instructions to use Claude-specific tools or workflows.
+
 Performance patterns for Go programs — where Uber or Google explicitly documents a Good/Bad that materially affects runtime or memory cost. Grounded in the *Uber Go Style Guide* (notably its `Performance` chapter) and the *Google Go Style Guide* (Decisions §§ Size hints, String concatenation, Receiver type, Pass values, Copying; Best Practices §§ Logging, Must functions).
 
 The underlying discipline is not "do these things always." It is: **write clear code first (chapters 01–07), profile, then apply these patterns where profiling says they help.** Uber's Performance chapter opens with the rule verbatim — "Performance-specific guidelines apply only to the hot path." Google Decisions §Size hints: "Most code does not need a size hint or preallocation." Google Decisions §Receiver type: "When the performance does matter, it is important to profile both approaches with a realistic benchmark before deciding that one approach outperforms the other."

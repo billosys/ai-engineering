@@ -1,5 +1,9 @@
 # Testing in Go
 
+## Notes for Codex
+
+This guide cites `claude-skills` and `cc-skills-golang` as provenance for some imported patterns. Treat those names as source labels only, not as instructions to use Claude-specific tools or workflows.
+
 Go's `testing` package is small, opinionated, and sufficient. This chapter collects the idioms for writing Go tests that the *Uber Go Style Guide*, the *Google Go Style Guide* (Style Guide, Decisions, Best Practices), and the Go team itself all converge on: table-driven tests, subtests, `t.Helper`, `t.Cleanup`, parallel execution, `cmp.Diff` for structural comparison, stdlib-first with no assertion libraries, and tests designed so failures diagnose themselves.
 
 Target environment: **Go 1.22+** (loop-variable fix is assumed), **standard library `testing`** is the only testing framework, **`github.com/google/go-cmp`** for deep comparison, `go test` for running, `-race` for concurrent code.

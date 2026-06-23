@@ -1,5 +1,9 @@
 # Error Handling
 
+## Notes for Codex
+
+This guide cites `claude-skills` and `cc-skills-golang` as provenance for some imported patterns. Treat those names as source labels only, not as instructions to use Claude-specific tools or workflows.
+
 Idioms for producing, propagating, classifying, and inspecting Go errors. Go's `error` is an interface value, not an exception — every failure travels as an ordinary return value, and how it is constructed, wrapped, and examined decides how useful it will be in logs and in recovery logic. These rules are grounded in the *Uber Go Style Guide* (§Errors, §Don't Panic) and the *Google Go Style Guide* (Decisions §Errors, Best Practices §Error handling, §When to panic, §Must functions).
 
 Target environment: **Go 1.20+** (for `errors.Join` and `%w` with multiple wrappees), **standard library `errors` and `fmt` packages**, **`errcheck` + `go vet` + `staticcheck`**.

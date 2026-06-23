@@ -1,5 +1,9 @@
 # Go Anti-Patterns
 
+## Notes for Codex
+
+This guide cites `claude-skills` and `cc-skills-golang` as provenance for some imported patterns. Treat those names as source labels only, not as instructions to use Claude-specific tools or workflows.
+
 A curated gallery of patterns to avoid in Go code — the traps that trip up newcomers arriving from Java, C++, Python, or JavaScript, plus a handful of home-grown mistakes that even seasoned Go programmers commit under deadline pressure. Each entry pairs the anti-pattern with its idiomatic replacement and a citation from an authoritative source: the *Uber Go Style Guide*, the *Google Go Style Guide* (Style Guide, Decisions, Best Practices), and *Effective Go*.
 
 This chapter is structured as a negative mirror of the rest of the series. Where chapter 01 (`01-core-idioms.md`) says "do this," chapter 09 says "don't do that." The two chapters are meant to be read together: every `AP-NN` here has a positive counterpart in the other guides, listed under `## Related Guidelines` at the end.

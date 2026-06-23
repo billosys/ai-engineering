@@ -1,5 +1,9 @@
 # Concurrency
 
+## Notes for Codex
+
+This guide cites `claude-skills` and `cc-skills-golang` as provenance for some imported patterns. Treat those names as source labels only, not as instructions to use Claude-specific tools or workflows.
+
 Concurrency patterns for goroutines, channels, `sync` primitives, and `context.Context`. Grounded in the *Uber Go Style Guide* (§Guidelines, §Style, §Patterns), the *Google Go Style Guide* (Decisions: Goroutine lifetimes, Synchronous functions, Contexts, Copying, Channel direction; Best Practices: Concurrency documentation, Global state, Program checks), and the concurrency lore that those guides cite (Cheney's *"Never start a goroutine without knowing how it will stop"* and Mills' *"Rethinking Classical Concurrency Patterns"*).
 
 Target environment: **Go 1.22+**, **standard library first**, **`go test -race`** in CI, **`go vet`** + **`staticcheck`** for static analysis.

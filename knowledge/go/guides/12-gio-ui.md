@@ -1,5 +1,9 @@
 # Gio UI Framework
 
+## Notes for Codex
+
+This guide cites `claude-skill-golang` as provenance for Gio-specific patterns. Treat that name as a source label only, not as an instruction to use Claude-specific tools or workflows.
+
 Guidelines for building desktop and embedded UIs with Gio (`gioui.org`), an immediate-mode retained-op GPU-accelerated UI framework for Go. Covers window construction, widget state lifecycle, theme allocation, platform-specific threading (notably macOS Cocoa), keyboard and pointer input routing, scroll event bounds, and overlay event propagation.
 
 These patterns fall outside the scope of Uber and Google's Go style guides (which do not address UI frameworks) and are collected from the `claude-skill-golang` workbench repo (darrenoakey). Gio's API is deliberately small, but its immediate-mode/retained-op hybrid has non-obvious event-routing rules that show up only at runtime — this chapter captures the recurring surprises.
