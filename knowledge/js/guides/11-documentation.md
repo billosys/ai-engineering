@@ -1,5 +1,9 @@
 # Documentation
 
+## Notes for Codex
+
+This guide includes one Claude Code reference as an example of an AI assistant misreading intentional code. For Codex, apply the same warning to yourself: comments should protect non-obvious decisions from well-meaning automated edits.
+
 The writing discipline of documentation: when and what to comment, how to write effective JSDoc descriptions, module-level documentation, code as documentation, tests as documentation, and what NOT to document. This guide covers the *prose* side of documentation — Guide 05 covers JSDoc *type annotations*. The core tension: comments explain *why*, not *what*. Code should be clear enough that *what* it does is self-evident. Grounded in *Exploring JavaScript* (Rauschmayer), *Deep JavaScript* (Rauschmayer), *JavaScript: The Definitive Guide* (Flanagan), *Eloquent JavaScript* (Haverbeke), and Deno documentation.
 
 Target environment: **Deno**, **ESM-only**, **Biome** for linting/formatting, **no TypeScript** (JSDoc where needed).

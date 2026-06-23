@@ -1,5 +1,9 @@
 # No-Node Boundary
 
+## Notes for Codex
+
+This guide was originally phrased for Claude Code. When using it from Codex, treat "Claude Code" as "Codex"; the rule is about preventing the assistant from introducing Node.js patterns into Deno-first JavaScript.
+
 The consolidated reference for every Node.js pattern this project avoids and its Deno replacement. This is not a Deno vs Node.js debate — it's a practical boundary specification: "In this project, here's what we use instead." Each entry is brief: state the Node.js pattern, name the Deno replacement, cross-reference the guide that covers it in detail. When Claude Code encounters a Node.js pattern and is about to emit it, this guide catches the mistake. Grounded in Deno documentation concept cards and *JavaScript: The Definitive Guide* (Flanagan).
 
 Target environment: **Deno**, **ESM-only**, **Biome** for linting/formatting, **no TypeScript** (plain JS with JSDoc where needed).

@@ -35,30 +35,30 @@ This project writes **plain JavaScript** (no TypeScript) targeting **Deno** with
 
 The inline content below is enough to write correct code. Load the full guide files when you need deeper rationale, edge cases, or comprehensive examples.
 
-Note: document paths in this skill are relative to the project root. (The project root directory is `ai-design` and this `SKILL.md` file is in `ai-design/skills/nodeless-js`, with the guides it points to being in `ai-design/guides/js`.)
+Note: document paths in this skill are relative to the repository root.
 
 | Task | Load These Documents |
 |------|---------------------|
-| **Any JS code** | `guides/js/09-anti-patterns.md` (always load first) |
-| **New module from scratch** | `guides/js/01-core-idioms.md`, `guides/js/10-project-structure.md`, `guides/js/02-api-design.md` |
-| **Implementing a new feature** | `guides/js/01-core-idioms.md`, `guides/js/06-functions-closures.md`, `guides/js/09-anti-patterns.md` |
-| **API design** | `guides/js/02-api-design.md`, `guides/js/06-functions-closures.md`, `guides/js/05-type-discipline.md` |
-| **Error handling** | `guides/js/03-error-handling.md`, `guides/js/07-async-concurrency.md` |
-| **Refactoring** | `guides/js/09-anti-patterns.md`, `guides/js/01-core-idioms.md`, `guides/js/04-values-references.md` |
-| **Code review / quality audit** | `guides/js/09-anti-patterns.md`, `guides/js/01-core-idioms.md`, `guides/js/08-performance.md` |
-| **Writing or improving tests** | `guides/js/12-deno/12-02-testing.md`, `guides/js/03-error-handling.md` |
-| **Debugging failing tests** | `guides/js/12-deno/12-02-testing.md`, `guides/js/03-error-handling.md`, `guides/js/07-async-concurrency.md` |
-| **Performance review** | `guides/js/08-performance.md`, `guides/js/07-async-concurrency.md` |
-| **Documentation** | `guides/js/11-documentation.md`, `guides/js/05-type-discipline.md` |
-| **Dependency decisions** | `guides/js/10-project-structure.md`, `guides/js/12-deno/12-01-runtime-basics.md` |
-| **Task runner / deno.json** | `guides/js/12-deno/12-03-task-runner.md` |
-| **Publishing to JSR** | `guides/js/12-deno/12-04-publishing.md`, `guides/js/11-documentation.md`, `guides/js/05-type-discipline.md` |
-| **Converting Node/TS code** | `guides/js/12-deno/12-01-runtime-basics.md`, `guides/js/01-core-idioms.md`, `guides/js/14-no-node-boundary.md` |
-| **Enforcing the no-Node boundary** | `guides/js/14-no-node-boundary.md`, `guides/js/12-deno/12-01-runtime-basics.md` |
-| **Async & concurrency** | `guides/js/07-async-concurrency.md`, `guides/js/03-error-handling.md` |
-| **Values, mutation, copying** | `guides/js/04-values-references.md`, `guides/js/01-core-idioms.md` |
-| **Type discipline / JSDoc** | `guides/js/05-type-discipline.md`, `guides/js/11-documentation.md` |
-| **Biome lint/format** | `guides/js/13-biome/13-01-setup.md`, `guides/js/13-biome/13-02-lint-rules.md`, `guides/js/13-biome/13-03-formatting.md` |
+| **Any JS code** | `knowledge/js/guides/09-anti-patterns.md` (always load first) |
+| **New module from scratch** | `knowledge/js/guides/01-core-idioms.md`, `knowledge/js/guides/10-project-structure.md`, `knowledge/js/guides/02-api-design.md` |
+| **Implementing a new feature** | `knowledge/js/guides/01-core-idioms.md`, `knowledge/js/guides/06-functions-closures.md`, `knowledge/js/guides/09-anti-patterns.md` |
+| **API design** | `knowledge/js/guides/02-api-design.md`, `knowledge/js/guides/06-functions-closures.md`, `knowledge/js/guides/05-type-discipline.md` |
+| **Error handling** | `knowledge/js/guides/03-error-handling.md`, `knowledge/js/guides/07-async-concurrency.md` |
+| **Refactoring** | `knowledge/js/guides/09-anti-patterns.md`, `knowledge/js/guides/01-core-idioms.md`, `knowledge/js/guides/04-values-references.md` |
+| **Code review / quality audit** | `knowledge/js/guides/09-anti-patterns.md`, `knowledge/js/guides/01-core-idioms.md`, `knowledge/js/guides/08-performance.md` |
+| **Writing or improving tests** | `knowledge/js/guides/12-deno/12-02-testing.md`, `knowledge/js/guides/03-error-handling.md` |
+| **Debugging failing tests** | `knowledge/js/guides/12-deno/12-02-testing.md`, `knowledge/js/guides/03-error-handling.md`, `knowledge/js/guides/07-async-concurrency.md` |
+| **Performance review** | `knowledge/js/guides/08-performance.md`, `knowledge/js/guides/07-async-concurrency.md` |
+| **Documentation** | `knowledge/js/guides/11-documentation.md`, `knowledge/js/guides/05-type-discipline.md` |
+| **Dependency decisions** | `knowledge/js/guides/10-project-structure.md`, `knowledge/js/guides/12-deno/12-01-runtime-basics.md` |
+| **Task runner / deno.json** | `knowledge/js/guides/12-deno/12-03-task-runner.md` |
+| **Publishing to JSR** | `knowledge/js/guides/12-deno/12-04-publishing.md`, `knowledge/js/guides/11-documentation.md`, `knowledge/js/guides/05-type-discipline.md` |
+| **Converting Node/TS code** | `knowledge/js/guides/12-deno/12-01-runtime-basics.md`, `knowledge/js/guides/01-core-idioms.md`, `knowledge/js/guides/14-no-node-boundary.md` |
+| **Enforcing the no-Node boundary** | `knowledge/js/guides/14-no-node-boundary.md`, `knowledge/js/guides/12-deno/12-01-runtime-basics.md` |
+| **Async & concurrency** | `knowledge/js/guides/07-async-concurrency.md`, `knowledge/js/guides/03-error-handling.md` |
+| **Values, mutation, copying** | `knowledge/js/guides/04-values-references.md`, `knowledge/js/guides/01-core-idioms.md` |
+| **Type discipline / JSDoc** | `knowledge/js/guides/05-type-discipline.md`, `knowledge/js/guides/11-documentation.md` |
+| **Biome lint/format** | `knowledge/js/guides/13-biome/13-01-setup.md`, `knowledge/js/guides/13-biome/13-02-lint-rules.md`, `knowledge/js/guides/13-biome/13-03-formatting.md` |
 
 ---
 
@@ -66,8 +66,8 @@ Note: document paths in this skill are relative to the project root. (The projec
 
 ### Writing New Code
 
-1. **Load anti-patterns first**: Read `guides/js/09-anti-patterns.md` — know what to avoid before writing a line
-2. **Load core idioms**: Read `guides/js/01-core-idioms.md` for declarations, naming, control flow
+1. **Load anti-patterns first**: Read `knowledge/js/guides/09-anti-patterns.md` — know what to avoid before writing a line
+2. **Load core idioms**: Read `knowledge/js/guides/01-core-idioms.md` for declarations, naming, control flow
 3. **Load topic-specific docs**: Based on what you're building (API design, async, etc.)
 4. **Structure the module**: `mod.js` entry point, flat-by-feature layout, named exports only
 5. **Write code**: Guard clauses at boundaries, `async`/`await`, `Error.cause`, JSDoc on exports
@@ -668,7 +668,7 @@ This project avoids Node.js patterns entirely. Every Node.js API has a Deno or W
 
 ### Task: "Write a module that fetches and caches API responses"
 
-1. **Load**: `guides/js/09-anti-patterns.md`, `guides/js/01-core-idioms.md`, `guides/js/07-async-concurrency.md`, `guides/js/03-error-handling.md`
+1. **Load**: `knowledge/js/guides/09-anti-patterns.md`, `knowledge/js/guides/01-core-idioms.md`, `knowledge/js/guides/07-async-concurrency.md`, `knowledge/js/guides/03-error-handling.md`
 2. **Apply**:
    - Named exports, `function` declarations for public API
    - `async`/`await` with `AbortSignal` on all `fetch()` calls
@@ -680,7 +680,7 @@ This project avoids Node.js patterns entirely. Every Node.js API has a Deno or W
 
 ### Task: "Design a config loader API"
 
-1. **Load**: `guides/js/02-api-design.md`, `guides/js/06-functions-closures.md`, `guides/js/03-error-handling.md`, `guides/js/05-type-discipline.md`
+1. **Load**: `knowledge/js/guides/02-api-design.md`, `knowledge/js/guides/06-functions-closures.md`, `knowledge/js/guides/03-error-handling.md`, `knowledge/js/guides/05-type-discipline.md`
 2. **Apply**:
    - `loadConfig(path)` returns parsed config or throws with `Error.cause` wrapping `SyntaxError`/`Deno.errors.NotFound`
    - Return `undefined` (not throw) if config file is optional and absent
@@ -690,7 +690,7 @@ This project avoids Node.js patterns entirely. Every Node.js API has a Deno or W
 
 ### Task: "Add tests for an HTTP handler"
 
-1. **Load**: `guides/js/12-deno/12-02-testing.md`, `guides/js/03-error-handling.md`
+1. **Load**: `knowledge/js/guides/12-deno/12-02-testing.md`, `knowledge/js/guides/03-error-handling.md`
 2. **Apply**:
    - `Deno.test("handler returns 200 for valid request", async () => { ... })`
    - Construct `new Request("http://localhost/api/users")` directly — no server needed
@@ -701,7 +701,7 @@ This project avoids Node.js patterns entirely. Every Node.js API has a Deno or W
 
 ### Task: "Refactor a Node.js module to project idioms"
 
-1. **Load**: `guides/js/12-deno/12-01-runtime-basics.md`, `guides/js/01-core-idioms.md`, `guides/js/09-anti-patterns.md`
+1. **Load**: `knowledge/js/guides/12-deno/12-01-runtime-basics.md`, `knowledge/js/guides/01-core-idioms.md`, `knowledge/js/guides/09-anti-patterns.md`
 2. **Apply**:
    - Replace `require()` → `import`, `module.exports` → `export`
    - Replace `__dirname` → `import.meta.dirname`, `process.env` → `Deno.env.get()`
@@ -713,7 +713,7 @@ This project avoids Node.js patterns entirely. Every Node.js API has a Deno or W
 
 ### Task: "Set up a new Deno project from scratch"
 
-1. **Load**: `guides/js/10-project-structure.md`, `guides/js/12-deno/12-03-task-runner.md`, `guides/js/01-core-idioms.md`
+1. **Load**: `knowledge/js/guides/10-project-structure.md`, `knowledge/js/guides/12-deno/12-03-task-runner.md`, `knowledge/js/guides/01-core-idioms.md`
 2. **Apply**:
    - Create `deno.json` with `imports`, `tasks` (dev, test, check, lint, fmt, ci), `compilerOptions`
    - Create `biome.json` for lint/format
@@ -725,7 +725,7 @@ This project avoids Node.js patterns entirely. Every Node.js API has a Deno or W
 
 ### Task: "Set up Biome linting and formatting for an existing project"
 
-1. **Load**: `guides/js/13-biome/13-01-setup.md`, `guides/js/13-biome/13-02-lint-rules.md`, `guides/js/13-biome/13-03-formatting.md`
+1. **Load**: `knowledge/js/guides/13-biome/13-01-setup.md`, `knowledge/js/guides/13-biome/13-02-lint-rules.md`, `knowledge/js/guides/13-biome/13-03-formatting.md`
 2. **Apply**:
    - Install Biome standalone (`brew install biome`), not via npm
    - Run `biome init` to scaffold `biome.json`
@@ -739,7 +739,7 @@ This project avoids Node.js patterns entirely. Every Node.js API has a Deno or W
 
 ### Task: "Migrate a Node.js codebase to Deno project idioms"
 
-1. **Load**: `guides/js/14-no-node-boundary.md`, `guides/js/12-deno/12-01-runtime-basics.md`, `guides/js/01-core-idioms.md`, `guides/js/09-anti-patterns.md`
+1. **Load**: `knowledge/js/guides/14-no-node-boundary.md`, `knowledge/js/guides/12-deno/12-01-runtime-basics.md`, `knowledge/js/guides/01-core-idioms.md`, `knowledge/js/guides/09-anti-patterns.md`
 2. **Apply**:
    - Replace `package.json` → `deno.json` with `imports`, `tasks`, `compilerOptions`
    - Replace `require()` → `import` with explicit `.js` extensions
@@ -756,7 +756,7 @@ This project avoids Node.js patterns entirely. Every Node.js API has a Deno or W
 
 ### Task: "Performance review of an async data pipeline"
 
-1. **Load**: `guides/js/08-performance.md`, `guides/js/07-async-concurrency.md`, `guides/js/09-anti-patterns.md`
+1. **Load**: `knowledge/js/guides/08-performance.md`, `knowledge/js/guides/07-async-concurrency.md`, `knowledge/js/guides/09-anti-patterns.md`
 2. **Apply**:
    - Check for sequential `await` on independent ops → convert to `Promise.all()`
    - Check for `.map(async fn)` without `Promise.all()` wrapping
