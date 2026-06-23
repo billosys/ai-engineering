@@ -23,6 +23,10 @@ metadata:
 
 # Deno JS Linter — Claude Code Skill
 
+## Notes for Codex
+
+This skill was originally titled for Claude Code. Use it directly from Codex; load the category files from `knowledge/deno/guides/` rather than a `references/` directory.
+
 > Pure JavaScript/ECMAScript linting guidance distilled from Deno's lint rules.
 > Framework-free — no React, JSX, Fresh, Deno runtime APIs, Node.js, or
 > TypeScript type-system rules. 70 rules organized by concern, with do/don't
@@ -46,9 +50,9 @@ metadata:
 
 | Category | Reference | Rules | Load When |
 |----------|-----------|-------|-----------|
-| Bugs & Correctness | `references/bugs.md` | 41 | Wrong assignments, unreachable code, broken control flow, invalid regex |
-| Pitfalls | `references/pitfalls.md` | 18 | Dubious comparisons, misused async, eval, debug leftovers, empty blocks |
-| Style & Idioms | `references/style.md` | 11 | const vs let vs var, naming, cleaner declarations |
+| Bugs & Correctness | `knowledge/deno/guides/bugs.md` | 41 | Wrong assignments, unreachable code, broken control flow, invalid regex |
+| Pitfalls | `knowledge/deno/guides/pitfalls.md` | 18 | Dubious comparisons, misused async, eval, debug leftovers, empty blocks |
+| Style & Idioms | `knowledge/deno/guides/style.md` | 11 | const vs let vs var, naming, cleaner declarations |
 
 ## Critical Rules (Always Apply)
 
