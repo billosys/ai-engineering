@@ -23,6 +23,10 @@ metadata:
 
 # Biome JS Linter — Claude Code Skill
 
+## Notes for Codex
+
+This skill was originally titled for Claude Code. Use it directly from Codex; load the category files from `knowledge/biome/guides/js-linter/` rather than a `references/` directory.
+
 > Pure JavaScript/ECMAScript linting guidance distilled from Biome's rules.
 > Framework-free — no React, Node.js, JSX, CSS, or TypeScript type-system rules.
 > 257 rules organized by concern, with do/don't code examples.
@@ -47,13 +51,13 @@ metadata:
 
 | Category | Reference | Rules | Load When |
 |----------|-----------|-------|-----------|
-| Bugs & Correctness | `references/bugs.md` | 37 | Wrong assignments, unreachable code, broken control flow |
-| Pitfalls | `references/pitfalls.md` | 63 | Likely-wrong patterns, dubious comparisons, typos |
-| Style & Idioms | `references/style.md` | 49 | Naming, syntax preferences, modern idioms |
-| Simplification | `references/simplification.md` | 42 | Redundant wrappers, verbose patterns, over-engineering |
-| Performance | `references/performance.md` | 8 | O(n^2) patterns, blocking operations |
-| Security | `references/security.md` | 1 | Hardcoded secrets |
-| Experimental | `references/experimental.md` | 57 | Biome nursery rules, not yet recommended |
+| Bugs & Correctness | `knowledge/biome/guides/js-linter/bugs.md` | 37 | Wrong assignments, unreachable code, broken control flow |
+| Pitfalls | `knowledge/biome/guides/js-linter/pitfalls.md` | 63 | Likely-wrong patterns, dubious comparisons, typos |
+| Style & Idioms | `knowledge/biome/guides/js-linter/style.md` | 49 | Naming, syntax preferences, modern idioms |
+| Simplification | `knowledge/biome/guides/js-linter/simplification.md` | 42 | Redundant wrappers, verbose patterns, over-engineering |
+| Performance | `knowledge/biome/guides/js-linter/performance.md` | 8 | O(n^2) patterns, blocking operations |
+| Security | `knowledge/biome/guides/js-linter/security.md` | 1 | Hardcoded secrets |
+| Experimental | `knowledge/biome/guides/js-linter/experimental.md` | 57 | Biome nursery rules, not yet recommended |
 
 ## Critical Rules (Always Apply)
 

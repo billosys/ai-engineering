@@ -23,6 +23,10 @@ metadata:
 
 # Biome Linter — Claude Code Skill
 
+## Notes for Codex
+
+This skill was originally titled for Claude Code. Use it directly from Codex; load the category files from `knowledge/biome/guides/web-linter/` rather than a `references/` directory.
+
 > **Biome** is a fast formatter and linter for JavaScript, TypeScript, JSX, and CSS.
 > This skill distills 394 lint rules into actionable do/don't guidance, organized
 > by category. Rules marked **recommended** are enabled by default in Biome.
@@ -49,14 +53,14 @@ Load detailed do/don't guidance based on context:
 
 | Category | Reference | Load When |
 |----------|-----------|-----------|
-| Correctness | `references/correctness.md` | Catching bugs: wrong assignments, unreachable code, broken control flow |
-| Suspicious | `references/suspicious.md` | Likely-wrong patterns: typos, dubious comparisons, debug leftovers |
-| Style | `references/style.md` | Code style: naming, syntax preferences, idiomatic patterns |
-| Complexity | `references/complexity.md` | Simplification: unnecessary wrappers, redundant logic, over-engineering |
-| Accessibility | `references/a11y.md` | HTML/JSX a11y: ARIA, semantic elements, keyboard navigation |
-| Performance | `references/performance.md` | Performance: O(n^2) patterns, blocking operations, unnecessary work |
-| Security | `references/security.md` | Security: eval(), target=_blank, secrets in code |
-| Nursery | `references/nursery.md` | Experimental rules under evaluation, not yet recommended |
+| Correctness | `knowledge/biome/guides/web-linter/correctness.md` | Catching bugs: wrong assignments, unreachable code, broken control flow |
+| Suspicious | `knowledge/biome/guides/web-linter/suspicious.md` | Likely-wrong patterns: typos, dubious comparisons, debug leftovers |
+| Style | `knowledge/biome/guides/web-linter/style.md` | Code style: naming, syntax preferences, idiomatic patterns |
+| Complexity | `knowledge/biome/guides/web-linter/complexity.md` | Simplification: unnecessary wrappers, redundant logic, over-engineering |
+| Accessibility | `knowledge/biome/guides/web-linter/a11y.md` | HTML/JSX a11y: ARIA, semantic elements, keyboard navigation |
+| Performance | `knowledge/biome/guides/web-linter/performance.md` | Performance: O(n^2) patterns, blocking operations, unnecessary work |
+| Security | `knowledge/biome/guides/web-linter/security.md` | Security: eval(), target=_blank, secrets in code |
+| Nursery | `knowledge/biome/guides/web-linter/nursery.md` | Experimental rules under evaluation, not yet recommended |
 
 ## Critical Rules (Always Apply)
 
