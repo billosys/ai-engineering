@@ -9,8 +9,15 @@
 # "tarbomb" and the name on disk matches the name the loader sees.
 
 BUILD := build
+INSTALL_DIR ?= $(HOME)/.agents/skills
+INSTALL_ZIPS := \
+	collaboration-framework.zip \
+	rust-guidelines.zip go-guidelines.zip javascript-deno-guidelines.zip \
+	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
+	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
+INSTALL_SKILLS := $(INSTALL_ZIPS:.zip=)
 
-.PHONY: all skills clean help \
+.PHONY: all skills install uninstall clean help \
 	collab-framework collab-framework-clean \
 	rust go js erlang cobalt design tailwindcss deno biome
 
@@ -29,6 +36,8 @@ help:
 	@echo "  make biome              -> biome-js-linter.zip AND biome-linter.zip"
 	@echo "  make skills             -> all per-domain zips"
 	@echo "  make all                -> skills + collab-framework"
+	@echo "  make install            -> build all zips and install them into $(INSTALL_DIR)"
+	@echo "  make uninstall          -> remove installed skills from $(INSTALL_DIR)"
 	@echo "  make clean              -> remove build/ and all *.zip"
 
 # ---------------------------------------------------------------------------
@@ -153,11 +162,30 @@ skills: rust go js erlang cobalt design tailwindcss deno biome
 ## all: build every per-domain zip plus the collaboration-framework zip
 all: skills collab-framework
 
+$(INSTALL_DIR):
+	@mkdir -p "$@"
+
+## install: uninstall old copies, build all zips, and install them into $(INSTALL_DIR)
+install: $(INSTALL_DIR) uninstall all
+	@echo ">> installing skill zips into $(INSTALL_DIR)"
+	@for zip in $(INSTALL_ZIPS); do \
+		if [ ! -f "$$zip" ]; then \
+			echo "ERROR: missing zip: $$zip" >&2; exit 1; \
+		fi; \
+		unzip -o -q "$$zip" -d "$(INSTALL_DIR)"; \
+	done
+	@echo ">> installed skills into $(INSTALL_DIR)"
+
+## uninstall: remove installed skills from $(INSTALL_DIR)
+uninstall:
+	@echo ">> uninstalling skills from $(INSTALL_DIR)"
+	@for skill in $(INSTALL_SKILLS); do \
+		rm -rf "$(INSTALL_DIR)/$$skill"; \
+	done
+	@echo ">> uninstalled skills from $(INSTALL_DIR)"
+
 ## clean: remove the staging dir and every generated zip
 clean:
 	@rm -rf "$(BUILD)"
-	@rm -f collaboration-framework.zip \
-		rust-guidelines.zip go-guidelines.zip javascript-deno-guidelines.zip \
-		erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
-		tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
+	@rm -f $(INSTALL_ZIPS)
 	@echo ">> cleaned build/ and all skill zips"
