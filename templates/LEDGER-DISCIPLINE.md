@@ -244,8 +244,8 @@ Acceptable mitigations:
 ## Appendix: Per-slice ledger template
 
 A new slice ledger starts as a minimal markdown table. Copy, fill in,
-and commit it as the `ledger.md` in the slice's directory, per the default
-layout in [`../docs/AI-ENGINEERING-METHODOLOGY.md`](../docs/AI-ENGINEERING-METHODOLOGY.md)
+and commit it as the `ledger.md` in the slice's directory, per the canonical
+layout in [`../docs/PROJECT-MANAGEMENT.md`](../docs/PROJECT-MANAGEMENT.md)
 — e.g. `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/ledger.md`:
 
     # Slice <N>: <name>

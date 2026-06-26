@@ -157,65 +157,17 @@ Substrate that the authors do not use themselves. If the cards and skill files a
 
 ### The scales of work
 
-Before the sequence, the units it operates on. Every project decomposes along three scales of work. We name them once, here, and reuse the names across every project, team, and session — because the failure mode this section exists to kill is re-inventing the vocabulary each time, so that the same idea is a "phase" in one project, a "chunk" in the next, and a "milestone" in a third. Constant names are what let a plan written for one project be picked up and read, without translation, by anyone starting the next.
+Before the sequence, the units it operates on. Every project decomposes along three constant scales — named once and reused across every project, because re-inventing the vocabulary each time (a "phase" here, a "chunk" there, a "milestone" in the third) is the failure this naming exists to kill. Constant names are what let a plan written for one project be picked up and read, without translation, by anyone starting the next. Largest to smallest:
 
-The three scales, largest to smallest:
+- **Project** — the whole effort, with a name, a goal, and a definition of done; approached through the first three SDLC steps (research, project definition, design doc) and planned by breaking it into arcs.
+- **Arc** — a set of related slices delivering one coherent capability, and the scale at which you check that the slices _compose_; a planning unit, not an execution unit, approached through arc-and-slice breakdown (SDLC step 4).
+- **Slice** — the unit of execution: the work that lands in one branch as one mergeable diff, sized to be _held in a single model context with headroom to spare_. One slice, one ledger; approached through a per-slice implementation plan (SDLC step 5). If a slice will not fit in one context, it was two slices.
 
-**Project.** The whole effort — the thing with a name, a goal, and a definition of done. A project is approached through the first three SDLC steps: research, project definition, design doc. Its output is not code but boundaries and architecture: what we are building, what we are explicitly not, and how the pieces fit. A project is planned by breaking it into arcs.
+Two more words name things _inside_ a slice, not scales of their own. A **step** is a single item in a slice's implementation plan — the fine-grained unit the ledger's rows verify; steps do not cross slice boundaries. An **iteration** is a refinement pass on a slice whose delivery misses its acceptance criteria — reserved for that and only that, never a unit of planning, budgeted at five per slice. Read together: _a project bends through several arcs; each arc is cut into slices; a slice is planned as a handful of steps, and if its delivery misses spec it is refined over a bounded number of iterations._ For collaborators arriving with Agile or Scrum habits the rough translation is project ≈ epic, arc ≈ feature, slice ≈ the branch-scale unit those frameworks never named cleanly — a courtesy for onboarding, not an adoption.
 
-**Arc.** A set of related slices with a beginning and an end — the body of work that delivers one coherent capability. An arc is the unit at which you check that the slices _compose_: that together they add up to the capability and that none is missing. It is approached through arc-and-slice breakdown (SDLC step 4): decide which slices the arc needs, what order they land in, and which are load-bearing for which. An arc is too big to hold in one branch or one context — it is a planning unit, not an execution unit.
+The slice rests on a bottleneck worth naming, because it is where this practice and human-centred Agile diverge most sharply. Agile's atom — the story as a branch or PR — is sized to **human review attention** (the "~500-line PR" heuristic is a proxy for what one reviewer can hold). The slice is sized to a different bottleneck: the **model's context window, minus the headroom to recover from its own mistakes**. Two consequences follow: a slice can be _larger in raw diff_ than an Agile PR and still be correctly sized, since the limit is coherence-in-context rather than lines-a-human-will-read; and the five-iteration budget _lives inside_ the context budget — so size to the comfortable two-thirds, not the ceiling.
 
-**Slice.** The unit of execution — the work that lands in a single branch as one mergeable diff. A slice does one thing, end to end, and is sized to be _held in a single model context with headroom to spare_ — research, implementation, tests, and self-review all carried without compaction, plus slack for the fix-iterations the review process will surface (see _The fundamental unit, and what it rests on_, below). The slice is where ledger discipline attaches — one slice, one ledger — and where the work actually gets written, tested, and reviewed. It is approached through a per-slice implementation plan (SDLC step 5): a short list of steps with acceptance criteria that become the ledger's rows. If a slice will not fit in one context, it was two slices.
-
-Two more words name things _inside_ a slice, not scales of their own:
-
-**Step.** A single item in a slice's implementation plan — the fine-grained unit of work, and what the ledger's rows verify. Steps are how a slice is planned and tracked; they do not cross slice boundaries.
-
-**Iteration.** A refinement pass on a slice whose delivery does not yet meet its acceptance criteria. The word is reserved for this and only this — the fix loop on an in-progress slice, never a unit of planning. The budget is five iterations per slice (see ledger discipline); needing more is a signal the slice was too large or under-specified, not a licence to keep grinding.
-
-Read together: _a project bends through several arcs; each arc is cut into slices; a slice is planned as a handful of steps, and if its delivery misses spec it is refined over a bounded number of iterations._
-
-The names are chosen to be descriptive on sight and to avoid collision with the vocabulary of any specific methodology — we are pragmatic about practice, not aligned to a school. For collaborators arriving with Agile or Scrum habits, the rough translation is: project ≈ epic, arc ≈ feature, slice ≈ the branch-scale unit those frameworks never named cleanly (often mislabelled "feature," or split awkwardly across "stories" and "tasks"). The translation is a courtesy for onboarding, not an adoption of those frameworks. In particular we keep "iteration" well away from any planning sense: it earns its keep as the name for the fix loop, which is where the five-iteration budget lives.
-
-### The fundamental unit, and what it rests on
-
-Every project-management system has an atom — the smallest chunk it plans, reviews, and merges as a whole. What that atom _rests on_ is the quiet assumption that shapes everything above it, and it is where our practice and human-centred Agile diverge most sharply.
-
-Agile's atom — the story, realised as a branch or PR — is calibrated to **human cognition**: small enough that one reviewer can hold the change in working memory and find its bugs in a single sitting. The familiar "keep a PR under ~500 lines" heuristic is a proxy for _human review attention_, not a property of the work itself. The unit is sized to the reviewer.
-
-Our atom — the slice — is calibrated to a different bottleneck: the **model's context window, minus the headroom the work needs to recover from its own mistakes**. A slice is well-sized when a single context can carry it end to end — read the substrate, plan the steps, write the code, run the tests, review itself — _without compaction_, and still leave room for the fix-iterations the ledger and the review process will surface. The binding constraint is **coherence held in one context**, not reviewer fatigue.
-
-Two consequences follow. First, a slice can be _larger in raw diff_ than an Agile PR and still be correctly sized: a coherent end-to-end capability that would span several "stories" can be one slice, because the limit is coherence-in-context, not lines-a-human-will-read. (We keep the ~500-line figure only as a translation courtesy for collaborators arriving with PR habits — it is never our measure.) Second, the headroom is not optional slack: the five-iteration budget _lives inside_ the context budget. A slice sized to fill the whole window leaves nowhere to stand when delivery misses spec — which is exactly when the context is most needed. Size to the comfortable two-thirds, not the ceiling.
-
-### Sizing is a judgment call
-
-Where an arc ends and its slices begin is **a judgment call, not a formula** — a piece of back-of-napkin token arithmetic against the context budget, made fresh for each arc. The tension to balance is real: arcs are sized to land a _coherent capability_ (the thing worth shipping together), while slices are sized to _fit one context with iteration headroom_ (the thing one execution pass can hold). The two pulls do not always agree, and resolving them is part of the design work, not a step that can be mechanised.
-
-The test is simple to state and requires estimation to apply: _does this body of work fit one context, with room to recover?_ If yes, it is a slice — and if you were about to call it an arc, it was a slice all along. If no, it is an arc, and the work of arc-and-slice breakdown (SDLC step 4) is to cut it into slices that each pass the test. The estimation is rough and will sometimes be wrong; that is what the five-iteration budget and the "if it won't fit, it was two slices" rule are for — they catch a mis-sized slice at execution time and force the split.
-
-A useful mnemonic comes from screenwriting, whose structure nests the same way: **Act → Sequence → Scene → Beat**, each tier a self-contained unit that advances the one above. **Project → Arc → Slice → Step** is the same shape — which is why the breakdown _feels_ like outlining a story rather than filling a spreadsheet. (Above the Project sits, in principle, a _Saga_ — a multi-version vision spanning several Projects. We name it only to mark the slot; we do not currently plan or track at that scale, so it carries no operational weight here.)
-
-### A default layout
-
-In the absence of a project's own stated convention, lay the work out so the structure is legible from the filesystem alone:
-
-```
-docs/design-vX.Y.Z/
-  arcNN-<slug>/
-    arc-plan.md               ← the arc's plan-of-record
-    sliceNN-<slug>/
-      slice-doc.md            ← plan-of-record for this slice
-      ledger.md               ← grep-verifiable acceptance criteria (the steps)
-      cc-prompt.md            ← the assignment the executing context receives
-      closing-report.md       ← per-row walk, written at slice close
-      cdc-verification.md     ← independent re-run, written at slice close
-```
-
-The five per-slice documents are the artifact set that attaches to one execution unit; the arc-plan sits a level up, one per arc. When an arc has several slices, each gets its own subdirectory with its own five-document set. When a body of work turns out to need no decomposition — it fits one context, so by the test above it _is_ a single slice, not an arc — skip the arc wrapper: its five documents live directly in one `NN-<slug>/` directory, with no arc-plan above them. (That collapse is not a third case to choose; it is what you discover when the sizing judgment comes back "one slice, not an arc.")
-
-(This supersedes the older `milestones/` ledger-path convention; the paired reconciliation in [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md) — `milestone` → `slice`, including the path — was applied alongside this rev, closing the follow-up v1.1 had left open.)
-
-For the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream — and for the canonical re-statement of the layout above so it survives next to the discipline that protects it — see [`./ASSET-ORGANISATION.md`](./ASSET-ORGANISATION.md). That document is the operational companion to this section: this one owns the abstract structure (arc, slice, the five per-slice documents); that one carries the same structure verbatim plus the protocol — quote the default, name the substitutions, give the operator three explicit choices (proceed / adjust / override), record the choice in the project's `CLAUDE.md` so the next session inherits it. Project-wide defaults for asset categories outside the slice/arc tree (project-scoped prompts, upstream contribution drafts, coverage reports, scratch) are deferred to a later revision, pending in-flight work on epic- and project-level dependency tracking.
+> **The operational detail now lives in [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md)** — the framework's project-management home. It carries the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical on-disk layout** (the `docs/design-vX.Y.Z/` tree, `project-plan.md`, `arc-plan.md`, and the five per-slice documents), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that document first** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
 
 ### The 9-point SDLC
 
@@ -389,6 +341,31 @@ Portable versions of the methodology for other human collaborators without the C
 
 ## Version History
 
+### Version 1.5 — June 2026
+
+Extracted the **detailed project-management content** from Part III into a new
+dedicated home, [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) (v2.0,
+itself a rename-and-expansion of the former `ASSET-ORGANISATION.md`). The
+methodology now keeps a *summary* of the scales of work and the
+context-window basis for sizing a slice, plus a pointer; the operational
+detail it used to carry — *The fundamental unit, and what it rests on* (full
+version), *Sizing is a judgment call* (the token-arithmetic, the
+screenwriting mnemonic, the Saga tier), and *A default layout* (the on-disk
+tree) — moved to `PROJECT-MANAGEMENT.md`, which adds the project-level
+planning artifact (`project-plan.md`), the top-down planning process, and the
+bottom-up bubble-up/close machinery (slice → arc → project) that v1's
+`ASSET-ORGANISATION.md` had deferred.
+
+The cut is deliberate: this document owns the *philosophy* (the three
+pillars, the 9-point SDLC, the anti-degradation disciplines, the posture-in-
+craft), and `PROJECT-MANAGEMENT.md` owns the *mechanics* of planning and
+closing work. The vocabulary (project / arc / slice / step / iteration) is
+unchanged; this rev relocates its detailed treatment and adds a MUST-read
+pointer for anyone about to plan. The rev was catalysed by the `odm`
+rebuild — the "in-flight work on epic- and project-level dependency tracking"
+that v1.3's scope note was waiting on — maturing far enough (three arcs) to
+inform the deferred project-level layer.
+
 ### Version 1.4 — June 2026
 
 Added **Notes for Codex** after the preamble: an adapter layer for using this
@@ -410,7 +387,7 @@ constitutional authority.
 
 ### Version 1.3 — June 2026
 
-Added an operational companion to *A default layout* — [`./ASSET-ORGANISATION.md`](./ASSET-ORGANISATION.md) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept (and still keeps) the abstract structure: project / arc / slice / step / iteration, and the five per-slice documents under `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/`. The new doc carries that structure verbatim and adds the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
+Added an operational companion to *A default layout* — `ASSET-ORGANISATION.md` (renamed to [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) in v1.5) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept (and still keeps) the abstract structure: project / arc / slice / step / iteration, and the five per-slice documents under `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/`. The new doc carries that structure verbatim and adds the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
 
 The companion contribution-style stack also lands in this rev: [`./CONTRIBUTION-STYLE.md`](./CONTRIBUTION-STYLE.md) (the voice and disciplines for upstream tickets — friendly, specific, calibrated, respectful of maintainer ownership) and [`../templates/CONTRIBUTION-TICKET.md`](../templates/CONTRIBUTION-TICKET.md) (the on-disk template for the four ticket shapes: confirmed bug, additive feature, doc fix, unconfirmed question). Both are bundled into the `collaboration-framework` skill alongside the existing six.
 
@@ -438,4 +415,4 @@ Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ---
 
-_The methodology is a living document. This version: 1.4, 2026-06-22._
+_The methodology is a living document. This version: 1.5, 2026-06-26._

@@ -200,9 +200,9 @@ the weight.
 1. **Draft locally**, one ticket per file, in a project-side `issues/`,
    `docs/upstream/issues/`, or similar directory — confirm the location
    with the operator on the first ticket of a project (the project-wide
-   default is deferred pending the epic/project-organisation rev; see
-   the scope note in
-   [`../docs/ASSET-ORGANISATION.md`](../docs/ASSET-ORGANISATION.md)).
+   default for upstream-contribution drafts is still deferred; see
+   Part VIII of
+   [`../docs/PROJECT-MANAGEMENT.md`](../docs/PROJECT-MANAGEMENT.md)).
    The on-disk filename mirrors the title:
    `NN-<kind>-<slug>.md` — e.g. `01-bug-coremidi-virtual-sysex-256-cap.md`.
 2. **Re-check line references** against current `HEAD` before pasting; the

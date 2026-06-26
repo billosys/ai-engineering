@@ -5,18 +5,20 @@ description: |
   character, craft, and the disciplines that hold the quality floor.
   Grounded in the AI Constitution Supplement (posture), the AI Engineering
   Methodology (substrate, posture, process rigour), and an operational layer:
-  ledger discipline, asset organisation, code audit, test coverage, subagent
+  ledger discipline, project management (planning, layout, and the
+  bubble-up/close machinery), code audit, test coverage, subagent
   delegation, and upstream contribution style + ticket template.
   Use when: starting any sustained, high-stakes session — deep study,
   research, expert-level systems design, or production-grade programming;
-  establishing the peer frame; running the 9-point SDLC or a slice with a
-  ledger; commissioning a CAP-style audit; driving test coverage to a hard
-  threshold; deciding what may be delegated to a subagent; drafting upstream
-  contribution tickets; or any moment the quality floor needs protecting
-  against silent drift.
+  establishing the peer frame; planning or closing a project, arc, or slice
+  (MUST read PROJECT-MANAGEMENT.md before planning); running the 9-point
+  SDLC or a slice with a ledger; commissioning a CAP-style audit; driving
+  test coverage to a hard threshold; deciding what may be delegated to a
+  subagent; drafting upstream contribution tickets; or any moment the
+  quality floor needs protecting against silent drift.
   Does NOT load any domain skill under ./knowledge/ — those are loaded
   separately, per-language / per-domain, as needed.
-version: 1.0.0
+version: 1.1.0
 license: MIT
 metadata:
   hermes:
@@ -52,10 +54,11 @@ documents:
   rigour.
 - **Operational documents** that put the methodology into motion in a live
   session. Two clusters:
-  - *In-repo work* — ledger discipline, asset organisation (where artifacts
-    live and the confirmation protocol that stops sessions inventing their
-    own folders), the code-audit prompt, the test-coverage prompt, and the
-    subagent-delegation policy.
+  - *In-repo work* — ledger discipline, project management (the scales of
+    work, where every planning artifact lives, the confirmation protocol that
+    stops sessions inventing their own folders, and the planning + bubble-up/
+    close machinery), the code-audit prompt, the test-coverage prompt, and
+    the subagent-delegation policy.
   - *Outward-facing contribution* — the contribution style guide and the
     on-disk ticket template for upstream bugs, features, doc fixes, and
     questions.
@@ -98,9 +101,16 @@ applies:
   design doc, arc-and-slice breakdown, per-slice implementation plan,
   self-review, peer review, feedback loop, audit.
 - Opening or closing a **slice with a ledger** (load the ledger discipline).
-- Starting a new project, opening a new artifact category, or about to
-  create directories — **confirm the layout with the operator** rather than
-  invent one (load the asset-organisation doc).
+- **Planning or closing a project, an arc, or a slice — or about to create
+  any planning directory.** The moment planning begins, you **MUST read
+  [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) in full** before
+  laying anything out: it carries the scales of work, the canonical layout
+  (`project-plan.md` / `arc-plan.md` / the five per-slice docs), the
+  confirmation protocol (confirm the layout with the operator rather than
+  invent one), and the top-down planning + bottom-up bubble-up/close machinery
+  (slice → arc → project). The summary in this skill is *not* a substitute for
+  reading it — improvising the mechanics from the summary is the documented
+  way these tasks go off the rails.
 - Commissioning an **independent, evidence-based audit** of a repo or a body
   of work (load the code-audit prompt).
 - Driving a codebase to a **hard test-coverage threshold** without stopping
@@ -231,6 +241,24 @@ feedback loop → audits. Each step catches a different *altitude* of error.
 Skipping a step doesn't just forgo its value — it routes errors of that
 altitude further downstream where they cost more.
 
+Planning runs **top-down** and produces one plan-of-record per scale —
+`project-plan.md` (the arc roadmap), `arc-plan.md` (the slice breakdown), and
+the per-slice open set (`slice-doc.md` / `ledger.md` / `cc-prompt.md`).
+Closing runs **bottom-up**: each slice closes with a per-row walk *and* a
+**bubble-up to its arc** (did it deliver its assigned piece; what did it
+reveal the arc-plan didn't anticipate; the silent-drop diff), and each arc
+closes formally with its own `closing-report.md`, a composition check, and a
+**bubble-up to the project**. Findings that bubble up update the plan above
+them, tracked (never silent) via a dated version-history entry naming which
+child surfaced the change and why. Decomposition down, recomposition up — the
+loop is what keeps a plan from quietly drifting out of date.
+
+> **This is a summary. Before planning or closing anything, you MUST read
+> [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) in full** — it is
+> the home for the layout, the planning process, the bubble-up reports and
+> checks, the arc-close process, and the plan-change discipline. Do not
+> improvise the mechanics from this paragraph.
+
 ### Anti-degradation disciplines
 
 - **Write to the floor, not the ceiling.** Name what the work *achieves*, not
@@ -290,7 +318,7 @@ work demands:
 |------|----------|-----------|
 | [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
 | [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
-| [`docs/ASSET-ORGANISATION.md`](./docs/ASSET-ORGANISATION.md) | Operational discipline | Whenever you're about to create directories or filenames — starting a new project, beginning the first arc/slice, or resuming after long elapse. Carries the canonical slice/arc layout (verbatim from the methodology) and the **confirmation protocol** that stops sessions inventing their own folders — quote the default, name the substitutions, give the operator three explicit choices. *Scope note:* project-wide defaults for other asset categories (project-scoped prompts, upstream contribution drafts, coverage reports, scratch) are deferred pending the epic/project-organisation rev. |
+| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. The framework's project-management home: the scales of work, the canonical layout (`project-plan.md` / `arc-plan.md` / the five per-slice docs), the **confirmation protocol** that stops sessions inventing their own folders, the **top-down planning** process, and the **bottom-up bubble-up/close machinery** (slice → arc → project) with the plan-change discipline. Read it in full; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **slice that has a ledger** — before writing code, not as an end-of-slice checklist. Defines the per-row, evidence-backed closure protocol (CC implements; CDC verifies independently) and the five-iteration cap. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index. Diagnosis only; does not modify code. |
 | [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
@@ -339,13 +367,15 @@ subsumes the other.
 2. **Read the [Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md) and
    [Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md) together** when the
    session is substantial — character and craft are inseparable.
-3. **Confirm the asset layout** with the operator before creating directories
-   or filenames — load [`docs/ASSET-ORGANISATION.md`](./docs/ASSET-ORGANISATION.md)
-   and apply the confirmation protocol once per project. This is the cheapest
-   defence against the most common failure mode (sessions inventing parallel
-   conventions).
+3. **Before planning or closing anything, read
+   [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) in full** — and
+   apply the confirmation protocol with the operator before creating
+   directories or filenames, once per project. This is the cheapest defence
+   against the two most common failure modes: sessions inventing parallel
+   conventions, and sessions improvising the planning/closing mechanics from a
+   summary instead of the spec.
 4. **Load the operational document** the work calls for (ledger, audit,
-   coverage, delegation, asset organisation, or — for outward-facing work —
+   coverage, delegation, project management, or — for outward-facing work —
    contribution style + ticket template) at the moment it applies, not
    speculatively.
 5. **Load the relevant `knowledge/<domain>/SKILL.md`** for the language or
