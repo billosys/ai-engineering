@@ -1,5 +1,10 @@
 # AI Engineering
 
+[![][build-badge]][build]
+[![][tag-badge]][tag]
+
+[![][logo]][logo-large]
+
 > Two layers in one repo. A **polyglot knowledge platform** of AI-optimized
 > coding and design skills — reference-grade guides that Claude, Cowork, Claude
 > Code, or any other AI assistant can load to produce better code and better
@@ -283,3 +288,12 @@ MIT — see [LICENSE](./LICENSE).
 Individual knowledge bases synthesize material from sources under various
 licenses. Those are documented inside each skill's own README. When in doubt,
 defer to the original sources for authoritative guidance.
+
+[//]: ---Named-Links---
+
+[logo]: assets/images/logo-x250.png
+[logo-large]: assets/images/logo-x1672.png
+[build]: https://github.com/billosys/ai-engineering/actions/workflows/ci.yml
+[build-badge]: https://github.com/billosys/ai-engineering/actions/workflows/ci.yml/badge.svg
+[tag-badge]: https://img.shields.io/github/tag/billosys/ai-engineering.svg
+[tag]: https://github.com/billosys/ai-engineering/tags
