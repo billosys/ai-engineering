@@ -2,6 +2,7 @@
 
 [![][build-badge]][build]
 [![][tag-badge]][tag]
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 [![][logo]][logo-large]
 
@@ -14,8 +15,6 @@
 > quality floor) that governs *how* an LLM and its human partner do the work to
 > engineering standards. The skills make the output better in a domain; the
 > framework makes the collaboration trustworthy across all of them.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## What this is
 
