@@ -2,23 +2,22 @@
 name: collaboration-framework
 description: |
   The house framework for working with an LLM to engineering standards —
-  character, craft, and the disciplines that hold the quality floor.
-  Grounded in the AI Constitution Supplement (posture), the AI Engineering
-  Methodology (substrate, posture, process rigour), and an operational layer:
-  ledger discipline, project management (planning, layout, and the
-  bubble-up/close machinery), code audit, test coverage, subagent
-  delegation, and upstream contribution style + ticket template.
-  Use when: starting any sustained, high-stakes session — deep study,
-  research, expert-level systems design, or production-grade programming;
-  establishing the peer frame; planning or closing a project, arc, or slice
-  (MUST read PROJECT-MANAGEMENT.md before planning); running the 9-point
-  SDLC or a slice with a ledger; commissioning a CAP-style audit; driving
-  test coverage to a hard threshold; deciding what may be delegated to a
-  subagent; drafting upstream contribution tickets; or any moment the
-  quality floor needs protecting against silent drift.
-  Does NOT load any domain skill under ./knowledge/ — those are loaded
-  separately, per-language / per-domain, as needed.
-version: 1.1.0
+  character, craft, and the disciplines holding the quality floor.
+  Grounded in the AI Constitution Supplement (posture) and the AI
+  Engineering Methodology (substrate, process rigour), plus an operational
+  layer: ledger discipline, project management (planning, layout,
+  bubble-up/close), code audit, test coverage, subagent delegation, and
+  upstream contribution style + ticket template.
+  Use when: sustained, high-stakes sessions — deep study, research,
+  expert systems design, or production programming; establishing the peer
+  frame; planning or closing a project, arc, or slice (MUST read
+  PROJECT-MANAGEMENT.md before planning); running the 9-point SDLC or a
+  ledgered slice; commissioning a CAP-style audit; driving coverage to a
+  hard threshold; deciding what to delegate to a subagent; drafting
+  contribution tickets; or whenever the floor needs protecting from drift.
+  Does NOT load domain skills under ./knowledge/ — loaded separately,
+  per-domain.
+version: 1.2.0
 license: MIT
 metadata:
   hermes:
@@ -100,7 +99,8 @@ applies:
 - Running any part of the **9-point SDLC**: research, project definition,
   design doc, arc-and-slice breakdown, per-slice implementation plan,
   self-review, peer review, feedback loop, audit.
-- Opening or closing a **slice with a ledger** (load the ledger discipline).
+- Opening or closing a **ledgered unit at any scale** — slice, arc, or project
+  (load the ledger discipline; the protocol now spans all three).
 - **Planning or closing a project, an arc, or a slice — or about to create
   any planning directory.** The moment planning begins, you **MUST read
   [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) in full** before
@@ -319,7 +319,7 @@ work demands:
 | [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
 | [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
 | [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. The framework's project-management home: the scales of work, the canonical layout (`project-plan.md` / `arc-plan.md` / the five per-slice docs), the **confirmation protocol** that stops sessions inventing their own folders, the **top-down planning** process, and the **bottom-up bubble-up/close machinery** (slice → arc → project) with the plan-change discipline. Read it in full; do not improvise the mechanics from the skill's summary. |
-| [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **slice that has a ledger** — before writing code, not as an end-of-slice checklist. Defines the per-row, evidence-backed closure protocol (CC implements; CDC verifies independently) and the five-iteration cap. |
+| [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index. Diagnosis only; does not modify code. |
 | [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
 | [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md` / preferences block so it holds across sessions. |

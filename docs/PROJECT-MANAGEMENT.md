@@ -213,6 +213,14 @@ one per **arc** (the composition check). The per-slice `cdc-verification.md`
 is the independent re-run that gates a slice closed. Their full roles are
 defined in Parts III–V; their on-disk shape is fixed here.
 
+Each scale is also **verified by a ledger** — the recomposition discipline in
+[`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md). The
+slice ledger is its own file (`ledger.md`); the **arc and project ledgers are
+not separate files** — they open as a ledger *section* inside `arc-plan.md` /
+`project-plan.md` (next to the capability / definition of done they verify) and
+close as the per-row walk inside the matching `closing-report.md`. That doc owns
+the ledger mechanics at all three scales; this one owns where the rows live.
+
 ### Naming rules
 
 - **`X.Y.Z` is the project's design-doc version**, not its release version.
@@ -278,7 +286,13 @@ arcs at once**, before opening any single `arc-plan.md`.
 3. **Current status.** Which arc is active, which are closed, which are not
    yet planned in detail. Detailed arc planning is deliberately deferred until
    an arc is near — see *plan late, plan deep* below.
-4. **A Version History section.** The change log that receives bubble-ups from
+4. **A project-ledger section.** The composition criteria that verify the DoD,
+   stated up front as ledger rows — the project ledger from
+   [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md)
+   Section C. It opens here and closes (per-row walk) in the project's
+   `closing-report.md`. This is what makes the DoD *checkable* rather than
+   merely asserted.
+5. **A Version History section.** The change log that receives bubble-ups from
    arc closes (Part V). It starts with the initial roadmap as v1.0 and grows
    one dated entry per change, each naming which arc surfaced the change and
    why (the plan-change discipline, Part V).
@@ -302,7 +316,13 @@ arc-and-slice breakdown). `arc-plan.md` carries, at minimum:
    iteration headroom.
 3. **Dependencies.** What this arc consumes from earlier arcs, and what it
    leaves for later ones.
-4. **A Version History section.** The change log that receives bubble-ups from
+4. **An arc-ledger section.** The composition criteria that verify the
+   capability, stated up front as ledger rows — the arc ledger from
+   [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md)
+   Section B. It opens here and closes (per-row walk) in the arc's
+   `closing-report.md`. This is what makes "the slices compose into the
+   capability" *checkable* rather than merely asserted.
+5. **A Version History section.** The change log that receives bubble-ups from
    slice closes (Part IV) — one dated entry per change, each naming which
    slice surfaced it and why.
 
@@ -416,7 +436,11 @@ from the per-slice closing-reports one level down). It carries:
 3. **The composition check.** Do the slices *recompose* into the capability?
    This is the silent-drop diff at arc scale: arc-capability-as-specified
    versus arc-capability-as-delivered. Name anything the arc promised that no
-   slice delivered.
+   slice delivered. Concretely, this is the arc ledger's composition rows being
+   *reproduced* (an end-to-end demonstration run at arc scale) and walked to
+   closure — see [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md)
+   Section B. The project-level equivalent (arcs recomposing into the DoD) is
+   Section C.
 4. **The accumulated arc-plan change log.** A pointer to (or summary of) the
    changes that bubbled into `arc-plan.md` from slice closes during the arc —
    so the arc's drift from its original plan is visible in one place.
@@ -678,6 +702,18 @@ in an arc that *looked* closed — precisely the class of error that compounds.
 
 ## Version History
 
+### Version 2.1 — June 2026
+
+Synchronised with `LEDGER-DISCIPLINE.md` v2.0, which extended ledger discipline
+from slice-only to all three scales. Added the **ledger section** to the
+required contents of `arc-plan.md` (the arc ledger's composition rows, Part III)
+and `project-plan.md` (the project ledger's DoD rows, Part III); noted in the
+canonical layout (Part II) that the arc and project ledgers live as sections in
+those plan docs and close in the matching `closing-report.md` (Option A — no new
+files); and tied the arc composition check (Part V) to the arc/project ledger
+closure. The bubble-up/close machinery is unchanged; this rev names the
+verification rigor that now backs it at each scale.
+
 ### Version 2.0 — June 2026
 
 Renamed from `ASSET-ORGANISATION.md` (v1, which covered only the slice/arc
@@ -724,4 +760,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_This document is a living spec. This version: 2.0, 2026-06-26._
+_This document is a living spec. This version: 2.1, 2026-06-26._

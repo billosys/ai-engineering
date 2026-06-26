@@ -71,7 +71,7 @@ ai-engineering/
 │                      #   image fixing, marker setup
 └── templates/         # Authoring templates + verification protocol
     ├── GUIDE.md                # Starter template for new knowledge-base guides
-    ├── LEDGER-DISCIPLINE.md    # Per-slice verification protocol (CC/CDC)
+    ├── LEDGER-DISCIPLINE.md    # Per-scale verification protocol (slice/arc/project)
     └── CONTRIBUTION-TICKET.md  # On-disk template for upstream OSS tickets
 ```
 
@@ -170,7 +170,7 @@ operational documents that put the methodology into motion in a session —
 covering both **in-repo work** (ledger discipline, project management, code
 audit, test coverage, subagent delegation) and **outward-facing
 contribution** (style and discipline for upstream OSS tickets). Two
-on-disk templates back the operational layer (the per-slice ledger format
+on-disk templates back the operational layer (the multi-scale ledger format
 and the contribution-ticket shape).
 
 ### The `collaboration-framework` skill
@@ -193,7 +193,7 @@ It pulls in exactly nine files:
 - [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) — character / posture
 - [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) — craft / practice
 - [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) — the project-management home: scales of work, the canonical layout (`project-plan.md` / `arc-plan.md` / five per-slice docs), the confirmation protocol, and the top-down planning + bottom-up bubble-up/close machinery (MUST-read before planning)
-- [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) — per-slice verification protocol
+- [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) — per-scale verification protocol (slice / arc / project)
 - [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) — whole-repo quality audit prompt
 - [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) — 95%+ test-coverage prompt
 - [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) — thinking-vs-lookup delegation policy
@@ -254,7 +254,7 @@ Three authoring / verification helpers live in [`./templates/`](./templates/):
 | File | What it does | Codex ready? |
 |------|--------------|--------------|
 | [`GUIDE.md`](./templates/GUIDE.md) | Starter skeleton for a new knowledge-base guide — pattern format, strength indicators, cross-references. Use this when adding a new chapter to an existing skill or bootstrapping a new domain. | ✅ |
-| [`LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | A per-slice verification protocol for the implementer / reviewer pair (CC / CDC). Adapted from defect-register and corrective-action traditions in nuclear power, aviation, surgery (WHO Surgical Safety Checklist), clinical trials, HACCP, financial audit, and spaceflight. Every acceptance criterion becomes a grep-verifiable ledger row; nothing advances until the ledger is fully closed with evidence. Referenced throughout [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md). | ✅ |
+| [`LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | A **per-scale** verification protocol (slice / arc / project) for the doer / independent-reviewer pair (CC / CDC at slice scale). One scale-free spine — every acceptance criterion a verifiable ledger row, evidence-strength graded `asserted<attested<reproduced<reconciled`, nothing advances until the ledger is closed — instantiated at three scales: slice (steps, five-iteration cap), arc and project (composition rows reproduced at scale, remediation-not-iteration). Adapted from defect-register and corrective-action traditions (nuclear, aviation, surgery's WHO checklist, clinical trials, HACCP, financial audit, spaceflight) and, for the multi-scale extension, assurance cases/GSN, the V-model, and stage-gate reviews. Referenced throughout [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md). | ✅ |
 | [`CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) | The on-disk authoring template for an upstream contribution ticket — a bug, feature, doc fix, or unconfirmed question against a project you don't maintain. Carries the paste-ready blockquote header (title suggestion, label hints, calibrated DRAFT marker for unconfirmed tickets), the four ticket shapes that share one spine, and the filing workflow. Pairs with [`docs/CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) for the voice and disciplines. | ✅ |
 
 ## Contributing
