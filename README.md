@@ -1,9 +1,14 @@
 # AI Engineering
 
-> A polyglot knowledge platform of AI-optimized coding and design skills —
-> reference-grade guides that Claude, Cowork, Claude Code, or any other AI
-> assistant can load to produce better code and better design, one domain at
-> a time.
+> Two layers in one repo. A **polyglot knowledge platform** of AI-optimized
+> coding and design skills — reference-grade guides that Claude, Cowork, Claude
+> Code, or any other AI assistant can load to produce better code and better
+> design, one domain at a time. And the **collaboration framework** beneath
+> them — the character, craft, and process layer (peer-frame posture, the
+> 9-point SDLC, multi-scale ledger discipline, and the disciplines that hold the
+> quality floor) that governs *how* an LLM and its human partner do the work to
+> engineering standards. The skills make the output better in a domain; the
+> framework makes the collaboration trustworthy across all of them.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
