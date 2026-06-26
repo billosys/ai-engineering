@@ -290,7 +290,7 @@ defer to the original sources for authoritative guidance.
 
 [//]: ---Named-Links---
 
-[logo]: assets/images/logo-x250.png
+[logo]: assets/images/logo-y250.png
 [logo-large]: assets/images/logo-x1672.png
 [build]: https://github.com/billosys/ai-engineering/actions/workflows/ci.yml
 [build-badge]: https://github.com/billosys/ai-engineering/actions/workflows/ci.yml/badge.svg
