@@ -1,0 +1,33 @@
+name: CI
+
+# Run the build-time checks on every push to main (covers direct pushes and
+# merge commits) and on every pull request targeting main (so the checks gate
+# a PR before it is merged).
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# A newer push to the same ref cancels an in-flight run for that ref.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Validate and build skill bundles
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      # Fast, explicit signal: every SKILL.md description within the limit.
+      - name: Validate skill descriptions
+        run: make check-skills
+
+      # Full packaging: builds every per-domain bundle and the
+      # collaboration-framework bundle, re-running the per-bundle guards and
+      # catching missing files or staging errors.
+      - name: Build all skill bundles
+        run: make all
