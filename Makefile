@@ -10,6 +10,11 @@
 
 BUILD := build
 INSTALL_DIR ?= $(HOME)/.agents/skills
+
+# Build-time guard: every skill bundle runs its SKILL.md through this before
+# packaging, so a description over the loader's limit fails the build instead
+# of failing silently at load time. Single source of truth for the check.
+CHECK_SKILL := ./scripts/check-skill-description.sh
 INSTALL_ZIPS := \
 	collaboration-framework.zip \
 	rust-guidelines.zip go-guidelines.zip javascript-deno-guidelines.zip \
@@ -17,9 +22,23 @@ INSTALL_ZIPS := \
 	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
 INSTALL_SKILLS := $(INSTALL_ZIPS:.zip=)
 
-.PHONY: all skills install uninstall clean help \
+.PHONY: all skills install uninstall clean help check-skills \
 	collab-framework collab-framework-clean \
 	rust go js erlang cobalt design tailwindcss deno biome
+
+# Every SKILL.md (and the two biome/deno variants) packaged by this Makefile.
+ALL_SKILL_FILES := \
+	SKILL.md \
+	knowledge/rust/SKILL.md \
+	knowledge/go/SKILL.md \
+	knowledge/js/SKILL.md \
+	knowledge/erlang/SKILL.md \
+	knowledge/cobalt/SKILL.md \
+	knowledge/design/SKILL.md \
+	knowledge/tailwindcss/SKILL.md \
+	knowledge/deno/SKILL-js-linter.md \
+	knowledge/biome/SKILL-js-linter.md \
+	knowledge/biome/SKILL-web-linter.md
 
 ## help: list the available targets
 help:
@@ -36,6 +55,7 @@ help:
 	@echo "  make biome              -> biome-js-linter.zip AND biome-linter.zip"
 	@echo "  make skills             -> all per-domain zips"
 	@echo "  make all                -> skills + collab-framework"
+	@echo "  make check-skills       -> validate every SKILL.md description length"
 	@echo "  make install            -> build all zips and install them into $(INSTALL_DIR)"
 	@echo "  make uninstall          -> remove installed skills from $(INSTALL_DIR)"
 	@echo "  make clean              -> remove build/ and all *.zip"
@@ -66,6 +86,7 @@ CF_FILES := \
 
 ## collab-framework: build collaboration-framework.zip (SKILL.md + its 9 files)
 collab-framework: collab-framework-clean
+	@$(CHECK_SKILL) SKILL.md
 	@echo ">> staging $(CF_NAME) bundle"
 	@mkdir -p "$(CF_STAGE)"
 	@for f in $(CF_FILES); do \
@@ -105,6 +126,7 @@ define pack_skill
 	@dir="$(KNOWLEDGE)/$(1)"; src="$$dir/$(2)"; \
 	if [ ! -f "$$src" ]; then echo "ERROR: missing skill file: $$src" >&2; exit 1; fi; \
 	if [ ! -d "$$dir/guides" ]; then echo "ERROR: missing guides dir: $$dir/guides" >&2; exit 1; fi; \
+	$(CHECK_SKILL) "$$src"; \
 	name=$$(sed -n 's/^name:[[:space:]]*//p' "$$src" | head -1); \
 	if [ -z "$$name" ]; then echo "ERROR: no 'name:' in $$src frontmatter" >&2; exit 1; fi; \
 	stage="$(BUILD)/$$name"; \
@@ -161,6 +183,11 @@ skills: rust go js erlang cobalt design tailwindcss deno biome
 
 ## all: build every per-domain zip plus the collaboration-framework zip
 all: skills collab-framework
+
+## check-skills: validate the description length of every SKILL.md
+check-skills:
+	@$(CHECK_SKILL) $(ALL_SKILL_FILES)
+	@echo ">> all skill descriptions within limit"
 
 $(INSTALL_DIR):
 	@mkdir -p "$@"
