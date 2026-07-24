@@ -6,6 +6,19 @@
 
 [![][logo]][logo-large]
 
+## Contents
+
+- [About](#about)
+- [The collaboration framework](#the-collaboration-framework)
+  - [The problems](#the-problems) / [The solutions](#the-solutions)
+  - [What you get](#what-you-get) / [How to use it](#how-to-use-it)
+  - [Under the hood](#under-the-hood)
+- [The skill library](#the-skill-library)
+- [Building and installing](#building-and-installing)
+- [Repository layout](#repository-layout)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## About
 
 > A library of AI-optimized engineering skills for LLM coding assistants —
