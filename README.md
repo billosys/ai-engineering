@@ -66,7 +66,7 @@ on the missing pieces. Add the other structural failure modes — spec-softening
 and refactorings, and sycophancy (a collaborator trained to please rather than
 push back) — and one thing became very clear: speed is not the bottleneck; *trust* is.
 
-The full origin story — the failures that taught each of these lessons —
+Snippets of the origin story — a summary of some of the failures that taught each of these lessons —
 lives in [docs/ORIGINS.md](./docs/ORIGINS.md).
 
 ### The solutions
@@ -121,7 +121,9 @@ From a design discussion that shaped the constitution supplement:
   main context) and lookup work (delegate freely) — because LLMs instructing
   other LLMs play a lossy game of telephone.
 
-The honest trade-off: everything gets slower. LLM speed miracles are no longer commonplace, because the work is being fully vetted at every level. What you get in exchange for this increased load is something more akin to the
+A trade-off to keep in mind: some of your work will get slower. Due to the care and rigour of this framework, LLM "speed miracles" no longer will be commonplace. If you want the work fully vetted at every level, know the associated cost.
+
+However, what you get in exchange for this increased load is something more akin to the
 velocity of an excellent engineer operating at sustained peak.
 
 From a developer partway through their second framework-run slice of a legacy
