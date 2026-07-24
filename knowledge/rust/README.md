@@ -4,7 +4,7 @@
 
 This is the Rust domain of the [billosys/ai-engineering](../../README.md)
 knowledge base — the one that started it all. It has since grown into a full
-reference of **~665 patterns across 17 chapters**, covering everything from
+reference of **661 patterns across 17 chapters**, covering everything from
 core idioms to unsafe-FFI soundness, async runtimes, macros, editions,
 observability, CLI authoring, and full Cargo mastery.
 
@@ -17,7 +17,7 @@ Rust code.
 
 **Key features:**
 
-- **~665 patterns** across 17 focused chapters
+- **661 patterns** across 17 focused chapters
 - **Strength indicators** (MUST, SHOULD, CONSIDER, AVOID) for clear prioritization
 - **Paired ✅ GOOD / ❌ BAD code examples** for every pattern
 - **70-entry anti-patterns chapter** — critical for preventing common AI-generated mistakes
@@ -80,7 +80,7 @@ knowledge/rust/
 │   ├── 11-anti-patterns.md           # 70 patterns — what NOT to do (critical!)
 │   ├── 12-project-structure.md       # 30 patterns — crates, workspaces, MSRV
 │   ├── 13-documentation.md           # 33 patterns — rustdoc, doctests, intra-doc
-│   ├── 14-cli-tools/                 # 57 patterns — 9 sub-guides for CLI development
+│   ├── 14-cli-tools/                 # 53 patterns — 8 sub-guides for CLI development
 │   ├── 15-cargo/                     # 96 patterns — 8 sub-guides for Cargo mastery
 │   ├── 16-editions.md                # 24 patterns — editions 2015/2018/2021/2024, migration
 │   └── 17-observability.md           # 18 patterns — tracing, metrics, panic hooks

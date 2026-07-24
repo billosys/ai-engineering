@@ -6,6 +6,8 @@
 
 [![][logo]][logo-large]
 
+## About
+
 > A library of AI-optimized engineering skills for LLM coding assistants —
 > Claude, Claude Code, Cowork, Codex, or anything that reads Markdown. It
 > includes reference-grade language and tooling knowledge bases (Rust, Go,
@@ -22,7 +24,7 @@ trustworthy across all of them.
 
 ## The collaboration framework
 
-One skill — loaded as **`/collaboration-framework`** — that turns an LLM
+In addition to the language skills this repo offers (see below), we have this skill — loaded as **`/collaboration-framework`** — which turns an LLM
 coding session into an engineering (or rigorous scientific inquiry) project.
 
 ### The problems
@@ -46,6 +48,9 @@ on the missing pieces. Add the other structural failure modes — spec-softening
 (the spec quietly drifting to match what was produced), failed abstractions
 and refactorings, and sycophancy (a collaborator trained to please rather than
 push back) — and one thing became very clear: speed is not the bottleneck; *trust* is.
+
+The full origin story — the failures that taught each of these lessons —
+lives in [docs/ORIGINS.md](./docs/ORIGINS.md).
 
 ### The solutions
 
@@ -111,6 +116,14 @@ codebase rework:
 > [It] feels more challenging, but also more engaging, and I can already see
 > how the structure is helping me build familiarity and confidence …
 
+This approach has been used, in various iterations on projects such as the following:
+
+- research in the fields of linguistics, graduate and post-doctoral mathematics, absract music theoreis, computer science and compilers, cosmological physics, pedagogical theory, cognitive sciences, ontological methods/knoledge engineering, and (of course) artificial intellegence 
+- the creation of multiple programming languages (ASTs, IRs, compilers, tooling, documentation)
+- supporting large, well-established open source projects and for the creation of more than 100 new open source software libraries
+- the collaborative authoring of LLM skill documents, programming language guides, technical books and even works of fiction
+- providing extremely high-quality software solutions, systems and visual designs, and policy documentation for businessses
+
 ### How to use it
 
 1. **Build it:** `make collab-framework` produces `collaboration-framework.zip`
@@ -171,8 +184,8 @@ per domain, each with its own `SKILL.md` entry point. They share one design:
 | Skill | What it covers |
 |-------|----------------|
 | [Rust](./knowledge/rust/README.md) | 661 graded patterns across 17 chapters, grounded in 21 upstream sources. The original skill. |
-| [JavaScript / Deno](./knowledge/js/) | Plain JavaScript (no TypeScript), ESM-only, Deno-first — idioms, async, JSDoc type discipline, JSR publishing. |
-| [Go](./knowledge/go/) | Go 1.22+, reconciling the Uber and Google style guides with *Effective Go* and the spec. |
+| [JavaScript / Deno](./knowledge/js/) | 504 patterns across 14 chapters — plain JavaScript (no TypeScript), ESM-only, Deno-first: idioms, async, JSDoc type discipline, JSR publishing. |
+| [Go](./knowledge/go/) | 476 patterns across 12 chapters — Go 1.22+, reconciling the Uber and Google style guides with *Effective Go* and the spec. |
 | [Erlang / OTP](./knowledge/erlang/) | 281 patterns across 17 chapters — OTP behaviours, supervision, let-it-crash, production ops, testing, tooling. |
 | [Visual Design](./knowledge/design/) | A perceptual-science-grounded design system: OKLCH colour, modular type scale, spatial primitives, CUBE CSS. |
 | [Tailwind CSS v4](./knowledge/tailwindcss/) | CSS-native v4 configuration, with v3 → v4 breaking changes called out explicitly. |

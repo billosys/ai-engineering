@@ -5,6 +5,11 @@ old
 .DS_Store
 .venv
 
+# Emacs
+*~
+\#*\#
+.\#*
+
 # Build artifacts from the packaging targets (make collab-framework, make skills, …)
 /build
 /*.zip
