@@ -21,24 +21,28 @@
 
 ## About
 
-> A library of AI-optimized engineering skills for LLM coding assistants —
-> Claude, Claude Code, Cowork, Codex, or anything that reads Markdown. It
-> includes reference-grade language and tooling knowledge bases (Rust, Go,
-> Erlang/OTP, JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, and the
-> Biome and Deno linters — see [the skill library](#the-skill-library) below
-> for details), plus the **collaboration framework** that governs how the work
-> actually gets done.
+A library of AI-optimized engineering skills for LLM coding assistants —
+Claude, Claude Code, Cowork, Codex, or anything that reads Markdown.
+
+It includes:
+
+- reference-grade language and tooling knowledge bases (Rust, Go,
+  Erlang/OTP, JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, and the
+  Biome and Deno linters — see [the skill library](#the-skill-library) below
+  for details), plus
+- the **collaboration framework** that governs how the work actually gets done.
+
+
+## The collaboration framework
+
+In addition to the language skills this repo offers (see below), we have this skill — loaded as **`/collaboration-framework`** — which turns an LLM
+coding session into an engineering (or rigorous scientific inquiry) project.
 
 What has become clear over usage across many projects of various sizes,
 complexity, and duration is that the **collaboration framework may be the most
 valuable asset in this repo**. The language skills make an LLM's output better
 in one domain at a time; the framework makes the collaboration itself
 trustworthy across all of them.
-
-## The collaboration framework
-
-In addition to the language skills this repo offers (see below), we have this skill — loaded as **`/collaboration-framework`** — which turns an LLM
-coding session into an engineering (or rigorous scientific inquiry) project.
 
 ### The problems
 
