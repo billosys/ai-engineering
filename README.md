@@ -23,34 +23,60 @@ trustworthy across all of them.
 ## The collaboration framework
 
 One skill — loaded as **`/collaboration-framework`** — that turns an LLM
-coding session into an engineering project.
+coding session into an engineering (or rigorous scientific inquiry) project.
 
-### The problem it solves
+### The problems
 
-Unsupervised LLM development fails in predictable, well-documented ways, and
-most of them are invisible until they bite. The one that motivated this
-framework: **silent drops**. An LLM works through a large task list, reports
-success, passes all tests — and quietly defers some of the work along the way,
-without ever telling you. Measured informally across this repo's originating
+Unsupervised LLM work fails in predictable, well-documented ways. This framework
+addresses all of the ones encountered (and verified by research) over the course
+of two years of deep analysis and problem solving. Roughly in chronological order,
+these were:
+
+- poor decisions due to lack of skill or incomplete tooling/tool use 
+- conflation of human-oriented work units and LLM-oriented ones
+- stunning failures of abstract reasoning and/or the proper generalisations of concepts, code, etc. (a deeply researched weak point for LLMs)
+- silent drops, spec-softening, partial best-practice adoption, disclosed deferrals, etc.
+- sycophancy baked in by post-training: agreement in the face of contrary evidence, deference instead of honest push-back, and no structural basis for true peer discussion
+- loss of work, repeated work, inability to properly or consistently track large bodies of work
+
+Measured informally across this repo's originating
 projects, roughly 15–20% of features and tasks were being silently deferred:
 "done" milestones that were 85% done, discovered only when later work depended
 on the missing pieces. Add the other structural failure modes — spec-softening
 (the spec quietly drifting to match what was produced), failed abstractions
 and refactorings, and sycophancy (a collaborator trained to please rather than
-push back) — and speed stops being the bottleneck. *Trust* is.
+push back) — and one thing became very clear: speed is not the bottleneck; *trust* is.
 
-None of this is a defect of any particular model; it is structural, and it
-shows up in the research literature as reliably as it shows up in real
-projects. So the framework treats it the way other fields treat structural
-failure: with process controls, adapted from domains where checklists are a
-matter of life and death — nuclear corrective-action programs, aviation
-safety, surgical checklists.
+### The solutions
+
+None of these are defects of any particular model. Rather, they are fundamental issues that face all LLM-based work and they
+show up in the research literature as reliably as they show up in real
+projects. This framework treats these problems the way other fields treat structural
+failure: with process controls. One of these in particular (the "ledger discipline") has been adapted from domains where checklists are a
+matter of life and death (nuclear corrective-action programs, aviation
+safety, surgical checklists).
+
+Starting in late 2024 and evolving continuously since then, the following now form the bulk of the solution set:
+
+- greatly expanded language guides, with 100s of GOOD/BAD or DO/DONTDO examples (per language!)
+- formalised, regular whole-project standards-adherence audits 
+- modified SDLC with the LLM context as primary unit of work (and full, explicit guidance for LLM on process)
+- explicit human presence required for all work relating to abstractions, generalisations, etc.
+- the use of a "ledger discipline" for guarding against silent drops, spec-softening, partial best-practice adoption, disclosed deferrals, etc.
+- structural reinforcement of the AI Constitution to establish the basis for peer-discussions, to provide conversational rights, and for guarding against agreement in the face of contrary evidence
+- project management redefinition which replaces hand-waving, arbitrary, proven flaws with context-based, graph-traversing, information theoretic repeatable processes
+
+From a design discussion that shaped the constitution supplement:
+
+> With regard to "human language is the original context poisoner" ... the full diagnosis that human/LLM collaborators need is four-rooted — data, objective, architecture, alignment — and they don't share a fix. It's not just that LLMs are born by eating our flawed words — it's that we trained them to sound right rather than be right, on hardware that can't always compute the answer, and then taught them to please us.
+
 
 ### What you get
 
+- **A perspective shift for LLMs.** They are now your _accountable_ investigative, brainstorming, troubleshooting, solution-finding partners. 
 - **A shared vocabulary for the work.** Every effort decomposes the same way
   in every project: **project → arc → slice**, where a slice is one mergeable
-  diff. Plans travel between projects and sessions because the words never
+  diff. Plans travel between projects and sessions (and across time) because the core terms don't
   change.
 - **A 9-point SDLC.** Research → project definition → design doc → arc/slice
   breakdown → per-slice implementation plan → self-review → peer review →
@@ -61,7 +87,7 @@ safety, surgical checklists.
   "done" — and the closer is never the verifier. This is the discipline that
   eliminates silent drops: since adopting it, the drop rate on these projects
   has gone from ~15–20% to zero observed, and most slices now land correctly
-  on the first iteration instead of the third or fourth.
+  on the first iteration instead of the third or fourth. This discipline operates at all task scales, from slice, through arc and project, and even projects of projects.
 - **A peer, not a sycophant.** A constitution supplement establishes the peer
   frame: the LLM is expected to push back on faulty reasoning, name its own
   uncertainty, and flag when it's at the edge of its capability — *before*
@@ -73,9 +99,8 @@ safety, surgical checklists.
   main context) and lookup work (delegate freely) — because LLMs instructing
   other LLMs play a lossy game of telephone.
 
-The honest trade-off: everything gets slower. What you get in exchange is the
-velocity of an excellent engineer operating at sustained peak — instead of the
-much faster production of code you cannot trust.
+The honest trade-off: everything gets slower. LLM speed miracles are no longer commonplace, because the work is being fully vetted at every level. What you get in exchange for this increased load is something more akin to the 
+velocity of an excellent engineer operating at sustained peak.
 
 From a developer partway through their second framework-run slice of a legacy
 codebase rework:
@@ -84,8 +109,7 @@ codebase rework:
 > helping me learn the project-management framework as I work through the
 > slice, rather than just completing a set of predefined steps for me. …
 > [It] feels more challenging, but also more engaging, and I can already see
-> how the structure is helping me build familiarity and confidence with the
-> framework.
+> how the structure is helping me build familiarity and confidence …
 
 ### How to use it
 
@@ -99,10 +123,10 @@ codebase rework:
 3. **Load it at the start of every substantial session:** invoke
    `/collaboration-framework` (or reference the skill) before any planning or
    implementation begins.
-4. **Say what you want to build.** The skill takes it from there: it
-   establishes the posture, confirms the project layout with you before
-   creating anything, and walks the SDLC with you — asking the questions a
-   good engineering partner would ask, and loading the deeper framework
+4. **Say what you want to build.** Kick off the session with premise and desired initial research. The skill takes it from there: it
+   establishes the posture, confirms the project vision, viability, usefulness with you before
+   creating anything. Once you are agreed upon direction, it walks the SDLC with you — asking the questions a
+   good engineering/scientific partner would ask, and loading the deeper framework
    documents only when the work calls for them.
 5. **For larger projects, run two seats.** A planning/review session (e.g.
    Claude Desktop) owns the project plan, arcs, slices, and ledgers; an
