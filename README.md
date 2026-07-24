@@ -28,15 +28,15 @@ coding session into an engineering (or rigorous scientific inquiry) project.
 ### The problems
 
 Unsupervised LLM work fails in predictable, well-documented ways. This framework
-addresses all of the ones encountered (and verified by research) over the course
-of two years of deep analysis and problem solving. Roughly in chronological order,
+addresses every failure mode encountered (and verified against the research) over two years of deep analysis and problem solving. Roughly in chronological order,
 these were:
 
-- poor decisions due to lack of skill or incomplete tooling/tool use 
+- poor LLM decisions due to missing domain knowledge or incomplete tooling/tool use
+- cross-feature drift, inconsistent best-practice application across a codebase, code duplication and orphaning
 - conflation of human-oriented work units and LLM-oriented ones
 - stunning failures of abstract reasoning and/or the proper generalisations of concepts, code, etc. (a deeply researched weak point for LLMs)
-- silent drops, spec-softening, partial best-practice adoption, disclosed deferrals, etc.
-- sycophancy baked in by post-training: agreement in the face of contrary evidence, deference instead of honest push-back, and no structural basis for true peer discussion
+- silent drops, arbitrary deferrals, spec-softening, partial best-practice adoption, etc.
+- sycophancy reinforced by post-training: agreement in the face of contrary evidence, deference instead of honest push-back (preference-model pressure, RLHF reward hacking, and instruction-following norms all contribute)
 - loss of work, repeated work, inability to properly or consistently track large bodies of work
 
 Measured informally across this repo's originating
@@ -49,7 +49,7 @@ push back) — and one thing became very clear: speed is not the bottleneck; *tr
 
 ### The solutions
 
-None of these are defects of any particular model. Rather, they are fundamental issues that face all LLM-based work and they
+None of these are defects of any particular model. Rather, they are fundamental issues that face all LLM-based work, and they
 show up in the research literature as reliably as they show up in real
 projects. This framework treats these problems the way other fields treat structural
 failure: with process controls. One of these in particular (the "ledger discipline") has been adapted from domains where checklists are a
@@ -59,12 +59,12 @@ safety, surgical checklists).
 Starting in late 2024 and evolving continuously since then, the following now form the bulk of the solution set:
 
 - greatly expanded language guides, with 100s of GOOD/BAD or DO/DONTDO examples (per language!)
-- formalised, regular whole-project standards-adherence audits 
-- modified SDLC with the LLM context as primary unit of work (and full, explicit guidance for LLM on process)
+- formalised, regular whole-project standards-adherence audits
+- modified SDLC with the LLM context as primary unit of work (and full, explicit guidance for the LLM on process)
 - explicit human presence required for all work relating to abstractions, generalisations, etc.
-- the use of a "ledger discipline" for guarding against silent drops, spec-softening, partial best-practice adoption, disclosed deferrals, etc.
-- structural reinforcement of the AI Constitution to establish the basis for peer-discussions, to provide conversational rights, and for guarding against agreement in the face of contrary evidence
-- project management redefinition which replaces hand-waving, arbitrary, proven flaws with context-based, graph-traversing, information theoretic repeatable processes
+- the use of a "ledger discipline" for guarding against silent drops, etc.
+- structural reinforcement of the AI Constitution to establish the basis for peer discussions, to provide conversational rights, and for guarding against agreement in the face of contrary evidence
+- project management redefinition which replaces hand-wavy, arbitrary, provenly-flawed practices with context-based, graph-traversing, information-theoretic repeatable processes
 
 From a design discussion that shaped the constitution supplement:
 
@@ -73,7 +73,7 @@ From a design discussion that shaped the constitution supplement:
 
 ### What you get
 
-- **A perspective shift for LLMs.** They are now your _accountable_ investigative, brainstorming, troubleshooting, solution-finding partners. 
+- **A perspective shift for LLMs.** They are now your _accountable_ investigative, brainstorming, troubleshooting, solution-finding partners.
 - **A shared vocabulary for the work.** Every effort decomposes the same way
   in every project: **project → arc → slice**, where a slice is one mergeable
   diff. Plans travel between projects and sessions (and across time) because the core terms don't
@@ -87,7 +87,7 @@ From a design discussion that shaped the constitution supplement:
   "done" — and the closer is never the verifier. This is the discipline that
   eliminates silent drops: since adopting it, the drop rate on these projects
   has gone from ~15–20% to zero observed, and most slices now land correctly
-  on the first iteration instead of the third or fourth. This discipline operates at all task scales, from slice, through arc and project, and even projects of projects.
+  on the first iteration instead of the third or fourth. This discipline operates at all task scales, from slice through arc to project — and even projects of projects.
 - **A peer, not a sycophant.** A constitution supplement establishes the peer
   frame: the LLM is expected to push back on faulty reasoning, name its own
   uncertainty, and flag when it's at the edge of its capability — *before*
@@ -99,7 +99,7 @@ From a design discussion that shaped the constitution supplement:
   main context) and lookup work (delegate freely) — because LLMs instructing
   other LLMs play a lossy game of telephone.
 
-The honest trade-off: everything gets slower. LLM speed miracles are no longer commonplace, because the work is being fully vetted at every level. What you get in exchange for this increased load is something more akin to the 
+The honest trade-off: everything gets slower. LLM speed miracles are no longer commonplace, because the work is being fully vetted at every level. What you get in exchange for this increased load is something more akin to the
 velocity of an excellent engineer operating at sustained peak.
 
 From a developer partway through their second framework-run slice of a legacy
@@ -123,10 +123,10 @@ codebase rework:
 3. **Load it at the start of every substantial session:** invoke
    `/collaboration-framework` (or reference the skill) before any planning or
    implementation begins.
-4. **Say what you want to build.** Kick off the session with premise and desired initial research. The skill takes it from there: it
-   establishes the posture, confirms the project vision, viability, usefulness with you before
-   creating anything. Once you are agreed upon direction, it walks the SDLC with you — asking the questions a
-   good engineering/scientific partner would ask, and loading the deeper framework
+4. **Say what you want to build.** Kick off the session with a premise and desired initial research. The skill takes it from there: it
+   establishes the posture; confirms the project vision, viability, and usefulness with you before
+   creating anything; once you've agreed upon direction, it walks the SDLC with you — asking the questions a
+   good engineering/scientific partner would ask; and loads the deeper framework
    documents only when the work calls for them.
 5. **For larger projects, run two seats.** A planning/review session (e.g.
    Claude Desktop) owns the project plan, arcs, slices, and ledgers; an
