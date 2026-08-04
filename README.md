@@ -290,7 +290,7 @@ questions, source prioritisation, and extraction methodology.
 
 ## Composite Cognition Dispatch Protocol
 
-The newest protocol work in this repo is the
+The the first protocol work for this repo is the
 **Composite Cognition Dispatch Protocol** (CCDP): a proposed RFC for
 coordinating large-scale cognitive work across heterogeneous AI systems,
 deterministic services, verifiers, planners, human queues, and hybrids of all
@@ -304,7 +304,7 @@ evidence level; mandatory audit records for every Dispatcher-mediated hop; and
 decomposition semantics for splitting massive tasks into typed sub-requests.
 
 The goal is to make mixed AI/service deployments inspectable and governable at
-project scale: you can ask not only "who can do this?" but "who can do this
+all project scales: you can ask not only "who can do this?" but "who can do this
 within budget, before the deadline, with evidence strong enough to trust?"
 
 Read the merged specification:
