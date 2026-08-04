@@ -16,8 +16,10 @@ It includes:
 - reference-grade language and tooling knowledge bases (Rust, Go,
   Erlang/OTP, JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, and the
   Biome and Deno linters — see [the skill library](#the-skill-library) below
-  for details), plus
-- the **collaboration framework** that governs how the work actually gets done.
+  for details)
+- the **collaboration framework** that governs how the work actually gets done
+- the **Composite Cognition Dispatch Protocol**, an RFC-style protocol for
+  routing hybrid AI/service cognition with provenance, escalation, and audit
 
 ## Contents
 
@@ -29,6 +31,7 @@ It includes:
 - [The skill library](#the-skill-library)
 - [Building and installing](#building-and-installing)
 - [Repository layout](#repository-layout)
+- [Composite Cognition Dispatch Protocol](#composite-cognition-dispatch-protocol)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -272,6 +275,7 @@ ai-engineering/
 ├── SKILL.md           # The collaboration-framework skill (entry point)
 ├── Makefile           # Packaging and install targets (above)
 ├── knowledge/         # The nine-domain skill library
+├── protocols/         # RFC-style protocol drafts, including CCDP
 ├── docs/              # The framework documents + design/dev notes
 │   ├── dev/           #   Phase 0 methodology: how a knowledge base gets built
 │   └── design/        #   Research seeding the various efforts here
@@ -283,6 +287,28 @@ ai-engineering/
 The [`docs/dev/`](./docs/dev/) directory is the closest thing this repo has to
 a field manual for adding a new domain: taxonomy, tier definitions, competency
 questions, source prioritisation, and extraction methodology.
+
+## Composite Cognition Dispatch Protocol
+
+The newest protocol work in this repo is the
+**Composite Cognition Dispatch Protocol** (CCDP): a proposed RFC for
+coordinating large-scale cognitive work across heterogeneous AI systems,
+deterministic services, verifiers, planners, human queues, and hybrids of all
+of the above.
+
+CCDP treats service outputs as claims with epistemic status, not just data. It
+defines a Dispatcher that routes requests by capability, deadline, budget,
+health, and provenance requirements; a Capability Registry that describes what
+services can do; first-class Escalation when a service cannot meet the required
+evidence level; mandatory audit records for every Dispatcher-mediated hop; and
+decomposition semantics for splitting massive tasks into typed sub-requests.
+
+The goal is to make mixed AI/service deployments inspectable and governable at
+project scale: you can ask not only "who can do this?" but "who can do this
+within budget, before the deadline, with evidence strong enough to trust?"
+
+Read the merged specification:
+[Composite Cognition Dispatch Protocol](https://github.com/billosys/ai-engineering/blob/main/protocols/ccdp/composite-cognition-dispatch-protocol.md).
 
 ## Contributing
 
