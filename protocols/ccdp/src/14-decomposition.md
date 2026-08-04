@@ -204,14 +204,14 @@ The `fallback` field specifies what happens when sub-requests fail:
 - `"return_partial"`: Return the individual sub-results without composition as a multipart Response.
 - `"escalate_parent"`: Escalate the entire request.
 
-**Fallback behavior matrix.** The following matrix summarizes default Dispatcher behavior for common failure scenarios during plan execution, governed by the `$ref.fallback` field (Section 14.3.3) and the `on_sub_failure` / `on_composition_failure` fields (Section 14.3.5):
+**Fallback behavior matrix.** The following matrix summarizes Dispatcher behavior selected by the governing fallback fields for common failure scenarios during plan execution: the `$ref.fallback` field (Section 14.3.3) and the `on_sub_failure` / `on_composition_failure` fields (Section 14.3.5):
 
 | Scenario | Governing Field | Behavior | Configurable Values |
 |---|---|---|---|
 | Result reference `path` does not resolve in an otherwise-successful dependency | `$ref.fallback` | Substitute the reference's `fallback` value if specified; otherwise follow `on_sub_failure` | Any JSON value, or omitted |
-| Sub-request failed entirely, no result to reference | `on_sub_failure` | `"escalate_parent"` | `"escalate_parent"`, `"skip_and_compose"`, `"retry_alternative"` |
-| Sub-request escalated with a partial result | `on_sub_failure` | Use the partial result if the `$ref` path resolves against it; otherwise apply `on_sub_failure` | Same as above |
-| All sub-requests succeeded, composition fails | `on_composition_failure` | `"escalate_parent"` | `"escalate_parent"`, `"return_partial"` |
+| Sub-request failed entirely, no result to reference | `on_sub_failure` | Apply the `on_sub_failure` value | `"escalate_parent"`, `"skip_and_compose"`, `"retry_alternative"` |
+| Sub-request escalated with a partial result | `on_sub_failure` | Use the partial result if the `$ref` path resolves against it; otherwise apply the `on_sub_failure` value | Same as above |
+| All sub-requests succeeded, composition fails | `on_composition_failure` | Apply the `on_composition_failure` value | `"escalate_parent"`, `"return_partial"` |
 | Width or node limit exceeded | — | Reject plan with error `-32012` before execution begins | Not configurable — always reject |
 
 Both `on_sub_failure` and `on_composition_failure` are REQUIRED fields. A Decomposition Plan that omits either field is invalid and MUST be rejected during plan validation. The values above are the most common choices, not implicit defaults.

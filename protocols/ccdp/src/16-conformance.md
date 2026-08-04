@@ -54,7 +54,7 @@ A CCDP Full Dispatcher MUST satisfy all Core requirements plus all requirements 
 | DISP-FULL-005 | Support recursive decomposition (nested Decomposition Plans). | 14.6 |
 | DISP-FULL-006 | Verify application-level message signatures on responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED before forwarding. | 15.4.2 |
 | DISP-FULL-007 | Write audit records to a tamper-evident store (cryptographic chaining, integrity-verified append-only storage, or write-once medium). | 11.5 |
-| DISP-FULL-008 | Support provenance-aware ranking in routing (candidates whose `typical_grade` meets or exceeds the request's provenance requirement are preferred). | 9.2 |
+| DISP-FULL-008 | Support provenance-aware ranking in routing, including grade thresholds (where `typical_grade` meets or exceeds `min_policy_grade`) and declared support for required evidence methods and artifact types. | 9.2 |
 
 ### 16.1.3. Optional Capabilities
 
@@ -155,9 +155,9 @@ A conforming Registry MUST implement all of the following:
 
 Implementations MAY claim conformance at one of two levels:
 
-**CCDP Core:** Implements all MUST requirements for the relevant component type (Dispatcher, Service, or Registry). For the Dispatcher, this is the Core requirements table (Section 16.1.1). This is the minimum for interoperability.
+**CCDP Core:** Implements all MUST requirements applicable to the relevant component type (Dispatcher, Service, or Registry) throughout this specification. For the Dispatcher, the Core requirements table (Section 16.1.1) is the authoritative checklist. For Services and Registries, Core conformance is assessed against all normative MUST requirements applicable to their component type — particularly the explicit lists in Sections 16.2 and 16.3, but also applicable requirements in Sections 7, 8, 10, 12, 13, and 15. This is the minimum for interoperability.
 
-**CCDP Full:** Full conformance requires all Core requirements plus all Full requirements listed in Section 16.1.2. Full conformance tables with stable requirement IDs are defined for the Dispatcher (Section 16.1) only. Service and Registry Full conformance tables are an open item — see Section 18 (Open Questions). Until those tables are defined, Services and Registries conform to the requirements listed in Sections 16.2 and 16.3 respectively, without a Core/Full distinction. Until stable IDs are defined for Services and Registries, their Core conformance is assessed against the normative MUST requirements in Sections 7, 8, 10, and 16.3–16.4 rather than a numbered table. SHOULD-level recommendations throughout the specification are best practices, not Full conformance obligations. Full conformance is defined by the explicit Full requirements tables, not by the sum of all SHOULD statements.
+**CCDP Full:** Full conformance requires all Core requirements plus all Full requirements listed in Section 16.1.2. Full conformance tables with stable requirement IDs are defined for the Dispatcher (Section 16.1) only. Service and Registry Full conformance tables are an open item — see Section 18 (Open Questions). Until those tables are defined, Services and Registries conform to all normative MUST requirements applicable to their component type, without a Core/Full distinction. SHOULD-level recommendations throughout the specification are best practices, not Full conformance obligations. Full conformance is defined by the explicit Full requirements tables, not by the sum of all SHOULD statements.
 
 Implementations MUST declare their conformance level in their documentation and in the Registry (for Services) via a `metadata` field: `"org.ccdp.conformance_level": "core"` or `"org.ccdp.conformance_level": "full"`.
 
@@ -171,7 +171,7 @@ Unknown metadata fields from a higher conformance level MUST be preserved and fo
 
 **Implementation note.** Several Dispatcher conformance requirements reference evidence filtering (DISP-CORE-015), mandatory audit fields, and message signatures. The testability of these requirements depends on the normative Evidence object schema (Section 4), the audit record tables (Section 11), and the signing grammar (Section 15). Conformance test suites SHOULD be developed after those schemas are finalized.
 
-A future companion document will define a conformance test suite for CCDP Core and Full implementations. Each requirement identifier in Sections 16.1–16.3 is intended to correspond to one or more testable assertions. Implementations claiming conformance SHOULD publish their test results against the conformance suite when it becomes available.
+A future companion document will define a conformance test suite for CCDP Core and Full implementations. Each Dispatcher requirement identifier in Section 16.1, and each prose-numbered Service and Registry requirement in Sections 16.2 and 16.3, is intended to correspond to one or more testable assertions. Implementations claiming conformance SHOULD publish their test results against the conformance suite when it becomes available.
 
 The conformance test suite and companion schemas are implementation prerequisites not yet published. Section 7.8 lists the planned schema inventory. Until both are available, implementations SHOULD self-test against the verification checklist below.
 

@@ -85,6 +85,8 @@ Escalation is a first-class message type, not an error. The following escalation
 | `INTERNAL_DEGRADATION` | The Service is experiencing internal degradation and prefers not to handle this request | Route to alternative Service |
 | `REQUIRES_HUMAN` | The Service explicitly requests human involvement (e.g., for specification review) | Route to human review queue |
 
+When a Service returns a Response that fails the request's `provenance_requirement` post-receipt, the Dispatcher's `provenance_mismatch_policy` (Section 9.2) determines whether to reroute or escalate.
+
 **Design note on SEARCH_EXHAUSTED:** A proven-unsolvable result is information, not failure. If a theorem prover determines that a formula is unsatisfiable, that is a correct, valuable result — it should be returned as a RESPONSE with grade FORMALLY_VERIFIED, not as an Escalation. An Escalation with reason SEARCH_EXHAUSTED is appropriate when the Service *cannot determine* whether the problem is solvable (e.g., the search space is too large) and is returning the problem rather than a result.
 
 Implementations MAY define additional escalation reasons using reverse-domain notation (e.g., `com.example.custom_reason`).

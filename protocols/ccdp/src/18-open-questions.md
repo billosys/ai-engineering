@@ -12,7 +12,7 @@ This section documents design questions that have been identified during the v0.
 
 ## 18.2. Grade Name Taxonomy
 
-**Context.** The provenance grade names (OPAQUE, GENERATED, CITED, COMPUTED, VALIDATED, CROSS_CHECKED, FORMALLY_VERIFIED, HUMAN_ATTESTED) combine method-descriptive names (COMPUTED, CROSS_CHECKED, FORMALLY_VERIFIED) with accountability-descriptive names (HUMAN_ATTESTED). Some grade names describe an evidence method; others describe a trust-boundary status.
+**Context.** The provenance grade names (OPAQUE, ASSERTED, HEURISTIC, COMPUTED, VALIDATED, CROSS_CHECKED, FORMALLY_VERIFIED, HUMAN_ATTESTED — earlier draft names such as GENERATED and CITED were superseded during the v0.2 review process) combine method-descriptive names (COMPUTED, CROSS_CHECKED, FORMALLY_VERIFIED) with accountability-descriptive names (HUMAN_ATTESTED). Some grade names describe an evidence method; others describe a trust-boundary status.
 
 **Question.** Should grade names be uniformly method-descriptive (e.g., COMPUTED, CROSS_CHECKED, FORMALLY_VERIFIED, HUMAN_REVIEWED) or uniformly trust-boundary-descriptive (e.g., UNVERIFIED, INDEPENDENTLY_CONFIRMED, PROVABLE, ACCOUNTABLE)?
 

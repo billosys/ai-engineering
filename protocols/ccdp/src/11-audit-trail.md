@@ -187,7 +187,7 @@ This ensures that CCDP traces are compatible with standard distributed tracing i
 | `audit_schema_version` | string | Audit schema version (independent of document and wire versions) |
 | `timestamp` | string (ISO 8601) | When the Dispatcher created this record |
 | `dispatcher_id` | string | Identity of the Dispatcher that created this record |
-| `ccdp_version` | string | Document version of the CCDP specification this Dispatcher implements |
+| `ccdp_version` | string | CCDP wire protocol version from the processed message envelope |
 | `trace_context.trace_id` | string | W3C Trace Context trace identifier |
 | `trace_context.span_id` | string | W3C Trace Context span identifier for this hop |
 | `message_summary.type` | string | CCDP message type that triggered this record |
@@ -224,9 +224,9 @@ Not all audit fields are meaningful for every message type. The per-message-type
 | `routing.decision` | R | — | R | — | — | — | R |
 | `provenance_summary` | — | R | R | — | — | — | R |
 | `validation.content_schema_valid` | R | S | — | — | — | — | R |
-| `health_status` | — | — | — | — | — | R | — |
+| `health_summary.status` | — | — | — | — | — | R | — |
 
-Field names above are canonical JSON paths into the audit record structure shown in Section 11.2's examples (e.g., `trace_context.trace_id`, not a bare `trace_id`), so that a conformance test can locate each field unambiguously. `health_status` has no worked example in Section 11.2; implementations SHOULD record it as `health_summary.status`, mirroring the `message_summary`/`provenance_summary` naming convention, until a normative example is added.
+Field names above are canonical JSON paths into the audit record structure shown in Section 11.2's examples (e.g., `trace_context.trace_id`, not a bare `trace_id`), so that a conformance test can locate each field unambiguously.
 
 ## 11.5. Audit Storage and Retention
 

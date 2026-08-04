@@ -76,7 +76,7 @@ The Dispatcher MUST NOT dereference artifact references.
 
 **Priority.** The scheduling priority of a Request: LOW, NORMAL, HIGH, or CRITICAL. Carried in the `priority` envelope field. Used by Services for internal scheduling and by the Dispatcher as a routing tiebreaker.
 
-**Provenance.** Structured metadata on a RESPONSE or ESCALATION message documenting the epistemic status of the result: the Provenance Grade, the Evidence supporting it, the Service that produced it, and the computational resources consumed. Provenance is a REQUIRED field on all responses (Section 10).
+**Provenance.** Structured metadata documenting the epistemic status of a cognitive output: the Provenance Grade, the Evidence supporting it, the Service that produced it, and the computational resources consumed. Provenance is REQUIRED on RESPONSE messages, DECOMPOSITION_RESULT messages (because decomposition grades participate in composed provenance — Section 10.5.3), and ESCALATION messages that carry partial cognitive output. See Section 10.
 
 **Provenance Grade.** An ordinal classification of the evidence strength behind a cognitive output. The defined grades, from weakest to strongest, are: OPAQUE, ASSERTED, HEURISTIC, COMPUTED, VALIDATED, CROSS_CHECKED, FORMALLY_VERIFIED, and HUMAN_ATTESTED. Grades propagate through composed operations according to defined composition rules (Section 10).
 

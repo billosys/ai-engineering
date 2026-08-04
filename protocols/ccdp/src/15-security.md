@@ -115,7 +115,7 @@ For responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, the Service MUST sig
 
 ### 15.4.3. Provenance Integrity
 
-Provenance grades and evidence entries are security-relevant — a tampered provenance grade can cause a consumer to over-trust a result. The Dispatcher MUST NOT modify received provenance fields. If application-level signing is used, provenance fields SHOULD be included in the signed fields.
+Provenance grades and evidence entries are security-relevant — a tampered provenance grade can cause a consumer to over-trust a result. The Dispatcher MUST NOT modify received provenance fields. If application-level signing is used, the signature SHOULD include the `"envelope"` component so that provenance fields are covered.
 
 ### 15.4.4. Signing Profiles
 
