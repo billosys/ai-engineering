@@ -203,7 +203,7 @@ In addition to Common fields, RESPONSE envelopes carry:
 
 ### 7.3.4. ESCALATION Envelope Fields
 
-An Escalation is a structured response indicating the Service cannot fulfill the request. It shares the RESPONSE envelope structure with additional escalation-specific fields:
+An Escalation is a structured response indicating that the originating actor — a Service or the Dispatcher — determined that the request cannot be fulfilled under the requested provenance or capability constraints. It shares the RESPONSE envelope structure with additional escalation-specific fields:
 
 ```json
 {
@@ -213,6 +213,7 @@ An Escalation is a structured response indicating the Service cannot fulfill the
     "request_id": "550e8400-e29b-41d4-a716-446655440000",
     "escalation": {
       "reason": "PROVENANCE_BELOW_REQUIREMENT",
+      "escalation_origin": "service",
       "detail": "LLM translation uncertainty too high for formal verification",
       "achieved_grade": "HEURISTIC",
       "requested_grade": "VALIDATED",
@@ -228,13 +229,14 @@ An Escalation is a structured response indicating the Service cannot fulfill the
 
 **`escalation`** (object, REQUIRED):
 - **`reason`** (string, REQUIRED): One of the defined escalation reasons (Section 13.3).
+- **`escalation_origin`** (string, REQUIRED): Identifies who generated this Escalation. `"service"` when the Service returned an ESCALATION message; `"dispatcher"` when the Dispatcher generated an implicit Escalation from a routing-time or post-receipt provenance policy (Section 9.2). Services MUST set this to `"service"` in their ESCALATION messages. The Dispatcher MUST set this to `"dispatcher"` for implicit Escalations.
 - **`detail`** (string, OPTIONAL): Human-readable explanation.
 - **`achieved_grade`** (string, OPTIONAL): The Provenance Grade the Service could achieve, if it produced a partial result.
 - **`requested_grade`** (string, OPTIONAL): The grade that was requested via `provenance_requirement.min_policy_grade`.
 - **`suggested_target`** (string, OPTIONAL): A Service ID or Capability Type the Dispatcher should try next.
 - **`partial_result_available`** (boolean, REQUIRED): Whether the Content of this message contains a partial result.
 
-When `partial_result_available` is true, the Content contains whatever the Service was able to produce before escalating. The Dispatcher MUST include this partial result when forwarding the escalation. This is the canonical location for partial results. Partial results MUST be carried in the ESCALATION message's Content, not in metadata. When the Dispatcher forwards the original Request through the escalation chain, it accumulates partial results from prior Services in the Request's metadata under the key `org.ccdp.partial_results` (Section 13.4.1) for downstream Services' reference. The Content of the forwarded Request remains the original requester's Content.
+When `partial_result_available` is true, the Content contains whatever the Service was able to produce before escalating. The Dispatcher MUST include this partial result when forwarding the escalation. This is the canonical location for partial results. Partial results MUST be carried in the ESCALATION message's Content, not in metadata. When the Dispatcher forwards the original Request through the escalation chain, it accumulates partial results from prior Services in the Request's metadata under the key `org.ccdp.partial_results` (Section 13.4.1) for downstream Services' reference. The Content of the forwarded Request remains the original requester's Content. For Dispatcher-generated post-receipt mismatch Escalations (`provenance_mismatch_policy`, Section 9.2), the partial result is the original Service Response content that failed to meet the provenance requirement.
 
 ### 7.3.5. NOTIFICATION Envelope Fields
 

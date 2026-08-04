@@ -73,7 +73,11 @@ Renamed `CONFIDENCE_BELOW_THRESHOLD` to `PROVENANCE_BELOW_REQUIREMENT`,
 covering grade, method, and artifact requirements. Required `trace_id`,
 `request_id`, and `timestamp` in every error `data` object. Added
 decomposition-limit diagnostics (`-32012`) and Dispatcher rate-limit error
-(`-32014`).
+(`-32014`). Distinguished Service-generated from Dispatcher-generated
+`PROVENANCE_BELOW_REQUIREMENT` escalations via `escalation_origin`. Defined
+deterministic routing for Dispatcher-generated provenance escalations:
+post-receipt mismatch walks the responding Service's escalation chain;
+no-candidate unavailability routes directly to `org.ccdp.human_review`.
 
 ### 20.1.10. Decomposition
 

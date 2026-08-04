@@ -145,6 +145,7 @@ Escalation audit records include the escalation context and the routing chain:
       "request_id": "550e8400-...",
       "source_id": "llm-verifier-01",
       "escalation_reason": "PROVENANCE_BELOW_REQUIREMENT",
+      "escalation_origin": "service",
       "achieved_grade": "HEURISTIC",
       "requested_grade": "VALIDATED"
     },
@@ -223,6 +224,7 @@ Not all audit fields are meaningful for every message type. The per-message-type
 | `message_summary.source_id` | R | R | R | R | R | R | R |
 | `routing.decision` | R | — | R | — | — | — | R |
 | `provenance_summary` | — | R | R | — | — | — | R |
+| `message_summary.escalation_origin` | — | — | R | — | — | — | — |
 | `validation.content_schema_valid` | R | S | — | — | — | — | R |
 | `health_summary.status` | — | — | — | — | — | R | — |
 

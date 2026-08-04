@@ -108,6 +108,8 @@ When the Dispatcher receives an Escalation, it processes the Escalation Chain:
 ```
 \* Abbreviated for diagram width; full reason name is `PROVENANCE_BELOW_REQUIREMENT`.
 
+The following algorithm applies to **Service-originated Escalations** (where a Service returned an ESCALATION message). For **Dispatcher-generated implicit Escalations**, the chain source depends on the triggering policy — see "Dispatcher-generated implicit Escalations" below.
+
 The algorithm:
 
 1. Receive Escalation from Service A.
@@ -132,7 +134,7 @@ The Dispatcher MUST forward the original Request (not the Escalation) to the nex
 - `provenance_mismatch_policy="escalate"`: the Dispatcher received a Response whose provenance did not meet the requirement. The responding Service's `escalation_chain` is used as the chain source, since a specific Service record is available.
 - `provenance_unavailable_policy="escalate"`: no candidate Service could satisfy the provenance requirement at routing time. No originating Service record is available, so the implicit escalation routes directly to `org.ccdp.human_review` (bypassing chain walk).
 
-Both cases MUST set `escalation_origin: "dispatcher"` in the escalation metadata (Section 13.4.1) and MUST be audit-logged with the same fidelity as Service-originated Escalations.
+Both cases MUST set `envelope.escalation.escalation_origin` to `"dispatcher"` (Section 7.3.4) and MUST be audit-logged with the same fidelity as Service-originated Escalations.
 
 ### 13.4.1. Escalation Metadata Accumulation
 
@@ -170,7 +172,7 @@ As a Request traverses the Escalation Chain, the Dispatcher accumulates escalati
 
 This history enables downstream Services (and the Human Supervisor) to understand what has already been tried and what partial results are available.
 
-The `escalation_origin` field is REQUIRED in each escalation-history entry. The value MUST be `"service"` when the Escalation originated from a Service's ESCALATION message, or `"dispatcher"` when the Dispatcher generated an implicit Escalation from a routing-time or post-receipt provenance policy (Section 9.2).
+The `escalation_origin` field is REQUIRED in each escalation-history entry. Its value MUST match the `envelope.escalation.escalation_origin` from the Escalation message (Section 7.3.4): `"service"` when the Escalation originated from a Service's ESCALATION message, or `"dispatcher"` when the Dispatcher generated an implicit Escalation from a routing-time or post-receipt provenance policy (Section 9.2).
 
 ## 13.5. Service Error Handling
 
