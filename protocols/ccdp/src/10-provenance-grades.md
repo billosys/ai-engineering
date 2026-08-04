@@ -114,7 +114,7 @@ This does not mean human judgment is infallible. It means that within the CCDP a
 
 A Service MUST follow these rules when assigning a Provenance Grade to a Response:
 
-1. **Accuracy over aspiration.** Assign the grade that *accurately describes* the epistemic status of the result, not the grade the requester asked for. If the requester wanted VALIDATED but the Service could only achieve ASSERTED, the Response MUST carry grade ASSERTED (and the Service SHOULD escalate if `provenance_requirement.min_policy_grade` was set higher).
+1. **Accuracy over aspiration.** Assign the grade that *accurately describes* the epistemic status of the result, not the grade the requester asked for. If the requester wanted VALIDATED but the Service could only achieve ASSERTED, the Response MUST carry grade ASSERTED (and the Service MUST escalate if the request's `provenance_requirement` is not satisfied — whether due to `min_policy_grade`, `required_methods`, or `required_evidence_types`).
 
 2. **Evidence required.** A grade above ASSERTED MUST be accompanied by evidence entries that substantiate it. A grade without supporting evidence MUST NOT be assigned — the Service MUST fall back to ASSERTED.
 
@@ -126,7 +126,7 @@ A Service MUST follow these rules when assigning a Provenance Grade to a Respons
 
 6. **Monotonicity.** A Service MUST NOT assign a higher grade to a result that has less epistemic support. If a Service's verification step fails or is inconclusive, the grade reflects the actual achieved level, not the attempted level.
 
-7. **Verifier authority.** The grade reflects the strongest verification actually performed, not the strongest verification the service is capable of performing. A service with formal verification capability that skips verification for performance reasons MUST report the grade of the method actually used. Services SHOULD include an evidence entry with `method: "verification_method"` documenting what method was used and why, especially when a lower-than-maximum grade is assigned.
+7. **Verifier authority.** The grade reflects the strongest verification actually performed, not the strongest verification the service is capable of performing. A service with formal verification capability that skips verification for performance reasons MUST report the grade of the method actually used. Services SHOULD include an evidence entry with `method: "method_selection"` documenting what verification method was chosen and why, especially when a lower-than-maximum grade is assigned. This meta-evidence entry explains the Service's method choice; it is distinct from the primary evidence entries that substantiate the grade.
 
 ## 10.4. Grade Comparison and Ordering
 

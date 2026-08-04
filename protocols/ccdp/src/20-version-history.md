@@ -190,10 +190,11 @@ the following additional changes:
   `min_policy_grade` and added `required_methods` and
   `required_evidence_types` so callers can require specific evidence methods or
   artifact types, not merely a point on the policy-order ladder.
-- Added Capability Record `supported_evidence_types` and updated routing so the
-  Dispatcher performs both provenance-grade filtering and declared
-  evidence-capability filtering before dispatch, then validates actual response
-  evidence after receipt.
+- Added Capability Record evidence-capability filtering (initially as
+  `supported_evidence_types`, later split — see Section 20.1.12) and
+  updated routing so the Dispatcher performs both provenance-grade
+  filtering and declared evidence-capability filtering before dispatch,
+  then validates actual response evidence after receipt.
 - Made the Provenance Grade ladder explicitly numeric (`0` through `7`) for
   routing and conformance, promoted the policy-order caveat into its own
   subsection, rejected same-prompt/same-seed replications as CROSS_CHECKED
@@ -230,8 +231,8 @@ the following additional changes:
   requester and service signing profiles, and allowing bounded token-validation
   decision caching without retaining raw bearer tokens.
 - Made high-grade signed responses stronger by requiring FORMALLY_VERIFIED and
-  HUMAN_ATTESTED responses to sign both `content` and `provenance` for Full
-  conformance.
+  HUMAN_ATTESTED responses to sign both `envelope` and `content`, thereby
+  covering `envelope.provenance`, for Full conformance.
 - Reorganized Dispatcher conformance into stable requirement tables with
   `DISP-CORE-NNN`, `DISP-FULL-NNN`, and `DISP-OPT-NNN` identifiers, while
   clarifying that Full conformance is defined by explicit Full requirements
@@ -263,6 +264,20 @@ the following additional changes:
 - **Chapter renumbering:** References → Section 19, Version History → Section 20.
 - **Citation label normalization:** Inline citations normalized to match reference keys, including two previously-unnoticed mismatches (FIPA-ACL, PlanBench).
 - **Stale identifiers:** Removed remaining `CONFIDENCE_BELOW_THRESHOLD` references and `ccdp/health.response` method assumptions.
+
+### 20.1.13. Fourth-Round Consistency Pass
+
+A fourth review round (v0.2c) found remaining consistency gaps around normative force, signing edge cases, and conformance testability. This pass made the following changes:
+
+- **DECOMPOSITION_RESULT provenance:** Changed from SHOULD to REQUIRED in the §7 per-message field matrix and the §11 per-message-type audit matrix; the §10 grade-assignment escalation rule changed from SHOULD to MUST and now covers the full `provenance_requirement` (grade, methods, evidence types), not just `min_policy_grade`.
+- **Signing profile vocabulary:** Normalized the `profile` field's enum values to `"requester-outbound"` and `"service-response"`, matching the subsection names and the worked example (previously the prose used shorthand `"requester"`/`"service"` values that didn't match).
+- **Conditional `destination_id` signing:** The requester-outbound profile now excludes `destination_id` from the signature only when it is null or absent at signing time; a requester-specified non-null `destination_id` is part of the requester's routing intent and remains part of the signed envelope.
+- **Post-receipt provenance failure behavior:** §9 now defines what the Dispatcher MUST do when a Service's actual response provenance fails to satisfy the request's `provenance_requirement` — reroute to an alternative Service or convert to a `PROVENANCE_BELOW_REQUIREMENT` Escalation, always audit-logged.
+- **Audit table canonical JSON paths:** Tables 11.1 and 11.2 now use canonical nested paths (e.g., `trace_context.trace_id`, `message_summary.request_id`) matching the worked examples in §11.2, rather than flat field names that didn't correspond to any actual JSON shape.
+- **§16 Service conformance item 8:** Aligned with §7's conditional Escalation provenance rule (required with partial results, implicit OPAQUE for pure routing failures) instead of an unconditional requirement that contradicted it.
+- **§14 fallback matrix:** Renamed the "Default Behavior" column to "Behavior" and dropped the word "default" from `on_sub_failure`/`on_composition_failure` cell values, since both fields are REQUIRED and have no implicit default; added a note that an omitted field is a plan-validation error.
+- **Error `-32005` wording:** Broadened from "provenance grade" to "provenance requirement" to match the current field structure.
+- **Stale cross-references, field names, and vocabulary:** Fixed a Section 15.4.3→15.4.4 cross-reference, a `DISP-CORE-NNN` placeholder (resolved to `DISP-CORE-015`), a `Sections 18.1–18.3` renumbering slip (now `19.1–19.3`), a placeholder `"verification_method"` evidence value (now `"method_selection"`), a `proof-object evidence entry` phrase (now concrete `method`/`artifact_type` vocabulary), stale Layer 3 field names in §6 (`partial_result`, `cost_consumed`, bare `capacity`), an overly-absolute "Dispatcher reads only the Envelope" claim in §7, and the Artifact Reference definition's incorrect claim about covering Decomposition Plan result references.
 
 ## 20.2. Version 0.1.0
 

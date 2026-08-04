@@ -1,6 +1,6 @@
 # 18. Open Questions
 
-This section documents design questions that have been identified during the v0.2 review process but are intentionally deferred. They are recorded here so that future revisions can address them with full context. None of these questions represent internal contradictions in the current specification — the v0.2 text is coherent as written — but each represents a point where a different design choice could improve the protocol.
+This section documents design questions that have been identified during the v0.2 review process but are intentionally deferred. They are recorded here so that future revisions can address them with full context. None of the questions listed in this section, by themselves, represent known contradictions. Each represents a point where a different design choice could improve the protocol.
 
 ## 18.1. Epistemic Layer Cost-Field Placement
 

@@ -97,7 +97,7 @@ The Epistemic Layer carries the information that makes CCDP different from a gen
 **Escalation fields** carry structured escalation information:
 - `reason`: why the Service is escalating (typed: PROVENANCE_BELOW_REQUIREMENT, CAPABILITY_EXCEEDED, DEADLINE_INSUFFICIENT, etc.)
 - `achieved_grade`: the Provenance Grade the Service could achieve (if lower than requested)
-- `partial_result`: any partial output produced before escalation
+- `partial_result_available`: whether partial cognitive output is included in the Escalation Content
 - `suggested_target`: where the Dispatcher should route next
 
 **Decomposition fields** carry decomposition plan structure:
@@ -107,8 +107,8 @@ The Epistemic Layer carries the information that makes CCDP different from a gen
 
 **Cost and resource fields** carry resource consumption and budget information:
 - `cost_budget`: the requester's resource constraints
-- `cost_consumed`: the actual resources consumed by the Service
-- `capacity`: the Service's current available capacity
+- `computation` (via provenance): resource consumption metadata reported by the Service
+- `capacity` (via Health responses): the Service's current available capacity (Section 12)
 
 The Dispatcher reads selected Layer 3 fields for routing and enforcement purposes: `provenance_requirement.min_policy_grade` for candidate filtering, `cost_budget` for cost-aware routing, and `deadline`/`remaining_budget_ms` for deadline enforcement. This is structural use of typed metadata, not semantic interpretation of content. It MAY enforce structural rules (e.g., reject a Response missing the `provenance` field) but MUST NOT interpret their content (e.g., the Dispatcher does not evaluate whether a Provenance Grade is accurate — that is the Service's responsibility, subject to audit).
 

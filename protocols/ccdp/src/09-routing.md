@@ -44,7 +44,14 @@ If the request includes a `provenance_requirement` (Section 7.3.2), the Dispatch
 2. **Filter by `required_methods`.** If set, exclude candidates whose `provenance_capabilities.supported_evidence_methods` (Section 8.2.2) does not include every required method. A missing `supported_evidence_methods` field means the service has not declared method capabilities; treat as "does not satisfy" unless the deployment's `provenance_unavailable_policy` says otherwise.
 3. **Filter by `required_evidence_types`.** If set, exclude candidates whose `provenance_capabilities.supported_artifact_types` (Section 8.2.2) does not include every required artifact type. Same missing-field rule as above.
 
-Filters 2 and 3 are Registry-declared capability checks performed at routing time; the Dispatcher validates the actual response against the requirement post-receipt (Section 10.3), since a Service's declared capabilities are not a per-response guarantee.
+Filters 2 and 3 are Registry-declared capability checks performed at routing time; the Dispatcher validates the actual response against the requirement post-receipt (Section 7.3.2 for request satisfaction rules, Section 10 for Evidence/grade semantics), since a Service's declared capabilities are not a per-response guarantee.
+
+**Post-receipt provenance failure.** If a Service returns a Response whose actual provenance does not satisfy the request's `provenance_requirement` (grade below `min_policy_grade`, missing `required_methods`, or missing `required_evidence_types`), the Dispatcher MUST NOT forward the Response as a successful result. The Dispatcher MUST either:
+
+1. Treat the Service as non-conformant for this request and reroute to an alternative Service per Section 13.5.3, or
+2. Convert the outcome to an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, forwarding the original Service response as partial results if available.
+
+The Dispatcher MUST record the mismatch in the audit trail (Section 11) regardless of which path it takes.
 
 If no candidate service can meet the Request's `provenance_requirement`, the Dispatcher MUST NOT silently route to a service that cannot meet it. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32005`) or `"escalate"` (treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, routing through the escalation chain to find a service that can meet the requirement). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
 
@@ -56,7 +63,7 @@ Rank the remaining candidates using a scoring function that considers:
 - **Current load:** Services with lower `health.capabilities[type].current_load` are preferred.
 - **Estimated latency:** Lower latency is preferred, weighted against the remaining deadline budget.
 - **Monetary cost:** Lower cost is preferred, weighted against the Request's `cost_budget`.
-- **Provenance grade:** If the Request specifies a `provenance_requirement`, Services whose `typical_grade` meets or exceeds the requirement are preferred.
+- **Provenance grade:** If the Request specifies a `provenance_requirement` with a `min_policy_grade`, Services whose `typical_grade` meets or exceeds the grade threshold are preferred. When the requirement contains only `required_methods` or `required_evidence_types` (no grade threshold), the Dispatcher ranks candidates by their declared `provenance_capabilities` support for the requested methods and artifact types.
 - **Queue depth:** Services with lower `health.capabilities[type].queue_depth` are preferred.
 
 The specific scoring function is implementation-defined. This specification does not mandate weights or formulas — implementations SHOULD tune their scoring function to their deployment's priorities (latency-sensitive, cost-sensitive, quality-sensitive).

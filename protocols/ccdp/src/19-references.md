@@ -180,7 +180,7 @@ Distribution-free queueing invariant relating occupancy, throughput, and latency
 
 ## 19.4. Informative References — Additional Sources
 
-The references in this section are secondary or journalistic sources used for context and historical framing. Protocol-level claims in this specification are grounded in the primary references (Sections 18.1–18.3). Secondary sources provide useful context but are not evidence for protocol design decisions.
+The references in this section are secondary or journalistic sources used for context and historical framing. Protocol-level claims in this specification are grounded in the primary references (Sections 19.1–19.3). Secondary sources provide useful context but are not evidence for protocol design decisions.
 
 **[MCP-Roadmap]** Model Context Protocol, "The 2026 MCP Roadmap." https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/ (accessed 2026-08-03)
 

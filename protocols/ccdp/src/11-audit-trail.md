@@ -188,9 +188,9 @@ This ensures that CCDP traces are compatible with standard distributed tracing i
 | `timestamp` | string (ISO 8601) | When the Dispatcher created this record |
 | `dispatcher_id` | string | Identity of the Dispatcher that created this record |
 | `ccdp_version` | string | Document version of the CCDP specification this Dispatcher implements |
-| `trace_id` | string | W3C Trace Context trace identifier |
-| `span_id` | string | W3C Trace Context span identifier for this hop |
-| `message_type` | string | CCDP message type that triggered this record |
+| `trace_context.trace_id` | string | W3C Trace Context trace identifier |
+| `trace_context.span_id` | string | W3C Trace Context span identifier for this hop |
+| `message_summary.type` | string | CCDP message type that triggered this record |
 
 The per-message-type matrix (Table 11.2 below) specifies additional fields required for each message type. A conforming audit record includes all common fields from Table 11.1 plus the message-type-specific fields from Table 11.2.
 
@@ -215,16 +215,18 @@ Not all audit fields are meaningful for every message type. The per-message-type
 
 | Field | REQUEST | RESPONSE | ESCALATION | NOTIFICATION | HEALTH_REQ | HEALTH_RESP | DECOMP_RESULT |
 |---|---|---|---|---|---|---|---|
-| `trace_id` | R | R | R | R | R | R | R |
-| `span_id` | R | R | R | R | R | R | R |
-| `request_id` | R | R | R | S | R | R | R |
-| `capability_type` | R | S | S | S | — | — | R |
-| `destination_id` | S | — | S | S | R | — | — |
-| `source_id` | R | R | R | R | R | R | R |
-| `routing_decision` | R | — | R | — | — | — | R |
-| `provenance_summary` | — | R | R | — | — | — | S |
-| `schema_validation` | R | S | — | — | — | — | R |
+| `trace_context.trace_id` | R | R | R | R | R | R | R |
+| `trace_context.span_id` | R | R | R | R | R | R | R |
+| `message_summary.request_id` | R | R | R | S | R | R | R |
+| `message_summary.capability_type` | R | S | S | S | — | — | R |
+| `message_summary.destination_id` | S | — | S | S | R | — | — |
+| `message_summary.source_id` | R | R | R | R | R | R | R |
+| `routing.decision` | R | — | R | — | — | — | R |
+| `provenance_summary` | — | R | R | — | — | — | R |
+| `validation.content_schema_valid` | R | S | — | — | — | — | R |
 | `health_status` | — | — | — | — | — | R | — |
+
+Field names above are canonical JSON paths into the audit record structure shown in Section 11.2's examples (e.g., `trace_context.trace_id`, not a bare `trace_id`), so that a conformance test can locate each field unambiguously. `health_status` has no worked example in Section 11.2; implementations SHOULD record it as `health_summary.status`, mirroring the `message_summary`/`provenance_summary` naming convention, until a normative example is added.
 
 ## 11.5. Audit Storage and Retention
 

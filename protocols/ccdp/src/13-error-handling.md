@@ -29,7 +29,7 @@ Protocol errors are returned as JSON-RPC 2.0 error responses. CCDP defines the f
 | `-32002` | No service for capability | No Service registered for the requested Capability Type |
 | `-32003` | All services unhealthy | All Services for the Capability Type are unhealthy |
 | `-32004` | Deadline not achievable | No Service can plausibly respond within the remaining deadline |
-| `-32005` | Provenance not achievable | No Service can meet the requested provenance grade |
+| `-32005` | Provenance not achievable | No Service can meet the requested provenance requirement |
 | `-32006` | Escalation chain exhausted | All targets in the Escalation Chain have been tried and failed or escalated |
 | `-32007` | Deadline exceeded | The deadline has passed before the Request could be processed |
 | `-32008` | Authentication failed | The sender's identity could not be verified |

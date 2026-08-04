@@ -40,7 +40,7 @@ A2A's limitation for CCDP is that it assumes both sides of a link are *agents* �
 
 gRPC provides the right *ideas*: typed contracts via protobuf schemas, streaming, interceptor chains for cross-cutting concerns. Industry-proven at Google scale.
 
-gRPC's *implementation complexity* works against the constrained-coordinator principle. Schema version management is a chronic operational wound — the discipline of never reusing field numbers, managing `.proto` file distribution, and coordinating the protoc toolchain across heterogeneous services creates friction that compounds. gRPC's full implementation stack is substantial, and its operational overhead (protoc toolchain, `.proto` file distribution, field-number management) works against the constrained-coordinator principle. A dispatcher should not need a protoc toolchain. CCDP adopts gRPC's design principles (typed contracts, deadline propagation, interceptor-style audit) without its implementation weight, using JSON Schema for runtime-validatable contracts and JSON-RPC 2.0 for the wire format.
+gRPC's *implementation complexity* works against the constrained-coordinator principle. Schema version management is a chronic operational wound — the discipline of never reusing field numbers, managing `.proto` file distribution, and coordinating the protoc toolchain across heterogeneous services creates friction that compounds. A dispatcher should not need a protoc toolchain. CCDP adopts gRPC's design principles (typed contracts, deadline propagation, interceptor-style audit) without its implementation weight, using JSON Schema for runtime-validatable contracts and JSON-RPC 2.0 for the wire format.
 
 ### 3.2.4. FIPA-ACL: The Cautionary Tale
 

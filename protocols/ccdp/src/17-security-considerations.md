@@ -41,7 +41,7 @@ The threat model does NOT assume:
 **Threat:** A compromised or dishonest Service assigns higher Provenance Grades than its output merits (e.g., assigning FORMALLY_VERIFIED to unverified LLM output).
 
 **CCDP mitigations:**
-- Evidence entries must substantiate grades above ASSERTED (Section 10.3). A grade of FORMALLY_VERIFIED without a proof-object evidence entry is a protocol violation.
+- Evidence entries must substantiate grades above ASSERTED (Section 10.3). A grade of FORMALLY_VERIFIED without an Evidence entry containing `method: "formal_verification"` and an `artifact_ref` with `artifact_type: "proof_certificate"` (or equivalent verifiable proof artifact) is a protocol violation (Section 10.3).
 - The audit trail records all provenance claims, enabling retrospective detection of inflation patterns.
 - Application-level message signing (Section 15.4.2) binds provenance claims to Service identity, creating accountability.
 - The provenance auditing service pattern (Section 10.8) enables spot-checking by re-verifying evidence.

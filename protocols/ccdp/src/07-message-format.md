@@ -51,7 +51,7 @@ REQUEST, ESCALATION, HEALTH_REQUEST, and DECOMPOSITION_RESULT are encoded as JSO
 
 ## 7.3. Envelope Structure
 
-The Envelope is the structured metadata portion of every CCDP message. The Dispatcher reads only the Envelope; Content is opaque.
+The Envelope is the structured metadata portion of every CCDP message. The Dispatcher reads the Envelope for routing and enforcement; Content is semantically opaque, though structurally validated and resolved where specified (Section 6).
 
 ### 7.3.1. Common Envelope Fields (All Message Types)
 
@@ -119,7 +119,7 @@ In addition to Common fields, REQUEST envelopes carry:
 
 **`capability_type`** (string, REQUIRED): The Capability Type being requested, using reverse-domain notation. The Dispatcher uses this field, together with the Registry, to select the target Service. Well-known types are listed in Section 8.3.
 
-**`destination_id`** (string or null, OPTIONAL): The specific Service to route to. If null, the Dispatcher selects a Service based on `capability_type` and routing rules (Section 9). If specified, the Dispatcher MUST route to that Service if it is healthy and registered for the given `capability_type`; otherwise the Dispatcher MUST return an error.
+**`destination_id`** (string or null, OPTIONAL): The specific Service to route to. If null, the Dispatcher selects a Service based on `capability_type` and routing rules (Section 9). If specified, the Dispatcher MUST route to that Service if it is healthy and registered for the given `capability_type`; otherwise the Dispatcher MUST return an error. When a requester specifies a non-null `destination_id`, the field is included in the requester-outbound signing scope (Section 15.4.4) and MUST NOT be modified by the Dispatcher.
 
 **`parent_span_id`** (string or null, OPTIONAL): For sub-requests spawned by a Decomposition Plan, the `span_id` of the parent request. Null for top-level requests. Used for constructing the span tree in the audit trail.
 
@@ -135,7 +135,7 @@ In addition to Common fields, REQUEST envelopes carry:
 - **`required_methods`** (array of strings, OPTIONAL): Evidence methods that MUST appear in the response's evidence entries. Values match the `method` field of the Evidence Entry schema (Section 4), e.g., `"formal_verification"`, `"human_review"`, `"independent_cross_check"`. When present, a response satisfies the requirement only if its evidence entries include at least one entry of each required method, regardless of the overall grade.
 - **`required_evidence_types`** (array of strings, OPTIONAL): Specific evidence artifact types that MUST be present. Values match the `artifact_type` field of the Evidence Entry's `artifact_ref` object (Section 4), e.g., `"proof_certificate"`, `"signed_attestation"`. When present, a response satisfies the requirement only if its evidence entries include artifact references of each specified type.
 
-When only `min_policy_grade` is set, the Dispatcher uses simple `>=` grade comparison (backward-compatible with v0.2's `min_grade`). When `required_methods` or `required_evidence_types` are also set, the Dispatcher uses them as additional filters: a candidate service's Capability Record MUST advertise matching `provenance_capabilities.supported_evidence_methods` and `supported_artifact_types` (Section 8.2.2), and the response's actual evidence entries are validated post-receipt against the requirement (Section 9.2, Step 5).
+When only `min_policy_grade` is set, the Dispatcher uses simple `>=` grade comparison (backward-compatible with earlier drafts' `min_grade`). When `required_methods` or `required_evidence_types` are also set, the Dispatcher uses them as additional filters: a candidate service's Capability Record MUST advertise matching `provenance_capabilities.supported_evidence_methods` and `supported_artifact_types` (Section 8.2.2), and the response's actual evidence entries are validated post-receipt against the requirement (Section 9.2, Step 5).
 
 If the Service cannot meet the requirement, it MUST return an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and the grade (and evidence types, if applicable) it could achieve. If `provenance_requirement` is omitted, no minimum grade or evidence is required.
 
@@ -340,14 +340,14 @@ The Content of a DECOMPOSITION_RESULT message is the Decomposition Plan (Section
 | `destination_id` | O | — | O | R | R | — | — |
 | `priority` | O | — | O | — | — | — | — |
 | `provenance_requirement` | O | — | O | — | — | — | — |
-| `provenance` | — | R | R\* | — | — | — | S |
+| `provenance` | — | R | R\* | — | — | — | R |
 | `cost_budget` | O | — | O | — | — | — | O |
 | `deadline` | R | — | O | — | — | — | O |
 | `timestamp` | R | R | R | R | R | R | R |
 
 R = REQUIRED, S = RECOMMENDED (SHOULD), O = OPTIONAL, — = not applicable. This matrix is normative. Where prose elsewhere in this section or other sections conflicts with this matrix, the matrix takes precedence.
 
-\* `provenance` is REQUIRED on ESCALATION when the message carries partial results (Section 7.3.4); it MAY be omitted for escalations with no cognitive output (e.g., pure routing failures). `priority` and `provenance_requirement` are request-directional fields that do not apply to a Decomposition Service's plan output — DECOMPOSITION_RESULT carries neither.
+\* `provenance` is REQUIRED on ESCALATION when the message carries partial results (Section 7.3.4); it MAY be omitted for escalations with no cognitive output (e.g., pure routing failures). `priority` and `provenance_requirement` are request-directional fields that do not apply to a Decomposition Service's plan output — DECOMPOSITION_RESULT carries neither. DECOMPOSITION_RESULT provenance is REQUIRED because the decomposition grade participates in composed provenance (Section 10.5.3).
 
 ## 7.4. Content Structure
 

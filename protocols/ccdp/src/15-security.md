@@ -121,11 +121,11 @@ Provenance grades and evidence entries are security-relevant — a tampered prov
 
 CCDP defines two signing profiles with different mutable-field sets:
 
-**Requester-outbound profile.** The requester signs before the Dispatcher processes the message. Mutable fields excluded from `envelope` before signing: `audit` (added by the Dispatcher on receipt; absent on the requester's outbound envelope), `remaining_budget_ms` (decremented by the Dispatcher at each subsequent hop, per Section 12.4), `destination_id` (may be set by the Dispatcher during routing), and metadata keys in `org.ccdp.dispatcher.*`. All other envelope fields are immutable after signing. The Dispatcher verifies the Requester's signature — computed over the envelope as the requester sent it — before processing.
+**Requester-outbound profile.** The requester signs before the Dispatcher processes the message. Mutable fields excluded from `envelope` before signing: `audit` (added by the Dispatcher on receipt; absent on the requester's outbound envelope), `remaining_budget_ms` (decremented by the Dispatcher at each subsequent hop, per Section 12.4), `destination_id` (excluded only when null or absent at signing time; a non-null requester-specified `destination_id` is part of the requester's routing intent and MUST remain in the signed envelope — see Section 7.3.2 and Section 9.2 Step 1), and metadata keys in `org.ccdp.dispatcher.*`. All other envelope fields are immutable after signing. The Dispatcher verifies the Requester's signature — computed over the envelope as the requester sent it — before processing.
 
 **Service-response profile.** The service signs its response. Mutable fields excluded from `envelope` before signing: `audit` (added or updated by the Dispatcher when forwarding the response, per Section 7.5) and metadata keys in `org.ccdp.dispatcher.*`. The `remaining_budget_ms` field is not present on response messages. All other envelope fields, and the entire `content` object, are immutable after signing. The `signed_fields` array MUST include both `"envelope"` and `"content"`. The Dispatcher verifies the Service's signature before forwarding to the Requester.
 
-The `signature` object carries a `profile` field (`"requester"` or `"service"`) identifying which profile was used. Verifiers MUST check the profile and reject signatures that include Dispatcher-mutable fields for the specified profile.
+The `signature` object carries a `profile` field (`"requester-outbound"` or `"service-response"`) identifying which signing profile was used. Verifiers MUST check the profile and reject signatures that include Dispatcher-mutable fields for the specified profile.
 
 ## 15.5. Replay Protection
 

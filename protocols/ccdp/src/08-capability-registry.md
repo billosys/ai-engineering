@@ -112,7 +112,7 @@ A Capability Record describes one Service's implementation of one Capability Typ
 
 **`provenance_capabilities`** (object, REQUIRED): Provenance production capabilities of this service.
 - **`max_grade`** (integer 0–7 or grade name, REQUIRED): The highest provenance grade this service can produce.
-- **`typical_grade`** (string, OPTIONAL): The grade most responses will carry.
+- **`typical_grade`** (integer 0–7 or grade name, OPTIONAL): The grade most responses will carry. Accepts the same integer-or-name grammar as `max_grade`.
 - **`supported_evidence_methods`** (array of strings, OPTIONAL): Evidence methods this service can produce. Values are `method` strings from the Evidence Entry schema (Section 4), e.g., `["formal_verification", "human_review", "independent_cross_check"]`. Used by the Dispatcher for `provenance_requirement.required_methods` matching during routing (Section 9.2, Step 5).
 - **`supported_artifact_types`** (array of strings, OPTIONAL): Evidence artifact types this service can produce. Values are `artifact_type` strings from the Evidence Entry schema (Section 4), e.g., `["proof_certificate", "signed_attestation", "test_report"]`. Used by the Dispatcher for `provenance_requirement.required_evidence_types` matching during routing (Section 9.2, Step 5).
 
