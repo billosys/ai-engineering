@@ -11,27 +11,27 @@ A CCDP system has a star topology with the Dispatcher at the center. All communi
                     └──────┬───────┘
                            │ (escalation, oversight)
                            │
-          ┌────────────────┼────────────────┐
-          │           DISPATCHER            │
-          │  ┌──────────┐ ┌──────────────┐  │
-          │  │ Envelope │ │   Registry   │  │
+          ┌────────────────┼─────────────────┐
+          │           DISPATCHER             │
+          │  ┌───────────┐ ┌──────────────┐  │
+          │  │ Envelope  │ │   Registry   │  │
           │  │ Classifier│ │   Client     │  │
-          │  └──────────┘ └──────────────┘  │
-          │  ┌──────────┐ ┌──────────────┐  │
-          │  │  Router  │ │ Audit Logger │  │
-          │  └──────────┘ └──────────────┘  │
-          │  ┌──────────┐ ┌──────────────┐  │
-          │  │  Health  │ │   Security   │  │
-          │  │ Monitor  │ │  Enforcer    │  │
-          │  └──────────┘ └──────────────┘  │
-          └──┬───┬───┬───┬───┬───┬───┬──┘
-             │   │   │   │   │   │   │
-             ▼   ▼   ▼   ▼   ▼   ▼   ▼
-           ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐
-           │S│ │S│ │S│ │S│ │S│ │S│ │S│
-           │1│ │2│ │3│ │4│ │5│ │6│ │7│
-           └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘
-          LLM  Z3  Plan Human Decomp Verif  DB
+          │  └───────────┘ └──────────────┘  │
+          │  ┌──────────┐ ┌───────────────┐  │
+          │  │  Router  │ │ Audit Logger  │  │
+          │  └──────────┘ └───────────────┘  │
+          │  ┌──────────┐ ┌───────────────┐  │
+          │  │  Health  │ │    Security   │  │
+          │  │ Monitor  │ │   Enforcer    │  │
+          │  └──────────┘ └───────────────┘  │
+          └─────┬───┬───┬───┬───┬───┬───┬────┘
+                │   │   │   │   │   │   │
+                ▼   ▼   ▼   ▼   ▼   ▼   ▼
+               ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐
+               │S│ │S│ │S│ │S│ │S│ │S│ │S│
+               │1│ │2│ │3│ │4│ │5│ │6│ │7│
+               └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘
+           LLM  Z3  Plan Human Decomp Verif  DB
 ```
 
 This topology is a deliberate design choice, not a scaling constraint. The Dispatcher is the single point of protocol enforcement — authentication, routing, audit logging, health monitoring, and deadline enforcement all happen at the Dispatcher. A Service that bypasses the Dispatcher bypasses all of these guarantees.
@@ -160,7 +160,7 @@ Decomposition is detailed in Section 14.
 
 ## 5.5. Relationship to Supervision Trees
 
-CCDP's architecture maps to the Erlang/OTP supervision-tree model that is primary material in the project's knowledge base:
+CCDP's architecture maps to the classic supervision-tree model:
 
 - **The Human Supervisor is the top supervisor.** Holds the specification and value/novelty judgment — the irreducible inputs. Owns the restart policy: what counts as a known-good state.
 - **The Dispatcher is the intermediate supervisor.** Routes messages to worker processes, monitors health, restarts (reroutes around) failed workers, and escalates to the top supervisor when no worker can handle the request.

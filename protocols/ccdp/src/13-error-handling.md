@@ -89,15 +89,15 @@ Implementations MAY define additional escalation reasons using reverse-domain no
 When the Dispatcher receives an Escalation, it processes the Escalation Chain:
 
 ```
-┌──────────┐    Escalation    ┌──────────┐    Escalation    ┌──────────┐
-│ Service A │───────────────▶│ Service B │───────────────▶│  Human   │
-│ (LLM)    │  CONFIDENCE_    │ (Prover) │  CAPABILITY_   │  Queue   │
-│          │  BELOW_THRESH.  │          │  EXCEEDED      │          │
-└──────────┘                 └──────────┘                 └──────────┘
-     ▲                            ▲                            ▲
-     │         Dispatcher         │        Dispatcher          │
-     │         routes to          │        routes to           │
-     │         next in chain      │        next in chain       │
+┌───────────┐    Escalation   ┌───────────┐    Escalation  ┌──────────┐
+│ Service A │────────────────▶│ Service B │───────────────▶│  Human   │
+│  (LLM)    │  CONFIDENCE_    │ (Prover)  │  CAPABILITY_   │  Queue   │
+│           │  BELOW_THRESH.  │           │  EXCEEDED      │          │
+└───────────┘                 └───────────┘                └──────────┘
+      ▲                             ▲                            ▲
+      │         Dispatcher          │        Dispatcher          │
+      │         routes to           │        routes to           │
+      │         next in chain       │        next in chain       │
 ```
 
 The algorithm:
