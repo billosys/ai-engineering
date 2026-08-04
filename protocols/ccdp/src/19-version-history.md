@@ -181,6 +181,74 @@ not yet committed to implementation compatibility.
 - Added Registry compatibility enforcement language that acknowledges the
   practical JSON Schema subset and operator attestation for edge cases.
 
+### 19.1.11. Second-Round v0.2 Refinements
+
+After the initial v0.2 revision, a second review-driven tightening pass made
+the following additional changes:
+
+- Replaced the ambiguous `provenance_requirement.min_grade` field with
+  `min_policy_grade` and added `required_methods` and
+  `required_evidence_types` so callers can require specific evidence methods or
+  artifact types, not merely a point on the policy-order ladder.
+- Added Capability Record `supported_evidence_types` and updated routing so the
+  Dispatcher performs both provenance-grade filtering and declared
+  evidence-capability filtering before dispatch, then validates actual response
+  evidence after receipt.
+- Made the Provenance Grade ladder explicitly numeric (`0` through `7`) for
+  routing and conformance, promoted the policy-order caveat into its own
+  subsection, rejected same-prompt/same-seed replications as CROSS_CHECKED
+  evidence, and made FORMALLY_VERIFIED evidence metadata mandatory rather than
+  advisory.
+- Tightened audit semantics by aligning examples with `audit_schema_version`,
+  string-valued monetary quantities, and `min_policy_grade`; by making the
+  per-message-type audit matrix the normative source of required fields; and by
+  declaring audit-store `degrade` mode non-conformant outside development and
+  debugging.
+- Refined Trace Context handling so Dispatchers may omit their own `tracestate`
+  entry when truncating other vendors' entries would be unsafe.
+- Replaced the old `CONFIDENCE_BELOW_THRESHOLD` escalation reason with
+  `PROVENANCE_BELOW_REQUIREMENT`, expanded its meaning to cover evidence-method
+  and evidence-artifact requirements, and required every CCDP error `data`
+  object to include `trace_id`, `request_id`, and `timestamp`.
+- Expanded error handling with structured decomposition-limit diagnostics for
+  depth, width, and total-node failures under `-32012`, and added a Dispatcher
+  rate-limit error code `-32014` with `retry_after_ms`.
+- Clarified escalation routing so Service-suggested targets remain policy
+  hints, not overrides, and so human-review fallback is used only when
+  authorization and data-class or isolation checks pass.
+- Clarified Decomposition Plan execution by making result-reference JSON
+  Pointers relative to the referenced Response `content`, making top-level
+  `dependencies` informative, defining allowed structural selection criteria,
+  adding a fallback behavior matrix, and requiring derived provenance evidence
+  for composed responses.
+- Tightened decomposition-limit behavior so width and total-node excesses are
+  rejected before execution, while depth excesses report the same
+  decomposition-limit error with `limit_type: "depth"`.
+- Clarified security boundaries by distinguishing protocol requirements from
+  deployment enforcement, tightening OAuth/PAR/PKCE language to token issuance
+  rather than token validation, defining the exact JCS signing input, adding
+  requester and service signing profiles, and allowing bounded token-validation
+  decision caching without retaining raw bearer tokens.
+- Made high-grade signed responses stronger by requiring FORMALLY_VERIFIED and
+  HUMAN_ATTESTED responses to sign both `content` and `provenance` for Full
+  conformance.
+- Reorganized Dispatcher conformance into stable requirement tables with
+  `DISP-CORE-NNN`, `DISP-FULL-NNN`, and `DISP-OPT-NNN` identifiers, while
+  clarifying that Full conformance is defined by explicit Full requirements
+  rather than by all SHOULD statements in the document.
+- Updated security considerations to distinguish structural Content operations
+  from semantic interpretation, expand Registry poisoning mitigations, clarify
+  decomposition-limit defaults as recommendations rather than fixed numeric
+  requirements, and remap the security baseline to general NSA/CISA AI
+  deployment guidance rather than an MCP-specific assessment.
+- Completed a reference/link verification pass for this draft, renaming the
+  NSA/CISA reference, updating the A2A specification URL, noting the normative
+  dependency on Informational RFC 8785, and flagging bot-blocked reference URLs
+  for human browser confirmation.
+- Updated the source README to record the second-round status, current
+  implementation blockers, and the fact that Dispatcher requirement IDs are now
+  tabled while Service and Registry requirement IDs remain future work.
+
 ## 19.2. Version 0.1.0
 
 Version 0.1.0 was the initial reviewed draft of CCDP. It introduced the core
