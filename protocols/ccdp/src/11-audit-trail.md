@@ -225,6 +225,9 @@ Not all audit fields are meaningful for every message type. The per-message-type
 | `routing.decision` | R | — | R | — | — | — | R |
 | `provenance_summary` | — | R | R | — | — | — | R |
 | `message_summary.escalation_origin` | — | — | R | — | — | — | — |
+| `message_summary.escalation_reason` | — | — | R | — | — | — | — |
+| `message_summary.achieved_grade` | — | — | S | — | — | — | — |
+| `message_summary.requested_grade` | — | — | S | — | — | — | — |
 | `validation.content_schema_valid` | R | S | — | — | — | — | R |
 | `health_summary.status` | — | — | — | — | — | R | — |
 

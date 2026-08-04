@@ -1,6 +1,6 @@
 # CCDP: Composite Cognition Dispatch Protocol — Specification v0.2
 
-**Status:** Draft v0.2 — review iterations through v0.2f incorporated. Not yet implementation-ready; see spec-quality next steps below.
+**Status:** Draft v0.2 — review iterations through v0.2g incorporated. Not yet implementation-ready; see spec-quality next steps below.
 
 Review artifacts are in the `workbench/` directory:
 
@@ -10,7 +10,8 @@ Review artifacts are in the `workbench/` directory:
 - `review-v0.2c/` — third unreleased-v0.2 review (26 files)
 - `review-v0.2d/` — fourth unreleased-v0.2 review (25 files)
 - `review-v0.2e/` — fifth unreleased-v0.2 review (7 files)
-- `review-v0.2f/` — sixth unreleased-v0.2 review (11 files, current)
+- `review-v0.2f/` — sixth unreleased-v0.2 review (11 files)
+- `review-v0.2g/` — seventh unreleased-v0.2 review (7 files, current)
 
 **Full spec:** See the source files in this directory (`01-abstract.md` through `20-version-history.md`) and the assembler tool in `../tools/`.
 
