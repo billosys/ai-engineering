@@ -216,3 +216,6 @@ clean:
 	@rm -rf "$(BUILD)"
 	@rm -f $(INSTALL_ZIPS)
 	@echo ">> cleaned build/ and all skill zips"
+
+ccdp:
+	@cd protocols/ccdp && make
