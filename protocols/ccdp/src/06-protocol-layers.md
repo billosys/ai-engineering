@@ -82,7 +82,7 @@ The Routing and Audit Layer provides addressing, routing, tracing, and mandatory
 
 **Health fields** carry Service health information for routing decisions.
 
-Layer 2 carries protocol-enforcement fields. The required set varies by message type — see the per-message required-field matrix in Section 7.3. Fields such as `capability_type` and `destination_id` are required on REQUEST messages but absent or optional on RESPONSE, HEALTH, and NOTIFICATION messages. The Dispatcher reads Layer 2 to route and writes Layer 2 to audit. The Dispatcher MUST NOT read or write Layer 3 or Layer 4 fields (except to validate their structural presence).
+Layer 2 carries protocol-enforcement fields. The required set varies by message type — see the per-message required-field matrix in Section 7.3. Fields such as `capability_type` and `destination_id` are required on REQUEST messages but absent or optional on RESPONSE, HEALTH, and NOTIFICATION messages. The Dispatcher reads Layer 2 fields for routing and protocol enforcement. It also reads selected Layer 3 fields (provenance requirements, cost budgets, deadlines) for routing policy and reads Layer 4 Content structurally for schema validation and typed-reference resolution. These cross-layer reads are enumerated in Section 6.5. The Dispatcher MUST NOT perform semantic interpretation of any layer's content.
 
 ### 6.2.3. Layer 3: Epistemic
 
@@ -95,7 +95,7 @@ The Epistemic Layer carries the information that makes CCDP different from a gen
 - `composition_trace`: how this grade was derived from component grades (for composed results)
 
 **Escalation fields** carry structured escalation information:
-- `reason`: why the Service is escalating (typed: CONFIDENCE_BELOW_THRESHOLD, CAPABILITY_EXCEEDED, DEADLINE_INSUFFICIENT, etc.)
+- `reason`: why the Service is escalating (typed: PROVENANCE_BELOW_REQUIREMENT, CAPABILITY_EXCEEDED, DEADLINE_INSUFFICIENT, etc.)
 - `achieved_grade`: the Provenance Grade the Service could achieve (if lower than requested)
 - `partial_result`: any partial output produced before escalation
 - `suggested_target`: where the Dispatcher should route next
@@ -124,7 +124,7 @@ Content is typed by the `content.type` field, which indicates the format of the 
 
 Each layer can evolve independently:
 
-- **Transport substitution**: Replace HTTP with QUIC or WebSocket without changing routing, provenance, or content semantics. The only constraint is that the new transport must provide reliable, encrypted, authenticated byte delivery.
+- **Transport substitution**: Replace HTTP with QUIC or WebSocket without changing routing, provenance, or content semantics. The only constraint is that the new transport must provide reliable, encrypted, authenticated byte delivery. Non-HTTP transports MUST provide equivalent mechanisms for message signing (Section 15.4), bearer-token authentication (Section 15.2), trace-context propagation (Section 11.3), and status/error signaling (Section 13.2). A transport-binding specification for non-HTTP transports is out of scope for this document but is needed before non-HTTP deployments can claim conformance.
 - **Routing evolution**: Add new routing strategies (content-hash routing, geographic routing) without changing transport or epistemic semantics. New routing fields are added as metadata extensions.
 - **Epistemic evolution**: Add new Evidence types or new composition rules without changing transport or routing. Adding new Provenance Grades is a protocol extension that requires a document version increment. New grades affect the ordering used for routing, conformance checking, and policy evaluation. The grade set is versioned through the Registry; deployments MUST ensure that all components recognize the grade vocabulary before grades are used in production. New epistemic fields are added as metadata extensions. Existing implementations that do not understand the new fields MUST preserve and forward them (Section 7.7).
 - **Content evolution**: Service-specific schemas evolve through the Registry's schema versioning mechanism (Section 8.5) without affecting any lower layer.
@@ -137,7 +137,7 @@ Several sources describe a layered agent protocol stack forming: MCP for tool in
 
 **The Epistemic Layer has no counterpart.** The emerging stack has no protocol-level concept of provenance, evidence strength, or epistemic status. This is the gap CCDP fills — the recognition that cognitive outputs are claims with pedigree, not data with types.
 
-**The Dispatcher is a protocol enforcer, not a capable agent.** In the emerging stack, the "client" or "orchestrator" is assumed to be an intelligent agent. CCDP's Dispatcher is closer to a network switch: it reads headers and forwards packets. The protocol carries the intelligence; the Dispatcher enforces it.
+**The Dispatcher is a protocol enforcer, not a capable agent.** In the emerging stack, the "client" or "orchestrator" is assumed to be an intelligent agent. CCDP's Dispatcher is closer to a policy-enforcing message coordinator: it reads headers and structural metadata, applies routing policies, executes decomposition plans, validates schemas, and forwards processed messages — all without cognitive capability. The protocol carries the intelligence; the Dispatcher enforces it.
 
 **Audit is a layer concern, not an extension.** In the emerging stack, observability comes from bolting on OpenTelemetry or similar frameworks. In CCDP, audit fields are mandatory Layer 2 elements — the Dispatcher writes them as part of its core function, not as an opt-in integration.
 

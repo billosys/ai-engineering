@@ -45,7 +45,7 @@ A Capability Record describes one Service's implementation of one Capability Typ
 
     "cost_hints": {
       "estimated_latency_ms": { "p50": 500, "p95": 5000, "p99": 30000 },
-      "estimated_cost_per_request": { "monetary_units": 0.001, "monetary_unit": "USD" },
+      "estimated_cost_per_request": { "monetary_units": "0.001", "monetary_unit": "USD" },
       "token_cost": null,
       "compute_intensive": true
     },
@@ -75,6 +75,7 @@ A Capability Record describes one Service's implementation of one Capability Typ
     ],
 
     "cacheable": false,
+    "max_input_size": 1048576,
 
     "tags": ["formal-methods", "smt", "sat"],
     "description": "Z3 SMT solver for propositional and first-order logic",
@@ -98,13 +99,13 @@ A Capability Record describes one Service's implementation of one Capability Typ
 
 **`status`** (string, REQUIRED): One of `"ACTIVE"` (accepting requests), `"DRAINING"` (completing in-flight requests but not accepting new ones), `"INACTIVE"` (not accepting requests), `"DEPRECATED"` (will be removed; consumers should migrate).
 
-**`input_schema`** (object, REQUIRED): JSON Schema [JSON-SCHEMA-2020-12] describing the valid structure of `content.body` for Requests to this Service. The Dispatcher MUST validate incoming Request content against this schema before forwarding.
+**`input_schema`** (object, REQUIRED): JSON Schema [JSON-SCHEMA-2020-12] describing the valid structure of `content.body` for Requests to this Service. The Dispatcher SHOULD validate request Content against the Service's input schema before forwarding (REQUIRED for Full conformance, RECOMMENDED for Core conformance; see Section 16).
 
 **`output_schema`** (object, REQUIRED): JSON Schema describing the structure of `content.body` for Responses from this Service. The Dispatcher SHOULD validate Response content against this schema before forwarding to the requester.
 
 **`cost_hints`** (object, REQUIRED): Resource consumption estimates for routing decisions. Fields:
 - `estimated_latency_ms`: Object with percentile keys (`p50`, `p95`, `p99`), values in milliseconds.
-- `estimated_cost_per_request`: Monetary cost estimate with `monetary_units` (number) and `monetary_unit` (ISO 4217 string).
+- `estimated_cost_per_request`: Monetary cost estimate with `monetary_units` (string, decimal) and `monetary_unit` (ISO 4217 string).
 - `token_cost`: For LLM-based services, estimated tokens per request. Null for non-LLM services.
 - `compute_intensive`: Boolean indicating whether the service consumes significant compute resources.
 
@@ -127,6 +128,8 @@ A Capability Record describes one Service's implementation of one Capability Typ
 **`escalation_chain`** (array of typed entries, REQUIRED but MAY be empty): Ordered list of fallback targets to try if this Service returns an Escalation. The Dispatcher processes the chain in order. An empty chain means escalation goes directly to the Human Supervisor's queue. Escalation chain entries are typed objects: `{"kind": "service_id", "value": "human-review-queue-01"}` or `{"kind": "capability_type", "value": "org.ccdp.human_review"}`. The `kind` field disambiguates the entry; string-only entries are ambiguous and MUST NOT be used.
 
 **`cacheable`** (boolean, OPTIONAL, default false): Whether the Dispatcher MAY cache and reuse Response Content for identical Requests (same `capability_type` and identical Content). When true, the Dispatcher MAY return a cached Response without forwarding the Request, provided the cache entry has not expired (expiry is deployment-configured).
+
+**`max_input_size`** (integer, OPTIONAL): Maximum input Content size in bytes that the Service can accept. Used by the Dispatcher for structural decomposition triggers (Section 14.2) — if a Request's Content exceeds the target Service's `max_input_size`, the Dispatcher MAY initiate decomposition without content inspection.
 
 **`tags`** (array of strings, OPTIONAL): Descriptive tags for search and categorization.
 
@@ -171,7 +174,7 @@ The Registry MUST support the following query operations. These are defined as l
 Register a new Capability Record or update an existing one.
 
 **Input:** A Capability Record.
-**Behavior:** If no record exists for the given (`service_id`, `capability_type`) pair, create one. If a record exists, update it subject to schema compatibility rules (Section 8.5). If the update would break compatibility, reject it with an error. The record is identified by the tuple `(service_id, capability_type, major_version)`. During major-version transitions, old and new versions coexist as separate records with the same `(service_id, capability_type)` but different `major_version` values. The Dispatcher selects the appropriate version based on the Request's `content.schema_ref` or deployment policy.
+**Behavior:** If no record exists for the given (`service_id`, `capability_type`) pair, create one. If a record exists, update it subject to schema compatibility rules (Section 8.5). If the update would break compatibility, reject it with an error. The record is identified by the tuple `(service_id, capability_type, major_version)`. The `major_version` component of the record identity is derived from the `version` field by extracting the major component of the semantic version string (e.g., version `"2.1.0"` has `major_version` 2). The Registry MUST treat records with the same `(service_id, capability_type)` but different major versions as distinct records that coexist during transitions. During major-version transitions, old and new versions coexist as separate records with the same `(service_id, capability_type)` but different `major_version` values. The Dispatcher selects the appropriate version based on the Request's `content.schema_ref` or deployment policy.
 **Output:** The stored record with server-assigned timestamps, or an error with the incompatibility details.
 
 ### 8.4.2. Lookup
@@ -185,14 +188,14 @@ Look up Services that implement a given Capability Type.
 
 Retrieve a specific Capability Record.
 
-**Input:** `service_id`, `capability_type`.
+**Input:** `service_id`, `capability_type`, `version?` (optional). If `version` is omitted, returns the latest version. If `version` is provided, returns that specific version.
 **Output:** The Capability Record, or an error if not found.
 
 ### 8.4.4. Deregister
 
 Remove a Capability Record.
 
-**Input:** `service_id`, `capability_type`.
+**Input:** `service_id`, `capability_type`, `version?` (optional). If `version` is omitted, deregisters all versions. If `version` is provided, deregisters only that version.
 **Behavior:** Set the record's status to `INACTIVE`. The record SHOULD be retained for audit purposes (the `registered_at` and `updated_at` fields are part of the audit trail). The record SHOULD NOT be permanently deleted.
 **Output:** Confirmation, or an error if not found.
 
@@ -200,7 +203,7 @@ Remove a Capability Record.
 
 List all schema versions for a Capability Type.
 
-**Input:** `capability_type`.
+**Input:** `capability_type`, `major_version?` (optional filter).
 **Output:** An array of `{version, compatibility, registered_at}` entries, ordered by version.
 
 ### 8.4.6. Registry API Binding
@@ -210,6 +213,8 @@ This specification defines the Registry's logical operations and data model. It 
 ### 8.4.7. Content Schema Selection
 
 When the Dispatcher validates Content, it selects the schema as follows: (1) If the message's `content.schema_ref` field is present, the Dispatcher looks up that schema in the Service's Capability Record. (2) If `schema_ref` is absent, the Dispatcher uses the Service's default input schema (for requests) or output schema (for responses) from the Capability Record. (3) If the Capability Record has no schema for the content type, schema validation is skipped. The Dispatcher SHOULD log schema-validation-skipped in the audit record. Schema validation is REQUIRED for Full conformance (Section 16) and RECOMMENDED for Core conformance.
+
+`input_schema` and `output_schema` are REQUIRED fields on every Capability Record (Section 8.2.2) for the Service's primary content type, so step (3) above cannot occur for that content type. Services that accept multiple content types MAY register separate Capability Records per content type, or MAY use a permissive schema (e.g., `{}`) for content types where structural validation is not meaningful. A Capability Record with a permissive schema satisfies the schema-presence requirement; the Dispatcher logs `schema_validation: "permissive"` in the audit record.
 
 ## 8.5. Schema Versioning and Compatibility
 

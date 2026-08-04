@@ -14,8 +14,8 @@ A CCDP system has a star topology with the Dispatcher at the center. All communi
           ┌────────────────┼─────────────────┐
           │           DISPATCHER             │
           │  ┌───────────┐ ┌──────────────┐  │
-          │  │ Envelope  │ │   Registry   │  │
-          │  │ Classifier│ │   Client     │  │
+          │  │ Structural│ │   Registry   │  │
+          │  │Coordinator│ │   Client     │  │
           │  └───────────┘ └──────────────┘  │
           │  ┌──────────┐ ┌───────────────┐  │
           │  │  Router  │ │ Audit Logger  │  │
@@ -54,15 +54,15 @@ The Dispatcher is the protocol's routing and enforcement engine. It is a constra
 - **Audit logging**: Write a structured audit record for every Message that passes through (Section 11).
 - **Health monitoring**: Track Service health via periodic Health messages and route around unhealthy Services (Section 13.6).
 - **Escalation routing**: When a Service returns an Escalation, route to the next target in the Escalation Chain (Section 13.4).
-- **Provenance passthrough**: Forward Provenance metadata from Responses without modification. The Dispatcher MUST NOT alter Provenance grades.
+- **Provenance passthrough**: Forward received Provenance metadata from Responses without modification. The Dispatcher MUST NOT alter received Provenance grades. (Composed Provenance the Dispatcher derives during decomposition result assembly is a different case — see the Received vs Derived definition in Section 4.)
 - **Metadata preservation**: Forward all unknown metadata fields without modification (Section 7.7).
 
 The Dispatcher MUST NOT — this is the semantic-interpretation side of the Structural Validation vs Semantic Interpretation boundary (Section 4):
 
 - Interpret, parse, or make decisions based on the Content of any Message
-- Modify the Content of any Message
+- Mutate received Content — Content supplied by a Requester or Service in a Request, Response, or Escalation. During decomposition plan execution, the Dispatcher creates derived Content for sub-requests by assembling plan templates and resolving typed references (Section 14.3.3). This is structural construction from a plan specification, not modification of existing content. See the Received vs Derived definition in Section 4.
 - Generate cognitive output of any kind
-- Modify Provenance grades or Evidence entries
+- Modify received Provenance grades or Evidence entries
 - Cache or reuse Response Content across different Requests (unless the Service's Capability Record explicitly permits it via a `cacheable` flag)
 
 ### 5.2.2. Services
@@ -76,7 +76,7 @@ A Service implements one or more Capabilities and communicates with the Dispatch
 - **Deadline compliance**: Respect the `deadline` field. If the Service cannot complete within the remaining deadline budget, it SHOULD return an Escalation with reason `DEADLINE_INSUFFICIENT` rather than starting work it cannot finish.
 - **Idempotency**: For the same `request_id`, a Service MUST return the same Response. This makes retry safe (Section 7.3).
 
-**Idempotency scope.** The idempotency requirement is scoped by service type. Mode 2 (deterministic) Services MUST return byte-identical responses for the same `request_id`. Mode 1 (LLM) and Mode 3 (composite) Services MUST return semantically equivalent responses — the same conclusion at the same or higher provenance grade — but MAY differ in surface form (wording, formatting). Mode 4 (human queue) Services MUST return the same response if the human has already submitted a result for the `request_id`; if the human has not yet responded, a retry with the same `request_id` is a no-op (the request remains in the queue). Implementations SHOULD maintain a response cache keyed by `request_id` with a configurable TTL (RECOMMENDED: 24 hours).
+**Idempotency scope.** The idempotency requirement is scoped by service type. Mode 2 (deterministic) Services MUST return byte-identical responses for the same `request_id`. Mode 1 (LLM) and Mode 3 (composite) Services MUST return semantically equivalent responses — the same conclusion at the same or higher provenance grade — but MAY differ in surface form (wording, formatting). For protocol conformance purposes, idempotency is tested by requiring Services to cache and return the original Response for duplicate `request_id` values within the idempotency window. Semantic equivalence is a service-quality property, not a protocol-testable conformance requirement. Mode 4 (human queue) Services MUST return the same response if the human has already submitted a result for the `request_id`; if the human has not yet responded, a retry with the same `request_id` is a no-op (the request remains in the queue). Implementations SHOULD maintain a response cache keyed by `request_id` with a configurable TTL (RECOMMENDED: 24 hours).
 
 A Service MAY:
 
@@ -144,7 +144,7 @@ The four modes share a critical property: **modes are interchangeable without ch
 
 This is the architectural basis for incremental automation: start with everything in Mode 4 and the Dispatcher is trivially simple (a message router to human queues). Then, one Service at a time, substitute in a more automated implementation. The Dispatcher never gets smarter; the Services behind it get more capable.
 
-The only protocol-visible effect of mode substitution is in the Provenance Grade: a Mode 2 replacement will report FORMALLY_VERIFIED where the Mode 4 predecessor reported HUMAN_ATTESTED. Consumers of the output can use the Provenance Grade to calibrate their trust — the protocol ensures the change in backing implementation is transparent through the epistemic metadata. Mode substitution is transparent only when the consumer's `provenance_requirement.min_grade` is met by the replacement mode's typical grade. A consumer requiring `HUMAN_ATTESTED` cannot be served by a Mode 2 replacement reporting `FORMALLY_VERIFIED` unless the consumer's policy accepts formal verification as equivalent for that claim type. Deployments SHOULD configure mode-substitution policies per capability type.
+Mode substitution has multiple protocol-visible effects: Provenance Grade, cost (different modes have different cost profiles), latency, evidence entries (different methods produce different evidence), signing (some modes may not support signing), and isolation properties. For example, a Mode 2 replacement will report FORMALLY_VERIFIED where the Mode 4 predecessor reported HUMAN_ATTESTED. Consumers of the output can use the Provenance Grade to calibrate their trust — the protocol ensures the change in backing implementation is transparent through the epistemic metadata. Mode substitution is transparent only when the consumer's `provenance_requirement.min_grade` is met by the replacement mode's typical grade. A consumer requiring `HUMAN_ATTESTED` cannot be served by a Mode 2 replacement reporting `FORMALLY_VERIFIED` unless the consumer's policy accepts formal verification as equivalent for that claim type. Deployments SHOULD configure mode-substitution policies per capability type that account for all these effects, not just provenance.
 
 ## 5.4. The Decomposition Service
 

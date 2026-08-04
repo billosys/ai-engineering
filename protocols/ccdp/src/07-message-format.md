@@ -74,7 +74,7 @@ The following fields are REQUIRED on every CCDP message envelope:
 
 **`ccdp_version`** (string, REQUIRED): The CCDP protocol version. MUST be `"1.0"` for this specification. Implementations MUST reject messages with an unrecognized version. The wire protocol version is independent of the document version (Section 2.1). This specification document is version 0.2.0; the wire protocol version remains `"1.0"` because the on-the-wire message format has not changed.
 
-**`type`** (string, REQUIRED): The message type. One of: `"REQUEST"`, `"RESPONSE"`, `"NOTIFICATION"`, `"ESCALATION"`, `"HEALTH_REQUEST"`, `"HEALTH_RESPONSE"`, `"DECOMPOSITION_RESULT"`. MUST match the JSON-RPC method.
+**`type`** (string, REQUIRED): The message type. One of: `"REQUEST"`, `"RESPONSE"`, `"NOTIFICATION"`, `"ESCALATION"`, `"HEALTH_REQUEST"`, `"HEALTH_RESPONSE"`, `"DECOMPOSITION_RESULT"`. For method-bearing messages (REQUEST, ESCALATION, HEALTH_REQUEST, DECOMPOSITION_RESULT, NOTIFICATION), the `envelope.type` value MUST correspond to the JSON-RPC `method` field. For response messages (RESPONSE, HEALTH_RESPONSE), the `envelope.type` is carried inside the `result` object and is the sole identifier of the CCDP message type — JSON-RPC responses have no `method` field.
 
 **`request_id`** (string, REQUIRED): A UUID v4 uniquely identifying this request. Used for idempotency, correlation, and replay protection. A Service that receives a Request with a `request_id` it has already processed MUST return the cached Response without re-executing the request. For NOTIFICATION messages (JSON-RPC notifications), the `request_id` field carries the identifier of the related request (e.g., the request whose progress is being reported) or a unique identifier for the notification itself. Since JSON-RPC notifications do not carry an `id` field, the JSON-RPC `id`-must-match-`request_id` rule does not apply to notifications.
 
@@ -84,7 +84,7 @@ The following fields are REQUIRED on every CCDP message envelope:
 
 **`timestamp`** (string, REQUIRED): ISO 8601 timestamp with UTC timezone (`Z`). The time the message was created by its originator.
 
-**`source_id`** (string, REQUIRED): The identifier of the component that originated this message. For Requests from external clients, this is the client identifier. For Responses, this is the Service identifier. For forwarded messages, this is the originator, not the Dispatcher. When the Dispatcher forwards a message, it does not overwrite `source_id`. The Dispatcher's identity is recorded in the `audit.dispatcher_id` field (Section 7.5), not in `source_id`. This means `source_id` always identifies the originator, and `audit.dispatcher_id` identifies the intermediary. If future extensions require explicit sender/forwarder identification, they SHOULD use metadata keys (e.g., `org.ccdp.forwarder_id`) rather than overloading `source_id`.
+**`source_id`** (string, REQUIRED): The identifier of the component that originated this message. For Requests from external clients, this is the client identifier. For Responses, this is the Service identifier. For forwarded messages, this is the originator, not the Dispatcher. When the Dispatcher forwards a message, it does not overwrite `source_id`. The Dispatcher's identity is recorded in the `audit.dispatcher_id` field (Section 7.5), not in `source_id`. This means `source_id` always identifies the originator, and `audit.dispatcher_id` identifies the intermediary. If future extensions require explicit sender/forwarder identification, they SHOULD use metadata keys (e.g., `org.ccdp.forwarder_id`) rather than overloading `source_id`. For signature verification and authorization, implementations MUST use the Authenticated Sender identity established by the transport layer (Section 4, Section 15.2), not the `source_id` payload field. The `source_id` field is an unauthenticated originator claim; the Authenticated Sender is cryptographically verified.
 
 **`metadata`** (object, REQUIRED but MAY be empty): Extensible key-value metadata. Unknown keys MUST be preserved and forwarded by all intermediaries, including the Dispatcher. Keys use reverse-domain notation for namespacing (e.g., `"com.example.custom_field": "value"`). Keys in the `org.ccdp.*` namespace are reserved for protocol-defined extensions.
 
@@ -105,7 +105,7 @@ In addition to Common fields, REQUEST envelopes carry:
     "cost_budget": {
       "max_compute_seconds": 120,
       "max_tokens": 50000,
-      "max_monetary_cost": 0.50,
+      "max_monetary_cost": "0.50",
       "monetary_unit": "USD"
     },
     "provenance_requirement": {
@@ -129,7 +129,7 @@ In addition to Common fields, REQUEST envelopes carry:
 
 **`cost_budget`** (object, OPTIONAL): Resource constraints on the request. All sub-fields are optional; omitted fields indicate no constraint. `max_compute_seconds` caps wall-clock compute time. `max_tokens` caps token consumption (for LLM services). `max_monetary_cost` caps monetary cost. `monetary_unit` is the ISO 4217 currency code. The Dispatcher MAY use cost_budget for routing decisions (prefer cheaper services). Services MUST NOT exceed the cost_budget; if they would, they MUST return an Escalation with reason `BUDGET_EXCEEDED`. For backward compatibility with v0.1 implementations, Dispatchers SHOULD accept `max_monetary_units` as an alias for `max_monetary_cost` in request envelopes.
 
-**`provenance_requirement`** (object, OPTIONAL): The minimum acceptable Provenance Grade for the response. If the Service cannot achieve this grade, it MUST return an Escalation with reason `CONFIDENCE_BELOW_THRESHOLD` and the grade it could achieve. If omitted, no minimum grade is required.
+**`provenance_requirement`** (object, OPTIONAL): The minimum acceptable Provenance Grade for the response. If the Service cannot achieve this grade, it MUST return an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and the grade it could achieve. If omitted, no minimum grade is required.
 
 **`priority`** (string, OPTIONAL): One of `"LOW"`, `"NORMAL"`, `"HIGH"`, `"CRITICAL"`. Defaults to `"NORMAL"`. Services MAY use priority for internal scheduling. The Dispatcher MAY use priority as a tiebreaker in routing decisions.
 
@@ -197,7 +197,7 @@ An Escalation is a structured response indicating the Service cannot fulfill the
     "type": "ESCALATION",
     "request_id": "550e8400-e29b-41d4-a716-446655440000",
     "escalation": {
-      "reason": "CONFIDENCE_BELOW_THRESHOLD",
+      "reason": "PROVENANCE_BELOW_REQUIREMENT",
       "detail": "LLM translation uncertainty too high for formal verification",
       "achieved_grade": "HEURISTIC",
       "requested_grade": "VALIDATED",
@@ -250,10 +250,13 @@ HEALTH_REQUEST:
 {
   "envelope": {
     // ... common fields ...
-    "type": "HEALTH_REQUEST"
+    "type": "HEALTH_REQUEST",
+    "destination_id": "z3-prover-01"
   }
 }
 ```
+
+A HEALTH_REQUEST always targets a specific Service — the Dispatcher probes each registered Service's health endpoint individually (Section 13.6.1), it does not broadcast. `destination_id` is therefore REQUIRED on HEALTH_REQUEST.
 
 HEALTH_RESPONSE:
 ```json
@@ -320,14 +323,16 @@ The Content of a DECOMPOSITION_RESULT message is the Decomposition Plan (Section
 | `source_id` | R | R | R | R | R | R | R |
 | `capability_type` | R | S | S | O | — | — | R |
 | `destination_id` | O | — | O | R | R | — | — |
-| `priority` | O | — | O | — | — | — | R |
-| `provenance_requirement` | O | — | O | — | — | — | R |
-| `provenance` | — | R | O | — | — | — | S |
+| `priority` | O | — | O | — | — | — | — |
+| `provenance_requirement` | O | — | O | — | — | — | — |
+| `provenance` | — | R | R\* | — | — | — | S |
 | `cost_budget` | O | — | O | — | — | — | O |
 | `deadline` | R | — | O | — | — | — | O |
 | `timestamp` | R | R | R | R | R | R | R |
 
-R = REQUIRED, S = RECOMMENDED (SHOULD), O = OPTIONAL, — = not applicable. This matrix is normative.
+R = REQUIRED, S = RECOMMENDED (SHOULD), O = OPTIONAL, — = not applicable. This matrix is normative. Where prose elsewhere in this section or other sections conflicts with this matrix, the matrix takes precedence.
+
+\* `provenance` is REQUIRED on ESCALATION when the message carries partial results (Section 7.3.4); it MAY be omitted for escalations with no cognitive output (e.g., pure routing failures). `priority` and `provenance_requirement` are request-directional fields that do not apply to a Decomposition Service's plan output — DECOMPOSITION_RESULT carries neither.
 
 ## 7.4. Content Structure
 
@@ -441,7 +446,7 @@ This approach follows the TCP/IP tradition of extensible headers: existing imple
 
 ## 7.8. Machine-Readable Schemas
 
-Each message type defined in this section has a corresponding JSON Schema in the companion `schemas/` directory. The schemas are normative: a conforming message MUST validate against the schema for its message type. The schemas cover:
+A companion `schemas/` directory will contain normative JSON Schemas for each message type defined in this section. Until these schemas are published, the field definitions and per-message matrix in this section are the normative message specification. The planned schemas cover:
 
 - `envelope.schema.json` — common envelope fields and per-message-type required/optional field sets
 - `content.schema.json` — Content wrapper structure (type, body, schema_ref)
@@ -451,4 +456,21 @@ Each message type defined in this section has a corresponding JSON Schema in the
 - `decomposition-plan.schema.json` — plan structure, sub-requests, typed result references, composition spec
 - `audit-record.schema.json` — audit record fields and per-message-type requirements
 
-These schemas are published alongside this specification and versioned with the document version. Implementations SHOULD validate messages against these schemas during development and testing.
+When published, the schemas will be normative, versioned with the document version. Implementations SHOULD validate messages against these schemas during development and testing. Creating the companion schemas is an implementation prerequisite tracked in the README.
+
+## 7.9. HTTP Status Code Mapping
+
+When CCDP messages are transported over HTTP, the following mapping applies:
+
+| Scenario | HTTP Status | CCDP Behavior |
+|---|---|---|
+| Successful response | 200 OK | JSON-RPC result with CCDP envelope |
+| JSON parse error | 400 Bad Request | JSON-RPC error `-32700` |
+| Authentication failure | 401 Unauthorized | No JSON-RPC body; Dispatcher logs auth failure |
+| Authorization failure (valid token, insufficient scope) | 403 Forbidden | JSON-RPC error `-32009` |
+| Message too large to parse | 413 Payload Too Large | No JSON-RPC body |
+| Rate limited by Dispatcher | 429 Too Many Requests | JSON-RPC error `-32014` (see Section 13.2) with `Retry-After` in error `data` |
+| Rate limited by Service | (Dispatcher absorbs) | Dispatcher treats as DEGRADED, follows retry/reroute (Section 13.5) |
+| Internal Dispatcher error | 500 Internal Server Error | JSON-RPC error `-32603` |
+
+HTTP status codes in the 4xx range indicate client-side issues; 5xx indicate Dispatcher-side issues. The JSON-RPC error body, when present, carries the structured CCDP error with trace context for audit correlation.

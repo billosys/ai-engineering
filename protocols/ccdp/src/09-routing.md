@@ -18,7 +18,7 @@ The Dispatcher MUST implement the following routing algorithm. Steps are ordered
 
 ### Step 1: Explicit Destination
 
-If `envelope.destination_id` is non-null, route to the specified Service. If the Service is not registered, not ACTIVE, or not healthy, return error `-32001` (service unavailable). Do not fall through to capability-based routing.
+If `envelope.destination_id` is non-null, route to the specified Service. If the Service is not registered, not ACTIVE, or not healthy, return error `-32001` (service unavailable). Do not fall through to capability-based routing. Explicit destinations MUST also pass authorization, provenance feasibility, deadline, budget, and isolation checks — the same policy filters applied to normal routing (Steps 2–6). An explicit destination is a routing hint, not a bypass of protocol enforcement. If any check fails, the Dispatcher MUST return the appropriate error, not silently fall through to normal routing.
 
 ### Step 2: Capability Lookup
 
@@ -28,7 +28,7 @@ Query the Registry for all ACTIVE Services implementing `envelope.capability_typ
 
 Remove Services with Health Status UNHEALTHY from the candidate set. Services with Health Status DEGRADED remain eligible but are deprioritized (Step 6).
 
-If all Services are UNHEALTHY, the Dispatcher MUST follow its deployment-configured `all_unhealthy_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32003`), `"escalate"` (treat as an escalation with reason `INTERNAL_DEGRADATION` and walk the escalation chain), or `"queue"` (hold the request for a configurable duration and retry when a service becomes healthy). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail.
+If all Services are UNHEALTHY, the Dispatcher MUST follow its deployment-configured `all_unhealthy_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32003`), `"escalate"` (treat as an escalation with reason `INTERNAL_DEGRADATION` and walk the escalation chain), or `"queue"` (hold the request for up to `queue_timeout_ms` milliseconds, configurable per capability type, default 30000ms; retry routing when a service becomes healthy or when the timeout expires). If the request has a deadline and the remaining deadline budget is less than `queue_timeout_ms`, the effective queue timeout is the remaining deadline budget. If the timeout expires without a healthy service, the Dispatcher returns error `-32003`. Queued requests are audit-logged with status `"queued"` and a follow-up audit entry when dequeued (routed or timed out). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail.
 
 ### Step 4: Deadline Filter
 
@@ -40,7 +40,7 @@ If all candidate services are filtered out by deadline, the Dispatcher MUST retu
 
 If `envelope.provenance_requirement.min_grade` is set, remove Services whose `provenance_capabilities.max_grade` is below the required grade.
 
-If no candidate service can meet the Request's `provenance_requirement.min_grade`, the Dispatcher MUST NOT silently route to a lower-grade service. The Dispatcher MUST either return error `-32005` (provenance not achievable) or treat the situation as an implicit escalation — routing through the escalation chain to find a service that can meet the grade requirement. The choice is deployment-configured. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
+If no candidate service can meet the Request's `provenance_requirement.min_grade`, the Dispatcher MUST NOT silently route to a lower-grade service. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32005`) or `"escalate"` (treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, routing through the escalation chain to find a service that can meet the grade requirement). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
 
 ### Step 6: Cost-Aware Ranking
 
@@ -65,6 +65,8 @@ Select the highest-ranked candidate. Log the routing decision in the `audit.rout
 - `filters_applied`: which filters removed candidates (e.g., `["health", "deadline"]`)
 
 The audit record for a routing decision MUST include at minimum: the list of candidate services considered, the normalized scoring factors (health weight, cost weight, latency weight, provenance weight), the deployment policy version used, the computed score for each candidate, and the tiebreaker (if any). This enables retrospective routing analysis and debugging.
+
+Detailed scoring traces (candidate lists, weights, per-candidate scores) MAY contain cost and capacity information that is sensitive across administrative boundaries. Deployments SHOULD classify routing audit fields by access level and redact sensitive fields in audit exports to external parties.
 
 ## 9.3. Routing for Decomposed Sub-Requests
 
@@ -125,4 +127,4 @@ The Dispatcher maintains a Routing Table — a runtime data structure combining 
 
 The Routing Table is refreshed from the Registry at a configurable interval (RECOMMENDED: every 30 seconds) and updated in real-time by health check responses. It is an internal Dispatcher structure, not a protocol element — its format is implementation-defined.
 
-**Wildcard capability matching.** Capability type patterns ending in `.*` match any capability type that shares the prefix up to the wildcard. `org.ccdp.language.*` matches `org.ccdp.language.generation`, `org.ccdp.language.translation`, etc., but not `org.ccdp.language` itself (the wildcard requires at least one additional segment). Wildcard patterns are valid only in token scopes (Section 15.3.2) and routing configuration; they MUST NOT appear in Capability Records or Registry lookups.
+**Wildcard capability matching.** Capability type patterns ending in `.*` match any capability type that shares the prefix up to the wildcard. `org.ccdp.language.*` matches `org.ccdp.language.generation`, `org.ccdp.language.translation`, etc., but not `org.ccdp.language` itself (the wildcard requires at least one additional segment). Wildcard patterns are valid only in token scopes (Section 15.3.2) and routing configuration; they MUST NOT appear in Capability Records or Registry lookups. The routing table format is implementation-defined and MAY support pattern matching (e.g., glob or prefix wildcards). Pattern syntax, if supported, is not part of the CCDP wire protocol — it is a deployment-local routing configuration concern. The `org.ccdp.language.*` entry in the example above illustrates implementation flexibility, not a normative capability identifier.

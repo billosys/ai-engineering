@@ -3,7 +3,8 @@
 //! `--format kramdown-rfc` keeps the original `--- abstract` / `--- middle`
 //! / `--- back` section markers. `--format gfm` drops them entirely: every
 //! chapter already carries a numbered heading, so the document is one
-//! continuous flow from Section 1 through Section 18 plus an
+//! continuous flow through every loaded chapter (Section 1 onward, including
+//! any appendix chapters numbered beyond References) plus an
 //! Acknowledgements placeholder (see [`assemble_gfm`]).
 
 use anyhow::{Context, Result, bail};
@@ -70,8 +71,9 @@ _Placeholder — to be completed._";
 const ACKNOWLEDGEMENTS_GFM: &str =
     "<a id=\"acknowledgements\"></a>\n# Acknowledgements\n\n_Placeholder — to be completed._";
 
-/// Concatenates the Security Considerations and References chapters, adds
-/// a note about YAML/markdown reference redundancy, and appends an
+/// Concatenates the Security Considerations and References chapters, any
+/// appendix chapters numbered beyond References (e.g. a version history),
+/// adds a note about YAML/markdown reference redundancy, and appends an
 /// Acknowledgements placeholder.
 pub fn back_body(chapters: &[Chapter]) -> Result<String> {
     let mut parts = Vec::new();
@@ -93,6 +95,14 @@ pub fn back_body(chapters: &[Chapter]) -> Result<String> {
         "{REFERENCES_NOTE}\n\n{}",
         headers::rewrite_content(&references_chapter.content, Format::KramdownRfc).trim()
     ));
+
+    for chapter in chapters.iter().filter(|c| c.number > REFERENCES) {
+        parts.push(
+            headers::rewrite_content(&chapter.content, Format::KramdownRfc)
+                .trim()
+                .to_string(),
+        );
+    }
 
     parts.push(ACKNOWLEDGEMENTS_KRAMDOWN.to_string());
 
@@ -157,8 +167,9 @@ fn gfm_chapter_body(chapter: &Chapter) -> String {
 }
 
 /// Assembles the full GFM document: front matter, an optional Table of
-/// Contents, chapters 1–18 as one continuous flow (each already carries a
-/// numbered heading, so no section markers are needed), and an
+/// Contents, every loaded chapter as one continuous flow (each already
+/// carries a numbered heading, so no section markers are needed — chapters
+/// beyond References, e.g. an appendix, are included too), and an
 /// Acknowledgements placeholder.
 pub fn assemble_gfm(
     chapters: &[Chapter],
@@ -173,9 +184,9 @@ pub fn assemble_gfm(
         .with_context(|| format!("chapter {REFERENCES:02} (References) is required but was not found in the source directory"))?;
     warn_missing_in_range(chapters, MIDDLE_FIRST, SECURITY_CONSIDERATIONS);
 
-    let body = chapters::in_range(chapters, 1, REFERENCES)
+    let body = chapters
         .iter()
-        .map(|c| gfm_chapter_body(c))
+        .map(gfm_chapter_body)
         .collect::<Vec<_>>()
         .join("\n\n");
 
@@ -332,5 +343,35 @@ mod tests {
     fn gfm_missing_references_chapter_is_an_error() {
         let chapters = vec![chapter(1, "# Title\n\n## 1. Abstract\n\nText.\n")];
         assert!(assemble_gfm(&chapters, "0.1", "2026-08-03", true).is_err());
+    }
+
+    #[test]
+    fn gfm_includes_appendix_chapters_beyond_references() {
+        let mut chapters = sample_chapters();
+        chapters.push(chapter(
+            19,
+            "# 19. Version History\n\n## 19.1. Version 0.2.0\n\nChangelog text.\n",
+        ));
+        let doc = assemble_gfm(&chapters, "0.1", "2026-08-03", true).unwrap();
+
+        // The TOC links to it...
+        assert!(doc.contains("- [19. Version History](#section-19)"));
+        // ...and the anchor the TOC links to actually exists in the body.
+        assert!(doc.contains("<a id=\"section-19\"></a>\n# Version History"));
+        assert!(doc.contains("Changelog text."));
+    }
+
+    #[test]
+    fn kramdown_rfc_includes_appendix_chapters_beyond_references() {
+        let mut chapters = sample_chapters();
+        chapters.push(chapter(
+            19,
+            "# 19. Version History\n\n## 19.1. Version 0.2.0\n\nChangelog text.\n",
+        ));
+        let refs = sample_refs();
+        let doc = assemble_kramdown_rfc(&chapters, &refs, "0.1", "2026-08-03").unwrap();
+
+        assert!(doc.contains("# Version History {#section-19}"));
+        assert!(doc.contains("Changelog text."));
     }
 }

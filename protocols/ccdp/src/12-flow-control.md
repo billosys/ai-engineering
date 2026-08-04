@@ -17,13 +17,26 @@ A Request MAY carry a `cost_budget` field constraining the resources the Service
   "cost_budget": {
     "max_compute_seconds": 120,
     "max_tokens": 50000,
-    "max_monetary_cost": 0.50,
+    "max_monetary_cost": "0.50",
     "monetary_unit": "USD"
   }
 }
 ```
 
-All fields are OPTIONAL. Omitted fields indicate no constraint on that dimension. A Service MUST NOT exceed any specified constraint. Services SHOULD implement preflight estimation where feasible — estimating resource consumption before beginning work and returning an Escalation with reason `BUDGET_EXCEEDED` if the estimate exceeds the budget. For services where cost is unpredictable (LLM generation with variable output length), the Service MUST monitor consumption during execution and abort with an Escalation if any budget limit is reached. The `BUDGET_EXCEEDED` escalation MUST include the estimated or actual cost in the `escalation.detail` field. If a Service would exceed a constraint to produce a meaningful result, it MUST return an Escalation with reason `BUDGET_EXCEEDED`, reporting the resources consumed so far and an estimate of resources needed.
+All fields are OPTIONAL. Omitted fields indicate no constraint on that dimension. Monetary values are strings to avoid IEEE 754 floating-point precision issues (Section 2.3). Implementations MUST parse monetary strings as decimal values, not floating-point. A Service MUST NOT exceed any specified constraint. Services SHOULD implement preflight estimation where feasible — estimating resource consumption before beginning work and returning an Escalation with reason `BUDGET_EXCEEDED` if the estimate exceeds the budget. For services where cost is unpredictable (LLM generation with variable output length), the Service MUST monitor consumption during execution and abort with an Escalation if any budget limit is reached. If a Service would exceed a constraint to produce a meaningful result, it MUST return an Escalation with reason `BUDGET_EXCEEDED`, reporting the resources consumed so far and an estimate of resources needed.
+
+When escalation reason is `BUDGET_EXCEEDED`, the `escalation` object MUST include:
+
+```json
+"budget_exceeded": {
+  "dimension": "monetary" | "compute_seconds" | "tokens",
+  "budget_limit": "4.50",
+  "actual_or_estimated": "2.80",
+  "is_estimate": true
+}
+```
+
+The `detail` field MAY contain a human-readable explanation in addition to the structured fields.
 
 ### 12.2.2. Budget Propagation
 
@@ -44,7 +57,7 @@ Every Response MUST report actual resource consumption in the `provenance.comput
   "computation": {
     "tokens_consumed": 12500,
     "compute_seconds": 4.7,
-    "monetary_cost": 0.003,
+    "monetary_cost": "0.003",
     "monetary_unit": "USD",
     "model_id": "claude-opus-4-20260801"
   }
@@ -118,6 +131,8 @@ Every Request carries a `deadline` (absolute UTC timestamp) and `remaining_budge
 3. If `remaining_budget_ms <= 0`, the Dispatcher returns error `-32007` (deadline exceeded) without forwarding the Request.
 4. If `remaining_budget_ms` is positive but less than the target Service's `cost_hints.estimated_latency_ms.p50`, the Dispatcher logs a warning and either forwards (optimistically) or returns error `-32004` (deadline not achievable).
 
+**Relationship to the routing deadline filter.** The deadline filter in Section 9.2 Step 4 uses the Service's p95 estimated latency as the feasibility threshold: if `remaining_budget_ms < p95_latency_ms`, the service is filtered out of candidacy entirely. This step's p50 check applies to a Service that already survived that filter — it is re-evaluating margin at actual dispatch time, after further elapsed time has accrued hop-by-hop since the routing decision was made. Section 12.4.1 permits optimistic forwarding when remaining time has degraded below the Service's p50 but has not yet fallen below p95, on the grounds that the request may still succeed. These two rules are consistent: the routing filter removes candidates that almost certainly cannot meet the deadline (below p95), while flow control allows the best remaining candidate to attempt the request even with tight margins (between p50 and p95).
+
 **Clock skew.** The Dispatcher MUST compute `remaining_budget_ms` from its own receive timestamp (`audit.received_at`), not from the originator's `envelope.timestamp`. The originator's timestamp is used for replay protection and freshness validation (Section 15.5), not for hop-by-hop deadline accounting. This avoids clock-skew errors between the originator and the Dispatcher.
 
 ### 12.4.2. Service Deadline Behavior
@@ -156,7 +171,7 @@ A Service MAY respond to a CCDP Request with HTTP 429 instead of a CCDP Response
 3. MUST log the 429 response in the audit trail.
 4. SHOULD increment the Service's failure count in the circuit breaker.
 
-More precisely: when a Service returns HTTP 429 (Too Many Requests) instead of a CCDP Response, the Dispatcher MUST: (a) log the 429 in the audit trail as a rate-limit event with the Service's `Retry-After` header value if present, (b) treat the Service as temporarily at capacity (equivalent to health status DEGRADED for the requested capability), (c) follow the retry/reroute strategy in Section 13.5.1, and (d) if the Dispatcher itself rate-limits a requester, it MUST return a CCDP error response with code `-32003` and include the `Retry-After` value in the error `data` field. HTTP 429 MUST NOT be passed through to the requester as a raw HTTP response.
+More precisely: when a Service returns HTTP 429 (Too Many Requests) instead of a CCDP Response, the Dispatcher MUST: (a) log the 429 in the audit trail as a rate-limit event with the Service's `Retry-After` header value if present, (b) treat the Service as temporarily at capacity (equivalent to health status DEGRADED for the requested capability), (c) follow the retry/reroute strategy in Section 13.5.1, and (d) if the Dispatcher itself rate-limits a requester, it MUST return a CCDP error response with code `-32014` (rate limited) and include the `Retry-After` value in the error `data` field. Error `-32003` is reserved for all-services-unhealthy conditions (Section 9.2 Step 3); it is distinct from Dispatcher-side rate limiting. HTTP 429 MUST NOT be passed through to the requester as a raw HTTP response.
 
 ### 12.5.3. Capacity-Based Rate Limiting
 
@@ -168,7 +183,7 @@ The specific rate-limiting algorithm is implementation-defined. The Dispatcher M
 
 The Dispatcher uses resource signals for routing decisions (Section 9.2, Step 6). The interaction between resource signals and routing:
 
-- **Cost budget constrains candidates:** A Request with `max_monetary_cost: 0.10` eliminates Services with `estimated_cost_per_request > 0.10`.
+- **Cost budget constrains candidates:** A Request with `max_monetary_cost: "0.10"` eliminates Services with `estimated_cost_per_request > "0.10"` (compared as decimal values, not floating-point).
 - **Deadline constrains candidates:** A Request with 5 seconds remaining eliminates Services with `estimated_latency_ms.p95 > 5000`.
 - **Load influences ranking:** Among eligible candidates, lower-load Services are preferred.
 - **Cost influences ranking:** Among eligible candidates, lower-cost Services are preferred (unless a higher-cost Service offers a better provenance grade that the Request requires).

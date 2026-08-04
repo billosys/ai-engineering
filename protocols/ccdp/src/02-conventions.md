@@ -8,6 +8,8 @@ This specification is versioned following Semantic Versioning [SemVer] (MAJOR.MI
 
 This specification uses two independent version identifiers. The **document version** (currently 0.2.0) tracks the maturity of the specification text — its completeness, internal consistency, and review status. The **wire protocol version** (currently `"1.0"`, carried in every message's `envelope.ccdp_version` field) tracks the on-the-wire format. A document revision that clarifies prose, tightens conformance requirements, or adds non-breaking features increments the document version without changing the wire protocol version. A document revision that changes message structure, adds required envelope fields, or alters wire semantics increments the wire protocol version. Implementations negotiate by wire protocol version; the document version is for human readers and specification governance.
 
+**Pre-1.0 stability note.** While the document version is below 1.0 and no conforming implementations have been declared, document revisions MAY change wire-visible semantics without incrementing the wire protocol version. The wire protocol version will be frozen at the first stable release (document version 1.0.0). Implementers building against pre-1.0 drafts should track the document version and expect wire-level changes between revisions.
+
 ## 2.2. Requirements Language
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 [RFC 2119] [RFC 8174] when, and only when, they appear in all capitals, as shown here.
@@ -20,7 +22,9 @@ Trace identifiers (`trace_id`) and span identifiers (`span_id`) use W3C Trace Co
 
 All examples in this document are informative unless explicitly marked as normative. Where examples show JSON structures, elided fields are indicated by comments (`// ...`) and do not imply that those fields are optional.
 
-Where examples show JSON structures with `// ...` comments, the comments are an expository convenience and are not valid JSON. Implementations MUST NOT include comments in wire-format messages. The content type for all CCDP messages is `application/json` with charset UTF-8. JSON numbers follow IEEE 754 double-precision semantics; implementations requiring higher precision for monetary or cryptographic values SHOULD use string-encoded representations. Enumeration values in this specification use `UPPER_SNAKE_CASE` (e.g., `FORMALLY_VERIFIED`, `SEARCH_EXHAUSTED`). URI-form identifiers (capability types, metadata namespace keys) use dot-separated segments (e.g., `org.ccdp.language.generation`). These conventions are normative for wire-format values.
+Where examples show JSON structures with `// ...` comments, the comments are an expository convenience and are not valid JSON. Implementations MUST NOT include comments in wire-format messages. The content type for all CCDP messages is `application/json` with charset UTF-8. JSON numbers follow IEEE 754 double-precision semantics; implementations requiring higher precision for monetary or cryptographic values SHOULD use string-encoded representations. Enumeration values in this specification use `UPPER_SNAKE_CASE` (e.g., `FORMALLY_VERIFIED`, `SEARCH_EXHAUSTED`). Reverse-domain identifiers (capability types, metadata namespace keys) use dot-separated segments (e.g., `org.ccdp.language.generation`). These conventions are normative for wire-format values.
+
+Monetary values in CCDP messages SHOULD be represented as strings (e.g., `"4.50"` not `4.50`) to avoid IEEE 754 floating-point precision loss. All monetary-value examples in this specification use string representations.
 
 ## 2.4. Notation
 

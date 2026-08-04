@@ -24,11 +24,11 @@ MCP's July 2026 stateless pivot [MCP 2026-07-28 RC] is a significant operational
 
 **No mandatory audit.** MCP does not mandate structured logging of tool invocations. Audit trails are implementation concerns. For a supervision-tree architecture where every link must be inspectable, audit metadata must be a core protocol field, not an afterthought.
 
-**No cost or resource signals.** MCP provides no mechanism for a service to communicate resource consumption, latency expectations, or cost. A dispatcher cannot make resource-rational routing decisions without this information. TCP has congestion signals (ECN, window advertisements); a cognitive dispatch protocol needs cognitive-resource signals.
+**No cost or resource signals.** MCP provides no protocol-native required cost budget, consumption reporting, or deadline enforcement fields comparable to CCDP's flow-control layer (Section 12). A dispatcher cannot make resource-rational routing decisions without this information. TCP has congestion signals (ECN, window advertisements); a cognitive dispatch protocol needs cognitive-resource signals.
 
-**Security by implementation discipline.** The NSA/CISA assessment [NSA MCP 2026] found MCP's security posture "highly dependent on implementation discipline rather than protocol guarantees" — no mandated authentication, tool parameter injection enabling arbitrary code execution, tool naming collisions exploitable from public registries. The 2026-07-28 spec adds OAuth 2.0 authorization with Pushed Authorization Requests [RFC 9126] and PKCE [RFC 7636], but the "security by convention" orientation persists.
+**Security by implementation discipline.** MCP's security posture is highly dependent on implementation discipline rather than protocol guarantees: no mandated authentication, tool parameter injection enabling arbitrary code execution, tool naming collisions exploitable from public registries. The 2026-07-28 spec adds OAuth 2.0 authorization with Pushed Authorization Requests [RFC 9126] and PKCE [RFC 7636], but the "security by convention" orientation persists.
 
-**No epistemic dimension.** Most fundamentally, MCP treats service outputs as data. CCDP treats them as *claims with epistemic status*. A prover's output and an LLM's output are structurally different kinds of evidence, and the protocol must carry that distinction. MCP has no concept of provenance grades, evidence strength, or provenance-grade-below-threshold escalation (CCDP's `CONFIDENCE_BELOW_THRESHOLD` escalation reason).
+**No epistemic dimension.** Most fundamentally, MCP treats service outputs as data. CCDP treats them as *claims with epistemic status*. A prover's output and an LLM's output are structurally different kinds of evidence, and the protocol must carry that distinction. MCP has no concept of provenance grades, evidence strength, or provenance-grade-below-threshold escalation (CCDP's `PROVENANCE_BELOW_REQUIREMENT` escalation reason).
 
 ### 3.2.2. A2A (Agent-to-Agent Protocol)
 
@@ -66,7 +66,7 @@ CCDP is governed by eight principles, each grounded in the research base:
 
 2. **The end-to-end principle applies.** The dispatcher verifies *protocol* correctness (well-formed envelopes, valid routing, schema compliance, timeout enforcement) — structural validation, not semantic interpretation (Section 4). *Content* correctness is the service's responsibility. (From: Saltzer, Reed & Clark 1984.)
 
-3. **Audit is mandatory, not optional.** Every message passing through the dispatcher gets structured audit metadata. This is core protocol behavior, not an extension. (From: NSA/CISA MCP assessment — "security by implementation discipline" fails.)
+3. **Audit is mandatory, not optional.** Every message passing through the dispatcher gets structured audit metadata. This is core protocol behavior, not an extension. (From: the general security principle that implementation-discipline-dependent security fails unpredictably across deployments — see Section 3.2.1's analysis of MCP.)
 
 4. **Provenance grades are first-class.** Every response carries an evidence-strength field. This is the protocol's novel contribution. (From: the Spence signaling theory — quality signals work only when expensive to fake.)
 
@@ -76,7 +76,7 @@ CCDP is governed by eight principles, each grounded in the research base:
 
 7. **Extensibility without breakage.** Unknown metadata fields are preserved and forwarded. New capabilities are added as metadata keys without protocol version bumps. (From: TCP options field, HTTP headers, protobuf unknown-field forwarding.)
 
-8. **Security by default.** Mutual authentication, message signing, token scoping per service. Not opt-in. (From: NSA/CISA findings — security as a protocol guarantee, not an implementation choice.)
+8. **Security by default.** Mutual authentication and bearer-token scoping are required at all conformance levels. Message signing is required for Full conformance when producing high-grade provenance (FORMALLY_VERIFIED, HUMAN_ATTESTED) and for all cross-administrative-domain deployments. See Section 15 for the complete signing policy. (From: NSA/CISA findings — security as a protocol guarantee, not an implementation choice.)
 
 ## 3.5. Scope
 
