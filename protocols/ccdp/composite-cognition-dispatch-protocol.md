@@ -1609,11 +1609,11 @@ Filters 2 and 3 are Registry-declared capability checks performed at routing tim
 The policy MUST be one of:
 
 - `"reroute"`: Treat the Service as non-conformant for this request and reroute to an alternative Service (applying the same routing algorithm, excluding the non-conformant Service from the candidate set). If no alternative can satisfy the requirement, fall through to the `provenance_unavailable_policy`.
-- `"escalate"`: Convert the outcome to an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, forwarding the original Service response as partial results if available.
+- `"escalate"`: Convert the outcome to an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and `escalation_origin: "dispatcher"` (Section 13.4.1), then walk the responding Service's `escalation_chain`. The original Service response is forwarded as partial results if available.
 
 The default policy is `"reroute"`. The Dispatcher MUST record the selected policy, the mismatch details (expected vs actual grade, missing methods, missing artifact types), and the non-conformant Service ID in the audit trail (Section 11) regardless of which path it takes.
 
-If no candidate service can meet the Request's `provenance_requirement`, the Dispatcher MUST NOT silently route to a service that cannot meet it. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32005`) or `"escalate"` (treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, routing through the escalation chain to find a service that can meet the requirement). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
+If no candidate service can meet the Request's `provenance_requirement`, the Dispatcher MUST NOT silently route to a service that cannot meet it. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32005`) or `"escalate"` (treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and `escalation_origin: "dispatcher"` (Section 13.4.1); because no candidate passed the provenance filter, there is no originating Service whose `escalation_chain` to walk — the implicit escalation routes directly to `org.ccdp.human_review` as the terminal target, subject to the same authorization and data-class checks as Section 13.4 step 6). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
 
 ### Step 6: Cost-Aware Ranking
 
@@ -2482,7 +2482,7 @@ CCDP distinguishes three categories of failure, each with different protocol beh
 
 3. **Epistemic insufficiency** — the Service operates correctly but cannot meet the Request's epistemic requirements: the achieved provenance grade is below threshold, capability is exceeded, or the search space is exhausted without a determination. These are *not errors*. They are Escalations — structured routing events that the Dispatcher handles as normal protocol operations.
 
-The distinction between service errors and epistemic insufficiency is load-bearing. An HTTP 500 means something broke. An Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` means the Service worked correctly and honestly reported that its best output does not meet the standard. The protocol handles these differently: errors trigger retries and circuit breakers; escalations trigger the Escalation Chain.
+The distinction between service errors and epistemic insufficiency is load-bearing. An HTTP 500 means something broke. An Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` means the originating actor — a Service or the Dispatcher — determined that the response does not or cannot meet the requested provenance standard. The protocol handles these differently: errors trigger retries and circuit breakers; escalations trigger the Escalation Chain.
 
 This is the "let it crash" principle applied to cognitive systems: a Service that cannot meet the standard *should* escalate rather than silently producing low-quality output that poisons everything built on it.
 
@@ -2549,7 +2549,7 @@ Escalation is a first-class message type, not an error. The following escalation
 
 | Reason | Meaning | Typical Next Step |
 |--------|---------|-------------------|
-| `PROVENANCE_BELOW_REQUIREMENT` | The Service determined that it cannot produce a response meeting the requested `provenance_requirement` (Section 7.3.2): its achievable grade is below `min_policy_grade`, or it cannot produce evidence of the required `required_methods` or `required_evidence_types`. The escalation includes the best grade the Service could achieve and the requirement it could not meet. | Route to higher-capability Service or human |
+| `PROVENANCE_BELOW_REQUIREMENT` | The originating actor determined that the requested `provenance_requirement` (Section 7.3.2) is not or cannot be met: the achievable or achieved grade is below `min_policy_grade`, or the required methods or artifact types are not or cannot be satisfied. **Service-generated:** the Service reports that its best achievable grade falls below the requirement before or during processing. **Dispatcher-generated:** the Dispatcher detects a post-receipt provenance mismatch (`provenance_mismatch_policy`, Section 9) or a routing-time no-candidate failure (`provenance_unavailable_policy`, Section 9). The `escalation_origin` field (Section 13.4.1) distinguishes the two sources. The escalation includes the best grade achieved (if any) and the requirement that was not met. | Route to higher-capability Service or human |
 | `CAPABILITY_EXCEEDED` | The request exceeds the Service's capability (too complex, wrong domain) | Route to different Service with broader capability |
 | `DEADLINE_INSUFFICIENT` | Remaining deadline budget is insufficient for this Service to complete | Route to faster Service or return partial result |
 | `DEADLINE_APPROACHING` | Service started work but cannot finish before deadline; partial result available | Forward partial result; route remainder to faster Service |
@@ -2602,6 +2602,13 @@ The algorithm:
 
 The Dispatcher MUST forward the original Request (not the Escalation) to the next target in the chain. The Dispatcher accumulates partial results from prior escalation targets in the forwarded Request's metadata under `org.ccdp.partial_results`. The most recent escalating Service's partial result is in that Service's ESCALATION message Content (the canonical location per Section 7.3.4). The metadata accumulation provides downstream Services and human reviewers with the full escalation history.
 
+**Dispatcher-generated implicit Escalations.** Section 9.2 defines two deployment policies that produce implicit `PROVENANCE_BELOW_REQUIREMENT` escalations without a Service-originated ESCALATION message:
+
+- `provenance_mismatch_policy="escalate"`: the Dispatcher received a Response whose provenance did not meet the requirement. The responding Service's `escalation_chain` is used as the chain source, since a specific Service record is available.
+- `provenance_unavailable_policy="escalate"`: no candidate Service could satisfy the provenance requirement at routing time. No originating Service record is available, so the implicit escalation routes directly to `org.ccdp.human_review` (bypassing chain walk).
+
+Both cases MUST set `escalation_origin: "dispatcher"` in the escalation metadata (Section 13.4.1) and MUST be audit-logged with the same fidelity as Service-originated Escalations.
+
 <a id="section-13-4-1"></a>
 ### Escalation Metadata Accumulation
 
@@ -2614,12 +2621,14 @@ As a Request traverses the Escalation Chain, the Dispatcher accumulates escalati
       {
         "service_id": "llm-verifier-01",
         "reason": "PROVENANCE_BELOW_REQUIREMENT",
+        "escalation_origin": "service",
         "achieved_grade": "HEURISTIC",
         "timestamp": "2026-08-03T14:30:05.000Z"
       },
       {
         "service_id": "z3-prover-01",
         "reason": "CAPABILITY_EXCEEDED",
+        "escalation_origin": "service",
         "detail": "Formula exceeds solver timeout",
         "timestamp": "2026-08-03T14:30:35.000Z"
       }
@@ -2636,6 +2645,8 @@ As a Request traverses the Escalation Chain, the Dispatcher accumulates escalati
 ```
 
 This history enables downstream Services (and the Human Supervisor) to understand what has already been tried and what partial results are available.
+
+The `escalation_origin` field is REQUIRED in each escalation-history entry. The value MUST be `"service"` when the Escalation originated from a Service's ESCALATION message, or `"dispatcher"` when the Dispatcher generated an implicit Escalation from a routing-time or post-receipt provenance policy (Section 9.2).
 
 <a id="section-13-5"></a>
 ## Service Error Handling
@@ -3901,7 +3912,7 @@ specification. It is informative.
 <a id="section-20-1"></a>
 ## Version 0.2.0
 
-Version 0.2.0 is the second reviewed draft, incorporating four review rounds.
+Version 0.2.0 is the second reviewed draft, incorporating the unreleased v0.2 review iterations listed in the README.
 The wire protocol version remains `"1.0"` during this draft cycle.
 
 <a id="section-20-1-1"></a>

@@ -5,7 +5,7 @@ specification. It is informative.
 
 ## 20.1. Version 0.2.0
 
-Version 0.2.0 is the second reviewed draft, incorporating four review rounds.
+Version 0.2.0 is the second reviewed draft, incorporating the unreleased v0.2 review iterations listed in the README.
 The wire protocol version remains `"1.0"` during this draft cycle.
 
 ### 20.1.1. Document Status and Conventions
