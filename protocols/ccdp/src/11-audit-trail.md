@@ -16,6 +16,7 @@ An audit record is generated for every Message that the Dispatcher processes. Th
 {
   "audit_record": {
     "record_id": "audit-550e8400-e29b-41d4-a716-446655440000",
+    "audit_schema_version": "1.0",
     "timestamp": "2026-08-03T14:30:00.145Z",
 
     "trace_context": {
@@ -64,8 +65,8 @@ An audit record is generated for every Message that the Dispatcher processes. Th
     "constraints": {
       "deadline": "2026-08-03T14:31:00.000Z",
       "remaining_budget_ms": 59877,
-      "cost_budget": { "max_monetary_units": 0.50, "monetary_unit": "USD" },
-      "provenance_requirement": { "min_grade": "VALIDATED" }
+      "cost_budget": { "max_monetary_cost": "0.50", "monetary_unit": "USD" },
+      "provenance_requirement": { "min_policy_grade": "VALIDATED" }
     },
 
     "dispatcher_id": "dispatcher-prod-01",
@@ -82,6 +83,7 @@ When the Dispatcher receives a Response from a Service and forwards it to the re
 {
   "audit_record": {
     "record_id": "audit-resp-550e8400-...",
+    "audit_schema_version": "1.0",
     "timestamp": "2026-08-03T14:30:04.850Z",
 
     "trace_context": { /* ... */ },
@@ -107,7 +109,7 @@ When the Dispatcher receives a Response from a Service and forwards it to the re
       "service_compute_seconds": 4.7,
       "service_tokens_consumed": null,
       "total_latency_ms": 4727,
-      "cost_budget_remaining": { "monetary_units": 0.499, "monetary_unit": "USD" }
+      "cost_budget_remaining": { "monetary_units": "0.499", "monetary_unit": "USD" }
     },
 
     "validation": {
@@ -142,7 +144,7 @@ Escalation audit records include the escalation context and the routing chain:
       "type": "ESCALATION",
       "request_id": "550e8400-...",
       "source_id": "llm-verifier-01",
-      "escalation_reason": "CONFIDENCE_BELOW_THRESHOLD",
+      "escalation_reason": "PROVENANCE_BELOW_REQUIREMENT",
       "achieved_grade": "HEURISTIC",
       "requested_grade": "VALIDATED"
     },
@@ -171,28 +173,28 @@ The Dispatcher MUST:
 2. Generate a new `span_id` for each hop through the Dispatcher.
 3. Set `parent_span_id` on forwarded messages to the incoming message's `span_id`.
 4. Include the W3C `traceparent` header on HTTP requests to Services.
-5. Preserve the `tracestate` header if present, appending a CCDP-specific entry: `ccdp=dispatcher_id`. The Dispatcher appends `ccdp=<dispatcher_id>` to the `tracestate` header. If the `tracestate` header would exceed 512 bytes after appending, the Dispatcher MUST truncate the oldest entries (leftmost) to make room, per W3C Trace Context [W3C-TC] §3.3.2.1. The Dispatcher MUST sanitize `tracestate` values: strip control characters and validate against the W3C tracestate grammar before forwarding.
+5. Preserve the `tracestate` header if present, appending a CCDP-specific entry: `ccdp=dispatcher_id`. The Dispatcher appends `ccdp=<dispatcher_id>` to the `tracestate` header. If the `tracestate` header would exceed 512 bytes after appending, the Dispatcher MUST truncate the oldest entries (leftmost) to make room, per W3C Trace Context [W3C-TC] §3.3.2.1. W3C Trace Context §3.3.2.1 specifies that the rightmost entries are the most recently added. Truncating leftmost entries removes the oldest vendor data, which is the least likely to be needed by downstream components. However, some vendors may depend on ordering semantics. If the Dispatcher cannot safely truncate, it SHOULD omit its own `ccdp=<dispatcher_id>` entry rather than truncating other vendors' entries, and log the omission. The Dispatcher MUST sanitize `tracestate` values: strip control characters and validate against the W3C tracestate grammar before forwarding.
 
 This ensures that CCDP traces are compatible with standard distributed tracing infrastructure (OpenTelemetry, Jaeger, Zipkin). Services that use tracing internally can link their internal spans to the CCDP trace.
 
 ## 11.4. Mandatory Audit Fields
 
-The following audit data MUST be recorded for every Message processed by the Dispatcher. Implementations MUST NOT make any of these fields optional or configurable:
+Audit data is organized into the following categories. Implementations MUST NOT make any field marked REQUIRED in the per-message-type matrix below optional or configurable for the message types where it applies:
 
-| Category | Fields | When recorded |
+| Category | Fields | Typical applicability |
 |----------|--------|---------------|
-| Identity | `record_id`, `trace_id`, `span_id`, `parent_span_id`, `request_id` | Every message |
-| Message | `type`, `capability_type`, `source_id`, `destination_id` | Every message |
+| Identity | `record_id`, `trace_id`, `span_id`, `parent_span_id`, `request_id` | Most message types |
+| Message | `type`, `capability_type`, `source_id`, `destination_id` | Varies by type — see matrix |
 | Routing | `decision`, `selected_service`, `candidates_considered`, `registry_source` | Requests and escalations |
-| Validation | `envelope_valid`, `content_schema_valid`, `authentication_verified` | Every message |
-| Timing | `received_at`, `routed_at`, `dispatcher_overhead_ms` | Every message |
+| Validation | `envelope_valid`, `content_schema_valid`, `authentication_verified` | Requests |
+| Timing | `received_at`, `routed_at`, `dispatcher_overhead_ms` | Most message types |
 | Constraints | `deadline`, `remaining_budget_ms` | Requests |
 | Provenance | `grade`, `grade_meets_requirement` | Responses and escalations |
 | Resources | `service_latency_ms`, `cost_budget_remaining` | Responses |
 | Errors | `error_code`, `error_detail`, `retry_count` | Errors and retries |
-| Dispatcher | `dispatcher_id`, `ccdp_version` | Every message |
+| Dispatcher | `dispatcher_id`, `ccdp_version` | Most message types |
 
-**Per-message-type requirements.** Not all audit fields are meaningful for every message type. The following matrix defines which fields are REQUIRED (R), RECOMMENDED (S), or not applicable (—) for each message type:
+Not all audit fields are meaningful for every message type. The per-message-type audit requirements matrix below is the normative source for which audit fields are REQUIRED (R), RECOMMENDED (S), or not applicable (—) for each message type; the category table above is informative summary only.
 
 | Field | REQUEST | RESPONSE | ESCALATION | NOTIFICATION | HEALTH_REQ | HEALTH_RESP | DECOMP_RESULT |
 |---|---|---|---|---|---|---|---|
@@ -222,7 +224,7 @@ If the audit store is unavailable, the Dispatcher MUST follow its deployment-con
 
 - **`fail_closed`** (RECOMMENDED for production): The Dispatcher MUST reject incoming requests with error `-32603` (internal error) and `data.reason` of `"audit_unavailable"` until the audit store recovers. No messages are processed without audit.
 - **`buffer`**: The Dispatcher buffers audit records locally (in memory or on local disk) and continues processing messages. Buffered records MUST be flushed to the audit store when it recovers. The buffer MUST have a bounded size; when the buffer is full, the Dispatcher falls back to `fail_closed`.
-- **`degrade`**: The Dispatcher continues processing messages without audit. This mode MUST NOT be used in production deployments. If used, the Dispatcher MUST set a metadata flag `org.ccdp.audit_gap: true` on all messages processed during the gap, and MUST log the gap duration and message count when the audit store recovers.
+- **`degrade`**: The Dispatcher continues processing messages without audit. The `degrade` policy is non-conformant — a Dispatcher operating in `degrade` mode does not meet CCDP Core conformance requirements. It exists solely as a development/debugging mode. Implementations MUST NOT enable `degrade` in any deployment that claims CCDP conformance. If used, the Dispatcher MUST set a metadata flag `org.ccdp.audit_gap: true` on all messages processed during the gap, and MUST log the gap duration and message count when the audit store recovers.
 
 The audit failure policy MUST be declared in the Dispatcher's deployment configuration and MUST be discoverable via the Dispatcher's own health endpoint.
 

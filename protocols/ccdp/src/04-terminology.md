@@ -16,7 +16,7 @@ This section defines terms used throughout this specification. Terms defined her
 
 **Capability Type.** A string identifier for a class of cognitive function, using reverse-domain notation (e.g., `org.ccdp.deduction`, `org.ccdp.planning`). The protocol defines a set of well-known Capability Types (Section 8.3); implementations MAY define additional types through the Registry.
 
-**Conformance Level.** The level of protocol compliance claimed by an implementation: Core (all MUST requirements) or Full (all MUST and SHOULD requirements). See Section 16.4.
+**Conformance Level.** The level of protocol compliance claimed by an implementation: Core (all Core requirements) or Full (all Core requirements plus all Full requirements). Conformance is defined by explicit, stably-identified requirement tables (`DISP-CORE-NNN`, `DISP-FULL-NNN`), not by the sum of all SHOULD statements in the specification. See Section 16.4.
 
 **Content.** The payload of a CCDP message — the actual cognitive input or output. Content is opaque to the Dispatcher: the Dispatcher MUST NOT interpret, transform, or make routing decisions based on Content. The Dispatcher MAY perform structural validation of Content against JSON Schemas and MAY resolve typed references within Content wrappers during decomposition plan execution (Section 14). These are structural operations, not semantic interpretation (see Structural Validation vs Semantic Interpretation below). Content structure is governed by the Capability Record's input and output schemas.
 

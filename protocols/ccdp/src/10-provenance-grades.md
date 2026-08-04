@@ -12,9 +12,11 @@ The provenance system is grounded in two theoretical foundations:
 
 ## 10.2. Grade Taxonomy
 
-Eight provenance grades are defined, ordered from weakest to strongest epistemic standing. The ordering is strict: each grade implies all guarantees of the grades below it plus additional guarantees.
+Eight provenance grades are defined, ordered from weakest to strongest epistemic standing. The grades are numbered 0–7. For routing and conformance purposes, a higher-numbered grade satisfies any request requiring a lower-numbered grade (the policy-order property defined in Section 10.2.1). This ordering is a protocol convention, not a claim about universal epistemic subsumption — see the caveat below.
 
-**Ordering caveat.** This ordering is a *policy order* for routing and conformance, not a universal epistemic truth. The ordering holds for the protocol's primary use case — selecting services and evaluating whether a response meets a requester's quality threshold. It does not hold in all epistemic contexts: HUMAN_ATTESTED does not imply deterministic COMPUTED (a human reviewer may not have performed the computation); CROSS_CHECKED does not imply VALIDATED against an external criterion unless validation was part of each independent process. The ordering reflects the protocol's design judgment that grades higher on the ladder are harder to achieve and more expensive to fake (the Spence signaling criterion), not that every higher grade subsumes every lower grade's specific method. Consumers with domain-specific epistemic requirements SHOULD inspect the `evidence` entries rather than relying solely on grade comparison.
+### 10.2.1. Policy Order
+
+This ordering is a *policy order* for routing and conformance, not a universal epistemic truth. The ordering holds for the protocol's primary use case — selecting services and evaluating whether a response meets a requester's quality threshold. It does not hold in all epistemic contexts: HUMAN_ATTESTED does not imply deterministic COMPUTED (a human reviewer may not have performed the computation); CROSS_CHECKED does not imply VALIDATED against an external criterion unless validation was part of each independent process. The ordering reflects the protocol's design judgment that grades higher on the ladder are harder to achieve and more expensive to fake (the Spence signaling criterion), not that every higher grade subsumes every lower grade's specific method. Consumers with domain-specific epistemic requirements SHOULD inspect the `evidence` entries rather than relying solely on grade comparison.
 
 ### Grade 0: OPAQUE
 
@@ -67,6 +69,8 @@ The distinction from COMPUTED: VALIDATED results have been checked by an indepen
 
 The result was independently produced by multiple services using different methods, and the results are consistent. The services did not share intermediate state, prompts, or reasoning — they arrived at the same conclusion independently. Independence has degrees. Full independence means different algorithms, different training data, different infrastructure. Partial independence (same model family but different prompts, or same algorithm with different seeds) provides weaker cross-checking. A service assigning CROSS_CHECKED MUST include evidence entries documenting the independence level: `"independence": "full"` (different methods/implementations), `"independence": "partial"` (same method family, different instances/seeds), or `"independence": "replicated"` (identical replicas — this does NOT qualify for CROSS_CHECKED and MUST be graded at the individual replica's level).
 
+Partial independence qualifies for CROSS_CHECKED only when the independent components differ in at least one of: algorithm/method, training data source, or implementation. Same-seed or same-prompt variations of the same model are `"replicated"` and MUST NOT be graded CROSS_CHECKED. The evidence entry MUST document which independence dimension(s) differ.
+
 Typical sources: multiple LLMs generating the same answer without seeing each other's work, a symbolic solver and a numerical solver agreeing, independent human reviewers reaching the same conclusion.
 
 The distinction from VALIDATED: CROSS_CHECKED results are checked not just by one external criterion but by independent *production processes*. Cross-checking detects errors that no single validation method would catch — the error would need to be shared across independent processes, which is unlikely when the processes use different algorithms or representations.
@@ -84,7 +88,7 @@ A service assigning FORMALLY_VERIFIED MUST:
 - Include an evidence entry of type `"proof-object"` with an `artifact_ref` pointing to the proof.
 - The proof MUST be independently checkable — a claim of "formally verified" without a checkable proof artifact is at best VALIDATED.
 
-The proof checker, specification identifier (including version), artifact hash, and verification environment SHOULD be recorded in evidence entries to enable reproducible verification. A claim of FORMALLY_VERIFIED that cannot be independently reproduced is, for practical purposes, VALIDATED.
+Evidence entries for FORMALLY_VERIFIED responses MUST include: proof checker identifier and version, specification identifier and version, artifact hash (in the `artifact_ref.integrity` field), and verification environment description. A FORMALLY_VERIFIED claim that cannot be independently reproduced is, for conformance purposes, VALIDATED.
 
 **The specification-recursion caveat:** FORMALLY_VERIFIED means "this result is correct *relative to this specification*." It does not mean the specification is correct. The grade is silent on whether the specification captures the intended behavior. Consumers of FORMALLY_VERIFIED results SHOULD examine the `scope` field to understand what claim is actually being made and SHOULD track the specification's own provenance separately.
 
@@ -106,7 +110,7 @@ This does not mean human judgment is infallible. It means that within the CCDP a
 
 A Service MUST follow these rules when assigning a Provenance Grade to a Response:
 
-1. **Accuracy over aspiration.** Assign the grade that *accurately describes* the epistemic status of the result, not the grade the requester asked for. If the requester wanted VALIDATED but the Service could only achieve ASSERTED, the Response MUST carry grade ASSERTED (and the Service SHOULD escalate if `provenance_requirement.min_grade` was set higher).
+1. **Accuracy over aspiration.** Assign the grade that *accurately describes* the epistemic status of the result, not the grade the requester asked for. If the requester wanted VALIDATED but the Service could only achieve ASSERTED, the Response MUST carry grade ASSERTED (and the Service SHOULD escalate if `provenance_requirement.min_policy_grade` was set higher).
 
 2. **Evidence required.** A grade above ASSERTED MUST be accompanied by evidence entries that substantiate it. A grade without supporting evidence MUST NOT be assigned — the Service MUST fall back to ASSERTED.
 
@@ -209,9 +213,9 @@ The composition trace provides full transparency into how the final grade was de
 
 ## 10.6. Worked Examples [Informative]
 
-**Example 1: When HUMAN_ATTESTED is required despite formal verification.** A legal compliance check requires that a human compliance officer reviewed and signed off on the determination. Even if a formal verifier proves the logic correct, the regulatory requirement mandates human attestation. The requester sets `min_grade: HUMAN_ATTESTED`; a FORMALLY_VERIFIED response would not satisfy the requirement.
+**Example 1: When HUMAN_ATTESTED is required despite formal verification.** A legal compliance check requires that a human compliance officer reviewed and signed off on the determination. Even if a formal verifier proves the logic correct, the regulatory requirement mandates human attestation. The requester sets `min_policy_grade: HUMAN_ATTESTED`; a FORMALLY_VERIFIED response would not satisfy the requirement.
 
-**Example 2: When FORMALLY_VERIFIED is required despite human attestation.** A cryptographic protocol implementation requires machine-checkable correctness proofs. A human expert's review (HUMAN_ATTESTED) provides confidence but not the reproducible, automated verification the deployment requires. The requester sets `min_grade: FORMALLY_VERIFIED`.
+**Example 2: When FORMALLY_VERIFIED is required despite human attestation.** A cryptographic protocol implementation requires machine-checkable correctness proofs. A human expert's review (HUMAN_ATTESTED) provides confidence but not the reproducible, automated verification the deployment requires. The requester sets `required_methods: ["formal_verification"]` — HUMAN_ATTESTED alone, despite ranking higher in the policy order, would not satisfy this requirement because it lacks a machine-checkable proof.
 
 These examples illustrate why the grade ordering is a policy order, not a universal epistemic hierarchy — and why consumers with specific needs should inspect evidence entries.
 

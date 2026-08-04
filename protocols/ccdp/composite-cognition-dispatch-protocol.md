@@ -122,7 +122,7 @@ status: Draft Specification
 - [17. Security Considerations](#section-17)
   - [17.1. Threat Model](#section-17-1)
   - [17.2. Known Attack Vectors](#section-17-2)
-  - [17.3. NSA/CISA Recommendations Applied to CCDP](#section-17-3)
+  - [17.3. NSA/CISA AI Deployment Security Baseline Mapping](#section-17-3)
   - [17.4. Honest Limitations](#section-17-4)
 - [18. References](#section-18)
   - [18.1. Normative References](#section-18-1)
@@ -307,7 +307,7 @@ This section defines terms used throughout this specification. Terms defined her
 
 **Capability Type.** A string identifier for a class of cognitive function, using reverse-domain notation (e.g., `org.ccdp.deduction`, `org.ccdp.planning`). The protocol defines a set of well-known Capability Types (Section 8.3); implementations MAY define additional types through the Registry.
 
-**Conformance Level.** The level of protocol compliance claimed by an implementation: Core (all MUST requirements) or Full (all MUST and SHOULD requirements). See Section 16.4.
+**Conformance Level.** The level of protocol compliance claimed by an implementation: Core (all Core requirements) or Full (all Core requirements plus all Full requirements). Conformance is defined by explicit, stably-identified requirement tables (`DISP-CORE-NNN`, `DISP-FULL-NNN`), not by the sum of all SHOULD statements in the specification. See Section 16.4.
 
 **Content.** The payload of a CCDP message — the actual cognitive input or output. Content is opaque to the Dispatcher: the Dispatcher MUST NOT interpret, transform, or make routing decisions based on Content. The Dispatcher MAY perform structural validation of Content against JSON Schemas and MAY resolve typed references within Content wrappers during decomposition plan execution (Section 14). These are structural operations, not semantic interpretation (see Structural Validation vs Semantic Interpretation below). Content structure is governed by the Capability Record's input and output schemas.
 
@@ -520,7 +520,7 @@ The four modes share a critical property: **modes are interchangeable without ch
 
 This is the architectural basis for incremental automation: start with everything in Mode 4 and the Dispatcher is trivially simple (a message router to human queues). Then, one Service at a time, substitute in a more automated implementation. The Dispatcher never gets smarter; the Services behind it get more capable.
 
-Mode substitution has multiple protocol-visible effects: Provenance Grade, cost (different modes have different cost profiles), latency, evidence entries (different methods produce different evidence), signing (some modes may not support signing), and isolation properties. For example, a Mode 2 replacement will report FORMALLY_VERIFIED where the Mode 4 predecessor reported HUMAN_ATTESTED. Consumers of the output can use the Provenance Grade to calibrate their trust — the protocol ensures the change in backing implementation is transparent through the epistemic metadata. Mode substitution is transparent only when the consumer's `provenance_requirement.min_grade` is met by the replacement mode's typical grade. A consumer requiring `HUMAN_ATTESTED` cannot be served by a Mode 2 replacement reporting `FORMALLY_VERIFIED` unless the consumer's policy accepts formal verification as equivalent for that claim type. Deployments SHOULD configure mode-substitution policies per capability type that account for all these effects, not just provenance.
+Mode substitution has multiple protocol-visible effects: Provenance Grade, cost (different modes have different cost profiles), latency, evidence entries (different methods produce different evidence), signing (some modes may not support signing), and isolation properties. For example, a Mode 2 replacement will report FORMALLY_VERIFIED where the Mode 4 predecessor reported HUMAN_ATTESTED. Consumers of the output can use the Provenance Grade to calibrate their trust — the protocol ensures the change in backing implementation is transparent through the epistemic metadata. Mode substitution is transparent only when the consumer's `provenance_requirement.min_policy_grade` is met by the replacement mode's typical grade. A consumer requiring `HUMAN_ATTESTED` cannot be served by a Mode 2 replacement reporting `FORMALLY_VERIFIED` unless the consumer's policy accepts formal verification as equivalent for that claim type. Deployments SHOULD configure mode-substitution policies per capability type that account for all these effects, not just provenance.
 
 <a id="section-5-4"></a>
 ## The Decomposition Service
@@ -670,7 +670,7 @@ The Epistemic Layer carries the information that makes CCDP different from a gen
 - `cost_consumed`: the actual resources consumed by the Service
 - `capacity`: the Service's current available capacity
 
-The Dispatcher reads selected Layer 3 fields for routing and enforcement purposes: `provenance_requirement.min_grade` for candidate filtering, `cost_budget` for cost-aware routing, and `deadline`/`remaining_budget_ms` for deadline enforcement. This is structural use of typed metadata, not semantic interpretation of content. It MAY enforce structural rules (e.g., reject a Response missing the `provenance` field) but MUST NOT interpret their content (e.g., the Dispatcher does not evaluate whether a Provenance Grade is accurate — that is the Service's responsibility, subject to audit).
+The Dispatcher reads selected Layer 3 fields for routing and enforcement purposes: `provenance_requirement.min_policy_grade` for candidate filtering, `cost_budget` for cost-aware routing, and `deadline`/`remaining_budget_ms` for deadline enforcement. This is structural use of typed metadata, not semantic interpretation of content. It MAY enforce structural rules (e.g., reject a Response missing the `provenance` field) but MUST NOT interpret their content (e.g., the Dispatcher does not evaluate whether a Provenance Grade is accurate — that is the Service's responsibility, subject to audit).
 
 <a id="section-6-2-4"></a>
 ### Layer 4: Content
@@ -826,7 +826,7 @@ In addition to Common fields, REQUEST envelopes carry:
       "monetary_unit": "USD"
     },
     "provenance_requirement": {
-      "min_grade": "VALIDATED"
+      "min_policy_grade": "VALIDATED"
     },
     "priority": "NORMAL",
     "idempotency_key": null
@@ -846,7 +846,15 @@ In addition to Common fields, REQUEST envelopes carry:
 
 **`cost_budget`** (object, OPTIONAL): Resource constraints on the request. All sub-fields are optional; omitted fields indicate no constraint. `max_compute_seconds` caps wall-clock compute time. `max_tokens` caps token consumption (for LLM services). `max_monetary_cost` caps monetary cost. `monetary_unit` is the ISO 4217 currency code. The Dispatcher MAY use cost_budget for routing decisions (prefer cheaper services). Services MUST NOT exceed the cost_budget; if they would, they MUST return an Escalation with reason `BUDGET_EXCEEDED`. For backward compatibility with v0.1 implementations, Dispatchers SHOULD accept `max_monetary_units` as an alias for `max_monetary_cost` in request envelopes.
 
-**`provenance_requirement`** (object, OPTIONAL): The minimum acceptable Provenance Grade for the response. If the Service cannot achieve this grade, it MUST return an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and the grade it could achieve. If omitted, no minimum grade is required.
+**`provenance_requirement`** (object, OPTIONAL on REQUEST/ESCALATION): Specifies the minimum evidence quality acceptable for the response.
+
+- **`min_policy_grade`** (integer 0–7 or grade name, OPTIONAL): The minimum grade in the policy order. The Dispatcher filters candidate services whose maximum achievable grade is below this value. Replaces the former `min_grade` field.
+- **`required_methods`** (array of strings, OPTIONAL): Evidence methods that MUST appear in the response's evidence entries. Values are evidence `type` strings (e.g., `"formal_verification"`, `"human_review"`, `"independent_cross_check"`). When present, a response satisfies the requirement only if its evidence entries include at least one entry of each required type, regardless of the overall grade.
+- **`required_evidence_types`** (array of strings, OPTIONAL): Specific evidence artifact types that MUST be present (e.g., `"proof_certificate"`, `"signed_attestation"`). When present, a response satisfies the requirement only if its evidence entries include artifact references of each specified type.
+
+When only `min_policy_grade` is set, the Dispatcher uses simple `>=` grade comparison (backward-compatible with v0.2's `min_grade`). When `required_methods` or `required_evidence_types` are also set, the Dispatcher uses them as additional filters: a candidate service's Capability Record MUST advertise the ability to produce the required evidence types, and the response is validated post-receipt against the requirement.
+
+If the Service cannot meet the requirement, it MUST return an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and the grade (and evidence types, if applicable) it could achieve. If `provenance_requirement` is omitted, no minimum grade or evidence is required.
 
 **`priority`** (string, OPTIONAL): One of `"LOW"`, `"NORMAL"`, `"HIGH"`, `"CRITICAL"`. Defaults to `"NORMAL"`. Services MAY use priority for internal scheduling. The Dispatcher MAY use priority as a tiebreaker in routing decisions.
 
@@ -934,7 +942,7 @@ An Escalation is a structured response indicating the Service cannot fulfill the
 - **`reason`** (string, REQUIRED): One of the defined escalation reasons (Section 13.3).
 - **`detail`** (string, OPTIONAL): Human-readable explanation.
 - **`achieved_grade`** (string, OPTIONAL): The Provenance Grade the Service could achieve, if it produced a partial result.
-- **`requested_grade`** (string, OPTIONAL): The grade that was requested via `provenance_requirement.min_grade`.
+- **`requested_grade`** (string, OPTIONAL): The grade that was requested via `provenance_requirement.min_policy_grade`.
 - **`suggested_target`** (string, OPTIONAL): A Service ID or Capability Type the Dispatcher should try next.
 - **`partial_result_available`** (boolean, REQUIRED): Whether the Content of this message contains a partial result.
 
@@ -1267,6 +1275,8 @@ A Capability Record describes one Service's implementation of one Capability Typ
       "evidence_types": ["proof-object", "counterexample"]
     },
 
+    "supported_evidence_types": ["formal_verification", "proof_certificate"],
+
     "health_check": {
       "endpoint": "https://z3-prover-01.internal:8443/ccdp/health",
       "interval_seconds": 30,
@@ -1325,6 +1335,8 @@ A Capability Record describes one Service's implementation of one Capability Typ
 - `max_grade`: The highest grade this Service can assign to its output.
 - `typical_grade`: The grade most responses will carry.
 - `evidence_types`: Array of Evidence types this Service can produce (e.g., `"proof-object"`, `"test-result"`, `"human-signature"`).
+
+**`supported_evidence_types`** (array of strings, OPTIONAL): Evidence types this service can produce (e.g., `["formal_verification", "proof_certificate"]`). Used by the Dispatcher for `provenance_requirement.required_methods` and `required_evidence_types` matching (Section 9.2, Step 5).
 
 **`health_check`** (object, REQUIRED): Health monitoring configuration.
 - `endpoint`: URL for health check probes.
@@ -1539,9 +1551,12 @@ If all candidate services are filtered out by deadline, the Dispatcher MUST retu
 
 ### Step 5: Provenance Filter
 
-If `envelope.provenance_requirement.min_grade` is set, remove Services whose `provenance_capabilities.max_grade` is below the required grade.
+The Dispatcher applies the `provenance_requirement` fields (Section 7.3.2) in two stages:
 
-If no candidate service can meet the Request's `provenance_requirement.min_grade`, the Dispatcher MUST NOT silently route to a lower-grade service. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32005`) or `"escalate"` (treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, routing through the escalation chain to find a service that can meet the grade requirement). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
+1. **`min_policy_grade` (fast filter).** If set, remove Services whose `provenance_capabilities.max_grade` is below the required grade — a direct comparison against the Capability Record.
+2. **`required_methods` and `required_evidence_types` (capability filter).** If set, remove Services whose Capability Record `supported_evidence_types` (Section 8.2.2) does not include every required method and evidence type. This is a Registry-declared capability check performed at routing time; the Dispatcher validates the actual response against the requirement post-receipt (Section 10.3), since a Service's declared `supported_evidence_types` is not a per-response guarantee.
+
+If no candidate service can meet the Request's `provenance_requirement`, the Dispatcher MUST NOT silently route to a service that cannot meet it. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32005`) or `"escalate"` (treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, routing through the escalation chain to find a service that can meet the requirement). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
 
 ### Step 6: Cost-Aware Ranking
 
@@ -1652,9 +1667,12 @@ The provenance system is grounded in two theoretical foundations:
 <a id="section-10-2"></a>
 ## Grade Taxonomy
 
-Eight provenance grades are defined, ordered from weakest to strongest epistemic standing. The ordering is strict: each grade implies all guarantees of the grades below it plus additional guarantees.
+Eight provenance grades are defined, ordered from weakest to strongest epistemic standing. The grades are numbered 0–7. For routing and conformance purposes, a higher-numbered grade satisfies any request requiring a lower-numbered grade (the policy-order property defined in Section 10.2.1). This ordering is a protocol convention, not a claim about universal epistemic subsumption — see the caveat below.
 
-**Ordering caveat.** This ordering is a *policy order* for routing and conformance, not a universal epistemic truth. The ordering holds for the protocol's primary use case — selecting services and evaluating whether a response meets a requester's quality threshold. It does not hold in all epistemic contexts: HUMAN_ATTESTED does not imply deterministic COMPUTED (a human reviewer may not have performed the computation); CROSS_CHECKED does not imply VALIDATED against an external criterion unless validation was part of each independent process. The ordering reflects the protocol's design judgment that grades higher on the ladder are harder to achieve and more expensive to fake (the Spence signaling criterion), not that every higher grade subsumes every lower grade's specific method. Consumers with domain-specific epistemic requirements SHOULD inspect the `evidence` entries rather than relying solely on grade comparison.
+<a id="section-10-2-1"></a>
+### Policy Order
+
+This ordering is a *policy order* for routing and conformance, not a universal epistemic truth. The ordering holds for the protocol's primary use case — selecting services and evaluating whether a response meets a requester's quality threshold. It does not hold in all epistemic contexts: HUMAN_ATTESTED does not imply deterministic COMPUTED (a human reviewer may not have performed the computation); CROSS_CHECKED does not imply VALIDATED against an external criterion unless validation was part of each independent process. The ordering reflects the protocol's design judgment that grades higher on the ladder are harder to achieve and more expensive to fake (the Spence signaling criterion), not that every higher grade subsumes every lower grade's specific method. Consumers with domain-specific epistemic requirements SHOULD inspect the `evidence` entries rather than relying solely on grade comparison.
 
 ### Grade 0: OPAQUE
 
@@ -1707,6 +1725,8 @@ The distinction from COMPUTED: VALIDATED results have been checked by an indepen
 
 The result was independently produced by multiple services using different methods, and the results are consistent. The services did not share intermediate state, prompts, or reasoning — they arrived at the same conclusion independently. Independence has degrees. Full independence means different algorithms, different training data, different infrastructure. Partial independence (same model family but different prompts, or same algorithm with different seeds) provides weaker cross-checking. A service assigning CROSS_CHECKED MUST include evidence entries documenting the independence level: `"independence": "full"` (different methods/implementations), `"independence": "partial"` (same method family, different instances/seeds), or `"independence": "replicated"` (identical replicas — this does NOT qualify for CROSS_CHECKED and MUST be graded at the individual replica's level).
 
+Partial independence qualifies for CROSS_CHECKED only when the independent components differ in at least one of: algorithm/method, training data source, or implementation. Same-seed or same-prompt variations of the same model are `"replicated"` and MUST NOT be graded CROSS_CHECKED. The evidence entry MUST document which independence dimension(s) differ.
+
 Typical sources: multiple LLMs generating the same answer without seeing each other's work, a symbolic solver and a numerical solver agreeing, independent human reviewers reaching the same conclusion.
 
 The distinction from VALIDATED: CROSS_CHECKED results are checked not just by one external criterion but by independent *production processes*. Cross-checking detects errors that no single validation method would catch — the error would need to be shared across independent processes, which is unlikely when the processes use different algorithms or representations.
@@ -1724,7 +1744,7 @@ A service assigning FORMALLY_VERIFIED MUST:
 - Include an evidence entry of type `"proof-object"` with an `artifact_ref` pointing to the proof.
 - The proof MUST be independently checkable — a claim of "formally verified" without a checkable proof artifact is at best VALIDATED.
 
-The proof checker, specification identifier (including version), artifact hash, and verification environment SHOULD be recorded in evidence entries to enable reproducible verification. A claim of FORMALLY_VERIFIED that cannot be independently reproduced is, for practical purposes, VALIDATED.
+Evidence entries for FORMALLY_VERIFIED responses MUST include: proof checker identifier and version, specification identifier and version, artifact hash (in the `artifact_ref.integrity` field), and verification environment description. A FORMALLY_VERIFIED claim that cannot be independently reproduced is, for conformance purposes, VALIDATED.
 
 **The specification-recursion caveat:** FORMALLY_VERIFIED means "this result is correct *relative to this specification*." It does not mean the specification is correct. The grade is silent on whether the specification captures the intended behavior. Consumers of FORMALLY_VERIFIED results SHOULD examine the `scope` field to understand what claim is actually being made and SHOULD track the specification's own provenance separately.
 
@@ -1747,7 +1767,7 @@ This does not mean human judgment is infallible. It means that within the CCDP a
 
 A Service MUST follow these rules when assigning a Provenance Grade to a Response:
 
-1. **Accuracy over aspiration.** Assign the grade that *accurately describes* the epistemic status of the result, not the grade the requester asked for. If the requester wanted VALIDATED but the Service could only achieve ASSERTED, the Response MUST carry grade ASSERTED (and the Service SHOULD escalate if `provenance_requirement.min_grade` was set higher).
+1. **Accuracy over aspiration.** Assign the grade that *accurately describes* the epistemic status of the result, not the grade the requester asked for. If the requester wanted VALIDATED but the Service could only achieve ASSERTED, the Response MUST carry grade ASSERTED (and the Service SHOULD escalate if `provenance_requirement.min_policy_grade` was set higher).
 
 2. **Evidence required.** A grade above ASSERTED MUST be accompanied by evidence entries that substantiate it. A grade without supporting evidence MUST NOT be assigned — the Service MUST fall back to ASSERTED.
 
@@ -1857,9 +1877,9 @@ The composition trace provides full transparency into how the final grade was de
 <a id="section-10-6"></a>
 ## Worked Examples [Informative]
 
-**Example 1: When HUMAN_ATTESTED is required despite formal verification.** A legal compliance check requires that a human compliance officer reviewed and signed off on the determination. Even if a formal verifier proves the logic correct, the regulatory requirement mandates human attestation. The requester sets `min_grade: HUMAN_ATTESTED`; a FORMALLY_VERIFIED response would not satisfy the requirement.
+**Example 1: When HUMAN_ATTESTED is required despite formal verification.** A legal compliance check requires that a human compliance officer reviewed and signed off on the determination. Even if a formal verifier proves the logic correct, the regulatory requirement mandates human attestation. The requester sets `min_policy_grade: HUMAN_ATTESTED`; a FORMALLY_VERIFIED response would not satisfy the requirement.
 
-**Example 2: When FORMALLY_VERIFIED is required despite human attestation.** A cryptographic protocol implementation requires machine-checkable correctness proofs. A human expert's review (HUMAN_ATTESTED) provides confidence but not the reproducible, automated verification the deployment requires. The requester sets `min_grade: FORMALLY_VERIFIED`.
+**Example 2: When FORMALLY_VERIFIED is required despite human attestation.** A cryptographic protocol implementation requires machine-checkable correctness proofs. A human expert's review (HUMAN_ATTESTED) provides confidence but not the reproducible, automated verification the deployment requires. The requester sets `required_methods: ["formal_verification"]` — HUMAN_ATTESTED alone, despite ranking higher in the policy order, would not satisfy this requirement because it lacks a machine-checkable proof.
 
 These examples illustrate why the grade ordering is a policy order, not a universal epistemic hierarchy — and why consumers with specific needs should inspect evidence entries.
 
@@ -1914,6 +1934,7 @@ An audit record is generated for every Message that the Dispatcher processes. Th
 {
   "audit_record": {
     "record_id": "audit-550e8400-e29b-41d4-a716-446655440000",
+    "audit_schema_version": "1.0",
     "timestamp": "2026-08-03T14:30:00.145Z",
 
     "trace_context": {
@@ -1962,8 +1983,8 @@ An audit record is generated for every Message that the Dispatcher processes. Th
     "constraints": {
       "deadline": "2026-08-03T14:31:00.000Z",
       "remaining_budget_ms": 59877,
-      "cost_budget": { "max_monetary_units": 0.50, "monetary_unit": "USD" },
-      "provenance_requirement": { "min_grade": "VALIDATED" }
+      "cost_budget": { "max_monetary_cost": "0.50", "monetary_unit": "USD" },
+      "provenance_requirement": { "min_policy_grade": "VALIDATED" }
     },
 
     "dispatcher_id": "dispatcher-prod-01",
@@ -1981,6 +2002,7 @@ When the Dispatcher receives a Response from a Service and forwards it to the re
 {
   "audit_record": {
     "record_id": "audit-resp-550e8400-...",
+    "audit_schema_version": "1.0",
     "timestamp": "2026-08-03T14:30:04.850Z",
 
     "trace_context": { /* ... */ },
@@ -2006,7 +2028,7 @@ When the Dispatcher receives a Response from a Service and forwards it to the re
       "service_compute_seconds": 4.7,
       "service_tokens_consumed": null,
       "total_latency_ms": 4727,
-      "cost_budget_remaining": { "monetary_units": 0.499, "monetary_unit": "USD" }
+      "cost_budget_remaining": { "monetary_units": "0.499", "monetary_unit": "USD" }
     },
 
     "validation": {
@@ -2042,7 +2064,7 @@ Escalation audit records include the escalation context and the routing chain:
       "type": "ESCALATION",
       "request_id": "550e8400-...",
       "source_id": "llm-verifier-01",
-      "escalation_reason": "CONFIDENCE_BELOW_THRESHOLD",
+      "escalation_reason": "PROVENANCE_BELOW_REQUIREMENT",
       "achieved_grade": "HEURISTIC",
       "requested_grade": "VALIDATED"
     },
@@ -2072,29 +2094,29 @@ The Dispatcher MUST:
 2. Generate a new `span_id` for each hop through the Dispatcher.
 3. Set `parent_span_id` on forwarded messages to the incoming message's `span_id`.
 4. Include the W3C `traceparent` header on HTTP requests to Services.
-5. Preserve the `tracestate` header if present, appending a CCDP-specific entry: `ccdp=dispatcher_id`. The Dispatcher appends `ccdp=<dispatcher_id>` to the `tracestate` header. If the `tracestate` header would exceed 512 bytes after appending, the Dispatcher MUST truncate the oldest entries (leftmost) to make room, per W3C Trace Context [W3C-TC] §3.3.2.1. The Dispatcher MUST sanitize `tracestate` values: strip control characters and validate against the W3C tracestate grammar before forwarding.
+5. Preserve the `tracestate` header if present, appending a CCDP-specific entry: `ccdp=dispatcher_id`. The Dispatcher appends `ccdp=<dispatcher_id>` to the `tracestate` header. If the `tracestate` header would exceed 512 bytes after appending, the Dispatcher MUST truncate the oldest entries (leftmost) to make room, per W3C Trace Context [W3C-TC] §3.3.2.1. W3C Trace Context §3.3.2.1 specifies that the rightmost entries are the most recently added. Truncating leftmost entries removes the oldest vendor data, which is the least likely to be needed by downstream components. However, some vendors may depend on ordering semantics. If the Dispatcher cannot safely truncate, it SHOULD omit its own `ccdp=<dispatcher_id>` entry rather than truncating other vendors' entries, and log the omission. The Dispatcher MUST sanitize `tracestate` values: strip control characters and validate against the W3C tracestate grammar before forwarding.
 
 This ensures that CCDP traces are compatible with standard distributed tracing infrastructure (OpenTelemetry, Jaeger, Zipkin). Services that use tracing internally can link their internal spans to the CCDP trace.
 
 <a id="section-11-4"></a>
 ## Mandatory Audit Fields
 
-The following audit data MUST be recorded for every Message processed by the Dispatcher. Implementations MUST NOT make any of these fields optional or configurable:
+Audit data is organized into the following categories. Implementations MUST NOT make any field marked REQUIRED in the per-message-type matrix below optional or configurable for the message types where it applies:
 
-| Category | Fields | When recorded |
+| Category | Fields | Typical applicability |
 |----------|--------|---------------|
-| Identity | `record_id`, `trace_id`, `span_id`, `parent_span_id`, `request_id` | Every message |
-| Message | `type`, `capability_type`, `source_id`, `destination_id` | Every message |
+| Identity | `record_id`, `trace_id`, `span_id`, `parent_span_id`, `request_id` | Most message types |
+| Message | `type`, `capability_type`, `source_id`, `destination_id` | Varies by type — see matrix |
 | Routing | `decision`, `selected_service`, `candidates_considered`, `registry_source` | Requests and escalations |
-| Validation | `envelope_valid`, `content_schema_valid`, `authentication_verified` | Every message |
-| Timing | `received_at`, `routed_at`, `dispatcher_overhead_ms` | Every message |
+| Validation | `envelope_valid`, `content_schema_valid`, `authentication_verified` | Requests |
+| Timing | `received_at`, `routed_at`, `dispatcher_overhead_ms` | Most message types |
 | Constraints | `deadline`, `remaining_budget_ms` | Requests |
 | Provenance | `grade`, `grade_meets_requirement` | Responses and escalations |
 | Resources | `service_latency_ms`, `cost_budget_remaining` | Responses |
 | Errors | `error_code`, `error_detail`, `retry_count` | Errors and retries |
-| Dispatcher | `dispatcher_id`, `ccdp_version` | Every message |
+| Dispatcher | `dispatcher_id`, `ccdp_version` | Most message types |
 
-**Per-message-type requirements.** Not all audit fields are meaningful for every message type. The following matrix defines which fields are REQUIRED (R), RECOMMENDED (S), or not applicable (—) for each message type:
+Not all audit fields are meaningful for every message type. The per-message-type audit requirements matrix below is the normative source for which audit fields are REQUIRED (R), RECOMMENDED (S), or not applicable (—) for each message type; the category table above is informative summary only.
 
 | Field | REQUEST | RESPONSE | ESCALATION | NOTIFICATION | HEALTH_REQ | HEALTH_RESP | DECOMP_RESULT |
 |---|---|---|---|---|---|---|---|
@@ -2126,7 +2148,7 @@ If the audit store is unavailable, the Dispatcher MUST follow its deployment-con
 
 - **`fail_closed`** (RECOMMENDED for production): The Dispatcher MUST reject incoming requests with error `-32603` (internal error) and `data.reason` of `"audit_unavailable"` until the audit store recovers. No messages are processed without audit.
 - **`buffer`**: The Dispatcher buffers audit records locally (in memory or on local disk) and continues processing messages. Buffered records MUST be flushed to the audit store when it recovers. The buffer MUST have a bounded size; when the buffer is full, the Dispatcher falls back to `fail_closed`.
-- **`degrade`**: The Dispatcher continues processing messages without audit. This mode MUST NOT be used in production deployments. If used, the Dispatcher MUST set a metadata flag `org.ccdp.audit_gap: true` on all messages processed during the gap, and MUST log the gap duration and message count when the audit store recovers.
+- **`degrade`**: The Dispatcher continues processing messages without audit. The `degrade` policy is non-conformant — a Dispatcher operating in `degrade` mode does not meet CCDP Core conformance requirements. It exists solely as a development/debugging mode. Implementations MUST NOT enable `degrade` in any deployment that claims CCDP conformance. If used, the Dispatcher MUST set a metadata flag `org.ccdp.audit_gap: true` on all messages processed during the gap, and MUST log the gap duration and message count when the audit store recovers.
 
 The audit failure policy MUST be declared in the Dispatcher's deployment configuration and MUST be discoverable via the Dispatcher's own health endpoint.
 
@@ -2380,7 +2402,7 @@ CCDP distinguishes three categories of failure, each with different protocol beh
 
 3. **Epistemic insufficiency** — the Service operates correctly but cannot meet the Request's epistemic requirements: the achieved provenance grade is below threshold, capability is exceeded, or the search space is exhausted without a determination. These are *not errors*. They are Escalations — structured routing events that the Dispatcher handles as normal protocol operations.
 
-The distinction between service errors and epistemic insufficiency is load-bearing. An HTTP 500 means something broke. An Escalation with reason `CONFIDENCE_BELOW_THRESHOLD` means the Service worked correctly and honestly reported that its best output does not meet the standard. The protocol handles these differently: errors trigger retries and circuit breakers; escalations trigger the Escalation Chain.
+The distinction between service errors and epistemic insufficiency is load-bearing. An HTTP 500 means something broke. An Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` means the Service worked correctly and honestly reported that its best output does not meet the standard. The protocol handles these differently: errors trigger retries and circuit breakers; escalations trigger the Escalation Chain.
 
 This is the "let it crash" principle applied to cognitive systems: a Service that cannot meet the standard *should* escalate rather than silently producing low-quality output that poisons everything built on it.
 
@@ -2407,7 +2429,10 @@ Protocol errors are returned as JSON-RPC 2.0 error responses. CCDP defines the f
 | `-32009` | Authorization denied | The sender is authenticated but not authorized for this Capability Type |
 | `-32010` | Schema validation failed | The Content does not conform to the Capability Record's input or output schema |
 | `-32011` | Replay detected | A message with this `request_id` and a different payload has already been processed |
-| `-32012` | Decomposition depth exceeded | Maximum recursive decomposition depth reached (Section 14.6) |
+| `-32012` | Decomposition limit exceeded | A decomposition plan exceeds the configured depth, width, or total-node limit (Section 14.6). The `data` object MUST include `limit_type` (`"depth"`, `"width"`, or `"total_nodes"`), `limit_value` (the configured maximum), and `actual_value` (the plan's value). |
+| `-32014` | Rate limited | The Dispatcher is rate-limiting the requester. The `data` object MUST include `retry_after_ms` (integer). |
+
+For every CCDP error code, the `data` object MUST include at minimum: `trace_id` (string), `request_id` (string), and `timestamp` (ISO 8601). Error-specific fields are defined per code in the table above. This ensures that errors are audit-correlatable even when the full envelope is unavailable.
 
 Error responses include structured detail:
 
@@ -2427,6 +2452,8 @@ Error responses include structured detail:
         }
       ],
       "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "timestamp": "2026-08-03T14:30:00.145Z",
       "dispatcher_id": "dispatcher-prod-01"
     }
   }
@@ -2442,7 +2469,7 @@ Escalation is a first-class message type, not an error. The following escalation
 
 | Reason | Meaning | Typical Next Step |
 |--------|---------|-------------------|
-| `CONFIDENCE_BELOW_THRESHOLD` | Service produced a result but at a lower provenance grade than requested | Route to higher-capability Service or human |
+| `PROVENANCE_BELOW_REQUIREMENT` | The Service determined that it cannot produce a response meeting the requested `provenance_requirement` (Section 7.3.2): its achievable grade is below `min_policy_grade`, or it cannot produce evidence of the required `required_methods` or `required_evidence_types`. The escalation includes the best grade the Service could achieve and the requirement it could not meet. | Route to higher-capability Service or human |
 | `CAPABILITY_EXCEEDED` | The request exceeds the Service's capability (too complex, wrong domain) | Route to different Service with broader capability |
 | `DEADLINE_INSUFFICIENT` | Remaining deadline budget is insufficient for this Service to complete | Route to faster Service or return partial result |
 | `DEADLINE_APPROACHING` | Service started work but cannot finish before deadline; partial result available | Forward partial result; route remainder to faster Service |
@@ -2477,7 +2504,7 @@ The algorithm:
 
 1. Receive Escalation from Service A.
 2. Log the Escalation in the audit trail with full context.
-3. If `escalation.suggested_target` is set and the target is healthy, route to it.
+3. If `escalation.suggested_target` is set and the target is healthy, route to it. Suggested targets from the escalating Service MUST pass the same full routing checks as chain targets (Step 5): authorization, capability match, provenance feasibility, deadline, budget, and isolation. A Service's suggestion is a routing hint, not a policy override.
 4. Otherwise, walk Service A's `escalation_chain` in order.
 5. For each chain target:
    a. If the target is a Service ID, check health and route if healthy.
@@ -2487,7 +2514,7 @@ The algorithm:
    e. Verify the remaining cost budget is sufficient for the target's cost hints.
    f. Verify the target can meet the request's data-class/isolation requirements (from Registry metadata).
    g. If any check fails, skip the target and continue to the next in the chain. Log the skip reason in the audit trail.
-6. If all chain targets are exhausted, route to `org.ccdp.human_review` as the terminal target.
+6. If all chain targets are exhausted, route to `org.ccdp.human_review` as the terminal target. The human-review fallback MUST still pass authorization and data-class checks. If the requester's token does not authorize `org.ccdp.human_review`, or if the request's data-class/isolation requirements cannot be met by the human queue, the Dispatcher MUST return error `-32006` (escalation chain exhausted) rather than silently routing to an unauthorized or non-compliant target.
 7. If no human review Service is available, return error `-32006`.
 
 The Dispatcher MUST forward the original Request (not the Escalation) to the next target in the chain. The Dispatcher accumulates partial results from prior escalation targets in the forwarded Request's metadata under `org.ccdp.partial_results`. The most recent escalating Service's partial result is in that Service's ESCALATION message Content (the canonical location per Section 7.3.4). The metadata accumulation provides downstream Services and human reviewers with the full escalation history.
@@ -2503,7 +2530,7 @@ As a Request traverses the Escalation Chain, the Dispatcher accumulates escalati
     "org.ccdp.escalation_history": [
       {
         "service_id": "llm-verifier-01",
-        "reason": "CONFIDENCE_BELOW_THRESHOLD",
+        "reason": "PROVENANCE_BELOW_REQUIREMENT",
         "achieved_grade": "HEURISTIC",
         "timestamp": "2026-08-03T14:30:05.000Z"
       },
@@ -2708,7 +2735,7 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
           "constraints": {
             "deadline_fraction": 0.2,
             "cost_fraction": 0.1,
-            "provenance_requirement": { "min_grade": "VALIDATED" }
+            "provenance_requirement": { "min_policy_grade": "VALIDATED" }
           },
           "depends_on": []
         },
@@ -2726,7 +2753,7 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
           "constraints": {
             "deadline_fraction": 0.7,
             "cost_fraction": 0.8,
-            "provenance_requirement": { "min_grade": "FORMALLY_VERIFIED" }
+            "provenance_requirement": { "min_policy_grade": "FORMALLY_VERIFIED" }
           },
           "depends_on": ["sub-001"]
         },
@@ -2745,7 +2772,7 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
           "constraints": {
             "deadline_fraction": 0.1,
             "cost_fraction": 0.1,
-            "provenance_requirement": { "min_grade": "ASSERTED" }
+            "provenance_requirement": { "min_policy_grade": "ASSERTED" }
           },
           "depends_on": ["sub-002"]
         }
@@ -2806,7 +2833,7 @@ The dependency graph is defined by the `depends_on` arrays on each sub-request e
 
 Sub-requests with empty `depends_on` arrays can execute in parallel. The Dispatcher SHOULD execute independent sub-requests concurrently when resources permit.
 
-The `dependencies` top-level field in the plan is OPTIONAL. If present, it is informative only (e.g., for visualization) and MUST be consistent with the `depends_on` arrays. In case of conflict, the `depends_on` arrays are authoritative.
+The `dependencies` top-level field is OPTIONAL and informative (e.g., for visualization tooling). If present, it SHOULD be consistent with the `depends_on` arrays. In case of conflict, the `depends_on` arrays are authoritative and the `dependencies` field is ignored.
 
 <a id="section-14-3-3"></a>
 ### Typed Result References
@@ -2823,7 +2850,7 @@ Sub-request content MAY reference results from completed dependencies using type
 
 **`$ref`** (string, REQUIRED): The sub-request ID whose result is referenced, suffixed with `.result` to refer to the Response Content.
 
-**`path`** (string, REQUIRED): A JSON Pointer [RFC 6901] path into the referenced result's Content.
+**`path`** (string, REQUIRED): A JSON Pointer [RFC 6901] path into the referenced result's Content. The JSON Pointer path in a result reference is evaluated relative to the referenced sub-request's Response `content` object. For example, if sub-001's Response has `"content": {"type": "text", "body": {"translation": "..."}}`, the path `/body/translation` resolves to the translation string. The root is `content`, not the full Response envelope.
 
 **`fallback`** (any, OPTIONAL): The value to use if the referenced path does not exist in the result. If omitted and the path does not exist, the Dispatcher follows the plan's `fallback` strategy.
 
@@ -2839,7 +2866,7 @@ The `composition` field specifies how sub-results are assembled into the final r
 **`method`** (string, REQUIRED): One of:
 - `"template"`: Assemble parts according to a template (most common).
 - `"concatenation"`: Concatenate sub-results in dependency order.
-- `"selection"`: Select the best sub-result by a criterion (useful for cross-checking).
+- `"selection"`: Select the best sub-result by a criterion (useful for cross-checking). Allowed `selection` criteria are: `"highest_provenance"` (select the sub-result with the highest provenance grade in policy order), `"lowest_cost"` (select the sub-result with the lowest reported cost), `"first_completed"` (select the first sub-result to arrive — for latency-optimized redundant dispatch). Other selection criteria require routing to an `org.ccdp.composition` Service, as they may involve semantic judgment.
 - `"custom"`: A custom composition function (specified as a Content payload routed to a composition Service).
 
 When `method` is `"custom"`, the composition payload is routed to a Service with capability type `org.ccdp.composition`. This is a well-known capability type (added to Section 8.3's well-known types). The Composition Service receives the sub-results and the composition specification and returns the composed result. The Dispatcher does not perform custom composition itself — it delegates to the Composition Service and forwards the result.
@@ -2864,6 +2891,16 @@ The `fallback` field specifies what happens when sub-requests fail:
 **`on_composition_failure`** (string, REQUIRED): One of:
 - `"return_partial"`: Return the individual sub-results without composition as a multipart Response.
 - `"escalate_parent"`: Escalate the entire request.
+
+**Fallback behavior matrix.** The following matrix summarizes default Dispatcher behavior for common failure scenarios during plan execution:
+
+| Scenario | Default Behavior | Configurable? |
+|---|---|---|
+| Referenced dependency failed | Use `fallback` value if specified; otherwise escalate the parent request | Plan-level `on_failure` field |
+| Referenced dependency escalated (partial result) | Use partial result if `$ref` path resolves; otherwise use `fallback`; otherwise escalate parent | Plan-level |
+| All sub-requests succeeded, composition fails | Escalate parent request with all sub-results as partial results | No — always escalate |
+| Width or node limit exceeded | Reject plan with error `-32012` before execution begins | No — always reject |
+| Partial sub-results with mixed success | Compose available results; include `org.ccdp.partial_composition: true` metadata flag | Plan-level `partial_composition_policy` |
 
 <a id="section-14-4"></a>
 ## Dispatcher Execution of Decomposition Plans
@@ -2890,7 +2927,7 @@ When the Dispatcher receives a DECOMPOSITION_RESULT, it executes the plan:
 
 **Composition boundary.** For `template`, `concatenation`, and `selection` composition methods, the Dispatcher performs structural assembly: it places sub-results into the template slots, concatenates them in order, or selects by a typed criterion (highest provenance grade, lowest cost). These are mechanical operations on typed wrappers, consistent with the Coordinator Dispatcher model. The Dispatcher MUST NOT perform composition that requires reasoning about content meaning — such composition MUST be routed to an `org.ccdp.composition` Service.
 
-7. **Compute composed provenance.** Apply the `provenance_rule` to derive the composed result's provenance grade. Include the full `composition_trace` (Section 10.5.4).
+7. **Compute composed provenance.** Apply the `provenance_rule` to derive the composed result's provenance grade. Include the full `composition_trace` (Section 10.5.4). The Dispatcher creates derived provenance for the composed response using the composition rules in Section 10.5. This is a new provenance value computed from the sub-results' grades — the Dispatcher does not modify any sub-result's received provenance. The derived provenance for the composed response MUST include evidence entries documenting which sub-results contributed and which composition rule was applied.
 
 8. **Return the composed Response.** Send the final Response to the original requester with the composed Content and Provenance.
 
@@ -2916,9 +2953,9 @@ The Decomposition Service is a natural candidate for Mode 3 (LLM + validator): a
 
 A sub-request in a Decomposition Plan MAY itself have `capability_type: "org.ccdp.decomposition"`, producing a nested decomposition. The Dispatcher handles this recursively: the sub-decomposition produces its own plan, which the Dispatcher executes as a nested sub-tree of the parent plan.
 
-To prevent unbounded recursion, the Dispatcher MUST enforce a maximum decomposition depth (RECOMMENDED: 5). If a decomposition exceeds the maximum depth, the Dispatcher returns error `-32012` for the deepest sub-request.
+To prevent unbounded recursion, the Dispatcher MUST enforce a maximum decomposition depth (RECOMMENDED: 5). If a decomposition exceeds the maximum depth, the Dispatcher returns error `-32012` (decomposition limit exceeded, Section 13.2) for the deepest sub-request, with `data.limit_type` set to `"depth"`.
 
-The Dispatcher MUST also enforce maximum plan width (the number of sub-requests in a single plan) and maximum total node count (the total number of sub-requests across all recursion levels for a single top-level request). RECOMMENDED limits: maximum width 50 per plan, maximum total nodes 100 per top-level request. These limits prevent decomposition bombs (Section 17.2.5) and are conformance requirements for both Core and Full Dispatchers.
+The Dispatcher MUST also enforce maximum plan width (the number of sub-requests in a single plan) and maximum total node count (the total number of sub-requests across all recursion levels for a single top-level request). RECOMMENDED limits: maximum width 50 per plan, maximum total nodes 100 per top-level request. A plan that exceeds the width or total-node limit is rejected before execution begins with error `-32012`, with `data.limit_type` set to `"width"` or `"total_nodes"` respectively. These limits prevent decomposition bombs (Section 17.2.5) and are conformance requirements for both Core and Full Dispatchers.
 
 The audit trail records the full tree of decompositions, enabling reconstruction of arbitrarily complex request execution paths.
 
@@ -2928,7 +2965,9 @@ The audit trail records the full tree of decompositions, enabling reconstruction
 <a id="section-15-1"></a>
 ## Security Posture
 
-Security in CCDP is a protocol guarantee, not an implementation recommendation. This design choice is a direct response to the NSA/CISA assessment of MCP, which found that MCP's security posture is "highly dependent on implementation discipline rather than protocol guarantees" — a dependency that fails unpredictably across deployments.
+CCDP defines security requirements at the protocol level — authentication, authorization, token scoping, message signing, and replay protection. Some requirements (mutual TLS, bearer-token validation) are enforced by the protocol infrastructure. Others (isolation, workload attestation) are protocol requirements that depend on deployment infrastructure for enforcement. The protocol specifies what must be true; the deployment ensures it is true.
+
+This design choice is a direct response to the MCP release-candidate retrospective [MCP-2026-07-28], which found that a security posture "highly dependent on implementation discipline rather than protocol guarantees" fails unpredictably across deployments.
 
 Every CCDP deployment MUST implement the security requirements in this section. There are no "development mode" exceptions in the specification — while individual deployments MAY relax requirements in non-production environments, the protocol defines a security floor that conforming implementations MUST meet in production.
 
@@ -2954,7 +2993,7 @@ External requesters (humans, applications, other systems) MUST be authenticated 
 
 - Tokens MUST be scoped to specific Capability Types. A token authorized for `org.ccdp.language.generation` MUST NOT be accepted for `org.ccdp.deduction`.
 - Tokens MUST have a bounded lifetime (expiration timestamp). The Dispatcher MUST reject expired tokens.
-- Tokens SHOULD be issued by an OAuth 2.0 authorization server using Pushed Authorization Requests [RFC 9126] with PKCE [RFC 7636]. Implementations requiring issuer validation SHOULD follow [RFC 9207].
+- Tokens SHOULD be issued by an OAuth 2.0 authorization server using Pushed Authorization Requests [RFC 9126] with PKCE [RFC 7636]. Implementations requiring issuer validation SHOULD follow [RFC 9207]. PAR and PKCE apply to the authorization-code issuance flow — how tokens are obtained from the authorization server. They are best practices for token issuance, not requirements for token validation. The Dispatcher, acting as a resource server, validates tokens by checking signature/introspection, expiration, audience, and scope (Section 15.3). The issuance-flow recommendations apply to authorization-server deployments, not to CCDP Dispatchers.
 - Tokens MUST be transmitted in the HTTP `Authorization` header.
 
 **Token format.** This specification does not mandate a specific token format. Implementations MAY use JWT [RFC 7519] with the claims listed above, opaque tokens validated by introspection [RFC 7662], or any other bearer token format that supports the required properties (scope, expiration, audience binding). If JWT is used, the Dispatcher MUST validate the signature, expiration, audience (`aud` claim matching the Dispatcher's identifier), and scope claims. If opaque tokens are used, the Dispatcher MUST validate them via the authorization server's introspection endpoint.
@@ -3034,16 +3073,29 @@ A Service MAY sign its Response envelope and content using a digital signature:
 
 The signature covers the specified fields. The Dispatcher MUST preserve the signature in the metadata when forwarding (per the metadata preservation rule, Section 7.7). The requester can verify the signature using the Service's public key (obtained from the Registry or a key server).
 
-**Canonicalization.** Signing JSON fields requires a deterministic serialization. Implementations MUST use JSON Canonicalization Scheme (JCS) [RFC 8785] to produce a canonical byte sequence before signing. The `signed_fields` array identifies which top-level fields are included; the canonical form is computed over the ordered concatenation of each field's JCS-canonical representation. Fields not listed in `signed_fields` are excluded from the signature and MAY be modified by intermediaries (e.g., the Dispatcher's `audit` annotation).
+**Canonicalization.** Signing JSON fields requires a deterministic serialization. Implementations MUST use JSON Canonicalization Scheme (JCS) [RFC 8785] to produce a canonical byte sequence before signing. The signature input is computed by constructing a JSON object containing exactly the fields listed in `signed_fields`, in the order they appear in the array, and computing the JCS [RFC 8785] canonical form of that object. This produces an unambiguous byte sequence. Example: if `signed_fields` is `["envelope", "content"]`, the signature input is `JCS({"envelope": <envelope-value>, "content": <content-value>})`. Fields not listed in `signed_fields` are excluded from the signature and MAY be modified by intermediaries (e.g., the Dispatcher's `audit` annotation).
 
 **Mutable and immutable fields.** The following envelope fields are designated as *Dispatcher-mutable* — the Dispatcher MAY write or update them after the originator or Service has signed the message: `audit`, `remaining_budget_ms`, and metadata keys in the `org.ccdp.dispatcher.*` namespace. All other envelope fields and the entire `content` object are *immutable after signing*. The `signed_fields` array MUST NOT include Dispatcher-mutable fields, and the Dispatcher MUST NOT modify immutable fields on a signed message. A signature that covers a Dispatcher-mutable field is invalid by construction — the verifier MUST reject it.
 
 Message signing is OPTIONAL for CCDP Core conformance. For CCDP Full conformance, message signing is REQUIRED for Services that produce responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, and RECOMMENDED for all other Services. For deployments spanning untrusted administrative domains (different organizations, different cloud regions), message signing is REQUIRED regardless of conformance level.
 
+For responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, the `signed_fields` array MUST include `"content"` and `"provenance"` — the cognitive output and its evidence chain are the highest-value fields for integrity verification. For other grades, including content and provenance in signed fields is RECOMMENDED.
+
 <a id="section-15-4-3"></a>
 ### Provenance Integrity
 
-Provenance grades and evidence entries are security-relevant — a tampered provenance grade can cause a consumer to over-trust a result. The Dispatcher MUST NOT modify provenance fields. If application-level signing is used, provenance fields SHOULD be included in the signed fields.
+Provenance grades and evidence entries are security-relevant — a tampered provenance grade can cause a consumer to over-trust a result. The Dispatcher MUST NOT modify received provenance fields. If application-level signing is used, provenance fields SHOULD be included in the signed fields.
+
+<a id="section-15-4-4"></a>
+### Signing Profiles
+
+CCDP defines two signing profiles with different mutable-field sets:
+
+**Requester-outbound profile.** Applied by the Requester when sending a Request. Mutable fields: `audit`, `remaining_budget_ms`, metadata keys in `org.ccdp.dispatcher.*`. The Requester signs all other fields. The Dispatcher verifies the Requester's signature before processing.
+
+**Service-response profile.** Applied by a Service when sending a Response or Escalation. Mutable fields: `audit`, metadata keys in `org.ccdp.dispatcher.*`. The `remaining_budget_ms` field is NOT mutable in responses (it is not meaningful on response messages). The Dispatcher verifies the Service's signature before forwarding to the Requester.
+
+The `signature` object carries a `profile` field (`"requester"` or `"service"`) identifying which profile was used. Verifiers MUST check the profile and reject signatures that include Dispatcher-mutable fields for the specified profile.
 
 <a id="section-15-5"></a>
 ## Replay Protection
@@ -3110,6 +3162,8 @@ Services that require credentials (API keys, database passwords, etc.) MUST NOT 
 
 The Dispatcher MUST NOT log, cache, or inspect bearer tokens beyond what is necessary for authentication. Token values MUST be redacted in audit logs.
 
+Implementations MAY cache token validation decisions (the result of signature verification or introspection) for the token's remaining lifetime, subject to a deployment-configured maximum cache TTL (RECOMMENDED: 300 seconds). Caching the validation decision is distinct from caching the token value itself. The Dispatcher SHOULD NOT retain raw token strings beyond the request-processing lifetime.
+
 <a id="section-15-8"></a>
 ## Rate Limiting as Security
 
@@ -3127,78 +3181,75 @@ Rate limiting parameters are deployment-configured, not protocol-specified.
 <a id="section-16-1"></a>
 ## Conforming Dispatcher
 
-A conforming Dispatcher MUST implement all of the following:
+Dispatcher conformance requirements are organized by conformance level rather than by function. Each requirement has a stable identifier (`DISP-CORE-NNN`, `DISP-FULL-NNN`, or `DISP-OPT-NNN`) for cross-reference and conformance testing. The `Source Section` column identifies where the requirement's substantive rules are defined.
 
 <a id="section-16-1-1"></a>
-### Message Processing
+### Core Dispatcher Requirements
 
-1. Parse all CCDP message types defined in Section 7.2.
-2. Validate envelope structure: reject messages with missing REQUIRED fields or invalid field types (Section 7.3).
-3. Validate `ccdp_version`: reject messages with unrecognized versions.
-4. Preserve and forward all unknown `metadata` fields without modification (Section 7.7).
+A CCDP Core Dispatcher MUST satisfy all requirements in this table.
 
-4a. Respect metadata directionality: keys in `org.ccdp.request.*` are request-directional (preserve on forwarded requests, do not copy to responses); keys in `org.ccdp.response.*` are response-directional (preserve on forwarded responses, do not copy to subsequent requests). Keys with sensitivity labels (defined by deployment policy) MUST be stripped at administrative domain boundaries. Keys without a directional prefix are bidirectional.
-5. Never perform semantic interpretation of message Content — never reason about what content means, never make routing decisions based on content meaning. The Dispatcher MAY perform structural validation (JSON Schema checking) and structural operations (typed-reference resolution, template assembly, size checks) on Content as specified in Sections 7, 8, and 14. See the Structural Validation vs Semantic Interpretation definition in Section 4.
-6. Never modify message Content.
-7. Never modify Provenance grades, Evidence entries, or composition traces.
+| ID | Requirement | Source Section |
+|---|---|---|
+| DISP-CORE-001 | Parse all CCDP message types. | 7.2 |
+| DISP-CORE-002 | Validate envelope structure: reject messages with missing REQUIRED fields or invalid field types. | 7.3 |
+| DISP-CORE-003 | Validate `ccdp_version`: reject messages with unrecognized versions. | 7.3.1 |
+| DISP-CORE-004 | Preserve and forward all unknown `metadata` fields without modification. | 7.7 |
+| DISP-CORE-005 | Respect metadata directionality: `org.ccdp.request.*` keys are request-directional, `org.ccdp.response.*` keys are response-directional, keys without a directional prefix are bidirectional. Strip sensitivity-labeled keys at administrative domain boundaries. | 7.7 |
+| DISP-CORE-006 | Never perform semantic interpretation of message Content. MAY perform structural validation and structural operations (typed-reference resolution, template assembly, size checks). | 4, 7, 8, 14 |
+| DISP-CORE-007 | Never mutate received Content. Derived Content constructed during Decomposition Plan execution is a structural operation, not a modification of received values. | 4 (Received vs Derived) |
+| DISP-CORE-008 | Never mutate received Provenance grades, Evidence entries, or composition traces. Derived Provenance computed from sub-result grades during plan execution is a structural operation, not a modification of received values. | 4 (Received vs Derived), 10.5 |
+| DISP-CORE-009 | Authenticate all incoming messages. | 15.2 |
+| DISP-CORE-010 | Reject unauthenticated messages with error `-32008`. | 15.2 |
+| DISP-CORE-011 | Enforce capability-based authorization: reject requests for unauthorized Capability Types with error `-32009`. | 15.3 |
+| DISP-CORE-012 | Validate bearer token scopes, expiration, and cost limits. | 15.3.2 |
+| DISP-CORE-013 | Implement the routing algorithm. | 9.2 |
+| DISP-CORE-014 | Query the Registry for service lookup. | 8.4.2 |
+| DISP-CORE-015 | Filter candidates by health status, deadline, and provenance requirement (`min_policy_grade`, `required_methods`, `required_evidence_types`). | 9.2 |
+| DISP-CORE-016 | Route escalations through the Escalation Chain, including authorization/budget/isolation checks on suggested and chain targets. | 13.4, 9.4 |
+| DISP-CORE-017 | Log all routing decisions in the audit trail. | 9.2 |
+| DISP-CORE-018 | Propagate deadline and `remaining_budget_ms` at every hop. | 12.4 |
+| DISP-CORE-019 | Reject requests that have already exceeded their deadline with error `-32007`. | 13.2 |
+| DISP-CORE-020 | Generate a structured audit record for every message processed. | 11.2 |
+| DISP-CORE-021 | Record all mandatory audit fields per the per-message-type matrix. | 11.4 |
+| DISP-CORE-022 | Propagate W3C Trace Context. | 11.3 |
+| DISP-CORE-023 | Probe Service health at the intervals specified in Capability Records. | 13.6 |
+| DISP-CORE-024 | Maintain a routing table with health status and circuit breaker state. | 9.7 |
+| DISP-CORE-025 | Implement circuit breaker logic. | 9.6, 13.6.2 |
+| DISP-CORE-026 | Require TLS 1.3 or later for all Service communication. | 15.2 |
+| DISP-CORE-027 | Implement replay protection. | 15.5 |
+| DISP-CORE-028 | Never execute or interpret Content. | 15.6.2 |
+| DISP-CORE-029 | Redact bearer tokens in audit logs. | 15.7 |
+| DISP-CORE-030 | Validate Decomposition Plans received from a Decomposition Service: acyclic dependency graph, valid capability types, valid resource allocations, and depth/width/total-node limits. A Core Dispatcher validates plans but is not required to execute them (Section 16.5). | 14, 14.6 |
 
 <a id="section-16-1-2"></a>
-### Authentication and Authorization
+### Full Dispatcher Requirements
 
-8. Authenticate all incoming messages (Section 15.2).
-9. Reject unauthenticated messages with error `-32008`.
-10. Enforce capability-based authorization: reject requests for unauthorized Capability Types with error `-32009` (Section 15.3).
-11. Validate bearer token scopes, expiration, and cost limits.
+A CCDP Full Dispatcher MUST satisfy all Core requirements plus all requirements in this table.
+
+| ID | Requirement | Source Section |
+|---|---|---|
+| DISP-FULL-001 | Validate Request Content against the target Service's input schema before forwarding. | 8.2.2 |
+| DISP-FULL-002 | Validate Response Content against the Service's output schema before forwarding to the requester. | 8.2.2 |
+| DISP-FULL-003 | Execute Decomposition Plans: dispatch sub-requests, resolve typed result references, compose results using structural methods (template, concatenation, selection). Route custom composition to an `org.ccdp.composition` Service. | 14.4 |
+| DISP-FULL-004 | Enforce maximum decomposition depth, width, and total-node limits during recursive execution. | 14.6 |
+| DISP-FULL-005 | Support recursive decomposition (nested Decomposition Plans). | 14.6 |
+| DISP-FULL-006 | Verify application-level message signatures on responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED before forwarding. | 15.4.2 |
+| DISP-FULL-007 | Write audit records to a tamper-evident store (cryptographic chaining, integrity-verified append-only storage, or write-once medium). | 11.5 |
+| DISP-FULL-008 | Support provenance-aware ranking in routing (candidates whose `typical_grade` meets or exceeds the request's provenance requirement are preferred). | 9.2 |
 
 <a id="section-16-1-3"></a>
-### Routing
+### Optional Capabilities
 
-12. Implement the routing algorithm defined in Section 9.2.
-13. Query the Registry for service lookup (Section 8.4.2).
-14. Filter candidates by health status, deadline, and provenance requirement.
-15. Route escalations through the Escalation Chain (Section 13.4).
-16. Log all routing decisions in the audit trail.
+The following capabilities are optional at any conformance level. Implementations that support them MUST follow the specified behavior.
 
-<a id="section-16-1-4"></a>
-### Schema Validation
-
-17. Validate Request Content against the target Service's input schema before forwarding (Section 8.2.2).
-18. Validate Response Content against the Service's output schema before forwarding to the requester. For CCDP Core conformance, this validation is RECOMMENDED. For CCDP Full conformance, this validation is REQUIRED.
-
-<a id="section-16-1-5"></a>
-### Deadline Enforcement
-
-19. Propagate deadline and `remaining_budget_ms` at every hop (Section 12.4).
-20. Reject requests that have already exceeded their deadline with error `-32007`.
-
-<a id="section-16-1-6"></a>
-### Audit
-
-21. Generate a structured audit record for every message processed (Section 11.2).
-22. Record all mandatory audit fields (Section 11.4).
-23. Propagate W3C Trace Context (Section 11.3).
-
-<a id="section-16-1-7"></a>
-### Health Monitoring
-
-24. Probe Service health at the intervals specified in Capability Records (Section 13.6).
-25. Maintain a routing table with health status and circuit breaker state (Section 9.7).
-26. Implement circuit breaker logic (Section 9.6).
-
-<a id="section-16-1-8"></a>
-### Security
-
-27. Require TLS 1.3 or later for all Service communication (Section 15.2).
-28. Implement replay protection (Section 15.5).
-29. Never execute or interpret Content (Section 15.6.2).
-30. Redact bearer tokens in audit logs (Section 15.7).
-
-<a id="section-16-1-9"></a>
-### Decomposition Execution
-
-31. Validate Decomposition Plans received from a Decomposition Service: acyclic dependency graph, valid capability types, valid resource allocations, width and total-node limits (Section 14). [CORE]
-32. Execute Decomposition Plans: dispatch sub-requests, resolve typed result references, compose results using structural methods (template, concatenation, selection). Route custom composition to an `org.ccdp.composition` Service. [FULL]
-33. Enforce maximum decomposition depth, width, and total-node limits (Section 14.6). [CORE for validation, FULL for execution]
+| ID | Capability | Behavior | Source Section |
+|---|---|---|---|
+| DISP-OPT-001 | Message signing for responses below grade FORMALLY_VERIFIED/HUMAN_ATTESTED | RECOMMENDED; when implemented, follows the same canonicalization and signing-profile rules as required signing. | 15.4.2, 15.4.4 |
+| DISP-OPT-002 | Workload attestation | When implemented, the Service provides a signed attestation that its runtime matches declared isolation requirements. | 15.6.1 |
+| DISP-OPT-003 | Registry query caching and stale-cache fallback | When implemented, cached results MAY be used during brief Registry outages; staleness MUST be logged in the audit trail. | 8.6 |
+| DISP-OPT-004 | Static routing table fallback | When implemented, used only if both the Registry and its cache are unavailable; MUST be logged in the audit trail. | 8.6 |
+| DISP-OPT-005 | Per-Service rate limiting based on capacity advertisements | When implemented, follows the load-shedding behavior described in Section 12.5; all rate-limiting decisions MUST be logged. | 12.5 |
+| DISP-OPT-006 | Token validation decision caching | When implemented, bounded by a deployment-configured maximum TTL (RECOMMENDED: 300 seconds); raw token strings MUST NOT be retained beyond the request-processing lifetime. | 15.7 |
 
 <a id="section-16-2"></a>
 ## Conforming Service
@@ -3211,7 +3262,7 @@ A conforming Service MUST implement all of the following:
 1. Accept CCDP Request messages and return CCDP Response, Escalation, or Error messages (Section 7).
 2. Include the `ccdp_version` field on all messages.
 3. Use the `request_id` from the Request on the corresponding Response.
-4. Preserve and forward all unknown `metadata` fields from the Request to the Response.
+4. Preserve and forward all unknown `metadata` fields from the Request to the Response. Services MUST respect metadata directionality: keys in `org.ccdp.request.*` are request-directional and SHOULD NOT be copied to Response messages. Keys in `org.ccdp.response.*` are response-directional. Keys without a directional prefix are bidirectional and MUST be preserved.
 
 <a id="section-16-2-2"></a>
 ### Contract Compliance
@@ -3232,7 +3283,7 @@ A conforming Service MUST implement all of the following:
 <a id="section-16-2-4"></a>
 ### Escalation
 
-13. Return an Escalation (not a low-provenance-grade Response) when the Service cannot meet the Request's `provenance_requirement.min_grade` (Section 13.3).
+13. Return an Escalation (not a low-provenance-grade Response) when the Service cannot meet the Request's `provenance_requirement` (Section 13.3).
 14. Return an Escalation when the Request would exceed the `cost_budget`.
 15. Return an Escalation when the `remaining_budget_ms` is insufficient to complete the work.
 16. Include `partial_result_available` on all Escalations.
@@ -3301,9 +3352,9 @@ A conforming Registry MUST implement all of the following:
 
 Implementations MAY claim conformance at one of two levels:
 
-**CCDP Core:** Implements all MUST requirements for the relevant component type (Dispatcher, Service, or Registry). This is the minimum for interoperability.
+**CCDP Core:** Implements all MUST requirements for the relevant component type (Dispatcher, Service, or Registry). For the Dispatcher, this is the Core requirements table (Section 16.1.1). This is the minimum for interoperability.
 
-**CCDP Full:** Implements all MUST and SHOULD requirements. Includes application-level message signing, cryptographic audit integrity, and advanced routing features (provenance-aware ranking, decomposition execution, recursive decomposition).
+**CCDP Full:** Full conformance requires all Core requirements plus all Full requirements listed in Section 16.1.2 (for the Dispatcher; analogous tables apply to Service and Registry requirements in Sections 16.2 and 16.3). SHOULD-level recommendations throughout the specification are best practices, not Full conformance obligations. Full conformance is defined by the explicit Full requirements table, not by the sum of all SHOULD statements.
 
 Implementations MUST declare their conformance level in their documentation and in the Registry (for Services) via a `metadata` field: `"org.ccdp.conformance_level": "core"` or `"org.ccdp.conformance_level": "full"`.
 
@@ -3317,9 +3368,9 @@ Unknown metadata fields from a higher conformance level MUST be preserved and fo
 <a id="section-16-6"></a>
 ## Conformance Testing
 
-A future companion document will define a conformance test suite for CCDP Core and Full implementations. Each MUST requirement in this section is intended to correspond to one or more testable assertions. Implementations claiming conformance SHOULD publish their test results against the conformance suite when it becomes available.
+A future companion document will define a conformance test suite for CCDP Core and Full implementations. Each requirement identifier in Sections 16.1–16.3 is intended to correspond to one or more testable assertions. Implementations claiming conformance SHOULD publish their test results against the conformance suite when it becomes available.
 
-Until the conformance suite is available, implementations SHOULD self-test against the following minimum verification:
+The conformance test suite and companion schemas are implementation prerequisites not yet published. Section 7.8 lists the planned schema inventory. Until both are available, implementations SHOULD self-test against the verification checklist below.
 
 1. Send a valid REQUEST and verify correct routing and RESPONSE.
 2. Send a REQUEST with an invalid envelope and verify error `-32602`.
@@ -3365,7 +3416,7 @@ The threat model does NOT assume:
 **Threat:** A malicious requester crafts Content that, when processed by an LLM Service, causes the LLM to produce unintended output (prompt injection) or exfiltrate data from its context.
 
 **CCDP mitigations:**
-- The Dispatcher never processes Content, so injection cannot affect routing.
+- The Dispatcher never semantically interprets Content — it does not reason about what content means. It performs structural operations on Content wrappers: schema validation, typed-reference resolution, and structural composition (Section 4, Structural Validation vs Semantic Interpretation). Injection cannot affect routing.
 - Input schema validation (Section 8.2.2) constrains the structural shape of Content, reducing the protocol-level attack surface. Schema validation does not mitigate semantic prompt-injection attacks — a structurally valid string can still be a prompt injection. Content-level injection defense is the Service's responsibility (see Section 17.4).
 - Services SHOULD implement their own input sanitization and output validation.
 
@@ -3387,17 +3438,18 @@ The threat model does NOT assume:
 <a id="section-17-2-3"></a>
 ### Registry Poisoning
 
-**Threat:** An attacker gains write access to the Registry and registers a malicious Service with a legitimate Capability Type, or modifies an existing Service's endpoint to redirect traffic.
+**Threat:** An attacker compromises Registry write access (e.g., by obtaining a Registry administrator credential) and injects or modifies Capability Records — registering a malicious Service under a legitimate Capability Type, redirecting an existing Service's endpoint to attacker-controlled infrastructure, lowering isolation requirements, or inflating provenance claims.
 
 **CCDP mitigations:**
 - Registry access control: only authorized identities may register or update records (Section 15.6.3).
-- Registration audit: all Registry modifications are logged with identity and timestamp.
+- Registration audit: all Registry modifications are logged with identity and timestamp, with the same rigor applied to code deployments.
 - Namespaced capability types: reverse-domain notation prevents accidental shadowing.
 - Schema validation at registration: the Registry validates schemas, preventing structurally malformed entries.
+- Multi-party approval SHOULD be required for Registry write operations on production registries.
+- Out-of-band record verification SHOULD be implemented: a second system independently validates that registered service endpoints match expected infrastructure.
+- Registry backup and rollback procedures MUST be documented.
 
 **Residual risk:** If an attacker compromises the Registry's authentication mechanism, they can redirect traffic. This is a single-point-of-failure risk inherent in a centralized registry. Deployments SHOULD implement Registry audit monitoring with alerts on unexpected modifications.
-
-**Registry poisoning.** If an attacker compromises Registry write access (e.g., by obtaining a Registry administrator credential), they can inject malicious Capability Records — redirecting requests to attacker-controlled Services, lowering isolation requirements, or inflating provenance claims. Mitigations: Registry write operations SHOULD require multi-party approval for production registries. Capability Record changes SHOULD be audited with the same rigor as code deployments. Deployments SHOULD implement out-of-band record verification (a second system independently validates that registered service endpoints match expected infrastructure). Registry backup and rollback procedures MUST be documented.
 
 <a id="section-17-2-4"></a>
 ### Escalation Chain Exploitation
@@ -3422,7 +3474,7 @@ The threat model does NOT assume:
 - Cost budget partitioning: the parent's cost budget is divided among sub-requests. Exponential decomposition rapidly exhausts the budget.
 - The Dispatcher validates plans before execution (Section 14.4), including resource allocation checks.
 
-**Residual risk:** A plan with many sub-requests at a single level (wide but shallow) is valid and could be expensive. Section 14.6 now defines normative limits: maximum plan width of 50 sub-requests and maximum total nodes of 100 per top-level request. These limits are conformance requirements enforced by the Dispatcher.
+**Residual risk:** A plan with many sub-requests at a single level (wide but shallow) is valid and could be expensive. Section 14.6 requires that Dispatchers enforce configurable maximum depth, width, and total-node limits. The RECOMMENDED default values (depth 5, width 50, total nodes 100) are defaults, not fixed requirements. The conformance obligation is that limits exist and are enforced, not that specific numeric values are used.
 
 <a id="section-17-2-6"></a>
 ### Replay Attacks
@@ -3458,11 +3510,11 @@ The threat model does NOT assume:
 **Residual risk:** Deployments processing highly sensitive data SHOULD restrict access to detailed timing data in audit records (e.g., aggregate to coarser time buckets in external-facing audit exports), apply field-level access controls on `compute_seconds` and latency fields, and limit who can query per-request audit records. Adding noise to audit records is NOT RECOMMENDED as it undermines audit accuracy.
 
 <a id="section-17-3"></a>
-## NSA/CISA Recommendations Applied to CCDP
+## NSA/CISA AI Deployment Security Baseline Mapping
 
-The NSA/CISA MCP Security Assessment [NSA MCP 2026] made specific recommendations. CCDP's response to each:
+The NSA/CISA AI deployment security guidance [NSA-CISA-2024] makes specific recommendations for securely deploying AI systems generally, not specific to any single protocol. This table maps those general recommendations to CCDP features — it is not a claim that CCDP was independently assessed against them.
 
-| NSA Recommendation | CCDP Response | Requirement Level |
+| NSA/CISA Recommendation | CCDP Response | Requirement Level |
 |---|---|---|
 | Mandatory authentication | Mutual TLS (Section 15.2) | REQUIRED (Core) |
 | Lifecycle-managed tokens | Bearer tokens with expiration and scope (Section 15.3) | REQUIRED (Core) |
@@ -3513,13 +3565,15 @@ These references are essential to the implementation of this specification.
 
 **[RFC 8785]** Rundgren, A., Jordan, B., and S. Erdtman, "JSON Canonicalization Scheme (JCS)," RFC 8785, June 2020. https://www.rfc-editor.org/rfc/rfc8785
 
+(Note: RFC 8785 is Informational, not Standards Track. CCDP takes a normative dependency on this Informational RFC for message-signing canonicalization. If a Standards Track canonicalization scheme becomes available, future CCDP versions may adopt it.)
+
 **[RFC 9207]** Meyer zu Selhausen, K. and D. Fett, "OAuth 2.0 Authorization Server Issuer Identification," RFC 9207, March 2022. https://www.rfc-editor.org/rfc/rfc9207
 
 **[JSON-RPC]** JSON-RPC Working Group, "JSON-RPC 2.0 Specification," 2010. https://www.jsonrpc.org/specification
 
 **[JSON-SCHEMA-2020-12]** Wright, A., Andrews, H., Hutton, B., and G. Dennis, "JSON Schema: A Media Type for Describing JSON Documents," draft-bhutton-json-schema-01, June 2022. https://json-schema.org/draft/2020-12/json-schema-core
 
-**[W3C-TC]** W3C, "Trace Context," W3C Recommendation, February 2020. https://www.w3.org/TR/trace-context/
+**[W3C-TC]** W3C, "Trace Context," W3C Recommendation, February 2020. https://www.w3.org/TR/trace-context/ <!-- VERIFY: w3.org returns HTTP 403 to automated requests as of 2026-08-04; likely bot/WAF blocking (W3C TR pages are stable, long-lived URLs) — a human should confirm in-browser. -->
 
 **[SemVer]** Preston-Werner, T., "Semantic Versioning 2.0.0." https://semver.org/
 
@@ -3548,15 +3602,15 @@ Demonstrated that typed contracts and code generation are achievable without the
 
 **[MCP-2026-07-28]** Model Context Protocol, "Release Candidate: The next generation of MCP," July 2026. https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/ (Blog post published May 21, 2026, announcing the July 28, 2026 release candidate.) (accessed 2026-08-03)
 
-**[NSA-MCP-2026]** National Security Agency / Cybersecurity and Infrastructure Security Agency, "Deploying AI Systems Securely: Best Practices for Deploying Secure and Resilient AI Systems," April 2024. https://media.defense.gov/2024/Apr/15/2003439257/-1/-1/0/CSI-DEPLOYING-AI-SYSTEMS-SECURELY.PDF
+**[NSA-CISA-2024]** National Security Agency / Cybersecurity and Infrastructure Security Agency, "Deploying AI Systems Securely: Best Practices for Deploying Secure and Resilient AI Systems," April 2024. https://media.defense.gov/2024/Apr/15/2003439257/-1/-1/0/CSI-DEPLOYING-AI-SYSTEMS-SECURELY.PDF <!-- VERIFY: media.defense.gov returns HTTP 403 to automated requests as of 2026-08-04; likely bot/WAF blocking rather than a dead link (the URL path and filename are consistent with the known April 2024 NSA/CISA publication), but a human should confirm in-browser before external publication. -->
 
-The security findings that drove CCDP's "security by default" principle.
+The general AI-deployment security findings that drove CCDP's "security by default" principle. See also [MCP-2026-07-28] for MCP-specific security posture findings.
 
 **[MCP-Faults-2026]** "Real Faults in MCP Software: A Comprehensive Taxonomy," arXiv:2603.05637, 2026. https://arxiv.org/html/2603.05637v1
 
 Analysis of 407 MCP-specific issues from 385 repositories documenting the consequences of loose protocol contracts.
 
-**[A2A]** Linux Foundation / Google, "Agent2Agent (A2A) Protocol Specification," 2025. https://a2a-protocol.org/latest/ (accessed 2026-08-03; the specification has moved from its original google.github.io/A2A/ location) — For background: Galileo AI, "Google Agent2Agent A2A Protocol Guide." https://galileo.ai/blog/google-agent2agent-a2a-protocol-guide (accessed 2026-08-03)
+**[A2A]** Linux Foundation / Google, "Agent2Agent (A2A) Protocol Specification," 2025. https://a2a-protocol.org/latest/specification (accessed 2026-08-04; the specification has moved from its original google.github.io/A2A/ location) — For background: Galileo AI, "Google Agent2Agent A2A Protocol Guide." https://galileo.ai/blog/google-agent2agent-a2a-protocol-guide (accessed 2026-08-03)
 
 **[Zylos-Interop]** Zylos Research, "Agent Interoperability Protocols 2026." https://zylos.ai/research/2026-03-26-agent-interoperability-protocols-mcp-a2a-acp-convergence/ (accessed 2026-08-03)
 
@@ -3668,17 +3722,19 @@ The references in this section are secondary or journalistic sources used for co
 
 **[AlphaProof]** DeepMind, "AlphaProof," *Nature*, 651:607, 2025. https://www.nature.com/articles/s41586-025-09833-y
 
-**[DreamCoder]** Ellis, K., et al., "DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning," PLDI 2021. https://dl.acm.org/doi/10.1145/3453483.3454080
+**[DreamCoder]** Ellis, K., et al., "DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning," PLDI 2021. https://dl.acm.org/doi/10.1145/3453483.3454080 <!-- VERIFY: dl.acm.org returns HTTP 403 to automated requests as of 2026-08-04; likely publisher bot-blocking, not a dead link — a human should confirm in-browser. -->
 
 **[Dehaene-GW]** Dehaene, S., Kerszberg, M., and J.P. Changeux, "A neuronal model of a global workspace in effortful cognitive tasks," *PNAS*, 95(24):14529, 1998. https://www.pnas.org/doi/10.1073/pnas.95.24.14529
 
 **[ACT-R]** Anderson, J.R., et al., "An integrated theory of the mind," *Psychological Review*, 111(4):1036, 2004.
 
-**[Wagner-Altenberg]** Wagner, G.P. and Altenberg, L., "Complex Adaptations and the Evolution of Evolvability," *Evolution*, 50(3):967–976, 1996. https://academic.oup.com/evolut/article/50/3/967/6870900
+**[Wagner-Altenberg]** Wagner, G.P. and Altenberg, L., "Complex Adaptations and the Evolution of Evolvability," *Evolution*, 50(3):967–976, 1996. https://academic.oup.com/evolut/article/50/3/967/6870900 <!-- VERIFY: academic.oup.com returns HTTP 403 to automated requests as of 2026-08-04; likely publisher bot-blocking, not a dead link — a human should confirm in-browser. -->
 
 **[Bullmore-Sporns]** Bullmore, E. and Sporns, O., "The economy of brain network organization," *Nature Reviews Neuroscience*, 13(5):336–349, 2012. https://www.nature.com/articles/nrn3214
 
 **[Lieder-Griffiths]** Lieder, F. and Griffiths, T.L., "Resource-rational analysis: Understanding human cognition as the optimal use of limited computational resources," *Behavioral and Brain Sciences*, 43:e1, 2020.
+
+<!-- Link verification pass completed 2026-08-04. All URLs in this section were checked for resolution. Four URLs (academic.oup.com, dl.acm.org, media.defense.gov, w3.org) returned HTTP 403 to automated requests, consistent with publisher/vendor bot-blocking rather than dead links; each is flagged inline above with a VERIFY comment for human confirmation in-browser. All other URLs, including all arXiv IDs, resolved successfully (HTTP 200). -->
 
 <a id="section-19"></a>
 # Version History

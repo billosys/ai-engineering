@@ -38,9 +38,12 @@ If all candidate services are filtered out by deadline, the Dispatcher MUST retu
 
 ### Step 5: Provenance Filter
 
-If `envelope.provenance_requirement.min_grade` is set, remove Services whose `provenance_capabilities.max_grade` is below the required grade.
+The Dispatcher applies the `provenance_requirement` fields (Section 7.3.2) in two stages:
 
-If no candidate service can meet the Request's `provenance_requirement.min_grade`, the Dispatcher MUST NOT silently route to a lower-grade service. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32005`) or `"escalate"` (treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, routing through the escalation chain to find a service that can meet the grade requirement). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
+1. **`min_policy_grade` (fast filter).** If set, remove Services whose `provenance_capabilities.max_grade` is below the required grade — a direct comparison against the Capability Record.
+2. **`required_methods` and `required_evidence_types` (capability filter).** If set, remove Services whose Capability Record `supported_evidence_types` (Section 8.2.2) does not include every required method and evidence type. This is a Registry-declared capability check performed at routing time; the Dispatcher validates the actual response against the requirement post-receipt (Section 10.3), since a Service's declared `supported_evidence_types` is not a per-response guarantee.
+
+If no candidate service can meet the Request's `provenance_requirement`, the Dispatcher MUST NOT silently route to a service that cannot meet it. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32005`) or `"escalate"` (treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT`, routing through the escalation chain to find a service that can meet the requirement). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
 
 ### Step 6: Cost-Aware Ranking
 

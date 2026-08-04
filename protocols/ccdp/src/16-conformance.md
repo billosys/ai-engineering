@@ -2,69 +2,72 @@
 
 ## 16.1. Conforming Dispatcher
 
-A conforming Dispatcher MUST implement all of the following:
+Dispatcher conformance requirements are organized by conformance level rather than by function. Each requirement has a stable identifier (`DISP-CORE-NNN`, `DISP-FULL-NNN`, or `DISP-OPT-NNN`) for cross-reference and conformance testing. The `Source Section` column identifies where the requirement's substantive rules are defined.
 
-### 16.1.1. Message Processing
+### 16.1.1. Core Dispatcher Requirements
 
-1. Parse all CCDP message types defined in Section 7.2.
-2. Validate envelope structure: reject messages with missing REQUIRED fields or invalid field types (Section 7.3).
-3. Validate `ccdp_version`: reject messages with unrecognized versions.
-4. Preserve and forward all unknown `metadata` fields without modification (Section 7.7).
+A CCDP Core Dispatcher MUST satisfy all requirements in this table.
 
-4a. Respect metadata directionality: keys in `org.ccdp.request.*` are request-directional (preserve on forwarded requests, do not copy to responses); keys in `org.ccdp.response.*` are response-directional (preserve on forwarded responses, do not copy to subsequent requests). Keys with sensitivity labels (defined by deployment policy) MUST be stripped at administrative domain boundaries. Keys without a directional prefix are bidirectional.
-5. Never perform semantic interpretation of message Content — never reason about what content means, never make routing decisions based on content meaning. The Dispatcher MAY perform structural validation (JSON Schema checking) and structural operations (typed-reference resolution, template assembly, size checks) on Content as specified in Sections 7, 8, and 14. See the Structural Validation vs Semantic Interpretation definition in Section 4.
-6. Never modify message Content.
-7. Never modify Provenance grades, Evidence entries, or composition traces.
+| ID | Requirement | Source Section |
+|---|---|---|
+| DISP-CORE-001 | Parse all CCDP message types. | 7.2 |
+| DISP-CORE-002 | Validate envelope structure: reject messages with missing REQUIRED fields or invalid field types. | 7.3 |
+| DISP-CORE-003 | Validate `ccdp_version`: reject messages with unrecognized versions. | 7.3.1 |
+| DISP-CORE-004 | Preserve and forward all unknown `metadata` fields without modification. | 7.7 |
+| DISP-CORE-005 | Respect metadata directionality: `org.ccdp.request.*` keys are request-directional, `org.ccdp.response.*` keys are response-directional, keys without a directional prefix are bidirectional. Strip sensitivity-labeled keys at administrative domain boundaries. | 7.7 |
+| DISP-CORE-006 | Never perform semantic interpretation of message Content. MAY perform structural validation and structural operations (typed-reference resolution, template assembly, size checks). | 4, 7, 8, 14 |
+| DISP-CORE-007 | Never mutate received Content. Derived Content constructed during Decomposition Plan execution is a structural operation, not a modification of received values. | 4 (Received vs Derived) |
+| DISP-CORE-008 | Never mutate received Provenance grades, Evidence entries, or composition traces. Derived Provenance computed from sub-result grades during plan execution is a structural operation, not a modification of received values. | 4 (Received vs Derived), 10.5 |
+| DISP-CORE-009 | Authenticate all incoming messages. | 15.2 |
+| DISP-CORE-010 | Reject unauthenticated messages with error `-32008`. | 15.2 |
+| DISP-CORE-011 | Enforce capability-based authorization: reject requests for unauthorized Capability Types with error `-32009`. | 15.3 |
+| DISP-CORE-012 | Validate bearer token scopes, expiration, and cost limits. | 15.3.2 |
+| DISP-CORE-013 | Implement the routing algorithm. | 9.2 |
+| DISP-CORE-014 | Query the Registry for service lookup. | 8.4.2 |
+| DISP-CORE-015 | Filter candidates by health status, deadline, and provenance requirement (`min_policy_grade`, `required_methods`, `required_evidence_types`). | 9.2 |
+| DISP-CORE-016 | Route escalations through the Escalation Chain, including authorization/budget/isolation checks on suggested and chain targets. | 13.4, 9.4 |
+| DISP-CORE-017 | Log all routing decisions in the audit trail. | 9.2 |
+| DISP-CORE-018 | Propagate deadline and `remaining_budget_ms` at every hop. | 12.4 |
+| DISP-CORE-019 | Reject requests that have already exceeded their deadline with error `-32007`. | 13.2 |
+| DISP-CORE-020 | Generate a structured audit record for every message processed. | 11.2 |
+| DISP-CORE-021 | Record all mandatory audit fields per the per-message-type matrix. | 11.4 |
+| DISP-CORE-022 | Propagate W3C Trace Context. | 11.3 |
+| DISP-CORE-023 | Probe Service health at the intervals specified in Capability Records. | 13.6 |
+| DISP-CORE-024 | Maintain a routing table with health status and circuit breaker state. | 9.7 |
+| DISP-CORE-025 | Implement circuit breaker logic. | 9.6, 13.6.2 |
+| DISP-CORE-026 | Require TLS 1.3 or later for all Service communication. | 15.2 |
+| DISP-CORE-027 | Implement replay protection. | 15.5 |
+| DISP-CORE-028 | Never execute or interpret Content. | 15.6.2 |
+| DISP-CORE-029 | Redact bearer tokens in audit logs. | 15.7 |
+| DISP-CORE-030 | Validate Decomposition Plans received from a Decomposition Service: acyclic dependency graph, valid capability types, valid resource allocations, and depth/width/total-node limits. A Core Dispatcher validates plans but is not required to execute them (Section 16.5). | 14, 14.6 |
 
-### 16.1.2. Authentication and Authorization
+### 16.1.2. Full Dispatcher Requirements
 
-8. Authenticate all incoming messages (Section 15.2).
-9. Reject unauthenticated messages with error `-32008`.
-10. Enforce capability-based authorization: reject requests for unauthorized Capability Types with error `-32009` (Section 15.3).
-11. Validate bearer token scopes, expiration, and cost limits.
+A CCDP Full Dispatcher MUST satisfy all Core requirements plus all requirements in this table.
 
-### 16.1.3. Routing
+| ID | Requirement | Source Section |
+|---|---|---|
+| DISP-FULL-001 | Validate Request Content against the target Service's input schema before forwarding. | 8.2.2 |
+| DISP-FULL-002 | Validate Response Content against the Service's output schema before forwarding to the requester. | 8.2.2 |
+| DISP-FULL-003 | Execute Decomposition Plans: dispatch sub-requests, resolve typed result references, compose results using structural methods (template, concatenation, selection). Route custom composition to an `org.ccdp.composition` Service. | 14.4 |
+| DISP-FULL-004 | Enforce maximum decomposition depth, width, and total-node limits during recursive execution. | 14.6 |
+| DISP-FULL-005 | Support recursive decomposition (nested Decomposition Plans). | 14.6 |
+| DISP-FULL-006 | Verify application-level message signatures on responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED before forwarding. | 15.4.2 |
+| DISP-FULL-007 | Write audit records to a tamper-evident store (cryptographic chaining, integrity-verified append-only storage, or write-once medium). | 11.5 |
+| DISP-FULL-008 | Support provenance-aware ranking in routing (candidates whose `typical_grade` meets or exceeds the request's provenance requirement are preferred). | 9.2 |
 
-12. Implement the routing algorithm defined in Section 9.2.
-13. Query the Registry for service lookup (Section 8.4.2).
-14. Filter candidates by health status, deadline, and provenance requirement.
-15. Route escalations through the Escalation Chain (Section 13.4).
-16. Log all routing decisions in the audit trail.
+### 16.1.3. Optional Capabilities
 
-### 16.1.4. Schema Validation
+The following capabilities are optional at any conformance level. Implementations that support them MUST follow the specified behavior.
 
-17. Validate Request Content against the target Service's input schema before forwarding (Section 8.2.2).
-18. Validate Response Content against the Service's output schema before forwarding to the requester. For CCDP Core conformance, this validation is RECOMMENDED. For CCDP Full conformance, this validation is REQUIRED.
-
-### 16.1.5. Deadline Enforcement
-
-19. Propagate deadline and `remaining_budget_ms` at every hop (Section 12.4).
-20. Reject requests that have already exceeded their deadline with error `-32007`.
-
-### 16.1.6. Audit
-
-21. Generate a structured audit record for every message processed (Section 11.2).
-22. Record all mandatory audit fields (Section 11.4).
-23. Propagate W3C Trace Context (Section 11.3).
-
-### 16.1.7. Health Monitoring
-
-24. Probe Service health at the intervals specified in Capability Records (Section 13.6).
-25. Maintain a routing table with health status and circuit breaker state (Section 9.7).
-26. Implement circuit breaker logic (Section 9.6).
-
-### 16.1.8. Security
-
-27. Require TLS 1.3 or later for all Service communication (Section 15.2).
-28. Implement replay protection (Section 15.5).
-29. Never execute or interpret Content (Section 15.6.2).
-30. Redact bearer tokens in audit logs (Section 15.7).
-
-### 16.1.9. Decomposition Execution
-
-31. Validate Decomposition Plans received from a Decomposition Service: acyclic dependency graph, valid capability types, valid resource allocations, width and total-node limits (Section 14). [CORE]
-32. Execute Decomposition Plans: dispatch sub-requests, resolve typed result references, compose results using structural methods (template, concatenation, selection). Route custom composition to an `org.ccdp.composition` Service. [FULL]
-33. Enforce maximum decomposition depth, width, and total-node limits (Section 14.6). [CORE for validation, FULL for execution]
+| ID | Capability | Behavior | Source Section |
+|---|---|---|---|
+| DISP-OPT-001 | Message signing for responses below grade FORMALLY_VERIFIED/HUMAN_ATTESTED | RECOMMENDED; when implemented, follows the same canonicalization and signing-profile rules as required signing. | 15.4.2, 15.4.4 |
+| DISP-OPT-002 | Workload attestation | When implemented, the Service provides a signed attestation that its runtime matches declared isolation requirements. | 15.6.1 |
+| DISP-OPT-003 | Registry query caching and stale-cache fallback | When implemented, cached results MAY be used during brief Registry outages; staleness MUST be logged in the audit trail. | 8.6 |
+| DISP-OPT-004 | Static routing table fallback | When implemented, used only if both the Registry and its cache are unavailable; MUST be logged in the audit trail. | 8.6 |
+| DISP-OPT-005 | Per-Service rate limiting based on capacity advertisements | When implemented, follows the load-shedding behavior described in Section 12.5; all rate-limiting decisions MUST be logged. | 12.5 |
+| DISP-OPT-006 | Token validation decision caching | When implemented, bounded by a deployment-configured maximum TTL (RECOMMENDED: 300 seconds); raw token strings MUST NOT be retained beyond the request-processing lifetime. | 15.7 |
 
 ## 16.2. Conforming Service
 
@@ -75,7 +78,7 @@ A conforming Service MUST implement all of the following:
 1. Accept CCDP Request messages and return CCDP Response, Escalation, or Error messages (Section 7).
 2. Include the `ccdp_version` field on all messages.
 3. Use the `request_id` from the Request on the corresponding Response.
-4. Preserve and forward all unknown `metadata` fields from the Request to the Response.
+4. Preserve and forward all unknown `metadata` fields from the Request to the Response. Services MUST respect metadata directionality: keys in `org.ccdp.request.*` are request-directional and SHOULD NOT be copied to Response messages. Keys in `org.ccdp.response.*` are response-directional. Keys without a directional prefix are bidirectional and MUST be preserved.
 
 ### 16.2.2. Contract Compliance
 
@@ -93,7 +96,7 @@ A conforming Service MUST implement all of the following:
 
 ### 16.2.4. Escalation
 
-13. Return an Escalation (not a low-provenance-grade Response) when the Service cannot meet the Request's `provenance_requirement.min_grade` (Section 13.3).
+13. Return an Escalation (not a low-provenance-grade Response) when the Service cannot meet the Request's `provenance_requirement` (Section 13.3).
 14. Return an Escalation when the Request would exceed the `cost_budget`.
 15. Return an Escalation when the `remaining_budget_ms` is insufficient to complete the work.
 16. Include `partial_result_available` on all Escalations.
@@ -152,9 +155,9 @@ A conforming Registry MUST implement all of the following:
 
 Implementations MAY claim conformance at one of two levels:
 
-**CCDP Core:** Implements all MUST requirements for the relevant component type (Dispatcher, Service, or Registry). This is the minimum for interoperability.
+**CCDP Core:** Implements all MUST requirements for the relevant component type (Dispatcher, Service, or Registry). For the Dispatcher, this is the Core requirements table (Section 16.1.1). This is the minimum for interoperability.
 
-**CCDP Full:** Implements all MUST and SHOULD requirements. Includes application-level message signing, cryptographic audit integrity, and advanced routing features (provenance-aware ranking, decomposition execution, recursive decomposition).
+**CCDP Full:** Full conformance requires all Core requirements plus all Full requirements listed in Section 16.1.2 (for the Dispatcher; analogous tables apply to Service and Registry requirements in Sections 16.2 and 16.3). SHOULD-level recommendations throughout the specification are best practices, not Full conformance obligations. Full conformance is defined by the explicit Full requirements table, not by the sum of all SHOULD statements.
 
 Implementations MUST declare their conformance level in their documentation and in the Registry (for Services) via a `metadata` field: `"org.ccdp.conformance_level": "core"` or `"org.ccdp.conformance_level": "full"`.
 
@@ -166,9 +169,9 @@ Unknown metadata fields from a higher conformance level MUST be preserved and fo
 
 ## 16.6. Conformance Testing
 
-A future companion document will define a conformance test suite for CCDP Core and Full implementations. Each MUST requirement in this section is intended to correspond to one or more testable assertions. Implementations claiming conformance SHOULD publish their test results against the conformance suite when it becomes available.
+A future companion document will define a conformance test suite for CCDP Core and Full implementations. Each requirement identifier in Sections 16.1–16.3 is intended to correspond to one or more testable assertions. Implementations claiming conformance SHOULD publish their test results against the conformance suite when it becomes available.
 
-Until the conformance suite is available, implementations SHOULD self-test against the following minimum verification:
+The conformance test suite and companion schemas are implementation prerequisites not yet published. Section 7.8 lists the planned schema inventory. Until both are available, implementations SHOULD self-test against the verification checklist below.
 
 1. Send a valid REQUEST and verify correct routing and RESPONSE.
 2. Send a REQUEST with an invalid envelope and verify error `-32602`.

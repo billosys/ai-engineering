@@ -10,7 +10,7 @@ CCDP distinguishes three categories of failure, each with different protocol beh
 
 3. **Epistemic insufficiency** — the Service operates correctly but cannot meet the Request's epistemic requirements: the achieved provenance grade is below threshold, capability is exceeded, or the search space is exhausted without a determination. These are *not errors*. They are Escalations — structured routing events that the Dispatcher handles as normal protocol operations.
 
-The distinction between service errors and epistemic insufficiency is load-bearing. An HTTP 500 means something broke. An Escalation with reason `CONFIDENCE_BELOW_THRESHOLD` means the Service worked correctly and honestly reported that its best output does not meet the standard. The protocol handles these differently: errors trigger retries and circuit breakers; escalations trigger the Escalation Chain.
+The distinction between service errors and epistemic insufficiency is load-bearing. An HTTP 500 means something broke. An Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` means the Service worked correctly and honestly reported that its best output does not meet the standard. The protocol handles these differently: errors trigger retries and circuit breakers; escalations trigger the Escalation Chain.
 
 This is the "let it crash" principle applied to cognitive systems: a Service that cannot meet the standard *should* escalate rather than silently producing low-quality output that poisons everything built on it.
 
@@ -36,7 +36,10 @@ Protocol errors are returned as JSON-RPC 2.0 error responses. CCDP defines the f
 | `-32009` | Authorization denied | The sender is authenticated but not authorized for this Capability Type |
 | `-32010` | Schema validation failed | The Content does not conform to the Capability Record's input or output schema |
 | `-32011` | Replay detected | A message with this `request_id` and a different payload has already been processed |
-| `-32012` | Decomposition depth exceeded | Maximum recursive decomposition depth reached (Section 14.6) |
+| `-32012` | Decomposition limit exceeded | A decomposition plan exceeds the configured depth, width, or total-node limit (Section 14.6). The `data` object MUST include `limit_type` (`"depth"`, `"width"`, or `"total_nodes"`), `limit_value` (the configured maximum), and `actual_value` (the plan's value). |
+| `-32014` | Rate limited | The Dispatcher is rate-limiting the requester. The `data` object MUST include `retry_after_ms` (integer). |
+
+For every CCDP error code, the `data` object MUST include at minimum: `trace_id` (string), `request_id` (string), and `timestamp` (ISO 8601). Error-specific fields are defined per code in the table above. This ensures that errors are audit-correlatable even when the full envelope is unavailable.
 
 Error responses include structured detail:
 
@@ -56,6 +59,8 @@ Error responses include structured detail:
         }
       ],
       "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "timestamp": "2026-08-03T14:30:00.145Z",
       "dispatcher_id": "dispatcher-prod-01"
     }
   }
@@ -70,7 +75,7 @@ Escalation is a first-class message type, not an error. The following escalation
 
 | Reason | Meaning | Typical Next Step |
 |--------|---------|-------------------|
-| `CONFIDENCE_BELOW_THRESHOLD` | Service produced a result but at a lower provenance grade than requested | Route to higher-capability Service or human |
+| `PROVENANCE_BELOW_REQUIREMENT` | The Service determined that it cannot produce a response meeting the requested `provenance_requirement` (Section 7.3.2): its achievable grade is below `min_policy_grade`, or it cannot produce evidence of the required `required_methods` or `required_evidence_types`. The escalation includes the best grade the Service could achieve and the requirement it could not meet. | Route to higher-capability Service or human |
 | `CAPABILITY_EXCEEDED` | The request exceeds the Service's capability (too complex, wrong domain) | Route to different Service with broader capability |
 | `DEADLINE_INSUFFICIENT` | Remaining deadline budget is insufficient for this Service to complete | Route to faster Service or return partial result |
 | `DEADLINE_APPROACHING` | Service started work but cannot finish before deadline; partial result available | Forward partial result; route remainder to faster Service |
@@ -104,7 +109,7 @@ The algorithm:
 
 1. Receive Escalation from Service A.
 2. Log the Escalation in the audit trail with full context.
-3. If `escalation.suggested_target` is set and the target is healthy, route to it.
+3. If `escalation.suggested_target` is set and the target is healthy, route to it. Suggested targets from the escalating Service MUST pass the same full routing checks as chain targets (Step 5): authorization, capability match, provenance feasibility, deadline, budget, and isolation. A Service's suggestion is a routing hint, not a policy override.
 4. Otherwise, walk Service A's `escalation_chain` in order.
 5. For each chain target:
    a. If the target is a Service ID, check health and route if healthy.
@@ -114,7 +119,7 @@ The algorithm:
    e. Verify the remaining cost budget is sufficient for the target's cost hints.
    f. Verify the target can meet the request's data-class/isolation requirements (from Registry metadata).
    g. If any check fails, skip the target and continue to the next in the chain. Log the skip reason in the audit trail.
-6. If all chain targets are exhausted, route to `org.ccdp.human_review` as the terminal target.
+6. If all chain targets are exhausted, route to `org.ccdp.human_review` as the terminal target. The human-review fallback MUST still pass authorization and data-class checks. If the requester's token does not authorize `org.ccdp.human_review`, or if the request's data-class/isolation requirements cannot be met by the human queue, the Dispatcher MUST return error `-32006` (escalation chain exhausted) rather than silently routing to an unauthorized or non-compliant target.
 7. If no human review Service is available, return error `-32006`.
 
 The Dispatcher MUST forward the original Request (not the Escalation) to the next target in the chain. The Dispatcher accumulates partial results from prior escalation targets in the forwarded Request's metadata under `org.ccdp.partial_results`. The most recent escalating Service's partial result is in that Service's ESCALATION message Content (the canonical location per Section 7.3.4). The metadata accumulation provides downstream Services and human reviewers with the full escalation history.
@@ -129,7 +134,7 @@ As a Request traverses the Escalation Chain, the Dispatcher accumulates escalati
     "org.ccdp.escalation_history": [
       {
         "service_id": "llm-verifier-01",
-        "reason": "CONFIDENCE_BELOW_THRESHOLD",
+        "reason": "PROVENANCE_BELOW_REQUIREMENT",
         "achieved_grade": "HEURISTIC",
         "timestamp": "2026-08-03T14:30:05.000Z"
       },

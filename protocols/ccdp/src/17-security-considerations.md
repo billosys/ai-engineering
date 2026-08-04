@@ -30,7 +30,7 @@ The threat model does NOT assume:
 **Threat:** A malicious requester crafts Content that, when processed by an LLM Service, causes the LLM to produce unintended output (prompt injection) or exfiltrate data from its context.
 
 **CCDP mitigations:**
-- The Dispatcher never processes Content, so injection cannot affect routing.
+- The Dispatcher never semantically interprets Content — it does not reason about what content means. It performs structural operations on Content wrappers: schema validation, typed-reference resolution, and structural composition (Section 4, Structural Validation vs Semantic Interpretation). Injection cannot affect routing.
 - Input schema validation (Section 8.2.2) constrains the structural shape of Content, reducing the protocol-level attack surface. Schema validation does not mitigate semantic prompt-injection attacks — a structurally valid string can still be a prompt injection. Content-level injection defense is the Service's responsibility (see Section 17.4).
 - Services SHOULD implement their own input sanitization and output validation.
 
@@ -50,17 +50,18 @@ The threat model does NOT assume:
 
 ### 17.2.3. Registry Poisoning
 
-**Threat:** An attacker gains write access to the Registry and registers a malicious Service with a legitimate Capability Type, or modifies an existing Service's endpoint to redirect traffic.
+**Threat:** An attacker compromises Registry write access (e.g., by obtaining a Registry administrator credential) and injects or modifies Capability Records — registering a malicious Service under a legitimate Capability Type, redirecting an existing Service's endpoint to attacker-controlled infrastructure, lowering isolation requirements, or inflating provenance claims.
 
 **CCDP mitigations:**
 - Registry access control: only authorized identities may register or update records (Section 15.6.3).
-- Registration audit: all Registry modifications are logged with identity and timestamp.
+- Registration audit: all Registry modifications are logged with identity and timestamp, with the same rigor applied to code deployments.
 - Namespaced capability types: reverse-domain notation prevents accidental shadowing.
 - Schema validation at registration: the Registry validates schemas, preventing structurally malformed entries.
+- Multi-party approval SHOULD be required for Registry write operations on production registries.
+- Out-of-band record verification SHOULD be implemented: a second system independently validates that registered service endpoints match expected infrastructure.
+- Registry backup and rollback procedures MUST be documented.
 
 **Residual risk:** If an attacker compromises the Registry's authentication mechanism, they can redirect traffic. This is a single-point-of-failure risk inherent in a centralized registry. Deployments SHOULD implement Registry audit monitoring with alerts on unexpected modifications.
-
-**Registry poisoning.** If an attacker compromises Registry write access (e.g., by obtaining a Registry administrator credential), they can inject malicious Capability Records — redirecting requests to attacker-controlled Services, lowering isolation requirements, or inflating provenance claims. Mitigations: Registry write operations SHOULD require multi-party approval for production registries. Capability Record changes SHOULD be audited with the same rigor as code deployments. Deployments SHOULD implement out-of-band record verification (a second system independently validates that registered service endpoints match expected infrastructure). Registry backup and rollback procedures MUST be documented.
 
 ### 17.2.4. Escalation Chain Exploitation
 
@@ -83,7 +84,7 @@ The threat model does NOT assume:
 - Cost budget partitioning: the parent's cost budget is divided among sub-requests. Exponential decomposition rapidly exhausts the budget.
 - The Dispatcher validates plans before execution (Section 14.4), including resource allocation checks.
 
-**Residual risk:** A plan with many sub-requests at a single level (wide but shallow) is valid and could be expensive. Section 14.6 now defines normative limits: maximum plan width of 50 sub-requests and maximum total nodes of 100 per top-level request. These limits are conformance requirements enforced by the Dispatcher.
+**Residual risk:** A plan with many sub-requests at a single level (wide but shallow) is valid and could be expensive. Section 14.6 requires that Dispatchers enforce configurable maximum depth, width, and total-node limits. The RECOMMENDED default values (depth 5, width 50, total nodes 100) are defaults, not fixed requirements. The conformance obligation is that limits exist and are enforced, not that specific numeric values are used.
 
 ### 17.2.6. Replay Attacks
 
@@ -115,11 +116,11 @@ The threat model does NOT assume:
 
 **Residual risk:** Deployments processing highly sensitive data SHOULD restrict access to detailed timing data in audit records (e.g., aggregate to coarser time buckets in external-facing audit exports), apply field-level access controls on `compute_seconds` and latency fields, and limit who can query per-request audit records. Adding noise to audit records is NOT RECOMMENDED as it undermines audit accuracy.
 
-## 17.3. NSA/CISA Recommendations Applied to CCDP
+## 17.3. NSA/CISA AI Deployment Security Baseline Mapping
 
-The NSA/CISA MCP Security Assessment [NSA MCP 2026] made specific recommendations. CCDP's response to each:
+The NSA/CISA AI deployment security guidance [NSA-CISA-2024] makes specific recommendations for securely deploying AI systems generally, not specific to any single protocol. This table maps those general recommendations to CCDP features — it is not a claim that CCDP was independently assessed against them.
 
-| NSA Recommendation | CCDP Response | Requirement Level |
+| NSA/CISA Recommendation | CCDP Response | Requirement Level |
 |---|---|---|
 | Mandatory authentication | Mutual TLS (Section 15.2) | REQUIRED (Core) |
 | Lifecycle-managed tokens | Bearer tokens with expiration and scope (Section 15.3) | REQUIRED (Core) |

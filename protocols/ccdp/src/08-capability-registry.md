@@ -56,6 +56,8 @@ A Capability Record describes one Service's implementation of one Capability Typ
       "evidence_types": ["proof-object", "counterexample"]
     },
 
+    "supported_evidence_types": ["formal_verification", "proof_certificate"],
+
     "health_check": {
       "endpoint": "https://z3-prover-01.internal:8443/ccdp/health",
       "interval_seconds": 30,
@@ -113,6 +115,8 @@ A Capability Record describes one Service's implementation of one Capability Typ
 - `max_grade`: The highest grade this Service can assign to its output.
 - `typical_grade`: The grade most responses will carry.
 - `evidence_types`: Array of Evidence types this Service can produce (e.g., `"proof-object"`, `"test-result"`, `"human-signature"`).
+
+**`supported_evidence_types`** (array of strings, OPTIONAL): Evidence types this service can produce (e.g., `["formal_verification", "proof_certificate"]`). Used by the Dispatcher for `provenance_requirement.required_methods` and `required_evidence_types` matching (Section 9.2, Step 5).
 
 **`health_check`** (object, REQUIRED): Health monitoring configuration.
 - `endpoint`: URL for health check probes.

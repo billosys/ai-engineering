@@ -50,7 +50,7 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
           "constraints": {
             "deadline_fraction": 0.2,
             "cost_fraction": 0.1,
-            "provenance_requirement": { "min_grade": "VALIDATED" }
+            "provenance_requirement": { "min_policy_grade": "VALIDATED" }
           },
           "depends_on": []
         },
@@ -68,7 +68,7 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
           "constraints": {
             "deadline_fraction": 0.7,
             "cost_fraction": 0.8,
-            "provenance_requirement": { "min_grade": "FORMALLY_VERIFIED" }
+            "provenance_requirement": { "min_policy_grade": "FORMALLY_VERIFIED" }
           },
           "depends_on": ["sub-001"]
         },
@@ -87,7 +87,7 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
           "constraints": {
             "deadline_fraction": 0.1,
             "cost_fraction": 0.1,
-            "provenance_requirement": { "min_grade": "ASSERTED" }
+            "provenance_requirement": { "min_policy_grade": "ASSERTED" }
           },
           "depends_on": ["sub-002"]
         }
@@ -146,7 +146,7 @@ The dependency graph is defined by the `depends_on` arrays on each sub-request e
 
 Sub-requests with empty `depends_on` arrays can execute in parallel. The Dispatcher SHOULD execute independent sub-requests concurrently when resources permit.
 
-The `dependencies` top-level field in the plan is OPTIONAL. If present, it is informative only (e.g., for visualization) and MUST be consistent with the `depends_on` arrays. In case of conflict, the `depends_on` arrays are authoritative.
+The `dependencies` top-level field is OPTIONAL and informative (e.g., for visualization tooling). If present, it SHOULD be consistent with the `depends_on` arrays. In case of conflict, the `depends_on` arrays are authoritative and the `dependencies` field is ignored.
 
 ### 14.3.3. Typed Result References
 
@@ -162,7 +162,7 @@ Sub-request content MAY reference results from completed dependencies using type
 
 **`$ref`** (string, REQUIRED): The sub-request ID whose result is referenced, suffixed with `.result` to refer to the Response Content.
 
-**`path`** (string, REQUIRED): A JSON Pointer [RFC 6901] path into the referenced result's Content.
+**`path`** (string, REQUIRED): A JSON Pointer [RFC 6901] path into the referenced result's Content. The JSON Pointer path in a result reference is evaluated relative to the referenced sub-request's Response `content` object. For example, if sub-001's Response has `"content": {"type": "text", "body": {"translation": "..."}}`, the path `/body/translation` resolves to the translation string. The root is `content`, not the full Response envelope.
 
 **`fallback`** (any, OPTIONAL): The value to use if the referenced path does not exist in the result. If omitted and the path does not exist, the Dispatcher follows the plan's `fallback` strategy.
 
@@ -177,7 +177,7 @@ The `composition` field specifies how sub-results are assembled into the final r
 **`method`** (string, REQUIRED): One of:
 - `"template"`: Assemble parts according to a template (most common).
 - `"concatenation"`: Concatenate sub-results in dependency order.
-- `"selection"`: Select the best sub-result by a criterion (useful for cross-checking).
+- `"selection"`: Select the best sub-result by a criterion (useful for cross-checking). Allowed `selection` criteria are: `"highest_provenance"` (select the sub-result with the highest provenance grade in policy order), `"lowest_cost"` (select the sub-result with the lowest reported cost), `"first_completed"` (select the first sub-result to arrive — for latency-optimized redundant dispatch). Other selection criteria require routing to an `org.ccdp.composition` Service, as they may involve semantic judgment.
 - `"custom"`: A custom composition function (specified as a Content payload routed to a composition Service).
 
 When `method` is `"custom"`, the composition payload is routed to a Service with capability type `org.ccdp.composition`. This is a well-known capability type (added to Section 8.3's well-known types). The Composition Service receives the sub-results and the composition specification and returns the composed result. The Dispatcher does not perform custom composition itself — it delegates to the Composition Service and forwards the result.
@@ -201,6 +201,16 @@ The `fallback` field specifies what happens when sub-requests fail:
 **`on_composition_failure`** (string, REQUIRED): One of:
 - `"return_partial"`: Return the individual sub-results without composition as a multipart Response.
 - `"escalate_parent"`: Escalate the entire request.
+
+**Fallback behavior matrix.** The following matrix summarizes default Dispatcher behavior for common failure scenarios during plan execution:
+
+| Scenario | Default Behavior | Configurable? |
+|---|---|---|
+| Referenced dependency failed | Use `fallback` value if specified; otherwise escalate the parent request | Plan-level `on_failure` field |
+| Referenced dependency escalated (partial result) | Use partial result if `$ref` path resolves; otherwise use `fallback`; otherwise escalate parent | Plan-level |
+| All sub-requests succeeded, composition fails | Escalate parent request with all sub-results as partial results | No — always escalate |
+| Width or node limit exceeded | Reject plan with error `-32012` before execution begins | No — always reject |
+| Partial sub-results with mixed success | Compose available results; include `org.ccdp.partial_composition: true` metadata flag | Plan-level `partial_composition_policy` |
 
 ## 14.4. Dispatcher Execution of Decomposition Plans
 
@@ -226,7 +236,7 @@ When the Dispatcher receives a DECOMPOSITION_RESULT, it executes the plan:
 
 **Composition boundary.** For `template`, `concatenation`, and `selection` composition methods, the Dispatcher performs structural assembly: it places sub-results into the template slots, concatenates them in order, or selects by a typed criterion (highest provenance grade, lowest cost). These are mechanical operations on typed wrappers, consistent with the Coordinator Dispatcher model. The Dispatcher MUST NOT perform composition that requires reasoning about content meaning — such composition MUST be routed to an `org.ccdp.composition` Service.
 
-7. **Compute composed provenance.** Apply the `provenance_rule` to derive the composed result's provenance grade. Include the full `composition_trace` (Section 10.5.4).
+7. **Compute composed provenance.** Apply the `provenance_rule` to derive the composed result's provenance grade. Include the full `composition_trace` (Section 10.5.4). The Dispatcher creates derived provenance for the composed response using the composition rules in Section 10.5. This is a new provenance value computed from the sub-results' grades — the Dispatcher does not modify any sub-result's received provenance. The derived provenance for the composed response MUST include evidence entries documenting which sub-results contributed and which composition rule was applied.
 
 8. **Return the composed Response.** Send the final Response to the original requester with the composed Content and Provenance.
 
@@ -250,8 +260,8 @@ The Decomposition Service is a natural candidate for Mode 3 (LLM + validator): a
 
 A sub-request in a Decomposition Plan MAY itself have `capability_type: "org.ccdp.decomposition"`, producing a nested decomposition. The Dispatcher handles this recursively: the sub-decomposition produces its own plan, which the Dispatcher executes as a nested sub-tree of the parent plan.
 
-To prevent unbounded recursion, the Dispatcher MUST enforce a maximum decomposition depth (RECOMMENDED: 5). If a decomposition exceeds the maximum depth, the Dispatcher returns error `-32012` for the deepest sub-request.
+To prevent unbounded recursion, the Dispatcher MUST enforce a maximum decomposition depth (RECOMMENDED: 5). If a decomposition exceeds the maximum depth, the Dispatcher returns error `-32012` (decomposition limit exceeded, Section 13.2) for the deepest sub-request, with `data.limit_type` set to `"depth"`.
 
-The Dispatcher MUST also enforce maximum plan width (the number of sub-requests in a single plan) and maximum total node count (the total number of sub-requests across all recursion levels for a single top-level request). RECOMMENDED limits: maximum width 50 per plan, maximum total nodes 100 per top-level request. These limits prevent decomposition bombs (Section 17.2.5) and are conformance requirements for both Core and Full Dispatchers.
+The Dispatcher MUST also enforce maximum plan width (the number of sub-requests in a single plan) and maximum total node count (the total number of sub-requests across all recursion levels for a single top-level request). RECOMMENDED limits: maximum width 50 per plan, maximum total nodes 100 per top-level request. A plan that exceeds the width or total-node limit is rejected before execution begins with error `-32012`, with `data.limit_type` set to `"width"` or `"total_nodes"` respectively. These limits prevent decomposition bombs (Section 17.2.5) and are conformance requirements for both Core and Full Dispatchers.
 
 The audit trail records the full tree of decompositions, enabling reconstruction of arbitrarily complex request execution paths.

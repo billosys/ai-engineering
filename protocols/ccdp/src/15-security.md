@@ -2,7 +2,9 @@
 
 ## 15.1. Security Posture
 
-Security in CCDP is a protocol guarantee, not an implementation recommendation. This design choice is a direct response to the NSA/CISA assessment of MCP, which found that MCP's security posture is "highly dependent on implementation discipline rather than protocol guarantees" — a dependency that fails unpredictably across deployments.
+CCDP defines security requirements at the protocol level — authentication, authorization, token scoping, message signing, and replay protection. Some requirements (mutual TLS, bearer-token validation) are enforced by the protocol infrastructure. Others (isolation, workload attestation) are protocol requirements that depend on deployment infrastructure for enforcement. The protocol specifies what must be true; the deployment ensures it is true.
+
+This design choice is a direct response to the MCP release-candidate retrospective [MCP-2026-07-28], which found that a security posture "highly dependent on implementation discipline rather than protocol guarantees" fails unpredictably across deployments.
 
 Every CCDP deployment MUST implement the security requirements in this section. There are no "development mode" exceptions in the specification — while individual deployments MAY relax requirements in non-production environments, the protocol defines a security floor that conforming implementations MUST meet in production.
 
@@ -25,7 +27,7 @@ External requesters (humans, applications, other systems) MUST be authenticated 
 
 - Tokens MUST be scoped to specific Capability Types. A token authorized for `org.ccdp.language.generation` MUST NOT be accepted for `org.ccdp.deduction`.
 - Tokens MUST have a bounded lifetime (expiration timestamp). The Dispatcher MUST reject expired tokens.
-- Tokens SHOULD be issued by an OAuth 2.0 authorization server using Pushed Authorization Requests [RFC 9126] with PKCE [RFC 7636]. Implementations requiring issuer validation SHOULD follow [RFC 9207].
+- Tokens SHOULD be issued by an OAuth 2.0 authorization server using Pushed Authorization Requests [RFC 9126] with PKCE [RFC 7636]. Implementations requiring issuer validation SHOULD follow [RFC 9207]. PAR and PKCE apply to the authorization-code issuance flow — how tokens are obtained from the authorization server. They are best practices for token issuance, not requirements for token validation. The Dispatcher, acting as a resource server, validates tokens by checking signature/introspection, expiration, audience, and scope (Section 15.3). The issuance-flow recommendations apply to authorization-server deployments, not to CCDP Dispatchers.
 - Tokens MUST be transmitted in the HTTP `Authorization` header.
 
 **Token format.** This specification does not mandate a specific token format. Implementations MAY use JWT [RFC 7519] with the claims listed above, opaque tokens validated by introspection [RFC 7662], or any other bearer token format that supports the required properties (scope, expiration, audience binding). If JWT is used, the Dispatcher MUST validate the signature, expiration, audience (`aud` claim matching the Dispatcher's identifier), and scope claims. If opaque tokens are used, the Dispatcher MUST validate them via the authorization server's introspection endpoint.
@@ -98,15 +100,27 @@ A Service MAY sign its Response envelope and content using a digital signature:
 
 The signature covers the specified fields. The Dispatcher MUST preserve the signature in the metadata when forwarding (per the metadata preservation rule, Section 7.7). The requester can verify the signature using the Service's public key (obtained from the Registry or a key server).
 
-**Canonicalization.** Signing JSON fields requires a deterministic serialization. Implementations MUST use JSON Canonicalization Scheme (JCS) [RFC 8785] to produce a canonical byte sequence before signing. The `signed_fields` array identifies which top-level fields are included; the canonical form is computed over the ordered concatenation of each field's JCS-canonical representation. Fields not listed in `signed_fields` are excluded from the signature and MAY be modified by intermediaries (e.g., the Dispatcher's `audit` annotation).
+**Canonicalization.** Signing JSON fields requires a deterministic serialization. Implementations MUST use JSON Canonicalization Scheme (JCS) [RFC 8785] to produce a canonical byte sequence before signing. The signature input is computed by constructing a JSON object containing exactly the fields listed in `signed_fields`, in the order they appear in the array, and computing the JCS [RFC 8785] canonical form of that object. This produces an unambiguous byte sequence. Example: if `signed_fields` is `["envelope", "content"]`, the signature input is `JCS({"envelope": <envelope-value>, "content": <content-value>})`. Fields not listed in `signed_fields` are excluded from the signature and MAY be modified by intermediaries (e.g., the Dispatcher's `audit` annotation).
 
 **Mutable and immutable fields.** The following envelope fields are designated as *Dispatcher-mutable* — the Dispatcher MAY write or update them after the originator or Service has signed the message: `audit`, `remaining_budget_ms`, and metadata keys in the `org.ccdp.dispatcher.*` namespace. All other envelope fields and the entire `content` object are *immutable after signing*. The `signed_fields` array MUST NOT include Dispatcher-mutable fields, and the Dispatcher MUST NOT modify immutable fields on a signed message. A signature that covers a Dispatcher-mutable field is invalid by construction — the verifier MUST reject it.
 
 Message signing is OPTIONAL for CCDP Core conformance. For CCDP Full conformance, message signing is REQUIRED for Services that produce responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, and RECOMMENDED for all other Services. For deployments spanning untrusted administrative domains (different organizations, different cloud regions), message signing is REQUIRED regardless of conformance level.
 
+For responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, the `signed_fields` array MUST include `"content"` and `"provenance"` — the cognitive output and its evidence chain are the highest-value fields for integrity verification. For other grades, including content and provenance in signed fields is RECOMMENDED.
+
 ### 15.4.3. Provenance Integrity
 
-Provenance grades and evidence entries are security-relevant — a tampered provenance grade can cause a consumer to over-trust a result. The Dispatcher MUST NOT modify provenance fields. If application-level signing is used, provenance fields SHOULD be included in the signed fields.
+Provenance grades and evidence entries are security-relevant — a tampered provenance grade can cause a consumer to over-trust a result. The Dispatcher MUST NOT modify received provenance fields. If application-level signing is used, provenance fields SHOULD be included in the signed fields.
+
+### 15.4.4. Signing Profiles
+
+CCDP defines two signing profiles with different mutable-field sets:
+
+**Requester-outbound profile.** Applied by the Requester when sending a Request. Mutable fields: `audit`, `remaining_budget_ms`, metadata keys in `org.ccdp.dispatcher.*`. The Requester signs all other fields. The Dispatcher verifies the Requester's signature before processing.
+
+**Service-response profile.** Applied by a Service when sending a Response or Escalation. Mutable fields: `audit`, metadata keys in `org.ccdp.dispatcher.*`. The `remaining_budget_ms` field is NOT mutable in responses (it is not meaningful on response messages). The Dispatcher verifies the Service's signature before forwarding to the Requester.
+
+The `signature` object carries a `profile` field (`"requester"` or `"service"`) identifying which profile was used. Verifiers MUST check the profile and reject signatures that include Dispatcher-mutable fields for the specified profile.
 
 ## 15.5. Replay Protection
 
@@ -164,6 +178,8 @@ The MCP fault taxonomy study identified tool naming collisions as an attack vect
 Services that require credentials (API keys, database passwords, etc.) MUST NOT receive them through the CCDP protocol. Credentials are provisioned through out-of-band mechanisms (environment variables, secret managers, key vaults). The CCDP protocol carries authentication tokens for *protocol-level* identity, not application-level credentials.
 
 The Dispatcher MUST NOT log, cache, or inspect bearer tokens beyond what is necessary for authentication. Token values MUST be redacted in audit logs.
+
+Implementations MAY cache token validation decisions (the result of signature verification or introspection) for the token's remaining lifetime, subject to a deployment-configured maximum cache TTL (RECOMMENDED: 300 seconds). Caching the validation decision is distinct from caching the token value itself. The Dispatcher SHOULD NOT retain raw token strings beyond the request-processing lifetime.
 
 ## 15.8. Rate Limiting as Security
 

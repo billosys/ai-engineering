@@ -26,13 +26,15 @@ These references are essential to the implementation of this specification.
 
 **[RFC 8785]** Rundgren, A., Jordan, B., and S. Erdtman, "JSON Canonicalization Scheme (JCS)," RFC 8785, June 2020. https://www.rfc-editor.org/rfc/rfc8785
 
+(Note: RFC 8785 is Informational, not Standards Track. CCDP takes a normative dependency on this Informational RFC for message-signing canonicalization. If a Standards Track canonicalization scheme becomes available, future CCDP versions may adopt it.)
+
 **[RFC 9207]** Meyer zu Selhausen, K. and D. Fett, "OAuth 2.0 Authorization Server Issuer Identification," RFC 9207, March 2022. https://www.rfc-editor.org/rfc/rfc9207
 
 **[JSON-RPC]** JSON-RPC Working Group, "JSON-RPC 2.0 Specification," 2010. https://www.jsonrpc.org/specification
 
 **[JSON-SCHEMA-2020-12]** Wright, A., Andrews, H., Hutton, B., and G. Dennis, "JSON Schema: A Media Type for Describing JSON Documents," draft-bhutton-json-schema-01, June 2022. https://json-schema.org/draft/2020-12/json-schema-core
 
-**[W3C-TC]** W3C, "Trace Context," W3C Recommendation, February 2020. https://www.w3.org/TR/trace-context/
+**[W3C-TC]** W3C, "Trace Context," W3C Recommendation, February 2020. https://www.w3.org/TR/trace-context/ <!-- VERIFY: w3.org returns HTTP 403 to automated requests as of 2026-08-04; likely bot/WAF blocking (W3C TR pages are stable, long-lived URLs) — a human should confirm in-browser. -->
 
 **[SemVer]** Preston-Werner, T., "Semantic Versioning 2.0.0." https://semver.org/
 
@@ -60,15 +62,15 @@ Demonstrated that typed contracts and code generation are achievable without the
 
 **[MCP-2026-07-28]** Model Context Protocol, "Release Candidate: The next generation of MCP," July 2026. https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/ (Blog post published May 21, 2026, announcing the July 28, 2026 release candidate.) (accessed 2026-08-03)
 
-**[NSA-MCP-2026]** National Security Agency / Cybersecurity and Infrastructure Security Agency, "Deploying AI Systems Securely: Best Practices for Deploying Secure and Resilient AI Systems," April 2024. https://media.defense.gov/2024/Apr/15/2003439257/-1/-1/0/CSI-DEPLOYING-AI-SYSTEMS-SECURELY.PDF
+**[NSA-CISA-2024]** National Security Agency / Cybersecurity and Infrastructure Security Agency, "Deploying AI Systems Securely: Best Practices for Deploying Secure and Resilient AI Systems," April 2024. https://media.defense.gov/2024/Apr/15/2003439257/-1/-1/0/CSI-DEPLOYING-AI-SYSTEMS-SECURELY.PDF <!-- VERIFY: media.defense.gov returns HTTP 403 to automated requests as of 2026-08-04; likely bot/WAF blocking rather than a dead link (the URL path and filename are consistent with the known April 2024 NSA/CISA publication), but a human should confirm in-browser before external publication. -->
 
-The security findings that drove CCDP's "security by default" principle.
+The general AI-deployment security findings that drove CCDP's "security by default" principle. See also [MCP-2026-07-28] for MCP-specific security posture findings.
 
 **[MCP-Faults-2026]** "Real Faults in MCP Software: A Comprehensive Taxonomy," arXiv:2603.05637, 2026. https://arxiv.org/html/2603.05637v1
 
 Analysis of 407 MCP-specific issues from 385 repositories documenting the consequences of loose protocol contracts.
 
-**[A2A]** Linux Foundation / Google, "Agent2Agent (A2A) Protocol Specification," 2025. https://a2a-protocol.org/latest/ (accessed 2026-08-03; the specification has moved from its original google.github.io/A2A/ location) — For background: Galileo AI, "Google Agent2Agent A2A Protocol Guide." https://galileo.ai/blog/google-agent2agent-a2a-protocol-guide (accessed 2026-08-03)
+**[A2A]** Linux Foundation / Google, "Agent2Agent (A2A) Protocol Specification," 2025. https://a2a-protocol.org/latest/specification (accessed 2026-08-04; the specification has moved from its original google.github.io/A2A/ location) — For background: Galileo AI, "Google Agent2Agent A2A Protocol Guide." https://galileo.ai/blog/google-agent2agent-a2a-protocol-guide (accessed 2026-08-03)
 
 **[Zylos-Interop]** Zylos Research, "Agent Interoperability Protocols 2026." https://zylos.ai/research/2026-03-26-agent-interoperability-protocols-mcp-a2a-acp-convergence/ (accessed 2026-08-03)
 
@@ -178,14 +180,16 @@ The references in this section are secondary or journalistic sources used for co
 
 **[AlphaProof]** DeepMind, "AlphaProof," *Nature*, 651:607, 2025. https://www.nature.com/articles/s41586-025-09833-y
 
-**[DreamCoder]** Ellis, K., et al., "DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning," PLDI 2021. https://dl.acm.org/doi/10.1145/3453483.3454080
+**[DreamCoder]** Ellis, K., et al., "DreamCoder: Bootstrapping Inductive Program Synthesis with Wake-Sleep Library Learning," PLDI 2021. https://dl.acm.org/doi/10.1145/3453483.3454080 <!-- VERIFY: dl.acm.org returns HTTP 403 to automated requests as of 2026-08-04; likely publisher bot-blocking, not a dead link — a human should confirm in-browser. -->
 
 **[Dehaene-GW]** Dehaene, S., Kerszberg, M., and J.P. Changeux, "A neuronal model of a global workspace in effortful cognitive tasks," *PNAS*, 95(24):14529, 1998. https://www.pnas.org/doi/10.1073/pnas.95.24.14529
 
 **[ACT-R]** Anderson, J.R., et al., "An integrated theory of the mind," *Psychological Review*, 111(4):1036, 2004.
 
-**[Wagner-Altenberg]** Wagner, G.P. and Altenberg, L., "Complex Adaptations and the Evolution of Evolvability," *Evolution*, 50(3):967–976, 1996. https://academic.oup.com/evolut/article/50/3/967/6870900
+**[Wagner-Altenberg]** Wagner, G.P. and Altenberg, L., "Complex Adaptations and the Evolution of Evolvability," *Evolution*, 50(3):967–976, 1996. https://academic.oup.com/evolut/article/50/3/967/6870900 <!-- VERIFY: academic.oup.com returns HTTP 403 to automated requests as of 2026-08-04; likely publisher bot-blocking, not a dead link — a human should confirm in-browser. -->
 
 **[Bullmore-Sporns]** Bullmore, E. and Sporns, O., "The economy of brain network organization," *Nature Reviews Neuroscience*, 13(5):336–349, 2012. https://www.nature.com/articles/nrn3214
 
 **[Lieder-Griffiths]** Lieder, F. and Griffiths, T.L., "Resource-rational analysis: Understanding human cognition as the optimal use of limited computational resources," *Behavioral and Brain Sciences*, 43:e1, 2020.
+
+<!-- Link verification pass completed 2026-08-04. All URLs in this section were checked for resolution. Four URLs (academic.oup.com, dl.acm.org, media.defense.gov, w3.org) returned HTTP 403 to automated requests, consistent with publisher/vendor bot-blocking rather than dead links; each is flagged inline above with a VERIFY comment for human confirmation in-browser. All other URLs, including all arXiv IDs, resolved successfully (HTTP 200). -->

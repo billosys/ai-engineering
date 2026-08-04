@@ -109,7 +109,7 @@ In addition to Common fields, REQUEST envelopes carry:
       "monetary_unit": "USD"
     },
     "provenance_requirement": {
-      "min_grade": "VALIDATED"
+      "min_policy_grade": "VALIDATED"
     },
     "priority": "NORMAL",
     "idempotency_key": null
@@ -129,7 +129,15 @@ In addition to Common fields, REQUEST envelopes carry:
 
 **`cost_budget`** (object, OPTIONAL): Resource constraints on the request. All sub-fields are optional; omitted fields indicate no constraint. `max_compute_seconds` caps wall-clock compute time. `max_tokens` caps token consumption (for LLM services). `max_monetary_cost` caps monetary cost. `monetary_unit` is the ISO 4217 currency code. The Dispatcher MAY use cost_budget for routing decisions (prefer cheaper services). Services MUST NOT exceed the cost_budget; if they would, they MUST return an Escalation with reason `BUDGET_EXCEEDED`. For backward compatibility with v0.1 implementations, Dispatchers SHOULD accept `max_monetary_units` as an alias for `max_monetary_cost` in request envelopes.
 
-**`provenance_requirement`** (object, OPTIONAL): The minimum acceptable Provenance Grade for the response. If the Service cannot achieve this grade, it MUST return an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and the grade it could achieve. If omitted, no minimum grade is required.
+**`provenance_requirement`** (object, OPTIONAL on REQUEST/ESCALATION): Specifies the minimum evidence quality acceptable for the response.
+
+- **`min_policy_grade`** (integer 0–7 or grade name, OPTIONAL): The minimum grade in the policy order. The Dispatcher filters candidate services whose maximum achievable grade is below this value. Replaces the former `min_grade` field.
+- **`required_methods`** (array of strings, OPTIONAL): Evidence methods that MUST appear in the response's evidence entries. Values are evidence `type` strings (e.g., `"formal_verification"`, `"human_review"`, `"independent_cross_check"`). When present, a response satisfies the requirement only if its evidence entries include at least one entry of each required type, regardless of the overall grade.
+- **`required_evidence_types`** (array of strings, OPTIONAL): Specific evidence artifact types that MUST be present (e.g., `"proof_certificate"`, `"signed_attestation"`). When present, a response satisfies the requirement only if its evidence entries include artifact references of each specified type.
+
+When only `min_policy_grade` is set, the Dispatcher uses simple `>=` grade comparison (backward-compatible with v0.2's `min_grade`). When `required_methods` or `required_evidence_types` are also set, the Dispatcher uses them as additional filters: a candidate service's Capability Record MUST advertise the ability to produce the required evidence types, and the response is validated post-receipt against the requirement.
+
+If the Service cannot meet the requirement, it MUST return an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and the grade (and evidence types, if applicable) it could achieve. If `provenance_requirement` is omitted, no minimum grade or evidence is required.
 
 **`priority`** (string, OPTIONAL): One of `"LOW"`, `"NORMAL"`, `"HIGH"`, `"CRITICAL"`. Defaults to `"NORMAL"`. Services MAY use priority for internal scheduling. The Dispatcher MAY use priority as a tiebreaker in routing decisions.
 
@@ -215,7 +223,7 @@ An Escalation is a structured response indicating the Service cannot fulfill the
 - **`reason`** (string, REQUIRED): One of the defined escalation reasons (Section 13.3).
 - **`detail`** (string, OPTIONAL): Human-readable explanation.
 - **`achieved_grade`** (string, OPTIONAL): The Provenance Grade the Service could achieve, if it produced a partial result.
-- **`requested_grade`** (string, OPTIONAL): The grade that was requested via `provenance_requirement.min_grade`.
+- **`requested_grade`** (string, OPTIONAL): The grade that was requested via `provenance_requirement.min_policy_grade`.
 - **`suggested_target`** (string, OPTIONAL): A Service ID or Capability Type the Dispatcher should try next.
 - **`partial_result_available`** (boolean, REQUIRED): Whether the Content of this message contains a partial result.
 

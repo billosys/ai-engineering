@@ -110,7 +110,7 @@ The Epistemic Layer carries the information that makes CCDP different from a gen
 - `cost_consumed`: the actual resources consumed by the Service
 - `capacity`: the Service's current available capacity
 
-The Dispatcher reads selected Layer 3 fields for routing and enforcement purposes: `provenance_requirement.min_grade` for candidate filtering, `cost_budget` for cost-aware routing, and `deadline`/`remaining_budget_ms` for deadline enforcement. This is structural use of typed metadata, not semantic interpretation of content. It MAY enforce structural rules (e.g., reject a Response missing the `provenance` field) but MUST NOT interpret their content (e.g., the Dispatcher does not evaluate whether a Provenance Grade is accurate — that is the Service's responsibility, subject to audit).
+The Dispatcher reads selected Layer 3 fields for routing and enforcement purposes: `provenance_requirement.min_policy_grade` for candidate filtering, `cost_budget` for cost-aware routing, and `deadline`/`remaining_budget_ms` for deadline enforcement. This is structural use of typed metadata, not semantic interpretation of content. It MAY enforce structural rules (e.g., reject a Response missing the `provenance` field) but MUST NOT interpret their content (e.g., the Dispatcher does not evaluate whether a Provenance Grade is accurate — that is the Service's responsibility, subject to audit).
 
 ### 6.2.4. Layer 4: Content
 

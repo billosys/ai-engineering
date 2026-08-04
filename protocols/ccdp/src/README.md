@@ -1,6 +1,6 @@
 # CCDP: Composite Cognition Dispatch Protocol — Specification v0.2
 
-**Status:** Draft v0.2, August 2026 — reviewed but not yet implementation-ready. See the v0.2 revision notes for outstanding items.
+**Status:** Draft v0.2 — second review round incorporated. Not yet implementation-ready; see spec-quality next steps below. See the overall review assessment in `workbench/review-v0.2/` for outstanding items from the first review round, and the second-round revision notes below for current status.
 
 **Full spec:** See the source files in this directory (`01-abstract.md` through `18-references.md`) and the assembler tool in `../tools/`.
 
@@ -21,7 +21,7 @@
 13. **Error Handling and Escalation** — Error taxonomy (protocol/service/epistemic), error codes, escalation reasons, escalation chain processing (with authorization/budget/isolation checks), health monitoring, circuit breakers
 14. **Decomposition** — Decomposition as first-class service, plan structure (DAG via `depends_on`), typed result references, composition methods, fallback strategies, recursive decomposition with width/depth/total-node limits
 15. **Security** — mTLS, bearer tokens (format-agnostic, with lifecycle guidance), message signing with JSON canonicalization, replay protection, isolation, credential handling
-16. **Conformance** — Conforming Dispatcher, Service, and Registry requirements; Core vs Full conformance levels; conformance testing guidance
+16. **Conformance** — Conforming Dispatcher requirements as stable-ID tables (`DISP-CORE-NNN`, `DISP-FULL-NNN`, `DISP-OPT-NNN`); Conforming Service and Registry requirements; Core vs Full conformance levels; conformance testing guidance
 17. **Security Considerations** — Threat model, known attack vectors with mitigations and residual risks, NSA/CISA response table, honest limitations
 18. **References** — Normative and informative references, organized by category
 
@@ -32,7 +32,7 @@
 - **HUMAN_ATTESTED as highest grade:** Spec-recursion terminates at human judgment
 - **Escalation as routing, not error:** First-class message type with structured chain processing, including authorization/budget/isolation checks on escalation targets
 - **Layered architecture with novel Epistemic Layer:** No TCP/IP analog — this is where cognitive dispatch differs from data routing
-- **Security as a protocol-level requirement:** Security properties are protocol-level requirements; production enforcement depends on deployment infrastructure, key management, and operational practices beyond the protocol's scope
+- **Security as a protocol-level requirement:** Security properties are protocol-level requirements; production enforcement depends on deployment infrastructure, key management, and operational practices beyond the protocol's scope. Mutual authentication and token scoping required at all levels; message signing required for Full conformance with high-grade provenance and cross-domain deployments
 
 ## Next Steps
 
@@ -41,8 +41,15 @@
 - Reference implementation scope
 
 **Spec-quality next steps (before implementation):**
-- Machine-readable JSON Schemas for all message types (Section 7.8)
-- Conformance test suite (Section 16.6)
-- Reference and link verification pass
+- Machine-readable JSON Schemas for all message types (Section 7.8) — schema inventory defined, schemas not yet published
+- Conformance test suite (Section 16.6) — verification checklist defined, formal suite not yet published
+- Reference and link verification — completed for this draft (Section 18); a final pass is still recommended before publication
 - Threat-model refinement (multi-component, registry poisoning)
 - Versioning alignment review (document version, wire version, audit schema version, registry record version)
+- Stable requirement IDs — Section 16 conversion to `DISP-CORE-NNN` / `DISP-FULL-NNN` / `DISP-OPT-NNN` (completed for the Dispatcher; Service and Registry requirement tables remain prose-only)
+
+**Implementation blockers (before first conforming implementation):**
+- Companion JSON Schemas (`schemas/` directory) — inventory in Section 7.8
+- Conformance test suite — framework in Section 16.6
+- Reference and link verification — final pass before publication
+- Stable requirement IDs — Section 16 conversion to `DISP-CORE-NNN` / `DISP-FULL-NNN`
