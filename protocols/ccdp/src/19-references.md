@@ -1,6 +1,6 @@
-# 18. References
+# 19. References
 
-## 18.1. Normative References
+## 19.1. Normative References
 
 These references are essential to the implementation of this specification.
 
@@ -38,7 +38,7 @@ These references are essential to the implementation of this specification.
 
 **[SemVer]** Preston-Werner, T., "Semantic Versioning 2.0.0." https://semver.org/
 
-## 18.2. Informative References — Protocol Design Foundations
+## 19.2. Informative References — Protocol Design Foundations
 
 ### TCP/IP and the End-to-End Principle
 
@@ -57,6 +57,10 @@ The basis for CCDP's schema versioning and compatibility rules in the Capability
 **[Connect-gRPC]** Buf, "Connect: A Better gRPC." https://buf.build/blog/connect-a-better-grpc
 
 Demonstrated that typed contracts and code generation are achievable without the full gRPC operational overhead. CCDP's HTTP-native approach is informed by Connect's design.
+
+**[gRPC-Deadlines]** gRPC Authors, "Deadlines," gRPC documentation. https://grpc.io/docs/guides/deadlines/
+
+gRPC's deadline propagation model — a per-call deadline that decrements at each hop. Grounds CCDP's `deadline` and `remaining_budget_ms` flow-control fields (Section 12.4).
 
 ### Existing Protocols (Critical Analysis)
 
@@ -86,7 +90,7 @@ The most substantive academic survey of the agent communication landscape. CCDP 
 
 **[DEV-Standards]** "The State of Agentic AI Standards in 2026," DEV Community. https://dev.to/alexmercedcoder/the-state-of-agentic-ai-standards-in-2026-mcp-a2a-webmcp-osi-and-the-protocol-stack-taking-3o2l (accessed 2026-08-03)
 
-## 18.3. Informative References — Theoretical Foundations
+## 19.3. Informative References — Theoretical Foundations
 
 ### Market Economics and Quality Under Asymmetry
 
@@ -148,6 +152,14 @@ Broad abstraction remains unsolved: ARC-AGI-2 scores ~3% for frontier models vs 
 
 Offloading computation to a deterministic engine reliably beats chain-of-thought. Grounds the Mode 2 and Mode 3 service architectures.
 
+**[Logic-LM]** Pan, L., et al., "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning," EMNLP 2023 Findings. arXiv:2305.12295.
+
+LLM-generated formal representations checked and solved by a symbolic solver (Prover9, Pyke, Z3), with the LLM revising on solver-reported errors. Grounds the "LLM proposes, engine disposes" pattern (Section 5.3.3) alongside PAL and SatLM.
+
+**[SatLM]** Ye, X., et al., "SatLM: Satisfiability-Aided Language Models Using Declarative Prompting," NeurIPS 2023. arXiv:2305.15766.
+
+LLM translates a problem into a declarative satisfiability specification, which an automated theorem prover solves; the declarative framing reduces the LLM's exposure to procedural reasoning errors. Grounds the Mode 3 composite architecture alongside PAL and Logic-LM.
+
 **[Vericoding]** Bursuc, R., et al., "Vericoding," arXiv:2509.22908, 2025.
 
 LLMs game weak specifications into vacuous proofs (~9%). Grounds the specification-recursion caveat on FORMALLY_VERIFIED grades and the `scope` requirement.
@@ -166,7 +178,7 @@ Variance amplification across serial stages. Referenced in Section 12.7 as a war
 
 Distribution-free queueing invariant relating occupancy, throughput, and latency. Informs the capacity advertisement and load-aware routing design.
 
-## 18.4. Informative References — Additional Sources
+## 19.4. Informative References — Additional Sources
 
 The references in this section are secondary or journalistic sources used for context and historical framing. Protocol-level claims in this specification are grounded in the primary references (Sections 18.1–18.3). Secondary sources provide useful context but are not evidence for protocol design decisions.
 

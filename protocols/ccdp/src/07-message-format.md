@@ -2,7 +2,7 @@
 
 ## 7.1. Wire Encoding
 
-Every CCDP message is encoded as a JSON-RPC 2.0 [JSON-RPC] request or response, transported over HTTP POST. The JSON-RPC `method` field identifies the CCDP message type; the `params` field carries the CCDP Envelope and Content.
+Every CCDP message is encoded as a JSON-RPC 2.0 [JSON-RPC] request or response, transported over HTTP POST. The JSON-RPC `method` field identifies the CCDP message type. Method-bearing messages (REQUEST, ESCALATION, NOTIFICATION, HEALTH_REQUEST, DECOMPOSITION_RESULT) carry CCDP data in the JSON-RPC `params` object. Response messages (RESPONSE, HEALTH_RESPONSE) carry CCDP data in the JSON-RPC `result` object.
 
 A CCDP Request encoded as JSON-RPC 2.0:
 
@@ -132,10 +132,10 @@ In addition to Common fields, REQUEST envelopes carry:
 **`provenance_requirement`** (object, OPTIONAL on REQUEST/ESCALATION): Specifies the minimum evidence quality acceptable for the response.
 
 - **`min_policy_grade`** (integer 0–7 or grade name, OPTIONAL): The minimum grade in the policy order. The Dispatcher filters candidate services whose maximum achievable grade is below this value. Replaces the former `min_grade` field.
-- **`required_methods`** (array of strings, OPTIONAL): Evidence methods that MUST appear in the response's evidence entries. Values are evidence `type` strings (e.g., `"formal_verification"`, `"human_review"`, `"independent_cross_check"`). When present, a response satisfies the requirement only if its evidence entries include at least one entry of each required type, regardless of the overall grade.
-- **`required_evidence_types`** (array of strings, OPTIONAL): Specific evidence artifact types that MUST be present (e.g., `"proof_certificate"`, `"signed_attestation"`). When present, a response satisfies the requirement only if its evidence entries include artifact references of each specified type.
+- **`required_methods`** (array of strings, OPTIONAL): Evidence methods that MUST appear in the response's evidence entries. Values match the `method` field of the Evidence Entry schema (Section 4), e.g., `"formal_verification"`, `"human_review"`, `"independent_cross_check"`. When present, a response satisfies the requirement only if its evidence entries include at least one entry of each required method, regardless of the overall grade.
+- **`required_evidence_types`** (array of strings, OPTIONAL): Specific evidence artifact types that MUST be present. Values match the `artifact_type` field of the Evidence Entry's `artifact_ref` object (Section 4), e.g., `"proof_certificate"`, `"signed_attestation"`. When present, a response satisfies the requirement only if its evidence entries include artifact references of each specified type.
 
-When only `min_policy_grade` is set, the Dispatcher uses simple `>=` grade comparison (backward-compatible with v0.2's `min_grade`). When `required_methods` or `required_evidence_types` are also set, the Dispatcher uses them as additional filters: a candidate service's Capability Record MUST advertise the ability to produce the required evidence types, and the response is validated post-receipt against the requirement.
+When only `min_policy_grade` is set, the Dispatcher uses simple `>=` grade comparison (backward-compatible with v0.2's `min_grade`). When `required_methods` or `required_evidence_types` are also set, the Dispatcher uses them as additional filters: a candidate service's Capability Record MUST advertise matching `provenance_capabilities.supported_evidence_methods` and `supported_artifact_types` (Section 8.2.2), and the response's actual evidence entries are validated post-receipt against the requirement (Section 9.2, Step 5).
 
 If the Service cannot meet the requirement, it MUST return an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and the grade (and evidence types, if applicable) it could achieve. If `provenance_requirement` is omitted, no minimum grade or evidence is required.
 
@@ -158,10 +158,17 @@ In addition to Common fields, RESPONSE envelopes carry:
       "grade": "VALIDATED",
       "evidence": [
         {
-          "type": "test-suite-result",
+          "method": "statistical_testing",
           "description": "All 47 unit tests passed",
-          "artifact_ref": "test-results/run-2026-08-03-001.json",
-          "service_id": "test-runner-01"
+          "service_id": "test-runner-01",
+          "artifact_ref": {
+            "uri": "urn:ccdp:artifact:test-results/run-2026-08-03-001.json",
+            "artifact_type": "test_report",
+            "integrity": {
+              "algorithm": "sha-256",
+              "digest": "e3b0c4..."
+            }
+          }
         }
       ],
       "scope": "Code conforms to specification spec-2026-001",
@@ -183,10 +190,10 @@ In addition to Common fields, RESPONSE envelopes carry:
 
 **`status`** (string, REQUIRED): One of `"SUCCESS"`, `"PARTIAL"`, `"ERROR"`. `SUCCESS` indicates the request was fully completed. `PARTIAL` indicates the Service produced a result but could not fully satisfy the request (the response includes what was achieved). `ERROR` indicates a failure (see Section 13 for error handling).
 
-**`provenance`** (object, REQUIRED): The epistemic metadata for this response. MUST be present on every RESPONSE and ESCALATION. Structure defined in Section 10. Sub-fields:
+**`provenance`** (object, REQUIRED): The epistemic metadata for this response. Provenance MUST be present on every RESPONSE. On ESCALATION messages, provenance MUST be present when the message carries partial results (cognitive outputs from the escalating service). ESCALATION messages that represent pure routing failures (no cognitive output was produced) MAY omit provenance; in this case, the provenance grade is implicitly OPAQUE. See the per-message-type matrix (Section 7.3.8) for the normative requirement. Structure defined in Section 10. Sub-fields:
 
 - **`grade`** (string, REQUIRED): The Provenance Grade. One of the defined grades (Section 10.2).
-- **`evidence`** (array, REQUIRED but MAY be empty): Evidence entries supporting the grade. Each entry has `type` (string), `description` (string), optionally `artifact_ref` (string, a reference to a verifiable artifact), and optionally `service_id` (string, the Service that produced the evidence).
+- **`evidence`** (array, REQUIRED but MAY be empty): Evidence entries supporting the grade, using the normative Evidence Entry schema defined in Section 4 (`method`, `description`, `service_id`, `artifact_ref` object, `verified_by`).
 - **`scope`** (string, OPTIONAL): What claim the grade applies to. REQUIRED when grade is `FORMALLY_VERIFIED` — it MUST identify the specification against which verification was performed.
 - **`service_id`** (string, REQUIRED): The Service that produced this response.
 - **`service_version`** (string, REQUIRED): The version of the Service.

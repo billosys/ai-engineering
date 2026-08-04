@@ -96,14 +96,15 @@ When the Dispatcher receives an Escalation, it processes the Escalation Chain:
 ```
 ┌───────────┐    Escalation   ┌───────────┐    Escalation  ┌──────────┐
 │ Service A │────────────────▶│ Service B │───────────────▶│  Human   │
-│  (LLM)    │  CONFIDENCE_    │ (Prover)  │  CAPABILITY_   │  Queue   │
-│           │  BELOW_THRESH.  │           │  EXCEEDED      │          │
+│  (LLM)    │  PROVENANCE_    │ (Prover)  │  CAPABILITY_   │  Queue   │
+│           │  BELOW_REQ.*    │           │  EXCEEDED      │          │
 └───────────┘                 └───────────┘                └──────────┘
       ▲                             ▲                            ▲
       │         Dispatcher          │        Dispatcher          │
       │         routes to           │        routes to           │
       │         next in chain       │        next in chain       │
 ```
+\* Abbreviated for diagram width; full reason name is `PROVENANCE_BELOW_REQUIREMENT`.
 
 The algorithm:
 
@@ -177,7 +178,7 @@ Each retry and reroute is logged in the audit trail.
 A Service that returns a CCDP error response (a JSON-RPC error with a CCDP error code) is treated as a permanent failure for this Request:
 
 1. Do NOT retry the same Service for this Request.
-2. Reroute to an alternative Service if the error suggests it (e.g., `-32010` schema validation failed may succeed with a different Service version). Rerouting after schema validation failure is appropriate only when the alternative Service supports a compatible schema version. The Dispatcher SHOULD check schema version compatibility in the Registry before rerouting, rather than blindly forwarding to another Service.
+2. Reroute to an alternative Service if the error suggests it (e.g., `-32010` schema validation failed may succeed with a different Service version). Rerouting after schema validation failure is appropriate only when the alternative Service supports a compatible schema version. The Dispatcher SHOULD check schema version compatibility in the Registry before rerouting, rather than blindly forwarding to another Service. Automatic rerouting to a different service version after a schema validation failure is permitted only when the request includes `org.ccdp.allow_schema_version_fallback: true` in the request metadata. This flag defaults to `false`. When absent or `false`, schema validation failures are permanent errors — the Dispatcher MUST return the error to the requester rather than attempting version fallback.
 3. Error if no alternative is available.
 
 ### 13.5.3. Malformed Responses
@@ -193,7 +194,7 @@ If a Service returns a response that is valid JSON-RPC but invalid CCDP (missing
 
 ### 13.6.1. Health Check Protocol
 
-The Dispatcher probes each Service's health at the interval specified in the Service's Capability Record (`health_check.interval_seconds`). Health checks use the `ccdp/health.request` and `ccdp/health.response` message types (Section 7.3.6).
+The Dispatcher probes each Service's health at the interval specified in the Service's Capability Record (`health_check.interval_seconds`). Health checks use the `ccdp/health.request` method. The response is a HEALTH_RESPONSE — a JSON-RPC result (not a method-bearing message) whose `envelope.type` is `"HEALTH_RESPONSE"`. The Dispatcher interprets the structured result to update its health table. (Section 7.3.6)
 
 A health check probe:
 1. Sends a HEALTH_REQUEST to the Service's health endpoint.

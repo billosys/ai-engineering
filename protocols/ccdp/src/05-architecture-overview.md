@@ -36,7 +36,7 @@ A CCDP system has a star topology with the Dispatcher at the center. All communi
 
 This topology is a deliberate design choice, not a scaling constraint. The Dispatcher is the single point of protocol enforcement — authentication, routing, audit logging, health monitoring, and deadline enforcement all happen at the Dispatcher. A Service that bypasses the Dispatcher bypasses all of these guarantees.
 
-The star topology avoids the O(N²) communication explosion that full-mesh agent architectures face [arXiv:2509.02317]. With N services, CCDP requires N links (Dispatcher ↔ Service), not N(N-1)/2. The cost is that the Dispatcher is a single point of failure; high-availability deployment is an infrastructure concern outside this specification's scope, but the protocol's self-contained message design simplifies Dispatcher replication, though production deployments must address shared state for replay caches, circuit-breaker state, health tables, and audit-store consistency (see Section 15.5 and Section 13.6).
+The star topology avoids the O(N²) communication explosion that full-mesh agent architectures face [arXiv-Agent-Comms]. With N services, CCDP requires N links (Dispatcher ↔ Service), not N(N-1)/2. The cost is that the Dispatcher is a single point of failure; high-availability deployment is an infrastructure concern outside this specification's scope, but the protocol's self-contained message design simplifies Dispatcher replication, though production deployments must address shared state for replay caches, circuit-breaker state, health tables, and audit-store consistency (see Section 15.5 and Section 13.6).
 
 ## 5.2. Component Roles
 

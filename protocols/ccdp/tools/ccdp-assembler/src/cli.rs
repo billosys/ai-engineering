@@ -16,7 +16,7 @@ pub enum Format {
 
 /// Assembles the CCDP chapter sources into a single document.
 #[derive(Debug, Parser)]
-#[command(name = "ccdp-assembler", version, about)]
+#[command(name = "ccdp-assembler", about)]
 pub struct Args {
     /// Chapter source directory.
     #[arg(short = 's', long = "src-dir", default_value = "protocols/ccdp/src")]

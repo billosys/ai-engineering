@@ -1,4 +1,4 @@
-//! Parsing of `18-references.md` into kramdown-rfc `normative`/`informative`
+//! Parsing of the References chapter into kramdown-rfc `normative`/`informative`
 //! YAML blocks.
 //!
 //! References are line-oriented: `**[KEY]** rest of the citation text...`.
@@ -25,7 +25,7 @@ static URL_RE: LazyLock<Regex> =
 static YEAR_RE: LazyLock<Regex> =
     LazyLock::new(|| Regex::new(r"\b\d{4}\b").expect("static regex is valid"));
 
-/// One `**[KEY]** ...` reference entry from `18-references.md`.
+/// One `**[KEY]** ...` reference entry from the References chapter.
 #[derive(Debug, Clone)]
 pub struct Reference {
     pub key: String,

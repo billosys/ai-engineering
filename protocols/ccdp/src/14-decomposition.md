@@ -2,7 +2,7 @@
 
 ## 14.1. The Decomposition Problem
 
-Most real cognitive work requires decomposition — breaking a complex request into sub-tasks that each route to a different Service. "Fix the bug in the auth module" decomposes into locate, diagnose, repair, verify. "Prove this theorem" decomposes into formalize, search for proof strategy, execute proof steps, check. Decomposition is itself a cognitive act, and one that LLMs are demonstrably weak at — PlanBench shows LLMs collapse on longer planning horizons and hallucinate plans for unsolvable problems [Valmeekam et al. 2024].
+Most real cognitive work requires decomposition — breaking a complex request into sub-tasks that each route to a different Service. "Fix the bug in the auth module" decomposes into locate, diagnose, repair, verify. "Prove this theorem" decomposes into formalize, search for proof strategy, execute proof steps, check. Decomposition is itself a cognitive act, and one that LLMs are demonstrably weak at — PlanBench shows LLMs collapse on longer planning horizons and hallucinate plans for unsolvable problems [PlanBench].
 
 CCDP resolves this by treating decomposition as a first-class Service: a dedicated Decomposition Service with Capability Type `org.ccdp.decomposition` that receives complex requests and emits structured Decomposition Plans. The Dispatcher routes to the Decomposition Service first, then routes each sub-request from the plan independently. The Dispatcher performs only structural operations — routing, dependency resolution, typed result-reference substitution; the decomposition intelligence lives in a dedicated, auditable Service behind a typed interface.
 
@@ -202,15 +202,15 @@ The `fallback` field specifies what happens when sub-requests fail:
 - `"return_partial"`: Return the individual sub-results without composition as a multipart Response.
 - `"escalate_parent"`: Escalate the entire request.
 
-**Fallback behavior matrix.** The following matrix summarizes default Dispatcher behavior for common failure scenarios during plan execution:
+**Fallback behavior matrix.** The following matrix summarizes default Dispatcher behavior for common failure scenarios during plan execution, governed by the `$ref.fallback` field (Section 14.3.3) and the `on_sub_failure` / `on_composition_failure` fields (Section 14.3.5):
 
-| Scenario | Default Behavior | Configurable? |
-|---|---|---|
-| Referenced dependency failed | Use `fallback` value if specified; otherwise escalate the parent request | Plan-level `on_failure` field |
-| Referenced dependency escalated (partial result) | Use partial result if `$ref` path resolves; otherwise use `fallback`; otherwise escalate parent | Plan-level |
-| All sub-requests succeeded, composition fails | Escalate parent request with all sub-results as partial results | No — always escalate |
-| Width or node limit exceeded | Reject plan with error `-32012` before execution begins | No — always reject |
-| Partial sub-results with mixed success | Compose available results; include `org.ccdp.partial_composition: true` metadata flag | Plan-level `partial_composition_policy` |
+| Scenario | Governing Field | Default Behavior | Configurable Values |
+|---|---|---|---|
+| Result reference `path` does not resolve in an otherwise-successful dependency | `$ref.fallback` | Substitute the reference's `fallback` value if specified; otherwise follow `on_sub_failure` | Any JSON value, or omitted |
+| Sub-request failed entirely, no result to reference | `on_sub_failure` | Escalate the parent request | `"escalate_parent"` (default), `"skip_and_compose"`, `"retry_alternative"` |
+| Sub-request escalated with a partial result | `on_sub_failure` | Use the partial result if the `$ref` path resolves against it; otherwise apply `on_sub_failure` | Same as above |
+| All sub-requests succeeded, composition fails | `on_composition_failure` | Escalate parent request with all sub-results as partial results | `"escalate_parent"` (default), `"return_partial"` |
+| Width or node limit exceeded | — | Reject plan with error `-32012` before execution begins | Not configurable — always reject |
 
 ## 14.4. Dispatcher Execution of Decomposition Plans
 

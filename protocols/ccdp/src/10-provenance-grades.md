@@ -41,7 +41,7 @@ The result was produced by a method with known error characteristics — a stati
 
 Typical sources: classifier output with confidence scores, statistical estimates with error bars, pattern matching with a known false-positive rate.
 
-The distinction from ASSERTED: a HEURISTIC result carries *quantified uncertainty*, while an ASSERTED result carries no uncertainty information. A service assigning HEURISTIC MUST include evidence entries with measurable error characteristics (e.g., `"type": "classifier-confidence", "confidence": 0.92, "false_positive_rate": 0.03`).
+The distinction from ASSERTED: a HEURISTIC result carries *quantified uncertainty*, while an ASSERTED result carries no uncertainty information. A service assigning HEURISTIC MUST include evidence entries with measurable error characteristics (e.g., `"method": "statistical_testing", "confidence": 0.92, "false_positive_rate": 0.03`).
 
 ### Grade 3: COMPUTED
 
@@ -83,12 +83,16 @@ The result has been machine-checked against a formal specification. A proof obje
 
 Typical sources: theorem prover output (Lean, Isabelle, Coq), SMT solver proofs (Z3), verified-correct-by-construction code (Dafny, Verus).
 
-A service assigning FORMALLY_VERIFIED MUST:
-- Include the `scope` field identifying the specification against which verification was performed.
-- Include an evidence entry of type `"proof-object"` with an `artifact_ref` pointing to the proof.
-- The proof MUST be independently checkable — a claim of "formally verified" without a checkable proof artifact is at best VALIDATED.
+A service assigning FORMALLY_VERIFIED MUST include the `scope` field identifying the specification against which verification was performed, and MUST include evidence entries (Section 4, Evidence Entry) with:
 
-Evidence entries for FORMALLY_VERIFIED responses MUST include: proof checker identifier and version, specification identifier and version, artifact hash (in the `artifact_ref.integrity` field), and verification environment description. A FORMALLY_VERIFIED claim that cannot be independently reproduced is, for conformance purposes, VALIDATED.
+- `method`: `"formal_verification"`
+- `artifact_ref.artifact_type`: the type of proof artifact (e.g., `"proof_certificate"`)
+- `artifact_ref.integrity`: hash of the proof artifact
+- `artifact_ref.uri`: resolvable reference to the proof artifact
+- `verified_by`: proof checker identifier and version (e.g., `"coq-8.18.0"`, `"lean4-4.3.0"`)
+- `description`: SHOULD include the specification identifier/version and verification environment
+
+A FORMALLY_VERIFIED claim whose evidence entries do not include a resolvable, integrity-checked artifact reference is, for conformance purposes, VALIDATED.
 
 **The specification-recursion caveat:** FORMALLY_VERIFIED means "this result is correct *relative to this specification*." It does not mean the specification is correct. The grade is silent on whether the specification captures the intended behavior. Consumers of FORMALLY_VERIFIED results SHOULD examine the `scope` field to understand what claim is actually being made and SHOULD track the specification's own provenance separately.
 
@@ -122,7 +126,7 @@ A Service MUST follow these rules when assigning a Provenance Grade to a Respons
 
 6. **Monotonicity.** A Service MUST NOT assign a higher grade to a result that has less epistemic support. If a Service's verification step fails or is inconclusive, the grade reflects the actual achieved level, not the attempted level.
 
-7. **Verifier authority.** The grade reflects the strongest verification actually performed, not the strongest verification the service is capable of performing. A service with formal verification capability that skips verification for performance reasons MUST report the grade of the method actually used. Services SHOULD include an evidence entry of type `"verification_method"` documenting what method was used and why, especially when a lower-than-maximum grade is assigned.
+7. **Verifier authority.** The grade reflects the strongest verification actually performed, not the strongest verification the service is capable of performing. A service with formal verification capability that skips verification for performance reasons MUST report the grade of the method actually used. Services SHOULD include an evidence entry with `method: "verification_method"` documenting what method was used and why, especially when a lower-than-maximum grade is assigned.
 
 ## 10.4. Grade Comparison and Ordering
 

@@ -1,10 +1,10 @@
-# 19. Version History
+# 20. Version History
 
 This section records notable changes between published draft versions of this
 specification. It is informative and intended to help reviewers understand the
 shape of each revision.
 
-## 19.1. Version 0.2.0
+## 20.1. Version 0.2.0
 
 Version 0.2.0 is the second reviewed draft of CCDP. It incorporates feedback
 from the v0.1 review pass and focuses on resolving architectural consistency,
@@ -12,7 +12,7 @@ wire-format precision, conformance clarity, and security/audit semantics. The
 wire protocol version remains `"1.0"` during this draft cycle because CCDP has
 not yet committed to implementation compatibility.
 
-### 19.1.1. Document Status and Conventions
+### 20.1.1. Document Status and Conventions
 
 - Updated the draft status from v0.1 to v0.2 and marked the specification as
   reviewed but not yet implementation-ready.
@@ -26,7 +26,7 @@ not yet committed to implementation compatibility.
   UTF-8 encoding, enum casing, numeric precision, and the normative status of
   examples, tables, diagrams, and design notes.
 
-### 19.1.2. Dispatcher Model
+### 20.1.2. Dispatcher Model
 
 - Replaced the "dumb dispatcher" framing with the Coordinator Dispatcher model:
   the Dispatcher is a constrained protocol enforcement and execution
@@ -42,7 +42,7 @@ not yet committed to implementation compatibility.
 - Added high-availability caveats for shared Dispatcher state, including replay
   caches, circuit-breaker state, health tables, and audit-store consistency.
 
-### 19.1.3. Message Format and Wire Semantics
+### 20.1.3. Message Format and Wire Semantics
 
 - Reworked the JSON-RPC message-type table so RESPONSE and HEALTH_RESPONSE are
   represented as JSON-RPC responses rather than methods.
@@ -65,7 +65,7 @@ not yet committed to implementation compatibility.
   covering envelopes, content wrappers, provenance, escalation, health,
   decomposition plans, and audit records.
 
-### 19.1.4. Capability Registry
+### 20.1.4. Capability Registry
 
 - Added typed Escalation Chain entries (`service_id` or `capability_type`) to
   remove ambiguity from string-only escalation targets.
@@ -82,7 +82,7 @@ not yet committed to implementation compatibility.
 - Added static-vs-dynamic Capability Record guidance for health and capacity
   data freshness.
 
-### 19.1.5. Routing, Flow Control, and Errors
+### 20.1.5. Routing, Flow Control, and Errors
 
 - Replaced ambiguous "MUST either" routing outcomes with deployment-configured
   policies where behavior can legitimately vary.
@@ -101,7 +101,7 @@ not yet committed to implementation compatibility.
 - Added capacity freshness handling and Dispatcher-measured deadline accounting
   to reduce clock-skew effects.
 
-### 19.1.6. Provenance and Evidence
+### 20.1.6. Provenance and Evidence
 
 - Added an explicit caveat that the Provenance Grade ordering is a policy order
   for routing and conformance, not a universal epistemic hierarchy.
@@ -120,7 +120,7 @@ not yet committed to implementation compatibility.
   verification and when FORMALLY_VERIFIED is required despite human review.
 - Added audit-retention guidance for provenance artifact references.
 
-### 19.1.7. Audit
+### 20.1.7. Audit
 
 - Added an `audit_schema_version` independent of both document and wire
   protocol versions.
@@ -132,7 +132,7 @@ not yet committed to implementation compatibility.
 - Clarified that audit trails are supervision inputs as well as compliance
   records.
 
-### 19.1.8. Decomposition and Composition
+### 20.1.8. Decomposition and Composition
 
 - Replaced string-template result references with typed JSON Pointer result
   references.
@@ -147,7 +147,7 @@ not yet committed to implementation compatibility.
 - Clarified Dispatcher-initiated decomposition triggers as routing, policy, or
   structural size signals rather than semantic content inspection.
 
-### 19.1.9. Security
+### 20.1.9. Security
 
 - Corrected OAuth-related references by adding PKCE, JWT, token introspection,
   proof-of-possession JWT semantics, JSON Canonicalization Scheme, and issuer
@@ -170,7 +170,7 @@ not yet committed to implementation compatibility.
   poisoning, data exfiltration through free-text fields, decomposition bombs,
   and timing side channels.
 
-### 19.1.10. Conformance
+### 20.1.10. Conformance
 
 - Split Decomposition Plan validation from Decomposition Plan execution:
   validation is Core, execution is Full.
@@ -181,7 +181,7 @@ not yet committed to implementation compatibility.
 - Added Registry compatibility enforcement language that acknowledges the
   practical JSON Schema subset and operator attestation for edge cases.
 
-### 19.1.11. Second-Round v0.2 Refinements
+### 20.1.11. Second-Round v0.2 Refinements
 
 After the initial v0.2 revision, a second review-driven tightening pass made
 the following additional changes:
@@ -249,7 +249,22 @@ the following additional changes:
   implementation blockers, and the fact that Dispatcher requirement IDs are now
   tabled while Service and Registry requirement IDs remain future work.
 
-## 19.2. Version 0.1.0
+### 20.1.12. v0.2 Round 3 Refinements
+
+- **Evidence object schema:** Defined normative Evidence entry schema with structured `artifact_ref` (object, not string), `method` field (replaces `type`), `verified_by`, and explicit artifact type/integrity fields. Applied consistently across Sections 4, 7, 8, 9, 10, 11, 14, 15, 16, and 17.
+- **Registry evidence vocabulary:** Split flat `supported_evidence_types` into `supported_evidence_methods` and `supported_artifact_types` under `provenance_capabilities`.
+- **Audit record tables:** Split normative audit requirements into record-level common fields (Table 11.1) and per-message-type fields (Table 11.2).
+- **Signing grammar:** Standardized on top-level component signing (`["envelope", "content"]`) with mutable-field exclusion per profile.
+- **Service/Registry conformance:** Scoped Full conformance stable-ID tables to the Dispatcher only for v0.2; Service and Registry Full conformance is recorded as an open item (Section 18).
+- **Decomposition fallback matrix:** Rewritten to use defined `on_sub_failure`, `on_composition_failure`, and `$ref.fallback` fields only.
+- **ESCALATION provenance:** Clarified conditional requirement (required with partial results, implicit OPAQUE for pure routing failures).
+- **Schema-validation reroute:** Added `org.ccdp.allow_schema_version_fallback` metadata flag.
+- **Open Questions section:** Added Section 18 documenting five deferred design questions.
+- **Chapter renumbering:** References → Section 19, Version History → Section 20.
+- **Citation label normalization:** Inline citations normalized to match reference keys, including two previously-unnoticed mismatches (FIPA-ACL, PlanBench).
+- **Stale identifiers:** Removed remaining `CONFIDENCE_BELOW_THRESHOLD` references and `ccdp/health.response` method assumptions.
+
+## 20.2. Version 0.1.0
 
 Version 0.1.0 was the initial reviewed draft of CCDP. It introduced the core
 architecture:

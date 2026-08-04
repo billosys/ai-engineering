@@ -53,10 +53,9 @@ A Capability Record describes one Service's implementation of one Capability Typ
     "provenance_capabilities": {
       "max_grade": "FORMALLY_VERIFIED",
       "typical_grade": "FORMALLY_VERIFIED",
-      "evidence_types": ["proof-object", "counterexample"]
+      "supported_evidence_methods": ["formal_verification"],
+      "supported_artifact_types": ["proof_certificate", "counterexample"]
     },
-
-    "supported_evidence_types": ["formal_verification", "proof_certificate"],
 
     "health_check": {
       "endpoint": "https://z3-prover-01.internal:8443/ccdp/health",
@@ -111,12 +110,11 @@ A Capability Record describes one Service's implementation of one Capability Typ
 - `token_cost`: For LLM-based services, estimated tokens per request. Null for non-LLM services.
 - `compute_intensive`: Boolean indicating whether the service consumes significant compute resources.
 
-**`provenance_capabilities`** (object, REQUIRED): What Provenance Grades this Service can produce.
-- `max_grade`: The highest grade this Service can assign to its output.
-- `typical_grade`: The grade most responses will carry.
-- `evidence_types`: Array of Evidence types this Service can produce (e.g., `"proof-object"`, `"test-result"`, `"human-signature"`).
-
-**`supported_evidence_types`** (array of strings, OPTIONAL): Evidence types this service can produce (e.g., `["formal_verification", "proof_certificate"]`). Used by the Dispatcher for `provenance_requirement.required_methods` and `required_evidence_types` matching (Section 9.2, Step 5).
+**`provenance_capabilities`** (object, REQUIRED): Provenance production capabilities of this service.
+- **`max_grade`** (integer 0–7 or grade name, REQUIRED): The highest provenance grade this service can produce.
+- **`typical_grade`** (string, OPTIONAL): The grade most responses will carry.
+- **`supported_evidence_methods`** (array of strings, OPTIONAL): Evidence methods this service can produce. Values are `method` strings from the Evidence Entry schema (Section 4), e.g., `["formal_verification", "human_review", "independent_cross_check"]`. Used by the Dispatcher for `provenance_requirement.required_methods` matching during routing (Section 9.2, Step 5).
+- **`supported_artifact_types`** (array of strings, OPTIONAL): Evidence artifact types this service can produce. Values are `artifact_type` strings from the Evidence Entry schema (Section 4), e.g., `["proof_certificate", "signed_attestation", "test_report"]`. Used by the Dispatcher for `provenance_requirement.required_evidence_types` matching during routing (Section 9.2, Step 5).
 
 **`health_check`** (object, REQUIRED): Health monitoring configuration.
 - `endpoint`: URL for health check probes.

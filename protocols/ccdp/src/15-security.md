@@ -89,24 +89,29 @@ A Service MAY sign its Response envelope and content using a digital signature:
   "metadata": {
     "org.ccdp.signature": {
       "algorithm": "Ed25519",
-      "key_id": "z3-prover-01-signing-key-2026",
-      "signature": "base64-encoded-signature",
-      "signed_fields": ["envelope.request_id", "envelope.provenance", "content"],
+      "key_id": "svc-formal-01-signing-2026",
+      "profile": "service-response",
+      "signed_fields": ["envelope", "content"],
+      "value": "base64-encoded-signature...",
       "timestamp": "2026-08-03T14:30:04.840Z"
     }
   }
 }
 ```
 
-The signature covers the specified fields. The Dispatcher MUST preserve the signature in the metadata when forwarding (per the metadata preservation rule, Section 7.7). The requester can verify the signature using the Service's public key (obtained from the Registry or a key server).
+The signature covers the specified components. The Dispatcher MUST preserve the signature in the metadata when forwarding (per the metadata preservation rule, Section 7.7). The requester can verify the signature using the Service's public key (obtained from the Registry or a key server).
 
-**Canonicalization.** Signing JSON fields requires a deterministic serialization. Implementations MUST use JSON Canonicalization Scheme (JCS) [RFC 8785] to produce a canonical byte sequence before signing. The signature input is computed by constructing a JSON object containing exactly the fields listed in `signed_fields`, in the order they appear in the array, and computing the JCS [RFC 8785] canonical form of that object. This produces an unambiguous byte sequence. Example: if `signed_fields` is `["envelope", "content"]`, the signature input is `JCS({"envelope": <envelope-value>, "content": <content-value>})`. Fields not listed in `signed_fields` are excluded from the signature and MAY be modified by intermediaries (e.g., the Dispatcher's `audit` annotation).
+**Signed components.** The `signed_fields` array identifies top-level components of the CCDP message to include in the signature. Valid values are `"envelope"` and `"content"`. The signature input is the JCS [RFC 8785] canonical form of a JSON object containing exactly those components:
 
-**Mutable and immutable fields.** The following envelope fields are designated as *Dispatcher-mutable* — the Dispatcher MAY write or update them after the originator or Service has signed the message: `audit`, `remaining_budget_ms`, and metadata keys in the `org.ccdp.dispatcher.*` namespace. All other envelope fields and the entire `content` object are *immutable after signing*. The `signed_fields` array MUST NOT include Dispatcher-mutable fields, and the Dispatcher MUST NOT modify immutable fields on a signed message. A signature that covers a Dispatcher-mutable field is invalid by construction — the verifier MUST reject it.
+```json
+JCS({"envelope": <envelope-value>, "content": <content-value>})
+```
+
+**Mutable-field exclusion.** Before signing, the signer removes Dispatcher-mutable fields from the `envelope` value. The mutable fields are defined per signing profile (Section 15.4.4). After exclusion, the remaining envelope fields plus the content form the signature input. The Dispatcher MUST NOT modify any field remaining in a signed component after signing; a signature covering a field the Dispatcher subsequently modifies is invalid by construction — the verifier MUST reject it.
 
 Message signing is OPTIONAL for CCDP Core conformance. For CCDP Full conformance, message signing is REQUIRED for Services that produce responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, and RECOMMENDED for all other Services. For deployments spanning untrusted administrative domains (different organizations, different cloud regions), message signing is REQUIRED regardless of conformance level.
 
-For responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, the `signed_fields` array MUST include `"content"` and `"provenance"` — the cognitive output and its evidence chain are the highest-value fields for integrity verification. For other grades, including content and provenance in signed fields is RECOMMENDED.
+For responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, the Service MUST sign the response using the service-response profile (Section 15.4.4), and the `signed_fields` array MUST include both `"envelope"` and `"content"` — since `provenance` is an envelope field (Section 7.3.3), signing `"envelope"` covers the response's evidence chain along with the cognitive output in `"content"`. For other grades, signing with both components is RECOMMENDED.
 
 ### 15.4.3. Provenance Integrity
 
@@ -116,9 +121,9 @@ Provenance grades and evidence entries are security-relevant — a tampered prov
 
 CCDP defines two signing profiles with different mutable-field sets:
 
-**Requester-outbound profile.** Applied by the Requester when sending a Request. Mutable fields: `audit`, `remaining_budget_ms`, metadata keys in `org.ccdp.dispatcher.*`. The Requester signs all other fields. The Dispatcher verifies the Requester's signature before processing.
+**Requester-outbound profile.** The requester signs before the Dispatcher processes the message. Mutable fields excluded from `envelope` before signing: `audit` (added by the Dispatcher on receipt; absent on the requester's outbound envelope), `remaining_budget_ms` (decremented by the Dispatcher at each subsequent hop, per Section 12.4), `destination_id` (may be set by the Dispatcher during routing), and metadata keys in `org.ccdp.dispatcher.*`. All other envelope fields are immutable after signing. The Dispatcher verifies the Requester's signature — computed over the envelope as the requester sent it — before processing.
 
-**Service-response profile.** Applied by a Service when sending a Response or Escalation. Mutable fields: `audit`, metadata keys in `org.ccdp.dispatcher.*`. The `remaining_budget_ms` field is NOT mutable in responses (it is not meaningful on response messages). The Dispatcher verifies the Service's signature before forwarding to the Requester.
+**Service-response profile.** The service signs its response. Mutable fields excluded from `envelope` before signing: `audit` (added or updated by the Dispatcher when forwarding the response, per Section 7.5) and metadata keys in `org.ccdp.dispatcher.*`. The `remaining_budget_ms` field is not present on response messages. All other envelope fields, and the entire `content` object, are immutable after signing. The `signed_fields` array MUST include both `"envelope"` and `"content"`. The Dispatcher verifies the Service's signature before forwarding to the Requester.
 
 The `signature` object carries a `profile` field (`"requester"` or `"service"`) identifying which profile was used. Verifiers MUST check the profile and reject signatures that include Dispatcher-mutable fields for the specified profile.
 

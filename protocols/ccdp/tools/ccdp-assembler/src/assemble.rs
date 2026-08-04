@@ -19,7 +19,7 @@ use crate::toc;
 const MIDDLE_FIRST: u32 = 2;
 const MIDDLE_LAST: u32 = 16;
 const SECURITY_CONSIDERATIONS: u32 = 17;
-const REFERENCES: u32 = 18;
+pub(crate) const REFERENCES: u32 = 19;
 
 fn warn_missing_in_range(chapters: &[Chapter], start: u32, end: u32) {
     for number in start..=end {
@@ -71,10 +71,12 @@ _Placeholder — to be completed._";
 const ACKNOWLEDGEMENTS_GFM: &str =
     "<a id=\"acknowledgements\"></a>\n# Acknowledgements\n\n_Placeholder — to be completed._";
 
-/// Concatenates the Security Considerations and References chapters, any
-/// appendix chapters numbered beyond References (e.g. a version history),
-/// adds a note about YAML/markdown reference redundancy, and appends an
-/// Acknowledgements placeholder.
+/// Concatenates the Security Considerations chapter, any back-matter
+/// chapters between Security Considerations and References (e.g., Open
+/// Questions), the References chapter, any appendix chapters numbered
+/// beyond References (e.g., a version history), adds a note about
+/// YAML/markdown reference redundancy, and appends an Acknowledgements
+/// placeholder.
 pub fn back_body(chapters: &[Chapter]) -> Result<String> {
     let mut parts = Vec::new();
 
@@ -87,6 +89,19 @@ pub fn back_body(chapters: &[Chapter]) -> Result<String> {
         None => eprintln!(
             "warning: chapter {SECURITY_CONSIDERATIONS:02} (Security Considerations) is missing, skipping"
         ),
+    }
+
+    // Back-matter chapters between Security Considerations and References
+    // (e.g., Open Questions).
+    for chapter in chapters
+        .iter()
+        .filter(|c| c.number > SECURITY_CONSIDERATIONS && c.number < REFERENCES)
+    {
+        parts.push(
+            headers::rewrite_content(&chapter.content, Format::KramdownRfc)
+                .trim()
+                .to_string(),
+        );
     }
 
     let references_chapter = chapters::find(chapters, REFERENCES)
@@ -226,8 +241,8 @@ mod tests {
             ),
             chapter(17, "# 17. Security Considerations\n\nSecurity text.\n"),
             chapter(
-                18,
-                "# 18. References\n\n## 18.1. Normative References\n\n**[RFC 2119]** Bradner, S., \"Key words,\" RFC 2119, 1997.\n",
+                19,
+                "# 19. References\n\n## 19.1. Normative References\n\n**[RFC 2119]** Bradner, S., \"Key words,\" RFC 2119, 1997.\n",
             ),
         ]
     }
@@ -279,15 +294,15 @@ mod tests {
         assert!(doc.contains("# Conventions {#section-2}"));
         assert!(doc.contains("## Status {#section-2-1}"));
         assert!(doc.contains("# Security Considerations {#section-17}"));
-        assert!(doc.contains("# References {#section-18}"));
+        assert!(doc.contains("# References {#section-19}"));
         assert!(doc.contains("# Acknowledgements {#Acknowledgements}"));
     }
 
     #[test]
     fn kramdown_rfc_missing_abstract_chapter_is_an_error() {
         let chapters = vec![chapter(
-            18,
-            "# 18. References\n\n## 18.1. Normative References\n",
+            19,
+            "# 19. References\n\n## 19.1. Normative References\n",
         )];
         let refs = ReferenceSet::default();
         assert!(assemble_kramdown_rfc(&chapters, &refs, "0.1", "2026-08-03").is_err());
@@ -313,7 +328,7 @@ mod tests {
         assert!(doc.contains("<a id=\"section-2\"></a>\n# Conventions"));
         assert!(doc.contains("<a id=\"section-2-1\"></a>\n## Status"));
         assert!(doc.contains("<a id=\"section-17\"></a>\n# Security Considerations"));
-        assert!(doc.contains("<a id=\"section-18\"></a>\n# References"));
+        assert!(doc.contains("<a id=\"section-19\"></a>\n# References"));
         assert!(doc.contains("<a id=\"acknowledgements\"></a>\n# Acknowledgements"));
         // Chapter 1's document title and bold version/date lines are dropped.
         assert!(!doc.contains("# Title"));
@@ -333,8 +348,8 @@ mod tests {
     #[test]
     fn gfm_missing_abstract_chapter_is_an_error() {
         let chapters = vec![chapter(
-            18,
-            "# 18. References\n\n## 18.1. Normative References\n",
+            19,
+            "# 19. References\n\n## 19.1. Normative References\n",
         )];
         assert!(assemble_gfm(&chapters, "0.1", "2026-08-03", true).is_err());
     }
@@ -349,15 +364,15 @@ mod tests {
     fn gfm_includes_appendix_chapters_beyond_references() {
         let mut chapters = sample_chapters();
         chapters.push(chapter(
-            19,
-            "# 19. Version History\n\n## 19.1. Version 0.2.0\n\nChangelog text.\n",
+            20,
+            "# 20. Version History\n\n## 20.1. Version 0.2.0\n\nChangelog text.\n",
         ));
         let doc = assemble_gfm(&chapters, "0.1", "2026-08-03", true).unwrap();
 
         // The TOC links to it...
-        assert!(doc.contains("- [19. Version History](#section-19)"));
+        assert!(doc.contains("- [20. Version History](#section-20)"));
         // ...and the anchor the TOC links to actually exists in the body.
-        assert!(doc.contains("<a id=\"section-19\"></a>\n# Version History"));
+        assert!(doc.contains("<a id=\"section-20\"></a>\n# Version History"));
         assert!(doc.contains("Changelog text."));
     }
 
@@ -365,13 +380,49 @@ mod tests {
     fn kramdown_rfc_includes_appendix_chapters_beyond_references() {
         let mut chapters = sample_chapters();
         chapters.push(chapter(
-            19,
-            "# 19. Version History\n\n## 19.1. Version 0.2.0\n\nChangelog text.\n",
+            20,
+            "# 20. Version History\n\n## 20.1. Version 0.2.0\n\nChangelog text.\n",
         ));
         let refs = sample_refs();
         let doc = assemble_kramdown_rfc(&chapters, &refs, "0.1", "2026-08-03").unwrap();
 
-        assert!(doc.contains("# Version History {#section-19}"));
+        assert!(doc.contains("# Version History {#section-20}"));
         assert!(doc.contains("Changelog text."));
+    }
+
+    #[test]
+    fn kramdown_rfc_includes_open_questions_between_security_and_references() {
+        let mut chapters = sample_chapters();
+        chapters.push(chapter(
+            18,
+            "# 18. Open Questions\n\n## 18.1. Grade Name Taxonomy\n\nDiscussion text.\n",
+        ));
+        chapters.sort_by_key(|c| c.number);
+        let refs = sample_refs();
+        let doc = assemble_kramdown_rfc(&chapters, &refs, "0.2", "2026-08-04").unwrap();
+
+        let sec_cons_idx = doc.find("# Security Considerations").unwrap();
+        let open_q_idx = doc.find("# Open Questions").unwrap();
+        let refs_idx = doc.find("# References").unwrap();
+        assert!(sec_cons_idx < open_q_idx);
+        assert!(open_q_idx < refs_idx);
+    }
+
+    #[test]
+    fn gfm_includes_open_questions_between_security_and_references() {
+        let mut chapters = sample_chapters();
+        chapters.push(chapter(
+            18,
+            "# 18. Open Questions\n\n## 18.1. Grade Name Taxonomy\n\nDiscussion text.\n",
+        ));
+        chapters.sort_by_key(|c| c.number);
+        let doc = assemble_gfm(&chapters, "0.2", "2026-08-04", true).unwrap();
+
+        assert!(doc.contains("<a id=\"section-18\"></a>\n# Open Questions"));
+        let sec_cons_idx = doc.find("Security Considerations").unwrap();
+        let open_q_idx = doc.find("Open Questions").unwrap();
+        let refs_idx = doc.find("References").unwrap();
+        assert!(sec_cons_idx < open_q_idx);
+        assert!(open_q_idx < refs_idx);
     }
 }

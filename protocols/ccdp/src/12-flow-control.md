@@ -120,7 +120,7 @@ Capacity data in health responses is a point-in-time snapshot. The Dispatcher MU
 
 ## 12.4. Deadline Propagation
 
-Deadlines prevent unbounded latency in multi-hop request chains. The deadline mechanism is modeled on gRPC's deadline propagation [gRPC deadline] and Google's `context.Context`.
+Deadlines prevent unbounded latency in multi-hop request chains. The deadline mechanism is modeled on gRPC's deadline propagation [gRPC-Deadlines] and Google's `context.Context`.
 
 ### 12.4.1. Deadline Mechanics
 
@@ -192,7 +192,7 @@ This produces a natural resource-rational routing behavior: cheap, fast, lightly
 
 ## 12.7. Bullwhip Effect Warning
 
-The operations research literature documents the "bullwhip effect" [Lee, Padmanabhan & Whang 1997]: in serial supply chains, demand variance amplifies upstream — a small fluctuation at the consumer end creates violent oscillations at the supplier end.
+The operations research literature documents the "bullwhip effect" [Bullwhip]: in serial supply chains, demand variance amplifies upstream — a small fluctuation at the consumer end creates violent oscillations at the supplier end.
 
 In CCDP, the analog is error amplification across serial cognitive operations. A small uncertainty in Decomposition can produce large errors in downstream sub-results, which compound when composed. The protocol does not solve this problem directly — it is a content-level concern, not a protocol-level one — but it provides the tools for detecting it:
 

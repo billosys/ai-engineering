@@ -2,9 +2,9 @@
 
 ## 3.1. The Problem
 
-A composite cognition system assembles engineering-grade cognitive output by routing requests to specialized services — each operating in its domain of competence — rather than relying on a single monolithic model to simulate all cognitive faculties. The architectural claim is grounded in a structural result: a single forward pass of a transformer (or state-space model) sits in the complexity class TC⁰ and cannot compute inherently sequential functions in a single pass (that is, functions outside TC⁰ require either multiple passes or external state — the formal justification for external cognitive organs, not a claim that LLMs cannot perform any sequential reasoning) [Merrill & Sabharwal 2023]. Chain-of-thought mitigates this by externalizing serial state into the token stream, but an LLM cannot reliably verify its own reasoning by introspection — self-correction without external feedback often leaves accuracy flat or makes it worse [Huang et al. 2024]. The error floor is architectural, not a reliability defect.
+A composite cognition system assembles engineering-grade cognitive output by routing requests to specialized services — each operating in its domain of competence — rather than relying on a single monolithic model to simulate all cognitive faculties. The architectural claim is grounded in a structural result: a single forward pass of a transformer (or state-space model) sits in the complexity class TC⁰ and cannot compute inherently sequential functions in a single pass (that is, functions outside TC⁰ require either multiple passes or external state — the formal justification for external cognitive organs, not a claim that LLMs cannot perform any sequential reasoning) [Merrill-Sabharwal 2023]. Chain-of-thought mitigates this by externalizing serial state into the token stream, but an LLM cannot reliably verify its own reasoning by introspection — self-correction without external feedback often leaves accuracy flat or makes it worse [Huang-2024]. The error floor is architectural, not a reliability defect.
 
-The consequence is that a language model is best understood as a *language organ* — superb at natural-language understanding, generation, translation between representations, and fuzzy pattern completion — composed with *external organs* that provide the faculties it lacks: deduction (theorem provers, SMT solvers), planning (classical planners with sound validators), durable state (typed ledger with provenance), and selection/verification (calibrated verifiers, process-reward models). A human supervisor provides the faculties for which no working external organ exists: broad abstraction, specification, and open-ended value judgment [ARC-AGI-2; Chollet et al. 2025].
+The consequence is that a language model is best understood as a *language organ* — superb at natural-language understanding, generation, translation between representations, and fuzzy pattern completion — composed with *external organs* that provide the faculties it lacks: deduction (theorem provers, SMT solvers), planning (classical planners with sound validators), durable state (typed ledger with provenance), and selection/verification (calibrated verifiers, process-reward models). A human supervisor provides the faculties for which no working external organ exists: broad abstraction, specification, and open-ended value judgment [ARC-AGI-2].
 
 This architecture requires a protocol. Requests must flow from humans (and from services making sub-requests) through a central point — the dispatcher — to the appropriate service, with responses flowing back. The dispatcher must route correctly, and every link in the chain must be auditable. The protocol must carry enough structure for routing decisions to be classification rather than reasoning — the dispatcher reads envelopes, not content.
 
@@ -18,7 +18,7 @@ MCP is the closest existing protocol to CCDP's problem space — it connects lan
 
 [Informative] Its ecosystem velocity — a large and fast-growing community of server implementations — is further evidence the abstraction is useful, though this is a qualitative ecosystem observation rather than a claim grounded in a primary source.
 
-MCP's July 2026 stateless pivot [MCP 2026-07-28 RC] is a significant operational improvement: self-contained requests, routing headers, W3C Trace Context propagation. But MCP has five structural shortcomings that its architectural evolution does not address:
+MCP's July 2026 stateless pivot [MCP-2026-07-28] is a significant operational improvement: self-contained requests, routing headers, W3C Trace Context propagation. But MCP has five structural shortcomings that its architectural evolution does not address:
 
 **Designed for smart consumers, not dumb dispatchers.** MCP assumes the client (the LLM/host) is the intelligent party — it interprets natural-language tool descriptions, decides which tools to invoke, and manages conversation flow. Tool descriptions are free-text strings meant for LLM consumption. For CCDP's dispatcher — a protocol enforcement and execution coordinator that operates on envelope metadata — MCP carries insufficient routing structure. The protocol intelligence lives in the consumer, not the envelope.
 
@@ -32,7 +32,7 @@ MCP's July 2026 stateless pivot [MCP 2026-07-28 RC] is a significant operational
 
 ### 3.2.2. A2A (Agent-to-Agent Protocol)
 
-A2A [Google 2025] fills the peer-to-peer coordination gap MCP leaves. Its Agent Cards provide capability discovery; its task lifecycle (submitted → working → completed/failed) suits long-running operations; and its opacity principle — agents collaborate on capabilities without exposing internals — is architecturally sound.
+A2A [A2A] fills the peer-to-peer coordination gap MCP leaves. Its Agent Cards provide capability discovery; its task lifecycle (submitted → working → completed/failed) suits long-running operations; and its opacity principle — agents collaborate on capabilities without exposing internals — is architecturally sound.
 
 A2A's limitation for CCDP is that it assumes both sides of a link are *agents* — capable, autonomous entities that negotiate and decide. CCDP's dispatcher is deliberately not an agent. It is a protocol enforcement and execution coordinator. A2A's complexity (Agent Card infrastructure, multi-transport support, autonomous negotiation) is overkill for a system where one side is a constrained coordinator, not an autonomous agent, and its peer-to-peer topology does not match CCDP's star topology.
 
@@ -44,9 +44,9 @@ gRPC's *implementation complexity* works against the constrained-coordinator pri
 
 ### 3.2.4. FIPA-ACL: The Cautionary Tale
 
-FIPA-ACL [1990s–2000s] established the concept of typed communicative acts — messages typed by performative (request, inform, query, escalate) with sender/receiver/content/ontology metadata. This concept is exactly right for cognitive dispatch.
+FIPA-ACL [FIPA-ACL] established the concept of typed communicative acts — messages typed by performative (request, inform, query, escalate) with sender/receiver/content/ontology metadata. This concept is exactly right for cognitive dispatch.
 
-FIPA-ACL never escaped the lab. It lacked verifiable identity, governance frameworks, runtime tooling, and practical deployment paths. It was described in a comprehensive survey as having limited practical deployment despite its formal elegance [arXiv:2509.02317]. CCDP inherits FIPA's insight — speech acts as message types — while designing explicitly against its failure modes: every protocol feature must be practically deployable with minimal tooling, not formally elegant in isolation.
+FIPA-ACL never escaped the lab. It lacked verifiable identity, governance frameworks, runtime tooling, and practical deployment paths. It was described in a comprehensive survey as having limited practical deployment despite its formal elegance [arXiv-Agent-Comms]. CCDP inherits FIPA's insight — speech acts as message types — while designing explicitly against its failure modes: every protocol feature must be practically deployable with minimal tooling, not formally elegant in isolation.
 
 ## 3.3. What Is Different About Cognitive Dispatch
 
@@ -56,7 +56,7 @@ The distinction between cognitive dispatch and data routing — the reason CCDP 
 
 **Provenance-grade insufficiency is a routing event, not an error.** When a cognitive service cannot produce output at the requested provenance grade, this is not a failure — it is information. "I can generate candidate solutions but cannot verify them" is a legitimate, structured response that the dispatcher should route to a verification service or escalate to a human. CCDP defines escalation as a protocol message type with structured routing semantics (Section 13).
 
-**The specification-recursion problem.** Formal verification relocates error rather than eliminating it: "did we build it right?" becomes "did we specify the right thing?" [Vericoding; Goodhart 1975]. An LLM that games a weak specification into a vacuous proof is not a verification failure — it is a Goodhart failure. CCDP's provenance system is designed with this recursion in mind: a grade of FORMALLY_VERIFIED carries a scope field binding it to a specific specification, and the specification's own provenance is separately tracked (Section 10).
+**The specification-recursion problem.** Formal verification relocates error rather than eliminating it: "did we build it right?" becomes "did we specify the right thing?" [Vericoding; Goodhart 1975] — a compound citation per Section 2's convention, resolving to the separately defined [Vericoding] and [Goodhart 1975] entries. An LLM that games a weak specification into a vacuous proof is not a verification failure — it is a Goodhart failure. CCDP's provenance system is designed with this recursion in mind: a grade of FORMALLY_VERIFIED carries a scope field binding it to a specific specification, and the specification's own provenance is separately tracked (Section 10).
 
 ## 3.4. Design Principles
 

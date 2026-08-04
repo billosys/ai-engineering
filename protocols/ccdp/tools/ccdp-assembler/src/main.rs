@@ -43,8 +43,15 @@ fn run(args: &Args) -> Result<usize> {
     let loaded_chapters = chapters::load_chapters(&args.src_dir)
         .with_context(|| format!("failed to load chapters from {}", args.src_dir.display()))?;
 
-    let references_path = args.src_dir.join("18-references.md");
-    let refs = references::parse(&references_path)?;
+    let references_chapter =
+        chapters::find(&loaded_chapters, assemble::REFERENCES).with_context(|| {
+            format!(
+                "chapter {:02} (References) is required but was not found in {}",
+                assemble::REFERENCES,
+                args.src_dir.display()
+            )
+        })?;
+    let refs = references::parse(&references_chapter.path)?;
 
     let date = match &args.date {
         Some(date) => date.clone(),

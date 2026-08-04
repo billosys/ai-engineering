@@ -32,6 +32,8 @@ When this specification refers to a message field, it uses dot notation: `envelo
 
 The notation `Section N` refers to sections of this specification by their number. Cross-references to other standards use their document identifier (e.g., [RFC 2119]).
 
+Compound citations separated by semicolons (e.g., `[A; B; C]`) reference multiple sources, each of which is defined individually in Section 19 (References). Each component of a compound citation resolves to a separate reference entry.
+
 ## 2.5. Normative Status of Non-Prose Elements
 
 All examples in this specification are informative unless explicitly marked as normative. Tables that list requirements use normative language (MUST, SHOULD, MAY) and carry the same force as prose requirements. Diagrams are informative aids. Design notes (marked as such) are informative rationale and do not create protocol obligations.

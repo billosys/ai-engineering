@@ -2,7 +2,7 @@
 
 This section defines terms used throughout this specification. Terms defined here are capitalized when used in their technical sense.
 
-**Artifact Reference.** A URI pointing to a verifiable artifact (proof object, test result, signed attestation) stored outside the CCDP message. Artifact References appear in Evidence entries and Decomposition Plan result references. The URI form, dereference authority, and access-control requirements are deployment-defined. Artifact References SHOULD include an integrity hash for content verification. Artifact References that appear in audit records are subject to the audit retention policy (Section 11.5). Deployments MUST ensure that referenced artifacts remain resolvable for the configured audit retention period.
+**Artifact Reference.** The `artifact_ref` object within an Evidence entry (see Evidence Entry below), pointing to a verifiable artifact (proof object, test result, signed attestation) stored outside the CCDP message. Artifact References appear in Evidence entries and Decomposition Plan result references. The `uri` form, dereference authority, and access-control requirements are deployment-defined. Artifact References SHOULD include an `integrity` hash for content verification (REQUIRED at grades VALIDATED and above — see Evidence Entry). Artifact References that appear in audit records are subject to the audit retention policy (Section 11.5). Deployments MUST ensure that referenced artifacts remain resolvable for the configured audit retention period.
 
 **Audit Record.** A structured log entry created by the Dispatcher for each message processed. Audit Records are defined in Section 11. Each Audit Record carries an `audit_schema_version` field independent of the CCDP document and wire versions.
 
@@ -34,7 +34,39 @@ This section defines terms used throughout this specification. Terms defined her
 
 **Escalation Chain.** An ordered list of fallback targets for a given Capability Type, defined in the Registry. When a Service returns an Escalation, the Dispatcher routes to the next target in the chain. The chain typically terminates at a human review queue (Section 13.4).
 
-**Evidence.** A structured record within a Provenance field documenting a specific piece of support for a response's epistemic status. Evidence entries carry a type (e.g., "proof-object," "test-result," "human-signature"), a reference to the supporting artifact, and the Service that produced it (Section 10). Evidence entries MUST include a `type` field (string) and a `description` field (string). Evidence entries at grades VALIDATED and above MUST include `artifact_ref` with `integrity` when a supporting artifact exists. For grades OPAQUE through COMPUTED, artifact references with integrity are RECOMMENDED. The `integrity` sub-field contains a hash algorithm and digest (e.g., `"integrity": {"algorithm": "sha256", "digest": "..."}`). The Dispatcher MUST NOT dereference artifact references.
+**Evidence Entry.** A structured record of one piece of evidence supporting a provenance grade claim. Evidence entries appear in the `evidence` array within a message's Provenance (Section 10). The normative schema:
+
+```json
+{
+  "method": "formal_verification",
+  "description": "Coq proof of theorem T against spec S",
+  "service_id": "svc-formal-01",
+  "artifact_ref": {
+    "uri": "urn:ccdp:artifact:abc123",
+    "artifact_type": "proof_certificate",
+    "integrity": {
+      "algorithm": "sha-256",
+      "digest": "a1b2c3..."
+    },
+    "media_type": "application/json",
+    "access": "audit-archive"
+  },
+  "verified_by": "coq-8.18.0"
+}
+```
+
+- **`method`** (string, REQUIRED): The evidence method used. Examples: `"formal_verification"`, `"human_review"`, `"independent_cross_check"`, `"statistical_testing"`, `"computed"`. This replaces the former `type` field used in earlier drafts. Matched by `provenance_requirement.required_methods` (Section 7.3.2).
+- **`description`** (string, OPTIONAL): Human-readable description of the evidence.
+- **`service_id`** (string, REQUIRED): Identifier of the Service that produced this evidence.
+- **`artifact_ref`** (object, CONDITIONAL): Evidence artifact reference — an object, not a string, when present. MUST be present at grades VALIDATED (4) and above when a supporting artifact exists. RECOMMENDED for grades OPAQUE through COMPUTED.
+  - **`uri`** (string, REQUIRED): URI or identifier for the evidence artifact. Subject to the audit retention policy (Section 11.5) — referenced artifacts MUST remain resolvable for the configured retention period.
+  - **`artifact_type`** (string, REQUIRED): Type of artifact. Examples: `"proof_certificate"`, `"signed_attestation"`, `"test_report"`, `"counterexample"`, `"review_record"`. Matched by `provenance_requirement.required_evidence_types` (Section 7.3.2).
+  - **`integrity`** (object, REQUIRED at VALIDATED+ grades): Cryptographic integrity hash. Sub-fields: `algorithm` (string, REQUIRED, e.g., `"sha-256"`) and `digest` (string, REQUIRED, hex-encoded hash value).
+  - **`media_type`** (string, OPTIONAL): MIME type of the artifact.
+  - **`access`** (string, OPTIONAL): Retrieval hint (e.g., `"audit-archive"`, `"inline"`, `"external-url"`).
+- **`verified_by`** (string, OPTIONAL): Identity and version of the verification tool or reviewer (e.g., `"coq-8.18.0"`, `"reviewer:alice@example.com"`).
+
+The Dispatcher MUST NOT dereference artifact references.
 
 **Health Status.** A Service's self-reported operational state, communicated through Health messages: HEALTHY (fully operational), DEGRADED (partially operational with reduced capability or capacity), or UNHEALTHY (not accepting requests). The Dispatcher maintains a Health Table and uses Health Status for routing decisions (Section 13.6).
 

@@ -4,7 +4,7 @@
 
 Audit records carry an `audit_schema_version` field (string, REQUIRED) independent of the CCDP document version and wire protocol version. The current audit schema version is `"1.0"`. Changes to audit record structure increment this version. Audit consumers MUST check `audit_schema_version` and handle unknown versions gracefully (log a warning and preserve the record without interpretation).
 
-Audit is not an extension, an integration, or a best practice. It is a REQUIRED protocol behavior. Every Message that passes through the Dispatcher MUST generate a structured audit record. This requirement is grounded in a practical lesson: the NSA/CISA assessment of MCP found that protocols without mandatory audit leave security and reliability to "implementation discipline" — which fails unpredictably across deployments.
+Audit is not an extension, an integration, or a best practice. It is a REQUIRED protocol behavior. Every Message that passes through the Dispatcher MUST generate a structured audit record. This requirement is grounded in a practical lesson: general NSA/CISA AI deployment guidance [NSA-CISA-2024] and CCDP's analysis of MCP's audit limitations (Section 3) both point to the risk of leaving audit to implementation discipline — protocols without mandatory audit leave security and reliability to "implementation discipline," which fails unpredictably across deployments.
 
 In the supervision-tree model, the audit trail is the equivalent of Erlang/OTP's error logger — the mechanism by which failures, routing decisions, and system behavior become visible to the supervisor (ultimately, the human). Without it, the human cannot supervise.
 
@@ -99,7 +99,7 @@ When the Dispatcher receives a Response from a Service and forwards it to the re
     "provenance_summary": {
       "grade": "FORMALLY_VERIFIED",
       "evidence_count": 1,
-      "evidence_types": ["proof-object"],
+      "evidence_methods": ["formal_verification"],
       "scope": "Formula satisfiability in QF_LIA",
       "grade_meets_requirement": true,
       "composition_method": null
@@ -179,7 +179,22 @@ This ensures that CCDP traces are compatible with standard distributed tracing i
 
 ## 11.4. Mandatory Audit Fields
 
-Audit data is organized into the following categories. Implementations MUST NOT make any field marked REQUIRED in the per-message-type matrix below optional or configurable for the message types where it applies:
+**Table 11.1: Audit Record Common Fields (required on every audit record)**
+
+| Field | Type | Description |
+|---|---|---|
+| `record_id` | string (UUID v4) | Unique identifier for this audit record |
+| `audit_schema_version` | string | Audit schema version (independent of document and wire versions) |
+| `timestamp` | string (ISO 8601) | When the Dispatcher created this record |
+| `dispatcher_id` | string | Identity of the Dispatcher that created this record |
+| `ccdp_version` | string | Document version of the CCDP specification this Dispatcher implements |
+| `trace_id` | string | W3C Trace Context trace identifier |
+| `span_id` | string | W3C Trace Context span identifier for this hop |
+| `message_type` | string | CCDP message type that triggered this record |
+
+The per-message-type matrix (Table 11.2 below) specifies additional fields required for each message type. A conforming audit record includes all common fields from Table 11.1 plus the message-type-specific fields from Table 11.2.
+
+Audit data is also organized into the following informal categories, covering the message-type-specific fields (not the record-level common fields above). Implementations MUST NOT make any field marked REQUIRED in the per-message-type matrix below optional or configurable for the message types where it applies:
 
 | Category | Fields | Typical applicability |
 |----------|--------|---------------|
@@ -194,7 +209,9 @@ Audit data is organized into the following categories. Implementations MUST NOT 
 | Errors | `error_code`, `error_detail`, `retry_count` | Errors and retries |
 | Dispatcher | `dispatcher_id`, `ccdp_version` | Most message types |
 
-Not all audit fields are meaningful for every message type. The per-message-type audit requirements matrix below is the normative source for which audit fields are REQUIRED (R), RECOMMENDED (S), or not applicable (—) for each message type; the category table above is informative summary only.
+Not all audit fields are meaningful for every message type. The per-message-type audit requirements matrix below is the normative source for which message-type-specific audit fields are REQUIRED (R), RECOMMENDED (S), or not applicable (—) for each message type; the category table above is informative summary only. This matrix covers message-type-specific fields only — the common fields in Table 11.1 are required on every message type regardless of this matrix.
+
+**Table 11.2: Per-Message-Type Audit Requirements**
 
 | Field | REQUEST | RESPONSE | ESCALATION | NOTIFICATION | HEALTH_REQ | HEALTH_RESP | DECOMP_RESULT |
 |---|---|---|---|---|---|---|---|

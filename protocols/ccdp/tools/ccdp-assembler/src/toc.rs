@@ -3,7 +3,7 @@
 //! GitHub doesn't auto-generate a TOC for long documents, so `--format gfm`
 //! emits an explicit one built from the same numbered headers the header
 //! rewriter turns into anchors — chapter-level and immediate-subsection
-//! entries only, to keep an 18-chapter spec's TOC navigable.
+//! entries only, to keep a 20-chapter spec's TOC navigable.
 
 use crate::chapters::Chapter;
 use crate::headers;
