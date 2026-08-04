@@ -197,26 +197,26 @@ A health check probe:
 The Dispatcher tracks two related but distinct state machines for each Service: the Service's **Health Status** (HEALTHY, DEGRADED, UNHEALTHY) as reported by the Service itself, and the **circuit breaker state** (CLOSED, OPEN, HALF_OPEN) as maintained by the Dispatcher based on observed failures (Section 9.6). The combined transition diagram:
 
 ```
-                 ┌─────────────────────────┐
-                 │                         │
-     ┌──────────▼──┐   failure threshold  ┌┴──────────┐
-     │   HEALTHY   │────────────────────▶│  DEGRADED  │
-     │  (CLOSED)   │                     │  (CLOSED)  │
-     └──────┬──────┘                     └──────┬─────┘
-            │                                   │
-            │              ┌────────────────────┘
-            │              │ continued failures
+                ┌──────────────────────────┐
+                │                          │
+     ┌──────────▼──┐  failure threshold   ┌┴───────────┐
+     │   HEALTHY   │─────────────────────▶│  DEGRADED  │
+     │  (CLOSED)   │                      │  (CLOSED)  │
+     └──────┬──────┘                      └──────┬─────┘
+            │                                    │
+            │              ┌─────────────────────┘
+            │              │  continued failures
             │              ▼
             │        ┌───────────┐
             │        │ UNHEALTHY │
             │        │  (OPEN)   │
             │        └─────┬─────┘
             │              │
-            │              │ health probe succeeds
+            │              │  health probe succeeds
             │              ▼
             │        ┌───────────┐
             └────────┤ UNHEALTHY │
-              success│(HALF_OPEN)│
+             success │(HALF_OPEN)│
                      └───────────┘
 ```
 
