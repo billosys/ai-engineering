@@ -1,0 +1,417 @@
+# 7. Message Format
+
+## 7.1. Wire Encoding
+
+Every CCDP message is encoded as a JSON-RPC 2.0 [JSON-RPC] request or response, transported over HTTP POST. The JSON-RPC `method` field identifies the CCDP message type; the `params` field carries the CCDP Envelope and Content.
+
+A CCDP Request encoded as JSON-RPC 2.0:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "ccdp/request",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "params": {
+    "envelope": { /* ... Layer 2 and 3 fields ... */ },
+    "content": { /* ... Layer 4 payload ... */ }
+  }
+}
+```
+
+A CCDP Response encoded as JSON-RPC 2.0:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "result": {
+    "envelope": { /* ... Layer 2 and 3 fields ... */ },
+    "content": { /* ... Layer 4 payload ... */ }
+  }
+}
+```
+
+The JSON-RPC `id` field MUST match the CCDP `envelope.request_id`. This enables correlation at both the JSON-RPC layer and the CCDP layer.
+
+## 7.2. Message Types
+
+The following CCDP message types are defined, identified by the JSON-RPC `method` field:
+
+| Method | Type | Direction | Description |
+|--------|------|-----------|-------------|
+| `ccdp/request` | REQUEST | Requester → Dispatcher → Service | A cognitive task to be performed |
+| `ccdp/response` | RESPONSE | Service → Dispatcher → Requester | The result of a cognitive task |
+| `ccdp/notification` | NOTIFICATION | Any → Dispatcher → Any | One-way information, no response expected |
+| `ccdp/escalation` | ESCALATION | Service → Dispatcher → Escalation target | Structured escalation |
+| `ccdp/health.request` | HEALTH_REQUEST | Dispatcher → Service | Health check probe |
+| `ccdp/health.response` | HEALTH_RESPONSE | Service → Dispatcher | Health status report |
+| `ccdp/decomposition.result` | DECOMPOSITION_RESULT | Decomposition Service → Dispatcher | A decomposition plan |
+
+REQUEST, ESCALATION, and DECOMPOSITION_RESULT are JSON-RPC requests (they carry an `id` and expect a response or trigger further routing). RESPONSE and HEALTH_RESPONSE are JSON-RPC responses (they are correlated to a prior request by `id`). NOTIFICATION is a JSON-RPC notification (no `id`, no response expected). HEALTH_REQUEST is a JSON-RPC request.
+
+## 7.3. Envelope Structure
+
+The Envelope is the structured metadata portion of every CCDP message. The Dispatcher reads only the Envelope; Content is opaque.
+
+### 7.3.1. Common Envelope Fields (All Message Types)
+
+The following fields are REQUIRED on every CCDP message envelope:
+
+```json
+{
+  "envelope": {
+    "ccdp_version": "1.0",
+    "type": "REQUEST",
+    "request_id": "550e8400-e29b-41d4-a716-446655440000",
+    "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+    "span_id": "00f067aa0ba902b7",
+    "timestamp": "2026-08-03T14:30:00.000Z",
+    "source_id": "client-app-01",
+    "metadata": {}
+  }
+}
+```
+
+**`ccdp_version`** (string, REQUIRED): The CCDP protocol version. MUST be `"1.0"` for this specification. Implementations MUST reject messages with an unrecognized version.
+
+**`type`** (string, REQUIRED): The message type. One of: `"REQUEST"`, `"RESPONSE"`, `"NOTIFICATION"`, `"ESCALATION"`, `"HEALTH_REQUEST"`, `"HEALTH_RESPONSE"`, `"DECOMPOSITION_RESULT"`. MUST match the JSON-RPC method.
+
+**`request_id`** (string, REQUIRED): A UUID v4 uniquely identifying this request. Used for idempotency, correlation, and replay protection. A Service that receives a Request with a `request_id` it has already processed MUST return the cached Response without re-executing the request.
+
+**`trace_id`** (string, REQUIRED): A 32-character lowercase hexadecimal string identifying the entire request chain, compatible with W3C Trace Context `trace-id`. All messages spawned from the same top-level request — including decomposed sub-requests, escalations, and health checks triggered by the request — share the same `trace_id`.
+
+**`span_id`** (string, REQUIRED): A 16-character lowercase hexadecimal string identifying this specific operation within the trace, compatible with W3C Trace Context `parent-id`. Each hop through the Dispatcher generates a new `span_id`.
+
+**`timestamp`** (string, REQUIRED): ISO 8601 timestamp with UTC timezone (`Z`). The time the message was created by its originator.
+
+**`source_id`** (string, REQUIRED): The identifier of the component that originated this message. For Requests from external clients, this is the client identifier. For Responses, this is the Service identifier. For forwarded messages, this is the originator, not the Dispatcher.
+
+**`metadata`** (object, REQUIRED but MAY be empty): Extensible key-value metadata. Unknown keys MUST be preserved and forwarded by all intermediaries, including the Dispatcher. Keys use reverse-domain notation for namespacing (e.g., `"com.example.custom_field": "value"`). Keys in the `org.ccdp.*` namespace are reserved for protocol-defined extensions.
+
+### 7.3.2. REQUEST Envelope Fields
+
+In addition to Common fields, REQUEST envelopes carry:
+
+```json
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "REQUEST",
+    "capability_type": "org.ccdp.deduction",
+    "destination_id": null,
+    "parent_span_id": null,
+    "deadline": "2026-08-03T14:31:00.000Z",
+    "remaining_budget_ms": 60000,
+    "cost_budget": {
+      "max_compute_seconds": 120,
+      "max_tokens": 50000,
+      "max_monetary_units": 0.50,
+      "monetary_unit": "USD"
+    },
+    "provenance_requirement": {
+      "min_grade": "VALIDATED"
+    },
+    "priority": "NORMAL",
+    "idempotency_key": null
+  }
+}
+```
+
+**`capability_type`** (string, REQUIRED): The Capability Type being requested, using reverse-domain notation. The Dispatcher uses this field, together with the Registry, to select the target Service. Well-known types are listed in Section 8.3.
+
+**`destination_id`** (string or null, OPTIONAL): The specific Service to route to. If null, the Dispatcher selects a Service based on `capability_type` and routing rules (Section 9). If specified, the Dispatcher MUST route to that Service if it is healthy and registered for the given `capability_type`; otherwise the Dispatcher MUST return an error.
+
+**`parent_span_id`** (string or null, OPTIONAL): For sub-requests spawned by a Decomposition Plan, the `span_id` of the parent request. Null for top-level requests. Used for constructing the span tree in the audit trail.
+
+**`deadline`** (string, REQUIRED): ISO 8601 timestamp. The absolute time by which the Response MUST arrive at the original requester. The Dispatcher MUST NOT forward a Request to a Service if the remaining time before `deadline` is insufficient for the Service's advertised latency (from its Capability Record).
+
+**`remaining_budget_ms`** (integer, REQUIRED): Remaining time budget in milliseconds. At each hop, the Dispatcher subtracts elapsed time and sets this field to the updated value. Services SHOULD use `remaining_budget_ms` rather than computing from `deadline` to avoid clock-skew issues.
+
+**`cost_budget`** (object, OPTIONAL): Resource constraints on the request. All sub-fields are optional; omitted fields indicate no constraint. `max_compute_seconds` caps wall-clock compute time. `max_tokens` caps token consumption (for LLM services). `max_monetary_units` caps monetary cost. `monetary_unit` is the ISO 4217 currency code. The Dispatcher MAY use cost_budget for routing decisions (prefer cheaper services). Services MUST NOT exceed the cost_budget; if they would, they MUST return an Escalation with reason `BUDGET_EXCEEDED`.
+
+**`provenance_requirement`** (object, OPTIONAL): The minimum acceptable Provenance Grade for the response. If the Service cannot achieve this grade, it MUST return an Escalation with reason `CONFIDENCE_BELOW_THRESHOLD` and the grade it could achieve. If omitted, no minimum grade is required.
+
+**`priority`** (string, OPTIONAL): One of `"LOW"`, `"NORMAL"`, `"HIGH"`, `"CRITICAL"`. Defaults to `"NORMAL"`. Services MAY use priority for internal scheduling. The Dispatcher MAY use priority as a tiebreaker in routing decisions.
+
+**`idempotency_key`** (string or null, OPTIONAL): If provided, a string that groups logically equivalent requests. Two Requests with the same `idempotency_key` SHOULD produce the same result. This is distinct from `request_id`-based idempotency (which is per-message): `idempotency_key` allows a requester to declare that a retried request with a new `request_id` is logically the same request.
+
+### 7.3.3. RESPONSE Envelope Fields
+
+In addition to Common fields, RESPONSE envelopes carry:
+
+```json
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "RESPONSE",
+    "request_id": "550e8400-e29b-41d4-a716-446655440000",
+    "status": "SUCCESS",
+    "provenance": {
+      "grade": "VALIDATED",
+      "evidence": [
+        {
+          "type": "test-suite-result",
+          "description": "All 47 unit tests passed",
+          "artifact_ref": "test-results/run-2026-08-03-001.json",
+          "service_id": "test-runner-01"
+        }
+      ],
+      "scope": "Code conforms to specification spec-2026-001",
+      "service_id": "code-verifier-01",
+      "service_version": "2.3.1",
+      "service_mode": 3,
+      "computation": {
+        "tokens_consumed": 12500,
+        "compute_seconds": 4.7,
+        "model_id": "claude-opus-4-20260801"
+      },
+      "composition_trace": null
+    }
+  }
+}
+```
+
+**`request_id`** (string, REQUIRED): The `request_id` of the Request this Response answers. MUST match the `request_id` of the original Request.
+
+**`status`** (string, REQUIRED): One of `"SUCCESS"`, `"PARTIAL"`, `"ERROR"`. `SUCCESS` indicates the request was fully completed. `PARTIAL` indicates the Service produced a result but could not fully satisfy the request (the response includes what was achieved). `ERROR` indicates a failure (see Section 13 for error handling).
+
+**`provenance`** (object, REQUIRED): The epistemic metadata for this response. MUST be present on every RESPONSE and ESCALATION. Structure defined in Section 10. Sub-fields:
+
+- **`grade`** (string, REQUIRED): The Provenance Grade. One of the defined grades (Section 10.2).
+- **`evidence`** (array, REQUIRED but MAY be empty): Evidence entries supporting the grade. Each entry has `type` (string), `description` (string), optionally `artifact_ref` (string, a reference to a verifiable artifact), and optionally `service_id` (string, the Service that produced the evidence).
+- **`scope`** (string, OPTIONAL): What claim the grade applies to. REQUIRED when grade is `FORMALLY_VERIFIED` — it MUST identify the specification against which verification was performed.
+- **`service_id`** (string, REQUIRED): The Service that produced this response.
+- **`service_version`** (string, REQUIRED): The version of the Service.
+- **`service_mode`** (integer, OPTIONAL): The Service Mode (1–4) if known.
+- **`computation`** (object, OPTIONAL): Computational resources consumed. Sub-fields: `tokens_consumed` (integer), `compute_seconds` (number), `model_id` (string, the model used if LLM-based), and any additional fields the Service wishes to report.
+- **`composition_trace`** (object or null, OPTIONAL): For responses composed from sub-request results, the composition trace documenting how the grade was derived (Section 10.5).
+
+### 7.3.4. ESCALATION Envelope Fields
+
+An Escalation is a structured response indicating the Service cannot fulfill the request. It shares the RESPONSE envelope structure with additional escalation-specific fields:
+
+```json
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "ESCALATION",
+    "request_id": "550e8400-e29b-41d4-a716-446655440000",
+    "escalation": {
+      "reason": "CONFIDENCE_BELOW_THRESHOLD",
+      "detail": "LLM translation uncertainty too high for formal verification",
+      "achieved_grade": "HEURISTIC",
+      "requested_grade": "VALIDATED",
+      "suggested_target": "human-review-queue-01",
+      "partial_result_available": true
+    },
+    "provenance": {
+      // ... provenance of the partial result, if any ...
+    }
+  }
+}
+```
+
+**`escalation`** (object, REQUIRED):
+- **`reason`** (string, REQUIRED): One of the defined escalation reasons (Section 13.3).
+- **`detail`** (string, OPTIONAL): Human-readable explanation.
+- **`achieved_grade`** (string, OPTIONAL): The Provenance Grade the Service could achieve, if it produced a partial result.
+- **`requested_grade`** (string, OPTIONAL): The grade that was requested via `provenance_requirement.min_grade`.
+- **`suggested_target`** (string, OPTIONAL): A Service ID or Capability Type the Dispatcher should try next.
+- **`partial_result_available`** (boolean, REQUIRED): Whether the Content of this message contains a partial result.
+
+When `partial_result_available` is true, the Content contains whatever the Service was able to produce before escalating. The Dispatcher MUST include this partial result when forwarding the escalation.
+
+### 7.3.5. NOTIFICATION Envelope Fields
+
+Notifications are one-way messages that do not expect a response. They use the Common envelope fields plus:
+
+```json
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "NOTIFICATION",
+    "capability_type": "org.ccdp.notification",
+    "notification_type": "STATUS_UPDATE",
+    "destination_id": "client-app-01"
+  }
+}
+```
+
+**`notification_type`** (string, REQUIRED): The kind of notification. Well-known types include `"STATUS_UPDATE"` (progress on a long-running request), `"RESOURCE_ALERT"` (a Service's resource utilization has crossed a threshold), and `"HEALTH_CHANGE"` (a Service's health status has changed). Implementations MAY define additional notification types.
+
+**`destination_id`** (string, REQUIRED): Where to send the notification.
+
+### 7.3.6. HEALTH_REQUEST and HEALTH_RESPONSE Envelope Fields
+
+Health messages are used by the Dispatcher to probe Service health (Section 13.6).
+
+HEALTH_REQUEST:
+```json
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "HEALTH_REQUEST"
+  }
+}
+```
+
+HEALTH_RESPONSE:
+```json
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "HEALTH_RESPONSE",
+    "health": {
+      "status": "HEALTHY",
+      "capabilities": {
+        "org.ccdp.deduction": {
+          "available": true,
+          "current_load": 0.35,
+          "queue_depth": 2,
+          "estimated_latency_ms": 5000
+        }
+      },
+      "capacity": {
+        "max_concurrent_requests": 10,
+        "current_concurrent_requests": 3
+      },
+      "detail": null
+    }
+  }
+}
+```
+
+**`health.status`** (string, REQUIRED): One of `"HEALTHY"`, `"DEGRADED"`, `"UNHEALTHY"`.
+
+**`health.capabilities`** (object, OPTIONAL): Per-capability status. Each key is a Capability Type; the value reports availability, current load (0.0–1.0), queue depth, and estimated latency for that capability.
+
+**`health.capacity`** (object, OPTIONAL): Overall capacity information.
+
+**`health.detail`** (string, OPTIONAL): Human-readable detail about the health status, particularly when DEGRADED or UNHEALTHY.
+
+### 7.3.7. DECOMPOSITION_RESULT Envelope Fields
+
+Decomposition results are sent by the Decomposition Service and carry the decomposition plan. The full structure is defined in Section 14; the envelope fields are:
+
+```json
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "DECOMPOSITION_RESULT",
+    "request_id": "550e8400-e29b-41d4-a716-446655440000",
+    "provenance": {
+      // ... provenance of the decomposition itself ...
+    }
+  }
+}
+```
+
+The Content of a DECOMPOSITION_RESULT message is the Decomposition Plan (Section 14.3).
+
+## 7.4. Content Structure
+
+The Content is the opaque payload of a CCDP message. Its structure is governed by the Capability Record's input schema (for Requests) or output schema (for Responses).
+
+```json
+{
+  "content": {
+    "type": "natural-language",
+    "schema_ref": "org.ccdp.deduction/input/v2",
+    "body": {
+      // ... capability-specific payload ...
+    }
+  }
+}
+```
+
+**`content.type`** (string, REQUIRED): The content format. Well-known types:
+- `"natural-language"`: Free-text natural language
+- `"formal-logic"`: Logical formulas (the specific logic is identified by the schema)
+- `"proof-object"`: A machine-checkable proof
+- `"validated-plan"`: A plan that has been validated by a sound validator
+- `"structured-data"`: Generic structured data
+- `"code"`: Source code (language identified by the schema)
+- `"multipart"`: Multiple content parts (see below)
+
+Custom content types MAY be defined in Capability Records using reverse-domain notation.
+
+**`content.schema_ref`** (string, OPTIONAL): A reference to the JSON Schema governing this content's `body`, in the format `{capability_type}/{direction}/{version}`. If present, the Dispatcher MAY validate the body against this schema.
+
+**`content.body`** (any, REQUIRED): The actual payload. Structure determined by the schema.
+
+### 7.4.1. Multipart Content
+
+When a response contains multiple distinct outputs (e.g., generated code plus a proof of correctness), the `content.type` is `"multipart"` and the body is an array of typed parts:
+
+```json
+{
+  "content": {
+    "type": "multipart",
+    "body": {
+      "parts": [
+        {
+          "type": "code",
+          "label": "implementation",
+          "body": { "language": "rust", "source": "fn verify(...) { ... }" }
+        },
+        {
+          "type": "proof-object",
+          "label": "correctness-proof",
+          "body": { "prover": "verus", "proof": "..." }
+        }
+      ]
+    }
+  }
+}
+```
+
+Each part carries its own `type` and `label`. The `label` field is a human-readable identifier that the Decomposition Plan's composition function can reference when assembling results from sub-requests.
+
+## 7.5. Dispatcher Audit Annotation
+
+When the Dispatcher forwards a message, it MUST annotate the envelope with audit metadata. These fields are written by the Dispatcher, not by the originator:
+
+```json
+{
+  "envelope": {
+    // ... existing fields ...
+    "audit": {
+      "dispatcher_id": "dispatcher-prod-01",
+      "received_at": "2026-08-03T14:30:00.123Z",
+      "routed_at": "2026-08-03T14:30:00.145Z",
+      "routing_decision": {
+        "selected_service": "z3-prover-01",
+        "reason": "lowest_cost_healthy",
+        "candidates_considered": 3,
+        "registry_query_ms": 12
+      },
+      "schema_validation": {
+        "input_valid": true,
+        "schema_version": "v2"
+      }
+    }
+  }
+}
+```
+
+The `audit` field is detailed in Section 11.
+
+## 7.6. Size Limits
+
+Implementations MUST support messages of at least 16 MiB. Implementations SHOULD support messages of at least 64 MiB. Messages exceeding the implementation's size limit MUST be rejected with error code `-32601` (see Section 13.2).
+
+For content payloads that exceed these limits (e.g., large proof objects, extensive code), implementations SHOULD use a reference-based approach: the `content.body` contains a reference (URI) to the full content stored in an external system, rather than the content inline.
+
+## 7.7. Extensibility and Forward Compatibility
+
+The `metadata` field on every envelope provides the extension point for protocol evolution:
+
+1. Unknown keys in `metadata` MUST be preserved by all intermediaries (including the Dispatcher) when forwarding a message. An implementation that does not understand a metadata key MUST NOT strip it, modify it, or use it for routing decisions.
+
+2. New protocol features SHOULD be introduced as metadata keys in the `org.ccdp.*` namespace before being promoted to top-level envelope fields in a subsequent protocol version.
+
+3. Implementation-specific metadata SHOULD use reverse-domain notation (e.g., `com.example.my_field`) to avoid collisions.
+
+4. An implementation that receives an envelope with an unrecognized `type` field MUST reject the message with error code `-32600` (invalid request) rather than silently dropping it.
+
+This approach follows the TCP/IP tradition of extensible headers: existing implementations continue to work as new fields are added, and the protocol evolves without version bumps for non-breaking changes.

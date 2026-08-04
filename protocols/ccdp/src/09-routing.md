@@ -1,0 +1,128 @@
+# 9. Routing
+
+## 9.1. Routing Principles
+
+Routing is the Dispatcher's core function: given a Request with a `capability_type`, select the Service best suited to handle it. CCDP routing is *envelope-based* — the Dispatcher makes routing decisions from envelope metadata and Registry data, never from Content.
+
+Three principles govern routing:
+
+1. **Capability-type dispatch.** The primary routing key is `envelope.capability_type`. The Dispatcher queries the Registry for Services that implement this type and are ACTIVE.
+
+2. **Cost-aware selection.** Among eligible Services, the Dispatcher selects based on cost hints (latency, monetary cost, compute intensity), health status, current load, and the Request's constraints (deadline, cost_budget, provenance_requirement).
+
+3. **Deterministic tiebreaking.** When multiple Services are equally suitable, the Dispatcher applies a deterministic tiebreaking rule (e.g., round-robin, lowest-load, consistent hashing by request_id). The specific tiebreaking strategy is implementation-defined but MUST be logged.
+
+## 9.2. Routing Algorithm
+
+The Dispatcher MUST implement the following routing algorithm. Steps are ordered; the Dispatcher proceeds to the next step only if the current step does not resolve the routing decision.
+
+### Step 1: Explicit Destination
+
+If `envelope.destination_id` is non-null, route to the specified Service. If the Service is not registered, not ACTIVE, or not healthy, return error `-32001` (service unavailable). Do not fall through to capability-based routing.
+
+### Step 2: Capability Lookup
+
+Query the Registry for all ACTIVE Services implementing `envelope.capability_type`. If no Services are found, return error `-32002` (no service for capability type).
+
+### Step 3: Health Filter
+
+Remove Services with Health Status UNHEALTHY from the candidate set. Services with Health Status DEGRADED remain eligible but are deprioritized (Step 6).
+
+If all Services are UNHEALTHY, the Dispatcher MUST either:
+- Return error `-32003` (all services unhealthy), OR
+- If an Escalation Chain is defined for this Capability Type, route to the first healthy target in the chain.
+
+### Step 4: Deadline Filter
+
+Remove Services whose `cost_hints.estimated_latency_ms.p95` exceeds `envelope.remaining_budget_ms`. A Service that is unlikely to respond within the deadline is not a viable candidate.
+
+If all Services are filtered out, the Dispatcher SHOULD attempt routing to the Service with the lowest estimated latency and log a warning. If no Service can plausibly respond in time, return error `-32004` (deadline not achievable).
+
+### Step 5: Provenance Filter
+
+If `envelope.provenance_requirement.min_grade` is set, remove Services whose `provenance_capabilities.max_grade` is below the required grade.
+
+If all Services are filtered out, the Dispatcher MUST either:
+- Return error `-32005` (no service meets provenance requirement), OR
+- Route to the Service with the highest `max_grade` and include a warning in the audit log that the provenance requirement may not be met.
+
+### Step 6: Cost-Aware Ranking
+
+Rank the remaining candidates using a scoring function that considers:
+
+- **Health status:** HEALTHY Services are preferred over DEGRADED Services.
+- **Current load:** Services with lower `health.capabilities[type].current_load` are preferred.
+- **Estimated latency:** Lower latency is preferred, weighted against the remaining deadline budget.
+- **Monetary cost:** Lower cost is preferred, weighted against the Request's `cost_budget`.
+- **Provenance grade:** If the Request specifies a `provenance_requirement`, Services whose `typical_grade` meets or exceeds the requirement are preferred.
+- **Queue depth:** Services with lower `health.capabilities[type].queue_depth` are preferred.
+
+The specific scoring function is implementation-defined. This specification does not mandate weights or formulas — implementations SHOULD tune their scoring function to their deployment's priorities (latency-sensitive, cost-sensitive, quality-sensitive).
+
+### Step 7: Selection and Logging
+
+Select the highest-ranked candidate. Log the routing decision in the `audit.routing_decision` field (Section 7.5), including:
+- `selected_service`: the Service ID selected
+- `reason`: why this Service was selected (e.g., `"lowest_cost_healthy"`, `"only_candidate"`, `"explicit_destination"`)
+- `candidates_considered`: how many candidates were evaluated
+- `registry_query_ms`: how long the Registry query took
+- `filters_applied`: which filters removed candidates (e.g., `["health", "deadline"]`)
+
+## 9.3. Routing for Decomposed Sub-Requests
+
+When the Dispatcher processes a Decomposition Plan (Section 14), it routes each sub-request independently through the same routing algorithm. Sub-requests inherit the parent's `trace_id` and `deadline` (with elapsed time subtracted) but have their own `capability_type`, `request_id`, and `span_id`.
+
+The Dispatcher MUST respect the Decomposition Plan's dependency ordering: sub-requests with unresolved dependencies MUST NOT be dispatched until their dependencies are fulfilled. Sub-requests with no dependencies MAY be dispatched in parallel.
+
+## 9.4. Escalation Routing
+
+When a Service returns an Escalation, the Dispatcher routes to the next target in the Escalation Chain. Escalation routing follows a defined sequence:
+
+1. **Suggested target.** If `escalation.suggested_target` is set and the target is healthy, route to it.
+2. **Escalation chain.** If the suggested target is unavailable or not set, walk the `escalation_chain` from the Service's Capability Record. Route to the first healthy target.
+3. **Capability fallback.** If the escalation chain is exhausted, query the Registry for other Services implementing the same Capability Type (excluding the Service that escalated) and route to the best available.
+4. **Human queue.** If no automated Service can handle the request, route to a Service of type `org.ccdp.human_review`. This is the terminal escalation target.
+5. **Failure.** If no human review Service is available, return error `-32006` (escalation chain exhausted) to the requester.
+
+Each escalation routing decision is logged in the audit trail with the full escalation context: which Service escalated, why, what targets were tried, and where the request ultimately landed.
+
+## 9.5. Retry Policy
+
+The Dispatcher SHOULD implement a retry policy for transient failures (network errors, timeouts, HTTP 503 responses). The retry policy:
+
+- MUST respect idempotency: retries of the same `request_id` are safe because Services MUST be idempotent.
+- MUST respect the deadline: no retry should be attempted if the remaining deadline budget is insufficient.
+- SHOULD use exponential backoff with jitter for retries to the same Service.
+- SHOULD try a different Service (if available) before retrying the same Service.
+- MUST log each retry attempt in the audit trail.
+- MUST limit total retries to a configurable maximum (RECOMMENDED: 3) to prevent retry storms.
+
+## 9.6. Circuit Breaker Integration
+
+The Dispatcher MUST implement circuit breaker logic for each Service (Section 13.6). A Service's circuit breaker has three states:
+
+- **CLOSED** (normal operation): Requests are forwarded. Failures are counted.
+- **OPEN** (tripped): Requests are NOT forwarded. The Service is excluded from routing. Periodic health probes test recovery.
+- **HALF_OPEN** (testing recovery): A limited number of requests are forwarded. If they succeed, the circuit breaker returns to CLOSED. If they fail, it returns to OPEN.
+
+The circuit breaker state is an input to routing: OPEN circuit breakers effectively remove a Service from the candidate set. The transition logic (failure thresholds, recovery probe intervals) is implementation-defined.
+
+## 9.7. Routing Table
+
+The Dispatcher maintains a Routing Table — a runtime data structure combining Registry data, health status, circuit breaker state, and load metrics. The Routing Table is the Dispatcher's view of the world:
+
+```
+┌──────────────────────┬────────────┬──────────┬─────────────┬──────────┐
+│ Capability Type      │ Service ID │ Health   │ Circuit     │ Load     │
+│                      │            │ Status   │ Breaker     │ (0.0-1.0)│
+├──────────────────────┼────────────┼──────────┼─────────────┼──────────┤
+│ org.ccdp.deduction   │ z3-prover  │ HEALTHY  │ CLOSED      │ 0.35     │
+│ org.ccdp.deduction   │ isabelle   │ DEGRADED │ CLOSED      │ 0.80     │
+│ org.ccdp.planning    │ fd-planner │ HEALTHY  │ CLOSED      │ 0.10     │
+│ org.ccdp.language.*  │ llm-pool   │ HEALTHY  │ CLOSED      │ 0.55     │
+│ org.ccdp.human_review│ review-q   │ HEALTHY  │ CLOSED      │ 0.20     │
+│ org.ccdp.verification│ verifier   │ UNHEALTHY│ OPEN        │ —        │
+└──────────────────────┴────────────┴──────────┴─────────────┴──────────┘
+```
+
+The Routing Table is refreshed from the Registry at a configurable interval (RECOMMENDED: every 30 seconds) and updated in real-time by health check responses. It is an internal Dispatcher structure, not a protocol element — its format is implementation-defined.
