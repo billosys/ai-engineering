@@ -2,6 +2,11 @@
 //! (`[Author Year]`) citations, checked against the assembled header and
 //! reference sets. Mismatches are reported as warnings to stderr with the
 //! originating source file and line number.
+//!
+//! This runs against the raw chapter sources, not the rewritten output, so
+//! it's identical for both `--format` values — it never inspects `{#anchor}`
+//! vs. `<a id="anchor">` text, only the same numbered-heading convention
+//! `headers::parse_numbered_header` reads to generate either one.
 
 use std::collections::HashSet;
 use std::sync::LazyLock;

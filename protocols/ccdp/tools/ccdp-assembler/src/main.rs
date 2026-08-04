@@ -4,6 +4,7 @@ mod cli;
 mod frontmatter;
 mod headers;
 mod references;
+mod toc;
 mod validate;
 mod yaml;
 
@@ -15,7 +16,7 @@ use anyhow::{Context, Result};
 use chrono::Local;
 use clap::Parser;
 
-use cli::Args;
+use cli::{Args, Format};
 
 fn main() -> ExitCode {
     let args = Args::parse();
@@ -32,7 +33,7 @@ fn main() -> ExitCode {
 /// Runs the assembler end to end. Returns the number of validation
 /// warnings reported (`0` when `--validate` was not passed).
 fn run(args: &Args) -> Result<usize> {
-    if !args.template.exists() {
+    if args.format == Format::KramdownRfc && !args.template.exists() {
         eprintln!(
             "error: template not found at {}; proceeding with built-in defaults",
             args.template.display()
@@ -50,7 +51,14 @@ fn run(args: &Args) -> Result<usize> {
         None => Local::now().format("%Y-%m-%d").to_string(),
     };
 
-    let document = assemble::assemble(&loaded_chapters, &refs, &args.version, &date)?;
+    let document = match args.format {
+        Format::KramdownRfc => {
+            assemble::assemble_kramdown_rfc(&loaded_chapters, &refs, &args.version, &date)?
+        }
+        Format::Gfm => {
+            assemble::assemble_gfm(&loaded_chapters, &args.version, &date, args.want_toc())?
+        }
+    };
 
     if let Some(parent) = args.output.parent().filter(|p| !p.as_os_str().is_empty()) {
         fs::create_dir_all(parent)

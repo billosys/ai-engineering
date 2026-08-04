@@ -1,13 +1,18 @@
-//! Header rewriting for kramdown-rfc compatibility.
+//! Header rewriting for the assembled document.
 //!
 //! Source chapters number their headers (`# 10. Title`, `## 10.1. Title`).
-//! kramdown-rfc auto-numbers sections, so the numeric prefix is stripped and
-//! replaced with a stable `{#section-N-M}` IAL anchor that preserves the
-//! ability to resolve bare `Section N.M` prose references.
+//! Both output formats auto-number sections themselves, so the numeric
+//! prefix is stripped and replaced with a stable anchor that preserves the
+//! ability to resolve bare `Section N.M` prose references — as a `{#anchor}`
+//! kramdown IAL for `--format kramdown-rfc`, or a `<a id="anchor"></a>` tag
+//! on the line before the heading for `--format gfm` (GitHub doesn't render
+//! kramdown IALs; they'd show up as literal text).
 
 use std::sync::LazyLock;
 
 use regex::Regex;
+
+use crate::cli::Format;
 
 static NUMBERED_HEADER_RE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"^(#{1,6})\s+(\d+(?:\.\d+)*)\.\s+(.+?)\s*$").expect("static regex is valid")
@@ -43,23 +48,30 @@ pub fn anchor_slug(number: &str) -> String {
 }
 
 /// Rewrites a single line: numbered headers lose their numeric prefix and
-/// gain a `{#section-N-M}` anchor; every other line passes through unchanged.
-pub fn rewrite_line(line: &str) -> String {
+/// gain a format-appropriate anchor; every other line passes through
+/// unchanged. For GFM, the anchor is a separate `<a id="...">` line
+/// prepended before the heading, so the result may itself contain a newline.
+pub fn rewrite_line(line: &str, format: Format) -> String {
     match parse_numbered_header(line) {
         Some(header) => {
             let hashes = "#".repeat(header.level);
             let anchor = anchor_slug(header.number);
-            format!("{hashes} {} {{#section-{anchor}}}", header.title)
+            match format {
+                Format::KramdownRfc => format!("{hashes} {} {{#section-{anchor}}}", header.title),
+                Format::Gfm => {
+                    format!("<a id=\"section-{anchor}\"></a>\n{hashes} {}", header.title)
+                }
+            }
         }
         None => line.to_string(),
     }
 }
 
 /// Rewrites every line of a chapter's content.
-pub fn rewrite_content(content: &str) -> String {
+pub fn rewrite_content(content: &str, format: Format) -> String {
     content
         .lines()
-        .map(rewrite_line)
+        .map(|line| rewrite_line(line, format))
         .collect::<Vec<_>>()
         .join("\n")
 }
@@ -69,50 +81,88 @@ mod tests {
     use super::*;
 
     #[test]
-    fn strips_chapter_prefix_and_anchors() {
+    fn kramdown_strips_chapter_prefix_and_anchors() {
         assert_eq!(
-            rewrite_line("# 10. Provenance and Evidence Grades"),
+            rewrite_line("# 10. Provenance and Evidence Grades", Format::KramdownRfc),
             "# Provenance and Evidence Grades {#section-10}"
         );
     }
 
     #[test]
-    fn strips_subsection_prefix_and_anchors() {
+    fn kramdown_strips_subsection_prefix_and_anchors() {
         assert_eq!(
-            rewrite_line("## 10.1. Rationale"),
+            rewrite_line("## 10.1. Rationale", Format::KramdownRfc),
             "## Rationale {#section-10-1}"
         );
     }
 
     #[test]
-    fn handles_three_level_numbers() {
+    fn kramdown_handles_three_level_numbers() {
         assert_eq!(
-            rewrite_line("### 10.5.1. Sequential Composition (Weakest-Link Rule)"),
+            rewrite_line(
+                "### 10.5.1. Sequential Composition (Weakest-Link Rule)",
+                Format::KramdownRfc
+            ),
             "### Sequential Composition (Weakest-Link Rule) {#section-10-5-1}"
         );
     }
 
     #[test]
-    fn leaves_unnumbered_headers_untouched() {
-        assert_eq!(rewrite_line("### Grade 0: OPAQUE"), "### Grade 0: OPAQUE");
+    fn gfm_prepends_anchor_tag_and_strips_prefix() {
         assert_eq!(
-            rewrite_line("### Step 1: Explicit Destination"),
-            "### Step 1: Explicit Destination"
+            rewrite_line("# 10. Provenance and Evidence Grades", Format::Gfm),
+            "<a id=\"section-10\"></a>\n# Provenance and Evidence Grades"
         );
     }
 
     #[test]
-    fn leaves_non_header_lines_untouched() {
+    fn gfm_subsection_anchor_uses_dashed_number() {
         assert_eq!(
-            rewrite_line("Section 10.1 discusses rationale."),
-            "Section 10.1 discusses rationale."
+            rewrite_line("## 10.1. Rationale", Format::Gfm),
+            "<a id=\"section-10-1\"></a>\n## Rationale"
         );
-        assert_eq!(rewrite_line(""), "");
+    }
+
+    #[test]
+    fn leaves_unnumbered_headers_untouched_in_both_formats() {
+        for format in [Format::KramdownRfc, Format::Gfm] {
+            assert_eq!(
+                rewrite_line("### Grade 0: OPAQUE", format),
+                "### Grade 0: OPAQUE"
+            );
+            assert_eq!(
+                rewrite_line("### Step 1: Explicit Destination", format),
+                "### Step 1: Explicit Destination"
+            );
+        }
+    }
+
+    #[test]
+    fn leaves_non_header_lines_untouched_in_both_formats() {
+        for format in [Format::KramdownRfc, Format::Gfm] {
+            assert_eq!(
+                rewrite_line("Section 10.1 discusses rationale.", format),
+                "Section 10.1 discusses rationale."
+            );
+            assert_eq!(rewrite_line("", format), "");
+        }
     }
 
     #[test]
     fn anchor_slug_replaces_dots_with_dashes() {
         assert_eq!(anchor_slug("10"), "10");
         assert_eq!(anchor_slug("10.5.4"), "10-5-4");
+    }
+
+    #[test]
+    fn gfm_rewrite_content_keeps_anchor_and_heading_on_adjacent_lines() {
+        let out = rewrite_content(
+            "# 10. Provenance and Evidence Grades\n\nBody text.",
+            Format::Gfm,
+        );
+        assert_eq!(
+            out,
+            "<a id=\"section-10\"></a>\n# Provenance and Evidence Grades\n\nBody text."
+        );
     }
 }
