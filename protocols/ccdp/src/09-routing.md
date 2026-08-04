@@ -28,23 +28,19 @@ Query the Registry for all ACTIVE Services implementing `envelope.capability_typ
 
 Remove Services with Health Status UNHEALTHY from the candidate set. Services with Health Status DEGRADED remain eligible but are deprioritized (Step 6).
 
-If all Services are UNHEALTHY, the Dispatcher MUST either:
-- Return error `-32003` (all services unhealthy), OR
-- If an Escalation Chain is defined for this Capability Type, route to the first healthy target in the chain.
+If all Services are UNHEALTHY, the Dispatcher MUST follow its deployment-configured `all_unhealthy_policy` for the requested capability type. The policy MUST be one of: `"error"` (return error `-32003`), `"escalate"` (treat as an escalation with reason `INTERNAL_DEGRADATION` and walk the escalation chain), or `"queue"` (hold the request for a configurable duration and retry when a service becomes healthy). The default policy is `"error"`. The chosen policy MUST be recorded in the audit trail.
 
 ### Step 4: Deadline Filter
 
 Remove Services whose `cost_hints.estimated_latency_ms.p95` exceeds `envelope.remaining_budget_ms`. A Service that is unlikely to respond within the deadline is not a viable candidate.
 
-If all Services are filtered out, the Dispatcher SHOULD attempt routing to the Service with the lowest estimated latency and log a warning. If no Service can plausibly respond in time, return error `-32004` (deadline not achievable).
+If all candidate services are filtered out by deadline, the Dispatcher MUST return error `-32004` (deadline not achievable). The Dispatcher MUST NOT silently route to a service that cannot plausibly meet the deadline. The audit record MUST include the remaining budget, the fastest candidate's estimated latency, and the filtering decision.
 
 ### Step 5: Provenance Filter
 
 If `envelope.provenance_requirement.min_grade` is set, remove Services whose `provenance_capabilities.max_grade` is below the required grade.
 
-If all Services are filtered out, the Dispatcher MUST either:
-- Return error `-32005` (no service meets provenance requirement), OR
-- Route to the Service with the highest `max_grade` and include a warning in the audit log that the provenance requirement may not be met.
+If no candidate service can meet the Request's `provenance_requirement.min_grade`, the Dispatcher MUST NOT silently route to a lower-grade service. The Dispatcher MUST either return error `-32005` (provenance not achievable) or treat the situation as an implicit escalation — routing through the escalation chain to find a service that can meet the grade requirement. The choice is deployment-configured. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
 
 ### Step 6: Cost-Aware Ranking
 
@@ -68,6 +64,8 @@ Select the highest-ranked candidate. Log the routing decision in the `audit.rout
 - `registry_query_ms`: how long the Registry query took
 - `filters_applied`: which filters removed candidates (e.g., `["health", "deadline"]`)
 
+The audit record for a routing decision MUST include at minimum: the list of candidate services considered, the normalized scoring factors (health weight, cost weight, latency weight, provenance weight), the deployment policy version used, the computed score for each candidate, and the tiebreaker (if any). This enables retrospective routing analysis and debugging.
+
 ## 9.3. Routing for Decomposed Sub-Requests
 
 When the Dispatcher processes a Decomposition Plan (Section 14), it routes each sub-request independently through the same routing algorithm. Sub-requests inherit the parent's `trace_id` and `deadline` (with elapsed time subtracted) but have their own `capability_type`, `request_id`, and `span_id`.
@@ -79,7 +77,7 @@ The Dispatcher MUST respect the Decomposition Plan's dependency ordering: sub-re
 When a Service returns an Escalation, the Dispatcher routes to the next target in the Escalation Chain. Escalation routing follows a defined sequence:
 
 1. **Suggested target.** If `escalation.suggested_target` is set and the target is healthy, route to it.
-2. **Escalation chain.** If the suggested target is unavailable or not set, walk the `escalation_chain` from the Service's Capability Record. Route to the first healthy target.
+2. **Escalation chain.** If the suggested target is unavailable or not set, walk the `escalation_chain` from the Service's Capability Record. Route to the first healthy target. Escalation targets MUST be checked using the full routing algorithm (Section 9.2): capability match, health status, authorization, provenance capability, deadline feasibility, budget feasibility, isolation requirements, and cycle detection. A health-only check is insufficient — an escalation target that is healthy but unauthorized, over-budget, or incapable of the requested provenance grade MUST be skipped.
 3. **Capability fallback.** If the escalation chain is exhausted, query the Registry for other Services implementing the same Capability Type (excluding the Service that escalated) and route to the best available.
 4. **Human queue.** If no automated Service can handle the request, route to a Service of type `org.ccdp.human_review`. This is the terminal escalation target.
 5. **Failure.** If no human review Service is available, return error `-32006` (escalation chain exhausted) to the requester.
@@ -126,3 +124,5 @@ The Dispatcher maintains a Routing Table — a runtime data structure combining 
 ```
 
 The Routing Table is refreshed from the Registry at a configurable interval (RECOMMENDED: every 30 seconds) and updated in real-time by health check responses. It is an internal Dispatcher structure, not a protocol element — its format is implementation-defined.
+
+**Wildcard capability matching.** Capability type patterns ending in `.*` match any capability type that shares the prefix up to the wildcard. `org.ccdp.language.*` matches `org.ccdp.language.generation`, `org.ccdp.language.translation`, etc., but not `org.ccdp.language` itself (the wildcard requires at least one additional segment). Wildcard patterns are valid only in token scopes (Section 15.3.2) and routing configuration; they MUST NOT appear in Capability Records or Registry lookups.

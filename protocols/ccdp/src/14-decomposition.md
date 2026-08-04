@@ -4,7 +4,7 @@
 
 Most real cognitive work requires decomposition — breaking a complex request into sub-tasks that each route to a different Service. "Fix the bug in the auth module" decomposes into locate, diagnose, repair, verify. "Prove this theorem" decomposes into formalize, search for proof strategy, execute proof steps, check. Decomposition is itself a cognitive act, and one that LLMs are demonstrably weak at — PlanBench shows LLMs collapse on longer planning horizons and hallucinate plans for unsolvable problems [Valmeekam et al. 2024].
 
-CCDP resolves this by treating decomposition as a first-class Service: a dedicated Decomposition Service with Capability Type `org.ccdp.decomposition` that receives complex requests and emits structured Decomposition Plans. The Dispatcher routes to the Decomposition Service first, then routes each sub-request from the plan independently. The Dispatcher stays dumb; the decomposition intelligence lives in a dedicated, auditable Service behind a typed interface.
+CCDP resolves this by treating decomposition as a first-class Service: a dedicated Decomposition Service with Capability Type `org.ccdp.decomposition` that receives complex requests and emits structured Decomposition Plans. The Dispatcher routes to the Decomposition Service first, then routes each sub-request from the plan independently. The Dispatcher performs only structural operations — routing, dependency resolution, typed result-reference substitution; the decomposition intelligence lives in a dedicated, auditable Service behind a typed interface.
 
 ## 14.2. When Decomposition Occurs
 
@@ -16,6 +16,8 @@ The Dispatcher invokes the Decomposition Service in one of two ways:
 - No single Service is registered for the requested `capability_type`.
 - The request's Content exceeds the target Service's declared input constraints (e.g., the input is too large or too complex).
 - The Dispatcher's routing configuration includes a rule mapping certain capability types to automatic decomposition.
+
+Dispatcher-initiated decomposition MUST be triggered by envelope-level signals, not by content inspection. The relevant signals are: (a) no single Service is registered for the requested `capability_type` (a routing-level signal), (b) the Request's `content.body` size exceeds the target Service's declared `max_input_size` in the Capability Record (a structural size check, not semantic), (c) the Dispatcher's routing configuration includes a decomposition rule for the capability type (a policy signal). The Dispatcher MUST NOT inspect content semantics to decide whether decomposition is needed.
 
 In both cases, the decomposition step is visible in the audit trail — the routing decision records that decomposition was invoked and why.
 
@@ -60,7 +62,7 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
             "type": "formal-logic",
             "body": {
               "logic": "lean4",
-              "formula": "{{sub-001.result.body.translation}}"
+              "formula": {"$ref": "sub-001.result", "path": "/body/translation"}
             }
           },
           "constraints": {
@@ -79,7 +81,7 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
             "body": {
               "source_representation": "lean4-proof",
               "target_representation": "natural-language",
-              "proof": "{{sub-002.result.body.proof}}"
+              "proof": {"$ref": "sub-002.result", "path": "/body/proof"}
             }
           },
           "constraints": {
@@ -90,14 +92,6 @@ A Decomposition Plan is the Content of a DECOMPOSITION_RESULT message. It specif
           "depends_on": ["sub-002"]
         }
       ],
-
-      "dependencies": {
-        "type": "dag",
-        "edges": [
-          { "from": "sub-001", "to": "sub-002" },
-          { "from": "sub-002", "to": "sub-003" }
-        ]
-      },
 
       "composition": {
         "method": "template",
@@ -133,7 +127,7 @@ Each `sub_requests` entry contains:
 
 **`description`** (string, OPTIONAL): Human-readable description of this sub-task.
 
-**`content`** (object, REQUIRED): The Content payload for this sub-request. MAY reference results of previous sub-requests using the template syntax `{{sub_id.result.body.field}}`.
+**`content`** (object, REQUIRED): The Content payload for this sub-request. MAY reference results of previous sub-requests using typed result references (Section 14.3.3).
 
 **`constraints`** (object, OPTIONAL): Resource constraints for this sub-request.
 - `deadline_fraction`: Fraction of the parent's remaining deadline allocated to this sub-request (0.0 to 1.0).
@@ -144,22 +138,35 @@ Each `sub_requests` entry contains:
 
 ### 14.3.2. Dependency Graph
 
-The `dependencies` field defines the execution order:
+The dependency graph is defined by the `depends_on` arrays on each sub-request entry. The Dispatcher constructs the DAG from these arrays and validates that:
 
-**`type`** (string, REQUIRED): MUST be `"dag"` (directed acyclic graph). The Dispatcher MUST validate that the dependency graph is acyclic; a cyclic dependency graph is a malformed plan.
+1. All `depends_on` references point to valid `sub_id` values within the same plan.
+2. The resulting graph is acyclic (a cyclic dependency is a malformed plan — reject with error `-32602`).
+3. All sub-requests are reachable (no orphaned entries).
 
-**`edges`** (array of objects, REQUIRED): Each edge has `from` (sub_id that must complete first) and `to` (sub_id that depends on it). The edges MUST be consistent with the `depends_on` fields in the sub-requests.
+Sub-requests with empty `depends_on` arrays can execute in parallel. The Dispatcher SHOULD execute independent sub-requests concurrently when resources permit.
 
-Sub-requests with no incoming edges can execute in parallel. The Dispatcher SHOULD execute independent sub-requests concurrently when resources permit.
+The `dependencies` top-level field in the plan is OPTIONAL. If present, it is informative only (e.g., for visualization) and MUST be consistent with the `depends_on` arrays. In case of conflict, the `depends_on` arrays are authoritative.
 
-### 14.3.3. Result References
+### 14.3.3. Typed Result References
 
-Sub-request content MAY reference results from completed dependencies using the template syntax `{{sub_id.result.body.field}}`. The Dispatcher resolves these references before dispatching:
+Sub-request content MAY reference results from completed dependencies using typed result references. A result reference is a JSON object (not a template string) that the Dispatcher resolves structurally:
 
-1. Wait for the dependency to complete.
-2. Extract the referenced field from the dependency's Response Content.
-3. Substitute the template variable with the extracted value.
-4. Dispatch the sub-request with the resolved content.
+```json
+{
+  "$ref": "sub-001.result",
+  "path": "/body/translation",
+  "fallback": null
+}
+```
+
+**`$ref`** (string, REQUIRED): The sub-request ID whose result is referenced, suffixed with `.result` to refer to the Response Content.
+
+**`path`** (string, REQUIRED): A JSON Pointer [RFC 6901] path into the referenced result's Content.
+
+**`fallback`** (any, OPTIONAL): The value to use if the referenced path does not exist in the result. If omitted and the path does not exist, the Dispatcher follows the plan's `fallback` strategy.
+
+The Dispatcher resolves result references by: (1) waiting for the referenced dependency to complete, (2) extracting the value at the JSON Pointer path from the dependency's Response Content, (3) substituting the reference object with the extracted value. This is a structural operation — the Dispatcher reads a typed path, not natural language. The Dispatcher MUST NOT perform string interpolation, template expansion, or any transformation on the extracted value.
 
 If a referenced dependency failed or escalated, the Dispatcher follows the plan's `fallback` strategy.
 
@@ -172,6 +179,8 @@ The `composition` field specifies how sub-results are assembled into the final r
 - `"concatenation"`: Concatenate sub-results in dependency order.
 - `"selection"`: Select the best sub-result by a criterion (useful for cross-checking).
 - `"custom"`: A custom composition function (specified as a Content payload routed to a composition Service).
+
+When `method` is `"custom"`, the composition payload is routed to a Service with capability type `org.ccdp.composition`. This is a well-known capability type (added to Section 8.3's well-known types). The Composition Service receives the sub-results and the composition specification and returns the composed result. The Dispatcher does not perform custom composition itself — it delegates to the Composition Service and forwards the result.
 
 **`template`** (object, conditional): REQUIRED when `method` is `"template"`. The template for the composed result, with `source` fields referencing sub-results.
 
@@ -207,13 +216,15 @@ When the Dispatcher receives a DECOMPOSITION_RESULT, it executes the plan:
    - A new `span_id`
    - `parent_span_id` set to the parent request's `span_id`
    - The allocated deadline and cost budget
-   - The resolved Content (templates substituted)
+   - The resolved Content (typed result references resolved per Section 14.3.3)
 
 4. **Process results as they arrive.** As each sub-request completes, check which dependent sub-requests are now unblocked and dispatch them.
 
 5. **Handle failures.** Follow the plan's `fallback` strategy for failed sub-requests.
 
 6. **Compose the final result.** When all sub-requests (or all non-skipped sub-requests) are complete, compose the final result according to the `composition` specification.
+
+**Composition boundary.** For `template`, `concatenation`, and `selection` composition methods, the Dispatcher performs structural assembly: it places sub-results into the template slots, concatenates them in order, or selects by a typed criterion (highest provenance grade, lowest cost). These are mechanical operations on typed wrappers, consistent with the Coordinator Dispatcher model. The Dispatcher MUST NOT perform composition that requires reasoning about content meaning — such composition MUST be routed to an `org.ccdp.composition` Service.
 
 7. **Compute composed provenance.** Apply the `provenance_rule` to derive the composed result's provenance grade. Include the full `composition_trace` (Section 10.5.4).
 
@@ -229,16 +240,18 @@ The Decomposition Service implements Capability Type `org.ccdp.decomposition` wi
 
 **Output schema:** A Decomposition Plan (Section 14.3).
 
-**Provenance:** The Decomposition Plan carries its own provenance grade reflecting the confidence in the decomposition. An LLM-only decomposition is graded ASSERTED or HEURISTIC. A decomposition validated by a plan checker is graded VALIDATED.
+**Provenance:** The Decomposition Plan carries its own provenance grade reflecting the evidence strength behind the decomposition. An LLM-only decomposition is graded ASSERTED or HEURISTIC. A decomposition validated by a plan checker is graded VALIDATED.
 
 **Escalation:** If the Decomposition Service cannot decompose the request (it is atomic, it is outside the Service's domain, or the problem is ambiguous), it returns an Escalation with reason `CAPABILITY_EXCEEDED` or `AMBIGUOUS_INPUT`.
 
-The Decomposition Service is a natural candidate for Mode 3 (LLM + validator): an LLM proposes a decomposition plan, and a validator checks structural consistency (valid capability types, acyclic dependencies, resource allocations sum correctly, all template references are valid). The validated plan carries a higher provenance grade than the raw LLM output.
+The Decomposition Service is a natural candidate for Mode 3 (LLM + validator): an LLM proposes a decomposition plan, and a validator checks structural consistency (valid capability types, acyclic dependencies, resource allocations sum correctly, all result references are valid). The validated plan carries a higher provenance grade than the raw LLM output.
 
 ## 14.6. Recursive Decomposition
 
 A sub-request in a Decomposition Plan MAY itself have `capability_type: "org.ccdp.decomposition"`, producing a nested decomposition. The Dispatcher handles this recursively: the sub-decomposition produces its own plan, which the Dispatcher executes as a nested sub-tree of the parent plan.
 
 To prevent unbounded recursion, the Dispatcher MUST enforce a maximum decomposition depth (RECOMMENDED: 5). If a decomposition exceeds the maximum depth, the Dispatcher returns error `-32012` for the deepest sub-request.
+
+The Dispatcher MUST also enforce maximum plan width (the number of sub-requests in a single plan) and maximum total node count (the total number of sub-requests across all recursion levels for a single top-level request). RECOMMENDED limits: maximum width 50 per plan, maximum total nodes 100 per top-level request. These limits prevent decomposition bombs (Section 17.2.5) and are conformance requirements for both Core and Full Dispatchers.
 
 The audit trail records the full tree of decompositions, enabling reconstruction of arbitrarily complex request execution paths.

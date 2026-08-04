@@ -14,6 +14,8 @@ The provenance system is grounded in two theoretical foundations:
 
 Eight provenance grades are defined, ordered from weakest to strongest epistemic standing. The ordering is strict: each grade implies all guarantees of the grades below it plus additional guarantees.
 
+**Ordering caveat.** This ordering is a *policy order* for routing and conformance, not a universal epistemic truth. The ordering holds for the protocol's primary use case — selecting services and evaluating whether a response meets a requester's quality threshold. It does not hold in all epistemic contexts: HUMAN_ATTESTED does not imply deterministic COMPUTED (a human reviewer may not have performed the computation); CROSS_CHECKED does not imply VALIDATED against an external criterion unless validation was part of each independent process. The ordering reflects the protocol's design judgment that grades higher on the ladder are harder to achieve and more expensive to fake (the Spence signaling criterion), not that every higher grade subsumes every lower grade's specific method. Consumers with domain-specific epistemic requirements SHOULD inspect the `evidence` entries rather than relying solely on grade comparison.
+
 ### Grade 0: OPAQUE
 
 No provenance information is available. The service did not report how it produced this result, or the result's origin is unknown. This grade is assigned when:
@@ -45,6 +47,8 @@ The result was deterministically computed from the inputs. Given the same inputs
 
 Typical sources: arithmetic calculations, database queries (the data is what the database contains), hash computations, sorting, compilation.
 
+A database query result is COMPUTED relative to the database's current state. The provenance of the stored data is a separate question — if the data was loaded from an unverified source, the query result is COMPUTED (the query was executed correctly) but the underlying data may be OPAQUE or ASSERTED. The `scope` field SHOULD note "computed relative to database state as of [timestamp]" when this distinction matters.
+
 The distinction from HEURISTIC: a COMPUTED result has no uncertainty in the computation — the potential error is in the inputs, not the processing. A database query result is COMPUTED because the query was executed correctly against the data; whether the data itself is correct is a separate provenance question.
 
 ### Grade 4: VALIDATED
@@ -53,13 +57,15 @@ The result was checked against an external criterion and found consistent. The e
 
 Typical sources: code that passes a test suite, a plan accepted by an external validator, output that passes a schema check, a translation verified by back-translation.
 
+Back-translation is validation only when the back-translation process is independent of the forward translation and the consistency criterion is formally defined. A back-translation using the same LLM with the same prompt is self-review, not validation — it SHOULD be graded HEURISTIC, not VALIDATED.
+
 The distinction from COMPUTED: VALIDATED results have been checked by an independent verification step, not just deterministically produced. A service assigning VALIDATED MUST include evidence entries identifying the validation method and its scope (what was validated, and what was not).
 
 **Design note (a judgment call):** Test-suite validation and formal verification are separated into different grades because they have structurally different failure modes. A test suite samples — it checks finitely many cases and says nothing about unchecked cases. A formal proof exhausts — it checks all cases within the scope of the specification. The gap between "all tested cases pass" and "all possible cases are covered" is real and load-bearing in safety-critical contexts. We acknowledge that some software engineering traditions would group these together, and that the boundary between extensive testing and lightweight formal methods (property-based testing, coverage-guided fuzzing) is blurry. The separation is a design choice favoring precision over convenience.
 
 ### Grade 5: CROSS_CHECKED
 
-The result was independently produced by multiple services using different methods, and the results are consistent. The services did not share intermediate state, prompts, or reasoning — they arrived at the same conclusion independently.
+The result was independently produced by multiple services using different methods, and the results are consistent. The services did not share intermediate state, prompts, or reasoning — they arrived at the same conclusion independently. Independence has degrees. Full independence means different algorithms, different training data, different infrastructure. Partial independence (same model family but different prompts, or same algorithm with different seeds) provides weaker cross-checking. A service assigning CROSS_CHECKED MUST include evidence entries documenting the independence level: `"independence": "full"` (different methods/implementations), `"independence": "partial"` (same method family, different instances/seeds), or `"independence": "replicated"` (identical replicas — this does NOT qualify for CROSS_CHECKED and MUST be graded at the individual replica's level).
 
 Typical sources: multiple LLMs generating the same answer without seeing each other's work, a symbolic solver and a numerical solver agreeing, independent human reviewers reaching the same conclusion.
 
@@ -77,6 +83,8 @@ A service assigning FORMALLY_VERIFIED MUST:
 - Include the `scope` field identifying the specification against which verification was performed.
 - Include an evidence entry of type `"proof-object"` with an `artifact_ref` pointing to the proof.
 - The proof MUST be independently checkable — a claim of "formally verified" without a checkable proof artifact is at best VALIDATED.
+
+The proof checker, specification identifier (including version), artifact hash, and verification environment SHOULD be recorded in evidence entries to enable reproducible verification. A claim of FORMALLY_VERIFIED that cannot be independently reproduced is, for practical purposes, VALIDATED.
 
 **The specification-recursion caveat:** FORMALLY_VERIFIED means "this result is correct *relative to this specification*." It does not mean the specification is correct. The grade is silent on whether the specification captures the intended behavior. Consumers of FORMALLY_VERIFIED results SHOULD examine the `scope` field to understand what claim is actually being made and SHOULD track the specification's own provenance separately.
 
@@ -109,6 +117,8 @@ A Service MUST follow these rules when assigning a Provenance Grade to a Respons
 5. **Identity required for HUMAN_ATTESTED.** The human's identity MUST be recorded in a verifiable form. Anonymous attestation is ASSERTED, not HUMAN_ATTESTED.
 
 6. **Monotonicity.** A Service MUST NOT assign a higher grade to a result that has less epistemic support. If a Service's verification step fails or is inconclusive, the grade reflects the actual achieved level, not the attempted level.
+
+7. **Verifier authority.** The grade reflects the strongest verification actually performed, not the strongest verification the service is capable of performing. A service with formal verification capability that skips verification for performance reasons MUST report the grade of the method actually used. Services SHOULD include an evidence entry of type `"verification_method"` documenting what method was used and why, especially when a lower-than-maximum grade is assigned.
 
 ## 10.4. Grade Comparison and Ordering
 
@@ -150,6 +160,8 @@ if all independent results agree AND independence confirmed:
 else:
   composed_grade = min(component_grades)
 ```
+
+Cross-check upgrade improves confidence in agreement — it does not establish truth. If all independent sources share a common-mode error (e.g., the same incorrect training data, the same flawed specification), their agreement is meaningless. The evidence entries MUST document what was cross-checked and what common-mode risks remain.
 
 ### 10.5.3. Decomposition Composition
 
@@ -195,7 +207,15 @@ The `provenance.composition_trace` field documents how a composed grade was deri
 
 The composition trace provides full transparency into how the final grade was derived. Consumers can inspect it to understand which component limited the overall confidence.
 
-## 10.6. Provenance in the Audit Trail
+## 10.6. Worked Examples [Informative]
+
+**Example 1: When HUMAN_ATTESTED is required despite formal verification.** A legal compliance check requires that a human compliance officer reviewed and signed off on the determination. Even if a formal verifier proves the logic correct, the regulatory requirement mandates human attestation. The requester sets `min_grade: HUMAN_ATTESTED`; a FORMALLY_VERIFIED response would not satisfy the requirement.
+
+**Example 2: When FORMALLY_VERIFIED is required despite human attestation.** A cryptographic protocol implementation requires machine-checkable correctness proofs. A human expert's review (HUMAN_ATTESTED) provides confidence but not the reproducible, automated verification the deployment requires. The requester sets `min_grade: FORMALLY_VERIFIED`.
+
+These examples illustrate why the grade ordering is a policy order, not a universal epistemic hierarchy — and why consumers with specific needs should inspect evidence entries.
+
+## 10.7. Provenance in the Audit Trail
 
 Every Response's provenance is recorded in the audit trail (Section 11). The audit system records:
 
@@ -207,7 +227,9 @@ Every Response's provenance is recorded in the audit trail (Section 11). The aud
 
 This enables retrospective provenance analysis: given any past result, the audit trail shows exactly what evidence supported it, how it was derived, and whether it met the requester's expectations.
 
-## 10.7. Provenance and Trust
+Audit records store provenance summaries (grade, evidence types, service IDs) rather than full evidence artifacts. For retrospective verification, the audit record MUST include artifact references (URIs with integrity hashes) that allow independent retrieval and verification of the evidence. If durable evidence retention is required, deployments MUST configure an artifact store with appropriate retention policies. The audit record's artifact references MUST remain resolvable for the configured retention period.
+
+## 10.8. Provenance and Trust
 
 A provenance grade is a *claim by the service about its own output*. The grade is only as trustworthy as the service that assigned it. A compromised or misconfigured service could assign FORMALLY_VERIFIED to unverified output.
 

@@ -14,6 +14,20 @@ These references are essential to the implementation of this specification.
 
 **[RFC 9126]** Lodderstedt, T., Campbell, B., Sakimura, N., Tonge, D., and F. Skokan, "OAuth 2.0 Pushed Authorization Requests," RFC 9126, September 2021. https://www.rfc-editor.org/rfc/rfc9126
 
+**[RFC 6901]** Bryan, P., Ed., Zyp, K., and M. Nottingham, Ed., "JavaScript Object Notation (JSON) Pointer," RFC 6901, April 2013. https://www.rfc-editor.org/rfc/rfc6901
+
+**[RFC 7519]** Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token (JWT)," RFC 7519, May 2015. https://www.rfc-editor.org/rfc/rfc7519
+
+**[RFC 7636]** Sakimura, N., Bradley, J., and N. Agarwal, "Proof Key for Code Exchange by OAuth Public Clients," RFC 7636, September 2015. https://www.rfc-editor.org/rfc/rfc7636
+
+**[RFC 7662]** Richer, J., Ed., "OAuth 2.0 Token Introspection," RFC 7662, October 2015. https://www.rfc-editor.org/rfc/rfc7662
+
+**[RFC 7800]** Jones, M., Bradley, J., and H. Tschofenig, "Proof-of-Possession Key Semantics for JSON Web Tokens (JWTs)," RFC 7800, April 2016. https://www.rfc-editor.org/rfc/rfc7800
+
+**[RFC 8785]** Rundgren, A., Jordan, B., and S. Erdtman, "JSON Canonicalization Scheme (JCS)," RFC 8785, June 2020. https://www.rfc-editor.org/rfc/rfc8785
+
+**[RFC 9207]** Meyer zu Selhausen, K. and D. Fett, "OAuth 2.0 Authorization Server Issuer Identification," RFC 9207, March 2022. https://www.rfc-editor.org/rfc/rfc9207
+
 **[JSON-RPC]** JSON-RPC Working Group, "JSON-RPC 2.0 Specification," 2010. https://www.jsonrpc.org/specification
 
 **[JSON-SCHEMA-2020-12]** Wright, A., Andrews, H., Hutton, B., and G. Dennis, "JSON Schema: A Media Type for Describing JSON Documents," draft-bhutton-json-schema-01, June 2022. https://json-schema.org/draft/2020-12/json-schema-core
@@ -44,9 +58,9 @@ Demonstrated that typed contracts and code generation are achievable without the
 
 ### Existing Protocols (Critical Analysis)
 
-**[MCP-2026-07-28]** Model Context Protocol, "Release Candidate: The next generation of MCP," July 2026. https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/
+**[MCP-2026-07-28]** Model Context Protocol, "Release Candidate: The next generation of MCP," July 2026. https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/ (Blog post published May 21, 2026, announcing the July 28, 2026 release candidate.) (accessed 2026-08-03)
 
-**[NSA-MCP-2026]** National Security Agency / Cybersecurity and Infrastructure Security Agency, "Model Context Protocol Security Assessment," CSI_MCP_SECURITY.PDF, June 2026. https://media.defense.gov/2026/Jun/02/2003943289/-1/-1/0/CSI_MCP_SECURITY.PDF
+**[NSA-MCP-2026]** National Security Agency / Cybersecurity and Infrastructure Security Agency, "Deploying AI Systems Securely: Best Practices for Deploying Secure and Resilient AI Systems," April 2024. https://media.defense.gov/2024/Apr/15/2003439257/-1/-1/0/CSI-DEPLOYING-AI-SYSTEMS-SECURELY.PDF
 
 The security findings that drove CCDP's "security by default" principle.
 
@@ -54,11 +68,11 @@ The security findings that drove CCDP's "security by default" principle.
 
 Analysis of 407 MCP-specific issues from 385 repositories documenting the consequences of loose protocol contracts.
 
-**[A2A]** Google, "Agent-to-Agent Protocol," 2025. https://en.wikipedia.org/wiki/Agent2Agent — See also: Galileo AI, "Google Agent2Agent A2A Protocol Guide." https://galileo.ai/blog/google-agent2agent-a2a-protocol-guide
+**[A2A]** Linux Foundation / Google, "Agent2Agent (A2A) Protocol Specification," 2025. https://a2a-protocol.org/latest/ (accessed 2026-08-03; the specification has moved from its original google.github.io/A2A/ location) — For background: Galileo AI, "Google Agent2Agent A2A Protocol Guide." https://galileo.ai/blog/google-agent2agent-a2a-protocol-guide (accessed 2026-08-03)
 
-**[Zylos-Interop]** Zylos Research, "Agent Interoperability Protocols 2026." https://zylos.ai/research/2026-03-26-agent-interoperability-protocols-mcp-a2a-acp-convergence/
+**[Zylos-Interop]** Zylos Research, "Agent Interoperability Protocols 2026." https://zylos.ai/research/2026-03-26-agent-interoperability-protocols-mcp-a2a-acp-convergence/ (accessed 2026-08-03)
 
-**[Zylos-A2A]** Zylos Research, "Agent-to-Agent Communication Protocols." https://zylos.ai/research/2026-02-15-agent-to-agent-communication-protocols/
+**[Zylos-A2A]** Zylos Research, "Agent-to-Agent Communication Protocols." https://zylos.ai/research/2026-02-15-agent-to-agent-communication-protocols/ (accessed 2026-08-03)
 
 **[FIPA-ACL]** SmythOS, "FIPA Agent Communication Language." https://smythos.com/developers/agent-development/fipa-agent-communication-language/ — See also: SmythOS, "Agent Communication Languages Comparison." https://smythos.com/developers/agent-development/agent-communication-languages-and-protocols-comparison/
 
@@ -66,9 +80,9 @@ Analysis of 407 MCP-specific issues from 385 repositories documenting the conseq
 
 The most substantive academic survey of the agent communication landscape. CCDP drew from its FIPA-ACL historical analysis and two-layer standardization strategy while addressing a different problem space (supervised specialists under a dumb router, not autonomous peers at internet scale).
 
-**[Mitra-Stack]** Mitra, S., "The Agent Protocol Stack: MCP + A2A + A2UI as TCP/IP Moment," 2026. https://subhadipmitra.com/blog/2026/agent-protocol-stack/
+**[Mitra-Stack]** Mitra, S., "The Agent Protocol Stack: MCP + A2A + A2UI as TCP/IP Moment," 2026. https://subhadipmitra.com/blog/2026/agent-protocol-stack/ (accessed 2026-08-03)
 
-**[DEV-Standards]** "The State of Agentic AI Standards in 2026," DEV Community. https://dev.to/alexmercedcoder/the-state-of-agentic-ai-standards-in-2026-mcp-a2a-webmcp-osi-and-the-protocol-stack-taking-3o2l
+**[DEV-Standards]** "The State of Agentic AI Standards in 2026," DEV Community. https://dev.to/alexmercedcoder/the-state-of-agentic-ai-standards-in-2026-mcp-a2a-webmcp-osi-and-the-protocol-stack-taking-3o2l (accessed 2026-08-03)
 
 ## 18.3. Informative References — Theoretical Foundations
 
@@ -152,13 +166,15 @@ Distribution-free queueing invariant relating occupancy, throughput, and latency
 
 ## 18.4. Informative References — Additional Sources
 
-**[MCP-Roadmap]** Model Context Protocol, "The 2026 MCP Roadmap." https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/
+The references in this section are secondary or journalistic sources used for context and historical framing. Protocol-level claims in this specification are grounded in the primary references (Sections 18.1–18.3). Secondary sources provide useful context but are not evidence for protocol design decisions.
 
-**[Scalifi-Flaws]** Scalifi AI, "Six Fatal Flaws of MCP," 2025. https://www.scalifiai.com/blog/model-context-protocol-flaws-2025
+**[MCP-Roadmap]** Model Context Protocol, "The 2026 MCP Roadmap." https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/ (accessed 2026-08-03)
 
-**[Sivaro-MCP]** Sivaro, "Is MCP Outdated? A 2026 Reality Check." https://sivaro.in/articles/is-model-context-protocol-outdated-a-2026-reality-check/
+**[Scalifi-Flaws]** Scalifi AI, "Six Fatal Flaws of MCP," 2025. https://www.scalifiai.com/blog/model-context-protocol-flaws-2025 (accessed 2026-08-03)
 
-**[A2A-Adoption]** Glukhov, "A2A Protocol 2026 Adoption and Reality." https://www.glukhov.org/ai-systems/comparisons/a2a-protocol-2026-adoption/
+**[Sivaro-MCP]** Sivaro, "Is MCP Outdated? A 2026 Reality Check." https://sivaro.in/articles/is-model-context-protocol-outdated-a-2026-reality-check/ (accessed 2026-08-03)
+
+**[A2A-Adoption]** Glukhov, "A2A Protocol 2026 Adoption and Reality." https://www.glukhov.org/ai-systems/comparisons/a2a-protocol-2026-adoption/ (accessed 2026-08-03)
 
 **[AlphaProof]** DeepMind, "AlphaProof," *Nature*, 651:607, 2025. https://www.nature.com/articles/s41586-025-09833-y
 

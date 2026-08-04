@@ -19,7 +19,7 @@ The threat model assumes:
 
 The threat model does NOT assume:
 
-1. Multiple colluding compromised components (this is a single-fault model).
+1. Multiple colluding compromised components (this is a single-fault model). While multi-component collusion is out of scope for protocol-level defense, it is a high-risk scenario for large-scale deployments. Deployments handling sensitive data or operating across organizational boundaries SHOULD implement defense-in-depth measures beyond the protocol: independent audit verification, cross-domain provenance spot-checking, and organizational access controls that limit the blast radius of a single compromised identity.
 2. Compromise of the TLS infrastructure itself (CA compromise).
 3. Quantum computing attacks on current cryptographic primitives.
 
@@ -31,7 +31,7 @@ The threat model does NOT assume:
 
 **CCDP mitigations:**
 - The Dispatcher never processes Content, so injection cannot affect routing.
-- Input schema validation (Section 8.2.2) constrains the structure of Content, limiting injection surface area. However, schema validation cannot prevent all injection attacks — a valid string in a valid schema can still be a prompt injection.
+- Input schema validation (Section 8.2.2) constrains the structural shape of Content, reducing the protocol-level attack surface. Schema validation does not mitigate semantic prompt-injection attacks — a structurally valid string can still be a prompt injection. Content-level injection defense is the Service's responsibility (see Section 17.4).
 - Services SHOULD implement their own input sanitization and output validation.
 
 **Residual risk:** Content injection is fundamentally a Service-level concern. CCDP's contribution is ensuring that injection cannot affect protocol behavior (routing, audit, provenance) — only the Service's content processing.
@@ -44,7 +44,7 @@ The threat model does NOT assume:
 - Evidence entries must substantiate grades above ASSERTED (Section 10.3). A grade of FORMALLY_VERIFIED without a proof-object evidence entry is a protocol violation.
 - The audit trail records all provenance claims, enabling retrospective detection of inflation patterns.
 - Application-level message signing (Section 15.4.2) binds provenance claims to Service identity, creating accountability.
-- The provenance auditing service pattern (Section 10.7) enables spot-checking by re-verifying evidence.
+- The provenance auditing service pattern (Section 10.8) enables spot-checking by re-verifying evidence.
 
 **Residual risk:** A sufficiently sophisticated attacker could forge evidence entries (e.g., generate a fake proof object). Full mitigation requires independent proof checking — the protocol makes evidence available for checking but does not perform the check itself.
 
@@ -59,6 +59,8 @@ The threat model does NOT assume:
 - Schema validation at registration: the Registry validates schemas, preventing structurally malformed entries.
 
 **Residual risk:** If an attacker compromises the Registry's authentication mechanism, they can redirect traffic. This is a single-point-of-failure risk inherent in a centralized registry. Deployments SHOULD implement Registry audit monitoring with alerts on unexpected modifications.
+
+**Registry poisoning.** If an attacker compromises Registry write access (e.g., by obtaining a Registry administrator credential), they can inject malicious Capability Records — redirecting requests to attacker-controlled Services, lowering isolation requirements, or inflating provenance claims. Mitigations: Registry write operations SHOULD require multi-party approval for production registries. Capability Record changes SHOULD be audited with the same rigor as code deployments. Deployments SHOULD implement out-of-band record verification (a second system independently validates that registered service endpoints match expected infrastructure). Registry backup and rollback procedures MUST be documented.
 
 ### 17.2.4. Escalation Chain Exploitation
 
@@ -81,7 +83,7 @@ The threat model does NOT assume:
 - Cost budget partitioning: the parent's cost budget is divided among sub-requests. Exponential decomposition rapidly exhausts the budget.
 - The Dispatcher validates plans before execution (Section 14.4), including resource allocation checks.
 
-**Residual risk:** A plan with many sub-requests at a single level (wide but shallow) is valid and could be expensive. Deployments SHOULD set per-request limits on the total number of sub-requests (RECOMMENDED: 100 per decomposition).
+**Residual risk:** A plan with many sub-requests at a single level (wide but shallow) is valid and could be expensive. Section 14.6 now defines normative limits: maximum plan width of 50 sub-requests and maximum total nodes of 100 per top-level request. These limits are conformance requirements enforced by the Dispatcher.
 
 ### 17.2.6. Replay Attacks
 
@@ -103,7 +105,7 @@ The threat model does NOT assume:
 - The Dispatcher logs provenance but does not dereference artifact references.
 - Deployments SHOULD implement data-loss-prevention (DLP) monitoring on evidence entries.
 
-**Residual risk:** Free-text fields (`evidence.description`, `escalation.detail`) can carry arbitrary text. Deployments processing sensitive data SHOULD implement content scanning on these fields.
+**Residual risk:** Free-text fields (`evidence.description`, `escalation.detail`) can carry arbitrary text. Deployments processing sensitive data SHOULD implement content scanning on these fields. The same exfiltration risk applies to all free-text and URI fields in the protocol: `escalation.detail`, `routing_decision.reason`, `schema_validation` error messages, notification content, and audit record annotations. Deployments processing sensitive data SHOULD implement content scanning or field-length limits on all free-text fields, and SHOULD classify protocol fields by sensitivity level (public, internal, restricted) with access controls matching the classification.
 
 ### 17.2.8. Timing Side Channels
 
@@ -111,21 +113,21 @@ The threat model does NOT assume:
 
 **CCDP mitigations:** None at the protocol level. This is an inherent property of any system that exposes latency data.
 
-**Residual risk:** Deployments processing highly sensitive data SHOULD consider adding timing noise to audit records or restricting access to timing data.
+**Residual risk:** Deployments processing highly sensitive data SHOULD restrict access to detailed timing data in audit records (e.g., aggregate to coarser time buckets in external-facing audit exports), apply field-level access controls on `compute_seconds` and latency fields, and limit who can query per-request audit records. Adding noise to audit records is NOT RECOMMENDED as it undermines audit accuracy.
 
 ## 17.3. NSA/CISA Recommendations Applied to CCDP
 
 The NSA/CISA MCP Security Assessment [NSA MCP 2026] made specific recommendations. CCDP's response to each:
 
-| NSA Recommendation | CCDP Response |
-|-------------------|---------------|
-| Mandatory authentication | Mutual TLS REQUIRED (Section 15.2) |
-| Lifecycle-managed tokens | Bearer tokens with expiration and scope (Section 15.3) |
-| Cryptographic message signing | Application-level signing RECOMMENDED (Section 15.4.2) |
-| Replay protection metadata | Request ID + timestamp validation (Section 15.5) |
-| Sandboxing for code execution | Isolation requirements declared in Registry (Section 15.6) |
-| Structured (non-text) responses | Typed Content with schema validation (Section 7.4) |
-| Audit logging | Mandatory audit trail (Section 11) |
+| NSA Recommendation | CCDP Response | Requirement Level |
+|---|---|---|
+| Mandatory authentication | Mutual TLS (Section 15.2) | REQUIRED (Core) |
+| Lifecycle-managed tokens | Bearer tokens with expiration and scope (Section 15.3) | REQUIRED (Core) |
+| Cryptographic message signing | Application-level signing (Section 15.4.2) | REQUIRED (Full), RECOMMENDED (Core) |
+| Replay protection metadata | Request ID + timestamp validation (Section 15.5) | REQUIRED (Core) |
+| Sandboxing for code execution | Isolation requirements in Registry (Section 15.6) | REQUIRED (Core, declaration); deployment-enforced |
+| Structured (non-text) responses | Typed Content with schema validation (Section 7.4) | REQUIRED (Core) |
+| Audit logging | Mandatory audit trail (Section 11) | REQUIRED (Core) |
 
 ## 17.4. Honest Limitations
 

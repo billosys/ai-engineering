@@ -70,9 +70,11 @@ A Capability Record describes one Service's implementation of one Capability Typ
     },
 
     "escalation_chain": [
-      "isabelle-prover-01",
-      "human-review-math-01"
+      {"kind": "service_id", "value": "isabelle-prover-01"},
+      {"kind": "capability_type", "value": "org.ccdp.human_review"}
     ],
+
+    "cacheable": false,
 
     "tags": ["formal-methods", "smt", "sat"],
     "description": "Z3 SMT solver for propositional and first-order logic",
@@ -122,7 +124,9 @@ A Capability Record describes one Service's implementation of one Capability Typ
 - `network_access`: Whether the Service requires network access beyond the Dispatcher.
 - `filesystem_access`: Whether the Service requires filesystem access.
 
-**`escalation_chain`** (array of strings, REQUIRED but MAY be empty): Ordered list of Service IDs or Capability Types to try if this Service returns an Escalation. The Dispatcher processes the chain in order. An empty chain means escalation goes directly to the Human Supervisor's queue.
+**`escalation_chain`** (array of typed entries, REQUIRED but MAY be empty): Ordered list of fallback targets to try if this Service returns an Escalation. The Dispatcher processes the chain in order. An empty chain means escalation goes directly to the Human Supervisor's queue. Escalation chain entries are typed objects: `{"kind": "service_id", "value": "human-review-queue-01"}` or `{"kind": "capability_type", "value": "org.ccdp.human_review"}`. The `kind` field disambiguates the entry; string-only entries are ambiguous and MUST NOT be used.
+
+**`cacheable`** (boolean, OPTIONAL, default false): Whether the Dispatcher MAY cache and reuse Response Content for identical Requests (same `capability_type` and identical Content). When true, the Dispatcher MAY return a cached Response without forwarding the Request, provided the cache entry has not expired (expiry is deployment-configured).
 
 **`tags`** (array of strings, OPTIONAL): Descriptive tags for search and categorization.
 
@@ -133,6 +137,8 @@ A Capability Record describes one Service's implementation of one Capability Typ
 **`updated_at`** (string, REQUIRED): ISO 8601 timestamp of last record update.
 
 **`metadata`** (object, OPTIONAL): Extensible metadata. Same semantics as envelope metadata (Section 7.7).
+
+**Static vs dynamic fields.** The Capability Record contains both static metadata (capability type, schemas, cost hints, isolation requirements, escalation chain) and dynamic telemetry (health status, current load, queue depth, estimated latency). Static fields change only through Registry update operations. Dynamic fields are updated by health probes (Section 13.6) and MAY be cached by the Dispatcher with a configurable TTL (RECOMMENDED: 30 seconds). Routing decisions based on stale dynamic data are an inherent risk; the Dispatcher SHOULD timestamp dynamic field updates and prefer fresh data for high-priority or high-cost requests.
 
 ## 8.3. Well-Known Capability Types
 
@@ -152,6 +158,7 @@ The following Capability Types are defined by this specification. Implementation
 | `org.ccdp.human_review` | Human review, judgment, attestation | Mode 4 |
 | `org.ccdp.code.generation` | Source code generation | Mode 1 or 3 |
 | `org.ccdp.code.execution` | Code execution in a sandboxed environment | Mode 2 |
+| `org.ccdp.composition` | Custom composition of Decomposition sub-results requiring judgment (Section 14.3.4) | Mode 1 or 3 |
 
 Custom Capability Types SHOULD use reverse-domain notation (e.g., `com.example.custom_capability`) to avoid collisions with well-known types.
 
@@ -164,7 +171,7 @@ The Registry MUST support the following query operations. These are defined as l
 Register a new Capability Record or update an existing one.
 
 **Input:** A Capability Record.
-**Behavior:** If no record exists for the given (`service_id`, `capability_type`) pair, create one. If a record exists, update it subject to schema compatibility rules (Section 8.5). If the update would break compatibility, reject it with an error.
+**Behavior:** If no record exists for the given (`service_id`, `capability_type`) pair, create one. If a record exists, update it subject to schema compatibility rules (Section 8.5). If the update would break compatibility, reject it with an error. The record is identified by the tuple `(service_id, capability_type, major_version)`. During major-version transitions, old and new versions coexist as separate records with the same `(service_id, capability_type)` but different `major_version` values. The Dispatcher selects the appropriate version based on the Request's `content.schema_ref` or deployment policy.
 **Output:** The stored record with server-assigned timestamps, or an error with the incompatibility details.
 
 ### 8.4.2. Lookup
@@ -172,7 +179,7 @@ Register a new Capability Record or update an existing one.
 Look up Services that implement a given Capability Type.
 
 **Input:** `capability_type` (required), `status_filter` (optional, defaults to `["ACTIVE"]`), `min_provenance_grade` (optional), `max_cost` (optional), `tags` (optional).
-**Output:** An array of matching Capability Records, sorted by the Dispatcher's routing preference (Section 9). Empty array if no matches.
+**Output:** The Lookup operation returns matching Capability Records. Sorting and ranking are the Dispatcher's responsibility (Section 9.2), not the Registry's. The Registry MAY return results in any order. The Registry MAY accept query parameters (e.g., minimum provenance grade, maximum cost) to filter results, but the Dispatcher makes the final routing decision. Empty array if no matches.
 
 ### 8.4.3. Get
 
@@ -196,13 +203,21 @@ List all schema versions for a Capability Type.
 **Input:** `capability_type`.
 **Output:** An array of `{version, compatibility, registered_at}` entries, ordered by version.
 
+### 8.4.6. Registry API Binding
+
+This specification defines the Registry's logical operations and data model. It does not mandate a specific wire protocol for Registry access. Implementations MAY expose the Registry as a REST API, a gRPC service, an in-process library, or any other mechanism that satisfies the operation contracts above. If two CCDP deployments need their Registries to interoperate (e.g., federated routing), they MUST agree on a common Registry API binding outside this specification. A future CCDP extension MAY define a standard Registry wire protocol.
+
+### 8.4.7. Content Schema Selection
+
+When the Dispatcher validates Content, it selects the schema as follows: (1) If the message's `content.schema_ref` field is present, the Dispatcher looks up that schema in the Service's Capability Record. (2) If `schema_ref` is absent, the Dispatcher uses the Service's default input schema (for requests) or output schema (for responses) from the Capability Record. (3) If the Capability Record has no schema for the content type, schema validation is skipped. The Dispatcher SHOULD log schema-validation-skipped in the audit record. Schema validation is REQUIRED for Full conformance (Section 16) and RECOMMENDED for Core conformance.
+
 ## 8.5. Schema Versioning and Compatibility
 
 Schema evolution is the chronic wound of typed protocols. CCDP addresses it through the Registry, which enforces compatibility rules at registration time — not at the Dispatcher, which should not need to understand schema evolution.
 
 ### 8.5.1. Versioning Model
 
-Capability Record versions follow semantic versioning (MAJOR.MINOR.PATCH):
+Capability Record versions follow Semantic Versioning [SemVer] (MAJOR.MINOR.PATCH):
 
 - **PATCH** increments indicate backward-compatible clarifications to the schema (e.g., updated descriptions, examples). The schema's structural validation rules are unchanged.
 - **MINOR** increments indicate backward-compatible additions (e.g., new optional fields in the output schema). Existing consumers continue to work; new consumers can use the new fields.
@@ -227,6 +242,8 @@ The Registry SHOULD perform structural compatibility checking at registration ti
 - **Full compatibility** (both directions): required for MINOR updates.
 
 Implementations MAY use JSON Schema tooling to automate compatibility checking. The Registry SHOULD reject incompatible updates with a detailed error message identifying the specific incompatibility.
+
+**Enforceability caveat.** General JSON Schema equivalence and subset checking are undecidable problems. Conforming Registry implementations MUST enforce compatibility for a practical subset: additive properties (MINOR), identical structure with clarified descriptions (PATCH), and structural breaking changes (MAJOR). Implementations SHOULD provide tooling for automated compatibility checking but MAY require operator attestation for edge cases. The Registry MUST record whether a version update was auto-verified or operator-attested.
 
 ### 8.5.4. Transition Period
 

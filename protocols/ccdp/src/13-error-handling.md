@@ -8,7 +8,7 @@ CCDP distinguishes three categories of failure, each with different protocol beh
 
 2. **Service errors** — the Service itself fails: crashes, times out, returns garbage. These are infrastructure failures. The Dispatcher retries, reroutes, or errors.
 
-3. **Epistemic insufficiency** — the Service operates correctly but cannot meet the Request's epistemic requirements: confidence is below threshold, capability is exceeded, the problem is unsolvable. These are *not errors*. They are Escalations — structured routing events that the Dispatcher handles as normal protocol operations.
+3. **Epistemic insufficiency** — the Service operates correctly but cannot meet the Request's epistemic requirements: the achieved provenance grade is below threshold, capability is exceeded, or the search space is exhausted without a determination. These are *not errors*. They are Escalations — structured routing events that the Dispatcher handles as normal protocol operations.
 
 The distinction between service errors and epistemic insufficiency is load-bearing. An HTTP 500 means something broke. An Escalation with reason `CONFIDENCE_BELOW_THRESHOLD` means the Service worked correctly and honestly reported that its best output does not meet the standard. The protocol handles these differently: errors trigger retries and circuit breakers; escalations trigger the Escalation Chain.
 
@@ -22,7 +22,7 @@ Protocol errors are returned as JSON-RPC 2.0 error responses. CCDP defines the f
 |------|------|---------|
 | `-32700` | Parse error | Invalid JSON |
 | `-32600` | Invalid request | Not a valid JSON-RPC request or unrecognized CCDP message type |
-| `-32601` | Method not found | Unrecognized CCDP method or message too large |
+| `-32601` | Method not found | Unrecognized CCDP method |
 | `-32602` | Invalid params | Malformed CCDP envelope (missing required fields, invalid types) |
 | `-32603` | Internal error | Dispatcher internal error |
 | `-32001` | Service unavailable | Explicit destination Service is not registered, not ACTIVE, or not healthy |
@@ -75,12 +75,12 @@ Escalation is a first-class message type, not an error. The following escalation
 | `DEADLINE_INSUFFICIENT` | Remaining deadline budget is insufficient for this Service to complete | Route to faster Service or return partial result |
 | `DEADLINE_APPROACHING` | Service started work but cannot finish before deadline; partial result available | Forward partial result; route remainder to faster Service |
 | `BUDGET_EXCEEDED` | The request would exceed the cost budget | Route to cheaper Service or request budget increase |
-| `UNSOLVABLE` | The problem has no solution (e.g., formula is unsatisfiable, plan domain is impossible) | This is a *result*, not a failure — forward as a RESPONSE with appropriate provenance |
+| `SEARCH_EXHAUSTED` | The Service has explored its search space without finding a solution and cannot determine whether the problem is solvable. This is distinct from a proven-unsolvable result (which is a RESPONSE, not an Escalation). | Route to a Service with a larger search budget or different method, or to a human |
 | `AMBIGUOUS_INPUT` | The input is ambiguous and the Service cannot safely interpret it | Route to human for clarification, or to an LLM for disambiguation |
 | `INTERNAL_DEGRADATION` | The Service is experiencing internal degradation and prefers not to handle this request | Route to alternative Service |
 | `REQUIRES_HUMAN` | The Service explicitly requests human involvement (e.g., for specification review) | Route to human review queue |
 
-**Design note on UNSOLVABLE:** "Unsolvable" is information, not failure. If a theorem prover determines that a formula is unsatisfiable, that is a correct, valuable result — it should be returned as a RESPONSE with grade FORMALLY_VERIFIED, not as an Escalation. An Escalation with reason UNSOLVABLE is appropriate when the Service *cannot determine* whether the problem is solvable (e.g., the search space is too large) and is returning the problem rather than a result.
+**Design note on SEARCH_EXHAUSTED:** A proven-unsolvable result is information, not failure. If a theorem prover determines that a formula is unsatisfiable, that is a correct, valuable result — it should be returned as a RESPONSE with grade FORMALLY_VERIFIED, not as an Escalation. An Escalation with reason SEARCH_EXHAUSTED is appropriate when the Service *cannot determine* whether the problem is solvable (e.g., the search space is too large) and is returning the problem rather than a result.
 
 Implementations MAY define additional escalation reasons using reverse-domain notation (e.g., `com.example.custom_reason`).
 
@@ -110,10 +110,14 @@ The algorithm:
    a. If the target is a Service ID, check health and route if healthy.
    b. If the target is a Capability Type, query the Registry and route per normal routing (Section 9.2).
    c. If the target has already been tried for this `request_id` (cycle detection), skip it.
+   d. Verify the requester is authorized for the target's Capability Type (or the token scope covers it).
+   e. Verify the remaining cost budget is sufficient for the target's cost hints.
+   f. Verify the target can meet the request's data-class/isolation requirements (from Registry metadata).
+   g. If any check fails, skip the target and continue to the next in the chain. Log the skip reason in the audit trail.
 6. If all chain targets are exhausted, route to `org.ccdp.human_review` as the terminal target.
 7. If no human review Service is available, return error `-32006`.
 
-The Dispatcher MUST forward the original Request (not the Escalation) to the next target in the chain. The Escalation's `partial_result` (if any) MAY be included in the forwarded Request's metadata as `org.ccdp.partial_results` — an array of partial results from prior Services in the chain.
+The Dispatcher MUST forward the original Request (not the Escalation) to the next target in the chain. The Dispatcher accumulates partial results from prior escalation targets in the forwarded Request's metadata under `org.ccdp.partial_results`. The most recent escalating Service's partial result is in that Service's ESCALATION message Content (the canonical location per Section 7.3.4). The metadata accumulation provides downstream Services and human reviewers with the full escalation history.
 
 ### 13.4.1. Escalation Metadata Accumulation
 
@@ -168,7 +172,7 @@ Each retry and reroute is logged in the audit trail.
 A Service that returns a CCDP error response (a JSON-RPC error with a CCDP error code) is treated as a permanent failure for this Request:
 
 1. Do NOT retry the same Service for this Request.
-2. Reroute to an alternative Service if the error suggests it (e.g., `-32010` schema validation failed may succeed with a different Service version).
+2. Reroute to an alternative Service if the error suggests it (e.g., `-32010` schema validation failed may succeed with a different Service version). Rerouting after schema validation failure is appropriate only when the alternative Service supports a compatible schema version. The Dispatcher SHOULD check schema version compatibility in the Registry before rerouting, rather than blindly forwarding to another Service.
 3. Error if no alternative is available.
 
 ### 13.5.3. Malformed Responses
@@ -194,7 +198,7 @@ A health check probe:
 
 ### 13.6.2. Health and Circuit Breaker State Transitions
 
-The Dispatcher tracks two related but distinct state machines for each Service: the Service's **Health Status** (HEALTHY, DEGRADED, UNHEALTHY) as reported by the Service itself, and the **circuit breaker state** (CLOSED, OPEN, HALF_OPEN) as maintained by the Dispatcher based on observed failures (Section 9.6). The combined transition diagram:
+The Dispatcher tracks two related but distinct state machines for each Service: the Service's **Health Status** (HEALTHY, DEGRADED, UNHEALTHY) as reported by the Service itself, and the **circuit breaker state** (CLOSED, OPEN, HALF_OPEN) as maintained by the Dispatcher based on observed failures (Section 9.6). These two machines interact — a CLOSED circuit breaker can open when an otherwise-HEALTHY service has too many observed failures — but they are tracked independently: Health Status is Service-reported (via HEALTH_RESPONSE messages), while circuit breaker state is Dispatcher-maintained (from observed request outcomes). The diagram below is an illustrative combined view showing the typical co-occurrence of states; the per-state-machine transition rules that follow are the normative definitions.
 
 ```
                 ┌──────────────────────────┐

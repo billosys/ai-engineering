@@ -4,7 +4,7 @@
 
 CCDP follows the TCP/IP tradition of layered protocol design: each layer provides a specific abstraction, relies only on the layer below, and can evolve independently. The layering is deliberate — it separates transport concerns (how bytes move) from routing concerns (where messages go) from epistemic concerns (how much to trust the result).
 
-Unlike TCP/IP, where the application layer is unspecified by the transport, CCDP's upper layers carry load-bearing protocol semantics. Provenance grades, audit metadata, and escalation semantics are not application concerns delegated to the endpoints — they are protocol-layer features enforced at the Dispatcher. This is the sense in which "the protocol is smart": the layers above transport carry intelligence that a dumb Dispatcher can enforce mechanically.
+Unlike TCP/IP, where the application layer is unspecified by the transport, CCDP's upper layers carry load-bearing protocol semantics. Provenance grades, audit metadata, and escalation semantics are not application concerns delegated to the endpoints — they are protocol-layer features enforced at the Dispatcher. This is the sense in which "the protocol is smart": the layers above transport carry intelligence that a Dispatcher with no cognitive capability of its own can enforce mechanically.
 
 ## 6.2. Layer Architecture
 
@@ -49,11 +49,11 @@ The Transport Layer provides reliable, encrypted, authenticated byte delivery be
 
 **HTTP is REQUIRED** as the base transport protocol. CCDP messages are HTTP POST requests to defined endpoints. HTTP was chosen for ubiquity: it works with all Service types (LLM endpoints, web services, queue systems), is supported by all programming languages, and composes with existing infrastructure (load balancers, proxies, monitoring).
 
-**JSON-RPC 2.0 is REQUIRED** as the wire format. Every CCDP message is a JSON-RPC 2.0 request or response, with CCDP-specific method names and parameter structures. JSON-RPC was chosen for simplicity: its specification fits on one page, it is transport-agnostic, and it imposes minimal parsing overhead on a dumb Dispatcher. Both MCP and A2A chose JSON-RPC 2.0 for the same reasons.
+**JSON-RPC 2.0 is REQUIRED** as the wire format. Every CCDP message is a JSON-RPC 2.0 request or response, with CCDP-specific method names and parameter structures. JSON-RPC was chosen for simplicity: its specification fits on one page, it is transport-agnostic, and it imposes minimal parsing overhead on a Dispatcher with no cognitive capability of its own. Both MCP and A2A chose JSON-RPC 2.0 for the same reasons.
 
 **TLS 1.3 (or later) is REQUIRED** for all Dispatcher-to-Service communication. Plaintext HTTP MUST NOT be used in production deployments. Self-signed certificates MAY be used in development environments.
 
-**Authentication** is performed at this layer. The REQUIRED mechanism is mutual TLS (mTLS) for Dispatcher-to-Service authentication. Bearer tokens with scoped permissions MAY be used as an additional authorization mechanism (Section 15).
+**Authentication** is performed at this layer. The REQUIRED mechanism is mutual TLS (mTLS) for Dispatcher-to-Service authentication. Bearer tokens with scoped permissions MAY be used as an additional authorization mechanism (Section 15). Bearer-token validation is logically an application-level concern (it checks CCDP-scoped authorization, not transport-level connectivity). It is placed in the Transport Layer for implementation convenience: tokens are typically carried in HTTP headers and checked before message parsing begins. This is a pragmatic layer crossing, not a design error.
 
 Implementations MAY support additional transports (e.g., QUIC for latency-critical paths, WebSocket for long-lived connections) as protocol extensions, provided they satisfy the same reliability, encryption, and authentication guarantees. The Transport Layer is the most substitutable layer in the stack.
 
@@ -82,7 +82,7 @@ The Routing and Audit Layer provides addressing, routing, tracing, and mandatory
 
 **Health fields** carry Service health information for routing decisions.
 
-Layer 2 fields are REQUIRED on every message. The Dispatcher reads Layer 2 to route and writes Layer 2 to audit. The Dispatcher MUST NOT read or write Layer 3 or Layer 4 fields (except to validate their structural presence).
+Layer 2 carries protocol-enforcement fields. The required set varies by message type — see the per-message required-field matrix in Section 7.3. Fields such as `capability_type` and `destination_id` are required on REQUEST messages but absent or optional on RESPONSE, HEALTH, and NOTIFICATION messages. The Dispatcher reads Layer 2 to route and writes Layer 2 to audit. The Dispatcher MUST NOT read or write Layer 3 or Layer 4 fields (except to validate their structural presence).
 
 ### 6.2.3. Layer 3: Epistemic
 
@@ -110,13 +110,13 @@ The Epistemic Layer carries the information that makes CCDP different from a gen
 - `cost_consumed`: the actual resources consumed by the Service
 - `capacity`: the Service's current available capacity
 
-The Dispatcher forwards Layer 3 fields without interpretation. It MAY enforce structural rules (e.g., reject a Response missing the `provenance` field) but MUST NOT interpret their content (e.g., the Dispatcher does not evaluate whether a Provenance Grade is accurate — that is the Service's responsibility, subject to audit).
+The Dispatcher reads selected Layer 3 fields for routing and enforcement purposes: `provenance_requirement.min_grade` for candidate filtering, `cost_budget` for cost-aware routing, and `deadline`/`remaining_budget_ms` for deadline enforcement. This is structural use of typed metadata, not semantic interpretation of content. It MAY enforce structural rules (e.g., reject a Response missing the `provenance` field) but MUST NOT interpret their content (e.g., the Dispatcher does not evaluate whether a Provenance Grade is accurate — that is the Service's responsibility, subject to audit).
 
 ### 6.2.4. Layer 4: Content
 
 The Content Layer carries the actual cognitive input and output — the problem to be solved, the proof to be checked, the text to be drafted, the plan to be validated. Content is entirely opaque to the Dispatcher.
 
-Content structure is governed by the Capability Record's input and output JSON Schemas, stored in the Registry. The Dispatcher MAY validate Content against these schemas (structural schema validation is a Layer 2 enforcement function), but MUST NOT interpret the Content's meaning.
+Content structure is governed by the Capability Record's input and output JSON Schemas, stored in the Registry. The Dispatcher MAY validate Content against these schemas (structural schema validation is a Layer 2 enforcement function), but MUST NOT interpret the Content's meaning — the Structural Validation vs Semantic Interpretation distinction (Section 4) is what separates the two.
 
 Content is typed by the `content.type` field, which indicates the format of the payload: `natural-language`, `formal-logic`, `proof-object`, `validated-plan`, `structured-data`, or a custom type defined in the Capability Record.
 
@@ -126,7 +126,7 @@ Each layer can evolve independently:
 
 - **Transport substitution**: Replace HTTP with QUIC or WebSocket without changing routing, provenance, or content semantics. The only constraint is that the new transport must provide reliable, encrypted, authenticated byte delivery.
 - **Routing evolution**: Add new routing strategies (content-hash routing, geographic routing) without changing transport or epistemic semantics. New routing fields are added as metadata extensions.
-- **Epistemic evolution**: Add new Provenance Grades, new Evidence types, or new composition rules without changing transport or routing. New epistemic fields are added as metadata extensions. Existing implementations that do not understand the new fields MUST preserve and forward them (Section 7.7).
+- **Epistemic evolution**: Add new Evidence types or new composition rules without changing transport or routing. Adding new Provenance Grades is a protocol extension that requires a document version increment. New grades affect the ordering used for routing, conformance checking, and policy evaluation. The grade set is versioned through the Registry; deployments MUST ensure that all components recognize the grade vocabulary before grades are used in production. New epistemic fields are added as metadata extensions. Existing implementations that do not understand the new fields MUST preserve and forward them (Section 7.7).
 - **Content evolution**: Service-specific schemas evolve through the Registry's schema versioning mechanism (Section 8.5) without affecting any lower layer.
 
 This independence is a direct application of the end-to-end principle: each layer does only what it must, and correctness guarantees that belong to a higher layer are not duplicated at a lower layer. The Dispatcher enforces protocol correctness (Layer 2); Services enforce content correctness (Layer 4); the Epistemic Layer (Layer 3) carries the metadata that connects them.
@@ -140,3 +140,7 @@ Several sources describe a layered agent protocol stack forming: MCP for tool in
 **The Dispatcher is a protocol enforcer, not a capable agent.** In the emerging stack, the "client" or "orchestrator" is assumed to be an intelligent agent. CCDP's Dispatcher is closer to a network switch: it reads headers and forwards packets. The protocol carries the intelligence; the Dispatcher enforces it.
 
 **Audit is a layer concern, not an extension.** In the emerging stack, observability comes from bolting on OpenTelemetry or similar frameworks. In CCDP, audit fields are mandatory Layer 2 elements — the Dispatcher writes them as part of its core function, not as an opt-in integration.
+
+## 6.5. Structural Operations Across Layers
+
+The Dispatcher's structural operations cross layer boundaries by design. Schema validation reads Layer 4 (Content) structure against Layer 2 (Capability Record) definitions. Decomposition plan execution resolves typed references in Layer 4 Content using Layer 2 sub-request identifiers. Budget and deadline propagation reads Layer 3 constraints and writes updated values on forwarded messages. These crossings are explicitly allowed: the Dispatcher operates on typed metadata and structural shapes, not on semantic meaning — the Structural Validation vs Semantic Interpretation distinction (Section 4). Section 16 lists these as conformance requirements rather than layer violations.

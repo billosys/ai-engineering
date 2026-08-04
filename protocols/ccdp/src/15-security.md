@@ -25,8 +25,12 @@ External requesters (humans, applications, other systems) MUST be authenticated 
 
 - Tokens MUST be scoped to specific Capability Types. A token authorized for `org.ccdp.language.generation` MUST NOT be accepted for `org.ccdp.deduction`.
 - Tokens MUST have a bounded lifetime (expiration timestamp). The Dispatcher MUST reject expired tokens.
-- Tokens SHOULD be issued by an OAuth 2.1 authorization server with PKCE [RFC 9126].
+- Tokens SHOULD be issued by an OAuth 2.0 authorization server using Pushed Authorization Requests [RFC 9126] with PKCE [RFC 7636]. Implementations requiring issuer validation SHOULD follow [RFC 9207].
 - Tokens MUST be transmitted in the HTTP `Authorization` header.
+
+**Token format.** This specification does not mandate a specific token format. Implementations MAY use JWT [RFC 7519] with the claims listed above, opaque tokens validated by introspection [RFC 7662], or any other bearer token format that supports the required properties (scope, expiration, audience binding). If JWT is used, the Dispatcher MUST validate the signature, expiration, audience (`aud` claim matching the Dispatcher's identifier), and scope claims. If opaque tokens are used, the Dispatcher MUST validate them via the authorization server's introspection endpoint.
+
+**Token lifecycle.** Token clock-skew tolerance MUST be configurable (RECOMMENDED: 60 seconds). Implementations SHOULD support token revocation via revocation lists or introspection-based validity checks for long-lived sessions. Confirmation binding (proof-of-possession via `cnf` claim [RFC 7800]) is OPTIONAL but RECOMMENDED for high-security deployments where bearer-token theft is a concern.
 
 ### 15.2.3. Service-to-Service Authentication
 
@@ -62,9 +66,9 @@ Bearer tokens MUST carry scope claims that the Dispatcher validates:
 The Dispatcher MUST reject:
 - Requests for capability types not in the token's `scope`
 - Requests with `priority` above the token's `max_priority`
-- Requests with `cost_budget.max_monetary_units` above the token's `max_cost_usd`
+- Requests with `cost_budget.max_monetary_cost` above the token's `max_cost_usd`
 
-Wildcard scopes (e.g., `org.ccdp.language.*`) match all subtypes.
+Wildcard scopes (e.g., `org.ccdp.language.*`) match all subtypes. Wildcard scope matching uses the following grammar: a scope pattern ending in `.*` matches any scope string that begins with the prefix (everything before `.*`) followed by a dot and one or more additional segments. `org.ccdp.language.*` matches `org.ccdp.language.generation` but not `org.ccdp.language` or `org.ccdp.*`. Exact-match scopes take precedence over wildcard matches. A token with scope `["org.ccdp.language.generation"]` is authorized for that specific capability; a token with scope `["org.ccdp.language.*"]` is authorized for any capability under that prefix.
 
 ## 15.4. Message Integrity
 
@@ -94,7 +98,11 @@ A Service MAY sign its Response envelope and content using a digital signature:
 
 The signature covers the specified fields. The Dispatcher MUST preserve the signature in the metadata when forwarding (per the metadata preservation rule, Section 7.7). The requester can verify the signature using the Service's public key (obtained from the Registry or a key server).
 
-Message signing is OPTIONAL for conforming implementations but RECOMMENDED for Services that produce FORMALLY_VERIFIED output — the signature binds the provenance claim to the Service's identity.
+**Canonicalization.** Signing JSON fields requires a deterministic serialization. Implementations MUST use JSON Canonicalization Scheme (JCS) [RFC 8785] to produce a canonical byte sequence before signing. The `signed_fields` array identifies which top-level fields are included; the canonical form is computed over the ordered concatenation of each field's JCS-canonical representation. Fields not listed in `signed_fields` are excluded from the signature and MAY be modified by intermediaries (e.g., the Dispatcher's `audit` annotation).
+
+**Mutable and immutable fields.** The following envelope fields are designated as *Dispatcher-mutable* — the Dispatcher MAY write or update them after the originator or Service has signed the message: `audit`, `remaining_budget_ms`, and metadata keys in the `org.ccdp.dispatcher.*` namespace. All other envelope fields and the entire `content` object are *immutable after signing*. The `signed_fields` array MUST NOT include Dispatcher-mutable fields, and the Dispatcher MUST NOT modify immutable fields on a signed message. A signature that covers a Dispatcher-mutable field is invalid by construction — the verifier MUST reject it.
+
+Message signing is OPTIONAL for CCDP Core conformance. For CCDP Full conformance, message signing is REQUIRED for Services that produce responses at grade FORMALLY_VERIFIED or HUMAN_ATTESTED, and RECOMMENDED for all other Services. For deployments spanning untrusted administrative domains (different organizations, different cloud regions), message signing is REQUIRED regardless of conformance level.
 
 ### 15.4.3. Provenance Integrity
 
@@ -104,7 +112,7 @@ Provenance grades and evidence entries are security-relevant — a tampered prov
 
 ### 15.5.1. Request ID Uniqueness
 
-Every Request carries a unique `request_id` (UUID v4). The Dispatcher MUST maintain a replay cache of recently processed `request_id` values (RECOMMENDED: cache size covers at least 24 hours of traffic).
+Every Request carries a unique `request_id` (UUID v4). The Dispatcher MUST maintain a replay cache of recently processed `request_id` values (RECOMMENDED: cache size covers at least 24 hours of traffic). In high-availability deployments with multiple Dispatcher instances, the replay cache MUST be shared across all instances. Implementation options include a shared cache service (Redis, Memcached), a distributed data structure, or a consensus-based replicated store. If the replay cache is partitioned (e.g., by `request_id` hash), the partition scheme MUST ensure that all instances handling the same `request_id` query the same partition. The replay cache is a source of shared state that complicates Dispatcher replication — deployments MUST plan for cache consistency, eviction, and failure.
 
 If the Dispatcher receives a Request with a `request_id` it has already processed:
 - If the payload is identical: return the cached response (idempotency).
@@ -129,6 +137,8 @@ Each Capability Record declares the Service's isolation requirements (Section 8.
 - **`network_access: false`**: The Service MUST NOT have network access beyond the Dispatcher endpoint.
 - **`filesystem_access: false`**: The Service MUST NOT have filesystem access beyond its designated working directory.
 
+Isolation requirements declared in Registry metadata are *policy inputs*, not protocol-enforceable guarantees. The Dispatcher trusts that the deployment infrastructure enforces isolation as declared. For deployments requiring stronger assurance, implementations SHOULD support workload attestation — the Service provides a signed attestation (e.g., via a Trusted Platform Module or confidential-computing attestation service) that its runtime environment matches the declared isolation requirements. Attestation verification is an optional Full-conformance feature.
+
 ### 15.6.2. Content Isolation
 
 The Dispatcher MUST NOT execute, evaluate, or interpret Content from any Message. Content is treated as opaque data. This prevents content injection attacks where a malicious payload in the Content could influence Dispatcher behavior.
@@ -137,6 +147,8 @@ Specifically:
 - The Dispatcher MUST NOT pass Content through an eval, template engine, or interpreter.
 - Schema validation of Content MUST use a JSON Schema validator that does not execute code (no `$code` or `$eval` extensions).
 - Log entries that include Content excerpts MUST sanitize or truncate them to prevent log injection.
+
+The typed result-reference mechanism in Section 14.3.3 is not a template engine — it performs JSON Pointer extraction and structural substitution without interpreting content values. This satisfies the content-isolation requirement.
 
 ### 15.6.3. Tool Naming and Registry Security
 

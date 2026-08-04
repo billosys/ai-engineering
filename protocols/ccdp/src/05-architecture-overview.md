@@ -36,7 +36,7 @@ A CCDP system has a star topology with the Dispatcher at the center. All communi
 
 This topology is a deliberate design choice, not a scaling constraint. The Dispatcher is the single point of protocol enforcement — authentication, routing, audit logging, health monitoring, and deadline enforcement all happen at the Dispatcher. A Service that bypasses the Dispatcher bypasses all of these guarantees.
 
-The star topology avoids the O(N²) communication explosion that full-mesh agent architectures face [arXiv:2509.02317]. With N services, CCDP requires N links (Dispatcher ↔ Service), not N(N-1)/2. The cost is that the Dispatcher is a single point of failure; high-availability deployment is an infrastructure concern outside this specification's scope, but the protocol's stateless message design (every message is self-contained) makes Dispatcher replication straightforward.
+The star topology avoids the O(N²) communication explosion that full-mesh agent architectures face [arXiv:2509.02317]. With N services, CCDP requires N links (Dispatcher ↔ Service), not N(N-1)/2. The cost is that the Dispatcher is a single point of failure; high-availability deployment is an infrastructure concern outside this specification's scope, but the protocol's self-contained message design simplifies Dispatcher replication, though production deployments must address shared state for replay caches, circuit-breaker state, health tables, and audit-store consistency (see Section 15.5 and Section 13.6).
 
 ## 5.2. Component Roles
 
@@ -44,7 +44,7 @@ A CCDP system comprises four kinds of components. Each has a defined role and a 
 
 ### 5.2.1. The Dispatcher
 
-The Dispatcher is the protocol's routing and enforcement engine. It is deliberately simple — a classifier/router, not a reasoner. Its responsibilities are:
+The Dispatcher is the protocol's routing and enforcement engine. It is a constrained protocol enforcement and execution coordinator — not a reasoner. Its duties include structural operations that go beyond simple routing, but it has no cognitive capability and never reasons about message content. Its responsibilities are:
 
 - **Envelope parsing**: Read the Envelope of every incoming Message. Reject malformed Envelopes.
 - **Authentication**: Verify the identity of the sender (Section 15). Reject unauthenticated messages.
@@ -57,7 +57,7 @@ The Dispatcher is the protocol's routing and enforcement engine. It is deliberat
 - **Provenance passthrough**: Forward Provenance metadata from Responses without modification. The Dispatcher MUST NOT alter Provenance grades.
 - **Metadata preservation**: Forward all unknown metadata fields without modification (Section 7.7).
 
-The Dispatcher MUST NOT:
+The Dispatcher MUST NOT — this is the semantic-interpretation side of the Structural Validation vs Semantic Interpretation boundary (Section 4):
 
 - Interpret, parse, or make decisions based on the Content of any Message
 - Modify the Content of any Message
@@ -71,10 +71,12 @@ A Service implements one or more Capabilities and communicates with the Dispatch
 
 - **Contract compliance**: Accept only Requests that conform to its declared input schema. Produce Responses that conform to its declared output schema.
 - **Provenance reporting**: Attach accurate Provenance metadata to every Response, including the Provenance Grade, Evidence entries, and computational resource consumption (Section 10).
-- **Escalation**: When a Request exceeds the Service's capability or confidence threshold, return a structured Escalation rather than producing low-confidence output silently (Section 13).
+- **Escalation**: When a Request exceeds the Service's capability or provenance-grade threshold, return a structured Escalation rather than producing low-provenance output silently (Section 13).
 - **Health reporting**: Respond to Health requests with accurate Health Status (Section 13.6).
 - **Deadline compliance**: Respect the `deadline` field. If the Service cannot complete within the remaining deadline budget, it SHOULD return an Escalation with reason `DEADLINE_INSUFFICIENT` rather than starting work it cannot finish.
 - **Idempotency**: For the same `request_id`, a Service MUST return the same Response. This makes retry safe (Section 7.3).
+
+**Idempotency scope.** The idempotency requirement is scoped by service type. Mode 2 (deterministic) Services MUST return byte-identical responses for the same `request_id`. Mode 1 (LLM) and Mode 3 (composite) Services MUST return semantically equivalent responses — the same conclusion at the same or higher provenance grade — but MAY differ in surface form (wording, formatting). Mode 4 (human queue) Services MUST return the same response if the human has already submitted a result for the `request_id`; if the human has not yet responded, a retry with the same `request_id` is a no-op (the request remains in the queue). Implementations SHOULD maintain a response cache keyed by `request_id` with a configurable TTL (RECOMMENDED: 24 hours).
 
 A Service MAY:
 
@@ -99,7 +101,7 @@ The Human Supervisor occupies the top of the supervision tree. The Human Supervi
 
 - Escalation Chains terminate at a human review queue (a Service of Mode 4 — Section 5.3).
 - Audit Trails provide the Human Supervisor with complete visibility into every routing decision, service invocation, and provenance grade (Section 11).
-- The Dispatcher MAY be configured to require Human Supervisor approval for routing decisions above a cost threshold or below a confidence threshold.
+- The Dispatcher MAY be configured to require Human Supervisor approval for routing decisions above a cost threshold or below a provenance-grade threshold.
 - The Provenance system's HUMAN_ATTESTED grade is the highest epistemic grade, reflecting the irreducible role of human judgment in specification and value assessment.
 
 ## 5.3. Service Modes
@@ -134,7 +136,7 @@ The Service is a human review queue. Requests are placed in a queue for human pr
 
 Typical Provenance Grade: HUMAN_ATTESTED (the highest grade).
 
-Mode 4 is appropriate for tasks requiring irreducible human judgment: specification review, value/novelty assessment, broad abstraction, and any task for which no external organ produces reliable output. Mode 4 is also the default Escalation target: when automated Services cannot meet the requested confidence level, the Escalation Chain terminates at a human queue.
+Mode 4 is appropriate for tasks requiring irreducible human judgment: specification review, value/novelty assessment, broad abstraction, and any task for which no external organ produces reliable output. Mode 4 is also the default Escalation target: when automated Services cannot meet the requested provenance grade, the Escalation Chain terminates at a human queue.
 
 ### 5.3.5. Mode Substitution and Progressive Automation
 
@@ -142,17 +144,19 @@ The four modes share a critical property: **modes are interchangeable without ch
 
 This is the architectural basis for incremental automation: start with everything in Mode 4 and the Dispatcher is trivially simple (a message router to human queues). Then, one Service at a time, substitute in a more automated implementation. The Dispatcher never gets smarter; the Services behind it get more capable.
 
-The only protocol-visible effect of mode substitution is in the Provenance Grade: a Mode 2 replacement will report FORMALLY_VERIFIED where the Mode 4 predecessor reported HUMAN_ATTESTED. Consumers of the output can use the Provenance Grade to calibrate their trust — the protocol ensures the change in backing implementation is transparent through the epistemic metadata.
+The only protocol-visible effect of mode substitution is in the Provenance Grade: a Mode 2 replacement will report FORMALLY_VERIFIED where the Mode 4 predecessor reported HUMAN_ATTESTED. Consumers of the output can use the Provenance Grade to calibrate their trust — the protocol ensures the change in backing implementation is transparent through the epistemic metadata. Mode substitution is transparent only when the consumer's `provenance_requirement.min_grade` is met by the replacement mode's typical grade. A consumer requiring `HUMAN_ATTESTED` cannot be served by a Mode 2 replacement reporting `FORMALLY_VERIFIED` unless the consumer's policy accepts formal verification as equivalent for that claim type. Deployments SHOULD configure mode-substitution policies per capability type.
 
 ## 5.4. The Decomposition Service
 
-Decomposition — breaking a complex request into typed sub-requests — is itself a cognitive act. Rather than requiring the Dispatcher to perform decomposition (which would violate the dumb-dispatcher principle) or requiring the human to pre-decompose all requests (which does not scale), CCDP treats decomposition as a first-class Service with Capability Type `org.ccdp.decomposition`.
+Decomposition — breaking a complex request into typed sub-requests — is itself a cognitive act. Rather than requiring the Dispatcher to perform decomposition (which would violate the constrained-coordinator principle) or requiring the human to pre-decompose all requests (which does not scale), CCDP treats decomposition as a first-class Service with Capability Type `org.ccdp.decomposition`.
 
 The Decomposition Service receives a complex Request and returns a Decomposition Plan: a set of typed sub-requests, their dependency ordering (which sub-requests can run in parallel, which must be sequential), and a composition function specifying how sub-results are assembled into the final result.
 
 The Dispatcher then routes each sub-request independently through the normal routing process. Sub-requests carry the same `trace_id` as the parent and new `span_id` values, linking them in the audit trail. Results are composed according to the Decomposition Plan's composition specification.
 
-Because the Decomposition Service is behind the same typed interface as every other Service, it is subject to the same audit, provenance, health-check, and escalation discipline. A Decomposition Plan carries its own Provenance Grade (reflecting the confidence in the decomposition itself), and if the Decomposition Service cannot decompose a request, it returns an Escalation rather than producing a bad decomposition silently.
+Result composition is a structural operation: the Dispatcher assembles typed sub-results according to the plan's composition specification (template assembly, concatenation, or selection) without reasoning about what the sub-results mean. When composition requires cognitive judgment (e.g., synthesizing sub-results into a coherent narrative), the plan routes composition to a dedicated Composition Service with capability type `org.ccdp.composition` (Section 14.3.4).
+
+Because the Decomposition Service is behind the same typed interface as every other Service, it is subject to the same audit, provenance, health-check, and escalation discipline. A Decomposition Plan carries its own Provenance Grade (reflecting the evidence strength behind the decomposition itself), and if the Decomposition Service cannot decompose a request, it returns an Escalation rather than producing a bad decomposition silently.
 
 The Decomposition Service is a natural Mode 3 candidate: an LLM translates a natural-language request into a structured decomposition plan, which a validator then checks for consistency (all sub-requests have valid Capability Types, dependencies are acyclic, the composition function references all sub-results). The validated decomposition carries a higher Provenance Grade than the raw LLM decomposition.
 

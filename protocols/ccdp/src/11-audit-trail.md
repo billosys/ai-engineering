@@ -2,6 +2,8 @@
 
 ## 11.1. Audit as Core Protocol
 
+Audit records carry an `audit_schema_version` field (string, REQUIRED) independent of the CCDP document version and wire protocol version. The current audit schema version is `"1.0"`. Changes to audit record structure increment this version. Audit consumers MUST check `audit_schema_version` and handle unknown versions gracefully (log a warning and preserve the record without interpretation).
+
 Audit is not an extension, an integration, or a best practice. It is a REQUIRED protocol behavior. Every Message that passes through the Dispatcher MUST generate a structured audit record. This requirement is grounded in a practical lesson: the NSA/CISA assessment of MCP found that protocols without mandatory audit leave security and reliability to "implementation discipline" — which fails unpredictably across deployments.
 
 In the supervision-tree model, the audit trail is the equivalent of Erlang/OTP's error logger — the mechanism by which failures, routing decisions, and system behavior become visible to the supervisor (ultimately, the human). Without it, the human cannot supervise.
@@ -169,7 +171,7 @@ The Dispatcher MUST:
 2. Generate a new `span_id` for each hop through the Dispatcher.
 3. Set `parent_span_id` on forwarded messages to the incoming message's `span_id`.
 4. Include the W3C `traceparent` header on HTTP requests to Services.
-5. Preserve the `tracestate` header if present, appending a CCDP-specific entry: `ccdp=dispatcher_id`.
+5. Preserve the `tracestate` header if present, appending a CCDP-specific entry: `ccdp=dispatcher_id`. The Dispatcher appends `ccdp=<dispatcher_id>` to the `tracestate` header. If the `tracestate` header would exceed 512 bytes after appending, the Dispatcher MUST truncate the oldest entries (leftmost) to make room, per W3C Trace Context [W3C-TC] §3.3.2.1. The Dispatcher MUST sanitize `tracestate` values: strip control characters and validate against the W3C tracestate grammar before forwarding.
 
 This ensures that CCDP traces are compatible with standard distributed tracing infrastructure (OpenTelemetry, Jaeger, Zipkin). Services that use tracing internally can link their internal spans to the CCDP trace.
 
@@ -190,6 +192,21 @@ The following audit data MUST be recorded for every Message processed by the Dis
 | Errors | `error_code`, `error_detail`, `retry_count` | Errors and retries |
 | Dispatcher | `dispatcher_id`, `ccdp_version` | Every message |
 
+**Per-message-type requirements.** Not all audit fields are meaningful for every message type. The following matrix defines which fields are REQUIRED (R), RECOMMENDED (S), or not applicable (—) for each message type:
+
+| Field | REQUEST | RESPONSE | ESCALATION | NOTIFICATION | HEALTH_REQ | HEALTH_RESP | DECOMP_RESULT |
+|---|---|---|---|---|---|---|---|
+| `trace_id` | R | R | R | R | R | R | R |
+| `span_id` | R | R | R | R | R | R | R |
+| `request_id` | R | R | R | S | R | R | R |
+| `capability_type` | R | S | S | S | — | — | R |
+| `destination_id` | S | — | S | S | R | — | — |
+| `source_id` | R | R | R | R | R | R | R |
+| `routing_decision` | R | — | R | — | — | — | R |
+| `provenance_summary` | — | R | R | — | — | — | S |
+| `schema_validation` | R | S | — | — | — | — | R |
+| `health_status` | — | — | — | — | — | R | — |
+
 ## 11.5. Audit Storage and Retention
 
 This specification does not mandate a specific audit storage mechanism. Implementations MAY use structured log files, a database, an event stream (e.g., Kafka), or any other storage that satisfies these requirements:
@@ -197,9 +214,19 @@ This specification does not mandate a specific audit storage mechanism. Implemen
 1. **Immutability.** Audit records, once written, MUST NOT be modified or deleted during the retention period. Append-only storage is RECOMMENDED.
 2. **Queryability.** The audit store MUST support queries by `trace_id` (retrieve all records for a request chain), `request_id` (retrieve records for a specific request), `service_id` (retrieve records for a specific service), and time range.
 3. **Retention.** Audit records MUST be retained for a minimum period configured per deployment. The RECOMMENDED minimum retention period is 90 days for production deployments.
-4. **Integrity.** Audit records SHOULD be protected against tampering. Implementations SHOULD use cryptographic hashing (hash chains or Merkle trees) to detect unauthorized modifications.
+4. **Integrity.** Audit records MUST be written to a tamper-evident store for CCDP Full conformance. CCDP Core conformance REQUIRES structured audit records but permits deployment-configured integrity mechanisms. For Full conformance, tamper evidence means either cryptographic chaining (each record includes a hash of the previous record), append-only storage with integrity verification, or a write-once medium. The specific mechanism is deployment-defined.
 
-## 11.6. Audit as Supervision Input
+## 11.6. Audit Store Failure Behavior
+
+If the audit store is unavailable, the Dispatcher MUST follow its deployment-configured `audit_failure_policy`:
+
+- **`fail_closed`** (RECOMMENDED for production): The Dispatcher MUST reject incoming requests with error `-32603` (internal error) and `data.reason` of `"audit_unavailable"` until the audit store recovers. No messages are processed without audit.
+- **`buffer`**: The Dispatcher buffers audit records locally (in memory or on local disk) and continues processing messages. Buffered records MUST be flushed to the audit store when it recovers. The buffer MUST have a bounded size; when the buffer is full, the Dispatcher falls back to `fail_closed`.
+- **`degrade`**: The Dispatcher continues processing messages without audit. This mode MUST NOT be used in production deployments. If used, the Dispatcher MUST set a metadata flag `org.ccdp.audit_gap: true` on all messages processed during the gap, and MUST log the gap duration and message count when the audit store recovers.
+
+The audit failure policy MUST be declared in the Dispatcher's deployment configuration and MUST be discoverable via the Dispatcher's own health endpoint.
+
+## 11.7. Audit as Supervision Input
 
 The audit trail is not just a compliance mechanism — it is the Human Supervisor's primary input for understanding system behavior. Deployments SHOULD provide tooling that enables:
 

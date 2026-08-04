@@ -17,23 +17,23 @@ A Request MAY carry a `cost_budget` field constraining the resources the Service
   "cost_budget": {
     "max_compute_seconds": 120,
     "max_tokens": 50000,
-    "max_monetary_units": 0.50,
+    "max_monetary_cost": 0.50,
     "monetary_unit": "USD"
   }
 }
 ```
 
-All fields are OPTIONAL. Omitted fields indicate no constraint on that dimension. A Service MUST NOT exceed any specified constraint. If a Service would exceed a constraint to produce a meaningful result, it MUST return an Escalation with reason `BUDGET_EXCEEDED`, reporting the resources consumed so far and an estimate of resources needed.
+All fields are OPTIONAL. Omitted fields indicate no constraint on that dimension. A Service MUST NOT exceed any specified constraint. Services SHOULD implement preflight estimation where feasible — estimating resource consumption before beginning work and returning an Escalation with reason `BUDGET_EXCEEDED` if the estimate exceeds the budget. For services where cost is unpredictable (LLM generation with variable output length), the Service MUST monitor consumption during execution and abort with an Escalation if any budget limit is reached. The `BUDGET_EXCEEDED` escalation MUST include the estimated or actual cost in the `escalation.detail` field. If a Service would exceed a constraint to produce a meaningful result, it MUST return an Escalation with reason `BUDGET_EXCEEDED`, reporting the resources consumed so far and an estimate of resources needed.
 
 ### 12.2.2. Budget Propagation
 
 When the Dispatcher routes a Request, it MAY adjust the cost budget based on routing overhead:
 
 - `max_compute_seconds`: No adjustment (this constrains the Service, not the Dispatcher).
-- `max_monetary_units`: The Dispatcher MAY subtract its own routing cost (if any) before forwarding.
+- `max_monetary_cost`: The Dispatcher MAY subtract its own routing cost (if any) before forwarding.
 - `max_tokens`: No adjustment (this constrains token-consuming services).
 
-For Decomposition (Section 14), the Dispatcher partitions the parent Request's cost budget across sub-requests according to the Decomposition Plan's budget allocation. If the plan does not specify allocation, the Dispatcher SHOULD divide the budget equally among sub-requests, reserving a configurable fraction (RECOMMENDED: 10%) for composition overhead.
+For Decomposition (Section 14), the Dispatcher partitions the parent Request's cost budget across sub-requests according to the Decomposition Plan's budget allocation. If the plan does not specify allocation, the Dispatcher SHOULD divide the budget equally among sub-requests, reserving a configurable fraction (RECOMMENDED: 10%) for composition overhead. Equal allocation is a safe default but ignores DAG shape, service cost hints, critical-path length, and task heterogeneity. Decomposition Plans SHOULD include per-sub-request `cost_fraction` and `deadline_fraction` allocations (Section 14.3.1) that reflect the expected cost profile. When allocations are not specified, the Dispatcher MUST use equal partitioning and log a warning in the audit trail.
 
 ### 12.2.3. Budget Consumption Reporting
 
@@ -44,7 +44,8 @@ Every Response MUST report actual resource consumption in the `provenance.comput
   "computation": {
     "tokens_consumed": 12500,
     "compute_seconds": 4.7,
-    "monetary_cost": { "units": 0.003, "unit": "USD" },
+    "monetary_cost": 0.003,
+    "monetary_unit": "USD",
     "model_id": "claude-opus-4-20260801"
   }
 }
@@ -102,6 +103,8 @@ For Services implementing multiple Capability Types, the Health response provide
 
 A `current_load` of 1.0 indicates the Service is at capacity for that capability. A `current_load` above 0.8 SHOULD trigger the Dispatcher to prefer alternative Services.
 
+Capacity data in health responses is a point-in-time snapshot. The Dispatcher MUST record the timestamp of each capacity update and SHOULD treat capacity data older than the Service's `health_check.interval_seconds` as stale. For high-priority or high-cost requests, the Dispatcher SHOULD perform a synchronous health probe before routing if the cached capacity data is stale. Stale capacity data used for a routing decision MUST be noted in the audit record.
+
 ## 12.4. Deadline Propagation
 
 Deadlines prevent unbounded latency in multi-hop request chains. The deadline mechanism is modeled on gRPC's deadline propagation [gRPC deadline] and Google's `context.Context`.
@@ -110,10 +113,12 @@ Deadlines prevent unbounded latency in multi-hop request chains. The deadline me
 
 Every Request carries a `deadline` (absolute UTC timestamp) and `remaining_budget_ms` (remaining time budget in milliseconds). At each hop through the Dispatcher:
 
-1. The Dispatcher computes `elapsed_ms = now() - envelope.timestamp`.
+1. The Dispatcher computes `elapsed_ms = now() - audit.received_at` (its own receive timestamp — see the clock-skew note below).
 2. The Dispatcher sets `remaining_budget_ms = envelope.remaining_budget_ms - elapsed_ms`.
 3. If `remaining_budget_ms <= 0`, the Dispatcher returns error `-32007` (deadline exceeded) without forwarding the Request.
 4. If `remaining_budget_ms` is positive but less than the target Service's `cost_hints.estimated_latency_ms.p50`, the Dispatcher logs a warning and either forwards (optimistically) or returns error `-32004` (deadline not achievable).
+
+**Clock skew.** The Dispatcher MUST compute `remaining_budget_ms` from its own receive timestamp (`audit.received_at`), not from the originator's `envelope.timestamp`. The originator's timestamp is used for replay protection and freshness validation (Section 15.5), not for hop-by-hop deadline accounting. This avoids clock-skew errors between the originator and the Dispatcher.
 
 ### 12.4.2. Service Deadline Behavior
 
@@ -151,6 +156,8 @@ A Service MAY respond to a CCDP Request with HTTP 429 instead of a CCDP Response
 3. MUST log the 429 response in the audit trail.
 4. SHOULD increment the Service's failure count in the circuit breaker.
 
+More precisely: when a Service returns HTTP 429 (Too Many Requests) instead of a CCDP Response, the Dispatcher MUST: (a) log the 429 in the audit trail as a rate-limit event with the Service's `Retry-After` header value if present, (b) treat the Service as temporarily at capacity (equivalent to health status DEGRADED for the requested capability), (c) follow the retry/reroute strategy in Section 13.5.1, and (d) if the Dispatcher itself rate-limits a requester, it MUST return a CCDP error response with code `-32003` and include the `Retry-After` value in the error `data` field. HTTP 429 MUST NOT be passed through to the requester as a raw HTTP response.
+
 ### 12.5.3. Capacity-Based Rate Limiting
 
 The Dispatcher MAY implement rate limiting per Service based on capacity advertisements. If a Service reports `current_load > 0.9`, the Dispatcher SHOULD limit new requests to that Service to no more than one per `estimated_latency_ms` period, allowing the queue to drain.
@@ -161,7 +168,7 @@ The specific rate-limiting algorithm is implementation-defined. The Dispatcher M
 
 The Dispatcher uses resource signals for routing decisions (Section 9.2, Step 6). The interaction between resource signals and routing:
 
-- **Cost budget constrains candidates:** A Request with `max_monetary_units: 0.10` eliminates Services with `estimated_cost_per_request > 0.10`.
+- **Cost budget constrains candidates:** A Request with `max_monetary_cost: 0.10` eliminates Services with `estimated_cost_per_request > 0.10`.
 - **Deadline constrains candidates:** A Request with 5 seconds remaining eliminates Services with `estimated_latency_ms.p95 > 5000`.
 - **Load influences ranking:** Among eligible candidates, lower-load Services are preferred.
 - **Cost influences ranking:** Among eligible candidates, lower-cost Services are preferred (unless a higher-cost Service offers a better provenance grade that the Request requires).
