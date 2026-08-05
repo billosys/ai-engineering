@@ -40,6 +40,9 @@ A CCDP Core Dispatcher MUST satisfy all requirements in this table.
 | DISP-CORE-028 | Never execute or interpret Content. | 15.6.2 |
 | DISP-CORE-029 | Redact bearer tokens in audit logs. | 15.7 |
 | DISP-CORE-030 | Validate Decomposition Plans received from a Decomposition Service: acyclic dependency graph, valid capability types, valid resource allocations, and depth/width/total-node limits. A Core Dispatcher validates plans but is not required to execute them (Section 16.5). | 14, 14.6 |
+| DISP-CORE-031 | Validate Response provenance against the Request's `provenance_requirement` and never forward a non-conforming Response as successful. | 9.2 |
+| DISP-CORE-032 | Apply `provenance_mismatch_policy` for post-receipt provenance mismatches and `provenance_unavailable_policy` for routing-time no-candidate failures. | 9.2 |
+| DISP-CORE-033 | Record provenance-policy diagnostics (`provenance_policy.*`) in the audit trail for every Dispatcher-generated provenance Escalation. | 9.2, 11.4 |
 
 ### 16.1.2. Full Dispatcher Requirements
 

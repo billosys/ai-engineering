@@ -236,6 +236,8 @@ An Escalation is a structured response indicating that the originating actor —
 - **`suggested_target`** (string, OPTIONAL): A Service ID or Capability Type the Dispatcher should try next.
 - **`partial_result_available`** (boolean, REQUIRED): Whether the Content of this message contains a partial result.
 
+For Dispatcher-generated implicit ESCALATION messages (`escalation_origin: "dispatcher"`), `envelope.source_id` (Section 7.3.1) MUST be the Dispatcher's own instance identity. The responding Service that triggered the mismatch, if any, is identified by `responding_service_id` in the escalation-history entry (Section 13.4.1) and by `provenance_policy.non_conformant_service_id` in the audit record (Section 11.2.2), not by `source_id`.
+
 When `partial_result_available` is true, the Content contains whatever the Service was able to produce before escalating. The Dispatcher MUST include this partial result when forwarding the escalation. This is the canonical location for partial results. Partial results MUST be carried in the ESCALATION message's Content, not in metadata. When the Dispatcher forwards the original Request through the escalation chain, it accumulates partial results from prior Services in the Request's metadata under the key `org.ccdp.partial_results` (Section 13.4.1) for downstream Services' reference. The Content of the forwarded Request remains the original requester's Content. For Dispatcher-generated post-receipt mismatch Escalations (`provenance_mismatch_policy`, Section 9.2), the partial result is the original Service Response content that failed to meet the provenance requirement.
 
 ### 7.3.5. NOTIFICATION Envelope Fields
