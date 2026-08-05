@@ -53,7 +53,7 @@ The policy MUST be one of:
 - `"reroute"`: Treat the Service as non-conformant for this request and reroute to an alternative Service (applying the same routing algorithm, excluding the non-conformant Service from the candidate set). If no alternative can satisfy the requirement, fall through to the `provenance_unavailable_policy`.
 - `"escalate"`: Convert the outcome to an Escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and `envelope.escalation.escalation_origin: "dispatcher"` (Section 7.3.4), then walk the responding Service's `escalation_chain`. The original Service response is forwarded as partial results if available.
 
-The default policy is `"reroute"`. The Dispatcher MUST record the selected policy, the mismatch details (expected vs actual grade, missing methods, missing artifact types), and the non-conformant Service ID in the audit trail (Section 11) regardless of which path it takes.
+The default policy is `"reroute"`. The Dispatcher MUST record the policy field evaluated, the selected action, the mismatch details (expected vs. actual grade, missing methods, missing artifact types), and the non-conformant Service ID using the canonical `provenance_policy.*` fields (Section 11.4), regardless of which action is taken. For `"escalate"`, these fields appear on the ESCALATION audit record. For `"reroute"`, they appear on the routing-decision audit record for the non-conforming Response.
 
 If no candidate service can meet the Request's `provenance_requirement`, the Dispatcher MUST NOT silently route to a service that cannot meet it. The Dispatcher MUST follow its deployment-configured `provenance_unavailable_policy` for the requested capability type.
 
@@ -62,7 +62,7 @@ The policy MUST be one of:
 - `"error"` (default): Return error `-32005` (provenance requirement not satisfiable).
 - `"escalate"`: Treat as implicit escalation with reason `PROVENANCE_BELOW_REQUIREMENT` and `envelope.escalation.escalation_origin: "dispatcher"` (Section 7.3.4). Because no candidate passed the provenance filter, there is no originating Service whose `escalation_chain` to walk — the implicit escalation routes directly to `org.ccdp.human_review` as the terminal target, subject to the same authorization and data-class checks as Section 13.4 step 6.
 
-The chosen policy MUST be recorded in the audit trail. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
+The chosen policy field and selected action MUST be recorded using the canonical `provenance_policy.*` fields (Section 11.4). For `"escalate"`, these fields appear on the ESCALATION audit record. For `"error"`, they appear on the audit record for the error returned to the requester. The Dispatcher MUST NOT forward a request to a service that cannot meet the provenance requirement without the requester's knowledge.
 
 ### Step 6: Cost-Aware Ranking
 
