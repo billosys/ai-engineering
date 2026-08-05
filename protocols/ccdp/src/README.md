@@ -2,23 +2,6 @@
 
 **Status:** Draft v0.2 — review iterations through v0.2m incorporated. Not yet implementation-ready; see spec-quality next steps below.
 
-Review artifacts are in the `workbench/` directory:
-
-- `review-v0.1/` — initial v0.1 review (22 files)
-- `review-v0.2a/` — first unreleased-v0.2 review (22 files)
-- `review-v0.2b/` — second unreleased-v0.2 review (25 files)
-- `review-v0.2c/` — third unreleased-v0.2 review (26 files)
-- `review-v0.2d/` — fourth unreleased-v0.2 review (25 files)
-- `review-v0.2e/` — fifth unreleased-v0.2 review (7 files)
-- `review-v0.2f/` — sixth unreleased-v0.2 review (11 files)
-- `review-v0.2g/` — seventh unreleased-v0.2 review (7 files)
-- `review-v0.2h/` — eighth unreleased-v0.2 review (6 files)
-- `review-v0.2i/` — ninth unreleased-v0.2 review (7 files)
-- `review-v0.2j/` — tenth unreleased-v0.2 review (7 files)
-- `review-v0.2k/` — eleventh unreleased-v0.2 review (6 files)
-- `review-v0.2l/` — twelfth unreleased-v0.2 review (5 files)
-- `review-v0.2m/` — thirteenth unreleased-v0.2 review (4 files, current)
-
 **Full spec:** See the source files in this directory (`01-abstract.md` through `21-version-history.md`) and the assembler tool in `../tools/`.
 
 ## Table of Contents
