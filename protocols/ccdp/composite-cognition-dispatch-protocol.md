@@ -4,7 +4,7 @@ description: >
   A message-envelope protocol for routing cognitive requests through a
   deliberately simple dispatcher to heterogeneous cognitive services under
   human supervision.
-version: "0.1"
+version: "0.2"
 date: 2026-08-04
 author: Duncan McGreggor
 status: Draft Specification

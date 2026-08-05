@@ -11,22 +11,23 @@
 ASSEMBLER := tools/ccdp-assembler/target/release/ccdp-assembler
 TEMPLATE := templates/draft-rfcxml-general-template-standard-00.xml-edited.md
 OUTPUT := composite-cognition-dispatch-protocol.md
+VERSION := 0.2
 
 ## ccdp-rfc: assemble the chapters into GFM, with validation
 ccdp-rfc: $(ASSEMBLER)
-	$< --validate --src-dir src --output $(OUTPUT)
+	$< --validate --src-dir src --output $(OUTPUT) --version $(VERSION)
 
 ## ccdp-rfc-strict: same as ccdp-rfc, but fail the build on any validation warning
 ccdp-rfc-strict: $(ASSEMBLER)
-	$< --validate --strict --src-dir src --output $(OUTPUT)
+	$< --validate --strict --src-dir src --output $(OUTPUT) --version $(VERSION)
 
 ## ccdp-rfc-kramdown: assemble the chapters into kramdown-rfc-flavored markdown
 ccdp-rfc-kramdown: $(ASSEMBLER)
-	$< --validate --format kramdown-rfc --src-dir src --template $(TEMPLATE) --output $(OUTPUT)
+	$< --validate --format kramdown-rfc --src-dir src --template $(TEMPLATE) --output $(OUTPUT) --version $(VERSION)
 
 ## ccdp-rfc-kramdown-strict: same as ccdp-rfc-kramdown, but fail the build on any validation warning
 ccdp-rfc-kramdown-strict: $(ASSEMBLER)
-	$< --validate --strict --format kramdown-rfc --src-dir src --template $(TEMPLATE) --output $(OUTPUT)
+	$< --validate --strict --format kramdown-rfc --src-dir src --template $(TEMPLATE) --output $(OUTPUT) --version $(VERSION)
 
 $(ASSEMBLER): tools/ccdp-assembler/src/*.rs tools/ccdp-assembler/Cargo.toml
 	cd tools/ccdp-assembler && cargo build --release

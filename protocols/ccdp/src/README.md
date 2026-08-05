@@ -25,7 +25,8 @@
 17. **Security Considerations** — Threat model, known attack vectors with mitigations and residual risks, NSA/CISA response table, honest limitations
 18. **Open Questions** — Five deferred design questions (layer placement, grade naming, capacity reservation, wire identity fields, Registry wire binding)
 19. **References** — Normative and informative references, organized by category
-20. **Version History** — Changelog across v0.1 and each v0.2 review round
+20. **Previous Versions** — Link to the previously published v0.1 release
+21. **Version History** — Changelog across v0.1 and each v0.2 review round
 
 ## Key Design Decisions
 
