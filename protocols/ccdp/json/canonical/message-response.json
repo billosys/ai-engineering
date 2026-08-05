@@ -1,0 +1,122 @@
+{
+  "jsonrpc": "2.0",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "result": {
+    "envelope": {
+      "ccdp_version": "1.0",
+      "type": "RESPONSE",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "span_id": "00f067aa0ba902b7",
+      "timestamp": "2026-08-03T14:30:04.840Z",
+      "source_id": "code-verifier-01",
+      "capability_type": "org.ccdp.verification",
+      "status": "SUCCESS",
+      "provenance": {
+        "grade": "VALIDATED",
+        "evidence": [
+          {
+            "method": "formal_verification",
+            "description": "Verus proof of implementation against spec-2026-001, environment verus-0.2026.7",
+            "service_id": "code-verifier-01",
+            "artifact_ref": {
+              "uri": "urn:ccdp:artifact:abc123",
+              "artifact_type": "proof_certificate",
+              "integrity": {
+                "algorithm": "sha-256",
+                "digest": "a1b2c3..."
+              },
+              "media_type": "application/json",
+              "access": "audit-archive"
+            },
+            "verified_by": "verus-0.2026.7"
+          },
+          {
+            "method": "statistical_testing",
+            "description": "All 47 unit tests passed",
+            "service_id": "test-runner-01",
+            "artifact_ref": {
+              "uri": "urn:ccdp:artifact:test-results/run-2026-08-03-001.json",
+              "artifact_type": "test_report",
+              "integrity": {
+                "algorithm": "sha-256",
+                "digest": "e3b0c4..."
+              },
+              "media_type": "application/json",
+              "access": "audit-archive"
+            },
+            "verified_by": "test-runner-01"
+          },
+          {
+            "method": "method_selection",
+            "description": "Formal verification selected over test-only validation because the request required proof_certificate evidence",
+            "service_id": "code-verifier-01"
+          }
+        ],
+        "scope": "Code conforms to specification spec-2026-001",
+        "service_id": "code-verifier-01",
+        "service_version": "2.3.1",
+        "service_mode": 3,
+        "computation": {
+          "tokens_consumed": 12500,
+          "compute_seconds": 4.7,
+          "monetary_cost": "0.003",
+          "monetary_unit": "USD",
+          "model_id": "claude-opus-4-20260801"
+        },
+        "composition_trace": {
+          "method": "sequential",
+          "components": [
+            {
+              "span_id": "00f067aa0ba902b7",
+              "service_id": "llm-translator-01",
+              "grade": "VALIDATED",
+              "role": "translation"
+            },
+            {
+              "span_id": "5b8aa5a2d2c21ea0",
+              "service_id": "z3-prover-01",
+              "grade": "FORMALLY_VERIFIED",
+              "role": "verification"
+            }
+          ],
+          "composed_grade": "VALIDATED",
+          "rule_applied": "weakest_link"
+        }
+      },
+      "metadata": {
+        "org.ccdp.signature": {
+          "algorithm": "Ed25519",
+          "key_id": "code-verifier-01-signing-2026",
+          "profile": "service-response",
+          "signed_fields": ["envelope", "content"],
+          "value": "base64-encoded-signature...",
+          "timestamp": "2026-08-03T14:30:04.840Z"
+        }
+      },
+      "audit": {
+        "dispatcher_id": "dispatcher-prod-01",
+        "received_at": "2026-08-03T14:30:04.840Z",
+        "routed_at": "2026-08-03T14:30:04.850Z"
+      }
+    },
+    "content": {
+      "type": "multipart",
+      "schema_ref": "org.ccdp.verification/output/v2",
+      "body": {
+        "parts": [
+          {
+            "type": "code",
+            "label": "implementation",
+            "body": { "language": "rust", "source": "fn verify(...) { ... }" }
+          },
+          {
+            "type": "proof-object",
+            "label": "correctness-proof",
+            "body": { "prover": "verus", "proof": "..." }
+          }
+        ]
+      }
+    }
+  }
+}

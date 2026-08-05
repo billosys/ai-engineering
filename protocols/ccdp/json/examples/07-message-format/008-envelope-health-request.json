@@ -1,0 +1,7 @@
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "HEALTH_REQUEST",
+    "destination_id": "z3-prover-01"
+  }
+}

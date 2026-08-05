@@ -1,0 +1,16 @@
+{
+  "method": "formal_verification",
+  "description": "Coq proof of theorem T against spec S",
+  "service_id": "svc-formal-01",
+  "artifact_ref": {
+    "uri": "urn:ccdp:artifact:abc123",
+    "artifact_type": "proof_certificate",
+    "integrity": {
+      "algorithm": "sha-256",
+      "digest": "a1b2c3..."
+    },
+    "media_type": "application/json",
+    "access": "audit-archive"
+  },
+  "verified_by": "coq-8.18.0"
+}

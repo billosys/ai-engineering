@@ -1,0 +1,9 @@
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "NOTIFICATION",
+    "capability_type": "org.ccdp.notification",
+    "notification_type": "STATUS_UPDATE",
+    "destination_id": "client-app-01"
+  }
+}

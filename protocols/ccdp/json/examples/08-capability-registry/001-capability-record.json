@@ -1,0 +1,73 @@
+{
+  "capability_record": {
+    "service_id": "z3-prover-01",
+    "capability_type": "org.ccdp.deduction",
+    "version": "2.1.0",
+    "endpoint": "https://z3-prover-01.internal:8443/ccdp",
+    "status": "ACTIVE",
+
+    "input_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "logic": { "type": "string", "enum": ["propositional", "first-order", "smt-lib2"] },
+        "formula": { "type": "string" },
+        "timeout_ms": { "type": "integer", "minimum": 100 }
+      },
+      "required": ["logic", "formula"]
+    },
+
+    "output_schema": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "type": "object",
+      "properties": {
+        "result": { "type": "string", "enum": ["sat", "unsat", "unknown", "timeout"] },
+        "model": { "type": ["object", "null"] },
+        "proof": { "type": ["string", "null"] }
+      },
+      "required": ["result"]
+    },
+
+    "cost_hints": {
+      "estimated_latency_ms": { "p50": 500, "p95": 5000, "p99": 30000 },
+      "estimated_cost_per_request": { "monetary_units": "0.001", "monetary_unit": "USD" },
+      "token_cost": null,
+      "compute_intensive": true
+    },
+
+    "provenance_capabilities": {
+      "max_grade": "FORMALLY_VERIFIED",
+      "typical_grade": "FORMALLY_VERIFIED",
+      "supported_evidence_methods": ["formal_verification"],
+      "supported_artifact_types": ["proof_certificate", "counterexample"]
+    },
+
+    "health_check": {
+      "endpoint": "https://z3-prover-01.internal:8443/ccdp/health",
+      "interval_seconds": 30,
+      "timeout_ms": 5000
+    },
+
+    "isolation": {
+      "executes_arbitrary_code": false,
+      "requires_sandbox": false,
+      "network_access": false,
+      "filesystem_access": false
+    },
+
+    "escalation_chain": [
+      {"kind": "service_id", "value": "isabelle-prover-01"},
+      {"kind": "capability_type", "value": "org.ccdp.human_review"}
+    ],
+
+    "cacheable": false,
+    "max_input_size": 1048576,
+
+    "tags": ["formal-methods", "smt", "sat"],
+    "description": "Z3 SMT solver for propositional and first-order logic",
+    "registered_at": "2026-07-15T10:00:00Z",
+    "updated_at": "2026-08-01T14:00:00Z",
+
+    "metadata": {}
+  }
+}

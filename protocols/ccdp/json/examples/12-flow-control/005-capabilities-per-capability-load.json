@@ -1,0 +1,16 @@
+{
+  "capabilities": {
+    "org.ccdp.deduction": {
+      "available": true,
+      "current_load": 0.70,
+      "queue_depth": 2,
+      "estimated_latency_ms": 8000
+    },
+    "org.ccdp.verification": {
+      "available": false,
+      "current_load": 1.0,
+      "queue_depth": 5,
+      "estimated_latency_ms": 30000
+    }
+  }
+}

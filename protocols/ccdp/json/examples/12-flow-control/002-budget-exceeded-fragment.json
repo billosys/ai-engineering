@@ -1,0 +1,6 @@
+"budget_exceeded": {
+  "dimension": "monetary" | "compute_seconds" | "tokens",
+  "budget_limit": "4.50",
+  "actual_or_estimated": "2.80",
+  "is_estimate": true
+}

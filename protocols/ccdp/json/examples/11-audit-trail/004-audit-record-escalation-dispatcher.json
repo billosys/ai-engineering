@@ -1,0 +1,32 @@
+{
+  "audit_record": {
+    // ... standard fields ...
+    "message_summary": {
+      "type": "ESCALATION",
+      "request_id": "550e8400-...",
+      "source_id": "dispatcher-01",
+      "escalation_reason": "PROVENANCE_BELOW_REQUIREMENT",
+      "escalation_origin": "dispatcher",
+      "achieved_grade": "HEURISTIC",
+      "requested_grade": "VALIDATED"
+    },
+    "provenance_policy": {
+      "policy_field": "provenance_mismatch_policy",
+      "selected_action": "escalate",
+      "trigger": "grade_below_requirement",
+      "expected_grade": "VALIDATED",
+      "actual_grade": "HEURISTIC",
+      "missing_methods": [],
+      "missing_artifact_types": [],
+      "non_conformant_service_id": "llm-translator-02"
+    },
+    "escalation_routing": {
+      "original_service": "llm-translator-02",
+      "escalation_chain_position": 0,
+      "next_target": "llm-verifier-01",
+      "chain_remaining": ["llm-verifier-01", "human-review-translation-01"],
+      "partial_result_forwarded": true,
+      "chain_source": "responding_service"
+    }
+  }
+}

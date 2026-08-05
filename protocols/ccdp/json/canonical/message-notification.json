@@ -1,0 +1,26 @@
+{
+  "jsonrpc": "2.0",
+  "method": "ccdp/notification",
+  "params": {
+    "envelope": {
+      "ccdp_version": "1.0",
+      "type": "NOTIFICATION",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "span_id": "7c3d9e1f2a4b5c6d",
+      "timestamp": "2026-08-03T14:30:02.000Z",
+      "source_id": "z3-prover-01",
+      "capability_type": "org.ccdp.notification",
+      "notification_type": "STATUS_UPDATE",
+      "destination_id": "client-app-01",
+      "metadata": {}
+    },
+    "content": {
+      "type": "structured-data",
+      "body": {
+        "progress": 0.4,
+        "detail": "Proof search 40% through configured search budget"
+      }
+    }
+  }
+}

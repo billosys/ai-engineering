@@ -1,0 +1,21 @@
+{
+  "composition_trace": {
+    "method": "sequential",
+    "components": [
+      {
+        "span_id": "00f067aa0ba902b7",
+        "service_id": "llm-translator-01",
+        "grade": "ASSERTED",
+        "role": "translation"
+      },
+      {
+        "span_id": "5b8aa5a2d2c21ea0",
+        "service_id": "z3-prover-01",
+        "grade": "FORMALLY_VERIFIED",
+        "role": "verification"
+      }
+    ],
+    "composed_grade": "ASSERTED",
+    "rule_applied": "weakest_link"
+  }
+}

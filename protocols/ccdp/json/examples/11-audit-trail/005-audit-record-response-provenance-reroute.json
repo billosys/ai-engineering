@@ -1,0 +1,28 @@
+{
+  "audit_record": {
+    // ... standard fields ...
+    "message_summary": {
+      "type": "RESPONSE",
+      "request_id": "550e8400-...",
+      "source_id": "llm-translator-02"
+    },
+    "provenance_summary": {
+      "grade": "HEURISTIC",
+      "grade_meets_requirement": false
+    },
+    "provenance_policy": {
+      "policy_field": "provenance_mismatch_policy",
+      "selected_action": "reroute",
+      "trigger": "grade_below_requirement",
+      "expected_grade": "VALIDATED",
+      "actual_grade": "HEURISTIC",
+      "missing_methods": [],
+      "missing_artifact_types": [],
+      "non_conformant_service_id": "llm-translator-02"
+    },
+    "validation": {
+      "provenance_present": true,
+      "provenance_grade_valid": false
+    }
+  }
+}

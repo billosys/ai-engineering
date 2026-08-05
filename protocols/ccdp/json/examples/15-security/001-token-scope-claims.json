@@ -1,0 +1,7 @@
+{
+  "sub": "client-app-01",
+  "scope": ["org.ccdp.deduction", "org.ccdp.language.*"],
+  "max_priority": "HIGH",
+  "max_cost_usd": 10.00,
+  "exp": 1722700800
+}

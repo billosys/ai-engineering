@@ -1,0 +1,60 @@
+{
+  "audit_record": {
+    "record_id": "audit-550e8400-e29b-41d4-a716-446655440000",
+    "audit_schema_version": "1.0",
+    "timestamp": "2026-08-03T14:30:00.145Z",
+
+    "trace_context": {
+      "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "span_id": "00f067aa0ba902b7",
+      "parent_span_id": null
+    },
+
+    "message_summary": {
+      "type": "REQUEST",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "capability_type": "org.ccdp.deduction",
+      "source_id": "client-app-01",
+      "destination_id": "z3-prover-01",
+      "priority": "NORMAL"
+    },
+
+    "routing": {
+      "decision": "lowest_cost_healthy",
+      "candidates_considered": 3,
+      "candidates_filtered": {
+        "health": 0,
+        "deadline": 1,
+        "provenance": 0
+      },
+      "selected_service": "z3-prover-01",
+      "registry_source": "live",
+      "registry_query_ms": 12
+    },
+
+    "validation": {
+      "envelope_valid": true,
+      "content_schema_valid": true,
+      "schema_version": "v2",
+      "authentication_verified": true,
+      "authorization_verified": true
+    },
+
+    "timing": {
+      "received_at": "2026-08-03T14:30:00.123Z",
+      "validated_at": "2026-08-03T14:30:00.130Z",
+      "routed_at": "2026-08-03T14:30:00.145Z",
+      "dispatcher_overhead_ms": 22
+    },
+
+    "constraints": {
+      "deadline": "2026-08-03T14:31:00.000Z",
+      "remaining_budget_ms": 59877,
+      "cost_budget": { "max_monetary_cost": "0.50", "monetary_unit": "USD" },
+      "provenance_requirement": { "min_policy_grade": "VALIDATED" }
+    },
+
+    "dispatcher_id": "dispatcher-prod-01",
+    "ccdp_version": "1.0"
+  }
+}

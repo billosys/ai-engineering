@@ -1,0 +1,99 @@
+{
+  "content": {
+    "type": "structured-data",
+    "schema_ref": "org.ccdp.decomposition/output/v1",
+    "body": {
+      "plan_id": "plan-550e8400-e29b-41d4-a716-446655440000",
+      "description": "Decompose theorem-proving request into formalization and proof search",
+      "sub_requests": [
+        {
+          "sub_id": "sub-001",
+          "capability_type": "org.ccdp.language.translation",
+          "description": "Translate natural-language theorem statement into Lean 4 syntax",
+          "content": {
+            "type": "natural-language",
+            "body": {
+              "source_representation": "natural-language",
+              "target_representation": "lean4",
+              "text": "For all natural numbers n, if n > 1 then n has a prime factor"
+            }
+          },
+          "constraints": {
+            "deadline_fraction": 0.2,
+            "cost_fraction": 0.1,
+            "provenance_requirement": { "min_policy_grade": "VALIDATED" }
+          },
+          "depends_on": []
+        },
+        {
+          "sub_id": "sub-002",
+          "capability_type": "org.ccdp.deduction",
+          "description": "Search for proof of formalized theorem",
+          "content": {
+            "type": "formal-logic",
+            "body": {
+              "logic": "lean4",
+              "formula": {
+                "$ref": "sub-001.result",
+                "path": "/body/translation",
+                "fallback": null
+              }
+            }
+          },
+          "constraints": {
+            "deadline_fraction": 0.7,
+            "cost_fraction": 0.8,
+            "provenance_requirement": { "min_policy_grade": "FORMALLY_VERIFIED" }
+          },
+          "depends_on": ["sub-001"]
+        },
+        {
+          "sub_id": "sub-003",
+          "capability_type": "org.ccdp.language.translation",
+          "description": "Translate proof back to natural language explanation",
+          "content": {
+            "type": "formal-logic",
+            "body": {
+              "source_representation": "lean4-proof",
+              "target_representation": "natural-language",
+              "proof": {
+                "$ref": "sub-002.result",
+                "path": "/body/proof",
+                "fallback": null
+              }
+            }
+          },
+          "constraints": {
+            "deadline_fraction": 0.1,
+            "cost_fraction": 0.1,
+            "provenance_requirement": { "min_policy_grade": "ASSERTED" }
+          },
+          "depends_on": ["sub-002"]
+        }
+      ],
+      "dependencies": {
+        "sub-001": [],
+        "sub-002": ["sub-001"],
+        "sub-003": ["sub-002"]
+      },
+      "composition": {
+        "method": "template",
+        "template": {
+          "type": "multipart",
+          "body": {
+            "parts": [
+              { "label": "formalization", "source": "sub-001.result" },
+              { "label": "proof", "source": "sub-002.result" },
+              { "label": "explanation", "source": "sub-003.result" }
+            ]
+          }
+        },
+        "provenance_rule": "weakest_link"
+      },
+      "fallback": {
+        "on_sub_failure": "escalate_parent",
+        "on_composition_failure": "return_partial"
+      }
+    }
+  }
+}

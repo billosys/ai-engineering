@@ -1,0 +1,19 @@
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "ESCALATION",
+    "request_id": "550e8400-e29b-41d4-a716-446655440000",
+    "escalation": {
+      "reason": "PROVENANCE_BELOW_REQUIREMENT",
+      "escalation_origin": "service",
+      "detail": "LLM translation uncertainty too high for formal verification",
+      "achieved_grade": "HEURISTIC",
+      "requested_grade": "VALIDATED",
+      "suggested_target": "human-review-queue-01",
+      "partial_result_available": true
+    },
+    "provenance": {
+      // ... provenance of the partial result, if any ...
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "audit_record": {
+    // ... standard fields ...
+    "message_summary": {
+      "type": "ESCALATION",
+      "request_id": "550e8400-...",
+      "source_id": "llm-verifier-01",
+      "escalation_reason": "PROVENANCE_BELOW_REQUIREMENT",
+      "escalation_origin": "service",
+      "achieved_grade": "HEURISTIC",
+      "requested_grade": "VALIDATED"
+    },
+    "escalation_routing": {
+      "original_service": "llm-verifier-01",
+      "escalation_chain_position": 1,
+      "next_target": "z3-prover-01",
+      "chain_remaining": ["z3-prover-01", "human-review-math-01"],
+      "partial_result_forwarded": true
+    }
+  }
+}

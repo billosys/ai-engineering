@@ -1,0 +1,50 @@
+{
+  "audit_record": {
+    "record_id": "audit-resp-550e8400-...",
+    "audit_schema_version": "1.0",
+    "timestamp": "2026-08-03T14:30:04.850Z",
+
+    "trace_context": { /* ... */ },
+
+    "message_summary": {
+      "type": "RESPONSE",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "status": "SUCCESS",
+      "source_id": "z3-prover-01",
+      "destination_id": "client-app-01"
+    },
+
+    "provenance_summary": {
+      "grade": "FORMALLY_VERIFIED",
+      "evidence_count": 1,
+      "evidence_methods": ["formal_verification"],
+      "scope": "Formula satisfiability in QF_LIA",
+      "grade_meets_requirement": true,
+      "composition_method": null
+    },
+
+    "resource_consumption": {
+      "service_compute_seconds": 4.7,
+      "service_tokens_consumed": null,
+      "total_latency_ms": 4727,
+      "cost_budget_remaining": { "monetary_units": "0.499", "monetary_unit": "USD" }
+    },
+
+    "validation": {
+      "output_schema_valid": true,
+      "provenance_present": true,
+      "provenance_grade_valid": true
+    },
+
+    "timing": {
+      "service_invoked_at": "2026-08-03T14:30:00.145Z",
+      "response_received_at": "2026-08-03T14:30:04.840Z",
+      "response_forwarded_at": "2026-08-03T14:30:04.850Z",
+      "service_latency_ms": 4695,
+      "dispatcher_overhead_ms": 32
+    },
+
+    "dispatcher_id": "dispatcher-prod-01",
+    "ccdp_version": "1.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "computation": {
+    "tokens_consumed": 12500,
+    "compute_seconds": 4.7,
+    "monetary_cost": "0.003",
+    "monetary_unit": "USD",
+    "model_id": "claude-opus-4-20260801"
+  }
+}

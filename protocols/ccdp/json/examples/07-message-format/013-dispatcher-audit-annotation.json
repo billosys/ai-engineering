@@ -1,0 +1,20 @@
+{
+  "envelope": {
+    // ... existing fields ...
+    "audit": {
+      "dispatcher_id": "dispatcher-prod-01",
+      "received_at": "2026-08-03T14:30:00.123Z",
+      "routed_at": "2026-08-03T14:30:00.145Z",
+      "routing_decision": {
+        "selected_service": "z3-prover-01",
+        "reason": "lowest_cost_healthy",
+        "candidates_considered": 3,
+        "registry_query_ms": 12
+      },
+      "schema_validation": {
+        "input_valid": true,
+        "schema_version": "v2"
+      }
+    }
+  }
+}

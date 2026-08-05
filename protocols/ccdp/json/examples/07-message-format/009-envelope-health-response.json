@@ -1,0 +1,22 @@
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "HEALTH_RESPONSE",
+    "health": {
+      "status": "HEALTHY",
+      "capabilities": {
+        "org.ccdp.deduction": {
+          "available": true,
+          "current_load": 0.35,
+          "queue_depth": 2,
+          "estimated_latency_ms": 5000
+        }
+      },
+      "capacity": {
+        "max_concurrent_requests": 10,
+        "current_concurrent_requests": 3
+      },
+      "detail": null
+    }
+  }
+}

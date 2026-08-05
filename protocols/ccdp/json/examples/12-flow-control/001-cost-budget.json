@@ -1,0 +1,8 @@
+{
+  "cost_budget": {
+    "max_compute_seconds": 120,
+    "max_tokens": 50000,
+    "max_monetary_cost": "0.50",
+    "monetary_unit": "USD"
+  }
+}

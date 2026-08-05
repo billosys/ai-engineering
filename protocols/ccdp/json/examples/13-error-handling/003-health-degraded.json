@@ -1,0 +1,10 @@
+{
+  "health": {
+    "status": "DEGRADED",
+    "capabilities": {
+      "org.ccdp.deduction": { "available": true, "current_load": 0.95 },
+      "org.ccdp.verification": { "available": false }
+    },
+    "detail": "Verification subsystem undergoing maintenance"
+  }
+}

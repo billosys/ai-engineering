@@ -1,0 +1,22 @@
+{
+  "envelope": {
+    // ... common fields ...
+    "type": "REQUEST",
+    "capability_type": "org.ccdp.deduction",
+    "destination_id": null,
+    "parent_span_id": null,
+    "deadline": "2026-08-03T14:31:00.000Z",
+    "remaining_budget_ms": 60000,
+    "cost_budget": {
+      "max_compute_seconds": 120,
+      "max_tokens": 50000,
+      "max_monetary_cost": "0.50",
+      "monetary_unit": "USD"
+    },
+    "provenance_requirement": {
+      "min_policy_grade": "VALIDATED"
+    },
+    "priority": "NORMAL",
+    "idempotency_key": null
+  }
+}

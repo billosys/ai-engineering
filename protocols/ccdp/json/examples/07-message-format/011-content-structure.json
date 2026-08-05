@@ -1,0 +1,9 @@
+{
+  "content": {
+    "type": "natural-language",
+    "schema_ref": "org.ccdp.deduction/input/v2",
+    "body": {
+      // ... capability-specific payload ...
+    }
+  }
+}

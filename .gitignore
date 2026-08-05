@@ -1,6 +1,5 @@
 workbench
 old
-.claude
 /scripts/*.py
 .DS_Store
 .venv
@@ -20,3 +19,7 @@ old
 /knowledge/erlang/sources/md/learn-you-some-erlang
 /knowledge/erlang/sources/md/programming-erlang
 /knowledge/js/sources/md
+
+# LLMs
+.claude
+protocols/ccdp/prompts/

@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "org.ccdp.signature": {
+      "algorithm": "Ed25519",
+      "key_id": "svc-formal-01-signing-2026",
+      "profile": "service-response",
+      "signed_fields": ["envelope", "content"],
+      "value": "base64-encoded-signature...",
+      "timestamp": "2026-08-03T14:30:04.840Z"
+    }
+  }
+}

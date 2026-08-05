@@ -1,0 +1,40 @@
+{
+  "jsonrpc": "2.0",
+  "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+  "result": {
+    "envelope": {
+      "ccdp_version": "1.0",
+      "type": "HEALTH_RESPONSE",
+      "request_id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+      "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "span_id": "a1b2c3d4e5f60718",
+      "timestamp": "2026-08-03T14:30:00.050Z",
+      "source_id": "z3-prover-01",
+      "health": {
+        "status": "DEGRADED",
+        "capabilities": {
+          "org.ccdp.deduction": {
+            "available": true,
+            "current_load": 0.7,
+            "queue_depth": 2,
+            "estimated_latency_ms": 8000
+          },
+          "org.ccdp.verification": {
+            "available": false,
+            "current_load": 1.0,
+            "queue_depth": 5,
+            "estimated_latency_ms": 30000
+          }
+        },
+        "capacity": {
+          "max_concurrent_requests": 10,
+          "current_concurrent_requests": 7,
+          "queue_depth": 3,
+          "estimated_drain_time_ms": 15000
+        },
+        "detail": "Verification subsystem undergoing maintenance"
+      },
+      "metadata": {}
+    }
+  }
+}

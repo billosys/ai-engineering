@@ -1,0 +1,8 @@
+{
+  "jsonrpc": "2.0",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "result": {
+    "envelope": { /* ... Layer 2 and 3 fields ... */ },
+    "content": { /* ... Layer 4 payload ... */ }
+  }
+}

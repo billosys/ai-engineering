@@ -1,0 +1,19 @@
+{
+  "content": {
+    "type": "multipart",
+    "body": {
+      "parts": [
+        {
+          "type": "code",
+          "label": "implementation",
+          "body": { "language": "rust", "source": "fn verify(...) { ... }" }
+        },
+        {
+          "type": "proof-object",
+          "label": "correctness-proof",
+          "body": { "prover": "verus", "proof": "..." }
+        }
+      ]
+    }
+  }
+}

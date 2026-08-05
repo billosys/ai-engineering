@@ -1,0 +1,77 @@
+{
+  "audit_record": {
+    "record_id": "audit-esc-9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+    "audit_schema_version": "1.0",
+    "timestamp": "2026-08-03T14:30:35.100Z",
+
+    "trace_context": {
+      "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "span_id": "5b8aa5a2d2c21ea0",
+      "parent_span_id": "00f067aa0ba902b7"
+    },
+
+    "message_summary": {
+      "type": "ESCALATION",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "capability_type": "org.ccdp.language.translation",
+      "source_id": "dispatcher-prod-01",
+      "destination_id": "llm-verifier-01",
+      "priority": "NORMAL",
+      "escalation_reason": "PROVENANCE_BELOW_REQUIREMENT",
+      "escalation_origin": "dispatcher",
+      "achieved_grade": "HEURISTIC",
+      "requested_grade": "VALIDATED"
+    },
+
+    "routing": {
+      "decision": "escalate",
+      "candidates_considered": 3,
+      "candidates_filtered": {
+        "health": 0,
+        "deadline": 1,
+        "provenance": 0
+      },
+      "selected_service": "llm-verifier-01",
+      "registry_source": "live",
+      "registry_query_ms": 12
+    },
+
+    "provenance_summary": {
+      "grade": "HEURISTIC",
+      "evidence_count": 1,
+      "evidence_methods": ["statistical_testing"],
+      "scope": null,
+      "grade_meets_requirement": false,
+      "composition_method": null
+    },
+
+    "provenance_policy": {
+      "policy_field": "provenance_mismatch_policy",
+      "selected_action": "escalate",
+      "trigger": "grade_below_requirement",
+      "expected_grade": "VALIDATED",
+      "actual_grade": "HEURISTIC",
+      "missing_methods": [],
+      "missing_artifact_types": [],
+      "non_conformant_service_id": "llm-translator-02"
+    },
+
+    "escalation_routing": {
+      "original_service": "llm-translator-02",
+      "escalation_chain_position": 0,
+      "next_target": "llm-verifier-01",
+      "chain_remaining": ["llm-verifier-01", "human-review-translation-01"],
+      "partial_result_forwarded": true,
+      "chain_source": "responding_service"
+    },
+
+    "timing": {
+      "received_at": "2026-08-03T14:30:35.050Z",
+      "routed_at": "2026-08-03T14:30:35.100Z",
+      "dispatcher_overhead_ms": 50
+    },
+
+    "dispatcher_id": "dispatcher-prod-01",
+    "ccdp_version": "1.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "audit_record": {
+    // ... standard fields ...
+    "message_summary": {
+      "type": "REQUEST",
+      "request_id": "550e8400-...",
+      "capability_type": "org.ccdp.language.translation"
+    },
+    "routing": {
+      "decision": "error",
+      "candidates_considered": 3,
+      "selected_service": null
+    },
+    "provenance_policy": {
+      "policy_field": "provenance_unavailable_policy",
+      "selected_action": "error",
+      "trigger": "no_candidate_meets_requirement",
+      "expected_grade": "VALIDATED",
+      "actual_grade": null,
+      "missing_methods": ["formal_verification"],
+      "missing_artifact_types": [],
+      "non_conformant_service_id": null
+    }
+  }
+}

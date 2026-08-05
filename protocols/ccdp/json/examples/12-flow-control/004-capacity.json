@@ -1,0 +1,8 @@
+{
+  "capacity": {
+    "max_concurrent_requests": 10,
+    "current_concurrent_requests": 7,
+    "queue_depth": 3,
+    "estimated_drain_time_ms": 15000
+  }
+}

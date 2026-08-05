@@ -1,0 +1,21 @@
+{
+  "jsonrpc": "2.0",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "error": {
+    "code": -32010,
+    "message": "Schema validation failed",
+    "data": {
+      "validation_errors": [
+        {
+          "path": "$.content.body.formula",
+          "message": "required field missing",
+          "schema_ref": "org.ccdp.deduction/input/v2"
+        }
+      ],
+      "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "timestamp": "2026-08-03T14:30:00.145Z",
+      "dispatcher_id": "dispatcher-prod-01"
+    }
+  }
+}

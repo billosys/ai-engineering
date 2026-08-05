@@ -1,0 +1,98 @@
+{
+  "jsonrpc": "2.0",
+  "method": "ccdp/request",
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "params": {
+    "envelope": {
+      "ccdp_version": "1.0",
+      "type": "REQUEST",
+      "request_id": "550e8400-e29b-41d4-a716-446655440000",
+      "trace_id": "4bf92f3577b34da6a3ce929d0e0e4736",
+      "span_id": "00f067aa0ba902b7",
+      "parent_span_id": null,
+      "timestamp": "2026-08-03T14:30:00.000Z",
+      "source_id": "client-app-01",
+      "capability_type": "org.ccdp.deduction",
+      "destination_id": null,
+      "deadline": "2026-08-03T14:31:00.000Z",
+      "remaining_budget_ms": 60000,
+      "cost_budget": {
+        "max_compute_seconds": 120,
+        "max_tokens": 50000,
+        "max_monetary_cost": "0.50",
+        "monetary_unit": "USD"
+      },
+      "provenance_requirement": {
+        "min_policy_grade": "VALIDATED",
+        "required_methods": ["formal_verification"],
+        "required_evidence_types": ["proof_certificate"]
+      },
+      "priority": "NORMAL",
+      "idempotency_key": "client-app-01-theorem-batch-042",
+      "metadata": {
+        "com.example.custom_field": "value",
+        "org.ccdp.allow_schema_version_fallback": false,
+        "org.ccdp.signature": {
+          "algorithm": "Ed25519",
+          "key_id": "client-app-01-signing-2026",
+          "profile": "requester-outbound",
+          "signed_fields": ["envelope", "content"],
+          "value": "base64-encoded-signature...",
+          "timestamp": "2026-08-03T14:30:00.000Z"
+        },
+        "org.ccdp.escalation_history": [
+          {
+            "service_id": "llm-verifier-01",
+            "reason": "PROVENANCE_BELOW_REQUIREMENT",
+            "escalation_origin": "service",
+            "achieved_grade": "HEURISTIC",
+            "timestamp": "2026-08-03T14:30:05.000Z"
+          },
+          {
+            "dispatcher_id": "dispatcher-prod-01",
+            "responding_service_id": "llm-translator-02",
+            "reason": "PROVENANCE_BELOW_REQUIREMENT",
+            "escalation_origin": "dispatcher",
+            "achieved_grade": "HEURISTIC",
+            "detail": "Post-receipt provenance mismatch under provenance_mismatch_policy",
+            "timestamp": "2026-08-03T14:30:35.000Z"
+          }
+        ],
+        "org.ccdp.partial_results": [
+          {
+            "service_id": "llm-verifier-01",
+            "provenance": { "grade": "HEURISTIC" },
+            "content": {
+              "type": "natural-language",
+              "body": { "text": "Candidate proof sketch (unverified)." }
+            }
+          }
+        ]
+      },
+      "audit": {
+        "dispatcher_id": "dispatcher-prod-01",
+        "received_at": "2026-08-03T14:30:00.123Z",
+        "routed_at": "2026-08-03T14:30:00.145Z",
+        "routing_decision": {
+          "selected_service": "z3-prover-01",
+          "reason": "lowest_cost_healthy",
+          "candidates_considered": 3,
+          "registry_query_ms": 12
+        },
+        "schema_validation": {
+          "input_valid": true,
+          "schema_version": "v2"
+        }
+      }
+    },
+    "content": {
+      "type": "formal-logic",
+      "schema_ref": "org.ccdp.deduction/input/v2",
+      "body": {
+        "logic": "smt-lib2",
+        "formula": "(declare-const x Int) (assert (> x 1)) (check-sat)",
+        "timeout_ms": 30000
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "$ref": "sub-001.result",
+  "path": "/body/translation",
+  "fallback": null
+}
