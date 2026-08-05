@@ -4083,7 +4083,7 @@ specification. It is informative.
 <a id="section-21-1"></a>
 ## Version 0.2.0
 
-Version 0.2.0 is the second reviewed draft, incorporating the unreleased v0.2 review iterations listed in the README.
+Version 0.2.0 is the second reviewed draft, incorporating the peer-review changes described in the subsections below.
 The wire protocol version remains `"1.0"` during this draft cycle.
 
 <a id="section-21-1-1"></a>
