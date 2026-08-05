@@ -135,9 +135,10 @@ status: Draft Specification
   - [19.2. Informative References — Protocol Design Foundations](#section-19-2)
   - [19.3. Informative References — Theoretical Foundations](#section-19-3)
   - [19.4. Informative References — Additional Sources](#section-19-4)
-- [20. Version History](#section-20)
-  - [20.1. Version 0.2.0](#section-20-1)
-  - [20.2. Version 0.1.0](#section-20-2)
+- [20. Previous Versions](#section-20)
+- [21. Version History](#section-21)
+  - [21.1. Version 0.2.0](#section-21-1)
+  - [21.2. Version 0.1.0](#section-21-2)
 
 <a id="section-1"></a>
 ## Abstract
@@ -4067,32 +4068,39 @@ The references in this section are secondary or journalistic sources used for co
 <!-- Link verification pass completed 2026-08-04. All URLs in this section were checked for resolution. Four URLs (academic.oup.com, dl.acm.org, media.defense.gov, w3.org) returned HTTP 403 to automated requests, consistent with publisher/vendor bot-blocking rather than dead links; each is flagged inline above with a VERIFY comment for human confirmation in-browser. All other URLs, including all arXiv IDs, resolved successfully (HTTP 200). -->
 
 <a id="section-20"></a>
+# Previous Versions
+
+Previous releases of the Composite Cognition Dispatch Protocol:
+
+- [v0.1](https://github.com/billosys/ai-engineering/blob/ccdp-0.1/protocols/ccdp/composite-cognition-dispatch-protocol.md)
+
+<a id="section-21"></a>
 # Version History
 
 This section records notable changes between published draft versions of this
 specification. It is informative.
 
-<a id="section-20-1"></a>
+<a id="section-21-1"></a>
 ## Version 0.2.0
 
 Version 0.2.0 is the second reviewed draft, incorporating the unreleased v0.2 review iterations listed in the README.
 The wire protocol version remains `"1.0"` during this draft cycle.
 
-<a id="section-20-1-1"></a>
+<a id="section-21-1-1"></a>
 ### Document Status and Conventions
 
 Distinguished document version (`0.2.0`) from wire protocol version (`"1.0"`).
 Adopted W3C Trace Context formatting for `trace_id` and `span_id`. Clarified
 normative status of examples, tables, and diagrams.
 
-<a id="section-20-1-2"></a>
+<a id="section-21-1-2"></a>
 ### Terminology
 
 Defined normative Evidence entry schema with structured `artifact_ref` (object),
 `method` field, and `verified_by`. Clarified that Decomposition Plan result
 references (typed JSON Pointer `$ref`) are distinct from Artifact References.
 
-<a id="section-20-1-3"></a>
+<a id="section-21-1-3"></a>
 ### Dispatcher Model
 
 Replaced "dumb dispatcher" with the Coordinator Dispatcher model: a constrained
@@ -4100,7 +4108,7 @@ protocol enforcement and execution coordinator, not a cognitive reasoner.
 Distinguished Structural Validation from Semantic Interpretation (reserved for
 Services).
 
-<a id="section-20-1-4"></a>
+<a id="section-21-1-4"></a>
 ### Message Format
 
 Added a per-message required-field matrix; made DECOMPOSITION_RESULT
@@ -4111,14 +4119,14 @@ conditional `destination_id` signing: when non-null, included in
 requester-outbound signing scope and immutable. Changed oversized-message
 handling to HTTP 413.
 
-<a id="section-20-1-5"></a>
+<a id="section-21-1-5"></a>
 ### Capability Registry
 
 Split `supported_evidence_types` into `supported_evidence_methods` and
 `supported_artifact_types` under `provenance_capabilities`. Added typed
 Escalation Chain entries, the `cacheable` field, and schema-selection rules.
 
-<a id="section-20-1-6"></a>
+<a id="section-21-1-6"></a>
 ### Routing
 
 Replaced ambiguous routing outcomes with deployment-configured policies. Added
@@ -4126,7 +4134,7 @@ provenance-grade filtering, evidence-capability filtering, and post-receipt
 provenance validation with explicit failure behavior (reroute or
 `PROVENANCE_BELOW_REQUIREMENT` escalation). Added routing-audit requirements.
 
-<a id="section-20-1-7"></a>
+<a id="section-21-1-7"></a>
 ### Provenance and Evidence
 
 Made the grade ordering (0–7) explicitly numeric and a policy order, not a
@@ -4136,7 +4144,7 @@ evidence metadata mandatory. Added composed provenance rules for decomposition
 results. Changed escalation provenance SHOULD to MUST for composed/rerouted
 responses.
 
-<a id="section-20-1-8"></a>
+<a id="section-21-1-8"></a>
 ### Audit
 
 Introduced `audit_schema_version`. Split normative audit requirements into
@@ -4145,7 +4153,7 @@ record-level common fields (Table 11.1) and per-message-type fields (Table
 `buffer`; `degrade` non-conformant outside development). Added Full-conformance
 tamper-evidence requirements.
 
-<a id="section-20-1-9"></a>
+<a id="section-21-1-9"></a>
 ### Flow Control and Errors
 
 Renamed `CONFIDENCE_BELOW_THRESHOLD` to `PROVENANCE_BELOW_REQUIREMENT`,
@@ -4158,7 +4166,7 @@ deterministic routing for Dispatcher-generated provenance escalations:
 post-receipt mismatch walks the responding Service's escalation chain;
 no-candidate unavailability routes directly to `org.ccdp.human_review`.
 
-<a id="section-20-1-10"></a>
+<a id="section-21-1-10"></a>
 ### Decomposition
 
 Replaced string-template result references with typed JSON Pointer `$ref`
@@ -4168,7 +4176,7 @@ decomposition-bomb mitigations (depth, width, total-node limits). Standardized
 fallback matrix on `on_sub_failure`, `on_composition_failure`, and
 `$ref.fallback`. Required derived provenance evidence for composed responses.
 
-<a id="section-20-1-11"></a>
+<a id="section-21-1-11"></a>
 ### Security
 
 Defined JCS signing input with requester-outbound and service-response profiles.
@@ -4178,7 +4186,7 @@ Added conditional `destination_id` mutability: excluded from signing when null,
 signed and immutable when requester-specified. Added PKCE, JWT introspection,
 proof-of-possession, and shared HA replay-cache requirements.
 
-<a id="section-20-1-12"></a>
+<a id="section-21-1-12"></a>
 ### Conformance
 
 Reorganized Dispatcher conformance into stable requirement tables
@@ -4186,7 +4194,7 @@ Reorganized Dispatcher conformance into stable requirement tables
 stable-ID tables deferred (Section 18). Split Decomposition Plan validation
 (Core) from execution (Full).
 
-<a id="section-20-1-13"></a>
+<a id="section-21-1-13"></a>
 ### Security Considerations and Open Questions
 
 Distinguished structural Content operations from semantic interpretation.
@@ -4194,7 +4202,7 @@ Expanded mitigations for Registry poisoning, decomposition bombs, and timing
 side channels. Remapped security baseline to NSA/CISA AI deployment guidance.
 Added Section 18 documenting five deferred design questions.
 
-<a id="section-20-2"></a>
+<a id="section-21-2"></a>
 ## Version 0.1.0
 
 Version 0.1.0 was the initial reviewed draft. It introduced the core

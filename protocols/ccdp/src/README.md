@@ -19,7 +19,7 @@ Review artifacts are in the `workbench/` directory:
 - `review-v0.2l/` — twelfth unreleased-v0.2 review (5 files)
 - `review-v0.2m/` — thirteenth unreleased-v0.2 review (4 files, current)
 
-**Full spec:** See the source files in this directory (`01-abstract.md` through `20-version-history.md`) and the assembler tool in `../tools/`.
+**Full spec:** See the source files in this directory (`01-abstract.md` through `21-version-history.md`) and the assembler tool in `../tools/`.
 
 ## Table of Contents
 
