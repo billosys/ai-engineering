@@ -204,7 +204,7 @@ When `provenance_mismatch_policy` evaluates to `"reroute"`, the Dispatcher creat
 ```json
 {
   "audit_record": {
-    "// ... standard fields ...": "",
+    // ... standard fields ...
     "message_summary": {
       "type": "RESPONSE",
       "request_id": "550e8400-...",
@@ -237,11 +237,11 @@ When `provenance_unavailable_policy` evaluates to `"error"`, the Dispatcher reco
 ```json
 {
   "audit_record": {
-    "// ... standard fields ...": "",
+    // ... standard fields ...
     "message_summary": {
       "type": "REQUEST",
       "request_id": "550e8400-...",
-      "capability_type": "translation"
+      "capability_type": "org.ccdp.language.translation"
     },
     "routing": {
       "decision": "error",
