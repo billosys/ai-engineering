@@ -197,6 +197,71 @@ For Dispatcher-generated implicit Escalations, the audit record includes provena
 }
 ```
 
+### 11.2.3. Non-Escalation Provenance-Policy Audit Records
+
+When `provenance_mismatch_policy` evaluates to `"reroute"`, the Dispatcher creates a RESPONSE audit record for the received non-conforming Response. The record includes `provenance_policy.*` diagnostics explaining the policy decision:
+
+```json
+{
+  "audit_record": {
+    "// ... standard fields ...": "",
+    "message_summary": {
+      "type": "RESPONSE",
+      "request_id": "550e8400-...",
+      "source_id": "llm-translator-02"
+    },
+    "provenance_summary": {
+      "grade": "HEURISTIC",
+      "grade_meets_requirement": false
+    },
+    "provenance_policy": {
+      "policy_field": "provenance_mismatch_policy",
+      "selected_action": "reroute",
+      "trigger": "grade_below_requirement",
+      "expected_grade": "VALIDATED",
+      "actual_grade": "HEURISTIC",
+      "missing_methods": [],
+      "missing_artifact_types": [],
+      "non_conformant_service_id": "llm-translator-02"
+    },
+    "validation": {
+      "provenance_present": true,
+      "provenance_grade_valid": false
+    }
+  }
+}
+```
+
+When `provenance_unavailable_policy` evaluates to `"error"`, the Dispatcher records the policy decision on the REQUEST audit record for the request that could not be routed:
+
+```json
+{
+  "audit_record": {
+    "// ... standard fields ...": "",
+    "message_summary": {
+      "type": "REQUEST",
+      "request_id": "550e8400-...",
+      "capability_type": "translation"
+    },
+    "routing": {
+      "decision": "error",
+      "candidates_considered": 3,
+      "selected_service": null
+    },
+    "provenance_policy": {
+      "policy_field": "provenance_unavailable_policy",
+      "selected_action": "error",
+      "trigger": "no_candidate_meets_requirement",
+      "expected_grade": "VALIDATED",
+      "actual_grade": null,
+      "missing_methods": ["formal_verification"],
+      "missing_artifact_types": [],
+      "non_conformant_service_id": null
+    }
+  }
+}
+```
+
 ## 11.3. Trace Context Propagation
 
 CCDP uses W3C Trace Context [W3C-TC] for distributed tracing. The `trace_id` and `span_id` fields in the CCDP envelope map directly to the W3C `traceparent` header fields:
@@ -279,7 +344,17 @@ Not all audit fields are meaningful for every message type. The per-message-type
 
 Field names above are canonical JSON paths into the audit record structure shown in Section 11.2's examples (e.g., `trace_context.trace_id`, not a bare `trace_id`), so that a conformance test can locate each field unambiguously.
 
-The `provenance_policy.*` and `escalation_routing.chain_source` fields are marked RECOMMENDED (S) in Table 11.2 because they apply only when a provenance policy is evaluated, not to all ESCALATION records. Section 9.2 normatively requires `provenance_policy.*` diagnostics for every `provenance_mismatch_policy` and `provenance_unavailable_policy` decision, regardless of the selected action. A conforming Dispatcher MUST record the policy field, selected action, trigger, grade comparison, and — when applicable — missing methods, missing artifact types, and non-conformant Service identity. For `"escalate"` outcomes, these fields appear on the ESCALATION audit record. For `"reroute"` after a post-receipt mismatch, they appear on the routing-decision audit record for the non-conforming Response. For `"error"` after a no-candidate failure, they appear on the audit record for the error returned to the requester. `escalation_routing.chain_source` applies only to escalation outcomes and indicates whether the chain was sourced from the responding Service's capability record (`"responding_service"`) or routed directly to human review (`"human_review"`).
+The `provenance_policy.*` and `escalation_routing.chain_source` fields are marked RECOMMENDED (S) in Table 11.2 under the ESCALATION column because they are conditional — they apply only when a provenance policy is evaluated, not to all ESCALATION records. Section 9.2 normatively requires `provenance_policy.*` diagnostics for every `provenance_mismatch_policy` and `provenance_unavailable_policy` decision, regardless of the selected action. A conforming Dispatcher MUST record the policy field, selected action, trigger, grade comparison, and — when applicable — missing methods, missing artifact types, and non-conformant Service identity. The audit-record type on which these fields appear depends on the selected action (Table 11.3 below; worked examples in Section 11.2.3). `escalation_routing.chain_source` applies only to escalation outcomes and indicates whether the chain was sourced from the responding Service's capability record (`"responding_service"`) or routed directly to human review (`"human_review"`).
+
+**Table 11.3: Provenance-Policy Conditional Audit Placement**
+
+| Outcome | Triggering Policy | Audit Record Type | `provenance_policy.*` | `escalation_routing.chain_source` |
+|---|---|---|---|---|
+| `"escalate"` | Either | ESCALATION (Section 11.2.2) | REQUIRED | REQUIRED |
+| `"reroute"` | `provenance_mismatch_policy` | RESPONSE for the non-conforming Response (Section 11.2.3) | REQUIRED | — |
+| `"error"` | `provenance_unavailable_policy` | REQUEST for the failed request (Section 11.2.3) | REQUIRED | — |
+
+Table 11.2 marks `provenance_policy.*` as RECOMMENDED (S) under ESCALATION because that is the unconditional per-message-type default. Table 11.3 is the normative source for conditional placement on RESPONSE and REQUEST records when a non-escalation action is selected.
 
 ## 11.5. Audit Storage and Retention
 
