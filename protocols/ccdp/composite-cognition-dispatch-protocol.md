@@ -991,7 +991,7 @@ An Escalation is a structured response indicating that the originating actor —
 - **`reason`** (string, REQUIRED): One of the defined escalation reasons (Section 13.3).
 - **`escalation_origin`** (string, REQUIRED): Identifies who generated this Escalation. `"service"` when the Service returned an ESCALATION message; `"dispatcher"` when the Dispatcher generated an implicit Escalation from a routing-time or post-receipt provenance policy (Section 9.2). Services MUST set this to `"service"` in their ESCALATION messages. The Dispatcher MUST set this to `"dispatcher"` for implicit Escalations.
 - **`detail`** (string, OPTIONAL): Human-readable explanation.
-- **`achieved_grade`** (string, OPTIONAL): The Provenance Grade the Service could achieve, if it produced a partial result.
+- **`achieved_grade`** (string, OPTIONAL): The best Provenance Grade achieved or determined achievable, if any. For Service-originated Escalations, this is the grade the Service achieved or could achieve. For Dispatcher-generated post-receipt provenance Escalations, this is the actual grade of the non-conforming Response. It MAY be omitted for routing-time no-candidate Escalations where no Service produced a result.
 - **`requested_grade`** (string, OPTIONAL): The grade that was requested via `provenance_requirement.min_policy_grade`.
 - **`suggested_target`** (string, OPTIONAL): A Service ID or Capability Type the Dispatcher should try next.
 - **`partial_result_available`** (boolean, REQUIRED): Whether the Content of this message contains a partial result.
@@ -2648,6 +2648,14 @@ As a Request traverses the Escalation Chain, the Dispatcher accumulates escalati
         "escalation_origin": "service",
         "detail": "Formula exceeds solver timeout",
         "timestamp": "2026-08-03T14:30:35.000Z"
+      },
+      {
+        "dispatcher_id": "dispatcher-01",
+        "responding_service_id": "llm-translator-02",
+        "reason": "PROVENANCE_BELOW_REQUIREMENT",
+        "escalation_origin": "dispatcher",
+        "achieved_grade": "HEURISTIC",
+        "timestamp": "2026-08-03T14:31:05.000Z"
       }
     ],
     "org.ccdp.partial_results": [
@@ -2664,6 +2672,15 @@ As a Request traverses the Escalation Chain, the Dispatcher accumulates escalati
 This history enables downstream Services (and the Human Supervisor) to understand what has already been tried and what partial results are available.
 
 The `escalation_origin` field is REQUIRED in each escalation-history entry. Its value MUST match the `envelope.escalation.escalation_origin` from the Escalation message (Section 7.3.4): `"service"` when the Escalation originated from a Service's ESCALATION message, or `"dispatcher"` when the Dispatcher generated an implicit Escalation from a routing-time or post-receipt provenance policy (Section 9.2).
+
+Each entry MUST also identify the acting party:
+
+- When `escalation_origin` is `"service"`: `service_id` (string, REQUIRED) identifies the Service that returned the ESCALATION message.
+- When `escalation_origin` is `"dispatcher"`: `dispatcher_id` (string, REQUIRED) identifies the Dispatcher instance that generated the implicit Escalation. For post-receipt provenance mismatch Escalations (`provenance_mismatch_policy`, Section 9.2), `responding_service_id` (string, REQUIRED) identifies the Service whose Response triggered the mismatch. For routing-time no-candidate Escalations (`provenance_unavailable_policy`, Section 9.2), `responding_service_id` MUST be absent.
+
+All entries carry `reason` (string, REQUIRED) and `timestamp` (string, REQUIRED, ISO 8601). The `detail` and `achieved_grade` fields are OPTIONAL.
+
+Policy-specific diagnostics — expected vs. actual grade, missing evidence methods, missing artifact types, selected chain source — are recorded in the audit trail (Sections 9 and 11) and are not duplicated in escalation-history entries.
 
 <a id="section-13-5"></a>
 ## Service Error Handling

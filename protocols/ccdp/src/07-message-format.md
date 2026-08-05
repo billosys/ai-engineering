@@ -231,7 +231,7 @@ An Escalation is a structured response indicating that the originating actor —
 - **`reason`** (string, REQUIRED): One of the defined escalation reasons (Section 13.3).
 - **`escalation_origin`** (string, REQUIRED): Identifies who generated this Escalation. `"service"` when the Service returned an ESCALATION message; `"dispatcher"` when the Dispatcher generated an implicit Escalation from a routing-time or post-receipt provenance policy (Section 9.2). Services MUST set this to `"service"` in their ESCALATION messages. The Dispatcher MUST set this to `"dispatcher"` for implicit Escalations.
 - **`detail`** (string, OPTIONAL): Human-readable explanation.
-- **`achieved_grade`** (string, OPTIONAL): The Provenance Grade the Service could achieve, if it produced a partial result.
+- **`achieved_grade`** (string, OPTIONAL): The best Provenance Grade achieved or determined achievable, if any. For Service-originated Escalations, this is the grade the Service achieved or could achieve. For Dispatcher-generated post-receipt provenance Escalations, this is the actual grade of the non-conforming Response. It MAY be omitted for routing-time no-candidate Escalations where no Service produced a result.
 - **`requested_grade`** (string, OPTIONAL): The grade that was requested via `provenance_requirement.min_policy_grade`.
 - **`suggested_target`** (string, OPTIONAL): A Service ID or Capability Type the Dispatcher should try next.
 - **`partial_result_available`** (boolean, REQUIRED): Whether the Content of this message contains a partial result.
