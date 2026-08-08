@@ -310,6 +310,8 @@ within budget, before the deadline, with evidence strong enough to trust?"
 Read the merged specification:
 [Composite Cognition Dispatch Protocol](https://github.com/billosys/ai-engineering/blob/main/protocols/ccdp/composite-cognition-dispatch-protocol.md).
 
+We've also created a [visual guide](https://billo.systems/ai-engineering/protocols/ccdp/visual-guide/) for the protocol which provides an overview of its goals, what it does, and how it's useful. There's also a brief comparison to other protocols at the end.
+
 ## Contributing
 
 Contributions are welcome. For a new pattern in an existing skill: follow that
