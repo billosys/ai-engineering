@@ -14,7 +14,7 @@ Claude, Claude Code, Cowork, Codex, or anything that reads Markdown.
 It includes:
 
 - reference-grade language and tooling knowledge bases (Rust, Go,
-  Erlang/OTP, JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, and the
+  Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, and the
   Biome and Deno linters — see [the skill library](#the-skill-library) below
   for details)
 - the **collaboration framework** that governs how the work actually gets done
