@@ -194,7 +194,7 @@ Each is self-contained and can also be dropped directly into a project's
 
 ## The skill library
 
-Nine knowledge bases live under [`./knowledge/`](./knowledge), one directory
+Ten knowledge bases live under [`./knowledge/`](./knowledge), one directory
 per domain, each with its own `SKILL.md` entry point. They share one design:
 
 - **Modular** — load one domain without dragging in the others
@@ -208,6 +208,7 @@ per domain, each with its own `SKILL.md` entry point. They share one design:
 | [Rust](./knowledge/rust/README.md) | 661 graded patterns across 17 chapters, grounded in 21 upstream sources. The original skill. |
 | [JavaScript / Deno](./knowledge/js/) | 504 patterns across 14 chapters — plain JavaScript (no TypeScript), ESM-only, Deno-first: idioms, async, JSDoc type discipline, JSR publishing. |
 | [Go](./knowledge/go/) | 476 patterns across 12 chapters — Go 1.22+, reconciling the Uber and Google style guides with *Effective Go* and the spec. |
+| [C++](./knowledge/cpp/) | 495 C++ Core Guidelines rules split across 15 chapters, with upstream history preserved by subtree import. |
 | [Erlang / OTP](./knowledge/erlang/) | 281 patterns across 17 chapters — OTP behaviours, supervision, let-it-crash, production ops, testing, tooling. |
 | [Visual Design](./knowledge/design/) | A perceptual-science-grounded design system: OKLCH colour, modular type scale, spatial primitives, CUBE CSS. |
 | [Tailwind CSS v4](./knowledge/tailwindcss/) | CSS-native v4 configuration, with v3 → v4 breaking changes called out explicitly. |
@@ -241,13 +242,14 @@ after the skill's frontmatter `name:`, wraps its contents in a matching
 directory, and contains exactly the `SKILL.md` plus its guides — nothing else.
 
 ```sh
-make all               # every skill: all nine domains + the collaboration framework
-make skills            # just the nine per-domain zips
+make all               # every skill: all ten domains + the collaboration framework
+make skills            # just the ten per-domain zips
 make collab-framework  # just collaboration-framework.zip
 
 # ...or build one domain at a time:
 make rust              # -> rust-guidelines.zip
 make go                # -> go-guidelines.zip
+make cpp               # -> cpp-guidelines.zip
 make js                # -> javascript-deno-guidelines.zip
 make erlang            # -> erlang-guidelines.zip
 make cobalt            # -> cobalt-guidelines.zip

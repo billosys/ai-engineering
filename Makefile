@@ -17,20 +17,21 @@ INSTALL_DIR ?= $(HOME)/.agents/skills
 CHECK_SKILL := ./scripts/check-skill-description.sh
 INSTALL_ZIPS := \
 	collaboration-framework.zip \
-	rust-guidelines.zip go-guidelines.zip javascript-deno-guidelines.zip \
+	rust-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
 	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
 	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
 INSTALL_SKILLS := $(INSTALL_ZIPS:.zip=)
 
 .PHONY: all skills install uninstall clean help check-skills \
 	collab-framework collab-framework-clean \
-	rust go js erlang cobalt design tailwindcss deno biome
+	rust go cpp js erlang cobalt design tailwindcss deno biome
 
 # Every SKILL.md (and the two biome/deno variants) packaged by this Makefile.
 ALL_SKILL_FILES := \
 	SKILL.md \
 	knowledge/rust/SKILL.md \
 	knowledge/go/SKILL.md \
+	knowledge/cpp/SKILL.md \
 	knowledge/js/SKILL.md \
 	knowledge/erlang/SKILL.md \
 	knowledge/cobalt/SKILL.md \
@@ -46,6 +47,7 @@ help:
 	@echo "  make collab-framework   -> collaboration-framework.zip (SKILL.md + its 9 docs)"
 	@echo "  make rust               -> rust-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
+	@echo "  make cpp                -> cpp-guidelines.zip"
 	@echo "  make js                 -> javascript-deno-guidelines.zip"
 	@echo "  make erlang             -> erlang-guidelines.zip"
 	@echo "  make cobalt             -> cobalt-guidelines.zip"
@@ -150,6 +152,9 @@ rust:
 go:
 	$(call pack_skill,go,SKILL.md)
 
+cpp:
+	$(call pack_skill,cpp,SKILL.md)
+
 js:
 	$(call pack_skill,js,SKILL.md)
 
@@ -179,7 +184,7 @@ biome:
 # ---------------------------------------------------------------------------
 
 ## skills: build every per-domain zip
-skills: rust go js erlang cobalt design tailwindcss deno biome
+skills: rust go cpp js erlang cobalt design tailwindcss deno biome
 
 ## all: build every per-domain zip plus the collaboration-framework zip
 all: skills collab-framework
