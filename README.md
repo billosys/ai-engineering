@@ -8,8 +8,7 @@
 
 ## About
 
-A library of AI-optimized engineering skills for LLM coding assistants —
-Claude, Claude Code, Cowork, Codex, or anything that reads Markdown.
+A library of AI-optimized engineering and project management skills for LLM coding assistants — GPT, Codex, Claude*, or anything that can be cajoled into reading Markdown
 
 It includes:
 
