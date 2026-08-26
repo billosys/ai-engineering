@@ -177,11 +177,11 @@ correct in this language* layer. They compose; neither subsumes the other.
 ### Under the hood
 
 The skill is a single [`SKILL.md`](./SKILL.md) that carries the posture and
-disciplines inline and routes to nine source documents as the work demands:
+disciplines inline and routes to the source documents as the work demands:
 
 - [`AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) — character and posture: the peer frame, collaborative rights, structural pulls
 - [`AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) — craft and practice: the three pillars and the 9-point SDLC
-- [`PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) — scales of work, canonical planning layout, top-down planning and bottom-up close machinery
+- [`PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) — wayfinder for scales of work, canonical planning layout, top-down planning, and bottom-up close machinery, split under [`docs/pm/`](./docs/pm/)
 - [`LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) — the per-scale verification protocol (slice / arc / project)
 - [`CODE-AUDIT.md`](./docs/CODE-AUDIT.md) — the whole-repo, per-language audit prompt
 - [`CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) — the 95%+ test-coverage prompt

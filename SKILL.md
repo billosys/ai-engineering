@@ -11,13 +11,13 @@ description: |
   Use when: sustained, high-stakes sessions — deep study, research,
   expert systems design, or production programming; establishing the peer
   frame; planning or closing a project, arc, or slice (MUST read
-  PROJECT-MANAGEMENT.md before planning); running the 9-point SDLC or a
+  PROJECT-MANAGEMENT.md first); running the 9-point SDLC or a
   ledgered slice; commissioning a CAP-style audit; driving coverage to a
   hard threshold; deciding what to delegate to a subagent; drafting
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.3.0
+version: 1.3.1
 license: MIT
 metadata:
   hermes:
@@ -29,7 +29,7 @@ metadata:
 
 > The repo's working framework, harvested into one entry point. This skill
 > carries the posture inline so it has weight on its own, and routes to the
-> nine source documents with explicit "when to load" guidance. It is the
+> source documents with explicit "when to load" guidance. It is the
 > character-and-craft layer that sits *underneath* the domain skills — not a
 > replacement for them.
 
@@ -103,15 +103,15 @@ applies:
   (load the ledger discipline; the protocol now spans all three).
 - **Planning or closing a project, an arc, or a slice — or about to create
   any planning directory.** The moment planning begins, you **MUST read
-  [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) in full** before
-  laying anything out: it carries the scales of work, the canonical planning
-  worktree layout (`planning` branch/worktree, `projectNN-<slug>`,
-  `project-plan.md` / `arc-plan.md` / the five per-slice docs), the
-  confirmation protocol (confirm the layout with the operator rather than
-  invent one), and the top-down planning + bottom-up bubble-up/close machinery
-  (slice → arc → project). The summary in this skill is *not* a substitute for
-  reading it — improvising the mechanics from the summary is the documented
-  way these tasks go off the rails.
+  [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md)** before laying
+  anything out. It is now a wayfinder that points to the focused `docs/pm/`
+  files for the scales of work, canonical planning worktree layout (`planning`
+  branch/worktree, `projectNN-<slug>`, `project-plan.md` / `arc-plan.md` / the
+  five per-slice docs), confirmation protocol, top-down planning, bottom-up
+  bubble-up/close machinery (slice → arc → project), and plan-change
+  discipline. The summary in this skill is *not* a substitute for following
+  the wayfinder's required load set — improvising the mechanics from the
+  summary is the documented way these tasks go off the rails.
 - Commissioning an **independent, evidence-based audit** of a repo or a body
   of work (load the code-audit prompt).
 - Driving a codebase to a **hard test-coverage threshold** without stopping
@@ -255,10 +255,10 @@ child surfaced the change and why. Decomposition down, recomposition up — the
 loop is what keeps a plan from quietly drifting out of date.
 
 > **This is a summary. Before planning or closing anything, you MUST read
-> [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) in full** — it is
-> the home for the layout, the planning process, the bubble-up reports and
-> checks, the arc-close process, and the plan-change discipline. Do not
-> improvise the mechanics from this paragraph.
+> [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md)** — it is the
+> wayfinder for the layout, the planning process, the bubble-up reports and
+> checks, the arc-close process, and the plan-change discipline. Follow its
+> required load set; do not improvise the mechanics from this paragraph.
 
 ### Anti-degradation disciplines
 
@@ -319,7 +319,7 @@ work demands:
 |------|----------|-----------|
 | [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
 | [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
-| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. The framework's project-management home: the scales of work, the canonical planning worktree layout (`planning` branch/worktree, `projectNN-<slug>`, `project-plan.md` / `arc-plan.md` / the five per-slice docs), the **confirmation protocol** that stops sessions inventing their own folders, the **top-down planning** process, and the **bottom-up bubble-up/close machinery** (slice → arc → project) with the plan-change discipline. Read it in full; do not improvise the mechanics from the skill's summary. |
+| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `docs/pm/`: scales of work, canonical planning worktree layout, confirmation protocol, top-down planning, bottom-up bubble-up/close machinery, and plan-change discipline. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index. Diagnosis only; does not modify code. |
 | [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
@@ -364,6 +364,13 @@ subsumes the other.
 
 ## Version History
 
+### Version 1.3.1 — August 2026
+
+Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.3. The root
+project-management file is now a short wayfinder, and the detailed mechanics
+live in focused files under `docs/pm/`; the bundle includes those files so the
+wayfinder's links resolve inside the packaged skill.
+
 ### Version 1.3.0 — August 2026
 
 Routed project-planning guidance to `PROJECT-MANAGEMENT.md` v2.2's new default:
@@ -391,9 +398,10 @@ explicit load-when routing for sustained engineering sessions.
    [Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md) together** when the
    session is substantial — character and craft are inseparable.
 3. **Before planning or closing anything, read
-   [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) in full** — and
-   apply the confirmation protocol with the operator before creating
-   directories or filenames, once per project. This is the cheapest defence
+   [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md)** and follow its
+   required load set for the relevant `docs/pm/` files. Apply the confirmation
+   protocol with the operator before creating directories or filenames, once
+   per project. This is the cheapest defence
    against the two most common failure modes: sessions inventing parallel
    conventions, and sessions improvising the planning/closing mechanics from a
    summary instead of the spec.

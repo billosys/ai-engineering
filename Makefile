@@ -44,7 +44,7 @@ ALL_SKILL_FILES := \
 ## help: list the available targets
 help:
 	@echo "Packaging targets:"
-	@echo "  make collab-framework   -> collaboration-framework.zip (SKILL.md + its 9 docs)"
+	@echo "  make collab-framework   -> collaboration-framework.zip (SKILL.md + framework docs)"
 	@echo "  make rust               -> rust-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
 	@echo "  make cpp                -> cpp-guidelines.zip"
@@ -63,8 +63,8 @@ help:
 	@echo "  make clean              -> remove build/ and all *.zip"
 
 # ---------------------------------------------------------------------------
-# collaboration-framework: top-level SKILL.md plus exactly the nine documents it
-# pulls in, in their docs/ and templates/ layout so the relative links resolve.
+# collaboration-framework: top-level SKILL.md plus the documents it pulls in,
+# in their docs/ and templates/ layout so the relative links resolve.
 # Nothing else.
 # ---------------------------------------------------------------------------
 
@@ -72,13 +72,23 @@ CF_NAME  := collaboration-framework
 CF_ZIP   := $(CF_NAME).zip
 CF_STAGE := $(BUILD)/$(CF_NAME)
 
-# Explicit (not a docs/ glob) on purpose: the bundle is the skill and its six
+# Explicit (not a docs/ glob) on purpose: the bundle is the skill and its
 # dependencies, and nothing else.
 CF_FILES := \
 	SKILL.md \
 	docs/AI-CONSTITUTION-SUPPLEMENT.md \
 	docs/AI-ENGINEERING-METHODOLOGY.md \
 	docs/PROJECT-MANAGEMENT.md \
+	docs/pm/01-scales-of-work.md \
+	docs/pm/02-canonical-planning-worktree.md \
+	docs/pm/03-planning-top-down.md \
+	docs/pm/04-closing-slices.md \
+	docs/pm/05-closing-arcs.md \
+	docs/pm/06-confirmation-protocol.md \
+	docs/pm/07-anti-patterns.md \
+	docs/pm/08-maintenance.md \
+	docs/pm/09-worked-example-odm.md \
+	docs/pm/version-history.md \
 	docs/CODE-AUDIT.md \
 	docs/CLAUDE-CODE-COVERAGE.md \
 	docs/SUBAGENT-DELEGATION-POLICY.md \

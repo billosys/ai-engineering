@@ -167,7 +167,7 @@ Two more words name things _inside_ a slice, not scales of their own. A **step**
 
 The slice rests on a bottleneck worth naming, because it is where this practice and human-centred Agile diverge most sharply. Agile's atom — the story as a branch or PR — is sized to **human review attention** (the "~500-line PR" heuristic is a proxy for what one reviewer can hold). The slice is sized to a different bottleneck: the **model's context window, minus the headroom to recover from its own mistakes**. Two consequences follow: a slice can be _larger in raw diff_ than an Agile PR and still be correctly sized, since the limit is coherence-in-context rather than lines-a-human-will-read; and the five-iteration budget _lives inside_ the context budget — so size to the comfortable two-thirds, not the ceiling.
 
-> **The operational detail now lives in [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md)** — the framework's project-management home. It carries the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical planning worktree** (an orphan `planning` branch/worktree, `projectNN-<slug>` directories, `project-plan.md`, `arc-plan.md`, and the five per-slice documents), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that document first** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
+> **The operational detail now lives behind the [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) wayfinder** — the framework's project-management entry point. It points to focused files under [`./pm/`](./pm/) for the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical planning worktree** (an orphan `planning` branch/worktree, `projectNN-<slug>` directories, `project-plan.md`, `arc-plan.md`, and the five per-slice documents), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that wayfinder first and follow its required load set** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
 
 ### The 9-point SDLC
 
@@ -341,6 +341,15 @@ Portable versions of the methodology for other human collaborators without the C
 
 ## Version History
 
+### Version 1.7 — August 2026
+
+Updated the project-management pointer for
+[`PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) v2.3. The root
+project-management file is now a wayfinder, with the detailed mechanics split
+into focused files under [`./pm/`](./pm/). The methodology continues to carry
+only the abstract summary; planning and closing sessions must start from the
+wayfinder and follow its required load set.
+
 ### Version 1.6 — August 2026
 
 Updated the project-management summary to reflect
@@ -429,4 +438,4 @@ Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ---
 
-_The methodology is a living document. This version: 1.6, 2026-08-26._
+_The methodology is a living document. This version: 1.7, 2026-08-26._
