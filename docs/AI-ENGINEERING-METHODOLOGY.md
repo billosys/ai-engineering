@@ -348,7 +348,8 @@ Updated the project-management summary to reflect
 artifacts now default to an orphan `planning` branch mounted as a Git worktree,
 with projects named `projectNN-<slug>` and ordering/relationship semantics
 carried by project metadata (`depends-on`, `blocks`, `related`) rather than by
-version-looking directory names.
+version-looking directory names. Also aligned the slice plan artifact name with
+the project and arc pattern: `slice-plan.md`, not `slice-doc.md`.
 
 This rev intentionally removes the old `docs/design-vX.Y.Z` wording from the
 normative methodology summary. Historical references below remain historical

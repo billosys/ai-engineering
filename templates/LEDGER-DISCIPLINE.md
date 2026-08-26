@@ -134,7 +134,7 @@ workspace" is *reconciled*.)
 | **Evidence kind** | grep / unit test, *reproduced* | integration demo *reproduced*; children-closed *attested* (pointer to closed child ledger) | system/acceptance demo *reproduced*; children-closed *attested* via arc ledgers |
 | **Doer / verifier** | CC implements / CDC verifies | CDC assembles / fresh context or operator gates | planner assembles / operator + fresh context gates |
 | **Iteration** | five-iteration fix loop on the diff | failed composition → **remediation slice** (not a re-pass) | failed DoD → **remediation arc** (or roadmap re-scope) |
-| **Cadence** | opens at slice-doc, closes at slice close | opens at arc-plan, closes in arc closing-report | opens at project-plan, closes in project closing-report |
+| **Cadence** | opens at slice-plan, closes at slice close | opens at arc-plan, closes in arc closing-report | opens at project-plan, closes in project closing-report |
 
 Three classes of row recur at every interior scale: **(a) children closed**,
 **(b) children compose**, **(c) bubble-up findings dispositioned**. The
@@ -154,7 +154,7 @@ acceptance criteria (the slice's *steps*), and Verify is a grep or a test.
 
 ### What the rows assert
 
-The slice-doc's exit criteria, decomposed into single observable claims. Each
+The slice-plan's exit criteria, decomposed into single observable claims. Each
 row is something a command can check: a function behaves, a test passes, an
 invariant holds, an error path returns the right error.
 
@@ -523,7 +523,8 @@ Updated the slice-ledger path example to match
 [`../docs/PROJECT-MANAGEMENT.md`](../docs/PROJECT-MANAGEMENT.md) v2.2: planning
 artifacts now default to the orphan `planning` branch/worktree under
 `projectNN-<slug>`, not an implementation-branch `docs/design-vX.Y.Z` tree.
-The ledger protocol itself is unchanged.
+Also renamed the referenced slice plan-of-record from `slice-doc.md` to
+`slice-plan.md`. The ledger protocol itself is unchanged.
 
 ### Version 2.0 — June 2026
 

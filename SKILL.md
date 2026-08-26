@@ -244,7 +244,7 @@ altitude further downstream where they cost more.
 
 Planning runs **top-down** and produces one plan-of-record per scale —
 `project-plan.md` (the arc roadmap), `arc-plan.md` (the slice breakdown), and
-the per-slice open set (`slice-doc.md` / `ledger.md` / `cc-prompt.md`).
+the per-slice open set (`slice-plan.md` / `ledger.md` / `cc-prompt.md`).
 Closing runs **bottom-up**: each slice closes with a per-row walk *and* a
 **bubble-up to its arc** (did it deliver its assigned piece; what did it
 reveal the arc-plan didn't anticipate; the silent-drop diff), and each arc
@@ -371,7 +371,9 @@ an orphan `planning` branch mounted as a Git worktree, with projects named
 `projectNN-<slug>`. Updated the skill metadata and routing text so future
 sessions see the planning-worktree requirement before creating directories, and
 generalized local-instruction references to `CLAUDE.md`, `AGENTS.md`, or
-equivalent standing instructions.
+equivalent standing instructions. Also renamed the per-slice plan-of-record
+from `slice-doc.md` to `slice-plan.md` so project, arc, and slice plans share
+the same filename pattern.
 
 ### Version 1.2.0 — June 2026
 

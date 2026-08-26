@@ -53,7 +53,7 @@ For Codex, read every "Claude session" below as any fresh Codex Desktop,
 Codex CLI, or other LLM session entering the project without the full prior
 context. **CC** is Codex CLI in the IC implementation role; **CDC** is Codex
 Desktop in the planning/review/QA role. Keep the canonical filenames
-(`project-plan.md`, `arc-plan.md`, `slice-doc.md`, `ledger.md`,
+(`project-plan.md`, `arc-plan.md`, `slice-plan.md`, `ledger.md`,
 `cc-prompt.md`, `closing-report.md`, `cdc-verification.md`) unless the
 operator explicitly changes the project convention — renaming them inside one
 project recreates the parallel-convention drift this document exists to
@@ -230,7 +230,7 @@ $PROJECT_DIR/.worktrees/planning/
       arc-plan.md               ← the arc's plan-of-record (the slice breakdown)
       closing-report.md         ← arc-level close + bubble-up, written at arc close
       sliceNN-<slug>/
-        slice-doc.md            ← plan-of-record for this slice
+        slice-plan.md           ← plan-of-record for this slice
         ledger.md               ← grep-verifiable acceptance criteria (the steps)
         cc-prompt.md            ← the assignment the executing context receives
         closing-report.md       ← per-row walk + bubble-up, written at slice close
@@ -238,7 +238,7 @@ $PROJECT_DIR/.worktrees/planning/
 ```
 
 Three tiers of plan-of-record, one per scale: **`project-plan.md`** for the
-project, **`arc-plan.md`** for each arc, and **`slice-doc.md`** for each
+project, **`arc-plan.md`** for each arc, and **`slice-plan.md`** for each
 slice. Two tiers of closing-report: one per **slice** (the per-row walk) and
 one per **arc** (the composition check). The per-slice `cdc-verification.md`
 is the independent re-run that gates a slice closed. Their full roles are
@@ -302,7 +302,7 @@ slice finishes):
 
 | Document | Set | Role |
 |----------|-----|------|
-| `slice-doc.md` | open | Plan-of-record: goal, scope (in/out), verification approach, exit criteria. |
+| `slice-plan.md` | open | Plan-of-record: goal, scope (in/out), verification approach, exit criteria. |
 | `ledger.md` | open | The acceptance criteria as grep-verifiable rows — the steps. Format and discipline in [`LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md). |
 | `cc-prompt.md` | open | The assignment the implementing context (CC) receives. |
 | `closing-report.md` | close | The per-row walk written at slice close, plus the **bubble-up to the arc** (Part IV). |
@@ -383,8 +383,8 @@ arc-and-slice breakdown). `arc-plan.md` carries, at minimum:
 
 ### The per-slice open set
 
-When a slice becomes the next work, write its open set — `slice-doc.md`,
-`ledger.md`, `cc-prompt.md` — fully, before CC starts. The `slice-doc.md`
+When a slice becomes the next work, write its open set — `slice-plan.md`,
+`ledger.md`, `cc-prompt.md` — fully, before CC starts. The `slice-plan.md`
 states the goal, the in/out scope, the verification approach, and the exit
 criteria; the `ledger.md` turns the exit criteria into grep-verifiable rows;
 the `cc-prompt.md` is the assignment CC receives. The ledger is the contract:
@@ -602,7 +602,7 @@ adjust, or override:
 >     arc01-<slug>/
 >       arc-plan.md
 >       slice01-<slug>/
->         slice-doc.md
+>         slice-plan.md
 >         ledger.md
 >         cc-prompt.md
 >         closing-report.md
@@ -784,7 +784,8 @@ arcs and slices: `projectNN-<slug>`. Added the planning worktree discovery and
 creation rules, the `projectNN-<slug>` naming rule, project metadata fields for
 `depends-on` / `blocks` / `related`, and confirmation-protocol language that
 records the chosen planning branch, worktree, and project directory in local
-instructions.
+instructions. Also renamed the slice plan-of-record from `slice-doc.md` to
+`slice-plan.md`, matching `project-plan.md` and `arc-plan.md`.
 
 This rev was catalysed by the `dns` / `vault` split planning work: the old
 `docs/design-v0.1.0` default repeatedly caused humans and LLMs to confuse
