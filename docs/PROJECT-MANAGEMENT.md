@@ -48,7 +48,7 @@ order.
 | Confirm a layout before creating planning directories or filenames | [`pm/06-confirmation-protocol.md`](./pm/06-confirmation-protocol.md) |
 | Detect or refuse recurring bad planning shapes | [`pm/07-anti-patterns.md`](./pm/07-anti-patterns.md) |
 | Update this project-management spec | [`pm/08-maintenance.md`](./pm/08-maintenance.md) and [`pm/version-history.md`](./pm/version-history.md) |
-| Ground the abstractions in a real run | [`pm/09-worked-example-odm.md`](./pm/09-worked-example-odm.md) |
+| Ground the project-management flow in a real run | [`pm/09-worked-example-odm.md`](./pm/09-worked-example-odm.md) |
 
 ## Split Files
 
@@ -72,8 +72,8 @@ The old monolith split along its original part boundaries:
    habits to refuse or surface before adopting.
 8. [`pm/08-maintenance.md`](./pm/08-maintenance.md) -- when to update the spec
    itself.
-9. [`pm/09-worked-example-odm.md`](./pm/09-worked-example-odm.md) -- the `odm`
-   rebuild as a concrete example.
+9. [`pm/09-worked-example-odm.md`](./pm/09-worked-example-odm.md) -- a concrete
+   example of the project-management flow.
 10. [`pm/version-history.md`](./pm/version-history.md) -- version history for
     the project-management guide.
 

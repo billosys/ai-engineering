@@ -9,6 +9,9 @@ shortcuts for common operations. This keeps `PROJECT-MANAGEMENT.md` as the
 entry point while reducing the context load for LLM sessions that only need one
 piece of the project-management discipline.
 
+- Refreshed the worked example after the v2.3 split so it teaches the general
+  project-management flow rather than documenting the `odm` tool itself.
+
 ### Version 2.2 — August 2026
 
 Changed the default project-planning substrate from an implementation-branch
