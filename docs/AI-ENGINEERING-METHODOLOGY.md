@@ -167,7 +167,7 @@ Two more words name things _inside_ a slice, not scales of their own. A **step**
 
 The slice rests on a bottleneck worth naming, because it is where this practice and human-centred Agile diverge most sharply. Agile's atom — the story as a branch or PR — is sized to **human review attention** (the "~500-line PR" heuristic is a proxy for what one reviewer can hold). The slice is sized to a different bottleneck: the **model's context window, minus the headroom to recover from its own mistakes**. Two consequences follow: a slice can be _larger in raw diff_ than an Agile PR and still be correctly sized, since the limit is coherence-in-context rather than lines-a-human-will-read; and the five-iteration budget _lives inside_ the context budget — so size to the comfortable two-thirds, not the ceiling.
 
-> **The operational detail now lives in [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md)** — the framework's project-management home. It carries the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical on-disk layout** (the `docs/design-vX.Y.Z/` tree, `project-plan.md`, `arc-plan.md`, and the five per-slice documents), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that document first** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
+> **The operational detail now lives in [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md)** — the framework's project-management home. It carries the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical planning worktree** (an orphan `planning` branch/worktree, `projectNN-<slug>` directories, `project-plan.md`, `arc-plan.md`, and the five per-slice documents), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that document first** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
 
 ### The 9-point SDLC
 
@@ -341,6 +341,19 @@ Portable versions of the methodology for other human collaborators without the C
 
 ## Version History
 
+### Version 1.6 — August 2026
+
+Updated the project-management summary to reflect
+[`PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) v2.2: framework planning
+artifacts now default to an orphan `planning` branch mounted as a Git worktree,
+with projects named `projectNN-<slug>` and ordering/relationship semantics
+carried by project metadata (`depends-on`, `blocks`, `related`) rather than by
+version-looking directory names.
+
+This rev intentionally removes the old `docs/design-vX.Y.Z` wording from the
+normative methodology summary. Historical references below remain historical
+only; the active mechanics live in `PROJECT-MANAGEMENT.md`.
+
 ### Version 1.5 — June 2026
 
 Extracted the **detailed project-management content** from Part III into a new
@@ -387,7 +400,7 @@ constitutional authority.
 
 ### Version 1.3 — June 2026
 
-Added an operational companion to *A default layout* — `ASSET-ORGANISATION.md` (renamed to [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) in v1.5) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept (and still keeps) the abstract structure: project / arc / slice / step / iteration, and the five per-slice documents under `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/`. The new doc carries that structure verbatim and adds the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
+Added an operational companion to *A default layout* — `ASSET-ORGANISATION.md` (renamed to [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) in v1.5) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept the abstract structure: project / arc / slice / step / iteration, and at that time placed the five per-slice documents under the then-current `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/` default, superseded in v1.6 by the planning-worktree / `projectNN-<slug>` default. The new doc carried that structure verbatim and added the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
 
 The companion contribution-style stack also lands in this rev: [`./CONTRIBUTION-STYLE.md`](./CONTRIBUTION-STYLE.md) (the voice and disciplines for upstream tickets — friendly, specific, calibrated, respectful of maintainer ownership) and [`../templates/CONTRIBUTION-TICKET.md`](../templates/CONTRIBUTION-TICKET.md) (the on-disk template for the four ticket shapes: confirmed bug, additive feature, doc fix, unconfirmed question). Both are bundled into the `collaboration-framework` skill alongside the existing six.
 
@@ -395,7 +408,7 @@ The rev was catalysed by a recurring failure mode observed across projects: fres
 
 ### Version 1.2 — June 2026
 
-Re-anchored the **slice** on the constraint it actually rests on. v1.1 sized the slice "roughly 500 lines of diff … reviewed in a single pass," which conflated our execution unit with Agile's human-review heuristic. v1.2 separates them: the slice is sized to be _held in one model context with headroom for the fix-iteration loop_, and the ~500-line figure is demoted to a translation courtesy. Three subsections were added to Part III — **The fundamental unit, and what it rests on** (the human-cognition-vs-model-context contrast and its two consequences: slices can exceed PR size, and the iteration budget lives _inside_ the context budget), **Sizing is a judgment call** (the arc↔slice back-of-napkin estimation, the screenwriting _Act → Sequence → Scene → Beat_ mnemonic for the nesting, and a named-but-unadopted _Saga_ tier above Project), and **A default layout** (the recommended `arcNN-/sliceNN-/` tree, its five-document per-slice artifact set, and the arc-is-a-single-slice collapse case).
+Re-anchored the **slice** on the constraint it actually rests on. v1.1 sized the slice "roughly 500 lines of diff … reviewed in a single pass," which conflated our execution unit with Agile's human-review heuristic. v1.2 separates them: the slice is sized to be _held in one model context with headroom for the fix-iteration loop_, and the ~500-line figure is demoted to a translation courtesy. Three subsections were added to Part III — **The fundamental unit, and what it rests on** (the human-cognition-vs-model-context contrast and its two consequences: slices can exceed PR size, and the iteration budget lives _inside_ the context budget), **Sizing is a judgment call** (the arc↔slice back-of-napkin estimation, the screenwriting _Act → Sequence → Scene → Beat_ mnemonic for the nesting, and a named-but-unadopted _Saga_ tier above Project), and **A default layout** (then the recommended `arcNN-/sliceNN-/` tree, its five-document per-slice artifact set, and the arc-is-a-single-slice collapse case; superseded in v1.6 by the planning-worktree default).
 
 The canonical vocabulary — project, arc, slice, step, iteration — is unchanged; this rev sharpens _what sizes a slice_ and _where the artifacts live_, and corrects a residual human-attention framing v1.1 had not fully shed. The companion `milestone` → `slice` reconciliation in `LEDGER-DISCIPLINE.md` (terminology throughout, plus the ledger-path convention) was applied in the same rev, closing the follow-up v1.1 had left open.
 
@@ -415,4 +428,4 @@ Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ---
 
-_The methodology is a living document. This version: 1.5, 2026-06-26._
+_The methodology is a living document. This version: 1.6, 2026-08-26._

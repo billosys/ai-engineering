@@ -266,9 +266,10 @@ Closed at commit <SHA> on <date>. Verified by: <name/session>.
 Rows: <N>. Done: <n>. Deferred: <n>. No-op: <n>.
 ```
 
-The ledger lives as `ledger.md` in the slice directory, per the canonical layout
-in [`../docs/PROJECT-MANAGEMENT.md`](../docs/PROJECT-MANAGEMENT.md) — e.g.
-`docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/ledger.md`.
+The ledger lives as `ledger.md` in the slice directory, per the canonical
+planning worktree in
+[`../docs/PROJECT-MANAGEMENT.md`](../docs/PROJECT-MANAGEMENT.md) — e.g.
+`$PROJECT_DIR/.worktrees/planning/projectNN-<slug>/arcNN-<slug>/sliceNN-<slug>/ledger.md`.
 
 ---
 
@@ -516,6 +517,14 @@ invention:
 
 ## Version History
 
+### Version 2.1 — August 2026
+
+Updated the slice-ledger path example to match
+[`../docs/PROJECT-MANAGEMENT.md`](../docs/PROJECT-MANAGEMENT.md) v2.2: planning
+artifacts now default to the orphan `planning` branch/worktree under
+`projectNN-<slug>`, not an implementation-branch `docs/design-vX.Y.Z` tree.
+The ledger protocol itself is unchanged.
+
 ### Version 2.0 — June 2026
 
 Extended the discipline from **slice-only** to **all three scales**
@@ -548,4 +557,4 @@ to the methodology (the level-1 ledger-bearing unit is **slice**, not
 
 ---
 
-_This document is a living spec. This version: 2.0, 2026-06-26._
+_This document is a living spec. This version: 2.1, 2026-08-26._

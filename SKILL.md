@@ -17,7 +17,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.2.0
+version: 1.3.0
 license: MIT
 metadata:
   hermes:
@@ -104,8 +104,9 @@ applies:
 - **Planning or closing a project, an arc, or a slice — or about to create
   any planning directory.** The moment planning begins, you **MUST read
   [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) in full** before
-  laying anything out: it carries the scales of work, the canonical layout
-  (`project-plan.md` / `arc-plan.md` / the five per-slice docs), the
+  laying anything out: it carries the scales of work, the canonical planning
+  worktree layout (`planning` branch/worktree, `projectNN-<slug>`,
+  `project-plan.md` / `arc-plan.md` / the five per-slice docs), the
   confirmation protocol (confirm the layout with the operator rather than
   invent one), and the top-down planning + bottom-up bubble-up/close machinery
   (slice → arc → project). The summary in this skill is *not* a substitute for
@@ -318,19 +319,20 @@ work demands:
 |------|----------|-----------|
 | [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
 | [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
-| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. The framework's project-management home: the scales of work, the canonical layout (`project-plan.md` / `arc-plan.md` / the five per-slice docs), the **confirmation protocol** that stops sessions inventing their own folders, the **top-down planning** process, and the **bottom-up bubble-up/close machinery** (slice → arc → project) with the plan-change discipline. Read it in full; do not improvise the mechanics from the skill's summary. |
+| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. The framework's project-management home: the scales of work, the canonical planning worktree layout (`planning` branch/worktree, `projectNN-<slug>`, `project-plan.md` / `arc-plan.md` / the five per-slice docs), the **confirmation protocol** that stops sessions inventing their own folders, the **top-down planning** process, and the **bottom-up bubble-up/close machinery** (slice → arc → project) with the plan-change discipline. Read it in full; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index. Diagnosis only; does not modify code. |
 | [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
-| [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md` / preferences block so it holds across sessions. |
+| [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md`, `AGENTS.md`, or preferences block so it holds across sessions. |
 | [`docs/CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
 | [`templates/CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
 
 The Supplement and Methodology are versioned, living documents. The five
 working-practice / discipline documents and the two templates are designed to
-be self-contained — drop them into a project's `CLAUDE.md` under a named
-section, into `~/.claude/CLAUDE.md` as a personal default, or into the
-equivalent standing-instructions channel for the Codex surface in use.
+be self-contained — drop them into a project's `CLAUDE.md`, `AGENTS.md`, or
+equivalent local instruction file under a named section; into
+`~/.claude/CLAUDE.md` as a personal default; or into the equivalent
+standing-instructions channel for the Codex surface in use.
 
 ---
 
@@ -357,6 +359,25 @@ framework is the character-and-craft layer; the domain skills are the
 domain-knowledge layer. Load this skill for *how we work*; load a `knowledge/`
 skill for *what's correct in this language or domain*. They compose; neither
 subsumes the other.
+
+---
+
+## Version History
+
+### Version 1.3.0 — August 2026
+
+Routed project-planning guidance to `PROJECT-MANAGEMENT.md` v2.2's new default:
+an orphan `planning` branch mounted as a Git worktree, with projects named
+`projectNN-<slug>`. Updated the skill metadata and routing text so future
+sessions see the planning-worktree requirement before creating directories, and
+generalized local-instruction references to `CLAUDE.md`, `AGENTS.md`, or
+equivalent standing instructions.
+
+### Version 1.2.0 — June 2026
+
+Bundled the project-management, ledger, audit, coverage, delegation, and
+contribution-style documents into one collaboration-framework entry point, with
+explicit load-when routing for sustained engineering sessions.
 
 ---
 

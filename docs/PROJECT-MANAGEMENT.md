@@ -184,26 +184,57 @@ operational weight here.)
 
 ---
 
-## Part II — The canonical layout
+## Part II — The canonical planning worktree
 
-In the absence of a project's own stated convention, lay the work out so the
-structure is legible from the filesystem alone. This is the canonical layout.
+In the absence of a project's own stated convention, planning artifacts live on
+a dedicated Git worktree, not on the implementation branch and not under the
+implementation branch's `docs/` tree. This is the canonical planning worktree.
 It is the single source of truth for where planning artifacts live; the
 [methodology](./AI-ENGINEERING-METHODOLOGY.md) used to carry an abridged copy
 and now points here.
 
+The default planning substrate is:
+
+1. **Find the repository's worktree convention.** Inspect the repository before
+   creating anything. If it already has a worktree directory convention, reuse
+   it. Prefer an existing in-repo `.worktrees/` directory when present; otherwise
+   use the convention already visible from `git worktree list`.
+2. **If no convention exists, use `$PROJECT_DIR/.worktrees`.** This keeps the
+   planning tree close to the repository while leaving it off the implementation
+   branch.
+3. **Use a `planning` branch and worktree by default.** If a suitable planning
+   branch/worktree already exists, use it. If not, create a `planning` branch
+   and a worktree directory of the same name under the worktree root.
+4. **The `planning` branch is orphaned.** It shares the repository's Git object
+   database and remotes, but it starts with no inherited implementation files.
+   Its sole purpose is to house project plans, arc plans, slice ledgers,
+   prompts, close reports, and CDC verification. The default branch is used to
+   identify the repository and remote context, not to seed the planning files.
+
+When a planning branch/worktree does not already exist, the safe creation
+recipe is:
+
+```sh
+WORKTREE_ROOT="${PROJECT_DIR}/.worktrees" # or the repo's existing convention
+git -C "$PROJECT_DIR" worktree add --detach --no-checkout "$WORKTREE_ROOT/planning"
+git -C "$WORKTREE_ROOT/planning" switch --orphan planning
 ```
-docs/design-vX.Y.Z/
-  project-plan.md               ← the project's plan-of-record (the arc roadmap)
-  arcNN-<slug>/
-    arc-plan.md                 ← the arc's plan-of-record (the slice breakdown)
-    closing-report.md           ← arc-level close + bubble-up, written at arc close
-    sliceNN-<slug>/
-      slice-doc.md              ← plan-of-record for this slice
-      ledger.md                 ← grep-verifiable acceptance criteria (the steps)
-      cc-prompt.md              ← the assignment the executing context receives
-      closing-report.md         ← per-row walk + bubble-up, written at slice close
-      cdc-verification.md       ← independent re-run + check, written at slice close
+
+The resulting default shape is:
+
+```
+$PROJECT_DIR/.worktrees/planning/
+  project01-<slug>/
+    project-plan.md             ← the project's plan-of-record (the arc roadmap)
+    arcNN-<slug>/
+      arc-plan.md               ← the arc's plan-of-record (the slice breakdown)
+      closing-report.md         ← arc-level close + bubble-up, written at arc close
+      sliceNN-<slug>/
+        slice-doc.md            ← plan-of-record for this slice
+        ledger.md               ← grep-verifiable acceptance criteria (the steps)
+        cc-prompt.md            ← the assignment the executing context receives
+        closing-report.md       ← per-row walk + bubble-up, written at slice close
+        cdc-verification.md     ← independent re-run + check, written at slice close
 ```
 
 Three tiers of plan-of-record, one per scale: **`project-plan.md`** for the
@@ -223,20 +254,44 @@ the ledger mechanics at all three scales; this one owns where the rows live.
 
 ### Naming rules
 
-- **`X.Y.Z` is the project's design-doc version**, not its release version.
-  Bumps mean "the design moved," not "we cut a release."
-- **`NN` is two digits, zero-padded** (`arc01`, `slice03`) — sorts cleanly,
-  reads consistently, and survives projects that grow past nine arcs.
+- **Projects use `projectNN-<slug>`**, matching the arc and slice convention.
+  `project01-vault-split` is the shape; `docs/design-v0.1.0` is no longer the
+  default. Version-looking directory names have repeatedly confused humans and
+  LLMs into treating planning scope as release scope.
+- **`NN` is two digits, zero-padded** (`project01`, `arc01`, `slice03`) — sorts
+  cleanly, reads consistently, and survives projects that grow past nine arcs.
 - **`<slug>` is short, kebab-case, and descriptive in isolation** —
-  `arc01-substrate`, not `arc01-thing`. Read aloud, the path should tell a
-  reader what is in that directory without opening it.
+  `project01-vault-split`, `arc01-discovery`, not `project01-thing`. Read aloud,
+  the path should tell a reader what is in that directory without opening it.
+- **Directory order is not dependency order.** Project metadata determines
+  ordering and relationships: `depends-on`, `blocks`, `related`, current status,
+  and any project-specific lineage fields. The numeric prefix is a stable,
+  sortable local identifier, not the source of truth for dependency semantics.
 - **When a body of work is one slice, not an arc**, skip the arc wrapper: the
-  five per-slice documents live directly in one `NN-<slug>/` directory under
-  `docs/design-vX.Y.Z/`, with no `arc-plan.md` or arc-level
-  `closing-report.md` above them. That collapse is not a third case to
-  choose; it is what you discover when the sizing judgment comes back "one
-  slice, not an arc." A project that is genuinely a single slice may also skip
-  `project-plan.md` — but the moment a second arc is conceivable, write it.
+  five per-slice documents live directly in one `sliceNN-<slug>/` directory
+  under `projectNN-<slug>/`, with no `arc-plan.md` or arc-level
+  `closing-report.md` above them. That collapse is not a third case to choose;
+  it is what you discover when the sizing judgment comes back "one slice, not
+  an arc." A project that is genuinely a single slice may keep a minimal
+  `project-plan.md`, but the moment a second arc is conceivable, write the full
+  roadmap.
+
+### Project metadata
+
+Every `project-plan.md` begins with a short metadata block or equivalent header
+section that makes relationships explicit. Minimum fields:
+
+| Field | Meaning |
+| --- | --- |
+| `project` | Stable project id, matching `projectNN-<slug>`. |
+| `status` | `planned`, `active`, `blocked`, `closed`, or project-specific status. |
+| `depends-on` | Project ids or external prerequisites this project consumes. Empty is explicit. |
+| `blocks` | Project ids or external outcomes blocked by this project. Empty is explicit. |
+| `related` | Adjacent projects, tickets, repos, or evidence sources that are not hard dependencies. |
+
+Use the same relationship vocabulary consistently across project plans. If a
+project has a richer metadata schema, record it in the project instructions and
+keep these meanings intact.
 
 ### The five per-slice documents
 
@@ -537,24 +592,28 @@ A short, specific question with a concrete proposal — *not* an open-ended
 default verbatim, name where it comes from, and offer the choice to accept,
 adjust, or override:
 
-> I'm about to create the slice artifact set for slice 1 of arc 1. The default
-> layout from `docs/PROJECT-MANAGEMENT.md` is:
+> I'm about to create the planning substrate for project 1. The default layout
+> from `docs/PROJECT-MANAGEMENT.md` is a dedicated `planning` Git worktree:
 >
 > ```
-> docs/design-v0.1.0/
->   project-plan.md
->   arc01-<slug>/
->     arc-plan.md
->     slice01-<slug>/
->       slice-doc.md
->       ledger.md
->       cc-prompt.md
->       closing-report.md
->       cdc-verification.md
+> $PROJECT_DIR/.worktrees/planning/
+>   project01-<slug>/
+>     project-plan.md
+>     arc01-<slug>/
+>       arc-plan.md
+>       slice01-<slug>/
+>         slice-doc.md
+>         ledger.md
+>         cc-prompt.md
+>         closing-report.md
+>         cdc-verification.md
 > ```
 >
-> The `<slug>`s I'd use are `<arc-slug>` and `<slice-slug>`. Want me to proceed
-> with that, or adjust the layout / slugs?
+> If no planning worktree exists, I will create an orphan `planning` branch and
+> a worktree named `planning` under the existing worktree convention, or under
+> `$PROJECT_DIR/.worktrees` if no convention exists. The project directory I
+> would use is `project01-<slug>`. Want me to proceed with that, or adjust the
+> branch / worktree / project slug?
 
 That is it. The default is named, the substitutions are named, and the
 operator's three options (proceed / adjust / override) are explicit.
@@ -567,16 +626,18 @@ operator pick.
 
 ### What to do after the operator answers
 
-- **"Proceed"** — record the chosen layout in the project's `CLAUDE.md` (or
-  equivalent local instruction file) so the next session does not re-confirm.
-  One line is enough: *"Planning artifacts live under
-  `docs/design-vX.Y.Z/…`, per `docs/PROJECT-MANAGEMENT.md`."* If no `CLAUDE.md`
-  exists, raise it as a follow-up — but do **not** silently start scattering
-  files.
+- **"Proceed"** — record the chosen planning branch, worktree path, and project
+  directory in the project's `CLAUDE.md`, `AGENTS.md`, or equivalent local
+  instruction file so the next session does not re-confirm. One line is enough:
+  *"Planning artifacts live on orphan branch `planning`, worktree
+  `.worktrees/planning`, under `projectNN-<slug>/`, per
+  `docs/PROJECT-MANAGEMENT.md`."* If no local instruction file exists, raise it
+  as a follow-up — but do **not** silently start scattering files.
 - **"Adjust"** — apply the adjustment, then record the adjusted layout in the
-  project's `CLAUDE.md`. If the adjustment diverges meaningfully from the
-  default, briefly say *why* (team convention, prior tool output, a fork in
-  scale) — spec-keeping for the layout itself.
+  project's `CLAUDE.md`, `AGENTS.md`, or equivalent local instruction file. If
+  the adjustment diverges meaningfully from the default, briefly say *why* (team
+  convention, prior tool output, a fork in scale) — spec-keeping for the layout
+  itself.
 - **"Override entirely"** — adopt the operator's layout verbatim, record it the
   same way, and add a one-line note that this project does not use the default.
 
@@ -624,6 +685,18 @@ migration of an in-flight project's layout is its own failure mode.
 - **Detailed plans written far ahead.** Ten arc-plans authored on day one
   (see *plan late, plan deep*, Part III). They are written against assumptions
   the earlier arcs will invalidate, and they rot.
+- **Planning docs on the implementation branch by default.** Reusing the
+  implementation branch's `docs/` tree for framework planning makes release
+  docs, product docs, and LLM planning records compete for the same namespace.
+  Use the planning worktree unless the operator explicitly overrides it.
+- **Version-looking project directories** (`docs/design-v0.1.0/`,
+  `project-v0.1.0/`). They invite readers to infer release scope from path
+  shape. Use `projectNN-<slug>` and put ordering/relationships in project
+  metadata.
+- **Dependency semantics encoded only in directory names.** Numeric prefixes
+  make paths sort; they do not define `depends-on`, `blocks`, or project
+  lineage. If a relationship matters, write it in metadata where tools and
+  reviewers can read it.
 
 ---
 
@@ -633,8 +706,8 @@ Treat updates to this document like methodology updates: dated, disclosed,
 with the rationale preserved — *spec-keeping for the spec itself.* Update it
 when:
 
-- The scales of work, the canonical layout, or the planning/closing process
-  changes. This document owns all three now; keep the
+- The scales of work, the canonical planning worktree, or the planning/closing
+  process changes. This document owns all three now; keep the
   [methodology](./AI-ENGINEERING-METHODOLOGY.md)'s summary in sync when the
   vocabulary itself moves.
 - An anti-pattern recurs across more than one project. Add it to Part VII with
@@ -702,16 +775,35 @@ in an arc that *looked* closed — precisely the class of error that compounds.
 
 ## Version History
 
+### Version 2.2 — August 2026
+
+Changed the default project-planning substrate from an implementation-branch
+`docs/design-vX.Y.Z` tree to a dedicated orphan `planning` branch mounted as a
+Git worktree. The default project directory now follows the same convention as
+arcs and slices: `projectNN-<slug>`. Added the planning worktree discovery and
+creation rules, the `projectNN-<slug>` naming rule, project metadata fields for
+`depends-on` / `blocks` / `related`, and confirmation-protocol language that
+records the chosen planning branch, worktree, and project directory in local
+instructions.
+
+This rev was catalysed by the `dns` / `vault` split planning work: the old
+`docs/design-v0.1.0` default repeatedly caused humans and LLMs to confuse
+planning scope with release scope and to reuse product-documentation trees for
+planning records. The new default makes planning docs their own branch-backed
+source of truth, while project metadata carries ordering and relationship
+semantics.
+
 ### Version 2.1 — June 2026
 
 Synchronised with `LEDGER-DISCIPLINE.md` v2.0, which extended ledger discipline
 from slice-only to all three scales. Added the **ledger section** to the
 required contents of `arc-plan.md` (the arc ledger's composition rows, Part III)
 and `project-plan.md` (the project ledger's DoD rows, Part III); noted in the
-canonical layout (Part II) that the arc and project ledgers live as sections in
-those plan docs and close in the matching `closing-report.md` (Option A — no new
-files); and tied the arc composition check (Part V) to the arc/project ledger
-closure. The bubble-up/close machinery is unchanged; this rev names the
+canonical planning worktree (Part II) that the arc and project ledgers live as
+sections in those plan docs and close in the matching `closing-report.md`
+(Option A — no new files); and tied the arc composition check (Part V) to the
+arc/project ledger closure. The bubble-up/close machinery is unchanged; this
+rev names the
 verification rigor that now backs it at each scale.
 
 ### Version 2.0 — June 2026
@@ -728,7 +820,7 @@ deferred layer:
   detail extracted from [`AI-ENGINEERING-METHODOLOGY.md`](./AI-ENGINEERING-METHODOLOGY.md)**
   (which now keeps a summary and points here). The vocabulary
   (project/arc/slice/step/iteration) and the context-window basis for sizing a
-  slice now live in Part I; the canonical layout in Part II.
+  slice now live in Part I; the canonical planning worktree in Part II.
 - **Added `project-plan.md`** as the project-level plan-of-record (the arc
   roadmap), and formalized `arc-plan.md`'s required contents (Part III).
 - **Added the top-down / bottom-up framing** and *plan late, plan deep*
@@ -760,4 +852,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_This document is a living spec. This version: 2.1, 2026-06-26._
+_This document is a living spec. This version: 2.2, 2026-08-26._
