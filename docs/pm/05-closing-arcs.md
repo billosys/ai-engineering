@@ -20,11 +20,12 @@ from the per-slice closing-reports one level down). It carries:
 3. **The composition check.** Do the slices *recompose* into the capability?
    This is the silent-drop diff at arc scale: arc-capability-as-specified
    versus arc-capability-as-delivered. Name anything the arc promised that no
-   slice delivered. Concretely, this is the arc ledger's composition rows being
-   *reproduced* (an end-to-end demonstration run at arc scale) and walked to
-   closure — see [`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md)
-   Section B. The project-level equivalent (arcs recomposing into the DoD) is
-   Section C.
+   slice delivered. Concretely, this is the arc `ledger.md` composition rows
+   being *reproduced* (an end-to-end demonstration run at arc scale) and walked
+   to closure — see
+   [`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md) Section B.
+   The project-level equivalent (arcs recomposing into the DoD) lives in the
+   project `ledger.md` and is described in Section C.
 4. **The accumulated arc-plan change log.** A pointer to (or summary of) the
    changes that bubbled into `arc-plan.md` from slice closes during the arc —
    so the arc's drift from its original plan is visible in one place.

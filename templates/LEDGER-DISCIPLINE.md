@@ -4,7 +4,8 @@
 > Load this skill at the start of any **slice, arc, or project that has a
 > ledger** — before the work, not as an end-of-unit checklist. This document
 > describes the protocol; the ledgers themselves live next to the
-> plan-of-record at each scale (see `../docs/PROJECT-MANAGEMENT.md`).
+> plan-of-record at each scale as dedicated `ledger.md` files (see
+> `../docs/PROJECT-MANAGEMENT.md`).
 
 ## What this is
 
@@ -134,7 +135,7 @@ workspace" is *reconciled*.)
 | **Evidence kind** | grep / unit test, *reproduced* | integration demo *reproduced*; children-closed *attested* (pointer to closed child ledger) | system/acceptance demo *reproduced*; children-closed *attested* via arc ledgers |
 | **Doer / verifier** | CC implements / CDC verifies | CDC assembles / fresh context or operator gates | planner assembles / operator + fresh context gates |
 | **Iteration** | five-iteration fix loop on the diff | failed composition → **remediation slice** (not a re-pass) | failed DoD → **remediation arc** (or roadmap re-scope) |
-| **Cadence** | opens at slice-plan, closes at slice close | opens at arc-plan, closes in arc closing-report | opens at project-plan, closes in project closing-report |
+| **Cadence** | opens in slice `ledger.md`, next to `slice-plan.md`; closes at slice close | opens in arc `ledger.md`, next to `arc-plan.md`; closes in arc closing-report | opens in project `ledger.md`, next to `project-plan.md`; closes in project closing-report |
 
 Three classes of row recur at every interior scale: **(a) children closed**,
 **(b) children compose**, **(c) bubble-up findings dispositioned**. The
@@ -266,7 +267,7 @@ Closed at commit <SHA> on <date>. Verified by: <name/session>.
 Rows: <N>. Done: <n>. Deferred: <n>. No-op: <n>.
 ```
 
-The ledger lives as `ledger.md` in the slice directory, per the canonical
+The slice ledger lives as `ledger.md` in the slice directory, per the canonical
 planning worktree in
 [`../docs/PROJECT-MANAGEMENT.md`](../docs/PROJECT-MANAGEMENT.md) — e.g.
 `$PROJECT_DIR/.worktrees/planning/projectNN-<slug>/arcNN-<slug>/sliceNN-<slug>/ledger.md`.
@@ -329,14 +330,10 @@ at the wrong scale.
 
 The arc ledger **opens** when the arc-plan is written: its class-(b) composition
 rows are stated up front from the capability statement (you know what "composes"
-means before the slices run). It **accrues** class-(a) and class-(c) rows as
-slices close and bubble up. It **closes** in the arc `closing-report.md` with the
-per-row walk and the independent gate review.
-
-Per Option A of the layout, the arc ledger is **not a separate file**: its
-opening rows live as a ledger section in `arc-plan.md` (next to the capability),
-and its closure is the per-row walk in `arc-plan.md`'s companion
-`closing-report.md`.
+means before the slices run). It lives in a dedicated `ledger.md` beside
+`arc-plan.md`. It **accrues** class-(a) and class-(c) rows as slices close and
+bubble up. It **closes** in the arc `closing-report.md` with the per-row walk and
+the independent gate review.
 
 ### Cross-scale trending
 
@@ -348,7 +345,7 @@ than re-surfacing slice by slice.
 ### Per-arc ledger template
 
 ```
-## Arc Ledger  (in arc-plan.md)
+## Arc Ledger  (in arcNN-<slug>/ledger.md)
 
 Capability: <the one coherent thing this arc delivers>
 
@@ -420,10 +417,9 @@ unbounded grind. The project closes only once that work closes.
 ### Cadence
 
 Opens when the project-plan is written: DoD criteria become the class-(b)
-composition rows up front. Accrues class-(a)/(c) rows as arcs close. Closes in a
-project-level `closing-report.md` with the per-row walk and the gate review.
-Per Option A, the opening rows live as a ledger section in `project-plan.md`;
-closure is the per-row walk in its companion `closing-report.md`.
+composition rows up front. The project ledger lives in a dedicated `ledger.md`
+beside `project-plan.md`. It accrues class-(a)/(c) rows as arcs close. It closes
+in a project-level `closing-report.md` with the per-row walk and the gate review.
 
 ### Cross-scale trending
 
@@ -435,7 +431,7 @@ altitude).
 ### Per-project ledger template
 
 ```
-## Project Ledger  (in project-plan.md)
+## Project Ledger  (in projectNN-<slug>/ledger.md)
 
 Definition of done: <what the project delivers; what it explicitly does not>
 
@@ -445,7 +441,7 @@ Definition of done: <what the project delivers; what it explicitly does not>
 | P-2 | <DoD criterion> demonstrable | <acceptance demo> | serious | project-plan | open | | reproduce at project scale |
 | P-3 | <arc-NN bubble-up finding> routed | ptr: project-plan change-log | <…> | bubble-up | open | | |
 
-## Closure  (in project-plan's closing-report.md)
+## Closure  (in projectNN-<slug>/closing-report.md)
 
 DoD verdict: <met / gaps named>. Gate: go / adjust / kill. Reviewed by: <operator + independent>.
 Arcs: <N> (matches roadmap). Findings dispositioned: <n>.
@@ -517,6 +513,15 @@ invention:
 
 ## Version History
 
+### Version 2.2 — August 2026
+
+Updated the ledger layout to match `PROJECT-MANAGEMENT.md` v2.4: every scale now
+gets a dedicated sibling `ledger.md` file. Project ledgers live beside
+`project-plan.md`, arc ledgers live beside `arc-plan.md`, and slice ledgers
+continue to live beside `slice-plan.md`. This replaces the v2.0/v2.1
+transitional layout where arc and project rows lived as sections inside their
+plan files. The ledger mechanics are unchanged.
+
 ### Version 2.1 — August 2026
 
 Updated the slice-ledger path example to match
@@ -544,7 +549,9 @@ and established practice, not yet by a closed project.
 Per the layout decision (Option A), the arc and project ledgers live as sections
 in `arc-plan.md` / `project-plan.md` and close in the companion
 `closing-report.md`s, rather than as separate files — synchronised with
-`../docs/PROJECT-MANAGEMENT.md`. Added a *Lineage* section grounding the
+`../docs/PROJECT-MANAGEMENT.md`. This embedded-section layout was superseded by
+v2.2, which gives every scale its own sibling `ledger.md`. Added a *Lineage*
+section grounding the
 multi-scale extension in assurance cases / GSN, the V-model, and stage-gate
 reviews, alongside the slice tier's corrective-action heritage.
 
@@ -558,4 +565,4 @@ to the methodology (the level-1 ledger-bearing unit is **slice**, not
 
 ---
 
-_This document is a living spec. This version: 2.1, 2026-08-26._
+_This document is a living spec. This version: 2.2, 2026-08-27._

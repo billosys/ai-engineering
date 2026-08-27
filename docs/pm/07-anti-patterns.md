@@ -16,7 +16,12 @@ migration of an in-flight project's layout is its own failure mode.
   ledger.** The artifact set is per-scale for a reason: each document is a
   coherent unit that can be independently verified, closed, and re-read.
   Merging them across scales prevents all three. `project-plan.md` holds the
-  *roadmap*, not the detail.
+  *roadmap*, not the detail; each scale's acceptance/composition rows live in
+  its own `ledger.md`.
+- **Arc or project ledger sections embedded in plan files.** This was a
+  transitional layout. Current projects, arcs, and slices all use a dedicated
+  sibling `ledger.md`; plan files describe scope and sequencing, while ledger
+  files carry acceptance/composition rows.
 - **Per-author or per-session subdirectories** (`claude-a/`,
   `session-2026-06-18/`). The artifact is owned by the slice or arc it belongs
   to, not by who or when wrote it. Authorship belongs in the file header, not

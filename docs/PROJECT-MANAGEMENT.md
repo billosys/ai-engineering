@@ -22,9 +22,9 @@ For Codex, read every "Claude session" in the linked files as any fresh Codex
 Desktop, Codex CLI, or other LLM session entering the project without the full
 prior context. **CC** is Codex CLI in the IC implementation role; **CDC** is
 Codex Desktop in the planning/review/QA role. Keep the canonical filenames
-(`project-plan.md`, `arc-plan.md`, `slice-plan.md`, `ledger.md`, `cc-prompt.md`,
-`closing-report.md`, `cdc-verification.md`) unless the operator explicitly
-changes the project convention.
+(`project-plan.md`, `arc-plan.md`, `slice-plan.md`, per-scale `ledger.md`,
+`cc-prompt.md`, `closing-report.md`, `cdc-verification.md`) unless the operator
+explicitly changes the project convention.
 
 This wayfinder and the linked files guide planning craft and the quality floor;
 they do not override Codex's standing system, developer, tool, safety, sandbox,
@@ -41,8 +41,8 @@ order.
 | Job | Read |
 | --- | --- |
 | Understand the vocabulary and sizing model | [`pm/01-scales-of-work.md`](./pm/01-scales-of-work.md) |
-| Create or inspect planning directories, filenames, metadata, or per-slice artifact sets | [`pm/02-canonical-planning-worktree.md`](./pm/02-canonical-planning-worktree.md) |
-| Write a `project-plan.md`, `arc-plan.md`, or per-slice open set | [`pm/03-planning-top-down.md`](./pm/03-planning-top-down.md) |
+| Create or inspect planning directories, filenames, metadata, or per-scale artifact sets | [`pm/02-canonical-planning-worktree.md`](./pm/02-canonical-planning-worktree.md) |
+| Write a `project-plan.md`, `arc-plan.md`, per-scale `ledger.md`, or per-slice open set | [`pm/03-planning-top-down.md`](./pm/03-planning-top-down.md) |
 | Close a slice and bubble findings up to the arc | [`pm/04-closing-slices.md`](./pm/04-closing-slices.md) and [`pm/05-closing-arcs.md`](./pm/05-closing-arcs.md#the-plan-change-discipline-make-a-change--version-history) |
 | Close an arc, check composition, and bubble findings up to the project | [`pm/05-closing-arcs.md`](./pm/05-closing-arcs.md) |
 | Confirm a layout before creating planning directories or filenames | [`pm/06-confirmation-protocol.md`](./pm/06-confirmation-protocol.md) |
@@ -58,7 +58,8 @@ The old monolith split along its original part boundaries:
    slice, step, iteration, sizing, and the context-window basis for a slice.
 2. [`pm/02-canonical-planning-worktree.md`](./pm/02-canonical-planning-worktree.md)
    -- default planning worktree, `planning` branch, `projectNN-<slug>`,
-   metadata, naming rules, and the five per-slice documents.
+   metadata, naming rules, dedicated project/arc/slice ledger files, and the
+   five per-slice documents.
 3. [`pm/03-planning-top-down.md`](./pm/03-planning-top-down.md) -- project
    roadmaps, arc plans, per-slice open sets, and plan-late/plan-deep.
 4. [`pm/04-closing-slices.md`](./pm/04-closing-slices.md) -- slice
@@ -100,11 +101,11 @@ context load; it does not relax the requirement to use the written mechanics.
 ## Version History
 
 The detailed project-management version history lives in
-[`pm/version-history.md`](./pm/version-history.md). Current version: **2.3**
-(`2026-08-26`), which split the former monolith into this wayfinder plus the
-focused files under `docs/pm/`.
+[`pm/version-history.md`](./pm/version-history.md). Current version: **2.4**
+(`2026-08-27`), which gives projects, arcs, and slices dedicated sibling
+`ledger.md` files.
 
 ---
 
-_The project-management guide is a living spec. This wayfinder: 2.3,
-2026-08-26._
+_The project-management guide is a living spec. This wayfinder: 2.4,
+2026-08-27._

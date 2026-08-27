@@ -24,12 +24,12 @@ arcs at once**, before opening any single `arc-plan.md`.
 3. **Current status.** Which arc is active, which are closed, which are not
    yet planned in detail. Detailed arc planning is deliberately deferred until
    an arc is near — see *plan late, plan deep* below.
-4. **A project-ledger section.** The composition criteria that verify the DoD,
+4. **A sibling `ledger.md`.** The composition criteria that verify the DoD,
    stated up front as ledger rows — the project ledger from
    [`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md)
-   Section C. It opens here and closes (per-row walk) in the project's
-   `closing-report.md`. This is what makes the DoD *checkable* rather than
-   merely asserted.
+   Section C. It opens beside the project plan and closes (per-row walk) in the
+   project's `closing-report.md`. This is what makes the DoD *checkable* rather
+   than merely asserted.
 5. **A Version History section.** The change log that receives bubble-ups from
    arc closes (see [`Closing arcs`](./05-closing-arcs.md)). It starts with the initial roadmap as v1.0 and grows
    one dated entry per change, each naming which arc surfaced the change and
@@ -55,11 +55,11 @@ arc-and-slice breakdown). `arc-plan.md` carries, at minimum:
    iteration headroom.
 3. **Dependencies.** What this arc consumes from earlier arcs, and what it
    leaves for later ones.
-4. **An arc-ledger section.** The composition criteria that verify the
+4. **A sibling `ledger.md`.** The composition criteria that verify the
    capability, stated up front as ledger rows — the arc ledger from
    [`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md)
-   Section B. It opens here and closes (per-row walk) in the arc's
-   `closing-report.md`. This is what makes "the slices compose into the
+   Section B. It opens beside the arc plan and closes (per-row walk) in the
+   arc's `closing-report.md`. This is what makes "the slices compose into the
    capability" *checkable* rather than merely asserted.
 5. **A Version History section.** The change log that receives bubble-ups from
    slice closes (see [`Closing slices`](./04-closing-slices.md)) — one dated entry per change, each naming which

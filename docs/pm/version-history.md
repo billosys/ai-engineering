@@ -1,5 +1,17 @@
 # Version History
 
+### Version 2.4 — August 2026
+
+Changed the canonical ledger layout so **every scale gets a dedicated
+`ledger.md` file**. Project ledgers now live beside `project-plan.md`, arc
+ledgers live beside `arc-plan.md`, and slice ledgers continue to live beside
+`slice-plan.md`. This replaces the v2.1 transitional "ledger section inside the
+plan file" arrangement for projects and arcs.
+
+Updated the canonical planning-worktree tree, top-down planning rules,
+confirmation-protocol example, and anti-pattern list to keep plan files focused
+on scope/sequencing while ledger files carry acceptance and composition rows.
+
 ### Version 2.3 — August 2026
 
 Split the long `docs/PROJECT-MANAGEMENT.md` monolith into focused files under
@@ -40,8 +52,9 @@ and `project-plan.md` (the project ledger's DoD rows, Part III); noted in the
 canonical planning worktree (Part II) that the arc and project ledgers live as
 sections in those plan docs and close in the matching `closing-report.md`
 (Option A — no new files); and tied the arc composition check (Part V) to the
-arc/project ledger closure. The bubble-up/close machinery is unchanged; this
-rev names the
+arc/project ledger closure. This embedded-section layout was superseded by
+v2.4, which gives every scale its own sibling `ledger.md`. The
+bubble-up/close machinery is unchanged; this rev names the
 verification rigor that now backs it at each scale.
 
 ### Version 2.0 — June 2026
@@ -90,4 +103,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_The project-management guide is a living spec. This version: 2.3, 2026-08-26._
+_The project-management guide is a living spec. This version: 2.4, 2026-08-27._

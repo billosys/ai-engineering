@@ -33,8 +33,11 @@ adjust, or override:
 > $PROJECT_DIR/.worktrees/planning/
 >   project01-<slug>/
 >     project-plan.md
+>     ledger.md
+>     closing-report.md
 >     arc01-<slug>/
 >       arc-plan.md
+>       ledger.md
 >       slice01-<slug>/
 >         slice-plan.md
 >         ledger.md

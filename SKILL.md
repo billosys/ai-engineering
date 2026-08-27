@@ -17,7 +17,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.3.1
+version: 1.3.2
 license: MIT
 metadata:
   hermes:
@@ -106,8 +106,9 @@ applies:
   [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md)** before laying
   anything out. It is now a wayfinder that points to the focused `docs/pm/`
   files for the scales of work, canonical planning worktree layout (`planning`
-  branch/worktree, `projectNN-<slug>`, `project-plan.md` / `arc-plan.md` / the
-  five per-slice docs), confirmation protocol, top-down planning, bottom-up
+  branch/worktree, `projectNN-<slug>`, `project-plan.md` / `arc-plan.md` /
+  `slice-plan.md`, and dedicated `ledger.md` files at every scale),
+  confirmation protocol, top-down planning, bottom-up
   bubble-up/close machinery (slice → arc → project), and plan-change
   discipline. The summary in this skill is *not* a substitute for following
   the wayfinder's required load set — improvising the mechanics from the
@@ -242,9 +243,9 @@ feedback loop → audits. Each step catches a different *altitude* of error.
 Skipping a step doesn't just forgo its value — it routes errors of that
 altitude further downstream where they cost more.
 
-Planning runs **top-down** and produces one plan-of-record per scale —
-`project-plan.md` (the arc roadmap), `arc-plan.md` (the slice breakdown), and
-the per-slice open set (`slice-plan.md` / `ledger.md` / `cc-prompt.md`).
+Planning runs **top-down** and produces one plan-of-record and one ledger per
+scale: `project-plan.md` + `ledger.md`, `arc-plan.md` + `ledger.md`, and the
+per-slice open set (`slice-plan.md` / `ledger.md` / `cc-prompt.md`).
 Closing runs **bottom-up**: each slice closes with a per-row walk *and* a
 **bubble-up to its arc** (did it deliver its assigned piece; what did it
 reveal the arc-plan didn't anticipate; the silent-drop diff), and each arc
@@ -363,6 +364,13 @@ subsumes the other.
 ---
 
 ## Version History
+
+### Version 1.3.2 — August 2026
+
+Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.4 and
+`LEDGER-DISCIPLINE.md` v2.2. The canonical layout now gives projects, arcs, and
+slices dedicated sibling `ledger.md` files instead of embedding arc/project
+ledger rows inside plan files.
 
 ### Version 1.3.1 — August 2026
 

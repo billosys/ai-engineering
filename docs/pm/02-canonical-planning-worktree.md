@@ -21,7 +21,7 @@ The default planning substrate is:
    and a worktree directory of the same name under the worktree root.
 4. **The `planning` branch is orphaned.** It shares the repository's Git object
    database and remotes, but it starts with no inherited implementation files.
-   Its sole purpose is to house project plans, arc plans, slice ledgers,
+   Its sole purpose is to house project plans, arc plans, per-scale ledgers,
    prompts, close reports, and CDC verification. The default branch is used to
    identify the repository and remote context, not to seed the planning files.
 
@@ -40,8 +40,11 @@ The resulting default shape is:
 $PROJECT_DIR/.worktrees/planning/
   project01-<slug>/
     project-plan.md             ← the project's plan-of-record (the arc roadmap)
+    ledger.md                   ← project-level DoD / composition ledger
+    closing-report.md           ← project-level close + gate review, written at project close
     arcNN-<slug>/
       arc-plan.md               ← the arc's plan-of-record (the slice breakdown)
+      ledger.md                 ← arc-level slice-close / composition ledger
       closing-report.md         ← arc-level close + bubble-up, written at arc close
       sliceNN-<slug>/
         slice-plan.md           ← plan-of-record for this slice
@@ -53,20 +56,22 @@ $PROJECT_DIR/.worktrees/planning/
 
 Three tiers of plan-of-record, one per scale: **`project-plan.md`** for the
 project, **`arc-plan.md`** for each arc, and **`slice-plan.md`** for each
-slice. Two tiers of closing-report: one per **slice** (the per-row walk) and
-one per **arc** (the composition check). The per-slice `cdc-verification.md`
-is the independent re-run that gates a slice closed. Their full roles are
-defined in [`Planning, top-down`](./03-planning-top-down.md),
+slice. Three tiers of ledger, one per scale: **`ledger.md`** beside each
+project plan, arc plan, and slice plan. Three tiers of closing-report close the
+same scales when they finish: project, arc, and slice. The per-slice
+`cdc-verification.md` is the independent re-run that gates a slice closed.
+Their full roles are defined in [`Planning, top-down`](./03-planning-top-down.md),
 [`Closing slices`](./04-closing-slices.md), and
 [`Closing arcs`](./05-closing-arcs.md); their on-disk shape is fixed here.
 
 Each scale is also **verified by a ledger** — the recomposition discipline in
-[`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md). The
-slice ledger is its own file (`ledger.md`); the **arc and project ledgers are
-not separate files** — they open as a ledger *section* inside `arc-plan.md` /
-`project-plan.md` (next to the capability / definition of done they verify) and
-close as the per-row walk inside the matching `closing-report.md`. That doc owns
-the ledger mechanics at all three scales; this one owns where the rows live.
+[`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md). The ledger rows
+for a scale live in that scale's own `ledger.md`: project rows in
+`projectNN-<slug>/ledger.md`, arc rows in `arcNN-<slug>/ledger.md`, and slice
+rows in `sliceNN-<slug>/ledger.md`. The plan-of-record names the capability,
+roadmap, or slice scope; the ledger file carries the grep-verifiable rows that
+prove the plan. `LEDGER-DISCIPLINE.md` owns the ledger mechanics at all three
+scales; this file owns where the rows live.
 
 ### Naming rules
 
@@ -86,11 +91,11 @@ the ledger mechanics at all three scales; this one owns where the rows live.
 - **When a body of work is one slice, not an arc**, skip the arc wrapper: the
   five per-slice documents live directly in one `sliceNN-<slug>/` directory
   under `projectNN-<slug>/`, with no `arc-plan.md` or arc-level
-  `closing-report.md` above them. That collapse is not a third case to choose;
-  it is what you discover when the sizing judgment comes back "one slice, not
-  an arc." A project that is genuinely a single slice may keep a minimal
-  `project-plan.md`, but the moment a second arc is conceivable, write the full
-  roadmap.
+  `ledger.md` / `closing-report.md` above them. That collapse is not a third
+  case to choose; it is what you discover when the sizing judgment comes back
+  "one slice, not an arc." A project that is genuinely a single slice may keep a
+  minimal `project-plan.md` and project-level `ledger.md`, but the moment a
+  second arc is conceivable, write the full roadmap.
 
 ### Project metadata
 
