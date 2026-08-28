@@ -117,8 +117,10 @@ From a design discussion that shaped the constitution supplement:
   uncertainty, and flag when it's at the edge of its capability — *before*
   failure, not after.
 - **Independent audits and hard coverage targets.** Whole-repo,
-  severity-graded quality audits (never performed by the instance that wrote
-  the code), and a coverage prompt that doesn't stop short of the threshold.
+  multi-scale, severity-graded quality audits (never performed by the instance
+  that wrote the code), from line/function details through module, package,
+  codebase, and workspace coherence, plus a coverage prompt that doesn't stop
+  short of the threshold.
 - **Subagent guardrails.** A clean line between thinking work (keep in the
   main context) and lookup work (delegate freely) — because LLMs instructing
   other LLMs play a lossy game of telephone.
@@ -183,7 +185,8 @@ disciplines inline and routes to the source documents as the work demands:
 - [`AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) — craft and practice: the three pillars and the 9-point SDLC
 - [`PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) — wayfinder for scales of work, canonical planning layout, top-down planning, and bottom-up close machinery, split under [`docs/pm/`](./docs/pm/)
 - [`LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) — the per-scale verification protocol (slice / arc / project)
-- [`CODE-AUDIT.md`](./docs/CODE-AUDIT.md) — the whole-repo, per-language audit prompt
+- [`CODE-AUDIT.md`](./docs/CODE-AUDIT.md) — the whole-repo, per-language,
+  multi-scale audit prompt with modernization synthesis
 - [`CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) — the 95%+ test-coverage prompt
 - [`SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) — the thinking-vs-lookup delegation line
 - [`CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) + [`CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) — voice, discipline, and template for upstream OSS tickets
