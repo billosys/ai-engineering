@@ -90,12 +90,12 @@ Slices:
 - `slice02-contract-gate-design`: convert the accepted contract into
   Make/Bash-friendly validation requirements and decide warning versus
   hard-fail gates.
-- `slice03-package-path-gate-implementation`: stubbed for later implementation
-  after Slice 02 closes.
+- `slice03-package-path-gate-implementation`: implement the accepted package
+  path gate and transitional exception policy.
 
 ### Arc 02: Skill Bundle Harmonisation
 
-Status: active.
+Status: closed.
 
 Capability: update packaged skill entry points and, where needed, staging
 transforms so source-clone and zip/unzipped usage both resolve correctly for
@@ -110,23 +110,21 @@ Slices:
   Focus: framework and project-management bundle links where source edits or
   narrow staging transforms resolve package warnings without changing
   methodology content.
-- `slice03-mature-entrypoint-staging-transforms`: stub. Expected focus:
-  package-stage transforms for mature language skill entrypoints where source
-  root prose should not churn.
-- `slice04-warning-policy-tightening`: stub. Expected focus: retire
-  transitional exceptions that Arc 02 resolves and decide which remaining
-  warnings belong to later arcs.
+- `slice03-mature-entrypoint-staging-transforms`: package-stage transforms for
+  mature language skill entrypoints where source-root prose should not churn.
+- `slice04-warning-policy-tightening`: retire stale Arc 02 transitional policy
+  and decide which remaining warnings belong to later maintenance or arcs.
 
 ### Arc 03: CCDP Distribution Package
 
-Status: stub.
+Status: active.
 
 Expected capability: give CCDP a first-class package target and reader-facing
 entry point so protocol users can consume the assembled spec, source chapters,
 canonical JSON, and examples without repo-root path guessing.
 
-Detailed arc planning is deferred until Arc 02 closes or Arc 01 explicitly
-bubbles up a need to advance CCDP earlier.
+Arc 03 detailed planning opened after Arc 02 closed. Slice 01 starts with a
+CCDP distribution inventory before package contract design.
 
 ### Arc 04: Release and Adoption Hardening
 
@@ -139,10 +137,9 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 is closed. Arc 02 is active: Slice 01, Slice 02, and Slice 03 are
-verified/closed, and Slice 04 is opened. Arc 03 and Arc 04 remain roadmap
-stubs only; their detailed plans should be written after the close of the
-previous slice or arc, per the plan-late/plan-deep rule.
+Arc 01 and Arc 02 are closed. Arc 03 is active with Slice 01 opened on CCDP
+distribution inventory. Arc 04 remains a roadmap stub; its detailed plan should
+be written after the close of Arc 03, per the plan-late/plan-deep rule.
 
 ## Version History
 
@@ -217,3 +214,15 @@ Arc 02 Slice 04 opened on warning policy tightening. The slice will classify
 the remaining post-Slice-03 warnings, retire or convert transitional exception
 rows, and preserve unresolved package usability issues as visible later-arc
 work rather than broad exceptions.
+
+### v1.12 - 2026-08-29
+
+Arc 02 Slice 04 marked verified/closed, and Arc 02 closed with composition
+verdict delivered. The final skill-bundle package-path gate scans 12 generated
+zips with 0 hard failures, 295 visible warnings, and 3 explicit exceptions.
+
+### v1.13 - 2026-08-29
+
+Arc 03 opened on CCDP distribution packaging after Arc 02 close. Slice 01
+starts with a CCDP distribution inventory so package contents, entrypoint, path
+semantics, and validation are designed from the actual protocol surface.

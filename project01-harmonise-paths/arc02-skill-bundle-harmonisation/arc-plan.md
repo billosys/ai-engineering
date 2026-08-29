@@ -2,7 +2,7 @@
 
 ```yaml
 arc: arc02-skill-bundle-harmonisation
-status: active
+status: closed
 project: project01-harmonise-paths
 depends-on:
   - arc01-distribution-path-contract
@@ -66,7 +66,7 @@ references should package as `guides/**` without bulk source prose churn.
 
 ### Slice 04: Warning Policy Tightening
 
-Status: active/opened.
+Status: verified/closed.
 
 Expected scope: remove or expire transitional exception rows resolved by Arc
 02, decide whether remaining warnings are permanent explicit exceptions or
@@ -78,7 +78,8 @@ Arc 02 consumes the executable `make check-package-paths` gate from Arc 01. The
 source implementation for the gate and Slice 01 tooling link harmonisation is
 committed on `main` at `09d1550`. The Slice 02 collaboration-framework link
 harmonisation is committed on `main` at `0c5997e`. The Slice 03 mature
-entrypoint staging transform is committed on `main` at `a8decce`.
+entrypoint staging transform is committed on `main` at `a8decce`. The Slice 04
+warning-policy tightening is committed on `main` at `4168a57`.
 
 ## Version History
 
@@ -129,3 +130,17 @@ Slice 04 opened on warning policy tightening after Slice 03 CDC verification.
 The slice must classify the remaining 295 warnings, retire or convert
 transitional exception rows, keep permanent exceptions narrow and reasoned, and
 leave real package usability work visible for later arcs or projects.
+
+### v1.7 - 2026-08-29
+
+Slice 04 marked verified/closed by CDC. The five stale `transitional-warning`
+rows expiring `after-arc02` were converted to ordinary visible warnings with
+later-maintenance dispositions, with no new broad suppressions or explicit
+exceptions.
+
+### v1.8 - 2026-08-29
+
+Arc 02 closed with composition verdict delivered. Final skill-bundle
+package-path validation scans all 12 generated zips, exits with 0 hard
+failures and 295 visible warnings, and routes remaining package usability
+backlog to later guide/package maintenance or release/adoption work.

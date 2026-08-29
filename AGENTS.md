@@ -66,9 +66,8 @@ not the implementation checkout and should not be used for source/package edits.
   verified completion of `project01-harmonise-paths`; do not execute its
   slices until that dependency closes unless the operator explicitly changes
   the plan.
-- **Project01 status:** Arc 01 is closed. Arc 02 is active; Slice 01 and Slice
-  02 are verified/closed, and Slice 03 is opened for mature language
-  entrypoint staging transforms.
+- **Project01 status:** Arc 01 and Arc 02 are closed. Arc 03 is active with
+  Slice 01 opened for CCDP distribution inventory.
 - **Project02 status:** the project roadmap, Arc 01, and Slice 01 open set
   exist as planning artifacts, but execution is blocked on Project01 closure.
 - **Source checkout validation references:** implementation plans may require
