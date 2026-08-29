@@ -77,7 +77,7 @@ Out of scope:
 
 ### Arc 01: Distribution Path Contract
 
-Status: active.
+Status: closed.
 
 Capability: establish a repeatable inventory of package path failures and a
 written path semantics contract that later implementation slices can apply
@@ -95,13 +95,27 @@ Slices:
 
 ### Arc 02: Skill Bundle Harmonisation
 
-Status: stub.
+Status: active.
 
-Expected capability: update packaged skill entry points and, where needed,
-staging transforms so source-clone and zip/unzipped usage both resolve correctly
-for the collaboration-framework and per-domain skills.
+Capability: update packaged skill entry points and, where needed, staging
+transforms so source-clone and zip/unzipped usage both resolve correctly for
+the collaboration-framework and per-domain skills.
 
-Detailed arc planning is deferred until Arc 01 closes.
+Slices:
+
+- `slice01-tooling-entrypoint-links`: harmonise small tooling/simple skill
+  entrypoint guide references where one `guides/...` spelling works in both
+  source and package contexts.
+- `slice02-collaboration-framework-links`: planned after Slice 01 closes.
+  Expected focus: framework and project-management bundle links where source
+  edits or narrow staging transforms resolve package warnings without changing
+  methodology content.
+- `slice03-mature-entrypoint-staging-transforms`: stub. Expected focus:
+  package-stage transforms for mature language skill entrypoints where source
+  root prose should not churn.
+- `slice04-warning-policy-tightening`: stub. Expected focus: retire
+  transitional exceptions that Arc 02 resolves and decide which remaining
+  warnings belong to later arcs.
 
 ### Arc 03: CCDP Distribution Package
 
@@ -125,10 +139,9 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 is active and ready for formal arc close. Slice 01, Slice 02, and Slice
-03 are verified/closed. Later arcs remain roadmap stubs only; their detailed
-plans should be written after the close of the previous slice or arc, per the
-plan-late/plan-deep rule.
+Arc 01 is closed. Arc 02 is active and Slice 01 is opened. Arc 03 and Arc 04
+remain roadmap stubs only; their detailed plans should be written after the
+close of the previous slice or arc, per the plan-late/plan-deep rule.
 
 ## Version History
 
@@ -157,3 +170,9 @@ Slice 03 opened under Arc 01. Its open set adopts the framework's default
 
 Slice 03 marked verified/closed. Arc 01 is ready for formal close before Arc
 02 is planned in detail.
+
+### v1.5 - 2026-08-29
+
+Arc 01 closed with composition verdict delivered. Arc 02 opened from Arc 01
+bubble-up, and Slice 01 opened for tooling/simple skill entrypoint link
+harmonisation.

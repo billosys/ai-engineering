@@ -2,7 +2,7 @@
 
 ```yaml
 arc: arc01-distribution-path-contract
-status: active
+status: closed
 project: project01-harmonise-paths
 depends-on: []
 blocks:
@@ -124,3 +124,9 @@ evidence produced during the slice.
 Slice 03 marked verified/closed from CDC verification. Arc 01 is ready for
 formal arc close; the gate is implemented, but the verified source changes are
 currently an implementation working-tree diff rather than a source commit.
+
+### v1.5 - 2026-08-29
+
+Arc 01 closed. Its three slices compose into an executable distribution path
+contract: audited package-path failures, accepted gate design, and a working
+Make-owned package-path validation gate.
