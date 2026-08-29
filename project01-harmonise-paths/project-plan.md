@@ -106,9 +106,9 @@ Slices:
 - `slice01-tooling-entrypoint-links`: harmonise small tooling/simple skill
   entrypoint guide references where one `guides/...` spelling works in both
   source and package contexts.
-- `slice02-collaboration-framework-links`: planned after Slice 01 closes.
-  Expected focus: framework and project-management bundle links where source
-  edits or narrow staging transforms resolve package warnings without changing
+- `slice02-collaboration-framework-links`: opened after Slice 01 closed.
+  Focus: framework and project-management bundle links where source edits or
+  narrow staging transforms resolve package warnings without changing
   methodology content.
 - `slice03-mature-entrypoint-staging-transforms`: stub. Expected focus:
   package-stage transforms for mature language skill entrypoints where source
@@ -139,9 +139,10 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 is closed. Arc 02 is active and Slice 01 is verified/closed. Arc 03 and
-Arc 04 remain roadmap stubs only; their detailed plans should be written after
-the close of the previous slice or arc, per the plan-late/plan-deep rule.
+Arc 01 is closed. Arc 02 is active: Slice 01 is verified/closed and Slice 02 is
+opened. Arc 03 and Arc 04 remain roadmap stubs only; their detailed plans
+should be written after the close of the previous slice or arc, per the
+plan-late/plan-deep rule.
 
 ## Version History
 
@@ -183,3 +184,10 @@ Arc 02 Slice 01 marked verified/closed. The slice burned the targeted
 tooling/simple skill entrypoint bundled-reference warning class from 20 to 0
 without new package-path hard failures. No project-plan change is required
 before Arc 02 Slice 02.
+
+### v1.7 - 2026-08-29
+
+Arc 02 Slice 02 opened on collaboration-framework links. The slice follows
+Slice 01's package-warning burn-down pattern but adds a required classification
+step because the framework bundle contains both true package-internal links and
+intentional source/provenance examples.

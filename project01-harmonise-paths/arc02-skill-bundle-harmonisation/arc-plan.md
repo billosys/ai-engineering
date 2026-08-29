@@ -49,7 +49,7 @@ language packs or generalized staging transforms.
 
 ### Slice 02: Collaboration Framework Links
 
-Status: planned, not opened.
+Status: active/opened.
 
 Expected scope: address collaboration-framework/package-management links that
 still warn in generated packages, using source edits where one spelling is
@@ -92,3 +92,10 @@ Slice 01 marked verified/closed by CDC. The slice burned targeted
 tooling/simple entrypoint bundled-reference warnings from 20 to 0, with total
 package-path warnings moving from 426 to 406 and no new hard failures. No Arc
 02 plan change is required before Slice 02.
+
+### v1.2 - 2026-08-29
+
+Slice 02 opened on collaboration-framework links after Slice 01 CDC
+verification. The scope starts with a generated-package warning baseline and
+requires classification before edits so framework methodology examples are not
+mechanically rewritten into misleading package paths.
