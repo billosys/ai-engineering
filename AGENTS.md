@@ -1,0 +1,71 @@
+# ai-engineering - standing session instructions
+
+**ai-engineering**: public Billosys repository for AI-optimized engineering
+skills, the collaboration framework, domain knowledge packs, and the Composite
+Cognition Dispatch Protocol (CCDP). The repo is both a source tree for
+framework documents and a packaging surface for installable assistant skills.
+
+- Planning artifacts live on the dedicated `planning` branch/worktree, not on
+  the implementation branch. Use `git worktree list` to locate it. If it is not
+  present locally, inspect or create the canonical `.worktrees/planning`
+  checkout only after confirming that the repository does not already have a
+  different worktree convention. Do not recreate planning docs on `main`.
+- Use the current `collaboration-framework` skill at session start. For
+  planning work, read `docs/PROJECT-MANAGEMENT.md` as the wayfinder and then
+  load the relevant `docs/pm/` files. The current canonical layout is
+  `projectNN-<slug>/project-plan.md` plus project `ledger.md`,
+  `arcNN-<slug>/arc-plan.md` plus arc `ledger.md`, and per-slice
+  `slice-plan.md`, `ledger.md`, `cc-prompt.md`, `closing-report.md`,
+  `cdc-verification.md`, and `artifacts/` for durable slice-produced
+  artifacts unless the operator records an override.
+- Before implementation or slice/arc closure, read the active
+  `project-plan.md` from the `planning` worktree first, then the relevant
+  `arc-plan.md`, slice `slice-plan.md`, and ledger files. Treat
+  `closing-report.md` as proposed-done until `cdc-verification.md` or an
+  equivalent independent verification artifact closes the ledger evidence.
+- When changing framework or project-management documents, update each affected
+  file's `Version History` section and bump its version if it has one. If a
+  touched file has no local version, update the conceptually enclosing
+  versioned file, at minimum the top-level `SKILL.md` for framework behavior.
+- Load the relevant domain skill before writing or reviewing domain material:
+  Rust, Go, Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual
+  Design, Biome, or Deno lint. Preserve source material under
+  `knowledge/<domain>/sources/` as provenance; write derived guidance in the
+  domain `SKILL.md` and `guides/` unless a local plan says otherwise.
+
+## Workflow
+
+- **Repo home:** `billosys` org, public, default branch `main`.
+- **Branching:** direct-to-main is normal for this repo unless the operator
+  asks for a branch, PR, or separate worktree. Keep planning work on the
+  `planning` worktree and implementation/release changes on `main`.
+- **Compatibility instructions:** keep `CLAUDE.md` as a symlink to `AGENTS.md`
+  for tools that still look for the older filename. Edit `AGENTS.md`, not the
+  symlink target via a separate copy.
+- **Commit footer convention (operator override, 2026-08-07):** every future
+  assistant-authored commit message includes these trailers:
+  `Co-authored-by: Codex <noreply@openai.com>` and
+  `Co-authored-by: Billo AI <ai-engineering@billo.systems>`.
+- **Build entrypoint:** start with `make help`. Use Make-backed targets instead
+  of hand-running packaging scripts when a target exists.
+- **Skill packaging:** `make all` builds every zip; `make collab-framework`
+  builds the framework bundle; `make skills` builds the per-domain bundles;
+  `make install` installs into `$(HOME)/.agents/skills` unless `INSTALL_DIR`
+  is overridden. Generated `/*.zip` files and `build/` are ignored release
+  artifacts, not ordinary source changes.
+- **Validation:** run `make check-skills` after any `SKILL.md` description or
+  packaged-skill metadata change. Run `make check-package-paths` after changing
+  packaged Markdown links, bundle contents, `Makefile` packaging lists, or
+  `package-path-exceptions.tsv`. The package-path gate may report accepted
+  warnings; hard failures must be fixed or explicitly dispositioned.
+- **Packaging lists:** when adding, removing, or renaming a skill or bundled
+  document, update the relevant `Makefile` lists/targets, README skill-library
+  documentation, and package-path exceptions in the same slice.
+- **CCDP:** source chapters live under `protocols/ccdp/src/`; the assembled
+  protocol is `protocols/ccdp/composite-cognition-dispatch-protocol.md`. Use
+  `make ccdp` from the repo root, or `make ccdp-rfc-strict` inside
+  `protocols/ccdp`, before treating protocol edits as complete.
+- **Ignored workbench outputs:** `workbench/` is ignored. For intended release
+  notes, review packets, or durable analysis artifacts, inspect them directly
+  and use `git add -f` only for the specific file(s) the operator wants
+  committed.
