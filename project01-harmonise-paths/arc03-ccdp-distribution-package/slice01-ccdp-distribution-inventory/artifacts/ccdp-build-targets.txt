@@ -1,0 +1,57 @@
+Makefile:11:BUILD := build
+Makefile:17:CHECK_SKILL := ./scripts/check-skill-description.sh
+Makefile:18:INSTALL_ZIPS := \
+Makefile:23:INSTALL_SKILLS := $(INSTALL_ZIPS:.zip=)
+Makefile:25:.PHONY: all skills install uninstall clean help check-skills check-package-paths \
+Makefile:30:ALL_SKILL_FILES := \
+Makefile:44:## help: list the available targets
+Makefile:45:help:
+Makefile:72:CF_NAME  := collaboration-framework
+Makefile:73:CF_ZIP   := $(CF_NAME).zip
+Makefile:74:CF_STAGE := $(BUILD)/$(CF_NAME)
+Makefile:78:CF_FILES := \
+Makefile:100:## collab-framework: build collaboration-framework.zip (SKILL.md + its 9 files)
+Makefile:101:collab-framework: collab-framework-clean
+Makefile:121:## collab-framework-clean: remove the staging dir (leaves the zip in place)
+Makefile:122:collab-framework-clean:
+Makefile:136:KNOWLEDGE := knowledge
+Makefile:160:rust:
+Makefile:163:go:
+Makefile:166:cpp:
+Makefile:169:js:
+Makefile:172:erlang:
+Makefile:175:cobalt:
+Makefile:178:design:
+Makefile:181:tailwindcss:
+Makefile:184:deno:
+Makefile:189:biome:
+Makefile:197:## skills: build every per-domain zip
+Makefile:198:skills: rust go cpp js erlang cobalt design tailwindcss deno biome
+Makefile:200:## all: build every per-domain zip plus the collaboration-framework zip
+Makefile:201:all: skills collab-framework
+Makefile:203:## check-skills: validate the description length of every SKILL.md
+Makefile:204:check-skills:
+Makefile:208:## check-package-paths: build all zips and validate package-context Markdown paths
+Makefile:209:check-package-paths: all
+Makefile:215:## install: uninstall old copies, build all zips, and install them into $(INSTALL_DIR)
+Makefile:216:install: $(INSTALL_DIR) uninstall all
+Makefile:226:## uninstall: remove installed skills from $(INSTALL_DIR)
+Makefile:227:uninstall:
+Makefile:234:## clean: remove the staging dir and every generated zip
+Makefile:235:clean:
+Makefile:240:ccdp:
+protocols/ccdp/Makefile:9:.PHONY: ccdp-rfc ccdp-rfc-strict ccdp-rfc-kramdown ccdp-rfc-kramdown-strict clean
+protocols/ccdp/Makefile:11:ASSEMBLER := tools/ccdp-assembler/target/release/ccdp-assembler
+protocols/ccdp/Makefile:12:TEMPLATE := templates/draft-rfcxml-general-template-standard-00.xml-edited.md
+protocols/ccdp/Makefile:13:OUTPUT := composite-cognition-dispatch-protocol.md
+protocols/ccdp/Makefile:14:VERSION := 0.2
+protocols/ccdp/Makefile:16:## ccdp-rfc: assemble the chapters into GFM, with validation
+protocols/ccdp/Makefile:17:ccdp-rfc: $(ASSEMBLER)
+protocols/ccdp/Makefile:20:## ccdp-rfc-strict: same as ccdp-rfc, but fail the build on any validation warning
+protocols/ccdp/Makefile:21:ccdp-rfc-strict: $(ASSEMBLER)
+protocols/ccdp/Makefile:24:## ccdp-rfc-kramdown: assemble the chapters into kramdown-rfc-flavored markdown
+protocols/ccdp/Makefile:25:ccdp-rfc-kramdown: $(ASSEMBLER)
+protocols/ccdp/Makefile:28:## ccdp-rfc-kramdown-strict: same as ccdp-rfc-kramdown, but fail the build on any validation warning
+protocols/ccdp/Makefile:29:ccdp-rfc-kramdown-strict: $(ASSEMBLER)
+protocols/ccdp/Makefile:35:## clean: remove the assembled document and build artifacts
+protocols/ccdp/Makefile:36:clean:

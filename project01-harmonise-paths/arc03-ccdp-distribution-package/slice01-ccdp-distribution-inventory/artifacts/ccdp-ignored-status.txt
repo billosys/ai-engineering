@@ -1,0 +1,35 @@
+CCDP tracking status summary
+
+on-disk files under protocols/ccdp: 4666
+tracked files under protocols/ccdp plus root README/Makefile: 104
+on-disk files under protocols/ccdp/prompts and workbench: 197
+tracked files under protocols/ccdp/prompts and workbench: 0
+ignored status rows sampled from prompts/workbench/target: 4564
+
+ignored status sample:
+!! protocols/ccdp/prompts/extract-json-corpus-prompt.md
+!! protocols/ccdp/tools/ccdp-assembler/target/.rustc_info.json
+!! protocols/ccdp/tools/ccdp-assembler/target/CACHEDIR.TAG
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.cargo-artifact-lock
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.cargo-build-lock
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.cargo-lock
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/aho-corasick-3a2686df9e3b1714/dep-lib-aho_corasick
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/aho-corasick-3a2686df9e3b1714/invoked.timestamp
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/aho-corasick-3a2686df9e3b1714/lib-aho_corasick
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/aho-corasick-3a2686df9e3b1714/lib-aho_corasick.json
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/aho-corasick-e08ac40edbc3ba26/dep-lib-aho_corasick
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/aho-corasick-e08ac40edbc3ba26/invoked.timestamp
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/aho-corasick-e08ac40edbc3ba26/lib-aho_corasick
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/aho-corasick-e08ac40edbc3ba26/lib-aho_corasick.json
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstream-56caa4df18f75813/dep-lib-anstream
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstream-56caa4df18f75813/invoked.timestamp
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstream-56caa4df18f75813/lib-anstream
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstream-56caa4df18f75813/lib-anstream.json
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstream-c4e7a14236842629/dep-lib-anstream
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstream-c4e7a14236842629/invoked.timestamp
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstream-c4e7a14236842629/lib-anstream
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstream-c4e7a14236842629/lib-anstream.json
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstyle-1fab11ef39e1922c/dep-lib-anstyle
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstyle-1fab11ef39e1922c/invoked.timestamp
+!! protocols/ccdp/tools/ccdp-assembler/target/debug/.fingerprint/anstyle-1fab11ef39e1922c/lib-anstyle
+... 4539 additional ignored rows omitted

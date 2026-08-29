@@ -1,0 +1,12 @@
+class	count
+other	1
+local-absolute	5
+ccdp-root-relative	20
+document-relative	30
+external-url	18
+absolute-or-rooted	39
+path-like	603
+repo-root-relative	343
+workbench-only	25
+parent-relative	52
+anchor-only	141

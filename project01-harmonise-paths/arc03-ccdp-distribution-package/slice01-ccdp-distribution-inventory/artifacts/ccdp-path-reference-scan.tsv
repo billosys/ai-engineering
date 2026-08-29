@@ -1,0 +1,1278 @@
+file	area	line	kind	target	class
+README.md	repo-root	5	markdown-link	https://img.shields.io/badge/License-MIT-blue.svg	external-url
+README.md	repo-root	17	markdown-link	#the-skill-library	anchor-only
+README.md	repo-root	25	markdown-link	#about	anchor-only
+README.md	repo-root	26	markdown-link	#the-collaboration-framework	anchor-only
+README.md	repo-root	27	markdown-link	#the-problems	anchor-only
+README.md	repo-root	27	markdown-link	#the-solutions	anchor-only
+README.md	repo-root	28	markdown-link	#what-you-get	anchor-only
+README.md	repo-root	28	markdown-link	#how-to-use-it	anchor-only
+README.md	repo-root	29	markdown-link	#under-the-hood	anchor-only
+README.md	repo-root	30	markdown-link	#the-skill-library	anchor-only
+README.md	repo-root	31	markdown-link	#building-and-installing	anchor-only
+README.md	repo-root	32	markdown-link	#repository-layout	anchor-only
+README.md	repo-root	33	markdown-link	#composite-cognition-dispatch-protocol	anchor-only
+README.md	repo-root	34	markdown-link	#contributing	anchor-only
+README.md	repo-root	35	markdown-link	#license	anchor-only
+README.md	repo-root	40	code-span	/collaboration-framework	absolute-or-rooted
+README.md	repo-root	72	markdown-link	./docs/ORIGINS.md	document-relative
+README.md	repo-root	152	code-span	make collab-framework	path-like
+README.md	repo-root	152	code-span	collaboration-framework.zip	path-like
+README.md	repo-root	157	code-span	make install	path-like
+README.md	repo-root	158	code-span	~/.agents/skills/	path-like
+README.md	repo-root	160	code-span	/collaboration-framework	absolute-or-rooted
+README.md	repo-root	181	markdown-link	./SKILL.md	document-relative
+README.md	repo-root	181	code-span	SKILL.md	path-like
+README.md	repo-root	184	markdown-link	./docs/AI-CONSTITUTION-SUPPLEMENT.md	document-relative
+README.md	repo-root	184	code-span	AI-CONSTITUTION-SUPPLEMENT.md	path-like
+README.md	repo-root	185	markdown-link	./docs/AI-ENGINEERING-METHODOLOGY.md	document-relative
+README.md	repo-root	185	code-span	AI-ENGINEERING-METHODOLOGY.md	path-like
+README.md	repo-root	186	markdown-link	./docs/PROJECT-MANAGEMENT.md	document-relative
+README.md	repo-root	186	markdown-link	./docs/pm/	document-relative
+README.md	repo-root	186	code-span	PROJECT-MANAGEMENT.md	path-like
+README.md	repo-root	186	code-span	docs/pm/	path-like
+README.md	repo-root	187	markdown-link	./templates/LEDGER-DISCIPLINE.md	document-relative
+README.md	repo-root	187	code-span	LEDGER-DISCIPLINE.md	path-like
+README.md	repo-root	188	markdown-link	./docs/CODE-AUDIT.md	document-relative
+README.md	repo-root	188	code-span	CODE-AUDIT.md	path-like
+README.md	repo-root	190	markdown-link	./docs/CLAUDE-CODE-COVERAGE.md	document-relative
+README.md	repo-root	190	code-span	CLAUDE-CODE-COVERAGE.md	path-like
+README.md	repo-root	191	markdown-link	./docs/SUBAGENT-DELEGATION-POLICY.md	document-relative
+README.md	repo-root	191	code-span	SUBAGENT-DELEGATION-POLICY.md	path-like
+README.md	repo-root	192	markdown-link	./docs/CONTRIBUTION-STYLE.md	document-relative
+README.md	repo-root	192	markdown-link	./templates/CONTRIBUTION-TICKET.md	document-relative
+README.md	repo-root	192	code-span	CONTRIBUTION-STYLE.md	path-like
+README.md	repo-root	192	code-span	CONTRIBUTION-TICKET.md	path-like
+README.md	repo-root	195	code-span	CLAUDE.md	path-like
+README.md	repo-root	199	markdown-link	./knowledge	document-relative
+README.md	repo-root	199	code-span	./knowledge/	document-relative
+README.md	repo-root	200	code-span	SKILL.md	path-like
+README.md	repo-root	210	markdown-link	./knowledge/rust/README.md	document-relative
+README.md	repo-root	211	markdown-link	./knowledge/js/	document-relative
+README.md	repo-root	212	markdown-link	./knowledge/go/	document-relative
+README.md	repo-root	213	markdown-link	./knowledge/cpp/	document-relative
+README.md	repo-root	214	markdown-link	./knowledge/erlang/	document-relative
+README.md	repo-root	215	markdown-link	./knowledge/design/	document-relative
+README.md	repo-root	216	markdown-link	./knowledge/tailwindcss/	document-relative
+README.md	repo-root	217	markdown-link	./knowledge/biome/	document-relative
+README.md	repo-root	218	markdown-link	./knowledge/deno/	document-relative
+README.md	repo-root	219	markdown-link	./knowledge/cobalt/	document-relative
+README.md	repo-root	221	code-span	README.md	repo-root-relative
+README.md	repo-root	222	code-span	SKILL.md	path-like
+README.md	repo-root	223	code-span	CLAUDE.md	path-like
+README.md	repo-root	225	code-span	SKILL.md	path-like
+README.md	repo-root	242	markdown-link	./Makefile	document-relative
+README.md	repo-root	244	code-span	SKILL.md	path-like
+README.md	repo-root	272	code-span	make install	path-like
+README.md	repo-root	291	markdown-link	./docs/dev/	document-relative
+README.md	repo-root	291	code-span	docs/dev/	path-like
+README.md	repo-root	315	markdown-link	https://github.com/billosys/ai-engineering/blob/main/protocols/ccdp/composite-cognition-dispatch-protocol.md	external-url
+README.md	repo-root	317	markdown-link	https://billo.systems/ai-engineering/protocols/ccdp/visual-guide/	external-url
+README.md	repo-root	325	markdown-link	./templates/GUIDE.md	document-relative
+README.md	repo-root	325	code-span	templates/GUIDE.md	repo-root-relative
+README.md	repo-root	326	markdown-link	./docs/dev/	document-relative
+README.md	repo-root	326	code-span	docs/dev/	path-like
+README.md	repo-root	331	markdown-link	./LICENSE	document-relative
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	15	markdown-link	#section-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	16	markdown-link	#section-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	17	markdown-link	#section-2-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	18	markdown-link	#section-2-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	19	markdown-link	#section-2-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	20	markdown-link	#section-2-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	21	markdown-link	#section-2-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	22	markdown-link	#section-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	23	markdown-link	#section-3-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	24	markdown-link	#section-3-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	25	markdown-link	#section-3-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	26	markdown-link	#section-3-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	27	markdown-link	#section-3-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	28	markdown-link	#section-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	29	markdown-link	#section-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	30	markdown-link	#section-5-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	31	markdown-link	#section-5-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	32	markdown-link	#section-5-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	33	markdown-link	#section-5-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	34	markdown-link	#section-5-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	35	markdown-link	#section-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	36	markdown-link	#section-6-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	37	markdown-link	#section-6-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	38	markdown-link	#section-6-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	39	markdown-link	#section-6-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	40	markdown-link	#section-6-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	41	markdown-link	#section-7	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	42	markdown-link	#section-7-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	43	markdown-link	#section-7-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	44	markdown-link	#section-7-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	45	markdown-link	#section-7-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	46	markdown-link	#section-7-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	47	markdown-link	#section-7-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	48	markdown-link	#section-7-7	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	49	markdown-link	#section-7-8	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	50	markdown-link	#section-7-9	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	51	markdown-link	#section-8	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	52	markdown-link	#section-8-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	53	markdown-link	#section-8-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	54	markdown-link	#section-8-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	55	markdown-link	#section-8-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	56	markdown-link	#section-8-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	57	markdown-link	#section-8-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	58	markdown-link	#section-9	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	59	markdown-link	#section-9-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	60	markdown-link	#section-9-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	61	markdown-link	#section-9-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	62	markdown-link	#section-9-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	63	markdown-link	#section-9-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	64	markdown-link	#section-9-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	65	markdown-link	#section-9-7	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	66	markdown-link	#section-10	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	67	markdown-link	#section-10-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	68	markdown-link	#section-10-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	69	markdown-link	#section-10-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	70	markdown-link	#section-10-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	71	markdown-link	#section-10-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	73	markdown-link	#section-10-7	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	74	markdown-link	#section-10-8	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	75	markdown-link	#section-11	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	76	markdown-link	#section-11-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	77	markdown-link	#section-11-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	78	markdown-link	#section-11-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	79	markdown-link	#section-11-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	80	markdown-link	#section-11-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	81	markdown-link	#section-11-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	82	markdown-link	#section-11-7	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	83	markdown-link	#section-12	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	84	markdown-link	#section-12-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	85	markdown-link	#section-12-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	86	markdown-link	#section-12-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	87	markdown-link	#section-12-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	88	markdown-link	#section-12-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	89	markdown-link	#section-12-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	90	markdown-link	#section-12-7	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	91	markdown-link	#section-13	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	92	markdown-link	#section-13-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	93	markdown-link	#section-13-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	94	markdown-link	#section-13-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	95	markdown-link	#section-13-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	96	markdown-link	#section-13-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	97	markdown-link	#section-13-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	98	markdown-link	#section-13-7	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	99	markdown-link	#section-14	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	100	markdown-link	#section-14-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	101	markdown-link	#section-14-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	102	markdown-link	#section-14-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	103	markdown-link	#section-14-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	104	markdown-link	#section-14-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	105	markdown-link	#section-14-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	106	markdown-link	#section-15	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	107	markdown-link	#section-15-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	108	markdown-link	#section-15-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	109	markdown-link	#section-15-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	110	markdown-link	#section-15-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	111	markdown-link	#section-15-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	112	markdown-link	#section-15-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	113	markdown-link	#section-15-7	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	114	markdown-link	#section-15-8	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	115	markdown-link	#section-16	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	116	markdown-link	#section-16-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	117	markdown-link	#section-16-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	118	markdown-link	#section-16-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	119	markdown-link	#section-16-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	120	markdown-link	#section-16-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	121	markdown-link	#section-16-6	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	122	markdown-link	#section-17	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	123	markdown-link	#section-17-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	124	markdown-link	#section-17-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	125	markdown-link	#section-17-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	126	markdown-link	#section-17-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	127	markdown-link	#section-18	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	128	markdown-link	#section-18-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	129	markdown-link	#section-18-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	130	markdown-link	#section-18-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	131	markdown-link	#section-18-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	132	markdown-link	#section-18-5	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	133	markdown-link	#section-19	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	134	markdown-link	#section-19-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	135	markdown-link	#section-19-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	136	markdown-link	#section-19-3	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	137	markdown-link	#section-19-4	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	138	markdown-link	#section-20	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	139	markdown-link	#section-21	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	140	markdown-link	#section-21-1	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	141	markdown-link	#section-21-2	anchor-only
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	178	code-span	// ...	absolute-or-rooted
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	180	code-span	// ...	absolute-or-rooted
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	180	code-span	application/json	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	798	code-span	ccdp/request	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	799	code-span	ccdp/escalation	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	800	code-span	ccdp/health.request	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	801	code-span	ccdp/decomposition.result	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	802	code-span	ccdp/notification	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	1241	code-span	envelope.schema.json	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	1242	code-span	content.schema.json	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	1243	code-span	provenance.schema.json	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	1244	code-span	escalation.schema.json	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	1245	code-span	health.schema.json	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	1246	code-span	decomposition-plan.schema.json	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	1247	code-span	audit-record.schema.json	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	2853	code-span	ccdp/health.request	path-like
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	3110	code-span	/body/translation	absolute-or-rooted
+protocols/ccdp/composite-cognition-dispatch-protocol.md	ccdp-root	4075	markdown-link	https://github.com/billosys/ai-engineering/blob/ccdp-0.1/protocols/ccdp/composite-cognition-dispatch-protocol.md	external-url
+protocols/ccdp/json/FINDINGS.md	json	84	code-span	/	absolute-or-rooted
+protocols/ccdp/json/FINDINGS.md	json	91	code-span	// ...	absolute-or-rooted
+protocols/ccdp/json/FINDINGS.md	json	99	code-span	// ...	absolute-or-rooted
+protocols/ccdp/json/FINDINGS.md	json	99	code-span	/* ... */	absolute-or-rooted
+protocols/ccdp/json/MANIFEST.md	json	6	code-span	.notes.md	path-like
+protocols/ccdp/json/MANIFEST.md	json	8	code-span	FINDINGS.md	path-like
+protocols/ccdp/json/MANIFEST.md	json	15	code-span	src/README.md	ccdp-root-relative
+protocols/ccdp/json/MANIFEST.md	json	15	code-span	src/01-abstract.md	ccdp-root-relative
+protocols/ccdp/json/MANIFEST.md	json	16	code-span	src/21-version-history.md	ccdp-root-relative
+protocols/ccdp/json/MANIFEST.md	json	97	code-span	.notes.md	path-like
+protocols/ccdp/json/MANIFEST.md	json	101	code-span	// ...	absolute-or-rooted
+protocols/ccdp/json/MANIFEST.md	json	101	code-span	/* ... */	absolute-or-rooted
+protocols/ccdp/json/canonical/audit-record.notes.md	json	11	code-span	examples/11-audit-trail/	path-like
+protocols/ccdp/json/canonical/capability-record.json	json	10	json-string	https://json-schema.org/draft/2020-12/schema	external-url
+protocols/ccdp/json/canonical/capability-record.json	json	21	json-string	https://json-schema.org/draft/2020-12/schema	external-url
+protocols/ccdp/json/canonical/capability-record.json	json	46	json-string	https://z3-prover-01.internal:8443/ccdp/health	external-url
+protocols/ccdp/json/canonical/decomposition-plan.json	json	4	json-string	org.ccdp.decomposition/output/v1	path-like
+protocols/ccdp/json/canonical/decomposition-plan.json	json	38	json-string	/body/translation	absolute-or-rooted
+protocols/ccdp/json/canonical/decomposition-plan.json	json	61	json-string	/body/proof	absolute-or-rooted
+protocols/ccdp/json/canonical/error-object.json	json	12	json-string	org.ccdp.deduction/input/v2	path-like
+protocols/ccdp/json/canonical/message-decomposition-result.json	json	3	json-string	ccdp/decomposition.result	path-like
+protocols/ccdp/json/canonical/message-decomposition-result.json	json	30	json-string	urn:ccdp:artifact:plan-check/plan-550e8400.json	external-url
+protocols/ccdp/json/canonical/message-decomposition-result.json	json	52	json-string	org.ccdp.decomposition/output/v1	path-like
+protocols/ccdp/json/canonical/message-decomposition-result.json	json	88	json-string	/body/translation	absolute-or-rooted
+protocols/ccdp/json/canonical/message-decomposition-result.json	json	115	json-string	/body/proof	absolute-or-rooted
+protocols/ccdp/json/canonical/message-escalation.json	json	3	json-string	ccdp/escalation	path-like
+protocols/ccdp/json/canonical/message-health-request.json	json	3	json-string	ccdp/health.request	path-like
+protocols/ccdp/json/canonical/message-notification.json	json	3	json-string	ccdp/notification	path-like
+protocols/ccdp/json/canonical/message-request.json	json	3	json-string	ccdp/request	path-like
+protocols/ccdp/json/canonical/message-request.json	json	90	json-string	org.ccdp.deduction/input/v2	path-like
+protocols/ccdp/json/canonical/message-response.json	json	29	json-string	application/json	path-like
+protocols/ccdp/json/canonical/message-response.json	json	39	json-string	urn:ccdp:artifact:test-results/run-2026-08-03-001.json	external-url
+protocols/ccdp/json/canonical/message-response.json	json	45	json-string	application/json	path-like
+protocols/ccdp/json/canonical/message-response.json	json	105	json-string	org.ccdp.verification/output/v2	path-like
+protocols/ccdp/json/examples/04-terminology/001-evidence-entry.json	json	12	json-string	application/json	path-like
+protocols/ccdp/json/examples/07-message-format/001-request-jsonrpc.json	json	3	json-string	ccdp/request	path-like
+protocols/ccdp/json/examples/07-message-format/005-envelope-response.json	json	15	json-string	urn:ccdp:artifact:test-results/run-2026-08-03-001.json	external-url
+protocols/ccdp/json/examples/07-message-format/011-content-structure.json	json	4	json-string	org.ccdp.deduction/input/v2	path-like
+protocols/ccdp/json/examples/08-capability-registry/001-capability-record.json	json	10	json-string	https://json-schema.org/draft/2020-12/schema	external-url
+protocols/ccdp/json/examples/08-capability-registry/001-capability-record.json	json	21	json-string	https://json-schema.org/draft/2020-12/schema	external-url
+protocols/ccdp/json/examples/08-capability-registry/001-capability-record.json	json	46	json-string	https://z3-prover-01.internal:8443/ccdp/health	external-url
+protocols/ccdp/json/examples/13-error-handling/001-error-response-schema-validation.json	json	12	json-string	org.ccdp.deduction/input/v2	path-like
+protocols/ccdp/json/examples/14-decomposition/001-decomposition-plan.json	json	4	json-string	org.ccdp.decomposition/output/v1	path-like
+protocols/ccdp/json/examples/14-decomposition/001-decomposition-plan.json	json	37	json-string	/body/translation	absolute-or-rooted
+protocols/ccdp/json/examples/14-decomposition/001-decomposition-plan.json	json	56	json-string	/body/proof	absolute-or-rooted
+protocols/ccdp/json/examples/14-decomposition/002-result-reference.json	json	3	json-string	/body/translation	absolute-or-rooted
+protocols/ccdp/json/inventory/enums.md	json	17	code-span	ccdp/request	path-like
+protocols/ccdp/json/inventory/enums.md	json	17	code-span	ccdp/escalation	path-like
+protocols/ccdp/json/inventory/enums.md	json	17	code-span	ccdp/health.request	path-like
+protocols/ccdp/json/inventory/enums.md	json	18	code-span	ccdp/decomposition.result	path-like
+protocols/ccdp/json/inventory/enums.md	json	18	code-span	ccdp/notification	path-like
+protocols/ccdp/json/inventory/enums.md	json	221	code-span	application/json	path-like
+protocols/ccdp/json/inventory/fields.md	json	22	code-span	ccdp/request	path-like
+protocols/ccdp/json/inventory/fields.md	json	22	code-span	ccdp/escalation	path-like
+protocols/ccdp/json/inventory/fields.md	json	22	code-span	ccdp/health.request	path-like
+protocols/ccdp/json/inventory/fields.md	json	22	code-span	ccdp/decomposition.result	path-like
+protocols/ccdp/json/inventory/fields.md	json	22	code-span	ccdp/notification	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	4	code-span	/Users/oubiwann/lab/billosys/ai-engineering/protocols/ccdp	local-absolute
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	12	code-span	01-abstract.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	12	code-span	21-version-history.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	12	code-span	README.md	repo-root-relative
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	20	code-span	billosys/ccdp-rs	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	63	code-span	src/README.md	ccdp-root-relative
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	63	code-span	src/02-conventions.md	ccdp-root-relative
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	67	code-span	/* ... */	absolute-or-rooted
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	73	code-span	FINDINGS.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	75	code-span	fields.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	78	code-span	enums.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	80	code-span	MANIFEST.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	90	code-span	FINDINGS.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	106	code-span	.../protocols/ccdp/json/	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	108	code-span	MANIFEST.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	115	code-span	FINDINGS.md	path-like
+protocols/ccdp/prompts/extract-json-corpus-prompt.md	prompts	118	code-span	MANIFEST.md	path-like
+protocols/ccdp/src/02-conventions.md	src	23	code-span	// ...	absolute-or-rooted
+protocols/ccdp/src/02-conventions.md	src	25	code-span	// ...	absolute-or-rooted
+protocols/ccdp/src/02-conventions.md	src	25	code-span	application/json	path-like
+protocols/ccdp/src/07-message-format.md	src	42	code-span	ccdp/request	path-like
+protocols/ccdp/src/07-message-format.md	src	43	code-span	ccdp/escalation	path-like
+protocols/ccdp/src/07-message-format.md	src	44	code-span	ccdp/health.request	path-like
+protocols/ccdp/src/07-message-format.md	src	45	code-span	ccdp/decomposition.result	path-like
+protocols/ccdp/src/07-message-format.md	src	46	code-span	ccdp/notification	path-like
+protocols/ccdp/src/07-message-format.md	src	470	code-span	envelope.schema.json	path-like
+protocols/ccdp/src/07-message-format.md	src	471	code-span	content.schema.json	path-like
+protocols/ccdp/src/07-message-format.md	src	472	code-span	provenance.schema.json	path-like
+protocols/ccdp/src/07-message-format.md	src	473	code-span	escalation.schema.json	path-like
+protocols/ccdp/src/07-message-format.md	src	474	code-span	health.schema.json	path-like
+protocols/ccdp/src/07-message-format.md	src	475	code-span	decomposition-plan.schema.json	path-like
+protocols/ccdp/src/07-message-format.md	src	476	code-span	audit-record.schema.json	path-like
+protocols/ccdp/src/13-error-handling.md	src	229	code-span	ccdp/health.request	path-like
+protocols/ccdp/src/14-decomposition.md	src	167	code-span	/body/translation	absolute-or-rooted
+protocols/ccdp/src/20-previous-versions.md	src	5	markdown-link	https://github.com/billosys/ai-engineering/blob/ccdp-0.2/protocols/ccdp/composite-cognition-dispatch-protocol.md	external-url
+protocols/ccdp/src/20-previous-versions.md	src	6	markdown-link	https://github.com/billosys/ai-engineering/blob/ccdp-0.1/protocols/ccdp/composite-cognition-dispatch-protocol.md	external-url
+protocols/ccdp/src/README.md	src	5	code-span	01-abstract.md	path-like
+protocols/ccdp/src/README.md	src	5	code-span	21-version-history.md	path-like
+protocols/ccdp/src/README.md	src	5	code-span	../tools/	parent-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	18	code-span	src/05-architecture-overview.md	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	19	code-span	src/07-message-format.md	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	20	code-span	src/08-capability-registry.md	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	21	code-span	src/09-routing.md	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	22	code-span	src/10-provenance-grades.md	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	23	code-span	src/11-audit-trail.md	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	24	code-span	src/13-error-handling.md	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	25	code-span	src/15-security.md	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	26	code-span	/Users/oubiwann/Dropbox/Duncan's Research/AI/CCDP/Ideas/2026-08-07-ccdp-chatgpt-integration-notes.md	local-absolute
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	27	code-span	/Users/oubiwann/Dropbox/Duncan's Research/AI/CCDP/Ideas/2026-08-07-ccdp-chatgpt-integration-project-plan.md	local-absolute
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	84	code-span	tools/ccdp-chatgpt-gateway/	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	84	code-span	test -f tools/ccdp-chatgpt-gateway/Cargo.toml && test -f tools/ccdp-chatgpt-gateway/src/main.rs && find tools/ccdp-chatgpt-gateway/src -maxdepth 1 -type f | sort	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	85	code-span	rg -n 'health|openapi|capabilities/search|requests/planning|traces|audit/request' tools/ccdp-chatgpt-gateway/src tools/ccdp-chatgpt-gateway -g '*.rs' -g '*.json' -g '*.yaml'	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	86	code-span	POST /v1/requests/planning	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	86	code-span	ccdp/request	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	86	code-span	cargo test --manifest-path tools/ccdp-chatgpt-gateway/Cargo.toml planning_request_maps_to_ccdp -- --nocapture	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	87	code-span	cargo test --manifest-path tools/ccdp-chatgpt-gateway/Cargo.toml mock_dispatcher_planning_outcomes -- --nocapture	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	88	code-span	find tools/ccdp-chatgpt-gateway/tests/golden -type f | sort && cargo test --manifest-path tools/ccdp-chatgpt-gateway/Cargo.toml golden_planning_flows -- --nocapture	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	89	code-span	cargo test --manifest-path tools/ccdp-chatgpt-gateway/Cargo.toml tool_response_preserves_ids_and_provenance -- --nocapture	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	90	code-span	cargo test --manifest-path tools/ccdp-chatgpt-gateway/Cargo.toml summaries_are_redacted -- --nocapture	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	91	code-span	cargo test --manifest-path tools/ccdp-chatgpt-gateway/Cargo.toml	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	92	code-span	test -f tools/ccdp-chatgpt-gateway/README.md && rg -n 'run|defer|MCP|ChatGPT|mock' tools/ccdp-chatgpt-gateway/README.md	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	152	code-span	GET /openapi.json	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	165	code-span	POST /v1/capabilities/search	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	194	code-span	POST /v1/requests/planning	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	220	code-span	content.schema_ref: "org.ccdp.planning/input/v1"	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	267	code-span	GET /v1/traces/{trace_id}	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	273	code-span	GET /v1/audit/request/{request_id}	path-like
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	294	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/cc-prompt-chatgpt-gateway-slice01.md	workbench	318	code-span	cargo test --manifest-path tools/ccdp-chatgpt-gateway/Cargo.toml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	4	code-span	billosys/ai-engineering	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	21	code-span	.github/workflows/pages.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	21	code-span	head -50 .github/workflows/pages.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	21	code-span	actions/upload-pages-artifact	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	21	code-span	actions/deploy-pages	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	21	code-span	./site	document-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	22	code-span	site/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	22	code-span	test -f site/index.html && head -5 site/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	23	code-span	site/protocols/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	23	code-span	test -f site/protocols/index.html && head -5 site/protocols/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	24	code-span	site/protocols/ccdp/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	24	code-span	test -f site/protocols/ccdp/index.html && head -5 site/protocols/ccdp/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	25	code-span	site/protocols/ccdp/visual-guide/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	25	code-span	test -f site/protocols/ccdp/visual-guide/index.html && head -5 site/protocols/ccdp/visual-guide/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	26	code-span	grep -l 'protocols/' site/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	26	code-span	grep -l 'ccdp/' site/protocols/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	26	code-span	grep -l 'visual-guide/' site/protocols/ccdp/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	27	code-span	.github/workflows/ci.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	27	code-span	git diff .github/workflows/ci.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	34	code-span	actions/upload-pages-artifact	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	34	code-span	actions/deploy-pages	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	37	code-span	ci.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	38	code-span	pages.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	41	code-span	billosys.github.io/ai-engineering/	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	43	code-span	/	absolute-or-rooted
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	43	code-span	site/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	44	code-span	protocols/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	44	code-span	/protocols/index.html	absolute-or-rooted
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	55	code-span	ci.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	61	code-span	.github/workflows/pages.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	63	code-span	.github/workflows/pages.yml	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	111	code-span	site/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	120	code-span	protocols/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	127	code-span	site/protocols/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	134	code-span	../index.html	parent-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	135	code-span	ccdp/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	138	code-span	site/protocols/ccdp/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	148	code-span	../index.html	parent-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	149	code-span	visual-guide/index.html	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	150	code-span	https://github.com/billosys/ai-engineering/blob/main/protocols/ccdp/composite-cognition-dispatch-protocol.md	external-url
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	153	code-span	site/protocols/ccdp/visual-guide/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	161	code-span	../index.html	parent-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	168	code-span	site/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	168	code-span	protocols/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	169	code-span	site/protocols/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	169	code-span	../index.html	parent-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	169	code-span	ccdp/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	170	code-span	site/protocols/ccdp/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	170	code-span	../index.html	parent-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	170	code-span	visual-guide/index.html	ccdp-root-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	171	code-span	site/protocols/ccdp/visual-guide/index.html	path-like
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	171	code-span	../index.html	parent-relative
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	173	code-span	/	absolute-or-rooted
+protocols/ccdp/workbench/cc-prompt-gh-pages.md	workbench	177	code-span	git diff .github/workflows/ci.yml	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	6	code-span	NN-slug.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	10	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	13	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part19.md	parent-relative
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	27	code-span	20-previous-versions.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	27	code-span	grep -n 'Previous Versions' 20-previous-versions.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	27	code-span	grep 'v0.1' 20-previous-versions.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	28	code-span	21-version-history.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	28	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	28	code-span	ls 21-version-history.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	28	code-span	ls 20-version-history.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	28	code-span	grep -c '^# 21\.\|^## 21\.' 21-version-history.md	other
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	30	code-span	grep 'previous-versions\|21-version-history' README.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	31	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part19.md	parent-relative
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	37	code-span	20-previous-versions.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	39	code-span	20-previous-versions.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	45	markdown-link	https://github.com/billosys/ai-engineering/blob/ccdp-0.1/protocols/ccdp/composite-cognition-dispatch-protocol.md	external-url
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	47	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	47	code-span	21-version-history.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	73	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	74	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	74	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	75	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	75	code-span	21-version-history.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	80	code-span	NN-slug.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	81	code-span	20-previous-versions.md	path-like
+protocols/ccdp/workbench/cc-prompt-v02-part19.md	workbench	81	code-span	21-version-history.md	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	19	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	21	code-span	protocols/ccdp/composite-cognition-dispatch-protocol.md	repo-root-relative
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	61	code-span	protocols/ccdp/tools/ccdp-assembler/	repo-root-relative
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	63	code-span	assemble.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	63	code-span	chapters.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	63	code-span	cli.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	63	code-span	frontmatter.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	64	code-span	headers.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	64	code-span	main.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	64	code-span	references.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	64	code-span	toc.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	64	code-span	validate.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	64	code-span	yaml.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	68	code-span	NN-slug.md	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	84	code-span	docs/ORIGINS.md	path-like
+protocols/ccdp/workbench/release-notes-0.3.0.md	workbench	85	code-span	scripts/count-patterns.sh	path-like
+protocols/ccdp/workbench/release-notes-0.3.1.md	workbench	103	code-span	assemble.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.1.md	workbench	105	code-span	references.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.1.md	workbench	105	code-span	toc.rs	path-like
+protocols/ccdp/workbench/release-notes-0.3.1.md	workbench	109	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/release-notes-0.3.1.md	workbench	111	code-span	protocols/ccdp/Makefile	repo-root-relative
+protocols/ccdp/workbench/release-notes-0.3.1.md	workbench	112	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	5	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	5	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	5	code-span	18-references.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	42	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	60	code-span	02-conventions.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	72	code-span	// ...	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	72	code-span	application/json	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	82	code-span	03-introduction.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	102	code-span	04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	104	code-span	Content is opaque to the Dispatcher: the Dispatcher MUST NOT interpret, transform, or make routing decisions based on Content.	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	132	code-span	05-architecture-overview.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	152	code-span	06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	158	code-span	/\	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	172	code-span	07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	178	code-span	ccdp/response	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	178	code-span	ccdp/health.response	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	185	code-span	ccdp/request	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	186	code-span	ccdp/escalation	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	187	code-span	ccdp/health.request	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	188	code-span	ccdp/decomposition.result	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	189	code-span	ccdp/notification	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	239	code-span	08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	275	code-span	09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	295	code-span	12-flow-control.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	321	code-span	envelope.schema.json	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	322	code-span	content.schema.json	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	323	code-span	provenance.schema.json	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	324	code-span	escalation.schema.json	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	325	code-span	health.schema.json	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	326	code-span	decomposition-plan.schema.json	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part1.md	workbench	327	code-span	audit-record.schema.json	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	17	code-span	10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	49	code-span	11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	88	code-span	header would exceed 512 bytes after appending, the Dispatcher MUST truncate the oldest entries (leftmost) to make room, per W3C Trace Context Section 3.3.2.1. The Dispatcher MUST sanitize \	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	94	code-span	13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	115	code-span	14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	187	code-span	15-security.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	217	code-span	16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	233	code-span	Never perform semantic interpretation of message Content — never reason about what content means, never make routing decisions based on content meaning. The Dispatcher MAY perform structural validation (JSON Schema checking) and structural operations (typed-reference resolution, template assembly, size checks) on Content as specified in Sections 7, 8, and 14. See the Structural Validation vs Semantic Interpretation definition in Section 4.	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	259	code-span	17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	289	code-span	18-references.md	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	325	code-span	National Security Agency / Cybersecurity and Infrastructure Security Agency, "Deploying AI Systems Securely: Best Practices for Deploying Secure and Resilient AI Systems," April 2024. https://media.defense.gov/2024/Apr/15/2003439257/-1/-1/0/CSI-DEPLOYING-AI-SYSTEMS-SECURELY.PDF	path-like
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	347	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	349	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/cc-prompt-v02-part2.md	workbench	349	code-span	src/README.md	ccdp-root-relative
+protocols/ccdp/workbench/review-v0.1/review-01-abstract.md	workbench	3	code-span	protocols/ccdp/src/01-abstract.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-02-conventions.md	workbench	3	code-span	protocols/ccdp/src/02-conventions.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-02-conventions.md	workbench	14	code-span	// ...	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.1/review-02-conventions.md	workbench	22	code-span	application/json	path-like
+protocols/ccdp/workbench/review-v0.1/review-03-introduction.md	workbench	3	code-span	protocols/ccdp/src/03-introduction.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-04-terminology.md	workbench	3	code-span	protocols/ccdp/src/04-terminology.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-05-architecture-overview.md	workbench	3	code-span	protocols/ccdp/src/05-architecture-overview.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-06-protocol-layers.md	workbench	3	code-span	protocols/ccdp/src/06-protocol-layers.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-07-message-format.md	workbench	3	code-span	protocols/ccdp/src/07-message-format.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-07-message-format.md	workbench	13	code-span	ccdp/response	path-like
+protocols/ccdp/workbench/review-v0.1/review-07-message-format.md	workbench	13	code-span	ccdp/health.response	path-like
+protocols/ccdp/workbench/review-v0.1/review-07-message-format.md	workbench	14	code-span	ccdp/response	path-like
+protocols/ccdp/workbench/review-v0.1/review-08-capability-registry.md	workbench	3	code-span	protocols/ccdp/src/08-capability-registry.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-09-routing.md	workbench	3	code-span	protocols/ccdp/src/09-routing.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-10-provenance-grades.md	workbench	3	code-span	protocols/ccdp/src/10-provenance-grades.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-11-audit-trail.md	workbench	3	code-span	protocols/ccdp/src/11-audit-trail.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-12-flow-control.md	workbench	3	code-span	protocols/ccdp/src/12-flow-control.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-13-error-handling.md	workbench	3	code-span	protocols/ccdp/src/13-error-handling.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-14-decomposition.md	workbench	3	code-span	protocols/ccdp/src/14-decomposition.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-15-security.md	workbench	3	code-span	protocols/ccdp/src/15-security.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-16-conformance.md	workbench	3	code-span	protocols/ccdp/src/16-conformance.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-17-security-considerations.md	workbench	3	code-span	protocols/ccdp/src/17-security-considerations.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-18-references.md	workbench	3	code-span	protocols/ccdp/src/18-references.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-README.md	workbench	3	code-span	protocols/ccdp/src/README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-overall-assessment.md	workbench	3	code-span	protocols/ccdp/src	repo-root-relative
+protocols/ccdp/workbench/review-v0.1/review-overall-assessment.md	workbench	15	code-span	ccdp/response	path-like
+protocols/ccdp/workbench/review-v0.1/review-overall-assessment.md	workbench	15	code-span	ccdp/health.response	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	5	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	5	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	5	code-span	18-references.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	59	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	71	code-span	02-conventions.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	81	code-span	03-introduction.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	93	code-span	04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	107	code-span	05-architecture-overview.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	119	code-span	06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	129	code-span	07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	170	code-span	08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	190	code-span	09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part3.md	workbench	206	code-span	12-flow-control.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	21	code-span	10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	47	code-span	11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	61	code-span	13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	83	code-span	14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	89	code-span	/body/translation	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	107	code-span	15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	133	code-span	16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	172	code-span	17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	184	code-span	18-references.md	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	186	code-span	National Security Agency / Cybersecurity and Infrastructure Security Agency, "Deploying AI Systems Securely: Best Practices for Deploying Secure and Resilient AI Systems," April 2024. https://media.defense.gov/2024/Apr/15/2003439257/-1/-1/0/CSI-DEPLOYING-AI-SYSTEMS-SECURELY.PDF	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	188	code-span	google.github.io/A2A/	path-like
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	188	code-span	https://a2a-protocol.org/latest/specification	external-url
+protocols/ccdp/workbench/review-v0.2a/cc-prompt-v02-part4.md	workbench	204	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-01-abstract.md	workbench	3	code-span	protocols/ccdp/src/01-abstract.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-02-conventions.md	workbench	3	code-span	protocols/ccdp/src/02-conventions.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-03-introduction.md	workbench	3	code-span	protocols/ccdp/src/03-introduction.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-04-terminology.md	workbench	3	code-span	protocols/ccdp/src/04-terminology.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-05-architecture-overview.md	workbench	3	code-span	protocols/ccdp/src/05-architecture-overview.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-06-protocol-layers.md	workbench	3	code-span	protocols/ccdp/src/06-protocol-layers.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-07-message-format.md	workbench	3	code-span	protocols/ccdp/src/07-message-format.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-07-message-format.md	workbench	13	code-span	protocols/ccdp	path-like
+protocols/ccdp/workbench/review-v0.2a/review-08-capability-registry.md	workbench	3	code-span	protocols/ccdp/src/08-capability-registry.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-09-routing.md	workbench	3	code-span	protocols/ccdp/src/09-routing.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-10-provenance-grades.md	workbench	3	code-span	protocols/ccdp/src/10-provenance-grades.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-11-audit-trail.md	workbench	3	code-span	protocols/ccdp/src/11-audit-trail.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-12-flow-control.md	workbench	3	code-span	protocols/ccdp/src/12-flow-control.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-13-error-handling.md	workbench	3	code-span	protocols/ccdp/src/13-error-handling.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-14-decomposition.md	workbench	3	code-span	protocols/ccdp/src/14-decomposition.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-14-decomposition.md	workbench	14	code-span	/body/translation	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.2a/review-14-decomposition.md	workbench	14	code-span	/translation	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.2a/review-15-security.md	workbench	3	code-span	protocols/ccdp/src/15-security.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-16-conformance.md	workbench	3	code-span	protocols/ccdp/src/16-conformance.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-17-security-considerations.md	workbench	3	code-span	protocols/ccdp/src/17-security-considerations.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-18-references.md	workbench	3	code-span	protocols/ccdp/src/18-references.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-18-references.md	workbench	14	code-span	a2a-protocol.org/latest/specification	path-like
+protocols/ccdp/workbench/review-v0.2a/review-README.md	workbench	3	code-span	protocols/ccdp/src/README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2a/review-README.md	workbench	12	code-span	protocols/ccdp	path-like
+protocols/ccdp/workbench/review-v0.2a/review-README.md	workbench	18	code-span	workbench/review-v0.2/review-overall-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2a/review-overall-assessment.md	workbench	3	code-span	protocols/ccdp/src	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	5	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	5	code-span	19-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	5	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	99	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	105	code-span	02-conventions.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	117	code-span	03-introduction.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	132	code-span	04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	150	code-span	05-architecture-overview.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	160	code-span	06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	166	code-span	07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	211	code-span	08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	235	code-span	09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part5.md	workbench	255	code-span	12-flow-control.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	17	code-span	10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	47	code-span	11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	92	code-span	13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	100	code-span	ccdp/health.response	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	102	code-span	ccdp/health.response	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	104	code-span	ccdp/health.request	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	122	code-span	14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	152	code-span	15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	204	code-span	16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	250	code-span	17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	256	code-span	18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	258	code-span	18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	312	code-span	18-references.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	312	code-span	19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	313	code-span	19-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	313	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	317	code-span	19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	322	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	338	code-span	19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	346	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	350	code-span	workbench/review-v0.2/	workbench-only
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	382	code-span	tools/ccdp-assembler/src/assemble.rs	ccdp-root-relative
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	384	code-span	tools/ccdp-assembler/src/assemble.rs	ccdp-root-relative
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	462	markdown-link	#section-20	anchor-only
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	567	code-span	tools/ccdp-assembler/src/toc.rs	ccdp-root-relative
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	569	code-span	toc.rs	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	573	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	590	code-span	ccdp/health.response	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	596	code-span	workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	693	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	693	code-span	17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	693	code-span	18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	693	code-span	19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	693	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2b/cc-prompt-v02-part6.md	workbench	693	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-03-introduction.md	workbench	7	code-span	protocols/ccdp/src/03-introduction.md:21	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-03-introduction.md	workbench	8	code-span	protocols/ccdp/src/03-introduction.md:35	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-03-introduction.md	workbench	19	code-span	protocols/ccdp/src/03-introduction.md:5	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-03-introduction.md	workbench	20	code-span	protocols/ccdp/src/03-introduction.md:7	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-03-introduction.md	workbench	21	code-span	protocols/ccdp/src/03-introduction.md:49	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-03-introduction.md	workbench	22	code-span	protocols/ccdp/src/03-introduction.md:59	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-04-terminology.md	workbench	7	code-span	protocols/ccdp/src/04-terminology.md:5	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-04-terminology.md	workbench	8	code-span	protocols/ccdp/src/04-terminology.md:37	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-04-terminology.md	workbench	9	code-span	protocols/ccdp/src/07-message-format.md:189	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-05-architecture-overview.md	workbench	7	code-span	protocols/ccdp/src/05-architecture-overview.md:39	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-05-architecture-overview.md	workbench	8	code-span	protocols/ccdp/src/05-architecture-overview.md:129	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-07-message-format.md	workbench	7	code-span	protocols/ccdp/src/07-message-format.md:135	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-07-message-format.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:136	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-07-message-format.md	workbench	9	code-span	protocols/ccdp/src/07-message-format.md:189	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-07-message-format.md	workbench	24	code-span	protocols/ccdp/src/07-message-format.md:186	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-07-message-format.md	workbench	25	code-span	protocols/ccdp/src/07-message-format.md:343	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-07-message-format.md	workbench	39	code-span	protocols/ccdp/src/07-message-format.md:5	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-08-capability-registry.md	workbench	7	code-span	protocols/ccdp/src/08-capability-registry.md:53	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-08-capability-registry.md	workbench	8	code-span	protocols/ccdp/src/08-capability-registry.md:59	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-08-capability-registry.md	workbench	9	code-span	protocols/ccdp/src/08-capability-registry.md:119	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-09-routing.md	workbench	7	code-span	protocols/ccdp/src/09-routing.md:43	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-09-routing.md	workbench	8	code-span	protocols/ccdp/src/09-routing.md:44	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-10-provenance-grades.md	workbench	7	code-span	protocols/ccdp/src/10-provenance-grades.md:88	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-10-provenance-grades.md	workbench	8	code-span	protocols/ccdp/src/10-provenance-grades.md:91	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-10-provenance-grades.md	workbench	9	code-span	protocols/ccdp/src/07-message-format.md:189	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-10-provenance-grades.md	workbench	21	code-span	protocols/ccdp/src/10-provenance-grades.md:11	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-11-audit-trail.md	workbench	7	code-span	protocols/ccdp/src/11-audit-trail.md:5	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-11-audit-trail.md	workbench	8	code-span	protocols/ccdp/src/11-audit-trail.md:13	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-11-audit-trail.md	workbench	9	code-span	protocols/ccdp/src/11-audit-trail.md:197	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-11-audit-trail.md	workbench	22	code-span	protocols/ccdp/src/11-audit-trail.md:7	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-12-flow-control.md	workbench	7	code-span	protocols/ccdp/src/12-flow-control.md:123	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-12-flow-control.md	workbench	8	code-span	protocols/ccdp/src/12-flow-control.md:195	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-13-error-handling.md	workbench	7	code-span	protocols/ccdp/src/13-error-handling.md:99	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-13-error-handling.md	workbench	17	code-span	protocols/ccdp/src/13-error-handling.md:196	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-13-error-handling.md	workbench	18	code-span	protocols/ccdp/src/07-message-format.md:48	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-13-error-handling.md	workbench	21	code-span	ccdp/health.response	path-like
+protocols/ccdp/workbench/review-v0.2b/review-13-error-handling.md	workbench	24	code-span	ccdp/health.request	path-like
+protocols/ccdp/workbench/review-v0.2b/review-13-error-handling.md	workbench	30	code-span	protocols/ccdp/src/13-error-handling.md:180	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-14-decomposition.md	workbench	7	code-span	protocols/ccdp/src/14-decomposition.md:196	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-14-decomposition.md	workbench	8	code-span	protocols/ccdp/src/14-decomposition.md:201	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-14-decomposition.md	workbench	9	code-span	protocols/ccdp/src/14-decomposition.md:209	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-14-decomposition.md	workbench	10	code-span	protocols/ccdp/src/14-decomposition.md:213	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-14-decomposition.md	workbench	24	code-span	protocols/ccdp/src/14-decomposition.md:201	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-14-decomposition.md	workbench	25	code-span	protocols/ccdp/src/14-decomposition.md:211	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-15-security.md	workbench	7	code-span	protocols/ccdp/src/15-security.md:94	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-15-security.md	workbench	8	code-span	protocols/ccdp/src/15-security.md:103	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-15-security.md	workbench	9	code-span	protocols/ccdp/src/15-security.md:109	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-15-security.md	workbench	10	code-span	protocols/ccdp/src/15-security.md:123	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-15-security.md	workbench	28	code-span	protocols/ccdp/src/15-security.md:107	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-15-security.md	workbench	29	code-span	protocols/ccdp/src/16-conformance.md:118	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-16-conformance.md	workbench	7	code-span	protocols/ccdp/src/16-conformance.md:160	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-16-conformance.md	workbench	21	code-span	protocols/ccdp/src/16-conformance.md:27	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-16-conformance.md	workbench	22	code-span	protocols/ccdp/src/16-conformance.md:39	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-16-conformance.md	workbench	23	code-span	protocols/ccdp/src/16-conformance.md:172	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-18-references.md	workbench	7	code-span	protocols/ccdp/src/18-references.md:63	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-18-references.md	workbench	8	code-span	protocols/ccdp/src/18-references.md:73	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-18-references.md	workbench	21	code-span	protocols/ccdp/src/18-references.md:65	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-18-references.md	workbench	22	code-span	protocols/ccdp/src/18-references.md:195	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-README.md	workbench	7	code-span	protocols/ccdp/src/README.md:3	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-README.md	workbench	9	code-span	workbench/review-v0.2/	workbench-only
+protocols/ccdp/workbench/review-v0.2b/review-README.md	workbench	15	code-span	workbench/review-v0.2a/	workbench-only
+protocols/ccdp/workbench/review-v0.2b/review-README.md	workbench	16	code-span	workbench/review-v0.2b/	workbench-only
+protocols/ccdp/workbench/review-v0.2b/review-README.md	workbench	20	code-span	protocols/ccdp/src/README.md:51	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	6	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	7	code-span	protocols/ccdp/workbench/v02-revision-assessment.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	16	code-span	review-04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	16	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	16	code-span	review-10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	17	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	18	code-span	review-15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	19	code-span	review-16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	20	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	21	code-span	review-14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	22	code-span	review-08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	22	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	23	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	27	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	28	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	29	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	30	code-span	review-01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	31	code-span	review-02-conventions.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	32	code-span	review-03-introduction.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	33	code-span	review-04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	34	code-span	review-05-architecture-overview.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	35	code-span	review-06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	36	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	37	code-span	review-08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	38	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	39	code-span	review-10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	40	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	41	code-span	review-12-flow-control.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	42	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	43	code-span	review-14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	44	code-span	review-15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	45	code-span	review-16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	46	code-span	review-17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	47	code-span	review-18-references.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-index.md	workbench	48	code-span	review-19-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	17	code-span	protocols/ccdp/src/04-terminology.md:37	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	18	code-span	protocols/ccdp/src/07-message-format.md:189	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	19	code-span	protocols/ccdp/src/10-provenance-grades.md:91	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	32	code-span	protocols/ccdp/src/11-audit-trail.md:5	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	33	code-span	protocols/ccdp/src/11-audit-trail.md:197	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	34	code-span	protocols/ccdp/src/11-audit-trail.md:199	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	45	code-span	protocols/ccdp/src/15-security.md:94	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	46	code-span	protocols/ccdp/src/15-security.md:103	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	47	code-span	protocols/ccdp/src/15-security.md:109	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	48	code-span	protocols/ccdp/src/15-security.md:123	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	60	code-span	protocols/ccdp/src/16-conformance.md:160	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	72	code-span	protocols/ccdp/src/14-decomposition.md:209	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	73	code-span	protocols/ccdp/src/14-decomposition.md:213	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	83	code-span	protocols/ccdp/src/08-capability-registry.md:117	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	84	code-span	protocols/ccdp/src/08-capability-registry.md:119	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	85	code-span	protocols/ccdp/src/09-routing.md:44	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	95	code-span	protocols/ccdp/src/13-error-handling.md:99	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	96	code-span	protocols/ccdp/src/13-error-handling.md:196	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	99	code-span	ccdp/health.response	path-like
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	106	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:14	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	107	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:273	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	129	code-span	v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	143	code-span	protocols/ccdp/src	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	145	code-span	protocols/ccdp/workbench/v02-revision-assessment.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-overall-assessment.md	workbench	150	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02b-review-assembled.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-v02-revision-assessment.md	workbench	16	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:10	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-v02-revision-assessment.md	workbench	28	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:80	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-v02-revision-assessment.md	workbench	29	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:273	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-v02-revision-assessment.md	workbench	47	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:194	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-v02-revision-assessment.md	workbench	48	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:236	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-v02-revision-assessment.md	workbench	62	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:252	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-v02-revision-assessment.md	workbench	74	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:49	repo-root-relative
+protocols/ccdp/workbench/review-v0.2b/review-v02-revision-assessment.md	workbench	85	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:274	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	10	code-span	protocols/ccdp/src/NN-slug.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	96	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	105	code-span	02-conventions.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	111	code-span	03-introduction.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	120	code-span	04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	185	code-span	05-architecture-overview.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	215	code-span	06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	250	code-span	07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	322	code-span	08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	340	code-span	09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	405	code-span	12-flow-control.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	415	code-span	grep -n "SHOULD" protocols/ccdp/src/07-message-format.md | grep -i decomp	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	418	code-span	grep -n "reads only the Envelope" protocols/ccdp/src/07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	421	code-span	grep -n "v0.2's .min_grade" protocols/ccdp/src/07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	424	code-span	grep -n "Section 15.4.3" protocols/ccdp/src/04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	427	code-span	grep -n "partial_result:" protocols/ccdp/src/06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	431	code-span	grep -n "MUST NOT forward" protocols/ccdp/src/09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part7.md	workbench	434	code-span	grep -n "requester.*or.*service" protocols/ccdp/src/15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	10	code-span	protocols/ccdp/src/NN-slug.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	37	code-span	10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	90	code-span	11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	147	code-span	13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	169	code-span	14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	214	code-span	15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	283	code-span	16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	336	code-span	17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	358	code-span	18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	388	code-span	19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	405	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	471	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	493	code-span	workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	524	code-span	grep -n "SHOULD escalate" protocols/ccdp/src/10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	527	code-span	grep -n "verification_method" protocols/ccdp/src/10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	530	code-span	grep -rn "DISP-CORE-NNN" protocols/ccdp/src/	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	533	code-span	grep -n "every Response and Escalation" protocols/ccdp/src/16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	536	code-span	grep -n "proof-object evidence entry" protocols/ccdp/src/17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	539	code-span	grep -n "Sections 18\." protocols/ccdp/src/19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	542	code-span	grep -n '"requester".*or.*"service"' protocols/ccdp/src/15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	545	code-span	grep -n "sign both.*content.*and.*provenance" protocols/ccdp/src/20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	548	code-span	grep -n "Default Behavior" protocols/ccdp/src/14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	551	code-span	grep -n "provenance grade\b" protocols/ccdp/src/13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2c/cc-prompt-v02-part8.md	workbench	555	code-span	make ccdp-rfc-strict	path-like
+protocols/ccdp/workbench/review-v0.2c/review-01-abstract.md	workbench	7	code-span	protocols/ccdp/src/01-abstract.md:12	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-01-abstract.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:343	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-04-terminology.md	workbench	7	code-span	protocols/ccdp/src/04-terminology.md:5	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-04-terminology.md	workbench	8	code-span	protocols/ccdp/src/14-decomposition.md:151	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-04-terminology.md	workbench	21	code-span	protocols/ccdp/src/04-terminology.md:83	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-04-terminology.md	workbench	22	code-span	protocols/ccdp/src/15-security.md:120	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-05-architecture-overview.md	workbench	7	code-span	protocols/ccdp/src/05-architecture-overview.md:147	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-06-protocol-layers.md	workbench	7	code-span	protocols/ccdp/src/06-protocol-layers.md:97	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-06-protocol-layers.md	workbench	8	code-span	protocols/ccdp/src/06-protocol-layers.md:108	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-07-message-format.md	workbench	7	code-span	protocols/ccdp/src/07-message-format.md:320	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-07-message-format.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:343	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-07-message-format.md	workbench	9	code-span	protocols/ccdp/src/07-message-format.md:348	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-07-message-format.md	workbench	23	code-span	protocols/ccdp/src/07-message-format.md:54	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-07-message-format.md	workbench	24	code-span	protocols/ccdp/src/06-protocol-layers.md:85	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-07-message-format.md	workbench	36	code-span	protocols/ccdp/src/07-message-format.md:138	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-08-capability-registry.md	workbench	7	code-span	protocols/ccdp/src/08-capability-registry.md:114	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-08-capability-registry.md	workbench	8	code-span	protocols/ccdp/src/08-capability-registry.md:115	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-09-routing.md	workbench	7	code-span	protocols/ccdp/src/09-routing.md:47	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-09-routing.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:138	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-09-routing.md	workbench	22	code-span	protocols/ccdp/src/09-routing.md:59	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-09-routing.md	workbench	35	code-span	protocols/ccdp/src/09-routing.md:47	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-10-provenance-grades.md	workbench	7	code-span	protocols/ccdp/src/10-provenance-grades.md:117	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-10-provenance-grades.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:140	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-10-provenance-grades.md	workbench	9	code-span	protocols/ccdp/src/16-conformance.md:99	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-10-provenance-grades.md	workbench	21	code-span	protocols/ccdp/src/10-provenance-grades.md:129	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-11-audit-trail.md	workbench	7	code-span	protocols/ccdp/src/11-audit-trail.md:182	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-11-audit-trail.md	workbench	8	code-span	protocols/ccdp/src/11-audit-trail.md:216	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-11-audit-trail.md	workbench	22	code-span	protocols/ccdp/src/11-audit-trail.md:225	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-11-audit-trail.md	workbench	23	code-span	protocols/ccdp/src/14-decomposition.md:253	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-13-error-handling.md	workbench	7	code-span	protocols/ccdp/src/13-error-handling.md:32	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-14-decomposition.md	workbench	7	code-span	protocols/ccdp/src/14-decomposition.md:253	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-14-decomposition.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:343	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-14-decomposition.md	workbench	20	code-span	protocols/ccdp/src/14-decomposition.md:196	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-14-decomposition.md	workbench	21	code-span	protocols/ccdp/src/14-decomposition.md:201	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-14-decomposition.md	workbench	22	code-span	protocols/ccdp/src/14-decomposition.md:207	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-14-decomposition.md	workbench	35	code-span	protocols/ccdp/src/14-decomposition.md:113	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-14-decomposition.md	workbench	36	code-span	protocols/ccdp/src/14-decomposition.md:212	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-15-security.md	workbench	7	code-span	protocols/ccdp/src/15-security.md:124	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-15-security.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:122	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-15-security.md	workbench	9	code-span	protocols/ccdp/src/09-routing.md:21	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-15-security.md	workbench	24	code-span	protocols/ccdp/src/15-security.md:93	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-15-security.md	workbench	25	code-span	protocols/ccdp/src/15-security.md:128	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-15-security.md	workbench	37	code-span	protocols/ccdp/src/20-version-history.md:232	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-15-security.md	workbench	38	code-span	protocols/ccdp/src/15-security.md:104	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-16-conformance.md	workbench	7	code-span	protocols/ccdp/src/16-conformance.md:91	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-16-conformance.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:193	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-16-conformance.md	workbench	9	code-span	protocols/ccdp/src/07-message-format.md:350	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-16-conformance.md	workbench	21	code-span	protocols/ccdp/src/16-conformance.md:172	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-16-conformance.md	workbench	30	code-span	protocols/ccdp/src/04-terminology.md:19	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-16-conformance.md	workbench	31	code-span	protocols/ccdp/src/16-conformance.md:160	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-17-security-considerations.md	workbench	7	code-span	protocols/ccdp/src/17-security-considerations.md:44	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-18-open-questions.md	workbench	7	code-span	protocols/ccdp/src/18-open-questions.md:3	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-19-references.md	workbench	7	code-span	protocols/ccdp/src/19-references.md:183	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-20-version-history.md	workbench	7	code-span	protocols/ccdp/src/20-version-history.md:193	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-20-version-history.md	workbench	8	code-span	protocols/ccdp/src/20-version-history.md:255	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-20-version-history.md	workbench	21	code-span	protocols/ccdp/src/20-version-history.md:232	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-README.md	workbench	7	code-span	protocols/ccdp/src/README.md:7	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-README.md	workbench	8	code-span	protocols/ccdp/src/README.md:9	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	6	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	7	code-span	protocols/ccdp/workbench/v02-revision-assessment.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	16	code-span	review-15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	17	code-span	review-15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	18	code-span	review-01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	18	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	18	code-span	review-14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	19	code-span	review-16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	20	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	21	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	22	code-span	review-14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	23	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	27	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	28	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	29	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	30	code-span	review-01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	31	code-span	review-02-conventions.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	32	code-span	review-03-introduction.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	33	code-span	review-04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	34	code-span	review-05-architecture-overview.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	35	code-span	review-06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	36	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	37	code-span	review-08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	38	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	39	code-span	review-10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	40	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	41	code-span	review-12-flow-control.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	42	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	43	code-span	review-14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	44	code-span	review-15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	45	code-span	review-16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	46	code-span	review-17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	47	code-span	review-18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	48	code-span	review-19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	49	code-span	review-20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2c/review-index.md	workbench	55	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02c-review-final.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	21	code-span	protocols/ccdp/src/15-security.md:124	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	22	code-span	protocols/ccdp/src/07-message-format.md:122	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	23	code-span	protocols/ccdp/src/09-routing.md:21	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	37	code-span	protocols/ccdp/src/15-security.md:93	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	38	code-span	protocols/ccdp/src/15-security.md:128	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	50	code-span	protocols/ccdp/src/01-abstract.md:12	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	51	code-span	protocols/ccdp/src/05-architecture-overview.md:159	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	52	code-span	protocols/ccdp/src/07-message-format.md:320	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	53	code-span	protocols/ccdp/src/07-message-format.md:343	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	54	code-span	protocols/ccdp/src/14-decomposition.md:253	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	69	code-span	protocols/ccdp/src/16-conformance.md:91	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	80	code-span	protocols/ccdp/src/11-audit-trail.md:182	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	81	code-span	protocols/ccdp/src/11-audit-trail.md:216	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-overall-assessment.md	workbench	94	code-span	protocols/ccdp/src/09-routing.md:47	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	16	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:12	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	17	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:161	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	28	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:149	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	29	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:164	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	43	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:131	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	44	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:184	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	56	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:133	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	57	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:165	repo-root-relative
+protocols/ccdp/workbench/review-v0.2c/review-v02-revision-assessment.md	workbench	68	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:132	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	10	code-span	protocols/ccdp/src/NN-slug.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	31	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	37	code-span	02-conventions.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	43	code-span	03-introduction.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	49	code-span	04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	84	code-span	05-architecture-overview.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	90	code-span	06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	96	code-span	07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	102	code-span	08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	108	code-span	09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	178	code-span	10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	184	code-span	11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	238	code-span	12-flow-control.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	244	code-span	13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	264	code-span	14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	297	code-span	15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	350	code-span	16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	429	code-span	17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	435	code-span	18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	467	code-span	19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	473	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	482	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	509	code-span	workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	562	code-span	grep -n "RESPONSE or ESCALATION message" protocols/ccdp/src/04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	565	code-span	grep -n "provenance_mismatch_policy" protocols/ccdp/src/09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	568	code-span	grep -n "Document version" protocols/ccdp/src/11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	572	code-span	grep -n "health_status" protocols/ccdp/src/11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	576	code-span	grep -n "default Dispatcher behavior" protocols/ccdp/src/14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	579	code-span	grep -n '"requester"' protocols/ccdp/src/15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	583	code-span	grep -n "GENERATED\|CITED" protocols/ccdp/src/18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	586	code-span	grep -n "Grep for.*0\.3" protocols/ccdp/workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	589	code-span	grep -n "review-v0.2d" protocols/ccdp/src/README.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	592	code-span	grep -n "typical_grade.*meets or exceeds the request" protocols/ccdp/src/16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2d/cc-prompt-v02-part9.md	workbench	595	code-span	grep -n "provenance_summary.*S" protocols/ccdp/src/11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-04-terminology.md	workbench	13	code-span	protocols/ccdp/src/04-terminology.md:79	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-09-routing.md	workbench	14	code-span	protocols/ccdp/src/09-routing.md:49	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-09-routing.md	workbench	15	code-span	protocols/ccdp/src/09-routing.md:54	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-11-audit-trail.md	workbench	13	code-span	protocols/ccdp/src/11-audit-trail.md:73	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-11-audit-trail.md	workbench	14	code-span	protocols/ccdp/src/11-audit-trail.md:190	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-11-audit-trail.md	workbench	32	code-span	protocols/ccdp/src/11-audit-trail.md:227	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-11-audit-trail.md	workbench	33	code-span	protocols/ccdp/src/11-audit-trail.md:229	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-11-audit-trail.md	workbench	49	code-span	protocols/ccdp/src/11-audit-trail.md:199	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-11-audit-trail.md	workbench	50	code-span	protocols/ccdp/src/11-audit-trail.md:210	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-14-decomposition.md	workbench	14	code-span	protocols/ccdp/src/14-decomposition.md:207	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-14-decomposition.md	workbench	15	code-span	protocols/ccdp/src/14-decomposition.md:217	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-15-security.md	workbench	13	code-span	protocols/ccdp/src/15-security.md:118	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-16-conformance.md	workbench	14	code-span	protocols/ccdp/src/16-conformance.md:158	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-16-conformance.md	workbench	15	code-span	protocols/ccdp/src/16-conformance.md:160	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-16-conformance.md	workbench	35	code-span	protocols/ccdp/src/16-conformance.md:57	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-16-conformance.md	workbench	48	code-span	protocols/ccdp/src/16-conformance.md:174	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-18-open-questions.md	workbench	13	code-span	protocols/ccdp/src/18-open-questions.md:15	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-README.md	workbench	13	code-span	protocols/ccdp/src/README.md:5	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-README.md	workbench	14	code-span	protocols/ccdp/src/README.md:10	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	6	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	7	code-span	protocols/ccdp/workbench/v02-revision-assessment.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	16	code-span	review-04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	17	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	18	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	19	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	20	code-span	review-14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	21	code-span	review-16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	22	code-span	review-18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	23	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	27	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	28	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	29	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	30	code-span	review-01-abstract.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	31	code-span	review-02-conventions.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	32	code-span	review-03-introduction.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	33	code-span	review-04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	34	code-span	review-05-architecture-overview.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	35	code-span	review-06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	36	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	37	code-span	review-08-capability-registry.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	38	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	39	code-span	review-10-provenance-grades.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	40	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	41	code-span	review-12-flow-control.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	42	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	43	code-span	review-14-decomposition.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	44	code-span	review-15-security.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	45	code-span	review-16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	46	code-span	review-17-security-considerations.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	47	code-span	review-18-open-questions.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	48	code-span	review-19-references.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	49	code-span	review-20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2d/review-index.md	workbench	55	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02d-review-final.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-v02-revision-assessment.md	workbench	14	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:12	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-v02-revision-assessment.md	workbench	15	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:176	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-v02-revision-assessment.md	workbench	31	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:154	repo-root-relative
+protocols/ccdp/workbench/review-v0.2d/review-v02-revision-assessment.md	workbench	32	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:168	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/cc-prompt-v02-part10.md	workbench	7	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/cc-prompt-v02-part10.md	workbench	10	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part10.md	parent-relative
+protocols/ccdp/workbench/review-v0.2e/cc-prompt-v02-part10.md	workbench	145	code-span	20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2e/cc-prompt-v02-part10.md	workbench	177	code-span	../workbench/review-v0.2e/	parent-relative
+protocols/ccdp/workbench/review-v0.2e/cc-prompt-v02-part10.md	workbench	186	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2e/review-09-routing.md	workbench	7	code-span	protocols/ccdp/src/09-routing.md:58	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-09-routing.md	workbench	8	code-span	protocols/ccdp/src/08-capability-registry.md:130	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-09-routing.md	workbench	9	code-span	protocols/ccdp/src/13-error-handling.md:116	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-13-error-handling.md	workbench	7	code-span	protocols/ccdp/src/13-error-handling.md:13	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-13-error-handling.md	workbench	8	code-span	protocols/ccdp/src/13-error-handling.md:78	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-13-error-handling.md	workbench	9	code-span	protocols/ccdp/src/13-error-handling.md:88	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-13-error-handling.md	workbench	10	code-span	protocols/ccdp/src/09-routing.md:54	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-20-version-history.md	workbench	7	code-span	protocols/ccdp/src/20-version-history.md:8	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-20-version-history.md	workbench	8	code-span	protocols/ccdp/src/README.md:3	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-README.md	workbench	7	code-span	protocols/ccdp/src/README.md:5	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-README.md	workbench	8	code-span	protocols/ccdp/src/README.md:11	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	6	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	7	code-span	protocols/ccdp/workbench/v02-revision-assessment.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	14	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	15	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	16	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	17	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	18	code-span	review-20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	19	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	25	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	26	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	27	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	28	code-span	review-20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	29	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2e/review-index.md	workbench	35	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02e-review-final.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-v02-revision-assessment.md	workbench	7	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:176	repo-root-relative
+protocols/ccdp/workbench/review-v0.2e/review-v02-revision-assessment.md	workbench	8	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:184	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	9	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	12	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part11.md	parent-relative
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	26	code-span	grep -n 'escalation_origin' 07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	27	code-span	grep -n 'escalation_origin' 07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	28	code-span	grep -n 'originating actor\|Service or Dispatcher' 07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	29	code-span	grep -n 'post-receipt\|mismatch.*partial\|Dispatcher.*partial' 07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	30	code-span	grep 'envelope.escalation.escalation_origin' 09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	31	code-span	grep 'envelope.escalation.escalation_origin' 09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	32	code-span	grep -c '^\- ' 09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	33	code-span	grep -n 'escalation_origin' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	34	code-span	grep 'escalation_origin\|escalation_summary.origin' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	35	code-span	grep 'envelope.escalation.escalation_origin' 13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	36	code-span	grep -n 'Service-originated\|Dispatcher-generated' 13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	37	code-span	grep -n 'Dispatcher\|originating actor' 04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	38	code-span	grep -n 'Dispatcher\|implicit' 04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	39	code-span	grep -n 'originating actor\|Service or Dispatcher' 06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	40	code-span	grep -n 'escalation_origin' 06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	41	code-span	grep -n 'escalation.origin\|escalation_origin\|Dispatcher-generated' 20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	42	code-span	grep -n 'review-v0.2f' README.md	path-like
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	42	code-span	../workbench/review-v0.2f/	parent-relative
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	43	code-span	grep -n 'v0.2f' ../workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	44	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part11.md	parent-relative
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	250	code-span	../workbench/review-v0.2f/	parent-relative
+protocols/ccdp/workbench/review-v0.2f/cc-prompt-v02-part11.md	workbench	257	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2f/review-04-terminology.md	workbench	7	code-span	protocols/ccdp/src/04-terminology.md:33	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-04-terminology.md	workbench	8	code-span	protocols/ccdp/src/04-terminology.md:35	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-06-protocol-layers.md	workbench	7	code-span	protocols/ccdp/src/06-protocol-layers.md:97	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-06-protocol-layers.md	workbench	8	code-span	protocols/ccdp/src/06-protocol-layers.md:101	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-07-message-format.md	workbench	7	code-span	protocols/ccdp/src/07-message-format.md:204	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-07-message-format.md	workbench	8	code-span	protocols/ccdp/src/07-message-format.md:235	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-07-message-format.md	workbench	9	code-span	protocols/ccdp/src/09-routing.md:54	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-07-message-format.md	workbench	10	code-span	protocols/ccdp/src/13-error-handling.md:173	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-07-message-format.md	workbench	33	code-span	protocols/ccdp/src/07-message-format.md:206	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-07-message-format.md	workbench	34	code-span	protocols/ccdp/src/07-message-format.md:237	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-09-routing.md	workbench	7	code-span	protocols/ccdp/src/09-routing.md:54	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-09-routing.md	workbench	8	code-span	protocols/ccdp/src/09-routing.md:58	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-09-routing.md	workbench	20	code-span	protocols/ccdp/src/09-routing.md:58	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-11-audit-trail.md	workbench	7	code-span	protocols/ccdp/src/11-audit-trail.md:135	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-11-audit-trail.md	workbench	8	code-span	protocols/ccdp/src/11-audit-trail.md:157	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-11-audit-trail.md	workbench	9	code-span	protocols/ccdp/src/11-audit-trail.md:214	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-11-audit-trail.md	workbench	10	code-span	protocols/ccdp/src/11-audit-trail.md:227	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-13-error-handling.md	workbench	7	code-span	protocols/ccdp/src/13-error-handling.md:130	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-13-error-handling.md	workbench	8	code-span	protocols/ccdp/src/13-error-handling.md:135	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-13-error-handling.md	workbench	9	code-span	protocols/ccdp/src/13-error-handling.md:173	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-13-error-handling.md	workbench	10	code-span	protocols/ccdp/src/07-message-format.md:229	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-13-error-handling.md	workbench	27	code-span	protocols/ccdp/src/13-error-handling.md:111	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-13-error-handling.md	workbench	28	code-span	protocols/ccdp/src/13-error-handling.md:116	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-20-version-history.md	workbench	7	code-span	protocols/ccdp/src/20-version-history.md:46	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-20-version-history.md	workbench	8	code-span	protocols/ccdp/src/20-version-history.md:51	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-20-version-history.md	workbench	9	code-span	protocols/ccdp/src/20-version-history.md:70	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-README.md	workbench	7	code-span	protocols/ccdp/src/README.md:3	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-README.md	workbench	8	code-span	protocols/ccdp/src/README.md:12	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	6	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	7	code-span	protocols/ccdp/workbench/v02-revision-assessment.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	14	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	15	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	16	code-span	review-04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	17	code-span	review-06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	18	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	19	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	20	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	21	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	22	code-span	review-20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	23	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	29	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	29	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	29	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	30	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	31	code-span	review-04-terminology.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	31	code-span	review-06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	32	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	32	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	33	code-span	review-20-version-history.md	path-like
+protocols/ccdp/workbench/review-v0.2f/review-index.md	workbench	39	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02f-review-final.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-v02-revision-assessment.md	workbench	7	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:188	repo-root-relative
+protocols/ccdp/workbench/review-v0.2f/review-v02-revision-assessment.md	workbench	8	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:191	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	8	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	11	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part12.md	parent-relative
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	25	code-span	grep 'escalation_reason' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	26	code-span	grep 'achieved_grade\|requested_grade' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	27	code-span	grep 'achieved_grade' 06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	28	code-span	grep 'Section 7.3.4' 13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	29	code-span	grep 'review-v0.2g' README.md	path-like
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	29	code-span	../workbench/review-v0.2g/	parent-relative
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	30	code-span	grep -n 'v0.2g' ../workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	31	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part12.md	parent-relative
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	104	code-span	../workbench/review-v0.2g/	parent-relative
+protocols/ccdp/workbench/review-v0.2g/cc-prompt-v02-part12.md	workbench	111	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2g/review-06-protocol-layers.md	workbench	7	code-span	protocols/ccdp/src/06-protocol-layers.md:99	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-11-audit-trail.md	workbench	7	code-span	protocols/ccdp/src/11-audit-trail.md:147	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-11-audit-trail.md	workbench	8	code-span	protocols/ccdp/src/11-audit-trail.md:217	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-11-audit-trail.md	workbench	9	code-span	protocols/ccdp/src/11-audit-trail.md:227	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-13-error-handling.md	workbench	7	code-span	protocols/ccdp/src/13-error-handling.md:78	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-README.md	workbench	7	code-span	protocols/ccdp/src/README.md:3	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-README.md	workbench	8	code-span	protocols/ccdp/src/README.md:13	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	7	code-span	1888532 Seventh-round v0.2 revision: thread escalation_origin through wire/audit/terminology	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	10	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	11	code-span	protocols/ccdp/workbench/v02-revision-assessment.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	18	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	19	code-span	review-06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	20	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	21	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	22	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	23	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	29	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	30	code-span	review-06-protocol-layers.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	31	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	32	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	32	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2g/review-index.md	workbench	38	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02g-rereview-final.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-v02-revision-assessment.md	workbench	7	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:195	repo-root-relative
+protocols/ccdp/workbench/review-v0.2g/review-v02-revision-assessment.md	workbench	8	code-span	protocols/ccdp/workbench/v02-revision-assessment.md:198	repo-root-relative
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	9	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	12	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part13.md	parent-relative
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	26	code-span	grep -n '"dispatcher"' 13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	27	code-span	grep -n 'dispatcher_id\|responding_service_id' 13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	28	code-span	grep 'not duplicated in escalation' 13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	29	code-span	grep -A2 'achieved_grade.*string.*OPTIONAL' 07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	30	code-span	grep 'review-v0.2h' README.md	path-like
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	30	code-span	../workbench/review-v0.2h/	parent-relative
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	31	code-span	grep -n 'v0.2h' ../workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	32	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part13.md	parent-relative
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	112	code-span	../workbench/review-v0.2h/	parent-relative
+protocols/ccdp/workbench/review-v0.2h/cc-prompt-v02-part13.md	workbench	119	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2h/review-index.md	workbench	9	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02h-review.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2h/review-index.md	workbench	15	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2h/review-index.md	workbench	16	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2h/review-index.md	workbench	17	code-span	review-13-error-handling.md	path-like
+protocols/ccdp/workbench/review-v0.2h/review-index.md	workbench	18	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2h/review-index.md	workbench	19	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	8	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	11	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part14.md	parent-relative
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	25	code-span	grep -n 'provenance_policy' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	26	code-span	grep 'provenance_policy\.\|chain_source' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	27	code-span	grep 'normatively require' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	28	code-span	grep 'DISP-CORE-03[123]' 16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	29	code-span	grep 'instance identity' 07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	30	code-span	grep 'review-v0.2i' README.md	path-like
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	30	code-span	../workbench/review-v0.2i/	parent-relative
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	31	code-span	grep -n 'v0.2i' ../workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	32	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part14.md	parent-relative
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	149	code-span	../workbench/review-v0.2i/	parent-relative
+protocols/ccdp/workbench/review-v0.2i/cc-prompt-v02-part14.md	workbench	156	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2i/review-README.md	workbench	14	code-span	workbench/review-v0.2i/	workbench-only
+protocols/ccdp/workbench/review-v0.2i/review-index.md	workbench	9	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02i-review.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2i/review-index.md	workbench	15	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2i/review-index.md	workbench	16	code-span	review-07-message-format.md	path-like
+protocols/ccdp/workbench/review-v0.2i/review-index.md	workbench	17	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2i/review-index.md	workbench	18	code-span	review-16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2i/review-index.md	workbench	19	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2i/review-index.md	workbench	20	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	9	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	12	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part15.md	parent-relative
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	26	code-span	grep 'policy_field\|selected_action' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	27	code-span	grep 'policy_field\|selected_action' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	27	code-span	grep 'selected_policy' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	28	code-span	grep 'reroute\|non-escalation' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	29	code-span	grep 'provenance_policy\.\*\|policy_field.*selected_action\|selected action' 09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	30	code-span	grep -A1 'DISP-CORE-033' 16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	31	code-span	grep -n 'v0.2j' ../workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	32	code-span	grep 'review-v0.2j' README.md	path-like
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	32	code-span	../workbench/review-v0.2j/	parent-relative
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	33	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part15.md	parent-relative
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	137	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2j/cc-prompt-v02-part15.md	workbench	182	code-span	../workbench/review-v0.2j/	parent-relative
+protocols/ccdp/workbench/review-v0.2j/review-README.md	workbench	14	code-span	workbench/review-v0.2j/	workbench-only
+protocols/ccdp/workbench/review-v0.2j/review-index.md	workbench	9	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02j-review-final.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2j/review-index.md	workbench	15	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2j/review-index.md	workbench	16	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2j/review-index.md	workbench	17	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2j/review-index.md	workbench	18	code-span	review-16-conformance.md	path-like
+protocols/ccdp/workbench/review-v0.2j/review-index.md	workbench	19	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2j/review-index.md	workbench	20	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	12	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	15	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part16.md	parent-relative
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	29	code-span	grep -n 'Non-Escalation\|11\.2\.3' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	29	code-span	grep -c 'selected_action.*reroute\|selected_action.*error' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	30	code-span	grep -n 'Table 11.3\|Conditional Audit Placement' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	30	code-span	grep 'Section 11.2.3' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	31	code-span	grep 'RESPONSE audit record.*Section 11.2.3\|Table 11.3' 09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	32	code-span	grep 'REQUEST audit record.*Section 11.2.3\|Table 11.3' 09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	33	code-span	grep -n 'v0.2k' ../workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	34	code-span	grep 'review-v0.2k' README.md	path-like
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	34	code-span	../workbench/review-v0.2k/	parent-relative
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	35	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part16.md	parent-relative
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	231	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2k/cc-prompt-v02-part16.md	workbench	271	code-span	../workbench/review-v0.2k/	parent-relative
+protocols/ccdp/workbench/review-v0.2k/review-README.md	workbench	14	code-span	workbench/review-v0.2k/	workbench-only
+protocols/ccdp/workbench/review-v0.2k/review-index.md	workbench	9	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02k-review.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2k/review-index.md	workbench	15	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2k/review-index.md	workbench	16	code-span	review-09-routing.md	path-like
+protocols/ccdp/workbench/review-v0.2k/review-index.md	workbench	17	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2k/review-index.md	workbench	18	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2k/review-index.md	workbench	19	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	9	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	12	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part17.md	parent-relative
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	26	code-span	// ... standard fields ...	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	26	code-span	grep -n 'standard fields' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	27	code-span	grep 'capability_type.*translation' 11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	28	code-span	grep -n 'v0.2l' ../workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	29	code-span	grep 'review-v0.2l' README.md	path-like
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	29	code-span	../workbench/review-v0.2l/	parent-relative
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	30	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part17.md	parent-relative
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	38	code-span	11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	64	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	82	code-span	// ... standard fields ...	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.2l/cc-prompt-v02-part17.md	workbench	97	code-span	../workbench/review-v0.2l/	parent-relative
+protocols/ccdp/workbench/review-v0.2l/review-11-audit-trail.md	workbench	27	code-span	// ... standard fields ...	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.2l/review-README.md	workbench	14	code-span	workbench/review-v0.2l/	workbench-only
+protocols/ccdp/workbench/review-v0.2l/review-index.md	workbench	9	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02l-review.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2l/review-index.md	workbench	15	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2l/review-index.md	workbench	16	code-span	review-11-audit-trail.md	path-like
+protocols/ccdp/workbench/review-v0.2l/review-index.md	workbench	17	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2l/review-index.md	workbench	18	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	8	code-span	protocols/ccdp/src/	repo-root-relative
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	11	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part18.md	parent-relative
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	25	code-span	grep -n 'v0.2m' ../workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	26	code-span	grep 'review-v0.2m' README.md	path-like
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	26	code-span	../workbench/review-v0.2m/	parent-relative
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	27	code-span	../tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir . --output /tmp/ccdp-v02-part18.md	parent-relative
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	35	code-span	../workbench/v02-revision-assessment.md	parent-relative
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	41	code-span	// ... standard fields ...	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.2m/cc-prompt-v02-part18.md	workbench	64	code-span	../workbench/review-v0.2m/	parent-relative
+protocols/ccdp/workbench/review-v0.2m/review-README.md	workbench	14	code-span	workbench/review-v0.2m/	workbench-only
+protocols/ccdp/workbench/review-v0.2m/review-index.md	workbench	9	code-span	protocols/ccdp/tools/ccdp-assembler/target/release/ccdp-assembler --validate --strict --src-dir protocols/ccdp/src --output /tmp/ccdp-v02m-review.md	repo-root-relative
+protocols/ccdp/workbench/review-v0.2m/review-index.md	workbench	15	code-span	review-overall-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2m/review-index.md	workbench	16	code-span	review-README.md	path-like
+protocols/ccdp/workbench/review-v0.2m/review-index.md	workbench	17	code-span	review-v02-revision-assessment.md	path-like
+protocols/ccdp/workbench/review-v0.2m/review-overall-assessment.md	workbench	7	code-span	// ... standard fields ...	absolute-or-rooted
+protocols/ccdp/workbench/review-v0.2m/review-v02-revision-assessment.md	workbench	9	code-span	// ... standard fields ...	absolute-or-rooted
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	16	code-span	/Users/oubiwann/Dropbox/Duncan's Research/LLMs/AI Progress Since the 1990s/ccdp-spec/	local-absolute
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	18	code-span	01-abstract.md	path-like
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	18	code-span	18-references.md	path-like
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	18	code-span	README.md	repo-root-relative
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	21	code-span	/Users/oubiwann/Dropbox/Duncan's Research/LLMs	local-absolute
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	24	code-span	workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	27	code-span	cc-prompt-v02-part1.md	path-like
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	28	code-span	cc-prompt-v02-part2.md	path-like
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	29	code-span	cc-prompt-v03-part1.md	path-like
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	30	code-span	cc-prompt-v03-part2.md	path-like
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	71	code-span	workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	85	code-span	workbench/v02-revision-assessment.md	workbench-only
+protocols/ccdp/workbench/v02-bootstrap.md	workbench	123	code-span	claude/CCDP Specification - Table of Contents.md	path-like
+protocols/ccdp/workbench/v02-revision-assessment.md	workbench	79	code-span	application/json	path-like
+protocols/ccdp/workbench/v02-revision-assessment.md	workbench	240	code-span	// ... standard fields ...	absolute-or-rooted
+protocols/ccdp/workbench/v02-revision-assessment.md	workbench	242	code-span	// ... standard fields ...	absolute-or-rooted
