@@ -58,7 +58,7 @@ must remain source-rooted.
 
 ### Slice 03: Mature Entrypoint Staging Transforms
 
-Status: stub.
+Status: active/opened.
 
 Expected scope: add or refine package-stage transforms for mature language
 skill entrypoints, especially where source-root `knowledge/<domain>/guides/**`
@@ -107,3 +107,10 @@ Slice 02 marked verified/closed by CDC. Framework `bundled-reference` warnings
 burned down from 4 to 0, total package-path warnings moved from 406 to 402, and
 remaining framework warnings were preserved as classified source/provenance,
 source-clone, or example-project paths for later warning-policy tightening.
+
+### v1.4 - 2026-08-29
+
+Slice 03 opened on mature language entrypoint staging transforms after Slice
+02 CDC verification. The slice must classify mature warnings before editing,
+target entrypoint/package-staging fixes, and avoid broad mature guide prose or
+directory restructuring.

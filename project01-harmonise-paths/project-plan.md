@@ -139,8 +139,8 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 is closed. Arc 02 is active: Slice 01 and Slice 02 are verified/closed.
-Arc 03 and Arc 04 remain roadmap stubs only; their detailed plans
+Arc 01 is closed. Arc 02 is active: Slice 01 and Slice 02 are verified/closed,
+and Slice 03 is opened. Arc 03 and Arc 04 remain roadmap stubs only; their detailed plans
 should be written after the close of the previous slice or arc, per the
 plan-late/plan-deep rule.
 
@@ -198,3 +198,9 @@ Arc 02 Slice 02 marked verified/closed. The slice burned collaboration-framework
 `bundled-reference` warnings from 4 to 0, moved total package-path warnings from
 406 to 402, and preserved non-bundled framework examples as classified warnings
 for later policy tightening.
+
+### v1.9 - 2026-08-29
+
+Arc 02 Slice 03 opened on mature language entrypoint staging transforms. The
+slice targets generated-package path harmonisation for mature entrypoints while
+keeping broad mature guide prose and directory restructuring out of scope.
