@@ -69,7 +69,7 @@ schema.
 
 ### Slice 03: Package Path Gate Implementation
 
-Status: active/opened.
+Status: verified/closed.
 
 Scope: implement the accepted Slice 02 gate design, wire the
 `check-package-paths` Make target, add the `scripts/check-package-paths`
@@ -79,6 +79,11 @@ and produce reproducible evidence from real generated package surfaces.
 Durable slice-produced evidence lives in
 `slice03-package-path-gate-implementation/artifacts/`. Implementation files
 remain in the source checkout.
+
+Outcome: verified by CDC on 2026-08-29 against the implementation working-tree
+diff. `make check-package-paths` scans all 12 generated skill zips and reports
+0 hard failures, 426 warnings, 3 explicit exceptions, and 656 skipped external
+URLs under the transitional policy.
 
 ## Dependencies
 
@@ -113,3 +118,9 @@ Slice 03 opened from the verified Slice 02 gate design. The slice records the
 new default durable artifact home at
 `slice03-package-path-gate-implementation/artifacts/` for implementation
 evidence produced during the slice.
+
+### v1.4 - 2026-08-29
+
+Slice 03 marked verified/closed from CDC verification. Arc 01 is ready for
+formal arc close; the gate is implemented, but the verified source changes are
+currently an implementation working-tree diff rather than a source commit.

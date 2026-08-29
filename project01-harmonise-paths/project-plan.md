@@ -125,10 +125,10 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 is active. Slice 01 and Slice 02 are verified/closed. Slice 03 is
-opened as the package path gate implementation slice. Later arcs remain
-roadmap stubs only; their detailed plans should be written after the close of
-the previous slice or arc, per the plan-late/plan-deep rule.
+Arc 01 is active and ready for formal arc close. Slice 01, Slice 02, and Slice
+03 are verified/closed. Later arcs remain roadmap stubs only; their detailed
+plans should be written after the close of the previous slice or arc, per the
+plan-late/plan-deep rule.
 
 ## Version History
 
@@ -152,3 +152,8 @@ the accepted contract gate design.
 
 Slice 03 opened under Arc 01. Its open set adopts the framework's default
 `artifacts/` home for durable slice-produced evidence.
+
+### v1.4 - 2026-08-29
+
+Slice 03 marked verified/closed. Arc 01 is ready for formal close before Arc
+02 is planned in detail.
