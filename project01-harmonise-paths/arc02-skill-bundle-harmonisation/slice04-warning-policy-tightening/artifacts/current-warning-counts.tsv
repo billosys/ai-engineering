@@ -1,0 +1,27 @@
+package	classification	severity	count
+collaboration-framework	repo-only/provenance	warning	43
+collaboration-framework	source-clone-reference	warning	5
+collaboration-framework	repo-only/provenance	explicit exception	2
+collaboration-framework	example-project path	warning	2
+rust-guidelines	example-project path	warning	14
+rust-guidelines	bundled-reference	warning	6
+rust-guidelines	parser false positive	warning	4
+	parser false positive	warning	4
+rust-guidelines	repo-only/provenance	warning	1
+rust-guidelines	source-clone-reference	warning	1
+go-guidelines	source-clone-reference	warning	3
+go-guidelines	repo-only/provenance	warning	49
+go-guidelines	example-project path	warning	7
+go-guidelines	repo-only/provenance	explicit exception	1
+cpp-guidelines	repo-only/provenance	warning	19
+cpp-guidelines	bundled-reference	warning	2
+cpp-guidelines	source-clone-reference	warning	1
+javascript-deno-guidelines	repo-only/provenance	warning	11
+javascript-deno-guidelines	bundled-reference	warning	81
+erlang-guidelines	repo-only/provenance	warning	5
+cobalt-guidelines	example-project path	warning	2
+cobalt-guidelines	parser false positive	warning	1
+cobalt-guidelines	repo-only/provenance	warning	12
+cobalt-guidelines	source-clone-reference	warning	4
+.	source-clone-reference	warning	12
+tailwindcss	repo-only/provenance	warning	6
