@@ -1,0 +1,13 @@
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/package-path-semantics.md
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/validation-checker-strategy.md
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/package-contents-manifest-draft.md
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/ccdp-package-contract-design.md
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/ccdp-temp-assembly-check.txt
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/git-diff-check-implementation.txt
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/generated-output-freshness-decision.md
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/artifact-inventory.txt
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/git-status-implementation.txt
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/README.md
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/slice03-implementation-inputs.md
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/package-decision-matrix.md
+project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/git-diff-check-planning.txt

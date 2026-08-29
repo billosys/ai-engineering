@@ -1,0 +1,1 @@
+tools/ccdp-assembler/target/release/ccdp-assembler --validate --src-dir src --output /private/tmp/ccdp-slice02-assembled.md --version 0.2
