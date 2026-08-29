@@ -1,0 +1,4 @@
+ M docs/AI-ENGINEERING-METHODOLOGY.md
+ M docs/pm/06-confirmation-protocol.md
+ M docs/pm/version-history.md
+ M package-path-exceptions.tsv

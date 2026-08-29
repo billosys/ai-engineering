@@ -1,0 +1,14 @@
+
+changed framework/package references:
+docs/pm/06-confirmation-protocol.md:31:> from [docs/PROJECT-MANAGEMENT.md](../PROJECT-MANAGEMENT.md) is a dedicated
+docs/pm/06-confirmation-protocol.md:76:  [docs/PROJECT-MANAGEMENT.md](../PROJECT-MANAGEMENT.md); durable
+docs/pm/version-history.md:32:([docs/PROJECT-MANAGEMENT.md](../PROJECT-MANAGEMENT.md)) into focused files under
+docs/AI-ENGINEERING-METHODOLOGY.md:132:**Skill files.** The harvest. The root skill file ([SKILL.md](../SKILL.md)) is what a future reader — Claude, human, both — consults when they need to do a particular thing. It points at the underlying cards, names the selection criteria, and makes the substrate usable.
+
+source target existence:
+docs/pm/../PROJECT-MANAGEMENT.md exit: 0
+docs/../SKILL.md exit: 0
+
+package target existence after make all:
+     6409  08-29-2026 14:51   collaboration-framework/docs/PROJECT-MANAGEMENT.md
+    25637  08-29-2026 14:51   collaboration-framework/SKILL.md

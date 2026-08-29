@@ -1,0 +1,5 @@
+slice02 edited paths:
+docs/AI-ENGINEERING-METHODOLOGY.md
+docs/pm/06-confirmation-protocol.md
+docs/pm/version-history.md
+package-path-exceptions.tsv

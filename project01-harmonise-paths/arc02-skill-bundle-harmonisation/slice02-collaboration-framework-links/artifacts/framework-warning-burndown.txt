@@ -1,0 +1,6 @@
+baseline framework warning rows:       56
+post-change framework warning rows:       52
+baseline framework bundled-reference rows: 4
+post-change framework bundled-reference rows: 0
+total package warnings before: 406
+total package warnings after: 402
