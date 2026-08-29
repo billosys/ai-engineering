@@ -1,0 +1,2 @@
+check-package-paths: /private/tmp/bad-package-path-exceptions.tsv: expected TSV header: package/document/target/classification/disposition/reason/source/expires
+exit: 2

@@ -1,0 +1,12 @@
+package path check
+zips scanned: 1
+markdown files scanned: 1
+hard failures: 1
+warnings: 0
+explicit exceptions: 0
+skipped external URLs: 0
+parser-suppressed material: omitted by Markdown parser
+
+findings:
+hard failure	bundled-reference	SKILL.md:3	inline link	missing.md	fixture/missing.md	-	path-shaped link target is absent from package
+exit: 1

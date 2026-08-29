@@ -1,0 +1,3 @@
+Makefile
+package-path-exceptions.tsv
+scripts/check-package-paths

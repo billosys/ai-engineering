@@ -1,0 +1,7 @@
+25:.PHONY: all skills install uninstall clean help check-skills check-package-paths \
+64:	@echo "  make check-package-paths -> validate Markdown paths inside generated zips"
+208:## check-package-paths: build all zips and validate package-context Markdown paths
+209:check-package-paths: all
+210:	@./scripts/check-package-paths --exceptions package-path-exceptions.tsv $(INSTALL_ZIPS)
+test -x scripts/check-package-paths exit: 0
+test ! -e scripts/check-package-paths.py exit: 0

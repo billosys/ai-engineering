@@ -1,0 +1,12 @@
+case: inline link: ok
+case: image link: ok
+case: reference definition: ok
+case: same-file anchor: ok
+case: path anchor: ok
+case: fenced code: ok
+case: indented code: ok
+case: conservative code span: ok
+case: placeholder: ok
+case: external URL: ok
+case: parser suppressed material: ok
+case: valid package paths: ok
