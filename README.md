@@ -242,6 +242,7 @@ knowledge/<domain>/
 Everything packages through the [`Makefile`](./Makefile). Each zip is named
 after the skill's frontmatter `name:`, wraps its contents in a matching
 directory, and contains exactly the `SKILL.md` plus its guides — nothing else.
+These are installable skill bundles.
 
 ```sh
 make all               # every skill: all ten domains + the collaboration framework
@@ -264,6 +265,8 @@ make install           # build everything and unpack into ~/.agents/skills/
                        #   (Codex-ready; override with INSTALL_DIR=...)
 make uninstall         # remove installed skills from the install dir
 make check-skills      # validate every SKILL.md description length
+make check-package-paths
+                       # validate Markdown paths inside generated skill zips
 make clean             # remove build/ and all generated zips
 make help              # list every target
 ```
@@ -271,6 +274,18 @@ make help              # list every target
 The zips upload directly into Claude Desktop / claude.ai as skills; unzipped
 (which is what `make install` does), they work with Codex out of the
 `~/.agents/` tree.
+
+CCDP is packaged separately because it is a protocol distribution, not an
+installable skill zip:
+
+```sh
+make ccdp               # assemble protocols/ccdp/composite-cognition-dispatch-protocol.md
+make ccdp-package       # build ccdp.zip with one ccdp/ package root
+make check-ccdp-package # validate ccdp.zip zipped and unzipped
+```
+
+`make all`, `make skills`, and `make install` build or install the skill
+bundles only. They do not build or install `ccdp.zip`.
 
 ## Repository layout
 
@@ -311,8 +326,27 @@ The goal is to make mixed AI/service deployments inspectable and governable at
 all project scales: you can ask not only "who can do this?" but "who can do this
 within budget, before the deadline, with evidence strong enough to trust?"
 
-Read the merged specification:
-[Composite Cognition Dispatch Protocol](https://github.com/billosys/ai-engineering/blob/main/protocols/ccdp/composite-cognition-dispatch-protocol.md).
+In a source checkout, start at [`protocols/ccdp/README.md`](./protocols/ccdp/README.md)
+for the protocol-root guide. The main source-clone entrypoints are:
+
+- [`protocols/ccdp/composite-cognition-dispatch-protocol.md`](./protocols/ccdp/composite-cognition-dispatch-protocol.md)
+  for the assembled specification;
+- [`protocols/ccdp/src/README.md`](./protocols/ccdp/src/README.md) for the
+  source chapter guide;
+- [`protocols/ccdp/json/MANIFEST.md`](./protocols/ccdp/json/MANIFEST.md) for
+  the JSON corpus manifest;
+- [`protocols/ccdp/visual-guide/index.html`](./protocols/ccdp/visual-guide/index.html)
+  and [`protocols/ccdp/visual-guide/ccdp-reference.md`](./protocols/ccdp/visual-guide/ccdp-reference.md)
+  for the visual guide and its source reference.
+
+For package use, build or download `ccdp.zip`, unzip it, and start at
+`ccdp/README.md`. The package README uses package-local links such as
+`composite-cognition-dispatch-protocol.md`, `src/README.md`,
+`json/MANIFEST.md`, and `visual-guide/index.html`.
+
+The source-only `protocols/ccdp/workbench/` and `protocols/ccdp/prompts/`
+directories contain provenance, review, and prompt material. They are
+intentionally excluded from `ccdp.zip` and are not package entrypoints.
 
 We've also created a [visual guide](https://billo.systems/ai-engineering/protocols/ccdp/visual-guide/) for the protocol which provides an overview of its goals, what it does, and how it's useful. There's also a brief comparison to other protocols at the end.
 
