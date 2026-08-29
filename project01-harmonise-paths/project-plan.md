@@ -125,10 +125,11 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 is active. Slice 01 is verified/closed and Slice 02 is opened as the
-contract gate design slice. Later arcs remain roadmap stubs only; their
-detailed plans should be written after the close of the previous slice or arc,
-per the plan-late/plan-deep rule.
+Arc 01 is active. Slice 01 and Slice 02 are verified/closed. Slice 03 is ready
+to open as the package path gate implementation slice, but is not yet opened.
+Later arcs remain roadmap stubs only; their detailed plans should be written
+after the close of the previous slice or arc, per the plan-late/plan-deep
+rule.
 
 ## Version History
 
@@ -142,3 +143,8 @@ the canonical orphan `planning` branch and `.worktrees/planning` layout.
 Slice 01 marked verified/closed and Slice 02 opened under Arc 01. The project
 now records slice-local generated planning artifacts as the default pattern for
 audit/design outputs.
+
+### v1.2 - 2026-08-29
+
+Slice 02 marked verified/closed under Arc 01. Slice 03 is ready to open from
+the accepted contract gate design.

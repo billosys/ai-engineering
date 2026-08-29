@@ -48,7 +48,7 @@ positive.
 
 ### Slice 02: Contract Gate Design
 
-Status: active/opened.
+Status: verified/closed.
 
 Scope: convert the verified Slice 01 contract into concrete validation
 requirements for Make/Bash-friendly packaging workflow. Decide the package
@@ -61,9 +61,15 @@ verification constraints: the final gate must be Markdown-aware rather than a
 raw regex hard gate, and future evidence reports must not claim that filtered
 CSV output contains classes that the scanner suppresses.
 
+Outcome: verified by CDC on 2026-08-29. The design selects generated zips as
+the authoritative validation surface, `make check-package-paths` as the
+Makefile entry point, `scripts/check-package-paths` as a no-suffix Python
+checker entry point, and `package-path-exceptions.tsv` as the exception
+schema.
+
 ### Slice 03: Package Path Gate Implementation
 
-Status: stub.
+Status: ready, not opened.
 
 Expected scope: implement the accepted Slice 02 gate design, wire the chosen
 Makefile target, and produce an evidence report from real generated package
@@ -88,3 +94,10 @@ deferred until the package-path inventory is known.
 Slice 01 marked verified/closed from CDC verification. Slice 02 opened as a
 contract gate design slice. Slice 03 stubbed for later implementation after
 the gate design is accepted.
+
+### v1.2 - 2026-08-29
+
+Slice 02 marked verified/closed from CDC verification. Slice 03 marked ready,
+not opened, with the Slice 02 design carrying forward generated-zip validation,
+the Make/script entry points, the exception schema, and the no raw-regex gate
+constraint.
