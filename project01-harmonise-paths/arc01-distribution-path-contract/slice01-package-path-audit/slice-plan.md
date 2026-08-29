@@ -23,9 +23,10 @@ provenance, examples, or false positives.
 - Rebuild or inspect every generated skill zip named by `INSTALL_ZIPS`.
 - Reproduce path-reference misses inside zip/unzipped package contexts.
 - Classify misses by source category and intended fix type.
-- Write a report in the implementation checkout under `workbench/` with the
-  current inventory, classifications, recommended contract, and next-slice
-  implications.
+- Write a report in this slice directory with the current inventory,
+  classifications, recommended contract, and next-slice implications. This
+  follows the project convention that slice-generated analysis artifacts live
+  with the slice, not in the implementation checkout's `workbench/`.
 - Update this slice's ledger with attested evidence and write the close report
   when implementation completes.
 
@@ -48,7 +49,7 @@ explicitly expands to tooling, which is out of scope for this slice.
 
 ## Expected Implementation Output
 
-- `workbench/2026.08.29-package-path-audit.md` in the implementation checkout.
+- `2026.08.29-package-path-audit.md` in this slice directory.
 - Updated planning close set in this slice directory:
   - `ledger.md` with row dispositions and attested evidence.
   - `closing-report.md` with a per-row walk and bubble-up to Arc 01.

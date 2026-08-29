@@ -22,7 +22,7 @@ Work in the implementation checkout:
 
 Create an evidence-backed package path audit report at:
 
-`workbench/2026.08.29-package-path-audit.md`
+`/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning/project01-harmonise-paths/arc01-distribution-path-contract/slice01-package-path-audit/2026.08.29-package-path-audit.md`
 
 The report must inventory the generated zip packages, reproduce package-context
 path misses, classify the misses, and recommend a concrete source/package path

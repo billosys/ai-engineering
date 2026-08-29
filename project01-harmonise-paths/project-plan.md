@@ -27,6 +27,11 @@ The implementation checkout is the source repository's `main` worktree at
 here; implementation changes land separately in implementation branches or the
 main worktree as directed by the operator.
 
+Slice-generated analysis artifacts that are part of planning or verification
+live in the slice directory where they are generated. The source checkout's
+`workbench/` is no longer the default home for temporary planning reports now
+that the planning branch is separate from the implementation branch.
+
 ## Definition of Done
 
 The project is done when humans and LLMs can use the ai-engineering materials
