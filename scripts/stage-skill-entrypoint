@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+"""Stage a skill entrypoint, applying package-only path transforms when needed."""
+
+from __future__ import annotations
+
+import argparse
+import re
+import shutil
+from pathlib import Path
+
+
+GUIDE_ROOT_TRANSFORMS = {
+    Path("knowledge/rust/SKILL.md"): "knowledge/rust/guides/",
+    Path("knowledge/js/SKILL.md"): "knowledge/js/guides/",
+}
+
+
+def guide_references(guides_dir: Path) -> list[str]:
+    refs = []
+    for path in guides_dir.rglob("*.md"):
+        rel = path.relative_to(guides_dir).as_posix()
+        if "/" in rel:
+            refs.append(rel)
+    return sorted(refs, key=len, reverse=True)
+
+
+def replace_bare_guide_refs(text: str, refs: list[str]) -> str:
+    for ref in refs:
+        pattern = re.compile(rf"(?<![A-Za-z0-9_./-]){re.escape(ref)}(?![A-Za-z0-9_./-])")
+        text = pattern.sub(f"guides/{ref}", text)
+    return text
+
+
+def transform_entrypoint(src: Path, repo_relative_src: Path) -> str | None:
+    guide_root = GUIDE_ROOT_TRANSFORMS.get(repo_relative_src)
+    if guide_root is None:
+        return None
+
+    text = src.read_text(encoding="utf-8")
+    text = text.replace(guide_root, "guides/")
+    text = replace_bare_guide_refs(text, guide_references(src.parent / "guides"))
+    return text
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("src", type=Path)
+    parser.add_argument("dest", type=Path)
+    parser.add_argument("--repo", type=Path, default=Path("."))
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    repo = args.repo.resolve()
+    src = args.src
+    dest = args.dest
+    dest.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        repo_relative_src = src.resolve().relative_to(repo)
+    except ValueError:
+        repo_relative_src = src
+
+    transformed = transform_entrypoint(src, repo_relative_src)
+    if transformed is None:
+        shutil.copyfile(src, dest)
+    else:
+        dest.write_text(transformed, encoding="utf-8")
+    shutil.copymode(src, dest)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

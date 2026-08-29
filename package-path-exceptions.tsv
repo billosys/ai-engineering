@@ -1,13 +1,7 @@
 package	document	target	classification	disposition	reason	source	expires
-rust-guidelines.zip	SKILL.md	14-cli-tools/README.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice02-design	after-arc02
-rust-guidelines.zip	SKILL.md	15-cargo/README.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice02-design	after-arc02
-rust-guidelines.zip	SKILL.md	14-cli-tools/*.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice03-current-scan	after-arc02
-rust-guidelines.zip	SKILL.md	15-cargo/*.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice03-current-scan	after-arc02
 rust-guidelines.zip	guides/README.md	./14-cli-tools/09-common-pitfalls.md	bundled-reference	transitional-warning	current guide links a file not shipped in the package; Arc 02 will harmonise or remove the reference	slice03-current-scan	after-arc02
 rust-guidelines.zip	guides/14-cli-tools/README.md	09-common-pitfalls.md*	bundled-reference	transitional-warning	current guide links a file not shipped in the package; Arc 02 will harmonise or remove the reference	slice03-current-scan	after-arc02
 cpp-guidelines.zip	guides/03-functions.md	./param-passing-*.png	bundled-reference	transitional-warning	current guide links images not shipped in the package; Arc 02 will harmonise or remove the references	slice03-current-scan	after-arc02
-javascript-deno-guidelines.zip	SKILL.md	knowledge/js/guides/*	bundled-reference	transitional-warning	guides are bundled under package guides/ layout; Arc 02 will harmonise source or staging paths	slice02-design	after-arc02
-javascript-deno-guidelines.zip	SKILL.md	12-deno/*.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice03-current-scan	after-arc02
 javascript-deno-guidelines.zip	guides/*	12-deno/*.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice03-current-scan	after-arc02
 javascript-deno-guidelines.zip	guides/*	13-biome/*.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice03-current-scan	after-arc02
 collaboration-framework.zip	docs/CODE-AUDIT.md	knowledge/<slug>/SKILL*.md	repo-only/provenance	explicit-exception	placeholder for source-clone skill discovery, not a literal bundled package path	slice01-cdc	none

@@ -145,7 +145,7 @@ define pack_skill
 	stage="$(BUILD)/$$name"; \
 	echo ">> staging $$name bundle ($$src + $$dir/guides)"; \
 	rm -rf "$$stage"; mkdir -p "$$stage"; \
-	cp "$$src" "$$stage/"; \
+	./scripts/stage-skill-entrypoint "$$src" "$$stage/$$(basename "$$src")"; \
 	cp -R "$$dir/guides" "$$stage/guides"; \
 	find "$$stage" -name '.DS_Store' -delete; \
 	echo ">> writing $$name.zip"; \
