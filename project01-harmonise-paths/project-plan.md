@@ -137,10 +137,10 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 and Arc 02 are closed. Arc 03 is active: Slice 01 and Slice 02 are
-verified/closed, and Slice 03 is opened on CCDP package implementation. Arc 04
-remains a roadmap stub; its detailed plan should be written after the close of
-Arc 03, per the plan-late/plan-deep rule.
+Arc 01 and Arc 02 are closed. Arc 03 is active: Slices 01 through 03 are
+verified/closed, and Slice 04 is opened on CCDP reader guidance. Arc 04 remains
+a roadmap stub; its detailed plan should be written after the close of Arc 03,
+per the plan-late/plan-deep rule.
 
 ## Version History
 
@@ -254,3 +254,16 @@ Arc 03 Slice 03 opened on CCDP package implementation. The slice will implement
 the package/check targets, package staging, generated README, required
 contents/exclusions, zip/unzip validation, extracted-package assembly, and the
 generated-output freshness gate required by the Slice 02 contract.
+
+### v1.18 - 2026-08-29
+
+Arc 03 Slice 03 marked verified/closed. CCDP now has `make ccdp-package`,
+`make check-ccdp-package`, `ccdp.zip`, a package-local README, a
+CCDP-specific validator, and a freshness gate that keeps the assembled spec
+from drifting before packaging.
+
+### v1.19 - 2026-08-29
+
+Arc 03 Slice 04 opened on CCDP reader guidance. The slice will update
+source-clone and package/unzipped instructions so humans and LLMs can find the
+right CCDP entrypoints without repo-root guessing.

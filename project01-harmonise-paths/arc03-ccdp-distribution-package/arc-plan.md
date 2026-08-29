@@ -54,7 +54,7 @@ validation/checker integration.
 
 ### Slice 03: CCDP Package Implementation
 
-Status: active/opened.
+Status: verified/closed.
 
 Expected scope: implement the selected Makefile packaging target and validation
 path, update exceptions/backlog policy as needed, and prove the generated
@@ -62,7 +62,7 @@ CCDP package works zipped and unzipped.
 
 ### Slice 04: CCDP Reader Guidance
 
-Status: stub.
+Status: active/opened.
 
 Expected scope: update README or protocol-facing usage docs so source-clone and
 package consumers know how to use CCDP without rediscovering file locations.
@@ -113,3 +113,17 @@ Slice 03 opened on CCDP package implementation. The slice must implement the
 root package/check targets, staging, generated package README, required
 contents/exclusions, zip/unzip validation, extracted-package assembly, and the
 generated-output freshness reconciliation identified by Slices 01 and 02.
+
+### v1.5 - 2026-08-29
+
+Slice 03 marked verified/closed by CDC. The package target, package checker,
+generated assembled-spec freshness gate, generated package README, zip/unzip
+validation, extracted-package assembly, and existing skill-bundle gates all
+reproduced from source commit `28d1001`.
+
+### v1.6 - 2026-08-29
+
+Slice 04 opened on CCDP reader guidance. The slice should document source-clone
+and package/unzipped CCDP entrypoints, distinguish `ccdp.zip` from installable
+skill zips, and may introduce a shared `protocols/ccdp/README.md` if that gives
+source and package consumers one maintainable package-local path story.
