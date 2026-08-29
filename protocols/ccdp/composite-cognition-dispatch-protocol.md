@@ -5,7 +5,7 @@ description: >
   deliberately simple dispatcher to heterogeneous cognitive services under
   human supervision.
 version: "0.2"
-date: 2026-08-04
+date: 2026-08-29
 author: Duncan McGreggor
 status: Draft Specification
 ---
@@ -4072,6 +4072,7 @@ The references in this section are secondary or journalistic sources used for co
 
 Previous releases of the Composite Cognition Dispatch Protocol:
 
+- [v0.2](https://github.com/billosys/ai-engineering/blob/ccdp-0.2/protocols/ccdp/composite-cognition-dispatch-protocol.md)
 - [v0.1](https://github.com/billosys/ai-engineering/blob/ccdp-0.1/protocols/ccdp/composite-cognition-dispatch-protocol.md)
 
 <a id="section-21"></a>

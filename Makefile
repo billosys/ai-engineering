@@ -4,9 +4,10 @@
 #   * collab-framework — the top-level collaboration-framework skill
 #   * per-domain        — one target per knowledge/ domain (rust, go, …)
 #
-# Every zip is named after the `name:` declared in the skill's frontmatter
-# and wraps its contents in a <name>/ directory, so the archive is never a
-# "tarbomb" and the name on disk matches the name the loader sees.
+# Skill zips are named after the `name:` declared in the skill's frontmatter
+# and wrap their contents in a <name>/ directory, so the archive is never a
+# "tarbomb" and the name on disk matches the name the loader sees. CCDP is a
+# separate protocol package with its own `ccdp.zip` target and validator.
 
 BUILD := build
 INSTALL_DIR ?= $(HOME)/.agents/skills
@@ -21,8 +22,12 @@ INSTALL_ZIPS := \
 	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
 	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
 INSTALL_SKILLS := $(INSTALL_ZIPS:.zip=)
+CCDP_NAME := ccdp
+CCDP_ZIP := $(CCDP_NAME).zip
+CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 
 .PHONY: all skills install uninstall clean help check-skills check-package-paths \
+	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
 	rust go cpp js erlang cobalt design tailwindcss deno biome
 
@@ -58,6 +63,9 @@ help:
 	@echo "  make skills             -> all per-domain zips"
 	@echo "  make all                -> skills + collab-framework"
 	@echo "  make check-skills       -> validate every SKILL.md description length"
+	@echo "  make ccdp               -> assemble the CCDP protocol document"
+	@echo "  make ccdp-package       -> build ccdp.zip (protocol package)"
+	@echo "  make check-ccdp-package -> validate ccdp.zip zipped and unzipped"
 	@echo "  make install            -> build all zips and install them into $(INSTALL_DIR)"
 	@echo "  make uninstall          -> remove installed skills from $(INSTALL_DIR)"
 	@echo "  make clean              -> remove build/ and all *.zip"
@@ -234,8 +242,79 @@ uninstall:
 ## clean: remove the staging dir and every generated zip
 clean:
 	@rm -rf "$(BUILD)"
-	@rm -f $(INSTALL_ZIPS)
-	@echo ">> cleaned build/ and all skill zips"
+	@rm -f $(INSTALL_ZIPS) "$(CCDP_ZIP)"
+	@echo ">> cleaned build/ and generated zips"
 
 ccdp:
 	@cd protocols/ccdp && make
+
+ccdp-package-clean:
+	@rm -rf "$(CCDP_STAGE)"
+
+ccdp-package: ccdp-package-clean
+	@echo ">> checking CCDP assembled spec freshness"
+	@tmp=$$(mktemp /private/tmp/ccdp-package-freshness.XXXXXX); \
+	$(MAKE) -C protocols/ccdp ccdp-rfc OUTPUT="$$tmp"; \
+	if ! cmp -s "protocols/ccdp/composite-cognition-dispatch-protocol.md" "$$tmp"; then \
+		echo "ERROR: protocols/ccdp/composite-cognition-dispatch-protocol.md is stale" >&2; \
+		echo "Run 'make -C protocols/ccdp ccdp-rfc' and commit the generated refresh." >&2; \
+		rm -f "$$tmp"; \
+		exit 1; \
+	fi; \
+	rm -f "$$tmp"
+	@echo ">> staging $(CCDP_NAME) package"
+	@mkdir -p "$(CCDP_STAGE)"
+	@cp protocols/ccdp/composite-cognition-dispatch-protocol.md "$(CCDP_STAGE)/"
+	@cp -R protocols/ccdp/src "$(CCDP_STAGE)/src"
+	@cp -R protocols/ccdp/json "$(CCDP_STAGE)/json"
+	@cp -R protocols/ccdp/visual-guide "$(CCDP_STAGE)/visual-guide"
+	@cp -R protocols/ccdp/templates "$(CCDP_STAGE)/templates"
+	@mkdir -p "$(CCDP_STAGE)/tools/ccdp-assembler"
+	@cp protocols/ccdp/tools/ccdp-assembler/Cargo.toml "$(CCDP_STAGE)/tools/ccdp-assembler/"
+	@cp protocols/ccdp/tools/ccdp-assembler/Cargo.lock "$(CCDP_STAGE)/tools/ccdp-assembler/"
+	@cp -R protocols/ccdp/tools/ccdp-assembler/src "$(CCDP_STAGE)/tools/ccdp-assembler/src"
+	@cp protocols/ccdp/Makefile "$(CCDP_STAGE)/Makefile"
+	@printf '%s\n' \
+		'# Composite Cognition Dispatch Protocol' \
+		'' \
+		'This package is a standalone CCDP protocol distribution. It can be read directly after unzip or rebuilt locally from the included source chapters and assembler source.' \
+		'' \
+		'## Start Here' \
+		'' \
+		'- [Assembled specification](composite-cognition-dispatch-protocol.md)' \
+		'- [Source chapter guide](src/README.md)' \
+		'- [JSON corpus manifest](json/MANIFEST.md)' \
+		'- [Visual guide](visual-guide/index.html)' \
+		'- [Visual guide reference](visual-guide/ccdp-reference.md)' \
+		'' \
+		'## Rebuild' \
+		'' \
+		'From this `ccdp/` directory:' \
+		'' \
+		'```sh' \
+		'make ccdp-rfc OUTPUT=/private/tmp/ccdp-rebuilt.md' \
+		'```' \
+		'' \
+		'The included `Makefile` builds `tools/ccdp-assembler/` and assembles from `src/`.' \
+		'' \
+		'## Package Contents' \
+		'' \
+		'- `composite-cognition-dispatch-protocol.md`: assembled protocol specification.' \
+		'- `src/`: source chapters used by the assembler.' \
+		'- `json/`: extracted examples, canonical instances, and inventory notes.' \
+		'- `visual-guide/`: reader-facing visual explanation and source reference.' \
+		'- `templates/`: kramdown-rfc template used by the CCDP Makefile.' \
+		'- `tools/ccdp-assembler/`: Rust assembler source and Cargo metadata.' \
+		> "$(CCDP_STAGE)/README.md"
+	@find "$(CCDP_STAGE)" -name '.DS_Store' -delete
+	@echo ">> writing $(CCDP_ZIP)"
+	@rm -f "$(CCDP_ZIP)"
+	@cd "$(BUILD)" && zip -r -q -X "../$(CCDP_ZIP)" "$(CCDP_NAME)"
+	@echo ">> contents:"
+	@unzip -l "$(CCDP_ZIP)"
+	@rm -rf "$(CCDP_STAGE)"
+	@rmdir "$(BUILD)" 2>/dev/null || true
+	@echo ">> done: $(CCDP_ZIP)"
+
+check-ccdp-package: ccdp-package
+	@./scripts/check-ccdp-package "$(CCDP_ZIP)"

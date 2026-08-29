@@ -1,0 +1,331 @@
+#!/usr/bin/env python3
+"""Validate the standalone CCDP distribution package."""
+
+from __future__ import annotations
+
+import argparse
+import posixpath
+import re
+import subprocess
+import sys
+import tempfile
+import zipfile
+from dataclasses import dataclass
+from pathlib import Path
+from urllib.parse import urlsplit
+
+
+PACKAGE_ROOT = "ccdp"
+REQUIRED_FILES = {
+    "ccdp/README.md",
+    "ccdp/composite-cognition-dispatch-protocol.md",
+    "ccdp/src/README.md",
+    "ccdp/json/MANIFEST.md",
+    "ccdp/json/FINDINGS.md",
+    "ccdp/visual-guide/index.html",
+    "ccdp/visual-guide/ccdp-reference.md",
+    "ccdp/templates/draft-rfcxml-general-template-standard-00.xml-edited.md",
+    "ccdp/tools/ccdp-assembler/Cargo.toml",
+    "ccdp/tools/ccdp-assembler/Cargo.lock",
+    "ccdp/Makefile",
+}
+REQUIRED_PREFIXES = {
+    "ccdp/src/",
+    "ccdp/json/canonical/",
+    "ccdp/json/examples/",
+    "ccdp/json/inventory/",
+    "ccdp/tools/ccdp-assembler/src/",
+}
+EXCLUDED_PREFIXES = {
+    "ccdp/workbench/",
+    "ccdp/prompts/",
+    "ccdp/tools/ccdp-assembler/target/",
+}
+ROOT_RELATIVE_FROM_JSON = ("src/",)
+KNOWN_ROOT_DIRS = ("src/", "json/", "visual-guide/", "templates/", "tools/")
+
+INLINE_LINK_RE = re.compile(r"!?\[[^\]\n]*\]\(([^)\n]+)\)")
+REF_DEF_RE = re.compile(r"^\s{0,3}\[[^\]\n]+\]:\s*(\S+)", re.MULTILINE)
+CODE_SPAN_RE = re.compile(r"`([^`\n]+)`")
+FENCE_RE = re.compile(r"^\s*(```|~~~)")
+HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
+
+
+@dataclass(frozen=True)
+class Reference:
+    document: str
+    line: int
+    kind: str
+    target: str
+
+
+@dataclass(frozen=True)
+class Finding:
+    document: str
+    line: int
+    kind: str
+    target: str
+    resolved: str
+    reason: str
+
+
+def clean_target(raw: str) -> str:
+    target = raw.strip().strip("<>").strip()
+    if " " in target and not target.startswith(("http://", "https://", "mailto:")):
+        target = target.split()[0]
+    return target.strip("'\"")
+
+
+def strip_fragment_query(target: str) -> str:
+    for separator in ("#", "?"):
+        if separator in target:
+            target = target.split(separator, 1)[0]
+    return target
+
+
+def line_number(text: str, offset: int) -> int:
+    return text.count("\n", 0, offset) + 1
+
+
+def is_external(target: str) -> bool:
+    scheme = urlsplit(target).scheme
+    return bool(scheme and scheme not in {"", "file"})
+
+
+def is_same_file_anchor(target: str) -> bool:
+    return target.startswith("#") or strip_fragment_query(target) == ""
+
+
+def strip_skipped_blocks(text: str) -> str:
+    text = HTML_COMMENT_RE.sub(lambda match: "\n" * match.group(0).count("\n"), text)
+    output: list[str] = []
+    fenced = False
+    for line in text.splitlines(keepends=True):
+        if FENCE_RE.match(line):
+            fenced = not fenced
+            output.append("\n" if line.endswith("\n") else "")
+            continue
+        if fenced or line.startswith("    ") or line.startswith("\t"):
+            output.append("\n" if line.endswith("\n") else "")
+            continue
+        output.append(line)
+    return "".join(output)
+
+
+def code_span_is_path_like(target: str) -> bool:
+    bare = strip_fragment_query(target)
+    if " " in bare or bare.startswith("-"):
+        return False
+    if bare in {"README.md", "Makefile"}:
+        return True
+    if bare.endswith("/"):
+        return bare.startswith(KNOWN_ROOT_DIRS + ("../tools/", "canonical/", "examples/", "inventory/"))
+    if re.search(r"\.(md|json|toml|lock|xml|html|rs)$", bare):
+        return True
+    return False
+
+
+def looks_like_protocol_syntax(target: str) -> bool:
+    bare = strip_fragment_query(target).strip()
+    if bare.startswith("."):
+        return True
+    if "/" not in bare and bare.endswith(".schema.json"):
+        return True
+    if bare.startswith(("//", "/*")):
+        return True
+    if bare.startswith("/"):
+        return not re.search(r"\.(md|json|toml|xml|html|rs)$", bare)
+    if bare.startswith("ccdp/") and not re.search(r"\.(md|json|toml|xml|html|rs)$", bare):
+        return True
+    if re.fullmatch(r"\{[^}]+/[^\n]+}", bare):
+        return True
+    if "/" in bare and not re.search(r"\.(md|json|toml|xml|html|rs)$", bare):
+        return True
+    return False
+
+
+def iter_references(document: str, text: str) -> tuple[list[Reference], int]:
+    scan_text = strip_skipped_blocks(text)
+    refs: list[Reference] = []
+    protocol_skips = 0
+    for match in INLINE_LINK_RE.finditer(scan_text):
+        refs.append(Reference(document, line_number(scan_text, match.start()), "inline link", clean_target(match.group(1))))
+    for match in REF_DEF_RE.finditer(scan_text):
+        refs.append(
+            Reference(document, line_number(scan_text, match.start()), "reference definition", clean_target(match.group(1)))
+        )
+    for match in CODE_SPAN_RE.finditer(scan_text):
+        target = clean_target(match.group(1))
+        if looks_like_protocol_syntax(target):
+            protocol_skips += 1
+            continue
+        if code_span_is_path_like(target):
+            refs.append(Reference(document, line_number(scan_text, match.start()), "code span", target))
+    return refs, protocol_skips
+
+
+def package_exists(names: set[str], resolved: str) -> bool:
+    return bool(resolved and (resolved in names or f"{resolved}/" in names or any(name.startswith(f"{resolved}/") for name in names)))
+
+
+def resolve_package_path(document: str, target: str) -> str:
+    bare = strip_fragment_query(target)
+    if not bare:
+        return ""
+    if bare.startswith(f"{PACKAGE_ROOT}/"):
+        return posixpath.normpath(bare)
+    if document.startswith("ccdp/json/") and bare.startswith(ROOT_RELATIVE_FROM_JSON):
+        return posixpath.normpath(posixpath.join(PACKAGE_ROOT, bare))
+    if bare.startswith("/"):
+        return posixpath.normpath(posixpath.join(PACKAGE_ROOT, bare.lstrip("/")))
+    return posixpath.normpath(posixpath.join(posixpath.dirname(document), bare))
+
+
+def escaped_package_root(resolved: str) -> bool:
+    return bool(resolved and resolved != PACKAGE_ROOT and not resolved.startswith(f"{PACKAGE_ROOT}/"))
+
+
+def validate_markdown(names: set[str], archive: zipfile.ZipFile) -> tuple[list[Finding], dict[str, int]]:
+    findings: list[Finding] = []
+    counts = {
+        "markdown_files": 0,
+        "references_checked": 0,
+        "external_urls_skipped": 0,
+        "protocol_syntax_skipped": 0,
+    }
+    for name in archive.namelist():
+        if not name.endswith(".md"):
+            continue
+        counts["markdown_files"] += 1
+        text = archive.read(name).decode("utf-8", errors="replace")
+        refs, protocol_skips = iter_references(name, text)
+        counts["protocol_syntax_skipped"] += protocol_skips
+        for ref in refs:
+            if is_external(ref.target):
+                counts["external_urls_skipped"] += 1
+                continue
+            if is_same_file_anchor(ref.target):
+                continue
+            if looks_like_protocol_syntax(ref.target):
+                counts["protocol_syntax_skipped"] += 1
+                continue
+            resolved = resolve_package_path(ref.document, ref.target)
+            counts["references_checked"] += 1
+            if escaped_package_root(resolved):
+                findings.append(Finding(ref.document, ref.line, ref.kind, ref.target, resolved, "resolved path escapes ccdp/"))
+            elif not package_exists(names, resolved):
+                findings.append(Finding(ref.document, ref.line, ref.kind, ref.target, resolved, "package-local path is absent"))
+    return findings, counts
+
+
+def validate_zip_shape(names: set[str]) -> list[str]:
+    errors: list[str] = []
+    if not names:
+        return ["zip is empty"]
+    bad_roots = sorted({name.split("/", 1)[0] for name in names if name and not name.startswith(f"{PACKAGE_ROOT}/")})
+    if bad_roots:
+        errors.append(f"entries outside {PACKAGE_ROOT}/: {', '.join(bad_roots)}")
+    missing_files = sorted(path for path in REQUIRED_FILES if path not in names)
+    if missing_files:
+        errors.append("missing required files: " + ", ".join(missing_files))
+    missing_prefixes = sorted(prefix for prefix in REQUIRED_PREFIXES if not any(name.startswith(prefix) for name in names))
+    if missing_prefixes:
+        errors.append("missing required directories: " + ", ".join(missing_prefixes))
+    excluded = sorted(name for name in names if any(name.startswith(prefix) for prefix in EXCLUDED_PREFIXES))
+    if excluded:
+        errors.append("excluded material present: " + ", ".join(excluded[:20]))
+    return errors
+
+
+def validate_generated_entrypoint(extract_root: Path) -> list[str]:
+    readme = extract_root / "ccdp" / "README.md"
+    text = readme.read_text(encoding="utf-8")
+    errors: list[str] = []
+    if text == Path("README.md").read_text(encoding="utf-8"):
+        errors.append("ccdp/README.md is an unchanged copy of the repository README.md")
+    expected_links = (
+        "composite-cognition-dispatch-protocol.md",
+        "src/README.md",
+        "json/MANIFEST.md",
+        "visual-guide/index.html",
+        "visual-guide/ccdp-reference.md",
+    )
+    missing = [link for link in expected_links if link not in text]
+    if missing:
+        errors.append("generated README missing package-local links: " + ", ".join(missing))
+    return errors
+
+
+def run_extracted_assembly(extract_root: Path) -> tuple[int, str]:
+    output = Path("/private/tmp/ccdp-package-assembled.md")
+    if output.exists():
+        output.unlink()
+    cmd = ["make", "-C", str(extract_root / "ccdp"), "ccdp-rfc", f"OUTPUT={output}"]
+    result = subprocess.run(cmd, check=False, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    if result.returncode != 0:
+        return result.returncode, result.stdout
+    packaged = extract_root / "ccdp" / "composite-cognition-dispatch-protocol.md"
+    if packaged.read_bytes() != output.read_bytes():
+        return 1, result.stdout + "\nassembled output differs from packaged assembled spec\n"
+    return 0, result.stdout
+
+
+def print_report(zip_path: Path, shape_errors: list[str], readme_errors: list[str], findings: list[Finding], counts: dict[str, int], assembly_output: str) -> None:
+    print("ccdp package check")
+    print(f"zip: {zip_path}")
+    print(f"markdown files scanned: {counts['markdown_files']}")
+    print(f"package references checked: {counts['references_checked']}")
+    print(f"protocol syntax skipped: {counts['protocol_syntax_skipped']}")
+    print(f"external URLs skipped: {counts['external_urls_skipped']}")
+    print(f"shape errors: {len(shape_errors)}")
+    print(f"README errors: {len(readme_errors)}")
+    print(f"Markdown path failures: {len(findings)}")
+    print("")
+    if shape_errors or readme_errors:
+        print("package errors:")
+        for error in shape_errors + readme_errors:
+            print(f"hard failure\t{error}")
+        print("")
+    if findings:
+        print("Markdown path findings:")
+        for finding in findings:
+            print(
+                f"hard failure\t{finding.document}:{finding.line}\t{finding.kind}\t"
+                f"{finding.target}\t{finding.resolved}\t{finding.reason}"
+            )
+        print("")
+    print("extracted assembly:")
+    print(assembly_output.rstrip())
+
+
+def parse_args(argv: list[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("zip", nargs="?", default="ccdp.zip", help="CCDP zip archive to validate")
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str]) -> int:
+    args = parse_args(argv)
+    zip_path = Path(args.zip)
+    if not zip_path.exists():
+        print(f"check-ccdp-package: missing zip: {zip_path}", file=sys.stderr)
+        return 2
+    try:
+        with zipfile.ZipFile(zip_path) as archive:
+            names = set(archive.namelist())
+            shape_errors = validate_zip_shape(names)
+            findings, counts = validate_markdown(names, archive)
+            with tempfile.TemporaryDirectory(prefix="ccdp-package-") as tmp:
+                extract_root = Path(tmp)
+                archive.extractall(extract_root)
+                readme_errors = validate_generated_entrypoint(extract_root) if "ccdp/README.md" in names else []
+                assembly_status, assembly_output = run_extracted_assembly(extract_root)
+    except (OSError, zipfile.BadZipFile) as exc:
+        print(f"check-ccdp-package: {exc}", file=sys.stderr)
+        return 2
+    print_report(zip_path, shape_errors, readme_errors, findings, counts, assembly_output)
+    return 1 if shape_errors or readme_errors or findings or assembly_status != 0 else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))
