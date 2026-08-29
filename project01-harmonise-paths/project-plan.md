@@ -137,10 +137,10 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 and Arc 02 are closed. Arc 03 is active: Slice 01 is verified/closed,
-and Slice 02 is opened on CCDP package contract design. Arc 04 remains a
-roadmap stub; its detailed plan should be written after the close of Arc 03,
-per the plan-late/plan-deep rule.
+Arc 01 and Arc 02 are closed. Arc 03 is active: Slice 01 and Slice 02 are
+verified/closed, and Slice 03 is opened on CCDP package implementation. Arc 04
+remains a roadmap stub; its detailed plan should be written after the close of
+Arc 03, per the plan-late/plan-deep rule.
 
 ## Version History
 
@@ -241,3 +241,16 @@ Arc 03 Slice 02 opened on CCDP package contract design. The slice will choose
 archive identity, contents, entrypoint, read-only/rebuild-capable semantics,
 path transforms, validation/checker policy, and generated-output freshness
 before package implementation.
+
+### v1.16 - 2026-08-29
+
+Arc 03 Slice 02 marked verified/closed. The accepted CCDP package contract
+selects `ccdp.zip`, root `ccdp/`, generated package-local `ccdp/README.md`,
+one rebuild-capable/read-only usable package, and a CCDP-specific checker.
+
+### v1.17 - 2026-08-29
+
+Arc 03 Slice 03 opened on CCDP package implementation. The slice will implement
+the package/check targets, package staging, generated README, required
+contents/exclusions, zip/unzip validation, extracted-package assembly, and the
+generated-output freshness gate required by the Slice 02 contract.

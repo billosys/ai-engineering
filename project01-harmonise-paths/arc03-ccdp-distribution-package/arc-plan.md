@@ -46,7 +46,7 @@ targets or moving protocol materials.
 
 ### Slice 02: CCDP Package Contract Design
 
-Status: active/opened.
+Status: verified/closed.
 
 Expected scope: use Slice 01's inventory to choose package contents, archive
 name, root directory, reader entrypoint, package-local path semantics, and
@@ -54,7 +54,7 @@ validation/checker integration.
 
 ### Slice 03: CCDP Package Implementation
 
-Status: stub.
+Status: active/opened.
 
 Expected scope: implement the selected Makefile packaging target and validation
 path, update exceptions/backlog policy as needed, and prove the generated
@@ -98,3 +98,18 @@ Slice 02 opened on CCDP package contract design after Slice 01 CDC
 verification. The slice must decide package identity, contents, entrypoint,
 read-only/rebuild-capable semantics, path transforms, validation/checker
 strategy, and generated-output freshness before implementation.
+
+### v1.3 - 2026-08-29
+
+Slice 02 marked verified/closed by CDC. The accepted contract selects
+`ccdp.zip` with root `ccdp/`, a generated package-local `ccdp/README.md`, one
+rebuild-capable/read-only usable package, and a CCDP-specific package checker.
+No repair slice is required before implementation, but generated assembled-spec
+freshness must be an explicit Slice 03 gate.
+
+### v1.4 - 2026-08-29
+
+Slice 03 opened on CCDP package implementation. The slice must implement the
+root package/check targets, staging, generated package README, required
+contents/exclusions, zip/unzip validation, extracted-package assembly, and the
+generated-output freshness reconciliation identified by Slices 01 and 02.
