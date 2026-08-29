@@ -1,0 +1,3 @@
+M	Makefile
+M	protocols/ccdp/composite-cognition-dispatch-protocol.md
+A	scripts/check-ccdp-package

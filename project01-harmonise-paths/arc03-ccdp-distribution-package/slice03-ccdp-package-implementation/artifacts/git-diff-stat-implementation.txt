@@ -1,0 +1,4 @@
+ Makefile                                           |  89 +++++-
+ .../ccdp/composite-cognition-dispatch-protocol.md  |   3 +-
+ scripts/check-ccdp-package                         | 331 +++++++++++++++++++++
+ 3 files changed, 417 insertions(+), 6 deletions(-)

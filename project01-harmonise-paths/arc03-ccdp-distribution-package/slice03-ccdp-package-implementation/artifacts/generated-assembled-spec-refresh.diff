@@ -1,0 +1,9 @@
+diff --git a/protocols/ccdp/composite-cognition-dispatch-protocol.md b/protocols/ccdp/composite-cognition-dispatch-protocol.md
+index 59b0c57..7ab9f44 100644
+--- a/protocols/ccdp/composite-cognition-dispatch-protocol.md
++++ b/protocols/ccdp/composite-cognition-dispatch-protocol.md
+@@ -8 +8 @@ version: "0.2"
+-date: 2026-08-04
++date: 2026-08-29
+@@ -4074,0 +4075 @@ Previous releases of the Composite Cognition Dispatch Protocol:
++- [v0.2](https://github.com/billosys/ai-engineering/blob/ccdp-0.2/protocols/ccdp/composite-cognition-dispatch-protocol.md)

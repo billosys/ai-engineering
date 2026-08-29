@@ -1,0 +1,3 @@
+tools/ccdp-assembler/target/release/ccdp-assembler --validate --src-dir src --output /private/tmp/ccdp-slice03-freshness-final.bxmFGx --version 0.2
+
+committed assembled spec matches regenerated temporary output
