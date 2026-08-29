@@ -22,8 +22,9 @@ The default planning substrate is:
 4. **The `planning` branch is orphaned.** It shares the repository's Git object
    database and remotes, but it starts with no inherited implementation files.
    Its sole purpose is to house project plans, arc plans, per-scale ledgers,
-   prompts, close reports, and CDC verification. The default branch is used to
-   identify the repository and remote context, not to seed the planning files.
+   prompts, close reports, CDC verification, and default homes for durable
+   slice-produced artifacts. The default branch is used to identify the
+   repository and remote context, not to seed the planning files.
 
 When a planning branch/worktree does not already exist, the safe creation
 recipe is:
@@ -50,6 +51,7 @@ $PROJECT_DIR/.worktrees/planning/
         slice-plan.md           ← plan-of-record for this slice
         ledger.md               ← grep-verifiable acceptance criteria (the steps)
         cc-prompt.md            ← the assignment the executing context receives
+        artifacts/              ← durable artifacts produced by this slice, when any
         closing-report.md       ← per-row walk + bubble-up, written at slice close
         cdc-verification.md     ← independent re-run + check, written at slice close
 ```
@@ -60,7 +62,9 @@ slice. Three tiers of ledger, one per scale: **`ledger.md`** beside each
 project plan, arc plan, and slice plan. Three tiers of closing-report close the
 same scales when they finish: project, arc, and slice. The per-slice
 `cdc-verification.md` is the independent re-run that gates a slice closed.
-Their full roles are defined in [`Planning, top-down`](./03-planning-top-down.md),
+When a slice produces durable artifacts, its default artifact home is
+`sliceNN-<slug>/artifacts/`, unless the operator records an override. Their full
+roles are defined in [`Planning, top-down`](./03-planning-top-down.md),
 [`Closing slices`](./04-closing-slices.md), and
 [`Closing arcs`](./05-closing-arcs.md); their on-disk shape is fixed here.
 
@@ -89,8 +93,9 @@ scales; this file owns where the rows live.
   and any project-specific lineage fields. The numeric prefix is a stable,
   sortable local identifier, not the source of truth for dependency semantics.
 - **When a body of work is one slice, not an arc**, skip the arc wrapper: the
-  five per-slice documents live directly in one `sliceNN-<slug>/` directory
-  under `projectNN-<slug>/`, with no `arc-plan.md` or arc-level
+  per-slice documents, and any slice `artifacts/` directory, live directly in
+  one `sliceNN-<slug>/` directory under `projectNN-<slug>/`, with no
+  `arc-plan.md` or arc-level
   `ledger.md` / `closing-report.md` above them. That collapse is not a third
   case to choose; it is what you discover when the sizing judgment comes back
   "one slice, not an arc." A project that is genuinely a single slice may keep a
@@ -114,24 +119,32 @@ Use the same relationship vocabulary consistently across project plans. If a
 project has a richer metadata schema, record it in the project instructions and
 keep these meanings intact.
 
-### The five per-slice documents
+### The per-slice documents and artifact home
 
-The five documents under each `sliceNN-<slug>/` are the artifact set that
-attaches to one execution unit. They split into an **open set** (written when
-the slice is planned, before any code) and a **close set** (written when the
-slice finishes):
+The five Markdown documents under each `sliceNN-<slug>/` are the planning and
+close document set that attaches to one execution unit. They split into an
+**open set** (written when the slice is planned, before any code) and a
+**close set** (written when the slice finishes):
 
-| Document | Set | Role |
+| Path | Set | Role |
 |----------|-----|------|
 | `slice-plan.md` | open | Plan-of-record: goal, scope (in/out), verification approach, exit criteria. |
 | `ledger.md` | open | The acceptance criteria as grep-verifiable rows — the steps. Format and discipline in [`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md). |
 | `cc-prompt.md` | open | The assignment the implementing context (CC) receives. |
 | `closing-report.md` | close | The per-row walk written at slice close, plus the **bubble-up to the arc** (see [`Closing slices`](./04-closing-slices.md)). |
 | `cdc-verification.md` | close | The independent re-run that verifies the closing report against evidence, plus the **bubble-up check** (see [`Closing slices`](./04-closing-slices.md)). |
+| `artifacts/` | as needed | Default home for durable artifacts produced by this slice. Create it only when the slice produces artifacts, or when creating it up front clarifies the handoff. |
 
 Opening the close-set documents at slice start, or leaving the open-set
 documents unfinished when handing off to CC, are both spec-keeping failures.
 Write the open set fully before CC starts; write the close set only once
 there is something to close.
+
+If the slice is expected to create durable artifacts, name the artifact home in
+`slice-plan.md` and `cc-prompt.md`; the default is `artifacts/` inside the slice
+directory. If no durable artifacts are expected, a short "Artifacts: none
+expected" line is enough. If the operator wants those artifacts somewhere else,
+record the override and rationale in the slice plan before work begins, and
+carry the chosen path into the prompt and close evidence.
 
 ---

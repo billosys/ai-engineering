@@ -23,8 +23,9 @@ Desktop, Codex CLI, or other LLM session entering the project without the full
 prior context. **CC** is Codex CLI in the IC implementation role; **CDC** is
 Codex Desktop in the planning/review/QA role. Keep the canonical filenames
 (`project-plan.md`, `arc-plan.md`, `slice-plan.md`, per-scale `ledger.md`,
-`cc-prompt.md`, `closing-report.md`, `cdc-verification.md`) unless the operator
-explicitly changes the project convention.
+`cc-prompt.md`, `closing-report.md`, `cdc-verification.md`) and the default
+slice `artifacts/` home unless the operator explicitly changes the project
+convention.
 
 This wayfinder and the linked files guide planning craft and the quality floor;
 they do not override Codex's standing system, developer, tool, safety, sandbox,
@@ -41,7 +42,7 @@ order.
 | Job | Read |
 | --- | --- |
 | Understand the vocabulary and sizing model | [`pm/01-scales-of-work.md`](./pm/01-scales-of-work.md) |
-| Create or inspect planning directories, filenames, metadata, or per-scale artifact sets | [`pm/02-canonical-planning-worktree.md`](./pm/02-canonical-planning-worktree.md) |
+| Create or inspect planning directories, filenames, metadata, per-scale document sets, or slice artifact homes | [`pm/02-canonical-planning-worktree.md`](./pm/02-canonical-planning-worktree.md) |
 | Write a `project-plan.md`, `arc-plan.md`, per-scale `ledger.md`, or per-slice open set | [`pm/03-planning-top-down.md`](./pm/03-planning-top-down.md) |
 | Close a slice and bubble findings up to the arc | [`pm/04-closing-slices.md`](./pm/04-closing-slices.md) and [`pm/05-closing-arcs.md`](./pm/05-closing-arcs.md#the-plan-change-discipline-make-a-change--version-history) |
 | Close an arc, check composition, and bubble findings up to the project | [`pm/05-closing-arcs.md`](./pm/05-closing-arcs.md) |
@@ -59,7 +60,7 @@ The old monolith split along its original part boundaries:
 2. [`pm/02-canonical-planning-worktree.md`](./pm/02-canonical-planning-worktree.md)
    -- default planning worktree, `planning` branch, `projectNN-<slug>`,
    metadata, naming rules, dedicated project/arc/slice ledger files, and the
-   five per-slice documents.
+   per-slice document set plus the default slice `artifacts/` home.
 3. [`pm/03-planning-top-down.md`](./pm/03-planning-top-down.md) -- project
    roadmaps, arc plans, per-slice open sets, and plan-late/plan-deep.
 4. [`pm/04-closing-slices.md`](./pm/04-closing-slices.md) -- slice
@@ -101,11 +102,12 @@ context load; it does not relax the requirement to use the written mechanics.
 ## Version History
 
 The detailed project-management version history lives in
-[`pm/version-history.md`](./pm/version-history.md). Current version: **2.4**
-(`2026-08-27`), which gives projects, arcs, and slices dedicated sibling
-`ledger.md` files.
+[`pm/version-history.md`](./pm/version-history.md). Current version: **2.5**
+(`2026-08-29`), which keeps the per-scale ledger layout and adds
+`sliceNN-<slug>/artifacts/` as the default home for durable artifacts produced
+by a slice.
 
 ---
 
-_The project-management guide is a living spec. This wayfinder: 2.4,
-2026-08-27._
+_The project-management guide is a living spec. This wayfinder: 2.5,
+2026-08-29._

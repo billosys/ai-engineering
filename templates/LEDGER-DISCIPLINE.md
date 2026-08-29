@@ -170,8 +170,10 @@ When CC receives a slice prompt that references this skill:
    impossible, or supersedable, raise it as an amendment request. The ledger
    can change; it cannot be quietly ignored.
 3. **Update the ledger as you work.** Fill in Evidence at the commit where the
-   criterion is met (strength `attested`). Do not leave all evidence for the
-   final report.
+   criterion is met (strength `attested`). If the evidence is a durable artifact
+   produced by the slice, point to `artifacts/` inside the slice directory by
+   default, or to the operator-recorded override. Do not leave all evidence for
+   the final report.
 4. **In the closing report, walk the ledger row by row.** For every row, state
    the final status and the evidence. Do not summarise; do not write
    "deviations: none" — write a disposition for each numbered row. If you find
@@ -208,7 +210,11 @@ When CDC reviews a closed slice ledger:
 7. **Watch for partial adoption.** A discipline applied at some call sites and
    skipped at others within the same file is partial adoption, not `done`. Run
    workspace-wide greps.
-8. **Record what worked.** Add a "What Worked" section capturing patterns that
+8. **Check artifact placement.** If a slice produced durable artifacts, confirm
+   they live under the slice's `artifacts/` directory, or under the explicit
+   override recorded in the slice plan and prompt. If the close says "none,"
+   verify that against the diff and command outputs.
+9. **Record what worked.** Add a "What Worked" section capturing patterns that
    made the slice close cleanly — the Safety-II complement to the defect ledger.
 
 ### Iteration budget
@@ -271,6 +277,9 @@ The slice ledger lives as `ledger.md` in the slice directory, per the canonical
 planning worktree in
 [`../docs/PROJECT-MANAGEMENT.md`](../docs/PROJECT-MANAGEMENT.md) — e.g.
 `$PROJECT_DIR/.worktrees/planning/projectNN-<slug>/arcNN-<slug>/sliceNN-<slug>/ledger.md`.
+Durable artifacts produced by the slice default to the sibling
+`artifacts/` directory in that same slice path, unless the operator records a
+different artifact home in the slice plan.
 
 ---
 
@@ -513,6 +522,14 @@ invention:
 
 ## Version History
 
+### Version 2.3 — August 2026
+
+Synchronized with `PROJECT-MANAGEMENT.md` v2.5. Durable artifacts produced by a
+slice now default to `sliceNN-<slug>/artifacts/`, with an operator-recorded
+override allowed. CC evidence should point to that artifact home when durable
+outputs are part of a ledger row, and CDC now verifies artifact placement during
+slice close.
+
 ### Version 2.2 — August 2026
 
 Updated the ledger layout to match `PROJECT-MANAGEMENT.md` v2.4: every scale now
@@ -565,4 +582,4 @@ to the methodology (the level-1 ledger-bearing unit is **slice**, not
 
 ---
 
-_This document is a living spec. This version: 2.2, 2026-08-27._
+_This document is a living spec. This version: 2.3, 2026-08-29._

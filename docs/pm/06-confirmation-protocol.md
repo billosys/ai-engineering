@@ -15,7 +15,8 @@ directories or filenames**:
 - Beginning the first arc or slice of a project where the layout was set up by
   prior work but is not obviously visible from an `ls`.
 - Opening any artifact category not yet present in the repository and not
-  covered by this document.
+  covered by this document. Durable slice-produced artifacts are covered: their
+  default home is `artifacts/` inside the owning slice directory.
 - Resuming a project after long elapse, where the layout you remember may no
   longer match the layout on disk.
 
@@ -42,6 +43,7 @@ adjust, or override:
 >         slice-plan.md
 >         ledger.md
 >         cc-prompt.md
+>         artifacts/
 >         closing-report.md
 >         cdc-verification.md
 > ```
@@ -59,7 +61,9 @@ For asset categories **not** covered by this document — project-scoped prompts
 that outlive a slice, upstream contribution drafts, scratch notes — the same
 protocol applies, but **without a default to quote**: name the category,
 propose what you would otherwise have chosen on autopilot, and let the
-operator pick.
+operator pick. For durable artifacts produced by a slice, do quote the default:
+`sliceNN-<slug>/artifacts/`, with an operator override recorded in the slice
+plan if needed.
 
 ### What to do after the operator answers
 
@@ -68,8 +72,10 @@ operator pick.
   instruction file so the next session does not re-confirm. One line is enough:
   *"Planning artifacts live on orphan branch `planning`, worktree
   `.worktrees/planning`, under `projectNN-<slug>/`, per
-  `docs/PROJECT-MANAGEMENT.md`."* If no local instruction file exists, raise it
-  as a follow-up — but do **not** silently start scattering files.
+  `docs/PROJECT-MANAGEMENT.md`; durable slice-produced artifacts default to
+  the owning slice's `artifacts/` directory."* If no local instruction file
+  exists, raise it as a follow-up — but do **not** silently start scattering
+  files.
 - **"Adjust"** — apply the adjustment, then record the adjusted layout in the
   project's `CLAUDE.md`, `AGENTS.md`, or equivalent local instruction file. If
   the adjustment diverges meaningfully from the default, briefly say *why* (team

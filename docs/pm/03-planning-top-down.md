@@ -38,7 +38,8 @@ arcs at once**, before opening any single `arc-plan.md`.
 `project-plan.md` is **not** a mega-file holding every arc's and slice's
 detail — that is the anti-pattern in
 [`Anti-patterns to refuse`](./07-anti-patterns.md). It holds the roadmap and the
-change log; the detail lives in the per-arc and per-slice documents below it.
+change log; the detail lives in the per-arc and per-slice documents below it,
+with durable slice-produced artifacts housed under the owning slice by default.
 
 ### The arc plan — `arc-plan.md`
 
@@ -74,6 +75,14 @@ criteria; the `ledger.md` turns the exit criteria into grep-verifiable rows;
 the `cc-prompt.md` is the assignment CC receives. The ledger is the contract:
 its rows are what "done" means for this slice, and every row must reach a
 final status before the slice advances.
+
+If the slice will produce durable artifacts, the open set must also name the
+artifact home. The default is `artifacts/` inside the slice directory. The
+operator can override that default, but the override must be explicit in
+`slice-plan.md` and repeated in `cc-prompt.md` so the implementing context does
+not invent a second location. If no durable artifacts are expected, say so in
+the slice plan; this prevents a missing `artifacts/` directory from reading as
+an omission at close.
 
 ### Plan late, plan deep
 

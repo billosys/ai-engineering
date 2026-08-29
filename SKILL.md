@@ -17,7 +17,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.4.0
+version: 1.4.1
 license: MIT
 metadata:
   hermes:
@@ -107,7 +107,8 @@ applies:
   anything out. It is now a wayfinder that points to the focused `docs/pm/`
   files for the scales of work, canonical planning worktree layout (`planning`
   branch/worktree, `projectNN-<slug>`, `project-plan.md` / `arc-plan.md` /
-  `slice-plan.md`, and dedicated `ledger.md` files at every scale),
+  `slice-plan.md`, dedicated `ledger.md` files at every scale, and default
+  per-slice `artifacts/` homes for durable slice-produced artifacts),
   confirmation protocol, top-down planning, bottom-up
   bubble-up/close machinery (slice → arc → project), and plan-change
   discipline. The summary in this skill is *not* a substitute for following
@@ -245,7 +246,9 @@ altitude further downstream where they cost more.
 
 Planning runs **top-down** and produces one plan-of-record and one ledger per
 scale: `project-plan.md` + `ledger.md`, `arc-plan.md` + `ledger.md`, and the
-per-slice open set (`slice-plan.md` / `ledger.md` / `cc-prompt.md`).
+per-slice open set (`slice-plan.md` / `ledger.md` / `cc-prompt.md`). Durable
+artifacts produced by a slice default to that slice's `artifacts/` directory,
+unless the operator records an override.
 Closing runs **bottom-up**: each slice closes with a per-row walk *and* a
 **bubble-up to its arc** (did it deliver its assigned piece; what did it
 reveal the arc-plan didn't anticipate; the silent-drop diff), and each arc
@@ -320,7 +323,7 @@ work demands:
 |------|----------|-----------|
 | [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
 | [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
-| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `docs/pm/`: scales of work, canonical planning worktree layout, confirmation protocol, top-down planning, bottom-up bubble-up/close machinery, and plan-change discipline. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
+| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `docs/pm/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bottom-up bubble-up/close machinery, and plan-change discipline. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
 | [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
@@ -364,6 +367,14 @@ subsumes the other.
 ---
 
 ## Version History
+
+### Version 1.4.1 — August 2026
+
+Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.5,
+`LEDGER-DISCIPLINE.md` v2.3, and `AI-ENGINEERING-METHODOLOGY.md` v1.9. Durable
+artifacts produced by a slice now default to the owning slice's `artifacts/`
+directory, with an operator-recorded override allowed and verified at slice
+close.
 
 ### Version 1.4.0 — August 2026
 

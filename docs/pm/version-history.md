@@ -1,5 +1,19 @@
 # Version History
 
+### Version 2.5 — August 2026
+
+Added `sliceNN-<slug>/artifacts/` as the default home for durable artifacts
+produced by a slice. The operator can override the location, but the override
+must be explicit in `slice-plan.md`, repeated in `cc-prompt.md`, and verified at
+slice close through the artifact inventory in `closing-report.md` and
+`cdc-verification.md`.
+
+Updated the canonical planning-worktree tree, top-down planning rules, slice
+closing rules, confirmation-protocol example, anti-pattern list, and maintenance
+notes. The change distinguishes the five per-slice Markdown documents from
+slice-produced work artifacts so planning records and output evidence do not
+compete for the same term.
+
 ### Version 2.4 — August 2026
 
 Changed the canonical ledger layout so **every scale gets a dedicated
@@ -103,4 +117,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_The project-management guide is a living spec. This version: 2.4, 2026-08-27._
+_The project-management guide is a living spec. This version: 2.5, 2026-08-29._

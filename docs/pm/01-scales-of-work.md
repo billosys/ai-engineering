@@ -33,8 +33,10 @@ one mergeable diff. A slice does one thing, end to end, and is sized to be
 implementation, tests, and self-review all carried without compaction, plus
 slack for the fix-iterations the review process will surface. The slice is
 where ledger discipline attaches — one slice, one ledger — and where the work
-actually gets written, tested, and reviewed. If a slice will not fit in one
-context, it was two slices.
+actually gets written, tested, and reviewed. Durable artifacts created by that
+work belong to the slice by default, under the slice's `artifacts/` directory,
+unless the operator records an override. If a slice will not fit in one context,
+it was two slices.
 
 Two more words name things *inside* a slice, not scales of their own:
 

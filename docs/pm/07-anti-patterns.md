@@ -9,11 +9,16 @@ migration of an in-flight project's layout is its own failure mode.
 - **`tasks/`, `work/`, `progress/`, or `reports/` at the project root.** The
   most common inventions; they conflict with the `project → arc → slice`
   vocabulary and route artifacts away from the scale they belong to.
+- **Slice-produced artifacts scattered outside the owning slice.** Durable
+  outputs created by a slice belong in `sliceNN-<slug>/artifacts/` by default.
+  Putting them in root `workbench/`, `reports/`, scratch directories, or
+  implementation docs without an operator-recorded override makes the slice's
+  evidence harder to find and audit.
 - **`milestones/` for ledgers.** The level-1 ledger-bearing unit is **slice**,
   not milestone; the ledger lives inside the slice directory as `ledger.md`,
   not under a top-level `milestones/` tree.
 - **A mega-file `PLAN.md` at the project root holding every arc, slice, and
-  ledger.** The artifact set is per-scale for a reason: each document is a
+  ledger.** The document set is per-scale for a reason: each document is a
   coherent unit that can be independently verified, closed, and re-read.
   Merging them across scales prevents all three. `project-plan.md` holds the
   *roadmap*, not the detail; each scale's acceptance/composition rows live in

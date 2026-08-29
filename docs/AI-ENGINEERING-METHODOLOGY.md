@@ -161,13 +161,13 @@ Before the sequence, the units it operates on. Every project decomposes along th
 
 - **Project** — the whole effort, with a name, a goal, and a definition of done; approached through the first three SDLC steps (research, project definition, design doc), planned by breaking it into arcs, and verified by its own project-level ledger.
 - **Arc** — a set of related slices delivering one coherent capability, and the scale at which you check that the slices _compose_; a planning unit, not an execution unit, approached through arc-and-slice breakdown (SDLC step 4) and verified by its own arc-level ledger.
-- **Slice** — the unit of execution: the work that lands in one branch as one mergeable diff, sized to be _held in a single model context with headroom to spare_. One slice, one ledger; approached through a per-slice implementation plan (SDLC step 5). If a slice will not fit in one context, it was two slices.
+- **Slice** — the unit of execution: the work that lands in one branch as one mergeable diff, sized to be _held in a single model context with headroom to spare_. One slice, one ledger; approached through a per-slice implementation plan (SDLC step 5). Durable artifacts produced by the slice default to the slice's `artifacts/` directory unless the operator records an override. If a slice will not fit in one context, it was two slices.
 
 Two more words name things _inside_ a slice, not scales of their own. A **step** is a single item in a slice's implementation plan — the fine-grained unit the ledger's rows verify; steps do not cross slice boundaries. An **iteration** is a refinement pass on a slice whose delivery misses its acceptance criteria — reserved for that and only that, never a unit of planning, budgeted at five per slice. Read together: _a project bends through several arcs; each arc is cut into slices; a slice is planned as a handful of steps, and if its delivery misses spec it is refined over a bounded number of iterations._ For collaborators arriving with Agile or Scrum habits the rough translation is project ≈ epic, arc ≈ feature, slice ≈ the branch-scale unit those frameworks never named cleanly — a courtesy for onboarding, not an adoption.
 
 The slice rests on a bottleneck worth naming, because it is where this practice and human-centred Agile diverge most sharply. Agile's atom — the story as a branch or PR — is sized to **human review attention** (the "~500-line PR" heuristic is a proxy for what one reviewer can hold). The slice is sized to a different bottleneck: the **model's context window, minus the headroom to recover from its own mistakes**. Two consequences follow: a slice can be _larger in raw diff_ than an Agile PR and still be correctly sized, since the limit is coherence-in-context rather than lines-a-human-will-read; and the five-iteration budget _lives inside_ the context budget — so size to the comfortable two-thirds, not the ceiling.
 
-> **The operational detail now lives behind the [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) wayfinder** — the framework's project-management entry point. It points to focused files under [`./pm/`](./pm/) for the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical planning worktree** (an orphan `planning` branch/worktree, `projectNN-<slug>` directories, `project-plan.md`, `arc-plan.md`, `slice-plan.md`, and a dedicated `ledger.md` at every project/arc/slice scale), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that wayfinder first and follow its required load set** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
+> **The operational detail now lives behind the [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) wayfinder** — the framework's project-management entry point. It points to focused files under [`./pm/`](./pm/) for the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical planning worktree** (an orphan `planning` branch/worktree, `projectNN-<slug>` directories, `project-plan.md`, `arc-plan.md`, `slice-plan.md`, a dedicated `ledger.md` at every project/arc/slice scale, and a default per-slice `artifacts/` home for durable slice-produced artifacts), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that wayfinder first and follow its required load set** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
 
 ### The 9-point SDLC
 
@@ -341,6 +341,14 @@ Portable versions of the methodology for other human collaborators without the C
 
 ## Version History
 
+### Version 1.9 — August 2026
+
+Updated the project-management pointer for
+[`PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) v2.5 and
+[`LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md) v2.3. The
+methodology summary now names the default slice `artifacts/` home for durable
+slice-produced artifacts and preserves the operator override rule.
+
 ### Version 1.8 — August 2026
 
 Updated the project-management pointer for
@@ -447,4 +455,4 @@ Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ---
 
-_The methodology is a living document. This version: 1.8, 2026-08-27._
+_The methodology is a living document. This version: 1.9, 2026-08-29._

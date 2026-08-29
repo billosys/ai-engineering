@@ -11,15 +11,17 @@ when:
 - An anti-pattern recurs across more than one project. Add it to
   [`Anti-patterns to refuse`](./07-anti-patterns.md) with
   a name and a recognisable shape, so the next session refuses it on sight.
-- A deferred asset category (project-scoped prompts, upstream contribution
-  drafts, coverage reports, scratch) acquires a settled default. Add it with
-  the same shape as the layout in
+- A deferred asset category outside the settled slice-produced artifact default
+  (project-scoped prompts, upstream contribution drafts, coverage reports,
+  scratch) acquires a settled default. Add it with the same shape as the layout in
   [`Canonical planning worktree`](./02-canonical-planning-worktree.md).
 
 Two cross-references that are settled today and should not be re-invented:
 CAP-style audit reports have a home in [`CODE-AUDIT.md`](../CODE-AUDIT.md)
 (`workbench/<YYYY.MM.DD>-audit-results-<slug>.md` plus a top-level index);
 per-slice prompts live as `cc-prompt.md` inside the slice directory, not in a
-separate prompts tree.
+separate prompts tree; durable artifacts produced by a slice default to
+`artifacts/` inside that slice directory unless the operator records an
+override.
 
 ---

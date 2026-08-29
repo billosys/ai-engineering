@@ -15,7 +15,10 @@ the two things that make a close also a *bubble-up*.
 
 CC writes the per-row walk: for every ledger row, the final status (`done` /
 `deferred` / `no-op`) and the evidence, with no silent drops (the row count at
-close must match the row count at open). Then CC adds a final section,
+close must match the row count at open). The report also includes a
+slice-artifact inventory: durable artifacts produced by the slice live under
+`artifacts/` by default, or under the operator-recorded override; if the slice
+produced none, say so explicitly. Then CC adds a final section,
 **Bubble-up to the arc**, answering three questions:
 
 1. **Did this slice deliver the piece of the arc's capability the arc-plan
@@ -38,6 +41,9 @@ requires. Then CDC verifies the **bubble-up** itself:
 
 - Confirm the slice delivered its assigned piece, against the arc-plan.
 - Confirm the silent-drop diff is complete and honest.
+- Confirm the artifact inventory is complete: every durable slice-produced
+  artifact is under `artifacts/`, or under the explicit override recorded in the
+  slice plan and prompt; "none" is checked against the actual diff and outputs.
 - **Decide whether the slice's findings require an arc-plan change.** If the
   slice surfaced anything in answer (2) above that changes the arc's slice
   breakdown, sequencing, or scope, then `arc-plan.md` **must be updated before
