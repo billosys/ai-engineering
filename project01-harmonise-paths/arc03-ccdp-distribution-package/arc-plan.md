@@ -34,7 +34,7 @@ protocol consumer's workflow rather than forced into `SKILL.md + guides/`.
 
 ### Slice 01: CCDP Distribution Inventory
 
-Status: active/opened.
+Status: verified/closed.
 
 Scope: inventory the current CCDP source, build, generated spec, JSON corpus,
 visual guide/reference, workbench/review material, README references, and any
@@ -46,7 +46,7 @@ targets or moving protocol materials.
 
 ### Slice 02: CCDP Package Contract Design
 
-Status: stub.
+Status: active/opened.
 
 Expected scope: use Slice 01's inventory to choose package contents, archive
 name, root directory, reader entrypoint, package-local path semantics, and
@@ -84,3 +84,17 @@ to `protocols/ccdp/Makefile`; the CCDP Makefile already assembles
 Initial Arc 03 plan opened after Arc 02 close. Slice 01 starts with inventory
 because CCDP's distribution shape is protocol/package-specific and should not
 be assumed to match the skill-bundle layout.
+
+### v1.1 - 2026-08-29
+
+Slice 01 marked verified/closed by CDC. The inventory confirmed that workbench
+and prompts should be excluded by default, CCDP likely needs a `ccdp/` package
+root with package-local entrypoint, and generated assembled-spec drift must be
+an explicit contract decision.
+
+### v1.2 - 2026-08-29
+
+Slice 02 opened on CCDP package contract design after Slice 01 CDC
+verification. The slice must decide package identity, contents, entrypoint,
+read-only/rebuild-capable semantics, path transforms, validation/checker
+strategy, and generated-output freshness before implementation.

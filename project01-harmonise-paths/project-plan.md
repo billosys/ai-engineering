@@ -137,9 +137,10 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 and Arc 02 are closed. Arc 03 is active with Slice 01 opened on CCDP
-distribution inventory. Arc 04 remains a roadmap stub; its detailed plan should
-be written after the close of Arc 03, per the plan-late/plan-deep rule.
+Arc 01 and Arc 02 are closed. Arc 03 is active: Slice 01 is verified/closed,
+and Slice 02 is opened on CCDP package contract design. Arc 04 remains a
+roadmap stub; its detailed plan should be written after the close of Arc 03,
+per the plan-late/plan-deep rule.
 
 ## Version History
 
@@ -226,3 +227,17 @@ zips with 0 hard failures, 295 visible warnings, and 3 explicit exceptions.
 Arc 03 opened on CCDP distribution packaging after Arc 02 close. Slice 01
 starts with a CCDP distribution inventory so package contents, entrypoint, path
 semantics, and validation are designed from the actual protocol surface.
+
+### v1.14 - 2026-08-29
+
+Arc 03 Slice 01 marked verified/closed. The CCDP distribution inventory found
+that workbench/prompts should be excluded by default, the package likely needs
+a `ccdp/` root and package-local entrypoint, and generated assembled-spec drift
+needs an explicit contract decision.
+
+### v1.15 - 2026-08-29
+
+Arc 03 Slice 02 opened on CCDP package contract design. The slice will choose
+archive identity, contents, entrypoint, read-only/rebuild-capable semantics,
+path transforms, validation/checker policy, and generated-output freshness
+before package implementation.
