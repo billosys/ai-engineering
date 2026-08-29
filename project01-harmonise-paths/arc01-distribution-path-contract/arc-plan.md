@@ -69,11 +69,16 @@ schema.
 
 ### Slice 03: Package Path Gate Implementation
 
-Status: ready, not opened.
+Status: active/opened.
 
-Expected scope: implement the accepted Slice 02 gate design, wire the chosen
-Makefile target, and produce an evidence report from real generated package
-surfaces. Detailed planning is deferred until Slice 02 closes.
+Scope: implement the accepted Slice 02 gate design, wire the
+`check-package-paths` Make target, add the `scripts/check-package-paths`
+checker, add the initial `package-path-exceptions.tsv` policy file if needed,
+and produce reproducible evidence from real generated package surfaces.
+
+Durable slice-produced evidence lives in
+`slice03-package-path-gate-implementation/artifacts/`. Implementation files
+remain in the source checkout.
 
 ## Dependencies
 
@@ -101,3 +106,10 @@ Slice 02 marked verified/closed from CDC verification. Slice 03 marked ready,
 not opened, with the Slice 02 design carrying forward generated-zip validation,
 the Make/script entry points, the exception schema, and the no raw-regex gate
 constraint.
+
+### v1.3 - 2026-08-29
+
+Slice 03 opened from the verified Slice 02 gate design. The slice records the
+new default durable artifact home at
+`slice03-package-path-gate-implementation/artifacts/` for implementation
+evidence produced during the slice.
