@@ -28,7 +28,8 @@ default verbatim, name where it comes from, and offer the choice to accept,
 adjust, or override:
 
 > I'm about to create the planning substrate for project 1. The default layout
-> from `docs/PROJECT-MANAGEMENT.md` is a dedicated `planning` Git worktree:
+> from [docs/PROJECT-MANAGEMENT.md](../PROJECT-MANAGEMENT.md) is a dedicated
+> `planning` Git worktree:
 >
 > ```
 > $PROJECT_DIR/.worktrees/planning/
@@ -72,7 +73,8 @@ plan if needed.
   instruction file so the next session does not re-confirm. One line is enough:
   *"Planning artifacts live on orphan branch `planning`, worktree
   `.worktrees/planning`, under `projectNN-<slug>/`, per
-  `docs/PROJECT-MANAGEMENT.md`; durable slice-produced artifacts default to
+  [docs/PROJECT-MANAGEMENT.md](../PROJECT-MANAGEMENT.md); durable
+  slice-produced artifacts default to
   the owning slice's `artifacts/` directory."* If no local instruction file
   exists, raise it as a follow-up — but do **not** silently start scattering
   files.

@@ -28,7 +28,8 @@ on scope/sequencing while ledger files carry acceptance and composition rows.
 
 ### Version 2.3 — August 2026
 
-Split the long `docs/PROJECT-MANAGEMENT.md` monolith into focused files under
+Split the long project-management monolith
+([docs/PROJECT-MANAGEMENT.md](../PROJECT-MANAGEMENT.md)) into focused files under
 `docs/pm/`, preserving the original part boundaries. The root file is now a
 wayfinder with a required load set, a split-file index, and minimum-context
 shortcuts for common operations. This keeps `PROJECT-MANAGEMENT.md` as the

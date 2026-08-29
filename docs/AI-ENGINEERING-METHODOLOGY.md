@@ -129,7 +129,7 @@ The substrate is the practice of explicitly capturing distilled judgment in form
 
 **Graph relationships.** Cards do not live in isolation; they point at each other. A well-built substrate can answer questions like "which patterns does CA-12 depend on?" or "what conflicts with US-04?" — not just "what does US-04 say?"
 
-**Skill files.** The harvest. A `SKILL.md` is what a future reader — Claude, human, both — consults when they need to do a particular thing. It points at the underlying cards, names the selection criteria, and makes the substrate usable.
+**Skill files.** The harvest. The root skill file ([SKILL.md](../SKILL.md)) is what a future reader — Claude, human, both — consults when they need to do a particular thing. It points at the underlying cards, names the selection criteria, and makes the substrate usable.
 
 ### Worked example: the Rust regeneration
 

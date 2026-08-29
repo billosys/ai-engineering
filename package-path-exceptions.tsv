@@ -1,6 +1,4 @@
 package	document	target	classification	disposition	reason	source	expires
-collaboration-framework.zip	docs/pm/*.md	docs/PROJECT-MANAGEMENT.md	bundled-reference	transitional-warning	bundled framework document currently uses source-root path; Arc 02 will harmonise source or staging paths	slice02-design	after-arc02
-collaboration-framework.zip	docs/AI-ENGINEERING-METHODOLOGY.md	SKILL.md	bundled-reference	transitional-warning	bundled framework document currently uses source-root path; Arc 02 will harmonise source or staging paths	slice02-design	after-arc02
 rust-guidelines.zip	SKILL.md	14-cli-tools/README.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice02-design	after-arc02
 rust-guidelines.zip	SKILL.md	15-cargo/README.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice02-design	after-arc02
 rust-guidelines.zip	SKILL.md	14-cli-tools/*.md	bundled-reference	transitional-warning	guide exists under package guides/ layout; Arc 02 will harmonise source or staging paths	slice03-current-scan	after-arc02
