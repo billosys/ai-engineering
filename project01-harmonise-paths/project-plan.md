@@ -87,9 +87,11 @@ Slices:
 
 - `slice01-package-path-audit`: inventory current package-invalid path
   references, classify them, and propose the source/package path contract.
-- `slice02-contract-gate-design`: planned later after slice 01 closes. Expected
-  focus: convert the accepted contract into Make/Bash-friendly validation
-  requirements and decide warning versus hard-fail gates.
+- `slice02-contract-gate-design`: convert the accepted contract into
+  Make/Bash-friendly validation requirements and decide warning versus
+  hard-fail gates.
+- `slice03-package-path-gate-implementation`: stubbed for later implementation
+  after Slice 02 closes.
 
 ### Arc 02: Skill Bundle Harmonisation
 
@@ -123,9 +125,10 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 is active. Slice 01 is opened and ready for implementation. Later arcs
-are roadmap stubs only; their detailed plans should be written after the close
-of the previous slice or arc, per the plan-late/plan-deep rule.
+Arc 01 is active. Slice 01 is verified/closed and Slice 02 is opened as the
+contract gate design slice. Later arcs remain roadmap stubs only; their
+detailed plans should be written after the close of the previous slice or arc,
+per the plan-late/plan-deep rule.
 
 ## Version History
 
@@ -133,3 +136,9 @@ of the previous slice or arc, per the plan-late/plan-deep rule.
 
 Initial roadmap opened from the packaging-path diagnosis. The project adopts
 the canonical orphan `planning` branch and `.worktrees/planning` layout.
+
+### v1.1 - 2026-08-29
+
+Slice 01 marked verified/closed and Slice 02 opened under Arc 01. The project
+now records slice-local generated planning artifacts as the default pattern for
+audit/design outputs.
