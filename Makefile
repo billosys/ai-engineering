@@ -22,7 +22,7 @@ INSTALL_ZIPS := \
 	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
 INSTALL_SKILLS := $(INSTALL_ZIPS:.zip=)
 
-.PHONY: all skills install uninstall clean help check-skills \
+.PHONY: all skills install uninstall clean help check-skills check-package-paths \
 	collab-framework collab-framework-clean \
 	rust go cpp js erlang cobalt design tailwindcss deno biome
 
@@ -61,6 +61,7 @@ help:
 	@echo "  make install            -> build all zips and install them into $(INSTALL_DIR)"
 	@echo "  make uninstall          -> remove installed skills from $(INSTALL_DIR)"
 	@echo "  make clean              -> remove build/ and all *.zip"
+	@echo "  make check-package-paths -> validate Markdown paths inside generated zips"
 
 # ---------------------------------------------------------------------------
 # collaboration-framework: top-level SKILL.md plus the documents it pulls in,
@@ -203,6 +204,10 @@ all: skills collab-framework
 check-skills:
 	@$(CHECK_SKILL) $(ALL_SKILL_FILES)
 	@echo ">> all skill descriptions within limit"
+
+## check-package-paths: build all zips and validate package-context Markdown paths
+check-package-paths: all
+	@./scripts/check-package-paths --exceptions package-path-exceptions.tsv $(INSTALL_ZIPS)
 
 $(INSTALL_DIR):
 	@mkdir -p "$@"

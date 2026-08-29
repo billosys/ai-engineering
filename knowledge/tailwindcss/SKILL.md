@@ -23,7 +23,7 @@ metadata:
 
 ## Notes for Codex
 
-This skill was originally assembled from Claude Code-oriented sources. Use the guidance directly in Codex; the `sources` URLs are provenance only, and the local reference file lives at `knowledge/tailwindcss/guides/reference.md`.
+This skill was originally assembled from Claude Code-oriented sources. Use the guidance directly in Codex; the `sources` URLs are provenance only, and the local reference file lives at `guides/reference.md`.
 
 > **Tailwind CSS v4** (released January 2025, current stable v4.2) uses a **CSS-first
 > configuration** approach. This skill covers v4 exclusively. All theme customization
@@ -105,7 +105,7 @@ npx @tailwindcss/cli -i app.css -o dist/app.css --watch
 
 A comprehensive Tailwind CSS v4.2 reference document is available at:
 ```
-knowledge/tailwindcss/guides/reference.md
+guides/reference.md
 ```
 
 (Relative to the repository root.)

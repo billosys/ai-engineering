@@ -1,0 +1,565 @@
+#!/usr/bin/env python3
+"""Validate package-context Markdown paths inside generated skill zips."""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import fnmatch
+import posixpath
+import re
+import sys
+import tempfile
+import zipfile
+from dataclasses import dataclass
+from pathlib import Path
+from urllib.parse import urlsplit
+
+
+CLASSIFICATIONS = {
+    "bundled-reference",
+    "source-clone-reference",
+    "repo-only/provenance",
+    "example-project path",
+    "external URL",
+    "parser false positive",
+}
+DISPOSITIONS = {"warning", "explicit-exception", "transitional-warning"}
+EXCEPTION_COLUMNS = [
+    "package",
+    "document",
+    "target",
+    "classification",
+    "disposition",
+    "reason",
+    "source",
+    "expires",
+]
+
+INLINE_LINK_RE = re.compile(r"!?\[[^\]\n]*\]\(([^)\n]+)\)")
+REF_DEF_RE = re.compile(r"^\s{0,3}\[[^\]\n]+\]:\s*(\S+)", re.MULTILINE)
+CODE_SPAN_RE = re.compile(r"`([^`\n]+)`")
+FENCE_RE = re.compile(r"^\s*(```|~~~)")
+HTML_COMMENT_RE = re.compile(r"<!--.*?-->", re.DOTALL)
+BARE_IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_:.-]*$")
+
+DOMAIN_BY_PACKAGE = {
+    "rust-guidelines": "rust",
+    "go-guidelines": "go",
+    "cpp-guidelines": "cpp",
+    "javascript-deno-guidelines": "js",
+    "erlang-guidelines": "erlang",
+    "cobalt-guidelines": "cobalt",
+    "visual-design-system": "design",
+    "tailwindcss": "tailwindcss",
+    "deno-js-linter": "deno",
+    "biome-js-linter": "biome",
+    "biome-linter": "biome",
+}
+
+
+@dataclass(frozen=True)
+class Reference:
+    document: str
+    document_rel: str
+    line: int
+    kind: str
+    target: str
+
+
+@dataclass(frozen=True)
+class Finding:
+    package: str
+    document: str
+    line: int
+    kind: str
+    target: str
+    resolved: str
+    classification: str
+    severity: str
+    reason: str
+    disposition: str = ""
+
+
+@dataclass(frozen=True)
+class ExceptionRow:
+    package: str
+    document: str
+    target: str
+    classification: str
+    disposition: str
+    reason: str
+    source: str
+    expires: str
+
+
+def clean_target(raw: str) -> str:
+    raw = raw.strip().strip("<>").strip()
+    if " " in raw and not raw.startswith(("http://", "https://", "mailto:")):
+        raw = raw.split()[0]
+    return raw.strip("'\"")
+
+
+def strip_fragment_query(target: str) -> str:
+    if "#" in target:
+        target = target.split("#", 1)[0]
+    if "?" in target:
+        target = target.split("?", 1)[0]
+    return target
+
+
+def is_external_url(target: str) -> bool:
+    scheme = urlsplit(target).scheme
+    return bool(scheme and scheme not in {"", "file"})
+
+
+def is_same_file_anchor(target: str) -> bool:
+    return target.startswith("#") or strip_fragment_query(target) == ""
+
+
+def package_top_from_names(names: list[str]) -> str:
+    for name in names:
+        if "/" in name:
+            return name.split("/", 1)[0]
+    raise ValueError("zip has no package root directory")
+
+
+def package_exists(names: set[str], resolved: str) -> bool:
+    return bool(resolved and (resolved in names or f"{resolved}/" in names))
+
+
+def normalize_package_path(package_top: str, document: str, target: str) -> str:
+    bare = strip_fragment_query(target)
+    if not bare:
+        return ""
+    if bare.startswith("/"):
+        return posixpath.normpath(posixpath.join(package_top, bare.lstrip("/")))
+    base = posixpath.dirname(document)
+    return posixpath.normpath(posixpath.join(base, bare))
+
+
+def escaped_package_root(package_top: str, resolved: str) -> bool:
+    return bool(resolved and not (resolved == package_top or resolved.startswith(f"{package_top}/")))
+
+
+def source_prefix(package_top: str) -> Path:
+    domain = DOMAIN_BY_PACKAGE.get(package_top)
+    if domain:
+        return Path("knowledge") / domain
+    return Path(".")
+
+
+def source_candidates(package_top: str, document_rel: str, target: str) -> list[Path]:
+    bare = strip_fragment_query(target).lstrip("/")
+    if not bare:
+        return []
+    prefix = source_prefix(package_top)
+    candidates = [Path(bare), prefix / bare]
+    if bare.startswith(f"{package_top}/"):
+        candidates.append(Path(bare[len(package_top) + 1 :]))
+    if not bare.startswith("guides/"):
+        candidates.append(prefix / "guides" / bare)
+    candidates.append(prefix / Path(document_rel).parent / bare)
+    return candidates
+
+
+def source_exists(repo: Path, package_top: str, document_rel: str, target: str) -> bool:
+    for candidate in source_candidates(package_top, document_rel, target):
+        path = (repo / candidate).resolve()
+        try:
+            path.relative_to(repo)
+        except ValueError:
+            continue
+        if path.exists():
+            return True
+    return False
+
+
+def package_alternates(package_top: str, document_rel: str, target: str) -> list[str]:
+    bare = strip_fragment_query(target).lstrip("/")
+    alternates: list[str] = []
+    domain = DOMAIN_BY_PACKAGE.get(package_top)
+    if domain and bare.startswith(f"knowledge/{domain}/guides/"):
+        rest = bare[len(f"knowledge/{domain}/guides/") :]
+        alternates.append(posixpath.normpath(posixpath.join(package_top, "guides", rest)))
+    if bare.startswith("guides/"):
+        alternates.append(posixpath.normpath(posixpath.join(package_top, bare)))
+    if document_rel.startswith("SKILL") and "/" in bare and not bare.startswith(("knowledge/", "docs/", "templates/")):
+        alternates.append(posixpath.normpath(posixpath.join(package_top, "guides", bare)))
+    if package_top == "javascript-deno-guidelines":
+        for family in ("12-deno", "13-biome"):
+            if bare.startswith(f"{family}/"):
+                tail = bare[len(family) + 1 :]
+                if re.match(r"^\d\d-", tail):
+                    alternates.append(posixpath.normpath(posixpath.join(package_top, "guides", family, f"{family[:2]}-{tail}")))
+    if package_top == "collaboration-framework" and bare in {"SKILL.md", "docs/PROJECT-MANAGEMENT.md"}:
+        alternates.append(posixpath.normpath(posixpath.join(package_top, bare)))
+    if package_top == "collaboration-framework" and bare.startswith(("docs/", "templates/")):
+        alternates.append(posixpath.normpath(posixpath.join(package_top, bare)))
+    return alternates
+
+
+def looks_like_placeholder(target: str) -> bool:
+    return bool(re.search(r"<[^>]+>|\{[^}]+\}|\*", target))
+
+
+def looks_like_bare_identifier(target: str) -> bool:
+    bare = strip_fragment_query(target).strip()
+    return bool(
+        BARE_IDENTIFIER_RE.match(bare)
+        and "/" not in bare
+        and not re.search(r"\.(md|txt|toml|json|ya?ml|xml|html|png|jpg|jpeg|gif|svg)$", bare)
+    )
+
+
+def looks_like_package_file(target: str) -> bool:
+    bare = strip_fragment_query(target).strip()
+    return bool(re.search(r"\.(md|txt|toml|json|ya?ml|xml|html|png|jpg|jpeg|gif|svg)$", bare))
+
+
+def looks_repo_only(target: str) -> bool:
+    bare = strip_fragment_query(target).lstrip("/")
+    repo_only_parts = (
+        "/Users/",
+        "workbench/",
+        "docs/dev/",
+        "extraction-metadata/",
+        "references/",
+        "skills/",
+        "sources/",
+        "sources/md/",
+        "source-corpus/",
+        "tools/",
+        ".worktrees/",
+        "cc-skills",
+        "claude-skill",
+        "claude-skills",
+        "jeffallan-claude-skills",
+    )
+    source_root_files = ("AGENTS.md", "CLAUDE.md", "~/.claude/CLAUDE.md")
+    return (
+        bare in source_root_files
+        or bare.startswith(repo_only_parts)
+        or any(f"/{part}" in bare for part in repo_only_parts)
+    )
+
+
+def looks_example_path(target: str) -> bool:
+    bare = strip_fragment_query(target).lstrip("/")
+    return bare.startswith(
+        (
+            "$HOME/",
+            "~/",
+            "/etc/",
+            ".cargo/",
+            "_data/",
+            "_defaults/",
+            "src/",
+            "test/",
+            "tests/",
+            "testdata/",
+            "examples/",
+            "fixtures/",
+            "cmd/",
+            "pkg/",
+            "internal/",
+            "lib/",
+            "include/",
+            "foo/",
+            "crypto/",
+            "database/",
+        )
+    )
+
+
+def code_span_path_like(token: str) -> bool:
+    token = token.strip()
+    if " " in token or token.startswith("-"):
+        return False
+    if token in {"Makefile", "README.md", "SKILL.md", "AGENTS.md", "CLAUDE.md"}:
+        return True
+    if "/" not in token:
+        return False
+    if looks_like_placeholder(token):
+        return True
+    return bool(re.search(r"\.(md|sh|py|rs|go|erl|lfe|toml|json|ya?ml|txt|xml|html)$", strip_fragment_query(token)))
+
+
+def line_number(text: str, offset: int) -> int:
+    return text.count("\n", 0, offset) + 1
+
+
+def strip_skipped_blocks(text: str) -> str:
+    text = HTML_COMMENT_RE.sub(lambda match: "\n" * match.group(0).count("\n"), text)
+    output: list[str] = []
+    fenced = False
+    for line in text.splitlines(keepends=True):
+        if FENCE_RE.match(line):
+            fenced = not fenced
+            output.append("\n" if line.endswith("\n") else "")
+            continue
+        if fenced or line.startswith("    ") or line.startswith("\t"):
+            output.append("\n" if line.endswith("\n") else "")
+            continue
+        output.append(line)
+    return "".join(output)
+
+
+def iter_references(package_top: str, document: str, text: str) -> tuple[list[Reference], str]:
+    document_rel = document[len(package_top) + 1 :]
+    scan_text = strip_skipped_blocks(text)
+    refs: list[Reference] = []
+    for match in INLINE_LINK_RE.finditer(scan_text):
+        refs.append(
+            Reference(document, document_rel, line_number(scan_text, match.start()), "inline link", clean_target(match.group(1)))
+        )
+    for match in REF_DEF_RE.finditer(scan_text):
+        refs.append(
+            Reference(document, document_rel, line_number(scan_text, match.start()), "reference definition", clean_target(match.group(1)))
+        )
+    for match in CODE_SPAN_RE.finditer(scan_text):
+        target = clean_target(match.group(1))
+        if code_span_path_like(target):
+            refs.append(
+                Reference(document, document_rel, line_number(scan_text, match.start()), "code span", target)
+            )
+    return refs, "omitted by Markdown parser"
+
+
+def classify_reference(repo: Path, names: set[str], package_top: str, ref: Reference) -> Finding | None:
+    target = ref.target
+    if is_external_url(target):
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, "", "external URL", "skipped", "external URL skipped")
+    if is_same_file_anchor(target):
+        return None
+    if ref.kind != "code span" and looks_like_bare_identifier(target):
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, "", "parser false positive", "warning", "bare identifier-style destination")
+    resolved = normalize_package_path(package_top, ref.document, target)
+    if escaped_package_root(package_top, resolved):
+        if source_exists(repo, package_top, ref.document_rel, target):
+            return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "source-clone-reference", "warning", "target resolves only from source-clone context")
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "unclassified", "hard failure", "resolved path escapes package root")
+    if package_exists(names, resolved):
+        return None
+    if any(package_exists(names, alternate) for alternate in package_alternates(package_top, ref.document_rel, target)):
+        severity = "warning" if ref.kind == "code span" else "hard failure"
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "bundled-reference", severity, "bundled target exists under package layout")
+    if looks_example_path(target):
+        severity = "warning" if ref.kind == "code span" else "hard failure"
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "example-project path", severity, "example-like path requires explicit exception")
+    if looks_like_placeholder(target) or looks_repo_only(target):
+        severity = "warning" if ref.kind == "code span" else "hard failure"
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "repo-only/provenance", severity, "repo-only/provenance path requires explicit exception")
+    if source_exists(repo, package_top, ref.document_rel, target):
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "source-clone-reference", "warning", "target exists only in source clone")
+    if ref.kind == "code span":
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "parser false positive", "warning", "code span token is not classifiable as a package path")
+    if looks_like_package_file(target):
+        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "bundled-reference", "hard failure", "path-shaped link target is absent from package")
+    return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "unclassified", "hard failure", "unresolved path could not be classified")
+
+
+def validate_exception(row: dict[str, str], path: Path, line: int) -> ExceptionRow:
+    missing = [column for column in EXCEPTION_COLUMNS if column not in row]
+    if missing:
+        raise ValueError(f"{path}:{line}: missing columns: {', '.join(missing)}")
+    values = {column: row[column].strip() for column in EXCEPTION_COLUMNS}
+    for column in EXCEPTION_COLUMNS:
+        if not values[column]:
+            raise ValueError(f"{path}:{line}: empty required field: {column}")
+    if values["classification"] not in CLASSIFICATIONS:
+        raise ValueError(f"{path}:{line}: invalid classification: {values['classification']}")
+    if values["disposition"] not in DISPOSITIONS:
+        raise ValueError(f"{path}:{line}: invalid disposition: {values['disposition']}")
+    if values["disposition"] == "explicit-exception" and values["classification"] not in {
+        "repo-only/provenance",
+        "example-project path",
+        "external URL",
+    }:
+        raise ValueError(f"{path}:{line}: explicit-exception is not allowed for {values['classification']}")
+    return ExceptionRow(**values)
+
+
+def load_exceptions(path: Path | None) -> list[ExceptionRow]:
+    if path is None:
+        return []
+    if not path.exists():
+        raise ValueError(f"exception file does not exist: {path}")
+    with path.open(newline="") as fh:
+        reader = csv.DictReader(fh, delimiter="\t")
+        if reader.fieldnames != EXCEPTION_COLUMNS:
+            raise ValueError(f"{path}: expected TSV header: {'/'.join(EXCEPTION_COLUMNS)}")
+        rows = []
+        for index, row in enumerate(reader, start=2):
+            rows.append(validate_exception(row, path, index))
+    return rows
+
+
+def match_exception(package: str, finding: Finding, exceptions: list[ExceptionRow]) -> ExceptionRow | None:
+    for row in exceptions:
+        if row.classification != finding.classification:
+            continue
+        if not fnmatch.fnmatchcase(package, row.package):
+            continue
+        if not fnmatch.fnmatchcase(finding.document, row.document):
+            continue
+        if not fnmatch.fnmatchcase(finding.target, row.target):
+            continue
+        return row
+    return None
+
+
+def apply_exception(package: str, finding: Finding, exceptions: list[ExceptionRow]) -> Finding:
+    exception = match_exception(package, finding, exceptions)
+    if exception is None:
+        return finding
+    if exception.disposition in {"warning", "transitional-warning"}:
+        return Finding(package, finding.document, finding.line, finding.kind, finding.target, finding.resolved, finding.classification, "warning", exception.reason, exception.disposition)
+    return Finding(package, finding.document, finding.line, finding.kind, finding.target, finding.resolved, finding.classification, "explicit exception", exception.reason, exception.disposition)
+
+
+def scan_zip(repo: Path, zip_path: Path, exceptions: list[ExceptionRow]) -> tuple[list[Finding], dict[str, int], str]:
+    if not zip_path.exists():
+        raise ValueError(f"missing zip: {zip_path}")
+    findings: list[Finding] = []
+    counts = {"markdown_files": 0, "external_urls": 0}
+    parser_material = "omitted by Markdown parser"
+    with zipfile.ZipFile(zip_path) as archive:
+        names_list = archive.namelist()
+        names = set(names_list)
+        package_top = package_top_from_names(names_list)
+        for name in names_list:
+            if not name.endswith(".md"):
+                continue
+            counts["markdown_files"] += 1
+            text = archive.read(name).decode("utf-8", errors="replace")
+            refs, parser_material = iter_references(package_top, name, text)
+            for ref in refs:
+                finding = classify_reference(repo, names, package_top, ref)
+                if finding is None:
+                    continue
+                if finding.classification == "external URL":
+                    counts["external_urls"] += 1
+                    continue
+                findings.append(apply_exception(zip_path.name, finding, exceptions))
+    return findings, counts, parser_material
+
+
+def print_report(zip_paths: list[Path], findings: list[Finding], markdown_files: int, external_urls: int, parser_material: str) -> None:
+    hard = [finding for finding in findings if finding.severity == "hard failure"]
+    warnings = [finding for finding in findings if finding.severity == "warning"]
+    exceptions = [finding for finding in findings if finding.severity == "explicit exception"]
+    print("package path check")
+    print(f"zips scanned: {len(zip_paths)}")
+    print(f"markdown files scanned: {markdown_files}")
+    print(f"hard failures: {len(hard)}")
+    print(f"warnings: {len(warnings)}")
+    print(f"explicit exceptions: {len(exceptions)}")
+    print(f"skipped external URLs: {external_urls}")
+    print(f"parser-suppressed material: {parser_material}")
+    print("")
+    if findings:
+        print("findings:")
+        for finding in findings:
+            print(
+                f"{finding.severity}\t{finding.classification}\t{finding.document}:{finding.line}"
+                f"\t{finding.kind}\t{finding.target}\t{finding.resolved}\t{finding.disposition or '-'}\t{finding.reason}"
+            )
+
+
+def run_self_test() -> int:
+    sample = """# fixture
+[inline link](guides/ok.md)
+![image link](assets/img.png)
+[anchor](#local-heading)
+[path anchor](guides/ok.md#section)
+[external](https://example.test/ref)
+[placeholder](knowledge/<slug>/SKILL*.md)
+
+[ref]: guides/ok.md
+
+```sh
+[fenced code](missing.md)
+```
+
+    [indented code](missing.md)
+
+`guides/ok.md`
+`bare_identifier`
+"""
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        zip_path = root / "fixture.zip"
+        with zipfile.ZipFile(zip_path, "w") as archive:
+            archive.writestr("fixture/SKILL.md", sample)
+            archive.writestr("fixture/guides/ok.md", "# ok\n")
+            archive.writestr("fixture/assets/img.png", "")
+        with zipfile.ZipFile(zip_path) as archive:
+            names = set(archive.namelist())
+            refs, parser_material = iter_references("fixture", "fixture/SKILL.md", sample)
+            targets = {ref.target for ref in refs}
+            cases = {
+                "inline link": "guides/ok.md" in targets,
+                "image link": "assets/img.png" in targets,
+                "reference definition": any(ref.kind == "reference definition" and ref.target == "guides/ok.md" for ref in refs),
+                "same-file anchor": any(ref.target == "#local-heading" for ref in refs),
+                "path anchor": "guides/ok.md#section" in targets,
+                "fenced code": "missing.md" not in targets,
+                "indented code": all(ref.line != 14 for ref in refs),
+                "conservative code span": any(ref.kind == "code span" and ref.target == "guides/ok.md" for ref in refs),
+                "placeholder": "knowledge/<slug>/SKILL*.md" in targets,
+                "external URL": "https://example.test/ref" in targets,
+                "parser suppressed material": parser_material == "omitted by Markdown parser",
+            }
+            findings = [
+                classify_reference(root, names, "fixture", ref)
+                for ref in refs
+                if not is_external_url(ref.target) and not is_same_file_anchor(ref.target)
+            ]
+            cases["valid package paths"] = all(finding is None or finding.classification == "repo-only/provenance" for finding in findings)
+        for name, ok in cases.items():
+            print(f"case: {name}: {'ok' if ok else 'FAIL'}")
+        return 0 if all(cases.values()) else 1
+
+
+def parse_args(argv: list[str]) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("zips", nargs="*", help="generated zip archives to scan")
+    parser.add_argument("--exceptions", default="package-path-exceptions.tsv", help="TSV exception file")
+    parser.add_argument("--repo", default=".", help="repository root for source-clone classification")
+    parser.add_argument("--self-test", action="store_true", help="run parser self-test fixture")
+    parser.add_argument("--check-exceptions-only", action="store_true", help="validate exception schema and exit")
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str]) -> int:
+    args = parse_args(argv)
+    if args.self_test:
+        return run_self_test()
+    try:
+        exceptions = load_exceptions(Path(args.exceptions) if args.exceptions else None)
+        if args.check_exceptions_only:
+            print(f"exception schema ok: {args.exceptions}")
+            return 0
+        if not args.zips:
+            raise ValueError("no zip archives provided")
+        repo = Path(args.repo).resolve()
+        all_findings: list[Finding] = []
+        markdown_files = 0
+        external_urls = 0
+        parser_material = "omitted by Markdown parser"
+        zip_paths = [Path(zip_arg) for zip_arg in args.zips]
+        for zip_path in zip_paths:
+            findings, counts, parser_material = scan_zip(repo, zip_path, exceptions)
+            all_findings.extend(findings)
+            markdown_files += counts["markdown_files"]
+            external_urls += counts["external_urls"]
+        print_report(zip_paths, all_findings, markdown_files, external_urls, parser_material)
+        return 1 if any(finding.severity == "hard failure" for finding in all_findings) else 0
+    except (OSError, ValueError, zipfile.BadZipFile) as exc:
+        print(f"check-package-paths: {exc}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

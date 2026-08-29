@@ -84,7 +84,7 @@ library:
 
 **Guide (1):**
 
-- `knowledge/cobalt/guides/01-cobalt-static-site-generation.md` — the 32
+- `guides/01-cobalt-static-site-generation.md` — the 32
   numbered patterns (`CB-01`…`CB-32`) covering the full Cobalt + Liquid
   workflow from install to programmatic extension, ending with a Summary
   Table and a Related Guidelines / External References footer.
