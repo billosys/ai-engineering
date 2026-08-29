@@ -32,7 +32,7 @@ substantive guide restructuring needs a separate operator-approved project.
 
 ### Slice 01: Tooling Entrypoint Links
 
-Status: active/opened.
+Status: verified/closed.
 
 Scope: reduce high-confidence bundled-reference warnings in smaller/simple
 skill entrypoints where `guides/...` works from both the source skill file and
@@ -75,8 +75,8 @@ later-arc work, and prepare Arc 02 for close.
 ## Dependencies
 
 Arc 02 consumes the executable `make check-package-paths` gate from Arc 01. The
-source implementation is currently verified as a working-tree diff; CC should
-preserve that state or the operator should commit it before starting Slice 01.
+source implementation for the gate and Slice 01 tooling link harmonisation is
+committed on `main` at `09d1550`.
 
 ## Version History
 
@@ -85,3 +85,10 @@ preserve that state or the operator should commit it before starting Slice 01.
 Initial Arc 02 plan opened after Arc 01 closed. Slice 01 opens on
 tooling/simple skill entrypoint links to burn down a small, high-confidence
 class before broader framework or mature-language work.
+
+### v1.1 - 2026-08-29
+
+Slice 01 marked verified/closed by CDC. The slice burned targeted
+tooling/simple entrypoint bundled-reference warnings from 20 to 0, with total
+package-path warnings moving from 426 to 406 and no new hard failures. No Arc
+02 plan change is required before Slice 02.
