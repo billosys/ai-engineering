@@ -49,7 +49,7 @@ language packs or generalized staging transforms.
 
 ### Slice 02: Collaboration Framework Links
 
-Status: active/opened.
+Status: verified/closed.
 
 Expected scope: address collaboration-framework/package-management links that
 still warn in generated packages, using source edits where one spelling is
@@ -76,7 +76,8 @@ later-arc work, and prepare Arc 02 for close.
 
 Arc 02 consumes the executable `make check-package-paths` gate from Arc 01. The
 source implementation for the gate and Slice 01 tooling link harmonisation is
-committed on `main` at `09d1550`.
+committed on `main` at `09d1550`. The Slice 02 collaboration-framework link
+harmonisation is committed on `main` at `0c5997e`.
 
 ## Version History
 
@@ -99,3 +100,10 @@ Slice 02 opened on collaboration-framework links after Slice 01 CDC
 verification. The scope starts with a generated-package warning baseline and
 requires classification before edits so framework methodology examples are not
 mechanically rewritten into misleading package paths.
+
+### v1.3 - 2026-08-29
+
+Slice 02 marked verified/closed by CDC. Framework `bundled-reference` warnings
+burned down from 4 to 0, total package-path warnings moved from 406 to 402, and
+remaining framework warnings were preserved as classified source/provenance,
+source-clone, or example-project paths for later warning-policy tightening.

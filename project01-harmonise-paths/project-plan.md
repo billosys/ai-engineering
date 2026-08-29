@@ -139,8 +139,8 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 is closed. Arc 02 is active: Slice 01 is verified/closed and Slice 02 is
-opened. Arc 03 and Arc 04 remain roadmap stubs only; their detailed plans
+Arc 01 is closed. Arc 02 is active: Slice 01 and Slice 02 are verified/closed.
+Arc 03 and Arc 04 remain roadmap stubs only; their detailed plans
 should be written after the close of the previous slice or arc, per the
 plan-late/plan-deep rule.
 
@@ -191,3 +191,10 @@ Arc 02 Slice 02 opened on collaboration-framework links. The slice follows
 Slice 01's package-warning burn-down pattern but adds a required classification
 step because the framework bundle contains both true package-internal links and
 intentional source/provenance examples.
+
+### v1.8 - 2026-08-29
+
+Arc 02 Slice 02 marked verified/closed. The slice burned collaboration-framework
+`bundled-reference` warnings from 4 to 0, moved total package-path warnings from
+406 to 402, and preserved non-bundled framework examples as classified warnings
+for later policy tightening.
