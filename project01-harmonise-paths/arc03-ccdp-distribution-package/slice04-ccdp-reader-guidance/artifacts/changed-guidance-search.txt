@@ -1,0 +1,23 @@
+README.md:119:- **Independent audits and hard coverage targets.** Whole-repo,
+README.md:271:make help              # list every target
+README.md:282:make ccdp               # assemble protocols/ccdp/composite-cognition-dispatch-protocol.md
+README.md:283:make ccdp-package       # build ccdp.zip with one ccdp/ package root
+README.md:284:make check-ccdp-package # validate ccdp.zip zipped and unzipped
+README.md:288:bundles only. They do not build or install `ccdp.zip`.
+README.md:295:├── Makefile           # Packaging and install targets (above)
+README.md:329:In a source checkout, start at [`protocols/ccdp/README.md`](./protocols/ccdp/README.md)
+README.md:332:- [`protocols/ccdp/composite-cognition-dispatch-protocol.md`](./protocols/ccdp/composite-cognition-dispatch-protocol.md)
+README.md:334:- [`protocols/ccdp/src/README.md`](./protocols/ccdp/src/README.md) for the
+README.md:336:- [`protocols/ccdp/json/MANIFEST.md`](./protocols/ccdp/json/MANIFEST.md) for
+README.md:338:- [`protocols/ccdp/visual-guide/index.html`](./protocols/ccdp/visual-guide/index.html)
+README.md:339:  and [`protocols/ccdp/visual-guide/ccdp-reference.md`](./protocols/ccdp/visual-guide/ccdp-reference.md)
+README.md:342:For package use, build or download `ccdp.zip`, unzip it, and start at
+README.md:343:`ccdp/README.md`. The package README uses package-local links such as
+README.md:347:The source-only `protocols/ccdp/workbench/` and `protocols/ccdp/prompts/`
+README.md:349:intentionally excluded from `ccdp.zip` and are not package entrypoints.
+README.md:351:We've also created a [visual guide](https://billo.systems/ai-engineering/protocols/ccdp/visual-guide/) for the protocol which provides an overview of its goals, what it does, and how it's useful. There's also a brief comparison to other protocols at the end.
+protocols/ccdp/README.md:4:`protocols/ccdp/`; in `ccdp.zip` it is staged as the unzipped `ccdp/` package
+protocols/ccdp/README.md:27:`ccdp.zip`, and `make check-ccdp-package` validates the zip shape, package-local
+protocols/ccdp/README.md:32:After unzipping `ccdp.zip`, start at `ccdp/README.md`. From inside the unzipped
+protocols/ccdp/README.md:54:The source checkout also contains `workbench/` and `prompts/`. Those directories
+protocols/ccdp/README.md:56:from `ccdp.zip` and are not package entrypoints.
