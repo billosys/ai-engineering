@@ -1,0 +1,1 @@
+inverted check exit: 0

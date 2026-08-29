@@ -1,0 +1,13 @@
+slice01 edited paths:
+knowledge/biome/SKILL-js-linter.md
+knowledge/biome/SKILL-web-linter.md
+knowledge/cobalt/SKILL.md
+knowledge/deno/SKILL-js-linter.md
+knowledge/tailwindcss/SKILL.md
+package-path-exceptions.tsv
+
+inherited arc01 gate diff still present:
+Makefile
+scripts/check-package-paths
+
+full working tree status is in git-status.txt
