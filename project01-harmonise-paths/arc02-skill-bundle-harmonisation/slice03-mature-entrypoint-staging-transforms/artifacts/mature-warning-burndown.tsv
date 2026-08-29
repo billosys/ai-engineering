@@ -1,0 +1,6 @@
+package	baseline_bundled	baseline_entrypoint	baseline_non_entrypoint	post_bundled	post_entrypoint	post_non_entrypoint
+rust-guidelines	37	31	6	6	0	6
+javascript-deno-guidelines	157	76	81	81	0	81
+cpp-guidelines	2	0	2	2	0	2
+go-guidelines	0	0	0	0	0	0
+erlang-guidelines	0	0	0	0	0	0
