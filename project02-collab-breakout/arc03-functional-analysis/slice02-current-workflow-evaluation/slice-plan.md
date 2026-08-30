@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc03-functional-analysis
 slice: slice02-current-workflow-evaluation
-status: open
+status: proposed-done
 opened-on: 2026-08-30
+proposed-done-on: 2026-08-30
 artifact-home: artifacts/
 depends-on:
   - slice01-usage-surface-instrument:verified-closed
