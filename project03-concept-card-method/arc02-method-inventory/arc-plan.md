@@ -63,13 +63,16 @@ directory.
 
 Directory: `slice03-inventory-synthesis`
 
-Status: placeholder.
+Status: open.
 
-Expected scope: synthesize the baseline inventory and gap analysis into the
-Arc02 close input for Arc03: what v3.2 keeps, what v4.0 must change, what
-requires operator choice, and what remains out of scope.
+Scope: synthesize the verified baseline inventory and verified gap analysis
+into the Arc02 close input for Arc03: what v3.2 keeps, what v4.0 must change,
+what requires operator choice, and what remains deferred or out of scope.
 
-Detailed planning can proceed after Slice02 CDC verification.
+Blocks: Arc02 close and Arc03.
+
+Durable synthesis outputs belong under the slice-local `artifacts/`
+directory.
 
 ## Dependencies
 
@@ -115,3 +118,9 @@ layout.
 Slice02 marked verified-closed after CDC reproduced all seven slice ledger
 rows. Slice03 planning can proceed against the existing Arc02 sequence; no
 scope or sequencing change was required.
+
+### v1.5 - 2026-08-30
+
+Slice03 opened for inventory synthesis. The slice must compose the verified
+Slice01 and Slice02 outputs into Arc02 close input and an Arc03 conceptual
+model input packet without designing the final v4.0 model or skill layout.
