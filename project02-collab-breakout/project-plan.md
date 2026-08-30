@@ -12,6 +12,7 @@ blocks:
 related:
   - /Users/oubiwann/lab/billosys/ai-engineering
   - project01-harmonise-paths
+  - project03-concept-card-method
   - SKILL.md
   - README.md
   - docs/AI-CONSTITUTION-SUPPLEMENT.md
@@ -108,14 +109,20 @@ Slices:
 
 ### Arc 02: Conceptual Analysis
 
-Status: placeholder.
+Status: placeholder; softly paused pending Project03 Slice01 boundary aid and
+Slice02 acceptance handoff.
 
 Expected capability: perform the taxonomy and ontology analysis of the current
 framework, including critical checks for mislabeled concepts, improper merges,
   improper splits, missing concepts, overclaimed mechanisms, and gaps between
   stated aims and actual solution shape.
 
-Detailed arc planning is deferred until Arc 01 closes.
+Detailed arc planning is deferred until Arc 01 closes and Project03
+`slice01-project02-boundary-aid` has produced its concept-card-method boundary
+aid for Project02 Arc02, followed by
+`slice02-project02-acceptance-handoff`. This is a soft dependency: Project02
+does not wait for the full Project03 v4.0 skill, only for the small Arc02 aid,
+handoff packet, and operator acceptance that they are sufficient.
 
 ### Arc 03: Functional Analysis
 
@@ -156,7 +163,8 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 Project 02 is opened for planning. Arc 01 has all three planned slices
 verified/closed and is ready for formal arc close. Arc 02 remains deferred
-until Arc 01 closes.
+until Arc 01 closes and Project03 Slice01 produces the concept-card-method
+boundary aid plus the Slice02 acceptance handoff for operator acceptance.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -199,3 +207,18 @@ for Arc 02 conceptual analysis.
 Arc 01 Slice 03 marked verified/closed by CDC. Arc 01 now has all planned
 slices verified/closed and is ready for formal arc close; Arc 02 remains
 deferred until that close completes.
+
+### v1.6 - 2026-08-30
+
+Recorded the operator-accepted soft dependency on
+`project03-concept-card-method` before Project02 Arc02 detailed planning.
+Project02 does not wait for the full Project03 v4.0 skill; it waits only for
+the Slice01 boundary aid that adapts the concept-card method into a focused
+component-boundary analysis lens.
+
+### v1.7 - 2026-08-30
+
+Updated the Project03 soft dependency after opening Project03 Arc01 Slice02.
+Project02 Arc02 now waits for the Slice01 boundary aid plus the Slice02
+acceptance handoff, while still explicitly not waiting for the full Project03
+v4.0 skill.
