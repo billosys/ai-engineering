@@ -1,0 +1,10 @@
+35:## Artifacts
+80:- F-1: done. `artifacts/no-repair-decision.md` grounds the no-repair decision
+83:- F-2: done. `artifacts/final-acceptance-command-set.md` gives the exact
+86:- F-3: done. `artifacts/arc-project-ledger-close-map.md` maps Arc 04 rows A-2
+89:- F-4: done. `artifacts/slice03-readiness-scope.md` scopes Slice 03 to
+92:- F-5: done. `artifacts/no-repair-decision.md` and
+95:- F-6: done. `artifacts/git-diff-check-implementation.txt` is empty and
+98:- F-7: done. This close report inventories artifacts, names implementation
+99:  state, walks F-1 through F-7, and bubbles the result to Arc 04.
+101:## Bubble-up to Arc 04

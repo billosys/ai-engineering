@@ -1,0 +1,313 @@
+>> staging rust-guidelines bundle (knowledge/rust/SKILL.md + knowledge/rust/guides)
+>> writing rust-guidelines.zip
+>> contents:
+Archive:  rust-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   rust-guidelines/
+        0  08-29-2026 20:43   rust-guidelines/guides/
+    78756  08-29-2026 20:43   rust-guidelines/guides/11-anti-patterns.md
+    67303  08-29-2026 20:43   rust-guidelines/guides/02-api-design.md
+    46392  08-29-2026 20:43   rust-guidelines/guides/06-traits.md
+    41061  08-29-2026 20:43   rust-guidelines/guides/16-editions.md
+    40026  08-29-2026 20:43   rust-guidelines/guides/12-project-structure.md
+    55203  08-29-2026 20:43   rust-guidelines/guides/03-error-handling.md
+    13188  08-29-2026 20:43   rust-guidelines/guides/README.md
+    71625  08-29-2026 20:43   rust-guidelines/guides/09-unsafe-ffi.md
+        0  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/
+    18131  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/05-configuration.md
+    26466  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/04-output-and-ux.md
+    11852  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/08-advanced-topics.md
+    12903  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/07-distribution.md
+    19387  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/03-error-handling.md
+    27687  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/02-argument-parsing.md
+    16566  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/README.md
+    14729  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/06-testing.md
+     8570  08-29-2026 20:43   rust-guidelines/guides/14-cli-tools/01-project-setup.md
+    43437  08-29-2026 20:43   rust-guidelines/guides/13-documentation.md
+        0  08-29-2026 20:43   rust-guidelines/guides/15-cargo/
+    27919  08-29-2026 20:43   rust-guidelines/guides/15-cargo/02-cargo-build-system.md
+    22405  08-29-2026 20:43   rust-guidelines/guides/15-cargo/05-cargo-configuration.md
+    14369  08-29-2026 20:43   rust-guidelines/guides/15-cargo/07-lints-and-formatters.md
+    10165  08-29-2026 20:43   rust-guidelines/guides/15-cargo/CHECKPOINT.md
+    10641  08-29-2026 20:43   rust-guidelines/guides/15-cargo/README.md
+    21810  08-29-2026 20:43   rust-guidelines/guides/15-cargo/04-cargo-publishing.md
+    17826  08-29-2026 20:43   rust-guidelines/guides/15-cargo/08-manifest-and-workspace-advanced.md
+    32512  08-29-2026 20:43   rust-guidelines/guides/15-cargo/06-cargo-advanced.md
+    24263  08-29-2026 20:43   rust-guidelines/guides/15-cargo/01-cargo-basics.md
+    26997  08-29-2026 20:43   rust-guidelines/guides/15-cargo/03-cargo-plugins.md
+    39832  08-29-2026 20:43   rust-guidelines/guides/10-macros.md
+    44542  08-29-2026 20:43   rust-guidelines/guides/04-ownership-borrowing.md
+    61497  08-29-2026 20:43   rust-guidelines/guides/08-performance.md
+     8222  08-29-2026 20:43   rust-guidelines/guides/MERGE_REPORT.md
+    61403  08-29-2026 20:43   rust-guidelines/guides/07-concurrency-async.md
+    33258  08-29-2026 20:43   rust-guidelines/guides/17-observability.md
+    48975  08-29-2026 20:43   rust-guidelines/guides/01-core-idioms.md
+    40095  08-29-2026 20:43   rust-guidelines/guides/05-type-design.md
+    36123  08-29-2026 20:43   rust-guidelines/SKILL.md
+---------                     -------
+  1196136                     41 files
+>> done: rust-guidelines.zip
+>> staging go-guidelines bundle (knowledge/go/SKILL.md + knowledge/go/guides)
+>> writing go-guidelines.zip
+>> contents:
+Archive:  go-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   go-guidelines/
+        0  08-29-2026 20:43   go-guidelines/guides/
+    49360  08-29-2026 20:43   go-guidelines/guides/11-documentation.md
+    87007  08-29-2026 20:43   go-guidelines/guides/06-concurrency.md
+    70646  08-29-2026 20:43   go-guidelines/guides/05-interfaces-methods.md
+    60256  08-29-2026 20:43   go-guidelines/guides/02-api-design.md
+    12514  08-29-2026 20:43   go-guidelines/guides/12-gio-ui.md
+    61392  08-29-2026 20:43   go-guidelines/guides/03-error-handling.md
+    89777  08-29-2026 20:43   go-guidelines/guides/07-testing.md
+    78292  08-29-2026 20:43   go-guidelines/guides/08-performance.md
+    56485  08-29-2026 20:43   go-guidelines/guides/01-core-idioms.md
+    61961  08-29-2026 20:43   go-guidelines/guides/04-type-design.md
+    57226  08-29-2026 20:43   go-guidelines/guides/10-project-structure.md
+    94023  08-29-2026 20:43   go-guidelines/guides/09-anti-patterns.md
+    23175  08-29-2026 20:43   go-guidelines/SKILL.md
+---------                     -------
+   802114                     15 files
+>> done: go-guidelines.zip
+>> staging cpp-guidelines bundle (knowledge/cpp/SKILL.md + knowledge/cpp/guides)
+>> writing cpp-guidelines.zip
+>> contents:
+Archive:  cpp-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   cpp-guidelines/
+        0  08-29-2026 20:43   cpp-guidelines/guides/
+     6844  08-29-2026 20:43   cpp-guidelines/guides/14-c-style-and-modernization.md
+    17191  08-29-2026 20:43   cpp-guidelines/guides/11-anti-patterns.md
+    45787  08-29-2026 20:43   cpp-guidelines/guides/05-resource-management.md
+    31702  08-29-2026 20:43   cpp-guidelines/guides/12-project-structure-and-tooling.md
+    62362  08-29-2026 20:43   cpp-guidelines/guides/08-concurrency.md
+    44839  08-29-2026 20:43   cpp-guidelines/guides/02-api-design.md
+   127585  08-29-2026 20:43   cpp-guidelines/guides/10-expressions-and-statements.md
+    71691  08-29-2026 20:43   cpp-guidelines/guides/07-templates-and-generics.md
+    76241  08-29-2026 20:43   cpp-guidelines/guides/03-functions.md
+    36960  08-29-2026 20:43   cpp-guidelines/guides/06-error-handling.md
+   186376  08-29-2026 20:43   cpp-guidelines/guides/04-classes-and-value-types.md
+    18767  08-29-2026 20:43   cpp-guidelines/guides/09-performance.md
+    91626  08-29-2026 20:43   cpp-guidelines/guides/15-reference-and-glossary.md
+    27515  08-29-2026 20:43   cpp-guidelines/guides/13-standard-library.md
+    68783  08-29-2026 20:43   cpp-guidelines/guides/01-core-idioms.md
+     8352  08-29-2026 20:43   cpp-guidelines/SKILL.md
+---------                     -------
+   922621                     18 files
+>> done: cpp-guidelines.zip
+>> staging javascript-deno-guidelines bundle (knowledge/js/SKILL.md + knowledge/js/guides)
+>> writing javascript-deno-guidelines.zip
+>> contents:
+Archive:  javascript-deno-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   javascript-deno-guidelines/
+        0  08-29-2026 20:43   javascript-deno-guidelines/guides/
+    32988  08-29-2026 20:43   javascript-deno-guidelines/guides/11-documentation.md
+        0  08-29-2026 20:43   javascript-deno-guidelines/guides/12-deno/
+    23286  08-29-2026 20:43   javascript-deno-guidelines/guides/12-deno/12-03-task-runner.md
+    32286  08-29-2026 20:43   javascript-deno-guidelines/guides/12-deno/12-02-testing.md
+    37261  08-29-2026 20:43   javascript-deno-guidelines/guides/12-deno/12-01-runtime-basics.md
+    23538  08-29-2026 20:43   javascript-deno-guidelines/guides/12-deno/12-04-publishing.md
+    35026  08-29-2026 20:43   javascript-deno-guidelines/guides/02-api-design.md
+    22617  08-29-2026 20:43   javascript-deno-guidelines/guides/14-no-node-boundary.md
+        0  08-29-2026 20:43   javascript-deno-guidelines/guides/13-biome/
+    25580  08-29-2026 20:43   javascript-deno-guidelines/guides/13-biome/13-02-lint-rules.md
+    23709  08-29-2026 20:43   javascript-deno-guidelines/guides/13-biome/13-01-setup.md
+    17225  08-29-2026 20:43   javascript-deno-guidelines/guides/13-biome/13-03-formatting.md
+    34509  08-29-2026 20:43   javascript-deno-guidelines/guides/03-error-handling.md
+    43588  08-29-2026 20:43   javascript-deno-guidelines/guides/07-async-concurrency.md
+    37564  08-29-2026 20:43   javascript-deno-guidelines/guides/05-type-discipline.md
+    35336  08-29-2026 20:43   javascript-deno-guidelines/guides/04-values-references.md
+    39620  08-29-2026 20:43   javascript-deno-guidelines/guides/06-functions-closures.md
+    44306  08-29-2026 20:43   javascript-deno-guidelines/guides/08-performance.md
+    35513  08-29-2026 20:43   javascript-deno-guidelines/guides/01-core-idioms.md
+    32185  08-29-2026 20:43   javascript-deno-guidelines/guides/10-project-structure.md
+    45517  08-29-2026 20:43   javascript-deno-guidelines/guides/09-anti-patterns.md
+    36731  08-29-2026 20:43   javascript-deno-guidelines/SKILL.md
+---------                     -------
+   658385                     24 files
+>> done: javascript-deno-guidelines.zip
+>> staging erlang-guidelines bundle (knowledge/erlang/SKILL.md + knowledge/erlang/guides)
+>> writing erlang-guidelines.zip
+>> contents:
+Archive:  erlang-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   erlang-guidelines/
+        0  08-29-2026 20:43   erlang-guidelines/guides/
+    24859  08-29-2026 20:43   erlang-guidelines/guides/11-anti-patterns.md
+    23546  08-29-2026 20:43   erlang-guidelines/guides/04-data-and-types.md
+    20798  08-29-2026 20:43   erlang-guidelines/guides/16-distribution.md
+    15792  08-29-2026 20:43   erlang-guidelines/guides/02-api-design.md
+    19703  08-29-2026 20:43   erlang-guidelines/guides/14-production-ops.md
+    23219  08-29-2026 20:43   erlang-guidelines/guides/08-supervision-and-applications.md
+    15637  08-29-2026 20:43   erlang-guidelines/guides/12-project-structure.md
+    19652  08-29-2026 20:43   erlang-guidelines/guides/03-error-handling.md
+    15665  08-29-2026 20:43   erlang-guidelines/guides/15-testing.md
+    22262  08-29-2026 20:43   erlang-guidelines/guides/09-fault-tolerance.md
+    20689  08-29-2026 20:43   erlang-guidelines/guides/06-processes-and-concurrency.md
+    15040  08-29-2026 20:43   erlang-guidelines/guides/13-documentation.md
+    19026  08-29-2026 20:43   erlang-guidelines/guides/05-functions-and-pattern-matching.md
+    15339  08-29-2026 20:43   erlang-guidelines/guides/17-tooling.md
+    25877  08-29-2026 20:43   erlang-guidelines/guides/10-performance.md
+    23653  08-29-2026 20:43   erlang-guidelines/guides/07-otp-behaviours.md
+    20536  08-29-2026 20:43   erlang-guidelines/guides/01-core-idioms.md
+    13824  08-29-2026 20:43   erlang-guidelines/SKILL.md
+---------                     -------
+   355117                     20 files
+>> done: erlang-guidelines.zip
+>> staging cobalt-guidelines bundle (knowledge/cobalt/SKILL.md + knowledge/cobalt/guides)
+>> writing cobalt-guidelines.zip
+>> contents:
+Archive:  cobalt-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   cobalt-guidelines/
+        0  08-29-2026 20:43   cobalt-guidelines/guides/
+    40521  08-29-2026 20:43   cobalt-guidelines/guides/01-cobalt-static-site-generation.md
+    27569  08-29-2026 20:43   cobalt-guidelines/SKILL.md
+---------                     -------
+    68090                     4 files
+>> done: cobalt-guidelines.zip
+>> staging visual-design-system bundle (knowledge/design/SKILL.md + knowledge/design/guides)
+>> writing visual-design-system.zip
+>> contents:
+Archive:  visual-design-system.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   visual-design-system/
+        0  08-29-2026 20:43   visual-design-system/guides/
+    12215  08-29-2026 20:43   visual-design-system/guides/colour.md
+    29008  08-29-2026 20:43   visual-design-system/guides/foundations-of-design.md
+    22057  08-29-2026 20:43   visual-design-system/guides/breaking-the-layout-monoculture.md
+    16584  08-29-2026 20:43   visual-design-system/guides/design.md
+    19015  08-29-2026 20:43   visual-design-system/guides/type.md
+    46861  08-29-2026 20:43   visual-design-system/guides/layout.md
+    20381  08-29-2026 20:43   visual-design-system/SKILL.md
+---------                     -------
+   166121                     9 files
+>> done: visual-design-system.zip
+>> staging tailwindcss bundle (knowledge/tailwindcss/SKILL.md + knowledge/tailwindcss/guides)
+>> writing tailwindcss.zip
+>> contents:
+Archive:  tailwindcss.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   tailwindcss/
+        0  08-29-2026 20:43   tailwindcss/guides/
+    47011  08-29-2026 20:43   tailwindcss/guides/reference.md
+    38395  08-29-2026 20:43   tailwindcss/SKILL.md
+---------                     -------
+    85406                     4 files
+>> done: tailwindcss.zip
+>> staging deno-js-linter bundle (knowledge/deno/SKILL-js-linter.md + knowledge/deno/guides)
+>> writing deno-js-linter.zip
+>> contents:
+Archive:  deno-js-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   deno-js-linter/
+     5140  08-29-2026 20:43   deno-js-linter/SKILL-js-linter.md
+        0  08-29-2026 20:43   deno-js-linter/guides/
+     6919  08-29-2026 20:43   deno-js-linter/guides/pitfalls.md
+    15639  08-29-2026 20:43   deno-js-linter/guides/bugs.md
+     6184  08-29-2026 20:43   deno-js-linter/guides/style.md
+---------                     -------
+    33882                     6 files
+>> done: deno-js-linter.zip
+>> staging biome-js-linter bundle (knowledge/biome/SKILL-js-linter.md + knowledge/biome/guides)
+>> writing biome-js-linter.zip
+>> contents:
+Archive:  biome-js-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   biome-js-linter/
+     5545  08-29-2026 20:43   biome-js-linter/SKILL-js-linter.md
+        0  08-29-2026 20:43   biome-js-linter/guides/
+        0  08-29-2026 20:43   biome-js-linter/guides/js-linter/
+    14850  08-29-2026 20:43   biome-js-linter/guides/js-linter/pitfalls.md
+     9958  08-29-2026 20:43   biome-js-linter/guides/js-linter/bugs.md
+    10275  08-29-2026 20:43   biome-js-linter/guides/js-linter/simplification.md
+     2008  08-29-2026 20:43   biome-js-linter/guides/js-linter/performance.md
+    13918  08-29-2026 20:43   biome-js-linter/guides/js-linter/experimental.md
+    11839  08-29-2026 20:43   biome-js-linter/guides/js-linter/style.md
+      339  08-29-2026 20:43   biome-js-linter/guides/js-linter/security.md
+        0  08-29-2026 20:43   biome-js-linter/guides/web-linter/
+    21231  08-29-2026 20:43   biome-js-linter/guides/web-linter/suspicious.md
+     3410  08-29-2026 20:43   biome-js-linter/guides/web-linter/performance.md
+     9103  08-29-2026 20:43   biome-js-linter/guides/web-linter/a11y.md
+    19009  08-29-2026 20:43   biome-js-linter/guides/web-linter/nursery.md
+    16819  08-29-2026 20:43   biome-js-linter/guides/web-linter/style.md
+    17727  08-29-2026 20:43   biome-js-linter/guides/web-linter/correctness.md
+      837  08-29-2026 20:43   biome-js-linter/guides/web-linter/security.md
+    10445  08-29-2026 20:43   biome-js-linter/guides/web-linter/complexity.md
+---------                     -------
+   167313                     20 files
+>> done: biome-js-linter.zip
+>> staging biome-linter bundle (knowledge/biome/SKILL-web-linter.md + knowledge/biome/guides)
+>> writing biome-linter.zip
+>> contents:
+Archive:  biome-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   biome-linter/
+        0  08-29-2026 20:43   biome-linter/guides/
+        0  08-29-2026 20:43   biome-linter/guides/js-linter/
+    14850  08-29-2026 20:43   biome-linter/guides/js-linter/pitfalls.md
+     9958  08-29-2026 20:43   biome-linter/guides/js-linter/bugs.md
+    10275  08-29-2026 20:43   biome-linter/guides/js-linter/simplification.md
+     2008  08-29-2026 20:43   biome-linter/guides/js-linter/performance.md
+    13918  08-29-2026 20:43   biome-linter/guides/js-linter/experimental.md
+    11839  08-29-2026 20:43   biome-linter/guides/js-linter/style.md
+      339  08-29-2026 20:43   biome-linter/guides/js-linter/security.md
+        0  08-29-2026 20:43   biome-linter/guides/web-linter/
+    21231  08-29-2026 20:43   biome-linter/guides/web-linter/suspicious.md
+     3410  08-29-2026 20:43   biome-linter/guides/web-linter/performance.md
+     9103  08-29-2026 20:43   biome-linter/guides/web-linter/a11y.md
+    19009  08-29-2026 20:43   biome-linter/guides/web-linter/nursery.md
+    16819  08-29-2026 20:43   biome-linter/guides/web-linter/style.md
+    17727  08-29-2026 20:43   biome-linter/guides/web-linter/correctness.md
+      837  08-29-2026 20:43   biome-linter/guides/web-linter/security.md
+    10445  08-29-2026 20:43   biome-linter/guides/web-linter/complexity.md
+     6152  08-29-2026 20:43   biome-linter/SKILL-web-linter.md
+---------                     -------
+   167920                     20 files
+>> done: biome-linter.zip
+>> staging collaboration-framework bundle
+>> writing collaboration-framework.zip
+>> contents:
+Archive:  collaboration-framework.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:43   collaboration-framework/
+        0  08-29-2026 20:43   collaboration-framework/docs/
+        0  08-29-2026 20:43   collaboration-framework/docs/pm/
+     4330  08-29-2026 20:43   collaboration-framework/docs/pm/06-confirmation-protocol.md
+     5687  08-29-2026 20:43   collaboration-framework/docs/pm/03-planning-top-down.md
+     4019  08-29-2026 20:43   collaboration-framework/docs/pm/04-closing-slices.md
+     1439  08-29-2026 20:43   collaboration-framework/docs/pm/08-maintenance.md
+     3799  08-29-2026 20:43   collaboration-framework/docs/pm/07-anti-patterns.md
+     3237  08-29-2026 20:43   collaboration-framework/docs/pm/09-worked-example-odm.md
+     6579  08-29-2026 20:43   collaboration-framework/docs/pm/version-history.md
+     6968  08-29-2026 20:43   collaboration-framework/docs/pm/01-scales-of-work.md
+     5479  08-29-2026 20:43   collaboration-framework/docs/pm/05-closing-arcs.md
+     8902  08-29-2026 20:43   collaboration-framework/docs/pm/02-canonical-planning-worktree.md
+    17426  08-29-2026 20:43   collaboration-framework/docs/CODE-AUDIT.md
+    41427  08-29-2026 20:43   collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md
+    43863  08-29-2026 20:43   collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md
+     6409  08-29-2026 20:43   collaboration-framework/docs/PROJECT-MANAGEMENT.md
+     8937  08-29-2026 20:43   collaboration-framework/docs/SUBAGENT-DELEGATION-POLICY.md
+    12606  08-29-2026 20:43   collaboration-framework/docs/CONTRIBUTION-STYLE.md
+    13231  08-29-2026 20:43   collaboration-framework/docs/CLAUDE-CODE-COVERAGE.md
+    25637  08-29-2026 20:43   collaboration-framework/SKILL.md
+        0  08-29-2026 20:43   collaboration-framework/templates/
+    30313  08-29-2026 20:43   collaboration-framework/templates/LEDGER-DISCIPLINE.md
+    10089  08-29-2026 20:43   collaboration-framework/templates/CONTRIBUTION-TICKET.md
+---------                     -------
+   260377                     24 files
+>> done: collaboration-framework.zip
