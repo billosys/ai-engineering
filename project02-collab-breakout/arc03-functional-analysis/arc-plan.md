@@ -3,7 +3,7 @@
 ```yaml
 project: project02-collab-breakout
 arc: arc03-functional-analysis
-status: active
+status: closed
 opened-on: 2026-08-30
 depends-on:
   - arc02-conceptual-analysis
@@ -191,3 +191,9 @@ against the verified Slice01, Slice02, and Slice03 evidence.
 Recorded Slice 04 as verified/closed. Arc03 now has all planned slices
 verified/closed and is ready for formal arc close; Arc04 detailed planning
 remains deferred until that arc-level composition check is complete.
+
+### v1.9 - 2026-08-30
+
+Recorded formal Arc03 close. The four verified slices compose into the
+functional-analysis capability, with final breakout architecture and operator
+acceptance still deferred to Arc04.

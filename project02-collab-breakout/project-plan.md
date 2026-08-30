@@ -124,7 +124,7 @@ gate Project02 Arc02.
 
 ### Arc 03: Functional Analysis
 
-Status: ready for formal arc close.
+Status: closed/composed on 2026-08-30.
 
 Expected capability: analyze how the framework works in expected usage
 patterns: direct repo reading, packaged skill reading, LLM skill loading,
@@ -134,8 +134,8 @@ deficiencies, context-load problems, unclear handoffs, and missing functional
 goals.
 
 Detailed arc planning opened after Arc 02 closed/composed. Slices 01 through
-04 are verified/closed. Arc03 is ready for formal arc close to reproduce the
-arc ledger rows at composition scale before Arc04 is planned in detail.
+04 are verified/closed. Arc03 formally closed/composed after reproducing the
+arc ledger rows at composition scale.
 
 ### Arc 04: Breakout Architecture
 
@@ -162,9 +162,8 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
-Arc 03 has all planned slices verified/closed and is ready for formal arc
-close. Arc04 detailed planning remains deferred until the Arc03 composition
-check is complete.
+Arc 03 is closed/composed. Arc04 detailed planning can now open against the
+accepted conceptual-analysis and functional-analysis evidence.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -305,3 +304,11 @@ against the verified functional-analysis evidence.
 Recorded Arc03 Slice 04 as verified/closed by CDC. Arc03 now has all planned
 slices verified/closed and is ready for formal arc close before Arc04 detailed
 planning.
+
+### v1.22 - 2026-08-30
+
+Recorded formal Arc03 close. Arc03 delivered the functional-analysis
+capability and bubbled up that Arc04 should open for breakout architecture
+using direct-load classifications, dependency/support/adapter distinctions,
+operator questions, and Project01 package/release gates as architecture
+inputs.
