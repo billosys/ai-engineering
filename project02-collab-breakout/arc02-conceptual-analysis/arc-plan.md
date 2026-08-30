@@ -87,16 +87,18 @@ Durable evaluation outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice03-ontology-decision-synthesis`
 
-Status: open as of 2026-08-30.
+Status: verified/closed on 2026-08-30.
 
 Scope: synthesize the candidate evaluation into an Arc02 conceptual model,
 naming critique, merge/split findings, missing/overclaimed concept findings,
 and operator decision register for Arc04 architecture work.
 
-Blocks: Arc02 close.
+Delivered: Slice 03 produced the non-final Arc02 conceptual model, boundary
+and naming findings, Arc04 operator decision register, and Arc02
+close-readiness assessment. CDC verified the close in
+`slice03-ontology-decision-synthesis/cdc-verification.md`.
 
-Open set exists. Durable synthesis outputs belong under the slice-local
-`artifacts/` directory.
+Durable synthesis outputs live under the slice-local `artifacts/` directory.
 
 ## Dependencies
 
@@ -168,3 +170,9 @@ the non-final architecture posture and leaving synthesis to Slice 03.
 
 Recorded Slice 02 as verified/closed and opened Slice 03. Slice 03 now owns
 Arc02 ontology and decision synthesis and blocks Arc02 close.
+
+### v1.8 - 2026-08-30
+
+Recorded Slice 03 as verified/closed. Arc02 now has all planned slices
+verified/closed and is ready for formal arc close as a non-final conceptual
+analysis, with no remediation slice required before Arc03 functional analysis.

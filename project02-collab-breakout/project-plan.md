@@ -160,9 +160,10 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 is closed/composed. Arc 02 is active
-for conceptual analysis. Slices 01 and 02 are verified/closed, and Slice 03 is
-opened to synthesize the Arc02 conceptual model, naming and boundary findings,
-and operator decision register.
+for conceptual analysis and ready for formal arc close. Slices 01, 02, and 03
+are verified/closed; Slice 03 produced the Arc02 conceptual model, naming and
+boundary findings, Arc04 operator decision register, and close-readiness
+assessment.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -246,3 +247,9 @@ Opened Arc02 Slice 03 after Slice 02 CDC verification. Slice 03 owns Arc02
 ontology and decision synthesis, including naming critique, merge/split
 findings, missing/overclaimed concept findings, and operator decisions needed
 before Arc04.
+
+### v1.12 - 2026-08-30
+
+Recorded Arc02 Slice 03 as verified/closed. Arc02 now has all planned slices
+verified/closed and can proceed to formal arc close without a remediation
+slice.
