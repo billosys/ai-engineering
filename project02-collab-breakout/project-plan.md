@@ -2,7 +2,7 @@
 
 ```yaml
 project: project02-collab-breakout
-status: planned
+status: active
 depends-on:
   - project01-harmonise-paths
 blocks:
@@ -87,8 +87,7 @@ Out of scope until this project reaches implementation:
 
 ### Arc 01: Framework Inventory and Problem Map
 
-Status: planned; opened, but execution blocked on verified completion of
-`project01-harmonise-paths`.
+Status: active.
 
 Capability: establish the evidence base for the breakout by inventorying the
 current framework sources, mapping concepts and disciplines to source
@@ -155,9 +154,8 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 ## Current Status
 
-Project 02 is opened for planning. Arc 01 and its first slice open set exist,
-and Slice 01 is verified/closed. Slice 02 is ready to open when the operator
-chooses to continue Arc 01.
+Project 02 is opened for planning. Arc 01 is active. Slice 01 is
+verified/closed, and Slice 02 is open for problem-solution mapping.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -176,3 +174,9 @@ inventing parallel packaging semantics.
 Arc 01 Slice 01 marked verified/closed by CDC. The project is no longer blocked
 by Project01 closure; Arc 01 can proceed to Slice 02 using the verified
 inventory and Project01 path/package constraints.
+
+### v1.2 - 2026-08-29
+
+Arc 01 Slice 02 opened for problem-solution mapping. No source edits are in
+scope; durable analysis outputs remain under the slice-local `artifacts/`
+home.

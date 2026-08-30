@@ -3,7 +3,7 @@
 ```yaml
 project: project02-collab-breakout
 arc: arc01-framework-inventory
-status: planned
+status: active
 depends-on:
   - project01-harmonise-paths:closed-and-completely-verified
 blocks:
@@ -51,6 +51,8 @@ Blocks: no longer blocking Slice 02; Slice 02 may be opened next.
 
 Directory: `slice02-problem-solution-map`
 
+Status: open as of 2026-08-29.
+
 Scope: convert the inventory into a historical problem-to-solution map. For
 each major failure mode, identify the current mechanism or mechanisms that
 claim to address it, the evidence that the mechanism exists, and any suspected
@@ -58,7 +60,8 @@ underfit, overfit, overlap, or missing solution.
 
 Blocks: Slice 03.
 
-Detailed open set deferred until Slice 01 closes.
+Open set exists. Durable analysis outputs belong under the slice-local
+`artifacts/` directory.
 
 ### Slice 03: Arc 01 Synthesis
 
@@ -103,3 +106,9 @@ blocked on verified completion of `project01-harmonise-paths`.
 Slice 01 marked verified/closed by CDC. The slice delivered the source-backed
 inventory, concept map, Project01 path-contract notes, and open questions
 needed for Slice 02. No Arc 01 scope or sequencing change was required.
+
+### v1.2 - 2026-08-29
+
+Slice 02 opened from the verified Slice 01 inventory and Project01 path/package
+constraints. The slice remains analysis-only and does not decide final breakout
+boundaries.
