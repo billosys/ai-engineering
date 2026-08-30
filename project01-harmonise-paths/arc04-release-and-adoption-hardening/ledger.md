@@ -1,0 +1,14 @@
+# Arc 04: Release and Adoption Hardening Ledger
+
+Capability: harden the release and adoption surface so Project 01 can close
+with source-clone, skill-zip, unzipped-skill, and CCDP-package workflows
+documented and validated.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| A-1 | Slice 01 closes with a current release/adoption surface audit and repair recommendation. | `test -f project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md` | correctness | arc-plan | open | | Children-closed row; evidence strength reproduced at slice scale. |
+| A-2 | The final release-facing workflow is demonstrable from the source checkout. | From implementation checkout, run the final source/package validation command set selected by Slice 01 and/or Slice 02. | serious | arc-plan | open | | Composition row; reproduce at arc close. |
+| A-3 | Release/adoption docs distinguish skill zips, unzipped installed skills, source-clone use, and `ccdp.zip`. | Inspect final `README.md`, `Makefile` help, and `protocols/ccdp/README.md`; confirm package-local and source-clone paths are labelled by context. | serious | project DoD | open | | Composition row; should close Project 01 P-6 if delivered. |
+| A-4 | Remaining package-path warnings are classified as release-blocking, non-blocking visible backlog, explicit exception, or later maintenance. | Run `make check-package-paths` and inspect `package-path-exceptions.tsv` plus Slice 01/Slice 02 artifacts. | serious | arc02 close | open | | Composition row; should support Project 01 P-2/P-3. |
+| A-5 | Makefile/package checker ownership is discoverable from release-facing docs. | `rg -n "check-package-paths|check-ccdp-package|ccdp-package|install|unzip" README.md Makefile` from implementation checkout. | correctness | project DoD | open | | Composition row; should support Project 01 P-4. |
+| A-6 | Project close readiness is explicitly routed. | Inspect this arc plan's Version History, Slice 03 close report, and Project 01 plan after final slice close. | correctness | arc-plan | open | | Bubble-up disposition row. |

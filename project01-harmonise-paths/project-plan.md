@@ -129,17 +129,19 @@ source-clone entrypoint guidance, and package-local reader guidance.
 
 ### Arc 04: Release and Adoption Hardening
 
-Status: stub.
+Status: active.
 
-Expected capability: update README/install/release guidance, run package-path
-and packaging checks, and prepare the project for publication.
+Capability: update README/install/release guidance, run package-path and
+packaging checks, and prepare the project for publication.
 
-Detailed arc planning is deferred until the implementation arcs close.
+Arc 04 detailed planning opened after Arc 03 closed. Slice 01 starts with a
+release/adoption surface audit before deciding whether final source repair is
+needed.
 
 ## Current Status
 
-Arc 01, Arc 02, and Arc 03 are closed. Arc 04 remains a roadmap stub and is
-ready for detailed planning next, per the plan-late/plan-deep rule.
+Arc 01, Arc 02, and Arc 03 are closed. Arc 04 is active: Slice 01 is opened on
+release/adoption surface audit.
 
 ## Version History
 
@@ -279,3 +281,9 @@ labels `workbench/` and `prompts/` as source-only excluded material.
 Arc 03 closed with composition verdict delivered. CCDP now has a first-class
 protocol package, validator, generated-output freshness gate, zipped/unzipped
 path validation, and reader guidance for both source and package contexts.
+
+### v1.22 - 2026-08-29
+
+Arc 04 opened on release and adoption hardening after Arc 03 close. Slice 01
+starts with a diagnosis-only release surface audit so any final documentation,
+checker, or warning-policy repair is based on current project-scale evidence.
