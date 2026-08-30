@@ -47,7 +47,7 @@ slice, a no-op acceptance-prep slice, or a narrower remediation slice.
 
 ### Slice 02: Acceptance Prep and No-Repair Decision
 
-Status: active/opened.
+Status: verified/closed.
 
 Scope: record the CDC-verified no-repair decision from Slice 01, select the
 final acceptance command set for Slice 03 and Project 01 close, map remaining
@@ -56,12 +56,13 @@ unless a concrete defect appears.
 
 ### Slice 03: Project Close Readiness
 
-Status: stub.
+Status: active/opened.
 
-Expected scope: run the project-scale acceptance demonstration, prepare any
-final release/adoption evidence, close remaining Project 01 ledger rows that
-Arc 04 owns, and identify whether Project 01 can close or needs a remediation
-arc.
+Scope: reproduce the final project-scale acceptance command set, capture
+release/adoption evidence under the slice-local `artifacts/` directory, walk
+Arc 04 rows A-2 through A-6 and Project 01 rows P-2, P-3, P-4, and P-6 with
+fresh evidence, and identify whether Arc 04 and Project 01 can proceed to
+formal close or need remediation.
 
 ## Dependencies
 
@@ -113,3 +114,9 @@ checks, and actual release-facing docs rather than assumption.
 Slice 01 marked verified/closed by CDC. The audit found no release-blocking
 source gap, so Slice 02 was opened as an acceptance-prep/no-repair decision
 slice rather than the originally stubbed repair slice.
+
+### v1.2 - 2026-08-29
+
+Slice 02 marked verified/closed by CDC. The no-repair decision held under
+reproduced source/package gates, so Slice 03 opens directly on project-close
+readiness instead of a repair iteration.
