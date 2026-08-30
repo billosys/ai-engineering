@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc01-framework-inventory
 slice: slice02-problem-solution-map
-status: proposed-done
+status: verified-closed
 proposed-done-on: 2026-08-29
+verified-closed-on: 2026-08-29
 artifact-home: artifacts/
 depends-on:
   - slice01-source-inventory:verified-closed

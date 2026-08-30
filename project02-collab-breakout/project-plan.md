@@ -154,8 +154,8 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 ## Current Status
 
-Project 02 is opened for planning. Arc 01 is active. Slice 01 is
-verified/closed, and Slice 02 is open for problem-solution mapping.
+Project 02 is opened for planning. Arc 01 is active. Slices 01 and 02 are
+verified/closed, and Slice 03 is ready to open for Arc 01 synthesis.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -180,3 +180,9 @@ inventory and Project01 path/package constraints.
 Arc 01 Slice 02 opened for problem-solution mapping. No source edits are in
 scope; durable analysis outputs remain under the slice-local `artifacts/`
 home.
+
+### v1.3 - 2026-08-29
+
+Arc 01 Slice 02 marked verified/closed by CDC. Slice 03 can now synthesize the
+source inventory, problem-solution map, mechanism coverage matrix, critical
+findings, and Project01 path/package constraints into Arc 02 inputs.

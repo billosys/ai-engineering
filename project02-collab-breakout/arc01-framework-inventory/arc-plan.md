@@ -51,7 +51,7 @@ Blocks: no longer blocking Slice 02; Slice 02 may be opened next.
 
 Directory: `slice02-problem-solution-map`
 
-Status: open as of 2026-08-29.
+Status: verified/closed by CDC on 2026-08-29.
 
 Scope: convert the inventory into a historical problem-to-solution map. For
 each major failure mode, identify the current mechanism or mechanisms that
@@ -60,8 +60,10 @@ underfit, overfit, overlap, or missing solution.
 
 Blocks: Slice 03.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Outcome: delivered. The slice produced a problem-solution map, mechanism
+coverage matrix, and critical findings under `artifacts/`.
+
+Blocks: no longer blocking Slice 03; Slice 03 may be opened next.
 
 ### Slice 03: Arc 01 Synthesis
 
@@ -74,7 +76,7 @@ and open questions for operator discussion.
 
 Blocks: Arc 02.
 
-Detailed open set deferred until Slice 02 closes.
+Detailed open set may be opened now that Slice 02 is verified/closed.
 
 ## Dependencies
 
@@ -112,3 +114,9 @@ needed for Slice 02. No Arc 01 scope or sequencing change was required.
 Slice 02 opened from the verified Slice 01 inventory and Project01 path/package
 constraints. The slice remains analysis-only and does not decide final breakout
 boundaries.
+
+### v1.3 - 2026-08-29
+
+Slice 02 marked verified/closed by CDC. The slice delivered the
+problem-solution map, mechanism coverage matrix, and critical findings needed
+for Slice 03. No Arc 01 scope or sequencing change was required.
