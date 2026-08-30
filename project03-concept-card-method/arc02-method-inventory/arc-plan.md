@@ -63,7 +63,7 @@ directory.
 
 Directory: `slice03-inventory-synthesis`
 
-Status: open.
+Status: verified-closed on 2026-08-30.
 
 Scope: synthesize the verified baseline inventory and verified gap analysis
 into the Arc02 close input for Arc03: what v3.2 keeps, what v4.0 must change,
@@ -124,3 +124,9 @@ scope or sequencing change was required.
 Slice03 opened for inventory synthesis. The slice must compose the verified
 Slice01 and Slice02 outputs into Arc02 close input and an Arc03 conceptual
 model input packet without designing the final v4.0 model or skill layout.
+
+### v1.6 - 2026-08-30
+
+Slice03 marked verified-closed after CDC reproduced all seven slice ledger
+rows. Arc02 is ready for formal arc close; A-4, A-5, and A-6 remain arc-scale
+composition rows to reproduce during that close.
