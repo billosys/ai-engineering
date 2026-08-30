@@ -1,0 +1,172 @@
+# Project 02: Collaboration Framework Breakout
+
+```yaml
+project: project02-collab-breakout
+status: planned
+depends-on:
+  - project01-harmonise-paths
+blocks:
+  - modular standalone use of collaboration-framework disciplines
+  - updated collaboration-framework wayfinding after component breakout
+  - README guidance for individual and composed framework components
+related:
+  - /Users/oubiwann/lab/billosys/ai-engineering
+  - project01-harmonise-paths
+  - SKILL.md
+  - README.md
+  - docs/AI-CONSTITUTION-SUPPLEMENT.md
+  - docs/AI-ENGINEERING-METHODOLOGY.md
+  - docs/PROJECT-MANAGEMENT.md
+  - templates/LEDGER-DISCIPLINE.md
+```
+
+## Planning Substrate
+
+Planning artifacts live on orphan branch `planning`, worktree
+`.worktrees/planning`, under `project02-collab-breakout/`, per
+`docs/PROJECT-MANAGEMENT.md`.
+
+The implementation checkout is the source repository's `main` worktree at
+`/Users/oubiwann/lab/billosys/ai-engineering`. This project is planning-only
+until `project01-harmonise-paths` is closed and completely verified.
+
+Slice-generated analysis artifacts that are part of planning or verification
+live in the slice directory where they are generated.
+
+## Definition of Done
+
+The project is done when the current monolithic collaboration framework has
+been analyzed, divided, and planned for implementation as a set of coherent,
+standalone, composable components, with the top-level collaboration framework
+remaining available as a composition of those components.
+
+Specifically:
+
+- The current framework is mapped from actual source artifacts, not memory or
+  a summary, with each major concept, discipline, prompt, and template assigned
+  to its current source location.
+- Conceptual analysis identifies the framework's real ontology: which ideas
+  are distinct, which are variants of the same discipline, which are mislabeled,
+  and which current combinations or splits are suspect.
+- Functional analysis identifies how humans and LLMs actually use the framework:
+  load moments, context cost, dependency order, standalone use cases,
+  composition paths, packaging constraints, and failure modes.
+- The proposed breakout identifies each target component's contract, scope,
+  dependencies, entry point, packaging behavior, and relationship to the
+  top-level collaboration-framework skill.
+- The implementation plan is detailed enough to begin source edits after
+  `project01-harmonise-paths` closes, including README updates, SKILL.md
+  updates or new SKILL.md files, packaging updates, and verification gates.
+
+## Boundaries
+
+In scope:
+
+- The collaboration-framework entry point, framework docs, project-management
+  docs, ledger discipline, audit prompt, coverage prompt, subagent policy,
+  contribution style, and contribution ticket template.
+- Critical analysis of naming, taxonomy, ontology, component boundaries,
+  problem-solution fit, missed problems, and missed solutions.
+- Functional analysis of expected human and LLM usage patterns, including
+  source-clone and packaged-skill consumption.
+- Planning the target component set and implementation slices.
+- README planning for individual component usefulness, component use, and the
+  composed collaboration-framework use case.
+
+Out of scope until this project reaches implementation:
+
+- Editing source `SKILL.md`, `README.md`, framework docs, templates, Makefiles,
+  package staging scripts, or generated zip artifacts.
+- Executing Slice 01 before `project01-harmonise-paths` has closed and been
+  completely verified.
+- Redesigning domain knowledge skills under `knowledge/`, except to describe
+  how they compose with framework components.
+- Treating current file boundaries as authoritative component boundaries.
+
+## Arc Roadmap
+
+### Arc 01: Framework Inventory and Problem Map
+
+Status: planned; opened, but execution blocked on verified completion of
+`project01-harmonise-paths`.
+
+Capability: establish the evidence base for the breakout by inventorying the
+current framework sources, mapping concepts and disciplines to source
+locations, and connecting them to the historical and functional problems they
+were meant to solve.
+
+Slices:
+
+- `slice01-source-inventory`: inventory the current framework entry points and
+  source documents, record package/path dependencies from project01, and produce
+  the first source-backed concept/problem map.
+- `slice02-problem-solution-map`: refine the inventory into a historical
+  problem-to-solution map with evidence for which current mechanisms address
+  which failure modes.
+- `slice03-arc01-synthesis`: synthesize the evidence base into explicit inputs
+  for conceptual analysis: current components, candidate components, overlaps,
+  suspected mislabels, and open questions.
+
+### Arc 02: Conceptual Analysis
+
+Status: placeholder.
+
+Expected capability: perform the taxonomy and ontology analysis of the current
+framework, including critical checks for mislabeled concepts, improper merges,
+  improper splits, missing concepts, overclaimed mechanisms, and gaps between
+  stated aims and actual solution shape.
+
+Detailed arc planning is deferred until Arc 01 closes.
+
+### Arc 03: Functional Analysis
+
+Status: placeholder.
+
+Expected capability: analyze how the framework works in expected usage
+patterns: direct repo reading, packaged skill reading, LLM skill loading,
+human orientation, session start, slice execution, audit, coverage, upstream
+contribution, and combinations of these. Identify inefficiencies,
+deficiencies, context-load problems, unclear handoffs, and missing functional
+goals.
+
+Detailed arc planning is deferred until Arc 02 closes.
+
+### Arc 04: Breakout Architecture
+
+Status: placeholder.
+
+Expected capability: propose the target functional division into standalone
+and composable components, including component names, contracts,
+dependencies, wayfinders, package shape, migration risks, and how the
+top-level collaboration-framework remains usable as a composition.
+
+Detailed arc planning is deferred until Arc 03 closes.
+
+### Arc 05: Implementation Plan
+
+Status: placeholder.
+
+Expected capability: turn the accepted breakout architecture into a sliceable
+implementation plan covering source edits, README guidance, component SKILL.md
+entry points, packaging behavior, path-contract validation, and verification.
+
+Detailed arc planning is deferred until Arc 04 closes and
+`project01-harmonise-paths` has closed.
+
+## Current Status
+
+Project 02 is opened for planning. Arc 01 and its first slice open set exist,
+but Slice 01 is not to be executed until `project01-harmonise-paths` is closed
+and completely verified.
+
+Later arcs are intentionally placeholders so the roadmap is visible while
+respecting the plan-late, plan-deep discipline.
+
+## Version History
+
+### v1.0 - 2026-08-29
+
+Initial roadmap opened from the collaboration-framework breakout discussion.
+The project depends on verified completion of `project01-harmonise-paths` so
+the breakout consumes the accepted source/package path contract instead of
+inventing parallel packaging semantics.
