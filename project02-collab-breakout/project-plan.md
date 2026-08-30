@@ -87,7 +87,7 @@ Out of scope until this project reaches implementation:
 
 ### Arc 01: Framework Inventory and Problem Map
 
-Status: active.
+Status: active; ready for formal arc close.
 
 Capability: establish the evidence base for the breakout by inventorying the
 current framework sources, mapping concepts and disciplines to source
@@ -154,8 +154,9 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 ## Current Status
 
-Project 02 is opened for planning. Arc 01 is active. Slices 01 and 02 are
-verified/closed, and Slice 03 is open for Arc 01 synthesis.
+Project 02 is opened for planning. Arc 01 has all three planned slices
+verified/closed and is ready for formal arc close. Arc 02 remains deferred
+until Arc 01 closes.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -192,3 +193,9 @@ findings, and Project01 path/package constraints into Arc 02 inputs.
 Arc 01 Slice 03 opened for synthesis. The slice will prepare non-final
 component-boundary inputs, constraint classifications, and operator questions
 for Arc 02 conceptual analysis.
+
+### v1.5 - 2026-08-30
+
+Arc 01 Slice 03 marked verified/closed by CDC. Arc 01 now has all planned
+slices verified/closed and is ready for formal arc close; Arc 02 remains
+deferred until that close completes.

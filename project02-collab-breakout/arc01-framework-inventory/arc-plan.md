@@ -67,17 +67,20 @@ Blocks: no longer blocking Slice 03; Slice 03 may be opened next.
 
 Directory: `slice03-arc01-synthesis`
 
-Status: open as of 2026-08-30.
+Status: verified/closed by CDC on 2026-08-30.
 
 Scope: synthesize Arc 01 into input material for Arc 02: current component
 clusters, candidate breakout components, suspected mislabels, suspected
 improper splits/merges, package/path constraints inherited from Project 01,
 and open questions for operator discussion.
 
-Blocks: Arc 02.
+Outcome: delivered. The slice produced the Arc 01 synthesis,
+candidate-component inputs, and Arc 02 question register under `artifacts/`.
+CDC verified that the outputs remain non-final analysis inputs and that no
+remediation slice is required before Arc 02 planning.
 
-Open set exists. Durable synthesis outputs belong under the slice-local
-`artifacts/` directory.
+Blocks: no longer blocking Arc 01 close; Arc 02 remains blocked until Arc 01
+formally closes.
 
 ## Dependencies
 
@@ -126,3 +129,9 @@ for Slice 03. No Arc 01 scope or sequencing change was required.
 
 Slice 03 opened to synthesize Arc 01's verified inventory and problem map into
 non-final Arc 02 conceptual-analysis inputs.
+
+### v1.5 - 2026-08-30
+
+Slice 03 marked verified/closed by CDC. The slice delivered the Arc 01
+synthesis, candidate-component inputs, and Arc 02 question register needed for
+formal Arc 01 close. No remediation slice is required before Arc 02 planning.
