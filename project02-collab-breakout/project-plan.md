@@ -124,7 +124,7 @@ gate Project02 Arc02.
 
 ### Arc 03: Functional Analysis
 
-Status: ready for detailed planning.
+Status: active.
 
 Expected capability: analyze how the framework works in expected usage
 patterns: direct repo reading, packaged skill reading, LLM skill loading,
@@ -133,7 +133,9 @@ contribution, and combinations of these. Identify inefficiencies,
 deficiencies, context-load problems, unclear handoffs, and missing functional
 goals.
 
-Detailed arc planning is deferred until Arc 02 closes.
+Detailed arc planning opened after Arc 02 closed/composed. Slice 01 is open to
+define the functional-analysis method, usage-surface inventory, and scenario
+matrix for later evaluation slices.
 
 ### Arc 04: Breakout Architecture
 
@@ -160,7 +162,7 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
-Arc 03 is ready for detailed functional-analysis planning.
+Arc 03 is active for functional analysis, with Slice 01 open.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -256,3 +258,9 @@ slice.
 Recorded formal Arc02 close. Arc02 delivered the conceptual-analysis capability
 and bubbled up that Arc03 should test the conceptual model against actual usage
 and load patterns before Arc04 accepts a breakout architecture.
+
+### v1.14 - 2026-08-30
+
+Opened Arc03 for detailed functional-analysis planning after Arc02
+closed/composed. Arc03 Slice 01 now owns the functional-analysis method,
+usage-surface inventory, scenario matrix, and Arc03 input register.
