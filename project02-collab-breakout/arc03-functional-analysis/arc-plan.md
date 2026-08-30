@@ -60,7 +60,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice02-current-workflow-evaluation`
 
-Status: planned placeholder.
+Status: open as of 2026-08-30.
 
 Scope: apply the Slice01 scenario matrix to the current monolithic framework
 and record how the existing files behave for humans and LLMs. Evaluate source
@@ -71,7 +71,8 @@ deficiency findings without proposing architecture.
 
 Blocks: Slice 03.
 
-Detailed open set deferred until Slice 01 closes.
+Open set exists. Durable analysis outputs belong under the slice-local
+`artifacts/` directory.
 
 ### Slice 03: Standalone And Composition Scenario Evaluation
 
@@ -145,3 +146,9 @@ scenario evaluation, and functional synthesis.
 Recorded Slice 01 as verified/closed. Slice 02 can now open against the
 scenario matrix to evaluate current monolith workflows, with no Arc03 plan
 change required before opening it.
+
+### v1.3 - 2026-08-30
+
+Opened Slice 02 for current workflow evaluation against the Slice01
+functional-analysis method, usage-surface inventory, scenario matrix, and input
+register.

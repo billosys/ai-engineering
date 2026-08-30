@@ -133,9 +133,10 @@ contribution, and combinations of these. Identify inefficiencies,
 deficiencies, context-load problems, unclear handoffs, and missing functional
 goals.
 
-Detailed arc planning opened after Arc 02 closed/composed. Slice 01 is open to
-define the functional-analysis method, usage-surface inventory, and scenario
-matrix for later evaluation slices.
+Detailed arc planning opened after Arc 02 closed/composed. Slice 01 produced
+the functional-analysis method, usage-surface inventory, and scenario matrix.
+Slice 02 is open to evaluate the current monolithic framework against that
+scenario matrix.
 
 ### Arc 04: Breakout Architecture
 
@@ -163,7 +164,7 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
 Arc 03 is active for functional analysis. Slice 01 is verified/closed, and
-Slice 02 is ready to open for current workflow evaluation.
+Slice 02 is open for current workflow evaluation.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -270,3 +271,9 @@ usage-surface inventory, scenario matrix, and Arc03 input register.
 
 Recorded Arc03 Slice 01 as verified/closed. Slice 02 can now open against the
 scenario matrix to evaluate current monolith workflows.
+
+### v1.16 - 2026-08-30
+
+Opened Arc03 Slice 02 for current workflow evaluation. Slice 02 applies the
+Slice01 scenario matrix to the current monolithic framework and preserves final
+architecture decisions for later arcs.
