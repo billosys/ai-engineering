@@ -117,8 +117,8 @@ Expected capability: define the ontology of the method: concept cards, claims,
 source spans, evidence grades, relationships, competency questions, extraction
 runs, verifier roles, reconciliation, and memory admission for the v4.0 method.
 
-Detailed arc planning is open. Slice01 is opened to define construct
-boundaries before evidence/lifecycle and graph/CQ/run semantics are modeled.
+All four Arc03 slices are verified-closed. Arc03 is ready for formal arc close
+and arc-scale composition verification.
 
 ### Arc 04: Skill Architecture
 
@@ -142,9 +142,9 @@ Detailed arc planning is deferred until Arc 04 closes.
 ## Current Status
 
 Project03 is open for planning. Arc01 and Arc02 are closed. Arc03 is active
-with Slice01 through Slice03 verified-closed and Slice04 open for model
-synthesis and acceptance. Project03 remains planning-only until an
-implementation arc explicitly authorizes source edits.
+with all four slices verified-closed and ready for formal arc close. Project03
+remains planning-only until an implementation arc explicitly authorizes source
+edits.
 
 ## Version History
 
@@ -267,3 +267,9 @@ Arc03 Slice04 opened for v4.0 conceptual-model synthesis, decision
 registration, and skill-architecture handoff input. The project remains
 planning-only; source edits and package changes stay deferred to a later
 implementation arc.
+
+### v1.19 - 2026-08-30
+
+Arc03 Slice04 marked verified-closed after CDC reproduced all eight slice
+ledger rows. Arc03 is now ready for formal arc close and arc-scale composition
+verification before Arc04 planning opens.

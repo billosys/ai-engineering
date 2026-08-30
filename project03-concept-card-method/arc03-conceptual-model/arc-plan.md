@@ -76,7 +76,7 @@ Durable model outputs belong under the slice-local `artifacts/` directory.
 
 Directory: `slice04-model-synthesis`
 
-Status: open on 2026-08-30.
+Status: verified-closed on 2026-08-30.
 
 Scope: compose the verified construct-boundary, evidence/lifecycle, and
 graph/CQ/run slices into the accepted v4.0 conceptual model, record
@@ -155,3 +155,10 @@ Slice04 opened for model synthesis and acceptance. The slice is scoped to
 Arc03 conceptual-model composition, decision registration, and Arc04 handoff
 input while leaving final skill architecture, package behavior, validator
 implementation, README integration, and source edits to later arcs.
+
+### v1.7 - 2026-08-30
+
+Slice04 marked verified-closed after CDC reproduced all eight slice ledger
+rows. Arc03 is ready for formal arc close and arc-scale composition
+verification; no new Arc03 slice, scope change, or sequencing change was
+required.
