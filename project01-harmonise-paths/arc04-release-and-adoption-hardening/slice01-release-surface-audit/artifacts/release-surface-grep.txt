@@ -1,0 +1,158 @@
+protocols/ccdp/README.md:4:`protocols/ccdp/`; in `ccdp.zip` it is staged as the unzipped `ccdp/` package
+protocols/ccdp/README.md:23:make check-ccdp-package
+protocols/ccdp/README.md:27:`ccdp.zip`, and `make check-ccdp-package` validates the zip shape, package-local
+protocols/ccdp/README.md:32:After unzipping `ccdp.zip`, start at `ccdp/README.md`. From inside the unzipped
+protocols/ccdp/README.md:55:are provenance, review, and prompt material. They are intentionally excluded
+protocols/ccdp/README.md:56:from `ccdp.zip` and are not package entrypoints.
+Makefile:7:# Skill zips are named after the `name:` declared in the skill's frontmatter
+Makefile:10:# separate protocol package with its own `ccdp.zip` target and validator.
+Makefile:20:	collaboration-framework.zip \
+Makefile:21:	rust-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
+Makefile:22:	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
+Makefile:23:	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
+Makefile:24:INSTALL_SKILLS := $(INSTALL_ZIPS:.zip=)
+Makefile:26:CCDP_ZIP := $(CCDP_NAME).zip
+Makefile:29:.PHONY: all skills install uninstall clean help check-skills check-package-paths \
+Makefile:30:	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
+Makefile:52:	@echo "  make collab-framework   -> collaboration-framework.zip (SKILL.md + framework docs)"
+Makefile:53:	@echo "  make rust               -> rust-guidelines.zip"
+Makefile:54:	@echo "  make go                 -> go-guidelines.zip"
+Makefile:55:	@echo "  make cpp                -> cpp-guidelines.zip"
+Makefile:56:	@echo "  make js                 -> javascript-deno-guidelines.zip"
+Makefile:57:	@echo "  make erlang             -> erlang-guidelines.zip"
+Makefile:58:	@echo "  make cobalt             -> cobalt-guidelines.zip"
+Makefile:59:	@echo "  make design             -> visual-design-system.zip"
+Makefile:60:	@echo "  make tailwindcss        -> tailwindcss.zip"
+Makefile:61:	@echo "  make deno               -> deno-js-linter.zip"
+Makefile:62:	@echo "  make biome              -> biome-js-linter.zip AND biome-linter.zip"
+Makefile:63:	@echo "  make skills             -> all per-domain zips"
+Makefile:67:	@echo "  make ccdp-package       -> build ccdp.zip (protocol package)"
+Makefile:68:	@echo "  make check-ccdp-package -> validate ccdp.zip zipped and unzipped"
+Makefile:69:	@echo "  make install            -> build all zips and install them into $(INSTALL_DIR)"
+Makefile:70:	@echo "  make uninstall          -> remove installed skills from $(INSTALL_DIR)"
+Makefile:71:	@echo "  make clean              -> remove build/ and all *.zip"
+Makefile:72:	@echo "  make check-package-paths -> validate Markdown paths inside generated zips"
+Makefile:81:CF_ZIP   := $(CF_NAME).zip
+Makefile:108:## collab-framework: build collaboration-framework.zip (SKILL.md + its 9 files)
+Makefile:123:	@cd "$(BUILD)" && zip -r -q -X "../$(CF_ZIP)" "$(CF_NAME)"
+Makefile:125:	@unzip -l "$(CF_ZIP)"
+Makefile:129:## collab-framework-clean: remove the staging dir (leaves the zip in place)
+Makefile:136:# pack_skill packages one skill file plus its sibling guides/ dir into a zip
+Makefile:159:	echo ">> writing $$name.zip"; \
+Makefile:160:	rm -f "$$name.zip"; \
+Makefile:161:	( cd "$(BUILD)" && zip -r -q -X "../$$name.zip" "$$name" ); \
+Makefile:163:	unzip -l "$$name.zip"; \
+Makefile:165:	echo ">> done: $$name.zip"
+Makefile:196:# frontmatter name; build both zips.
+Makefile:205:## skills: build every per-domain zip
+Makefile:208:## all: build every per-domain zip plus the collaboration-framework zip
+Makefile:216:## check-package-paths: build all zips and validate package-context Markdown paths
+Makefile:217:check-package-paths: all
+Makefile:218:	@./scripts/check-package-paths --exceptions package-path-exceptions.tsv $(INSTALL_ZIPS)
+Makefile:223:## install: uninstall old copies, build all zips, and install them into $(INSTALL_DIR)
+Makefile:224:install: $(INSTALL_DIR) uninstall all
+Makefile:225:	@echo ">> installing skill zips into $(INSTALL_DIR)"
+Makefile:226:	@for zip in $(INSTALL_ZIPS); do \
+Makefile:227:		if [ ! -f "$$zip" ]; then \
+Makefile:228:			echo "ERROR: missing zip: $$zip" >&2; exit 1; \
+Makefile:230:		unzip -o -q "$$zip" -d "$(INSTALL_DIR)"; \
+Makefile:232:	@echo ">> installed skills into $(INSTALL_DIR)"
+Makefile:234:## uninstall: remove installed skills from $(INSTALL_DIR)
+Makefile:235:uninstall:
+Makefile:236:	@echo ">> uninstalling skills from $(INSTALL_DIR)"
+Makefile:240:	@echo ">> uninstalled skills from $(INSTALL_DIR)"
+Makefile:242:## clean: remove the staging dir and every generated zip
+Makefile:246:	@echo ">> cleaned build/ and generated zips"
+Makefile:281:	@cd "$(BUILD)" && zip -r -q -X "../$(CCDP_ZIP)" "$(CCDP_NAME)"
+Makefile:283:	@unzip -l "$(CCDP_ZIP)"
+Makefile:288:check-ccdp-package: ccdp-package
+Makefile:289:	@./scripts/check-ccdp-package "$(CCDP_ZIP)"
+package-path-exceptions.tsv:2:rust-guidelines.zip	guides/README.md	./14-cli-tools/09-common-pitfalls.md	bundled-reference	warning	missing referenced Rust CLI pitfalls guide remains visible for later Rust guide/package maintenance	slice04-policy	later-rust-guide-maintenance
+package-path-exceptions.tsv:3:rust-guidelines.zip	guides/14-cli-tools/README.md	09-common-pitfalls.md*	bundled-reference	warning	missing referenced Rust CLI pitfalls guide remains visible for later Rust guide/package maintenance	slice04-policy	later-rust-guide-maintenance
+package-path-exceptions.tsv:4:cpp-guidelines.zip	guides/03-functions.md	./param-passing-*.png	bundled-reference	warning	missing C++ parameter-passing images remain visible for later asset/package-layout maintenance	slice04-policy	later-cpp-asset-maintenance
+package-path-exceptions.tsv:5:javascript-deno-guidelines.zip	guides/*	12-deno/*.md	bundled-reference	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation	slice04-policy	later-js-guide-harmonisation
+package-path-exceptions.tsv:6:javascript-deno-guidelines.zip	guides/*	13-biome/*.md	bundled-reference	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation	slice04-policy	later-js-guide-harmonisation
+package-path-exceptions.tsv:7:collaboration-framework.zip	docs/CODE-AUDIT.md	knowledge/<slug>/SKILL*.md	repo-only/provenance	explicit-exception	placeholder for source-clone skill discovery, not a literal bundled package path	slice01-cdc	none
+package-path-exceptions.tsv:8:collaboration-framework.zip	SKILL.md	knowledge/<domain>/SKILL.md	repo-only/provenance	explicit-exception	placeholder for source-clone domain skill layout, not a literal bundled package path	slice01-cdc	none
+package-path-exceptions.tsv:9:go-guidelines.zip	SKILL.md	knowledge/go/workbench/skills-accepted.md	repo-only/provenance	explicit-exception	workbench provenance file is source-clone material and is intentionally not bundled	slice01-cdc	none
+scripts/check-package-paths:2:"""Validate package-context Markdown paths inside generated skill zips."""
+scripts/check-package-paths:13:import zipfile
+scripts/check-package-paths:22:    "repo-only/provenance",
+scripts/check-package-paths:124:    raise ValueError("zip has no package root directory")
+scripts/check-package-paths:341:        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "unclassified", "hard failure", "resolved path escapes package root")
+scripts/check-package-paths:352:        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "repo-only/provenance", severity, "repo-only/provenance path requires explicit exception")
+scripts/check-package-paths:354:        return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "source-clone-reference", "warning", "target exists only in source clone")
+scripts/check-package-paths:375:        "repo-only/provenance",
+scripts/check-package-paths:421:def scan_zip(repo: Path, zip_path: Path, exceptions: list[ExceptionRow]) -> tuple[list[Finding], dict[str, int], str]:
+scripts/check-package-paths:422:    if not zip_path.exists():
+scripts/check-package-paths:423:        raise ValueError(f"missing zip: {zip_path}")
+scripts/check-package-paths:427:    with zipfile.ZipFile(zip_path) as archive:
+scripts/check-package-paths:444:                findings.append(apply_exception(zip_path.name, finding, exceptions))
+scripts/check-package-paths:448:def print_report(zip_paths: list[Path], findings: list[Finding], markdown_files: int, external_urls: int, parser_material: str) -> None:
+scripts/check-package-paths:453:    print(f"zips scanned: {len(zip_paths)}")
+scripts/check-package-paths:492:        zip_path = root / "fixture.zip"
+scripts/check-package-paths:493:        with zipfile.ZipFile(zip_path, "w") as archive:
+scripts/check-package-paths:497:        with zipfile.ZipFile(zip_path) as archive:
+scripts/check-package-paths:519:            cases["valid package paths"] = all(finding is None or finding.classification == "repo-only/provenance" for finding in findings)
+scripts/check-package-paths:527:    parser.add_argument("zips", nargs="*", help="generated zip archives to scan")
+scripts/check-package-paths:544:        if not args.zips:
+scripts/check-package-paths:545:            raise ValueError("no zip archives provided")
+scripts/check-package-paths:551:        zip_paths = [Path(zip_arg) for zip_arg in args.zips]
+scripts/check-package-paths:552:        for zip_path in zip_paths:
+scripts/check-package-paths:553:            findings, counts, parser_material = scan_zip(repo, zip_path, exceptions)
+scripts/check-package-paths:557:        print_report(zip_paths, all_findings, markdown_files, external_urls, parser_material)
+scripts/check-package-paths:559:    except (OSError, ValueError, zipfile.BadZipFile) as exc:
+scripts/check-package-paths:560:        print(f"check-package-paths: {exc}", file=sys.stderr)
+scripts/check-ccdp-package:12:import zipfile
+scripts/check-ccdp-package:188:def validate_markdown(names: set[str], archive: zipfile.ZipFile) -> tuple[list[Finding], dict[str, int]]:
+scripts/check-ccdp-package:221:def validate_zip_shape(names: set[str]) -> list[str]:
+scripts/check-ccdp-package:224:        return ["zip is empty"]
+scripts/check-ccdp-package:273:def print_report(zip_path: Path, shape_errors: list[str], readme_errors: list[str], findings: list[Finding], counts: dict[str, int], assembly_output: str) -> None:
+scripts/check-ccdp-package:275:    print(f"zip: {zip_path}")
+scripts/check-ccdp-package:303:    parser.add_argument("zip", nargs="?", default="ccdp.zip", help="CCDP zip archive to validate")
+scripts/check-ccdp-package:309:    zip_path = Path(args.zip)
+scripts/check-ccdp-package:310:    if not zip_path.exists():
+scripts/check-ccdp-package:311:        print(f"check-ccdp-package: missing zip: {zip_path}", file=sys.stderr)
+scripts/check-ccdp-package:314:        with zipfile.ZipFile(zip_path) as archive:
+scripts/check-ccdp-package:316:            shape_errors = validate_zip_shape(names)
+scripts/check-ccdp-package:323:    except (OSError, zipfile.BadZipFile) as exc:
+scripts/check-ccdp-package:324:        print(f"check-ccdp-package: {exc}", file=sys.stderr)
+scripts/check-ccdp-package:326:    print_report(zip_path, shape_errors, readme_errors, findings, counts, assembly_output)
+README.md:21:  routing hybrid AI/service cognition with provenance, escalation, and audit
+README.md:31:- [Building and installing](#building-and-installing)
+README.md:152:1. **Build it:** `make collab-framework` produces `collaboration-framework.zip`
+README.md:155:   - *Claude Desktop / claude.ai / Cowork:* upload the zip in your Skills
+README.md:157:   - *Codex:* `make install` builds every skill and unpacks them into
+README.md:223:from your project's `CLAUDE.md`, or install the packaged zip (below). Every
+README.md:240:## Building and installing
+README.md:242:Everything packages through the [`Makefile`](./Makefile). Each zip is named
+README.md:245:These are installable skill bundles.
+README.md:249:make skills            # just the ten per-domain zips
+README.md:250:make collab-framework  # just collaboration-framework.zip
+README.md:253:make rust              # -> rust-guidelines.zip
+README.md:254:make go                # -> go-guidelines.zip
+README.md:255:make cpp               # -> cpp-guidelines.zip
+README.md:256:make js                # -> javascript-deno-guidelines.zip
+README.md:257:make erlang            # -> erlang-guidelines.zip
+README.md:258:make cobalt            # -> cobalt-guidelines.zip
+README.md:259:make design            # -> visual-design-system.zip
+README.md:260:make tailwindcss       # -> tailwindcss.zip
+README.md:261:make deno              # -> deno-js-linter.zip
+README.md:262:make biome             # -> biome-js-linter.zip AND biome-linter.zip
+README.md:264:make install           # build everything and unpack into ~/.agents/skills/
+README.md:266:make uninstall         # remove installed skills from the install dir
+README.md:268:make check-package-paths
+README.md:269:                       # validate Markdown paths inside generated skill zips
+README.md:270:make clean             # remove build/ and all generated zips
+README.md:274:The zips upload directly into Claude Desktop / claude.ai as skills; unzipped
+README.md:275:(which is what `make install` does), they work with Codex out of the
+README.md:279:installable skill zip:
+README.md:283:make ccdp-package       # build ccdp.zip with one ccdp/ package root
+README.md:284:make check-ccdp-package # validate ccdp.zip zipped and unzipped
+README.md:287:`make all`, `make skills`, and `make install` build or install the skill
+README.md:288:bundles only. They do not build or install `ccdp.zip`.
+README.md:295:├── Makefile           # Packaging and install targets (above)
+README.md:320:health, and provenance requirements; a Capability Registry that describes what
+README.md:342:For package use, build or download `ccdp.zip`, unzip it, and start at
+README.md:348:directories contain provenance, review, and prompt material. They are
+README.md:349:intentionally excluded from `ccdp.zip` and are not package entrypoints.

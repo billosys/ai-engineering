@@ -1,0 +1,1 @@
+exception schema ok: package-path-exceptions.tsv
