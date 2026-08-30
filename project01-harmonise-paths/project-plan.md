@@ -140,8 +140,9 @@ needed.
 
 ## Current Status
 
-Arc 01, Arc 02, and Arc 03 are closed. Arc 04 is active: Slice 01 is opened on
-release/adoption surface audit.
+Arc 01, Arc 02, and Arc 03 are closed. Arc 04 is active: Slice 01 is
+verified/closed, and Slice 02 is opened on acceptance prep and the no-repair
+decision.
 
 ## Version History
 
@@ -287,3 +288,9 @@ path validation, and reader guidance for both source and package contexts.
 Arc 04 opened on release and adoption hardening after Arc 03 close. Slice 01
 starts with a diagnosis-only release surface audit so any final documentation,
 checker, or warning-policy repair is based on current project-scale evidence.
+
+### v1.23 - 2026-08-29
+
+Arc 04 Slice 01 marked verified/closed. The audit found no release-blocking
+source gap, so Slice 02 opens as acceptance prep/no-repair decision rather
+than source repair.

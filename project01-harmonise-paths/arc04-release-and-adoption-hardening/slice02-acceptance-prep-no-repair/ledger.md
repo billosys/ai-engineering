@@ -1,0 +1,11 @@
+# Slice 02: Acceptance Prep and No-Repair Decision Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| F-1 | No-repair decision is grounded in verified Slice 01 evidence. | Inspect `artifacts/no-repair-decision.md` and `../slice01-release-surface-audit/cdc-verification.md`. | serious | slice01 bubble-up | open | | Decision row. |
+| F-2 | Final acceptance command set is explicit and reproducible. | Inspect `artifacts/final-acceptance-command-set.md` for commands, expected summary counts, and failure conditions. | serious | arc-plan | open | | This will drive Slice 03 and project close. |
+| F-3 | Arc 04 and Project 01 ledger rows are mapped to final close evidence. | Inspect `artifacts/arc-project-ledger-close-map.md` for A-2 through A-6 and P-2, P-3, P-4, and P-6. | serious | project DoD | open | | Prevents inherited-composition closure. |
+| F-4 | Slice 03 scope is concrete and limited to project-close readiness evidence. | Inspect `artifacts/slice03-readiness-scope.md`. | correctness | slice-plan | open | | Slice 03 should not rediscover Slice 02 decisions. |
+| F-5 | Re-entry conditions for converting back to repair are explicit. | Inspect `artifacts/no-repair-decision.md` and `artifacts/slice03-readiness-scope.md`. | correctness | slice01 bubble-up | open | | Avoids accidental source-repair drift. |
+| F-6 | Implementation scope remains no-op/acceptance-prep only. | From implementation checkout: `git diff --check && git status --short --branch --untracked-files=all`; inspect that no source files were edited by this slice. | correctness | slice-plan | open | | Generated ignored zips/build outputs are acceptable if gates rebuild them. |
+| F-7 | The close report walks every ledger row, inventories artifacts, and bubbles findings up to Arc 04. | From planning worktree: `test -f project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/closing-report.md && rg -n "F-1|F-2|F-3|F-4|F-5|F-6|F-7|Artifacts|Bubble-up to Arc 04" project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/closing-report.md`. | correctness | slice-plan | open | | Proposed-done remains pending CDC verification. |

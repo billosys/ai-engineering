@@ -35,7 +35,7 @@ at project scale.
 
 ### Slice 01: Release Surface Audit
 
-Status: active/opened.
+Status: verified/closed.
 
 Scope: inventory the current release/adoption-facing surface, compare it to
 the Project 01 definition of done and project ledger, and identify the smallest
@@ -45,14 +45,14 @@ only; it should not edit source files.
 Load-bearing for: deciding whether Slice 02 is a documentation/gate repair
 slice, a no-op acceptance-prep slice, or a narrower remediation slice.
 
-### Slice 02: Release Guidance and Gate Repair
+### Slice 02: Acceptance Prep and No-Repair Decision
 
-Status: stub.
+Status: active/opened.
 
-Expected scope: implement the concrete source/doc/Makefile/checker updates
-called for by Slice 01. This should be limited to release-facing guidance,
-validation target discoverability, package inventory clarity, and any final
-warning-policy disposition required before Project 01 close.
+Scope: record the CDC-verified no-repair decision from Slice 01, select the
+final acceptance command set for Slice 03 and Project 01 close, map remaining
+Arc 04 and Project 01 ledger rows to that evidence, and leave source unchanged
+unless a concrete defect appears.
 
 ### Slice 03: Project Close Readiness
 
@@ -107,3 +107,9 @@ Out of scope:
 Initial Arc 04 plan opened after Arc 03 close. Slice 01 starts with a release
 surface audit so final repairs are based on the project DoD, current package
 checks, and actual release-facing docs rather than assumption.
+
+### v1.1 - 2026-08-29
+
+Slice 01 marked verified/closed by CDC. The audit found no release-blocking
+source gap, so Slice 02 was opened as an acceptance-prep/no-repair decision
+slice rather than the originally stubbed repair slice.
