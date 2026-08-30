@@ -44,7 +44,7 @@ Durable model outputs belong under the slice-local `artifacts/` directory.
 
 Directory: `slice02-evidence-lifecycle`
 
-Status: open on 2026-08-30.
+Status: verified-closed on 2026-08-30.
 
 Scope: define how extraction confidence, source support, evidence grade,
 verification state/result, reconciliation state/result, and memory-admission
@@ -66,7 +66,7 @@ Expected scope: define graph-native relationship/edge semantics, competency
 question coverage semantics, extraction-run traceability, and how
 reconciliation operates across cards, claims, relationships, and runs.
 
-Detailed planning is deferred until Slice02 closes.
+Detailed planning can proceed after Slice02 CDC verification.
 
 ### Slice 04: Model Synthesis and Acceptance
 
@@ -119,3 +119,10 @@ the conceptual separation of extraction confidence, source support, evidence
 grade, verification result/state, reconciliation result/state, and memory
 admission, while final schema, graph/CQ/run semantics, skill architecture,
 package behavior, and source edits remain deferred.
+
+### v1.3 - 2026-08-30
+
+Slice02 marked verified-closed after CDC reproduced all seven slice ledger
+rows. Slice03 can now be planned against the reserved lifecycle attachment
+points for reconciliation state/result, extraction run, relationship/edge,
+and competency-question semantics; no arc sequencing change was required.
