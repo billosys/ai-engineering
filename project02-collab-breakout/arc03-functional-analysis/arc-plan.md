@@ -60,7 +60,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice02-current-workflow-evaluation`
 
-Status: open as of 2026-08-30.
+Status: verified/closed on 2026-08-30.
 
 Scope: apply the Slice01 scenario matrix to the current monolithic framework
 and record how the existing files behave for humans and LLMs. Evaluate source
@@ -69,10 +69,12 @@ flows, audit, coverage, delegation, contribution, role-language routing, and
 source/package path behavior. Produce functional friction, inefficiency, and
 deficiency findings without proposing architecture.
 
-Blocks: Slice 03.
+Delivered: Slice 02 produced the current-workflow evaluation, load-path
+friction register, functional-deficiency register, and source/package
+role-language notes. CDC verified the close in
+`slice02-current-workflow-evaluation/cdc-verification.md`.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 ### Slice 03: Standalone And Composition Scenario Evaluation
 
@@ -152,3 +154,9 @@ change required before opening it.
 Opened Slice 02 for current workflow evaluation against the Slice01
 functional-analysis method, usage-surface inventory, scenario matrix, and input
 register.
+
+### v1.4 - 2026-08-30
+
+Recorded Slice 02 as verified/closed. Slice 03 can now open against the
+current-monolith findings to evaluate candidate standalone and composed
+component scenarios.
