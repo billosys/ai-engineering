@@ -3,42 +3,112 @@
 ```yaml
 project: project02-collab-breakout
 arc: arc02-conceptual-analysis
-status: placeholder-paused
+status: active
 depends-on:
   - arc01-framework-inventory
   - project03-concept-card-method:arc01-method-positioning:slice01-project02-boundary-aid
   - project03-concept-card-method:arc01-method-positioning:slice02-project02-acceptance-handoff
 blocks:
   - arc03-functional-analysis
+related:
+  - ../arc01-framework-inventory/closing-report.md
+  - ../arc01-framework-inventory/slice03-arc01-synthesis/artifacts/arc01-synthesis.md
+  - ../arc01-framework-inventory/slice03-arc01-synthesis/artifacts/candidate-component-inputs.md
+  - ../arc01-framework-inventory/slice03-arc01-synthesis/artifacts/arc02-question-register.md
+  - ../../project03-concept-card-method/arc01-method-positioning/slice01-project02-boundary-aid/artifacts/project02-conceptual-boundary-aid.md
+  - ../../project03-concept-card-method/arc01-method-positioning/slice02-project02-acceptance-handoff/artifacts/project02-arc02-acceptance-handoff.md
+  - /Users/oubiwann/lab/billosys/ai-engineering/workbench/0009-howto-concept-card-extraction-with-llms-v3.2.md
+  - /Users/oubiwann/lab/billosys/ai-engineering/workbench/0010-a-guide-for-parallel-concept-card-re-extraction-v3.2.md
 ```
 
 ## Capability
 
-Arc 02 will perform the conceptual analysis of the current collaboration
-framework. It will examine taxonomy, ontology, naming, concept boundaries,
-historical problem fit, and possible missing or overclaimed concepts.
+Arc 02 performs the conceptual analysis of the current collaboration framework.
+It examines taxonomy, ontology, naming, concept boundaries, historical problem
+fit, and possible missing or overclaimed concepts.
 
 The central question is not "which current files should become skills?" but
 "which concepts and disciplines have independent reason-to-load, independent
 contracts, and sensible composition behavior?"
 
-## Deferred Planning Notes
+Arc 02 does not select the final breakout architecture. Its job is to produce
+an evidence-backed conceptual model, candidate-boundary evaluation, and
+operator decision set that Arc 04 can later turn into an accepted architecture
+after Arc 03 functional analysis.
 
-Detailed slice planning is deferred until Arc 01 closes and Project03
-`slice01-project02-boundary-aid` has produced the concept-card-method boundary
-aid for this arc, followed by `slice02-project02-acceptance-handoff`. This is
-a soft dependency only: Arc02 does not wait for the full Project03 v4.0
-concept-card skill.
+Project03 is input, not control surface: Arc 02 may use the Project03 boundary
+aid and handoff as operator-accepted conceptual inputs, but it does not wait on
+Project03's full v4.0 skill, future arcs, or internal control closure.
+The v3.2 workbench docs behind Project03 are also available as read-only
+provenance for the concept-card lens; Arc02 should cite them when it needs the
+older method's original wording for one-concept-one-card, source faithfulness,
+typed relationships, competency questions, confidence, provenance, or
+preservation checks.
 
-Expected analysis themes:
+## Slice Breakdown
 
-- Mislabelled concepts.
-- Current combinations that should split.
-- Current splits that should combine.
-- Concepts that are mechanisms versus concepts that are postures.
-- Concepts that are operational protocols versus authoring templates.
-- Stated aims and historical problems not fully addressed by current material.
-- Current material that over-addresses or mis-addresses the problem space.
+### Slice 01: Boundary Analysis Instrument
+
+Directory: `slice01-boundary-analysis-instrument`
+
+Status: open as of 2026-08-30.
+
+Scope: consume Arc01's closed evidence base and the Project03 boundary aid /
+handoff, define the conceptual-analysis method for this arc, and seed a
+component-boundary ledger with every Arc01 candidate label. The slice should
+define the fields and evidence vocabulary that later slices use, but should
+not decide final component boundaries.
+
+Blocks: Slice 02.
+
+Open set exists. Durable synthesis outputs belong under the slice-local
+`artifacts/` directory.
+
+### Slice 02: Candidate Boundary Evaluation
+
+Directory: `slice02-candidate-boundary-evaluation`
+
+Status: placeholder.
+
+Expected scope: apply the Slice01 method to every seeded candidate label and
+classify each as candidate component, component family member, support asset,
+adapter, dependency edge, constraint, template, package/release gate, or
+non-component concept. The slice should record evidence, problem ownership,
+competency questions, relationships, risks, and provisional disposition.
+
+Detailed planning is deferred until Slice01 closes.
+
+### Slice 03: Ontology And Decision Synthesis
+
+Directory: `slice03-ontology-decision-synthesis`
+
+Status: placeholder.
+
+Expected scope: synthesize the candidate evaluation into an Arc02 conceptual
+model, naming critique, merge/split findings, missing/overclaimed concept
+findings, and operator decision register for Arc04 architecture work.
+
+Detailed planning is deferred until Slice02 closes.
+
+## Dependencies
+
+Consumes:
+
+- Closed Project02 Arc01 evidence, especially the Arc01 close report, Slice03
+  synthesis, candidate-component inputs, and Arc02 question register.
+- Project03 boundary aid and acceptance handoff as operator-accepted inputs.
+- The two top-level v3.2 concept-card workbench docs as read-only provenance
+  for the Project03 boundary lens, not as Project02 control gates.
+- Project01 path/package constraints carried through Arc01.
+
+Leaves for later arcs:
+
+- A conceptual model and boundary evaluation that Arc03 can test against real
+  usage patterns.
+- A non-final set of candidate component classifications and open operator
+  decisions for Arc04 breakout architecture.
+- A record of conceptual risks: mislabels, improper merges, improper splits,
+  missing concepts, overclaimed mechanisms, and file-boundary traps.
 
 ## Version History
 
@@ -64,3 +134,18 @@ acceptance, not for the full v4.0 skill.
 Updated the soft dependency to include Project03 Arc01 Slice02, the acceptance
 handoff packet. Arc02 still waits only for the focused handoff and operator
 acceptance, not for Project03's full v4.0 skill architecture.
+
+### v1.4 - 2026-08-30
+
+Recorded CDC verification of Project03 Arc01 Slice02. Arc02 now waits on
+operator acceptance of the boundary aid plus handoff and Project03 Arc01
+formal close, not on production of the handoff or the full v4.0 skill.
+
+### v1.5 - 2026-08-30
+
+Opened Arc02 as active after operator acceptance that Project03 outputs are
+useful inputs and that Project03 control closure does not gate Project02.
+Added the two top-level v3.2 concept-card workbench docs as read-only
+provenance behind the Project03 boundary lens. Planned three slices:
+boundary-analysis instrument, candidate-boundary evaluation, and
+ontology/decision synthesis.

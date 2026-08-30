@@ -88,7 +88,7 @@ Out of scope until this project reaches implementation:
 
 ### Arc 01: Framework Inventory and Problem Map
 
-Status: active; ready for formal arc close.
+Status: closed/composed on 2026-08-30.
 
 Capability: establish the evidence base for the breakout by inventorying the
 current framework sources, mapping concepts and disciplines to source
@@ -109,20 +109,18 @@ Slices:
 
 ### Arc 02: Conceptual Analysis
 
-Status: placeholder; softly paused pending Project03 Slice01 boundary aid and
-Slice02 acceptance handoff.
+Status: active.
 
 Expected capability: perform the taxonomy and ontology analysis of the current
 framework, including critical checks for mislabeled concepts, improper merges,
   improper splits, missing concepts, overclaimed mechanisms, and gaps between
   stated aims and actual solution shape.
 
-Detailed arc planning is deferred until Arc 01 closes and Project03
-`slice01-project02-boundary-aid` has produced its concept-card-method boundary
-aid for Project02 Arc02, followed by
-`slice02-project02-acceptance-handoff`. This is a soft dependency: Project02
-does not wait for the full Project03 v4.0 skill, only for the small Arc02 aid,
-handoff packet, and operator acceptance that they are sufficient.
+Detailed arc planning opened after Arc 01 closed and the operator accepted
+using the Project03 Slice01 boundary aid plus
+`slice02-project02-acceptance-handoff` as sufficient Project02 inputs.
+Project02 consumes Project03 outputs only; Project03 control status does not
+gate Project02 Arc02.
 
 ### Arc 03: Functional Analysis
 
@@ -161,10 +159,9 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 ## Current Status
 
-Project 02 is opened for planning. Arc 01 has all three planned slices
-verified/closed and is ready for formal arc close. Arc 02 remains deferred
-until Arc 01 closes and Project03 Slice01 produces the concept-card-method
-boundary aid plus the Slice02 acceptance handoff for operator acceptance.
+Project 02 is opened for planning. Arc 01 is closed/composed. Arc 02 is active
+for conceptual analysis, with Slice 01 opened to build the boundary-analysis
+instrument and seeded component-boundary ledger.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -222,3 +219,16 @@ Updated the Project03 soft dependency after opening Project03 Arc01 Slice02.
 Project02 Arc02 now waits for the Slice01 boundary aid plus the Slice02
 acceptance handoff, while still explicitly not waiting for the full Project03
 v4.0 skill.
+
+### v1.8 - 2026-08-30
+
+Recorded CDC verification of Project03 Arc01 Slice02. Project02 Arc02 now waits
+on operator acceptance of the boundary aid plus handoff packet and Project03
+Arc01 formal close, not on production of the handoff or the full v4.0 skill.
+
+### v1.9 - 2026-08-30
+
+Opened Project02 Arc02 for detailed conceptual-analysis planning after Arc01
+closed/composed and the operator accepted Project03's boundary aid and handoff
+as useful inputs. Project02 consumes Project03 outputs only; Project03 control
+status does not gate Project02 Arc02.
