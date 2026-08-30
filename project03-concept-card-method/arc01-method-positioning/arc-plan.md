@@ -44,14 +44,15 @@ be planned after Arc01 close.
 
 Directory: `slice02-project02-acceptance-handoff`
 
-Status: open.
+Status: verified/closed by CDC on 2026-08-30.
 
 Scope: produce a compact handoff/readiness packet that lets the operator decide
 whether Project02 Arc02 can consume the Slice01 boundary aid as sufficient input
 for detailed conceptual-analysis planning. The packet should also make Arc01's
 composition evidence easier to close.
 
-Blocks: Project02 Arc02 detailed planning and Project03 Arc01 formal close.
+Blocks: no longer blocking Project02 Arc02 handoff presentation; Project03
+Arc01 can proceed to formal close.
 
 ## Dependencies
 
@@ -92,3 +93,9 @@ Opened Slice02 for the Project02 acceptance handoff. This expands Arc01 from
 one slice to two: Slice01 produced the boundary aid, and Slice02 prepares the
 operator-facing handoff needed before Arc01 formal close and Project02 Arc02
 detailed planning.
+
+### v1.4 - 2026-08-30
+
+Slice02 marked verified-closed by CDC. Arc01 now has both planned slices
+verified-closed and can proceed to formal arc close; Project02 Arc02 still
+requires operator acceptance of the handoff before detailed planning.

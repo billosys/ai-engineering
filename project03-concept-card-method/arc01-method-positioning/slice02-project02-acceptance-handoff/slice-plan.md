@@ -4,7 +4,10 @@
 project: project03-concept-card-method
 arc: arc01-method-positioning
 slice: slice02-project02-acceptance-handoff
-status: open
+status: verified-closed
+closed: 2026-08-30
+verified: 2026-08-30
+verification-note: CDC reproduced all six ledger rows; operator acceptance gate remains open
 artifact-home: artifacts/
 depends-on:
   - project03-concept-card-method:arc01-method-positioning:slice01-project02-boundary-aid

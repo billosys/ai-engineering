@@ -139,10 +139,10 @@ Detailed arc planning is deferred until Arc 04 closes.
 
 ## Current Status
 
-Project03 is open for planning. Arc 01 is active. Slice01 is verified-closed
-in a same-context CDC-style pass, and Slice02 is open to prepare the Project02
-Arc02 acceptance handoff. Project02 Arc02 does not wait for the full Project03
-v4.0 skill.
+Project03 is open for planning. Arc 01 is active and ready for formal arc
+close: Slice01 and Slice02 are both verified-closed, and the Project02 Arc02
+acceptance handoff is ready for operator decision. Project02 Arc02 does not
+wait for the full Project03 v4.0 skill.
 
 ## Version History
 
@@ -170,3 +170,9 @@ treated as a minor v3.3 continuation.
 Opened Arc01 Slice02, `slice02-project02-acceptance-handoff`, to turn the
 Slice01 boundary aid into an operator-facing readiness packet before Arc01
 formal close and Project02 Arc02 detailed planning.
+
+### v1.4 - 2026-08-30
+
+Arc01 Slice02 marked verified-closed by CDC. Arc01 is now ready for formal arc
+close, while Project02 Arc02 still waits for operator acceptance of the
+handoff rather than the full Project03 v4.0 skill.
