@@ -160,8 +160,9 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 is closed/composed. Arc 02 is active
-for conceptual analysis, with Slice 01 opened to build the boundary-analysis
-instrument and seeded component-boundary ledger.
+for conceptual analysis. Slice 01 is verified/closed, and Slice 02 is opened
+to evaluate every seeded candidate label against the Arc02 conceptual-analysis
+method.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -232,3 +233,9 @@ Opened Project02 Arc02 for detailed conceptual-analysis planning after Arc01
 closed/composed and the operator accepted Project03's boundary aid and handoff
 as useful inputs. Project02 consumes Project03 outputs only; Project03 control
 status does not gate Project02 Arc02.
+
+### v1.10 - 2026-08-30
+
+Opened Arc02 Slice 02 after Slice 01 CDC verification. The project remains in
+conceptual analysis; Slice 02 evaluates the seeded candidate labels but does
+not select final breakout architecture.

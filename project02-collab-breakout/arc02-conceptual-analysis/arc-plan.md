@@ -51,7 +51,7 @@ preservation checks.
 
 Directory: `slice01-boundary-analysis-instrument`
 
-Status: open as of 2026-08-30.
+Status: verified/closed on 2026-08-30.
 
 Scope: consume Arc01's closed evidence base and the Project03 boundary aid /
 handoff, define the conceptual-analysis method for this arc, and seed a
@@ -59,24 +59,28 @@ component-boundary ledger with every Arc01 candidate label. The slice should
 define the fields and evidence vocabulary that later slices use, but should
 not decide final component boundaries.
 
-Blocks: Slice 02.
+Delivered: Slice 01 produced the Arc02 conceptual-analysis method, input
+evidence register, and seeded component-boundary ledger. CDC verified the close
+in `slice01-boundary-analysis-instrument/cdc-verification.md`.
 
-Open set exists. Durable synthesis outputs belong under the slice-local
-`artifacts/` directory.
+Durable synthesis outputs live under the slice-local `artifacts/` directory.
 
 ### Slice 02: Candidate Boundary Evaluation
 
 Directory: `slice02-candidate-boundary-evaluation`
 
-Status: placeholder.
+Status: open as of 2026-08-30.
 
-Expected scope: apply the Slice01 method to every seeded candidate label and
+Scope: apply the Slice01 method to every seeded candidate label and
 classify each as candidate component, component family member, support asset,
 adapter, dependency edge, constraint, template, package/release gate, or
 non-component concept. The slice should record evidence, problem ownership,
 competency questions, relationships, risks, and provisional disposition.
 
-Detailed planning is deferred until Slice01 closes.
+Blocks: Slice 03.
+
+Open set exists. Durable evaluation outputs belong under the slice-local
+`artifacts/` directory.
 
 ### Slice 03: Ontology And Decision Synthesis
 
@@ -149,3 +153,9 @@ Added the two top-level v3.2 concept-card workbench docs as read-only
 provenance behind the Project03 boundary lens. Planned three slices:
 boundary-analysis instrument, candidate-boundary evaluation, and
 ontology/decision synthesis.
+
+### v1.6 - 2026-08-30
+
+Recorded Slice 01 as verified/closed and opened Slice 02. Slice 02 now owns
+candidate-boundary evaluation across the 26 seeded labels, while preserving
+the non-final architecture posture and leaving synthesis to Slice 03.
