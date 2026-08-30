@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc03-functional-analysis
 slice: slice03-standalone-composition-evaluation
-status: open
+status: proposed-done
 opened-on: 2026-08-30
+proposed-done-on: 2026-08-30
 artifact-home: artifacts/
 depends-on:
   - slice01-usage-surface-instrument:verified-closed
@@ -125,3 +126,13 @@ analytical and non-final.
   Slice04, Arc04, or Arc05, and records go / adjust / defer signals without
   accepting final architecture.
 - No source files are edited.
+
+## Proposed Close Summary
+
+Proposed done by CC on 2026-08-30. The slice produced all five required
+durable artifacts under `artifacts/`, updated the slice ledger with attested
+evidence, and wrote `closing-report.md`.
+
+No source files were edited. No Arc03 plan change is required before Slice04
+opens; the existing Slice04 placeholder already owns Arc03 functional
+synthesis, Arc04 architecture inputs, and close-readiness.
