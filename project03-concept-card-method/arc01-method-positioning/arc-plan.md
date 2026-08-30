@@ -3,11 +3,10 @@
 ```yaml
 project: project03-concept-card-method
 arc: arc01-method-positioning
-status: active
+status: closed
 depends-on:
   - project02-collab-breakout:arc01-synthesis
 blocks:
-  - project02-collab-breakout:arc02-conceptual-analysis
   - project03-concept-card-method:arc02-method-inventory
 related:
   - ../../project02-collab-breakout/arc01-framework-inventory/slice03-arc01-synthesis/artifacts/arc01-synthesis.md
@@ -99,3 +98,9 @@ detailed planning.
 Slice02 marked verified-closed by CDC. Arc01 now has both planned slices
 verified-closed and can proceed to formal arc close; Project02 Arc02 still
 requires operator acceptance of the handoff before detailed planning.
+
+### v1.5 - 2026-08-30
+
+Arc01 formally closed. The close report reproduced the composition rows and
+bubbled up that Arc02 can now be opened for baseline inventory and gap
+analysis.

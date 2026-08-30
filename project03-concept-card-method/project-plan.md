@@ -83,7 +83,7 @@ Out of scope until an accepted implementation plan:
 
 ### Arc 01: Method Positioning and Project02 Aid
 
-Status: active.
+Status: closed on 2026-08-30.
 
 Capability: establish the minimum concept-card method context needed before
 Project02 Arc02 selects collaboration-framework component boundaries, while
@@ -99,14 +99,16 @@ Slices:
 
 ### Arc 02: Method Inventory and Gap Analysis
 
-Status: placeholder.
+Status: active.
 
 Expected capability: inventory the v3.2 concept-card baseline docs from actual
 files, map their schema, workflow, validation, and re-extraction mechanics,
 and identify the gaps that make the next method revision a v4.0 change rather
 than a v3.3 cleanup.
 
-Detailed arc planning is deferred until Arc 01 closes.
+Detailed arc planning is open. Slice01 is opened to preserve the v3.2 baseline
+source snapshots and pre-Project03 assessment memo, then produce the baseline
+source inventory.
 
 ### Arc 03: Conceptual Model
 
@@ -139,10 +141,9 @@ Detailed arc planning is deferred until Arc 04 closes.
 
 ## Current Status
 
-Project03 is open for planning. Arc 01 is active and ready for formal arc
-close: Slice01 and Slice02 are both verified-closed, and the Project02 Arc02
-acceptance handoff is ready for operator decision. Project02 Arc02 does not
-wait for the full Project03 v4.0 skill.
+Project03 is open for planning. Arc01 is closed. Arc02 is active with Slice01
+opened for v3.2 baseline source inventory. Project03 remains planning-only
+until an implementation arc explicitly authorizes source edits.
 
 ## Version History
 
@@ -176,3 +177,15 @@ formal close and Project02 Arc02 detailed planning.
 Arc01 Slice02 marked verified-closed by CDC. Arc01 is now ready for formal arc
 close, while Project02 Arc02 still waits for operator acceptance of the
 handoff rather than the full Project03 v4.0 skill.
+
+### v1.5 - 2026-08-30
+
+Arc01 formally closed with a composition report and project-level bubble-up.
+Arc02 opened for method inventory and gap analysis, with Slice01 opened for
+v3.2 baseline source inventory.
+
+### v1.6 - 2026-08-30
+
+Arc02 Slice01 scope expanded to preserve the two v3.2 workbench source docs and
+the pre-Project03 assessment memo as durable planning artifacts before
+inventory work proceeds.
