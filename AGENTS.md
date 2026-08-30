@@ -61,16 +61,14 @@ not the implementation checkout and should not be used for source/package edits.
   and other durable evidence in the owning slice directory, preferably under
   `artifacts/`. Every ledger row needs an evidence pointer with a strength
   claim; do not close by summary alone.
-- **Project ordering:** as of 2026-08-29, `project01-harmonise-paths` is the
-  active project. `project02-collab-breakout` is planned and depends on
-  verified completion of `project01-harmonise-paths`; do not execute its
-  slices until that dependency closes unless the operator explicitly changes
-  the plan.
-- **Project01 status:** Arc 01, Arc 02, and Arc 03 are closed. Arc 04 is
-  active; Slice 01 and Slice 02 are verified/closed, and Slice 03 is opened
-  for project-close readiness.
+- **Project ordering:** as of 2026-08-29, `project01-harmonise-paths` is
+  closed. `project02-collab-breakout` is planned and may proceed when the
+  operator explicitly starts it.
+- **Project01 status:** closed; Arc 01, Arc 02, Arc 03, and Arc 04 are closed
+  with Project 01 DoD verdict met.
 - **Project02 status:** the project roadmap, Arc 01, and Slice 01 open set
-  exist as planning artifacts, but execution is blocked on Project01 closure.
+  exist as planning artifacts. Execution is no longer blocked by Project01,
+  but still requires an explicit operator start.
 - **Source checkout validation references:** implementation plans may require
   `make help`, `make check-skills`, `make check-package-paths`, `make all`,
   `make collab-framework`, or `make ccdp` in the main checkout. Record these

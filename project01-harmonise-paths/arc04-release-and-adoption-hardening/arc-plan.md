@@ -2,7 +2,7 @@
 
 ```yaml
 arc: arc04-release-and-adoption-hardening
-status: active
+status: closed
 project: project01-harmonise-paths
 depends-on:
   - arc01-distribution-path-contract
@@ -56,7 +56,7 @@ unless a concrete defect appears.
 
 ### Slice 03: Project Close Readiness
 
-Status: active/opened.
+Status: verified/closed.
 
 Scope: reproduce the final project-scale acceptance command set, capture
 release/adoption evidence under the slice-local `artifacts/` directory, walk
@@ -120,3 +120,10 @@ slice rather than the originally stubbed repair slice.
 Slice 02 marked verified/closed by CDC. The no-repair decision held under
 reproduced source/package gates, so Slice 03 opens directly on project-close
 readiness instead of a repair iteration.
+
+### v1.3 - 2026-08-29
+
+Slice 03 marked verified/closed by CDC. The final acceptance command set
+reproduced with no count drift and no tracked source drift, so Arc 04 closes
+with composition verdict delivered and Project 01 can close without
+remediation.

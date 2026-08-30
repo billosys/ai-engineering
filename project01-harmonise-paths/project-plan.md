@@ -2,7 +2,7 @@
 
 ```yaml
 project: project01-harmonise-paths
-status: active
+status: closed
 depends-on: []
 blocks:
   - reliable source-clone use of ai-engineering skills
@@ -129,7 +129,7 @@ source-clone entrypoint guidance, and package-local reader guidance.
 
 ### Arc 04: Release and Adoption Hardening
 
-Status: active.
+Status: closed.
 
 Capability: update README/install/release guidance, run package-path and
 packaging checks, and prepare the project for publication.
@@ -140,8 +140,8 @@ needed.
 
 ## Current Status
 
-Arc 01, Arc 02, and Arc 03 are closed. Arc 04 is active: Slice 01 and Slice 02
-are verified/closed, and Slice 03 is opened on project-close readiness.
+Arc 01, Arc 02, Arc 03, and Arc 04 are closed. Project 01 is closed with DoD
+verdict met and no remediation arc required.
 
 ## Version History
 
@@ -299,3 +299,10 @@ than source repair.
 Arc 04 Slice 02 marked verified/closed. Its no-repair decision held under
 reproduced source/package gates, so Slice 03 opens directly on project-close
 readiness and final acceptance evidence.
+
+### v1.25 - 2026-08-29
+
+Arc 04 Slice 03 marked verified/closed, Arc 04 closed with composition verdict
+delivered, and Project 01 closed with DoD verdict met. The final acceptance
+gates reproduced with no count drift, no tracked source drift, and no
+remediation arc required.
