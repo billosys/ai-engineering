@@ -42,7 +42,7 @@ deficiency registers, and Arc04-ready architecture inputs.
 
 Directory: `slice01-usage-surface-instrument`
 
-Status: open as of 2026-08-30.
+Status: verified/closed on 2026-08-30.
 
 Scope: define the Arc03 functional-analysis method, inventory the usage
 surfaces and load paths that the current framework must support, and build the
@@ -50,10 +50,11 @@ scenario matrix that later slices apply. The slice should consume Arc02 close
 outputs and turn them into functional questions without evaluating every
 scenario yet.
 
-Blocks: Slice 02.
+Delivered: Slice 01 produced Arc03's functional-analysis method,
+usage-surface inventory, scenario matrix, and input register. CDC verified the
+close in `slice01-usage-surface-instrument/cdc-verification.md`.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 ### Slice 02: Current Workflow Evaluation
 
@@ -138,3 +139,9 @@ Placeholder opened with dependency on Arc 02.
 Opened Arc03 as active after Arc02 closed/composed. Planned four slices:
 usage-surface instrument, current workflow evaluation, standalone/composition
 scenario evaluation, and functional synthesis.
+
+### v1.2 - 2026-08-30
+
+Recorded Slice 01 as verified/closed. Slice 02 can now open against the
+scenario matrix to evaluate current monolith workflows, with no Arc03 plan
+change required before opening it.

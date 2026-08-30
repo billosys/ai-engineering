@@ -162,7 +162,8 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
-Arc 03 is active for functional analysis, with Slice 01 open.
+Arc 03 is active for functional analysis. Slice 01 is verified/closed, and
+Slice 02 is ready to open for current workflow evaluation.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -264,3 +265,8 @@ and load patterns before Arc04 accepts a breakout architecture.
 Opened Arc03 for detailed functional-analysis planning after Arc02
 closed/composed. Arc03 Slice 01 now owns the functional-analysis method,
 usage-surface inventory, scenario matrix, and Arc03 input register.
+
+### v1.15 - 2026-08-30
+
+Recorded Arc03 Slice 01 as verified/closed. Slice 02 can now open against the
+scenario matrix to evaluate current monolith workflows.
