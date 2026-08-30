@@ -1,0 +1,621 @@
+>> staging rust-guidelines bundle (knowledge/rust/SKILL.md + knowledge/rust/guides)
+>> writing rust-guidelines.zip
+>> contents:
+Archive:  rust-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   rust-guidelines/
+        0  08-29-2026 20:58   rust-guidelines/guides/
+    78756  08-29-2026 20:58   rust-guidelines/guides/11-anti-patterns.md
+    67303  08-29-2026 20:58   rust-guidelines/guides/02-api-design.md
+    46392  08-29-2026 20:58   rust-guidelines/guides/06-traits.md
+    41061  08-29-2026 20:58   rust-guidelines/guides/16-editions.md
+    40026  08-29-2026 20:58   rust-guidelines/guides/12-project-structure.md
+    55203  08-29-2026 20:58   rust-guidelines/guides/03-error-handling.md
+    13188  08-29-2026 20:58   rust-guidelines/guides/README.md
+    71625  08-29-2026 20:58   rust-guidelines/guides/09-unsafe-ffi.md
+        0  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/
+    18131  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/05-configuration.md
+    26466  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/04-output-and-ux.md
+    11852  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/08-advanced-topics.md
+    12903  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/07-distribution.md
+    19387  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/03-error-handling.md
+    27687  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/02-argument-parsing.md
+    16566  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/README.md
+    14729  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/06-testing.md
+     8570  08-29-2026 20:58   rust-guidelines/guides/14-cli-tools/01-project-setup.md
+    43437  08-29-2026 20:58   rust-guidelines/guides/13-documentation.md
+        0  08-29-2026 20:58   rust-guidelines/guides/15-cargo/
+    27919  08-29-2026 20:58   rust-guidelines/guides/15-cargo/02-cargo-build-system.md
+    22405  08-29-2026 20:58   rust-guidelines/guides/15-cargo/05-cargo-configuration.md
+    14369  08-29-2026 20:58   rust-guidelines/guides/15-cargo/07-lints-and-formatters.md
+    10165  08-29-2026 20:58   rust-guidelines/guides/15-cargo/CHECKPOINT.md
+    10641  08-29-2026 20:58   rust-guidelines/guides/15-cargo/README.md
+    21810  08-29-2026 20:58   rust-guidelines/guides/15-cargo/04-cargo-publishing.md
+    17826  08-29-2026 20:58   rust-guidelines/guides/15-cargo/08-manifest-and-workspace-advanced.md
+    32512  08-29-2026 20:58   rust-guidelines/guides/15-cargo/06-cargo-advanced.md
+    24263  08-29-2026 20:58   rust-guidelines/guides/15-cargo/01-cargo-basics.md
+    26997  08-29-2026 20:58   rust-guidelines/guides/15-cargo/03-cargo-plugins.md
+    39832  08-29-2026 20:58   rust-guidelines/guides/10-macros.md
+    44542  08-29-2026 20:58   rust-guidelines/guides/04-ownership-borrowing.md
+    61497  08-29-2026 20:58   rust-guidelines/guides/08-performance.md
+     8222  08-29-2026 20:58   rust-guidelines/guides/MERGE_REPORT.md
+    61403  08-29-2026 20:58   rust-guidelines/guides/07-concurrency-async.md
+    33258  08-29-2026 20:58   rust-guidelines/guides/17-observability.md
+    48975  08-29-2026 20:58   rust-guidelines/guides/01-core-idioms.md
+    40095  08-29-2026 20:58   rust-guidelines/guides/05-type-design.md
+    36123  08-29-2026 20:58   rust-guidelines/SKILL.md
+---------                     -------
+  1196136                     41 files
+>> done: rust-guidelines.zip
+>> staging go-guidelines bundle (knowledge/go/SKILL.md + knowledge/go/guides)
+>> writing go-guidelines.zip
+>> contents:
+Archive:  go-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   go-guidelines/
+        0  08-29-2026 20:58   go-guidelines/guides/
+    49360  08-29-2026 20:58   go-guidelines/guides/11-documentation.md
+    87007  08-29-2026 20:58   go-guidelines/guides/06-concurrency.md
+    70646  08-29-2026 20:58   go-guidelines/guides/05-interfaces-methods.md
+    60256  08-29-2026 20:58   go-guidelines/guides/02-api-design.md
+    12514  08-29-2026 20:58   go-guidelines/guides/12-gio-ui.md
+    61392  08-29-2026 20:58   go-guidelines/guides/03-error-handling.md
+    89777  08-29-2026 20:58   go-guidelines/guides/07-testing.md
+    78292  08-29-2026 20:58   go-guidelines/guides/08-performance.md
+    56485  08-29-2026 20:58   go-guidelines/guides/01-core-idioms.md
+    61961  08-29-2026 20:58   go-guidelines/guides/04-type-design.md
+    57226  08-29-2026 20:58   go-guidelines/guides/10-project-structure.md
+    94023  08-29-2026 20:58   go-guidelines/guides/09-anti-patterns.md
+    23175  08-29-2026 20:58   go-guidelines/SKILL.md
+---------                     -------
+   802114                     15 files
+>> done: go-guidelines.zip
+>> staging cpp-guidelines bundle (knowledge/cpp/SKILL.md + knowledge/cpp/guides)
+>> writing cpp-guidelines.zip
+>> contents:
+Archive:  cpp-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   cpp-guidelines/
+        0  08-29-2026 20:58   cpp-guidelines/guides/
+     6844  08-29-2026 20:58   cpp-guidelines/guides/14-c-style-and-modernization.md
+    17191  08-29-2026 20:58   cpp-guidelines/guides/11-anti-patterns.md
+    45787  08-29-2026 20:58   cpp-guidelines/guides/05-resource-management.md
+    31702  08-29-2026 20:58   cpp-guidelines/guides/12-project-structure-and-tooling.md
+    62362  08-29-2026 20:58   cpp-guidelines/guides/08-concurrency.md
+    44839  08-29-2026 20:58   cpp-guidelines/guides/02-api-design.md
+   127585  08-29-2026 20:58   cpp-guidelines/guides/10-expressions-and-statements.md
+    71691  08-29-2026 20:58   cpp-guidelines/guides/07-templates-and-generics.md
+    76241  08-29-2026 20:58   cpp-guidelines/guides/03-functions.md
+    36960  08-29-2026 20:58   cpp-guidelines/guides/06-error-handling.md
+   186376  08-29-2026 20:58   cpp-guidelines/guides/04-classes-and-value-types.md
+    18767  08-29-2026 20:58   cpp-guidelines/guides/09-performance.md
+    91626  08-29-2026 20:58   cpp-guidelines/guides/15-reference-and-glossary.md
+    27515  08-29-2026 20:58   cpp-guidelines/guides/13-standard-library.md
+    68783  08-29-2026 20:58   cpp-guidelines/guides/01-core-idioms.md
+     8352  08-29-2026 20:58   cpp-guidelines/SKILL.md
+---------                     -------
+   922621                     18 files
+>> done: cpp-guidelines.zip
+>> staging javascript-deno-guidelines bundle (knowledge/js/SKILL.md + knowledge/js/guides)
+>> writing javascript-deno-guidelines.zip
+>> contents:
+Archive:  javascript-deno-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   javascript-deno-guidelines/
+        0  08-29-2026 20:58   javascript-deno-guidelines/guides/
+    32988  08-29-2026 20:58   javascript-deno-guidelines/guides/11-documentation.md
+        0  08-29-2026 20:58   javascript-deno-guidelines/guides/12-deno/
+    23286  08-29-2026 20:58   javascript-deno-guidelines/guides/12-deno/12-03-task-runner.md
+    32286  08-29-2026 20:58   javascript-deno-guidelines/guides/12-deno/12-02-testing.md
+    37261  08-29-2026 20:58   javascript-deno-guidelines/guides/12-deno/12-01-runtime-basics.md
+    23538  08-29-2026 20:58   javascript-deno-guidelines/guides/12-deno/12-04-publishing.md
+    35026  08-29-2026 20:58   javascript-deno-guidelines/guides/02-api-design.md
+    22617  08-29-2026 20:58   javascript-deno-guidelines/guides/14-no-node-boundary.md
+        0  08-29-2026 20:58   javascript-deno-guidelines/guides/13-biome/
+    25580  08-29-2026 20:58   javascript-deno-guidelines/guides/13-biome/13-02-lint-rules.md
+    23709  08-29-2026 20:58   javascript-deno-guidelines/guides/13-biome/13-01-setup.md
+    17225  08-29-2026 20:58   javascript-deno-guidelines/guides/13-biome/13-03-formatting.md
+    34509  08-29-2026 20:58   javascript-deno-guidelines/guides/03-error-handling.md
+    43588  08-29-2026 20:58   javascript-deno-guidelines/guides/07-async-concurrency.md
+    37564  08-29-2026 20:58   javascript-deno-guidelines/guides/05-type-discipline.md
+    35336  08-29-2026 20:58   javascript-deno-guidelines/guides/04-values-references.md
+    39620  08-29-2026 20:58   javascript-deno-guidelines/guides/06-functions-closures.md
+    44306  08-29-2026 20:58   javascript-deno-guidelines/guides/08-performance.md
+    35513  08-29-2026 20:58   javascript-deno-guidelines/guides/01-core-idioms.md
+    32185  08-29-2026 20:58   javascript-deno-guidelines/guides/10-project-structure.md
+    45517  08-29-2026 20:58   javascript-deno-guidelines/guides/09-anti-patterns.md
+    36731  08-29-2026 20:58   javascript-deno-guidelines/SKILL.md
+---------                     -------
+   658385                     24 files
+>> done: javascript-deno-guidelines.zip
+>> staging erlang-guidelines bundle (knowledge/erlang/SKILL.md + knowledge/erlang/guides)
+>> writing erlang-guidelines.zip
+>> contents:
+Archive:  erlang-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   erlang-guidelines/
+        0  08-29-2026 20:58   erlang-guidelines/guides/
+    24859  08-29-2026 20:58   erlang-guidelines/guides/11-anti-patterns.md
+    23546  08-29-2026 20:58   erlang-guidelines/guides/04-data-and-types.md
+    20798  08-29-2026 20:58   erlang-guidelines/guides/16-distribution.md
+    15792  08-29-2026 20:58   erlang-guidelines/guides/02-api-design.md
+    19703  08-29-2026 20:58   erlang-guidelines/guides/14-production-ops.md
+    23219  08-29-2026 20:58   erlang-guidelines/guides/08-supervision-and-applications.md
+    15637  08-29-2026 20:58   erlang-guidelines/guides/12-project-structure.md
+    19652  08-29-2026 20:58   erlang-guidelines/guides/03-error-handling.md
+    15665  08-29-2026 20:58   erlang-guidelines/guides/15-testing.md
+    22262  08-29-2026 20:58   erlang-guidelines/guides/09-fault-tolerance.md
+    20689  08-29-2026 20:58   erlang-guidelines/guides/06-processes-and-concurrency.md
+    15040  08-29-2026 20:58   erlang-guidelines/guides/13-documentation.md
+    19026  08-29-2026 20:58   erlang-guidelines/guides/05-functions-and-pattern-matching.md
+    15339  08-29-2026 20:58   erlang-guidelines/guides/17-tooling.md
+    25877  08-29-2026 20:58   erlang-guidelines/guides/10-performance.md
+    23653  08-29-2026 20:58   erlang-guidelines/guides/07-otp-behaviours.md
+    20536  08-29-2026 20:58   erlang-guidelines/guides/01-core-idioms.md
+    13824  08-29-2026 20:58   erlang-guidelines/SKILL.md
+---------                     -------
+   355117                     20 files
+>> done: erlang-guidelines.zip
+>> staging cobalt-guidelines bundle (knowledge/cobalt/SKILL.md + knowledge/cobalt/guides)
+>> writing cobalt-guidelines.zip
+>> contents:
+Archive:  cobalt-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   cobalt-guidelines/
+        0  08-29-2026 20:58   cobalt-guidelines/guides/
+    40521  08-29-2026 20:58   cobalt-guidelines/guides/01-cobalt-static-site-generation.md
+    27569  08-29-2026 20:58   cobalt-guidelines/SKILL.md
+---------                     -------
+    68090                     4 files
+>> done: cobalt-guidelines.zip
+>> staging visual-design-system bundle (knowledge/design/SKILL.md + knowledge/design/guides)
+>> writing visual-design-system.zip
+>> contents:
+Archive:  visual-design-system.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   visual-design-system/
+        0  08-29-2026 20:58   visual-design-system/guides/
+    12215  08-29-2026 20:58   visual-design-system/guides/colour.md
+    29008  08-29-2026 20:58   visual-design-system/guides/foundations-of-design.md
+    22057  08-29-2026 20:58   visual-design-system/guides/breaking-the-layout-monoculture.md
+    16584  08-29-2026 20:58   visual-design-system/guides/design.md
+    19015  08-29-2026 20:58   visual-design-system/guides/type.md
+    46861  08-29-2026 20:58   visual-design-system/guides/layout.md
+    20381  08-29-2026 20:58   visual-design-system/SKILL.md
+---------                     -------
+   166121                     9 files
+>> done: visual-design-system.zip
+>> staging tailwindcss bundle (knowledge/tailwindcss/SKILL.md + knowledge/tailwindcss/guides)
+>> writing tailwindcss.zip
+>> contents:
+Archive:  tailwindcss.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   tailwindcss/
+        0  08-29-2026 20:58   tailwindcss/guides/
+    47011  08-29-2026 20:58   tailwindcss/guides/reference.md
+    38395  08-29-2026 20:58   tailwindcss/SKILL.md
+---------                     -------
+    85406                     4 files
+>> done: tailwindcss.zip
+>> staging deno-js-linter bundle (knowledge/deno/SKILL-js-linter.md + knowledge/deno/guides)
+>> writing deno-js-linter.zip
+>> contents:
+Archive:  deno-js-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   deno-js-linter/
+     5140  08-29-2026 20:58   deno-js-linter/SKILL-js-linter.md
+        0  08-29-2026 20:58   deno-js-linter/guides/
+     6919  08-29-2026 20:58   deno-js-linter/guides/pitfalls.md
+    15639  08-29-2026 20:58   deno-js-linter/guides/bugs.md
+     6184  08-29-2026 20:58   deno-js-linter/guides/style.md
+---------                     -------
+    33882                     6 files
+>> done: deno-js-linter.zip
+>> staging biome-js-linter bundle (knowledge/biome/SKILL-js-linter.md + knowledge/biome/guides)
+>> writing biome-js-linter.zip
+>> contents:
+Archive:  biome-js-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   biome-js-linter/
+     5545  08-29-2026 20:58   biome-js-linter/SKILL-js-linter.md
+        0  08-29-2026 20:58   biome-js-linter/guides/
+        0  08-29-2026 20:58   biome-js-linter/guides/js-linter/
+    14850  08-29-2026 20:58   biome-js-linter/guides/js-linter/pitfalls.md
+     9958  08-29-2026 20:58   biome-js-linter/guides/js-linter/bugs.md
+    10275  08-29-2026 20:58   biome-js-linter/guides/js-linter/simplification.md
+     2008  08-29-2026 20:58   biome-js-linter/guides/js-linter/performance.md
+    13918  08-29-2026 20:58   biome-js-linter/guides/js-linter/experimental.md
+    11839  08-29-2026 20:58   biome-js-linter/guides/js-linter/style.md
+      339  08-29-2026 20:58   biome-js-linter/guides/js-linter/security.md
+        0  08-29-2026 20:58   biome-js-linter/guides/web-linter/
+    21231  08-29-2026 20:58   biome-js-linter/guides/web-linter/suspicious.md
+     3410  08-29-2026 20:58   biome-js-linter/guides/web-linter/performance.md
+     9103  08-29-2026 20:58   biome-js-linter/guides/web-linter/a11y.md
+    19009  08-29-2026 20:58   biome-js-linter/guides/web-linter/nursery.md
+    16819  08-29-2026 20:58   biome-js-linter/guides/web-linter/style.md
+    17727  08-29-2026 20:58   biome-js-linter/guides/web-linter/correctness.md
+      837  08-29-2026 20:58   biome-js-linter/guides/web-linter/security.md
+    10445  08-29-2026 20:58   biome-js-linter/guides/web-linter/complexity.md
+---------                     -------
+   167313                     20 files
+>> done: biome-js-linter.zip
+>> staging biome-linter bundle (knowledge/biome/SKILL-web-linter.md + knowledge/biome/guides)
+>> writing biome-linter.zip
+>> contents:
+Archive:  biome-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   biome-linter/
+        0  08-29-2026 20:58   biome-linter/guides/
+        0  08-29-2026 20:58   biome-linter/guides/js-linter/
+    14850  08-29-2026 20:58   biome-linter/guides/js-linter/pitfalls.md
+     9958  08-29-2026 20:58   biome-linter/guides/js-linter/bugs.md
+    10275  08-29-2026 20:58   biome-linter/guides/js-linter/simplification.md
+     2008  08-29-2026 20:58   biome-linter/guides/js-linter/performance.md
+    13918  08-29-2026 20:58   biome-linter/guides/js-linter/experimental.md
+    11839  08-29-2026 20:58   biome-linter/guides/js-linter/style.md
+      339  08-29-2026 20:58   biome-linter/guides/js-linter/security.md
+        0  08-29-2026 20:58   biome-linter/guides/web-linter/
+    21231  08-29-2026 20:58   biome-linter/guides/web-linter/suspicious.md
+     3410  08-29-2026 20:58   biome-linter/guides/web-linter/performance.md
+     9103  08-29-2026 20:58   biome-linter/guides/web-linter/a11y.md
+    19009  08-29-2026 20:58   biome-linter/guides/web-linter/nursery.md
+    16819  08-29-2026 20:58   biome-linter/guides/web-linter/style.md
+    17727  08-29-2026 20:58   biome-linter/guides/web-linter/correctness.md
+      837  08-29-2026 20:58   biome-linter/guides/web-linter/security.md
+    10445  08-29-2026 20:58   biome-linter/guides/web-linter/complexity.md
+     6152  08-29-2026 20:58   biome-linter/SKILL-web-linter.md
+---------                     -------
+   167920                     20 files
+>> done: biome-linter.zip
+>> staging collaboration-framework bundle
+>> writing collaboration-framework.zip
+>> contents:
+Archive:  collaboration-framework.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  08-29-2026 20:58   collaboration-framework/
+        0  08-29-2026 20:58   collaboration-framework/docs/
+        0  08-29-2026 20:58   collaboration-framework/docs/pm/
+     4330  08-29-2026 20:58   collaboration-framework/docs/pm/06-confirmation-protocol.md
+     5687  08-29-2026 20:58   collaboration-framework/docs/pm/03-planning-top-down.md
+     4019  08-29-2026 20:58   collaboration-framework/docs/pm/04-closing-slices.md
+     1439  08-29-2026 20:58   collaboration-framework/docs/pm/08-maintenance.md
+     3799  08-29-2026 20:58   collaboration-framework/docs/pm/07-anti-patterns.md
+     3237  08-29-2026 20:58   collaboration-framework/docs/pm/09-worked-example-odm.md
+     6579  08-29-2026 20:58   collaboration-framework/docs/pm/version-history.md
+     6968  08-29-2026 20:58   collaboration-framework/docs/pm/01-scales-of-work.md
+     5479  08-29-2026 20:58   collaboration-framework/docs/pm/05-closing-arcs.md
+     8902  08-29-2026 20:58   collaboration-framework/docs/pm/02-canonical-planning-worktree.md
+    17426  08-29-2026 20:58   collaboration-framework/docs/CODE-AUDIT.md
+    41427  08-29-2026 20:58   collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md
+    43863  08-29-2026 20:58   collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md
+     6409  08-29-2026 20:58   collaboration-framework/docs/PROJECT-MANAGEMENT.md
+     8937  08-29-2026 20:58   collaboration-framework/docs/SUBAGENT-DELEGATION-POLICY.md
+    12606  08-29-2026 20:58   collaboration-framework/docs/CONTRIBUTION-STYLE.md
+    13231  08-29-2026 20:58   collaboration-framework/docs/CLAUDE-CODE-COVERAGE.md
+    25637  08-29-2026 20:58   collaboration-framework/SKILL.md
+        0  08-29-2026 20:58   collaboration-framework/templates/
+    30313  08-29-2026 20:58   collaboration-framework/templates/LEDGER-DISCIPLINE.md
+    10089  08-29-2026 20:58   collaboration-framework/templates/CONTRIBUTION-TICKET.md
+---------                     -------
+   260377                     24 files
+>> done: collaboration-framework.zip
+package path check
+zips scanned: 12
+markdown files scanned: 171
+hard failures: 0
+warnings: 295
+explicit exceptions: 3
+skipped external URLs: 656
+parser-suppressed material: omitted by Markdown parser
+
+findings:
+warning	repo-only/provenance	docs/pm/06-confirmation-protocol.md:66	code span	sliceNN-<slug>/artifacts/	collaboration-framework/docs/pm/sliceNN-<slug>/artifacts	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/06-confirmation-protocol.md:72	code span	CLAUDE.md	collaboration-framework/docs/pm/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/06-confirmation-protocol.md:72	code span	AGENTS.md	collaboration-framework/docs/pm/AGENTS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/06-confirmation-protocol.md:75	code span	projectNN-<slug>/	collaboration-framework/docs/pm/projectNN-<slug>	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/06-confirmation-protocol.md:82	code span	CLAUDE.md	collaboration-framework/docs/pm/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/06-confirmation-protocol.md:82	code span	AGENTS.md	collaboration-framework/docs/pm/AGENTS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/08-maintenance.md:21	code span	workbench/<YYYY.MM.DD>-audit-results-<slug>.md	collaboration-framework/docs/pm/workbench/<YYYY.MM.DD>-audit-results-<slug>.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/07-anti-patterns.md:13	code span	sliceNN-<slug>/artifacts/	collaboration-framework/docs/pm/sliceNN-<slug>/artifacts	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/version-history.md:5	code span	sliceNN-<slug>/artifacts/	collaboration-framework/docs/pm/sliceNN-<slug>/artifacts	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/version-history.md:115	code span	CLAUDE.md	collaboration-framework/docs/pm/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/05-closing-arcs.md:9	code span	arcNN-<slug>/closing-report.md	collaboration-framework/docs/pm/arcNN-<slug>/closing-report.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/02-canonical-planning-worktree.md:66	code span	sliceNN-<slug>/artifacts/	collaboration-framework/docs/pm/sliceNN-<slug>/artifacts	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/02-canonical-planning-worktree.md:74	code span	projectNN-<slug>/ledger.md	collaboration-framework/docs/pm/projectNN-<slug>/ledger.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/02-canonical-planning-worktree.md:74	code span	arcNN-<slug>/ledger.md	collaboration-framework/docs/pm/arcNN-<slug>/ledger.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/02-canonical-planning-worktree.md:75	code span	sliceNN-<slug>/ledger.md	collaboration-framework/docs/pm/sliceNN-<slug>/ledger.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/02-canonical-planning-worktree.md:97	code span	sliceNN-<slug>/	collaboration-framework/docs/pm/sliceNN-<slug>	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/02-canonical-planning-worktree.md:97	code span	projectNN-<slug>/	collaboration-framework/docs/pm/projectNN-<slug>	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/pm/02-canonical-planning-worktree.md:124	code span	sliceNN-<slug>/	collaboration-framework/docs/pm/sliceNN-<slug>	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/CODE-AUDIT.md:4	code span	knowledge/<slug>/	collaboration-framework/docs/knowledge/<slug>	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	docs/CODE-AUDIT.md:24	code span	README.md	collaboration-framework/docs/README.md	-	target exists only in source clone
+warning	repo-only/provenance	docs/CODE-AUDIT.md:25	code span	CLAUDE.md	collaboration-framework/docs/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/CODE-AUDIT.md:52	code span	knowledge/<slug>/	collaboration-framework/docs/knowledge/<slug>	-	repo-only/provenance path requires explicit exception
+explicit exception	repo-only/provenance	docs/CODE-AUDIT.md:63	code span	knowledge/<slug>/SKILL*.md	collaboration-framework/docs/knowledge/<slug>/SKILL*.md	explicit-exception	placeholder for source-clone skill discovery, not a literal bundled package path
+warning	repo-only/provenance	docs/CODE-AUDIT.md:66	code span	knowledge/<slug>/guides/	collaboration-framework/docs/knowledge/<slug>/guides	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/CODE-AUDIT.md:220	code span	workbench/<DATE>-audit-index.md	collaboration-framework/docs/workbench/<DATE>-audit-index.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/CODE-AUDIT.md:225	code span	knowledge/<slug>/	collaboration-framework/docs/knowledge/<slug>	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/CODE-AUDIT.md:242	code span	workbench/<DATE>-audit-modernization-synthesis.md	collaboration-framework/docs/workbench/<DATE>-audit-modernization-synthesis.md	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	docs/CODE-AUDIT.md:347	code span	knowledge/rust/guides/11-anti-patterns.md	collaboration-framework/docs/knowledge/rust/guides/11-anti-patterns.md	-	target exists only in source clone
+warning	source-clone-reference	docs/AI-ENGINEERING-METHODOLOGY.md:320	inline link	./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md	collaboration-framework/docs/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md	-	target exists only in source clone
+warning	source-clone-reference	docs/AI-ENGINEERING-METHODOLOGY.md:320	code span	./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md	collaboration-framework/docs/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md	-	target exists only in source clone
+warning	repo-only/provenance	docs/AI-ENGINEERING-METHODOLOGY.md:430	code span	docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/	collaboration-framework/docs/docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/AI-ENGINEERING-METHODOLOGY.md:430	code span	CLAUDE.md	collaboration-framework/docs/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/PROJECT-MANAGEMENT.md:107	code span	sliceNN-<slug>/artifacts/	collaboration-framework/docs/sliceNN-<slug>/artifacts	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/SUBAGENT-DELEGATION-POLICY.md:46	code span	CLAUDE.md	collaboration-framework/docs/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/SUBAGENT-DELEGATION-POLICY.md:48	code span	CLAUDE.md	collaboration-framework/docs/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	example-project path	docs/SUBAGENT-DELEGATION-POLICY.md:58	code span	~/.claude/CLAUDE.md	collaboration-framework/docs/~/.claude/CLAUDE.md	-	example-like path requires explicit exception
+warning	repo-only/provenance	docs/SUBAGENT-DELEGATION-POLICY.md:64	code span	CLAUDE.md	collaboration-framework/docs/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/SUBAGENT-DELEGATION-POLICY.md:66	code span	CLAUDE.md	collaboration-framework/docs/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	docs/SUBAGENT-DELEGATION-POLICY.md:108	code span	crates/**/*.rs	collaboration-framework/docs/crates/**/*.rs	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	SKILL.md:346	inline link	./knowledge/	collaboration-framework/knowledge	-	target exists only in source clone
+warning	repo-only/provenance	SKILL.md:328	code span	knowledge/<slug>/	collaboration-framework/knowledge/<slug>	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:330	code span	CLAUDE.md	collaboration-framework/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:330	code span	AGENTS.md	collaboration-framework/AGENTS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:336	code span	CLAUDE.md	collaboration-framework/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:336	code span	AGENTS.md	collaboration-framework/AGENTS.md	-	repo-only/provenance path requires explicit exception
+warning	example-project path	SKILL.md:338	code span	~/.claude/CLAUDE.md	collaboration-framework/~/.claude/CLAUDE.md	-	example-like path requires explicit exception
+warning	repo-only/provenance	SKILL.md:407	code span	CLAUDE.md	collaboration-framework/CLAUDE.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:407	code span	AGENTS.md	collaboration-framework/AGENTS.md	-	repo-only/provenance path requires explicit exception
+explicit exception	repo-only/provenance	SKILL.md:439	code span	knowledge/<domain>/SKILL.md	collaboration-framework/knowledge/<domain>/SKILL.md	explicit-exception	placeholder for source-clone domain skill layout, not a literal bundled package path
+warning	repo-only/provenance	templates/LEDGER-DISCIPLINE.md:279	code span	$PROJECT_DIR/.worktrees/planning/projectNN-<slug>/arcNN-<slug>/sliceNN-<slug>/ledger.md	collaboration-framework/templates/$PROJECT_DIR/.worktrees/planning/projectNN-<slug>/arcNN-<slug>/sliceNN-<slug>/ledger.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	templates/LEDGER-DISCIPLINE.md:528	code span	sliceNN-<slug>/artifacts/	collaboration-framework/templates/sliceNN-<slug>/artifacts	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	templates/LEDGER-DISCIPLINE.md:581	code span	arcNN-<slug>/sliceNN-<slug>/ledger.md	collaboration-framework/templates/arcNN-<slug>/sliceNN-<slug>/ledger.md	-	repo-only/provenance path requires explicit exception
+warning	example-project path	guides/12-project-structure.md:530	code span	foo/mod.rs	rust-guidelines/guides/foo/mod.rs	-	example-like path requires explicit exception
+warning	example-project path	guides/12-project-structure.md:534	code span	foo/mod.rs	rust-guidelines/guides/foo/mod.rs	-	example-like path requires explicit exception
+warning	example-project path	guides/12-project-structure.md:561	code span	src/error.rs	rust-guidelines/guides/src/error.rs	-	example-like path requires explicit exception
+warning	example-project path	guides/12-project-structure.md:672	code span	tests/common/mod.rs	rust-guidelines/guides/tests/common/mod.rs	-	example-like path requires explicit exception
+warning	bundled-reference	guides/README.md:69	inline link	./14-cli-tools/09-common-pitfalls.md	rust-guidelines/guides/14-cli-tools/09-common-pitfalls.md	warning	missing referenced Rust CLI pitfalls guide remains visible for later Rust guide/package maintenance
+warning	example-project path	guides/README.md:46	code span	.cargo/config.toml	rust-guidelines/guides/.cargo/config.toml	-	example-like path requires explicit exception
+warning	example-project path	guides/14-cli-tools/05-configuration.md:205	code span	~/.config/my-tool/config.toml	rust-guidelines/guides/14-cli-tools/~/.config/my-tool/config.toml	-	example-like path requires explicit exception
+warning	parser false positive	guides/14-cli-tools/05-configuration.md:212	code span	./my-tool.toml	rust-guidelines/guides/14-cli-tools/my-tool.toml	-	code span token is not classifiable as a package path
+warning	example-project path	guides/14-cli-tools/05-configuration.md:213	code span	~/.config/my-tool/config.toml	rust-guidelines/guides/14-cli-tools/~/.config/my-tool/config.toml	-	example-like path requires explicit exception
+warning	parser false positive	guides/14-cli-tools/05-configuration.md:214	code span	/etc/my-tool/config.toml	rust-guidelines/etc/my-tool/config.toml	-	code span token is not classifiable as a package path
+warning	bundled-reference	guides/14-cli-tools/README.md:159	inline link	09-common-pitfalls.md	rust-guidelines/guides/14-cli-tools/09-common-pitfalls.md	warning	missing referenced Rust CLI pitfalls guide remains visible for later Rust guide/package maintenance
+warning	bundled-reference	guides/14-cli-tools/README.md:221	inline link	09-common-pitfalls.md#cli-49	rust-guidelines/guides/14-cli-tools/09-common-pitfalls.md	warning	missing referenced Rust CLI pitfalls guide remains visible for later Rust guide/package maintenance
+warning	bundled-reference	guides/14-cli-tools/README.md:222	inline link	09-common-pitfalls.md#cli-50	rust-guidelines/guides/14-cli-tools/09-common-pitfalls.md	warning	missing referenced Rust CLI pitfalls guide remains visible for later Rust guide/package maintenance
+warning	bundled-reference	guides/14-cli-tools/README.md:223	inline link	09-common-pitfalls.md#cli-51	rust-guidelines/guides/14-cli-tools/09-common-pitfalls.md	warning	missing referenced Rust CLI pitfalls guide remains visible for later Rust guide/package maintenance
+warning	bundled-reference	guides/14-cli-tools/README.md:224	inline link	09-common-pitfalls.md#cli-52	rust-guidelines/guides/14-cli-tools/09-common-pitfalls.md	warning	missing referenced Rust CLI pitfalls guide remains visible for later Rust guide/package maintenance
+warning	parser false positive	guides/13-documentation.md:456	inline link	Foo		-	bare identifier-style destination
+warning	example-project path	guides/15-cargo/02-cargo-build-system.md:726	code span	.cargo/config.toml	rust-guidelines/guides/15-cargo/.cargo/config.toml	-	example-like path requires explicit exception
+warning	example-project path	guides/15-cargo/06-cargo-advanced.md:118	code span	$HOME/.cargo/config.toml	rust-guidelines/guides/15-cargo/$HOME/.cargo/config.toml	-	example-like path requires explicit exception
+warning	example-project path	guides/15-cargo/06-cargo-advanced.md:118	code span	.cargo/config.toml	rust-guidelines/guides/15-cargo/.cargo/config.toml	-	example-like path requires explicit exception
+warning	example-project path	guides/15-cargo/06-cargo-advanced.md:383	code span	.cargo/config.toml	rust-guidelines/guides/15-cargo/.cargo/config.toml	-	example-like path requires explicit exception
+warning	repo-only/provenance	guides/MERGE_REPORT.md:4	code span	/Users/oubiwann/lab/oxur/oxur/rust-guides/files0*/	rust-guidelines/Users/oubiwann/lab/oxur/oxur/rust-guides/files0*	-	repo-only/provenance path requires explicit exception
+warning	parser false positive	guides/MERGE_REPORT.md:196	code span	/Users/oubiwann/lab/oxur/oxur/merge_guides.py	rust-guidelines/Users/oubiwann/lab/oxur/oxur/merge_guides.py	-	code span token is not classifiable as a package path
+warning	source-clone-reference	SKILL.md:83	code span	knowledge/rust/concept-cards/AUDIENCE.md	rust-guidelines/knowledge/rust/concept-cards/AUDIENCE.md	-	target exists only in source clone
+warning	example-project path	SKILL.md:118	code span	.cargo/config.toml	rust-guidelines/.cargo/config.toml	-	example-like path requires explicit exception
+warning	parser false positive	SKILL.md:135	code span	14-cli-tools/09-common-pitfalls.md	rust-guidelines/14-cli-tools/09-common-pitfalls.md	-	code span token is not classifiable as a package path
+warning	example-project path	SKILL.md:547	code span	src/lib.rs	rust-guidelines/src/lib.rs	-	example-like path requires explicit exception
+warning	example-project path	SKILL.md:547	code span	src/main.rs	rust-guidelines/src/main.rs	-	example-like path requires explicit exception
+warning	parser false positive	guides/11-documentation.md:567	inline link	url		-	bare identifier-style destination
+warning	parser false positive	guides/11-documentation.md:1009	inline link	url		-	bare identifier-style destination
+warning	source-clone-reference	guides/11-documentation.md:825	code span	README.md	go-guidelines/guides/README.md	-	target exists only in source clone
+warning	source-clone-reference	guides/11-documentation.md:1031	code span	README.md	go-guidelines/guides/README.md	-	target exists only in source clone
+warning	repo-only/provenance	guides/05-interfaces-methods.md:673	code span	cc-skills-golang/skills/golang-safety/references/nil-safety.md	go-guidelines/guides/cc-skills-golang/skills/golang-safety/references/nil-safety.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/05-interfaces-methods.md:673	code span	skills/golang-troubleshooting/references/common-go-bugs.md	go-guidelines/guides/skills/golang-troubleshooting/references/common-go-bugs.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/05-interfaces-methods.md:673	code span	claude-skills/references/gotchas.md	go-guidelines/guides/claude-skills/references/gotchas.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/05-interfaces-methods.md:1384	code span	jeffallan-claude-skills/skills/golang-pro/references/interfaces.md	go-guidelines/guides/jeffallan-claude-skills/skills/golang-pro/references/interfaces.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/05-interfaces-methods.md:1384	code span	jeffallan-claude-skills/skills-accepted.md	go-guidelines/guides/jeffallan-claude-skills/skills-accepted.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:27	code span	claude-skill-golang/skills/GIO_UI.md	go-guidelines/guides/claude-skill-golang/skills/GIO_UI.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:57	code span	claude-skill-golang/skills/GIO_GOTCHAS.md	go-guidelines/guides/claude-skill-golang/skills/GIO_GOTCHAS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:85	code span	claude-skill-golang/skills/GIO_GOTCHAS.md	go-guidelines/guides/claude-skill-golang/skills/GIO_GOTCHAS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:116	code span	claude-skill-golang/skills/GIO_GOTCHAS.md	go-guidelines/guides/claude-skill-golang/skills/GIO_GOTCHAS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:135	code span	claude-skill-golang/skills/GIO_GOTCHAS.md	go-guidelines/guides/claude-skill-golang/skills/GIO_GOTCHAS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:159	code span	claude-skill-golang/skills/GIO_GOTCHAS.md	go-guidelines/guides/claude-skill-golang/skills/GIO_GOTCHAS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:181	code span	claude-skill-golang/skills/GIO_GOTCHAS.md	go-guidelines/guides/claude-skill-golang/skills/GIO_GOTCHAS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:207	code span	claude-skill-golang/skills/GIO_PATTERNS.md	go-guidelines/guides/claude-skill-golang/skills/GIO_PATTERNS.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-gio-ui.md:249	code span	claude-skill-golang/skills/GIO_GOTCHAS.md	go-guidelines/guides/claude-skill-golang/skills/GIO_GOTCHAS.md	-	repo-only/provenance path requires explicit exception
+warning	example-project path	guides/07-testing.md:1509	code span	testdata/golden-result.txt	go-guidelines/guides/testdata/golden-result.txt	-	example-like path requires explicit exception
+warning	example-project path	guides/07-testing.md:1546	code span	testdata/golden-result.txt	go-guidelines/guides/testdata/golden-result.txt	-	example-like path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1185	code span	cc-skills-golang/skills/golang-performance/references/caching.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/caching.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1205	code span	cc-skills-golang/skills/golang-performance/references/memory.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/memory.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1227	code span	cc-skills-golang/skills/golang-performance/references/memory.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/memory.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1247	code span	cc-skills-golang/skills/golang-performance/references/memory.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/memory.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1268	code span	cc-skills-golang/skills/golang-performance/references/memory.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/memory.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1354	code span	cc-skills-golang/skills/golang-performance/references/cpu.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/cpu.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1380	code span	cc-skills-golang/skills/golang-performance/references/cpu.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/cpu.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1403	code span	cc-skills-golang/skills/golang-performance/references/cpu.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/cpu.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1423	code span	cc-skills-golang/skills/golang-performance/references/cpu.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/cpu.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1452	code span	cc-skills-golang/skills/golang-performance/references/cpu.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/cpu.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1479	code span	cc-skills-golang/skills/golang-performance/references/cpu.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/cpu.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1501	code span	cc-skills-golang/skills/golang-performance/references/cpu.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/cpu.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1521	code span	cc-skills-golang/skills/golang-database/references/performance.md	go-guidelines/guides/cc-skills-golang/skills/golang-database/references/performance.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1538	code span	cc-skills-golang/skills/golang-performance/references/io-networking.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/io-networking.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1568	code span	cc-skills-golang/skills/golang-performance/references/io-networking.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/io-networking.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1592	code span	cc-skills-golang/skills/golang-performance/references/io-networking.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/io-networking.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1618	code span	cc-skills-golang/skills/golang-performance/references/caching.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/caching.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-performance.md:1644	code span	cc-skills-golang/skills/golang-performance/references/runtime.md	go-guidelines/guides/cc-skills-golang/skills/golang-performance/references/runtime.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/01-core-idioms.md:1185	code span	/*	go-guidelines/*	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/04-type-design.md:1208	code span	cc-skills-golang/skills/golang-design-patterns/references/architecture.md	go-guidelines/guides/cc-skills-golang/skills/golang-design-patterns/references/architecture.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/04-type-design.md:1248	code span	cc-skills-golang/skills/golang-design-patterns/references/architecture.md	go-guidelines/guides/cc-skills-golang/skills/golang-design-patterns/references/architecture.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/04-type-design.md:1248	code span	claude-skills/references/patterns.md	go-guidelines/guides/claude-skills/references/patterns.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/04-type-design.md:1272	code span	cc-skills-golang/skills/golang-design-patterns/references/architecture.md	go-guidelines/guides/cc-skills-golang/skills/golang-design-patterns/references/architecture.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/04-type-design.md:1301	code span	cc-skills-golang/skills/golang-safety/references/nil-safety.md	go-guidelines/guides/cc-skills-golang/skills/golang-safety/references/nil-safety.md	-	repo-only/provenance path requires explicit exception
+warning	example-project path	guides/10-project-structure.md:80	code span	cmd/<binary-name>/main.go	go-guidelines/guides/cmd/<binary-name>/main.go	-	example-like path requires explicit exception
+warning	example-project path	guides/10-project-structure.md:84	code span	cmd/<name>/main.go	go-guidelines/guides/cmd/<name>/main.go	-	example-like path requires explicit exception
+warning	example-project path	guides/10-project-structure.md:694	code span	database/sql/doc.go	go-guidelines/guides/database/sql/doc.go	-	example-like path requires explicit exception
+warning	example-project path	guides/10-project-structure.md:694	code span	crypto/doc.go	go-guidelines/guides/crypto/doc.go	-	example-like path requires explicit exception
+warning	source-clone-reference	guides/10-project-structure.md:1143	code span	Makefile	go-guidelines/guides/Makefile	-	target exists only in source clone
+warning	example-project path	guides/10-project-structure.md:1256	code span	cmd/<name>/main.go	go-guidelines/guides/cmd/<name>/main.go	-	example-like path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:1846	code span	cc-skills-golang/skills/golang-security/references/injection.md	go-guidelines/guides/cc-skills-golang/skills/golang-security/references/injection.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:1871	code span	cc-skills-golang/skills/golang-database/SKILL.md	go-guidelines/guides/cc-skills-golang/skills/golang-database/SKILL.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:1893	code span	cc-skills-golang/skills/golang-security/references/cryptography.md	go-guidelines/guides/cc-skills-golang/skills/golang-security/references/cryptography.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:1912	code span	cc-skills-golang/skills/golang-security/references/cryptography.md	go-guidelines/guides/cc-skills-golang/skills/golang-security/references/cryptography.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:1937	code span	cc-skills-golang/skills/golang-security/references/cryptography.md	go-guidelines/guides/cc-skills-golang/skills/golang-security/references/cryptography.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:1958	code span	cc-skills-golang/skills/golang-security/references/cryptography.md	go-guidelines/guides/cc-skills-golang/skills/golang-security/references/cryptography.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:1991	code span	cc-skills-golang/skills/golang-security/references/filesystem.md	go-guidelines/guides/cc-skills-golang/skills/golang-security/references/filesystem.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:2022	code span	cc-skills-golang/skills/golang-security/references/architecture.md	go-guidelines/guides/cc-skills-golang/skills/golang-security/references/architecture.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:2051	code span	cc-skills-golang/skills/golang-security/references/architecture.md	go-guidelines/guides/cc-skills-golang/skills/golang-security/references/architecture.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:2071	code span	cc-skills-golang/skills/golang-troubleshooting/references/common-go-bugs.md	go-guidelines/guides/cc-skills-golang/skills/golang-troubleshooting/references/common-go-bugs.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-anti-patterns.md:2096	code span	cc-skills-golang/skills/golang-troubleshooting/references/common-go-bugs.md	go-guidelines/guides/cc-skills-golang/skills/golang-troubleshooting/references/common-go-bugs.md	-	repo-only/provenance path requires explicit exception
+explicit exception	repo-only/provenance	SKILL.md:434	code span	knowledge/go/workbench/skills-accepted.md	go-guidelines/knowledge/go/workbench/skills-accepted.md	explicit-exception	workbench provenance file is source-clone material and is intentionally not bundled
+warning	repo-only/provenance	guides/14-c-style-and-modernization.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/05-resource-management.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-project-structure-and-tooling.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/08-concurrency.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/02-api-design.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/10-expressions-and-statements.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/07-templates-and-generics.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	bundled-reference	guides/03-functions.md:704	inline link	./param-passing-normal.png	cpp-guidelines/guides/param-passing-normal.png	warning	missing C++ parameter-passing images remain visible for later asset/package-layout maintenance
+warning	bundled-reference	guides/03-functions.md:708	inline link	./param-passing-advanced.png	cpp-guidelines/guides/param-passing-advanced.png	warning	missing C++ parameter-passing images remain visible for later asset/package-layout maintenance
+warning	parser false positive	guides/03-functions.md:1756	inline link	int		-	bare identifier-style destination
+warning	repo-only/provenance	guides/03-functions.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/06-error-handling.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/04-classes-and-value-types.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/09-performance.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/15-reference-and-glossary.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/13-standard-library.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/13-standard-library.md:194	code span	vector</*char_type*/	cpp-guidelines/guides/vector</*char_type*	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/13-standard-library.md:194	code span	array</*char_type*/	cpp-guidelines/guides/array</*char_type*	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/01-core-idioms.md:5	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/guides/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:46	code span	knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	cpp-guidelines/knowledge/cpp/sources/md/cpp-core-guidelines/CppCoreGuidelines.md	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	SKILL.md:54	code span	Makefile	cpp-guidelines/Makefile	-	target exists only in source clone
+warning	repo-only/provenance	SKILL.md:81	code span	knowledge/cpp/extraction-metadata/cpp-core-guidelines-analysis.md	cpp-guidelines/knowledge/cpp/extraction-metadata/cpp-core-guidelines-analysis.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:82	code span	knowledge/cpp/tools/split_cpp_core_guidelines.py	cpp-guidelines/knowledge/cpp/tools/split_cpp_core_guidelines.py	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/11-documentation.md:44	code span	/**	javascript-deno-guidelines/**	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/11-documentation.md:44	code span	/**	javascript-deno-guidelines/**	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/11-documentation.md:749	code span	/*	javascript-deno-guidelines/*	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/11-documentation.md:749	code span	*/	javascript-deno-guidelines/guides/*	-	repo-only/provenance path requires explicit exception
+warning	bundled-reference	guides/11-documentation.md:794	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/11-documentation.md:794	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:162	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:164	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:205	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:205	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/12-deno/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:237	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/12-deno/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:258	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:347	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:378	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:657	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:658	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:659	code span	12-deno/04-publishing.md	javascript-deno-guidelines/guides/12-deno/12-deno/04-publishing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-03-task-runner.md:660	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/12-deno/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-02-testing.md:761	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-02-testing.md:877	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	repo-only/provenance	guides/12-deno/12-02-testing.md:877	code span	@std/*	javascript-deno-guidelines/guides/12-deno/@std/*	-	repo-only/provenance path requires explicit exception
+warning	bundled-reference	guides/12-deno/12-01-runtime-basics.md:416	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/12-deno/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	repo-only/provenance	guides/12-deno/12-01-runtime-basics.md:710	code span	@std/*	javascript-deno-guidelines/guides/12-deno/@std/*	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-deno/12-01-runtime-basics.md:887	code span	@std/*	javascript-deno-guidelines/guides/12-deno/@std/*	-	repo-only/provenance path requires explicit exception
+warning	bundled-reference	guides/12-deno/12-01-runtime-basics.md:923	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-01-runtime-basics.md:924	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/12-deno/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-01-runtime-basics.md:925	code span	12-deno/04-publishing.md	javascript-deno-guidelines/guides/12-deno/12-deno/04-publishing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	repo-only/provenance	guides/12-deno/12-04-publishing.md:29	code span	@std/*	javascript-deno-guidelines/guides/12-deno/@std/*	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/12-deno/12-04-publishing.md:153	code span	@std/*	javascript-deno-guidelines/guides/12-deno/@std/*	-	repo-only/provenance path requires explicit exception
+warning	bundled-reference	guides/12-deno/12-04-publishing.md:445	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-04-publishing.md:484	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/12-deno/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-04-publishing.md:612	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	repo-only/provenance	guides/12-deno/12-04-publishing.md:612	code span	@std/*	javascript-deno-guidelines/guides/12-deno/@std/*	-	repo-only/provenance path requires explicit exception
+warning	bundled-reference	guides/12-deno/12-04-publishing.md:613	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/12-deno/12-04-publishing.md:614	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/12-deno/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/02-api-design.md:985	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:36	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:84	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:110	code span	12-deno/04-publishing.md	javascript-deno-guidelines/guides/12-deno/04-publishing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:136	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:161	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:185	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:205	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:238	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:260	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:278	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:298	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:318	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:341	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:365	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:388	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:495	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:513	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:513	code span	13-biome/03-formatting.md	javascript-deno-guidelines/guides/13-biome/03-formatting.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:531	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:554	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:578	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:599	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:685	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:686	code span	12-deno/02-testing.md	javascript-deno-guidelines/guides/12-deno/02-testing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:687	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:688	code span	12-deno/04-publishing.md	javascript-deno-guidelines/guides/12-deno/04-publishing.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/14-no-node-boundary.md:689	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-02-lint-rules.md:637	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/13-biome/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-02-lint-rules.md:638	code span	13-biome/03-formatting.md	javascript-deno-guidelines/guides/13-biome/13-biome/03-formatting.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:50	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/13-biome/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:50	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/13-biome/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:296	code span	13-biome/02-lint-rules.md	javascript-deno-guidelines/guides/13-biome/13-biome/02-lint-rules.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:331	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/13-biome/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:444	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/13-biome/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:444	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/13-biome/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:478	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/13-biome/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:572	code span	13-biome/03-formatting.md	javascript-deno-guidelines/guides/13-biome/13-biome/03-formatting.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:628	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/13-biome/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:629	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/13-biome/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:630	code span	13-biome/02-lint-rules.md	javascript-deno-guidelines/guides/13-biome/13-biome/02-lint-rules.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-01-setup.md:631	code span	13-biome/03-formatting.md	javascript-deno-guidelines/guides/13-biome/13-biome/03-formatting.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-03-formatting.md:50	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/13-biome/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-03-formatting.md:51	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/13-biome/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-03-formatting.md:255	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/13-biome/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-03-formatting.md:334	code span	13-biome/02-lint-rules.md	javascript-deno-guidelines/guides/13-biome/13-biome/02-lint-rules.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-03-formatting.md:441	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/13-biome/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-03-formatting.md:442	code span	13-biome/02-lint-rules.md	javascript-deno-guidelines/guides/13-biome/13-biome/02-lint-rules.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/13-biome/13-03-formatting.md:443	code span	12-deno/03-task-runner.md	javascript-deno-guidelines/guides/13-biome/12-deno/03-task-runner.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/03-error-handling.md:938	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/07-async-concurrency.md:1114	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/05-type-discipline.md:972	code span	13-biome/02-lint-rules.md	javascript-deno-guidelines/guides/13-biome/02-lint-rules.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/05-type-discipline.md:973	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/01-core-idioms.md:951	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/10-project-structure.md:480	code span	13-biome/01-setup.md	javascript-deno-guidelines/guides/13-biome/01-setup.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	bundled-reference	guides/10-project-structure.md:794	code span	12-deno/01-runtime-basics.md	javascript-deno-guidelines/guides/12-deno/01-runtime-basics.md	warning	JavaScript/Deno guide-internal shorthand remains visible for later guide path harmonisation
+warning	repo-only/provenance	SKILL.md:370	code span	/**	javascript-deno-guidelines/**	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:28	code span	tools/lint_examples.py	erlang-guidelines/tools/lint_examples.py	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:134	code span	knowledge/erlang/concept-cards/<source-slug>/	erlang-guidelines/knowledge/erlang/concept-cards/<source-slug>	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:136	code span	knowledge/erlang/tools/lint_examples.py	erlang-guidelines/knowledge/erlang/tools/lint_examples.py	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:137	code span	knowledge/erlang/workbench/PLAN.md	erlang-guidelines/knowledge/erlang/workbench/PLAN.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:281	code span	tools/lint_examples.py	erlang-guidelines/tools/lint_examples.py	-	repo-only/provenance path requires explicit exception
+warning	example-project path	guides/01-cobalt-static-site-generation.md:742	code span	_data/animals/dogs.yml	cobalt-guidelines/guides/_data/animals/dogs.yml	-	example-like path requires explicit exception
+warning	parser false positive	SKILL.md:7	code span	cobalt-org/cobalt.rs	cobalt-guidelines/cobalt-org/cobalt.rs	-	code span token is not classifiable as a package path
+warning	repo-only/provenance	SKILL.md:105	code span	knowledge/cobalt/sources/html/liquid*/	cobalt-guidelines/knowledge/cobalt/sources/html/liquid*	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	SKILL.md:123	code span	concept-cards/cobalt/installation.md	cobalt-guidelines/concept-cards/cobalt/installation.md	-	target exists only in source clone
+warning	repo-only/provenance	SKILL.md:124	code span	concept-cards/cobalt/{page,post,frontmatter,permalink-templates,pretty-urls}.md	cobalt-guidelines/concept-cards/cobalt/{page,post,frontmatter,permalink-templates,pretty-urls}.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:125	code span	concept-cards/cobalt/{liquid-template-language,output-tags,logic-tags,string-filters,array-filters,for-block,if-block,unless-block,case-block,assign-tag,capture-block,include}.md	cobalt-guidelines/concept-cards/cobalt/{liquid-template-language,output-tags,logic-tags,string-filters,array-filters,for-block,if-block,unless-block,case-block,assign-tag,capture-block,include}.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:126	code span	concept-cards/cobalt/{layout,layouts-directory,layout-field,includes-directory,include}.md	cobalt-guidelines/concept-cards/cobalt/{layout,layouts-directory,layout-field,includes-directory,include}.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:127	code span	concept-cards/cobalt/{cobalt-configuration-file,site-options,source-directory,destination-directory,build-options}.md	cobalt-guidelines/concept-cards/cobalt/{cobalt-configuration-file,site-options,source-directory,destination-directory,build-options}.md	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	SKILL.md:128	code span	concept-cards/cobalt/rss-feed.md	cobalt-guidelines/concept-cards/cobalt/rss-feed.md	-	target exists only in source clone
+warning	repo-only/provenance	SKILL.md:129	code span	concept-cards/cobalt/{pagination,pagination-include-types,paginator-variable}.md	cobalt-guidelines/concept-cards/cobalt/{pagination,pagination-include-types,paginator-variable}.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:130	code span	concept-cards/cobalt/{syntax-highlighting,sass-scss-support}.md	cobalt-guidelines/concept-cards/cobalt/{syntax-highlighting,sass-scss-support}.md	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	SKILL.md:131	code span	concept-cards/cobalt/cobalt-debug.md	cobalt-guidelines/concept-cards/cobalt/cobalt-debug.md	-	target exists only in source clone
+warning	repo-only/provenance	SKILL.md:132	code span	concept-cards/cobalt/{deployment-github-pages,deployment-gitlab-ci,self-hosted-deployment}.md	cobalt-guidelines/concept-cards/cobalt/{deployment-github-pages,deployment-gitlab-ci,self-hosted-deployment}.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:133	code span	concept-cards/cobalt/{cobalt-config-struct,liquid-parser,liquid-template-object,liquid-value-system,objectview-valueview-traits}.md	cobalt-guidelines/concept-cards/cobalt/{cobalt-config-struct,liquid-parser,liquid-template-object,liquid-value-system,objectview-valueview-traits}.md	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	SKILL.md:133	code span	sources/html/liquid*/	cobalt-guidelines/sources/html/liquid*	-	repo-only/provenance path requires explicit exception
+warning	example-project path	SKILL.md:151	code span	_defaults/posts.md	cobalt-guidelines/_defaults/posts.md	-	example-like path requires explicit exception
+warning	repo-only/provenance	SKILL.md:236	code span	sources/html/liquid*/	cobalt-guidelines/sources/html/liquid*	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	SKILL.md:489	code span	.github/workflows/pages.yml	cobalt-guidelines/.github/workflows/pages.yml	-	target exists only in source clone
+warning	repo-only/provenance	SKILL.md:558	code span	sources/html/liquid*/	cobalt-guidelines/sources/html/liquid*	-	repo-only/provenance path requires explicit exception
+warning	source-clone-reference	guides/colour.md:574	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/colour.md:574	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/foundations-of-design.md:640	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/foundations-of-design.md:640	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/breaking-the-layout-monoculture.md:589	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/breaking-the-layout-monoculture.md:589	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/design.md:418	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/design.md:418	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/type.md:492	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/type.md:492	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/layout.md:983	inline link	../../	.	-	target resolves only from source-clone context
+warning	source-clone-reference	guides/layout.md:983	inline link	../../	.	-	target resolves only from source-clone context
+warning	repo-only/provenance	guides/reference.md:428	code span	@container/{name}	tailwindcss/guides/@container/{name}	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/reference.md:429	code span	@sm/{name}:	tailwindcss/guides/@sm/{name}:	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/reference.md:437	code span	group/{name}	tailwindcss/guides/group/{name}	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/reference.md:438	code span	group-hover/{name}:	tailwindcss/guides/group-hover/{name}:	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/reference.md:442	code span	peer/{name}	tailwindcss/guides/peer/{name}	-	repo-only/provenance path requires explicit exception
+warning	repo-only/provenance	guides/reference.md:443	code span	peer-checked/{name}:	tailwindcss/guides/peer-checked/{name}:	-	repo-only/provenance path requires explicit exception

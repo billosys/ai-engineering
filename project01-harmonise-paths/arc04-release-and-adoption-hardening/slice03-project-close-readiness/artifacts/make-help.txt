@@ -1,0 +1,22 @@
+Packaging targets:
+  make collab-framework   -> collaboration-framework.zip (SKILL.md + framework docs)
+  make rust               -> rust-guidelines.zip
+  make go                 -> go-guidelines.zip
+  make cpp                -> cpp-guidelines.zip
+  make js                 -> javascript-deno-guidelines.zip
+  make erlang             -> erlang-guidelines.zip
+  make cobalt             -> cobalt-guidelines.zip
+  make design             -> visual-design-system.zip
+  make tailwindcss        -> tailwindcss.zip
+  make deno               -> deno-js-linter.zip
+  make biome              -> biome-js-linter.zip AND biome-linter.zip
+  make skills             -> all per-domain zips
+  make all                -> skills + collab-framework
+  make check-skills       -> validate every SKILL.md description length
+  make ccdp               -> assemble the CCDP protocol document
+  make ccdp-package       -> build ccdp.zip (protocol package)
+  make check-ccdp-package -> validate ccdp.zip zipped and unzipped
+  make install            -> build all zips and install them into /Users/oubiwann/.agents/skills
+  make uninstall          -> remove installed skills from /Users/oubiwann/.agents/skills
+  make clean              -> remove build/ and all *.zip
+  make check-package-paths -> validate Markdown paths inside generated zips
