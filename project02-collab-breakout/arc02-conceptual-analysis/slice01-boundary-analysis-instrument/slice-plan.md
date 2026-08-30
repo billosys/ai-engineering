@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc02-conceptual-analysis
 slice: slice01-boundary-analysis-instrument
-status: open
+status: proposed-done
 opened-on: 2026-08-30
+proposed-done-on: 2026-08-30
 artifact-home: artifacts/
 depends-on:
   - arc01-framework-inventory:closed
