@@ -20,11 +20,12 @@ and report the blocker. Do not infer closure from conversation memory.
 
 ## Work
 
-Create these analysis artifacts in this slice directory:
+Create these analysis artifacts under this slice's standard artifact home,
+`artifacts/`:
 
-- `framework-source-inventory.md`
-- `source-to-concept-map.md`
-- `project01-path-contract-notes.md`
+- `artifacts/framework-source-inventory.md`
+- `artifacts/source-to-concept-map.md`
+- `artifacts/project01-path-contract-notes.md`
 
 Use actual source files from
 `/Users/oubiwann/lab/billosys/ai-engineering`. Do not edit source files.

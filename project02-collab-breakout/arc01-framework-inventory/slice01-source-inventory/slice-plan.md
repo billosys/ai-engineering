@@ -4,7 +4,9 @@
 project: project02-collab-breakout
 arc: arc01-framework-inventory
 slice: slice01-source-inventory
-status: planned
+status: proposed-done
+proposed-done-on: 2026-08-29
+artifact-home: artifacts/
 depends-on:
   - project01-harmonise-paths:closed-and-completely-verified
 blocks:
@@ -44,10 +46,10 @@ must wait so it can consume Project 01's accepted source/package path contract.
   - `templates/CONTRIBUTION-TICKET.md`
 - Record each source's current role, major sections, load moments, standalone
   usefulness, dependencies, and packaging/path assumptions.
-- Produce `framework-source-inventory.md` in this slice directory.
-- Produce `source-to-concept-map.md` in this slice directory.
-- Produce `project01-path-contract-notes.md` in this slice directory after
-  Project 01 closes.
+- Produce `artifacts/framework-source-inventory.md`.
+- Produce `artifacts/source-to-concept-map.md`.
+- Produce `artifacts/project01-path-contract-notes.md` after Project 01
+  closes.
 
 ## Out of Scope
 
@@ -76,8 +78,8 @@ use `rg`/`find` over both the source checkout and this slice directory.
 
 ## Planned Outputs
 
-- `framework-source-inventory.md`
-- `source-to-concept-map.md`
-- `project01-path-contract-notes.md`
+- `artifacts/framework-source-inventory.md`
+- `artifacts/source-to-concept-map.md`
+- `artifacts/project01-path-contract-notes.md`
 - Slice close set, when executed: `closing-report.md` and
   `cdc-verification.md`

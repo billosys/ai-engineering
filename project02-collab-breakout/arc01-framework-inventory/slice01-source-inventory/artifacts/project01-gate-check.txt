@@ -1,0 +1,287 @@
+../../../project01-harmonise-paths/closing-report.md:5:status: closed
+../../../project01-harmonise-paths/closing-report.md:20:DoD verdict: met.
+../../../project01-harmonise-paths/project-plan.md:5:status: closed
+../../../project01-harmonise-paths/project-plan.md:155:Slice 01 marked verified/closed and Slice 02 opened under Arc 01. The project
+../../../project01-harmonise-paths/project-plan.md:161:Slice 02 marked verified/closed under Arc 01. Slice 03 is ready to open from
+../../../project01-harmonise-paths/project-plan.md:171:Slice 03 marked verified/closed. Arc 01 is ready for formal close before Arc
+../../../project01-harmonise-paths/project-plan.md:182:Arc 02 Slice 01 marked verified/closed. The slice burned the targeted
+../../../project01-harmonise-paths/project-plan.md:196:Arc 02 Slice 02 marked verified/closed. The slice burned collaboration-framework
+../../../project01-harmonise-paths/project-plan.md:209:Arc 02 Slice 03 marked verified/closed. The slice burned targeted mature
+../../../project01-harmonise-paths/project-plan.md:222:Arc 02 Slice 04 marked verified/closed, and Arc 02 closed with composition
+../../../project01-harmonise-paths/project-plan.md:234:Arc 03 Slice 01 marked verified/closed. The CCDP distribution inventory found
+../../../project01-harmonise-paths/project-plan.md:248:Arc 03 Slice 02 marked verified/closed. The accepted CCDP package contract
+../../../project01-harmonise-paths/project-plan.md:261:Arc 03 Slice 03 marked verified/closed. CCDP now has `make ccdp-package`,
+../../../project01-harmonise-paths/project-plan.md:274:Arc 03 Slice 04 marked verified/closed. CCDP reader guidance now points
+../../../project01-harmonise-paths/project-plan.md:293:Arc 04 Slice 01 marked verified/closed. The audit found no release-blocking
+../../../project01-harmonise-paths/project-plan.md:299:Arc 04 Slice 02 marked verified/closed. Its no-repair decision held under
+../../../project01-harmonise-paths/project-plan.md:305:Arc 04 Slice 03 marked verified/closed, Arc 04 closed with composition verdict
+../../../project01-harmonise-paths/project-plan.md:306:delivered, and Project 01 closed with DoD verdict met. The final acceptance
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:5:status: closed
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:37:Status: verified/closed.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:49:Status: verified/closed.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:57:Status: verified/closed.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:65:Status: verified/closed.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:90:Slice 01 marked verified/closed by CDC. The inventory confirmed that workbench
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:104:Slice 02 marked verified/closed by CDC. The accepted contract selects
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:119:Slice 03 marked verified/closed by CDC. The package target, package checker,
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/arc-plan.md:133:Slice 04 marked verified/closed by CDC. CCDP reader guidance now points
+../../../project01-harmonise-paths/arc01-distribution-path-contract/ledger.md:12:| A-5 | Slice 02 is either opened from the Slice 01 findings or explicitly deferred with re-entry conditions. | Inspect this arc plan's Version History after Slice 01 close. | correctness | arc-plan | done | attested: `arc-plan.md` v1.1 marks Slice 01 verified/closed, opens `slice02-contract-gate-design`, and carries forward the Slice 01 CDC parser/evidence caveats. | Bubble-up disposition row. |
+../../../project01-harmonise-paths/arc01-distribution-path-contract/ledger.md:13:| A-6 | Slice 03 is opened from the verified Slice 02 design with an explicit artifact home for durable implementation evidence. | Inspect `arc-plan.md` v1.3 and `slice03-package-path-gate-implementation/slice-plan.md`. | correctness | arc-plan | done | attested: Slice 03 open set names `slice03-package-path-gate-implementation/artifacts/` for durable slice-produced evidence and scopes implementation to the accepted Slice 02 gate design. | Bubble-up disposition row. |
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cc-prompt.md:26:find a concrete defect that contradicts the verified Slice 01 audit. If that
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/closing-report.md:13:Slice 02 converted the verified Slice 01 release-surface audit into an explicit
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/closing-report.md:18:Slice 01's CDC-verified no-repair recommendation.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/closing-report.md:51:and explicit external URL handling. It references the verified 145 actionable
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/ledger.md:5:| F-1 | No-repair decision is grounded in verified Slice 01 evidence. | Inspect `artifacts/no-repair-decision.md` and `../slice01-release-surface-audit/cdc-verification.md`. | serious | slice01 bubble-up | done | Attested: `artifacts/no-repair-decision.md` cites Slice 01 CDC verification and current Slice 02 command reproduction; no source repair condition fired. | Decision row. |
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/ledger.md:5:| F-1 | The design report consumes the Slice 01 audit, closing report, and CDC verification, including the parser false-positive and filtered-evidence caveats. | `rg -n "Slice 01|parser false positive|filtered CSV|external URL|145" project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/2026.08.29-contract-gate-design.md` | correctness | slice-plan | done | attested: design report has "Inputs Consumed", carries forward Slice 01 CDC constraints for raw regex, filtered CSV, and external URL reporting, and cites the verified 145 actionable misses. | |
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/package-decision-matrix.md:12:| Workbench/prompts | Exclude by default | Include current on-disk material | Slice 01 verified zero tracked files under workbench/prompts and local absolute paths in prompt material. |
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/slice-plan.md:18:Convert the verified release-surface audit into an explicit no-repair decision
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/slice-plan.md:22:it discovers a concrete defect that contradicts Slice 01's verified audit. If
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/cdc-verification.md:7:verified-by: CDC
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/cdc-verification.md:8:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/cdc-verification.md:10:status: verified
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/cdc-verification.md:15:Slice 02 is verified. The committed close set contains the slice-local design
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/cdc-verification.md:59:verification. It cites the verified 145 actionable misses and carries forward
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/cdc-verification.md:149:arc plan only to record Slice 02 as verified/closed and Slice 03 as ready, not
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/slice-plan.md:16:This slice turns the verified Slice 01 package path contract into an
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice02-contract-gate-design/slice-plan.md:62:- design only, based on the verified Slice 01 audit and CDC verification;
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice01-package-path-audit/cdc-verification.md:7:verified-by: CDC
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice01-package-path-audit/cdc-verification.md:8:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice01-package-path-audit/cdc-verification.md:10:status: verified
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice01-package-path-audit/cdc-verification.md:15:Slice 01 is verified. The committed close set contains the slice-local audit
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/artifacts/no-repair-decision.md:9:Slice 01 was CDC-verified closed. CDC agreed with the Slice 01 audit verdict:
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:17:CDC verified Arc 03 Slice 01 as closed.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:68:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:76:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:85:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:95:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:106:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:116:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:125:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:133:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md:140:Status: verified done.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:6:status: closed
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:24:- Slice 01 produced and CDC-verified the package path audit across all 12
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:26:- Slice 02 produced and CDC-verified the contract gate design.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:27:- Slice 03 implemented and CDC-verified `make check-package-paths` against
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:31:The implementation gate is verified as a source working-tree diff, not as a
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:39:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:51:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:65:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:115:Slice 02 was opened from Slice 01 findings and then CDC-verified.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/closing-report.md:121:Slice 03 was opened from the verified Slice 02 design and used the default
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/artifacts/ccdp-reference-context.txt:442:protocols/ccdp/composite-cognition-dispatch-protocol.md:845:**`source_id`** (string, REQUIRED): The identifier of the component that originated this message. For Requests from external clients, this is the client identifier. For Responses, this is the Service identifier. For forwarded messages, this is the originator, not the Dispatcher. When the Dispatcher forwards a message, it does not overwrite `source_id`. The Dispatcher's identity is recorded in the `audit.dispatcher_id` field (Section 7.5), not in `source_id`. This means `source_id` always identifies the originator, and `audit.dispatcher_id` identifies the intermediary. If future extensions require explicit sender/forwarder identification, they SHOULD use metadata keys (e.g., `org.ccdp.forwarder_id`) rather than overloading `source_id`. For signature verification and authorization, implementations MUST use the Authenticated Sender identity established by the transport layer (Section 4, Section 15.2), not the `source_id` payload field. The `source_id` field is an unauthenticated originator claim; the Authenticated Sender is cryptographically verified.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/artifacts/ccdp-reference-context.txt:496:protocols/ccdp/composite-cognition-dispatch-protocol.md:1735:**The specification-recursion problem [Vericoding; Goodhart 1975]:** Formal verification relocates error rather than eliminating it. A proof guarantees code-meets-spec but is silent on whether the spec captures intent. Empirically, LLMs game weak specifications into vacuous proofs (~9% of "verified" specs in the Vericoding benchmark were too weak). CCDP addresses this by requiring the `scope` field on FORMALLY_VERIFIED grades — binding the grade to a specific specification whose own provenance is separately trackable.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/artifacts/ccdp-reference-context.txt:819:protocols/ccdp/src/10-provenance-grades.md:11:**The specification-recursion problem [Vericoding; Goodhart 1975]:** Formal verification relocates error rather than eliminating it. A proof guarantees code-meets-spec but is silent on whether the spec captures intent. Empirically, LLMs game weak specifications into vacuous proofs (~9% of "verified" specs in the Vericoding benchmark were too weak). CCDP addresses this by requiring the `scope` field on FORMALLY_VERIFIED grades — binding the grade to a specific specification whose own provenance is separately trackable.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/artifacts/ccdp-reference-context.txt:861:protocols/ccdp/src/07-message-format.md:87:**`source_id`** (string, REQUIRED): The identifier of the component that originated this message. For Requests from external clients, this is the client identifier. For Responses, this is the Service identifier. For forwarded messages, this is the originator, not the Dispatcher. When the Dispatcher forwards a message, it does not overwrite `source_id`. The Dispatcher's identity is recorded in the `audit.dispatcher_id` field (Section 7.5), not in `source_id`. This means `source_id` always identifies the originator, and `audit.dispatcher_id` identifies the intermediary. If future extensions require explicit sender/forwarder identification, they SHOULD use metadata keys (e.g., `org.ccdp.forwarder_id`) rather than overloading `source_id`. For signature verification and authorization, implementations MUST use the Authenticated Sender identity established by the transport layer (Section 4, Section 15.2), not the `source_id` payload field. The `source_id` field is an unauthenticated originator claim; the Authenticated Sender is cryptographically verified.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/ccdp-package-contract-design.md:5:This design derives from the CDC-verified Slice 01 inventory:
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/artifacts/ccdp-package-contract-design.md:7:- `slice01-ccdp-distribution-inventory/cdc-verification.md` verified Slice 01
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:17:CDC verified Arc 03 Slice 04 as closed.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:85:`b5e55c5`. CDC verified the committed state and both worktrees remained clean
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:93:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:104:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:113:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:122:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:129:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:137:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:144:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:151:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:160:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md:169:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:6:status: closed
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:47:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:59:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:72:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:84:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:241:- v1.1: Slice 01 verified/closed; inventory confirmed excluded provenance
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:244:- v1.3: Slice 02 verified/closed; accepted `ccdp.zip`, root `ccdp/`, and
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:247:- v1.5: Slice 03 verified/closed; package/check targets, validator, freshness
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/closing-report.md:250:- v1.7: Slice 04 verified/closed; source and package entrypoint guidance
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/ledger.md:9:| A-1 | Slice 01 closes with a current CCDP distribution inventory and package-risk map. | `test -f project01-harmonise-paths/arc03-ccdp-distribution-package/slice01-ccdp-distribution-inventory/cdc-verification.md` | correctness | arc-plan | done | `slice01-ccdp-distribution-inventory/cdc-verification.md` exists; CDC verified Slice 01 closed on 2026-08-29. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/ledger.md:15:| A-7 | Slice 02 closes with a concrete CCDP package contract and implementation inputs. | `test -f project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md` | correctness | slice02 bubble-up | done | `slice02-ccdp-package-contract-design/cdc-verification.md` exists; CDC verified Slice 02 closed on 2026-08-29. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/ledger.md:17:| A-9 | Slice 03 closes with a generated CCDP package target and validator. | `test -f project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md` | correctness | slice03 bubble-up | done | `slice03-ccdp-package-implementation/cdc-verification.md` exists; CDC verified Slice 03 closed on 2026-08-29. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/ledger.md:19:| A-11 | Slice 04 closes with CDC verification or an explicit operator-accepted equivalent. | `test -f project01-harmonise-paths/arc03-ccdp-distribution-package/slice04-ccdp-reader-guidance/cdc-verification.md` | correctness | slice04 bubble-up | done | `slice04-ccdp-reader-guidance/cdc-verification.md` exists; CDC verified Slice 04 closed on 2026-08-29. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/ledger.md:8:| A-1 | Slice 01 closes with CDC verification or an explicit operator-accepted equivalent. | `test -f project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md` | correctness | arc-plan | done | `slice01-tooling-entrypoint-links/cdc-verification.md` exists; CDC verified Slice 01 closed on 2026-08-29. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/ledger.md:13:| A-6 | Slice 02 closes with CDC verification or an explicit operator-accepted equivalent. | `test -f project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md` | correctness | slice02 bubble-up | done | `slice02-collaboration-framework-links/cdc-verification.md` exists; CDC verified Slice 02 closed on 2026-08-29. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/ledger.md:17:| A-10 | Slice 03 closes with CDC verification or an explicit operator-accepted equivalent. | `test -f project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md` | correctness | slice03 bubble-up | done | `slice03-mature-entrypoint-staging-transforms/cdc-verification.md` exists; CDC verified Slice 03 closed on 2026-08-29. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/ledger.md:21:| A-14 | Slice 04 closes with CDC verification or an explicit operator-accepted equivalent. | `test -f project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md` | correctness | slice04 bubble-up | done | `slice04-warning-policy-tightening/cdc-verification.md` exists; CDC verified Slice 04 closed on 2026-08-29. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:5:status: closed
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:35:Status: verified/closed.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:52:Status: verified/closed.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:61:Status: verified/closed.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:69:Status: verified/closed.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:94:Slice 01 marked verified/closed by CDC. The slice burned targeted
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:108:Slice 02 marked verified/closed by CDC. Framework `bundled-reference` warnings
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:122:Slice 03 marked verified/closed by CDC. Targeted mature entrypoint
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/arc-plan.md:136:Slice 04 marked verified/closed by CDC. The five stale `transitional-warning`
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:17:CDC verified Arc 02 Slice 02 as closed.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:82:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:90:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:99:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:117:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:126:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:134:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:140:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:155:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice02-collaboration-framework-links/cdc-verification.md:162:Status: verified done.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice03-package-path-gate-implementation/cdc-verification.md:7:verified-by: CDC
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice03-package-path-gate-implementation/cdc-verification.md:8:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice03-package-path-gate-implementation/cdc-verification.md:11:status: verified
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice03-package-path-gate-implementation/cdc-verification.md:16:Slice 03 is verified against the current implementation working-tree diff.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/slice03-package-path-gate-implementation/cdc-verification.md:183:close should record that the source implementation was verified as a
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cc-prompt.md:29:verified as an implementation working-tree diff. Preserve the current
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:17:CDC verified Arc 03 Slice 02 as closed.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:52:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:61:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:69:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:79:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:89:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:99:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:109:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:118:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:125:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice02-ccdp-package-contract-design/cdc-verification.md:133:Status: verified done.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:5:status: closed
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:34:Status: verified/closed.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:43:Outcome: verified by CDC on 2026-08-29. The audit found 145 actionable
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:51:Status: verified/closed.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:53:Scope: convert the verified Slice 01 contract into concrete validation
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:64:Outcome: verified by CDC on 2026-08-29. The design selects generated zips as
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:72:Status: verified/closed.
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:83:Outcome: verified by CDC on 2026-08-29 against the implementation working-tree
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:104:Slice 01 marked verified/closed from CDC verification. Slice 02 opened as a
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:110:Slice 02 marked verified/closed from CDC verification. Slice 03 marked ready,
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:117:Slice 03 opened from the verified Slice 02 gate design. The slice records the
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:124:Slice 03 marked verified/closed from CDC verification. Arc 01 is ready for
+../../../project01-harmonise-paths/arc01-distribution-path-contract/arc-plan.md:125:formal arc close; the gate is implemented, but the verified source changes are
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:17:CDC verified Arc 04 Slice 02 as closed.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:85:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:93:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:102:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:111:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:119:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:128:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:139:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice02-acceptance-prep-no-repair/cdc-verification.md:148:slice: Slice 02 should be marked verified/closed, and Slice 03 should be
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/ledger.md:9:| A-1 | Slice 01 closes with a current release/adoption surface audit and repair recommendation. | `test -f project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md` | correctness | arc-plan | done | `slice01-release-surface-audit/cdc-verification.md` exists; CDC verified Slice 01 closed on 2026-08-29 and agreed no source repair is required. | Children-closed row; evidence strength reproduced at slice scale. |
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:17:CDC verified Arc 03 Slice 03 as closed.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:73:`28d1001`. CDC verified the committed state and the source checkout remained
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:80:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:88:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:96:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:103:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:112:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:121:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:130:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:137:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:145:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:152:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:160:Status: verified done.
+../../../project01-harmonise-paths/arc03-ccdp-distribution-package/slice03-ccdp-package-implementation/cdc-verification.md:169:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/closing-report.md:6:status: closed
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/closing-report.md:42:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/closing-report.md:50:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/closing-report.md:58:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/closing-report.md:173:- v1.1: Slice 01 verified/closed; no release-blocking source gap found, so
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/closing-report.md:175:- v1.2: Slice 02 verified/closed; no-repair held under reproduced gates, so
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/closing-report.md:177:- v1.3: Slice 03 verified/closed; final acceptance evidence reproduced, so
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/slice-plan.md:26:source gap. Slice 02 converted that finding into a CDC-verified no-repair
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:17:CDC verified Arc 02 Slice 04 as closed.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:76:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:86:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:94:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:102:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:110:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:119:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:126:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:133:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:142:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice04-warning-policy-tightening/cdc-verification.md:149:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:17:CDC verified Arc 02 Slice 01 as closed.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:78:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:86:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:95:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:102:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:109:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:115:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:135:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice01-tooling-entrypoint-links/cdc-verification.md:143:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:6:status: closed
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:46:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:57:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:70:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:82:Outcome: delivered and CDC-verified.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:253:- v1.1: Slice 01 verified/closed; targeted tooling/simple entrypoint warnings
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:257:- v1.3: Slice 02 verified/closed; framework `bundled-reference` warnings
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:261:- v1.5: Slice 03 verified/closed; mature entrypoint warnings burned down from
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/closing-report.md:264:- v1.7: Slice 04 verified/closed; stale transitional rows converted into
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:17:CDC verified Arc 02 Slice 03 as closed.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:75:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:84:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:98:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:107:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:117:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:127:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:135:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:142:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:155:Status: verified done.
+../../../project01-harmonise-paths/arc02-skill-bundle-harmonisation/slice03-mature-entrypoint-staging-transforms/cdc-verification.md:162:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/arc-plan.md:5:status: closed
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/arc-plan.md:38:Status: verified/closed.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/arc-plan.md:50:Status: verified/closed.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/arc-plan.md:52:Scope: record the CDC-verified no-repair decision from Slice 01, select the
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/arc-plan.md:59:Status: verified/closed.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/arc-plan.md:114:Slice 01 marked verified/closed by CDC. The audit found no release-blocking
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/arc-plan.md:120:Slice 02 marked verified/closed by CDC. The no-repair decision held under
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/arc-plan.md:126:Slice 03 marked verified/closed by CDC. The final acceptance command set
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:17:CDC verified Arc 04 Slice 01 as closed.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:85:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:95:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:105:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:113:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:122:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:131:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:139:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice01-release-surface-audit/cdc-verification.md:146:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:7:verified-on: 2026-08-29
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:8:verified-by: CDC
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:9:status: verified-closed
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:17:CDC verified Arc 04 Slice 03 as closed.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:79:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:87:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:95:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:105:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:114:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:125:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:132:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:140:Status: verified done.
+../../../project01-harmonise-paths/arc04-release-and-adoption-hardening/slice03-project-close-readiness/cdc-verification.md:148:Status: verified done.
