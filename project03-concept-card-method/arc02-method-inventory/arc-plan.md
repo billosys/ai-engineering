@@ -46,7 +46,7 @@ Durable synthesis outputs belong under the slice-local `artifacts/` directory.
 
 Directory: `slice02-v40-gap-analysis`
 
-Status: open.
+Status: verified-closed on 2026-08-30.
 
 Scope: compare the verified Slice01 baseline inventory against Project03's
 v4.0 target concerns: evidence/provenance grading, independent verification,
@@ -69,7 +69,7 @@ Expected scope: synthesize the baseline inventory and gap analysis into the
 Arc02 close input for Arc03: what v3.2 keeps, what v4.0 must change, what
 requires operator choice, and what remains out of scope.
 
-Detailed planning is deferred until Slice02 closes.
+Detailed planning can proceed after Slice02 CDC verification.
 
 ## Dependencies
 
@@ -109,3 +109,9 @@ Slice02 opened for source-backed v4.0 gap analysis. The slice must separate
 carry-forward items, minor cleanups, architectural changes, operator decisions,
 and deferrals without designing the Arc03 conceptual model or Arc04 skill
 layout.
+
+### v1.4 - 2026-08-30
+
+Slice02 marked verified-closed after CDC reproduced all seven slice ledger
+rows. Slice03 planning can proceed against the existing Arc02 sequence; no
+scope or sequencing change was required.
