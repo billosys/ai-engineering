@@ -3,11 +3,11 @@
 ```yaml
 project: project02-collab-breakout
 arc: arc01-framework-inventory
-status: active
+status: closed
 depends-on:
   - project01-harmonise-paths:closed-and-completely-verified
 blocks:
-  - arc02-conceptual-analysis
+  - arc02-conceptual-analysis:unblocked-after-project03-review-pause
 related:
   - ../../project01-harmonise-paths
   - /Users/oubiwann/lab/billosys/ai-engineering/SKILL.md
@@ -135,3 +135,10 @@ non-final Arc 02 conceptual-analysis inputs.
 Slice 03 marked verified/closed by CDC. The slice delivered the Arc 01
 synthesis, candidate-component inputs, and Arc 02 question register needed for
 formal Arc 01 close. No remediation slice is required before Arc 02 planning.
+
+### v1.6 - 2026-08-30
+
+Arc 01 formally closed after arc-scale composition verification. The three
+verified slices compose into the promised inventory/problem-map evidence base;
+Arc 02 remains paused until the operator-requested Project03 concept-card
+boundary aid is reviewed.
