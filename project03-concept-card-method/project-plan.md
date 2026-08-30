@@ -99,26 +99,26 @@ Slices:
 
 ### Arc 02: Method Inventory and Gap Analysis
 
-Status: active.
+Status: closed on 2026-08-30.
 
 Expected capability: inventory the v3.2 concept-card baseline docs from actual
 files, map their schema, workflow, validation, and re-extraction mechanics,
 and identify the gaps that make the next method revision a v4.0 change rather
 than a v3.3 cleanup.
 
-Detailed arc planning is open. Slice01 is opened to preserve the v3.2 baseline
-source snapshots and pre-Project03 assessment memo, then produce the baseline
-source inventory.
+Closed with composition verdict `delivered`. The arc preserved and inventoried
+the v3.2 baseline, identified v4.0 gaps, and left bounded inputs for Arc03.
 
 ### Arc 03: Conceptual Model
 
-Status: placeholder.
+Status: active.
 
 Expected capability: define the ontology of the method: concept cards, claims,
 source spans, evidence grades, relationships, competency questions, extraction
 runs, verifier roles, reconciliation, and memory admission for the v4.0 method.
 
-Detailed arc planning is deferred until Arc 02 closes.
+Detailed arc planning is open. Slice01 is opened to define construct
+boundaries before evidence/lifecycle and graph/CQ/run semantics are modeled.
 
 ### Arc 04: Skill Architecture
 
@@ -141,10 +141,9 @@ Detailed arc planning is deferred until Arc 04 closes.
 
 ## Current Status
 
-Project03 is open for planning. Arc01 is closed. Arc02 is active with Slice01,
-Slice02, and Slice03 verified-closed; Arc02 is ready for formal arc close.
-Project03 remains planning-only until an implementation arc explicitly
-authorizes source edits.
+Project03 is open for planning. Arc01 and Arc02 are closed. Arc03 is active
+with Slice01 open for construct-boundary modeling. Project03 remains
+planning-only until an implementation arc explicitly authorizes source edits.
 
 ## Version History
 
@@ -218,3 +217,10 @@ Arc03 conceptual-model input packet.
 Arc02 Slice03 marked verified-closed after CDC reproduced all seven slice
 ledger rows. Arc02 is ready for formal arc close and arc-scale composition
 verification before Arc03 planning.
+
+### v1.12 - 2026-08-30
+
+Arc02 formally closed with composition verdict `delivered`, and Arc03 opened
+for conceptual-model planning. Arc03 Slice01 starts with construct boundaries
+so later slices can model evidence/lifecycle and graph/CQ/run semantics from a
+stable conceptual baseline.

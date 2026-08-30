@@ -3,7 +3,7 @@
 ```yaml
 project: project03-concept-card-method
 arc: arc02-method-inventory
-status: active
+status: closed
 depends-on:
   - arc01-method-positioning
 blocks:
@@ -16,11 +16,11 @@ related:
 
 ## Capability
 
-Arc02 inventories the v3.2 concept-card method from the actual workbench docs
-and identifies the source-backed gaps that justify v4.0.
+Arc02 inventoried the v3.2 concept-card method from the actual workbench docs
+and identified the source-backed gaps that justify v4.0.
 
-The arc does not design the final v4.0 ontology or skill architecture. It
-produces the factual method inventory and gap register that Arc03 can turn into
+The arc did not design the final v4.0 ontology or skill architecture. It
+produced the factual method inventory and gap register that Arc03 can turn into
 an accepted conceptual model.
 
 ## Slice Breakdown
@@ -130,3 +130,9 @@ model input packet without designing the final v4.0 model or skill layout.
 Slice03 marked verified-closed after CDC reproduced all seven slice ledger
 rows. Arc02 is ready for formal arc close; A-4, A-5, and A-6 remain arc-scale
 composition rows to reproduce during that close.
+
+### v1.7 - 2026-08-30
+
+Arc02 formally closed with composition verdict `delivered`. The arc produced
+the source-backed v3.2 inventory, v4.0 gap analysis, and Arc03 input packet
+needed before conceptual-model work begins.
