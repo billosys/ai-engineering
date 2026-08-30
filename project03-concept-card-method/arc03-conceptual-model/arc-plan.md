@@ -60,13 +60,17 @@ Durable model outputs belong under the slice-local `artifacts/` directory.
 
 Directory: `slice03-graph-cq-run-semantics`
 
-Status: placeholder.
+Status: open on 2026-08-30.
 
-Expected scope: define graph-native relationship/edge semantics, competency
-question coverage semantics, extraction-run traceability, and how
-reconciliation operates across cards, claims, relationships, and runs.
+Scope: define graph-native relationship/edge semantics, competency-question
+coverage semantics, extraction-run traceability, and reconciliation semantics
+across cards, claims, relationships, CQs, and runs. The slice consumes
+Slice02's reserved lifecycle attachment points and leaves final model
+synthesis to Slice04.
 
-Detailed planning can proceed after Slice02 CDC verification.
+Blocks: Slice04.
+
+Durable model outputs belong under the slice-local `artifacts/` directory.
 
 ### Slice 04: Model Synthesis and Acceptance
 
@@ -126,3 +130,10 @@ Slice02 marked verified-closed after CDC reproduced all seven slice ledger
 rows. Slice03 can now be planned against the reserved lifecycle attachment
 points for reconciliation state/result, extraction run, relationship/edge,
 and competency-question semantics; no arc sequencing change was required.
+
+### v1.4 - 2026-08-30
+
+Slice03 opened for relationship, competency-question, extraction-run, and
+reconciliation semantics. The slice is scoped to graph/CQ/run conceptual
+modeling only; final model synthesis, skill architecture, package behavior,
+implementation algorithms, and source edits remain deferred.
