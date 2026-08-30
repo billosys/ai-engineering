@@ -76,13 +76,16 @@ Durable model outputs belong under the slice-local `artifacts/` directory.
 
 Directory: `slice04-model-synthesis`
 
-Status: placeholder.
+Status: open on 2026-08-30.
 
-Expected scope: compose the prior slices into the accepted v4.0 conceptual
-model, record operator-facing open decisions, and produce the handoff packet
-for skill architecture planning.
+Scope: compose the verified construct-boundary, evidence/lifecycle, and
+graph/CQ/run slices into the accepted v4.0 conceptual model, record
+operator-facing open decisions, and produce the handoff packet for skill
+architecture planning.
 
-Detailed planning can proceed after Slice03 CDC verification.
+Blocks: Arc03 close and Arc04.
+
+Durable model outputs belong under the slice-local `artifacts/` directory.
 
 ## Dependencies
 
@@ -145,3 +148,10 @@ rows. Slice04 can now be planned to synthesize construct boundaries, evidence
 and lifecycle semantics, graph/CQ/run semantics, and remaining provisional
 decisions into the accepted v4.0 conceptual model; no arc sequencing change
 was required.
+
+### v1.6 - 2026-08-30
+
+Slice04 opened for model synthesis and acceptance. The slice is scoped to
+Arc03 conceptual-model composition, decision registration, and Arc04 handoff
+input while leaving final skill architecture, package behavior, validator
+implementation, README integration, and source edits to later arcs.
