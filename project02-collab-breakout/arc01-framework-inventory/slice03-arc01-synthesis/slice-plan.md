@@ -4,7 +4,8 @@
 project: project02-collab-breakout
 arc: arc01-framework-inventory
 slice: slice03-arc01-synthesis
-status: open
+status: proposed-done
+proposed-done-on: 2026-08-30
 artifact-home: artifacts/
 depends-on:
   - slice01-source-inventory:verified-closed
