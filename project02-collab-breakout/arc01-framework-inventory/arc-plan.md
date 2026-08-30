@@ -58,8 +58,6 @@ each major failure mode, identify the current mechanism or mechanisms that
 claim to address it, the evidence that the mechanism exists, and any suspected
 underfit, overfit, overlap, or missing solution.
 
-Blocks: Slice 03.
-
 Outcome: delivered. The slice produced a problem-solution map, mechanism
 coverage matrix, and critical findings under `artifacts/`.
 
@@ -69,6 +67,8 @@ Blocks: no longer blocking Slice 03; Slice 03 may be opened next.
 
 Directory: `slice03-arc01-synthesis`
 
+Status: open as of 2026-08-30.
+
 Scope: synthesize Arc 01 into input material for Arc 02: current component
 clusters, candidate breakout components, suspected mislabels, suspected
 improper splits/merges, package/path constraints inherited from Project 01,
@@ -76,7 +76,8 @@ and open questions for operator discussion.
 
 Blocks: Arc 02.
 
-Detailed open set may be opened now that Slice 02 is verified/closed.
+Open set exists. Durable synthesis outputs belong under the slice-local
+`artifacts/` directory.
 
 ## Dependencies
 
@@ -120,3 +121,8 @@ boundaries.
 Slice 02 marked verified/closed by CDC. The slice delivered the
 problem-solution map, mechanism coverage matrix, and critical findings needed
 for Slice 03. No Arc 01 scope or sequencing change was required.
+
+### v1.4 - 2026-08-30
+
+Slice 03 opened to synthesize Arc 01's verified inventory and problem map into
+non-final Arc 02 conceptual-analysis inputs.

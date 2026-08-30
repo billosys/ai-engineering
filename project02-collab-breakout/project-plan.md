@@ -155,7 +155,7 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 is active. Slices 01 and 02 are
-verified/closed, and Slice 03 is ready to open for Arc 01 synthesis.
+verified/closed, and Slice 03 is open for Arc 01 synthesis.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -186,3 +186,9 @@ home.
 Arc 01 Slice 02 marked verified/closed by CDC. Slice 03 can now synthesize the
 source inventory, problem-solution map, mechanism coverage matrix, critical
 findings, and Project01 path/package constraints into Arc 02 inputs.
+
+### v1.4 - 2026-08-30
+
+Arc 01 Slice 03 opened for synthesis. The slice will prepare non-final
+component-boundary inputs, constraint classifications, and operator questions
+for Arc 02 conceptual analysis.
