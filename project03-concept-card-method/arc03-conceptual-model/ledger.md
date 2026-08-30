@@ -7,7 +7,7 @@ leaving skill architecture and implementation planning to later arcs.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |----|-----------|--------|--------------|--------|--------|----------|-------|
-| A-1 | Slice 01 closed with CDC verification | `test -f slice01-construct-boundaries/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice01-construct-boundaries/cdc-verification.md` | correctness-grade | arc-plan | open | | Children-closed row. |
+| A-1 | Slice 01 closed with CDC verification | `test -f slice01-construct-boundaries/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice01-construct-boundaries/cdc-verification.md` | correctness-grade | arc-plan | done | Attested by pointer to `slice01-construct-boundaries/cdc-verification.md`; spot-checked by CDC on 2026-08-30. | Children-closed row. |
 | A-2 | Slice 02 closed with CDC verification | `test -f slice02-evidence-lifecycle/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice02-evidence-lifecycle/cdc-verification.md` | correctness-grade | arc-plan | open | | Children-closed row. |
 | A-3 | Slice 03 closed with CDC verification | `test -f slice03-graph-cq-run-semantics/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice03-graph-cq-run-semantics/cdc-verification.md` | correctness-grade | arc-plan | open | | Children-closed row. |
 | A-4 | Slice 04 closed with CDC verification | `test -f slice04-model-synthesis/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice04-model-synthesis/cdc-verification.md` | correctness-grade | arc-plan | open | | Children-closed row. |
@@ -19,4 +19,3 @@ leaving skill architecture and implementation planning to later arcs.
 ## Closure
 
 Arc remains open.
-

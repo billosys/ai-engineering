@@ -30,7 +30,7 @@ later-arc responsibilities.
 
 Directory: `slice01-construct-boundaries`
 
-Status: open.
+Status: verified-closed on 2026-08-30.
 
 Scope: classify the Arc02 candidate constructs into v4.0 conceptual-model
 roles, decide which boundaries are accepted or provisional, preserve open
@@ -50,7 +50,7 @@ Expected scope: define how extraction confidence, source support, evidence
 grade, verification state, reconciliation state, and memory-admission state
 relate without flattening them into one confidence field.
 
-Detailed planning is deferred until Slice01 closes.
+Detailed planning can proceed after Slice01 CDC verification.
 
 ### Slice 03: Relationship, CQ, and Run Semantics
 
@@ -100,3 +100,10 @@ Arc03 opened after Arc02 formal close. The arc is scoped to conceptual-model
 definition only; skill architecture and implementation planning remain
 deferred to later arcs.
 
+### v1.1 - 2026-08-30
+
+Slice01 marked verified-closed after CDC reproduced all seven slice ledger
+rows. Slice02 planning can proceed against the existing Arc03 sequence; the
+bubble-up clarifies that Slice02 should focus on the lifecycle stack for
+confidence, source support, evidence grade, verification state,
+reconciliation state, and memory admission.
