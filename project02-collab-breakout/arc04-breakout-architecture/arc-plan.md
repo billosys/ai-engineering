@@ -3,41 +3,136 @@
 ```yaml
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
-status: placeholder
+status: active
+opened-on: 2026-08-30
 depends-on:
+  - arc02-conceptual-analysis
   - arc03-functional-analysis
 blocks:
   - arc05-implementation-plan
+related:
+  - ../project-plan.md
+  - ../ledger.md
+  - ../arc02-conceptual-analysis/closing-report.md
+  - ../arc02-conceptual-analysis/slice03-ontology-decision-synthesis/artifacts/arc02-conceptual-model.md
+  - ../arc02-conceptual-analysis/slice03-ontology-decision-synthesis/artifacts/boundary-and-naming-findings.md
+  - ../arc02-conceptual-analysis/slice03-ontology-decision-synthesis/artifacts/arc04-operator-decision-register.md
+  - ../arc03-functional-analysis/closing-report.md
+  - ../arc03-functional-analysis/slice04-functional-synthesis/artifacts/arc03-functional-model.md
+  - ../arc03-functional-analysis/slice04-functional-synthesis/artifacts/scenario-coverage-synthesis.md
+  - ../arc03-functional-analysis/slice04-functional-synthesis/artifacts/functional-fit-and-risk-synthesis.md
+  - ../arc03-functional-analysis/slice04-functional-synthesis/artifacts/arc04-architecture-inputs.md
 ```
 
 ## Capability
 
-Arc 04 will propose the target functional division of the current
-collaboration framework into standalone, reusable, composable components. It
-will define each component's name, purpose, contract, boundaries,
-dependencies, wayfinding behavior, package shape, and relationship to the
-top-level collaboration-framework composition.
+Arc04 proposes and secures operator acceptance for the target functional
+division of the current collaboration framework into standalone, reusable, and
+composable components. It defines each accepted component's name, purpose,
+contract, boundaries, dependencies, wayfinding behavior, package shape,
+support assets, adapter needs, source/package constraints, release gates, and
+relationship to the top-level `collaboration-framework` composition.
 
-This arc ends only after the proposed breakdown has been discussed and
-accepted by the operator.
+Arc04 consumes Arc02 conceptual evidence and Arc03 functional evidence, but it
+does not edit source files. It turns the evidence into an accepted architecture
+that Arc05 can later translate into an implementation plan.
 
-## Deferred Planning Notes
+The arc ends only after the proposed breakdown has been discussed and accepted
+by the operator.
 
-Detailed slice planning is deferred until Arc 03 closes.
+## Slice Breakdown
 
-Expected architecture concerns:
+### Slice 01: Architecture Decision Instrument
 
-- Which components deserve standalone SKILL.md entry points.
-- Which materials should be wayfinders, templates, source docs, or package
-  support files rather than skills.
-- Dependency graph between components.
-- Naming conventions for component packages.
-- How `collaboration-framework` continues to load as the all-in composition.
-- Migration path from the monolithic framework without breaking existing use.
-- Project 01 source/package path contract compliance.
+Directory: `slice01-architecture-decision-instrument`
+
+Status: open as of 2026-08-30.
+
+Scope: consolidate closed Arc02 and Arc03 evidence into an Arc04 decision
+instrument. Define the architecture decision method, component-contract schema,
+candidate worklist, operator-decision worklist, and risk/gate register that
+later Arc04 slices must use. This slice should not accept final component
+boundaries or package paths.
+
+Blocks: Slice 02 component contract evaluation.
+
+Open set exists. Durable analysis outputs belong under the slice-local
+`artifacts/` directory.
+
+### Slice 02: Candidate Component Contract Evaluation
+
+Directory: `slice02-component-contract-evaluation`
+
+Status: placeholder.
+
+Scope: apply the Slice01 decision instrument to every candidate component,
+component family, support asset, adapter, constraint, and package/release gate
+carried from Arc02 and Arc03. Produce evaluated component-contract candidates
+and go / adjust / defer dispositions, without yet finalizing the full package
+graph.
+
+Blocks: Slice 03 target composition and package architecture.
+
+### Slice 03: Target Composition And Package Architecture
+
+Directory: `slice03-target-composition-package-architecture`
+
+Status: placeholder.
+
+Scope: compose the accepted and adjusted candidate contracts into a target
+architecture: component graph, dependency order, top-level composer contract,
+PM-family package strategy, support-asset travel, adapter placement,
+source/package path assumptions, README/SKILL wayfinding implications, and
+release-gate strategy.
+
+Blocks: Slice 04 operator acceptance and architecture synthesis.
+
+### Slice 04: Operator Acceptance And Architecture Synthesis
+
+Directory: `slice04-operator-acceptance-architecture-synthesis`
+
+Status: placeholder.
+
+Scope: synthesize the target architecture into an acceptance packet for
+operator review. Record accepted component names, contracts, dependencies,
+package/source assumptions, deferred decisions, and Arc05 implementation-plan
+inputs. This slice owns the operator acceptance checkpoint required before
+Arc04 can close.
+
+Blocks: Arc04 close and Arc05 implementation planning.
+
+## Dependencies
+
+Consumes:
+
+- Closed Project02 Arc02 evidence: conceptual model, boundary and naming
+  findings, operator decision register, and conceptual close report.
+- Closed Project02 Arc03 evidence: functional model, scenario coverage,
+  functional fit/risk synthesis, architecture inputs, and functional close
+  report.
+- Project01 path/package constraints carried through Arc01, Arc02, and Arc03.
+- The operator-provided soft layout sketch as low-weight hypothesis evidence,
+  not accepted architecture.
+
+Leaves for later arcs:
+
+- An operator-accepted target component map.
+- Component contracts with names, purposes, boundaries, dependency edges,
+  support assets, adapters, source/package behavior, package paths, and
+  release gates.
+- A top-level `collaboration-framework` composition contract.
+- Arc05-ready implementation inputs covering source edits, README/SKILL
+  updates, packaging lists, path validation, and verification gates.
 
 ## Version History
 
 ### v1.0 - 2026-08-29
 
 Placeholder opened with dependency on Arc 03.
+
+### v1.1 - 2026-08-30
+
+Opened Arc04 as active after Arc03 closed/composed. Planned four slices:
+architecture decision instrument, candidate component contract evaluation,
+target composition and package architecture, and operator acceptance plus
+architecture synthesis.

@@ -139,14 +139,16 @@ arc ledger rows at composition scale.
 
 ### Arc 04: Breakout Architecture
 
-Status: placeholder.
+Status: active.
 
 Expected capability: propose the target functional division into standalone
 and composable components, including component names, contracts,
 dependencies, wayfinders, package shape, migration risks, and how the
 top-level collaboration-framework remains usable as a composition.
 
-Detailed arc planning is deferred until Arc 03 closes.
+Detailed arc planning opened after Arc 03 closed/composed. Slice 01 is open to
+create the architecture decision instrument before candidate contracts are
+evaluated.
 
 ### Arc 05: Implementation Plan
 
@@ -162,8 +164,8 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
-Arc 03 is closed/composed. Arc04 detailed planning can now open against the
-accepted conceptual-analysis and functional-analysis evidence.
+Arc 03 is closed/composed. Arc04 is active, and Slice 01 is open for the
+architecture decision instrument.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -312,3 +314,9 @@ capability and bubbled up that Arc04 should open for breakout architecture
 using direct-load classifications, dependency/support/adapter distinctions,
 operator questions, and Project01 package/release gates as architecture
 inputs.
+
+### v1.23 - 2026-08-30
+
+Opened Arc04 for detailed breakout-architecture planning and opened Slice 01
+for the architecture decision instrument. Arc04 now owns the operator-accepted
+target component architecture before Arc05 implementation planning.
