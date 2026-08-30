@@ -109,7 +109,7 @@ Slices:
 
 ### Arc 02: Conceptual Analysis
 
-Status: active.
+Status: closed/composed on 2026-08-30.
 
 Expected capability: perform the taxonomy and ontology analysis of the current
 framework, including critical checks for mislabeled concepts, improper merges,
@@ -124,7 +124,7 @@ gate Project02 Arc02.
 
 ### Arc 03: Functional Analysis
 
-Status: placeholder.
+Status: ready for detailed planning.
 
 Expected capability: analyze how the framework works in expected usage
 patterns: direct repo reading, packaged skill reading, LLM skill loading,
@@ -159,11 +159,8 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 ## Current Status
 
-Project 02 is opened for planning. Arc 01 is closed/composed. Arc 02 is active
-for conceptual analysis and ready for formal arc close. Slices 01, 02, and 03
-are verified/closed; Slice 03 produced the Arc02 conceptual model, naming and
-boundary findings, Arc04 operator decision register, and close-readiness
-assessment.
+Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
+Arc 03 is ready for detailed functional-analysis planning.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -253,3 +250,9 @@ before Arc04.
 Recorded Arc02 Slice 03 as verified/closed. Arc02 now has all planned slices
 verified/closed and can proceed to formal arc close without a remediation
 slice.
+
+### v1.13 - 2026-08-30
+
+Recorded formal Arc02 close. Arc02 delivered the conceptual-analysis capability
+and bubbled up that Arc03 should test the conceptual model against actual usage
+and load patterns before Arc04 accepts a breakout architecture.

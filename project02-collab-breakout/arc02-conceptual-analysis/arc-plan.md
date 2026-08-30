@@ -3,7 +3,7 @@
 ```yaml
 project: project02-collab-breakout
 arc: arc02-conceptual-analysis
-status: active
+status: closed
 depends-on:
   - arc01-framework-inventory
   - project03-concept-card-method:arc01-method-positioning:slice01-project02-boundary-aid
@@ -176,3 +176,9 @@ Arc02 ontology and decision synthesis and blocks Arc02 close.
 Recorded Slice 03 as verified/closed. Arc02 now has all planned slices
 verified/closed and is ready for formal arc close as a non-final conceptual
 analysis, with no remediation slice required before Arc03 functional analysis.
+
+### v1.9 - 2026-08-30
+
+Recorded formal Arc02 close. The three verified slices compose into the
+conceptual-analysis capability, with final functional analysis and architecture
+selection still deferred to Arc03 and Arc04 respectively.
