@@ -164,7 +164,7 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
 Arc 03 is active for functional analysis. Slices 01, 02, and 03 are
-verified/closed, and Slice 04 can open for Arc03 functional synthesis.
+verified/closed, and Slice 04 is open for Arc03 functional synthesis.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -294,3 +294,8 @@ evidence.
 
 Recorded Arc03 Slice 03 as verified/closed. Slice 04 can now open for Arc03
 functional synthesis and close-readiness analysis.
+
+### v1.20 - 2026-08-30
+
+Opened Arc03 Slice 04 for functional synthesis and close-readiness analysis
+against the verified functional-analysis evidence.

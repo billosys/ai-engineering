@@ -1,0 +1,24 @@
+# Slice 04: Arc03 Functional Synthesis
+
+## Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| F-1 | Slice04 artifacts cite verified Arc03 Slice01/Slice02/Slice03 inputs and closed Arc02 evidence | `test -f ../slice01-usage-surface-instrument/cdc-verification.md && test -f ../slice02-current-workflow-evaluation/cdc-verification.md && test -f ../slice03-standalone-composition-evaluation/cdc-verification.md && test -f ../slice01-usage-surface-instrument/artifacts/scenario-matrix.md && test -f ../slice02-current-workflow-evaluation/artifacts/current-workflow-evaluation.md && test -f ../slice02-current-workflow-evaluation/artifacts/load-path-friction-register.md && test -f ../slice02-current-workflow-evaluation/artifacts/functional-deficiency-register.md && test -f ../slice02-current-workflow-evaluation/artifacts/source-package-role-language-notes.md && test -f ../slice03-standalone-composition-evaluation/artifacts/minimum-load-and-dependency-matrix.md && test -f ../slice03-standalone-composition-evaluation/artifacts/component-dependency-adapter-findings.md && test -f ../slice03-standalone-composition-evaluation/artifacts/arc03-functional-decision-inputs.md && test -f ../../arc02-conceptual-analysis/closing-report.md && test -f ../../arc02-conceptual-analysis/slice03-ontology-decision-synthesis/artifacts/arc02-conceptual-model.md && rg -n "Slice01|Slice02|Slice03|CDC verification|scenario matrix|current-workflow|load-path friction|functional-deficiency|source/package role-language|minimum-load|dependency-adapter|Arc02|conceptual model|input contract" artifacts/*.md` | correctness-grade | slice-plan | open | | |
+| F-2 | Functional model covers expected usage surfaces from the project plan | `rg -n "direct source|source-clone|packaged skill|skill loading|human orientation|session start|planning|execution|review|audit|coverage|delegation|contribution|combination|human|LLM|functional model" artifacts/arc03-functional-model.md` | serious | slice-plan | open | | |
+| F-3 | Scenario coverage synthesis covers S-01 through S-14 and all load shapes | `rg -n "S-01|S-02|S-03|S-04|S-05|S-06|S-07|S-08|S-09|S-10|S-11|S-12|S-13|S-14|current monolith|standalone|composed|top-level composer|scenario coverage" artifacts/scenario-coverage-synthesis.md` | correctness-grade | slice-plan | open | | |
+| F-4 | Fit and risk synthesis consolidates required functional deficiencies and risk categories | `rg -n "inefficiency|deficiency|context-load|context cost|unclear handoff|routing friction|missing functional goal|under-served|over-rich|over-thin|failure mode|source/package risk|role-language risk|package/release risk|LPF-|FD-|SPR-|RLF-" artifacts/functional-fit-and-risk-synthesis.md` | serious | slice-plan | open | | |
+| F-5 | Arc04 architecture inputs classify component fit, dependencies, assets, adapters, constraints, and gates | `rg -n "Arc04|architecture input|component-fit|strong direct load|plausible direct load|weak direct load|dependency edge|support asset|adapter|constraint|package/release gate|component contract|operator question|go / adjust / defer" artifacts/arc04-architecture-inputs.md` | correctness-grade | slice-plan | open | | |
+| F-6 | Arc03 close-readiness maps synthesis outputs to arc ledger rows and states remediation verdict | `rg -n "Arc03 close readiness|A-5|A-6|A-7|A-8|A-9|arc ledger|scenario coverage|functional model|friction register|deficiency register|Arc04-ready|remediation slice|required|not required|go / adjust / defer" artifacts/arc03-close-readiness.md` | correctness-grade | slice-plan | open | | |
+| F-7 | Project01 path/package constraints and non-final architecture posture are preserved | `rg -n "Project01|project01-harmonise-paths|source/package|package-local|zip root|release surface|component contract|CCDP|make check-package-paths|package/release gate|non-final|not accepted architecture|architecture deferred|does not decide|Arc04|operator acceptance" artifacts/arc03-functional-model.md artifacts/functional-fit-and-risk-synthesis.md artifacts/arc04-architecture-inputs.md artifacts/arc03-close-readiness.md` | correctness-grade | slice-plan | open | | |
+| F-8 | Required artifacts exist under artifacts/ and source checkout remains clean | `test -f artifacts/arc03-functional-model.md && test -f artifacts/scenario-coverage-synthesis.md && test -f artifacts/functional-fit-and-risk-synthesis.md && test -f artifacts/arc04-architecture-inputs.md && test -f artifacts/arc03-close-readiness.md && git -C /Users/oubiwann/lab/billosys/ai-engineering diff --quiet` | correctness-grade | slice-plan | open | | |
+
+## What Worked
+
+_(At slice close. Patterns that made the slice close cleanly.)_
+
+## Closure
+
+Opened on 2026-08-30. Verified by: pending CC/CDC.
+
+Rows: 8. Done: 0. Deferred: 0. No-op: 0.
