@@ -142,8 +142,9 @@ Detailed arc planning is deferred until Arc 04 closes.
 ## Current Status
 
 Project03 is open for planning. Arc01 is closed. Arc02 is active with Slice01
-opened for v3.2 baseline source inventory. Project03 remains planning-only
-until an implementation arc explicitly authorizes source edits.
+verified-closed for v3.2 baseline source inventory and Slice02 opened for
+v4.0 gap analysis. Project03 remains planning-only until an implementation arc
+explicitly authorizes source edits.
 
 ## Version History
 
@@ -189,3 +190,14 @@ v3.2 baseline source inventory.
 Arc02 Slice01 scope expanded to preserve the two v3.2 workbench source docs and
 the pre-Project03 assessment memo as durable planning artifacts before
 inventory work proceeds.
+
+### v1.7 - 2026-08-30
+
+Arc02 Slice01 marked verified-closed after CDC reproduced all seven slice
+ledger rows. Project03 can now plan Arc02 Slice02 for v4.0 gap analysis.
+
+### v1.8 - 2026-08-30
+
+Arc02 Slice02 opened for source-backed v4.0 gap analysis, using the verified
+Slice01 baseline inventory as input while deferring conceptual-model and
+skill-layout design to later arcs.

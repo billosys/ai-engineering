@@ -29,7 +29,7 @@ an accepted conceptual model.
 
 Directory: `slice01-v32-source-inventory`
 
-Status: open.
+Status: verified-closed on 2026-08-30.
 
 Scope: preserve the two v3.2 baseline workbench docs as slice artifacts,
 preserve the pre-Project03 assessment memo, then inventory the baseline method
@@ -46,14 +46,18 @@ Durable synthesis outputs belong under the slice-local `artifacts/` directory.
 
 Directory: `slice02-v40-gap-analysis`
 
-Status: placeholder.
+Status: open.
 
-Expected scope: compare the Slice01 baseline inventory against Project03's
+Scope: compare the verified Slice01 baseline inventory against Project03's
 v4.0 target concerns: evidence/provenance grading, independent verification,
 reconciliation, memory admission, graph-native relationships, CCDP-compatible
-evidence semantics, and skill packaging.
+evidence semantics, skill packaging, schema validation, semantic QA, and
+extraction run traceability.
 
-Detailed planning is deferred until Slice01 closes.
+Blocks: Slice03.
+
+Durable gap-analysis outputs belong under the slice-local `artifacts/`
+directory.
 
 ### Slice 03: Inventory Synthesis
 
@@ -92,3 +96,16 @@ analysis only; v4.0 ontology design is deferred to Arc03.
 
 Slice01 scope expanded to preserve exact v3.2 source snapshots and the
 pre-Project03 assessment memo before producing the source inventory.
+
+### v1.2 - 2026-08-30
+
+Slice01 marked verified-closed after CDC reproduced all seven slice ledger
+rows. Slice02 planning can proceed against the existing Arc02 sequence; no
+scope or sequencing change was required.
+
+### v1.3 - 2026-08-30
+
+Slice02 opened for source-backed v4.0 gap analysis. The slice must separate
+carry-forward items, minor cleanups, architectural changes, operator decisions,
+and deferrals without designing the Arc03 conceptual model or Arc04 skill
+layout.
