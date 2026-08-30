@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc03-functional-analysis
 slice: slice01-usage-surface-instrument
-status: open
+status: proposed-done
 opened-on: 2026-08-30
+proposed-done-on: 2026-08-30
 artifact-home: artifacts/
 depends-on:
   - arc02-conceptual-analysis:closed-composed
