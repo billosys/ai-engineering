@@ -35,12 +35,17 @@ they were already the ontology.
 
 Directory: `slice01-source-inventory`
 
+Status: verified/closed by CDC on 2026-08-29.
+
 Scope: inspect the current framework entry points and source documents, record
 the source/package path assumptions that must be inherited from Project 01,
 and produce a source-backed inventory of concepts, disciplines, templates, and
 usage promises.
 
-Blocks: Slice 02.
+Outcome: delivered. The slice produced source inventory, source-to-concept
+map, Project01 path-contract notes, and gate evidence under `artifacts/`.
+
+Blocks: no longer blocking Slice 02; Slice 02 may be opened next.
 
 ### Slice 02: Problem-Solution Map
 
@@ -92,3 +97,9 @@ Leaves for later arcs:
 
 Initial Arc 01 plan opened with Slice 01 planned and execution explicitly
 blocked on verified completion of `project01-harmonise-paths`.
+
+### v1.1 - 2026-08-29
+
+Slice 01 marked verified/closed by CDC. The slice delivered the source-backed
+inventory, concept map, Project01 path-contract notes, and open questions
+needed for Slice 02. No Arc 01 scope or sequencing change was required.

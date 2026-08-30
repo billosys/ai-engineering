@@ -156,8 +156,8 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 and its first slice open set exist,
-but Slice 01 is not to be executed until `project01-harmonise-paths` is closed
-and completely verified.
+and Slice 01 is verified/closed. Slice 02 is ready to open when the operator
+chooses to continue Arc 01.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -170,3 +170,9 @@ Initial roadmap opened from the collaboration-framework breakout discussion.
 The project depends on verified completion of `project01-harmonise-paths` so
 the breakout consumes the accepted source/package path contract instead of
 inventing parallel packaging semantics.
+
+### v1.1 - 2026-08-29
+
+Arc 01 Slice 01 marked verified/closed by CDC. The project is no longer blocked
+by Project01 closure; Arc 01 can proceed to Slice 02 using the verified
+inventory and Project01 path/package constraints.

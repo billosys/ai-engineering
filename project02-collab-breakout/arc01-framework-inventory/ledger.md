@@ -8,7 +8,7 @@ breakout.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |----|-----------|--------|--------------|--------|--------|----------|-------|
-| A-1 | Slice 01 closed with CDC verification | `test -f slice01-source-inventory/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice01-source-inventory/cdc-verification.md` | correctness-grade | arc-plan | open | | attested by slice close |
+| A-1 | Slice 01 closed with CDC verification | `test -f slice01-source-inventory/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice01-source-inventory/cdc-verification.md` | correctness-grade | arc-plan | done | `slice01-source-inventory/cdc-verification.md` exists; CDC verified Slice 01 closed on 2026-08-29 with Rows: 7, Done: 7, Deferred: 0, No-op: 0. | Children-closed row; evidence strength reproduced at slice scale. |
 | A-2 | Slice 02 closed with CDC verification | `test -f slice02-problem-solution-map/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice02-problem-solution-map/cdc-verification.md` | correctness-grade | arc-plan | open | | attested by slice close |
 | A-3 | Slice 03 closed with CDC verification | `test -f slice03-arc01-synthesis/cdc-verification.md && rg -n "Rows:|Verified by:|reproduced" slice03-arc01-synthesis/cdc-verification.md` | correctness-grade | arc-plan | open | | attested by slice close |
 | A-4 | Current framework sources are inventoried from actual files with source paths | `rg -n "Source Inventory|/Users/oubiwann/lab/billosys/ai-engineering|SKILL.md|README.md|AI-CONSTITUTION-SUPPLEMENT|AI-ENGINEERING-METHODOLOGY|PROJECT-MANAGEMENT|LEDGER-DISCIPLINE" slice01-source-inventory` | serious | arc-plan | open | | reproduce at arc scale |
