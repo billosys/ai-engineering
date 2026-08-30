@@ -46,9 +46,9 @@ Specifically:
 - The method's conceptual model is defined: concept card, source span, claim,
   evidence grade, relationship, competency question, extraction run, verifier,
   and memory-admission status.
-- The skill architecture is planned using Project02-style component-selection
-  criteria: reason to load, problem ownership, dependency direction, package
-  behavior, and maintenance ownership.
+- The skill architecture is planned using component-selection criteria:
+  reason to load, problem ownership, dependency direction, package behavior,
+  and maintenance ownership.
 - The proposed skill layout defines `SKILL.md`, `guides/`, templates, any
   deterministic validation scripts, examples, package behavior, and README
   integration.
@@ -111,24 +111,27 @@ the v3.2 baseline, identified v4.0 gaps, and left bounded inputs for Arc03.
 
 ### Arc 03: Conceptual Model
 
-Status: active.
+Status: closed on 2026-08-30.
 
 Expected capability: define the ontology of the method: concept cards, claims,
 source spans, evidence grades, relationships, competency questions, extraction
 runs, verifier roles, reconciliation, and memory admission for the v4.0 method.
 
-All four Arc03 slices are verified-closed. Arc03 is ready for formal arc close
-and arc-scale composition verification.
+Closed with composition verdict `delivered`. The arc defined the accepted v4.0
+conceptual model and left bounded inputs for Arc04 skill-architecture planning.
 
 ### Arc 04: Skill Architecture
 
-Status: placeholder.
+Status: active.
 
 Expected capability: propose the v4.0 skill's target layout, including entrypoint
 contract, guide set, templates, optional scripts, examples, package behavior,
-README integration, and relationship to Project02 framework components.
+README integration, and relationship to existing knowledge and collaboration
+skills.
 
-Detailed arc planning is deferred until Arc 03 closes.
+Detailed arc planning is open. Slice01 starts with architecture-input inventory
+before later slices decide load contract, guide/template/example architecture,
+validation/package behavior, and final synthesis.
 
 ### Arc 05: Implementation Plan
 
@@ -141,8 +144,8 @@ Detailed arc planning is deferred until Arc 04 closes.
 
 ## Current Status
 
-Project03 is open for planning. Arc01 and Arc02 are closed. Arc03 is active
-with all four slices verified-closed and ready for formal arc close. Project03
+Project03 is open for planning. Arc01, Arc02, and Arc03 are closed. Arc04 is
+active, with Slice01 opened for architecture-input inventory. Project03
 remains planning-only until an implementation arc explicitly authorizes source
 edits.
 
@@ -273,3 +276,16 @@ implementation arc.
 Arc03 Slice04 marked verified-closed after CDC reproduced all eight slice
 ledger rows. Arc03 is now ready for formal arc close and arc-scale composition
 verification before Arc04 planning opens.
+
+### v1.20 - 2026-08-30
+
+Arc03 formally closed with composition verdict `delivered`, after arc-scale
+composition verification reproduced all eight arc ledger rows. Project03 can
+now plan Arc04 skill architecture against the accepted v4.0 conceptual model.
+
+### v1.21 - 2026-08-30
+
+Arc04 opened for v4.0 skill-architecture planning. Slice01 begins with
+architecture-input inventory so later slices can decide load contract,
+guide/template/example architecture, validation/package behavior, and final
+synthesis from a stable Arc03 input map.

@@ -3,7 +3,7 @@
 ```yaml
 project: project03-concept-card-method
 arc: arc03-conceptual-model
-status: active
+status: closed
 depends-on:
   - ../arc02-method-inventory/closing-report.md
 blocks:
@@ -19,6 +19,10 @@ Arc03 defines the v4.0 conceptual model for the concept-card method. It turns
 the Arc02 inventory and gap analysis into a bounded ontology of cards, claims,
 source spans, evidence grades, relationships, competency questions, extraction
 runs, verifier roles, reconciliation, and memory admission.
+
+Closed with composition verdict `delivered`. The arc produced the accepted
+v4.0 conceptual model, consolidated model decisions, and bounded handoff input
+for skill architecture.
 
 The arc does not choose the final skill layout, package behavior, deterministic
 validator implementation, README integration, or source edits. Those remain
@@ -162,3 +166,10 @@ Slice04 marked verified-closed after CDC reproduced all eight slice ledger
 rows. Arc03 is ready for formal arc close and arc-scale composition
 verification; no new Arc03 slice, scope change, or sequencing change was
 required.
+
+### v1.8 - 2026-08-30
+
+Arc03 formally closed with composition verdict `delivered`. Arc-scale
+composition verification reproduced all eight arc ledger rows, and the
+project-level bubble-up requires only status/readiness updates before Arc04
+planning opens.
