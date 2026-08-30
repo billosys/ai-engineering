@@ -117,14 +117,15 @@ Slices:
 
 ### Arc 03: CCDP Distribution Package
 
-Status: active.
+Status: closed.
 
-Expected capability: give CCDP a first-class package target and reader-facing
+Capability: give CCDP a first-class package target and reader-facing
 entry point so protocol users can consume the assembled spec, source chapters,
 canonical JSON, and examples without repo-root path guessing.
 
-Arc 03 detailed planning opened after Arc 02 closed. Slice 01 starts with a
-CCDP distribution inventory before package contract design.
+Arc 03 delivered `make ccdp-package`, `make check-ccdp-package`, `ccdp.zip`,
+a CCDP-specific package validator, generated-output freshness checking,
+source-clone entrypoint guidance, and package-local reader guidance.
 
 ### Arc 04: Release and Adoption Hardening
 
@@ -137,10 +138,8 @@ Detailed arc planning is deferred until the implementation arcs close.
 
 ## Current Status
 
-Arc 01 and Arc 02 are closed. Arc 03 is active: Slices 01 through 03 are
-verified/closed, and Slice 04 is opened on CCDP reader guidance. Arc 04 remains
-a roadmap stub; its detailed plan should be written after the close of Arc 03,
-per the plan-late/plan-deep rule.
+Arc 01, Arc 02, and Arc 03 are closed. Arc 04 remains a roadmap stub and is
+ready for detailed planning next, per the plan-late/plan-deep rule.
 
 ## Version History
 
@@ -267,3 +266,16 @@ from drifting before packaging.
 Arc 03 Slice 04 opened on CCDP reader guidance. The slice will update
 source-clone and package/unzipped instructions so humans and LLMs can find the
 right CCDP entrypoints without repo-root guessing.
+
+### v1.20 - 2026-08-29
+
+Arc 03 Slice 04 marked verified/closed. CCDP reader guidance now points
+source-clone users at `protocols/ccdp/README.md`, package users at
+`ccdp/README.md`, distinguishes `ccdp.zip` from installable skill bundles, and
+labels `workbench/` and `prompts/` as source-only excluded material.
+
+### v1.21 - 2026-08-29
+
+Arc 03 closed with composition verdict delivered. CCDP now has a first-class
+protocol package, validator, generated-output freshness gate, zipped/unzipped
+path validation, and reader guidance for both source and package contexts.

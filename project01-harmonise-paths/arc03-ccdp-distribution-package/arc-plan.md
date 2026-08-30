@@ -2,7 +2,7 @@
 
 ```yaml
 arc: arc03-ccdp-distribution-package
-status: active
+status: closed
 project: project01-harmonise-paths
 depends-on:
   - arc01-distribution-path-contract
@@ -62,7 +62,7 @@ CCDP package works zipped and unzipped.
 
 ### Slice 04: CCDP Reader Guidance
 
-Status: active/opened.
+Status: verified/closed.
 
 Expected scope: update README or protocol-facing usage docs so source-clone and
 package consumers know how to use CCDP without rediscovering file locations.
@@ -127,3 +127,17 @@ Slice 04 opened on CCDP reader guidance. The slice should document source-clone
 and package/unzipped CCDP entrypoints, distinguish `ccdp.zip` from installable
 skill zips, and may introduce a shared `protocols/ccdp/README.md` if that gives
 source and package consumers one maintainable package-local path story.
+
+### v1.7 - 2026-08-29
+
+Slice 04 marked verified/closed by CDC. CCDP reader guidance now points
+source-clone users at `protocols/ccdp/README.md`, package users at
+`ccdp/README.md`, and uses `protocols/ccdp/README.md` as the shared source for
+the package README.
+
+### v1.8 - 2026-08-29
+
+Arc 03 closed with composition verdict delivered. CCDP now has a first-class
+`ccdp.zip` package, package validator, generated-output freshness gate, zipped
+and unzipped validation, source-clone entrypoints, and package-local reader
+guidance.
