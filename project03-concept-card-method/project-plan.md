@@ -142,9 +142,9 @@ Detailed arc planning is deferred until Arc 04 closes.
 ## Current Status
 
 Project03 is open for planning. Arc01 and Arc02 are closed. Arc03 is active
-with Slice01 verified-closed for construct-boundary modeling; Slice02 is ready
-for planning. Project03 remains planning-only until an implementation arc
-explicitly authorizes source edits.
+with Slice01 verified-closed for construct-boundary modeling and Slice02 open
+for evidence and lifecycle semantics. Project03 remains planning-only until
+an implementation arc explicitly authorizes source edits.
 
 ## Version History
 
@@ -231,3 +231,10 @@ stable conceptual baseline.
 Arc03 Slice01 marked verified-closed after CDC reproduced all seven slice
 ledger rows. Arc03 can now plan Slice02 for evidence and lifecycle semantics
 using the accepted/provisional construct-boundary register as input.
+
+### v1.14 - 2026-08-30
+
+Arc03 Slice02 opened for evidence and lifecycle semantics. The slice will
+separate extraction confidence, source support, evidence grade, verification
+state/result, reconciliation state/result, and memory admission before
+relationship/CQ/run semantics and final model synthesis proceed.

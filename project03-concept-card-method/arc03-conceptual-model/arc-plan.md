@@ -44,13 +44,17 @@ Durable model outputs belong under the slice-local `artifacts/` directory.
 
 Directory: `slice02-evidence-lifecycle`
 
-Status: placeholder.
+Status: open on 2026-08-30.
 
-Expected scope: define how extraction confidence, source support, evidence
-grade, verification state, reconciliation state, and memory-admission state
-relate without flattening them into one confidence field.
+Scope: define how extraction confidence, source support, evidence grade,
+verification state/result, reconciliation state/result, and memory-admission
+state relate without flattening them into one confidence field. The slice
+also records attachment points and lifecycle-gate decisions for Slice04
+model synthesis.
 
-Detailed planning can proceed after Slice01 CDC verification.
+Blocks: Slice03 and Slice04.
+
+Durable model outputs belong under the slice-local `artifacts/` directory.
 
 ### Slice 03: Relationship, CQ, and Run Semantics
 
@@ -107,3 +111,11 @@ rows. Slice02 planning can proceed against the existing Arc03 sequence; the
 bubble-up clarifies that Slice02 should focus on the lifecycle stack for
 confidence, source support, evidence grade, verification state,
 reconciliation state, and memory admission.
+
+### v1.2 - 2026-08-30
+
+Slice02 opened for evidence and lifecycle semantics. The slice is scoped to
+the conceptual separation of extraction confidence, source support, evidence
+grade, verification result/state, reconciliation result/state, and memory
+admission, while final schema, graph/CQ/run semantics, skill architecture,
+package behavior, and source edits remain deferred.
