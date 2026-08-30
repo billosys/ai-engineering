@@ -69,7 +69,7 @@ Durable synthesis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice02-candidate-boundary-evaluation`
 
-Status: open as of 2026-08-30.
+Status: verified/closed on 2026-08-30.
 
 Scope: apply the Slice01 method to every seeded candidate label and
 classify each as candidate component, component family member, support asset,
@@ -77,22 +77,26 @@ adapter, dependency edge, constraint, template, package/release gate, or
 non-component concept. The slice should record evidence, problem ownership,
 competency questions, relationships, risks, and provisional disposition.
 
-Blocks: Slice 03.
+Delivered: Slice 02 produced the candidate-boundary evaluation, component
+relationship map, and conceptual risk register. CDC verified the close in
+`slice02-candidate-boundary-evaluation/cdc-verification.md`.
 
-Open set exists. Durable evaluation outputs belong under the slice-local
-`artifacts/` directory.
+Durable evaluation outputs live under the slice-local `artifacts/` directory.
 
 ### Slice 03: Ontology And Decision Synthesis
 
 Directory: `slice03-ontology-decision-synthesis`
 
-Status: placeholder.
+Status: open as of 2026-08-30.
 
-Expected scope: synthesize the candidate evaluation into an Arc02 conceptual
-model, naming critique, merge/split findings, missing/overclaimed concept
-findings, and operator decision register for Arc04 architecture work.
+Scope: synthesize the candidate evaluation into an Arc02 conceptual model,
+naming critique, merge/split findings, missing/overclaimed concept findings,
+and operator decision register for Arc04 architecture work.
 
-Detailed planning is deferred until Slice02 closes.
+Blocks: Arc02 close.
+
+Open set exists. Durable synthesis outputs belong under the slice-local
+`artifacts/` directory.
 
 ## Dependencies
 
@@ -159,3 +163,8 @@ ontology/decision synthesis.
 Recorded Slice 01 as verified/closed and opened Slice 02. Slice 02 now owns
 candidate-boundary evaluation across the 26 seeded labels, while preserving
 the non-final architecture posture and leaving synthesis to Slice 03.
+
+### v1.7 - 2026-08-30
+
+Recorded Slice 02 as verified/closed and opened Slice 03. Slice 03 now owns
+Arc02 ontology and decision synthesis and blocks Arc02 close.

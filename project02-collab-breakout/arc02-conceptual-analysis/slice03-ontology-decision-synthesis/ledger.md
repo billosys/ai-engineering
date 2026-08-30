@@ -1,0 +1,18 @@
+# Slice 03: Ontology And Decision Synthesis
+
+## Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| F-1 | Slice01 and Slice02 verified inputs are consumed and cited | `test -f ../slice01-boundary-analysis-instrument/cdc-verification.md && test -f ../slice02-candidate-boundary-evaluation/cdc-verification.md && test -f ../slice02-candidate-boundary-evaluation/artifacts/candidate-boundary-evaluation.md && test -f ../slice02-candidate-boundary-evaluation/artifacts/component-relationship-map.md && test -f ../slice02-candidate-boundary-evaluation/artifacts/conceptual-risk-register.md && rg -n "Slice01|Slice02|CDC verification|candidate-boundary evaluation|component relationship map|conceptual risk register|input contract" artifacts/arc02-conceptual-model.md artifacts/boundary-and-naming-findings.md artifacts/arc04-operator-decision-register.md artifacts/arc02-close-readiness.md` | serious | slice-plan | open | | |
+| F-2 | Arc02 conceptual model covers the required ontology classes | `rg -n "candidate component|component family member|support asset|adapter|dependency edge|constraint|template|package/release gate|non-component concept|soft layout hypothesis|not accepted architecture" artifacts/arc02-conceptual-model.md` | serious | arc-plan | open | | |
+| F-3 | Boundary and naming findings cover the critical Slice02 categories | `rg -n "mislabel|improper merge|improper split|missing concept|overclaimed|underfit|overfit|overlap|duplication|unresolved relationship|component-maintenance" artifacts/boundary-and-naming-findings.md` | serious | slice02 bubble-up | open | | |
+| F-4 | Operator decisions needed before Arc04 are explicit and optioned | `rg -n "operator decision|decision owner|options|evidence basis|risk|default recommendation|go / adjust / defer|Arc04|architecture" artifacts/arc04-operator-decision-register.md` | correctness-grade | arc-plan | open | | |
+| F-5 | Close readiness maps Arc02 capability and arc-ledger rows to delivered evidence | `rg -n "Arc02 capability|close readiness|A-1|A-2|A-3|A-4|A-5|A-6|A-7|can close|remediation slice|composition" artifacts/arc02-close-readiness.md` | serious | arc-plan | open | | |
+| F-6 | Project01 path/package constraints are carried forward as component-contract constraints | `rg -n "Project01|project01-harmonise-paths|source/package|package-local|zip|release surface|make check-package-paths|cross-cutting constraint|component contract|package/release gate" artifacts/arc02-conceptual-model.md artifacts/boundary-and-naming-findings.md artifacts/arc04-operator-decision-register.md artifacts/arc02-close-readiness.md` | correctness-grade | arc01 bubble-up | open | | |
+| F-7 | Outputs remain analytical and do not decide final architecture | `rg -n "non-final|not final|not accepted architecture|does not decide|analytical|operator acceptance|Arc03 functional analysis|Arc04" artifacts/arc02-conceptual-model.md artifacts/boundary-and-naming-findings.md artifacts/arc04-operator-decision-register.md artifacts/arc02-close-readiness.md` | serious | arc-plan | open | | |
+| F-8 | Durable outputs live under `artifacts/` and no source files are edited | `test -f artifacts/arc02-conceptual-model.md && test -f artifacts/boundary-and-naming-findings.md && test -f artifacts/arc04-operator-decision-register.md && test -f artifacts/arc02-close-readiness.md && git -C /Users/oubiwann/lab/billosys/ai-engineering diff --quiet` | serious | project-management v2.5 | open | | |
+
+## Closure
+
+Slice remains open.
