@@ -99,7 +99,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice04-functional-synthesis`
 
-Status: open as of 2026-08-30.
+Status: verified/closed on 2026-08-30.
 
 Scope: synthesize Arc03 into a functional model and Arc04 architecture input
 set: scenario coverage, load-cost findings, standalone/composition fit,
@@ -108,8 +108,12 @@ functional-analysis arc.
 
 Blocks: Arc03 close.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Delivered: Slice 04 produced the Arc03 functional model, scenario coverage
+synthesis, functional fit and risk synthesis, Arc04 architecture inputs, and
+Arc03 close-readiness assessment. CDC verified the close in
+`slice04-functional-synthesis/cdc-verification.md`.
+
+Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 ## Dependencies
 
@@ -181,3 +185,9 @@ synthesize Arc03.
 
 Opened Slice 04 for Arc03 functional synthesis and close-readiness analysis
 against the verified Slice01, Slice02, and Slice03 evidence.
+
+### v1.8 - 2026-08-30
+
+Recorded Slice 04 as verified/closed. Arc03 now has all planned slices
+verified/closed and is ready for formal arc close; Arc04 detailed planning
+remains deferred until that arc-level composition check is complete.
