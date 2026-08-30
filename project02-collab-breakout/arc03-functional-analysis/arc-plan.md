@@ -80,7 +80,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice03-standalone-composition-evaluation`
 
-Status: open as of 2026-08-30.
+Status: verified/closed on 2026-08-30.
 
 Scope: use the Arc02 conceptual model plus Slice02 current-workflow findings
 to test candidate standalone and composed component usage scenarios. Evaluate
@@ -88,10 +88,12 @@ likely direct load moments, minimum useful load sets, dependency ordering,
 component-family behavior, support-asset travel, adapter needs, and whether
 any concept lacks a real functional load path.
 
-Blocks: Slice 04.
+Delivered: Slice 03 produced standalone and composition scenario evaluations,
+the minimum-load and dependency matrix, component dependency/adapter findings,
+and Arc03 functional decision inputs. CDC verified the close in
+`slice03-standalone-composition-evaluation/cdc-verification.md`.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 ### Slice 04: Arc03 Functional Synthesis
 
@@ -106,7 +108,9 @@ functional-analysis arc.
 
 Blocks: Arc03 close.
 
-Detailed open set deferred until Slice 03 closes.
+Detailed open set can now be opened against the Slice01 scenario matrix,
+Slice02 current-workflow findings, and Slice03 standalone/composed comparison
+findings.
 
 ## Dependencies
 
@@ -167,3 +171,9 @@ component scenarios.
 Opened Slice 03 for standalone and composition scenario evaluation against the
 Slice01 scenario matrix, Slice02 current-workflow findings, and Arc02
 conceptual model.
+
+### v1.6 - 2026-08-30
+
+Recorded Slice 03 as verified/closed. Slice 04 can now open against the
+current-monolith baseline and standalone/composed comparison findings to
+synthesize Arc03.
