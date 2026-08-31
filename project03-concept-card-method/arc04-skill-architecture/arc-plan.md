@@ -3,7 +3,7 @@
 ```yaml
 project: project03-concept-card-method
 arc: arc04-skill-architecture
-status: active
+status: closed
 depends-on:
   - ../arc03-conceptual-model/closing-report.md
 blocks:
@@ -202,3 +202,9 @@ Slice05 marked verified-closed after CDC reproduced all twelve slice ledger
 rows. Arc04 is ready for formal arc close and arc-ledger composition
 verification of A-6, A-7, and A-8; implementation planning remains deferred to
 Arc05 after formal close.
+
+### v1.10 - 2026-08-31
+
+Arc04 formally closed with composition verdict `delivered` after CDC
+reproduced all eight arc ledger rows. The accepted v4.0 skill architecture and
+Arc05 handoff are now available for implementation-planning work.

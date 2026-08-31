@@ -122,16 +122,16 @@ conceptual model and left bounded inputs for Arc04 skill-architecture planning.
 
 ### Arc 04: Skill Architecture
 
-Status: active.
+Status: closed on 2026-08-31.
 
 Expected capability: propose the v4.0 skill's target layout, including entrypoint
 contract, guide set, templates, optional scripts, examples, package behavior,
 README integration, and relationship to existing knowledge and collaboration
 skills.
 
-Detailed Arc04 slice work is complete. Slice01 through Slice05 are
-verified-closed. Arc04 is ready for formal arc close and arc-ledger
-composition verification.
+Closed with composition verdict `delivered`. The arc defined the accepted
+v4.0 skill architecture and left bounded implementation-planning inputs for
+Arc05.
 
 ### Arc 05: Implementation Plan
 
@@ -145,7 +145,8 @@ Detailed arc planning is deferred until Arc 04 closes.
 ## Current Status
 
 Project03 is open for planning. Arc01, Arc02, and Arc03 are closed. Arc04 is
-active, with Slice05 verified-closed and Arc04 ready for formal close.
+closed with composition verdict `delivered`. Arc05 is ready for detailed
+implementation-plan work.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -336,3 +337,10 @@ implementation planning remain later steps.
 Arc04 Slice05 marked verified-closed after CDC reproduced all twelve slice
 ledger rows. Arc04 is ready for formal close and arc-ledger composition
 verification; Arc05 remains deferred until Arc04 closes.
+
+### v1.29 - 2026-08-31
+
+Arc04 formally closed with composition verdict `delivered`; Project03 P-4 is
+marked done. The accepted v4.0 skill architecture and bounded Arc05 handoff
+are available for detailed implementation-plan work, while source edits remain
+deferred until an implementation plan explicitly authorizes them.
