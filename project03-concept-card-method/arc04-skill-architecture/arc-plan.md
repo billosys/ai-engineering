@@ -99,7 +99,7 @@ directory.
 
 Directory: `slice05-architecture-synthesis`
 
-Status: planned.
+Status: open.
 
 Scope: compose the verified Arc04 slices into an accepted v4.0 skill
 architecture, record architecture decisions, and produce the bounded
@@ -187,3 +187,11 @@ Slice04 marked verified-closed after CDC reproduced all twelve slice ledger
 rows. The slice confirmed validation, package/discoverability, and maintenance
 architecture inputs for Slice05; no Arc04 re-sequencing or scope change was
 required.
+
+### v1.8 - 2026-08-31
+
+Slice05 opened for final architecture synthesis and Arc05 handoff. The slice
+is scoped to composing the verified Arc04 architecture outputs, recording
+final and unresolved decisions, and preparing bounded implementation-planning
+inputs while leaving Arc04 formal close and all source implementation work to
+later steps.
