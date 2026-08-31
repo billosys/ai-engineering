@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice04-operator-acceptance-architecture-synthesis
-status: open
+status: proposed-done
 opened-on: 2026-08-31
+proposed-done-on: 2026-08-31
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
@@ -141,3 +142,26 @@ overclaiming, and leave the source checkout untouched.
   operator acceptance and CDC verification are both present; otherwise not
   ready with a concrete re-entry condition.
 - No source files are edited.
+
+## Delivered On 2026-08-31
+
+Slice04 produced the required acceptance and synthesis package under
+`artifacts/`:
+
+- `operator-acceptance-packet.md`
+- `architecture-synthesis.md`
+- `decision-risk-disposition-record.md`
+- `package-release-acceptance-record.md`
+- `arc05-implementation-inputs.md`
+- `arc04-close-readiness.md`
+
+The close report is `closing-report.md`.
+
+## Acceptance State
+
+Operator acceptance is pending. No explicit operator acceptance, requested
+change, or rejected alternative evidence was available in the CC execution
+context, so the architecture is recorded as proposed and not accepted.
+
+Arc04 is not ready for formal arc close until operator acceptance evidence
+exists and CDC verifies Slice04. Source files remain untouched.
