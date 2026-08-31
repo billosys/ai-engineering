@@ -1,0 +1,26 @@
+# Slice 04: Validation, Packaging, and Discoverability
+
+## Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| F-1 | Slice04 open set exists with slice plan, ledger, prompt, and artifact home | `test -f slice-plan.md && test -f ledger.md && test -f cc-prompt.md && test -d artifacts` | correctness-grade | slice-plan | open | | |
+| F-2 | Required artifacts are produced under the slice-local artifact home | `test -f artifacts/v40-validation-architecture.md && test -f artifacts/v40-package-discoverability-model.md && test -f artifacts/v40-maintenance-ownership-model.md` | correctness-grade | slice-plan | open | | |
+| F-3 | Validation architecture classifies deterministic, semantic audit, human/operator review, and deferred runtime checks | `rg -n "validation architecture|deterministic structural|semantic audit|human/operator review|operator review|deferred runtime|validation candidate|required fields|provenance|source support|relationship reference|CQ coverage|graph closure|preservation decision|memory admission" artifacts/v40-validation-architecture.md` | correctness-grade | slice-plan | open | | |
+| F-4 | Validation architecture separates validation result from verification result/state, evidence grade, reconciliation, and memory admission | `rg -n "validation result|verification result|verification state|evidence grade|extraction confidence|reconciliation result|reconciliation state|memory admission|distinct|not semantic verification|not one confidence" artifacts/v40-validation-architecture.md` | correctness-grade | slice-plan | open | | |
+| F-5 | Package/discoverability model decides packaged surfaces versus planning-only inputs without promising runtime services | `rg -n "package behavior|package inclusion|packaged surface|planning-only input|guides|templates|examples|scripts|generated artifacts|validation candidates|README|library discoverability|no runtime service|no graph database|no memory runtime|no live extraction" artifacts/v40-package-discoverability-model.md` | serious | slice-plan | open | | |
+| F-6 | Package/discoverability model preserves the thin SKILL.md route and README/library promise boundary | `rg -n "SKILL.md|thin entrypoint|route|reason to load|positive load|negative load|README|skill library|discoverability|promise boundary|does not promise|runtime|GraphRAG|CCDP service|ontology database" artifacts/v40-package-discoverability-model.md` | serious | slice-plan | open | | |
+| F-7 | Maintenance ownership model assigns owners for conceptual, guide, template, example, package, README/library, validation-candidate, validator-code, and version-history alignment | `rg -n "maintenance ownership|conceptual model|guide|template|example|package list|package behavior|README|skill library|validation candidate|validator-code|version history|owner|change path" artifacts/v40-maintenance-ownership-model.md` | correctness-grade | slice-plan | open | | |
+| F-8 | Artifacts preserve verified Slice02 and Slice03 decisions rather than re-deciding them | `rg -n "load contract|thin SKILL.md|guide architecture|template architecture|example architecture|user-authored|trace record|result record|release-critical|five-agent|default recipe|not an invariant|parallel-worker provenance" artifacts/v40-validation-architecture.md artifacts/v40-package-discoverability-model.md artifacts/v40-maintenance-ownership-model.md` | correctness-grade | slice-plan | open | | |
+| F-9 | Unresolved implementation, source-edit, exact layout, schema, enum, validator-code, Makefile, README, generated-zip, test, release, and package-update questions are routed to Slice05 or Arc05 | `rg -n "Slice05|Arc05|source edit|exact file layout|schema syntax|enum spelling|validator-code|Makefile|README edits|generated zips|tests|release mechanics|package updates|implementation planning|architecture synthesis" artifacts/v40-validation-architecture.md artifacts/v40-package-discoverability-model.md artifacts/v40-maintenance-ownership-model.md` | serious | slice-plan | open | | |
+| F-10 | Slice scope fences keep source edits, implementation mechanics, runtime services, executable validators, and releases out of scope | `rg -n "Out of scope|source SKILL.md|source checkout|source edit|validator-code implementation|deterministic validation scripts|CLI/API behavior|graph database|GraphRAG|memory runtime|CCDP service|live extraction|package release|generated zips" slice-plan.md artifacts/v40-validation-architecture.md artifacts/v40-package-discoverability-model.md artifacts/v40-maintenance-ownership-model.md` | serious | slice-plan | open | | |
+| F-11 | Source checkout remains clean | `git -C /Users/oubiwann/lab/billosys/ai-engineering diff --quiet` | serious | operator constraint | open | | |
+| F-12 | New and modified Slice04 Markdown is ASCII-clean and has no trailing whitespace | `LC_ALL=C grep -RIn '[^ -~]' slice-plan.md ledger.md cc-prompt.md artifacts || true; grep -RIn '[[:blank:]]$' slice-plan.md ledger.md cc-prompt.md artifacts || true` | polish | repo hygiene | open | | Verify commands should print no matches. |
+
+## What Worked
+
+_(At slice close. Patterns that made the slice close cleanly.)_
+
+## Closure
+
+Slice remains open.

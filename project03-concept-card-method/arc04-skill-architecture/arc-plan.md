@@ -83,7 +83,7 @@ directory.
 
 Directory: `slice04-validation-packaging-discoverability`
 
-Status: planned.
+Status: open.
 
 Scope: decide which validation checks are deterministic enough to plan for
 Arc05, which are semantic/audit checks, how templates/guides/examples/scripts
@@ -172,3 +172,11 @@ Slice03 marked verified-closed after CDC reproduced all eleven slice ledger
 rows. The slice confirmed the guide, template, and example architecture needed
 for Slice04 to decide validation, package, README/discoverability, and
 maintenance ownership without requiring any Arc04 re-sequencing.
+
+### v1.6 - 2026-08-31
+
+Slice04 opened for validation, packaging, discoverability, and maintenance
+architecture. The slice is scoped to validation-determinism classification,
+package/discoverability promises, and maintenance ownership while leaving
+source edits, exact layout, validator implementation, generated zips, tests,
+release mechanics, and final architecture synthesis to later owners.
