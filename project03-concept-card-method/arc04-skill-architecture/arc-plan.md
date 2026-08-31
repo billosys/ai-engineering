@@ -64,7 +64,7 @@ directory.
 
 Directory: `slice03-guide-template-example-architecture`
 
-Status: planned.
+Status: open.
 
 Scope: decide the guide set, template set, example set, and user-authored
 surfaces needed for the first v4.0 skill, while preserving the Arc03
@@ -158,3 +158,10 @@ The slice decided that the v3.2 five-agent workflow carries forward as a
 default recipe, not an invariant; Slice03 should preserve extraction-run and
 parallel-worker provenance without hard-coding worker count. No new Arc04
 slice or re-sequencing was required.
+
+### v1.4 - 2026-08-31
+
+Slice03 opened for guide, template, and example architecture. The slice is
+scoped to user-facing skill surfaces and first-release examples while leaving
+validation determinism, package behavior, README integration, maintenance
+ownership, source edits, and implementation planning to later slices or Arc05.
