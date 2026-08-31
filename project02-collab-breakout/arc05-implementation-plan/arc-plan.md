@@ -62,7 +62,7 @@ Cross-cutting requirements:
 
 Directory: `slice01-implementation-surface-map`
 
-Status: open as of 2026-08-31.
+Status: verified/closed on 2026-08-31.
 
 Scope: inventory the exact current source and release surfaces that Arc05 must
 plan across: source files, generated package roots, README routes, `SKILL.md`
@@ -73,6 +73,12 @@ later slices use; do not design final edits yet.
 Blocks: Slice 02 component contract and file plan.
 
 Durable analysis outputs belong under the slice-local `artifacts/` directory.
+
+Delivered: Slice01 produced the implementation surface inventory, accepted
+component source map, release validation surface map, cross-cutting concern
+map, and Slice02 component file-plan inputs. CDC reproduced all eight Slice01
+ledger rows and recorded verification in
+`slice01-implementation-surface-map/cdc-verification.md`.
 
 ### Slice 02: Component Contract And File Plan
 
@@ -141,3 +147,10 @@ Placeholder opened with dependency on Arc 04 and Project 01 closure.
 Opened Arc05 after Arc04 closed/composed and Project01 closure evidence was
 reproduced. Planned four implementation-planning slices and opened Slice01 for
 implementation surface mapping.
+
+### v1.2 - 2026-08-31
+
+Recorded Arc05 Slice01 as verified/closed by CDC. Slice02 can now open against
+the verified implementation surface map, accepted component source map,
+release validation surface map, cross-cutting concern map, and component
+file-plan inputs.

@@ -4,9 +4,10 @@
 project: project02-collab-breakout
 arc: arc05-implementation-plan
 slice: slice01-implementation-surface-map
-status: proposed-done
+status: verified-closed
 opened-on: 2026-08-31
 proposed-done-on: 2026-08-31
+cdc-verified-on: 2026-08-31
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
@@ -112,5 +113,6 @@ The close report is `closing-report.md`.
 
 ## Closure State
 
-Slice01 is proposed-done by CC. CDC verification is pending. Source files
-remain untouched, and implementation has not started.
+Slice01 is verified-closed by CDC as of 2026-08-31. Source files remain
+untouched, and implementation has not started. Slice02 can open against the
+verified surface map and component file-plan inputs.
