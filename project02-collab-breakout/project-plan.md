@@ -172,7 +172,7 @@ validation gates, and migration notes, but does not edit source files.
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
 Arc 03 is closed/composed. Arc04 is closed/composed with accepted architecture
 recorded. Arc05 is active for implementation planning; Slice01 is
-verified/closed and Slice02 is ready to open.
+verified/closed and Slice02 is open.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -395,3 +395,10 @@ Recorded Arc05 Slice01 as verified/closed by CDC. The verified surface map
 grounds Slice02 component contract and file planning in current source,
 package, README, `SKILL.md`, Makefile, validation, template, guide, and CCDP
 surfaces without beginning source implementation.
+
+### v1.34 - 2026-08-31
+
+Opened Arc05 Slice02 for component contract and file planning. The slice is
+planning-only and will prepare per-component contracts, target source layouts,
+package/source contract fields, support/adapter/dependency dispositions, and
+Slice03 package/README/validation inputs without source implementation.
