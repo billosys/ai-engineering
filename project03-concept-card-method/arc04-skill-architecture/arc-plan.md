@@ -33,7 +33,7 @@ implementation-planning and later implementation responsibilities.
 
 Directory: `slice01-architecture-input-inventory`
 
-Status: open.
+Status: verified-closed on 2026-08-30.
 
 Scope: inventory the accepted Arc03 conceptual-model commitments, architecture
 handoff inputs, candidate skill surfaces, and open decision questions that
@@ -132,3 +132,10 @@ Arc04 opened after Arc03 formal close. Slice01 begins with architecture-input
 inventory so later slices can decide load contract, guide/template/example
 architecture, validation/package behavior, and final synthesis from a stable
 input map.
+
+### v1.1 - 2026-08-30
+
+Slice01 marked verified-closed after CDC reproduced all eight slice ledger
+rows. Slice02 can now be planned against the architecture input inventory and
+decision-question map; no new Arc04 slice, re-sequencing, or scope change was
+required.
