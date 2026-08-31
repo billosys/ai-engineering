@@ -146,7 +146,8 @@ authorize source edits.
 ## Current Status
 
 Project03 is open for planning. Arc01, Arc02, Arc03, and Arc04 are closed.
-Arc05 is active; Slice01 and Slice02 are verified-closed, and Slice03 is open.
+Arc05 is active; Slice01, Slice02, and Slice03 are verified-closed, and
+Slice04 is ready to open.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -384,3 +385,10 @@ available for Slice03 schema, enum, and validation planning.
 Arc05 Slice03 opened for schema, enum, validation, validator-code scope, test
 scope, failure-output expectation, and review-boundary planning. The project
 remains planning-only and source edits remain deferred.
+
+### v1.36 - 2026-08-31
+
+Arc05 Slice03 marked verified-closed after CDC reproduced all twelve slice
+ledger rows. Slice04 can now plan packaging, discoverability, release gates,
+generated artifact behavior, package-path checks, and source version-history
+obligations against the accepted schema and validation plan.
