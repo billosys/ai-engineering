@@ -49,7 +49,7 @@ directory.
 
 Directory: `slice02-load-contract-ownership`
 
-Status: planned.
+Status: open.
 
 Scope: define when the v4.0 concept-card method skill should load, what
 problem it owns, what adjacent skills or framework capabilities it depends on,
@@ -139,3 +139,11 @@ Slice01 marked verified-closed after CDC reproduced all eight slice ledger
 rows. Slice02 can now be planned against the architecture input inventory and
 decision-question map; no new Arc04 slice, re-sequencing, or scope change was
 required.
+
+### v1.2 - 2026-08-30
+
+Slice02 opened for load contract and ownership modeling. The slice is scoped
+to positive and negative load triggers, problem ownership, dependency
+direction, adjacent-guidance routing, and operator workflow boundaries while
+leaving guide/template/example architecture, validation/package decisions, and
+source edits to later slices or Arc05.
