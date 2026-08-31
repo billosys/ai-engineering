@@ -64,7 +64,7 @@ directory.
 
 Directory: `slice03-guide-template-example-architecture`
 
-Status: open.
+Status: verified-closed on 2026-08-31.
 
 Scope: decide the guide set, template set, example set, and user-authored
 surfaces needed for the first v4.0 skill, while preserving the Arc03
@@ -165,3 +165,10 @@ Slice03 opened for guide, template, and example architecture. The slice is
 scoped to user-facing skill surfaces and first-release examples while leaving
 validation determinism, package behavior, README integration, maintenance
 ownership, source edits, and implementation planning to later slices or Arc05.
+
+### v1.5 - 2026-08-31
+
+Slice03 marked verified-closed after CDC reproduced all eleven slice ledger
+rows. The slice confirmed the guide, template, and example architecture needed
+for Slice04 to decide validation, package, README/discoverability, and
+maintenance ownership without requiring any Arc04 re-sequencing.

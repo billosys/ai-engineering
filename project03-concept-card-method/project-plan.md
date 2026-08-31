@@ -129,9 +129,9 @@ contract, guide set, templates, optional scripts, examples, package behavior,
 README integration, and relationship to existing knowledge and collaboration
 skills.
 
-Detailed arc planning is open. Slice01 and Slice02 are verified-closed.
-Slice03 is open for guide, template, and example architecture before later
-slices decide validation/package behavior and final synthesis.
+Detailed arc planning is open. Slice01, Slice02, and Slice03 are
+verified-closed. Slice04 is ready to open for validation, packaging, and
+discoverability decisions before final synthesis.
 
 ### Arc 05: Implementation Plan
 
@@ -145,7 +145,7 @@ Detailed arc planning is deferred until Arc 04 closes.
 ## Current Status
 
 Project03 is open for planning. Arc01, Arc02, and Arc03 are closed. Arc04 is
-active, with Slice03 opened for guide, template, and example architecture.
+active, with Slice03 verified-closed and Slice04 ready to open.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -302,3 +302,10 @@ later work.
 Arc04 Slice02 marked verified-closed and Slice03 opened for guide, template,
 and example architecture. The project remains planning-only; validation,
 package, README, and implementation planning remain later work.
+
+### v1.24 - 2026-08-31
+
+Arc04 Slice03 marked verified-closed after CDC reproduced all eleven slice
+ledger rows. Slice04 is now ready to plan validation, package,
+README/discoverability, and maintenance decisions against the verified guide,
+template, and example architecture.
