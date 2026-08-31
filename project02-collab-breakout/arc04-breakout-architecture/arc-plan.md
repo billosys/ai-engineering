@@ -89,7 +89,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice03-target-composition-package-architecture`
 
-Status: open as of 2026-08-31.
+Status: verified/closed on 2026-08-31.
 
 Scope: compose the accepted and adjusted candidate contracts into a target
 architecture: component graph, dependency order, top-level composer contract,
@@ -99,8 +99,12 @@ release-gate strategy.
 
 Blocks: Slice 04 operator acceptance and architecture synthesis.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Delivered: Slice 03 produced the target component architecture, dependency
+and composition order, package and release architecture, wayfinding/adapter/
+support plan, and Slice04 operator acceptance inputs. CDC verified the close
+in `slice03-target-composition-package-architecture/cdc-verification.md`.
+
+Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 ### Slice 04: Operator Acceptance And Architecture Synthesis
 
@@ -178,3 +182,10 @@ Opened Slice 03 for target composition and package architecture against the
 verified Slice01 decision instrument and verified Slice02 component-contract
 evaluation outputs. Slice 03 owns the proposed architecture inputs for
 Slice04 operator acceptance, without accepting final architecture itself.
+
+### v1.6 - 2026-08-31
+
+Recorded Slice 03 as verified/closed. Slice 04 can open against the proposed
+target component architecture, dependency/composition order, package/release
+architecture, wayfinding/adapter/support plan, and operator acceptance inputs,
+with no Arc04 plan change required first.
