@@ -46,7 +46,7 @@ by the operator.
 
 Directory: `slice01-architecture-decision-instrument`
 
-Status: open as of 2026-08-30.
+Status: verified/closed on 2026-08-31.
 
 Scope: consolidate closed Arc02 and Arc03 evidence into an Arc04 decision
 instrument. Define the architecture decision method, component-contract schema,
@@ -56,8 +56,12 @@ boundaries or package paths.
 
 Blocks: Slice 02 component contract evaluation.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Delivered: Slice 01 produced the architecture input register, architecture
+decision method, component contract schema, candidate architecture worklist,
+and operator decision/risk register. CDC verified the close in
+`slice01-architecture-decision-instrument/cdc-verification.md`.
+
+Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 ### Slice 02: Candidate Component Contract Evaluation
 
@@ -136,3 +140,9 @@ Opened Arc04 as active after Arc03 closed/composed. Planned four slices:
 architecture decision instrument, candidate component contract evaluation,
 target composition and package architecture, and operator acceptance plus
 architecture synthesis.
+
+### v1.2 - 2026-08-31
+
+Recorded Slice 01 as verified/closed. Slice 02 can open against the
+architecture decision method, component contract schema, candidate worklist,
+and operator decision/risk register, with no Arc04 plan change required first.
