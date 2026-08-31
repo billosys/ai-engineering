@@ -103,7 +103,7 @@ verification in `slice02-component-contract-file-plan/cdc-verification.md`.
 
 Directory: `slice03-package-readme-validation-plan`
 
-Status: placeholder.
+Status: open as of 2026-08-31.
 
 Scope: plan the release surface: README updates, top-level composer
 wayfinding, component package targets, Makefile lists, generated zip behavior,
@@ -175,3 +175,11 @@ Recorded Arc05 Slice02 as verified/closed by CDC. Slice03 can now open against
 the verified component contracts, file layout plan, source-to-component
 migration plan, package/source contract register, support/adapter/dependency
 plan, and package/README/validation handoff inputs.
+
+### v1.5 - 2026-08-31
+
+Opened Arc05 Slice03 for package, README, and validation planning. The slice
+must plan component package targets, README route/usefulness guidance,
+composer and component `SKILL.md` validation, package-local/source/installed
+link strategy, package-path exception policy, compatibility migration, and
+Slice04 implementation-sequence inputs without editing source files.
