@@ -135,18 +135,19 @@ Arc05.
 
 ### Arc 05: Implementation Plan
 
-Status: placeholder.
+Status: active.
 
 Expected capability: convert the accepted architecture into sliceable source
 edits and verification gates for creating the concept-card method skill.
 
-Detailed arc planning is deferred until Arc 04 closes.
+Detailed arc planning is open. Arc05 remains planning-only and does not
+authorize source edits.
 
 ## Current Status
 
 Project03 is open for planning. Arc01, Arc02, and Arc03 are closed. Arc04 is
 closed with composition verdict `delivered`. Arc05 is ready for detailed
-implementation-plan work.
+implementation-plan work and is now active.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -344,3 +345,11 @@ Arc04 formally closed with composition verdict `delivered`; Project03 P-4 is
 marked done. The accepted v4.0 skill architecture and bounded Arc05 handoff
 are available for detailed implementation-plan work, while source edits remain
 deferred until an implementation plan explicitly authorizes them.
+
+### v1.30 - 2026-08-31
+
+Arc05 opened for detailed implementation-plan work. The arc will inventory
+source surfaces, decide source layout and content sequence, plan
+schema/validation work, plan packaging/discoverability/release gates, and
+synthesize a source-edit plan while keeping Project03 planning-only until an
+implementation plan explicitly authorizes source edits.
