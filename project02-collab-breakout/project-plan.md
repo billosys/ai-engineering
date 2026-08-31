@@ -165,7 +165,7 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
 Arc 03 is closed/composed. Arc04 is active; Slices 01 and 02 are
-verified/closed, and Slice 03 can open for target composition and package
+verified/closed, and Slice 03 is open for target composition and package
 architecture.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
@@ -340,3 +340,10 @@ target composition.
 Recorded Arc04 Slice 02 as verified/closed by CDC. Slice 03 can now open for
 target composition and package architecture using the verified component
 contract evaluation outputs.
+
+### v1.27 - 2026-08-31
+
+Opened Arc04 Slice 03 for target composition and package architecture. The
+slice will produce proposed architecture inputs for Slice04 operator
+acceptance while keeping final acceptance and Arc05 implementation planning
+out of scope.
