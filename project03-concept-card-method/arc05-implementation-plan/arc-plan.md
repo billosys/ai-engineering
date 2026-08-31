@@ -49,7 +49,7 @@ directory.
 
 Directory: `slice02-source-layout-content-plan`
 
-Status: planned.
+Status: open.
 
 Scope: decide the target source layout for the v4.0 concept-card method skill:
 thin `SKILL.md`, guide files, template files, example files, validation
@@ -159,3 +159,10 @@ Slice02. The package-behavior constraint surfaced by Slice01 remains an input:
 the current generic skill package path copies the selected `SKILL.md` plus
 sibling `guides/`, so assets outside `guides/` must be planned deliberately by
 later Arc05 slices.
+
+### v1.3 - 2026-08-31
+
+Slice02 opened for skill source layout and content sequence planning. The
+slice will decide planned source paths, content boundaries, cross-links, and
+first implementation edit order while routing schema, validation, package,
+release, and version-history mechanics to later Arc05 slices.
