@@ -32,7 +32,7 @@ schema files, generated zips, released bundles, or runtime services.
 
 Directory: `slice01-source-surface-inventory`
 
-Status: planned.
+Status: open.
 
 Scope: inventory the live source checkout surfaces Arc05 may need to plan
 against: existing knowledge skills, README/library text, Makefile/package
@@ -143,3 +143,10 @@ Arc05 opened after Arc04 formal close. The arc is scoped to implementation
 planning only: inventory source surfaces, decide source layout and content
 sequence, plan schema/validation work, plan packaging/discoverability/release
 gates, and synthesize a bounded implementation plan before Project03 close.
+
+### v1.1 - 2026-08-31
+
+Slice01 opened for source-surface and implementation-input inventory. The
+slice is scoped to mapping live repository facts, package/discoverability
+surfaces, and Arc04 handoff inputs before later slices decide layout, schema,
+validation, packaging, release gates, or implementation sequencing.
