@@ -67,7 +67,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice02-component-contract-evaluation`
 
-Status: open as of 2026-08-31.
+Status: verified/closed on 2026-08-31.
 
 Scope: apply the Slice01 decision instrument to every candidate component,
 component family, support asset, adapter, constraint, and package/release gate
@@ -77,8 +77,13 @@ graph.
 
 Blocks: Slice 03 target composition and package architecture.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Delivered: Slice 02 produced the component contract evaluation matrix,
+candidate component contracts, support/adapter/constraint dispositions,
+package/release gate dispositions, and Slice03 composition inputs. CDC
+verified the close in
+`slice02-component-contract-evaluation/cdc-verification.md`.
+
+Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 ### Slice 03: Target Composition And Package Architecture
 
@@ -156,3 +161,10 @@ Opened Slice 02 for component contract evaluation against the verified
 Slice01 architecture decision instrument. Slice 02 owns evaluated candidate
 contracts and dispositions, while final target composition remains deferred to
 Slice 03.
+
+### v1.4 - 2026-08-31
+
+Recorded Slice 02 as verified/closed. Slice 03 can open against the evaluated
+component contracts, support/adapter/constraint dispositions, package/release
+gate dispositions, and Slice03 composition inputs, with no Arc04 plan change
+required first.
