@@ -49,7 +49,7 @@ directory.
 
 Directory: `slice02-load-contract-ownership`
 
-Status: open.
+Status: verified-closed on 2026-08-31.
 
 Scope: define when the v4.0 concept-card method skill should load, what
 problem it owns, what adjacent skills or framework capabilities it depends on,
@@ -70,6 +70,9 @@ Scope: decide the guide set, template set, example set, and user-authored
 surfaces needed for the first v4.0 skill, while preserving the Arc03
 construct distinctions between cards, claims, source support, evidence grades,
 result records, reconciliation, CQs, extraction runs, and memory admission.
+Slice03 should consume Slice02's decision that the v3.2 five-agent workflow is
+a default recipe rather than an invariant, preserving extraction-run and
+parallel-worker provenance without hard-coding a worker count.
 
 Blocks: Slice04 and Slice05.
 
@@ -147,3 +150,11 @@ to positive and negative load triggers, problem ownership, dependency
 direction, adjacent-guidance routing, and operator workflow boundaries while
 leaving guide/template/example architecture, validation/package decisions, and
 source edits to later slices or Arc05.
+
+### v1.3 - 2026-08-31
+
+Slice02 marked verified-closed after CDC reproduced all ten slice ledger rows.
+The slice decided that the v3.2 five-agent workflow carries forward as a
+default recipe, not an invariant; Slice03 should preserve extraction-run and
+parallel-worker provenance without hard-coding worker count. No new Arc04
+slice or re-sequencing was required.
