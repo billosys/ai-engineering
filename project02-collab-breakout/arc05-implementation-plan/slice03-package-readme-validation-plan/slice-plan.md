@@ -4,8 +4,10 @@
 project: project02-collab-breakout
 arc: arc05-implementation-plan
 slice: slice03-package-readme-validation-plan
-status: proposed-done
+status: verified-closed
 opened-on: 2026-08-31
+proposed-done-on: 2026-08-31
+cdc-verified-on: 2026-08-31
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
@@ -126,8 +128,7 @@ checkout clean.
 
 ## Closure State
 
-Slice03 is proposed-done as of 2026-08-31. Required artifacts are under
-`artifacts/`, `closing-report.md` has been written, ledger rows F-1 through
-F-9 have attested evidence, source files remain untouched, and implementation
-has not started. CDC verification is still required before the slice is
-verified/closed.
+Slice03 is verified-closed as of 2026-08-31. Required artifacts are under
+`artifacts/`, `closing-report.md` has been written, CDC reproduced ledger rows
+F-1 through F-9, source files remain untouched, and implementation has not
+started. Slice04 can open for implementation sequence synthesis.

@@ -103,7 +103,7 @@ verification in `slice02-component-contract-file-plan/cdc-verification.md`.
 
 Directory: `slice03-package-readme-validation-plan`
 
-Status: open as of 2026-08-31.
+Status: verified/closed on 2026-08-31.
 
 Scope: plan the release surface: README updates, top-level composer
 wayfinding, component package targets, Makefile lists, generated zip behavior,
@@ -111,6 +111,12 @@ package-path exceptions, validation commands, accepted warnings, migration
 notes, and CCDP separation.
 
 Blocks: Slice 04 implementation sequence synthesis.
+
+Delivered: Slice03 produced the package target plan, README wayfinding plan,
+`SKILL.md` entrypoint validation plan, package-path/link/exception plan,
+migration compatibility plan, and Slice04 implementation sequence inputs. CDC
+reproduced all nine Slice03 ledger rows and recorded verification in
+`slice03-package-readme-validation-plan/cdc-verification.md`.
 
 ### Slice 04: Implementation Sequence Synthesis
 
@@ -183,3 +189,10 @@ must plan component package targets, README route/usefulness guidance,
 composer and component `SKILL.md` validation, package-local/source/installed
 link strategy, package-path exception policy, compatibility migration, and
 Slice04 implementation-sequence inputs without editing source files.
+
+### v1.6 - 2026-08-31
+
+Recorded Arc05 Slice03 as verified/closed by CDC. Slice04 can now open against
+the verified package target plan, README wayfinding plan, `SKILL.md`
+entrypoint validation plan, package-path/link/exception policy, migration
+compatibility plan, and implementation-sequence inputs.
