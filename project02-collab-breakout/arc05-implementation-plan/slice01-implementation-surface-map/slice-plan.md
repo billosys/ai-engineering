@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc05-implementation-plan
 slice: slice01-implementation-surface-map
-status: open
+status: proposed-done
 opened-on: 2026-08-31
+proposed-done-on: 2026-08-31
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
@@ -96,3 +97,20 @@ planning-only boundaries, and leave the source checkout clean.
   and deferred memory admission are mapped.
 - Slice02 receives component-file-plan inputs.
 - No source files are edited.
+
+## Delivered On 2026-08-31
+
+Slice01 produced these durable artifacts under `artifacts/`:
+
+- `implementation-surface-inventory.md`
+- `accepted-component-source-map.md`
+- `release-validation-surface-map.md`
+- `cross-cutting-concern-map.md`
+- `slice02-component-file-plan-inputs.md`
+
+The close report is `closing-report.md`.
+
+## Closure State
+
+Slice01 is proposed-done by CC. CDC verification is pending. Source files
+remain untouched, and implementation has not started.
