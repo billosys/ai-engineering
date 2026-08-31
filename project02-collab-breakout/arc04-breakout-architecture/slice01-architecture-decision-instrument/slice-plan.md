@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice01-architecture-decision-instrument
-status: open
+status: proposed-done
 opened-on: 2026-08-30
+proposed-done-on: 2026-08-31
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
