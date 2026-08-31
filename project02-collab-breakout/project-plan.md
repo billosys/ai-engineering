@@ -147,8 +147,9 @@ dependencies, wayfinders, package shape, migration risks, and how the
 top-level collaboration-framework remains usable as a composition.
 
 Detailed arc planning opened after Arc 03 closed/composed. Slice 01 produced
-the architecture decision instrument and is verified/closed. Slice 02 is open
-to evaluate candidate component contracts.
+the architecture decision instrument and is verified/closed. Slices 02 and 03
+are verified/closed. Slice 04 is open for operator acceptance and architecture
+synthesis.
 
 ### Arc 05: Implementation Plan
 
@@ -165,7 +166,7 @@ Detailed arc planning is deferred until Arc 04 closes and
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
 Arc 03 is closed/composed. Arc04 is active; Slices 01 and 02 are
-verified/closed, Slice 03 is verified/closed, and Slice 04 can open for
+verified/closed, Slice 03 is verified/closed, and Slice 04 is open for
 operator acceptance and architecture synthesis.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
@@ -353,3 +354,10 @@ out of scope.
 Recorded Arc04 Slice 03 as verified/closed by CDC. Slice 04 can now open for
 operator acceptance and architecture synthesis using the verified target
 composition and package architecture inputs.
+
+### v1.29 - 2026-08-31
+
+Opened Arc04 Slice 04 for operator acceptance and architecture synthesis. The
+slice owns the acceptance packet, architecture synthesis, decision/risk
+disposition record, package/release acceptance record, Arc05 implementation
+inputs, and Arc04 close-readiness assessment.

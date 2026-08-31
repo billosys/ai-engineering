@@ -110,7 +110,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice04-operator-acceptance-architecture-synthesis`
 
-Status: placeholder.
+Status: open as of 2026-08-31.
 
 Scope: synthesize the target architecture into an acceptance packet for
 operator review. Record accepted component names, contracts, dependencies,
@@ -119,6 +119,9 @@ inputs. This slice owns the operator acceptance checkpoint required before
 Arc04 can close.
 
 Blocks: Arc04 close and Arc05 implementation planning.
+
+Open set exists. Durable analysis outputs belong under the slice-local
+`artifacts/` directory.
 
 ## Dependencies
 
@@ -189,3 +192,11 @@ Recorded Slice 03 as verified/closed. Slice 04 can open against the proposed
 target component architecture, dependency/composition order, package/release
 architecture, wayfinding/adapter/support plan, and operator acceptance inputs,
 with no Arc04 plan change required first.
+
+### v1.7 - 2026-08-31
+
+Opened Slice 04 for operator acceptance and architecture synthesis. Slice 04
+owns the acceptance packet, decision/risk dispositions, package/release
+acceptance record, Arc05 implementation inputs, and Arc04 close-readiness
+assessment; explicit operator evidence is required before claiming accepted
+architecture.
