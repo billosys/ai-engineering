@@ -84,7 +84,7 @@ directory.
 
 Directory: `slice04-packaging-release-plan`
 
-Status: planned.
+Status: open.
 
 Scope: decide README and library discoverability text requirements,
 Makefile/package-list updates, package-path validation, generated-zip policy,
@@ -189,3 +189,11 @@ rows. The accepted implementation-plan posture is Markdown records with YAML
 frontmatter, lowercase snake_case controlled vocabulary, validation/review
 boundaries, and documentation-only validator-code scope. No re-sequencing, new
 slice, or scope correction is required before Slice04.
+
+### v1.7 - 2026-08-31
+
+Slice04 opened for packaging, discoverability, release-gate, generated
+artifact, package-path, and source version-history planning. The slice consumes
+the verified Slice02 layout and Slice03 documentation-only validator-code
+scope, and leaves implementation-plan synthesis and Project03 close input to
+Slice05.
