@@ -84,7 +84,7 @@ ledger rows and recorded verification in
 
 Directory: `slice02-component-contract-file-plan`
 
-Status: open as of 2026-08-31.
+Status: verified/closed on 2026-08-31.
 
 Scope: convert the accepted architecture and Slice01 inventory into a
 component-by-component file plan: entrypoints, guide names, version histories,
@@ -92,6 +92,12 @@ support assets, source-to-package movement/copy strategy, package-local links,
 and deferred items. Do not write implementation files.
 
 Blocks: Slice 03 package, README, and validation plan.
+
+Delivered: Slice02 produced the component contract matrix, component file
+layout plan, source-to-component migration plan, package/source contract
+register, support/adapter/dependency plan, and Slice03 package/README/
+validation inputs. CDC reproduced all nine Slice02 ledger rows and recorded
+verification in `slice02-component-contract-file-plan/cdc-verification.md`.
 
 ### Slice 03: Package, README, And Validation Plan
 
@@ -162,3 +168,10 @@ must produce component contracts, target source layouts, source-to-component
 migration decisions, package/source contract fields, support/adapter/dependency
 dispositions, and Slice03 release-surface inputs without editing source files
 or finalizing README/Makefile/package changes.
+
+### v1.4 - 2026-08-31
+
+Recorded Arc05 Slice02 as verified/closed by CDC. Slice03 can now open against
+the verified component contracts, file layout plan, source-to-component
+migration plan, package/source contract register, support/adapter/dependency
+plan, and package/README/validation handoff inputs.
