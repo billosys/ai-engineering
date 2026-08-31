@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice03-target-composition-package-architecture
-status: open
+status: proposed-done
 opened-on: 2026-08-31
+proposed-done-on: 2026-08-31
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
@@ -139,3 +140,19 @@ checkout untouched.
 - Outputs remain proposed architecture inputs, not operator-accepted final
   architecture.
 - No source files are edited.
+
+## Delivered
+
+Slice03 produced the target composition and package architecture packet under
+`artifacts/`:
+
+- `artifacts/target-component-architecture.md`
+- `artifacts/dependency-and-composition-order.md`
+- `artifacts/package-and-release-architecture.md`
+- `artifacts/wayfinding-adapter-and-support-plan.md`
+- `artifacts/slice04-operator-acceptance-inputs.md`
+
+The proposal composes verified Slice01 and Slice02 inputs into a gate-first
+target architecture for Slice04 acceptance. Package paths, component names,
+source moves, release surfaces, and Arc05 implementation slices remain
+non-final until operator acceptance is recorded.
