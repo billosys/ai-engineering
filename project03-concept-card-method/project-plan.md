@@ -145,9 +145,8 @@ authorize source edits.
 
 ## Current Status
 
-Project03 is open for planning. Arc01, Arc02, and Arc03 are closed. Arc04 is
-closed with composition verdict `delivered`. Arc05 is ready for detailed
-implementation-plan work and Slice01 is open.
+Project03 is open for planning. Arc01, Arc02, Arc03, and Arc04 are closed.
+Arc05 is active; Slice01 is verified-closed and Slice02 is ready to open.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -360,3 +359,10 @@ Arc05 Slice01 opened for source-surface and implementation-input inventory.
 The slice will map live source, package, README/library, Makefile/check, and
 Arc04 handoff inputs before later Arc05 slices decide source layout, schema,
 validation, packaging, release gates, or implementation sequencing.
+
+### v1.32 - 2026-08-31
+
+Arc05 Slice01 marked verified-closed after CDC reproduced all ten slice ledger
+rows. Slice02 can now plan the source layout and content sequence using the
+verified source-surface inventory and the package-behavior constraint surfaced
+by Slice01.

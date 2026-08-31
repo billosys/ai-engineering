@@ -32,7 +32,7 @@ schema files, generated zips, released bundles, or runtime services.
 
 Directory: `slice01-source-surface-inventory`
 
-Status: open.
+Status: verified-closed on 2026-08-31.
 
 Scope: inventory the live source checkout surfaces Arc05 may need to plan
 against: existing knowledge skills, README/library text, Makefile/package
@@ -150,3 +150,12 @@ Slice01 opened for source-surface and implementation-input inventory. The
 slice is scoped to mapping live repository facts, package/discoverability
 surfaces, and Arc04 handoff inputs before later slices decide layout, schema,
 validation, packaging, release gates, or implementation sequencing.
+
+### v1.2 - 2026-08-31
+
+Slice01 marked verified-closed after CDC reproduced all ten slice ledger rows.
+No Arc05 re-sequencing, new slice, or scope correction is required before
+Slice02. The package-behavior constraint surfaced by Slice01 remains an input:
+the current generic skill package path copies the selected `SKILL.md` plus
+sibling `guides/`, so assets outside `guides/` must be planned deliberately by
+later Arc05 slices.
