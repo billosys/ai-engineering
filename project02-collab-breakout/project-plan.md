@@ -148,8 +148,9 @@ top-level collaboration-framework remains usable as a composition.
 
 Detailed arc planning opened after Arc 03 closed/composed. Slice 01 produced
 the architecture decision instrument and is verified/closed. Slices 02 and 03
-are verified/closed. Slice 04 is open for operator acceptance and architecture
-synthesis.
+are verified/closed. Slice 04 is CDC-verified as an operator acceptance
+packet and architecture synthesis, but operator acceptance remains pending;
+Arc04 is not ready for formal close.
 
 ### Arc 05: Implementation Plan
 
@@ -165,9 +166,10 @@ Detailed arc planning is deferred until Arc 04 closes and
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
-Arc 03 is closed/composed. Arc04 is active; Slices 01 and 02 are
-verified/closed, Slice 03 is verified/closed, and Slice 04 is open for
-operator acceptance and architecture synthesis.
+Arc 03 is closed/composed. Arc04 is active; Slices 01 through 03 are
+verified/closed, and Slice 04 is CDC-verified as an acceptance packet with
+operator acceptance pending. Arc04 remains open until explicit operator
+acceptance evidence exists.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -361,3 +363,10 @@ Opened Arc04 Slice 04 for operator acceptance and architecture synthesis. The
 slice owns the acceptance packet, architecture synthesis, decision/risk
 disposition record, package/release acceptance record, Arc05 implementation
 inputs, and Arc04 close-readiness assessment.
+
+### v1.30 - 2026-08-31
+
+Recorded Arc04 Slice 04 as CDC-verified for technical packet completeness.
+Operator acceptance remains pending, so Arc04 remains active and cannot close
+until explicit operator acceptance evidence exists or requested architecture
+changes are dispositioned.

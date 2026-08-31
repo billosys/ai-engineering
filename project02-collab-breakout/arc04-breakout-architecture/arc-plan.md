@@ -110,7 +110,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice04-operator-acceptance-architecture-synthesis`
 
-Status: open as of 2026-08-31.
+Status: CDC-verified / pending operator acceptance as of 2026-08-31.
 
 Scope: synthesize the target architecture into an acceptance packet for
 operator review. Record accepted component names, contracts, dependencies,
@@ -120,8 +120,14 @@ Arc04 can close.
 
 Blocks: Arc04 close and Arc05 implementation planning.
 
-Open set exists. Durable analysis outputs belong under the slice-local
-`artifacts/` directory.
+Delivered: Slice 04 produced the operator acceptance packet, architecture
+synthesis, decision/risk disposition record, package/release acceptance
+record, Arc05 implementation inputs, and Arc04 close-readiness assessment.
+CDC reproduced the technical close checks in
+`slice04-operator-acceptance-architecture-synthesis/cdc-verification.md`, but
+operator acceptance remains pending, so Arc04 cannot formally close yet.
+
+Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 ## Dependencies
 
@@ -200,3 +206,10 @@ owns the acceptance packet, decision/risk dispositions, package/release
 acceptance record, Arc05 implementation inputs, and Arc04 close-readiness
 assessment; explicit operator evidence is required before claiming accepted
 architecture.
+
+### v1.8 - 2026-08-31
+
+Recorded Slice 04 as CDC-verified for technical packet completeness while
+operator acceptance remains pending. Arc04 is not ready for formal close, and
+the A-4 parent gate now requires explicit operator acceptance evidence before
+closure.
