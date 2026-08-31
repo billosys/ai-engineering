@@ -3,7 +3,7 @@
 ```yaml
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
-status: active
+status: closed
 opened-on: 2026-08-30
 depends-on:
   - arc02-conceptual-analysis
@@ -110,7 +110,7 @@ Durable analysis outputs live under the slice-local `artifacts/` directory.
 
 Directory: `slice04-operator-acceptance-architecture-synthesis`
 
-Status: CDC-verified / pending operator acceptance as of 2026-08-31.
+Status: verified/closed with operator acceptance on 2026-08-31.
 
 Scope: synthesize the target architecture into an acceptance packet for
 operator review. Record accepted component names, contracts, dependencies,
@@ -123,9 +123,10 @@ Blocks: Arc04 close and Arc05 implementation planning.
 Delivered: Slice 04 produced the operator acceptance packet, architecture
 synthesis, decision/risk disposition record, package/release acceptance
 record, Arc05 implementation inputs, and Arc04 close-readiness assessment.
-CDC reproduced the technical close checks in
-`slice04-operator-acceptance-architecture-synthesis/cdc-verification.md`, but
-operator acceptance remains pending, so Arc04 cannot formally close yet.
+CDC reproduced the close checks in
+`slice04-operator-acceptance-architecture-synthesis/cdc-verification.md`.
+Operator acceptance is recorded in
+`slice04-operator-acceptance-architecture-synthesis/artifacts/operator-accepted-architecture.md`.
 
 Durable analysis outputs live under the slice-local `artifacts/` directory.
 
@@ -151,6 +152,18 @@ Leaves for later arcs:
 - A top-level `collaboration-framework` composition contract.
 - Arc05-ready implementation inputs covering source edits, README/SKILL
   updates, packaging lists, path validation, and verification gates.
+
+## Arc Closure
+
+Composition verdict: delivered.
+
+Arc04 produced an operator-accepted breakout architecture for the current
+collaboration framework. The accepted target components are
+`collaboration-framework`, `engineering-methods`, `project-management`,
+`work-verification`, `testing`, `code-auditing`, `agent-coordination`, and
+`contribution-style`. Arc04 preserved Project01 source/package constraints,
+recorded non-component and deferred rows, and handed Arc05 implementation
+planning inputs forward without editing source files.
 
 ## Version History
 
@@ -213,3 +226,10 @@ Recorded Slice 04 as CDC-verified for technical packet completeness while
 operator acceptance remains pending. Arc04 is not ready for formal close, and
 the A-4 parent gate now requires explicit operator acceptance evidence before
 closure.
+
+### v1.9 - 2026-08-31
+
+Recorded operator acceptance and formal Arc04 close. The accepted architecture
+renames and adjusts the target component set, promotes `agent-coordination`,
+places component-boundary analysis under `engineering-methods`, keeps memory
+admission deferred, and opens Arc05 for implementation planning.

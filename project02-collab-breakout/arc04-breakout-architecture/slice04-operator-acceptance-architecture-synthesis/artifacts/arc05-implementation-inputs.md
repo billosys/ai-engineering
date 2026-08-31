@@ -4,7 +4,7 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice04-operator-acceptance-architecture-synthesis
-status: acceptance-pending-inputs
+status: accepted-architecture-inputs
 implementation-started: false
 source-files-remain-untouched: true
 ```
@@ -13,8 +13,10 @@ source-files-remain-untouched: true
 
 These are Arc05 implementation-plan inputs. They do not start Arc05
 implementation, do not edit source files, and do not finalise package paths.
-Operator acceptance evidence is required before implementation-plan decisions
-can be treated as final.
+Operator acceptance evidence is recorded in
+`operator-accepted-architecture.md`. Arc05 can now plan from the accepted
+architecture, while implementation-plan decisions still remain subject to
+Arc05 closure before source edits begin.
 
 Source files remain untouched. No source edits, README updates, `SKILL.md`
 entrypoints, packaging changes, Makefile changes, package list edits,

@@ -4,20 +4,24 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice04-operator-acceptance-architecture-synthesis
-architecture-status: proposed-architecture
-operator-acceptance: pending
-accepted-architecture: not accepted
-explicit-operator-evidence: absent
+architecture-status: accepted-architecture
+operator-acceptance: accepted
+accepted-architecture: accepted-with-adjustments
+explicit-operator-evidence: recorded
 source-files-edited: false
 ```
 
 ## Status
 
-This architecture synthesis records the proposed architecture from verified
-Slice01, Slice02, and Slice03 inputs. It is not accepted architecture because
-explicit operator evidence is absent. Operator acceptance is pending
-acceptance, and the re-entry condition is an operator decision that accepts,
-changes, or rejects the packet followed by CDC verification of Slice04.
+This architecture synthesis originally recorded the proposed architecture from
+verified Slice01, Slice02, and Slice03 inputs before operator acceptance was
+available.
+
+Operator acceptance has now been recorded in
+`operator-accepted-architecture.md`. The component table below preserves the
+pre-acceptance synthesis; the accepted names, contracts, package/source
+assumptions, and adjusted component boundaries are authoritative in
+`operator-accepted-architecture.md`.
 
 ## Component Contracts
 
@@ -59,11 +63,10 @@ changes, or rejects the packet followed by CDC verification of Slice04.
 
 ## Arc05 Implications
 
-Arc05 may use this architecture synthesis as acceptance-pending input only. It
-must not treat any proposed package path as final without operator acceptance.
-Its implementation-plan should preserve source/package assumptions, specify
-exact source edits, README changes, `SKILL.md` entrypoints, Makefile/package
-list updates, generated zip behavior, validation gates, migration notes, and
-review concerns.
+Arc05 may use `operator-accepted-architecture.md` as accepted architecture
+input. Its implementation-plan should preserve source/package assumptions,
+specify exact source edits, README changes, `SKILL.md` entrypoints,
+Makefile/package list updates, generated zip behavior, validation gates,
+migration notes, and review concerns.
 
 The source checkout remains untouched by this slice.

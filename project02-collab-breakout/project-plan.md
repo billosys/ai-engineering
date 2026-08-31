@@ -139,37 +139,39 @@ arc ledger rows at composition scale.
 
 ### Arc 04: Breakout Architecture
 
-Status: active.
+Status: closed/composed on 2026-08-31.
 
 Expected capability: propose the target functional division into standalone
 and composable components, including component names, contracts,
 dependencies, wayfinders, package shape, migration risks, and how the
 top-level collaboration-framework remains usable as a composition.
 
-Detailed arc planning opened after Arc 03 closed/composed. Slice 01 produced
-the architecture decision instrument and is verified/closed. Slices 02 and 03
-are verified/closed. Slice 04 is CDC-verified as an operator acceptance
-packet and architecture synthesis, but operator acceptance remains pending;
-Arc04 is not ready for formal close.
+Detailed arc planning opened after Arc 03 closed/composed. Arc04 is
+closed/composed with operator acceptance recorded in
+`arc04-breakout-architecture/slice04-operator-acceptance-architecture-synthesis/artifacts/operator-accepted-architecture.md`.
+
+The accepted target components are `collaboration-framework`,
+`engineering-methods`, `project-management`, `work-verification`, `testing`,
+`code-auditing`, `agent-coordination`, and `contribution-style`.
 
 ### Arc 05: Implementation Plan
 
-Status: placeholder.
+Status: active.
 
 Expected capability: turn the accepted breakout architecture into a sliceable
 implementation plan covering source edits, README guidance, component SKILL.md
 entry points, packaging behavior, path-contract validation, and verification.
 
-Detailed arc planning is deferred until Arc 04 closes and
-`project01-harmonise-paths` has closed.
+Detailed arc planning opened after Arc04 closed/composed and Project01 closure
+was reproduced from the planning tree. Arc05 is planning-only: it prepares
+source-edit slices, package/release changes, README/SKILL wayfinding changes,
+validation gates, and migration notes, but does not edit source files.
 
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
-Arc 03 is closed/composed. Arc04 is active; Slices 01 through 03 are
-verified/closed, and Slice 04 is CDC-verified as an acceptance packet with
-operator acceptance pending. Arc04 remains open until explicit operator
-acceptance evidence exists.
+Arc 03 is closed/composed. Arc04 is closed/composed with accepted architecture
+recorded. Arc05 is active for implementation planning.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -370,3 +372,18 @@ Recorded Arc04 Slice 04 as CDC-verified for technical packet completeness.
 Operator acceptance remains pending, so Arc04 remains active and cannot close
 until explicit operator acceptance evidence exists or requested architecture
 changes are dispositioned.
+
+### v1.31 - 2026-08-31
+
+Recorded operator acceptance and formal Arc04 close. Arc04 delivered the
+accepted component architecture and bubbled up that Arc05 should open for
+implementation planning using the accepted eight-component map, Project01
+source/package gates, component-level versioning, and deferred memory
+admission.
+
+### v1.32 - 2026-08-31
+
+Opened Arc05 for implementation planning after Arc04 close and reproduced
+Project01 closure evidence. Arc05 remains planning-only and must produce
+source-edit, package/release, README/SKILL, validation, and migration plans
+before source implementation begins.

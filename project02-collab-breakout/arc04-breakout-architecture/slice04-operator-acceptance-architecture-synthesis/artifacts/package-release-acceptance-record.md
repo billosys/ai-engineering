@@ -4,18 +4,25 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice04-operator-acceptance-architecture-synthesis
-status: non-final
-operator-acceptance: pending
-accepted-package-path: none
+status: accepted-architecture-input
+operator-acceptance: accepted
+accepted-package-path: recorded-in-operator-accepted-architecture
 source-files-edited: false
 ```
 
 ## Status
 
 This package/release acceptance record preserves Project01 and
-project01-harmonise-paths source/package gates for operator review. No
-accepted package path exists in this slice because explicit operator evidence
-is absent. Every package path below is a pending package path and non-final.
+project01-harmonise-paths source/package gates for operator review. At
+original CC close, every package path below was pending and non-final because
+explicit operator evidence was absent.
+
+Operator acceptance is now recorded in
+`operator-accepted-architecture.md`. The accepted architecture sets the
+component package-root names for Arc05 planning while preserving this record's
+Project01 source/package, package-local link, zip root, README, `SKILL.md`,
+Makefile, generated zip, validation, release-surface, and CCDP separation
+gates.
 
 ## Source Grounding
 

@@ -1,0 +1,21 @@
+# Arc 05: Implementation Plan
+
+## Arc Ledger
+
+Capability: produce a sliceable implementation plan for the accepted
+collaboration-framework breakout architecture without editing source files.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| A-1 | Arc04 is closed/composed with operator-accepted architecture | `test -f ../arc04-breakout-architecture/closing-report.md && rg -n "Composition verdict: delivered|operator acceptance|accepted component|agent-coordination|engineering-methods" ../arc04-breakout-architecture/closing-report.md ../arc04-breakout-architecture/slice04-operator-acceptance-architecture-synthesis/artifacts/operator-accepted-architecture.md` | correctness-grade | arc-plan | open | | Children/input row. |
+| A-2 | Project01 path/package contract is closed and completely verified | `test -f ../../project01-harmonise-paths/closing-report.md && rg -n "status: closed|DoD verdict: met|verified|completely verified" ../../project01-harmonise-paths/closing-report.md ../../project01-harmonise-paths/project-plan.md` | correctness-grade | arc-plan | open | | Input gate row. |
+| A-3 | Slice 01 closes with an implementation surface map | `test -f slice01-implementation-surface-map/cdc-verification.md && rg -n "status: verified-closed|implementation surface map|source files|README|SKILL.md|Makefile|package-path|validation|CCDP" slice01-implementation-surface-map/cdc-verification.md` | correctness-grade | arc-plan | open | | Children-closed row. |
+| A-4 | Slice 02 closes with component contracts and file plan | `test -f slice02-component-contract-file-plan/cdc-verification.md && rg -n "status: verified-closed|component contract|file plan|version-history.md|package/source|support asset|agent-coordination|contribution-style" slice02-component-contract-file-plan/cdc-verification.md` | correctness-grade | arc-plan | open | | Children-closed row. |
+| A-5 | Slice 03 closes with package, README, and validation plan | `test -f slice03-package-readme-validation-plan/cdc-verification.md && rg -n "status: verified-closed|README|SKILL.md|Makefile|generated zip|make check-skills|make check-package-paths|CCDP separation|migration" slice03-package-readme-validation-plan/cdc-verification.md` | correctness-grade | arc-plan | open | | Children-closed row. |
+| A-6 | Slice 04 closes with final implementation sequence synthesis | `test -f slice04-implementation-sequence-synthesis/cdc-verification.md && rg -n "status: verified-closed|implementation sequence|source-edit slices|validation matrix|risk register|Arc05 close-readiness|source files remain untouched" slice04-implementation-sequence-synthesis/cdc-verification.md` | correctness-grade | arc-plan | open | | Children-closed row. |
+| A-7 | Final plan covers every accepted component and cross-cutting gate | `rg -n "collaboration-framework|engineering-methods|project-management|work-verification|testing|code-auditing|agent-coordination|contribution-style|source/package/release gates|version-history.md|component-boundary-analysis|memory admission|CCDP" slice01-implementation-surface-map slice02-component-contract-file-plan slice03-package-readme-validation-plan slice04-implementation-sequence-synthesis` | correctness-grade | arc-plan | open | | Arc-scale composition row. |
+| A-8 | Arc05 preserves planning-only boundary and source checkout cleanliness | `rg -n "planning-only|no source edits|source files remain untouched|implementation not started" . && git -C /Users/oubiwann/lab/billosys/ai-engineering diff --quiet` | correctness-grade | arc-plan | open | | Arc-scale boundary row. |
+
+## Closure
+
+Arc remains open.

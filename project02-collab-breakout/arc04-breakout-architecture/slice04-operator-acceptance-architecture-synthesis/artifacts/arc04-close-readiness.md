@@ -4,18 +4,17 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice04-operator-acceptance-architecture-synthesis
-status: not-ready-for-arc-close
-operator-acceptance: pending
-cdc-verification: pending
+status: ready-for-arc-close
+operator-acceptance: accepted
+cdc-verification: verified-closed
 ```
 
 ## Verdict
 
-Arc04 close readiness: not ready for arc close.
+Arc04 close readiness: ready for arc close.
 
-The architecture packet is ready for operator review, but formal Arc04 close
-requires both CDC verification of Slice04 and explicit operator acceptance
-evidence. Neither is present in this execution context.
+Formal Arc04 close now has both CDC verification of Slice04 and explicit
+operator acceptance evidence in `operator-accepted-architecture.md`.
 
 ## Readiness Checks
 
@@ -24,24 +23,19 @@ evidence. Neither is present in this execution context.
 | Slice01 architecture decision instrument verified. | CDC verification present. | Satisfied input. |
 | Slice02 component contract evaluation verified. | CDC verification present. | Satisfied input. |
 | Slice03 target composition and package architecture verified. | CDC verification present. | Satisfied input. |
-| Slice04 artifacts complete. | Prepared for CC close and local verification. | Satisfies CC proposed-done only. |
-| Operator acceptance evidence. | Pending; no explicit operator accept/change/reject evidence available. | Blocks formal Arc04 close. |
-| CDC verification of Slice04. | Pending; CDC has not independently reproduced Slice04 rows. | Blocks formal Arc04 close. |
-| Remediation need. | None identified from CC synthesis; remediation may be required if the operator requests architecture changes. | Conditional. |
+| Slice04 artifacts complete. | CDC verified. | Satisfied input. |
+| Operator acceptance evidence. | Accepted architecture recorded in `operator-accepted-architecture.md`. | Satisfied input. |
+| CDC verification of Slice04. | `cdc-verification.md` records `status: verified-closed`. | Satisfied input. |
+| Remediation need. | No remediation slice required; operator adjustments are captured in the accepted architecture. | Satisfied input. |
 
 ## Re-Entry Condition
 
-Re-entry condition for ready for arc close:
+Close condition:
 
-1. Operator records acceptance, requested changes, or rejected alternatives for
-   the acceptance packet.
-2. If the operator requests changes that reopen component boundaries,
-   package/release gates, support asset ownership, adapter placement, or
-   deferred decisions, complete a remediation slice before arc close.
-3. CDC independently verifies Slice04 and writes `cdc-verification.md` or
-   equivalent evidence.
-4. Arc04 close reproduces parent ledger rows, records the operator acceptance
-   state, and carries any accepted Arc05 implementation inputs.
+1. Operator acceptance is recorded.
+2. CDC verification is recorded.
+3. Arc04 close reproduces parent ledger rows, records the accepted architecture,
+   and carries Arc05 implementation inputs.
 
 ## Silent-Drop Check
 
@@ -61,6 +55,6 @@ Rows: 9. Done: 9. Deferred: 0. No-op: 0.
 
 ## Arc05 Gate
 
-Arc05 implementation planning may use the packet as acceptance-pending input,
-but Arc05 should not begin source edits or treat package paths as final until
-operator acceptance evidence exists. Source files remain untouched.
+Arc05 implementation planning may use the accepted architecture as input.
+Arc05 should still not begin source edits until the implementation plan is
+opened, verified, and accepted. Source files remain untouched.

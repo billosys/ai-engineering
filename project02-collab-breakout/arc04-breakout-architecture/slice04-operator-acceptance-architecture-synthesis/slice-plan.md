@@ -4,11 +4,11 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice04-operator-acceptance-architecture-synthesis
-status: cdc-verified-pending-operator-acceptance
+status: verified-closed
 opened-on: 2026-08-31
 proposed-done-on: 2026-08-31
 cdc-verified-on: 2026-08-31
-operator-acceptance: pending
+operator-acceptance: accepted
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
@@ -25,6 +25,7 @@ related:
   - ../arc-plan.md
   - ../ledger.md
   - cdc-verification.md
+  - artifacts/operator-accepted-architecture.md
   - ../slice01-architecture-decision-instrument/cdc-verification.md
   - ../slice01-architecture-decision-instrument/artifacts/architecture-decision-method.md
   - ../slice01-architecture-decision-instrument/artifacts/component-contract-schema.md
@@ -162,10 +163,11 @@ The close report is `closing-report.md`.
 
 ## Acceptance State
 
-Operator acceptance is pending. No explicit operator acceptance, requested
-change, or rejected alternative evidence was available in the CC execution
-context, so the architecture is recorded as proposed and not accepted.
+Operator acceptance is recorded in
+`artifacts/operator-accepted-architecture.md`. The accepted architecture
+incorporates operator adjustments to component names, component placement,
+agent coordination, component maintenance/version history, ontology critique
+placement, and memory-admission deferral.
 
-CDC has verified the Slice04 technical packet. Arc04 is not ready for formal
-arc close until operator acceptance evidence exists and any requested changes
-are dispositioned. Source files remain untouched.
+CDC has verified the Slice04 packet. Arc04 is ready for formal arc close.
+Source files remain untouched.

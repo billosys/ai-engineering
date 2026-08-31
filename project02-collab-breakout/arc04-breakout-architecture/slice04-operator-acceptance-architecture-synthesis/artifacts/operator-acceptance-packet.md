@@ -4,9 +4,9 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice04-operator-acceptance-architecture-synthesis
-status: proposed-for-operator-review
-operator-acceptance: pending
-explicit-operator-evidence: absent
+status: accepted-with-adjustments
+operator-acceptance: accepted
+explicit-operator-evidence: recorded
 source-files-edited: false
 ```
 
@@ -20,10 +20,37 @@ inputs; and the verified Slice03 target component architecture, dependency
 order, package and release architecture, wayfinding adapter plan, and
 operator acceptance inputs.
 
-No explicit operator acceptance, requested change, or rejected alternative is
-available in this execution context. The proposed decision rows below are
-therefore pending. Arc04 close is not ready until the operator records an
-accept/change/reject decision and CDC verifies this Slice04 close set.
+At original CC close, no explicit operator acceptance, requested change, or
+rejected alternative was available in that execution context. The proposed
+decision rows below were therefore pending until operator review. That review
+has now happened; the accepted architecture is recorded in
+`operator-accepted-architecture.md`.
+
+## Operator Decision Recorded
+
+Operator acceptance was recorded after this packet was reviewed. The accepted
+architecture is captured in `operator-accepted-architecture.md`.
+
+The accepted architecture adjusts the proposed defaults by:
+
+- keeping collaboration posture inside `collaboration-framework`;
+- renaming `engineering-methodology-and-process` to `engineering-methods`;
+- renaming `ledger-verification-protocol` to `work-verification`;
+- broadening `coverage-hardening-discipline` to `testing`;
+- renaming `code-audit-discipline` to `code-auditing`;
+- promoting delegation/adapters/context-packet guidance to
+  `agent-coordination`;
+- renaming `contribution-style-and-voice` to `contribution-style`;
+- putting source/package/release gates under `engineering-methods` while
+  preserving per-component package/source contracts;
+- using component-level versions in `SKILL.md` plus sibling
+  `version-history.md`;
+- placing ontology critique under
+  `engineering-methods/guides/05-component-boundary-analysis.md`;
+- deferring memory admission as future research.
+
+The original pending rows below are retained as the review packet that led to
+the accepted architecture.
 
 ## Proposed Architecture
 
@@ -41,8 +68,8 @@ The proposed component graph is gate-first and composer-routed.
 
 ## Acceptance Questions
 
-Each acceptance question is pending until explicit operator evidence is
-recorded.
+The table below is the original review table. Current accepted dispositions
+are recorded in `operator-accepted-architecture.md`.
 
 | ID | Acceptance question | Recommended default | Meaningful alternative | Current status |
 |----|---------------------|---------------------|------------------------|----------------|
@@ -61,8 +88,8 @@ recorded.
 
 ## Rejected Alternative Set
 
-The following rejected alternative recommendations remain pending operator
-confirmation: keep the current monolith unchanged; replace the top-level
+The accepted architecture rejects these alternatives unless a later project
+reopens them: keep the current monolith unchanged; replace the top-level
 composer with a link-only index; split every PM guide into a standalone
 package; merge audit and coverage; promote templates/examples/protocol
 distribution guidance to components; choose package paths before Project01

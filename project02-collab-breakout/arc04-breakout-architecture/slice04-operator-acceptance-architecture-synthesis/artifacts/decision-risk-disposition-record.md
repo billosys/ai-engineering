@@ -4,17 +4,22 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice04-operator-acceptance-architecture-synthesis
-operator-acceptance: pending
-explicit-operator-evidence: absent
+operator-acceptance: accepted
+explicit-operator-evidence: recorded
 ```
 
 ## Status Vocabulary
 
 This record preserves source IDs and risk disposition without overclaiming.
-No row is accepted, changed, or rejected by Slice04 because explicit operator
-evidence is absent. Rows are marked pending for operator acceptance. Some rows
-have a proposed deferred placement; that proposed disposition remains pending
-until the operator accepts it.
+At original CC close, no row was accepted, changed, or rejected because
+explicit operator evidence was absent. Operator acceptance is now recorded in
+`operator-accepted-architecture.md`.
+
+Operator acceptance is now recorded in
+`operator-accepted-architecture.md`. The pending table rows below are retained
+as the pre-acceptance decision/risk register; their accepted or
+accepted-with-adjustment disposition is summarized by the accepted architecture
+record.
 
 ## D-Row Dispositions
 
