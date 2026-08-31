@@ -99,7 +99,7 @@ directory.
 
 Directory: `slice05-architecture-synthesis`
 
-Status: open.
+Status: verified-closed on 2026-08-31.
 
 Scope: compose the verified Arc04 slices into an accepted v4.0 skill
 architecture, record architecture decisions, and produce the bounded
@@ -195,3 +195,10 @@ is scoped to composing the verified Arc04 architecture outputs, recording
 final and unresolved decisions, and preparing bounded implementation-planning
 inputs while leaving Arc04 formal close and all source implementation work to
 later steps.
+
+### v1.9 - 2026-08-31
+
+Slice05 marked verified-closed after CDC reproduced all twelve slice ledger
+rows. Arc04 is ready for formal arc close and arc-ledger composition
+verification of A-6, A-7, and A-8; implementation planning remains deferred to
+Arc05 after formal close.

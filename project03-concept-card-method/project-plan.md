@@ -129,9 +129,9 @@ contract, guide set, templates, optional scripts, examples, package behavior,
 README integration, and relationship to existing knowledge and collaboration
 skills.
 
-Detailed arc planning is open. Slice01, Slice02, Slice03, and Slice04 are
-verified-closed. Slice05 is open for final skill-architecture synthesis and
-Arc05 handoff.
+Detailed Arc04 slice work is complete. Slice01 through Slice05 are
+verified-closed. Arc04 is ready for formal arc close and arc-ledger
+composition verification.
 
 ### Arc 05: Implementation Plan
 
@@ -145,8 +145,7 @@ Detailed arc planning is deferred until Arc 04 closes.
 ## Current Status
 
 Project03 is open for planning. Arc01, Arc02, and Arc03 are closed. Arc04 is
-active, with Slice05 opened for final skill-architecture synthesis and Arc05
-handoff.
+active, with Slice05 verified-closed and Arc04 ready for formal close.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -331,3 +330,9 @@ architecture into the final Arc04 handoff.
 Arc04 Slice05 opened for final skill-architecture synthesis and Arc05 handoff.
 The project remains planning-only; Arc04 formal close and Arc05 detailed
 implementation planning remain later steps.
+
+### v1.28 - 2026-08-31
+
+Arc04 Slice05 marked verified-closed after CDC reproduced all twelve slice
+ledger rows. Arc04 is ready for formal close and arc-ledger composition
+verification; Arc05 remains deferred until Arc04 closes.
