@@ -189,7 +189,7 @@ validation gates, and migration notes, but does not edit source files.
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
 Arc 03 is closed/composed. Arc04 is closed/composed with accepted architecture
 recorded. Arc05 is active for implementation planning; Slices 01 through 03
-are verified/closed and Slice04 is ready to open.
+are verified/closed and Slice04 is open.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -441,3 +441,10 @@ Recorded Arc05 Slice03 as verified/closed by CDC. Slice04 can now open for
 implementation sequence synthesis using the verified release-surface,
 README, `SKILL.md`, package-path, migration, validation, and Slice04 handoff
 plans.
+
+### v1.38 - 2026-08-31
+
+Opened Arc05 Slice04 for implementation sequence synthesis. This is the final
+Arc05 planning slice and will produce the ordered source-edit roadmap,
+implementation risks, validation matrix, acceptance gates, source
+implementation handoff packet, and Arc05 close-readiness assessment.
