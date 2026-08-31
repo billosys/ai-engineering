@@ -66,7 +66,7 @@ directory.
 
 Directory: `slice03-schema-validation-plan`
 
-Status: planned.
+Status: open.
 
 Scope: decide the implementation-plan treatment for concept-card schemas,
 claim/source-support records, source-span locators, edge/CQ/run/result
@@ -174,3 +174,10 @@ rows. The accepted source home is `knowledge/concept-card-method/`, with
 `SKILL.md` at the root and guide, template, example, validation, and support
 surfaces planned under sibling `guides/`. No re-sequencing, new slice, or scope
 correction is required before Slice03.
+
+### v1.5 - 2026-08-31
+
+Slice03 opened for schema, enum, validation, validator-code scope, test scope,
+failure-output expectation, and review-boundary planning. The slice consumes
+the verified Slice02 layout and leaves README, Makefile, package, generated
+zip, release, and source version-history mechanics to Slice04.
