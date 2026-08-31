@@ -4,8 +4,9 @@
 project: project02-collab-breakout
 arc: arc04-breakout-architecture
 slice: slice02-component-contract-evaluation
-status: open
+status: proposed-done
 opened-on: 2026-08-31
+proposed-done-on: 2026-08-31
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
@@ -87,6 +88,20 @@ Produce these durable artifacts under `artifacts/`:
 - `slice03-composition-inputs.md` - the evaluated row set that Slice03 should
   compose into the target architecture, including unresolved questions and
   required operator follow-up.
+
+## Delivered
+
+Slice02 produced the five required durable artifacts under `artifacts/`:
+
+- `component-contract-evaluation-matrix.md`
+- `candidate-component-contracts.md`
+- `support-adapter-constraint-dispositions.md`
+- `package-release-gate-dispositions.md`
+- `slice03-composition-inputs.md`
+
+The outputs evaluate contract candidates and dispositions only. They do not
+accept final component architecture, package paths, source moves, or operator
+acceptance.
 
 ## Verification Approach
 
