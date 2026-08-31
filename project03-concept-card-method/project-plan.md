@@ -146,7 +146,8 @@ authorize source edits.
 ## Current Status
 
 Project03 is open for planning. Arc01, Arc02, Arc03, and Arc04 are closed.
-Arc05 is active; Slice01 is verified-closed and Slice02 is open.
+Arc05 is active; Slice01 and Slice02 are verified-closed, and Slice03 is ready
+to open.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -372,3 +373,9 @@ by Slice01.
 Arc05 Slice02 opened for skill source layout and content sequence planning.
 The slice will produce source-layout, content-sequence, and surface-routing
 decision artifacts while preserving the planning-only source-edit boundary.
+
+### v1.34 - 2026-08-31
+
+Arc05 Slice02 marked verified-closed after CDC reproduced all eleven slice
+ledger rows. The accepted source-layout and content-sequence plans are now
+available for Slice03 schema, enum, and validation planning.

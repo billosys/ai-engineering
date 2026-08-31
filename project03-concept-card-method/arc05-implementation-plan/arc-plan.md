@@ -49,7 +49,7 @@ directory.
 
 Directory: `slice02-source-layout-content-plan`
 
-Status: open.
+Status: verified-closed on 2026-08-31.
 
 Scope: decide the target source layout for the v4.0 concept-card method skill:
 thin `SKILL.md`, guide files, template files, example files, validation
@@ -166,3 +166,11 @@ Slice02 opened for skill source layout and content sequence planning. The
 slice will decide planned source paths, content boundaries, cross-links, and
 first implementation edit order while routing schema, validation, package,
 release, and version-history mechanics to later Arc05 slices.
+
+### v1.4 - 2026-08-31
+
+Slice02 marked verified-closed after CDC reproduced all eleven slice ledger
+rows. The accepted source home is `knowledge/concept-card-method/`, with
+`SKILL.md` at the root and guide, template, example, validation, and support
+surfaces planned under sibling `guides/`. No re-sequencing, new slice, or scope
+correction is required before Slice03.
