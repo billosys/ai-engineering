@@ -4,7 +4,7 @@
 project: project02-collab-breakout
 arc: arc05-implementation-plan
 slice: slice02-component-contract-file-plan
-status: open
+status: proposed-done
 opened-on: 2026-08-31
 artifact-home: artifacts/
 depends-on:
@@ -120,5 +120,8 @@ decisions, produce Slice03-ready inputs, and leave the source checkout clean.
 
 ## Closure State
 
-Slice02 is open. No close-set documents exist yet. Source files remain
-untouched, and implementation has not started.
+Slice02 is proposed-done as of 2026-08-31. Required artifacts are under
+`artifacts/`, `closing-report.md` has been written, ledger rows F-1 through
+F-9 have attested evidence, source files remain untouched, and implementation
+has not started. CDC verification is still required before the slice is
+verified/closed.
