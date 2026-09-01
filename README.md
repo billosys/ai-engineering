@@ -18,6 +18,9 @@ It includes:
   Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, and the
   Biome and Deno linters — see [the skill library](#the-skill-library) below
   for details)
+- a home for reusable method skills: skills that teach an assistant how to
+  perform a durable knowledge-work method, not just how to work in a specific
+  programming or design domain
 - the **collaboration framework** that governs how the work actually gets done
 - the **Composite Cognition Dispatch Protocol**, an RFC-style protocol for
   routing hybrid AI/service cognition with provenance, escalation, and audit
@@ -230,8 +233,18 @@ Each is self-contained and can also be dropped directly into a project's
 
 ## The skill library
 
-Ten knowledge bases live under [`./knowledge/`](./knowledge), one directory
-per domain, each with its own `SKILL.md` entry point. They share one design:
+The skill library lives under [`./knowledge/`](./knowledge). It started as a
+set of domain and tooling knowledge bases, but it now has room for a second
+kind of skill: reusable knowledge-method skills.
+
+Domain and tooling skills answer "what is good practice in this domain?"
+Method skills answer "how should this kind of knowledge work be performed,
+checked, and preserved?" They still belong under `knowledge/` because their
+job is to give the assistant a durable, provenance-aware knowledge substrate.
+
+### Domain and tooling skills
+
+Ten domain/tooling skill packages are available today. They share one design:
 
 - **Modular** — load one domain without dragging in the others
 - **Sourced** — every pattern traces to an authoritative origin
@@ -252,6 +265,19 @@ per domain, each with its own `SKILL.md` entry point. They share one design:
 | [Deno lint](./knowledge/deno/) | Deno's 70 lint rules, language-level only. Complements the Biome JS linter. |
 | [Cobalt](./knowledge/cobalt/) | The Rust-native static site generator and its Liquid templates — 32 patterns from config to deployment. |
 
+### Method skills
+
+Method skills package reusable cognitive and engineering methods as assistant
+skills. They are appropriate when the reusable unit is not a language or tool,
+but a disciplined way of producing, checking, reconciling, or preserving
+knowledge.
+
+The first planned method skill is `concept-card-method`, a v4.0 concept-card
+extraction and memory-admission method. Its planned source home is
+`knowledge/concept-card-method/`, with a thin `SKILL.md` wayfinder, focused
+guides, templates, examples, validation documentation, and package support
+once implementation begins.
+
 Each skill's own `README.md` carries the full chapter list, sources, and
 pattern counts. To use one, point your loader at its `SKILL.md`, reference it
 from your project's `CLAUDE.md`, or install the packaged zip (below). Every
@@ -263,7 +289,7 @@ Every knowledge base follows the same anatomy, so once you've learned one,
 you've learned them all:
 
 ```text
-knowledge/<domain>/
+knowledge/<skill>/
 ├── SKILL.md              # Entry point with frontmatter: name, triggers, scope
 ├── guides/               # Numbered topic guides — the patterns themselves
 ├── concept-cards/        # Atomic, single-concept reference (where present)
@@ -279,8 +305,8 @@ directory, and contains exactly the `SKILL.md` plus its guides — nothing else.
 These are installable skill bundles.
 
 ```sh
-make all               # every skill: all ten domains + the collaboration framework
-make skills            # just the ten per-domain zips
+make all               # every currently packaged skill + the collaboration framework
+make skills            # currently packaged knowledge-skill zips
 make collab-framework  # just collaboration-framework.zip
 
 # ...or build one domain at a time:
@@ -327,7 +353,7 @@ bundles only. They do not build or install `ccdp.zip`.
 ai-engineering/
 ├── SKILL.md           # The collaboration-framework skill (entry point)
 ├── Makefile           # Packaging and install targets (above)
-├── knowledge/         # The nine-domain skill library
+├── knowledge/         # Domain, tooling, and method skill library
 ├── protocols/         # RFC-style protocol drafts, including CCDP
 ├── docs/              # The framework documents + design/dev notes
 │   ├── dev/           #   Phase 0 methodology: how a knowledge base gets built
