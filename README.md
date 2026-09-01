@@ -32,7 +32,6 @@ It includes:
   - [The problems](#the-problems) / [The solutions](#the-solutions)
   - [Framework components](#framework-components)
   - [What you get](#what-you-get) / [How to use it](#how-to-use-it)
-  - [Under the hood](#under-the-hood)
 - [The skill library](#the-skill-library)
 - [Building and installing](#building-and-installing)
 - [Repository layout](#repository-layout)
@@ -212,24 +211,6 @@ This approach has been used, in various iterations on projects such as the follo
 Load the language skills below *alongside* the framework, per task: the
 framework is the *how we work* layer, the knowledge bases are the *what's
 correct in this language* layer. They compose; neither subsumes the other.
-
-### Under the hood
-
-The skill is a single [`SKILL.md`](./SKILL.md) that carries the posture and
-disciplines inline and routes to the source documents as the work demands:
-
-- [`AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) — character and posture: the peer frame, collaborative rights, structural pulls
-- [`AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) — craft and practice: the three pillars and the 9-point SDLC
-- [`PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) — wayfinder for scales of work, canonical planning layout, top-down planning, and bottom-up close machinery, split under [`docs/pm/`](./docs/pm/)
-- [`LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) — the per-scale verification protocol (slice / arc / project)
-- [`CODE-AUDIT.md`](./docs/CODE-AUDIT.md) — the whole-repo, per-language,
-  multi-scale audit prompt with modernization synthesis
-- [`CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) — the 95%+ test-coverage prompt
-- [`SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) — the thinking-vs-lookup delegation line
-- [`CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) + [`CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) — voice, discipline, and template for upstream OSS tickets
-
-Each is self-contained and can also be dropped directly into a project's
-`CLAUDE.md` or your personal defaults.
 
 ## The skill library
 
