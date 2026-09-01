@@ -84,7 +84,7 @@ directory.
 
 Directory: `slice04-packaging-release-plan`
 
-Status: open.
+Status: verified-closed on 2026-08-31.
 
 Scope: decide README and library discoverability text requirements,
 Makefile/package-list updates, package-path validation, generated-zip policy,
@@ -197,3 +197,11 @@ artifact, package-path, and source version-history planning. The slice consumes
 the verified Slice02 layout and Slice03 documentation-only validator-code
 scope, and leaves implementation-plan synthesis and Project03 close input to
 Slice05.
+
+### v1.8 - 2026-08-31
+
+Slice04 marked verified-closed after CDC reproduced all twelve slice ledger
+rows. Packaging, discoverability, release-gate, generated-artifact,
+package-path, and source version-history obligations are now ready for Slice05
+implementation-plan synthesis. No re-sequencing, new slice, or scope
+correction is required before Slice05.
