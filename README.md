@@ -6,6 +6,8 @@
 
 [![][logo]][logo-large]
 
+_Last updated: 2026-09-01._
+
 ## About
 
 A library of AI-optimized engineering and project management skills for LLM coding assistants — GPT, Codex, Claude*, or anything that can be cajoled into reading Markdown
@@ -25,6 +27,7 @@ It includes:
 - [About](#about)
 - [The collaboration framework](#the-collaboration-framework)
   - [The problems](#the-problems) / [The solutions](#the-solutions)
+  - [Framework components](#framework-components)
   - [What you get](#what-you-get) / [How to use it](#how-to-use-it)
   - [Under the hood](#under-the-hood)
 - [The skill library](#the-skill-library)
@@ -37,14 +40,26 @@ It includes:
 
 ## The collaboration framework
 
-In addition to the language skills this repo offers (see below), we have this skill — loaded as **`/collaboration-framework`** — which turns an LLM
-coding session into an engineering (or rigorous scientific inquiry) project.
+In addition to the language skills this repo offers (see below), this repo
+contains the **collaboration framework** — loaded as
+**`/collaboration-framework`** — which turns an LLM coding session into an
+engineering, research, design, documentation, or rigorous scientific inquiry
+project.
 
 What has become clear over usage across many projects of various sizes,
 complexity, and duration is that the **collaboration framework may be the most
 valuable asset in this repo**. The language skills make an LLM's output better
 in one domain at a time; the framework makes the collaboration itself
-trustworthy across all of them.
+trustworthy across all of them. It gives the human and assistant a shared
+operating model: explicit roles, a disciplined SDLC, context-sized work units,
+evidence-backed ledgers, independent verification, and a habit of surfacing
+uncertainty before it becomes quiet project debt.
+
+Use the whole framework when the work is broad, long-lived, or high-stakes:
+planning a project, executing slices, reviewing results, auditing quality,
+coordinating multiple assistants, or preparing upstream contributions. Use a
+single component when the task has a narrower shape and loading the whole
+framework would add unnecessary context.
 
 ### The problems
 
@@ -94,6 +109,25 @@ From a design discussion that shaped the constitution supplement:
 
 > With regard to "human language is the original context poisoner" ... the full diagnosis that human/LLM collaborators need is four-rooted — data, objective, architecture, alignment — and they don't share a fix. It's not just that LLMs are born by eating our flawed words — it's that we trained them to sound right rather than be right, on hardware that can't always compute the answer, and then taught them to please us.
 
+### Framework components
+
+The framework can be used as a composed whole through
+`/collaboration-framework`, or as narrower component disciplines when a
+session only needs one part of the system. The component map below is the
+stable collaboration-framework contract: the composer remains the default
+daily-driver entry point, while the specialist components can be loaded,
+referenced, or packaged independently as the release surface is split out.
+
+| Component | Use as part of `/collaboration-framework` | Use independently when... |
+|-----------|-------------------------------------------|----------------------------|
+| `collaboration-framework` | Provides the daily-driver composer: the collaboration posture, quality floor, and route table for the rest of the framework. | You want the overall collaboration stance and component router without loading a specific operational discipline yet. |
+| `engineering-methods` | Supplies the process layer: knowledge substrate, 9-point SDLC, process rigour, component-boundary analysis, and source/package/release gates. | You are designing how work should proceed, evaluating component boundaries, or setting validation and packaging gates. |
+| `project-management` | Provides the project -> arc -> slice lifecycle, planning worktree layout, top-down planning, bottom-up close, bubble-up, confirmation protocol, and planning anti-patterns. | You are opening, inspecting, revising, or closing a planned body of work. |
+| `work-verification` | Supplies ledger discipline, evidence strength, row closure, independent reproduction, and silent-drop prevention across slice, arc, and project scales. | You need to define acceptance rows, verify claims, classify evidence, or check that nothing was silently dropped. |
+| `testing` | Carries testing strategy, coverage hardening, and validation-gate thinking into implementation and review work. | The task is mostly about tests, coverage, validation commands, failure reproduction, or hardening after a finding. |
+| `code-auditing` | Provides diagnosis-only audit discipline: audit maps, severity, scale coverage, modernization synthesis, and handoff to remediation. | You want a review or audit that finds and classifies problems without changing code. |
+| `agent-coordination` | Provides CC/CDC/operator role language, delegation decisions, context-packet discipline, result integration, and multi-assistant failure modes. | You are coordinating multiple LLM surfaces, delegating lookup work, preparing handoffs, or integrating subagent results. |
+| `contribution-style` | Provides upstream contribution voice, calibrated claims, issue/PR framing, and the contribution-ticket workflow. | You are drafting an upstream bug report, feature request, documentation fix, question, or maintainer-facing handoff. |
 
 ### What you get
 
@@ -141,7 +175,7 @@ codebase rework:
 
 This approach has been used, in various iterations on projects such as the following:
 
-- research in the fields of linguistics, graduate and post-doctoral mathematics, absract music theoreis, computer science and compilers, cosmological physics, pedagogical theory, cognitive sciences, ontological methods/knoledge engineering, and (of course) artificial intellegence 
+- research in the fields of linguistics, graduate and post-doctoral mathematics, absract music theoreis, computer science and compilers, cosmological physics, pedagogical theory, cognitive sciences, ontological methods/knoledge engineering, and (of course) artificial intellegence
 - the creation of multiple programming languages (ASTs, IRs, compilers, tooling, documentation)
 - supporting large, well-established open source projects and for the creation of more than 100 new open source software libraries
 - the collaborative authoring of LLM skill documents, programming language guides, technical books and even works of fiction
