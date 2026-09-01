@@ -101,7 +101,7 @@ directory.
 
 Directory: `slice05-implementation-plan-synthesis`
 
-Status: open.
+Status: verified-closed on 2026-09-01.
 
 Scope: compose the verified Arc05 planning slices into the accepted
 implementation plan: source edit sequence, verification gate matrix,
@@ -212,3 +212,9 @@ Slice05 opened for implementation-plan synthesis, source edit sequence,
 verification gate matrix, implementation-slice recommendations, deferral
 register, and Project03 close input. This is the final Arc05 planning slice
 before formal arc close.
+
+### v1.10 - 2026-09-01
+
+Slice05 marked verified-closed after CDC reproduced all thirteen slice ledger
+rows. Arc05 is ready for formal arc close and arc-scale composition
+verification before Project03 closure is considered.

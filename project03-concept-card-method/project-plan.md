@@ -146,8 +146,8 @@ authorize source edits.
 ## Current Status
 
 Project03 is open for planning. Arc01, Arc02, Arc03, and Arc04 are closed.
-Arc05 is active; Slice01, Slice02, Slice03, and Slice04 are verified-closed,
-and Slice05 is open.
+Arc05 is active; Slice01, Slice02, Slice03, Slice04, and Slice05 are
+verified-closed, and Arc05 is ready for formal arc close.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -412,3 +412,9 @@ Arc05 Slice05 opened for implementation-plan synthesis, source edit sequence,
 verification gate matrix, implementation-slice recommendations, deferral
 register, and Project03 close input. Project03 remains planning-only until the
 final Arc05 and project closure gates are complete.
+
+### v1.40 - 2026-09-01
+
+Arc05 Slice05 marked verified-closed after CDC reproduced all thirteen slice
+ledger rows. Arc05 is ready for formal close and arc-scale composition
+verification before Project03 closure is considered.
