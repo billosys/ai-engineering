@@ -122,7 +122,7 @@ reproduced all nine Slice03 ledger rows and recorded verification in
 
 Directory: `slice04-implementation-sequence-synthesis`
 
-Status: open as of 2026-08-31.
+Status: verified/closed on 2026-09-01.
 
 Scope: synthesize the component file plan and release-surface plan into the
 final source-implementation roadmap. Produce the ordered implementation
@@ -130,6 +130,12 @@ slices, source-edit risk register, validation matrix, acceptance gates, and
 Arc05 close-readiness evidence.
 
 Blocks: Arc05 close and source implementation work.
+
+Delivered: Slice04 produced the implementation sequence roadmap, source-edit
+risk register, validation matrix, acceptance gate plan, implementation prompt
+packet, and Arc05 close-readiness assessment. CDC reproduced all nine Slice04
+ledger rows and recorded verification in
+`slice04-implementation-sequence-synthesis/cdc-verification.md`.
 
 ## Dependencies
 
@@ -203,3 +209,9 @@ Opened Arc05 Slice04 for implementation sequence synthesis. The slice must
 produce the ordered source-edit roadmap, source-edit risk register,
 validation matrix, acceptance gate plan, implementation handoff packet, and
 Arc05 close-readiness assessment without editing source files.
+
+### v1.8 - 2026-09-01
+
+Recorded Arc05 Slice04 as verified/closed by CDC. Arc05 now has all planned
+slices verified/closed and can proceed to formal arc close and composition
+review before source implementation receives an explicit operator go decision.

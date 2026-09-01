@@ -4,8 +4,10 @@
 project: project02-collab-breakout
 arc: arc05-implementation-plan
 slice: slice04-implementation-sequence-synthesis
-status: proposed-done
+status: verified-closed
 opened-on: 2026-08-31
+proposed-done-on: 2026-08-31
+cdc-verified-on: 2026-09-01
 artifact-home: artifacts/
 depends-on:
   - ../arc-plan.md
@@ -129,8 +131,8 @@ close readiness, and leave source files untouched.
 
 ## Closure State
 
-Slice04 is proposed-done as of 2026-08-31. CC produced the required
-artifacts, updated this slice ledger and plan, wrote `closing-report.md`, and
-verified the planning-only source boundary. The slice remains proposed-done
-until the explicit Slice04 file list is committed and CDC independently
-verifies the close packet.
+Slice04 is verified-closed as of 2026-09-01. CC produced the required
+artifacts, updated this slice ledger and plan, wrote `closing-report.md`,
+committed the explicit Slice04 file list, and verified the planning-only
+source boundary. CDC independently reproduced all nine ledger rows and
+confirmed source files remain untouched. Arc05 can proceed to formal close.
