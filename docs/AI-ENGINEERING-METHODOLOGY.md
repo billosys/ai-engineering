@@ -20,19 +20,25 @@ This document was written from the Claude Desktop/Cowork and Claude Code
 workflow. Codex should use it through the following adapter, preserving the
 methodology's intent rather than literal product names.
 
-**CDC.** Read CDC as **Codex Desktop** running a high-effort, high-thinking,
-advanced model in the collaborative seat. This is the context responsible for
-brainstorming, research framing, project planning, software architecture,
-prompt generation for the implementing agent, arc/slice decomposition, work
-ledgers at each scale, code review by the IC LLM, QA, acceptance testing, and the
-other high-level tasks that require continuity, judgment, and pressure on the
-quality floor.
+Within the current collaboration-framework package, this section is the
+source of truth for the CC, CDC, and Operator role terms.
 
-**CC.** Read CC as **Codex CLI**, the IC (individual contributor) LLM that
-performs the code changes. CC owns the implementation attempt, self-review,
-tests, and evidence-backed closure claims. Its work is proposed-done until it
-has been evaluated by humans and CDC, and it remains subject to their review,
-refinement, rejection, or re-slicing.
+**CC.** The code writer. CC is backronymed as **CLI Contributor** and
+originally meant "Claude Code" or "Codex CLI". CC owns the implementation
+attempt, self-review, tests, and evidence-backed closure claims. Its work is
+proposed-done until it has been evaluated by humans and CDC, and it remains
+subject to their review, refinement, rejection, or re-slicing.
+
+**CDC.** The co-architect and co-planner, peer to the Operator. CDC is
+backronymed as **Coordinating/Design Contributor** and originally meant
+"Claude Desktop Cowork" or "Codex Desktop Contributor". CDC is responsible
+for brainstorming, research framing, project planning, software architecture,
+prompt generation for the implementing agent, arc/slice decomposition, work
+ledgers at each scale, code review by the IC LLM, QA, acceptance testing, and
+the other high-level tasks that require continuity, judgment, and pressure on
+the quality floor.
+
+**Operator.** The human in the loop, co-architect and co-planner.
 
 **Claude.** Where the document says Claude outside a CDC/CC role distinction,
 read it as the active model instance in the relevant Codex surface. The
@@ -341,6 +347,14 @@ Portable versions of the methodology for other human collaborators without the C
 
 ## Version History
 
+### Version 1.10 — September 2026
+
+Made this document's **Notes for Codex** section the current
+collaboration-framework source of truth for the CC, CDC, and Operator role
+terms. The definitions now record the current backronyms, the historical
+product-name origins, and the role boundaries without making product names the
+primary meaning.
+
 ### Version 1.9 — August 2026
 
 Updated the project-management pointer for
@@ -409,12 +423,13 @@ inform the deferred project-level layer.
 ### Version 1.4 — June 2026
 
 Added **Notes for Codex** after the preamble: an adapter layer for using this
-Claude-origin methodology inside Codex Desktop and Codex CLI. The section maps
-CDC to Codex Desktop in the collaborative planning/review seat, maps CC to
-Codex CLI as the IC implementation agent, and generalizes unqualified "Claude"
-references to the active model instance in the relevant Codex surface. It also
-records the authority boundary: the Constitution Supplement and this
-methodology guide collaboration and quality, but they do not override Codex's
+Claude-origin methodology inside Codex Desktop and Codex CLI. The section
+introduced the initial CC/CDC adapter language, later superseded by the
+canonical role definitions at the top of this section, and generalized
+unqualified "Claude" references to the active model instance in the relevant
+Codex surface. It also records the authority boundary: the Constitution
+Supplement and this methodology guide collaboration and quality, but they do
+not override Codex's
 standing system, developer, tool, safety, sandbox, or user instructions.
 
 The rev was catalysed by testing whether the framework created cognitive
@@ -455,4 +470,4 @@ Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ---
 
-_The methodology is a living document. This version: 1.9, 2026-08-29._
+_The methodology is a living document. This version: 1.10, 2026-09-01._

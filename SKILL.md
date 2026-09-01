@@ -18,7 +18,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.4.2
+version: 1.4.3
 license: MIT
 metadata:
   hermes:
@@ -71,10 +71,10 @@ documents when the work calls for them.
 
 Codex should use this skill through the adapter in
 [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex).
-In short: read **CDC** as Codex Desktop in the collaborative
-planning/review/QA seat, **CC** as Codex CLI in the IC implementation seat,
-and unqualified **Claude** references as the active model instance in the
-relevant surface.
+That section is the source of truth for the **CC**, **CDC**, and **Operator**
+role terms. Use it for the canonical role definitions and historical
+backronyms; this skill only routes to it and preserves the separation between
+collaborative planning/review authority and implementation execution.
 
 The Supplement and Methodology guide posture, craft, and the quality floor;
 they do not override Codex's standing system, developer, tool, safety,
@@ -371,6 +371,13 @@ subsumes the other.
 ---
 
 ## Version History
+
+### Version 1.4.3 — September 2026
+
+Routed CC, CDC, and Operator terminology to
+`docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex` as the current
+collaboration-framework source of truth, replacing local shorthand role
+definitions in this entrypoint.
 
 ### Version 1.4.2 — September 2026
 

@@ -20,11 +20,13 @@ improvise those mechanics from the methodology summary.
 
 For Codex, read every "Claude session" in the linked files as any fresh Codex
 Desktop, Codex CLI, or other LLM session entering the project without the full
-prior context. **CC** is Codex CLI in the IC implementation role; **CDC** is
-Codex Desktop in the planning/review/QA role. Keep the canonical filenames
-(`project-plan.md`, `arc-plan.md`, `slice-plan.md`, per-scale `ledger.md`,
-`cc-prompt.md`, `closing-report.md`, `cdc-verification.md`) and the default
-slice `artifacts/` home unless the operator explicitly changes the project
+prior context. For the canonical **CC**, **CDC**, and **Operator** role
+definitions, read
+[`AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](./AI-ENGINEERING-METHODOLOGY.md#notes-for-codex).
+Keep the canonical filenames (`project-plan.md`, `arc-plan.md`,
+`slice-plan.md`, per-scale `ledger.md`, `cc-prompt.md`,
+`closing-report.md`, `cdc-verification.md`) and the default slice
+`artifacts/` home unless the operator explicitly changes the project
 convention.
 
 This wayfinder and the linked files guide planning craft and the quality floor;
@@ -120,12 +122,12 @@ context load; it does not relax the requirement to use the written mechanics.
 ## Version History
 
 The detailed project-management version history lives in
-[`pm/version-history.md`](./pm/version-history.md). Current version: **2.6**
-(`2026-09-01`), which adds operator-requested Expedited Mode for faster
-CC/CDC/human planning and close cycles while preserving explicit commit scope,
-CDC verification, and the bottom-up close discipline.
+[`pm/version-history.md`](./pm/version-history.md). Current version: **2.7**
+(`2026-09-01`), which routes CC, CDC, and Operator terminology to the
+methodology source of truth while preserving the project-management mechanics
+and Expedited Mode behavior.
 
 ---
 
-_The project-management guide is a living spec. This wayfinder: 2.6,
+_The project-management guide is a living spec. This wayfinder: 2.7,
 2026-09-01._

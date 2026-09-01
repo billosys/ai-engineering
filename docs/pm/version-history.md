@@ -1,5 +1,14 @@
 # Version History
 
+### Version 2.7 — September 2026
+
+Routed CC, CDC, and Operator terminology to
+[`../AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](../AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
+as the current collaboration-framework source of truth. The
+project-management wayfinder now avoids carrying partial local definitions
+while preserving canonical filenames, artifact homes, and Expedited Mode
+behavior.
+
 ### Version 2.6 — September 2026
 
 Added **Expedited Mode** to the project-management wayfinder. When the
@@ -131,4 +140,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_The project-management guide is a living spec. This version: 2.6, 2026-09-01._
+_The project-management guide is a living spec. This version: 2.7, 2026-09-01._

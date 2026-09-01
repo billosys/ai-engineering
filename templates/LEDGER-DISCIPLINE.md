@@ -47,11 +47,12 @@ where the discipline actually lives.
 
 ## Notes for Codex
 
-For Codex, read **CC** as Codex CLI in the IC implementation role and **CDC**
-as Codex Desktop in the collaborative planning/review/QA role. Those labels are
-the **slice-level instance** of a scale-free principle: *the closer of a row is
-structurally separate from its verifier.* At arc and project scale the labels
-shift (see those sections), but the separation does not.
+For the canonical **CC**, **CDC**, and **Operator** role definitions, read
+[the methodology Notes for Codex](../docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
+in the collaboration-framework package. Those labels are the **slice-level
+instance** of a scale-free principle: *the closer of a row is structurally
+separate from its verifier.* At arc and project scale the labels shift (see
+those sections), but the separation does not.
 
 If the same Codex surface performs both roles, preserve as much separation as
 the environment allows: re-read the ledger from the opening state, rerun the
@@ -522,6 +523,13 @@ invention:
 
 ## Version History
 
+### Version 2.4 — September 2026
+
+Routed CC, CDC, and Operator terminology to the methodology source of truth
+instead of carrying local role definitions in the ledger protocol. The ledger
+separation rule is unchanged: the closer of a row remains structurally
+separate from its verifier.
+
 ### Version 2.3 — August 2026
 
 Synchronized with `PROJECT-MANAGEMENT.md` v2.5. Durable artifacts produced by a
@@ -582,4 +590,4 @@ to the methodology (the level-1 ledger-bearing unit is **slice**, not
 
 ---
 
-_This document is a living spec. This version: 2.3, 2026-08-29._
+_This document is a living spec. This version: 2.4, 2026-09-01._
