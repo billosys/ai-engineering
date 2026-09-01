@@ -101,7 +101,7 @@ directory.
 
 Directory: `slice05-implementation-plan-synthesis`
 
-Status: planned.
+Status: open.
 
 Scope: compose the verified Arc05 planning slices into the accepted
 implementation plan: source edit sequence, verification gate matrix,
@@ -205,3 +205,10 @@ rows. Packaging, discoverability, release-gate, generated-artifact,
 package-path, and source version-history obligations are now ready for Slice05
 implementation-plan synthesis. No re-sequencing, new slice, or scope
 correction is required before Slice05.
+
+### v1.9 - 2026-08-31
+
+Slice05 opened for implementation-plan synthesis, source edit sequence,
+verification gate matrix, implementation-slice recommendations, deferral
+register, and Project03 close input. This is the final Arc05 planning slice
+before formal arc close.
