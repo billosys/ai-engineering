@@ -61,14 +61,25 @@ not the implementation checkout and should not be used for source/package edits.
   and other durable evidence in the owning slice directory, preferably under
   `artifacts/`. Every ledger row needs an evidence pointer with a strength
   claim; do not close by summary alone.
-- **Project ordering:** as of 2026-08-29, `project01-harmonise-paths` is
-  closed. `project02-collab-breakout` is planned and may proceed when the
-  operator explicitly starts it.
+- **Project ordering:** as of 2026-09-01, `project01-harmonise-paths` and
+  `project03-concept-card-method` are closed. `project02-collab-breakout` is
+  ready for project-level closure and/or explicit source implementation
+  authorization. `project04-knowledge-library-reorg` is planned for the
+  docs/knowledge-library reorganization.
 - **Project01 status:** closed; Arc 01, Arc 02, Arc 03, and Arc 04 are closed
   with Project 01 DoD verdict met.
-- **Project02 status:** the project roadmap, Arc 01, and Slice 01 open set
-  exist as planning artifacts. Execution is no longer blocked by Project01,
-  but still requires an explicit operator start.
+- **Project02 status:** Arc 01 through Arc 05 are closed/composed with a
+  source implementation roadmap, validation matrix, acceptance gates, and
+  implementation handoff packet. The project is ready for project-level closure
+  and/or explicit source implementation authorization.
+- **Project03 status:** closed; Arc 01 through Arc 05 are closed with the
+  Project03 DoD verdict met.
+- **Project04 status:** active. Arc01 `arc01-material-inventory` is open.
+  Slice01 `slice01-source-surface-inventory` is verified-closed, and Slice02
+  `slice02-imported-architecture-integration` is open for imported
+  Project02/Project03 integration. No source edits, file moves, README
+  rewrites, package updates, or generated artifacts are authorized by Arc01
+  Slice02.
 - **Source checkout validation references:** implementation plans may require
   `make help`, `make check-skills`, `make check-package-paths`, `make all`,
   `make collab-framework`, or `make ccdp` in the main checkout. Record these
