@@ -2,7 +2,7 @@
 
 ```yaml
 project: project03-concept-card-method
-status: active
+status: closed
 depends-on:
   - project02-collab-breakout:arc01-synthesis
 blocks:
@@ -57,6 +57,9 @@ Specifically:
 - The implementation plan is detailed enough to begin source edits only after
   the architecture is accepted, including Makefile/package updates,
   package-path validation, and verification gates.
+- Before project close, the source README records the new method-skill category
+  without claiming that the concept-card method skill or package already
+  exists.
 
 ## Boundaries
 
@@ -78,6 +81,15 @@ Out of scope until an accepted implementation plan:
 - Treating the v3.2 workbench docs as already accepted source docs.
 - Reorganizing Project02's collaboration-framework components directly.
 - Building a full GraphRAG, memory runtime, CCDP service, or ontology database.
+
+Close-prep source edit authorization:
+
+- On 2026-09-01, after Arc05 closed with an accepted implementation plan, the
+  operator authorized one README-only source edit to document method skills as
+  a distinct skill-library category. Source commit `bf7085f` documents the
+  category and planned `concept-card-method` home without claiming package
+  availability or broader source implementation. No further source edits are
+  authorized by Project03 close.
 
 ## Arc Roadmap
 
@@ -146,10 +158,9 @@ planning-only boundary.
 
 ## Current Status
 
-Project03 is open for planning. Arc01, Arc02, Arc03, Arc04, and Arc05 are
-closed. Project03 is ready for formal project close.
-Project03 remains planning-only until an implementation arc explicitly
-authorizes source edits.
+Project03 is closed. Arc01, Arc02, Arc03, Arc04, and Arc05 are closed.
+The operator-authorized README-only close-prep source edit is committed at
+`bf7085f`. No further source edits are authorized by Project03 close.
 
 ## Version History
 
@@ -425,3 +436,16 @@ Arc05 formally closed with composition verdict `delivered`; Project03 P-5 is
 marked done. Project03 is now ready for formal project close, where the
 remaining project-level source-edit boundary row must be reproduced before
 the project is closed.
+
+### v1.42 - 2026-09-01
+
+Recorded operator authorization for a README-only close-prep source edit after
+Arc05 accepted the implementation plan. Source commit `bf7085f` documents
+method skills as a distinct skill-library category and keeps the
+`concept-card-method` skill framed as planned rather than already packaged.
+
+### v1.43 - 2026-09-01
+
+Project03 formally closed with DoD verdict `met` and gate decision `go`.
+Project close reproduced all six project ledger rows and confirmed the README
+method-skill category update without claiming skill/package implementation.
