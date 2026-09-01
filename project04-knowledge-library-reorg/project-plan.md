@@ -276,15 +276,14 @@ from the end-user entrypoints and the package/install entrypoints.
 Project04 is active. Arc01 is open for read-only repository material inventory
 and classification. Slice01, `slice01-source-surface-inventory`, is
 verified-closed. Slice02, `slice02-imported-architecture-integration`, is
-verified-closed. Slice03, `slice03-skill-topology-classification`, is not yet
-planned in detail.
+verified-closed. Slice03, `slice03-skill-topology-classification`, is open.
 
 No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
 or by Arc01.
 
-The next planning action is to open Arc01 Slice03:
-`slice03-skill-topology-classification`.
+The next execution action is to run the Arc01 Slice03 CC prompt:
+`arc01-material-inventory/slice03-skill-topology-classification/cc-prompt.md`.
 
 ## Version History
 
@@ -330,3 +329,9 @@ Recorded Slice02 as verified-closed. Arc01 is ready for Slice03 planning,
 which will classify skill kind and atomic/composite topology using the
 source inventory, imported-architecture integration packet, and external
 ontology rubric input.
+
+### v1.6 - 2026-09-01
+
+Opened Arc01 Slice03, `slice03-skill-topology-classification`, for the
+skill-kind/topology decision instrument, classification matrix, and public
+language implication artifacts.

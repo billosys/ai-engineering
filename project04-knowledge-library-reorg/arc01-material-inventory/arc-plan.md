@@ -97,7 +97,7 @@ Expected artifacts:
 
 ### Slice 03: Skill Kind and Topology Classification
 
-Status: not yet planned in detail.
+Status: open as of 2026-09-01.
 
 Scope: define the decision instrument for skill kind and skill topology, then
 classify current and planned skill surfaces. Treat Rust as the candidate atomic
@@ -105,8 +105,11 @@ skill anchor and `collaboration-framework` as the accepted composite skill
 anchor; test whether other domain/tooling, framework/operational, method, and
 protocol/support surfaces fit those examples or require new vocabulary.
 
-Expected outputs include a skill-topology decision instrument, classification
-matrix, and public-language implications for Arc05.
+Expected artifacts:
+
+- `slice03-skill-topology-classification/artifacts/skill-kind-topology-decision-instrument.md`
+- `slice03-skill-topology-classification/artifacts/skill-kind-topology-classification-matrix.md`
+- `slice03-skill-topology-classification/artifacts/public-language-implications.md`
 
 ### Slice 04: Arc01 Synthesis for Directory Contract
 
@@ -152,3 +155,9 @@ proposal integration and Arc02 question preparation.
 Recorded Slice02 as verified-closed. No slice-breakdown or sequencing change
 was required before Slice03; Slice02 produced the expected imported-material
 evidence and Arc02 question inputs.
+
+### v1.4 - 2026-09-01
+
+Opened Slice03, `slice03-skill-topology-classification`, for skill kind and
+atomic/composite topology classification using verified Slice01, verified
+Slice02, live source-surface evidence, and external ontology rubric input.
