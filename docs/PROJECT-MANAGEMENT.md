@@ -51,6 +51,24 @@ order.
 | Update this project-management spec | [`pm/08-maintenance.md`](./pm/08-maintenance.md) and [`pm/version-history.md`](./pm/version-history.md) |
 | Ground the project-management flow in a real run | [`pm/09-worked-example-odm.md`](./pm/09-worked-example-odm.md) |
 
+## Expedited Mode
+
+For tighter, more temporally efficient implementation cycles, the operator may
+opt into **Expedited Mode**. When engaged, the LLMs must adhere to the
+following:
+
+- Have CC commit after his changes, even before CDC review. Because other
+  processes may be working on the same branch and staging their own files, CC
+  commit instructions must explicitly list the files to be committed.
+- Have CDC commit after CDC changes or reviews, and provide the operator with
+  concise reports.
+- As soon as the evidence is in place for a full close of a slice, close it.
+- After a slice is closed, open the next slice immediately and give the
+  operator the prompt-file path for CC, relative to the project directory.
+- After the last slice of an arc is closed, automatically continue to formal
+  arc close, then open the next arc and its first slice, complete with CC
+  prompt, when the project roadmap provides one.
+
 ## Split Files
 
 The old monolith split along its original part boundaries:
@@ -102,12 +120,12 @@ context load; it does not relax the requirement to use the written mechanics.
 ## Version History
 
 The detailed project-management version history lives in
-[`pm/version-history.md`](./pm/version-history.md). Current version: **2.5**
-(`2026-08-29`), which keeps the per-scale ledger layout and adds
-`sliceNN-<slug>/artifacts/` as the default home for durable artifacts produced
-by a slice.
+[`pm/version-history.md`](./pm/version-history.md). Current version: **2.6**
+(`2026-09-01`), which adds operator-requested Expedited Mode for faster
+CC/CDC/human planning and close cycles while preserving explicit commit scope,
+CDC verification, and the bottom-up close discipline.
 
 ---
 
-_The project-management guide is a living spec. This wayfinder: 2.5,
-2026-08-29._
+_The project-management guide is a living spec. This wayfinder: 2.6,
+2026-09-01._

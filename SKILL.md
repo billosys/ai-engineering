@@ -11,13 +11,14 @@ description: |
   Use when: sustained, high-stakes sessions — deep study, research,
   expert systems design, or production programming; establishing the peer
   frame; planning or closing a project, arc, or slice (MUST read
-  PROJECT-MANAGEMENT.md first); running the 9-point SDLC or a
+  PROJECT-MANAGEMENT.md first); Expedited Mode;
+  running the 9-point SDLC or a
   ledgered slice; commissioning a CAP-style audit; driving coverage to a
   hard threshold; deciding what to delegate to a subagent; drafting
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.4.1
+version: 1.4.2
 license: MIT
 metadata:
   hermes:
@@ -111,9 +112,12 @@ applies:
   per-slice `artifacts/` homes for durable slice-produced artifacts),
   confirmation protocol, top-down planning, bottom-up
   bubble-up/close machinery (slice → arc → project), and plan-change
-  discipline. The summary in this skill is *not* a substitute for following
-  the wayfinder's required load set — improvising the mechanics from the
-  summary is the documented way these tasks go off the rails.
+  discipline. If the operator asks for **Expedited Mode**, read
+  `docs/PROJECT-MANAGEMENT.md` and follow its Expedited Mode section before
+  issuing CC prompts, closing slices, committing CDC updates, or advancing to
+  the next slice or arc. The summary in this skill is *not* a substitute for
+  following the wayfinder's required load set — improvising the mechanics from
+  the summary is the documented way these tasks go off the rails.
 - Commissioning an **independent, evidence-based audit** of a repo or a body
   of work (load the code-audit prompt).
 - Driving a codebase to a **hard test-coverage threshold** without stopping
@@ -323,7 +327,7 @@ work demands:
 |------|----------|-----------|
 | [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
 | [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
-| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `docs/pm/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bottom-up bubble-up/close machinery, and plan-change discipline. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
+| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `docs/pm/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bottom-up bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
 | [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
@@ -367,6 +371,13 @@ subsumes the other.
 ---
 
 ## Version History
+
+### Version 1.4.2 — September 2026
+
+Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.6. When the
+operator asks for Expedited Mode, the skill now routes the session to the
+project-management wayfinder and its Expedited Mode section before CC prompts,
+slice closure, CDC commits, or automatic slice/arc advancement.
 
 ### Version 1.4.1 — August 2026
 

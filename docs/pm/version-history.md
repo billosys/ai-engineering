@@ -1,5 +1,18 @@
 # Version History
 
+### Version 2.6 — September 2026
+
+Added **Expedited Mode** to the project-management wayfinder. When the
+operator asks for this mode, CC commits the explicit file list after his close
+packet, CDC commits verification and planning updates separately, slices close
+as soon as evidence is reproduced, the next slice opens immediately after
+slice close, and final-slice closure proceeds through formal arc close before
+opening the next roadmap-provided arc and first slice.
+
+This is a speed mode, not a weaker verification mode: it keeps explicit commit
+scope, CDC reproduction of evidence, bottom-up slice/arc closure, and
+operator-visible reports.
+
 ### Version 2.5 — August 2026
 
 Added `sliceNN-<slug>/artifacts/` as the default home for durable artifacts
@@ -118,4 +131,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_The project-management guide is a living spec. This version: 2.5, 2026-08-29._
+_The project-management guide is a living spec. This version: 2.6, 2026-09-01._
