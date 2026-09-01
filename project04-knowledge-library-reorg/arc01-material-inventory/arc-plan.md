@@ -97,7 +97,7 @@ Expected artifacts:
 
 ### Slice 03: Skill Kind and Topology Classification
 
-Status: open as of 2026-09-01.
+Status: verified-closed on 2026-09-01.
 
 Scope: define the decision instrument for skill kind and skill topology, then
 classify current and planned skill surfaces. Treat Rust as the candidate atomic
@@ -161,3 +161,9 @@ evidence and Arc02 question inputs.
 Opened Slice03, `slice03-skill-topology-classification`, for skill kind and
 atomic/composite topology classification using verified Slice01, verified
 Slice02, live source-surface evidence, and external ontology rubric input.
+
+### v1.5 - 2026-09-01
+
+Recorded Slice03 as verified-closed. No slice-breakdown or sequencing change
+was required before Slice04; Slice03 produced the expected skill-kind/topology
+decision instrument, classification matrix, and public-language inputs.
