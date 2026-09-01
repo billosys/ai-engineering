@@ -3,8 +3,9 @@
 ```yaml
 project: project02-collab-breakout
 arc: arc05-implementation-plan
-status: active
+status: closed/composed
 opened-on: 2026-08-31
+closed-on: 2026-09-01
 depends-on:
   - arc04-breakout-architecture:closed-composed
   - project01-harmonise-paths:closed-and-completely-verified
@@ -20,7 +21,7 @@ related:
 
 ## Capability
 
-Arc05 converts the accepted breakout architecture into a sliceable
+Arc05 converted the accepted breakout architecture into a sliceable
 implementation plan. It defines exact source-edit slices, component file
 plans, README and `SKILL.md` route changes, package/build changes, validation
 gates, migration notes, and closure evidence needed to perform the breakout
@@ -154,6 +155,16 @@ Leaves for later work:
 - Validation gates and migration notes.
 - Explicit source implementation slice order.
 
+## Arc Closure
+
+Arc05 closed/composed on 2026-09-01. The formal close report is
+`closing-report.md`.
+
+Composition verdict: delivered. Slice01 through Slice04 verified/closed and
+compose into a planning-only source implementation roadmap for the accepted
+collaboration-framework breakout. Source implementation still requires an
+explicit operator go decision.
+
 ## Version History
 
 ### v1.0 - 2026-08-29
@@ -215,3 +226,10 @@ Arc05 close-readiness assessment without editing source files.
 Recorded Arc05 Slice04 as verified/closed by CDC. Arc05 now has all planned
 slices verified/closed and can proceed to formal arc close and composition
 review before source implementation receives an explicit operator go decision.
+
+### v1.9 - 2026-09-01
+
+Recorded formal Arc05 close. Arc05 delivered the implementation-planning
+capability and bubbled up that Project02 is ready for project-level closure
+and/or explicit source-implementation authorization. No next arc is opened
+because the current Project02 roadmap has no post-Arc05 detailed arc.

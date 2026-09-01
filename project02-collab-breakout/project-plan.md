@@ -173,7 +173,7 @@ The accepted target components are `collaboration-framework`,
 
 ### Arc 05: Implementation Plan
 
-Status: active.
+Status: closed/composed on 2026-09-01.
 
 Expected capability: turn the accepted breakout architecture into a sliceable
 implementation plan covering source edits, README guidance, component SKILL.md
@@ -184,12 +184,17 @@ was reproduced from the planning tree. Arc05 is planning-only: it prepares
 source-edit slices, package/release changes, README/SKILL wayfinding changes,
 validation gates, and migration notes, but does not edit source files.
 
+Arc05 closed/composed on 2026-09-01. Its implementation sequence handoff is
+`arc05-implementation-plan/slice04-implementation-sequence-synthesis/artifacts/implementation-prompt-packet.md`.
+
 ## Current Status
 
 Project 02 is opened for planning. Arc 01 and Arc 02 are closed/composed.
 Arc 03 is closed/composed. Arc04 is closed/composed with accepted architecture
-recorded. Arc05 is active for implementation planning; all planned Arc05
-slices are verified/closed and Arc05 is ready for formal close.
+recorded. Arc05 is closed/composed with a source implementation roadmap,
+validation matrix, acceptance gates, and implementation handoff packet.
+Project02 is ready for project-level closure and/or explicit source
+implementation authorization.
 
 Later arcs are intentionally placeholders so the roadmap is visible while
 respecting the plan-late, plan-deep discipline.
@@ -454,3 +459,12 @@ implementation handoff packet, and Arc05 close-readiness assessment.
 Recorded Arc05 Slice04 as verified/closed by CDC. All planned Arc05 slices are
 now verified/closed, and Arc05 can proceed to formal arc close before any
 source implementation work begins.
+
+### v1.40 - 2026-09-01
+
+Recorded formal Arc05 close. Arc05 delivered the source implementation roadmap,
+risk register, validation matrix, acceptance gate plan, and implementation
+handoff packet for the accepted collaboration-framework breakout. Project02 is
+now ready for project-level closure and/or explicit source implementation
+authorization; no next arc was opened because the current roadmap has no
+post-Arc05 detailed arc.
