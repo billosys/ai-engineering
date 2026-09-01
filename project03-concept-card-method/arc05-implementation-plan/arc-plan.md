@@ -3,7 +3,7 @@
 ```yaml
 project: project03-concept-card-method
 arc: arc05-implementation-plan
-status: active
+status: closed
 depends-on:
   - ../arc04-skill-architecture/closing-report.md
 related:
@@ -218,3 +218,10 @@ before formal arc close.
 Slice05 marked verified-closed after CDC reproduced all thirteen slice ledger
 rows. Arc05 is ready for formal arc close and arc-scale composition
 verification before Project03 closure is considered.
+
+### v1.11 - 2026-09-01
+
+Arc05 formally closed with composition verdict `delivered`. The arc produced
+the accepted implementation-planning package for future source edits while
+preserving the planning-only boundary and leaving Project03 ready for formal
+project close.

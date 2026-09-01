@@ -135,19 +135,19 @@ Arc05.
 
 ### Arc 05: Implementation Plan
 
-Status: active.
+Status: closed on 2026-09-01.
 
 Expected capability: convert the accepted architecture into sliceable source
 edits and verification gates for creating the concept-card method skill.
 
-Detailed arc planning is open. Arc05 remains planning-only and does not
-authorize source edits.
+Closed with composition verdict `delivered`. Arc05 produced the accepted
+implementation-planning package for future source edits while preserving the
+planning-only boundary.
 
 ## Current Status
 
-Project03 is open for planning. Arc01, Arc02, Arc03, and Arc04 are closed.
-Arc05 is active; Slice01, Slice02, Slice03, Slice04, and Slice05 are
-verified-closed, and Arc05 is ready for formal arc close.
+Project03 is open for planning. Arc01, Arc02, Arc03, Arc04, and Arc05 are
+closed. Project03 is ready for formal project close.
 Project03 remains planning-only until an implementation arc explicitly
 authorizes source edits.
 
@@ -418,3 +418,10 @@ final Arc05 and project closure gates are complete.
 Arc05 Slice05 marked verified-closed after CDC reproduced all thirteen slice
 ledger rows. Arc05 is ready for formal close and arc-scale composition
 verification before Project03 closure is considered.
+
+### v1.41 - 2026-09-01
+
+Arc05 formally closed with composition verdict `delivered`; Project03 P-5 is
+marked done. Project03 is now ready for formal project close, where the
+remaining project-level source-edit boundary row must be reproduced before
+the project is closed.
