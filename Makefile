@@ -99,7 +99,7 @@ CF_FILES := \
 	docs/pm/09-worked-example-odm.md \
 	docs/pm/version-history.md \
 	docs/CODE-AUDIT.md \
-	docs/CLAUDE-CODE-COVERAGE.md \
+	docs/CODE-COVERAGE.md \
 	docs/SUBAGENT-DELEGATION-POLICY.md \
 	docs/CONTRIBUTION-STYLE.md \
 	templates/LEDGER-DISCIPLINE.md \

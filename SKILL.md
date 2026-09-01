@@ -18,7 +18,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.4.3
+version: 1.4.4
 license: MIT
 metadata:
   hermes:
@@ -330,7 +330,7 @@ work demands:
 | [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `docs/pm/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bottom-up bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
-| [`docs/CLAUDE-CODE-COVERAGE.md`](./docs/CLAUDE-CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
+| [`docs/CODE-COVERAGE.md`](./docs/CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
 | [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md`, `AGENTS.md`, or preferences block so it holds across sessions. |
 | [`docs/CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
 | [`templates/CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
@@ -371,6 +371,12 @@ subsumes the other.
 ---
 
 ## Version History
+
+### Version 1.4.4 — September 2026
+
+Renamed the old Claude Code coverage working-practice prompt to
+`docs/CODE-COVERAGE.md` and updated the collaboration-framework route table to
+use the product-neutral filename.
 
 ### Version 1.4.3 — September 2026
 
