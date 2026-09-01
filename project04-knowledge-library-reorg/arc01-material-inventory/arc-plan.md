@@ -82,7 +82,7 @@ Expected artifacts:
 
 ### Slice 02: Imported Architecture and Prior Proposal Integration
 
-Status: open as of 2026-09-01.
+Status: verified-closed on 2026-09-01.
 
 Scope: assess Project04 project-level artifacts copied from Project02 and any
 Project03 method-skill inputs. Identify accepted facts, source-layout
@@ -146,3 +146,9 @@ input to Slice03's skill kind and topology classification work.
 Recorded Slice01 as verified-closed and opened Slice02,
 `slice02-imported-architecture-integration`, for Project02/Project03 prior
 proposal integration and Arc02 question preparation.
+
+### v1.3 - 2026-09-01
+
+Recorded Slice02 as verified-closed. No slice-breakdown or sequencing change
+was required before Slice03; Slice02 produced the expected imported-material
+evidence and Arc02 question inputs.

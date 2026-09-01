@@ -75,11 +75,11 @@ not the implementation checkout and should not be used for source/package edits.
 - **Project03 status:** closed; Arc 01 through Arc 05 are closed with the
   Project03 DoD verdict met.
 - **Project04 status:** active. Arc01 `arc01-material-inventory` is open.
-  Slice01 `slice01-source-surface-inventory` is verified-closed, and Slice02
-  `slice02-imported-architecture-integration` is open for imported
-  Project02/Project03 integration. No source edits, file moves, README
-  rewrites, package updates, or generated artifacts are authorized by Arc01
-  Slice02.
+  Slice01 `slice01-source-surface-inventory` and Slice02
+  `slice02-imported-architecture-integration` are verified-closed. Slice03
+  `slice03-skill-topology-classification` is the next planning action. No
+  source edits, file moves, README rewrites, package updates, or generated
+  artifacts are authorized by Arc01.
 - **Source checkout validation references:** implementation plans may require
   `make help`, `make check-skills`, `make check-package-paths`, `make all`,
   `make collab-framework`, or `make ccdp` in the main checkout. Record these
