@@ -243,7 +243,8 @@ atomic and composite skills share the same source-root convention under
 directory contract.
 
 Detailed arc planning is open under `arc02-directory-contract/`. Slice01,
-`slice01-decision-surface-inventory`, is open for CC.
+`slice01-decision-surface-inventory`, is verified-closed. Slice02,
+`slice02-accepted-directory-contract`, is open for CC.
 
 ### Arc 03: Directory Reorganization Implementation
 
@@ -299,14 +300,15 @@ Project04 is active and operating in Expedited Mode. Arc01,
 inventory, material-role classification, imported prior proposal integration,
 skill kind/topology classification, and Arc02 readiness synthesis. Arc02,
 `arc02-directory-contract`, is active; Slice01,
-`slice01-decision-surface-inventory`, is open for CC.
+`slice01-decision-surface-inventory`, is verified-closed. Slice02,
+`slice02-accepted-directory-contract`, is open for CC.
 
 No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
 or by Arc01.
 
 The next execution action is CC completion of:
-`arc02-directory-contract/slice01-decision-surface-inventory/cc-prompt.md`.
+`arc02-directory-contract/slice02-accepted-directory-contract/cc-prompt.md`.
 
 ## Version History
 
@@ -389,3 +391,10 @@ Recorded Project04 Expedited Mode. Opened Arc02,
 `arc02-directory-contract`, and Slice01,
 `slice01-decision-surface-inventory`, for the decision surface inventory that
 will feed the accepted target directory contract.
+
+### v1.12 - 2026-09-02
+
+Recorded Arc02 Slice01 as verified-closed after CDC reproduced all six ledger
+rows. Opened Slice02, `slice02-accepted-directory-contract`, to select the
+accepted target directory contract and source/package root contract while
+preserving source-edit authorization boundaries.

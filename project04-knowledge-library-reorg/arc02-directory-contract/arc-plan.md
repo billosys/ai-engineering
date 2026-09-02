@@ -86,7 +86,7 @@ Project04 is operating in Expedited Mode as of 2026-09-02.
 
 ### Slice 01: Decision Surface Inventory
 
-Status: open.
+Status: verified-closed on 2026-09-02.
 
 Scope: convert Arc01 close evidence and Slice04 synthesis artifacts into the
 Arc02 decision surface. Produce a target-contract decision surface, a
@@ -101,7 +101,7 @@ Expected artifacts:
 
 ### Slice 02: Accepted Directory and Root Contract
 
-Status: not open.
+Status: open.
 
 Scope: turn Slice01's decision surface into an accepted directory contract and
 source/package root contract. Decide what remains in `docs/`, what moves under
@@ -161,3 +161,10 @@ Opened Arc02 for the Project04 target directory contract and migration plan.
 Recorded Expedited Mode, planned four slices, and opened Slice01,
 `slice01-decision-surface-inventory`, to convert Arc01 close evidence into the
 Arc02 decision surface.
+
+### v1.1 - 2026-09-02
+
+Recorded Slice01 as verified-closed. No Arc02 slice-breakdown change was
+required; opened Slice02, `slice02-accepted-directory-contract`, to select the
+accepted target directory contract and source/package root contract from the
+verified decision surface.

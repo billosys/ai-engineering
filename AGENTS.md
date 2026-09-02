@@ -77,7 +77,8 @@ not the implementation checkout and should not be used for source/package edits.
 - **Project04 status:** active and operating in Expedited Mode as of
   2026-09-02. Arc01 `arc01-material-inventory` is closed. Arc02
   `arc02-directory-contract` is active; Slice01
-  `slice01-decision-surface-inventory` is open for CC. In Expedited Mode, CC
+  `slice01-decision-surface-inventory` is verified-closed, and Slice02
+  `slice02-accepted-directory-contract` is open for CC. In Expedited Mode, CC
   and CDC both commit their own changes with explicit commit scope; after each
   slice closes, immediately open the next slice and report the relative
   `cc-prompt.md` path. No source edits, file moves, README rewrites, package
