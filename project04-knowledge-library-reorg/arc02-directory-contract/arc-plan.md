@@ -116,7 +116,7 @@ Expected artifacts:
 
 ### Slice 03: Migration Sequence and Validation Plan
 
-Status: open.
+Status: verified-closed on 2026-09-02.
 
 Scope: define the implementation sequence, compatibility strategy, wrapper or
 migration-note policy, package-path exception policy, and validation matrix
@@ -130,7 +130,7 @@ Expected artifacts:
 
 ### Slice 04: Arc02 Implementation Handoff
 
-Status: not open.
+Status: open.
 
 Scope: synthesize the accepted contract and migration plan into an Arc03
 implementation readiness packet with ordered source-edit slices, validation
@@ -175,3 +175,10 @@ Recorded Slice02 as verified-closed. No Arc02 slice-breakdown change was
 required; opened Slice03, `slice03-migration-validation-plan`, to turn the
 accepted directory and source/package root contracts into migration sequence,
 validation, compatibility, and package-path exception policy artifacts.
+
+### v1.3 - 2026-09-02
+
+Recorded Slice03 as verified-closed. No Arc02 slice-breakdown change was
+required; opened Slice04, `slice04-implementation-handoff`, to synthesize the
+accepted contract and migration/validation evidence into Arc03 implementation
+readiness inputs without authorizing source edits.
