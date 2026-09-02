@@ -74,14 +74,15 @@ not the implementation checkout and should not be used for source/package edits.
   and/or explicit source implementation authorization.
 - **Project03 status:** closed; Arc 01 through Arc 05 are closed with the
   Project03 DoD verdict met.
-- **Project04 status:** active. Arc01 `arc01-material-inventory` is closed on
-  2026-09-02. Slice01 `slice01-source-surface-inventory`, Slice02
-  `slice02-imported-architecture-integration`, Slice03
-  `slice03-skill-topology-classification`, and Slice04
-  `slice04-arc01-synthesis` are verified-closed. Arc02
-  `arc02-directory-contract` is the next planning action and is not open yet.
-  No source edits, file moves, README rewrites, package updates, or generated
-  artifacts are authorized by Arc01.
+- **Project04 status:** active and operating in Expedited Mode as of
+  2026-09-02. Arc01 `arc01-material-inventory` is closed. Arc02
+  `arc02-directory-contract` is active; Slice01
+  `slice01-decision-surface-inventory` is open for CC. In Expedited Mode, CC
+  and CDC both commit their own changes with explicit commit scope; after each
+  slice closes, immediately open the next slice and report the relative
+  `cc-prompt.md` path. No source edits, file moves, README rewrites, package
+  updates, or generated artifacts are authorized by Arc01 or Arc02 planning
+  unless a later implementation arc explicitly says so.
 - **Source checkout validation references:** implementation plans may require
   `make help`, `make check-skills`, `make check-package-paths`, `make all`,
   `make collab-framework`, or `make ccdp` in the main checkout. Record these

@@ -35,6 +35,20 @@ until an implementation arc explicitly authorizes source edits.
 Slice-generated durable artifacts live under the owning slice's `artifacts/`
 directory unless the operator records an override.
 
+## Operating Mode
+
+Project04 is in Expedited Mode as of 2026-09-02.
+
+- CC must commit proposed-done slice changes before CDC review, using explicit
+  file lists for staging and commit pathspecs.
+- CDC must commit CDC review, verification, and planning updates after each
+  review/change set, then report the result to the operator.
+- When evidence is in place for a full slice close, close it immediately.
+- After a slice closes, open the next slice immediately and report the
+  `cc-prompt.md` path relative to this project directory.
+- After the last slice of an arc closes, continue to formal arc close, then
+  open the next roadmap-provided arc and its first slice.
+
 ## Definition of Done
 
 The project is done when the repository has a clear, tested, and documented
@@ -214,7 +228,7 @@ the source-backed inventory/classification base for Arc02.
 
 ### Arc 02: Target Directory Contract and Migration Plan
 
-Status: not yet planned in detail.
+Status: active as of 2026-09-02.
 
 Expected capability: define the accepted target layout, path-contract rules,
 exception list, compatibility strategy, and migration sequence for turning
@@ -227,6 +241,9 @@ architecture and Project03 method-skill plan land. It must also decide whether
 atomic and composite skills share the same source-root convention under
 `knowledge/`, or whether composite/component groups need an additional
 directory contract.
+
+Detailed arc planning is open under `arc02-directory-contract/`. Slice01,
+`slice01-decision-surface-inventory`, is open for CC.
 
 ### Arc 03: Directory Reorganization Implementation
 
@@ -277,17 +294,19 @@ from the end-user entrypoints and the package/install entrypoints.
 
 ## Current Status
 
-Project04 is active. Arc01, `arc01-material-inventory`, is closed on
-2026-09-02 with a source-backed inventory, material-role classification,
-imported prior proposal integration, skill kind/topology classification, and
-Arc02 readiness synthesis.
+Project04 is active and operating in Expedited Mode. Arc01,
+`arc01-material-inventory`, is closed on 2026-09-02 with a source-backed
+inventory, material-role classification, imported prior proposal integration,
+skill kind/topology classification, and Arc02 readiness synthesis. Arc02,
+`arc02-directory-contract`, is active; Slice01,
+`slice01-decision-surface-inventory`, is open for CC.
 
 No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
 or by Arc01.
 
-The next planning action is to open Arc02, `arc02-directory-contract`, before
-any source edits.
+The next execution action is CC completion of:
+`arc02-directory-contract/slice01-decision-surface-inventory/cc-prompt.md`.
 
 ## Version History
 
@@ -363,3 +382,10 @@ child slices and is ready for formal arc close before Arc02 opens.
 Closed Arc01 after CDC reproduced the arc-level composition row. Project ledger
 row P-1 is done; Arc02 is the next planning action and remains unopened until
 its target directory-contract packet is created.
+
+### v1.11 - 2026-09-02
+
+Recorded Project04 Expedited Mode. Opened Arc02,
+`arc02-directory-contract`, and Slice01,
+`slice01-decision-surface-inventory`, for the decision surface inventory that
+will feed the accepted target directory contract.
