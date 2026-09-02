@@ -10,7 +10,7 @@ method categories.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |----|-----------|--------|--------------|--------|--------|----------|-------|
-| P-1 | Arc 01 closes with a source-backed inventory and role classification for current docs, knowledge, templates, protocols, README, skill, and packaging surfaces, including skill kind and atomic/composite topology | `test -f arc01-material-inventory/closing-report.md && rg -n "Composition verdict: delivered|docs|knowledge|templates|protocols|README|classification|prior proposal|atomic|composite|skill kind|topology" arc01-material-inventory/closing-report.md` | serious | project-plan | open | | Child-arc closure plus inventory composition evidence. |
+| P-1 | Arc 01 closes with a source-backed inventory and role classification for current docs, knowledge, templates, protocols, README, skill, and packaging surfaces, including skill kind and atomic/composite topology | `test -f arc01-material-inventory/closing-report.md && rg -n "Composition verdict: delivered|docs|knowledge|templates|protocols|README|classification|prior proposal|atomic|composite|skill kind|topology" arc01-material-inventory/closing-report.md` | serious | project-plan | done | attested: Arc01 `closing-report.md` records `Composition verdict: delivered`; CDC reproduced the row Verify command on 2026-09-02. | Child-arc closure plus inventory composition evidence. |
 | P-2 | Arc 02 closes with an accepted target directory contract, migration plan, compatibility strategy, explicit exception list, and source-root decision for atomic and composite skills | `test -f arc02-directory-contract/closing-report.md && rg -n "Composition verdict: delivered|target layout|migration plan|compatibility|exception|path contract|atomic|composite|source root" arc02-directory-contract/closing-report.md` | serious | project-plan | open | | Child-arc closure plus target-layout acceptance evidence. |
 | P-3 | Arc 03 closes with accepted directory reorganization source edits landed and path/link/package validations passing | `test -f arc03-directory-reorg/closing-report.md && rg -n "Composition verdict: delivered|file moves|README links|package-path|make check" arc03-directory-reorg/closing-report.md` | serious | project-plan | open | | Child-arc closure plus source validation evidence. |
 | P-4 | Arc 04 closes with README split into concise orientation and focused end-user docs under docs | `test -f arc04-user-docs/closing-report.md && rg -n "Composition verdict: delivered|README|end-user|docs/|orientation|focused" arc04-user-docs/closing-report.md` | correctness-grade | project-plan | open | | Child-arc closure plus documentation composition evidence. |
@@ -22,4 +22,4 @@ method categories.
 
 Project remains open.
 
-Rows: 7. Done: 0. Deferred: 0. No-op: 0.
+Rows: 7. Done: 1. Deferred: 0. No-op: 0.

@@ -3,7 +3,7 @@
 ```yaml
 project: project04-knowledge-library-reorg
 arc: arc01-material-inventory
-status: active
+status: closed
 opened-on: 2026-09-01
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
 planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning
@@ -113,7 +113,7 @@ Expected artifacts:
 
 ### Slice 04: Arc01 Synthesis for Directory Contract
 
-Status: open as of 2026-09-01.
+Status: verified-closed on 2026-09-02.
 
 Scope: synthesize the source inventory, imported-material assessment, and
 skill-topology classification into a compact Arc02 input packet. The synthesis
@@ -173,3 +173,15 @@ decision instrument, classification matrix, and public-language inputs.
 Opened Slice04, `slice04-arc01-synthesis`, to synthesize verified Slice01,
 Slice02, and Slice03 evidence into an Arc02 readiness packet, directory-contract
 requirements list, and Arc01 synthesis decision register.
+
+### v1.7 - 2026-09-02
+
+Recorded Slice04 as verified-closed. All planned Arc01 slices are now
+verified-closed; Arc01 is ready for formal arc close and reproduction of the
+arc-level composition row A-5.
+
+### v1.8 - 2026-09-02
+
+Closed Arc01 after CDC reproduced the arc-level composition row A-5. All five
+arc ledger rows are done; no remediation slice was required, and Arc02 is ready
+to open from the synthesized directory-contract readiness inputs.

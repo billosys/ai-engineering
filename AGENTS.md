@@ -74,11 +74,12 @@ not the implementation checkout and should not be used for source/package edits.
   and/or explicit source implementation authorization.
 - **Project03 status:** closed; Arc 01 through Arc 05 are closed with the
   Project03 DoD verdict met.
-- **Project04 status:** active. Arc01 `arc01-material-inventory` is open.
-  Slice01 `slice01-source-surface-inventory`, Slice02
-  `slice02-imported-architecture-integration`, and Slice03
-  `slice03-skill-topology-classification` are verified-closed. Slice04
-  `slice04-arc01-synthesis` is open for Arc01 synthesis and Arc02 readiness.
+- **Project04 status:** active. Arc01 `arc01-material-inventory` is closed on
+  2026-09-02. Slice01 `slice01-source-surface-inventory`, Slice02
+  `slice02-imported-architecture-integration`, Slice03
+  `slice03-skill-topology-classification`, and Slice04
+  `slice04-arc01-synthesis` are verified-closed. Arc02
+  `arc02-directory-contract` is the next planning action and is not open yet.
   No source edits, file moves, README rewrites, package updates, or generated
   artifacts are authorized by Arc01.
 - **Source checkout validation references:** implementation plans may require

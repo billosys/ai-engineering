@@ -186,7 +186,7 @@ the live tree and Project02/Project03 evidence before Arc02 authorizes moves.
 
 ### Arc 01: Repository Material Inventory and Classification
 
-Status: active as of 2026-09-01.
+Status: closed on 2026-09-02.
 
 Capability: produce a source-backed inventory of current `docs/`,
 `knowledge/`, `templates/`, `protocols/`, README, skill, and packaging
@@ -205,11 +205,12 @@ This arc should also recover and assess prior proposals or assumptions about
 moving materials under `knowledge/`, including Project02 source/package
 analysis and Project03 method-skill architecture.
 
-Detailed arc planning is open under `arc01-material-inventory/`. Slice01,
-`slice01-source-surface-inventory`, Slice02,
-`slice02-imported-architecture-integration`, and Slice03,
-`slice03-skill-topology-classification`, are verified-closed. Slice04,
-`slice04-arc01-synthesis`, is open for Arc01 synthesis and Arc02 readiness.
+Detailed arc planning and closure evidence lives under
+`arc01-material-inventory/`. Slice01, `slice01-source-surface-inventory`,
+Slice02, `slice02-imported-architecture-integration`, Slice03,
+`slice03-skill-topology-classification`, and Slice04,
+`slice04-arc01-synthesis`, are verified-closed. Arc01 is closed and provides
+the source-backed inventory/classification base for Arc02.
 
 ### Arc 02: Target Directory Contract and Migration Plan
 
@@ -276,18 +277,17 @@ from the end-user entrypoints and the package/install entrypoints.
 
 ## Current Status
 
-Project04 is active. Arc01 is open for read-only repository material inventory
-and classification. Slice01, `slice01-source-surface-inventory`, is
-verified-closed. Slice02, `slice02-imported-architecture-integration`, is
-verified-closed. Slice03, `slice03-skill-topology-classification`, is
-verified-closed.
+Project04 is active. Arc01, `arc01-material-inventory`, is closed on
+2026-09-02 with a source-backed inventory, material-role classification,
+imported prior proposal integration, skill kind/topology classification, and
+Arc02 readiness synthesis.
 
 No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
 or by Arc01.
 
-The next execution action is to run the Arc01 Slice04 CC prompt:
-`arc01-material-inventory/slice04-arc01-synthesis/cc-prompt.md`.
+The next planning action is to open Arc02, `arc02-directory-contract`, before
+any source edits.
 
 ## Version History
 
@@ -352,3 +352,14 @@ inputs.
 Opened Arc01 Slice04, `slice04-arc01-synthesis`, for the Arc02 readiness
 packet, directory-contract requirements list, and Arc01 synthesis decision
 register.
+
+### v1.9 - 2026-09-02
+
+Recorded Arc01 Slice04 as verified-closed. Arc01 has completed all planned
+child slices and is ready for formal arc close before Arc02 opens.
+
+### v1.10 - 2026-09-02
+
+Closed Arc01 after CDC reproduced the arc-level composition row. Project ledger
+row P-1 is done; Arc02 is the next planning action and remains unopened until
+its target directory-contract packet is created.
