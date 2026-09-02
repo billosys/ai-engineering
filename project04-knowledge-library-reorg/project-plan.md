@@ -228,7 +228,7 @@ the source-backed inventory/classification base for Arc02.
 
 ### Arc 02: Target Directory Contract and Migration Plan
 
-Status: active as of 2026-09-02.
+Status: closed on 2026-09-02.
 
 Expected capability: define the accepted target layout, path-contract rules,
 exception list, compatibility strategy, and migration sequence for turning
@@ -242,15 +242,17 @@ atomic and composite skills share the same source-root convention under
 `knowledge/`, or whether composite/component groups need an additional
 directory contract.
 
-Detailed arc planning is open under `arc02-directory-contract/`. Slice01,
+Detailed arc planning and closure evidence lives under
+`arc02-directory-contract/`. Slice01,
 `slice01-decision-surface-inventory`, is verified-closed. Slice02,
 `slice02-accepted-directory-contract`, is verified-closed. Slice03,
 `slice03-migration-validation-plan`, is verified-closed. Slice04,
-`slice04-implementation-handoff`, is open for CC.
+`slice04-implementation-handoff`, is verified-closed. Arc02 is closed and
+provides the accepted directory contract and migration plan for Arc03.
 
 ### Arc 03: Directory Reorganization Implementation
 
-Status: not yet planned in detail.
+Status: active as of 2026-09-02.
 
 Expected capability: execute the accepted file moves and link updates in
 implementation-sized slices while preserving source history, minimizing prose
@@ -258,6 +260,12 @@ changes, and keeping package/build validation green after each slice.
 
 This arc should prefer mechanical moves first and reserve rewrite work for
 later slices so path breakage and content edits are not entangled.
+
+Detailed arc planning is open under `arc03-directory-reorg/`. Slice01,
+`slice01-preflight-source-status-impact-map`, is open for CC. Slice01 is
+preflight-only and does not authorize source checkout edits; later Arc03
+source-edit slices must explicitly name their source-edit scope and validation
+gates before source files move.
 
 ### Arc 04: README Decomposition and End-User Documentation
 
@@ -301,18 +309,19 @@ Project04 is active and operating in Expedited Mode. Arc01,
 `arc01-material-inventory`, is closed on 2026-09-02 with a source-backed
 inventory, material-role classification, imported prior proposal integration,
 skill kind/topology classification, and Arc02 readiness synthesis. Arc02,
-`arc02-directory-contract`, is active; Slice01,
-`slice01-decision-surface-inventory`, is verified-closed. Slice02,
-`slice02-accepted-directory-contract`, is verified-closed. Slice03,
-`slice03-migration-validation-plan`, is verified-closed. Slice04,
-`slice04-implementation-handoff`, is open for CC.
+`arc02-directory-contract`, is closed with an accepted directory contract,
+migration plan, compatibility strategy, exception policy, and Arc03 handoff.
+Arc03, `arc03-directory-reorg`, is active; Slice01,
+`slice01-preflight-source-status-impact-map`, is open for CC.
 
 No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
-or by Arc01/Arc02 planning.
+or by Arc01/Arc02 planning. Arc03 Slice01 is preflight-only and does not
+authorize source edits; later Arc03 source-edit slices must authorize their
+own source scope explicitly.
 
 The next execution action is CC completion of:
-`arc02-directory-contract/slice04-implementation-handoff/cc-prompt.md`.
+`arc03-directory-reorg/slice01-preflight-source-status-impact-map/cc-prompt.md`.
 
 ## Version History
 
@@ -416,3 +425,11 @@ Recorded Arc02 Slice03 as verified-closed after CDC reproduced all six ledger
 rows. Opened Slice04, `slice04-implementation-handoff`, to prepare the Arc03
 implementation readiness packet, source-edit slice roadmap, and Arc02 decision
 summary from verified Arc02 evidence.
+
+### v1.15 - 2026-09-02
+
+Recorded Arc02 Slice04 as verified-closed, closed Arc02 after CDC reproduced
+the arc-level composition row, marked project ledger row P-2 done, opened
+Arc03, `arc03-directory-reorg`, and opened Slice01,
+`slice01-preflight-source-status-impact-map`, as a preflight-only baseline
+before source-edit slices.

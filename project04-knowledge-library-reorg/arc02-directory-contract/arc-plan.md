@@ -3,7 +3,7 @@
 ```yaml
 project: project04-knowledge-library-reorg
 arc: arc02-directory-contract
-status: active
+status: closed
 opened-on: 2026-09-02
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
 planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning
@@ -130,7 +130,7 @@ Expected artifacts:
 
 ### Slice 04: Arc02 Implementation Handoff
 
-Status: open.
+Status: verified-closed on 2026-09-02.
 
 Scope: synthesize the accepted contract and migration plan into an Arc03
 implementation readiness packet with ordered source-edit slices, validation
@@ -182,3 +182,10 @@ Recorded Slice03 as verified-closed. No Arc02 slice-breakdown change was
 required; opened Slice04, `slice04-implementation-handoff`, to synthesize the
 accepted contract and migration/validation evidence into Arc03 implementation
 readiness inputs without authorizing source edits.
+
+### v1.4 - 2026-09-02
+
+Recorded Slice04 as verified-closed and closed Arc02 after CDC reproduced the
+arc-level composition row. Arc02 delivered the accepted directory contract,
+source/package root contract, migration sequence, validation matrix, exception
+policy, and Arc03 implementation handoff.
