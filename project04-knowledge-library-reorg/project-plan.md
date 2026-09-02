@@ -208,8 +208,8 @@ analysis and Project03 method-skill architecture.
 Detailed arc planning is open under `arc01-material-inventory/`. Slice01,
 `slice01-source-surface-inventory`, Slice02,
 `slice02-imported-architecture-integration`, and Slice03,
-`slice03-skill-topology-classification`, are verified-closed. Slice04 is the
-next Arc01 slice to plan.
+`slice03-skill-topology-classification`, are verified-closed. Slice04,
+`slice04-arc01-synthesis`, is open for Arc01 synthesis and Arc02 readiness.
 
 ### Arc 02: Target Directory Contract and Migration Plan
 
@@ -286,8 +286,8 @@ No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
 or by Arc01.
 
-The next planning action is to open Arc01 Slice04,
-`slice04-arc01-synthesis`.
+The next execution action is to run the Arc01 Slice04 CC prompt:
+`arc01-material-inventory/slice04-arc01-synthesis/cc-prompt.md`.
 
 ## Version History
 
@@ -346,3 +346,9 @@ Recorded Arc01 Slice03 as verified-closed. Arc01 is ready to plan Slice04,
 which will synthesize the source inventory, imported-architecture integration,
 and skill-topology classification into Arc02 directory-contract readiness
 inputs.
+
+### v1.8 - 2026-09-01
+
+Opened Arc01 Slice04, `slice04-arc01-synthesis`, for the Arc02 readiness
+packet, directory-contract requirements list, and Arc01 synthesis decision
+register.

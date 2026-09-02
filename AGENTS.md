@@ -77,10 +77,10 @@ not the implementation checkout and should not be used for source/package edits.
 - **Project04 status:** active. Arc01 `arc01-material-inventory` is open.
   Slice01 `slice01-source-surface-inventory`, Slice02
   `slice02-imported-architecture-integration`, and Slice03
-  `slice03-skill-topology-classification` are verified-closed. The next
-  planning action is Arc01 Slice04, `slice04-arc01-synthesis`. No source edits,
-  file moves, README rewrites, package updates, or generated artifacts are
-  authorized by Arc01.
+  `slice03-skill-topology-classification` are verified-closed. Slice04
+  `slice04-arc01-synthesis` is open for Arc01 synthesis and Arc02 readiness.
+  No source edits, file moves, README rewrites, package updates, or generated
+  artifacts are authorized by Arc01.
 - **Source checkout validation references:** implementation plans may require
   `make help`, `make check-skills`, `make check-package-paths`, `make all`,
   `make collab-framework`, or `make ccdp` in the main checkout. Record these

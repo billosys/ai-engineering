@@ -113,7 +113,7 @@ Expected artifacts:
 
 ### Slice 04: Arc01 Synthesis for Directory Contract
 
-Status: not yet planned in detail.
+Status: open as of 2026-09-01.
 
 Scope: synthesize the source inventory, imported-material assessment, and
 skill-topology classification into a compact Arc02 input packet. The synthesis
@@ -167,3 +167,9 @@ Slice02, live source-surface evidence, and external ontology rubric input.
 Recorded Slice03 as verified-closed. No slice-breakdown or sequencing change
 was required before Slice04; Slice03 produced the expected skill-kind/topology
 decision instrument, classification matrix, and public-language inputs.
+
+### v1.6 - 2026-09-01
+
+Opened Slice04, `slice04-arc01-synthesis`, to synthesize verified Slice01,
+Slice02, and Slice03 evidence into an Arc02 readiness packet, directory-contract
+requirements list, and Arc01 synthesis decision register.

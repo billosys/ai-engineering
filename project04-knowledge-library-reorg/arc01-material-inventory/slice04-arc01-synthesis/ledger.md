@@ -1,0 +1,19 @@
+# Slice 04: Arc01 Synthesis for Directory Contract
+
+## Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| F-1 | The Arc02 readiness packet consumes the verified Slice01, Slice02, and Slice03 close evidence and their required artifacts | `rg -n "Slice01|Slice02|Slice03|verified-closed|current-source-surface-map|material-role-classification|source-validation-surface-map|imported-architecture|prior-proposal|skill-kind-topology|public-language" artifacts/arc02-readiness-packet.md` | serious | slice-plan | open | | This is the child-evidence recomposition row for Slice04. |
+| F-2 | The synthesis separates accepted facts, working hypotheses, unresolved decisions, risks, validation obligations, and re-entry conditions | `rg -n "accepted facts|working hypotheses|unresolved decisions|source-edit risks|validation obligations|re-entry conditions|current source-backed|planned surface|not live source" artifacts/arc02-readiness-packet.md artifacts/arc01-synthesis-decision-register.md` | serious | slice-plan | open | | Arc02 must not inherit one undifferentiated pile of claims. |
+| F-3 | The directory-contract requirements list covers docs, knowledge, framework components, method skills, protocols, templates, README/SKILL routes, package roots, package-local links, Makefile, package-path exceptions, and compatibility surfaces | `rg -n "docs/|knowledge/|framework/operational|method skill|protocols/ccdp|templates/|README|SKILL.md|source root|package root|package-local links|Makefile|package-path|AGENTS.md|CLAUDE.md" artifacts/directory-contract-requirements.md` | serious | slice-plan | open | | This list should be usable as Arc02 planning substrate. |
+| F-4 | The decision register gives Arc02 concrete decisions with options, evidence sources, preservation requirements, risks, and validation obligations | `rg -n "Arc02 decision|options to test|evidence source|preserve|risk|validation obligation|directory contract|migration plan|operator decision" artifacts/arc01-synthesis-decision-register.md` | serious | slice-plan | open | | Decision rows should be executable planning inputs, not loose questions. |
+| F-5 | The artifacts preserve kind/topology independence and the external ontology rubric boundary | `rg -n "skill kind|topology|atomic|composite|bridge/integration|application/task bundle|external ontology rubric|tested input|not accepted taxonomy|do not collapse" artifacts/arc02-readiness-packet.md artifacts/directory-contract-requirements.md artifacts/arc01-synthesis-decision-register.md` | correctness-grade | slice-plan | open | | Avoid reintroducing the tautological trap during synthesis. |
+| F-6 | Arc01 composition evidence is prepared for formal arc close without prematurely closing Arc01 | `rg -n "Arc01 composition|not arc close|formal arc close|docs|knowledge|templates|protocols|README|Makefile|package-path|atomic|composite|Project02|Project03|Arc02" artifacts/arc02-readiness-packet.md artifacts/arc01-synthesis-decision-register.md` | correctness-grade | slice-plan | open | | A-5 remains an arc-close row after Slice04 is CDC-closed. |
+| F-7 | No source checkout files are edited by this slice | `git -C /Users/oubiwann/lab/billosys/ai-engineering status --short` | serious | slice-plan | open | | Expected result: no output from the source checkout status command. |
+
+## Closure
+
+Slice remains open.
+
+Rows: 7. Done: 0. Deferred: 0. No-op: 0.
