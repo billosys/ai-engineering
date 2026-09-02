@@ -244,7 +244,8 @@ directory contract.
 
 Detailed arc planning is open under `arc02-directory-contract/`. Slice01,
 `slice01-decision-surface-inventory`, is verified-closed. Slice02,
-`slice02-accepted-directory-contract`, is open for CC.
+`slice02-accepted-directory-contract`, is verified-closed. Slice03,
+`slice03-migration-validation-plan`, is open for CC.
 
 ### Arc 03: Directory Reorganization Implementation
 
@@ -301,14 +302,15 @@ inventory, material-role classification, imported prior proposal integration,
 skill kind/topology classification, and Arc02 readiness synthesis. Arc02,
 `arc02-directory-contract`, is active; Slice01,
 `slice01-decision-surface-inventory`, is verified-closed. Slice02,
-`slice02-accepted-directory-contract`, is open for CC.
+`slice02-accepted-directory-contract`, is verified-closed. Slice03,
+`slice03-migration-validation-plan`, is open for CC.
 
 No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
 or by Arc01.
 
 The next execution action is CC completion of:
-`arc02-directory-contract/slice02-accepted-directory-contract/cc-prompt.md`.
+`arc02-directory-contract/slice03-migration-validation-plan/cc-prompt.md`.
 
 ## Version History
 
@@ -398,3 +400,10 @@ Recorded Arc02 Slice01 as verified-closed after CDC reproduced all six ledger
 rows. Opened Slice02, `slice02-accepted-directory-contract`, to select the
 accepted target directory contract and source/package root contract while
 preserving source-edit authorization boundaries.
+
+### v1.13 - 2026-09-02
+
+Recorded Arc02 Slice02 as verified-closed after CDC reproduced all six ledger
+rows. Opened Slice03, `slice03-migration-validation-plan`, to translate the
+accepted directory/source/package contract into migration sequencing,
+validation gates, compatibility policy, and package-path exception policy.

@@ -101,7 +101,7 @@ Expected artifacts:
 
 ### Slice 02: Accepted Directory and Root Contract
 
-Status: open.
+Status: verified-closed on 2026-09-02.
 
 Scope: turn Slice01's decision surface into an accepted directory contract and
 source/package root contract. Decide what remains in `docs/`, what moves under
@@ -116,7 +116,7 @@ Expected artifacts:
 
 ### Slice 03: Migration Sequence and Validation Plan
 
-Status: not open.
+Status: open.
 
 Scope: define the implementation sequence, compatibility strategy, wrapper or
 migration-note policy, package-path exception policy, and validation matrix
@@ -168,3 +168,10 @@ Recorded Slice01 as verified-closed. No Arc02 slice-breakdown change was
 required; opened Slice02, `slice02-accepted-directory-contract`, to select the
 accepted target directory contract and source/package root contract from the
 verified decision surface.
+
+### v1.2 - 2026-09-02
+
+Recorded Slice02 as verified-closed. No Arc02 slice-breakdown change was
+required; opened Slice03, `slice03-migration-validation-plan`, to turn the
+accepted directory and source/package root contracts into migration sequence,
+validation, compatibility, and package-path exception policy artifacts.
