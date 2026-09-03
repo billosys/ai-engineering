@@ -90,14 +90,14 @@ Expected artifacts:
 
 ### Slice 02: README Orientation Rewrite
 
-Status: open.
+Status: verified-closed.
 
 Scope: rewrite `README.md` into a concise top-level orientation that points to
 focused docs and preserves build/install/package entrypoints.
 
 ### Slice 03: Focused End-User Guide Set
 
-Status: not open.
+Status: open.
 
 Scope: create or update focused `docs/*.md` guides that explain the repository,
 skill library, collaboration framework, knowledge library, build/install
@@ -122,6 +122,15 @@ and source checkout status after Arc04 documentation edits.
   behavior after documentation edits.
 
 ## Version History
+
+### v1.2 - 2026-09-02
+
+Recorded Slice02 as verified-closed after CDC reproduced all six ledger rows,
+checked the source and planning commits, reran the README/docs and package
+validation gates, and confirmed the concise README orientation with focused
+doc stubs. Opened Slice03, `slice03-focused-end-user-guide-set`, to expand the
+seven focused `docs/*.md` guide stubs into usable end-user documentation while
+preserving the Arc05 vocabulary boundary.
 
 ### v1.1 - 2026-09-02
 

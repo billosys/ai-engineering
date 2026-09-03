@@ -279,9 +279,10 @@ The resulting `docs/` tree should explain the materials without becoming the
 material substrate itself.
 
 Detailed arc planning is open under `arc04-user-docs/`. Slice01,
-`slice01-readme-docs-decomposition-map`, is verified-closed. Slice02,
-`slice02-readme-orientation-rewrite`, is open as the first README/docs
-source-edit slice.
+`slice01-readme-docs-decomposition-map`, and Slice02,
+`slice02-readme-orientation-rewrite`, are verified-closed. Slice03,
+`slice03-focused-end-user-guide-set`, is open to expand the focused docs guide
+set.
 
 ### Arc 05: Skill Vocabulary, Atomicity, and Public Positioning
 
@@ -315,8 +316,9 @@ Project04 is active and operating in Expedited Mode. Arc01,
 reorganization implementation, with path/link/package validation green.
 
 Arc04, `arc04-user-docs`, is active. Slice01,
-`slice01-readme-docs-decomposition-map`, is verified-closed, and Slice02,
-`slice02-readme-orientation-rewrite`, is open.
+`slice01-readme-docs-decomposition-map`, and Slice02,
+`slice02-readme-orientation-rewrite`, are verified-closed. Slice03,
+`slice03-focused-end-user-guide-set`, is open.
 
 Arc04 source edits are authorized only through opened Arc04 slice prompts.
 Arc04 owns README decomposition and focused end-user documentation under
@@ -324,9 +326,19 @@ Arc04 owns README decomposition and focused end-user documentation under
 atomic/composite vocabulary.
 
 The next execution action is CC completion of:
-`arc04-user-docs/slice02-readme-orientation-rewrite/cc-prompt.md`.
+`arc04-user-docs/slice03-focused-end-user-guide-set/cc-prompt.md`.
 
 ## Version History
+
+### v1.20 - 2026-09-02
+
+Recorded Arc04 Slice02 as verified-closed after CDC reproduced all six ledger
+rows, checked the source and planning commits, reran the README/docs and
+package validation gates, and confirmed the concise README orientation with
+seven focused docs stubs. Opened Slice03,
+`slice03-focused-end-user-guide-set`, to expand those stubs into usable
+end-user guides while preserving the `docs/` versus `knowledge/` boundary and
+leaving final skill vocabulary work to Arc05.
 
 ### v1.0 - 2026-09-01
 
