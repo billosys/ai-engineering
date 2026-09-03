@@ -1,0 +1,18 @@
+# Slice 06: Arc03 Implementation Reconciliation
+
+## Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| F-1 | Moved layout composition map records final Arc03 source layout, accepted knowledge roots, preserved exceptions, and CCDP separation | `rg -n "moved layout composition|docs/ORIGINS.md|knowledge/collaboration-framework|knowledge/engineering-methods|knowledge/project-management|knowledge/work-verification|knowledge/testing|knowledge/code-auditing|knowledge/agent-coordination|knowledge/contribution-style|templates/GUIDE.md|protocols/ccdp" artifacts/moved-layout-composition-map.md` | serious | slice-plan | open | | Final source layout evidence. |
+| F-2 | Package root and validation composition records final validation gates, generated package roots, Biome dual packages, CCDP package, hard failure count, and generated zip handling | `rg -n "package root and validation composition|make check-skills|make collab-framework|make all|make check-package-paths|make ccdp-package|make check-ccdp-package|collaboration-framework.zip|biome-js-linter.zip|biome-linter.zip|ccdp.zip|hard failures: 0|generated zip not committed" artifacts/package-root-and-validation-composition.md` | serious | slice-plan | open | | Final package validation evidence. |
+| F-3 | Compatibility and edge-case reconciliation records top-level and transitional surfaces, Biome, CCDP, package-path exceptions, operator gates, and Arc04/Arc05 boundaries | `rg -n "compatibility and edge-case reconciliation|top-level SKILL.md|AGENTS.md|CLAUDE.md -> AGENTS.md|README.md|docs/ORIGINS.md|Biome|CCDP|package-path exception|operator gate|Arc04|Arc05" artifacts/compatibility-and-edge-case-reconciliation.md` | serious | slice-plan | open | | Compatibility and scope boundary evidence. |
+| F-4 | Arc03 close readiness report records source history, source/planning status, source-files-edited status, generated zip boundary, and Arc03 implementation commits | `rg -n "arc03 close readiness|source history|99cebae|873a550|9b6d5d8|source checkout|planning checkout|git status --short|git diff --check|generated zip not committed|source-files-edited" artifacts/arc03-close-readiness-report.md` | serious | slice-plan | open | | Arc03 implementation commit and status evidence. |
+| F-5 | Arc03 close readiness report states Slice01 through Slice06 composition verdict and bubble-up to Arc03 close | `rg -n "Slice01|Slice02|Slice03|Slice04|Slice05|Slice06|verified-closed|implementation reconciliation|Bubble-Up to Arc03|Composition verdict|silent-drop|arc close" artifacts/arc03-close-readiness-report.md` | serious | slice-plan | open | | Arc close handoff evidence. |
+| F-6 | Closing report walks all six rows, states source/planning checkout status, and states whether Arc03 can close | `test -f closing-report.md && rg -n "Rows: 6|Done: 6|source checkout|planning checkout|Bubble-Up to Arc03|Arc03 close|Composition verdict|silent-drop" closing-report.md` | serious | slice-plan | open | | Slice close evidence. |
+
+## Closure
+
+Slice remains open.
+
+Rows: 6. Done: 0. Deferred: 0. No-op: 0.

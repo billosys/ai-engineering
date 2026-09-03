@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc03-directory-reorg
 slice: slice05-package-link-edge-reconciliation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-02
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -90,3 +90,10 @@ and record the operator gate instead of broadening exceptions silently.
 - CC commits source and planning changes using explicit file lists.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Slice06.
+
+## CDC Close
+
+Closed as verified on 2026-09-02. CDC reproduced the six ledger rows, checked
+source commit scope and co-author trailers, reran source/package validation,
+validated generated package roots, and confirmed clean source and planning
+checkouts before opening Slice06.

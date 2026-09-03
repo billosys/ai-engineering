@@ -13,6 +13,8 @@
 
 ## Closure
 
-Slice is proposed closed for CDC verification.
+Slice is verified-closed by CDC. The package/link edge reconciliation evidence
+is reproduced in `cdc-verification.md`; Slice06 is open for Arc03
+implementation composition.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.

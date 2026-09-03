@@ -120,7 +120,7 @@ preserving top-level `templates/` only for cross-cutting support exceptions.
 
 ### Slice 05: Package, Link, and Edge-Case Reconciliation
 
-Status: open.
+Status: verified-closed.
 
 Scope: synchronize package/list surfaces, repair package-local links, preserve
 Biome multi-entrypoint behavior, preserve CCDP package separation, and record
@@ -128,7 +128,7 @@ only narrow package-path exceptions with required operator approval.
 
 ### Slice 06: Arc03 Implementation Reconciliation
 
-Status: not open.
+Status: open.
 
 Scope: verify that accepted file moves, link updates, package roots,
 compatibility surfaces, generated package behavior, and validation gates
@@ -146,6 +146,15 @@ compose before Arc03 closes.
 - Arc04 and Arc05 remain later arcs and must not be silently folded into Arc03.
 
 ## Version History
+
+### v1.5 - 2026-09-02
+
+Recorded Slice05 as verified-closed after CDC reproduced all six ledger rows,
+verified the narrow CCDP source refresh, reran package validation, inspected
+collaboration-framework, Biome, and CCDP package roots, and confirmed clean
+source and planning checkouts. Opened Slice06,
+`slice06-implementation-reconciliation`, as the final Arc03 composition check
+before formal arc close.
 
 ### v1.4 - 2026-09-02
 
