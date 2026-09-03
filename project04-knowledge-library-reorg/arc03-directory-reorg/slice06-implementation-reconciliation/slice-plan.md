@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc03-directory-reorg
 slice: slice06-implementation-reconciliation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-02
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -92,3 +92,10 @@ operator choice, record the gate instead of silently expanding scope.
 - CC commits source and planning changes using explicit file lists.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc03 close.
+
+## CDC Close
+
+Closed as verified on 2026-09-02. CDC reproduced all six ledger rows, verified
+CC's planning commit scope and co-author trailers, reran source/package
+validation, inspected generated package roots, confirmed no Slice06 source
+commit was needed, and proceeded to Arc03 close plus Arc04 opening.

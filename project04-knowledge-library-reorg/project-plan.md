@@ -252,27 +252,23 @@ provides the accepted directory contract and migration plan for Arc03.
 
 ### Arc 03: Directory Reorganization Implementation
 
-Status: active as of 2026-09-02.
+Status: closed on 2026-09-02.
 
 Expected capability: execute the accepted file moves and link updates in
 implementation-sized slices while preserving source history, minimizing prose
 changes, and keeping package/build validation green after each slice.
 
-This arc should prefer mechanical moves first and reserve rewrite work for
-later slices so path breakage and content edits are not entangled.
+This arc preferred mechanical moves first and reserved rewrite work for later
+arcs so path breakage and content edits were not entangled.
 
-Detailed arc planning is open under `arc03-directory-reorg/`. Slice01,
-`slice01-preflight-source-status-impact-map`, and Slice02,
-`slice02-top-level-compatibility-decision`, are verified-closed. Slice03,
-`slice03-mechanical-framework-source-moves`, is open for CC. Slice03 is the
-first source-edit move slice and must move the current selected-file
-collaboration-framework payload as a transitional substrate under
-`knowledge/collaboration-framework/` while preserving source prose, package
-root behavior, and top-level route compatibility.
+Detailed arc planning and closure evidence lives under
+`arc03-directory-reorg/`. Slice01 through Slice06 are verified-closed. Arc03
+closed with accepted directory reorganization source edits landed, package
+roots inspected, and path/link/package validation green.
 
 ### Arc 04: README Decomposition and End-User Documentation
 
-Status: not yet planned in detail.
+Status: active as of 2026-09-02.
 
 Expected capability: split the current README into a concise top-level
 orientation plus focused `docs/*.md` end-user guides that explain the
@@ -281,6 +277,10 @@ protocol distribution, and contribution paths.
 
 The resulting `docs/` tree should explain the materials without becoming the
 material substrate itself.
+
+Detailed arc planning is open under `arc04-user-docs/`. Slice01,
+`slice01-readme-docs-decomposition-map`, is open for CC as a read-only
+decomposition and validation map before README/docs source edits begin.
 
 ### Arc 05: Skill Vocabulary, Atomicity, and Public Positioning
 
@@ -309,26 +309,21 @@ from the end-user entrypoints and the package/install entrypoints.
 ## Current Status
 
 Project04 is active and operating in Expedited Mode. Arc01,
-`arc01-material-inventory`, is closed on 2026-09-02 with a source-backed
-inventory, material-role classification, imported prior proposal integration,
-skill kind/topology classification, and Arc02 readiness synthesis. Arc02,
-`arc02-directory-contract`, is closed with an accepted directory contract,
-migration plan, compatibility strategy, exception policy, and Arc03 handoff.
-Arc03, `arc03-directory-reorg`, is active; Slice01,
-`slice01-preflight-source-status-impact-map`, and Slice02,
-`slice02-top-level-compatibility-decision`, are verified-closed, and Slice03,
-`slice03-mechanical-framework-source-moves`, is open for CC.
+`arc01-material-inventory`, Arc02, `arc02-directory-contract`, and Arc03,
+`arc03-directory-reorg`, are closed. Arc03 landed the accepted directory
+reorganization implementation, with path/link/package validation green.
 
-No source edits, file moves, README rewrites, Makefile updates, package-path
-exception changes, or generated artifacts are authorized by this project plan
-or by Arc01/Arc02 planning alone. Arc03 Slice01 was preflight-only and did not
-authorize source edits. Arc03 Slice02 selected a no-shim compatibility path
-without source edits. Arc03 Slice03 authorizes only the mechanical
-collaboration-framework source move, directly required route/package updates,
-and exact existing exception-path maintenance needed to keep validation green.
+Arc04, `arc04-user-docs`, is active. Slice01,
+`slice01-readme-docs-decomposition-map`, is open as a read-only decomposition
+and validation map before README/docs source edits begin.
+
+Arc04 source edits are authorized only through opened Arc04 slice prompts.
+Arc04 owns README decomposition and focused end-user documentation under
+`docs/`; Arc05 remains responsible for final public skill-kind and
+atomic/composite vocabulary.
 
 The next execution action is CC completion of:
-`arc03-directory-reorg/slice03-mechanical-framework-source-moves/cc-prompt.md`.
+`arc04-user-docs/slice01-readme-docs-decomposition-map/cc-prompt.md`.
 
 ## Version History
 
@@ -455,3 +450,11 @@ rows and reran `make check-skills`, `make collab-framework`, and package
 entrypoint inspection. Opened Slice03,
 `slice03-mechanical-framework-source-moves`, as the first source-edit move
 slice for the current selected-file collaboration-framework payload.
+
+### v1.18 - 2026-09-02
+
+Closed Arc03 after CDC verified Slice06 and reproduced the arc-level
+composition row. Marked project ledger row P-3 done, opened Arc04,
+`arc04-user-docs`, and opened Slice01,
+`slice01-readme-docs-decomposition-map`, as the read-only README/docs
+decomposition map before user-facing documentation source edits begin.

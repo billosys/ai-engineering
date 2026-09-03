@@ -3,7 +3,7 @@
 ```yaml
 project: project04-knowledge-library-reorg
 arc: arc03-directory-reorg
-status: active
+status: closed
 opened-on: 2026-09-02
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
 planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning
@@ -128,7 +128,7 @@ only narrow package-path exceptions with required operator approval.
 
 ### Slice 06: Arc03 Implementation Reconciliation
 
-Status: open.
+Status: verified-closed.
 
 Scope: verify that accepted file moves, link updates, package roots,
 compatibility surfaces, generated package behavior, and validation gates
@@ -146,6 +146,14 @@ compose before Arc03 closes.
 - Arc04 and Arc05 remain later arcs and must not be silently folded into Arc03.
 
 ## Version History
+
+### v1.6 - 2026-09-02
+
+Recorded Slice06 as verified-closed after CDC reproduced all six ledger rows,
+reran the final source/package validation gates, inspected generated package
+roots, and confirmed no Slice06 source commit was required. Closed Arc03 after
+the implementation slices composed into the promised directory reorganization
+capability and bubbled the README/docs work to Arc04.
 
 ### v1.5 - 2026-09-02
 
