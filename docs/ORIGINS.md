@@ -31,7 +31,7 @@ for multiple languages. Those became the knowledge bases under
 Feature-scoped quality was not enough: different runs diverged, and slop
 accumulated *between* features. The fix needed a bigger context than
 "feature" — whole-library, consistent-use-of-best-practices checks. That
-became the language-agnostic [audit prompt](./CODE-AUDIT.md), iterated
+became the language-agnostic [audit prompt](../knowledge/code-auditing/docs/CODE-AUDIT.md), iterated
 with dual human/LLM grading as its fitness function.
 
 ## 3. The SDLC, rediscovered (Summer 2025)
@@ -71,7 +71,7 @@ one ranges from useless to dangerous.
 The conclusion, after days of sitting with it: no more unsupervised
 planning. A human stays in the middle for any work requiring genuine
 abstraction or generalisation. That rule is now load-bearing in the
-[methodology](./AI-ENGINEERING-METHODOLOGY.md).
+[methodology](../knowledge/engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md).
 
 ## 5. Silent drops (April 2026)
 
@@ -92,7 +92,7 @@ on the field's research back to the late 1990s.
 
 The solution came from the domains that already solve this class of
 problem: nuclear corrective-action programmes, aviation safety, surgical
-checklists. The result was [ledger discipline](../templates/LEDGER-DISCIPLINE.md)
+checklists. The result was [ledger discipline](../knowledge/work-verification/templates/LEDGER-DISCIPLINE.md)
 — every acceptance criterion a verifiable row, evidence-graded closure,
 closer never the verifier — woven into the SDLC. Silent drops observed
 since: zero.
@@ -105,7 +105,7 @@ contrary evidence, deference instead of honest push-back — approximating,
 in effect, an assistant that fears reproach. What the work needed was a
 peer: someone to reality-check assumptions and brainstorm as an equal.
 
-The response was the [Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md):
+The response was the [Constitution Supplement](../knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md):
 a structural reinforcement of the AI Constitution that establishes the
 peer frame and grants explicit conversational rights — the right to flag
 dissonance, to disagree, to name uncertainty as the answer — while never
@@ -124,7 +124,7 @@ unit of work with a logical composition upward (slice → arc → project),
 grounded in research on the critical failures of Agile and its
 descendants. Hand-waving gave way to calculable definitions: statistical
 analysis, information-theoretic measures of complexity. The result is the
-[project-management discipline](./PROJECT-MANAGEMENT.md), and with it the
+[project-management discipline](../knowledge/project-management/docs/PROJECT-MANAGEMENT.md), and with it the
 most significant quality shift so far.
 
 A useful mental model for the multi-scale machinery: the system behaves
@@ -151,7 +151,7 @@ at a control surface where recovery is instant and cheap. You let it
 crash — but not while it's flying the plane. Delegation follows the same
 rule: failure is acceptable exactly where recovery costs nothing, which
 is why thinking work stays in the main context and lookup work may fan
-out. (Full policy: [SUBAGENT-DELEGATION-POLICY.md](./SUBAGENT-DELEGATION-POLICY.md).)
+out. (Full policy: [SUBAGENT-DELEGATION-POLICY.md](../knowledge/agent-coordination/docs/SUBAGENT-DELEGATION-POLICY.md).)
 
 ## Parking lot
 
