@@ -13,6 +13,9 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. The focused guide expansion, docs versus
+knowledge boundary, README navigation preservation, source validation evidence,
+and Arc05 vocabulary boundary were independently reproduced in
+`cdc-verification.md`.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.

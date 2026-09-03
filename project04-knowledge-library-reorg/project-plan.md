@@ -279,10 +279,11 @@ The resulting `docs/` tree should explain the materials without becoming the
 material substrate itself.
 
 Detailed arc planning is open under `arc04-user-docs/`. Slice01,
-`slice01-readme-docs-decomposition-map`, and Slice02,
-`slice02-readme-orientation-rewrite`, are verified-closed. Slice03,
-`slice03-focused-end-user-guide-set`, is open to expand the focused docs guide
-set.
+`slice01-readme-docs-decomposition-map`, Slice02,
+`slice02-readme-orientation-rewrite`, and Slice03,
+`slice03-focused-end-user-guide-set`, are verified-closed. Slice04,
+`slice04-doc-link-navigation-reconciliation`, is open as the final Arc04
+reconciliation and close-readiness slice.
 
 ### Arc 05: Skill Vocabulary, Atomicity, and Public Positioning
 
@@ -316,9 +317,10 @@ Project04 is active and operating in Expedited Mode. Arc01,
 reorganization implementation, with path/link/package validation green.
 
 Arc04, `arc04-user-docs`, is active. Slice01,
-`slice01-readme-docs-decomposition-map`, and Slice02,
-`slice02-readme-orientation-rewrite`, are verified-closed. Slice03,
-`slice03-focused-end-user-guide-set`, is open.
+`slice01-readme-docs-decomposition-map`, Slice02,
+`slice02-readme-orientation-rewrite`, and Slice03,
+`slice03-focused-end-user-guide-set`, are verified-closed. Slice04,
+`slice04-doc-link-navigation-reconciliation`, is open.
 
 Arc04 source edits are authorized only through opened Arc04 slice prompts.
 Arc04 owns README decomposition and focused end-user documentation under
@@ -326,9 +328,19 @@ Arc04 owns README decomposition and focused end-user documentation under
 atomic/composite vocabulary.
 
 The next execution action is CC completion of:
-`arc04-user-docs/slice03-focused-end-user-guide-set/cc-prompt.md`.
+`arc04-user-docs/slice04-doc-link-navigation-reconciliation/cc-prompt.md`.
 
 ## Version History
+
+### v1.21 - 2026-09-02
+
+Recorded Arc04 Slice03 as verified-closed after CDC reproduced all six ledger
+rows, checked the source and planning commits, reran README/docs and package
+validation gates, and confirmed the focused guide set now explains repository,
+skill library, collaboration framework, knowledge library, build/install,
+protocol, and contribution routes. Opened Slice04,
+`slice04-doc-link-navigation-reconciliation`, as the final Arc04 slice for
+documentation link/navigation reconciliation and Arc04 close readiness.
 
 ### v1.20 - 2026-09-02
 

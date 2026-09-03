@@ -97,7 +97,7 @@ focused docs and preserves build/install/package entrypoints.
 
 ### Slice 03: Focused End-User Guide Set
 
-Status: open.
+Status: verified-closed.
 
 Scope: create or update focused `docs/*.md` guides that explain the repository,
 skill library, collaboration framework, knowledge library, build/install
@@ -105,7 +105,7 @@ workflow, protocol distribution, and contribution paths.
 
 ### Slice 04: Documentation Link and Navigation Reconciliation
 
-Status: not open.
+Status: open.
 
 Scope: reconcile README/docs navigation, path references, package-path checks,
 and source checkout status after Arc04 documentation edits.
@@ -122,6 +122,15 @@ and source checkout status after Arc04 documentation edits.
   behavior after documentation edits.
 
 ## Version History
+
+### v1.3 - 2026-09-02
+
+Recorded Slice03 as verified-closed after CDC reproduced all six ledger rows,
+checked the source and planning commits, reran the README/docs and package
+validation gates, and confirmed the seven focused guide files were expanded
+without moving knowledge substrate back into `docs/`. Opened Slice04,
+`slice04-doc-link-navigation-reconciliation`, as the final Arc04 slice for
+documentation link/navigation reconciliation and Arc04 close readiness.
 
 ### v1.2 - 2026-09-02
 
