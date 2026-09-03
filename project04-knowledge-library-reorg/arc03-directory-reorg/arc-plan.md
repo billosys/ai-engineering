@@ -112,7 +112,7 @@ prose and package behavior.
 
 ### Slice 04: Component, Method, and Template Ownership Moves
 
-Status: open.
+Status: verified-closed.
 
 Scope: mechanically place accepted Project02 component roots, authorized method
 material, and owner-local templates under accepted `knowledge/` roots while
@@ -120,7 +120,7 @@ preserving top-level `templates/` only for cross-cutting support exceptions.
 
 ### Slice 05: Package, Link, and Edge-Case Reconciliation
 
-Status: not open.
+Status: open.
 
 Scope: synchronize package/list surfaces, repair package-local links, preserve
 Biome multi-entrypoint behavior, preserve CCDP package separation, and record
@@ -146,6 +146,16 @@ compose before Arc03 closes.
 - Arc04 and Arc05 remain later arcs and must not be silently folded into Arc03.
 
 ## Version History
+
+### v1.4 - 2026-09-02
+
+Recorded Slice04 as verified-closed after CDC reproduced all six ledger rows
+and reran source/package validation. Slice04 moved accepted specialist
+component substrate into `knowledge/<component>/` owner roots, left
+`concept-card-method` reserved, and preserved `templates/GUIDE.md` as a
+cross-cutting support exception. Opened Slice05,
+`slice05-package-link-edge-reconciliation`, with package-local link repair as
+the first reconciliation rule before any package-path exception.
 
 ### v1.3 - 2026-09-02
 

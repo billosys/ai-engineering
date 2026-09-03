@@ -13,6 +13,6 @@
 
 ## Closure
 
-Slice04 is proposed-done pending CDC verification.
+Slice04 is verified-closed.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.

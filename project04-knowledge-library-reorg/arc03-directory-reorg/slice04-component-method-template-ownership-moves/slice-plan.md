@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc03-directory-reorg
 slice: slice04-component-method-template-ownership-moves
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-02
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
