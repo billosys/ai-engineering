@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc06-validation-release
 slice: slice01-validation-surface-inventory
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-03
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -90,3 +90,10 @@ Required validation/inventory includes:
   operator gates, or no-op confirmations.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc06.
+
+## CDC Close
+
+Verified-closed on 2026-09-03. CDC reproduced all six ledger rows, checked
+CC's planning commit scope and required trailers, reran source/package/link
+validation, confirmed installable package inspection, and reproduced the CCDP
+freshness blocker as Slice03-owned re-entry.

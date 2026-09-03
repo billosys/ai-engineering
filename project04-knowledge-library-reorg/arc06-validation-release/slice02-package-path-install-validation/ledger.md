@@ -1,0 +1,18 @@
+# Slice 02: Package, Path, and Install Validation
+
+## Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| F-1 | Package-path/build validation report records source status, README/docs/SKILL links, check-skills, check-package-paths with hard failures 0, make all, generated artifact handling, and final source status | `rg -n "package-path/build validation report|source status|README|docs/|SKILL.md|check-skills|check-package-paths|hard failures: 0|make all|generated artifact|final source status" artifacts/package-path-build-validation-report.md` | correctness-grade | slice-plan | open | | Final installable package build evidence. |
+| F-2 | Generated package inspection report records all expected installable skill zips, roots, entrypoints, and excludes CCDP from installable skill package validation | `rg -n "generated package inspection report|rust-guidelines.zip|go-guidelines.zip|cpp-guidelines.zip|javascript-deno-guidelines.zip|erlang-guidelines.zip|cobalt-guidelines.zip|visual-design-system.zip|tailwindcss.zip|deno-js-linter.zip|biome-js-linter.zip|biome-linter.zip|collaboration-framework.zip|entrypoint|ccdp.zip.*excluded" artifacts/generated-package-inspection-report.md` | correctness-grade | slice-plan | open | | Zip root/entrypoint evidence. |
+| F-3 | Isolated install smoke report records temporary INSTALL_DIR, make install command, installed skill roots, expected SKILL entrypoints, and pass/fail result | `rg -n "isolated install smoke report|temporary INSTALL_DIR|make install|installed skill root|SKILL.md|SKILL-js-linter.md|SKILL-web-linter.md|pass|fail" artifacts/isolated-install-smoke-report.md` | correctness-grade | slice-plan | open | | Installability evidence. |
+| F-4 | Package warning disposition records warning-only check-package-paths output, hard failures 0, accepted/deferred warning classes, release-readiness impact, and any repair/no-repair rationale | `rg -n "package warning disposition|warning-only|check-package-paths|hard failures: 0|accepted|deferred|release-readiness impact|repair|no-repair" artifacts/package-warning-disposition.md` | serious | slice-plan | open | | Warning acceptance evidence. |
+| F-5 | Slice03 CCDP readiness handoff records CCDP freshness remains separate, protocols/ccdp no-edit in Slice02, ccdp.zip not accepted as current evidence, and Slice03 repair/disposition requirement | `rg -n "Slice03 CCDP readiness|CCDP freshness|protocols/ccdp|no-edit|ccdp.zip|not accepted as current evidence|repair|disposition|Slice03" artifacts/slice03-ccdp-readiness-handoff.md` | serious | slice-plan | open | | CCDP handoff evidence. |
+| F-6 | Closing report walks all six rows, states source/planning status, and bubbles findings up to Arc06 | `test -f closing-report.md && rg -n "Rows: 6|Done:|Deferred:|No-op:|source checkout|planning checkout|Bubble-Up to Arc06|package/path|install smoke|CCDP|silent-drop|source commit|planning commit" closing-report.md` | serious | slice-plan | open | | Slice close evidence. |
+
+## Closure
+
+Slice remains open.
+
+Rows: 6. Done: 0. Deferred: 0. No-op: 0.

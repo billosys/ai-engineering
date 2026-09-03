@@ -68,7 +68,7 @@ Project04 remains in Expedited Mode.
 
 ### Slice 01: Validation Surface Inventory and Gate Plan
 
-Status: open.
+Status: verified-closed.
 
 Scope: produce a read-only inventory of final validation surfaces, commands,
 package/install checks, CCDP freshness options, and source-edit authorization
@@ -84,7 +84,7 @@ Expected artifacts:
 
 ### Slice 02: Package, Path, and Install Validation
 
-Status: not-open.
+Status: open.
 
 Scope: run final package-path, package-build, generated-package inspection, and
 temporary install smoke tests; make narrow authorized source repairs if Slice01
@@ -115,6 +115,15 @@ operator acceptance material, and make Arc06 ready for close.
 - Slice04 depends on all final validation gates from Slice02 and Slice03.
 
 ## Version History
+
+### v1.1 - 2026-09-03
+
+Recorded Slice01 as verified-closed after CDC reproduced all six ledger rows,
+reran source/package/link validation, confirmed installable package
+inspection, and reproduced the CCDP package freshness blocker. Opened Slice02,
+`slice02-package-path-install-validation`, to run final installable skill
+package/path validation and the isolated install smoke test before CCDP
+protocol-package repair/disposition in Slice03.
 
 ### v1.0 - 2026-09-03
 

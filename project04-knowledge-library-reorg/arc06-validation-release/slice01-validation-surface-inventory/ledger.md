@@ -13,6 +13,8 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. CDC reproduced all six ledger rows, reran
+the core source/package/link validation gates, confirmed package inspection,
+and verified the CCDP freshness blocker is routed to Slice03.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.
