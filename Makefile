@@ -86,24 +86,24 @@ CF_STAGE := $(BUILD)/$(CF_NAME)
 CF_FILES := \
 	SKILL.md \
 	knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md \
-	knowledge/collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md \
-	knowledge/collaboration-framework/docs/PROJECT-MANAGEMENT.md \
-	knowledge/collaboration-framework/docs/pm/01-scales-of-work.md \
-	knowledge/collaboration-framework/docs/pm/02-canonical-planning-worktree.md \
-	knowledge/collaboration-framework/docs/pm/03-planning-top-down.md \
-	knowledge/collaboration-framework/docs/pm/04-closing-slices.md \
-	knowledge/collaboration-framework/docs/pm/05-closing-arcs.md \
-	knowledge/collaboration-framework/docs/pm/06-confirmation-protocol.md \
-	knowledge/collaboration-framework/docs/pm/07-anti-patterns.md \
-	knowledge/collaboration-framework/docs/pm/08-maintenance.md \
-	knowledge/collaboration-framework/docs/pm/09-worked-example-odm.md \
-	knowledge/collaboration-framework/docs/pm/version-history.md \
-	knowledge/collaboration-framework/docs/CODE-AUDIT.md \
-	knowledge/collaboration-framework/docs/CODE-COVERAGE.md \
-	knowledge/collaboration-framework/docs/SUBAGENT-DELEGATION-POLICY.md \
-	knowledge/collaboration-framework/docs/CONTRIBUTION-STYLE.md \
-	knowledge/collaboration-framework/templates/LEDGER-DISCIPLINE.md \
-	knowledge/collaboration-framework/templates/CONTRIBUTION-TICKET.md
+	knowledge/engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md \
+	knowledge/project-management/docs/PROJECT-MANAGEMENT.md \
+	knowledge/project-management/docs/pm/01-scales-of-work.md \
+	knowledge/project-management/docs/pm/02-canonical-planning-worktree.md \
+	knowledge/project-management/docs/pm/03-planning-top-down.md \
+	knowledge/project-management/docs/pm/04-closing-slices.md \
+	knowledge/project-management/docs/pm/05-closing-arcs.md \
+	knowledge/project-management/docs/pm/06-confirmation-protocol.md \
+	knowledge/project-management/docs/pm/07-anti-patterns.md \
+	knowledge/project-management/docs/pm/08-maintenance.md \
+	knowledge/project-management/docs/pm/09-worked-example-odm.md \
+	knowledge/project-management/docs/pm/version-history.md \
+	knowledge/code-auditing/docs/CODE-AUDIT.md \
+	knowledge/testing/docs/CODE-COVERAGE.md \
+	knowledge/agent-coordination/docs/SUBAGENT-DELEGATION-POLICY.md \
+	knowledge/contribution-style/docs/CONTRIBUTION-STYLE.md \
+	knowledge/work-verification/templates/LEDGER-DISCIPLINE.md \
+	knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md
 
 ## collab-framework: build collaboration-framework.zip (SKILL.md + its 9 files)
 collab-framework: collab-framework-clean

@@ -23,7 +23,7 @@ from the per-slice closing-reports one level down). It carries:
    slice delivered. Concretely, this is the arc `ledger.md` composition rows
    being *reproduced* (an end-to-end demonstration run at arc scale) and walked
    to closure — see
-   [`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md) Section B.
+   [`LEDGER-DISCIPLINE.md`](../../../work-verification/templates/LEDGER-DISCIPLINE.md) Section B.
    The project-level equivalent (arcs recomposing into the DoD) lives in the
    project `ledger.md` and is described in Section C.
 4. **The accumulated arc-plan change log.** A pointer to (or summary of) the

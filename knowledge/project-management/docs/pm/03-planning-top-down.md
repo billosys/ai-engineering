@@ -26,7 +26,7 @@ arcs at once**, before opening any single `arc-plan.md`.
    an arc is near — see *plan late, plan deep* below.
 4. **A sibling `ledger.md`.** The composition criteria that verify the DoD,
    stated up front as ledger rows — the project ledger from
-   [`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md)
+   [`LEDGER-DISCIPLINE.md`](../../../work-verification/templates/LEDGER-DISCIPLINE.md)
    Section C. It opens beside the project plan and closes (per-row walk) in the
    project's `closing-report.md`. This is what makes the DoD *checkable* rather
    than merely asserted.
@@ -58,7 +58,7 @@ arc-and-slice breakdown). `arc-plan.md` carries, at minimum:
    leaves for later ones.
 4. **A sibling `ledger.md`.** The composition criteria that verify the
    capability, stated up front as ledger rows — the arc ledger from
-   [`LEDGER-DISCIPLINE.md`](../../templates/LEDGER-DISCIPLINE.md)
+   [`LEDGER-DISCIPLINE.md`](../../../work-verification/templates/LEDGER-DISCIPLINE.md)
    Section B. It opens beside the arc plan and closes (per-row walk) in the
    arc's `closing-report.md`. This is what makes "the slices compose into the
    capability" *checkable* rather than merely asserted.

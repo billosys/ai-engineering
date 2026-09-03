@@ -1,6 +1,6 @@
 # AI Engineering Methodology
 
-_A companion to the [AI Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md)._
+_A companion to the [AI Constitution Supplement](../../collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md)._
 
 ## Preamble
 
@@ -173,7 +173,7 @@ Two more words name things _inside_ a slice, not scales of their own. A **step**
 
 The slice rests on a bottleneck worth naming, because it is where this practice and human-centred Agile diverge most sharply. Agile's atom — the story as a branch or PR — is sized to **human review attention** (the "~500-line PR" heuristic is a proxy for what one reviewer can hold). The slice is sized to a different bottleneck: the **model's context window, minus the headroom to recover from its own mistakes**. Two consequences follow: a slice can be _larger in raw diff_ than an Agile PR and still be correctly sized, since the limit is coherence-in-context rather than lines-a-human-will-read; and the five-iteration budget _lives inside_ the context budget — so size to the comfortable two-thirds, not the ceiling.
 
-> **The operational detail now lives behind the [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) wayfinder** — the framework's project-management entry point. It points to focused files under [`./pm/`](./pm/) for the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical planning worktree** (an orphan `planning` branch/worktree, `projectNN-<slug>` directories, `project-plan.md`, `arc-plan.md`, `slice-plan.md`, a dedicated `ledger.md` at every project/arc/slice scale, and a default per-slice `artifacts/` home for durable slice-produced artifacts), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that wayfinder first and follow its required load set** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
+> **The operational detail now lives behind the [`../../project-management/docs/PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) wayfinder** — the framework's project-management entry point. It points to focused files under [`../../project-management/docs/pm/`](../../project-management/docs/pm/) for the full treatment of sizing-as-judgment-call (the arc↔slice token arithmetic, the _Act → Sequence → Scene → Beat_ mnemonic, the named-but-unadopted _Saga_ tier), the **canonical planning worktree** (an orphan `planning` branch/worktree, `projectNN-<slug>` directories, `project-plan.md`, `arc-plan.md`, `slice-plan.md`, a dedicated `ledger.md` at every project/arc/slice scale, and a default per-slice `artifacts/` home for durable slice-produced artifacts), the **confirmation protocol** that stops a fresh session inventing its own folders, and the **top-down planning and bottom-up bubble-up/close machinery** (slice → arc → project) that keeps a plan honest as the work reveals what it could not have known. Anyone about to plan or close a project, arc, or slice **must read that wayfinder first and follow its required load set** — the abstract structure above is the summary; the mechanics are not to be improvised from it.
 
 ### The 9-point SDLC
 
@@ -307,7 +307,7 @@ These are genuine calibrations we are still working through, not rhetorical gaps
 
 ## Provenance
 
-This document was developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on top of the [AI Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md).
+This document was developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on top of the [AI Constitution Supplement](../../collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md).
 
 ### Source material
 
@@ -321,9 +321,9 @@ The Corrective Action Program tradition — nuclear industry (INPO), aviation (N
 
 The Toyota Andon cord. The discipline of pulling the line on dissonance rather than letting work continue over a buried concern.
 
-The [AI Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md). The companion document covering character and posture, which this document depends on at every turn.
+The [AI Constitution Supplement](../../collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md). The companion document covering character and posture, which this document depends on at every turn.
 
-The author's ontological method work, developed in prior conversations and still evolving. See `./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md` and [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md).
+The author's ontological method work, developed in prior conversations and still evolving. See `./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md` and [`../../work-verification/templates/LEDGER-DISCIPLINE.md`](../../work-verification/templates/LEDGER-DISCIPLINE.md).
 
 ### What has been tested in practice
 
@@ -362,16 +362,16 @@ primary meaning.
 ### Version 1.9 — August 2026
 
 Updated the project-management pointer for
-[`PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) v2.5 and
-[`LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md) v2.3. The
+[`PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) v2.5 and
+[`LEDGER-DISCIPLINE.md`](../../work-verification/templates/LEDGER-DISCIPLINE.md) v2.3. The
 methodology summary now names the default slice `artifacts/` home for durable
 slice-produced artifacts and preserves the operator override rule.
 
 ### Version 1.8 — August 2026
 
 Updated the project-management pointer for
-[`PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) v2.4 and
-[`LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md) v2.2. The
+[`PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) v2.4 and
+[`LEDGER-DISCIPLINE.md`](../../work-verification/templates/LEDGER-DISCIPLINE.md) v2.2. The
 methodology summary now reflects the current layout: projects, arcs, and
 slices each have a dedicated sibling `ledger.md` file, rather than embedding
 project or arc ledger rows inside plan files.
@@ -379,16 +379,16 @@ project or arc ledger rows inside plan files.
 ### Version 1.7 — August 2026
 
 Updated the project-management pointer for
-[`PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) v2.3. The root
+[`PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) v2.3. The root
 project-management file is now a wayfinder, with the detailed mechanics split
-into focused files under [`./pm/`](./pm/). The methodology continues to carry
+into focused files under [`../../project-management/docs/pm/`](../../project-management/docs/pm/). The methodology continues to carry
 only the abstract summary; planning and closing sessions must start from the
 wayfinder and follow its required load set.
 
 ### Version 1.6 — August 2026
 
 Updated the project-management summary to reflect
-[`PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) v2.2: framework planning
+[`PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) v2.2: framework planning
 artifacts now default to an orphan `planning` branch mounted as a Git worktree,
 with projects named `projectNN-<slug>` and ordering/relationship semantics
 carried by project metadata (`depends-on`, `blocks`, `related`) rather than by
@@ -402,7 +402,7 @@ only; the active mechanics live in `PROJECT-MANAGEMENT.md`.
 ### Version 1.5 — June 2026
 
 Extracted the **detailed project-management content** from Part III into a new
-dedicated home, [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) (v2.0,
+dedicated home, [`../../project-management/docs/PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) (v2.0,
 itself a rename-and-expansion of the former `ASSET-ORGANISATION.md`). The
 methodology now keeps a *summary* of the scales of work and the
 context-window basis for sizing a slice, plus a pointer; the operational
@@ -446,9 +446,9 @@ constitutional authority.
 
 ### Version 1.3 — June 2026
 
-Added an operational companion to *A default layout* — `ASSET-ORGANISATION.md` (renamed to [`./PROJECT-MANAGEMENT.md`](./PROJECT-MANAGEMENT.md) in v1.5) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept the abstract structure: project / arc / slice / step / iteration, and at that time placed the five per-slice documents under the then-current `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/` default, superseded in v1.6 by the planning-worktree / `projectNN-<slug>` default. The new doc carried that structure verbatim and added the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
+Added an operational companion to *A default layout* — `ASSET-ORGANISATION.md` (renamed to [`../../project-management/docs/PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) in v1.5) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept the abstract structure: project / arc / slice / step / iteration, and at that time placed the five per-slice documents under the then-current `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/` default, superseded in v1.6 by the planning-worktree / `projectNN-<slug>` default. The new doc carried that structure verbatim and added the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
 
-The companion contribution-style stack also lands in this rev: [`./CONTRIBUTION-STYLE.md`](./CONTRIBUTION-STYLE.md) (the voice and disciplines for upstream tickets — friendly, specific, calibrated, respectful of maintainer ownership) and [`../templates/CONTRIBUTION-TICKET.md`](../templates/CONTRIBUTION-TICKET.md) (the on-disk template for the four ticket shapes: confirmed bug, additive feature, doc fix, unconfirmed question). Both are bundled into the `collaboration-framework` skill alongside the existing six.
+The companion contribution-style stack also lands in this rev: [`../../contribution-style/docs/CONTRIBUTION-STYLE.md`](../../contribution-style/docs/CONTRIBUTION-STYLE.md) (the voice and disciplines for upstream tickets — friendly, specific, calibrated, respectful of maintainer ownership) and [`../../contribution-style/templates/CONTRIBUTION-TICKET.md`](../../contribution-style/templates/CONTRIBUTION-TICKET.md) (the on-disk template for the four ticket shapes: confirmed bug, additive feature, doc fix, unconfirmed question). Both are bundled into the `collaboration-framework` skill alongside the existing six.
 
 The rev was catalysed by a recurring failure mode observed across projects: fresh sessions did not see *A default layout*, invented their own (`tasks/`, `work/`, `milestones/`, scattered prompt directories), and by the time the operator noticed, the artifact set was fragmented across parallel conventions. v1.2 named the structure; v1.3 names the discipline that holds it in place across sessions.
 
@@ -470,7 +470,7 @@ The _how_ of the work — ledger discipline, right-sized branches, the SDLC — 
 
 ### Version 1.0 — April 2026
 
-Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on the [AI Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md). Established the three pillars (knowledge substrate, collaborative posture, process rigour), the 9-point SDLC, ledger discipline, CAP-style independent audits, the anti-degradation practices, the subagent leverage/hazard distinction, and the LFE OSS applied position.
+Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on the [AI Constitution Supplement](../../collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md). Established the three pillars (knowledge substrate, collaborative posture, process rigour), the 9-point SDLC, ledger discipline, CAP-style independent audits, the anti-degradation practices, the subagent leverage/hazard distinction, and the LFE OSS applied position.
 
 ---
 
