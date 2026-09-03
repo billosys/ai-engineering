@@ -13,6 +13,8 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. CDC reproduced all six ledger rows, reran
+source/package/link validation, confirmed generated package inspection, and
+reran isolated install smoke in a fresh temporary install directory.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.

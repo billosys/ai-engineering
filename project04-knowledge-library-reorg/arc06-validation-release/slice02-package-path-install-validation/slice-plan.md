@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc06-validation-release
 slice: slice02-package-path-install-validation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-03
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -99,3 +99,10 @@ Required validation includes:
 - Source and planning worktrees finish clean.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc06.
+
+## CDC Close
+
+Verified-closed on 2026-09-03. CDC reproduced all six ledger rows, checked
+CC's planning commit scope and required trailers, reran source/package/link
+validation, reran generated package inspection, and reproduced isolated install
+smoke in `/private/tmp/ai-engineering-install-cdc.9zAHUG`.

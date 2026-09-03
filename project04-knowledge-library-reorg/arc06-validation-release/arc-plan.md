@@ -84,7 +84,7 @@ Expected artifacts:
 
 ### Slice 02: Package, Path, and Install Validation
 
-Status: open.
+Status: verified-closed.
 
 Scope: run final package-path, package-build, generated-package inspection, and
 temporary install smoke tests; make narrow authorized source repairs if Slice01
@@ -92,7 +92,7 @@ shows they are required.
 
 ### Slice 03: CCDP Package Freshness and Protocol Validation
 
-Status: not-open.
+Status: open.
 
 Scope: resolve the CCDP stale assembled-spec re-entry item through an
 explicitly authorized protocol refresh or an accepted final disposition, then
@@ -115,6 +115,15 @@ operator acceptance material, and make Arc06 ready for close.
 - Slice04 depends on all final validation gates from Slice02 and Slice03.
 
 ## Version History
+
+### v1.2 - 2026-09-03
+
+Recorded Slice02 as verified-closed after CDC reproduced all six ledger rows,
+reran package/path/build validation, confirmed generated installable package
+inspection, and reran isolated install smoke in a fresh temporary directory.
+Opened Slice03, `slice03-ccdp-package-validation`, with explicit
+`protocols/ccdp/**` authorization to repair or disposition the stale assembled
+CCDP spec while preserving CCDP as a separate protocol package.
 
 ### v1.1 - 2026-09-03
 
