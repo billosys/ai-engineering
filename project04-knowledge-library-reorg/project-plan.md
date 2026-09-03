@@ -279,8 +279,9 @@ The resulting `docs/` tree should explain the materials without becoming the
 material substrate itself.
 
 Detailed arc planning is open under `arc04-user-docs/`. Slice01,
-`slice01-readme-docs-decomposition-map`, is open for CC as a read-only
-decomposition and validation map before README/docs source edits begin.
+`slice01-readme-docs-decomposition-map`, is verified-closed. Slice02,
+`slice02-readme-orientation-rewrite`, is open as the first README/docs
+source-edit slice.
 
 ### Arc 05: Skill Vocabulary, Atomicity, and Public Positioning
 
@@ -314,8 +315,8 @@ Project04 is active and operating in Expedited Mode. Arc01,
 reorganization implementation, with path/link/package validation green.
 
 Arc04, `arc04-user-docs`, is active. Slice01,
-`slice01-readme-docs-decomposition-map`, is open as a read-only decomposition
-and validation map before README/docs source edits begin.
+`slice01-readme-docs-decomposition-map`, is verified-closed, and Slice02,
+`slice02-readme-orientation-rewrite`, is open.
 
 Arc04 source edits are authorized only through opened Arc04 slice prompts.
 Arc04 owns README decomposition and focused end-user documentation under
@@ -323,7 +324,7 @@ Arc04 owns README decomposition and focused end-user documentation under
 atomic/composite vocabulary.
 
 The next execution action is CC completion of:
-`arc04-user-docs/slice01-readme-docs-decomposition-map/cc-prompt.md`.
+`arc04-user-docs/slice02-readme-orientation-rewrite/cc-prompt.md`.
 
 ## Version History
 
@@ -458,3 +459,11 @@ composition row. Marked project ledger row P-3 done, opened Arc04,
 `arc04-user-docs`, and opened Slice01,
 `slice01-readme-docs-decomposition-map`, as the read-only README/docs
 decomposition map before user-facing documentation source edits begin.
+
+### v1.19 - 2026-09-02
+
+Recorded Arc04 Slice01 as verified-closed after CDC reproduced all six ledger
+rows and confirmed no source commit was created. Opened Slice02,
+`slice02-readme-orientation-rewrite`, as the first README/docs source-edit
+slice to rewrite the top-level README orientation and repair stale post-Arc03
+documentation routes discovered by Slice01.

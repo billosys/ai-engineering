@@ -13,6 +13,8 @@
 
 ## Closure
 
-Slice is proposed closed for CDC verification.
+Slice is verified-closed by CDC. The README/docs decomposition evidence is
+reproduced in `cdc-verification.md`; Slice02 is open for README orientation
+rewrite.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.

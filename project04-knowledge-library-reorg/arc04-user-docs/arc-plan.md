@@ -74,7 +74,7 @@ Project04 remains in Expedited Mode.
 
 ### Slice 01: README and Docs Decomposition Map
 
-Status: open.
+Status: verified-closed.
 
 Scope: produce a read-only map of current README content, existing `docs/`
 surfaces, target user-doc topics, source-edit sequence, validation commands,
@@ -90,7 +90,7 @@ Expected artifacts:
 
 ### Slice 02: README Orientation Rewrite
 
-Status: not open.
+Status: open.
 
 Scope: rewrite `README.md` into a concise top-level orientation that points to
 focused docs and preserves build/install/package entrypoints.
@@ -122,6 +122,14 @@ and source checkout status after Arc04 documentation edits.
   behavior after documentation edits.
 
 ## Version History
+
+### v1.1 - 2026-09-02
+
+Recorded Slice01 as verified-closed after CDC reproduced all six ledger rows
+and confirmed the slice was planning-only. Opened Slice02,
+`slice02-readme-orientation-rewrite`, as the first README/docs source-edit
+slice, with route repair for stale `docs/dev`, former framework-doc, and moved
+template references discovered by Slice01.
 
 ### v1.0 - 2026-09-02
 

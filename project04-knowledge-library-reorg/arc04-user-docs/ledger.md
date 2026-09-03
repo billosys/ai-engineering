@@ -9,7 +9,7 @@ out of scope.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |----|-----------|--------|--------------|--------|--------|----------|-------|
-| A-1 | Slice01 closes with README source surface map, end-user docs decomposition plan, edit sequence, vocabulary boundary register, and validation command inventory | `test -f slice01-readme-docs-decomposition-map/cdc-verification.md && rg -n "README source surface|end-user docs decomposition|doc edit sequence|public language boundary|validation command inventory|verified-closed" slice01-readme-docs-decomposition-map/cdc-verification.md` | serious | arc-plan | open | | Read-only decomposition evidence. |
+| A-1 | Slice01 closes with README source surface map, end-user docs decomposition plan, edit sequence, vocabulary boundary register, and validation command inventory | `test -f slice01-readme-docs-decomposition-map/cdc-verification.md && rg -n "README source surface|end-user docs decomposition|doc edit sequence|public language boundary|validation command inventory|verified-closed" slice01-readme-docs-decomposition-map/cdc-verification.md` | serious | arc-plan | done | Reproduced by CDC: `slice01-readme-docs-decomposition-map/cdc-verification.md` records README source surface, end-user docs decomposition, doc edit sequence, public language boundary, validation command inventory, and verified-closed status. | Read-only decomposition evidence. |
 | A-2 | README orientation rewrite closes with concise top-level README and links to focused docs | `test -f slice02-readme-orientation-rewrite/cdc-verification.md && rg -n "README.md|orientation|concise|focused docs|docs/|knowledge/|build|install|verified-closed" slice02-readme-orientation-rewrite/cdc-verification.md` | correctness-grade | arc-plan | open | | README source-edit evidence. |
 | A-3 | Focused end-user guide set closes with docs that explain repository, skill library, collaboration framework, knowledge library, build/install, protocol, and contribution paths | `test -f slice03-focused-end-user-guide-set/cdc-verification.md && rg -n "repository|skill library|collaboration framework|knowledge library|build|install|protocol|contribution|verified-closed" slice03-focused-end-user-guide-set/cdc-verification.md` | correctness-grade | arc-plan | open | | Focused docs evidence. |
 | A-4 | Documentation link and navigation reconciliation closes with README/docs links, package-path checks, and source/package validation green | `test -f slice04-doc-link-navigation-reconciliation/cdc-verification.md && rg -n "README links|docs links|navigation|package-path|make check|source checkout|validation green|verified-closed" slice04-doc-link-navigation-reconciliation/cdc-verification.md` | serious | arc-plan | open | | Documentation validation evidence. |
@@ -17,6 +17,6 @@ out of scope.
 
 ## Closure
 
-Arc remains open. Slice01 is open.
+Arc remains open. Slice01 is verified-closed; Slice02 is open.
 
-Rows: 5. Done: 0. Deferred: 0. No-op: 0.
+Rows: 5. Done: 1. Deferred: 0. No-op: 0.

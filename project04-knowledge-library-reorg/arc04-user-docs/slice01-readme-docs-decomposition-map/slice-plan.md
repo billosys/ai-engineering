@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc04-user-docs
 slice: slice01-readme-docs-decomposition-map
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-02
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -72,3 +72,9 @@ Required validation includes:
 - CC commits the planning close packet using explicit file lists.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc04.
+
+## CDC Close
+
+Closed as verified on 2026-09-02. CDC reproduced all six ledger rows, verified
+CC's planning commit scope and co-author trailers, confirmed no source commit
+was created, and opened Slice02 as the first README/docs source-edit slice.
