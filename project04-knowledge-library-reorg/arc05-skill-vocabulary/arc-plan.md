@@ -80,7 +80,7 @@ Project04 remains in Expedited Mode.
 
 ### Slice 01: Public Language Surface Inventory
 
-Status: open.
+Status: verified-closed.
 
 Scope: produce a read-only inventory of current public wording in README,
 docs, `SKILL.md`, package metadata, and planning inputs that Arc05 must accept,
@@ -88,7 +88,7 @@ rewrite, preserve, or explicitly defer.
 
 ### Slice 02: Accepted Vocabulary and Positioning Decision
 
-Status: not open.
+Status: open.
 
 Scope: decide the accepted public vocabulary, examples, avoid-list,
 re-entry conditions, and source-edit impact plan.
@@ -119,6 +119,15 @@ consistency, and Arc05 close readiness after source edits.
   public wording changes.
 
 ## Version History
+
+### v1.1 - 2026-09-03
+
+Recorded Slice01 as verified-closed after CDC reproduced all six ledger rows,
+checked the planning commit, confirmed no source commit was created, and
+verified the public-language inventory and decision-question artifacts. Opened
+Slice02, `slice02-accepted-vocabulary-positioning`, to decide accepted
+vocabulary, examples, avoid-list, source-edit authorization, and re-entry
+conditions before source wording implementation.
 
 ### v1.0 - 2026-09-03
 

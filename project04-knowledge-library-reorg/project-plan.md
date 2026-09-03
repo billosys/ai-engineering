@@ -325,17 +325,24 @@ Arc04, `arc04-user-docs`, is closed. It delivered the concise README
 orientation, focused end-user docs, and final README/docs reconciliation.
 
 Arc05, `arc05-skill-vocabulary`, is active. Slice01,
-`slice01-public-language-surface-inventory`, is open.
+`slice01-public-language-surface-inventory`, is verified-closed. Slice02,
+`slice02-accepted-vocabulary-positioning`, is open.
 
-Arc04 source edits are authorized only through opened Arc04 slice prompts.
-Arc04 owns README decomposition and focused end-user documentation under
-`docs/`; Arc05 remains responsible for final public skill-kind and
-atomic/composite vocabulary.
+Arc05 source edits are authorized only through opened Arc05 slice prompts.
+Arc05 owns final public skill-kind and atomic/composite vocabulary.
 
 The next execution action is CC completion of:
-`arc05-skill-vocabulary/slice01-public-language-surface-inventory/cc-prompt.md`.
+`arc05-skill-vocabulary/slice02-accepted-vocabulary-positioning/cc-prompt.md`.
 
 ## Version History
+
+### v1.23 - 2026-09-03
+
+Recorded Arc05 Slice01 as verified-closed after CDC reproduced all six ledger
+rows, checked the planning commit, and confirmed no source commit was created.
+Opened Slice02, `slice02-accepted-vocabulary-positioning`, to decide accepted
+public vocabulary, examples, avoid-list, source-edit authorization, and
+re-entry conditions before any source wording implementation begins.
 
 ### v1.22 - 2026-09-03
 

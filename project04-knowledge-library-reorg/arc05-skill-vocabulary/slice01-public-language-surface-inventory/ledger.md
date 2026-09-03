@@ -13,6 +13,9 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. The current public-language surface map,
+classification evidence synthesis, terminology decision-question register,
+source-edit impact map, validation command inventory, and closing report were
+independently reproduced in `cdc-verification.md`.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.

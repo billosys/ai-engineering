@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc05-skill-vocabulary
 slice: slice01-public-language-surface-inventory
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-03
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -76,3 +76,10 @@ Required validation includes:
 - Source checkout remains untouched.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc05.
+
+## CDC Close
+
+Verified-closed on 2026-09-03. CDC reproduced all six ledger rows, checked the
+planning commit scope and trailers, confirmed no source commit was created,
+confirmed source/planning status, and recorded the verification in
+`cdc-verification.md`.

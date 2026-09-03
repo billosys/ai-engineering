@@ -8,7 +8,7 @@ overclaiming planned/unimplemented source surfaces.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |----|-----------|--------|--------------|--------|--------|----------|-------|
-| A-1 | Slice01 closes with current public-language surface inventory, evidence synthesis, decision-question register, source-edit impact map, and validation command inventory | `test -f slice01-public-language-surface-inventory/cdc-verification.md && rg -n "public language surface|evidence synthesis|decision-question register|source-edit impact|validation command inventory|verified-closed" slice01-public-language-surface-inventory/cdc-verification.md` | serious | arc-plan | open | | Read-only vocabulary inventory evidence. |
+| A-1 | Slice01 closes with current public-language surface inventory, evidence synthesis, decision-question register, source-edit impact map, and validation command inventory | `test -f slice01-public-language-surface-inventory/cdc-verification.md && rg -n "public language surface|evidence synthesis|decision-question register|source-edit impact|validation command inventory|verified-closed" slice01-public-language-surface-inventory/cdc-verification.md` | serious | arc-plan | done | Reproduced by CDC: `slice01-public-language-surface-inventory/cdc-verification.md` records public language surface, evidence synthesis, decision-question register, source-edit impact, validation command inventory, and verified-closed status. | Read-only vocabulary inventory evidence. |
 | A-2 | Accepted vocabulary and positioning decision closes with terms, examples, avoid-list, re-entry conditions, and source-edit authorization boundaries | `test -f slice02-accepted-vocabulary-positioning/cdc-verification.md && rg -n "accepted vocabulary|skill kind|topology|atomic|composite|avoid-list|re-entry|source-edit authorization|verified-closed" slice02-accepted-vocabulary-positioning/cdc-verification.md` | correctness-grade | arc-plan | open | | Vocabulary decision evidence. |
 | A-3 | Public wording implementation closes with README/docs/SKILL/package-facing wording updated only where authorized | `test -f slice03-public-wording-implementation/cdc-verification.md && rg -n "README|docs/|SKILL.md|package-facing|authorized|skill kind|atomic|composite|source checkout|verified-closed" slice03-public-wording-implementation/cdc-verification.md` | correctness-grade | arc-plan | open | | Source wording evidence. |
 | A-4 | Vocabulary reconciliation closes with public wording, package checks, and docs/SKILL/README consistency validated | `test -f slice04-vocabulary-reconciliation/cdc-verification.md && rg -n "vocabulary reconciliation|README|docs/|SKILL.md|package-path|make check|consistency|validation green|verified-closed" slice04-vocabulary-reconciliation/cdc-verification.md` | serious | arc-plan | open | | Final vocabulary validation evidence. |
@@ -16,6 +16,6 @@ overclaiming planned/unimplemented source surfaces.
 
 ## Closure
 
-Arc remains open. Slice01 is open.
+Arc remains open. Slice01 is verified-closed; Slice02 is open.
 
-Rows: 5. Done: 0. Deferred: 0. No-op: 0.
+Rows: 5. Done: 1. Deferred: 0. No-op: 0.
