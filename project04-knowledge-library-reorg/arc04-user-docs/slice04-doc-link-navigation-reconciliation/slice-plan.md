@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc04-user-docs
 slice: slice04-doc-link-navigation-reconciliation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-02
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -90,3 +90,10 @@ Required validation includes:
 - Source and planning worktrees finish clean.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc04.
+
+## CDC Close
+
+Verified-closed on 2026-09-03. CDC reproduced all six ledger rows, reran the
+README/docs local-link and route validations, reran package and CCDP gates,
+confirmed the no-source-edit decision, and recorded the verification in
+`cdc-verification.md`.

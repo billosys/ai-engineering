@@ -3,7 +3,7 @@
 ```yaml
 project: project04-knowledge-library-reorg
 arc: arc04-user-docs
-status: active
+status: closed
 opened-on: 2026-09-02
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
 planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning
@@ -105,7 +105,7 @@ workflow, protocol distribution, and contribution paths.
 
 ### Slice 04: Documentation Link and Navigation Reconciliation
 
-Status: open.
+Status: verified-closed.
 
 Scope: reconcile README/docs navigation, path references, package-path checks,
 and source checkout status after Arc04 documentation edits.
@@ -122,6 +122,14 @@ and source checkout status after Arc04 documentation edits.
   behavior after documentation edits.
 
 ## Version History
+
+### v1.4 - 2026-09-03
+
+Recorded Slice04 as verified-closed after CDC reproduced all six ledger rows,
+reran README/docs local-link, route, package, and CCDP validation gates, and
+confirmed no source repair was required. Closed Arc04 after the four child
+slices recomposed into the README orientation plus focused end-user docs
+capability promised by this arc.
 
 ### v1.3 - 2026-09-02
 

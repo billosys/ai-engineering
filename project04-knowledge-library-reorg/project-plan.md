@@ -268,7 +268,7 @@ roots inspected, and path/link/package validation green.
 
 ### Arc 04: README Decomposition and End-User Documentation
 
-Status: active as of 2026-09-02.
+Status: closed on 2026-09-03.
 
 Expected capability: split the current README into a concise top-level
 orientation plus focused `docs/*.md` end-user guides that explain the
@@ -278,16 +278,16 @@ protocol distribution, and contribution paths.
 The resulting `docs/` tree should explain the materials without becoming the
 material substrate itself.
 
-Detailed arc planning is open under `arc04-user-docs/`. Slice01,
-`slice01-readme-docs-decomposition-map`, Slice02,
-`slice02-readme-orientation-rewrite`, and Slice03,
-`slice03-focused-end-user-guide-set`, are verified-closed. Slice04,
-`slice04-doc-link-navigation-reconciliation`, is open as the final Arc04
-reconciliation and close-readiness slice.
+Detailed arc planning and closure evidence lives under `arc04-user-docs/`.
+Slice01, `slice01-readme-docs-decomposition-map`, Slice02,
+`slice02-readme-orientation-rewrite`, Slice03,
+`slice03-focused-end-user-guide-set`, and Slice04,
+`slice04-doc-link-navigation-reconciliation`, are verified-closed. Arc04 is
+closed and provides the README/docs public documentation base for Arc05.
 
 ### Arc 05: Skill Vocabulary, Atomicity, and Public Positioning
 
-Status: not yet planned in detail.
+Status: active as of 2026-09-03.
 
 Expected capability: settle the public language for the repo's skill types and
 support surfaces, including whether to distinguish domain/tooling skills,
@@ -296,6 +296,11 @@ and separately whether to distinguish atomic skills from composite skills.
 
 This arc should rewrite README/docs/SKILL wayfinding only after Arc01 and
 Arc02 define the actual categories present in the source tree.
+
+Detailed arc planning is open under `arc05-skill-vocabulary/`. Slice01,
+`slice01-public-language-surface-inventory`, is open as a read-only public
+language inventory and evidence synthesis before accepted vocabulary decisions
+or source wording edits.
 
 ### Arc 06: Validation, Packaging, and Release Readiness
 
@@ -316,11 +321,11 @@ Project04 is active and operating in Expedited Mode. Arc01,
 `arc03-directory-reorg`, are closed. Arc03 landed the accepted directory
 reorganization implementation, with path/link/package validation green.
 
-Arc04, `arc04-user-docs`, is active. Slice01,
-`slice01-readme-docs-decomposition-map`, Slice02,
-`slice02-readme-orientation-rewrite`, and Slice03,
-`slice03-focused-end-user-guide-set`, are verified-closed. Slice04,
-`slice04-doc-link-navigation-reconciliation`, is open.
+Arc04, `arc04-user-docs`, is closed. It delivered the concise README
+orientation, focused end-user docs, and final README/docs reconciliation.
+
+Arc05, `arc05-skill-vocabulary`, is active. Slice01,
+`slice01-public-language-surface-inventory`, is open.
 
 Arc04 source edits are authorized only through opened Arc04 slice prompts.
 Arc04 owns README decomposition and focused end-user documentation under
@@ -328,9 +333,18 @@ Arc04 owns README decomposition and focused end-user documentation under
 atomic/composite vocabulary.
 
 The next execution action is CC completion of:
-`arc04-user-docs/slice04-doc-link-navigation-reconciliation/cc-prompt.md`.
+`arc05-skill-vocabulary/slice01-public-language-surface-inventory/cc-prompt.md`.
 
 ## Version History
+
+### v1.22 - 2026-09-03
+
+Recorded Arc04 Slice04 as verified-closed, closed Arc04 after CDC reproduced
+the arc-level composition row, and marked project ledger row P-4 done. Opened
+Arc05, `arc05-skill-vocabulary`, and opened Slice01,
+`slice01-public-language-surface-inventory`, as a read-only inventory and
+evidence synthesis before accepted public vocabulary decisions or source
+wording edits.
 
 ### v1.21 - 2026-09-02
 

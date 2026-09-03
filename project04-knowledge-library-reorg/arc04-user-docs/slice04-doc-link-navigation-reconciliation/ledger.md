@@ -13,6 +13,9 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. Documentation link reconciliation, navigation
+route validation, package/build validation, Arc04 close readiness, no-source
+edit rationale, and the row walk were independently reproduced in
+`cdc-verification.md`.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.
