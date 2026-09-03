@@ -14,6 +14,9 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. The public wording implementation map,
+accepted vocabulary scan, avoid-list scan, source validation evidence,
+deferred re-entry notes, source-scope evidence, and closing report were
+independently reproduced in `cdc-verification.md`.
 
 Rows: 7. Done: 7. Deferred: 0. No-op: 0.

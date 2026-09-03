@@ -326,16 +326,26 @@ orientation, focused end-user docs, and final README/docs reconciliation.
 
 Arc05, `arc05-skill-vocabulary`, is active. Slice01,
 `slice01-public-language-surface-inventory`, and Slice02,
-`slice02-accepted-vocabulary-positioning`, are verified-closed. Slice03,
-`slice03-public-wording-implementation`, is open.
+`slice02-accepted-vocabulary-positioning`, and Slice03,
+`slice03-public-wording-implementation`, are verified-closed. Slice04,
+`slice04-vocabulary-reconciliation`, is open.
 
 Arc05 source edits are authorized only through opened Arc05 slice prompts.
 Arc05 owns final public skill-kind and atomic/composite vocabulary.
 
 The next execution action is CC completion of:
-`arc05-skill-vocabulary/slice03-public-wording-implementation/cc-prompt.md`.
+`arc05-skill-vocabulary/slice04-vocabulary-reconciliation/cc-prompt.md`.
 
 ## Version History
+
+### v1.25 - 2026-09-03
+
+Recorded Arc05 Slice03 as verified-closed after CDC reproduced all seven
+ledger rows, checked the source and planning commits, reran required
+source/package validation gates, confirmed unauthorized source surfaces
+remained unchanged, and preserved the CCDP stale assembled-spec finding as a
+re-entry item. Opened Slice04, `slice04-vocabulary-reconciliation`, to perform
+final vocabulary reconciliation and Arc05 close-readiness work.
 
 ### v1.24 - 2026-09-03
 

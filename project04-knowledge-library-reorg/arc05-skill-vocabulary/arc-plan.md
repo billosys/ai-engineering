@@ -95,7 +95,7 @@ re-entry conditions, and source-edit impact plan.
 
 ### Slice 03: Public Wording Implementation
 
-Status: open.
+Status: verified-closed.
 
 Scope: apply accepted vocabulary to authorized public surfaces: README,
 focused docs, and top-level `SKILL.md`. Package-facing edits beyond incidental
@@ -103,10 +103,11 @@ public prose in top-level `SKILL.md` remain excluded by Slice02.
 
 ### Slice 04: Vocabulary Reconciliation and Arc Close Readiness
 
-Status: not open.
+Status: open.
 
 Scope: reconcile public wording, package/path checks, README/docs/SKILL
-consistency, and Arc05 close readiness after source edits.
+consistency, the Slice03 CCDP re-entry item, and Arc05 close readiness after
+source edits.
 
 ## Dependencies
 
@@ -119,6 +120,16 @@ consistency, and Arc05 close readiness after source edits.
   public wording changes.
 
 ## Version History
+
+### v1.3 - 2026-09-03
+
+Recorded Slice03 as verified-closed after CDC reproduced all seven ledger
+rows, checked the source and planning commits, reran required
+source/package validation gates, confirmed unauthorized source surfaces
+remained unchanged, and preserved the CCDP stale assembled-spec finding as a
+re-entry item. Opened Slice04, `slice04-vocabulary-reconciliation`, to perform
+final vocabulary reconciliation, package/path checks, README/docs/SKILL
+consistency checks, CCDP re-entry disposition, and Arc05 close readiness.
 
 ### v1.2 - 2026-09-03
 
