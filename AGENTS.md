@@ -11,13 +11,15 @@ framework documents and a packaging surface for installable assistant skills.
   checkout only after confirming that the repository does not already have a
   different worktree convention. Do not recreate planning docs on `main`.
 - Use the current `collaboration-framework` skill at session start. For
-  planning work, read `docs/PROJECT-MANAGEMENT.md` as the wayfinder and then
-  load the relevant `docs/pm/` files. The current canonical layout is
-  `projectNN-<slug>/project-plan.md` plus project `ledger.md`,
-  `arcNN-<slug>/arc-plan.md` plus arc `ledger.md`, and per-slice
-  `slice-plan.md`, `ledger.md`, `cc-prompt.md`, `closing-report.md`,
-  `cdc-verification.md`, and `artifacts/` for durable slice-produced
-  artifacts unless the operator records an override.
+  planning work, read
+  `knowledge/collaboration-framework/docs/PROJECT-MANAGEMENT.md` as the
+  wayfinder and then load the relevant
+  `knowledge/collaboration-framework/docs/pm/` files. The current canonical
+  layout is `projectNN-<slug>/project-plan.md` plus project `ledger.md`,
+  `arcNN-<slug>/arc-plan.md` plus arc `ledger.md`, and per-slice `slice-plan.md`,
+  `ledger.md`, `cc-prompt.md`, `closing-report.md`, `cdc-verification.md`, and
+  `artifacts/` for durable slice-produced artifacts unless the operator records
+  an override.
 - Before implementation or slice/arc closure, read the active
   `project-plan.md` from the `planning` worktree first, then the relevant
   `arc-plan.md`, slice `slice-plan.md`, and ledger files. Treat
