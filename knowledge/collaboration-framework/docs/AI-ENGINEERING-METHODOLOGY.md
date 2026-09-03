@@ -323,7 +323,7 @@ The Toyota Andon cord. The discipline of pulling the line on dissonance rather t
 
 The [AI Constitution Supplement](./AI-CONSTITUTION-SUPPLEMENT.md). The companion document covering character and posture, which this document depends on at every turn.
 
-The author's ontological method work, developed in prior conversations and still evolving. See [`./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md`](./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md) and [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md).
+The author's ontological method work, developed in prior conversations and still evolving. See `./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md` and [`../templates/LEDGER-DISCIPLINE.md`](../templates/LEDGER-DISCIPLINE.md).
 
 ### What has been tested in practice
 
@@ -346,6 +346,10 @@ Portable versions of the methodology for other human collaborators without the C
 ---
 
 ## Version History
+
+### Version 1.11 — September 2026
+
+Converted an obsolete inline link to the historical concept-card extraction path into a literal provenance path during the collaboration-framework source move, preserving the reference without creating a broken package-local link.
 
 ### Version 1.10 — September 2026
 
@@ -470,4 +474,4 @@ Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan
 
 ---
 
-_The methodology is a living document. This version: 1.10, 2026-09-01._
+_The methodology is a living document. This version: 1.11, 2026-09-02._

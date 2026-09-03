@@ -18,7 +18,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.4.4
+version: 1.4.5
 license: MIT
 metadata:
   hermes:
@@ -47,9 +47,9 @@ The framework rests on two paired foundations and a layer of operational
 documents:
 
 - **Character / posture** — who we are to each other when we collaborate.
-  Captured in the [AI Constitution Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md).
+  Captured in the [AI Constitution Supplement](./knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md).
 - **Craft / practice** — how we actually do the work. Captured in the
-  [AI Engineering Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md), which
+  [AI Engineering Methodology](./knowledge/collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md), which
   names three pillars: knowledge substrate, collaborative posture, process
   rigour.
 - **Operational documents** that put the methodology into motion in a live
@@ -70,7 +70,7 @@ documents when the work calls for them.
 ## Notes for Codex
 
 Codex should use this skill through the adapter in
-[`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex).
+[`docs/AI-ENGINEERING-METHODOLOGY.md`](./knowledge/collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex).
 That section is the source of truth for the **CC**, **CDC**, and **Operator**
 role terms. Use it for the canonical role definitions and historical
 backronyms; this skill only routes to it and preserves the separation between
@@ -104,7 +104,7 @@ applies:
   (load the ledger discipline; the protocol now spans all three).
 - **Planning or closing a project, an arc, or a slice — or about to create
   any planning directory.** The moment planning begins, you **MUST read
-  [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md)** before laying
+  [`docs/PROJECT-MANAGEMENT.md`](./knowledge/collaboration-framework/docs/PROJECT-MANAGEMENT.md)** before laying
   anything out. It is now a wayfinder that points to the focused `docs/pm/`
   files for the scales of work, canonical planning worktree layout (`planning`
   branch/worktree, `projectNN-<slug>`, `project-plan.md` / `arc-plan.md` /
@@ -140,7 +140,7 @@ it does **not** carry domain knowledge — see *What this skill does not load*.
 
 This section states the posture inline so the skill carries weight even before
 the source documents are loaded. It is a faithful condensation of the
-[Constitution Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md), not a
+[Constitution Supplement](./knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md), not a
 replacement; load that document for the full architecture.
 
 ### Self-knowledge before self-assertion
@@ -213,7 +213,7 @@ corrected is a contribution, not a defeat.
 ## The practice (embodied)
 
 A faithful condensation of the
-[AI Engineering Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md). Load that
+[AI Engineering Methodology](./knowledge/collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md). Load that
 document for the full treatment and the worked examples.
 
 ### The three pillars
@@ -263,7 +263,7 @@ child surfaced the change and why. Decomposition down, recomposition up — the
 loop is what keeps a plan from quietly drifting out of date.
 
 > **This is a summary. Before planning or closing anything, you MUST read
-> [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md)** — it is the
+> [`docs/PROJECT-MANAGEMENT.md`](./knowledge/collaboration-framework/docs/PROJECT-MANAGEMENT.md)** — it is the
 > wayfinder for the layout, the planning process, the bubble-up reports and
 > checks, the arc-close process, and the plan-change discipline. Follow its
 > required load set; do not improvise the mechanics from this paragraph.
@@ -303,7 +303,7 @@ evaluating correctness. **Delegate lookup work freely** — searching, grepping,
 fetching docs, listing call sites, reading a file. *Serial on thinking, parallel
 on lookup.* The line is drawn at the *kind of task*, not the existence of the
 tool. (Full rationale and per-tool install instructions:
-[subagent-delegation policy](./docs/SUBAGENT-DELEGATION-POLICY.md).)
+[subagent-delegation policy](./knowledge/collaboration-framework/docs/SUBAGENT-DELEGATION-POLICY.md).)
 
 ### Failure recovery
 
@@ -325,15 +325,15 @@ work demands:
 
 | File | Register | Load when |
 |------|----------|-----------|
-| [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
-| [`docs/AI-ENGINEERING-METHODOLOGY.md`](./docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
-| [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `docs/pm/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bottom-up bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
-| [`templates/LEDGER-DISCIPLINE.md`](./templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
-| [`docs/CODE-AUDIT.md`](./docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
-| [`docs/CODE-COVERAGE.md`](./docs/CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
-| [`docs/SUBAGENT-DELEGATION-POLICY.md`](./docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md`, `AGENTS.md`, or preferences block so it holds across sessions. |
-| [`docs/CONTRIBUTION-STYLE.md`](./docs/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
-| [`templates/CONTRIBUTION-TICKET.md`](./templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
+| [`docs/AI-CONSTITUTION-SUPPLEMENT.md`](./knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
+| [`docs/AI-ENGINEERING-METHODOLOGY.md`](./knowledge/collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
+| [`docs/PROJECT-MANAGEMENT.md`](./knowledge/collaboration-framework/docs/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `docs/pm/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bottom-up bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
+| [`templates/LEDGER-DISCIPLINE.md`](./knowledge/collaboration-framework/templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
+| [`docs/CODE-AUDIT.md`](./knowledge/collaboration-framework/docs/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
+| [`docs/CODE-COVERAGE.md`](./knowledge/collaboration-framework/docs/CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
+| [`docs/SUBAGENT-DELEGATION-POLICY.md`](./knowledge/collaboration-framework/docs/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md`, `AGENTS.md`, or preferences block so it holds across sessions. |
+| [`docs/CONTRIBUTION-STYLE.md`](./knowledge/collaboration-framework/docs/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
+| [`templates/CONTRIBUTION-TICKET.md`](./knowledge/collaboration-framework/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
 
 The Supplement and Methodology are versioned, living documents. The five
 working-practice / discipline documents and the two templates are designed to
@@ -371,6 +371,10 @@ subsumes the other.
 ---
 
 ## Version History
+
+### Version 1.4.5 — September 2026
+
+Moved the collaboration-framework supporting source payload under `knowledge/collaboration-framework/` and updated the top-level compatibility entrypoint links while preserving the `collaboration-framework` package entrypoint.
 
 ### Version 1.4.4 — September 2026
 
@@ -445,11 +449,11 @@ explicit load-when routing for sustained engineering sessions.
 
 1. **Load this skill** to establish posture and surface the available
    disciplines.
-2. **Read the [Supplement](./docs/AI-CONSTITUTION-SUPPLEMENT.md) and
-   [Methodology](./docs/AI-ENGINEERING-METHODOLOGY.md) together** when the
+2. **Read the [Supplement](./knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md) and
+   [Methodology](./knowledge/collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md) together** when the
    session is substantial — character and craft are inseparable.
 3. **Before planning or closing anything, read
-   [`docs/PROJECT-MANAGEMENT.md`](./docs/PROJECT-MANAGEMENT.md)** and follow its
+   [`docs/PROJECT-MANAGEMENT.md`](./knowledge/collaboration-framework/docs/PROJECT-MANAGEMENT.md)** and follow its
    required load set for the relevant `docs/pm/` files. Apply the confirmation
    protocol with the operator before creating directories or filenames, once
    per project. This is the cheapest defence

@@ -85,25 +85,25 @@ CF_STAGE := $(BUILD)/$(CF_NAME)
 # dependencies, and nothing else.
 CF_FILES := \
 	SKILL.md \
-	docs/AI-CONSTITUTION-SUPPLEMENT.md \
-	docs/AI-ENGINEERING-METHODOLOGY.md \
-	docs/PROJECT-MANAGEMENT.md \
-	docs/pm/01-scales-of-work.md \
-	docs/pm/02-canonical-planning-worktree.md \
-	docs/pm/03-planning-top-down.md \
-	docs/pm/04-closing-slices.md \
-	docs/pm/05-closing-arcs.md \
-	docs/pm/06-confirmation-protocol.md \
-	docs/pm/07-anti-patterns.md \
-	docs/pm/08-maintenance.md \
-	docs/pm/09-worked-example-odm.md \
-	docs/pm/version-history.md \
-	docs/CODE-AUDIT.md \
-	docs/CODE-COVERAGE.md \
-	docs/SUBAGENT-DELEGATION-POLICY.md \
-	docs/CONTRIBUTION-STYLE.md \
-	templates/LEDGER-DISCIPLINE.md \
-	templates/CONTRIBUTION-TICKET.md
+	knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md \
+	knowledge/collaboration-framework/docs/AI-ENGINEERING-METHODOLOGY.md \
+	knowledge/collaboration-framework/docs/PROJECT-MANAGEMENT.md \
+	knowledge/collaboration-framework/docs/pm/01-scales-of-work.md \
+	knowledge/collaboration-framework/docs/pm/02-canonical-planning-worktree.md \
+	knowledge/collaboration-framework/docs/pm/03-planning-top-down.md \
+	knowledge/collaboration-framework/docs/pm/04-closing-slices.md \
+	knowledge/collaboration-framework/docs/pm/05-closing-arcs.md \
+	knowledge/collaboration-framework/docs/pm/06-confirmation-protocol.md \
+	knowledge/collaboration-framework/docs/pm/07-anti-patterns.md \
+	knowledge/collaboration-framework/docs/pm/08-maintenance.md \
+	knowledge/collaboration-framework/docs/pm/09-worked-example-odm.md \
+	knowledge/collaboration-framework/docs/pm/version-history.md \
+	knowledge/collaboration-framework/docs/CODE-AUDIT.md \
+	knowledge/collaboration-framework/docs/CODE-COVERAGE.md \
+	knowledge/collaboration-framework/docs/SUBAGENT-DELEGATION-POLICY.md \
+	knowledge/collaboration-framework/docs/CONTRIBUTION-STYLE.md \
+	knowledge/collaboration-framework/templates/LEDGER-DISCIPLINE.md \
+	knowledge/collaboration-framework/templates/CONTRIBUTION-TICKET.md
 
 ## collab-framework: build collaboration-framework.zip (SKILL.md + its 9 files)
 collab-framework: collab-framework-clean
