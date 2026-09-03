@@ -262,10 +262,11 @@ This arc should prefer mechanical moves first and reserve rewrite work for
 later slices so path breakage and content edits are not entangled.
 
 Detailed arc planning is open under `arc03-directory-reorg/`. Slice01,
-`slice01-preflight-source-status-impact-map`, is open for CC. Slice01 is
-preflight-only and does not authorize source checkout edits; later Arc03
-source-edit slices must explicitly name their source-edit scope and validation
-gates before source files move.
+`slice01-preflight-source-status-impact-map`, is verified-closed. Slice02,
+`slice02-top-level-compatibility-decision`, is open for CC. Slice02 is the
+compatibility gate for the top-level `SKILL.md` route before composer source
+material moves; any source edits in Slice02 must stay inside the slice's
+explicit source scope and validation gates.
 
 ### Arc 04: README Decomposition and End-User Documentation
 
@@ -312,16 +313,18 @@ skill kind/topology classification, and Arc02 readiness synthesis. Arc02,
 `arc02-directory-contract`, is closed with an accepted directory contract,
 migration plan, compatibility strategy, exception policy, and Arc03 handoff.
 Arc03, `arc03-directory-reorg`, is active; Slice01,
-`slice01-preflight-source-status-impact-map`, is open for CC.
+`slice01-preflight-source-status-impact-map`, is verified-closed, and Slice02,
+`slice02-top-level-compatibility-decision`, is open for CC.
 
 No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
-or by Arc01/Arc02 planning. Arc03 Slice01 is preflight-only and does not
-authorize source edits; later Arc03 source-edit slices must authorize their
-own source scope explicitly.
+or by Arc01/Arc02 planning alone. Arc03 Slice01 is preflight-only and did not
+authorize source edits. Arc03 Slice02 may authorize only the top-level
+`SKILL.md` compatibility decision path and directly required compatibility
+surfaces; it must not move composer source material.
 
 The next execution action is CC completion of:
-`arc03-directory-reorg/slice01-preflight-source-status-impact-map/cc-prompt.md`.
+`arc03-directory-reorg/slice02-top-level-compatibility-decision/cc-prompt.md`.
 
 ## Version History
 
@@ -433,3 +436,10 @@ the arc-level composition row, marked project ledger row P-2 done, opened
 Arc03, `arc03-directory-reorg`, and opened Slice01,
 `slice01-preflight-source-status-impact-map`, as a preflight-only baseline
 before source-edit slices.
+
+### v1.16 - 2026-09-02
+
+Recorded Arc03 Slice01 as verified-closed after CDC reproduced all six ledger
+rows. Opened Slice02, `slice02-top-level-compatibility-decision`, as the
+top-level `SKILL.md` compatibility gate before collaboration-framework
+composer source material moves.

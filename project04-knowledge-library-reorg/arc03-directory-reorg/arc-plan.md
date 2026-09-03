@@ -81,7 +81,7 @@ Project04 is operating in Expedited Mode as of 2026-09-02.
 
 ### Slice 01: Preflight Source Status and Impact Map
 
-Status: open.
+Status: verified-closed.
 
 Scope: record the clean source baseline, live source surfaces, package targets,
 generated package roots, validation commands, operator gates, and proposed
@@ -95,7 +95,7 @@ Expected artifacts:
 
 ### Slice 02: Top-Level Compatibility Decision
 
-Status: not open.
+Status: open.
 
 Scope: select and implement the top-level `SKILL.md` compatibility path:
 validated shim, replacement route, or explicit no-shim decision. This slice
@@ -146,6 +146,12 @@ compose before Arc03 closes.
 - Arc04 and Arc05 remain later arcs and must not be silently folded into Arc03.
 
 ## Version History
+
+### v1.1 - 2026-09-02
+
+Recorded Slice01 as verified-closed after CDC reproduced all six ledger rows.
+Opened Slice02, `slice02-top-level-compatibility-decision`, as the compatibility
+gate before any collaboration-framework composer source material moves.
 
 ### v1.0 - 2026-09-02
 
