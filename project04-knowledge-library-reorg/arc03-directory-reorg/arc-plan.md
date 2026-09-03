@@ -104,7 +104,7 @@ skill/framework validation gates that apply.
 
 ### Slice 03: Mechanical Framework Source Moves
 
-Status: open.
+Status: verified-closed.
 
 Scope: mechanically move accepted collaboration-framework source material into
 the accepted `knowledge/collaboration-framework/` root while preserving source
@@ -112,7 +112,7 @@ prose and package behavior.
 
 ### Slice 04: Component, Method, and Template Ownership Moves
 
-Status: not open.
+Status: open.
 
 Scope: mechanically place accepted Project02 component roots, authorized method
 material, and owner-local templates under accepted `knowledge/` roots while
@@ -146,6 +146,16 @@ compose before Arc03 closes.
 - Arc04 and Arc05 remain later arcs and must not be silently folded into Arc03.
 
 ## Version History
+
+### v1.3 - 2026-09-02
+
+Recorded Slice03 as verified-closed after CDC reproduced all six ledger rows,
+reran source/package validation, and repaired one stale `AGENTS.md` framework
+planning path in source commit `27cc255`. Opened Slice04,
+`slice04-component-method-template-ownership-moves`, to move owner-specific
+component, method, and template substrate out of the transitional
+`knowledge/collaboration-framework/` root where mechanical moves can preserve
+prose.
 
 ### v1.2 - 2026-09-02
 
