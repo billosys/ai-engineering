@@ -13,6 +13,8 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. The accepted vocabulary, examples and edge
+cases, avoid-list, source-edit authorization plan, re-entry register, and
+closing report were independently reproduced in `cdc-verification.md`.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.

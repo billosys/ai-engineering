@@ -88,18 +88,18 @@ rewrite, preserve, or explicitly defer.
 
 ### Slice 02: Accepted Vocabulary and Positioning Decision
 
-Status: open.
+Status: verified-closed.
 
 Scope: decide the accepted public vocabulary, examples, avoid-list,
 re-entry conditions, and source-edit impact plan.
 
 ### Slice 03: Public Wording Implementation
 
-Status: not open.
+Status: open.
 
-Scope: apply accepted vocabulary to authorized public surfaces such as README,
-focused docs, top-level `SKILL.md`, and package-facing descriptions if Slice02
-authorizes those edits.
+Scope: apply accepted vocabulary to authorized public surfaces: README,
+focused docs, and top-level `SKILL.md`. Package-facing edits beyond incidental
+public prose in top-level `SKILL.md` remain excluded by Slice02.
 
 ### Slice 04: Vocabulary Reconciliation and Arc Close Readiness
 
@@ -119,6 +119,15 @@ consistency, and Arc05 close readiness after source edits.
   public wording changes.
 
 ## Version History
+
+### v1.2 - 2026-09-03
+
+Recorded Slice02 as verified-closed after CDC reproduced all six ledger rows,
+checked the planning commit, confirmed no source commit was created, and
+verified the accepted vocabulary, examples, avoid-list, source-edit
+authorization, and re-entry artifacts. Opened Slice03,
+`slice03-public-wording-implementation`, to apply accepted public vocabulary
+only to the source surfaces authorized by Slice02.
 
 ### v1.1 - 2026-09-03
 
