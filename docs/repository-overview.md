@@ -1,8 +1,8 @@
 # Repository Overview
 
 AI Engineering is a source repository for assistant-facing knowledge material:
-installable Markdown skills, supporting guides, reusable templates, and the
-Composite Cognition Dispatch Protocol. Start with the top-level
+installable Markdown skill packages, supporting guides, support templates, and
+the Composite Cognition Dispatch Protocol distribution. Start with the top-level
 [`README.md`](../README.md) for the shortest route map, then use these focused
 docs when you need more context.
 
@@ -13,9 +13,9 @@ docs when you need more context.
 | [`README.md`](../README.md) | Concise orientation, quick commands, and links to focused docs. |
 | [`docs/`](./) | Human-facing explanation about the repository and how to navigate it. |
 | [`knowledge/`](../knowledge/) | Source and derived knowledge-library substrate consumed by skills and packages. |
-| [`SKILL.md`](../SKILL.md) | Top-level `collaboration-framework` skill entrypoint. |
+| [`SKILL.md`](../SKILL.md) | Top-level `collaboration-framework` composite framework/operational skill entrypoint. |
 | [`protocols/`](../protocols/) | Protocol distributions, currently including CCDP. |
-| [`templates/`](../templates/) | Cross-cutting templates that are not owned by a single knowledge surface. |
+| [`templates/`](../templates/) | Cross-cutting support templates that are not owned by a single knowledge surface. |
 | [`scripts/`](../scripts/) | Packaging and validation helpers used by the Makefile. |
 | [`assets/`](../assets/) | Public assets such as README images. |
 
@@ -32,6 +32,12 @@ source material, templates, and workbench notes where present.
 Use `protocols/` for protocol distributions. CCDP has different packaging and
 validation rules from installable skills, so it remains separate from the skill
 library even though it is part of this repository.
+
+Skill kind and topology are separate wayfinding axes. Kind names what a skill
+is about, such as domain/tooling, framework/operational, or method work.
+Topology names how it composes: Rust is the public example of an atomic
+domain/tooling skill, while `collaboration-framework` is the public example of
+a composite framework/operational skill.
 
 ## Common Entry Points
 

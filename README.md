@@ -8,9 +8,9 @@
 
 _Last updated: 2026-09-02._
 
-AI Engineering is a library of Markdown skills, guides, methods, templates,
-and protocol material for LLM coding assistants. It is built around a simple
-split:
+AI Engineering is a library of Markdown skill packages, guide material,
+planned method material, support templates, and protocol distributions for
+LLM coding assistants. It is built around a simple split:
 
 - [`docs/`](./docs/) explains the repository for human readers.
 - [`knowledge/`](./knowledge/) stores the source and derived material consumed
@@ -32,11 +32,13 @@ split:
 
 The repository currently includes:
 
-- programming and tooling skill packages for Rust, Go, Erlang/OTP, C++,
+- domain/tooling skill packages for Rust, Go, Erlang/OTP, C++,
   JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, Biome, and Deno lint;
-- the top-level [`collaboration-framework`](./SKILL.md) skill, with its
-  framework material under [`knowledge/`](./knowledge/);
-- reusable support material such as [`templates/GUIDE.md`](./templates/GUIDE.md);
+- the top-level [`collaboration-framework`](./SKILL.md) composite
+  framework/operational skill, with its framework material under
+  [`knowledge/`](./knowledge/);
+- reusable support material such as the
+  [`templates/GUIDE.md`](./templates/GUIDE.md) support template;
 - the Composite Cognition Dispatch Protocol under
   [`protocols/ccdp/`](./protocols/ccdp/).
 
@@ -80,8 +82,18 @@ The `docs/` guides are explanatory wrappers. They should help readers choose,
 install, build, and contribute without duplicating the full material under
 `knowledge/`.
 
-Skill-category and topology language in these docs is practical wayfinding.
-Project04 Arc05 owns the final public vocabulary.
+Skill kind and topology are separate. Kind says what a skill is about, such as
+domain/tooling, framework/operational, or method work. Topology says how a
+skill composes: an atomic skill has one bounded load reason, while a
+composite skill exists to select, sequence, route, govern, or compose multiple
+loadable components.
+
+Rust is the public example of an atomic domain/tooling skill.
+[`collaboration-framework`](./SKILL.md) is the public example of a composite
+framework/operational skill and remains the daily-driver composer. CCDP is a
+protocol distribution and protocol package, not an installable skill package.
+`concept-card-method` remains a planned method skill until source and package
+support exist.
 
 ## License
 

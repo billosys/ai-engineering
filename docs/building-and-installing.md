@@ -11,15 +11,16 @@ Use `make help` for the current target list.
 | Command | Purpose |
 |---|---|
 | `make all` | Build every installable skill zip, including the collaboration framework. |
-| `make skills` | Build the per-domain and tooling skill zips. |
+| `make skills` | Build the domain/tooling skill zips. |
 | `make collab-framework` | Build `collaboration-framework.zip`. |
 | `make rust`, `make go`, `make cpp`, `make js`, `make erlang` | Build one language skill package. |
 | `make cobalt`, `make design`, `make tailwindcss`, `make deno`, `make biome` | Build one tooling or design package target. |
 | `make clean` | Remove `build/` and generated zips. |
 
 Generated skill zips are named from the packaged skill entrypoint's
-frontmatter and contain a package-local directory root. They are generated
-artifacts, not hand-edited source.
+frontmatter and contain a package-local directory root. The source root can be
+larger than that package root. Generated zips are artifacts, not hand-edited
+source.
 
 ## Validation Commands
 
@@ -55,7 +56,8 @@ to remove installed skill directories from the selected install directory.
 
 ## CCDP Commands
 
-CCDP is distributed separately from installable skills.
+CCDP is distributed separately from installable skills as a protocol
+distribution and protocol package.
 
 | Command | Purpose |
 |---|---|

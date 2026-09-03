@@ -1,8 +1,9 @@
 # Collaboration Framework
 
-The collaboration framework is the repository's top-level skill for rigorous
-human/LLM engineering work. Its entrypoint is [`SKILL.md`](../SKILL.md), and
-its supporting material lives under [`knowledge/`](../knowledge/).
+The collaboration framework is the repository's top-level composite
+framework/operational skill for rigorous human/LLM engineering work. Its
+entrypoint is [`SKILL.md`](../SKILL.md), and its supporting material lives
+under [`knowledge/`](../knowledge/).
 
 This page explains how to navigate the framework. The framework source itself
 remains in the entrypoint and knowledge roots.
@@ -37,14 +38,15 @@ compound across time, commits, reviewers, or planning artifacts.
 
 The top-level framework is the daily-driver composer. Load it when you need
 the working posture plus routing across planning, verification, audit, testing,
-delegation, and contribution disciplines.
+delegation, and contribution disciplines. It is composite because composition
+is identity-defining: the skill selects, sequences, routes, governs, and
+composes multiple loadable operational components.
 
 Use a narrower component path when you already know the task shape and want to
 avoid carrying unnecessary context. For example, a focused upstream issue can
 start from contribution style, while an independent verification pass can start
 from ledger discipline and the relevant project-management close file.
 
-The exact public category language is still bounded for Arc05. For now, the
-safe operating model is practical: use the composer for the whole working
-system, and use component source paths when the task clearly needs only one
-discipline.
+Use the composer for the whole working system, and use component source paths
+when the task clearly needs only one discipline. The component roots do not
+deprecate the top-level `collaboration-framework` entrypoint.

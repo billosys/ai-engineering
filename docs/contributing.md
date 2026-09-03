@@ -39,11 +39,11 @@ full skill guide into `docs/`; link to the source guide.
 
 ## Adding A New Skill Surface
 
-New skill surfaces need more than a new file. At minimum, define the entrypoint,
-guide set, source/provenance expectations, package target, package validation,
-and install route. If the category or topology wording is important to the
-change, keep it provisional until Arc05 finalizes public vocabulary or an
-operator explicitly authorizes the wording.
+New skill surfaces need more than a new file. At minimum, define the skill
+entrypoint, guide set, source/provenance expectations, package target, package
+validation, and install route. If skill kind or topology wording is important
+to the change, keep the axes separate: kind names what the skill is about, and
+topology names how it composes.
 
 ## Protocol Changes
 
@@ -57,7 +57,8 @@ make check-ccdp-package
 ```
 
 Do not fold protocol package changes into installable skill package changes
-unless a plan explicitly changes that boundary.
+unless a plan explicitly changes that boundary. CCDP is a protocol
+distribution, not an installable skill package.
 
 ## Documentation Changes
 

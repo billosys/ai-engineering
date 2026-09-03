@@ -1,12 +1,16 @@
 # Skill Library
 
-The skill library is the collection of Markdown skills and guide material in
-[`knowledge/`](../knowledge/). Each installable skill has an entrypoint file
-and package target; the detailed guide content stays with the owning knowledge
-root.
+The skill library is the collection of Markdown skill packages and guide
+material in [`knowledge/`](../knowledge/), plus the top-level
+[`collaboration-framework`](../SKILL.md) entrypoint. Each installable skill has
+a skill entrypoint file and package target; the detailed guide content stays
+with the owning knowledge root.
 
-The category words below are practical wayfinding for this documentation.
-Project04 Arc05 owns the final public vocabulary for skill kind and topology.
+Skill kind and topology are separate. Kind says what a skill is about:
+domain/tooling, framework/operational, or method work. Topology says how a
+skill composes: an atomic skill has one bounded load reason, while a
+composite skill exists to select, sequence, route, govern, or compose multiple
+loadable components.
 
 ## Current Installable Skills
 
@@ -27,19 +31,24 @@ Project04 Arc05 owns the final public vocabulary for skill kind and topology.
 
 ## Choosing What To Load
 
-Load the domain or tooling skill that matches the code or artifact you are
+Load the domain/tooling skill that matches the code or artifact you are
 working on. For example, Rust code should load Rust guidance, Erlang/OTP work
 should load Erlang guidance, and Tailwind styling should load Tailwind
 guidance.
 
 Load the collaboration framework when the work itself needs structure: project
 planning, ledgered implementation, code audit, coverage hardening, subagent
-delegation decisions, or contribution-ticket writing. It is the "how we work"
-layer, not a substitute for language or tooling expertise.
+delegation decisions, or contribution-ticket writing. It is a composite
+framework/operational skill: the "how we work" layer and daily-driver
+composer, not a substitute for language or tooling expertise.
 
 When a task crosses boundaries, load the smallest set that covers the work.
 For example, an Erlang implementation slice in a ledgered project would use
 the collaboration framework plus Erlang guidance.
+
+Rust is the public example of an atomic domain/tooling skill. The Rust domain
+is broad, but the load reason "work in Rust" is coherent. That example does
+not mean every domain/tooling skill is atomic.
 
 ## Package And Source Distinction
 
@@ -53,7 +62,7 @@ Use generated zips when you are installing skills into a loader.
 
 ## Planned Method Material
 
-This repository has planning evidence for method-oriented skills such as a
-future concept-card method. That material should not be treated as a live
+This repository has planning evidence for method skills such as planned
+`concept-card-method`. That material should not be treated as a live
 installable skill until a later implementation project lands source and package
 support.

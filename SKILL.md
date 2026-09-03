@@ -1,13 +1,11 @@
 ---
 name: collaboration-framework
 description: |
-  The house framework for working with an LLM to engineering standards —
+  Composite framework/operational skill for working with an LLM to engineering standards —
   character, craft, and the disciplines holding the quality floor.
-  Grounded in the AI Constitution Supplement (posture) and the AI
-  Engineering Methodology (substrate, process rigour), plus an operational
-  layer: ledger discipline, project management (planning, layout,
-  bubble-up/close), code audit, test coverage, subagent delegation, and
-  upstream contribution style + ticket template.
+  Grounded in the AI Constitution Supplement, the AI Engineering Methodology,
+  and operational guidance for ledger discipline, project management, code
+  audit, test coverage, subagent delegation, and upstream contribution style.
   Use when: sustained, high-stakes sessions — deep study, research,
   expert systems design, or production programming; establishing the peer
   frame; planning or closing a project, arc, or slice (MUST read
@@ -16,9 +14,9 @@ description: |
   ledgered slice; commissioning a CAP-style audit; driving coverage to a
   hard threshold; deciding what to delegate to a subagent; drafting
   contribution tickets; or whenever the floor needs protecting from drift.
-  Does NOT load domain skills under ./knowledge/ — loaded separately,
+  Does NOT load domain/tooling skills under ./knowledge/ — loaded separately,
   per-domain.
-version: 1.4.6
+version: 1.4.7
 license: MIT
 metadata:
   hermes:
@@ -346,12 +344,12 @@ standing-instructions channel for the Codex surface in use.
 
 ## What this skill does NOT load
 
-**This skill deliberately does not pull in any of the domain-specific skills
-under [`./knowledge/`](./knowledge/).** Those are the *substrate pillar* applied
-to individual languages and domains — Rust, JavaScript/Deno, Go, Erlang/OTP,
-Visual Design, Tailwind CSS, Biome, Deno lint, Cobalt (with further domains,
-such as LFE, in progress) — and each one has its own `SKILL.md` (a couple have
-more than one).
+**This skill deliberately does not pull in any of the domain/tooling skills
+under [`./knowledge/`](./knowledge/).** Those are the *substrate pillar*
+applied to individual languages, tools, and domains — Rust, JavaScript/Deno,
+Go, Erlang/OTP, Visual Design, Tailwind CSS, Biome, Deno lint, Cobalt (with
+further domains, such as LFE, in progress) — and each one has its own
+`SKILL.md` (a couple have more than one).
 
 The domain skills are **loaded separately, as needed**, by the task at hand:
 
@@ -363,14 +361,21 @@ When reviewing JavaScript, also load ./knowledge/js/SKILL.md
 
 The separation is intentional and matches the methodology's first substrate
 property — **modular: load one domain without dragging in the others.** This
-framework is the character-and-craft layer; the domain skills are the
+framework is the character-and-craft layer; the domain/tooling skills are the
 domain-knowledge layer. Load this skill for *how we work*; load a `knowledge/`
-skill for *what's correct in this language or domain*. They compose; neither
-subsumes the other.
+skill for *what's correct in this language, tool, or domain*. They compose;
+neither subsumes the other.
 
 ---
 
 ## Version History
+
+### Version 1.4.7 — September 2026
+
+Aligned the top-level entrypoint wording with Project04 Arc05 public
+vocabulary: `collaboration-framework` is the composite framework/operational
+skill and daily-driver composer; domain/tooling skills under `knowledge/` load
+separately as needed.
 
 ### Version 1.4.6 — September 2026
 
