@@ -287,7 +287,7 @@ closed and provides the README/docs public documentation base for Arc05.
 
 ### Arc 05: Skill Vocabulary, Atomicity, and Public Positioning
 
-Status: active as of 2026-09-03.
+Status: closed on 2026-09-03.
 
 Expected capability: settle the public language for the repo's skill types and
 support surfaces, including whether to distinguish domain/tooling skills,
@@ -297,14 +297,17 @@ and separately whether to distinguish atomic skills from composite skills.
 This arc should rewrite README/docs/SKILL wayfinding only after Arc01 and
 Arc02 define the actual categories present in the source tree.
 
-Detailed arc planning is open under `arc05-skill-vocabulary/`. Slice01,
-`slice01-public-language-surface-inventory`, is open as a read-only public
-language inventory and evidence synthesis before accepted vocabulary decisions
-or source wording edits.
+Detailed arc planning and closure evidence lives under
+`arc05-skill-vocabulary/`. Slice01,
+`slice01-public-language-surface-inventory`, Slice02,
+`slice02-accepted-vocabulary-positioning`, Slice03,
+`slice03-public-wording-implementation`, and Slice04,
+`slice04-vocabulary-reconciliation`, are verified-closed. Arc05 is closed and
+provides the accepted public skill vocabulary and wayfinding base for Arc06.
 
 ### Arc 06: Validation, Packaging, and Release Readiness
 
-Status: not yet planned in detail.
+Status: active as of 2026-09-03.
 
 Expected capability: verify that the reorganized repository works as a source
 checkout, packaged skill library, installed Codex skill set, and CCDP protocol
@@ -314,29 +317,39 @@ acceptance all reconciled.
 This arc closes the project only after the final layout is demonstrably usable
 from the end-user entrypoints and the package/install entrypoints.
 
+Detailed arc planning is open under `arc06-validation-release/`. Slice01,
+`slice01-validation-surface-inventory`, is open as a read-only inventory and
+gate plan before final source/package/install/protocol validation repairs or
+acceptance work begin.
+
 ## Current Status
 
 Project04 is active and operating in Expedited Mode. Arc01,
-`arc01-material-inventory`, Arc02, `arc02-directory-contract`, and Arc03,
-`arc03-directory-reorg`, are closed. Arc03 landed the accepted directory
-reorganization implementation, with path/link/package validation green.
+`arc01-material-inventory`, Arc02, `arc02-directory-contract`, Arc03,
+`arc03-directory-reorg`, Arc04, `arc04-user-docs`, and Arc05,
+`arc05-skill-vocabulary`, are closed.
 
-Arc04, `arc04-user-docs`, is closed. It delivered the concise README
-orientation, focused end-user docs, and final README/docs reconciliation.
+Arc03 landed the accepted directory reorganization implementation, Arc04
+delivered the concise README orientation and focused end-user docs, and Arc05
+delivered the accepted public skill-kind and atomic/composite vocabulary.
 
-Arc05, `arc05-skill-vocabulary`, is active. Slice01,
-`slice01-public-language-surface-inventory`, and Slice02,
-`slice02-accepted-vocabulary-positioning`, and Slice03,
-`slice03-public-wording-implementation`, are verified-closed. Slice04,
-`slice04-vocabulary-reconciliation`, is open.
-
-Arc05 source edits are authorized only through opened Arc05 slice prompts.
-Arc05 owns final public skill-kind and atomic/composite vocabulary.
+Arc06, `arc06-validation-release`, is active. Slice01,
+`slice01-validation-surface-inventory`, is open.
 
 The next execution action is CC completion of:
-`arc05-skill-vocabulary/slice04-vocabulary-reconciliation/cc-prompt.md`.
+`arc06-validation-release/slice01-validation-surface-inventory/cc-prompt.md`.
 
 ## Version History
+
+### v1.26 - 2026-09-03
+
+Recorded Arc05 Slice04 as verified-closed after CDC reproduced all seven
+ledger rows, reran Arc05 source/package validation gates, confirmed no source
+repair was required, and preserved CCDP package freshness as Arc06 re-entry.
+Closed Arc05, marked project ledger row P-5 done, opened Arc06,
+`arc06-validation-release`, and opened Slice01,
+`slice01-validation-surface-inventory`, as the final validation/release
+readiness inventory before source/package/install/protocol reconciliation.
 
 ### v1.25 - 2026-09-03
 

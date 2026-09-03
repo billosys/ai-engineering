@@ -3,7 +3,7 @@
 ```yaml
 project: project04-knowledge-library-reorg
 arc: arc05-skill-vocabulary
-status: active
+status: closed
 opened-by: CDC
 opened-on: 2026-09-03
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -103,7 +103,7 @@ public prose in top-level `SKILL.md` remain excluded by Slice02.
 
 ### Slice 04: Vocabulary Reconciliation and Arc Close Readiness
 
-Status: open.
+Status: verified-closed.
 
 Scope: reconcile public wording, package/path checks, README/docs/SKILL
 consistency, the Slice03 CCDP re-entry item, and Arc05 close readiness after
@@ -120,6 +120,15 @@ source edits.
   public wording changes.
 
 ## Version History
+
+### v1.4 - 2026-09-03
+
+Recorded Slice04 as verified-closed after CDC reproduced all seven ledger
+rows, checked CC's planning commit, reran source/package validation gates,
+confirmed no source repair was required, and verified the CCDP stale
+assembled-spec item as Arc06 re-entry. Closed Arc05 after the four child
+slices recomposed into the public skill vocabulary, atomicity, and wayfinding
+capability promised by this arc.
 
 ### v1.3 - 2026-09-03
 

@@ -14,6 +14,8 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. CDC reproduced all seven ledger rows,
+confirmed README/docs/SKILL vocabulary consistency, package-path/build checks,
+source/planning cleanliness, and the deferred CCDP re-entry disposition.
 
 Rows: 7. Done: 7. Deferred: 0. No-op: 0.

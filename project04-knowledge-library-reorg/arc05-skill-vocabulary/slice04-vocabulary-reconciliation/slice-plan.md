@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc05-skill-vocabulary
 slice: slice04-vocabulary-reconciliation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-03
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -99,3 +99,11 @@ Required validation includes:
 - Source and planning worktrees finish clean.
 - `closing-report.md` walks all seven ledger rows and bubbles findings up to
   Arc05.
+
+## CDC Close
+
+Verified-closed on 2026-09-03. CDC reproduced all seven ledger rows, checked
+CC's planning commit scope and required trailers, reran the source/package
+validation gates, confirmed no source repair was required, and verified that
+the CCDP stale assembled-spec item is a documented Arc06 re-entry rather than
+an Arc05 blocker.
