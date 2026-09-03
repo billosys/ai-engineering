@@ -77,15 +77,16 @@ not the implementation checkout and should not be used for source/package edits.
 - **Project04 status:** active and operating in Expedited Mode as of
   2026-09-02. Arc01 `arc01-material-inventory` is closed. Arc02
   `arc02-directory-contract` is closed. Arc03 `arc03-directory-reorg` is
-  active; Slice01 `slice01-preflight-source-status-impact-map` is
-  verified-closed, and Slice02 `slice02-top-level-compatibility-decision` is
-  open for CC as the top-level `SKILL.md` compatibility gate before composer
-  source material moves. In Expedited Mode, CC and CDC both commit their own
-  changes with explicit commit scope; after each slice closes, immediately
-  open the next slice and report the relative `cc-prompt.md` path. No source
-  edits, file moves, README rewrites, package updates, or generated artifacts
-  are authorized by Arc01 or Arc02 planning alone. Arc03 Slice02 may authorize
-  only its explicitly named compatibility source scope and validation gates.
+  active; Slice01 `slice01-preflight-source-status-impact-map` and Slice02
+  `slice02-top-level-compatibility-decision` are verified-closed, and Slice03
+  `slice03-mechanical-framework-source-moves` is open for CC as the first
+  source-edit move slice for the current selected-file collaboration-framework
+  payload. In Expedited Mode, CC and CDC both commit their own changes with
+  explicit commit scope; after each slice closes, immediately open the next
+  slice and report the relative `cc-prompt.md` path. Arc03 Slice03 authorizes
+  only the mechanical collaboration-framework source move, directly required
+  route/package updates, and exact existing exception-path maintenance needed
+  to keep validation green.
 - **Source checkout validation references:** implementation plans may require
   `make help`, `make check-skills`, `make check-package-paths`, `make all`,
   `make collab-framework`, or `make ccdp` in the main checkout. Record these

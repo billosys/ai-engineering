@@ -262,11 +262,13 @@ This arc should prefer mechanical moves first and reserve rewrite work for
 later slices so path breakage and content edits are not entangled.
 
 Detailed arc planning is open under `arc03-directory-reorg/`. Slice01,
-`slice01-preflight-source-status-impact-map`, is verified-closed. Slice02,
-`slice02-top-level-compatibility-decision`, is open for CC. Slice02 is the
-compatibility gate for the top-level `SKILL.md` route before composer source
-material moves; any source edits in Slice02 must stay inside the slice's
-explicit source scope and validation gates.
+`slice01-preflight-source-status-impact-map`, and Slice02,
+`slice02-top-level-compatibility-decision`, are verified-closed. Slice03,
+`slice03-mechanical-framework-source-moves`, is open for CC. Slice03 is the
+first source-edit move slice and must move the current selected-file
+collaboration-framework payload as a transitional substrate under
+`knowledge/collaboration-framework/` while preserving source prose, package
+root behavior, and top-level route compatibility.
 
 ### Arc 04: README Decomposition and End-User Documentation
 
@@ -313,18 +315,20 @@ skill kind/topology classification, and Arc02 readiness synthesis. Arc02,
 `arc02-directory-contract`, is closed with an accepted directory contract,
 migration plan, compatibility strategy, exception policy, and Arc03 handoff.
 Arc03, `arc03-directory-reorg`, is active; Slice01,
-`slice01-preflight-source-status-impact-map`, is verified-closed, and Slice02,
-`slice02-top-level-compatibility-decision`, is open for CC.
+`slice01-preflight-source-status-impact-map`, and Slice02,
+`slice02-top-level-compatibility-decision`, are verified-closed, and Slice03,
+`slice03-mechanical-framework-source-moves`, is open for CC.
 
 No source edits, file moves, README rewrites, Makefile updates, package-path
 exception changes, or generated artifacts are authorized by this project plan
-or by Arc01/Arc02 planning alone. Arc03 Slice01 is preflight-only and did not
-authorize source edits. Arc03 Slice02 may authorize only the top-level
-`SKILL.md` compatibility decision path and directly required compatibility
-surfaces; it must not move composer source material.
+or by Arc01/Arc02 planning alone. Arc03 Slice01 was preflight-only and did not
+authorize source edits. Arc03 Slice02 selected a no-shim compatibility path
+without source edits. Arc03 Slice03 authorizes only the mechanical
+collaboration-framework source move, directly required route/package updates,
+and exact existing exception-path maintenance needed to keep validation green.
 
 The next execution action is CC completion of:
-`arc03-directory-reorg/slice02-top-level-compatibility-decision/cc-prompt.md`.
+`arc03-directory-reorg/slice03-mechanical-framework-source-moves/cc-prompt.md`.
 
 ## Version History
 
@@ -443,3 +447,11 @@ Recorded Arc03 Slice01 as verified-closed after CDC reproduced all six ledger
 rows. Opened Slice02, `slice02-top-level-compatibility-decision`, as the
 top-level `SKILL.md` compatibility gate before collaboration-framework
 composer source material moves.
+
+### v1.17 - 2026-09-02
+
+Recorded Arc03 Slice02 as verified-closed after CDC reproduced all six ledger
+rows and reran `make check-skills`, `make collab-framework`, and package
+entrypoint inspection. Opened Slice03,
+`slice03-mechanical-framework-source-moves`, as the first source-edit move
+slice for the current selected-file collaboration-framework payload.

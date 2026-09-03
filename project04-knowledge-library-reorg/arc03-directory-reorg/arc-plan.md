@@ -95,7 +95,7 @@ Expected artifacts:
 
 ### Slice 02: Top-Level Compatibility Decision
 
-Status: open.
+Status: verified-closed.
 
 Scope: select and implement the top-level `SKILL.md` compatibility path:
 validated shim, replacement route, or explicit no-shim decision. This slice
@@ -104,7 +104,7 @@ skill/framework validation gates that apply.
 
 ### Slice 03: Mechanical Framework Source Moves
 
-Status: not open.
+Status: open.
 
 Scope: mechanically move accepted collaboration-framework source material into
 the accepted `knowledge/collaboration-framework/` root while preserving source
@@ -146,6 +146,15 @@ compose before Arc03 closes.
 - Arc04 and Arc05 remain later arcs and must not be silently folded into Arc03.
 
 ## Version History
+
+### v1.2 - 2026-09-02
+
+Recorded Slice02 as verified-closed after CDC reproduced all six ledger rows
+and reran the source-side skill/framework validation gates. Opened Slice03,
+`slice03-mechanical-framework-source-moves`, to move the current selected-file
+collaboration-framework payload as a transitional substrate under
+`knowledge/collaboration-framework/` while preserving package behavior and
+deferring the specialist component split to Slice04.
 
 ### v1.1 - 2026-09-02
 
