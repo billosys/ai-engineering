@@ -46,8 +46,8 @@ The repository currently includes:
 
 ```sh
 make help              # list package, validation, and install targets
-make all               # build all installable skill zips
-make collab-framework  # build collaboration-framework.zip
+make all               # build all installable skill zips into target/skills/
+make collab-framework  # build target/skills/collaboration-framework.zip
 make check-skills      # validate SKILL.md descriptions
 make check-package-paths
 make install           # install built skills into ~/.agents/skills

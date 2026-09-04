@@ -53,8 +53,8 @@ framework documents and a packaging surface for installable assistant skills.
 - **Skill packaging:** `make all` builds every zip; `make collab-framework`
   builds the framework bundle; `make skills` builds the per-domain bundles;
   `make install` installs into `$(HOME)/.agents/skills` unless `INSTALL_DIR`
-  is overridden. Generated `/*.zip` files and `build/` are ignored release
-  artifacts, not ordinary source changes.
+  is overridden. Generated zips land under `target/skills/`; `target/` and
+  `build/` are ignored release artifacts, not ordinary source changes.
 - **Validation:** run `make check-skills` after any `SKILL.md` description or
   packaged-skill metadata change. Run `make check-package-paths` after changing
   packaged Markdown links, bundle contents, `Makefile` packaging lists, or

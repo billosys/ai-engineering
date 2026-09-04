@@ -4,26 +4,29 @@
 #   * collab-framework — the top-level collaboration-framework skill
 #   * per-domain        — one target per knowledge/ domain (rust, go, …)
 #
-# Skill zips are named after the `name:` declared in the skill's frontmatter
-# and wrap their contents in a <name>/ directory, so the archive is never a
-# "tarbomb" and the name on disk matches the name the loader sees. CCDP is a
-# separate protocol package with its own `ccdp.zip` target and validator.
+# Skill zips are written under $(ZIP_OUTPUT_DIR), named after the `name:`
+# declared in the skill's frontmatter, and wrap their contents in a <name>/
+# directory, so the archive is never a "tarbomb" and the name on disk matches
+# the name the loader sees. CCDP is a separate protocol package with its own
+# `ccdp.zip` target and validator.
 
 BUILD := build
+ZIP_OUTPUT_DIR := target/skills
 INSTALL_DIR ?= $(HOME)/.agents/skills
 
 # Build-time guard: every skill bundle runs its SKILL.md through this before
 # packaging, so a description over the loader's limit fails the build instead
 # of failing silently at load time. Single source of truth for the check.
 CHECK_SKILL := ./scripts/check-skill-description.sh
-INSTALL_ZIPS := \
+SKILL_ZIP_NAMES := \
 	collaboration-framework.zip \
 	rust-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
 	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
 	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
-INSTALL_SKILLS := $(INSTALL_ZIPS:.zip=)
+INSTALL_ZIPS := $(addprefix $(ZIP_OUTPUT_DIR)/,$(SKILL_ZIP_NAMES))
+INSTALL_SKILLS := $(SKILL_ZIP_NAMES:.zip=)
 CCDP_NAME := ccdp
-CCDP_ZIP := $(CCDP_NAME).zip
+CCDP_ZIP := $(ZIP_OUTPUT_DIR)/$(CCDP_NAME).zip
 CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 
 .PHONY: all skills install uninstall clean help check-skills check-package-paths \
@@ -49,7 +52,7 @@ ALL_SKILL_FILES := \
 ## help: list the available targets
 help:
 	@echo "Packaging targets:"
-	@echo "  make collab-framework   -> collaboration-framework.zip (SKILL.md + framework docs)"
+	@echo "  make collab-framework   -> $(CF_ZIP) (SKILL.md + framework docs)"
 	@echo "  make rust               -> rust-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
 	@echo "  make cpp                -> cpp-guidelines.zip"
@@ -64,11 +67,11 @@ help:
 	@echo "  make all                -> skills + collab-framework"
 	@echo "  make check-skills       -> validate every SKILL.md description length"
 	@echo "  make ccdp               -> assemble the CCDP protocol document"
-	@echo "  make ccdp-package       -> build ccdp.zip (protocol package)"
-	@echo "  make check-ccdp-package -> validate ccdp.zip zipped and unzipped"
+	@echo "  make ccdp-package       -> build $(CCDP_ZIP) (protocol package)"
+	@echo "  make check-ccdp-package -> validate $(CCDP_ZIP) zipped and unzipped"
 	@echo "  make install            -> build all zips and install them into $(INSTALL_DIR)"
 	@echo "  make uninstall          -> remove installed skills from $(INSTALL_DIR)"
-	@echo "  make clean              -> remove build/ and all *.zip"
+	@echo "  make clean              -> remove build/ and generated zips in $(ZIP_OUTPUT_DIR)"
 	@echo "  make check-package-paths -> validate Markdown paths inside generated zips"
 
 # ---------------------------------------------------------------------------
@@ -78,7 +81,7 @@ help:
 # ---------------------------------------------------------------------------
 
 CF_NAME  := collaboration-framework
-CF_ZIP   := $(CF_NAME).zip
+CF_ZIP   := $(ZIP_OUTPUT_DIR)/$(CF_NAME).zip
 CF_STAGE := $(BUILD)/$(CF_NAME)
 
 # Explicit (not a docs/ glob) on purpose: the bundle is the skill and its
@@ -119,6 +122,7 @@ collab-framework: collab-framework-clean
 	done
 	@find "$(CF_STAGE)" -name '.DS_Store' -delete
 	@echo ">> writing $(CF_ZIP)"
+	@mkdir -p "$(ZIP_OUTPUT_DIR)"
 	@rm -f "$(CF_ZIP)"
 	@cd "$(BUILD)" && zip -r -q -X "../$(CF_ZIP)" "$(CF_NAME)"
 	@echo ">> contents:"
@@ -156,13 +160,15 @@ define pack_skill
 	./scripts/stage-skill-entrypoint "$$src" "$$stage/$$(basename "$$src")"; \
 	cp -R "$$dir/guides" "$$stage/guides"; \
 	find "$$stage" -name '.DS_Store' -delete; \
-	echo ">> writing $$name.zip"; \
-	rm -f "$$name.zip"; \
-	( cd "$(BUILD)" && zip -r -q -X "../$$name.zip" "$$name" ); \
+	zip_path="$(ZIP_OUTPUT_DIR)/$$name.zip"; \
+	echo ">> writing $$zip_path"; \
+	mkdir -p "$(ZIP_OUTPUT_DIR)"; \
+	rm -f "$$zip_path"; \
+	( cd "$(BUILD)" && zip -r -q -X "../$$zip_path" "$$name" ); \
 	echo ">> contents:"; \
-	unzip -l "$$name.zip"; \
+	unzip -l "$$zip_path"; \
 	rm -rf "$(BUILD)"; \
-	echo ">> done: $$name.zip"
+	echo ">> done: $$zip_path"
 endef
 
 rust:
@@ -239,11 +245,11 @@ uninstall:
 	done
 	@echo ">> uninstalled skills from $(INSTALL_DIR)"
 
-## clean: remove the staging dir and every generated zip
+## clean: remove the staging dir and generated zips
 clean:
-	@rm -rf "$(BUILD)"
-	@rm -f $(INSTALL_ZIPS) "$(CCDP_ZIP)"
-	@echo ">> cleaned build/ and generated zips"
+	@rm -rf "$(BUILD)" "$(ZIP_OUTPUT_DIR)"
+	@rmdir target 2>/dev/null || true
+	@echo ">> cleaned build/ and generated zips in $(ZIP_OUTPUT_DIR)"
 
 ccdp:
 	@cd protocols/ccdp && make
@@ -277,6 +283,7 @@ ccdp-package: ccdp-package-clean
 	@cp protocols/ccdp/README.md "$(CCDP_STAGE)/README.md"
 	@find "$(CCDP_STAGE)" -name '.DS_Store' -delete
 	@echo ">> writing $(CCDP_ZIP)"
+	@mkdir -p "$(ZIP_OUTPUT_DIR)"
 	@rm -f "$(CCDP_ZIP)"
 	@cd "$(BUILD)" && zip -r -q -X "../$(CCDP_ZIP)" "$(CCDP_NAME)"
 	@echo ">> contents:"

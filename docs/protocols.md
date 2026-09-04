@@ -33,10 +33,10 @@ make ccdp-package
 make check-ccdp-package
 ```
 
-In package form, CCDP is staged as `ccdp.zip`. After unzipping it, start at
-`ccdp/README.md`. The package includes the assembled specification, source
-chapters, JSON material, visual guide, templates, and assembler source needed
-for package-local rebuilds.
+In package form, CCDP is written to `target/skills/ccdp.zip`. After unzipping
+it, start at `ccdp/README.md`. The package includes the assembled
+specification, source chapters, JSON material, visual guide, templates, and
+assembler source needed for package-local rebuilds.
 
 ## Source-Only Material
 

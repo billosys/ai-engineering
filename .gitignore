@@ -10,9 +10,9 @@ old
 \#*\#
 .\#*
 
-# Build artifacts from the packaging targets (make collab-framework, make skills, …)
+# Build artifacts from the packaging targets (make collab-framework, make skills, ...)
 /build
-/*.zip
+/target
 
 # Copyrighted material
 /knowledge/erlang/sources/md/erlang-otp-action

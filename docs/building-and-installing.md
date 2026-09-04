@@ -12,15 +12,15 @@ Use `make help` for the current target list.
 |---|---|
 | `make all` | Build every installable skill zip, including the collaboration framework. |
 | `make skills` | Build the domain/tooling skill zips. |
-| `make collab-framework` | Build `collaboration-framework.zip`. |
+| `make collab-framework` | Build `target/skills/collaboration-framework.zip`. |
 | `make rust`, `make go`, `make cpp`, `make js`, `make erlang` | Build one language skill package. |
 | `make cobalt`, `make design`, `make tailwindcss`, `make deno`, `make biome` | Build one tooling or design package target. |
-| `make clean` | Remove `build/` and generated zips. |
+| `make clean` | Remove `build/` and generated zips in `target/skills/`. |
 
 Generated skill zips are named from the packaged skill entrypoint's
-frontmatter and contain a package-local directory root. The source root can be
-larger than that package root. Generated zips are artifacts, not hand-edited
-source.
+frontmatter, written under `target/skills/`, and contain a package-local
+directory root. The source root can be larger than that package root. Generated
+zips are artifacts, not hand-edited source.
 
 ## Validation Commands
 
@@ -62,11 +62,12 @@ distribution and protocol package.
 | Command | Purpose |
 |---|---|
 | `make ccdp` | Assemble `protocols/ccdp/composite-cognition-dispatch-protocol.md`. |
-| `make ccdp-package` | Build `ccdp.zip`. |
-| `make check-ccdp-package` | Validate `ccdp.zip`, package-local Markdown paths, and extracted-package rebuild. |
+| `make ccdp-package` | Build `target/skills/ccdp.zip`. |
+| `make check-ccdp-package` | Validate `target/skills/ccdp.zip`, package-local Markdown paths, and extracted-package rebuild. |
 
 Do not expect `make all`, `make skills`, or `make install` to build or install
-`ccdp.zip`. Use the CCDP-specific targets for protocol package work.
+`target/skills/ccdp.zip`. Use the CCDP-specific targets for protocol package
+work.
 
 ## Commit Discipline
 
