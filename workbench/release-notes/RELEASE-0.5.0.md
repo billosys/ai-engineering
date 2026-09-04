@@ -310,6 +310,6 @@ documents that carry its planning, audit, and verification mechanics:
 - `knowledge/work-verification/SKILL.md` routes to
   `knowledge/work-verification/templates/LEDGER-DISCIPLINE.md`, which carries
   the per-scale verification discipline.
-- `knowledge/project-management/guides/version-history.md` records the
+- `knowledge/project-management/version-history.md` records the
   project-management guide history, including per-scale ledger files and
   per-slice artifact homes.

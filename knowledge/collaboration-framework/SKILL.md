@@ -16,7 +16,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.4.9
+version: 1.4.10
 license: MIT
 metadata:
   hermes:
@@ -113,9 +113,14 @@ applies:
   discipline. If the operator asks for **Expedited Mode**, read
   `guides/PROJECT-MANAGEMENT.md` and follow its Expedited Mode section before
   issuing CC prompts, closing slices, committing CDC updates, or advancing to
-  the next slice or arc. The summary in this skill is *not* a substitute for
-  following the wayfinder's required load set — improvising the mechanics from
-  the summary is the documented way these tasks go off the rails.
+  the next slice or arc. Expedited Mode only changes the explicit process
+  behaviors listed there: it means no shortcuts, no skipped validation, no
+  weaker evidence or review, no inferred source scope and no reduction or
+  other change in scope, no timeline interpretation, and no operator approval
+  gate override. The summary in this skill is *not* a substitute for following
+  the wayfinder's required load set — improvising the mechanics from the
+  summary is the documented way these tasks go off the rails.
+  Guardrail phrases for source and package validation: no shortcuts; no skipped validation; no weaker evidence or review; no inferred source scope and no reduction or other change in scope; no timeline interpretation; operator approval gates are not overridden.
 - Commissioning an **independent, evidence-based audit** of a repo or a body
   of work (load the code-audit prompt).
 - Driving a codebase to a **hard test-coverage threshold** without stopping
@@ -325,7 +330,7 @@ work demands:
 |------|----------|-----------|
 | [`guides/AI-CONSTITUTION-SUPPLEMENT.md`](./guides/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
 | [`guides/AI-ENGINEERING-METHODOLOGY.md`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
-| [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
+| [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`guides/CODE-AUDIT.md`](../code-auditing/guides/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
 | [`guides/CODE-COVERAGE.md`](../testing/guides/CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
@@ -369,6 +374,14 @@ neither subsumes the other.
 ---
 
 ## Version History
+
+### Version 1.4.10 — September 2026
+
+Updated Expedited Mode routing to point to the corrected project-management
+guardrails: the mode changes only the explicit process behaviors listed in the
+wayfinder and does not authorize shortcuts, skipped validation, weaker evidence
+or review, inferred source scope or scope changes, timeline interpretation, or
+operator approval gate override.
 
 ### Version 1.4.9 — September 2026
 

@@ -29,6 +29,12 @@ framework documents and a packaging surface for installable assistant skills.
   file's `Version History` section and bump its version if it has one. If a
   touched file has no local version, update the conceptually enclosing
   versioned file, at minimum the top-level `SKILL.md` for framework behavior.
+- **Framework component version-history management:** each framework component
+  root keeps its component version in `SKILL.md` and its component change log
+  in a sibling `version-history.md`. Changes to that component's `SKILL.md`,
+  `guides/`, `templates/`, or `examples/` are recorded in the sibling
+  version-history file; do not add or keep component histories under `guides/`
+  merely because a guide was edited.
 - Load the relevant domain skill before writing or reviewing domain material:
   Rust, Go, Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual
   Design, Biome, or Deno lint. Preserve source material under

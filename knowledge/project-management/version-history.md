@@ -1,9 +1,28 @@
 # Version History
 
+### Version 2.8 — September 2026
+
+Moved project-management version history from `guides/version-history.md` to
+the sibling component file `version-history.md`, matching the framework
+component history rule: the component version remains in `SKILL.md`, while
+changes to `SKILL.md`, `guides/`, `templates/`, or `examples/` are recorded in
+the sibling history file. Updated local routes and package lists for the move.
+
+Clarified **Expedited Mode** in
+[`guides/PROJECT-MANAGEMENT.md`](./guides/PROJECT-MANAGEMENT.md): it only
+changes the explicit listed commit, close, and advance behaviors. It means no
+shortcuts, no skipped validation, no weaker evidence or review, no inferred
+source scope and no reduction or other change in scope, no timeline
+interpretation, and no override of explicit operator approval gates.
+
+Documented the framework component version-history management practice in the
+top-level AGENTS file so future source-edit sessions see the rule before
+changing framework component files.
+
 ### Version 2.7 — September 2026
 
 Routed CC, CDC, and Operator terminology to
-[`../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
+[`../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
 as the current collaboration-framework source of truth. The
 project-management wayfinder now avoids carrying partial local definitions
 while preserving canonical filenames, artifact homes, and Expedited Mode
@@ -51,7 +70,7 @@ on scope/sequencing while ledger files carry acceptance and composition rows.
 ### Version 2.3 — August 2026
 
 Split the long project-management monolith
-([docs/PROJECT-MANAGEMENT.md](./PROJECT-MANAGEMENT.md)) into focused files under
+([guides/PROJECT-MANAGEMENT.md](./guides/PROJECT-MANAGEMENT.md)) into focused files under
 `guides/`, preserving the original part boundaries. The root file is now a
 wayfinder with a required load set, a split-file index, and minimum-context
 shortcuts for common operations. This keeps `PROJECT-MANAGEMENT.md` as the
@@ -105,7 +124,7 @@ now matured through three arcs and informs this revision. v2.0 lands the
 deferred layer:
 
 - **Absorbed the scales-of-work, fundamental-unit, sizing, and default-layout
-  detail extracted from [`AI-ENGINEERING-METHODOLOGY.md`](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md)**
+  detail extracted from [`AI-ENGINEERING-METHODOLOGY.md`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md)**
   (which now keeps a summary and points here). The vocabulary
   (project/arc/slice/step/iteration) and the context-window basis for sizing a
   slice now live in Part I; the canonical planning worktree in Part II.
@@ -140,4 +159,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_The project-management guide is a living spec. This version: 2.7, 2026-09-01._
+_The project-management guide is a living spec. This version: 2.8, 2026-09-04._

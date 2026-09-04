@@ -114,7 +114,7 @@ CF_FILES := \
 	knowledge/project-management/guides/07-anti-patterns.md \
 	knowledge/project-management/guides/08-maintenance.md \
 	knowledge/project-management/guides/09-worked-example-odm.md \
-	knowledge/project-management/guides/version-history.md \
+	knowledge/project-management/version-history.md \
 	knowledge/code-auditing/guides/CODE-AUDIT.md \
 	knowledge/testing/guides/CODE-COVERAGE.md \
 	knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md \

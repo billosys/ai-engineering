@@ -51,7 +51,7 @@ order.
 | Close an arc, check composition, and bubble findings up to the project | [`guides/05-closing-arcs.md`](./05-closing-arcs.md) |
 | Confirm a layout before creating planning directories or filenames | [`guides/06-confirmation-protocol.md`](./06-confirmation-protocol.md) |
 | Detect or refuse recurring bad planning shapes | [`guides/07-anti-patterns.md`](./07-anti-patterns.md) |
-| Update this project-management spec | [`guides/08-maintenance.md`](./08-maintenance.md) and [`guides/version-history.md`](./version-history.md) |
+| Update this project-management spec | [`guides/08-maintenance.md`](./08-maintenance.md) and [`version-history.md`](../version-history.md) |
 | Ground the project-management flow in a real run | [`guides/09-worked-example-odm.md`](./09-worked-example-odm.md) |
 
 ## Expedited Mode
@@ -71,6 +71,14 @@ following:
 - After the last slice of an arc is closed, automatically continue to formal
   arc close, then open the next arc and its first slice, complete with CC
   prompt, when the project roadmap provides one.
+
+Expedited Mode only changes the explicit commit, close, and advance behaviors
+listed above. Expedited Mode means no shortcuts, no skipped validation, no
+weaker evidence or review, no inferred source scope and no reduction or other
+change in scope, no timeline interpretation, and no override of explicit
+operator approval gates recorded in a plan or prompt.
+
+Guardrail phrases for source and package validation: no shortcuts; no skipped validation; no weaker evidence or review; no inferred source scope and no reduction or other change in scope; no timeline interpretation; operator approval gates are not overridden.
 
 ## Split Files
 
@@ -97,7 +105,7 @@ The old monolith split along its original part boundaries:
    itself.
 9. [`guides/09-worked-example-odm.md`](./09-worked-example-odm.md) -- a concrete
    example of the project-management flow.
-10. [`guides/version-history.md`](./version-history.md) -- version history for
+10. [`version-history.md`](../version-history.md) -- version history for
     the project-management guide.
 
 ## Minimum Context Shortcuts
@@ -123,12 +131,13 @@ context load; it does not relax the requirement to use the written mechanics.
 ## Version History
 
 The detailed project-management version history lives in
-[`guides/version-history.md`](./version-history.md). Current version: **2.7**
-(`2026-09-01`), which routes CC, CDC, and Operator terminology to the
-methodology source of truth while preserving the project-management mechanics
-and Expedited Mode behavior.
+[`version-history.md`](../version-history.md). Current version: **2.8**
+(`2026-09-04`), which moves project-management history beside the component
+entrypoint and clarifies that Expedited Mode changes only the listed process
+mechanics without weakening scope, evidence, validation, review, timing, or
+operator approval gates.
 
 ---
 
-_The project-management guide is a living spec. This wayfinder: 2.7,
-2026-09-01._
+_The project-management guide is a living spec. This wayfinder: 2.8,
+2026-09-04._
