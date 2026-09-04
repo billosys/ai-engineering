@@ -4,9 +4,12 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice02-project-management-process-history
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
+closed-by: CDC
+closed-on: 2026-09-04
+cdc-verification: cdc-verification.md
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
 planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning
 source-files-edited: authorized

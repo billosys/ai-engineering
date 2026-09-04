@@ -3,7 +3,7 @@
 Status: proposed-done pending CDC verification.
 
 Source commit: `d3d1f5a`
-Planning commit: pending close-packet commit.
+Planning commit: `26cee14bff30cba6d639c97bb6ed966daed0fe57`
 
 Explicit source file list committed:
 
@@ -36,7 +36,7 @@ Rows: 7. Done: 7. Deferred: 0. No-op: 0.
 | F-4 | Done | Source commit `d3d1f5a` documents framework component version-history management in top-level `AGENTS.md`; `artifacts/version-history-management-practice-record.md` records the home and rationale. |
 | F-5 | Done | `artifacts/source-validation-results.md` records passing `git diff --check`, `make check-skills`, `make collab-framework`, and `make check-package-paths` with zero hard package-path failures. |
 | F-6 | Done | `artifacts/source-validation-results.md` records local link validation for touched README/docs/AGENTS/SKILL routes: 67 checked, 0 missing. |
-| F-7 | Done | This closing report records source commit `d3d1f5a`, the pending close-packet planning commit, explicit source and planning file lists, final source status, all seven row dispositions, and Slice03 bubble-up. |
+| F-7 | Done | This closing report records source commit `d3d1f5a`, planning commit `26cee14bff30cba6d639c97bb6ed966daed0fe57`, explicit source and planning file lists, final source status, all seven row dispositions, and Slice03 bubble-up. |
 
 ## Artifact Inventory
 
@@ -74,4 +74,3 @@ history under `guides/`.
 Silent-drop diff: no Slice02 scope item was dropped. The source guide splits
 for `AI-CONSTITUTION-SUPPLEMENT.md` and `AI-ENGINEERING-METHODOLOGY.md` remain
 out of scope for Slice02 and assigned to later Arc08 slices.
-

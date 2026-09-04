@@ -167,7 +167,7 @@ Source edits are not authorized in Slice01.
 
 ### Slice 02: Project-Management Process Wording and Version-History Baseline
 
-Status: open.
+Status: verified-closed.
 
 Scope: update Expedited Mode wording in project-management source instructions,
 update collaboration-framework `SKILL.md` routing text that mentions Expedited
@@ -178,7 +178,7 @@ for later slices.
 
 ### Slice 03: Collaboration-Framework Posture Guide Split
 
-Status: planned after Slice02.
+Status: open.
 
 Scope: split `AI-CONSTITUTION-SUPPLEMENT.md` into the four approved numbered
 collaboration-framework guides, update the collaboration-framework `SKILL.md`
@@ -250,3 +250,12 @@ needs durable documentation for future sessions, expected in top-level
 `AGENTS.md`, and Expedited Mode should explicitly mean no inferred source scope
 and no reduction or other change in scope. Opened Slice02 against those
 clarifications.
+
+### v1.3 - 2026-09-04
+
+Closed Slice02 after CDC verification. Slice02 delivered the process/history
+baseline: corrected Expedited Mode wording, moved project-management
+version-history to the sibling component path, repaired package routes, and
+documented framework component version-history management in top-level
+`AGENTS.md`. Opened Slice03 for the collaboration-framework posture guide
+split.
