@@ -6,7 +6,7 @@ Proposed-done pending CDC verification.
 
 Source commit: `0ad843dfff6e01bdc68a566e9b8907ac76da88b6`
 
-Planning commit: `PENDING-FOLLOW-UP`
+Planning commit: `7e392b81cebd5e6845b3dcca71a8786de61684c4`
 
 ## Scope Completed
 
