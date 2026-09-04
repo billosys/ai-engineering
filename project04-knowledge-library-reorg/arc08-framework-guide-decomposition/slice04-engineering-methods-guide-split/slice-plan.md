@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice04-engineering-methods-guide-split
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -112,3 +112,20 @@ skip checks, weaken evidence, change review quality, or bypass approval gates.
   live route.
 - Source and planning commits are created with explicit file lists and both
   required co-author trailers.
+
+## CDC Closure
+
+Slice04 was CDC-verified closed on 2026-09-04.
+
+Verified source commit:
+
+- `0ad843dfff6e01bdc68a566e9b8907ac76da88b6`
+
+Verified planning commits:
+
+- `7e392b81cebd5e6845b3dcca71a8786de61684c4`
+- `61e25ca8208d578a64701a87e17358f02486c183`
+
+Closure evidence:
+
+- `cdc-verification.md`

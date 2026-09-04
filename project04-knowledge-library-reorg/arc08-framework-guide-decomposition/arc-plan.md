@@ -187,7 +187,7 @@ history into `knowledge/collaboration-framework/version-history.md`.
 
 ### Slice 04: Engineering-Methods Guide Split
 
-Status: open.
+Status: verified-closed.
 
 Scope: split `AI-ENGINEERING-METHODOLOGY.md` into the six accepted numbered
 engineering-methods guides, update engineering-methods and framework routes,
@@ -196,7 +196,7 @@ and reconcile engineering-methods version history into
 
 ### Slice 05: Remaining Framework Component Version-History Normalization
 
-Status: planned after Slice04.
+Status: open.
 
 Scope: normalize sibling `version-history.md` files and embedded history
 sections for `work-verification`, `testing`, `code-auditing`,
@@ -268,3 +268,17 @@ collaboration-framework history into sibling `version-history.md`, repaired
 live routes, and confirmed the generated collaboration-framework package no
 longer contains the old supplement path. Opened Slice04 for the
 engineering-methods guide split.
+
+### v1.5 - 2026-09-04
+
+Closed Slice04 after CDC verification. Slice04 split the engineering-methods
+monolith into six accepted numbered guides, normalized engineering-methods
+history into sibling `version-history.md`, repaired live routes, and confirmed
+the generated collaboration-framework package no longer contains the old
+methodology path.
+
+Opened Slice05 for the already-approved remaining framework component
+version-history normalization. Operator review also surfaced broader
+component-guide decomposition proposals from the project-level component layout
+plan, including an agent-coordination delegation-policy split; those are
+recorded as a deferred re-entry surface, not inferred Slice05 source scope.
