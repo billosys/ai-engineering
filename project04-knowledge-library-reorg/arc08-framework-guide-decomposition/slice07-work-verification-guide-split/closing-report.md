@@ -10,7 +10,7 @@ closed-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
 planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning/project04-knowledge-library-reorg
 source_commit: 2a092d76090387a12e34d08e895084ee5389dbb2
-planning_commit: pending until this report is committed
+planning_commit: b71f07916184344fd529cb3f8c07755938e074f5
 ```
 
 ## Verdict
@@ -29,7 +29,7 @@ Source commit:
 `2a092d76090387a12e34d08e895084ee5389dbb2`
 
 Planning commit:
-pending until this report is committed
+`b71f07916184344fd529cb3f8c07755938e074f5`
 
 Source explicit file list:
 
@@ -105,7 +105,7 @@ not committed.
 | F-5 | done | `artifacts/source-route-repair-map.md` records repaired work-verification, collaboration-framework, project-management, engineering-methods, docs, AGENTS, release-note, and package-list surfaces. |
 | F-6 | done | `artifacts/source-validation-results.md` records passing diff, link, skill, collaboration-framework package, and package-path validation. |
 | F-7 | done | Zip inspection confirms all five guides and retained `templates/LEDGER-DISCIPLINE.md` are present. |
-| F-8 | done | This report records exact source commit, pending planning commit placeholder, explicit file lists, final statuses, row walk, and bubble-up. |
+| F-8 | done | This report records exact source commit, planning close-packet commit, explicit file lists, final statuses, row walk, and bubble-up. |
 
 Rows: 8. Done: 8. Deferred: 0. No-op: 0.
 
