@@ -356,11 +356,13 @@ layout cleanup, package/install reconciliation, and release-note evidence.
 Status: active as of 2026-09-04.
 
 Expected capability: split the accepted collaboration-framework and
-engineering-methods monolith guides into focused selective-load guide files,
-normalize framework component version history into sibling
-`version-history.md` files beside each component `SKILL.md`, and tighten
-Expedited Mode wording so it cannot be interpreted as permission for
-shortcuts, weaker evidence, inferred scope, or timeline compression.
+engineering-methods monolith guides and the remaining accepted framework
+component guide families into focused selective-load guide files, normalize
+framework component version history into sibling `version-history.md` files
+beside each component `SKILL.md`, reconcile project-management's current
+guide/example layout against the accepted architecture, and tighten Expedited
+Mode wording so it cannot be interpreted as permission for shortcuts, weaker
+evidence, inferred scope, or timeline compression.
 
 This arc directly uses `artifacts/operator-accepted-architecture.md` and
 `artifacts/component-file-layout-plan.md` as support for the split and
@@ -369,9 +371,11 @@ confirms the exact split/version-history/Expedited Mode wording map with the
 operator.
 
 Detailed arc planning is open under
-`arc08-framework-guide-decomposition/`. Slice01,
-`slice01-split-map-version-history-confirmation`, is open as a read-only
-operator-confirmation gate before source decomposition starts.
+`arc08-framework-guide-decomposition/`. Slice01 through Slice04 are
+verified-closed. Slice05, `slice05-component-version-history-normalization`,
+is open. The operator expanded Arc08 on 2026-09-04 to keep the remaining
+accepted component guide splits in this same arc rather than opening a later
+arc.
 
 ## Current Status
 
@@ -388,13 +392,25 @@ Arc06 delivered final validation, packaging, installability, CCDP package
 separation, and operator acceptance readiness.
 
 Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator review.
-Arc08, `arc08-framework-guide-decomposition`, is active. Slice01,
-`slice01-split-map-version-history-confirmation`, is open.
+Arc08, `arc08-framework-guide-decomposition`, is active. Slice01 through
+Slice04 are verified-closed. Slice05,
+`slice05-component-version-history-normalization`, is open while later Arc08
+slices now carry project-management layout reconciliation and the remaining
+component guide splits.
 
 The next execution action is CC completion of:
-`arc08-framework-guide-decomposition/slice01-split-map-version-history-confirmation/cc-prompt.md`.
+`arc08-framework-guide-decomposition/slice05-component-version-history-normalization/cc-prompt.md`.
 
 ## Version History
+
+### v1.33 - 2026-09-04
+
+Integrated the operator-confirmed remaining framework component split map into
+Arc08 rather than creating a new arc. Arc08 now carries project-management
+guide/example layout reconciliation plus the work-verification, testing,
+code-auditing, agent-coordination, and contribution-style guide splits before
+final package/install/release reconciliation. This preserves Expedited Mode's
+no-inferred-scope rule while recording the operator's explicit scope expansion.
 
 ### v1.32 - 2026-09-04
 

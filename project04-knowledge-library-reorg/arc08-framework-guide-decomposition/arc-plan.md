@@ -16,10 +16,11 @@ operating-mode: expedited-with-explicit-operator-gate
 
 Arc08 finishes the framework component decomposition that Project02 accepted
 and Project04 repeatedly preserved as future work: the current monolith guide
-files for collaboration posture and engineering methodology become focused
-guide files with stable numbered routes, and framework component version
-history moves to sibling `version-history.md` files beside each component
-`SKILL.md`.
+files for collaboration posture, engineering methodology, and the remaining
+framework components become focused guide files with stable numbered routes,
+framework component version history moves to sibling `version-history.md` files
+beside each component `SKILL.md`, and project-management layout is reconciled
+against the accepted architecture.
 
 The arc also tightens Expedited Mode wording so it means only the explicit
 process changes the operator named. Expedited Mode must not be interpreted as
@@ -62,9 +63,79 @@ layout:
 5. `knowledge/engineering-methods/guides/05-component-boundary-analysis.md`
 6. `knowledge/engineering-methods/guides/06-source-package-release-gates.md`
 
-Slice01 must confirm this exact map with the operator before any source
-decomposition slice starts. If the operator changes the map, update this
-arc-plan and ledger before opening the first source-edit slice.
+The operator also re-confirmed on 2026-09-04 that the remaining accepted
+component guide decomposition belongs in Arc08, not a later arc. The remaining
+target layout is:
+
+```text
+project-management/
+  SKILL.md
+  version-history.md
+  guides/
+    01-scales-of-work.md
+    02-canonical-planning-worktree.md
+    03-planning-top-down.md
+    04-closing-slices.md
+    05-closing-arcs.md
+    06-confirmation-protocol.md
+    07-anti-patterns.md
+    08-maintenance.md
+  examples/
+    01-worked-example-odm.md
+
+work-verification/
+  SKILL.md
+  version-history.md
+  guides/
+    01-ledger-discipline.md
+    02-evidence-strength.md
+    03-row-closure.md
+    04-silent-drop-checks.md
+    05-independent-verification.md
+  templates/
+    LEDGER-DISCIPLINE.md
+
+testing/
+  SKILL.md
+  version-history.md
+  guides/
+    01-testing-discipline.md
+    02-coverage-hardening.md
+    03-validation-gates.md
+
+code-auditing/
+  SKILL.md
+  version-history.md
+  guides/
+    01-audit-scope-and-map.md
+    02-findings-and-severity.md
+    03-scale-aware-auditing.md
+    04-modernization-synthesis.md
+    05-audit-to-hardening-handoff.md
+
+agent-coordination/
+  SKILL.md
+  version-history.md
+  guides/
+    01-when-to-delegate.md
+    02-context-packets.md
+    03-result-integration.md
+    04-anti-patterns.md
+
+contribution-style/
+  SKILL.md
+  version-history.md
+  guides/
+    01-contribution-style.md
+    02-upstream-ticket-workflow.md
+  templates/
+    CONTRIBUTION-TICKET.md
+```
+
+Slice01 confirmed the first two source-decomposition maps. The remaining map
+above is now accepted as downstream Arc08 scope by operator direction; each
+source-edit slice should still inspect current source, preserve semantics, and
+record any implementation-specific conflicts before editing.
 
 ## Version History Contract
 
@@ -137,6 +208,10 @@ In scope:
 - Semantic splitting of the two monolith guides into focused files, including
   route text, headings, introductions, and local link repairs needed to keep
   the framework just as usable and more selectively loadable.
+- Semantic splitting of the remaining accepted framework component guide
+  families into the operator-confirmed target files.
+- Reconciliation of project-management's current `guides/09-worked-example-odm.md`
+  against the accepted `examples/01-worked-example-odm.md` target.
 - Version-history extraction, reconciliation, and sibling-file normalization
   for the eight framework component roots.
 - Validation that source, package, install, and CCDP behavior remain coherent.
@@ -201,16 +276,77 @@ Status: open.
 Scope: normalize sibling `version-history.md` files and embedded history
 sections for `work-verification`, `testing`, `code-auditing`,
 `agent-coordination`, and `contribution-style`, with route/link/package repairs.
+This slice should feed the downstream guide-decomposition slices; it should not
+perform those guide splits itself.
 
-### Slice 06: Final Package, Install, Link, and Release Reconciliation
+### Slice 06: Project-Management Example Layout Reconciliation
 
 Status: planned after Slice05.
 
+Scope: compare the current project-management guides against the accepted
+architecture, especially the current `guides/09-worked-example-odm.md` route
+versus the accepted `examples/01-worked-example-odm.md` target. Repair
+`SKILL.md`, Makefile/package routes, public docs, local links, and release
+notes as needed while preserving the eight numbered project-management guide
+routes.
+
+### Slice 07: Work-Verification Guide Split
+
+Status: planned after Slice06.
+
+Scope: split the ledger-discipline source into the accepted work-verification
+guide set: `01-ledger-discipline.md`, `02-evidence-strength.md`,
+`03-row-closure.md`, `04-silent-drop-checks.md`, and
+`05-independent-verification.md`, while preserving
+`templates/LEDGER-DISCIPLINE.md` as a package-local support asset if still
+needed.
+
+### Slice 08: Testing Guide Split
+
+Status: planned after Slice07.
+
+Scope: split testing guidance into `01-testing-discipline.md`,
+`02-coverage-hardening.md`, and `03-validation-gates.md`, broadening the old
+coverage prompt into testing-discipline routing without overclaiming future
+TDD material.
+
+### Slice 09: Code-Auditing Guide Split
+
+Status: planned after Slice08.
+
+Scope: split code-auditing guidance into `01-audit-scope-and-map.md`,
+`02-findings-and-severity.md`, `03-scale-aware-auditing.md`,
+`04-modernization-synthesis.md`, and `05-audit-to-hardening-handoff.md`,
+preserving the diagnosis-only audit contract and severity/file-line output
+discipline.
+
+### Slice 10: Agent-Coordination Guide Split
+
+Status: planned after Slice09.
+
+Scope: split the old subagent delegation policy into
+`01-when-to-delegate.md`, `02-context-packets.md`,
+`03-result-integration.md`, and `04-anti-patterns.md`, with
+`agent-coordination/SKILL.md` carrying the CC/CDC/operator terminology and
+route-level coordination contract.
+
+### Slice 11: Contribution-Style Guide Split
+
+Status: planned after Slice10.
+
+Scope: split contribution guidance into `01-contribution-style.md` and
+`02-upstream-ticket-workflow.md`, while preserving
+`templates/CONTRIBUTION-TICKET.md` as the package-local authoring template.
+
+### Slice 12: Final Package, Install, Link, and Release Reconciliation
+
+Status: planned after Slice11.
+
 Scope: run final README/docs/AGENTS/SKILL/component link validation, package
 validation, generated package inspection, isolated install smoke, CCDP package
-disposition, and release-note reconciliation. Confirm the old monolith guide
-filenames are no longer the live load targets unless explicitly retained as
-compatibility/provenance stubs.
+disposition, and release-note reconciliation. Confirm the old monolith and
+pre-split guide filenames are no longer the live load targets unless explicitly
+retained as compatibility/provenance stubs or package-local templates.
 
 ## Dependencies
 
@@ -221,7 +357,11 @@ compatibility/provenance stubs.
   loadability.
 - Slice05 depends on the version-history pattern established in Slice02 and
   the component-specific histories created in Slices03-04.
-- Slice06 depends on all source splits and version-history normalization.
+- Slice06 depends on Slice05 and the accepted Project02 project-management
+  layout.
+- Slices07-11 depend on Slice05's sibling version-history normalization and the
+  operator-confirmed remaining component guide map.
+- Slice12 depends on all source splits and version-history normalization.
 
 ## Version History
 
@@ -282,3 +422,13 @@ version-history normalization. Operator review also surfaced broader
 component-guide decomposition proposals from the project-level component layout
 plan, including an agent-coordination delegation-policy split; those are
 recorded as a deferred re-entry surface, not inferred Slice05 source scope.
+
+### v1.6 - 2026-09-04
+
+Integrated the operator's remaining accepted component guide layout into
+Arc08 rather than opening a new arc. Added downstream slices for
+project-management example layout reconciliation, work-verification guide
+split, testing guide split, code-auditing guide split, agent-coordination guide
+split, contribution-style guide split, and final package/install/release
+reconciliation. Slice05 remains scoped to version-history normalization and
+feeds the later guide-decomposition slices instead of performing them.
