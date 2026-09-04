@@ -102,7 +102,7 @@ Out of scope:
 
 ### Slice 01: Component Entrypoint Contract and Migration Map
 
-Status: open.
+Status: verified-closed.
 
 Scope: read-only inventory and decision packet for current framework component
 roots, top-level `SKILL.md`, Makefile/package behavior, public docs links, and
@@ -111,7 +111,7 @@ contract and prepare implementation slices.
 
 ### Slice 02: Collaboration Framework Entrypoint Relocation
 
-Status: planned.
+Status: open.
 
 Scope: move root `SKILL.md` to `knowledge/collaboration-framework/SKILL.md`,
 update Makefile packaging so `collaboration-framework.zip` still exposes
@@ -155,3 +155,12 @@ Opened Arc07 from operator re-entry after Arc06 acceptance-readiness review.
 Planned a four-slice cleanup arc to settle component `SKILL.md` entrypoints,
 remove stale `docs/` holdovers, migrate project-management guides, preserve
 package/install behavior, and reconcile release notes.
+
+### v1.1 - 2026-09-04
+
+Closed Slice01 after CDC verification and opened Slice02. Slice01 accepted the
+component entrypoint contract: move the collaboration-framework source
+entrypoint into `knowledge/collaboration-framework/SKILL.md`, keep long
+component material under `guides/`, add concise component-root `SKILL.md`
+wayfinders in the later layout slice, and preserve templates under
+`templates/`.

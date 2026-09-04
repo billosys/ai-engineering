@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc07-knowledge-component-entrypoints
 slice: slice01-component-entrypoint-contract
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -12,6 +12,9 @@ planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planni
 source-files-edited: none
 operating-mode: expedited
 artifact_home: artifacts/
+closed-by: CDC
+closed-on: 2026-09-04
+cdc-verification: cdc-verification.md
 ```
 
 ## Goal
@@ -113,3 +116,8 @@ state the exact validation gates later slices should run.
 - Planning checkout contains only this Slice01 planning packet before commit.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc07.
+
+## CDC Close
+
+Slice01 was CDC-verified closed on 2026-09-04. See
+`cdc-verification.md`.
