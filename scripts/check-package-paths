@@ -525,7 +525,7 @@ def run_self_test() -> int:
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("zips", nargs="*", help="generated zip archives to scan")
-    parser.add_argument("--exceptions", default="package-path-exceptions.tsv", help="TSV exception file")
+    parser.add_argument("--exceptions", default="assets/packaging/path-exceptions.tsv", help="TSV exception file")
     parser.add_argument("--repo", default=".", help="repository root for source-clone classification")
     parser.add_argument("--self-test", action="store_true", help="run parser self-test fixture")
     parser.add_argument("--check-exceptions-only", action="store_true", help="validate exception schema and exit")

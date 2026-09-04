@@ -58,8 +58,8 @@ framework documents and a packaging surface for installable assistant skills.
 - **Validation:** run `make check-skills` after any `SKILL.md` description or
   packaged-skill metadata change. Run `make check-package-paths` after changing
   packaged Markdown links, bundle contents, `Makefile` packaging lists, or
-  `package-path-exceptions.tsv`. The package-path gate may report accepted
-  warnings; hard failures must be fixed or explicitly dispositioned.
+  `assets/packaging/path-exceptions.tsv`. The package-path gate may report
+  accepted warnings; hard failures must be fixed or explicitly dispositioned.
 - **Packaging lists:** when adding, removing, or renaming a skill or bundled
   document, update the relevant `Makefile` lists/targets, README skill-library
   documentation, and package-path exceptions in the same slice.

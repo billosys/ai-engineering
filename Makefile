@@ -13,6 +13,7 @@
 BUILD := build
 ZIP_OUTPUT_DIR := target/skills
 INSTALL_DIR ?= $(HOME)/.agents/skills
+PACKAGE_PATH_EXCEPTIONS := assets/packaging/path-exceptions.tsv
 
 # Build-time guard: every skill bundle runs its SKILL.md through this before
 # packaging, so a description over the loader's limit fails the build instead
@@ -221,7 +222,7 @@ check-skills:
 
 ## check-package-paths: build all zips and validate package-context Markdown paths
 check-package-paths: all
-	@./scripts/check-package-paths --exceptions package-path-exceptions.tsv $(INSTALL_ZIPS)
+	@./scripts/check-package-paths --exceptions "$(PACKAGE_PATH_EXCEPTIONS)" $(INSTALL_ZIPS)
 
 $(INSTALL_DIR):
 	@mkdir -p "$@"
