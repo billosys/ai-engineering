@@ -39,6 +39,12 @@ directory unless the operator records an override.
 
 Project04 is in Expedited Mode as of 2026-09-02.
 
+Expedited Mode means only the explicit process changes listed below. It does
+not authorize shortcuts, skipped validation, weaker evidence, reduced CDC
+review, inferred source scope, inferred process changes, or timeline-driven
+interpretations of what "done" means. Explicit operator approval gates recorded
+in a project, arc, or slice plan still control advancement.
+
 - CC must commit proposed-done slice changes before CDC review, using explicit
   file lists for staging and commit pathspecs.
 - CDC must commit CDC review, verification, and planning updates after each
@@ -327,7 +333,7 @@ package separation, and operator acceptance readiness evidence for Project04.
 
 ### Arc 07: Knowledge Component Entrypoints and Guide Layout
 
-Status: active as of 2026-09-04.
+Status: closed on 2026-09-04.
 
 Expected capability: resolve post-move cleanup for collaboration-framework
 component roots by moving the collaboration-framework entrypoint under
@@ -340,10 +346,32 @@ This arc was opened from operator re-entry before final project acceptance.
 It supersedes the prior "no next arc" status without invalidating Arc06's
 release-readiness evidence.
 
+Detailed arc planning and closure evidence lives under
+`arc07-knowledge-component-entrypoints/`. Slice01 through Slice04 are
+verified-closed. Arc07 is closed and provides component entrypoint, guide
+layout cleanup, package/install reconciliation, and release-note evidence.
+
+### Arc 08: Framework Guide Decomposition and Version History Normalization
+
+Status: active as of 2026-09-04.
+
+Expected capability: split the accepted collaboration-framework and
+engineering-methods monolith guides into focused selective-load guide files,
+normalize framework component version history into sibling
+`version-history.md` files beside each component `SKILL.md`, and tighten
+Expedited Mode wording so it cannot be interpreted as permission for
+shortcuts, weaker evidence, inferred scope, or timeline compression.
+
+This arc directly uses `artifacts/operator-accepted-architecture.md` and
+`artifacts/component-file-layout-plan.md` as support for the split and
+version-history contract. Source decomposition may not begin until Slice01
+confirms the exact split/version-history/Expedited Mode wording map with the
+operator.
+
 Detailed arc planning is open under
-`arc07-knowledge-component-entrypoints/`. Slice01,
-`slice01-component-entrypoint-contract`, is open as a read-only component
-entrypoint decision and migration map before source moves begin.
+`arc08-framework-guide-decomposition/`. Slice01,
+`slice01-split-map-version-history-confirmation`, is open as a read-only
+operator-confirmation gate before source decomposition starts.
 
 ## Current Status
 
@@ -359,13 +387,23 @@ delivered the accepted public skill-kind and atomic/composite vocabulary.
 Arc06 delivered final validation, packaging, installability, CCDP package
 separation, and operator acceptance readiness.
 
-Arc07, `arc07-knowledge-component-entrypoints`, is active. Slice01,
-`slice01-component-entrypoint-contract`, is open.
+Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator review.
+Arc08, `arc08-framework-guide-decomposition`, is active. Slice01,
+`slice01-split-map-version-history-confirmation`, is open.
 
 The next execution action is CC completion of:
-`arc07-knowledge-component-entrypoints/slice01-component-entrypoint-contract/cc-prompt.md`.
+`arc08-framework-guide-decomposition/slice01-split-map-version-history-confirmation/cc-prompt.md`.
 
 ## Version History
+
+### v1.32 - 2026-09-04
+
+Closed Arc07 after operator review, marked project ledger row P-8 done, and
+opened Arc08, `arc08-framework-guide-decomposition`, with Slice01,
+`slice01-split-map-version-history-confirmation`, as a read-only confirmation
+gate. Arc08 adds the previously accepted framework guide split, framework
+component sibling `version-history.md` normalization, and explicit Expedited
+Mode wording correction before project-level acceptance.
 
 ### v1.31 - 2026-09-04
 

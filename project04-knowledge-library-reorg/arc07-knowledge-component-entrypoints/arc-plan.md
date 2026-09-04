@@ -3,7 +3,7 @@
 ```yaml
 project: project04-knowledge-library-reorg
 arc: arc07-knowledge-component-entrypoints
-status: active
+status: closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -187,3 +187,11 @@ Closed Slice04 after CDC verification. CDC reproduced the final package,
 install, link, and release-note checks, then made one narrow generated CCDP
 date refresh required by the freshness gate. Formal Arc07 close is intentionally
 held for operator review per operator instruction.
+
+### v1.5 - 2026-09-04
+
+Closed Arc07 after operator review. The arc delivered component entrypoints,
+guide layout cleanup, package/install reconciliation, and release-note
+reconciliation. Operator review surfaced a follow-on Arc08 requirement for the
+previously accepted framework guide split, sibling component version-history
+normalization, and tightened Expedited Mode wording.
