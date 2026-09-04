@@ -4,6 +4,13 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.3 - 2026-09-04
+
+Updated the project-management package route for the accepted worked-example
+layout: the ODM worked example now lives at
+`knowledge/project-management/examples/01-worked-example-odm.md` instead of
+under `guides/`.
+
 ### Version 1.5.2 - 2026-09-04
 
 Included sibling component histories for work-verification, testing,

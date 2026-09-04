@@ -5,7 +5,7 @@ description: |
   collaboration framework. Use before planning or closing a project, arc, or
   slice; inspecting canonical planning worktree layout; applying Expedited
   Mode; or deciding whether bubble-up findings require a plan update.
-version: 1.0.1
+version: 1.0.2
 license: MIT
 metadata:
   hermes:
@@ -33,7 +33,7 @@ Focused guides:
 - [Confirmation Protocol](./guides/06-confirmation-protocol.md)
 - [Anti-Patterns](./guides/07-anti-patterns.md)
 - [Maintenance](./guides/08-maintenance.md)
-- [Worked Example: ODM](./guides/09-worked-example-odm.md)
+- [Worked Example: ODM](./examples/01-worked-example-odm.md)
 - [Version History](./version-history.md)
 
 This is a component entrypoint for the collaboration framework. It is included

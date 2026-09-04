@@ -1,5 +1,12 @@
 # Version History
 
+### Version 2.9 — September 2026
+
+Moved the worked example from `guides/09-worked-example-odm.md` to
+`examples/01-worked-example-odm.md`, matching the accepted Project04 Arc08
+project-management layout. The eight numbered project-management guides and
+`guides/PROJECT-MANAGEMENT.md` wayfinder remain under `guides/`.
+
 ### Version 2.8 — September 2026
 
 Moved project-management version history from `guides/version-history.md` to

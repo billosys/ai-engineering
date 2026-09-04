@@ -128,7 +128,7 @@ CF_FILES := \
 	knowledge/project-management/guides/06-confirmation-protocol.md \
 	knowledge/project-management/guides/07-anti-patterns.md \
 	knowledge/project-management/guides/08-maintenance.md \
-	knowledge/project-management/guides/09-worked-example-odm.md \
+	knowledge/project-management/examples/01-worked-example-odm.md \
 	knowledge/project-management/version-history.md \
 	knowledge/code-auditing/guides/CODE-AUDIT.md \
 	knowledge/testing/guides/CODE-COVERAGE.md \

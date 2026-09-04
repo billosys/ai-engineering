@@ -52,7 +52,7 @@ order.
 | Confirm a layout before creating planning directories or filenames | [`guides/06-confirmation-protocol.md`](./06-confirmation-protocol.md) |
 | Detect or refuse recurring bad planning shapes | [`guides/07-anti-patterns.md`](./07-anti-patterns.md) |
 | Update this project-management spec | [`guides/08-maintenance.md`](./08-maintenance.md) and [`version-history.md`](../version-history.md) |
-| Ground the project-management flow in a real run | [`guides/09-worked-example-odm.md`](./09-worked-example-odm.md) |
+| Ground the project-management flow in a real run | [`examples/01-worked-example-odm.md`](../examples/01-worked-example-odm.md) |
 
 ## Expedited Mode
 
@@ -103,7 +103,7 @@ The old monolith split along its original part boundaries:
    habits to refuse or surface before adopting.
 8. [`guides/08-maintenance.md`](./08-maintenance.md) -- when to update the spec
    itself.
-9. [`guides/09-worked-example-odm.md`](./09-worked-example-odm.md) -- a concrete
+9. [`examples/01-worked-example-odm.md`](../examples/01-worked-example-odm.md) -- a concrete
    example of the project-management flow.
 10. [`version-history.md`](../version-history.md) -- version history for
     the project-management guide.
@@ -132,12 +132,11 @@ context load; it does not relax the requirement to use the written mechanics.
 
 The detailed project-management version history lives in
 [`version-history.md`](../version-history.md). Current version: **2.8**
-(`2026-09-04`), which moves project-management history beside the component
-entrypoint and clarifies that Expedited Mode changes only the listed process
-mechanics without weakening scope, evidence, validation, review, timing, or
-operator approval gates.
+(`2026-09-04`), which moves the worked example from `guides/` to `examples/`
+while preserving the eight numbered project-management guide routes and the
+wayfinder.
 
 ---
 
-_The project-management guide is a living spec. This wayfinder: 2.8,
+_The project-management guide is a living spec. This wayfinder: 2.9,
 2026-09-04._
