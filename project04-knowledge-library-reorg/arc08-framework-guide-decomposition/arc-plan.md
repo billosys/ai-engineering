@@ -149,7 +149,7 @@ Out of scope:
 
 ### Slice 01: Confirm Split Map, Version-History Contract, and Expedited Wording
 
-Status: open.
+Status: verified-closed.
 
 Scope: read-only confirmation slice. Inventory current monolith guide headings,
 embedded version-history sections, source/package routes, and Expedited Mode
@@ -225,3 +225,12 @@ numbered collaboration-framework guide order and explicitly broadened the arc
 to include framework component version-history normalization and Expedited Mode
 wording correction. Slice01 is opened as a read-only confirmation gate before
 source decomposition starts.
+
+### v1.1 - 2026-09-04
+
+Closed Slice01 after CDC verification. Slice01 produced the operator
+confirmation packet, source-impact plan, monolith/history inventory, and
+approval-gate artifact without source edits. The A-1 arc ledger row was
+corrected from `operator-confirmed split map` to `operator-confirmation packet`
+because operator approval is the gate after Slice01, not evidence created
+inside Slice01. Slice02 remains blocked until operator approval is recorded.
