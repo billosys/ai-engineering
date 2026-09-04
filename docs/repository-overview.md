@@ -13,7 +13,7 @@ docs when you need more context.
 | [`README.md`](../README.md) | Concise orientation, quick commands, and links to focused docs. |
 | [`docs/`](./) | Human-facing explanation about the repository and how to navigate it. |
 | [`knowledge/`](../knowledge/) | Source and derived knowledge-library substrate consumed by skills and packages. |
-| [`SKILL.md`](../SKILL.md) | Top-level `collaboration-framework` composite framework/operational skill entrypoint. |
+| [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | `collaboration-framework` composite framework/operational skill source entrypoint. |
 | [`protocols/`](../protocols/) | Protocol distributions, currently including CCDP. |
 | [`templates/`](../templates/) | Cross-cutting support templates that are not owned by a single knowledge surface. |
 | [`scripts/`](../scripts/) | Packaging and validation helpers used by the Makefile. |

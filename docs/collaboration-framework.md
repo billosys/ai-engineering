@@ -1,9 +1,10 @@
 # Collaboration Framework
 
-The collaboration framework is the repository's top-level composite
+The collaboration framework is the repository's composite
 framework/operational skill for rigorous human/LLM engineering work. Its
-entrypoint is [`SKILL.md`](../SKILL.md), and its supporting material lives
-under [`knowledge/`](../knowledge/).
+source entrypoint is
+[`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md),
+and its supporting material lives under [`knowledge/`](../knowledge/).
 
 This page explains how to navigate the framework. The framework source itself
 remains in the entrypoint and knowledge roots.
@@ -23,7 +24,7 @@ compound across time, commits, reviewers, or planning artifacts.
 
 | Surface | Source path | Role |
 |---|---|---|
-| Composer skill | [`SKILL.md`](../SKILL.md) | Top-level collaboration-framework entrypoint and route table. |
+| Composer skill | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Collaboration-framework source entrypoint and route table. |
 | Collaboration posture | [`knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md`](../knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md) | Peer-frame and quality-floor posture. |
 | Engineering method | [`knowledge/engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md`](../knowledge/engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md) | Knowledge substrate, collaborative posture, and process rigor. |
 | Project management | [`knowledge/project-management/docs/PROJECT-MANAGEMENT.md`](../knowledge/project-management/docs/PROJECT-MANAGEMENT.md) | Project, arc, slice, planning, close, and bubble-up wayfinder. |
@@ -49,4 +50,4 @@ from ledger discipline and the relevant project-management close file.
 
 Use the composer for the whole working system, and use component source paths
 when the task clearly needs only one discipline. The component roots do not
-deprecate the top-level `collaboration-framework` entrypoint.
+deprecate the generated `collaboration-framework/SKILL.md` package entrypoint.

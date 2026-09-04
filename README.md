@@ -34,7 +34,7 @@ The repository currently includes:
 
 - domain/tooling skill packages for Rust, Go, Erlang/OTP, C++,
   JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, Biome, and Deno lint;
-- the top-level [`collaboration-framework`](./SKILL.md) composite
+- the [`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) composite
   framework/operational skill, with its framework material under
   [`knowledge/`](./knowledge/);
 - reusable support material such as the
@@ -66,7 +66,6 @@ make check-ccdp-package
 ```text
 ai-engineering/
 ├── README.md          # repository orientation
-├── SKILL.md           # collaboration-framework skill entrypoint
 ├── Makefile           # package, validation, install, and CCDP targets
 ├── docs/              # end-user repository documentation
 ├── knowledge/         # skill source and derived knowledge substrate
@@ -89,7 +88,7 @@ composite skill exists to select, sequence, route, govern, or compose multiple
 loadable components.
 
 Rust is the public example of an atomic domain/tooling skill.
-[`collaboration-framework`](./SKILL.md) is the public example of a composite
+[`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) is the public example of a composite
 framework/operational skill and remains the daily-driver composer. CCDP is a
 protocol distribution and protocol package, not an installable skill package.
 `concept-card-method` remains a planned method skill until source and package

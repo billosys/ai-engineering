@@ -58,9 +58,11 @@ is a multi-entrypoint knowledge root that ships two lint skills, and
 [`knowledge/deno/`](../knowledge/deno/)
 uses a specific JavaScript linter entrypoint.
 
-The top-level collaboration framework entrypoint remains [`SKILL.md`](../SKILL.md)
-at the repository root while its supporting material lives under several
-`knowledge/` component roots. It is the public example of a composite
+The collaboration framework source entrypoint lives at
+[`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md)
+while its supporting material lives under several `knowledge/` component roots.
+Generated packages still expose the installed entrypoint as
+`collaboration-framework/SKILL.md`. It is the public example of a composite
 framework/operational skill.
 
 CCDP lives under [`protocols/ccdp/`](../protocols/ccdp/), not under

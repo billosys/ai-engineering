@@ -37,7 +37,7 @@ CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 
 # Every SKILL.md (and the two biome/deno variants) packaged by this Makefile.
 ALL_SKILL_FILES := \
-	SKILL.md \
+	knowledge/collaboration-framework/SKILL.md \
 	knowledge/rust/SKILL.md \
 	knowledge/go/SKILL.md \
 	knowledge/cpp/SKILL.md \
@@ -53,7 +53,7 @@ ALL_SKILL_FILES := \
 ## help: list the available targets
 help:
 	@echo "Packaging targets:"
-	@echo "  make collab-framework   -> $(CF_ZIP) (SKILL.md + framework docs)"
+	@echo "  make collab-framework   -> $(CF_ZIP) (collaboration framework SKILL.md + framework docs)"
 	@echo "  make rust               -> rust-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
 	@echo "  make cpp                -> cpp-guidelines.zip"
@@ -76,8 +76,8 @@ help:
 	@echo "  make check-package-paths -> validate Markdown paths inside generated zips"
 
 # ---------------------------------------------------------------------------
-# collaboration-framework: top-level SKILL.md plus the documents it pulls in,
-# in their docs/ and templates/ layout so the relative links resolve.
+# collaboration-framework: moved source SKILL.md plus the documents it pulls in,
+# staged as package-root SKILL.md with package-local links.
 # Nothing else.
 # ---------------------------------------------------------------------------
 
@@ -88,7 +88,6 @@ CF_STAGE := $(BUILD)/$(CF_NAME)
 # Explicit (not a docs/ glob) on purpose: the bundle is the skill and its
 # dependencies, and nothing else.
 CF_FILES := \
-	SKILL.md \
 	knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md \
 	knowledge/engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md \
 	knowledge/project-management/docs/PROJECT-MANAGEMENT.md \
@@ -109,17 +108,18 @@ CF_FILES := \
 	knowledge/work-verification/templates/LEDGER-DISCIPLINE.md \
 	knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md
 
-## collab-framework: build collaboration-framework.zip (SKILL.md + its 9 files)
+## collab-framework: build collaboration-framework.zip (package-root SKILL.md + framework files)
 collab-framework: collab-framework-clean
-	@$(CHECK_SKILL) SKILL.md
+	@$(CHECK_SKILL) knowledge/collaboration-framework/SKILL.md
 	@echo ">> staging $(CF_NAME) bundle"
 	@mkdir -p "$(CF_STAGE)"
+	@./scripts/stage-skill-entrypoint knowledge/collaboration-framework/SKILL.md "$(CF_STAGE)/SKILL.md"
 	@for f in $(CF_FILES); do \
 		if [ ! -f "$$f" ]; then \
 			echo "ERROR: missing required file: $$f" >&2; exit 1; \
 		fi; \
 		mkdir -p "$(CF_STAGE)/$$(dirname "$$f")"; \
-		cp "$$f" "$(CF_STAGE)/$$f"; \
+		./scripts/stage-skill-entrypoint "$$f" "$(CF_STAGE)/$$f"; \
 	done
 	@find "$(CF_STAGE)" -name '.DS_Store' -delete
 	@echo ">> writing $(CF_ZIP)"

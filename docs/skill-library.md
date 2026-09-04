@@ -1,8 +1,8 @@
 # Skill Library
 
 The skill library is the collection of Markdown skill packages and guide
-material in [`knowledge/`](../knowledge/), plus the top-level
-[`collaboration-framework`](../SKILL.md) entrypoint. Each installable skill has
+material in [`knowledge/`](../knowledge/), plus the
+[`collaboration-framework`](../knowledge/collaboration-framework/SKILL.md) entrypoint. Each installable skill has
 a skill entrypoint file and package target; the detailed guide content stays
 with the owning knowledge root.
 
@@ -27,7 +27,7 @@ loadable components.
 | `deno-js-linter.zip` | [`knowledge/deno/SKILL-js-linter.md`](../knowledge/deno/SKILL-js-linter.md) | Applying Deno lint rules to JavaScript. |
 | `biome-js-linter.zip` | [`knowledge/biome/SKILL-js-linter.md`](../knowledge/biome/SKILL-js-linter.md) | Applying Biome JavaScript lint rules. |
 | `biome-linter.zip` | [`knowledge/biome/SKILL-web-linter.md`](../knowledge/biome/SKILL-web-linter.md) | Applying broader Biome web lint rules. |
-| `collaboration-framework.zip` | [`SKILL.md`](../SKILL.md) | Running sustained planning, implementation, review, and verification work. |
+| `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Running sustained planning, implementation, review, and verification work. |
 
 ## Choosing What To Load
 
@@ -59,6 +59,8 @@ package surface needed by a skill loader.
 
 Use source paths when you are studying, maintaining, or auditing the repository.
 Use generated zips when you are installing skills into a loader.
+The generated `collaboration-framework.zip` still exposes package entrypoint
+`collaboration-framework/SKILL.md`.
 
 ## Planned Method Material
 
