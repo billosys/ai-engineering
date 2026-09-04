@@ -26,6 +26,7 @@ layout.
 | `source-v32/` | Copies of the two original v3.2 workbench method documents. | Source baseline and provenance. |
 | `release-context/` | Current README and 0.5.0 release-note context from the source checkout. | Discoverability, release-note, and package context. |
 | `project03-concept-card-method/` | Full Project03 planning packet as copied from the planning worktree. | Method inventory, conceptual model, skill architecture, implementation plan, closure evidence, and preserved original assessment. |
+| `operator-accepted-src-prep-arch.md` | Operator-accepted architecture for standalone PDF/EPUB source preparation as an upstream capability consumed by concept-card generation. | Planning input for Project05 roadmap, dependency, and implementation-scope decisions. |
 | `fresh-codex-project05-planning-prompt.md` | Handoff prompt for a fresh Codex instance. | Starting prompt for creating the Project05 plan. |
 
 ## Important Boundary

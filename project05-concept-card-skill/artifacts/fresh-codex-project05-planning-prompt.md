@@ -44,6 +44,12 @@ The operator intended the concept-card effort to produce an actual skill that:
 Project03 successfully planned this work but did not implement the source
 skill. Project05 exists to plan and carry out the missing implementation.
 
+The operator also accepted a companion architecture for PDF and EPUB source
+preparation. Project05 must account for this as part of the work: source
+preparation should become a standalone upstream method or operational skill,
+with `concept-card-method` routing to it when raw or converted sources must be
+prepared before card extraction.
+
 ## Hard Dependency
 
 Project05 is blocked by the Project04 knowledge-library reorganization.
@@ -79,6 +85,16 @@ Read and incorporate these artifact groups:
     - `arc05-implementation-plan/slice05-implementation-plan-synthesis/artifacts/v40-deferral-register.md`
 - `artifacts/release-context/`
   - Current README and 0.5.0 release-note context.
+- `artifacts/operator-accepted-src-prep-arch.md`
+  - Operator-accepted architecture for extracting and preparing PDF/EPUB
+    sources as a standalone upstream capability that concept-card generation
+    consumes.
+- `../old/dev/concept-cards/0011-prompt-prepare-pdf-converted-source-for-indexing-v2.md`
+  - Current PDF source-preparation prompt to preserve as provenance and revise
+    into reusable source-preparation guidance.
+- `../old/dev/concept-cards/0012-prompt-prepare-epub-converted-source-for-indexing-v2.md`
+  - Current EPUB source-preparation prompt to preserve as provenance and revise
+    into reusable source-preparation guidance.
 
 If an expected file is absent, record the absence as a planning fact instead of
 inventing its contents.
@@ -97,9 +113,32 @@ The first slice should be a dependency and implementation-readiness slice. It
 should not implement source files. It should produce artifacts that answer:
 
 - what Project03 already decided;
+- what the operator-accepted source-preparation architecture adds to Project05;
 - what Project04 must decide before source implementation can proceed;
 - what source surfaces Project05 expects to create or modify after unblocking;
+- whether `knowledge/source-preparation/` is the correct post-Project04 source
+  root, or what compatible source root Project04 requires;
+- how `concept-card-method` will depend on and route to source preparation;
 - what verification gates will prove the skill is complete.
+
+Project05 should include source-preparation in the roadmap as a sibling
+capability to `concept-card-method`, not as hidden content inside the
+concept-card skill. The expected default architecture is:
+
+- `knowledge/source-preparation/` as a standalone method or operational skill
+  source root after Project04 unblocks implementation;
+- a thin `SKILL.md` with load triggers for PDF, EPUB, converted Markdown,
+  media normalization, source structure mapping, splitting, locator capture,
+  and preparation validation;
+- focused guides for operator workflow, PDF preparation, EPUB preparation,
+  media path normalization, structure mapping and splitting, validation and
+  reports, source layout, locator model, and converter notes;
+- templates or package-compatible guide assets for source-prep manifests,
+  structure maps, and validation reports;
+- examples for PDF and EPUB preparation reports;
+- optional future generic helpers only if explicitly scoped and verified;
+- updates to `concept-card-method` so concept-card extraction consumes
+  prepared source snapshots and reports as upstream provenance.
 
 ## Project05 Definition Of Done Draft
 
@@ -116,13 +155,25 @@ The Project05 plan should refine this draft definition of done:
 - Templates and examples are present and packaged.
 - The v3.2 source docs and Project03 planning evidence remain preserved as
   provenance.
+- The PDF and EPUB source-preparation prompts are preserved as provenance and
+  revised into a standalone source-preparation skill or explicitly deferred by
+  operator decision with a durable reason.
+- The source-preparation skill, if implemented in Project05, supports both
+  human-assisted and agent-direct use.
+- Source preparation defines outputs that are valid inputs to
+  concept-card-method while also remaining useful for full-text indexing,
+  standalone reading, and source review.
+- `concept-card-method` routes PDF/EPUB/raw-source preparation tasks to the
+  source-preparation skill instead of owning conversion and segmentation
+  itself.
 - README/library discoverability is updated for the new skill category and the
-  new concept-card skill.
+  new concept-card skill, plus the source-preparation skill if implemented.
 - Packaging surfaces are updated after the Project04 layout is known.
 - Verification includes skill checks, package path checks, generated package
   checks, installability checks, Markdown hygiene, and source/version-history
-  review.
-- Release notes describe the implemented skill once implementation is complete.
+  review for both concept-card-method and source-preparation surfaces.
+- Release notes describe the implemented skill surfaces once implementation is
+  complete.
 
 ## Expedited Mode
 
