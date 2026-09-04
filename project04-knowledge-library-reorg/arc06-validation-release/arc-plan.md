@@ -92,7 +92,7 @@ shows they are required.
 
 ### Slice 03: CCDP Package Freshness and Protocol Validation
 
-Status: open.
+Status: verified-closed.
 
 Scope: resolve the CCDP stale assembled-spec re-entry item through an
 explicitly authorized protocol refresh or an accepted final disposition, then
@@ -100,7 +100,7 @@ validate `make ccdp-package` and `make check-ccdp-package`.
 
 ### Slice 04: Release Readiness and Operator Acceptance
 
-Status: not-open.
+Status: open.
 
 Scope: reconcile final README/docs/package/install/protocol evidence, prepare
 operator acceptance material, and make Arc06 ready for close.
@@ -115,6 +115,15 @@ operator acceptance material, and make Arc06 ready for close.
 - Slice04 depends on all final validation gates from Slice02 and Slice03.
 
 ## Version History
+
+### v1.3 - 2026-09-04
+
+Recorded Slice03 as verified-closed after CDC reproduced all six ledger rows,
+checked source/planning commit scopes, reran CCDP package validation, inspected
+`ccdp.zip`, and confirmed the former CCDP package freshness blocker is
+resolved. Opened Slice04, `slice04-release-readiness-operator-acceptance`, to
+perform final release-readiness reconciliation and prepare Arc06/Project04
+operator acceptance evidence.
 
 ### v1.2 - 2026-09-03
 

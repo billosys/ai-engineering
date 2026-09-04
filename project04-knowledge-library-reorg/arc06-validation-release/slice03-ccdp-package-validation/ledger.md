@@ -13,6 +13,8 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed by CDC. CDC reproduced all six ledger rows, reran
+CCDP package validation, inspected `ccdp.zip`, and confirmed the source repair
+was limited to the authorized assembled CCDP protocol file.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.

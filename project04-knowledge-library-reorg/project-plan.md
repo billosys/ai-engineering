@@ -334,14 +334,24 @@ delivered the concise README orientation and focused end-user docs, and Arc05
 delivered the accepted public skill-kind and atomic/composite vocabulary.
 
 Arc06, `arc06-validation-release`, is active. Slice01,
-`slice01-validation-surface-inventory`, and Slice02,
-`slice02-package-path-install-validation`, are verified-closed. Slice03,
-`slice03-ccdp-package-validation`, is open.
+`slice01-validation-surface-inventory`, Slice02,
+`slice02-package-path-install-validation`, and Slice03,
+`slice03-ccdp-package-validation`, are verified-closed. Slice04,
+`slice04-release-readiness-operator-acceptance`, is open.
 
 The next execution action is CC completion of:
-`arc06-validation-release/slice03-ccdp-package-validation/cc-prompt.md`.
+`arc06-validation-release/slice04-release-readiness-operator-acceptance/cc-prompt.md`.
 
 ## Version History
+
+### v1.29 - 2026-09-04
+
+Recorded Arc06 Slice03 as verified-closed after CDC reproduced all six ledger
+rows, checked CC's source and planning commits, reran CCDP package validation,
+inspected `ccdp.zip`, and confirmed the CCDP freshness blocker is resolved.
+Opened Slice04, `slice04-release-readiness-operator-acceptance`, to reconcile
+final release readiness and prepare operator acceptance evidence before Arc06
+and Project04 close.
 
 ### v1.28 - 2026-09-03
 

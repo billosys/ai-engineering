@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc06-validation-release
 slice: slice03-ccdp-package-validation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-03
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -102,3 +102,10 @@ Required validation includes:
 - Source/package validation remains green after CCDP repair or disposition.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc06.
+
+## CDC Close
+
+Verified-closed on 2026-09-04. CDC reproduced all six ledger rows, checked
+CC's source and planning commit scopes and required trailers, reran CCDP
+package validation, inspected `ccdp.zip`, and confirmed the former CCDP
+freshness blocker is resolved.
