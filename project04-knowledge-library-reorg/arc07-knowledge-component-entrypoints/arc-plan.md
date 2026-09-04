@@ -111,7 +111,7 @@ contract and prepare implementation slices.
 
 ### Slice 02: Collaboration Framework Entrypoint Relocation
 
-Status: open.
+Status: verified-closed.
 
 Scope: move root `SKILL.md` to `knowledge/collaboration-framework/SKILL.md`,
 update Makefile packaging so `collaboration-framework.zip` still exposes
@@ -120,14 +120,15 @@ references affected by the move.
 
 ### Slice 03: Component Guide Layout and Standalone Entrypoints
 
-Status: planned.
+Status: open.
 
 Scope: implement the accepted component-root contract from Slice01: remove
 stale component `docs/` directory holdovers, migrate
 `project-management/docs/pm/` to `project-management/guides/`, create or
 preserve component `SKILL.md` entrypoints as accepted, move retained root-level
 component documents one level up out of `docs/`, remove emptied legacy `docs/`
-directories with `rmdir`, and repair package-local links.
+directories with `rmdir`, repair package-local links, and repair standing
+instruction/source references surfaced by Slice02.
 
 ### Slice 04: Reconciliation, Package Validation, and Release Notes
 
@@ -164,3 +165,10 @@ entrypoint into `knowledge/collaboration-framework/SKILL.md`, keep long
 component material under `guides/`, add concise component-root `SKILL.md`
 wayfinders in the later layout slice, and preserve templates under
 `templates/`.
+
+### v1.2 - 2026-09-04
+
+Closed Slice02 after CDC verification and opened Slice03. Slice02 completed the
+collaboration-framework entrypoint relocation and surfaced two explicit
+Slice03 repairs: the remaining engineering-methods `../SKILL.md` source
+reference and the project-management path references in `AGENTS.md`.

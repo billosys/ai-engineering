@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc07-knowledge-component-entrypoints
 slice: slice02-collaboration-framework-entrypoint-relocation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -12,6 +12,9 @@ planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planni
 source-files-edited: authorized
 operating-mode: expedited
 artifact_home: artifacts/
+closed-by: CDC
+closed-on: 2026-09-04
+cdc-verification: cdc-verification.md
 ```
 
 ## Goal
@@ -97,3 +100,8 @@ If implementation requires any source file outside the authorized list in
   co-author trailers.
 - Planning artifacts, ledger, and `closing-report.md` are committed in a
   separate planning commit with both required co-author trailers.
+
+## CDC Close
+
+Slice02 was CDC-verified closed on 2026-09-04. See
+`cdc-verification.md`.
