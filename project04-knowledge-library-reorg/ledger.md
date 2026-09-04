@@ -17,10 +17,12 @@ method categories.
 | P-5 | Arc 05 closes with accepted public skill vocabulary and wayfinding for domain/tooling, framework/operational, method, protocol, support, atomic, and composite surfaces | `test -f arc05-skill-vocabulary/closing-report.md && rg -n "Composition verdict: delivered|domain|tooling|framework|operational|method|protocol|support|atomic|composite" arc05-skill-vocabulary/closing-report.md` | correctness-grade | project-plan | done | Reproduced by CDC: Arc05 `closing-report.md` records `Composition verdict: delivered` and accepted domain/tooling, framework/operational, method, protocol, support, atomic, composite, and wayfinding evidence. | Child-arc closure plus terminology acceptance evidence. |
 | P-6 | Arc 06 closes with validation, packaging, installability, CCDP package separation, and operator acceptance reconciled after the final layout | `test -f arc06-validation-release/closing-report.md && rg -n "Composition verdict: delivered|check-skills|check-package-paths|install|ccdp|operator acceptance|reconciled" arc06-validation-release/closing-report.md` | serious | project-plan | done | Reproduced by CDC: Arc06 `closing-report.md` records `Composition verdict: delivered`, `check-skills`, `check-package-paths`, install evidence, ccdp package separation, operator acceptance readiness, and reconciled final validation evidence. | Child-arc closure plus final release-readiness evidence. |
 | P-7 | Project-level acceptance demo shows a user can orient from README into docs for explanation and into knowledge for actual material substrate without path/category or atomic/composite ambiguity | `rg -n "docs/.*user|knowledge/.*substrate|skill library|build|install|protocol|atomic|composite" /Users/oubiwann/lab/billosys/ai-engineering/README.md /Users/oubiwann/lab/billosys/ai-engineering/docs` | serious | project-plan | open | | Project-scale composition row; must be reproduced at project close. |
+| P-8 | Arc 07 closes with accepted knowledge component entrypoints, stale component docs/ holdovers removed or dispositioned, project-management guides migrated, and package/install validation reconciled | `test -f arc07-knowledge-component-entrypoints/closing-report.md && rg -n "Composition verdict: delivered|component entrypoint|SKILL.md|guides|docs/ holdover|package|install|reconciled" arc07-knowledge-component-entrypoints/closing-report.md` | serious | operator-reentry | open | | Operator-requested cleanup after Arc06 acceptance-readiness review. |
 
 ## Closure
 
-Project remains open. Arc01 through Arc06 are closed. P-7 remains open pending
-project-level operator acceptance or project-close demonstration.
+Project remains open. Arc01 through Arc06 are closed. Arc07 is open from
+operator re-entry before project acceptance. P-7 and P-8 remain open pending
+Arc07 cleanup and project-level acceptance.
 
-Rows: 7. Done: 6. Deferred: 0. No-op: 0.
+Rows: 8. Done: 6. Deferred: 0. No-op: 0.

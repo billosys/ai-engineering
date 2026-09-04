@@ -2,7 +2,7 @@
 
 ```yaml
 project: project04-knowledge-library-reorg
-status: acceptance-ready
+status: active
 depends-on:
   - project02-collab-breakout:operator-accepted-architecture
   - project03-concept-card-method
@@ -325,9 +325,30 @@ Slice02, `slice02-package-path-install-validation`, Slice03,
 closed and provides the final validation, packaging, installability, CCDP
 package separation, and operator acceptance readiness evidence for Project04.
 
+### Arc 07: Knowledge Component Entrypoints and Guide Layout
+
+Status: active as of 2026-09-04.
+
+Expected capability: resolve post-move cleanup for collaboration-framework
+component roots by moving the collaboration-framework entrypoint under
+`knowledge/collaboration-framework/`, deciding and applying component
+`SKILL.md` entrypoints versus guide/template material, removing stale
+component `docs/` holdovers, migrating `project-management/docs/pm/` to
+`project-management/guides/`, and preserving package/install behavior.
+
+This arc was opened from operator re-entry before final project acceptance.
+It supersedes the prior "no next arc" status without invalidating Arc06's
+release-readiness evidence.
+
+Detailed arc planning is open under
+`arc07-knowledge-component-entrypoints/`. Slice01,
+`slice01-component-entrypoint-contract`, is open as a read-only component
+entrypoint decision and migration map before source moves begin.
+
 ## Current Status
 
-Project04 is acceptance-ready and operating in Expedited Mode. Arc01,
+Project04 is active again from operator re-entry and operating in Expedited
+Mode. Arc01,
 `arc01-material-inventory`, Arc02, `arc02-directory-contract`, Arc03,
 `arc03-directory-reorg`, Arc04, `arc04-user-docs`, and Arc05,
 `arc05-skill-vocabulary`, and Arc06, `arc06-validation-release`, are closed.
@@ -338,11 +359,22 @@ delivered the accepted public skill-kind and atomic/composite vocabulary.
 Arc06 delivered final validation, packaging, installability, CCDP package
 separation, and operator acceptance readiness.
 
-The next execution action is project-level operator acceptance or project-close
-verification for project ledger row P-7. There is no next CC slice prompt in
-the current Project04 roadmap.
+Arc07, `arc07-knowledge-component-entrypoints`, is active. Slice01,
+`slice01-component-entrypoint-contract`, is open.
+
+The next execution action is CC completion of:
+`arc07-knowledge-component-entrypoints/slice01-component-entrypoint-contract/cc-prompt.md`.
 
 ## Version History
+
+### v1.31 - 2026-09-04
+
+Opened Arc07 from operator re-entry after Arc06 release-readiness close. The
+operator identified remaining cleanup around top-level `SKILL.md`, stale
+framework component `docs/` directories, project-management `docs/pm`, and the
+question of component-root `SKILL.md` entrypoints. Added project ledger row P-8
+and opened Slice01, `slice01-component-entrypoint-contract`, as a read-only
+decision and migration-map slice before source moves begin.
 
 ### v1.30 - 2026-09-04
 
