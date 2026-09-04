@@ -2,7 +2,7 @@
 
 ```yaml
 project: project04-knowledge-library-reorg
-status: active
+status: acceptance-ready
 depends-on:
   - project02-collab-breakout:operator-accepted-architecture
   - project03-concept-card-method
@@ -307,7 +307,7 @@ provides the accepted public skill vocabulary and wayfinding base for Arc06.
 
 ### Arc 06: Validation, Packaging, and Release Readiness
 
-Status: active as of 2026-09-03.
+Status: closed on 2026-09-04.
 
 Expected capability: verify that the reorganized repository works as a source
 checkout, packaged skill library, installed Codex skill set, and CCDP protocol
@@ -317,32 +317,40 @@ acceptance all reconciled.
 This arc closes the project only after the final layout is demonstrably usable
 from the end-user entrypoints and the package/install entrypoints.
 
-Detailed arc planning is open under `arc06-validation-release/`. Slice01,
-`slice01-validation-surface-inventory`, is open as a read-only inventory and
-gate plan before final source/package/install/protocol validation repairs or
-acceptance work begin.
+Detailed arc planning and closure evidence lives under
+`arc06-validation-release/`. Slice01, `slice01-validation-surface-inventory`,
+Slice02, `slice02-package-path-install-validation`, Slice03,
+`slice03-ccdp-package-validation`, and Slice04,
+`slice04-release-readiness-operator-acceptance`, are verified-closed. Arc06 is
+closed and provides the final validation, packaging, installability, CCDP
+package separation, and operator acceptance readiness evidence for Project04.
 
 ## Current Status
 
-Project04 is active and operating in Expedited Mode. Arc01,
+Project04 is acceptance-ready and operating in Expedited Mode. Arc01,
 `arc01-material-inventory`, Arc02, `arc02-directory-contract`, Arc03,
 `arc03-directory-reorg`, Arc04, `arc04-user-docs`, and Arc05,
-`arc05-skill-vocabulary`, are closed.
+`arc05-skill-vocabulary`, and Arc06, `arc06-validation-release`, are closed.
 
 Arc03 landed the accepted directory reorganization implementation, Arc04
 delivered the concise README orientation and focused end-user docs, and Arc05
 delivered the accepted public skill-kind and atomic/composite vocabulary.
+Arc06 delivered final validation, packaging, installability, CCDP package
+separation, and operator acceptance readiness.
 
-Arc06, `arc06-validation-release`, is active. Slice01,
-`slice01-validation-surface-inventory`, Slice02,
-`slice02-package-path-install-validation`, and Slice03,
-`slice03-ccdp-package-validation`, are verified-closed. Slice04,
-`slice04-release-readiness-operator-acceptance`, is open.
-
-The next execution action is CC completion of:
-`arc06-validation-release/slice04-release-readiness-operator-acceptance/cc-prompt.md`.
+The next execution action is project-level operator acceptance or project-close
+verification for project ledger row P-7. There is no next CC slice prompt in
+the current Project04 roadmap.
 
 ## Version History
+
+### v1.30 - 2026-09-04
+
+Recorded Arc06 Slice04 as verified-closed after CDC reproduced all six ledger
+rows and final source/package/install/CCDP validation gates. Closed Arc06,
+marked project ledger row P-6 done, and moved Project04 to acceptance-ready.
+P-7 remains open pending project-level operator acceptance or project-close
+demonstration; no next arc or slice prompt exists in the current roadmap.
 
 ### v1.29 - 2026-09-04
 

@@ -3,7 +3,7 @@
 ```yaml
 project: project04-knowledge-library-reorg
 arc: arc06-validation-release
-status: active
+status: closed
 opened-by: CDC
 opened-on: 2026-09-03
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -100,7 +100,7 @@ validate `make ccdp-package` and `make check-ccdp-package`.
 
 ### Slice 04: Release Readiness and Operator Acceptance
 
-Status: open.
+Status: verified-closed.
 
 Scope: reconcile final README/docs/package/install/protocol evidence, prepare
 operator acceptance material, and make Arc06 ready for close.
@@ -115,6 +115,16 @@ operator acceptance material, and make Arc06 ready for close.
 - Slice04 depends on all final validation gates from Slice02 and Slice03.
 
 ## Version History
+
+### v1.4 - 2026-09-04
+
+Recorded Slice04 as verified-closed after CDC reproduced all six ledger rows,
+reran final README/docs/SKILL link validation, package/build/install checks,
+CCDP package checks, generated-artifact checks, and source/planning cleanliness
+checks. Closed Arc06 with final validation, packaging, installability, ccdp
+package separation, and operator acceptance readiness reconciled. Project04 is
+ready for project-level operator acceptance or project close; final acceptance
+remains a project ledger P-7 gate.
 
 ### v1.3 - 2026-09-04
 

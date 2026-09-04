@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc06-validation-release
 slice: slice04-release-readiness-operator-acceptance
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -101,3 +101,10 @@ Required validation includes:
 - Source and planning worktrees finish clean.
 - `closing-report.md` walks all six ledger rows and bubbles findings up to
   Arc06.
+
+## CDC Close
+
+Slice04 is verified-closed as of 2026-09-04. CDC reproduced all six ledger
+rows, reran final README/docs/SKILL link validation, package/build/install
+checks, CCDP package checks, and source/planning cleanliness checks, then
+closed Arc06.

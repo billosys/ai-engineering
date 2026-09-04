@@ -13,6 +13,7 @@
 
 ## Closure
 
-Slice is proposed-done pending CDC verification.
+Slice is verified-closed. CDC reproduced all six ledger rows and final
+release-readiness validation on 2026-09-04.
 
 Rows: 6. Done: 6. Deferred: 0. No-op: 0.
