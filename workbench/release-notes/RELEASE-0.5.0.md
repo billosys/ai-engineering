@@ -305,7 +305,7 @@ documents that carry its planning, audit, and verification mechanics:
   project -> arc -> slice lifecycle, Expedited Mode, and planning-worktree
   wayfinding.
 - `knowledge/engineering-methods/SKILL.md` routes to
-  `knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md`, which
+  `knowledge/engineering-methods/guides/01-engineering-methodology.md`, which
   carries the 9-point SDLC and methodology substrate.
 - `knowledge/work-verification/SKILL.md` routes to
   `knowledge/work-verification/templates/LEDGER-DISCIPLINE.md`, which carries

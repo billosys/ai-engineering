@@ -11,7 +11,7 @@ directory.
 Start here, choose the section that matches the job, and load only the detailed
 files the job requires.
 
-The companion [methodology](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) names the
+The companion [methodology](../../engineering-methods/guides/01-engineering-methodology.md) names the
 philosophy: the three pillars, the 9-point SDLC, and the anti-degradation
 disciplines. The project-management files are where that philosophy becomes
 specific artifacts, filesystem layout, reports, and close checks. Do not
@@ -23,7 +23,7 @@ For Codex, read every "Claude session" in the linked files as any fresh Codex
 Desktop, Codex CLI, or other LLM session entering the project without the full
 prior context. For the canonical **CC**, **CDC**, and **Operator** role
 definitions, read
-[`AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex).
+[`01-engineering-methodology.md#notes-for-codex`](../../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex).
 Keep the canonical filenames (`project-plan.md`, `arc-plan.md`,
 `slice-plan.md`, per-scale `ledger.md`, `cc-prompt.md`,
 `closing-report.md`, `cdc-verification.md`) and the default slice

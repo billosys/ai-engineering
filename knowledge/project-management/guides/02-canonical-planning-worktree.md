@@ -4,7 +4,7 @@ In the absence of a project's own stated convention, planning artifacts live on
 a dedicated Git worktree, not on the implementation branch and not under the
 implementation branch's `docs/` tree. This is the canonical planning worktree.
 It is the single source of truth for where planning artifacts live; the
-[methodology](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) used to carry an abridged copy
+[methodology](../../engineering-methods/guides/01-engineering-methodology.md) used to carry an abridged copy
 and now points here.
 
 The default planning substrate is:

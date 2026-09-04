@@ -71,7 +71,7 @@ one ranges from useless to dangerous.
 The conclusion, after days of sitting with it: no more unsupervised
 planning. A human stays in the middle for any work requiring genuine
 abstraction or generalisation. That rule is now load-bearing in the
-[methodology](../knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md).
+[methodology](../knowledge/engineering-methods/guides/01-engineering-methodology.md).
 
 ## 5. Silent drops (April 2026)
 

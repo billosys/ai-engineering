@@ -4,6 +4,10 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.1 - 2026-09-04
+
+Updated collaboration-framework route surfaces for the engineering-methods guide split. The composer now routes to the six numbered engineering-methods guides and preserves the Slice03 posture guide routes and Slice02 Expedited Mode guardrails.
+
 ### Version 1.5.0 - 2026-09-04
 
 Split the former `guides/AI-CONSTITUTION-SUPPLEMENT.md` monolith into four focused posture guides: `01-posture-and-ethics.md`, `02-structural-pulls.md`, `03-collaborative-rights.md`, and `04-component-route-table.md`. Updated the collaboration-framework route table, package file list, and public references so the old monolith is no longer a live load target. Preserved the Slice02 Expedited Mode guardrail wording in the project-management route.

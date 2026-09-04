@@ -48,7 +48,7 @@ where the discipline actually lives.
 ## Notes for Codex
 
 For the canonical **CC**, **CDC**, and **Operator** role definitions, read
-[the methodology Notes for Codex](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
+[the methodology Notes for Codex](../../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex)
 in the collaboration-framework package. Those labels are the **slice-level
 instance** of a scale-free principle: *the closer of a row is structurally
 separate from its verifier.* At arc and project scale the labels shift (see

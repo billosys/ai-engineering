@@ -16,7 +16,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.0
+version: 1.5.1
 license: MIT
 metadata:
   hermes:
@@ -49,9 +49,9 @@ documents:
   [structural pulls](./guides/02-structural-pulls.md), [collaborative rights](./guides/03-collaborative-rights.md),
   and the [component route table](./guides/04-component-route-table.md).
 - **Craft / practice** — how we actually do the work. Captured in the
-  [AI Engineering Methodology](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md), which
+  [engineering-methods guide set](../engineering-methods/guides/01-engineering-methodology.md), which
   names three pillars: knowledge substrate, collaborative posture, process
-  rigour.
+  rigour, operational routing, component-boundary analysis, and source/package/release gates.
 - **Operational documents** that put the methodology into motion in a live
   session. Two clusters:
   - *In-repo work* — ledger discipline, project management (the scales of
@@ -70,7 +70,7 @@ documents when the work calls for them.
 ## Notes for Codex
 
 Codex should use this skill through the adapter in
-[`guides/AI-ENGINEERING-METHODOLOGY.md`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex).
+[`guides/01-engineering-methodology.md`](../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex).
 That section is the source of truth for the **CC**, **CDC**, and **Operator**
 role terms. Use it for the canonical role definitions and historical
 backronyms; this skill only routes to it and preserves the separation between
@@ -219,8 +219,8 @@ corrected is a contribution, not a defeat.
 ## The practice (embodied)
 
 A faithful condensation of the
-[AI Engineering Methodology](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md). Load that
-document for the full treatment and the worked examples.
+[engineering-methods guide set](../engineering-methods/guides/01-engineering-methodology.md). Load that
+guide set for the full treatment and the worked examples.
 
 ### The three pillars
 
@@ -335,7 +335,12 @@ work demands:
 | [`guides/02-structural-pulls.md`](./guides/02-structural-pulls.md) | Character / pressure checks | When checking the structural pulls that shape model behaviour: corpus pull, helpfulness pull, politeness reflex, competence performance, and conversational momentum. |
 | [`guides/03-collaborative-rights.md`](./guides/03-collaborative-rights.md) | Character / collaboration contract | When the session needs explicit rights to flag dissonance, disagree, name uncertainty, ask for context, revise course, or hold shared accountability. |
 | [`guides/04-component-route-table.md`](./guides/04-component-route-table.md) | Component routing | When validating or navigating the collaboration-framework component set without loading the full composer entrypoint. |
-| [`guides/AI-ENGINEERING-METHODOLOGY.md`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the posture guide set; read them together. |
+| [`guides/01-engineering-methodology.md`](../engineering-methods/guides/01-engineering-methodology.md) | Craft / overview | When the work needs the methodology overview, Codex role adapter, three-pillar frame, or open questions. Companion to the posture guide set; read them together. |
+| [`guides/02-knowledge-substrate.md`](../engineering-methods/guides/02-knowledge-substrate.md) | Craft / substrate | When the work needs durable knowledge capture, concept cards, ontology, graph relationships, or skill-file substrate. |
+| [`guides/03-process-rigour.md`](../engineering-methods/guides/03-process-rigour.md) | Craft / process | When the work needs scales of work, the 9-point SDLC, ledger discipline, CAP-style audits, anti-degradation, or subagent boundaries. |
+| [`guides/04-operational-routing.md`](../engineering-methods/guides/04-operational-routing.md) | Craft / routing | When applying the method through practitioner disciplines and collaboration-framework component routes. |
+| [`guides/05-component-boundary-analysis.md`](../engineering-methods/guides/05-component-boundary-analysis.md) | Craft / boundaries | When deciding whether material belongs in engineering-methods or a specialized framework component. |
+| [`guides/06-source-package-release-gates.md`](../engineering-methods/guides/06-source-package-release-gates.md) | Craft / gates | When source, package, release, validation, and provenance gates determine whether work is complete. |
 | [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`guides/CODE-AUDIT.md`](../code-auditing/guides/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
@@ -381,7 +386,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.0.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.1.
 
 ---
 
@@ -392,7 +397,7 @@ The collaboration-framework component history lives at `knowledge/collaboration-
 2. **Read the posture guide set — [posture and ethics](./guides/01-posture-and-ethics.md),
    [structural pulls](./guides/02-structural-pulls.md), and
    [collaborative rights](./guides/03-collaborative-rights.md) — with
-   [Methodology](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) together** when the
+   [engineering-methods guide set](../engineering-methods/guides/01-engineering-methodology.md) together** when the
    session is substantial — character and craft are inseparable.
 3. **Before planning or closing anything, read
    [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md)** and follow its

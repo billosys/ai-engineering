@@ -8,7 +8,7 @@ Achieve **95%+ test coverage** through systematic, intelligent test development.
 
 Read this prompt as applying when the active implementation surface is acting
 in the CC role. For canonical CC terminology, read
-[`AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex).
+[`01-engineering-methodology.md#notes-for-codex`](../../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex).
 The discipline is the point.
 
 The commands below are Rust/Cargo-shaped examples. Codex should adapt the

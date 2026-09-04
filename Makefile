@@ -107,7 +107,13 @@ CF_FILES := \
 	knowledge/collaboration-framework/guides/03-collaborative-rights.md \
 	knowledge/collaboration-framework/guides/04-component-route-table.md \
 	knowledge/collaboration-framework/version-history.md \
-	knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md \
+	knowledge/engineering-methods/guides/01-engineering-methodology.md \
+	knowledge/engineering-methods/guides/02-knowledge-substrate.md \
+	knowledge/engineering-methods/guides/03-process-rigour.md \
+	knowledge/engineering-methods/guides/04-operational-routing.md \
+	knowledge/engineering-methods/guides/05-component-boundary-analysis.md \
+	knowledge/engineering-methods/guides/06-source-package-release-gates.md \
+	knowledge/engineering-methods/version-history.md \
 	knowledge/project-management/guides/PROJECT-MANAGEMENT.md \
 	knowledge/project-management/guides/01-scales-of-work.md \
 	knowledge/project-management/guides/02-canonical-planning-worktree.md \

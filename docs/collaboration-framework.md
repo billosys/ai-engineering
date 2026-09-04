@@ -29,7 +29,7 @@ compound across time, commits, reviewers, or planning artifacts.
 | Structural pulls | [`knowledge/collaboration-framework/guides/02-structural-pulls.md`](../knowledge/collaboration-framework/guides/02-structural-pulls.md) | Introspection and model-pressure checks. |
 | Collaborative rights | [`knowledge/collaboration-framework/guides/03-collaborative-rights.md`](../knowledge/collaboration-framework/guides/03-collaborative-rights.md) | Rights, partner rights, and shared commitment. |
 | Component route table | [`knowledge/collaboration-framework/guides/04-component-route-table.md`](../knowledge/collaboration-framework/guides/04-component-route-table.md) | Focused route table for collaboration-framework components. |
-| Engineering method | [`knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md`](../knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) | Knowledge substrate, collaborative posture, and process rigor. |
+| Engineering method | [`knowledge/engineering-methods/guides/01-engineering-methodology.md`](../knowledge/engineering-methods/guides/01-engineering-methodology.md) | Knowledge substrate, collaborative posture, and process rigor. |
 | Project management | [`knowledge/project-management/guides/PROJECT-MANAGEMENT.md`](../knowledge/project-management/guides/PROJECT-MANAGEMENT.md) | Project, arc, slice, planning, close, and bubble-up wayfinder. |
 | Work verification | [`knowledge/work-verification/templates/LEDGER-DISCIPLINE.md`](../knowledge/work-verification/templates/LEDGER-DISCIPLINE.md) | Ledger discipline and evidence requirements. |
 | Code audit | [`knowledge/code-auditing/guides/CODE-AUDIT.md`](../knowledge/code-auditing/guides/CODE-AUDIT.md) | Diagnosis-only code audit discipline. |

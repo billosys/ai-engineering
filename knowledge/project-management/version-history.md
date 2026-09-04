@@ -22,7 +22,7 @@ changing framework component files.
 ### Version 2.7 — September 2026
 
 Routed CC, CDC, and Operator terminology to
-[`../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
+[`../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex`](../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex)
 as the current collaboration-framework source of truth. The
 project-management wayfinder now avoids carrying partial local definitions
 while preserving canonical filenames, artifact homes, and Expedited Mode
@@ -124,7 +124,7 @@ now matured through three arcs and informs this revision. v2.0 lands the
 deferred layer:
 
 - **Absorbed the scales-of-work, fundamental-unit, sizing, and default-layout
-  detail extracted from [`AI-ENGINEERING-METHODOLOGY.md`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md)**
+  detail extracted from [`01-engineering-methodology.md`](../engineering-methods/guides/01-engineering-methodology.md)**
   (which now keeps a summary and points here). The vocabulary
   (project/arc/slice/step/iteration) and the context-window basis for sizing a
   slice now live in Part I; the canonical planning worktree in Part II.

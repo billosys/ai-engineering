@@ -5,7 +5,7 @@ description: |
   knowledge substrate, collaborative posture, process rigour, and the 9-point
   SDLC. Use when designing how a body of LLM-assisted engineering work should be
   structured, evaluated, or improved.
-version: 1.0.0
+version: 1.1.0
 license: MIT
 metadata:
   hermes:
@@ -19,9 +19,16 @@ Use this component when the work needs the methodology itself: the three
 pillars, the 9-point SDLC, anti-degradation disciplines, or the conceptual
 frame behind project, arc, slice, and ledgered work.
 
-Read the guide:
+Read the guides:
 
-- [AI Engineering Methodology](./guides/AI-ENGINEERING-METHODOLOGY.md)
+- [Engineering Methodology](./guides/01-engineering-methodology.md)
+- [Knowledge Substrate](./guides/02-knowledge-substrate.md)
+- [Process Rigour](./guides/03-process-rigour.md)
+- [Operational Routing](./guides/04-operational-routing.md)
+- [Component Boundary Analysis](./guides/05-component-boundary-analysis.md)
+- [Source Package Release Gates](./guides/06-source-package-release-gates.md)
+
+The component history lives at `knowledge/engineering-methods/version-history.md`.
 
 For active planning and closure mechanics, also load the project-management
 component.

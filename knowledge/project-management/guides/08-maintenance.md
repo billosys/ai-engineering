@@ -6,7 +6,7 @@ when:
 
 - The scales of work, the canonical planning worktree, or the planning/closing
   process changes. The project-management guide owns all three now; keep the
-  [methodology](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md)'s summary in sync when the
+  [methodology](../../engineering-methods/guides/01-engineering-methodology.md)'s summary in sync when the
   vocabulary itself moves.
 - An anti-pattern recurs across more than one project. Add it to
   [`Anti-patterns to refuse`](./07-anti-patterns.md) with
