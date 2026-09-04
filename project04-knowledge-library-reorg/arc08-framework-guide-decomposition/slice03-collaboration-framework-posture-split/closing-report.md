@@ -4,7 +4,7 @@ Status: proposed-done pending CDC verification
 Date: 2026-09-04
 
 Source commit: `e7ba785bf8c48ef061f69f9d90d176030b62dfc4`
-Planning commit: `PENDING-AMEND`
+Planning commit: `5de33d7fcd49d6de80737f730d3e92f69ea4089b`
 
 ## Summary
 
