@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice03-collaboration-framework-posture-split
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -100,3 +100,16 @@ and absence or explicit disposition of the old monolith path.
   does not expose the old monolith path as the live route.
 - Source and planning commits are created with explicit file lists and both
   required co-author trailers.
+
+## CDC Closure
+
+Closed by CDC verification on 2026-09-04.
+
+- Source commit verified:
+  `e7ba785bf8c48ef061f69f9d90d176030b62dfc4`
+- Planning close packet verified:
+  `5de33d7fcd49d6de80737f730d3e92f69ea4089b`
+- Planning close-hash follow-up verified:
+  `00855d161d264534c25a673bd9c2b5eeb0cf70a4`
+- Verification artifact:
+  `cdc-verification.md`

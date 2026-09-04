@@ -178,7 +178,7 @@ for later slices.
 
 ### Slice 03: Collaboration-Framework Posture Guide Split
 
-Status: open.
+Status: verified-closed.
 
 Scope: split `AI-CONSTITUTION-SUPPLEMENT.md` into the four approved numbered
 collaboration-framework guides, update the collaboration-framework `SKILL.md`
@@ -187,7 +187,7 @@ history into `knowledge/collaboration-framework/version-history.md`.
 
 ### Slice 04: Engineering-Methods Guide Split
 
-Status: planned after Slice03.
+Status: open.
 
 Scope: split `AI-ENGINEERING-METHODOLOGY.md` into the six accepted numbered
 engineering-methods guides, update engineering-methods and framework routes,
@@ -259,3 +259,12 @@ version-history to the sibling component path, repaired package routes, and
 documented framework component version-history management in top-level
 `AGENTS.md`. Opened Slice03 for the collaboration-framework posture guide
 split.
+
+### v1.4 - 2026-09-04
+
+Closed Slice03 after CDC verification. Slice03 split the collaboration-framework
+posture monolith into the four approved numbered guides, normalized
+collaboration-framework history into sibling `version-history.md`, repaired
+live routes, and confirmed the generated collaboration-framework package no
+longer contains the old supplement path. Opened Slice04 for the
+engineering-methods guide split.
