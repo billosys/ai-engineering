@@ -292,7 +292,7 @@ routes.
 
 ### Slice 07: Work-Verification Guide Split
 
-Status: open.
+Status: verified-closed.
 
 Scope: split the ledger-discipline source into the accepted work-verification
 guide set: `01-ledger-discipline.md`, `02-evidence-strength.md`,
@@ -303,7 +303,7 @@ needed.
 
 ### Slice 08: Testing Guide Split
 
-Status: planned after Slice07.
+Status: open.
 
 Scope: split testing guidance into `01-testing-discipline.md`,
 `02-coverage-hardening.md`, and `03-validation-gates.md`, broadening the old
@@ -457,3 +457,15 @@ confirmed the generated collaboration-framework package contains 62 entries
 with the accepted example path.
 
 Opened Slice07 for the work-verification guide split.
+
+### v1.9 - 2026-09-04
+
+Closed Slice07 after CDC verification. Slice07 split the work-verification
+component into five selective-load guides, preserved
+`templates/LEDGER-DISCIPLINE.md` as the retained full protocol and copyable
+ledger-table support asset, repaired framework/project-management/
+engineering-methods routes, and confirmed the generated collaboration-framework
+package contains 68 entries with the five work-verification guides and retained
+template.
+
+Opened Slice08 for the testing guide split.
