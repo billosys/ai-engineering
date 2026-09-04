@@ -16,7 +16,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.3
+version: 1.5.4
 license: MIT
 metadata:
   hermes:
@@ -342,7 +342,12 @@ work demands:
 | [`guides/05-component-boundary-analysis.md`](../engineering-methods/guides/05-component-boundary-analysis.md) | Craft / boundaries | When deciding whether material belongs in engineering-methods or a specialized framework component. |
 | [`guides/06-source-package-release-gates.md`](../engineering-methods/guides/06-source-package-release-gates.md) | Craft / gates | When source, package, release, validation, and provenance gates determine whether work is complete. |
 | [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
-| [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
+| [`guides/01-ledger-discipline.md`](../work-verification/guides/01-ledger-discipline.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine, row format, closure statuses, and slice/arc/project adaptation. |
+| [`guides/02-evidence-strength.md`](../work-verification/guides/02-evidence-strength.md) | Verification protocol | When distinguishing `asserted`, `attested`, `reproduced`, and `reconciled` evidence, especially proposed-done versus independently verified rows. |
+| [`guides/03-row-closure.md`](../work-verification/guides/03-row-closure.md) | Verification protocol | Before updating a ledger, writing a closing report, or checking row dispositions, evidence, final statuses, and close artifacts. |
+| [`guides/04-silent-drop-checks.md`](../work-verification/guides/04-silent-drop-checks.md) | Verification protocol | When comparing scope-as-specified to scope-as-delivered, checking missing rows, spec-softening, partial adoption, vacuous tests, and inherited composition. |
+| [`guides/05-independent-verification.md`](../work-verification/guides/05-independent-verification.md) | Verification protocol | When assigning or performing CDC/fresh-context/operator verification, gate review, or sandbox-aware reproduction of evidence. |
+| [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification support asset | When a project needs the complete pre-split protocol in one file or copyable slice/arc/project ledger tables. Prefer the focused guides for selective loading. |
 | [`guides/CODE-AUDIT.md`](../code-auditing/guides/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
 | [`guides/CODE-COVERAGE.md`](../testing/guides/CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
 | [`guides/SUBAGENT-DELEGATION-POLICY.md`](../agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md`, `AGENTS.md`, or preferences block so it holds across sessions. |
@@ -386,7 +391,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.3.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.4.
 
 ---
 

@@ -48,7 +48,7 @@ planned and tracked; they do not cross slice boundaries.
 its acceptance criteria. The word is reserved for this and only this — the
 fix loop on an in-progress slice, never a unit of planning. The budget is
 five iterations per slice (see [ledger
-discipline](../../work-verification/templates/LEDGER-DISCIPLINE.md)); needing more is a signal the
+discipline](../../work-verification/guides/01-ledger-discipline.md)); needing more is a signal the
 slice was too large or under-specified, not a licence to keep grinding.
 
 Read together: *a project bends through several arcs; each arc is cut into

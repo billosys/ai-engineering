@@ -130,6 +130,11 @@ CF_FILES := \
 	knowledge/project-management/guides/08-maintenance.md \
 	knowledge/project-management/examples/01-worked-example-odm.md \
 	knowledge/project-management/version-history.md \
+	knowledge/work-verification/guides/01-ledger-discipline.md \
+	knowledge/work-verification/guides/02-evidence-strength.md \
+	knowledge/work-verification/guides/03-row-closure.md \
+	knowledge/work-verification/guides/04-silent-drop-checks.md \
+	knowledge/work-verification/guides/05-independent-verification.md \
 	knowledge/code-auditing/guides/CODE-AUDIT.md \
 	knowledge/testing/guides/CODE-COVERAGE.md \
 	knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md \

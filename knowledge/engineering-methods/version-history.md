@@ -4,6 +4,13 @@ This file is the sibling component history for `knowledge/engineering-methods/`.
 
 ## Engineering Methods Component
 
+### Version 1.1.1 - 2026-09-04
+
+Updated engineering-methods operational-routing and source/package/release
+guide links to the split work-verification guide surface. The methodology now
+routes active ledger-discipline use to the focused work-verification guide
+while preserving historical ledger-protocol lineage below.
+
 ### Version 1.1.0 - 2026-09-04
 
 Split the former AI Engineering Methodology monolith into six focused engineering-methods guides: `01-engineering-methodology.md`, `02-knowledge-substrate.md`, `03-process-rigour.md`, `04-operational-routing.md`, `05-component-boundary-analysis.md`, and `06-source-package-release-gates.md`. Updated engineering-methods and collaboration-framework route surfaces, package file lists, and public references so the old monolith is no longer a live load target.

@@ -35,6 +35,12 @@ framework documents and a packaging surface for installable assistant skills.
   `guides/`, `templates/`, or `examples/` are recorded in the sibling
   version-history file; do not add or keep component histories under `guides/`
   merely because a guide was edited.
+- **Work-verification routes:** use
+  `knowledge/work-verification/guides/01-ledger-discipline.md` as the primary
+  ledger-discipline load path, then load the focused evidence-strength,
+  row-closure, silent-drop, or independent-verification guides as needed.
+  `knowledge/work-verification/templates/LEDGER-DISCIPLINE.md` remains a
+  package-local full-protocol and copyable-table support asset.
 - Load the relevant domain skill before writing or reviewing domain material:
   Rust, Go, Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual
   Design, Biome, or Deno lint. Preserve source material under

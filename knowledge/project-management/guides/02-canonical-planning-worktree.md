@@ -69,12 +69,12 @@ roles are defined in [`Planning, top-down`](./03-planning-top-down.md),
 [`Closing arcs`](./05-closing-arcs.md); their on-disk shape is fixed here.
 
 Each scale is also **verified by a ledger** — the recomposition discipline in
-[`LEDGER-DISCIPLINE.md`](../../work-verification/templates/LEDGER-DISCIPLINE.md). The ledger rows
+[`Row Closure`](../../work-verification/guides/03-row-closure.md). The ledger rows
 for a scale live in that scale's own `ledger.md`: project rows in
 `projectNN-<slug>/ledger.md`, arc rows in `arcNN-<slug>/ledger.md`, and slice
 rows in `sliceNN-<slug>/ledger.md`. The plan-of-record names the capability,
 roadmap, or slice scope; the ledger file carries the grep-verifiable rows that
-prove the plan. `LEDGER-DISCIPLINE.md` owns the ledger mechanics at all three
+prove the plan. Work verification owns the ledger mechanics at all three
 scales; this file owns where the rows live.
 
 ### Naming rules
@@ -129,7 +129,7 @@ close document set that attaches to one execution unit. They split into an
 | Path | Set | Role |
 |----------|-----|------|
 | `slice-plan.md` | open | Plan-of-record: goal, scope (in/out), verification approach, exit criteria. |
-| `ledger.md` | open | The acceptance criteria as grep-verifiable rows — the steps. Format and discipline in [`LEDGER-DISCIPLINE.md`](../../work-verification/templates/LEDGER-DISCIPLINE.md). |
+| `ledger.md` | open | The acceptance criteria as grep-verifiable rows — the steps. Format and discipline in [`Row Closure`](../../work-verification/guides/03-row-closure.md). |
 | `cc-prompt.md` | open | The assignment the implementing context (CC) receives. |
 | `closing-report.md` | close | The per-row walk written at slice close, plus the **bubble-up to the arc** (see [`Closing slices`](./04-closing-slices.md)). |
 | `cdc-verification.md` | close | The independent re-run that verifies the closing report against evidence, plus the **bubble-up check** (see [`Closing slices`](./04-closing-slices.md)). |

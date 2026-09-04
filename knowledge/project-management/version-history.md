@@ -1,5 +1,13 @@
 # Version History
 
+### Version 2.10 — September 2026
+
+Updated project-management guide links to the split work-verification guide
+surface. Ledger-discipline overview routes now point to the primary
+work-verification guide, while row-close mechanics route to the focused row
+closure guide. The retained ledger template remains available as a support
+asset through the work-verification component.
+
 ### Version 2.9 — September 2026
 
 Moved the worked example from `guides/09-worked-example-odm.md` to
@@ -166,4 +174,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_The project-management guide is a living spec. This version: 2.8, 2026-09-04._
+_The project-management guide is a living spec. This version: 2.10, 2026-09-04._

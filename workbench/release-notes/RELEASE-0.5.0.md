@@ -307,9 +307,11 @@ documents that carry its planning, audit, and verification mechanics:
 - `knowledge/engineering-methods/SKILL.md` routes to
   `knowledge/engineering-methods/guides/01-engineering-methodology.md`, which
   carries the 9-point SDLC and methodology substrate.
-- `knowledge/work-verification/SKILL.md` routes to
-  `knowledge/work-verification/templates/LEDGER-DISCIPLINE.md`, which carries
-  the per-scale verification discipline.
+- `knowledge/work-verification/SKILL.md` routes to five focused
+  `knowledge/work-verification/guides/` files for ledger discipline, evidence
+  strength, row closure, silent-drop checks, and independent verification; the
+  retained `templates/LEDGER-DISCIPLINE.md` carries the full protocol and
+  copyable ledger tables.
 - `knowledge/project-management/version-history.md` records the
   project-management guide history, including per-scale ledger files and
   per-slice artifact homes.

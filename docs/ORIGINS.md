@@ -92,7 +92,7 @@ on the field's research back to the late 1990s.
 
 The solution came from the domains that already solve this class of
 problem: nuclear corrective-action programmes, aviation safety, surgical
-checklists. The result was [ledger discipline](../knowledge/work-verification/templates/LEDGER-DISCIPLINE.md)
+checklists. The result was [ledger discipline](../knowledge/work-verification/guides/01-ledger-discipline.md)
 — every acceptance criterion a verifiable row, evidence-graded closure,
 closer never the verifier — woven into the SDLC. Silent drops observed
 since: zero.

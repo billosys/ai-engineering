@@ -34,9 +34,18 @@ up, each scale's ledger being the gate that confirms its sub-tree composes
 before the claim above it can rest on it. This is the assurance-case pattern
 (see *Lineage*), realised as living ledgers.
 
-This document states the **invariant spine** once, then gives three sections —
-one per scale — describing only what *adapts*. Read the spine, then the section
-for the scale you are closing.
+This retained template/support asset states the **invariant spine** once, then
+gives three sections — one per scale — describing only what *adapts*. Use it
+when you need the complete protocol in one file or copyable ledger tables. For
+selective loading, use the focused guides:
+
+- [`../guides/01-ledger-discipline.md`](../guides/01-ledger-discipline.md)
+- [`../guides/02-evidence-strength.md`](../guides/02-evidence-strength.md)
+- [`../guides/03-row-closure.md`](../guides/03-row-closure.md)
+- [`../guides/04-silent-drop-checks.md`](../guides/04-silent-drop-checks.md)
+- [`../guides/05-independent-verification.md`](../guides/05-independent-verification.md)
+
+Read the spine, then the section for the scale you are closing.
 
 The practice exists because registers alone produce compliance theatre. Paper
 compliance regularly overstates observed compliance by large, reproducible

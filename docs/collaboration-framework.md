@@ -31,7 +31,7 @@ compound across time, commits, reviewers, or planning artifacts.
 | Component route table | [`knowledge/collaboration-framework/guides/04-component-route-table.md`](../knowledge/collaboration-framework/guides/04-component-route-table.md) | Focused route table for collaboration-framework components. |
 | Engineering method | [`knowledge/engineering-methods/guides/01-engineering-methodology.md`](../knowledge/engineering-methods/guides/01-engineering-methodology.md) | Knowledge substrate, collaborative posture, and process rigor. |
 | Project management | [`knowledge/project-management/guides/PROJECT-MANAGEMENT.md`](../knowledge/project-management/guides/PROJECT-MANAGEMENT.md) | Project, arc, slice, planning, close, and bubble-up wayfinder. |
-| Work verification | [`knowledge/work-verification/templates/LEDGER-DISCIPLINE.md`](../knowledge/work-verification/templates/LEDGER-DISCIPLINE.md) | Ledger discipline and evidence requirements. |
+| Work verification | [`knowledge/work-verification/guides/01-ledger-discipline.md`](../knowledge/work-verification/guides/01-ledger-discipline.md) | Ledger discipline and evidence requirements. |
 | Code audit | [`knowledge/code-auditing/guides/CODE-AUDIT.md`](../knowledge/code-auditing/guides/CODE-AUDIT.md) | Diagnosis-only code audit discipline. |
 | Testing | [`knowledge/testing/guides/CODE-COVERAGE.md`](../knowledge/testing/guides/CODE-COVERAGE.md) | Test coverage hardening guidance. |
 | Agent coordination | [`knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md`](../knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md) | Delegation boundaries and multi-agent coordination. |

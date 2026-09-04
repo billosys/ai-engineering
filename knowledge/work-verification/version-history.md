@@ -1,5 +1,13 @@
 # Work Verification Version History
 
+## Version 1.1.0 - 2026-09-04
+
+Split the work-verification guide surface into five selective-load guides:
+ledger discipline, evidence strength, row closure, silent-drop checks, and
+independent verification. Retained `templates/LEDGER-DISCIPLINE.md` as the full
+protocol and copyable table support asset, with cross-routes from the template
+to the focused guide set.
+
 ## Version 1.0.1 - 2026-09-04
 
 Normalized the component history into this sibling file for Arc08 Slice05.

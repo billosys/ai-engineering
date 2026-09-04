@@ -29,7 +29,7 @@ The Toyota Andon cord. The discipline of pulling the line on dissonance rather t
 
 The [collaboration-framework posture guide set](../../collaboration-framework/guides/01-posture-and-ethics.md). The companion document covering character and posture, which this document depends on at every turn.
 
-The author's ontological method work, developed in prior conversations and still evolving. See `./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md` and [`../../work-verification/templates/LEDGER-DISCIPLINE.md`](../../work-verification/templates/LEDGER-DISCIPLINE.md).
+The author's ontological method work, developed in prior conversations and still evolving. See `./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md` and [`../../work-verification/guides/01-ledger-discipline.md`](../../work-verification/guides/01-ledger-discipline.md).
 
 ### What has been tested in practice
 

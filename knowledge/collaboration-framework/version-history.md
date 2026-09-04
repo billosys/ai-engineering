@@ -4,6 +4,13 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.4 - 2026-09-04
+
+Updated collaboration-framework route surfaces for the work-verification guide
+split. The composer now routes to five focused work-verification guides and
+keeps `templates/LEDGER-DISCIPLINE.md` as the retained full-protocol and
+copyable-table support asset.
+
 ### Version 1.5.3 - 2026-09-04
 
 Updated the project-management package route for the accepted worked-example
