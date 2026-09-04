@@ -1,9 +1,10 @@
 # Operator Confirmation Packet
 
-Status: awaiting operator confirmation.
+Status: approved by operator on 2026-09-04.
 
-This packet is the approval gate for Arc08 source work. Slice02 must not open
-until the operator explicitly confirms or changes this packet.
+This packet was the approval gate for Arc08 source work. The operator approved
+it on 2026-09-04 with the clarifications recorded below, allowing Slice02 to
+open.
 
 Support artifacts:
 
@@ -13,6 +14,25 @@ Support artifacts:
 Those files provide the accepted architecture and component file layout for
 Arc08. The packet below restates the concrete split map, sibling
 version-history rule, and Expedited Mode wording target for confirmation.
+
+## Operator Approval Record
+
+The operator approved:
+
+- the collaboration-framework guide order;
+- the engineering-methods guide order;
+- the sibling version-history rule;
+- the Expedited Mode correction target.
+
+Clarifications:
+
+- The version-history management practice must be documented somewhere durable
+  and next-session-visible. The expected source surface is the top-level
+  `AGENTS.md` file unless the implementing slice identifies and records a
+  better home.
+- The Expedited Mode wording target should say: "Expedited Mode means no
+  inferred source scope and no reduction or other change in scope," if that
+  clarification improves the source wording.
 
 ## Operator Confirmation: Split Map
 
@@ -71,7 +91,8 @@ Please confirm this correction target for Expedited Mode:
 - Expedited Mode means no shortcuts.
 - Expedited Mode means no skipped validation.
 - Expedited Mode means no weaker evidence or review.
-- Expedited Mode means no inferred source scope.
+- Expedited Mode means no inferred source scope and no reduction or other
+  change in scope.
 - Expedited Mode means no timeline interpretation.
 - Expedited Mode does not override explicit operator approval gates.
 
@@ -84,10 +105,7 @@ The likely Slice02 source edit surfaces are:
 
 ## Required Operator Decision
 
-Slice02 remains blocked until the operator records one of these decisions:
+Decision recorded: confirmed with named adjustments.
 
-- Confirm this packet as written.
-- Confirm with named adjustments.
-- Reject and request a revised packet.
-
-Expedited Mode does not override this approval gate.
+Expedited Mode did not override this approval gate; the gate closed by explicit
+operator approval.

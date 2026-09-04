@@ -105,7 +105,8 @@ so the mode is narrowly defined:
 - It does not authorize shortcuts.
 - It does not authorize skipped validation, reduced evidence, or weaker CDC
   review.
-- It does not authorize inferred source scope or additional process changes.
+- It does not authorize inferred source scope, any reduction or other change in
+  scope, or additional process changes.
 - It does not mean "finish faster" as an independent goal.
 - It does not replace explicit operator approval gates recorded in a plan.
 
@@ -119,6 +120,11 @@ inventoried in Slice01:
 - `knowledge/collaboration-framework/SKILL.md`
 - `knowledge/project-management/guides/version-history.md`, which should move
   to `knowledge/project-management/version-history.md` during normalization.
+
+The operator confirmed on 2026-09-04 that the version-history management
+practice also needs durable documentation for future sessions. Slice02 should
+use top-level `AGENTS.md` as the expected home unless source evidence shows a
+better location and records the rationale.
 
 ## Boundaries
 
@@ -161,13 +167,14 @@ Source edits are not authorized in Slice01.
 
 ### Slice 02: Project-Management Process Wording and Version-History Baseline
 
-Status: planned after Slice01 operator confirmation.
+Status: open.
 
 Scope: update Expedited Mode wording in project-management source instructions,
 update collaboration-framework `SKILL.md` routing text that mentions Expedited
 Mode, move project-management `version-history.md` beside `SKILL.md`, repair
-routes, and establish the version-history normalization pattern for later
-slices.
+routes, document the framework component version-history management practice
+for future sessions, and establish the version-history normalization pattern
+for later slices.
 
 ### Slice 03: Collaboration-Framework Posture Guide Split
 
@@ -234,3 +241,12 @@ approval-gate artifact without source edits. The A-1 arc ledger row was
 corrected from `operator-confirmed split map` to `operator-confirmation packet`
 because operator approval is the gate after Slice01, not evidence created
 inside Slice01. Slice02 remains blocked until operator approval is recorded.
+
+### v1.2 - 2026-09-04
+
+Recorded operator approval of the Slice01 confirmation packet with two
+clarifications: the framework component version-history management practice
+needs durable documentation for future sessions, expected in top-level
+`AGENTS.md`, and Expedited Mode should explicitly mean no inferred source scope
+and no reduction or other change in scope. Opened Slice02 against those
+clarifications.
