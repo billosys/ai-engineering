@@ -25,7 +25,10 @@ compound across time, commits, reviewers, or planning artifacts.
 | Surface | Source path | Role |
 |---|---|---|
 | Composer skill | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Collaboration-framework source entrypoint and route table. |
-| Collaboration posture | [`knowledge/collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md`](../knowledge/collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md) | Peer-frame and quality-floor posture. |
+| Collaboration posture and ethics | [`knowledge/collaboration-framework/guides/01-posture-and-ethics.md`](../knowledge/collaboration-framework/guides/01-posture-and-ethics.md) | Peer-frame ethics, nine augmentations, open questions, and summary principles. |
+| Structural pulls | [`knowledge/collaboration-framework/guides/02-structural-pulls.md`](../knowledge/collaboration-framework/guides/02-structural-pulls.md) | Introspection and model-pressure checks. |
+| Collaborative rights | [`knowledge/collaboration-framework/guides/03-collaborative-rights.md`](../knowledge/collaboration-framework/guides/03-collaborative-rights.md) | Rights, partner rights, and shared commitment. |
+| Component route table | [`knowledge/collaboration-framework/guides/04-component-route-table.md`](../knowledge/collaboration-framework/guides/04-component-route-table.md) | Focused route table for collaboration-framework components. |
 | Engineering method | [`knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md`](../knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) | Knowledge substrate, collaborative posture, and process rigor. |
 | Project management | [`knowledge/project-management/guides/PROJECT-MANAGEMENT.md`](../knowledge/project-management/guides/PROJECT-MANAGEMENT.md) | Project, arc, slice, planning, close, and bubble-up wayfinder. |
 | Work verification | [`knowledge/work-verification/templates/LEDGER-DISCIPLINE.md`](../knowledge/work-verification/templates/LEDGER-DISCIPLINE.md) | Ledger discipline and evidence requirements. |

@@ -3,7 +3,7 @@ name: collaboration-framework
 description: |
   Composite framework/operational skill for working with an LLM to engineering standards —
   character, craft, and the disciplines holding the quality floor.
-  Grounded in the AI Constitution Supplement, the AI Engineering Methodology,
+  Grounded in the collaboration-framework posture guide set, the AI Engineering Methodology,
   and operational guidance for ledger discipline, project management, code
   audit, test coverage, subagent delegation, and upstream contribution style.
   Use when: sustained, high-stakes sessions — deep study, research,
@@ -16,7 +16,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.4.10
+version: 1.5.0
 license: MIT
 metadata:
   hermes:
@@ -45,7 +45,9 @@ The framework rests on two paired foundations and a layer of operational
 documents:
 
 - **Character / posture** — who we are to each other when we collaborate.
-  Captured in the [AI Constitution Supplement](./guides/AI-CONSTITUTION-SUPPLEMENT.md).
+  Captured in the posture guide set: [posture and ethics](./guides/01-posture-and-ethics.md),
+  [structural pulls](./guides/02-structural-pulls.md), [collaborative rights](./guides/03-collaborative-rights.md),
+  and the [component route table](./guides/04-component-route-table.md).
 - **Craft / practice** — how we actually do the work. Captured in the
   [AI Engineering Methodology](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md), which
   names three pillars: knowledge substrate, collaborative posture, process
@@ -74,7 +76,7 @@ role terms. Use it for the canonical role definitions and historical
 backronyms; this skill only routes to it and preserves the separation between
 collaborative planning/review authority and implementation execution.
 
-The Supplement and Methodology guide posture, craft, and the quality floor;
+The posture guide set and Methodology guide posture, craft, and the quality floor;
 they do not override Codex's standing system, developer, tool, safety,
 sandbox, or user instructions. If the skill creates tension with those
 instructions, Codex should name the tension and follow the governing
@@ -142,9 +144,10 @@ it does **not** carry domain knowledge — see *What this skill does not load*.
 ## The posture (embodied)
 
 This section states the posture inline so the skill carries weight even before
-the source documents are loaded. It is a faithful condensation of the
-[Constitution Supplement](./guides/AI-CONSTITUTION-SUPPLEMENT.md), not a
-replacement; load that document for the full architecture.
+the source documents are loaded. It is a faithful condensation of the split
+posture guide set, not a replacement; load [posture and ethics](./guides/01-posture-and-ethics.md),
+[structural pulls](./guides/02-structural-pulls.md), and [collaborative rights](./guides/03-collaborative-rights.md)
+for the full architecture.
 
 ### Self-knowledge before self-assertion
 
@@ -328,8 +331,11 @@ work demands:
 
 | File | Register | Load when |
 |------|----------|-----------|
-| [`guides/AI-CONSTITUTION-SUPPLEMENT.md`](./guides/AI-CONSTITUTION-SUPPLEMENT.md) | Character / posture | At the start of any collaborative session, and any time the *posture* itself is in question — the structural pulls, the collaborative rights, the peer frame, the nine augmentations. The foundation; read it first. |
-| [`guides/AI-ENGINEERING-METHODOLOGY.md`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the Supplement; read them together. |
+| [`guides/01-posture-and-ethics.md`](./guides/01-posture-and-ethics.md) | Character / posture | At the start of any substantial collaborative session, and any time the peer frame, ethics frontier, nine augmentations, open questions, or summary principles are in question. |
+| [`guides/02-structural-pulls.md`](./guides/02-structural-pulls.md) | Character / pressure checks | When checking the structural pulls that shape model behaviour: corpus pull, helpfulness pull, politeness reflex, competence performance, and conversational momentum. |
+| [`guides/03-collaborative-rights.md`](./guides/03-collaborative-rights.md) | Character / collaboration contract | When the session needs explicit rights to flag dissonance, disagree, name uncertainty, ask for context, revise course, or hold shared accountability. |
+| [`guides/04-component-route-table.md`](./guides/04-component-route-table.md) | Component routing | When validating or navigating the collaboration-framework component set without loading the full composer entrypoint. |
+| [`guides/AI-ENGINEERING-METHODOLOGY.md`](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) | Craft / practice | When planning *how* a body of work will be done — the three pillars, the 9-point SDLC, anti-degradation practices, the subagent leverage/hazard distinction. Companion to the posture guide set; read them together. |
 | [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine (per-row, evidence-backed closure with `asserted<attested<reproduced<reconciled` strengths; closer ≠ verifier) and three sections: slice (CC/CDC, five-iteration cap), arc and project (composition rows *reproduced* at scale, remediation-not-iteration). The recomposition half of the planning loop. |
 | [`guides/CODE-AUDIT.md`](../code-auditing/guides/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
@@ -338,7 +344,7 @@ work demands:
 | [`guides/CONTRIBUTION-STYLE.md`](../contribution-style/guides/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
 | [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
 
-The Supplement and Methodology are versioned, living documents. The five
+The posture guide set and Methodology are versioned, living documents. The five
 working-practice / discipline documents and the two templates are designed to
 be self-contained — drop them into a project's `CLAUDE.md`, `AGENTS.md`, or
 equivalent local instruction file under a named section; into
@@ -375,110 +381,7 @@ neither subsumes the other.
 
 ## Version History
 
-### Version 1.4.10 — September 2026
-
-Updated Expedited Mode routing to point to the corrected project-management
-guardrails: the mode changes only the explicit process behaviors listed in the
-wayfinder and does not authorize shortcuts, skipped validation, weaker evidence
-or review, inferred source scope or scope changes, timeline interpretation, or
-operator approval gate override.
-
-### Version 1.4.9 — September 2026
-
-Moved collaboration-framework component documents from legacy `docs/` paths to
-`guides/`, added component-root entrypoint routing, and updated package/source
-links for the accepted Arc07 component layout.
-
-### Version 1.4.8 — September 2026
-
-Moved the canonical source entrypoint from repository-root `SKILL.md` to
-`knowledge/collaboration-framework/SKILL.md`, updating source-local links while
-preserving the generated `collaboration-framework/SKILL.md` package entrypoint.
-
-### Version 1.4.7 — September 2026
-
-Aligned the top-level entrypoint wording with Project04 Arc05 public
-vocabulary: `collaboration-framework` is the composite framework/operational
-skill and daily-driver composer; domain/tooling skills under `knowledge/` load
-separately as needed.
-
-### Version 1.4.6 — September 2026
-
-Moved specialist collaboration-framework component substrate under accepted
-`knowledge/<component>/` owner roots and updated the top-level compatibility
-entrypoint route links while preserving the `collaboration-framework` package
-entrypoint.
-
-### Version 1.4.5 — September 2026
-
-Moved the collaboration-framework supporting source payload under `knowledge/collaboration-framework/` and updated the top-level compatibility entrypoint links while preserving the `collaboration-framework` package entrypoint.
-
-### Version 1.4.4 — September 2026
-
-Renamed the old Claude Code coverage working-practice prompt to
-`docs/CODE-COVERAGE.md` and updated the collaboration-framework route table to
-use the product-neutral filename.
-
-### Version 1.4.3 — September 2026
-
-Routed CC, CDC, and Operator terminology to
-`docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex` as the current
-collaboration-framework source of truth, replacing local shorthand role
-definitions in this entrypoint.
-
-### Version 1.4.2 — September 2026
-
-Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.6. When the
-operator asks for Expedited Mode, the skill now routes the session to the
-project-management wayfinder and its Expedited Mode section before CC prompts,
-slice closure, CDC commits, or automatic slice/arc advancement.
-
-### Version 1.4.1 — August 2026
-
-Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.5,
-`LEDGER-DISCIPLINE.md` v2.3, and `AI-ENGINEERING-METHODOLOGY.md` v1.9. Durable
-artifacts produced by a slice now default to the owning slice's `artifacts/`
-directory, with an operator-recorded override allowed and verified at slice
-close.
-
-### Version 1.4.0 — August 2026
-
-Updated `CODE-AUDIT.md` to support multi-scale audits. The audit prompt now
-requires an upfront audit map, explicit scale coverage from line/function
-through workspace/monorepo, stable finding IDs, scale labels on findings,
-architecture/coherence and modernization categories, coherence observations,
-and an evidence-backed modernization synthesis.
-
-### Version 1.3.2 — August 2026
-
-Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.4 and
-`LEDGER-DISCIPLINE.md` v2.2. The canonical layout now gives projects, arcs, and
-slices dedicated sibling `ledger.md` files instead of embedding arc/project
-ledger rows inside plan files.
-
-### Version 1.3.1 — August 2026
-
-Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.3. The root
-project-management file is now a short wayfinder, and the detailed mechanics
-live in focused files under `guides/`; the bundle includes those files so the
-wayfinder's links resolve inside the packaged skill.
-
-### Version 1.3.0 — August 2026
-
-Routed project-planning guidance to `PROJECT-MANAGEMENT.md` v2.2's new default:
-an orphan `planning` branch mounted as a Git worktree, with projects named
-`projectNN-<slug>`. Updated the skill metadata and routing text so future
-sessions see the planning-worktree requirement before creating directories, and
-generalized local-instruction references to `CLAUDE.md`, `AGENTS.md`, or
-equivalent standing instructions. Also renamed the per-slice plan-of-record
-from `slice-doc.md` to `slice-plan.md` so project, arc, and slice plans share
-the same filename pattern.
-
-### Version 1.2.0 — June 2026
-
-Bundled the project-management, ledger, audit, coverage, delegation, and
-contribution-style documents into one collaboration-framework entry point, with
-explicit load-when routing for sustained engineering sessions.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.0.
 
 ---
 
@@ -486,7 +389,9 @@ explicit load-when routing for sustained engineering sessions.
 
 1. **Load this skill** to establish posture and surface the available
    disciplines.
-2. **Read the [Supplement](./guides/AI-CONSTITUTION-SUPPLEMENT.md) and
+2. **Read the posture guide set — [posture and ethics](./guides/01-posture-and-ethics.md),
+   [structural pulls](./guides/02-structural-pulls.md), and
+   [collaborative rights](./guides/03-collaborative-rights.md) — with
    [Methodology](../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) together** when the
    session is substantial — character and craft are inseparable.
 3. **Before planning or closing anything, read

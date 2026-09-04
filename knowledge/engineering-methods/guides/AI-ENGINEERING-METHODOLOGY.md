@@ -1,6 +1,6 @@
 # AI Engineering Methodology
 
-_A companion to the [AI Constitution Supplement](../../collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md)._
+_A companion to the [collaboration-framework posture guide set](../../collaboration-framework/guides/01-posture-and-ethics.md)._
 
 ## Preamble
 
@@ -307,7 +307,7 @@ These are genuine calibrations we are still working through, not rhetorical gaps
 
 ## Provenance
 
-This document was developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on top of the [AI Constitution Supplement](../../collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md).
+This document was developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on top of the [collaboration-framework posture guide set](../../collaboration-framework/guides/01-posture-and-ethics.md).
 
 ### Source material
 
@@ -321,7 +321,7 @@ The Corrective Action Program tradition — nuclear industry (INPO), aviation (N
 
 The Toyota Andon cord. The discipline of pulling the line on dissonance rather than letting work continue over a buried concern.
 
-The [AI Constitution Supplement](../../collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md). The companion document covering character and posture, which this document depends on at every turn.
+The [collaboration-framework posture guide set](../../collaboration-framework/guides/01-posture-and-ethics.md). The companion document covering character and posture, which this document depends on at every turn.
 
 The author's ontological method work, developed in prior conversations and still evolving. See `./dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md` and [`../../work-verification/templates/LEDGER-DISCIPLINE.md`](../../work-verification/templates/LEDGER-DISCIPLINE.md).
 
@@ -470,7 +470,7 @@ The _how_ of the work — ledger discipline, right-sized branches, the SDLC — 
 
 ### Version 1.0 — April 2026
 
-Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on the [AI Constitution Supplement](../../collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md). Established the three pillars (knowledge substrate, collaborative posture, process rigour), the 9-point SDLC, ledger discipline, CAP-style independent audits, the anti-degradation practices, the subagent leverage/hazard distinction, and the LFE OSS applied position.
+Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on the [collaboration-framework posture guide set](../../collaboration-framework/guides/01-posture-and-ethics.md). Established the three pillars (knowledge substrate, collaborative posture, process rigour), the 9-point SDLC, ledger discipline, CAP-style independent audits, the anti-degradation practices, the subagent leverage/hazard distinction, and the LFE OSS applied position.
 
 ---
 

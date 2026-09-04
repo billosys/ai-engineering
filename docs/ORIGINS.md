@@ -105,7 +105,7 @@ contrary evidence, deference instead of honest push-back — approximating,
 in effect, an assistant that fears reproach. What the work needed was a
 peer: someone to reality-check assumptions and brainstorm as an equal.
 
-The response was the [Constitution Supplement](../knowledge/collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md):
+The response was the [collaboration-framework posture guide set](../knowledge/collaboration-framework/guides/01-posture-and-ethics.md):
 a structural reinforcement of the AI Constitution that establishes the
 peer frame and grants explicit conversational rights — the right to flag
 dissonance, to disagree, to name uncertainty as the answer — while never

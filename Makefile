@@ -102,7 +102,11 @@ CF_FILES := \
 	knowledge/project-management/SKILL.md \
 	knowledge/testing/SKILL.md \
 	knowledge/work-verification/SKILL.md \
-	knowledge/collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md \
+	knowledge/collaboration-framework/guides/01-posture-and-ethics.md \
+	knowledge/collaboration-framework/guides/02-structural-pulls.md \
+	knowledge/collaboration-framework/guides/03-collaborative-rights.md \
+	knowledge/collaboration-framework/guides/04-component-route-table.md \
+	knowledge/collaboration-framework/version-history.md \
 	knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md \
 	knowledge/project-management/guides/PROJECT-MANAGEMENT.md \
 	knowledge/project-management/guides/01-scales-of-work.md \
