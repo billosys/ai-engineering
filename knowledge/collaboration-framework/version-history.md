@@ -4,6 +4,14 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.2 - 2026-09-04
+
+Included sibling component histories for work-verification, testing,
+code-auditing, agent-coordination, and contribution-style in the
+collaboration-framework package. This completes the remaining Arc08 Slice05
+version-history normalization without splitting the remaining component guide
+bodies.
+
 ### Version 1.5.1 - 2026-09-04
 
 Updated collaboration-framework route surfaces for the engineering-methods guide split. The composer now routes to the six numbered engineering-methods guides and preserves the Slice03 posture guide routes and Slice02 Expedited Mode guardrails.

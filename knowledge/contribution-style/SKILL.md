@@ -5,7 +5,7 @@ description: |
   tickets with calibrated confidence, maintainer-friendly framing, and clear
   issue evidence. Use when writing bug reports, feature requests, doc fixes, or
   unconfirmed questions for projects you do not maintain.
-version: 1.0.0
+version: 1.0.1
 license: MIT
 metadata:
   hermes:
@@ -27,3 +27,5 @@ Read:
 This is a component entrypoint for the collaboration framework. It is included
 inside `collaboration-framework.zip` as routed dependency material, not as a
 separate installable package.
+
+Component history lives in [version-history.md](./version-history.md).

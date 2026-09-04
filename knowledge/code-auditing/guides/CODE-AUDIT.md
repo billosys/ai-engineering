@@ -354,14 +354,8 @@ the guide is the contract.
 The audit is diagnosis only. A follow-up round will apply the fixes.
 Do not stage, commit, or edit source files as part of this work.
 
-## Version History
+## Component History
 
-- **1.1 — 2026-08-27** — Added the multi-scale audit model:
-  audit mapping, explicit scale coverage from line/function through
-  workspace/monorepo, stable finding IDs, scale labels on findings,
-  architecture/coherence and modernization categories, coherence
-  observations, and the evidence-backed modernization synthesis.
-- **1.0 — 2026-04-23** — Initial version. Added the whole-repo,
-  per-language code audit prompt with language detection, skill-backed
-  review, severity-graded file:line findings, top-level index, and
-  diagnosis-only stance.
+The code-auditing component history lives at
+[`../version-history.md`](../version-history.md). Current audit guide lineage:
+1.1, 2026-08-27.

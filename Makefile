@@ -96,12 +96,17 @@ CF_STAGE := $(BUILD)/$(CF_NAME)
 # dependencies, and nothing else.
 CF_FILES := \
 	knowledge/agent-coordination/SKILL.md \
+	knowledge/agent-coordination/version-history.md \
 	knowledge/code-auditing/SKILL.md \
+	knowledge/code-auditing/version-history.md \
 	knowledge/contribution-style/SKILL.md \
+	knowledge/contribution-style/version-history.md \
 	knowledge/engineering-methods/SKILL.md \
 	knowledge/project-management/SKILL.md \
 	knowledge/testing/SKILL.md \
+	knowledge/testing/version-history.md \
 	knowledge/work-verification/SKILL.md \
+	knowledge/work-verification/version-history.md \
 	knowledge/collaboration-framework/guides/01-posture-and-ethics.md \
 	knowledge/collaboration-framework/guides/02-structural-pulls.md \
 	knowledge/collaboration-framework/guides/03-collaborative-rights.md \

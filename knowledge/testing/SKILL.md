@@ -5,7 +5,7 @@ description: |
   codebase must reach a hard coverage threshold, when ignored or weak tests
   need to be corrected, or when coverage work must preserve real behavior
   instead of satisfying a metric cosmetically.
-version: 1.0.0
+version: 1.0.1
 license: MIT
 metadata:
   hermes:
@@ -26,3 +26,5 @@ Read the guide:
 This is a component entrypoint for the collaboration framework. It is included
 inside `collaboration-framework.zip` as routed dependency material, not as a
 separate installable package.
+
+Component history lives in [version-history.md](./version-history.md).
