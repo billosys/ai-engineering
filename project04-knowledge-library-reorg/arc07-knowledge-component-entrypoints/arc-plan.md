@@ -57,8 +57,12 @@ CDC's starting recommendation is:
   `SKILL.md` files as concise wayfinders/contracts.
 - Long current documents should not be blindly renamed to `SKILL.md`; most
   should move under `guides/` and be routed from the component `SKILL.md`.
+- Current component documents accepted as root-level component material should
+  move one level up out of their legacy `docs/` directories.
 - Reusable forms should remain under `templates/`.
 - `project-management/docs/pm/` should become `project-management/guides/`.
+- Empty legacy `docs/` directories should be removed with `rmdir` after their
+  files move; do not use `rm -rf` for this cleanup.
 - Adjacent framework surfaces not named by the operator, especially
   `knowledge/testing/docs/` and `knowledge/work-verification/templates/`,
   must be inventoried and either kept out of scope or explicitly pulled into
@@ -121,8 +125,9 @@ Status: planned.
 Scope: implement the accepted component-root contract from Slice01: remove
 stale component `docs/` directory holdovers, migrate
 `project-management/docs/pm/` to `project-management/guides/`, create or
-preserve component `SKILL.md` entrypoints as accepted, and repair package-local
-links.
+preserve component `SKILL.md` entrypoints as accepted, move retained root-level
+component documents one level up out of `docs/`, remove emptied legacy `docs/`
+directories with `rmdir`, and repair package-local links.
 
 ### Slice 04: Reconciliation, Package Validation, and Release Notes
 

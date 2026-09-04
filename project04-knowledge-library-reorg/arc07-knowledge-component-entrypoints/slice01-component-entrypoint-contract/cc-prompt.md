@@ -42,6 +42,10 @@ The operator surfaced these cleanup requirements:
   - `knowledge/contribution-style/`;
   - `knowledge/engineering-methods/`;
   - `knowledge/project-management/`;
+- for files that remain long-form component material rather than becoming
+  component-root `SKILL.md`, plan to move them up one level out of their
+  respective `docs/` directories, then remove the empty `docs/` directories
+  with `rmdir` as a precaution; do not use `rm -rf` for this cleanup;
 - decide whether those components should instead have component-root
   `SKILL.md` entrypoints;
 - migrate `knowledge/project-management/docs/pm/` to
@@ -57,9 +61,17 @@ repeat, is:
   `SKILL.md` wayfinders/contracts.
 - Long current documents should usually become `guides/` material, not be
   blindly renamed to `SKILL.md`.
+- Where a current component document is accepted as a root-level component
+  document rather than a guide, the implementation plan should move it exactly
+  one level up, for example
+  `knowledge/agent-coordination/docs/SUBAGENT-DELEGATION-POLICY.md` to
+  `knowledge/agent-coordination/SUBAGENT-DELEGATION-POLICY.md`.
 - Reusable forms should remain under `templates/`.
 - `knowledge/project-management/docs/pm/` should become
   `knowledge/project-management/guides/`.
+- Empty legacy `docs/` directories should be removed with `rmdir` only after
+  their files have moved; do not authorize `rm -rf` for removing these
+  directories.
 - Adjacent `knowledge/testing/docs/` and
   `knowledge/work-verification/templates/` should be inventoried and either
   included or excluded with explicit rationale.
@@ -101,6 +113,10 @@ The artifacts should name later implementation validation gates, including:
 - isolated install smoke;
 - CCDP validation disposition, even if no CCDP commands are required by the
   implementation slices.
+
+The implementation roadmap must also state the file-move mechanics for later
+source-edit slices: use explicit `git mv` path pairs, remove emptied legacy
+`docs/` directories with `rmdir`, and never use `rm -rf` for this cleanup.
 
 ## Commit Scope
 

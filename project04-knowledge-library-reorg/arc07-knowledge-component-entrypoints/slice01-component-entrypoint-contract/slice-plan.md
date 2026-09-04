@@ -42,6 +42,11 @@ In scope:
   `templates/` layout.
 - Migration impact map for source moves, link repairs, package behavior, and
   validation gates.
+- File-move mechanics for later implementation slices, including moving
+  retained component documents one level up out of legacy `docs/` directories
+  when they are not guide material, migrating accepted guide material to
+  `guides/`, and removing emptied legacy `docs/` directories with `rmdir`
+  rather than `rm -rf`.
 - Implementation slice roadmap with explicit source-edit authorization
   boundaries for each later slice.
 
@@ -78,8 +83,13 @@ The decision register should test this starting recommendation:
   `SKILL.md` wayfinders.
 - Long current documents become `guides/` material unless they are genuinely
   templates.
+- If a current component document is accepted as root-level component material
+  rather than a guide, plan to move it one level up out of its `docs/`
+  directory.
 - `knowledge/project-management/docs/pm/` becomes
   `knowledge/project-management/guides/`.
+- Empty legacy `docs/` directories should be removed with `rmdir` after their
+  files move; do not use `rm -rf` for this cleanup.
 - Adjacent `testing` and `work-verification` surfaces are not silently moved;
   include or exclude them with rationale.
 
@@ -94,6 +104,8 @@ state the exact validation gates later slices should run.
 - Migration map names source paths, target paths, affected public docs,
   Makefile variables/targets, package-path exception surfaces, and expected
   package/install effects.
+- Migration map states explicit `git mv` path pairs and the `rmdir` cleanup
+  rule for emptied legacy `docs/` directories.
 - Validation command inventory names the commands needed after source moves.
 - Implementation roadmap proposes follow-on slices with explicit source-edit
   boundaries and commit-scope instructions.
