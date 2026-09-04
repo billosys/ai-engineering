@@ -271,7 +271,7 @@ and reconcile engineering-methods version history into
 
 ### Slice 05: Remaining Framework Component Version-History Normalization
 
-Status: open.
+Status: verified-closed.
 
 Scope: normalize sibling `version-history.md` files and embedded history
 sections for `work-verification`, `testing`, `code-auditing`,
@@ -281,7 +281,7 @@ perform those guide splits itself.
 
 ### Slice 06: Project-Management Example Layout Reconciliation
 
-Status: planned after Slice05.
+Status: open.
 
 Scope: compare the current project-management guides against the accepted
 architecture, especially the current `guides/09-worked-example-odm.md` route
@@ -432,3 +432,17 @@ split, testing guide split, code-auditing guide split, agent-coordination guide
 split, contribution-style guide split, and final package/install/release
 reconciliation. Slice05 remains scoped to version-history normalization and
 feeds the later guide-decomposition slices instead of performing them.
+
+### v1.7 - 2026-09-04
+
+Closed Slice05 after CDC verification. Slice05 normalized the five remaining
+framework component histories into sibling `version-history.md` files, moved
+or reconciled embedded histories from work-verification and code-auditing,
+updated component entrypoints and the collaboration-framework package list,
+and confirmed the generated collaboration-framework package contains 61
+entries with no guide/template-local component history files.
+
+Opened Slice06 for project-management guide/example layout reconciliation.
+This supersedes the original Slice05 close-report bubble-up that named final
+package reconciliation as Slice06; final reconciliation is now Slice12 after
+the operator-expanded Arc08 guide split sequence.

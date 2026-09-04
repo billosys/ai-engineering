@@ -372,10 +372,10 @@ operator.
 
 Detailed arc planning is open under
 `arc08-framework-guide-decomposition/`. Slice01 through Slice04 are
-verified-closed. Slice05, `slice05-component-version-history-normalization`,
-is open. The operator expanded Arc08 on 2026-09-04 to keep the remaining
-accepted component guide splits in this same arc rather than opening a later
-arc.
+verified-closed. Slice06,
+`slice06-project-management-example-layout-reconciliation`, is open. The
+operator expanded Arc08 on 2026-09-04 to keep the remaining accepted component
+guide splits in this same arc rather than opening a later arc.
 
 ## Current Status
 
@@ -393,13 +393,12 @@ separation, and operator acceptance readiness.
 
 Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator review.
 Arc08, `arc08-framework-guide-decomposition`, is active. Slice01 through
-Slice04 are verified-closed. Slice05,
-`slice05-component-version-history-normalization`, is open while later Arc08
-slices now carry project-management layout reconciliation and the remaining
-component guide splits.
+Slice05 are verified-closed. Slice06,
+`slice06-project-management-example-layout-reconciliation`, is open while later
+Arc08 slices carry the remaining component guide splits.
 
 The next execution action is CC completion of:
-`arc08-framework-guide-decomposition/slice05-component-version-history-normalization/cc-prompt.md`.
+`arc08-framework-guide-decomposition/slice06-project-management-example-layout-reconciliation/cc-prompt.md`.
 
 ## Version History
 
@@ -411,6 +410,17 @@ guide/example layout reconciliation plus the work-verification, testing,
 code-auditing, agent-coordination, and contribution-style guide splits before
 final package/install/release reconciliation. This preserves Expedited Mode's
 no-inferred-scope rule while recording the operator's explicit scope expansion.
+
+### v1.34 - 2026-09-04
+
+Recorded Arc08 Slice05 as verified-closed after CDC reproduced the
+version-history normalization ledger, checked source/planning commit trailers,
+reran source/package/link validation, and confirmed the
+collaboration-framework package now carries sibling histories for all eight
+framework components. Opened Slice06,
+`slice06-project-management-example-layout-reconciliation`, for the accepted
+project-management `examples/01-worked-example-odm.md` layout check before the
+remaining component guide splits.
 
 ### v1.32 - 2026-09-04
 

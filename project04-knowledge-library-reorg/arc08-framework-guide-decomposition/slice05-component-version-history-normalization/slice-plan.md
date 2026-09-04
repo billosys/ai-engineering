@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice05-component-version-history-normalization
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -123,3 +123,20 @@ skip checks, weaken evidence, change review quality, or bypass approval gates.
   this slice.
 - Source and planning commits are created with explicit file lists and both
   required co-author trailers.
+
+## CDC Closure
+
+Slice05 was CDC-verified closed on 2026-09-04.
+
+Verified source commit:
+
+- `657f156c7ad8048e60727275c2eed0d910de7f45`
+
+Verified planning commits:
+
+- `a494e6838401e6fcd8f88f734f27dc4d5043487c`
+- `15e04fd8e8d1de48e5e219c2acce430d9092e751`
+
+Closure evidence:
+
+- `cdc-verification.md`
