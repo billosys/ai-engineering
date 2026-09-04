@@ -281,7 +281,7 @@ perform those guide splits itself.
 
 ### Slice 06: Project-Management Example Layout Reconciliation
 
-Status: open.
+Status: verified-closed.
 
 Scope: compare the current project-management guides against the accepted
 architecture, especially the current `guides/09-worked-example-odm.md` route
@@ -292,7 +292,7 @@ routes.
 
 ### Slice 07: Work-Verification Guide Split
 
-Status: planned after Slice06.
+Status: open.
 
 Scope: split the ledger-discipline source into the accepted work-verification
 guide set: `01-ledger-discipline.md`, `02-evidence-strength.md`,
@@ -446,3 +446,14 @@ Opened Slice06 for project-management guide/example layout reconciliation.
 This supersedes the original Slice05 close-report bubble-up that named final
 package reconciliation as Slice06; final reconciliation is now Slice12 after
 the operator-expanded Arc08 guide split sequence.
+
+### v1.8 - 2026-09-04
+
+Closed Slice06 after CDC verification. Slice06 moved the project-management
+worked example from the numbered guide surface to the accepted
+`examples/01-worked-example-odm.md` path, preserved the eight numbered
+project-management guides and wayfinder, repaired package routes, and
+confirmed the generated collaboration-framework package contains 62 entries
+with the accepted example path.
+
+Opened Slice07 for the work-verification guide split.

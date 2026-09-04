@@ -372,8 +372,7 @@ operator.
 
 Detailed arc planning is open under
 `arc08-framework-guide-decomposition/`. Slice01 through Slice04 are
-verified-closed. Slice06,
-`slice06-project-management-example-layout-reconciliation`, is open. The
+verified-closed. Slice07, `slice07-work-verification-guide-split`, is open. The
 operator expanded Arc08 on 2026-09-04 to keep the remaining accepted component
 guide splits in this same arc rather than opening a later arc.
 
@@ -393,12 +392,11 @@ separation, and operator acceptance readiness.
 
 Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator review.
 Arc08, `arc08-framework-guide-decomposition`, is active. Slice01 through
-Slice05 are verified-closed. Slice06,
-`slice06-project-management-example-layout-reconciliation`, is open while later
-Arc08 slices carry the remaining component guide splits.
+Slice06 are verified-closed. Slice07, `slice07-work-verification-guide-split`,
+is open while later Arc08 slices carry the remaining component guide splits.
 
 The next execution action is CC completion of:
-`arc08-framework-guide-decomposition/slice06-project-management-example-layout-reconciliation/cc-prompt.md`.
+`arc08-framework-guide-decomposition/slice07-work-verification-guide-split/cc-prompt.md`.
 
 ## Version History
 
@@ -421,6 +419,16 @@ framework components. Opened Slice06,
 `slice06-project-management-example-layout-reconciliation`, for the accepted
 project-management `examples/01-worked-example-odm.md` layout check before the
 remaining component guide splits.
+
+### v1.35 - 2026-09-04
+
+Recorded Arc08 Slice06 as verified-closed after CDC reproduced the
+project-management example-layout reconciliation ledger, checked source and
+planning commit trailers, reran source/package/link validation, and confirmed
+the generated collaboration-framework package contains the accepted
+`knowledge/project-management/examples/01-worked-example-odm.md` path. Opened
+Slice07, `slice07-work-verification-guide-split`, for the first remaining
+component guide decomposition slice.
 
 ### v1.32 - 2026-09-04
 

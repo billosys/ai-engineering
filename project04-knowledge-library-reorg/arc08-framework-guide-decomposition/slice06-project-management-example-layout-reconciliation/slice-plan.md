@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice06-project-management-example-layout-reconciliation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -113,3 +113,20 @@ evidence, change review quality, or bypass approval gates.
   guide path as a live route unless explicitly retained.
 - Source and planning commits are created with explicit file lists and both
   required co-author trailers.
+
+## CDC Closure
+
+Slice06 was CDC-verified closed on 2026-09-04.
+
+Verified source commit:
+
+- `df2c33e0d882aa89dbd42da3b87737a822903979`
+
+Verified planning commits:
+
+- `96d41b25b6c16f0559eedcc9adf8135fd9828b3f`
+- `75c0801ca2fc3404274878f82ec109044ba90119`
+
+Closure evidence:
+
+- `cdc-verification.md`
