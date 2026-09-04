@@ -2,7 +2,7 @@
 
 > Authoring template for a single upstream contribution ticket (bug, feature,
 > doc fix, or question). For voice, scope, and the disciplines this template
-> rests on, read [`../docs/CONTRIBUTION-STYLE.md`](../docs/CONTRIBUTION-STYLE.md)
+> rests on, read [`../guides/CONTRIBUTION-STYLE.md`](../guides/CONTRIBUTION-STYLE.md)
 > first — that doc is the *why*; this file is the *shape*.
 >
 > Pick one of the four shapes below (they share a spine) and delete what
@@ -202,7 +202,7 @@ the weight.
    with the operator on the first ticket of a project (the project-wide
    default for upstream-contribution drafts is still deferred; see
    Part VIII of
-   [`../../project-management/docs/PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md)).
+   [`../../project-management/guides/PROJECT-MANAGEMENT.md`](../../project-management/guides/PROJECT-MANAGEMENT.md)).
    The on-disk filename mirrors the title:
    `NN-<kind>-<slug>.md` — e.g. `01-bug-coremidi-virtual-sysex-256-cap.md`.
 2. **Re-check line references** against current `HEAD` before pasting; the

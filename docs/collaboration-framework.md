@@ -25,14 +25,14 @@ compound across time, commits, reviewers, or planning artifacts.
 | Surface | Source path | Role |
 |---|---|---|
 | Composer skill | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Collaboration-framework source entrypoint and route table. |
-| Collaboration posture | [`knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md`](../knowledge/collaboration-framework/docs/AI-CONSTITUTION-SUPPLEMENT.md) | Peer-frame and quality-floor posture. |
-| Engineering method | [`knowledge/engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md`](../knowledge/engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md) | Knowledge substrate, collaborative posture, and process rigor. |
-| Project management | [`knowledge/project-management/docs/PROJECT-MANAGEMENT.md`](../knowledge/project-management/docs/PROJECT-MANAGEMENT.md) | Project, arc, slice, planning, close, and bubble-up wayfinder. |
+| Collaboration posture | [`knowledge/collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md`](../knowledge/collaboration-framework/guides/AI-CONSTITUTION-SUPPLEMENT.md) | Peer-frame and quality-floor posture. |
+| Engineering method | [`knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md`](../knowledge/engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md) | Knowledge substrate, collaborative posture, and process rigor. |
+| Project management | [`knowledge/project-management/guides/PROJECT-MANAGEMENT.md`](../knowledge/project-management/guides/PROJECT-MANAGEMENT.md) | Project, arc, slice, planning, close, and bubble-up wayfinder. |
 | Work verification | [`knowledge/work-verification/templates/LEDGER-DISCIPLINE.md`](../knowledge/work-verification/templates/LEDGER-DISCIPLINE.md) | Ledger discipline and evidence requirements. |
-| Code audit | [`knowledge/code-auditing/docs/CODE-AUDIT.md`](../knowledge/code-auditing/docs/CODE-AUDIT.md) | Diagnosis-only code audit discipline. |
-| Testing | [`knowledge/testing/docs/CODE-COVERAGE.md`](../knowledge/testing/docs/CODE-COVERAGE.md) | Test coverage hardening guidance. |
-| Agent coordination | [`knowledge/agent-coordination/docs/SUBAGENT-DELEGATION-POLICY.md`](../knowledge/agent-coordination/docs/SUBAGENT-DELEGATION-POLICY.md) | Delegation boundaries and multi-agent coordination. |
-| Contribution style | [`knowledge/contribution-style/docs/CONTRIBUTION-STYLE.md`](../knowledge/contribution-style/docs/CONTRIBUTION-STYLE.md) | Maintainer-facing issue, PR, and ticket style. |
+| Code audit | [`knowledge/code-auditing/guides/CODE-AUDIT.md`](../knowledge/code-auditing/guides/CODE-AUDIT.md) | Diagnosis-only code audit discipline. |
+| Testing | [`knowledge/testing/guides/CODE-COVERAGE.md`](../knowledge/testing/guides/CODE-COVERAGE.md) | Test coverage hardening guidance. |
+| Agent coordination | [`knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md`](../knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md) | Delegation boundaries and multi-agent coordination. |
+| Contribution style | [`knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md`](../knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md) | Maintainer-facing issue, PR, and ticket style. |
 | Contribution ticket template | [`knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md`](../knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md) | Template for upstream contribution tickets. |
 
 ## Whole Framework Or Narrow Component

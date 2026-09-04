@@ -8,7 +8,7 @@ its job; it has deferred a problem to whoever plans the next slice.
 Two documents close a slice: `closing-report.md` (written by CC, the
 implementer) and `cdc-verification.md` (written by CDC, the independent
 reviewer). The ledger-row mechanics of both are defined in
-[`LEDGER-DISCIPLINE.md`](../../../work-verification/templates/LEDGER-DISCIPLINE.md). This section adds
+[`LEDGER-DISCIPLINE.md`](../../work-verification/templates/LEDGER-DISCIPLINE.md). This section adds
 the two things that make a close also a *bubble-up*.
 
 ### The slice closing-report — `closing-report.md`

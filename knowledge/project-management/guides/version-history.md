@@ -3,7 +3,7 @@
 ### Version 2.7 — September 2026
 
 Routed CC, CDC, and Operator terminology to
-[`../../../engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](../../../engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
+[`../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex`](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
 as the current collaboration-framework source of truth. The
 project-management wayfinder now avoids carrying partial local definitions
 while preserving canonical filenames, artifact homes, and Expedited Mode
@@ -51,8 +51,8 @@ on scope/sequencing while ledger files carry acceptance and composition rows.
 ### Version 2.3 — August 2026
 
 Split the long project-management monolith
-([docs/PROJECT-MANAGEMENT.md](../PROJECT-MANAGEMENT.md)) into focused files under
-`docs/pm/`, preserving the original part boundaries. The root file is now a
+([docs/PROJECT-MANAGEMENT.md](./PROJECT-MANAGEMENT.md)) into focused files under
+`guides/`, preserving the original part boundaries. The root file is now a
 wayfinder with a required load set, a split-file index, and minimum-context
 shortcuts for common operations. This keeps `PROJECT-MANAGEMENT.md` as the
 entry point while reducing the context load for LLM sessions that only need one
@@ -105,7 +105,7 @@ now matured through three arcs and informs this revision. v2.0 lands the
 deferred layer:
 
 - **Absorbed the scales-of-work, fundamental-unit, sizing, and default-layout
-  detail extracted from [`AI-ENGINEERING-METHODOLOGY.md`](../../../engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md)**
+  detail extracted from [`AI-ENGINEERING-METHODOLOGY.md`](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md)**
   (which now keeps a summary and points here). The vocabulary
   (project/arc/slice/step/iteration) and the context-window basis for sizing a
   slice now live in Part I; the canonical planning worktree in Part II.

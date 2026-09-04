@@ -22,7 +22,7 @@ maintainer cannot tell where the actionable claim ends). Both fail the same
 underlying test: *they make the reader do work that was the author's job.*
 
 The methodology in this repo (see
-[`../../engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md`](../../engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md))
+[`../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md`](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md))
 provides the spine — write to the floor not the ceiling, flag dissonance
 early, calibrated honesty as the other face of bold assertion. This document
 applies those disciplines to the specific public artifact of an upstream

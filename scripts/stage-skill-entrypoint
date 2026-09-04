@@ -15,7 +15,7 @@ GUIDE_ROOT_TRANSFORMS = {
 }
 
 COLLABORATION_FRAMEWORK_TRANSFORMS = {
-    "./docs/": "./knowledge/collaboration-framework/docs/",
+    "./guides/": "./knowledge/collaboration-framework/guides/",
     "../agent-coordination/": "./knowledge/agent-coordination/",
     "../biome/": "./knowledge/biome/",
     "../code-auditing/": "./knowledge/code-auditing/",
@@ -32,11 +32,7 @@ COLLABORATION_FRAMEWORK_TRANSFORMS = {
     "../work-verification/": "./knowledge/work-verification/",
 }
 
-COLLABORATION_FRAMEWORK_DEPENDENCY_TRANSFORMS = {
-    Path("knowledge/engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md"): {
-        "](../SKILL.md)": "](../../../SKILL.md)",
-    },
-}
+COLLABORATION_FRAMEWORK_DEPENDENCY_TRANSFORMS: dict[Path, dict[str, str]] = {}
 
 
 def guide_references(guides_dir: Path) -> list[str]:

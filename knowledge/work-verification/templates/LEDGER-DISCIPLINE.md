@@ -5,7 +5,7 @@
 > ledger** — before the work, not as an end-of-unit checklist. This document
 > describes the protocol; the ledgers themselves live next to the
 > plan-of-record at each scale as dedicated `ledger.md` files (see
-> `../../project-management/docs/PROJECT-MANAGEMENT.md`).
+> `../../project-management/guides/PROJECT-MANAGEMENT.md`).
 
 ## What this is
 
@@ -28,7 +28,7 @@ mechanical. But the same discipline applies one and two scales up, to the
 **arc** (do its slices compose into the promised capability?) and the
 **project** (do its arcs compose into the definition of done?). Those higher
 scales are the *recomposition* side of the decompose/recompose loop in
-[`../../project-management/docs/PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md): planning lays
+[`../../project-management/guides/PROJECT-MANAGEMENT.md`](../../project-management/guides/PROJECT-MANAGEMENT.md): planning lays
 out a tree of claims top-down; the ledgers discharge that tree from the leaves
 up, each scale's ledger being the gate that confirms its sub-tree composes
 before the claim above it can rest on it. This is the assurance-case pattern
@@ -48,7 +48,7 @@ where the discipline actually lives.
 ## Notes for Codex
 
 For the canonical **CC**, **CDC**, and **Operator** role definitions, read
-[the methodology Notes for Codex](../../engineering-methods/docs/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
+[the methodology Notes for Codex](../../engineering-methods/guides/AI-ENGINEERING-METHODOLOGY.md#notes-for-codex)
 in the collaboration-framework package. Those labels are the **slice-level
 instance** of a scale-free principle: *the closer of a row is structurally
 separate from its verifier.* At arc and project scale the labels shift (see
@@ -276,7 +276,7 @@ Rows: <N>. Done: <n>. Deferred: <n>. No-op: <n>.
 
 The slice ledger lives as `ledger.md` in the slice directory, per the canonical
 planning worktree in
-[`../../project-management/docs/PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) — e.g.
+[`../../project-management/guides/PROJECT-MANAGEMENT.md`](../../project-management/guides/PROJECT-MANAGEMENT.md) — e.g.
 `$PROJECT_DIR/.worktrees/planning/projectNN-<slug>/arcNN-<slug>/sliceNN-<slug>/ledger.md`.
 Durable artifacts produced by the slice default to the sibling
 `artifacts/` directory in that same slice path, unless the operator records a
@@ -550,7 +550,7 @@ plan files. The ledger mechanics are unchanged.
 ### Version 2.1 — August 2026
 
 Updated the slice-ledger path example to match
-[`../../project-management/docs/PROJECT-MANAGEMENT.md`](../../project-management/docs/PROJECT-MANAGEMENT.md) v2.2: planning
+[`../../project-management/guides/PROJECT-MANAGEMENT.md`](../../project-management/guides/PROJECT-MANAGEMENT.md) v2.2: planning
 artifacts now default to the orphan `planning` branch/worktree under
 `projectNN-<slug>`, not an implementation-branch `docs/design-vX.Y.Z` tree.
 Also renamed the referenced slice plan-of-record from `slice-doc.md` to
@@ -574,7 +574,7 @@ and established practice, not yet by a closed project.
 Per the layout decision (Option A), the arc and project ledgers live as sections
 in `arc-plan.md` / `project-plan.md` and close in the companion
 `closing-report.md`s, rather than as separate files — synchronised with
-`../../project-management/docs/PROJECT-MANAGEMENT.md`. This embedded-section layout was superseded by
+`../../project-management/guides/PROJECT-MANAGEMENT.md`. This embedded-section layout was superseded by
 v2.2, which gives every scale its own sibling `ledger.md`. Added a *Lineage*
 section grounding the
 multi-scale extension in assurance cases / GSN, the V-model, and stage-gate
