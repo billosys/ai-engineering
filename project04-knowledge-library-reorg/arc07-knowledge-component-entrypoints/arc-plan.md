@@ -120,7 +120,7 @@ references affected by the move.
 
 ### Slice 03: Component Guide Layout and Standalone Entrypoints
 
-Status: open.
+Status: verified-closed.
 
 Scope: implement the accepted component-root contract from Slice01: remove
 stale component `docs/` directory holdovers, migrate
@@ -132,12 +132,13 @@ instruction/source references surfaced by Slice02.
 
 ### Slice 04: Reconciliation, Package Validation, and Release Notes
 
-Status: planned.
+Status: open.
 
 Scope: run final README/docs/SKILL link validation, `make check-skills`,
 `make collab-framework`, `make all`, `make check-package-paths`, package
 inspection, install smoke, and release-note reconciliation after the component
-entrypoint cleanup.
+entrypoint cleanup, including the existing release note under
+`workbench/release-notes/RELEASE-0.5.0.md`.
 
 ## Dependencies
 
@@ -172,3 +173,10 @@ Closed Slice02 after CDC verification and opened Slice03. Slice02 completed the
 collaboration-framework entrypoint relocation and surfaced two explicit
 Slice03 repairs: the remaining engineering-methods `../SKILL.md` source
 reference and the project-management path references in `AGENTS.md`.
+
+### v1.3 - 2026-09-04
+
+Closed Slice03 after CDC verification and opened Slice04. Slice03 completed the
+component-root guide layout, added component `SKILL.md` wayfinders, removed
+legacy tracked component `docs/` holdovers, and surfaced final release-note
+reconciliation for `workbench/release-notes/RELEASE-0.5.0.md`.
