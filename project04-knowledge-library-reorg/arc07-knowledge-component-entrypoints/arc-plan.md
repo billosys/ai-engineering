@@ -132,7 +132,7 @@ instruction/source references surfaced by Slice02.
 
 ### Slice 04: Reconciliation, Package Validation, and Release Notes
 
-Status: open.
+Status: verified-closed.
 
 Scope: run final README/docs/SKILL link validation, `make check-skills`,
 `make collab-framework`, `make all`, `make check-package-paths`, package
@@ -180,3 +180,10 @@ Closed Slice03 after CDC verification and opened Slice04. Slice03 completed the
 component-root guide layout, added component `SKILL.md` wayfinders, removed
 legacy tracked component `docs/` holdovers, and surfaced final release-note
 reconciliation for `workbench/release-notes/RELEASE-0.5.0.md`.
+
+### v1.4 - 2026-09-04
+
+Closed Slice04 after CDC verification. CDC reproduced the final package,
+install, link, and release-note checks, then made one narrow generated CCDP
+date refresh required by the freshness gate. Formal Arc07 close is intentionally
+held for operator review per operator instruction.

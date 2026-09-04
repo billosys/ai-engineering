@@ -4,9 +4,12 @@
 project: project04-knowledge-library-reorg
 arc: arc07-knowledge-component-entrypoints
 slice: slice04-reconciliation-package-validation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
+closed-by: CDC
+closed-on: 2026-09-04
+cdc-verification: cdc-verification.md
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
 planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning
 source-files-edited: authorized-if-needed
