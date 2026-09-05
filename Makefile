@@ -30,7 +30,7 @@ CCDP_NAME := ccdp
 CCDP_ZIP := $(ZIP_OUTPUT_DIR)/$(CCDP_NAME).zip
 CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 
-.PHONY: all skills install uninstall clean help check-skills check-package-paths \
+.PHONY: all skills install uninstall clean help check-skills check-package-paths print-skill-zips \
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
 	rust go cpp js erlang cobalt design tailwindcss deno biome
@@ -74,6 +74,7 @@ help:
 	@echo "  make skills             -> all per-domain zips"
 	@echo "  make all                -> skills + collab-framework"
 	@echo "  make check-skills       -> validate every SKILL.md description length"
+	@echo "  make print-skill-zips   -> list release-uploadable skill zip paths"
 	@echo "  make ccdp               -> assemble the CCDP protocol document"
 	@echo "  make ccdp-package       -> build $(CCDP_ZIP) (protocol package)"
 	@echo "  make check-ccdp-package -> validate $(CCDP_ZIP) zipped and unzipped"
@@ -266,6 +267,10 @@ check-skills:
 ## check-package-paths: build all zips and validate package-context Markdown paths
 check-package-paths: all
 	@./scripts/check-package-paths --exceptions "$(PACKAGE_PATH_EXCEPTIONS)" $(INSTALL_ZIPS)
+
+## print-skill-zips: list the skill zip paths managed by this Makefile
+print-skill-zips:
+	@printf '%s\n' $(INSTALL_ZIPS)
 
 $(INSTALL_DIR):
 	@mkdir -p "$@"

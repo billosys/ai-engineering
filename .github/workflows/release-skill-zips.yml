@@ -1,0 +1,68 @@
+name: Release Skill Zips
+
+on:
+  release:
+    types: [published]
+
+  # Allow maintainers to rebuild and reattach the skill zip assets for an
+  # existing GitHub Release without creating a new tag.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to build and attach skill zips for
+        required: true
+        type: string
+
+# Attaching assets to a GitHub Release requires write access to release content.
+permissions:
+  contents: write
+
+# One upload run per release tag. A newer manual retry for the same tag cancels
+# the older in-flight run before it can race on asset replacement.
+concurrency:
+  group: release-skill-zips-${{ github.event.release.tag_name || github.event.inputs.tag }}
+  cancel-in-progress: true
+
+jobs:
+  attach-skill-zips:
+    name: Build and attach skill zips
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ github.event.release.tag_name || github.event.inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out the release tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.RELEASE_TAG }}
+
+      - name: Clean generated archives
+        run: make clean
+
+      - name: Validate skill descriptions
+        run: make check-skills
+
+      - name: Build and validate skill zips
+        run: make check-package-paths
+
+      - name: Collect release assets
+        run: |
+          make -s print-skill-zips > skill-zip-assets.txt
+
+          while IFS= read -r zip_path; do
+            if [ ! -f "$zip_path" ]; then
+              echo "ERROR: missing expected release asset: $zip_path" >&2
+              exit 1
+            fi
+          done < skill-zip-assets.txt
+
+          cat skill-zip-assets.txt
+
+      - name: Attach skill zips to GitHub Release
+        run: |
+          assets=()
+          while IFS= read -r zip_path; do
+            assets+=("$zip_path")
+          done < skill-zip-assets.txt
+
+          gh release upload "$RELEASE_TAG" "${assets[@]}" --clobber
