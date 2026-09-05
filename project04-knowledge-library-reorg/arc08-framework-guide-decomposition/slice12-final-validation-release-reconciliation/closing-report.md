@@ -3,16 +3,52 @@
 ## Summary
 
 Slice12 is proposed-done. Final Arc08 reconciliation found one source-facing
-release-note defect and repaired it. Source validation, local route-link
-validation, package builds, package-path validation, isolated install smoke,
-and CCDP protocol package validation passed after the repair.
+release-note defect and repaired it. During later operator review, CDC also
+renamed the project-management guide-set wayfinder from
+`knowledge/project-management/guides/PROJECT-MANAGEMENT.md` to
+`knowledge/project-management/guides/README.md` and repaired affected live
+routes, package lists, component histories, and release notes. Source
+validation, local route-link validation, package builds, package-path
+validation, isolated install smoke, and CCDP protocol package validation passed
+after the original repair; focused validation for the review repair also
+passed.
 
 ## Source Commit
 
-Source commit: `6ff611b71ddb5f5a2290966ac8ae139fa81cea07`
+Source commits:
+
+- `6ff611b71ddb5f5a2290966ac8ae139fa81cea07` - release-note reconciliation.
+- `c97b4e42e441b9bdd0a29a37ac1be508696ab9c0` - operator-review
+  project-management guide README rename.
 
 Explicit source file list:
 
+- `workbench/release-notes/RELEASE-0.5.0.md`
+
+Operator-review repair source file list:
+
+- `AGENTS.md`
+- `Makefile`
+- `docs/ORIGINS.md`
+- `docs/collaboration-framework.md`
+- `knowledge/collaboration-framework/SKILL.md`
+- `knowledge/collaboration-framework/guides/04-component-route-table.md`
+- `knowledge/collaboration-framework/version-history.md`
+- `knowledge/contribution-style/SKILL.md`
+- `knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md`
+- `knowledge/contribution-style/version-history.md`
+- `knowledge/engineering-methods/SKILL.md`
+- `knowledge/engineering-methods/guides/03-process-rigour.md`
+- `knowledge/engineering-methods/guides/04-operational-routing.md`
+- `knowledge/engineering-methods/version-history.md`
+- `knowledge/project-management/SKILL.md`
+- `knowledge/project-management/guides/06-confirmation-protocol.md`
+- `knowledge/project-management/guides/PROJECT-MANAGEMENT.md`
+- `knowledge/project-management/guides/README.md`
+- `knowledge/project-management/version-history.md`
+- `knowledge/work-verification/SKILL.md`
+- `knowledge/work-verification/templates/LEDGER-DISCIPLINE.md`
+- `knowledge/work-verification/version-history.md`
 - `workbench/release-notes/RELEASE-0.5.0.md`
 
 ## Planning Commit
@@ -57,41 +93,64 @@ Explicit planning file list:
   Markdown path failures.
 - Focused `ccdp.zip` inspection: pass; single `ccdp/` protocol root, required
   protocol package files present, no `SKILL*` entrypoint.
+- Operator-review project-management README rename validation:
+  `git diff --check`, `git diff --cached --check`, `make check-skills`,
+  focused live-route local Markdown link validation with 60 files and 417 local
+  links checked and 0 missing, `make collab-framework`, and
+  `make check-package-paths` passed with 12 zips, 208 packaged Markdown files,
+  0 hard failures, 376 warnings, 3 explicit exceptions, and 656 skipped
+  external URLs.
+- Operator-review package inspection: `collaboration-framework.zip` contains
+  `collaboration-framework/knowledge/project-management/guides/README.md` and
+  does not contain the old
+  `collaboration-framework/knowledge/project-management/guides/PROJECT-MANAGEMENT.md`
+  path.
 
 ## Row Walk
 
 - F-1: done; final source route surface recorded in
-  `artifacts/final-source-route-reconciliation.md`.
+  `artifacts/final-source-route-reconciliation.md`, with operator-review
+  README rename addendum recorded in
+  `artifacts/operator-review-project-management-readme-rename.md`.
 - F-2: done; old monolith/pre-split filename hits classified in
-  `artifacts/old-live-target-disposition-map.md`.
+  `artifacts/old-live-target-disposition-map.md`; the old
+  `PROJECT-MANAGEMENT.md` wayfinder name is now historical/disposition text
+  only.
 - F-3: done; version-history placement recorded in
   `artifacts/version-history-placement-check.md`.
 - F-4: done; local Markdown link validation recorded in
-  `artifacts/final-source-route-reconciliation.md`.
+  `artifacts/final-source-route-reconciliation.md`, with post-review-repair
+  focused live-route validation recorded in
+  `artifacts/operator-review-project-management-readme-rename.md`.
 - F-5: done; package validation and package inspection recorded in
-  `artifacts/package-validation-results.md`.
+  `artifacts/package-validation-results.md`; the review repair additionally
+  confirmed `collaboration-framework.zip` contains the renamed README path and
+  omits the old project-management wayfinder path.
 - F-6: done; isolated install smoke recorded in
   `artifacts/install-smoke-results.md`.
 - F-7: done; CCDP protocol package disposition recorded in
   `artifacts/ccdp-disposition-results.md`.
-- F-8: done; release notes reconciled and source commit recorded in
-  `artifacts/release-note-reconciliation.md`.
-- F-9: done; exact source commit, planning close commit, file lists,
-  validation summary, and Arc08 bubble-up are recorded here.
+- F-8: done; release notes reconciled and source commits recorded in
+  `artifacts/release-note-reconciliation.md` and
+  `artifacts/operator-review-project-management-readme-rename.md`.
+- F-9: done; exact source commits, planning close commit, file lists,
+  validation summary, review-repair addendum, and Arc08 bubble-up are recorded
+  here.
 
 Rows: 9. Done: 9. Deferred: 0. No-op: 0.
 
 ## Final Status
 
-Source status after source commit: clean.
+Source status after source commits: clean.
 
 Planning status after close packet commit: clean except this hash-record patch
 until the follow-up planning commit is made.
 
 ## Bubble-Up to Arc08
 
-Arc08 can proceed to arc closure after CDC independently verifies Slice12. The
-Slice12 evidence supports updating Arc08 row A-12 from open to done after CDC
-verification because README/docs/AGENTS/SKILL links, package validation,
-install smoke, CCDP disposition, and release notes are reconciled after all
-Arc08 guide splits.
+Arc08 can proceed to arc closure after CDC independently verifies Slice12 and
+the operator requests formal closure. The Slice12 evidence supports updating
+Arc08 row A-12 from open to done after CDC verification because
+README/docs/AGENTS/SKILL links, package validation, install smoke, CCDP
+disposition, release notes, and the operator-review project-management README
+rename are reconciled after all Arc08 guide splits.
