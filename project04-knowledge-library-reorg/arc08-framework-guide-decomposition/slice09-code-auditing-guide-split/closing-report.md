@@ -8,7 +8,7 @@ status: proposed-done
 closed-by: CC
 closed-on: 2026-09-05
 source_commit: 1eb10d789734d9cca5c2c0f7cdedb4257dfab1e6
-planning_commit: pending until this report is committed
+planning_commit: cbddcd160163aca3dccda23e730d082b35e9c451
 ```
 
 ## Verdict
@@ -26,7 +26,7 @@ Source commit:
 `1eb10d789734d9cca5c2c0f7cdedb4257dfab1e6`
 
 Planning commit:
-pending until this report is committed
+cbddcd160163aca3dccda23e730d082b35e9c451
 
 ## Explicit File Lists
 
@@ -103,7 +103,7 @@ Summary:
 | F-5 | done | `artifacts/source-route-repair-map.md` records code-auditing, collaboration-framework, engineering-methods, project-management, public docs, AGENTS, release-note, Makefile, and package-exception repairs plus work-verification/testing no-ops. |
 | F-6 | done | Source whitespace, skill-description, focused local-link, collaboration-framework package build, and full package-path validation passed with zero hard failures. |
 | F-7 | done | Generated `collaboration-framework.zip` contains all five code-auditing guides and omits the old `CODE-AUDIT.md` path. |
-| F-8 | done | This report records exact source commit, pending planning commit placeholder, explicit file lists, final statuses, row walk, and bubble-up. |
+| F-8 | done | This report records exact source commit, planning close-packet commit, explicit file lists, final statuses, row walk, and bubble-up. |
 
 Rows: 8. Done: 8. Deferred: 0. No-op: 0.
 
