@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice11-contribution-style-guide-split
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-05
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -107,4 +107,17 @@ Do not create `cdc-verification.md`; CDC writes it after independent review.
 
 ## Closure
 
-Slice is open.
+Slice is verified-closed by CDC.
+
+CDC verification is recorded in `cdc-verification.md`.
+
+Source commit:
+`f96c30266b892fa67185f03046b6662326df0481`
+
+Planning close commits:
+
+- `a8edf2b9b166735c7af258afdee4fe2b0c1fe5b5`
+- `340cf8ef29b5b76541252a7f2bd691b89afbb0e1`
+
+No Arc08 scope change is required. Slice12 can proceed to final package,
+install, link, CCDP disposition, and release reconciliation.

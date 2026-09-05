@@ -332,7 +332,7 @@ route-level coordination contract.
 
 ### Slice 11: Contribution-Style Guide Split
 
-Status: open.
+Status: verified-closed.
 
 Scope: split contribution guidance into `01-contribution-style.md` and
 `02-upstream-ticket-workflow.md`, while preserving
@@ -340,7 +340,7 @@ Scope: split contribution guidance into `01-contribution-style.md` and
 
 ### Slice 12: Final Package, Install, Link, and Release Reconciliation
 
-Status: planned after Slice11.
+Status: open.
 
 Scope: run final README/docs/AGENTS/SKILL/component link validation, package
 validation, generated package inspection, isolated install smoke, CCDP package
@@ -501,3 +501,15 @@ with all four agent-coordination guides and no old
 `SUBAGENT-DELEGATION-POLICY.md` package path.
 
 Opened Slice11 for the contribution-style guide split.
+
+### v1.13 - 2026-09-05
+
+Closed Slice11 after CDC verification. Slice11 split contribution-style into
+`01-contribution-style.md` for maintainer-facing voice and
+`02-upstream-ticket-workflow.md` for filing mechanics, retained
+`templates/CONTRIBUTION-TICKET.md` as a package-local authoring template, and
+confirmed the generated collaboration-framework package contains both guides
+and the retained template with no old `CONTRIBUTION-STYLE.md` package path.
+
+Opened Slice12 for final README/docs/AGENTS/SKILL links, package validation,
+install smoke, CCDP disposition, and release-note reconciliation.

@@ -371,8 +371,9 @@ confirms the exact split/version-history/Expedited Mode wording map with the
 operator.
 
 Detailed arc planning is open under
-`arc08-framework-guide-decomposition/`. Slice01 through Slice10 are
-verified-closed. Slice11, `slice11-contribution-style-guide-split`, is open.
+`arc08-framework-guide-decomposition/`. Slice01 through Slice11 are
+verified-closed. Slice12,
+`slice12-final-validation-release-reconciliation`, is open.
 The operator expanded Arc08 on 2026-09-04 to keep the remaining accepted
 component guide splits in this same arc rather than opening a later arc.
 
@@ -392,14 +393,25 @@ separation, and operator acceptance readiness.
 
 Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator review.
 Arc08, `arc08-framework-guide-decomposition`, is active. Slice01 through
-Slice10 are verified-closed. Slice11,
-`slice11-contribution-style-guide-split`, is open while the later Arc08 slice
-carries final reconciliation.
+Slice11 are verified-closed. Slice12,
+`slice12-final-validation-release-reconciliation`, is open for final
+reconciliation.
 
 The next execution action is CC completion of:
-`arc08-framework-guide-decomposition/slice11-contribution-style-guide-split/cc-prompt.md`.
+`arc08-framework-guide-decomposition/slice12-final-validation-release-reconciliation/cc-prompt.md`.
 
 ## Version History
+
+### v1.40 - 2026-09-05
+
+Recorded Arc08 Slice11 as verified-closed after CDC reproduced the
+contribution-style guide split ledger, checked source and planning commit
+trailers, reran source/package/link validation, and confirmed the generated
+collaboration-framework package contains `01-contribution-style.md`,
+`02-upstream-ticket-workflow.md`, and the retained `CONTRIBUTION-TICKET.md`
+template with no old `CONTRIBUTION-STYLE.md` package path. Opened Slice12,
+`slice12-final-validation-release-reconciliation`, for final package, install,
+link, CCDP disposition, and release reconciliation.
 
 ### v1.33 - 2026-09-04
 
