@@ -10,7 +10,7 @@ closed-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
 planning_checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning/project04-knowledge-library-reorg
 source_commit: 120c2ceaf26ca656068d9f2ec34c978eefaf04a5
-planning_commit: pending until this report is committed
+planning_commit: 6308c2f7408f3439fa5f8f41f52680232a130385
 ```
 
 ## Verdict
@@ -29,7 +29,7 @@ Source commit:
 `120c2ceaf26ca656068d9f2ec34c978eefaf04a5`
 
 Planning commit:
-pending until this report is committed
+6308c2f7408f3439fa5f8f41f52680232a130385
 
 Source explicit file list:
 
@@ -93,7 +93,7 @@ not committed.
 | F-5 | done | `artifacts/source-route-repair-map.md` records repaired testing, collaboration-framework, engineering-methods, docs, AGENTS, release-note, and package-list surfaces. |
 | F-6 | done | `artifacts/source-validation-results.md` records passing diff, link, skill, collaboration-framework package, and package-path validation. |
 | F-7 | done | Zip inspection confirms all three testing guides are present and `CODE-COVERAGE.md` is absent. |
-| F-8 | done | This report records exact source commit, pending planning commit placeholder, explicit file lists, final statuses, row walk, and bubble-up. |
+| F-8 | done | This report records exact source commit, planning close-packet commit, explicit file lists, final statuses, row walk, and bubble-up. |
 
 Rows: 8. Done: 8. Deferred: 0. No-op: 0.
 
