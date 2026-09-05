@@ -16,7 +16,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.6
+version: 1.5.7
 license: MIT
 metadata:
   hermes:
@@ -309,7 +309,7 @@ evaluating correctness. **Delegate lookup work freely** — searching, grepping,
 fetching docs, listing call sites, reading a file. *Serial on thinking, parallel
 on lookup.* The line is drawn at the *kind of task*, not the existence of the
 tool. (Full rationale and per-tool install instructions:
-[subagent-delegation policy](../agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md).)
+[agent-coordination guide set](../agent-coordination/guides/01-when-to-delegate.md).)
 
 ### Failure recovery
 
@@ -356,7 +356,10 @@ work demands:
 | [`guides/01-testing-discipline.md`](../testing/guides/01-testing-discipline.md) | Testing discipline | When tests need to prove behavior, weak or ignored tests need repair, or failures need root-cause triage. |
 | [`guides/02-coverage-hardening.md`](../testing/guides/02-coverage-hardening.md) | Coverage hardening | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
 | [`guides/03-validation-gates.md`](../testing/guides/03-validation-gates.md) | Validation gates | When selecting or recording repository-native test, lint, format, package, CI, release, and generated-artifact gates. |
-| [`guides/SUBAGENT-DELEGATION-POLICY.md`](../agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md`, `AGENTS.md`, or preferences block so it holds across sessions. |
+| [`guides/01-when-to-delegate.md`](../agent-coordination/guides/01-when-to-delegate.md) | Agent coordination / delegation | When deciding whether work stays in the main context or can be delegated as lookup. |
+| [`guides/02-context-packets.md`](../agent-coordination/guides/02-context-packets.md) | Agent coordination / packets | When preparing self-contained lookup packets with constraints, exclusions, and evidence-return requirements. |
+| [`guides/03-result-integration.md`](../agent-coordination/guides/03-result-integration.md) | Agent coordination / integration | When integrating returned lookup evidence in the parent context and checking it against primary sources. |
+| [`guides/04-anti-patterns.md`](../agent-coordination/guides/04-anti-patterns.md) | Agent coordination / anti-patterns | When delegation pressure risks outsourced judgment, vague handoffs, summary trust, speed-over-quality thinking, or buried boundaries. |
 | [`guides/CONTRIBUTION-STYLE.md`](../contribution-style/guides/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
 | [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
 

@@ -314,8 +314,13 @@ documents that carry its planning, audit, and verification mechanics:
 - `knowledge/work-verification/SKILL.md` routes to five focused
   `knowledge/work-verification/guides/` files for ledger discipline, evidence
   strength, row closure, silent-drop checks, and independent verification; the
-  retained `templates/LEDGER-DISCIPLINE.md` carries the full protocol and
-  copyable ledger tables.
+  retained full protocol remains under `templates/`.
+- `knowledge/agent-coordination/SKILL.md` routes to the split
+  agent-coordination guide set:
+  `knowledge/agent-coordination/guides/01-when-to-delegate.md`,
+  `02-context-packets.md`, `03-result-integration.md`, and
+  `04-anti-patterns.md`. The old `SUBAGENT-DELEGATION-POLICY.md` path was
+  renamed and is no longer a live package route.
 - `knowledge/testing/SKILL.md` routes to
   `knowledge/testing/guides/01-testing-discipline.md`,
   `knowledge/testing/guides/02-coverage-hardening.md`, and

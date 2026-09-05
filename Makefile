@@ -143,7 +143,10 @@ CF_FILES := \
 	knowledge/testing/guides/01-testing-discipline.md \
 	knowledge/testing/guides/02-coverage-hardening.md \
 	knowledge/testing/guides/03-validation-gates.md \
-	knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md \
+	knowledge/agent-coordination/guides/01-when-to-delegate.md \
+	knowledge/agent-coordination/guides/02-context-packets.md \
+	knowledge/agent-coordination/guides/03-result-integration.md \
+	knowledge/agent-coordination/guides/04-anti-patterns.md \
 	knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md \
 	knowledge/work-verification/templates/LEDGER-DISCIPLINE.md \
 	knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md

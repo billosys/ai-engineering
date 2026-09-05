@@ -4,6 +4,13 @@ This file is the sibling component history for `knowledge/engineering-methods/`.
 
 ## Engineering Methods Component
 
+### Version 1.1.4 - 2026-09-05
+
+Updated engineering-methods operational routing for the agent-coordination
+guide split. Delegation decisions now start with `01-when-to-delegate.md` and
+selectively load context-packet, result-integration, or anti-pattern guidance
+as needed.
+
 ### Version 1.1.3 - 2026-09-05
 
 Updated engineering-methods operational routing for the code-auditing guide

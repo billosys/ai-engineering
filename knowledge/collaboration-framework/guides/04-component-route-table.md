@@ -37,7 +37,10 @@ This guide is the focused route table for the collaboration-framework component 
 | [`../../testing/guides/01-testing-discipline.md`](../../testing/guides/01-testing-discipline.md) | Testing discipline | When tests need to prove behavior, weak tests need repair, or failures need root-cause triage. |
 | [`../../testing/guides/02-coverage-hardening.md`](../../testing/guides/02-coverage-hardening.md) | Coverage hardening | When driving a codebase to a hard test-coverage threshold. |
 | [`../../testing/guides/03-validation-gates.md`](../../testing/guides/03-validation-gates.md) | Validation gates | When selecting repository-native test, lint, format, package, CI, release, or generated-artifact gates. |
-| [`../../agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md`](../../agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding delegation or installing the thinking-vs-lookup rule. |
+| [`../../agent-coordination/guides/01-when-to-delegate.md`](../../agent-coordination/guides/01-when-to-delegate.md) | Agent coordination / delegation | When deciding whether work stays in the main context or can be delegated as lookup. |
+| [`../../agent-coordination/guides/02-context-packets.md`](../../agent-coordination/guides/02-context-packets.md) | Agent coordination / packets | When preparing self-contained lookup packets with constraints, exclusions, and evidence-return requirements. |
+| [`../../agent-coordination/guides/03-result-integration.md`](../../agent-coordination/guides/03-result-integration.md) | Agent coordination / integration | When integrating returned lookup evidence in the parent context. |
+| [`../../agent-coordination/guides/04-anti-patterns.md`](../../agent-coordination/guides/04-anti-patterns.md) | Agent coordination / anti-patterns | When delegation pressure risks outsourced judgment, vague handoffs, summary trust, or buried boundaries. |
 | [`../../contribution-style/guides/CONTRIBUTION-STYLE.md`](../../contribution-style/guides/CONTRIBUTION-STYLE.md) | Voice / discipline | When drafting an upstream contribution ticket. |
 | [`../../contribution-style/templates/CONTRIBUTION-TICKET.md`](../../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style guide when writing the ticket. |
 

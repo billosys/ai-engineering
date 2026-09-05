@@ -151,7 +151,8 @@ at a control surface where recovery is instant and cheap. You let it
 crash — but not while it's flying the plane. Delegation follows the same
 rule: failure is acceptable exactly where recovery costs nothing, which
 is why thinking work stays in the main context and lookup work may fan
-out. (Full policy: [SUBAGENT-DELEGATION-POLICY.md](../knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md).)
+out. (Current route:
+[When To Delegate](../knowledge/agent-coordination/guides/01-when-to-delegate.md).)
 
 ## Parking lot
 

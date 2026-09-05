@@ -53,6 +53,12 @@ framework documents and a packaging surface for installable assistant skills.
   `04-modernization-synthesis.md` for evidence-backed modernization pressure,
   and `05-audit-to-hardening-handoff.md` for follow-up testing or hardening
   work. The old `CODE-AUDIT.md` path is not a live route.
+- **Agent-coordination routes:** use
+  `knowledge/agent-coordination/guides/01-when-to-delegate.md` as the primary
+  delegation-boundary load path. Load `02-context-packets.md` for self-contained
+  lookup packets, `03-result-integration.md` for parent-context evidence
+  integration, and `04-anti-patterns.md` for delegation failure modes. The old
+  `SUBAGENT-DELEGATION-POLICY.md` path is not a live route.
 - Load the relevant domain skill before writing or reviewing domain material:
   Rust, Go, Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual
   Design, Biome, or Deno lint. Preserve source material under

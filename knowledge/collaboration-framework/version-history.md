@@ -4,6 +4,13 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.7 - 2026-09-05
+
+Updated collaboration-framework route surfaces for the agent-coordination guide
+split. The composer now routes to delegation, context-packet, result-
+integration, and anti-pattern guides and no longer uses the old
+guides/SUBAGENT-DELEGATION-POLICY.md path as a live load target.
+
 ### Version 1.5.6 - 2026-09-05
 
 Updated collaboration-framework route surfaces for the code-auditing guide
