@@ -17,7 +17,7 @@ Explicit source file list:
 
 ## Planning Commit
 
-Planning commit: pending until close packet commit exists.
+Planning commit: `f090c674630786611c34865121a2100ca582ecf7`
 
 Explicit planning file list:
 
@@ -76,7 +76,7 @@ Explicit planning file list:
   `artifacts/ccdp-disposition-results.md`.
 - F-8: done; release notes reconciled and source commit recorded in
   `artifacts/release-note-reconciliation.md`.
-- F-9: done subject to follow-up hash patch; exact source commit, file lists,
+- F-9: done; exact source commit, planning close commit, file lists,
   validation summary, and Arc08 bubble-up are recorded here.
 
 Rows: 9. Done: 9. Deferred: 0. No-op: 0.
@@ -85,7 +85,8 @@ Rows: 9. Done: 9. Deferred: 0. No-op: 0.
 
 Source status after source commit: clean.
 
-Planning status before planning close commit: this close packet is uncommitted.
+Planning status after close packet commit: clean except this hash-record patch
+until the follow-up planning commit is made.
 
 ## Bubble-Up to Arc08
 
