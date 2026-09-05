@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice09-code-auditing-guide-split
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -121,3 +121,17 @@ skip checks, weaken evidence, change review quality, or bypass approval gates.
   disposition.
 - Source and planning commits are created with explicit file lists and both
   required co-author trailers.
+
+## Closure
+
+Slice09 is CDC-verified closed.
+
+CDC verification:
+
+- `cdc-verification.md`
+- Source commit: `1eb10d789734d9cca5c2c0f7cdedb4257dfab1e6`
+- Planning close commits: `cbddcd160163aca3dccda23e730d082b35e9c451`,
+  `812a2a76841eecfadc54cab2ea0f58cb2c953cc2`
+
+Bubble-up: Slice10 is opened for the agent-coordination guide split. No Arc08
+scope change is required.

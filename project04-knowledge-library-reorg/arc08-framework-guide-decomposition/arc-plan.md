@@ -312,7 +312,7 @@ TDD material.
 
 ### Slice 09: Code-Auditing Guide Split
 
-Status: open.
+Status: verified-closed.
 
 Scope: split code-auditing guidance into `01-audit-scope-and-map.md`,
 `02-findings-and-severity.md`, `03-scale-aware-auditing.md`,
@@ -322,7 +322,7 @@ discipline.
 
 ### Slice 10: Agent-Coordination Guide Split
 
-Status: planned after Slice09.
+Status: open.
 
 Scope: split the old subagent delegation policy into
 `01-when-to-delegate.md`, `02-context-packets.md`,
@@ -480,3 +480,13 @@ package contains 70 entries with the three testing guides and no old
 `CODE-COVERAGE.md` package path.
 
 Opened Slice09 for the code-auditing guide split.
+
+### v1.11 - 2026-09-05
+
+Closed Slice09 after CDC verification. Slice09 split code-auditing into five
+accepted numbered guides, removed `CODE-AUDIT.md` as a live route, repaired
+framework/component/docs/package/release references, and confirmed the
+generated collaboration-framework package contains 74 entries with all five
+code-auditing guides and no old `CODE-AUDIT.md` package path.
+
+Opened Slice10 for the agent-coordination guide split.
