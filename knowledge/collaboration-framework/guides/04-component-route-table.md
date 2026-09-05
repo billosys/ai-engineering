@@ -41,8 +41,9 @@ This guide is the focused route table for the collaboration-framework component 
 | [`../../agent-coordination/guides/02-context-packets.md`](../../agent-coordination/guides/02-context-packets.md) | Agent coordination / packets | When preparing self-contained lookup packets with constraints, exclusions, and evidence-return requirements. |
 | [`../../agent-coordination/guides/03-result-integration.md`](../../agent-coordination/guides/03-result-integration.md) | Agent coordination / integration | When integrating returned lookup evidence in the parent context. |
 | [`../../agent-coordination/guides/04-anti-patterns.md`](../../agent-coordination/guides/04-anti-patterns.md) | Agent coordination / anti-patterns | When delegation pressure risks outsourced judgment, vague handoffs, summary trust, or buried boundaries. |
-| [`../../contribution-style/guides/CONTRIBUTION-STYLE.md`](../../contribution-style/guides/CONTRIBUTION-STYLE.md) | Voice / discipline | When drafting an upstream contribution ticket. |
-| [`../../contribution-style/templates/CONTRIBUTION-TICKET.md`](../../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style guide when writing the ticket. |
+| [`../../contribution-style/guides/01-contribution-style.md`](../../contribution-style/guides/01-contribution-style.md) | Contribution style / voice | When drafting an upstream contribution ticket and calibrating maintainer-facing voice, confidence, specificity, severity, ownership, or pressure. |
+| [`../../contribution-style/guides/02-upstream-ticket-workflow.md`](../../contribution-style/guides/02-upstream-ticket-workflow.md) | Contribution style / workflow | When preparing local drafts, line-reference checks, blockquote headers, paste boundaries, one-ticket-per-problem structure, cross-linking, filing, or template use. |
+| [`../../contribution-style/templates/CONTRIBUTION-TICKET.md`](../../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style and workflow guides when writing the ticket. |
 
 ## Version History
 

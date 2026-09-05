@@ -2,8 +2,10 @@
 
 > Authoring template for a single upstream contribution ticket (bug, feature,
 > doc fix, or question). For voice, scope, and the disciplines this template
-> rests on, read [`../guides/CONTRIBUTION-STYLE.md`](../guides/CONTRIBUTION-STYLE.md)
-> first — that doc is the *why*; this file is the *shape*.
+> rests on, read [`../guides/01-contribution-style.md`](../guides/01-contribution-style.md)
+> and [`../guides/02-upstream-ticket-workflow.md`](../guides/02-upstream-ticket-workflow.md)
+> first. Those docs are the voice and workflow; this file is the reusable
+> ticket shape.
 >
 > Pick one of the four shapes below (they share a spine) and delete what
 > doesn't apply. A short ticket is a feature; trim aggressively. Sections

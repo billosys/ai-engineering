@@ -4,6 +4,14 @@ This file is the sibling component history for `knowledge/engineering-methods/`.
 
 ## Engineering Methods Component
 
+### Version 1.1.5 - 2026-09-05
+
+Updated engineering-methods operational routing for the contribution-style
+guide split. Upstream contribution work now starts with
+`01-contribution-style.md`, selectively loads `02-upstream-ticket-workflow.md`
+for filing mechanics, and retains `CONTRIBUTION-TICKET.md` as the reusable
+ticket template.
+
 ### Version 1.1.4 - 2026-09-05
 
 Updated engineering-methods operational routing for the agent-coordination
@@ -138,7 +146,14 @@ constitutional authority.
 
 Added an operational companion to *A default layout* — `ASSET-ORGANISATION.md` (renamed to [`../project-management/guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) in v1.5) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept the abstract structure: project / arc / slice / step / iteration, and at that time placed the five per-slice documents under the then-current `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/` default, superseded in v1.6 by the planning-worktree / `projectNN-<slug>` default. The new doc carried that structure verbatim and added the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
 
-The companion contribution-style stack also lands in this rev: [`../contribution-style/guides/CONTRIBUTION-STYLE.md`](../contribution-style/guides/CONTRIBUTION-STYLE.md) (the voice and disciplines for upstream tickets — friendly, specific, calibrated, respectful of maintainer ownership) and [`../contribution-style/templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) (the on-disk template for the four ticket shapes: confirmed bug, additive feature, doc fix, unconfirmed question). Both are bundled into the `collaboration-framework` skill alongside the existing six.
+The companion contribution-style stack also lands in this rev: the historical
+pre-split contribution-style guide path `../contribution-style/guides/CONTRIBUTION-STYLE.md`
+(the voice and disciplines for upstream tickets: friendly, specific,
+calibrated, respectful of maintainer ownership) and
+[`../contribution-style/templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md)
+(the on-disk template for the four ticket shapes: confirmed bug, additive
+feature, doc fix, unconfirmed question). Both are bundled into the
+`collaboration-framework` skill alongside the existing six.
 
 The rev was catalysed by a recurring failure mode observed across projects: fresh sessions did not see *A default layout*, invented their own (`tasks/`, `work/`, `milestones/`, scattered prompt directories), and by the time the operator noticed, the artifact set was fragmented across parallel conventions. v1.2 named the structure; v1.3 names the discipline that holds it in place across sessions.
 

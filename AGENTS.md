@@ -59,6 +59,14 @@ framework documents and a packaging surface for installable assistant skills.
   lookup packets, `03-result-integration.md` for parent-context evidence
   integration, and `04-anti-patterns.md` for delegation failure modes. The old
   `SUBAGENT-DELEGATION-POLICY.md` path is not a live route.
+- **Contribution-style routes:** use
+  `knowledge/contribution-style/guides/01-contribution-style.md` as the primary
+  maintainer-facing voice and calibrated-claim guidance. Load
+  `02-upstream-ticket-workflow.md` for local draft, filing, line-reference,
+  blockquote-header, paste-boundary, cross-linking, and template-use mechanics.
+  `knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md` remains a
+  package-local authoring template, not a guide. The old
+  `CONTRIBUTION-STYLE.md` path is not a live route.
 - Load the relevant domain skill before writing or reviewing domain material:
   Rust, Go, Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual
   Design, Biome, or Deno lint. Preserve source material under

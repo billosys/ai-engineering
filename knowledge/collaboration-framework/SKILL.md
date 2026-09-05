@@ -5,7 +5,8 @@ description: |
   character, craft, and the disciplines holding the quality floor.
   Grounded in the collaboration-framework posture guide set, the AI Engineering Methodology,
   and operational guidance for ledger discipline, project management, code
-  audit, test coverage, subagent delegation, and upstream contribution style.
+  audit, test coverage, subagent delegation, upstream contribution style, and
+  upstream ticket workflow.
   Use when: sustained, high-stakes sessions — deep study, research,
   expert systems design, or production programming; establishing the peer
   frame; planning or closing a project, arc, or slice (MUST read
@@ -16,7 +17,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.7
+version: 1.5.8
 license: MIT
 metadata:
   hermes:
@@ -60,8 +61,8 @@ documents:
     close machinery), the code-audit prompt, the test-coverage prompt, and
     the subagent-delegation policy.
   - *Outward-facing contribution* — the contribution style guide and the
-    on-disk ticket template for upstream bugs, features, doc fixes, and
-    questions.
+    upstream ticket workflow and the on-disk ticket template for upstream
+    bugs, features, doc fixes, and questions.
 
 Posture without practice is sentiment. Practice without posture is ritual
 compliance. Read the two foundations together; reach for the operational
@@ -360,8 +361,9 @@ work demands:
 | [`guides/02-context-packets.md`](../agent-coordination/guides/02-context-packets.md) | Agent coordination / packets | When preparing self-contained lookup packets with constraints, exclusions, and evidence-return requirements. |
 | [`guides/03-result-integration.md`](../agent-coordination/guides/03-result-integration.md) | Agent coordination / integration | When integrating returned lookup evidence in the parent context and checking it against primary sources. |
 | [`guides/04-anti-patterns.md`](../agent-coordination/guides/04-anti-patterns.md) | Agent coordination / anti-patterns | When delegation pressure risks outsourced judgment, vague handoffs, summary trust, speed-over-quality thinking, or buried boundaries. |
-| [`guides/CONTRIBUTION-STYLE.md`](../contribution-style/guides/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
-| [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
+| [`guides/01-contribution-style.md`](../contribution-style/guides/01-contribution-style.md) | Contribution style / voice | When **drafting an upstream contribution ticket** against a project you don't maintain and the work needs maintainer-facing voice: friendly, specific, calibrated, respectful of ownership, no severity overclaim, and no pressure on timing. |
+| [`guides/02-upstream-ticket-workflow.md`](../contribution-style/guides/02-upstream-ticket-workflow.md) | Contribution style / workflow | When preparing local ticket drafts, line-reference checks, blockquote headers, paste boundaries, one-ticket-per-problem structure, cross-linking, filing, and template use. |
+| [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style and workflow guides when actually writing a ticket. Carries the reusable ticket shape for confirmed bugs, additive features, doc fixes, and unconfirmed questions. |
 
 The posture guide set and Methodology are versioned, living documents. The five
 working-practice / discipline documents and the two templates are designed to
@@ -400,7 +402,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.5.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.8.
 
 ---
 

@@ -216,6 +216,15 @@ future standalone skill packaging.
 
 The source checkout now carries this component contract directly:
 
+- `knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md` has been split
+  into `knowledge/contribution-style/guides/01-contribution-style.md` for
+  maintainer-facing voice and calibrated contribution discipline, and
+  `knowledge/contribution-style/guides/02-upstream-ticket-workflow.md` for
+  local draft, filing, line-reference, paste-boundary, cross-linking, and
+  template workflow. The old path is not a live package route.
+- `knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md` remains the
+  reusable package-local authoring template.
+
 - `knowledge/collaboration-framework/SKILL.md` is the source entrypoint for
   the composed framework, while the generated package still exposes
   `collaboration-framework/SKILL.md`.

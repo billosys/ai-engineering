@@ -148,7 +148,8 @@ CF_FILES := \
 	knowledge/agent-coordination/guides/02-context-packets.md \
 	knowledge/agent-coordination/guides/03-result-integration.md \
 	knowledge/agent-coordination/guides/04-anti-patterns.md \
-	knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md \
+	knowledge/contribution-style/guides/01-contribution-style.md \
+	knowledge/contribution-style/guides/02-upstream-ticket-workflow.md \
 	knowledge/work-verification/templates/LEDGER-DISCIPLINE.md \
 	knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md
 

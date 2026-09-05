@@ -5,7 +5,7 @@ description: |
   tickets with calibrated confidence, maintainer-friendly framing, and clear
   issue evidence. Use when writing bug reports, feature requests, doc fixes, or
   unconfirmed questions for projects you do not maintain.
-version: 1.0.1
+version: 1.1.0
 license: MIT
 metadata:
   hermes:
@@ -16,12 +16,14 @@ metadata:
 # Contribution Style
 
 Use this component when preparing upstream tickets, issues, or contribution
-notes. Load the guide for voice and discipline, then use the template for the
-specific ticket shape.
+notes. Load the style guide for maintainer-facing voice and calibrated
+contribution discipline, load the workflow guide for ticket drafting and
+filing mechanics, then use the template for the specific ticket shape.
 
 Read:
 
-- [Contribution Style](./guides/CONTRIBUTION-STYLE.md)
+- [Contribution Style](./guides/01-contribution-style.md)
+- [Upstream Ticket Workflow](./guides/02-upstream-ticket-workflow.md)
 - [Contribution Ticket Template](./templates/CONTRIBUTION-TICKET.md)
 
 This is a component entrypoint for the collaboration framework. It is included

@@ -35,7 +35,8 @@ compound across time, commits, reviewers, or planning artifacts.
 | Code audit | [`knowledge/code-auditing/guides/01-audit-scope-and-map.md`](../knowledge/code-auditing/guides/01-audit-scope-and-map.md) | Diagnosis-only code audit discipline, with focused guides for findings, scale, modernization, and handoff. |
 | Testing | [`knowledge/testing/guides/01-testing-discipline.md`](../knowledge/testing/guides/01-testing-discipline.md) | Testing discipline, coverage hardening, and validation gates. |
 | Agent coordination | [`knowledge/agent-coordination/guides/01-when-to-delegate.md`](../knowledge/agent-coordination/guides/01-when-to-delegate.md) | Delegation boundaries, context packets, result integration, and multi-agent coordination. |
-| Contribution style | [`knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md`](../knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md) | Maintainer-facing issue, PR, and ticket style. |
+| Contribution style | [`knowledge/contribution-style/guides/01-contribution-style.md`](../knowledge/contribution-style/guides/01-contribution-style.md) | Maintainer-facing issue, PR, and ticket style. |
+| Upstream ticket workflow | [`knowledge/contribution-style/guides/02-upstream-ticket-workflow.md`](../knowledge/contribution-style/guides/02-upstream-ticket-workflow.md) | Local draft, filing, line-reference, paste-boundary, cross-linking, and template workflow. |
 | Contribution ticket template | [`knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md`](../knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md) | Template for upstream contribution tickets. |
 
 ## Whole Framework Or Narrow Component

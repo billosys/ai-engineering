@@ -1,5 +1,19 @@
 # Contribution Style Version History
 
+## Version 1.1.0 - 2026-09-05
+
+Split the former CONTRIBUTION-STYLE guide into two focused guides:
+`01-contribution-style.md` for maintainer-facing voice, calibrated confidence,
+ownership, pressure, severity, specificity, and tone discipline, and
+`02-upstream-ticket-workflow.md` for ticket drafting, local artifact, line
+reference, blockquote header, paste-boundary, cross-linking, filing, and
+template usage workflow. The old CONTRIBUTION-STYLE path was moved with Git
+history to `01-contribution-style.md` and is no longer a live route or package
+entry.
+
+`templates/CONTRIBUTION-TICKET.md` remains a package-local authoring template,
+not a guide.
+
 ## Version 1.0.1 - 2026-09-04
 
 Seeded the sibling component history for Arc08 Slice05. The current component

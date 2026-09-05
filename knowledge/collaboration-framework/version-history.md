@@ -4,6 +4,13 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.8 - 2026-09-05
+
+Updated collaboration-framework route surfaces for the contribution-style guide
+split. The composer now routes to contribution voice, upstream ticket workflow,
+and the retained contribution-ticket template, and no longer uses the old
+guides/CONTRIBUTION-STYLE.md path as a live load target.
+
 ### Version 1.5.7 - 2026-09-05
 
 Updated collaboration-framework route surfaces for the agent-coordination guide
