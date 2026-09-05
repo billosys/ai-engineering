@@ -371,8 +371,8 @@ confirms the exact split/version-history/Expedited Mode wording map with the
 operator.
 
 Detailed arc planning is open under
-`arc08-framework-guide-decomposition/`. Slice01 through Slice07 are
-verified-closed. Slice08, `slice08-testing-guide-split`, is open. The
+`arc08-framework-guide-decomposition/`. Slice01 through Slice08 are
+verified-closed. Slice09, `slice09-code-auditing-guide-split`, is open. The
 operator expanded Arc08 on 2026-09-04 to keep the remaining accepted component
 guide splits in this same arc rather than opening a later arc.
 
@@ -392,11 +392,11 @@ separation, and operator acceptance readiness.
 
 Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator review.
 Arc08, `arc08-framework-guide-decomposition`, is active. Slice01 through
-Slice07 are verified-closed. Slice08, `slice08-testing-guide-split`, is open
+Slice08 are verified-closed. Slice09, `slice09-code-auditing-guide-split`, is open
 while later Arc08 slices carry the remaining component guide splits.
 
 The next execution action is CC completion of:
-`arc08-framework-guide-decomposition/slice08-testing-guide-split/cc-prompt.md`.
+`arc08-framework-guide-decomposition/slice09-code-auditing-guide-split/cc-prompt.md`.
 
 ## Version History
 
@@ -438,6 +438,16 @@ trailers, reran source/package/link validation, and confirmed the generated
 collaboration-framework package contains the five numbered work-verification
 guides plus retained `templates/LEDGER-DISCIPLINE.md`. Opened Slice08,
 `slice08-testing-guide-split`, for the testing component guide decomposition.
+
+### v1.37 - 2026-09-04
+
+Recorded Arc08 Slice08 as verified-closed after CDC reproduced the testing
+guide split ledger, checked source and planning commit trailers, reran
+source/package/link validation, and confirmed the generated collaboration-
+framework package contains the three numbered testing guides with no old
+`CODE-COVERAGE.md` package path. Opened Slice09,
+`slice09-code-auditing-guide-split`, for the code-auditing component guide
+decomposition.
 
 ### v1.32 - 2026-09-04
 

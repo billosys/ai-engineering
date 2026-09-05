@@ -303,7 +303,7 @@ needed.
 
 ### Slice 08: Testing Guide Split
 
-Status: open.
+Status: verified-closed.
 
 Scope: split testing guidance into `01-testing-discipline.md`,
 `02-coverage-hardening.md`, and `03-validation-gates.md`, broadening the old
@@ -312,7 +312,7 @@ TDD material.
 
 ### Slice 09: Code-Auditing Guide Split
 
-Status: planned after Slice08.
+Status: open.
 
 Scope: split code-auditing guidance into `01-audit-scope-and-map.md`,
 `02-findings-and-severity.md`, `03-scale-aware-auditing.md`,
@@ -469,3 +469,14 @@ package contains 68 entries with the five work-verification guides and retained
 template.
 
 Opened Slice08 for the testing guide split.
+
+### v1.10 - 2026-09-04
+
+Closed Slice08 after CDC verification. Slice08 split the testing component into
+three selective-load guides, preserved the old `CODE-COVERAGE.md` file history
+by renaming it to `02-coverage-hardening.md`, repaired framework and
+engineering-methods routes, and confirmed the generated collaboration-framework
+package contains 70 entries with the three testing guides and no old
+`CODE-COVERAGE.md` package path.
+
+Opened Slice09 for the code-auditing guide split.

@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice08-testing-guide-split
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -118,3 +118,20 @@ gates.
   guides and follows the recorded legacy `CODE-COVERAGE.md` disposition.
 - Source and planning commits are created with explicit file lists and both
   required co-author trailers.
+
+## CDC Closure
+
+Slice08 was CDC-verified closed on 2026-09-04.
+
+Verified source commit:
+
+- `120c2ceaf26ca656068d9f2ec34c978eefaf04a5`
+
+Verified planning commits:
+
+- `6308c2f7408f3439fa5f8f41f52680232a130385`
+- `7460153ecb1a8df7e3b34ebdeba3f18370088ec8`
+
+Closure evidence:
+
+- `cdc-verification.md`
