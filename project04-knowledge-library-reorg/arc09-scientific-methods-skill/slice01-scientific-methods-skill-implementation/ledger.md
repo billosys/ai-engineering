@@ -1,0 +1,18 @@
+# Slice 01: Scientific Methods Skill Implementation
+
+## Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| S-1 | Scientific-methods skill source exists with entrypoint, sibling version history, focused guides, and templates | `test -f /Users/oubiwann/lab/billosys/ai-engineering/knowledge/scientific-methods/SKILL.md && test -f /Users/oubiwann/lab/billosys/ai-engineering/knowledge/scientific-methods/version-history.md && test -f /Users/oubiwann/lab/billosys/ai-engineering/knowledge/scientific-methods/guides/09-anti-patterns.md && test -f /Users/oubiwann/lab/billosys/ai-engineering/knowledge/scientific-methods/templates/evaluation-rubric.md` | correctness-grade | slice-plan | done | Source commit `a2122abbe75b42f87e550c87ba1150b51d7abb38` added the skill entrypoint, version history, nine guides, and three templates. | Confirms source structure. |
+| S-2 | Makefile builds and lists scientific-methods as an installable skill without changing CCDP package semantics | `rg -n "scientific-methods.zip|make scientific-methods|scientific-methods:" /Users/oubiwann/lab/billosys/ai-engineering/Makefile && make -C /Users/oubiwann/lab/billosys/ai-engineering print-skill-zips` | correctness-grade | slice-plan | done | `target/skills/scientific-methods.zip` appears in `make print-skill-zips`; CCDP remains outside `INSTALL_ZIPS`. | Confirms package target wiring. |
+| S-3 | README/docs mention scientific-methods as a live method skill and collaboration-framework routes to it separately | `rg -n "scientific-methods|controlled inquiry|A/B|regression|method skill|load separately" /Users/oubiwann/lab/billosys/ai-engineering/README.md /Users/oubiwann/lab/billosys/ai-engineering/docs /Users/oubiwann/lab/billosys/ai-engineering/knowledge/collaboration-framework` | correctness-grade | slice-plan | done | Source commit updates README, docs/skill-library, docs/collaboration-framework, collaboration-framework SKILL, component route table, and collaboration-framework version history. | Confirms discoverability and route separation. |
+| S-4 | Validation passes with the new scientific-methods package baseline | `test -f artifacts/validation-results.md && rg -n "make check-skills|make scientific-methods|make check-package-paths|13 zips|222 packaged Markdown|0 hard failures|scientific-methods.zip|17 files" artifacts/validation-results.md` | correctness-grade | source-validation | done | `artifacts/validation-results.md` records passing validation and package inspection. | Confirms generated package behavior. |
+| S-5 | Isolated install smoke includes scientific-methods and excludes CCDP skill installation | `test -f artifacts/validation-results.md && rg -n "install smoke|13 SKILL|scientific-methods/SKILL.md|no ccdp install root" artifacts/validation-results.md` | correctness-grade | source-validation | done | Install smoke used `/private/tmp/ai-engineering-scientific-methods-install.wo7iuJ`, found 13 `SKILL*.md` entrypoints including scientific-methods, and confirmed no ccdp install root. | Confirms install behavior. |
+| S-6 | Slice close records source commit, direct-execution limitation, row walk, and final clean statuses | `test -f closing-report.md && rg -n "source commit|a2122ab|CDC-direct|same-context|Rows: 6|Done: 6|source status|planning status" closing-report.md` | serious | ledger-discipline | done | `closing-report.md` records source commit, direct execution limitation, row walk, and final statuses. | Close report is the durable slice record. |
+
+## Closure
+
+Slice is closed by CDC-direct operator override.
+
+Rows: 6. Done: 6. Deferred: 0. No-op: 0.

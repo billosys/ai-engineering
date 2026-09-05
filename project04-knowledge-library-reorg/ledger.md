@@ -19,13 +19,13 @@ method categories.
 | P-7 | Project-level acceptance demo shows a user can orient from README into docs for explanation and into knowledge for actual material substrate without path/category or atomic/composite ambiguity | `rg -n "docs/.*user|knowledge/.*substrate|skill library|build|install|protocol|atomic|composite" /Users/oubiwann/lab/billosys/ai-engineering/README.md /Users/oubiwann/lab/billosys/ai-engineering/docs` | serious | project-plan | open | | Project-scale composition row; must be reproduced at project close. |
 | P-8 | Arc 07 closes with accepted knowledge component entrypoints, stale component docs/ holdovers removed or dispositioned, project-management guides migrated, and package/install validation reconciled | `test -f arc07-knowledge-component-entrypoints/closing-report.md && rg -n "Composition verdict: delivered|component entrypoint|SKILL.md|guides|docs/ holdover|package|install|reconciled" arc07-knowledge-component-entrypoints/closing-report.md` | serious | operator-reentry | done | reproduced: `arc07-knowledge-component-entrypoints/closing-report.md` records `Composition verdict: delivered`, component entrypoints, `SKILL.md`, guides, docs/ holdover cleanup, package, install, and reconciled release/package evidence. | Operator-requested cleanup after Arc06 acceptance-readiness review. |
 | P-9 | Arc 08 closes with framework monolith and pre-split component guides split into focused selective-load guides, framework component version histories normalized as sibling files, project-management guide/example layout reconciled, Expedited Mode wording corrected, and final package/install validation reconciled | `test -f arc08-framework-guide-decomposition/closing-report.md && rg -n "Composition verdict: delivered|focused guides|selective loading|version-history|sibling|project-management|examples/01-worked-example-odm|Expedited Mode|no shortcuts|package|install|reconciled" arc08-framework-guide-decomposition/closing-report.md` | serious | operator-reentry | open | | Operator-requested follow-on after Arc07 review, expanded on 2026-09-04 to include the remaining accepted component guide splits inside Arc08. |
+| P-10 | Arc 09 closes with scientific-methods as a live method skill, independent package target, README/docs discoverability, collaboration-framework separate-load wayfinding, release-note reconciliation, and validation/install evidence | `test -f arc09-scientific-methods-skill/closing-report.md && rg -n "Composition verdict: delivered|scientific-methods|method skill|scientific-methods.zip|collaboration-framework|13 installable skill zips|222 packaged Markdown|install smoke" arc09-scientific-methods-skill/closing-report.md` | correctness-grade | operator-reentry | done | `arc09-scientific-methods-skill/closing-report.md` records `Composition verdict: delivered`, the `scientific-methods` method skill, independent package, collaboration-framework wayfinding, package baseline, install smoke, and Arc08 non-closure. | Operator-approved CDC-direct scope expansion; same-context verification limitation is recorded in Arc09 and Slice01. |
 
 ## Closure
 
 Project remains open. Arc01 through Arc07 are closed. Arc08 is open from
-operator re-entry before project acceptance. P-7 and P-9 remain open pending
-Arc08 guide decomposition/version-history normalization, remaining component
-guide splits, project-management layout reconciliation, and project-level
-acceptance.
+operator re-entry before project acceptance. Arc09 is closed as a CDC-direct
+operator-approved scope expansion. P-7 and P-9 remain open pending Arc08
+operator review/CDC closure and project-level acceptance.
 
-Rows: 9. Done: 7. Deferred: 0. No-op: 0.
+Rows: 10. Done: 8. Deferred: 0. No-op: 0.

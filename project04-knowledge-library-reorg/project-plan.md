@@ -377,6 +377,36 @@ verified-closed. Slice12,
 The operator expanded Arc08 on 2026-09-04 to keep the remaining accepted
 component guide splits in this same arc rather than opening a later arc.
 
+### Arc 09: Scientific Methods Skill
+
+Status: closed on 2026-09-05 by operator-approved CDC-direct execution.
+
+Expected capability: add `scientific-methods` as a live method skill that
+generalizes the controlled-inquiry and comparison-pattern work discovered
+during the framework-version experiment prompt. The skill should help users
+frame inquiry questions, design bounded experiments, declare controls and
+confounds, operationalize measures, write contamination-resistant prompts or
+protocols, capture evidence, compare variants, and report threats to validity.
+
+Arc09 also adds collaboration-framework wayfinding so a session that has
+already loaded the collaboration framework can recognize controlled inquiry,
+evaluation, A/B comparison, or regression-testing work and load
+`scientific-methods` separately. The skill is a live method skill, not a
+collaboration-framework component, and is packaged independently as
+`scientific-methods.zip`.
+
+This arc was opened from operator re-entry after the operator asked to record
+the work without a formal CDC-to-CC loop. The planning record therefore
+discloses the CDC-direct execution override and same-context verification
+limitation.
+
+Detailed arc planning and closure evidence lives under
+`arc09-scientific-methods-skill/`. Slice01,
+`slice01-scientific-methods-skill-implementation`, is closed by CDC-direct
+operator override. Arc09 is closed and provides source, packaging,
+install-smoke, documentation, collaboration-framework wayfinding, and release
+note evidence for the new method skill.
+
 ## Current Status
 
 Project04 is active again from operator re-entry and operating in Expedited
@@ -391,16 +421,32 @@ delivered the accepted public skill-kind and atomic/composite vocabulary.
 Arc06 delivered final validation, packaging, installability, CCDP package
 separation, and operator acceptance readiness.
 
-Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator review.
-Arc08, `arc08-framework-guide-decomposition`, is active. Slice01 through
-Slice11 are verified-closed. Slice12,
-`slice12-final-validation-release-reconciliation`, is open for final
-reconciliation.
+Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator
+review. Arc08, `arc08-framework-guide-decomposition`, is active under operator
+review pause. Slice01 through Slice11 are verified-closed. Slice12,
+`slice12-final-validation-release-reconciliation`, has been reported
+proposed-done by CC but is not CDC-closed or arc-closed because the operator
+requested review before formal close.
 
-The next execution action is CC completion of:
-`arc08-framework-guide-decomposition/slice12-final-validation-release-reconciliation/cc-prompt.md`.
+Arc09, `arc09-scientific-methods-skill`, is closed as a CDC-direct
+operator-approved scope expansion. It added the live `scientific-methods`
+method skill, independent package target, README/docs discoverability,
+collaboration-framework wayfinding, and release-note/package baseline
+reconciliation without changing Arc08 status.
+
+The next project action remains operator review disposition for Arc08 Slice12
+and any follow-on CDC verification/arc close the operator authorizes.
 
 ## Version History
+
+### v1.41 - 2026-09-05
+
+Opened and closed Arc09, `arc09-scientific-methods-skill`, by
+operator-approved CDC-direct execution. Recorded the new `scientific-methods`
+method skill, independent `scientific-methods.zip` package target, README/docs
+discoverability, collaboration-framework separate-load wayfinding, release
+note reconciliation, install-smoke evidence, and the same-context verification
+limitation. Arc08 remains active under operator review pause.
 
 ### v1.40 - 2026-09-05
 
