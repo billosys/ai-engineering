@@ -4,6 +4,13 @@ This file is the sibling component history for `knowledge/engineering-methods/`.
 
 ## Engineering Methods Component
 
+### Version 1.1.3 - 2026-09-05
+
+Updated engineering-methods operational routing for the code-auditing guide
+split. Diagnosis-only audit work now starts with the audit-scope-and-map guide
+and selectively loads findings, scale, modernization, or handoff guidance as
+needed.
+
 ### Version 1.1.2 - 2026-09-04
 
 Updated engineering-methods operational routing for the testing guide split.

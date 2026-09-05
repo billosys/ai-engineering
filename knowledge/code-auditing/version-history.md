@@ -1,5 +1,14 @@
 # Code Auditing Version History
 
+## Version 1.1.0 - 2026-09-05
+
+Split the former CODE-AUDIT guide into five focused guides:
+`01-audit-scope-and-map.md`, `02-findings-and-severity.md`,
+`03-scale-aware-auditing.md`, `04-modernization-synthesis.md`, and
+`05-audit-to-hardening-handoff.md`. The old CODE-AUDIT path was renamed with
+Git history to `01-audit-scope-and-map.md` and is no longer a live route or
+package entry.
+
 ## Version 1.0.1 - 2026-09-04
 
 Normalized the component history into this sibling file for Arc08 Slice05.

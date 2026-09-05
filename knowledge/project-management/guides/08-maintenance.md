@@ -17,8 +17,10 @@ when:
   [`Canonical planning worktree`](./02-canonical-planning-worktree.md).
 
 Two cross-references that are settled today and should not be re-invented:
-CAP-style audit reports have a home in [`CODE-AUDIT.md`](../../code-auditing/guides/CODE-AUDIT.md)
-(`workbench/<YYYY.MM.DD>-audit-results-<slug>.md` plus a top-level index);
+CAP-style audit reports are routed from
+[`Audit Scope And Map`](../../code-auditing/guides/01-audit-scope-and-map.md)
+(`workbench/<YYYY.MM.DD>-audit-results-<slug>.md` plus a top-level index and
+modernization synthesis);
 per-slice prompts live as `cc-prompt.md` inside the slice directory, not in a
 separate prompts tree; durable artifacts produced by a slice default to
 `artifacts/` inside that slice directory unless the operator records an

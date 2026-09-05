@@ -4,6 +4,12 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.6 - 2026-09-05
+
+Updated collaboration-framework route surfaces for the code-auditing guide
+split. The composer now routes to five focused code-auditing guides and no
+longer uses the old guides/CODE-AUDIT.md path as a live load target.
+
 ### Version 1.5.5 - 2026-09-04
 
 Updated collaboration-framework route surfaces for the testing guide split. The

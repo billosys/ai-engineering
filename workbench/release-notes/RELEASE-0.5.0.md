@@ -297,9 +297,13 @@ documents that carry its planning, audit, and verification mechanics:
 - `knowledge/collaboration-framework/SKILL.md` is the source
   `collaboration-framework` skill entrypoint; generated packages stage it at
   `collaboration-framework/SKILL.md`.
-- `knowledge/code-auditing/SKILL.md` routes to
-  `knowledge/code-auditing/guides/CODE-AUDIT.md`, which carries multi-scale
-  audits and modernization synthesis.
+- `knowledge/code-auditing/SKILL.md` routes to the split code-auditing guide
+  set:
+  `knowledge/code-auditing/guides/01-audit-scope-and-map.md`,
+  `02-findings-and-severity.md`, `03-scale-aware-auditing.md`,
+  `04-modernization-synthesis.md`, and
+  `05-audit-to-hardening-handoff.md`. The old `CODE-AUDIT.md` path was renamed
+  and is no longer a live package route.
 - `knowledge/project-management/SKILL.md` routes to
   `knowledge/project-management/guides/PROJECT-MANAGEMENT.md`, which carries the
   project -> arc -> slice lifecycle, Expedited Mode, and planning-worktree

@@ -32,7 +32,7 @@ compound across time, commits, reviewers, or planning artifacts.
 | Engineering method | [`knowledge/engineering-methods/guides/01-engineering-methodology.md`](../knowledge/engineering-methods/guides/01-engineering-methodology.md) | Knowledge substrate, collaborative posture, and process rigor. |
 | Project management | [`knowledge/project-management/guides/PROJECT-MANAGEMENT.md`](../knowledge/project-management/guides/PROJECT-MANAGEMENT.md) | Project, arc, slice, planning, close, and bubble-up wayfinder. |
 | Work verification | [`knowledge/work-verification/guides/01-ledger-discipline.md`](../knowledge/work-verification/guides/01-ledger-discipline.md) | Ledger discipline and evidence requirements. |
-| Code audit | [`knowledge/code-auditing/guides/CODE-AUDIT.md`](../knowledge/code-auditing/guides/CODE-AUDIT.md) | Diagnosis-only code audit discipline. |
+| Code audit | [`knowledge/code-auditing/guides/01-audit-scope-and-map.md`](../knowledge/code-auditing/guides/01-audit-scope-and-map.md) | Diagnosis-only code audit discipline, with focused guides for findings, scale, modernization, and handoff. |
 | Testing | [`knowledge/testing/guides/01-testing-discipline.md`](../knowledge/testing/guides/01-testing-discipline.md) | Testing discipline, coverage hardening, and validation gates. |
 | Agent coordination | [`knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md`](../knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md) | Delegation boundaries and multi-agent coordination. |
 | Contribution style | [`knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md`](../knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md) | Maintainer-facing issue, PR, and ticket style. |

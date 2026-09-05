@@ -46,6 +46,13 @@ framework documents and a packaging surface for installable assistant skills.
   load path. Load `02-coverage-hardening.md` for hard coverage-threshold work
   and `03-validation-gates.md` for repository-native test/lint/format/package
   validation gates. The old `CODE-COVERAGE.md` path is not a live route.
+- **Code-auditing routes:** use
+  `knowledge/code-auditing/guides/01-audit-scope-and-map.md` as the primary
+  diagnosis-only audit load path. Load `02-findings-and-severity.md` for report
+  and finding format, `03-scale-aware-auditing.md` for all-scale review,
+  `04-modernization-synthesis.md` for evidence-backed modernization pressure,
+  and `05-audit-to-hardening-handoff.md` for follow-up testing or hardening
+  work. The old `CODE-AUDIT.md` path is not a live route.
 - Load the relevant domain skill before writing or reviewing domain material:
   Rust, Go, Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual
   Design, Biome, or Deno lint. Preserve source material under

@@ -16,7 +16,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.5
+version: 1.5.6
 license: MIT
 metadata:
   hermes:
@@ -348,7 +348,11 @@ work demands:
 | [`guides/04-silent-drop-checks.md`](../work-verification/guides/04-silent-drop-checks.md) | Verification protocol | When comparing scope-as-specified to scope-as-delivered, checking missing rows, spec-softening, partial adoption, vacuous tests, and inherited composition. |
 | [`guides/05-independent-verification.md`](../work-verification/guides/05-independent-verification.md) | Verification protocol | When assigning or performing CDC/fresh-context/operator verification, gate review, or sandbox-aware reproduction of evidence. |
 | [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification support asset | When a project needs the complete pre-split protocol in one file or copyable slice/arc/project ledger tables. Prefer the focused guides for selective loading. |
-| [`guides/CODE-AUDIT.md`](../code-auditing/guides/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
+| [`guides/01-audit-scope-and-map.md`](../code-auditing/guides/01-audit-scope-and-map.md) | Code audit / scope | When commissioning a diagnosis-only code audit, detecting languages/tools, loading domain skills, and building the audit map. |
+| [`guides/02-findings-and-severity.md`](../code-auditing/guides/02-findings-and-severity.md) | Code audit / findings | When writing severity-graded, file:line-cited findings, report sections, coherence observations, cross-cutting findings, or negative findings. |
+| [`guides/03-scale-aware-auditing.md`](../code-auditing/guides/03-scale-aware-auditing.md) | Code audit / scale | When ensuring the audit covers line/function through workspace/monorepo scale instead of context-window sampling. |
+| [`guides/04-modernization-synthesis.md`](../code-auditing/guides/04-modernization-synthesis.md) | Code audit / modernization | When turning audit findings into evidence-backed modernization themes, moves, deferrals, and compatibility classifications. |
+| [`guides/05-audit-to-hardening-handoff.md`](../code-auditing/guides/05-audit-to-hardening-handoff.md) | Code audit / handoff | When converting diagnosis-only audit results into follow-up hardening, testing, or validation work without making audit-time code changes. |
 | [`guides/01-testing-discipline.md`](../testing/guides/01-testing-discipline.md) | Testing discipline | When tests need to prove behavior, weak or ignored tests need repair, or failures need root-cause triage. |
 | [`guides/02-coverage-hardening.md`](../testing/guides/02-coverage-hardening.md) | Coverage hardening | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
 | [`guides/03-validation-gates.md`](../testing/guides/03-validation-gates.md) | Validation gates | When selecting or recording repository-native test, lint, format, package, CI, release, and generated-artifact gates. |

@@ -31,7 +31,7 @@ for multiple languages. Those became the knowledge bases under
 Feature-scoped quality was not enough: different runs diverged, and slop
 accumulated *between* features. The fix needed a bigger context than
 "feature" — whole-library, consistent-use-of-best-practices checks. That
-became the language-agnostic [audit prompt](../knowledge/code-auditing/guides/CODE-AUDIT.md), iterated
+became the language-agnostic [audit prompt](../knowledge/code-auditing/guides/01-audit-scope-and-map.md), iterated
 with dual human/LLM grading as its fitness function.
 
 ## 3. The SDLC, rediscovered (Summer 2025)

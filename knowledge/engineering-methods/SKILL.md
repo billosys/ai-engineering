@@ -5,7 +5,7 @@ description: |
   knowledge substrate, collaborative posture, process rigour, and the 9-point
   SDLC. Use when designing how a body of LLM-assisted engineering work should be
   structured, evaluated, or improved.
-version: 1.1.2
+version: 1.1.3
 license: MIT
 metadata:
   hermes:

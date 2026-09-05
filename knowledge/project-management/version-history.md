@@ -1,5 +1,12 @@
 # Version History
 
+### Version 2.11 - September 2026
+
+Updated the maintenance guide's CAP-style audit cross-reference to the split
+code-auditing guide surface. Audit output homes now route through
+`code-auditing/guides/01-audit-scope-and-map.md`; the former CODE-AUDIT path is
+historical lineage only.
+
 ### Version 2.10 — September 2026
 
 Updated project-management guide links to the split work-verification guide

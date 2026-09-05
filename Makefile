@@ -135,7 +135,11 @@ CF_FILES := \
 	knowledge/work-verification/guides/03-row-closure.md \
 	knowledge/work-verification/guides/04-silent-drop-checks.md \
 	knowledge/work-verification/guides/05-independent-verification.md \
-	knowledge/code-auditing/guides/CODE-AUDIT.md \
+	knowledge/code-auditing/guides/01-audit-scope-and-map.md \
+	knowledge/code-auditing/guides/02-findings-and-severity.md \
+	knowledge/code-auditing/guides/03-scale-aware-auditing.md \
+	knowledge/code-auditing/guides/04-modernization-synthesis.md \
+	knowledge/code-auditing/guides/05-audit-to-hardening-handoff.md \
 	knowledge/testing/guides/01-testing-discipline.md \
 	knowledge/testing/guides/02-coverage-hardening.md \
 	knowledge/testing/guides/03-validation-gates.md \
