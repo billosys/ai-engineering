@@ -8,7 +8,7 @@ status: proposed-done
 closed-by: CC
 closed-on: 2026-09-05
 source_commit: 9e2d5d055712efb53028ef250091d70487a257a0
-planning_commit: pending until this report is committed
+planning_commit: f447399e250b46e7bdb9659c9f5ff558752893ad
 ```
 
 ## Verdict
@@ -27,7 +27,7 @@ Source commit:
 `9e2d5d055712efb53028ef250091d70487a257a0`
 
 Planning commit:
-pending until this report is committed
+f447399e250b46e7bdb9659c9f5ff558752893ad
 
 ## Explicit File Lists
 
@@ -99,7 +99,7 @@ Summary:
 | F-5 | done | `artifacts/source-route-repair-map.md` records agent-coordination, collaboration-framework, engineering-methods, public docs, AGENTS, release-note, and Makefile repairs plus package-exception no-op. |
 | F-6 | done | Source whitespace, skill-description, focused local-link, collaboration-framework package build, and full package-path validation passed with zero hard failures. |
 | F-7 | done | Generated `collaboration-framework.zip` contains all four agent-coordination guides and omits the old `SUBAGENT-DELEGATION-POLICY.md` path. |
-| F-8 | done | This report records exact source commit, pending planning commit placeholder, explicit file lists, final statuses, row walk, and bubble-up. |
+| F-8 | done | This report records exact source commit, planning close-packet commit, explicit file lists, final statuses, row walk, and bubble-up. |
 
 Rows: 8. Done: 8. Deferred: 0. No-op: 0.
 
