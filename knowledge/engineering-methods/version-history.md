@@ -4,6 +4,12 @@ This file is the sibling component history for `knowledge/engineering-methods/`.
 
 ## Engineering Methods Component
 
+### Version 1.1.2 - 2026-09-04
+
+Updated engineering-methods operational routing for the testing guide split.
+Testing work now routes to the testing-discipline guide, which in turn routes
+to coverage hardening and validation gates as needed.
+
 ### Version 1.1.1 - 2026-09-04
 
 Updated engineering-methods operational-routing and source/package/release

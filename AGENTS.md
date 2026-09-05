@@ -41,6 +41,11 @@ framework documents and a packaging surface for installable assistant skills.
   row-closure, silent-drop, or independent-verification guides as needed.
   `knowledge/work-verification/templates/LEDGER-DISCIPLINE.md` remains a
   package-local full-protocol and copyable-table support asset.
+- **Testing routes:** use
+  `knowledge/testing/guides/01-testing-discipline.md` as the primary testing
+  load path. Load `02-coverage-hardening.md` for hard coverage-threshold work
+  and `03-validation-gates.md` for repository-native test/lint/format/package
+  validation gates. The old `CODE-COVERAGE.md` path is not a live route.
 - Load the relevant domain skill before writing or reviewing domain material:
   Rust, Go, Erlang/OTP, C++, JavaScript/Deno, Cobalt, Tailwind CSS, Visual
   Design, Biome, or Deno lint. Preserve source material under

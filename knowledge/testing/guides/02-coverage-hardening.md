@@ -1,4 +1,14 @@
-# Comprehensive Code Coverage Prompt
+# Coverage Hardening
+
+Load this guide when a codebase must reach a hard coverage threshold or when
+coverage work must improve real behavior rather than satisfy a metric
+cosmetically. It is the renamed and focused successor to the old
+CODE-COVERAGE.md prompt.
+
+For general test quality, use
+[`01-testing-discipline.md`](./01-testing-discipline.md). For validation,
+package, and release gates, use
+[`03-validation-gates.md`](./03-validation-gates.md).
 
 ## Objective
 

@@ -136,7 +136,9 @@ CF_FILES := \
 	knowledge/work-verification/guides/04-silent-drop-checks.md \
 	knowledge/work-verification/guides/05-independent-verification.md \
 	knowledge/code-auditing/guides/CODE-AUDIT.md \
-	knowledge/testing/guides/CODE-COVERAGE.md \
+	knowledge/testing/guides/01-testing-discipline.md \
+	knowledge/testing/guides/02-coverage-hardening.md \
+	knowledge/testing/guides/03-validation-gates.md \
 	knowledge/agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md \
 	knowledge/contribution-style/guides/CONTRIBUTION-STYLE.md \
 	knowledge/work-verification/templates/LEDGER-DISCIPLINE.md \

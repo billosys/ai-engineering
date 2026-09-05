@@ -312,6 +312,11 @@ documents that carry its planning, audit, and verification mechanics:
   strength, row closure, silent-drop checks, and independent verification; the
   retained `templates/LEDGER-DISCIPLINE.md` carries the full protocol and
   copyable ledger tables.
+- `knowledge/testing/SKILL.md` routes to
+  `knowledge/testing/guides/01-testing-discipline.md`,
+  `knowledge/testing/guides/02-coverage-hardening.md`, and
+  `knowledge/testing/guides/03-validation-gates.md`; the old
+  `CODE-COVERAGE.md` path was renamed into the coverage-hardening guide.
 - `knowledge/project-management/version-history.md` records the
   project-management guide history, including per-scale ledger files and
   per-slice artifact homes.

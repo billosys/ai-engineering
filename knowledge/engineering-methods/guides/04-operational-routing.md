@@ -41,7 +41,7 @@ These disciplines are where the Supplement's posture meets the methodology's cra
 | Plan or close a project, arc, or slice | [`../../project-management/guides/PROJECT-MANAGEMENT.md`](../../project-management/guides/PROJECT-MANAGEMENT.md) | The project-management guide named by its required load set. |
 | Verify ledger rows, evidence strength, and silent-drop closure | [`../../work-verification/guides/01-ledger-discipline.md`](../../work-verification/guides/01-ledger-discipline.md) | The planning artifacts and actual source diff being verified. |
 | Commission a diagnosis-only code audit | [`../../code-auditing/guides/CODE-AUDIT.md`](../../code-auditing/guides/CODE-AUDIT.md) | Relevant domain/tooling skills for the code under review. |
-| Raise or defend testing and validation coverage | [`../../testing/guides/CODE-COVERAGE.md`](../../testing/guides/CODE-COVERAGE.md) | Project-local test tooling and relevant domain/tooling skills. |
+| Raise or defend testing and validation coverage | [`../../testing/guides/01-testing-discipline.md`](../../testing/guides/01-testing-discipline.md) | Project-local test tooling, coverage-hardening guidance, validation gates, and relevant domain/tooling skills. |
 | Decide whether to delegate lookup work | [`../../agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md`](../../agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md) | The parent-context verification plan for reintegrating results. |
 | Draft an upstream issue, PR note, or contribution ticket | [`../../contribution-style/guides/CONTRIBUTION-STYLE.md`](../../contribution-style/guides/CONTRIBUTION-STYLE.md) | [`../../contribution-style/templates/CONTRIBUTION-TICKET.md`](../../contribution-style/templates/CONTRIBUTION-TICKET.md). |
 

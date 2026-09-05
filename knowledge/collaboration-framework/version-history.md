@@ -4,6 +4,13 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.5 - 2026-09-04
+
+Updated collaboration-framework route surfaces for the testing guide split. The
+composer now routes to testing discipline, coverage hardening, and validation
+gates, and no longer uses the old guides/CODE-COVERAGE.md path as a live
+load target.
+
 ### Version 1.5.4 - 2026-09-04
 
 Updated collaboration-framework route surfaces for the work-verification guide
@@ -75,7 +82,7 @@ Moved the collaboration-framework supporting source payload under `knowledge/col
 ### Version 1.4.4 — September 2026
 
 Renamed the old Claude Code coverage working-practice prompt to
-`docs/CODE-COVERAGE.md` and updated the collaboration-framework route table to
+docs/CODE-COVERAGE.md and updated the collaboration-framework route table to
 use the product-neutral filename.
 
 ### Version 1.4.3 — September 2026

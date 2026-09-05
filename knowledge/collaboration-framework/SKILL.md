@@ -16,7 +16,7 @@ description: |
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.4
+version: 1.5.5
 license: MIT
 metadata:
   hermes:
@@ -349,7 +349,9 @@ work demands:
 | [`guides/05-independent-verification.md`](../work-verification/guides/05-independent-verification.md) | Verification protocol | When assigning or performing CDC/fresh-context/operator verification, gate review, or sandbox-aware reproduction of evidence. |
 | [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification support asset | When a project needs the complete pre-split protocol in one file or copyable slice/arc/project ledger tables. Prefer the focused guides for selective loading. |
 | [`guides/CODE-AUDIT.md`](../code-auditing/guides/CODE-AUDIT.md) | Working-practice prompt | When commissioning a **whole-repo quality audit** — detects every language with a matching `knowledge/<slug>/` skill, loads that skill, and produces one severity-graded, file:line-cited report per language plus a top-level index and modernization synthesis. Diagnosis only; does not modify code. |
-| [`guides/CODE-COVERAGE.md`](../testing/guides/CODE-COVERAGE.md) | Working-practice prompt | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
+| [`guides/01-testing-discipline.md`](../testing/guides/01-testing-discipline.md) | Testing discipline | When tests need to prove behavior, weak or ignored tests need repair, or failures need root-cause triage. |
+| [`guides/02-coverage-hardening.md`](../testing/guides/02-coverage-hardening.md) | Coverage hardening | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
+| [`guides/03-validation-gates.md`](../testing/guides/03-validation-gates.md) | Validation gates | When selecting or recording repository-native test, lint, format, package, CI, release, and generated-artifact gates. |
 | [`guides/SUBAGENT-DELEGATION-POLICY.md`](../agent-coordination/guides/SUBAGENT-DELEGATION-POLICY.md) | Working-practice prompt | When deciding **delegation** in a multi-step job, or installing the thinking-vs-lookup rule into a `CLAUDE.md`, `AGENTS.md`, or preferences block so it holds across sessions. |
 | [`guides/CONTRIBUTION-STYLE.md`](../contribution-style/guides/CONTRIBUTION-STYLE.md) | Voice / discipline | When **drafting an upstream contribution ticket** against a project you don't maintain. Names the voice (friendly, specific, calibrated, respectful of maintainer ownership) and the disciplines (mark confidence explicitly, disclose bias, pre-empt red herrings, no pressure on timing). Pairs with the ticket template. |
 | [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the style guide when actually writing a ticket. Carries the on-disk shape: the paste-ready blockquote header, the four ticket variants (confirmed bug, additive feature, doc fix, unconfirmed question), and the filing workflow. |
@@ -391,7 +393,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.4.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.5.
 
 ---
 
