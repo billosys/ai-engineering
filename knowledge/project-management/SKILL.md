@@ -5,7 +5,7 @@ description: |
   collaboration framework. Use before planning or closing a project, arc, or
   slice; inspecting canonical planning worktree layout; applying Expedited
   Mode; or deciding whether bubble-up findings require a plan update.
-version: 1.0.3
+version: 1.0.4
 license: MIT
 metadata:
   hermes:
@@ -21,7 +21,7 @@ the operation.
 
 Read first:
 
-- [Project Management](./guides/PROJECT-MANAGEMENT.md)
+- [Project Management Guide README](./guides/README.md)
 
 Focused guides:
 

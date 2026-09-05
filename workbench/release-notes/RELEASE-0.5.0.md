@@ -314,7 +314,7 @@ documents that carry its planning, audit, and verification mechanics:
   `05-audit-to-hardening-handoff.md`. The old `CODE-AUDIT.md` path was renamed
   and is no longer a live package route.
 - `knowledge/project-management/SKILL.md` routes to
-  `knowledge/project-management/guides/PROJECT-MANAGEMENT.md`, which carries the
+  `knowledge/project-management/guides/README.md`, which carries the
   project -> arc -> slice lifecycle, Expedited Mode, and planning-worktree
   wayfinding.
 - `knowledge/engineering-methods/SKILL.md` routes to

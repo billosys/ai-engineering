@@ -1,13 +1,12 @@
-# Project Management
+# Project Management Guides
 
 > Wayfinder for the framework's project-management layer: the scales of work,
 > planning artifacts and where they live on disk, the confirmation protocol,
 > top-down planning, bottom-up close/bubble-up, and the maintenance discipline
 > that keeps those mechanics from drifting.
 
-This file is deliberately short. The operational detail used to live here as
-one long document; it is now split into focused files in this `guides/`
-directory.
+This README is deliberately short. The operational detail used to live in one
+long document; it is now split into focused files in this `guides/` directory.
 Start here, choose the section that matches the job, and load only the detailed
 files the job requires.
 
@@ -131,12 +130,11 @@ context load; it does not relax the requirement to use the written mechanics.
 ## Version History
 
 The detailed project-management version history lives in
-[`version-history.md`](../version-history.md). Current version: **2.8**
-(`2026-09-04`), which moves the worked example from `guides/` to `examples/`
-while preserving the eight numbered project-management guide routes and the
-wayfinder.
+[`version-history.md`](../version-history.md). Current version: **2.12**
+(`2026-09-05`), which renames the guide-set wayfinder from
+`PROJECT-MANAGEMENT.md` to `README.md`.
 
 ---
 
-_The project-management guide is a living spec. This wayfinder: 2.9,
-2026-09-04._
+_The project-management guide README is a living spec. This wayfinder: 2.12,
+2026-09-05._

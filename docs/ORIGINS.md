@@ -124,7 +124,7 @@ unit of work with a logical composition upward (slice → arc → project),
 grounded in research on the critical failures of Agile and its
 descendants. Hand-waving gave way to calculable definitions: statistical
 analysis, information-theoretic measures of complexity. The result is the
-[project-management discipline](../knowledge/project-management/guides/PROJECT-MANAGEMENT.md), and with it the
+[project-management discipline](../knowledge/project-management/guides/README.md), and with it the
 most significant quality shift so far.
 
 A useful mental model for the multi-scale machinery: the system behaves

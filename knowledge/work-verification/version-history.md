@@ -1,5 +1,11 @@
 # Work Verification Version History
 
+## Version 1.1.1 - 2026-09-05
+
+Updated ledger-template project-management routes after the guide-set
+wayfinder was renamed from `guides/PROJECT-MANAGEMENT.md` to
+`guides/README.md`.
+
 ## Version 1.1.0 - 2026-09-04
 
 Split the work-verification guide surface into five selective-load guides:
@@ -27,7 +33,7 @@ separate from its verifier.
 
 ### Version 2.3 - August 2026
 
-Synchronized with `PROJECT-MANAGEMENT.md` v2.5. Durable artifacts produced by a
+Synchronized with the project-management wayfinder v2.5. Durable artifacts produced by a
 slice now default to `sliceNN-<slug>/artifacts/`, with an operator-recorded
 override allowed. CC evidence should point to that artifact home when durable
 outputs are part of a ledger row, and CDC now verifies artifact placement during
@@ -35,7 +41,7 @@ slice close.
 
 ### Version 2.2 - August 2026
 
-Updated the ledger layout to match `PROJECT-MANAGEMENT.md` v2.4: every scale
+Updated the ledger layout to match the project-management wayfinder v2.4: every scale
 now gets a dedicated sibling `ledger.md` file. Project ledgers live beside
 `project-plan.md`, arc ledgers live beside `arc-plan.md`, and slice ledgers
 continue to live beside `slice-plan.md`. This replaces the v2.0/v2.1
@@ -45,7 +51,7 @@ plan files. The ledger mechanics are unchanged.
 ### Version 2.1 - August 2026
 
 Updated the slice-ledger path example to match
-[`../project-management/guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md)
+[`../project-management/guides/README.md`](../project-management/guides/README.md)
 v2.2: planning artifacts now default to the orphan `planning` branch/worktree
 under `projectNN-<slug>`, not an implementation-branch `docs/design-vX.Y.Z`
 tree. Also renamed the referenced slice plan-of-record from `slice-doc.md` to

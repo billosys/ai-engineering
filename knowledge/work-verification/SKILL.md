@@ -5,7 +5,7 @@ description: |
   strength. Use at the start of any ledgered project, arc, or slice; when
   closing work; or when distinguishing proposed-done attestation from
   independent reproduced verification.
-version: 1.1.0
+version: 1.1.1
 license: MIT
 metadata:
   hermes:

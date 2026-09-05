@@ -9,15 +9,15 @@ description: |
   upstream ticket workflow.
   Use when: sustained, high-stakes sessions — deep study, research,
   expert systems design, or production programming; establishing the peer
-  frame; planning or closing a project, arc, or slice (MUST read
-  PROJECT-MANAGEMENT.md first); Expedited Mode;
+  frame; planning or closing a project, arc, or slice (MUST read the
+  project-management guides README first); Expedited Mode;
   running the 9-point SDLC or a
   ledgered slice; commissioning a CAP-style audit; driving coverage to a
   hard threshold; deciding what to delegate to a subagent; drafting
   contribution tickets; or whenever the floor needs protecting from drift.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.8
+version: 1.5.9
 license: MIT
 metadata:
   hermes:
@@ -105,7 +105,7 @@ applies:
   (load the ledger discipline; the protocol now spans all three).
 - **Planning or closing a project, an arc, or a slice — or about to create
   any planning directory.** The moment planning begins, you **MUST read
-  [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md)** before laying
+  the project-management [`guides/README.md`](../project-management/guides/README.md)** before laying
   anything out. It is now a wayfinder that points to the focused `guides/`
   files for the scales of work, canonical planning worktree layout (`planning`
   branch/worktree, `projectNN-<slug>`, `project-plan.md` / `arc-plan.md` /
@@ -114,7 +114,7 @@ applies:
   confirmation protocol, top-down planning, bottom-up
   bubble-up/close machinery (slice → arc → project), and plan-change
   discipline. If the operator asks for **Expedited Mode**, read
-  `guides/PROJECT-MANAGEMENT.md` and follow its Expedited Mode section before
+  `guides/README.md` and follow its Expedited Mode section before
   issuing CC prompts, closing slices, committing CDC updates, or advancing to
   the next slice or arc. Expedited Mode only changes the explicit process
   behaviors listed there: it means no shortcuts, no skipped validation, no
@@ -270,8 +270,8 @@ child surfaced the change and why. Decomposition down, recomposition up — the
 loop is what keeps a plan from quietly drifting out of date.
 
 > **This is a summary. Before planning or closing anything, you MUST read
-> [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md)** — it is the
-> wayfinder for the layout, the planning process, the bubble-up reports and
+> project-management [`guides/README.md`](../project-management/guides/README.md)** — it is the
+> guide-set wayfinder for the layout, the planning process, the bubble-up reports and
 > checks, the arc-close process, and the plan-change discipline. Follow its
 > required load set; do not improvise the mechanics from this paragraph.
 
@@ -342,7 +342,7 @@ work demands:
 | [`guides/04-operational-routing.md`](../engineering-methods/guides/04-operational-routing.md) | Craft / routing | When applying the method through practitioner disciplines and collaboration-framework component routes. |
 | [`guides/05-component-boundary-analysis.md`](../engineering-methods/guides/05-component-boundary-analysis.md) | Craft / boundaries | When deciding whether material belongs in engineering-methods or a specialized framework component. |
 | [`guides/06-source-package-release-gates.md`](../engineering-methods/guides/06-source-package-release-gates.md) | Craft / gates | When source, package, release, validation, and provenance gates determine whether work is complete. |
-| [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management wayfinder and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the wayfinder; do not improvise the mechanics from the skill's summary. |
+| [`guides/README.md`](../project-management/guides/README.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management guide-set README and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the README's wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`guides/01-ledger-discipline.md`](../work-verification/guides/01-ledger-discipline.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine, row format, closure statuses, and slice/arc/project adaptation. |
 | [`guides/02-evidence-strength.md`](../work-verification/guides/02-evidence-strength.md) | Verification protocol | When distinguishing `asserted`, `attested`, `reproduced`, and `reconciled` evidence, especially proposed-done versus independently verified rows. |
 | [`guides/03-row-closure.md`](../work-verification/guides/03-row-closure.md) | Verification protocol | Before updating a ledger, writing a closing report, or checking row dispositions, evidence, final statuses, and close artifacts. |
@@ -402,7 +402,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.8.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.9.
 
 ---
 
@@ -416,7 +416,7 @@ The collaboration-framework component history lives at `knowledge/collaboration-
    [engineering-methods guide set](../engineering-methods/guides/01-engineering-methodology.md) together** when the
    session is substantial — character and craft are inseparable.
 3. **Before planning or closing anything, read
-   [`guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md)** and follow its
+   project-management [`guides/README.md`](../project-management/guides/README.md)** and follow its
    required load set for the relevant `guides/` files. Apply the confirmation
    protocol with the operator before creating directories or filenames, once
    per project. This is the cheapest defence

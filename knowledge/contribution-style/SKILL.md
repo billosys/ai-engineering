@@ -5,7 +5,7 @@ description: |
   tickets with calibrated confidence, maintainer-friendly framing, and clear
   issue evidence. Use when writing bug reports, feature requests, doc fixes, or
   unconfirmed questions for projects you do not maintain.
-version: 1.1.0
+version: 1.1.1
 license: MIT
 metadata:
   hermes:

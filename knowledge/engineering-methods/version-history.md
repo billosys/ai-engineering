@@ -4,6 +4,12 @@ This file is the sibling component history for `knowledge/engineering-methods/`.
 
 ## Engineering Methods Component
 
+### Version 1.1.6 - 2026-09-05
+
+Updated project-management routes after its guide-set wayfinder was renamed
+from `guides/PROJECT-MANAGEMENT.md` to `guides/README.md`. Methodology routing
+now names the project-management README as the required load-set wayfinder.
+
 ### Version 1.1.5 - 2026-09-05
 
 Updated engineering-methods operational routing for the contribution-style
@@ -59,16 +65,16 @@ primary meaning.
 
 ### Version 1.9 — August 2026
 
-Updated the project-management pointer for
-[`PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) v2.5 and
+Updated the project-management pointer for the project-management wayfinder
+v2.5 and
 [`LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) v2.3. The
 methodology summary now names the default slice `artifacts/` home for durable
 slice-produced artifacts and preserves the operator override rule.
 
 ### Version 1.8 — August 2026
 
-Updated the project-management pointer for
-[`PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) v2.4 and
+Updated the project-management pointer for the project-management wayfinder
+v2.4 and
 [`LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) v2.2. The
 methodology summary now reflects the current layout: projects, arcs, and
 slices each have a dedicated sibling `ledger.md` file, rather than embedding
@@ -76,8 +82,8 @@ project or arc ledger rows inside plan files.
 
 ### Version 1.7 — August 2026
 
-Updated the project-management pointer for
-[`PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) v2.3. The root
+Updated the project-management pointer for the project-management wayfinder
+v2.3. The root
 project-management file is now a wayfinder, with the detailed mechanics split
 into focused files under [`../project-management/guides/`](../project-management/guides/). The methodology continues to carry
 only the abstract summary; planning and closing sessions must start from the
@@ -85,8 +91,8 @@ wayfinder and follow its required load set.
 
 ### Version 1.6 — August 2026
 
-Updated the project-management summary to reflect
-[`PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) v2.2: framework planning
+Updated the project-management summary to reflect the project-management
+wayfinder v2.2: framework planning
 artifacts now default to an orphan `planning` branch mounted as a Git worktree,
 with projects named `projectNN-<slug>` and ordering/relationship semantics
 carried by project metadata (`depends-on`, `blocks`, `related`) rather than by
@@ -95,26 +101,26 @@ the project and arc pattern: `slice-plan.md`, not `slice-doc.md`.
 
 This rev intentionally removes the old `docs/design-vX.Y.Z` wording from the
 normative methodology summary. Historical references below remain historical
-only; the active mechanics live in `PROJECT-MANAGEMENT.md`.
+only; the active mechanics live in the project-management wayfinder.
 
 ### Version 1.5 — June 2026
 
 Extracted the **detailed project-management content** from Part III into a new
-dedicated home, [`../project-management/guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) (v2.0,
+dedicated home, [`../project-management/guides/README.md`](../project-management/guides/README.md) (v2.0,
 itself a rename-and-expansion of the former `ASSET-ORGANISATION.md`). The
 methodology now keeps a *summary* of the scales of work and the
 context-window basis for sizing a slice, plus a pointer; the operational
 detail it used to carry — *The fundamental unit, and what it rests on* (full
 version), *Sizing is a judgment call* (the token-arithmetic, the
 screenwriting mnemonic, the Saga tier), and *A default layout* (the on-disk
-tree) — moved to `PROJECT-MANAGEMENT.md`, which adds the project-level
+tree) — moved to the project-management wayfinder, which adds the project-level
 planning artifact (`project-plan.md`), the top-down planning process, and the
 bottom-up bubble-up/close machinery (slice → arc → project) that v1's
 `ASSET-ORGANISATION.md` had deferred.
 
 The cut is deliberate: this document owns the *philosophy* (the three
 pillars, the 9-point SDLC, the anti-degradation disciplines, the posture-in-
-craft), and `PROJECT-MANAGEMENT.md` owns the *mechanics* of planning and
+craft), and the project-management wayfinder owns the *mechanics* of planning and
 closing work. The vocabulary (project / arc / slice / step / iteration) is
 unchanged; this rev relocates its detailed treatment and adds a MUST-read
 pointer for anyone about to plan. The rev was catalysed by the `odm`
@@ -144,7 +150,7 @@ constitutional authority.
 
 ### Version 1.3 — June 2026
 
-Added an operational companion to *A default layout* — `ASSET-ORGANISATION.md` (renamed to [`../project-management/guides/PROJECT-MANAGEMENT.md`](../project-management/guides/PROJECT-MANAGEMENT.md) in v1.5) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept the abstract structure: project / arc / slice / step / iteration, and at that time placed the five per-slice documents under the then-current `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/` default, superseded in v1.6 by the planning-worktree / `projectNN-<slug>` default. The new doc carried that structure verbatim and added the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
+Added an operational companion to *A default layout* — `ASSET-ORGANISATION.md` (renamed to [`../project-management/guides/README.md`](../project-management/guides/README.md) in v1.5) — to install the **confirmation protocol** that stops the next executing context from inventing its own folder names mid-stream. The methodology kept the abstract structure: project / arc / slice / step / iteration, and at that time placed the five per-slice documents under the then-current `docs/design-vX.Y.Z/arcNN-<slug>/sliceNN-<slug>/` default, superseded in v1.6 by the planning-worktree / `projectNN-<slug>` default. The new doc carried that structure verbatim and added the protocol: quote the default, name the substitutions, give the operator the three explicit choices (proceed / adjust / override), and record the choice in the project's `CLAUDE.md` so the next session does not re-confirm. _Scope note:_ project-wide defaults for asset categories outside the slice/arc tree — project-scoped prompts, upstream contribution drafts, coverage reports, scratch — are **deferred** to a later revision, pending in-flight work on epic- and project-level dependency tracking and broader work organisation. v1.3 ships the slice/arc layout and the protocol; the rest waits for that broader rev.
 
 The companion contribution-style stack also lands in this rev: the historical
 pre-split contribution-style guide path `../contribution-style/guides/CONTRIBUTION-STYLE.md`

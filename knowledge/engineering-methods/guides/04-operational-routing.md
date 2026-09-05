@@ -38,7 +38,7 @@ These disciplines are where the Supplement's posture meets the methodology's cra
 | Need | Start with | Then load |
 |---|---|---|
 | Establish the working relationship and quality floor | [`../../collaboration-framework/SKILL.md`](../../collaboration-framework/SKILL.md) | The posture guides under `../../collaboration-framework/guides/`. |
-| Plan or close a project, arc, or slice | [`../../project-management/guides/PROJECT-MANAGEMENT.md`](../../project-management/guides/PROJECT-MANAGEMENT.md) | The project-management guide named by its required load set. |
+| Plan or close a project, arc, or slice | [`../../project-management/guides/README.md`](../../project-management/guides/README.md) | The project-management guide-set README and required load-set wayfinder. |
 | Verify ledger rows, evidence strength, and silent-drop closure | [`../../work-verification/guides/01-ledger-discipline.md`](../../work-verification/guides/01-ledger-discipline.md) | The planning artifacts and actual source diff being verified. |
 | Commission a diagnosis-only code audit | [`../../code-auditing/guides/01-audit-scope-and-map.md`](../../code-auditing/guides/01-audit-scope-and-map.md) | Relevant domain/tooling skills for the code under review; then load the focused findings, scale, modernization, or handoff guide as needed. |
 | Raise or defend testing and validation coverage | [`../../testing/guides/01-testing-discipline.md`](../../testing/guides/01-testing-discipline.md) | Project-local test tooling, coverage-hardening guidance, validation gates, and relevant domain/tooling skills. |

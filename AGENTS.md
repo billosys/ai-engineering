@@ -12,7 +12,7 @@ framework documents and a packaging surface for installable assistant skills.
   different worktree convention. Do not recreate planning docs on `main`.
 - Use the current `collaboration-framework` skill at session start. For
   planning work, read `knowledge/project-management/SKILL.md`, then
-  `knowledge/project-management/guides/PROJECT-MANAGEMENT.md` as the
+  `knowledge/project-management/guides/README.md` as the
   wayfinder, and then load the relevant
   `knowledge/project-management/guides/` files. The current canonical layout
   is `projectNN-<slug>/project-plan.md` plus project `ledger.md`,

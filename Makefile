@@ -120,7 +120,7 @@ CF_FILES := \
 	knowledge/engineering-methods/guides/05-component-boundary-analysis.md \
 	knowledge/engineering-methods/guides/06-source-package-release-gates.md \
 	knowledge/engineering-methods/version-history.md \
-	knowledge/project-management/guides/PROJECT-MANAGEMENT.md \
+	knowledge/project-management/guides/README.md \
 	knowledge/project-management/guides/01-scales-of-work.md \
 	knowledge/project-management/guides/02-canonical-planning-worktree.md \
 	knowledge/project-management/guides/03-planning-top-down.md \

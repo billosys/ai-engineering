@@ -1,5 +1,13 @@
 # Version History
 
+### Version 2.12 - September 2026
+
+Renamed the project-management guide-set wayfinder from
+`guides/PROJECT-MANAGEMENT.md` to `guides/README.md`, matching its role as the
+index and required-load router for the numbered project-management guides.
+Updated live source, package, and release-note routes so `README.md` is the
+current load target and the old path is no longer live.
+
 ### Version 2.11 - September 2026
 
 Updated the maintenance guide's CAP-style audit cross-reference to the split
@@ -20,7 +28,7 @@ asset through the work-verification component.
 Moved the worked example from `guides/09-worked-example-odm.md` to
 `examples/01-worked-example-odm.md`, matching the accepted Project04 Arc08
 project-management layout. The eight numbered project-management guides and
-`guides/PROJECT-MANAGEMENT.md` wayfinder remain under `guides/`.
+the guide-set wayfinder remained under `guides/`.
 
 ### Version 2.8 — September 2026
 
@@ -30,8 +38,7 @@ component history rule: the component version remains in `SKILL.md`, while
 changes to `SKILL.md`, `guides/`, `templates/`, or `examples/` are recorded in
 the sibling history file. Updated local routes and package lists for the move.
 
-Clarified **Expedited Mode** in
-[`guides/PROJECT-MANAGEMENT.md`](./guides/PROJECT-MANAGEMENT.md): it only
+Clarified **Expedited Mode** in the project-management wayfinder: it only
 changes the explicit listed commit, close, and advance behaviors. It means no
 shortcuts, no skipped validation, no weaker evidence or review, no inferred
 source scope and no reduction or other change in scope, no timeline
@@ -91,13 +98,12 @@ on scope/sequencing while ledger files carry acceptance and composition rows.
 
 ### Version 2.3 — August 2026
 
-Split the long project-management monolith
-([guides/PROJECT-MANAGEMENT.md](./guides/PROJECT-MANAGEMENT.md)) into focused files under
-`guides/`, preserving the original part boundaries. The root file is now a
-wayfinder with a required load set, a split-file index, and minimum-context
-shortcuts for common operations. This keeps `PROJECT-MANAGEMENT.md` as the
-entry point while reducing the context load for LLM sessions that only need one
-piece of the project-management discipline.
+Split the long project-management monolith into focused files under `guides/`,
+preserving the original part boundaries. The guide-set wayfinder has a required
+load set, a split-file index, and minimum-context shortcuts for common
+operations. This keeps the wayfinder as the entry point while reducing the
+context load for LLM sessions that only need one piece of the
+project-management discipline.
 
 - Refreshed the worked example after the v2.3 split so it teaches the general
   project-management flow rather than documenting the `odm` tool itself.

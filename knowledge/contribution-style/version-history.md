@@ -1,5 +1,11 @@
 # Contribution Style Version History
 
+## Version 1.1.1 - 2026-09-05
+
+Updated the contribution ticket template's project-management route after the
+guide-set wayfinder was renamed from `guides/PROJECT-MANAGEMENT.md` to
+`guides/README.md`.
+
 ## Version 1.1.0 - 2026-09-05
 
 Split the former CONTRIBUTION-STYLE guide into two focused guides:

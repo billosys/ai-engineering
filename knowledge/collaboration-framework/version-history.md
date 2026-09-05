@@ -4,6 +4,14 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.9 - 2026-09-05
+
+Updated project-management routing after the guide-set wayfinder was renamed
+from `guides/PROJECT-MANAGEMENT.md` to `guides/README.md`. The composer now
+names the project-management README as the required load target for planning,
+closing, and Expedited Mode, and the generated package includes the renamed
+README path.
+
 ### Version 1.5.8 - 2026-09-05
 
 Updated collaboration-framework route surfaces for the contribution-style guide
@@ -114,14 +122,14 @@ definitions in this entrypoint.
 
 ### Version 1.4.2 — September 2026
 
-Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.6. When the
+Updated project-management routing for the project-management wayfinder v2.6. When the
 operator asks for Expedited Mode, the skill now routes the session to the
 project-management wayfinder and its Expedited Mode section before CC prompts,
 slice closure, CDC commits, or automatic slice/arc advancement.
 
 ### Version 1.4.1 — August 2026
 
-Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.5,
+Updated project-management routing for the project-management wayfinder v2.5,
 `LEDGER-DISCIPLINE.md` v2.3, and `AI-ENGINEERING-METHODOLOGY.md` v1.9. Durable
 artifacts produced by a slice now default to the owning slice's `artifacts/`
 directory, with an operator-recorded override allowed and verified at slice
@@ -137,21 +145,21 @@ and an evidence-backed modernization synthesis.
 
 ### Version 1.3.2 — August 2026
 
-Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.4 and
+Updated project-management routing for the project-management wayfinder v2.4 and
 `LEDGER-DISCIPLINE.md` v2.2. The canonical layout now gives projects, arcs, and
 slices dedicated sibling `ledger.md` files instead of embedding arc/project
 ledger rows inside plan files.
 
 ### Version 1.3.1 — August 2026
 
-Updated project-management routing for `PROJECT-MANAGEMENT.md` v2.3. The root
+Updated project-management routing for the project-management wayfinder v2.3. The root
 project-management file is now a short wayfinder, and the detailed mechanics
 live in focused files under `guides/`; the bundle includes those files so the
 wayfinder's links resolve inside the packaged skill.
 
 ### Version 1.3.0 — August 2026
 
-Routed project-planning guidance to `PROJECT-MANAGEMENT.md` v2.2's new default:
+Routed project-planning guidance to the project-management wayfinder v2.2's new default:
 an orphan `planning` branch mounted as a Git worktree, with projects named
 `projectNN-<slug>`. Updated the skill metadata and routing text so future
 sessions see the planning-worktree requirement before creating directories, and
