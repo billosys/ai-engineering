@@ -186,9 +186,9 @@ consumers see package-valid paths rather than source-tree-only paths:
 The current Project04 release-readiness baseline is:
 
 - 12 generated skill zips scanned.
-- 171 packaged Markdown files scanned.
+- 208 packaged Markdown files scanned.
 - 0 hard failures.
-- 310 visible warnings.
+- 366 visible warnings.
 - 3 explicit exceptions.
 - 656 external URLs skipped.
 
@@ -330,6 +330,12 @@ documents that carry its planning, audit, and verification mechanics:
   `02-context-packets.md`, `03-result-integration.md`, and
   `04-anti-patterns.md`. The old `SUBAGENT-DELEGATION-POLICY.md` path was
   renamed and is no longer a live package route.
+- `knowledge/contribution-style/SKILL.md` routes to
+  `knowledge/contribution-style/guides/01-contribution-style.md`,
+  `knowledge/contribution-style/guides/02-upstream-ticket-workflow.md`, and
+  `knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md`; the old
+  `CONTRIBUTION-STYLE.md` path was split and is no longer a live package
+  route.
 - `knowledge/testing/SKILL.md` routes to
   `knowledge/testing/guides/01-testing-discipline.md`,
   `knowledge/testing/guides/02-coverage-hardening.md`, and
