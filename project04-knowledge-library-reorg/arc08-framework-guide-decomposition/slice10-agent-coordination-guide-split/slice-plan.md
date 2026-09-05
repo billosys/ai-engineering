@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice10-agent-coordination-guide-split
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-05
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -101,4 +101,14 @@ Do not create `cdc-verification.md`; CDC writes it after independent review.
 
 ## Closure
 
-Slice is open.
+Slice10 is CDC-verified closed.
+
+CDC verification:
+
+- `cdc-verification.md`
+- Source commit: `9e2d5d055712efb53028ef250091d70487a257a0`
+- Planning close commits: `f447399e250b46e7bdb9659c9f5ff558752893ad`,
+  `25273bb550aebec40d377157c1b7c78104d04398`
+
+Bubble-up: Slice11 is opened for the contribution-style guide split. No Arc08
+scope change is required.

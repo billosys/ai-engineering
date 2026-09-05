@@ -322,7 +322,7 @@ discipline.
 
 ### Slice 10: Agent-Coordination Guide Split
 
-Status: open.
+Status: verified-closed.
 
 Scope: split the old subagent delegation policy into
 `01-when-to-delegate.md`, `02-context-packets.md`,
@@ -332,7 +332,7 @@ route-level coordination contract.
 
 ### Slice 11: Contribution-Style Guide Split
 
-Status: planned after Slice10.
+Status: open.
 
 Scope: split contribution guidance into `01-contribution-style.md` and
 `02-upstream-ticket-workflow.md`, while preserving
@@ -490,3 +490,14 @@ generated collaboration-framework package contains 74 entries with all five
 code-auditing guides and no old `CODE-AUDIT.md` package path.
 
 Opened Slice10 for the agent-coordination guide split.
+
+### v1.12 - 2026-09-05
+
+Closed Slice10 after CDC verification. Slice10 split agent-coordination into
+four accepted numbered guides, removed `SUBAGENT-DELEGATION-POLICY.md` as a
+live route, repaired framework/component/docs/package/release references, and
+confirmed the generated collaboration-framework package contains 77 entries
+with all four agent-coordination guides and no old
+`SUBAGENT-DELEGATION-POLICY.md` package path.
+
+Opened Slice11 for the contribution-style guide split.
