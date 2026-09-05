@@ -3,21 +3,20 @@ name: collaboration-framework
 description: |
   Composite framework/operational skill for working with an LLM to engineering standards —
   character, craft, and the disciplines holding the quality floor.
-  Grounded in the collaboration-framework posture guide set, the AI Engineering Methodology,
-  and operational guidance for ledger discipline, project management, code
-  audit, test coverage, subagent delegation, upstream contribution style, and
-  upstream ticket workflow.
+  Grounded in the collaboration-framework posture guide set, engineering
+  methodology, and operational guidance for ledger discipline, project
+  management, code audit, testing, subagent delegation, contribution style, and
+  scientific-methods routing.
   Use when: sustained, high-stakes sessions — deep study, research,
   expert systems design, or production programming; establishing the peer
   frame; planning or closing a project, arc, or slice (MUST read the
-  project-management guides README first); Expedited Mode;
-  running the 9-point SDLC or a
-  ledgered slice; commissioning a CAP-style audit; driving coverage to a
-  hard threshold; deciding what to delegate to a subagent; drafting
-  contribution tickets; or whenever the floor needs protecting from drift.
+  project-management guides README first); Expedited Mode; running the 9-point
+  SDLC or a ledgered slice; commissioning an audit; hardening tests; delegating
+  lookup work; drafting contribution tickets; or recognizing when controlled
+  inquiry/regression comparison should load scientific-methods.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.9
+version: 1.5.10
 license: MIT
 metadata:
   hermes:
@@ -133,6 +132,10 @@ applies:
 - Drafting an **upstream contribution ticket** — a bug, feature, doc fix, or
   unconfirmed question against a project you don't maintain (load the
   contribution style guide *and* the ticket template).
+- Designing a **controlled inquiry or comparison** — an A/B prompt trial,
+  framework-version comparison, regression investigation, evaluation rubric,
+  experiment protocol, operational measure set, or threats-to-validity analysis
+  (load the separate `scientific-methods` skill if it is available).
 - Any moment the quality floor is under pressure — tight context, contested
   scope, conversational momentum toward a confident-sounding answer — and the
   discipline is to *protect the floor*, not soft-land.
@@ -364,6 +367,7 @@ work demands:
 | [`guides/01-contribution-style.md`](../contribution-style/guides/01-contribution-style.md) | Contribution style / voice | When **drafting an upstream contribution ticket** against a project you don't maintain and the work needs maintainer-facing voice: friendly, specific, calibrated, respectful of ownership, no severity overclaim, and no pressure on timing. |
 | [`guides/02-upstream-ticket-workflow.md`](../contribution-style/guides/02-upstream-ticket-workflow.md) | Contribution style / workflow | When preparing local ticket drafts, line-reference checks, blockquote headers, paste boundaries, one-ticket-per-problem structure, cross-linking, filing, and template use. |
 | [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style and workflow guides when actually writing a ticket. Carries the reusable ticket shape for confirmed bugs, additive features, doc fixes, and unconfirmed questions. |
+| `scientific-methods` | Adjacent method skill | Load separately when the conversation becomes a controlled inquiry: comparing versions, testing whether a change helped, detecting regressions, designing an A/B prompt or framework trial, defining operational measures, writing an experiment protocol, building an evaluation rubric, or analyzing threats to validity. |
 
 The posture guide set and Methodology are versioned, living documents. The five
 working-practice / discipline documents and the two templates are designed to
@@ -402,7 +406,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.9.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.10.
 
 ---
 

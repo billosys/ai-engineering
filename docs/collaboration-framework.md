@@ -20,6 +20,13 @@ For small, self-contained questions, a domain skill or ordinary repository
 context may be enough. The framework is most valuable when mistakes would
 compound across time, commits, reviewers, or planning artifacts.
 
+When the work is also a controlled inquiry, load
+[`scientific-methods`](../knowledge/scientific-methods/SKILL.md) alongside the
+collaboration framework. Use it for A/B trials, prompt or framework
+comparisons, regression investigations, operational measures, experiment
+protocols, evaluation rubrics, evidence capture, and threats-to-validity
+analysis.
+
 ## Main Framework Surfaces
 
 | Surface | Source path | Role |

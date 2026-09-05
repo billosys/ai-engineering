@@ -4,6 +4,16 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.10 - 2026-09-05
+
+Added wayfinding for the adjacent `scientific-methods` method skill. The
+composer now recognizes controlled inquiry, A/B prompt or framework trials,
+regression investigations, operational measures, experiment protocols,
+evaluation rubrics, evidence capture, and threats-to-validity analysis as
+signals to load scientific-methods separately when available. The
+scientific-methods skill remains an independent installable package rather
+than bundled into `collaboration-framework.zip`.
+
 ### Version 1.5.9 - 2026-09-05
 
 Updated project-management routing after the guide-set wayfinder was renamed

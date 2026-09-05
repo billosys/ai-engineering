@@ -11,8 +11,9 @@ Use `make help` for the current target list.
 | Command | Purpose |
 |---|---|
 | `make all` | Build every installable skill zip, including the collaboration framework. |
-| `make skills` | Build the domain/tooling skill zips. |
+| `make skills` | Build the installable skill zips except CCDP, including domain/tooling and method skills. |
 | `make collab-framework` | Build `target/skills/collaboration-framework.zip`. |
+| `make scientific-methods` | Build `target/skills/scientific-methods.zip`. |
 | `make rust`, `make go`, `make cpp`, `make js`, `make erlang` | Build one language skill package. |
 | `make cobalt`, `make design`, `make tailwindcss`, `make deno`, `make biome` | Build one tooling or design package target. |
 | `make clean` | Remove `build/` and generated zips in `target/skills/`. |

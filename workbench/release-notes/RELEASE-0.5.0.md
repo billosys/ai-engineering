@@ -9,8 +9,8 @@ protocol distributions such as CCDP.
 The release also carries the framework hardening work from the 0.5.0 cycle:
 multi-scale code audits, per-scale ledger files, per-slice artifact homes,
 package-context path validation, CCDP protocol packaging, the
-collaboration-framework component map, and the planned concept-card method
-skill architecture.
+collaboration-framework component map, the live scientific-methods skill, and
+the planned concept-card method skill architecture.
 
 Project04, the knowledge-library reorganization project, is acceptance-ready:
 the planned reorganization arcs are closed, the Arc07 component-entrypoint
@@ -59,10 +59,12 @@ separate axes:
 
 Rust is now the public example of an atomic domain/tooling skill. The
 top-level `collaboration-framework` remains the public example of a composite
-framework/operational skill. CCDP is explicitly a protocol distribution and
-protocol package, not an installable skill package. `concept-card-method`
-remains a planned method skill until source and package support are
-implemented.
+framework/operational skill. `scientific-methods` is now the live method-skill
+example for practical inquiry, controlled comparison, experiment planning,
+evaluation rubrics, evidence capture, and regression analysis. CCDP is
+explicitly a protocol distribution and protocol package, not an installable
+skill package. `concept-card-method` remains a planned method skill until
+source and package support are implemented.
 
 Project04 closed six arcs to get there:
 
@@ -185,14 +187,14 @@ consumers see package-valid paths rather than source-tree-only paths:
 
 The current Project04 release-readiness baseline is:
 
-- 12 generated skill zips scanned.
-- 208 packaged Markdown files scanned.
+- 13 generated skill zips scanned.
+- 222 packaged Markdown files scanned.
 - 0 hard failures.
 - 366 visible warnings.
 - 3 explicit exceptions.
 - 656 external URLs skipped.
 
-The final install smoke installed 12 `SKILL*.md` entrypoints into an isolated
+The final install smoke installed 13 `SKILL*.md` entrypoints into an isolated
 temporary directory and confirmed that no `ccdp` install root was created.
 
 ## Collaboration Framework Component Map
@@ -269,8 +271,26 @@ release does not implement or ship that package.
 The README now names **method skills** as a distinct skill-library category:
 skills that teach an assistant how to perform a durable knowledge-work method,
 not just how to work in a specific programming, tooling, or design domain.
-`concept-card-method` is listed as the first planned method skill and remains
-framed as planned, not already packaged.
+
+`scientific-methods` is the first live method skill in this repository. It
+captures the experiment-design pattern used during the framework comparison
+trial: pin the independent variable, control contamination, bound the task,
+predeclare outputs and measures, preserve evidence, compare against a rubric,
+and report threats to validity. The package includes:
+
+- `knowledge/scientific-methods/SKILL.md`
+- nine focused guides under `knowledge/scientific-methods/guides/`
+- experiment protocol, A/B comparison prompt, and evaluation rubric templates
+  under `knowledge/scientific-methods/templates/`
+- `knowledge/scientific-methods/version-history.md`
+
+The generated package target is `scientific-methods.zip`, built by
+`make scientific-methods` and included in `make skills`, `make all`, and
+`make install`.
+
+`concept-card-method` remains planned method material. Its planned package
+name is still `concept-card-method.zip`, but this release does not implement
+or ship that package.
 
 ## CCDP Package
 

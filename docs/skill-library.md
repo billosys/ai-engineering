@@ -28,6 +28,7 @@ loadable components.
 | `biome-js-linter.zip` | [`knowledge/biome/SKILL-js-linter.md`](../knowledge/biome/SKILL-js-linter.md) | Applying Biome JavaScript lint rules. |
 | `biome-linter.zip` | [`knowledge/biome/SKILL-web-linter.md`](../knowledge/biome/SKILL-web-linter.md) | Applying broader Biome web lint rules. |
 | `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Running sustained planning, implementation, review, and verification work. |
+| `scientific-methods.zip` | [`knowledge/scientific-methods/SKILL.md`](../knowledge/scientific-methods/SKILL.md) | Designing controlled comparisons, experiments, evaluation rubrics, evidence capture, and regression analysis. |
 
 ## Choosing What To Load
 
@@ -42,9 +43,16 @@ delegation decisions, or contribution-ticket writing. It is a composite
 framework/operational skill: the "how we work" layer and daily-driver
 composer, not a substitute for language or tooling expertise.
 
+Load scientific methods when the work itself is an inquiry: comparing two
+versions, testing whether a change improved behavior, detecting regressions,
+creating a controlled prompt or tool trial, defining operational measures, or
+capturing threats to validity.
+
 When a task crosses boundaries, load the smallest set that covers the work.
 For example, an Erlang implementation slice in a ledgered project would use
-the collaboration framework plus Erlang guidance.
+the collaboration framework plus Erlang guidance. A framework A/B trial with a
+Rust implementation task would use collaboration framework for the work shape,
+scientific methods for the experiment design, and Rust guidance for the code.
 
 Rust is the public example of an atomic domain/tooling skill. The Rust domain
 is broad, but the load reason "work in Rust" is coherent. That example does
@@ -64,7 +72,7 @@ The generated `collaboration-framework.zip` still exposes package entrypoint
 
 ## Planned Method Material
 
-This repository has planning evidence for method skills such as planned
-`concept-card-method`. That material should not be treated as a live
-installable skill until a later implementation project lands source and package
-support.
+This repository includes the live `scientific-methods` method skill. It also
+has planning evidence for method skills such as planned `concept-card-method`.
+Planned method material should not be treated as a live installable skill until
+a later implementation project lands source and package support.

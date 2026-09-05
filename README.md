@@ -34,6 +34,9 @@ The repository currently includes:
 
 - domain/tooling skill packages for Rust, Go, Erlang/OTP, C++,
   JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, Biome, and Deno lint;
+- the [`scientific-methods`](./knowledge/scientific-methods/SKILL.md) method
+  skill for practical inquiry, controlled comparison, experiment planning,
+  evaluation rubrics, evidence capture, and regression analysis;
 - the [`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) composite
   framework/operational skill, with its framework material under
   [`knowledge/`](./knowledge/);
@@ -91,8 +94,10 @@ Rust is the public example of an atomic domain/tooling skill.
 [`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) is the public example of a composite
 framework/operational skill and remains the daily-driver composer. CCDP is a
 protocol distribution and protocol package, not an installable skill package.
-`concept-card-method` remains a planned method skill until source and package
-support exist.
+[`scientific-methods`](./knowledge/scientific-methods/SKILL.md) is a method
+skill for turning fuzzy comparisons into controlled, evidence-bearing
+experiments. `concept-card-method` remains a planned method skill until source
+and package support exist.
 
 ## License
 

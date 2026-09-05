@@ -44,6 +44,7 @@ This guide is the focused route table for the collaboration-framework component 
 | [`../../contribution-style/guides/01-contribution-style.md`](../../contribution-style/guides/01-contribution-style.md) | Contribution style / voice | When drafting an upstream contribution ticket and calibrating maintainer-facing voice, confidence, specificity, severity, ownership, or pressure. |
 | [`../../contribution-style/guides/02-upstream-ticket-workflow.md`](../../contribution-style/guides/02-upstream-ticket-workflow.md) | Contribution style / workflow | When preparing local drafts, line-reference checks, blockquote headers, paste boundaries, one-ticket-per-problem structure, cross-linking, filing, or template use. |
 | [`../../contribution-style/templates/CONTRIBUTION-TICKET.md`](../../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style and workflow guides when writing the ticket. |
+| `scientific-methods` | Adjacent method skill | Load separately when the work is a controlled inquiry: comparing versions, testing whether a change helped, detecting regressions, designing an A/B prompt or framework trial, defining operational measures, writing an experiment protocol, building an evaluation rubric, or analyzing threats to validity. |
 
 ## Version History
 

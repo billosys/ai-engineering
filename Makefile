@@ -21,6 +21,7 @@ PACKAGE_PATH_EXCEPTIONS := assets/packaging/path-exceptions.tsv
 CHECK_SKILL := ./scripts/check-skill-description.sh
 SKILL_ZIP_NAMES := \
 	collaboration-framework.zip \
+	scientific-methods.zip \
 	rust-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
 	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
 	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
@@ -33,6 +34,7 @@ CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 .PHONY: all skills install uninstall clean help check-skills check-package-paths print-skill-zips \
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
+	scientific-methods \
 	rust go cpp js erlang cobalt design tailwindcss deno biome
 
 # Every SKILL.md (and the two biome/deno variants) packaged by this Makefile.
@@ -43,6 +45,7 @@ ALL_SKILL_FILES := \
 	knowledge/contribution-style/SKILL.md \
 	knowledge/engineering-methods/SKILL.md \
 	knowledge/project-management/SKILL.md \
+	knowledge/scientific-methods/SKILL.md \
 	knowledge/testing/SKILL.md \
 	knowledge/work-verification/SKILL.md \
 	knowledge/rust/SKILL.md \
@@ -61,6 +64,7 @@ ALL_SKILL_FILES := \
 help:
 	@echo "Packaging targets:"
 	@echo "  make collab-framework   -> $(CF_ZIP) (collaboration framework SKILL.md + framework docs)"
+	@echo "  make scientific-methods -> scientific-methods.zip"
 	@echo "  make rust               -> rust-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
 	@echo "  make cpp                -> cpp-guidelines.zip"
@@ -71,7 +75,7 @@ help:
 	@echo "  make tailwindcss        -> tailwindcss.zip"
 	@echo "  make deno               -> deno-js-linter.zip"
 	@echo "  make biome              -> biome-js-linter.zip AND biome-linter.zip"
-	@echo "  make skills             -> all per-domain zips"
+	@echo "  make skills             -> all installable zips except collaboration-framework"
 	@echo "  make all                -> skills + collab-framework"
 	@echo "  make check-skills       -> validate every SKILL.md description length"
 	@echo "  make print-skill-zips   -> list release-uploadable skill zip paths"
@@ -181,7 +185,7 @@ collab-framework-clean:
 	@rm -rf "$(CF_STAGE)"
 
 # ---------------------------------------------------------------------------
-# Per-domain skill bundles.
+# Installable skill bundles.
 #
 # pack_skill packages one skill file plus its sibling guides/ dir into a zip
 # named after the skill's frontmatter `name:`.
@@ -250,12 +254,39 @@ biome:
 	$(call pack_skill,biome,SKILL-js-linter.md)
 	$(call pack_skill,biome,SKILL-web-linter.md)
 
+scientific-methods:
+	@dir="$(KNOWLEDGE)/scientific-methods"; src="$$dir/SKILL.md"; \
+	if [ ! -f "$$src" ]; then echo "ERROR: missing skill file: $$src" >&2; exit 1; fi; \
+	if [ ! -d "$$dir/guides" ]; then echo "ERROR: missing guides dir: $$dir/guides" >&2; exit 1; fi; \
+	if [ ! -d "$$dir/templates" ]; then echo "ERROR: missing templates dir: $$dir/templates" >&2; exit 1; fi; \
+	if [ ! -f "$$dir/version-history.md" ]; then echo "ERROR: missing version history: $$dir/version-history.md" >&2; exit 1; fi; \
+	$(CHECK_SKILL) "$$src"; \
+	name=$$(sed -n 's/^name:[[:space:]]*//p' "$$src" | head -1); \
+	if [ -z "$$name" ]; then echo "ERROR: no 'name:' in $$src frontmatter" >&2; exit 1; fi; \
+	stage="$(BUILD)/$$name"; \
+	echo ">> staging $$name bundle ($$src + $$dir/guides + $$dir/templates + $$dir/version-history.md)"; \
+	rm -rf "$$stage"; mkdir -p "$$stage"; \
+	./scripts/stage-skill-entrypoint "$$src" "$$stage/$$(basename "$$src")"; \
+	cp "$$dir/version-history.md" "$$stage/version-history.md"; \
+	cp -R "$$dir/guides" "$$stage/guides"; \
+	cp -R "$$dir/templates" "$$stage/templates"; \
+	find "$$stage" -name '.DS_Store' -delete; \
+	zip_path="$(ZIP_OUTPUT_DIR)/$$name.zip"; \
+	echo ">> writing $$zip_path"; \
+	mkdir -p "$(ZIP_OUTPUT_DIR)"; \
+	rm -f "$$zip_path"; \
+	( cd "$(BUILD)" && zip -r -q -X "../$$zip_path" "$$name" ); \
+	echo ">> contents:"; \
+	unzip -l "$$zip_path"; \
+	rm -rf "$(BUILD)"; \
+	echo ">> done: $$zip_path"
+
 # ---------------------------------------------------------------------------
 # Aggregates
 # ---------------------------------------------------------------------------
 
 ## skills: build every per-domain zip
-skills: rust go cpp js erlang cobalt design tailwindcss deno biome
+skills: scientific-methods rust go cpp js erlang cobalt design tailwindcss deno biome
 
 ## all: build every per-domain zip plus the collaboration-framework zip
 all: skills collab-framework
