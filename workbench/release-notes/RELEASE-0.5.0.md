@@ -14,10 +14,11 @@ the planned concept-card method skill architecture.
 
 Project04, the knowledge-library reorganization project, is acceptance-ready:
 the planned reorganization arcs are closed, the Arc07 component-entrypoint
-cleanup is reconciled, and final validation reproduced green source, package,
-install, and CCDP checks. The remaining project-level gate is operator
-acceptance of the end-user route from README into `docs/` for explanation and
-into `knowledge/` for the actual material substrate.
+cleanup is reconciled, Arc08's framework guide decomposition work has final
+validation evidence, and Arc09 records the scientific-methods addition. The
+remaining project-level gate is operator acceptance of the end-user route from
+README into `docs/` for explanation and into `knowledge/` for the actual
+material substrate.
 
 ## Knowledge Library Reorganization
 
@@ -66,7 +67,7 @@ explicitly a protocol distribution and protocol package, not an installable
 skill package. `concept-card-method` remains a planned method skill until
 source and package support are implemented.
 
-Project04 closed six arcs to get there:
+The core reorganization closed six arcs to get there:
 
 - source inventory and material-role classification;
 - target directory contract and migration plan;
@@ -75,6 +76,39 @@ Project04 closed six arcs to get there:
 - public skill vocabulary and atomic/composite positioning;
 - final validation, packaging, installability, CCDP package separation, and
   operator-acceptance readiness.
+
+Follow-on review arcs then cleaned up component entrypoints, split the
+framework and component guide surfaces for selective loading, normalized
+component version histories, reconciled release surfaces, and added the
+scientific-methods method skill.
+
+## Scientific Methods Skill
+
+This release adds `scientific-methods`, the repository's first live method
+skill. It generalizes the controlled-comparison discipline used during the
+framework-version experiment prompt into reusable guidance for practical
+inquiry.
+
+Use `scientific-methods` when the work needs to compare variants, test whether
+a change improved behavior, detect regressions, design an A/B prompt or
+framework trial, define operational measures, write an experiment protocol,
+build an evaluation rubric, capture evidence, or analyze threats to validity.
+
+The skill packages:
+
+- `knowledge/scientific-methods/SKILL.md`
+- `knowledge/scientific-methods/version-history.md`
+- nine focused guides under `knowledge/scientific-methods/guides/`
+- experiment protocol, A/B comparison prompt, and evaluation rubric templates
+  under `knowledge/scientific-methods/templates/`
+
+The generated package target is `scientific-methods.zip`, built by
+`make scientific-methods` and included in `make skills`, `make all`, and
+`make install`.
+
+The collaboration framework now includes wayfinding for this adjacent method
+skill, but `scientific-methods` remains independently packaged. It is not
+folded into `collaboration-framework.zip`.
 
 ## Harmonise Paths
 
@@ -271,22 +305,6 @@ release does not implement or ship that package.
 The README now names **method skills** as a distinct skill-library category:
 skills that teach an assistant how to perform a durable knowledge-work method,
 not just how to work in a specific programming, tooling, or design domain.
-
-`scientific-methods` is the first live method skill in this repository. It
-captures the experiment-design pattern used during the framework comparison
-trial: pin the independent variable, control contamination, bound the task,
-predeclare outputs and measures, preserve evidence, compare against a rubric,
-and report threats to validity. The package includes:
-
-- `knowledge/scientific-methods/SKILL.md`
-- nine focused guides under `knowledge/scientific-methods/guides/`
-- experiment protocol, A/B comparison prompt, and evaluation rubric templates
-  under `knowledge/scientific-methods/templates/`
-- `knowledge/scientific-methods/version-history.md`
-
-The generated package target is `scientific-methods.zip`, built by
-`make scientific-methods` and included in `make skills`, `make all`, and
-`make install`.
 
 `concept-card-method` remains planned method material. Its planned package
 name is still `concept-card-method.zip`, but this release does not implement
