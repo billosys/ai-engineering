@@ -8,7 +8,7 @@ status: proposed-done
 closed-by: CC
 closed-on: 2026-09-05
 source_commit: f96c30266b892fa67185f03046b6662326df0481
-planning_commit: pending until this report is committed
+planning_commit: a8edf2b9b166735c7af258afdee4fe2b0c1fe5b5
 ```
 
 ## Verdict
@@ -25,7 +25,7 @@ Source commit:
 `f96c30266b892fa67185f03046b6662326df0481`
 
 Planning commit:
-pending until this report is committed
+a8edf2b9b166735c7af258afdee4fe2b0c1fe5b5
 
 ## Explicit File Lists
 
@@ -83,7 +83,7 @@ No artifact-home override was used.
 | F-6 | done | `artifacts/source-route-repair-map.md` records contribution-style, collaboration-framework, engineering-methods, docs, AGENTS, release-note, Makefile, and package-exception dispositions. |
 | F-7 | done | Source whitespace, skill-description, focused local-link, collaboration-framework package, and full package-path validation passed with zero hard failures. |
 | F-8 | done | Generated `collaboration-framework.zip` contains both contribution-style guides and the retained template, and omits the old `CONTRIBUTION-STYLE.md` path. |
-| F-9 | done | This report records exact source commit, pending planning commit placeholder, explicit file lists, final statuses, row walk, and Slice12 bubble-up. |
+| F-9 | done | This report records exact source commit, planning close-packet commit, explicit file lists, final statuses, row walk, and Slice12 bubble-up. |
 
 Rows: 9. Done: 9. Deferred: 0. No-op: 0.
 
