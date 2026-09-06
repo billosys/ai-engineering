@@ -122,8 +122,8 @@ Closed arcs:
 
 Active arc: Arc02.
 
-Arc02 is open with Slice01:
-`arc02-document-extraction-skill/slice01-source-scaffold-and-load-contract/`.
+Arc02 is open with Slice02:
+`arc02-document-extraction-skill/slice02-format-preparation-guides/`.
 
 ## Version History
 
@@ -138,3 +138,9 @@ future `ontology-engineering`, and nondeferrable implementation objectives.
 Arc01 close updated status only: readiness and scope-lock evidence is
 CDC-verified, Arc01 is closed, and Arc02 is active. No roadmap re-sequencing or
 scope reduction was made.
+
+### v1.2 - 2026-09-06
+
+Slice01 of Arc02 is CDC-verified and Arc02 has advanced to Slice02. This is a
+status-only update; no roadmap re-sequencing, scope reduction, or Arc02 plan
+change was made.
