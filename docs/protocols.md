@@ -9,18 +9,25 @@ packaged as an installable assistant skill.
 
 ## CCDP Entry Points
 
-Start with [`protocols/ccdp/README.md`](../protocols/ccdp/README.md). It links
-to the protocol's source and package entrypoints:
+Start with the rendered
+[CCDP visual guide](https://billo.systems/ai-engineering/protocols/ccdp/visual-guide/).
+It is the best introductory path for the protocol because it shows the
+architecture, routing model, provenance ladder, escalation behavior, and
+service modes before the reader drops into the full specification.
+
+For source and package entrypoints, use:
 
 - [`composite-cognition-dispatch-protocol.md`](../protocols/ccdp/composite-cognition-dispatch-protocol.md):
   assembled specification.
+- [`protocols/ccdp/README.md`](../protocols/ccdp/README.md): package and
+  source entrypoint.
 - [`src/README.md`](../protocols/ccdp/src/README.md): source chapter guide.
 - [`json/MANIFEST.md`](../protocols/ccdp/json/MANIFEST.md): JSON corpus
   manifest.
-- [`visual-guide/index.html`](../protocols/ccdp/visual-guide/index.html):
-  visual guide.
 - [`visual-guide/ccdp-reference.md`](../protocols/ccdp/visual-guide/ccdp-reference.md):
   visual guide source reference.
+- [`visual-guide/index.html`](../protocols/ccdp/visual-guide/index.html):
+  source HTML for the rendered visual guide.
 
 ## Source Use And Package Use
 
