@@ -3,7 +3,7 @@
 ```yaml
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
-status: active
+status: closed
 opened-by: CDC
 opened-on: 2026-09-04
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -340,7 +340,7 @@ Scope: split contribution guidance into `01-contribution-style.md` and
 
 ### Slice 12: Final Package, Install, Link, and Release Reconciliation
 
-Status: open.
+Status: verified-closed.
 
 Scope: run final README/docs/AGENTS/SKILL/component link validation, package
 validation, generated package inspection, isolated install smoke, CCDP package
@@ -513,3 +513,14 @@ and the retained template with no old `CONTRIBUTION-STYLE.md` package path.
 
 Opened Slice12 for final README/docs/AGENTS/SKILL links, package validation,
 install smoke, CCDP disposition, and release-note reconciliation.
+
+### v1.14 - 2026-09-05
+
+Closed Slice12 after CDC verification. Slice12 reconciled README/docs/AGENTS/
+SKILL/component links, old live-load target dispositions, sibling
+version-history placement, package builds, package-path validation, install
+smoke, CCDP package shape, and release notes after all Arc08 guide splits.
+During project wrap-up, CDC found and repaired current CCDP assembled-spec
+freshness drift in source commit
+`b18d049333799141f4d2e2328b1cd6ba444a437b`; post-repair CCDP package
+validation passed. Arc08 is closed.

@@ -4,7 +4,7 @@
 project: project04-knowledge-library-reorg
 arc: arc08-framework-guide-decomposition
 slice: slice12-final-validation-release-reconciliation
-status: open
+status: verified-closed
 opened-by: CDC
 opened-on: 2026-09-05
 source_checkout: /Users/oubiwann/lab/billosys/ai-engineering
@@ -124,4 +124,10 @@ Do not create `cdc-verification.md`; CDC writes it after independent review.
 
 ## Closure
 
-Slice is open.
+Slice is verified-closed by CDC.
+
+CDC verification on 2026-09-05 reproduced the Slice12 ledger evidence and
+reran final source/package/link/install/CCDP validation. A final project
+wrap-up pass found current CCDP assembled-spec drift after later Arc09 source
+work; CDC repaired that date-only freshness drift in source commit
+`b18d049333799141f4d2e2328b1cd6ba444a437b` before closing Slice12.

@@ -2,7 +2,7 @@
 
 ```yaml
 project: project04-knowledge-library-reorg
-status: active
+status: closed
 depends-on:
   - project02-collab-breakout:operator-accepted-architecture
   - project03-concept-card-method
@@ -353,7 +353,7 @@ layout cleanup, package/install reconciliation, and release-note evidence.
 
 ### Arc 08: Framework Guide Decomposition and Version History Normalization
 
-Status: active as of 2026-09-04.
+Status: closed on 2026-09-05.
 
 Expected capability: split the accepted collaboration-framework and
 engineering-methods monolith guides and the remaining accepted framework
@@ -370,10 +370,9 @@ version-history contract. Source decomposition may not begin until Slice01
 confirms the exact split/version-history/Expedited Mode wording map with the
 operator.
 
-Detailed arc planning is open under
-`arc08-framework-guide-decomposition/`. Slice01 through Slice11 are
-verified-closed. Slice12,
-`slice12-final-validation-release-reconciliation`, is open.
+Detailed arc planning and closure evidence lives under
+`arc08-framework-guide-decomposition/`. Slice01 through Slice12 are
+verified-closed. Arc08 is closed.
 The operator expanded Arc08 on 2026-09-04 to keep the remaining accepted
 component guide splits in this same arc rather than opening a later arc.
 
@@ -425,8 +424,8 @@ but remain ignored. No experiment repair, rerun, or new closure is implied.
 
 ## Current Status
 
-Project04 is active again from operator re-entry and operating in Expedited
-Mode. Arc01,
+Project04 is closed after operator re-entry wrap-up and operated in Expedited
+Mode during the later arcs. Arc01,
 `arc01-material-inventory`, Arc02, `arc02-directory-contract`, Arc03,
 `arc03-directory-reorg`, Arc04, `arc04-user-docs`, and Arc05,
 `arc05-skill-vocabulary`, and Arc06, `arc06-validation-release`, are closed.
@@ -438,11 +437,9 @@ Arc06 delivered final validation, packaging, installability, CCDP package
 separation, and operator acceptance readiness.
 
 Arc07, `arc07-knowledge-component-entrypoints`, is closed after operator
-review. Arc08, `arc08-framework-guide-decomposition`, is active under operator
-review pause. Slice01 through Slice11 are verified-closed. Slice12,
-`slice12-final-validation-release-reconciliation`, has been reported
-proposed-done by CC but is not CDC-closed or arc-closed because the operator
-requested review before formal close.
+review. Arc08, `arc08-framework-guide-decomposition`, is closed after CDC
+verified Slice12, reproduced the arc-level composition check, and recorded the
+final CCDP assembled-spec freshness repair.
 
 Arc09, `arc09-scientific-methods-skill`, is closed as a CDC-direct
 operator-approved scope expansion. It added the live `scientific-methods`
@@ -452,10 +449,12 @@ reconciliation without changing Arc08 status.
 
 Arc10, `arc10-ab-experiment`, preserves the completed framework A/B trial by
 operator request, using a README and A/B archive layout rather than a new
-execution packet. This does not change Arc08's review pause or project status.
+execution packet. It remains evidence archive material and does not require a
+new execution closure row.
 
-The next project action remains operator review disposition for Arc08 Slice12
-and any follow-on CDC verification/arc close the operator authorizes.
+Project04's ledger rows are all done. The project-level acceptance demo has
+been reproduced against the final README/docs/knowledge/protocol/package
+layout.
 
 ## Version History
 
@@ -465,6 +464,17 @@ Recorded the operator-requested Arc10 A/B experiment archive and its explicit
 layout override. Preserve both CDC prompts and complete trial workspaces as
 unchanged evidence, with README wayfinding, a relocation/checksum manifest and
 build-cache exclusions. Arc08 and Project04 closure remain unchanged.
+
+### v1.43 - 2026-09-05
+
+Closed Arc08 and Project04 after CDC verified Slice12, reproduced the Arc08
+composition row, and reproduced the project-level acceptance row. During
+project wrap-up, CDC found current CCDP assembled-spec drift after later Arc09
+work, repaired it in source commit
+`b18d049333799141f4d2e2328b1cd6ba444a437b`, and reran CCDP package validation.
+Final validation records 13 installable skill zips, 222 packaged Markdown
+files, 0 package-path hard failures, 13 installed skill entrypoints in isolated
+install smoke, no CCDP install root, and passing CCDP package checks.
 
 ### v1.41 - 2026-09-05
 
