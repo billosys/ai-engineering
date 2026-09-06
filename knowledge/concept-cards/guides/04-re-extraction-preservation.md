@@ -187,9 +187,12 @@ Explicitly state which were not assessed. Completing re-extraction and
 preservation does not establish full validation, independent verification,
 reconciliation or durable-memory eligibility.
 
-Use the [guide map](../SKILL.md#guide-map) for live routes 01–04. Later evidence,
-graph/CQ, reconciliation, validation/verification, memory-admission and
-maintenance guides are not yet implemented. Arc04 owns future templates,
+Use the live [evidence lifecycle](./05-evidence-lifecycle.md) guide for
+assessments and [validation and verification](./08-validation-verification.md)
+for checks of revised outputs and prior-result applicability. In the
+[guide map](../SKILL.md#guide-map), guides 01 through 05 and 08 are live;
+guides 06, 07, 09, and 10 remain future relationship/CQ, reconciliation,
+memory-admission and maintenance work. Arc04 owns future templates,
 examples, validation/reference support and schemas; Arc05 owns package targets,
 generated zips, docs and install integration. This guide supplies no executable
 validator, runtime service or real-corpus execution evidence.

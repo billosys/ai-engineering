@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills
@@ -70,20 +70,19 @@ project or imply permission to build a runtime or write to a memory system.
 | Establish inputs, operating mode, outputs and review handoff | [Operator Workflow](./guides/02-operator-workflow.md) | Live |
 | Source-faithful extraction, claims and run provenance | [Extraction](./guides/03-extraction.md) | Live |
 | Source-primary re-extraction and prior-value preservation | [Re-Extraction And Preservation](./guides/04-re-extraction-preservation.md) | Live |
-| Source support, evidence grade and extraction confidence | `guides/05-evidence-lifecycle.md` | Future route: not yet implemented |
+| Evidence lifecycle, source support, evidence grade and extraction confidence | [Evidence Lifecycle](./guides/05-evidence-lifecycle.md) | Live |
 | Relationships, edge identity and CQ coverage/answerability | `guides/06-graph-cq.md` | Future route: not yet implemented |
 | Conflicts and reconciliation results | `guides/07-reconciliation.md` | Future route: not yet implemented |
-| Structural validation and semantic verification | `guides/08-validation-verification.md` | Future route: not yet implemented |
+| Structural validation and semantic verification | [Validation And Verification](./guides/08-validation-verification.md) | Live |
 | Evidence-dependent memory admission | `guides/09-memory-admission.md` | Future route: not yet implemented |
 | Maintenance ownership and package promise boundaries | `guides/10-maintenance-packaging.md` | Future route: not yet implemented |
 
-Guides 01 through 04 are live: load/workflow foundations plus source-faithful
-extraction and source-primary re-extraction/preservation. Use this map for
-current route availability, including when a foundation guide describes
-03/04 as future. Choose guide 03 for source-derived candidates and support;
-add guide 04 when prior cards and their unique value must be compared.
+Guides 01 through 05 and 08 are live. Choose guide 03 for source-derived
+candidates and support, guide 04 for re-extraction and prior-value preservation,
+guide 05 for evidence assessments and lifecycle attachments, and guide 08 for
+structural validation, semantic verification and review provenance.
 
-Guides 05 through 10 are not yet implemented. Do not try to load absent routes
+Guides 06, 07, 09, and 10 are not yet implemented. Do not try to load absent routes
 or claim to have applied them. Arc04 owns future sibling templates, examples,
 validation/reference support and schema material. Arc05 owns future package
 targets, generated zips, docs/discoverability and install integration. No

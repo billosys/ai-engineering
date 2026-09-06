@@ -1,5 +1,27 @@
 # Concept Cards Version History
 
+### Version 1.2.0 - 2026-09-06
+
+Added evidence lifecycle and validation/verification guides. Evidence grade
+records warrant and rationale on the actual claim/support subject; extraction
+confidence remains a separate signal about the extraction act. The guides
+cover attachment scope, insufficient/partial/conflicting/unassessed evidence,
+revision applicability and separate lifecycle results without inventing a
+final schema or automatic admission transition.
+
+Added bounded structural validation and semantic verification procedures with
+actor, method, target, evidence, coverage, outcome, caveats and revision
+identity. Review boundaries distinguish same-context checks, independent
+CDC/fresh-context reproduction, operator-reported observations, human review,
+tool/process evidence and unavailable checks. Both operating modes retain
+honest handoff and storage limits.
+
+Made guides 05/08 live, cleaned the stale caller wording in guides 01–04, and
+removed the temporary entrypoint availability qualification. Guides 06/07/09/10,
+Arc04 support and Arc05 package/docs/install integration remain future work.
+No executable validator, runtime or real-corpus validation/verification was
+implemented or performed.
+
 ### Version 1.1.0 - 2026-09-06
 
 Added source-faithful extraction and source-primary re-extraction/preservation

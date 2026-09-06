@@ -2,9 +2,12 @@
 
 Use this foundation after the [load contract](./01-load-contract.md) identifies
 concept-card method work. It establishes actor roles, inputs, provenance and
-result boundaries. Detailed extraction, reconciliation and admission procedures
-are future routes in the [guide map](../SKILL.md#guide-map), not implemented
-by this workflow. Choose only the work the operator requested.
+result boundaries. Use the live [extraction](./03-extraction.md),
+[re-extraction and preservation](./04-re-extraction-preservation.md),
+[evidence lifecycle](./05-evidence-lifecycle.md), and
+[validation and verification](./08-validation-verification.md) procedures
+for the requested operation. The [guide map](../SKILL.md#guide-map) identifies
+remaining future routes. Choose only the work the operator requested.
 
 ## Establish The Task And Inputs
 
@@ -66,7 +69,8 @@ relationship and CQ rules remain future guide 06 work.
 When preserving or revising prior material, record what is retained,
 superseded, rejected or unresolved and why. A rewritten card must not silently
 erase a competing claim, prior source attachment or unique explanatory value.
-Detailed re-extraction and preservation procedures remain future guide 04 work.
+Follow the live [re-extraction and preservation guide](./04-re-extraction-preservation.md)
+for those detailed procedures.
 
 ## Human-Assisted Operation
 
@@ -117,8 +121,10 @@ unperformed work as not assessed rather than implicitly successful:
 
 Keep extraction confidence and evidence grade attached to their appropriate
 subjects alongside these results. Do not average or overwrite these distinct
-concerns into one card confidence field. Exact detailed procedures and record
-schemas are not supplied by this foundation.
+concerns into one card confidence field. Follow
+[evidence lifecycle](./05-evidence-lifecycle.md) for assessments and
+[validation and verification](./08-validation-verification.md) for scoped
+checks and review provenance. Record schemas are not supplied by this foundation.
 
 ## Report The Handoff And Remaining Work
 
@@ -128,10 +134,11 @@ their scope. Name unresolved conflicts and preservation decisions, unperformed
 checks, storage/delivery limits, and the next bounded inspection needed.
 Make clear whether memory admission was requested or assessed at all.
 
-For a task needing guides 03 through 10, identify the absent route and the
-unsupported procedure or decision. This scaffold can establish scope and
-collect inspectable inputs; it cannot claim completion of an unimplemented
-detailed workflow. Arc04 will add sibling templates, examples, validation/
-reference support and schemas. Arc05 will add package targets, generated zips,
-docs and install integration. No executable validator or runtime enforcement
-is implied by a documentary result record.
+The guides 01 through 05 and 08 are live; guides 06, 07, 09, and 10 remain
+future. For a task needing those remaining relationship/CQ, reconciliation,
+admission or maintenance procedures, identify the absent route and unsupported
+decision. Do not claim completion of an unimplemented workflow. Arc04 will add
+sibling templates, examples, validation/reference support and schemas. Arc05
+will add package targets, generated zips, docs and install integration. No
+executable validator or runtime enforcement is implied by a documentary result
+record.

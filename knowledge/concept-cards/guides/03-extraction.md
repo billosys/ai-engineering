@@ -156,9 +156,11 @@ A validation result concerns structural checks; a verification result records
 semantic checking with its actor, evidence and scope; a reconciliation result
 handles conflicts; a preservation decision accounts for prior value; memory
 admission is a separate reliance decision. Record what was performed and leave
-unperformed work unassessed. These extraction checks do not implement the full
-later lifecycle, validation or admission procedures, nor make self-review
-independent verification.
+unperformed work unassessed. Follow the live
+[evidence lifecycle](./05-evidence-lifecycle.md) and
+[validation and verification](./08-validation-verification.md) guides for
+those assessments and checks. Extraction self-review is not independent
+verification; memory-admission procedures remain future work.
 
 ## Human-Assisted Operation
 
@@ -197,9 +199,12 @@ scope and provenance. State whether memory admission was requested or assessed;
 completed extraction is not automatic admission.
 
 Name the next inspection for each blocking gap and preserve the partial output
-for review. Guides 03/04 are live in the [guide map](../SKILL.md#guide-map);
-later evidence, graph/CQ, reconciliation, validation/verification, admission and
-maintenance guides are not yet implemented. Arc04 owns future templates,
+for review. Use the live [evidence lifecycle](./05-evidence-lifecycle.md) and
+[validation and verification](./08-validation-verification.md) routes when
+assessing these outputs. In the [guide map](../SKILL.md#guide-map), guides
+01 through 05 and 08 are live; guides 06, 07, 09, and 10 remain future
+relationship/CQ, reconciliation, admission and maintenance work. Arc04 owns
+future templates,
 examples, validation/reference support and schemas; Arc05 owns package targets,
 generated zips, docs and install integration. This is procedural guidance,
 not an executable validator, runtime service or claim of a completed corpus run.

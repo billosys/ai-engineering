@@ -106,9 +106,13 @@ and records its own scoped observations. A same-context self-check is not an
 independent verification result simply because it is performed later.
 
 Both modes follow the [operator workflow](./02-operator-workflow.md) and the
-same construct distinctions. The [guide map](../SKILL.md#guide-map) identifies
-future routes 03 through 10, not yet implemented. Templates, examples,
-validation/reference support and schemas remain Arc04 work; package targets,
-generated zips, docs and install integration remain Arc05 work. Do not replace
-a missing detailed procedure with an invented canonical schema or claim that
-an unavailable validator was run.
+same construct distinctions. In the [guide map](../SKILL.md#guide-map),
+guides 01 through 05 and 08 are live. Use [extraction](./03-extraction.md),
+[re-extraction and preservation](./04-re-extraction-preservation.md),
+[evidence lifecycle](./05-evidence-lifecycle.md), and
+[validation and verification](./08-validation-verification.md) as needed.
+The remaining guides 06, 07, 09, and 10 are future routes, not yet implemented.
+Templates, examples, validation/reference support and schemas remain Arc04
+work; package targets, generated zips, docs and install integration remain
+Arc05 work. Do not replace a missing detailed procedure with an invented
+canonical schema or claim that an unavailable validator was run.
