@@ -82,16 +82,20 @@ condition.
 
 ## Current Starting Point
 
-Arc01 is open:
+Closed:
 
-`arc01-readiness-and-scope-lock/`
+- Arc01: `arc01-readiness-and-scope-lock/`
+
+Arc02 is open:
+
+`arc02-document-extraction-skill/`
 
 Slice01 is open:
 
-`arc01-readiness-and-scope-lock/slice01-current-layout-reconciliation/`
+`arc02-document-extraction-skill/slice01-source-scaffold-and-load-contract/`
 
-Use that slice's `cc-prompt.md` if you are CC for the first execution pass.
-If Slice01 is already closed, read its closing report and CDC verification
+Use that slice's `cc-prompt.md` if you are CC for the next execution pass.
+If that slice is already closed, read its closing report and CDC verification
 before advancing.
 
 ## Commit Discipline

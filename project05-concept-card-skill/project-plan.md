@@ -98,9 +98,10 @@ packaging convenience. Project05 must verify current packaging behavior before
 source edits begin and update the package machinery if sibling support
 directories need to ship.
 
-Project05 starts with a readiness and scope-lock arc. That arc is not a
-permission gate for deferring the skills; it is the evidence step that prevents
-stale planning artifacts from overriding the current repository organization.
+Project05 started with a readiness and scope-lock arc. That arc was not a
+permission gate for deferring the skills; it was the evidence step that
+prevented stale planning artifacts from overriding the current repository
+organization.
 
 ## Arc Roadmap
 
@@ -115,10 +116,14 @@ stale planning artifacts from overriding the current repository organization.
 
 ## Status
 
-Active arc: Arc01.
+Closed arcs:
 
-Arc01 is open with Slice01:
-`arc01-readiness-and-scope-lock/slice01-current-layout-reconciliation/`.
+- Arc01: Readiness And Scope Lock
+
+Active arc: Arc02.
+
+Arc02 is open with Slice01:
+`arc02-document-extraction-skill/slice01-source-scaffold-and-load-contract/`.
 
 ## Version History
 
@@ -127,3 +132,9 @@ Arc01 is open with Slice01:
 Initial Project05 plan opened after Project04 closure. Reoriented the project
 around current post-Project04 layout, `document-extraction`, `concept-cards`,
 future `ontology-engineering`, and nondeferrable implementation objectives.
+
+### v1.1 - 2026-09-06
+
+Arc01 close updated status only: readiness and scope-lock evidence is
+CDC-verified, Arc01 is closed, and Arc02 is active. No roadmap re-sequencing or
+scope reduction was made.
