@@ -52,11 +52,11 @@ not the implementation checkout and should not be used for source/package edits.
 - **Plan first, implement elsewhere:** write `slice-plan.md`, `ledger.md`, and
   `cc-prompt.md` here; implement source changes in the main checkout after the
   operator accepts the slice prompt.
-- **Versioning source docs:** if a plan changes framework or
-  project-management source docs, the implementation slice must update each
-  affected file's `Version History` section and bump its version if it has one.
-  If a touched file has no local version, update the conceptually enclosing
-  versioned file, at minimum the top-level `SKILL.md` for framework behavior.
+- **Versioning skills:** follow the source checkout's
+  [skill version and history contract](../../AGENTS.md#skill-version-and-history-contract-repository-maintenance-only).
+  It is the repository maintenance authority for all skill categories; do not
+  revive older per-document or framework-only versioning instructions from
+  historical plans. Plan-document histories remain separate from skill history.
 - **Evidence discipline:** preserve command outputs, audits, synthesis reports,
   and other durable evidence in the owning slice directory, preferably under
   `artifacts/`. Every ledger row needs an evidence pointer with a strength
