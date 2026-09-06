@@ -5,7 +5,7 @@ description: |
   knowledge substrate, collaborative posture, process rigour, and the 9-point
   SDLC. Use when designing how a body of LLM-assisted engineering work should be
   structured, evaluated, or improved.
-version: 1.1.6
+version: 1.1.7
 license: MIT
 metadata:
   hermes:
@@ -34,5 +34,5 @@ For active planning and closure mechanics, also load the project-management
 component.
 
 This is a component entrypoint for the collaboration framework. It is included
-inside `collaboration-framework.zip` as routed dependency material, not as a
-separate installable package.
+inside `collaboration-framework.zip` as routed dependency material and also
+ships as the standalone `engineering-methods.zip` package.

@@ -5,7 +5,7 @@ description: |
   strength. Use at the start of any ledgered project, arc, or slice; when
   closing work; or when distinguishing proposed-done attestation from
   independent reproduced verification.
-version: 1.1.1
+version: 1.1.2
 license: MIT
 metadata:
   hermes:
@@ -37,7 +37,7 @@ full protocol and copyable ledger-template support asset when a project needs
 the complete pre-split text in one file.
 
 This is a component entrypoint for the collaboration framework. It is included
-inside `collaboration-framework.zip` as routed dependency material, not as a
-separate installable package.
+inside `collaboration-framework.zip` as routed dependency material and also
+ships as the standalone `work-verification.zip` package.
 
 Component history lives in [version-history.md](./version-history.md).

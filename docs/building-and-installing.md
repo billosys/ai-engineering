@@ -23,6 +23,14 @@ frontmatter, written under `target/skills/`, and contain a package-local
 directory root. The source root can be larger than that package root. Generated
 zips are artifacts, not hand-edited source.
 
+Every installable skill zip must contain exactly one root `SKILL.md`.
+Standalone domain, method, and framework-component skills package their own
+`guides/` plus local support directories such as `templates/` or `examples/`.
+The `collaboration-framework.zip` package is the only skill zip that bundles a
+`knowledge/` support subtree, and embedded component entrypoints in that tree
+are staged as `ENTRYPOINT.md` so loaders do not discover duplicate nested
+skills.
+
 ## Validation Commands
 
 | Command | Purpose |
@@ -33,7 +41,10 @@ zips are artifacts, not hand-edited source.
 | `git status --short --untracked-files=all` | Confirm exactly what changed. |
 
 Package-path validation checks generated skill zips. That is intentional: the
-package surface is the installable artifact a loader sees.
+package surface is the installable artifact a loader sees. By default, the
+checker prints hard failures, explicit exceptions, and a grouped warning
+summary. Use `scripts/check-package-paths --show-warnings ...` when an audit
+needs every warning row.
 
 ## Installing Skills
 

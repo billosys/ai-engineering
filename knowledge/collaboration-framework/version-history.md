@@ -4,6 +4,36 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.12 - 2026-09-06
+
+Expanded the collaboration-framework entrypoint with a dedicated
+scientific-methods routing section. The new guidance distinguishes ordinary
+implementation, planning, review, and validation from controlled comparisons,
+regression assessments, experiment protocols, evaluation rubrics, operational
+measures, evidence interpretation, and threats-to-validity work, and maps common
+inquiry needs to the scientific-methods guide set. Also changed generated skill
+packages so bundled framework-component support copies use `ENTRYPOINT.md`
+instead of nested `SKILL.md`, preventing recursive skill discovery from loading
+duplicate component skills inside installed packages. Normalized generated
+skill package roots so every installable zip presents a literal root
+`SKILL.md`, including linter packages sourced from `SKILL-*.md` files.
+Corrected standalone framework-component package staging so component zips
+include only their own guides, version history, and local support directories;
+`collaboration-framework.zip` remains the only installable skill zip that
+bundles the framework `knowledge/` support subtree. Hardened package-path
+validation to fail missing root entrypoints, nested `SKILL.md` files, and
+unexpected `knowledge/` subtrees in standalone skill packages. The staging
+generator now synchronizes packaged `Current version:` prose from each
+entrypoint's frontmatter `version:` value.
+
+### Version 1.5.11 - 2026-09-06
+
+Updated packaging so `collaboration-framework.zip` includes the
+`scientific-methods` skill, guides, templates, and version history as routed
+companion material. Added standalone installable zips for the framework
+component skills and updated public skill-library documentation to group all
+release-uploaded skills by domain.
+
 ### Version 1.5.10 - 2026-09-05
 
 Added wayfinding for the adjacent `scientific-methods` method skill. The
@@ -12,7 +42,9 @@ regression investigations, operational measures, experiment protocols,
 evaluation rubrics, evidence capture, and threats-to-validity analysis as
 signals to load scientific-methods separately when available. The
 scientific-methods skill remains an independent installable package rather
-than bundled into `collaboration-framework.zip`.
+than bundled into `collaboration-framework.zip`. Superseded by v1.5.11:
+scientific-methods now remains independently installable and is also bundled
+inside `collaboration-framework.zip`.
 
 ### Version 1.5.9 - 2026-09-05
 

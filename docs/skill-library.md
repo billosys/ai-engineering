@@ -14,6 +14,12 @@ loadable components.
 
 ## Current Installable Skills
 
+Skills may appear in more than one grouping when their use crosses domains.
+Every package listed below is produced by `make all`, included in
+`make print-skill-zips`, and uploaded by the release skill-zips workflow.
+
+### Programming Languages
+
 | Skill package | Source entrypoint | Use when |
 |---|---|---|
 | `rust-guidelines.zip` | [`knowledge/rust/SKILL.md`](../knowledge/rust/SKILL.md) | Writing, reviewing, or refactoring Rust. |
@@ -21,14 +27,45 @@ loadable components.
 | `cpp-guidelines.zip` | [`knowledge/cpp/SKILL.md`](../knowledge/cpp/SKILL.md) | Working with modern C++ and C++ Core Guidelines material. |
 | `javascript-deno-guidelines.zip` | [`knowledge/js/SKILL.md`](../knowledge/js/SKILL.md) | Writing JavaScript with Deno-first conventions. |
 | `erlang-guidelines.zip` | [`knowledge/erlang/SKILL.md`](../knowledge/erlang/SKILL.md) | Writing Erlang/OTP systems. |
+
+### Frontend
+
+| Skill package | Source entrypoint | Use when |
+|---|---|---|
+| `javascript-deno-guidelines.zip` | [`knowledge/js/SKILL.md`](../knowledge/js/SKILL.md) | Writing JavaScript with Deno-first conventions. |
 | `cobalt-guidelines.zip` | [`knowledge/cobalt/SKILL.md`](../knowledge/cobalt/SKILL.md) | Building or extending Cobalt static sites. |
 | `visual-design-system.zip` | [`knowledge/design/SKILL.md`](../knowledge/design/SKILL.md) | Designing UI, layout, typography, and color systems. |
 | `tailwindcss.zip` | [`knowledge/tailwindcss/SKILL.md`](../knowledge/tailwindcss/SKILL.md) | Styling with Tailwind CSS v4. |
 | `deno-js-linter.zip` | [`knowledge/deno/SKILL-js-linter.md`](../knowledge/deno/SKILL-js-linter.md) | Applying Deno lint rules to JavaScript. |
 | `biome-js-linter.zip` | [`knowledge/biome/SKILL-js-linter.md`](../knowledge/biome/SKILL-js-linter.md) | Applying Biome JavaScript lint rules. |
 | `biome-linter.zip` | [`knowledge/biome/SKILL-web-linter.md`](../knowledge/biome/SKILL-web-linter.md) | Applying broader Biome web lint rules. |
+
+### Software Engineering
+
+| Skill package | Source entrypoint | Use when |
+|---|---|---|
+| `engineering-methods.zip` | [`knowledge/engineering-methods/SKILL.md`](../knowledge/engineering-methods/SKILL.md) | Designing how LLM-assisted engineering work should be structured, evaluated, or improved. |
+| `testing.zip` | [`knowledge/testing/SKILL.md`](../knowledge/testing/SKILL.md) | Applying testing discipline, coverage hardening, and validation gates. |
+| `code-auditing.zip` | [`knowledge/code-auditing/SKILL.md`](../knowledge/code-auditing/SKILL.md) | Commissioning evidence-based diagnosis-only code audits. |
+| `contribution-style.zip` | [`knowledge/contribution-style/SKILL.md`](../knowledge/contribution-style/SKILL.md) | Drafting maintainer-friendly upstream issues, feature requests, doc fixes, and questions. |
+| `agent-coordination.zip` | [`knowledge/agent-coordination/SKILL.md`](../knowledge/agent-coordination/SKILL.md) | Deciding what stays in the main context and what can be delegated to subagents. |
 | `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Running sustained planning, implementation, review, and verification work. |
+
+### Project Management
+
+| Skill package | Source entrypoint | Use when |
+|---|---|---|
+| `project-management.zip` | [`knowledge/project-management/SKILL.md`](../knowledge/project-management/SKILL.md) | Planning or closing projects, arcs, and slices. |
+| `work-verification.zip` | [`knowledge/work-verification/SKILL.md`](../knowledge/work-verification/SKILL.md) | Applying ledger discipline, row closure, evidence strength, and independent verification. |
+| `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Running sustained planning, implementation, review, and verification work. |
+
+### Analysis And Inquiry
+
+| Skill package | Source entrypoint | Use when |
+|---|---|---|
+| `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Structuring long-lived inquiry, implementation, review, and verification work. |
 | `scientific-methods.zip` | [`knowledge/scientific-methods/SKILL.md`](../knowledge/scientific-methods/SKILL.md) | Designing controlled comparisons, experiments, evaluation rubrics, evidence capture, and regression analysis. |
+| `engineering-methods.zip` | [`knowledge/engineering-methods/SKILL.md`](../knowledge/engineering-methods/SKILL.md) | Reasoning about knowledge substrate, process rigor, and LLM-assisted engineering methods. |
 
 ## Choosing What To Load
 

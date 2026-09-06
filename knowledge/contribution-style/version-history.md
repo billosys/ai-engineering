@@ -1,5 +1,11 @@
 # Contribution Style Version History
 
+## Version 1.1.2 - 2026-09-06
+
+Updated the component entrypoint to reflect that contribution-style now ships
+both inside `collaboration-framework.zip` and as standalone
+`contribution-style.zip`.
+
 ## Version 1.1.1 - 2026-09-05
 
 Updated the contribution ticket template's project-management route after the

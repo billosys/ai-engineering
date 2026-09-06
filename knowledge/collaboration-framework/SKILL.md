@@ -16,7 +16,7 @@ description: |
   inquiry/regression comparison should load scientific-methods.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.10
+version: 1.5.12
 license: MIT
 metadata:
   hermes:
@@ -142,6 +142,69 @@ applies:
 
 It is **not** the skill for a quick factual lookup or casual conversation, and
 it does **not** carry domain knowledge — see *What this skill does not load*.
+
+## When to load scientific-methods
+
+Load [`scientific-methods`](../scientific-methods/SKILL.md) when the
+collaboration-framework work needs inquiry discipline in addition to execution
+discipline. The signal is not "this is important"; the signal is that the work
+needs a question, comparison, measure, protocol, or conclusion to be made
+inspectable.
+
+Use scientific-methods for:
+
+- **Comparisons:** prompt A versus prompt B, framework version A versus version
+  B, old behavior versus new behavior, model/provider/tool comparison, or
+  competing workflow designs.
+- **Regression questions:** whether a change helped, harmed, preserved, or
+  shifted behavior relative to a pinned baseline.
+- **Evaluation design:** rubrics, pass/fail criteria, qualitative review
+  criteria, representative task selection, scoring rules, or operational
+  measures.
+- **Experiment protocols:** A/B trial prompts, repeatable session packets,
+  independent-run instructions, sampling decisions, controls, and stop
+  conditions.
+- **Evidence interpretation:** separating observations from conclusions,
+  naming confounds, recording threats to validity, and deciding what the result
+  can and cannot support.
+
+Do not load scientific-methods for ordinary implementation, documentation,
+planning, code review, or validation unless the task is explicitly asking for a
+controlled comparison, experiment, regression assessment, or evaluation rubric.
+For example, "add tests for this parser" routes to testing; "test whether this
+new parser strategy reduces diagnostic regressions compared with the old
+strategy" routes to testing plus scientific-methods.
+
+When scientific-methods is loaded, keep the framework layers distinct:
+
+- `collaboration-framework` governs the collaboration posture, project/arc/slice
+  process, ledger discipline, audit/test/contribution routing, and closure
+  evidence.
+- `scientific-methods` governs the inquiry design: research question,
+  independent variable, controls, measures, protocol, evidence capture,
+  comparison, and threats to validity.
+- Domain/tooling skills govern the subject being tested.
+
+Use this guide-routing shortcut:
+
+| Need | scientific-methods load path |
+|------|------------------------------|
+| Turn a fuzzy concern into a testable question | [`guides/01-inquiry-framing.md`](../scientific-methods/guides/01-inquiry-framing.md) |
+| Choose the trial shape or compared conditions | [`guides/02-experiment-design.md`](../scientific-methods/guides/02-experiment-design.md) |
+| Keep the comparison fair | [`guides/03-controls-and-confounds.md`](../scientific-methods/guides/03-controls-and-confounds.md) |
+| Define what will be observed or scored | [`guides/04-operational-measures.md`](../scientific-methods/guides/04-operational-measures.md) |
+| Write reusable run instructions or prompts | [`guides/05-protocol-and-prompt-design.md`](../scientific-methods/guides/05-protocol-and-prompt-design.md) |
+| Preserve raw observations and provenance | [`guides/06-evidence-capture.md`](../scientific-methods/guides/06-evidence-capture.md) |
+| Compare outputs or detect regressions | [`guides/07-comparison-and-regression-testing.md`](../scientific-methods/guides/07-comparison-and-regression-testing.md) |
+| State conclusions without overclaiming | [`guides/08-analysis-and-threats-to-validity.md`](../scientific-methods/guides/08-analysis-and-threats-to-validity.md) |
+| Check whether the experiment is performative | [`guides/09-anti-patterns.md`](../scientific-methods/guides/09-anti-patterns.md) |
+
+For small inquiries, the minimum useful scientific-methods load is usually
+`01-inquiry-framing`, `04-operational-measures`, and either
+`07-comparison-and-regression-testing` or
+`08-analysis-and-threats-to-validity`. For prompt or session trials, add
+`03-controls-and-confounds` and `05-protocol-and-prompt-design` before running
+the comparison.
 
 ---
 
@@ -367,7 +430,7 @@ work demands:
 | [`guides/01-contribution-style.md`](../contribution-style/guides/01-contribution-style.md) | Contribution style / voice | When **drafting an upstream contribution ticket** against a project you don't maintain and the work needs maintainer-facing voice: friendly, specific, calibrated, respectful of ownership, no severity overclaim, and no pressure on timing. |
 | [`guides/02-upstream-ticket-workflow.md`](../contribution-style/guides/02-upstream-ticket-workflow.md) | Contribution style / workflow | When preparing local ticket drafts, line-reference checks, blockquote headers, paste boundaries, one-ticket-per-problem structure, cross-linking, filing, and template use. |
 | [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style and workflow guides when actually writing a ticket. Carries the reusable ticket shape for confirmed bugs, additive features, doc fixes, and unconfirmed questions. |
-| `scientific-methods` | Adjacent method skill | Load separately when the conversation becomes a controlled inquiry: comparing versions, testing whether a change helped, detecting regressions, designing an A/B prompt or framework trial, defining operational measures, writing an experiment protocol, building an evaluation rubric, or analyzing threats to validity. |
+| [`scientific-methods`](../scientific-methods/SKILL.md) | Adjacent method skill | Load when the conversation becomes a controlled inquiry: comparing versions, testing whether a change helped, detecting regressions, designing an A/B prompt or framework trial, defining operational measures, writing an experiment protocol, building an evaluation rubric, or analyzing threats to validity. It is included in `collaboration-framework.zip` and also ships as its own standalone skill. |
 
 The posture guide set and Methodology are versioned, living documents. The five
 working-practice / discipline documents and the two templates are designed to
@@ -406,7 +469,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.10.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.11.
 
 ---
 

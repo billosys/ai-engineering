@@ -5,7 +5,7 @@ description: |
   audits. Use when a repository, language surface, package, or body of work
   needs severity-graded findings grounded in actual files and verification
   evidence, without making code changes during the audit.
-version: 1.1.0
+version: 1.1.1
 license: MIT
 metadata:
   hermes:
@@ -37,7 +37,7 @@ Read only the guide needed for the work:
   and final verification checklist.
 
 This is a component entrypoint for the collaboration framework. It is included
-inside `collaboration-framework.zip` as routed dependency material, not as a
-separate installable package.
+inside `collaboration-framework.zip` as routed dependency material and also
+ships as the standalone `code-auditing.zip` package.
 
 Component history lives in [version-history.md](./version-history.md).

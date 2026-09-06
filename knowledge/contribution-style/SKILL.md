@@ -5,7 +5,7 @@ description: |
   tickets with calibrated confidence, maintainer-friendly framing, and clear
   issue evidence. Use when writing bug reports, feature requests, doc fixes, or
   unconfirmed questions for projects you do not maintain.
-version: 1.1.1
+version: 1.1.2
 license: MIT
 metadata:
   hermes:
@@ -27,7 +27,7 @@ Read:
 - [Contribution Ticket Template](./templates/CONTRIBUTION-TICKET.md)
 
 This is a component entrypoint for the collaboration framework. It is included
-inside `collaboration-framework.zip` as routed dependency material, not as a
-separate installable package.
+inside `collaboration-framework.zip` as routed dependency material and also
+ships as the standalone `contribution-style.zip` package.
 
 Component history lives in [version-history.md](./version-history.md).

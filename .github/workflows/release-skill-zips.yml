@@ -45,8 +45,10 @@ jobs:
       - name: Build and validate skill zips
         run: make check-package-paths
 
-      - name: Collect release assets
+      - name: Collect release skill assets from Makefile
         run: |
+          # `print-skill-zips` is the release asset contract. Keep standalone
+          # component skills and domain/tooling skills in Makefile, not here.
           make -s print-skill-zips > skill-zip-assets.txt
 
           while IFS= read -r zip_path; do

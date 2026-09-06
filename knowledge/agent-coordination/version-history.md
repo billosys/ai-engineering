@@ -1,5 +1,11 @@
 # Agent Coordination Version History
 
+## Version 1.1.1 - 2026-09-06
+
+Updated the component entrypoint to reflect that agent-coordination now ships
+both inside `collaboration-framework.zip` and as standalone
+`agent-coordination.zip`.
+
 ## Version 1.1.0 - 2026-09-05
 
 Split the former SUBAGENT-DELEGATION-POLICY guide into four focused guides:

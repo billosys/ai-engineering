@@ -1,5 +1,11 @@
 # Work Verification Version History
 
+## Version 1.1.2 - 2026-09-06
+
+Updated the component entrypoint to reflect that work-verification now ships
+both inside `collaboration-framework.zip` and as standalone
+`work-verification.zip`.
+
 ## Version 1.1.1 - 2026-09-05
 
 Updated ledger-template project-management routes after the guide-set

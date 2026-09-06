@@ -18,6 +18,7 @@ from urllib.parse import urlsplit
 
 CLASSIFICATIONS = {
     "bundled-reference",
+    "sibling-skill-reference",
     "source-clone-reference",
     "repo-only/provenance",
     "example-project path",
@@ -55,6 +56,18 @@ DOMAIN_BY_PACKAGE = {
     "deno-js-linter": "deno",
     "biome-js-linter": "biome",
     "biome-linter": "biome",
+}
+
+SKILL_PACKAGE_TOPS = set(DOMAIN_BY_PACKAGE) | {
+    "agent-coordination",
+    "code-auditing",
+    "collaboration-framework",
+    "contribution-style",
+    "engineering-methods",
+    "project-management",
+    "scientific-methods",
+    "testing",
+    "work-verification",
 }
 
 
@@ -128,6 +141,59 @@ def package_exists(names: set[str], resolved: str) -> bool:
     return bool(resolved and (resolved in names or f"{resolved}/" in names))
 
 
+def validate_zip_shape(names: set[str], package_top: str) -> list[Finding]:
+    findings: list[Finding] = []
+    root_skill = f"{package_top}/SKILL.md"
+    if root_skill not in names:
+        findings.append(
+            Finding(
+                package_top,
+                "package",
+                0,
+                "zip shape",
+                "SKILL.md",
+                root_skill,
+                "bundled-reference",
+                "hard failure",
+                "package root must contain a literal SKILL.md",
+            )
+        )
+    nested_skills = sorted(
+        name
+        for name in names
+        if name.endswith("/SKILL.md") and name != root_skill
+    )
+    for name in nested_skills:
+        findings.append(
+            Finding(
+                package_top,
+                name[len(package_top) + 1 :],
+                0,
+                "zip shape",
+                "nested SKILL.md",
+                name,
+                "bundled-reference",
+                "hard failure",
+                "nested SKILL.md files are discovered as duplicate skills; use ENTRYPOINT.md for bundled support copies",
+            )
+        )
+    if package_top != "collaboration-framework" and f"{package_top}/knowledge/" in names:
+        findings.append(
+            Finding(
+                package_top,
+                "knowledge/",
+                0,
+                "zip shape",
+                "knowledge/",
+                f"{package_top}/knowledge/",
+                "bundled-reference",
+                "hard failure",
+                "standalone skill packages must not bundle the collaboration-framework knowledge subtree",
+            )
+        )
+    return findings
+
+
 def normalize_package_path(package_top: str, document: str, target: str) -> str:
     bare = strip_fragment_query(target)
     if not bare:
@@ -140,6 +206,13 @@ def normalize_package_path(package_top: str, document: str, target: str) -> str:
 
 def escaped_package_root(package_top: str, resolved: str) -> bool:
     return bool(resolved and not (resolved == package_top or resolved.startswith(f"{package_top}/")))
+
+
+def sibling_skill_reference(package_top: str, resolved: str) -> bool:
+    if not resolved or resolved.startswith("../"):
+        return False
+    sibling = resolved.split("/", 1)[0]
+    return sibling != package_top and sibling in SKILL_PACKAGE_TOPS
 
 
 def source_prefix(package_top: str) -> Path:
@@ -336,6 +409,8 @@ def classify_reference(repo: Path, names: set[str], package_top: str, ref: Refer
         return Finding("", ref.document_rel, ref.line, ref.kind, target, "", "parser false positive", "warning", "bare identifier-style destination")
     resolved = normalize_package_path(package_top, ref.document, target)
     if escaped_package_root(package_top, resolved):
+        if sibling_skill_reference(package_top, resolved):
+            return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "sibling-skill-reference", "warning", "target resolves to an adjacent installed skill package")
         if source_exists(repo, package_top, ref.document_rel, target):
             return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "source-clone-reference", "warning", "target resolves only from source-clone context")
         return Finding("", ref.document_rel, ref.line, ref.kind, target, resolved, "unclassified", "hard failure", "resolved path escapes package root")
@@ -428,6 +503,7 @@ def scan_zip(repo: Path, zip_path: Path, exceptions: list[ExceptionRow]) -> tupl
         names_list = archive.namelist()
         names = set(names_list)
         package_top = package_top_from_names(names_list)
+        findings.extend(validate_zip_shape(names, package_top))
         for name in names_list:
             if not name.endswith(".md"):
                 continue
@@ -445,7 +521,32 @@ def scan_zip(repo: Path, zip_path: Path, exceptions: list[ExceptionRow]) -> tupl
     return findings, counts, parser_material
 
 
-def print_report(zip_paths: list[Path], findings: list[Finding], markdown_files: int, external_urls: int, parser_material: str) -> None:
+def warning_key(finding: Finding) -> tuple[str, int, str, str, str]:
+    return (
+        finding.document,
+        finding.line,
+        finding.kind,
+        finding.target,
+        finding.classification,
+    )
+
+
+def print_warning_summary(warnings: list[Finding]) -> None:
+    if not warnings:
+        return
+    unique = {warning_key(finding) for finding in warnings}
+    by_classification: dict[str, int] = {}
+    for finding in warnings:
+        by_classification[finding.classification] = by_classification.get(finding.classification, 0) + 1
+    print("warning summary:")
+    print(f"unique warning locations: {len(unique)}")
+    for classification, count in sorted(by_classification.items(), key=lambda item: (-item[1], item[0])):
+        print(f"  {classification}: {count}")
+    print("  detailed warning rows hidden; rerun with --show-warnings to print them")
+    print("")
+
+
+def print_report(zip_paths: list[Path], findings: list[Finding], markdown_files: int, external_urls: int, parser_material: str, show_warnings: bool) -> None:
     hard = [finding for finding in findings if finding.severity == "hard failure"]
     warnings = [finding for finding in findings if finding.severity == "warning"]
     exceptions = [finding for finding in findings if finding.severity == "explicit exception"]
@@ -458,9 +559,13 @@ def print_report(zip_paths: list[Path], findings: list[Finding], markdown_files:
     print(f"skipped external URLs: {external_urls}")
     print(f"parser-suppressed material: {parser_material}")
     print("")
-    if findings:
+    print_warning_summary(warnings)
+    visible_findings = hard + exceptions
+    if show_warnings:
+        visible_findings += warnings
+    if visible_findings:
         print("findings:")
-        for finding in findings:
+        for finding in visible_findings:
             print(
                 f"{finding.severity}\t{finding.classification}\t{finding.document}:{finding.line}"
                 f"\t{finding.kind}\t{finding.target}\t{finding.resolved}\t{finding.disposition or '-'}\t{finding.reason}"
@@ -496,9 +601,15 @@ def run_self_test() -> int:
             archive.writestr("fixture/assets/img.png", "")
         with zipfile.ZipFile(zip_path) as archive:
             names = set(archive.namelist())
+            valid_shape = validate_zip_shape(names, "fixture")
+            nested_shape = validate_zip_shape(names | {"fixture/nested/SKILL.md"}, "fixture")
+            knowledge_shape = validate_zip_shape(names | {"fixture/knowledge/"}, "fixture")
             refs, parser_material = iter_references("fixture", "fixture/SKILL.md", sample)
             targets = {ref.target for ref in refs}
             cases = {
+                "valid zip shape": not valid_shape,
+                "nested skill shape failure": any("nested SKILL.md" in finding.reason for finding in nested_shape),
+                "unexpected knowledge shape failure": any("knowledge subtree" in finding.reason for finding in knowledge_shape),
                 "inline link": "guides/ok.md" in targets,
                 "image link": "assets/img.png" in targets,
                 "reference definition": any(ref.kind == "reference definition" and ref.target == "guides/ok.md" for ref in refs),
@@ -527,6 +638,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("zips", nargs="*", help="generated zip archives to scan")
     parser.add_argument("--exceptions", default="assets/packaging/path-exceptions.tsv", help="TSV exception file")
     parser.add_argument("--repo", default=".", help="repository root for source-clone classification")
+    parser.add_argument("--show-warnings", action="store_true", help="print every warning row instead of the grouped warning summary")
     parser.add_argument("--self-test", action="store_true", help="run parser self-test fixture")
     parser.add_argument("--check-exceptions-only", action="store_true", help="validate exception schema and exit")
     return parser.parse_args(argv)
@@ -554,7 +666,7 @@ def main(argv: list[str]) -> int:
             all_findings.extend(findings)
             markdown_files += counts["markdown_files"]
             external_urls += counts["external_urls"]
-        print_report(zip_paths, all_findings, markdown_files, external_urls, parser_material)
+        print_report(zip_paths, all_findings, markdown_files, external_urls, parser_material, args.show_warnings)
         return 1 if any(finding.severity == "hard failure" for finding in all_findings) else 0
     except (OSError, ValueError, zipfile.BadZipFile) as exc:
         print(f"check-package-paths: {exc}", file=sys.stderr)

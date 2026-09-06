@@ -1,5 +1,10 @@
 # Code Auditing Version History
 
+## Version 1.1.1 - 2026-09-06
+
+Updated the component entrypoint to reflect that code-auditing now ships both
+inside `collaboration-framework.zip` and as standalone `code-auditing.zip`.
+
 ## Version 1.1.0 - 2026-09-05
 
 Split the former CODE-AUDIT guide into five focused guides:

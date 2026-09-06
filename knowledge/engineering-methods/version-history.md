@@ -4,6 +4,12 @@ This file is the sibling component history for `knowledge/engineering-methods/`.
 
 ## Engineering Methods Component
 
+### Version 1.1.7 - 2026-09-06
+
+Updated the component entrypoint to reflect that engineering-methods now ships
+both inside `collaboration-framework.zip` and as standalone
+`engineering-methods.zip`.
+
 ### Version 1.1.6 - 2026-09-05
 
 Updated project-management routes after its guide-set wayfinder was renamed

@@ -28,11 +28,23 @@ COLLABORATION_FRAMEWORK_TRANSFORMS = {
     "../js/": "./knowledge/js/",
     "../project-management/": "./knowledge/project-management/",
     "../rust/": "./knowledge/rust/",
+    "../scientific-methods/": "./knowledge/scientific-methods/",
     "../testing/": "./knowledge/testing/",
     "../work-verification/": "./knowledge/work-verification/",
 }
 
 COLLABORATION_FRAMEWORK_DEPENDENCY_TRANSFORMS: dict[Path, dict[str, str]] = {}
+
+FRAMEWORK_COMPONENTS = {
+    "agent-coordination",
+    "code-auditing",
+    "contribution-style",
+    "engineering-methods",
+    "project-management",
+    "scientific-methods",
+    "testing",
+    "work-verification",
+}
 
 
 def guide_references(guides_dir: Path) -> list[str]:
@@ -51,12 +63,65 @@ def replace_bare_guide_refs(text: str, refs: list[str]) -> str:
     return text
 
 
+def frontmatter_version(text: str) -> str | None:
+    if not text.startswith("---\n"):
+        return None
+    for line in text.splitlines()[1:]:
+        if line == "---":
+            return None
+        match = re.match(r"^version:\s*([A-Za-z0-9_.-]+)\s*$", line)
+        if match:
+            return match.group(1)
+    return None
+
+
+def sync_current_version_text(text: str) -> str:
+    version = frontmatter_version(text)
+    if version is None or "Current version:" not in text:
+        return text
+
+    def replace(match: re.Match[str]) -> str:
+        opener = match.group(2) or ""
+        closer = match.group(4) if opener else ""
+        return f"{match.group(1)}{opener}{version}{closer}"
+
+    version_token = r"[A-Za-z0-9_-]+(?:\.[A-Za-z0-9_-]+)*"
+    return re.sub(
+        rf"(Current version:\s*)(\*\*)?({version_token})(\*\*)?",
+        replace,
+        text,
+    )
+
+
+def rewrite_embedded_skill_links(text: str) -> str:
+    for component in FRAMEWORK_COMPONENTS | {"collaboration-framework"}:
+        text = text.replace(
+            f"../{component}/SKILL.md",
+            f"../{component}/ENTRYPOINT.md",
+        )
+        text = text.replace(
+            f"./knowledge/{component}/SKILL.md",
+            f"./knowledge/{component}/ENTRYPOINT.md",
+        )
+    return text
+
+
+def transform_embedded_support(src: Path, repo_relative_src: Path) -> str | None:
+    if (
+        len(repo_relative_src.parts) == 3
+        and repo_relative_src.parts[0] == "knowledge"
+        and repo_relative_src.parts[2] == "SKILL.md"
+    ):
+        return rewrite_embedded_skill_links(src.read_text(encoding="utf-8"))
+    return transform_entrypoint(src, repo_relative_src)
+
+
 def transform_entrypoint(src: Path, repo_relative_src: Path) -> str | None:
     if repo_relative_src == Path("knowledge/collaboration-framework/SKILL.md"):
         text = src.read_text(encoding="utf-8")
         for source_ref, package_ref in COLLABORATION_FRAMEWORK_TRANSFORMS.items():
             text = text.replace(source_ref, package_ref)
-        return text
+        return rewrite_embedded_skill_links(text)
 
     dependency_transforms = COLLABORATION_FRAMEWORK_DEPENDENCY_TRANSFORMS.get(repo_relative_src)
     if dependency_transforms is not None:
@@ -80,6 +145,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("src", type=Path)
     parser.add_argument("dest", type=Path)
     parser.add_argument("--repo", type=Path, default=Path("."))
+    parser.add_argument(
+        "--embedded-support",
+        action="store_true",
+        help="stage a bundled support copy that must not be discovered as a nested skill",
+    )
     return parser.parse_args()
 
 
@@ -95,11 +165,19 @@ def main() -> int:
     except ValueError:
         repo_relative_src = src
 
-    transformed = transform_entrypoint(src, repo_relative_src)
-    if transformed is None:
-        shutil.copyfile(src, dest)
+    if args.embedded_support:
+        transformed = transform_embedded_support(src, repo_relative_src)
     else:
-        dest.write_text(transformed, encoding="utf-8")
+        transformed = transform_entrypoint(src, repo_relative_src)
+    if transformed is None:
+        original = src.read_text(encoding="utf-8")
+        text = sync_current_version_text(original)
+        if text == original:
+            shutil.copyfile(src, dest)
+        else:
+            dest.write_text(text, encoding="utf-8")
+    else:
+        dest.write_text(sync_current_version_text(transformed), encoding="utf-8")
     shutil.copymode(src, dest)
     return 0
 

@@ -1,5 +1,10 @@
 # Testing Version History
 
+## Version 1.1.1 - 2026-09-06
+
+Updated the component entrypoint to reflect that testing now ships both inside
+`collaboration-framework.zip` and as standalone `testing.zip`.
+
 ## Version 1.1.0 - 2026-09-04
 
 Split the testing guide surface into three selective-load guides:

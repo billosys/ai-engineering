@@ -5,6 +5,10 @@ framework/operational skill for rigorous human/LLM engineering work. Its
 source entrypoint is
 [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md),
 and its supporting material lives under [`knowledge/`](../knowledge/).
+The generated `collaboration-framework.zip` includes the framework composer,
+its framework component routes, and the adjacent
+[`scientific-methods`](../knowledge/scientific-methods/SKILL.md) method skill
+so controlled-inquiry routes resolve inside the package.
 
 This page explains how to navigate the framework. The framework source itself
 remains in the entrypoint and knowledge roots.
@@ -45,6 +49,7 @@ analysis.
 | Contribution style | [`knowledge/contribution-style/guides/01-contribution-style.md`](../knowledge/contribution-style/guides/01-contribution-style.md) | Maintainer-facing issue, PR, and ticket style. |
 | Upstream ticket workflow | [`knowledge/contribution-style/guides/02-upstream-ticket-workflow.md`](../knowledge/contribution-style/guides/02-upstream-ticket-workflow.md) | Local draft, filing, line-reference, paste-boundary, cross-linking, and template workflow. |
 | Contribution ticket template | [`knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md`](../knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md) | Template for upstream contribution tickets. |
+| Scientific methods | [`knowledge/scientific-methods/SKILL.md`](../knowledge/scientific-methods/SKILL.md) | Controlled inquiry, A/B trials, comparisons, regression investigations, protocols, rubrics, evidence capture, and threats-to-validity analysis. |
 
 ## Whole Framework Or Narrow Component
 
@@ -53,6 +58,11 @@ the working posture plus routing across planning, verification, audit, testing,
 delegation, and contribution disciplines. It is composite because composition
 is identity-defining: the skill selects, sequences, routes, governs, and
 composes multiple loadable operational components.
+
+`scientific-methods` also ships as its own installable skill. Inside the
+collaboration-framework package it is available as routed companion material
+for inquiry-shaped work; as a standalone package it can be loaded directly for
+focused experiment design or comparison work.
 
 Use a narrower component path when you already know the task shape and want to
 avoid carrying unnecessary context. For example, a focused upstream issue can

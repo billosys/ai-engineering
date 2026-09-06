@@ -5,7 +5,7 @@ description: |
   collaboration framework. Use before planning or closing a project, arc, or
   slice; inspecting canonical planning worktree layout; applying Expedited
   Mode; or deciding whether bubble-up findings require a plan update.
-version: 1.0.4
+version: 1.0.5
 license: MIT
 metadata:
   hermes:
@@ -37,5 +37,5 @@ Focused guides:
 - [Version History](./version-history.md)
 
 This is a component entrypoint for the collaboration framework. It is included
-inside `collaboration-framework.zip` as routed dependency material, not as a
-separate installable package.
+inside `collaboration-framework.zip` as routed dependency material and also
+ships as the standalone `project-management.zip` package.

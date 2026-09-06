@@ -2,7 +2,7 @@
 #
 # Two kinds of skill bundle:
 #   * collab-framework — the top-level collaboration-framework skill
-#   * per-domain        — one target per knowledge/ domain (rust, go, …)
+#   * installable       — one target per installable knowledge/ skill
 #
 # Skill zips are written under $(ZIP_OUTPUT_DIR), named after the `name:`
 # declared in the skill's frontmatter, and wrap their contents in a <name>/
@@ -21,6 +21,8 @@ PACKAGE_PATH_EXCEPTIONS := assets/packaging/path-exceptions.tsv
 CHECK_SKILL := ./scripts/check-skill-description.sh
 SKILL_ZIP_NAMES := \
 	collaboration-framework.zip \
+	agent-coordination.zip code-auditing.zip contribution-style.zip \
+	engineering-methods.zip project-management.zip testing.zip work-verification.zip \
 	scientific-methods.zip \
 	rust-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
 	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
@@ -34,7 +36,8 @@ CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 .PHONY: all skills install uninstall clean help check-skills check-package-paths print-skill-zips \
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
-	scientific-methods \
+	agent-coordination code-auditing contribution-style engineering-methods project-management \
+	testing work-verification scientific-methods \
 	rust go cpp js erlang cobalt design tailwindcss deno biome
 
 # Every SKILL.md (and the two biome/deno variants) packaged by this Makefile.
@@ -64,6 +67,13 @@ ALL_SKILL_FILES := \
 help:
 	@echo "Packaging targets:"
 	@echo "  make collab-framework   -> $(CF_ZIP) (collaboration framework SKILL.md + framework docs)"
+	@echo "  make agent-coordination -> agent-coordination.zip"
+	@echo "  make code-auditing      -> code-auditing.zip"
+	@echo "  make contribution-style -> contribution-style.zip"
+	@echo "  make engineering-methods  -> engineering-methods.zip"
+	@echo "  make project-management -> project-management.zip"
+	@echo "  make testing            -> testing.zip"
+	@echo "  make work-verification  -> work-verification.zip"
 	@echo "  make scientific-methods -> scientific-methods.zip"
 	@echo "  make rust               -> rust-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
@@ -107,7 +117,11 @@ CF_FILES := \
 	knowledge/contribution-style/SKILL.md \
 	knowledge/contribution-style/version-history.md \
 	knowledge/engineering-methods/SKILL.md \
+	knowledge/engineering-methods/version-history.md \
 	knowledge/project-management/SKILL.md \
+	knowledge/project-management/version-history.md \
+	knowledge/scientific-methods/SKILL.md \
+	knowledge/scientific-methods/version-history.md \
 	knowledge/testing/SKILL.md \
 	knowledge/testing/version-history.md \
 	knowledge/work-verification/SKILL.md \
@@ -154,8 +168,20 @@ CF_FILES := \
 	knowledge/agent-coordination/guides/04-anti-patterns.md \
 	knowledge/contribution-style/guides/01-contribution-style.md \
 	knowledge/contribution-style/guides/02-upstream-ticket-workflow.md \
+	knowledge/scientific-methods/guides/01-inquiry-framing.md \
+	knowledge/scientific-methods/guides/02-experiment-design.md \
+	knowledge/scientific-methods/guides/03-controls-and-confounds.md \
+	knowledge/scientific-methods/guides/04-operational-measures.md \
+	knowledge/scientific-methods/guides/05-protocol-and-prompt-design.md \
+	knowledge/scientific-methods/guides/06-evidence-capture.md \
+	knowledge/scientific-methods/guides/07-comparison-and-regression-testing.md \
+	knowledge/scientific-methods/guides/08-analysis-and-threats-to-validity.md \
+	knowledge/scientific-methods/guides/09-anti-patterns.md \
 	knowledge/work-verification/templates/LEDGER-DISCIPLINE.md \
-	knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md
+	knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md \
+	knowledge/scientific-methods/templates/ab-comparison-prompt.md \
+	knowledge/scientific-methods/templates/evaluation-rubric.md \
+	knowledge/scientific-methods/templates/experiment-protocol.md
 
 ## collab-framework: build collaboration-framework.zip (package-root SKILL.md + framework files)
 collab-framework: collab-framework-clean
@@ -167,8 +193,10 @@ collab-framework: collab-framework-clean
 		if [ ! -f "$$f" ]; then \
 			echo "ERROR: missing required file: $$f" >&2; exit 1; \
 		fi; \
-		mkdir -p "$(CF_STAGE)/$$(dirname "$$f")"; \
-		./scripts/stage-skill-entrypoint "$$f" "$(CF_STAGE)/$$f"; \
+		dest="$$f"; \
+		case "$$f" in knowledge/*/SKILL.md) dest="$${f%/SKILL.md}/ENTRYPOINT.md";; esac; \
+		mkdir -p "$(CF_STAGE)/$$(dirname "$$dest")"; \
+		./scripts/stage-skill-entrypoint --embedded-support "$$f" "$(CF_STAGE)/$$dest"; \
 	done
 	@find "$(CF_STAGE)" -name '.DS_Store' -delete
 	@echo ">> writing $(CF_ZIP)"
@@ -207,8 +235,36 @@ define pack_skill
 	stage="$(BUILD)/$$name"; \
 	echo ">> staging $$name bundle ($$src + $$dir/guides)"; \
 	rm -rf "$$stage"; mkdir -p "$$stage"; \
-	./scripts/stage-skill-entrypoint "$$src" "$$stage/$$(basename "$$src")"; \
+	./scripts/stage-skill-entrypoint "$$src" "$$stage/SKILL.md"; \
 	cp -R "$$dir/guides" "$$stage/guides"; \
+	find "$$stage" -name '.DS_Store' -delete; \
+	zip_path="$(ZIP_OUTPUT_DIR)/$$name.zip"; \
+	echo ">> writing $$zip_path"; \
+	mkdir -p "$(ZIP_OUTPUT_DIR)"; \
+	rm -f "$$zip_path"; \
+	( cd "$(BUILD)" && zip -r -q -X "../$$zip_path" "$$name" ); \
+	echo ">> contents:"; \
+	unzip -l "$$zip_path"; \
+	rm -rf "$(BUILD)"; \
+	echo ">> done: $$zip_path"
+endef
+
+define pack_component_skill
+	@dir="$(KNOWLEDGE)/$(1)"; src="$$dir/SKILL.md"; \
+	if [ ! -f "$$src" ]; then echo "ERROR: missing skill file: $$src" >&2; exit 1; fi; \
+	if [ ! -d "$$dir/guides" ]; then echo "ERROR: missing guides dir: $$dir/guides" >&2; exit 1; fi; \
+	if [ ! -f "$$dir/version-history.md" ]; then echo "ERROR: missing version history: $$dir/version-history.md" >&2; exit 1; fi; \
+	$(CHECK_SKILL) "$$src"; \
+	name=$$(sed -n 's/^name:[[:space:]]*//p' "$$src" | head -1); \
+	if [ -z "$$name" ]; then echo "ERROR: no 'name:' in $$src frontmatter" >&2; exit 1; fi; \
+	stage="$(BUILD)/$$name"; \
+	echo ">> staging $$name bundle ($$src + $$dir/guides + local support files)"; \
+	rm -rf "$$stage"; mkdir -p "$$stage"; \
+	./scripts/stage-skill-entrypoint "$$src" "$$stage/SKILL.md"; \
+	cp -R "$$dir/guides" "$$stage/guides"; \
+	cp "$$dir/version-history.md" "$$stage/version-history.md"; \
+	if [ -d "$$dir/templates" ]; then cp -R "$$dir/templates" "$$stage/templates"; fi; \
+	if [ -d "$$dir/examples" ]; then cp -R "$$dir/examples" "$$stage/examples"; fi; \
 	find "$$stage" -name '.DS_Store' -delete; \
 	zip_path="$(ZIP_OUTPUT_DIR)/$$name.zip"; \
 	echo ">> writing $$zip_path"; \
@@ -254,41 +310,39 @@ biome:
 	$(call pack_skill,biome,SKILL-js-linter.md)
 	$(call pack_skill,biome,SKILL-web-linter.md)
 
+agent-coordination:
+	$(call pack_component_skill,agent-coordination)
+
+code-auditing:
+	$(call pack_component_skill,code-auditing)
+
+contribution-style:
+	$(call pack_component_skill,contribution-style)
+
+engineering-methods:
+	$(call pack_component_skill,engineering-methods)
+
+project-management:
+	$(call pack_component_skill,project-management)
+
+testing:
+	$(call pack_component_skill,testing)
+
+work-verification:
+	$(call pack_component_skill,work-verification)
+
 scientific-methods:
-	@dir="$(KNOWLEDGE)/scientific-methods"; src="$$dir/SKILL.md"; \
-	if [ ! -f "$$src" ]; then echo "ERROR: missing skill file: $$src" >&2; exit 1; fi; \
-	if [ ! -d "$$dir/guides" ]; then echo "ERROR: missing guides dir: $$dir/guides" >&2; exit 1; fi; \
-	if [ ! -d "$$dir/templates" ]; then echo "ERROR: missing templates dir: $$dir/templates" >&2; exit 1; fi; \
-	if [ ! -f "$$dir/version-history.md" ]; then echo "ERROR: missing version history: $$dir/version-history.md" >&2; exit 1; fi; \
-	$(CHECK_SKILL) "$$src"; \
-	name=$$(sed -n 's/^name:[[:space:]]*//p' "$$src" | head -1); \
-	if [ -z "$$name" ]; then echo "ERROR: no 'name:' in $$src frontmatter" >&2; exit 1; fi; \
-	stage="$(BUILD)/$$name"; \
-	echo ">> staging $$name bundle ($$src + $$dir/guides + $$dir/templates + $$dir/version-history.md)"; \
-	rm -rf "$$stage"; mkdir -p "$$stage"; \
-	./scripts/stage-skill-entrypoint "$$src" "$$stage/$$(basename "$$src")"; \
-	cp "$$dir/version-history.md" "$$stage/version-history.md"; \
-	cp -R "$$dir/guides" "$$stage/guides"; \
-	cp -R "$$dir/templates" "$$stage/templates"; \
-	find "$$stage" -name '.DS_Store' -delete; \
-	zip_path="$(ZIP_OUTPUT_DIR)/$$name.zip"; \
-	echo ">> writing $$zip_path"; \
-	mkdir -p "$(ZIP_OUTPUT_DIR)"; \
-	rm -f "$$zip_path"; \
-	( cd "$(BUILD)" && zip -r -q -X "../$$zip_path" "$$name" ); \
-	echo ">> contents:"; \
-	unzip -l "$$zip_path"; \
-	rm -rf "$(BUILD)"; \
-	echo ">> done: $$zip_path"
+	$(call pack_component_skill,scientific-methods)
 
 # ---------------------------------------------------------------------------
 # Aggregates
 # ---------------------------------------------------------------------------
 
-## skills: build every per-domain zip
-skills: scientific-methods rust go cpp js erlang cobalt design tailwindcss deno biome
+## skills: build every installable skill zip except collaboration-framework
+skills: agent-coordination code-auditing contribution-style engineering-methods project-management \
+	testing work-verification scientific-methods rust go cpp js erlang cobalt design tailwindcss deno biome
 
-## all: build every per-domain zip plus the collaboration-framework zip
+## all: build every installable skill zip including the collaboration-framework zip
 all: skills collab-framework
 
 ## check-skills: validate the description length of every SKILL.md

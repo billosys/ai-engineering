@@ -1,5 +1,11 @@
 # Version History
 
+### Version 2.13 - September 2026
+
+Updated the component entrypoint to reflect that project-management now ships
+both inside `collaboration-framework.zip` and as standalone
+`project-management.zip`.
+
 ### Version 2.12 - September 2026
 
 Renamed the project-management guide-set wayfinder from
