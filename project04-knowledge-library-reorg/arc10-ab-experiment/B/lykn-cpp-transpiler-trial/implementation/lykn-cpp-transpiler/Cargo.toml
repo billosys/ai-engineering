@@ -1,0 +1,15 @@
+[package]
+name = "lykn-cpp-transpiler"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Tiny Lykn-inspired S-expression to C++17 transpiler trial"
+license = "MIT"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+

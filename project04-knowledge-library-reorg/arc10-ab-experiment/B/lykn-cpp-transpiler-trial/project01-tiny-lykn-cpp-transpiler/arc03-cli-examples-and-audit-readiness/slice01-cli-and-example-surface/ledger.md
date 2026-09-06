@@ -1,0 +1,13 @@
+# Arc 03 Slice 01 Ledger: CLI and Example Surface
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S01-01 | Existing public library API remains stable. | Inspect `src/lib.rs` and any public tests for `transpile_to_cpp(source: &str) -> Result<String, TranspileError>`. | serious | project plan | done | `cdc-verification.md`; reproduced | Public API signature unchanged. |
+| S01-02 | CLI success behavior is covered by an automated test. | Run `cargo test`; inspect CLI test for valid input path and stdout generated C++ behavior. | correctness-grade | arc plan | done | `cdc-verification.md`; reproduced | CLI success tests cover both valid fixtures. |
+| S01-03 | CLI diagnostic failure behavior is covered by an automated test. | Run `cargo test`; inspect CLI test for invalid input and non-zero diagnostic behavior. | correctness-grade | arc plan | done | `cdc-verification.md`; reproduced | CLI diagnostic and usage errors are tested for non-zero exit and stderr separation. |
+| S01-04 | A second valid fixture exists and uses only the already accepted language subset. | Inspect `fixtures/valid/`; compare forms against project plan accepted forms. | serious | arc plan | done | `cdc-verification.md`; reproduced | `arithmetic_mix.lykn` stays within the existing accepted forms. |
+| S01-05 | A deterministic generated C++ counterpart exists for the new fixture. | Inspect `examples/generated/` and snapshot or fixture tests for exact output. | correctness-grade | arc plan | done | `cdc-verification.md`; reproduced | `arithmetic_mix.cpp` is exact-matched by `tests/transpile.rs`. |
+| S01-06 | All generated C++ examples compile and run under C++17 when available. | Run `c++ -std=c++17 -Wall -Wextra -pedantic` for each generated example and execute each binary. | correctness-grade | project validation gates | done | `cdc-verification.md`; reproduced | `happy_path` printed `9`; `arithmetic_mix` printed `3`. |
+| S01-07 | Existing Arc 01 and Arc 02 tests still pass. | Run full `cargo test`, including diagnostic matrix coverage. | correctness-grade | regression discipline | done | `cdc-verification.md`; reproduced | Full test suite passed. |
+| S01-08 | No accepted-language expansion is introduced. | Compare parser/codegen changes and fixtures against project plan non-goals and accepted forms. | serious | scope discipline | done | `cdc-verification.md`; reproduced | No accepted-language widening observed. |
+| S01-09 | CC close report records exact commands, outputs, and any C++ compiler blocker. | Inspect `closing-report.md`. | serious | framework close discipline | done | `cdc-verification.md`; reproduced | Closing report is complete enough for CDC closure. |

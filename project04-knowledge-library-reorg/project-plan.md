@@ -407,6 +407,22 @@ operator override. Arc09 is closed and provides source, packaging,
 install-smoke, documentation, collaboration-framework wayfinding, and release
 note evidence for the new method skill.
 
+### Arc 10: A/B Experiment Archive
+
+Status: archival preservation authorised on 2026-09-05, CDC-direct.
+
+The operator requested `arc10-ab-experiment/` as an arbitrary archive for the
+completed 0.4.1 / pre-0.5.0 comparison. Its [README](arc10-ab-experiment/README.md)
+indexes A (0.4.1) and B (main / pre-0.5.0), their original CDC prompts, full
+trial directories, implementations, audits, closure evidence and shared
+assessments. A checksum manifest verifies unchanged evidence across relocation.
+
+This explicitly overrides the usual arc/slice packet for this preservation
+operation. The trial implementations are retained here as planning evidence,
+not as maintained source products. Historical paths remain unchanged inside
+the evidence, with a relocation map in the README. Build caches move locally
+but remain ignored. No experiment repair, rerun, or new closure is implied.
+
 ## Current Status
 
 Project04 is active again from operator re-entry and operating in Expedited
@@ -434,10 +450,21 @@ method skill, independent package target, README/docs discoverability,
 collaboration-framework wayfinding, and release-note/package baseline
 reconciliation without changing Arc08 status.
 
+Arc10, `arc10-ab-experiment`, preserves the completed framework A/B trial by
+operator request, using a README and A/B archive layout rather than a new
+execution packet. This does not change Arc08's review pause or project status.
+
 The next project action remains operator review disposition for Arc08 Slice12
 and any follow-on CDC verification/arc close the operator authorizes.
 
 ## Version History
+
+### v1.42 - 2026-09-05
+
+Recorded the operator-requested Arc10 A/B experiment archive and its explicit
+layout override. Preserve both CDC prompts and complete trial workspaces as
+unchanged evidence, with README wayfinding, a relocation/checksum manifest and
+build-cache exclusions. Arc08 and Project04 closure remain unchanged.
 
 ### v1.41 - 2026-09-05
 

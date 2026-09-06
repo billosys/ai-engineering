@@ -1,0 +1,3 @@
+# Preserve moved build caches locally without committing compiled output.
+/A/lykn-cpp-transpiler-trial/target/
+/B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/target/

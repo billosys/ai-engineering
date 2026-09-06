@@ -1,0 +1,4 @@
+(let base 8)
+(let doubled (* base 2))
+(let adjusted (- doubled 5))
+(print (/ adjusted 3))

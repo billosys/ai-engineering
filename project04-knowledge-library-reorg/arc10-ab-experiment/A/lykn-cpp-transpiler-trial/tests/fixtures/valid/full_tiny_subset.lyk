@@ -1,0 +1,6 @@
+(let a 20)
+(let b (+ a 2))
+(let c (- b 5))
+(let d (* c (/ 8 4)))
+(print (+ d 1))
+(print (/ (* b c) 3))

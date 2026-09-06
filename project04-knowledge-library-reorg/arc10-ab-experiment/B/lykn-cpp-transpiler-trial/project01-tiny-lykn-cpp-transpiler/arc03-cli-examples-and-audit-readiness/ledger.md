@@ -1,0 +1,8 @@
+# Arc 03 Ledger: CLI, Examples, and Audit Readiness
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| A03-01 | Slice 01 closes with CDC verification and adds focused CLI/example evidence without widening accepted syntax. | Inspect `slice01-cli-and-example-surface/cdc-verification.md`; compare accepted forms and generated examples against project scope. | serious | arc plan | done | `slice01-cli-and-example-surface/cdc-verification.md`; reproduced | Slice 01 CDC-closed on 2026-09-05. |
+| A03-02 | Slice 02 closes with an audit-readiness surface map and project-readiness evidence walk. | Inspect Slice 02 close artifacts and project ledger status after Slice 02. | correctness-grade | arc plan | done | `slice02-audit-surface-map-and-project-readiness/cdc-verification.md`; reproduced | Slice 02 CDC-closed on 2026-09-05. |
+| A03-03 | At least two generated C++ examples compile and run under C++17 when a compiler is available. | Compile and run generated examples with `c++ -std=c++17 -Wall -Wextra -pedantic`. | correctness-grade | project validation gates | done | `closing-report.md`; reproduced | Arc-scale close compiled and ran both generated examples. |
+| A03-04 | Arc 03 bubble-up findings are reflected in this arc plan/project plan or explicitly rejected with rationale. | Compare slice close reports and CDC verifications against this `arc-plan.md` and `../project-plan.md` version histories. | serious | framework ledger discipline | done | `closing-report.md`; reproduced | No fourth arc indicated; project is eligible for project-level close assessment. |

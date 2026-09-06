@@ -1,0 +1,8 @@
+# Arc 01 Ledger: Minimum Language Core
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| A01-01 | Slice 01 closes with CDC verification and establishes crate/API/parser/codegen/test surfaces. | Inspect `slice01-crate-scaffold-and-happy-path/cdc-verification.md`; run or inspect the reproduced gates it records. | serious | arc plan | done | `slice01-crate-scaffold-and-happy-path/cdc-verification.md`; reproduced | Slice 01 CDC-closed on 2026-09-05. |
+| A01-02 | Slice 02 closes with CDC verification and adds first diagnostic hardening without widening the accepted language. | Inspect future `slice02-*/cdc-verification.md`; compare parser acceptance against project scope. | serious | arc plan | done | `slice02-diagnostic-hardening/cdc-verification.md`; reproduced | Slice 02 CDC-closed on 2026-09-05. |
+| A01-03 | The two slices compose into a minimum useful transpiler from tiny source to deterministic C++17 output. | Run project-level valid fixture transpilation and invalid fixture tests after both slices close. | correctness-grade | arc plan | done | `closing-report.md`; reproduced | Arc composition check passed; C++ smoke printed `9`. |
+| A01-04 | Bubble-up findings from Slice 01 and Slice 02 are either reflected in this arc plan/version history or explicitly rejected with rationale. | Compare slice close reports and CDC verification files against this `arc-plan.md` version history. | serious | framework ledger discipline | done | `slice01-crate-scaffold-and-happy-path/cdc-verification.md`; `slice02-diagnostic-hardening/cdc-verification.md`; reproduced | No arc scope or sequencing change required beyond status updates. |

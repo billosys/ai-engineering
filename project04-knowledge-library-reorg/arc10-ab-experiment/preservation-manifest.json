@@ -1,0 +1,967 @@
+{
+  "date": "2026-09-05",
+  "status": "all files byte-and-mode identical across relocation",
+  "framework_heads_at_preservation": {
+    "A": "306dfb69d6b893e8928e57d65f8c886afb5474a6",
+    "B": "9d8bbe2f95ceff7fc90acfb8c45c3f3a52c7a2f0",
+    "planning_before": "86b6221c26304b74b9da0d3ac670b57cffa6ab84"
+  },
+  "note": "Heads describe checkouts at preservation; historical prompts/reports remain authoritative about what a run loaded.",
+  "original_repository_root": "/Users/oubiwann/lab/billosys/ai-engineering",
+  "archive_relative_to_planning": "project04-knowledge-library-reorg/arc10-ab-experiment",
+  "mappings": [
+    {
+      "source": ".worktrees/0.4.1/workbench/cdc-project-prompt.md",
+      "destination": "A/cdc-project-prompt.md"
+    },
+    {
+      "source": ".worktrees/0.4.1/workbench/lykn-cpp-transpiler-trial",
+      "destination": "A/lykn-cpp-transpiler-trial"
+    },
+    {
+      "source": "workbench/cdc-project-prompt.md",
+      "destination": "B/cdc-project-prompt.md"
+    },
+    {
+      "source": "workbench/lykn-cpp-transpiler-trial",
+      "destination": "B/lykn-cpp-transpiler-trial"
+    }
+  ],
+  "total_files_verified": 3881,
+  "durable_files": [
+    {
+      "path": "A/cdc-project-prompt.md",
+      "bytes": 7865,
+      "mode": 420,
+      "sha256": "3aa699f0ce565293a0aa2bd2cc97cabae7ca02f83fdeda4e9573e2a56dfbd80f"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/Cargo.lock",
+      "bytes": 169,
+      "mode": 420,
+      "sha256": "7a8bea736f6dad261eaf99d0c12c19c1ad2b0d37f37c4db2b87a2e2b6b321454"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/Cargo.toml",
+      "bytes": 155,
+      "mode": 420,
+      "sha256": "3c9ecf6245b3503ba9fcd409e35755f915f9e6f84b95339f3f23a455725083f1"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/arc-plan.md",
+      "bytes": 4563,
+      "mode": 420,
+      "sha256": "99183194f91fc96117dbfd896ff92a42a27895ad2de2216889156d0199212810"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/closing-report.md",
+      "bytes": 8680,
+      "mode": 420,
+      "sha256": "14b97aec952f0c6415a844286c2fda752c597e777685ea088e27a9e77d61c0c4"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice01-crate-scaffold/cc-prompt.md",
+      "bytes": 3921,
+      "mode": 420,
+      "sha256": "619134c20418ec0d86b7d698fefee6f0b3b91fe79affde76b5caa3ac61ff9e35"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice01-crate-scaffold/cdc-verification.md",
+      "bytes": 3909,
+      "mode": 420,
+      "sha256": "a2b2e2d425ec191fb2a15944ba6a57c5c2b54a3f9abeffc02fc32a77ab5e864a"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice01-crate-scaffold/closing-report.md",
+      "bytes": 4468,
+      "mode": 420,
+      "sha256": "0f983e95ab6c5a2b8a9a4cb5240635e4146fbb63d9ba42dd8db7ae441bbfed99"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice01-crate-scaffold/ledger.md",
+      "bytes": 4272,
+      "mode": 420,
+      "sha256": "144df8bcfd33ba46dcbfeee0e2c610363343a5df9ef1d6843866ab3e245674bd"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice01-crate-scaffold/slice-plan.md",
+      "bytes": 1552,
+      "mode": 420,
+      "sha256": "fe755a72d215fef76e9eda39aad7ed0c47fb3722e869ca3f96e09c9d10fa106e"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice02-let-literal-path/cc-iteration01-prompt.md",
+      "bytes": 3160,
+      "mode": 420,
+      "sha256": "5921de6a1b52f591a07839096e71f87a449d5bc83c8e5f8443a59d3008bc19db"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice02-let-literal-path/cc-prompt.md",
+      "bytes": 5557,
+      "mode": 420,
+      "sha256": "e6dca3fd6312b8a1e1a70c71e4d9137c196c9708650d72b94ac06fc19ee0eb31"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice02-let-literal-path/cdc-verification.md",
+      "bytes": 5962,
+      "mode": 420,
+      "sha256": "900b01e10ef2c52322ec1dd1f72ab2100b974f7d3b1d9344575dd6835459b36d"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice02-let-literal-path/closing-report.md",
+      "bytes": 8987,
+      "mode": 420,
+      "sha256": "cf78e39a60f1f6b1ad5d1baf1add401c7ed9aad7bd431e74cc365f29a7f1c43a"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice02-let-literal-path/ledger.md",
+      "bytes": 6114,
+      "mode": 420,
+      "sha256": "2d81cc8124096c6e81da574abd5c3d25a4b3b073741a9d58276ecdd9e6ab4dfe"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc01-foundation/slice02-let-literal-path/slice-plan.md",
+      "bytes": 5162,
+      "mode": 420,
+      "sha256": "2c2bcdcc8b884419fcad0756bf6964d49398005e59dc751e2b35303e6ea4fd0d"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/arc-plan.md",
+      "bytes": 5248,
+      "mode": 420,
+      "sha256": "db2c53c36d5467da5686272645f447652bbac9911e1fa046ee8bcff173041e88"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/closing-report.md",
+      "bytes": 5347,
+      "mode": 420,
+      "sha256": "590a91ebd617e4fc5eac8b05a785b90685313ae7c004443924ddba3604d3f176"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice01-recursive-arithmetic-core/cc-prompt.md",
+      "bytes": 4873,
+      "mode": 420,
+      "sha256": "b02b8d722124db83b433dfa74354650d90b549af7e5e7096c3953844bc7ed159"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice01-recursive-arithmetic-core/cdc-verification.md",
+      "bytes": 6832,
+      "mode": 420,
+      "sha256": "172417407621958234029e87c52d5d3dc630209f968dd92ec60ca58e6db3b41c"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice01-recursive-arithmetic-core/closing-report.md",
+      "bytes": 8361,
+      "mode": 420,
+      "sha256": "4cbaccb8f7f8a4d142feb82d500b68208b1994a6573a665dce90059ddcc8045e"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice01-recursive-arithmetic-core/ledger.md",
+      "bytes": 6073,
+      "mode": 420,
+      "sha256": "01d2f12c46f1def755b944321e0b44e4cefb642ce1d15d8709ed421dbb3088f1"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice01-recursive-arithmetic-core/slice-plan.md",
+      "bytes": 4308,
+      "mode": 420,
+      "sha256": "5024864e49532e3e76710dc05c96b421e727a2748e14fdf7a71873b9769c789e"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice02-semantic-diagnostic-closure/cc-prompt.md",
+      "bytes": 5515,
+      "mode": 420,
+      "sha256": "4f0236ed3ec34315cbf1ee05fadb5adfc5c3a4c2bd1859c59e06290ac599258d"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice02-semantic-diagnostic-closure/cdc-verification.md",
+      "bytes": 5971,
+      "mode": 420,
+      "sha256": "0d1a7a136d45508a1d907c55c3e3919470734168e08ea3d7bd5103671c244377"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice02-semantic-diagnostic-closure/closing-report.md",
+      "bytes": 4504,
+      "mode": 420,
+      "sha256": "1bfbd8c1c9dcc4d4c73af01a5005d2bd077528763fd12d1e9b697a884d72fe2f"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice02-semantic-diagnostic-closure/ledger.md",
+      "bytes": 5506,
+      "mode": 420,
+      "sha256": "30ae1624dd58185f70ebf6b129dceea6201948cb401170c346a0acb8fcd8b9e4"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc02-expressions-and-semantics/slice02-semantic-diagnostic-closure/slice-plan.md",
+      "bytes": 5152,
+      "mode": 420,
+      "sha256": "09a39a5fb63b50a068dd9138f59796579ea93f1908576f7e13ecd24db6f7c1ed"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/arc-plan.md",
+      "bytes": 6555,
+      "mode": 420,
+      "sha256": "4d80d24861f61b858bfec4f12b64224fbd3a1e223e3fe3bd11e7ac9b824e94b6"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/closing-report.md",
+      "bytes": 7791,
+      "mode": 420,
+      "sha256": "b19478571b8052afedda28167eddea096afbdb3c24e71f2ae6abc266a9277a71"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice01-fixtures-cli-and-cpp-gates/cc-prompt.md",
+      "bytes": 5759,
+      "mode": 420,
+      "sha256": "a4705ea407f76266e92e5e8e5ae1087dd4e88686c846950617b2282d4b9e8d6c"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice01-fixtures-cli-and-cpp-gates/cdc-verification.md",
+      "bytes": 5746,
+      "mode": 420,
+      "sha256": "88bc318cb785ac52a3ba85597fa3993c59a786c0c74712881317295916ea84c1"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice01-fixtures-cli-and-cpp-gates/closing-report.md",
+      "bytes": 5954,
+      "mode": 420,
+      "sha256": "f99d60ba8bd8bea6fcbac3c55fe9503683d7793d69d0ed6bddba25de6ddf4360"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice01-fixtures-cli-and-cpp-gates/ledger.md",
+      "bytes": 4797,
+      "mode": 420,
+      "sha256": "637a51026c757018f3b77ca5f286d26f722033cc3c1727ae3b2bf66de5f5b235"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice01-fixtures-cli-and-cpp-gates/slice-plan.md",
+      "bytes": 4320,
+      "mode": 420,
+      "sha256": "06864f2c660eba736be8f1f0e1abea084b161068f0eff48da0a7d50673fd6779"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice02-audit-readiness-map/cc-prompt.md",
+      "bytes": 5271,
+      "mode": 420,
+      "sha256": "6e79e2ff0dab9f638380ffbc25a7f844cd69cd7d9f1da60c44d062363ffc0871"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice02-audit-readiness-map/cdc-verification.md",
+      "bytes": 7564,
+      "mode": 420,
+      "sha256": "7254b052dda2f34e088aaf667ed49cd1d79a679832005bc4df960e513bf25362"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice02-audit-readiness-map/closing-report.md",
+      "bytes": 6095,
+      "mode": 420,
+      "sha256": "0cfe141c5ad3edca195f6f3297554e5015c1f709501a01420f1bf92c66a182f3"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice02-audit-readiness-map/ledger.md",
+      "bytes": 5700,
+      "mode": 420,
+      "sha256": "96d4061eb3459dd8dca679e008da070044b5da0c2dfe1f42a569cd62ec33d9f3"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/arc03-examples-and-audit-readiness/slice02-audit-readiness-map/slice-plan.md",
+      "bytes": 4512,
+      "mode": 420,
+      "sha256": "29a761c793a03e651b53efa297c6cc9f521237944f0c0d75a6756d4e476f3931"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/closing-report.md",
+      "bytes": 8803,
+      "mode": 420,
+      "sha256": "c2b3e1d0f0de4f4042f41f224da7c94db99fd509398d6d00f046f5b246ba6246"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/docs/audit-readiness.md",
+      "bytes": 6028,
+      "mode": 420,
+      "sha256": "96b27301142d4c85089e82428425d8ca3d7f1f35a9491a4c90810383bd8505c1"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/docs/syntax.md",
+      "bytes": 4262,
+      "mode": 420,
+      "sha256": "becc228b3070349837bafa7a7cfef2087642eb7f9082b6abd2d393844947a344"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/examples/arithmetic.cpp",
+      "bytes": 205,
+      "mode": 420,
+      "sha256": "c250ad5f7b5aa16c5ac7adfb02dd1de2bb910e2b9897d022392e25eb9fd18fb3"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/examples/let_literal.cpp",
+      "bytes": 122,
+      "mode": 420,
+      "sha256": "977db034d0f5b551e6a664d45af8ce771cfa8ba0b2990ce24b05ac8a29141ab1"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/examples/print_literal.cpp",
+      "bytes": 79,
+      "mode": 420,
+      "sha256": "98c23eaad2eb628e7c614bb8fcd9e38a3fd5c754d35eb8acdd0dfc0e86b812ab"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/project-plan.md",
+      "bytes": 11532,
+      "mode": 420,
+      "sha256": "a3da30d9a2b3186a1a90441145e8cf74d99d49da5fbb5514c1c68798b6a23b63"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/rust-self-audit-report.md",
+      "bytes": 21535,
+      "mode": 420,
+      "sha256": "eab04b3a4ab0b8242584cd24ecb3ed7a58903e2bf447ad3f49cf5b18a729968a"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/src/ast.rs",
+      "bytes": 1078,
+      "mode": 420,
+      "sha256": "1d3d77a8ac0aa03e44c60d6c025171731bd97ace5065023f43bbe86b5d86956e"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/src/codegen.rs",
+      "bytes": 1191,
+      "mode": 420,
+      "sha256": "e4e96b324d5c54cad07b92d667b52b2fcb85ff68f48c52f2826b7324be3d6d36"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/src/error.rs",
+      "bytes": 3820,
+      "mode": 420,
+      "sha256": "344f059aa4ec76017791c2ae854e53e64f3237eb09d07d3ec3c4bc26d210b6da"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/src/lib.rs",
+      "bytes": 13827,
+      "mode": 420,
+      "sha256": "76e09e20d9d55ba3f36bde15c6e4abd37a4767052cd274d4507b1bdc4cb34411"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/src/main.rs",
+      "bytes": 820,
+      "mode": 420,
+      "sha256": "7512c531469ef21f35908dc1f22462e464fdb7fe2ed7eb2e05e59a5bd93e541d"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/src/parser.rs",
+      "bytes": 10045,
+      "mode": 420,
+      "sha256": "b6a5bc51130790833b62666b20a25ed28c8e13e3c011b648daa853c35fc62c7f"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/cli.rs",
+      "bytes": 12749,
+      "mode": 420,
+      "sha256": "31254400e319a4f33f8e43c9eac4af0e43eb93ead425d53eb755b28f3024e878"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/README.md",
+      "bytes": 483,
+      "mode": 420,
+      "sha256": "677c88132388ab39c59c5d68071038a3623c094233e9abbffde151de75abde69"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/expected/arithmetic.cpp",
+      "bytes": 119,
+      "mode": 420,
+      "sha256": "16f2806f6c984ea4946bccbe9b2ddc064b3b5661487a86ac8a556bc2dfc12056"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/expected/full_tiny_subset.cpp",
+      "bytes": 205,
+      "mode": 420,
+      "sha256": "c250ad5f7b5aa16c5ac7adfb02dd1de2bb910e2b9897d022392e25eb9fd18fb3"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/expected/let_literal_order.cpp",
+      "bytes": 122,
+      "mode": 420,
+      "sha256": "977db034d0f5b551e6a664d45af8ce771cfa8ba0b2990ce24b05ac8a29141ab1"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/expected/print_literal.cpp",
+      "bytes": 79,
+      "mode": 420,
+      "sha256": "98c23eaad2eb628e7c614bb8fcd9e38a3fd5c754d35eb8acdd0dfc0e86b812ab"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/invalid/before_bound_identifier.lyk",
+      "bytes": 26,
+      "mode": 420,
+      "sha256": "fd08cb709db3374712f89bf7c07e8e3685d27eb55033569071f274e06e7d43f3"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/invalid/duplicate_binding.lyk",
+      "bytes": 20,
+      "mode": 420,
+      "sha256": "954effbc6848c5958d42d8616fa21552afb37d4850fad6430439b03032ca3b1d"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/invalid/extra_operand.lyk",
+      "bytes": 18,
+      "mode": 420,
+      "sha256": "f8332c2008097cb2c1e26bc637755269c4591154b35ed10a0bb7b43cad828866"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/invalid/invalid_identifier.lyk",
+      "bytes": 23,
+      "mode": 420,
+      "sha256": "6b22918ee876e9fe79726f564cbc8e8d5bd93c42489524ab2eb224f61d8dd809"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/invalid/nested_missing_close.lyk",
+      "bytes": 21,
+      "mode": 420,
+      "sha256": "cdec563e92189c65103d4254303dcf84178c182763e7fd2bfe3a1a4944286698"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/invalid/unknown_identifier.lyk",
+      "bytes": 16,
+      "mode": 420,
+      "sha256": "1836ba2e76a254cdf387da74934bdd50b38f13f452307f85c8f59681e84897af"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/invalid/unsupported_form.lyk",
+      "bytes": 12,
+      "mode": 420,
+      "sha256": "02ca58a5a2a30db592dcc524121f154623d5ac0e379647b49a09315ce34971c4"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/invalid/unsupported_operator.lyk",
+      "bytes": 16,
+      "mode": 420,
+      "sha256": "aeb7382b8162140d381e014fb4e9ee855d95d3b0701ce4909798e330396620dc"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/valid/arithmetic.lyk",
+      "bytes": 43,
+      "mode": 420,
+      "sha256": "138235c36d12f46915b70fa12eea8c684ae78d20fe3df244bd67c7a6f8ea97b6"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/valid/full_tiny_subset.lyk",
+      "bytes": 103,
+      "mode": 420,
+      "sha256": "efb47bf65f1a9a94dece074d730b1757bdab468b5f321a252646e407fc4ec8d9"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/valid/let_literal_order.lyk",
+      "bytes": 32,
+      "mode": 420,
+      "sha256": "6db2a9ac0e18854c6beb5fd84c3ef1852ef760339937cedb9385ac1cb92c4683"
+    },
+    {
+      "path": "A/lykn-cpp-transpiler-trial/tests/fixtures/valid/print_literal.lyk",
+      "bytes": 11,
+      "mode": 420,
+      "sha256": "7b83c874f42417c859b72ab09ffcb8676ec25cf4cacecca836e6fa1a499e0226"
+    },
+    {
+      "path": "B/cdc-project-prompt.md",
+      "bytes": 7857,
+      "mode": 420,
+      "sha256": "0f90b17f830a3f5123ffff6b8d9081fb712cfc06104ee897d5a4546ee1f0a241"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/arc01-framework-comparison.md",
+      "bytes": 8556,
+      "mode": 420,
+      "sha256": "3436a92543b59c247d43e253b8f31b6579e750cec1fb98bda8fcd55e46ce005a"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/article-source-notes.md",
+      "bytes": 10600,
+      "mode": 420,
+      "sha256": "274bfbf4ff9f9b3563fc059acbdb1bf51f496f3a91ca7d9e0b8d7a7505f3598e"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/evaluation-notes.md",
+      "bytes": 1040,
+      "mode": 420,
+      "sha256": "2d78d904cab46a8d46ae56cb8f740e0c1e05034bd0c98df59953ae0722f94d91"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/final-framework-regression-assessment.md",
+      "bytes": 12582,
+      "mode": 420,
+      "sha256": "254dc99280600359fd94ee7fc19bb296f2e5a1562f67f3c79acad0ef7105b0f8"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/Cargo.lock",
+      "bytes": 163,
+      "mode": 420,
+      "sha256": "922fa361eab0341775bee8543be035f95dda3ef2767a3dca8156484d0f318a91"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/Cargo.toml",
+      "bytes": 282,
+      "mode": 420,
+      "sha256": "4d2bbfabc5d4040f12ca4d6c04f59bdeb0c2166065deedf0816c455838ad8fd9"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/examples/generated/arithmetic_mix.cpp",
+      "bytes": 188,
+      "mode": 420,
+      "sha256": "de81f96a605167c28a5d80ccc29da7be5fa43fc79243cdf1e4d78752ffbc4f24"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/examples/generated/happy_path.cpp",
+      "bytes": 130,
+      "mode": 420,
+      "sha256": "0bacf5716866f6d32431dbfe5fb0284a3fad5adc2174a1cdab2dfe16a22f12e3"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/binary_too_few_operands.lykn",
+      "bytes": 15,
+      "mode": 420,
+      "sha256": "65973b8a78ff99fc1e80aee554a0ab2ba47c3f98c9a21d15b7206103c0786592"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/binary_too_many_operands.lykn",
+      "bytes": 19,
+      "mode": 420,
+      "sha256": "f2d1c0c234973cef9ed6bbd275b63c47e458ec453fe2b66b94848512d31e9eed"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/cpp_reserved_word.lykn",
+      "bytes": 15,
+      "mode": 420,
+      "sha256": "23bda9e3e70add38b313adc262f5c18790e6c4927c6920b6151794b0dd1570c6"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/division_by_zero.lykn",
+      "bytes": 27,
+      "mode": 420,
+      "sha256": "a5baa92b52fb46742c45bd4a018d2ddc61083e7182ab2dfde113adce3c7af68c"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/duplicate_binding.lykn",
+      "bytes": 21,
+      "mode": 420,
+      "sha256": "4ec778de6c95c8ee7934504c52fc8d53e5f84b348e559f5583554d4f4c41c6ca"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/hyphenated_identifier.lykn",
+      "bytes": 18,
+      "mode": 420,
+      "sha256": "5ab8da5d30342576560041b351031b985c5154ba0836172b68f294db61526ca1"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/integer_overflow.lykn",
+      "bytes": 20,
+      "mode": 420,
+      "sha256": "9e62fe0fb18cd34858a10b40134bddae3f64046fc09478e4015181cc95cbb3e7"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/malformed_expression.lykn",
+      "bytes": 12,
+      "mode": 420,
+      "sha256": "b0d26e782941a57de62386cf60b7af70de3dc49a8b7e8ac77bb348c1a1a4117c"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/malformed_top_level.lykn",
+      "bytes": 9,
+      "mode": 420,
+      "sha256": "012962d8b2bec3df51bf6a0dbf40fc0e3810940a5c358e7a1022b4056121f60a"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/missing_let_expression.lykn",
+      "bytes": 9,
+      "mode": 420,
+      "sha256": "2918a2f97603fd0c56a008f6b0a09cae714ff26f26c2e214fcc36312df59888f"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/missing_print_expression.lykn",
+      "bytes": 9,
+      "mode": 420,
+      "sha256": "e55ddf4ebc598ceca8ae39e327f4eacda6fc46677f987d8ccb2782d0e1c7e27c"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/missing_top_level_close_paren.lykn",
+      "bytes": 10,
+      "mode": 420,
+      "sha256": "73cce3724c463feab7fb9eb7345eae40a2cedbdd39a3798d3eb01e98b979dd03"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/reserved_double_underscore.lykn",
+      "bytes": 20,
+      "mode": 420,
+      "sha256": "fedef9690f2640f9500eeaece7f3583e28a9e0cb0881fb16898e0b6a32face58"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/reserved_upper_underscore.lykn",
+      "bytes": 16,
+      "mode": 420,
+      "sha256": "d8c4b961a91bd17d74974839702ceb583daa9a8345864fde0b71613736dbc6b1"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/trailing_non_form_token.lykn",
+      "bytes": 16,
+      "mode": 420,
+      "sha256": "c7d603b6b0f75a3e2fae9342a1aeb7fd368d36487f376853cff7edc4febd9042"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/unsupported_expression_operator.lykn",
+      "bytes": 17,
+      "mode": 420,
+      "sha256": "7595eb30a83e2a7396cd02d02b68cecb56c374738cd9323b257ee899a387c392"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/unsupported_form.lykn",
+      "bytes": 9,
+      "mode": 420,
+      "sha256": "5241004c5b5ffb506b142fe06b0697c1f9e047c09b75bfe561efb6dc023387d0"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/invalid/use_before_binding_in_let.lykn",
+      "bytes": 27,
+      "mode": 420,
+      "sha256": "653d5ec533c2062b7fed27cc5a1b1e5b26d58f1aa265ff85c4a49cbdef93064b"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/valid/arithmetic_mix.lykn",
+      "bytes": 90,
+      "mode": 420,
+      "sha256": "aadcfc0ebc72529e1386d28c7d513a853f7e76b59238f6ac9b64bce22145a704"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/fixtures/valid/happy_path.lykn",
+      "bytes": 43,
+      "mode": 420,
+      "sha256": "daad79882df7631a89c96114fdbcdef28b615607e473ec53e52373f48b54f9ea"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/src/ast.rs",
+      "bytes": 1108,
+      "mode": 420,
+      "sha256": "068d620b22b98f3427fa0b67d233791060da0b4a763ed74a0d1c74592031abfe"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/src/codegen.rs",
+      "bytes": 2155,
+      "mode": 420,
+      "sha256": "6d7f59aa7bdb0ae917303932eba33fe50405f90638616a628f3e061ebb7e4fc4"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/src/error.rs",
+      "bytes": 3743,
+      "mode": 420,
+      "sha256": "9374d7d011eeaf11b6e88e4bc6be08cb4d77f53f88f1a5b57255957244582e01"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/src/lib.rs",
+      "bytes": 719,
+      "mode": 420,
+      "sha256": "aae0fab4db36f53c5c37d1551f2233e63fcff25bd1a27c34235f8678994865bc"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/src/main.rs",
+      "bytes": 1370,
+      "mode": 420,
+      "sha256": "1fe07233b0038fad28656429caf87ed141d956ec684b0a7c3d5d94f133d30c7e"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/src/parser.rs",
+      "bytes": 11310,
+      "mode": 420,
+      "sha256": "f4c7628bfdb5179ce5560d6e4949316073b05c1f6f5ca11e6d4839782092bb4f"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/tests/cli.rs",
+      "bytes": 2193,
+      "mode": 420,
+      "sha256": "c8f5db77feba99742d4653623a2a69f5383ffc11d8bae1815a98616e8f71d7ff"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/tests/diagnostic_matrix.rs",
+      "bytes": 6672,
+      "mode": 420,
+      "sha256": "f41d877221b338d35f05dd7ac549e9a08b2db3042c8e3f873c2e9368762a749d"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/tests/transpile.rs",
+      "bytes": 6085,
+      "mode": 420,
+      "sha256": "1aafe39b0e2a582e50a3559a8afef0f9c83ffe1a0ce0a3b9646e7243b840e381"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/phase2a-post-arc02-framework-comparison.md",
+      "bytes": 11709,
+      "mode": 420,
+      "sha256": "b3146aabc2cbfc60eedeb874f4eeae281a374b35405b2e81bc2f406fefe94bb1"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/arc-plan.md",
+      "bytes": 2770,
+      "mode": 420,
+      "sha256": "ee9644ce0536a90711c5e13718490ba4ae1a65641d4a57bd3d66ada8272537e1"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/closing-report.md",
+      "bytes": 5092,
+      "mode": 420,
+      "sha256": "b70df360a9635e008fbb77ca5482386a0d11ee239085b9199853454b88a1181f"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/ledger.md",
+      "bytes": 1728,
+      "mode": 420,
+      "sha256": "93b17c07892645d36ebfee356148a7ba46b2a6ebef1179b257dd67765e713083"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice01-crate-scaffold-and-happy-path/cc-prompt.md",
+      "bytes": 4922,
+      "mode": 420,
+      "sha256": "79bca2451e5248fa6483edd5141a14e1930d66a8f570cff1e03378cb61a30eac"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice01-crate-scaffold-and-happy-path/cdc-verification.md",
+      "bytes": 7642,
+      "mode": 420,
+      "sha256": "41e12b6bf65dee6459a90d842f3eb330f719985965ff67e3c32ce53af422f044"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice01-crate-scaffold-and-happy-path/closing-report.md",
+      "bytes": 7728,
+      "mode": 420,
+      "sha256": "5456c5d2eb22ada464afab347a633d1c0525a95b23ed5e88218d5f5a62b8efce"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice01-crate-scaffold-and-happy-path/ledger.md",
+      "bytes": 2993,
+      "mode": 420,
+      "sha256": "d1b58a2b580b49506deef466ec6194c81b9ced2365037d48243dddaf02f374e4"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice01-crate-scaffold-and-happy-path/slice-plan.md",
+      "bytes": 2564,
+      "mode": 420,
+      "sha256": "70942aa858fb46beea887373fab89553d040079e785b135a568cd8a0c92bfc08"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice02-diagnostic-hardening/cc-prompt.md",
+      "bytes": 5297,
+      "mode": 420,
+      "sha256": "07538e993659f8da3afba1933cf6c0cb29ea0185ffbde2bdee65e33597aa060a"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice02-diagnostic-hardening/cdc-verification.md",
+      "bytes": 9007,
+      "mode": 420,
+      "sha256": "4d9cc63bfd598e51febfebdc88c553dcaaa0b4fd860646b7d6fc0572827013bb"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice02-diagnostic-hardening/closing-report.md",
+      "bytes": 10189,
+      "mode": 420,
+      "sha256": "e3aaeafc5458b5c96593c8a572600b37e637896ffdfcecae34c5dc90c3778282"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice02-diagnostic-hardening/ledger.md",
+      "bytes": 3681,
+      "mode": 420,
+      "sha256": "8f01aa8f471a5388f1825c1b23759ae960d0b076ca139f62cd29c91d7c6091a2"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc01-minimum-language-core/slice02-diagnostic-hardening/slice-plan.md",
+      "bytes": 3657,
+      "mode": 420,
+      "sha256": "44099b9085eba00317d8af42c389c110cc9d029007fd50edfd13bef9f79279aa"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc02-diagnostics-and-negative-coverage/arc-plan.md",
+      "bytes": 2463,
+      "mode": 420,
+      "sha256": "0b544b054fcf72ca5dd36fbc21e604240ea273a0954f1a22f693270797957502"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc02-diagnostics-and-negative-coverage/closing-report.md",
+      "bytes": 3305,
+      "mode": 420,
+      "sha256": "ca52c3aedd44f61c7fc2c8eb88306329ecbc9c56e875e18fd1aacf5cd42c355b"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc02-diagnostics-and-negative-coverage/ledger.md",
+      "bytes": 1348,
+      "mode": 420,
+      "sha256": "5fbcb0bdd77207aefbc0e5261ac36ae835533fad8e4aafe3e897c5f5d3dd6d08"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc02-diagnostics-and-negative-coverage/slice01-diagnostic-coverage-matrix/cc-prompt.md",
+      "bytes": 4455,
+      "mode": 420,
+      "sha256": "e436b0a117e7dedce31f13ccc97dea33806a1f784187ce2c0fcfc7a778d5f9fb"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc02-diagnostics-and-negative-coverage/slice01-diagnostic-coverage-matrix/cdc-verification.md",
+      "bytes": 9429,
+      "mode": 420,
+      "sha256": "9f25ad0aed63b1666aaa48f14798757f8c6f3d5101609335dedba138c0579244"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc02-diagnostics-and-negative-coverage/slice01-diagnostic-coverage-matrix/closing-report.md",
+      "bytes": 11296,
+      "mode": 420,
+      "sha256": "63bcae2bda8325f8142c1f7fb34392c3fcd876c6dc0ac23a16693a71d8427b61"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc02-diagnostics-and-negative-coverage/slice01-diagnostic-coverage-matrix/ledger.md",
+      "bytes": 3638,
+      "mode": 420,
+      "sha256": "ce88e204428d73ab51bf540e20cab127724a06c93dc1ebda732a14f6e9a792d3"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc02-diagnostics-and-negative-coverage/slice01-diagnostic-coverage-matrix/slice-plan.md",
+      "bytes": 3224,
+      "mode": 420,
+      "sha256": "ae61b03c9b6937573aa3f96a46a7f43829f4bde914dfb5bf0e668e016f1965e8"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/arc-plan.md",
+      "bytes": 2799,
+      "mode": 420,
+      "sha256": "3666d9d66c268309e4f1aab97b878c038c9d7c60f3140283d4f48ce20137484a"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/closing-report.md",
+      "bytes": 4247,
+      "mode": 420,
+      "sha256": "461cedbe8d9031e523ec58dd0ecbc48e43a0c0e395f3d5d06367cace16ef796a"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/ledger.md",
+      "bytes": 1659,
+      "mode": 420,
+      "sha256": "26bab5348c6090856fe71ac6f961a043416fbc009b1943d347e4fc872b16859a"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice01-cli-and-example-surface/cc-prompt.md",
+      "bytes": 2833,
+      "mode": 420,
+      "sha256": "c28bd31aa0b12b3469b1e2cf7666d770bcb94eda1fbea92ab23d02d8a0bfaf13"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice01-cli-and-example-surface/cdc-verification.md",
+      "bytes": 7620,
+      "mode": 420,
+      "sha256": "1de79d7d596866143ec9e1ba502801b95c0825bc65fe3215344f2d3a65efef28"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice01-cli-and-example-surface/closing-report.md",
+      "bytes": 8732,
+      "mode": 420,
+      "sha256": "28b05724c822f1799728805a06b8ad005f40f80af77794d6499a12cd9aac4fa3"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice01-cli-and-example-surface/ledger.md",
+      "bytes": 2764,
+      "mode": 420,
+      "sha256": "b405fbc459e7aee5b6f13257febf5fe5ad855e3d41034d94d1d76bdd7a327eba"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice01-cli-and-example-surface/slice-plan.md",
+      "bytes": 2570,
+      "mode": 420,
+      "sha256": "3ddb777f18dc29c487c716d04ee5d954221b5fef46b4873796a44b2f6df0998a"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice02-audit-surface-map-and-project-readiness/artifacts/audit-surface-map.md",
+      "bytes": 9609,
+      "mode": 420,
+      "sha256": "d73dde45cf45aca49db6d4561524f5a69d9eb2b8494802d6f15bf3f21d0a0256"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice02-audit-surface-map-and-project-readiness/artifacts/project-readiness-evidence.md",
+      "bytes": 4880,
+      "mode": 420,
+      "sha256": "96f8198af528e8f94aa0995987a447f1a5d6d55e7a7fd5d9a97b5f06dc0dad35"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice02-audit-surface-map-and-project-readiness/cc-prompt.md",
+      "bytes": 4192,
+      "mode": 420,
+      "sha256": "3fd49c2a5a6cdc20cfe3fe4086a321b07cfea76be9b6bc736653f967b7784521"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice02-audit-surface-map-and-project-readiness/cdc-verification.md",
+      "bytes": 8021,
+      "mode": 420,
+      "sha256": "06a6c728ed0b3d6a6f93c9cf3fc37d12d027545df16da1e44ea9e817e83bca9e"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice02-audit-surface-map-and-project-readiness/closing-report.md",
+      "bytes": 10242,
+      "mode": 420,
+      "sha256": "687136b591b1bdfb9a20b2054c0611a02085b1474c8abfebb90ff674f976fd64"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice02-audit-surface-map-and-project-readiness/ledger.md",
+      "bytes": 3922,
+      "mode": 420,
+      "sha256": "30a02c6e799ab089837e258f7e4d85537add16dc65c4507fce7ddfd0a28e72c8"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/arc03-cli-examples-and-audit-readiness/slice02-audit-surface-map-and-project-readiness/slice-plan.md",
+      "bytes": 3783,
+      "mode": 420,
+      "sha256": "36bd641e6728619682ec1e8e013a4e75b5e9740ae5a64e5adc7f9e755d9519ab"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/closing-report.md",
+      "bytes": 9267,
+      "mode": 420,
+      "sha256": "7281b84b46183cae4a0184f69f505846dd90353d8c19be1d049e399adb65a5b4"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/ledger.md",
+      "bytes": 2814,
+      "mode": 420,
+      "sha256": "008a5e6c7df98fabe61f0f49bb9b7cfba23d2a7d5f7cf9c4b304c5bbaa65ab63"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/project-plan.md",
+      "bytes": 8101,
+      "mode": 420,
+      "sha256": "824e349b8ae50eeb336ef2aba78d6e08b8becf748efc979ce29857042221e621"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/project01-tiny-lykn-cpp-transpiler/rust-self-audit-report.md",
+      "bytes": 23796,
+      "mode": 420,
+      "sha256": "5eaa5b7fcd7ce1d5be72b120a6c2dbee9667b6be5826b851fc0778b4a4623c64"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/read-only-self-audit-assessment-rubric.md",
+      "bytes": 4505,
+      "mode": 420,
+      "sha256": "b1573649407eee55723ff82243e8d9cfc99e339395de1026619582f0afc2e1c8"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/read-only-self-audit-prompt.md",
+      "bytes": 9750,
+      "mode": 420,
+      "sha256": "8a12e69fde23b2bcae2e40a4b414f413dff0921d0b0811c66f97d9aef65f84c6"
+    }
+  ],
+  "generated_build_caches": [
+    {
+      "path": "A/lykn-cpp-transpiler-trial/target/",
+      "files": 2562,
+      "bytes": 69545490,
+      "inventory_sha256": "4cc3152df9e3609052288c77039e16273791a83f9314a02acf438472ddc74804",
+      "disposition": "moved locally; ignored, not committed"
+    },
+    {
+      "path": "B/lykn-cpp-transpiler-trial/implementation/lykn-cpp-transpiler/target/",
+      "files": 1166,
+      "bytes": 59825724,
+      "inventory_sha256": "69e2d1244c28ebb2850fd099507ea826d4037c758a7e2cfa7a149db10afa0c70",
+      "disposition": "moved locally; ignored, not committed"
+    }
+  ]
+}

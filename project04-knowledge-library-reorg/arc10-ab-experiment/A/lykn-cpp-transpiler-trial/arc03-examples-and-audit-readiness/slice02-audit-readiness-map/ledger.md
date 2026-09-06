@@ -1,0 +1,28 @@
+# Arc 03 Slice 02: Audit Readiness Map Ledger
+
+## Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|----|-----------|--------|--------------|--------|--------|----------|-------|
+| M-1 | `docs/audit-readiness.md` exists and states that the project is ready for audit, audit not yet performed. | `rg -n -e 'ready for audit, audit not yet performed' -e 'not perform' docs/audit-readiness.md` | serious | operator-feedback | done | attested 2026-09-05: matches at lines 3 and 8. | Exact readiness phrase present. |
+| M-2 | The audit-readiness map covers parser and AST responsibilities with concrete file pointers. | `rg -n -e 'src/parser.rs' -e 'src/ast.rs' -e 'Parser' -e 'AST' docs/audit-readiness.md` | serious | arc-plan | done | attested 2026-09-05: matches parser/AST map and audit starting points at lines 46, 47, 50, 61, 116, and 117. | Parser/API/error/codegen/CLI/tests coverage starts here. |
+| M-3 | The audit-readiness map covers public API and CLI boundaries with concrete file pointers. | `rg -n -e 'src/lib.rs' -e 'src/main.rs' -e 'transpile' -e 'CLI' docs/audit-readiness.md` | serious | arc-plan | done | attested 2026-09-05: matches API/CLI map and test pointers at lines 6, 48, 49, 50, 52, 73, 87, and 121. | Includes file-input and stderr/stdout behavior. |
+| M-4 | The audit-readiness map covers diagnostics and error contracts with concrete file, fixture, and test pointers. | `rg -n -e 'src/error.rs' -e 'tests/fixtures/invalid' -e 'cli_invalid_fixtures' -e 'diagnostic' docs/audit-readiness.md` | serious | arc-plan | done | attested 2026-09-05: matches diagnostics map and command at lines 49, 50, 52, 56, 72, 73, 96, and 118. | Includes malformed and semantic errors. |
+| M-5 | The audit-readiness map covers codegen and generated C++ output surfaces with concrete file pointers. | `rg -n -e 'src/codegen.rs' -e 'examples/' -e 'tests/fixtures/expected' -e 'C\\+\\+' docs/audit-readiness.md` | serious | arc-plan | done | attested 2026-09-05: matches generated C++ scope and codegen/example pointers at lines 6, 25, 35, 49, 51, 52, 76, 78, 86, 87, 119, and 120. | Includes deterministic output style. |
+| M-6 | The audit-readiness map covers fixture and test surfaces with concrete file pointers. | `rg -n -e 'tests/fixtures/valid' -e 'tests/fixtures/invalid' -e 'tests/fixtures/expected' -e 'tests/cli.rs' -e 'src/lib.rs' docs/audit-readiness.md` | serious | arc-plan | done | attested 2026-09-05: matches fixture/test map and review pointers at lines 48, 50, 51, 52, 72, 73, 87, 119, and 121. | Includes library and CLI tests. |
+| M-7 | The audit-readiness map records reproduction commands for fixture-driven CLI tests, C++17 compile/run gates, and normal Rust quality gates. | `rg -n -e 'cargo test cli_valid_fixtures' -e 'cargo test cli_invalid_fixtures' -e 'cargo test generated_cpp_examples_compile' -e 'cargo test generated_cpp_example_runs' -e 'cargo fmt --check' -e 'cargo clippy -- -D warnings' docs/audit-readiness.md` | serious | operator-feedback | done | attested 2026-09-05: all requested copyable commands matched at lines 95-99 and 101. | Commands are copyable. |
+| M-8 | The audit-readiness map distinguishes accepted tiny-language scope from explicit non-goals and later-audit boundaries. | `rg -n -e 'Accepted' -e 'Non-goals' -e 'Out of scope' -e 'later audit' docs/audit-readiness.md` | correctness | project-plan | done | attested 2026-09-05: matched accepted scope, non-goals, out-of-scope, and later audit lines 10, 12, 17, 29, 31, 37, and 38. | Prevents audit scope drift. |
+| M-9 | Existing syntax and fixture docs cross-link to the audit-readiness map. | `rg -n 'docs/audit-readiness.md|audit-readiness' docs/syntax.md tests/fixtures/README.md` | polish | slice-plan | done | attested 2026-09-05: matched `docs/syntax.md:51` and `tests/fixtures/README.md:3`. | Minimal discoverability. |
+| M-10 | Slice 01 fixture and C++ gate evidence remains reproducible after the map work. | `cargo test cli_valid_fixtures && cargo test cli_invalid_fixtures && cargo test generated_cpp_examples_compile && cargo test generated_cpp_example_runs` | serious | arc-plan | done | attested 2026-09-05: all four focused tests passed. | Protects audit substrate. |
+| M-11 | Arc 01 and Arc 02 regression surfaces remain green. | `cargo test print_literal && cargo test let_literal_program && cargo test full_tiny_subset_program && cargo test cli_full_tiny_subset_program` | serious | arc-plan | done | attested 2026-09-05: all four focused regression filters passed. | Protects previous arcs. |
+| M-12 | Normal Rust quality gates pass. | `cargo fmt --check && cargo test && cargo clippy -- -D warnings` | serious | slice-plan | done | attested 2026-09-05: passed; 21 library tests, 11 CLI tests, 0 doctests, clippy clean. | Full gate after focused checks. |
+| M-13 | CC close report walks M-1 through M-12 and bubbles up whether Arc 03 can proceed to arc-level composition and project close preparation. | `rg -n -e 'M-1' -e 'M-13' -e 'Bubble-up' arc03-examples-and-audit-readiness/slice02-audit-readiness-map/closing-report.md` | serious | project-management | done | attested 2026-09-05: passed; matches at closing report lines 21, 26, 35, 36, 37, 38, 47, 63, and 79. | CC creates closing-report; CDC creates cdc-verification. |
+
+## What Worked
+
+- Slice 01's fixture and C++ gate substrate made this slice a small map-and-link
+  change rather than new implementation work.
+- Keeping the map topic-oriented gives later auditors both a reading order and
+  concrete file paths.
+- The exact "ready for audit, audit not yet performed" phrase is now present in
+  the audit entrypoint, preserving the project-close wording requirement.
