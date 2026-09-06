@@ -533,5 +533,4 @@ invention:
 ## Component History
 
 The work-verification component history lives at
-[`../version-history.md`](../version-history.md). Current ledger-discipline
-protocol version: 2.4, 2026-09-01.
+[`../version-history.md`](../version-history.md).

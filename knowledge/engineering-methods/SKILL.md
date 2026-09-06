@@ -5,9 +5,9 @@ description: |
   knowledge substrate, collaborative posture, process rigour, and the 9-point
   SDLC. Use when designing how a body of LLM-assisted engineering work should be
   structured, evaluated, or improved.
-version: 1.1.7
 license: MIT
 metadata:
+  version: "1.11.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills

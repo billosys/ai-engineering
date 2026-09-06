@@ -6,6 +6,8 @@ skill entrypoint, guides, templates, and package surface.
 
 ### Version 1.0.0 - 2026-09-05
 
+Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.
+
 Initial method skill for practical scientific inquiry and experiment planning.
 The first package defines guide routes for inquiry framing, experiment design,
 controls and confounds, operational measures, protocol and prompt design,

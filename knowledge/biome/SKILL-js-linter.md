@@ -1,6 +1,5 @@
 ---
 name: biome-js-linter
-displayName: Biome JS Linter
 description: >
   Pure JavaScript/ECMAScript linting guidance based on Biome's lint rules,
   filtered to language-level concerns only. No React, Node.js, JSX, CSS, or
@@ -10,6 +9,7 @@ description: >
 license: MIT
 metadata:
   version: "1.0.0"
+  displayName: Biome JS Linter
   domain: linting
   triggers: biome, lint, javascript, ecmascript, JS style, code quality, code review, vanilla JS
   role: reviewer

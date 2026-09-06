@@ -7,9 +7,9 @@ description: |
   building design tokens, creating fluid responsive designs, reviewing visual
   quality, breaking out of template patterns, designing navigation/wayfinding,
   theming across multiple sites, or answering any visual design question.
-version: 1.0.0
 license: MIT
 metadata:
+  version: "1.0.0"
   hermes:
     tags: [design, css, color, typography, layout, oklch, cube-css, utopia]
     category: web-frontend

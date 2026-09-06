@@ -33,7 +33,7 @@ CCDP_NAME := ccdp
 CCDP_ZIP := $(ZIP_OUTPUT_DIR)/$(CCDP_NAME).zip
 CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 
-.PHONY: all skills install uninstall clean help check-skills check-package-paths print-skill-zips \
+.PHONY: all skills install uninstall clean help check-skills check-package-paths check-skill-versions check-skill-version-source test-skill-versions print-skill-zips \
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
 	agent-coordination code-auditing contribution-style engineering-methods project-management \
@@ -88,6 +88,8 @@ help:
 	@echo "  make skills             -> all installable zips except collaboration-framework"
 	@echo "  make all                -> skills + collab-framework"
 	@echo "  make check-skills       -> validate every SKILL.md description length"
+	@echo "  make check-skill-versions -> validate skill versions in source and generated packages"
+	@echo "  make test-skill-versions -> run version-gate regression tests"
 	@echo "  make print-skill-zips   -> list release-uploadable skill zip paths"
 	@echo "  make ccdp               -> assemble the CCDP protocol document"
 	@echo "  make ccdp-package       -> build $(CCDP_ZIP) (protocol package)"
@@ -194,7 +196,10 @@ collab-framework: collab-framework-clean
 			echo "ERROR: missing required file: $$f" >&2; exit 1; \
 		fi; \
 		dest="$$f"; \
-		case "$$f" in knowledge/*/SKILL.md) dest="$${f%/SKILL.md}/ENTRYPOINT.md";; esac; \
+		case "$$f" in \
+				knowledge/collaboration-framework/version-history.md) dest="version-history.md";; \
+				knowledge/*/SKILL.md) dest="$${f%/SKILL.md}/ENTRYPOINT.md";; \
+			esac; \
 		mkdir -p "$(CF_STAGE)/$$(dirname "$$dest")"; \
 		./scripts/stage-skill-entrypoint --embedded-support "$$f" "$(CF_STAGE)/$$dest"; \
 	done
@@ -220,7 +225,7 @@ collab-framework-clean:
 #   $(1) = domain subdir under knowledge/   (e.g. go)
 #   $(2) = skill file within that subdir    (e.g. SKILL.md)
 # The contents are wrapped in <name>/ and contain exactly:
-#   <name>/<skill-file>   and   <name>/guides/**
+#   <name>/SKILL.md, <name>/version-history.md, and <name>/guides/**
 # ---------------------------------------------------------------------------
 
 KNOWLEDGE := knowledge
@@ -237,6 +242,7 @@ define pack_skill
 	rm -rf "$$stage"; mkdir -p "$$stage"; \
 	./scripts/stage-skill-entrypoint "$$src" "$$stage/SKILL.md"; \
 	cp -R "$$dir/guides" "$$stage/guides"; \
+	cp "$$dir/version-history.md" "$$stage/version-history.md"; \
 	find "$$stage" -name '.DS_Store' -delete; \
 	zip_path="$(ZIP_OUTPUT_DIR)/$$name.zip"; \
 	echo ">> writing $$zip_path"; \
@@ -342,6 +348,10 @@ scientific-methods:
 skills: agent-coordination code-auditing contribution-style engineering-methods project-management \
 	testing work-verification scientific-methods rust go cpp js erlang cobalt design tailwindcss deno biome
 
+collab-framework agent-coordination code-auditing contribution-style engineering-methods \
+project-management testing work-verification scientific-methods rust go cpp js erlang \
+cobalt design tailwindcss deno biome: check-skill-version-source
+
 ## all: build every installable skill zip including the collaboration-framework zip
 all: skills collab-framework
 
@@ -350,8 +360,20 @@ check-skills:
 	@$(CHECK_SKILL) $(ALL_SKILL_FILES)
 	@echo ">> all skill descriptions within limit"
 
-## check-package-paths: build all zips and validate package-context Markdown paths
-check-package-paths: all
+## check-skill-version-source: discover and validate every source skill
+check-skill-version-source:
+	@./scripts/check-skill-versions
+
+## test-skill-versions: exercise the source and package contract with mutation fixtures
+test-skill-versions:
+	@python3 -B -m unittest discover -s scripts/tests -p 'test_skill_versions.py'
+
+## check-skill-versions: validate source and freshly built package copies
+check-skill-versions: check-skill-version-source all
+	@./scripts/check-skill-versions --packages $(INSTALL_ZIPS)
+
+## check-package-paths: build all zips and validate versions and package-context Markdown paths
+check-package-paths: check-skill-versions
 	@./scripts/check-package-paths --exceptions "$(PACKAGE_PATH_EXCEPTIONS)" $(INSTALL_ZIPS)
 
 ## print-skill-zips: list the skill zip paths managed by this Makefile

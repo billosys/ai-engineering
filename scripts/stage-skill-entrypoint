@@ -33,7 +33,11 @@ COLLABORATION_FRAMEWORK_TRANSFORMS = {
     "../work-verification/": "./knowledge/work-verification/",
 }
 
-COLLABORATION_FRAMEWORK_DEPENDENCY_TRANSFORMS: dict[Path, dict[str, str]] = {}
+COLLABORATION_FRAMEWORK_DEPENDENCY_TRANSFORMS: dict[Path, dict[str, str]] = {
+    Path("knowledge/collaboration-framework/guides/04-component-route-table.md"): {
+        "../version-history.md": "../../../version-history.md",
+    },
+}
 
 FRAMEWORK_COMPONENTS = {
     "agent-coordination",
@@ -61,36 +65,6 @@ def replace_bare_guide_refs(text: str, refs: list[str]) -> str:
         pattern = re.compile(rf"(?<![A-Za-z0-9_./-]){re.escape(ref)}(?![A-Za-z0-9_./-])")
         text = pattern.sub(f"guides/{ref}", text)
     return text
-
-
-def frontmatter_version(text: str) -> str | None:
-    if not text.startswith("---\n"):
-        return None
-    for line in text.splitlines()[1:]:
-        if line == "---":
-            return None
-        match = re.match(r"^version:\s*([A-Za-z0-9_.-]+)\s*$", line)
-        if match:
-            return match.group(1)
-    return None
-
-
-def sync_current_version_text(text: str) -> str:
-    version = frontmatter_version(text)
-    if version is None or "Current version:" not in text:
-        return text
-
-    def replace(match: re.Match[str]) -> str:
-        opener = match.group(2) or ""
-        closer = match.group(4) if opener else ""
-        return f"{match.group(1)}{opener}{version}{closer}"
-
-    version_token = r"[A-Za-z0-9_-]+(?:\.[A-Za-z0-9_-]+)*"
-    return re.sub(
-        rf"(Current version:\s*)(\*\*)?({version_token})(\*\*)?",
-        replace,
-        text,
-    )
 
 
 def rewrite_embedded_skill_links(text: str) -> str:
@@ -170,14 +144,9 @@ def main() -> int:
     else:
         transformed = transform_entrypoint(src, repo_relative_src)
     if transformed is None:
-        original = src.read_text(encoding="utf-8")
-        text = sync_current_version_text(original)
-        if text == original:
-            shutil.copyfile(src, dest)
-        else:
-            dest.write_text(text, encoding="utf-8")
+        shutil.copyfile(src, dest)
     else:
-        dest.write_text(sync_current_version_text(transformed), encoding="utf-8")
+        dest.write_text(transformed, encoding="utf-8")
     shutil.copymode(src, dest)
     return 0
 

@@ -14,9 +14,9 @@ description: |
   and tuning on the BEAM, diagnosing live systems, writing eunit/common_test/PropEr
   tests, documenting with EDoc and OTP-27 -doc attributes, running distributed
   Erlang, or wiring the rebar3 + dialyzer + xref + elvis + erlfmt toolchain.
-version: 1.0.0
 license: MIT
 metadata:
+  version: "1.0.0"
   hermes:
     tags: [erlang, otp, beam, gen_server, supervisor, distributed, let-it-crash]
     category: systems-programming

@@ -12,6 +12,7 @@ description: |
   triaging generated C++ for safety, concurrency, performance, and idiom drift.
 license: MIT
 metadata:
+  version: "1.0.0"
   hermes:
     tags: [cpp, cplusplus, core-guidelines, raii, templates, concurrency, cmake]
     category: systems-programming

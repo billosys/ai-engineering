@@ -1,0 +1,309 @@
+#!/usr/bin/env python3
+"""Check repository skill versions and their generated package copies.
+
+Repository maintenance policy lives in AGENTS.md. This checker recognizes
+explicit document/skill version declarations, not arbitrary version-shaped
+subject matter. It does not rewrite files or infer semantic version bumps.
+"""
+from __future__ import annotations
+
+import argparse
+from dataclasses import dataclass
+from pathlib import Path, PurePosixPath
+import re
+import sys
+import zipfile
+
+VERSION = r'(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?'
+HISTORY_VERSION = re.compile(r'^#{2,6} Version (\d+(?:\.\d+){0,2}(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?)(?:\s|$)', re.M)
+ENTRYPOINT = re.compile(r'SKILL(?:-[\w-]+)?\.md$')
+# The existing shared root is explicitly deferred by the operator. Histories
+# remain independent named sections; this is not a shared version authority.
+SHARED = {'knowledge/biome': {'biome-js-linter', 'biome-linter'}}
+PROVENANCE = {'sources', 'workbench', '.git', '__pycache__'}
+EXTRA_HISTORY = re.compile(r'^(?:(?:version[-_]history|change[-_]?log)(?:[-_.].*)?|history(?:\.[^.]+)?)$', re.I)
+
+
+@dataclass
+class Skill:
+    path: str
+    name: str
+    version: str
+    history: str
+
+
+def version_key(value: str) -> tuple:
+    core, _, pre = value.split('+', 1)[0].partition('-')
+    parts = tuple(map(int, core.split('.')))
+    identifiers = tuple((0, int(p)) if p.isdigit() else (1, p) for p in pre.split('.'))
+    return parts + (0,) * (3 - len(parts)) + (not bool(pre), identifiers)
+
+
+def frontmatter(text: str, label: str, errors: list[str]) -> tuple[dict[str, str], str]:
+    lines = text.splitlines()
+    if not lines or lines[0] != '---' or '---' not in lines[1:]:
+        errors.append(f'{label}: missing or unterminated YAML frontmatter')
+        return {}, text
+    end = lines.index('---', 1)
+    fields: dict[str, str] = {}
+    parents: list[tuple[int, str]] = []
+    seen = set()
+    block_indent = None
+    # Match the installed skill-creator validator's supported top-level keys.
+    # Use block-form metadata in this repo so its version is unambiguous without
+    # adding a runtime YAML dependency to the Make-backed gate.
+    allowed = {'name', 'description', 'license', 'allowed-tools', 'metadata'}
+    for line in lines[1:end]:
+        indent = len(line) - len(line.lstrip())
+        if block_indent is not None:
+            if not line.strip() or indent > block_indent:
+                continue
+            block_indent = None
+        if not line.strip() or line.lstrip().startswith('#'):
+            continue
+        while parents and parents[-1][0] >= indent:
+            parents.pop()
+        match = re.match(r'''^(\s*)["']?([\w.-]+)["']?:\s*(.*?)\s*$''', line)
+        if not match:
+            continue
+        whitespace, key, value = match.groups()
+        path = tuple(parent[1] for parent in parents) + (key,)
+        value = re.sub(r'\s+#.*$', '', value).strip()
+        if not whitespace:
+            if key not in allowed:
+                errors.append(f'{label}: unsupported top-level field {key}; custom fields belong in metadata')
+            if path in seen:
+                errors.append(f'{label}: duplicate {key} field')
+        if key == 'metadata.version' or (key == 'version' and path != ('metadata', 'version')):
+            errors.append(f'{label}: version must be metadata.version, not a top-level or differently nested field')
+        if path == ('metadata',) and value:
+            errors.append(f'{label}: metadata must use a block mapping with a version child')
+        if path == ('metadata', 'version'):
+            if path in seen:
+                errors.append(f'{label}: duplicate metadata.version field')
+            fields['version'] = value.strip('\"\'')
+        elif path == ('name',):
+            fields['name'] = value.strip('\"\'')
+        seen.add(path)
+        if re.fullmatch(r'[|>][-+]?', value):
+            block_indent = indent
+        elif not value:
+            parents.append((indent, key))
+    if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', fields.get('name', '')):
+        errors.append(f'{label}: missing or invalid skill name')
+    value = fields.get('version', '')
+    if not re.fullmatch(VERSION, value):
+        errors.append(f'{label}: require one metadata.version semantic version (major.minor.micro)')
+    elif '-' in value.split('+', 1)[0]:
+        pre = value.split('+', 1)[0].split('-', 1)[1]
+        if any(p.isdigit() and len(p) > 1 and p.startswith('0') for p in pre.split('.')):
+            errors.append(f'{label}: numeric prerelease identifiers must not have leading zeroes')
+    return fields, '\n'.join(lines[end + 1:])
+
+
+def history_section(text: str, name: str, shared: bool, label: str, errors: list[str]) -> str:
+    if not shared:
+        return text
+    sections = list(re.finditer(r'^## Skill: ([a-z0-9-]+)\s*$', text, re.M))
+    if {m[1] for m in sections} != SHARED['knowledge/biome']:
+        errors.append(f'{label}: shared history sections must name exactly the two Biome skills')
+    if sections and HISTORY_VERSION.search(text[:sections[0].start()]):
+        errors.append(f'{label}: shared history has an unowned version entry')
+    matches = [i for i, m in enumerate(sections) if m[1] == name]
+    if len(matches) != 1:
+        errors.append(f'{label}: require exactly one named history section for {name}')
+        return ''
+    i = matches[0]
+    return text[sections[i].end():sections[i + 1].start() if i + 1 < len(sections) else len(text)]
+
+
+def check_history(text: str, skill: Skill, shared: bool, errors: list[str]) -> None:
+    section = history_section(text, skill.name, shared, skill.history, errors)
+    versions = HISTORY_VERSION.findall(section)
+    if versions.count(skill.version) != 1:
+        errors.append(f'{skill.history}: require exactly one entry for {skill.name} {skill.version}')
+    if re.fullmatch(VERSION, skill.version) and any(version_key(v) > version_key(skill.version) for v in versions):
+        errors.append(f'{skill.history}: history contains a version newer than {skill.name} metadata')
+
+
+def prose_lines(text: str):
+    fence = None
+    for number, line in enumerate(text.splitlines(), 1):
+        marker = re.match(r'^\s*(`{3,}|~{3,})', line)
+        if marker:
+            token = marker[1]
+            if fence is None:
+                fence = token
+            elif token[0] == fence[0] and len(token) >= len(fence):
+                fence = None
+            continue
+        if fence is None:
+            yield number, line
+
+
+def check_body(text: str, label: str, names: set[str], errors: list[str]) -> None:
+    # Explicit labels cover stale versions regardless of whether they equal the
+    # current version. Fenced examples and upstream sources are subject matter.
+    number = r'v?\d+(?:\.\d+){1,2}(?:[-+][\w.-]+)?'
+    declarations = [
+        rf'^\s*(?:\*\*)?Version(?:\*\*)?\s*:\s*(?:\*\*)?{number}',
+        rf'\b(?:Current version|This version|This wayfinder)\s*:\s*(?:\*\*)?{number}',
+        rf'^#+\s+(?:Version\s+|v){number}',
+        rf'\b(?:skill|component|guide|framework|wayfinder|ledger-discipline)(?:\s+protocol)?\s+version\s*:\s*{number}',
+        rf'^version:\s*[\"\']?{number}',
+    ]
+    aliases = '|'.join(re.escape(n) for n in sorted(names))
+    if aliases:
+        declarations.append(rf'\b(?:{aliases})(?:\s+(?:skill|version|release))?\s+(?:v|version\s+)?{number}\b')
+    lines = list(prose_lines(text))
+    for i, (line_number, line) in enumerate(lines):
+        # Join a continuation for labels such as "Current ledger-discipline\nprotocol version".
+        joined = line + (' ' + lines[i + 1][1] if i + 1 < len(lines) else '')
+        if any(re.search(pattern, joined, re.I) for pattern in declarations):
+            errors.append(f'{label}:{line_number}: duplicate skill/document version declaration')
+        heading = re.match(r'^#{1,6}\s+(?:Version History|Change History|Changelog)\s*$', line, re.I)
+        if heading:
+            following = []
+            for _, candidate in lines[i + 1:]:
+                if candidate.startswith('#'):
+                    break
+                if candidate.strip() and candidate.strip() != '---':
+                    following.append(candidate)
+            # A navigation-only link is fine; a second change record is not.
+            if following and not (len(following) <= 2 and 'version-history.md' in ' '.join(following)
+                                  and not re.search(r'\b\d{4}-\d{2}-\d{2}\b', ' '.join(following))):
+                errors.append(f'{label}:{line_number}: embedded change history belongs in the sibling history')
+
+
+def owned_files(root: Path):
+    for path in sorted(root.rglob('*')):
+        if path.is_file() and not any(p in PROVENANCE for p in path.relative_to(root).parts):
+            yield path
+
+
+def check_source(repo: Path, errors: list[str]) -> dict[str, Skill]:
+    files = list(owned_files(repo / 'knowledge'))
+    entries = [p for p in files if ENTRYPOINT.fullmatch(p.name)]
+    if not entries:
+        errors.append('knowledge/: no skill entrypoints discovered')
+    skills = {}
+    roots: dict[Path, list[Skill]] = {}
+    for path in entries:
+        label = path.relative_to(repo).as_posix()
+        fields, _ = frontmatter(path.read_text(), label, errors)
+        name = fields.get('name', '')
+        if name in skills:
+            errors.append(f'{label}: duplicate source skill name {name}')
+        skill = Skill(label, name, fields.get('version', ''), (path.parent / 'version-history.md').relative_to(repo).as_posix())
+        skills[name] = skill
+        roots.setdefault(path.parent, []).append(skill)
+    names = set(skills)
+    for root, members in roots.items():
+        relative = root.relative_to(repo).as_posix()
+        shared = len(members) > 1
+        if shared and {s.name for s in members} != SHARED.get(relative):
+            errors.append(f'{relative}: shared skill root needs an explicit ownership decision')
+        history = root / 'version-history.md'
+        if not history.is_file():
+            errors.append(f'{relative}: missing sibling version-history.md')
+        else:
+            for skill in members:
+                check_history(history.read_text(), skill, shared, errors)
+        # Nested skill roots own their own files; do not count them twice.
+        for path in files:
+            if not path.is_relative_to(root) or any(path.is_relative_to(other) for other in roots if other != root and other.is_relative_to(root)):
+                continue
+            label = path.relative_to(repo).as_posix()
+            if path == history:
+                continue
+            if EXTRA_HISTORY.fullmatch(path.name):
+                errors.append(f'{label}: additional history file')
+            if re.search(r'(?:^|[-_])v\d+\.\d+', path.relative_to(root).as_posix()):
+                errors.append(f'{label}: versioned skill filename or directory')
+            try:
+                text = path.read_text(encoding='utf-8')
+            except UnicodeDecodeError:
+                continue
+            if ENTRYPOINT.fullmatch(path.name):
+                _, text = frontmatter(text, label, [])
+            check_body(text, label, names, errors)
+    return skills
+
+
+def check_package(path: Path, skills: dict[str, Skill], repo: Path, errors: list[str]) -> None:
+    try:
+        with zipfile.ZipFile(path) as archive:
+            members = [n for n in archive.namelist() if not n.endswith('/')]
+            if len(members) != len(set(members)):
+                errors.append(f'{path}: duplicate archive entries')
+            for n in members:
+                if n.startswith('/') or '..' in PurePosixPath(n).parts:
+                    errors.append(f'{path}:{n}: invalid archive path')
+            entries = [n for n in members if PurePosixPath(n).name in {'SKILL.md', 'ENTRYPOINT.md'}]
+            root_entries = [n for n in entries if len(PurePosixPath(n).parts) == 2 and n.endswith('/SKILL.md')]
+            if len(root_entries) != 1:
+                errors.append(f'{path}: require exactly one package-root SKILL.md')
+            histories = set()
+            seen_names = set()
+            for entry in entries:
+                fields, _ = frontmatter(archive.read(entry).decode(), f'{path}:{entry}', errors)
+                name = fields.get('name', '')
+                if name in seen_names:
+                    errors.append(f'{path}:{entry}: duplicate packaged skill {name}')
+                seen_names.add(name)
+                if entry in root_entries and (name != path.stem or PurePosixPath(entry).parts[0] != name):
+                    errors.append(f'{path}:{entry}: package identity differs from its root skill name')
+                if entry not in root_entries and (path.stem != 'collaboration-framework' or entry.endswith('/SKILL.md')):
+                    errors.append(f'{path}:{entry}: unexpected nested skill entrypoint')
+                source = skills.get(name)
+                if source is None:
+                    errors.append(f'{path}:{entry}: unknown source skill {name}')
+                    continue
+                if fields.get('version') != source.version:
+                    errors.append(f'{path}:{entry}: packaged version differs from source metadata')
+                history = str(PurePosixPath(entry).parent / 'version-history.md')
+                histories.add(history)
+                if history not in members:
+                    errors.append(f'{path}:{entry}: missing sibling version-history.md')
+                    continue
+                text = archive.read(history).decode()
+                local = Skill(entry, name, fields.get('version', ''), f'{path}:{history}')
+                shared = str(PurePosixPath(source.path).parent) in SHARED
+                check_history(text, local, shared, errors)
+                if (repo / source.history).is_file() and text != (repo / source.history).read_text():
+                    errors.append(f'{path}:{history}: packaged history differs from source')
+            for member in members:
+                if member in histories:
+                    continue
+                if EXTRA_HISTORY.fullmatch(PurePosixPath(member).name):
+                    errors.append(f'{path}:{member}: additional or misplaced history file')
+                if re.search(r'(?:^|[-_])v\d+\.\d+', member):
+                    errors.append(f'{path}:{member}: versioned skill filename or directory')
+                try:
+                    text = archive.read(member).decode('utf-8')
+                except UnicodeDecodeError:
+                    continue
+                if member in entries:
+                    _, text = frontmatter(text, member, [])
+                check_body(text, f'{path}:{member}', set(skills), errors)
+    except (OSError, zipfile.BadZipFile) as exc:
+        errors.append(f'{path}: {exc}')
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--repo', type=Path, default=Path('.'))
+    parser.add_argument('--packages', type=Path, nargs='+', default=[])
+    args = parser.parse_args()
+    errors: list[str] = []
+    skills = check_source(args.repo, errors)
+    for path in args.packages:
+        check_package(path, skills, args.repo, errors)
+    for error in errors:
+        print('ERROR: ' + error, file=sys.stderr)
+    print(f'Skill version contract: {len(skills)} source skills, {len(args.packages)} packages, {len(errors)} errors')
+    return bool(errors)
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

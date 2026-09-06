@@ -113,3 +113,6 @@ This repository includes the live `scientific-methods` method skill. It also
 has planning evidence for method skills such as planned `concept-card-method`.
 Planned method material should not be treated as a live installable skill until
 a later implementation project lands source and package support.
+
+Each installable skill includes its change record as `version-history.md`
+beside the package-root `SKILL.md`.

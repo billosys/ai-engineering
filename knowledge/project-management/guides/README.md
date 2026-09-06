@@ -110,7 +110,7 @@ The old monolith split along its original part boundaries:
 9. [`examples/01-worked-example-odm.md`](../examples/01-worked-example-odm.md) -- a concrete
    example of the project-management flow.
 10. [`version-history.md`](../version-history.md) -- version history for
-    the project-management guide.
+    the project-management skill.
 
 ## Minimum Context Shortcuts
 
@@ -132,14 +132,4 @@ Use these only when context is tight and the operation is narrow:
 When in doubt, prefer reading the split files in order. The split reduces
 context load; it does not relax the requirement to use the written mechanics.
 
-## Version History
-
-The detailed project-management version history lives in
-[`version-history.md`](../version-history.md). Current version: **2.14**
-(`2026-09-06`), which clarifies that Expedited Mode prompt handoffs must give
-the operator a plain copy/paste relative path, not only a Markdown link.
-
----
-
-_The project-management guide README is a living spec. This wayfinder: 2.14,
-2026-09-06._
+The skill change record lives in [version-history.md](../version-history.md).

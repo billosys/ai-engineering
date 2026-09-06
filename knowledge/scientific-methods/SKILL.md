@@ -8,9 +8,9 @@ description: |
   investigation more rigorous, define operational measures, or turn a fuzzy
   question into an inspectable protocol. Not for ordinary implementation unless
   the work needs explicit experimental design.
-version: 1.0.0
 license: MIT
 metadata:
+  version: "1.0.0"
   hermes:
     tags: [scientific-method, experiments, evaluation, ab-testing, regression, evidence]
     category: method-skills

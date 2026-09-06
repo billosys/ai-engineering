@@ -61,7 +61,6 @@ Minimum gates for framework component source changes:
 - **Package list gate:** update `Makefile` package file lists when bundled component material moves, appears, or disappears.
 - **Package-local link gate:** run package-path validation and fix hard failures rather than accepting broken package-root links.
 - **Generated archive gate:** inspect the generated package zip to prove the new files are present and old live routes are absent or intentionally stubbed.
-- **History gate:** record component changes in the sibling `version-history.md` beside the component `SKILL.md`, not inside a guide-local history section.
 - **Release/discoverability gate:** update release notes or public docs when users would otherwise be pointed at an obsolete source route.
 
 These gates preserve the method's anti-degradation discipline at the repository boundary: no silent drops, no hidden route breaks, and no claim of completion without reproducible evidence.

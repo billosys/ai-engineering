@@ -29,5 +29,8 @@ jobs:
       # Full packaging: builds every per-domain bundle and the
       # collaboration-framework bundle, re-running the per-bundle guards and
       # catching missing files or staging errors.
-      - name: Build all skill bundles
-        run: make all
+      - name: Test the skill version gate
+        run: make test-skill-versions
+
+      - name: Build and validate skill bundles
+        run: make check-package-paths

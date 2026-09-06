@@ -1,5 +1,13 @@
 # Collaboration Framework Version History
 
+## Version 2.1.0 - 2026-09-06
+
+Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.
+
+Unified the skill and former local-document version sequences at 2.1.0, the highest existing version (with omitted components normalized to zero). The entrypoint is now the sole current-version authority; the original records below retain their provenance and are retired as independent sequences. Removed duplicate entrypoint version prose and placed this history beside the package-root entrypoint; the bundled guide history link now targets that file.
+
+## Retired Version Sequences
+
 This file is the sibling component history for `knowledge/collaboration-framework/`. It records collaboration-framework package changes and preserves the lineage of the former `guides/AI-CONSTITUTION-SUPPLEMENT.md` monolith after the posture split.
 
 ## Collaboration Framework Package

@@ -1,6 +1,5 @@
 ---
 name: biome-linter
-displayName: Biome Linter
 description: >
   JavaScript/TypeScript/JSX/CSS linting guidance based on Biome's 394 lint rules.
   Use when writing, reviewing, or refactoring JS/TS/JSX/CSS code to catch bugs,
@@ -10,6 +9,7 @@ description: >
 license: MIT
 metadata:
   version: "1.0.0"
+  displayName: Biome Linter
   domain: linting
   triggers: biome, lint, linter, code review, JS style, code quality, a11y, accessibility
   role: reviewer

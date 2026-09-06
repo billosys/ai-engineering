@@ -1,5 +1,13 @@
 # Version History
 
+## Version 2.14.0 - 2026-09-06
+
+Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.
+
+Unified the skill and former local-document version sequences at 2.14.0, the highest existing version (with omitted components normalized to zero). The entrypoint is now the sole current-version authority; the original records below retain their provenance and are retired as independent sequences. Removed the guide README version labels and inline release summary.
+
+## Retired Version Sequences
+
 ### Version 2.14 - September 2026
 
 Clarified the Expedited Mode handoff rule after slice close: when opening the
@@ -200,5 +208,3 @@ Broader project- and epic-level organisation was deferred. Shipped bundled in
 the `collaboration-framework` skill.
 
 ---
-
-_The project-management guide is a living spec. This version: 2.14, 2026-09-06._

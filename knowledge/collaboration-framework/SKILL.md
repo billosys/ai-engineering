@@ -16,9 +16,9 @@ description: |
   inquiry/regression comparison should load scientific-methods.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.13
 license: MIT
 metadata:
+  version: "2.1.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -434,7 +434,7 @@ work demands:
 | [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style and workflow guides when actually writing a ticket. Carries the reusable ticket shape for confirmed bugs, additive features, doc fixes, and unconfirmed questions. |
 | [`scientific-methods`](../scientific-methods/SKILL.md) | Adjacent method skill | Load when the conversation becomes a controlled inquiry: comparing versions, testing whether a change helped, detecting regressions, designing an A/B prompt or framework trial, defining operational measures, writing an experiment protocol, building an evaluation rubric, or analyzing threats to validity. It is included in `collaboration-framework.zip` and also ships as its own standalone skill. |
 
-The posture guide set and Methodology are versioned, living documents. The five
+The posture guide set and Methodology are maintained as parts of their owning skills. The five
 working-practice / discipline documents and the two templates are designed to
 be self-contained — drop them into a project's `CLAUDE.md`, `AGENTS.md`, or
 equivalent local instruction file under a named section; into
@@ -471,7 +471,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.13.
+The collaboration-framework change record lives in [version-history.md](./version-history.md).
 
 ---
 

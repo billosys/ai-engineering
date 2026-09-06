@@ -5,9 +5,9 @@ description: |
   context and what to delegate to subagents. Use when planning multi-agent work,
   installing a delegation policy into local instructions, or checking whether a
   lookup task can be delegated without outsourcing design judgment.
-version: 1.1.1
 license: MIT
 metadata:
+  version: "1.1.1"
   hermes:
     tags: [ai-engineering, collaboration, subagents, delegation]
     category: meta-skills

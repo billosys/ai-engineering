@@ -23,7 +23,8 @@ frontmatter, written under `target/skills/`, and contain a package-local
 directory root. The source root can be larger than that package root. Generated
 zips are artifacts, not hand-edited source.
 
-Every installable skill zip must contain exactly one root `SKILL.md`.
+Every installable skill zip contains exactly one root `SKILL.md`, with a
+sibling `version-history.md` change record.
 Standalone domain, method, and framework-component skills package their own
 `guides/` plus local support directories such as `templates/` or `examples/`.
 The `collaboration-framework.zip` package is the only skill zip that bundles a
@@ -36,7 +37,8 @@ skills.
 | Command | Purpose |
 |---|---|
 | `make check-skills` | Validate packaged skill description lengths. |
-| `make check-package-paths` | Build skill zips and validate package-context Markdown paths. |
+| `make check-skill-versions` | Validate source skill versions and freshly built package copies. |
+| `make check-package-paths` | Build skill zips and validate versions and package-context Markdown paths. |
 | `git diff --check` | Check staged or unstaged text changes for whitespace issues. |
 | `git status --short --untracked-files=all` | Confirm exactly what changed. |
 

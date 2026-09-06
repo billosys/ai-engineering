@@ -1,5 +1,13 @@
 # Work Verification Version History
 
+## Version 2.4.0 - 2026-09-06
+
+Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.
+
+Unified the skill and former local-document version sequences at 2.4.0, the highest existing version (with omitted components normalized to zero). The entrypoint is now the sole current-version authority; the original records below retain their provenance and are retired as independent sequences. Removed the retained ledger template version label.
+
+## Retired Version Sequences
+
 ## Version 1.1.2 - 2026-09-06
 
 Updated the component entrypoint to reflect that work-verification now ships

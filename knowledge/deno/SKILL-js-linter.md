@@ -1,6 +1,5 @@
 ---
 name: deno-js-linter
-displayName: Deno JS Linter
 description: >
   Pure JavaScript/ECMAScript linting guidance based on Deno's lint rules,
   filtered to language-level concerns only. No React, JSX, Fresh, Deno-specific,
@@ -10,6 +9,7 @@ description: >
 license: MIT
 metadata:
   version: "1.0.0"
+  displayName: Deno JS Linter
   domain: linting
   triggers: deno lint, javascript, ecmascript, JS style, code quality, code review, vanilla JS
   role: reviewer

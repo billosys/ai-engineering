@@ -5,9 +5,9 @@ description: |
   audits. Use when a repository, language surface, package, or body of work
   needs severity-graded findings grounded in actual files and verification
   evidence, without making code changes during the audit.
-version: 1.1.1
 license: MIT
 metadata:
+  version: "1.1.1"
   hermes:
     tags: [ai-engineering, audit, code-review, verification]
     category: meta-skills

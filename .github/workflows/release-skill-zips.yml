@@ -42,6 +42,9 @@ jobs:
       - name: Validate skill descriptions
         run: make check-skills
 
+      - name: Test the skill version gate
+        run: make test-skill-versions
+
       - name: Build and validate skill zips
         run: make check-package-paths
 

@@ -2,6 +2,8 @@
 
 ## Version 1.1.2 - 2026-09-06
 
+Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.
+
 Updated the component entrypoint to reflect that contribution-style now ships
 both inside `collaboration-framework.zip` and as standalone
 `contribution-style.zip`.

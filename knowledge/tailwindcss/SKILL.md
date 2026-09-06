@@ -1,19 +1,19 @@
 ---
 name: tailwindcss
-displayName: Tailwind CSS v4
 description: >
   Tailwind CSS v4 utility-first styling with CSS-native configuration.
   Use when styling with Tailwind utility classes, configuring themes via @theme,
   building responsive/dark-mode layouts, creating custom utilities or variants,
   or working with container queries. Covers the complete v4 API including
   @theme, @utility, @custom-variant, @variant, @source, and all utility classes.
-sources:
-  - https://raw.githubusercontent.com/blencorp/claude-code-kit/refs/heads/main/cli/kits/tailwindcss/skills/tailwindcss/SKILL.md
-  - https://raw.githubusercontent.com/einverne/dotfiles/refs/heads/master/claude/skills/tailwindcss/SKILL.md
-version: 2.0.0
 license: MIT
-tailwind_version: ">=4.0"
 metadata:
+  version: "2.0.0"
+  displayName: Tailwind CSS v4
+  sources:
+    - https://raw.githubusercontent.com/blencorp/claude-code-kit/refs/heads/main/cli/kits/tailwindcss/skills/tailwindcss/SKILL.md
+    - https://raw.githubusercontent.com/einverne/dotfiles/refs/heads/master/claude/skills/tailwindcss/SKILL.md
+  tailwind_version: ">=4.0"
   hermes:
     tags: [tailwind, css, utility-first, responsive, dark-mode, theme, v4]
     category: web-frontend

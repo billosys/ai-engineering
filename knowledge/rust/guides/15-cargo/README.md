@@ -267,6 +267,4 @@ These guides are provided as educational material for the Rust community.
 
 **Last Updated**: 2026-01-09
 
-**Version**: 2.0.0
-
 **Guides Included**: 8 (Basics, Build System, Plugins, Publishing, Configuration, Advanced, Lints & Formatters, Manifest & Workspace Advanced)

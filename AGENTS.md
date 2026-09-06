@@ -25,16 +25,9 @@ framework documents and a packaging surface for installable assistant skills.
   `arc-plan.md`, slice `slice-plan.md`, and ledger files. Treat
   `closing-report.md` as proposed-done until `cdc-verification.md` or an
   equivalent independent verification artifact closes the ledger evidence.
-- When changing framework or project-management documents, update each affected
-  file's `Version History` section and bump its version if it has one. If a
-  touched file has no local version, update the conceptually enclosing
-  versioned file, at minimum the top-level `SKILL.md` for framework behavior.
-- **Framework component version-history management:** each framework component
-  root keeps its component version in `SKILL.md` and its component change log
-  in a sibling `version-history.md`. Changes to that component's `SKILL.md`,
-  `guides/`, `templates/`, or `examples/` are recorded in the sibling
-  version-history file; do not add or keep component histories under `guides/`
-  merely because a guide was edited.
+- **Skill versioning:** follow the repository-wide contract below for every
+  skill, including domain/tooling skills, framework components and composers,
+  and method skills. Guides and templates do not have independent versions.
 - **Work-verification routes:** use
   `knowledge/work-verification/guides/01-ledger-discipline.md` as the primary
   ledger-discipline load path, then load the focused evidence-strength,
@@ -72,6 +65,92 @@ framework documents and a packaging surface for installable assistant skills.
   Design, Biome, or Deno lint. Preserve source material under
   `knowledge/<domain>/sources/` as provenance; write derived guidance in the
   domain `SKILL.md` and `guides/` unless a local plan says otherwise.
+
+## Skill version and history contract (repository maintenance only)
+
+This is how ai-engineering maintains its own skills. Keep these maintenance
+instructions in `AGENTS.md`; do not copy them into distributed skills, guides,
+templates, or end-user documentation. They supersede older per-document or
+framework-only versioning instructions and examples. Historical plans and
+existing nonconforming files are evidence, not exceptions to this contract.
+
+- **One authority:** a skill's current version has exactly one authoritative
+  value, `metadata.version` in the YAML frontmatter of its own `SKILL.md`.
+  Write it as the `version` string inside the `metadata` mapping. Read that
+  value before an update. Neither a history heading, prose label, Git release
+  tag, nor another skill's version determines this skill's current version.
+  Do not add a top-level `version`, a literal dotted YAML key named
+  `metadata.version`, or another version authority.
+- **Why the nesting matters (confirmed 2026-09-06):** the installed
+  skill-creator validator, `~/.codex/skills/.system/skill-creator/scripts/quick_validate.py`,
+  permits only `name`, `description`, `license`, `allowed-tools`, and `metadata`
+  at the frontmatter's top level. It rejects top-level `version` and accepts
+  `version` inside `metadata`. The nesting is a compatibility requirement, not
+  evidence of multiple versions; do not flatten it merely because there is one
+  version. Keep other custom fields inside `metadata` too. Recheck the actual
+  validator before revising this convention; our own gate must not enforce a
+  schema that the skill-creator validator rejects.
+- **One history:** each skill has exactly one `version-history.md`, sibling to
+  its `SKILL.md`. That file records significant changes across the whole skill
+  directory: the entrypoint, guides, templates, examples, and any other owned
+  material. It is the change record, not the authority for the current version.
+  Include an entry matching the current metadata version and retain previous
+  entries; do not infer the current version from ordering or the largest number.
+  Do not keep additional history files or embedded change-history sections in
+  the entrypoint or descendants. A link to the sibling history is sufficient.
+- **One version sequence per skill:** record significant changes under the
+  owning skill's version, including changes confined to a guide or template.
+  Update the metadata and corresponding history entry together when bumping
+  the skill version. Do not continue independent guide/template version
+  sequences or automatically bump the collaboration-framework composer for
+  every component edit; assess each affected skill's own change.
+- **No duplicate skill version numbers:** current and previous skill version
+  numbers may appear only in the owning entrypoint's version metadata and its
+  sibling history. Do not repeat them in entrypoint prose, headings, footers,
+  badges, filenames, directory names, guides, templates, examples, or other
+  skill files. Generated packages must preserve this rule; synchronizing a
+  duplicate from metadata does not make the duplicate permissible.
+- **Preserve the distinction from subject matter:** language, dependency,
+  tool, protocol, specification, and example-project versions are not skill
+  versions. Preserve those references and upstream source provenance. Actual
+  project/arc/slice plan histories and CCDP's own protocol history are separate
+  from this skill contract. Preserve former local-document histories as
+  explicitly retired lineage in the sibling history, not as live version
+  sequences; do not invent mappings to skill releases without evidence.
+- **Reconciliation:** when retiring competing skill/document version
+  sequences, use the highest existing version from the entrypoint and sibling
+  history (including local-document history moved there). Compare numeric
+  components, not strings or decimal numbers; normalize omitted minor/micro
+  components to zero. Preserve the old records with their original provenance.
+- **Bump guidance:** use semantic `major.minor.micro` versions. Increment major
+  for incompatible changes, minor for compatible new capabilities or guidance,
+  and micro for compatible corrections or clarifications. Reset lower
+  components when incrementing a higher one. Use judgment about significance
+  and grouping; no rigid per-edit or per-commit bump cadence is required.
+- **Establish ownership before editing:** identify the owning skill entrypoint
+  and sibling history. Existing `SKILL-*.md` variants are skills too; sharing
+  a source directory or shipping inside a composite does not exempt them.
+  A shared directory with multiple entrypoints needs an explicit ownership and
+  history migration decision, not an inferred shared skill version. Packaging
+  copies do not create independent version authorities.
+- **Shared-root deferral (operator decision, 2026-09-06):** keep the existing
+  Biome source directory and guide sharing unchanged until the operator revisits
+  skill-root design. Its sibling `version-history.md` has separate
+  `## Skill: biome-js-linter` and `## Skill: biome-linter` sections, each with
+  its own version entries matching its entrypoint. Record shared-guide changes
+  in every affected skill's section. This is not a shared version sequence or
+  a general exception allowing new shared roots.
+- **Verify the whole contract:** for each affected skill, check the metadata,
+  sibling history, and entire owned tree for additional histories, live local
+  version sequences, and duplicate skill-version labels. Check packaged output
+  too when packaging is affected. Description-length and Markdown-path checks
+  alone do not establish version-contract compliance. Report existing gaps
+  explicitly rather than treating the current layout as a compliant template.
+  Run `make test-skill-versions` for checker changes and
+  `make check-skill-versions` for source plus freshly generated package checks.
+  `make check-package-paths` includes the version gate. The checker recognizes
+  explicit skill/document version declarations; reviewers must still distinguish
+  subject-matter references from disguised or ambiguous skill-version prose.
 
 ## Workflow
 

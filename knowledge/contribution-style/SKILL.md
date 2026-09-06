@@ -5,9 +5,9 @@ description: |
   tickets with calibrated confidence, maintainer-friendly framing, and clear
   issue evidence. Use when writing bug reports, feature requests, doc fixes, or
   unconfirmed questions for projects you do not maintain.
-version: 1.1.2
 license: MIT
 metadata:
+  version: "1.1.2"
   hermes:
     tags: [ai-engineering, contribution, upstream, tickets]
     category: meta-skills

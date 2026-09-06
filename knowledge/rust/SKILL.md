@@ -15,9 +15,9 @@ description: |
   writing rustdoc, choosing or migrating a Rust edition, instrumenting
   code with `tracing`/`log`/metrics, building CLI tools with `clap`, or
   managing Cargo projects end-to-end.
-version: 1.0.0
 license: MIT
 metadata:
+  version: "2.0.0"
   hermes:
     tags: [rust, systems, ownership, async, cargo, clippy, unsafe, ffi]
     category: systems-programming

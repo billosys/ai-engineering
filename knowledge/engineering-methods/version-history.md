@@ -1,5 +1,13 @@
 # Engineering Methods Version History
 
+## Version 1.11.0 - 2026-09-06
+
+Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.
+
+Unified the skill and former local-document version sequences at 1.11.0, the highest existing version (with omitted components normalized to zero). The entrypoint is now the sole current-version authority; the original records below retain their provenance and are retired as independent sequences. Removed repository-specific history maintenance instructions from the distributed source/package guide.
+
+## Retired Version Sequences
+
 This file is the sibling component history for `knowledge/engineering-methods/`. It records engineering-methods package changes and preserves the lineage of the former AI Engineering Methodology monolith after the guide split.
 
 ## Engineering Methods Component
@@ -190,5 +198,3 @@ The _how_ of the work — ledger discipline, right-sized branches, the SDLC — 
 Original document developed jointly by Claude (Opus 4.6 and Opus 4.7) and Duncan McGreggor between December 2025 and April 2026, building on the [collaboration-framework posture guide set](../collaboration-framework/guides/01-posture-and-ethics.md). Established the three pillars (knowledge substrate, collaborative posture, process rigour), the 9-point SDLC, ledger discipline, CAP-style independent audits, the anti-degradation practices, the subagent leverage/hazard distinction, and the LFE OSS applied position.
 
 ---
-
-_The methodology is a living document. This version: 1.11, 2026-09-02._

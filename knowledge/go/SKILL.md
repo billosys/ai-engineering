@@ -10,9 +10,9 @@ description: |
   `sync`), writing table-driven tests with `testing`, profiling with
   `testing.B` and `pprof`, organizing modules and packages, writing
   `godoc`-visible doc comments, or building Gio desktop UIs.
-version: 1.0.0
 license: MIT
 metadata:
+  version: "1.0.0"
   hermes:
     tags: [go, golang, goroutine, channel, context, testing, pprof, gio]
     category: systems-programming

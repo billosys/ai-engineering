@@ -5,9 +5,9 @@ description: |
   collaboration framework. Use before planning or closing a project, arc, or
   slice; inspecting canonical planning worktree layout; applying Expedited
   Mode; or deciding whether bubble-up findings require a plan update.
-version: 1.0.6
 license: MIT
 metadata:
+  version: "2.14.0"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills

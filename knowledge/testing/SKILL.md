@@ -5,9 +5,9 @@ description: |
   hardening, and validation gates. Use when tests, coverage, lint/format
   pressure, or repository validation must prove real behavior rather than
   satisfy a metric cosmetically.
-version: 1.1.1
 license: MIT
 metadata:
+  version: "1.1.1"
   hermes:
     tags: [ai-engineering, testing, coverage, validation]
     category: meta-skills

@@ -5,9 +5,9 @@ description: |
   strength. Use at the start of any ledgered project, arc, or slice; when
   closing work; or when distinguishing proposed-done attestation from
   independent reproduced verification.
-version: 1.1.2
 license: MIT
 metadata:
+  version: "2.4.0"
   hermes:
     tags: [ai-engineering, ledger, verification, evidence]
     category: meta-skills

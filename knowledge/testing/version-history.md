@@ -2,6 +2,8 @@
 
 ## Version 1.1.1 - 2026-09-06
 
+Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.
+
 Updated the component entrypoint to reflect that testing now ships both inside
 `collaboration-framework.zip` and as standalone `testing.zip`.
 
