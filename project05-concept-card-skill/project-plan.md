@@ -108,7 +108,7 @@ organization.
 | Arc | Capability | Dependencies |
 | --- | --- | --- |
 | Arc01: Readiness And Scope Lock | Reconcile Project03/Project05 evidence with Project04's current layout, lock skill names, package surfaces, and implementation sequence. | Project03 artifacts, Project04 close evidence, current source tree. |
-| Arc02: Document Extraction Skill | Implement `document-extraction` as a standalone skill with PDF/EPUB/HTML/converter workflows, manifests, templates, examples, and package support. | Arc01. |
+| Arc02: Document Extraction Skill | Implement `document-extraction` as a standalone source skill with PDF/EPUB/HTML/converter workflows, manifests, templates, and examples. | Arc01. |
 | Arc03: Concept Cards Skill Core | Implement `concept-cards` entrypoint and core guides for load contract, extraction, re-extraction, provenance, evidence lifecycle, relationship/CQ semantics, reconciliation, validation, verification, and memory admission. | Arc01, Arc02 routing decisions. |
 | Arc04: Concept Card Records And Examples | Implement concept-card templates, examples, schema/reference material, and validation review surfaces using Project03 v4.0 semantics. | Arc03. |
 | Arc05: Packaging, Docs, And Installability | Wire both skills into Makefile targets, README/docs skill-library discoverability, package path checks, generated zips, install behavior, and version histories. | Arc02, Arc03, Arc04. |
@@ -119,11 +119,12 @@ organization.
 Closed arcs:
 
 - Arc01: Readiness And Scope Lock
+- Arc02: Document Extraction Skill
 
-Active arc: Arc02.
+Active arc: Arc03.
 
-Arc02 is open with Slice04:
-`arc02-document-extraction-skill/slice04-templates-and-examples/`.
+Arc03 is open with Slice01:
+`arc03-concept-cards-skill-core/slice01-source-scaffold-and-load-contract/`.
 
 ## Version History
 
@@ -156,3 +157,11 @@ change was made.
 Slice03 of Arc02 is CDC-verified and Arc02 has advanced to Slice04. This is a
 status-only update; no roadmap re-sequencing, scope reduction, or Arc02 plan
 change was made.
+
+### v1.5 - 2026-09-06
+
+Arc02 closed after Slice04 CDC verification and composition review. Arc03 is
+now active with Slice01 opened for the `concept-cards` source scaffold and
+load contract. The Arc02 roadmap wording was aligned with the already-planned
+Arc05 package/docs/install boundary. No roadmap re-sequencing or scope
+reduction was made.
