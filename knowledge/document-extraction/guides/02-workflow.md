@@ -57,11 +57,16 @@ the manifest and readiness report.
   to each containing file, structure coverage/order, and locator targets.
   Capture errors and incomplete checks in durable reports.
 
-Detailed PDF/Marker, EPUB/pandoc, HTML/converted-Markdown, media, splitting,
-locator, and reporting procedures are future routes in the
-[guide map](../SKILL.md#guide-map). This core workflow supplies no verified
-converter command recipe or executable helper. Use available tool guidance
-and inspect actual outputs before trusting a conversion.
+Choose [PDF/Marker](./04-pdf-source-preparation.md),
+[EPUB/pandoc](./05-epub-source-preparation.md), or
+[HTML/converted Markdown](./06-html-and-converted-markdown.md) for the input.
+Use [media normalization](./07-media-path-normalization.md) to resolve assets,
+[structure mapping and splitting](./08-structure-mapping-and-splitting.md) to
+choose complete output units, and the [locator model](./09-locator-model.md)
+to preserve source-to-output locations. Finish with
+[validation and reports](./10-validation-and-reports.md). These guides are
+live; use available tools and inspect actual outputs before trusting a
+conversion. No executable converter or validator is supplied by this skill.
 
 ## Regeneration And Ambiguity
 

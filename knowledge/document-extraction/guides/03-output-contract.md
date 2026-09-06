@@ -3,8 +3,12 @@
 Use this contract to define and inspect a prepared-source handoff. The records
 may be sections of one report or separate files; keep stable cross-references
 so a consumer can trace prepared content to preserved inputs. This is a core
-content contract. Detailed schemas, templates, and worked examples are future
-work listed in the [guide map](../SKILL.md#guide-map).
+content contract. Use [structure mapping](./08-structure-mapping-and-splitting.md),
+[media normalization](./07-media-path-normalization.md), the
+[locator model](./09-locator-model.md), and
+[validation and reports](./10-validation-and-reports.md) for the live
+procedures. Reusable templates and worked examples remain future work in the
+[guide map](../SKILL.md#guide-map).
 
 ## Homes And Identity
 
@@ -61,8 +65,9 @@ Keep these distinctions visible in each mapping:
 
 Conversion, splitting, and path repair can change derived locations. Record
 the mapping and validation scope instead of replacing the original locator
-with an apparently equivalent one. Detailed mapping procedures remain future
-work; ambiguous mappings stay caveated or blocked.
+with an apparently equivalent one. Follow the
+[locator model](./09-locator-model.md) for mapping and verification; ambiguous
+mappings stay caveated or blocked.
 
 ## Readiness By Intended Use
 

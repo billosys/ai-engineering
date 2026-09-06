@@ -1,5 +1,19 @@
 # Document Extraction Version History
 
+### Version 1.2.0 - 2026-09-06
+
+Added shared guides for HTML and converted-Markdown preparation, media path
+normalization, structure mapping/splitting, typed locators, and validation,
+readiness, and caveat reports. Each supports human-assisted and agent-direct
+operation for standalone document work and downstream concept-card provenance.
+
+Made guides 06 through 10 live in the entrypoint and replaced stale future
+routing in the core workflow and output contract. Preserved raw/snapshot
+identity, complete container boundaries, source/output locator distinctions,
+per-use readiness, and evidence limits. Templates/examples and package/install
+integration remain later work; no conversion helpers or executable validators
+were added.
+
 ### Version 1.1.0 - 2026-09-06
 
 Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.

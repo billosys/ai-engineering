@@ -8,7 +8,7 @@ description: |
   own concept-card semantics or ordinary analysis of already usable sources.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   hermes:
     tags: [document-extraction, source-preparation, markdown, provenance]
     category: method-skills
@@ -60,21 +60,17 @@ operation use the same output contract.
 | Define the prepared-source handoff and readiness evidence | [Output Contract](./guides/03-output-contract.md) |
 | Prepare PDF/Marker text, images, structure, and page locators | [PDF Source Preparation](./guides/04-pdf-source-preparation.md) |
 | Prepare EPUB/pandoc text, media, navigation, and anchor locators | [EPUB Source Preparation](./guides/05-epub-source-preparation.md) |
+| Prepare captured HTML or converted Markdown | [HTML And Converted Markdown](./guides/06-html-and-converted-markdown.md) |
+| Inventory media and repair references from each output location | [Media Path Normalization](./guides/07-media-path-normalization.md) |
+| Map sections and choose complete split units | [Structure Mapping And Splitting](./guides/08-structure-mapping-and-splitting.md) |
+| Preserve typed source and output locations | [Locator Model](./guides/09-locator-model.md) |
+| Validate the handoff and decide readiness with caveats | [Validation And Reports](./guides/10-validation-and-reports.md) |
 
-The core contracts and PDF/EPUB preparation guides are available now.
-The following are planned routes for
-later work, not yet implemented files; names are proposed until those guides
-land. Do not try to load them as existing resources.
+The core contracts, format preparation, and shared procedures above are live.
+Choose the format guide for the input, then the shared guides needed for its
+preparation and handoff. Read only the relevant procedures.
 
-| Future route | Intended coverage |
-| --- | --- |
-| `guides/06-html-and-converted-markdown.md` | HTML capture and converted-Markdown preparation |
-| `guides/07-media-path-normalization.md` | Media inventory, path repair, and validation after splitting |
-| `guides/08-structure-mapping-and-splitting.md` | Boundary decisions and stable chapter/section files |
-| `guides/09-locator-model.md` | Page bases, anchors, headings, URI fragments, and snapshot-bound lines |
-| `guides/10-validation-and-reports.md` | Detailed manifest, validation, readiness, and caveat procedures |
-| Sibling `templates/` and `examples/` | Reusable records and worked PDF, EPUB, and downstream handoffs |
-
-Shared preparation procedures, templates, and examples remain later work. Package
-targets, generated zips, and install integration are not yet provided for this
-scaffold. Consult the [change record](./version-history.md) for its history.
+Sibling `templates/` and `examples/` remain future work and are not yet
+implemented resources. Package targets, generated zips, and install integration
+are also later work. Consult the [change record](./version-history.md) for
+source history.
