@@ -8,7 +8,7 @@ description: |
   own concept-card semantics or ordinary analysis of already usable sources.
 license: MIT
 metadata:
-  version: 1.0.0
+  version: "1.1.0"
   hermes:
     tags: [document-extraction, source-preparation, markdown, provenance]
     category: method-skills
@@ -58,15 +58,16 @@ operation use the same output contract.
 | Decide whether to load and where ownership ends | [Load Contract](./guides/01-load-contract.md) |
 | Inspect inputs and execute in either operating mode | [Workflow](./guides/02-workflow.md) |
 | Define the prepared-source handoff and readiness evidence | [Output Contract](./guides/03-output-contract.md) |
+| Prepare PDF/Marker text, images, structure, and page locators | [PDF Source Preparation](./guides/04-pdf-source-preparation.md) |
+| Prepare EPUB/pandoc text, media, navigation, and anchor locators | [EPUB Source Preparation](./guides/05-epub-source-preparation.md) |
 
-The core contracts are available now. The following are planned routes for
+The core contracts and PDF/EPUB preparation guides are available now.
+The following are planned routes for
 later work, not yet implemented files; names are proposed until those guides
 land. Do not try to load them as existing resources.
 
 | Future route | Intended coverage |
 | --- | --- |
-| `guides/04-pdf-source-preparation.md` | PDF/Marker inspection, page mapping, OCR and conversion checks |
-| `guides/05-epub-source-preparation.md` | EPUB/pandoc inspection, navigation, anchors, and media |
 | `guides/06-html-and-converted-markdown.md` | HTML capture and converted-Markdown preparation |
 | `guides/07-media-path-normalization.md` | Media inventory, path repair, and validation after splitting |
 | `guides/08-structure-mapping-and-splitting.md` | Boundary decisions and stable chapter/section files |
@@ -74,6 +75,6 @@ land. Do not try to load them as existing resources.
 | `guides/10-validation-and-reports.md` | Detailed manifest, validation, readiness, and caveat procedures |
 | Sibling `templates/` and `examples/` | Reusable records and worked PDF, EPUB, and downstream handoffs |
 
-Detailed format procedures, templates, and examples remain later work. Package
+Shared preparation procedures, templates, and examples remain later work. Package
 targets, generated zips, and install integration are not yet provided for this
 scaffold. Consult the [change record](./version-history.md) for its history.
