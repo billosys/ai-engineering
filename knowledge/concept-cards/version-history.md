@@ -1,5 +1,25 @@
 # Concept Cards Version History
 
+### Version 1.3.0 - 2026-09-06
+
+Added detailed relationship/CQ, reconciliation, memory admission and maintenance
+guides. Relationships retain edge identity, endpoint roles, direction/inverse/
+symmetry, support and scoped lifecycle attachments. Competency questions retain
+component coverage, answerability, retrieval limits and changed/obsolete/deferred
+history. Reconciliation compares sources and prior value, records dispositions
+and preserves unresolved conflicts without automatic winners.
+
+Memory admission now has a scoped evidence and acceptance workflow with
+admit/reject/defer outcomes, revision applicability and re-entry checks,
+separate from artifact retention or runtime writes. Maintenance guidance names
+source-core ownership and preserves future Arc04 support and Arc05 package,
+docs and install boundaries. All new procedures cover both operating modes and
+honest handoff of results and remaining work.
+
+Made all ten guides live and updated the existing guide callers. No support
+assets, schema, executable validator, package integration, runtime or real-corpus
+processing was added or performed.
+
 ### Version 1.2.0 - 2026-09-06
 
 Added evidence lifecycle and validation/verification guides. Evidence grade

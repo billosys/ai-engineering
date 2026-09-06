@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills
@@ -71,19 +71,17 @@ project or imply permission to build a runtime or write to a memory system.
 | Source-faithful extraction, claims and run provenance | [Extraction](./guides/03-extraction.md) | Live |
 | Source-primary re-extraction and prior-value preservation | [Re-Extraction And Preservation](./guides/04-re-extraction-preservation.md) | Live |
 | Evidence lifecycle, source support, evidence grade and extraction confidence | [Evidence Lifecycle](./guides/05-evidence-lifecycle.md) | Live |
-| Relationships, edge identity and CQ coverage/answerability | `guides/06-graph-cq.md` | Future route: not yet implemented |
-| Conflicts and reconciliation results | `guides/07-reconciliation.md` | Future route: not yet implemented |
+| Relationships, edge identity and CQ coverage/answerability | [Relationships And CQs](./guides/06-graph-cq.md) | Live |
+| Conflicts and reconciliation results | [Reconciliation](./guides/07-reconciliation.md) | Live |
 | Structural validation and semantic verification | [Validation And Verification](./guides/08-validation-verification.md) | Live |
-| Evidence-dependent memory admission | `guides/09-memory-admission.md` | Future route: not yet implemented |
-| Maintenance ownership and package promise boundaries | `guides/10-maintenance-packaging.md` | Future route: not yet implemented |
+| Evidence-dependent memory admission | [Memory Admission](./guides/09-memory-admission.md) | Live |
+| Maintenance ownership and package promise boundaries | [Maintenance And Package Boundaries](./guides/10-maintenance-packaging.md) | Live |
 
-Guides 01 through 05 and 08 are live. Choose guide 03 for source-derived
-candidates and support, guide 04 for re-extraction and prior-value preservation,
-guide 05 for evidence assessments and lifecycle attachments, and guide 08 for
-structural validation, semantic verification and review provenance.
+All guides 01 through 10 are live. Choose the guide for the requested
+operation; completing one procedure does not imply completion of the others.
+Guide 10 records maintenance ownership and the remaining delivery boundaries.
 
-Guides 06, 07, 09, and 10 are not yet implemented. Do not try to load absent routes
-or claim to have applied them. Arc04 owns future sibling templates, examples,
+Arc04 owns future sibling templates, examples,
 validation/reference support and schema material. Arc05 owns future package
 targets, generated zips, docs/discoverability and install integration. No
 executable validators, runtime services, graph or ontology database, GraphRAG,

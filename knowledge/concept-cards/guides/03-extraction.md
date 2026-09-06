@@ -160,7 +160,8 @@ unperformed work unassessed. Follow the live
 [evidence lifecycle](./05-evidence-lifecycle.md) and
 [validation and verification](./08-validation-verification.md) guides for
 those assessments and checks. Extraction self-review is not independent
-verification; memory-admission procedures remain future work.
+verification; use [memory admission](./09-memory-admission.md) for a
+separately requested reliance decision.
 
 ## Human-Assisted Operation
 
@@ -202,9 +203,12 @@ Name the next inspection for each blocking gap and preserve the partial output
 for review. Use the live [evidence lifecycle](./05-evidence-lifecycle.md) and
 [validation and verification](./08-validation-verification.md) routes when
 assessing these outputs. In the [guide map](../SKILL.md#guide-map), guides
-01 through 05 and 08 are live; guides 06, 07, 09, and 10 remain future
-relationship/CQ, reconciliation, admission and maintenance work. Arc04 owns
-future templates,
+01 through 10 are live. Route edge/CQ work, conflicts and reliance decisions to
+[relationships and CQs](./06-graph-cq.md),
+[reconciliation](./07-reconciliation.md),
+[memory admission](./09-memory-admission.md), and
+[maintenance and package boundaries](./10-maintenance-packaging.md).
+Arc04 owns future templates,
 examples, validation/reference support and schemas; Arc05 owns package targets,
 generated zips, docs and install integration. This is procedural guidance,
 not an executable validator, runtime service or claim of a completed corpus run.

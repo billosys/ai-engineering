@@ -127,7 +127,8 @@ list unavailable or uninspected inputs separately. Check whether a retained,
 superseded or split card leaves dangling relationship endpoints, claim support
 attachments or CQ coverage references. Record the needed changes and unresolved
 dependencies. Do not invent replacement edges or CQ answers to make the map
-look closed; their semantic handling belongs to later detailed guides.
+look closed; follow the [relationship/CQ guide](./06-graph-cq.md) for their
+semantic handling.
 
 Keep extraction confidence about this run separate from evidence grade about
 warrant. Preserve prior validation result, verification result and reconciliation
@@ -137,9 +138,11 @@ support and scope still match and record that applicability check. Changes do
 not automatically erase historical evidence or confer its status on new claims.
 
 A preservation decision does not resolve every conceptual conflict. Record
-competing claims and affected dependencies for reconciliation; do not report a
+competing claims and affected dependencies for
+[reconciliation](./07-reconciliation.md); do not report a
 reconciliation result that has not been produced. Likewise, retaining an old
-memory admission record documents a prior decision, not a fresh admission for
+[memory admission](./09-memory-admission.md) record documents a prior decision,
+not a fresh admission for
 revised claims. State what needs renewed assessment without claiming to update
 a memory runtime.
 
@@ -190,9 +193,12 @@ reconciliation or durable-memory eligibility.
 Use the live [evidence lifecycle](./05-evidence-lifecycle.md) guide for
 assessments and [validation and verification](./08-validation-verification.md)
 for checks of revised outputs and prior-result applicability. In the
-[guide map](../SKILL.md#guide-map), guides 01 through 05 and 08 are live;
-guides 06, 07, 09, and 10 remain future relationship/CQ, reconciliation,
-memory-admission and maintenance work. Arc04 owns future templates,
+[guide map](../SKILL.md#guide-map), guides 01 through 10 are live. Follow
+[relationships and CQs](./06-graph-cq.md),
+[reconciliation](./07-reconciliation.md),
+[memory admission](./09-memory-admission.md), and
+[maintenance and package boundaries](./10-maintenance-packaging.md)
+for changed dependencies and subsequent decisions. Arc04 owns future templates,
 examples, validation/reference support and schemas; Arc05 owns package targets,
 generated zips, docs and install integration. This guide supplies no executable
 validator, runtime service or real-corpus execution evidence.

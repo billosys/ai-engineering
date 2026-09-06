@@ -7,7 +7,7 @@ result boundaries. Use the live [extraction](./03-extraction.md),
 [evidence lifecycle](./05-evidence-lifecycle.md), and
 [validation and verification](./08-validation-verification.md) procedures
 for the requested operation. The [guide map](../SKILL.md#guide-map) identifies
-remaining future routes. Choose only the work the operator requested.
+all live core routes. Choose only the work the operator requested.
 
 ## Establish The Task And Inputs
 
@@ -64,7 +64,7 @@ act; it does not repair missing source support or raise evidence grade.
 Identify relationship endpoints and whether the relation needs its own edge
 identity for evidence, provenance or lifecycle handling. Keep competency
 question coverage separate from answerability and retrieval success. Detailed
-relationship and CQ rules remain future guide 06 work.
+relationship and CQ rules are in the [relationship/CQ guide](./06-graph-cq.md).
 
 When preserving or revising prior material, record what is retained,
 superseded, rejected or unresolved and why. A rewritten card must not silently
@@ -134,10 +134,11 @@ their scope. Name unresolved conflicts and preservation decisions, unperformed
 checks, storage/delivery limits, and the next bounded inspection needed.
 Make clear whether memory admission was requested or assessed at all.
 
-The guides 01 through 05 and 08 are live; guides 06, 07, 09, and 10 remain
-future. For a task needing those remaining relationship/CQ, reconciliation,
-admission or maintenance procedures, identify the absent route and unsupported
-decision. Do not claim completion of an unimplemented workflow. Arc04 will add
+All guides 01 through 10 are live. Use [relationships and CQs](./06-graph-cq.md),
+[reconciliation](./07-reconciliation.md),
+[memory admission](./09-memory-admission.md), and
+[maintenance and package boundaries](./10-maintenance-packaging.md)
+for the corresponding requested work. Arc04 will add
 sibling templates, examples, validation/reference support and schemas. Arc05
 will add package targets, generated zips, docs and install integration. No
 executable validator or runtime enforcement is implied by a documentary result

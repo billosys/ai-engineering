@@ -103,8 +103,9 @@ a claim is a different, unresolved semantic question.
    a faithful paraphrase to an independently established fact.
 5. For edge or CQ coverage targets, check the stated relation or coverage
    assertion against its own evidence and criteria. A valid endpoint reference
-   is insufficient. Identify unresolved relationship/CQ questions for their
-   later detailed procedures without claiming a full graph or answerability audit.
+   is insufficient. Follow the [relationship/CQ guide](./06-graph-cq.md) for
+   those procedures and identify unresolved questions without claiming a full
+   graph or answerability audit.
 6. Record the semantic observation, rationale, caveats and outcome: supported
    within scope, partial, not supported by inspected evidence, contradicted in
    the inspected context, or unresolved/unassessed as appropriate. Explain the
@@ -195,9 +196,13 @@ separately revised evidence-grade assessment. Keep reconciliation state/result,
 preservation decision and memory admission separately identified or unassessed.
 State what additional work would support any broader or independent verdict.
 
-The [guide map](../SKILL.md#guide-map) keeps guides 06, 07, 09 and 10 as future:
-relationship/CQ procedures, reconciliation, memory admission and maintenance
-are not yet implemented. Arc04 owns future templates, examples, validation/
+In the [guide map](../SKILL.md#guide-map), guides 01 through 10 are live. Use
+[relationships and CQs](./06-graph-cq.md),
+[reconciliation](./07-reconciliation.md),
+[memory admission](./09-memory-admission.md), and
+[maintenance and package boundaries](./10-maintenance-packaging.md)
+for their distinct follow-up decisions and boundaries. Arc04 owns future
+templates, examples, validation/
 reference support and schemas; Arc05 owns package targets, generated zips,
 docs and install integration. This guide does not supply an executable validator,
 runtime service or a claim of live verification against a real corpus.

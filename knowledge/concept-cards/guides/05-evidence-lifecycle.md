@@ -137,9 +137,10 @@ mapping evidence if consumers cite the previous location.
 
 Do not force the concerns into a single linear completion flag. A structurally
 valid card may have unresolved support; a verified assertion may still have a
-conflict or preservation issue. Report the actual combination. Reconciliation
-and memory-admission procedures remain future guides 07 and 09; recording their
-open questions here does not implement those decisions or runtime enforcement.
+conflict or preservation issue. Report the actual combination. Follow
+[reconciliation](./07-reconciliation.md) and
+[memory admission](./09-memory-admission.md) for those decisions; recording open
+questions here does not perform them or implement runtime enforcement.
 
 ## Human-Assisted Operation
 
@@ -174,10 +175,15 @@ reason, check/result references and coverage. Include insufficient, partial,
 conflicting, stale and unassessed evidence, applicable caveats, preservation
 decisions and the next bounded inspection. State verification and reconciliation
 states separately from their result records and leave memory admission
-unassessed unless a separate authorized procedure supplied a decision.
+unassessed unless the authorized [admission procedure](./09-memory-admission.md)
+supplied a decision.
 
-Use the [guide map](../SKILL.md#guide-map) for current availability. Guides
-06, 07, 09 and 10 are not yet implemented. Arc04 owns future templates,
+In the [guide map](../SKILL.md#guide-map), guides 01 through 10 are live. Use
+[relationships and CQs](./06-graph-cq.md),
+[reconciliation](./07-reconciliation.md),
+[memory admission](./09-memory-admission.md), and
+[maintenance and package boundaries](./10-maintenance-packaging.md)
+for the corresponding follow-up work. Arc04 owns future templates,
 examples, validation/reference support and schemas; Arc05 owns package targets,
 generated zips, docs and install integration. This guide is not a validator
 program, runtime service or evidence of validation against a real corpus.
