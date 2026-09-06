@@ -5,7 +5,7 @@ description: >
   deliberately simple dispatcher to heterogeneous cognitive services under
   human supervision.
 version: "0.2"
-date: 2026-09-04
+date: 2026-09-05
 author: Duncan McGreggor
 status: Draft Specification
 ---
