@@ -4,6 +4,14 @@ This file is the sibling component history for `knowledge/collaboration-framewor
 
 ## Collaboration Framework Package
 
+### Version 1.5.13 - 2026-09-06
+
+Clarified the Expedited Mode route so newly opened CC prompt paths are reported
+as plain copy/paste text, relative to the project directory, and not as
+Markdown links alone. This mirrors the project-management wayfinder wording so
+the collaboration-framework summary cannot imply a link-only handoff is
+acceptable.
+
 ### Version 1.5.12 - 2026-09-06
 
 Expanded the collaboration-framework entrypoint with a dedicated

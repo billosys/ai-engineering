@@ -5,7 +5,7 @@ description: |
   collaboration framework. Use before planning or closing a project, arc, or
   slice; inspecting canonical planning worktree layout; applying Expedited
   Mode; or deciding whether bubble-up findings require a plan update.
-version: 1.0.5
+version: 1.0.6
 license: MIT
 metadata:
   hermes:

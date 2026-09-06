@@ -66,10 +66,15 @@ following:
   concise reports.
 - As soon as the evidence is in place for a full close of a slice, close it.
 - After a slice is closed, open the next slice immediately and give the
-  operator the prompt-file path for CC, relative to the project directory.
+  operator the next CC prompt path as plain copy/paste text, not as a Markdown
+  link. The path must be relative to the project directory and include the full
+  arc/slice path, for example `arc02-example/slice01-example/cc-prompt.md`.
+  Clickable file links may be included only in addition to the plain relative
+  path, never instead of it.
 - After the last slice of an arc is closed, automatically continue to formal
   arc close, then open the next arc and its first slice, complete with CC
-  prompt, when the project roadmap provides one.
+  prompt, when the project roadmap provides one. Report that first slice's
+  `cc-prompt.md` path in the same plain relative copy/paste form.
 
 Expedited Mode only changes the explicit commit, close, and advance behaviors
 listed above. Expedited Mode means no shortcuts, no skipped validation, no
@@ -130,11 +135,11 @@ context load; it does not relax the requirement to use the written mechanics.
 ## Version History
 
 The detailed project-management version history lives in
-[`version-history.md`](../version-history.md). Current version: **2.12**
-(`2026-09-05`), which renames the guide-set wayfinder from
-`PROJECT-MANAGEMENT.md` to `README.md`.
+[`version-history.md`](../version-history.md). Current version: **2.14**
+(`2026-09-06`), which clarifies that Expedited Mode prompt handoffs must give
+the operator a plain copy/paste relative path, not only a Markdown link.
 
 ---
 
-_The project-management guide README is a living spec. This wayfinder: 2.12,
-2026-09-05._
+_The project-management guide README is a living spec. This wayfinder: 2.14,
+2026-09-06._

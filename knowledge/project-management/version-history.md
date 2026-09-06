@@ -1,5 +1,13 @@
 # Version History
 
+### Version 2.14 - September 2026
+
+Clarified the Expedited Mode handoff rule after slice close: when opening the
+next slice, report the CC prompt path as plain copy/paste text, not as a
+Markdown link. The path must be relative to the project directory and include
+the full arc/slice path, with clickable file links allowed only as additional
+convenience.
+
 ### Version 2.13 - September 2026
 
 Updated the component entrypoint to reflect that project-management now ships
@@ -193,4 +201,4 @@ the `collaboration-framework` skill.
 
 ---
 
-_The project-management guide is a living spec. This version: 2.10, 2026-09-04._
+_The project-management guide is a living spec. This version: 2.14, 2026-09-06._

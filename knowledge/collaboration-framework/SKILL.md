@@ -16,7 +16,7 @@ description: |
   inquiry/regression comparison should load scientific-methods.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
-version: 1.5.12
+version: 1.5.13
 license: MIT
 metadata:
   hermes:
@@ -115,13 +115,15 @@ applies:
   discipline. If the operator asks for **Expedited Mode**, read
   `guides/README.md` and follow its Expedited Mode section before
   issuing CC prompts, closing slices, committing CDC updates, or advancing to
-  the next slice or arc. Expedited Mode only changes the explicit process
-  behaviors listed there: it means no shortcuts, no skipped validation, no
-  weaker evidence or review, no inferred source scope and no reduction or
-  other change in scope, no timeline interpretation, and no operator approval
-  gate override. The summary in this skill is *not* a substitute for following
-  the wayfinder's required load set — improvising the mechanics from the
-  summary is the documented way these tasks go off the rails.
+  the next slice or arc. Newly opened CC prompt paths must be reported as plain
+  copy/paste text, relative to the project directory, not as Markdown links
+  alone. Expedited Mode only changes the explicit process behaviors listed
+  there: it means no shortcuts, no skipped validation, no weaker evidence or
+  review, no inferred source scope and no reduction or other change in scope,
+  no timeline interpretation, and no operator approval gate override. The
+  summary in this skill is *not* a substitute for following the wayfinder's
+  required load set — improvising the mechanics from the summary is the
+  documented way these tasks go off the rails.
   Guardrail phrases for source and package validation: no shortcuts; no skipped validation; no weaker evidence or review; no inferred source scope and no reduction or other change in scope; no timeline interpretation; operator approval gates are not overridden.
 - Commissioning an **independent, evidence-based audit** of a repo or a body
   of work (load the code-audit prompt).
@@ -408,7 +410,7 @@ work demands:
 | [`guides/04-operational-routing.md`](../engineering-methods/guides/04-operational-routing.md) | Craft / routing | When applying the method through practitioner disciplines and collaboration-framework component routes. |
 | [`guides/05-component-boundary-analysis.md`](../engineering-methods/guides/05-component-boundary-analysis.md) | Craft / boundaries | When deciding whether material belongs in engineering-methods or a specialized framework component. |
 | [`guides/06-source-package-release-gates.md`](../engineering-methods/guides/06-source-package-release-gates.md) | Craft / gates | When source, package, release, validation, and provenance gates determine whether work is complete. |
-| [`guides/README.md`](../project-management/guides/README.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management guide-set README and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the README's wayfinder; do not improvise the mechanics from the skill's summary. |
+| [`guides/README.md`](../project-management/guides/README.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management guide-set README and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Newly opened CC prompt paths must be reported as plain copy/paste text, relative to the project directory, not as Markdown links alone. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the README's wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`guides/01-ledger-discipline.md`](../work-verification/guides/01-ledger-discipline.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine, row format, closure statuses, and slice/arc/project adaptation. |
 | [`guides/02-evidence-strength.md`](../work-verification/guides/02-evidence-strength.md) | Verification protocol | When distinguishing `asserted`, `attested`, `reproduced`, and `reconciled` evidence, especially proposed-done versus independently verified rows. |
 | [`guides/03-row-closure.md`](../work-verification/guides/03-row-closure.md) | Verification protocol | Before updating a ledger, writing a closing report, or checking row dispositions, evidence, final statuses, and close artifacts. |
@@ -469,7 +471,7 @@ neither subsumes the other.
 
 ## Version History
 
-The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.11.
+The collaboration-framework component history lives at `knowledge/collaboration-framework/version-history.md`. Current version: 1.5.13.
 
 ---
 
