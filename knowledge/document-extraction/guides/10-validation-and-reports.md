@@ -4,8 +4,14 @@ Use this guide to make a prepared-source handoff inspectable for standalone
 indexing, reading, source review, analysis, and downstream `concept-cards`
 upstream provenance. Apply the [output contract](./03-output-contract.md);
 records can be separate files or linked sections of one durable report.
-Templates and worked examples remain later support material, not prerequisites
-for recording evidence now.
+Use the live [manifest](../templates/manifest.md),
+[validation/readiness](../templates/validation-readiness.md) and
+[caveat](../templates/caveat-record.md) templates, with the remaining
+[templates and representative examples](../SKILL.md#templates-and-examples).
+Fill observations and explicit unknowns rather than copying synthetic example
+results as evidence. The optional
+[concept-card handoff](../templates/concept-card-handoff.md) carries these
+records to a requested downstream consumer.
 
 ## Assemble The Manifest
 

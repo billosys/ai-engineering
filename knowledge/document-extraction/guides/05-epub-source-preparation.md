@@ -207,5 +207,11 @@ for indexing, reading/source review, analysis, and `concept-cards` under the
 output contract. A readable text bundle may still have unresolved anchors or
 SVG fidelity that limit another use. Pass the records as upstream provenance;
 card semantics, source-claim verification, and memory admission remain
-downstream responsibilities. Shared reporting, templates, and examples remain
-later routes in the [guide map](../SKILL.md#guide-map).
+downstream responsibilities. Follow
+[validation and reports](./10-validation-and-reports.md), fill the
+[structure map](../templates/structure-map.md) and
+[media report](../templates/media-report.md), and compare the representative
+[EPUB/pandoc handoff](../examples/epub-pandoc-handoff.md). Other live
+[templates and examples](../SKILL.md#templates-and-examples) include the
+non-executable helper plan and optional concept-card handoff. Package/docs/install
+integration remains future Arc05 work.

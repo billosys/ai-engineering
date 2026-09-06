@@ -7,8 +7,11 @@ content contract. Use [structure mapping](./08-structure-mapping-and-splitting.m
 [media normalization](./07-media-path-normalization.md), the
 [locator model](./09-locator-model.md), and
 [validation and reports](./10-validation-and-reports.md) for the live
-procedures. Reusable templates and worked examples remain future work in the
-[guide map](../SKILL.md#guide-map).
+procedures. Use the live [manifest template](../templates/manifest.md) and
+[template/example map](../SKILL.md#templates-and-examples) to fill these
+categories, or the [concept-card handoff](../templates/concept-card-handoff.md)
+for an optional downstream transfer. Examples illustrate records; they are
+not evidence that a source was converted or verified.
 
 ## Homes And Identity
 

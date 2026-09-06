@@ -1,5 +1,23 @@
 # Document Extraction Version History
 
+### Version 1.3.0 - 2026-09-06
+
+Added sibling fillable templates for manifests, structure maps, media reports,
+locator maps, validation/readiness, caveats, and downstream concept-card
+handoffs, plus a non-executable per-extraction helper-script plan. The helper
+plan keeps source-specific boundary, naming, media, dry-run, regeneration and
+validation assumptions auditable rather than making historical scripts canonical.
+
+Added explicitly synthetic PDF/Marker, EPUB/pandoc, HTML/converted-Markdown,
+and concept-card handoff examples with scoped checks, unknown lineage,
+source/output locator distinctions, and visible per-use limitations. No real
+conversion or source-validation run is asserted by those examples.
+
+Made templates/examples live in the entrypoint and relevant guide routes;
+cleaned remaining future-format and shared-reporting caller text. Source
+support remains standalone and usable in both operating modes. Package/docs/
+install integration stays future Arc05 work; no executable scripts were added.
+
 ### Version 1.2.0 - 2026-09-06
 
 Added shared guides for HTML and converted-Markdown preparation, media path

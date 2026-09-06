@@ -74,6 +74,10 @@ identifiers and caveats rather than converting preparation status into a card
 evidence grade. Standalone indexing, reading, source review, and analysis use
 the same handoff without loading `concept-cards`.
 
-For planned detailed format and support routes, see the
-[entrypoint's guide map](../SKILL.md#guide-map). Those future resources must
-exist before they can be loaded.
+Choose the live format and shared procedures in the
+[entrypoint's guide map](../SKILL.md#guide-map), then use the
+[templates and examples](../SKILL.md#templates-and-examples) to record the
+handoff. Start with the [manifest](../templates/manifest.md); use the optional
+[concept-card handoff](../templates/concept-card-handoff.md) only when that
+consumer is requested. Package/docs/install integration remains future Arc05
+work; these are live source resources.

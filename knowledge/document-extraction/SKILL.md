@@ -8,7 +8,7 @@ description: |
   own concept-card semantics or ordinary analysis of already usable sources.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   hermes:
     tags: [document-extraction, source-preparation, markdown, provenance]
     category: method-skills
@@ -70,7 +70,27 @@ The core contracts, format preparation, and shared procedures above are live.
 Choose the format guide for the input, then the shared guides needed for its
 preparation and handoff. Read only the relevant procedures.
 
-Sibling `templates/` and `examples/` remain future work and are not yet
-implemented resources. Package targets, generated zips, and install integration
-are also later work. Consult the [change record](./version-history.md) for
-source history.
+## Templates And Examples
+
+Copy the relevant fillable records into the accepted evidence home; a single
+report may combine categories with stable references. Replace placeholders
+with observations or explicit unknowns. Both operating modes use these records;
+label operator reports and unverified storage when working from supplied text.
+Examples are synthetic illustrations, not evidence of actual conversions.
+
+| Record or task | Template | Representative example |
+| --- | --- | --- |
+| Identify preserved inputs, derived files and record paths | [Manifest](./templates/manifest.md) | [PDF/Marker](./examples/pdf-marker-handoff.md) |
+| Account for sections and complete split units | [Structure Map](./templates/structure-map.md) | [EPUB/pandoc](./examples/epub-pandoc-handoff.md) |
+| Track assets and file-relative references | [Media Report](./templates/media-report.md) | [EPUB/pandoc](./examples/epub-pandoc-handoff.md#media) |
+| Preserve typed source and output locations | [Locator Map](./templates/locator-map.md) | [PDF page basis](./examples/pdf-marker-handoff.md#locators) |
+| Record checks, coverage and per-use dispositions | [Validation And Readiness](./templates/validation-readiness.md) | [HTML/converted Markdown](./examples/html-markdown-handoff.md) |
+| Attach uncertainty to affected content | [Caveat Record](./templates/caveat-record.md) | [PDF caveats](./examples/pdf-marker-handoff.md#caveats) |
+| Pass upstream provenance to concept-cards when requested | [Concept-Card Handoff](./templates/concept-card-handoff.md) | [Downstream handoff](./examples/concept-card-handoff.md) |
+| Specify a source-specific helper before implementation | [Helper-Script Plan](./templates/helper-script-plan.md) | [EPUB split and path case](./examples/epub-pandoc-handoff.md) |
+
+These sibling templates and examples are live source support. The helper plan
+is non-executable; no converter, splitter, helper or validator scripts ship
+here. This skill is not packaged yet: package targets, generated zips,
+docs/discoverability and install integration remain future Arc05 work. Consult
+the [change record](./version-history.md) for source history.

@@ -192,5 +192,10 @@ review, analysis, and `concept-cards`. Explain, for instance, which inspected
 text remains readable when PDF page mappings are unverified, and why a
 provenance-dependent use may still be blocked. Pass the records as upstream
 provenance; preparation does not validate source claims or admit cards to
-memory. Shared reporting procedures, templates, and examples remain later
-routes in the [guide map](../SKILL.md#guide-map).
+memory. Follow [validation and reports](./10-validation-and-reports.md), fill
+the [manifest](../templates/manifest.md) and
+[locator map](../templates/locator-map.md), and compare the representative
+[PDF/Marker handoff](../examples/pdf-marker-handoff.md). Other live
+[templates and examples](../SKILL.md#templates-and-examples) include the
+non-executable helper plan and optional concept-card handoff. Package/docs/install
+integration remains future Arc05 work.
