@@ -1,5 +1,24 @@
 # Concept Cards Version History
 
+### Version 1.1.0 - 2026-09-06
+
+Added source-faithful extraction and source-primary re-extraction/preservation
+guides. They cover source and prepared-source identities, extraction-run and
+worker provenance, one-concept boundaries, claim/span comparison before source
+support assertions, typed locators, inference labels, extraction confidence,
+and handoff evidence for human-assisted and agent-direct operation.
+
+Re-extraction inventories prior constructs and results, derives against the
+source before comparing old cards, distinguishes source drift and unavailable
+or damaged inputs, and records preserved/superseded/rejected/unresolved prior
+value without erasing its history. Evidence grade and lifecycle/admission
+results remain separate from extraction confidence and preservation.
+
+Made guides 03/04 live in the entrypoint's current guide map. Guides 05–10,
+Arc04 support and Arc05 package/docs/install integration remain future work.
+No live corpus extraction, executable validator, runtime or package changes
+were performed as part of this source-guidance addition.
+
 ### Version 1.0.0 - 2026-09-06
 
 Created the initial `concept-cards` source scaffold: thin entrypoint, load
