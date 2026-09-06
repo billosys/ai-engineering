@@ -123,8 +123,8 @@ Closed arcs:
 
 Active arc: Arc03.
 
-Arc03 is open with Slice01:
-`arc03-concept-cards-skill-core/slice01-source-scaffold-and-load-contract/`.
+Arc03 is open with Slice02:
+`arc03-concept-cards-skill-core/slice02-extraction-reextraction-provenance/`.
 
 ## Version History
 
@@ -165,3 +165,11 @@ now active with Slice01 opened for the `concept-cards` source scaffold and
 load contract. The Arc02 roadmap wording was aligned with the already-planned
 Arc05 package/docs/install boundary. No roadmap re-sequencing or scope
 reduction was made.
+
+### v1.6 - 2026-09-06
+
+Slice01 of Arc03 is CDC-verified and Arc03 has advanced to Slice02 for
+source-faithful extraction, re-extraction, preservation decisions, source
+spans, source support, and extraction-run provenance. This is a status-only
+update; no roadmap re-sequencing, scope reduction, or Arc03 plan change was
+made.
