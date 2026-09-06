@@ -88,7 +88,7 @@ Skill kind and topology are separate. Kind says what a skill is about, such as d
 
 The [`rust`](./knowledge/rust/SKILL.md) skill is an example of an atomic domain/tooling skill. Whereas 
 [`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) is a composite
-framework/operational skill and remains the daily-driver composer for most users of the ai-engineering repo. To clear up an additional conceptual point, protocols (such as CCDP) are RFC-style documents, not an installable skill packages.
+framework/operational skill and remains the daily-driver composer for most users of the ai-engineering repo. To clear up an additional conceptual point, protocols (such as CCDP) are RFC-style documents, not installable skill packages.
 
 ## License
 
