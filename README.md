@@ -84,20 +84,11 @@ The `docs/` guides are explanatory wrappers. They should help readers choose,
 install, build, and contribute without duplicating the full material under
 `knowledge/`.
 
-Skill kind and topology are separate. Kind says what a skill is about, such as
-domain/tooling, framework/operational, or method work. Topology says how a
-skill composes: an atomic skill has one bounded load reason, while a
-composite skill exists to select, sequence, route, govern, or compose multiple
-loadable components.
+Skill kind and topology are separate. Kind says what a skill is about, such as domain/tooling, framework/operational, or method work. Topology says how a skill composes: an atomic skill is loaded for one clear, self-contained purpose, while a composite skill selects, sequences, routes, governs, composes, etc., multiple loadable components.
 
-Rust is the public example of an atomic domain/tooling skill.
-[`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) is the public example of a composite
-framework/operational skill and remains the daily-driver composer. CCDP is a
-protocol distribution and protocol package, not an installable skill package.
-[`scientific-methods`](./knowledge/scientific-methods/SKILL.md) is a method
-skill for turning fuzzy comparisons into controlled, evidence-bearing
-experiments. `concept-card-method` remains a planned method skill until source
-and package support exist.
+The [`rust`](./knowledge/rust/SKILL.md) skill is an example of an atomic domain/tooling skill. Whereas 
+[`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) is a composite
+framework/operational skill and remains the daily-driver composer for most users of the ai-engineering repo. To clear up an additional conceptual point, protocols (such as CCDP) are RFC-style documents, not an installable skill packages.
 
 ## License
 
