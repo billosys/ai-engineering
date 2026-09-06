@@ -26,8 +26,7 @@ For source and package entrypoints, use:
   manifest.
 - [`visual-guide/ccdp-reference.md`](../protocols/ccdp/visual-guide/ccdp-reference.md):
   visual guide source reference.
-- [`visual-guide/index.html`](../protocols/ccdp/visual-guide/index.html):
-  source HTML for the rendered visual guide.
+- [`visual-guide`](https://billo.systems/ai-engineering/protocols/ccdp/visual-guide/): the visual guide.
 
 ## Source Use And Package Use
 
