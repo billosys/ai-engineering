@@ -122,8 +122,8 @@ Closed arcs:
 
 Active arc: Arc02.
 
-Arc02 is open with Slice02:
-`arc02-document-extraction-skill/slice02-format-preparation-guides/`.
+Arc02 is open with Slice03:
+`arc02-document-extraction-skill/slice03-structure-media-locators-and-reports/`.
 
 ## Version History
 
@@ -142,5 +142,11 @@ scope reduction was made.
 ### v1.2 - 2026-09-06
 
 Slice01 of Arc02 is CDC-verified and Arc02 has advanced to Slice02. This is a
+status-only update; no roadmap re-sequencing, scope reduction, or Arc02 plan
+change was made.
+
+### v1.3 - 2026-09-06
+
+Slice02 of Arc02 is CDC-verified and Arc02 has advanced to Slice03. This is a
 status-only update; no roadmap re-sequencing, scope reduction, or Arc02 plan
 change was made.
