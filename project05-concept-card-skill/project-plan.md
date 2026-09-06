@@ -123,8 +123,8 @@ Closed arcs:
 
 Active arc: Arc03.
 
-Arc03 is open with Slice02:
-`arc03-concept-cards-skill-core/slice02-extraction-reextraction-provenance/`.
+Arc03 is open with Slice03:
+`arc03-concept-cards-skill-core/slice03-evidence-validation-verification/`.
 
 ## Version History
 
@@ -173,3 +173,11 @@ source-faithful extraction, re-extraction, preservation decisions, source
 spans, source support, and extraction-run provenance. This is a status-only
 update; no roadmap re-sequencing, scope reduction, or Arc03 plan change was
 made.
+
+### v1.7 - 2026-09-06
+
+Slice02 of Arc03 is CDC-verified and Arc03 has advanced to Slice03 for
+evidence lifecycle, extraction confidence/evidence-grade separation,
+validation results, verification results/state, and review boundaries. The
+Slice02 caller-wording cleanup is assigned to Slice03 source scope. No roadmap
+re-sequencing, scope reduction, or Arc03 plan change was made.
