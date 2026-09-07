@@ -120,11 +120,12 @@ Closed arcs:
 
 - Arc01: Readiness And Scope Lock
 - Arc02: Document Extraction Skill
+- Arc03: Concept Cards Skill Core
 
-Active arc: Arc03.
+Active arc: Arc04.
 
-Arc03 is open with Slice04:
-`arc03-concept-cards-skill-core/slice04-relationships-cqs-reconciliation-memory/`.
+Arc04 is open with Slice01:
+`arc04-concept-card-records-and-examples/slice01-record-template-foundation/`.
 
 ## Version History
 
@@ -188,3 +189,10 @@ Slice03 of Arc03 is CDC-verified and Arc03 has advanced to Slice04 for
 relationship edges, competency questions, reconciliation, memory admission,
 and maintenance/promise boundaries. This is a status-only update; no roadmap
 re-sequencing, scope reduction, or Arc03 plan change was made.
+
+### v1.9 - 2026-09-06
+
+Arc03 closed after Slice04 CDC verification and composition review. Arc04 is
+now active with Slice01 opened for concept-card record template foundations
+under the current sibling support layout. No roadmap re-sequencing or scope
+reduction was made.
