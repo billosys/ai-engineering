@@ -124,8 +124,8 @@ Closed arcs:
 
 Active arc: Arc04.
 
-Arc04 is open with Slice01:
-`arc04-concept-card-records-and-examples/slice01-record-template-foundation/`.
+Arc04 is open with Slice02:
+`arc04-concept-card-records-and-examples/slice02-representative-examples/`.
 
 ## Version History
 
@@ -196,3 +196,10 @@ Arc03 closed after Slice04 CDC verification and composition review. Arc04 is
 now active with Slice01 opened for concept-card record template foundations
 under the current sibling support layout. No roadmap re-sequencing or scope
 reduction was made.
+
+### v2.0 - 2026-09-06
+
+Slice01 of Arc04 is CDC-verified and Arc04 has advanced to Slice02 for
+representative examples and bounded availability/handoff wording cleanup
+surfaced by Slice01. This is an Arc04 plan refinement, not a project roadmap
+change, re-sequencing, or scope reduction.
