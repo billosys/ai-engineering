@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.3.0"
+  version: "1.4.0"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills
@@ -81,8 +81,41 @@ All guides 01 through 10 are live. Choose the guide for the requested
 operation; completing one procedure does not imply completion of the others.
 Guide 10 records maintenance ownership and the remaining delivery boundaries.
 
-Arc04 owns future sibling templates, examples,
-validation/reference support and schema material. Arc05 owns future package
+## Record Templates
+
+The twelve sibling templates below are live source support. This map gives
+current support availability; the guides' earlier Arc04 future-template notes
+predate this addition. Examples, schema/reference and validation-review support
+remain future Arc04 work.
+
+| Surface class | Copy when needed |
+| --- | --- |
+| User-authored | [Concept card](./templates/concept-card.md), [claim](./templates/claim.md), [source support](./templates/source-support.md), [relationship edge](./templates/relationship-edge.md), [competency question](./templates/competency-question.md) |
+| Trace record | [Source locator](./templates/source-locator.md), [extraction run](./templates/extraction-run.md) |
+| Result record | [Validation result](./templates/validation-result.md), [verification result](./templates/verification-result.md), [reconciliation result](./templates/reconciliation-result.md), [preservation decision](./templates/preservation-decision.md), [memory admission](./templates/memory-admission.md) |
+
+Copy only records the task needs into its accepted artifact home. Replace
+placeholder text and null identities; keep unknown or unassessed values explicit
+with reasons. Empty lists mean no entries recorded, not that review found none.
+These Markdown records with YAML frontmatter and named sections are templates,
+not finalized schemas, enum definitions, validators or completed results.
+
+Use stable `id` and `revision` values for each record. Unless a field describes
+a different shape, a singular `*_ref` takes a mapping with `id`, `revision` and
+`path`; `*_refs` takes a list of those mappings. Add `record_type` or a section
+anchor when the target needs disambiguation. Paths locate records; IDs and
+revisions preserve identity. Source snapshots and method/prompt references must
+identify the actual input or procedure revision, not merely a mutable title.
+Record unknown identity or inaccessible references with the affected limitation.
+
+Bodies explain rationale, scope and how to fill structured lists. Keep result
+references separate from summarized lifecycle states and tie every assessment
+to its actual subject, actor, evidence and revision. Draft/unassessed values do
+not claim a check, resolved conflict or admission. Rebase skill-document links
+when copying outside this directory and preserve resolvable evidence links;
+do not leave template-relative paths pretending to locate the copied records.
+
+Arc05 owns future package
 targets, generated zips, docs/discoverability and install integration. No
 executable validators, runtime services, graph or ontology database, GraphRAG,
 CCDP services or memory runtime automation are supplied by this skill.

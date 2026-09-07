@@ -1,5 +1,22 @@
 # Concept Cards Version History
 
+### Version 1.4.0 - 2026-09-06
+
+Added twelve sibling Markdown/YAML record templates for concept cards, claims,
+source locators, source support with embedded spans, relationship edges,
+competency questions, extraction runs, validation results, verification results,
+reconciliation results, preservation decisions and memory admission. Templates
+retain distinct construct identities, source/prepared provenance, evidence
+grade, extraction confidence, lifecycle results/state and scoped reliance.
+
+Added a live template map and shared copying/reference conventions to the
+entrypoint. The current map supersedes earlier guide availability notes;
+existing guides are preserved for a later caller-wording cleanup. Placeholder
+records make no successful review or admission claim. Examples, schema/reference
+and validation-review support remain future Arc04 work; packaging, docs and
+installation remain Arc05 work. No executable validators, runtime integration
+or live corpus processing was added or performed.
+
 ### Version 1.3.0 - 2026-09-06
 
 Added detailed relationship/CQ, reconciliation, memory admission and maintenance
