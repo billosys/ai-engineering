@@ -1,0 +1,290 @@
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/collaboration-framework/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/collaboration-framework/SKILL.md
+@@ -1,21 +1,6 @@
+ ---
+ name: collaboration-framework
+-description: |
+-  Composite framework/operational skill for working with an LLM to engineering standards —
+-  character, craft, and the disciplines holding the quality floor.
+-  Grounded in the collaboration-framework posture guide set, engineering
+-  methodology, and operational guidance for ledger discipline, project
+-  management, code audit, testing, subagent delegation, contribution style, and
+-  scientific-methods routing.
+-  Use when: sustained, high-stakes sessions — deep study, research,
+-  expert systems design, or production programming; establishing the peer
+-  frame; planning or closing a project, arc, or slice (MUST read the
+-  project-management guides README first); Expedited Mode; running the 9-point
+-  SDLC or a ledgered slice; commissioning an audit; hardening tests; delegating
+-  lookup work; drafting contribution tickets; or recognizing when controlled
+-  inquiry/regression comparison should load scientific-methods.
+-  Does NOT load domain/tooling skills under sibling knowledge roots — loaded
+-  separately, per-domain.
++description: "LLM collaboration for sustained research and engineering; planning/closing projects, arcs or slices; Expedited Mode; ledgered SDLC, audits, testing, delegation, contribution tickets and experiments. Read project-management guides before planning/closure. Load domain skills separately."
+ license: MIT
+ metadata:
+   version: "2.1.0"
+Rationale: Front-loads the work and retains operational triggers, planning prerequisite, and separate domain loading. Provenance and detailed posture remain in the body. Review whether peer-frame terminology warrants replacing another phrase.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/cobalt/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/cobalt/SKILL.md
+@@ -1,20 +1,6 @@
+ ---
+ name: cobalt-guidelines
+-description: |
+-  Comprehensive guidelines for building, extending, and deploying static sites
+-  with Cobalt — a Rust-native static site generator powered by Liquid
+-  templates — grounded in the official Cobalt documentation, the
+-  `cobalt-org/cobalt.rs` source, the `cobalt-config` schema, and the Rust
+-  `liquid` crate family (`liquid`, `liquid-core`, `liquid-lib`, `liquid-derive`).
+-  Use when: installing Cobalt, scaffolding a new site, authoring pages or
+-  posts, designing layouts and includes, writing Liquid templates (`{{ }}`
+-  output, `{% %}` logic, filters, tags, control flow), configuring
+-  `_cobalt.yml`, setting up permalinks, pagination, RSS, syntax highlighting,
+-  Sass/SCSS, data files, draft/publish workflow, debugging builds with
+-  `cobalt debug`, deploying to GitHub Pages / GitLab CI / self-hosting, or
+-  extending Cobalt programmatically in Rust via `cobalt::Config`,
+-  `liquid::ParserBuilder`, `Template`, `Object`/`Value`, and the
+-  `ObjectView`/`ValueView` traits.
++description: "Build, configure, debug, extend, or deploy Cobalt static sites. Use for pages/posts, Liquid templates, layouts/includes, _cobalt.yml, permalinks, pagination, RSS, Sass, data, publishing, CI deployment, or Rust extensions using cobalt and liquid crates."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Keeps Cobalt, Liquid, configuration, authoring, deployment, and Rust extension triggers; removes the source bibliography and individual API symbols. Requests naming only low-level Liquid traits need routing review.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/erlang/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/erlang/SKILL.md
+@@ -1,19 +1,6 @@
+ ---
+ name: erlang-guidelines
+-description: |
+-  Comprehensive Erlang/OTP best practices, idioms, and anti-patterns grounded
+-  in the Erlang Programming Rules and Conventions, the OTP Design Principles,
+-  the Erlang Reference Manual and Efficiency Guide, Inaka's coding guidelines,
+-  "Erlang in Anger", "Learn You Some Erlang", and the EDoc user's guide.
+-  Use when: writing new Erlang code, refactoring existing Erlang, reviewing
+-  Erlang for issues, designing module APIs and return conventions, modelling
+-  data with records/maps/binaries and dialyzer typespecs, designing processes
+-  and message protocols, writing OTP
+-  behaviours, building supervision trees
+-  and applications/releases, applying let-it-crash fault tolerance, profiling
+-  and tuning on the BEAM, diagnosing live systems, writing eunit/common_test/PropEr
+-  tests, documenting with EDoc and OTP-27 -doc attributes, running distributed
+-  Erlang, or wiring the rebar3 + dialyzer + xref + elvis + erlfmt toolchain.
++description: "Write, review, refactor, test, or diagnose Erlang/OTP systems. Use for APIs, typespecs, processes/messages, OTP behaviours, supervision, fault tolerance, releases, distributed Erlang, BEAM performance, EUnit/Common Test/PropEr, EDoc, or rebar3/dialyzer/xref/elvis/erlfmt tooling."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Retains development, runtime diagnosis, OTP design, distribution, testing, documentation, and toolchain triggers. Removes bibliographic detail and examples of data representations.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/rust/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/rust/SKILL.md
+@@ -1,20 +1,6 @@
+ ---
+ name: rust-guidelines
+-description: |
+-  Comprehensive Rust best practices, idioms, and anti-patterns grounded in
+-  the Rust Reference, the Rustonomicon, the Rust API Guidelines, the Rust
+-  Performance Book, the Asynchronous Programming Book, the Rustdoc Book,
+-  the Edition Guide, the Cargo Book, the tokio tutorial, and a corpus of
+-  AI-audited anti-patterns.
+-  Use when: writing new Rust code, refactoring existing Rust, reviewing
+-  Rust for issues, debugging ownership/lifetime errors, designing public
+-  APIs, handling errors with `Result`/`?`/`thiserror`/`anyhow`, wiring
+-  concurrency (`Send`/`Sync`, threads, channels, `async`/`await`, `Pin`,
+-  `Tokio`), writing declarative or procedural macros, working with
+-  `unsafe` and FFI boundaries, organising crates and workspaces,
+-  writing rustdoc, choosing or migrating a Rust edition, instrumenting
+-  code with `tracing`/`log`/metrics, building CLI tools with `clap`, or
+-  managing Cargo projects end-to-end.
++description: "Write, review, refactor, or debug Rust. Use for ownership/lifetimes, public APIs, errors, async/Tokio and concurrency, macros, unsafe/FFI, crates/workspaces, rustdoc, edition migration, tracing/metrics, clap CLIs, and Cargo workflows."
+ license: MIT
+ metadata:
+   version: "2.0.0"
+Rationale: Keeps the distinct Rust task families and major ecosystem triggers. Removes source-book names and redundant API enumerations; specific Result, Pin, and Send/Sync requests should be checked in routing evaluation.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/cpp/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/cpp/SKILL.md
+@@ -1,15 +1,6 @@
+ ---
+ name: cpp-guidelines
+-description: |
+-  Comprehensive C++ best practices, idioms, and anti-patterns grounded in the
+-  ISO C++ Core Guidelines by Bjarne Stroustrup, Herb Sutter, and contributors.
+-  Use when: writing new C++ code, refactoring existing C++ code, reviewing C++
+-  for correctness or style issues, designing APIs and ownership boundaries,
+-  applying RAII/resource management, choosing parameter and return conventions,
+-  working with classes/value types/templates/concepts, handling exceptions and
+-  noexcept, diagnosing lifetime/null/dangling-pointer hazards, using the
+-  standard library, modernizing C-style or legacy C++, wiring CMake/tooling, or
+-  triaging generated C++ for safety, concurrency, performance, and idiom drift.
++description: "Write, review, refactor, or modernize C++ using the Core Guidelines. Use for API/ownership design, RAII, lifetimes, classes, templates/concepts, exceptions/noexcept, the standard library, concurrency, performance, CMake, or generated-code review."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Preserves modern C++ development, ownership, language facilities, tooling, and generated-code review. Consolidates pointer hazards into lifetimes and drops author provenance.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/go/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/go/SKILL.md
+@@ -1,15 +1,6 @@
+ ---
+ name: go-guidelines
+-description: |
+-  Comprehensive Go best practices, idioms, and anti-patterns grounded in the
+-  Uber Go Style Guide, the Google Go Style Guide (Style Guide, Decisions,
+-  Best Practices), Effective Go, and the official Go spec.
+-  Use when: writing new Go code, refactoring existing Go, reviewing Go for
+-  issues, designing package APIs, handling errors with `errors.Is`/`%w`,
+-  propagating `context.Context`, wiring concurrency (channels, goroutines,
+-  `sync`), writing table-driven tests with `testing`, profiling with
+-  `testing.B` and `pprof`, organizing modules and packages, writing
+-  `godoc`-visible doc comments, or building Gio desktop UIs.
++description: "Write, review, refactor, test, or profile Go. Use for package APIs, error wrapping, context propagation, goroutines/channels/sync, table-driven tests, benchmarks/pprof, modules, godoc, and Gio desktop UIs, following Go idioms and style guidance."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Retains Go-specific task coverage, including the less-obvious Gio UI trigger. Replaces the bibliography and API spellings with their task meanings.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/js/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/js/SKILL.md
+@@ -1,13 +1,6 @@
+ ---
+ name: javascript-deno-guidelines
+-description: |
+-  JavaScript and Deno best practices, idioms, and anti-patterns for this project.
+-  Use when: writing new JS code, refactoring existing JS, reviewing JS for issues,
+-  designing module APIs, handling errors, writing Deno tests, configuring deno.json
+-  tasks, preparing modules for JSR publishing, converting Node-style or TypeScript-style
+-  code to project idioms, doing code quality audits, performance reviews, improving
+-  documentation, making dependency decisions, configuring Biome lint/format, enforcing
+-  the no-Node boundary, or answering JS design questions.
++description: "Write, review, refactor, or design JavaScript/Deno code using project idioms. Use for APIs, errors, Deno tests/tasks, JSR publishing, Node/TypeScript migration, performance, documentation, dependencies, or Biome configuration. Enforce the project's no-Node boundary."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Keeps Deno, JSR, migration, design, quality review, and Biome triggers while explicitly preserving the project no-Node boundary.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/scientific-methods/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/scientific-methods/SKILL.md
+@@ -1,13 +1,6 @@
+ ---
+ name: scientific-methods
+-description: |
+-  Method skill for practical scientific inquiry, experiment planning, controlled
+-  comparisons, regression tests, evaluation rubrics, evidence capture, and
+-  threats-to-validity analysis. Use when a conversation asks to test whether a
+-  change helped, compare versions or prompts, design an A/B trial, make an
+-  investigation more rigorous, define operational measures, or turn a fuzzy
+-  question into an inspectable protocol. Not for ordinary implementation unless
+-  the work needs explicit experimental design.
++description: "Design scientific inquiries, controlled comparisons, A/B trials, and regression evaluations. Use to test whether a change helped, compare versions/prompts, define measures/rubrics, capture evidence, or assess validity. Not for ordinary implementation without explicit experimental design."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Keeps inquiry design, comparison, measurement, evidence, validity, and the exclusion for ordinary implementation. Removes repeated descriptions of making an inquiry inspectable.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/design/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/design/SKILL.md
+@@ -1,12 +1,6 @@
+ ---
+ name: visual-design-system
+-description: |
+-  Visual design principles, colour, typography, layout, and spatial composition
+-  for Cowboys & Beans projects. Use when: designing web pages or components,
+-  choosing colours, setting up type scales, composing layouts, writing CSS,
+-  building design tokens, creating fluid responsive designs, reviewing visual
+-  quality, breaking out of template patterns, designing navigation/wayfinding,
+-  theming across multiple sites, or answering any visual design question.
++description: "Design or review visuals for Cowboys & Beans web pages and components. Use for colour, typography, layout, CSS, design tokens, responsive composition, navigation/wayfinding, cross-site theming, or improving visual quality beyond template patterns."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Preserves the project identity and major visual-design triggers. Consolidates the catchall into design/review and omits repeated examples of choosing colours and type scales.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/biome/SKILL-web-linter.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/biome/SKILL-web-linter.md
+@@ -1,11 +1,6 @@
+ ---
+ name: biome-linter
+-description: >
+-  JavaScript/TypeScript/JSX/CSS linting guidance based on Biome's 394 lint rules.
+-  Use when writing, reviewing, or refactoring JS/TS/JSX/CSS code to catch bugs,
+-  enforce style consistency, improve accessibility, avoid performance pitfalls,
+-  and prevent security vulnerabilities. Covers correctness, suspicious patterns,
+-  style, complexity, a11y, performance, and security categories.
++description: "Apply Biome lint guidance when writing, reviewing, or refactoring JavaScript, TypeScript, JSX, or CSS. Use for correctness, suspicious patterns, style, complexity, accessibility, performance, and security issues."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Retains language scope and all rule categories while removing the brittle rule count and duplicated claims about benefits.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/tailwindcss/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/tailwindcss/SKILL.md
+@@ -1,11 +1,6 @@
+ ---
+ name: tailwindcss
+-description: >
+-  Tailwind CSS v4 utility-first styling with CSS-native configuration.
+-  Use when styling with Tailwind utility classes, configuring themes via @theme,
+-  building responsive/dark-mode layouts, creating custom utilities or variants,
+-  or working with container queries. Covers the complete v4 API including
+-  @theme, @utility, @custom-variant, @variant, @source, and all utility classes.
++description: "Style interfaces with Tailwind CSS v4. Use for utility classes, CSS-native configuration, @theme, responsive/dark-mode layouts, container queries, custom utilities/variants, and @source registration."
+ license: MIT
+ metadata:
+   version: "2.0.0"
+Rationale: Keeps the v4 boundary, configuration, layout, extension, and source-discovery triggers. Consolidates directive spellings and drops the exhaustive API claim.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/document-extraction/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/document-extraction/SKILL.md
+@@ -1,11 +1,6 @@
+ ---
+ name: document-extraction
+-description: |
+-  Prepare PDF, EPUB, HTML, converted Markdown, and converter-produced source
+-  bundles for indexing, reading, source review, analysis, or concept-card
+-  extraction. Use when sources need Markdown extraction, structure mapping,
+-  media repair, locators, manifests, or readiness and caveat reports. Does not
+-  own concept-card semantics or ordinary analysis of already usable sources.
++description: "Prepare PDF, EPUB, HTML, Markdown and converter bundles: extract Markdown, map structure, repair media, preserve locators/manifests, report readiness/caveats for reading, indexing or analysis. Not concept-card semantics or analysis of usable sources."
+ license: MIT
+ metadata:
+   version: "1.3.0"
+Rationale: Retains input formats, preparation operations, downstream reading/indexing/analysis and the concept-card/usable-source boundaries. Source review is covered by reading/analysis; concept-card extraction as a downstream use is implicit, not a new owned capability. Review those compressed distinctions before approval.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/concept-cards/SKILL.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/concept-cards/SKILL.md
+@@ -1,11 +1,6 @@
+ ---
+ name: concept-cards
+-description: |
+-  Create, extract, re-extract, validate, verify, reconcile, and preserve
+-  provenance-bearing concept cards. Use for claim-level source support,
+-  evidence distinctions, relationships, competency questions, and memory
+-  admission decisions. Route raw document extraction and source cleanup to
+-  document-extraction; ordinary source reading does not require this skill.
++description: "Create, extract/re-extract, validate, verify and reconcile provenance-bearing concept cards: claims, evidence, relationships, competency questions and memory admission. Route source extraction/cleanup to document-extraction; not ordinary source reading."
+ license: MIT
+ metadata:
+   version: "1.5.0"
+Rationale: Retains the card lifecycle, evidence and graph triggers, admission decisions, extraction handoff and ordinary-reading exclusion. Preservation and claim-level source support are compressed into provenance-bearing cards and claims/evidence; review that reduced specificity before approval.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/biome/SKILL-js-linter.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/biome/SKILL-js-linter.md
+@@ -1,11 +1,6 @@
+ ---
+ name: biome-js-linter
+-description: >
+-  Pure JavaScript/ECMAScript linting guidance based on Biome's lint rules,
+-  filtered to language-level concerns only. No React, Node.js, JSX, CSS, or
+-  framework-specific rules. Use when writing, reviewing, or refactoring vanilla
+-  JavaScript to catch bugs, avoid pitfalls, enforce idiomatic style, simplify
+-  code, and prevent performance or security issues.
++description: "Apply Biome's language-level lint guidance when writing, reviewing, or refactoring vanilla JavaScript/ECMAScript. Covers bugs, idioms, complexity, performance, and security. Excludes React, Node.js, JSX, CSS, and framework-specific rules."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Keeps language-only scope and every explicit exclusion, distinguishing this skill from the broader Biome web linter.
+--- /Users/oubiwann/lab/billosys/ai-engineering/knowledge/deno/SKILL-js-linter.md
++++ /Users/oubiwann/lab/billosys/ai-engineering/knowledge/deno/SKILL-js-linter.md
+@@ -1,11 +1,6 @@
+ ---
+ name: deno-js-linter
+-description: >
+-  Pure JavaScript/ECMAScript linting guidance based on Deno's lint rules,
+-  filtered to language-level concerns only. No React, JSX, Fresh, Deno-specific,
+-  Node.js-specific, or TypeScript type-system rules. Use when writing, reviewing,
+-  or refactoring vanilla JavaScript to catch bugs, avoid pitfalls, and enforce
+-  idiomatic style.
++description: "Apply Deno's language-level lint guidance when writing, reviewing, or refactoring vanilla JavaScript/ECMAScript. Excludes React, JSX, Fresh, Deno/Node runtime rules, and TypeScript type-system rules."
+ license: MIT
+ metadata:
+   version: "1.0.0"
+Rationale: Preserves the pure-JavaScript task and each exclusion; clarifies that Deno supplies the rules without making runtime-specific rules part of this skill.
+15 valid candidates; 0 unresolved; 0 applied.

@@ -1,0 +1,38 @@
+test_alias_that_would_change_other_field_is_rejected (test_skill_descriptions.SkillDescriptionTests.test_alias_that_would_change_other_field_is_rejected) ... ok
+test_all_candidates_validated_before_any_write (test_skill_descriptions.SkillDescriptionTests.test_all_candidates_validated_before_any_write) ... ok
+test_apply_rejects_noninteractive_input (test_skill_descriptions.SkillDescriptionTests.test_apply_rejects_noninteractive_input) ... ok
+test_discovery_follows_links_without_cycles_and_keeps_distinct_duplicates (test_skill_descriptions.SkillDescriptionTests.test_discovery_follows_links_without_cycles_and_keeps_distinct_duplicates) ... ok
+test_invalid_candidates_rejected_and_null_is_unresolved (test_skill_descriptions.SkillDescriptionTests.test_invalid_candidates_rejected_and_null_is_unresolved) ... ok
+test_metadata_fields_are_reported_separately (test_skill_descriptions.SkillDescriptionTests.test_metadata_fields_are_reported_separately) ... ok
+test_metadata_version_change_invalidates_proposal (test_skill_descriptions.SkillDescriptionTests.test_metadata_version_change_invalidates_proposal) ... ok
+test_missing_empty_duplicate_and_invalid_metadata_fail (test_skill_descriptions.SkillDescriptionTests.test_missing_empty_duplicate_and_invalid_metadata_fail) ... ok
+test_outside_root_and_duplicate_proposals_rejected (test_skill_descriptions.SkillDescriptionTests.test_outside_root_and_duplicate_proposals_rejected) ... ok
+test_policy_boundary_and_catalog_total (test_skill_descriptions.SkillDescriptionTests.test_policy_boundary_and_catalog_total) ... ok
+test_prepare_and_review_are_read_only_and_outputs_do_not_overwrite (test_skill_descriptions.SkillDescriptionTests.test_prepare_and_review_are_read_only_and_outputs_do_not_overwrite) ... ok
+test_quit_and_default_no_leave_files_unchanged (test_skill_descriptions.SkillDescriptionTests.test_quit_and_default_no_leave_files_unchanged) ... ok
+test_quotes_comments_and_unicode_counts (test_skill_descriptions.SkillDescriptionTests.test_quotes_comments_and_unicode_counts) ... ok
+test_real_terminal_approval_applies_only_selected_file (test_skill_descriptions.SkillDescriptionTests.test_real_terminal_approval_applies_only_selected_file) ... ok
+test_replacement_preserves_other_bytes_and_modes (test_skill_descriptions.SkillDescriptionTests.test_replacement_preserves_other_bytes_and_modes) ... ok
+test_source_variants_discovered_and_generated_trees_excluded (test_skill_descriptions.SkillDescriptionTests.test_source_variants_discovered_and_generated_trees_excluded) ... ok
+test_stale_source_and_late_change_rejected (test_skill_descriptions.SkillDescriptionTests.test_stale_source_and_late_change_rejected) ... ok
+test_yaml_scalars_normalize_to_same_description (test_skill_descriptions.SkillDescriptionTests.test_yaml_scalars_normalize_to_same_description) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.695s
+
+OK
+.....F............
+======================================================================
+FAIL: test_installed_skill_creator_accepts_metadata_and_rejects_top_level (test_skill_versions.VersionContract.test_installed_skill_creator_accepts_metadata_and_rejects_top_level)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/oubiwann/lab/billosys/ai-engineering/scripts/tests/test_skill_versions.py", line 87, in test_installed_skill_creator_accepts_metadata_and_rejects_top_level
+    self.assertIn('Unexpected key(s)', result.stdout)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'Unexpected key(s)' not found in ''
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.229s
+
+FAILED (failures=1)
+make: *** [test-skill-versions] Error 1
