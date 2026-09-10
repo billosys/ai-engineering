@@ -198,7 +198,8 @@ for checks of revised outputs and prior-result applicability. In the
 [reconciliation](./07-reconciliation.md),
 [memory admission](./09-memory-admission.md), and
 [maintenance and package boundaries](./10-maintenance-packaging.md)
-for changed dependencies and subsequent decisions. Arc04 owns future templates,
-examples, validation/reference support and schemas; Arc05 owns package targets,
-generated zips, docs and install integration. This guide supplies no executable
+for changed dependencies and subsequent decisions. Sibling templates and
+representative examples are live support. Schema/reference and validation-review
+support remain future until Slice03; Arc05 owns package targets, generated zips,
+docs and install integration. This guide supplies no executable
 validator, runtime service or real-corpus execution evidence.

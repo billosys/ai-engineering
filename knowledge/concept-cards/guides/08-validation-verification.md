@@ -201,8 +201,8 @@ In the [guide map](../SKILL.md#guide-map), guides 01 through 10 are live. Use
 [reconciliation](./07-reconciliation.md),
 [memory admission](./09-memory-admission.md), and
 [maintenance and package boundaries](./10-maintenance-packaging.md)
-for their distinct follow-up decisions and boundaries. Arc04 owns future
-templates, examples, validation/
-reference support and schemas; Arc05 owns package targets, generated zips,
+for their distinct follow-up decisions and boundaries. Sibling templates and
+representative examples are live support. Schema/reference and validation-review
+support remain future until Slice03; Arc05 owns package targets, generated zips,
 docs and install integration. This guide does not supply an executable validator,
 runtime service or a claim of live verification against a real corpus.

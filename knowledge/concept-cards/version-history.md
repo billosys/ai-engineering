@@ -1,5 +1,19 @@
 # Concept Cards Version History
 
+### Version 1.5.0 - 2026-09-10
+
+Added eight sibling synthetic representative examples covering a minimal card,
+claim-specific source support, CQ coverage, a relationship edge, extraction-run
+provenance, reconciliation, memory admission, and a parallel-worker default
+recipe. The examples keep construct identities, source/prepared-source
+provenance, lifecycle results, preservation and admission decisions distinct.
+
+Updated the entrypoint and guide handoffs to mark templates and examples as live
+source support. Schema/reference and validation-review support remain future
+Slice03 work. Raw document cleanup remains owned by document-extraction; no
+schema, executable validator, runtime, package, installation, or real-corpus
+work was added.
+
 ### Version 1.4.0 - 2026-09-06
 
 Added twelve sibling Markdown/YAML record templates for concept cards, claims,

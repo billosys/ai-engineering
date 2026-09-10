@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.4.0"
+  version: "1.5.0"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills
@@ -83,16 +83,31 @@ Guide 10 records maintenance ownership and the remaining delivery boundaries.
 
 ## Record Templates
 
-The twelve sibling templates below are live source support. This map gives
-current support availability; the guides' earlier Arc04 future-template notes
-predate this addition. Examples, schema/reference and validation-review support
-remain future Arc04 work.
+The twelve sibling templates and eight representative examples below are live
+source support. Schema/reference and validation-review support remain future
+Arc04 work.
 
 | Surface class | Copy when needed |
 | --- | --- |
 | User-authored | [Concept card](./templates/concept-card.md), [claim](./templates/claim.md), [source support](./templates/source-support.md), [relationship edge](./templates/relationship-edge.md), [competency question](./templates/competency-question.md) |
 | Trace record | [Source locator](./templates/source-locator.md), [extraction run](./templates/extraction-run.md) |
 | Result record | [Validation result](./templates/validation-result.md), [verification result](./templates/verification-result.md), [reconciliation result](./templates/reconciliation-result.md), [preservation decision](./templates/preservation-decision.md), [memory admission](./templates/memory-admission.md) |
+
+## Representative Examples
+
+These synthetic examples illustrate bounded record combinations. They are not
+real corpus work, successful independent verification, or memory-system writes.
+
+| Need | Example |
+| --- | --- |
+| One concept with explicit unknowns | [Minimal card](./examples/minimal-card.md) |
+| Claim-specific source support | [Claim-backed card](./examples/claim-backed-card.md) |
+| CQ component coverage and answerability | [CQ coverage](./examples/cq-coverage.md) |
+| Directed relationship with scoped support | [Relationship edge](./examples/relationship-edge.md) |
+| Prepared-source extraction provenance | [Extraction-run trace](./examples/extraction-run-trace.md) |
+| Conflict comparison and prior-value retention | [Reconciliation](./examples/reconciliation.md) |
+| Scoped reliance decision without a runtime write | [Memory admission](./examples/memory-admission.md) |
+| Default parallel roles and recorded actual scope | [Parallel-worker default recipe](./examples/parallel-worker-default-recipe.md) |
 
 Copy only records the task needs into its accepted artifact home. Replace
 placeholder text and null identities; keep unknown or unassessed values explicit
@@ -115,8 +130,8 @@ not claim a check, resolved conflict or admission. Rebase skill-document links
 when copying outside this directory and preserve resolvable evidence links;
 do not leave template-relative paths pretending to locate the copied records.
 
-Arc05 owns future package
-targets, generated zips, docs/discoverability and install integration. No
+Arc05 owns future package targets, generated zips, docs/discoverability and
+install integration. No
 executable validators, runtime services, graph or ontology database, GraphRAG,
 CCDP services or memory runtime automation are supplied by this skill.
 

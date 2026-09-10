@@ -116,7 +116,8 @@ Use [relationships and CQs](./06-graph-cq.md),
 [memory admission](./09-memory-admission.md), and
 [maintenance and package boundaries](./10-maintenance-packaging.md)
 for those operations.
-Templates, examples, validation/reference support and schemas remain Arc04
-work; package targets, generated zips, docs and install integration remain
-Arc05 work. Do not replace a missing detailed procedure with an invented
-canonical schema or claim that an unavailable validator was run.
+Sibling templates and representative examples are live support. Schema/reference
+and validation-review support remain future Slice03 work; package targets,
+generated zips, docs and install integration remain Arc05 work. Do not replace
+a missing detailed procedure with an invented canonical schema or claim that an
+unavailable validator was run.
