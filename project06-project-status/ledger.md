@@ -1,0 +1,20 @@
+# Project06 acceptance ledger
+
+All rows are open. Planning artifacts are not delivery or independent evidence.
+P-11/P-12 were added on 2026-09-10 from the operator's Q-03 correction and
+explicit requirement to document coverage in the shipped skill.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| P-01 | Saga means all projects in one repo; generic top-level status names and independent lower-scale adoption are documented | Inspect source guides, schemas, example tree, and rendered Saga View | correctness-grade | Operator decisions | open | — | No new saga-prefixed artifact family |
+| P-02 | Consumer-owned coherent toolkit snapshots run independently of installed skill updates | Reproduce two consumer copies and installed-package replacement; compare retained copy output | serious | Operator correction | open | — | Include dependencies and provenance |
+| P-03 | Every status JSON is checked for schema and cross-document consistency | Positive/negative fixtures; nested discovery and unsupported-file tests | serious | User request; Rootstock drift | open | — | No silent skips |
+| P-04 | All retained views render information faithfully, with explicit evidence/closure semantics | Content assertions plus visual review of overview, project views, arc detail, themes and narrow displays | serious | Rootstock design | open | — | Progress is not acceptance |
+| P-05 | Explicit upgrades account for schema compatibility and local modifications | Upgrade trial with older copied toolkit, changed data contract and local customization | serious | Snapshot ownership | open | — | No automatic replacement |
+| P-06 | Public examples and both packages contain a complete usable toolkit with no private trial payload | Privacy review, fresh zip inventories, isolated-copy smoke and package gates | serious | Public extraction | open | — | Skill-owned version/history contract applies |
+| P-07 | Lykn rebuild accounts for all projects and open arcs at the pinned adoption census | Compare census to JSON/pages; record unknown/excluded cases and reasons | serious | Operator UAT scope | open | — | Six projects observed initially; refresh before UAT |
+| P-08 | Lykn's structural and evidence edge cases remain truthful and usable | Execute consumer matrix in design brief; operator review with exact revisions | serious | Lykn reconnaissance | open | — | No manufactured slices or verified closure |
+| P-09 | UAT requests are dispositioned and accepted changes are implemented and retested | Finding-to-plan-to-diff-to-Lykn-retest trace; accepted deferral review | serious | Operator feedback requirement | open | — | Live UAT is a project gate |
+| P-10 | Arcs compose into the DoD with final package gates, independent evidence and operator acceptance | Project close row walk, silent-drop comparison and end-to-end consumer demonstration | serious | Framework | open | — | Close only after final refinement |
+| P-11 | Project progress uses equal planned-arc weights and fractional arc contributions, with truthful unknown/coverage handling | Four-arc 25%/12.5% cases; unequal slice counts; later decomposition; unknown versus zero; precision and roadmap-change cases | correctness-grade | Operator Q-03 correction | open | — | No flattened leaf denominator for headline project progress |
+| P-12 | Shipped skill guidance contains coverage table and worked hierarchical examples | Inspect entrypoint/guide routes and both generated packages; operator-readable example review | correctness-grade | Operator documentation requirement | open | — | Planning-only explanation is insufficient |
