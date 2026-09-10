@@ -26,15 +26,14 @@ their applicable owners.
 
 | Owner | Remaining deliverables and acceptance boundary |
 | --- | --- |
-| Arc04 | Sibling templates and representative examples are live source support. Schema/reference and validation-review support remain future until Slice03. Live content preserves construct distinctions and result provenance, including incomplete and conflicting cases. Core prose alone is not proof that the remaining support assets exist. |
+| Arc04 | Sibling templates, representative examples, and reference/review material are live source support. The references preserve construct distinctions and result provenance, including incomplete and conflicting cases. Source presence does not prove package contents or installability. |
 | Arc05 | Package targets, Makefile integration, generated zips, docs, README/discoverability, install behavior and package validation. These are not yet implemented for this skill. Source-file presence, a Markdown link check or another skill's package success does not establish this skill's packaged contents or installability. |
 
-Current sibling support lives in `templates/` and `examples/`. Future
-schema/reference and validation-review support belongs under the skill root,
-not under `guides/` merely for packaging convenience. The accepted Slice03 plan
-must settle its exact paths and formats. Do not create placeholder assets or
-links to absent files to imply completion. Update availability claims when
-actual delivery evidence exists.
+Current sibling support lives in `templates/`, `examples/`, and `references/`.
+The current helper macros copy `guides/`, `templates/`, and `examples/`, but
+not `references/`. Arc05 must add and validate package support for this sibling
+directory before claiming generated-zip contents or installability. Do not create
+placeholder assets or links to absent files to imply completion.
 
 ## Promise Boundary
 
@@ -100,9 +99,9 @@ requested. This guide does not initiate a project, release or installation.
 For Arc04, identify the current core revision, construct/attachment requirements,
 live guide routes, representative success and incomplete/conflict cases,
 provisional record vocabulary and unresolved format decisions. Existing
-templates and examples preserve uncertainty, scoped results and provenance;
-future schema/reference and validation-review support must do the same. Do not
-label prose options as a finalized machine schema.
+templates, examples, and references preserve uncertainty, scoped results and
+provenance. Arc05 package support must preserve this material without turning
+its prose options into a finalized machine schema.
 
 For Arc05, identify the eventual complete source/support inventory, intended
 package boundaries, cross-skill preparation route and remaining packaging,

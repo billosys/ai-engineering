@@ -1,5 +1,18 @@
 # Concept Cards Version History
 
+### Version 1.6.0 - 2026-09-10
+
+Added sibling reference/review support for record field groups, vocabulary,
+structural-validation candidates, semantic audit boundaries, and operator review
+gates. The material documents Markdown/YAML record conventions and review
+boundaries without adding JSON Schema, executable validation, runtime behavior,
+or real-corpus review evidence.
+
+Updated entrypoint and guide handoffs to mark all Arc04 source support live.
+The references README and maintenance guidance record that current Makefile helper
+macros do not copy `references/`; Arc05 owns package support, generated-zip,
+docs/discoverability, and installation work.
+
 ### Version 1.5.0 - 2026-09-10
 
 Added eight sibling synthetic representative examples covering a minimal card,

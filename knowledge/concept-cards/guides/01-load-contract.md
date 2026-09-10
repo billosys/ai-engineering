@@ -116,8 +116,9 @@ Use [relationships and CQs](./06-graph-cq.md),
 [memory admission](./09-memory-admission.md), and
 [maintenance and package boundaries](./10-maintenance-packaging.md)
 for those operations.
-Sibling templates and representative examples are live support. Schema/reference
-and validation-review support remain future Slice03 work; package targets,
-generated zips, docs and install integration remain Arc05 work. Do not replace
-a missing detailed procedure with an invented canonical schema or claim that an
+Sibling templates, representative examples, and reference/review support are
+live. Consult the sibling reference index for documented field groups and review
+boundaries. Package targets, generated zips, docs and install integration,
+including package support for `references/`, remain Arc05 work. Do not replace
+documented candidates with an invented canonical schema or claim that an
 unavailable validator was run.

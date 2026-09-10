@@ -138,9 +138,9 @@ All guides 01 through 10 are live. Use [relationships and CQs](./06-graph-cq.md)
 [reconciliation](./07-reconciliation.md),
 [memory admission](./09-memory-admission.md), and
 [maintenance and package boundaries](./10-maintenance-packaging.md)
-for the corresponding requested work. Sibling templates and representative
-examples are live support. Schema/reference and validation-review support
-remain future until Slice03. Arc05 will add package targets, generated zips,
-docs and install integration. No
+for the corresponding requested work. Sibling templates, representative examples,
+and reference/review support are live. Arc05 will add package targets, generated
+zips, docs and install integration, including package support for `references/`.
+No
 executable validator or runtime enforcement is implied by a documentary result
 record.

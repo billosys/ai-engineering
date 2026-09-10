@@ -183,8 +183,8 @@ In the [guide map](../SKILL.md#guide-map), guides 01 through 10 are live. Use
 [reconciliation](./07-reconciliation.md),
 [memory admission](./09-memory-admission.md), and
 [maintenance and package boundaries](./10-maintenance-packaging.md)
-for the corresponding follow-up work. Sibling templates and representative
-examples are live support. Schema/reference and validation-review support remain
-future until Slice03; Arc05 owns package targets, generated zips, docs and
-install integration. This guide is not a validator
+for the corresponding follow-up work. Sibling templates, representative examples,
+and reference/review support are live. Arc05 owns package targets, generated
+zips, docs and install integration, including package support for `references/`.
+This guide is not a validator
 program, runtime service or evidence of validation against a real corpus.
