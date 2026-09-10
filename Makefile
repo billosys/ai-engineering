@@ -16,9 +16,14 @@ INSTALL_DIR ?= $(HOME)/.agents/skills
 PACKAGE_PATH_EXCEPTIONS := assets/packaging/path-exceptions.tsv
 
 # Build-time guard: every skill bundle runs its SKILL.md through this before
-# packaging, so a description over the loader's limit fails the build instead
-# of failing silently at load time. Single source of truth for the check.
+# packaging, enforcing the repo's per-description policy. Codex's aggregate
+# catalog budget is measured separately with the live diagnostic.
 CHECK_SKILL := ./scripts/check-skill-description.sh
+SKILL_TOOLS := sh ./scripts/skill-descriptions
+SKILL_AUDIT_ARGS ?=
+SKILL_REWRITE_DIR ?= target/skill-rewrites
+SKILL_PYTHON ?= $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
+export SKILL_PYTHON
 SKILL_ZIP_NAMES := \
 	collaboration-framework.zip \
 	agent-coordination.zip code-auditing.zip contribution-style.zip \
@@ -33,7 +38,7 @@ CCDP_NAME := ccdp
 CCDP_ZIP := $(ZIP_OUTPUT_DIR)/$(CCDP_NAME).zip
 CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 
-.PHONY: all skills install uninstall clean help check-skills check-package-paths check-skill-versions check-skill-version-source test-skill-versions print-skill-zips \
+.PHONY: all skills install uninstall clean help check-skills audit-skills audit-live-skills prepare-skill-rewrites test-skill-tools check-package-paths check-skill-versions check-skill-version-source test-skill-versions print-skill-zips \
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
 	agent-coordination code-auditing contribution-style engineering-methods project-management \
@@ -90,6 +95,10 @@ help:
 	@echo "  make check-skills       -> validate every SKILL.md description length"
 	@echo "  make check-skill-versions -> validate skill versions in source and generated packages"
 	@echo "  make test-skill-versions -> run version-gate regression tests"
+	@echo "  make audit-skills        -> source inventory (SKILL_AUDIT_ARGS supports JSON/thresholds)"
+	@echo "  make audit-live-skills   -> observe the installed Codex catalog"
+	@echo "  make prepare-skill-rewrites -> prepare LLM prompt for packaged skills (SKILL_REWRITE_DIR)"
+	@echo "  make test-skill-tools    -> description parser and approval workflow tests"
 	@echo "  make print-skill-zips   -> list release-uploadable skill zip paths"
 	@echo "  make ccdp               -> assemble the CCDP protocol document"
 	@echo "  make ccdp-package       -> build $(CCDP_ZIP) (protocol package)"
@@ -366,11 +375,23 @@ check-skill-version-source:
 
 ## test-skill-versions: exercise the source and package contract with mutation fixtures
 test-skill-versions:
-	@python3 -B -m unittest discover -s scripts/tests -p 'test_skill_versions.py'
+	@$(SKILL_PYTHON) -B -m unittest discover -s scripts/tests -p 'test_skill_versions.py'
 
 ## check-skill-versions: validate source and freshly built package copies
 check-skill-versions: check-skill-version-source all
 	@./scripts/check-skill-versions --packages $(INSTALL_ZIPS)
+
+audit-skills:
+	@$(SKILL_TOOLS) audit $(ALL_SKILL_FILES) $(SKILL_AUDIT_ARGS)
+
+audit-live-skills:
+	@$(SKILL_TOOLS) live $(SKILL_AUDIT_ARGS)
+
+prepare-skill-rewrites:
+	@$(SKILL_TOOLS) prepare $(ALL_SKILL_FILES) --output-dir "$(SKILL_REWRITE_DIR)" $(SKILL_AUDIT_ARGS)
+
+test-skill-tools:
+	@$(SKILL_PYTHON) -m unittest discover -s tests -p 'test_skill_descriptions.py' -v
 
 ## check-package-paths: build all zips and validate versions and package-context Markdown paths
 check-package-paths: check-skill-versions

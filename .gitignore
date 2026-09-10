@@ -2,6 +2,8 @@
 workbench
 old
 /scripts/*.py
+!/scripts/skill_descriptions.py
+__pycache__/
 .DS_Store
 .venv
 

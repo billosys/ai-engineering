@@ -53,9 +53,16 @@ make all               # build all installable skill zips into target/skills/
 make collab-framework  # build target/skills/collaboration-framework.zip
 make check-skills      # validate SKILL.md descriptions
 make check-skill-versions # validate source and generated skill versions
+make audit-skills      # measure source descriptions and aggregate pressure
+make audit-live-skills # measure descriptions actually rendered by Codex
+make test-skill-tools  # verify parsing and per-file approval behavior
 make check-package-paths
 make install           # install built skills into ~/.agents/skills
 ```
+
+Skill checks require Python and PyYAML. See
+[Skill Description Maintenance](./docs/skill-description-tooling.md) for setup,
+installed-catalog evaluation, and LLM shortening proposals with per-file approval.
 
 CCDP is packaged separately from installable skills:
 

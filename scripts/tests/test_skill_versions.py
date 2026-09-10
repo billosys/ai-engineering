@@ -83,8 +83,8 @@ class VersionContract(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.entry.write_text(self.entry.read_text().replace('metadata:\n  version:', 'version:'))
         result = subprocess.run([sys.executable, str(validator), str(self.root)], capture_output=True, text=True)
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn('Unexpected key(s)', result.stdout)
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        self.assertIn('Unexpected key(s)', result.stdout, result.stderr)
 
     def test_description_block_is_not_a_metadata_key(self):
         text = self.entry.read_text().replace('description: Validate a skill fixture.', 'description: |\n  version: examples are subject matter')

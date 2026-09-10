@@ -22,6 +22,17 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install skill tooling dependencies
+        run: python -m pip install -r scripts/requirements-skill-tools.txt
+
+      - name: Test skill description tooling
+        run: make test-skill-tools
+
       # Fast, explicit signal: every SKILL.md description within the limit.
       - name: Validate skill descriptions
         run: make check-skills

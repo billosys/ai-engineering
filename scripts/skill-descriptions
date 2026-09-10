@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+set -eu
+repo=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+if [ -n "${SKILL_PYTHON:-}" ]; then
+    python=$SKILL_PYTHON
+elif [ -x "$repo/.venv/bin/python" ]; then
+    python=$repo/.venv/bin/python
+else
+    python=python3
+fi
+exec "$python" "$repo/scripts/skill_descriptions.py" "$@"
