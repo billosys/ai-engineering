@@ -124,8 +124,8 @@ Closed arcs:
 
 Active arc: Arc04.
 
-Arc04 is open with Slice02:
-`arc04-concept-card-records-and-examples/slice02-representative-examples/`.
+Arc04 is open with Slice03:
+`arc04-concept-card-records-and-examples/slice03-schema-reference-and-review-surfaces/`.
 
 ## Version History
 
@@ -203,3 +203,10 @@ Slice01 of Arc04 is CDC-verified and Arc04 has advanced to Slice02 for
 representative examples and bounded availability/handoff wording cleanup
 surfaced by Slice01. This is an Arc04 plan refinement, not a project roadmap
 change, re-sequencing, or scope reduction.
+
+### v2.1 - 2026-09-10
+
+Slice02 of Arc04 is CDC-verified and Arc04 has advanced to Slice03 for
+schema/reference and validation-review support under sibling `references/`.
+This records an Arc04 placement refinement and Arc05 packaging requirement,
+not a project roadmap change, re-sequencing, or scope reduction.

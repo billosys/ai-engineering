@@ -43,7 +43,7 @@ claim package behavior before Arc05 validates and wires those surfaces.
 | --- | --- | --- |
 | Slice01: Record Template Foundation | Add sibling `templates/` records for concept cards, claims, source locators/support, relationships, CQs, extraction runs, validation results, verification results, reconciliation results, preservation decisions, and memory admission. Update `SKILL.md` and `version-history.md` routes without adding examples or package wiring. | Arc03 close. |
 | Slice02: Representative Examples | Add sibling `examples/` covering the release-critical example set: minimal card, claim-backed card, CQ coverage, relationship/edge, extraction-run trace, reconciliation, memory-admission, and parallel-worker default recipe. Also update bounded availability/handoff wording surfaced by Slice01 so templates and examples are live while schema/reference and validation-review surfaces remain future. | Slice01. |
-| Slice03: Schema Reference And Review Surfaces | Add the source-local schema/reference and validation-review surfaces that document field groups, vocabulary, deterministic structural candidates, semantic audit boundaries, and human/operator review gates. | Slice01, Slice02. |
+| Slice03: Schema Reference And Review Surfaces | Add source-local schema/reference and validation-review surfaces under sibling `references/`, documenting field groups, vocabulary, deterministic structural candidates, semantic audit boundaries, human/operator review gates, and the Arc05 package-support requirement for this nonstandard sibling directory. | Slice01, Slice02. |
 
 ## Arc Exit Criteria
 
@@ -51,8 +51,9 @@ Arc04 closes when:
 
 - all planned slices are CDC-verified;
 - `knowledge/concept-cards/` has sibling `templates/`, `examples/`, and
-  schema/reference or validation-review support surfaces whose exact placement
-  is explicitly justified by the current package contract;
+  `references/` support surfaces whose placement is explicitly justified
+  against current package behavior and whose Arc05 package-support requirement
+  is recorded;
 - templates and examples preserve the Arc03 distinctions among cards, claims,
   source support, locators, edges, CQs, extraction runs, validation results,
   verification results, reconciliation results, preservation decisions, and
@@ -86,3 +87,12 @@ stale guide availability wording for newly live templates. Slice02 scope now
 includes bounded availability/handoff cleanup while examples land, without
 changing the roadmap, reducing scope, or moving schema/reference and
 validation-review work out of Slice03.
+
+### v1.2 - 2026-09-10
+
+Slice02 CDC verification closed representative examples and availability
+cleanup. While opening Slice03, CDC inspected current package behavior and
+clarified that schema/reference and validation-review material should live
+under sibling `references/`, not under `guides/`, with an explicit Arc05
+package-support requirement because current helper macros only copy `guides/`,
+`templates/`, and `examples/`.
