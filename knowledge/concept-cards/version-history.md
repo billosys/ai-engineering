@@ -1,5 +1,11 @@
 # Concept Cards Version History
 
+### Version 1.7.3 - 2026-09-11
+
+Corrected remaining live load-contract handoff wording after CDC found stale
+Slice02 discoverability language. No method, schema, validator, package
+support shape, or runtime capability changed.
+
 ### Version 1.7.2 - 2026-09-10
 
 Clarified the current package handoff after the Slice02 documentation close in

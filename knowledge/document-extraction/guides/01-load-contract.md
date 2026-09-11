@@ -79,7 +79,7 @@ Choose the live format and shared procedures in the
 [templates and examples](../SKILL.md#templates-and-examples) to record the
 handoff. Start with the [manifest](../templates/manifest.md); use the optional
 [concept-card handoff](../templates/concept-card-handoff.md) only when that
-consumer is requested. Package targets and generated zips now exist for this
-skill. README/docs discoverability remains Slice02 work; package-path validation,
-isolated install smoke, and final package reconciliation remain Slice03 work.
-These are live source resources.
+consumer is requested. Package targets, generated zips, and public
+discoverability are live for this skill. Package-path validation, isolated
+installation, installed-content inspection, and final reconciliation are
+Slice03 acceptance work. These are live source resources.

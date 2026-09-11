@@ -1,5 +1,12 @@
 # Document Extraction Version History
 
+### Version 1.4.3 - 2026-09-11
+
+Corrected remaining live guide handoffs after CDC found stale Slice02
+discoverability wording in load-contract, PDF, and EPUB preparation guides.
+No preparation procedure, package support shape, executable validator, or
+runtime capability changed.
+
 ### Version 1.4.2 - 2026-09-10
 
 Clarified the current package handoff after the Slice02 documentation close:

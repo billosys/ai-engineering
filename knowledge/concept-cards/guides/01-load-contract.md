@@ -119,7 +119,8 @@ for those operations.
 Sibling templates, representative examples, and reference/review support are
 live. Consult the sibling reference index for documented field groups and review
 boundaries. Package targets and generated zips now exist, including packaged
-`references/`. README/docs discoverability remains Slice02 work; package-path
-validation, isolated install smoke, and final package reconciliation remain
-Slice03 work. Do not replace documented candidates with an invented canonical
-schema or claim that an unavailable validator was run.
+`references/`; public discoverability is live. Package-path validation,
+isolated installation, installed-content inspection, and final package
+reconciliation are Slice03 acceptance work. Do not replace documented candidates
+with an invented canonical schema or claim that an unavailable validator was
+run.
