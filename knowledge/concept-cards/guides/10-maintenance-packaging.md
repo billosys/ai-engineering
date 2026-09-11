@@ -27,13 +27,13 @@ their applicable owners.
 | Owner | Remaining deliverables and acceptance boundary |
 | --- | --- |
 | Arc04 | Sibling templates, representative examples, and reference/review material are live source support. The references preserve construct distinctions and result provenance, including incomplete and conflicting cases. Source presence does not prove package contents or installability. |
-| Arc05 | Package targets, Makefile integration, generated zips, docs, README/discoverability, install behavior and package validation. These are not yet implemented for this skill. Source-file presence, a Markdown link check or another skill's package success does not establish this skill's packaged contents or installability. |
+| Arc05 | Docs, README/discoverability, install behavior, and final package validation remain. Makefile target presence or another skill's package success does not establish this skill's inspected package contents or installability. |
 
 Current sibling support lives in `templates/`, `examples/`, and `references/`.
-The current helper macros copy `guides/`, `templates/`, and `examples/`, but
-not `references/`. Arc05 must add and validate package support for this sibling
-directory before claiming generated-zip contents or installability. Do not create
-placeholder assets or links to absent files to imply completion.
+The package helper copies those explicit local support directories when present,
+without copying `sources/`, workbench output, or planning artifacts. Generated
+zip contents and isolated installation still need their own scoped evidence;
+do not create placeholder assets or links to absent files to imply completion.
 
 ## Promise Boundary
 

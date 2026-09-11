@@ -15,11 +15,11 @@ validator, or evidence that a review occurred.
 
 ## Package Boundary
 
-These files are live in the source skill but are not yet a packaged surface.
-The current `pack_skill` and `pack_component_skill` helpers copy `guides/`,
-`templates/`, and `examples/`, not `references/`. Arc05 must wire and validate
-this directory before any generated-zip or installation claim. Do not relocate
-these records under `guides/` merely to evade that package work.
+These files are live source support and are copied by the `concept-cards`
+Makefile package target. They have not yet been independently installed into an
+isolated destination. Arc05 retains docs/discoverability and install-smoke work.
+The helpers copy only intended local support directories; they do not copy
+`sources/`, workbench output, or planning artifacts.
 
 ## Method Boundary
 

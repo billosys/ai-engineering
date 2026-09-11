@@ -1,5 +1,12 @@
 # Concept Cards Version History
 
+### Version 1.7.0 - 2026-09-10
+
+Added Makefile package-target support for the entrypoint, sibling guides,
+templates, examples, and references. Docs/discoverability and isolated
+install-smoke evidence remain later Arc05 work. No executable validator,
+runtime behavior, or real-corpus work was added.
+
 ### Version 1.6.0 - 2026-09-10
 
 Added sibling reference/review support for record field groups, vocabulary,

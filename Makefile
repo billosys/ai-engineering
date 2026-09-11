@@ -29,6 +29,7 @@ SKILL_ZIP_NAMES := \
 	agent-coordination.zip code-auditing.zip contribution-style.zip \
 	engineering-methods.zip project-management.zip testing.zip work-verification.zip \
 	scientific-methods.zip \
+	document-extraction.zip concept-cards.zip \
 	rust-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
 	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
 	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
@@ -42,7 +43,7 @@ CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
 	agent-coordination code-auditing contribution-style engineering-methods project-management \
-	testing work-verification scientific-methods \
+	testing work-verification scientific-methods document-extraction concept-cards \
 	rust go cpp js erlang cobalt design tailwindcss deno biome
 
 # Every SKILL.md (and the two biome/deno variants) packaged by this Makefile.
@@ -56,6 +57,8 @@ ALL_SKILL_FILES := \
 	knowledge/scientific-methods/SKILL.md \
 	knowledge/testing/SKILL.md \
 	knowledge/work-verification/SKILL.md \
+	knowledge/document-extraction/SKILL.md \
+	knowledge/concept-cards/SKILL.md \
 	knowledge/rust/SKILL.md \
 	knowledge/go/SKILL.md \
 	knowledge/cpp/SKILL.md \
@@ -80,6 +83,8 @@ help:
 	@echo "  make testing            -> testing.zip"
 	@echo "  make work-verification  -> work-verification.zip"
 	@echo "  make scientific-methods -> scientific-methods.zip"
+	@echo "  make document-extraction -> document-extraction.zip"
+	@echo "  make concept-cards      -> concept-cards.zip"
 	@echo "  make rust               -> rust-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
 	@echo "  make cpp                -> cpp-guidelines.zip"
@@ -280,6 +285,7 @@ define pack_component_skill
 	cp "$$dir/version-history.md" "$$stage/version-history.md"; \
 	if [ -d "$$dir/templates" ]; then cp -R "$$dir/templates" "$$stage/templates"; fi; \
 	if [ -d "$$dir/examples" ]; then cp -R "$$dir/examples" "$$stage/examples"; fi; \
+	if [ -d "$$dir/references" ]; then cp -R "$$dir/references" "$$stage/references"; fi; \
 	find "$$stage" -name '.DS_Store' -delete; \
 	zip_path="$(ZIP_OUTPUT_DIR)/$$name.zip"; \
 	echo ">> writing $$zip_path"; \
@@ -349,16 +355,24 @@ work-verification:
 scientific-methods:
 	$(call pack_component_skill,scientific-methods)
 
+document-extraction:
+	$(call pack_component_skill,document-extraction)
+
+concept-cards:
+	$(call pack_component_skill,concept-cards)
+
 # ---------------------------------------------------------------------------
 # Aggregates
 # ---------------------------------------------------------------------------
 
 ## skills: build every installable skill zip except collaboration-framework
 skills: agent-coordination code-auditing contribution-style engineering-methods project-management \
-	testing work-verification scientific-methods rust go cpp js erlang cobalt design tailwindcss deno biome
+	testing work-verification scientific-methods document-extraction concept-cards \
+	rust go cpp js erlang cobalt design tailwindcss deno biome
 
 collab-framework agent-coordination code-auditing contribution-style engineering-methods \
-project-management testing work-verification scientific-methods rust go cpp js erlang \
+project-management testing work-verification scientific-methods document-extraction concept-cards \
+rust go cpp js erlang \
 cobalt design tailwindcss deno biome: check-skill-version-source
 
 ## all: build every installable skill zip including the collaboration-framework zip

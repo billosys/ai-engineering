@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.6.0"
+  version: "1.7.0"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills
@@ -114,9 +114,9 @@ real corpus work, successful independent verification, or memory-system writes.
 
 The sibling [reference index](./references/README.md) documents field groups,
 vocabulary, structural candidates, semantic audit boundaries, and operator review
-gates. It is live source support but is not currently copied by the Makefile
-helper macros; Arc05 must wire `references/` into package support before any
-generated-zip or installability claim.
+gates. It is live source support and is copied by the Makefile package target.
+Docs/discoverability and isolated install-smoke evidence remain later Arc05
+work.
 
 Copy only records the task needs into its accepted artifact home. Replace
 placeholder text and null identities; keep unknown or unassessed values explicit
@@ -139,8 +139,7 @@ not claim a check, resolved conflict or admission. Rebase skill-document links
 when copying outside this directory and preserve resolvable evidence links;
 do not leave template-relative paths pretending to locate the copied records.
 
-Arc05 owns future package targets, generated zips, docs/discoverability and
-install integration, including package support for `references/`. No
+Arc05 owns remaining docs/discoverability and install integration work. No
 executable validators, runtime services, graph or ontology database, GraphRAG,
 CCDP services or memory runtime automation are supplied by this skill.
 

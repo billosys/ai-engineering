@@ -1,5 +1,12 @@
 # Document Extraction Version History
 
+### Version 1.4.0 - 2026-09-10
+
+Added Makefile package-target support for the entrypoint, sibling guides,
+templates, and examples. Docs/discoverability and isolated install-smoke
+evidence remain later Arc05 work. No conversion helper, executable validator,
+runtime behavior, or real-corpus extraction was added.
+
 ### Version 1.3.0 - 2026-09-06
 
 Added sibling fillable templates for manifests, structure maps, media reports,
