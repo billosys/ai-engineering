@@ -121,11 +121,12 @@ Closed arcs:
 - Arc01: Readiness And Scope Lock
 - Arc02: Document Extraction Skill
 - Arc03: Concept Cards Skill Core
+- Arc04: Concept Card Records And Examples
 
-Active arc: Arc04.
+Active arc: Arc05.
 
-Arc04 is open with Slice03:
-`arc04-concept-card-records-and-examples/slice03-schema-reference-and-review-surfaces/`.
+Arc05 is open with Slice01:
+`arc05-packaging-docs-and-installability/slice01-package-targets-and-support-directories/`.
 
 ## Version History
 
@@ -210,3 +211,11 @@ Slice02 of Arc04 is CDC-verified and Arc04 has advanced to Slice03 for
 schema/reference and validation-review support under sibling `references/`.
 This records an Arc04 placement refinement and Arc05 packaging requirement,
 not a project roadmap change, re-sequencing, or scope reduction.
+
+### v2.2 - 2026-09-10
+
+Arc04 closed after Slice03 CDC verification and arc-scale composition review.
+Arc05 is now active with Slice01 opened for Makefile package targets and
+support-directory packaging. This advances the existing roadmap and carries
+forward the Arc04 package-support requirement for `concept-cards/references/`;
+it does not reduce Project05 scope or defer package/docs/install objectives.

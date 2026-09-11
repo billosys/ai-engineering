@@ -3,7 +3,7 @@
 ```yaml
 project: project05-concept-card-skill
 arc: arc04-concept-card-records-and-examples
-status: open
+status: closed
 opened: 2026-09-06
 depends-on:
   - arc03-concept-cards-skill-core
@@ -96,3 +96,12 @@ clarified that schema/reference and validation-review material should live
 under sibling `references/`, not under `guides/`, with an explicit Arc05
 package-support requirement because current helper macros only copy `guides/`,
 `templates/`, and `examples/`.
+
+### v1.3 - 2026-09-10
+
+Slice03 CDC verification closed the schema/reference and validation-review
+surface. Arc04 is closed after arc-scale composition confirmed templates,
+examples, and references recompose into the planned source support capability.
+No project roadmap re-sequencing, scope reduction, or new arc was required;
+Arc05 inherits the already-recorded package/docs/installability work, including
+package support for `references/`.

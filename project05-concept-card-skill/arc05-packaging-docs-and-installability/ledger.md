@@ -1,0 +1,12 @@
+# Arc05 Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| A5-1 | Both new skills are wired into Makefile package targets and aggregate build/install lists. | Inspect Makefile targets, `SKILL_ZIP_NAMES`, phony targets, aggregate `skills`/`all`/`install` behavior, and run focused build/list checks. | serious | project DoD | open | | |
+| A5-2 | Generated zips contain the intended support directories for both skills. | Build packages and inspect `unzip -l target/skills/document-extraction.zip` and `target/skills/concept-cards.zip` for entrypoint, version history, guides, templates, examples, and concept-card references. | serious | Arc04 bubble-up | open | | |
+| A5-3 | README/docs discoverability presents both skills as live installable method skills with accurate boundaries. | Inspect README and docs changes for live method-skill listings, build/install guidance, source/package distinction, and absence of stale planned-method wording. | serious | project DoD | open | | |
+| A5-4 | Package-path and version validation cover both new skills. | Run `make check-skills`, `make check-skill-versions`, and `make check-package-paths`; inspect output or package listing for the new zips. | serious | repository gate | open | | |
+| A5-5 | Install smoke proves both skills unpack into an isolated destination with support material present. | Run `INSTALL_DIR=<temp> make install`; inspect installed `document-extraction/` and `concept-cards/` directories and support paths. | serious | project DoD | open | | |
+| A5-6 | Package work preserves Arc02-Arc04 boundaries and does not claim runtime/executable validator/live-corpus work. | Grep source/docs/package claims for runtime services, executable validators, memory runtime, graph/ontology databases, GraphRAG, CCDP service, or live-corpus extraction claims. | correctness-grade | project boundary | open | | |
+
+Rows: 6. Open: 6. Done: 0. Deferred: 0. No-op: 0.
