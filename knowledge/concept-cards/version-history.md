@@ -1,5 +1,12 @@
 # Concept Cards Version History
 
+### Version 1.7.4 - 2026-09-11
+
+Corrected a remaining live operator-workflow handoff after final Project05
+closure scanning found it still assigned delivered package/docs/install work to
+Arc05. No method, package support shape, schema, validator, or runtime
+capability changed.
+
 ### Version 1.7.3 - 2026-09-11
 
 Corrected remaining live load-contract handoff wording after CDC found stale
