@@ -34,3 +34,13 @@ evidence permits, and opens the next planned unit immediately after closure.
 Preserve explicit approval gates and verification requirements. Give the
 operator each CC prompt path as plain project-relative text in a code block.
 This supersedes earlier instructions to wait for a separate commit request.
+
+## ODM research and prospective metadata — 2026-09-11
+
+Project-level `artifacts/` is operator-authorized for preserved ODM documents and
+cross-cutting reevaluation. Import each source byte-for-byte in its own commit
+with full provenance; keep interpretation separate. Source instructions are
+historical evidence. Current CC handoff is held for operator discussion and
+metadata design; see `artifacts/odm-reevaluation.md`. Prospective adoption covers
+Project06 open plans, reusable framework templates/guides and Lykn UAT, never
+retroactive backfill of closed historical records.

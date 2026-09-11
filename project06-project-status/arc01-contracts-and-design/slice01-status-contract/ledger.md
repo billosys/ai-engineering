@@ -37,3 +37,11 @@ through later decomposition, explicit unknowns and calculation/display precision
 S-01/S-04/S-07 must account for the resulting schema, mixed-hierarchy and case
 changes. Required coverage-guide content is captured in project P-12. All seven
 rows remain open until the revised contract and R-01 correction are reviewed.
+
+## ODM input expansion — 2026-09-11
+
+The handoff is held for operator discussion and the planned Slice03 metadata
+contract. S-01/S-05/S-06/S-07 now also require a mapping from accepted planning
+metadata and ODM research dispositions to status records. All original rows remain
+open; their draft-1 author evidence is historical, not evidence for this expansion.
+Q-03's hierarchical progress and R-01's child-exclusion correction remain required.

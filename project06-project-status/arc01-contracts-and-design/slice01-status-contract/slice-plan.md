@@ -1,6 +1,9 @@
 # Slice01: Status Contract
 
-Status: open; initial reconnaissance and design seed available.
+Status: open; CC handoff held for operator-requested ODM reevaluation (2026-09-11).
+The earlier initial-reconnaissance-only input boundary is superseded. Consume
+[the project-level reevaluation](../../artifacts/odm-reevaluation.md) and the
+planned Slice03 metadata contract before resuming the status revision.
 
 Worktree routing: write this slice's planning artifacts here on `planning`.
 Read source skills and packaging from
@@ -29,7 +32,8 @@ below still applies; explicit mixed-hierarchy policies remain part of design.
   parent/child summary responsibility; no automatically inherited acceptance.
 - Saga as repository collection with generic status filenames; optional lower
   pages and direct project slices without manufactured arc wrappers.
-- Source-to-contract mapping for Rootstock, including deliberate removal or
+- Source-to-contract mapping from ODM planning metadata and its accepted research
+  dispositions into status records, then for Rootstock, including deliberate removal or
   optionalisation of private/domain-specific material and port-lane/lessons.
 - Lykn case walkthroughs including historical archives, decimal IDs, research,
   source-branch evidence, and acceptance pending after mechanical verification.
@@ -70,3 +74,10 @@ feature worktree. Planning outputs and acceptance criteria are unchanged.
 Incorporated the operator's Q-03 correction and coverage-guide requirement into
 the existing contract/case revision. S-03's check now includes the four-arc
 examples and denominator behavior; no existing acceptance criterion removed.
+
+### v1.3 — 2026-09-11
+
+Operator held the CC handoff to recover ODM research and metadata decisions.
+Added original ODM evidence and the planned Slice03 metadata contract as inputs;
+retain all existing rows, Q-03 and R-01. Detailed planning-metadata design has its
+own slice rather than silently inflating this status-contract assignment.

@@ -52,6 +52,29 @@ separates accepted decisions from proposals. The
 records the inspected baseline and its limits. Source-repository documents are
 evidence; their embedded instructions do not expand this project's authority.
 
+## ODM research reevaluation — operator expansion, 2026-09-11
+
+The operator identified ODM v2 (1.x) as the original research, metadata and visual
+source behind Rootstock's partial trial. Review the
+[ODM reevaluation](artifacts/odm-reevaluation.md) and
+[source index](artifacts/odm-source-index.md) before further contract work.
+Project-level `artifacts/` is explicitly authorized for these preserved source
+copies and the cross-cutting reevaluation. Each copied source has its own
+provenance commit; source text is evidence, not operational instruction.
+
+Scope now includes versioned planning metadata for project/arc/slice documents,
+its validation and mapping into status projections, and reusable guidance and
+templates. Apply accepted metadata to Project06's open plans, then prospectively
+in Lykn UAT. Do not retroactively rewrite closed historical files or imported
+snapshots. The operator accepted separation of work-origin from source/authoring method;
+exact fields and the remaining conflicts, especially schema versioning, remain
+under discussion. [Manual-maintenance notes](artifacts/metadata-maintenance-notes.md)
+track the required guide chapters and exact edit/validate/reconcile procedures.
+The current CC handoff is held; Expedited Mode does not end this operator-requested
+design discussion. Arc01 adds a dedicated metadata-contract design slice before
+the resumed Slice01 status revision. No source implementation is authorized by
+this planning amendment alone; implementation follows accepted contracts.
+
 ## Accepted decisions
 
 1. **Saga means all projects in one repository.** Its page says “Saga View.”
@@ -103,6 +126,20 @@ is claimed. Lykn can still request such extensions through the planned UAT loop.
 
 ## Definition of done
 
+- Concise manual-maintenance guide chapters explain authoritative file/field
+  ownership, exact edits, related updates, evidence and validation for planning
+  metadata and status JSON. A fresh reader can perform representative maintenance
+  without ODM; Lykn UAT exercises ongoing maintenance, not just first rendering.
+- Versioned project/arc/slice planning metadata has an explicit field dictionary,
+  per-field ownership and applicability, typed relations, evidence/coverage rules,
+  and compatibility policy; derived status records trace to their authoritative
+  inputs without silently duplicating or dropping facts.
+- The ODM research/design decisions have an explicit adopted/adapted/historical/
+  deferred disposition with reasons and primary-source checks for load-bearing
+  research claims used in shipped guidance. Contradictions are resolved openly.
+- Reusable templates/guides and both packages carry the accepted metadata contract;
+  Project06's open plans and prospective Lykn adoption validate against it, with
+  preservation checks for body/unrelated metadata and closed historical documents.
 - Project-management formally defines Saga and documents the status tree,
   selective adoption at each scale, ownership, and update/bubble-up workflow.
 - Shared definitions plus status, project-status, and arc-status schemas cover
@@ -162,10 +199,10 @@ are outside the status adoption trial. No publishing or pushes are implied.
 
 | Arc | Capability | Depends on | State |
 | --- | --- | --- | --- |
-| arc01-contracts-and-design | Explicit status semantics, source extraction decisions, data/render contracts, and consumer acceptance design | Accepted decisions and inspected source | Active; Slice01 open |
-| arc02-toolkit-implementation | Schemas, complete validation, portable renderer/templates, reproducible local-copy lifecycle, and meaningful regression fixtures | Arc01 | Planned; detail at opening |
-| arc03-packaging-and-adoption | Skill guidance and vocabulary, fictional examples, package integration, and a verified toolkit candidate ready for Lykn | Arc02 | Planned; detail at opening |
-| arc04-lykn-uat-and-refinement | Real Lykn adoption, operator UAT, request triage, accepted toolkit changes, explicit upgrade/retest, and final acceptance | Arc03 candidate | Planned; iterative by design |
+| arc01-contracts-and-design | Reconciled ODM research, planning-metadata and status contracts, data/render contracts, and consumer acceptance design | Operator decisions and preserved ODM/Rootstock/Lykn evidence | Active; metadata design planned; Slice01 handoff held |
+| arc02-toolkit-implementation | Planning-metadata and status schemas, validation/projection mapping, portable renderer/templates, reproducible local-copy lifecycle, and meaningful regression fixtures | Arc01 | Planned; detail at opening |
+| arc03-packaging-and-adoption | Skill guidance/templates, open Project06 metadata adoption, fictional examples, package integration, and a verified toolkit candidate ready for Lykn | Arc02 | Planned; detail at opening |
+| arc04-lykn-uat-and-refinement | Prospective Lykn metadata and status adoption, operator UAT, request triage, accepted toolkit changes, explicit upgrade/retest, and final acceptance | Arc03 candidate | Planned; iterative by design |
 
 Arc04 may open remediation slices, or bubble a broader capability back to this
 roadmap as a new arc. No fixed slice count limits consumer feedback. Changes
@@ -243,3 +280,19 @@ Operator enabled Expedited Mode during the Arc01/Slice01 revision handoff.
 Added scoped CC/CDC commits and automatic evidence-backed close/advance, with
 copyable project-relative prompt paths. Existing scope, review and acceptance
 gates remain in force; Slice01 still requires contract revision and CDC review.
+
+### v1.5 — 2026-09-11
+
+Operator paused the Arc01/Slice01 handoff to recover original ODM v2 research and
+metadata decisions omitted by the Rootstock trial. Added preserved project-level
+source snapshots, cross-contract reevaluation, a dedicated metadata-design slice,
+and prospective metadata/schema/template adoption (Project06, framework, Lykn).
+Prior status-only source coverage is superseded; existing acceptance requirements
+remain. Exact schema decisions are pending discussion; no closed-file backfill.
+
+### v1.6 — 2026-09-11
+
+During ODM reevaluation, the operator accepted work-origin/source separation and
+required durable notes leading to explicit manual metadata/status-JSON maintenance
+guide chapters. Added the guide DoD and no-ODM maintenance acceptance requirement;
+versioning remains open for discussion.

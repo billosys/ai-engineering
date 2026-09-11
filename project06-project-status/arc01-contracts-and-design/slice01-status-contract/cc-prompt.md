@@ -1,6 +1,15 @@
 # Assignment: Project06 / Arc01 / Slice01 — Status Contract
 
-## Current follow-up — 2026-09-10
+## Handoff hold — 2026-09-11
+
+Do not start this assignment yet. The operator requested ODM research catch-up
+and discussion before handing it to CC. Read `../../artifacts/odm-reevaluation.md`
+and the updated project/arc plans. Planned Slice03 will define planning metadata;
+this status revision then consumes its accepted contract. The 2026-09-10 assignment
+below remains historical pending that update. Expedited Mode remains enabled,
+but does not bypass the current design discussion. No implementation or closure.
+
+## Current follow-up — 2026-09-10 (held by the notice above)
 
 The initial draft has received CDC review and operator design decisions. Resume
 this same slice with `artifacts/progress-decision.md`, the updated project plan,
