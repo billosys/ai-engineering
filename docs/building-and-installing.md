@@ -14,8 +14,11 @@ Use `make help` for the current target list.
 | `make skills` | Build the installable skill zips except CCDP, including domain/tooling and method skills. |
 | `make collab-framework` | Build `target/skills/collaboration-framework.zip`. |
 | `make scientific-methods` | Build `target/skills/scientific-methods.zip`. |
+| `make document-extraction` | Build `target/skills/document-extraction.zip`. |
+| `make concept-cards` | Build `target/skills/concept-cards.zip`. |
 | `make rust`, `make go`, `make cpp`, `make js`, `make erlang` | Build one language skill package. |
 | `make cobalt`, `make design`, `make tailwindcss`, `make deno`, `make biome` | Build one tooling or design package target. |
+| `make print-skill-zips` | List the release-uploadable skill zip paths managed by the Makefile. |
 | `make clean` | Remove `build/` and generated zips in `target/skills/`. |
 
 Generated skill zips are named from the packaged skill entrypoint's
@@ -27,6 +30,9 @@ Every installable skill zip contains exactly one root `SKILL.md`, with a
 sibling `version-history.md` change record.
 Standalone domain, method, and framework-component skills package their own
 `guides/` plus local support directories such as `templates/` or `examples/`.
+`document-extraction.zip` contains its entrypoint, sibling history, guides,
+templates, and examples. `concept-cards.zip` contains the same support shape
+plus its sibling `references/` review material.
 The `collaboration-framework.zip` package is the only skill zip that bundles a
 `knowledge/` support subtree, and embedded component entrypoints in that tree
 are staged as `ENTRYPOINT.md` so loaders do not discover duplicate nested
@@ -59,6 +65,11 @@ make install
 By default, this builds all installable skill zips and unpacks them into
 `~/.agents/skills`. Override the destination with `INSTALL_DIR=...` when you
 need a different loader location.
+
+`make install` uses the same managed skill-zip list as `make print-skill-zips`:
+it includes `document-extraction.zip` and `concept-cards.zip`, as well as the
+other installable skill packages. It does not install the separately managed
+CCDP protocol package.
 
 Use:
 

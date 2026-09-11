@@ -67,6 +67,13 @@ Every package listed below is produced by `make all`, included in
 | `scientific-methods.zip` | [`knowledge/scientific-methods/SKILL.md`](../knowledge/scientific-methods/SKILL.md) | Designing controlled comparisons, experiments, evaluation rubrics, evidence capture, and regression analysis. |
 | `engineering-methods.zip` | [`knowledge/engineering-methods/SKILL.md`](../knowledge/engineering-methods/SKILL.md) | Reasoning about knowledge substrate, process rigor, and LLM-assisted engineering methods. |
 
+### Document Preparation And Knowledge Records
+
+| Skill package | Source entrypoint | Use when |
+|---|---|---|
+| `document-extraction.zip` | [`knowledge/document-extraction/SKILL.md`](../knowledge/document-extraction/SKILL.md) | Preparing PDF, EPUB, HTML, converted Markdown, or converter-produced source bundles with preserved provenance, structure, media, locators, manifests, readiness, and caveats. |
+| `concept-cards.zip` | [`knowledge/concept-cards/SKILL.md`](../knowledge/concept-cards/SKILL.md) | Creating, extracting, validating, verifying, reconciling, and preserving provenance-bearing concept cards, claims, relationships, competency questions, and memory-admission decisions. |
+
 ## Choosing What To Load
 
 Load the domain/tooling skill that matches the code or artifact you are
@@ -100,19 +107,24 @@ not mean every domain/tooling skill is atomic.
 The source roots under `knowledge/` can contain more than a packaged skill
 loads: source material, extraction metadata, concept cards, workbench notes,
 and other provenance-bearing files. The generated skill zips contain the
-package surface needed by a skill loader.
+package surface needed by a skill loader. For the two document and
+knowledge-record method skills, that package surface includes the entrypoint,
+sibling `version-history.md`, `guides/`, `templates/`, and `examples/`; the
+`concept-cards` package also includes sibling `references/` review material.
 
 Use source paths when you are studying, maintaining, or auditing the repository.
 Use generated zips when you are installing skills into a loader.
 The generated `collaboration-framework.zip` still exposes package entrypoint
 `collaboration-framework/SKILL.md`.
 
-## Planned Method Material
+## Method-Skill Boundaries
 
-This repository includes the live `scientific-methods` method skill. It also
-has planning evidence for method skills such as planned `concept-card-method`.
-Planned method material should not be treated as a live installable skill until
-a later implementation project lands source and package support.
+`scientific-methods`, `document-extraction`, and `concept-cards` are current
+installable method skills. `document-extraction` owns source preparation and
+passes prepared provenance to `concept-cards` when concept-card work is
+requested; `concept-cards` does not own document conversion or source cleanup.
+These packages provide Markdown guidance and records, not executable
+validators, runtime services, or memory-system writes.
 
 Each installable skill includes its change record as `version-history.md`
 beside the package-root `SKILL.md`.

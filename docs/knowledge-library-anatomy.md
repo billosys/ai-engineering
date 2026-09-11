@@ -21,6 +21,7 @@ knowledge/<surface>/
 ├── sources/
 ├── templates/
 ├── examples/
+├── references/
 ├── tools/
 └── workbench/
 ```
@@ -36,15 +37,23 @@ knowledge/<surface>/
 | `sources/` | Original or normalized source material used to build the guides. |
 | `templates/` | Templates owned by that knowledge surface. |
 | `examples/` | Example artifacts used by that knowledge surface. |
+| `references/` | Reference, review, or schema-adjacent material owned by that knowledge surface. |
 | `tools/` | Local helper tools owned by that knowledge surface. |
 | `workbench/` | Scratch, review, release, or transition material that is useful in source but not necessarily packaged. |
 
 ## Source Roots And Package Roots
 
 Source roots can be larger than package roots. For installable skill zips, the
-Makefile packages the skill entrypoint and guide surface needed by the loader.
+Makefile packages the skill entrypoint, sibling `version-history.md`, guides,
+and package-supported sibling directories needed by the loader. For example,
+the `document-extraction` package includes its `templates/` and `examples/`,
+while the `concept-cards` package also includes its `references/` directory.
 Source-only material such as extraction metadata, source corpora, and
 workbench notes usually stays out of the generated zip.
+
+Support directories remain siblings of `guides/`; they are not placed under
+`guides/` merely to make them package-visible. Each package's Makefile target
+defines the support directories it copies.
 
 This distinction matters when checking links. A link can be valid for a source
 reader but invalid inside a generated package, or valid inside a package but

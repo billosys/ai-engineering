@@ -6,11 +6,11 @@
 
 [![][logo]][logo-large]
 
-_Last updated: 2026-09-02._
+_Last updated: 2026-09-10._
 
 AI Engineering is a library of Markdown skill packages, guide material,
-planned method material, support templates, and protocol distributions for
-LLM coding assistants. It is built around a simple split:
+support templates, and protocol distributions for LLM coding assistants. It
+is built around a simple split:
 
 - [`docs/`](./docs/) explains the repository for human readers.
 - [`knowledge/`](./knowledge/) stores the source and derived material consumed
@@ -37,6 +37,13 @@ The repository currently includes:
 - the [`scientific-methods`](./knowledge/scientific-methods/SKILL.md) method
   skill for practical inquiry, controlled comparison, experiment planning,
   evaluation rubrics, evidence capture, and regression analysis;
+- the [`document-extraction`](./knowledge/document-extraction/SKILL.md) method
+  skill for preparing PDF, EPUB, HTML, and converted-source inputs with
+  structure, media, locator, manifest, readiness, and caveat records;
+- the [`concept-cards`](./knowledge/concept-cards/SKILL.md) method skill for
+  provenance-bearing concept-card extraction, validation, verification,
+  reconciliation, relationships, competency questions, and memory-admission
+  decisions;
 - the [`collaboration-framework`](./knowledge/collaboration-framework/SKILL.md) composite
   framework/operational skill, with its framework material under
   [`knowledge/`](./knowledge/);
@@ -51,6 +58,9 @@ The repository currently includes:
 make help              # list package, validation, and install targets
 make all               # build all installable skill zips into target/skills/
 make collab-framework  # build target/skills/collaboration-framework.zip
+make document-extraction  # build target/skills/document-extraction.zip
+make concept-cards      # build target/skills/concept-cards.zip
+make print-skill-zips  # list release-uploadable skill zip paths
 make check-skills      # validate SKILL.md descriptions
 make check-skill-versions # validate source and generated skill versions
 make audit-skills      # measure source descriptions and aggregate pressure
