@@ -137,8 +137,8 @@ require real-corpus UAT and iterative feedback before formal close.
 
 Active arc: Arc07.
 
-Arc07 is open with Slice01:
-`arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/`.
+Arc07 is open with Slice03:
+`arc07-real-corpus-uat-and-feedback/slice03-feedback-driven-skill-refinement/`.
 
 Future arc: Arc08 will perform the post-UAT closure refresh.
 
@@ -286,3 +286,11 @@ checkout acquisition, sampled Markdown preparation, pilot concept-card
 candidate generation, validation/readiness evidence, and review-packet
 creation. This is a status update; no roadmap re-sequencing, scope reduction,
 or runtime expansion was made.
+
+### v2.9 - 2026-09-11
+
+Arc07 Slice02 is CDC-verified and Arc07 has advanced to Slice03 for explicit
+disposition of the seven real-use pilot findings. Slice03 may make accepted
+skill/template/example refinements, record checked no-op decisions, or create
+follow-on boundaries, but must not silently drop findings or expand into
+runtime graph/RAG/MCP implementation.
