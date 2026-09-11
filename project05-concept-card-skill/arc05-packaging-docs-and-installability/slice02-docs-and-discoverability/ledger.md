@@ -1,0 +1,12 @@
+# Slice02 Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S2-1 | Skill-library docs list both new method skills as current installable packages. | Inspect `docs/skill-library.md` for `document-extraction.zip`, `concept-cards.zip`, correct source entrypoints, and use-case summaries. | serious | arc plan | open | | |
+| S2-2 | Build/install docs account for focused targets, generated zip names, aggregate builds, release-uploadable zip listing, and install command routing. | Inspect `docs/building-and-installing.md` and README build sections for `make document-extraction`, `make concept-cards`, `target/skills/document-extraction.zip`, `target/skills/concept-cards.zip`, `make print-skill-zips`, and `make install` boundaries. | serious | project DoD | open | | Do not claim isolated install smoke; that is Slice03. |
+| S2-3 | Repository anatomy docs describe current sibling support-directory layout accurately. | Inspect `docs/knowledge-library-anatomy.md` and related overview text for `guides/`, `templates/`, `examples/`, sibling `version-history.md`, and explicitly packaged support directories such as `references/`. | correctness-grade | Project04 layout | open | | Preserve that support directories are siblings, not buried under `guides/`. |
+| S2-4 | Stale planned-method wording is removed or explicitly historical. | Grep README/docs for stale `concept-card-method`, `source-preparation`, `planned method`, `not packaged`, `future Arc05`, or equivalent wording. | correctness-grade | Slice01 close | open | | Historical references must be labeled as historical, not live destination names. |
+| S2-5 | Docs preserve remaining Slice03 and runtime boundaries. | Inspect changed docs for no claim that package-path validation, isolated install smoke, installed-content inspection, executable validators, JSON Schema, runtime services, live-corpus extraction, graph/ontology databases, GraphRAG, CCDP services, or memory runtime work is complete. | serious | project boundary | open | | |
+| S2-6 | Focused validation passes. | Run relevant Markdown/source link checks for changed docs, `make check-skills`, `make check-skill-versions`, and `git diff --check`. | serious | repository gate | open | | `make check-package-paths` remains Slice03 unless source changes require it earlier. |
+
+Rows: 6. Open: 6. Done: 0. Deferred: 0. No-op: 0.

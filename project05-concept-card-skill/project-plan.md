@@ -125,8 +125,8 @@ Closed arcs:
 
 Active arc: Arc05.
 
-Arc05 is open with Slice01:
-`arc05-packaging-docs-and-installability/slice01-package-targets-and-support-directories/`.
+Arc05 is open with Slice02:
+`arc05-packaging-docs-and-installability/slice02-docs-and-discoverability/`.
 
 ## Version History
 
@@ -219,3 +219,12 @@ Arc05 is now active with Slice01 opened for Makefile package targets and
 support-directory packaging. This advances the existing roadmap and carries
 forward the Arc04 package-support requirement for `concept-cards/references/`;
 it does not reduce Project05 scope or defer package/docs/install objectives.
+
+### v2.3 - 2026-09-10
+
+Slice01 of Arc05 is CDC-verified and Arc05 has advanced to Slice02 for
+README/docs skill-library discoverability, build/install documentation, source
+layout anatomy, and stale planned-method wording cleanup. This is a
+status-only update; no roadmap re-sequencing, scope reduction, or Arc05 plan
+change was made. Slice03 still owns package-path validation, isolated install
+smoke, and final package reconciliation.
