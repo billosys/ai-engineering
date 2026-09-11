@@ -2,7 +2,7 @@
 
 ```yaml
 project: project05-concept-card-skill
-status: active
+status: cc-proposed-done
 created: 2026-09-06
 depends-on:
   - project03-concept-card-method
@@ -124,10 +124,8 @@ Closed arcs:
 - Arc04: Concept Card Records And Examples
 - Arc05: Packaging, Docs, And Installability
 
-Active arc: Arc06.
-
-Arc06 is open with Slice01:
-`arc06-gate-evidence-and-project-closure/slice01-final-gates-and-project-closure/`.
+Arc06 Slice01 is CC proposed-done. Project05 is proposed-done pending final
+independent CDC verification and formal closure.
 
 ## Version History
 
@@ -246,3 +244,11 @@ and package/docs boundary checks. CDC also made a narrow source repair for
 remaining live-guide Slice02 discoverability wording before closure. Arc06 is
 now active with Slice01 opened for final project-level gates, ledger
 reconciliation, explicit deferral/no-op statement, and Project05 closure.
+
+### v2.6 - 2026-09-11
+
+Arc06 Slice01 reran Project05's final repository-local gates, corrected one
+remaining live operator-workflow package handoff, inspected fresh generated
+packages, and reconciled the project ledger. Project05 is CC proposed-done
+pending independent CDC verification; no roadmap scope changed and no
+nondeferrable objective was deferred.

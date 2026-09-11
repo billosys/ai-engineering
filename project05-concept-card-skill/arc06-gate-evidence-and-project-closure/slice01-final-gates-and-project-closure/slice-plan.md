@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc06-gate-evidence-and-project-closure
 slice: slice01-final-gates-and-project-closure
-status: open
+status: cc-proposed-done
 opened: 2026-09-11
 depends-on:
   - arc05-packaging-docs-and-installability
