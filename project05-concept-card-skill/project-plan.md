@@ -125,8 +125,8 @@ Closed arcs:
 
 Active arc: Arc05.
 
-Arc05 is open with Slice02:
-`arc05-packaging-docs-and-installability/slice02-docs-and-discoverability/`.
+Arc05 is open with Slice03:
+`arc05-packaging-docs-and-installability/slice03-package-validation-and-install-smoke/`.
 
 ## Version History
 
@@ -228,3 +228,11 @@ layout anatomy, and stale planned-method wording cleanup. This is a
 status-only update; no roadmap re-sequencing, scope reduction, or Arc05 plan
 change was made. Slice03 still owns package-path validation, isolated install
 smoke, and final package reconciliation.
+
+### v2.4 - 2026-09-10
+
+Slice02 of Arc05 is CDC-verified and Arc05 has advanced to Slice03 for
+package-path validation, isolated installation, installed-content inspection,
+final package/docs reconciliation, and Arc06 closure inputs. This is a
+status-only update; no roadmap re-sequencing, scope reduction, or Arc05 plan
+change was made.
