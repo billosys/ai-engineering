@@ -75,6 +75,18 @@ design discussion. Arc01 adds a dedicated metadata-contract design slice before
 the resumed Slice01 status revision. No source implementation is authorized by
 this planning amendment alone; implementation follows accepted contracts.
 
+## Version model and document coverage — 2026-09-11
+
+The [operator versioning model](artifacts/versioning-decision.md) distinguishes
+the whole skill, each developer-facing planning document, and each named data
+schema. Upon adoption, planning documents carry their own version plus schema
+name/version, with their own history at the end. This broadens the earlier
+project/arc/slice-plan emphasis to all maintained planning-document roles, including
+ledgers, prompts, reports, decisions, research and notes. Dedicated status/data
+files also need named schemas. Shared metadata and role-specific constraints must
+be inventoried; no separate work unit is created for each supporting document.
+Existing closed-history and immutable-source-copy exclusions still apply.
+
 ## Accepted decisions
 
 1. **Saga means all projects in one repository.** Its page says “Saga View.”
@@ -296,3 +308,10 @@ During ODM reevaluation, the operator accepted work-origin/source separation and
 required durable notes leading to explicit manual metadata/status-JSON maintenance
 guide chapters. Added the guide DoD and no-ODM maintenance acceptance requirement;
 versioning remains open for discussion.
+
+### v1.7 — 2026-09-11
+
+Operator clarified distinct skill, planning-document and named-schema versions,
+and all-planning-document metadata coverage. Expanded the Slice03 inventory beyond
+plan-of-record files and the manual guide requirements to document revision/history
+maintenance. Exact schema cadence and compatibility rules remain under discussion.

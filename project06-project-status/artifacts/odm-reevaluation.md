@@ -1,3 +1,7 @@
+---
+version: "1.1.0"
+---
+
 # ODM research catch-up and Project06 reevaluation
 
 Date: 2026-09-11. CDC document review, with operator discussion still open.
@@ -70,7 +74,7 @@ ODD numbers resolve to the [preserved copies](odm-source-index.md).
 
 ## Issues to discuss before adopting the model
 
-### D-01: independent schema versions versus one global counter
+### D-01: independent schema versions versus one global counter — axes clarified
 
 [ODD-0020](odm-sources/01KWWTTV124RVF2R82TKSRCCAW.md) §2 explicitly chooses
 per-type independent versions; §6 rejects a global metadata version. In contrast,
@@ -78,6 +82,10 @@ per-type independent versions; §6 rejects a global metadata version. In contras
 there is one global generation counter shared across all types and cite ODD-0020
 as authority. This is a documented contradiction, not an inferred Rust defect.
 ODD-0020 also retains an unqualified current-v1.0 statement above its v1.1 amendment.
+
+Operator clarification: [the versioning decision](versioning-decision.md) settles
+the separate skill/document/schema axes and requires schema name plus version.
+Independent versus synchronized schema increments remains a specific open detail.
 
 Recommendation: preserve the independent-contract principle for planning metadata;
 use a pinned toolkit compatibility manifest to list supported contracts. A coordinated
@@ -188,3 +196,15 @@ This is not a fresh systematic review of the entire PM literature.
 
 The metadata contract and exact field choices remain to be discussed. This review
 does not open implementation, close Slice01, declare ODM conformance, or dispatch CC.
+
+## Version history
+
+### 1.0.0 — 2026-09-11
+
+Initial nine-document reevaluation, source conflicts and plan impact; recorded
+accepted work-origin/source separation and manual guide requirements.
+
+### 1.1.0 — 2026-09-11
+
+Linked the operator's skill/document/schema version clarification; narrowed D-01
+to unresolved schema cadence and compatibility details.

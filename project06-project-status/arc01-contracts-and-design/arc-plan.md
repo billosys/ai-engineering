@@ -18,7 +18,7 @@ upgrade boundaries, and acceptance cases for implementation and UAT.
 
 | Slice | Scope | Dependencies | State |
 | --- | --- | --- | --- |
-| slice03-planning-metadata-contract | Define prospective project/arc/slice metadata, field ownership, typed relationships, compatibility and status-projection mapping from ODM research | Operator discussion of ODM reevaluation D-01–D-06 | Planned; precedes resumed Slice01; no CC open set yet |
+| slice03-planning-metadata-contract | Define prospective metadata for all planning-document roles, document/schema version identity, field ownership, relationships, compatibility and status projection from ODM research | Operator discussion of ODM reevaluation D-01–D-06 | Planned; precedes resumed Slice01; no CC open set yet |
 | slice01-status-contract | Revise the status model, hierarchy, evidence and roll-up semantics against the metadata contract; reconcile ODM, Rootstock and Lykn cases | Slice03 accepted; existing project decisions and R-01 | Existing open set held for reevaluation |
 | slice02-toolkit-and-acceptance-design | Specify local-copy distribution/upgrade mechanics, renderer/validator command contracts, test matrix, UAT intake and source/package impact map | Slice03 and Slice01 verified and design accepted | Planned; open set written when next |
 
@@ -84,3 +84,10 @@ and reevaluation first. No new CC assignment is opened during operator discussio
 
 Recorded the accepted work-origin/source separation and mandatory manual-maintenance
 guide design across the three slices, with packaged-guide and Lykn scenarios.
+
+### v1.5 — 2026-09-11
+
+Operator clarified skill/document/schema version axes and broadened metadata scope
+to all planning-document roles. Slice03 inventories common and role-specific
+metadata, own document histories and named-schema identity; Slice02 carries their
+manual maintenance and compatibility procedures into the guide/package design.

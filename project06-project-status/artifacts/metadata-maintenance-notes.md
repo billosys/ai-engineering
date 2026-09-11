@@ -1,3 +1,7 @@
+---
+version: "1.1.0"
+---
+
 # Manual metadata and status maintenance: design notes and guide requirements
 
 Started: 2026-09-11. Living Project06 notes; not yet shipped guidance.
@@ -13,8 +17,10 @@ keep open proposals visibly distinct from accepted requirements.
   be discovered work authored locally. Exact field names/shapes remain design work.
 - Preserve source/import lineage after a document becomes locally maintained.
   Unknown provenance is not the same as authored here.
-- Versioning is an open discussion; no independent-per-type/global-counter
-  choice has been accepted for the new metadata contracts yet.
+- The [versioning model](versioning-decision.md) distinguishes skill, planning-document
+  and named-schema versions. Schema cadence and detailed compatibility/bump rules
+  remain open. All adopted planning-document roles need frontmatter, their own
+  version and an end-of-document history; the scope is broader than plan files.
 - Ship additional project-management guide chapters with concise, explicit manual
   maintenance instructions for both planning metadata and status JSON. A CLI such
   as ODM cannot be a prerequisite for correct maintenance.
@@ -97,7 +103,8 @@ impact map. Prefer focused chapters over one large metadata appendix.
    planning, changing roadmaps, worked hierarchical arithmetic and sparse records.
 5. **Maintaining status JSON and regenerating views.** Authority map, manual versus
    generated fields, source reconciliation, validation/render loop and diagnostics.
-6. **Schema and toolkit upgrades.** Version axes, compatibility rules, preservation,
+6. **Document revisions and schema/toolkit upgrades.** Separate document versions
+   from named-schema versions; end-of-file histories, compatibility rules, preservation,
    explicit upgrades, local customizations and rollback/review boundaries.
 
 Every chapter should contain at least one realistic before/after edit and a common
@@ -120,8 +127,12 @@ Reuse framework closure guidance rather than inventing a competing closure proto
 - Body/unrelated metadata preservation and unchanged closed-history files are
   demonstrated. No broad retrospective metadata migration is implied.
 
-## Decision log
+## Version history
 
-- 2026-09-11: Operator accepted work-origin/source separation; reserved versioning
+- 1.0.0 — 2026-09-11: Operator accepted work-origin/source separation; reserved versioning
   for discussion; explicitly required concise manual maintenance guide chapters.
   Created these durable chapter/procedure notes before implementation.
+
+- 1.1.0 — 2026-09-11: Recorded the three version axes, named-schema identity and
+  all-planning-document scope. Added document-revision guidance and open
+  compatibility/bump questions; schema adoption itself remains forthcoming.
