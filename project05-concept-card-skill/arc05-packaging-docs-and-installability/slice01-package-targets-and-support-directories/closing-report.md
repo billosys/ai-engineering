@@ -8,6 +8,7 @@ package-target and archive evidence before treating this slice as verified close
 ## Commits And Scope
 
 - Source commit: `06aa195e8a16d126dcd27e270e9bcc497f9aab25` (`Package document extraction and concept cards`).
+- Iteration source commit: `202b8156f7c22d309f6e31023a7f7f9bf4eb3a6e` (`Correct package handoff wording`).
 - Planning commit: pending; this report and Slice01 ledger are committed after authoring.
 - Source paths: `Makefile`, both skill entrypoints and histories, concept-card references README, and concept-card maintenance wording.
 - Planning paths: this report and `ledger.md` only.
@@ -33,6 +34,33 @@ package-target and archive evidence before treating this slice as verified close
 - `make check-skill-versions` passed for 22 source skills and 22 generated packages.
 - `git diff --check` passed.
 - `make check-package-paths` and isolated install smoke remain assigned to later Arc05 slices.
+
+## Iteration 01
+
+CDC reproduced the package-target and archive evidence but found seven live
+guides that still described package targets, generated zips, or concept-card
+reference packaging as future. CDC also confirmed that an initially observed
+empty templates directory resulted from parallel focused builds sharing `build/`;
+the serial rerun showed the expected archive contents, so this iteration does
+not change package-build concurrency behavior.
+
+The corrective source commit changes:
+
+- `knowledge/document-extraction/SKILL.md`, `version-history.md`, and guides
+  01, 04, and 05;
+- `knowledge/concept-cards/SKILL.md`, `version-history.md`, and guides 01, 03,
+  04, and 08.
+
+The new skill versions are `document-extraction` `1.4.1` and `concept-cards`
+`1.7.1`. The iteration reran both description checks, both quick validators,
+serial `make document-extraction` and `make concept-cards`, both archive
+listings, `make check-skills`, `make check-skill-versions`, `git diff --check`,
+and a targeted live-guide stale-wording grep. All passed.
+
+No ledger-row disposition changed: all seven remain CC-attested done. The
+Bubble-up is unchanged: Slice02 owns README/docs discoverability, and Slice03
+owns package-path validation, isolated installation, and final package
+reconciliation. This report remains revised proposed-done pending CDC review.
 
 ## Artifact Inventory
 
