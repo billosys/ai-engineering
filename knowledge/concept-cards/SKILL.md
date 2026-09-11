@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.7.0"
+  version: "1.7.1"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills

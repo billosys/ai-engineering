@@ -1,5 +1,12 @@
 # Document Extraction Version History
 
+### Version 1.4.1 - 2026-09-10
+
+Corrected live-guide handoffs after the Arc05 package targets landed. Package
+targets and generated zips now exist; README/docs discoverability remains
+Slice02 work, while package-path validation, isolated install smoke, and final
+package reconciliation remain Slice03 work.
+
 ### Version 1.4.0 - 2026-09-10
 
 Added Makefile package-target support for the entrypoint, sibling guides,

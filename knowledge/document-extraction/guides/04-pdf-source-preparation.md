@@ -197,5 +197,7 @@ the [manifest](../templates/manifest.md) and
 [locator map](../templates/locator-map.md), and compare the representative
 [PDF/Marker handoff](../examples/pdf-marker-handoff.md). Other live
 [templates and examples](../SKILL.md#templates-and-examples) include the
-non-executable helper plan and optional concept-card handoff. Package/docs/install
-integration remains future Arc05 work.
+non-executable helper plan and optional concept-card handoff. Package targets
+and generated zips now exist. README/docs discoverability remains Slice02 work;
+package-path validation, isolated install smoke, and final package reconciliation
+remain Slice03 work.

@@ -1,5 +1,13 @@
 # Concept Cards Version History
 
+### Version 1.7.1 - 2026-09-10
+
+Corrected live-guide handoffs after the Arc05 package targets landed. Package
+targets and generated zips now exist, and `references/` is included in the
+generated package. README/docs discoverability remains Slice02 work; package-
+path validation, isolated install smoke, and final package reconciliation remain
+Slice03 work.
+
 ### Version 1.7.0 - 2026-09-10
 
 Added Makefile package-target support for the entrypoint, sibling guides,

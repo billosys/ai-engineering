@@ -213,5 +213,7 @@ downstream responsibilities. Follow
 [media report](../templates/media-report.md), and compare the representative
 [EPUB/pandoc handoff](../examples/epub-pandoc-handoff.md). Other live
 [templates and examples](../SKILL.md#templates-and-examples) include the
-non-executable helper plan and optional concept-card handoff. Package/docs/install
-integration remains future Arc05 work.
+non-executable helper plan and optional concept-card handoff. Package targets
+and generated zips now exist. README/docs discoverability remains Slice02 work;
+package-path validation, isolated install smoke, and final package reconciliation
+remain Slice03 work.

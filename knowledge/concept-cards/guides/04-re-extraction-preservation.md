@@ -199,7 +199,8 @@ for checks of revised outputs and prior-result applicability. In the
 [memory admission](./09-memory-admission.md), and
 [maintenance and package boundaries](./10-maintenance-packaging.md)
 for changed dependencies and subsequent decisions. Sibling templates,
-representative examples, and reference/review support are live. Arc05 owns
-package targets, generated zips, docs and install integration, including package
-support for `references/`. This guide supplies no executable
-validator, runtime service or real-corpus execution evidence.
+representative examples, and reference/review support are live. Package targets
+and generated zips now exist, including packaged `references/`. README/docs
+discoverability remains Slice02 work; package-path validation, isolated install
+smoke, and final package reconciliation remain Slice03 work. This guide supplies
+no executable validator, runtime service or real-corpus execution evidence.

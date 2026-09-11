@@ -118,7 +118,8 @@ Use [relationships and CQs](./06-graph-cq.md),
 for those operations.
 Sibling templates, representative examples, and reference/review support are
 live. Consult the sibling reference index for documented field groups and review
-boundaries. Package targets, generated zips, docs and install integration,
-including package support for `references/`, remain Arc05 work. Do not replace
-documented candidates with an invented canonical schema or claim that an
-unavailable validator was run.
+boundaries. Package targets and generated zips now exist, including packaged
+`references/`. README/docs discoverability remains Slice02 work; package-path
+validation, isolated install smoke, and final package reconciliation remain
+Slice03 work. Do not replace documented candidates with an invented canonical
+schema or claim that an unavailable validator was run.

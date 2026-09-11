@@ -8,7 +8,7 @@ description: |
   own concept-card semantics or ordinary analysis of already usable sources.
 license: MIT
 metadata:
-  version: "1.4.0"
+  version: "1.4.1"
   hermes:
     tags: [document-extraction, source-preparation, markdown, provenance]
     category: method-skills

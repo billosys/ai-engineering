@@ -209,6 +209,8 @@ assessing these outputs. In the [guide map](../SKILL.md#guide-map), guides
 [memory admission](./09-memory-admission.md), and
 [maintenance and package boundaries](./10-maintenance-packaging.md).
 Sibling templates, representative examples, and reference/review support are
-live. Arc05 owns package targets, generated zips, docs and install integration,
-including package support for `references/`. This is procedural guidance,
-not an executable validator, runtime service or claim of a completed corpus run.
+live. Package targets and generated zips now exist, including packaged
+`references/`. README/docs discoverability remains Slice02 work; package-path
+validation, isolated install smoke, and final package reconciliation remain
+Slice03 work. This is procedural guidance, not an executable validator, runtime
+service or claim of a completed corpus run.
