@@ -1,5 +1,14 @@
 # Concept Cards Version History
 
+### Version 1.7.2 - 2026-09-10
+
+Clarified the current package handoff after the Slice02 documentation close in
+the entrypoint and extraction guide: package targets, generated zips,
+`references/` support, and public discoverability are live; package-path
+validation, isolated installation, installed-content inspection, and final
+reconciliation are Slice03 acceptance work. No method, schema, validator, or
+runtime capability was added.
+
 ### Version 1.7.1 - 2026-09-10
 
 Corrected live-guide handoffs after the Arc05 package targets landed. Package

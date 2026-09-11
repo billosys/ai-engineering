@@ -1,5 +1,13 @@
 # Document Extraction Version History
 
+### Version 1.4.2 - 2026-09-10
+
+Clarified the current package handoff after the Slice02 documentation close:
+package targets, generated zips, and public discoverability are live, while
+package-path validation, isolated installation, installed-content inspection,
+and final reconciliation are Slice03 acceptance work. No preparation procedure
+or package support shape changed.
+
 ### Version 1.4.1 - 2026-09-10
 
 Corrected live-guide handoffs after the Arc05 package targets landed. Package

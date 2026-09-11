@@ -8,7 +8,7 @@ description: |
   own concept-card semantics or ordinary analysis of already usable sources.
 license: MIT
 metadata:
-  version: "1.4.1"
+  version: "1.4.2"
   hermes:
     tags: [document-extraction, source-preparation, markdown, provenance]
     category: method-skills
@@ -92,5 +92,6 @@ Examples are synthetic illustrations, not evidence of actual conversions.
 These sibling templates and examples are live source support. The helper plan
 is non-executable; no converter, splitter, helper or validator scripts ship
 here. This skill has a Makefile package target that produces its generated zip.
-Docs/discoverability and isolated install-smoke evidence remain later Arc05
-work. Consult the [change record](./version-history.md) for source history.
+Package-path validation, isolated install smoke, installed-content inspection,
+and final package/docs reconciliation are Arc05 Slice03 acceptance work.
+Consult the [change record](./version-history.md) for source history.

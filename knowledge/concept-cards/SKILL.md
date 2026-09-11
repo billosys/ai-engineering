@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.7.1"
+  version: "1.7.2"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills
@@ -115,8 +115,8 @@ real corpus work, successful independent verification, or memory-system writes.
 The sibling [reference index](./references/README.md) documents field groups,
 vocabulary, structural candidates, semantic audit boundaries, and operator review
 gates. It is live source support and is copied by the Makefile package target.
-Docs/discoverability and isolated install-smoke evidence remain later Arc05
-work.
+Package-path validation, isolated install smoke, installed-content inspection,
+and final package/docs reconciliation are Arc05 Slice03 acceptance work.
 
 Copy only records the task needs into its accepted artifact home. Replace
 placeholder text and null identities; keep unknown or unassessed values explicit
@@ -139,8 +139,9 @@ not claim a check, resolved conflict or admission. Rebase skill-document links
 when copying outside this directory and preserve resolvable evidence links;
 do not leave template-relative paths pretending to locate the copied records.
 
-Arc05 owns remaining docs/discoverability and install integration work. No
-executable validators, runtime services, graph or ontology database, GraphRAG,
-CCDP services or memory runtime automation are supplied by this skill.
+Arc05 package validation and install integration are repository acceptance
+work. No executable validators, runtime services, graph or ontology database,
+GraphRAG, CCDP services or memory runtime automation are supplied by this
+skill.
 
 Source lineage is recorded in the [version history](./version-history.md).
