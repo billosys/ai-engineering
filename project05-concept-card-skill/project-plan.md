@@ -2,7 +2,7 @@
 
 ```yaml
 project: project05-concept-card-skill
-status: cc-proposed-done
+status: active
 created: 2026-09-06
 depends-on:
   - project03-concept-card-method
@@ -14,6 +14,8 @@ related:
   - future ontology-engineering composite skill
   - NeON and ontology-engineering research
   - historical v3.2 concept-card workbench prompts
+  - memory protocol research
+  - CompCogNeuro/book real-corpus UAT
 ```
 
 ## Definition Of Done
@@ -38,6 +40,9 @@ The project is done when:
   package contract explicitly supports them.
 - Both skills are wired into repository discoverability, packaging, generated
   zip targets, install behavior, and validation gates.
+- Both skills have been exercised against a real Markdown corpus before final
+  project closure, with feedback captured as accepted refinements, explicit
+  no-ops, or follow-on work.
 - `concept-cards` routes raw PDF/EPUB/HTML or converted-source cleanup to
   `document-extraction`; it consumes extracted/prepared source outputs as
   upstream provenance rather than owning document conversion itself.
@@ -112,7 +117,9 @@ organization.
 | Arc03: Concept Cards Skill Core | Implement `concept-cards` entrypoint and core guides for load contract, extraction, re-extraction, provenance, evidence lifecycle, relationship/CQ semantics, reconciliation, validation, verification, and memory admission. | Arc01, Arc02 routing decisions. |
 | Arc04: Concept Card Records And Examples | Implement concept-card templates, examples, schema/reference material, and validation review surfaces using Project03 v4.0 semantics. | Arc03. |
 | Arc05: Packaging, Docs, And Installability | Wire both skills into Makefile targets, README/docs skill-library discoverability, package path checks, generated zips, install behavior, and version histories. | Arc02, Arc03, Arc04. |
-| Arc06: Gate Evidence And Project Closure | Run final validation, inspect generated package contents, reconcile ledgers, document any explicit deferrals, and close the project. | Arc05. |
+| Arc06: Gate Evidence And Project Closure | Run final validation, inspect generated package contents, reconcile ledgers, document any explicit deferrals, and prepare the first closure baseline. | Arc05. |
+| Arc07: Real Corpus UAT And Feedback | Exercise `document-extraction` and `concept-cards` on the `CompCogNeuro/book` Markdown textbook corpus, generate concept-card outputs for memory-protocol/RAG use, and feed real-use findings back into the skills. | Arc06 baseline evidence. |
+| Arc08: Post-UAT Closure Refresh | Rerun final gates after Arc07, reconcile UAT findings and follow-on boundaries, and formally close Project05. | Arc07. |
 
 ## Status
 
@@ -124,8 +131,16 @@ Closed arcs:
 - Arc04: Concept Card Records And Examples
 - Arc05: Packaging, Docs, And Installability
 
-Arc06 Slice01 is CC proposed-done. Project05 is proposed-done pending final
-independent CDC verification and formal closure.
+Arc06 Slice01 is CC proposed-done as a closure baseline. It is not final
+Project05 closure because the operator expanded acceptance on 2026-09-11 to
+require real-corpus UAT and iterative feedback before formal close.
+
+Active arc: Arc07.
+
+Arc07 is open with Slice01:
+`arc07-real-corpus-uat-and-feedback/slice01-uat-protocol-and-corpus-intake/`.
+
+Future arc: Arc08 will perform the post-UAT closure refresh.
 
 ## Version History
 
@@ -252,3 +267,14 @@ remaining live operator-workflow package handoff, inspected fresh generated
 packages, and reconciled the project ledger. Project05 is CC proposed-done
 pending independent CDC verification; no roadmap scope changed and no
 nondeferrable objective was deferred.
+
+### v2.7 - 2026-09-11
+
+The operator expanded Project05 acceptance before CDC closure to require
+real-corpus UAT and iterative feedback using the `CompCogNeuro/book` Markdown
+textbook corpus as a memory-protocol/RAG-oriented concept-card trial. Arc06 is
+retained as a proposed closure baseline, but formal project closure is paused.
+Arc07 is opened for corpus intake, UAT protocol, pilot extraction, feedback
+loops, expanded concept-card generation, and RAG handoff evidence. Arc08 is
+added as the post-UAT closure refresh. This expands acceptance rather than
+deferring or reducing either live skill objective.

@@ -2,14 +2,22 @@
 
 ```yaml
 project: project05-concept-card-skill
-status: cc-proposed-done
+status: superseded-cc-proposed-done
 closed-on: 2026-09-11
 closure-slice: arc06-gate-evidence-and-project-closure/slice01-final-gates-and-project-closure
 ```
 
+## Supersession Note
+
+This report is retained as CC's proposed closure baseline. It is not the
+current Project05 closure request. On 2026-09-11, before CDC accepted final
+closure, the operator expanded acceptance to require real-corpus UAT and
+iterative feedback using the `CompCogNeuro/book` Markdown textbook corpus.
+Project05 closure now depends on Arc07 and a post-UAT Arc08 closure refresh.
+
 ## Verdict
 
-Project05 is CC proposed-done pending independent CDC verification. It
+Project05 was CC proposed-done pending independent CDC verification. It
 delivered both nondeferrable live installable skills in the current
 post-Project04 sibling-directory layout: `document-extraction` and
 `concept-cards`.
@@ -74,8 +82,9 @@ install independently reproduced by CDC. Unobserved operator modifications in
 managed install directories may have been overwritten and cannot be
 reconstructed from this project evidence.
 
-## Remaining Closure Step
+## Current Next Step
 
-CDC must independently reproduce Arc06's final gates, archive and boundary
-inspections, ledger reconciliation, deferral statement, and source/planning
-hygiene. Only that verification may formally close Arc06 and Project05.
+Do not perform final Project05 CDC closure from this report. Arc07 now owns
+real-corpus UAT and feedback against `CompCogNeuro/book`; Arc08 owns the
+post-UAT closure refresh. This report remains useful baseline evidence for
+Arc06's package/ledger closure work.

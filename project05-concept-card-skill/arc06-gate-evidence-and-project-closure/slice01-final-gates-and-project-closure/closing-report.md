@@ -9,10 +9,18 @@ closed-on: 2026-09-11
 source-repair-commit: fd9d887
 ```
 
+## Supersession Note
+
+This slice closeout remains the Arc06 closure-baseline evidence. It is not the
+current final Project05 closure request. Before CDC accepted final closure, the
+operator expanded acceptance to require real-corpus UAT and iterative feedback;
+Arc07 and Arc08 now precede formal project closure.
+
 ## Status
 
 CC proposed-done. CDC must independently reproduce this final evidence before
-closing Arc06 or Project05.
+closing Arc06 as a baseline. Project05 itself now remains open pending Arc07
+and Arc08.
 
 ## Delivered Closure Work
 
@@ -63,4 +71,7 @@ skill directories.
 CDC should independently rerun the final gates, inspect the two current
 archives, reproduce the stale-name/runtime boundary scans, verify the project
 ledger reconciliation and deferral statement, and check source/planning
-whitespace and status after the explicit planning commit.
+whitespace and status after the explicit planning commit if Arc06 baseline
+closure is being reviewed. Do not use this slice alone to close Project05;
+the active roadmap now requires Arc07 real-corpus UAT and Arc08 closure
+refresh first.
