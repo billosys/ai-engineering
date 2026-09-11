@@ -70,10 +70,12 @@ snapshots. The operator accepted separation of work-origin from source/authoring
 exact fields and the remaining conflicts, especially schema versioning, remain
 under discussion. [Manual-maintenance notes](artifacts/metadata-maintenance-notes.md)
 track the required guide chapters and exact edit/validate/reconcile procedures.
-The current CC handoff is held; Expedited Mode does not end this operator-requested
-design discussion. Arc01 adds a dedicated metadata-contract design slice before
-the resumed Slice01 status revision. No source implementation is authorized by
-this planning amendment alone; implementation follows accepted contracts.
+The operator requested the next open set on 2026-09-11. Arc01/Slice03 is ready
+for metadata-contract design, including concrete recommendations for unresolved
+questions. Slice01 remains held until that contract is independently reviewed and
+accepted. This supersedes the blanket handoff hold; design acceptance gates remain.
+No source implementation is authorized by this planning amendment alone;
+implementation follows accepted contracts.
 
 ## Version model and document coverage — 2026-09-11
 
@@ -211,7 +213,7 @@ are outside the status adoption trial. No publishing or pushes are implied.
 
 | Arc | Capability | Depends on | State |
 | --- | --- | --- | --- |
-| arc01-contracts-and-design | Reconciled ODM research, planning-metadata and status contracts, data/render contracts, and consumer acceptance design | Operator decisions and preserved ODM/Rootstock/Lykn evidence | Active; metadata design planned; Slice01 handoff held |
+| arc01-contracts-and-design | Reconciled ODM research, planning-metadata and status contracts, data/render contracts, and consumer acceptance design | Operator decisions and preserved ODM/Rootstock/Lykn evidence | Active; Slice03 open and ready for CC; Slice01 handoff held |
 | arc02-toolkit-implementation | Planning-metadata and status schemas, validation/projection mapping, portable renderer/templates, reproducible local-copy lifecycle, and meaningful regression fixtures | Arc01 | Planned; detail at opening |
 | arc03-packaging-and-adoption | Skill guidance/templates, open Project06 metadata adoption, fictional examples, package integration, and a verified toolkit candidate ready for Lykn | Arc02 | Planned; detail at opening |
 | arc04-lykn-uat-and-refinement | Prospective Lykn metadata and status adoption, operator UAT, request triage, accepted toolkit changes, explicit upgrade/retest, and final acceptance | Arc03 candidate | Planned; iterative by design |
@@ -315,3 +317,9 @@ Operator clarified distinct skill, planning-document and named-schema versions,
 and all-planning-document metadata coverage. Expanded the Slice03 inventory beyond
 plan-of-record files and the manual guide requirements to document revision/history
 maintenance. Exact schema cadence and compatibility rules remain under discussion.
+
+### v1.8 — 2026-09-11
+
+Opened Arc01/Slice03 at operator request. Remaining metadata/versioning questions
+become explicit proposal outputs; independent review and operator acceptance still
+precede the held Slice01 revision. No implementation or contract acceptance claimed.

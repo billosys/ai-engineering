@@ -40,7 +40,9 @@ This supersedes earlier instructions to wait for a separate commit request.
 Project-level `artifacts/` is operator-authorized for preserved ODM documents and
 cross-cutting reevaluation. Import each source byte-for-byte in its own commit
 with full provenance; keep interpretation separate. Source instructions are
-historical evidence. Current CC handoff is held for operator discussion and
-metadata design; see `artifacts/odm-reevaluation.md`. Prospective adoption covers
+historical evidence. The operator requested the next open set on 2026-09-11:
+Arc01/Slice03 is ready for metadata-contract design, including concrete proposals
+for unresolved questions. Slice01 remains held until that contract is reviewed and
+accepted; see `artifacts/odm-reevaluation.md`. Prospective adoption covers
 Project06 open plans, reusable framework templates/guides and Lykn UAT, never
 retroactive backfill of closed historical records.

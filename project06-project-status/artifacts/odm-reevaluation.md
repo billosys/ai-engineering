@@ -1,5 +1,5 @@
 ---
-version: "1.1.0"
+version: "1.2.0"
 ---
 
 # ODM research catch-up and Project06 reevaluation
@@ -8,7 +8,9 @@ Date: 2026-09-11. CDC document review, with operator discussion still open.
 This records findings and recommendations, not accepted schemas or implementation.
 The operator has authorized prospective planning metadata for Project06's open plans,
 reusable framework templates/guides, and Lykn adoption during UAT. Closed historical
-files are not to be backfilled. The current CC handoff is held for this discussion.
+files are not to be backfilled. Following the operator's 2026-09-11 open-set request,
+Slice03 is ready to develop concrete design proposals. Slice01 remains held pending
+review and acceptance of that metadata contract.
 
 ## Evidence and limits
 
@@ -43,7 +45,9 @@ not every consumer has versioned planning frontmatter yet.
 The new metadata contract is substantial enough for a separate design slice. Reserve
 `slice03-planning-metadata-contract` before the resumed Slice01 revision and existing
 Slice02 toolkit design. Numeric labels stay stable; dependencies express order.
-Do not open its CC assignment before the current discussion resolves the design forks.
+The operator has now authorized opening that design assignment. Unresolved forks
+are reviewable proposal outputs; they do not block CC from starting. This supersedes
+the earlier instruction to hold the assignment until all forks were resolved.
 
 ## Research-to-contract disposition map
 
@@ -208,3 +212,9 @@ accepted work-origin/source separation and manual guide requirements.
 
 Linked the operator's skill/document/schema version clarification; narrowed D-01
 to unresolved schema cadence and compatibility details.
+
+### 1.2.0 — 2026-09-11
+
+Operator requested the next open set. Superseded the blanket design-assignment hold
+with a ready Slice03 proposal assignment; retained the Slice01 hold and explicit
+review/acceptance requirements. Research findings and open decisions are unchanged.

@@ -1,6 +1,7 @@
 # Arc01: Contracts and Design
 
-Status: active; ODM reevaluation under operator discussion; Slice01 handoff held.
+Status: active; Slice03 open and ready for CC; Slice01 handoff held pending the
+reviewed and accepted metadata contract.
 
 Planning remains in this worktree. Source reads and future implementation or
 validation use `.worktrees/project-status-feature` on `feature/project-status`,
@@ -18,7 +19,7 @@ upgrade boundaries, and acceptance cases for implementation and UAT.
 
 | Slice | Scope | Dependencies | State |
 | --- | --- | --- | --- |
-| slice03-planning-metadata-contract | Define prospective metadata for all planning-document roles, document/schema version identity, field ownership, relationships, compatibility and status projection from ODM research | Operator discussion of ODM reevaluation D-01–D-06 | Planned; precedes resumed Slice01; no CC open set yet |
+| slice03-planning-metadata-contract | Define prospective metadata for all planning-document roles, document/schema version identity, field ownership, relationships, compatibility and status projection from ODM research | Accepted operator requirements and preserved ODM inputs; unresolved D-01–D-06 details are proposal outputs | Open; [Slice03 open set](slice03-planning-metadata-contract/slice-plan.md) ready for CC |
 | slice01-status-contract | Revise the status model, hierarchy, evidence and roll-up semantics against the metadata contract; reconcile ODM, Rootstock and Lykn cases | Slice03 accepted; existing project decisions and R-01 | Existing open set held for reevaluation |
 | slice02-toolkit-and-acceptance-design | Specify local-copy distribution/upgrade mechanics, renderer/validator command contracts, test matrix, UAT intake and source/package impact map | Slice03 and Slice01 verified and design accepted | Planned; open set written when next |
 
@@ -101,3 +102,9 @@ Packet review moved shared schema dialect/identity decisions into Slice03 before
 the status-contract revision. Runtime/command design stays in Slice02. Refreshed
 brief and historical artifact notices distinguish scope updates from a completed
 contract rewrite. No CC open set or schema implementation is claimed.
+
+### v1.7 — 2026-09-11
+
+Opened the planned Slice03 metadata-contract open set at operator request. Replaced
+its discussion prerequisite with proposal work against accepted requirements and
+preserved sources; retained the Slice03 → Slice01 → Slice02 dependency sequence.
