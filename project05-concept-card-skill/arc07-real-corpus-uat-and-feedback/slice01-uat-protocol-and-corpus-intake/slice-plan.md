@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc07-real-corpus-uat-and-feedback
 slice: slice01-uat-protocol-and-corpus-intake
-status: open
+status: cc-proposed-done
 opened: 2026-09-11
 depends-on:
   - arc06-gate-evidence-and-project-closure
