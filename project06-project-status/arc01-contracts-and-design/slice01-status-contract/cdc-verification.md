@@ -1,4 +1,16 @@
+---
+version: "1.1.0"
+---
+
 # Slice01 CDC design review — revision required; acceptance pending
+
+Current review boundary, 2026-09-11: the draft-1 reproduction below does not
+verify the subsequent ODM research expansion or new metadata/schema model.
+The [project reevaluation](../../artifacts/odm-reevaluation.md) and
+[version decision](../../artifacts/versioning-decision.md) now govern inputs.
+Slice03 metadata design precedes resumed Slice01; no automatic advance to Slice02
+from this historical review is authorized. All slice rows remain open.
+
 
 Current disposition update (2026-09-10): the operator accepted recommendations
 Q-01, Q-02, Q-04, Q-05 and Q-06. Q-03 was subsequently settled by the
@@ -155,3 +167,15 @@ Next: obtain the operator's design dispositions, return the bounded R-01
 correction to CC, re-review the revised contract/cases, then determine whether
 the slice can close and Slice02 can be opened. Preserve this review as the
 draft-1 result when recording a later pass.
+
+## Version history
+
+### 1.0.0 — 2026-09-06
+
+Initial design/review record; subsequent operator notices were added during the
+2026-09-10 discussion. Historical checks apply to their recorded inputs only.
+
+### 1.1.0 — 2026-09-11
+
+Clarified the historical verification boundary and revised dependency order.
+No rerun of the old examples or new schema acceptance is claimed.

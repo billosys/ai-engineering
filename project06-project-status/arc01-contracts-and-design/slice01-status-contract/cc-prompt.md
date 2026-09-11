@@ -4,7 +4,9 @@
 
 Do not start this assignment yet. The operator requested ODM research catch-up
 and discussion before handing it to CC. Read `../../artifacts/odm-reevaluation.md`
-and the updated project/arc plans. Planned Slice03 will define planning metadata;
+and `../../artifacts/versioning-decision.md`,
+`../../artifacts/metadata-maintenance-notes.md`, and the updated project/arc plans.
+Planned Slice03 will define planning metadata;
 this status revision then consumes its accepted contract. The 2026-09-10 assignment
 below remains historical pending that update. Expedited Mode remains enabled,
 but does not bypass the current design discussion. No implementation or closure.
@@ -36,6 +38,8 @@ feature worktree is unavailable. Read the project-local `AGENTS.md`, then:
 2. `../arc-plan.md` and `../ledger.md`
 3. `slice-plan.md` and `ledger.md`
 4. `artifacts/design-brief.md` and `artifacts/source-reconnaissance.md`
+5. The current project-level research/version/manual-maintenance records named
+   in the hold notice, plus the accepted Slice03 contract once available.
 
 Load the current collaboration-framework, project-management wayfinder and
 focused planning guides, and work-verification guides from the feature worktree.

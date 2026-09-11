@@ -1,4 +1,18 @@
+---
+version: "1.1.0"
+---
+
 # Proposed status data contract
+
+Current input boundary, 2026-09-11: this is the **historical draft-1 baseline**,
+not a contract revised for ODM research. The [reevaluation](../../../artifacts/odm-reevaluation.md)
+and [version model](../../../artifacts/versioning-decision.md) add planning-metadata
+inputs, all-document roles, separate work-origin/source, and named-schema identity.
+Planned Slice03 must settle metadata/dialect/identity before this status revision.
+Retain the original cases and field definitions as traceable review inputs; amend
+incompatible expectations explicitly. A new notice or document version is not
+schema validation, contract acceptance or an implementation-ready revision.
+
 
 Operator review update, 2026-09-10: CDC recommendations for Q-01, Q-02, Q-04,
 Q-05 and Q-06 are accepted as recorded in the
@@ -531,3 +545,15 @@ already planned Slice02 responsibilities, not waived acceptance criteria here.
 The reviewer can accept, amend or reject Q-01 through Q-06 against the worked
 cases. Record the decision before implementing the toolkit. This draft contains
 no commitment on their behalf and does not open the next slice.
+
+## Version history
+
+### 1.0.0 — 2026-09-06
+
+Initial design/review record; subsequent operator notices were added during the
+2026-09-10 discussion. Historical checks apply to their recorded inputs only.
+
+### 1.1.0 — 2026-09-11
+
+Marked the ODM/versioning input expansion and upstream metadata dependency.
+The draft-1 field definitions remain unrevised; schema conformance is not claimed.

@@ -1,4 +1,36 @@
+---
+version: "1.1.0"
+---
+
 # Initial design brief
+
+## Current research and contract scope — 2026-09-11
+
+This expands the original status-only brief. Read the project-level
+[ODM source index](../../../artifacts/odm-source-index.md),
+[reevaluation](../../../artifacts/odm-reevaluation.md),
+[version model](../../../artifacts/versioning-decision.md), and
+[manual-maintenance notes](../../../artifacts/metadata-maintenance-notes.md).
+Rootstock is a partial trial of ODM's design, not the complete metadata spec.
+
+The design now includes metadata for all maintained planning-document roles,
+not only plan-of-record files. Adopted documents have their own content version
+and history plus named-schema identity/version. Distinguish work-origin from
+source/authoring method, and retain imported provenance. Specify common metadata
+and role-specific constraints without making supporting docs into work units.
+
+Planned Slice03 defines the metadata contract, schema dialect/identity and
+source-to-status ownership. Resumed Slice01 defines the status projection and
+cases, including accepted hierarchical progress and R-01. Slice02 specifies
+runtime/commands, original ODM visual inventory, distribution, guide chapters
+and maintenance/UAT scenarios. The handoff stays held during this discussion.
+
+Guide examples must explain exact manual edits, dependent updates, document
+revision/history, source reconciliation, validation and regeneration without ODM.
+Adopt prospectively in Project06 and Lykn; leave closed history and source snapshots
+unchanged. Exact schema fields, compatibility and migration details remain design
+work. The status tree and existing consumer requirements below still apply.
+
 
 Date: 2026-09-06. Status: accepted constraints plus proposed architecture;
 not the completed Slice01 contract. Authority: operator conversation and
@@ -103,3 +135,15 @@ The first successful render is an adoption milestone. Project closure requires
 the agreed UAT cases, disposition of all requests, retesting of accepted changes,
 final package checks, and explicit operator acceptance. Do not claim consumer
 acceptance from synthetic examples or schema validity alone.
+
+## Version history
+
+### 1.0.0 — 2026-09-06
+
+Initial design/review record; subsequent operator notices were added during the
+2026-09-10 discussion. Historical checks apply to their recorded inputs only.
+
+### 1.1.0 — 2026-09-11
+
+Expanded the live brief with ODM research, all-document metadata, separate version
+axes, manual-maintenance guides and the Slice03 → Slice01 → Slice02 dependency order.

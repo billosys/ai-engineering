@@ -22,9 +22,12 @@ upgrade boundaries, and acceptance cases for implementation and UAT.
 | slice01-status-contract | Revise the status model, hierarchy, evidence and roll-up semantics against the metadata contract; reconcile ODM, Rootstock and Lykn cases | Slice03 accepted; existing project decisions and R-01 | Existing open set held for reevaluation |
 | slice02-toolkit-and-acceptance-design | Specify local-copy distribution/upgrade mechanics, renderer/validator command contracts, test matrix, UAT intake and source/package impact map | Slice03 and Slice01 verified and design accepted | Planned; open set written when next |
 
-The initial design brief is a seed for Slice01, not an approved schema. Resolve
-runtime and schema dialect decisions using current source/dependency evidence
-in Slice02. Keep design judgment with the coordinating context and operator.
+The design brief is an input, not an approved schema. Resolve shared schema
+dialect, identity and metadata representation in Slice03, before Slice01 depends
+on them. Slice02 resolves runtime and command mechanics using both contracts
+and current dependency evidence. This supersedes the earlier placement of schema
+dialect in Slice02, which would have left upstream contracts underspecified.
+Keep design judgment with the coordinating context and operator.
 
 ## Composition and exit
 
@@ -91,3 +94,10 @@ Operator clarified skill/document/schema version axes and broadened metadata sco
 to all planning-document roles. Slice03 inventories common and role-specific
 metadata, own document histories and named-schema identity; Slice02 carries their
 manual maintenance and compatibility procedures into the guide/package design.
+
+### v1.6 — 2026-09-11
+
+Packet review moved shared schema dialect/identity decisions into Slice03 before
+the status-contract revision. Runtime/command design stays in Slice02. Refreshed
+brief and historical artifact notices distinguish scope updates from a completed
+contract rewrite. No CC open set or schema implementation is claimed.

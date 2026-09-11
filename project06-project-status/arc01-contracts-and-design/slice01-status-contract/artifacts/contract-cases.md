@@ -1,4 +1,18 @@
+---
+version: "1.1.0"
+---
+
 # Worked contract acceptance cases
+
+Current input boundary, 2026-09-11: this is the **historical draft-1 baseline**,
+not a contract revised for ODM research. The [reevaluation](../../../artifacts/odm-reevaluation.md)
+and [version model](../../../artifacts/versioning-decision.md) add planning-metadata
+inputs, all-document roles, separate work-origin/source, and named-schema identity.
+Planned Slice03 must settle metadata/dialect/identity before this status revision.
+Retain the original cases and field definitions as traceable review inputs; amend
+incompatible expectations explicitly. A new notice or document version is not
+schema validation, contract acceptance or an implementation-ready revision.
+
 
 Revision notice, 2026-09-10: these draft-1 cases remain the reviewed historical
 baseline. The [operator's progress decision](progress-decision.md) supersedes
@@ -594,3 +608,15 @@ local Markdown links and whitespace, and a seven-row scope walk. These do not
 execute the proposed schema, negative fixtures, copy-isolation test, browser
 views, freshness logic or Lykn UAT. Those checks are specified here for the
 later implementation/design acceptance sequence, not claimed as passing tests.
+
+## Version history
+
+### 1.0.0 — 2026-09-06
+
+Initial design/review record; subsequent operator notices were added during the
+2026-09-10 discussion. Historical checks apply to their recorded inputs only.
+
+### 1.1.0 — 2026-09-11
+
+Recorded that the existing cases need ODM metadata/projection and versioning
+coverage in addition to Q-03/R-01 revisions. Historical numeric cases remain inputs.

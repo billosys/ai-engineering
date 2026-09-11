@@ -15,8 +15,11 @@ not in main. This routing update does not add implementation to this slice.
 
 Define an implementable, general data contract for Saga, project, and arc
 status. Read the [project plan](../../project-plan.md), [arc plan](../arc-plan.md),
-[design brief](artifacts/design-brief.md), and
-[reconnaissance](artifacts/source-reconnaissance.md) in that order.
+[current design brief](artifacts/design-brief.md), the project-level
+[version decision](../../artifacts/versioning-decision.md) and
+[manual-maintenance notes](../../artifacts/metadata-maintenance-notes.md). The
+[original reconnaissance](artifacts/source-reconnaissance.md) remains baseline
+evidence. Consume the accepted Slice03 metadata contract when available.
 
 ## In scope
 
@@ -52,6 +55,11 @@ slice work prematurely.
 
 Artifacts live in this slice's `artifacts/`. Produce `status-contract.md` and
 `contract-cases.md`; amend the design brief only with disclosed decisions.
+The revision must map authoritative planning fields into status records, identify
+authored versus derived values, and define the manual refresh procedure. Add
+cases for schema name/version selection, content revision versus schema migration,
+work-origin/source separation, stale coverage/evidence and relevant document roles.
+
 Verify each [ledger](ledger.md) row by field-level mapping and worked record
 examples against inspected inputs. Check local links and diff whitespace.
 Record assumptions and questions explicitly; review accepted semantics with
@@ -81,3 +89,9 @@ Operator held the CC handoff to recover ODM research and metadata decisions.
 Added original ODM evidence and the planned Slice03 metadata contract as inputs;
 retain all existing rows, Q-03 and R-01. Detailed planning-metadata design has its
 own slice rather than silently inflating this status-contract assignment.
+
+### v1.4 — 2026-09-11
+
+Refreshed the live input list and required revision/case coverage after the
+operator requested a packet consistency check. Draft-1 artifacts remain historical
+inputs until their substantive revision; notices alone do not complete that work.
