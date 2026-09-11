@@ -122,11 +122,12 @@ Closed arcs:
 - Arc02: Document Extraction Skill
 - Arc03: Concept Cards Skill Core
 - Arc04: Concept Card Records And Examples
+- Arc05: Packaging, Docs, And Installability
 
-Active arc: Arc05.
+Active arc: Arc06.
 
-Arc05 is open with Slice03:
-`arc05-packaging-docs-and-installability/slice03-package-validation-and-install-smoke/`.
+Arc06 is open with Slice01:
+`arc06-gate-evidence-and-project-closure/slice01-final-gates-and-project-closure/`.
 
 ## Version History
 
@@ -236,3 +237,12 @@ package-path validation, isolated installation, installed-content inspection,
 final package/docs reconciliation, and Arc06 closure inputs. This is a
 status-only update; no roadmap re-sequencing, scope reduction, or Arc05 plan
 change was made.
+
+### v2.5 - 2026-09-11
+
+Arc05 closed after Slice03 CDC verification reproduced package-path validation,
+archive inspection, isolated install smoke, installed-content byte comparison,
+and package/docs boundary checks. CDC also made a narrow source repair for
+remaining live-guide Slice02 discoverability wording before closure. Arc06 is
+now active with Slice01 opened for final project-level gates, ledger
+reconciliation, explicit deferral/no-op statement, and Project05 closure.

@@ -3,7 +3,7 @@
 ```yaml
 project: project05-concept-card-skill
 arc: arc05-packaging-docs-and-installability
-status: open
+status: closed
 opened: 2026-09-10
 depends-on:
   - arc02-document-extraction-skill
@@ -74,3 +74,11 @@ Arc05 closes when:
 Opened Arc05 after Arc04 closure. The arc is planned as three slices:
 package targets/support directories, docs/discoverability, and package
 validation/install smoke.
+
+### v1.1 - 2026-09-11
+
+Slice03 CDC verification closed package validation and install smoke after a
+narrow CDC repair corrected remaining live-guide Slice02 discoverability
+wording. Arc05 is closed and Arc06 is opened for final project-level gate
+evidence, ledger reconciliation, explicit deferral/no-op statement, and
+Project05 closure.
