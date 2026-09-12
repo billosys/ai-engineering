@@ -72,3 +72,9 @@ Arc09 closes when:
 
 Opened Arc09 after Arc08 CDC verification and operator acceptance of the
 rich-card profile finding.
+
+### v1.1 - 2026-09-11
+
+Slice01 is CDC-verified and Slice02 is opened for bounded `concept-cards`
+source updates. No Arc09 slice breakdown, sequencing, or scope change was
+required.

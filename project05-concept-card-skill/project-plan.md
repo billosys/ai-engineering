@@ -362,3 +362,10 @@ not yet require the richer v3.2 learner/reference card sections. Project05
 therefore remains active, Arc09 is opened to implement the rich concept-card
 profile, and Arc10 is reserved for the final closure refresh after that
 refinement.
+
+### v3.5 - 2026-09-11
+
+Arc09 Slice01 is CDC-verified. The rich-card profile design now grounds the
+v3.2 carry-forward sections in historical prompts and sample corpora, preserves
+v4 lifecycle/provenance controls, and opens Slice02 for bounded
+`concept-cards` source updates. Project05 remains active.

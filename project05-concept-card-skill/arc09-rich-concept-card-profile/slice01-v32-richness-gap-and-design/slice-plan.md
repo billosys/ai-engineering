@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc09-rich-concept-card-profile
 slice: slice01-v32-richness-gap-and-design
-status: cc-proposed-done
+status: cdc-verified
 opened: 2026-09-11
 depends-on:
   - arc08-post-uat-closure-refresh
@@ -74,3 +74,8 @@ Expected artifacts:
 This slice exits when Arc09 has an operator-inspectable design for rich
 concept-card output and an implementation plan that is ready for CC to execute
 without rediscovering the whole Project05 history.
+
+## CDC Outcome
+
+CDC verified Slice01 on 2026-09-11. The design is sufficient to open Slice02
+without changing the Arc09 slice breakdown.

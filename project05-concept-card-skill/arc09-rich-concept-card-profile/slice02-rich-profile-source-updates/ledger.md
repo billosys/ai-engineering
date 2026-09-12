@@ -1,0 +1,12 @@
+# Slice02 Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| S2-1 | `concept-cards` entrypoint and guides make the rich real-corpus profile discoverable and operational. | Inspect `knowledge/concept-cards/SKILL.md` and affected guides for rich-section default, applicability rules, source-specific examples, one-concept boundary, and document-extraction routing. | serious | Slice01 design | open |  | Expected guide set is named in `implementation-scope.md`. |
+| S2-2 | `templates/concept-card.md` carries the rich body sections without collapsing v4 lifecycle/evidence controls. | Inspect the template for required sections, v4-aware placeholders, source-support discipline, result-record boundaries, and no overloaded verification-note wording. | serious | project DoD expansion | open |  | Every section should be present or require an explicit applicability reason. |
+| S2-3 | Examples or review surfaces illustrate the rich profile without claiming completed review, verification, or admission. | Inspect changed `examples/` and `references/` files for source-backed rich body material, linked v4 records, and explicit candidate/review boundaries. | correctness-grade | sample-corpus comparison | open |  | Slice03 will perform regression comparison; Slice02 must provide the surface to test. |
+| S2-4 | Version/history and package/discoverability implications are handled. | Inspect `metadata.version`, `version-history.md`, and any discoverability/docs touched by the change; run required version checks. | serious | repository contract | open |  | Follow the repo skill version contract; do not duplicate skill-version labels outside allowed locations. |
+| S2-5 | Validation gates pass for the source update. | Run focused checks plus `make check-skills`, `make check-skill-versions`, `make check-package-paths` if Markdown paths/package contents changed, and `git diff --check`. | serious | repository gate | open |  | Package rebuild/inspection can be left to Slice04 unless required by a failing gate. |
+| S2-6 | Scope boundaries are preserved and Slice03 has concrete regression work. | Inspect source diff, planning artifacts, closing report, and Slice03 handoff for no `document-extraction` drift, no runtime/RAG/MCP expansion, and clear regression obligations. | serious | Arc09 sequencing | open |  | Do not regenerate Arc07 cards or process the full book. |
+
+Rows: 6. Open: 6. Done: 0. Deferred: 0. No-op: 0. Independent CDC verification: pending.
