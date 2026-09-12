@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc10-final-closure-refresh-after-rich-profile
 slice: slice01-final-gates-and-project-closure-refresh
-status: open
+status: cc-proposed-done
 opened: 2026-09-12
 depends-on:
   - arc09-rich-concept-card-profile
