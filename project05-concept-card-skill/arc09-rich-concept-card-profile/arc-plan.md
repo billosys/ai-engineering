@@ -78,3 +78,9 @@ rich-card profile finding.
 Slice01 is CDC-verified and Slice02 is opened for bounded `concept-cards`
 source updates. No Arc09 slice breakdown, sequencing, or scope change was
 required.
+
+### v1.2 - 2026-09-11
+
+Slice02 is CDC-verified and Slice03 is opened for regression examples and
+validation. No Arc09 scope or sequencing change was required; Slice03 uses the
+regression protocol defined by Slice01.

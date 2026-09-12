@@ -369,3 +369,10 @@ Arc09 Slice01 is CDC-verified. The rich-card profile design now grounds the
 v3.2 carry-forward sections in historical prompts and sample corpora, preserves
 v4 lifecycle/provenance controls, and opens Slice02 for bounded
 `concept-cards` source updates. Project05 remains active.
+
+### v3.6 - 2026-09-11
+
+Arc09 Slice02 is CDC-verified. The live `concept-cards` source now implements
+the rich real-corpus profile with template, synthetic example, guide/review
+rules, and a compatible skill version/history update. Slice03 is opened to
+prove the regression and usefulness checks before package/arc closure work.
