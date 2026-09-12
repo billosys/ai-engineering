@@ -138,6 +138,29 @@ provides typed links, not full lessons/port-lane schema and rendering modules.
 Retain their extraction notes for future consideration; no full-module delivery
 is claimed. Lykn can still request such extensions through the planned UAT loop.
 
+## Status directory layout — operator clarification, 2026-09-12
+
+The operator reported a fresh migration session misunderstanding `planning/status`.
+The collection root is shared by all projects in the repository. The accepted
+layout is explicit in the [maintenance notes](artifacts/metadata-maintenance-notes.md#status-tree-and-migration-guidance--2026-09-12):
+`planning/status/status.json` and `status.html` describe the collection (Saga View);
+`planning/status/projectNN-<slug>/project-status.*` describes one project;
+`planning/status/projectNN-<slug>/arcNN-<slug>/arc-status.*` describes one arc.
+Here `planning` means the actual planning worktree root, normally `.worktrees/planning`.
+Plan-of-record directories remain siblings of `status/`, with explicit references
+from status records to their source plans. Preserve existing operator-approved
+identifiers and locators during migration; the schematic names do not order renames.
+
+Project-management owns this layout in its canonical-worktree guide, with explicit
+setup/migration routing from its entrypoint and guide README. Its scales guide and
+engineering-methods summaries must retire the obsolete description of Saga as unused.
+The collaboration-framework routes to the owning guide. Slice02 must map these
+source changes and a multi-project migration/read-from-packaged-guides acceptance
+case; Arc03 delivers the guidance and package evidence. This clarifies existing
+P-01/P-15 scope without opening another slice or changing the current dependency order.
+The current source and installed skills still lack this guidance; recording it here
+is not a claim that a distributed skill has been updated.
+
 ## Definition of done
 
 - Concise manual-maintenance guide chapters explain authoritative file/field
@@ -323,3 +346,9 @@ maintenance. Exact schema cadence and compatibility rules remain under discussio
 Opened Arc01/Slice03 at operator request. Remaining metadata/versioning questions
 become explicit proposal outputs; independent review and operator acceptance still
 precede the held Slice01 revision. No implementation or contract acceptance claimed.
+
+### v1.9 — 2026-09-12
+
+Operator reported status-layout confusion during another project migration. Made
+the shared collection/project/arc tree explicit, assigned skill guide/routing
+ownership and added a migration acceptance obligation to existing scope.

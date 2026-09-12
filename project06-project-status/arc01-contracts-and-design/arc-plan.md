@@ -57,6 +57,17 @@ to source/package deliverables and Lykn UAT. D-02 separation is accepted;
 versioning remains open. This extends v1.3's ODM design scope without changing
 the new dependency order.
 
+## Status layout and migration handoff — 2026-09-12
+
+The operator's migration report exposes a gap in current skill guidance. Carry the
+[explicit shared status tree](../artifacts/metadata-maintenance-notes.md#status-tree-and-migration-guidance--2026-09-12)
+through Slice01's source/locator mapping and Slice02's guide/package impact map.
+Slice02 must assign the canonical-worktree guide, setup/migration wayfinder routes,
+Saga vocabulary correction and a multi-project migration acceptance case. Slice03
+consumes the layout as an existing requirement when mapping metadata to status; it
+does not expand into migration implementation. Existing A-01/A-06 and project
+P-01/P-15 cover this requirement; no new work unit or dispatch is implied.
+
 ## Version history
 
 ### v1.0 — 2026-09-06
@@ -108,3 +119,9 @@ contract rewrite. No CC open set or schema implementation is claimed.
 Opened the planned Slice03 metadata-contract open set at operator request. Replaced
 its discussion prerequisite with proposal work against accepted requirements and
 preserved sources; retained the Slice03 → Slice01 → Slice02 dependency sequence.
+
+### v1.8 — 2026-09-12
+
+Carried the operator's status-layout clarification into the metadata/status/toolkit
+design handoffs. Required canonical-layout and migration routes, Saga vocabulary
+correction and package-based migration evidence without changing slice order.

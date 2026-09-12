@@ -1,3 +1,7 @@
+---
+version: "1.0.0"
+---
+
 # Project06 acceptance ledger
 
 All rows are open. Planning artifacts are not delivery or independent evidence.
@@ -6,7 +10,7 @@ explicit requirement to document coverage in the shipped skill.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| P-01 | Saga means all projects in one repo; generic top-level status names and independent lower-scale adoption are documented | Inspect source guides, schemas, example tree, and rendered Saga View | correctness-grade | Operator decisions | open | — | No new saga-prefixed artifact family |
+| P-01 | Saga means all projects in one repo; shared planning/status collection root, nested project/arc file pairs and independent lower-scale adoption are documented | Inspect canonical-layout guide and setup/migration routes in both packages; multi-project migration case from maintenance notes; schemas, example tree and rendered Saga View | correctness-grade | Operator decisions; migration clarification 2026-09-12 | open | — | Status root is a sibling of project plan directories; no saga-prefixed artifact family |
 | P-02 | Consumer-owned coherent toolkit snapshots run independently of installed skill updates | Reproduce two consumer copies and installed-package replacement; compare retained copy output | serious | Operator correction | open | — | Include dependencies and provenance |
 | P-03 | Every status JSON is checked for schema and cross-document consistency | Positive/negative fixtures; nested discovery and unsupported-file tests | serious | User request; Rootstock drift | open | — | No silent skips |
 | P-04 | All retained views render information faithfully, with explicit evidence/closure semantics | Content assertions plus visual review of overview, project views, arc detail, themes and narrow displays | serious | Rootstock design | open | — | Progress is not acceptance |
@@ -21,3 +25,11 @@ explicit requirement to document coverage in the shipped skill.
 | P-13 | Versioned metadata for every adopted planning-document role, validation and source-to-status mapping preserve authoritative facts | Field dictionary, schema/semantic fixtures, rename/coverage/freshness cases and traceable projection | serious | Operator ODM expansion, 2026-09-11 | open | — | Own document version/history plus named-schema version; one owning skill version |
 | P-14 | ODM research decisions are dispositioned and accepted metadata is adopted prospectively in Project06/framework/Lykn | Source decision map; primary-source checks where used; package/template inspection; open-plan and Lykn validation; closed-file preservation comparison | serious | Operator research preservation and adoption scope | open | — | Nine source snapshots preserved; preservation is not schema acceptance |
 | P-15 | Manual-maintenance chapters let a fresh reader maintain planning metadata and status JSON without ODM | Execute the maintenance-notes scenarios using packaged guides and vendored tools; Lykn ongoing-maintenance UAT and feedback | serious | Operator guide requirement, 2026-09-11 | open | — | Exact field ownership, edits, related updates, evidence and validation; no invented commands |
+
+## Version history
+
+### 1.0.0 — 2026-09-12
+
+Introduced the first explicit content version/history for this previously
+unversioned open ledger. Clarified P-01 with the operator's shared status-tree
+layout and package-based migration check; all acceptance rows remain open.

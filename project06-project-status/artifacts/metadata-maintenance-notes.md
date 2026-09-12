@@ -1,5 +1,5 @@
 ---
-version: "1.1.0"
+version: "1.2.0"
 ---
 
 # Manual metadata and status maintenance: design notes and guide requirements
@@ -26,6 +26,96 @@ keep open proposals visibly distinct from accepted requirements.
   as ODM cannot be a prerequisite for correct maintenance.
 - Adopt prospectively in Project06's open plans, reusable framework material, then
   Lykn UAT. Do not retroactively fill metadata in old/closed files or source copies.
+
+## Status tree and migration guidance — 2026-09-12
+
+Operator report: a separate session migrating an older project misunderstood the
+status directory. The operator clarified that status is a collection of projects,
+with one overall JSON/HTML pair above the project and arc status directories.
+This reaffirms the accepted hierarchy; it does not depend on unresolved schema fields.
+
+```text
+<repo>/.worktrees/planning/
+  project01-<slug>/                 # authoritative planning documents
+    project-plan.md
+    arc01-<slug>/
+      arc-plan.md
+  project02-<slug>/
+    project-plan.md
+  status/                          # one collection root for this repository
+    status.json
+    status.html                    # Saga View: the collection of projects
+    project01-<slug>/
+      project-status.json
+      project-status.html
+      arc01-<slug>/
+        arc-status.json
+        arc-status.html
+    project02-<slug>/
+      project-status.json
+      project-status.html
+```
+
+The second project illustrates a project without an arc status directory; it does
+not require a fabricated arc. Slices remain part of the relevant work/status model;
+this layout does not introduce slice-status pages. `projectNN`/`arcNN` are schematic
+identifiers, with slugs following the planning convention where adopted. Existing
+names (including decimal IDs or legacy slugs) need an explicit locator mapping, not
+an automatic rename or a new identity. Use the actual established planning worktree
+root rather than creating an extra nested directory literally named `planning`.
+
+The shared `status/` root is a sibling of the project plan directories. Its JSON/HTML
+files represent the repository collection, never one project's status under generic
+filenames. Project status lives inside that project's status directory; arc status
+lives below that project. Relative links must resolve between status views and the
+separate authoritative plans. An omitted project's data must be accounted for through
+coverage/unknowns, not silently described as a complete Saga. A single-project repo
+uses the same collection hierarchy. No saga-plan or saga-ledger is introduced.
+
+Toolkit support directories such as `scripts/`, `templates/` and `schemas/` may also
+live at the shared status root under the accepted repository-owned-copy model;
+Slice02 specifies their copy/upgrade details. They are support material, not projects.
+A guide must explain how discovery distinguishes support directories from work records.
+
+### Verified documentation gap and ownership
+
+CDC inspected main at `e763c661`, the Project06 feature source at `31d96b15`, and
+both installed standalone and bundled project-management guide trees on 2026-09-12.
+The canonical-worktree guide has no status-tree section; the scales guide still
+calls Saga a named but unused multi-version vision. Current engineering-methods
+process guidance repeats that unused-tier framing. These are source observations;
+the reported confusion in the other session is operator evidence, not a reproduced
+migration trial. No source/package or installed-skill edits were made in this check.
+
+Required source handoff:
+
+- Project-management `guides/02-canonical-planning-worktree.md` owns the directory
+  tree and plan-versus-status distinction. Link its status section from `SKILL.md`
+  and `guides/README.md` for both setup and migration tasks.
+- Project-management `guides/01-scales-of-work.md` formally defines Saga as the
+  repository's project collection; reconcile the engineering-methods process summary.
+- Collaboration-framework should route status setup/migration to project-management;
+  avoid another independently maintained layout definition.
+- The manual status-maintenance chapter needs a preservation-first migration recipe:
+  inventory existing files and project/arc identities, map old paths to the target
+  tree, account for every source record and unknown, preserve evidence/history,
+  repair references, validate the whole adopted tree, render and inspect navigation.
+  JSON/HTML projection files and authoritative planning records have different roles;
+  moving one must not silently reclassify the other.
+- Each affected skill gets its own version/history update when changed. Arc03 must
+  inspect both generated standalone and framework packages, not only source links.
+
+### Acceptance case to carry forward
+
+Starting only from packaged skill guidance, reconstruct the target tree for a
+fictional legacy repo with two projects: one with two arcs, one with direct slices.
+Identify the overall, project and arc file pairs and their links to source plans.
+Account for an unadopted historical project explicitly in collection coverage.
+Check preservation of identities/evidence and that support directories are not
+counted as projects. Catch misplaced per-project generic `status.*`, flattened arc
+folders, an extra nested planning root and stale links. Do not infer acceptance
+from successful rendering. Slice02 specifies the trial; Arc03 supplies package
+and guide-use evidence, with live consumer feedback retained in Lykn UAT.
 
 ## What every maintenance procedure must answer
 
@@ -136,3 +226,9 @@ Reuse framework closure guidance rather than inventing a competing closure proto
 - 1.1.0 — 2026-09-11: Recorded the three version axes, named-schema identity and
   all-planning-document scope. Added document-revision guidance and open
   compatibility/bump questions; schema adoption itself remains forthcoming.
+
+### 1.2.0 — 2026-09-12
+
+Recorded the explicit shared status tree, verified current guidance omissions,
+source ownership, manual migration procedure requirements and a multi-project
+acceptance case after the operator's migration-session report.
