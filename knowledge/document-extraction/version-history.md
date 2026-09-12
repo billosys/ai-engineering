@@ -1,5 +1,14 @@
 # Document Extraction Version History
 
+### Version 1.4.4 - 2026-09-11
+
+Added a citation-resource audit to the converted-Markdown preparation guide:
+inventory frontmatter bibliography declarations, available bibliography files,
+and in-scope citation keys; verify mappings only by direct lookup and preserve
+mismatches as dependency caveats. This real-corpus clarification does not
+resolve a bibliography, alter source support semantics, add a validator, or
+create runtime behavior.
+
 ### Version 1.4.3 - 2026-09-11
 
 Corrected remaining live guide handoffs after CDC found stale Slice02

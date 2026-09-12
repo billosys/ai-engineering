@@ -40,9 +40,14 @@ lineage is a caveat, not permission to invent a source URL or conversion step.
    change that base; a saved file's local directory does not automatically
    reproduce its original web context. See the [HTML document-base rules](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#document-base-urls).
 4. Inspect heading attributes, anchor targets, inline/reference links, HTML
-   blocks, and asset locations in the Markdown. Note which original structures
-   have no converted counterpart. Do not strip embedded markup to make text
-   look cleaner before understanding the locators and content it carries.
+   blocks, and asset locations in the Markdown. For citation-bearing Markdown,
+   inventory declared bibliography resources (including frontmatter fields),
+   available bibliography files, and the cited keys needed by the requested
+   scope. Verify a mapping only by direct key lookup; a filename mismatch or a
+   missing resource remains a dependency caveat, not a reason to invent a
+   bibliography mapping. Note which original structures have no converted
+   counterpart. Do not strip embedded markup to make text look cleaner before
+   understanding the locators and content it carries.
 5. Identify capture gaps: script-loaded text, collapsed content, pagination,
    lazy-loaded assets, embedded frames, canvas, or external resources absent
    from the saved material. Report the observed scope; a static snapshot is
