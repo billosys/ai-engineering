@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc09-rich-concept-card-profile
 slice: slice02-rich-profile-source-updates
-status: open
+status: cc-proposed-done
 opened: 2026-09-11
 depends-on:
   - arc09-rich-concept-card-profile/slice01-v32-richness-gap-and-design
@@ -77,3 +77,11 @@ This slice exits when the live `concept-cards` source expresses the rich
 real-corpus profile, preserves v4 control boundaries, records version/history
 updates if needed, passes required gates, and leaves Slice03 with concrete
 regression/proof work rather than unresolved source-design questions.
+
+## CC Outcome
+
+CC proposed-done on 2026-09-11. Source commit `1d6bbd08` implements the scoped
+profile update and the required validation evidence is recorded under
+`artifacts/`. Independent CDC verification remains pending. Slice03 has a
+concrete regression protocol in Slice01's `validation-regression-plan.md`; a
+Slice03 CC prompt has not yet been created in the planning worktree.
