@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc09-rich-concept-card-profile
 slice: slice01-v32-richness-gap-and-design
-status: open
+status: cc-proposed-done
 opened: 2026-09-11
 depends-on:
   - arc08-post-uat-closure-refresh
