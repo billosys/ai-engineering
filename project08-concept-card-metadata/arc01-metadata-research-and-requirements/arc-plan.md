@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.0"
+version: "1.1"
 ---
 
 # Metadata Research And Requirements
@@ -20,7 +20,7 @@ because it appears in the initial hypothesis.
 
 | Slice | Scope | Dependency | State |
 | --- | --- | --- | --- |
-| `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief | Open set ready for CC |
+| `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief | CDC changes required; Iteration 01 ready for CC |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Slice01 inventory/questions | Plan after Slice01 review |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
 
@@ -39,6 +39,14 @@ standards adoption for its own sake.
 
 ## Acceptance And Handoff
 
+Slice01 review found that the submitted capability summary is not yet the
+required exhaustive field crosswalk. Iteration 01 also replaces Ruby with
+Fennel, corrects corpus/record counts, supplies executable reproduction
+instructions, and refreshes the claimed missing source snapshot. Review and
+assignment live in Slice01 `cdc-verification.md` and
+`artifacts/iteration-01-cc-prompt.md`. Slice02 remains unopened until this
+evidence is corrected and independently verified.
+
 The [arc ledger](./ledger.md) requires both child verification and a composition
 check: trace every operator concern through observed examples, research questions,
 evidence and a testable requirement. Include unresolved alternatives and an Arc02
@@ -47,6 +55,10 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.1 (2026-09-12): Slice01 CDC findings R1-R5 require a follow-up iteration
+  within the existing slice. Was: initial open set ready for CC. No slice-order
+  change; research must consume corrected, complete evidence.
 
 - 1.0 (2026-09-12): Initial three-slice hypothesis. Opens inventory first so
   research and acceptance design respond to actual field/capability gaps.

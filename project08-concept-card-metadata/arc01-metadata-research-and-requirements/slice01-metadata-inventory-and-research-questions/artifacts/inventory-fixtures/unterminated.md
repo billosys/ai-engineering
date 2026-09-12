@@ -1,0 +1,4 @@
+---
+title: unterminated
+
+Fixture body.

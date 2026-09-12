@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice01-metadata-inventory-and-research-questions
-status: ready-for-cc
-version: "1.0"
+status: iteration-01-required
+version: "1.1"
 ---
 
 # Metadata Inventory And Research Questions
@@ -14,6 +14,19 @@ Turn the operator's concerns into a complete, evidence-backed research agenda.
 Read the project and arc plans and ledgers, then the
 [planning brief](./artifacts/planning-brief.md). This is a planning/evidence slice;
 source skills and historical cards are read-only inputs.
+
+## Iteration 01
+
+The initial CC packet is uncommitted and requires changes. Follow
+[`iteration-01-cc-prompt.md`](./artifacts/iteration-01-cc-prompt.md) against the
+CDC findings in [`cdc-verification.md`](./cdc-verification.md). The operator
+requires Fennel for the helper and has suspended commits. This supersedes the
+initial commit instruction without changing the inventory/research objective.
+
+Add a mechanically checkable field-disposition index alongside the readable
+crosswalk, with explicit coverage of top-level and nested fields, per-record
+meaning, representative values and query/migration consequences. Preserve the
+baseline copies as captured, including malformed YAML.
 
 ## Work
 
@@ -61,10 +74,15 @@ Reproduce parsed file counts and field unions, spot-check every mapping category
 against actual files, verify copied evidence hashes, and check all cited local
 paths. Run planning `git diff --check`; verify source status before/after. No
 source/package gates are needed unless this slice's scope is explicitly changed.
-The [ledger](./ledger.md) defines seven acceptance rows. CC writes a proposed-done
+The [ledger](./ledger.md) defines eight acceptance rows (seven original rows plus
+the operator's tooling/commit condition). CC writes a proposed-done
 closing report with row evidence and Arc01 bubble-up; CDC verifies separately.
 
 ## Version History
+
+- 1.1 (2026-09-12): CDC review opens Iteration 01 for R1-R5; adds S1-8,
+  Fennel tooling, exhaustive crosswalk verification and operator commit hold.
+  Was: ready for initial CC execution with seven rows.
 
 - 1.0 (2026-09-12): Opens a bounded inventory and question-formulation slice;
   preserves ignored baseline evidence before architecture and future CC trials.

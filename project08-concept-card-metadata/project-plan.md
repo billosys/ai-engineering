@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.0"
+version: "1.1"
 ---
 
 # Concept Card Metadata
@@ -68,7 +68,7 @@ research/design decisions. Arc02 will supply the accepted architecture artifact.
 
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
-| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice01 ready for CC |
+| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice01 Iteration 01 required after CDC review |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Arc01 | Hypothesis; detailed plan when near |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -163,6 +163,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.1 (2026-09-12): Slice01 CDC review requires a Fennel helper replacement,
+  complete field dispositions, corrected counts, reproducible commands and
+  refreshed source availability. Operator language preference and commit hold
+  are recorded in AGENTS.md. Was: Slice01 ready for its initial CC run.
 
 - 1.0 (2026-09-12): Operator-authorized Project08 opening. Adopts five provisional
   arcs, the 4.8.1 baseline and 4.9.x intent, broad metadata preservation, body

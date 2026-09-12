@@ -1,5 +1,15 @@
 # CC Assignment: Project08 Arc01 Slice01
 
+## Current Assignment: Iteration 01
+
+The initial run below has been reviewed and requires changes. Read
+`cdc-verification.md` and execute `artifacts/iteration-01-cc-prompt.md`.
+The operator requires a Fennel replacement for the untracked Ruby helper.
+Do not stage or commit any packet or iteration files. The operator's hold
+supersedes the historical commit instructions below.
+
+## Initial Assignment (Retained Context)
+
 Read `../../project-plan.md`, `../../ledger.md`, `../arc-plan.md`,
 `../ledger.md`, `slice-plan.md`, `ledger.md`, and `artifacts/planning-brief.md`
 relative to this slice directory. Read Project08 `AGENTS.md` and the current
@@ -42,7 +52,8 @@ proposed-done. Include findings, limits, changed assumptions, per-row dispositio
 and the next research needs for Arc01. Do not write `cdc-verification.md` or
 declare the arc/project closed. Do not run extraction or select the final schema.
 
-Commit only your delivered slice files on planning after inspecting the diff and
+Historical commit procedure, currently suspended by the operator:
+commit only your delivered slice files on planning after inspecting the diff and
 staged state. In `git add` and `git commit --only --`, explicitly enumerate the
 five report filenames, each copied baseline/helper filename, this slice's
 `ledger.md`, and `closing-report.md`. Expand the actual list in the command;
