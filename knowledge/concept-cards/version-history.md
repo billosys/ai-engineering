@@ -1,6 +1,6 @@
 # Concept Cards Version History
 
-### Version 1.8.1 - 2026-09-12
+### Version 4.8.1 - 2026-09-12
 
 Refined the rich real-corpus card profile toward teaching and lookup use before
 audit use. Updated the entrypoint, load contract, operator workflow, extraction
@@ -10,7 +10,7 @@ while support maps, provenance, lifecycle state and handoff notes retain the
 v4 evidence controls. No schema, executable validator, runtime capability,
 memory admission, graph operation or corpus extraction was added.
 
-### Version 1.8.0 - 2026-09-11
+### Version 4.8.0 - 2026-09-11
 
 Added the rich real-corpus card profile: a readable, one-concept body with
 source-faithful definitions, properties, recognition or construction, context,
@@ -22,20 +22,20 @@ admission controls. Added a synthetic rich-profile example. No executable
 validator, completed review, runtime capability, or live-corpus extraction was
 added.
 
-### Version 1.7.4 - 2026-09-11
+### Version 4.7.4 - 2026-09-11
 
 Corrected a remaining live operator-workflow handoff after final Project05
 closure scanning found it still assigned delivered package/docs/install work to
 Arc05. No method, package support shape, schema, validator, or runtime
 capability changed.
 
-### Version 1.7.3 - 2026-09-11
+### Version 4.7.3 - 2026-09-11
 
 Corrected remaining live load-contract handoff wording after CDC found stale
 Slice02 discoverability language. No method, schema, validator, package
 support shape, or runtime capability changed.
 
-### Version 1.7.2 - 2026-09-10
+### Version 4.7.2 - 2026-09-10
 
 Clarified the current package handoff after the Slice02 documentation close in
 the entrypoint and extraction guide: package targets, generated zips,
@@ -44,7 +44,7 @@ validation, isolated installation, installed-content inspection, and final
 reconciliation are Slice03 acceptance work. No method, schema, validator, or
 runtime capability was added.
 
-### Version 1.7.1 - 2026-09-10
+### Version 4.7.1 - 2026-09-10
 
 Corrected live-guide handoffs after the Arc05 package targets landed. Package
 targets and generated zips now exist, and `references/` is included in the
@@ -52,14 +52,14 @@ generated package. README/docs discoverability remains Slice02 work; package-
 path validation, isolated install smoke, and final package reconciliation remain
 Slice03 work.
 
-### Version 1.7.0 - 2026-09-10
+### Version 4.7.0 - 2026-09-10
 
 Added Makefile package-target support for the entrypoint, sibling guides,
 templates, examples, and references. Docs/discoverability and isolated
 install-smoke evidence remain later Arc05 work. No executable validator,
 runtime behavior, or real-corpus work was added.
 
-### Version 1.6.0 - 2026-09-10
+### Version 4.6.0 - 2026-09-10
 
 Added sibling reference/review support for record field groups, vocabulary,
 structural-validation candidates, semantic audit boundaries, and operator review
@@ -72,7 +72,7 @@ The references README and maintenance guidance record that current Makefile help
 macros do not copy `references/`; Arc05 owns package support, generated-zip,
 docs/discoverability, and installation work.
 
-### Version 1.5.0 - 2026-09-10
+### Version 4.5.0 - 2026-09-10
 
 Added eight sibling synthetic representative examples covering a minimal card,
 claim-specific source support, CQ coverage, a relationship edge, extraction-run
@@ -86,7 +86,7 @@ Slice03 work. Raw document cleanup remains owned by document-extraction; no
 schema, executable validator, runtime, package, installation, or real-corpus
 work was added.
 
-### Version 1.4.0 - 2026-09-06
+### Version 4.4.0 - 2026-09-06
 
 Added twelve sibling Markdown/YAML record templates for concept cards, claims,
 source locators, source support with embedded spans, relationship edges,
@@ -103,7 +103,7 @@ and validation-review support remain future Arc04 work; packaging, docs and
 installation remain Arc05 work. No executable validators, runtime integration
 or live corpus processing was added or performed.
 
-### Version 1.3.0 - 2026-09-06
+### Version 4.3.0 - 2026-09-06
 
 Added detailed relationship/CQ, reconciliation, memory admission and maintenance
 guides. Relationships retain edge identity, endpoint roles, direction/inverse/
@@ -123,7 +123,7 @@ Made all ten guides live and updated the existing guide callers. No support
 assets, schema, executable validator, package integration, runtime or real-corpus
 processing was added or performed.
 
-### Version 1.2.0 - 2026-09-06
+### Version 4.2.0 - 2026-09-06
 
 Added evidence lifecycle and validation/verification guides. Evidence grade
 records warrant and rationale on the actual claim/support subject; extraction
@@ -145,7 +145,7 @@ Arc04 support and Arc05 package/docs/install integration remain future work.
 No executable validator, runtime or real-corpus validation/verification was
 implemented or performed.
 
-### Version 1.1.0 - 2026-09-06
+### Version 4.1.0 - 2026-09-06
 
 Added source-faithful extraction and source-primary re-extraction/preservation
 guides. They cover source and prepared-source identities, extraction-run and
@@ -164,15 +164,15 @@ Arc04 support and Arc05 package/docs/install integration remain future work.
 No live corpus extraction, executable validator, runtime or package changes
 were performed as part of this source-guidance addition.
 
-### Version 1.0.0 - 2026-09-06
+### Version 4.0.0 - 2026-09-06
 
 Created the initial `concept-cards` source scaffold: thin entrypoint, load
 contract and operator workflow for human-assisted and agent-direct use.
 Preserved the Project03 v4.0 conceptual model's atomic cards, claims, source
 support/spans/locators, relationship edges, competency questions, extraction
 runs, separate evidence/lifecycle results, preservation and memory admission.
-The model's v4.0 designation is historical method lineage, not this source
-skill's version sequence.
+The concept-card skill version sequence intentionally continues the public
+v3.2 proto-skill lineage as the v4.x method line.
 
 Project05 translates the historical `concept-card-method` planning name into
 `concept-cards` and its current source root. Historical `source-preparation`
