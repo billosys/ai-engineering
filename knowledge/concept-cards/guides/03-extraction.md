@@ -173,6 +173,15 @@ extraction notes/review boundaries. Preserve every heading. Where the selected
 source has no applicable material, use the required explicit reason rather than
 filling a section with generic domain knowledge.
 
+Optimize the body for concept use before review use. The opening sections should
+read like a polished teaching card: compact, source-faithful, concrete and
+directly helpful for recognizing, constructing, comparing or applying the
+concept. Avoid repeating the same caveat in multiple teaching sections. Instead,
+state the concept cleanly with its source qualifications, then collect run-level
+caveats, unresolved source checks and lifecycle status in the later review
+sections. Preserve inspectability without making the card twice as long as its
+concept requires.
+
 Build each substantive body statement from the same source-faithful extraction
 discipline as a claim. Name source-specific examples with recoverable locators
 and support attachments. Mark synthesis and inference. The source/support map
@@ -180,6 +189,11 @@ must make it clear which snapshot, claim, locator, and support record govern a
 statement; prepared-source provenance alone is not support. Keep typed edges,
 CQs, evidence grade, extraction confidence, and lifecycle result records
 separate from readable prose.
+
+For relationship and CQ prose, prefer the minimum useful set: the links a reader
+needs for navigation, the tradeoff or dependency that clarifies the concept, and
+one or two answerable questions that test understanding. Do not produce graph
+or review boilerplate in the body unless the task asks for those records.
 
 ## Human-Assisted Operation
 

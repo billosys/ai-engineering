@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.8.0"
+  version: "1.8.1"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills
@@ -45,13 +45,14 @@ connects that assertion to a source span identified by a source locator.
 Bibliographic identity or a prepared document alone is not claim support.
 
 For real-corpus extraction, default to a rich readable card body alongside the
-control layer. The body explains one concept through its boundary, definitions,
-properties, recognition or construction, context, examples, connections,
-confusions, source/support map, and extraction/review limits. Keep every body
+control layer. Write the body as a teaching and lookup surface first: a reader
+should understand the concept, recognize or use it, see source-specific examples
+and common confusions, and then inspect the supporting records. Keep every body
 section present; where the selected source does not establish material, state
-whether it is not applicable, not established, or unresolved and why. The rich
-body never replaces claim/source-support records, typed edges/CQs, or lifecycle
-results.
+whether it is not applicable, not established, or unresolved and why. Keep
+review machinery compact in the source/support, provenance, lifecycle and
+handoff sections. The rich body never replaces claim/source-support records,
+typed edges/CQs, or lifecycle results.
 
 Route raw PDF/EPUB/HTML and converted-source cleanup to `document-extraction`
 when preparation is needed. Consume its snapshot, manifest, mappings, readiness

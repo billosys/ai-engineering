@@ -1,5 +1,15 @@
 # Concept Cards Version History
 
+### Version 1.8.1 - 2026-09-12
+
+Refined the rich real-corpus card profile toward teaching and lookup use before
+audit use. Updated the entrypoint, load contract, operator workflow, extraction
+guide, validation guidance, concept-card template and synthetic rich example so
+main card sections remain concise, source-specific and pedagogically useful
+while support maps, provenance, lifecycle state and handoff notes retain the
+v4 evidence controls. No schema, executable validator, runtime capability,
+memory admission, graph operation or corpus extraction was added.
+
 ### Version 1.8.0 - 2026-09-11
 
 Added the rich real-corpus card profile: a readable, one-concept body with

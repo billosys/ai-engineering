@@ -98,12 +98,20 @@ preservation and any human/operator acceptance required by the task.
 ## Rich Card Body And Control Layer
 
 For real-corpus extraction, use the rich concept-card body as the readable
-default. Keep its concept boundary; quick/core definition; prerequisites/key
-properties; construction or recognition; context/application; examples;
-relationships/CQs; common errors/confusions; source reference/support map; and
-extraction notes/review boundaries. Each section remains visible. When the
-selected source cannot support material, say `not applicable`, `not established
-in the selected source`, or `unresolved`, with a reason.
+default. Treat that body as the teaching and lookup face of the record, not as
+an audit report with headings. Keep its concept boundary; quick/core
+definition; prerequisites/key properties; construction or recognition;
+context/application; examples; relationships/CQs; common errors/confusions;
+source reference/support map; and extraction notes/review boundaries. Each
+section remains visible. When the selected source cannot support material, say
+`not applicable`, `not established in the selected source`, or `unresolved`,
+with a reason.
+
+Prefer concise, source-specific prose in the main teaching sections. Put repeated
+review caveats, lifecycle status, unresolved bibliography/figure checks and
+run-level limitations in the source/support, provenance, lifecycle and handoff
+sections instead of restating them throughout the card. A strong rich card
+should feel useful to read before it feels useful to audit.
 
 The readable body is not a second evidence or lifecycle system. Claims and
 source-support records remain the authority for substantive warrant, typed edge

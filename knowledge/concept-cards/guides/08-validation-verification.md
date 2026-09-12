@@ -91,6 +91,12 @@ material; and extraction/review notes do not masquerade as lifecycle results.
 It can also check that claims, source support, typed edges/CQs, and result
 references remain separate rather than being replaced by rich prose.
 
+For a teaching-oriented rich profile, review can also record a qualitative
+readability observation: whether the main body is concise, concept-first,
+source-specific, example-bearing and useful for lookup before audit. That
+observation is not structural validation or semantic verification unless the
+review defines and checks those criteria separately.
+
 These checks do not determine whether prose is useful, an example is faithfully
 represented, or support warrants an assertion. Those are semantic questions
 against the identified source and its context. A rich body is not completed

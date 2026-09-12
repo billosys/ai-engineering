@@ -132,14 +132,17 @@ For real-corpus extraction, populate the rich body in the concept-card template
 after establishing the one-concept boundary and claim/support plan. Cover the
 definition, properties, recognition or construction, context, source-specific
 examples, relationships/CQs, confusions, source/support map, and extraction
-review boundaries. Keep every section, but record `not applicable`, `not
-established in the selected source`, or `unresolved` with a reason instead of
-inventing generic prose.
+review boundaries. Write the main sections for someone learning or looking up
+the concept: concise definition, usable properties, recognition cues, concrete
+examples and helpful confusions first; compact audit detail second. Keep every
+section, but record `not applicable`, `not established in the selected source`,
+or `unresolved` with a reason instead of inventing generic prose.
 
-Use the source/support map to make substantive body statements inspectable.
-Examples must identify their source-specific case, locator, and support rather
-than merely sounding plausible. A rich explanation may describe a relationship
-or question locally, but it does not create a typed edge or CQ record. Its
+Use the source/support map to make substantive body statements inspectable
+without turning every teaching paragraph into a provenance paragraph. Examples
+must identify their source-specific case, locator, and support rather than
+merely sounding plausible. A rich explanation may describe a relationship or
+question locally, but it does not create a typed edge or CQ record. Its
 extraction/review-boundary section can point to actual results; it cannot report
 validation, verification, reconciliation, acceptance, or admission by prose.
 
