@@ -3,7 +3,7 @@
 ```yaml
 project: project05-concept-card-skill
 arc: arc07-real-corpus-uat-and-feedback
-status: open
+status: closed
 opened: 2026-09-11
 depends-on:
   - arc06-gate-evidence-and-project-closure
@@ -77,3 +77,11 @@ Arc07 closes when:
 Opened Arc07 after the operator paused Project05 closure to require real-corpus
 UAT and iterative feedback using the `CompCogNeuro/book` Markdown textbook
 corpus, with memory-protocol/RAG use as the downstream acceptance pressure.
+
+### v1.1 - 2026-09-11
+
+Closed Arc07 after Slice05 CDC verification. The arc delivered a bounded
+real-corpus UAT, one accepted source refinement, checked no-op dispositions,
+an inspectable ten-card candidate set, RAG/graph/MCP handoff planning inputs,
+and explicit runtime/admission/review boundaries. Arc08 is opened for the
+post-UAT closure refresh and final Project05 close.

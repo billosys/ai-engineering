@@ -130,17 +130,16 @@ Closed arcs:
 - Arc03: Concept Cards Skill Core
 - Arc04: Concept Card Records And Examples
 - Arc05: Packaging, Docs, And Installability
+- Arc07: Real Corpus UAT And Feedback
 
 Arc06 Slice01 is CC proposed-done as a closure baseline. It is not final
 Project05 closure because the operator expanded acceptance on 2026-09-11 to
 require real-corpus UAT and iterative feedback before formal close.
 
-Active arc: Arc07.
+Active arc: Arc08.
 
-Arc07 is open with Slice05:
-`arc07-real-corpus-uat-and-feedback/slice05-rag-handoff-and-uat-synthesis/`.
-
-Future arc: Arc08 will perform the post-UAT closure refresh.
+Arc08 is open with Slice01:
+`arc08-post-uat-closure-refresh/slice01-final-gates-and-project-closure-refresh/`.
 
 ## Version History
 
@@ -310,3 +309,13 @@ handoff and UAT synthesis. Slice04 produced an inspectable bounded
 memory-protocol candidate set with explicit caveats and a full-book re-entry
 condition; it did not claim operator acceptance, semantic verification, memory
 admission, runtime ingestion, or full-corpus completion.
+
+### v3.2 - 2026-09-11
+
+Arc07 closed after Slice05 CDC verification and arc-scale composition review.
+The real-corpus UAT exercised both skills, produced one accepted
+`document-extraction` refinement, retained checked no-ops and caveats, and
+created a bounded ten-card RAG/graph/MCP planning handoff without runtime or
+memory-admission claims. Arc08 is opened for post-UAT final gates, project
+ledger reconciliation, explicit follow-on boundaries, and formal Project05
+closure.
