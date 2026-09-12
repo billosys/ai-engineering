@@ -3,10 +3,13 @@
 ## Iteration 01 completeness index
 
 `field-dispositions.json` is the machine-checkable companion: 169/169 parsed
-top-level keys and 307 observed field paths are represented, with record-kind,
-shape, concrete file/hash/value evidence and exact-path migration consequence.
-Its inventory-only entries deliberately do not choose a schema; this readable
-table supplies the evidence-based semantic groupings. Prose-defined fields from
+top-level keys and 308 normalized field paths are represented, including
+containers and null/false/empty contexts. Every entry carries record-kind,
+typed shape, concrete file/hash/value evidence, observed meaning, observed
+disposition, and an exact-path query/migration consequence. These are not future
+schema decisions: `coverage_assertions[].id` identifies an assertion, not a
+card; `operator_acceptance.required` is a requirement flag, not an outcome; and
+`endpoint_roles.from_role` remains an endpoint label when null. Prose-defined fields from
 the v3.2 prompts, current concept-cards references, and document-extraction
 handoff/output contract were separately reviewed and appear in the source,
 locator, support, lifecycle and body rows below.

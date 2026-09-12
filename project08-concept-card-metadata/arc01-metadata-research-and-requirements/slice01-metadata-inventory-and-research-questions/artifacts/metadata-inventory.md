@@ -18,7 +18,9 @@ There are 52 typed records: 31 concept-card, 5 source-support, 3 extraction-run,
 claim/preservation-decision/source-locator/validation-result/verification-result.
 These include templates/examples and are not real-extraction card totals.
 
-The inventory has 169 distinct top-level keys and 307 observed field paths.
-`field-dispositions.json` mechanically covers every top-level key and records
-per-path evidence, shapes, record kinds and an explicit no-silent-loss migration
-disposition. The readable crosswalk remains the semantic synthesis.
+The inventory has 169 distinct top-level keys and 308 normalized field paths.
+Arrays use `[]`, while the array container, every member path, null, false and
+empty values remain present in the index. `field-dispositions.json` mechanically
+covers every path, records typed values/shapes and context evidence, and assigns
+an observed meaning/disposition plus a field-specific query consequence. The
+readable crosswalk remains the semantic synthesis; Arc02 still chooses no schema.
