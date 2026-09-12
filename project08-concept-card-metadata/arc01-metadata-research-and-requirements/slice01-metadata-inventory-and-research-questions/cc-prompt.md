@@ -1,6 +1,13 @@
 # CC Assignment: Project08 Arc01 Slice01
 
-## Current Assignment: Iteration 03
+## Current Assignment: Iteration 04
+
+Commit `b5ed9dd1` fixes the declared control-character and document-kind
+cases; CDC independently reproduced them. Execute
+`artifacts/iteration-04-cc-prompt.md` in a fresh context. R2/R4 remain open;
+the full slice is not proposed closed.
+
+## Iteration 03 Assignment (Historical)
 
 Iteration 02 is committed as `e554d74c`; its main boolean/type/path fixes are
 independently reproduced. Execute `artifacts/iteration-03-cc-prompt.md` against

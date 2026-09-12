@@ -1,6 +1,6 @@
 # CDC Review: Arc01 Slice01
 
-Date: 2026-09-12. Current status: **Iteration 03 required; not closed**.
+Date: 2026-09-12. Current status: **Iteration 04 required; not closed**.
 Iteration 01 was committed as `e2ea1e68` with operator permission after a
 no-Ruby inspection. The current independent review is appended below; the
 initial review is retained as history.
@@ -408,3 +408,82 @@ Iteration 03 is prepared within the current slice; Slice02 remains unopened.
 No requirement is dropped or transferred to later design. The five-iteration
 limit remains a sizing signal: expose actual unreviewed semantic families and
 propose a bounded split if necessary, rather than mark generic text complete.
+
+## Iteration 03 Focused Independent Review
+
+Reviewed `b5ed9dd1` on 2026-09-12. Both worktrees were clean on entry.
+The commit touches only the helper, validation evidence and CC closing report.
+CC explicitly states R2/R4 are unfinished; this review agrees with that bounded
+status. No source skill, corpus or prior baseline was edited.
+
+### Reproduced Results
+
+The helper ran successfully on the CDC edge/type fixtures, existing inventory
+fixtures and an intentionally missing root. A single assertion checked all
+of the following against the parsed output, not merely process exit:
+
+- `json-controls.md`: mapping accepted; string equals `page\fbreak` after
+  JSON parsing, including the original form-feed character.
+- `blank-mapping.md`: accepted mapping with value `{}`.
+- `null-root.md`: rejected as `null-frontmatter`.
+- `empty.md`: classified as `empty-frontmatter`.
+- Sequence, malformed YAML, unterminated block and missing root: their
+  respective error states remain visible.
+- `types.md`: booleans, integers and quoted numeric strings remain distinct.
+
+Assertion result: `true`, exit 0. The full nine-root census also completed and
+was byte-identical to the committed inventory. An independent normalized walk
+again reports 308 expected and actual paths, no missing or extraneous paths.
+No additional semantic correctness is inferred from these mechanical results.
+
+The first attempt to compare the full-census files occurred while the process
+was still running and reported missing output files. After process completion,
+the comparisons above were rerun successfully. This was review scheduling, not
+an inventory failure.
+
+### What Is And Is Not Closed
+
+The exhibited R8 invalid-JSON defect and R9 empty/null misclassifications are
+fixed and reproduced. R2's authored semantic-family map and R4's full literal
+portable recipe remain open; no new claim is made for them.
+
+The focused patch does not fulfill two other instructions in Iteration 03:
+use an established JSON implementation and accept a closing delimiter at EOF.
+The source still contains the custom codec and a framing pattern requiring a
+newline after the closing delimiter. These are carried forward as explicit
+instruction dispositions, not disguised as new findings or claimed tested
+failures. The focused fixture success does not by itself settle them.
+
+S1-2 and S1-8 retain their reproduced status. S1-3 now has stronger reproduced
+parser evidence but remains open for the residual instruction/definition work.
+S1-1, S1-4 through S1-7 remain open for the previously identified semantic/input/
+reproduction work. Slice01 and Arc01 are not closed; Slice02 remains unopened.
+
+### Commands
+
+Run from the source checkout with the earlier `slice_dir` variable. The
+review used `/private/tmp/project08-cdc-i03.nKrd6W`; fresh runs should use
+their own temporary directory.
+
+```sh
+probe_dir=$(mktemp -d /private/tmp/project08-cdc-i03.XXXXXX)
+fennel "$slice_dir/artifacts/inventory-frontmatter.fnl" --field-index "$probe_dir/index.json" "$probe_dir/out.json" "$slice_dir/artifacts/cdc-edge-probes" "$slice_dir/artifacts/inventory-fixtures" "$slice_dir/artifacts/cdc-type-probes" "$probe_dir/missing-root"
+jq -e '[.records[]|{name:(.path|split("/")|last),frontmatter,error,values}] as $r | ($r|any(.name=="json-controls.md" and .frontmatter and .values.text=="page\fbreak")) and ($r|any(.name=="blank-mapping.md" and .frontmatter and .values=={})) and ($r|any(.name=="null-root.md" and .error=="null-frontmatter" and (.frontmatter|not))) and ($r|any(.name=="empty.md" and .error=="empty-frontmatter")) and ($r|any(.name=="non-mapping.md" and .error=="non-mapping-frontmatter")) and ($r|any(.name=="unterminated.md" and .error=="unterminated-frontmatter")) and ($r|any(.name=="malformed.md" and (.error|startswith("YAML::XS:")))) and ($r|any(.name=="missing-root" and .error=="missing-root")) and ($r|any(.name=="types.md" and .values.truth==true and .values.falsehood==false and .values.one==1 and .values.text_one=="1"))' "$probe_dir/out.json"
+```
+
+The full-census run used the same nine explicit input roots as the preceding
+review. Its `cmp` and independent normalization/check command were rerun after
+the process exited. All claimed completed checks returned exit 0.
+
+### What Worked And Bubble-Up
+
+CC returned a small, scoped repair and explicitly named unfinished work.
+That is useful progress without a premature completion claim. Existing
+fixtures made the corrected behavior independently observable.
+
+Iteration 04 now leads with authored semantic families and literal replay in a
+fresh CC context. Because this is the fourth iteration, its prompt requires
+an up-front sizing check and an explicit proposed decomposition if the remaining
+analysis cannot fit. That is permission to plan enough work, not to reduce the
+project's no-loss requirement. Project/arc/slice plans and the current prompt
+have been updated; no later research slice is opened against incomplete inputs.

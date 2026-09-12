@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.3"
+version: "1.4"
 ---
 
 # Metadata Research And Requirements
@@ -20,7 +20,7 @@ because it appears in the initial hypothesis.
 
 | Slice | Scope | Dependency | State |
 | --- | --- | --- | --- |
-| `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief | CDC changes required; Iteration 03 ready for CC |
+| `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief | Partial repair verified; Iteration 04 ready for fresh CC context |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Slice01 inventory/questions | Plan after Slice01 review |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
 
@@ -38,6 +38,19 @@ competency questions or requirements engineering. Seek benefits and costs, not
 standards adoption for its own sake.
 
 ## Acceptance And Handoff
+
+Current: the focused repairs in `b5ed9dd1` pass independent assertions. R2's
+semantic-family map and R4's literal portable reproduction route remain open,
+as CC explicitly reports. Iteration 04 makes these the primary deliverables:
+`artifacts/iteration-04-cc-prompt.md` in Slice01. Previously requested codec
+library/EOF handling must be resolved or explicitly dispositioned too. Earlier
+assessment paragraphs below are historical.
+
+At Iteration 04, use a fresh executing context and size the remaining authored
+analysis before doing more helper work. If it cannot fit with review headroom,
+return a concrete semantic-family remainder and proposed slice split for CDC
+to incorporate into this arc, preserving every project requirement. The
+five-iteration limit is not permission to declare unreviewed fields done.
 
 Current: Iteration 02 now reproduces the typed fixture and all 308 normalized
 paths. Iteration 03 repairs JSON/control-character and framing classification
@@ -62,6 +75,10 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.4 (2026-09-12): Slice01 Iteration 03 delivers its declared focused repair,
+  while R2/R4 remain explicitly open. Opens a fresh-context Iteration 04
+  centered on authored semantics and replay; records the sizing check.
 
 - 1.3 (2026-09-12): Slice01 Iteration 02 independently reproduces the census
   and path coverage, resolving R6/R7's original data failures. Remaining

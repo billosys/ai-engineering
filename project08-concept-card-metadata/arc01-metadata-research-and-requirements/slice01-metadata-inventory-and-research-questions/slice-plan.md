@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice01-metadata-inventory-and-research-questions
-status: iteration-03-required
-version: "1.3"
+status: iteration-04-required
+version: "1.4"
 ---
 
 # Metadata Inventory And Research Questions
@@ -15,7 +15,23 @@ Read the project and arc plans and ledgers, then the
 [planning brief](./artifacts/planning-brief.md). This is a planning/evidence slice;
 source skills and historical cards are read-only inputs.
 
-## Current Iteration 03
+## Current Iteration 04
+
+Iteration 03's focused repair is committed as `b5ed9dd1` and its asserted
+control-character/document-classification cases are independently reproduced.
+CC explicitly leaves R2 and R4 open. Follow
+[Iteration 04](./artifacts/iteration-04-cc-prompt.md) in a fresh CC context:
+authored semantic families with complete context membership and a literal,
+portable reproduction route are the primary outstanding deliverables.
+
+The requested established JSON implementation and closing-delimiter-at-EOF
+handling were not delivered by the focused patch; resolve or explicitly
+disposition them without pretending the whole Iteration 03 assignment closed.
+Retain the original project requirements. If sizing exceeds one context,
+report the specific remainder and proposed decomposition before another broad
+repair pass.
+
+## Iteration 03 (Historical)
 
 Iteration 02 is committed as `e554d74c`. CDC reproduced its corrected typed
 values/shapes and 308-path inventory. Follow
@@ -97,6 +113,10 @@ the operator's tooling/commit condition). CC writes a proposed-done
 closing report with row evidence and Arc01 bubble-up; CDC verifies separately.
 
 ## Version History
+
+- 1.4 (2026-09-12): Records independently reproduced focused repair and opens
+  Iteration 04 for the explicitly unfinished semantics/reproduction work.
+  Calls for a fresh context and concrete scope-sizing check.
 
 - 1.3 (2026-09-12): Opens Iteration 03 after reproducing the main type/path
   fixes. Carries remaining R2/R4 and concrete R8/R9 defects without weakening

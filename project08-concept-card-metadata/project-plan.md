@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.3"
+version: "1.4"
 ---
 
 # Concept Card Metadata
@@ -68,7 +68,7 @@ research/design decisions. Arc02 will supply the accepted architecture artifact.
 
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
-| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice01 Iteration 03 required; type/path fixes reproduced |
+| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice01 Iteration 04: authored semantics and reproducible handoff |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Arc01 | Hypothesis; detailed plan when near |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -163,6 +163,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.4 (2026-09-12): CDC reproduced Iteration 03's focused control-character
+  and document-classification repairs. CC explicitly leaves R2/R4 open.
+  Iteration 04 prioritizes the authored semantic-family map and literal
+  reproduction route; outstanding implementation instructions remain visible.
+  Was: Iteration 03 required. Project acceptance scope is unchanged.
 
 - 1.3 (2026-09-12): CDC reproduced Iteration 02's boolean/shape and 308-path
   corrections. Iteration 03 addresses remaining JSON/framing edge cases,
