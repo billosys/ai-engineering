@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc07-real-corpus-uat-and-feedback
 slice: slice04-expanded-corpus-card-generation
-status: cc-proposed-done
+status: cdc-verified
 opened: 2026-09-11
 depends-on:
   - slice03-feedback-driven-skill-refinement

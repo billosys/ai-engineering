@@ -137,8 +137,8 @@ require real-corpus UAT and iterative feedback before formal close.
 
 Active arc: Arc07.
 
-Arc07 is open with Slice04:
-`arc07-real-corpus-uat-and-feedback/slice04-expanded-corpus-card-generation/`.
+Arc07 is open with Slice05:
+`arc07-real-corpus-uat-and-feedback/slice05-rag-handoff-and-uat-synthesis/`.
 
 Future arc: Arc08 will perform the post-UAT closure refresh.
 
@@ -302,3 +302,11 @@ corpus card generation. The Slice03 source refinement is live in
 `document-extraction` and packages; Slice04 must define coverage, dependency
 handling, validation sampling, caveats, and candidate-review boundaries before
 claiming corpus-card completeness.
+
+### v3.1 - 2026-09-11
+
+Arc07 Slice04 is CDC-verified and Arc07 has advanced to Slice05 for RAG
+handoff and UAT synthesis. Slice04 produced an inspectable bounded
+memory-protocol candidate set with explicit caveats and a full-book re-entry
+condition; it did not claim operator acceptance, semantic verification, memory
+admission, runtime ingestion, or full-corpus completion.
