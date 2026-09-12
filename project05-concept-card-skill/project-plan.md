@@ -2,7 +2,7 @@
 
 ```yaml
 project: project05-concept-card-skill
-status: active
+status: cc-proposed-done
 created: 2026-09-06
 depends-on:
   - project03-concept-card-method
@@ -136,10 +136,10 @@ Arc06 Slice01 is CC proposed-done as a closure baseline. It is not final
 Project05 closure because the operator expanded acceptance on 2026-09-11 to
 require real-corpus UAT and iterative feedback before formal close.
 
-Active arc: Arc08.
-
-Arc08 is open with Slice01:
-`arc08-post-uat-closure-refresh/slice01-final-gates-and-project-closure-refresh/`.
+Arc08 is CC proposed-done pending independent verification. Project05 is CC
+proposed-done, not formally closed. Its final independent review must
+reproduce the Arc08 gates, package inspection, project ledger reconciliation,
+and closure boundaries.
 
 ## Version History
 
@@ -319,3 +319,13 @@ created a bounded ten-card RAG/graph/MCP planning handoff without runtime or
 memory-admission claims. Arc08 is opened for post-UAT final gates, project
 ledger reconciliation, explicit follow-on boundaries, and formal Project05
 closure.
+
+### v3.3 - 2026-09-11
+
+Arc08 Slice01 is CC proposed-done after post-UAT repository gates and fresh
+package inspection passed, Project05 P-2 through P-11 were reconciled, and
+final follow-on boundaries were recorded. Project05 is CC proposed-done only;
+independent CDC/project-scale verification remains required before formal
+closure. This does not defer either nondeferrable live skill or expand into
+candidate acceptance, full-book extraction, retrieval, graph/RAG/MCP, or
+memory runtime work.

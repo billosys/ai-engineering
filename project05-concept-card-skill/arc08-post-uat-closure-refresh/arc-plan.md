@@ -3,7 +3,7 @@
 ```yaml
 project: project05-concept-card-skill
 arc: arc08-post-uat-closure-refresh
-status: open
+status: cc-proposed-done
 opened: 2026-09-11
 depends-on:
   - arc07-real-corpus-uat-and-feedback

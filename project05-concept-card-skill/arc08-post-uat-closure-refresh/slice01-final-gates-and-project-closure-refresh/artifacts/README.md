@@ -3,13 +3,13 @@
 This directory is the durable home for Arc08 final-gate and Project05 closure
 refresh evidence.
 
-Expected artifact groups:
+Artifacts:
 
-- final gate evidence;
-- generated package inspection evidence;
-- project ledger reconciliation notes;
-- final deferral/follow-on boundary notes;
-- project closeout inputs.
+- `final-gate-evidence.md`;
+- `package-inspection.md`;
+- `project-ledger-reconciliation.md`;
+- `final-follow-on-boundaries.md`;
+- `project-closeout-inputs.md`.
 
 Do not store runtime indexes, graph databases, vector stores, MCP
 implementations, admitted memory records, or operator-accepted card records
