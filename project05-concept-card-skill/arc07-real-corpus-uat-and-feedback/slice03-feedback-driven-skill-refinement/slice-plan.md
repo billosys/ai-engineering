@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc07-real-corpus-uat-and-feedback
 slice: slice03-feedback-driven-skill-refinement
-status: open
+status: cc-proposed-done
 opened: 2026-09-11
 depends-on:
   - slice02-pilot-markdown-preparation-and-card-extraction
