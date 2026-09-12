@@ -137,8 +137,8 @@ require real-corpus UAT and iterative feedback before formal close.
 
 Active arc: Arc07.
 
-Arc07 is open with Slice03:
-`arc07-real-corpus-uat-and-feedback/slice03-feedback-driven-skill-refinement/`.
+Arc07 is open with Slice04:
+`arc07-real-corpus-uat-and-feedback/slice04-expanded-corpus-card-generation/`.
 
 Future arc: Arc08 will perform the post-UAT closure refresh.
 
@@ -294,3 +294,11 @@ disposition of the seven real-use pilot findings. Slice03 may make accepted
 skill/template/example refinements, record checked no-op decisions, or create
 follow-on boundaries, but must not silently drop findings or expand into
 runtime graph/RAG/MCP implementation.
+
+### v3.0 - 2026-09-11
+
+Arc07 Slice03 is CDC-verified and Arc07 has advanced to Slice04 for expanded
+corpus card generation. The Slice03 source refinement is live in
+`document-extraction` and packages; Slice04 must define coverage, dependency
+handling, validation sampling, caveats, and candidate-review boundaries before
+claiming corpus-card completeness.
