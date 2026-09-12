@@ -144,20 +144,17 @@ Closed arcs:
 - Arc05: Packaging, Docs, And Installability
 - Arc07: Real Corpus UAT And Feedback
 - Arc08: Post-UAT Closure Refresh
+- Arc09: Rich Concept-Card Profile
 
 Arc06 Slice01 is CC proposed-done as a closure baseline. It is not final
 Project05 closure because the operator expanded acceptance on 2026-09-11 to
 require real-corpus UAT and iterative feedback before formal close.
 
-Arc08 is CDC-verified as the post-UAT closure baseline, but Project05 is not
-formally closed because the operator accepted a new rich-card profile finding
-before final project closure.
+Arc08 is CDC-verified as the post-UAT closure baseline, and Arc09 is
+CDC-verified as the rich-card profile refinement. Project05 is not formally
+closed until Arc10 completes the final closure refresh.
 
 Active arc:
-
-- Arc09: Rich Concept-Card Profile
-
-Planned final refresh:
 
 - Arc10: Final Closure Refresh After Rich Profile
 
@@ -383,3 +380,10 @@ Arc09 Slice03 is CDC-verified. Regression artifacts show the rich profile
 recovers the intended v3.2-style reader/reference affordances while preserving
 v4 controls and recording the historical Erlang wrapper residue as comparison
 evidence. Slice04 is opened for final package gates and Arc09 closure inputs.
+
+### v3.8 - 2026-09-12
+
+Arc09 closed after Slice04 CDC verification reproduced final gates,
+package-path validation, archive integrity, concept-card rich-profile package
+contents, document-extraction non-coupling, and caveat retention. Arc10 is
+opened for final Project05 closure refresh after the rich-profile refinement.

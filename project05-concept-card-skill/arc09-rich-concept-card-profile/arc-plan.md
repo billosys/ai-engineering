@@ -3,7 +3,7 @@
 ```yaml
 project: project05-concept-card-skill
 arc: arc09-rich-concept-card-profile
-status: active
+status: closed
 opened: 2026-09-11
 depends-on:
   - arc08-post-uat-closure-refresh
@@ -90,3 +90,10 @@ regression protocol defined by Slice01.
 Slice03 is CDC-verified and Slice04 is opened for final package gates, package
 inspection, and Arc09 closure inputs. No Arc09 scope or sequencing change was
 required.
+
+### v1.4 - 2026-09-12
+
+Slice04 is CDC-verified and Arc09 is closed. CDC reproduced final repository
+gates, package-path validation, archive integrity, archive content, caveat
+retention, and Arc10 handoff readiness. Arc10 is opened for final Project05
+closure refresh.

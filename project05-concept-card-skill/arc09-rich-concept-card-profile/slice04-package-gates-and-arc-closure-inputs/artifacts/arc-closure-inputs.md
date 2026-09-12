@@ -51,5 +51,6 @@ inspect the current generated packages, account for the caveats above, and
 confirm that the rich profile has not silently expanded into runtime or
 real-corpus acceptance claims.
 
-The current planning tree has no Arc10 prompt directory. Create it from the
-Project05 plan, the Arc09 closure evidence, and this handoff before advancing.
+At CC close, the planning tree had no Arc10 prompt directory. CDC closure on
+2026-09-12 created Arc10 from the Project05 plan, the Arc09 closure evidence,
+and this handoff before advancing.

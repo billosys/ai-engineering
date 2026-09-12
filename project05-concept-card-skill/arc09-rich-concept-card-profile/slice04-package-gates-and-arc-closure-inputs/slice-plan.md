@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc09-rich-concept-card-profile
 slice: slice04-package-gates-and-arc-closure-inputs
-status: cc-proposed-done
+status: cdc-verified
 opened: 2026-09-11
 depends-on:
   - arc09-rich-concept-card-profile/slice03-regression-examples-and-validation
@@ -77,5 +77,11 @@ the next closure action is ready for CDC arc closure and Arc10 opening.
 
 CC proposed-done on 2026-09-12. Fresh package gates and archive inspection
 passed without a source blocker. The close artifacts retain the synthetic
-traceability, historical wrapper, and non-runtime caveats. Independent CDC
-verification remains pending before Arc09 may close.
+traceability, historical wrapper, and non-runtime caveats.
+
+## CDC Outcome
+
+CDC verified this slice on 2026-09-12 by independently reproducing the final
+skill, version, package-path, archive-integrity, archive-content, whitespace,
+and worktree-hygiene evidence. Arc09 is closed and Arc10 is opened for final
+Project05 closure refresh.
