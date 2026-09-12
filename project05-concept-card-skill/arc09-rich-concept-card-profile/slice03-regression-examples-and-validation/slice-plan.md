@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc09-rich-concept-card-profile
 slice: slice03-regression-examples-and-validation
-status: cc-proposed-done
+status: cdc-verified
 opened: 2026-09-11
 depends-on:
   - arc09-rich-concept-card-profile/slice02-rich-profile-source-updates
@@ -79,10 +79,9 @@ whether the Slice02 implementation restores the intended rich-card affordances
 without weakening v4 controls, and when any direct blockers are either fixed
 or routed explicitly before Slice04.
 
-## CC Outcome
+## CDC Outcome
 
-CC proposed-done on 2026-09-11. The regression artifacts find no direct source
-blocker, so no `concept-cards` source file changed. The review records the
-historical Erlang wrapper residue and the synthetic example's intentionally
+CDC verified Slice03 on 2026-09-11. The regression artifacts find no direct
+source blocker, so no `concept-cards` source file changed. The review records
+the historical Erlang wrapper residue and the synthetic example's intentionally
 non-resolving traceability paths as bounded evidence/caveats for Slice04.
-Independent CDC verification remains pending.

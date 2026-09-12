@@ -84,3 +84,9 @@ required.
 Slice02 is CDC-verified and Slice03 is opened for regression examples and
 validation. No Arc09 scope or sequencing change was required; Slice03 uses the
 regression protocol defined by Slice01.
+
+### v1.3 - 2026-09-11
+
+Slice03 is CDC-verified and Slice04 is opened for final package gates, package
+inspection, and Arc09 closure inputs. No Arc09 scope or sequencing change was
+required.

@@ -376,3 +376,10 @@ Arc09 Slice02 is CDC-verified. The live `concept-cards` source now implements
 the rich real-corpus profile with template, synthetic example, guide/review
 rules, and a compatible skill version/history update. Slice03 is opened to
 prove the regression and usefulness checks before package/arc closure work.
+
+### v3.7 - 2026-09-11
+
+Arc09 Slice03 is CDC-verified. Regression artifacts show the rich profile
+recovers the intended v3.2-style reader/reference affordances while preserving
+v4 controls and recording the historical Erlang wrapper residue as comparison
+evidence. Slice04 is opened for final package gates and Arc09 closure inputs.
