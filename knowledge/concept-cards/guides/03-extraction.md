@@ -163,6 +163,24 @@ those assessments and checks. Extraction self-review is not independent
 verification; use [memory admission](./09-memory-admission.md) for a
 separately requested reliance decision.
 
+## Compose A Rich Source-Faithful Card
+
+Use the rich body template for a real-corpus candidate. Start with the
+one-concept boundary, then derive the quick/core definition, prerequisites/key
+properties, construction or recognition, context/application, source-specific
+examples, relationships/CQs, common errors/confusions, source/support map, and
+extraction notes/review boundaries. Preserve every heading. Where the selected
+source has no applicable material, use the required explicit reason rather than
+filling a section with generic domain knowledge.
+
+Build each substantive body statement from the same source-faithful extraction
+discipline as a claim. Name source-specific examples with recoverable locators
+and support attachments. Mark synthesis and inference. The source/support map
+must make it clear which snapshot, claim, locator, and support record govern a
+statement; prepared-source provenance alone is not support. Keep typed edges,
+CQs, evidence grade, extraction confidence, and lifecycle result records
+separate from readable prose.
+
 ## Human-Assisted Operation
 
 Ask the operator for the bounded missing input: source identity and locator,

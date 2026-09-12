@@ -146,6 +146,22 @@ not a fresh admission for
 revised claims. State what needs renewed assessment without claiming to update
 a memory runtime.
 
+## Preserve Rich Body Value Deliberately
+
+Inventory each prior rich-body section as well as its linked claims and result
+records. Compare its definitions, examples, qualifications, explanations, and
+explicit `not applicable`, `not established`, or `unresolved` reasons against
+the new source-derived candidate. A shorter replacement is not proof that the
+prior card's explanatory value survived.
+
+Retain or disposition source-specific examples and review-boundary notes by
+their actual support and scope. Do not carry a prior rich section forward as
+current source support merely because it reads well; preserve it as historical,
+superseded, or unresolved where appropriate. Re-extraction may refresh readable
+prose, but it cannot transfer validation, verification, reconciliation,
+preservation, operator acceptance, or memory-admission outcomes to a new
+revision without applicable records.
+
 ## Human-Assisted Operation
 
 Ask for the identified source span and the relevant old/new card or claim

@@ -82,6 +82,21 @@ A required field that is missing can fail a structural check even if the
 underlying content is unknown; inability to inspect whether a source supports
 a claim is a different, unresolved semantic question.
 
+## Check The Rich Profile At The Correct Layer
+
+For a rich-card contract, structural validation can check that every required
+body section is present; sections without supported content carry an explicit
+applicability reason; source-specific examples link recoverable locator/support
+material; and extraction/review notes do not masquerade as lifecycle results.
+It can also check that claims, source support, typed edges/CQs, and result
+references remain separate rather than being replaced by rich prose.
+
+These checks do not determine whether prose is useful, an example is faithfully
+represented, or support warrants an assertion. Those are semantic questions
+against the identified source and its context. A rich body is not completed
+review evidence, and its presence never supplies independent verification,
+operator acceptance, reconciliation, or memory admission.
+
 ## Perform Semantic Verification
 
 1. Select the exact claim, support relation, card assertion, edge or CQ coverage

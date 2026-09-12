@@ -1,5 +1,17 @@
 # Concept Cards Version History
 
+### Version 1.8.0 - 2026-09-11
+
+Added the rich real-corpus card profile: a readable, one-concept body with
+source-faithful definitions, properties, recognition or construction, context,
+source-specific examples, relationships/CQs, confusions, source/support map,
+and explicit extraction/review boundaries. Updated extraction, re-extraction,
+evidence, relationship/CQ, and validation guidance plus review surfaces so rich
+prose cannot replace claim support, typed records, or separate lifecycle and
+admission controls. Added a synthetic rich-profile example. No executable
+validator, completed review, runtime capability, or live-corpus extraction was
+added.
+
 ### Version 1.7.4 - 2026-09-11
 
 Corrected a remaining live operator-workflow handoff after final Project05

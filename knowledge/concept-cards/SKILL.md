@@ -8,7 +8,7 @@ description: |
   document-extraction; ordinary source reading does not require this skill.
 license: MIT
 metadata:
-  version: "1.7.4"
+  version: "1.8.0"
   hermes:
     tags: [concept-cards, provenance, knowledge, evidence]
     category: method-skills
@@ -43,6 +43,15 @@ This skill owns concept-card method representation and its evidence lifecycle.
 A concept card organizes a concept; a claim states an assertion; source support
 connects that assertion to a source span identified by a source locator.
 Bibliographic identity or a prepared document alone is not claim support.
+
+For real-corpus extraction, default to a rich readable card body alongside the
+control layer. The body explains one concept through its boundary, definitions,
+properties, recognition or construction, context, examples, connections,
+confusions, source/support map, and extraction/review limits. Keep every body
+section present; where the selected source does not establish material, state
+whether it is not applicable, not established, or unresolved and why. The rich
+body never replaces claim/source-support records, typed edges/CQs, or lifecycle
+results.
 
 Route raw PDF/EPUB/HTML and converted-source cleanup to `document-extraction`
 when preparation is needed. Consume its snapshot, manifest, mappings, readiness
@@ -83,7 +92,7 @@ Guide 10 records maintenance ownership and the remaining delivery boundaries.
 
 ## Record Templates
 
-The twelve sibling templates, eight representative examples, and sibling
+The twelve sibling templates, nine representative examples, and sibling
 reference/review material below are live source support. These documents describe
 record conventions and review candidates; they are not executable schemas or
 validators.
@@ -103,6 +112,7 @@ real corpus work, successful independent verification, or memory-system writes.
 | --- | --- |
 | One concept with explicit unknowns | [Minimal card](./examples/minimal-card.md) |
 | Claim-specific source support | [Claim-backed card](./examples/claim-backed-card.md) |
+| Rich readable body with linked control records | [Rich profile card](./examples/rich-profile-card.md) |
 | CQ component coverage and answerability | [CQ coverage](./examples/cq-coverage.md) |
 | Directed relationship with scoped support | [Relationship edge](./examples/relationship-edge.md) |
 | Prepared-source extraction provenance | [Extraction-run trace](./examples/extraction-run-trace.md) |

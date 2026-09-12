@@ -130,6 +130,19 @@ re-entry condition. Report active, obsolete and deferred sets separately so
 removing difficult questions cannot inflate coverage. Reassess dependents when
 source, claim, edge or intended-use revisions change.
 
+## Rich-Body Relationship And CQ Boundaries
+
+A rich card may explain why another concept or a competency question matters to
+a reader. Keep that prose local and qualified. When the relationship, direction,
+support, provenance, lifecycle, or CQ coverage needs independent inspection,
+create or link the typed edge or CQ record instead. A readable relationship
+paragraph is not evidence that the edge is warranted.
+
+Likewise, a rich card can list questions it leaves unresolved, but that does not
+establish CQ coverage or answerability. Keep source-specific examples and their
+support maps distinct from relationship evidence; shared source provenance does
+not by itself support a connection between concepts.
+
 ## Human-Assisted Operation
 
 Request the specific endpoint revisions, relation sentence, source spans,

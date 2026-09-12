@@ -127,6 +127,20 @@ what happened to prior value, as described in
 admission concerns permission to rely on material as durable semantic memory.
 None is inferred from a grade, a valid file or successful extraction.
 
+## Keep Rich Prose Attached To Its Warrant
+
+Treat each substantive definition, property, procedure, context statement,
+source-specific example, or confusion note in a rich card as an assertion that
+needs the same claim/source-support discipline as any other card content. The
+source reference/support map should expose the relevant snapshot, locator,
+claim, and support record. It is a navigation aid, not an aggregate evidence
+grade or verification result.
+
+An explicit unavailable-section reason is a scope observation, not evidence of
+absence in the broader domain. Rich readable prose cannot raise a claim's grade,
+turn an example into support for a general rule, or collapse extraction
+confidence and lifecycle state into one favorable impression.
+
 On a material revision, identify the changed targets and dependent claims,
 support relations, edges or CQ coverage assertions. Keep old records attached
 to their old revisions. Check whether each prior result still applies and

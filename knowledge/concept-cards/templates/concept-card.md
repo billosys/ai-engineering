@@ -12,6 +12,7 @@ created_at: null
 source_refs: []
 prepared_source_refs: []
 claim_refs: []
+source_support_refs: []
 relationship_refs: []
 cq_refs: []
 run_refs: []
@@ -31,10 +32,50 @@ Copy this user-authored record using the [template conventions](../SKILL.md#reco
 Follow [extraction](../guides/03-extraction.md). Draft status describes this
 artifact, not its evidence or admission. Keep one concept per card.
 
-## Concept Boundary And Summary
+## Concept Boundary
 
-<Define the concept, its scope, adjacent concepts excluded, and a concise
-source-faithful synthesis. Preserve qualifications and distinguish inference.>
+<Define one concept, its scope, and adjacent concepts excluded. If a boundary
+is unresolved, state the competing readings and why the selected source does
+not settle them.>
+
+## Quick Definition And Core Definition
+
+<Give a concise definition followed by the qualified, source-faithful account.
+Map substantive assertions to claims/support. If the selected source supplies
+no definition, say not established in the selected source and why.>
+
+## Prerequisites And Key Properties
+
+<State source-supported dependencies, conditions, and defining properties.
+Prose here does not create a typed relationship edge. Say not applicable, not
+established, or unresolved with a reason when needed.>
+
+## Construction Or Recognition
+
+<Describe a source-supported procedure, formation, or recognition cue only when
+applicable. Do not invent steps or cues to fill this section.>
+
+## Context And Application
+
+<Explain source-reported uses, conditions, limits, and context. Distinguish
+source statement, reported observation, and inference.>
+
+## Examples
+
+<Give named, source-specific examples or worked cases only when linked locators
+and source support warrant them. Otherwise state why none is established.>
+
+## Common Errors And Common Confusions
+
+<Separate procedural misuse from conceptual confusion. Identify whether each
+item is source-supported, domain-informed, or unresolved; do not add generic
+advice as filler.>
+
+## Source Reference And Support Map
+
+<Point to source snapshots, locators, claims, and source-support records for
+the substantive body material. Prepared sources supply provenance and caveats,
+not support by themselves.>
 
 ## Claims And Evidence
 
@@ -56,6 +97,12 @@ Endpoint validity and card presence do not establish relation warrant or coverag
 For document-extraction output, retain manifest, maps, readiness and caveats as
 upstream provenance. Route raw PDF/EPUB/HTML or converted-source cleanup to
 document-extraction; preparation is not source support.>
+
+## Extraction Notes And Review Boundaries
+
+<Record extraction rationale, ambiguity, and review limits. Link validation or
+verification results when present, but do not use this section to claim a check,
+completed review, reconciliation, operator acceptance, or memory admission.>
 
 ## Lifecycle And Prior Value
 

@@ -11,6 +11,7 @@ implicitly approved.
 | Conflict disposition | Accept a material reconciliation where alternatives affect intended use. | Alternatives, source comparison, rationale, unresolved consequences, and resulting references. |
 | Preservation exception | Accept a deviation from the ordinary prior-value disposition or unresolved retention. | Unique value, affected revisions, evidence limits, rationale, and re-entry condition. |
 | Material uncertainty | Decide whether incomplete evidence blocks use, requires a caveat, or must remain deferred. | Scope, missing/inaccessible evidence, risk to intended use, and next inspection. |
+| Rich-profile exception | Approve an exception to required rich-body sections or the explicit applicability-reason rule for a named card revision. | Missing or inapplicable section, source scope, rationale, affected support/lifecycle limits, and re-entry condition. |
 | Method exception | Approve an exception to the method's construct, evidence, or review expectations. | Exact exception, owner, duration/scope, rationale, and restoration or review condition. |
 
 ## Deferred Runtime Checks

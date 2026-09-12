@@ -95,6 +95,24 @@ semantic verification, resolve a conflict or authorize memory admission.
 Admission depends on support, grade, validation, verification, reconciliation,
 preservation and any human/operator acceptance required by the task.
 
+## Rich Card Body And Control Layer
+
+For real-corpus extraction, use the rich concept-card body as the readable
+default. Keep its concept boundary; quick/core definition; prerequisites/key
+properties; construction or recognition; context/application; examples;
+relationships/CQs; common errors/confusions; source reference/support map; and
+extraction notes/review boundaries. Each section remains visible. When the
+selected source cannot support material, say `not applicable`, `not established
+in the selected source`, or `unresolved`, with a reason.
+
+The readable body is not a second evidence or lifecycle system. Claims and
+source-support records remain the authority for substantive warrant, typed edge
+and CQ records retain their own identities, and validation, verification,
+reconciliation, preservation, operator decisions, and memory admission remain
+separate result or decision records. Route raw-source preparation to
+`document-extraction`; preparation does not convert a generic example into a
+source-supported one.
+
 ## Operating Modes And Availability
 
 **Human-Assisted:** the operator supplies source excerpts, artifacts or

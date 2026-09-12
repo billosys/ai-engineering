@@ -126,6 +126,23 @@ concerns into one card confidence field. Follow
 [validation and verification](./08-validation-verification.md) for scoped
 checks and review provenance. Record schemas are not supplied by this foundation.
 
+## Compose The Rich Readable Body
+
+For real-corpus extraction, populate the rich body in the concept-card template
+after establishing the one-concept boundary and claim/support plan. Cover the
+definition, properties, recognition or construction, context, source-specific
+examples, relationships/CQs, confusions, source/support map, and extraction
+review boundaries. Keep every section, but record `not applicable`, `not
+established in the selected source`, or `unresolved` with a reason instead of
+inventing generic prose.
+
+Use the source/support map to make substantive body statements inspectable.
+Examples must identify their source-specific case, locator, and support rather
+than merely sounding plausible. A rich explanation may describe a relationship
+or question locally, but it does not create a typed edge or CQ record. Its
+extraction/review-boundary section can point to actual results; it cannot report
+validation, verification, reconciliation, acceptance, or admission by prose.
+
 ## Report The Handoff And Remaining Work
 
 State the operation performed, input and output revisions/paths, run and source

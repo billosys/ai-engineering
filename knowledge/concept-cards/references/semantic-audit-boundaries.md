@@ -12,6 +12,9 @@ reproduced. It records a verification result when the task calls for one.
 | Extraction-confidence calibration | Does the confidence honestly describe the extraction act, omissions, and ambiguity? | A source-support outcome or verification result. |
 | Relationship meaning | Are relation type, direction, symmetry, endpoint roles, and edge-specific support meaningful? | Resolving endpoints. |
 | CQ answerability | Does mapped material answer the question within its stated criteria and use? | Topic overlap, coverage references, or retrieval alone. |
+| Rich-body faithfulness | Do definitions, properties, examples, and confusions retain source qualification and distinguish source statement from inference? | Required headings, links, or fluent prose. |
+| Source-specific example warrant | Does the named example, its locator, and the claimed lesson match the selected source context? | Presence of a source/support map entry. |
+| Review-boundary honesty | Does the card state only checks and decisions supported by applicable result or operator records? | A structurally valid lifecycle reference. |
 | Reconciliation rationale | Does the disposition address the actual alternatives, evidence, and resulting lifecycle effects? | A selected winner or valid links. |
 | Preservation rationale | Does the decision retain unique prior value appropriately and state what changed? | A destination reference. |
 

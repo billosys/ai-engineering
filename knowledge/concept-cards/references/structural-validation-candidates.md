@@ -9,6 +9,9 @@ acceptance, or durable-memory suitability.
 | --- | --- | --- |
 | Required identity | Required `record_type`, `id`, and `revision` values are present and locally unique. | Does not establish that an identity refers to the right concept. |
 | Required sections | Templates' required explanatory sections are present when their record type needs them. | Presence does not establish adequate reasoning. |
+| Rich body profile | A rich concept card has every required readable-body section; empty, unavailable, or unresolved sections state an applicability reason. | Does not establish that the prose is useful, complete, or source-faithful. |
+| Source-specific examples | Each asserted source-specific example identifies its source snapshot, recoverable locator, claim, and support attachment. | A link shape does not show that the example or generalization is warranted. |
+| Review-boundary hygiene | Extraction/review notes do not state validation, verification, reconciliation, operator acceptance, or memory admission without the applicable record. | Does not establish whether linked result records are sound or complete. |
 | Reference shape | Singular and plural references name IDs, revisions, and paths where a path is needed. | A resolving path does not establish semantic applicability. |
 | Provenance | Concept cards and extraction runs name relevant source/prepared-source or run provenance. | Preparation is not source support. |
 | Source support | A claim, edge, or CQ coverage assertion that asserts support has a scoped support record and span/locator reference. | Presence does not show the span warrants the assertion. |
