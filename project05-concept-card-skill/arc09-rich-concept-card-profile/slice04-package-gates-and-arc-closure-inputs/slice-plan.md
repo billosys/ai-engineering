@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc09-rich-concept-card-profile
 slice: slice04-package-gates-and-arc-closure-inputs
-status: open
+status: cc-proposed-done
 opened: 2026-09-11
 depends-on:
   - arc09-rich-concept-card-profile/slice03-regression-examples-and-validation
@@ -72,3 +72,10 @@ Expected artifacts:
 This slice exits when final gates and package inspection are recorded, Arc09
 package/closure ledger rows have evidence, remaining caveats are explicit, and
 the next closure action is ready for CDC arc closure and Arc10 opening.
+
+## CC Outcome
+
+CC proposed-done on 2026-09-12. Fresh package gates and archive inspection
+passed without a source blocker. The close artifacts retain the synthetic
+traceability, historical wrapper, and non-runtime caveats. Independent CDC
+verification remains pending before Arc09 may close.
