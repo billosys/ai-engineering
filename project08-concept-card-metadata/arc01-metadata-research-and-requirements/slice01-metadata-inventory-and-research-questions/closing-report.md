@@ -37,6 +37,12 @@ attested in `validation-evidence.md`. R2's authored semantic-family map and
 R4's full literal portable reproduction route remain open; this report does not
 claim them delivered.
 
+Iteration 04 sizing: `artifacts/iteration-04-sizing.md` records why the 308
+context memberships and their required evidence review cannot be responsibly
+completed in the remaining Slice01 iteration. It proposes two bounded Arc01
+remediation slices without reducing scope, opening Slice02, or treating generic
+annotations as semantic analysis.
+
 Bubble-up: Slice02 remains the appropriate next Arc01 unit. Its standards and
 requirements work should consume the corrected type/path inventory and field
 meanings; no scope reduction, schema choice, or advance to Slice02 is implied by
