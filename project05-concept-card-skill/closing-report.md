@@ -2,8 +2,8 @@
 
 ```yaml
 project: project05-concept-card-skill
-status: cc-proposed-closeout
-closed-on: null
+status: cdc-verified-closed
+closed-on: 2026-09-12
 closure-slice: arc10-final-closure-refresh-after-rich-profile/slice01-final-gates-and-project-closure-refresh
 ```
 
@@ -19,10 +19,11 @@ refresh.
 
 ## Verdict
 
-Project05 is **CC proposed-done**, not formally closed. The final refresh found
-no blocking source or package defect, reconciled P-1 through P-13, and found no
-deferral of `document-extraction` or `concept-cards`. Independent CDC/project-
-scale composition review remains required before formal closure.
+Project05 is **CDC-verified and formally closed**. The final refresh found no
+blocking source or package defect, reconciled P-1 through P-13, and found no
+deferral of `document-extraction` or `concept-cards`. CDC independently
+reproduced the final gates, package inspection, P-8 no-deferral conclusion,
+boundary review, and worktree hygiene before closure.
 
 ## Delivered Capability
 
@@ -80,10 +81,9 @@ operator-accepted, semantically verified, reconciled, preserved, admitted to
 memory, or runtime-ingested. Project05 does not claim full-book coverage,
 retrieval quality, graph/RAG/MCP implementation, or runtime delivery.
 
-## CDC Next Step
+## CDC Closure Verification
 
-CDC should independently reproduce the Arc10 final gates and archive
-inspection, review the final planning diff and worktree hygiene, verify the
-P-8 no-deferral conclusion, and confirm that all stated exclusions remain
-visible. Only that independent composition review may formally close Arc10 and
-Project05.
+CDC reproduced the Arc10 final gates and archive inspection, reviewed the
+final planning diff and worktree hygiene, verified the P-8 no-deferral
+conclusion, and confirmed that all stated exclusions remain visible. Arc10 and
+Project05 are closed.

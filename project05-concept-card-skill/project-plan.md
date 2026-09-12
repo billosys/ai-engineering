@@ -2,7 +2,7 @@
 
 ```yaml
 project: project05-concept-card-skill
-status: active
+status: closed
 created: 2026-09-06
 depends-on:
   - project03-concept-card-method
@@ -145,18 +145,15 @@ Closed arcs:
 - Arc07: Real Corpus UAT And Feedback
 - Arc08: Post-UAT Closure Refresh
 - Arc09: Rich Concept-Card Profile
+- Arc10: Final Closure Refresh After Rich Profile
 
 Arc06 Slice01 is CC proposed-done as a closure baseline. It is not final
 Project05 closure because the operator expanded acceptance on 2026-09-11 to
 require real-corpus UAT and iterative feedback before formal close.
 
-Arc08 is CDC-verified as the post-UAT closure baseline, and Arc09 is
-CDC-verified as the rich-card profile refinement. Project05 is not formally
-closed until Arc10 completes the final closure refresh.
-
-Active arc:
-
-- Arc10: Final Closure Refresh After Rich Profile
+Arc08 is CDC-verified as the post-UAT closure baseline, Arc09 is CDC-verified
+as the rich-card profile refinement, and Arc10 is CDC-verified as the final
+closure refresh. Project05 is formally closed on 2026-09-12.
 
 ## Version History
 
@@ -387,3 +384,12 @@ Arc09 closed after Slice04 CDC verification reproduced final gates,
 package-path validation, archive integrity, concept-card rich-profile package
 contents, document-extraction non-coupling, and caveat retention. Arc10 is
 opened for final Project05 closure refresh after the rich-profile refinement.
+
+### v3.9 - 2026-09-12
+
+Arc10 and Project05 closed after CDC reproduced final gates, package-path
+validation, archive integrity, archive membership, project-ledger
+reconciliation, P-8 no-deferral closure, final caveat retention, and worktree
+hygiene. No nondeferrable objective is deferred and no runtime, card
+acceptance, semantic-verification, memory-admission, full-book, retrieval, or
+graph/RAG/MCP claim is introduced.

@@ -3,7 +3,7 @@
 ```yaml
 project: project05-concept-card-skill
 arc: arc10-final-closure-refresh-after-rich-profile
-status: active
+status: closed
 opened: 2026-09-12
 depends-on:
   - arc09-rich-concept-card-profile
@@ -75,3 +75,9 @@ Arc10 closes when:
 ### v1.0 - 2026-09-12
 
 Opened Arc10 after Arc09 CDC closure for final Project05 closure refresh.
+
+### v1.1 - 2026-09-12
+
+Arc10 closed after Slice01 CDC verification reproduced final gates, package
+inspection, project-ledger reconciliation, boundary review, and worktree
+hygiene. Project05 is formally closed.

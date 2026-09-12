@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc10-final-closure-refresh-after-rich-profile
 slice: slice01-final-gates-and-project-closure-refresh
-status: cc-proposed-done
+status: cdc-verified
 opened: 2026-09-12
 depends-on:
   - arc09-rich-concept-card-profile
@@ -79,3 +79,10 @@ and explicit follow-on boundaries, or records a blocking defect with a concrete
 re-entry condition. It must not defer `document-extraction` or `concept-cards`,
 and it must not convert Arc07 candidate-card or Arc09 rich-profile evidence
 into a runtime, accepted-card, semantic-verification, or admitted-memory claim.
+
+## CDC Outcome
+
+CDC verified this slice on 2026-09-12 by independently reproducing the final
+repository gates, archive integrity, archive-content inspection, whitespace
+checks, status hygiene, P-8 no-deferral conclusion, and final caveat boundary.
+Arc10 and Project05 close from this verification.
