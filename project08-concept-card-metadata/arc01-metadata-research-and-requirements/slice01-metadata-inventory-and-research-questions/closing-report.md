@@ -32,6 +32,11 @@ normalized path coverage, baseline checksums, semantic samples and worktree
 hygiene before any formal closure. Source support, schema selection, extraction
 quality and operator acceptance remain outside this slice.
 
+Iteration 03 repair status: R8 and R9 focused controls are corrected and
+attested in `validation-evidence.md`. R2's authored semantic-family map and
+R4's full literal portable reproduction route remain open; this report does not
+claim them delivered.
+
 Bubble-up: Slice02 remains the appropriate next Arc01 unit. Its standards and
 requirements work should consume the corrected type/path inventory and field
 meanings; no scope reduction, schema choice, or advance to Slice02 is implied by

@@ -45,3 +45,20 @@ The parser is a narrow YAML::XS bridge. It implements YAML 1.1-style implicit
 typing, preserves JSON-compatible booleans/numbers/strings/nulls, renders
 timestamps as strings, and does not retain explicit YAML tags. This is syntax
 and representation evidence only; it is not semantic source verification.
+
+## Iteration 03 focused regression evidence
+
+The following was run in macOS `/bin/bash` 3.2 without `mapfile`:
+
+```sh
+probe_dir=$(mktemp -d /private/tmp/project08-i03.XXXXXX)
+fennel "$slice_dir/artifacts/inventory-frontmatter.fnl" --field-index "$probe_dir/index.json" "$probe_dir/out.json" "$slice_dir/artifacts/cdc-edge-probes" "$slice_dir/artifacts/inventory-fixtures"
+jq . "$probe_dir/out.json" >/dev/null
+jq -e '[.records[] | {name:(.path|split("/")|last), frontmatter, error}] as $r | ($r|any(.name=="json-controls.md" and .frontmatter)) and ($r|any(.name=="blank-mapping.md" and .frontmatter)) and ($r|any(.name=="null-root.md" and .error=="null-frontmatter")) and ($r|any(.name=="empty.md" and .error=="empty-frontmatter")) and ($r|any(.name=="non-mapping.md" and .error=="non-mapping-frontmatter")) and ($r|any(.name=="unterminated.md" and .error=="unterminated-frontmatter"))' "$probe_dir/out.json"
+```
+
+Both commands exit 0. The JSON-control probe is parseable by `jq`; the valid
+empty mapping is a mapping, while empty and null documents are separate
+non-mapping classifications. The remaining R2 semantic-family annotation and
+R4 complete literal nine-root recipe are not claimed complete by this focused
+repair.

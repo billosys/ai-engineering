@@ -29,7 +29,9 @@
 
 (fn json-string [value]
   (let [replacements {"\\" "\\\\" "\"" "\\\"" "\n" "\\n" "\r" "\\r" "\t" "\\t"}]
-    (.. "\"" (string.gsub value "[\\\"\n\r\t]" (fn [char] (or (. replacements char) char))) "\"")))
+    ;; JSON::PP is the parser boundary; this Fennel representation layer uses
+    ;; its JSON control-character rule for every U+0000--U+001F byte.
+    (.. "\"" (string.gsub value "[\\\"%z\1-\31]" (fn [char] (or (. replacements char) (string.format "\\u%04x" (string.byte char))))) "\"")))
 
 (fn json-encode [value]
   (if (= value null-marker) "null"
@@ -144,8 +146,10 @@
 
 (fn frontmatter [text]
   (if (not (string.match text "^%-%-%-\r?\n")) {:yaml nil :error "no-opening-frontmatter"}
-      (let [(start finish body) (string.find text "^%-%-%-\r?\n(.-)\n%-%-%-%s*\n")]
-        (if start {:yaml body :error nil} {:yaml nil :error "unterminated-frontmatter"}))))
+      (if (string.match text "^%-%-%-\r?\n%-%-%-[ \t]*\r?\n")
+          {:yaml nil :error "empty-frontmatter"}
+          (let [(start finish body) (string.find text "^%-%-%-\r?\n(.-)\n%-%-%-[ \t]*\r?\n")]
+            (if start {:yaml body :error nil} {:yaml nil :error "unterminated-frontmatter"})))))
 
 (fn files-under [root]
   (let [exists (os.execute (.. "test -d " (shell-quote root)))]
@@ -222,7 +226,9 @@
           (let [line (. parsed position) kind (string.sub line 1 1) payload (string.sub line 3)]
             (if (= kind "E") (table.insert records {:path (. candidate :path) :sha256 (. candidate :sha256) :frontmatter false :error (.. "YAML::XS: " (json-decode payload))})
                 (let [value (json-decode payload)]
-                  (if (or (not (= (type value) "table")) (array? value))
+                  (if (= value null-marker)
+                      (table.insert records {:path (. candidate :path) :sha256 (. candidate :sha256) :frontmatter false :error "null-frontmatter"})
+                      (or (not (= (type value) "table")) (array? value))
                       (table.insert records {:path (. candidate :path) :sha256 (. candidate :sha256) :frontmatter false :error "non-mapping-frontmatter"})
                       (let [record {:path (. candidate :path) :sha256 (. candidate :sha256) :frontmatter true :keys (sorted-keys value) :shapes (shape-of value) :values value}]
                         (when (= (type (. value "record_type")) "string") (tset record :record_kind (. value "record_type")))
