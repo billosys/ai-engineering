@@ -2,8 +2,8 @@
 
 ```yaml
 project: project05-concept-card-skill
-status: cc-proposed-done
-closed-on: 2026-09-11
+status: superseded-closeout-baseline
+closed-on: null
 closure-slice: arc08-post-uat-closure-refresh/slice01-final-gates-and-project-closure-refresh
 ```
 
@@ -13,15 +13,18 @@ Arc06 remains the pre-UAT closure baseline. The operator then expanded
 acceptance to require real-corpus UAT and iterative feedback using the
 `CompCogNeuro/book` Markdown textbook corpus. Arc07 is CDC-closed, and Arc08
 has rerun final gates and reconciled its findings. This report supersedes the
-Arc06 proposed closure as the current CC closeout.
+Arc06 proposed closure as the current CC closeout baseline.
+
+After Arc08 was CC-attested and before formal Project05 closure, the operator
+accepted a new rich-card profile finding. This report is therefore retained as
+a verified baseline, not as the final Project05 closing report.
 
 ## Verdict
 
-Project05 is CC proposed-done pending independent CDC/project-scale
-verification. It
-delivered both nondeferrable live installable skills in the current
-post-Project04 sibling-directory layout: `document-extraction` and
-`concept-cards`.
+Project05 delivered both original nondeferrable live installable skills in the
+current post-Project04 sibling-directory layout: `document-extraction` and
+`concept-cards`. Formal project closure is paused for Arc09 rich-card profile
+work and Arc10 final closure refresh.
 
 ## Delivered Capability
 
@@ -63,8 +66,9 @@ archive-to-installed byte comparison for both skills.
 
 ## Deferrals And Future Work
 
-There are no Project05 deferrals or no-ops. The following remain explicitly
-outside Project05 and are future work rather than incomplete delivery:
+At the Arc08 baseline there were no Project05 deferrals or no-ops. The
+following remain explicitly outside Project05 and are future work rather than
+incomplete delivery:
 executable validators, JSON Schema, operator candidate review and semantic
 verification, reconciliation/preservation/memory admission decisions,
 full-book extraction, runtime services, graph/ontology databases, GraphRAG,
@@ -89,7 +93,7 @@ reconstructed from this project evidence.
 
 ## Current Next Step
 
-Do not treat this CC report as final independent closure. CDC or an equivalent
-independent project-scale reviewer must reproduce Arc08 gates, fresh package
-inspection, the P-2 through P-11 ledger walk, and the no-runtime/candidate
-boundary before Project05 changes from proposed-done to closed.
+Do not treat this report as final Project05 closure. Arc08 has been
+CDC-verified as a closure baseline, but Project05 remains active. The current
+next step is Arc09 Slice01, which designs the rich concept-card profile needed
+before final closure can resume.

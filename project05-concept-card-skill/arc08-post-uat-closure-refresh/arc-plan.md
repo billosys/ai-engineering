@@ -3,7 +3,7 @@
 ```yaml
 project: project05-concept-card-skill
 arc: arc08-post-uat-closure-refresh
-status: cc-proposed-done
+status: cdc-verified-baseline
 opened: 2026-09-11
 depends-on:
   - arc07-real-corpus-uat-and-feedback
@@ -14,8 +14,8 @@ depends-on:
 Arc08 performs the post-UAT Project05 closure refresh. It reruns the final
 repository-local gates after Arc07, inspects current generated packages,
 reconciles the project ledger with Arc07 rows P-9 through P-11, records final
-deferrals/follow-on boundaries, and formally closes Project05 if the evidence
-still composes.
+deferrals/follow-on boundaries, and establishes the post-UAT closure baseline
+if the evidence still composes.
 
 This arc must not defer either nondeferrable objective: live installable
 `document-extraction` and `concept-cards` skills. It also must not turn the
@@ -65,9 +65,21 @@ Arc08 closes when:
   candidate-card/operator-review boundary;
 - source and planning worktrees are clean after commits.
 
+Arc08 no longer formally closes Project05 because the operator accepted a new
+rich concept-card profile requirement before final project closure. That
+finding is routed to Arc09, with final closure refresh reserved for Arc10.
+
 ## Version History
 
 ### v1.0 - 2026-09-11
 
 Opened Arc08 after Arc07 close for post-UAT final gates, project ledger
 reconciliation, explicit follow-on boundaries, and formal Project05 closure.
+
+### v1.1 - 2026-09-11
+
+CDC verified Arc08 as the post-UAT closure baseline by reproducing gates,
+package inspection, and ledger/boundary review. Formal Project05 closure is
+paused because the operator accepted the rich-card profile finding before
+closure; Arc09 now owns that refinement and Arc10 owns the final closure
+refresh.

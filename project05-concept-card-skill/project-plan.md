@@ -2,7 +2,7 @@
 
 ```yaml
 project: project05-concept-card-skill
-status: cc-proposed-done
+status: active
 created: 2026-09-06
 depends-on:
   - project03-concept-card-method
@@ -16,6 +16,7 @@ related:
   - historical v3.2 concept-card workbench prompts
   - memory protocol research
   - CompCogNeuro/book real-corpus UAT
+  - v3.2 rich concept-card output profile
 ```
 
 ## Definition Of Done
@@ -43,6 +44,12 @@ The project is done when:
 - Both skills have been exercised against a real Markdown corpus before final
   project closure, with feedback captured as accepted refinements, explicit
   no-ops, or follow-on work.
+- `concept-cards` preserves the useful v3.2 rich-card output profile for
+  real corpus work: quick and core definitions, prerequisites, key properties,
+  construction/recognition, context/application, examples, relationships,
+  common errors, common confusions, source references, and verification notes,
+  while retaining the v4 lifecycle, evidence, validation, verification,
+  provenance, reconciliation, and memory-admission distinctions.
 - `concept-cards` routes raw PDF/EPUB/HTML or converted-source cleanup to
   `document-extraction`; it consumes extracted/prepared source outputs as
   upstream provenance rather than owning document conversion itself.
@@ -69,6 +76,9 @@ recorded in this project:
 - Implement the core concept-card v4.0 representation, provenance, evidence,
   reconciliation, validation, and memory-admission guidance in
   `concept-cards`.
+- Restore the v3.2-style rich concept-card body guidance for real corpus card
+  generation without weakening the v4 evidence, lifecycle, validation,
+  verification, review, or memory-admission controls.
 
 Acceptable deferrals are limited to adjacent systems that are not required for
 the two skills to exist and work as documented: executable validator programs,
@@ -119,7 +129,9 @@ organization.
 | Arc05: Packaging, Docs, And Installability | Wire both skills into Makefile targets, README/docs skill-library discoverability, package path checks, generated zips, install behavior, and version histories. | Arc02, Arc03, Arc04. |
 | Arc06: Gate Evidence And Project Closure | Run final validation, inspect generated package contents, reconcile ledgers, document any explicit deferrals, and prepare the first closure baseline. | Arc05. |
 | Arc07: Real Corpus UAT And Feedback | Exercise `document-extraction` and `concept-cards` on the `CompCogNeuro/book` Markdown textbook corpus, generate concept-card outputs for memory-protocol/RAG use, and feed real-use findings back into the skills. | Arc06 baseline evidence. |
-| Arc08: Post-UAT Closure Refresh | Rerun final gates after Arc07, reconcile UAT findings and follow-on boundaries, and formally close Project05. | Arc07. |
+| Arc08: Post-UAT Closure Refresh | Rerun final gates after Arc07, reconcile UAT findings and follow-on boundaries, and establish the post-UAT closure baseline. | Arc07. |
+| Arc09: Rich Concept-Card Profile | Restore the useful v3.2 rich-card output profile inside `concept-cards` while preserving v4 lifecycle, provenance, evidence, validation, verification, reconciliation, and memory-admission controls. | Arc08 baseline; v3.2 prompt artifacts; `complete-musician` and Erlang v3.2 samples; Arc07 UAT findings. |
+| Arc10: Final Closure Refresh After Rich Profile | Rerun final gates, package inspection, ledger reconciliation, and project closeout after Arc09's accepted refinements. | Arc09. |
 
 ## Status
 
@@ -131,15 +143,23 @@ Closed arcs:
 - Arc04: Concept Card Records And Examples
 - Arc05: Packaging, Docs, And Installability
 - Arc07: Real Corpus UAT And Feedback
+- Arc08: Post-UAT Closure Refresh
 
 Arc06 Slice01 is CC proposed-done as a closure baseline. It is not final
 Project05 closure because the operator expanded acceptance on 2026-09-11 to
 require real-corpus UAT and iterative feedback before formal close.
 
-Arc08 is CC proposed-done pending independent verification. Project05 is CC
-proposed-done, not formally closed. Its final independent review must
-reproduce the Arc08 gates, package inspection, project ledger reconciliation,
-and closure boundaries.
+Arc08 is CDC-verified as the post-UAT closure baseline, but Project05 is not
+formally closed because the operator accepted a new rich-card profile finding
+before final project closure.
+
+Active arc:
+
+- Arc09: Rich Concept-Card Profile
+
+Planned final refresh:
+
+- Arc10: Final Closure Refresh After Rich Profile
 
 ## Version History
 
@@ -329,3 +349,16 @@ independent CDC/project-scale verification remains required before formal
 closure. This does not defer either nondeferrable live skill or expand into
 candidate acceptance, full-book extraction, retrieval, graph/RAG/MCP, or
 memory runtime work.
+
+### v3.4 - 2026-09-11
+
+Arc08 is CDC-verified as a post-UAT closure baseline after independent
+reproduction of repository gates, package-path validation, package builds,
+archive inspection, and ledger/boundary review. Before formal Project05
+closure, the operator accepted a new finding from comparison against the
+`complete-musician` and Erlang v3.2 concept-card corpora: the current
+`concept-cards` skill preserves v4 lifecycle and provenance rigor but does
+not yet require the richer v3.2 learner/reference card sections. Project05
+therefore remains active, Arc09 is opened to implement the rich concept-card
+profile, and Arc10 is reserved for the final closure refresh after that
+refinement.

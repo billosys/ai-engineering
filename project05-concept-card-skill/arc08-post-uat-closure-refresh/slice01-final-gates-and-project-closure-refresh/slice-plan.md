@@ -4,7 +4,7 @@
 project: project05-concept-card-skill
 arc: arc08-post-uat-closure-refresh
 slice: slice01-final-gates-and-project-closure-refresh
-status: cc-proposed-done
+status: cdc-verified-baseline
 opened: 2026-09-11
 depends-on:
   - arc07-real-corpus-uat-and-feedback
@@ -77,3 +77,9 @@ and explicit follow-on boundaries, or records a blocking defect with a concrete
 re-entry condition. It must not defer `document-extraction` or
 `concept-cards`, and it must not convert the Arc07 candidate handoff into a
 runtime or admitted-memory claim.
+
+## CDC Outcome
+
+CDC reproduced the Arc08 gate and package-inspection baseline. Project05 did
+not close because the operator accepted a new rich-card profile requirement
+before formal closure; that scope is routed to Arc09.
