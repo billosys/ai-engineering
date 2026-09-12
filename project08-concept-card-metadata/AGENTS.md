@@ -22,11 +22,12 @@ Python. Use established parsers/libraries; a Fennel wrapper around Ruby or
 Python does not meet this preference. Existing repository tools retain their
 own scope; this does not authorize rewriting unrelated tools.
 
-Slice01 commit hold (operator, 2026-09-12): leave the CC packet and review/fix
-work uncommitted until the operator releases the hold. This supersedes the
-initial Slice01 commit instruction. No Ruby source, including renamed or
-embedded copies, may enter Git history. Remove the untracked Ruby helper as
-part of its validated replacement; retain honest provenance of earlier results.
+Slice01 commit hold history (operator, 2026-09-12): the initial hold was released
+after the operator's no-Ruby inspection; CC committed the packet as e2ea1e68.
+That commit permission does not establish CDC closure. Future scoped commits
+follow the explicit-file convention above. No Ruby source, including renamed
+or embedded copies, may enter Git history. Retain honest provenance of earlier
+results without restoring the removed Ruby helper.
 
 The live concept-cards baseline is 4.8.1. The operator intends this work to ship
 in 4.9.x and to remain on 4.x. Re-read `metadata.version` before source edits;

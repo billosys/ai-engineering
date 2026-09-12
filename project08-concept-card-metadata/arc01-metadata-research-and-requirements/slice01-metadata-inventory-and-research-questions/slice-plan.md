@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice01-metadata-inventory-and-research-questions
-status: iteration-01-required
-version: "1.1"
+status: iteration-03-required
+version: "1.3"
 ---
 
 # Metadata Inventory And Research Questions
@@ -15,7 +15,25 @@ Read the project and arc plans and ledgers, then the
 [planning brief](./artifacts/planning-brief.md). This is a planning/evidence slice;
 source skills and historical cards are read-only inputs.
 
-## Iteration 01
+## Current Iteration 03
+
+Iteration 02 is committed as `e554d74c`. CDC reproduced its corrected typed
+values/shapes and 308-path inventory. Follow
+[Iteration 03](./artifacts/iteration-03-cc-prompt.md) for remaining semantic
+crosswalk and verification-recipe gaps plus concrete JSON/framing failures.
+The original inventory/research scope remains unchanged. Do not redo resolved
+work or use a new generated field count as a substitute for semantic review.
+
+## Iteration 02 (Historical)
+
+Iteration 01 is committed as `e2ea1e68` following the operator's inspection
+and permission. Execute [Iteration 02](./artifacts/iteration-02-cc-prompt.md)
+against the appended CDC review. Preserve boolean and scalar type distinctions,
+include null/empty nested field paths, and complete actual semantic dispositions.
+The reproduced deterministic output alone does not satisfy those requirements.
+The original inventory and research scope is unchanged.
+
+## Iteration 01 (Historical)
 
 The initial CC packet is uncommitted and requires changes. Follow
 [`iteration-01-cc-prompt.md`](./artifacts/iteration-01-cc-prompt.md) against the
@@ -79,6 +97,14 @@ the operator's tooling/commit condition). CC writes a proposed-done
 closing report with row evidence and Arc01 bubble-up; CDC verifies separately.
 
 ## Version History
+
+- 1.3 (2026-09-12): Opens Iteration 03 after reproducing the main type/path
+  fixes. Carries remaining R2/R4 and concrete R8/R9 defects without weakening
+  or expanding the original outcomes.
+
+- 1.2 (2026-09-12): Opens Iteration 02 after CDC reproduced type loss and
+  incomplete path/semantic coverage in the operator-approved commit. Supersedes
+  the initial commit hold and Iteration 01 active status.
 
 - 1.1 (2026-09-12): CDC review opens Iteration 01 for R1-R5; adds S1-8,
   Fennel tooling, exhaustive crosswalk verification and operator commit hold.

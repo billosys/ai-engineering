@@ -1,6 +1,21 @@
 # CC Assignment: Project08 Arc01 Slice01
 
-## Current Assignment: Iteration 01
+## Current Assignment: Iteration 03
+
+Iteration 02 is committed as `e554d74c`; its main boolean/type/path fixes are
+independently reproduced. Execute `artifacts/iteration-03-cc-prompt.md` against
+the appended CDC review. Remaining work is semantic crosswalk analysis, the
+broken reproduction recipe and concrete JSON/framing edge cases.
+
+## Iteration 02 Assignment (Historical)
+
+Iteration 01 was committed as `e2ea1e68` with explicit operator permission.
+CDC reran the helper and requires further corrections. Execute
+`artifacts/iteration-02-cc-prompt.md`; read the appended Iteration 01 review in
+`cdc-verification.md`. The previous commit hold below is historical and has
+been released. No Ruby source may be reintroduced.
+
+## Iteration 01 Assignment (Historical)
 
 The initial run below has been reviewed and requires changes. Read
 `cdc-verification.md` and execute `artifacts/iteration-01-cc-prompt.md`.

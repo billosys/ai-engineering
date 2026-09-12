@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.1"
+version: "1.3"
 ---
 
 # Metadata Research And Requirements
@@ -20,7 +20,7 @@ because it appears in the initial hypothesis.
 
 | Slice | Scope | Dependency | State |
 | --- | --- | --- | --- |
-| `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief | CDC changes required; Iteration 01 ready for CC |
+| `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief | CDC changes required; Iteration 03 ready for CC |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Slice01 inventory/questions | Plan after Slice01 review |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
 
@@ -39,13 +39,20 @@ standards adoption for its own sake.
 
 ## Acceptance And Handoff
 
-Slice01 review found that the submitted capability summary is not yet the
-required exhaustive field crosswalk. Iteration 01 also replaces Ruby with
-Fennel, corrects corpus/record counts, supplies executable reproduction
-instructions, and refreshes the claimed missing source snapshot. Review and
-assignment live in Slice01 `cdc-verification.md` and
-`artifacts/iteration-01-cc-prompt.md`. Slice02 remains unopened until this
-evidence is corrected and independently verified.
+Current: Iteration 02 now reproduces the typed fixture and all 308 normalized
+paths. Iteration 03 repairs JSON/control-character and framing classification
+failures, finishes the semantic crosswalk and supplies working verification
+commands. Current assignment: Slice01 `artifacts/iteration-03-cc-prompt.md`.
+The earlier Iteration 01/02 assessment below is historical.
+
+Slice01 Iteration 01 removed Ruby and corrected headline populations, but CDC
+reproduction found boolean/type loss and omitted null/empty field paths. All
+307 semantic dispositions still contain the same deferred-decision placeholder.
+Iteration 02 repairs these failures and finishes the original crosswalk and
+reproduction requirements. Current review and assignment live in Slice01
+`cdc-verification.md` and `artifacts/iteration-02-cc-prompt.md`. Was:
+Iteration 01 pending. Slice02 remains unopened until this evidence is corrected
+and independently verified.
 
 The [arc ledger](./ledger.md) requires both child verification and a composition
 check: trace every operator concern through observed examples, research questions,
@@ -55,6 +62,15 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.3 (2026-09-12): Slice01 Iteration 02 independently reproduces the census
+  and path coverage, resolving R6/R7's original data failures. Remaining
+  R2/R4 and new R8/R9 require Iteration 03. Slice02 remains unopened.
+
+- 1.2 (2026-09-12): Slice01 post-Iteration-01 CDC checks require Iteration 02:
+  type preservation, complete path coverage, semantic dispositions and reconciled
+  evidence. Ruby removal and deterministic runs are retained as demonstrated
+  improvements. No scope reduction or advancement to Slice02.
 
 - 1.1 (2026-09-12): Slice01 CDC findings R1-R5 require a follow-up iteration
   within the existing slice. Was: initial open set ready for CC. No slice-order
