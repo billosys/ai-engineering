@@ -1,5 +1,17 @@
 # CC Assignment: Project08 Arc01 Slice04
 
+## Current Route After Batch01 Acceptance
+
+Batch01 is accepted within its ten-pair/sample boundary. Slice04 is not closed.
+The next CC assignment is the sibling slice, relative to Project08:
+
+```text
+arc01-metadata-research-and-requirements/slice06-record-identity-and-classification/cc-prompt.md
+```
+
+Earlier Iteration 01 and Batch01 prompts below are retained as history and
+overall remaining requirements, not the next execution assignment.
+
 ## Current Assignment: Iteration 01
 
 Next run: execute `artifacts/iteration-01-batch01-cc-prompt.md`. It defines

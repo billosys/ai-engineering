@@ -1,5 +1,10 @@
 # Slice04 Iteration 01: First Identity-Evidence Checkpoint
 
+Status: accepted after revision `995c86d6` and the CDC-authored replay
+correction documented in the evidence report and `../cdc-verification.md`.
+This prompt is historical; do not rerun it as the next assignment.
+Next: sibling Arc01 Slice06, per the arc plan. Slice04 remains unclosed.
+
 ## Required Completion After Review Of 776c5cb1
 
 This same batch remains active. CDC verified the exact ten-pair projection,

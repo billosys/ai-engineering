@@ -293,3 +293,83 @@ criteria and all row statuses remain unchanged; S4-1/S4-3 evidence notes now
 distinguish these reproduced improvements from the still-open requirements.
 The 545 pairs outside this batch are not the only outstanding work: the ten
 inside it still need completion and independent acceptance.
+
+## Batch01 Acceptance: 995c86d6 Plus CDC Replay Correction
+
+Date: 2026-09-12. **Accepted for the ten-pair checkpoint and its declared
+sample scope. Slice04 and Slice01 remain unclosed.**
+
+The revised registry resolves every membership meaning, membership evidence
+reference and meaning-level evidence reference. All ten entries have explicit
+dispositions. Independent jq assertions reproduce the exact selected pair set,
+no missing/extra pair, and membership in Slice01's original mechanical index.
+All twelve registered input hashes reproduce against actual files.
+
+The required music, Erlang, Arc07, usable rich and teaching contexts are now
+named and inspected, along with the preserved malformed-rich limitation.
+CDC read the actual fields and relevant body sections/definition routes,
+checked the v3.1/v3.2 identification and alias guidance, and compared the
+current entrypoint/template. The malformed memory-forms YAML independently
+produces the registered mapping-values error at document 1, line 4, column 20.
+No claim is made to verify that card's populated YAML identity.
+
+The contextual conclusions hold within this evidence:
+
+- Legacy concept/slug and current title/id/concept_slug have distinct roles;
+  the current record-revision field is not the source or skill version.
+- The rich and teaching pattern-completion cards retain the same ID and
+  concept_slug while revision changes from 2 to 3 and title changes. This is
+  an observed example, not proof of a corpus-wide migration rule.
+- Music and Erlang provide actual legacy labels/aliases and filename slugs.
+  Current alias lists are also populated, but authority-control equivalence
+  and retention of prior aliases are not demonstrated. In particular, the
+  rich pair of aliases is replaced by a different single teaching alias.
+  Future preservation/migration work must account for this observed change.
+- Container/member meanings and unfilled template identities are distinct.
+  Recommendations to retain prior information are not claims that it has
+  already been retained.
+
+### Explicit Documentation Correction
+
+The CC replay transcript still had a defect: running its first jq command
+from the stated source-root cwd failed with exit 2 because `artifacts/`
+was a slice-relative path. The checksum command also depended on an
+unregistered temporary manifest, and the original jq listing was not an
+executable equality assertion.
+
+CDC corrected only the replay section in
+`artifacts/batch01-identity-evidence.md`, explicitly attributing the new
+commands to CDC and preserving the original transcript in commit `995c86d6`.
+No CC semantic prose or membership registry was modified. This is a
+documentation repair supported by independent reproduction, not a claim that
+CC's original commands passed as written.
+
+The corrected literal recipe asserts exact expected pairs and both levels of
+evidence references, derives all checksum lines from the durable JSON registry,
+and separately checks Slice01 plus Slice04's original full membership/remainder
+files. It returns true, twelve OK hashes and exit 0 for the input/whitespace
+checks. No new helper, installed dependency, source edit or package run is used.
+The corrected record is the canonical replay for this accepted checkpoint.
+
+B1-R1 and B1-R2 are resolved by the revised CC evidence; B1-R3 is resolved by
+this explicitly attributed replay repair and independent execution. None of
+the full-scope Slice04 rows is closed solely by these ten pairs. Source-book
+verification, alias-authority equivalence, complete migration and operator
+quality acceptance remain outside this checkpoint's evidence.
+
+### Remainder Sizing And Next Execution
+
+The completed checkpoint shows a reusable evidence structure; it does not
+make a one-context rewrite of the other 545 pairs credible. Open canonical
+sibling Slice06 for exactly 37 pairs: non-card root id/revision (22), root
+record_type across twelve kinds (12), and legacy category/subcategory/tier (3).
+Independent index selection confirms all 37 are in the old Slice04 allocation
+and disjoint from accepted Batch01. This leaves 508 other pairs: 256 in the
+old Slice04 allocation and 252 in the old Slice05 allocation, still subject
+to evidence-backed ownership correction rather than acceptance of old tags.
+
+Slice04 keeps its original eight-row integration obligation and all remaining
+assigned work. After Slice06 review, size the next bounded remainder unit.
+Slice05 remains unopened for lifecycle/provenance/replay; research Slice02/03
+still wait for original Slice01 composition. No iteration counter is reset
+and no missing requirement is discharged as a scope reduction.

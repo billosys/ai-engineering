@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice04-semantic-identity-source-and-graph-families
-status: iteration-01-required
-version: "1.3"
+status: awaiting-remainder-and-composition
+version: "1.4"
 ---
 
 # Semantic Identity, Source And Graph Families
@@ -15,7 +15,20 @@ or a metadata schema decision.
 
 ## Basis And Dependencies
 
-Next execution is the
+Batch01 revision `995c86d6` now passes CDC semantic review for its ten pairs
+and declared samples. CDC supplied and independently executed a corrected
+replay section, explicitly attributed in its evidence artifact. This acceptance
+does not close any full-scope row or assert corpus-wide equivalence.
+
+Next execution is sibling
+`slice06-record-identity-and-classification/cc-prompt.md`: 37 pairs drawn
+from this slice's remaining allocation. This slice keeps every original
+criterion and the final integration of accepted partial packets. After
+Slice06 review, the remaining source/locator, claim/support and graph/CQ
+work will be sized for its next bounded execution. No further informal batch
+is currently open. The original eight rows and other scope remain unchanged.
+
+Previously, next execution was the
 [Batch01 identity-evidence checkpoint](./artifacts/iteration-01-batch01-cc-prompt.md)
 within Iteration 01. Batch01 commit `776c5cb1` provides partial identity
 analysis; CDC verifies its ten-pair projection and four hashes but requires
@@ -125,6 +138,11 @@ CDC independently verifies it and sizes/opens Slice05. This slice alone does
 not close Slice01 or establish full semantic coverage.
 
 ## Version History
+
+- 1.4 (2026-09-12): Accepts Batch01 evidence after CDC's explicit replay
+  documentation repair and independent checks. Routes 37 remaining pairs
+  to sibling Slice06, retaining original full-scope integration and closure.
+  Was: ten-pair checkpoint incomplete.
 
 - 1.3 (2026-09-12): Records partial Batch01 delivery and its independent
   review. Same checkpoint and criteria; ten pairs are not yet accepted as

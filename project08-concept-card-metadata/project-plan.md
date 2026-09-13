@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.7"
+version: "1.8"
 ---
 
 # Concept Card Metadata
@@ -68,7 +68,7 @@ research/design decisions. Arc02 will supply the accepted architecture artifact.
 
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
-| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice04 Iteration 01 required after semantic review; Slice05 unopened; Slice01 remains open |
+| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice04 Batch01 accepted, Slice06 identity/classification remediation open; Slice04/01 still unclosed |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Arc01 | Hypothesis; detailed plan when near |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -163,6 +163,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.8 (2026-09-12): Arc01 Slice04 Batch01 delivers accepted ten-pair semantic
+  evidence after an explicitly CDC-authored replay-documentation correction.
+  Opens bounded sibling Slice06 for 37 record-identity/type/classification
+  pairs. Was: first checkpoint pending. All other work and composition gates
+  remain owned; no full-slice closure or project requirement reduction.
 
 - 1.7 (2026-09-12): Arc01 Slice04 follow-up reports diagnosis without new
   semantic artifacts. Authorizes one bounded identity-evidence checkpoint

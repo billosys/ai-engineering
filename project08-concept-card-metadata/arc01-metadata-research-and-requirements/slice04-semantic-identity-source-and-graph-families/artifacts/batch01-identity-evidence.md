@@ -48,33 +48,43 @@ filename lookup, id/revision, display labels, aliases and parse state separately
 Open: corpus-wide slug/id mapping, alias retention and the other 545 pairs.
 No source-book claim is inferred from generated-card bodies.
 
-## Executed validation record
+## Executed Validation Record: CDC Replay Correction
 
-All commands ran from the repository root.
+CDC corrected this section on 2026-09-12 without changing CC's semantic
+analysis or membership registry. The original CC transcript is preserved in
+commit `995c86d6`; its relative `artifacts/` paths fail from the claimed
+repository-root cwd (independently reproduced: exit 2), and its temporary
+checksum file is not a durable replay input. Do not attribute the commands
+below to CC's original run.
 
-~~~text
-$ jq -e '(.memberships|length)==10' artifacts/batch01-identity-membership.json
-true
-[exit 0]
+Run this complete replacement from the source checkout. It uses the committed
+evidence registry for all twelve checksum inputs, asserts exact pairs and
+both membership-to-meaning and meaning-to-evidence links, and separately checks
+the unchanged original full partition and Slice01 evidence.
 
-$ jq -S '[.memberships[]|[.field_path,.record_kind]]|sort' artifacts/batch01-identity-membership.json
-[[aliases,concept-card],[aliases,untyped],[aliases[],concept-card],[aliases[],untyped],[concept,untyped],[concept_slug,concept-card],[id,concept-card],[revision,concept-card],[slug,untyped],[title,concept-card]]
-[exit 0: exact expected projection; each pair occurs in Slice01 mechanical index]
-
-$ jq -e '(.evidence as $e | .meanings as $m | all(.memberships[]; ($m[.meaning_id] != null) and all(.evidence_ids[]; $e[.] != null)))' artifacts/batch01-identity-membership.json
-true
-[exit 0]
-
-$ shasum -a 256 -c /private/tmp/project08-batch01-inputs.sha256
-12 input lines OK
-[exit 0]
-
-$ git -C .worktrees/planning diff --exit-code 76d284f4 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions
-[exit 0: original Slice01 partition/baselines unchanged]
-
-$ git -C .worktrees/planning diff --check
-[exit 0]
+~~~bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+jq -e --slurpfile i '.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/field-dispositions.json' '. as $root |
+([.memberships[]|[.field_path,.record_kind]]|sort) as $actual |
+([["aliases","concept-card"],["aliases","untyped"],["aliases[]","concept-card"],["aliases[]","untyped"],["concept","untyped"],["concept_slug","concept-card"],["id","concept-card"],["revision","concept-card"],["slug","untyped"],["title","concept-card"]]|sort) as $expected |
+([$i[0].field_paths[]|.field_path as $p|.record_kinds[]|[$p,.]]) as $all |
+(($actual==$expected) and (($actual-$all)==[]) and
+all(.memberships[]; (.disposition|type)=="string" and (.disposition|length)>0 and ($root.meanings[.meaning_id]!=null) and all(.evidence_ids[]; $root.evidence[.]!=null)) and
+all(.meanings[]; all(.evidence_ids[]; $root.evidence[.]!=null)))' '.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families/artifacts/batch01-identity-membership.json'
+bash -o pipefail -c 'jq -r '\''.evidence[] | [.sha256,.path] | join("  ")'\'' '\''.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families/artifacts/batch01-identity-membership.json'\'' | shasum -a 256 -c -'
+git -C .worktrees/planning diff --exit-code 76d284f4 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions
+git -C .worktrees/planning diff --exit-code 76d284f4 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families/artifacts/semantic-membership.json project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families/artifacts/remainder-membership.json
+git -C .worktrees/planning diff --check
 ~~~
 
-The projection/reference checks are structural, not batch acceptance. Batch delivered;
-Slice04 remains changes-required pending CDC review and the complete correction.
+CDC executed every replacement command: the jq assertion returned `true`,
+all twelve registered inputs reported `OK`, and both preserved-input diffs
+and whitespace check returned exit 0 with no output. No transient checksum
+manifest is required. These are structural/identity checks; semantic review
+and its scope are recorded separately in `../cdc-verification.md`.
+
+Batch01's ten-pair evidence checkpoint is independently accepted within its
+declared sample scope. Slice04 remains changes-required for the remaining
+semantics and full-packet integration; no source-book verification, migration,
+operator acceptance or whole-profile equivalence is implied.

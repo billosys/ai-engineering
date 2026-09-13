@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.8"
+version: "1.9"
 ---
 
 # Metadata Research And Requirements
@@ -21,7 +21,8 @@ because it appears in the initial hypothesis.
 | Slice | Scope | Dependency | State |
 | --- | --- | --- | --- |
 | `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief; final closure consumes Slice04/05 repair evidence | Open pending remediation composition; original eight rows retained |
-| `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence, not Slice01 closure | Iteration 01 required; exact pair coverage passes but semantic packet does not |
+| `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence; consumes Slice06 for its assigned portion | Batch01 ten pairs accepted; remainder and final composition open |
+| `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | Open for CC |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -41,7 +42,28 @@ standards adoption for its own sake.
 
 ## Acceptance And Handoff
 
-Current execution: Slice04 Batch01 in `776c5cb1` supplies ten exact pairs
+Current execution: Slice04 Batch01 revision `995c86d6` passes independent
+semantic review within its sample scope. CDC corrected and reran only its
+replay documentation; the membership registry and semantic prose are unchanged.
+The ten-pair checkpoint is accepted, not the full Slice04 or Slice01.
+
+The next unit is sibling Slice06, not another informal batch. Its 37 pairs
+are explicit in its open set and all occur in the original Slice04 allocation.
+Of the 555 original pairs, ten have accepted contextual evidence, 37 are
+assigned to Slice06, and 508 remain outside these two units. Of those 508,
+256 remain in the original Slice04 allocation and 252 in the original
+Slice05 allocation. These are accounting counts, not approval of the old
+misclassified ownership map. Correct later ownership by actual meaning.
+
+Slice04 retains the source/locator, claim/support, graph/CQ and residual
+contextual work plus its original complete-artifact and eight-row composition
+obligations. After Slice06 review, size and open the next necessary bounded
+unit for that remainder. Slice05 retains lifecycle/provenance and final replay
+integration. No pair is dropped, no previous slice is falsely closed, and
+no existing iteration count is reset. Slice06 depends on accepted evidence,
+not Slice04 formal closure, avoiding a dependency cycle.
+
+Previously: Slice04 Batch01 in `776c5cb1` supplies ten exact pairs
 and four verified input hashes, but still lacks the required sample coverage,
 resolvable meanings/evidence and executed validation record. Finish the same
 checkpoint before sizing further execution; no later batch or slice is open.
@@ -125,6 +147,13 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.9 (2026-09-12): Accepts Slice04 Batch01's ten-pair sample analysis,
+  recording CDC's tested documentation-only replay correction. Opens sibling
+  Slice06 for a bounded 37-pair subset; retains the other 508 pairs and
+  original composition requirements with explicit owners. Was: same checkpoint
+  incomplete. Further remainder sizing follows real output, not an unbounded
+  series of batches.
 
 - 1.8 (2026-09-12): Slice04 Batch01 review verifies pair coverage and four
   hashes, while contextual evidence and reproducibility remain incomplete.
