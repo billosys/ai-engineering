@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice04-semantic-identity-source-and-graph-families
 status: awaiting-remainder-and-composition
-version: "1.5"
+version: "1.6"
 ---
 
 # Semantic Identity, Source And Graph Families
@@ -20,7 +20,15 @@ and declared samples. CDC supplied and independently executed a corrected
 replay section, explicitly attributed in its evidence artifact. This acceptance
 does not close any full-scope row or assert corpus-wide equivalence.
 
-Slice06 is now CDC-closed for its 37 pairs after `e88e6c0b` and an
+Current (2026-09-13): Slice07 closes independently after `f82d0524`;
+Batch01 plus Slice06/Slice07 now supply 67 accepted pairs. Next execution is
+sibling `slice08-source-support-subjects-and-spans/cc-prompt.md`, covering
+27 original Slice04 pairs. The other 461 pairs remain (209 original Slice04,
+252 original Slice05). All original criteria and full-artifact integration
+remain here; no old semantic labels are accepted merely by counting them.
+Was: Slice07 next. Earlier execution paragraphs below are historical.
+
+Slice06 was CDC-closed for its 37 pairs after `e88e6c0b` and an
 attributed census-replay documentation completion. Next execution is sibling
 `slice07-source-identity-and-locator-semantics/cc-prompt.md`: twenty source/
 locator pairs from the original Slice04 allocation. Was: Slice06 pending.
@@ -140,6 +148,10 @@ CDC independently verifies it and sizes/opens Slice05. This slice alone does
 not close Slice01 or establish full semantic coverage.
 
 ## Version History
+
+- 1.6 (2026-09-13): Incorporates Slice07 CDC closure and routes 27 support
+  subject/span pairs to Slice08. Retains 461 other pairs and complete-artifact
+  integration; was: Slice07 correction pending.
 
 - 1.5 (2026-09-13): Incorporates Slice06's bounded CDC acceptance and routes
   twenty source/locator pairs to Slice07. Retains all full-scope criteria and

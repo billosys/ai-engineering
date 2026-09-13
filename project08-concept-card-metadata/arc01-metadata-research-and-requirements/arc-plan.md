@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.16"
+version: "1.17"
 ---
 
 # Metadata Research And Requirements
@@ -23,7 +23,8 @@ because it appears in the initial hypothesis.
 | `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief; final closure consumes Slice04/05 repair evidence | Open pending remediation composition; original eight rows retained |
 | `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence; consumes Slice06 for its assigned portion | Batch01 ten pairs accepted; remainder and final composition open |
 | `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | CDC closed after e88e6c0b plus attributed census replay completion |
-| `slice07-source-identity-and-locator-semantics` | Seven legacy source fields and thirteen source-locator fields: 20 exact pairs | Frozen inventory, accepted Batch01 and Slice06; not Slice04 closure | Changes required; Iteration 03 for remaining historical S7-R1/R2 |
+| `slice07-source-identity-and-locator-semantics` | Seven legacy source fields and thirteen source-locator fields: 20 exact pairs | Frozen inventory, accepted Batch01 and Slice06; not Slice04 closure | CDC closed after f82d0524 |
+| `slice08-source-support-subjects-and-spans` | Assertion subject, selected source spans and support-status semantics: 27 exact source-support pairs | Frozen inventory and accepted Batch01/Slice06/Slice07; not Slice04 closure | Open for CC |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -43,7 +44,23 @@ standards adoption for its own sake.
 
 ## Acceptance And Handoff
 
-Current Slice07 review (2026-09-13), `e99fddbb`: five rows reproduced;
+Current (2026-09-13): Slice07 `f82d0524` is independently CDC-closed on
+all seven unchanged criteria. Its source/locator and historical directory,
+header/null and fallback distinctions are accepted within the recorded
+evidence bounds. Was: Slice07 Iteration 03 pending.
+
+Open sibling Slice08 for 27 exact source-support subject/span/status pairs.
+Its five frozen root records and focused guidance/examples form a coherent
+comparison with review headroom. Claim, graph/CQ, actor/run, preparation and
+assessment/lifecycle memberships remain outside this unit. After 67 accepted
+pairs and 27 assigned to Slice08, 461 remain: 209 original Slice04 and 252
+original Slice05. Those allocation labels are accounting, not endorsement of
+the old semantic map. Slice04 retains full integration; Slice05 retains its
+remaining semantics/final replay. Slice01, research gates and P-14 remain
+unchanged. Size further remainder work after Slice08 evidence.
+Earlier review and execution passages below are historical, not current routes.
+
+Earlier Slice07 review (2026-09-13), `e99fddbb`: five rows reproduced;
 S7-R3 resolved and current locator meanings accepted. Only historical
 directory/header/null conventions and source-family comparison remain under
 `artifacts/iteration-03-cc-prompt.md`. Was: broad Iteration 02 repair.
@@ -215,6 +232,10 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.17 (2026-09-13): Closes Slice07 after independent f82d0524 review and
+  opens 27-pair Slice08 for source-support subjects/spans. Records 67 accepted,
+  27 assigned and 461 remaining without reducing parent or UAT requirements.
 
 - 1.16 (2026-09-13): Slice07 Iteration 02 review of e99fddbb accepts five
   criteria and resolves S7-R3. Opens narrowly scoped Iteration 03 for historical

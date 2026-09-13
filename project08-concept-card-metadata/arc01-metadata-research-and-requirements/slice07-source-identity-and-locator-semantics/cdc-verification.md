@@ -1,5 +1,117 @@
 # CDC Verification: Slice07
 
+## Final Review: f82d0524
+
+CDC independently closes Slice07 on 2026-09-13. All seven unchanged criteria
+are **done, reproduced**. S7-R1, S7-R2 and S7-R3 are resolved. Earlier review
+sections below remain historical; none is the current execution assignment.
+
+### Verified Outcome
+
+The historical registry now preserves source_slug's local directory-leaf
+relationship, pdf_page's intended chapter-header provenance, documented
+chapter/null cases and heading/fragment fallback. The report distinguishes
+these normative conventions from observed values, unknown generation lineage
+and uninspected paired source directories. The two historical guides' relevant
+sections support those distinctions; none establishes a physical-page basis,
+fixed offset, null cause or global/snapshot identity for a legacy value.
+
+The full seven-field census reproduces 390 music and 1,664 Erlang records,
+split into thirteen source_slug families. All seven fields are present in all
+groups; shapes and distinct-value counts remain source-family-specific. The
+224 numeric Erlang page values occur in design-scale-erlang-otp; the named
+erlang-in-anger and OTP null/ordinal examples reproduce. These observations
+do not diagnose source format or normalize the families.
+
+All twelve input hashes match. Twenty exact unique pairs remain in the frozen
+inventory and disjoint from Batch01/Slice06's 47. Meaning/member references
+and dispositions agree. Current locator meanings remain unchanged from their
+accepted review; address, mapping, source support and lifecycle remain distinct.
+
+### Independent Replay
+
+From /Users/oubiwann/lab/billosys/ai-engineering, ran the CC block literally
+before CDC closure edits; it passed. After the authorized Slice04 plan-route
+update, its open-ended current-state preservation check correctly sees that
+new plan change. A post-edit rerun therefore exits 1 on that check, not on
+registry/census evidence. Do not interpret the later CDC plan edit as a CC
+input mutation. The durable CDC replay below pins that comparison to the
+reviewed delivery, reading the committed CC instructions and changing only
+that endpoint in memory. This replay adaptation is CDC-authored; the original
+CC artifact remains unchanged.
+
+~~~bash
+set -eu
+git -C .worktrees/planning show f82d0524:project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice07-source-identity-and-locator-semantics/artifacts/validation-evidence.md |
+  awk '/^~~~bash$/ {active=1;next} /^~~~$/ {active=0;next} active {print}' |
+  sed 's/diff --exit-code 08d682b0 --/diff --exit-code 08d682b0 f82d0524 --/' |
+  bash -e
+git -C .worktrees/planning diff --exit-code 5152ea2d f82d0524 -- \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification
+git -C .worktrees/planning show --check f82d0524
+git status --short
+~~~
+
+Results: both assertions true, twelve hashes OK, both censuses reproduced,
+prior-packet diff empty, whitespace clean and source status empty at e763c661.
+The committed six-file delivery is within its authorized scope. No source
+implementation, package/install, conversion or new semantic-support check ran.
+This is metadata-method evidence review, not scientific validation of the
+cards' musical, software or neuroscience assertions.
+
+### Seven-Row Closure
+
+| Row | CDC disposition | Evidence |
+| --- | --- | --- |
+| S7-1 | done, reproduced | Twelve input identities/hashes, roles and expanded historical sections checked |
+| S7-2 | done, reproduced | Exact twenty unique frozen pairs and accepted-47 disjointness |
+| S7-3 | done, reproduced | Historical conventions, named music/non-book contexts and thirteen-family census |
+| S7-4 | done, reproduced | Accepted thirteen locator meanings retained with bounded evidence |
+| S7-5 | done, reproduced | Historical dispositions corrected; both evidence layers and current meanings reviewed |
+| S7-6 | done, reproduced | Literal replay, per-row close report, named artifact inventory and handoff |
+| S7-7 | done, reproduced | Six authorized paths, source/prior-input preservation and whitespace |
+
+### Bubble-Up And Artifact Inventory
+
+Delivered the assigned twenty-pair source/locator comparison. Durable CC
+artifacts are semantic-membership.json, semantic-evidence.md,
+validation-evidence.md and handoff.md, all under artifacts/. Three iteration
+prompts and this CDC history record the repair process. No required scope
+is deferred or silently dropped.
+
+The CC closing report's opening "Iteration 02" label is stale; f82d0524 is
+the reviewed Iteration 03 delivery. Its row walk and historical changes identify
+the actual packet. This is a non-blocking report label, not an unfinished
+semantic correction. CC artifacts/report are preserved; CDC is not silently
+rewriting their authorship. Handoff's pending-CDC text is superseded by this
+independent closure.
+
+With Batch01 and Slice06, 67 of 555 pairs have accepted bounded contextual
+evidence. The 488 remaining pairs and original Slice04/01 composition gates
+remain open. Slice07 does not prove corpus-wide equivalence, migration,
+source-support correctness or operator acceptance.
+
+The next bounded unit is sibling Slice08, source-support subjects and spans:
+27 observed pairs, all from the original Slice04 allocation. Its five input
+root records (four generated supports plus template) and focused guides/
+examples permit one coherent comparison with review headroom. After assignment,
+461 pairs remain outside accepted/assigned packets: 209 original Slice04 and
+252 original Slice05. These are accounting labels, not accepted old semantics.
+Claim fields, graph/CQ, preparation/run/actor and assessment/lifecycle remainder
+remain owned by the existing parent plan.
+
+What worked: distinct per-field meanings linked to actual records, followed by
+source-family checks and literal replay. Carry these requirements into the next
+open set upfront. Update arc/project status and Slice04's next-work route;
+P-14, all UAT requirements and the research gates are unchanged.
+
+CDC independently derived Slice08's 27 pairs from its new table and checked
+frozen inclusion, uniqueness, accepted-67 disjointness and original Slice04
+allocation: all pass, with 461 remaining. This validates the new scope, not
+the still-unwritten Slice08 semantic work.
+
 ## Iteration 02 Review: e99fddbb
 
 CDC review on 2026-09-13: **changes required, narrowed**. S7-R3 is resolved.

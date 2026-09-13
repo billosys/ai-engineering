@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice07-source-identity-and-locator-semantics
-status: changes-required
-version: "1.3"
+status: closed
+version: "1.4"
 ---
 
 # Source Identity And Locator Semantics
@@ -12,7 +12,13 @@ Compare legacy source attribution/location fields with the current source-locato
 contract. Deliver supported meanings and actual lookup/preservation consequences
 without designing a new schema or asserting that an address warrants a claim.
 
-Current CDC review of `e99fddbb` (2026-09-13): S7-R3 is resolved;
+CDC closure (2026-09-13): `f82d0524` satisfies all seven unchanged criteria.
+All findings are resolved; see `cdc-verification.md`. Next execution is sibling
+`slice08-source-support-subjects-and-spans/cc-prompt.md`. Was: Iteration 03
+historical correction. Earlier review/assignment paragraphs below are history,
+not current execution instructions. No parent closes with this slice.
+
+Earlier CDC review of `e99fddbb` (2026-09-13): S7-R3 is resolved;
 five criteria are reproduced. S7-R1/S7-R2 retain only historical source
 conventions and source-family comparison, under
 `artifacts/iteration-03-cc-prompt.md`. Was: broad Iteration 02 repair.
@@ -144,6 +150,9 @@ Old allocation counts are accounting, not semantic endorsement. Slice04/01,
 Arc01 and the project remain open.
 
 ## Version History
+
+- 1.4 (2026-09-13): CDC independently closes all seven rows after f82d0524.
+  Opens sibling Slice08 for support subjects/spans; no source or scope changes.
 
 - 1.3 (2026-09-13): Iteration 02 CDC accepts the registry/current-locator
   and replay repairs, reproducing five rows. Iteration 03 completes only
