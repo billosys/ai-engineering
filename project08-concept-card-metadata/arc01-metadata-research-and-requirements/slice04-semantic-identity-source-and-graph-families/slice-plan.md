@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice04-semantic-identity-source-and-graph-families
 status: iteration-01-required
-version: "1.2"
+version: "1.3"
 ---
 
 # Semantic Identity, Source And Graph Families
@@ -17,8 +17,11 @@ or a metadata schema decision.
 
 Next execution is the
 [Batch01 identity-evidence checkpoint](./artifacts/iteration-01-batch01-cc-prompt.md)
-within Iteration 01. The latest CC report confirms the diagnosis but supplies
-no semantic rewrite. This checkpoint supersedes the whole-packet delivery
+within Iteration 01. Batch01 commit `776c5cb1` provides partial identity
+analysis; CDC verifies its ten-pair projection and four hashes but requires
+the missing sample coverage, definition/evidence links and validation record.
+The earlier diagnosis-only report is superseded by this partial delivery.
+This checkpoint supersedes the whole-packet delivery
 expectation for the next CC run only; the complete correction remains required.
 
 Produce `artifacts/batch01-identity-evidence.md` and
@@ -122,6 +125,10 @@ CDC independently verifies it and sizes/opens Slice05. This slice alone does
 not close Slice01 or establish full semantic coverage.
 
 ## Version History
+
+- 1.3 (2026-09-12): Records partial Batch01 delivery and its independent
+  review. Same checkpoint and criteria; ten pairs are not yet accepted as
+  fully evidenced contextual semantics. Was: checkpoint awaiting first output.
 
 - 1.2 (2026-09-12): Adds one initial ten-pair identity-evidence checkpoint and
   two durable partial artifacts after a diagnosis-only follow-up. Was:

@@ -1,5 +1,40 @@
 # Slice04 Iteration 01: First Identity-Evidence Checkpoint
 
+## Required Completion After Review Of 776c5cb1
+
+This same batch remains active. CDC verified the exact ten-pair projection,
+the four supplied hashes and the useful distinction between legacy filename
+slugs and current record identity. Preserve those results. Complete these
+missing requirements in the existing two batch artifacts:
+
+1. Add an inspected card from each missing set: design-scale-erlang-otp,
+   the captured rich rerun and the captured teaching rerun. Inventory population
+   references do not substitute for their actual values/body comparisons.
+   Use a usable rich card; three malformed records do not invalidate its
+   entire population. Preserve and explain any malformed evidence inspected.
+2. Register exact paths, hashes, sections and revisions for all inspected
+   records/definitions, not abbreviated names. Record observations from the
+   extraction prompt and the predecessor comparisons, not only their existence.
+3. Make every meaning/evidence ID resolve. Seven JSON IDs do not match the
+   report's named meanings, including `aliases-current`, `record-revision`
+   and `title-display`. Evidence tags such as `current-template` need
+   explicit registered targets. Supply contextual distinctions or evidence
+   for equivalence, including the untyped music/Erlang cases and alias lists
+   versus their members. No particular registry format is imposed.
+4. Provide explicit dispositions and traceable comparisons for every member,
+   directly or via a documented shared meaning. The report says the JSON
+   includes dispositions, but none of its entries does; make the representation
+   and its description agree.
+5. Record and run literal validation commands with outputs and exit statuses:
+   exact expected-pair comparison, definition/evidence reference checks,
+   input hashes, unchanged original partition/baselines and whitespace.
+   `jq parses it` without a command or result is not the requested record.
+
+Update partial-status evidence without claiming batch acceptance or slice
+closure. Do not shrink this already bounded batch, add a new helper framework
+or deliver only another status correction. The remaining instructions and
+five-file write scope below still apply.
+
 Produce the evidence-backed work below in a fresh context. The need for a
 rewrite is established and authorized; this assignment is not another audit
 of whether a rewrite is needed. It is a deliberately small starting unit.

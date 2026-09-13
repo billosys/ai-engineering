@@ -212,3 +212,84 @@ map. CDC will review the evidence and then size the remaining work. The other
 545 mechanical pairs remain outside this first checkpoint, including work
 already reserved for Slice05; they are not silently dropped or all reassigned.
 No semantic acceptance, package gate or corpus regeneration is claimed here.
+
+## Batch01 Review: 776c5cb1
+
+Date: 2026-09-12. **Partial progress verified; Batch01 not yet accepted.**
+The five-file commit stays within its authorized scope. Slice04 remains
+changes-required; do not open another batch or Slice05 on this evidence.
+
+### Reproduced Results
+
+- The JSON parses and projects to exactly the ten requested pairs: ten unique,
+  zero missing/extra, all present in Slice01's mechanical index.
+- The SHA-256 values for both full v3.2 prompt files, Complete Musician
+  `accent-types.md` and Arc07 `cc-emergent-explanation.md` match live files.
+- The cited v3.2 re-extraction File Naming section ties slug to filename;
+  the current entrypoint at `knowledge/concept-cards/SKILL.md:137` gives
+  record ID/revision a distinct identity role. The inspected Arc07 card
+  contains `id: cc-emergent-explanation`, `revision: 1` and
+  `concept_slug: emergent_explanation`. The reported non-interchangeability
+  is supported within this scope, not a demonstrated corpus migration.
+- `git diff 2104c3f8 776c5cb1 --check` passes in the planning worktree.
+  The original full membership/remainder files and Slice01 evidence have no
+  Git diff across that range. Source HEAD remains `e763c661`; source and
+  planning were clean before CDC edits.
+
+### Remaining Batch Gaps
+
+**B1-R1: Required comparison inputs missing.**
+`artifacts/batch01-identity-evidence.md:14-21` names only the music and Arc07
+examples. It substitutes inventory populations for an inspected Erlang card,
+rich-rerun card and teaching-rerun card, all explicitly required in this batch.
+The rich set contains usable records as well as the three preserved malformed
+ones. Neither lack of coverage nor equivalent meaning across those populations
+is settled by the inventory reference. Exact input paths, current definition
+hashes, actual execution bases, extraction-prompt observations and predecessor
+comparisons are also absent or abbreviated.
+
+**B1-R2: Authored meaning/evidence references do not resolve completely.**
+JSON `meaning_id` values `aliases-current`, `aliases-legacy`,
+`alias-value-current`, `alias-value-legacy`, `concept-slug-current`,
+`record-revision` and `title-display` have no matching named definitions or
+explicit alias mapping in the report. The prose has shorter generic labels;
+do not infer the missing contextual equivalences from similar spelling.
+Evidence values such as `current-template` and `legacy-cards` have no
+explicit target registry. Shared definitions remain allowed; they must resolve
+and account for the actual value/role distinctions, not just label a group.
+
+The report's artifact description says each entry contains a disposition,
+but all ten entries contain only path, kind, meaning ID and evidence tag.
+Dispositions may live in referenced authored definitions instead, but that
+route must be documented and complete. Currently the generic paragraph does
+not establish every member's contextual old/current disposition.
+
+**B1-R3: Required execution evidence missing.**
+The report's Checks section asserts that `jq` parses the artifact and its
+projection matches. It records no literal commands, actual outputs or exit
+statuses, and no definition/evidence-reference verifier or input-hash replay.
+CDC reproduced selected checks; that does not make the submitted handoff
+reproducible. Supply the already-required record rather than expanding tooling.
+
+### Review Method And Limits
+
+CDC used `jq -e` to sort each `[field_path, record_kind]` pair, compare it
+with the explicit ten-pair list in the prompt, and subtract the independently
+expanded Slice01 index. Result: 10 pairs, 10 unique, empty missing/extra/
+not-in-inventory lists, zero entries with a disposition property.
+Matching each JSON meaning ID against the report's backtick-delimited named
+definitions produced the seven unresolved identifiers above; the full report
+was also read to check for another explicit resolution route.
+
+`shasum -a 256` independently checked the four exact input files identified
+above against the four values in the report. The File Naming passage and
+actual Arc07 frontmatter were read directly, along with current identity/
+placeholder guidance. No full re-reading of both prompts, source-book
+semantic verification, corpus regeneration, package test or new extraction
+is claimed by this bounded review.
+
+The same Batch01 prompt now lists the concrete completion gaps. The original
+criteria and all row statuses remain unchanged; S4-1/S4-3 evidence notes now
+distinguish these reproduced improvements from the still-open requirements.
+The 545 pairs outside this batch are not the only outstanding work: the ten
+inside it still need completion and independent acceptance.

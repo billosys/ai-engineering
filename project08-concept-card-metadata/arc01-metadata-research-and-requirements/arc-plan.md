@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.7"
+version: "1.8"
 ---
 
 # Metadata Research And Requirements
@@ -41,7 +41,12 @@ standards adoption for its own sake.
 
 ## Acceptance And Handoff
 
-Current execution: Slice04's follow-up audit report supplied no new semantic
+Current execution: Slice04 Batch01 in `776c5cb1` supplies ten exact pairs
+and four verified input hashes, but still lacks the required sample coverage,
+resolvable meanings/evidence and executed validation record. Finish the same
+checkpoint before sizing further execution; no later batch or slice is open.
+
+At checkpoint opening, Slice04's follow-up audit report supplied no new semantic
 artifact or commit. Begin with its `artifacts/iteration-01-batch01-cc-prompt.md`:
 ten explicit concept-identity/label pairs, with actual contextual evidence.
 This is one initial review checkpoint inside Iteration 01, not another slice,
@@ -120,6 +125,10 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.8 (2026-09-12): Slice04 Batch01 review verifies pair coverage and four
+  hashes, while contextual evidence and reproducibility remain incomplete.
+  Keeps the same ten-pair checkpoint active. No scope or criterion changes.
 
 - 1.7 (2026-09-12): Slice04 diagnosis-only follow-up prompts a bounded first
   identity-evidence checkpoint. Was: another whole-packet correction handoff.
