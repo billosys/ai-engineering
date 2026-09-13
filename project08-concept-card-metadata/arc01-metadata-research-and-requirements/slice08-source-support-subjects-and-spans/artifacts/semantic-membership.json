@@ -1,0 +1,1018 @@
+{
+  "artifact_kind": "slice08-semantic-membership",
+  "scope": "exact twenty-seven selected source-support subject/span pairs",
+  "evidence": {
+    "frozenInventory": {
+      "path": ".worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json",
+      "sha256": "afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b",
+      "section": "five source-support roots and selected paths",
+      "role": "frozen typed inventory"
+    },
+    "template": {
+      "path": "knowledge/concept-cards/templates/source-support.md",
+      "sha256": "09e6e957d7a3ed2d76838ab4b85a8287577310d7e4cdedfa736666d127da523b",
+      "section": "frontmatter and body instructions",
+      "role": "current source-support convention"
+    },
+    "pilotEmergent": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-emergent-explanation.md",
+      "sha256": "60c2d59341dea5efacda87d10888fd03c9fa7dddc8ef9ee51bfe32900e0345c7",
+      "section": "frontmatter and Assertion-To-Span Comparison",
+      "role": "populated direct text-plus-figure pilot"
+    },
+    "pilotMemory": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-memory-consolidation.md",
+      "sha256": "81db0e748d2517d95a545742de4689c49bc91d335b202f352f6f9e9e9a6e874e",
+      "section": "frontmatter and Assessments And Preparation Caveats",
+      "role": "populated caveated text-only pilot"
+    },
+    "pilotModel": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-model-data-constraints.md",
+      "sha256": "ad49017a9ea3b1649b2ff11aac6e31c5d8949f30403585f13ed9f6f79bf80dfe",
+      "section": "frontmatter and Assertion-To-Span Comparison",
+      "role": "populated direct text-only pilot"
+    },
+    "pilotPattern": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-pattern-separation.md",
+      "sha256": "bca2ac1f7714299e53d9f7293c4ce969f49b0c56e6bf9c2f24fedf101490df9c",
+      "section": "frontmatter and Assessments And Preparation Caveats",
+      "role": "populated caveated text-plus-figure pilot"
+    },
+    "acquisition": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/source-acquisition.md",
+      "sha256": "3df6fcb9d82c7a4988795eb575c1a913320ad910486c0825c545f70aec4b35c1",
+      "section": "Acquired Snapshot and Sampled File Identity",
+      "role": "source identity and sampled hashes"
+    },
+    "manifest": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/prepared-source-manifest.md",
+      "sha256": "25b927876fb7b715487d5472d088660245cd6ec8c720890b7a341728e40c23b0",
+      "section": "Preparation Record and Caveats",
+      "role": "prepared representation provenance"
+    },
+    "locatorMap": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/locator-map.md",
+      "sha256": "837bc861e8b6e558e64ad7666bb88b24fb338d4451fa9ed93e459d82a8a6fd6f",
+      "section": "Locator Convention and Pilot Locator Map",
+      "role": "locator targets and line/figure ranges"
+    },
+    "guide": {
+      "path": "knowledge/concept-cards/guides/05-evidence-lifecycle.md",
+      "sha256": "d470fcfa498627bb1d630cbcacc08124a5108efaacbf855e66a40999f154aabd",
+      "section": "source support and evidence/verification boundaries",
+      "role": "method boundary guidance"
+    },
+    "claimExample": {
+      "path": "knowledge/concept-cards/examples/claim-backed-card.md",
+      "sha256": "1beba78c512503e78c271cff80ab5acccbb03cc1e10c31e20acc30dc034f1c3f",
+      "section": "Claim and Source Locator And Support",
+      "role": "synthetic claim subject convention"
+    },
+    "edgeExample": {
+      "path": "knowledge/concept-cards/examples/relationship-edge.md",
+      "sha256": "63d95810eee4ea72b76c6ffcdd516ac8515ea97b2b0f02e7dc1a3fb21fae606f",
+      "section": "Support Scope",
+      "role": "synthetic edge subject convention"
+    },
+    "cqExample": {
+      "path": "knowledge/concept-cards/examples/cq-coverage.md",
+      "sha256": "eda2f2f79360af660f022c5a75affd03d094396e606a6bbaa13741c970180cb4",
+      "section": "CQ Coverage and Answerability Boundary",
+      "role": "synthetic CQ coverage subject convention"
+    },
+    "historicalGuide": {
+      "path": ".worktrees/planning/old/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md",
+      "sha256": "56eb092cfed206edf588748e041df9ed53448f941f1dee43684f96994a898cbd",
+      "section": "Provenance, Source Reference and Verification Notes",
+      "role": "historical body/reference comparison"
+    },
+    "targetEmergent": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-emergent-explanation.md",
+      "sha256": "a7b5b387434bc82885ad013b36ed65d354cdb7687d4d3fa1daaffcebadbcbead",
+      "section": "Claim claim-emergent-explanation",
+      "role": "resolved claim subject target"
+    },
+    "targetMemory": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-memory-consolidation.md",
+      "sha256": "15cac8dc64e742430d0bec6100b491d7a0ac81de6bf740af5c26cf28f384eb07",
+      "section": "Claim claim-memory-consolidation",
+      "role": "resolved claim subject target"
+    },
+    "targetModel": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-model-data-constraints.md",
+      "sha256": "92ff6f44f6a43300ee970f7d8d35161035731f2ca5b91fd9b5762246ee04b8fc",
+      "section": "Claim claim-model-data-constraints",
+      "role": "resolved claim subject target"
+    },
+    "targetPattern": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-pattern-separation.md",
+      "sha256": "a0935944764567a011e87cf81cb3dd2f97fe3438b96d8320b8ca0c8ad2f1dacc",
+      "section": "Claim claim-pattern-separation",
+      "role": "resolved claim subject target"
+    }
+  },
+  "meanings": {
+    "source-support-sourcespans": {
+      "definition": "collection of selected span records attached to one support relation; a template placeholder is not a populated selection.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items": {
+      "definition": "one selected source-span record, distinct from its support root and from a locator address.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-checksumoreditionnote": {
+      "definition": "narrative note that points to recorded hashes or edition identity; it is not itself a checksum.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-contentordescription": {
+      "definition": "retained quotation or paraphrase/description of selected material; all four pilots explicitly describe paraphrases.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-context": {
+      "definition": "qualifying context around selected material, including citation and figure limits; it is neither the asserted subject nor a verdict.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-locatorrefs": {
+      "definition": "collection of locator references for the selected span.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-locatorrefs-items": {
+      "definition": "one locator reference; text and figure locators can be jointly selected without making the figure independent proof.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-locatorrefs-items-id": {
+      "definition": "identifier of a locator target, used with path and revision rather than as a globally unique address.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-locatorrefs-items-path": {
+      "definition": "relative record path and optional anchor locating a locator target; resolution alone is not support.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-locatorrefs-items-revision": {
+      "definition": "revision of a locator target; pilots use numeric 1, a local convention rather than a universal type.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-quotepolicy": {
+      "definition": "policy distinguishing retained quotation from paraphrase; no quotation retained is neither permission nor fidelity proof.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-selectionboundaries": {
+      "definition": "declared narrower material selected from locator context, such as inclusive lines plus a figure; different breadth is not an error.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-sourceref": {
+      "definition": "reference to the source identity/acquisition record, distinct from snapshot and locator.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-sourceref-id": {
+      "definition": "identifier of the source record; pilots use ccn-book, not a claim or span ID.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-sourceref-path": {
+      "definition": "path to the source-acquisition record; it resolves relative to a pilot but does not itself establish immutable bytes.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-sourceref-revision": {
+      "definition": "source-record capture token; pilots use commit-like e0c697b4 while locator and prepared revisions are numeric.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-sourcesnapshotref": {
+      "definition": "reference to the prepared snapshot record bounding the inspected representation, distinct from source identity.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "manifest"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-sourcesnapshotref-id": {
+      "definition": "prepared snapshot identifier ps-ccn-book-pilot-20260911 linking a span to its manifest.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "manifest"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-sourcesnapshotref-path": {
+      "definition": "path to a prepared-source manifest; it records upstream provenance, not semantic support alone.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "manifest"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-sourcesnapshotref-revision": {
+      "definition": "prepared snapshot record revision; pilot numeric 1 does not by itself prove immutable bytes.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "manifest"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcespans-items-spanid": {
+      "definition": "local identifier for a selected span; no global uniqueness rule is established.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-sourcesupportstatus": {
+      "definition": "observed assertion-to-span relation label: template unassessed; pilots candidate-supported or candidate-supported-with-caveat. It is not verification, grade, or an exhaustive vocabulary.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "historicalGuide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-subjectref": {
+      "definition": "reference to the assertion evaluated by support; pilots identify claims, while template conventions also permit an edge or identifiable CQ coverage assertion.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-subjectref-id": {
+      "definition": "identifier of the asserted subject, distinct from support root and span IDs; pilot values are claim-* IDs.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-subjectref-path": {
+      "definition": "path and anchor locating the subject declaration; it requires agreement with identifier, type, and revision.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-subjectref-recordtype": {
+      "definition": "construct type of the subject; pilots use claim and synthetic conventions illustrate edge/CQ roles.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    "source-support-subjectref-revision": {
+      "definition": "revision of the asserted subject; pilots use numeric 1, a local reference convention rather than a universal datatype.",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    }
+  },
+  "memberships": [
+    {
+      "field_path": "source_spans",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[]",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].checksum_or_edition_note",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-checksumoreditionnote",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].content_or_description",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-contentordescription",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].context",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-context",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].locator_refs",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-locatorrefs",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].locator_refs[]",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-locatorrefs-items",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].locator_refs[].id",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-locatorrefs-items-id",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].locator_refs[].path",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-locatorrefs-items-path",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].locator_refs[].revision",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-locatorrefs-items-revision",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].quote_policy",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-quotepolicy",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].selection_boundaries",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-selectionboundaries",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "locatorMap"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].source_ref",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-sourceref",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].source_ref.id",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-sourceref-id",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].source_ref.path",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-sourceref-path",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].source_ref.revision",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-sourceref-revision",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "acquisition"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].source_snapshot_ref",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-sourcesnapshotref",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "manifest"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].source_snapshot_ref.id",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-sourcesnapshotref-id",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "manifest"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].source_snapshot_ref.path",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-sourcesnapshotref-path",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "manifest"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].source_snapshot_ref.revision",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-sourcesnapshotref-revision",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "manifest"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_spans[].span_id",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcespans-items-spanid",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "source_support_status",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-sourcesupportstatus",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "historicalGuide"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "subject_ref",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-subjectref",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "subject_ref.id",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-subjectref-id",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "subject_ref.path",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-subjectref-path",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "subject_ref.record_type",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-subjectref-recordtype",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    },
+    {
+      "field_path": "subject_ref.revision",
+      "record_kind": "source-support",
+      "meaning_id": "source-support-subjectref-revision",
+      "evidence_ids": [
+        "frozenInventory",
+        "template",
+        "pilotEmergent",
+        "pilotMemory",
+        "pilotModel",
+        "pilotPattern",
+        "guide",
+        "claimExample",
+        "edgeExample",
+        "cqExample",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern",
+        "targetEmergent",
+        "targetMemory",
+        "targetModel",
+        "targetPattern"
+      ],
+      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+    }
+  ]
+}
