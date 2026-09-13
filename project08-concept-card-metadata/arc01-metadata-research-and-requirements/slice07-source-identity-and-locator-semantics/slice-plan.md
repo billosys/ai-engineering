@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice07-source-identity-and-locator-semantics
-status: open
-version: "1.0"
+status: changes-required
+version: "1.1"
 ---
 
 # Source Identity And Locator Semantics
@@ -11,6 +11,12 @@ version: "1.0"
 Compare legacy source attribution/location fields with the current source-locator
 contract. Deliver supported meanings and actual lookup/preservation consequences
 without designing a new schema or asserting that an address warrants a claim.
+
+CDC review of `d8a3a6c0` (2026-09-13): exact pair coverage and preservation
+pass; S7-R1/R2/R3 require field-specific meanings, missing contextual comparisons
+and complete replay/closeout. Follow `artifacts/iteration-01-cc-prompt.md`.
+Was: open for initial CC execution. All twenty pairs and seven criteria remain
+unchanged; this correction does not open another slice or close a parent.
 
 ## Basis And Sizing
 
@@ -125,6 +131,9 @@ Old allocation counts are accounting, not semantic endorsement. Slice04/01,
 Arc01 and the project remain open.
 
 ## Version History
+
+- 1.1 (2026-09-13): CDC review retains S7-2/S7-7 successes and opens
+  Iteration 01 for S7-R1 through S7-R3. No scope or criterion reduction.
 
 - 1.0 (2026-09-13): Opens twenty source/locator pairs after Slice06 CDC closure.
   Preserves the full Slice04 integration and later Slice05 replay obligations.
