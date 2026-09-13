@@ -1,8 +1,8 @@
 # CC Proposed-Done: Arc01 Slice04
 
-Status: proposed-done, attested only. The six Slice04 artifacts partition all
-555 observed path/kind pairs: 303 authored Slice04 memberships and 252 explicit
-Slice05 remainder memberships. Aliases are observed in both profiles; performer,
-source and assertion identities have distinct subjects. CDC must independently
-verify semantic samples, pair coverage, identities and hygiene. Slice01 and
-Slice02 remain open.
+Status: changes required; the initial CC proposed-done statement is superseded
+by CDC Iteration 01. The 555-pair mechanical partition remains useful, but it
+is not authored semantic coverage. The 303 assignments lack contextual evidence
+and broad groups are misclassified as CQ coverage. No Slice04 row other than
+scoped-input hygiene is claimed done here. Slice01, Slice04 and Slice02 remain
+open; this correction does not transfer in-scope semantics to Slice05.
