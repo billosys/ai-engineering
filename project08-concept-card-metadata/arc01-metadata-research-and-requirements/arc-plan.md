@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.4"
+version: "1.5"
 ---
 
 # Metadata Research And Requirements
@@ -20,8 +20,10 @@ because it appears in the initial hypothesis.
 
 | Slice | Scope | Dependency | State |
 | --- | --- | --- | --- |
-| `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief | Partial repair verified; Iteration 04 ready for fresh CC context |
-| `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Slice01 inventory/questions | Plan after Slice01 review |
+| `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief; final closure consumes Slice04/05 repair evidence | Open pending remediation composition; original eight rows retained |
+| `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence, not Slice01 closure | Open for fresh CC execution |
+| `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
+| `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
 
 Add or split slices if inventory or research reveals a larger problem. A complete
@@ -39,7 +41,33 @@ standards adoption for its own sake.
 
 ## Acceptance And Handoff
 
-Current: the focused repairs in `b5ed9dd1` pass independent assertions. R2's
+Current: CDC accepts the two-part sizing direction in `2b26282e` with canonical
+stable numeric IDs: proposed `slice01a` becomes Slice04 and `slice01b` becomes
+Slice05. Existing Slice02/03 IDs are unchanged. Execution order is Slice04,
+Slice05, Slice01 recomposition, Slice02, then Slice03; numeric order is not a
+dependency. These are sibling remediation slices, not a new hierarchy.
+
+The [remediation decision](./slice01-metadata-inventory-and-research-questions/artifacts/remediation-decomposition.md)
+assigns every open row and residual instruction. No row is closed by splitting
+it. Slice04/05 consume captured Slice01 evidence without depending on its
+formal closure, so the recomposition gate introduces no dependency cycle.
+Slice01 closes only after CDC verifies the combined evidence against its eight
+unchanged criteria. Research cannot start merely because the new slices have
+individual proposed-done reports.
+
+The current index has 308 distinct normalized paths across 13 record-kind labels,
+yielding 555 observed path/kind pairs, not 308 contextual memberships. This is a
+mechanical coverage floor: corpus, role or historical/current differences may
+require finer authored contexts, especially within `untyped`. No global
+schema or fixed semantic-family count follows from these counts.
+
+Size each new slice with review headroom. If evidence demands another bounded
+slice, report named remaining families/criteria for a tracked amendment. Do not
+reset the old iteration counter or use the split to abandon difficult meanings.
+
+### Earlier Assessments (Historical)
+
+At Iteration 04 opening: the focused repairs in `b5ed9dd1` pass independent assertions. R2's
 semantic-family map and R4's literal portable reproduction route remain open,
 as CC explicitly reports. Iteration 04 makes these the primary deliverables:
 `artifacts/iteration-04-cc-prompt.md` in Slice01. Previously requested codec
@@ -75,6 +103,12 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.5 (2026-09-12): Adopts Slice01 Iteration 04's sizing proposal as new
+  sibling Slice04/05, preserving stable Slice02/03 names and all original
+  requirements. Opens Slice04; reserves Slice05 and requires original Slice01
+  recomposition before research. Was: all remediation within Iteration 04.
+  Corrects the sizing unit to 308 paths / 555 observed path-kind pairs.
 
 - 1.4 (2026-09-12): Slice01 Iteration 03 delivers its declared focused repair,
   while R2/R4 remain explicitly open. Opens a fresh-context Iteration 04

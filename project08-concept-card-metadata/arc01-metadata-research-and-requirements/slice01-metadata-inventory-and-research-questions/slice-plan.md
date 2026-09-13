@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice01-metadata-inventory-and-research-questions
-status: iteration-04-required
-version: "1.4"
+status: awaiting-remediation-composition
+version: "1.5"
 ---
 
 # Metadata Inventory And Research Questions
@@ -15,7 +15,20 @@ Read the project and arc plans and ledgers, then the
 [planning brief](./artifacts/planning-brief.md). This is a planning/evidence slice;
 source skills and historical cards are read-only inputs.
 
-## Current Iteration 04
+## Current Remediation Route
+
+CC's Iteration 04 sizing is committed as `2b26282e`. CDC adopted a bounded
+split into sibling Arc01 Slice04 and Slice05, with responsibilities in
+[the decomposition decision](./artifacts/remediation-decomposition.md).
+Execute Slice04's open set next, not the historical Iteration 04 prompt.
+
+This slice remains open with its original eight criteria. Slice04 supplies
+identity/source/graph semantic evidence; Slice05 supplies the remaining
+semantics, replay and reconciled inventory/research handoff. CDC must then
+recompose that evidence against this ledger before opening Slice02. This is
+not a scope reduction, a closed slice, or a reset of this slice's iterations.
+
+## Iteration 04 (Historical)
 
 Iteration 03's focused repair is committed as `b5ed9dd1` and its asserted
 control-character/document-classification cases are independently reproduced.
@@ -113,6 +126,10 @@ the operator's tooling/commit condition). CC writes a proposed-done
 closing report with row evidence and Arc01 bubble-up; CDC verifies separately.
 
 ## Version History
+
+- 1.5 (2026-09-12): Accepts Iteration 04's sizing outcome and routes execution
+  to new sibling Slice04/05. Was: Iteration 04 required. Retains every
+  original criterion and requires independent recomposition for closure.
 
 - 1.4 (2026-09-12): Records independently reproduced focused repair and opens
   Iteration 04 for the explicitly unfinished semantics/reproduction work.

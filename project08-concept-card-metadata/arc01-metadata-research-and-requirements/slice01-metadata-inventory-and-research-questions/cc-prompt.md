@@ -1,6 +1,19 @@
 # CC Assignment: Project08 Arc01 Slice01
 
-## Current Assignment: Iteration 04
+## Current Route: Sibling Remediation
+
+Iteration 04 returned the sizing proposal in `2b26282e`. CDC adopted it as
+Arc01 Slice04/05; this slice remains open pending their combined evidence.
+Read `artifacts/remediation-decomposition.md` and execute the fresh assignment:
+
+```text
+arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families/cc-prompt.md
+```
+
+That path is relative to the Project08 directory. Do not execute the old
+Iteration 04 prompt as an additional broad repair pass. Slice02 remains unopened.
+
+## Iteration 04 Assignment (Historical)
 
 Commit `b5ed9dd1` fixes the declared control-character and document-kind
 cases; CDC independently reproduced them. Execute

@@ -1,6 +1,9 @@
 # Arc01 Slice01 Ledger
 
-CDC review requires Iteration 04; the focused Iteration 03 repair is committed as b5ed9dd1.
+CDC accepted Iteration 04 sizing in 2b26282e; Slice04/05 now own remediation
+under artifacts/remediation-decomposition.md. This slice remains open pending
+independent recomposition, with all eight criteria and current row statuses
+unchanged. The focused Iteration 03 repair is committed as b5ed9dd1.
 Prior CC attestations are preserved in Git; this ledger records the current reviewed state. S1-8 was added
 for the operator's language preference and commit hold.
 

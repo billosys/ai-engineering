@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.4"
+version: "1.5"
 ---
 
 # Concept Card Metadata
@@ -68,7 +68,7 @@ research/design decisions. Arc02 will supply the accepted architecture artifact.
 
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
-| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice01 Iteration 04: authored semantics and reproducible handoff |
+| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice04 semantic remediation open, Slice05 replay/integration next; Slice01 remains open |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Arc01 | Hypothesis; detailed plan when near |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -163,6 +163,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.5 (2026-09-12): Arc01 Slice01 sizing in `2b26282e` justifies two
+  additional remediation slices. Slice04 opens for identity/source/graph
+  semantics; Slice05 will finish lifecycle semantics and replay. Was: one
+  Iteration 04 assignment. Slice01's original requirements stay open for
+  recomposition before Slice02 research; no quality objective is deferred.
 
 - 1.4 (2026-09-12): CDC reproduced Iteration 03's focused control-character
   and document-classification repairs. CC explicitly leaves R2/R4 open.

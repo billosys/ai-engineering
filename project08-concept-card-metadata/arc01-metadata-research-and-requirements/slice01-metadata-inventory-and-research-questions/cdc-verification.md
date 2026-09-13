@@ -1,6 +1,7 @@
 # CDC Review: Arc01 Slice01
 
-Date: 2026-09-12. Current status: **Iteration 04 required; not closed**.
+Date: 2026-09-12. Current status: **Sizing accepted; awaiting Slice04/05
+remediation composition; not closed**.
 Iteration 01 was committed as `e2ea1e68` with operator permission after a
 no-Ruby inspection. The current independent review is appended below; the
 initial review is retained as history.
@@ -487,3 +488,53 @@ an up-front sizing check and an explicit proposed decomposition if the remaining
 analysis cannot fit. That is permission to plan enough work, not to reduce the
 project's no-loss requirement. Project/arc/slice plans and the current prompt
 have been updated; no later research slice is opened against incomplete inputs.
+
+## Iteration 04 Sizing Review And Decomposition
+
+Date: 2026-09-12. Reviewed commit `2b26282e`, its sizing artifact and closing
+report addition against the current project/arc/slice contracts and R2/R4.
+**Verdict: accept the sizing direction with the amendments below. Slice01
+remains open; no semantic or replay requirement is declared satisfied.**
+
+The semantic grouping preserves the important authority boundaries and is a
+reasonable starting decomposition. It is not proof that both proposed units
+will fit; re-size Slice05 after reviewing the first authored packet.
+
+Amendments:
+
+- Use canonical sibling Slice04/05 IDs rather than `slice01a/01b`; retain
+  existing Slice02/03 IDs and record actual execution order in the arc plan.
+- The mechanical index has 308 paths and 555 observed path/kind pairs across
+  13 kind labels, not 308 contextual memberships. Require complete pairing
+  coverage plus any finer distinctions supported by real evidence.
+- Explicitly retain the codec-library/EOF instructions and original handoff
+  reconciliation under Slice05; the sizing paragraph alone did not name them.
+- Keep the original eight-row ledger open for recomposition. New slices depend
+  on captured evidence, not Slice01 closure. Do not infer completion from the
+  historical all-done table or "Slice02 next" wording in CC's closing report.
+
+The durable decision is
+[remediation-decomposition.md](./artifacts/remediation-decomposition.md).
+Project, arc and Slice01 plans are now 1.5. Slice04 has its complete open set;
+Slice05 is reserved for planning after independent Slice04 review. This is
+the tracked expansion invited by Iteration 04, not a fifth repair pass or a
+reduction in scope.
+
+### Verification Of This Planning Change
+
+- Inspected the two-file CC commit; it changes only sizing/report text.
+- Derived 308 paths, 555 path/kind pairs and 13 labels from the committed
+  field index with `jq`, summing `.field_paths[].record_kinds | length`
+  for the pair count. This is index inspection, not a fresh corpus run.
+- A Fennel comparison against planning HEAD confirmed all eight original
+  Slice01 ledger rows unchanged, including criteria, evidence, significance
+  and statuses. Only the routing paragraph changed.
+- Checked all eleven edited/new planning files for trailing whitespace and
+  terminal newlines; all fourteen then-present local Markdown link targets
+  resolved. The new decision link in this review is also checked before commit.
+- Planning `git diff --check` passed; source status is clean. No parser,
+  corpus or package gate was rerun, and no new semantic-review result is claimed.
+
+Independent checks from Iteration 03 retain their earlier recorded scope.
+R2/R4 and the remaining instruction dispositions still require execution and
+independent review. The next CC assignment is Slice04, not Slice02.

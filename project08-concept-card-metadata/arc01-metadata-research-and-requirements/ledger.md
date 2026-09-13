@@ -2,7 +2,7 @@
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| A1-1 | Historical and live inventories are reproducible and complete within declared corpus availability | Independently check Slice01 artifacts and commands | correctness-grade | P-1 | open | | Value shapes and relationships included |
+| A1-1 | Historical and live inventories are reproducible and complete within declared corpus availability | Independently check Slice01 artifacts and commands plus Slice04/05 remediation composition | correctness-grade | P-1 | open | Slice01 artifacts/remediation-decomposition.md assigns outstanding work | Value shapes, relationships and all contextual meanings included; no closure from the split |
 | A1-2 | Research addresses discovered gaps with cited primary evidence and tradeoffs | Review Slice02 sources, claims and alternatives | correctness-grade | P-2 | open | | No standards selection by name alone |
 | A1-3 | Requirements cover discovery, source identity, graph use, questions, lifecycle and migration | Walk Slice03 requirements back to operator brief and evidence | serious | P-1 through P-6 | open | | Named fields are non-exhaustive |
 | A1-4 | Trial criteria cover body quality, metadata behavior and repeated independent runs | Review Slice03 rubric, fixtures and run design against project contract | serious | P-7 through P-11 | open | | Full-book gate retained |
