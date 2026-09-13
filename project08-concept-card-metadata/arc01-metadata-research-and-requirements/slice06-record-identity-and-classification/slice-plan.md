@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice06-record-identity-and-classification
 status: changes-required
-version: "1.1"
+version: "1.2"
 ---
 
 # Record Identity And Classification
@@ -13,11 +13,12 @@ type of current non-card records, plus legacy discovery classification and
 pedagogical tier. This bounded sibling remediation supplies part of Slice04's
 original obligation; it does not replace or close that slice's ledger.
 
-Current assignment: [Iteration 01](./artifacts/iteration-01-cc-prompt.md),
-following [CDC review](./cdc-verification.md) of `6a6b1661`.
-Was: initial open set. Exact coverage and preservation pass; populated-record
-evidence, classification comparison, supported lookup semantics and complete
-replay remain required. The seven criteria and 37-pair boundary are unchanged.
+Current assignment: [Iteration 02](./artifacts/iteration-02-cc-prompt.md),
+following [CDC review](./cdc-verification.md#iteration-01-review-a416c2a2)
+of `a416c2a2`. Was: Iteration 01. Current-record evidence, lookup semantics
+and original replay repairs pass; the per-corpus classification comparison,
+remaining input registration and its replay still require completion under
+S6-R2. The seven criteria and 37-pair boundary are unchanged.
 
 ## Dependencies And Scope
 
@@ -100,6 +101,10 @@ Only verified evidence contributes to Slice04 recomposition. All other original
 pairs retain their prior owners; no pair is silently dropped or reassigned.
 
 ## Version History
+
+- 1.2 (2026-09-13): Iteration 01 CDC resolves S6-R1/R3/R4 and accepts
+  S6-3. Opens Iteration 02 only for remaining S6-R2 classification evidence;
+  preserves all criteria and already reproduced work.
 
 - 1.1 (2026-09-13): CDC reproduces initial coverage and preservation, but
   identifies S6-R1 through S6-R4 evidence/semantic/replay gaps. Opens one

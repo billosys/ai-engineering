@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.10"
+version: "1.11"
 ---
 
 # Metadata Research And Requirements
@@ -22,7 +22,7 @@ because it appears in the initial hypothesis.
 | --- | --- | --- | --- |
 | `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief; final closure consumes Slice04/05 repair evidence | Open pending remediation composition; original eight rows retained |
 | `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence; consumes Slice06 for its assigned portion | Batch01 ten pairs accepted; remainder and final composition open |
-| `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | Changes required; Iteration 01 open after CDC review |
+| `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | Changes required; Iteration 02 limited to remaining classification evidence |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -41,6 +41,13 @@ competency questions or requirements engineering. Seek benefits and costs, not
 standards adoption for its own sake.
 
 ## Acceptance And Handoff
+
+Current Slice06 review of `a416c2a2`: S6-R1/R3/R4 are resolved; S6-R2
+retains the missing per-corpus vocabulary comparison and exact supporting
+inputs/replay. Follow Slice06 `artifacts/iteration-02-cc-prompt.md`.
+Was: four-finding Iteration 01. Current-record semantics and structural
+successes stand; no slice closes, pair changes owner, or criterion is reduced.
+The following initial review is historical.
 
 Slice06 `6a6b1661` review (2026-09-13): exact 37-pair coverage and scoped
 preservation pass independently. Required contextual examples/classification
@@ -156,6 +163,11 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.11 (2026-09-13): Slice06 Iteration 01 CDC accepts current-record
+  evidence, lookup correction and original replay repair. Iteration 02
+  completes only remaining S6-R2 classification evidence. No roadmap scope,
+  ownership or composition-gate change.
 
 - 1.10 (2026-09-13): Slice06 initial CDC review accepts mechanical coverage
   and preservation but requires S6-R1 through S6-R4 corrections in the same
