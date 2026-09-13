@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.14"
+version: "1.15"
 ---
 
 # Metadata Research And Requirements
@@ -23,7 +23,7 @@ because it appears in the initial hypothesis.
 | `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief; final closure consumes Slice04/05 repair evidence | Open pending remediation composition; original eight rows retained |
 | `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence; consumes Slice06 for its assigned portion | Batch01 ten pairs accepted; remainder and final composition open |
 | `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | CDC closed after e88e6c0b plus attributed census replay completion |
-| `slice07-source-identity-and-locator-semantics` | Seven legacy source fields and thirteen source-locator fields: 20 exact pairs | Frozen inventory, accepted Batch01 and Slice06; not Slice04 closure | Changes required; Iteration 01 for S7-R1/R2/R3 |
+| `slice07-source-identity-and-locator-semantics` | Seven legacy source fields and thirteen source-locator fields: 20 exact pairs | Frozen inventory, accepted Batch01 and Slice06; not Slice04 closure | Changes required; Iteration 02 for S7-R1/R2/R3 |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -43,7 +43,13 @@ standards adoption for its own sake.
 
 ## Acceptance And Handoff
 
-Current Slice07 review (2026-09-13), `d8a3a6c0`: exact twenty-pair coverage
+Current Slice07 review (2026-09-13), `d077bbe8`: contextual prose improves,
+but the unchanged registry and incomplete evidence/replay keep all three
+findings open. Follow Slice07 `artifacts/iteration-02-cc-prompt.md`.
+Was: Iteration 01. Two reproduced rows stand; no new remainder slice opens.
+Pair accounting, parent gates and P-14 are unchanged. Prior review follows.
+
+Initial Slice07 review (2026-09-13), `d8a3a6c0`: exact twenty-pair coverage
 and preservation pass independently. Per-field meanings, required contextual
 comparisons and complete replay/closeout remain open. Follow Slice07
 `artifacts/iteration-01-cc-prompt.md` and `cdc-verification.md`.
@@ -202,6 +208,10 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.15 (2026-09-13): Slice07 Iteration 01 review of d077bbe8 accepts partial
+  prose improvements but keeps S7-R1/R2/R3 open in Iteration 02. No scope,
+  allocation, acceptance or parent/UAT requirement change.
 
 - 1.14 (2026-09-13): Slice07 CDC review of d8a3a6c0 requires S7-R1/R2/R3
   correction within the unchanged slice. Retains mechanical/preservation

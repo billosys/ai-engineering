@@ -1,5 +1,94 @@
 # CDC Verification: Slice07
 
+## Iteration 01 Review: d077bbe8
+
+CDC review on 2026-09-13: **changes required**. S7-R1/R2/R3 remain open;
+S7-2/S7-7 remain independently reproduced. Next assignment:
+`artifacts/iteration-02-cc-prompt.md`. The initial review below is retained
+as history and supporting evidence, not the current prompt route.
+
+### What Improved
+
+The new `semantic-evidence.md:25-52` distinguishes field roles more clearly,
+corrects mapping evidence versus address in prose, repeats the census with
+CDC attribution, and identifies concrete PDF/EPUB/external-map examples.
+CDC reproduced its four added hashes and the quoted census totals.
+`handoff.md:9-12` now names useful mapping and vocabulary questions.
+Preserve these additions; this review does not request starting over.
+
+### Remaining Findings
+
+- **S7-R1, serious:** `semantic-membership.json` is byte-identical to the
+  reviewed initial registry, not just structurally compatible. Its twenty
+  definitions and dispositions still use the two generic patterns. In
+  particular, `mapping_evidence_refs` still claims to address a position,
+  contrary to the new prose. New context has no registered meaning/evidence
+  links. Update the existing values and references; no schema redesign is
+  required. A general paragraph in `semantic-evidence.md:34-44` does not
+  resolve each membership's evidence and operational consequence. Use the
+  exact field `source_snapshot_ref`, not the paragraph's `snapshot_ref`.
+- **S7-R2, serious:** the registry still lists only five inputs. The four new
+  hash strings in the report match accessible inputs, but are not registered
+  with exact paths/sections/roles and linked to affected meanings. Historical
+  Provenance/predecessor comparison and named Erlang/null/non-book body
+  inspection remain absent. Census reporting still covers three fields in two
+  broad groups, not all seven legacy fields and relevant source-family
+  distinctions. The new concrete locator descriptions are useful partial
+  evidence, not the completed contextual comparison.
+- **S7-R3, correctness-grade:** `validation-evidence.md:19-26` says the
+  new census and pair checks ran but contains no added commands. The existing
+  executable block checks only the old five registered hashes and original
+  length/reference assertions; preservation still has an unpinned end.
+  `closing-report.md:5-8` enumerates row topics but not individual
+  dispositions/evidence or the missing work. It still lacks the four named
+  artifact inventory and a scope-as-specified/delivered bubble-up. Marking
+  five rows CC-attested done does not reconcile the reported registry
+  limitation. Complete the records or leave unmet rows explicitly open.
+
+### Reproduced Checks
+
+Ran the CC executable block literally and the initial CDC exact-set/census
+route below: both pass. The four additional inputs were independently hashed
+from the source root with this literal command:
+
+~~~bash
+shasum -a 256 \
+  .worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json \
+  knowledge/document-extraction/examples/pdf-marker-handoff.md \
+  knowledge/document-extraction/examples/epub-pandoc-handoff.md \
+  .worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/locator-map.md
+git -C .worktrees/planning diff --exit-code 3fd316a0 d077bbe8 -- \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice07-source-identity-and-locator-semantics/artifacts/semantic-membership.json
+git -C .worktrees/planning show --check d077bbe8
+~~~
+
+Hashes exactly match the report; prior-packet and registry diff empty.
+The CC commit changes five authorized paths only; whitespace and source
+status are clean. Registry coverage remains twenty unique frozen pairs,
+disjoint from the accepted 47. No source/package/install work was required.
+
+### Row Walk And Bubble-Up
+
+| Row | Current CDC disposition | Reason |
+| --- | --- | --- |
+| S7-1 | open | S7-R2: additional contexts not registered; historical/sample inputs absent |
+| S7-2 | done, reproduced | Unchanged exact set; checks rerun |
+| S7-3 | open | S7-R2: three-field aggregate improvement, required comparison incomplete |
+| S7-4 | open | S7-R1/R2: concrete examples added, registry meaning/evidence still incomplete |
+| S7-5 | open | S7-R1: unchanged generic dispositions and unlinked contextual prose |
+| S7-6 | open | S7-R3: executable replay and criterion-level closeout still missing |
+| S7-7 | done, reproduced | Five authorized changed files; source/prior inputs preserved |
+
+This delivery partially improves the assigned capability; it does not complete
+the existing correction. Iteration 02 stays in Slice07, with unchanged pairs
+and criteria. No new slice, scope reduction, reassignment, or parent closure.
+The 47 accepted / 20 assigned / 488 other pairs and P-14 remain intact.
+
+## Initial Review: d8a3a6c0
+
 Reviewed CC commit `d8a3a6c0` on 2026-09-13 against the unchanged twenty-pair
 scope and seven criteria. **Changes required; Slice07 does not close.**
 This is independent CDC review, not an amendment to CC's original attestation.
