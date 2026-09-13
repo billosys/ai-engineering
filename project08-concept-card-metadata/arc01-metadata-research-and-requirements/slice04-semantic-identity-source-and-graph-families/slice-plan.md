@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice04-semantic-identity-source-and-graph-families
-status: open
-version: "1.0"
+status: iteration-01-required
+version: "1.1"
 ---
 
 # Semantic Identity, Source And Graph Families
@@ -14,6 +14,13 @@ is the first of two planned sibling remediation slices, not standards research
 or a metadata schema decision.
 
 ## Basis And Dependencies
+
+Current review: `76d284f4` has an independently reproduced complete partition,
+but its semantic packet does not meet the ledger. Follow
+[Iteration 01](./artifacts/iteration-01-cc-prompt.md) and
+[CDC findings](./cdc-verification.md). Correct the meanings, ownership,
+input identities and evidence without replacing the unchanged acceptance
+criteria. The 303/252 partition sizes are observations, not required quotas.
 
 Read the project plan and ledger, arc plan and ledger, Project08 AGENTS.md,
 and Slice01's
@@ -100,6 +107,10 @@ CDC independently verifies it and sizes/opens Slice05. This slice alone does
 not close Slice01 or establish full semantic coverage.
 
 ## Version History
+
+- 1.1 (2026-09-12): CDC review reproduces 555-pair coverage but requires
+  Iteration 01 for semantic errors, incomplete evidence and missing ledger
+  closeout. Was: initial execution open. Scope and eight criteria unchanged.
 
 - 1.0 (2026-09-12): Opens the first bounded remediation unit from Slice01
   Iteration 04 sizing, using canonical Slice04 rather than proposed Slice01a.

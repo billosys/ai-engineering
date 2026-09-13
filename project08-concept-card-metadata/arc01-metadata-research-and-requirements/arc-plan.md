@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.5"
+version: "1.6"
 ---
 
 # Metadata Research And Requirements
@@ -21,7 +21,7 @@ because it appears in the initial hypothesis.
 | Slice | Scope | Dependency | State |
 | --- | --- | --- | --- |
 | `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief; final closure consumes Slice04/05 repair evidence | Open pending remediation composition; original eight rows retained |
-| `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence, not Slice01 closure | Open for fresh CC execution |
+| `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence, not Slice01 closure | Iteration 01 required; exact pair coverage passes but semantic packet does not |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -40,6 +40,14 @@ competency questions or requirements engineering. Seek benefits and costs, not
 standards adoption for its own sake.
 
 ## Acceptance And Handoff
+
+Slice04 review of `76d284f4`: CDC reproduces 303 assigned plus 252 remainder
+pairs, with no missing, extra or duplicate pairs. Semantic-family assignments
+are not accepted: unrelated lifecycle/locator/graph fields are grouped under
+CQ coverage, and exact input/context evidence is missing. Follow Slice04's
+`artifacts/iteration-01-cc-prompt.md` and `cdc-verification.md`. Slice05 stays
+unopened. Correcting ownership may change the 303/252 split; complete, accurate
+coverage remains mandatory. Original Slice01 criteria are unchanged.
 
 Current: CDC accepts the two-part sizing direction in `2b26282e` with canonical
 stable numeric IDs: proposed `slice01a` becomes Slice04 and `slice01b` becomes
@@ -103,6 +111,11 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.6 (2026-09-12): Slice04 CDC review finds incorrect family assignments,
+  unsupported semantic claims and incomplete input/validation/row evidence
+  despite exact pair coverage. Opens Slice04 Iteration 01; no new slice or
+  scope reduction. Was: Slice04 open for its initial run.
 
 - 1.5 (2026-09-12): Adopts Slice01 Iteration 04's sizing proposal as new
   sibling Slice04/05, preserving stable Slice02/03 names and all original

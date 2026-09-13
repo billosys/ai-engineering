@@ -1,5 +1,14 @@
 # CC Assignment: Project08 Arc01 Slice04
 
+## Current Assignment: Iteration 01
+
+The packet in `76d284f4` passes exact mechanical pair coverage but fails
+semantic and evidence review. Read `cdc-verification.md`, then execute
+`artifacts/iteration-01-cc-prompt.md` in a fresh context. The original plan
+and eight-row ledger still govern acceptance. Slice05 remains unopened.
+
+## Initial Assignment (Retained Scope)
+
 Use a fresh CC context for authored semantic work. The original inventory
 slice is still open; do not execute its old iteration prompts or open research.
 
