@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.9"
+version: "1.10"
 ---
 
 # Metadata Research And Requirements
@@ -22,7 +22,7 @@ because it appears in the initial hypothesis.
 | --- | --- | --- | --- |
 | `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief; final closure consumes Slice04/05 repair evidence | Open pending remediation composition; original eight rows retained |
 | `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence; consumes Slice06 for its assigned portion | Batch01 ten pairs accepted; remainder and final composition open |
-| `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | Open for CC |
+| `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | Changes required; Iteration 01 open after CDC review |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -41,6 +41,15 @@ competency questions or requirements engineering. Seek benefits and costs, not
 standards adoption for its own sake.
 
 ## Acceptance And Handoff
+
+Slice06 `6a6b1661` review (2026-09-13): exact 37-pair coverage and scoped
+preservation pass independently. Required contextual examples/classification
+comparison, lookup-rule correction and complete durable replay remain in
+Slice06 Iteration 01. Follow its `cdc-verification.md` and
+`artifacts/iteration-01-cc-prompt.md`. Was: initial CC execution.
+Do not size/open the next remainder unit until this correction is reviewed.
+No pair changes owner, no acceptance criterion is reduced, and Slice04/01
+remain open.
 
 Current execution: Slice04 Batch01 revision `995c86d6` passes independent
 semantic review within its sample scope. CDC corrected and reran only its
@@ -147,6 +156,11 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.10 (2026-09-13): Slice06 initial CDC review accepts mechanical coverage
+  and preservation but requires S6-R1 through S6-R4 corrections in the same
+  slice. Was: open for initial CC execution. Remainder ownership, research
+  gates and original composition obligations are unchanged.
 
 - 1.9 (2026-09-12): Accepts Slice04 Batch01's ten-pair sample analysis,
   recording CDC's tested documentation-only replay correction. Opens sibling

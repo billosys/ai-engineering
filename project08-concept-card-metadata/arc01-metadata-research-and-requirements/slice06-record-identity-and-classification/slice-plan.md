@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice06-record-identity-and-classification
-status: open
-version: "1.0"
+status: changes-required
+version: "1.1"
 ---
 
 # Record Identity And Classification
@@ -12,6 +12,12 @@ Deliver contextual evidence for 37 observed pairs: the identity/revision and
 type of current non-card records, plus legacy discovery classification and
 pedagogical tier. This bounded sibling remediation supplies part of Slice04's
 original obligation; it does not replace or close that slice's ledger.
+
+Current assignment: [Iteration 01](./artifacts/iteration-01-cc-prompt.md),
+following [CDC review](./cdc-verification.md) of `6a6b1661`.
+Was: initial open set. Exact coverage and preservation pass; populated-record
+evidence, classification comparison, supported lookup semantics and complete
+replay remain required. The seven criteria and 37-pair boundary are unchanged.
 
 ## Dependencies And Scope
 
@@ -94,6 +100,10 @@ Only verified evidence contributes to Slice04 recomposition. All other original
 pairs retain their prior owners; no pair is silently dropped or reassigned.
 
 ## Version History
+
+- 1.1 (2026-09-13): CDC reproduces initial coverage and preservation, but
+  identifies S6-R1 through S6-R4 evidence/semantic/replay gaps. Opens one
+  corrective iteration; no scope transfer or reduction.
 
 - 1.0 (2026-09-12): Opens a bounded 37-pair unit after Slice04 Batch01
   acceptance. Makes further execution an explicit sibling slice, not an
