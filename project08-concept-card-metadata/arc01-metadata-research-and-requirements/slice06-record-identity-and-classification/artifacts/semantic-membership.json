@@ -1,0 +1,704 @@
+{
+  "artifact_kind": "slice06-semantic-membership",
+  "scope": "exact selected 37 root path/kind pairs",
+  "evidence": {
+    "template-claim": {
+      "path": "knowledge/concept-cards/templates/claim.md",
+      "sha256": "ff8c35e7157582ca78c15c5419ab8167152f6c1b3862d96187e061bfb0f33fd7",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-competency-question": {
+      "path": "knowledge/concept-cards/templates/competency-question.md",
+      "sha256": "11fbab44ded126d0aa49f4929db71edebc453d43099ea32af569aecbf73bf49b",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-extraction-run": {
+      "path": "knowledge/concept-cards/templates/extraction-run.md",
+      "sha256": "9a397dad9d92ab602dd47a232c3f0a8cf8e80e6aabb9e7015e2e135e2cda3722",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-memory-admission": {
+      "path": "knowledge/concept-cards/templates/memory-admission.md",
+      "sha256": "51a237f45c0883e80a8a31e104b804116c485fe7ec3016ec4fba64f9563c277a",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-preservation-decision": {
+      "path": "knowledge/concept-cards/templates/preservation-decision.md",
+      "sha256": "b2be8df0d18a1cac413cf00ac40a7c7234b3cf1726bc6c50f4d349fbf0a6e1c8",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-reconciliation-result": {
+      "path": "knowledge/concept-cards/templates/reconciliation-result.md",
+      "sha256": "ae9672c4ef0a4e1e6c43bc13bfd790a2e1fd8cf137e44a9cf5e2b72168f641ea",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-relationship-edge": {
+      "path": "knowledge/concept-cards/templates/relationship-edge.md",
+      "sha256": "de9862a70450f25bb0c7e99a4be74251ad77c9ebcdbd7c96e3e32bfb2ac9ca7b",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-source-locator": {
+      "path": "knowledge/concept-cards/templates/source-locator.md",
+      "sha256": "cd4073ca026fa235323a15679417c2e444a1dd34b65b19c55b64d553143be3ad",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-source-support": {
+      "path": "knowledge/concept-cards/templates/source-support.md",
+      "sha256": "09e6e957d7a3ed2d76838ab4b85a8287577310d7e4cdedfa736666d127da523b",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-validation-result": {
+      "path": "knowledge/concept-cards/templates/validation-result.md",
+      "sha256": "07bcc435ce78982406de0212f9c12912f56838309e0c186aae1635d1c2ad916f",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-verification-result": {
+      "path": "knowledge/concept-cards/templates/verification-result.md",
+      "sha256": "eb8c4015657eea27f419aba43c5f3bd500852aeffe9d9b73482620237cf86579",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "template-concept-card": {
+      "path": "knowledge/concept-cards/templates/concept-card.md",
+      "sha256": "24d88eaa1edeae31ccd4943e8f635e0e3dc11e26e9a1b69ba3374b49d9700fec",
+      "section": "frontmatter lines 2-4",
+      "revision": "source e763c661"
+    },
+    "legacy-music": {
+      "path": "/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/accent-types.md",
+      "sha256": "c5af9d16b099430d15d6a6fab2beaa00aea73704021a0c224056a271ffe07fde",
+      "section": "CLASSIFICATION and Prerequisites frontmatter; Quick Definition",
+      "revision": "external corpus 2e23e2635681a17da6083634e142249dccf8ae58"
+    },
+    "legacy-erlang": {
+      "path": "knowledge/erlang/concept-cards/design-scale-erlang-otp/application-behaviour.md",
+      "sha256": "ad84fd8277c9fe70dc9e3c0b08ae067b6b9faaf51a9553dc2e2cbf5811c002eb",
+      "section": "CLASSIFICATION and Prerequisites frontmatter; Quick Definition",
+      "revision": "no record revision"
+    },
+    "v32-classification": {
+      "path": ".worktrees/planning/old/dev/concept-cards/0010-a-guide-for-parallel-concept-card-re-extraction-v3.2.md",
+      "sha256": "b942d34237391d7a8d84ad463cd2c25aa72196adbc98797877dabc26a5ba337c",
+      "section": "Classification lines 353-356 and required fields 879-890",
+      "revision": "v3.2"
+    }
+  },
+  "meanings": {
+    "id-claim": {
+      "definition": "Stable local identity of the claim record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-claim"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-claim": {
+      "definition": "Revision of the claim record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-claim"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-competency-question": {
+      "definition": "Stable local identity of the competency-question record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-competency-question"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-competency-question": {
+      "definition": "Revision of the competency-question record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-competency-question"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-extraction-run": {
+      "definition": "Stable local identity of the extraction-run record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-extraction-run"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-extraction-run": {
+      "definition": "Revision of the extraction-run record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-extraction-run"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-memory-admission": {
+      "definition": "Stable local identity of the memory-admission record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-memory-admission"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-memory-admission": {
+      "definition": "Revision of the memory-admission record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-memory-admission"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-preservation-decision": {
+      "definition": "Stable local identity of the preservation-decision record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-preservation-decision"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-preservation-decision": {
+      "definition": "Revision of the preservation-decision record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-preservation-decision"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-reconciliation-result": {
+      "definition": "Stable local identity of the reconciliation-result record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-reconciliation-result"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-reconciliation-result": {
+      "definition": "Revision of the reconciliation-result record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-reconciliation-result"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-relationship-edge": {
+      "definition": "Stable local identity of the relationship-edge record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-relationship-edge"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-relationship-edge": {
+      "definition": "Revision of the relationship-edge record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-relationship-edge"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-source-locator": {
+      "definition": "Stable local identity of the source-locator record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-source-locator"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-source-locator": {
+      "definition": "Revision of the source-locator record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-source-locator"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-source-support": {
+      "definition": "Stable local identity of the source-support record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-source-support"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-source-support": {
+      "definition": "Revision of the source-support record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-source-support"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-validation-result": {
+      "definition": "Stable local identity of the validation-result record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-validation-result"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-validation-result": {
+      "definition": "Revision of the validation-result record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-validation-result"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "id-verification-result": {
+      "definition": "Stable local identity of the verification-result record; it identifies this record, not its actor, subject, target or endpoint.",
+      "evidence_ids": [
+        "template-verification-result"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    "revision-verification-result": {
+      "definition": "Revision of the verification-result record, not the revision of its referenced source, subject or method.",
+      "evidence_ids": [
+        "template-verification-result"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    "type-claim": {
+      "definition": "Representation discriminator declaring this record as claim; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-claim"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-competency-question": {
+      "definition": "Representation discriminator declaring this record as competency-question; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-competency-question"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-extraction-run": {
+      "definition": "Representation discriminator declaring this record as extraction-run; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-extraction-run"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-memory-admission": {
+      "definition": "Representation discriminator declaring this record as memory-admission; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-memory-admission"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-preservation-decision": {
+      "definition": "Representation discriminator declaring this record as preservation-decision; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-preservation-decision"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-reconciliation-result": {
+      "definition": "Representation discriminator declaring this record as reconciliation-result; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-reconciliation-result"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-relationship-edge": {
+      "definition": "Representation discriminator declaring this record as relationship-edge; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-relationship-edge"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-source-locator": {
+      "definition": "Representation discriminator declaring this record as source-locator; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-source-locator"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-source-support": {
+      "definition": "Representation discriminator declaring this record as source-support; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-source-support"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-validation-result": {
+      "definition": "Representation discriminator declaring this record as validation-result; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-validation-result"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-verification-result": {
+      "definition": "Representation discriminator declaring this record as verification-result; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-verification-result"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "type-concept-card": {
+      "definition": "Representation discriminator declaring this record as concept-card; it is not an accepted ontology taxonomy.",
+      "evidence_ids": [
+        "template-concept-card"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    "category": {
+      "definition": "Legacy primary domain-taxonomy label.",
+      "evidence_ids": [
+        "legacy-music",
+        "legacy-erlang",
+        "v32-classification"
+      ],
+      "disposition": "preserve observed vocabulary; current template omission does not itself prove loss"
+    },
+    "subcategory": {
+      "definition": "Legacy optional finer domain classification.",
+      "evidence_ids": [
+        "legacy-music",
+        "legacy-erlang",
+        "v32-classification"
+      ],
+      "disposition": "preserve as observed, including absence/inconsistency; do not impose on future domains"
+    },
+    "tier": {
+      "definition": "Legacy pedagogical prerequisite-depth label (foundational/intermediate/advanced), distinct from source location and not proof of a complete prerequisite graph.",
+      "evidence_ids": [
+        "legacy-music",
+        "legacy-erlang",
+        "v32-classification"
+      ],
+      "disposition": "preserve pedagogical value and its limits; do not equate with category or coordinates"
+    }
+  },
+  "memberships": [
+    {
+      "field_path": "id",
+      "record_kind": "claim",
+      "meaning_id": "id-claim",
+      "evidence_ids": [
+        "template-claim"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "claim",
+      "meaning_id": "revision-claim",
+      "evidence_ids": [
+        "template-claim"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "competency-question",
+      "meaning_id": "id-competency-question",
+      "evidence_ids": [
+        "template-competency-question"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "competency-question",
+      "meaning_id": "revision-competency-question",
+      "evidence_ids": [
+        "template-competency-question"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "extraction-run",
+      "meaning_id": "id-extraction-run",
+      "evidence_ids": [
+        "template-extraction-run"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "extraction-run",
+      "meaning_id": "revision-extraction-run",
+      "evidence_ids": [
+        "template-extraction-run"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "memory-admission",
+      "meaning_id": "id-memory-admission",
+      "evidence_ids": [
+        "template-memory-admission"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "memory-admission",
+      "meaning_id": "revision-memory-admission",
+      "evidence_ids": [
+        "template-memory-admission"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "preservation-decision",
+      "meaning_id": "id-preservation-decision",
+      "evidence_ids": [
+        "template-preservation-decision"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "preservation-decision",
+      "meaning_id": "revision-preservation-decision",
+      "evidence_ids": [
+        "template-preservation-decision"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "reconciliation-result",
+      "meaning_id": "id-reconciliation-result",
+      "evidence_ids": [
+        "template-reconciliation-result"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "reconciliation-result",
+      "meaning_id": "revision-reconciliation-result",
+      "evidence_ids": [
+        "template-reconciliation-result"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "relationship-edge",
+      "meaning_id": "id-relationship-edge",
+      "evidence_ids": [
+        "template-relationship-edge"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "relationship-edge",
+      "meaning_id": "revision-relationship-edge",
+      "evidence_ids": [
+        "template-relationship-edge"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "source-locator",
+      "meaning_id": "id-source-locator",
+      "evidence_ids": [
+        "template-source-locator"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "source-locator",
+      "meaning_id": "revision-source-locator",
+      "evidence_ids": [
+        "template-source-locator"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "source-support",
+      "meaning_id": "id-source-support",
+      "evidence_ids": [
+        "template-source-support"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "source-support",
+      "meaning_id": "revision-source-support",
+      "evidence_ids": [
+        "template-source-support"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "validation-result",
+      "meaning_id": "id-validation-result",
+      "evidence_ids": [
+        "template-validation-result"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "validation-result",
+      "meaning_id": "revision-validation-result",
+      "evidence_ids": [
+        "template-validation-result"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "verification-result",
+      "meaning_id": "id-verification-result",
+      "evidence_ids": [
+        "template-verification-result"
+      ],
+      "disposition": "retain as record-local identity; lookup must pair it with record type and applicable revision"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "verification-result",
+      "meaning_id": "revision-verification-result",
+      "evidence_ids": [
+        "template-verification-result"
+      ],
+      "disposition": "retain with record id; do not substitute a referenced revision"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "claim",
+      "meaning_id": "type-claim",
+      "evidence_ids": [
+        "template-claim"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "competency-question",
+      "meaning_id": "type-competency-question",
+      "evidence_ids": [
+        "template-competency-question"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "extraction-run",
+      "meaning_id": "type-extraction-run",
+      "evidence_ids": [
+        "template-extraction-run"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "memory-admission",
+      "meaning_id": "type-memory-admission",
+      "evidence_ids": [
+        "template-memory-admission"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "preservation-decision",
+      "meaning_id": "type-preservation-decision",
+      "evidence_ids": [
+        "template-preservation-decision"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "reconciliation-result",
+      "meaning_id": "type-reconciliation-result",
+      "evidence_ids": [
+        "template-reconciliation-result"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "relationship-edge",
+      "meaning_id": "type-relationship-edge",
+      "evidence_ids": [
+        "template-relationship-edge"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "source-locator",
+      "meaning_id": "type-source-locator",
+      "evidence_ids": [
+        "template-source-locator"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "source-support",
+      "meaning_id": "type-source-support",
+      "evidence_ids": [
+        "template-source-support"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "validation-result",
+      "meaning_id": "type-validation-result",
+      "evidence_ids": [
+        "template-validation-result"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "verification-result",
+      "meaning_id": "type-verification-result",
+      "evidence_ids": [
+        "template-verification-result"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "concept-card",
+      "meaning_id": "type-concept-card",
+      "evidence_ids": [
+        "template-concept-card"
+      ],
+      "disposition": "retain to select the record contract and avoid interpreting same-named fields across kinds as equivalent"
+    },
+    {
+      "field_path": "category",
+      "record_kind": "untyped",
+      "meaning_id": "category",
+      "evidence_ids": [
+        "legacy-music",
+        "legacy-erlang",
+        "v32-classification"
+      ],
+      "disposition": "preserve observed vocabulary; current template omission does not itself prove loss"
+    },
+    {
+      "field_path": "subcategory",
+      "record_kind": "untyped",
+      "meaning_id": "subcategory",
+      "evidence_ids": [
+        "legacy-music",
+        "legacy-erlang",
+        "v32-classification"
+      ],
+      "disposition": "preserve as observed, including absence/inconsistency; do not impose on future domains"
+    },
+    {
+      "field_path": "tier",
+      "record_kind": "untyped",
+      "meaning_id": "tier",
+      "evidence_ids": [
+        "legacy-music",
+        "legacy-erlang",
+        "v32-classification"
+      ],
+      "disposition": "preserve pedagogical value and its limits; do not equate with category or coordinates"
+    }
+  ]
+}
