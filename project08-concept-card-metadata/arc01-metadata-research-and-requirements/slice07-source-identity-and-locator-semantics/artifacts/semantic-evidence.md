@@ -1,52 +1,62 @@
 # Slice07 Semantic Evidence
 
-Legacy Accent Types records source The Complete Musician, source_slug
-complete-musician, authors Steven G. Laitz, chapter Pulse Rhythm and Meter,
-chapter_number 2, section Accent in Music and pdf_page 33. The author string is
-observed attribution, not parsed people. Its body cites pages 43-46, so the
-frontmatter page is not silently treated as the same page basis.
+## Registered inputs and inspected contexts
 
-Current source-locator template has null address components and empty mapping/
-prepared lists: representability, not populated evidence. Its body and
-concept-cards extraction guide distinguish source/snapshot/resource,
-locator type/value, page ordinal/printed label/converter index, and original
-versus prepared coordinates. document-extraction locator model separately
-defines resource URI, anchors, source/output lines and range conventions.
-A resolving address is not source support. Arc07 generated card references
-prepared-source records; this is populated generated-reference evidence, not
-proof of original mapping or support.
+The registry names every input below with exact path, SHA-256, inspected section
+and role. frozenInventory is the typed frozen census; legacy is the populated
+Complete Musician card; and erlangSample is a populated non-book OTP card. The
+latter records source OTP Design Principles, source_slug otp-design-principles,
+authors Ericsson AB, chapter Overview, chapter_number null, pdf_page null, and
+section Behaviours in PROVENANCE. It demonstrates an actual null context without
+treating either null as inapplicability.
 
-Consequences: titles/slugs are not editions or snapshots; authors are not
-automatically person records; null coordinate/reference is not automatic
-inapplicability. Preserve basis, resource and mapping evidence separately.
-No source conversion, page-offset inference, mapping verification or migration
-equivalence is claimed.
+The literal census recorded in validation-evidence.md covers all seven legacy
+fields. It finds 390 music cards and 1,664 Erlang cards. Both families have
+string authors, chapter, source_slug, and source; music has numeric
+chapter_number and pdf_page throughout, while Erlang has 1,108/556 number/null
+chapter_number and 224/1,440 number/null pdf_page. section is string/null in
+342/48 music and 1,651/13 Erlang cards. These are observed stored shapes, not
+a cross-source normalization rule.
 
-## Iteration 01 contextual distinctions
+legacy records Complete Musician title, slug, author text, chapter title and
+ordinal, section, and pdf_page 33; its cited body pages differ, so the
+frontmatter field alone does not disclose a page basis. This supports retaining
+legacy values and shapes rather than asserting a recovered address.
 
-Frozen inventory is afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b.
-CDC-reproduced census distinguishes 390 music from 1,664 Erlang cards: music
-pdf_page is numeric in 390; Erlang has 224 numeric and 1,440 null. Erlang
-chapter_number is 1,108 numeric and 556 null; section is null in 48 music and
-13 Erlang records. These are present shapes, not inapplicability judgments.
+## Current locator contexts
 
-Field meanings: authors attribute as observed text; source is a title and
-source_slug a local lookup label, neither an edition/snapshot. chapter is a
-heading while chapter_number is its observed ordinal; section is a finer label;
-pdf_page requires declared basis. Locator resource names the addressed file/URI,
-representation names its form, locator_type/value identify the address,
-numbering_basis and range_convention interpret sequence/endpoints, and
-context_hint supplies non-authoritative context. source_ref/snapshot_ref name
-source and bytes/capture; original/prepared locator refs name counterpart
-records; mapping_evidence_refs supports correspondence rather than being an
-address; prepared_source_refs retain preparation provenance.
+locatorTemplate supplies the root record fields and explicitly separates
+identity/address from Original And Prepared Mapping. locatorModel requires
+record identity before position. Together they support the registry's
+source/source-snapshot/resource/representation separation and the distinction
+between an address and claim support.
 
-Synthetic pdf-marker-handoff (fab43b7e88e444c5784fadab49df4923c125e8d0ee0ae0efa9c04e7a7b737bbe)
-Locators distinguishes converter index unknown base, physical PDF page 2,
-printed label 1 and output lines 13-20. Synthetic epub-pandoc-handoff
-(196a63786e2da73fa63522d0df5c8f10aec2d10e46c133dc55ca395f793df3ea)
-uses resource-scoped anchor and output ranges. Arc07 locator-map
-(837bc861e8b6e558e64ad7666bb88b24fb338d4451fa9ed93e459d82a8a6fd6f)
-has loc-ch01-emergence for chapter-01.md lines 53-57, one-based inclusive.
-These are synthetic conventions/external map evidence, not standalone locator
-frontmatter, successful conversion, or source-support verification.
+pdfHandoff is synthetic: P-L1 is a converter index of unknown base, P-L2 a
+physical PDF page 2, P-L3 printed label 1, P-L4 output lines 13--20, and P-M1
+is bounded mapping evidence. epubHandoff is also synthetic: E-L1 is a
+resource-scoped anchor, E-L2/E-L3 are output ranges, and E-M1/E-M2 are mapping
+examples. They demonstrate field semantics and possible conventions, not an
+actual successful conversion or claim support.
+
+arc07LocatorMap is the separate, actual generated map: loc-ch01-emergence
+names chapter-01.md, source lines 53--57, with one-based inclusive endpoints.
+It is an external map, not populated standalone source-locator frontmatter,
+and does not independently verify a source claim. arc07 only shows generated
+card references to prepared-source records; it does not fill the unavailable
+original/mapping evidence.
+
+## Historical comparison and limits
+
+v31Guide and checked successor v32Guide both treat the seven fields as
+Provenance/frontmatter and specify pdf_page/section may be null. The v3.2 text
+adds a source-slug directory description but neither guide supplies a snapshot
+identity, locator type/basis, original/prepared counterpart, or
+mapping-evidence record. Thus the historical guidance supports preservation of
+legacy field values, while the current locator material supplies distinctions
+that the old flat frontmatter does not represent.
+
+The registry connects each field to evidence that bears on it. It does not
+claim a schema, migration equivalence, resolved original source, page-offset
+calculation, source-support verification, or automated mapping. CDC's prior
+S7-2/S7-7 reproduction remains independent evidence; this inspection is CC
+attestation only.
