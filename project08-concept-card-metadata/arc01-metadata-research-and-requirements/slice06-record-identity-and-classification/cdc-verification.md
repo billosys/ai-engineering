@@ -1,8 +1,8 @@
 # CDC Review: Slice06 Initial Delivery
 
-Latest review: [Iteration 01](#iteration-01-review-a416c2a2) below.
-S6-R1/R3/R4 are resolved; S6-R2 remains partially open. The initial review
-below remains historical evidence, not the current finding disposition.
+Latest review: [Iteration 02 closure](#iteration-02-closure-e88e6c0b) below.
+All four findings are resolved and all seven rows CDC-closed, with an explicitly
+CDC-authored census replay completion. Earlier reviews remain historical.
 
 Date: 2026-09-13. Reviewed planning commit `6a6b1661` against the
 unchanged seven-row contract. Source remains `e763c661`; comparison planning
@@ -314,3 +314,80 @@ all seven original criteria and the exact 37-pair scope remain in force.
 The other 508 pairs keep their existing owners. No next slice, research
 advancement, source change or parent closure is authorized by this review.
 Project objectives are unchanged; the arc plan routes this narrower correction.
+
+## Iteration 02 Closure: e88e6c0b
+
+Date: 2026-09-13. **CDC closed**, with the documentation-only replay
+completion explicitly attributed below. Source remains `e763c661`.
+The seven original criteria are met within this slice's declared scope.
+
+### Final Finding Disposition And Authorship
+
+S6-R1/R3/R4 remain resolved as reviewed in Iteration 01. S6-R2 now has the
+frozen-inventory, Meter and v3.1 inputs connected to classification meanings.
+CDC checked the v3.1 Classification section against the v3.2 definitions:
+primary domain classification, optional finer classification and source-relative
+prerequisite depth agree. Meter's source_slug confirms the bounded same-source
+tension. No source-text verification, taxonomy choice or migration result is
+implied.
+
+CC's remaining replay omission was literal command text, not missing semantic
+analysis. CDC added the explicitly labeled census replay section to
+artifacts/validation-evidence.md and pinned its historical preservation endpoint
+to e88e6c0b so subsequent authorized parent updates do not break the replay.
+CDC executed the completed route. The semantic report,
+membership registry, handoff and CC closing report remain byte-identical to
+e88e6c0b. CC attestation and CDC-authored documentation are distinguishable.
+The full frequency output reproduces both corpora, raw spellings, null states
+and all reported totals. This follows the existing Batch01 documentation-repair
+precedent, not a lowered criterion or retroactive CC execution claim.
+
+Provenance clarification for downstream readers: the semantic report's phrase
+"not real extraction" must not erase its own generated/synthetic distinction.
+The five synthetic examples are synthetic; the Arc07 support and teaching card
+are real-corpus generated candidates, not independently verified extraction
+results. Their registered roles and inspected contents establish this distinction.
+This is a CDC clarification, not a new extraction or admission judgment.
+
+### Final Reproduction And Row Walk
+
+From the source root, CDC reran the original validation bash block and the
+new CDC census block. Original: two true assertions and all 28 registered
+hashes OK; preserved Slice01/Slice04 diff against 285933a6 empty.
+Census: exit 0, 390 music plus 1,664 Erlang records, every key present,
+frequency totals equal corpus totals. Distinct values are 10/67/3 and
+16/341/3 respectively. All 80 present-null subcategories belong to Erlang.
+Tier frequencies and named examples match the report.
+
+Registry consistency additionally passes: every membership resolves to the
+same evidence list/disposition as its meaning, with nonempty definitions.
+The current-record meanings/evidence from a416c2a2 remain unchanged.
+The e88e6c0b commit touches only the six authorized files and passes whitespace.
+Both starting worktrees were clean; no source/package/install action occurred.
+
+| Row | CDC final status | Evidence |
+| --- | --- | --- |
+| S6-1 | done | 28 registered hashes and inspected identity/classification sections; exact comparison bases. |
+| S6-2 | done | Exact 37 unique pairs, inventory inclusion, Batch01 disjointness reproduced. |
+| S6-3 | done | Iteration 01 current-record review retained; no regression in the identity entries. |
+| S6-4 | done | Per-corpus raw vocabulary replay, present-null distinction, historical definitions, bounded dependency tension and actual current-card omission. |
+| S6-5 | done | Both reference layers resolve; census/dependency/history linked; lookup/discovery consequences and non-equivalence limits inspected. |
+| S6-6 | done | Complete literal replay after attributed CDC documentation completion, seven-row walk and bounded handoff. |
+| S6-7 | done | Scoped CC commit and preserved source/prior packets; CDC changes separately owned. |
+
+### Bubble-Up And Next Unit
+
+This closes only the assigned 37-pair slice. Combined with Batch01, 47 of 555
+observed pairs have accepted bounded contextual evidence, not corpus-wide
+migration or semantic-support verification. The remaining 508 are unchanged.
+
+Next: sibling Slice07, source identity and locator semantics, exactly 20 pairs
+from the original Slice04 allocation. That leaves 488 outside the accepted
+47 and assigned 20: 236 original Slice04 and 252 original Slice05 pairs.
+These accounting allocations are not endorsement of the old family labels.
+
+Slice04 still owns full integration and its eight-row closure, including all
+remaining source/support/graph/CQ contexts. Slice05 retains lifecycle/provenance
+and final replay/composition work. Slice01, Arc01 and Project08 stay open;
+research Slice02/03 remain gated. No scope reduction or version change.
+The arc/project plans and Slice04 route are updated before opening Slice07.

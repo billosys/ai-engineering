@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.8"
+version: "1.9"
 ---
 
 # Concept Card Metadata
@@ -68,7 +68,7 @@ research/design decisions. Arc02 will supply the accepted architecture artifact.
 
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
-| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Slice04 Batch01 accepted, Slice06 identity/classification remediation open; Slice04/01 still unclosed |
+| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Batch01 and Slice06 accepted, Slice07 source/locator comparison open; Slice04/01 still unclosed |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Arc01 | Hypothesis; detailed plan when near |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -163,6 +163,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.9 (2026-09-13): Arc01 Slice06 closes after independent review and an
+  explicitly attributed CDC replay-documentation completion. Opens Slice07
+  for twenty source/locator pairs; was: Slice06 remediation. All original
+  composition and quality gates remain, with no project scope reduction.
 
 - 1.8 (2026-09-12): Arc01 Slice04 Batch01 delivers accepted ten-pair semantic
   evidence after an explicitly CDC-authored replay-documentation correction.

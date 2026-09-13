@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice04-semantic-identity-source-and-graph-families
 status: awaiting-remainder-and-composition
-version: "1.4"
+version: "1.5"
 ---
 
 # Semantic Identity, Source And Graph Families
@@ -20,13 +20,15 @@ and declared samples. CDC supplied and independently executed a corrected
 replay section, explicitly attributed in its evidence artifact. This acceptance
 does not close any full-scope row or assert corpus-wide equivalence.
 
-Next execution is sibling
-`slice06-record-identity-and-classification/cc-prompt.md`: 37 pairs drawn
-from this slice's remaining allocation. This slice keeps every original
-criterion and the final integration of accepted partial packets. After
-Slice06 review, the remaining source/locator, claim/support and graph/CQ
-work will be sized for its next bounded execution. No further informal batch
-is currently open. The original eight rows and other scope remain unchanged.
+Slice06 is now CDC-closed for its 37 pairs after `e88e6c0b` and an
+attributed census-replay documentation completion. Next execution is sibling
+`slice07-source-identity-and-locator-semantics/cc-prompt.md`: twenty source/
+locator pairs from the original Slice04 allocation. Was: Slice06 pending.
+This slice keeps every original criterion and complete-artifact integration.
+With Batch01, 47 pairs are accepted; after assigning Slice07, 488 remain
+outside accepted/assigned packets (236 original Slice04, 252 original Slice05).
+No original ownership labels are accepted merely by counting them. The eight
+rows remain open except the previously verified scoped hygiene row.
 
 Previously, next execution was the
 [Batch01 identity-evidence checkpoint](./artifacts/iteration-01-batch01-cc-prompt.md)
@@ -138,6 +140,10 @@ CDC independently verifies it and sizes/opens Slice05. This slice alone does
 not close Slice01 or establish full semantic coverage.
 
 ## Version History
+
+- 1.5 (2026-09-13): Incorporates Slice06's bounded CDC acceptance and routes
+  twenty source/locator pairs to Slice07. Retains all full-scope criteria and
+  remaining semantic/integration work; was: Slice06 next.
 
 - 1.4 (2026-09-12): Accepts Batch01 evidence after CDC's explicit replay
   documentation repair and independent checks. Routes 37 remaining pairs

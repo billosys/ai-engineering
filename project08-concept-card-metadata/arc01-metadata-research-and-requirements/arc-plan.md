@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.11"
+version: "1.12"
 ---
 
 # Metadata Research And Requirements
@@ -22,7 +22,8 @@ because it appears in the initial hypothesis.
 | --- | --- | --- | --- |
 | `slice01-metadata-inventory-and-research-questions` | Reproduce field/capability inventory, register baseline evidence and formulate research questions | Project brief; final closure consumes Slice04/05 repair evidence | Open pending remediation composition; original eight rows retained |
 | `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence; consumes Slice06 for its assigned portion | Batch01 ten pairs accepted; remainder and final composition open |
-| `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | Changes required; Iteration 02 limited to remaining classification evidence |
+| `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | CDC closed after e88e6c0b plus attributed census replay completion |
+| `slice07-source-identity-and-locator-semantics` | Seven legacy source fields and thirteen source-locator fields: 20 exact pairs | Frozen inventory, accepted Batch01 and Slice06; not Slice04 closure | Open for CC |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -41,6 +42,26 @@ competency questions or requirements engineering. Seek benefits and costs, not
 standards adoption for its own sake.
 
 ## Acceptance And Handoff
+
+Current (2026-09-13): Slice06's seven rows are CDC-closed after `e88e6c0b`.
+CDC added and ran an explicitly attributed literal census command; CC's
+semantic report and registry remain unchanged. Source remains `e763c661`.
+With Batch01, 47 of 555 pairs have accepted bounded contextual evidence.
+This is not corpus-wide equivalence, migration or semantic source verification.
+
+Open sibling Slice07 for twenty exact source/locator pairs drawn entirely
+from the original Slice04 allocation. Its table and seven-row open set define
+the boundary. Of the 508 remaining after Slice06, twenty are assigned there;
+488 remain outside accepted/assigned work: 236 original Slice04 and 252
+original Slice05 pairs. Original allocations are accounting, not accepted
+family semantics. Actor/run/lifecycle and inline support/graph/CQ memberships
+are not absorbed merely because inspected sources contain them.
+
+Slice04 retains complete-artifact integration and its eight criteria;
+Slice05 retains remaining lifecycle/provenance and final replay integration.
+Size the next unit after Slice07 evidence. Slice01 and research Slice02/03
+retain their existing composition gates. Was: Slice06 Iteration 02 pending.
+The following review history is superseded as a current assignment.
 
 Current Slice06 review of `a416c2a2`: S6-R1/R3/R4 are resolved; S6-R2
 retains the missing per-corpus vocabulary comparison and exact supporting
@@ -163,6 +184,11 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.12 (2026-09-13): CDC closes Slice06 after its classification evidence
+  and an attributed replay-documentation completion. Opens twenty-pair
+  Slice07, preserving the other 488 pairs and original parent criteria.
+  Was: Slice06 Iteration 02 pending; no semantic allocation endorsement.
 
 - 1.11 (2026-09-13): Slice06 Iteration 01 CDC accepts current-record
   evidence, lookup correction and original replay repair. Iteration 02

@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice06-record-identity-and-classification
-status: changes-required
-version: "1.2"
+status: closed
+version: "1.3"
 ---
 
 # Record Identity And Classification
@@ -13,12 +13,11 @@ type of current non-card records, plus legacy discovery classification and
 pedagogical tier. This bounded sibling remediation supplies part of Slice04's
 original obligation; it does not replace or close that slice's ledger.
 
-Current assignment: [Iteration 02](./artifacts/iteration-02-cc-prompt.md),
-following [CDC review](./cdc-verification.md#iteration-01-review-a416c2a2)
-of `a416c2a2`. Was: Iteration 01. Current-record evidence, lookup semantics
-and original replay repairs pass; the per-corpus classification comparison,
-remaining input registration and its replay still require completion under
-S6-R2. The seven criteria and 37-pair boundary are unchanged.
+CDC closed after [Iteration 02 review](./cdc-verification.md#iteration-02-closure-e88e6c0b)
+of `e88e6c0b`, with an explicitly attributed, independently tested CDC
+census-replay documentation completion. Was: Iteration 02 required. All seven
+criteria pass for the exact 37 pairs; parent composition remains open.
+Next execution is sibling Slice07's `cc-prompt.md`.
 
 ## Dependencies And Scope
 
@@ -101,6 +100,10 @@ Only verified evidence contributes to Slice04 recomposition. All other original
 pairs retain their prior owners; no pair is silently dropped or reassigned.
 
 ## Version History
+
+- 1.3 (2026-09-13): CDC accepts Iteration 02 classification evidence and
+  closes all seven rows after a documented CDC literal-replay completion.
+  No semantic registry rewrite or scope reduction; next bounded unit is Slice07.
 
 - 1.2 (2026-09-13): Iteration 01 CDC resolves S6-R1/R3/R4 and accepts
   S6-3. Opens Iteration 02 only for remaining S6-R2 classification evidence;
