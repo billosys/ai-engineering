@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice08-source-support-subjects-and-spans
-status: open
-version: "1.0"
+status: changes-required
+version: "1.1"
 ---
 
 # Source Support Subjects And Spans
@@ -12,6 +12,12 @@ Explain how source-support records identify the assertion being supported and
 the selected material used for that support. Preserve the distinction between
 finding an address, selecting a span and assessing its relation to an assertion.
 This is authored inventory/comparison work, not new card verification.
+
+CDC review of `2dfe5577` (2026-09-13): S8-2/S8-4/S8-7 pass independently.
+Reference consistency, historical/contextual consequences and full replay
+remain open under S8-R1/R2/R3. Follow `artifacts/iteration-01-cc-prompt.md`.
+Was: initial CC execution. All 27 pairs and seven criteria remain unchanged;
+no pilot repair, scope reduction or new slice is authorized by this correction.
 
 ## Basis And Sizing
 
@@ -154,6 +160,10 @@ only. Slice04/01, Arc01 and the project remain open; P-14 and research gates
 are untouched.
 
 ## Version History
+
+- 1.1 (2026-09-13): Initial CDC review retains three reproduced criteria
+  and opens Iteration 01 for target agreement, contextual dispositions and
+  replay corrections. Original acceptance and scope boundaries are unchanged.
 
 - 1.0 (2026-09-13): Opens the 27-pair source-support subject/span comparison
   after Slice07 closure, retaining the remaining semantics and parent gates.
