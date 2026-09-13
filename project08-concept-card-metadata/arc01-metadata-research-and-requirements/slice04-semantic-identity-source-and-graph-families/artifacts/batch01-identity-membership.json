@@ -1,12 +1,42 @@
-{"artifact_kind":"batch01-identity-membership","memberships":[
-{"field_path":"aliases","record_kind":"concept-card","meaning_id":"aliases-current","evidence":"current-template"},
-{"field_path":"aliases","record_kind":"untyped","meaning_id":"aliases-legacy","evidence":"legacy-cards"},
-{"field_path":"aliases[]","record_kind":"concept-card","meaning_id":"alias-value-current","evidence":"current-template"},
-{"field_path":"aliases[]","record_kind":"untyped","meaning_id":"alias-value-legacy","evidence":"accent-types"},
-{"field_path":"concept","record_kind":"untyped","meaning_id":"legacy-concept","evidence":"accent-types"},
-{"field_path":"concept_slug","record_kind":"concept-card","meaning_id":"concept-slug-current","evidence":"current-template"},
-{"field_path":"id","record_kind":"concept-card","meaning_id":"current-id","evidence":"current-template"},
-{"field_path":"revision","record_kind":"concept-card","meaning_id":"record-revision","evidence":"current-template"},
-{"field_path":"slug","record_kind":"untyped","meaning_id":"legacy-slug","evidence":"v32-0010-lines-613-14"},
-{"field_path":"title","record_kind":"concept-card","meaning_id":"title-display","evidence":"current-template"}
-]}
+{
+  "artifact_kind": "batch01-identity-membership",
+  "scope": "ten mechanical path/kind pairs only; contextual evidence is not a schema proposal",
+  "evidence": {
+    "template": {"path":"knowledge/concept-cards/templates/concept-card.md","sha256":"24d88eaa1edeae31ccd4943e8f635e0e3dc11e26e9a1b69ba3374b49d9700fec","section":"frontmatter lines 1-25","revision":"source e763c661"},
+    "entrypoint": {"path":"knowledge/concept-cards/SKILL.md","sha256":"a096893e6a908d014b795bcb2e5e38653b6c590982e99951aae3783a9e7c318a","section":"References And Review Surfaces lines 133-146","revision":"metadata 4.8.1"},
+    "music": {"path":"/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/accent-types.md","sha256":"c5af9d16b099430d15d6a6fab2beaa00aea73704021a0c224056a271ffe07fde","section":"frontmatter; Quick Definition","revision":"external corpus 2e23e2635681a17da6083634e142249dccf8ae58"},
+    "erlang": {"path":"knowledge/erlang/concept-cards/design-scale-erlang-otp/application-behaviour.md","sha256":"ad84fd8277c9fe70dc9e3c0b08ae067b6b9faaf51a9553dc2e2cbf5811c002eb","section":"CORE IDENTIFICATION; VARIANTS; Quick Definition","revision":"no record revision field"},
+    "arc07": {"path":".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-emergent-explanation.md","sha256":"a7b5b387434bc82885ad013b36ed65d354cdb7687d4d3fa1daaffcebadbcbead","section":"frontmatter; Concept Boundary","revision":"record 1"},
+    "rich": {"path":"workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-pattern-completion.md","sha256":"822f64b87c31cbea36624f1fc6323e4fd3eb3f8269a72bbfbd3358a53a210ece","section":"frontmatter; Quick Definition And Core Definition","revision":"record 2"},
+    "teaching": {"path":"workbench/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-pattern-completion.md","sha256":"08389f04949c4fe78cafb567d5741195827af13c73f4cf6f59589d8caf682c56","section":"frontmatter; Quick Definition And Core Definition","revision":"record 3"},
+    "rich-malformed": {"path":"workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-memory-forms.md","sha256":"d9bc411c40684815798d6b9a952c821f1bd8c3ef81be2839ff0fb7fecec17593","section":"frontmatter line 4","revision":"unavailable: YAML::XS parse error"},
+    "v31a": {"path":".worktrees/planning/old/dev/concept-cards/0007-howto-concept-card-extraction-with-claude-code-v3.1.md","sha256":"8308788db39358a0d28631913b8319e5b4bbf9fd79545b1f16484ea5e47d637c","section":"Core Identification 86-101; Variants 145-165","revision":"v3.1"},
+    "v31b": {"path":".worktrees/planning/old/dev/concept-cards/0008-a-guide-for-parallel-concept-card-re-extraction-v3.1.md","sha256":"7d7c5b53c4d8aa4c6f479d5af453e3cb9ba50c07f2b9ed8cb8ef15acc4520e66","section":"template 314-344; filename 578-619; requirements 831-840","revision":"v3.1"},
+    "v32a": {"path":".worktrees/planning/old/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md","sha256":"56eb092cfed206edf588748e041df9ed53448f941f1dee43684f96994a898cbd","section":"Core Identification and Variants","revision":"v3.2"},
+    "v32": {"path":".worktrees/planning/old/dev/concept-cards/0010-a-guide-for-parallel-concept-card-re-extraction-v3.2.md","sha256":"b942d34237391d7a8d84ad463cd2c25aa72196adbc98797877dabc26a5ba337c","section":"template 351-382; filename 613-619; requirements 870-890","revision":"v3.2"}
+  },
+  "meanings": {
+    "aliases-current":{"definition":"Current alternate-lookup list; empty means no entries recorded, not completed authority review.","evidence_ids":["template","entrypoint","rich","teaching"],"disposition":"current list, equivalence unproven"},
+    "aliases-legacy":{"definition":"Legacy VARIANTS/authority-control list.","evidence_ids":["music","erlang","v31a","v31b","v32"],"disposition":"preserve legacy list, equivalence unproven"},
+    "alias-value-current":{"definition":"One current aliases-list string, not the container.","evidence_ids":["rich","teaching"],"disposition":"current member; preserve cardinality/provenance"},
+    "alias-value-legacy":{"definition":"One legacy aliases-list string, not the container.","evidence_ids":["music","erlang"],"disposition":"legacy member; string shape alone is not equivalence"},
+    "legacy-concept":{"definition":"Human-readable legacy concept label.","evidence_ids":["music","erlang","v31a"],"disposition":"display/teaching label, not persistent identity"},
+    "concept-slug-current":{"definition":"Current concept lookup label distinct from id/title.","evidence_ids":["template","arc07","rich","teaching"],"disposition":"current lookup; filename coupling not established"},
+    "current-id":{"definition":"Stable record identity required by the current entrypoint.","evidence_ids":["template","entrypoint","arc07","rich","teaching"],"disposition":"retain; do not replace with title/legacy slug"},
+    "record-revision":{"definition":"Concept-card record revision, not source edition or method revision.","evidence_ids":["template","entrypoint","arc07","rich","teaching"],"disposition":"retain with id; rich 2 and teaching 3 share id/concept_slug"},
+    "legacy-slug":{"definition":"Lowercase hyphenated filename key required by v3.1/v3.2.","evidence_ids":["music","erlang","v31a","v31b","v32"],"disposition":"legacy filename lookup; no id equivalence"},
+    "title-display":{"definition":"Reader-facing current title.","evidence_ids":["template","arc07","rich","teaching"],"disposition":"display only; rerun titles differ with same id/concept_slug"}
+  },
+  "memberships": [
+    {"field_path":"aliases","record_kind":"concept-card","meaning_id":"aliases-current","evidence_ids":["template","rich","teaching"],"disposition":"current list container"},
+    {"field_path":"aliases","record_kind":"untyped","meaning_id":"aliases-legacy","evidence_ids":["music","erlang","v32"],"disposition":"legacy list container"},
+    {"field_path":"aliases[]","record_kind":"concept-card","meaning_id":"alias-value-current","evidence_ids":["rich","teaching"],"disposition":"current list member"},
+    {"field_path":"aliases[]","record_kind":"untyped","meaning_id":"alias-value-legacy","evidence_ids":["music","erlang"],"disposition":"legacy list member"},
+    {"field_path":"concept","record_kind":"untyped","meaning_id":"legacy-concept","evidence_ids":["music","erlang"],"disposition":"legacy display label"},
+    {"field_path":"concept_slug","record_kind":"concept-card","meaning_id":"concept-slug-current","evidence_ids":["template","arc07","rich","teaching"],"disposition":"current concept lookup"},
+    {"field_path":"id","record_kind":"concept-card","meaning_id":"current-id","evidence_ids":["template","entrypoint","arc07","rich","teaching"],"disposition":"persistent record identity"},
+    {"field_path":"revision","record_kind":"concept-card","meaning_id":"record-revision","evidence_ids":["template","entrypoint","arc07","rich","teaching"],"disposition":"record revision paired with id"},
+    {"field_path":"slug","record_kind":"untyped","meaning_id":"legacy-slug","evidence_ids":["music","erlang","v31b","v32"],"disposition":"filename-coupled legacy lookup"},
+    {"field_path":"title","record_kind":"concept-card","meaning_id":"title-display","evidence_ids":["template","arc07","rich","teaching"],"disposition":"reader-facing title"}
+  ]
+}

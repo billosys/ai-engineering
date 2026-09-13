@@ -26,5 +26,9 @@ coordinates, claim/support, relationship graph, and genuine CQ/coverage.
 Slice05 retains only its planned lifecycle/provenance/integration ownership and
 must not absorb unreviewed Slice04 memberships merely to rebalance counts.
 
-Batch01 supplies evidence for ten identity/label pairs only; it does not change
-Slice05 ownership or the unaccepted full partition.
+Batch01 has delivered a CDC-review-pending, evidence-backed ten-pair identity
+checkpoint in batch01-identity-evidence.md and batch01-identity-membership.json:
+concept-card and untyped aliases/aliases[]; untyped concept/slug; and
+concept-card concept_slug/id/revision/title. It includes legacy music/Erlang,
+Arc07, usable rich/teaching rerun and malformed-rich observations. It does not
+change Slice05 ownership or the unaccepted full partition.
