@@ -109,6 +109,24 @@
       "sha256": "a0935944764567a011e87cf81cb3dd2f97fe3438b96d8320b8ca0c8ad2f1dacc",
       "section": "Claim claim-pattern-separation",
       "role": "resolved claim subject target"
+    },
+    "skillReferenceRules": {
+      "path": "knowledge/concept-cards/SKILL.md",
+      "sha256": "a096893e6a908d014b795bcb2e5e38653b6c590982e99951aae3783a9e7c318a",
+      "section": "Record conventions: IDs, revisions, paths and unknown references",
+      "role": "actual reference interpretation contract"
+    },
+    "historicalMusic": {
+      "path": "/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/accent-types.md",
+      "sha256": "c5af9d16b099430d15d6a6fab2beaa00aea73704021a0c224056a271ffe07fde",
+      "section": "Source Reference and Verification Notes",
+      "role": "historical music body/reference sample"
+    },
+    "historicalOtp": {
+      "path": "knowledge/erlang/concept-cards/otp-design-principles/behaviour.md",
+      "sha256": "ae1ee3d7f8933dc75ca116f8fb9b9a3251d0d926ed2ea599c1e9098a8111c4f3",
+      "section": "Source Reference and Verification Notes",
+      "role": "historical OTP body/reference sample"
     }
   },
   "meanings": {
@@ -123,7 +141,7 @@
         "pilotPattern",
         "guide"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain the collection boundary so separately selected materials do not collapse into one unsupported quotation or verdict."
     },
     "source-support-sourcespans-items": {
       "definition": "one selected source-span record, distinct from its support root and from a locator address.",
@@ -136,7 +154,7 @@
         "pilotPattern",
         "guide"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep each selected span distinct from the support root and other spans; dropping it loses assertion-specific selection."
     },
     "source-support-sourcespans-items-checksumoreditionnote": {
       "definition": "narrative note that points to recorded hashes or edition identity; it is not itself a checksum.",
@@ -151,7 +169,7 @@
         "acquisition",
         "locatorMap"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep a note as narrative/pointer evidence; do not parse it as a checksum or infer immutable-byte identity."
     },
     "source-support-sourcespans-items-contentordescription": {
       "definition": "retained quotation or paraphrase/description of selected material; all four pilots explicitly describe paraphrases.",
@@ -162,9 +180,11 @@
         "pilotMemory",
         "pilotModel",
         "pilotPattern",
-        "guide"
+        "guide",
+        "historicalMusic",
+        "historicalOtp"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain whether selected content is quoted or paraphrased; no retained quote differs from missing content and does not prove fidelity."
     },
     "source-support-sourcespans-items-context": {
       "definition": "qualifying context around selected material, including citation and figure limits; it is neither the asserted subject nor a verdict.",
@@ -177,7 +197,7 @@
         "pilotPattern",
         "guide"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep qualifications, figure and citation limits adjacent to the selection; dropping context can overstate the span."
     },
     "source-support-sourcespans-items-locatorrefs": {
       "definition": "collection of locator references for the selected span.",
@@ -189,9 +209,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Preserve all locator references so text and figure addresses remain separate selections rather than one invented address."
     },
     "source-support-sourcespans-items-locatorrefs-items": {
       "definition": "one locator reference; text and figure locators can be jointly selected without making the figure independent proof.",
@@ -203,9 +224,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep each locator reference and its unresolved fragment semantics; a table-ID lookup is not a demonstrated URL-anchor resolver."
     },
     "source-support-sourcespans-items-locatorrefs-items-id": {
       "definition": "identifier of a locator target, used with path and revision rather than as a globally unique address.",
@@ -217,9 +239,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Use the locator ID to find the named map row, while recording that map rows do not independently declare locator revision or fragment anchors."
     },
     "source-support-sourcespans-items-locatorrefs-items-path": {
       "definition": "relative record path and optional anchor locating a locator target; resolution alone is not support.",
@@ -231,9 +254,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep the literal relative path/fragment for a named consumer; without a documented fragment convention it remains an unresolved resolution component."
     },
     "source-support-sourcespans-items-locatorrefs-items-revision": {
       "definition": "revision of a locator target; pilots use numeric 1, a local convention rather than a universal type.",
@@ -245,9 +269,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain requested numeric revision, but do not treat pilot value 1 as declared by the locator-map target or universally typed."
     },
     "source-support-sourcespans-items-quotepolicy": {
       "definition": "policy distinguishing retained quotation from paraphrase; no quotation retained is neither permission nor fidelity proof.",
@@ -258,9 +283,11 @@
         "pilotMemory",
         "pilotModel",
         "pilotPattern",
-        "guide"
+        "guide",
+        "historicalMusic",
+        "historicalOtp"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Preserve the policy because it explains quotation retention, not legal permission or semantic warrant."
     },
     "source-support-sourcespans-items-selectionboundaries": {
       "definition": "declared narrower material selected from locator context, such as inclusive lines plus a figure; different breadth is not an error.",
@@ -272,9 +299,11 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "historicalMusic",
+        "historicalOtp"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep narrower asserted selection boundaries alongside broader locator context; their difference need not be an error."
     },
     "source-support-sourcespans-items-sourceref": {
       "definition": "reference to the source identity/acquisition record, distinct from snapshot and locator.",
@@ -286,9 +315,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "acquisition"
+        "acquisition",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep source identity reference separate from prepared snapshot and locator; the acquisition text's commit does not declare every requested source tuple component."
     },
     "source-support-sourcespans-items-sourceref-id": {
       "definition": "identifier of the source record; pilots use ccn-book, not a claim or span ID.",
@@ -300,9 +330,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "acquisition"
+        "acquisition",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain requested ccn-book ID, but report it unresolved because acquisition has no declared source-record ID."
     },
     "source-support-sourcespans-items-sourceref-path": {
       "definition": "path to the source-acquisition record; it resolves relative to a pilot but does not itself establish immutable bytes.",
@@ -314,9 +345,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "acquisition"
+        "acquisition",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep acquisition path as a readable target; path availability plus a commit string is not record identity or immutable-byte verification."
     },
     "source-support-sourcespans-items-sourceref-revision": {
       "definition": "source-record capture token; pilots use commit-like e0c697b4 while locator and prepared revisions are numeric.",
@@ -328,12 +360,13 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "acquisition"
+        "acquisition",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain requested e0c697b4 and compare it to the recorded full commit prefix; it is observed correspondence, not a declared source-record revision."
     },
     "source-support-sourcespans-items-sourcesnapshotref": {
-      "definition": "reference to the prepared snapshot record bounding the inspected representation, distinct from source identity.",
+      "definition": "reference to a source snapshot or representation record bounding inspected material; pilots happen to use a prepared-source manifest, one observed target role.",
       "evidence_ids": [
         "frozenInventory",
         "template",
@@ -342,12 +375,13 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "manifest"
+        "manifest",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Treat this as a general snapshot reference; separately record that pilots point to a prepared manifest rather than equating all snapshots with preparation."
     },
     "source-support-sourcespans-items-sourcesnapshotref-id": {
-      "definition": "prepared snapshot identifier ps-ccn-book-pilot-20260911 linking a span to its manifest.",
+      "definition": "identifier of the referenced snapshot/representation record; pilots use ps-ccn-book-pilot-20260911 for a prepared-source record.",
       "evidence_ids": [
         "frozenInventory",
         "template",
@@ -356,12 +390,13 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "manifest"
+        "manifest",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain pilot prepared-source ID and its target declaration without promoting this local identifier into universal snapshot semantics."
     },
     "source-support-sourcespans-items-sourcesnapshotref-path": {
-      "definition": "path to a prepared-source manifest; it records upstream provenance, not semantic support alone.",
+      "definition": "path to the referenced snapshot/representation record; pilot paths target a prepared-source manifest.",
       "evidence_ids": [
         "frozenInventory",
         "template",
@@ -370,12 +405,13 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "manifest"
+        "manifest",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep the manifest path as preparation provenance; it does not independently verify upstream bytes or source-support relation."
     },
     "source-support-sourcespans-items-sourcesnapshotref-revision": {
-      "definition": "prepared snapshot record revision; pilot numeric 1 does not by itself prove immutable bytes.",
+      "definition": "revision of the referenced snapshot/representation record; pilot numeric 1 is the manifest's declared revision, not an upstream byte claim.",
       "evidence_ids": [
         "frozenInventory",
         "template",
@@ -384,9 +420,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "manifest"
+        "manifest",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain manifest revision 1, which is declared for the preparation record but not proof of the upstream source revision."
     },
     "source-support-sourcespans-items-spanid": {
       "definition": "local identifier for a selected span; no global uniqueness rule is established.",
@@ -399,7 +436,7 @@
         "pilotPattern",
         "guide"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep local selected-span identity; do not infer global uniqueness or merge spans by similar content."
     },
     "source-support-sourcesupportstatus": {
       "definition": "observed assertion-to-span relation label: template unassessed; pilots candidate-supported or candidate-supported-with-caveat. It is not verification, grade, or an exhaustive vocabulary.",
@@ -411,9 +448,11 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "historicalGuide"
+        "historicalGuide",
+        "historicalMusic",
+        "historicalOtp"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Preserve observed unassessed/candidate labels as scoped relation statements; do not turn them into closed vocabulary, grade, verification, or admission."
     },
     "source-support-subjectref": {
       "definition": "reference to the assertion evaluated by support; pilots identify claims, while template conventions also permit an edge or identifiable CQ coverage assertion.",
@@ -432,12 +471,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep subject linkage to an assertion and its construct type; a heading text match is a bounded lookup observation, not literal-anchor proof."
     },
     "source-support-subjectref-id": {
       "definition": "identifier of the asserted subject, distinct from support root and span IDs; pilot values are claim-* IDs.",
@@ -456,12 +492,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Compare requested claim ID with the matching claim heading; retain that embedded claim ID/revision is not separately declared in frontmatter."
     },
     "source-support-subjectref-path": {
       "definition": "path and anchor locating the subject declaration; it requires agreement with identifier, type, and revision.",
@@ -480,12 +513,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep literal card path/fragment and name the unresolved fragment convention rather than silently treating a heading as a Markdown anchor."
     },
     "source-support-subjectref-recordtype": {
       "definition": "construct type of the subject; pilots use claim and synthetic conventions illustrate edge/CQ roles.",
@@ -504,12 +534,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain requested claim type; target cards declare concept-card at root, while claim is only the indicated embedded assertion."
     },
     "source-support-subjectref-revision": {
       "definition": "revision of the asserted subject; pilots use numeric 1, a local reference convention rather than a universal datatype.",
@@ -528,12 +555,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Preserve requested claim revision 1 but do not substitute the target card revision for an independently declared claim revision."
     }
   },
   "memberships": [
@@ -550,7 +574,7 @@
         "pilotPattern",
         "guide"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain the collection boundary so separately selected materials do not collapse into one unsupported quotation or verdict."
     },
     {
       "field_path": "source_spans[]",
@@ -565,7 +589,7 @@
         "pilotPattern",
         "guide"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep each selected span distinct from the support root and other spans; dropping it loses assertion-specific selection."
     },
     {
       "field_path": "source_spans[].checksum_or_edition_note",
@@ -582,7 +606,7 @@
         "acquisition",
         "locatorMap"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep a note as narrative/pointer evidence; do not parse it as a checksum or infer immutable-byte identity."
     },
     {
       "field_path": "source_spans[].content_or_description",
@@ -595,9 +619,11 @@
         "pilotMemory",
         "pilotModel",
         "pilotPattern",
-        "guide"
+        "guide",
+        "historicalMusic",
+        "historicalOtp"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain whether selected content is quoted or paraphrased; no retained quote differs from missing content and does not prove fidelity."
     },
     {
       "field_path": "source_spans[].context",
@@ -612,7 +638,7 @@
         "pilotPattern",
         "guide"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep qualifications, figure and citation limits adjacent to the selection; dropping context can overstate the span."
     },
     {
       "field_path": "source_spans[].locator_refs",
@@ -626,9 +652,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Preserve all locator references so text and figure addresses remain separate selections rather than one invented address."
     },
     {
       "field_path": "source_spans[].locator_refs[]",
@@ -642,9 +669,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep each locator reference and its unresolved fragment semantics; a table-ID lookup is not a demonstrated URL-anchor resolver."
     },
     {
       "field_path": "source_spans[].locator_refs[].id",
@@ -658,9 +686,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Use the locator ID to find the named map row, while recording that map rows do not independently declare locator revision or fragment anchors."
     },
     {
       "field_path": "source_spans[].locator_refs[].path",
@@ -674,9 +703,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep the literal relative path/fragment for a named consumer; without a documented fragment convention it remains an unresolved resolution component."
     },
     {
       "field_path": "source_spans[].locator_refs[].revision",
@@ -690,9 +720,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain requested numeric revision, but do not treat pilot value 1 as declared by the locator-map target or universally typed."
     },
     {
       "field_path": "source_spans[].quote_policy",
@@ -705,9 +736,11 @@
         "pilotMemory",
         "pilotModel",
         "pilotPattern",
-        "guide"
+        "guide",
+        "historicalMusic",
+        "historicalOtp"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Preserve the policy because it explains quotation retention, not legal permission or semantic warrant."
     },
     {
       "field_path": "source_spans[].selection_boundaries",
@@ -721,9 +754,11 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "locatorMap"
+        "locatorMap",
+        "historicalMusic",
+        "historicalOtp"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep narrower asserted selection boundaries alongside broader locator context; their difference need not be an error."
     },
     {
       "field_path": "source_spans[].source_ref",
@@ -737,9 +772,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "acquisition"
+        "acquisition",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep source identity reference separate from prepared snapshot and locator; the acquisition text's commit does not declare every requested source tuple component."
     },
     {
       "field_path": "source_spans[].source_ref.id",
@@ -753,9 +789,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "acquisition"
+        "acquisition",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain requested ccn-book ID, but report it unresolved because acquisition has no declared source-record ID."
     },
     {
       "field_path": "source_spans[].source_ref.path",
@@ -769,9 +806,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "acquisition"
+        "acquisition",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep acquisition path as a readable target; path availability plus a commit string is not record identity or immutable-byte verification."
     },
     {
       "field_path": "source_spans[].source_ref.revision",
@@ -785,9 +823,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "acquisition"
+        "acquisition",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain requested e0c697b4 and compare it to the recorded full commit prefix; it is observed correspondence, not a declared source-record revision."
     },
     {
       "field_path": "source_spans[].source_snapshot_ref",
@@ -801,9 +840,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "manifest"
+        "manifest",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Treat this as a general snapshot reference; separately record that pilots point to a prepared manifest rather than equating all snapshots with preparation."
     },
     {
       "field_path": "source_spans[].source_snapshot_ref.id",
@@ -817,9 +857,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "manifest"
+        "manifest",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain pilot prepared-source ID and its target declaration without promoting this local identifier into universal snapshot semantics."
     },
     {
       "field_path": "source_spans[].source_snapshot_ref.path",
@@ -833,9 +874,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "manifest"
+        "manifest",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep the manifest path as preparation provenance; it does not independently verify upstream bytes or source-support relation."
     },
     {
       "field_path": "source_spans[].source_snapshot_ref.revision",
@@ -849,9 +891,10 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "manifest"
+        "manifest",
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain manifest revision 1, which is declared for the preparation record but not proof of the upstream source revision."
     },
     {
       "field_path": "source_spans[].span_id",
@@ -866,7 +909,7 @@
         "pilotPattern",
         "guide"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep local selected-span identity; do not infer global uniqueness or merge spans by similar content."
     },
     {
       "field_path": "source_support_status",
@@ -880,9 +923,11 @@
         "pilotModel",
         "pilotPattern",
         "guide",
-        "historicalGuide"
+        "historicalGuide",
+        "historicalMusic",
+        "historicalOtp"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Preserve observed unassessed/candidate labels as scoped relation statements; do not turn them into closed vocabulary, grade, verification, or admission."
     },
     {
       "field_path": "subject_ref",
@@ -903,12 +948,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep subject linkage to an assertion and its construct type; a heading text match is a bounded lookup observation, not literal-anchor proof."
     },
     {
       "field_path": "subject_ref.id",
@@ -929,12 +971,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Compare requested claim ID with the matching claim heading; retain that embedded claim ID/revision is not separately declared in frontmatter."
     },
     {
       "field_path": "subject_ref.path",
@@ -955,12 +994,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Keep literal card path/fragment and name the unresolved fragment convention rather than silently treating a heading as a Markdown anchor."
     },
     {
       "field_path": "subject_ref.record_type",
@@ -981,12 +1017,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Retain requested claim type; target cards declare concept-card at root, while claim is only the indicated embedded assertion."
     },
     {
       "field_path": "subject_ref.revision",
@@ -1007,12 +1040,9 @@
         "targetMemory",
         "targetModel",
         "targetPattern",
-        "targetEmergent",
-        "targetMemory",
-        "targetModel",
-        "targetPattern"
+        "skillReferenceRules"
       ],
-      "disposition": "Preserve this field's observed value/shape and its stated boundary; do not turn path resolution, preparation provenance, or a relation label into independent verification or admission."
+      "disposition": "Preserve requested claim revision 1 but do not substitute the target card revision for an independently declared claim revision."
     }
   ]
 }

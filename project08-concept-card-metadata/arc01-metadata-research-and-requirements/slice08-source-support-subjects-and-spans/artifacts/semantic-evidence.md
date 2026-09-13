@@ -8,13 +8,23 @@ unpopulated: subject_ref and source/span targets are null, locator_refs is
 empty, and source_support_status is unassessed. These are representational
 placeholders, not missing successful support.
 
-Each pilot names a claim subject with id, path/anchor, record_type claim, and
-revision 1. All four anchors resolve in the registered candidate cards and agree
-with the declared claim IDs. This structural agreement does not verify that the
-candidate claim is warranted. Each span uses source_ref ccn-book with
-commit-like revision e0c697b4, a prepared snapshot ref at revision 1, and one
-or two locator refs at revision 1. The distinct observed revision shapes make
-id/path/revision a three-part reference check, not interchangeable metadata.
+The actual concept-cards reference convention treats id, revision and path as
+separate identity components: paths locate records, while IDs/revisions preserve
+identity; unknown or inaccessible references remain explicit. It does not
+specify a universal Markdown fragment resolver or let a root card revision
+stand in for an embedded claim revision.
+
+## Bounded reference matrix
+
+| Ref kind and referring supports | Requested tuple | Target declaration / lookup | Result and consequence |
+| --- | --- | --- | --- |
+| subject_ref; all four supports | claim ID; revision 1; candidate-card path plus fragment; record_type claim | Each target card has matching Claim heading text and root record_type concept-card/revision 1. No target declares an embedded claim record revision or explicit fragment anchor. | Heading-text lookup finds the indicated assertion here; literal fragment resolution, claim type declaration, and claim revision remain unresolved. |
+| source_ref; all four | ccn-book; e0c697b4; source-acquisition.md | Acquisition records full upstream commit e0c697b4d4... and sampled hashes, but no source-record ID ccn-book or source-record revision field. | Commit prefix correspondence is observed; requested source ID and revision declaration are unresolved. |
+| source_snapshot_ref; all four | ps-ccn-book-pilot-20260911; revision 1; prepared-source-manifest.md | Manifest table declares precisely that prepared-source ID and revision 1, plus upstream input and representation/caveats. | ID/revision/path agree for a prepared-source record, but this neither makes every snapshot preparation-derived nor verifies upstream bytes. |
+| locator_refs; all four | loc ID; revision 1; locator-map.md plus fragment | Locator IDs appear as table-cell IDs with resources/ranges; map has no explicit per-locator revision or named fragment anchors. | Row lookup by ID works. Literal fragment and requested revision are unresolved. |
+
+The matrix is structural/reference evidence only. It neither repairs pilots nor
+establishes that a selected span semantically warrants a claim.
 
 The source-acquisition record identifies the upstream commit and sampled
 chapter hashes; the prepared manifest identifies the directly inspected Markdown
@@ -47,12 +57,19 @@ verification_state unassessed.
 
 ## Historical and synthetic boundaries
 
-The historical v3.2 guide can carry source/provenance metadata, Source Reference
-citations, and Verification Notes, but it has no explicit assertion-to-selected-
-span record. That comparison is capability-oriented, not proof that no
-historical card elsewhere carried equivalent links. The current explicit
-subject/span mapping adds inspectable assertion scope, selected boundaries and
-caveats; it still leaves independent verification and source truth unresolved.
+The inspected Accent Types card carries source metadata, a human-readable Source
+Reference with pages 43--46, and Verification Notes naming direct source and
+confidence rationale. The OTP Behaviour card carries a source/section reference
+and notes a directly quoted definition, confidence rationale and cross-reference
+status. These bodies carry readable citation and limited review notes; neither
+supplies machine assertion IDs, selected span boundaries, quote policy,
+source/snapshot tuples, or independent verification results.
+
+The historical v3.2 guide provides provenance, Source Reference and Verification
+Notes conventions. The bounded samples do not prove historical global absence
+or query equivalence. Explicit subject/span mapping adds inspectable assertion
+scope, selected boundaries and caveats; it still leaves independent verification
+and source truth unresolved.
 
 Synthetic claim, edge, and CQ examples show that source support can subject a
 claim, relation assertion, or identifiable CQ coverage assertion. They are

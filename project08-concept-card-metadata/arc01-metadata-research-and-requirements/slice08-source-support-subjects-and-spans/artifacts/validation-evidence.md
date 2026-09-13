@@ -35,7 +35,17 @@ for f in \
   .worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-model-data-constraints.md \
   .worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-pattern-separation.md
 do test -f "$f"; done
-git -C .worktrees/planning rev-parse 1bacd954 d977cb31
+rg -n '^### Claim' \
+  .worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-{emergent-explanation,memory-consolidation,model-data-constraints,pattern-separation}.md
+rg -n 'Prepared-source ID|Revision|e0c697b4|loc-ch01-model-constraints|loc-ch01-emergence|loc-ch07-pattern-separation|loc-ch07-consolidation' \
+  .worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/{source-acquisition.md,prepared-source-manifest.md,locator-map.md}
+sed -n '69,78p' /Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/accent-types.md
+sed -n '126,140p' knowledge/erlang/concept-cards/otp-design-principles/behaviour.md
+git -C .worktrees/planning diff --exit-code d977cb31 2dfe5577 -- \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice07-source-identity-and-locator-semantics
 git -C .worktrees/planning diff --exit-code d977cb31 -- \
   project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions \
   project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families \
@@ -46,9 +56,12 @@ git status --short
 ~~~
 
 Results: the table-derived set is exactly 27 unique frozen pairs and is disjoint
-from the 67 accepted pairs. Both evidence layers resolve. All registered hashes
-and all four declared claim-target paths pass. The census returns the five
-roots with the null/empty template and populated pilot shapes described in
-semantic-evidence.md. Historical endpoints 1bacd954 and d977cb31 are pinned;
-the separate current-state check is empty for Slice01/04/06/07. Whitespace is
-clean. These are same-context CC checks, not independent source verification.
+from the 67 accepted pairs. Both evidence layers resolve and all registered
+hashes pass. The heading, acquisition/manifest and locator-map queries produce
+the matrix findings: heading/row lookup is observed, while literal fragments,
+embedded claim revisions, locator revisions, and source-record ID/revision
+declarations are unresolved. Historical body inspection confirms readable source
+references/notes but not machine support tuples. The fixed d977cb31-to-2dfe5577
+prior-packet diff is empty; the separate current-state check is empty for
+Slice01/04/06/07. Whitespace is clean. These are same-context CC checks, not
+independent source verification.
