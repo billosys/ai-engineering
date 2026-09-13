@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.6"
+version: "1.7"
 ---
 
 # Concept Card Metadata
@@ -163,6 +163,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.7 (2026-09-12): Arc01 Slice04 follow-up reports diagnosis without new
+  semantic artifacts. Authorizes one bounded identity-evidence checkpoint
+  within the existing corrective iteration before sizing further execution.
+  Was: whole-packet repair as the next delivery. All outcomes and gates remain.
 
 - 1.6 (2026-09-12): Arc01 Slice04 review reproduces exact 555-pair coverage
   but finds incorrect semantic assignments and missing evidence/closeout.

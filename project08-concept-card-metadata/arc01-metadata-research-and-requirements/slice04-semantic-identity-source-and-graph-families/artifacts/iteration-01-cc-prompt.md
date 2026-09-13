@@ -1,5 +1,13 @@
 # Slice04 Iteration 01: Correct And Ground The Semantic Packet
 
+## Current Execution Checkpoint
+
+The diagnosis-only follow-up did not produce a semantic repair. Execute
+`iteration-01-batch01-cc-prompt.md` first (sibling to this file). Its two
+partial artifacts and restricted write scope explicitly amend the next run's
+delivery instructions below. The full rewrite and eight-row acceptance
+contract remain mandatory; the checkpoint is not slice completion.
+
 ## Continuation After The Status Correction
 
 Commit `41df3361` corrects the handoff and closing-report status only. CDC

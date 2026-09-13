@@ -2,6 +2,10 @@
 
 ## Current Assignment: Iteration 01
 
+Next run: execute `artifacts/iteration-01-batch01-cc-prompt.md`. It defines
+a bounded first evidence-producing checkpoint under this same iteration;
+the full correction prompt remains the overall acceptance contract.
+
 The packet in `76d284f4` passes exact mechanical pair coverage but fails
 semantic and evidence review. Read `cdc-verification.md`, then execute
 `artifacts/iteration-01-cc-prompt.md` in a fresh context. The original plan

@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice04-semantic-identity-source-and-graph-families
 status: iteration-01-required
-version: "1.1"
+version: "1.2"
 ---
 
 # Semantic Identity, Source And Graph Families
@@ -14,6 +14,21 @@ is the first of two planned sibling remediation slices, not standards research
 or a metadata schema decision.
 
 ## Basis And Dependencies
+
+Next execution is the
+[Batch01 identity-evidence checkpoint](./artifacts/iteration-01-batch01-cc-prompt.md)
+within Iteration 01. The latest CC report confirms the diagnosis but supplies
+no semantic rewrite. This checkpoint supersedes the whole-packet delivery
+expectation for the next CC run only; the complete correction remains required.
+
+Produce `artifacts/batch01-identity-evidence.md` and
+`artifacts/batch01-identity-membership.json` for ten enumerated identity/label
+pairs. Keep the existing full map unaccepted and unchanged during this
+checkpoint. Update this slice's ledger evidence, handoff and existing report
+as partial progress, not slice proposed-done. CDC reviews the batch, then
+sizes the remaining work and its integration into the six required final
+artifacts. A verified batch does not satisfy the all-assigned-field criteria.
+Do not introduce an unlimited batch hierarchy to avoid actual slice sizing.
 
 Current review: `76d284f4` has an independently reproduced complete partition,
 but its semantic packet does not meet the ledger. Follow
@@ -107,6 +122,11 @@ CDC independently verifies it and sizes/opens Slice05. This slice alone does
 not close Slice01 or establish full semantic coverage.
 
 ## Version History
+
+- 1.2 (2026-09-12): Adds one initial ten-pair identity-evidence checkpoint and
+  two durable partial artifacts after a diagnosis-only follow-up. Was:
+  whole-packet repair as next delivery. Same iteration, scope and eight criteria;
+  later work and final integration must still be explicitly planned and verified.
 
 - 1.1 (2026-09-12): CDC review reproduces 555-pair coverage but requires
   Iteration 01 for semantic errors, incomplete evidence and missing ledger

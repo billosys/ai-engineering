@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.6"
+version: "1.7"
 ---
 
 # Metadata Research And Requirements
@@ -40,6 +40,15 @@ competency questions or requirements engineering. Seek benefits and costs, not
 standards adoption for its own sake.
 
 ## Acceptance And Handoff
+
+Current execution: Slice04's follow-up audit report supplied no new semantic
+artifact or commit. Begin with its `artifacts/iteration-01-batch01-cc-prompt.md`:
+ten explicit concept-identity/label pairs, with actual contextual evidence.
+This is one initial review checkpoint inside Iteration 01, not another slice,
+iteration reset or reduced acceptance target. Review the resulting artifact
+before sizing the remaining repair; add bounded slices if warranted rather
+than concealing a multi-slice workload behind unlimited batches. The original
+ledger and all 555-pair coverage requirements remain in force.
 
 Slice04 review of `76d284f4`: CDC reproduces 303 assigned plus 252 remainder
 pairs, with no missing, extra or duplicate pairs. Semantic-family assignments
@@ -111,6 +120,11 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.7 (2026-09-12): Slice04 diagnosis-only follow-up prompts a bounded first
+  identity-evidence checkpoint. Was: another whole-packet correction handoff.
+  Requires concrete authored output before further sizing; no row closure,
+  new hierarchy, or transfer to Slice05.
 
 - 1.6 (2026-09-12): Slice04 CDC review finds incorrect family assignments,
   unsupported semantic claims and incomplete input/validation/row evidence

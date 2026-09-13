@@ -190,3 +190,25 @@ slice, scope amendment or plan-version bump is warranted by a status-only
 correction. All ledger statuses remain unchanged. Incorrectly assigned
 lifecycle meanings may move to their proper Slice05 owner with evidence;
 unreviewed in-scope Slice04 work may not be transferred to rebalance counts.
+
+## Diagnosis-Only Follow-Up And First Evidence Checkpoint
+
+Date: 2026-09-12. CC reports auditing the counterexamples, confirming the need
+for a full evidence-backed rewrite, and making no commit. Planning HEAD is
+still `aa2c472d`; both worktrees are clean. No new artifact makes the
+reported audit independently inspectable. Treat it as a CC-reported diagnosis,
+not additional verified semantics or a resolved finding.
+
+The rewrite was already authorized. Another broad instruction has not produced
+substantive output, so the next execution is one concrete, bounded checkpoint:
+ten concept-identity/label pairs, fully evidenced, under the same Iteration 01.
+The new prompt is `artifacts/iteration-01-batch01-cc-prompt.md`; no new slice
+or iteration is opened and no original criterion is removed.
+
+The existing membership index confirms that all ten selected pairs exist.
+CC must preserve the full mechanical partition, author a separate partial
+evidence packet, and distinguish that packet from the still-unaccepted full
+map. CDC will review the evidence and then size the remaining work. The other
+545 mechanical pairs remain outside this first checkpoint, including work
+already reserved for Slice05; they are not silently dropped or all reassigned.
+No semantic acceptance, package gate or corpus regeneration is claimed here.
