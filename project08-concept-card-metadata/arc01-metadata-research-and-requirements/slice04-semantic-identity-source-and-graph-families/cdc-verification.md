@@ -166,3 +166,27 @@ not propagate incorrect assignments into Slice05.
 Iteration 01 is prepared in `artifacts/iteration-01-cc-prompt.md`.
 Project/arc/slice plans record the failed review and unchanged criteria.
 Slice05 remains reserved, Slice02/03 unopened, and Slice01 unclosed.
+
+## Status-Correction Review: 41df3361
+
+Date: 2026-09-12. Accepted as an honest correction of the completion claim,
+not as completion of Iteration 01 or resolution of its substantive findings.
+The commit changes only `artifacts/handoff.md` and `closing-report.md`.
+The semantic map, remainder, family analysis, input register, validation
+record and ledger are unchanged. Their prior review findings therefore remain.
+
+Independently inspected the complete two-file diff and the unchanged semantic
+and evidence paths; `git diff 41df3361^ 41df3361 --check` passed in the planning
+worktree. Source and planning statuses were clean before this review.
+No new semantic result or fresh corpus/package validation is claimed.
+
+The revised report correctly withdraws proposed-done. Its title still carries
+the historical proposed-done label, and "Slice02 remain open" must be read
+against the plan: Slice02 has not been opened. These wording details do not
+replace the substantive work already assigned.
+
+Continue the existing `artifacts/iteration-01-cc-prompt.md`; no new iteration,
+slice, scope amendment or plan-version bump is warranted by a status-only
+correction. All ledger statuses remain unchanged. Incorrectly assigned
+lifecycle meanings may move to their proper Slice05 owner with evidence;
+unreviewed in-scope Slice04 work may not be transferred to rebalance counts.

@@ -1,5 +1,15 @@
 # Slice04 Iteration 01: Correct And Ground The Semantic Packet
 
+## Continuation After The Status Correction
+
+Commit `41df3361` corrects the handoff and closing-report status only. CDC
+accepts that correction; it does not complete this assignment. Continue this
+same Iteration 01 with the substantive work below, starting from the current
+checkout. Another status-only report is not the requested semantic repair.
+Correct ownership according to evidence; the 303/252 counts are not frozen.
+If capacity is the blocker, report concrete completed/remaining family work
+and a bounded sizing proposal, not merely a repetition of the review findings.
+
 Use a fresh CC context. Read Project08 AGENTS.md, the current project/arc/slice
 plans and ledgers, this slice's `cdc-verification.md`, and the original
 `cc-prompt.md` load set. Repair commit `76d284f4`; preserve its history.
