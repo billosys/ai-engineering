@@ -1,5 +1,112 @@
 # CDC Verification: Slice07
 
+## Iteration 02 Review: e99fddbb
+
+CDC review on 2026-09-13: **changes required, narrowed**. S7-R3 is resolved.
+The original generic-registry failure is repaired, and current locator
+interpretations pass bounded review. Remaining S7-R1/S7-R2 work concerns
+historical meaning and source-family comparison only. Follow
+`artifacts/iteration-03-cc-prompt.md`; earlier routes below are historical.
+
+### Accepted Repairs
+
+The registry now supplies twenty distinct meanings and corresponding
+dispositions; both evidence layers agree. All twelve registered hashes match.
+CDC ran the executable block in `artifacts/validation-evidence.md` literally:
+exact-set equality, uniqueness, frozen inclusion, accepted-47 disjointness,
+reference checks, hashes, seven-field music/Erlang census and preservation pass.
+The row walk and artifact inventory are present. The old prose-only replay
+failure is resolved, not carried forward.
+
+Current locator interpretation distinguishes source/snapshot/resource/form,
+coordinate kind/value, base and endpoints, hints, counterpart references,
+preparation provenance and mapping evidence. The template, synthetic PDF/EPUB
+cases and actual external Arc07 map supply bounded evidence, not proof of
+conversion, original mapping or claim support. Those distinctions are accepted
+without claiming a complete standalone populated-locator corpus or schema.
+
+### Remaining Historical Gap: S7-R1/S7-R2
+
+`untyped-source_slug` remains only a "local source-family lookup label" in
+the registry. Both registered historical guides explicitly define it as the
+source directory name. The successor adds the leaf relationship under
+`sources/md/` and `concept-cards/`, not the directory interpretation itself.
+That is a practical path-based lookup capability the crosswalk should retain,
+while still rejecting global or snapshot identity. Distinguish intended
+directory coupling from whether sampled local paths actually conform.
+
+`untyped-pdf_page` is described only as an observed coordinate of unknown
+basis. Both guides specify extraction from the chapter's metadata header.
+Keep that intended provenance/granularity separate from the observed card
+value and from concept-specific body citations. This does not prove what
+header generated Accent Types, establish physical/printed page basis or
+authorize a fixed offset. It explains why retaining just a number loses a
+historically specified input relationship.
+
+The same v3.2 guide's **Non-Integer Chapter Numbers** and **Sources with No
+PDF (Pure Markdown or HTML-Origin)** provide contextual null rules and
+section/fragment fallback. Retain these normative instructions alongside
+observed nulls, without inferring that any particular null proves its cause.
+Register these exact additional sections for affected meanings. This is
+historical preservation, not new field ownership or schema design.
+
+The executable census now covers all seven fields but still merges every
+Erlang source family. The original requirement to retain relevant source-family
+differences remains unmet. CDC's bounded source_slug grouping shows 13 groups:
+all 224 numeric Erlang pdf_page values belong to design-scale-erlang-otp;
+erlang-in-anger has 94 null pages and chapter_number split 93 numeric/1 null;
+otp-design-principles has 105 null pages and null chapter numbers. A single
+non-book sample plus pooled Erlang totals cannot show that distinction.
+Add the literal source-family comparison and interpretation, retaining values/
+shapes and missingness. Null pages do not establish source format.
+
+### Independent Additional Checks
+
+From the source root, CDC ran:
+
+~~~bash
+set -eu
+jq '[.records[]|select(.path|test("concept-cards/complete-musician/|knowledge/erlang/concept-cards/"))]
+  |group_by(.values.source_slug)
+  |map({source_slug:.[0].values.source_slug,records:length,
+    page_shapes:([.[].shapes.mapping.pdf_page]|group_by(.)|map({shape:.[0],count:length})),
+    chapter_number_shapes:([.[].shapes.mapping.chapter_number]|group_by(.)|map({shape:.[0],count:length}))})' \
+  .worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+sed -n '118,136p' .worktrees/planning/old/dev/concept-cards/0007-howto-concept-card-extraction-with-claude-code-v3.1.md
+sed -n '125,145p' .worktrees/planning/old/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md
+sed -n '818,834p' .worktrees/planning/old/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md
+git -C .worktrees/planning diff --exit-code 08d682b0 e99fddbb -- \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families \
+  project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification
+git -C .worktrees/planning show --check e99fddbb
+~~~
+
+Results: source-family counts above; historical definitions and null rules as
+described; preserved packets unchanged; commit whitespace clean. The delivery
+changes exactly six authorized planning files. Source remains unchanged.
+These checks review historical metadata conventions, not musical/Erlang claim
+correctness. No package/install or extraction run was needed.
+
+### Row Walk And Next Work
+
+| Row | CDC disposition | Evidence |
+| --- | --- | --- |
+| S7-1 | done, reproduced | Twelve inputs registered with resolvable identities, sections, roles and hashes |
+| S7-2 | done, reproduced | Exact twenty unique frozen pairs; accepted-47 disjointness |
+| S7-3 | open | Remaining historical conventions and source-family comparison above |
+| S7-4 | done, reproduced | Thirteen contextual locator meanings and bounded evidence distinctions |
+| S7-5 | open | Retain historical directory/header/null semantics in affected dispositions |
+| S7-6 | done, reproduced | Literal checks, individual row report, inventory and handoff now present |
+| S7-7 | done, reproduced | Six-file scope, prior-packet/source preservation and whitespace |
+
+Accepted rows describe this reviewed revision and must be rechecked if affected
+by corrections. Complete the remaining historical comparison within Slice07;
+do not rewrite the accepted current meanings or reopen the original replay
+failure. The added source-family query will also need a reproducible route.
+No new slice opens and no parent closes. Accounting remains 47 accepted / 20
+assigned / 488 other pairs; P-14 and all prior scope/closure gates remain intact.
+
 ## Iteration 01 Review: d077bbe8
 
 CDC review on 2026-09-13: **changes required**. S7-R1/R2/R3 remain open;

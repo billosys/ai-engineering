@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice07-source-identity-and-locator-semantics
 status: changes-required
-version: "1.2"
+version: "1.3"
 ---
 
 # Source Identity And Locator Semantics
@@ -12,7 +12,14 @@ Compare legacy source attribution/location fields with the current source-locato
 contract. Deliver supported meanings and actual lookup/preservation consequences
 without designing a new schema or asserting that an address warrants a claim.
 
-Current CDC review of `d077bbe8` (2026-09-13): useful contextual prose added,
+Current CDC review of `e99fddbb` (2026-09-13): S7-R3 is resolved;
+five criteria are reproduced. S7-R1/S7-R2 retain only historical source
+conventions and source-family comparison, under
+`artifacts/iteration-03-cc-prompt.md`. Was: broad Iteration 02 repair.
+Current locator meanings and the executable replay are accepted within their
+bounded scope. All original pairs and criteria remain unchanged.
+
+Earlier CDC review of `d077bbe8` (2026-09-13): useful contextual prose added,
 but unchanged registry values/evidence, missing comparisons and executable
 replay/closeout keep S7-R1/R2/R3 open. Follow
 `artifacts/iteration-02-cc-prompt.md`. Was: Iteration 01 correction.
@@ -137,6 +144,10 @@ Old allocation counts are accounting, not semantic endorsement. Slice04/01,
 Arc01 and the project remain open.
 
 ## Version History
+
+- 1.3 (2026-09-13): Iteration 02 CDC accepts the registry/current-locator
+  and replay repairs, reproducing five rows. Iteration 03 completes only
+  remaining historical conventions and source-family comparison. No scope drop.
 
 - 1.2 (2026-09-13): Iteration 01 review retains its useful prose additions
   and opens Iteration 02 for actual registry, evidence and replay repairs.
