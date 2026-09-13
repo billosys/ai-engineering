@@ -36,3 +36,8 @@ reported OK; the preservation and whitespace checks exited 0 without output.
 The historical 285933a6 comparison intentionally excludes this slice, so it
 detects any alteration to Slice01/Slice04 packets since the pre-delivery base.
 The checks do not establish semantic correctness or independent verification.
+
+Iteration 02 additionally ran the frozen-inventory per-corpus query: it groups
+records by Complete Musician/Erlang path root and emits each field's presence,
+JSON types, distinct values and value/frequency list. It returned 390 + 1,664
+= 2,054, with all keys present and only Erlang subcategory having 80 nulls.

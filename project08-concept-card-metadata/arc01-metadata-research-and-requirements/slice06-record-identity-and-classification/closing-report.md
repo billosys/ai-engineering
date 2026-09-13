@@ -1,6 +1,6 @@
 # CC Proposed-Done: Arc01 Slice06
 
-Status: proposed-done for CDC review after Iteration 01, not independently verified.
+Status: proposed-done for CDC review after Iteration 02, not independently verified.
 
 Delivered files are artifacts/semantic-evidence.md,
 artifacts/semantic-membership.json, artifacts/validation-evidence.md and

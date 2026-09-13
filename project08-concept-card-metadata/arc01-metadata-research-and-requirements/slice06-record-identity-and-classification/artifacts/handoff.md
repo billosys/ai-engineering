@@ -20,3 +20,7 @@ Slice04 may consume this packet only after CDC review; it does not close
 Slice04, Slice01 or Arc01. Later research must decide any future
 classification/migration design rather than treating these observed legacy
 fields as an accepted schema.
+
+Iteration 02 adds corpus-specific classification vocabulary, present-null
+evidence, Meter's same-source identity, and unchanged v3.1/v3.2 meaning
+comparison. The other 508 pairs retain their existing owners.

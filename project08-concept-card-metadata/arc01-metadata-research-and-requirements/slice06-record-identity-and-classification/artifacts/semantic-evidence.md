@@ -54,6 +54,28 @@ coordinates or a future taxonomy.
 
 ## Limits and handoff
 
+## Iteration 02 corpus-specific completion
+
+Frozen inventory SHA-256 is afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b.
+Complete Musician has 390 records: 10 string category values, 67 string
+subcategory values, and three string tier values. Its category vocabulary
+includes analysis, chords, counterpoint, harmony, rhythm-meter and
+scales-modes; tier frequencies are advanced 141, foundational 79,
+intermediate 170. Erlang has 1,664 records: 16 string category values, 341
+subcategory values (1,584 strings and 80 present nulls), and three string tier
+values. Its categories include applications-releases, distribution,
+otp-behaviours, processes-concurrency and tooling; tiers are advanced 330,
+foundational 403, intermediate 931. All three keys are present in every record
+in both populations. These are raw observations, not normalization or a
+taxonomy-quality verdict.
+
+Meter SHA-256 is 944771789c8e1dcf7fcbdb3d20f48e73d9a58a6eba22780e7f23a6b76fbbc221;
+its frontmatter identifies source_slug complete-musician, so the Accent
+Types/Meter tension is bounded within the same source. v3.1 0007
+Classification lines 103-124 and v3.2 0010 supply the same field/depth
+meanings; no relevant semantic change is observed. Later work must explicitly
+choose preservation/migration treatment rather than presume loss.
+
 This is same-context CC evidence, not CDC verification. It proves neither
 migration loss nor future classification/key policy. The other 508 pairs remain
 with their recorded owners; Slice04 integration awaits CDC review.

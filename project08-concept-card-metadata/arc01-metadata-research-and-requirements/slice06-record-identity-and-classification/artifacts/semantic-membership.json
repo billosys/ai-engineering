@@ -151,6 +151,24 @@
       "sha256": "b942d34237391d7a8d84ad463cd2c25aa72196adbc98797877dabc26a5ba337c",
       "section": "Classification 353-356; tier definition 214-216",
       "role": "historical instructions"
+    },
+    "frozen-inventory": {
+      "path": ".worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json",
+      "sha256": "afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b",
+      "section": "records values for Complete Musician and Erlang roots",
+      "role": "frozen parsed classification census"
+    },
+    "meter-card": {
+      "path": "/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/meter.md",
+      "sha256": "944771789c8e1dcf7fcbdb3d20f48e73d9a58a6eba22780e7f23a6b76fbbc221",
+      "section": "frontmatter source_slug",
+      "role": "named prerequisite source identity"
+    },
+    "v31-classification": {
+      "path": ".worktrees/planning/old/dev/concept-cards/0007-howto-concept-card-extraction-with-claude-code-v3.1.md",
+      "sha256": "8308788db39358a0d28631913b8319e5b4bbf9fd79545b1f16484ea5e47d637c",
+      "section": "Classification lines 103-124",
+      "role": "historical classification instructions"
     }
   },
   "meanings": {
@@ -468,7 +486,10 @@
         "legacy-erlang",
         "legacy-erlang-null",
         "v32-classification",
-        "current-card"
+        "current-card",
+        "frozen-inventory",
+        "meter-card",
+        "v31-classification"
       ],
       "disposition": "preserve observed vocabulary/value state for later disposition; no future taxonomy or migration-loss conclusion"
     },
@@ -479,7 +500,10 @@
         "legacy-erlang",
         "legacy-erlang-null",
         "v32-classification",
-        "current-card"
+        "current-card",
+        "frozen-inventory",
+        "meter-card",
+        "v31-classification"
       ],
       "disposition": "preserve observed vocabulary/value state for later disposition; no future taxonomy or migration-loss conclusion"
     },
@@ -490,7 +514,10 @@
         "legacy-erlang",
         "legacy-erlang-null",
         "v32-classification",
-        "current-card"
+        "current-card",
+        "frozen-inventory",
+        "meter-card",
+        "v31-classification"
       ],
       "disposition": "preserve observed vocabulary/value state for later disposition; no future taxonomy or migration-loss conclusion"
     }
@@ -880,7 +907,10 @@
         "legacy-erlang",
         "legacy-erlang-null",
         "v32-classification",
-        "current-card"
+        "current-card",
+        "frozen-inventory",
+        "meter-card",
+        "v31-classification"
       ],
       "disposition": "preserve observed vocabulary/value state for later disposition; no future taxonomy or migration-loss conclusion"
     },
@@ -893,7 +923,10 @@
         "legacy-erlang",
         "legacy-erlang-null",
         "v32-classification",
-        "current-card"
+        "current-card",
+        "frozen-inventory",
+        "meter-card",
+        "v31-classification"
       ],
       "disposition": "preserve observed vocabulary/value state for later disposition; no future taxonomy or migration-loss conclusion"
     },
@@ -906,7 +939,10 @@
         "legacy-erlang",
         "legacy-erlang-null",
         "v32-classification",
-        "current-card"
+        "current-card",
+        "frozen-inventory",
+        "meter-card",
+        "v31-classification"
       ],
       "disposition": "preserve observed vocabulary/value state for later disposition; no future taxonomy or migration-loss conclusion"
     }
