@@ -39,6 +39,16 @@ jq '[.records[] | select(.path|test("concept-cards/complete-musician/|knowledge/
         shapes:([$r[]|if (.values|has($f)) then .shapes.mapping[$f] else "ABSENT" end]
           | group_by(.) | map({shape:.[0],count:length}))}))})' \
   "$a/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json"
+jq '[.records[] | select(.path|test("concept-cards/complete-musician/|knowledge/erlang/concept-cards/"))
+  | . + {family:(.values.source_slug // "ABSENT")}] | group_by(.family)
+  | map(. as $r | {source_slug:$r[0].family,records:($r|length),
+    fields:(["authors","chapter_number","chapter","pdf_page","section","source_slug","source"]
+      | map(. as $f | {field:$f,present:([$r[]|select(.values|has($f))]|length),
+        missing:([$r[]|select(.values|has($f)|not)]|length),
+        shapes:([$r[]|if (.values|has($f)) then .shapes.mapping[$f] else "ABSENT" end]
+          | group_by(.)|map({shape:.[0],count:length})),
+        distinct_values:([$r[]|select(.values|has($f))|.values[$f]]|unique|length)}))})' \
+  "$a/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json"
 git -C .worktrees/planning diff --exit-code 1bacd954 08d682b0 -- \
   project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions \
   project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families \
@@ -53,10 +63,13 @@ git status --short
 
 Executed results: expected-table equality, length, uniqueness, frozen inventory
 inclusion, and accepted-47 disjointness returned true. Both evidence layers
-resolved and every registered hash returned OK. The full census produced the
-two seven-field families summarized in semantic-evidence.md. The historical
-preservation comparison is pinned from 1bacd954 to 08d682b0, and the separate
-current-status comparison against 08d682b0 is empty for Slice01, Slice04, and
-Slice06. Whitespace is clean. The final status listing is the six authorized
-Slice07 files until this commit is made; the source worktree remains unchanged.
-These are CC-executed checks, not a replacement for CDC reproduction.
+resolved and every registered hash returned OK. The broad and source-family
+censuses produced the two corpus totals and thirteen source_slug groups
+summarized in semantic-evidence.md; every selected family has the seven fields
+present, with per-family shapes/missingness/value distinctions emitted by the
+literal query. The historical preservation comparison is pinned from 1bacd954
+to 08d682b0, and the separate current-status comparison against 08d682b0 is
+empty for Slice01, Slice04, and Slice06. Whitespace is clean. The final status
+listing is the six authorized Slice07 files until this commit is made; the
+source worktree remains unchanged. These are CC-executed checks, not a
+replacement for CDC reproduction.

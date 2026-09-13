@@ -48,12 +48,38 @@ original/mapping evidence.
 ## Historical comparison and limits
 
 v31Guide and checked successor v32Guide both treat the seven fields as
-Provenance/frontmatter and specify pdf_page/section may be null. The v3.2 text
-adds a source-slug directory description but neither guide supplies a snapshot
-identity, locator type/basis, original/prepared counterpart, or
-mapping-evidence record. Thus the historical guidance supports preservation of
-legacy field values, while the current locator material supplies distinctions
-that the old flat frontmatter does not represent.
+Provenance/frontmatter. Both define source_slug as the source directory name;
+v3.2 adds that it is the common leaf under sources/md/ and concept-cards/.
+The OTP sample's concept-cards/otp-design-principles leaf conforms to that
+card-side convention, but no paired source-tree directory was inspected.
+Therefore the relation is retained as intended local lookup behavior, not as
+global identity, a snapshot, or proof of current layout conformance.
+
+Both guides say pdf_page comes from the chapter metadata header or may be null.
+That is an intended input relationship, not evidence of which header produced
+Accent Types, its coordinate basis, or its conversion lineage; its body page
+citations remain separate. v3.2 additionally says chapter_number is null for
+preludes, introductions, unnumbered sections and appendices rather than using
+non-integers, and says no-PDF Markdown/HTML-origin sources use pdf_page null
+and a section-heading or URL-fragment fallback in Source Reference. These are
+normative historical conventions. Neither a sampled chapter_number/pdf_page/
+section null nor a source-family pattern proves its particular reason.
+
+The frozen source-family census has thirteen observed source_slug groups and
+retains all seven fields' presence, shapes and distinct-value counts per group.
+It shows that all 224 numeric Erlang pdf_page values are in
+design-scale-erlang-otp; erlang-in-anger has 94 null pages and chapter
+numbers 93 numeric/1 null; otp-design-principles has 105 null pages and 105
+null chapter numbers. All seven fields are present in these groups, but values
+and shapes vary by family. Those observations motivate preserving local lookup,
+header/null, and fallback semantics without normalizing families or diagnosing
+their formats.
+
+Neither guide supplies a snapshot identity, locator type/basis,
+original/prepared counterpart, or mapping-evidence record. Thus historical
+guidance supports preservation of legacy values and intended relations, while
+the current locator material supplies distinctions that old flat frontmatter
+does not represent.
 
 The registry connects each field to evidence that bears on it. It does not
 claim a schema, migration equivalence, resolved original source, page-offset

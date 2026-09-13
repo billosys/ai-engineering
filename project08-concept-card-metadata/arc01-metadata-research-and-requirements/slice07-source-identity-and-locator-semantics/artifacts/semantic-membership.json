@@ -71,7 +71,7 @@
     "v32Guide": {
       "path": ".worktrees/planning/old/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md",
       "sha256": "56eb092cfed206edf588748e041df9ed53448f941f1dee43684f96994a898cbd",
-      "section": "Provenance and Frontmatter: Field by Field",
+      "section": "Provenance and Frontmatter: Field by Field; Non-Integer Chapter Numbers; Sources with No PDF (Pure Markdown or HTML-Origin)",
       "role": "checked historical successor comparison"
     }
   },
@@ -88,7 +88,7 @@
       "disposition": "Preserve the observed string and its shape; do not split, reconcile, or infer person records from it."
     },
     "untyped-chapter_number": {
-      "definition": "Legacy chapter_number is the observed ordinal for the named chapter. The frozen Erlang corpus includes both numbers and null, so the value cannot be assumed mandatory or universally comparable.",
+      "definition": "Legacy chapter_number is the observed ordinal for the named chapter. Historical guidance requires null, rather than a non-integer, for preludes, introductions, unnumbered sections, and appendices; observed null alone does not establish that reason.",
       "evidence_ids": [
         "legacy",
         "frozenInventory",
@@ -96,7 +96,7 @@
         "v31Guide",
         "v32Guide"
       ],
-      "disposition": "Retain number versus null exactly and keep any numbering basis unknown unless a source-specific record supplies it."
+      "disposition": "Retain number versus null exactly. Preserve the documented appendix/unnumbered convention as guidance, but do not invent a chapter type, numbering basis, or cause for a sampled null."
     },
     "untyped-chapter": {
       "definition": "Legacy chapter is the recorded chapter title, not a stable identifier. It remains text even where a chapter_number accompanies it.",
@@ -176,7 +176,7 @@
       "disposition": "Keep an unavailable original counterpart explicit; do not fabricate a target or claim that a prepared coordinate resolves back to source."
     },
     "untyped-pdf_page": {
-      "definition": "Legacy pdf_page is an observed page coordinate. The music corpus is numeric while many Erlang cards record null; the Accent Types body also uses different page references, so its basis is not established by the field alone.",
+      "definition": "Legacy pdf_page is the page value intended to be taken from the chapter metadata header, or null for a source without a PDF. The stored number remains an observed card value; it does not reveal which header, page basis, or conversion lineage produced it.",
       "evidence_ids": [
         "legacy",
         "frozenInventory",
@@ -185,7 +185,7 @@
         "v31Guide",
         "v32Guide"
       ],
-      "disposition": "Preserve numeric versus null and do not calculate offsets, treat it as printed/physical/converter page, or use it as claim support."
+      "disposition": "Preserve number versus null and the documented header/null intent; do not infer an original header, page offset, printed/physical/converter basis, or claim support from a card value or body citation."
     },
     "source-locator-prepared_locator_ref": {
       "definition": "prepared_locator_ref points to a locator record for a derived/prepared representation, when one is known.",
@@ -243,7 +243,7 @@
       "disposition": "Keep the resource path/URI with the snapshot and representation; a resource alone neither fixes source identity nor supports a claim."
     },
     "untyped-section": {
-      "definition": "Legacy section is the recorded finer-grained heading; the census contains both strings and null.",
+      "definition": "Legacy section is the recorded finer-grained heading when identifiable. For a no-PDF Markdown/HTML-origin source, v3.2 directs citation by section heading or URL fragment; this is a fallback convention, not proof that any stored null has that cause.",
       "evidence_ids": [
         "legacy",
         "frozenInventory",
@@ -251,7 +251,7 @@
         "v31Guide",
         "v32Guide"
       ],
-      "disposition": "Preserve the heading or null without manufacturing a section record or inferring that null means no relevant span."
+      "disposition": "Preserve heading or null and retain the documented heading/fragment fallback without manufacturing a section record, URL fragment, or inapplicability conclusion."
     },
     "source-locator-source_ref": {
       "definition": "source_ref identifies the source record to which a locator belongs, separate from its captured bytes and address.",
@@ -264,7 +264,7 @@
       "disposition": "Use it for source-record linkage only; do not substitute a title, locator, or snapshot and do not infer source support."
     },
     "untyped-source_slug": {
-      "definition": "Legacy source_slug is a local source-family lookup label, distinct from the displayed source title and insufficient to identify an edition or frozen bytes.",
+      "definition": "Legacy source_slug is the historical source directory name. Both guides give that role; v3.2 further describes the same leaf under sources/md/ and concept-cards/. It is a local path-lookup convention, not global, edition, or snapshot identity.",
       "evidence_ids": [
         "legacy",
         "frozenInventory",
@@ -272,7 +272,7 @@
         "v31Guide",
         "v32Guide"
       ],
-      "disposition": "Retain the label as observed; do not promote it to a globally resolvable source or snapshot identifier."
+      "disposition": "Preserve the observed leaf and its intended local directory relation. The sampled OTP card path matches the concept-cards leaf, but do not infer a paired source-tree path, global resolution, or frozen bytes."
     },
     "source-locator-source_snapshot_ref": {
       "definition": "source_snapshot_ref identifies the specific captured bytes or edition/capture record that anchors a locator.",
@@ -321,7 +321,7 @@
         "v31Guide",
         "v32Guide"
       ],
-      "disposition": "Retain number versus null exactly and keep any numbering basis unknown unless a source-specific record supplies it."
+      "disposition": "Retain number versus null exactly. Preserve the documented appendix/unnumbered convention as guidance, but do not invent a chapter type, numbering basis, or cause for a sampled null."
     },
     {
       "field_path": "chapter",
@@ -426,7 +426,7 @@
         "v31Guide",
         "v32Guide"
       ],
-      "disposition": "Preserve numeric versus null and do not calculate offsets, treat it as printed/physical/converter page, or use it as claim support."
+      "disposition": "Preserve number versus null and the documented header/null intent; do not infer an original header, page offset, printed/physical/converter basis, or claim support from a card value or body citation."
     },
     {
       "field_path": "prepared_locator_ref",
@@ -504,7 +504,7 @@
         "v31Guide",
         "v32Guide"
       ],
-      "disposition": "Preserve the heading or null without manufacturing a section record or inferring that null means no relevant span."
+      "disposition": "Preserve heading or null and retain the documented heading/fragment fallback without manufacturing a section record, URL fragment, or inapplicability conclusion."
     },
     {
       "field_path": "source_ref",
@@ -529,7 +529,7 @@
         "v31Guide",
         "v32Guide"
       ],
-      "disposition": "Retain the label as observed; do not promote it to a globally resolvable source or snapshot identifier."
+      "disposition": "Preserve the observed leaf and its intended local directory relation. The sampled OTP card path matches the concept-cards leaf, but do not infer a paired source-tree path, global resolution, or frozen bytes."
     },
     {
       "field_path": "source_snapshot_ref",
