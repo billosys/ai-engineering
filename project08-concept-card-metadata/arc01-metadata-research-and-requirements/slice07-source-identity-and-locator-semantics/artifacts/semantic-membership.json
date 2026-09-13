@@ -1,0 +1,466 @@
+{
+  "artifact_kind": "slice07-semantic-membership",
+  "scope": "exact twenty selected source identity/locator pairs",
+  "evidence": {
+    "legacy": {
+      "path": "/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/accent-types.md",
+      "sha256": "c5af9d16b099430d15d6a6fab2beaa00aea73704021a0c224056a271ffe07fde",
+      "section": "frontmatter and Source Reference",
+      "role": "legacy populated book card"
+    },
+    "locatorTemplate": {
+      "path": "knowledge/concept-cards/templates/source-locator.md",
+      "sha256": "cd4073ca026fa235323a15679417c2e444a1dd34b65b19c55b64d553143be3ad",
+      "section": "frontmatter and Source Identity And Address",
+      "role": "template root locator"
+    },
+    "extractionGuide": {
+      "path": "knowledge/concept-cards/guides/03-extraction.md",
+      "sha256": "e60643e05c79ea8dc5eb93a991e08c32cd4f7a88047d7a6f21f159c1abbe5a7d",
+      "section": "Capture Locators Spans And Source Support lines 111-136",
+      "role": "current method"
+    },
+    "locatorModel": {
+      "path": "knowledge/document-extraction/guides/09-locator-model.md",
+      "sha256": "6d69bd5ff0445af357b1ca39f442db40e25cbf348f7228f1be35484e8019e1ac",
+      "section": "Record Identity Before Position lines 9-32",
+      "role": "locator distinction"
+    },
+    "arc07": {
+      "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-emergent-explanation.md",
+      "sha256": "a7b5b387434bc82885ad013b36ed65d354cdb7687d4d3fa1daaffcebadbcbead",
+      "section": "frontmatter source/prepared references",
+      "role": "generated card references"
+    }
+  },
+  "meanings": {
+    "untyped-authors": {
+      "definition": "Legacy authors is observed source attribution or coordinate metadata; preserve its value/shape without claiming current migration equivalence.",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    "untyped-chapter_number": {
+      "definition": "Legacy chapter_number is observed source attribution or coordinate metadata; preserve its value/shape without claiming current migration equivalence.",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    "untyped-chapter": {
+      "definition": "Legacy chapter is observed source attribution or coordinate metadata; preserve its value/shape without claiming current migration equivalence.",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    "source-locator-context_hint": {
+      "definition": "context_hint is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-locator_type": {
+      "definition": "locator_type is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-locator_value": {
+      "definition": "locator_value is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-mapping_evidence_refs": {
+      "definition": "mapping_evidence_refs is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-numbering_basis": {
+      "definition": "numbering_basis is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-original_locator_ref": {
+      "definition": "original_locator_ref is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "untyped-pdf_page": {
+      "definition": "Legacy pdf_page is observed source attribution or coordinate metadata; preserve its value/shape without claiming current migration equivalence.",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    "source-locator-prepared_locator_ref": {
+      "definition": "prepared_locator_ref is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-prepared_source_refs": {
+      "definition": "prepared_source_refs is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-range_convention": {
+      "definition": "range_convention is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-representation": {
+      "definition": "representation is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "source-locator-resource": {
+      "definition": "resource is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "untyped-section": {
+      "definition": "Legacy section is observed source attribution or coordinate metadata; preserve its value/shape without claiming current migration equivalence.",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    "source-locator-source_ref": {
+      "definition": "source_ref is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "untyped-source_slug": {
+      "definition": "Legacy source_slug is observed source attribution or coordinate metadata; preserve its value/shape without claiming current migration equivalence.",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    "source-locator-source_snapshot_ref": {
+      "definition": "source_snapshot_ref is one locator component; it addresses a source/snapshot/resource position and does not itself establish claim support.",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    "untyped-source": {
+      "definition": "Legacy source is observed source attribution or coordinate metadata; preserve its value/shape without claiming current migration equivalence.",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    }
+  },
+  "memberships": [
+    {
+      "field_path": "authors",
+      "record_kind": "untyped",
+      "meaning_id": "untyped-authors",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    {
+      "field_path": "chapter_number",
+      "record_kind": "untyped",
+      "meaning_id": "untyped-chapter_number",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    {
+      "field_path": "chapter",
+      "record_kind": "untyped",
+      "meaning_id": "untyped-chapter",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    {
+      "field_path": "context_hint",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-context_hint",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "locator_type",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-locator_type",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "locator_value",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-locator_value",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "mapping_evidence_refs",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-mapping_evidence_refs",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "numbering_basis",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-numbering_basis",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "original_locator_ref",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-original_locator_ref",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "pdf_page",
+      "record_kind": "untyped",
+      "meaning_id": "untyped-pdf_page",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    {
+      "field_path": "prepared_locator_ref",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-prepared_locator_ref",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "prepared_source_refs",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-prepared_source_refs",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "range_convention",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-range_convention",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "representation",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-representation",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "resource",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-resource",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "section",
+      "record_kind": "untyped",
+      "meaning_id": "untyped-section",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    {
+      "field_path": "source_ref",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-source_ref",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "source_slug",
+      "record_kind": "untyped",
+      "meaning_id": "untyped-source_slug",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    },
+    {
+      "field_path": "source_snapshot_ref",
+      "record_kind": "source-locator",
+      "meaning_id": "source-locator-source_snapshot_ref",
+      "evidence_ids": [
+        "locatorTemplate",
+        "extractionGuide",
+        "locatorModel",
+        "arc07"
+      ],
+      "disposition": "retain distinct locator identity/basis/mapping component; unknown or null remains explicit"
+    },
+    {
+      "field_path": "source",
+      "record_kind": "untyped",
+      "meaning_id": "untyped-source",
+      "evidence_ids": [
+        "legacy",
+        "extractionGuide",
+        "locatorModel"
+      ],
+      "disposition": "preserve observed source/location distinction; no parsing, edition identity, or null applicability inference"
+    }
+  ]
+}
