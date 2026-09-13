@@ -1,0 +1,1824 @@
+{
+  "artifact_kind": "semantic-membership",
+  "normalization": "Slice01 normalized paths with [] array members; one entry is one observed path/record-kind pair.",
+  "memberships": [
+    {
+      "field_path": "actual_coverage",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "actual_coverage",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "actual_coverage",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "affected_refs",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "aliases",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "aliases",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "aliases[]",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "aliases[]",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "answer_criteria",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "answerability_state",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "answers_questions",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "answers_questions[]",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "applicability",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "applicability",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "assertion_kind",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "authors",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "cannot_prove",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "card_ref",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "card_status",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "category",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "chapter",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "chapter_number",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "checks",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "claim_refs",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "claim_refs[]",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "claim_refs[].id",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "claim_refs[].path",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "claim_refs[].revision",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "comparison_basis",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "competency_question_refs",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "component_refs",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "component_refs[]",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "component_refs[].id",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "component_refs[].revision",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "component_refs[].role",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "concept",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "concept_slug",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "conflict_class",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "context_hint",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "contract_ref",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "contrasts_with",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "contrasts_with[]",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "coverage_assertions",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_assertions[]",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_assertions[].assertion",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_assertions[].component",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_assertions[].coverage_state",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_assertions[].covered_refs",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_assertions[].id",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_assertions[].revision",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_assertions[].source_support_refs",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "coverage_state",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "cq_refs",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "cq_refs[]",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "cq_refs[].id",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "cq_refs[].path",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "cq_refs[].revision",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "cq_status",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "criteria",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "criteria_ref",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "decision",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "decision",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "destination_refs",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "directed",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "direction",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "disposition",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "endpoint_roles",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "endpoint_roles.from_role",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "endpoint_roles.to_role",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "evidence_refs",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "evidence_refs",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "evidence_refs",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "evidence_refs",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "extends",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "extends[]",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "findings",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "from_ref",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "from_ref.id",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "from_ref.revision",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "graph_closure_state",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "id",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "input_source_ref",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "input_source_ref.id",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "input_source_ref.path",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "input_source_ref.revision",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "intended_outputs",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "intended_scope",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "intended_use",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "intended_use",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "inverse_reading",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "locator_type",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "locator_value",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "mapping_evidence_refs",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "meaning",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "method_and_settings",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "method_and_settings",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "numbering_basis",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "observations",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "old_card_inputs",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "operation",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "operator_review_required",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "original_locator_ref",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs.cards",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs.claims",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs.cqs",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs.edges",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs.locators",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs.source_support",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs[]",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs[].id",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs[].record_type",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "output_refs[].revision",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "pdf_page",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "prepared_locator_ref",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prepared_source_ref",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_ref.id",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_ref.path",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_ref.revision",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs[]",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs[]",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs[].id",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs[].id",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs[].path",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs[].path",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs[].revision",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prepared_source_refs[].revision",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "prerequisites",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "prerequisites[]",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "prior_cq_refs",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prior_decision_refs",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prior_decision_refs",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prior_refs",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prior_result_refs",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prior_result_refs",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prior_result_refs",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prior_run_refs",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "prompt_ref",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "question",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "range_convention",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "reconciler",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "reconciler.id",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "reconciler.mode",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "reconciler.role",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "record_type",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "reentry_condition",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "reentry_condition",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "reentry_condition",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "reentry_condition",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "related",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "related[]",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "relation_type",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "relationship_edge_refs",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "relationship_refs",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "relationship_refs[]",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "relationship_refs[].id",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "relationship_refs[].path",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "relationship_refs[].revision",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "relationship_type",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "replacement_cq_ref",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "representation",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "requested_scope",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "requested_scope",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "requirement_source_ref",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "resource",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "resulting_refs",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "retrieval_probe_use",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "retrieval_result_refs",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "retrieval_state",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "revision",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "roles",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "scope",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "section",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "slug",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "source",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_ref",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_refs",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_refs",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_refs[]",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_refs[].id",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_refs[].path",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_refs[].revision",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_slug",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_snapshot",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_snapshot_ref",
+      "record_kind": "source-locator",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_snapshot_refs",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_snapshot_refs",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[]",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].checksum_or_edition_note",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].content_or_description",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].context",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].locator_refs",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].locator_refs[]",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].locator_refs[].id",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].locator_refs[].path",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].locator_refs[].revision",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].quote_policy",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].selection_boundaries",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].source_ref",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].source_ref.id",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].source_ref.path",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].source_ref.revision",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].source_snapshot_ref",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].source_snapshot_ref.id",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].source_snapshot_ref.path",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].source_snapshot_ref.revision",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_spans[].span_id",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs[]",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs[]",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs[].id",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs[].id",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs[].path",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs[].revision",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_refs[].revision",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "source_support_status",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "source-locator"
+    },
+    {
+      "field_path": "statement",
+      "record_kind": "claim",
+      "owner": "slice04",
+      "family_id": "claim-support"
+    },
+    {
+      "field_path": "subcategory",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "subject_ref",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_ref",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_ref.id",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_ref.id",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_ref.path",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_ref.record_type",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_ref.revision",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_ref.revision",
+      "record_kind": "source-support",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_refs",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_refs[]",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_refs[].id",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "subject_refs[].revision",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "surface_class",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "surface_class",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "surface_class",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "surface_class",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "surface_class",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "surface_class",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "symmetry",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "synthetic",
+      "record_kind": "competency-question",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "synthetic",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "synthetic",
+      "record_kind": "extraction-run",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "synthetic",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "synthetic",
+      "record_kind": "reconciliation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "synthetic",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "target_refs",
+      "record_kind": "memory-admission",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "target_refs",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "target_refs",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "tier",
+      "record_kind": "untyped",
+      "owner": "slice04",
+      "family_id": "classification-progression"
+    },
+    {
+      "field_path": "title",
+      "record_kind": "concept-card",
+      "owner": "slice04",
+      "family_id": "identity-labels"
+    },
+    {
+      "field_path": "to_ref",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "to_ref.id",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "to_ref.revision",
+      "record_kind": "relationship-edge",
+      "owner": "slice04",
+      "family_id": "relationship-graph"
+    },
+    {
+      "field_path": "unique_value_summary",
+      "record_kind": "preservation-decision",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "validator_identity",
+      "record_kind": "validation-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "verifier",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "verifier.id",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "verifier.mode",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    },
+    {
+      "field_path": "verifier.role",
+      "record_kind": "verification-result",
+      "owner": "slice04",
+      "family_id": "cq-coverage"
+    }
+  ]
+}

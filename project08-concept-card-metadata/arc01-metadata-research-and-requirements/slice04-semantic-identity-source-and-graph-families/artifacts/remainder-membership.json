@@ -1,0 +1,1015 @@
+{
+  "artifact_kind": "remainder-membership",
+  "owner": "slice05",
+  "reason": "lifecycle, provenance, assessment-result, preservation, admission, operator-gate, or replay integration authority",
+  "memberships": [
+    {
+      "field_path": "actor",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "source-locator"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "validation-result"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "source-locator"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "validation-result"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "source-locator"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "actor.mode",
+      "record_kind": "validation-result"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "source-locator"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "actor.role",
+      "record_kind": "validation-result"
+    },
+    {
+      "field_path": "agent_scope",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "source-locator"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "validation-result"
+    },
+    {
+      "field_path": "created_at",
+      "record_kind": "verification-result"
+    },
+    {
+      "field_path": "decision_authority_ref",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "decision_stage",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "evidence_grade",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "evidence_grade",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "evidence_grade",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "evidence_grade",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "evidence_grade",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "evidence_grade",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "evidence_grade",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "evidence_grade.assessment",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "evidence_grade.assessment",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "evidence_grade.assessment",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "evidence_grade.rationale",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "evidence_grade.rationale",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "evidence_grade.rationale",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "evidence_grade.rubric_ref",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "evidence_grade.rubric_ref",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "evidence_grade.rubric_ref",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "evidence_grade_summary",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "evidence_grade_summary.assessment",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "evidence_grade_summary.basis_refs",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "evidence_grade_summary.rationale",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "extraction_confidence",
+      "record_kind": "untyped"
+    },
+    {
+      "field_path": "extraction_confidence.assessment",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "extraction_confidence.assessment",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "extraction_confidence.assessment",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "extraction_confidence.assessment",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "extraction_confidence.assessment",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "extraction_confidence.rationale",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "extraction_confidence.rationale",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "extraction_confidence.rationale",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "extraction_confidence.rationale",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "extraction_confidence.rationale",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "extraction_confidence.scope",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "extraction_confidence.scope",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "extraction_confidence.scope",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "extraction_confidence.scope",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "extraction_confidence.scope",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "finished_at",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "independence_basis",
+      "record_kind": "verification-result"
+    },
+    {
+      "field_path": "memory_admission",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "memory_admission",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "memory_admission_ref",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "memory_admission_ref",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "memory_admission_ref",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "memory_admission_ref",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "memory_admission_ref",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "memory_admission_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "memory_admission_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "memory_admission_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "memory_admission_refs",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "memory_admission_refs",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "memory_admission_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "method_ref",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "method_ref",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "method_ref",
+      "record_kind": "verification-result"
+    },
+    {
+      "field_path": "method_ref.id",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "method_ref.path",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "method_ref.revision",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "operator_acceptance",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "operator_acceptance.actor_ref",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "operator_acceptance.basis",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "operator_acceptance.decision",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "operator_acceptance.evidence_ref",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "operator_acceptance.required",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "operator_acceptance_ref",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "outcome",
+      "record_kind": "verification-result"
+    },
+    {
+      "field_path": "parallel_worker_count",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "preservation_decision",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "preservation_decision_ref",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "preservation_decision_ref.id",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "preservation_decision_ref.revision",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "preservation_decision_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "preservation_decision_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "preservation_decision_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "preservation_decision_refs",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "preservation_decision_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "preservation_refs",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "preservation_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "preservation_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "preservation_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "preservation_refs",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "preservation_refs",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "preservation_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "preservation_refs",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "preservation_state",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "preservation_summary",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "reconciliation_refs",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "reconciliation_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "reconciliation_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "reconciliation_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "reconciliation_refs",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "reconciliation_refs",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "reconciliation_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "reconciliation_refs",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "reconciliation_result_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "reconciliation_result_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "reconciliation_result_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "reconciliation_result_refs",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "reconciliation_result_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "reconciliation_state",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "reconciliation_state",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "reconciliation_state",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "reconciliation_state",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "reconciliation_state",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "reconciliation_state",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "reconciliation_state_summary",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "reliance_scope",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "review_context",
+      "record_kind": "verification-result"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "source-locator"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "validation-result"
+    },
+    {
+      "field_path": "run_refs",
+      "record_kind": "verification-result"
+    },
+    {
+      "field_path": "run_refs[]",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "run_refs[]",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "run_refs[].id",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "run_refs[].id",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "run_refs[].path",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "run_refs[].path",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "run_refs[].revision",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "run_refs[].revision",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "runtime_write",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "settings",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "started_at",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "state_effects",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "state_effects",
+      "record_kind": "verification-result"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "source-locator"
+    },
+    {
+      "field_path": "validation_refs",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "validation_result",
+      "record_kind": "validation-result"
+    },
+    {
+      "field_path": "validation_result_ref",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "validation_result_ref.id",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "validation_result_ref.revision",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "validation_result_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "validation_result_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "validation_result_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "validation_result_refs",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "validation_result_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "validation_result_refs[]",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "validation_result_refs[].id",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "validation_result_refs[].path",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "validation_result_refs[].revision",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "validation_state",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "validation_summary",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "preservation-decision"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "verification_refs",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "verification_result_ref",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "verification_result_ref.id",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "verification_result_ref.revision",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "verification_result_refs",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "verification_result_refs",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "verification_result_refs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "verification_result_refs",
+      "record_kind": "reconciliation-result"
+    },
+    {
+      "field_path": "verification_result_refs",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "verification_result_refs[]",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "verification_result_refs[].id",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "verification_result_refs[].path",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "verification_result_refs[].revision",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "verification_state",
+      "record_kind": "claim"
+    },
+    {
+      "field_path": "verification_state",
+      "record_kind": "competency-question"
+    },
+    {
+      "field_path": "verification_state",
+      "record_kind": "concept-card"
+    },
+    {
+      "field_path": "verification_state",
+      "record_kind": "relationship-edge"
+    },
+    {
+      "field_path": "verification_state",
+      "record_kind": "source-support"
+    },
+    {
+      "field_path": "verification_state_summary",
+      "record_kind": "memory-admission"
+    },
+    {
+      "field_path": "warnings",
+      "record_kind": "validation-result"
+    },
+    {
+      "field_path": "worker_outputs",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "worker_scope",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "worker_scope.mode",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "worker_scope.roles",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "worker_scope.roles[]",
+      "record_kind": "extraction-run"
+    },
+    {
+      "field_path": "worker_scope.worker_count",
+      "record_kind": "extraction-run"
+    }
+  ]
+}
