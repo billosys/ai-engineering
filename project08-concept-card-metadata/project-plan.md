@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.9"
+version: "1.10"
 ---
 
 # Concept Card Metadata
@@ -58,6 +58,9 @@ research/design decisions. Arc02 will supply the accepted architecture artifact.
 - Real, repeated CC extraction of body and metadata; comparison against the
   historical Complete Musician/Erlang cards and the same CompCogNeuro subset;
   source-type diversity checks; and evidence-driven refinements as needed.
+- A same-chapter Complete Musician trial using the operator's prepared Markdown
+  and actual pre-skill cards, with predeclared measures, independent fresh
+  extractions, bias-controlled review and explicit historical confounds.
 - Full-book CompCogNeuro extraction after subset quality acceptance, with
   coverage and dependency reconciliation. The conditional gate is not a quiet
   deferral: failure returns to refinement; success opens the full-book slices.
@@ -129,6 +132,86 @@ Sampling cannot be relabeled full-book extraction. Full-book findings can reopen
 refinement and require affected subset/full-book reruns. An unavailable input or
 capacity limit is an unresolved condition with a re-entry plan, not proof of done.
 
+## Complete Musician Same-Chapter Trial
+
+Operator addition, 2026-09-13: this is a required Arc04 regression/UAT track,
+not merely another cross-domain illustration. Arc01 Slice03 must carry its
+protocol requirements into the architecture/UAT handoff. Arc04 will open bounded
+intake/protocol, fresh-extraction and comparison/refinement slices when near;
+no chapter or execution slice is selected/opened by this amendment.
+
+Inputs (preserve the actual source-directory spelling):
+
+- Prepared source: `/Users/oubiwann/Dropbox/Apps/sources-md/music-theory/complete-muscician/*.md`.
+- Historical cards: `/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/*.md`.
+
+Both local roots were found during planning. Availability is not edition,
+conversion-fidelity or baseline-lineage verification. Before generation:
+
+1. Freeze eligibility and chapter-selection rules without seeing new outputs.
+   Require a complete readable chapter, accessible relevant notation/images,
+   and traceable older-card coverage. Prefer a recorded seeded selection among
+   eligible chapters; retain exclusions and reasons. Record prior familiarity
+   with chapters/cards rather than claiming a pristine holdout. Freeze the
+   selected chapter before tuning on its outputs.
+2. Pin chapter bytes, source edition/representation, media/dependencies, legacy
+   card files/hashes and any recoverable old prompt/run/edit history. Resolve
+   chapter attribution against content, not filename or chapter_number alone.
+   Explicitly map partial/cross-chapter cards and external prerequisite targets.
+   Do not copy the textbook or images into this public repository; keep source
+   material read-only and retain manifests/review evidence in approved homes.
+3. Pre-register a source-grounded coverage checklist, task boundaries, measures,
+   ordinal score anchors, unacceptable regressions, acceptance rules, run count
+   and stopping conditions. Do this before new generation or scoring. Include
+   definitions, source fidelity, construction/recognition, concrete examples,
+   common errors/confusions, relationships, useful classification, source
+   locators, machine-query capability and body readability. Measure shared
+   capabilities separately from new lifecycle/provenance capabilities; neither
+   old field names nor the new template shape define quality by themselves.
+4. Generate from the chapter afresh, not by re-extracting the legacy cards.
+   Keep legacy outputs, comparison conclusions and this conversation out of the
+   execution context. Use at least two independently identified fresh new-skill
+   runs on the pinned chapter/profile, recording loaded instructions, model/
+   settings, tools, resource access, budgets and interventions. Preserve every
+   raw attempt; manual fixes and revised-profile attempts are separate records.
+   Record any unavoidable installed-skill or memory contamination.
+5. Use source-grounded independent reviewers and randomized anonymous labels
+   with counterbalanced order where feasible. Keep the identity key outside
+   their context until judgments are frozen. For the shared-body comparison,
+   use reversible presentation-only views that hide run labels but preserve
+   substantive text; inspect native metadata separately for actual usability.
+   Do not conceal missing fields, remove awkward material or rewrite either
+   output to improve its score. Record residual style/schema recognizability
+   and reviewer familiarity; blinding reduces bias but cannot guarantee none.
+6. Compare both matched concepts and the entire chapter's coverage. Account for
+   omissions, unsupported additions, duplicates and one-to-many splits/merges;
+   do not cherry-pick matching cards or equate card count with recall. Treat the
+   source as evidence, not the older cards as an infallible answer key. Exercise
+   the same discovery/prerequisite/relationship questions over both native
+   representations, recording mappings and unavailable external dependencies.
+   Any test adapter must not invent relationships from narrative prose.
+7. Report paired findings, disagreements, per-run variability and uncertainty,
+   not just an aggregate winner. Do not treat many cards from one chapter as
+   independent experimental replications or infer full-book/domain superiority.
+   Historical models, inputs, revisions and interventions may be unknown:
+   label this primarily a historical-output regression comparison, not proof
+   that the skill alone caused a difference. If causal attribution is needed,
+   plan a separate matched old-prompt/new-skill rerun on identical inputs and
+   comparable settings, retaining the actual historical cards as a third,
+   distinct baseline rather than replacing them.
+8. Trace material regressions into skill/body/metadata refinement and fresh
+   reruns; do not edit the baseline or move thresholds after seeing results.
+   Record repeated-chapter tuning as contamination and use a separately
+   preselected held-out check before generalizing an improvement. Require
+   independent review plus operator quality acceptance for this track; a
+   mixed/inconclusive result remains explicit, not an automatic success.
+
+This track supplements the existing CompCogNeuro same-subset repetitions,
+five-source-type trials and conditional full-book goal. It replaces none of
+them. Package success, baseline age or a successful single music run cannot
+discharge the new project ledger row P-14. Full-book Complete Musician
+extraction is not added by this bounded chapter requirement.
+
 ## Scope And Version Boundaries
 
 The expected concept-cards delivery range is 4.9.x, continuing the released 4.x
@@ -163,6 +246,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.10 (2026-09-13): Operator adds a required Complete Musician same-chapter
+  historical-output regression/UAT track. Records source/card roots, pre-run
+  selection and scoring, fresh repetitions, bias controls and causal limits.
+  Adds P-14; Arc01 Slice03 plans the protocol, Arc04 executes/refines it.
+  Existing trials and active Slice07 scope are unchanged.
 
 - 1.9 (2026-09-13): Arc01 Slice06 closes after independent review and an
   explicitly attributed CDC replay-documentation completion. Opens Slice07

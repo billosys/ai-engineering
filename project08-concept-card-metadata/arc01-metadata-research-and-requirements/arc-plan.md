@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.12"
+version: "1.13"
 ---
 
 # Metadata Research And Requirements
@@ -42,6 +42,15 @@ competency questions or requirements engineering. Seek benefits and costs, not
 standards adoption for its own sake.
 
 ## Acceptance And Handoff
+
+Operator addition (2026-09-13): Slice03's trial requirements must include
+Project08's Complete Musician same-chapter track (P-14), using the exact
+prepared-Markdown and historical-card roots recorded in the project plan.
+Specify frozen chapter/baseline selection, predeclared source-grounded measures,
+fresh repeated extraction, bias-controlled independent comparison, metadata/
+query checks, historical confounds and refinement/rerun decisions. Arc04
+executes it when the profile is ready. This adds a trial requirement, not
+source/extraction work to Slice07 or a shortcut past inventory/research gates.
 
 Current (2026-09-13): Slice06's seven rows are CDC-closed after `e88e6c0b`.
 CDC added and ran an explicitly attributed literal census command; CC's
@@ -184,6 +193,10 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.13 (2026-09-13): Operator's same-chapter Complete Musician comparison
+  adds P-14 to Slice03's UAT design/handoff obligations. Execution remains
+  Arc04; existing Slice07 scope and remediation/research dependencies unchanged.
 
 - 1.12 (2026-09-13): CDC closes Slice06 after its classification evidence
   and an attributed replay-documentation completion. Opens twenty-pair
