@@ -25,3 +25,6 @@ coordinates, claim/support, relationship graph, and genuine CQ/coverage.
 
 Slice05 retains only its planned lifecycle/provenance/integration ownership and
 must not absorb unreviewed Slice04 memberships merely to rebalance counts.
+
+Batch01 supplies evidence for ten identity/label pairs only; it does not change
+Slice05 ownership or the unaccepted full partition.

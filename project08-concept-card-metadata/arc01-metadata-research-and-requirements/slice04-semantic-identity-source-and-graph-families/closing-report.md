@@ -6,3 +6,7 @@ is not authored semantic coverage. The 303 assignments lack contextual evidence
 and broad groups are misclassified as CQ coverage. No Slice04 row other than
 scoped-input hygiene is claimed done here. Slice01, Slice04 and Slice02 remain
 open; this correction does not transfer in-scope semantics to Slice05.
+
+Batch01 delivered ten identity/label pairs in the two `batch01-identity-*`
+artifacts. Slice04 remains changes-required; no claim is made for the other
+545 mechanical pairs.

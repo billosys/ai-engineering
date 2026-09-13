@@ -1,0 +1,12 @@
+{"artifact_kind":"batch01-identity-membership","memberships":[
+{"field_path":"aliases","record_kind":"concept-card","meaning_id":"aliases-current","evidence":"current-template"},
+{"field_path":"aliases","record_kind":"untyped","meaning_id":"aliases-legacy","evidence":"legacy-cards"},
+{"field_path":"aliases[]","record_kind":"concept-card","meaning_id":"alias-value-current","evidence":"current-template"},
+{"field_path":"aliases[]","record_kind":"untyped","meaning_id":"alias-value-legacy","evidence":"accent-types"},
+{"field_path":"concept","record_kind":"untyped","meaning_id":"legacy-concept","evidence":"accent-types"},
+{"field_path":"concept_slug","record_kind":"concept-card","meaning_id":"concept-slug-current","evidence":"current-template"},
+{"field_path":"id","record_kind":"concept-card","meaning_id":"current-id","evidence":"current-template"},
+{"field_path":"revision","record_kind":"concept-card","meaning_id":"record-revision","evidence":"current-template"},
+{"field_path":"slug","record_kind":"untyped","meaning_id":"legacy-slug","evidence":"v32-0010-lines-613-14"},
+{"field_path":"title","record_kind":"concept-card","meaning_id":"title-display","evidence":"current-template"}
+]}
