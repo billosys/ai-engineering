@@ -15,3 +15,11 @@ git -C .worktrees/planning diff --check
 Executed results: membership/reference assertion true; all registered hashes OK;
 prior packets unchanged and whitespace clean. Semantic comparisons are
 same-context observations in semantic-evidence.md, not independent verification.
+
+Iteration 01 additionally ran the frozen census and reproduced 390 music plus
+1,664 Erlang records, including the pdf_page/chapter_number/section shapes
+reported in semantic-evidence.md. The expected-pair replay derives the twenty
+rows from slice-plan.md, asserts length 20 and uniqueness, subtracts the
+Slice01 inventory, and intersects the Batch01/Slice06 accepted pairs; all
+result lists were empty. These are structural checks, distinct from the
+field-specific inspection.
