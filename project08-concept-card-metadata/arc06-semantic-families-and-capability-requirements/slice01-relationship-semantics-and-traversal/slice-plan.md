@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice01-relationship-semantics-and-traversal
 status: changes-required
-version: "1.1"
+version: "1.2"
 ---
 
 # Relationship Semantics And Traversal
@@ -15,11 +15,12 @@ inventory and capability analysis, not schema adoption or extraction.
 
 ## Current Review
 
-CDC reviewed 400b847a: exact membership and structural checks pass, but
-contextual census/target evidence, actual diagnostic lookup and legacy assertion
-semantics require A6S1-R1/R2/R3 repair. Follow
-[Iteration 01](./artifacts/iteration-01-cc-prompt.md) in a fresh context.
-No scope or criterion changes; Slice02 remains unopened.
+CDC reviewed repair 904a5a0d: membership, hashes and reported counts reproduce,
+but required contexts/targets, computed diagnostics and registry alignment
+remain incomplete. One published block fails. Follow
+[Iteration 02](./artifacts/iteration-02-cc-prompt.md) in a new CC session,
+not the previous history-bearing task. Was: 400b847a review / Iteration 01.
+All original R1/R2/R3 obligations and seven criteria remain; Slice02 is unopened.
 
 ## Exact Scope
 
@@ -176,6 +177,11 @@ Raise concrete sizing needs before expanding scope or substituting generic
 dispositions. No other slice opens automatically from CC's proposed-done report.
 
 ## Version History
+
+- 1.2 (2026-09-14): Repair 904a5a0d independently reviewed; preserves gains,
+  requires native target/query evidence and consistent registry/replay before
+  closure. Opens Iteration 02 with unchanged scope and criteria; was: Iteration
+  01. Fresh-session requirement clarified after same-task reuse.
 
 - 1.1 (2026-09-14): Initial CC review retains exact-set success and opens
   Iteration 01 for substantive contextual evidence, diagnostic lookup and

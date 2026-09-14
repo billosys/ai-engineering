@@ -1,6 +1,7 @@
 # Arc06 Ledger
 
-All rows remain open after Slice01's initial CDC review of 400b847a. The transition register carries the exact original
+All rows remain open after Slice01's repair CDC review of 904a5a0d. Iteration 02
+is open; no new memberships are accepted. The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |

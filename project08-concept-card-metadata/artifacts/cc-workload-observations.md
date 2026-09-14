@@ -67,3 +67,57 @@ model comparison. No setting change has been performed.
 Subsequent observations should distinguish first-pass coverage, substantive
 corrections, mechanical corrections and review outcomes. Retain failed attempts.
 Only one slice has been reviewed so far; no multi-slice trend is established.
+
+## Observation 01b: Arc06 Slice01 Iteration 01
+
+Date: 2026-09-14. CC commit: 904a5a0d. CDC outcome: changes required.
+This is a second attempt within the first monitored slice, not slice two.
+
+Task remains "Read metadata research instructions",
+01a095ed-ccbc-76d0-a743-ec4b88872dfd. Repair turn:
+01a0a080-3be1-7c02-b066-7124404ca01c.
+Task-history snapshot reports durationMs 303526 (about five minutes), twelve
+commandExecution items and one nonzero exit (jq syntax error, followed by a
+simpler successful census). Local turn_context at 2026-09-14T15:19:13.966Z
+records gpt-5.6-terra / medium. No compacted event appears in the repair's
+2026-09-14T15:19:13 through 15:24:18 UTC interval in the same rollout path
+registered above. Same task plus continuing history is observed; a genuinely
+fresh-session comparison did not occur.
+
+### Gains And Remaining Signals
+
+- Population classification now includes all 2,054 legacy mappings.
+- Visible census execution and seven additional registered inputs improve the
+  initial packet; reported counts and all fourteen hashes reproduce.
+- The shared meaning and handoff now preserve legacy typed assertions.
+- Generated/anomalous witnesses and available endpoint declarations remain
+  unexamined in the packet; selected prompt reads are represented as full reads.
+- Native diagnostic outputs are authored but not recomputed by the published
+  assertions. A changed JSON shape breaks an older published verifier.
+- A support ID from a separate example becomes an invented filename lookup
+  associated with the rich card. This is a reference-ownership error, not
+  merely a missing citation or an overlong task.
+- The repair added a section but retained stale surrounding claims and member
+  interpretations. Final integration/self-review remains a concern.
+
+### Assessment And Next Adjustment
+
+There is progress and less visible command friction than the initial run,
+but persistent incomplete evidence and premature done attestations. No new
+compaction occurred; these results do not support an explanation based only
+on an active-turn context limit. Inherited context, a narrow patching approach,
+insufficient substantive review, task interpretation and effort allocation
+remain plausible alternatives. Internal cognitive load is not observable here.
+
+The proposed fresh-context control was not exercised. Next recommendation:
+use a NEW task/session, not another message or history-bearing fork, with
+unchanged model/effort and the bounded Iteration 02 packet. Work through
+contextual witnesses, computed native diagnostics, then final reconciliation.
+Do not infer a failed model trial from a reset that never occurred.
+
+If omissions persist after that actual reset, discuss a higher-effort trial
+or smaller execution scope before another broad repair; model changes remain
+operator-controlled. Lower effort is not supported by these incomplete results.
+Extra repair guidance and repeated exposure remain confounds, so this is not
+a controlled model/effort comparison. No settings were changed. No reliable
+per-run tokens, cost or remaining-context-budget measurement was collected.
