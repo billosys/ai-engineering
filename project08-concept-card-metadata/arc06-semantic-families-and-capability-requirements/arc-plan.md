@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.2"
+version: "1.3"
 ---
 
 # Semantic Families And Capability Requirements
@@ -21,11 +21,12 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
 
-Slice01 repair 904a5a0d improves counts, named inputs and legacy assertion
-semantics, but R1/R2/R3 remain partially open. Follow its
-artifacts/iteration-02-cc-prompt.md in a new CC session; do not open Slice02.
-Was: initial 400b847a review and Iteration 01. The 115/35/405 accounting and
-every original composition/UAT obligation remain unchanged.
+Slice01 repair 7de68374 passes structural replay and adds valid witnesses,
+but native diagnostic replay, required reading/contexts and registry integration
+remain open. Follow artifacts/iteration-03-cc-prompt.md in a NEW CC session;
+stop if it is given to the old task. Do not open Slice02. Was: 904a5a0d review
+and Iteration 02. The 115/35/405 accounting and every original composition/UAT
+obligation remain unchanged.
 [Workload observations](../artifacts/cc-workload-observations.md) distinguish
 same-task reuse, no repair compaction and remaining substantive omissions.
 No model/effort change or causal diagnosis is made.
@@ -75,7 +76,7 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 
 | Slice | Capability / boundary | Dependencies | State |
 | --- | --- | --- | --- |
-| `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Changes required after 904a5a0d; Iteration 02 open |
+| `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Changes required after 7de68374; Iteration 03 requires new CC session |
 | `slice02-competency-questions-and-answerability` | Legacy questions, current CQ roles/coverage and card linkage; separately owned lifecycle fields excluded | Slice01 interfaces and accepted Arc01 | Size exact set when near |
 | `slice03-provenance-and-shared-reference-contracts` | Actor/run/preparation provenance and reusable evidence/replay contracts | Slice01/02 experience and accepted identity/source analysis | Size/split before opening |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts | Plan when near |
@@ -137,6 +138,11 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.3 (2026-09-14): Slice01 Iteration 02 review retains structural/witness
+  gains but rejects self-comparison as native replay and discarded output as
+  semantic reading. Iteration 03 requires a new session or an explicit stop;
+  was: Iteration 02. Scope, coverage and downstream dependencies are unchanged.
 
 - 1.2 (2026-09-14): Slice01 repair review preserves counts/hashes and assertion
   improvements, but requires complete contextual witnesses, native diagnostics

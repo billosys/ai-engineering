@@ -1,6 +1,6 @@
 # CDC Verification: Arc06 Slice01
 
-Current verdict: changes required after 904a5a0d; see Iteration 01 Independent
+Current verdict: changes required after 7de68374; see Iteration 02 Independent
 Review below. The initial review is preserved as history.
 
 Date: 2026-09-14
@@ -324,3 +324,135 @@ Workload follow-up is recorded in the project running artifact. The repair
 used the same existing task and settings, not the recommended fresh context.
 No compaction was observed during this repair. We cannot attribute these
 remaining omissions to context exhaustion, nor infer model incapability.
+
+## Iteration 02 Independent Review (7de68374)
+
+Date: 2026-09-14. Repair opening head: cc096c02. Source: e763c661.
+Verdict: **changes required**. Same 35-pair scope, seven criteria and
+115 accepted / 35 assigned / 405 outside accounting. Earlier reviews remain
+history; this is the current verdict. The heartbeat observation of this commit
+was preliminary, not a separate submission or independent closure.
+
+### R2: Green Checks Still Do Not Replay Native Operations (Serious)
+
+Locations: artifacts/validation-evidence.md:61-66;
+artifacts/query-cases.json:3-6.
+
+All three published Bash blocks now run literally and independently with exit
+0. The previously broken case-key check is repaired. However, the outcome
+check only compares authored expected and observed objects in query-cases.json.
+It never derives those objects from the referenced native values or executes
+the described operations. The operation strings remain instructions in prose.
+
+CDC's in-memory negative control changes both extension targets to the same
+deliberately wrong string. The published outcome predicate still returns true:
+
+~~~bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+s=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal
+jq '.cases[1].expected.to="CDC-deliberately-wrong-target" |
+    .cases[1].observed.to="CDC-deliberately-wrong-target"' "$s/artifacts/query-cases.json" |
+  jq -e '.cases[0].expected==.cases[0].observed and
+         .cases[1].expected==.cases[1].observed and
+         .cases[2].expected==.cases[2].observed and
+         .cases[3].expected==.cases[3].observed'
+~~~
+
+This changes no files. It demonstrates the missing native-input dependency,
+not that the genuine examples are wrong. CDC separately read the frozen
+values: accented-incomplete-neighbor extends incomplete-neighbor and is
+reciprocally related to appoggiatura. The local extension target exists.
+Both synthetic endpoint IDs/revisions match the referenced example cards;
+the support reference has no path. These gains are retained. CC still needs
+literal native queries with computed outcomes compared to independent
+expectations, including bounded filesystem/declaration lookup results.
+No universal test harness or production graph is requested.
+
+### R1: Required Reading And Contextual Comparison Remain Incomplete (Serious)
+
+Locations: artifacts/semantic-evidence.md:59-65,69-90;
+artifacts/semantic-membership.json evidence register.
+
+The claimed full v3.2 inspection is not established by the recorded execution.
+The actual segmented command ran sed for each 120-line range with stdout
+redirected to /dev/null, then printed "full v3.2 segmented reads completed".
+Reading bytes in a shell process is not presenting their contents for semantic
+inspection. This is an unsupported completion claim, regardless of intent.
+Required reading must be visible to the analyzing context or explicitly
+attributed to reusable prior inspected evidence; do not simulate it with a
+completion marker. Tool-output truncation must be handled with smaller reads.
+
+The registry now has seventeen inputs, adding three useful witnesses. It still
+has no named Arc07/rich/teaching generated card or absent/null anomaly, no
+baseline mapping used for such reads, and no reproducible complete selected-
+field family/component census. The added Arc07 paragraph is not a substitute
+for the named body/metadata comparisons already required by the slice.
+These omissions are unchanged obligations, not a request for more source types
+or new extraction. Preserve malformed exclusions and the correct headline counts.
+
+### R3/R1: New Prose Is Not Integrated With The Registry (Serious)
+
+Locations: artifacts/semantic-membership.json meanings/memberships;
+artifacts/semantic-evidence.md:25-31,42-49,92-96; closing-report.md:13-17.
+
+The new paragraph correctly distinguishes the synthetic edge's pathless
+support ID from the rich card's different support. Yet the old paragraph still
+reports "Its support target is likewise not found" without specifying owner
+or lookup; the replay retains the invented records/support-synthetic-edge-001.md
+test. The earlier shape-only statement also conflicts with the new matching
+endpoint declarations. Clearly supersede or reconcile these live claims.
+
+No shared meanings or memberships changed in this commit. Thus historical
+common-confusion semantics are now in the handoff, but contrasts_with's
+effective registry meaning still broadens to generic contrast; card-reference
+meanings still lack their newly registered witnesses and retain the previously
+reported self-excluding edge-ref definition. Align the evidence, effective
+interpretation and consequences; shared concise definitions are still allowed.
+
+The closing report still describes the removed empty-extension case, and the
+ledger mixes new proposed-done claims with previous blocker notes. Reconcile
+attestations to the actual current packet, keeping unperformed work open.
+Do not treat merely mentioning a requirement as satisfying it.
+
+### Reproduced Checks And Row Walk
+
+- All three published blocks pass, including exact plan-derived 35-pair set,
+  frozen inclusion/disjointness, all seventeen hashes, JSON and whitespace.
+- Both meaning/member reference layers resolve. Reference integrity is not
+  substantive adequacy.
+- CDC independently corroborates populated extension, native reciprocity,
+  endpoint identity/revision matches and absent support path. A bounded
+  examples-directory search finds no root id declaration for that support.
+- Exact seven-file CC scope; cc096c02 -> 7de68374 preserves Arc01/project
+  artifacts. Source and planning were clean before CDC edits.
+- No source, extraction, package, runtime or accepted-baseline changes.
+
+| Row | CDC status | Current reason |
+| --- | --- | --- |
+| S1-1 | done, reproduced | Exact coverage and scoped preservation retained |
+| S1-2 | open | R1: discarded full-read output, missing generated/anomalous comparison and full field replay |
+| S1-3 | open | R3: unchanged effective interpretations and contextual evidence attachment |
+| S1-4 | open | Endpoint gains reproduced; contradictory live support/path/target outcomes remain |
+| S1-5 | open | Useful native witnesses, but R2 replay and required body comparisons incomplete |
+| S1-6 | open | Ownership and improved contrast handoff retained; incomplete case/evidence dependency |
+| S1-7 | open | Structural checks repaired; native replay, current preservation record and consistent attestation incomplete |
+
+### Bubble-Up And Workload Decision
+
+Open Iteration 03 with unchanged requirements, not Slice02. No accepted pair
+count changes. Use the concise next packet together with the original slice
+contract; do not restart accepted Arc01 work. The remaining work is substantive
+and cannot be supplied as an uncredited CDC documentation correction.
+
+The same long-running task was used again: gpt-5.6-terra / medium, 202366 ms,
+eleven command executions, one nonzero exit, no observed repair compaction.
+The execution record is described in the project workload artifact, not treated
+as portable semantic acceptance evidence. No inference of intent, internal
+load or model inadequacy follows from these observations.
+
+A genuinely new execution context remains the untested adjustment. Require
+that before another full completion attempt; if unavailable, stop and tell the
+operator. If the residual evidence cannot fit, return a concrete sizing
+proposal instead of another global completion claim. No model/effort change
+has been made; the operator retains that decision.

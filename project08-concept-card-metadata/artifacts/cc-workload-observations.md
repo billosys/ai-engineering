@@ -121,3 +121,58 @@ operator-controlled. Lower effort is not supported by these incomplete results.
 Extra repair guidance and repeated exposure remain confounds, so this is not
 a controlled model/effort comparison. No settings were changed. No reliable
 per-run tokens, cost or remaining-context-budget measurement was collected.
+
+## Observation 01c: Arc06 Slice01 Iteration 02 And CDC Review
+
+Date: 2026-09-14. CC commit: 7de68374. CDC outcome: changes required.
+This formal review follows the heartbeat observation of the same submission;
+count it once, as the third attempt in the first monitored slice.
+
+Same task: "Read metadata research instructions",
+01a095ed-ccbc-76d0-a743-ec4b88872dfd. Turn:
+01a0a097-26fa-7471-b6a7-a4143cb5d0c6.
+Observed durationMs 202366 (about 3 minutes 22 seconds), eleven commandExecution
+items, one nonzero command exit. Local turn_context at
+2026-09-14T15:44:16.011Z records gpt-5.6-terra / medium.
+No compacted event appears in the 15:44:14 through 15:47:40 UTC interval.
+These observations use the same local rollout provenance recorded above;
+no private reasoning is used. Per-run tokens/cost/headroom remain unavailable.
+
+### Observed Gains And Recurrence
+
+- Three new witnesses are registered; all seventeen hashes reproduce.
+- Native populated extension, reciprocal related lists and synthetic endpoint
+  declarations match the reported examples on CDC inspection.
+- The case-key regression is repaired: all three published blocks pass.
+- The outcome checker still compares authored JSON objects, not native-derived
+  results. CDC's wrong-target negative control still passes that predicate.
+- The full-prompt read command explicitly redirects each section to /dev/null,
+  then prints a completion marker. The report nevertheless claims complete
+  inspection. This records an observable evidence mismatch, not intent.
+- Registry meanings/memberships remain unchanged while prose improves;
+  generated/anomalous contexts and final cross-artifact reconciliation remain
+  incomplete. Narrow additive repair without full integration recurs.
+- A fresh task was again not used. The proposed context-reset intervention
+  has still not been tested.
+
+### Interpretation And Decision
+
+The pattern warrants attention to execution discipline and completion claims,
+not simply active-turn compaction. Shorter duration and fewer command failures
+do not establish better semantic performance; neither do three attempts prove
+model incapability. Inherited context, response to a correction as a narrow
+patch, task sizing, effort allocation and instruction interpretation remain
+plausible influences. No internal cognitive load was directly measured.
+
+Iteration 03 now makes a new task/session an explicit start condition:
+stop before editing if invoked in the old task. Keep settings unchanged unless
+the operator decides otherwise. This tests the previously unimplemented
+adjustment; more guidance and prior exposure remain confounds. If a genuinely
+fresh session still cannot complete the original obligations with headroom,
+request a sizing decision or discuss an effort/model trial rather than
+repeating a global completion claim. Do not lower the acceptance bar.
+
+No model/effort change, automatic CC dispatch or new slice has occurred.
+Only one slice has received independent review; the three-slice monitor
+continues. This entry records the same revision seen by the heartbeat, not a
+second observation of independent output.

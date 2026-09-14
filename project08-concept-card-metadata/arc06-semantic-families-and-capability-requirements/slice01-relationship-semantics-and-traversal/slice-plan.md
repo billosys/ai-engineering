@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice01-relationship-semantics-and-traversal
 status: changes-required
-version: "1.2"
+version: "1.3"
 ---
 
 # Relationship Semantics And Traversal
@@ -15,11 +15,11 @@ inventory and capability analysis, not schema adoption or extraction.
 
 ## Current Review
 
-CDC reviewed repair 904a5a0d: membership, hashes and reported counts reproduce,
-but required contexts/targets, computed diagnostics and registry alignment
-remain incomplete. One published block fails. Follow
-[Iteration 02](./artifacts/iteration-02-cc-prompt.md) in a new CC session,
-not the previous history-bearing task. Was: 400b847a review / Iteration 01.
+CDC reviewed repair 7de68374: all three structural blocks pass and new native
+witnesses are corroborated. Actual source-derived replay, full reading/context
+evidence and registry integration remain incomplete. Follow
+[Iteration 03](./artifacts/iteration-03-cc-prompt.md) in a NEW CC session;
+stop before editing if still in the old task. Was: 904a5a0d review / Iteration 02.
 All original R1/R2/R3 obligations and seven criteria remain; Slice02 is unopened.
 
 ## Exact Scope
@@ -177,6 +177,11 @@ Raise concrete sizing needs before expanding scope or substituting generic
 dispositions. No other slice opens automatically from CC's proposed-done report.
 
 ## Version History
+
+- 1.3 (2026-09-14): Review of 7de68374 accepts structural repair and witness
+  gains, not semantic completion. Opens Iteration 03 with a fresh-session
+  precondition, actual-read/native-replay evidence and final reconciliation;
+  was: Iteration 02. Exact scope and original acceptance criteria unchanged.
 
 - 1.2 (2026-09-14): Repair 904a5a0d independently reviewed; preserves gains,
   requires native target/query evidence and consistent registry/replay before
