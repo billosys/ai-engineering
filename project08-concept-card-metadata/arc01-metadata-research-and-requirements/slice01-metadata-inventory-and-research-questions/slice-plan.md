@@ -2,11 +2,22 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice01-metadata-inventory-and-research-questions
-status: awaiting-remediation-composition
-version: "1.5"
+status: closed-with-transfers
+version: "1.6"
 ---
 
 # Metadata Inventory And Research Questions
+
+## Current Disposition: Closed With Transfers (2026-09-14)
+
+The operator approved semantic-family work and requested the Arc01 transition.
+This execution unit closes **with unfinished criteria deferred inside Project08**,
+not as fully delivered. The [project transition register](../../artifacts/arc01-transition-obligations.md)
+is the current ownership/re-entry authority. Arc06 inherits every unfinished
+criterion; none is waived or counted as new accepted semantics. Prior evidence
+and iteration history remain intact. Do not execute earlier prompts below.
+
+## Historical Scope And Execution Routes
 
 Reproduce the metadata and capability comparison before selecting a schema.
 Turn the operator's concerns into a complete, evidence-backed research agenda.
@@ -126,6 +137,10 @@ the operator's tooling/commit condition). CC writes a proposed-done
 closing report with row evidence and Arc01 bubble-up; CDC verifies separately.
 
 ## Version History
+
+- 1.6 (2026-09-14): Operator-approved family pivot transfers unfinished
+  criteria to Arc06 with explicit owners/re-entry; closes this execution unit
+  administratively, not as fully delivered. Original scope and rows preserved.
 
 - 1.5 (2026-09-12): Accepts Iteration 04's sizing outcome and routes execution
   to new sibling Slice04/05. Was: Iteration 04 required. Retains every

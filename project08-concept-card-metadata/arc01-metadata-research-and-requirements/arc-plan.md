@@ -1,11 +1,31 @@
 ---
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
-status: active
-version: "1.22"
+status: closed-with-transfers
+version: "1.23"
 ---
 
 # Metadata Research And Requirements
+
+## Current Disposition (2026-09-14)
+
+Arc01 is closed-with-transfers following the operator-approved semantic pivot.
+It did not deliver its original full inventory/research/requirements capability.
+Accepted Batch01 and Slice06-09 evidence covers 115 pairs; 440 remain.
+
+[The transition register](../artifacts/arc01-transition-obligations.md) records
+all eight S1, eight S4 and five A1 criteria and never-opened Slice02/03/05 work.
+Slice01 and Slice04 close administratively with explicit deferred rows, not
+new semantic acceptance. Slice06-09 remain independently closed. All unfinished
+work is owned by [Arc06](../arc06-semantic-families-and-capability-requirements/arc-plan.md), next in dependency order.
+
+The operator pause is lifted for this approved direction. Historical prompts
+and all "current" execution passages below are superseded as routing
+instructions. They remain evidence of the work and prior planning. The old
+research sequencing is replaced, not the complete-inventory or UAT obligations.
+See the closing report for the nine-slice walk and composition shortfall.
+
+## Historical Scope, Breakdown And Reviews
 
 Establish what the historical cards and prompts enabled, what the current skill
 represents or loses, and what a general, queryable profile must preserve. Ground
@@ -288,6 +308,11 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.23 (2026-09-14): Operator approves semantic-family pivot after Slice09.
+  Closes Arc01 with explicit intra-project transfers of all unfinished rows
+  and reserved work to Arc06. Retains accepted evidence and full original
+  history; no claim that the original arc capability was completely delivered.
 
 - 1.22 (2026-09-13): Closes Slice09 after 4ae905c2; all seven criteria
   independently reproduced. Records 115 accepted / 440 remaining and the

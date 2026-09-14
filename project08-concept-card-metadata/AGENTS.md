@@ -40,7 +40,7 @@ comparison, metadata/body refinements, and fresh reruns. Multiple separate CC
 extraction sessions are mandatory. A slice's five-iteration limit is a sizing
 signal, not an arc-wide research limit or permission to abandon a quality goal.
 
-Treat the five-arc roadmap as a working hypothesis. Add needed slices and revise
+Treat the original five-arc roadmap and the added Arc06 as a working hypothesis. Add needed slices and revise
 plans with finding IDs and dated histories. No scope reduction, premature
 closeout, or transfer of failed quality requirements to follow-on work without
 an explicit operator decision. Passing package gates cannot close the UAT work.
@@ -48,3 +48,18 @@ an explicit operator decision. Passing package gates cannot close the UAT work.
 CC attestations remain proposed-done until independent verification. Operator
 acceptance of card quality is a separate project closure requirement. Candidate
 retention, semantic verification, and memory admission remain distinct.
+
+## Operator-Approved Semantic Transition (2026-09-14)
+
+Project-level assessment and transition evidence live in `artifacts/`, per
+the operator's request. Source and historical evidence remain read-only.
+Arc06 is next in dependency order, ahead of the unchanged Arc02-05 identifiers.
+Read the project plan and transition register before following historical
+Arc01 prompts. Arc01 is closed-with-transfers, not fully delivered; its
+original incomplete criteria remain mandatory Arc06 acceptance obligations.
+
+Use semantic families ordered by capability importance, with exact coverage,
+shared evidence plus explicit member roles/exceptions, and targeted research.
+Retain small iterative packets when needed. The prior effort is a valued
+foundation, not discarded work. Expedited Mode resumes, including scoped
+CC/CDC commits and the plain project-relative next-prompt path at handoff.

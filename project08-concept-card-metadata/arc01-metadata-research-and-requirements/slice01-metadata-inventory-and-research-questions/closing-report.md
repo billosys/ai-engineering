@@ -1,3 +1,39 @@
+# CDC Transition Addendum: S1 (2026-09-14)
+
+This addendum supersedes historical current-status statements below. The
+operator's approved reorganization closes this unit with transfers, not full
+delivery. No CC-authored analysis is rewritten and no additional semantic
+coverage is accepted. See [the transfer register](../../artifacts/arc01-transition-obligations.md)
+for reasons, owners and re-entry conditions.
+
+| Row | Final disposition | Evidence / receiving owner |
+| --- | --- | --- |
+| S1-1 | deferred | A6-7 / Slice09 input registration |
+| S1-2 | done, retained prior reproduced result | Prior CDC verdict unchanged; not re-attested as new work |
+| S1-3 | deferred | A6-7 / Slice09 census, both prompts, codec/EOF and replay |
+| S1-4 | deferred | A6-1/A6-6/A6-7 / family work and full join |
+| S1-5 | deferred | A6-6/A6-7 / contextual body and metadata comparisons |
+| S1-6 | deferred | A6-8/A6-9 / research and acceptance handoff |
+| S1-7 | deferred | A6-7 / full literal reproduction and closeout |
+| S1-8 | done, retained prior reproduced result | Prior CDC verdict unchanged; not re-attested as new work |
+
+The original eight criteria are retained verbatim in the ledger. Unfinished
+criteria remain mandatory Arc06 acceptance work. Scope-as-delivered is partial;
+scope-as-transferred is explicit. The frozen evidence and accepted checkpoints
+remain unchanged. This is an attributed CDC governance amendment, not a CC
+completion claim or independent verification of newly authored semantics.
+
+Artifacts: existing slice artifacts unchanged. New decision/coverage evidence
+is project-level under artifacts/, explicitly requested by the operator.
+Planning-only changes; source commit remains e763c661. The Arc01 closing report
+records transition validation and exact changed-file inventory.
+Bubble-up: Arc01 closes-with-transfers and Arc06 inherits the remaining work;
+the old Slice01-before-research gate is explicitly replaced in project v1.14.
+
+---
+
+## Historical Record (Preserved)
+
 # CC Proposed-Done Closing Report: Arc01 Slice01 — Iteration 02
 
 Status: proposed-done by CC only. The prior packet is commit `e2ea1e68`; this

@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.13"
+version: "1.14"
 ---
 
 # Concept Card Metadata
@@ -67,7 +67,78 @@ research/design decisions. Arc02 will supply the accepted architecture artifact.
 - Fresh package/version/install checks and independent composition review,
   plus explicit operator acceptance of output quality before project closure.
 
-## Arc Roadmap: Starting Hypothesis
+## Current Direction: Semantic Families And Capabilities
+
+Operator decision, 2026-09-14, following Arc01 Slice09 and the progress review:
+adopt [the preserved assessment](./artifacts/semantic-family-processing-assessment.md).
+The operator regards all prior work as well spent, explicitly retains the
+rigorous bounded-packet approach when warranted, and prefers semantic
+organization consistent with the work's ontological roots.
+
+This is a modest execution pivot, not a reduction in scope or a schema decision.
+Preserve all 115 accepted contextual pairs and all original acceptance criteria.
+Process the other 440 by semantic family and capability importance, retaining
+exact field-path/record-kind accounting plus finer corpus/role distinctions.
+Shared rules need explicit applicability, member roles and exceptions; repeated
+field spelling, shape or lifecycle words never establish semantic equivalence.
+
+Distinguish documented rules, populated observations, contradictions and
+unspecified behavior. A bounded, evidenced unknown is an acceptable inventory
+finding, not permission to silently omit the information or invent a rule.
+Each family must explain concrete reader/extractor/query/migration consequences.
+
+Reuse registered evidence and a common validation route where justified. Keep
+small sequential correction packets for difficult or ambiguous areas.
+Substantive semantic repairs remain CC work subject to independent review;
+minor CDC-authored replay/documentation completions must be attributed and
+rerun, with no claim of independent acceptance of CDC-authored semantics.
+
+Targeted primary-source research may now accompany family work before the
+entire inventory closes. Compare alternatives against actual capability gaps;
+do not adopt standards by name or design a final profile inside an inventory
+packet. Final requirements/architecture still wait for complete, composed
+inventory and research evidence. An early fixture is a diagnostic aid, not
+proof of final-profile equivalence or real extraction quality.
+
+Acceptance has three separate levels: evidence-backed inventory interpretation;
+researched architecture with loss analysis and executable behavior checks; and
+implemented skills demonstrated through repeated real extraction and operator
+quality review. No earlier level substitutes for a later one.
+
+## Arc Roadmap: Current Dependency Order
+
+| Arc | Capability | Depends On | Current State |
+| --- | --- | --- | --- |
+| `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01 relationship semantics and traversal open |
+| `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Independently composed Arc06, including transferred Arc01 requirements | Hypothesis; detailed plan when near |
+| `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
+| `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
+| `arc05-package-gates-and-closure` | Fresh packaging/install evidence, migration and UAT reconciliation, independent project acceptance | Arc04 quality and coverage evidence | Closure cannot outrun UAT |
+
+Arc06 is the next arc in dependency order, not a post-closure addendum.
+Existing Arc02-05 IDs and Arc04's operating contract remain stable. Numeric
+order is not dependency order. Further findings may split or add arcs/slices;
+record the changed owners and re-entry conditions before issuing new work.
+
+[The transition register](./artifacts/arc01-transition-obligations.md) retains
+every original S1/S4/A1 row and never-opened Slice02/03/05 obligation. Arc01
+administrative closure accepts the transfer, not the unperformed semantics,
+research or composition. Arc06's final acceptance must reconcile those exact
+criteria. All project ledger rows remain open.
+
+The operator's request to implement this direction supersedes the prior pause.
+Expedited Mode resumes for scoped commits, independent review and planning
+advance; it does not authorize CC to execute unopened work or override operator
+quality gates.
+
+## Historical Roadmap And Pause (Superseded As Execution Instructions)
+
+The following v1.13 roadmap and pause are retained verbatim as planning history.
+Their research sequencing and active-arc routing are superseded by v1.14 above;
+their required outcomes and Arc04/05 quality obligations are not reduced.
+
+### Original Five-Arc Starting Hypothesis
 
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
@@ -142,8 +213,9 @@ capacity limit is an unresolved condition with a re-entry plan, not proof of don
 ## Complete Musician Same-Chapter Trial
 
 Operator addition, 2026-09-13: this is a required Arc04 regression/UAT track,
-not merely another cross-domain illustration. Arc01 Slice03 must carry its
-protocol requirements into the architecture/UAT handoff. Arc04 will open bounded
+not merely another cross-domain illustration. Arc06 Slice11 now carries its
+protocol requirements into the architecture/UAT handoff (was: Arc01 Slice03).
+Arc04 will open bounded
 intake/protocol, fresh-extraction and comparison/refinement slices when near;
 no chapter or execution slice is selected/opened by this amendment.
 
@@ -253,6 +325,14 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.14 (2026-09-14): Operator accepts the semantic-family/capability pivot
+  after Arc01 Slice09 and requests the next arc. Preserves the assessment,
+  accepted 115 pairs and all prior planning; transfers 440 pairs and original
+  integration/research/UAT-design obligations into new Arc06. Allows targeted
+  research before full inventory closure; retains Arc02-05 identifiers, all
+  quality/version gates and the bounded iterative method where appropriate.
+  Arc01 closes administratively with explicit deferrals, not a success claim.
 
 - 1.13 (2026-09-13): Arc01 closes Slice09 after 4ae905c2; operator requests
   a pause for progress/process assessment before further work. Records 115
