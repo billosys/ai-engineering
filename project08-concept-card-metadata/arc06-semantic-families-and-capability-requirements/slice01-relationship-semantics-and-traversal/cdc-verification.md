@@ -1,6 +1,6 @@
 # CDC Verification: Arc06 Slice01
 
-Current verdict: changes required after 7de68374; see Iteration 02 Independent
+Current verdict: changes required after a24758b4; see Iteration 03 Independent
 Review below. The initial review is preserved as history.
 
 Date: 2026-09-14
@@ -456,3 +456,135 @@ that before another full completion attempt; if unavailable, stop and tell the
 operator. If the residual evidence cannot fit, return a concrete sizing
 proposal instead of another global completion claim. No model/effort change
 has been made; the operator retains that decision.
+
+## Iteration 03 Independent Review (a24758b4)
+
+Date: 2026-09-14. Opening planning head: 91db42fa; source: e763c661.
+Verdict: **changes required**, with substantive gains. S1-1 and S1-6 are now
+done; five full criteria remain open. No new semantic memberships are accepted:
+115 accepted / 35 assigned / 405 outside. Earlier reviews are history.
+
+### What Is Now Reproduced
+
+The first three published blocks pass. All nineteen registered hashes, both
+reference layers, exact plan-derived membership, frozen inclusion/disjointness,
+JSON and whitespace pass. Prerequisite and extension now extract native values
+and compare complete expected/observed structures against them. Populated
+extension, actual reciprocal related lists and matching synthetic endpoint
+declarations remain correct. Historical common-confusion meanings and their
+contextual evidence are now in the registry; the central R3 loss is repaired.
+The handoff preserves all 405 other pairs and concrete CQ/resolver/research
+questions, with no claim that Slice02 is open. S1-6 is independently satisfied.
+
+The new task emits the historical prompt text instead of discarding it.
+Do not repeat the former /dev/null finding. The API's truncation of this
+reviewer's retrieved task output is not evidence of CC context loss.
+The added generated witnesses are useful, subject to the interpretation
+correction below. No further full-prompt reread is required just to repeat
+this repair; retain the attributable read evidence and focused source citations.
+
+### R2 Remaining: Two Case Results Still Bypass Native Comparison (Serious)
+
+Locations: artifacts/validation-evidence.md:108-121;
+artifacts/query-cases.json:5-6.
+
+The symmetry and endpoint cases still compare authored expected/observed values
+to each other, after separate hard-coded source checks. They do not compare
+every reported component with a native-derived result. Target card revisions
+are not inspected by the published endpoint recipe; it checks requested edge
+revisions and target IDs, then accepts the authored revision_match value.
+The fixed grep context also is not a structured from/to revision association.
+
+Two in-memory counterexamples reproduce the remaining weakness:
+
+~~~bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+s=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal
+jq '.cases[3].expected.revision_match=false | .cases[3].observed.revision_match=false' "$s/artifacts/query-cases.json" |
+  jq -e '.cases[] | select(.id=="edge-endpoints") | .expected == .observed and .observed.support_path == "unavailable"'
+jq '.cases[2].expected.a="CDC-wrong-endpoint" | .cases[2].observed.a="CDC-wrong-endpoint"' "$s/artifacts/query-cases.json" |
+  jq -e '.cases[] | select(.id=="symmetry") | .expected == .observed and .observed.reciprocal == true'
+~~~
+
+Both return true with unchanged native inputs. The corresponding native
+preconditions also still hold; this does not mutate inputs or their hashes.
+Repair only the incomplete case wiring, retaining the genuinely improved first
+two cases. Derive all result fields from structured native/frozen data and
+actual bounded lookups, including each target revision. Exercise the same
+comparison with wrong endpoint/revision expectations and require failure.
+The existing shell inequality on the extension value is useful but does not
+test these other result components. No production graph is needed.
+
+### R1 Remaining: Complete Context Census And Accurate Provenance (Serious)
+
+Locations: artifacts/semantic-evidence.md:18-25,65-89,107-118;
+artifacts/validation-evidence.md:123-125; semantic-membership.json evidence.
+
+The durable census still supplies population totals and selected aggregate
+counts, not the promised selected-field presence/type/shape/value/component
+comparison by family. No named legacy absent/null witness or teaching-rerun
+body is registered; the two added generated witnesses both have empty lists.
+Template nulls and malformed rich records do not substitute for those contexts.
+The frozen data contains accessible Erlang absent/nullable relationship fields;
+for example erlang-in-anger/allocation-strategy.md lacks extends. Complete the
+already scoped census and use it to select the remaining distinct witnesses,
+not another arbitrary larger corpus or an exhaustive body read of every card.
+
+The new body comparison also says both generated examples name relationship
+candidates, and calls them not real extraction. In fact Arc07
+cc-emergent-explanation says no relationship edge is asserted and proposes a
+future CQ; rich-rerun cc-model-data-constraints names actual relationship
+candidates. Both are outputs of real-corpus extraction efforts, still unverified
+candidates. Candidate, synthetic, extracted, verified and admitted are separate
+axes. Preserve that provenance and distinguish a future CQ from a relationship
+proposal. No source-truth verification or new extraction is requested.
+
+### Pre-Commit Replay And Preservation
+
+Block 4 passes its substantive checks, then exits 1 because its final
+comparison expects seven unstaged files in a now-clean committed checkout.
+CC explicitly labeled this a pre-commit/current-worktree check. This failure
+does NOT refute the data or the recorded pre-commit result.
+
+CDC separately reproduced the fixed 91db42fa -> a24758b4 diff: exactly the
+seven authorized CC files, with Arc01 and project artifacts unchanged. Source
+and planning were clean before CDC changes. Supply a committed-review route
+as well as the labeled pre-commit check; this is a small reproducibility
+completion, not another substantive finding or scope expansion.
+
+### Seven-Row Review And Next Work
+
+| Row | CDC status | Current evidence / remainder |
+| --- | --- | --- |
+| S1-1 | done, reproduced | Exact 35-pair scope, no overlap or baseline edits |
+| S1-2 | open | Nineteen hashes and new witnesses pass; missing contextual census/witnesses and provenance correction |
+| S1-3 | open | Contrast/card-reference repairs retained; unexamined state/context exceptions still need census-backed interpretation |
+| S1-4 | open | Correct native endpoint matches; complete revision/result wiring and contextual limits remain |
+| S1-5 | open | First two native comparisons improved; two case counterexamples and body distinctions remain |
+| S1-6 | done, reproduced | Explicit remaining ownership, separate assertion/warrant, and concrete CQ/resolver/research questions |
+| S1-7 | open | Structural/scope checks pass; full census/case replay and post-commit route remain |
+
+The previous shared edge-ref wording can be clarified during integration, but
+is not a separate reason to withhold closure now that member-specific roles
+and actual evidence are supplied. Do not resurrect repaired R3 obligations.
+S1-6 acceptance is a handoff criterion, not semantic acceptance of 35 pairs.
+
+Open bounded Iteration 04 for these two residual areas and final replay.
+Original seven criteria and scope remain unchanged; Slice02 stays unopened.
+Retain the accepted reads and improvements; avoid restarting the inventory.
+If the remaining work cannot fit, return a concrete sizing proposal before
+another full completion claim. The five-iteration sizing safeguard remains.
+
+### Workload Follow-Up
+
+This was a genuinely new task at gpt-5.6-terra / medium, with no observed
+compaction. Native checks and contextual integration improved, but incomplete
+case testing and census work remain. The project workload record counts the
+earlier interrupted fresh task separately and deduplicates the heartbeat.
+
+Recommendation, not a setting change: try the same model at high effort for
+the next bounded repair, retaining a fresh session and unchanged criteria.
+Measure complete evidence and native-negative-control behavior, not elapsed
+time or output length. Additional instructions and accumulated evidence are
+confounds; this is not a controlled causal model comparison.

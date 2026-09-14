@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice01-relationship-semantics-and-traversal
 status: changes-required
-version: "1.3"
+version: "1.4"
 ---
 
 # Relationship Semantics And Traversal
@@ -15,12 +15,13 @@ inventory and capability analysis, not schema adoption or extraction.
 
 ## Current Review
 
-CDC reviewed repair 7de68374: all three structural blocks pass and new native
-witnesses are corroborated. Actual source-derived replay, full reading/context
-evidence and registry integration remain incomplete. Follow
-[Iteration 03](./artifacts/iteration-03-cc-prompt.md) in a NEW CC session;
-stop before editing if still in the old task. Was: 904a5a0d review / Iteration 02.
-All original R1/R2/R3 obligations and seven criteria remain; Slice02 is unopened.
+CDC reviewed a24758b4: first two native case comparisons and contrast
+interpretation improve; S1-1 and S1-6 are done. Complete contextual census and
+two native-result comparisons still need repair. Follow
+[Iteration 04](./artifacts/iteration-04-cc-prompt.md) in a new CC session.
+Reuse the historical reading evidence; no repeated full read merely for repair.
+Was: 7de68374 review / Iteration 03. The original seven criteria remain;
+central R3 contrast repair is retained and Slice02 remains unopened.
 
 ## Exact Scope
 
@@ -177,6 +178,11 @@ Raise concrete sizing needs before expanding scope or substituting generic
 dispositions. No other slice opens automatically from CC's proposed-done report.
 
 ## Version History
+
+- 1.4 (2026-09-14): Review of a24758b4 accepts additional native/semantic
+  gains and closes handoff S1-6. Iteration 04 targets census/context and two
+  remaining result checks, retaining accepted reading and scope; was:
+  Iteration 03. No 35-pair semantic acceptance or downstream opening.
 
 - 1.3 (2026-09-14): Review of 7de68374 accepts structural repair and witness
   gains, not semantic completion. Opens Iteration 03 with a fresh-session

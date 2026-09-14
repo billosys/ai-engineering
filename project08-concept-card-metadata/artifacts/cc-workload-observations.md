@@ -176,3 +176,67 @@ No model/effort change, automatic CC dispatch or new slice has occurred.
 Only one slice has received independent review; the three-slice monitor
 continues. This entry records the same revision seen by the heartbeat, not a
 second observation of independent output.
+
+## Observation 01d: Fresh-Session Iteration 03 And CDC Review
+
+Date: 2026-09-14. CC commit: a24758b4. CDC: changes required, with new S1-6
+handoff closure and retained S1-1. This is the same submission described by
+the earlier heartbeat, not a second run or a second monitored slice.
+
+Completed new task "Read iteration 03 prompt":
+01a0a0ef-9e39-7d13-bfde-1e7ef4a7bdcc; turn
+01a0a0ef-c092-78a1-9187-afe796e12cbc. Local metadata records
+gpt-5.6-terra / medium and no compacted event. Task-history durationMs 501973
+(about 8 minutes 22 seconds), 21 command executions, one nonzero command exit.
+That exit concerns an overbroad preservation comparison including earlier CDC
+project-artifact changes, subsequently replaced with a scoped pre-commit check.
+Do not count it as a new semantic failure.
+
+Metadata/read-call provenance:
+`/Users/oubiwann/.codex/sessions/2026/09/14/rollout-2026-09-14T12-20-53-01a0a0ef-9e39-7d13-bfde-1e7ef4a7bdcc.jsonl`.
+An earlier fresh task with the same title,
+01a0a0e5-a9d2-7fe2-9d40-fbb8fd46cb42, was interrupted after 7219 ms and one
+command. It produced no submitted semantic packet; retain it as an interrupted
+attempt, not a failed quality trial. Its metadata also records terra/medium.
+These are local observational records, not portable semantic acceptance inputs.
+
+### Outcome And Interpretation
+
+The reset was actually exercised at unchanged model/effort. CC emits prompt
+contents, supplies two real generated witnesses, integrates historical contrast
+semantics into the registry and ties two case results to native values.
+Those are real improvements. No active-turn compaction was observed.
+
+Residual failures are narrower but substantive: the last two case result
+comparisons still accept incorrect endpoint/revision results, the complete
+family/component census and distinct absent/null/teaching witnesses are missing,
+and real extraction provenance is confused with synthetic/candidate status.
+The pre-commit-only recipe's failure on a committed clean tree is an expected
+state mismatch, not grounds to deny the observed native-data gains.
+
+Fresh context and the extra targeted instructions/accumulated evidence changed
+together. We cannot attribute improvement solely to context reset or measure
+internal cognitive load from these data. No reliable run token/cost/headroom
+measure was collected. This remains one reviewed slice across several attempts.
+
+### Recommended Next Trial
+
+Recommend a fresh task using the SAME gpt-5.6-terra model at high effort for
+the next bounded repair, subject to the operator's selection. No settings have
+been changed. Retain original criteria and reuse established reading/witness
+evidence; do not spend the new run repeating already credited work.
+
+Judge this trial by complete scoped census, accurate provenance/context
+distinctions and all native-result negative controls. Do not use length,
+latency or nominal effort as success. More targeted instructions remain a
+confound; a successful repair would not prove general superiority of high.
+
+[Official GPT-5.6 guidance](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.6)
+lists high effort and recommends judging increased reasoning by measured
+quality gains. It does not establish that high will repair this task.
+The trial recommendation comes from the observed residual work, not a claim
+that a model is incapable. If headroom still proves insufficient, request a
+concrete split before another global completion claim; preserve all scope.
+
+Only one slice has received independent review. Continue the three-slice
+monitor without duplicating this heartbeat/submission/review history.
