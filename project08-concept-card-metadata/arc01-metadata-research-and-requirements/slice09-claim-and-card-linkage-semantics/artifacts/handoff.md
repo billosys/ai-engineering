@@ -1,6 +1,6 @@
 # Slice09 Handoff
 
-This proposed-done packet supplies 21 field-specific claim/card linkage
+This repaired proposed-done packet supplies 21 field-specific claim/card linkage
 meanings. It keeps 94 accepted / 21 assigned / 440 other pairs: 188 from the
 original Slice04 allocation and 252 from Slice05. It is not a schema decision,
 support verification, extraction run, or parent closure.
@@ -13,13 +13,18 @@ without confusing them with structured source tuples, and retain assertion-
 specific support subject/span scope even when a readable card has source/support
 lists.
 
-The pinned rerun copies establish a reproducible mapping from frozen
-`workbench/` paths to baseline-snapshot copies. They do not turn ignored current
-workbench state into a fixed historical input. Historical music/OTP samples
-remain bounded teaching/provenance comparisons; further corpus inspection needs
-a new scope.
+The pinned rerun copies now have explicit frozen-original -> baseline-copy
+mapping and manifest byte comparisons. The observed Chapter 1 target currently
+matches the acquisition hash, but its `bibfile` frontmatter does not declare a
+source-record ID or revision; it remains a target diagnostic rather than full
+reference agreement. Ignored current workbench state remains unnecessary.
+Historical music/OTP samples remain bounded teaching/provenance comparisons;
+further corpus inspection needs a new scope.
 
-CDC must independently reproduce membership/evidence resolution, target
-diagnostics, hashes, fixed-entry preservation and all seven ledger rows.
+Iteration 01 repairs S9-R1 replay/census, S9-R2 registration/mapping, and
+S9-R3 component meanings. It does not repair underlying target declarations,
+literal-fragment handling, or embedded-revision data. CDC must independently
+reproduce membership/evidence resolution, target diagnostics, hashes,
+fixed-entry preservation and all seven ledger rows.
 Slice04 integration, Slice05 replay/lifecycle remainder, Slice01/Arc01
 composition, research gates, and P-14 stay open.
