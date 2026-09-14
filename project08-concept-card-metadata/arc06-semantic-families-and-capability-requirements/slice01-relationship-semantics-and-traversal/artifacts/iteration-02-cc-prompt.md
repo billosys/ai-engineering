@@ -141,4 +141,3 @@ Do not edit reviewer artifacts, this prompt, parent plans, source skills,
 packages, installed skills, accepted packets, baselines or workload records.
 Return the commit and truthful criterion/finding dispositions. CDC remains
 the closure gate. The operator will hand off the next task.
-
