@@ -4,9 +4,10 @@ CC proposes 35 relationship meanings only. Preserve list orientation and
 edge-support distinctions. Predicate naming, target anchors, revisions and
 reciprocal storage remain architecture questions.
 
-For the next Arc06 work, retain these interface facts: legacy lists can support
-reader navigation but are not edge assertions; `from_ref`/`to_ref` validity is
-not edge support; `source_support_refs` is edge-scoped; and `symmetry` or an
+For the next Arc06 work, retain these interface facts: legacy typed lists are
+relationship assertions and support reader navigation, but are not independently
+identified current edge records; `from_ref`/`to_ref` validity is not edge
+support; `source_support_refs` is edge-scoped; and `symmetry` or an
 inverse reading does not require a second stored edge. The 405 other frozen
 pairs are outside this assignment, not accepted coverage. Slice02 should use
 the four preserved query cases to size CQ behavior; later research should

@@ -46,3 +46,27 @@ The census is the frozen frontmatter inventory registered in
 relationship-edge template/example roots, and concept-card reference variants.
 The template is deliberately null/unassessed; the sole populated edge is
 synthetic; all target truth and unresolved-anchor claims remain bounded.
+
+## Iteration 01 Replay
+
+Executed pre-commit from the source checkout with Bash, jq 1.6, shasum and Git
+2.39.5. Opening planning head: `46f60e46`; packet preservation is fixed to
+`355d037f -> 400b847a`. Model/effort is unavailable from repository state.
+
+```bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+s=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal
+i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+jq -e '([.records[]|select(.values|type=="object")|select((.record_kind//"untyped")=="untyped")]|length)==2054 and ([.records[]|select(.values|type=="object")|select(.record_kind=="concept-card")]|length)==31 and ([.records[]|select(.values|type=="object")|select(.record_kind=="relationship-edge")]|length)==2' "$i"
+jq -e 'all(.cases[]; has("input_path") and has("operation") and has("expected") and has("observed") and has("conclusion"))' "$s/artifacts/query-cases.json"
+jq -e '[.cases[]|.observed]|.[0].target=="found" and .[1].outgoing_assertions==0 and .[2].target=="not found in declared local directory" and .[3].target=="not found" and .[3].support_target=="not found"' "$s/artifacts/query-cases.json"
+test -f /Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/meter.md
+test ! -e records/edge-evidence-map-related-to-claim.md
+test ! -e records/support-synthetic-edge-001.md
+git -C .worktrees/planning diff --exit-code 355d037f 400b847a -- project08-concept-card-metadata/arc01-metadata-research-and-requirements project08-concept-card-metadata/artifacts
+git -C .worktrees/planning diff --check
+```
+
+All assertions passed pre-commit. Detailed field type/shape/value counts and
+named reads are in `semantic-evidence.md`; they are not the 35 membership count.
