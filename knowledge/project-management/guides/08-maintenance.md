@@ -21,8 +21,10 @@ CAP-style audit reports are routed from
 [`Audit Scope And Map`](../../code-auditing/guides/01-audit-scope-and-map.md)
 (`workbench/<YYYY.MM.DD>-audit-results-<slug>.md` plus a top-level index and
 modernization synthesis);
-per-slice prompts live as `cc-prompt.md` inside the slice directory, not in a
-separate prompts tree; durable artifacts produced by a slice default to
+per-slice prompts live as initial `cc-prompt.md` and follow-up
+`cc-prompt-iterationNN.md` files inside the slice directory, preserved once
+issued per the [iteration contract](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation);
+durable supporting artifacts produced by a slice default to
 `artifacts/` inside that slice directory unless the operator records an
 override.
 

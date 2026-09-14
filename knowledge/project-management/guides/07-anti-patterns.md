@@ -14,6 +14,18 @@ migration of an in-flight project's layout is its own failure mode.
   Putting them in root `workbench/`, `reports/`, scratch directories, or
   implementation docs without an operator-recorded override makes the slice's
   evidence harder to find and audit.
+- **Reusing an issued prompt for a new assignment.** Editing or appending to
+  `cc-prompt.md` hides the handoff change and can make CC treat new work as an
+  already-completed assignment. Preserve issued prompts and create the next
+  `cc-prompt-iterationNN.md` in the slice root.
+- **Iteration prompts filed as supporting artifacts.** Putting an assignment
+  under `artifacts/`, `prompts/`, or a session/iteration directory demotes a
+  first-class slice document. Keep every assignment beside `slice-plan.md` and
+  record the current one in its Assignment history.
+- **Returning new work to CDC on the strength of an old close.** A prior
+  closing report or "ready for review" line does not execute the current
+  prompt. CC must perform the assigned refinement and checks or report a
+  concrete blocker.
 - **`milestones/` for ledgers.** The level-1 ledger-bearing unit is **slice**,
   not milestone; the ledger lives inside the slice directory as `ledger.md`,
   not under a top-level `milestones/` tree.

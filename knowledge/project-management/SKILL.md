@@ -1,13 +1,13 @@
 ---
 name: project-management
 description: |
-  Component framework/operational skill for Project Management in the
-  collaboration framework. Use before planning or closing a project, arc, or
-  slice; inspecting canonical planning worktree layout; applying Expedited
-  Mode; or deciding whether bubble-up findings require a plan update.
+  Project management in the collaboration framework. Use when planning or
+  closing projects, arcs, or slices; issuing or executing slice iterations;
+  inspecting planning worktree layout; applying Expedited Mode; or deciding
+  whether bubble-up findings require a plan update.
 license: MIT
 metadata:
-  version: "2.14.0"
+  version: "2.15.0"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills
@@ -18,6 +18,12 @@ metadata:
 Use this component before planning or closing anything at project, arc, or
 slice scale. Start with the wayfinder, then load the focused guide that matches
 the operation.
+
+For slice iterations, preserve issued prompts and create each follow-up as
+`cc-prompt-iterationNN.md` beside the initial `cc-prompt.md` in the slice root.
+Load the [filename contract](./guides/02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation)
+and [handoff workflow](./guides/03-planning-top-down.md#issuing-and-executing-an-iteration)
+before issuing or executing the assignment.
 
 Read first:
 

@@ -34,7 +34,8 @@ implementation, tests, and self-review all carried without compaction, plus
 slack for the fix-iterations the review process will surface. The slice is
 where ledger discipline attaches — one slice, one ledger — and where the work
 actually gets written, tested, and reviewed. Durable artifacts created by that
-work belong to the slice by default, under the slice's `artifacts/` directory,
+work belong to the slice by default; supporting outputs go under `artifacts/`,
+while plans, ledgers, all CC prompts, and close documents live in the slice root,
 unless the operator records an override. If a slice will not fit in one context,
 it was two slices.
 
@@ -50,6 +51,9 @@ fix loop on an in-progress slice, never a unit of planning. The budget is
 five iterations per slice (see [ledger
 discipline](../../work-verification/guides/01-ledger-discipline.md)); needing more is a signal the
 slice was too large or under-specified, not a licence to keep grinding.
+Each follow-up assignment has a distinct slice-root prompt; see the
+[iteration filename contract](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation)
+and [handoff workflow](./03-planning-top-down.md#issuing-and-executing-an-iteration).
 
 Read together: *a project bends through several arcs; each arc is cut into
 slices; a slice is planned as a handful of steps, and if its delivery misses

@@ -1,5 +1,13 @@
 # Collaboration Framework Version History
 
+## Version 2.1.1 - 2026-09-14
+
+Clarified the slice-iteration route and summary: preserve issued prompts,
+create numbered follow-up prompts in the slice root, and load the owning
+project-management filename and handoff rules. Distinguished those assignments
+from supporting artifacts to prevent the composer summary from inviting
+prompt reuse or storage under `artifacts/`.
+
 ## Version 2.1.0 - 2026-09-06
 
 Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.

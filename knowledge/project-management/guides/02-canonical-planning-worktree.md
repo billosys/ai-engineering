@@ -40,20 +40,21 @@ The resulting default shape is:
 ```
 $PROJECT_DIR/.worktrees/planning/
   project01-<slug>/
-    project-plan.md             ← the project's plan-of-record (the arc roadmap)
-    ledger.md                   ← project-level DoD / composition ledger
-    closing-report.md           ← project-level close + gate review, written at project close
+    project-plan.md              ← the project's plan-of-record (the arc roadmap)
+    ledger.md                    ← project-level DoD / composition ledger
+    closing-report.md            ← project-level close + gate review, written at project close
     arcNN-<slug>/
-      arc-plan.md               ← the arc's plan-of-record (the slice breakdown)
-      ledger.md                 ← arc-level slice-close / composition ledger
-      closing-report.md         ← arc-level close + bubble-up, written at arc close
+      arc-plan.md                ← the arc's plan-of-record (the slice breakdown)
+      ledger.md                  ← arc-level slice-close / composition ledger
+      closing-report.md          ← arc-level close + bubble-up, written at arc close
       sliceNN-<slug>/
-        slice-plan.md           ← plan-of-record for this slice
-        ledger.md               ← grep-verifiable acceptance criteria (the steps)
-        cc-prompt.md            ← the assignment the executing context receives
-        artifacts/              ← durable artifacts produced by this slice, when any
-        closing-report.md       ← per-row walk + bubble-up, written at slice close
-        cdc-verification.md     ← independent re-run + check, written at slice close
+        slice-plan.md            ← plan-of-record for this slice
+        ledger.md                ← grep-verifiable acceptance criteria (the steps)
+        cc-prompt.md             ← initial CC assignment; preserved once issued
+        cc-prompt-iterationNN.md ← follow-up assignment, only when needed
+        artifacts/               ← supporting outputs: research, findings, logs, etc.
+        closing-report.md        ← per-row walk + bubble-up, written at slice close
+        cdc-verification.md      ← independent re-run + check, written at slice close
 ```
 
 Three tiers of plan-of-record, one per scale: **`project-plan.md`** for the
@@ -121,19 +122,20 @@ keep these meanings intact.
 
 ### The per-slice documents and artifact home
 
-The five Markdown documents under each `sliceNN-<slug>/` are the planning and
-close document set that attaches to one execution unit. They split into an
+The five base Markdown documents under each `sliceNN-<slug>/` form an
 **open set** (written when the slice is planned, before any code) and a
-**close set** (written when the slice finishes):
+**close set** (written when the slice finishes). Follow-up prompts extend this
+first-class document set when another assignment is issued:
 
 | Path | Set | Role |
 |----------|-----|------|
 | `slice-plan.md` | open | Plan-of-record: goal, scope (in/out), verification approach, exit criteria. |
 | `ledger.md` | open | The acceptance criteria as grep-verifiable rows — the steps. Format and discipline in [`Row Closure`](../../work-verification/guides/03-row-closure.md). |
-| `cc-prompt.md` | open | The assignment the implementing context (CC) receives. |
+| `cc-prompt.md` | open | Initial assignment to CC; preserve its contents once issued. |
+| `cc-prompt-iterationNN.md` | iteration | A new assignment for each follow-up pass; a sibling of the initial prompt, never a supporting artifact. |
 | `closing-report.md` | close | The per-row walk written at slice close, plus the **bubble-up to the arc** (see [`Closing slices`](./04-closing-slices.md)). |
 | `cdc-verification.md` | close | The independent re-run that verifies the closing report against evidence, plus the **bubble-up check** (see [`Closing slices`](./04-closing-slices.md)). |
-| `artifacts/` | as needed | Default home for durable artifacts produced by this slice. Create it only when the slice produces artifacts, or when creating it up front clarifies the handoff. |
+| `artifacts/` | as needed | Default home for supporting outputs such as research, findings, logs, and analysis. Excludes the first-class slice documents above. Create only when needed or when it clarifies the handoff. |
 
 Opening the close-set documents at slice start, or leaving the open-set
 documents unfinished when handing off to CC, are both spec-keeping failures.
@@ -146,5 +148,37 @@ directory. If no durable artifacts are expected, a short "Artifacts: none
 expected" line is enough. If the operator wants those artifacts somewhere else,
 record the override and rationale in the slice plan before work begins, and
 carry the chosen path into the prompt and close evidence.
+
+### Slice iteration filenames and preservation
+
+The initial assignment is `cc-prompt.md`. Each follow-up assignment gets a
+new file beside it: `cc-prompt-iteration01.md`, then
+`cc-prompt-iteration02.md`, with a two-digit, increasing suffix. `01` means
+the first refinement after the initial assignment. Create a file only when
+there is a concrete assignment; do not pre-create empty iteration prompts.
+Keep the slice's existing plan and ledger: an iteration is a pass inside the
+same slice, not another directory or planning scale.
+
+**Once a prompt is issued to CC, preserve its contents and path.** Drafts may
+be edited before handoff. Corrections or changed instructions after handoff
+belong in the next numbered prompt, even if CC has not started. Do not overwrite
+or append new work to an issued prompt, recycle a used number, rename the
+initial prompt, or turn `cc-prompt.md` into a mutable "latest" copy or symlink.
+Git history alone does not make reuse safe: the handoff path must distinguish
+the new assignment from the old one.
+
+All CC assignments are first-class slice documents in the slice root. Do not
+put iteration prompts in `artifacts/`, `prompts/`, an iteration subdirectory,
+or a session directory. A different home for supporting artifacts does not
+change prompt placement. Any operator-approved prompt naming/layout override
+must be recorded explicitly in project instructions.
+
+For an existing slice with noncanonical or reused prompt paths, preserve the
+historical evidence and record the discrepancy and existing sequence in
+`slice-plan.md`. Use the next unused canonical path for new work unless an
+explicit project override applies. Do not silently relocate, renumber, or
+reconstruct previously issued prompts. See
+[Issuing and executing an iteration](./03-planning-top-down.md#issuing-and-executing-an-iteration)
+for the current-assignment record and handoff requirements.
 
 ---

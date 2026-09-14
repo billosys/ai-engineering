@@ -11,6 +11,21 @@ reviewer). The ledger-row mechanics of both are defined in
 [`Row Closure`](../../work-verification/guides/03-row-closure.md). This section adds
 the two things that make a close also a *bubble-up*.
 
+### When review requires another iteration
+
+A failed review keeps the slice open. CDC records the unresolved rows and
+issues the next slice-root prompt through
+[Issuing and executing an iteration](./03-planning-top-down.md#issuing-and-executing-an-iteration).
+CC executes that assignment before returning for review; existing close-set
+files are evidence of earlier attempts, not permission to skip the new work.
+
+Keep `closing-report.md` and `cdc-verification.md` as the canonical close-set
+files. On subsequent attempts, preserve earlier findings and results in dated,
+iteration-labelled sections and state the current verdict explicitly. Each
+attempt identifies the exact prompt path and the source revision or working
+tree state it assessed. Do not erase failed review evidence or silently carry
+an earlier verdict forward over changed work.
+
 ### The slice closing-report — `closing-report.md`
 
 CC writes the per-row walk: for every ledger row, the final status (`done` /
@@ -18,7 +33,10 @@ CC writes the per-row walk: for every ledger row, the final status (`done` /
 close must match the row count at open). The report also includes a
 slice-artifact inventory: durable artifacts produced by the slice live under
 `artifacts/` by default, or under the operator-recorded override; if the slice
-produced none, say so explicitly. Then CC adds a final section,
+produced none, say so explicitly. First-class slice documents, including every
+issued iteration prompt, stay in the slice root and are excluded from the
+supporting-artifact inventory. Identify the assignment being closed and check
+its work against the ledger. Then CC adds a final section,
 **Bubble-up to the arc**, answering three questions:
 
 1. **Did this slice deliver the piece of the arc's capability the arc-plan
@@ -41,9 +59,14 @@ requires. Then CDC verifies the **bubble-up** itself:
 
 - Confirm the slice delivered its assigned piece, against the arc-plan.
 - Confirm the silent-drop diff is complete and honest.
+- Confirm the reviewed assignment matches the current prompt recorded in
+  `slice-plan.md`, its unresolved work is accounted for, and all issued prompts
+  remain preserved at their recorded paths. Apply the recorded legacy-path
+  disposition where relevant; do not silently move historical prompts.
 - Confirm the artifact inventory is complete: every durable slice-produced
-  artifact is under `artifacts/`, or under the explicit override recorded in the
-  slice plan and prompt; "none" is checked against the actual diff and outputs.
+  supporting artifact is under `artifacts/`, or under the explicit override
+  recorded in the slice plan and prompt; "none" is checked against the actual
+  diff and outputs.
 - **Decide whether the slice's findings require an arc-plan change.** If the
   slice surfaced anything in answer (2) above that changes the arc's slice
   breakdown, sequencing, or scope, then `arc-plan.md` **must be updated before

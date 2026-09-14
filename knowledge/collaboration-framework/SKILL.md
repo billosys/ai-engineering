@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.1.0"
+  version: "2.1.1"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -125,6 +125,12 @@ applies:
   required load set — improvising the mechanics from the summary is the
   documented way these tasks go off the rails.
   Guardrail phrases for source and package validation: no shortcuts; no skipped validation; no weaker evidence or review; no inferred source scope and no reduction or other change in scope; no timeline interpretation; operator approval gates are not overridden.
+- **Issuing or executing a slice iteration.** Preserve every issued prompt.
+  Keep the initial `cc-prompt.md` and each new `cc-prompt-iterationNN.md` in
+  the slice root, with the current assignment recorded in `slice-plan.md`.
+  Load project-management's
+  [iteration filename contract](../project-management/guides/02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation)
+  and [handoff workflow](../project-management/guides/03-planning-top-down.md#issuing-and-executing-an-iteration).
 - Commissioning an **independent, evidence-based audit** of a repo or a body
   of work (load the code-audit prompt).
 - Driving a codebase to a **hard test-coverage threshold** without stopping
@@ -325,8 +331,9 @@ altitude further downstream where they cost more.
 
 Planning runs **top-down** and produces one plan-of-record and one ledger per
 scale: `project-plan.md` + `ledger.md`, `arc-plan.md` + `ledger.md`, and the
-per-slice open set (`slice-plan.md` / `ledger.md` / `cc-prompt.md`). Durable
-artifacts produced by a slice default to that slice's `artifacts/` directory,
+per-slice open set (`slice-plan.md` / `ledger.md` / `cc-prompt.md`). Follow-up
+assignments are preserved sibling `cc-prompt-iterationNN.md` files. Durable
+supporting artifacts produced by a slice default to its `artifacts/` directory,
 unless the operator records an override.
 Closing runs **bottom-up**: each slice closes with a per-row walk *and* a
 **bubble-up to its arc** (did it deliver its assigned piece; what did it

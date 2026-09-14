@@ -24,10 +24,16 @@ prior context. For the canonical **CC**, **CDC**, and **Operator** role
 definitions, read
 [`01-engineering-methodology.md#notes-for-codex`](../../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex).
 Keep the canonical filenames (`project-plan.md`, `arc-plan.md`,
-`slice-plan.md`, per-scale `ledger.md`, `cc-prompt.md`,
+`slice-plan.md`, per-scale `ledger.md`, initial `cc-prompt.md`,
+follow-up `cc-prompt-iterationNN.md`,
 `closing-report.md`, `cdc-verification.md`) and the default slice
 `artifacts/` home unless the operator explicitly changes the project
 convention.
+
+Issued prompts are preserved. Every follow-up assignment gets a new numbered
+prompt in the slice root, beside the initial prompt; `artifacts/` holds
+supporting outputs. Before issuing or executing a follow-up, load the layout
+and iteration workflow below.
 
 This wayfinder and the linked files guide planning craft and the quality floor;
 they do not override Codex's standing system, developer, tool, safety, sandbox,
@@ -46,6 +52,7 @@ order.
 | Understand the vocabulary and sizing model | [`guides/01-scales-of-work.md`](./01-scales-of-work.md) |
 | Create or inspect planning directories, filenames, metadata, per-scale document sets, or slice artifact homes | [`guides/02-canonical-planning-worktree.md`](./02-canonical-planning-worktree.md) |
 | Write a `project-plan.md`, `arc-plan.md`, per-scale `ledger.md`, or per-slice open set | [`guides/03-planning-top-down.md`](./03-planning-top-down.md) |
+| Issue, resume, or execute a slice iteration | [Iteration filenames and preservation](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation) and [issuing and executing an iteration](./03-planning-top-down.md#issuing-and-executing-an-iteration) |
 | Close a slice and bubble findings up to the arc | [`guides/04-closing-slices.md`](./04-closing-slices.md) and [`guides/05-closing-arcs.md`](./05-closing-arcs.md#the-plan-change-discipline-make-a-change--version-history) |
 | Close an arc, check composition, and bubble findings up to the project | [`guides/05-closing-arcs.md`](./05-closing-arcs.md) |
 | Confirm a layout before creating planning directories or filenames | [`guides/06-confirmation-protocol.md`](./06-confirmation-protocol.md) |
@@ -128,6 +135,11 @@ Use these only when context is tight and the operation is narrow:
   discipline in
   [`guides/05-closing-arcs.md`](./05-closing-arcs.md#the-plan-change-discipline-make-a-change--version-history).
 - **Closing an arc:** read [`guides/05-closing-arcs.md`](./05-closing-arcs.md).
+- **Returning a slice to CC or resuming a refinement pass:** read the
+  iteration filename contract in
+  [`guides/02-canonical-planning-worktree.md`](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation)
+  and the handoff workflow in
+  [`guides/03-planning-top-down.md`](./03-planning-top-down.md#issuing-and-executing-an-iteration).
 
 When in doubt, prefer reading the split files in order. The split reduces
 context load; it does not relax the requirement to use the written mechanics.

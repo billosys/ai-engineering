@@ -20,6 +20,12 @@ framework documents and a packaging surface for installable assistant skills.
   `ledger.md`, `cc-prompt.md`, `closing-report.md`, `cdc-verification.md`, and
   `artifacts/` for durable slice-produced artifacts unless the operator records
   an override.
+- Preserve issued slice prompts. Keep the initial `cc-prompt.md` and every
+  follow-up `cc-prompt-iterationNN.md` in the slice root, never in `artifacts/`.
+  Record the current assignment and prior handoffs in `slice-plan.md`; follow
+  `knowledge/project-management/guides/03-planning-top-down.md` for iteration
+  handoff and execution. Supporting-artifact overrides do not change prompt
+  placement.
 - Before implementation or slice/arc closure, read the active
   `project-plan.md` from the `planning` worktree first, then the relevant
   `arc-plan.md`, slice `slice-plan.md`, and ledger files. Treat

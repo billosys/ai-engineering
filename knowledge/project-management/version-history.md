@@ -1,5 +1,16 @@
 # Version History
 
+## Version 2.15.0 - 2026-09-14
+
+Defined preserved, distinct slice-root prompts for successive CC assignments:
+initial `cc-prompt.md`, then `cc-prompt-iterationNN.md`. Distinguished
+first-class slice documents from supporting `artifacts/` outputs. Added the
+assignment-history record, explicit CDC-to-CC handoff and execution requirements,
+and close/review traceability across attempts. Covered legacy-path disposition,
+unstarted prompt replacements, the existing iteration budget, and recurring
+prompt-reuse, artifact-placement, and premature-return anti-patterns. Updated
+entrypoint discovery, wayfinding, layout examples, and confirmation guidance.
+
 ## Version 2.14.0 - 2026-09-06
 
 Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.

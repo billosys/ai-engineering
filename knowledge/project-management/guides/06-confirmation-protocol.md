@@ -20,6 +20,12 @@ directories or filenames**:
 - Resuming a project after long elapse, where the layout you remember may no
   longer match the layout on disk.
 
+Initial and iteration CC prompts are also covered categories: use the
+[slice-root filename contract](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation).
+Once the project layout is established, creating the next iteration prompt
+does not require another layout confirmation. An artifact-home override does
+not implicitly override prompt placement or preservation.
+
 ### How to confirm
 
 A short, specific question with a concrete proposal — *not* an open-ended
@@ -44,6 +50,7 @@ adjust, or override:
 >         slice-plan.md
 >         ledger.md
 >         cc-prompt.md
+>         cc-prompt-iteration01.md  (only when a follow-up is issued)
 >         artifacts/
 >         closing-report.md
 >         cdc-verification.md

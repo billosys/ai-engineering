@@ -84,6 +84,60 @@ not invent a second location. If no durable artifacts are expected, say so in
 the slice plan; this prevents a missing `artifacts/` directory from reading as
 an omission at close.
 
+### Issuing and executing an iteration
+
+When review finds unresolved acceptance criteria, CDC keeps the slice open
+and writes a new assignment using the
+[iteration filename contract](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation).
+Do not edit the issued `cc-prompt.md` or store the follow-up in `artifacts/`.
+
+Maintain an **Assignment history** section in `slice-plan.md`, starting with
+the initial handoff. Record each issued prompt's exact relative path, issue
+date, predecessor, reason, and disposition (active, returned for review,
+superseded, or accepted). Name the current assignment explicitly; a directory
+listing, timestamp, or largest suffix does not establish which prompt was
+issued. Update this record at handoff and review without erasing earlier
+entries. Keep acceptance rows and evidence in the existing `ledger.md`.
+
+Each iteration prompt must tell a fresh CC context:
+
+- **Its assignment identity:** project/arc/slice, iteration number, its own
+  path, and the preceding prompt path. State that CC is to execute this
+  refinement pass and return evidence for CDC review.
+- **What remains to do:** unresolved ledger row IDs, review findings with
+  evidence pointers, required changes, and acceptance checks. Distinguish work
+  already accepted from work still required; "see review comments" alone is
+  not an executable assignment.
+- **What still governs:** links to the current plans and ledger, scope and
+  approval constraints, validation commands, expected outputs and their paths,
+  and applicable commit instructions. Carry forward required constraints from
+  earlier prompts; explicitly identify any authorized change. A new prompt
+  does not itself authorize scope changes.
+- **How to return results:** identify this prompt and iteration in the
+  closing report, account for the assigned rows, and provide fresh evidence
+  for the changes and affected checks. Earlier completion claims are context,
+  not evidence that this assignment has been executed.
+
+At handoff, give the operator the exact new prompt path as plain copy/paste
+text relative to the project directory, including the arc/slice path. For
+example: `arc02-example/slice01-example/cc-prompt-iteration01.md`. Identify the
+pass as CC implementation work. This applies in normal and Expedited Mode.
+Do not give the old prompt path with an instruction to reread its updates.
+
+CC reads the named prompt from disk and checks it against the current
+assignment in `slice-plan.md` before acting. A mismatch needs reconciliation;
+do not guess from filenames. For a matching assignment, execute the remaining
+work and validation before returning to CDC. An earlier closing report or
+"ready for CDC" statement does not cancel the new assignment. If blocked,
+report the concrete blocker against the assigned work.
+
+Numbered files preserve handoff history; they do not extend the five-iteration
+fix-loop budget in [Scales of Work](./01-scales-of-work.md). Record actual
+refinement passes in the assignment history; replacing an unstarted prompt
+does not count as an executed pass. At the cap without convergence, surface
+the need for re-scoping or an explicit operator decision rather than silently
+issuing more work.
+
 ### Plan late, plan deep
 
 Plan each level in detail only when it is near. Write the full project roadmap
