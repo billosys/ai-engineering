@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice08-source-support-subjects-and-spans
-status: changes-required
-version: "1.1"
+status: closed
+version: "1.2"
 ---
 
 # Source Support Subjects And Spans
@@ -13,7 +13,12 @@ the selected material used for that support. Preserve the distinction between
 finding an address, selecting a span and assessing its relation to an assertion.
 This is authored inventory/comparison work, not new card verification.
 
-CDC review of `2dfe5577` (2026-09-13): S8-2/S8-4/S8-7 pass independently.
+CDC closure of `3436020a` (2026-09-13): all seven criteria pass;
+see cdc-verification.md for the row walk, pinned replay and retained target
+limitations. Arc01 now routes next execution to Slice09. Was: Iteration 01
+pending. The following correction passage is historical, not an active prompt.
+
+Earlier CDC review of `2dfe5577` (2026-09-13): S8-2/S8-4/S8-7 pass independently.
 Reference consistency, historical/contextual consequences and full replay
 remain open under S8-R1/R2/R3. Follow `artifacts/iteration-01-cc-prompt.md`.
 Was: initial CC execution. All 27 pairs and seven criteria remain unchanged;
@@ -160,6 +165,11 @@ only. Slice04/01, Arc01 and the project remain open; P-14 and research gates
 are untouched.
 
 ## Version History
+
+- 1.2 (2026-09-13): CDC independently closes all seven unchanged criteria
+  after 3436020a. Reference limitations are findings, not repaired input or
+  verified claims. The CDC record supplies a pinned historical replay;
+  CC's four semantic artifacts and closing report remain unchanged.
 
 - 1.1 (2026-09-13): Initial CDC review retains three reproduced criteria
   and opens Iteration 01 for target agreement, contextual dispositions and

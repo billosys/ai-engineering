@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.18"
+version: "1.19"
 ---
 
 # Metadata Research And Requirements
@@ -24,7 +24,8 @@ because it appears in the initial hypothesis.
 | `slice04-semantic-identity-source-and-graph-families` | Authored identity, classification, source, locator, claim/support, relationship and CQ semantics with explicit context membership | Frozen Slice01 evidence; consumes Slice06 for its assigned portion | Batch01 ten pairs accepted; remainder and final composition open |
 | `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | CDC closed after e88e6c0b plus attributed census replay completion |
 | `slice07-source-identity-and-locator-semantics` | Seven legacy source fields and thirteen source-locator fields: 20 exact pairs | Frozen inventory, accepted Batch01 and Slice06; not Slice04 closure | CDC closed after f82d0524 |
-| `slice08-source-support-subjects-and-spans` | Assertion subject, selected source spans and support-status semantics: 27 exact source-support pairs | Frozen inventory and accepted Batch01/Slice06/Slice07; not Slice04 closure | Changes required; Iteration 01 for S8-R1/R2/R3 |
+| `slice08-source-support-subjects-and-spans` | Assertion subject, selected source spans and support-status semantics: 27 exact source-support pairs | Frozen inventory and accepted Batch01/Slice06/Slice07; not Slice04 closure | CDC closed after 3436020a; unresolved target components retained |
+| `slice09-claim-and-card-linkage-semantics` | Claim assertion/card linkage and card claim/source/support references: 21 exact pairs | Frozen inventory and accepted Batch01/Slice06/Slice07/Slice08; not Slice04 closure | Open for CC execution |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -44,7 +45,26 @@ standards adoption for its own sake.
 
 ## Acceptance And Handoff
 
-Current Slice08 review (2026-09-13), `2dfe5577`: exact coverage, bounded
+Current (2026-09-13): Slice08 `3436020a` is independently CDC-closed
+against all seven unchanged criteria. Its 27 field-specific meanings preserve
+observed heading/table-row lookup separately from unresolved literal fragments,
+embedded-claim/locator revisions and source-record declarations. This accepts
+the analysis, not those references as fully resolved or the claims as verified.
+Was: Slice08 Iteration 01 pending.
+
+Open sibling Slice09 for 21 exact claim/card assertion and source/support
+linkage pairs. The frozen census exposes a claim template but no populated
+standalone claim root, alongside cards with empty, absent, populated and
+alternate source-snapshot representations. Compare those contexts explicitly;
+do not manufacture missing standalone evidence or infer support from membership
+in a card's lists. Keep preparation, graph/CQ and lifecycle fields outside
+this unit. After 94 accepted and 21 assigned pairs, 440 remain: 188 original
+Slice04 and 252 original Slice05. Old ownership labels remain accounting only.
+Slice04 integration, Slice05 remaining semantics/final replay, Slice01 closure,
+research gates and P-14 remain required. Size the next remainder after Slice09.
+Earlier review/opening paragraphs below are historical, not current routes.
+
+Earlier Slice08 review (2026-09-13), `2dfe5577`: exact coverage, bounded
 selection/status comparisons and scoped preservation pass. Target agreement,
 historical/contextual consequences and full replay require S8-R1/R2/R3
 corrections in `artifacts/iteration-01-cc-prompt.md`. Was: initial execution.
@@ -239,6 +259,11 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.19 (2026-09-13): Closes Slice08 after independent 3436020a review
+  resolves S8-R1/R2/R3. Opens bounded 21-pair Slice09 with 94 accepted and
+  440 other pairs. Preserves target limitations and all parent/UAT obligations;
+  was: Slice08 correction pending, not a schema or reference repair.
 
 - 1.18 (2026-09-13): Slice08 review of 2dfe5577 retains three reproduced
   criteria and opens Iteration 01 for S8-R1/R2/R3. Records required evidence

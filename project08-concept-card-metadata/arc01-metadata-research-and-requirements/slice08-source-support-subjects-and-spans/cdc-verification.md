@@ -1,5 +1,115 @@
 # CDC Verification: Slice08
 
+## Iteration 01: Closed
+
+Independently reviewed `3436020a` on 2026-09-13 against the same seven
+criteria and exact 27 pairs. **Slice08 is closed.** S8-R1/R2/R3 are resolved
+as evidence/reporting corrections, not repairs to the historical pilot.
+Source remains clean at `e763c661`. CC's four semantic artifacts and
+closing-report.md are unchanged by this review. Earlier findings below remain
+as history, not the current status or execution route.
+
+### Findings Reconciled
+
+- R1: Read the reference contract and targets, including all four claim
+  headings, acquisition and preparation records and all six locator rows
+  (four text, two figure). Heading/row lookup is demonstrated in this sample.
+  The files do not declare explicit fragment anchors, separate embedded-claim
+  or locator revisions, or the requested source-record ID/revision tuple.
+  The revised matrix retains those unknowns and distinguishes the declared
+  prepared-manifest ID/revision from a general source-snapshot contract.
+  Unknown target components are valid inventory findings, not failed science
+  or a requirement to invent/repair the input.
+- R2: All 27 meanings now have contextual dispositions, with 27 distinct
+  texts and no repeated evidence IDs within meaning lists. Inspected the
+  meanings as well as counting them: source versus snapshot roles, selection
+  versus context, reference components, and quote/checksum notes retain
+  different consequences. Accent Types and OTP Behaviour carry readable
+  source/review notes but do not supply these machine assertion/span tuples
+  in the inspected samples. No global historical-absence or query-equivalence
+  claim follows. Both samples and the live reference rules join the register.
+- R3: Ran the entire CC validation block literally before CDC planning
+  edits: exit 0. Exact-set, accepted-67 disjointness, evidence layers, all
+  21 hashes, five-root census, target/context output, fixed historical
+  preservation, current-state preservation and whitespace passed. The full
+  target-file inspection above supplements the positive lookup queries:
+  search matches alone do not establish absent declarations. The report
+  and handoff now account for all seven criteria and the four artifacts.
+
+Direct/caveated and text/figure distinctions from the initial review still
+hold. This is independent semantic-inventory review, not a new inspection of
+the textbook or images, independent claim warrant, operator acceptance or
+memory admission. Unassessed lifecycle states remain unassessed.
+
+### Durable Replay
+
+Run from /Users/oubiwann/lab/billosys/ai-engineering. CDC authored this
+wrapper, not CC. It reads CC's committed validation block and pins only its
+open-ended prior-packet comparison to the reviewed delivery `3436020a`.
+The original block was already run literally while that delivery was current.
+Pinning avoids treating subsequent authorized CDC Slice04 plan maintenance as
+a CC preservation failure; it does not conceal or modify the fixed historical
+comparison, census, evidence or hash checks.
+
+~~~bash
+set -euo pipefail
+a=project08-concept-card-metadata/arc01-metadata-research-and-requirements
+s="$a/slice08-source-support-subjects-and-spans"
+git -C .worktrees/planning show "3436020a:$s/artifacts/validation-evidence.md" |
+  awk '/^~~~bash$/ {active=1;next} /^~~~$/ {active=0;next} active {print}' |
+  sed 's/diff --exit-code d977cb31 --/diff --exit-code d977cb31 3436020a --/' |
+  bash -e
+jq -e '(.meanings|length)==27 and (.evidence|length)==21 and
+  ([.meanings[].disposition]|unique|length)==27 and
+  all(.meanings[];(.evidence_ids|length)==(.evidence_ids|unique|length))' \
+  ".worktrees/planning/$s/artifacts/semantic-membership.json"
+p=.worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts
+cat "$p/source-acquisition.md" "$p/prepared-source-manifest.md" "$p/locator-map.md"
+for name in emergent-explanation memory-consolidation model-data-constraints pattern-separation
+do
+  cat "$p/candidate-cards/cc-$name.md"
+done
+git -C .worktrees/planning show --check 3436020a
+~~~
+
+Results: exit 0; all checks above pass. Direct reading confirms the four
+requested claim IDs and six locator IDs can be found, without promoting
+text/table lookup to universal URL-fragment or target-revision agreement.
+The committed repair touches exactly six authorized files. Subsequent CDC
+edits are only closure/roadmap/open-set documents; no CC semantic artifact,
+source file, corpus, parser, baseline or prior accepted evidence changes.
+
+### Seven-Row Closure
+
+| Row | CDC disposition | Independently checked evidence |
+| --- | --- | --- |
+| S8-1 | done, reproduced | 21 registered hashes, named sections, reference and historical roles |
+| S8-2 | done, reproduced | Exact 27 unique frozen pairs; no overlap with accepted 67 |
+| S8-3 | done, reproduced | Five-root values/shapes, four claim targets, acquisition/manifest and six locator rows; explicit unresolved components |
+| S8-4 | done, reproduced | Direct/caveated and text/figure contrasts; selection, status, quote, context and checksum-note limits |
+| S8-5 | done, reproduced | Field-specific meanings/dispositions, live reference contract and bounded music/OTP body comparison |
+| S8-6 | done, reproduced | Literal CC block, pinned CDC replay, complete four-artifact/seven-row handoff and unchanged remainder obligations |
+| S8-7 | done, reproduced | Six-file CC scope, historical/current pre-review preservation, clean source and whitespace |
+
+### Bubble-Up And What Worked
+
+Delivered the assigned bounded comparison without reducing any criterion.
+All four CC artifacts are in artifacts/; the earlier CDC correction prompt
+remains there as review history. No deferral or no-op closes a row.
+The useful repair was to turn unresolved target components into explicit
+findings and field consequences instead of treating file availability as
+reference validity. That pattern carries into the next comparison.
+
+Arc01 is updated before opening Slice09. Accepted coverage is now 94/555;
+this is a mechanical contextual-pair count, not a measure of global semantic
+equivalence. Slice09 receives 21 claim/card linkage pairs; 440 others remain
+(188 original Slice04, 252 original Slice05). Those original allocation
+labels are accounting only. Slice04 complete-artifact integration, Slice05
+remaining semantics/final replay, Slice01 closure, research Slice02/03,
+P-14 and all project output-quality gates remain open and intact.
+
+## Initial Review: Historical
+
 Reviewed `2dfe5577` on 2026-09-13 against all seven unchanged criteria.
 **Changes required.** Exact coverage, selection/status contrasts and scoped
 preservation pass. Reference consistency, contextual consequences and complete
