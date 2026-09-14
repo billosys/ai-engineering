@@ -1,5 +1,115 @@
 # CDC Verification: Slice09
 
+## Iteration 01 Review: Five Criteria Reproduced
+
+Reviewed `0aeaf507` on 2026-09-13. **Changes required, narrowed to S9-1
+and S9-6.** R3 is resolved. R2's substantive target/mapping comparison is
+accepted; only registration of the mapping inputs remains. R1's failing
+commands and census are repaired; remaining inspection/preservation replay
+coverage is detailed below. Earlier findings are historical where superseded.
+
+### Accepted Repair
+
+Ran each of the two published Bash blocks independently from its declared
+source cwd: both exit 0. They are separate blocks that change cwd, so do not
+concatenate them in one shell without restoring the declared cwd.
+
+- Census emits 32 roots / 224 attributable rows with values, presence, typed
+  nested shapes and collection lengths; pilot/expanded contexts are separate.
+  Three named malformed rich inputs remain parse limitations.
+- All 19 registered input hashes pass. Plan-derived exact 21, accepted 94,
+  frozen inclusion, uniqueness, disjointness and 440 remainder checks pass.
+- Exact original/copy manifest lines and current copy hashes agree for both
+  selected rerun baselines. No current ignored workbench input is needed.
+- The currently available Chapter 1 target matches the acquisition hash.
+  CDC separately read its three-line frontmatter: bibfile is its only field;
+  it does not declare ccn-book or a source-record revision.
+- All 21 memberships have effective component meanings; list entry, ID, path
+  and revision no longer inherit a collection definition as their only meaning.
+  Requiredness is explicitly unresolved rather than inferred from null.
+- CDC read the named historical definitions and confirmed the bounded prose
+  comparisons. Readable assertion scope is distinct from structured assertion/
+  source-support linkage; no new source-truth verdict follows.
+- Both meaning/member evidence layers and membership-to-meaning references
+  resolve under an additional CDC assertion. Fixed repair preservation from
+  b905290c to 0aeaf507 leaves Slice01/04/06/07/08 unchanged. Source is clean.
+
+### Remaining R2: Register Mapping Inputs
+
+The two manifests used as evidence are absent from the 19-entry register:
+Slice01 artifacts/baseline-snapshots/source-sha256sums.txt and
+copy-sha256sums.txt. Add their exact paths, hashes, selected lines/sections and
+roles, with an explicit link from the mapping observation to those inputs.
+The literal grep comparisons already demonstrate the selected mapping; do
+not redo the semantic analysis or require current workbench files.
+
+### Remaining R1: Complete The Inspection And Preservation Route
+
+The first block now reads all ten listed template/example/pilot/rerun files
+separately. It still supplies no literal section-reading commands for the
+historical music/OTP definitions, historical guide, reference/lifecycle rules,
+pilot acquisition, Chapter 1 frontmatter, or reused Slice08 matrix cited in
+the new conclusions. The second block hashes those registered inputs; it
+does not inspect their declarations or section contents. Add focused reads
+for the actual cited sections with explicit input identities.
+
+The final diff --check/status commands are correctly labeled pre-commit
+observations, but are not the required scoped repair preservation comparison.
+Add the known fixed b905290c-to-0aeaf507 prior-packet diff and a scoped
+current-state preservation comparison for the new correction, keeping
+authorized CDC plan/ledger edits outside its pre-correction baseline.
+Record actual results, not a claim that status or whitespace proves preservation.
+
+This is an evidence-registration/replay completion, not a target-data repair
+or a request to widen the historical sample, re-extract cards, infer unknown
+target revisions or redesign the now-accepted component meanings.
+
+### Independent Replay
+
+Run each block from /Users/oubiwann/lab/billosys/ai-engineering:
+
+~~~bash
+set -euo pipefail
+s=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice09-claim-and-card-linkage-semantics
+for n in 1 2
+do
+  awk -v n="$n" '/^```bash$/ {block++;active=1;next} /^```$/ {active=0;next} active && block==n {print}' "$s/artifacts/validation-evidence.md" | bash -e
+done
+jq -e '.evidence as $e | .meanings as $m |
+ all(.memberships[];$m[.meaning_id]!=null and (.effective_meaning|type)=="string" and all(.evidence_ids[];$e[.]!=null)) and
+ all(.meanings[];all(.evidence_ids[];$e[.]!=null))' "$s/artifacts/semantic-membership.json"
+git -C .worktrees/planning diff --exit-code b905290c 0aeaf507 -- \
+ project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions \
+ project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families \
+ project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification \
+ project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice07-source-identity-and-locator-semantics \
+ project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice08-source-support-subjects-and-spans
+~~~
+
+Results: exit 0. This is verification of the documented checks and an explicit
+CDC supplement, not a claim that the missing CC inspection commands exist.
+
+| Row | CDC disposition | Result |
+| --- | --- | --- |
+| S9-1 | open | 19 hashes and substantive mapping pass; register both manifests |
+| S9-2 | done, reproduced | Exact 21 / accepted 94 / remainder 440 |
+| S9-3 | done, reproduced | Full attributable value/shape census and explicit parse limitations |
+| S9-4 | done, reproduced | Pilot/rerun source and embedded-target limits checked |
+| S9-5 | done, reproduced | Effective component meanings and concrete historical assertions inspected; R3 resolved |
+| S9-6 | open | Remaining cited-section reads and scoped repair-preservation route |
+| S9-7 | done, reproduced | Six authorized files, fixed prior-packet preservation and clean source |
+
+### Bubble-Up
+
+Open only Slice09 Iteration 02 under artifacts/iteration-02-cc-prompt.md.
+No next slice opens. Preserve all accepted semantic work and every original
+criterion. Four CC artifacts remain in their assigned home; no artifact is
+missing, but two evidence obligations remain incomplete. Keep 94 accepted /
+21 assigned / 440 other pairs, parent integration, research gates and P-14
+unchanged. CC's semantic artifacts/report are unmodified by this CDC review.
+
+## Initial Review: Historical
+
 Reviewed `6eb034a1` on 2026-09-13 against the seven original criteria.
 **Changes required.** Exact coverage and scoped preservation pass. Retain the
 useful template-only and assertion-support distinctions; correct the bounded

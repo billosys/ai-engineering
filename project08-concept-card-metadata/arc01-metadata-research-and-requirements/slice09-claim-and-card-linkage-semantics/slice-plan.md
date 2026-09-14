@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice09-claim-and-card-linkage-semantics
 status: changes-required
-version: "1.1"
+version: "1.2"
 ---
 
 # Claim And Card Linkage Semantics
@@ -15,7 +15,13 @@ and the evidence that supports a particular assertion.
 
 ## Basis And Sizing
 
-CDC review of 6eb034a1 (2026-09-13) reproduces exact coverage and
+Current CDC review of 0aeaf507 (2026-09-13) reproduces five criteria.
+Only S9-1/S9-6 remain: register both mapping manifests and finish the
+cited-section/repair-preservation replay. Follow artifacts/iteration-02-cc-prompt.md.
+R3 and the substantive target/component comparisons are accepted; do not
+rewrite them. Was: broad Iteration 01 correction. Scope and parent gates stand.
+
+Earlier CDC review of 6eb034a1 (2026-09-13) reproduces exact coverage and
 preservation. Follow artifacts/iteration-01-cc-prompt.md for S9-R1/R2/R3:
 literal replay/census, target and baseline evidence, and effective component
 meanings. Was: initial CC execution. All 21 pairs and seven criteria remain;
@@ -177,6 +183,10 @@ Research Slice02/03 and P-14's same-chapter Complete Musician trial keep their
 existing gates. No new card-quality trial is executed by this slice.
 
 ## Version History
+
+- 1.2 (2026-09-13): CDC accepts five criteria after 0aeaf507 and resolves
+  R3. Iteration 02 finishes only residual R1/R2 registration and replay.
+  Was: broader correction; no scope or acceptance reduction.
 
 - 1.1 (2026-09-13): CDC review retains reproduced S9-2/S9-7 and opens
   Iteration 01 for S9-R1/R2/R3. Corrects evidence within unchanged scope;
