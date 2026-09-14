@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice09-claim-and-card-linkage-semantics
-status: open
-version: "1.0"
+status: changes-required
+version: "1.1"
 ---
 
 # Claim And Card Linkage Semantics
@@ -14,6 +14,12 @@ machine lookup capability without conflating a card, its claims, a source,
 and the evidence that supports a particular assertion.
 
 ## Basis And Sizing
+
+CDC review of 6eb034a1 (2026-09-13) reproduces exact coverage and
+preservation. Follow artifacts/iteration-01-cc-prompt.md for S9-R1/R2/R3:
+literal replay/census, target and baseline evidence, and effective component
+meanings. Was: initial CC execution. All 21 pairs and seven criteria remain;
+no next slice or source/input repair is authorized.
 
 Consumes the frozen Slice01 inventory and accepted Batch01/Slice06/Slice07/
 Slice08 evidence, not Slice04 formal closure. Read the project plan/ledger,
@@ -171,6 +177,10 @@ Research Slice02/03 and P-14's same-chapter Complete Musician trial keep their
 existing gates. No new card-quality trial is executed by this slice.
 
 ## Version History
+
+- 1.1 (2026-09-13): CDC review retains reproduced S9-2/S9-7 and opens
+  Iteration 01 for S9-R1/R2/R3. Corrects evidence within unchanged scope;
+  was: initial execution, with no parent or UAT gate reduction.
 
 - 1.0 (2026-09-13): Opens 21-pair claim/card linkage comparison after
   Slice08 CDC closure. Preserves all remaining semantics and parent/UAT gates.
