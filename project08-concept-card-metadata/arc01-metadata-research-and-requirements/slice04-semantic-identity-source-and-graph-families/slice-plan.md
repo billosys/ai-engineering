@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice04-semantic-identity-source-and-graph-families
 status: awaiting-remainder-and-composition
-version: "1.7"
+version: "1.8"
 ---
 
 # Semantic Identity, Source And Graph Families
@@ -20,7 +20,13 @@ and declared samples. CDC supplied and independently executed a corrected
 replay section, explicitly attributed in its evidence artifact. This acceptance
 does not close any full-scope row or assert corpus-wide equivalence.
 
-Current (2026-09-13): Slice08 closes independently after `3436020a`;
+Current (2026-09-13): Slice09 closes independently after `4ae905c2`.
+Batch01 and Slice06 through Slice09 supply 115 accepted pairs; 440 remain
+(188 original Slice04, 252 original Slice05). All complete-artifact and
+composition criteria remain here. Operator pause: no successor is opened
+until the progress/process discussion. Was: Slice09 execution.
+
+Earlier (2026-09-13): Slice08 closes independently after `3436020a`;
 Batch01 and Slice06/Slice07/Slice08 now supply 94 accepted pairs. Next is
 sibling `slice09-claim-and-card-linkage-semantics/cc-prompt.md`, covering
 21 original Slice04 pairs. The other 440 pairs remain (188 original Slice04,
@@ -156,6 +162,10 @@ CDC independently verifies it and sizes/opens Slice05. This slice alone does
 not close Slice01 or establish full semantic coverage.
 
 ## Version History
+
+- 1.8 (2026-09-13): Incorporates Slice09 CDC closure and operator pause;
+  retains 440 remaining pairs and full integration. Was: Slice09 correction
+  pending. No new execution assignment or semantic scope reduction.
 
 - 1.7 (2026-09-13): Incorporates Slice08 CDC closure and routes 21 claim/
   card linkage pairs to Slice09. Retains 440 other pairs and full integration;

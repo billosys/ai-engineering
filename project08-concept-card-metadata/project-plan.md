@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.12"
+version: "1.13"
 ---
 
 # Concept Card Metadata
@@ -71,7 +71,7 @@ research/design decisions. Arc02 will supply the accepted architecture artifact.
 
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
-| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Active; Batch01 and Slice06/Slice07/Slice08 accepted, Slice09 claim/card linkage comparison open; Slice04/01 still unclosed |
+| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Batch01 and Slice06 through Slice09 accepted; execution paused by operator for progress/process discussion; Slice04/01 still unclosed |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Arc01 | Hypothesis; detailed plan when near |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -82,6 +82,13 @@ change skills and revisit Arc02 decisions through newly scoped slices; Arc03's
 completion does not freeze implementation. Record additions and superseded
 assumptions in plan histories and ledgers. A coherent new capability may warrant
 an additional arc rather than overloading Arc04.
+
+Operator pause after Slice09 review (2026-09-13): complete independent review
+and report progress, then stop before opening further work. Slice09 is now
+CDC-closed after 4ae905c2. No next slice or revised execution strategy is
+authorized by this pause; all required outcomes remain. Discuss the balance
+between substantive semantic work and repeated evidence-maintenance cycles
+before resuming. Was: automatic next-slice opening in Expedited Mode.
 
 ## Arc04 Operating Contract
 
@@ -246,6 +253,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.13 (2026-09-13): Arc01 closes Slice09 after 4ae905c2; operator requests
+  a pause for progress/process assessment before further work. Records 115
+  accepted contextual pairs without implying project completion or changing
+  scope, research dependencies or UAT gates.
 
 - 1.12 (2026-09-13): Arc01 closes Slice08 after independent review of
   3436020a, retaining unresolved reference components as bounded findings.

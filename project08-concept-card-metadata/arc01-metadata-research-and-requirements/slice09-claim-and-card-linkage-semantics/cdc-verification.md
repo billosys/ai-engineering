@@ -1,5 +1,104 @@
 # CDC Verification: Slice09
 
+## Iteration 02: Closed
+
+Independently reviewed `4ae905c2` on 2026-09-13. **All seven original
+criteria pass; Slice09 is closed.** Remaining R1/R2 evidence registration
+and replay obligations are resolved. R3's previously accepted component
+meanings are unchanged. Earlier review sections remain historical evidence.
+
+### Independent Evidence
+
+- Ran both published Bash blocks separately from their declared source cwd:
+  both exit 0. The first emits the 32-root / 224-row census, preserves the
+  three malformed-input limitations and reads the required named sections.
+- All 21 registered hashes match, including both baseline manifests.
+  Registered lines 8/22 and mapping evidence IDs agree with the actual
+  original/copy entries. Source-target observations remain bounded to the
+  inspected Chapter 1 bytes and metadata, not a claim-warrant assessment.
+- Exact 21, uniqueness, frozen inclusion, accepted-94 disjointness and
+  440 remainder checks pass. Both evidence layers, membership-to-meaning
+  references and baseline-mapping evidence links resolve under CDC checks.
+- Fixed historical preservation comparisons and the pre-review current-state
+  comparison pass. CDC additionally compared d09d70bc to 4ae905c2 for the
+  complete prior Slice01/04/06/07/08 packets: no differences.
+- Reviewed the six-file repair diff: only the two evidence registrations,
+  mapping links, replay and attestation updates; no component-meaning rewrite.
+  Source remains clean at e763c661. Commit whitespace check passes.
+
+The validation artifact's title still says Iteration 01, while its contents,
+closing report and reviewed commit include Iteration 02. This harmless title
+lag does not obscure evidence identity or reopen an acceptance criterion.
+No source/package gate is needed for this planning-only review.
+
+### Durable Replay
+
+From /Users/oubiwann/lab/billosys/ai-engineering, run the blocks separately.
+This CDC wrapper reads the reviewed committed artifact and pins its one
+open-ended preservation comparison to the reviewed delivery. The original
+blocks were already run literally before CDC closure edits. Pinning prevents
+authorized subsequent Slice04 plan maintenance from being mistaken for a
+CC input-preservation failure; no evidence or CC artifact is rewritten.
+
+~~~bash
+set -euo pipefail
+a=project08-concept-card-metadata/arc01-metadata-research-and-requirements
+s="$a/slice09-claim-and-card-linkage-semantics"
+for n in 1 2
+do
+  git -C .worktrees/planning show "4ae905c2:$s/artifacts/validation-evidence.md" |
+    awk -v n="$n" '/^```bash$/ {block++;active=1;next} /^```$/ {active=0;next} active && block==n {print}' |
+    sed 's/diff --exit-code d09d70bc --/diff --exit-code d09d70bc 4ae905c2 --/' |
+    bash -e
+done
+jq -e '.evidence as $e | .meanings as $m |
+ (.evidence|length)==21 and
+ all(.memberships[];$m[.meaning_id]!=null and all(.evidence_ids[];$e[.]!=null)) and
+ all(.meanings[];all(.evidence_ids[];$e[.]!=null)) and
+ all(.baseline_mappings[];.original_sha256==.copy_sha256 and all(.evidence_ids[];$e[.]!=null))' \
+ ".worktrees/planning/$s/artifacts/semantic-membership.json"
+git -C .worktrees/planning show --check 4ae905c2
+~~~
+
+Results: exit 0. Temporary Chapter 1 availability and registered hashes are
+time-bounded prerequisites: future unavailability or changed inputs must be
+reported, not treated as a reason to substitute different corpus bytes.
+
+### Seven-Row Closure
+
+| Row | CDC disposition | Evidence |
+| --- | --- | --- |
+| S9-1 | done, reproduced | 21 registered inputs, exact mapping roles and original/copy identity checks |
+| S9-2 | done, reproduced | Exact 21 unique frozen pairs; disjoint accepted 94 and 440 remainder |
+| S9-3 | done, reproduced | Attributable values, types, shapes, lengths and explicit parse limitations |
+| S9-4 | done, reproduced | Pilot/rerun reference targets, source identity and embedded-record limits |
+| S9-5 | done, reproduced | Accepted effective component meanings and bounded historical/current assertion comparison |
+| S9-6 | done, reproduced | Both literal blocks, focused reads, all hashes, fixed/current preservation and complete handoff |
+| S9-7 | done, reproduced | Six-file scope, preserved source/prior evidence and whitespace |
+
+### Bubble-Up And Operator Pause
+
+Assigned scope is delivered: four CC artifacts in artifacts/, seven criteria,
+21 contextual pairs, no deferrals or no-ops. Both correction prompts remain
+review history. No CC semantic artifact or proposed-done report is modified
+by CDC closure; the independent verdict lives here and in the ledger.
+
+Accepted bounded coverage totals 115 unique pairs with Batch01/Slice06/
+Slice07/Slice08. The other 440 pairs and full integration remain open.
+Slice04/05, Slice01, Arc01 and Project08 do not close from this child verdict.
+
+The operator explicitly asks to pause after this review and discuss progress.
+That overrides automatic next-slice opening in Expedited Mode. Project/arc/
+Slice04 status is updated, but no successor is created and no process redesign
+is implemented. All research, source changes, repeated extractions, graph
+capability tests, P-14 and operator-quality gates retain their existing scope.
+
+What worked: the last correction was bounded to missing evidence links and
+replay coverage; it preserved accepted semantic work and unknowns. The main
+remaining project question is how to convert the evidence foundation into
+design and tested output efficiently, not whether this slice needs another
+semantic iteration.
+
 ## Iteration 01 Review: Five Criteria Reproduced
 
 Reviewed `0aeaf507` on 2026-09-13. **Changes required, narrowed to S9-1

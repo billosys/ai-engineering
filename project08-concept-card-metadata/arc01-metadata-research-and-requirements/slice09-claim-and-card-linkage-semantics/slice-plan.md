@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 slice: slice09-claim-and-card-linkage-semantics
-status: changes-required
-version: "1.2"
+status: closed
+version: "1.3"
 ---
 
 # Claim And Card Linkage Semantics
@@ -15,7 +15,12 @@ and the evidence that supports a particular assertion.
 
 ## Basis And Sizing
 
-Current CDC review of 0aeaf507 (2026-09-13) reproduces five criteria.
+CDC closure of 4ae905c2 (2026-09-13): all seven unchanged criteria pass.
+See cdc-verification.md for reproduced evidence and retained reference limits.
+The operator requests a pause after this review; no next slice is opened.
+Was: Iteration 02 pending. Earlier correction text below is historical.
+
+Earlier CDC review of 0aeaf507 (2026-09-13) reproduces five criteria.
 Only S9-1/S9-6 remain: register both mapping manifests and finish the
 cited-section/repair-preservation replay. Follow artifacts/iteration-02-cc-prompt.md.
 R3 and the substantive target/component comparisons are accepted; do not
@@ -183,6 +188,10 @@ Research Slice02/03 and P-14's same-chapter Complete Musician trial keep their
 existing gates. No new card-quality trial is executed by this slice.
 
 ## Version History
+
+- 1.3 (2026-09-13): CDC closes all seven criteria after 4ae905c2.
+  Records operator pause before further planning; no underlying target repair,
+  source-skill implementation or parent closure is claimed.
 
 - 1.2 (2026-09-13): CDC accepts five criteria after 0aeaf507 and resolves
   R3. Iteration 02 finishes only residual R1/R2 registration and replay.

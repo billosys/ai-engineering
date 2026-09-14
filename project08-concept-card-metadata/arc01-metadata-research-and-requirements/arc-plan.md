@@ -2,7 +2,7 @@
 project: project08-concept-card-metadata
 arc: arc01-metadata-research-and-requirements
 status: active
-version: "1.21"
+version: "1.22"
 ---
 
 # Metadata Research And Requirements
@@ -25,7 +25,7 @@ because it appears in the initial hypothesis.
 | `slice06-record-identity-and-classification` | Record identity/revision for non-card records, record-type labels, legacy category/subcategory/tier: 37 exact observed pairs | Accepted Slice04 Batch01 plus frozen Slice01 inventory; not Slice04 closure | CDC closed after e88e6c0b plus attributed census replay completion |
 | `slice07-source-identity-and-locator-semantics` | Seven legacy source fields and thirteen source-locator fields: 20 exact pairs | Frozen inventory, accepted Batch01 and Slice06; not Slice04 closure | CDC closed after f82d0524 |
 | `slice08-source-support-subjects-and-spans` | Assertion subject, selected source spans and support-status semantics: 27 exact source-support pairs | Frozen inventory and accepted Batch01/Slice06/Slice07; not Slice04 closure | CDC closed after 3436020a; unresolved target components retained |
-| `slice09-claim-and-card-linkage-semantics` | Claim assertion/card linkage and card claim/source/support references: 21 exact pairs | Frozen inventory and accepted Batch01/Slice06/Slice07/Slice08; not Slice04 closure | Five criteria reproduced; Iteration 02 for residual S9-R1/R2 evidence |
+| `slice09-claim-and-card-linkage-semantics` | Claim assertion/card linkage and card claim/source/support references: 21 exact pairs | Frozen inventory and accepted Batch01/Slice06/Slice07/Slice08; not Slice04 closure | CDC closed after 4ae905c2; no successor opened during operator pause |
 | `slice05-semantic-lifecycle-provenance-and-replay` | Remaining lifecycle/provenance semantics, full join/coverage, parser instruction dispositions, exact inputs and literal replay; reconcile Slice01 handoff | Independently reviewed Slice04 semantic packet and Slice01 evidence | Reserved; plan after Slice04 review and sizing |
 | `slice02-standards-and-source-model-research` | Primary-source research on classification, source identity/locators, typed relations, provenance and metadata profiles | Reconciled and CDC-closed Slice01, including Slice04/05 | Unopened until remediation composition passes |
 | `slice03-requirements-and-acceptance-design` | No-loss requirements, migration/query fixtures and repeated-run quality criteria for architecture/UAT | Slice01/02 | Plan when near |
@@ -44,6 +44,20 @@ competency questions or requirements engineering. Seek benefits and costs, not
 standards adoption for its own sake.
 
 ## Acceptance And Handoff
+
+Current (2026-09-13): Slice09 closes after independent review of 4ae905c2.
+All seven unchanged criteria pass; unresolved target declarations, literal
+fragments, revision inheritance and requiredness remain explicit findings.
+Accepted bounded evidence now covers 115 unique path/kind pairs; 440 remain
+(188 original Slice04, 252 original Slice05). These counts describe coverage,
+not project completion or endorsement of the old semantic allocation.
+
+The operator explicitly requests a pause after this review to discuss
+progress and process. Do not open another slice or change sequencing during
+the pause. Slice04 full-artifact integration, Slice05 remaining semantics/
+replay, Slice01 recomposition, research and P-14 gates remain unchanged.
+Was: Slice09 Iteration 02 pending and automatic next-slice opening.
+Earlier review and execution passages below are historical.
 
 Current Slice09 review (2026-09-13), `0aeaf507`: five criteria reproduced;
 R3 and substantive component/target comparisons accepted. Iteration 02
@@ -274,6 +288,10 @@ template conformance. Architecture, implementation and actual extraction remain
 later work, with evidence ownership recorded rather than presumed complete.
 
 ## Version History
+
+- 1.22 (2026-09-13): Closes Slice09 after 4ae905c2; all seven criteria
+  independently reproduced. Records 115 accepted / 440 remaining and the
+  operator's explicit pause before any successor planning. No scope reduction.
 
 - 1.21 (2026-09-13): Slice09 Iteration 01 review accepts five criteria
   and resolves R3; opens narrow Iteration 02 for residual R1/R2 evidence
