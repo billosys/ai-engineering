@@ -1,6 +1,6 @@
 # CC Proposed-Done: Arc06 Slice01
 
-Status: CC proposed-done after Iteration 01, pending independent CDC review.
+Status: CC proposed-done after Iteration 02, pending independent CDC review.
 This is not operator acceptance and does not change the transition's 115
 accepted pairs.
 

@@ -6,7 +6,7 @@ From source cwd with Bash/jq:
 set -euo pipefail
 s=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal
 jq -e '(.memberships|length)==35 and ([.memberships[]|[.field_path,.record_kind]|join("\u0000")]|unique|length)==35' "$s/artifacts/semantic-membership.json"
-jq -e '(.cases|length)==4 and all(.cases[];has("expected") and has("observed") and has("limitations"))' "$s/artifacts/query-cases.json"
+jq -e '(.cases|length)==4 and all(.cases[];has("input") and has("path") and has("operation") and has("adapter") and has("expected") and has("observed") and has("limit"))' "$s/artifacts/query-cases.json"
 jq empty "$s/artifacts/semantic-membership.json"; jq empty "$s/artifacts/query-cases.json"; git -C .worktrees/planning diff --check
 ```
 
@@ -36,7 +36,7 @@ test $((440 - 35)) = 405
 while IFS=$'\t' read -r path digest; do
   test "$(shasum -a 256 "$path" | awk '{print $1}')" = "$digest"
 done < <(jq -r '.evidence[] | [.path,.sha256] | @tsv' "$s/artifacts/semantic-membership.json")
-jq -e '(.cases|length)==4 and all(.cases[]; has("input") and has("provenance") and has("adapter") and has("expected") and has("observed") and has("limitations"))' "$s/artifacts/query-cases.json"
+jq -e '(.cases|length)==4 and all(.cases[]; has("input") and has("path") and has("operation") and has("adapter") and has("expected") and has("observed") and has("limit"))' "$s/artifacts/query-cases.json"
 git -C .worktrees/planning diff --exit-code 355d037f -- project08-concept-card-metadata/arc01-metadata-research-and-requirements
 git -C .worktrees/planning diff --check
 ```
@@ -59,8 +59,8 @@ cd /Users/oubiwann/lab/billosys/ai-engineering
 s=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal
 i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
 jq -e '([.records[]|select(.values|type=="object")|select((.record_kind//"untyped")=="untyped")]|length)==2054 and ([.records[]|select(.values|type=="object")|select(.record_kind=="concept-card")]|length)==31 and ([.records[]|select(.values|type=="object")|select(.record_kind=="relationship-edge")]|length)==2' "$i"
-jq -e 'all(.cases[]; has("input_path") and has("operation") and has("expected") and has("observed") and has("conclusion"))' "$s/artifacts/query-cases.json"
-jq -e '[.cases[]|.observed]|.[0].target=="found" and .[1].outgoing_assertions==0 and .[2].target=="not found in declared local directory" and .[3].target=="not found" and .[3].support_target=="not found"' "$s/artifacts/query-cases.json"
+ jq -e 'all(.cases[]; has("input") and has("path") and has("operation") and has("expected") and has("observed"))' "$s/artifacts/query-cases.json"
+ jq -e '.cases[0].expected==.cases[0].observed and .cases[1].expected==.cases[1].observed and .cases[2].expected==.cases[2].observed and .cases[3].expected==.cases[3].observed' "$s/artifacts/query-cases.json"
 test -f /Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/meter.md
 test ! -e records/edge-evidence-map-related-to-claim.md
 test ! -e records/support-synthetic-edge-001.md

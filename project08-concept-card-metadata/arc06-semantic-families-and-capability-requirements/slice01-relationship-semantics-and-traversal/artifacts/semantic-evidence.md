@@ -37,6 +37,33 @@ retain absent/null/empty/malformed distinctions and the two reference names;
 and a future resolver needs an explicit policy for literal path anchors and
 requested revisions.
 
+## Iteration 02 Witnesses And Computed Cases
+
+The populated synthetic edge's `from_ref` exactly matches minimal-card's
+`cc-prepared-source-provenance`, revision 1; its `to_ref` exactly matches
+claim-backed-card's `cc-claim-support-is-assertion-specific`, revision 1.
+Both are inspected declarations, not validation of relation truth. The edge's
+support ID has no native path, and a bounded `knowledge/concept-cards/examples`
+search finds no record declaration for it. Rich-profile's different edge request
+and its own `support-evidence-map-definition-001` card-support declaration are
+therefore not substituted for the edge example's support.
+
+`accented-incomplete-neighbor` is the populated extension witness: it extends
+`incomplete-neighbor`, whose local filename exists; the documented traversal is
+AIN -> incomplete-neighbor and the inverse is a reader statement, not another
+record. It and `appoggiatura` reciprocally list each other in native `related`
+arrays, exercising a symmetric lookup without creating a new assertion. Their
+contrast fields retain the historical commonly-confused semantics; the current
+guide's qualified comparison remains a separate broader convention.
+
+The Arc07 pilot cards are an additional current generated family: their
+`relationship_refs` arrays are present and empty, not evidence of a relation.
+The frozen inventory retains three malformed rich-card records as excluded
+limits: they are neither parsed absence witnesses nor negative semantic data.
+Both v3.2 files were read completely in bounded 120-line segments; the focused
+historical citations above are the field-specific conclusions, not a substitute
+for that inspection.
+
 ## Repaired Census And Named Reads
 
 The frozen inventory has 2,054 eligible parsed legacy mappings (390 Complete
