@@ -14,15 +14,16 @@ specific support subject/span scope even when a readable card has source/support
 lists.
 
 The pinned rerun copies now have explicit frozen-original -> baseline-copy
-mapping and manifest byte comparisons. The observed Chapter 1 target currently
+mapping and registered source/copy manifest byte comparisons (rich line 8,
+teaching line 22). The observed Chapter 1 target currently
 matches the acquisition hash, but its `bibfile` frontmatter does not declare a
 source-record ID or revision; it remains a target diagnostic rather than full
 reference agreement. Ignored current workbench state remains unnecessary.
 Historical music/OTP samples remain bounded teaching/provenance comparisons;
 further corpus inspection needs a new scope.
 
-Iteration 01 repairs S9-R1 replay/census, S9-R2 registration/mapping, and
-S9-R3 component meanings. It does not repair underlying target declarations,
+Iteration 02 completes the remaining S9-R1/R2 inspection and preservation
+route. It does not repair underlying target declarations,
 literal-fragment handling, or embedded-revision data. CDC must independently
 reproduce membership/evidence resolution, target diagnostics, hashes,
 fixed-entry preservation and all seven ledger rows.

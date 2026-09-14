@@ -21,6 +21,18 @@ jq -e '
  [.records[]|select(.record_kind=="claim" or .record_kind=="concept-card")|. as $r|$f[] as $k|{path:$r.path,family:($r|family),record_kind:$r.record_kind,field_path:$k,presence:(if ($r.keys|index($k)) then "present" else "absent" end),value:(if ($r.keys|index($k)) then $r.values[$k] else null end),value_type:(if ($r.keys|index($k)) then ($r.values[$k]|type) else "absent" end),typed_shape:(if ($r.keys|index($k)) then $r.shapes.mapping[$k] else "absent" end),collection_length:(if ($r.keys|index($k)) and ($r.values[$k]|type)=="array" then ($r.values[$k]|length) else null end)}] | {roots:(length/7),rows:length,census:.}' "$i"
 jq -e '[.records[]|select((.path|startswith("workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/")) and ((.error|type)=="string") and (.error|startswith("YAML::XS")))|{path,error,sha256}]|length==3' "$i"
 for f in ../../../../../knowledge/concept-cards/templates/claim.md ../../../../../knowledge/concept-cards/templates/concept-card.md ../../../../../knowledge/concept-cards/examples/minimal-card.md ../../../../../knowledge/concept-cards/examples/claim-backed-card.md ../../../../../knowledge/concept-cards/examples/rich-profile-card.md ../../../project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-model-data-constraints.md ../../../project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-model-data-constraints.md ../../../project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice04-expanded-corpus-card-generation/artifacts/candidate-cards/cc-memory-forms.md ../slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md ../slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md; do sed -n '1,240p' "$f"; done
+# Focused reads for every additionally cited interpretation; each command names
+# one input and range, so later files cannot be omitted by cumulative numbering.
+sed -n '37,75p' /Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/accent-types.md
+sed -n '46,135p' ../../../../../knowledge/erlang/concept-cards/otp-design-principles/behaviour.md
+sed -n '22,90p' ../../../old/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md
+sed -n '438,470p' ../../../old/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md
+sed -n '120,165p' ../../../../../knowledge/concept-cards/SKILL.md
+sed -n '1,45p' ../../../../../knowledge/concept-cards/guides/05-evidence-lifecycle.md
+sed -n '125,155p' ../../../../../knowledge/concept-cards/guides/05-evidence-lifecycle.md
+sed -n '1,32p' ../../../project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/source-acquisition.md
+sed -n '1,55p' /private/tmp/project05-compcogneuro-book-e0c697b4/chapter-01.md
+sed -n '1,35p' ../slice08-source-support-subjects-and-spans/artifacts/semantic-evidence.md
 ```
 
 This emitted exactly 32 roots and 224 rows. Each row contains path/family,
@@ -51,17 +63,24 @@ grep -F '09771f4fd35b02e4f57c808f329a2c23972a246f5546c875ff746e0ebf4230fb  .work
 shasum -a 256 ../slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md ../slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md
 if test -r /private/tmp/project05-compcogneuro-book-e0c697b4/chapter-01.md; then shasum -a 256 /private/tmp/project05-compcogneuro-book-e0c697b4/chapter-01.md; else printf '%s\n' 'chapter-01 target unavailable'; fi
 git -C ../../.. diff --exit-code 682e4a10 6eb034a1 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice07-source-identity-and-locator-semantics project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice08-source-support-subjects-and-spans
+git -C ../../.. diff --exit-code b905290c 0aeaf507 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice07-source-identity-and-locator-semantics project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice08-source-support-subjects-and-spans
+# Current-state comparison from this correction's actual entry commit d09d70bc;
+# this intentionally excludes authorized CDC plan/ledger edits and is distinct
+# from whitespace/status checks below.
+git -C ../../.. diff --exit-code d09d70bc -- project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice04-semantic-identity-source-and-graph-families project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice07-source-identity-and-locator-semantics project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice08-source-support-subjects-and-spans
 git -C ../../.. diff --check
 git -C ../../.. status --short
 ```
 
-All registered hashes matched. Both evidence layers resolved and every
+All 21 registered hashes matched. Both evidence layers resolved and every
 membership had a non-empty effective component meaning. The plan/frozen/
 accepted assertion returned true: exact 21, unique, frozen inclusion, accepted
 94, no overlap and 440 remainder. The rich and teaching original-to-copy
 mappings match their respective frozen source and copy manifests; their copies
 hash `65915a99...c3695` and `09771f4f...230fb`. The Chapter 1 target was
 currently available and hashed `6a72d202...cba48`, matching acquisition.
-The fixed `682e4a10`-to-`6eb034a1` prior-packet diff was empty. The final
-`diff --check`/status portion is a pre-commit repair current-state observation,
-not a later fixed endpoint.
+The fixed `682e4a10`-to-`6eb034a1` and `b905290c`-to-`0aeaf507`
+prior-packet diffs were empty. The explicit `d09d70bc` current-state comparison
+of prior packets was also empty before this correction's commit; it excludes
+CDC's authorized plan/ledger changes. The final `diff --check`/status portion
+is only whitespace/current-state hygiene, not preservation evidence.

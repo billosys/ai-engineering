@@ -53,6 +53,11 @@ and its copy both hash `09771f4f...230fb`. `source-sha256sums.txt` identifies
 the originals and `copy-sha256sums.txt` the copies. No current ignored workbench
 file was needed for this comparison.
 
+The two manifests are registered evidence rather than incidental grep inputs:
+their rich entries are line 8 and their teaching entries line 22. Each mapping
+in the registry names both manifest evidence IDs, so original and copy identity
+can be replayed without consulting an ignored current workbench file.
+
 ## Reference matrix
 
 | Context | Requested tuple | Actual target / lookup result | Limit |
