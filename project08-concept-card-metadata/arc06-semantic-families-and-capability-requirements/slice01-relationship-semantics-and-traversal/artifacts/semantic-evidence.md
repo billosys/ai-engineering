@@ -1,9 +1,12 @@
 # Relationship Semantics Evidence
 
 Historical v3.2 card-local `prerequisites`, `extends`, `related`, and
-`contrasts_with` are slug lists. The current graph guide says prerequisite
-lists reverse traversal (B -> A), extension is A -> B, and related/contrast
-are symmetric. Slugs are not stable endpoint identity, revision, or edge warrant.
+`contrasts_with` are typed relationship assertions encoded as slug lists. The
+current graph guide says prerequisite lists reverse traversal (B -> A),
+extension is A -> B, and related/contrast are symmetric. The old prompt gives
+`contrasts_with` the specific common-confusion reading; the guide's qualified
+comparison is broader and is not silently substituted for that legacy meaning.
+Slugs are not stable endpoint identity, revision, or edge warrant.
 
 The current edge template separates relation identity, endpoint roles,
 direction/inverse/symmetry, edge support and closure. Its populated `precedes`
@@ -37,7 +40,7 @@ retain absent/null/empty/malformed distinctions and the two reference names;
 and a future resolver needs an explicit policy for literal path anchors and
 requested revisions.
 
-## Iteration 02 Witnesses And Computed Cases
+## Retained Iteration 02 Witnesses
 
 The populated synthetic edge's `from_ref` exactly matches minimal-card's
 `cc-prepared-source-provenance`, revision 1; its `to_ref` exactly matches
@@ -56,13 +59,8 @@ arrays, exercising a symmetric lookup without creating a new assertion. Their
 contrast fields retain the historical commonly-confused semantics; the current
 guide's qualified comparison remains a separate broader convention.
 
-The Arc07 pilot cards are an additional current generated family: their
-`relationship_refs` arrays are present and empty, not evidence of a relation.
 The frozen inventory retains three malformed rich-card records as excluded
 limits: they are neither parsed absence witnesses nor negative semantic data.
-Both v3.2 files were read completely in bounded 120-line segments; the focused
-historical citations above are the field-specific conclusions, not a substitute
-for that inspection.
 
 ## Repaired Census And Named Reads
 
@@ -91,15 +89,39 @@ seven times (six empty, rich-profile with one mapping) and absent 24 times.
 The two edge records are a null/unassessed template and a populated synthetic
 `precedes` record. Rich profile requests `edge-evidence-map-related-to-claim`,
 revision 1, path `records/edge-evidence-map-related-to-claim.md`; that target is
-not found at the declared source-root path. Its support target is likewise not
-found. This is a bounded lookup outcome, not a claim that all record roots or
-anchors are invalid.
+not found at the declared source-root path. Its separate card support request
+is `support-evidence-map-definition-001`; it is not the populated edge's
+pathless `support-synthetic-edge-001`. The missing edge target is a bounded
+lookup outcome, not a claim that all record roots or anchors are invalid.
 
-The full historical prompts were inspected in bounded sections. Howto lines
-183-207 calls the four lists typed relationships, requires exact slugs, and
-defines prerequisite/extension/non-hierarchical/common-confusion meanings.
-Parallel lines 663-683 supplies cross-reference/orphan checks and lines
-868-875 calls prerequisite incoming, extension outgoing, related/contrast
-symmetric. Therefore legacy lists assert relationships and enable lookup;
+## Iteration 03 Contextual Reading And Body/Metadata Comparison
+
+Both 862-line/907-line v3.2 prompts were presented to this context in visible
+220- and 230-line sections, respectively. The howto's Typed Relationships
+section calls the four lists typed relationships, requires exact slugs, and
+defines prerequisite/extension/non-hierarchical/common-confusion meanings. The
+parallel prompt repeats the same four field roles, requires cross-reference and
+orphan checks, and labels prerequisite incoming, extension outgoing and
+related/contrast symmetric. Those historical assertions enable bounded lookup;
 they differ from current edge records in independently identified
 representation, requested revision/resolution and relation-scoped warrant.
+
+The current template has an empty `relationship_refs` list, minimal-card has
+an empty `relationship_edge_refs` list, and rich-profile has one populated
+`relationship_refs` mapping whose declared target is unresolved. Two generated
+candidate cards add a useful body/metadata contrast: the Arc07
+`cc-emergent-explanation` and rich-rerun `cc-model-data-constraints` both carry
+empty `relationship_refs`, while their bodies name future/candidate
+relationships. Thus prose can teach or propose a relation without producing a
+stored edge assertion. These records are candidates/synthetic examples, not
+real extraction or semantic verification. The template's null/unassessed edge
+fields and the three malformed inventory records remain distinct limitations.
+
+The native legacy reads connect body and metadata without inventing new edges:
+accent-types lists `meter` as a prerequisite and explains in its body that
+metric accent depends on the metric framework; behaviour lists
+`supervision-tree` and says behaviours formalize common process patterns.
+`accented-incomplete-neighbor` and `appoggiatura` each list the other as
+related, while their contrast lists give concrete commonly-confused comparisons.
+These are scoped assertions encoded by the old cards; no source span, edge
+support record, global identity, or revision is thereby supplied.
