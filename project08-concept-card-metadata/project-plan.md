@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.14"
+version: "1.15"
 ---
 
 # Concept Card Metadata
@@ -110,7 +110,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01 relationship semantics and traversal open |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01 changes required after 400b847a; Iteration 01 open |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Independently composed Arc06, including transferred Arc01 requirements | Hypothesis; detailed plan when near |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -325,6 +325,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.15 (2026-09-14): Arc06 Slice01 review preserves structural successes
+  and requires contextual evidence, executed queries and legacy assertion
+  semantics repair. Records workload observations without changing model/effort,
+  scope, accepted coverage or any UAT gate; Slice02 remains unopened.
 
 - 1.14 (2026-09-14): Operator accepts the semantic-family/capability pivot
   after Arc01 Slice09 and requests the next arc. Preserves the assessment,

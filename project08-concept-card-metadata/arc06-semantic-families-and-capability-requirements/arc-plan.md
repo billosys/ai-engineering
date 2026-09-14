@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.0"
+version: "1.1"
 ---
 
 # Semantic Families And Capability Requirements
@@ -18,6 +18,15 @@ accepted Arc01 evidence and all unfinished obligations in the project-level
 [transition register](../artifacts/arc01-transition-obligations.md). Arc01 did
 not deliver its full original capability; administrative closure is not a
 dependency claim of success. The operator's 2026-09-14 decision resumes work.
+
+## Current Review
+
+Slice01's initial packet 400b847a passes exact-set/structural checks, but CDC
+requires A6S1-R1/R2/R3 corrections before semantic acceptance. Follow its
+artifacts/iteration-01-cc-prompt.md; do not open Slice02. The 115/35/405
+accounting and every original composition/UAT obligation remain unchanged.
+[Workload observations](../artifacts/cc-workload-observations.md) record one
+compaction and mechanical repair friction without inferring model inadequacy.
 
 ## Starting Evidence And Coverage
 
@@ -64,7 +73,7 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 
 | Slice | Capability / boundary | Dependencies | State |
 | --- | --- | --- | --- |
-| `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Open set ready |
+| `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Changes required after 400b847a; Iteration 01 open |
 | `slice02-competency-questions-and-answerability` | Legacy questions, current CQ roles/coverage and card linkage; separately owned lifecycle fields excluded | Slice01 interfaces and accepted Arc01 | Size exact set when near |
 | `slice03-provenance-and-shared-reference-contracts` | Actor/run/preparation provenance and reusable evidence/replay contracts | Slice01/02 experience and accepted identity/source analysis | Size/split before opening |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts | Plan when near |
@@ -126,6 +135,10 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.1 (2026-09-14): Slice01 initial review requires actual contextual census,
+  target/query evidence and corrected legacy assertion semantics. Opens a
+  fresh-context correction, retains structural successes and all boundaries.
 
 - 1.0 (2026-09-14): Operator-approved pivot after Arc01 Slice09. Opens the
   relationship family, inherits every unfinished obligation and permits

@@ -1,11 +1,11 @@
 # Arc06 Ledger
 
-All rows start open. The transition register carries the exact original
+All rows remain open after Slice01's initial CDC review of 400b847a. The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| A6-1 | Frozen coverage, finer contexts and discoveries have complete ownership | Derive union and disjoint sets; inspect all transfers | serious | S1-4, S4-2/S4-6, A1-1, P-1 | open | | 115 accepted; 35 assigned; 405 not yet sliced |
+| A6-1 | Frozen coverage, finer contexts and discoveries have complete ownership | Derive union and disjoint sets; inspect all transfers | serious | S1-4, S4-2/S4-6, A1-1, P-1 | open | | 115 accepted; 35 assigned in changes-required Slice01; 405 not yet sliced |
 | A6-2 | Relationships and CQs preserve meanings and computational distinctions | Review evidence and reproduce bounded query cases without prose-invented edges | serious | S4-4/S4-5, P-3 | open | | Slices01/02; equivalence not assumed |
 | A6-3 | Provenance/common references have role-specific identity, scope and exceptions | Trace actors/runs/sources/references across populated/template contexts | serious | Arc01 Slice05, P-4/P-6 | open | | Slice03; shape is not authority |
 | A6-4 | Evidence, confidence, validation and verification stay distinct | Review subject/rubric/coverage/independence/applicability cases | serious | Arc01 Slice05, P-4 | open | | Slices04/05 |
