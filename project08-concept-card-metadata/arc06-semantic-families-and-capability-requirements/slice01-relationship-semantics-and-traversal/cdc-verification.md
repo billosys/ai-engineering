@@ -588,3 +588,162 @@ the next bounded repair, retaining a fresh session and unchanged criteria.
 Measure complete evidence and native-negative-control behavior, not elapsed
 time or output length. Additional instructions and accumulated evidence are
 confounds; this is not a controlled causal model comparison.
+
+## Iteration 04 Independent Review (91c7f5f3)
+
+Date: 2026-09-14. CC opening/closing planning endpoints:
+3cf075ff -> 91c7f5f3; source remains e763c661.
+Verdict: **changes required**, with S1-4 newly reproduced/done alongside
+S1-1 and S1-6. Four criteria remain open. No acceptance of the 35-pair semantic
+set: 115 accepted / 35 assigned / 405 outside still applies.
+
+### Reproduced Gains
+
+- Published Bash blocks 1, 2, 3 and 5 pass literally from source cwd. Block 4
+  is labeled historical; CDC separately reran its retained prerequisite and
+  extension native comparisons through the reciprocal-lookup section boundary.
+- Exact plan-derived 35 unique pairs, frozen inclusion and accepted-set
+  disjointness pass. Both registry reference layers and all 23 hashes pass.
+- The four added Erlang originals really have the stated absent/null fields.
+  All eight Music/Erlang rows' state counts, item totals, distinct targets and
+  item types reproduce from frozen parsed values. The card aggregate and
+  template/example component values agree with the frozen records.
+- Symmetry and endpoint expected AND observed objects now compare with native
+  results. Each requested endpoint ID/revision is compared to its actual target
+  declaration separately. Wrong expectation controls fail as intended.
+  CDC also used structured frozen values to reproduce both objects and rejected
+  mutations of BOTH authored objects, not just one side of the comparison.
+  R2's authored-self-comparison defect is repaired for these bounded inputs.
+- Bounded endpoint declarations, unresolved rich-card edge path, pathless edge
+  support and unknown relation warrant remain distinct. S1-4 is satisfied.
+- The report/handoff now correctly distinguish the real Arc07 no-edge/future-CQ
+  candidate from the real rich-rerun body-relationship candidate. Candidate
+  status no longer makes these outputs synthetic in that prose.
+- Exact seven-file CC commit scope, fixed prior preservation
+  91db42fa -> a24758b4, repair preservation 3cf075ff -> 91c7f5f3,
+  Arc01/project-artifact preservation and whitespace pass. Both checkouts were
+  clean before CDC edits. No source/package/install gates were applicable.
+
+### R1 Residual: Context And Meaning Completion
+
+Locations: artifacts/semantic-evidence.md:113-118,158-162,176-190;
+artifacts/semantic-membership.json evidence register; Iteration 04 prompt A.
+
+The explicitly requested teaching-rerun body/metadata witness is still absent
+from the report and the 23-input registry. This is not a demand to read more
+arbitrary cards: the already frozen teaching population has ten cards with
+both relationship-reference keys absent, unlike the two registered generated
+examples with empty lists. The combined 31-card table hides that family
+distinction. For example, existing teaching cc-memory-forms has relationship
+prose ("Contains or routes to" and "Related") despite absent structured edge
+references. It is accessible, not an unavailable or malformed input.
+Inspect/register one such witness and reconcile its meaning and consequences;
+do not infer stored edges or source verification from its prose.
+
+The four new legacy witnesses support observed presence/null/absence, not the
+sentence "they do not share requiredness." Requiredness is an instruction or
+schema rule, not a frequency inference; describe the observed variation and
+leave the policy question explicitly unsettled unless documented evidence
+establishes it. At least one new null-field body also merits the already
+required body/metadata comparison: data-type-sizes names prerequisites in its
+body despite null prerequisites metadata; sc-hbase-protocol and
+error-handling-philosophy likewise have relevant prose despite their null
+fields. This is not permission to manufacture slug relations from prose.
+
+The Arc07 evidence-register role still says "body candidates" while the report
+correctly says no asserted edge and a future CQ. Align that specific role and
+affected dispositions with the inspected evidence. No wholesale registry
+rewrite or reopening of the repaired historical contrast meaning is required.
+
+### R4 Residual: Complete Current Replay (Correctness-Grade)
+
+Locations: artifacts/validation-evidence.md:174-218;
+artifacts/query-cases.json:3-6; semantic-evidence.md:161-162.
+
+The published census code tests selected anchors, not the complete tables it
+claims to reproduce: it does not emit/check most Music/Erlang counts, item
+types/totals/distinct values, or the card-family breakdown. CDC independently
+reproduced the existing values; they are not rejected as numerically wrong.
+Publish the actual bounded census operation and tie every reported table to
+that output. Count parsed records separately from selected memberships.
+
+The current Iteration 04 block extracts prerequisite/extension targets and
+checks existence but omits comparison against their expected/observed JSON.
+Those comparisons survive only in the block labeled historical, which also
+contains the superseded symmetry/endpoint checks and a pre-commit-only tail.
+Make one complete current replay cover all four cases and both controls.
+Preserve historical evidence, but do not make readers splice accepted pieces
+out of superseded recipes to obtain the current contract.
+
+The prompt explicitly permitted structured frozen values plus original hashes
+or an established YAML parser. Instead, the new route extends awk extraction
+and retains grep -A4. These happen to read the registered inputs correctly;
+this is not another claim that the observed endpoint results are wrong.
+Use the already available structured values for the bounded current route,
+retaining hashes and actual file/search outcomes, and align case operation text
+with what executes (the symmetry recipe uses grep, not the reported awk).
+No custom helper or generic parser is needed.
+
+### Independent Census Cross-Check
+
+CDC executed this read-only query from source cwd; its eight objects match the
+legacy table, including null versus absence and all item counts:
+
+~~~bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+jq '
+[.records[]|select(.values|type=="object")|select((.record_kind//"untyped")=="untyped")
+ |. + {family:(if (.path|contains("complete-musician")) then "music" else "erlang" end)}]
+|group_by(.family)[]|. as $rows
+|["prerequisites","extends","related","contrasts_with"][] as $f
+|{family:$rows[0].family,field:$f,n:($rows|length),
+ absent:([$rows[]|select(.values|has($f)|not)]|length),
+ null:([$rows[]|select(.values|has($f))|select(.values[$f]==null)]|length),
+ empty:([$rows[]|select(.values[$f]|type=="array" and length==0)]|length),
+ populated:([$rows[]|select(.values[$f]|type=="array" and length>0)]|length),
+ items:([$rows[]|.values[$f][]?]|length),
+ distinct:([$rows[]|.values[$f][]?]|unique|length),
+ itemtypes:([$rows[]|.values[$f][]?|type]|unique)}
+' "$i"
+~~~
+
+This is a CDC cross-check, not a retroactive claim that CC published that
+reproduction route. CC still owns contextual interpretation and its final
+current replay. The three malformed rich inputs remain exclusions, not absence
+examples or evidence against their body content.
+
+### Row Walk And Bubble-Up
+
+| Row | CDC status | Evidence / remaining condition |
+| --- | --- | --- |
+| S1-1 | done | Exact 35, both evidence layers, frozen disjointness retained |
+| S1-2 | open | 23 hashes and table values reproduced; teaching/body and family-context omissions remain |
+| S1-3 | open | Existing roles/contrast retained; observed-required distinction and specific registry role need reconciliation |
+| S1-4 | done | Requested/declaration identity/revision, missing-path/support limits and native controls reproduced |
+| S1-5 | open | All four bounded case outcomes reproduced; teaching/null-field body comparison remains |
+| S1-6 | done | Ownership and concrete CQ/research handoff retained |
+| S1-7 | open | Literal current checks pass but do not reproduce the complete advertised census/four-case contract |
+
+Artifact inventory remains the five CC evidence artifacts plus close report
+and ledger; CDC has not rewritten CC's semantic interpretation or attestation.
+This slice has not yet delivered the full assigned contextual capability.
+The remaining work is the existing context/replay obligation, not another
+corpus, architecture decision or new extraction. Update parent status and open
+Iteration 05 only. Slice02 stays unopened; no frozen membership transfer occurs.
+
+Iteration 05 is the final ordinary corrective iteration under the sizing
+safeguard. If incomplete, stop with a concrete replan/split proposal, retained
+evidence and exact remaining criteria. Do not create an automatic Iteration 06,
+silently defer quality, or close by exhaustion.
+
+### Workload Outcome
+
+This submission is independently observed as a new gpt-5.6-terra / high task
+with no compacted event. Compared with Iteration 03, result wiring and census
+detail improved, but explicit context coverage and replay integration still
+missed. Internal cognitive load is not measured; revised instructions, prior
+evidence and task complexity remain confounds. The operator proposed a possible
+Luna/xhigh trial next. Record it as a configuration trial if chosen, not proof
+that either model or effort alone caused a result. No settings were changed.

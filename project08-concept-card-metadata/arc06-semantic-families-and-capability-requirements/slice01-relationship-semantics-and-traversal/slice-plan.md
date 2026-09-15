@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice01-relationship-semantics-and-traversal
 status: changes-required
-version: "1.4"
+version: "1.5"
 ---
 
 # Relationship Semantics And Traversal
@@ -15,13 +15,14 @@ inventory and capability analysis, not schema adoption or extraction.
 
 ## Current Review
 
-CDC reviewed a24758b4: first two native case comparisons and contrast
-interpretation improve; S1-1 and S1-6 are done. Complete contextual census and
-two native-result comparisons still need repair. Follow
-[Iteration 04](./artifacts/iteration-04-cc-prompt.md) in a new CC session.
-Reuse the historical reading evidence; no repeated full read merely for repair.
-Was: 7de68374 review / Iteration 03. The original seven criteria remain;
-central R3 contrast repair is retained and Slice02 remains unopened.
+CDC reviewed 91c7f5f3: all four native case outcomes are reproduced, including
+symmetry/endpoint negative controls. S1-1, S1-4 and S1-6 are done. The teaching
+witness, contextual meaning reconciliation and complete current census/case
+replay remain. Follow [Iteration 05](./artifacts/iteration-05-cc-prompt.md) in a
+new CC session. Reuse historical reading and verified tables/results; no
+repeated full read merely for repair. Was: a24758b4 review / Iteration 04.
+The original seven criteria remain; Slice02 stays unopened. An incomplete
+Iteration 05 requires a concrete sizing proposal, not an automatic sixth repair.
 
 ## Exact Scope
 
@@ -178,6 +179,11 @@ Raise concrete sizing needs before expanding scope or substituting generic
 dispositions. No other slice opens automatically from CC's proposed-done report.
 
 ## Version History
+
+- 1.5 (2026-09-14): Review of 91c7f5f3 closes S1-4 and retains S1-1/S1-6.
+  Iteration 05 targets omitted teaching context, unsupported requiredness
+  wording and complete current replay; was: Iteration 04. Actual native checks
+  and correct census values stay credited. Scope and original criteria remain.
 
 - 1.4 (2026-09-14): Review of a24758b4 accepts additional native/semantic
   gains and closes handoff S1-6. Iteration 04 targets census/context and two

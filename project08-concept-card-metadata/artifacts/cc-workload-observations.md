@@ -240,3 +240,81 @@ concrete split before another global completion claim; preserve all scope.
 
 Only one slice has received independent review. Continue the three-slice
 monitor without duplicating this heartbeat/submission/review history.
+
+## Observation 01e: Terra/High Iteration 04 And CDC Review
+
+Date: 2026-09-14. CC commit 91c7f5f3; independent CDC review retains
+changes-required and adds S1-4 to done S1-1/S1-6. This is a revision of the
+same first monitored slice, not a second slice or duplicate heartbeat result.
+
+### Observed Execution
+
+New task "Read and follow prompt":
+01a0a252-eaa7-72b3-b16b-44b8a4045daf; turn
+01a0a253-7c68-71b3-a2ae-fd96e63a9b21.
+The operator announced the same-model/high-effort trial. Actual turn_context
+metadata at 2026-09-14T23:49:35.789Z confirms gpt-5.6-terra / high.
+No compacted event was observed in the run. Read-only local metadata source:
+`/Users/oubiwann/.codex/sessions/2026/09/14/rollout-2026-09-14T18-48-58-01a0a252-eaa7-72b3-b16b-44b8a4045daf.jsonl`.
+
+Task history reports durationMs 738851 (about 12 minutes 19 seconds),
+34 command executions and four nonzero command exits. One is an exploratory
+jq syntax/quoting failure; three are failed or investigative replay invocations
+before the final passing replay. These are not four independent semantic
+failures. Final current block, structural blocks, 23 hashes and scoped commit
+reproduce. No reliable token/cost/headroom measure was collected.
+
+Dependencies still include the frozen inventory and transition, original
+historical prompts, current templates/guides/synthetic examples, legacy
+music/Erlang cards, generated candidates, past reviews and scoped Git endpoints.
+Accepted historical reads were available for reuse; no new full-read requirement
+was imposed. Retrieval truncation is not evidence of actual context loss.
+
+### Quality Result
+
+Concrete improvements relative to Iteration 03:
+- Correct full Music/Erlang census values and four actual absent/null witnesses.
+- Native symmetry and requested-versus-declared endpoint/revision objects,
+  including negative controls, now reproduce rather than self-certify.
+- Report/handoff distinguish real candidate extraction from synthetic examples
+  and no-edge/future-CQ text from actual body relationship proposals.
+
+Remaining explicit obligations:
+- The requested teaching-rerun witness was omitted, and the aggregate card
+  census still hides family differences.
+- Observed presence was described as requiredness; one registry evidence role
+  still conflicts with the corrected no-edge/future-CQ report.
+- The published census replay checks selected anchors instead of the full
+  tables, while the latest block omits the first two JSON result comparisons.
+  Their correct native comparators survive in a historical block.
+- The required structured-value/parser route was not followed for new cases;
+  current bounded awk/grep values are correct but operation/replay integration
+  still needs alignment.
+
+This is progress, not a failed run with nothing retained. It also does not yet
+meet the full completion contract. The recurring pattern is selective omission
+and incomplete final integration after local repairs, alongside improved
+substantive reasoning. More effort did not eliminate that pattern in this run.
+
+### Interpretation And Next Trial
+
+This actually exercised fresh Terra/high after fresh Terra/medium. More
+detailed instructions, accumulated evidence and a shrinking remainder changed
+too. No causal claim about high effort, model capability or internal cognitive
+load follows; duration/iteration count is not a quality measure. Task sizing,
+cross-document obligations, tool quoting friction and correction framing remain
+plausible influences.
+
+The operator reports friends' success with Luna/xhigh and offers that as the
+next configuration if needed. This is external anecdotal motivation, not
+Project08 evidence or a verified performance claim. Iteration 05 is model-neutral
+and can be used for that operator-selected trial; no model/settings/task have
+been changed or dispatched by CDC. If selected, both model and nominal effort
+change relative to Terra/high, so judge completion of the bounded remaining
+criteria, not an isolated model/effort effect or a cross-model ranking.
+
+Measure the missing witness and family distinctions, accurate meaning/role
+integration and a complete replay that reproduces all tables and four cases.
+Preserve successes. If Iteration 05 is incomplete, require a concrete sizing
+proposal instead of automatic Iteration 06 or reduced acceptance. Only one
+slice has received independent review; the three-slice monitoring continues.

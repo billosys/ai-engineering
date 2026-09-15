@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.18"
+version: "1.19"
 ---
 
 # Concept Card Metadata
@@ -110,7 +110,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01 changes required after a24758b4; Iteration 04 targets two residual areas |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01 changes required after 91c7f5f3; Iteration 05 completes context and replay |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Independently composed Arc06, including transferred Arc01 requirements | Hypothesis; detailed plan when near |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -325,6 +325,14 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.19 (2026-09-14): Arc06 Slice01 Terra/high repair reproduces native
+  symmetry/endpoint controls and closes S1-4 alongside S1-1/S1-6. Opens bounded
+  Iteration 05 for missing teaching context, observed-versus-required meaning,
+  and complete current replay; was: Iteration 04. Records the operator's
+  possible Luna/xhigh trial without changing settings or acceptance criteria.
+  The five-iteration sizing safeguard, 115 accepted pairs and all UAT gates
+  remain; no next slice or new semantic coverage is accepted.
 
 - 1.18 (2026-09-14): Fresh-session Slice01 repair improves native checks and
   semantic integration; CDC closes handoff row S1-6, not the slice. Iteration
