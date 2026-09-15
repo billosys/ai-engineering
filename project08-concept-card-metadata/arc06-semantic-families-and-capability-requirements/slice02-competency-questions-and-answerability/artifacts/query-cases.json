@@ -1,0 +1,76 @@
+{
+  "artifact_kind": "native-cq-diagnostic-cases",
+  "scope": "Four bounded source-connected comparisons for Slice02; synthetic inputs are controls, not additional corpus witnesses.",
+  "method": "Expected objects were authored from the plan and source reading. Observed objects were computed from the registered native inputs by the commands recorded in validation-evidence.md. The replay compares each independently authored side to a newly computed native object; it does not compare recorded expected to copied observed.",
+  "cases": [
+    {
+      "id": "legacy-question-reverse-lookup",
+      "input": "inventory",
+      "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json",
+      "operation": "jq-select parsed object-valued legacy mappings whose native values.answers_questions array contains each exact question; then inspect the returned card bodies.",
+      "adapter": "frozen frontmatter inventory plus direct Markdown body reads; no YAML parser added",
+      "expected": {
+        "music": {"question": "What are the different types of accent in music?", "matches": [{"path": "/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/accent-types.md", "slug": "accent-types", "concept": "Accent Types"}]},
+        "erlang": {"question": "What is a behaviour in OTP?", "matches": [{"path": "knowledge/erlang/concept-cards/otp-design-principles/behaviour.md", "slug": "behaviour", "concept": "Behaviour"}]}
+      },
+      "observed": {
+        "music": {"question": "What are the different types of accent in music?", "matches": [{"path": "/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician/accent-types.md", "slug": "accent-types", "concept": "Accent Types"}]},
+        "erlang": {"question": "What is a behaviour in OTP?", "matches": [{"path": "knowledge/erlang/concept-cards/otp-design-principles/behaviour.md", "slug": "behaviour", "concept": "Behaviour"}]}
+      },
+      "body_observation": "The Music body explains temporal and nontemporal accent types; the Erlang body explains generic/callback division and lists standard OTP behaviours. Both are readable answer material, but reverse lookup itself proves only discoverability.",
+      "controls": [
+        {"id": "wrong-question-value", "operation": "Repeat the native jq selection with the exact value 'What are the different types of accent in jazz?'", "expected": {"matches": [], "status": 0, "classification": "successful_no_match"}, "observed": {"matches": [], "status": 0, "classification": "successful_no_match"}, "limit": "A successful no-match is not a semantic claim that the corpus has no answer to a differently worded question."},
+        {"id": "inventory-search-error", "operation": "Run the same jq lookup against a missing inventory path", "expected": {"matches": [], "status": 2, "classification": "tool_error"}, "observed": {"matches": [], "status": 2, "classification": "tool_error"}, "limit": "Exit 2 is retained as search/tool failure and is not converted to no-match."}
+      ],
+      "limit": "Legacy strings have no standalone CQ id, revision, role or answer criterion."
+    },
+    {
+      "id": "rich-card-external-cq-lookup",
+      "input": "richCard",
+      "path": "knowledge/concept-cards/examples/rich-profile-card.md",
+      "operation": "Read the native cq_refs tuple, resolve its declared path relative to the card's example directory, and keep declaration, path status, identity/revision and answerability separate.",
+      "adapter": "literal frontmatter inspection plus bounded direct-path find; no generated target or resolver",
+      "expected": {"declared": {"id": "cq-inspect-support-for-card-statement", "revision": 1, "path": "records/cq-inspect-support-for-card-statement.md"}, "declaration_present": true, "target_lookup": {"status": 1, "classification": "path_error_missing_parent", "target_available": "unresolved"}, "identity_revision": "declared_only", "answerability": "unassessed"},
+      "observed": {"declared": {"id": "cq-inspect-support-for-card-statement", "revision": 1, "path": "records/cq-inspect-support-for-card-statement.md"}, "declaration_present": true, "target_lookup": {"status": 1, "classification": "path_error_missing_parent", "target_available": "unresolved"}, "identity_revision": "declared_only", "answerability": "unassessed"},
+      "controls": [
+        {"id": "wrong-target-value", "operation": "Search the existing knowledge/concept-cards root for a deliberately wrong target id", "expected": {"status": 1, "classification": "successful_no_match"}, "observed": {"status": 1, "classification": "successful_no_match"}, "limit": "This control exercises a real search with an existing root; it is distinct from the missing declared parent path."},
+        {"id": "target-search-error", "operation": "Search a missing knowledge/concept-cards/no-such-root", "expected": {"status": 2, "classification": "tool_error"}, "observed": {"status": 2, "classification": "tool_error"}, "limit": "Search failure is not a successful absent target."}
+      ],
+      "limit": "The missing records/ parent prevents a successful target-absence observation. No answer or source-support result is inferred."
+    },
+    {
+      "id": "embedded-generated-cq-lookup",
+      "input": "richRerun and teachingRerun",
+      "path": "workbench/compcogneuro-{rich,teaching}-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md",
+      "operation": "Read each native cq_refs tuple, locate the literal CQ heading and following question/expected-answer text, and record fragment versus heading separately.",
+      "adapter": "rg/awk literal Markdown inspection; rendered anchors were not generated or assumed",
+      "expected": {
+        "rich": {"card_revision": 2, "id": "cq-model-constraint-trust", "revision": 1, "fragment": "#cq-model-constraint-trust", "literal_heading": "### CQ `cq-model-constraint-trust`", "question": "What must a computational cognitive neuroscience model show, in the source's account, before its predictions deserve trust?", "answer_text": "it must be constrained by data at multiple levels and generate predictions that can be tested empirically", "heading_found": true, "rendered_anchor": "not_checked"},
+        "teaching": {"card_revision": 3, "id": "cq-model-data-constraint", "revision": 1, "fragment": "#cq-model-data-constraint", "literal_heading": "### CQ `cq-model-data-constraint`", "question": "What makes a cognitive model constrained rather than merely plausible?", "answer_text": "it must be answerable to empirical data while preserving generality beyond the fitted case", "heading_found": true, "rendered_anchor": "not_checked"}
+      },
+      "observed": {
+        "rich": {"card_revision": 2, "id": "cq-model-constraint-trust", "revision": 1, "fragment": "#cq-model-constraint-trust", "literal_heading": "### CQ `cq-model-constraint-trust`", "question": "What must a computational cognitive neuroscience model show, in the source's account, before its predictions deserve trust?", "answer_text": "it must be constrained by data at multiple levels and generate predictions that can be tested empirically", "heading_found": true, "rendered_anchor": "not_checked"},
+        "teaching": {"card_revision": 3, "id": "cq-model-data-constraint", "revision": 1, "fragment": "#cq-model-data-constraint", "literal_heading": "### CQ `cq-model-data-constraint`", "question": "What makes a cognitive model constrained rather than merely plausible?", "answer_text": "it must be answerable to empirical data while preserving generality beyond the fitted case", "heading_found": true, "rendered_anchor": "not_checked"}
+      },
+      "controls": [
+        {"id": "wrong-embedded-id", "operation": "Look for the rich CQ heading on the teaching card", "expected": {"status": 1, "classification": "successful_no_match"}, "observed": {"status": 1, "classification": "successful_no_match"}, "limit": "The two embedded CQs are not equated because their concept-card IDs match."},
+        {"id": "embedded-file-error", "operation": "Run the same rg heading lookup against a missing card path", "expected": {"status": 2, "classification": "tool_error"}, "observed": {"status": 2, "classification": "tool_error"}, "limit": "A missing card is a lookup error, not absent heading evidence."}
+      ],
+      "limit": "Literal heading presence is not proof of a rendered anchor, standalone target identity, source support or answerability."
+    },
+    {
+      "id": "synthetic-cq-component-coverage-contrast",
+      "input": "inventory, cqCoverage and cqTemplate",
+      "path": "knowledge/concept-cards/examples/cq-coverage.md and knowledge/concept-cards/templates/competency-question.md",
+      "operation": "Derive native component_refs and root states from the parsed records, inspect exact named-id declarations, and compare them with the template's coverage_assertions slot.",
+      "adapter": "frozen inventory values plus literal id search; no target records or completed answer manufactured",
+      "expected": {"synthetic": {"component_refs": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "role": "concept"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "role": "claim"}, {"id": "support-synthetic-claim-001", "revision": 1, "role": "source-support"}], "coverage_state": "partial", "answerability_state": "partially-answerable", "retrieval_state": "unassessed", "named_id_root_declarations": {"concept": "found_in_example_root", "claim": "not_found_as_standalone_root", "support": "not_found_as_standalone_root"}}, "template": {"coverage_assertions": [{"id": null, "revision": null, "component": null, "assertion": null, "covered_refs": [], "source_support_refs": [], "coverage_state": "unassessed"}], "answerability_state": "unassessed", "cq_status": "draft"}},
+      "observed": {"synthetic": {"component_refs": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "role": "concept"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "role": "claim"}, {"id": "support-synthetic-claim-001", "revision": 1, "role": "source-support"}], "coverage_state": "partial", "answerability_state": "partially-answerable", "retrieval_state": "unassessed", "named_id_root_declarations": {"concept": "found_in_example_root", "claim": "not_found_as_standalone_root", "support": "not_found_as_standalone_root"}}, "template": {"coverage_assertions": [{"id": null, "revision": null, "component": null, "assertion": null, "covered_refs": [], "source_support_refs": [], "coverage_state": "unassessed"}], "answerability_state": "unassessed", "cq_status": "draft"}},
+      "controls": [
+        {"id": "wrong-component-id", "operation": "Search the existing source root for id: support-synthetic-claim-999", "expected": {"status": 1, "classification": "successful_no_match"}, "observed": {"status": 1, "classification": "successful_no_match"}, "limit": "No-match control does not prove that the requested source-support component is absent from every possible source root."},
+        {"id": "component-search-error", "operation": "Search a missing knowledge/concept-cards/no-such-root", "expected": {"status": 2, "classification": "tool_error"}, "observed": {"status": 2, "classification": "tool_error"}, "limit": "Search failure remains distinct from no component declaration."}
+      ],
+      "limit": "Partial coverage and partial answerability are stored summaries in a synthetic record. They do not establish completed source support, semantic verification, reconciliation, preservation or memory admission."
+    }
+  ]
+}
