@@ -2,13 +2,18 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice12-relationship-policy-and-replay-remediation
-status: active
+status: closed
 depends-on: [slice01-relationship-semantics-and-traversal-iteration05-evidence]
 blocks: [slice01-recomposition, slice02-competency-questions-and-answerability]
-version: "1.0"
+version: "1.1"
 ---
 
 # Relationship Policy And Replay Remediation
+
+Independently closed on 2026-09-15; see cdc-verification.md. CC repairs
+b3ea7533/52aad9c6 reproduce, with attributed CDC restoration of previously
+accepted handoff text. Original Slice01 was separately recomposed; no new
+memberships or schema adoption arise from this remediation.
 
 Operator approved this small remediation slice on 2026-09-14 after Slice01's
 fifth corrective iteration. Fix two bounded defects, retain verified progress,
@@ -142,6 +147,10 @@ No settings are changed or task dispatched by this open set. The operator may
 use Luna/xhigh again; record actual settings only when available.
 
 ## Version History
+
+- 1.1 (2026-09-15): All four local rows independently verified; original
+  Slice01 separately recomposed. Was: active remediation. Retains the
+  bounded source-policy, replay, ownership and schema/spec limits.
 
 - 1.0 (2026-09-14): Operator-approved two-step remediation after Slice01
   Iteration 05; zero new pairs, explicit retained ownership, compact context

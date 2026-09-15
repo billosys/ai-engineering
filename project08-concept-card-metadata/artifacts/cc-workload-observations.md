@@ -392,3 +392,55 @@ one source of variation, not prove that configuration superior.
 Only one distinct slice has received independent review in this observation
 series. Continue the requested three-slice monitoring without counting the
 heartbeat preview or successive revisions as additional slices.
+
+## Observation 02: Slice12 Bounded Remediation
+
+Date: 2026-09-15. CC commits b3ea7533 and 52aad9c6; CDC independently closes
+Slice12 and recomposes original Slice01, with attributed documentation
+restoration. This is the second distinct reviewed slice in the monitoring
+series, but it repairs the first slice's existing work. It is not an independent
+new-family replication or a second acceptance of the same 35 pairs.
+
+### Observed Execution
+
+Task "Read and follow CC prompt", id 01a0a2bb-2c86-7170-af63-7c936e386ce1,
+was reused from Iteration 05. Slice12 turn:
+01a0a369-c022-7831-b05e-98cca7ea1b7e.
+Local turn_context at 2026-09-15T04:53:31.856Z confirms gpt-5.6-luna / xhigh.
+No new compacted event appears in this turn; the previous turn's compaction
+at 02:09:57.535Z remains historical context, not another Slice12 event.
+Metadata source:
+`/Users/oubiwann/.codex/sessions/2026/09/14/rollout-2026-09-14T20-42-50-01a0a2bb-2c86-7170-af63-7c936e386ce1.jsonl`.
+
+Task history reports 1189831 ms (19 minutes 49.831 seconds), 106 command
+executions and four nonzero exits: a jq exploration error, two partial replay
+attempts and a commit-amend attempt. These are procedural observations, not
+four semantic failures. Multiple initial plan/ledger reads are visible.
+No reliable cost/token/headroom measurement was collected.
+
+### Quality And Recommendation
+
+Both targeted repairs passed independent review on this submission. Historical
+positive rules are distinguished from corpus variation and unknown lineage.
+The same revised lookup handles match/no-match/error, and CDC's additional
+native-path injection exits 2. Exact census, hashes, projections and native
+cases remain intact.
+
+The handoff rewrite dropped previously accepted interface questions and left
+a stale four-row count beside the correct two-row list. CDC restored the old
+paragraphs verbatim and labeled their provenance/status; this was a minor
+documentation-retention completion, not new semantic analysis or an unreported
+CC correction. The close is therefore not an untouched perfect submission.
+
+Scope reduction to two explicit defects, positive-authority framing and reuse
+of proven replay components coincided with success. Model/effort stayed the
+same as Iteration 05, but the task was much narrower and reused its context;
+this does not isolate a causal model or prompt effect. A nominally shorter run
+is not a direct measure of lower cognitive load.
+
+Retain Luna/xhigh provisionally for the next bounded family packet; no settings
+are changed here. Prefer a fresh context for Slice02 so the growing correction
+history does not dominate the new semantic task. Preserve unchanged handoff
+sections by default and review deletions explicitly. Two distinct slices have
+now received independent review; continue monitoring the next slice before
+the final three-slice trend assessment.

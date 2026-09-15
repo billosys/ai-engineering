@@ -925,3 +925,84 @@ correction and use the sizing safeguard. See
 It preserves all five done rows and proposes two small steps with zero new
 memberships, pending operator choice. No Iteration 06, new slice, scope
 transfer, Slice02 prompt or semantic acceptance is authorized by this review.
+
+## Slice12 Repair And Slice01 Recomposition (2026-09-15)
+
+CC repair b3ea7533 and endpoint record 52aad9c6 are independently verified in
+[Slice12's CDC review](../slice12-relationship-policy-and-replay-remediation/cdc-verification.md).
+This is the final composition pass over the original seven criteria, not
+closure by pointing to a child status alone. Outcome: Slice01 independently
+closed; all 35 assigned pairs accepted as bounded inventory interpretation.
+
+The complete current native/census/hash replay passed. The 35-pair set and
+27 registered inputs are unchanged; normalized JSON comparison against f3cadf33
+shows only the shared legacy disposition and eight legacy member dispositions
+changed. Those exact repairs were compared to the historical authorities,
+frozen observations and future-policy limits. R5 is resolved. Actual native-path
+failure injection returned exit 2 rather than passing as unavailable; R6 is
+resolved. Original context, body, endpoint and query evidence remains valid.
+
+CC's rewritten handoff omitted prior accepted interface paragraphs and kept a
+stale four-row count. CDC restored those paragraphs verbatim from 30d9815c,
+corrected two remaining rows at submission and labeled historical versus
+current status. The original S1-6 analysis is retained, not newly authored.
+No registry, census, case result or semantic authority was changed by CDC.
+
+| Row | Final status | Recomposition evidence |
+| --- | --- | --- |
+| S1-1 | done | Exact original plan-derived 35 pairs, unchanged identities, disjoint from accepted 115 |
+| S1-2 | done | 27 hashes, registered rule/context layers, frozen census and original/copy mappings reproduce |
+| S1-3 | done | R5 rule/observation/lineage correction inspected; other meanings unchanged; field-specific consequences retained |
+| S1-4 | done | Requested/declared endpoint and revision cases, support limits and negative controls reproduce |
+| S1-5 | done | All four native comparisons and retained teaching/null-field body distinctions; no invented edges |
+| S1-6 | done | Restored accepted interfaces/questions, 405 remaining ownership and concrete policy/research boundaries |
+| S1-7 | done | Current literal replay plus independent error control, exact submitted scope and protected-path checks pass |
+
+## Final Bubble-Up
+
+The five original CC artifacts remain in their accepted home, supplemented by
+the separately owned Slice12 policy/validation records and its closure. Every
+original row is accounted for; no semantic quality requirement is deferred.
+The old CC close report remains historical attestation, superseded for current
+status by this independent review.
+
+The frozen transition snapshot remains immutable at 115 accepted / 440
+remaining. The new project current-coverage register records the union of
+those 115 and these 35, for 150 accepted / 405 remaining; Slice12 contributes
+zero extra pairs. This is semantic inventory coverage, not schema adoption,
+card truth, memory admission or a quality percentage.
+
+Arc06 can open the bounded CQ/answerability Slice02 after this closure.
+Carry forward the distinction between documented requirements and observed
+outputs, fail-closed replay and retained handoff content. Remaining research,
+source/identity/lifecycle interfaces, P-15 operator schema/spec discussion and
+all real-extraction/UAT obligations remain open.
+
+### Current Coverage Update Check
+
+CDC authored the bookkeeping register from the unchanged transition and the
+accepted Slice01 registry, not a new semantic assignment inferred from names.
+The following check passed (true, exit 0) at this review and the Slice02
+opening; it is tied to that 150/30/375 state.
+
+~~~bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning
+c=project08-concept-card-metadata/artifacts/semantic-coverage-current.json
+b=project08-concept-card-metadata/artifacts/semantic-transition-coverage.json
+r=project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/semantic-membership.json
+jq -e --slurpfile b "$b" --slurpfile r "$r" '
+ . as $c | ($r[0].memberships|map([.field_path,.record_kind])) as $added |
+ ($c.accepted_pairs|sort)==(($b[0].accepted_pairs+$added)|sort) and
+ ($c.remaining_pairs|sort)==(($b[0].remaining_pairs-$added)|sort) and
+ ($c.accepted_pairs|length)==150 and ($c.accepted_pairs|unique|length)==150 and
+ ($c.remaining_pairs|length)==405 and ($c.remaining_pairs|unique|length)==405 and
+ (($c.accepted_pairs+$c.remaining_pairs)|unique|length)==555 and
+ ($c.next_slice_pairs|length)==30 and ($c.next_slice_pairs|unique|length)==30 and
+ (($c.next_slice_pairs-$c.remaining_pairs)|length)==0 and
+ (($c.remaining_pairs-$c.next_slice_pairs)|length)==375
+' "$c"
+test "$(shasum -a 256 "$b" | awk '{print $1}')" = "$(jq -r '.basis.sha256' "$c")"
+test "$(shasum -a 256 "$r" | awk '{print $1}')" = "$(jq -r '.accepted_additions[0].sha256' "$c")"
+diff -u <(awk -F'`' '/^\| `/{print $2 "|" $4}' project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice02-competency-questions-and-answerability/slice-plan.md | sort) <(jq -r '.next_slice_pairs[]|join("|")' "$c" | sort)
+~~~

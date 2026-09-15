@@ -1,7 +1,11 @@
 # Slice01 Handoff
 
+CDC update (2026-09-15): Slice12 repairs and original Slice01 recomposition
+are independently verified in their cdc-verification.md records. The CC
+submission posture below is retained as history, not the current closure state.
+
 Slice01 Iteration 05 remains CC-attested proposed-done, and Slice12 supplies
-the bounded R5/R6 repair evidence. CDC has not accepted the four remaining
+the bounded R5/R6 repair evidence. CDC has not accepted the two remaining
 Slice01 rows or the 35 meanings. S1-1/S1-2/S1-4/S1-5/S1-6 remain independently
 done; S1-3 and S1-7 remain open for independent recomposition. The assignment
 still contains exactly 35 pairs, with 115 accepted and 405 outside it.
@@ -61,3 +65,33 @@ acceptance. It adds zero membership pairs and does not open Slice02. CDC must
 independently verify Slice12 and then recompose original Slice01 before any
 downstream opening. No source skill, package, corpus, accepted baseline or
 future schema was changed.
+
+## Retained Interface Questions (CDC Documentation Restoration)
+
+Restored verbatim by CDC from 30d9815c on 2026-09-15 after the Slice12
+rewrite omitted this previously inspected handoff. This is retained accepted
+analysis, not new CDC-authored semantics. Its proposed-done/next-opening
+sentences describe the historical handoff; current plans and CDC reviews
+govern acceptance and the separate Slice02 opening.
+
+For the next Arc06 work, retain these interface facts: legacy typed lists are
+relationship assertions and support reader navigation, but are not independently
+identified current edge records; `from_ref`/`to_ref` declaration matches are
+not edge support; `source_support_refs` is edge-scoped; and `symmetry` or an
+inverse reading does not require a second stored edge. Empty/absent card
+reference arrays and prose-only relationship candidates must remain distinct
+from a populated edge declaration. The 405 other frozen pairs are outside this
+assignment, not accepted coverage. Slice02 is not opened by this handoff. If it
+opens through its own plan, its CQ work should use the four bounded cases to
+size prerequisite, extension, symmetry and unresolved-support behavior; later
+research should decide predicate-name migration and explicit target-anchor/
+revision policy.
+
+The migration reader must preserve historical `contrasts_with` as commonly
+confused concepts, rather than silently replacing it with the current guide's
+qualified comparison. Concrete research questions remain: what resolves the
+rich-profile declared edge path; which stable identity and revision policy
+applies to legacy slugs; and what source support is required before a legacy
+assertion becomes an independently tracked edge. CDC decides whether this
+attested packet closes the slice; no Iteration 06 or Slice02 follows by
+exhaustion.

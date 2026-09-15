@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.21"
+version: "1.22"
 ---
 
 # Concept Card Metadata
@@ -60,8 +60,9 @@ Project ledger P-15 carries this gate independently of final output-quality
 acceptance. Later material design changes from Arc04 must return for discussion
 before being promoted to the normative contract.
 
-The approved Slice12 evidence remediation may proceed now. It fixes historical
-interpretation and a replay error path, not the future schema or specification.
+Slice12 evidence remediation and original Slice01 recomposition closed on
+2026-09-15. They fixed historical interpretation and a replay error path,
+not the future schema or specification. The P-15 discussion gate remains open.
 
 ## Required Outcomes
 
@@ -103,8 +104,11 @@ rigorous bounded-packet approach when warranted, and prefers semantic
 organization consistent with the work's ontological roots.
 
 This is a modest execution pivot, not a reduction in scope or a schema decision.
-Preserve all 115 accepted contextual pairs and all original acceptance criteria.
-Process the other 440 by semantic family and capability importance, retaining
+Preserve all 115 transition-accepted contextual pairs and all original criteria.
+The initial remainder was 440. After Slice12 repair and original Slice01
+recomposition, 150 are accepted and 405 remain; use the
+[current coverage register](./artifacts/semantic-coverage-current.json).
+The transition snapshot stays immutable. Process the remainder by family, retaining
 exact field-path/record-kind accounting plus finer corpus/role distinctions.
 Shared rules need explicit applicability, member roles and exceptions; repeated
 field spelling, shape or lifecycle words never establish semantic equivalence.
@@ -137,7 +141,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; approved Slice12 repairs two Slice01 findings; five verified rows retained |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice12/Slice01 closed; Slice02 opens 30 CQ pairs, 375 outside assignment |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -352,6 +356,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.22 (2026-09-15): Arc06 Slice12 R5/R6 independently reproduce; original
+  Slice01 recomposes with all seven rows done. Records attributed restoration
+  of prior handoff text, 150 accepted/405 remaining in a new current register,
+  and a bounded 30-pair Slice02. Was: Slice12 repair open. Frozen transition,
+  P-15 schema/spec discussion and all real-use quality gates remain unchanged.
 
 - 1.21 (2026-09-14): Operator approves a small Arc06 Slice12 for the two
   residual Slice01 findings; was: sizing decision pending. Adds an explicit

@@ -2,8 +2,8 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice01-relationship-semantics-and-traversal
-status: changes-required
-version: "1.7"
+status: closed
+version: "1.8"
 ---
 
 # Relationship Semantics And Traversal
@@ -14,6 +14,14 @@ each interpretation. Exercise bounded diagnostic query cases. This is semantic
 inventory and capability analysis, not schema adoption or extraction.
 
 ## Current Review
+
+Independently closed on 2026-09-15 after Slice12 R5/R6 repair and original
+seven-row recomposition. All 35 pairs are accepted as bounded inventory
+interpretation, not future schema adoption. CDC restored the previously
+accepted handoff paragraphs verbatim with attribution; no new semantics were
+authored by the verifier. See cdc-verification.md for the full row walk.
+
+The following repair-opening status is superseded and retained as history:
 
 CDC reviewed 30d9815c. S1-1/S1-2/S1-4/S1-5/S1-6 are done, including the
 teaching/null-field body evidence and four current native comparisons.
@@ -183,6 +191,10 @@ Raise concrete sizing needs before expanding scope or substituting generic
 dispositions. No other slice opens automatically from CC's proposed-done report.
 
 ## Version History
+
+- 1.8 (2026-09-15): Independently recomposes all original rows after
+  Slice12 repairs; was: changes-required. Accepts 35 inventory pairs once,
+  with explicit handoff restoration and all future schema/UAT gates intact.
 
 - 1.7 (2026-09-14): Operator approves the small Slice12 remediation unit;
   was: sizing decision pending. This slice retains its original criteria and
