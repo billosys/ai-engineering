@@ -7,7 +7,7 @@ S1-1/S1-2/S1-4/S1-5/S1-6 remain retained.
 
 Opening source HEAD: `e763c661592ff1097a94bb470db9cf924524579d`.
 Opening planning HEAD: `f3cadf33`; both worktrees were clean at inspection.
-Committed Slice12 endpoint: `<Slice12-commit>`.
+Committed Slice12 endpoint: `b3ea7533`.
 Model, settings, effort and compaction: unknown from repository state; no
 settings changed.
 
@@ -24,7 +24,7 @@ settings changed.
 
 The current repaired route is designated in Slice01's
 `artifacts/validation-evidence.md`; earlier recipes remain historical. Its
-current scope tail compares `f3cadf33 -> <Slice12-commit>` and enumerates the
+current scope tail compares `f3cadf33 -> b3ea7533` and enumerates the
 eight authorized files. Fixed historical comparisons remain separate. The
 Slice12 execution transcript and literal route invocation are in
 `artifacts/validation-evidence.md`.

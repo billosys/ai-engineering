@@ -341,10 +341,10 @@ diff -u \
   <(git -C .worktrees/planning diff --name-only "$opening_planning_head" "$committed_review_head" | sort)
 ```
 
-After the scoped commit, invoke this route with
-`COMMITTED_REVIEW_HEAD=<Slice12-commit>`. The explicit before/after scope is
-`f3cadf33 -> <Slice12-commit>`; CDC edits after the opening planning head are
-outside this CC scope and must not be counted as CC evidence.
+After the scoped commit, this route was invoked with
+`COMMITTED_REVIEW_HEAD=b3ea7533`. The explicit before/after scope is
+`f3cadf33 -> b3ea7533`; CDC edits after the opening planning head are outside
+this CC scope and must not be counted as CC evidence.
 
 ## Iteration 01 Replay
 

@@ -40,14 +40,13 @@ applicability, migration and future requiredness unresolved for P-15.
 After the Slice12 commit, the complete declared current route is invoked
 literally as one filtered extraction of the current-route code blocks in the
 repaired Slice01 validation artifact. The committed endpoint used below is
-`<Slice12-commit>` and must be replaced with the actual commit hash before
-execution:
+`b3ea7533`:
 
 ```bash
 set -euo pipefail
 cd /Users/oubiwann/lab/billosys/ai-engineering
 route=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/validation-evidence.md
-export COMMITTED_REVIEW_HEAD=REPLACE_WITH_SLICE12_COMMIT
+export COMMITTED_REVIEW_HEAD=b3ea7533
 replay_log=$(mktemp)
 trap 'rm -f "$replay_log"' EXIT
 set +e
@@ -95,10 +94,10 @@ comparisons:
 - fixed `3cf075ff -> 91c7f5f3` and `91db42fa -> a24758b4` checks retain prior
   CDC/CC history;
 - current protected-path preservation compares opening planning `f3cadf33`
-  to `<Slice12-commit>` for Arc01 inputs, frozen project artifacts and other
+  to `b3ea7533` for Arc01 inputs, frozen project artifacts and other
   protected paths;
 - the committed current scope compares the explicit eight authorized paths
-  from `f3cadf33` to `<Slice12-commit>`;
+  from `f3cadf33` to `b3ea7533`;
 - `query-cases.json`, Slice01's ledger/closing report/CDC review, plans and
   historical prompts remain outside the authorized diff.
 
@@ -106,7 +105,7 @@ The current route's scope tail is:
 
 ```text
 opening planning HEAD: f3cadf33
-committed review HEAD: <Slice12-commit>
+committed review HEAD: b3ea7533
 authorized changed files: 8
 protected paths changed: 0
 query-cases.json changed: 0
