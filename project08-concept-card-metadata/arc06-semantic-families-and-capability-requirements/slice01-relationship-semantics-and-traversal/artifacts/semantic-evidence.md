@@ -94,6 +94,35 @@ is `support-evidence-map-definition-001`; it is not the populated edge's
 pathless `support-synthetic-edge-001`. The missing edge target is a bounded
 lookup outcome, not a claim that all record roots or anchors are invalid.
 
+## Historical Policy Versus Frozen Observation (Slice12 R5)
+
+The registered historical authorities establish two related but distinct rule
+scopes. `v32Parallel` documents an explicit prerequisite rule at its extraction
+guidelines (`0010-a-guide-for-parallel-concept-card-re-extraction-v3.2.md:585-610`):
+every non-foundational concept needs prerequisites, while its required-frontmatter
+reference (`:877-893`) marks `prerequisites` required and permits an empty list
+for foundational concepts. The same quality section says all frontmatter fields
+must be populated, using `null` or an empty array where not applicable. The
+earlier `v32Howto` audit (`0009-howto-concept-card-extraction-with-claude-code-v3.2.md:573-592`)
+lists `prerequisites`, `extends`, `related` and `contrasts_with` among the
+missing fields and requires conformance to the v3 template. The first rule is
+therefore narrower and explicit; the latter instructions are broader
+all-field/template-conformance guidance, not four separately stated
+relationship-specific requiredness rules.
+
+| Legacy root and item list | Documented historical rule and scope | Frozen observed states and item lists | Lineage/conformance limit | Future-policy question |
+| --- | --- | --- | --- | --- |
+| `prerequisites`, `prerequisites[]` | Non-foundational concepts need prerequisites; foundational concepts may use an empty list. The broader all-frontmatter rule permits `null`/empty where not applicable. | Music: present 390; null 0; empty 5; populated 385; 620 string items / 183 distinct. Erlang: present 1,664; absent 0; null 1; empty 306; populated 1,357; 2,282 string items / 586 distinct. | The census cannot recover whether each card was generated under the rule or whether a concept was foundational. The null witness is not evidence that no conceptual dependency exists. | Decide after P-15 whether and how a future contract expresses applicability, foundational status, missing/null/empty states and migration without silently adopting v3.2. |
+| `extends`, `extends[]` | Named by the broader all-frontmatter/template-conformance guidance; no separate relation-specific requiredness rule is stated in the registered passages. | Music: present 390; absent/null 0; empty 180; populated 210; 210 string items / 88 distinct. Erlang: present 1,598; absent 66; null 0; empty 1,289; populated 309; 314 string items / 162 distinct. | Absent Erlang keys may reflect lineage, applicability or nonconformance; the frozen records do not distinguish those causes. Items remain legacy slugs without edge support or revision. | Decide whether a future profile requires, omits, nulls or empties this relation by source/card applicability, and what migration preserves the distinction. |
+| `related`, `related[]` | Named by the broader all-frontmatter/template-conformance guidance; its relationship meaning is symmetric association without dependency implication. | Music: present 390; null 0; empty 16; populated 374; 752 string items / 331 distinct. Erlang: present 1,664; absent 0; null 1; empty 21; populated 1,642; 4,065 string items / 1,239 distinct. | Presence and item counts do not establish universal conformance, reciprocal storage requirements or edge truth. The null witness remains distinct from an empty list. | Decide future requiredness and reciprocal representation separately from the preserved symmetric reader behavior. |
+| `contrasts_with`, `contrasts_with[]` | Named by the broader all-frontmatter/template-conformance guidance; the historical relationship meaning is commonly confused concepts, not the current guide's broader qualified comparison. | Music: present 390; null 0; empty 262; populated 128; 148 string items / 107 distinct. Erlang: present 1,664; absent 0; null 3; empty 1,133; populated 528; 643 string items / 385 distinct. | Observed null/empty states do not prove absence of contrast or universal conformance. Legacy item slugs do not supply edge-scoped support. | Decide whether the future profile retains the common-confusion distinction, how it represents qualified comparisons, and which applicability/requiredness policy is accepted. |
+
+The matrix is an interpretation of registered rules and the frozen census, not
+a future schema proposal. It preserves absent, null, empty and populated
+states, does not claim universal historical conformance or individual lineage,
+and leaves requiredness, applicability, migration and specification format to
+the operator's P-15 discussion.
+
 ## Literal Selected-Field Census (Iteration 04)
 
 The following is the selected-field census, not a membership count. It is
@@ -111,14 +140,15 @@ not a lookup returning null. `empty` is an existing zero-length array.
 | `contrasts_with`, `contrasts_with[]` | present array 390; null/absent 0; empty 262; populated 128 | present 1,664; array 1,661; null 3; empty 1,133; populated 528; absent 0 | all populated items are strings: 148 occurrences/107 distinct Music targets; 643/385 Erlang. `error-handling-philosophy.md` is the inspected null witness. |
 
 Thus the eight legacy pairs have the same container/item shape only in their
-non-null populated state. This is an observation about the frozen records, not
-a requiredness rule: the inspected prompts, guide and templates do not
-document that any of these legacy keys is mandatory. In particular, an Erlang
-`extends` key can be absent while `prerequisites`, `related`, and
-`contrasts_with` have observed nulls. A migration/extractor must retain those
-states instead of manufacturing empty arrays, while leaving the policy
-question explicitly unresolved. The census establishes neither global
-identity nor edge warrant for any string item.
+non-null populated state. The frozen records show the documented historical
+rule alongside variable observed conformance: `prerequisites` has explicit
+non-foundational/foundational guidance, while the broader v3.2 instructions
+name all four legacy keys. An Erlang `extends` key can still be absent while
+`prerequisites`, `related`, and `contrasts_with` have observed nulls. A
+migration/extractor must retain those states instead of manufacturing empty
+arrays, without claiming that every card followed the historical instructions
+or that the future profile will require the same fields. The census establishes
+neither global identity nor edge warrant for any string item.
 
 | Selected concept-card pairs | Literal state in the 31-card population |
 | --- | --- |

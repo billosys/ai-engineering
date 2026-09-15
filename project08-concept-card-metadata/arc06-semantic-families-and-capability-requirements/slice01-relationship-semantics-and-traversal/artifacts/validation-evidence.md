@@ -49,19 +49,20 @@ relationship-edge template/example roots, and concept-card reference variants.
 The template is deliberately null/unassessed; the sole populated edge is
 synthetic; all target truth and unresolved-anchor claims remain bounded.
 
-## Iteration 05 Current Replay
+## Current Replay (Slice12-Repaired Route: R5/R6)
 
-Executed from the source checkout after the Iteration 05 edits. Actual opening
-state: source `e763c661592ff1097a94bb470db9cf924524579d`, planning
-`44c2b0ed03320066e8c6e6a4b579ef0fbfc05725`; the planning tree was clean before
-this packet. Model/settings were not changed by this task and are unknown from
-repository state. The current route uses the frozen parsed inventory for
-structured values, direct `shasum`/`cmp` for the teaching original/copy, and
-bounded `test -f`/`rg` lookups for target existence and support. It does not
-extend `awk`/`grep` into a YAML parser or add a helper.
+Executed from the source checkout for Slice12 after the Iteration 05 review.
+Actual opening state: source `e763c661592ff1097a94bb470db9cf924524579d`,
+planning `f3cadf33`; both worktrees were clean at inspection. Model/settings,
+effort and compaction were not changed by this task and are unknown from
+repository state. The route uses the frozen parsed inventory for structured
+values, direct `shasum`/`cmp` for the teaching original/copy, and one
+fail-closed lookup function for match/no-match/search-error states. It does
+not extend `awk`/`grep` into a YAML parser or add a helper/parser.
 
 The route below emits and checks every legacy census value and every card and
-edge state before replaying all four cases. Expected case objects remain
+edge state, exact CDC-attributed projections and search controls before
+replaying all four cases. Expected case objects remain
 independently authored in `query-cases.json`; native objects are derived from
 unchanged registered inputs before comparison.
 
@@ -173,7 +174,37 @@ This edge-state check covers every selected root/nested component in the
 template/example table, including empty versus populated support collections
 and the actual item types for endpoint and support references.
 
-## Iteration 05 Current Replay: Native Cases And Preservation
+### Current Route: CDC-Supplementary Exact Projections
+
+The following two projections are retained from the Iteration 05 independent
+review as CDC-authored supplementary checks. They verify exact frozen
+reference/edge values; they are attributed review evidence, not newly
+discovered CC semantics.
+
+```bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+jq -e '
+[.records[]|select(.record_kind=="concept-card")|.values.relationship_refs[]?]
+== [{id:"edge-evidence-map-related-to-claim",path:"records/edge-evidence-map-related-to-claim.md",revision:1}]
+' "$i"
+jq -e '
+["directed","direction","endpoint_roles","from_ref","to_ref","relationship_type","relation_type","meaning","inverse_reading","symmetry","graph_closure_state","source_support_refs"] as $keys
+|[.records[]|select(.record_kind=="relationship-edge")
+ |{path,values:(.values|with_entries(select(.key as $k|$keys|index($k)!=null)))}]
+|sort_by(.path)
+|.==[
+ {path:"knowledge/concept-cards/examples/relationship-edge.md",
+  values:{directed:true,from_ref:{id:"cc-prepared-source-provenance",revision:1},to_ref:{id:"cc-claim-support-is-assertion-specific",revision:1},relation_type:"precedes",source_support_refs:[{id:"support-synthetic-edge-001",revision:1}]}},
+ {path:"knowledge/concept-cards/templates/relationship-edge.md",
+  values:{direction:null,endpoint_roles:{from_role:null,to_role:null},from_ref:null,to_ref:null,relationship_type:null,meaning:null,inverse_reading:null,symmetry:null,graph_closure_state:"unassessed",source_support_refs:[]}}
+]
+' "$i"
+test ! -e records/edge-evidence-map-related-to-claim.md
+```
+
+## Current Route: Native Cases And Preservation
 
 ```bash
 set -euo pipefail
@@ -211,9 +242,75 @@ from_declared_id=$(jq -r --arg path "$from_target" '.records[]|select(.path==$pa
 from_declared_revision=$(jq -r --arg path "$from_target" '.records[]|select(.path==$path)|.values.revision' "$i")
 to_declared_id=$(jq -r --arg path "$to_target" '.records[]|select(.path==$path)|.values.id' "$i")
 to_declared_revision=$(jq -r --arg path "$to_target" '.records[]|select(.path==$path)|.values.revision' "$i")
-support_found=false
-support_path=unavailable
-if rg -q "^id: $support_id$|path: .*${support_id}" knowledge/concept-cards/examples; then support_found=true; support_path=found; fi
+lookup_fixture=$(mktemp -d)
+lookup_error_log="$lookup_fixture/error.log"
+trap 'rm -rf "$lookup_fixture"' EXIT
+printf '%s\n' 'id: support-match' > "$lookup_fixture/match.md"
+
+lookup_support() {
+  local search_root=$1
+  local search_id=$2
+  local matches
+  local search_status
+  if matches=$(rg -l -e "^id: ${search_id}$" -e "path: .*${search_id}" -- "$search_root"); then
+    if test -n "$matches"; then
+      printf '%s\n' match
+      return 0
+    fi
+    printf '%s\n' no-match
+    return 1
+  else
+    search_status=$?
+    if test "$search_status" = 1; then
+      printf '%s\n' no-match
+      return 1
+    fi
+    printf 'search-error:%s\n' "$search_status" >&2
+    return "$search_status"
+  fi
+}
+
+resolve_support() {
+  local lookup_result
+  local lookup_status
+  if lookup_result=$(lookup_support "$1" "$2"); then
+    printf '%s\n' "$lookup_result"
+    return 0
+  else
+    lookup_status=$?
+    if test "$lookup_status" = 1; then
+      printf '%s\n' "$lookup_result"
+      return 0
+    fi
+    printf 'support-search-error:%s\n' "$lookup_status" >&2
+    return "$lookup_status"
+  fi
+}
+
+if match_result=$(resolve_support "$lookup_fixture" support-match); then match_status=0; else match_status=$?; fi
+if no_match_result=$(resolve_support "$lookup_fixture" support-missing); then no_match_status=0; else no_match_status=$?; fi
+rg() { printf '%s\n' 'CDC injected search failure' >&2; return 2; }
+if error_result=$(resolve_support "$lookup_fixture" support-match 2>"$lookup_error_log"); then error_status=0; else error_status=$?; fi
+unset -f rg
+printf 'lookup-control match status=%s result=%s\n' "$match_status" "$match_result"
+printf 'lookup-control no-match status=%s result=%s\n' "$no_match_status" "$no_match_result"
+printf 'lookup-control error status=%s result=%s\n' "$error_status" "${error_result:-<empty>}"
+test "$match_status" = 0
+test "$match_result" = match
+test "$no_match_status" = 0
+test "$no_match_result" = no-match
+test "$error_status" = 2
+rg -q '^CDC injected search failure$' "$lookup_error_log"
+
+if native_support_result=$(resolve_support knowledge/concept-cards/examples "$support_id"); then
+  test "$native_support_result" = no-match
+  support_found=false
+  support_path=unavailable
+else
+  native_search_status=$?
+  printf 'native support search failed with status %s\n' "$native_search_status" >&2
+  exit "$native_search_status"
+fi
 endpoint_native=$(jq -n --arg fi "$from_id" --argjson fr "$from_revision" --arg fdi "$from_declared_id" --argjson fdr "$from_declared_revision" --arg ti "$to_id" --argjson tr "$to_revision" --arg tdi "$to_declared_id" --argjson tdr "$to_declared_revision" --arg si "$support_id" --argjson sr "$support_revision" --arg sp "$support_path" --argjson sf "$support_found" '{from:{requested:{id:$fi,revision:$fr},declared:{id:$fdi,revision:$fdr},identity_match:($fi==$fdi),revision_match:($fr==$fdr)},to:{requested:{id:$ti,revision:$tr},declared:{id:$tdi,revision:$tdr},identity_match:($ti==$tdi),revision_match:($tr==$tdr)},support:{requested:{id:$si,revision:$sr},declared_path:$sp,declared_id_found:$sf}}')
 
 jq -e --argjson native "$prereq_native" '.cases[]|select(.id=="prerequisite")|.expected==$native and .observed==$native' "$s/artifacts/query-cases.json"
@@ -226,22 +323,28 @@ jq -e --argjson native "$endpoint_native" '.cases[]|select(.id=="edge-endpoints"
 jq empty "$s/artifacts/semantic-membership.json"
 jq empty "$s/artifacts/query-cases.json"
 git -C .worktrees/planning diff --check
+git -C .worktrees/planning diff --exit-code 3cf075ff 91c7f5f3 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements project08-concept-card-metadata/artifacts
 git -C .worktrees/planning diff --exit-code 91db42fa a24758b4 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements project08-concept-card-metadata/artifacts
+opening_planning_head=f3cadf33
+committed_review_head=${COMMITTED_REVIEW_HEAD:?set to the committed Slice12 planning commit}
+git -C .worktrees/planning diff --exit-code "$opening_planning_head" "$committed_review_head" -- project08-concept-card-metadata/arc01-metadata-research-and-requirements project08-concept-card-metadata/artifacts
 diff -u \
   <(printf '%s\n' \
-    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/handoff.md \
-    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/query-cases.json \
-    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/semantic-evidence.md \
     project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/semantic-membership.json \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/semantic-evidence.md \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/handoff.md \
     project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/validation-evidence.md \
-    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/closing-report.md \
-    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/ledger.md | sort) \
-  <(git -C .worktrees/planning diff --name-only 44c2b0ed03320066e8c6e6a4b579ef0fbfc05725 | sort)
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice12-relationship-policy-and-replay-remediation/artifacts/historical-policy-comparison.md \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice12-relationship-policy-and-replay-remediation/artifacts/validation-evidence.md \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice12-relationship-policy-and-replay-remediation/ledger.md \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice12-relationship-policy-and-replay-remediation/closing-report.md | sort) \
+  <(git -C .worktrees/planning diff --name-only "$opening_planning_head" "$committed_review_head" | sort)
 ```
 
-After the scoped commit, the committed-review route is
-`git -C .worktrees/planning diff --name-only 44c2b0ed03320066e8c6e6a4b579ef0fbfc05725 HEAD`.
-CDC edits are outside this CC scope and must not be counted as CC evidence.
+After the scoped commit, invoke this route with
+`COMMITTED_REVIEW_HEAD=<Slice12-commit>`. The explicit before/after scope is
+`f3cadf33 -> <Slice12-commit>`; CDC edits after the opening planning head are
+outside this CC scope and must not be counted as CC evidence.
 
 ## Iteration 01 Replay
 
