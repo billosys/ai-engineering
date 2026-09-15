@@ -9,16 +9,20 @@ operator approval.
 - Source checkout: `/Users/oubiwann/lab/billosys/ai-engineering`, opening
   `e763c661592ff1097a94bb470db9cf924524579d`, clean.
 - Planning checkout: `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning`,
-  opening `a27c4d33a02d3e6047656b9ae0c17a145aa3f208`, clean.
+  original analysis opening `a27c4d33a02d3e6047656b9ae0c17a145aa3f208`,
+  original CC endpoint `753bacb051c041a75d0c4d36595cfbadd5a9b5eb`, and repair
+  opening `f15c896bfeec4c3618387413e63c95dfe9fc6771` before edits.
 - Frozen parsed population: 2,054 eligible legacy mappings, 31 parsed
   concept-card mappings across six families, two standalone competency-question
   mappings, and three malformed rich-card exclusions.
 - Current accounting: 150 accepted, 405 remaining, 30 assigned here, 375
   remaining outside. The immutable transition snapshot remains 115/440/35.
 - Every path/hash and role used by this packet is registered in
-  `semantic-membership.json`. No generated copy was used without a stated
-  original/copy role; the representative pilot is an existing preserved
-  planning artifact, not a new extraction.
+  `semantic-membership.json`. The rich and teaching `cc-model-data-constraints`
+  originals remain distinct from their byte-preserved planning copies; both
+  existing source/copy manifests and both mappings are registered and checked.
+  The representative pilot is an existing preserved planning artifact, not a
+  new extraction.
 
 ## Historical rule versus current observation
 
@@ -70,18 +74,21 @@ not proof that either card satisfies every possible answer criterion.
 | Synthetic examples | 3 | absent 2, empty 1 | absent 2, populated 1 | Minimal card preserves an empty legacy-named collection; rich profile has one declared external CQ tuple. |
 | Teaching rerun | 10 | absent 10 | populated 10, one item each | Embedded CQ declarations are present, but lifecycle states remain candidate/unassessed. |
 | Template | 1 | absent 1 | empty 1 | Template shape is not a real-corpus CQ extraction. |
-| **Parsed total** | **31** | 30 absent / 1 empty | 12 absent / 1 empty / 18 populated | No requiredness or equivalence is inferred from these observations. |
+| **Parsed total** | **31** | 30 absent / 1 empty | 8 absent / 5 empty / 18 populated | No requiredness or equivalence is inferred from these observations. |
 
-The 18 populated `cq_refs[]` items all request revision `1`. The selected
-`competency_question_refs` root has no populated items, so its nested item
-meaning is not observed in this frozen population. The two names remain
-distinct. The current generated cards use `cq_refs`, while the minimal example
-uses an empty `competency_question_refs`; no migration equivalence is assumed.
+The 18 populated `cq_refs[]` items all request revision `1`, with `id` and
+`path` strings and numeric `revision` items. The selected
+`competency_question_refs` root has 30 absent and one empty state, with zero
+observed nested items, so its item meaning is not observed in this frozen
+population. The two names remain distinct. The current generated cards use
+`cq_refs`, while the minimal example uses an empty
+`competency_question_refs`; no migration equivalence is assumed.
 
 Three rich-rerun inputs are malformed and excluded from the parsed denominator:
-`INDEX.md` has no opening frontmatter, and `cc-memory-forms.md` and
-`cc-priming-forms.md` fail the frozen YAML parser. They are limits, not parsed
-absence witnesses and not negative CQ evidence.
+`cc-memory-forms.md`, `cc-priming-forms.md` and
+`cc-recognition-dual-process.md` fail the frozen YAML parser. `INDEX.md` is a
+non-card Markdown index and is not the third malformed card. These exclusions
+are limits, not parsed absence witnesses and not negative CQ evidence.
 
 ### Standalone competency-question population
 
@@ -96,8 +103,8 @@ real-corpus CQ extraction.
 | `requirement_source_ref` | null | absent |
 | `intended_use` | null | absent |
 | `answer_criteria` | null | absent |
-| `coverage_assertions` | one item; id/revision/component/assertion null, covered/support refs empty, state `unassessed` | absent |
-| `component_refs` | absent | three object items: concept, claim, source-support; all revision 1 |
+| `coverage_assertions` | present array with one item; id/revision/component/assertion null, covered/support refs empty, state `unassessed` | absent |
+| `component_refs` | absent | present array with three object items: concept, claim, source-support; all revision 1 |
 | `coverage_state` | absent | `partial` |
 | `answerability_state` | `unassessed` | `partially-answerable` |
 | `cq_status` | `draft` | absent |
@@ -107,6 +114,19 @@ are fictional and retrieval is unassessed. The three component IDs being
 written down does not create a source-support record, and the template's
 coverage assertion slot does not establish that the synthetic component list
 conforms to it.
+
+### Coverage component versus mapped construct
+
+Guide 06 first decomposes a CQ into required answer components, then maps each
+component to exact card, claim, support/span or edge constructs, and records a
+coverage assertion explaining what those constructs supply. Therefore the
+required part of an answer, the `covered_refs` constructs, and the assertion's
+own identity/rationale are different objects. The template's null
+`coverage_assertions[].component` is an unassessed slot and does not demonstrate
+its populated encoding. The synthetic `component_refs` list is a set of mapped
+construct declarations; it is not evidence that the template's assertion
+shape is satisfied or an equivalent representation. No future requiredness or
+schema is inferred here.
 
 ## Representative body and reference readings
 
@@ -123,12 +143,19 @@ conforms to it.
   `cq-model-data-constraint`, revision 1, with its own literal heading and
   answer text. Their same concept-card ID does not make their CQ identities or
   wording equivalent.
+- The rich and teaching generated originals were read from their registered
+  `workbench/` paths. Their byte-identical planning copies are preserved under
+  the Arc01 baseline snapshots; the original and copy manifests agree, and
+  direct `cmp`/SHA-256 checks are part of the replay. Copy inspection is not
+  presented as an independent extraction or source read.
 - The rich-profile synthetic card declares
   `cq-inspect-support-for-card-statement`, revision 1, at
   `records/cq-inspect-support-for-card-statement.md`. The bounded source root
-  has no such `records/` parent, so the direct path check fails as a path/tool
-  error. That is not a successful semantic no-match and does not prove that a
-  different source root or rendered anchor would fail.
+  has no such `records/` parent, so the native `test ! -d` check succeeds with
+  bounded parent absence and unresolved target availability. A separate rg
+  lookup against a missing root is the path/tool error control. Neither result
+  is a successful semantic no-match or proves that a different source root or
+  rendered anchor would fail.
 - The current template and examples preserve readable body sections and make
   explicit that component references, coverage, answerability, verification,
   reconciliation, preservation and admission have different scopes. The body
@@ -139,7 +166,7 @@ conforms to it.
 | Concern | Preserved capability | Limit or migration question |
 | --- | --- | --- |
 | Reader | Readable legacy questions and current CQ/answer sections remain discoverable; generated cards retain body-level explanation. | A question string or heading does not show that the answer meets criteria. |
-| Extractor | Can retain exact question strings, stable current tuples, component roles, coverage assertions and explicit unknown states. | Must not synthesize CQ identity from matching text, inherit revisions from a parent card, or turn prose into coverage/support. |
+| Extractor | Can retain exact question strings, stable current tuples, required answer components, mapped-construct roles, coverage assertions and explicit unknown states. | Must not synthesize CQ identity from matching text, inherit revisions from a parent card, or turn prose into coverage/support. The component list is not an assertion map by implication. |
 | Query | Exact legacy reverse lookup works; current tuple lookup can separate id, revision, path availability, literal heading and body text. | External target paths, embedded fragments and rendered anchors require their own resolver policy; no graph/RAG/runtime is implied here. |
 | Migration | Can preserve absent/empty/populated states and map legacy discovery to candidate references for later review. | A legacy string has no stable id/revision; `competency_question_refs` and `cq_refs` are not silently merged; migration needs identity, deduplication and target-anchor policy. |
 
@@ -156,6 +183,7 @@ owned by Slice09. Those fields share a CQ record but are not absorbed by the
 The packet poses, but does not decide, architecture questions: whether a CQ
 should have one canonical reference shape or multiple explicitly named
 surfaces; whether embedded fragments need declared heading/anchor policy; how
-legacy question strings are assigned stable identities; and how answer criteria
-map to assertion-level support. P-15 still requires operator schema and
-specification discussion before any normative field structure is chosen.
+legacy question strings are assigned stable identities; how required answer
+components are encoded separately from mapped constructs; and how answer
+criteria map to assertion-level support. P-15 still requires operator schema
+and specification discussion before any normative field structure is chosen.

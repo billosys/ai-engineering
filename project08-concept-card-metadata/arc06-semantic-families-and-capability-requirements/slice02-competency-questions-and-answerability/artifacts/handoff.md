@@ -6,9 +6,14 @@ Status: CC proposed-done; independent CDC review is required.
 
 - Source opening HEAD: `e763c661592ff1097a94bb470db9cf924524579d`, clean and
   unchanged.
-- Planning opening HEAD: `a27c4d33a02d3e6047656b9ae0c17a145aa3f208`, clean.
-- CC endpoint: the explicit seven-file commit reported with this packet; CDC
-  must resolve and set it as `CC_COMMIT` in the designated replay.
+- Original CC endpoint: `753bacb051c041a75d0c4d36595cfbadd5a9b5eb`.
+- Repair opening planning HEAD: `f15c896bfeec4c3618387413e63c95dfe9fc6771`,
+  clean before this repair.
+- The opening slice-plan authority is read from `a27c4d33…`; the pre-review
+  six-row ledger authority is read from `753bacb0…`. Live plan/ledger status
+  hashes are reported separately because CDC updates them.
+- CC repair endpoint: the explicit seven-file commit reported with this packet;
+  CDC must resolve and set it as `CC_COMMIT` in the designated replay.
 - Current accounting: 150 accepted, 405 remaining, 30 assigned here, 375
   outside. No membership is accepted by assignment.
 - Source, frozen inventory, transition register, accepted Slice01/Slice12
@@ -42,8 +47,9 @@ Status: CC proposed-done; independent CDC review is required.
   populations. The frozen population has no populated
   `competency_question_refs` item to establish equivalence.
 - A card CQ tuple may name an unavailable external path. The rich-profile
-  target's parent path is absent; the lookup is a path/tool error, not a
-  successful no-match.
+  target's parent path is absent; the bounded `test ! -d` observation succeeds
+  with unresolved availability. It is distinct from the separate rg tool-error
+  control and is not a semantic no-match.
 - An embedded fragment and literal heading are not automatically a rendered
   anchor. The rich and teaching cards also use different CQ IDs despite the
   same card concept ID.
@@ -88,8 +94,11 @@ specification publication format.
 
 ## Verification handoff
 
-Run `artifacts/validation-evidence.md` from the source checkout with the exact
-CC endpoint. Check the seven-file scope, all registered hashes, the six-family
-census, the four native cases and their wrong-target/tool-error controls, and
-the preservation diff. CDC writes `cdc-verification.md` later; CC must not
-create it in this slice.
+Run the fenced block in
+`.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice02-competency-questions-and-answerability/artifacts/validation-evidence.md`
+from the source checkout. Use `CC_PRECOMMIT=1` for the working-tree rehearsal
+and the exact committed repair endpoint as `CC_COMMIT` for CDC. Check the
+seven-file scope, both pinned planning authorities, all registered hashes and
+original/copy manifests, the full census, the four native cases and their
+wrong-target/tool-error and altered-value controls, and the preservation diff.
+CDC writes `cdc-verification.md` later; CC must not create it in this slice.
