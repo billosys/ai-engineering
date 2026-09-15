@@ -111,11 +111,14 @@ not a lookup returning null. `empty` is an existing zero-length array.
 | `contrasts_with`, `contrasts_with[]` | present array 390; null/absent 0; empty 262; populated 128 | present 1,664; array 1,661; null 3; empty 1,133; populated 528; absent 0 | all populated items are strings: 148 occurrences/107 distinct Music targets; 643/385 Erlang. `error-handling-philosophy.md` is the inspected null witness. |
 
 Thus the eight legacy pairs have the same container/item shape only in their
-non-null populated state; they do not share requiredness. In particular, an
-Erlang `extends` key can be absent while `prerequisites`, `related`, and
+non-null populated state. This is an observation about the frozen records, not
+a requiredness rule: the inspected prompts, guide and templates do not
+document that any of these legacy keys is mandatory. In particular, an Erlang
+`extends` key can be absent while `prerequisites`, `related`, and
 `contrasts_with` have observed nulls. A migration/extractor must retain those
-states instead of manufacturing empty arrays. The census establishes neither
-global identity nor edge warrant for any string item.
+states instead of manufacturing empty arrays, while leaving the policy
+question explicitly unresolved. The census establishes neither global
+identity nor edge warrant for any string item.
 
 | Selected concept-card pairs | Literal state in the 31-card population |
 | --- | --- |
@@ -155,11 +158,73 @@ synthetic values. It does not make `directed` equivalent to `direction`,
 `relation_type` equivalent to `relationship_type`, or the support request a
 resolved support record.
 
+### Selected-Card Context-Family Census
+
+The 31 parsed concept-card mappings decompose into six requested context
+families, including the two Arc07 output phases. This is a census of parsed records,
+not a membership count and not a quality or acceptance result.
+
+| Context family | Parsed cards | `relationship_edge_refs` | `relationship_refs` |
+| --- | ---: | --- | --- |
+| Template | 1 | absent 1 | empty 1 |
+| Synthetic examples | 3 | empty 1; absent 2 | absent 2; populated 1 |
+| Arc07 pilot outputs | 4 | absent 4 | empty 4 |
+| Arc07 expanded outputs | 6 | absent 6 | absent 6 |
+| Rich rerun | 7 | absent 7 | empty 1; absent 6 |
+| Teaching rerun | 10 | absent 10 | absent 10 |
+| **Total** | **31** | **empty 1; absent 30** | **empty 6; populated 1; absent 24** |
+
+The rich rerun has three malformed card exclusions (`cc-memory-forms.md`,
+`cc-priming-forms.md` and `cc-recognition-dual-process.md`) with YAML parse
+errors. The same rich directory also contains README/INDEX/comparison
+documents without card frontmatter; those are non-card records, not additional
+malformed-card evidence. The malformed cards are excluded from the 31 parsed
+denominator and are not absence examples.
+
+The selected teaching witness is registered as both the original
+`workbench/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-memory-forms.md`
+and its preserved Arc01 baseline copy. Both hashes are
+`451a52574cce00df9a80bbc908e12ff7c0eb246b2c634cc93d7ad3cdae3d1ac9`; the
+source and copy manifests agree at line 21. Its `record_type` is
+`concept-card`, id `cc-memory-forms`, revision 3, and its status is
+`candidate-requires-operator-review`, with agent-direct Codex extraction and
+the `run-compcogneuro-teaching-rerun-20260912` run reference. Both structured
+relationship-reference keys are absent. The body nevertheless says
+“Contains or routes to: episodic memory, semantic memory, recognition,
+priming” and “Related: complementary learning systems.” Those are actual
+candidate-card teaching prose, not stored edge records, source support, or
+semantic verification.
+
+The operational loss boundary is therefore explicit: a frontmatter-only
+relationship index can preserve the two absent states but cannot recover these
+body-level relationship candidates. An extractor or migration must retain the
+prose and its candidate/unassessed provenance separately, while refusing to
+invent slugs, endpoint identities or edge support from the prose. This witness
+is real extraction output, but it is not operator-accepted or independently
+verified.
+
+### Null-Field Body/Metadata Contrast
+
+The registered Erlang `data-type-sizes.md` witness has a present
+`prerequisites` key whose value is YAML null. Its body still contains a
+`Prerequisites` section with the prose “Erlang data types — The card quantifies
+the memory cost of the language's primitive types.” This is a concrete
+body/metadata mismatch: null does not mean that the concept has no conceptual
+dependency, and it does not prove that the body sentence should be converted
+into the slug `erlang-data-types`. The corresponding target is not declared by
+that body section. The safe disposition is to preserve null metadata, retain
+the readable prose and mark any machine relationship unresolved until a
+source-grounded structured assertion exists. The other registered null-field
+witnesses (`sc-hbase-protocol.md` and `error-handling-philosophy.md`) remain
+useful state contrasts but are not needed to claim an additional body repair.
+
 The direct witnesses are registered with path, SHA-256, section, and role in
 `semantic-membership.json`: `erlangAbsentExtends`, `erlangNullPrerequisite`,
-`erlangNullRelated`, and `erlangNullContrast`. The earlier nineteen inputs are
-retained; these four are the only necessary additions. The exact census recipe
-and all twenty-three hash checks are in `validation-evidence.md`.
+`erlangNullRelated`, and `erlangNullContrast`. The teaching witness is linked
+through its original/copy mapping and four hash-manifest checks. The earlier
+nineteen inputs are retained; these four legacy witnesses and one existing
+teaching card are the only contextual additions. The exact census recipe and
+all registered hash checks are in `validation-evidence.md`.
 
 ## Iteration 03 Contextual Reading And Body/Metadata Comparison
 

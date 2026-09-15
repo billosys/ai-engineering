@@ -49,6 +49,200 @@ relationship-edge template/example roots, and concept-card reference variants.
 The template is deliberately null/unassessed; the sole populated edge is
 synthetic; all target truth and unresolved-anchor claims remain bounded.
 
+## Iteration 05 Current Replay
+
+Executed from the source checkout after the Iteration 05 edits. Actual opening
+state: source `e763c661592ff1097a94bb470db9cf924524579d`, planning
+`44c2b0ed03320066e8c6e6a4b579ef0fbfc05725`; the planning tree was clean before
+this packet. Model/settings were not changed by this task and are unknown from
+repository state. The current route uses the frozen parsed inventory for
+structured values, direct `shasum`/`cmp` for the teaching original/copy, and
+bounded `test -f`/`rg` lookups for target existence and support. It does not
+extend `awk`/`grep` into a YAML parser or add a helper.
+
+The route below emits and checks every legacy census value and every card and
+edge state before replaying all four cases. Expected case objects remain
+independently authored in `query-cases.json`; native objects are derived from
+unchanged registered inputs before comparison.
+
+```bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+s=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal
+i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+t=.worktrees/planning/project08-concept-card-metadata/artifacts/semantic-transition-coverage.json
+music=/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician
+teaching=workbench/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-memory-forms.md
+teaching_copy=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-memory-forms.md
+
+expected=$(awk -F'`' '/^\| `/{print $2 "|" $4}' "$s/slice-plan.md" | sort -u)
+actual=$(jq -r '.memberships[] | .field_path + "|" + .record_kind' "$s/artifacts/semantic-membership.json" | sort -u)
+test "$(printf '%s\n' "$expected" | sed '/^$/d' | wc -l | tr -d ' ')" = 35
+test "$expected" = "$actual"
+jq -e --argjson actual "$(jq '[.memberships[] | [.field_path,.record_kind]]' "$s/artifacts/semantic-membership.json")" '
+  . as $transition |
+  ($transition.accepted_pairs | length) == 115 and
+  ($transition.remaining_pairs | length) == 440 and
+  ([ $actual[] as $pair | select(any($transition.remaining_pairs[]; . == $pair)) ] | length) == ($actual | length) and
+  ([ $actual[] as $pair | select(any($transition.accepted_pairs[]; . == $pair)) ] | length) == 0
+' "$t"
+test "$(jq '.remaining_pairs | length' "$t")" = 440
+test $((440 - 35)) = 405
+jq -e '. as $r | all($r.memberships[]; .meaning_id as $m | $r.meanings | has($m)) and all(($r.meanings[].evidence_ids[], $r.memberships[].evidence_ids[], $r.baseline_mappings[].evidence_ids[]); . as $id | $r.evidence | has($id)) and (.baseline_mappings|length)==1' "$s/artifacts/semantic-membership.json"
+test "$(jq '.evidence | length' "$s/artifacts/semantic-membership.json")" = 27
+while IFS=$'\t' read -r path digest; do
+  test "$(shasum -a 256 "$path" | awk '{print $1}')" = "$digest"
+done < <(jq -r '.evidence[] | [.path,.sha256] | @tsv' "$s/artifacts/semantic-membership.json")
+cmp -s "$teaching" "$teaching_copy"
+test "$(shasum -a 256 "$teaching" | awk '{print $1}')" = 451a52574cce00df9a80bbc908e12ff7c0eb246b2c634cc93d7ad3cdae3d1ac9
+test "$(shasum -a 256 "$teaching_copy" | awk '{print $1}')" = 451a52574cce00df9a80bbc908e12ff7c0eb246b2c634cc93d7ad3cdae3d1ac9
+! rg -q '^relationship_refs:' "$teaching"
+! rg -q '^relationship_edge_refs:' "$teaching"
+rg -q '^## Relationships And Competency Questions$' "$teaching"
+rg -q 'Contains or routes to: episodic memory, semantic memory, recognition, priming\.' "$teaching"
+rg -q 'Related: complementary learning systems\.' "$teaching"
+jq -e --arg p knowledge/erlang/concept-cards/erlang-otp-action/data-type-sizes.md '.records[]|select(.path==$p)|.values.prerequisites==null' "$i"
+rg -q '^# Prerequisites$' knowledge/erlang/concept-cards/erlang-otp-action/data-type-sizes.md
+rg -q "Erlang data types.*card quantifies the memory cost" knowledge/erlang/concept-cards/erlang-otp-action/data-type-sizes.md
+
+def_stats='def stats($rows;$field): {present:([$rows[]|select(.values|has($field))]|length),absent:([$rows[]|select(.values|has($field)|not)]|length),null:([$rows[]|select(.values|has($field))|select(.values[$field]==null)]|length),empty:([$rows[]|select(.values[$field]|type=="array" and length==0)]|length),populated:([$rows[]|select(.values[$field]|type=="array" and length>0)]|length),items:([$rows[]|.values[$field][]?]|length),distinct:([$rows[]|.values[$field][]?]|unique|length),itemtypes:([$rows[]|.values[$field][]?|type]|unique)};'
+legacy_census=$(jq -c "$def_stats
+  [.records[]|select(.values|type==\"object\")|select((.record_kind//\"untyped\")==\"untyped\")|.+{family:(if (.path|contains(\"complete-musician\")) then \"music\" else \"erlang\" end)}]
+  |group_by(.family)|map(. as \$rows | {family:\$rows[0].family,records:(\$rows|length),fields:([\"prerequisites\",\"extends\",\"related\",\"contrasts_with\"]|map({field:.,stats:stats(\$rows;.)}))})" "$i")
+printf '%s\n' "$legacy_census"
+jq -e "$def_stats
+  [.records[]|select(.values|type==\"object\")|select((.record_kind//\"untyped\")==\"untyped\")|.+{family:(if (.path|contains(\"complete-musician\")) then \"music\" else \"erlang\" end)}]
+  |group_by(.family)|map(. as \$rows | {family:\$rows[0].family,records:(\$rows|length),fields:([\"prerequisites\",\"extends\",\"related\",\"contrasts_with\"]|map({field:.,stats:stats(\$rows;.)}))})
+  == [{family:\"erlang\",records:1664,fields:[{field:\"prerequisites\",stats:{present:1664,absent:0,null:1,empty:306,populated:1357,items:2282,distinct:586,itemtypes:[\"string\"]}},{field:\"extends\",stats:{present:1598,absent:66,null:0,empty:1289,populated:309,items:314,distinct:162,itemtypes:[\"string\"]}},{field:\"related\",stats:{present:1664,absent:0,null:1,empty:21,populated:1642,items:4065,distinct:1239,itemtypes:[\"string\"]}},{field:\"contrasts_with\",stats:{present:1664,absent:0,null:3,empty:1133,populated:528,items:643,distinct:385,itemtypes:[\"string\"]}}]},{family:\"music\",records:390,fields:[{field:\"prerequisites\",stats:{present:390,absent:0,null:0,empty:5,populated:385,items:620,distinct:183,itemtypes:[\"string\"]}},{field:\"extends\",stats:{present:390,absent:0,null:0,empty:180,populated:210,items:210,distinct:88,itemtypes:[\"string\"]}},{field:\"related\",stats:{present:390,absent:0,null:0,empty:16,populated:374,items:752,distinct:331,itemtypes:[\"string\"]}},{field:\"contrasts_with\",stats:{present:390,absent:0,null:0,empty:262,populated:128,items:148,distinct:107,itemtypes:[\"string\"]}}]}]" "$i"
+```
+
+The first block checks the teaching original/copy mapping and body reading,
+the null-field contrast, exact membership/accounting and all 27 registered
+hashes. Its census emits and checks every legacy field's presence, absence,
+null, empty, populated, item-total, distinct-value and item-type value.
+
+```bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+s=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal
+i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+
+card_census=$(jq -c '
+  [.records[]|select(.record_kind=="concept-card")|.path as $p
+   |{family:(if $p=="knowledge/concept-cards/templates/concept-card.md" then "template"
+             elif ($p|startswith("knowledge/concept-cards/examples/")) then "synthetic-examples"
+             elif ($p|contains("slice02-pilot-markdown-preparation-and-card-extraction")) then "arc07-pilot"
+             elif ($p|contains("slice04-expanded-corpus-card-generation")) then "arc07-expanded"
+             elif ($p|contains("compcogneuro-rich-rerun")) then "rich-rerun"
+             elif ($p|contains("compcogneuro-teaching-rerun")) then "teaching-rerun"
+             else "other" end),
+     edge_refs:(if (.values|has("relationship_edge_refs")) then (if .values.relationship_edge_refs==[] then "empty" else (.values.relationship_edge_refs|type) end) else "absent" end),
+     relationship_refs:(if (.values|has("relationship_refs")) then (if .values.relationship_refs==[] then "empty" elif (.values.relationship_refs|length)>0 then "populated" else (.values.relationship_refs|type) end) else "absent" end)}]
+  |group_by(.family)|map({family:.[0].family,parsed_cards:length,edge_refs:(group_by(.edge_refs)|map({state:.[0].edge_refs,count:length})),relationship_refs:(group_by(.relationship_refs)|map({state:.[0].relationship_refs,count:length}))})
+' "$i")
+printf '%s\n' "$card_census"
+test "$card_census" = '[{"family":"arc07-expanded","parsed_cards":6,"edge_refs":[{"state":"absent","count":6}],"relationship_refs":[{"state":"absent","count":6}]},{"family":"arc07-pilot","parsed_cards":4,"edge_refs":[{"state":"absent","count":4}],"relationship_refs":[{"state":"empty","count":4}]},{"family":"rich-rerun","parsed_cards":7,"edge_refs":[{"state":"absent","count":7}],"relationship_refs":[{"state":"absent","count":6},{"state":"empty","count":1}]},{"family":"synthetic-examples","parsed_cards":3,"edge_refs":[{"state":"absent","count":2},{"state":"empty","count":1}],"relationship_refs":[{"state":"absent","count":2},{"state":"populated","count":1}]},{"family":"teaching-rerun","parsed_cards":10,"edge_refs":[{"state":"absent","count":10}],"relationship_refs":[{"state":"absent","count":10}]},{"family":"template","parsed_cards":1,"edge_refs":[{"state":"absent","count":1}],"relationship_refs":[{"state":"empty","count":1}]}]'
+jq -e '[.records[]|select(.error != null)|select(.path|test("compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-.*\\.md$"))]|length==3' "$i"
+```
+
+The card census checks the six selected context families, the 31 parsed-card
+denominator, all root state combinations and the three malformed-rich card
+exclusions. README/INDEX/comparison files without card frontmatter are not
+counted as malformed cards.
+
+```bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+jq -e '
+  def state($object;$key):
+    if ($object|has($key)|not) then "absent"
+    elif $object[$key] == null then "null"
+    elif (($object[$key]|type)=="array" and ($object[$key]|length)==0) then "empty"
+    elif (($object[$key]|type)=="object") then "mapping"
+    else ($object[$key]|type) end;
+  (.records[]|select(.path=="knowledge/concept-cards/templates/relationship-edge.md")|.values) as $t
+  |(.records[]|select(.path=="knowledge/concept-cards/examples/relationship-edge.md")|.values) as $e
+  |{template:{directed:state($t;"directed"),direction:state($t;"direction"),endpoint_roles:state($t;"endpoint_roles"),endpoint_roles_from_role:state($t.endpoint_roles;"from_role"),endpoint_roles_to_role:state($t.endpoint_roles;"to_role"),from_ref:state($t;"from_ref"),to_ref:state($t;"to_ref"),relationship_type:state($t;"relationship_type"),relation_type:state($t;"relation_type"),meaning:state($t;"meaning"),inverse_reading:state($t;"inverse_reading"),symmetry:state($t;"symmetry"),graph_closure_state:state($t;"graph_closure_state"),source_support_refs:state($t;"source_support_refs"),source_support_items:($t.source_support_refs|length)},example:{directed:state($e;"directed"),direction:state($e;"direction"),endpoint_roles:state($e;"endpoint_roles"),from_ref:state($e;"from_ref"),from_ref_id:state($e.from_ref;"id"),from_ref_revision:state($e.from_ref;"revision"),to_ref:state($e;"to_ref"),to_ref_id:state($e.to_ref;"id"),to_ref_revision:state($e.to_ref;"revision"),relationship_type:state($e;"relationship_type"),relation_type:state($e;"relation_type"),meaning:state($e;"meaning"),inverse_reading:state($e;"inverse_reading"),symmetry:state($e;"symmetry"),graph_closure_state:state($e;"graph_closure_state"),source_support_refs:state($e;"source_support_refs"),source_support_items:($e.source_support_refs|length),source_support_id:state($e.source_support_refs[0];"id"),source_support_revision:state($e.source_support_refs[0];"revision")}}
+  |.template=={directed:"absent",direction:"null",endpoint_roles:"mapping",endpoint_roles_from_role:"null",endpoint_roles_to_role:"null",from_ref:"null",to_ref:"null",relationship_type:"null",relation_type:"absent",meaning:"null",inverse_reading:"null",symmetry:"null",graph_closure_state:"string",source_support_refs:"empty",source_support_items:0}
+   and .example=={directed:"boolean",direction:"absent",endpoint_roles:"absent",from_ref:"mapping",from_ref_id:"string",from_ref_revision:"number",to_ref:"mapping",to_ref_id:"string",to_ref_revision:"number",relationship_type:"absent",relation_type:"string",meaning:"absent",inverse_reading:"absent",symmetry:"absent",graph_closure_state:"absent",source_support_refs:"array",source_support_items:1,source_support_id:"string",source_support_revision:"number"}
+' "$i"
+```
+
+This edge-state check covers every selected root/nested component in the
+template/example table, including empty versus populated support collections
+and the actual item types for endpoint and support references.
+
+## Iteration 05 Current Replay: Native Cases And Preservation
+
+```bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+s=.worktrees/planning/project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal
+i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+music=/Users/oubiwann/lab/music-comp/ai-music-theory/concept-cards/complete-musician
+
+prereq=$(jq -r --arg path "$music/accent-types.md" '.records[]|select(.path==$path)|.values.prerequisites[0]' "$i")
+prereq_found=false
+if test -f "$music/$prereq.md"; then prereq_found=true; fi
+prereq_native=$(jq -n --arg from "$prereq" --argjson found "$prereq_found" '{from:$from,to:"accent-types",target_found:$found}')
+
+ext=$(jq -r --arg path "$music/accented-incomplete-neighbor.md" '.records[]|select(.path==$path)|.values.extends[0]' "$i")
+ext_found=false
+if test -f "$music/$ext.md"; then ext_found=true; fi
+extension_native=$(jq -n --arg from accented-incomplete-neighbor --arg to "$ext" --arg inverse "$ext is extended by accented-incomplete-neighbor" --argjson found "$ext_found" '{from:$from,to:$to,inverse:$inverse,target_found:$found}')
+
+a=accented-incomplete-neighbor
+b=appoggiatura
+a_lists_b=$(jq -r --arg path "$music/$a.md" --arg target "$b" '.records[]|select(.path==$path)|(.values.related|index($target) != null)' "$i")
+b_lists_a=$(jq -r --arg path "$music/$b.md" --arg target "$a" '.records[]|select(.path==$path)|(.values.related|index($target) != null)' "$i")
+symmetry_native=$(jq -n --arg a "$a" --arg b "$b" --argjson ab "$a_lists_b" --argjson ba "$b_lists_a" '{a:$a,b:$b,a_lists_b:$ab,b_lists_a:$ba,reciprocal:($ab and $ba),lookup:"symmetric"}')
+
+edge_path=knowledge/concept-cards/examples/relationship-edge.md
+from_target=knowledge/concept-cards/examples/minimal-card.md
+to_target=knowledge/concept-cards/examples/claim-backed-card.md
+from_id=$(jq -r --arg path "$edge_path" '.records[]|select(.path==$path)|.values.from_ref.id' "$i")
+from_revision=$(jq -r --arg path "$edge_path" '.records[]|select(.path==$path)|.values.from_ref.revision' "$i")
+to_id=$(jq -r --arg path "$edge_path" '.records[]|select(.path==$path)|.values.to_ref.id' "$i")
+to_revision=$(jq -r --arg path "$edge_path" '.records[]|select(.path==$path)|.values.to_ref.revision' "$i")
+support_id=$(jq -r --arg path "$edge_path" '.records[]|select(.path==$path)|.values.source_support_refs[0].id' "$i")
+support_revision=$(jq -r --arg path "$edge_path" '.records[]|select(.path==$path)|.values.source_support_refs[0].revision' "$i")
+from_declared_id=$(jq -r --arg path "$from_target" '.records[]|select(.path==$path)|.values.id' "$i")
+from_declared_revision=$(jq -r --arg path "$from_target" '.records[]|select(.path==$path)|.values.revision' "$i")
+to_declared_id=$(jq -r --arg path "$to_target" '.records[]|select(.path==$path)|.values.id' "$i")
+to_declared_revision=$(jq -r --arg path "$to_target" '.records[]|select(.path==$path)|.values.revision' "$i")
+support_found=false
+support_path=unavailable
+if rg -q "^id: $support_id$|path: .*${support_id}" knowledge/concept-cards/examples; then support_found=true; support_path=found; fi
+endpoint_native=$(jq -n --arg fi "$from_id" --argjson fr "$from_revision" --arg fdi "$from_declared_id" --argjson fdr "$from_declared_revision" --arg ti "$to_id" --argjson tr "$to_revision" --arg tdi "$to_declared_id" --argjson tdr "$to_declared_revision" --arg si "$support_id" --argjson sr "$support_revision" --arg sp "$support_path" --argjson sf "$support_found" '{from:{requested:{id:$fi,revision:$fr},declared:{id:$fdi,revision:$fdr},identity_match:($fi==$fdi),revision_match:($fr==$fdr)},to:{requested:{id:$ti,revision:$tr},declared:{id:$tdi,revision:$tdr},identity_match:($ti==$tdi),revision_match:($tr==$tdr)},support:{requested:{id:$si,revision:$sr},declared_path:$sp,declared_id_found:$sf}}')
+
+jq -e --argjson native "$prereq_native" '.cases[]|select(.id=="prerequisite")|.expected==$native and .observed==$native' "$s/artifacts/query-cases.json"
+jq -e --argjson native "$extension_native" '.cases[]|select(.id=="extension")|.expected==$native and .observed==$native' "$s/artifacts/query-cases.json"
+jq -e --argjson native "$symmetry_native" '.cases[]|select(.id=="symmetry")|.expected==$native and .observed==$native' "$s/artifacts/query-cases.json"
+jq -e --argjson native "$endpoint_native" '.cases[]|select(.id=="edge-endpoints")|.expected==$native and .observed==$native' "$s/artifacts/query-cases.json"
+! jq -e --argjson native "$symmetry_native" '.cases[]|select(.id=="symmetry")|.expected.a="CDC-deliberately-wrong-endpoint"|.expected==$native and .observed==$native' "$s/artifacts/query-cases.json"
+! jq -e --argjson native "$endpoint_native" '.cases[]|select(.id=="edge-endpoints")|.expected.to.revision_match=false|.expected==$native and .observed==$native' "$s/artifacts/query-cases.json"
+
+jq empty "$s/artifacts/semantic-membership.json"
+jq empty "$s/artifacts/query-cases.json"
+git -C .worktrees/planning diff --check
+git -C .worktrees/planning diff --exit-code 91db42fa a24758b4 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements project08-concept-card-metadata/artifacts
+diff -u \
+  <(printf '%s\n' \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/handoff.md \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/query-cases.json \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/semantic-evidence.md \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/semantic-membership.json \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/validation-evidence.md \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/closing-report.md \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/ledger.md | sort) \
+  <(git -C .worktrees/planning diff --name-only 44c2b0ed03320066e8c6e6a4b579ef0fbfc05725 | sort)
+```
+
+After the scoped commit, the committed-review route is
+`git -C .worktrees/planning diff --name-only 44c2b0ed03320066e8c6e6a4b579ef0fbfc05725 HEAD`.
+CDC edits are outside this CC scope and must not be counted as CC evidence.
+
 ## Iteration 01 Replay
 
 Executed pre-commit from the source checkout with Bash, jq 1.6, shasum and Git
