@@ -3,6 +3,11 @@
 This is the designated current replay for the Iteration 01 repair. It is
 CC-attested until CDC reruns it independently.
 
+CDC completion after review of ca1df926: pin the submitted coverage register
+before advancing its live accepted set, and assert two already-stated scalar
+observations. No semantic result, case expectation or corpus byte is changed.
+Use the full original repair SHA as CC_COMMIT even after CDC commits.
+
 Opening source HEAD: e763c661592ff1097a94bb470db9cf924524579d
 Original CC endpoint: 753bacb051c041a75d0c4d36595cfbadd5a9b5eb
 Repair opening planning HEAD: f15c896bfeec4c3618387413e63c95dfe9fc6771
@@ -25,7 +30,9 @@ plan=$source/.worktrees/planning
 cd "$source"
 s=project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice02-competency-questions-and-answerability
 i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
-c=.worktrees/planning/project08-concept-card-metadata/artifacts/semantic-coverage-current.json
+c=$(mktemp)
+trap 'rm -f "$c"' EXIT
+git -C "$plan" show ca1df9264c13925f7550b3cbce3a63eaf576f3cc:project08-concept-card-metadata/artifacts/semantic-coverage-current.json > "$c"
 m=.worktrees/planning/$s/artifacts/semantic-membership.json
 q=.worktrees/planning/$s/artifacts/query-cases.json
 opening_source=e763c661592ff1097a94bb470db9cf924524579d
@@ -166,6 +173,11 @@ jq -e '.records[]|select(.path=="knowledge/concept-cards/templates/competency-qu
 
 # Case 1: native legacy reverse lookup; the same parameterized selection is
 # used for positives, the wrong-value no-match and the missing-input error.
+# CDC supplemental checks for already-advertised scalar observations.
+jq -e '[.records[]|select(.record_kind=="concept-card")|.values.cq_refs[]?] as $refs |
+  ($refs|length)==18 and all($refs[];.revision==1) and
+  any(.records[];.path=="knowledge/concept-cards/examples/cq-coverage.md" and
+    .values.question=="Can a reviewer locate the source support for a claim?")' "$i"
 legacy_lookup='[.records[]|select(.values|type=="object")|select((.record_kind//"untyped")=="untyped")|select((.values.answers_questions//[])|index($q))|{path,slug:.values.slug,concept:.values.concept}]'
 music=$(jq -c --arg q 'What are the different types of accent in music?' "$legacy_lookup" "$i")
 erlang=$(jq -c --arg q 'What is a behaviour in OTP?' "$legacy_lookup" "$i")

@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.23"
+version: "1.24"
 ---
 
 # Concept Card Metadata
@@ -106,7 +106,8 @@ organization consistent with the work's ontological roots.
 This is a modest execution pivot, not a reduction in scope or a schema decision.
 Preserve all 115 transition-accepted contextual pairs and all original criteria.
 The initial remainder was 440. After Slice12 repair and original Slice01
-recomposition, 150 are accepted and 405 remain; use the
+recomposition, 150 were accepted and 405 remained. Slice02's independent
+closure adds 30 CQ pairs: now 180 accepted and 375 remaining; use the
 [current coverage register](./artifacts/semantic-coverage-current.json).
 The transition snapshot stays immutable. Process the remainder by family, retaining
 exact field-path/record-kind accounting plus finer corpus/role distinctions.
@@ -141,16 +142,19 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice12/Slice01 closed; Slice02 Iteration 01 repairs four findings, 30 pairs remain assigned |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/12 closed; Slice03 opens bounded replay mechanics; provenance analysis preserved for Slice13 |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
 | `arc05-package-gates-and-closure` | Fresh packaging/install evidence, migration and UAT reconciliation, independent project acceptance | Arc04 quality and coverage evidence | Closure cannot outrun UAT |
 
 Arc06 is the next arc in dependency order, not a post-closure addendum.
-Slice02 CDC review of 753bacb0 retains scope and handoff acceptance but
-requires census/context, semantic clarification and native/snapshot replay
-repairs before advancement. Current accepted coverage remains 150/555.
+Slice02 CDC review of ca1df926 closes all six rows with an attributed minor
+replay completion; was: four repair findings open. Current accepted coverage
+is 180/555. Split the combined next workload before execution: Slice03 owns
+reusable evidence/replay mechanics with zero new semantic pairs; Slice13
+inherits provenance and shared-reference semantic analysis intact and will
+be sized before opening. No requirement or schema/UAT gate is reduced.
 The [three-slice workload assessment](./artifacts/cc-workload-observations.md)
 is complete; its observations support a bounded, better-integrated repair,
 not an automatic model change or a reduction of evidence requirements.
@@ -362,6 +366,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.24 (2026-09-15): Arc06 Slice02 independently closes after ca1df926 and
+  attributed replay completion; 180 accepted, 375 remaining. Splits the
+  combined Slice03 hypothesis into bounded replay work now and preserved
+  provenance semantics in Slice13. Was: CQ repair pending.
 
 - 1.23 (2026-09-15): Arc06 Slice02 CDC review opens bounded Iteration 01;
   was: first CQ submission. Preserves two verified rows, 150 accepted pairs,

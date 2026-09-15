@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice02-competency-questions-and-answerability
-status: active
+status: closed
 depends-on: [slice01-relationship-semantics-and-traversal, slice12-relationship-policy-and-replay-remediation]
-version: "1.1"
+version: "1.2"
 ---
 
 # Competency Questions And Answerability
@@ -15,6 +15,11 @@ queryable and what remains a documented or unresolved claim. This is bounded
 semantic inventory, not schema adoption, new extraction or an answering service.
 
 ## Current Review
+
+Independently closed after ca1df926 on 2026-09-15. All six rows pass, including
+the explicitly attributed CDC scalar/snapshot replay completion. Thirty pairs
+are accepted once; current coverage is 180 accepted / 375 remaining.
+Prior review below is superseded as execution routing; do not rerun its prompt.
 
 CDC review of 753bacb0 on 2026-09-15 requires changes. S2-1 and S2-5 are
 independently done at their recorded scope; S2-2/S2-3/S2-4/S2-6 remain open.
@@ -186,6 +191,11 @@ opening. P-15 schema/spec discussion and all real-extraction/UAT goals remain
 open. Package/install gates are not applicable to this planning-only slice.
 
 ## Version History
+
+- 1.2 (2026-09-15): Independent review resolves R1-R4 and closes all six rows;
+  was: Iteration 01. Records attributed replay completion, 30 accepted pairs
+  and unchanged schema/UAT boundaries. Slice03 is narrowed to replay mechanics;
+  provenance semantics retain an explicit later owner.
 
 - 1.1 (2026-09-15): CDC review retains two verified rows and opens bounded
   Iteration 01 for R1-R4; was: initial run. No pair acceptance, scope reduction,

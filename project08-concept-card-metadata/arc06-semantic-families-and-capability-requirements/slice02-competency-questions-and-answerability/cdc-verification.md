@@ -1,5 +1,8 @@
 # CDC Verification: Slice02
 
+Current status: independently closed after Iteration 01; see the final
+closure section below. The initial review is preserved, not current routing.
+
 Date: 2026-09-15. Reviewed CC endpoint:
 `753bacb051c041a75d0c4d36595cfbadd5a9b5eb`.
 Opening planning endpoint: `a27c4d33a02d3e6047656b9ae0c17a145aa3f208`.
@@ -205,3 +208,105 @@ Plans record changes-required and the new prompt, not a new family or schema.
 Accepted coverage and all source/package/runtime/admission boundaries stay
 unchanged. The workload artifact records this third distinct reviewed slice;
 it does not count corrections or heartbeat previews as independent trials.
+
+## Iteration 01 Independent Closure
+
+Reviewed 2026-09-15: ca1df9264c13925f7550b3cbce3a63eaf576f3cc, based on
+f15c896bfeec4c3618387413e63c95dfe9fc6771. **All six rows are now done.**
+The initial changes-required review above remains historical evidence.
+R1-R4 are resolved with the limited CDC completion explicitly described below.
+
+### Reproduction And Semantic Review
+
+The submitted current block passed independently with the full repair SHA
+as CC_COMMIT, exit 0: 29 registered hashes, both original/copy manifests,
+two direct byte comparisons, full family/root census, native comparisons,
+ten controls, JSON, preservation and exact seven-file CC scope.
+The source remains at e763c661 with no changes.
+
+- R1: correct 8/5/18 card states and three named YAML-error exclusions;
+  source/copy mappings and two manifests reproduce. The original values and
+  the preserved-copy roles remain distinct.
+- R2: actual question selection now handles positive, wrong-value and missing
+  input. Native tuples and parent-card revisions come from parsed originals;
+  literal headings and answer text come from source bodies. ID/revision
+  negative comparisons reject altered expectations. Directory absence is
+  no longer mislabeled rg failure.
+- R3: source guide 06 and the CQ template support separate required answer
+  components, mapped constructs and coverage assertions. Both registry layers
+  now preserve these distinctions and the null-encoding limitation.
+  The synthetic component list is not proof of a populated answer-component
+  mapping or conformance; acceptance is of this bounded inventory distinction.
+- R4: historical plan and ledger bytes are read from pinned commits; live
+  status no longer supplies their authoritative hashes. Accepted earlier
+  packets are explicitly preserved in the repair's committed diff.
+
+CDC independently injected exit 2 into the real native support lookup
+(the anchored support-synthetic-claim-001 search, not merely its test control).
+The replay rejected it with exit 1 instead of accepting no-match. A nonzero
+validator rejection is the observation; it does not claim the validator
+propagates the injected status unchanged.
+
+### Attributed CDC Completion
+
+Two already-advertised scalar facts were checked separately, then added as
+assertions: all 18 populated card CQ references request revision 1, and the
+synthetic question text matches its source. Both checks passed before editing.
+The other checks already cover the surrounding types, counts and states.
+
+The repair pins plan/ledger, but still read the current coverage register live.
+Accepting this slice necessarily changes that register from 150/405 to 180/375.
+CDC therefore pinned currentCoverage's existing bytes at ca1df926, retaining
+its existing digest, and made the replay read that committed snapshot through
+a temporary file. The file is removed by an EXIT trap. These are bounded
+replay/authority corrections, not new field meanings or altered expected cases.
+The completed block passed again, including after the live coverage and
+slice plan/ledger closure updates. Current coverage independently checks as
+180 unique accepted / 375 unique remaining, disjoint, with the same complete
+555-pair union as the frozen transition. The 40 actor-family sizing count
+also reproduces from the remaining set.
+
+This is not a claim that CC supplied the final replay untouched, or that CDC
+independently verified its own authorship. The CC-authored semantics and
+original replay were independently reviewed first. The attributed additions
+preserve observed values and were executed as reviewer-authored completions.
+
+Two stale report phrases are explicitly superseded here without editing CC's
+attestation: all three rich exclusions are YAML parse errors, not missing
+opening frontmatter; the synthetic body identifies an inaccessible synthetic
+locator, not a blanket claim that every reference is fictional. No extra
+source-truth inference is accepted from those phrases. The CC report's initial
+pending-endpoint wording is resolved by the full SHA above.
+
+### Final Row Walk And Bubble-Up
+
+| Row | Independent disposition |
+| --- | --- |
+| S2-1 | done: exact 30 unique pairs and outside ownership preserved |
+| S2-2 | done: corrected contextual census, source/copy provenance and hashes |
+| S2-3 | done: role-specific meanings, authority limits and encoding uncertainty |
+| S2-4 | done: four native comparisons, ten controls and independent error injection |
+| S2-5 | done: concrete questions/owners/P-15 retained; path/tool prose corrected |
+| S2-6 | done: committed replay plus attributed scalar/snapshot completion and preservation |
+
+Accept these 30 inventory pairs once: 180 accepted and 375 remaining.
+This is not schema adoption, source-truth endorsement, new extraction,
+operator card-quality acceptance or memory admission. All project gates remain.
+
+The next step separates reusable evidence/replay mechanics (Slice03) from
+provenance-family semantic analysis (new Slice13, to size before opening).
+The original combined Slice03 workload is preserved across those owners;
+nothing is discarded. Slice03 accepts zero additional semantic pairs and
+does not build a production schema, parser, database or runtime.
+
+### Current Invocation
+
+From the planning root, run the completed current block with the original
+full CC SHA. Its committed-diff scope deliberately excludes later CDC edits.
+
+~~~bash
+CC_COMMIT=ca1df9264c13925f7550b3cbce3a63eaf576f3cc bash <(
+  awk '/^~~~bash$/{p=1;next} /^~~~$/{p=0} p' \
+    project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice02-competency-questions-and-answerability/artifacts/validation-evidence.md
+)
+~~~
