@@ -11,12 +11,16 @@ identified current edge records; `from_ref`/`to_ref` declaration matches are
 not edge support; `source_support_refs` is edge-scoped; and `symmetry` or an
 inverse reading does not require a second stored edge. Empty/absent card
 reference arrays and prose-only relationship candidates must remain distinct
-from a populated edge declaration. The 405 other frozen pairs are outside this
-assignment, not accepted coverage. Slice02 is not opened by this handoff. If it
-opens through its own plan, its CQ work should use the four bounded cases to
-size prerequisite, extension, symmetry and unresolved-support behavior; later
-research should decide predicate-name migration and explicit target-anchor/
-revision policy.
+from a populated edge declaration. Arc07's `cc-emergent-explanation` is a real
+extraction candidate that explicitly asserts no edge and proposes a future CQ;
+the rich-rerun `cc-model-data-constraints` is also a real extraction candidate
+whose body names relationship candidates while its stored list is empty. Their
+unverified/candidate state is not synthetic provenance. The 405 other frozen
+pairs are outside this assignment, not accepted coverage. Slice02 is not opened
+by this handoff. If it opens through its own plan, its CQ work should use the
+four bounded cases to size prerequisite, extension, symmetry and
+unresolved-support behavior; later research should decide predicate-name
+migration and explicit target-anchor/revision policy.
 
 The migration reader must preserve historical `contrasts_with` as commonly
 confused concepts, rather than silently replacing it with the current guide's

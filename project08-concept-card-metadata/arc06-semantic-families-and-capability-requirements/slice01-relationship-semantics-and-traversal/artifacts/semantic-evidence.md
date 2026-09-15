@@ -94,6 +94,73 @@ is `support-evidence-map-definition-001`; it is not the populated edge's
 pathless `support-synthetic-edge-001`. The missing edge target is a bounded
 lookup outcome, not a claim that all record roots or anchors are invalid.
 
+## Literal Selected-Field Census (Iteration 04)
+
+The following is the selected-field census, not a membership count. It is
+computed from the frozen inventory's parsed `values` objects. That inventory is
+the preserved copy; each record's `path` and SHA-256 map it back to the original
+input. The additional witnesses below were read directly from their originals;
+no new copy, corpus edit, or extraction was made. `absent` means an absent key,
+not a lookup returning null. `empty` is an existing zero-length array.
+
+| Selected legacy pairs | Complete Musician (390 mappings) | Erlang (1,664 mappings) | Value/component distinction |
+| --- | --- | --- | --- |
+| `prerequisites`, `prerequisites[]` | present array 390; null 0; empty 5; populated 385 | present 1,664; array 1,663; null 1; empty 306; populated 1,357; absent 0 | all populated items are strings: 620 occurrences/183 distinct Music targets; 2,282/586 Erlang. The null witness is `data-type-sizes.md`. |
+| `extends`, `extends[]` | present array 390; null/absent 0; empty 180; populated 210 | present array 1,598; absent 66; null 0; empty 1,289; populated 309 | all populated items are strings: 210 occurrences/88 distinct Music targets; 314/162 Erlang. `allocation-strategy.md` is the inspected absent-key witness. |
+| `related`, `related[]` | present array 390; null/absent 0; empty 16; populated 374 | present 1,664; array 1,663; null 1; empty 21; populated 1,642; absent 0 | all populated items are strings: 752 occurrences/331 distinct Music targets; 4,065/1,239 Erlang. `sc-hbase-protocol.md` is the inspected null witness. |
+| `contrasts_with`, `contrasts_with[]` | present array 390; null/absent 0; empty 262; populated 128 | present 1,664; array 1,661; null 3; empty 1,133; populated 528; absent 0 | all populated items are strings: 148 occurrences/107 distinct Music targets; 643/385 Erlang. `error-handling-philosophy.md` is the inspected null witness. |
+
+Thus the eight legacy pairs have the same container/item shape only in their
+non-null populated state; they do not share requiredness. In particular, an
+Erlang `extends` key can be absent while `prerequisites`, `related`, and
+`contrasts_with` have observed nulls. A migration/extractor must retain those
+states instead of manufacturing empty arrays. The census establishes neither
+global identity nor edge warrant for any string item.
+
+| Selected concept-card pairs | Literal state in the 31-card population |
+| --- | --- |
+| `relationship_edge_refs` | absent 30; present array 1; null 0; the one array is empty (`minimal-card.md`). |
+| `relationship_refs` | absent 24; present array 7; null 0; six empty arrays and one populated array (`rich-profile-card.md`). |
+| `relationship_refs[]` | the sole item is a mapping; it is absent when its root is absent and has no item when the root is empty. |
+| `relationship_refs[].id` | sole item component is string `edge-evidence-map-related-to-claim`. |
+| `relationship_refs[].path` | sole item component is string `records/edge-evidence-map-related-to-claim.md`. |
+| `relationship_refs[].revision` | sole item component is number `1`. |
+
+The last three components are components of the one observed mapping, not
+defaults for an empty or absent collection. The requested path remains
+unresolved in its declared source-root lookup; that is distinct from a missing
+ID/revision component and from relationship truth.
+
+| Selected relationship-edge pairs | Null/unassessed template | Populated synthetic example |
+| --- | --- | --- |
+| `directed` | absent | boolean `true` |
+| `direction` | present null | absent |
+| `endpoint_roles`, `.from_role`, `.to_role` | present mapping; both child values null | root and children absent |
+| `from_ref`, `.id`, `.revision` | root present null; child components unavailable | mapping; string `cc-prepared-source-provenance`, number `1` |
+| `to_ref`, `.id`, `.revision` | root present null; child components unavailable | mapping; string `cc-claim-support-is-assertion-specific`, number `1` |
+| `relationship_type` | present null | absent |
+| `relation_type` | absent | string `precedes` |
+| `meaning` | present null | absent |
+| `inverse_reading` | present null | absent |
+| `symmetry` | present null | absent |
+| `graph_closure_state` | string `unassessed` | absent |
+| `source_support_refs` | present empty array | present one-item array |
+| `source_support_refs[]` | no item | one mapping |
+| `source_support_refs[].id` | no component | string `support-synthetic-edge-001` |
+| `source_support_refs[].revision` | no component | number `1` |
+
+This accounts for all 21 selected edge pairs: the template demonstrates
+declared-but-unassessed slots and the example demonstrates only the listed
+synthetic values. It does not make `directed` equivalent to `direction`,
+`relation_type` equivalent to `relationship_type`, or the support request a
+resolved support record.
+
+The direct witnesses are registered with path, SHA-256, section, and role in
+`semantic-membership.json`: `erlangAbsentExtends`, `erlangNullPrerequisite`,
+`erlangNullRelated`, and `erlangNullContrast`. The earlier nineteen inputs are
+retained; these four are the only necessary additions. The exact census recipe
+and all twenty-three hash checks are in `validation-evidence.md`.
+
 ## Iteration 03 Contextual Reading And Body/Metadata Comparison
 
 Both 862-line/907-line v3.2 prompts were presented to this context in visible
@@ -109,13 +176,18 @@ representation, requested revision/resolution and relation-scoped warrant.
 The current template has an empty `relationship_refs` list, minimal-card has
 an empty `relationship_edge_refs` list, and rich-profile has one populated
 `relationship_refs` mapping whose declared target is unresolved. Two generated
-candidate cards add a useful body/metadata contrast: the Arc07
-`cc-emergent-explanation` and rich-rerun `cc-model-data-constraints` both carry
-empty `relationship_refs`, while their bodies name future/candidate
-relationships. Thus prose can teach or propose a relation without producing a
-stored edge assertion. These records are candidates/synthetic examples, not
-real extraction or semantic verification. The template's null/unassessed edge
-fields and the three malformed inventory records remain distinct limitations.
+candidate cards add a useful body/metadata contrast. Arc07's
+`cc-emergent-explanation` carries an empty `relationship_refs` list, explicitly
+asserts no relationship edge, and proposes a future CQ about reductionism and
+reconstructionism. The rich-rerun `cc-model-data-constraints` also carries an
+empty list but names a prerequisite candidate and a related candidate in its
+body. Both are real-corpus extraction outputs still awaiting review: neither is
+synthetic merely because it is a candidate, and neither is semantically
+verified or admitted. The first is a future-CQ/no-edge case; the second is a
+body-level relationship-candidate case. Thus prose can teach, defer, or propose
+a relation without producing a stored edge assertion. The template's
+null/unassessed edge fields and the three malformed inventory records remain
+distinct limitations.
 
 The native legacy reads connect body and metadata without inventing new edges:
 accent-types lists `meter` as a prerequisite and explains in its body that
