@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice01-relationship-semantics-and-traversal
 status: changes-required
-version: "1.6"
+version: "1.7"
 ---
 
 # Relationship Semantics And Traversal
@@ -20,9 +20,13 @@ teaching/null-field body evidence and four current native comparisons.
 S1-3 remains open for a false historical-requiredness claim; S1-7 remains open
 because a search error can pass as an unavailable support record.
 The [remediation proposal](./artifacts/post-iteration-05-remediation-proposal.md)
-preserves the exact remainder and awaits the operator's sizing decision.
-Was: Iteration 05 execution. No Iteration 06 or Slice02 is opened. Original
-criteria, credited readings/results and the 35-pair assignment are unchanged.
+preserves the exact remainder. The operator approved it on 2026-09-14;
+[Slice12](../slice12-relationship-policy-and-replay-remediation/slice-plan.md)
+now owns bounded R5/R6 repair execution. Was: sizing decision pending.
+No Iteration 06 or Slice02 is opened. Original criteria, five verified rows,
+credited readings/results and the 35-pair assignment are unchanged. CDC must
+recompose this slice after Slice12; CC must not rewrite this slice's closure
+attestation or independently verified ledger statuses as part of that repair.
 
 ## Exact Scope
 
@@ -179,6 +183,10 @@ Raise concrete sizing needs before expanding scope or substituting generic
 dispositions. No other slice opens automatically from CC's proposed-done report.
 
 ## Version History
+
+- 1.7 (2026-09-14): Operator approves the small Slice12 remediation unit;
+  was: sizing decision pending. This slice retains its original criteria and
+  membership ownership, pending independent recomposition after R5/R6 repair.
 
 - 1.6 (2026-09-14): Review of 30d9815c closes S1-2/S1-5 and retains
   S1-1/S1-4/S1-6. Records exact remaining requiredness/search-error findings

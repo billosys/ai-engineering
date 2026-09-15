@@ -63,3 +63,11 @@ shared evidence plus explicit member roles/exceptions, and targeted research.
 Retain small iterative packets when needed. The prior effort is a valued
 foundation, not discarded work. Expedited Mode resumes, including scoped
 CC/CDC commits and the plain project-relative next-prompt path at handoff.
+
+## Schema/Spec Checkpoint (2026-09-14)
+
+Before finalizing the metadata architecture or implementing it as the accepted
+contract, discuss the schemas and creation of a specification with the operator.
+See project-plan.md and artifacts/schema-and-spec-discussion-agenda.md; P-15 is
+the tracked gate. Arc06 research and approved evidence remediation may proceed,
+but neither adopts a schema, spec format or future requiredness policy.

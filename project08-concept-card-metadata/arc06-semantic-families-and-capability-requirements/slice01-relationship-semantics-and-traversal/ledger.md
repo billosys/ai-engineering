@@ -6,6 +6,10 @@ reconciliation and fail-closed search errors. See cdc-verification.md and the
 post-Iteration 05 sizing proposal. No sixth iteration, scope transfer or new
 semantic memberships are accepted; the exact 35-pair assignment remains.
 
+Operator decision 2026-09-14: Slice12 executes the two remaining repairs.
+This ledger retains all seven original criteria and current statuses until
+CDC recomposes Slice01. Slice12 CC attestation belongs in its own close packet.
+
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | S1-1 | All 35 pairs are uniquely covered without absorbing other fields | Compare plan/frozen/registry sets and 115/35/405 accounting | serious | A6-1 | done | cdc-verification.md: exact-set replay, reproduced | Finer contexts do not silently change scope |

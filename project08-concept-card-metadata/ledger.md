@@ -19,6 +19,11 @@ not establish independent closure or operator acceptance.
 | P-12 | Fresh source/package/install gates validate the delivered profile | Reproduce relevant Make gates and isolated installed/archive comparison | correctness-grade | Arc05 | open | | Explicit temporary INSTALL_DIR |
 | P-13 | Arcs compose into accepted project outcomes without silent deferral | Independent project row walk plus operator acceptance and finding reconciliation | serious | Premature-closure prevention | open | | Package success is insufficient |
 | P-14 | A same-chapter Complete Musician trial establishes an independently reviewed and operator-accepted comparison with actual pre-skill cards | Check frozen chapter/baseline/protocol, at least two fresh new-skill runs, blinded paired and chapter-coverage review, native metadata/query checks, confounds and refinement/rerun dispositions | serious | Operator addition 2026-09-13 | open | project-plan.md: Complete Musician Same-Chapter Trial | Adds to CompCogNeuro and source-diversity trials; historical comparison is not isolated causal proof |
+| P-15 | Schema review and specification discussion precede normative design adoption, and agreed deliverables are fulfilled | Inspect operator decision, alternatives, agreed spec/schema scope and authority, traceability and delivered conformance evidence | serious | Operator addition 2026-09-14 | open | project-plan.md: Schema And Specification Discussion Gate | Arc06 Slice11 hands off; Arc02 owns design; no schema language or spec format preselected; discussion alone is not delivery |
+
+P-15 is additive. It does not replace P-1 through P-14 or operator acceptance
+of real card quality. Record the discussion before normative architecture
+acceptance; close the whole row only when agreed deliverables are verified.
 
 ## Transition Accountability (2026-09-14)
 

@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.20"
+version: "1.21"
 ---
 
 # Concept Card Metadata
@@ -35,6 +35,33 @@ The initial design hypothesis is recorded in
 It combines directly usable discovery/graph metadata with scoped evidence and
 lifecycle records. Exact fields, nesting, authorities and migration rules remain
 research/design decisions. Arc02 will supply the accepted architecture artifact.
+
+## Schema And Specification Discussion Gate
+
+Operator addition, 2026-09-14: before finalizing or formalizing the metadata
+design, review schemas together and discuss creation of a specification.
+This makes the existing Arc02 schema/validator decision an explicit operator
+checkpoint, not an implied approval from inventory or template conformance.
+See [the discussion agenda](./artifacts/schema-and-spec-discussion-agenda.md).
+
+Arc06 Slice11 must carry the evidence, alternatives and unresolved decisions
+into that discussion. Arc02 owns the resulting design and any specification/
+schema deliverables agreed there. Do not accept a normative profile, choose its
+final schema form, or start implementing it as the accepted contract before
+recording the operator discussion and decision. Exploratory comparisons and
+clearly provisional drafts remain possible; they are not adoption.
+
+Review the semantic model, human-readable specification, machine-checkable
+constraints and representative body/metadata records together. Discuss scope,
+authority, requiredness, extensions, versioning, migration and test coverage;
+do not silently choose a schema language, file location or spec publication
+format. Record what will be delivered and how it will be verified.
+Project ledger P-15 carries this gate independently of final output-quality
+acceptance. Later material design changes from Arc04 must return for discussion
+before being promoted to the normative contract.
+
+The approved Slice12 evidence remediation may proceed now. It fixes historical
+interpretation and a replay error path, not the future schema or specification.
 
 ## Required Outcomes
 
@@ -110,8 +137,8 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01 retains five verified rows after 30d9815c; two residual findings require a sizing decision |
-| `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Independently composed Arc06, including transferred Arc01 requirements | Hypothesis; detailed plan when near |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; approved Slice12 repairs two Slice01 findings; five verified rows retained |
+| `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
 | `arc05-package-gates-and-closure` | Fresh packaging/install evidence, migration and UAT reconciliation, independent project acceptance | Arc04 quality and coverage evidence | Closure cannot outrun UAT |
@@ -325,6 +352,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.21 (2026-09-14): Operator approves a small Arc06 Slice12 for the two
+  residual Slice01 findings; was: sizing decision pending. Adds an explicit
+  schema/specification discussion gate and P-15 before design formalization,
+  carrying it through Arc06 Slice11 into Arc02. No schema form is selected,
+  Slice01 is not closed, and existing quality/version/UAT obligations remain.
 
 - 1.20 (2026-09-14): Arc06 Slice01 Luna/xhigh repair closes S1-2/S1-5,
   retaining S1-1/S1-4/S1-6. Historical requiredness and search-error handling

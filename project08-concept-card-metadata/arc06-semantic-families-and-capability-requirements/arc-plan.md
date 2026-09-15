@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.6"
+version: "1.7"
 ---
 
 # Semantic Families And Capability Requirements
@@ -26,15 +26,24 @@ native cases. S1-1/S1-2/S1-4/S1-5/S1-6 are CDC-done. S1-3 remains open for
 documented historical requiredness versus observed records; S1-7 remains open
 for search errors misreported as no matches. Read the Slice01
 [sizing proposal](./slice01-relationship-semantics-and-traversal/artifacts/post-iteration-05-remediation-proposal.md).
-Was: Iteration 05 execution. No Iteration 06 or Slice02 is opened. Retain
-verified work while the operator decides the bounded remediation arrangement.
+Operator approved the bounded proposal on 2026-09-14. Open
+[Slice12](./slice12-relationship-policy-and-replay-remediation/slice-plan.md)
+for the two fixes; was: sizing decision pending. This is not Iteration 06.
+Retain the five done rows and keep Slice01 open for independent recomposition.
+Slice02 stays unopened until Slice12 and original Slice01 are independently
+closed. Slice12 owns repair execution, not new semantic memberships.
 The 115/35/405 accounting and every original composition/UAT obligation remain.
 [Workload observations](../artifacts/cc-workload-observations.md) distinguish
 same-task reuse, later fresh sessions and the Luna/xhigh run's one observed
 compaction. No automatic model/effort change or causal diagnosis is made.
 The operator-selected Luna/xhigh trial is now reviewed; its broader integration
 is credited without a cross-model ranking. The five-iteration sizing stop is
-active for Slice01 execution, not a waiver of its remaining requirements.
+active for the old Slice01 correction loop, not a waiver of its requirements.
+
+The operator also requires schema review and discussion of a specification
+before design formalization. Slice11 carries the
+[project discussion agenda](../artifacts/schema-and-spec-discussion-agenda.md)
+and P-15 into Arc02; no family or remediation slice decides the future schema.
 
 ## Starting Evidence And Coverage
 
@@ -81,7 +90,8 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 
 | Slice | Capability / boundary | Dependencies | State |
 | --- | --- | --- | --- |
-| `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Five rows done after 30d9815c; S1-3/S1-7 await sizing decision and repair |
+| `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Five rows done; S1-3/S1-7 await Slice12 repairs and independent recomposition |
+| `slice12-relationship-policy-and-replay-remediation` | Historical policy/observation reconciliation and fail-closed support search; zero new pairs | Slice01 Iteration 05 evidence and CDC findings R5/R6; does not require Slice01 closure | Open; operator-approved bounded repair before Slice02 |
 | `slice02-competency-questions-and-answerability` | Legacy questions, current CQ roles/coverage and card linkage; separately owned lifecycle fields excluded | Slice01 interfaces and accepted Arc01 | Size exact set when near |
 | `slice03-provenance-and-shared-reference-contracts` | Actor/run/preparation provenance and reusable evidence/replay contracts | Slice01/02 experience and accepted identity/source analysis | Size/split before opening |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts | Plan when near |
@@ -91,7 +101,7 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 | `slice08-admission-and-authority` | Reliance scope, approval/authority, evidence summaries and no implied runtime write | Slices04-07 | Plan when near |
 | `slice09-inventory-recomposition-and-replay` | Complete family join, exact inputs, original S1/S4 row reconciliation and nine-root replay | All family evidence reviewed, including added slices | Final inventory gate |
 | `slice10-standards-and-source-model-synthesis` | General source/classification/relationship/provenance alternatives and tradeoffs | Accepted Arc01 plus early family findings; may start before Slices03-09 | Research may proceed early; finalize after later findings |
-| `slice11-requirements-and-acceptance-design` | No-loss matrix, architecture agenda, migration/query acceptance and repeated-run UAT contract | Slices09/10 plus added work | Final composition handoff |
+| `slice11-requirements-and-acceptance-design` | No-loss matrix, architecture agenda, migration/query acceptance, UAT contract and operator schema/spec discussion inputs | Slices09/10 plus added work | Final composition handoff; carries P-15 gate into Arc02 |
 
 These entries are hypotheses, not permission to force a large family into
 one context. Inspect the remainder and size with iteration headroom before
@@ -135,6 +145,8 @@ Final composition must:
 - Deliver primary-source research and a testable architecture decision agenda.
 - Carry every P-1 through P-14 obligation forward, including fresh-run minima,
   Complete Musician protocol and conditional full-book work.
+- Carry additive P-15 schema/spec discussion and decision requirements into
+  Arc02, without claiming inventory closure is architecture adoption.
 
 The sibling ledger gates closure by independent composition. Inventory,
 architecture, implemented behavior and operator output acceptance stay separate.
@@ -143,6 +155,11 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.7 (2026-09-14): Operator approves Slice12 for Slice01 R5/R6, retaining
+  five verified rows, the original 35-pair owner and all acceptance gates.
+  Was: sizing proposal pending. Records dependency order without renumbering
+  Slice02-11 and adds P-15 schema/spec discussion inputs to Slice11's handoff.
 
 - 1.6 (2026-09-14): Slice01 Iteration 05 independently closes S1-2/S1-5
   but contradicts historical requiredness and masks search errors. Records

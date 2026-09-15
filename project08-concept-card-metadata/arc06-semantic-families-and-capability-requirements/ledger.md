@@ -1,8 +1,9 @@
 # Arc06 Ledger
 
 All arc rows remain open after Slice01's CDC review of 30d9815c.
-S1-1/S1-2/S1-4/S1-5/S1-6 are reproduced; S1-3/S1-7 await a sizing decision
-and repair. No sixth iteration or new semantic acceptance is implied.
+S1-1/S1-2/S1-4/S1-5/S1-6 are reproduced; S1-3/S1-7 await operator-approved
+Slice12 repairs and independent recomposition. No sixth iteration or new
+semantic acceptance is implied. Slice12 adds zero membership pairs.
 The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 
@@ -18,3 +19,8 @@ S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 | A6-8 | Primary-source research answers gaps with alternatives and tradeoffs | Inspect cited source-model/classification/relationship/provenance analysis | correctness-grade | A1-2, Arc01 Slice02, P-2 | open | | Slice10 plus family research |
 | A6-9 | Requirements/UAT design retain all no-loss and real-use obligations | Trace operator concerns, body effects, fixtures and P-1 through P-14 | serious | A1-3/A1-4, Arc01 Slice03, P-14 | open | | Slice11; design is not execution |
 | A6-10 | Children/transfers compose into an actionable architecture handoff | Independent original-to-delivered walk, contradiction review and decision agenda | serious | A1-5, P-13 | open | | Final acceptance before Arc02 |
+
+Additive 2026-09-14 ownership: A6-2/A6-6/A6-7 consume Slice12 repair evidence
+through original Slice01 recomposition; no duplicate membership acceptance.
+A6-9/A6-10 also carry P-15's schema/specification discussion agenda and
+operator decision gate into Arc02. Arc06 closure does not discharge that gate.

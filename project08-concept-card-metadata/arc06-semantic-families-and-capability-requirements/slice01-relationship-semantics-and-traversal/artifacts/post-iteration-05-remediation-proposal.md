@@ -1,9 +1,13 @@
 # Post-Iteration 05 Remediation Proposal
 
 Date: 2026-09-14.
-Status: CDC sizing proposal; operator decision pending.
+Status: operator approved 2026-09-14; original proposal retained below.
 Basis: review of CC commit 30d9815c in [cdc-verification.md](../cdc-verification.md).
-This is not an executable CC prompt and opens no slice or sixth iteration.
+This artifact is not an executable prompt. The approved execution open set is
+[Slice12](../../slice12-relationship-policy-and-replay-remediation/slice-plan.md).
+Was: operator decision pending. No sixth iteration is opened. Future-tense
+approval/numbering statements below are proposal history, superseded by that
+open set; original Slice01 obligations and membership ownership remain intact.
 
 ## Retained Progress
 
