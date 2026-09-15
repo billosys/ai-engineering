@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice02-competency-questions-and-answerability
 status: active
 depends-on: [slice01-relationship-semantics-and-traversal, slice12-relationship-policy-and-replay-remediation]
-version: "1.0"
+version: "1.1"
 ---
 
 # Competency Questions And Answerability
@@ -13,6 +13,16 @@ Compare the useful legacy question index with current CQ records, coverage
 assertions, answerability and card references. Explain what is directly
 queryable and what remains a documented or unresolved claim. This is bounded
 semantic inventory, not schema adoption, new extraction or an answering service.
+
+## Current Review
+
+CDC review of 753bacb0 on 2026-09-15 requires changes. S2-1 and S2-5 are
+independently done at their recorded scope; S2-2/S2-3/S2-4/S2-6 remain open.
+Execute [Iteration 01](./artifacts/iteration-01-cc-prompt.md) in a new CC
+session; was: initial submission awaiting CDC. Repair the census/exclusion
+and witness mapping, answer-component distinction, native diagnostics and
+snapshot-aware replay. Retain verified work and the exact original scope.
+See [CDC findings R1-R4](./cdc-verification.md). Slice03 stays unopened.
 
 ## Exact Scope
 
@@ -176,6 +186,11 @@ opening. P-15 schema/spec discussion and all real-extraction/UAT goals remain
 open. Package/install gates are not applicable to this planning-only slice.
 
 ## Version History
+
+- 1.1 (2026-09-15): CDC review retains two verified rows and opens bounded
+  Iteration 01 for R1-R4; was: initial run. No pair acceptance, scope reduction,
+  source change or schema decision. Requires native observed values and
+  committed authority inputs distinct from mutable review status.
 
 - 1.0 (2026-09-15): Opens 30-pair CQ/answerability comparison after independent
   relationship closure. Preserves 150 accepted, explicit ownership of the

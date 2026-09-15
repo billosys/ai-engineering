@@ -3,7 +3,10 @@
 All arc rows remain open after independent Slice12/Slice01 closure on
 2026-09-15. Original Slice01 contributes 35 accepted pairs, bringing current
 coverage to 150; Slice12 adds zero. Slice02 assigns 30 of the remaining 405,
-leaving 375 outside its scope. Was: Slice12 repair pending.
+leaving 375 outside its scope. Slice02 review of 753bacb0 requires Iteration 01:
+two local rows pass, four remain open; no new memberships accepted.
+See slice02-competency-questions-and-answerability/cdc-verification.md.
+Was: Slice12 repair pending, then initial Slice02 submission.
 The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 

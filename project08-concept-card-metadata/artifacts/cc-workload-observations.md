@@ -444,3 +444,95 @@ history does not dominate the new semantic task. Preserve unchanged handoff
 sections by default and review deletions explicitly. Two distinct slices have
 now received independent review; continue monitoring the next slice before
 the final three-slice trend assessment.
+
+## Observation 03: Slice02 Initial CQ Packet And Final Window Assessment
+
+Date: 2026-09-15. CC commit 753bacb0; CDC outcome: changes required.
+S2-1 and S2-5 independently pass. S2-2/S2-3/S2-4/S2-6 need bounded repair.
+This is the third distinct reviewed slice, after Slice01 and its Slice12
+remediation. It is only the second new semantic family, not three independent
+new-family trials. This review does not duplicate a heartbeat observation.
+
+### Observed Execution
+
+Fresh task "Read competency prompt instructions":
+01a0a38d-4b8a-72f3-b744-9528be501376; turn
+01a0a38d-6ecc-7180-836c-4ebb6cf5337b.
+Task-history duration: 1965663 ms (32 minutes 45.663 seconds).
+There are 92 commandExecution items, 15 numeric nonzero exits: path/context
+lookup, jq exploration, repeated partial replay failures and an initial commit
+attempt. These are not 15 independent semantic failures. The final published
+block passed CC and CDC at the submitted endpoint.
+
+Local turn_context records gpt-5.6-luna / xhigh at
+2026-09-15T05:32:30.582Z and again at 05:58:18.122Z.
+One compacted event occurs at 05:58:18.120Z.
+Read-only local provenance:
+`/Users/oubiwann/.codex/sessions/2026/09/15/rollout-2026-09-15T00-32-21-01a0a38d-4b8a-72f3-b744-9528be501376.jsonl`.
+Only public messages, tool metadata and context/event categories were used.
+No private reasoning or reliable token/cost/remaining-headroom measurement
+is part of this assessment.
+
+### Outcome
+
+Retained gains: exact scope and clean preservation, 25 matching evidence
+hashes, real positive legacy reverse lookup, six-family reporting, distinctions
+among reference identity, coverage and answerability, and useful concrete
+research/interface questions. Scope and handoff rows pass independently.
+
+Remaining defects are observable, not inferred from latency:
+- The card total contradicts the six family rows; malformed exclusions name
+  INDEX instead of the recognition card. The published census checks do not
+  validate the full advertised table.
+- A wrong-question control never uses its question; some claimed native case
+  results are constants rather than observations. Normal parent-directory
+  absence is mislabeled tool failure. This is not the old Slice01 exact bug,
+  but it is another mismatch between operation and interpreted result.
+- "Component target" leaves answer components versus referenced constructs
+  ambiguous. The source guidance and null serialization need separate claims.
+- Committed replay reads mutable plan/ledger files without revision pinning.
+  Routine review then invalidates input hashes independently of corpus drift.
+
+See the Slice02 CDC report for precise findings, retained evidence and the
+bounded correction. Do not characterize the entire submission as empty or
+collapse semantic, arithmetic, provenance and test-design problems together.
+
+### Three-Slice Trend And Recommendation
+
+The observation window is complete. The workload heartbeat was already PAUSED
+when inspected on 2026-09-15; no new automation or settings change was made.
+
+Across these slices, completion of exact scope and hashes is consistently
+stronger than cross-document semantic/replay reconciliation. Increasing effort
+and changing model coincided with substantial retained improvements, but did
+not eliminate incomplete checks or unsupported interpretations. A genuinely
+fresh Luna/xhigh session still produced these defects and compacted once.
+
+The much narrower Slice12 fixed both named defects on its first submission,
+with a disclosed CDC restoration of prior handoff text. That success supports
+trying more explicit bounded execution and reuse; it does not isolate scope,
+model, prompt, context or accumulated evidence as the cause. Slice01 repairs,
+Slice12 remediation and Slice02 new-family work are not comparable benchmark
+tasks. Internal cognitive load remains a hypothesis, not a measurement.
+
+For the next repair, change the packet/execution structure rather than
+automatically changing model or increasing effort: retain accepted work, use a
+fresh session, sequence census, the one semantic clarification, native cases,
+then final integration, and stop for sizing if headroom is inadequate.
+This is a process recommendation grounded in these artifacts, not a claim
+about general Luna capability or an official model ranking. No basis for
+reducing effort is established by the incomplete acceptance results.
+
+Before opening Slice03, explicitly size semantic analysis and shared replay
+work separately. Its existing roadmap already permits a split. Stable
+committed-authority reads, reusable query operations, structural JSON equality
+and native-result negative controls should reduce recurrent incidental work;
+they must still be independently tested rather than treated as accepted by
+recommendation. Do not build that future framework inside this repair.
+
+A later model trial may be useful if these bounded controls still fail.
+Agree it with the operator, hold task/input/acceptance conditions as steady
+as practicable, and record all attempts. The current observations do not
+justify automatic model replacement, another effort increase, or relaxed
+acceptance. Ordinary CDC review continues; extending the completed proactive
+three-slice monitoring window would require a new operator request.

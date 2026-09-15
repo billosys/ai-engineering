@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.8"
+version: "1.9"
 ---
 
 # Semantic Families And Capability Requirements
@@ -21,10 +21,19 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
 
-Current on 2026-09-15: Slice12 independently closed after b3ea7533/52aad9c6;
+Current on 2026-09-15: Slice02 submission 753bacb0 needs bounded Iteration 01
+after CDC review. S2-1/S2-5 pass; census/context, component interpretation,
+native diagnostics and replay remain open. Follow its
+[repair prompt](./slice02-competency-questions-and-answerability/artifacts/iteration-01-cc-prompt.md).
+No Slice03 opening or accepted-coverage change. The third distinct reviewed
+slice completes the observational workload series; see the project
+[assessment](../artifacts/cc-workload-observations.md). No model change or
+causal model ranking is made. Was: Slice02 open for its first submission.
+
+Retained prerequisite closure: Slice12 independently closed after b3ea7533/52aad9c6;
 original Slice01 recomposed with all seven rows done. CDC restored omitted
 previously accepted handoff paragraphs verbatim, with attribution. R5/R6
-repairs are CC-authored and independently reproduced. Open
+repairs are CC-authored and independently reproduced. That closure opened
 [Slice02](./slice02-competency-questions-and-answerability/slice-plan.md)
 for 30 CQ/answerability pairs. Current accounting: 150 accepted / 30 assigned /
 375 outside. The 405-pair remainder is still fully owned by Arc06.
@@ -108,7 +117,7 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
 | --- | --- | --- | --- |
 | `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Independently closed after Slice12 repair; 35 pairs accepted |
 | `slice12-relationship-policy-and-replay-remediation` | Historical policy/observation reconciliation and fail-closed support search; zero new pairs | Slice01 Iteration 05 evidence and CDC findings R5/R6 | Independently closed; CC repairs plus attributed prior-text restoration |
-| `slice02-competency-questions-and-answerability` | 30-pair question/role, component coverage, answerability and card-link comparison | Independently closed Slice01/Slice12 and accepted Arc01 | Open; broader provenance/retrieval/lifecycle fields stay with later owners |
+| `slice02-competency-questions-and-answerability` | 30-pair question/role, component coverage, answerability and card-link comparison | Independently closed Slice01/Slice12 and accepted Arc01 | Changes required; Iteration 01, two rows retained; adjacent fields stay with later owners |
 | `slice03-provenance-and-shared-reference-contracts` | Actor/run/preparation provenance and reusable evidence/replay contracts | Slice01/02 experience and accepted identity/source analysis | Size/split before opening |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts | Plan when near |
 | `slice05-validation-and-verification` | Structural checks versus semantic verification, coverage, independence and applicability | Slices03/04 | Plan when near |
@@ -171,6 +180,11 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.9 (2026-09-15): Slice02 CDC review retains scope/handoff rows and opens
+  Iteration 01 for R1-R4. Was: initial Slice02 run. Records completed three-slice
+  observational review, unchanged 150/30/375 coverage and unopened Slice03;
+  no model change, weakened criteria or schema adoption.
 
 - 1.8 (2026-09-15): Independently closes Slice12 and recomposes original
   Slice01; was: two repair findings open. Opens 30-pair CQ Slice02, carries

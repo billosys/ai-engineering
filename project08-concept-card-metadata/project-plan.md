@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.22"
+version: "1.23"
 ---
 
 # Concept Card Metadata
@@ -141,13 +141,19 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice12/Slice01 closed; Slice02 opens 30 CQ pairs, 375 outside assignment |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice12/Slice01 closed; Slice02 Iteration 01 repairs four findings, 30 pairs remain assigned |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
 | `arc05-package-gates-and-closure` | Fresh packaging/install evidence, migration and UAT reconciliation, independent project acceptance | Arc04 quality and coverage evidence | Closure cannot outrun UAT |
 
 Arc06 is the next arc in dependency order, not a post-closure addendum.
+Slice02 CDC review of 753bacb0 retains scope and handoff acceptance but
+requires census/context, semantic clarification and native/snapshot replay
+repairs before advancement. Current accepted coverage remains 150/555.
+The [three-slice workload assessment](./artifacts/cc-workload-observations.md)
+is complete; its observations support a bounded, better-integrated repair,
+not an automatic model change or a reduction of evidence requirements.
 Existing Arc02-05 IDs and Arc04's operating contract remain stable. Numeric
 order is not dependency order. Further findings may split or add arcs/slices;
 record the changed owners and re-entry conditions before issuing new work.
@@ -356,6 +362,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.23 (2026-09-15): Arc06 Slice02 CDC review opens bounded Iteration 01;
+  was: first CQ submission. Preserves two verified rows, 150 accepted pairs,
+  all remaining work and P-15. Records completion of the three-slice workload
+  observation window without claiming causal model comparison.
 
 - 1.22 (2026-09-15): Arc06 Slice12 R5/R6 independently reproduce; original
   Slice01 recomposes with all seven rows done. Records attributed restoration
