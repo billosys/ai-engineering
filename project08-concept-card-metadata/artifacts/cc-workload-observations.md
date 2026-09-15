@@ -318,3 +318,77 @@ integration and a complete replay that reproduces all tables and four cases.
 Preserve successes. If Iteration 05 is incomplete, require a concrete sizing
 proposal instead of automatic Iteration 06 or reduced acceptance. Only one
 slice has received independent review; the three-slice monitoring continues.
+
+## Observation 01f: Luna/Xhigh Iteration 05
+
+Date: 2026-09-14. CC commit 30d9815c; formal CDC review adds S1-2 and S1-5
+to done S1-1/S1-4/S1-6. S1-3/S1-7 remain open. This is the same first monitored
+slice, not another slice, and the earlier read-only heartbeat preview of this
+commit is not a second execution or review.
+
+### Observed Execution
+
+New task "Read and follow CC prompt":
+01a0a2bb-2c86-7170-af63-7c936e386ce1; turn
+01a0a2bb-8976-7a11-b5d6-6258138cdbaa.
+Local turn_context metadata confirms gpt-5.6-luna / xhigh at
+2026-09-15T01:43:14.849Z and again at 02:09:57.536Z.
+One compacted event is recorded at 02:09:57.535Z.
+Read-only metadata source:
+`/Users/oubiwann/.codex/sessions/2026/09/14/rollout-2026-09-14T20-42-50-01a0a2bb-2c86-7170-af63-7c936e386ce1.jsonl`.
+
+Task history reports durationMs 1776510 (29 minutes 36.510 seconds),
+148 commandExecution records, ten numeric nonzero exits and no unknown exits
+in that count. Path lookup, jq quoting/filter work and repeated isolation of
+hash/replay failures contribute to those exits; they are not ten semantic
+failures. The actual compaction is observable, but internal cognitive load
+is not measured. No reliable token/cost/headroom measure was collected.
+
+### Quality Result
+
+Relative to the prior packet, CC supplied the mapped teaching original/copy,
+the six-family census, malformed-input exclusion accounting, explicit
+null-field body contrast, and all four native comparisons in one current
+structured-value replay. Twenty-seven registered hashes and all six current
+published blocks independently reproduce. Those are substantial retained
+improvements, and two additional ledger rows now pass CDC.
+
+Two residual problems remain:
+
+- The report/handoff say historical requiredness is undocumented, despite
+  explicit prerequisite and general template-conformance rules in the
+  registered prompts. Corpus variation and unknown card lineage do not
+  establish the absence of those rules.
+- The current conditional support search conflates no match with command
+  error. During execution, CC encountered a regex error and reasoned that the
+  fallback still matched expected unavailability; the regex was corrected,
+  but the failure-path assumption remained. CDC injected exit 2 and the
+  native replay still passed. Normal current lookup outcomes do reproduce.
+
+These are distinct from the earlier missing-family/incomplete-case wiring.
+Do not flatten five iterations into an undifferentiated failure rate or discard
+the accepted progress.
+
+### Interpretation And Next Action
+
+Both model and effort changed from Terra/high, while the prompt and retained
+evidence changed too. A single sequential repair trial cannot isolate a
+configuration effect or support a model ranking. One actual compaction,
+command count and duration indicate execution burden, not a calibrated
+measurement of cognitive load.
+
+Reviewer framing is another plausible contributor: the preceding prompt
+emphasized not inferring requiredness from observed variation, but did not
+foreground the explicit positive historical rules. The next comparison should
+show rule, observation, lineage and future applicability separately.
+
+After the fifth ordinary corrective iteration, stop automatic repair and
+present a bounded two-step sizing proposal. Preserve all five done rows.
+Do not issue Iteration 06, open Slice02, lower criteria or transfer the 35
+memberships as accepted. The proposal awaits operator decision; no task or
+settings changed. Keeping Luna/xhigh for a smaller approved unit would reduce
+one source of variation, not prove that configuration superior.
+
+Only one distinct slice has received independent review in this observation
+series. Continue the requested three-slice monitoring without counting the
+heartbeat preview or successive revisions as additional slices.

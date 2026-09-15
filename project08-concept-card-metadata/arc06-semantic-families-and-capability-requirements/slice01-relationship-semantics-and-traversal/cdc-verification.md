@@ -747,3 +747,181 @@ missed. Internal cognitive load is not measured; revised instructions, prior
 evidence and task complexity remain confounds. The operator proposed a possible
 Luna/xhigh trial next. Record it as a configuration trial if chosen, not proof
 that either model or effort alone caused a result. No settings were changed.
+
+## Iteration 05 Independent Review (2026-09-14)
+
+Reviewed CC commit 30d9815c7ea3da913d8d630691c6e2553c27e8c4, with source
+HEAD e763c661592ff1097a94bb470db9cf924524579d unchanged and clean.
+Planning was clean at review entry. This is formal CDC verification, separate
+from the earlier read-only workload preview of the same Luna/xhigh submission.
+
+**Outcome: changes required.** S1-2 and S1-5 are now independently done;
+S1-1/S1-4/S1-6 remain done. S1-3 and S1-7 remain open for R5/R6 below.
+The 35-pair assignment is not accepted by partial row closure: accounting
+remains 115 accepted / 35 assigned here / 405 outside. Slice02 stays unopened.
+
+### Reproduced Evidence
+
+The first six Bash blocks of artifacts/validation-evidence.md at the reviewed
+commit were executed literally from source cwd and returned zero. These are
+the two structural blocks followed by the four current Iteration 05 blocks,
+not a splice of historical recipes. Independently reproduced:
+
+- Exact plan-derived 35 unique pairs, frozen inclusion, accepted-set
+  disjointness and 115/35/405 accounting.
+- Both evidence layers, all 27 registered input hashes, and teaching original
+  versus baseline-copy mapping and byte equality.
+- All eight Music/Erlang relationship census rows, the six-family 31-card
+  census, three malformed-rich exclusions, and the edge component census.
+- All four complete native prerequisite, extension, reciprocal-related and
+  requested/declaration endpoint objects compared to recorded results.
+- Deliberately wrong symmetry endpoint and endpoint revision-match expectations
+  rejected; JSON, whitespace, historical preservation and exact seven-file
+  CC scope passed.
+
+CDC also read the actual teaching cc-memory-forms original and preserved copy:
+both structured relationship-reference keys are absent, while the body names
+contained/routed concepts and a related concept. Its SHA-256 is
+451a52574cce00df9a80bbc908e12ff7c0eb246b2c634cc93d7ad3cdae3d1ac9;
+the original/copy manifests agree. It is an extraction candidate, not a
+synthetic example or an accepted memory record. The named legacy
+data-type-sizes.md has null prerequisites but a body prerequisite discussion;
+that prose is not a stored slug edge. These inspections support S1-2/S1-5
+without inventing graph edges, per-card method lineage or source verification.
+
+The following additional CDC-authored cross-check returned true/true and zero.
+It checks exact values/key absence in the sole rich reference tuple and the
+two selected edge projections, supplementing CC's component-shape checks.
+This is independently authored verification, not a claim that CC published
+this exact recipe or that CDC authored new semantic outcomes.
+
+~~~bash
+set -euo pipefail
+cd /Users/oubiwann/lab/billosys/ai-engineering
+i=.worktrees/planning/project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
+jq -e '
+[.records[]|select(.record_kind=="concept-card")|.values.relationship_refs[]?]
+== [{id:"edge-evidence-map-related-to-claim",path:"records/edge-evidence-map-related-to-claim.md",revision:1}]
+' "$i"
+jq -e '
+["directed","direction","endpoint_roles","from_ref","to_ref","relationship_type","relation_type","meaning","inverse_reading","symmetry","graph_closure_state","source_support_refs"] as $keys
+|[.records[]|select(.record_kind=="relationship-edge")
+ |{path,values:(.values|with_entries(select(.key as $k|$keys|index($k)!=null)))}]
+|sort_by(.path)
+|.==[
+ {path:"knowledge/concept-cards/examples/relationship-edge.md",
+  values:{directed:true,from_ref:{id:"cc-prepared-source-provenance",revision:1},to_ref:{id:"cc-claim-support-is-assertion-specific",revision:1},relation_type:"precedes",source_support_refs:[{id:"support-synthetic-edge-001",revision:1}]}},
+ {path:"knowledge/concept-cards/templates/relationship-edge.md",
+  values:{direction:null,endpoint_roles:{from_role:null,to_role:null},from_ref:null,to_ref:null,relationship_type:null,meaning:null,inverse_reading:null,symmetry:null,graph_closure_state:"unassessed",source_support_refs:[]}}
+]
+' "$i"
+test ! -e records/edge-evidence-map-related-to-claim.md
+git -C .worktrees/planning diff --exit-code 3cf075ff 91c7f5f3 -- project08-concept-card-metadata/arc01-metadata-research-and-requirements project08-concept-card-metadata/artifacts
+git -C .worktrees/planning diff --exit-code 44c2b0ed 30d9815c -- project08-concept-card-metadata/arc01-metadata-research-and-requirements project08-concept-card-metadata/artifacts
+~~~
+
+The fixed historical preservation 3cf075ff -> 91c7f5f3 and current CC comparison
+44c2b0ed -> 30d9815c passed for Arc01 and project artifacts. CC's commit changes
+exactly its seven authorized files; the later CDC files are not CC scope.
+Source/package/install behavior was not changed; package gates are inapplicable.
+
+### R5 - Documented Historical Rules Incorrectly Declared Absent
+
+Severity: serious. Owner: S1-3.
+
+At 30d9815c, semantic-evidence.md:113-121 says the inspected authorities do not
+document any legacy relationship key as mandatory; handoff.md:18-20 repeats
+that no inspected authority establishes a mandatory-key policy. The
+legacy-list disposition in semantic-membership.json also leaves policy
+unspecified unless an authority supplies one.
+
+Registered historical evidence in the planning worktree contradicts that
+conclusion:
+
+- old/dev/concept-cards/0010-a-guide-for-parallel-concept-card-re-extraction-v3.2.md:595
+  requires prerequisites for non-foundational concepts.
+- The same source at 599-610 requires all frontmatter fields populated,
+  permitting null/empty array where not applicable.
+- Its Required Frontmatter Fields at 877-893 explicitly marks prerequisites
+  REQUIRED, with an empty array for foundational concepts.
+- old/dev/concept-cards/0009-howto-concept-card-extraction-with-claude-code-v3.2.md:575-589
+  names all four relationship fields among missing fields and requires full
+  target-template conformance.
+
+The narrower prerequisite quick-reference rule and the broader
+all-fields/template instructions must be reported distinctly. Observed
+omissions/nulls establish corpus shape, not absence of a documented rule.
+Unknown lineage can limit whether a historical rule applied to an individual
+card; it cannot erase the rule from its source. Nor does identifying that rule
+adopt it unchanged for the future skill.
+
+Repair only the affected meanings/report/handoff with a bounded
+documented-rule / observed-state / lineage-limit / future-decision comparison.
+Keep the census and distinctions among absent, null and empty intact.
+
+Reviewer accountability: the preceding correction emphasized not inferring
+requiredness from observation, with an exception for actual documented
+authority. That distinction was sound, but the framing may have encouraged
+repeating "unspecified" without checking the explicit positive rule. This is
+a plausible instruction confound, not proof of a model-specific limitation.
+
+### R6 - Search Failure Is Accepted As Negative Evidence
+
+Severity: correctness-grade. Owner: S1-7.
+
+In the current native replay, the conditional support lookup sets found only
+when rg returns zero. Both a genuine no-match and a search error leave
+support_found=false / support_path=unavailable. Bash errexit does not reject
+a failing command used as the condition of an if statement.
+
+Normal-input results reproduced correctly. This finding does not claim the
+current search actually failed. CDC additionally injected a deterministic
+exit-2 search failure without changing corpus files or CC artifacts:
+
+~~~bash
+cd /Users/oubiwann/lab/billosys/ai-engineering
+{ printf '%s\n' 'rg() { printf "%s\n" "CDC simulated search error" >&2; return 2; }'; git -C .worktrees/planning show 30d9815c:project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice01-relationship-semantics-and-traversal/artifacts/validation-evidence.md | awk '/^```bash$/{n++;p=(n==6);next} /^```$/{p=0} p && /^jq empty /{exit} p'; } | bash
+~~~
+
+This bounded recipe uses the reviewed commit's sixth Bash block through the
+native comparisons/controls, before its JSON/Git closeout tail. It emitted:
+
+~~~text
+CDC simulated search error
+true
+true
+true
+true
+false
+false
+~~~
+
+Overall exit status was zero. The final false values are the intended
+negative-control outcomes; the erroneous search was nonetheless treated as
+the expected unavailable support. A full-block injection also returned zero
+before CDC documentation edits began.
+
+Distinguish successful match, successful no-match and search/tool failure.
+Require the last to stop with nonzero status and add a deterministic error
+control. Preserve normal native outcomes and wrong-target/revision controls.
+No new parser, generic helper or graph runtime is needed.
+
+### Row Walk And Sizing Decision
+
+| Row | CDC status | Evidence / remaining condition |
+| --- | --- | --- |
+| S1-1 | done | Exact 35 and frozen/accepted accounting retained |
+| S1-2 | done | 27 hashes, family census, original/copy mapping and contextual witnesses reproduced |
+| S1-3 | open | R5: reconcile historical documented policy versus observed variation |
+| S1-4 | done | Bounded requested/declared endpoint and support limits retained |
+| S1-5 | done | All four native cases/controls and teaching/null-field body comparisons reproduced |
+| S1-6 | done | Ownership and concrete questions retained; R5 blocks the erroneous policy sentence separately |
+| S1-7 | open | R6: successful normal replay is not fail-closed under a search error |
+
+The strongest submission so far closes two further rows; it does not meet all
+slice criteria. At the final ordinary corrective iteration, stop automatic
+correction and use the sizing safeguard. See
+[the bounded remediation proposal](./artifacts/post-iteration-05-remediation-proposal.md).
+It preserves all five done rows and proposes two small steps with zero new
+memberships, pending operator choice. No Iteration 06, new slice, scope
+transfer, Slice02 prompt or semantic acceptance is authorized by this review.

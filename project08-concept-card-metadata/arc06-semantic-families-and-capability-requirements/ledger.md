@@ -1,7 +1,8 @@
 # Arc06 Ledger
 
-All arc rows remain open after Slice01's CDC review of 91c7f5f3. Iteration 05
-is open; S1-1/S1-4/S1-6 are reproduced, not new accepted memberships.
+All arc rows remain open after Slice01's CDC review of 30d9815c.
+S1-1/S1-2/S1-4/S1-5/S1-6 are reproduced; S1-3/S1-7 await a sizing decision
+and repair. No sixth iteration or new semantic acceptance is implied.
 The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 

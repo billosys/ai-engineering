@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.5"
+version: "1.6"
 ---
 
 # Semantic Families And Capability Requirements
@@ -21,19 +21,20 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
 
-Slice01 repair 91c7f5f3 reproduces native symmetry/endpoint results and controls.
-S1-1, S1-4 and S1-6 are CDC-done; four criteria remain open for the omitted
-teaching context, observed-versus-required meaning and complete current replay.
-Follow Slice01 artifacts/iteration-05-cc-prompt.md in a new CC session; do not
-open Slice02. Was: a24758b4 review and Iteration 04. Reuse credited work.
+Slice01 repair 30d9815c completes contextual/body evidence and its current
+native cases. S1-1/S1-2/S1-4/S1-5/S1-6 are CDC-done. S1-3 remains open for
+documented historical requiredness versus observed records; S1-7 remains open
+for search errors misreported as no matches. Read the Slice01
+[sizing proposal](./slice01-relationship-semantics-and-traversal/artifacts/post-iteration-05-remediation-proposal.md).
+Was: Iteration 05 execution. No Iteration 06 or Slice02 is opened. Retain
+verified work while the operator decides the bounded remediation arrangement.
 The 115/35/405 accounting and every original composition/UAT obligation remain.
 [Workload observations](../artifacts/cc-workload-observations.md) distinguish
-same-task reuse, no repair compaction and remaining substantive omissions.
-No automatic model/effort change or causal diagnosis is made. A fresh
-Terra/high run is now observed; the operator proposed Luna/xhigh as a possible
-next trial. The next prompt is model-neutral. A configuration trial is not
-proof of a model or effort effect. After Iteration 05, unresolved work requires
-a concrete sizing/replan decision, not an automatic Iteration 06.
+same-task reuse, later fresh sessions and the Luna/xhigh run's one observed
+compaction. No automatic model/effort change or causal diagnosis is made.
+The operator-selected Luna/xhigh trial is now reviewed; its broader integration
+is credited without a cross-model ranking. The five-iteration sizing stop is
+active for Slice01 execution, not a waiver of its remaining requirements.
 
 ## Starting Evidence And Coverage
 
@@ -80,7 +81,7 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 
 | Slice | Capability / boundary | Dependencies | State |
 | --- | --- | --- | --- |
-| `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Changes required after 91c7f5f3; Iteration 05, S1-1/S1-4/S1-6 done |
+| `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Five rows done after 30d9815c; S1-3/S1-7 await sizing decision and repair |
 | `slice02-competency-questions-and-answerability` | Legacy questions, current CQ roles/coverage and card linkage; separately owned lifecycle fields excluded | Slice01 interfaces and accepted Arc01 | Size exact set when near |
 | `slice03-provenance-and-shared-reference-contracts` | Actor/run/preparation provenance and reusable evidence/replay contracts | Slice01/02 experience and accepted identity/source analysis | Size/split before opening |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts | Plan when near |
@@ -142,6 +143,12 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.6 (2026-09-14): Slice01 Iteration 05 independently closes S1-2/S1-5
+  but contradicts historical requiredness and masks search errors. Records
+  a two-step bounded remediation proposal, not an opened slice or sixth
+  iteration; was: Iteration 05. Five verified rows and all 35 assigned pairs
+  remain in Slice01, with original acceptance and downstream gates intact.
 
 - 1.5 (2026-09-14): Slice01 Iteration 04 passes native-result controls and
   closes endpoint/linkage S1-4. Iteration 05 finishes contextual evidence and

@@ -3,7 +3,7 @@ project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice01-relationship-semantics-and-traversal
 status: changes-required
-version: "1.5"
+version: "1.6"
 ---
 
 # Relationship Semantics And Traversal
@@ -15,14 +15,14 @@ inventory and capability analysis, not schema adoption or extraction.
 
 ## Current Review
 
-CDC reviewed 91c7f5f3: all four native case outcomes are reproduced, including
-symmetry/endpoint negative controls. S1-1, S1-4 and S1-6 are done. The teaching
-witness, contextual meaning reconciliation and complete current census/case
-replay remain. Follow [Iteration 05](./artifacts/iteration-05-cc-prompt.md) in a
-new CC session. Reuse historical reading and verified tables/results; no
-repeated full read merely for repair. Was: a24758b4 review / Iteration 04.
-The original seven criteria remain; Slice02 stays unopened. An incomplete
-Iteration 05 requires a concrete sizing proposal, not an automatic sixth repair.
+CDC reviewed 30d9815c. S1-1/S1-2/S1-4/S1-5/S1-6 are done, including the
+teaching/null-field body evidence and four current native comparisons.
+S1-3 remains open for a false historical-requiredness claim; S1-7 remains open
+because a search error can pass as an unavailable support record.
+The [remediation proposal](./artifacts/post-iteration-05-remediation-proposal.md)
+preserves the exact remainder and awaits the operator's sizing decision.
+Was: Iteration 05 execution. No Iteration 06 or Slice02 is opened. Original
+criteria, credited readings/results and the 35-pair assignment are unchanged.
 
 ## Exact Scope
 
@@ -179,6 +179,11 @@ Raise concrete sizing needs before expanding scope or substituting generic
 dispositions. No other slice opens automatically from CC's proposed-done report.
 
 ## Version History
+
+- 1.6 (2026-09-14): Review of 30d9815c closes S1-2/S1-5 and retains
+  S1-1/S1-4/S1-6. Records exact remaining requiredness/search-error findings
+  and a sizing proposal after Iteration 05; no automatic sixth repair.
+  Was: Iteration 05 execution. No scope transfer or weakened criterion.
 
 - 1.5 (2026-09-14): Review of 91c7f5f3 closes S1-4 and retains S1-1/S1-6.
   Iteration 05 targets omitted teaching context, unsupported requiredness
