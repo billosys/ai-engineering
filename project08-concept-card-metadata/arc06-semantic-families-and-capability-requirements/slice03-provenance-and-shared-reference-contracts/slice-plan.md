@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice03-provenance-and-shared-reference-contracts
-status: active
+status: closed
 depends-on: [slice02-competency-questions-and-answerability]
-version: "1.0"
+version: "1.1"
 ---
 
 # Reusable Evidence And Replay Contract
@@ -110,6 +110,11 @@ CDC independently checks operational behavior before the next semantic slice.
 No schema adoption, extraction run, RAG/MCP/graph service or memory admission.
 
 ## Version History
+
+- 1.1 (2026-09-15): All five rows closed after b1043afe and attributed minor
+  CDC replay corrections; see cdc-verification.md. No semantic acceptance.
+  Slice13 opens eight actor-identity pairs; remaining provenance work stays
+  explicitly owned by planned Slice14. Was: initial execution open.
 
 - 1.0 (2026-09-15): Opens the bounded replay portion of former Slice03 after
   CQ closure; transfers provenance semantics intact to planned Slice13.

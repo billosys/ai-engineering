@@ -30,8 +30,8 @@
     "full": 555,
     "accepted": 180,
     "remaining": 375,
-    "next_slice": 0,
-    "not_yet_sliced": 375
+    "next_slice": 8,
+    "not_yet_sliced": 367
   },
   "accepted_pairs": [
     ["aliases","concept-card"],
@@ -593,6 +593,15 @@
     ["worker_scope.worker_count","extraction-run"]
   ],
   "remaining_owner": "arc06-semantic-families-and-capability-requirements",
-  "next_slice": "arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts",
-  "next_slice_pairs": []
+  "next_slice": "arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics",
+  "next_slice_pairs": [
+    ["actor","claim"],
+    ["actor","competency-question"],
+    ["actor","concept-card"],
+    ["actor","extraction-run"],
+    ["actor.id","claim"],
+    ["actor.id","competency-question"],
+    ["actor.id","concept-card"],
+    ["actor.id","extraction-run"]
+  ]
 }

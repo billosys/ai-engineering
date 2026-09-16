@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.10"
+version: "1.11"
 ---
 
 # Semantic Families And Capability Requirements
@@ -21,14 +21,21 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
 
-Current: Slice02 independently closed after ca1df926, with an attributed
-scalar/snapshot replay completion. All six rows pass. Current coverage is
-180 accepted / 375 remaining. Open Slice03 for reusable evidence/replay
-mechanics only; new Slice13 inherits all actor/run/preparation and shared-
-reference semantics, including the CQ interfaces formerly routed to Slice03.
-Those semantics must be sized into exact assignments before execution.
-This is a split of the original workload, not a deferral outside the project.
-Slice03 accepts zero pairs and implements no generic helper/framework.
+Current: Slice03 closed after b1043afe with attributed minor CDC replay
+corrections; all five rows pass, zero semantic pairs accepted. The original
+CC recipe reproduced, but its digest control needed the real hash comparator,
+its wrapper needed fail-closed extraction, and opening counts needed separation
+from live status. See Slice03 cdc-verification.md for attribution and reruns.
+Was: Slice03 open and Slice13 unsized after Slice02 closure.
+
+Open Slice13 for actor/actor.id across claim, competency-question, concept-card
+and extraction-run: exactly eight remaining pairs. Inspect mode/role and
+run/source context as needed, without accepting those memberships here.
+Planned Slice14 inherits ALL other former Slice13 actor/run/preparation/method/
+shared-reference semantic responsibilities, including remaining CQ interfaces.
+Size/split Slice14 before opening; it is not an unlimited execution packet.
+Coverage remains 180 accepted / 375 remaining, eight assigned / 367 outside.
+No generic helper/framework, source implementation or schema adoption.
 
 ### Superseded Slice02 Repair Routing
 
@@ -91,7 +98,7 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 
 Current coverage is recorded separately in
 [semantic-coverage-current.json](../artifacts/semantic-coverage-current.json):
-180 accepted, 375 remaining, zero assigned to the replay-only Slice03.
+180 accepted, 375 remaining, eight assigned to Slice13 and 367 not yet sliced.
 The original transition and its registered hashes remain unchanged. Slice12
 contributes repairs to Slice01, not a second 35-pair acceptance.
 
@@ -114,7 +121,8 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
 6. Reuse executable checks and registries. Slice03 establishes the shared
    evidence/replay contract with two worked cases; any justified tooling
    needs a separately scoped follow-up, not a framework inside Slice03.
-   Slice13 owns provenance semantics and must be sized/split before opening.
+   Slice13 owns eight actor-identity pairs; Slice14 retains the remaining
+   provenance semantics and must be sized/split before opening.
    Slice09 integrates
    all-input nine-root replay and validates original codec/EOF obligations.
    Earlier slices may use bounded literal existing-tool recipes, not build a
@@ -132,9 +140,10 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
 | `slice01-relationship-semantics-and-traversal` | 35-pair legacy/current relationship comparison and bounded query diagnostics | Accepted Arc01 and transition snapshot | Independently closed after Slice12 repair; 35 pairs accepted |
 | `slice12-relationship-policy-and-replay-remediation` | Historical policy/observation reconciliation and fail-closed support search; zero new pairs | Slice01 Iteration 05 evidence and CDC findings R5/R6 | Independently closed; CC repairs plus attributed prior-text restoration |
 | `slice02-competency-questions-and-answerability` | 30-pair question/role, component coverage, answerability and card-link comparison | Independently closed Slice01/Slice12 and accepted Arc01 | Independently closed; 30 pairs accepted |
-| `slice03-provenance-and-shared-reference-contracts` | Reusable planning-evidence/replay contract and two native worked cases; zero semantic pairs | Closed Slice01/02/12 | Open; no new helper/framework |
-| `slice13-provenance-family-semantics` | Original Slice03 actor/run/preparation and shared-reference semantic responsibilities, including CQ provenance interfaces | Slice03 replay evidence and accepted identity/source inputs | Size/split into exact bounded assignments before opening |
-| `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts and needed Slice13 provenance inputs | Plan when near |
+| `slice03-provenance-and-shared-reference-contracts` | Reusable planning-evidence/replay contract and two native worked cases; zero semantic pairs | Closed Slice01/02/12 | Closed with attributed minor CDC replay corrections |
+| `slice13-provenance-family-semantics` | Eight actor/actor.id pairs across claim, CQ, card and extraction-run | Closed Slice03 and accepted identity/source inputs | Open; no other semantic assignments |
+| `slice14-provenance-context-and-reference-semantics` | All other original actor/run/preparation/method/shared-reference responsibilities and remaining CQ provenance interfaces | Slice13 findings and shared replay contract | Planned ownership; size/split before opening |
+| `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts and needed Slice13/14 provenance inputs | Plan when near |
 | `slice05-validation-and-verification` | Structural checks versus semantic verification, coverage, independence and applicability | Slices03/04 | Plan when near |
 | `slice06-reconciliation-and-revision-effects` | Conflicts, decisions, affected/resulting constructs and revision consequences | Slices03-05 | Plan when near |
 | `slice07-preservation-and-prior-value` | Retained value, destinations, prior decisions and operator-review boundaries | Slice06 and shared contracts | Plan when near |
@@ -155,8 +164,14 @@ alone cover 40 remaining pairs across ten kinds; adding run/preparation/method
 contexts plus reusable replay would repeat the combined-workload problem.
 Keep the established Slice03 directory name for continuity, but its open set
 now owns only operational evidence mechanics. Slice13 inherits the semantic
-work in full; its exact assignments remain subject to pre-opening sizing.
-This owner amendment supersedes older handoffs naming Slice03 for semantics.
+work in full in v1.10. After Slice03 review, the first eight-pair actor-identity
+unit opens as Slice13 (not an unbounded Slice13A batch hierarchy). Slice14
+inherits the complement: actor/actor.id in the other six kinds, actor.mode/
+actor.role in all ten kinds, and all other original run/preparation/method/
+shared-reference responsibilities. Arc06 owns all 367 unassigned pairs,
+including later evidence/lifecycle families; they are not all assigned to
+Slice14. This owner amendment supersedes older handoffs naming Slice03 or
+all of Slice13 for those responsibilities. No obligation is removed.
 
 ## Research And Capability Priorities
 
@@ -203,6 +218,11 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.11 (2026-09-15): Slice03 closes with attributed minor replay corrections.
+  Its handoff supports an eight-pair Slice13 opening; Slice14 retains all
+  remaining provenance scope for sizing, replacing the unsized whole-family
+  Slice13 hypothesis. Counts remain 180 accepted / 375 remaining.
 
 - 1.10 (2026-09-15): Independently closes Slice02, adds its 30 pairs once,
   records attributed replay completion and opens bounded Slice03. Original

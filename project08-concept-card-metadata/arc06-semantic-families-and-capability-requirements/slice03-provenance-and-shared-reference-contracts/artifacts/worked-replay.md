@@ -1,16 +1,28 @@
 # Worked replay: committed authority and native query
 
-Status: CC proposed-done pending independent CDC verification. Run the fenced
+Status: CC packet reviewed with attributed CDC replay corrections; see
+`../cdc-verification.md`. Run the fenced
 block from the source checkout. In committed mode CDC must extract the block
 from the claimed endpoint with `git show`, rather than executing a later
 working-tree copy:
 
 ```bash
-CC_COMMIT=<slice03-commit>
-git -C /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning show "$CC_COMMIT:project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/worked-replay.md" |
-  awk '/^~~~bash$/{p=1;next} /^~~~$/{if(p){exit}} p' |
-  CC_COMMIT="$CC_COMMIT" bash
+set -euo pipefail
+CC_COMMIT=b1043afe6b62c019fbcd29dd01c927ea7f9572ac
+REPLAY_COMMIT=HEAD
+REPLAY_COMMIT=$(git -C /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning rev-parse "$REPLAY_COMMIT^{commit}")
+printf 'recipe=%s contribution=%s\n' "$REPLAY_COMMIT" "$CC_COMMIT"
+replay=$(git -C /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning show "$REPLAY_COMMIT:project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/worked-replay.md" |
+  awk '/^~~~bash$/{p=1;next} /^~~~$/{if(p){exit}} p')
+test -n "$replay"
+CC_COMMIT="$CC_COMMIT" bash <<< "$replay"
 ```
+
+`CC_COMMIT` pins the five-file contribution being checked; `REPLAY_COMMIT`
+selects the recipe. Pin the latter to the CDC commit for the corrected recipe,
+or set both to the CC endpoint to reproduce the original recipe and its
+documented limitations. Record both values. The extraction fails on a missing
+Git input or empty code block instead of successfully executing an empty shell.
 
 The route also supports `CC_PRECOMMIT=1` after the five files are staged. That
 mode checks the union of unstaged tracked changes, staged tracked changes and
@@ -44,15 +56,18 @@ semantic-coverage   770b0ea12ff8b260ce10b9cb5fea9a5c63e119993195111176bd6d488956
 
 The route checks those exact bytes against the explicit commit. It then reads
 the current planning files live, computes their current digests, checks the
-current coverage artifact's own purpose and values (`180` accepted, `375`
-remaining, `0` assigned), and confirms the three current files differ from the
+opening coverage values (`180` accepted, `375` remaining, `0` assigned)
+from the opening commit. Separately it checks the live register's purpose,
+actual array counts and accounting invariants, and confirms the three current
+files differ from the
 historical bytes. This demonstrates review/coverage advancement without using
 a stale digest as the meaning of current status.
 
 Controls:
 
-- A deliberately wrong digest is passed to `cmp`; its status is `1`, a
-  comparison failure.
+- A deliberately wrong 64-character digest is compared with the computed
+  SHA-256 using the same equality operation as the positive case; status is
+  `1`, a comparison failure.
 - An invalid Git commit/path is requested with `git show`; its status is `128`
   and stderr is non-empty, a Git/input error.
 
@@ -79,8 +94,9 @@ The independently authored expected result is:
 
 The observed object is computed by running the same parameterized `jq`
 selection over the frozen inventory. The route compares parsed JSON with
-`jq -S`, then reverses object key order and confirms the structurally equal
-object still passes. It never uses the authored expected object as observed.
+`jq` value equality, then reverses object key order and confirms the
+structurally equal object still passes. It never uses the authored expected
+object as observed.
 
 The same native inventory read derives the current CQ tuple from the rich
 profile card:
@@ -187,13 +203,24 @@ test "$live_plan_sha" != "$historical_plan"
 test "$live_ledger_sha" != "$historical_ledger"
 test "$live_coverage_sha" != "$historical_coverage"
 jq -e '(.artifact_kind=="current-semantic-coverage") and (.meaning|contains("Current accepted inventory interpretation"))' "$live_coverage" >/dev/null
-jq -e '.counts.accepted==180 and .counts.remaining==375 and .counts.next_slice==0 and .counts.not_yet_sliced==375' "$live_coverage" >/dev/null
+git -C "$plan" show "$opening_planning:$hist_coverage" > "$tmp/opening-coverage.json"
+jq -e '.counts.accepted==180 and .counts.remaining==375 and .counts.next_slice==0 and .counts.not_yet_sliced==375' "$tmp/opening-coverage.json" >/dev/null
+jq -e '
+  .counts as $c |
+  $c.full==555 and $c.accepted==(.accepted_pairs|length) and
+  $c.remaining==(.remaining_pairs|length) and
+  $c.next_slice==(.next_slice_pairs|length) and
+  $c.full==($c.accepted+$c.remaining) and
+  $c.remaining==($c.next_slice+$c.not_yet_sliced) and
+  ((.accepted_pairs + .remaining_pairs)|unique|length)==$c.full and
+  ((.next_slice_pairs - .remaining_pairs)|length)==0
+' "$live_coverage" >/dev/null
 printf 'live.plan.sha256=%s\n' "$live_plan_sha"
 printf 'live.ledger.sha256=%s\n' "$live_ledger_sha"
-printf 'live.coverage.sha256=%s accepted=180 remaining=375 next_slice=0\n' "$live_coverage_sha"
+printf 'live.coverage.sha256=%s counts=%s\n' "$live_coverage_sha" "$(jq -c .counts "$live_coverage")"
 
 set +e
-printf '%s\n' wrong-digest | cmp -s "$hist_dir/plan" -
+test "$(shasum -a 256 "$hist_dir/plan"|awk '{print $1}')" = 0000000000000000000000000000000000000000000000000000000000000000
 wrong_digest_status=$?
 git -C "$plan" show "$historical:project08-concept-card-metadata/no-such-slice.md" > "$tmp/invalid.stdout" 2> "$tmp/invalid.stderr"
 invalid_path_status=$?

@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.24"
+version: "1.25"
 ---
 
 # Concept Card Metadata
@@ -142,7 +142,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/12 closed; Slice03 opens bounded replay mechanics; provenance analysis preserved for Slice13 |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12 closed; Slice13 opens eight actor-identity pairs; Slice14 retains the remaining provenance work for sizing |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -151,10 +151,14 @@ quality review. No earlier level substitutes for a later one.
 Arc06 is the next arc in dependency order, not a post-closure addendum.
 Slice02 CDC review of ca1df926 closes all six rows with an attributed minor
 replay completion; was: four repair findings open. Current accepted coverage
-is 180/555. Split the combined next workload before execution: Slice03 owns
-reusable evidence/replay mechanics with zero new semantic pairs; Slice13
-inherits provenance and shared-reference semantic analysis intact and will
-be sized before opening. No requirement or schema/UAT gate is reduced.
+is 180/555. Slice03 is now closed after b1043afe, with attributed minor CDC
+replay corrections and zero semantic acceptance. Was: bounded replay work
+open, all provenance semantics planned in Slice13. Slice13 now takes exactly
+eight actor/actor.id pairs across four record kinds; new planned Slice14
+retains every other original provenance/shared-reference obligation and must
+be sized/split before execution. Current accounting is 180 accepted, 375
+remaining, eight assigned and 367 not yet sliced. No requirement or schema/UAT
+gate is reduced.
 The [three-slice workload assessment](./artifacts/cc-workload-observations.md)
 is complete; its observations support a bounded, better-integrated repair,
 not an automatic model change or a reduction of evidence requirements.
@@ -366,6 +370,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.25 (2026-09-15): Arc06 Slice03 CDC closure verifies reusable replay with
+  attributed control/snapshot corrections. Opens eight-pair Slice13 and
+  preserves remaining provenance responsibilities under planned Slice14;
+  was: unsized Slice13. No new semantic acceptance or schema adoption.
 
 - 1.24 (2026-09-15): Arc06 Slice02 independently closes after ca1df926 and
   attributed replay completion; 180 accepted, 375 remaining. Splits the

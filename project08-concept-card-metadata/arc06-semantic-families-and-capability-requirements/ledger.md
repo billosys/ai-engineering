@@ -1,19 +1,20 @@
 # Arc06 Ledger
 
-All arc rows remain open after independent Slice01/02/12 closure on
+All arc rows remain open after Slice01/02/03/12 closure on
 2026-09-15. Original Slice01 contributes 35 pairs and Slice02 adds 30;
 current coverage is 180 accepted / 375 remaining. Slice12 adds zero.
-Slice03 opens replay mechanics, zero pairs; planned Slice13 inherits all
-original Slice03 provenance/shared-reference semantics for bounded sizing.
-Was: Slice02 Iteration 01 pending. See its final CDC closure section.
+Slice03 closes replay mechanics with attributed CDC corrections, zero pairs.
+Slice13 opens eight actor-identity pairs; Slice14 retains the other original
+provenance/shared-reference responsibilities for sizing. Was: Slice03 open,
+Slice13 unsized. No arc composition row closes from child closure alone.
 The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| A6-1 | Frozen coverage, finer contexts and discoveries have complete ownership | Derive union and disjoint sets; inspect all transfers | serious | S1-4, S4-2/S4-6, A1-1, P-1 | open | ../artifacts/semantic-coverage-current.json | 180 accepted; 375 remain with Arc06; Slice03 has zero semantic assignment |
+| A6-1 | Frozen coverage, finer contexts and discoveries have complete ownership | Derive union and disjoint sets; inspect all transfers | serious | S1-4, S4-2/S4-6, A1-1, P-1 | open | ../artifacts/semantic-coverage-current.json | 180 accepted; 375 remain; Slice13 assigns eight, 367 retain Arc06 ownership |
 | A6-2 | Relationships and CQs preserve meanings and computational distinctions | Review evidence and reproduce bounded query cases without prose-invented edges | serious | S4-4/S4-5, P-3 | open | | Slices01/02; equivalence not assumed |
-| A6-3 | Provenance/common references have role-specific identity, scope and exceptions | Trace actors/runs/sources/references across populated/template contexts | serious | Arc01 Slice05, P-4/P-6 | open | | Slice13 semantics, Slice03 operational evidence; shape is not authority |
+| A6-3 | Provenance/common references have role-specific identity, scope and exceptions | Trace actors/runs/sources/references across populated/template contexts | serious | Arc01 Slice05, P-4/P-6 | open | slice03-provenance-and-shared-reference-contracts/cdc-verification.md | Slice13 bounded actor identity, Slice14 remaining provenance; shape is not authority |
 | A6-4 | Evidence, confidence, validation and verification stay distinct | Review subject/rubric/coverage/independence/applicability cases | serious | Arc01 Slice05, P-4 | open | | Slices04/05 |
 | A6-5 | Reconciliation, preservation and admission retain decision scope/authority | Trace conflict, revision, prior value, approval and reliance cases | serious | Arc01 Slice05, P-4/P-6 | open | | Slices06-08; no automatic admission |
 | A6-6 | Every remaining family and cross-family marker has supported contextual dispositions | Review member meanings, evidence layers, exceptions and consequences | serious | S1-4/S1-5, S4-3/S4-4/S4-5, P-1 | open | | No catch-all placeholders |
