@@ -1,10 +1,11 @@
 # CC Proposed-Done: Arc06 Slice13
 
-Status: proposed-done pending independent CDC verification. This packet
-performs contextual semantic analysis of exactly eight actor/actor.id pairs
-across claim, competency-question, concept-card and extraction-run records.
-It accepts zero semantic pairs, does not close the slice, does not open
-Slice14 and does not adopt a schema or specification.
+Status: proposed-done pending independent CDC verification. This repair
+performs bounded R1-R4 evidence/replay repair for the original contextual
+analysis of exactly eight actor/actor.id pairs across claim,
+competency-question, concept-card and extraction-run records. It accepts zero
+semantic pairs, does not close the slice, does not open Slice14 and does not
+adopt a schema or specification.
 
 ## Pinned state and endpoints
 
@@ -12,10 +13,12 @@ Slice14 and does not adopt a schema or specification.
   current commit `e763c661592ff1097a94bb470db9cf924524579d`; source remained
   clean and read-only. No source commit was made.
 - Planning checkout: `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning`,
-  opening commit `609f2f558b100a06df42e6a8b85ebfe200a27b22`, clean before this
-  packet.
-- CC planning endpoint: pending until the exact six-file planning commit is
-  created. The committed replay must use that actual SHA as `CC_COMMIT`.
+  original opening commit `609f2f558b100a06df42e6a8b85ebfe200a27b22`; original
+  CC endpoint `78be7fabae79039ef3f24daa639d8e314ebcee0f`.
+- Repair opening commit: `e42419482aebabcdac9be9e3032daa8f72da09d3`; the repair
+  CC endpoint is the commit containing this six-file packet and is returned
+  with the handoff. The committed replay must use that actual SHA as both
+  `CC_COMMIT` and, independently, `REPLAY_COMMIT`.
 - Coverage remains 180 accepted / 375 remaining / eight assigned / 367
   outside. The current coverage register and immutable transition register
   were not changed; assignment is not acceptance.
@@ -24,22 +27,26 @@ Slice14 and does not adopt a schema or specification.
 
 ## Validation and controls
 
-The complete literal route is in `artifacts/validation-evidence.md`. CC
-replayed it in staged precommit mode before the commit and must replay it
-again after commit against the actual endpoint. Its claimed checks are:
+The complete literal route and fail-closed wrapper are in
+`artifacts/validation-evidence.md`. CC replayed the route in staged precommit
+mode before the commit and must replay it again after commit against the actual
+endpoint. Its claimed checks are:
 
-- all 40 registered input hashes, the frozen inventory hash and the opening
-  planning/current-coverage authority;
+- all registry-derived input hashes, the frozen inventory hash and the
+  repair-opening planning/coverage authority;
 - exact six-file scope and whitespace, with source and protected prior
   planning history unchanged;
-- current coverage's exact eight-pair assignment, inclusion in the remaining
-  set, disjointness from 180 accepted pairs and 180/375/8/367 accounting;
+- plan-derived exact eight-pair assignment, inclusion in the repair-opening
+  remaining set, disjointness from accepted pairs and 180/375/8/367 accounting;
 - the native 37-record census: one claim, two CQ, 31 card and three run
-  mappings, with 12 absent parents, four object/null templates and 21
-  object/string card actors;
-- byte-equal rich/teaching original and preserved-copy mappings;
+  mappings, with family/state/label breakdown and three named parse exclusions;
+- the 2,054 parsed legacy untyped mapping census, explicit parent absence and
+  not-applicable nested `actor.id` state;
+- byte-equal rich/teaching original and preserved-copy mappings resolved
+  through their registered manifest entries;
 - independently authored expected generated actor versus native `codex`
   observation, deliberately wrong expected identity as comparison failure;
+- valid-registry, invalid-member and dangling-reference controls;
 - template object/null versus expanded-card parent absence, successful bounded
   no-match, and missing-input jq tool error with non-empty stderr.
 
@@ -50,16 +57,17 @@ or schema conformance.
 
 ## Six-row CC walk
 
-All six opening rows are addressed exactly once and are CC-attested, not
-independently closed.
+All six rows are addressed exactly once. S13-1 and S13-6 retain their prior
+CDC-verified status; S13-2 through S13-5 are CC-attested proposed-done by this
+repair and remain pending independent CDC closure.
 
 | Row | CC disposition | Evidence and limit |
 | --- | --- | --- |
 | S13-1 | done (CC-attested) | Exact eight pairs, current 180/375/8/367 accounting, remaining-set inclusion and accepted-set disjointness are recorded in `semantic-membership.json` and the literal route. |
-| S13-2 | done (CC-attested) | Native 37-mapping census preserves record-kind, parent/child, template/synthetic/generated and malformed-parse distinctions; selected raw witnesses are registered and read. |
-| S13-3 | done (CC-attested) | All eight member meanings include applicability, effective meaning, exceptions, disposition, operational consequences and unresolved questions; root record identity is kept separate from actor identity. |
-| S13-4 | done (CC-attested) | Native generated match, wrong expected identity, template-null/actual-absent comparison, successful no-match and missing-input tool error are captured without collapsing classifications. |
-| S13-5 | done (CC-attested) | The literal route registers and rehashes every input, checks original/copy mappings, fixed opening history, exact six-file scope and whitespace. Committed-endpoint reproduction remains a CDC gate. |
+| S13-2 | proposed-done (CC-attested) | Native 37-mapping family/state/label census, three named YAML exclusions and 2,054 legacy untyped comparison reconcile to the frozen inventory; pending independent CDC. |
+| S13-3 | proposed-done (CC-attested) | All eight meanings retain applicability, exceptions, consequences and unknowns; corrected field-group and project-instruction evidence attribution remains bounded; pending independent CDC. |
+| S13-4 | proposed-done (CC-attested) | Native match, wrong expected identity, template-null/actual-absent comparison, successful no-match and jq tool error are retained; swallowed raw search removed; pending independent CDC. |
+| S13-5 | proposed-done (CC-attested) | Fail-closed wrapper, endpoint registry binding, derived evidence count, manifests/native bytes, fixed history boundaries, protected paths and exact six-file scope are checked; pending independent CDC. |
 | S13-6 | done (CC-attested) | Handoff preserves the 32-pair actor-family complement, broader Slice14 provenance work, other family owners and P-15, with concrete candidate sizing and no opened successor slice. |
 
 ## Artifact inventory and exact scope
@@ -97,8 +105,8 @@ provenance units. This is a proposal only. Slice14 must be sized and opened by
 the planning authority before execution; it is not opened here.
 
 Silent-drop check: specified scope is eight pairs, four artifacts, six ledger
-rows, two diagnostics, registered inputs, literal replay, exact six-file
+rows, R1-R4 repair controls, registered inputs, literal replay, exact six-file
 scope, preserved prior work and explicit P-15 boundary. Delivered scope is the
 same. Zero semantic pairs are accepted, and all 367 outside current pairs stay
-Arc06-owned. CDC must independently rerun the committed route, inspect the
-actual six-file diff and decide all six rows before this slice can close.
+Arc06-owned. CDC must independently rerun the committed wrapper, inspect the
+actual repair diff and decide S13-2 through S13-5 before this slice can close.

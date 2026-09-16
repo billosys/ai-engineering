@@ -10,8 +10,10 @@ route against that endpoint.
 
 - Source checkout: `e763c661592ff1097a94bb470db9cf924524579d`, clean and
   unchanged.
-- Planning opening checkout: `609f2f558b100a06df42e6a8b85ebfe200a27b22`, clean
-  before work.
+- Original planning opening: `609f2f558b100a06df42e6a8b85ebfe200a27b22`; original
+  CC endpoint: `78be7fabae79039ef3f24daa639d8e314ebcee0f`.
+- Repair planning opening: `e42419482aebabcdac9be9e3032daa8f72da09d3`, clean
+  before this repair; the repair endpoint is recorded in `closing-report.md`.
 - Opening/current accounting: 180 accepted / 375 remaining / eight assigned /
   367 outside. Assignment is not acceptance and the coverage register was not
   changed.
@@ -24,13 +26,14 @@ route against that endpoint.
 The durable packet contains:
 
 1. `artifacts/semantic-membership.json`: the exact eight pairs, eight
-   member-specific meanings, 37-record native census, 40 registered inputs,
+   member-specific meanings, 37-record native census, 51 registered inputs,
    two original/copy mappings, limits and unresolved questions.
 2. `artifacts/semantic-evidence.md`: contextual rule/body/witness comparison,
    parse and parent/child state distinctions, operational consequences and
    outside ownership.
 3. `artifacts/validation-evidence.md`: the complete Bash/jq/Git/hash route,
-   independent expected values, native observations and negative controls.
+   independent expected values, native observations, R1 registry mutation
+   controls, R2 endpoint/snapshot separation and R3/R4 negative controls.
 4. This handoff and the six-row closeout in `closing-report.md`.
 
 ## Supported conclusions
@@ -55,6 +58,36 @@ The durable packet contains:
 6. The packet does not choose actor classes, role/mode semantics, requiredness,
    schema language, specification format, migration policy or operator
    acceptance. P-15 remains open.
+
+## Iteration 01 repair dispositions
+
+- **R1 — repaired in the CC route:** the expected eight pairs are derived from
+  the repair-opening slice plan, compared with the authored scope and actual
+  memberships, and checked for uniqueness, inclusion and disjointness against
+  the repair-opening coverage snapshot. Meaning IDs and both member/shared
+  evidence-ID layers resolve. Invalid-member and dangling-reference variants
+  are rejected by the same predicates. Baseline mappings resolve through their
+  registered manifests and native bytes.
+- **R2 — repaired in the CC route:** the original `609f2f55 → 78be7fab`
+  history, repair-opening `e4241948 → repair endpoint` history and current
+  live status are recorded separately. The committed wrapper extracts its
+  recipe by a separate revision and loads the registry from `CC_COMMIT`; the
+  repair-opening plan, coverage and frozen inventory are Git-pinned. Live
+  coverage is reported without requiring obsolete assignment bytes.
+- **R3 — repaired by explicit removal:** the redundant raw actor `rg` search
+  that swallowed errors is no longer presented as evidence. Hash-bound native
+  field-state checks remain, and the jq missing-input control still records a
+  real status-2 tool error with stderr. Successful no-match remains distinct.
+- **R4 — repaired:** the native route reproduces the 2,054 parsed legacy
+  untyped mappings with absent actor parents and not-applicable nested
+  `actor.id`; compares every authored 37-record family/state/label cell and
+  the three named YAML exclusions; registers the third synthetic card witness;
+  corrects the field-group attribution; and registers Project08 instructions
+  separately from planning-root instructions with precise source ranges.
+
+These are CC repair attestations, not independent CDC closure. S13-1 and
+S13-6 retain their prior CDC-verified status; S13-2 through S13-5 require a
+fresh independent committed replay and review.
 
 ## Concrete unresolved decisions and tests
 

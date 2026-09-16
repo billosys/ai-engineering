@@ -9,18 +9,25 @@ acceptance, extraction-quality acceptance, operator approval or memory work.
 - Source checkout: `/Users/oubiwann/lab/billosys/ai-engineering`, opening
   `e763c661592ff1097a94bb470db9cf924524579d`, clean and read-only.
 - Planning checkout: `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning`,
-  opening `609f2f558b100a06df42e6a8b85ebfe200a27b22`, clean before this packet.
-- Current coverage input at opening: 180 accepted / 375 remaining / eight
-  assigned / 367 not yet sliced. Its live SHA-256 was
+  original opening `609f2f558b100a06df42e6a8b85ebfe200a27b22` and repair opening
+  `e42419482aebabcdac9be9e3032daa8f72da09d3`; both were clean before their
+  respective scoped contributions.
+- Repair-opening coverage authority: 180 accepted / 375 remaining / eight
+  assigned / 367 not yet sliced. Its pinned snapshot SHA-256 was
   `5d4413abe585274750544784627f65b6f83668596815d55c6a1e9dbcd9339070`.
-- The assignment is exactly the eight `[field_path, record_kind]` pairs in the
-  slice plan. Assignment is not acceptance; no coverage register was edited.
+- The repair derives the assignment from the pinned slice plan and checks it
+  against the repair-opening coverage snapshot. Assignment is not acceptance;
+  no coverage register was edited. Current live coverage is reported separately
+  and is not required to retain obsolete assignment bytes.
 - The frozen transition register remains the immutable 555-pair, 115/440
   baseline. This packet does not add memberships to accepted coverage.
 
 The complete registered input and hash manifest is in
-`semantic-membership.json`. The mutable planning authority is pinned to the
-opening planning commit; live status and the current coverage digest are
+`semantic-membership.json`. The original contribution boundary is `609f2f55`
+to `78be7fab`, exactly six CC files. This repair boundary is `e4241948` to its
+new CC endpoint, restricted to the authorized subset of those six files;
+intervening CDC plans, review and prompt files are excluded. The repair-opening
+planning authority is pinned to `e4241948`; live status and current coverage are
 reported separately. The original/copy mappings for the rich and teaching
 witnesses are retained without treating a byte-equal copy as an independent
 source read.
@@ -61,12 +68,38 @@ The parse exclusions are not negative actor evidence. The three named rich
 rerun cards failed the frozen YAML parse and therefore do not contribute
 records; `INDEX.md` is a non-card index, not a malformed-card substitute.
 
+The native family breakdown is: four template object/null records; six
+synthetic records with absent parents (one CQ, three cards and two runs); six
+expanded Arc07 cards with absent parents; four Arc07 pilot cards with
+`codex-cc`; seven rich-rerun cards with `codex`; and ten teaching-rerun cards
+with `codex`. All 21 populated actor objects carry `mode: agent-direct` and
+`role: extractor`. The registered synthetic card witnesses include
+`claim-backed-card.md`, `minimal-card.md` and `rich-profile-card.md`; none is
+silently counted as a template or generated rerun.
+
+### Legacy untyped comparison
+
+The frozen inventory also contains 2,054 parsed legacy mappings whose
+`record_kind` is untyped. A native query over those object-valued mappings
+found actor parent absent in all 2,054 records, with zero null, empty-object,
+populated-object, unexpected-type or literal dotted `actor.id` keys. Because
+the parent is absent, nested `actor.id` is explicitly not applicable in all
+2,054 records; it is not a child-null observation. This is a bounded result for
+the inspected frozen inventory, not a claim that legacy provenance never
+existed outside it.
+
 ## Rules and contextual readings
 
-The current field-group reference places actor on claim, competency-question,
-concept-card and extraction-run records, but it does not provide a closed
-actor ontology. The templates expose a common `{id, role, mode}` shape with
-null placeholders. The operator-workflow and extraction guides require actual
+The field-group reference is narrower than the prior wording claimed:
+`record-field-groups.md` lines 7-20 explicitly name `actor` in the
+extraction-run row (line 15) and preservation-decision row (line 19); the
+table does not itself list actor for claim, competency-question or concept-card.
+The four selected placements come from the template frontmatter instead:
+claim `claim.md:1-22`, CQ `competency-question.md:1-35`, concept card
+`concept-card.md:1-27`, and extraction run `extraction-run.md:1-35`. Those
+templates expose a common `{id, role, mode}` shape with null placeholders.
+The operator-workflow guidance (`02-operator-workflow.md:3-10,36-43,98-127`)
+and extraction guidance (`03-extraction.md:40-58,135-163`) require actual
 actor/provenance observations to remain separate from source identity, run
 identity, support, validation, verification and admission. The extraction
 guide specifically describes an extraction run as recording actual actor and
@@ -94,6 +127,7 @@ provenance sections, not only as frontmatter:
 | CompCogNeuro teaching rerun `cc-model-data-constraints.md` | Revision 3; `actor.id: codex`, `agent-direct`, `extractor`; a different CQ id and body/profile framing. | A generated teaching-family actor observation and family-specific context. | That the same label denotes one globally identified principal or that the rich/teaching CQ identities are equivalent. |
 | `cq-coverage.md` | Synthetic CQ body and populated component refs, but no actor parent. | A standalone CQ absent-parent observation and the boundary between coverage and answerability. | A CQ actor, reviewer identity or source authority. |
 | `extraction-run-trace.md` / `parallel-worker-default-recipe.md` | Synthetic run traces with worker scope but no actor parent. | The distinction between worker-scope/recipe roles and a run actor mapping. | A populated run actor or evidence that the recipe was an actual run. |
+| `claim-backed-card.md`, `minimal-card.md`, `rich-profile-card.md` | Three synthetic concept-card records omit the actor parent. | Three synthetic absent-parent card observations, distinct from the template object/null. | That an actor was never present, or that the field is inapplicable. |
 | Four current templates | Actor object is present with null `id`, `mode` and `role`. | Explicit template object/null state. | Requiredness, actor class, or a populated identity contract. |
 
 The rich and teaching original files are registered with their preserved
