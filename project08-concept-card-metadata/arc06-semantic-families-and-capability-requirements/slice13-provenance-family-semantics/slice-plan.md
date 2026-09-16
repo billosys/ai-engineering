@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice13-provenance-family-semantics
-status: active
+status: changes-required
 depends-on: [slice03-provenance-and-shared-reference-contracts]
-version: "1.0"
+version: "1.1"
 ---
 
 # Actor Identity Across Four Record Kinds
@@ -14,6 +14,15 @@ competency-question, concept-card and extraction-run records. Compare documented
 rules, template placeholders, populated examples and generated observations.
 This is inventory interpretation, not a new actor model or normative schema.
 P-15 remains open.
+
+## Current Review
+
+CDC reviewed 78be7fab. S13-1/S13-6 are verified; S13-2 through S13-5 remain
+open for the bounded R1-R4 repairs in cdc-verification.md. Preserve the existing
+eight-pair semantic work; complete the missing checks and evidence without
+expanding the family. Use artifacts/iteration-01-cc-prompt.md in a new session.
+Was: initial execution. Original acceptance criteria and six-file CC scope
+remain unchanged. No Slice14 opening or semantic-pair acceptance.
 
 ## Exact Assignment And Sizing
 
@@ -154,6 +163,10 @@ headroom. Do not expand scope or reduce criteria. CC marks proposed-done only;
 CDC acceptance, Arc06 composition and P-15 remain separate gates.
 
 ## Version History
+
+- 1.1 (2026-09-15): Initial CDC review retains scope/handoff and requires
+  bounded replay/evidence repair, R1-R4. Was: first execution; original
+  assignment, criteria, source fences and remaining owners unchanged.
 
 - 1.0 (2026-09-15): Opens the eight-pair actor-identity unit after Slice03
   replay closure. Was: unsized full provenance family; complement explicitly

@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.11"
+version: "1.12"
 ---
 
 # Semantic Families And Capability Requirements
@@ -20,6 +20,17 @@ not deliver its full original capability; administrative closure is not a
 dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
+
+Slice13 submission 78be7fab is changes-required. CDC independently reproduces
+the 40 hashes, 37-record census, native controls and exact six-file scope.
+S13-1/S13-6 are verified; four rows remain open for R1-R4 in its CDC report.
+Iteration 01 repairs authored-registry validation, historical/live replay
+separation, suppressed search errors and bounded census/citation omissions.
+The native actor distinctions are retained; no wholesale semantic rewrite.
+Was: initial Slice13 execution. Slice14 stays unopened and coverage remains
+180 accepted / 375 remaining / eight assigned / 367 outside.
+
+### Retained Slice03 Closure And Slice13 Opening
 
 Current: Slice03 closed after b1043afe with attributed minor CDC replay
 corrections; all five rows pass, zero semantic pairs accepted. The original
@@ -141,7 +152,7 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
 | `slice12-relationship-policy-and-replay-remediation` | Historical policy/observation reconciliation and fail-closed support search; zero new pairs | Slice01 Iteration 05 evidence and CDC findings R5/R6 | Independently closed; CC repairs plus attributed prior-text restoration |
 | `slice02-competency-questions-and-answerability` | 30-pair question/role, component coverage, answerability and card-link comparison | Independently closed Slice01/Slice12 and accepted Arc01 | Independently closed; 30 pairs accepted |
 | `slice03-provenance-and-shared-reference-contracts` | Reusable planning-evidence/replay contract and two native worked cases; zero semantic pairs | Closed Slice01/02/12 | Closed with attributed minor CDC replay corrections |
-| `slice13-provenance-family-semantics` | Eight actor/actor.id pairs across claim, CQ, card and extraction-run | Closed Slice03 and accepted identity/source inputs | Open; no other semantic assignments |
+| `slice13-provenance-family-semantics` | Eight actor/actor.id pairs across claim, CQ, card and extraction-run | Closed Slice03 and accepted identity/source inputs | Changes-required; bounded Iteration 01, S13-1/S13-6 verified |
 | `slice14-provenance-context-and-reference-semantics` | All other original actor/run/preparation/method/shared-reference responsibilities and remaining CQ provenance interfaces | Slice13 findings and shared replay contract | Planned ownership; size/split before opening |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts and needed Slice13/14 provenance inputs | Plan when near |
 | `slice05-validation-and-verification` | Structural checks versus semantic verification, coverage, independence and applicability | Slices03/04 | Plan when near |
@@ -218,6 +229,10 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.12 (2026-09-15): Slice13 initial CDC review retains scope/handoff and
+  opens Iteration 01 for R1-R4. Was: initial execution; no new membership
+  acceptance, successor opening or reduced evidence requirements.
 
 - 1.11 (2026-09-15): Slice03 closes with attributed minor replay corrections.
   Its handoff supports an eight-pair Slice13 opening; Slice14 retains all

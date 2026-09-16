@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.25"
+version: "1.26"
 ---
 
 # Concept Card Metadata
@@ -142,7 +142,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12 closed; Slice13 opens eight actor-identity pairs; Slice14 retains the remaining provenance work for sizing |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12 closed; Slice13 Iteration 01 repairs replay/evidence gaps; Slice14 remains unopened |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -159,6 +159,11 @@ retains every other original provenance/shared-reference obligation and must
 be sized/split before execution. Current accounting is 180 accepted, 375
 remaining, eight assigned and 367 not yet sliced. No requirement or schema/UAT
 gate is reduced.
+Slice13 CDC review of 78be7fab retains verified scope/handoff and the useful
+contextual analysis, but opens bounded Iteration 01 for replay binding,
+snapshot/live separation, fail-closed search and evidence completeness.
+Was: first actor-identity submission pending. No pairs are accepted and no
+successor opens; the 180/375/8/367 accounting is unchanged.
 The [three-slice workload assessment](./artifacts/cc-workload-observations.md)
 is complete; its observations support a bounded, better-integrated repair,
 not an automatic model change or a reduction of evidence requirements.
@@ -370,6 +375,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.26 (2026-09-15): Arc06 Slice13 review reproduces the submitted replay
+  but exposes false-success controls and incomplete evidence checks.
+  Opens bounded Iteration 01, retaining scope/handoff and all prior acceptance;
+  was: initial execution. No model change, schema adoption or scope reduction.
 
 - 1.25 (2026-09-15): Arc06 Slice03 CDC closure verifies reusable replay with
   attributed control/snapshot corrections. Opens eight-pair Slice13 and

@@ -4,9 +4,10 @@ All arc rows remain open after Slice01/02/03/12 closure on
 2026-09-15. Original Slice01 contributes 35 pairs and Slice02 adds 30;
 current coverage is 180 accepted / 375 remaining. Slice12 adds zero.
 Slice03 closes replay mechanics with attributed CDC corrections, zero pairs.
-Slice13 opens eight actor-identity pairs; Slice14 retains the other original
-provenance/shared-reference responsibilities for sizing. Was: Slice03 open,
-Slice13 unsized. No arc composition row closes from child closure alone.
+Slice13's eight-pair packet needs Iteration 01 after CDC review of 78be7fab;
+scope/handoff are verified, replay/evidence gaps remain. Slice14 retains the
+other original provenance/shared-reference responsibilities for sizing and
+stays unopened. Was: initial Slice13 execution. No arc composition row closes.
 The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 
