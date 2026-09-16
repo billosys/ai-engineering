@@ -1,0 +1,267 @@
+{
+  "artifact_kind": "slice13-semantic-membership",
+  "status": "CC proposed-done; independent CDC verification required",
+  "scope": {
+    "project": "project08-concept-card-metadata",
+    "arc": "arc06-semantic-families-and-capability-requirements",
+    "slice": "slice13-provenance-family-semantics",
+    "assignment": [
+      ["actor", "claim"],
+      ["actor", "competency-question"],
+      ["actor", "concept-card"],
+      ["actor", "extraction-run"],
+      ["actor.id", "claim"],
+      ["actor.id", "competency-question"],
+      ["actor.id", "concept-card"],
+      ["actor.id", "extraction-run"]
+    ],
+    "source": "project08-concept-card-metadata/artifacts/semantic-coverage-current.json",
+    "counts": {
+      "full": 555,
+      "accepted": 180,
+      "remaining": 375,
+      "assigned": 8,
+      "outside": 367
+    },
+    "assignment_is_not_acceptance": true,
+    "opening_source_commit": "e763c661592ff1097a94bb470db9cf924524579d",
+    "opening_planning_commit": "609f2f558b100a06df42e6a8b85ebfe200a27b22",
+    "source_status_at_opening": "clean",
+    "planning_status_at_opening": "clean"
+  },
+  "native_census": {
+    "inventory_evidence_id": "inventory",
+    "parsed_selected_mappings": 37,
+    "record_kind_counts": {
+      "claim": 1,
+      "competency-question": 2,
+      "concept-card": 31,
+      "extraction-run": 3
+    },
+    "actor_parent_states": {
+      "absent": 12,
+      "null": 0,
+      "empty_object": 0,
+      "object": 25,
+      "unexpected_type": 0
+    },
+    "actor_id_states": {
+      "not_applicable_parent_absent": 12,
+      "missing_in_object": 0,
+      "null": 4,
+      "empty_string": 0,
+      "string": 21,
+      "unexpected_type": 0
+    },
+    "by_kind": {
+      "claim": {
+        "records": 1,
+        "parent_absent": 0,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 0,
+        "witness": "knowledge/concept-cards/templates/claim.md"
+      },
+      "competency-question": {
+        "records": 2,
+        "parent_absent": 1,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 0,
+        "witnesses": [
+          "knowledge/concept-cards/templates/competency-question.md",
+          "knowledge/concept-cards/examples/cq-coverage.md"
+        ]
+      },
+      "concept-card": {
+        "records": 31,
+        "parent_absent": 9,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 21,
+        "witnesses": [
+          ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-model-data-constraints.md",
+          ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice04-expanded-corpus-card-generation/artifacts/candidate-cards/cc-complementary-learning-systems.md",
+          "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md",
+          "workbench/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md"
+        ]
+      },
+      "extraction-run": {
+        "records": 3,
+        "parent_absent": 2,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 0,
+        "witnesses": [
+          "knowledge/concept-cards/templates/extraction-run.md",
+          "knowledge/concept-cards/examples/extraction-run-trace.md",
+          "knowledge/concept-cards/examples/parallel-worker-default-recipe.md"
+        ]
+      }
+    },
+    "parse_exclusions": {
+      "count": 3,
+      "records": [
+        "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-memory-forms.md",
+        "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-priming-forms.md",
+        "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-recognition-dual-process.md"
+      ],
+      "meaning": "Inherited accepted inventory boundary: YAML parse failures are exclusions from the parsed denominator, not actor absence observations. INDEX.md is a non-card index, not the third malformed card.",
+      "evidence_ids": ["slice02CDC", "inventory"]
+    }
+  },
+  "evidence": [
+    {"evidence_id":"projectAgents","root":"planning","path":"AGENTS.md","sha256":"8698363168136615304c88195faf6492335fceec88df43675cb0ada9ee1521b8","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"project instructions and scope fence","member_scope":"all"},
+    {"evidence_id":"projectPlan","root":"planning","path":"project08-concept-card-metadata/project-plan.md","sha256":"153c86eabb39b088134e9282a4909b66bdfdc76f57e1aa103bce6337dabb5872","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"mutable project planning authority","member_scope":"all"},
+    {"evidence_id":"projectLedger","root":"planning","path":"project08-concept-card-metadata/ledger.md","sha256":"00c032d3bb9de790a38052901b5fccaee8a17b9fc64038d9878afd0fb04b0f32","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"project gate authority","member_scope":"all"},
+    {"evidence_id":"arcPlan","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/arc-plan.md","sha256":"b88333809cb4f0bef7bbed298d83641b31d3d444467ea562304535670c5bab81","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"mutable arc planning authority","member_scope":"all"},
+    {"evidence_id":"arcLedger","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/ledger.md","sha256":"6dcce3c207e08ec513200290db075dac0d8c43d5d2a10d6bb6d129190e03f98e","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"arc gate authority","member_scope":"all"},
+    {"evidence_id":"slicePrompt","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/cc-prompt.md","sha256":"91ece60869d05027e10f2cad0d6a4f393cfa21bb5acf1aae14094e28057b7304","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"fixed execution scope and six-file fence","member_scope":"all"},
+    {"evidence_id":"slicePlan","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/slice-plan.md","sha256":"6c378c7f920669296ed4a218df4457039ee53cdb46910ac9a6aeb6dde6e5164a","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"exact pair assignment and read set","member_scope":"all"},
+    {"evidence_id":"sliceLedger","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/ledger.md","sha256":"619e4995c5f12a5f1e81f3c897522010de5ac1cc7e30c4a6fceaa7144297954d","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"six-row acceptance authority","member_scope":"all"},
+    {"evidence_id":"currentCoverage","root":"planning","path":"project08-concept-card-metadata/artifacts/semantic-coverage-current.json","sha256":"5d4413abe585274750544784627f65b6f83668596815d55c6a1e9dbcd9339070","opening_sha256":"5d4413abe585274750544784627f65b6f83668596815d55c6a1e9dbcd9339070","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"live","role":"current coverage status and exact assignment; may advance later","member_scope":"scope and accounting"},
+    {"evidence_id":"transitionCoverage","root":"planning","path":"project08-concept-card-metadata/artifacts/semantic-transition-coverage.json","sha256":"3f1bf740a1c74f0e6c668b57d5c3eef5ba9ce936e56746817c2171a19daf17bd","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"immutable 115/440 transition baseline","member_scope":"full-set inclusion"},
+    {"evidence_id":"inventory","root":"planning","path":"project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json","sha256":"afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"frozen parsed native population and actor values","member_scope":"37 selected mappings"},
+    {"evidence_id":"sourceBaselineManifest","root":"planning","path":"project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/source-sha256sums.txt","sha256":"8dc5bcc46eadd706153406314e25d53586803284a9f70fea84f1986344dbf4c0","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"original rich/teaching witness manifest","member_scope":"concept-card witness mappings"},
+    {"evidence_id":"copyBaselineManifest","root":"planning","path":"project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/copy-sha256sums.txt","sha256":"a3ceb612700f3a584d5e94ddeaee0665d146403d6ca6d6332d2b3804d51d1bfb","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"preserved rich/teaching copy manifest","member_scope":"concept-card witness mappings"},
+    {"evidence_id":"slice03ReplayContract","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/evidence-replay-contract.md","sha256":"73f9ee479261c536f3c96fd9f120aaa709358978c5f9922b9ab8cc77065dd70d","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"reusable evidence and result-state contract","member_scope":"validation"},
+    {"evidence_id":"slice03WorkedReplay","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/worked-replay.md","sha256":"5185ac366c3dd2cbb3e7b0559b989beff770328ec7c574705f037580efb514c8","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"corrected literal replay precedent","member_scope":"validation"},
+    {"evidence_id":"slice03Handoff","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/handoff.md","sha256":"e7ce9bb5e4fcdaa586447e5c21ff84fb29898dd4492a3d13e51ee743f4e8602c","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"prior semantic boundary and Slice14 sizing input","member_scope":"handoff"},
+    {"evidence_id":"slice03CDC","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/cdc-verification.md","sha256":"6c6b2762a2fd70252f404bc95e4244091ec70487c6770235e9525131f29751a8","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"attributed corrected replay and no-acceptance boundary","member_scope":"validation and handoff"},
+    {"evidence_id":"slice06SemanticEvidence","root":"planning","path":"project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification/artifacts/semantic-evidence.md","sha256":"cf6cc75bbaaf284295989bb180cff6af94a09d79027f68194d9f6c933528c42c","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"accepted record-versus-referenced-identity finding","member_scope":"all actor.id meanings"},
+    {"evidence_id":"slice06Membership","root":"planning","path":"project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification/artifacts/semantic-membership.json","sha256":"6322a4737084e51db5af0dc84d2c1bc1008365a691b2def85d23b251d39c3c1e","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"accepted contextual identity memberships","member_scope":"all actor.id meanings"},
+    {"evidence_id":"slice06CDC","root":"planning","path":"project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification/cdc-verification.md","sha256":"eb8377156d44ea865b3f76cb60e240a286330d164b00d7db8c06b9358126c851","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"independent identity finding and limit","member_scope":"all actor.id meanings"},
+    {"evidence_id":"slice02SemanticEvidence","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice02-competency-questions-and-answerability/artifacts/semantic-evidence.md","sha256":"f25d3d584fb48a5e7282df47dd39530babf07a92b20acaacfe265dc75961744b","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"accepted CQ identity/reference distinction","member_scope":"competency-question actor boundary"},
+    {"evidence_id":"slice02Membership","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice02-competency-questions-and-answerability/artifacts/semantic-membership.json","sha256":"c35fc920bbcf93ae386b785a64c73e5ca9b81e2d65c6633bf735cd94676fe1f0","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"accepted CQ field meanings and outside provenance owner","member_scope":"competency-question actor boundary"},
+    {"evidence_id":"slice02CDC","root":"planning","path":"project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice02-competency-questions-and-answerability/cdc-verification.md","sha256":"ef4ee51594e1ac9ab533d8cb01b46df28ead971f42644640bd7d6402e51666df","authority_commit":"609f2f558b100a06df42e6a8b85ebfe200a27b22","read_mode":"snapshot","role":"independent CQ closure and malformed-exclusion boundary","member_scope":"competency-question actor boundary"},
+    {"evidence_id":"skill","root":"source","path":"knowledge/concept-cards/SKILL.md","sha256":"a096893e6a908d014b795bcb2e5e38653b6c590982e99951aae3783a9e7c318a","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"method and construct boundary guidance","member_scope":"all"},
+    {"evidence_id":"operatorWorkflow","root":"source","path":"knowledge/concept-cards/guides/02-operator-workflow.md","sha256":"06d1e8584d8df2adf8352f8797bded5533a223b4aaeaa3cf1926fbf58905e5a5","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"actor/provenance/result separation guidance","member_scope":"all"},
+    {"evidence_id":"extractionGuide","root":"source","path":"knowledge/concept-cards/guides/03-extraction.md","sha256":"e60643e05c79ea8dc5eb93a991e08c32cd4f7a88047d7a6f21f159c1abbe5a7d","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"actual extraction-run actor scope guidance","member_scope":"extraction-run"},
+    {"evidence_id":"fieldGroups","root":"source","path":"knowledge/concept-cards/references/record-field-groups.md","sha256":"c37b20e9d26dec446350f76b3a24bb3ab473aa92a70c7429542b2d65047cac57","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"per-kind actor field placement","member_scope":"all"},
+    {"evidence_id":"templateClaim","root":"source","path":"knowledge/concept-cards/templates/claim.md","sha256":"ff8c35e7157582ca78c15c5419ab8167152f6c1b3862d96187e061bfb0f33fd7","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"claim actor template null","member_scope":"claim"},
+    {"evidence_id":"templateCompetencyQuestion","root":"source","path":"knowledge/concept-cards/templates/competency-question.md","sha256":"11fbab44ded126d0aa49f4929db71edebc453d43099ea32af569aecbf73bf49b","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"CQ actor template null","member_scope":"competency-question"},
+    {"evidence_id":"templateConceptCard","root":"source","path":"knowledge/concept-cards/templates/concept-card.md","sha256":"24d88eaa1edeae31ccd4943e8f635e0e3dc11e26e9a1b69ba3374b49d9700fec","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"concept-card actor template null","member_scope":"concept-card"},
+    {"evidence_id":"templateExtractionRun","root":"source","path":"knowledge/concept-cards/templates/extraction-run.md","sha256":"9a397dad9d92ab602dd47a232c3f0a8cf8e80e6aabb9e7015e2e135e2cda3722","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"extraction-run actor template null","member_scope":"extraction-run"},
+    {"evidence_id":"cqExample","root":"source","path":"knowledge/concept-cards/examples/cq-coverage.md","sha256":"eda2f2f79360af660f022c5a75affd03d094396e606a6bbaa13741c970180cb4","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"synthetic CQ body and absent actor","member_scope":"competency-question"},
+    {"evidence_id":"runExample","root":"source","path":"knowledge/concept-cards/examples/extraction-run-trace.md","sha256":"e555e52d8eed2ef69e16b9579613b8884052bd6854a512e438e17f24bb5b02dc","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"synthetic run body and absent actor","member_scope":"extraction-run"},
+    {"evidence_id":"parallelExample","root":"source","path":"knowledge/concept-cards/examples/parallel-worker-default-recipe.md","sha256":"9701db056ae1ee25880b019e9c2de05b9634877e506d43d56861f60bff44f0f7","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"synthetic worker-scope contrast, not actor identity","member_scope":"extraction-run"},
+    {"evidence_id":"minimalCard","root":"source","path":"knowledge/concept-cards/examples/minimal-card.md","sha256":"08be072fae59112ef0de920924f564d9fdcb5c041781c18473ae2cf6c06eab68","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"synthetic card with absent actor","member_scope":"concept-card"},
+    {"evidence_id":"richProfileCard","root":"source","path":"knowledge/concept-cards/examples/rich-profile-card.md","sha256":"31246186479dd275a4e2f7f1d043dd836e9e2769242a021f8eb56f1b39ef0353","authority_commit":"e763c661592ff1097a94bb470db9cf924524579d","read_mode":"snapshot","role":"synthetic card body and absent actor","member_scope":"concept-card"},
+    {"evidence_id":"pilotCard","root":"source","path":".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-model-data-constraints.md","sha256":"92ff6f44f6a43300ee970f7d8d35161035731f2ca5b91fd9b5762246ee04b8fc","read_mode":"live","role":"Arc07 populated actor witness","member_scope":"concept-card"},
+    {"evidence_id":"expandedCard","root":"source","path":".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice04-expanded-corpus-card-generation/artifacts/candidate-cards/cc-complementary-learning-systems.md","sha256":"12ddca71de95680e0fcba323300842cea8fe0c96134f8d0b7d4d92327c7a33fe","read_mode":"live","role":"Arc07 absent actor witness","member_scope":"concept-card"},
+    {"evidence_id":"richRerun","root":"source","path":"workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md","sha256":"65915a99fd8ed9614d4a5be52615ff781cbb4dff4f3abf5516b7fc2a94bc3695","read_mode":"live","role":"generated rich actor witness; original path","member_scope":"concept-card"},
+    {"evidence_id":"teachingRerun","root":"source","path":"workbench/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md","sha256":"09771f4fd35b02e4f57c808f329a2c23972a246f5546c875ff746e0ebf4230fb","read_mode":"live","role":"generated teaching actor witness; original path","member_scope":"concept-card"}
+  ],
+  "baseline_mappings": [
+    {
+      "mapping_id": "rich-rerun-original-copy",
+      "original_path": "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md",
+      "original_root": "source",
+      "original_sha256": "65915a99fd8ed9614d4a5be52615ff781cbb4dff4f3abf5516b7fc2a94bc3695",
+      "copy_path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md",
+      "copy_root": "planning",
+      "copy_sha256": "65915a99fd8ed9614d4a5be52615ff781cbb4dff4f3abf5516b7fc2a94bc3695",
+      "manifest_evidence_ids": ["sourceBaselineManifest", "copyBaselineManifest", "richRerun"],
+      "comparison": "The original and preserved copy are byte-equal; the copy is not an independent extraction read."
+    },
+    {
+      "mapping_id": "teaching-rerun-original-copy",
+      "original_path": "workbench/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md",
+      "original_root": "source",
+      "original_sha256": "09771f4fd35b02e4f57c808f329a2c23972a246f5546c875ff746e0ebf4230fb",
+      "copy_path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-model-data-constraints.md",
+      "copy_root": "planning",
+      "copy_sha256": "09771f4fd35b02e4f57c808f329a2c23972a246f5546c875ff746e0ebf4230fb",
+      "manifest_evidence_ids": ["sourceBaselineManifest", "copyBaselineManifest", "teachingRerun"],
+      "comparison": "The original and preserved copy are byte-equal; the copy is not an independent extraction read."
+    }
+  ],
+  "meanings": {
+    "actor-claim": {
+      "definition": "The actor mapping attached to a claim record is a provenance attribution for activity associated with that claim record; the exact actor event and role are not settled by the selected evidence.",
+      "evidence_ids": ["templateClaim", "fieldGroups", "operatorWorkflow", "inventory", "slice06SemanticEvidence"],
+      "applicability": "Claim root actor only; not the source author, claim subject, referenced input, run identity or verification result actor by inheritance.",
+      "observed": "The only frozen claim mapping is the template, with actor object and id/mode/role all null. No populated claim actor is in the selected parsed population.",
+      "exceptions": ["A missing actor parent in another record kind is not a claim actor null state.", "The claim template does not prove that actor is required or that null means unknown in a future profile."],
+      "disposition": "Retain the actor field as an explicit claim-local provenance slot. Preserve the template object/null state and leave the actual event, actor class and requiredness unresolved until populated claim witnesses and Slice14 actor.mode/actor.role work are reviewed.",
+      "operational_consequences": {"reader":"Show claim actor as unassessed/unknown rather than naming a source author or verifier.","extractor":"Do not copy a card or run actor into an embedded claim.","query":"Scope any actor lookup to the claim record and its revision; no global principal is established.","migration":"Preserve object/null versus absent states; do not invent an actor from claim_refs or run_refs."},
+      "unresolved_questions": ["Does a populated claim actor identify claim authoring, extraction, review, or another activity?", "How should a claim with no recorded actor be distinguished from a claim whose actor is intentionally inapplicable?"]
+    },
+    "actor-competency-question": {
+      "definition": "The actor mapping attached to a standalone competency-question record is a CQ-local provenance attribution; it is distinct from CQ identity, requirement source, answerability reviewer and any card that references the CQ.",
+      "evidence_ids": ["templateCompetencyQuestion", "fieldGroups", "operatorWorkflow", "slice02SemanticEvidence", "slice02Membership", "slice02CDC", "inventory", "cqExample"],
+      "applicability": "Standalone competency-question root only; not an actor for an embedded card reference or a parent card supplied by inference.",
+      "observed": "The template has actor object/id/mode/role null. The synthetic cq-coverage record has no actor parent. No populated standalone CQ actor is observed.",
+      "exceptions": ["A card cq_refs tuple is a declaration of CQ identity/path/revision, not a standalone CQ actor observation.", "The CQ's roles, answerability and coverage states do not identify an actor."],
+      "disposition": "Retain the CQ-local actor boundary and both native states: template object/null and synthetic parent absence. Do not supply actor from rich/teaching card provenance, a requirement source, or a later answerability review. Actor meaning and requiredness remain open.",
+      "operational_consequences": {"reader":"Report no actor observation for the synthetic CQ and template null for the template; do not call either a source author or reviewer.","extractor":"Keep CQ creation/provenance separate from CQ question text, card reference and coverage assertions.","query":"Resolve CQ actor only from a standalone CQ record and requested revision, not from cq_refs or matching question text.","migration":"Carry absent/null states and avoid merging legacy question strings or card references into actor identity."},
+      "unresolved_questions": ["Which CQ activity does actor describe when a CQ is authored, reviewed or used as a retrieval probe?", "Does a CQ actor ever represent an answerability reviewer, and how would that be distinguished from the CQ author?", "What evidence can connect a card's embedded CQ text to a standalone CQ actor without asserting identity equivalence?"]
+    },
+    "actor-concept-card": {
+      "definition": "The actor mapping attached to a concept-card root is an observed provenance label for activity associated with that card revision; populated labels do not by themselves identify a unique human, model version, source author or global principal.",
+      "evidence_ids": ["templateConceptCard", "fieldGroups", "operatorWorkflow", "inventory", "pilotCard", "expandedCard", "richRerun", "teachingRerun", "sourceBaselineManifest", "copyBaselineManifest", "slice06CDC"],
+      "applicability": "Concept-card root actor; it does not automatically become the actor of a claim, CQ, source-support result, run or operator decision referenced by the card.",
+      "observed": "Among 31 parsed cards, 21 have actor objects with id strings: four Arc07 pilot cards use codex-cc, seven rich rerun cards use codex, and ten teaching rerun cards use codex; all observed mode values are agent-direct and all observed role values are extractor. One template card has object/null identity. Six expanded Arc07 cards and three synthetic example cards omit the parent actor entirely.",
+      "exceptions": ["codex-cc and codex are distinct recorded labels; their shared role/mode does not establish equivalence.", "An absent actor parent on an expanded or synthetic card is not a null actor object.", "The source snapshot/ref and run_ref identify inputs or provenance links; they do not supply an omitted card actor."],
+      "disposition": "Retain populated card actor mappings exactly as observations, including codex-cc versus codex and revision-local context. Preserve template null and absent-card states. Treat role extractor and mode agent-direct as contextual observations only; do not promote either label to a unique human/model identity or infer actor requiredness.",
+      "operational_consequences": {"reader":"Display the recorded label with its role/mode and revision, and say when actor is absent; do not render it as source authorship.","extractor":"Record actual actor evidence when available and never fill an omitted card actor from the card's source author, run_ref or embedded claim/CQ.","query":"Join actor labels only within the declared record/revision and run context; identical strings across reruns are not proof of one principal.","migration":"Preserve label spelling and parent state; do not normalize codex-cc to codex or convert absent actor to null."},
+      "unresolved_questions": ["Does card actor mean extractor, author, reviewer, or the actor of the run that produced the card?", "What evidence identifies a label as a person, model, tool, process or composite agent?", "How should actor changes across card revisions be represented without treating them as semantic-card identity changes?"]
+    },
+    "actor-extraction-run": {
+      "definition": "The actor mapping attached to an extraction-run root is intended to record the actual actor and scope of the extraction operation, but the selected native population has no populated run actor witness.",
+      "evidence_ids": ["templateExtractionRun", "fieldGroups", "extractionGuide", "inventory", "runExample", "parallelExample", "operatorWorkflow"],
+      "applicability": "Extraction-run root actor only; not a source author, output-card actor, worker-scope role or run ID by implication.",
+      "observed": "The template has actor object/id/mode/role null. Both synthetic extraction-run examples omit actor entirely. No populated extraction-run actor is present in the three parsed selected mappings.",
+      "exceptions": ["worker_scope roles and worker_count describe a synthetic recipe, not an actor identity.", "Populated card actors and card run_refs do not prove the omitted run actor.", "No actual extraction was initiated by this slice."],
+      "disposition": "Retain the run actor slot and distinguish object/null template from absent synthetic examples. Record no native populated actor meaning beyond the documented actual-actor-and-scope requirement. Defer actor class, mode/role semantics and requiredness to the remaining provenance work.",
+      "operational_consequences": {"reader":"Treat a run with no actor mapping as provenance-incomplete/unknown within this inventory, not as proof that no actor existed.","extractor":"Record the actual actor and assigned scope for a future run, separately from source snapshot and output refs.","query":"Resolve run actor by run record and revision; do not derive it from output-card labels or worker-role prose.","migration":"Preserve absent/null states and keep run identity, source identity and output identity separate."},
+      "unresolved_questions": ["What is the minimum evidence for actual run actor identity when the actor may be human, model, tool or process?", "How should one run actor relate to worker actors and worker_scope without collapsing roles?", "When a generated card has an actor but its referenced run lacks one, which provenance gap is recorded? "]
+    },
+    "actor-id-claim": {
+      "definition": "The actor.id child is the identity value inside a claim's actor mapping, when one is recorded; it is not the claim root id, source author, subject, referenced input or global principal key.",
+      "evidence_ids": ["templateClaim", "fieldGroups", "slice06Membership", "slice06CDC", "inventory"],
+      "applicability": "Only when a claim actor parent is present; a missing parent makes child state not applicable.",
+      "observed": "The only selected claim is the template: actor parent is an object and actor.id is null. No string, empty string or unexpected type is observed.",
+      "exceptions": ["Root claim id/revision identify the claim record, not actor.id.", "Null is the template's unfilled state and is not a future requiredness rule."],
+      "disposition": "Preserve actor.id as an unassessed claim-local identity value, retaining null rather than inventing a label. Do not assign source-author or actor-class meaning until a populated claim witness and the actor.mode/actor.role complement are reviewed.",
+      "operational_consequences": {"reader":"Show null as unfilled/unknown and keep it separate from the claim's own id.","extractor":"Populate only from observed claim actor provenance.","query":"Use actor.id only within claim actor context; no global lookup is warranted.","migration":"Keep null distinct from absent parent and preserve future label changes by revision."},
+      "unresolved_questions": ["What identifies the principal denoted by a populated claim actor.id?", "Can two claim actor.id labels be compared across runs or revisions without a declared authority?"]
+    },
+    "actor-id-competency-question": {
+      "definition": "The actor.id child is the identity value inside a standalone CQ actor mapping, when one is recorded; it is not the CQ id, question text identity, requirement source or answerability reviewer by inheritance.",
+      "evidence_ids": ["templateCompetencyQuestion", "fieldGroups", "slice02Membership", "slice02CDC", "inventory"],
+      "applicability": "Only when a standalone CQ actor parent is present; the synthetic CQ's absent parent makes actor.id not applicable.",
+      "observed": "The CQ template has actor.id null; the synthetic cq-coverage record has no actor parent. No populated CQ actor.id is observed.",
+      "exceptions": ["cq_refs[].id identifies a referenced CQ declaration and is not actor.id.", "Matching question text or a card's parent actor cannot supply CQ actor.id."],
+      "disposition": "Preserve object/null and absent-parent states exactly. Leave the identity class and cross-record equivalence unresolved; do not infer a CQ actor.id from card references, question strings, component refs or lifecycle roles.",
+      "operational_consequences": {"reader":"Keep CQ actor identity unassessed and separate from CQ id and question text.","extractor":"Record an actor.id only when a standalone CQ activity supplies it.","query":"Scope actor.id lookup to the standalone CQ record/revision; card embedded declarations are not substitutes.","migration":"Do not collapse absent and null, or assign stable identity from equal question text."},
+      "unresolved_questions": ["What event and authority make a CQ actor.id comparable across a CQ revision and a card reference?", "How would a reviewer actor be distinguished from a CQ author actor?"]
+    },
+    "actor-id-concept-card": {
+      "definition": "The actor.id child is the recorded identity label inside a concept-card actor mapping; it is not the card id, source author, run id or a globally unique person/model identity.",
+      "evidence_ids": ["templateConceptCard", "fieldGroups", "pilotCard", "expandedCard", "richRerun", "teachingRerun", "slice06Membership", "slice06CDC", "sourceBaselineManifest", "copyBaselineManifest", "inventory"],
+      "applicability": "Only when a concept-card actor parent is present; absent card parents keep child identity not applicable.",
+      "observed": "21 card actor.id values are strings: codex-cc on four pilot cards and codex on seven rich plus ten teaching cards. The template has null. Nine cards omit actor entirely (six expanded and three synthetic examples). No empty string or unexpected child type is observed.",
+      "exceptions": ["The same concept id appears at different generated revisions and the actor label is not a proof of one principal.", "codex-cc and codex are not normalized or declared equivalent.", "A card actor.id does not fill an omitted embedded claim/CQ actor.id or a referenced run actor.id."],
+      "disposition": "Retain exact string labels and parent-state distinctions, with record/revision and family context. Treat labels as bounded provenance observations, not unique actor identity. Do not infer equivalence, source authorship, model version or requiredness.",
+      "operational_consequences": {"reader":"Display label plus family/revision context and state the identity limit.","extractor":"Preserve exact actor.id spelling from the native record and avoid filling absent records.","query":"Use labels only as scoped filters unless a future authority establishes principal identity.","migration":"Map labels only through an explicit provenance decision; preserve codex-cc/codex and absent/null distinctions."},
+      "unresolved_questions": ["What authority, if any, maps codex-cc or codex to a human/model/tool/process?", "Are labels stable across extraction runs or merely session-local aliases?", "How should an actor label be versioned when the card body is revised?"]
+    },
+    "actor-id-extraction-run": {
+      "definition": "The actor.id child is the recorded identity label inside an extraction-run actor mapping; it is not the run id, source snapshot identity, worker role or output-card actor label.",
+      "evidence_ids": ["templateExtractionRun", "fieldGroups", "extractionGuide", "runExample", "parallelExample", "inventory"],
+      "applicability": "Only when an extraction-run actor parent is present; absent synthetic run parents keep child identity not applicable.",
+      "observed": "The run template has actor.id null. Both synthetic run examples omit actor. No populated extraction-run actor.id is observed; worker_scope labels are not actor.id values.",
+      "exceptions": ["A card's actor.id and run_refs do not establish the run's actor.id.", "A worker role such as extractor or source-scope is not an identity value.", "No new run or runtime evidence was created by this slice."],
+      "disposition": "Retain null versus absent states and leave populated run actor identity uncharacterized. Future run records must supply direct actor evidence or state the gap; no identity is inferred from generated card labels, source authors or worker-scope examples.",
+      "operational_consequences": {"reader":"Report run actor identity as unassessed where absent/null, not as a named extractor.","extractor":"Record the run actor label separately from worker scope, method, source and outputs.","query":"Resolve actor.id against the run record/revision and declared actor context.","migration":"Preserve child state and avoid borrowing identity from output cards or source metadata."},
+      "unresolved_questions": ["What direct observation establishes the actor.id for a run?", "How are run-level, worker-level and output-level actors related without an implicit equivalence?", "What source/copy or method revision should constrain cross-run actor comparisons?"]
+    }
+  },
+  "memberships": [
+    {"field_path":"actor","record_kind":"claim","meaning_id":"actor-claim","effective_meaning":"Claim-local actor provenance slot; selected native state is template object with null id/mode/role, with no populated claim actor witness.","evidence_ids":["templateClaim","fieldGroups","operatorWorkflow","inventory","slice06SemanticEvidence"],"exceptions":["No source-author, card-actor or run-actor inheritance."],"disposition":"Retain the explicit template object/null state and leave actor event, class and requiredness unresolved."},
+    {"field_path":"actor","record_kind":"competency-question","meaning_id":"actor-competency-question","effective_meaning":"Standalone CQ-local actor provenance slot; template is object/null and synthetic cq-coverage has an absent parent.","evidence_ids":["templateCompetencyQuestion","cqExample","slice02SemanticEvidence","slice02CDC","inventory"],"exceptions":["Card cq_refs and question text do not identify a CQ actor."],"disposition":"Preserve null versus absent and do not infer actor from parent card, requirement, coverage or answerability."},
+    {"field_path":"actor","record_kind":"concept-card","meaning_id":"actor-concept-card","effective_meaning":"Card-revision provenance label; 21 populated cards record extractor/agent-direct objects, one template is object/null, and nine cards omit the parent.","evidence_ids":["templateConceptCard","pilotCard","expandedCard","richRerun","teachingRerun","sourceBaselineManifest","copyBaselineManifest","inventory"],"exceptions":["codex-cc and codex remain distinct labels; absent is not null."],"disposition":"Retain exact family/revision observations without promoting labels to unique principals or filling omitted embedded records."},
+    {"field_path":"actor","record_kind":"extraction-run","meaning_id":"actor-extraction-run","effective_meaning":"Run-local actual-actor-and-scope slot; template is object/null and two synthetic run examples omit the parent.","evidence_ids":["templateExtractionRun","runExample","parallelExample","extractionGuide","inventory"],"exceptions":["Worker scope is not actor identity and no run was initiated here."],"disposition":"Preserve absent/null states and defer populated actor semantics and requiredness."},
+    {"field_path":"actor.id","record_kind":"claim","meaning_id":"actor-id-claim","effective_meaning":"Claim-local actor identity child; template value is null and no populated value is observed.","evidence_ids":["templateClaim","slice06Membership","slice06CDC","inventory"],"exceptions":["Not root claim id or source author."],"disposition":"Retain null as unfilled; do not invent or globalize an actor identity."},
+    {"field_path":"actor.id","record_kind":"competency-question","meaning_id":"actor-id-competency-question","effective_meaning":"Standalone CQ-local actor identity child; template is null and synthetic CQ parent absence makes the child not applicable.","evidence_ids":["templateCompetencyQuestion","cqExample","slice02Membership","inventory"],"exceptions":["Not cq_refs[].id, question identity or reviewer identity by inheritance."],"disposition":"Preserve null versus not-applicable and defer identity authority/equivalence."},
+    {"field_path":"actor.id","record_kind":"concept-card","meaning_id":"actor-id-concept-card","effective_meaning":"Card actor label; 21 strings are observed as codex-cc or codex, one template is null and nine parents are absent.","evidence_ids":["templateConceptCard","pilotCard","expandedCard","richRerun","teachingRerun","slice06CDC","inventory"],"exceptions":["No equivalence or unique human/model identity is established."],"disposition":"Preserve exact labels and state/family/revision context; do not normalize or inherit them."},
+    {"field_path":"actor.id","record_kind":"extraction-run","meaning_id":"actor-id-extraction-run","effective_meaning":"Run actor identity child; template is null, synthetic examples have absent parent and no populated value is observed.","evidence_ids":["templateExtractionRun","runExample","parallelExample","extractionGuide","inventory"],"exceptions":["Not run id, worker role or output-card actor label."],"disposition":"Retain null versus not-applicable and require direct future run evidence before assigning identity."}
+  ]
+}
