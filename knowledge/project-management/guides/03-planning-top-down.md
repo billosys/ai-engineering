@@ -104,6 +104,23 @@ not invent a second location. If no durable artifacts are expected, say so in
 the slice plan; this prevents a missing `artifacts/` directory from reading as
 an omission at close.
 
+### Turn the slice into an implementation-ready assignment
+
+Before issuing initial or corrective CC implementation work, the prompt author
+must read engineering-methods' [From Slice to Implementation Prompt](../../engineering-methods/guides/07-implementation-prompt-authoring.md)
+and apply its readiness check. This is the handoff from planning mechanics to
+SDLC engineering: inspect source and tests, load the relevant domain guides,
+resolve consequential choices, write the implementation recipe, and specify
+observable test results. Record readiness in the existing slice plan or
+assignment record with section pointers and any remaining held decisions.
+
+The open set's existence is not evidence that this work was done. A list of
+acceptance rows, reading links and commit commands is not an implementation
+recipe. Exact supporting sections may carry detail, but the prompt must supply
+a coherent current-slice implementation spine. Keep author/reviewer authority
+and preserved-prompt rules unchanged; this adds no approval role. Evidence-only
+assignments need precise inspection/evidence instructions, not invented code.
+
 ### Issuing and executing an iteration
 
 When review finds unresolved acceptance criteria, the assigned reviewer keeps

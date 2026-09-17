@@ -52,6 +52,11 @@ The repository currently includes:
 - the Composite Cognition Dispatch Protocol under
   [`protocols/ccdp/`](./protocols/ccdp/).
 
+For implementation handoffs, engineering-methods provides
+[From Slice to Implementation Prompt](./knowledge/engineering-methods/guides/07-implementation-prompt-authoring.md)
+and a [CC prompt template](./knowledge/engineering-methods/templates/cc-implementation-prompt.md),
+available standalone and through collaboration-framework.
+
 ## Quick Commands
 
 ```sh

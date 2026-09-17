@@ -153,6 +153,8 @@ CF_FILES := \
 	knowledge/engineering-methods/guides/04-operational-routing.md \
 	knowledge/engineering-methods/guides/05-component-boundary-analysis.md \
 	knowledge/engineering-methods/guides/06-source-package-release-gates.md \
+	knowledge/engineering-methods/guides/07-implementation-prompt-authoring.md \
+	knowledge/engineering-methods/templates/cc-implementation-prompt.md \
 	knowledge/engineering-methods/version-history.md \
 	knowledge/project-management/guides/README.md \
 	knowledge/project-management/guides/01-scales-of-work.md \

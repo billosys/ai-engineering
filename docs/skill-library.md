@@ -44,7 +44,7 @@ Every package listed below is produced by `make all`, included in
 
 | Skill package | Source entrypoint | Use when |
 |---|---|---|
-| `engineering-methods.zip` | [`knowledge/engineering-methods/SKILL.md`](../knowledge/engineering-methods/SKILL.md) | Designing how LLM-assisted engineering work should be structured, evaluated, or improved. |
+| `engineering-methods.zip` | [`knowledge/engineering-methods/SKILL.md`](../knowledge/engineering-methods/SKILL.md) | Designing LLM-assisted engineering work and turning approved slices into source-grounded, domain-guided implementation prompts. |
 | `testing.zip` | [`knowledge/testing/SKILL.md`](../knowledge/testing/SKILL.md) | Applying testing discipline, coverage hardening, and validation gates. |
 | `code-auditing.zip` | [`knowledge/code-auditing/SKILL.md`](../knowledge/code-auditing/SKILL.md) | Commissioning evidence-based diagnosis-only code audits. |
 | `contribution-style.zip` | [`knowledge/contribution-style/SKILL.md`](../knowledge/contribution-style/SKILL.md) | Drafting maintainer-friendly upstream issues, feature requests, doc fixes, and questions. |

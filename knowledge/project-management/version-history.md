@@ -1,5 +1,13 @@
 # Version History
 
+## Version 2.17.0 - 2026-09-17
+
+Added the explicit handoff from slice planning to engineering-methods prompt
+authorship. Initial and corrective implementation assignments require the
+source-grounded design, applied domain guidance, implementation recipe and
+readiness check before issue. Existing artifact, preservation, workflow and
+Operator-gate contracts remain unchanged.
+
 ## Version 2.16.0 - 2026-09-17
 
 Mapped planning, iteration, closure, and Expedited Mode to the selected

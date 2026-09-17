@@ -7,7 +7,7 @@ description: |
   whether bubble-up findings require a plan update.
 license: MIT
 metadata:
-  version: "2.16.0"
+  version: "2.17.0"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills
@@ -18,6 +18,11 @@ metadata:
 Use this component before planning or closing anything at project, arc, or
 slice scale. Start with the wayfinder, then load the focused guide that matches
 the operation.
+
+Before authoring an initial or corrective CC implementation prompt, load
+engineering-methods' [prompt-authoring guide](../engineering-methods/guides/07-implementation-prompt-authoring.md).
+Project-management governs the open set and handoff; engineering-methods governs
+the source-grounded design, implementation recipe and readiness check.
 
 For slice iterations, preserve issued prompts and create each follow-up as
 `cc-prompt-iterationNN.md` beside the initial `cc-prompt.md` in the slice root.

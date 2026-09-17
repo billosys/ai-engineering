@@ -35,7 +35,12 @@ The sequence below is the backbone discipline. Each step catches a different sca
 2. **Project definition.** Bounded scope. What are we doing, what are we not doing, and what is the smallest complete thing?
 3. **Design doc.** Architectural commitments. What are the pieces, how do they fit, what are the trade-offs, what are the alternatives considered and rejected?
 4. **Arc and slice breakdown.** Sequencing. Which slices land when; which are load-bearing for which.
-5. **Per-slice implementation plan.** Concrete steps. What gets written, what gets tested, what gets reviewed before moving on.
+5. **Per-slice implementation plan and prompt.** The author investigates the
+   source, applies relevant domain guides, resolves consequential implementation
+   choices, and writes a file/symbol-level recipe with concrete test oracles.
+   Before issuing initial or corrective CC work, follow
+   [From Slice to Implementation Prompt](./07-implementation-prompt-authoring.md); its readiness check
+   makes the design-to-execution handoff explicit.
 6. **Self-review.** First pass by the author. Catches the embarrassing things.
 7. **Peer review.** Second eyes. Catches what the author cannot see.
 8. **Review feedback loop.** Iteration. Not "comment dumped, comment closed" — genuine convergence.

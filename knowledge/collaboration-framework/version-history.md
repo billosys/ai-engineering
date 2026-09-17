@@ -1,5 +1,13 @@
 # Collaboration Framework Version History
 
+## Version 2.3.0 - 2026-09-17
+
+Added mandatory routing for initial and corrective CC implementation prompt
+authorship to engineering-methods and relevant domain guides. The author owns
+source investigation, applied engineering decisions, implementation shapes and
+test oracles before handoff. Included the guide and template in the composer
+package while retaining separate domain-skill loading.
+
 ## Version 2.2.0 - 2026-09-17
 
 Added default Two-Contributor and explicit-opt-in Three-Contributor workflow

@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.2.0"
+  version: "2.3.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -136,6 +136,13 @@ applies:
   required load set — improvising the mechanics from the summary is the
   documented way these tasks go off the rails.
   Guardrail phrases for source and package validation: no shortcuts; no skipped validation; no weaker evidence or review; no inferred source scope and no reduction or other change in scope; no timeline interpretation; operator approval gates are not overridden.
+- **Writing or reviewing CC implementation prompts.** Before issuing initial
+  or corrective work, load engineering-methods'
+  [prompt-authoring guide](../engineering-methods/guides/07-implementation-prompt-authoring.md) and relevant
+  domain guides. CDC/CRC must inspect source, apply the guidance, resolve
+  consequential decisions, and supply concrete implementation shapes and test
+  oracles. A skill-reading instruction to CC does not replace the author's
+  engineering work. Complete the guide's readiness check before handoff.
 - **Issuing or executing a slice iteration.** Preserve every issued prompt.
   Keep the initial `cc-prompt.md` and each new `cc-prompt-iterationNN.md` in
   the slice root, with the current assignment recorded in `slice-plan.md`.
@@ -428,6 +435,7 @@ work demands:
 | [`guides/04-operational-routing.md`](../engineering-methods/guides/04-operational-routing.md) | Craft / routing | When applying the method through practitioner disciplines and collaboration-framework component routes. |
 | [`guides/05-component-boundary-analysis.md`](../engineering-methods/guides/05-component-boundary-analysis.md) | Craft / boundaries | When deciding whether material belongs in engineering-methods or a specialized framework component. |
 | [`guides/06-source-package-release-gates.md`](../engineering-methods/guides/06-source-package-release-gates.md) | Craft / gates | When source, package, release, validation, and provenance gates determine whether work is complete. |
+| [Implementation Prompt Authoring](../engineering-methods/guides/07-implementation-prompt-authoring.md) | Craft / implementation handoff | Before authoring or reviewing initial or corrective CC implementation instructions; includes author readiness and a route to the reusable template. |
 | [`guides/README.md`](../project-management/guides/README.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management guide-set README and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing reviewer updates, or advancing to the next slice or arc. Newly opened CC prompt paths must be reported as plain copy/paste text, relative to the project directory, not as Markdown links alone. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the README's wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`guides/01-ledger-discipline.md`](../work-verification/guides/01-ledger-discipline.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine, row format, closure statuses, and slice/arc/project adaptation. |
 | [`guides/02-evidence-strength.md`](../work-verification/guides/02-evidence-strength.md) | Verification protocol | When distinguishing `asserted`, `attested`, `reproduced`, and `reconciled` evidence, especially proposed-done versus independently verified rows. |

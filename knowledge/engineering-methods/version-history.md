@@ -1,5 +1,14 @@
 # Engineering Methods Version History
 
+## Version 1.13.0 - 2026-09-17
+
+Added the slice-to-implementation-prompt authoring contract and reusable template.
+The author must investigate source, apply verified domain guidance, resolve
+consequential choices, supply concrete implementation recipes and test oracles,
+and check readiness before issuing initial or corrective work. Distinguished
+binding decisions from recommended shapes and local discretion; retained workflow
+authority, evidence requirements and proportionate one-contributor use.
+
 ## Version 1.12.0 - 2026-09-17
 
 Renamed CC to Code Contributor and CDC to Coordinating Design Contributor,

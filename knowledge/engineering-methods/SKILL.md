@@ -4,10 +4,11 @@ description: |
   Component framework/operational skill for the AI Engineering Methodology:
   knowledge substrate, collaborative posture, process rigour, and the 9-point
   SDLC. Use when designing how a body of LLM-assisted engineering work should be
-  structured, evaluated, or improved.
+  structured, evaluated, or improved; and when converting an approved slice or
+  review finding into a detailed, domain-guided CC implementation prompt.
 license: MIT
 metadata:
-  version: "1.12.0"
+  version: "1.13.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills
@@ -26,6 +27,13 @@ the Three-Contributor Workflow for sustained design/review separation or the
 One-Contributor Workflow for proportionate single-assistant work. All preserve
 scope and evidence honesty; self-checks are not independent acceptance.
 
+Before writing or reviewing a CC implementation assignment, read
+[From Slice to Implementation Prompt](./guides/07-implementation-prompt-authoring.md) and use its
+[authoring template](./templates/cc-implementation-prompt.md). The prompt author must inspect
+source, apply relevant domain guides, resolve consequential choices and supply
+an implementation recipe with concrete test oracles before issuing the work.
+A ledger, skill-reading list or collection of plan links is not that recipe.
+
 Read the guides:
 
 - [Engineering Methodology](./guides/01-engineering-methodology.md)
@@ -34,6 +42,7 @@ Read the guides:
 - [Operational Routing](./guides/04-operational-routing.md)
 - [Component Boundary Analysis](./guides/05-component-boundary-analysis.md)
 - [Source Package Release Gates](./guides/06-source-package-release-gates.md)
+- [From Slice to Implementation Prompt](./guides/07-implementation-prompt-authoring.md)
 
 The component history lives at `knowledge/engineering-methods/version-history.md`.
 

@@ -74,6 +74,7 @@ order.
 | Understand the vocabulary and sizing model | [`guides/01-scales-of-work.md`](./01-scales-of-work.md) |
 | Create or inspect planning directories, filenames, metadata, per-scale document sets, or slice artifact homes | [`guides/02-canonical-planning-worktree.md`](./02-canonical-planning-worktree.md) |
 | Write a `project-plan.md`, `arc-plan.md`, per-scale `ledger.md`, or per-slice open set | [`guides/03-planning-top-down.md`](./03-planning-top-down.md) |
+| Author or review initial or corrective CC implementation instructions | Engineering-methods [From Slice to Implementation Prompt](../../engineering-methods/guides/07-implementation-prompt-authoring.md), relevant domain guides and the actual implementation baseline; complete author readiness before issuing. |
 | Issue, resume, or execute a slice iteration | [Iteration filenames and preservation](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation) and [issuing and executing an iteration](./03-planning-top-down.md#issuing-and-executing-an-iteration) |
 | Escalate from CRC to CDC, or return CDC instructions to CRC through the Operator | [Design handoff filenames](./02-canonical-planning-worktree.md#design-handoff-filenames-and-preservation) and [design escalation and return handoffs](./03-planning-top-down.md#design-escalation-and-return-handoffs) |
 | Close a slice and bubble findings up to the arc | [`guides/04-closing-slices.md`](./04-closing-slices.md) and [`guides/05-closing-arcs.md`](./05-closing-arcs.md#the-plan-change-discipline-make-a-change--version-history) |
@@ -158,7 +159,8 @@ Use these only when context is tight and the operation is narrow:
 - **Planning an active arc or slice:** read
   [`guides/01-scales-of-work.md`](./01-scales-of-work.md),
   [`guides/02-canonical-planning-worktree.md`](./02-canonical-planning-worktree.md),
-  and [`guides/03-planning-top-down.md`](./03-planning-top-down.md).
+  and [`guides/03-planning-top-down.md`](./03-planning-top-down.md). When writing
+  implementation instructions, also read the [prompt-authoring guide](../../engineering-methods/guides/07-implementation-prompt-authoring.md).
 - **Closing a slice:** read
   [`guides/04-closing-slices.md`](./04-closing-slices.md) and the plan-change
   discipline in

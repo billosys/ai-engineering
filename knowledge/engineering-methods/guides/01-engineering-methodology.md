@@ -61,6 +61,17 @@ counts exclude the Operator, who participates in every workflow. Separate
 contributor contexts may use the same underlying model; different model names
 alone do not establish independent verification.
 
+## Implementation assignment authorship
+
+CDC and CRC must turn approved slices into engineering-ready assignments,
+including source reconnaissance, applied domain guidance, resolved decisions,
+concrete implementation shapes and test oracles. Before issuing initial or
+corrective implementation work, read
+[From Slice to Implementation Prompt](./07-implementation-prompt-authoring.md). CRC performs this
+engineering work inside the approved design; structural changes still require
+CDC and Operator resolution. CC's duty to recheck and challenge the plan does
+not transfer the author's design responsibility to CC.
+
 ## Roles and Shared Invariants
 
 All workflows preserve the same quality floor and Operator authority:
