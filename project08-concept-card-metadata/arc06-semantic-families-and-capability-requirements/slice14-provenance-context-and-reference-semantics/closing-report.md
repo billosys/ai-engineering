@@ -49,7 +49,7 @@ The literal route is registered in artifacts/validation-evidence.md. Iteration02
 records the precommit run, committed-wrapper preflight, stale/missing recipe
 rejections, and a status-0 separate-revision committed replay using
 CC_COMMIT=ee80f9149a8badaa998ef65e5b8e17239164cb5f and
-REPLAY_COMMIT=3059bc6dd699ca0e5bfefd8f5e3abd59463ddc92.
+REPLAY_COMMIT=3372da88c5ed2d9d070a89974473532ff0f29e4a.
 It also records the unrelated-HEAD fixture, the derived three-path YAML
 exclusion set, and the prior CRC R1-R4 findings as repaired. All route results
 remain structural evidence; semantic acceptance is not claimed.

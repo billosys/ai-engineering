@@ -584,8 +584,9 @@ inventory input. No status-0 route run is a semantic-acceptance decision.
   lacked the recipe path, so the committed wrapper stopped before execution.
 - committed separate-revision: status 0 with
   CC_COMMIT=ee80f9149a8badaa998ef65e5b8e17239164cb5f and
-  REPLAY_COMMIT=3059bc6dd699ca0e5bfefd8f5e3abd59463ddc92; selected census 12 and legacy
-  comparison 2054; derived YAML-error count 3 and no-frontmatter count 15;
+  REPLAY_COMMIT=3372da88c5ed2d9d070a89974473532ff0f29e4a; selected census 12 and legacy
+  comparison 2054; 17 registered source-snapshot hashes were reported after
+  byte comparison; derived YAML-error count 3 and no-frontmatter count 15;
   unrelated-HEAD fixture passed; positive support actor status 0; wrong
   support expectation status 1; wrong YAML exclusion status 1;
   absence-to-null negative control status 1; real no-match status 0 with []
