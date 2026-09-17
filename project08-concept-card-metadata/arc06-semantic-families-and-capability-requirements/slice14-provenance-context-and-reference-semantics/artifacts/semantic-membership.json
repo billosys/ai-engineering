@@ -1,0 +1,577 @@
+{
+  "artifact_kind": "slice14-semantic-membership",
+  "status": "CC proposed-done; independent CRC verification required",
+  "scope": {
+    "project": "project08-concept-card-metadata",
+    "arc": "arc06-semantic-families-and-capability-requirements",
+    "slice": "slice14-provenance-context-and-reference-semantics",
+    "assignment": [
+      ["actor", "memory-admission"],
+      ["actor", "preservation-decision"],
+      ["actor", "relationship-edge"],
+      ["actor", "source-locator"],
+      ["actor", "source-support"],
+      ["actor", "validation-result"],
+      ["actor.id", "memory-admission"],
+      ["actor.id", "preservation-decision"],
+      ["actor.id", "relationship-edge"],
+      ["actor.id", "source-locator"],
+      ["actor.id", "source-support"],
+      ["actor.id", "validation-result"]
+    ],
+    "source": "project08-concept-card-metadata/artifacts/semantic-coverage-current.json",
+    "counts": {
+      "full": 555,
+      "accepted": 188,
+      "remaining": 367,
+      "assigned": 12,
+      "outside": 355
+    },
+    "assignment_is_not_acceptance": true,
+    "frozen_transition_counts": {
+      "full": 555,
+      "accepted": 115,
+      "remaining": 440,
+      "assigned": 35,
+      "outside": 405
+    },
+    "opening_source_commit": "020268248882358075b678bb855c0ac8d11b532a",
+    "opening_planning_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf",
+    "source_status_at_opening": "clean",
+    "planning_status_at_opening": "clean",
+    "workflow": "Three-Contributor Workflow: CC implementation, CRC routine review, CDC design and composition review; Expedited Mode",
+    "assignment_prompt": "cc-prompt-iteration01.md",
+    "predecessor_prompt": "cc-prompt.md",
+    "reviewer": "CRC through the Operator"
+  },
+  "native_census": {
+    "inventory_evidence_id": "inventory",
+    "parsed_selected_mappings": 12,
+    "record_kind_counts": {
+      "memory-admission": 2,
+      "preservation-decision": 1,
+      "relationship-edge": 2,
+      "source-locator": 1,
+      "source-support": 5,
+      "validation-result": 1
+    },
+    "actor_parent_states": {
+      "absent": 2,
+      "null": 0,
+      "empty_object": 0,
+      "object": 10,
+      "unexpected_type": 0
+    },
+    "actor_id_states": {
+      "not_applicable_parent_absent": 2,
+      "missing_in_object": 0,
+      "null": 6,
+      "empty_string": 0,
+      "string": 4,
+      "unexpected_type": 0
+    },
+    "family_breakdown": {
+      "template": {
+        "records": 6,
+        "parent_absent": 0,
+        "parent_object_null_id": 6,
+        "parent_object_string_id": 0
+      },
+      "synthetic": {
+        "records": 2,
+        "parent_absent": 2,
+        "parent_object_null_id": 0,
+        "parent_object_string_id": 0
+      },
+      "arc07-pilot": {
+        "records": 4,
+        "parent_absent": 0,
+        "parent_object_null_id": 0,
+        "parent_object_string_id": 4
+      }
+    },
+    "actor_label_breakdown": {
+      "id_labels": {
+        "codex-cc": 4
+      },
+      "mode_labels": {
+        "agent-direct": 4
+      },
+      "role_labels": {
+        "extractor": 4
+      }
+    },
+    "by_kind": {
+      "memory-admission": {
+        "records": 2,
+        "parent_absent": 1,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 0,
+        "witnesses": [
+          "knowledge/concept-cards/examples/memory-admission.md",
+          "knowledge/concept-cards/templates/memory-admission.md"
+        ]
+      },
+      "preservation-decision": {
+        "records": 1,
+        "parent_absent": 0,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 0,
+        "witness": "knowledge/concept-cards/templates/preservation-decision.md"
+      },
+      "relationship-edge": {
+        "records": 2,
+        "parent_absent": 1,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 0,
+        "witnesses": [
+          "knowledge/concept-cards/examples/relationship-edge.md",
+          "knowledge/concept-cards/templates/relationship-edge.md"
+        ]
+      },
+      "source-locator": {
+        "records": 1,
+        "parent_absent": 0,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 0,
+        "witness": "knowledge/concept-cards/templates/source-locator.md"
+      },
+      "source-support": {
+        "records": 5,
+        "parent_absent": 0,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 4,
+        "witnesses": [
+          ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-emergent-explanation.md",
+          ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-memory-consolidation.md",
+          ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-model-data-constraints.md",
+          ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-pattern-separation.md",
+          "knowledge/concept-cards/templates/source-support.md"
+        ]
+      },
+      "validation-result": {
+        "records": 1,
+        "parent_absent": 0,
+        "parent_object_null_id": 1,
+        "parent_object_string_id": 0,
+        "witness": "knowledge/concept-cards/templates/validation-result.md"
+      }
+    },
+    "parse_exclusions": {
+      "count": 3,
+      "records": [
+        "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-memory-forms.md",
+        "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-priming-forms.md",
+        "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-recognition-dual-process.md"
+      ],
+      "meaning": "YAML parse failures remain outside the parsed denominator; they are not actor absence observations.",
+      "evidence_ids": ["inventory", "slice13CDC"]
+    },
+    "legacy_untyped_census": {
+      "parsed_mappings": 2054,
+      "actor_parent_states": {
+        "absent": 2054,
+        "null": 0,
+        "empty_object": 0,
+        "object": 0,
+        "unexpected_type": 0
+      },
+      "actor_id_states": {
+        "not_applicable_parent_absent": 2054,
+        "missing_in_object": 0,
+        "null": 0,
+        "empty_string": 0,
+        "string": 0,
+        "unexpected_type": 0
+      },
+      "literal_dotted_actor_id_keys": 0,
+      "meaning": "The frozen parsed legacy untyped inventory contains no actor parent or nested actor.id; this bounded absence is not a claim that legacy provenance never existed."
+    }
+  },
+  "memberships": [
+    {
+      "field_path": "actor",
+      "record_kind": "memory-admission",
+      "meaning_id": "actor-memory-admission",
+      "effective_meaning": "Record-local provenance slot for activity associated with creating or recording a memory-admission assessment; the selected evidence does not settle the activity or actor class.",
+      "evidence_ids": ["memoryTemplate", "memoryExample", "memoryGuide", "fieldGroups", "inventory"],
+      "exceptions": [
+        "decision_authority_ref and operator_acceptance.actor_ref are separate fields and are not populated by actor.",
+        "The synthetic example has no actor parent, while the template has an object with null children."
+      ],
+      "disposition": "Preserve the absent versus object/null states and leave event, identity class, requiredness and authority unresolved."
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "preservation-decision",
+      "meaning_id": "actor-preservation-decision",
+      "effective_meaning": "Record-local provenance slot for activity associated with preparing or recording a preservation decision; the template does not establish whether this is the decider, recorder or another actor.",
+      "evidence_ids": ["preservationTemplate", "preservationGuide", "fieldGroups", "inventory"],
+      "exceptions": [
+        "operator_acceptance_ref and operator_review_required are separate preservation fields.",
+        "Template-only object/null evidence does not establish requiredness or an actor class."
+      ],
+      "disposition": "Retain the template object/null state and do not infer operator acceptance, source authorship or decision authority."
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "relationship-edge",
+      "meaning_id": "actor-relationship-edge",
+      "effective_meaning": "Record-local provenance slot for activity associated with creating, revising or reviewing a relationship edge; the selected evidence does not identify which activity occurred.",
+      "evidence_ids": ["relationshipTemplate", "relationshipExample", "graphGuide", "fieldGroups", "inventory"],
+      "exceptions": [
+        "The synthetic edge is directed and has endpoints, but its absent actor does not affect endpoint or relation semantics.",
+        "Endpoint identity, direction, source support and warrant are not actor identity."
+      ],
+      "disposition": "Preserve object/null versus absent and leave the actor event, identity class and authority unresolved."
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "source-locator",
+      "meaning_id": "actor-source-locator",
+      "effective_meaning": "Record-local provenance slot for activity associated with recording or inspecting a source location; locator address and resolution observation remain distinct from actor.",
+      "evidence_ids": ["locatorTemplate", "extractionGuide", "fieldGroups", "inventory"],
+      "exceptions": [
+        "The locator template's request to report who inspected or reported a location does not prove that actor is the addressed resource, source author or a successful resolver.",
+        "Only template object/null evidence is present."
+      ],
+      "disposition": "Retain object/null and leave the activity, identity class, resolution status and requiredness unresolved."
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "source-support",
+      "meaning_id": "actor-source-support",
+      "effective_meaning": "Record-local provenance attribution on a source-support record; the four populated pilot records carry codex-cc with extractor and agent-direct labels, but those labels do not settle principal identity or the exact support activity.",
+      "evidence_ids": ["supportTemplate", "supportEmergent", "supportMemory", "supportModel", "supportPattern", "pilotCard", "evidenceLifecycle", "inventory"],
+      "exceptions": [
+        "subject_ref identifies a supported claim and source_ref identifies a source; neither is the actor.",
+        "The populated records are candidate support/extraction observations with verification and admission unassessed."
+      ],
+      "disposition": "Preserve the exact populated labels and template null state; do not infer source author, supported-claim actor, semantic verifier or truth authority."
+    },
+    {
+      "field_path": "actor",
+      "record_kind": "validation-result",
+      "meaning_id": "actor-validation-result",
+      "effective_meaning": "Record-local provenance slot for activity associated with a validation result; the selected template does not establish whether it is the validator, recorder or another participant.",
+      "evidence_ids": ["validationTemplate", "validationGuide", "fieldGroups", "inventory"],
+      "exceptions": [
+        "validator_identity is a distinct validation-result field and no equality or precedence is evidenced.",
+        "Only template object/null evidence is present."
+      ],
+      "disposition": "Retain the object/null state and leave the activity, relationship to validator_identity, identity class and requiredness unresolved."
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "memory-admission",
+      "meaning_id": "actor.id-memory-admission",
+      "effective_meaning": "Identity child of the memory-admission actor mapping; selected state is null in the template and not applicable because the synthetic example omits the parent.",
+      "evidence_ids": ["memoryTemplate", "memoryExample", "memoryGuide", "inventory", "slice06Identity"],
+      "exceptions": [
+        "Root record id, decision_authority_ref, operator_acceptance.actor_ref and target_refs do not supply actor.id."
+      ],
+      "disposition": "Preserve null versus parent-absent/not-applicable and do not derive a principal from admission, authority or target fields."
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "preservation-decision",
+      "meaning_id": "actor.id-preservation-decision",
+      "effective_meaning": "Identity child of the preservation-decision actor mapping; selected state is the template null placeholder.",
+      "evidence_ids": ["preservationTemplate", "preservationGuide", "inventory", "slice06Identity"],
+      "exceptions": [
+        "prior_refs, destination_refs and operator_acceptance_ref identify preservation material or review, not actor.id."
+      ],
+      "disposition": "Retain the null child and do not infer a decider, operator or source author identity."
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "relationship-edge",
+      "meaning_id": "actor.id-relationship-edge",
+      "effective_meaning": "Identity child of the relationship-edge actor mapping; selected state is null in the template and not applicable because the synthetic edge omits the parent.",
+      "evidence_ids": ["relationshipTemplate", "relationshipExample", "graphGuide", "inventory", "slice06Identity"],
+      "exceptions": [
+        "from_ref, to_ref, relation direction and source_support_refs identify edge content or warrant, not actor.id."
+      ],
+      "disposition": "Preserve null versus parent-absent/not-applicable and do not infer endpoint, relation or support authority."
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "source-locator",
+      "meaning_id": "actor.id-source-locator",
+      "effective_meaning": "Identity child of the source-locator actor mapping; selected state is the template null placeholder.",
+      "evidence_ids": ["locatorTemplate", "extractionGuide", "inventory", "slice06Identity"],
+      "exceptions": [
+        "source_ref, resource, locator_value and prepared/original mappings identify addressed material or coordinates, not actor.id."
+      ],
+      "disposition": "Retain the null child and do not infer source identity, resource ownership or resolution identity."
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "source-support",
+      "meaning_id": "actor.id-source-support",
+      "effective_meaning": "Recorded actor label child on four candidate pilot source-support records; all populated values are codex-cc, with four template/null records across the selected set.",
+      "evidence_ids": ["supportTemplate", "supportEmergent", "supportMemory", "supportModel", "supportPattern", "pilotCard", "inventory", "slice06Identity"],
+      "exceptions": [
+        "codex-cc is a bounded label in these records, not evidence of a unique human, model, tool, process or global principal.",
+        "subject_ref/source_ref and the claim-support body do not establish actor identity or authority."
+      ],
+      "disposition": "Preserve exact spelling, parent state, record kind and revision context; do not normalize or map the label to source authorship, verification or admission."
+    },
+    {
+      "field_path": "actor.id",
+      "record_kind": "validation-result",
+      "meaning_id": "actor.id-validation-result",
+      "effective_meaning": "Identity child of the validation-result actor mapping; selected state is the template null placeholder.",
+      "evidence_ids": ["validationTemplate", "validationGuide", "inventory", "slice06Identity"],
+      "exceptions": [
+        "validator_identity is a separate slot; target_refs and contract_ref do not identify actor.id."
+      ],
+      "disposition": "Retain the null child and leave actor identity and its relation to validator_identity unresolved."
+    }
+  ],
+  "meanings": {
+    "actor-memory-admission": {
+      "definition": "A record-local provenance attribution associated with a memory-admission assessment. The evidence does not decide whether it denotes authoring, extraction, review, recording or another activity.",
+      "applicability": "Only the root actor mapping on a memory-admission record; not decision authority, operator acceptance, target identity, evidence grade or runtime write.",
+      "observed": "The template has actor as an object with id/mode/role null; the synthetic memory-admission example omits actor. No populated native actor occurs.",
+      "evidence_ids": ["memoryTemplate", "memoryExample", "memoryGuide", "fieldGroups", "inventory"],
+      "operational_consequences": {
+        "reader": "Show absent and object/null as explicit provenance limits; do not label actor as the decider or operator.",
+        "extractor": "Preserve actor separately from decision_authority_ref and operator_acceptance.actor_ref.",
+        "query": "Scope actor lookup to memory-admission record kind and revision; absence is not a null child match.",
+        "migration": "Preserve parent and child states and do not manufacture actor from target or acceptance fields."
+      },
+      "unresolved_questions": [
+        "What activity does a populated memory-admission actor denote?",
+        "What evidence permits actor.id to identify a decision authority or distinguishes that authority from the recording actor?"
+      ],
+      "disposition": "Inventory interpretation only; retain states and defer actor event, class, authority and requiredness."
+    },
+    "actor-preservation-decision": {
+      "definition": "A record-local provenance attribution associated with a preservation decision. The template leaves the actual participant and activity open.",
+      "applicability": "Only the root actor mapping on a preservation-decision record; not operator review, operator acceptance, prior value, destination or reconciliation.",
+      "observed": "The only selected mapping is the preservation-decision template with an object/null actor.",
+      "evidence_ids": ["preservationTemplate", "preservationGuide", "fieldGroups", "inventory"],
+      "operational_consequences": {
+        "reader": "Render the explicit null provenance state without naming an operator or decider.",
+        "extractor": "Keep actor distinct from operator_acceptance_ref and operator_review_required.",
+        "query": "Join actor only within the preservation-decision revision; do not treat destination or prior refs as actor.",
+        "migration": "Carry object/null and any future populated label without assigning authority by shape."
+      },
+      "unresolved_questions": [
+        "Does a populated actor identify the preservation decider, the recorder, or another participant?",
+        "When is operator review required for this actor-bearing record, if at all?"
+      ],
+      "disposition": "Template-only bounded finding; no actor authority or requiredness rule is adopted."
+    },
+    "actor-relationship-edge": {
+      "definition": "A record-local provenance attribution associated with creating, revising or reviewing a relationship edge; the selected evidence does not identify which event occurred.",
+      "applicability": "Only the edge record actor; not endpoint identity, direction, symmetry, relation meaning, support or warrant.",
+      "observed": "The template has object/null actor; the synthetic directed edge example omits actor.",
+      "evidence_ids": ["relationshipTemplate", "relationshipExample", "graphGuide", "fieldGroups", "inventory"],
+      "operational_consequences": {
+        "reader": "Show actor as unresolved/absent separately from edge endpoints and source support.",
+        "extractor": "Do not copy endpoint, source-support or run identity into actor.",
+        "query": "Scope actor to the edge revision; an edge lookup must not treat actor as an endpoint.",
+        "migration": "Preserve absent versus object/null and never create a reciprocal actor from a symmetric relation."
+      },
+      "unresolved_questions": [
+        "What edge activity is represented by a populated actor?",
+        "What evidence would distinguish an edge author from a semantic reviewer or support recorder?"
+      ],
+      "disposition": "Retain states and leave event, identity class and authority unresolved."
+    },
+    "actor-source-locator": {
+      "definition": "A record-local provenance attribution associated with recording or inspecting a source location; address and resolution observation remain separate.",
+      "applicability": "Only the source-locator record actor; not source identity, addressed-resource identity, source authorship or locator resolution.",
+      "observed": "The only selected mapping is the source-locator template with object/null actor.",
+      "evidence_ids": ["locatorTemplate", "extractionGuide", "fieldGroups", "inventory"],
+      "operational_consequences": {
+        "reader": "Display an unresolved locator actor separately from resource and locator coordinates.",
+        "extractor": "Record who inspected/reported a location only when direct evidence exists; do not infer it from source_ref.",
+        "query": "Separate actor lookup from resource and resolution queries; address match is not actor match.",
+        "migration": "Retain null and future labels without converting them into source or resource identity."
+      },
+      "unresolved_questions": [
+        "Does a populated locator actor denote the inspector, recorder, resolver or another participant?",
+        "What evidence establishes resolution rather than merely recording a coordinate?"
+      ],
+      "disposition": "Template-only bounded finding; activity, identity class, resolution relationship and requiredness remain open."
+    },
+    "actor-source-support": {
+      "definition": "A record-local provenance attribution on a source-support record. Four populated pilot records record codex-cc with extractor and agent-direct labels, but the exact support activity and principal identity remain unsettled.",
+      "applicability": "Only the source-support record actor and its revision; not the supported claim actor, source author, source subject, semantic verifier or truth authority.",
+      "observed": "The template has object/null actor. Four Arc07 pilot support records have actor.id codex-cc, mode agent-direct and role extractor, each with a claim subject_ref, ccn-book source_ref and run-arc07-s02-pilot run_ref.",
+      "evidence_ids": ["supportTemplate", "supportEmergent", "supportMemory", "supportModel", "supportPattern", "pilotCard", "evidenceLifecycle", "inventory"],
+      "operational_consequences": {
+        "reader": "Render the exact label, role/mode and support-record context; do not call it source authorship, verification or authority.",
+        "extractor": "Keep actor separate from subject_ref, source_ref, prepared source, run, evidence grade and verification state.",
+        "query": "Use actor as a record/revision-scoped observation; require separate evidence before joining to a principal or supported-claim actor.",
+        "migration": "Preserve codex-cc spelling and family/context; do not normalize it or inherit it into claims."
+      },
+      "unresolved_questions": [
+        "Does codex-cc identify a session, process, model, tool, composite or another actor class?",
+        "What direct evidence would connect this support-record actor to the run actor, source author or semantic verifier?"
+      ],
+      "disposition": "Preserve exact populated labels and template null state; no global actor ontology or authority mapping is adopted."
+    },
+    "actor-validation-result": {
+      "definition": "A record-local provenance attribution associated with a validation result; the selected template does not identify whether it is the validator, recorder or another participant.",
+      "applicability": "Only the validation-result record actor; not validator_identity, target identity, contract, checks or semantic verification.",
+      "observed": "The only selected mapping is the validation-result template with object/null actor and a separate null validator_identity.",
+      "evidence_ids": ["validationTemplate", "validationGuide", "fieldGroups", "inventory"],
+      "operational_consequences": {
+        "reader": "Display actor and validator_identity as separate unassessed fields.",
+        "extractor": "Do not fill actor from validator_identity or target refs without direct evidence.",
+        "query": "Query record actor and validator identity independently and scope each to the result revision.",
+        "migration": "Preserve separate slots and object/null states; no precedence or equality is inferred."
+      },
+      "unresolved_questions": [
+        "Is actor intended to identify the validation performer, result recorder or another participant?",
+        "What evidence would establish a relationship between actor.id and validator_identity?"
+      ],
+      "disposition": "Template-only bounded finding; activity, relation to validator_identity, identity class and requiredness remain open."
+    },
+    "actor.id-memory-admission": {
+      "definition": "The identity child within a memory-admission actor mapping. The selected values are null in the template and not applicable when the synthetic example omits actor.",
+      "applicability": "Nested actor.id only; root record id, decision authority, operator acceptance and target refs remain distinct.",
+      "observed": "One template object has actor.id null; one synthetic example has no actor parent.",
+      "evidence_ids": ["memoryTemplate", "memoryExample", "memoryGuide", "inventory", "slice06Identity"],
+      "operational_consequences": {
+        "reader": "Distinguish null child from absent parent; do not display a fabricated admission principal.",
+        "extractor": "Require direct actor evidence before filling the child.",
+        "query": "A null child match is not a match for records whose parent is absent.",
+        "migration": "Preserve both states and do not derive identity from authority or acceptance."
+      },
+      "unresolved_questions": [
+        "What identity authority, if any, makes an admission actor comparable across revisions?"
+      ],
+      "disposition": "Retain null versus not-applicable; no identity or requiredness rule is adopted."
+    },
+    "actor.id-preservation-decision": {
+      "definition": "The identity child within a preservation-decision actor mapping; the selected state is the template null placeholder.",
+      "applicability": "Nested actor.id only; prior/destination and operator-review references are not actor identity.",
+      "observed": "The only selected preservation-decision mapping has actor.id null.",
+      "evidence_ids": ["preservationTemplate", "preservationGuide", "inventory", "slice06Identity"],
+      "operational_consequences": {
+        "reader": "Show actor identity as unassessed rather than naming a preservation decider.",
+        "extractor": "Keep identity separate from prior/destination and operator-acceptance references.",
+        "query": "Scope any future actor.id lookup to the preservation-decision revision.",
+        "migration": "Carry null without converting it to absent, operator, or source-author identity."
+      },
+      "unresolved_questions": [
+        "What direct evidence distinguishes the actor from an operator reviewer or decision authority?"
+      ],
+      "disposition": "Retain the null child; identity authority and requiredness remain unresolved."
+    },
+    "actor.id-relationship-edge": {
+      "definition": "The identity child within a relationship-edge actor mapping; the selected values are null in the template and not applicable when the synthetic edge omits actor.",
+      "applicability": "Nested actor.id only; endpoints, direction, symmetry and edge support remain independent.",
+      "observed": "One template object has actor.id null; one synthetic relationship edge has no actor parent.",
+      "evidence_ids": ["relationshipTemplate", "relationshipExample", "graphGuide", "inventory", "slice06Identity"],
+      "operational_consequences": {
+        "reader": "Keep actor identity separate from endpoints and relation direction.",
+        "extractor": "Do not copy from_ref, to_ref or support IDs into actor.id.",
+        "query": "An endpoint identity match is not an actor identity match.",
+        "migration": "Preserve null versus parent absence and avoid reciprocal or inherited actor values."
+      },
+      "unresolved_questions": [
+        "What event and identity authority would make an edge actor comparable across revisions?"
+      ],
+      "disposition": "Retain null versus not-applicable; no endpoint or support authority is inferred."
+    },
+    "actor.id-source-locator": {
+      "definition": "The identity child within a source-locator actor mapping; the selected state is the template null placeholder.",
+      "applicability": "Nested actor.id only; source/resource/locator and prepared mapping identities remain separate.",
+      "observed": "The only selected source-locator mapping has actor.id null.",
+      "evidence_ids": ["locatorTemplate", "extractionGuide", "inventory", "slice06Identity"],
+      "operational_consequences": {
+        "reader": "Show locator actor identity as unassessed.",
+        "extractor": "Do not derive actor.id from source_ref, resource or locator coordinates.",
+        "query": "Separate address/resource resolution from actor identity lookup.",
+        "migration": "Preserve null and any future record-local label without source-author mapping."
+      },
+      "unresolved_questions": [
+        "What evidence establishes the identity of a locator inspector, recorder or resolver?"
+      ],
+      "disposition": "Retain the null child; identity class, resolution relationship and requiredness remain unresolved."
+    },
+    "actor.id-source-support": {
+      "definition": "The recorded actor label child on four candidate pilot source-support records. All four populated values are codex-cc; the selected template contributes the null state.",
+      "applicability": "Nested source-support actor.id only; not subject_ref, source_ref, run_ref, source author, verifier or truth authority.",
+      "observed": "Four populated source-support records carry codex-cc; the source-support template carries actor.id null.",
+      "evidence_ids": ["supportTemplate", "supportEmergent", "supportMemory", "supportModel", "supportPattern", "pilotCard", "inventory", "slice06Identity"],
+      "operational_consequences": {
+        "reader": "Render codex-cc as a bounded record label with its role/mode and revision context.",
+        "extractor": "Keep actor.id separate from supported subject, source, run and lifecycle actors.",
+        "query": "Do not perform a global principal join on equal labels alone.",
+        "migration": "Preserve exact spelling and record family; do not map codex-cc to source authorship or verification."
+      },
+      "unresolved_questions": [
+        "Are equal codex-cc labels comparable across support records or only local session labels?",
+        "What evidence would permit a migration mapping to another actor label?"
+      ],
+      "disposition": "Preserve exact label and context; no principal equivalence, authority or requiredness is adopted."
+    },
+    "actor.id-validation-result": {
+      "definition": "The identity child within a validation-result actor mapping; the selected state is the template null placeholder.",
+      "applicability": "Nested actor.id only; validator_identity, target refs and contract refs remain distinct.",
+      "observed": "The only selected validation-result mapping has actor.id null.",
+      "evidence_ids": ["validationTemplate", "validationGuide", "inventory", "slice06Identity"],
+      "operational_consequences": {
+        "reader": "Keep actor identity and validator identity visibly separate and unassessed.",
+        "extractor": "Do not fill actor.id from validator_identity or a target record.",
+        "query": "Scope actor.id and validator_identity lookups independently to the result revision.",
+        "migration": "Preserve null and avoid inventing precedence or equality."
+      },
+      "unresolved_questions": [
+        "What evidence connects, or keeps distinct, the result actor and validator_identity?"
+      ],
+      "disposition": "Retain the null child; identity relation and requiredness remain unresolved."
+    }
+  },
+  "evidence": [
+    {"evidence_id": "projectAgents", "root": "planning", "path": "project08-concept-card-metadata/AGENTS.md", "sha256": "aec4a9021b29bc03eade0f62589c8d163757825fc1ae586ab2e1aef1e3439ebb", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "Project08 instructions and scope fence", "member_scope": "all", "source_range": "lines 1-31"},
+    {"evidence_id": "projectPlan", "root": "planning", "path": "project08-concept-card-metadata/project-plan.md", "sha256": "287c323c631caf94fa9b300a44c2c2e1bd59bfd624db62a52fae75341f39c22b", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current project planning authority and CRC handoff history", "member_scope": "all", "source_range": "lines 107-190, 210-239"},
+    {"evidence_id": "projectLedger", "root": "planning", "path": "project08-concept-card-metadata/ledger.md", "sha256": "1bfce0e574c65b32820bd7c812dd798cff4ad7b312331b0917beef7bdc71c0db", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "project gate authority including P-15", "member_scope": "all", "source_range": "lines 1-45"},
+    {"evidence_id": "arcPlan", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/arc-plan.md", "sha256": "69db6c0421d4abf0da5ea60403b439080cb8259bdb0f1d3de2044bfce243ef8f", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current Arc06 planning authority", "member_scope": "all", "source_range": "lines 1-220"},
+    {"evidence_id": "arcLedger", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/ledger.md", "sha256": "afa039697f941482196025f4955dad0a8134c3f701453c4e6d0b7a1d8f28275b", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current Arc06 gate authority", "member_scope": "all", "source_range": "lines 1-27"},
+    {"evidence_id": "slicePlan", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/slice-plan.md", "sha256": "7001af2d2d12fcc3104348e2e9875b013d093b522ae15bc729af887670aa8a60", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "exact 12-pair assignment, read set and output fence", "member_scope": "all", "source_range": "lines 17-225"},
+    {"evidence_id": "sliceLedger", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/ledger.md", "sha256": "4e963fa6a53ed4e937b480ab0d4c1f5d1d5266d59f44c0ce2cb7d098c81e3a3d", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "six-row acceptance authority", "member_scope": "all", "source_range": "lines 1-13"},
+    {"evidence_id": "assignmentPrompt", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/cc-prompt-iteration01.md", "sha256": "d2033d42cd211afad50d6282ffb135d15976ddbc1367d27393ab2ea99e2b28ad", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current CC assignment and six-file fence", "member_scope": "all", "source_range": "lines 1-225"},
+    {"evidence_id": "cdcDirective", "root": "planning", "path": "project08-concept-card-metadata/cdc-directive01.md", "sha256": "714ce9dce65613051dcaffc929d5aad87b3ceba556329847fc94c5766aaa603d", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "three-contributor authority and CRC/CC handoff contract", "member_scope": "all", "source_range": "lines 1-152"},
+    {"evidence_id": "currentCoverage", "root": "planning", "path": "project08-concept-card-metadata/artifacts/semantic-coverage-current.json", "sha256": "a7f7ad3899b5cdd0b82e0f42c1778ee4edd3eeb68d0c6279a5f186e55d45a615", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current coverage and exact 12-pair assignment authority", "member_scope": "all", "source_range": "JSON document"},
+    {"evidence_id": "transitionCoverage", "root": "planning", "path": "project08-concept-card-metadata/artifacts/semantic-transition-coverage.json", "sha256": "3f1bf740a1c74f0e6c668b57d5c3eef5ba9ce936e56746817c2171a19daf17bd", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "immutable 555/115/440 transition baseline", "member_scope": "all", "source_range": "JSON document"},
+    {"evidence_id": "inventory", "root": "planning", "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json", "sha256": "afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "frozen parsed native population and actor values", "member_scope": "12 selected mappings and 2054 legacy mappings", "source_range": "JSON document; selected values and YAML-error records"},
+    {"evidence_id": "slice13CDC", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/cdc-verification.md", "sha256": "f77663673226072ffb5019d15fb4e71c2cd3f7f9193fc8fb8783e1ebaff81904", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "accepted Slice13 limits and historical source-HEAD drift note", "member_scope": "shared actor/provenance boundaries", "source_range": "lines 1-111, 150-287"},
+    {"evidence_id": "slice13Membership", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/artifacts/semantic-membership.json", "sha256": "3d26b026ace6def52ebe546d97602866b79f480935bf9ac40b6777bd14705749", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "accepted actor-state distinction reused with explicit scope", "member_scope": "shared identity limits", "source_range": "JSON document"},
+    {"evidence_id": "slice13Evidence", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/artifacts/semantic-evidence.md", "sha256": "c86f347bff3babbd3c25eed632d842488539c9f9e22148bbf2c14f4dca3913ac", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "accepted contextual identity and parent-state boundaries", "member_scope": "shared identity limits", "source_range": "lines 1-196"},
+    {"evidence_id": "slice13Handoff", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/artifacts/handoff.md", "sha256": "91a308465ba69c43fbb1feefa702e1025ea7f9da727f057a569d785507919b7d", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "Slice13 unresolved actor questions and Slice14 sizing predecessor", "member_scope": "handoff", "source_range": "lines 1-143"},
+    {"evidence_id": "slice03ReplayContract", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/evidence-replay-contract.md", "sha256": "73f9ee479261c536f3c96fd9f120aaa709358978c5f9922b9ab8cc77065dd70d", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "reusable evidence and outcome-state contract", "member_scope": "validation", "source_range": "lines 1-100"},
+    {"evidence_id": "slice03WorkedReplay", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/worked-replay.md", "sha256": "5185ac366c3dd2cbb3e7b0559b989beff770328ec7c574705f037580efb514c8", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "literal replay precedent", "member_scope": "validation", "source_range": "lines 1-220"},
+    {"evidence_id": "slice03CDC", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/cdc-verification.md", "sha256": "6c6b2762a2fd70252f404bc95e4244091ec70487c6770235e9525131f29751a8", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "replay endpoint separation and no semantic acceptance boundary", "member_scope": "validation", "source_range": "lines 1-100"},
+    {"evidence_id": "skill", "root": "source", "path": "knowledge/concept-cards/SKILL.md", "sha256": "a096893e6a908d014b795bcb2e5e38653b6c590982e99951aae3783a9e7c318a", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "concept-card method and construct boundaries", "member_scope": "all", "source_range": "lines 17-73, 94-151"},
+    {"evidence_id": "fieldGroups", "root": "source", "path": "knowledge/concept-cards/references/record-field-groups.md", "sha256": "c37b20e9d26dec446350f76b3a24bb3ab473aa92a70c7429542b2d65047cac57", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "field placement context; actor explicit only for extraction-run and preservation-decision rows", "member_scope": "all", "source_range": "lines 3-5, 7-20, 22-31"},
+    {"evidence_id": "operatorWorkflow", "root": "source", "path": "knowledge/concept-cards/guides/02-operator-workflow.md", "sha256": "06d1e8584d8df2adf8352f8797bded5533a223b4aaeaa3cf1926fbf58905e5a5", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "actor/provenance/result separation", "member_scope": "all", "source_range": "lines 3-10, 14-24, 34-73"},
+    {"evidence_id": "extractionGuide", "root": "source", "path": "knowledge/concept-cards/guides/03-extraction.md", "sha256": "e60643e05c79ea8dc5eb93a991e08c32cd4f7a88047d7a6f21f159c1abbe5a7d", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "locator and extraction actor scope", "member_scope": "source-locator", "source_range": "lines 37-58, 107-138, 140-163"},
+    {"evidence_id": "preservationGuide", "root": "source", "path": "knowledge/concept-cards/guides/04-re-extraction-preservation.md", "sha256": "6d34102f3b3c042df6a15d3d445ef5423c1e12b24b9a442e806caac7eefe8c92", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "preservation actor/decision and downstream separation", "member_scope": "preservation-decision", "source_range": "lines 1-22, 30-52, 98-121, 123-163"},
+    {"evidence_id": "evidenceLifecycle", "root": "source", "path": "knowledge/concept-cards/guides/05-evidence-lifecycle.md", "sha256": "d470fcfa498627bb1d630cbcacc08124a5108efaacbf855e66a40999f154aabd", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "support subject and evidence/actor separation", "member_scope": "source-support", "source_range": "lines 10-20, 30-48, 49-95, 113-159"},
+    {"evidence_id": "graphGuide", "root": "source", "path": "knowledge/concept-cards/guides/06-graph-cq.md", "sha256": "494c6798d3d3e106fe24534aebc90478440776677c427b773ad347a7fbc1adc0", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "edge endpoint/meaning/actor separation", "member_scope": "relationship-edge", "source_range": "lines 8-74, 146-177"},
+    {"evidence_id": "validationGuide", "root": "source", "path": "knowledge/concept-cards/guides/08-validation-verification.md", "sha256": "095c897f934f753ba5aa1f5b7f40d22a5134f52eb8b71545e9186de4deb396d3", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "validation actor/validator and result provenance separation", "member_scope": "validation-result", "source_range": "lines 16-43, 56-82, 106-159, 171-184"},
+    {"evidence_id": "memoryGuide", "root": "source", "path": "knowledge/concept-cards/guides/09-memory-admission.md", "sha256": "0d901bb71090ce0844552af7c502958d03e2d91be00d54e4849e20b65e3a1bbd", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "admission actor, authority and acceptance separation", "member_scope": "memory-admission", "source_range": "lines 14-33, 35-53, 55-79, 81-105"},
+    {"evidence_id": "memoryTemplate", "root": "source", "path": "knowledge/concept-cards/templates/memory-admission.md", "sha256": "51a237f45c0883e80a8a31e104b804116c485fe7ec3016ec4fba64f9563c277a", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "memory-admission template object/null actor", "member_scope": "memory-admission", "source_range": "lines 1-32, 42-80"},
+    {"evidence_id": "preservationTemplate", "root": "source", "path": "knowledge/concept-cards/templates/preservation-decision.md", "sha256": "b2be8df0d18a1cac413cf00ac40a7c7234b3cf1726bc6c50f4d349fbf0a6e1c8", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "preservation-decision template object/null actor", "member_scope": "preservation-decision", "source_range": "lines 1-22, 25-62"},
+    {"evidence_id": "relationshipTemplate", "root": "source", "path": "knowledge/concept-cards/templates/relationship-edge.md", "sha256": "de9862a70450f25bb0c7e99a4be74251ad77c9ebcdbd7c96e3e32bfb2ac9ca7b", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "relationship-edge template object/null actor", "member_scope": "relationship-edge", "source_range": "lines 1-26, 29-65"},
+    {"evidence_id": "locatorTemplate", "root": "source", "path": "knowledge/concept-cards/templates/source-locator.md", "sha256": "cd4073ca026fa235323a15679417c2e444a1dd34b65b19c55b64d553143be3ad", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "source-locator template object/null actor", "member_scope": "source-locator", "source_range": "lines 1-22, 24-61"},
+    {"evidence_id": "supportTemplate", "root": "source", "path": "knowledge/concept-cards/templates/source-support.md", "sha256": "09e6e957d7a3ed2d76838ab4b85a8287577310d7e4cdedfa736666d127da523b", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "source-support template object/null actor", "member_scope": "source-support", "source_range": "lines 1-29, 32-69"},
+    {"evidence_id": "validationTemplate", "root": "source", "path": "knowledge/concept-cards/templates/validation-result.md", "sha256": "07bcc435ce78982406de0212f9c12912f56838309e0c186aae1635d1c2ad916f", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "validation-result template object/null actor", "member_scope": "validation-result", "source_range": "lines 1-21, 24-59"},
+    {"evidence_id": "memoryExample", "root": "source", "path": "knowledge/concept-cards/examples/memory-admission.md", "sha256": "ed28f9b78624fa8e6939d7850e64c979c2baf1fa03ed7d93e51b18fd2819d554", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "synthetic memory-admission absent actor and acceptance limit", "member_scope": "memory-admission", "source_range": "lines 1-36"},
+    {"evidence_id": "relationshipExample", "root": "source", "path": "knowledge/concept-cards/examples/relationship-edge.md", "sha256": "63d95810eee4ea72b76c6ffcdd516ac8515ea97b2b0f02e7dc1a3fb21fae606f", "authority_commit": "020268248882358075b678bb855c0ac8d11b532a", "read_mode": "snapshot", "role": "synthetic edge absent actor and endpoint distinction", "member_scope": "relationship-edge", "source_range": "lines 1-37"},
+    {"evidence_id": "supportEmergent", "root": "source", "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-emergent-explanation.md", "sha256": "60c2d59341dea5efacda87d10888fd03c9fa7dddc8ef9ee51bfe32900e0345c7", "read_mode": "live", "role": "populated Arc07 pilot source-support witness and body context", "member_scope": "source-support", "source_range": "lines 1-55"},
+    {"evidence_id": "supportMemory", "root": "source", "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-memory-consolidation.md", "sha256": "81db0e748d2517d95a545742de4689c49bc91d335b202f352f6f9e9e9a6e874e", "read_mode": "live", "role": "populated Arc07 pilot source-support witness and body context", "member_scope": "source-support", "source_range": "lines 1-55"},
+    {"evidence_id": "supportModel", "root": "source", "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-model-data-constraints.md", "sha256": "ad49017a9ea3b1649b2ff11aac6e31c5d8949f30403585f13ed9f6f79bf80dfe", "read_mode": "live", "role": "populated Arc07 pilot source-support witness and body context", "member_scope": "source-support", "source_range": "lines 1-56"},
+    {"evidence_id": "supportPattern", "root": "source", "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-pattern-separation.md", "sha256": "bca2ac1f7714299e53d9f7293c4ce969f49b0c56e6bf9c2f24fedf101490df9c", "read_mode": "live", "role": "populated Arc07 pilot source-support witness and body context", "member_scope": "source-support", "source_range": "lines 1-56"},
+    {"evidence_id": "pilotCard", "root": "source", "path": ".worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-emergent-explanation.md", "sha256": "a7b5b387434bc82885ad013b36ed65d354cdb7687d4d3fa1daaffcebadbcbead", "read_mode": "live", "role": "corresponding Arc07 pilot card and actor/support-subject boundary", "member_scope": "source-support", "source_range": "lines 1-68"},
+    {"evidence_id": "slice06Identity", "root": "planning", "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice06-record-identity-and-classification/artifacts/semantic-membership.json", "sha256": "6322a4737084e51db5af0dc84d2c1bc1008365a691b2def85d23b251d39c3c1e", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "accepted record-identity boundary for root id/revision versus nested actor.id", "member_scope": "actor.id", "source_range": "JSON document"}
+  ]
+}
