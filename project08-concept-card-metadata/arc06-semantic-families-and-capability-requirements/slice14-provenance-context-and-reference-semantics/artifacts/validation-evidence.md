@@ -565,20 +565,20 @@ inventory input. No status-0 route run is a semantic-acceptance decision.
   membership and dangling evidence mutations rejected; semantic acceptance not
   claimed
 - committed same-revision preflight: status 0 with
-  CC_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54 and
-  REPLAY_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54; registry was loaded from CC_COMMIT and the wrapper
+  CC_COMMIT=ee80f9149a8badaa998ef65e5b8e17239164cb5f and
+  REPLAY_COMMIT=ee80f9149a8badaa998ef65e5b8e17239164cb5f; registry was loaded from CC_COMMIT and the wrapper
   extracted the literal route from that revision; all structural outcomes
   matched the precommit run. This was a wrapper preflight, not the required
   separate-revision result.
-- stale valid recipe rejection: status 1 with CC_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54 and
+- stale valid recipe rejection: status 1 with CC_COMMIT=ee80f9149a8badaa998ef65e5b8e17239164cb5f and
   REPLAY_COMMIT=8e6b67708eeeca391a139bb8d1b710633cfbbeb4; the older recipe was
   rejected on its opening-to-CC scope predicate.
-- missing recipe-file rejection: status 2 with CC_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54 and
+- missing recipe-file rejection: status 2 with CC_COMMIT=ee80f9149a8badaa998ef65e5b8e17239164cb5f and
   REPLAY_COMMIT=2fa4c2a5273485d5bdf5bfba9a59677df79d14cf; the valid commit
   lacked the recipe path, so the committed wrapper stopped before execution.
 - committed separate-revision: status 0 with
-  CC_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54 and
-  REPLAY_COMMIT=6d105454f810c8ac6e9972430fd39114749dc51b; selected census 12 and legacy
+  CC_COMMIT=ee80f9149a8badaa998ef65e5b8e17239164cb5f and
+  REPLAY_COMMIT=3059bc6dd699ca0e5bfefd8f5e3abd59463ddc92; selected census 12 and legacy
   comparison 2054; derived YAML-error count 3 and no-frontmatter count 15;
   unrelated-HEAD fixture passed; positive support actor status 0; wrong
   support expectation status 1; wrong YAML exclusion status 1;
