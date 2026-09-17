@@ -5,11 +5,11 @@ Operator. This report is not a CRC or CDC verdict.
 
 ## Execution boundary
 
-- Assignment executed: cc-prompt-iteration01.md, the preserved routing
-  replacement for cc-prompt.md.
+- Assignment executed: cc-prompt-iteration02.md, the first corrective
+  refinement after CRC review of cc-prompt-iteration01.md.
 - Source opening HEAD: 020268248882358075b678bb855c0ac8d11b532a; source was clean
   and no source file was changed.
-- Planning opening HEAD: 2fa4c2a5273485d5bdf5bfba9a59677df79d14cf; planning
+- Planning opening HEAD: 8e6b67708eeeca391a139bb8d1b710633cfbbeb4; planning
   authority files were read-only during execution.
 - Current opening accounting: 555 full, 188 accepted, 367 remaining, 12
   assigned, 355 outside.
@@ -37,24 +37,20 @@ No crc-verification.md or cdc-verification.md was created.
 | Row | CC proposed-done result | Evidence |
 | --- | --- | --- |
 | S14-1 | done, CC-attested | Exact twelve-pair assignment, current/frozen accounting, remaining/disjoint checks and outside ownership |
-| S14-2 | done, CC-attested | Native 12-record kind/family/state census, 2,054 legacy comparison and three parse exclusions |
-| S14-3 | done, CC-attested | Twelve member meanings, shared contextual evidence, limits and reader/extractor/query/migration consequences |
+| S14-2 | done, CC-attested | Native 12-record kind/family/state census, 2,054 legacy comparison and inventory-derived YAML-error exclusions distinct from no-frontmatter records |
+| S14-3 | done, CC-attested | Twelve member meanings, shared contextual evidence, limits and corrected five-record source-support denominator |
 | S14-4 | done, CC-attested | Native support and template/absent diagnostics plus wrong expectation, no-match and missing-input controls |
-| S14-5 | done, CC-attested | Fail-closed Bash/jq/Git/shasum route, 42 hashes, mutation controls, preservation checks and exact six-file fence |
+| S14-5 | done, CC-attested | Fail-closed Bash/jq/Git/shasum route, 42 hashes, explicit recipe-revision execution, path-scoped source checks, exclusion negative control and exact six-file fence |
 | S14-6 | done, CC-attested | Handoff questions, Slice15 boundary, candidate twenty-pair next unit and P-15 gate |
 
 ## Validation status
 
-The literal route is registered in artifacts/validation-evidence.md. It is
-intended to be run once against the staged precommit union and once after the
-explicit CC commit using separate CC_COMMIT and REPLAY_COMMIT endpoints.
-The precommit route has returned status 0 at planning HEAD
-2fa4c2a5273485d5bdf5bfba9a59677df79d14cf, with wrong-identity and
-absence-to-null controls at status 1, a real no-match at status 0 with [],
-and a missing inventory input at status 2. Committed replay at
-CC_COMMIT=6003975321334a0ad554d92663836317b71bd6ce with
-REPLAY_COMMIT=6003975321334a0ad554d92663836317b71bd6ce also returned status
-0 with the same structural outcomes. Semantic acceptance is not claimed.
+The literal route is registered in artifacts/validation-evidence.md. Iteration02
+records one precommit run and one committed run using separate CC_COMMIT and
+REPLAY_COMMIT endpoints. It also records rejection of missing and wrong recipe
+endpoints, the unrelated-HEAD fixture, the derived three-path YAML exclusion
+set, and the prior CRC R1-R4 findings as repaired. All route results remain
+structural evidence; semantic acceptance is not claimed.
 
 ## Conclusions and limits
 

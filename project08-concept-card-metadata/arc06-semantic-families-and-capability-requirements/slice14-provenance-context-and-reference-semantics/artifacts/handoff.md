@@ -6,8 +6,9 @@ implementation authority or accept any semantic membership.
 
 ## Result
 
-The current assignment was the preserved routing replacement
-cc-prompt-iteration01.md, covering exactly twelve pairs:
+The current assignment was cc-prompt-iteration02.md, the first executed
+corrective refinement after CRC review of cc-prompt-iteration01.md. It covers
+exactly twelve pairs:
 
 - actor and actor.id for memory-admission, preservation-decision,
   relationship-edge, source-locator, source-support and validation-result.
@@ -19,6 +20,14 @@ codex-cc / agent-direct / extractor. The frozen parsed legacy comparison is
 2,054 untyped mappings with actor parent absent and actor.id not applicable.
 The three named YAML-parse exclusions remain exclusions, not negative actor
 observations.
+
+Iteration02 repairs the four CRC findings without changing the assignment or
+the semantic boundary: the source-support member now names five selected
+records with one template/null record; committed replay executes the route
+from an explicit recipe revision separate from the CC contribution; source
+drift is checked on registered paths while unrelated HEAD movement is
+tolerated; and the three authored YAML exclusions are compared with the
+inventory-derived error set. The result remains proposed-done pending CRC.
 
 The record-local reading is retained per kind:
 

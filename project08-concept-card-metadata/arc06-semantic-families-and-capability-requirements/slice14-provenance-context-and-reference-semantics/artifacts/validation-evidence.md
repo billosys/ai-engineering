@@ -13,9 +13,9 @@ inventory. It has two explicit modes:
   staged/unstaged/named-new union, and does not require the planning checkout
   to be clean;
 - committed mode requires both CC_COMMIT and REPLAY_COMMIT, reads the
-  registry from CC_COMMIT, reads this recipe from REPLAY_COMMIT, checks the
-  opening-to-CC six-file contribution, and requires clean source and planning
-  checkouts.
+  registry from CC_COMMIT, executes the literal route extracted from the
+  validation-evidence.md at REPLAY_COMMIT, checks the opening-to-CC six-file
+  contribution, and requires clean source and planning checkouts.
 
 CC_COMMIT is the contribution endpoint. REPLAY_COMMIT is the recipe endpoint.
 They are intentionally separate. The route does not inspect or change
@@ -27,7 +27,13 @@ source truth, memory admission or runtime behavior.
 Run from the planning checkout. The committed invocation is:
 
 ~~~text
-CC_COMMIT=<cc-endpoint> REPLAY_COMMIT=<recipe-endpoint> bash -s < <(awk '/^## Literal route$/{seen=1;next} seen && /^~~~bash$/{p=1;next} p && /^~~~$/{exit} p' project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/artifacts/validation-evidence.md)
+CC_COMMIT=<cc-endpoint> REPLAY_COMMIT=<recipe-endpoint> bash -c '
+set -euo pipefail
+recipe=$(git show "$REPLAY_COMMIT:project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/artifacts/validation-evidence.md") || exit 2
+code=$(printf "%s\n" "$recipe" | awk '"'"'/^## Literal route$/{seen=1;next} seen && /^~~~bash$/{p=1;next} p && /^~~~$/{exit} p'"'"') || exit 2
+[[ -n "$code" ]] || exit 2
+printf "%s\n" "$code" | bash -s
+'
 ~~~
 
 The precommit invocation is:
@@ -53,7 +59,7 @@ coverage_rel=project08-concept-card-metadata/artifacts/semantic-coverage-current
 transition_rel=project08-concept-card-metadata/artifacts/semantic-transition-coverage.json
 inventory_rel=project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
 opening_source=020268248882358075b678bb855c0ac8d11b532a
-opening_planning=2fa4c2a5273485d5bdf5bfba9a59677df79d14cf
+opening_planning=8e6b67708eeeca391a139bb8d1b710633cfbbeb4
 historical_source=e763c661592ff1097a94bb470db9cf924524579d
 mode=precommit
 
@@ -67,28 +73,34 @@ if [[ -n "${CC_COMMIT:-}" ]]; then
   git cat-file -e "$REPLAY_COMMIT^{commit}" || fail "REPLAY_COMMIT is not a commit"
   git show "$CC_COMMIT:$membership_rel" > "$temp/semantic-membership.json" ||
     fail "registry is absent from CC_COMMIT"
-  git show "$REPLAY_COMMIT:$validation_rel" > "$temp/validation-evidence.md" ||
-    fail "recipe is absent from REPLAY_COMMIT"
   registry=$temp/semantic-membership.json
-  recipe=$temp/validation-evidence.md
 else
   [[ "${CC_PRECOMMIT:-}" == "1" ]] || fail "set CC_PRECOMMIT=1 or provide CC_COMMIT"
   registry=$root/$membership_rel
-  recipe=$root/$validation_rel
   [[ -s "$registry" ]] || fail "working-tree registry is absent or empty"
-  [[ -s "$recipe" ]] || fail "working-tree recipe is absent or empty"
 fi
 
 [[ "$root" == /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning ]] ||
   fail "route must run from the canonical planning checkout"
-[[ "$(git -C "$source" rev-parse HEAD)" == "$opening_source" ]] ||
-  fail "source HEAD is not the pinned opening source commit"
+source_current=$(git -C "$source" rev-parse HEAD)
 [[ -z "$(git -C "$source" status --porcelain --untracked-files=all)" ]] ||
   fail "source checkout is not clean"
 git diff --check || fail "planning working tree has whitespace errors"
 git diff --cached --check || fail "planning index has whitespace errors"
-git -C "$source" diff --exit-code "$historical_source" HEAD -- knowledge/concept-cards knowledge/document-extraction ||
+git -C "$source" diff --exit-code "$historical_source" "$source_current" -- knowledge/concept-cards knowledge/document-extraction ||
   fail "registered relevant source tree differs from the historical source comparison"
+
+fixture=$temp/unrelated-head-fixture
+mkdir -p "$fixture/knowledge/concept-cards"
+git init -q "$fixture"
+printf '%s\n' "stable" > "$fixture/knowledge/concept-cards/stable.md"
+git -C "$fixture" add -- knowledge/concept-cards/stable.md
+git -C "$fixture" -c user.name="Slice14 validation" -c user.email="slice14@example.invalid" commit -qm base
+printf '%s\n' "unrelated" > "$fixture/unrelated.txt"
+git -C "$fixture" add -- unrelated.txt
+git -C "$fixture" -c user.name="Slice14 validation" -c user.email="slice14@example.invalid" commit -qm unrelated
+git -C "$fixture" diff --exit-code HEAD~1 HEAD -- knowledge/concept-cards ||
+  fail "unrelated HEAD fixture changed a registered path"
 
 allowed_paths="
 $membership_rel
@@ -147,6 +159,7 @@ project08-concept-card-metadata/arc06-semantic-families-and-capability-requireme
 $slice_rel/slice-plan.md
 $slice_rel/cc-prompt.md
 $slice_rel/cc-prompt-iteration01.md
+$slice_rel/cc-prompt-iteration02.md
 project08-concept-card-metadata/artifacts/semantic-coverage-current.json
 $transition_rel
 $inventory_rel
@@ -320,11 +333,35 @@ actual_census=$(jq -c --argjson kinds "$kinds_json" '
       )
     }
 ' "$inventory")
-jq -e '
-  .native_census.parse_exclusions.count == 3
-  and (.native_census.parse_exclusions.records | length) == 3
+yaml_error_paths=$(jq -c '
+  [.records[]
+   | select((.error? // "") | contains("YAML::XS"))
+   | .path]
+  | sort
+' "$inventory")
+no_frontmatter_count=$(jq '[.records[] | select(.error? == "no-opening-frontmatter")] | length' "$inventory")
+[[ "$no_frontmatter_count" == "15" ]] ||
+  fail "native no-frontmatter distinction changed"
+[[ "$(jq 'length' <<< "$yaml_error_paths")" == "3" ]] ||
+  fail "native YAML-error cell count changed"
+jq -e --argjson yaml_errors "$yaml_error_paths" '
+  .native_census.parse_exclusions.count == ($yaml_errors | length)
+  and ((.native_census.parse_exclusions.records | sort) == $yaml_errors)
   and (.native_census.parse_exclusions.meaning | contains("not actor absence"))
-' "$registry" >/dev/null || fail "parse exclusions were not preserved"
+' "$registry" >/dev/null || fail "authored parse exclusions differ from native YAML-error paths"
+wrong_exclusions=$(jq '
+  .native_census.parse_exclusions.records[0] = "not-a-real-yaml-error-path"
+' "$registry")
+if printf '%s\n' "$wrong_exclusions" | jq -e --argjson yaml_errors "$yaml_error_paths" '
+  .native_census.parse_exclusions.count == ($yaml_errors | length)
+  and ((.native_census.parse_exclusions.records | sort) == $yaml_errors)
+' >/dev/null; then
+  fail "wrong YAML exclusion mutation was accepted"
+else
+  wrong_exclusion_status=$?
+  [[ "$wrong_exclusion_status" == "1" ]] ||
+    fail "wrong YAML exclusion mutation failed with unexpected jq status"
+fi
 jq -e --argjson actual "$actual_census" '
   (.native_census
    | del(.inventory_evidence_id, .parse_exclusions)
@@ -390,6 +427,11 @@ hash_evidence() {
     expected_hash=$(jq -r --arg id "$evidence_id" '.evidence[] | select(.evidence_id == $id) | .sha256' "$registry")
     [[ "$actual_hash" == "$expected_hash" ]] ||
       fail "evidence hash mismatch: $evidence_id"
+    if [[ "$evidence_root:$read_mode" == "source:snapshot" ]]; then
+      current_hash=$(shasum -a 256 "$source/$path" | awk '{print $1}')
+      [[ "$current_hash" == "$expected_hash" ]] ||
+        fail "registered source bytes changed: $evidence_id"
+    fi
   done < <(jq -c '.evidence[]' "$registry")
 }
 hash_evidence
@@ -466,9 +508,13 @@ fi
 
 printf '%s\n' "mode=$mode"
 printf '%s\n' "registry=$registry"
-printf '%s\n' "source_head=$(git -C "$source" rev-parse HEAD)"
+printf '%s\n' "source_opening=$opening_source"
+printf '%s\n' "source_current=$source_current"
 printf '%s\n' "planning_head=$(git -C "$root" rev-parse HEAD)"
 printf '%s\n' "native_census=12 selected, legacy_untyped=2054"
+printf '%s\n' "yaml_error_count=$(jq 'length' <<< "$yaml_error_paths") no_frontmatter_count=$no_frontmatter_count"
+printf '%s\n' "wrong_yaml_exclusion_status=$wrong_exclusion_status"
+printf '%s\n' "unrelated_head_fixture=pass"
 printf '%s\n' "support_actor_positive=0"
 printf '%s\n' "support_actor_wrong_expectation_status=$support_wrong_status"
 printf '%s\n' "absence_to_null_negative_control_status=$absence_to_null_status"

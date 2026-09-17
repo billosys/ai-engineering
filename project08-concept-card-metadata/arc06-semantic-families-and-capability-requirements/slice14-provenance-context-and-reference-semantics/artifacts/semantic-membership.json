@@ -36,12 +36,12 @@
       "outside": 405
     },
     "opening_source_commit": "020268248882358075b678bb855c0ac8d11b532a",
-    "opening_planning_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf",
+    "opening_planning_commit": "8e6b67708eeeca391a139bb8d1b710633cfbbeb4",
     "source_status_at_opening": "clean",
     "planning_status_at_opening": "clean",
     "workflow": "Three-Contributor Workflow: CC implementation, CRC routine review, CDC design and composition review; Expedited Mode",
-    "assignment_prompt": "cc-prompt-iteration01.md",
-    "predecessor_prompt": "cc-prompt.md",
+    "assignment_prompt": "cc-prompt-iteration02.md",
+    "predecessor_prompt": "cc-prompt-iteration01.md",
     "reviewer": "CRC through the Operator"
   },
   "native_census": {
@@ -309,7 +309,7 @@
       "field_path": "actor.id",
       "record_kind": "source-support",
       "meaning_id": "actor.id-source-support",
-      "effective_meaning": "Recorded actor label child on four candidate pilot source-support records; all populated values are codex-cc, with four template/null records across the selected set.",
+      "effective_meaning": "Recorded actor label child on four candidate pilot source-support records; all populated values are codex-cc, with one template/null record across the selected five source-support mappings.",
       "evidence_ids": ["supportTemplate", "supportEmergent", "supportMemory", "supportModel", "supportPattern", "pilotCard", "inventory", "slice06Identity"],
       "exceptions": [
         "codex-cc is a bounded label in these records, not evidence of a unique human, model, tool, process or global principal.",
@@ -536,9 +536,9 @@
     {"evidence_id": "projectLedger", "root": "planning", "path": "project08-concept-card-metadata/ledger.md", "sha256": "1bfce0e574c65b32820bd7c812dd798cff4ad7b312331b0917beef7bdc71c0db", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "project gate authority including P-15", "member_scope": "all", "source_range": "lines 1-45"},
     {"evidence_id": "arcPlan", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/arc-plan.md", "sha256": "69db6c0421d4abf0da5ea60403b439080cb8259bdb0f1d3de2044bfce243ef8f", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current Arc06 planning authority", "member_scope": "all", "source_range": "lines 1-220"},
     {"evidence_id": "arcLedger", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/ledger.md", "sha256": "afa039697f941482196025f4955dad0a8134c3f701453c4e6d0b7a1d8f28275b", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current Arc06 gate authority", "member_scope": "all", "source_range": "lines 1-27"},
-    {"evidence_id": "slicePlan", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/slice-plan.md", "sha256": "7001af2d2d12fcc3104348e2e9875b013d093b522ae15bc729af887670aa8a60", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "exact 12-pair assignment, read set and output fence", "member_scope": "all", "source_range": "lines 17-225"},
-    {"evidence_id": "sliceLedger", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/ledger.md", "sha256": "4e963fa6a53ed4e937b480ab0d4c1f5d1d5266d59f44c0ce2cb7d098c81e3a3d", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "six-row acceptance authority", "member_scope": "all", "source_range": "lines 1-13"},
-    {"evidence_id": "assignmentPrompt", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/cc-prompt-iteration01.md", "sha256": "d2033d42cd211afad50d6282ffb135d15976ddbc1367d27393ab2ea99e2b28ad", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current CC assignment and six-file fence", "member_scope": "all", "source_range": "lines 1-225"},
+    {"evidence_id": "slicePlan", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/slice-plan.md", "sha256": "7a305ef57c55cda8792f9d2c760638b6700a49acd243be5e05117c1f7eb3c4db", "authority_commit": "8e6b67708eeeca391a139bb8d1b710633cfbbeb4", "read_mode": "snapshot", "role": "exact 12-pair assignment, read set and output fence", "member_scope": "all", "source_range": "lines 17-225"},
+    {"evidence_id": "sliceLedger", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/ledger.md", "sha256": "dfd921483ca0894677850c47cb078ecb2c18acd645f29e28ade0ff70579dfb28", "authority_commit": "8e6b67708eeeca391a139bb8d1b710633cfbbeb4", "read_mode": "snapshot", "role": "six-row acceptance authority", "member_scope": "all", "source_range": "lines 1-13"},
+    {"evidence_id": "assignmentPrompt", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/cc-prompt-iteration02.md", "sha256": "d09a94f146b1f6836c7cbb4a10cf1c9ea3a7417d89f64d0fec89153ad4ef56e1", "authority_commit": "8e6b67708eeeca391a139bb8d1b710633cfbbeb4", "read_mode": "snapshot", "role": "current CC refinement assignment and six-file fence", "member_scope": "all", "source_range": "lines 1-236"},
     {"evidence_id": "cdcDirective", "root": "planning", "path": "project08-concept-card-metadata/cdc-directive01.md", "sha256": "714ce9dce65613051dcaffc929d5aad87b3ceba556329847fc94c5766aaa603d", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "three-contributor authority and CRC/CC handoff contract", "member_scope": "all", "source_range": "lines 1-152"},
     {"evidence_id": "currentCoverage", "root": "planning", "path": "project08-concept-card-metadata/artifacts/semantic-coverage-current.json", "sha256": "a7f7ad3899b5cdd0b82e0f42c1778ee4edd3eeb68d0c6279a5f186e55d45a615", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "current coverage and exact 12-pair assignment authority", "member_scope": "all", "source_range": "JSON document"},
     {"evidence_id": "transitionCoverage", "root": "planning", "path": "project08-concept-card-metadata/artifacts/semantic-transition-coverage.json", "sha256": "3f1bf740a1c74f0e6c668b57d5c3eef5ba9ce936e56746817c2171a19daf17bd", "authority_commit": "2fa4c2a5273485d5bdf5bfba9a59677df79d14cf", "read_mode": "snapshot", "role": "immutable 555/115/440 transition baseline", "member_scope": "all", "source_range": "JSON document"},

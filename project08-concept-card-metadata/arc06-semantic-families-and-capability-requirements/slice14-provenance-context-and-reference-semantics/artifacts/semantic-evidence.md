@@ -10,15 +10,15 @@ memory admission or runtime work.
 - Source checkout: /Users/oubiwann/lab/billosys/ai-engineering, opening
   020268248882358075b678bb855c0ac8d11b532a, clean and read-only.
 - Planning checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning,
-  opening 2fa4c2a5273485d5bdf5bfba9a59677df79d14cf, clean.
+  opening 8e6b67708eeeca391a139bb8d1b710633cfbbeb4, clean.
 - Current coverage is a live planning artifact at the opening state:
   188 accepted / 367 remaining / 12 assigned / 355 outside.
 - The immutable transition remains 555 total, 115 accepted, 440 remaining,
   35 transition-assigned and 405 outside. It is not replaced by the current
   checkpoint.
-- The executed assignment is cc-prompt-iteration01.md, the preserved routing
-  replacement for cc-prompt.md. No earlier Slice14 execution or acceptance was
-  found.
+- The executed assignment is cc-prompt-iteration02.md, the first corrective
+  refinement after CRC review of cc-prompt-iteration01.md. The predecessor
+  packet remains preserved; no pair is independently accepted.
 - The packet covers exactly the following twelve field-path/record-kind pairs:
 
 | Field path | Record kind |
@@ -40,6 +40,18 @@ Assignment is not acceptance. The exact scope, read set, source/planning
 boundaries and six-file fence are registered in
 artifacts/semantic-membership.json under the evidence IDs
 assignmentPrompt, slicePlan, projectPlan, projectLedger, arcPlan and arcLedger.
+
+### Iteration02 corrections
+
+CRC's R1 correction is member-specific: source-support has five selected
+records, four populated pilot records and one template/null record. The
+actor.id-source-support meaning now states that denominator explicitly rather
+than attributing the four template/null count to that member. R2-R4 are
+addressed in the literal route: committed replay executes the validation code
+from the explicit recipe revision, source comparison is path-scoped and
+reports opening/current commits, and the authored YAML exclusions are checked
+against the exact YAML-error paths derived from the pinned inventory. These
+remain CC proposed-done repairs pending independent CRC reproduction.
 
 ## Native census
 
