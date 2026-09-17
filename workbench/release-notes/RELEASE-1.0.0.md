@@ -1,24 +1,70 @@
+# AI Engineering 1.0.0
+
+Status: unreleased. This is the upcoming release draft, not a publication or
+final release-gate record. Individual skills retain their own version numbers.
+
 ## Summary
 
-AI Engineering 0.5.0 is the knowledge-library reorganization release. It moves
-the repository from a mixed `docs/` tree toward a clearer public contract:
+AI Engineering 1.0.0 brings together the knowledge-library reorganization,
+framework hardening, reusable method skills, and explicit contributor
+workflows. It moves the repository from a mixed `docs/` tree toward a clearer
+public contract:
 `docs/` explains the materials for readers, `knowledge/` stores the source and
 derived substrate consumed by skills and packages, and `protocols/` carries
 protocol distributions such as CCDP.
 
-The release also carries the framework hardening work from the 0.5.0 cycle:
+The release also carries the framework hardening work from the 1.0.0 cycle:
 multi-scale code audits, per-scale ledger files, per-slice artifact homes,
 package-context path validation, CCDP protocol packaging, the
-collaboration-framework component map, the live scientific-methods skill, and
-the planned concept-card method skill architecture.
+collaboration-framework component map, and the scientific-methods,
+document-extraction, and concept-cards skills.
 
-Project04, the knowledge-library reorganization project, is acceptance-ready:
-the planned reorganization arcs are closed, the Arc07 component-entrypoint
-cleanup is reconciled, Arc08's framework guide decomposition work has final
-validation evidence, and Arc09 records the scientific-methods addition. The
-remaining project-level gate is operator acceptance of the end-user route from
+Project04, the knowledge-library reorganization project, is recorded as closed
+in its canonical plan. Its completed work establishes the end-user route from
 README into `docs/` for explanation and into `knowledge/` for the actual
-material substrate.
+material substrate. Project closure is not final release authorization.
+
+## Contributor Workflows and Explicit Handoffs
+
+The framework now names responsibilities independently of products and models:
+
+- **CDC: Coordinating Design Contributor** owns architecture and project/arc
+  planning with the Operator.
+- **CRC: Coordinating Review Contributor** is the optional routine review and
+  execution-coordination role, operating within the approved design.
+- **CC: Code Contributor** owns implementation, tests, self-review, and
+  evidence-backed completion claims.
+
+Three dedicated workflows share scope, approval, and evidence-honesty rules:
+
+- **Two-Contributor Workflow** remains the default: CDC + CC.
+- **Three-Contributor Workflow** requires explicit Operator selection and adds
+  CRC for subsequent slice preparation, independent review, evidence
+  reproduction, and routine acceptance. Architectural, scope, and acceptance
+  changes escalate to CDC and the Operator rather than creating a second
+  design authority.
+- **One-Contributor Workflow** supports explicitly selected, bounded work with
+  one assistant and proportionate self-checks, without fictional handoffs or
+  unnecessary planning artifacts. It does not waive existing independent gates.
+
+CRC escalations and CDC return instructions are preserved as
+`crc-escalationNN.md` and `cdc-directiveNN.md`, relayed through the Operator in
+both directions. The contract covers initial assignments, acknowledgement,
+stale instructions, unresolved decisions, and safe workflow transitions.
+Passing a packet does not itself approve its recommendations.
+
+Slice verification uses `cdc-verification.md` for two contributors and
+`crc-verification.md` for three. Three-contributor arcs and projects carry both
+CRC operational/composition evidence and CDC independent composition/design
+verification. Historical paths and evidence remain preserved. A reviewer who
+implements a repair needs another verifier; self-review is not independent
+acceptance, regardless of the role label.
+
+Follow-up CC assignments also have an explicit preservation contract: keep
+`cc-prompt.md` and issue each subsequent assignment as a distinct
+`cc-prompt-iterationNN.md` in the slice root. Record assignment history and
+current ownership; do not overwrite issued prompts or silently reuse acceptance
+from an earlier source state.
 
 ## Knowledge Library Reorganization
 
@@ -64,8 +110,8 @@ framework/operational skill. `scientific-methods` is now the live method-skill
 example for practical inquiry, controlled comparison, experiment planning,
 evaluation rubrics, evidence capture, and regression analysis. CCDP is
 explicitly a protocol distribution and protocol package, not an installable
-skill package. `concept-card-method` remains a planned method skill until
-source and package support are implemented.
+skill package. The earlier `concept-card-method` design has since led to the
+implemented `document-extraction` and `concept-cards` skills.
 
 The core reorganization closed six arcs to get there:
 
@@ -106,9 +152,10 @@ The generated package target is `scientific-methods.zip`, built by
 `make scientific-methods` and included in `make skills`, `make all`, and
 `make install`.
 
-The collaboration framework now includes wayfinding for this adjacent method
-skill, but `scientific-methods` remains independently packaged. It is not
-folded into `collaboration-framework.zip`.
+The collaboration framework includes wayfinding and bundled companion material
+for this adjacent method skill, so its routes resolve inside
+`collaboration-framework.zip`. `scientific-methods` also remains independently
+packaged.
 
 ## Harmonise Paths
 
@@ -182,7 +229,8 @@ sliceNN-<slug>/artifacts/
 
 The operator can override the location, but the override must be explicit in
 `slice-plan.md`, repeated in `cc-prompt.md`, and verified at slice close through
-the artifact inventory in `closing-report.md` and `cdc-verification.md`.
+the artifact inventory in `closing-report.md` and the workflow-specific
+reviewer record (`cdc-verification.md` or `crc-verification.md`).
 
 This matters because slice work often produces transcripts, captures, reports,
 generated examples, or other durable evidence. The new default keeps those
@@ -219,7 +267,7 @@ consumers see package-valid paths rather than source-tree-only paths:
 - Collaboration framework package-internal references
 - Mature Rust and JavaScript entrypoints staged through package-only transforms
 
-The current Project04 release-readiness baseline is:
+The historical Project04 release-readiness checkpoint recorded:
 
 - 13 generated skill zips scanned.
 - 222 packaged Markdown files scanned.
@@ -228,8 +276,14 @@ The current Project04 release-readiness baseline is:
 - 3 explicit exceptions.
 - 656 external URLs skipped.
 
-The final install smoke installed 13 `SKILL*.md` entrypoints into an isolated
+That checkpoint's install smoke installed 13 `SKILL*.md` entrypoints into an isolated
 temporary directory and confirmed that no `ccdp` install root was created.
+
+The 2026-09-17 contributor-workflow update subsequently rebuilt and checked
+22 skill packages and 361 packaged Markdown files: 0 version-contract errors,
+0 hard path failures, and 584 categorized path warnings. All five changed skills
+passed the skill-creator validator. These are development checks, not a new
+install smoke or final release approval.
 
 ## Collaboration Framework Component Map
 
@@ -237,7 +291,7 @@ The README now describes the collaboration framework as both a composed whole
 and a set of independently useful component disciplines. The daily-driver
 entry point remains `/collaboration-framework`; the component names below are
 the stable contract for narrower use, route tables, package planning, and
-future standalone skill packaging.
+standalone skill packaging.
 
 | Component | Role in the composed framework | Independent use case |
 |-----------|--------------------------------|----------------------|
@@ -247,7 +301,7 @@ future standalone skill packaging.
 | `work-verification` | Ledger discipline, evidence strength, row closure, independent reproduction, and silent-drop checks. | Define or verify acceptance rows and distinguish asserted, attested, reproduced, and reconciled evidence. |
 | `testing` | Testing discipline, coverage hardening, and validation gates. | Drive tests, coverage, reproducible failures, and hardening after findings. |
 | `code-auditing` | Diagnosis-only audits with audit maps, severity, scale coverage, modernization synthesis, and remediation handoff. | Review or audit code without making changes. |
-| `agent-coordination` | CC/CDC/operator role language, delegation decisions, context packets, result integration, and multi-assistant coordination. | Prepare handoffs, delegate lookup work, or integrate subagent output. |
+| `agent-coordination` | CC/CDC/CRC/Operator role routing, delegation decisions, context packets, result integration, and multi-assistant coordination. | Prepare handoffs, delegate lookup work, or integrate subagent output. |
 | `contribution-style` | Upstream contribution voice, calibrated claims, issue/PR framing, and contribution-ticket workflow. | Draft maintainer-facing bug reports, feature requests, documentation fixes, questions, or handoffs. |
 
 The source checkout now carries this component contract directly:
@@ -273,7 +327,7 @@ The source checkout now carries this component contract directly:
   entrypoint, component `SKILL.md` wayfinders, moved `guides/` material, and
   preserved `templates/` material without legacy component `docs/` entries.
 
-## Concept Card Method Planning
+## Concept Card Method Planning and Implementation
 
 This release records the completion of Project03, the planning project that
 turns the earlier v3.2 concept-card extraction methodology into a v4.0
@@ -296,19 +350,21 @@ Project03 closed with five planned and verified arcs:
 - v4.0 skill architecture;
 - implementation plan and project-close input.
 
-The accepted source shape for future implementation is
+The earlier accepted source shape for implementation was
 `knowledge/concept-card-method/`: a thin `SKILL.md` wayfinder plus focused
 `guides/`, templates, examples, validation documentation, and reference
-material. The planned package name is `concept-card-method.zip`, but this
-release does not implement or ship that package.
+material. The planned package name was `concept-card-method.zip`; those names
+describe the historical design, not the current shipped package surface.
 
 The README now names **method skills** as a distinct skill-library category:
 skills that teach an assistant how to perform a durable knowledge-work method,
 not just how to work in a specific programming, tooling, or design domain.
 
-`concept-card-method` remains planned method material. Its planned package
-name is still `concept-card-method.zip`, but this release does not implement
-or ship that package.
+The current implementation separates upstream source preparation into
+`knowledge/document-extraction/` and concept-card work into
+`knowledge/concept-cards/`. They build as `document-extraction.zip` and
+`concept-cards.zip`, respectively, and are included in the skill build/install
+targets. The historical `concept-card-method.zip` name is not a live package.
 
 ## CCDP Package
 
