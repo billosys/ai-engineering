@@ -575,7 +575,13 @@ inventory input. No status-0 route run is a semantic-acceptance decision.
 - missing recipe-file rejection: status 2 with CC_COMMIT=15da9e33 and
   REPLAY_COMMIT=2fa4c2a5273485d5bdf5bfba9a59677df79d14cf; the valid commit
   lacked the recipe path, so the committed wrapper stopped before execution.
-- committed separate-revision: pending the follow-up recipe commit; it must
-  use CC_COMMIT=15da9e33 and the later metadata-only recipe endpoint, return
-  status 0 with the same structural outcomes, and be rerun after that endpoint
-  is recorded.
+- committed separate-revision: status 0 with CC_COMMIT=15da9e33 and
+  REPLAY_COMMIT=884e9640c80371d6321656406a0d93e1eab20185; planning HEAD was
+  884e9640c80371d6321656406a0d93e1eab20185; selected census 12 and legacy
+  comparison 2054; derived YAML-error count 3 and no-frontmatter count 15;
+  unrelated-HEAD fixture passed; positive support actor status 0; wrong
+  support expectation status 1; wrong YAML exclusion status 1;
+  absence-to-null negative control status 1; real no-match status 0 with []
+  and 0 stderr bytes; missing-input status 2 with 145 stderr bytes; invalid
+  membership and dangling evidence mutations rejected; semantic acceptance not
+  claimed. The two endpoints are distinct revisions.

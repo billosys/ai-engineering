@@ -47,11 +47,11 @@ No crc-verification.md or cdc-verification.md was created.
 
 The literal route is registered in artifacts/validation-evidence.md. Iteration02
 records the precommit run, committed-wrapper preflight, stale/missing recipe
-rejections, and the separate-revision committed replay after its recipe
-endpoint is created. It also records the unrelated-HEAD fixture, the derived
-three-path YAML exclusion set, and the prior CRC R1-R4 findings as repaired.
-All route results remain structural evidence; semantic acceptance is not
-claimed.
+rejections, and a status-0 separate-revision committed replay using
+CC_COMMIT=15da9e33 and REPLAY_COMMIT=884e9640c80371d6321656406a0d93e1eab20185.
+It also records the unrelated-HEAD fixture, the derived three-path YAML
+exclusion set, and the prior CRC R1-R4 findings as repaired. All route results
+remain structural evidence; semantic acceptance is not claimed.
 
 ## Conclusions and limits
 
