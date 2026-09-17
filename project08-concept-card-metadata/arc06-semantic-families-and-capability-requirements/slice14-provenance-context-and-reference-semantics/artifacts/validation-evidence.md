@@ -527,8 +527,10 @@ printf '%s\n' "semantic_acceptance=not_claimed"
 
 The route's pinned values and checks are deliberate:
 
-- source HEAD must remain the clean opening commit; the relevant source tree is
-  also compared against the historical source reference;
+- source opening/current commits are both reported; the relevant source tree is
+  compared against the historical source reference and each registered source
+  snapshot is compared by bytes, so unrelated source HEAD advance is tolerated
+  while material registered-path drift fails;
 - opening planning authority is fixed at the clean post-acknowledgement commit;
   protected plans, ledgers, coverage, inventory, prior Slice13 records and both
   issued prompts must remain byte-stable;
@@ -541,28 +543,39 @@ The route's pinned values and checks are deliberate:
 - all 42 registered evidence hashes are recomputed according to their declared
   root and read mode;
 - expected support and template/absent cases are authored in the route,
-  while wrong expectations, invalid memberships, dangling evidence, a real
-  no-match and a missing input exercise failure behavior.
+  while wrong expectations, invalid memberships, dangling evidence, wrong
+  YAML exclusions, a real no-match and a missing input exercise failure
+  behavior. The committed wrapper separately rejects a missing recipe file and
+  a stale valid recipe endpoint.
 
 ## Recorded observations
 
 Precommit and committed replay results are recorded here after execution. The
-route must report status 0, reject both mutations and both wrong expectations,
-return status 0 with [] for the real no-match, and return status 2 for the
-missing inventory input. No status-0 route run is a semantic acceptance
-decision.
+route must report status 0, reject all mutations and wrong expectations, return
+status 0 with [] for the real no-match, and return status 2 for the missing
+inventory input. No status-0 route run is a semantic-acceptance decision.
 
-- precommit: status 0 at planning HEAD 2fa4c2a5273485d5bdf5bfba9a59677df79d14cf;
-  selected census 12 and legacy comparison 2054; positive support actor
-  status 0; wrong support expectation status 1; absence-to-null negative
-  control status 1; real no-match status 0 with [] and 0 stderr bytes;
-  missing-input status 2 with 145 stderr bytes; invalid membership and
-  dangling evidence mutations rejected; semantic acceptance not claimed
-- committed: status 0 with CC_COMMIT=6003975321334a0ad554d92663836317b71bd6ce
-  and REPLAY_COMMIT=6003975321334a0ad554d92663836317b71bd6ce; planning HEAD
-  6003975321334a0ad554d92663836317b71bd6ce; selected census 12 and legacy
-  comparison 2054; positive support actor status 0; wrong support expectation
-  status 1; absence-to-null negative control status 1; real no-match status 0
-  with [] and 0 stderr bytes; missing-input status 2 with 145 stderr bytes;
-  invalid membership and dangling evidence mutations rejected; semantic
-  acceptance not claimed
+- precommit iteration02: status 0 at planning HEAD
+  8e6b67708eeeca391a139bb8d1b710633cfbbeb4; selected census 12 and legacy
+  comparison 2054; derived YAML-error count 3 and no-frontmatter count 15;
+  unrelated-HEAD fixture passed; positive support actor status 0; wrong
+  support expectation status 1; wrong YAML exclusion status 1;
+  absence-to-null negative control status 1; real no-match status 0 with []
+  and 0 stderr bytes; missing-input status 2 with 145 stderr bytes; invalid
+  membership and dangling evidence mutations rejected; semantic acceptance not
+  claimed
+- committed same-revision preflight: status 0 with CC_COMMIT=15da9e33 and
+  REPLAY_COMMIT=15da9e33; registry was loaded from CC_COMMIT and the wrapper
+  extracted the literal route from that revision; all structural outcomes
+  matched the precommit run. This was a wrapper preflight, not the required
+  separate-revision result.
+- stale valid recipe rejection: status 1 with CC_COMMIT=15da9e33 and
+  REPLAY_COMMIT=8e6b67708eeeca391a139bb8d1b710633cfbbeb4; the older recipe was
+  rejected on its opening-to-CC scope predicate.
+- missing recipe-file rejection: status 2 with CC_COMMIT=15da9e33 and
+  REPLAY_COMMIT=2fa4c2a5273485d5bdf5bfba9a59677df79d14cf; the valid commit
+  lacked the recipe path, so the committed wrapper stopped before execution.
+- committed separate-revision: pending the follow-up recipe commit; it must
+  use CC_COMMIT=15da9e33 and the later metadata-only recipe endpoint, return
+  status 0 with the same structural outcomes, and be rerun after that endpoint
+  is recorded.
