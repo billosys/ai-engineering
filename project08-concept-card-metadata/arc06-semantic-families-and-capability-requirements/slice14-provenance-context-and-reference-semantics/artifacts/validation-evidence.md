@@ -436,6 +436,11 @@ hash_evidence() {
 }
 hash_evidence
 
+source_registered_hashes=$(jq -c '[.evidence[]
+  | select(.root == "source" and .read_mode == "snapshot")
+  | {evidence_id, sha256}
+] | sort_by(.evidence_id)' "$registry")
+
 support_path=.worktrees/planning/project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-emergent-explanation.md
 support_actor=$(jq -c --arg path "$support_path" '
   .records[] | select(.path == $path) | .values.actor
@@ -510,6 +515,7 @@ printf '%s\n' "mode=$mode"
 printf '%s\n' "registry=$registry"
 printf '%s\n' "source_opening=$opening_source"
 printf '%s\n' "source_current=$source_current"
+printf '%s\n' "source_registered_hashes=$source_registered_hashes"
 printf '%s\n' "planning_head=$(git -C "$root" rev-parse HEAD)"
 printf '%s\n' "native_census=12 selected, legacy_untyped=2054"
 printf '%s\n' "yaml_error_count=$(jq 'length' <<< "$yaml_error_paths") no_frontmatter_count=$no_frontmatter_count"
