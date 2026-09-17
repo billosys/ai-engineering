@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice13-provenance-family-semantics
-status: changes-required
+status: closed
 depends-on: [slice03-provenance-and-shared-reference-contracts]
-version: "1.1"
+version: "1.2"
 ---
 
 # Actor Identity Across Four Record Kinds
@@ -17,14 +17,37 @@ P-15 remains open.
 
 ## Current Review
 
-CDC reviewed 78be7fab. S13-1/S13-6 are verified; S13-2 through S13-5 remain
-open for the bounded R1-R4 repairs in cdc-verification.md. Preserve the existing
-eight-pair semantic work; complete the missing checks and evidence without
-expanding the family. Use artifacts/iteration-01-cc-prompt.md in a new session.
-Was: initial execution. Original acceptance criteria and six-file CC scope
-remain unchanged. No Slice14 opening or semantic-pair acceptance.
+CDC independently accepted repair d94ab1c6 on 2026-09-17. All six rows
+are done; R1-R4 are resolved in cdc-verification.md. The eight pairs are now
+accepted inventory interpretations, not normative schema or source-truth
+acceptance. Was: initial review retained S13-1/S13-6 and required Iteration 01.
+CC's six-file repair remains unchanged; the review records source-HEAD drift
+and the exact equivalent execution used to verify its pinned inputs.
 
-## Exact Assignment And Sizing
+Current assignment: none; Iteration 01 accepted. Slice14 now takes only the
+12 actor/actor.id pairs in the other six kinds. Planned Slice15 owns the rest
+of the former Slice14 provenance responsibilities and must be sized first.
+The historical opening counts below remain evidence, not live status.
+
+## Assignment History
+
+| Prompt path (slice-relative) | Issued | Predecessor | Reason | Disposition |
+| --- | --- | --- | --- | --- |
+| cc-prompt.md | 2026-09-15 | none | Initial eight-pair actor identity evidence | Returned at 78be7fab; scope/handoff accepted, R1-R4 required repair |
+| artifacts/iteration-01-cc-prompt.md | 2026-09-15 | cc-prompt.md | Bounded R1-R4 evidence/replay repair | Accepted at d94ab1c6 after independent CDC review, 2026-09-17 |
+
+The issued legacy Iteration 01 path is retained unchanged under filename
+compatibility. It is an assignment, not a supporting output. Future iterations,
+if ever required by reopening, use slice-root cc-prompt-iterationNN.md and an
+explicit new assignment; do not move or edit these issued prompts.
+
+## Retained Opening Contract
+
+The remaining sections preserve the issued scope, opening counts and original
+successor ownership. Current acceptance and the Slice14/Slice15 split are above
+and in arc-plan.md; those amendments supersede the old next-slice instruction.
+
+### Exact Assignment And Sizing
 
 Exactly eight [field_path, record_kind] pairs:
 
@@ -46,7 +69,7 @@ claim, two CQs, 31 cards, three extraction runs. Reproduce rather than assume
 these denominators; report excluded malformed records separately. Eight pairs
 are coverage units, not eight files or eight independent meanings.
 
-Current coverage: 180 accepted / 375 remaining; eight assigned / 367 outside.
+Historical opening coverage: 180 accepted / 375 remaining; eight assigned / 367 outside.
 Assignment does not accept these eight. Source and all prior packets are read-only.
 
 This is the first bounded unit recommended by Slice03's handoff; the stable
@@ -163,6 +186,10 @@ headroom. Do not expand scope or reduce criteria. CC marks proposed-done only;
 CDC acceptance, Arc06 composition and P-15 remain separate gates.
 
 ## Version History
+
+- 1.2 (2026-09-17): Independently accepts d94ab1c6 and closes all six rows.
+  Records source drift, preserved legacy assignment history and the bounded
+  Slice14/Slice15 successor split. Was: R1-R4 open; no criteria reduced.
 
 - 1.1 (2026-09-15): Initial CDC review retains scope/handoff and requires
   bounded replay/evidence repair, R1-R4. Was: first execution; original

@@ -1,5 +1,127 @@
 # CDC Review: Arc06 Slice13
 
+## Current Verdict: Closed (2026-09-17)
+
+Workflow: Two-Contributor, separate CDC review of CC implementation.
+Reviewed assignment: preserved legacy artifacts/iteration-01-cc-prompt.md.
+Reviewed endpoint: d94ab1c6ffe69674cfc2a334f87607257e4ad5a1.
+Repair opening: e42419482aebabcdac9be9e3032daa8f72da09d3.
+Original opening/endpoint: 609f2f55 / 78be7fab, separately checked.
+Source at review: 020268248882358075b678bb855c0ac8d11b532a, clean;
+historical source authority remains e763c661592ff1097a94bb470db9cf924524579d.
+
+All six ledger rows are independently done. R1-R4 below are resolved, not
+deleted. Accept exactly eight inventory-interpretation pairs; this does not
+accept actor identity equivalence, requiredness, a schema, source truth,
+extraction quality, memory admission or any runtime operation.
+
+### Reproduction And Source Drift
+
+The unmodified committed wrapper at d94ab1c6 exits 1 at the exact source-HEAD
+guard: main advanced to 02026824 after CC's run. This failure is retained;
+the submitted recipe is not claimed to pass unchanged on today's checkout.
+Independent comparison finds no changes in knowledge/concept-cards or
+knowledge/document-extraction between its historical source and current HEAD.
+The recipe already hashes each registered source input at its declared commit.
+CDC therefore runs the exact endpoint recipe with only its global HEAD equality
+guard replaced by historical commit existence, after the scoped source diff.
+No tracked CC supporting artifact or implementation was changed. This is an explicitly
+bounded equivalent verification against unchanged relevant source, not a
+repair to be independently accepted by its author.
+
+The source= line in that replay names the historical authority e763c661;
+it is not a claim that current main still has that HEAD.
+
+Literal equivalent route (Bash; existing Git/awk/sed/grep/jq/rg/hash tools):
+
+~~~bash
+set -euo pipefail
+source=/Users/oubiwann/lab/billosys/ai-engineering
+plan=$source/.worktrees/planning
+s=project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics
+endpoint=d94ab1c6ffe69674cfc2a334f87607257e4ad5a1
+git -C "$source" diff --exit-code e763c661 HEAD -- knowledge/concept-cards knowledge/document-extraction
+recipe=$(git -C "$plan" show "$endpoint:$s/artifacts/validation-evidence.md" |
+ awk '/^## Literal route$/{seen=1;next} seen && /^~~~bash$/{p=1;next} p && /^~~~$/{exit} p')
+test -n "$recipe"
+test "$(printf '%s\n' "$recipe" | grep -Fc 'test "$(git -C "$source" rev-parse HEAD)" = "$opening_source"')" = 1
+recipe=$(printf '%s\n' "$recipe" | sed 's@test "$(git -C "$source" rev-parse HEAD)" = "$opening_source"@git -C "$source" cat-file -e "$opening_source^{commit}"@')
+CC_COMMIT="$endpoint" bash <<< "$recipe"
+~~~
+
+Independent results, before reviewer edits:
+
+- Status 0; exact original and repair six-file contributions and protected
+  historical paths pass independently.
+- 8 actual unique memberships match the pinned plan, registry scope and
+  opening coverage; shared meanings and both evidence-reference layers resolve.
+- Invalid-member and dangling-reference controls return 1. Native wrong-actor
+  expectation returns 1; successful no-match returns 0; missing-input jq
+  returns 2 with stderr. The redundant suppressed-error raw search is removed.
+- All 51 registered hashes match. Both declared rich/teaching original-copy
+  mappings resolve through their registered manifests and compare byte-equal.
+- All authored 37-record family/state/label census cells and three named YAML
+  exclusions reconcile to the frozen native inventory. Legacy comparison:
+  2,054 parsed mappings, 2,054 absent actor parents, zero literal dotted keys.
+- Original opening coverage remains 180/375/8/367; live status is separately
+  inspected. Frozen 115/440 transition and earlier packets remain unchanged.
+- The submitted wrapper independently rejects a nonexistent recipe object
+  and a valid recipe commit lacking the file; both return 128, never success.
+- Source/planning clean before editing; whitespace checks pass.
+
+The wrapper controls used its first Bash block from d94ab1c6, with
+CC_COMMIT=d94ab1c6 and REPLAY_COMMIT respectively
+0000000000000000000000000000000000000000 and 609f2f55. No fixture was substituted
+into a tracked file. Earlier exploratory inspection queries with the wrong
+JSON key/shape were corrected; only actual evidence_id entries and records
+are used in the checks and decisions here.
+
+### Finding Dispositions And Row Walk
+
+| Finding / row | Independent evidence and decision |
+| --- | --- |
+| R1 / S13-2, S13-3, S13-5 | The committed registry, actual membership projection, shared/member reference layers, authored native census and declared baseline mappings are checked. Controls reject invalid membership/references. Closed. |
+| R2 / S13-5 | Recipe and contribution endpoints are explicit; registry and authority use Git snapshots. Original and repair histories are separate; project-prefixed protected paths checked. Live coverage is status, not fixed historical bytes. Closed, with source-HEAD drift limitation above. |
+| R3 / S13-4 | Redundant raw rg search removed as explicitly permitted. Hash-bound native absence query, genuine wrong expectation and missing-input error reproduce without suppressed error paths. Closed. |
+| R4 / S13-2, S13-3 | Legacy census reproduced; field-group table explicitly names actor only for run/preservation while four templates establish selected placements. Correct project AGENTS is separately registered from planning-root AGENTS, at the declared snapshot. Closed. |
+| S13-1 | Exact eight-pair set, frozen inclusion and accepted disjointness at opening reproduced; accept the eight once in live coverage. Done. |
+| S13-2 | 37 records: 12 absent parents, four template object/null identities, 21 object/string identities. Family distinctions and three malformed exclusions retained; legacy result bounded to frozen inventory. Done. |
+| S13-3 | Full per-kind meanings/dispositions and contextual witnesses reviewed. Actor labels remain separate from root record identity, source author, run, reviewer and embedded-record actors. Field-specific limits are supported; no global principal authority is inferred. Done. |
+| S13-4 | Native actor observation, wrong expectation, template null versus actual parent absence, successful no-match and tool-error separation reproduced. Done. |
+| S13-5 | 51/51 hashes, manifest/native-copy mapping, mutation checks, exact original/repair boundaries and preservation pass with disclosed equivalent execution. Done. |
+| S13-6 | All nonassigned provenance and later lifecycle work retain owners; P-15 stays open. Successor is sized below, not silently reduced. Done. |
+
+Interpretation limit: not_applicable_parent_absent is a child-lookup result
+because there is no parent object to inspect. It is NOT evidence that actor
+provenance is semantically inapplicable to a record. The evidence explicitly
+rejects that inference. Matching codex/codex-cc labels cannot establish a
+particular human, model/version or globally unique principal. Template-only
+claim/run cases do not establish populated semantics or requiredness.
+
+### Bubble-Up And Successor
+
+The six-row contract and four supporting artifacts are complete; the legacy
+iteration prompt remains an issued assignment, not a fifth produced artifact.
+No source, package, helper, parser, runtime or extraction work was performed.
+No new semantic defect remains against this bounded contract. The historical
+literal source-HEAD constraint is a reproducibility limitation, not hidden.
+
+Update live coverage to 188 accepted / 367 remaining. Size Slice14 to the
+12 actor/actor.id pairs in the other six kinds. CDC's frozen-input sizing query
+selects those kinds from inventory.records and counts object-valued mappings:
+memory-admission 2, preservation-decision 1, relationship-edge 2,
+source-locator 1, source-support 5, validation-result 1. Those 12 records are
+six template object/null, two synthetic absent parents and four populated
+pilot supports. They are not 12 established actor meanings.
+
+Planned Slice15 explicitly retains all 20 actor.mode/actor.role pairs and the
+other former provenance/run/preparation/method/shared-reference/CQ interface
+obligations, with sizing required before execution. Other semantic families
+keep their owners. The live register assigns 12, leaving 355 outside Slice14.
+Arc06 composition and all project/Operator gates remain open.
+
+## Historical Initial Review (2026-09-15; Superseded Verdict)
+
 Date: 2026-09-15. Verdict: changes required; bounded Iteration 01.
 Reviewed CC endpoint: `78be7fabae79039ef3f24daa639d8e314ebcee0f`.
 Original planning opening: `609f2f558b100a06df42e6a8b85ebfe200a27b22`.

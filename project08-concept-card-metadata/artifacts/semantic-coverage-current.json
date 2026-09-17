@@ -24,16 +24,33 @@
       "pairs": 30,
       "cc_commit": "ca1df9264c13925f7550b3cbce3a63eaf576f3cc",
       "note": "CDC pins the submitted coverage input; semantic memberships unchanged."
+    },
+    {
+      "owner": "arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics",
+      "registry": "arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/artifacts/semantic-membership.json",
+      "sha256": "3d26b026ace6def52ebe546d97602866b79f480935bf9ac40b6777bd14705749",
+      "review": "arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics/cdc-verification.md",
+      "pairs": 8,
+      "cc_commit": "d94ab1c6ffe69674cfc2a334f87607257e4ad5a1",
+      "note": "Independent CDC acceptance; equivalent pinned-input replay disclosed after unrelated source HEAD advancement. CC supporting artifacts unchanged."
     }
   ],
   "counts": {
     "full": 555,
-    "accepted": 180,
-    "remaining": 375,
-    "next_slice": 8,
-    "not_yet_sliced": 367
+    "accepted": 188,
+    "remaining": 367,
+    "next_slice": 12,
+    "not_yet_sliced": 355
   },
   "accepted_pairs": [
+    ["actor","claim"],
+    ["actor","competency-question"],
+    ["actor","concept-card"],
+    ["actor","extraction-run"],
+    ["actor.id","claim"],
+    ["actor.id","competency-question"],
+    ["actor.id","concept-card"],
+    ["actor.id","extraction-run"],
     ["aliases","concept-card"],
     ["aliases","untyped"],
     ["aliases[]","concept-card"],
@@ -216,20 +233,12 @@
     ["roles","competency-question"]
   ],
   "remaining_pairs": [
-    ["actor","claim"],
-    ["actor","competency-question"],
-    ["actor","concept-card"],
-    ["actor","extraction-run"],
     ["actor","memory-admission"],
     ["actor","preservation-decision"],
     ["actor","relationship-edge"],
     ["actor","source-locator"],
     ["actor","source-support"],
     ["actor","validation-result"],
-    ["actor.id","claim"],
-    ["actor.id","competency-question"],
-    ["actor.id","concept-card"],
-    ["actor.id","extraction-run"],
     ["actor.id","memory-admission"],
     ["actor.id","preservation-decision"],
     ["actor.id","relationship-edge"],
@@ -593,15 +602,19 @@
     ["worker_scope.worker_count","extraction-run"]
   ],
   "remaining_owner": "arc06-semantic-families-and-capability-requirements",
-  "next_slice": "arc06-semantic-families-and-capability-requirements/slice13-provenance-family-semantics",
+  "next_slice": "arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics",
   "next_slice_pairs": [
-    ["actor","claim"],
-    ["actor","competency-question"],
-    ["actor","concept-card"],
-    ["actor","extraction-run"],
-    ["actor.id","claim"],
-    ["actor.id","competency-question"],
-    ["actor.id","concept-card"],
-    ["actor.id","extraction-run"]
+    ["actor","memory-admission"],
+    ["actor","preservation-decision"],
+    ["actor","relationship-edge"],
+    ["actor","source-locator"],
+    ["actor","source-support"],
+    ["actor","validation-result"],
+    ["actor.id","memory-admission"],
+    ["actor.id","preservation-decision"],
+    ["actor.id","relationship-edge"],
+    ["actor.id","source-locator"],
+    ["actor.id","source-support"],
+    ["actor.id","validation-result"]
   ]
 }

@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.26"
+version: "1.27"
 ---
 
 # Concept Card Metadata
@@ -107,7 +107,9 @@ This is a modest execution pivot, not a reduction in scope or a schema decision.
 Preserve all 115 transition-accepted contextual pairs and all original criteria.
 The initial remainder was 440. After Slice12 repair and original Slice01
 recomposition, 150 were accepted and 405 remained. Slice02's independent
-closure adds 30 CQ pairs: now 180 accepted and 375 remaining; use the
+closure added 30 CQ pairs, reaching 180 accepted / 375 remaining. Slice13's
+independent closure adds eight actor-identity pairs: now 188 accepted / 367
+remaining; use the
 [current coverage register](./artifacts/semantic-coverage-current.json).
 The transition snapshot stays immutable. Process the remainder by family, retaining
 exact field-path/record-kind accounting plus finer corpus/role distinctions.
@@ -121,9 +123,17 @@ Each family must explain concrete reader/extractor/query/migration consequences.
 
 Reuse registered evidence and a common validation route where justified. Keep
 small sequential correction packets for difficult or ambiguous areas.
-Substantive semantic repairs remain CC work subject to independent review;
-minor CDC-authored replay/documentation completions must be attributed and
-rerun, with no claim of independent acceptance of CDC-authored semantics.
+Repairs remain implementation work subject to independent review. Under the
+current framework, a reviewer who implements any repair needs another verifier
+for that repair and its affected evidence. Earlier attributed CDC completions
+remain historical records; they are not precedent for self-acceptance.
+
+Workflow: Two-Contributor (CDC + CC), with Operator gates retained, applies
+throughout Project08. This coordinating context plans/reviews; a separate CC
+context executes issued work. No CRC has been authorized. Slice verification
+uses cdc-verification.md; arc/project composition and Operator gates remain
+independent. Expedited Mode continues within the approved scope. Issued legacy
+prompts stay at their recorded paths; new follow-ups live in the slice root.
 
 Targeted primary-source research may now accompany family work before the
 entire inventory closes. Compare alternatives against actual capability gaps;
@@ -142,28 +152,30 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12 closed; Slice13 Iteration 01 repairs replay/evidence gaps; Slice14 remains unopened |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12/13 closed; Slice14 opens 12 actor-identity pairs; Slice15 retains broader provenance for sizing |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
 | `arc05-package-gates-and-closure` | Fresh packaging/install evidence, migration and UAT reconciliation, independent project acceptance | Arc04 quality and coverage evidence | Closure cannot outrun UAT |
 
 Arc06 is the next arc in dependency order, not a post-closure addendum.
-Slice02 CDC review of ca1df926 closes all six rows with an attributed minor
-replay completion; was: four repair findings open. Current accepted coverage
-is 180/555. Slice03 is now closed after b1043afe, with attributed minor CDC
-replay corrections and zero semantic acceptance. Was: bounded replay work
-open, all provenance semantics planned in Slice13. Slice13 now takes exactly
-eight actor/actor.id pairs across four record kinds; new planned Slice14
-retains every other original provenance/shared-reference obligation and must
-be sized/split before execution. Current accounting is 180 accepted, 375
-remaining, eight assigned and 367 not yet sliced. No requirement or schema/UAT
-gate is reduced.
-Slice13 CDC review of 78be7fab retains verified scope/handoff and the useful
-contextual analysis, but opens bounded Iteration 01 for replay binding,
-snapshot/live separation, fail-closed search and evidence completeness.
-Was: first actor-identity submission pending. No pairs are accepted and no
-successor opens; the 180/375/8/367 accounting is unchanged.
+Slice02 and Slice03 remain independently closed in their recorded history.
+Slice13 repair d94ab1c6 now closes all six rows after independent CDC review
+of R1-R4. Its 51 hashes, 37-record census, 2,054-record legacy comparison,
+native diagnostics and exact contribution boundaries reproduce. The source
+checkout advanced outside the relevant skills; the CDC report records the
+failed literal HEAD guard and the equivalent pinned-input replay explicitly.
+No CC supporting artifact was repaired by the reviewer.
+
+Current accounting: 188 accepted / 367 remaining; 12 assigned to Slice14 and
+355 not yet sliced. Slice14 is bounded to actor/actor.id in memory-admission,
+preservation-decision, relationship-edge, source-locator, source-support and
+validation-result. Planned Slice15 retains all other original provenance work,
+including the 20 actor.mode/actor.role pairs, run/preparation/method/shared
+references and remaining CQ interfaces; size/split before execution.
+Was: Slice13 Iteration 01 pending and an unsized Slice14 complement.
+This is the authorized late sizing of retained work, not scope reduction.
+P-15, all UAT requirements and later evidence/lifecycle owners are unchanged.
 The [three-slice workload assessment](./artifacts/cc-workload-observations.md)
 is complete; its observations support a bounded, better-integrated repair,
 not an automatic model change or a reduction of evidence requirements.
@@ -375,6 +387,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.27 (2026-09-17): Arc06 Slice13 repair independently closes, adding eight
+  accepted pairs. Opens bounded 12-pair Slice14; Slice15 retains the broader
+  provenance remainder for sizing. Records current two-contributor authority
+  and no self-acceptance of reviewer repairs. Was: Slice13 Iteration 01 open;
+  no scope or schema/UAT gate is reduced.
 
 - 1.26 (2026-09-15): Arc06 Slice13 review reproduces the submitted replay
   but exposes false-success controls and incomplete evidence checks.
