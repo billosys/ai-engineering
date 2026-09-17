@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.13"
+version: "1.14"
 ---
 
 # Semantic Families And Capability Requirements
@@ -36,8 +36,21 @@ responsibilities and remaining CQ provenance interfaces. Size/split that
 remainder before opening. This implements the existing late-sizing authority,
 not a scope reduction or adoption of an actor model.
 Live counts: 188 accepted / 367 remaining / 12 assigned / 355 not yet sliced.
-All arc rows and P-15 remain open. Current workflow remains CDC + separate CC;
-a reviewer implementing a repair needs a different verifier for acceptance.
+All arc rows and P-15 remain open. Effective from Slice14, the Operator selected
+CDC + CRC + CC with Expedited Mode; was: CDC + CC. See the project
+[initial directive](../cdc-directive01.md) and project Design Handoff History.
+CRC owns routine slice review and advancement within this approved plan;
+CDC owns structural amendments and independent arc composition review.
+The new Slice14 assignment is cc-prompt-iteration01.md, replacing routing only;
+its original cc-prompt.md remains preserved. CRC must acknowledge the directive
+before releasing the assignment. No implementation pass is inferred.
+New slice verdicts use crc-verification.md; this arc's future closure needs
+both crc-verification.md and cdc-verification.md. Existing CDC records retain
+their historical authority. A reviewer implementing a repair needs a different
+verifier for acceptance. No extra CDC approval is added to ordinary CRC slice
+closure; design/scope decisions still require the explicit escalation route.
+Slice15 remains an unsized owner: CRC recommends a bounded open set/split to
+CDC before any structural amendment, rather than silently reshaping the arc.
 
 ### Historical Slice03 Closure And Slice13 Opening (Superseded Assignment)
 
@@ -243,6 +256,11 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.14 (2026-09-17): Applies Operator-selected three-contributor workflow
+  from Slice14 with Expedited Mode. CRC takes routine reviews; CDC retains
+  design/composition, with an explicit project directive and prompt replacement.
+  Was: CDC/CC routing. Coverage, all rows and future scope unchanged.
 
 - 1.13 (2026-09-17): Slice13 repair independently closes all six rows and
   adds eight accepted pairs. Sizes Slice14 to the 12-pair identity complement;

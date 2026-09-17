@@ -2,7 +2,10 @@
 
 All rows open. Twelve pairs assigned, none accepted by assignment or CC
 attestation. Opening accounting: 188 accepted / 367 remaining / 12 assigned /
-355 outside. Independent CDC acceptance required; arc/project gates remain.
+355 outside. Independent CRC acceptance now required under the Operator-selected
+three-contributor workflow; was: CDC. Arc/project gates remain unchanged.
+Current assignment: cc-prompt-iteration01.md, pending CRC handoff acknowledgement.
+No row or criterion changed and no execution/acceptance is implied.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.27"
+version: "1.28"
 ---
 
 # Concept Card Metadata
@@ -128,12 +128,70 @@ current framework, a reviewer who implements any repair needs another verifier
 for that repair and its affected evidence. Earlier attributed CDC completions
 remain historical records; they are not precedent for self-acceptance.
 
-Workflow: Two-Contributor (CDC + CC), with Operator gates retained, applies
-throughout Project08. This coordinating context plans/reviews; a separate CC
-context executes issued work. No CRC has been authorized. Slice verification
-uses cdc-verification.md; arc/project composition and Operator gates remain
-independent. Expedited Mode continues within the approved scope. Issued legacy
-prompts stay at their recorded paths; new follow-ups live in the slice root.
+## Contributor Workflow (2026-09-17)
+
+Operator authorization: "adopt the 3-Collab Workflow" and "Expedited Mode";
+this existing session takes CDC, the Operator will create a separate CRC
+session, and fresh CC sessions continue implementation. Effective scope is
+remaining Project08 work from Arc06 Slice14 onward, not other projects or
+retroactive changes to closed evidence. Was: Two-Contributor CDC + CC.
+
+- CDC: this continuing design context; project/arc design, difficult
+  investigations, structural replanning, first slice of each new arc, and
+  independent arc/project composition review.
+- CRC: separate Operator-created review context, awaiting acknowledgement of
+  [cdc-directive01.md](./cdc-directive01.md); routine CC review, corrections,
+  subsequent slice preparation within approved boundaries, ledger/coverage
+  maintenance and closure assembly.
+- CC: fresh independent implementing context for each issued assignment;
+  tests and reports proposed-done to CRC through the Operator.
+- Operator: relays CDC/CRC directives and escalations, CC prompts/reports,
+  and retains all scope, schema/spec and output-quality approval gates.
+
+CRC may close routine slices without a second CDC slice approval once the
+agreed verification and bubble-up gates pass. It must escalate architectural,
+scope/acceptance, evidence-waiver, cross-arc, exhausted-iteration or substantive
+re-slicing decisions through preserved crc-escalationNN.md; CDC returns a
+preserved cdc-directiveNN.md via the Operator before affected work resumes.
+An unavailable CRC does not transfer its acceptance role silently.
+
+New slice reviews use crc-verification.md. Historical cdc-verification.md
+records retain their exact paths, authors and accepted states. Future arc and
+project closure needs BOTH crc-verification.md (CRC's operational/composition
+packet) and cdc-verification.md (independent design/composition verification)
+for the same candidate, plus unchanged Operator gates. A reviewer implementing
+a repair cannot independently accept it.
+
+Expedited Mode remains enabled: scoped explicit-file commits, verified slice
+closure and immediate next planned slice handoff within delegated authority.
+It does not waive evidence, P-15, UAT, source fences or required escalation.
+CRC returns arc readiness to CDC; CDC owns opening the next arc and first slice.
+
+Transition state: source 020268248882358075b678bb855c0ac8d11b532a; planning
+d6252b26878ead5045c843d1086b9194d516e2ee, both clean before these amendments.
+Slice13 is closed at its recorded review; R1-R4 resolved. Live coverage remains
+188 accepted / 367 remaining / 12 assigned / 355 outside. All six Slice14 rows,
+all arc rows and all project rows remain open. No Slice14 implementation or
+review packet is recorded at this transition; if concurrent work exists,
+CRC must reconcile its assignment/state before proceeding.
+
+Current CC assignment becomes Slice14's cc-prompt-iteration01.md, a routing
+replacement of the preserved cc-prompt.md, not an executed repair pass.
+CRC first reads/acknowledges the directive and checks the replacement before
+the Operator relays it to fresh CC. The original prompt is not edited.
+Next-action owner: Operator to create CRC and relay the directive, then CRC.
+
+### Design Handoff History
+
+| Packet | Date | Predecessor / initiating decision | Scope / rows | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| cdc-directive01.md | 2026-09-17 | No escalation/predecessor; Operator explicitly selects three contributors and Expedited Mode | Remaining Project08; Arc06 A6-1 through A6-10; Slice14 S14-1 through S14-6; P-1 through P-15 gates retained | Issued; awaiting CRC acknowledgement | Operator relays; CRC reads actual state, records identity/acknowledgement here and releases current CC assignment |
+
+Do not mark acknowledgement on CRC's behalf. CRC records its actual session
+identity, read state, date and next action in this history before execution.
+Any later assignment correction gets a new packet; issued packets stay intact.
+
+## Continued Research Direction
 
 Targeted primary-source research may now accompany family work before the
 entire inventory closes. Compare alternatives against actual capability gaps;
@@ -387,6 +445,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.28 (2026-09-17): Operator selects CDC/CRC/CC plus Expedited Mode for
+  remaining Project08 from Slice14. Records seats, authority, initial directive,
+  transition state and per-scale verification. Preserves the issued initial
+  prompt and replaces its routing with iteration01; no semantic scope or
+  acceptance changes. Was: two contributors after Slice13 closure.
 
 - 1.27 (2026-09-17): Arc06 Slice13 repair independently closes, adding eight
   accepted pairs. Opens bounded 12-pair Slice14; Slice15 retains the broader

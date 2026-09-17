@@ -25,3 +25,11 @@ Additive 2026-09-14 ownership: A6-2/A6-6/A6-7 consume Slice12 repair evidence
 through original Slice01 recomposition; no duplicate membership acceptance.
 A6-9/A6-10 also carry P-15's schema/specification discussion agenda and
 operator decision gate into Arc02. Arc06 closure does not discharge that gate.
+
+## Workflow Transition (2026-09-17)
+
+All A6 rows remain open with unchanged criteria. CRC now handles routine slice
+review and assembles this arc's operational/composition packet; CDC independently
+reviews arc design/composition. Both crc-verification.md and cdc-verification.md
+are required at arc closure, not pre-created. Historical slice CDC records and
+188/367/12/355 coverage remain unchanged. See ../cdc-directive01.md.

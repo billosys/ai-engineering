@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice14-provenance-context-and-reference-semantics
 status: open
 depends-on: [slice13-provenance-family-semantics, slice03-provenance-and-shared-reference-contracts]
-version: "1.0"
+version: "1.1"
 ---
 
 # Actor Identity In Supporting And Result Records
@@ -16,17 +16,31 @@ not a normative actor model. Source and earlier evidence remain read-only.
 
 ## Current Assignment And Authority
 
-Two-Contributor Workflow: separate CC implementation, independent CDC review;
-Operator gates unchanged. Current assignment: cc-prompt.md, initial execution.
-Expedited Mode applies. P-15 schema/spec discussion remains open.
+Three-Contributor Workflow, authorized by the Operator on 2026-09-17:
+CC implements; separate CRC reviews and handles routine advancement; CDC
+retains design/escalation and arc/project composition. Expedited Mode applies.
+See [the initial CRC directive](../../cdc-directive01.md) and the project
+Design Handoff History. P-15 and every semantic criterion remain unchanged.
+
+Current assignment: cc-prompt-iteration01.md, the routing replacement prepared
+by CDC for CRC's initial handoff. CRC must acknowledge the project directive
+and check actual state before release to fresh CC. Return CC results to CRC
+through the Operator. New review path: crc-verification.md; no prior Slice14
+verdict exists to rename. No routine second CDC slice approval is required.
+
+### Assignment History
 
 | Prompt path (slice-relative) | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
-| cc-prompt.md | 2026-09-17 | none | Bounded actor-identity complement after Slice13 closure | Active |
+| cc-prompt.md | 2026-09-17 | none | Initial 12-pair complement under CDC/CC | Superseded for routing; preserved unchanged; no execution recorded |
+| cc-prompt-iteration01.md | 2026-09-17 | cc-prompt.md | Operator-selected CRC review and three-contributor transition | Current; awaiting CRC acknowledgement/release via Operator |
 
-New follow-ups, if needed, use slice-root cc-prompt-iterationNN.md; preserve
-all issued prompts and their exact paths. CC does not write CDC verification,
-accept memberships, amend plans or open the next slice.
+This replacement is not evidence that a corrective CC pass occurred and does
+not consume an executed refinement iteration. If a run has started under the
+old prompt, CRC reconciles it explicitly before release; no results are erased.
+Later corrections use the next unused slice-root prompt, never overwrite an
+issued file. CC does not write either reviewer verdict, accept memberships,
+amend plans or open the next slice.
 
 ## Exact Scope And Sizing
 
@@ -167,8 +181,9 @@ must reject an invalid member and a dangling reference. Derive/compare authored
 census cells and hash every registered input. If using original/copy witnesses,
 validate mappings through their manifests and bytes, not just filenames.
 
-Pin opening planning authority using the actual clean opening HEAD (the CDC
-open-set commit), and source evidence to its actual source commit. The source
+Pin opening planning authority using the actual clean opening HEAD after
+CRC acknowledges/releases this assignment, and source evidence to its actual
+source commit. The source
 at planning was 020268248882358075b678bb855c0ac8d11b532a; the frozen inventory
 is older evidence. Check relevant content before claiming correspondence.
 A global HEAD advance alone is not relevant-source drift: compare registered
@@ -188,7 +203,8 @@ packets and issued prompts. Check whitespace and JSON structure.
 
 Walk all six ledger rows against evidence. Commit only the six permitted files
 with explicit names and required trailers, replay the committed endpoint,
-then report CC proposed-done to CDC. Do not claim independent acceptance.
+then report CC proposed-done to CRC through the Operator. Do not claim
+independent acceptance.
 A reviewer who implements a repair needs another verifier.
 
 No source edits, schema adoption, package/install/runtime changes, extraction,
@@ -198,6 +214,11 @@ headroom, stop with an evidence-backed sizing proposal; keep requirements and
 ownership, and do not start an unbounded batch hierarchy.
 
 ## Version History
+
+- 1.1 (2026-09-17): Operator-selected three-contributor transition changes
+  routine reviewer to CRC and current assignment to preserved sibling
+  iteration01. Was: CDC/CC initial prompt. All 12 pairs, six rows, six-file
+  implementation scope and evidence requirements remain unchanged.
 
 - 1.0 (2026-09-17): After Slice13's independent closure, opens the 12-pair
   actor-identity complement. Was: unsized broader provenance owner; all other

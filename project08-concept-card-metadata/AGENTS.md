@@ -71,3 +71,20 @@ contract, discuss the schemas and creation of a specification with the operator.
 See project-plan.md and artifacts/schema-and-spec-discussion-agenda.md; P-15 is
 the tracked gate. Arc06 research and approved evidence remediation may proceed,
 but neither adopts a schema, spec format or future requiredness policy.
+
+## Three-Contributor Transition (2026-09-17)
+
+The Operator explicitly selected CDC + CRC + CC with Expedited Mode for
+remaining Project08 work, effective from Arc06 Slice14. This supersedes earlier
+two-seat routing for current work only. The continuing CDC session owns design
+and arc/project composition review; a separate Operator-created CRC session
+owns routine slice preparation/review/advancement; fresh CC sessions implement.
+Read project-plan.md and cdc-directive01.md for the exact authority and handoff.
+
+CRC acknowledges the initial directive in the project Design Handoff History
+before releasing Slice14's replacement assignment. New slice verification is
+crc-verification.md; future arc/project closure requires both CRC and CDC
+records. Preserve historical CDC records and all issued prompts unchanged.
+CRC/CDC escalations and return directives pass through the Operator; neither
+Expedited Mode nor a new role permits changed scope, weaker acceptance or
+self-acceptance of repairs. P-15 and all real-use/Operator gates remain binding.

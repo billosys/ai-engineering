@@ -33,3 +33,11 @@ Arc06 A6-1 through A6-10 inherit inventory, research and requirements proof;
 Arc02 supplies architecture, Arc03/04 implementation and real-use evidence,
 and Arc05 final gates. The 115 accepted pairs are evidence inputs, not P-1 done.
 Arc06 must reconcile all transferred S1/S4/A1 rows before architecture acceptance.
+
+## Workflow Transition (2026-09-17)
+
+All P-1 through P-15 criteria/statuses are unchanged. Under the Operator-selected
+three-contributor workflow, CRC assembles project operational/composition
+evidence in crc-verification.md; CDC independently reviews the same candidate
+in cdc-verification.md. Explicit Operator acceptance remains required.
+See project-plan.md and cdc-directive01.md. Historical records are not relabeled.
