@@ -191,6 +191,91 @@ return. State whether output is implementation, investigation or evidence only.
 For evidence-only work, specify the inspection method and evidence oracle;
 do not demand irrelevant API sketches or authorize opportunistic code repair.
 
+### Required reading and CC intake
+
+Splitting an assignment across files creates a reading obligation as well as a
+linking obligation. The author must put a **required-reading manifest in the
+issued prompt**, not only in another document that CC might never open. Include
+reading order, exact path and source state, scope, why it matters, and when it
+must be loaded. Use these categories:
+
+- **Required-full:** read the entire document, including tables, code blocks,
+  appendices and footnotes. The active prompt, slice plan and slice ledger are
+  required-full. Include active directives and slice-specific binding design
+  documents this way unless the author explicitly bounds a shared document.
+- **Required-section:** read the complete named sections and their necessary
+  definitions/dependencies. The author chooses exact boundaries and explains
+  why they cover the current assignment. This suits large parent plans, shared
+  designs and domain chapters; CC may not silently convert required-full into
+  a section skim. A bare filename in a required-reading list means required-full.
+- **Conditional:** name the concrete trigger and exact material to load before
+  the affected step. Record whether the trigger applies. Do not use this label
+  to defer universally applicable scope, safety or acceptance constraints.
+- **Reference-only:** optional background/provenance, not required execution
+  instructions. If implementation depends on it, it belongs above.
+
+These labels never reduce reading required by governing instructions. Enumerate
+known normative dependencies; do not leave CC to chase an unbounded chain of
+links or infer that every historical reference is an active instruction. A newly
+encountered binding dependency must be loaded and recorded before affected work.
+Keep current authority distinct from superseded prompts and historical examples.
+The author applies the same complete-loading standard to their own required
+inputs before declaring readiness.
+
+**Budget the actual packet.** Account for source inspection, required reading,
+implementation and recovery headroom when sizing the slice. If the packet cannot
+fit coherently, the author must bound shared-document sections without losing
+obligations or use the established re-slicing process. Do not respond by asking
+CC to skim, silently drop requirements, or replace normative text with a summary.
+
+**CC preflight, before dependent implementation:**
+
+1. Confirm the active assignment and source state, then load the manifest's
+   required material into the executing context. File existence, byte counts,
+   hashes, grep hits, headings, summaries and another agent's reading do not
+   establish that this context received the full required content.
+2. Use bounded reads sized so the tool returns their complete contents. When
+   output is truncated or elided, recover the omitted portions using contiguous
+   chunks with explicit ranges until the required extent is covered. Check the
+   end of the file or section; do not equate command exit zero with full output.
+   Shell redirection into a log is not loading that log into model context.
+3. Record each required item, source state, loaded extent and any missing or
+   truncated portions. Cite tool-output identifiers or visible read ranges where
+   the environment exposes them; do not invent receipts. A tracked revision
+   identifies committed content; qualify dirty or untracked inputs separately.
+   Call an item complete only after loading all its required content. Record
+   conditional items as triggered/loaded or not applicable with a reason.
+4. Write a brief **contract readback** in your own words: connect the slice's
+   consequential obligations to source sections or ledger rows, intended code
+   changes and observable tests. Cover scope/exclusions, API and data contracts,
+   failure/lifecycle rules, and acceptance gates as applicable. Explain the
+   easily missed constraint that would invalidate an otherwise plausible
+   implementation. Surface disagreements or uncertainty instead of reciting
+   headings, copying the prompt, or saying “all files read.” This is a concise
+   account of the contract and its consequences, not a transcript of reasoning.
+5. Repair gaps or contradictions before affected edits. Unavailable required
+   material blocks dependent work; report the exact item and owner needed.
+   Once preflight is complete and coherent, proceed under existing authority;
+   this is not a new permission request or a return-only assignment.
+
+The prompt author names the intake record's home in an already allowed evidence
+file or execution log; carry its reference into the closing report. Do not
+invent another planning tree or require a separate artifact merely for receipts.
+Keep the record concise: do not paste every source file into it. In a resumed
+or compacted context, revalidate assignment/source state and reload required
+contracts no longer reliably available before dependent work resumes. A previous
+context's “read” claim or a compaction summary is not the original authority.
+
+**Review evidence at the right strength.** The assigned reviewer checks intake
+coverage and the readback against the actual sources, then checks implementation
+and behavioral evidence against that contract. A readback that misses a binding
+constraint is a defect to investigate even if the file list is complete.
+Reading receipts are CC attestation; tool traces can establish which content
+was delivered, not attention, comprehension or retention. Hashes establish
+identity, not reading. Neither a receipt nor a fluent readback independently
+proves understanding, and neither can replace code review and meaningful tests.
+Do not add secret marker words or arbitrary recall quizzes as a quality gate.
+
 ## 7. Review readiness before issuing
 
 The author performs this check before handing the prompt to the Operator. Record
@@ -208,7 +293,9 @@ to the relevant sections; do not add a new approval role or ceremonial artifact.
 5. **Falsifiable:** tests specify setups and results that reject plausible bad
    implementations; required gates and evidence remain intact.
 6. **Coherent and portable:** prompt, plan, design and ledger agree; referenced
-   material is accessible; current scope is separated from future work.
+   material is accessible; current scope is separated from future work. The
+   prompt carries a bounded required-reading manifest, intake/readback instructions
+   and an allowed evidence home; the reading budget leaves implementation headroom.
 
 Ask: **Could two competent implementers follow this packet yet choose different
 observable behavior, incompatible public APIs, or different failure/lifecycle

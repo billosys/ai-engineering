@@ -1,5 +1,11 @@
 # Collaboration Framework Version History
 
+## Version 2.4.0 - 2026-09-17
+
+Added CC execution routing for required-reading manifests, complete loading,
+truncation recovery and source-cited contract readback. Preserved the distinction
+between reading attestation and comprehension or independent acceptance.
+
 ## Version 2.3.0 - 2026-09-17
 
 Added mandatory routing for initial and corrective CC implementation prompt

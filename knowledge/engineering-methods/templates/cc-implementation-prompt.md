@@ -14,6 +14,33 @@ Source checkout/branch/revision, relevant dirty state and drift handling.
 Approved outcome, scope/non-goals, plan/design/ledger authority and exact sections.
 State whether this is implementation, investigation or evidence-only work.
 
+## Required reading and execution preflight
+
+The author fills this manifest before issuing. The active prompt, slice plan
+and slice ledger are required-full. For shared documents, name exact sections
+and include definitions/dependencies; no silent narrowing by CC. Governing
+reading obligations remain binding. List current authority separately from
+historical background.
+
+| Order | Exact path and revision/state | Reading scope | Purpose / before which step |
+| --- | --- | --- | --- |
+| <order> | <resolvable path; qualify dirty inputs> | <required-full, required-section with exact bounds, conditional with trigger, or reference-only> | <contract it supplies and deadline> |
+
+CC: before dependent implementation, load all required content. Use bounded,
+contiguous reads and recover every truncated or omitted portion. Grep hits,
+headings, summaries, another context's reading, file hashes and successful shell
+exit codes are not evidence that you received the full text. Record actual
+loaded extents/source state and gaps in <author-named allowed evidence file or
+execution log>; carry this record into the closing report.
+
+Then provide a brief source-cited contract readback connecting the consequential
+requirements to implementation and tests, including exclusions and failure
+behavior. Name the easily missed constraint that would invalidate plausible
+code. Reconcile missing or conflicting instructions before affected edits;
+otherwise proceed without asking for an additional approval. On context recovery,
+revalidate state and reload required contracts no longer reliably available.
+Receipts are attestation, not proof of comprehension or independent acceptance.
+
 ## Source reconnaissance
 
 | File and symbol at baseline | Observed behavior or reusable facility | Required change and integration consequence |
@@ -77,7 +104,8 @@ State escalation triggers and who resolves each. Include source mismatch,
 invalid design assumptions and changes to API, scope or acceptance.
 
 Return the exact assignment/source state, changed paths, per-row evidence,
-command outcomes including failed/unrun attempts, self-review, deviations,
+command outcomes including failed/unrun attempts, intake/readback evidence,
+self-review, deviations,
 remaining blockers and bubble-up findings. CC evidence remains proposed-done
 until the assigned independent reviewer accepts it under the selected workflow.
 
@@ -90,5 +118,6 @@ current assignment; a previous completion report is not fresh execution.
 Before issuing, record in the existing slice plan or assignment record where
 this packet satisfies the six readiness checks: source-grounded,
 design-complete, guideline-applied, executable, falsifiable, coherent/portable.
+Include complete-reading scope, context budget and the CC preflight contract.
 Resolve material gaps first. This is author self-review, not independent
 acceptance or a new Operator approval gate.

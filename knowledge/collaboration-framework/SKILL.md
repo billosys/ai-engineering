@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.3.0"
+  version: "2.4.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -143,6 +143,12 @@ applies:
   consequential decisions, and supply concrete implementation shapes and test
   oracles. A skill-reading instruction to CC does not replace the author's
   engineering work. Complete the guide's readiness check before handoff.
+- **Executing a CC assignment.** Follow the prompt's required-reading manifest
+  and engineering-methods' [intake contract](../engineering-methods/guides/07-implementation-prompt-authoring.md#required-reading-and-cc-intake).
+  Read required contents completely, recover truncated output, and record loaded
+  extents plus a source-cited contract readback before dependent edits. Missing
+  or conflicting required inputs must be resolved; receipts alone do not prove
+  comprehension. Proceed after coherent preflight under existing authority.
 - **Issuing or executing a slice iteration.** Preserve every issued prompt.
   Keep the initial `cc-prompt.md` and each new `cc-prompt-iterationNN.md` in
   the slice root, with the current assignment recorded in `slice-plan.md`.

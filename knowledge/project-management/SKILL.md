@@ -7,7 +7,7 @@ description: |
   whether bubble-up findings require a plan update.
 license: MIT
 metadata:
-  version: "2.17.0"
+  version: "2.18.0"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills
@@ -23,6 +23,11 @@ Before authoring an initial or corrective CC implementation prompt, load
 engineering-methods' [prompt-authoring guide](../engineering-methods/guides/07-implementation-prompt-authoring.md).
 Project-management governs the open set and handoff; engineering-methods governs
 the source-grounded design, implementation recipe and readiness check.
+
+Before executing any CC assignment, apply its required-reading manifest and
+engineering-methods' [intake contract](../engineering-methods/guides/07-implementation-prompt-authoring.md#required-reading-and-cc-intake).
+Load required contents completely and record coverage plus a contract readback;
+resolve missing or conflicting inputs before dependent implementation.
 
 For slice iterations, preserve issued prompts and create each follow-up as
 `cc-prompt-iterationNN.md` beside the initial `cc-prompt.md` in the slice root.

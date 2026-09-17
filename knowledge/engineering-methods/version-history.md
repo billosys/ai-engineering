@@ -1,5 +1,14 @@
 # Engineering Methods Version History
 
+## Version 1.14.0 - 2026-09-17
+
+Added an author-defined required-reading manifest and CC intake contract.
+Distinguished whole-document, bounded-section, conditional and reference reads;
+required complete tool-visible loading with truncation recovery and a source-cited
+contract readback before dependent implementation. Added context-budget/recovery
+and reviewer checks while distinguishing reading attestation from understanding
+and independent acceptance. Updated the prompt template and execution route.
+
 ## Version 1.13.0 - 2026-09-17
 
 Added the slice-to-implementation-prompt authoring contract and reusable template.

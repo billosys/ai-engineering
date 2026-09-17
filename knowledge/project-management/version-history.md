@@ -1,5 +1,12 @@
 # Version History
 
+## Version 2.18.0 - 2026-09-17
+
+Routed initial and iterative CC execution through the complete-reading and
+intake contract. Issued prompts specify reading scope and an allowed record home;
+CC captures coverage and a contract readback before dependent edits. Review uses
+actual sources and behavior; the preflight adds no Operator approval gate.
+
 ## Version 2.17.0 - 2026-09-17
 
 Added the explicit handoff from slice planning to engineering-methods prompt

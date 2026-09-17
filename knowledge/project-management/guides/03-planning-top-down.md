@@ -121,6 +121,16 @@ a coherent current-slice implementation spine. Keep author/reviewer authority
 and preserved-prompt rules unchanged; this adds no approval role. Evidence-only
 assignments need precise inspection/evidence instructions, not invented code.
 
+The issued prompt must also contain the [required-reading manifest and CC
+intake instructions](../../engineering-methods/guides/07-implementation-prompt-authoring.md#required-reading-and-cc-intake).
+Distinguish full documents, bounded sections, conditional reads and optional
+background. CC loads complete required content, recovers tool truncation and
+records coverage plus a source-cited contract readback before dependent edits.
+Name an allowed evidence/log home; preserve this evidence in the return packet.
+Complete preflight permits execution under existing authority without a new
+approval. The reviewer checks it against the sources and delivered behavior;
+reading receipts alone do not establish understanding or acceptance.
+
 ### Issuing and executing an iteration
 
 When review finds unresolved acceptance criteria, the assigned reviewer keeps
@@ -163,7 +173,8 @@ Do not give the old prompt path with an instruction to reread its updates.
 
 CC reads the named prompt from disk and checks it against the current
 assignment in `slice-plan.md` before acting. A mismatch needs reconciliation;
-do not guess from filenames. For a matching assignment, execute the remaining
+do not guess from filenames. Apply the same complete-reading and intake contract
+to the iteration and its governing material. For a matching assignment, execute the remaining
 work and validation before returning to the assigned reviewer. An earlier
 closing report or "ready for review" statement does not cancel the new
 assignment. If blocked, report the concrete blocker against the assigned work.
