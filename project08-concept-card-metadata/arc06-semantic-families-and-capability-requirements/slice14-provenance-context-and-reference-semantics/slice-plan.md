@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice14-provenance-context-and-reference-semantics
 status: open
 depends-on: [slice13-provenance-family-semantics, slice03-provenance-and-shared-reference-contracts]
-version: "1.1"
+version: "1.2"
 ---
 
 # Actor Identity In Supporting And Result Records
@@ -22,25 +22,23 @@ retains design/escalation and arc/project composition. Expedited Mode applies.
 See [the initial CRC directive](../../cdc-directive01.md) and the project
 Design Handoff History. P-15 and every semantic criterion remain unchanged.
 
-Current assignment: cc-prompt-iteration01.md, the routing replacement prepared
-by CDC for CRC's initial handoff. CRC must acknowledge the project directive
-and check actual state before release to fresh CC. Return CC results to CRC
-through the Operator. New review path: crc-verification.md; no prior Slice14
-verdict exists to rename. No routine second CDC slice approval is required.
+Current assignment: cc-prompt-iteration02.md, the first executed refinement
+pass after CRC's changes-required review of cc-prompt-iteration01.md. Return CC
+results to CRC through the Operator. The CRC verdict is in
+crc-verification.md; no routine second CDC slice approval is required.
 
 ### Assignment History
 
 | Prompt path (slice-relative) | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
 | cc-prompt.md | 2026-09-17 | none | Initial 12-pair complement under CDC/CC | Superseded for routing; preserved unchanged; no execution recorded |
-| cc-prompt-iteration01.md | 2026-09-17 | cc-prompt.md | Operator-selected CRC review and three-contributor transition | Current; awaiting CRC acknowledgement/release via Operator |
+| cc-prompt-iteration01.md | 2026-09-17 | cc-prompt.md | Operator-selected CRC review and three-contributor transition | Executed at 60039753; CRC changes required in crc-verification.md |
+| cc-prompt-iteration02.md | 2026-09-17 | cc-prompt-iteration01.md | Correct four CRC findings within the same six-row contract | Current; issued to CC through Operator; first executed refinement pass |
 
-This replacement is not evidence that a corrective CC pass occurred and does
-not consume an executed refinement iteration. If a run has started under the
-old prompt, CRC reconciles it explicitly before release; no results are erased.
-Later corrections use the next unused slice-root prompt, never overwrite an
-issued file. CC does not write either reviewer verdict, accept memberships,
-amend plans or open the next slice.
+The routing replacement did not consume a refinement pass. Iteration02 is the
+first requested corrective pass; count it when executed. Preserve both issued
+predecessors unchanged. CC does not write either reviewer verdict, accept
+memberships, amend plans or open the next slice.
 
 ## Exact Scope And Sizing
 
