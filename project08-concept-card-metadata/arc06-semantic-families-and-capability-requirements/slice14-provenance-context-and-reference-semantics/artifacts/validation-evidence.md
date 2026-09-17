@@ -512,4 +512,11 @@ decision.
   control status 1; real no-match status 0 with [] and 0 stderr bytes;
   missing-input status 2 with 145 stderr bytes; invalid membership and
   dangling evidence mutations rejected; semantic acceptance not claimed
-- committed: pending execution
+- committed: status 0 with CC_COMMIT=6003975321334a0ad554d92663836317b71bd6ce
+  and REPLAY_COMMIT=6003975321334a0ad554d92663836317b71bd6ce; planning HEAD
+  6003975321334a0ad554d92663836317b71bd6ce; selected census 12 and legacy
+  comparison 2054; positive support actor status 0; wrong support expectation
+  status 1; absence-to-null negative control status 1; real no-match status 0
+  with [] and 0 stderr bytes; missing-input status 2 with 145 stderr bytes;
+  invalid membership and dangling evidence mutations rejected; semantic
+  acceptance not claimed

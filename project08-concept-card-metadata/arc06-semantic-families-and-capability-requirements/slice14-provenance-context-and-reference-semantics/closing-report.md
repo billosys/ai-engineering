@@ -51,9 +51,10 @@ explicit CC commit using separate CC_COMMIT and REPLAY_COMMIT endpoints.
 The precommit route has returned status 0 at planning HEAD
 2fa4c2a5273485d5bdf5bfba9a59677df79d14cf, with wrong-identity and
 absence-to-null controls at status 1, a real no-match at status 0 with [],
-and a missing inventory input at status 2. Committed replay remains pending
-until the explicit CC endpoint exists. The route must return the same
-structural outcomes after commit.
+and a missing inventory input at status 2. Committed replay at
+CC_COMMIT=6003975321334a0ad554d92663836317b71bd6ce with
+REPLAY_COMMIT=6003975321334a0ad554d92663836317b71bd6ce also returned status
+0 with the same structural outcomes. Semantic acceptance is not claimed.
 
 ## Conclusions and limits
 
