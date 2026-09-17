@@ -564,20 +564,21 @@ inventory input. No status-0 route run is a semantic-acceptance decision.
   and 0 stderr bytes; missing-input status 2 with 145 stderr bytes; invalid
   membership and dangling evidence mutations rejected; semantic acceptance not
   claimed
-- committed same-revision preflight: status 0 with CC_COMMIT=15da9e33 and
-  REPLAY_COMMIT=15da9e33; registry was loaded from CC_COMMIT and the wrapper
+- committed same-revision preflight: status 0 with
+  CC_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54 and
+  REPLAY_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54; registry was loaded from CC_COMMIT and the wrapper
   extracted the literal route from that revision; all structural outcomes
   matched the precommit run. This was a wrapper preflight, not the required
   separate-revision result.
-- stale valid recipe rejection: status 1 with CC_COMMIT=15da9e33 and
+- stale valid recipe rejection: status 1 with CC_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54 and
   REPLAY_COMMIT=8e6b67708eeeca391a139bb8d1b710633cfbbeb4; the older recipe was
   rejected on its opening-to-CC scope predicate.
-- missing recipe-file rejection: status 2 with CC_COMMIT=15da9e33 and
+- missing recipe-file rejection: status 2 with CC_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54 and
   REPLAY_COMMIT=2fa4c2a5273485d5bdf5bfba9a59677df79d14cf; the valid commit
   lacked the recipe path, so the committed wrapper stopped before execution.
-- committed separate-revision: status 0 with CC_COMMIT=15da9e33 and
-  REPLAY_COMMIT=884e9640c80371d6321656406a0d93e1eab20185; planning HEAD was
-  884e9640c80371d6321656406a0d93e1eab20185; selected census 12 and legacy
+- committed separate-revision: status 0 with
+  CC_COMMIT=4bbeba05af98e04cd76e6a65c964ea3083bdce54 and
+  REPLAY_COMMIT=6d105454f810c8ac6e9972430fd39114749dc51b; selected census 12 and legacy
   comparison 2054; derived YAML-error count 3 and no-frontmatter count 15;
   unrelated-HEAD fixture passed; positive support actor status 0; wrong
   support expectation status 1; wrong YAML exclusion status 1;
