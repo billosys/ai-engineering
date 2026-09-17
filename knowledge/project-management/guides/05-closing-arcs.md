@@ -1,6 +1,7 @@
 # Part V — Closing an arc, and bubbling up to the project
 
-An arc closes when its last slice is CDC-closed. Arc close is a formal step
+An arc becomes eligible for closure when all its slices are independently
+accepted. Arc close is a formal step
 with its own document, because the arc is the scale at which you check
 **composition** — whether the slices actually added up to the capability the
 arc promised — and that check has no other home. A pile of individually-closed
@@ -43,8 +44,28 @@ The bubble-up to the project answers, in the arc `closing-report.md`:
 3. **The silent-drop diff at arc scale**, rolled up to the project: anything
    the roadmap expected from this arc that did not land.
 
-The **check** is independent verification (CDC, or a fresh context, or the
-operator) that the arc composes and the bubble-up is honest — the same
+In the Two-Contributor Workflow, CDC assembles closure and a fresh independent
+context or the Operator gates it. In the explicitly enabled Three-Contributor
+Workflow, CRC assembles closure and CDC reviews it, with Operator gates
+unchanged. The assembler or implementer cannot independently sign off their own
+work. Apply the same separation to project closure, with the Operator plus
+independent review gating the project definition of done.
+
+The Three-Contributor Workflow requires both `crc-verification.md` and
+`cdc-verification.md` at arc and project level, linked from the ledger and
+closing report. CRC records operational/composition readiness; CDC records the
+independent composition/design gate. Neither file replaces the other or the
+Operator's approvals. Apply the
+[per-scale record contract](./02-canonical-planning-worktree.md#verification-records-by-workflow-and-scale).
+
+CRC explicitly hands the Operator the project-relative paths of the closing
+report, CRC verification record, and ledger, with a concise readiness summary
+to relay to CDC. CDC returns its verification path and verdict through the
+Operator. Required changes are a new `cdc-directiveNN.md` assignment, not an
+implicit instruction hidden in a verdict. No next-stage advancement assumes
+that a record's existence means CDC has reviewed it.
+
+The **check** verifies that the arc composes and the bubble-up is honest — the same
 independence ledger verification requires, applied one scale up. And the
 decision the check forces is the project-level analogue of the slice-close
 step: **if the arc (or its accumulated arc-plan changes) implies a
@@ -59,6 +80,12 @@ A plan is a living spec, not a fixed contract; when the work reveals the plan
 was wrong or incomplete, the plan changes — but the change is **tracked, never
 silent**. This is spec-keeping applied to the plan itself, and it is the same
 discipline the methodology and this document apply to their own revisions.
+
+Before editing, establish decision authority under the selected workflow.
+CRC escalates structural plan changes to CDC and the Operator. CDC does not
+silently redefine the contract either: record the required decision and
+approval before affected execution resumes. Versioning records a decision;
+it does not authorize one.
 
 To make a tracked plan change:
 

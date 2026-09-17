@@ -1,5 +1,20 @@
 # Engineering Methods Version History
 
+## Version 1.12.0 - 2026-09-17
+
+Renamed CC to Code Contributor and CDC to Coordinating Design Contributor,
+preserving the historical names as lineage. Defined the default Two-Contributor
+Workflow and Operator-enabled Three-Contributor Workflow with the optional
+Coordinating Review Contributor (CRC). Added symmetrical responsibilities,
+authority, handoffs, verification, escalation, and closure sections; explicit
+workflow transitions; and the invariant that self-review is not independent
+acceptance. Defined Operator-mediated CRC escalation reports and CDC return
+directives, with role-specific verification records at each scale. Roles remain
+model/vendor-independent, and Expedited Mode does not alter their authority.
+Added the Operator-selected One-Contributor Workflow after the three-contributor
+section: proportionate self-checks and ordinary completion for bounded work,
+without fictional handoffs or implicit waiver of existing independent gates.
+
 ## Version 1.11.0 - 2026-09-06
 
 Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.

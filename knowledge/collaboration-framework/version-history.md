@@ -1,5 +1,15 @@
 # Collaboration Framework Version History
 
+## Version 2.2.0 - 2026-09-17
+
+Added default Two-Contributor and explicit-opt-in Three-Contributor workflow
+routing, including CRC terminology, shared independence/authority safeguards,
+and Operator-mediated escalations and return directives. Updated verification
+and Expedited Mode routes to use the assigned reviewer while keeping detailed
+workflow and artifact contracts in their owning components.
+Routed the optional One-Contributor Workflow to proportionate self-checking
+while retaining two contributors as the default and preserving existing gates.
+
 ## Version 2.1.1 - 2026-09-14
 
 Clarified the slice-iteration route and summary: preserve issued prompts,

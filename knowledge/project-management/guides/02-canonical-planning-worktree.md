@@ -22,7 +22,7 @@ The default planning substrate is:
 4. **The `planning` branch is orphaned.** It shares the repository's Git object
    database and remotes, but it starts with no inherited implementation files.
    Its sole purpose is to house project plans, arc plans, per-scale ledgers,
-   prompts, close reports, CDC verification, and default homes for durable
+   prompts, close reports, independent verification, and default homes for durable
    slice-produced artifacts. The default branch is used to identify the
    repository and remote context, not to seed the planning files.
 
@@ -35,7 +35,7 @@ git -C "$PROJECT_DIR" worktree add --detach --no-checkout "$WORKTREE_ROOT/planni
 git -C "$WORKTREE_ROOT/planning" switch --orphan planning
 ```
 
-The resulting default shape is:
+The resulting default Two-Contributor Workflow shape is:
 
 ```
 $PROJECT_DIR/.worktrees/planning/
@@ -62,7 +62,10 @@ project, **`arc-plan.md`** for each arc, and **`slice-plan.md`** for each
 slice. Three tiers of ledger, one per scale: **`ledger.md`** beside each
 project plan, arc plan, and slice plan. Three tiers of closing-report close the
 same scales when they finish: project, arc, and slice. The per-slice
-`cdc-verification.md` is the independent re-run that gates a slice closed.
+verification record is the independent re-run that gates a slice closed.
+In the Three-Contributor Workflow, use `crc-verification.md` at slice level
+and both `crc-verification.md` and `cdc-verification.md` beside each arc and
+project plan at closure. The records have distinct responsibilities below.
 When a slice produces durable artifacts, its default artifact home is
 `sliceNN-<slug>/artifacts/`, unless the operator records an override. Their full
 roles are defined in [`Planning, top-down`](./03-planning-top-down.md),
@@ -133,8 +136,10 @@ first-class document set when another assignment is issued:
 | `ledger.md` | open | The acceptance criteria as grep-verifiable rows — the steps. Format and discipline in [`Row Closure`](../../work-verification/guides/03-row-closure.md). |
 | `cc-prompt.md` | open | Initial assignment to CC; preserve its contents once issued. |
 | `cc-prompt-iterationNN.md` | iteration | A new assignment for each follow-up pass; a sibling of the initial prompt, never a supporting artifact. |
+| `crc-escalationNN.md` | as needed | Preserved CRC-to-CDC decision report, relayed by the Operator. |
+| `cdc-directiveNN.md` | as needed | Preserved CDC-to-CRC assignment or response to an escalation, relayed by the Operator. |
 | `closing-report.md` | close | The per-row walk written at slice close, plus the **bubble-up to the arc** (see [`Closing slices`](./04-closing-slices.md)). |
-| `cdc-verification.md` | close | The independent re-run that verifies the closing report against evidence, plus the **bubble-up check** (see [`Closing slices`](./04-closing-slices.md)). |
+| `cdc-verification.md` (two contributors) or `crc-verification.md` (three contributors) | close | The assigned reviewer's independent re-run that verifies the closing report against evidence, plus the **bubble-up check** (see [`Closing slices`](./04-closing-slices.md)). |
 | `artifacts/` | as needed | Default home for supporting outputs such as research, findings, logs, and analysis. Excludes the first-class slice documents above. Create only when needed or when it clarifies the handoff. |
 
 Opening the close-set documents at slice start, or leaving the open-set
@@ -148,6 +153,67 @@ directory. If no durable artifacts are expected, a short "Artifacts: none
 expected" line is enough. If the operator wants those artifacts somewhere else,
 record the override and rationale in the slice plan before work begins, and
 carry the chosen path into the prompt and close evidence.
+
+### Design handoff filenames and preservation
+
+In the Three-Contributor Workflow, place `crc-escalationNN.md` and its matching
+`cdc-directiveNN.md` beside the owning `slice-plan.md`. If the decision is owned
+at arc or project scale, place the pair beside that scale's plan and link it
+from affected child plans; do not create competing copies per child. These are
+first-class handoff records, not supporting files under `artifacts/`.
+
+For a new exchange, use a two-digit number above the highest used by either
+prefix in that directory, starting at `01`. A response directive uses its
+escalation's number. Pending escalations reserve that number: an initial or
+proactive CDC assignment starts a new exchange, names the initiating
+Operator/CDC decision, and does not consume a pending response slot. Create
+packets only when issuing a real request, assignment, or response; never
+pre-create an approval or verdict. Preserve every issued
+packet's content and path. A correction or follow-up gets a new number and
+links its predecessor; no mutable "latest" packet or silent overwrite.
+
+Record the current exchange and status in the owning plan's **Design handoff
+history**. These numbers identify correspondence, not extra implementation
+iterations or permission to reset CC's iteration budget. For the required
+contents and Operator relay, read
+[Design escalation and return handoffs](./03-planning-top-down.md#design-escalation-and-return-handoffs).
+
+### Verification records by workflow and scale
+
+| Scale | Two-Contributor Workflow | Three-Contributor Workflow |
+| --- | --- | --- |
+| Slice | `cdc-verification.md`: CDC independently reviews CC's implementation. | `crc-verification.md`: CRC independently reviews CC's implementation. |
+| Arc | CDC assembles `closing-report.md`; a fresh independent context or the Operator records the composition gate with attribution in that report or the project's existing gate record. | `crc-verification.md`: operational/composition evidence and readiness. `cdc-verification.md`: independent composition/design gate reviewing that evidence and the assembled close. |
+| Project | CDC assembles `closing-report.md`; the Operator plus independent review records the DoD gate with attribution in that report or the project's existing gate record. | `crc-verification.md`: operational/system acceptance evidence and readiness. `cdc-verification.md`: independent DoD/design gate. Operator acceptance remains separately explicit. |
+
+In the Operator-selected One-Contributor Workflow, ordinary non-ledgered tasks
+use the completion report, not verification-role files or a newly invented
+planning tree. Existing ledgered tasks keep their records: document self-checks
+as attested in the closing report, with any required independent gate pending
+until actually performed and attributed to its reviewer. Do not generate a CDC
+or CRC verification record that presents the implementer's self-review as
+independent. A recorded filename override cannot weaken the evidence contract.
+
+Create records only when review occurs, not as pre-filled success artifacts.
+The three-contributor arc/project records are complementary, not two approvals
+of the same report. CRC's own assembly or demonstration remains doer-attested
+until independently checked by CDC; pointers to accepted children do not prove
+composition. Both records identify scope, source/plan state, author role/context,
+checks, evidence strength, unresolved findings, and verdict. Closure requires
+both records to address the same current candidate, dispositioned findings,
+and the required independent and Operator gates, not merely both files existing.
+Link them from the owning ledger and closing report. See
+[independent verification](../../work-verification/guides/05-independent-verification.md).
+
+### Verification filename compatibility
+
+Existing `cdc-verification.md` files, historical links, and project conventions
+remain valid. Workflow transitions do not rename or relabel historical evidence.
+For new review after a transition, record the role-specific active path in the
+plan and link the preceding record, its source state, and the scope superseded
+by the new review. Do not leave two competing current slice verdicts or copy
+old acceptance into a new role's file. Explicit project filename overrides
+remain valid when recorded. Examples describing past work retain their names.
 
 ### Slice iteration filenames and preservation
 

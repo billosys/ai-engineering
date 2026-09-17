@@ -7,7 +7,7 @@ description: |
   lookup task can be delegated without outsourcing design judgment.
 license: MIT
 metadata:
-  version: "1.1.1"
+  version: "1.2.0"
   hermes:
     tags: [ai-engineering, collaboration, subagents, delegation]
     category: meta-skills
@@ -20,9 +20,15 @@ explicit multi-agent coordination. It owns the boundary between lookup work,
 which can be delegated, and thinking/edit/review judgment, which stays in the
 main context.
 
-CC is the code writer, CDC is the coordinating/design reviewer, and the
-Operator is the human co-architect. These terms are coordination roles, not
-permission to outsource judgment.
+CC implements; CDC coordinates design and, by default, review. CRC owns routine
+review and subsequent slice preparation only in the explicitly Operator-enabled
+Three-Contributor Workflow. These are assigned contributor contexts, not
+permission to outsource judgment to lookup subagents. For canonical roles,
+authority, and transitions, read the
+[methodology](../engineering-methods/guides/01-engineering-methodology.md#roles-and-shared-invariants).
+The Operator-selected One-Contributor Workflow keeps design, implementation,
+and self-review in one context without fictional role handoffs or automatic
+delegation. Existing independent-review requirements still apply.
 
 Read only the guide needed for the work:
 

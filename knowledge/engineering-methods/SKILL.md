@@ -7,7 +7,7 @@ description: |
   structured, evaluated, or improved.
 license: MIT
 metadata:
-  version: "1.11.0"
+  version: "1.12.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills
@@ -18,6 +18,13 @@ metadata:
 Use this component when the work needs the methodology itself: the three
 pillars, the 9-point SDLC, anti-degradation disciplines, or the conceptual
 frame behind project, arc, slice, and ledgered work.
+
+For contributor roles, workflow selection, or handoffs, read the methodology's
+[shared invariants and workflow sections](./guides/01-engineering-methodology.md#roles-and-shared-invariants).
+The Two-Contributor Workflow is the default. The Operator may explicitly select
+the Three-Contributor Workflow for sustained design/review separation or the
+One-Contributor Workflow for proportionate single-assistant work. All preserve
+scope and evidence honesty; self-checks are not independent acceptance.
 
 Read the guides:
 

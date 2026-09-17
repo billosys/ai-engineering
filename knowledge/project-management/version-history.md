@@ -1,5 +1,19 @@
 # Version History
 
+## Version 2.16.0 - 2026-09-17
+
+Mapped planning, iteration, closure, and Expedited Mode to the selected
+contributor workflow without enabling CRC implicitly. Added preserved
+`crc-escalationNN.md` and `cdc-directiveNN.md` packets, Operator relay in both
+directions, explicit decisions, and acknowledgement/history requirements.
+Defined slice `cdc-verification.md` for two contributors and
+`crc-verification.md` for three, with paired CRC/CDC records at arc/project
+scale in the three-contributor workflow. Preserved historical filenames and
+required explicit active-record lineage on transitions. Plan maintenance and
+automatic advancement cannot bypass architectural escalation or approval gates.
+Distinguished one-contributor bounded tasks from existing ledgered work so
+workflow selection does not manufacture planning artifacts or erase gates.
+
 ## Version 2.15.0 - 2026-09-14
 
 Defined preserved, distinct slice-root prompts for successive CC assignments:

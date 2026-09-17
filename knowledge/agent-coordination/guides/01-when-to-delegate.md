@@ -12,6 +12,15 @@ failure modes, load [`04-anti-patterns.md`](./04-anti-patterns.md).
 
 ## Core Policy
 
+The [contributor workflows](../../engineering-methods/guides/01-engineering-methodology.md#roles-and-shared-invariants)
+assign sustained responsibilities to Operator-selected contexts. They are not
+ad hoc subagent delegation: each assigned contributor owns its judgment and
+loads its governing plans and evidence. Enabling CRC does not permit it to
+delegate acceptance or design to lookup workers. CRC/CDC design exchanges use
+explicit reports and return directives relayed by the Operator; a lookup
+summary does not substitute for either handoff. The rules below govern
+subagents within a contributor's work, not the existence of CC or CRC.
+
 Do not delegate thinking work to subagents. Thinking work includes:
 
 - code edits;

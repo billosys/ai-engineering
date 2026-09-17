@@ -31,6 +31,43 @@ comparisons, regression investigations, operational measures, experiment
 protocols, evaluation rubrics, evidence capture, and threats-to-validity
 analysis.
 
+## Contributor Workflows
+
+### Two-Contributor Workflow
+
+The default **Two-Contributor Workflow** pairs the Coordinating Design
+Contributor (CDC) with the Code Contributor (CC). The Operator participates in
+every workflow and retains scope and approval authority.
+
+### Three-Contributor Workflow
+
+For sustained projects, the Operator may explicitly enable the
+**Three-Contributor Workflow**, adding a Coordinating Review Contributor (CRC)
+for subsequent slice preparation, independent review, evidence reproduction,
+and routine acceptance. CDC retains architecture and substantive replanning.
+These are roles, not mandatory model or vendor choices; neither workflow has a
+lower quality standard.
+
+### One-Contributor Workflow
+
+For bounded tasks, the Operator may explicitly choose one assistant to handle
+design, implementation, and self-review. Use proportionate checks and a clear
+completion report without fictional handoffs or unnecessary planning artifacts.
+Self-checks are not independent acceptance; any existing review or approval
+gates remain binding. Two contributors remain the default unless the Operator
+selects otherwise.
+
+Read the [canonical workflow sections](../knowledge/engineering-methods/guides/01-engineering-methodology.md#roles-and-shared-invariants)
+for the shared invariants, symmetrical role boundaries, and explicit selection
+and transition rules. CRC escalations and CDC return instructions are
+[durable two-way handoffs through the Operator](../knowledge/project-management/guides/03-planning-top-down.md#design-escalation-and-return-handoffs),
+not implicit conversation context. Slice records are `cdc-verification.md` by
+default and `crc-verification.md` in the three-contributor workflow. The latter
+requires both CRC and CDC records at arc and project levels, separating
+operational/composition evidence from independent design/composition review.
+Existing paths remain valid under the
+[compatibility rule](../knowledge/project-management/guides/02-canonical-planning-worktree.md#verification-filename-compatibility).
+
 ## Main Framework Surfaces
 
 | Surface | Source path | Role |

@@ -53,7 +53,7 @@ adjust, or override:
 >         cc-prompt-iteration01.md  (only when a follow-up is issued)
 >         artifacts/
 >         closing-report.md
->         cdc-verification.md
+>         cdc-verification.md  # crc-verification.md when three contributors are enabled
 > ```
 >
 > If no planning worktree exists, I will create an orphan `planning` branch and

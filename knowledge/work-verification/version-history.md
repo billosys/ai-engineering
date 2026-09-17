@@ -1,5 +1,18 @@
 # Work Verification Version History
 
+## Version 2.5.0 - 2026-09-17
+
+Applied assigned-reviewer verification to both contributor workflows. Removed
+the same-context fallback as an independent acceptance path: self-checks remain
+attested, including repairs made by a usual reviewer. Defined complementary
+CRC operational/composition evidence and CDC independent composition/design
+records at arc/project scale, with source-state agreement and Operator gates.
+Aligned focused guides and the retained template, including role-specific
+slice filenames and historical-record compatibility. Clarified that green CI
+does not replace source/plan review and child closure does not prove composition.
+Added proportionate One-Contributor Workflow guidance: self-checks may complete
+ordinary tasks but do not satisfy already-required independent ledger gates.
+
 ## Version 2.4.0 - 2026-09-06
 
 Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.

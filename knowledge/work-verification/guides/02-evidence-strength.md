@@ -15,15 +15,20 @@ The strength vocabulary is part of the closure contract, not decorative prose.
 
 A `done` row must reach at least `reproduced` at its own scale. `attested`
 evidence is useful because it lets the doer provide a concrete claim, but the
-unit remains proposed-done until CDC, a fresh context, CI, the operator, or
-another independent reviewer reproduces it.
+unit remains proposed-done until the assigned reviewer, a fresh context, CI,
+the operator, or another independent reviewer reproduces it.
 
 ## Applying Strength At Each Scale
 
 At slice scale, source diffs, grep checks, focused tests, package inspections,
-and local-link validations are usually doer-attested first. CDC converts those
-claims to reproduced evidence by running the listed verifier or a stronger
-equivalent and inspecting the actual artifacts.
+and local-link validations are usually doer-attested first. The assigned
+reviewer converts those claims to reproduced evidence by running the listed
+verifier or a stronger equivalent and inspecting the actual artifacts.
+
+CI can reproduce automated checks; it does not replace the assigned reviewer's
+source, scope, and ledger assessment. Self-review by the implementing context
+does not upgrade its own attestation to independent reproduction. Follow the
+[independence rules](./05-independent-verification.md) in either workflow.
 
 At arc scale, pointers to closed child slices are attested evidence for
 "children closed" rows. They are not enough for composition rows. Arc

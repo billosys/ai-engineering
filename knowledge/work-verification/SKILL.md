@@ -7,7 +7,7 @@ description: |
   independent reproduced verification.
 license: MIT
 metadata:
-  version: "2.4.0"
+  version: "2.5.0"
   hermes:
     tags: [ai-engineering, ledger, verification, evidence]
     category: meta-skills
@@ -18,6 +18,10 @@ metadata:
 Use this component when the unit of work has a ledger or when evidence strength
 matters. It owns the closure discipline, row-by-row verification, evidence
 levels, and proposed-done versus independently verified distinction.
+
+One-contributor work can report proportionate self-checks without creating a
+new independent gate for a non-ledgered task. Existing ledger and review gates
+still require the evidence they specify; self-review is never independent.
 
 Read only the guide needed for the work:
 
@@ -30,7 +34,8 @@ Read only the guide needed for the work:
 - [Silent-Drop Checks](./guides/04-silent-drop-checks.md) - missing-row,
   spec-softening, partial-adoption, and inherited-composition checks.
 - [Independent Verification](./guides/05-independent-verification.md) -
-  closer/verifier separation, CDC review, gate review, and sandbox caveats.
+  closer/verifier separation, assigned-reviewer acceptance in either workflow,
+  gate review, and sandbox caveats.
 
 Use [LEDGER-DISCIPLINE.md](./templates/LEDGER-DISCIPLINE.md) as the retained
 full protocol and copyable ledger-template support asset when a project needs

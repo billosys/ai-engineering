@@ -22,7 +22,7 @@ migration of an in-flight project's layout is its own failure mode.
   under `artifacts/`, `prompts/`, or a session/iteration directory demotes a
   first-class slice document. Keep every assignment beside `slice-plan.md` and
   record the current one in its Assignment history.
-- **Returning new work to CDC on the strength of an old close.** A prior
+- **Returning new work to the reviewer on the strength of an old close.** A prior
   closing report or "ready for review" line does not execute the current
   prompt. CC must perform the assigned refinement and checks or report a
   concrete blocker.

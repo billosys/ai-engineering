@@ -1,5 +1,14 @@
 # Agent Coordination Version History
 
+## Version 1.2.0 - 2026-09-17
+
+Routed contributor terminology and workflow selection to the methodology.
+Distinguished sustained, Operator-assigned CDC/CRC/CC contexts from ad hoc
+lookup subagents. The optional CRC role and explicit design handoffs do not
+authorize outsourcing judgment, changing architecture, or implicit enablement.
+Recognized explicit one-contributor selection without simulated roles or
+automatic delegation.
+
 ## Version 1.1.1 - 2026-09-06
 
 Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.

@@ -17,9 +17,28 @@ framework documents and a packaging surface for installable assistant skills.
   `knowledge/project-management/guides/` files. The current canonical layout
   is `projectNN-<slug>/project-plan.md` plus project `ledger.md`,
   `arcNN-<slug>/arc-plan.md` plus arc `ledger.md`, and per-slice `slice-plan.md`,
-  `ledger.md`, `cc-prompt.md`, `closing-report.md`, `cdc-verification.md`, and
+  `ledger.md`, `cc-prompt.md`, `closing-report.md`, workflow-specific
+  verification records, and
   `artifacts/` for durable slice-produced artifacts unless the operator records
-  an override.
+  an override. Preserve existing `cdc-verification.md` records and project
+  conventions under the planning guide's verification filename compatibility
+  rule; do not rename historical records or leave competing current verdicts.
+  Slice records are `cdc-verification.md` by default and `crc-verification.md`
+  with three contributors; three-contributor arc/project closure requires both
+  CRC and CDC records under the per-scale record contract.
+- Default to the Two-Contributor Workflow (CDC + CC). Enable the
+  Three-Contributor Workflow (CDC + CRC + CC) only on explicit Operator request,
+  recorded with scope, role assignments, and authority in the canonical plan.
+  Follow `knowledge/engineering-methods/guides/01-engineering-methodology.md`.
+  CRC escalates structural changes via `crc-escalationNN.md`; CDC returns
+  `cdc-directiveNN.md`, both relayed by the Operator and preserved under the
+  planning guide's design handoff contract. Neither workflow permits
+  self-acceptance or silent changes to the agreed contract.
+- The Operator may explicitly select the One-Contributor Workflow for bounded
+  single-assistant work. Use proportionate self-checks and a completion report,
+  not fictional role handoffs or new planning trees solely for the workflow.
+  Existing ledgered work and independent/Operator gates remain binding; do not
+  present the sole contributor's self-review as independent verification.
 - Preserve issued slice prompts. Keep the initial `cc-prompt.md` and every
   follow-up `cc-prompt-iterationNN.md` in the slice root, never in `artifacts/`.
   Record the current assignment and prior handoffs in `slice-plan.md`; follow
@@ -29,7 +48,8 @@ framework documents and a packaging surface for installable assistant skills.
 - Before implementation or slice/arc closure, read the active
   `project-plan.md` from the `planning` worktree first, then the relevant
   `arc-plan.md`, slice `slice-plan.md`, and ledger files. Treat
-  `closing-report.md` as proposed-done until `cdc-verification.md` or an
+  `closing-report.md` as proposed-done until the required workflow-specific
+  records, a recorded legacy path, or an
   equivalent independent verification artifact closes the ledger evidence.
 - **Skill versioning:** follow the repository-wide contract below for every
   skill, including domain/tooling skills, framework components and composers,

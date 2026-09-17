@@ -29,7 +29,12 @@ a deferral reason. "Not needed" is not a no-op rationale.
    `artifacts/` directory by default, an operator-recorded override, or
    "none" checked against the diff.
 
-## Reviewing Protocol For CDC
+## Reviewing Protocol For The Assigned Reviewer
+
+CDC reviews in the default Two-Contributor Workflow; CRC reviews only when the
+Operator explicitly enables the Three-Contributor Workflow. Apply the
+[independence and escalation rules](./05-independent-verification.md), including
+when the usual reviewer has implemented a repair.
 
 1. Count opening rows and closing-report rows.
 2. For every `done` row, run the verifier or stronger equivalent.

@@ -6,22 +6,25 @@ delivered its diff but silently invalidated the arc's plan has not finished
 its job; it has deferred a problem to whoever plans the next slice.
 
 Two documents close a slice: `closing-report.md` (written by CC, the
-implementer) and `cdc-verification.md` (written by CDC, the independent
-reviewer). The ledger-row mechanics of both are defined in
+implementer) and the assigned independent reviewer's record:
+`cdc-verification.md` in the Two-Contributor Workflow, or `crc-verification.md`
+in the Three-Contributor Workflow. Existing records are preserved per
+[filename compatibility](./02-canonical-planning-worktree.md#verification-filename-compatibility).
+The ledger-row mechanics of both are defined in
 [`Row Closure`](../../work-verification/guides/03-row-closure.md). This section adds
 the two things that make a close also a *bubble-up*.
 
 ### When review requires another iteration
 
-A failed review keeps the slice open. CDC records the unresolved rows and
-issues the next slice-root prompt through
+A failed review keeps the slice open. The assigned reviewer records the
+unresolved rows and issues the next slice-root prompt through
 [Issuing and executing an iteration](./03-planning-top-down.md#issuing-and-executing-an-iteration).
 CC executes that assignment before returning for review; existing close-set
 files are evidence of earlier attempts, not permission to skip the new work.
 
-Keep `closing-report.md` and `cdc-verification.md` as the canonical close-set
-files. On subsequent attempts, preserve earlier findings and results in dated,
-iteration-labelled sections and state the current verdict explicitly. Each
+Keep `closing-report.md` and the selected reviewer record as the canonical
+close-set files. On subsequent attempts, preserve earlier findings and results
+in dated, iteration-labelled sections and state the current verdict explicitly. Each
 attempt identifies the exact prompt path and the source revision or working
 tree state it assessed. Do not erase failed review evidence or silently carry
 an earlier verdict forward over changed work.
@@ -51,11 +54,11 @@ its work against the ledger. Then CC adds a final section,
    or a silent drop — and the third is the failure mode the whole discipline
    exists to eliminate.
 
-### The slice bubble-up check — in `cdc-verification.md`
+### The slice bubble-up check — in the verification record
 
-CDC verifies the closing report against evidence — re-running the reproducible
-ledger rows, checking deferrals and no-ops — exactly as ledger discipline
-requires. Then CDC verifies the **bubble-up** itself:
+The assigned reviewer verifies the closing report against evidence: re-running
+the reproducible ledger rows and checking deferrals and no-ops, as ledger discipline
+requires. Then the reviewer verifies the **bubble-up** itself:
 
 - Confirm the slice delivered its assigned piece, against the arc-plan.
 - Confirm the silent-drop diff is complete and honest.
@@ -75,6 +78,12 @@ requires. Then CDC verifies the **bubble-up** itself:
   A stale arc-plan that the next slice plans against is how a small
   discovery in one slice becomes a structural error three slices later.
 
+CRC may record routine status and evidence updates, but must escalate changes
+to architecture, scope, acceptance, or the arc's structural plan to CDC and the
+Operator. CDC in the two-contributor workflow must likewise record decisions
+and obtain required approval rather than changing the contract during review.
+Do not advance against the revised plan until its amendments are authorized.
+
 The bubble-up lives in the existing two close-set documents — a named section
 in each — rather than in new files. Do not create a separate per-slice
 bubble-up file; that is file proliferation, and it splits the close across
@@ -88,6 +97,7 @@ the next slice, ask: did implementing this slice uncover anything that should
 change `arc-plan.md`?** If yes, update `arc-plan.md` now — make the change in
 the body, and record it in that file's Version History with (a) what changed,
 (b) which slice surfaced it, and (c) why. If no, that is a valid answer, but
-it is an answer you arrive at by asking, not by skipping the question.
+it is an answer you arrive at by asking, not by skipping the question. This
+maintenance requirement does not grant amendment authority to its author.
 
 ---

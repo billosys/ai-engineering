@@ -81,7 +81,7 @@ A ledger is a table with one row per observable acceptance criterion.
 |---|---|---|---|
 | Rows assert | Acceptance criteria. | Slices closed, slices compose, findings dispositioned. | Arcs closed, arcs compose, findings dispositioned. |
 | Evidence kind | Grep, unit test, local demonstration. | Integration demonstration, plus child-ledger pointers. | System/acceptance demonstration, plus arc-ledger pointers. |
-| Doer/verifier | CC implements, CDC verifies. | CDC assembles, fresh context or operator gates. | Planner assembles, operator plus fresh context gates. |
+| Doer/verifier | CC implements; assigned reviewer verifies. | CDC assembles by default, CRC when enabled; independent composition gate. | Planner assembles; Operator plus independent reviewer gates. |
 | Remediation | Five-iteration fix loop within the slice. | Failed composition spawns a remediation slice. | Failed definition of done spawns a remediation arc or roadmap re-scope. |
 | Cadence | `ledger.md` beside `slice-plan.md`. | `ledger.md` beside `arc-plan.md`. | `ledger.md` beside `project-plan.md`. |
 
@@ -89,7 +89,7 @@ A ledger is a table with one row per observable acceptance criterion.
 
 Load [Evidence Strength](./02-evidence-strength.md) when deciding whether a
 claim is only proposed-done or independently verified. Load
-[Row Closure](./03-row-closure.md) before writing a closing report or CDC
+[Row Closure](./03-row-closure.md) before writing a closing report or independent
 verification. Load [Silent-Drop Checks](./04-silent-drop-checks.md) when
 checking scope-as-specified against scope-as-delivered. Load
 [Independent Verification](./05-independent-verification.md) when assigning or

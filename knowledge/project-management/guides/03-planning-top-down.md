@@ -4,6 +4,22 @@ Planning runs from the project down to the slice. Each level produces one
 plan-of-record and sets the context the level below plans against. The three
 levels map onto SDLC steps 2–5.
 
+### Planning authority
+
+Use the [selected contributor workflow](../../engineering-methods/guides/01-engineering-methodology.md#workflow-selection-and-transitions).
+CDC prepares project/arc plans and each arc's first slice with the Operator.
+In the default Two-Contributor Workflow, CDC also prepares subsequent slices.
+When explicitly enabled, CRC prepares those subsequent slices and iteration
+prompts within the approved design. Detailing a planned slice is not authority
+to re-scope it. Escalate architectural, scope, acceptance, or cross-arc changes
+to CDC and the Operator, and record the decision before issuing affected work.
+
+When the Operator selects the One-Contributor Workflow, the single contributor
+handles planning with the Operator, without synthetic CC assignments or CRC
+handoffs. The detailed artifact rules below apply to ledgered work, not as a
+requirement to turn every bounded task into a project. Existing plans, evidence
+requirements, and approvals remain binding.
+
 ### The project plan — `project-plan.md`
 
 After research (SDLC step 1), project definition (step 2), and the design doc
@@ -34,6 +50,10 @@ arcs at once**, before opening any single `arc-plan.md`.
    arc closes (see [`Closing arcs`](./05-closing-arcs.md)). It starts with the initial roadmap as v1.0 and grows
    one dated entry per change, each naming which arc surfaced the change and
    why (the [plan-change discipline](./05-closing-arcs.md#the-plan-change-discipline-make-a-change--version-history)).
+6. **Workflow and authority.** Record the selected contributor workflow,
+   effective scope and authorization, role-to-context assignments, escalation
+   boundaries, approval gates, and verification filename convention. Missing
+   selection means the Two-Contributor Workflow, not permission to infer CRC.
 
 `project-plan.md` is **not** a mega-file holding every arc's and slice's
 detail — that is the anti-pattern in
@@ -86,8 +106,8 @@ an omission at close.
 
 ### Issuing and executing an iteration
 
-When review finds unresolved acceptance criteria, CDC keeps the slice open
-and writes a new assignment using the
+When review finds unresolved acceptance criteria, the assigned reviewer keeps
+the slice open and writes a new assignment using the
 [iteration filename contract](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation).
 Do not edit the issued `cc-prompt.md` or store the follow-up in `artifacts/`.
 
@@ -103,7 +123,7 @@ Each iteration prompt must tell a fresh CC context:
 
 - **Its assignment identity:** project/arc/slice, iteration number, its own
   path, and the preceding prompt path. State that CC is to execute this
-  refinement pass and return evidence for CDC review.
+  refinement pass and return evidence to the named reviewer (CDC or CRC).
 - **What remains to do:** unresolved ledger row IDs, review findings with
   evidence pointers, required changes, and acceptance checks. Distinguish work
   already accepted from work still required; "see review comments" alone is
@@ -127,9 +147,9 @@ Do not give the old prompt path with an instruction to reread its updates.
 CC reads the named prompt from disk and checks it against the current
 assignment in `slice-plan.md` before acting. A mismatch needs reconciliation;
 do not guess from filenames. For a matching assignment, execute the remaining
-work and validation before returning to CDC. An earlier closing report or
-"ready for CDC" statement does not cancel the new assignment. If blocked,
-report the concrete blocker against the assigned work.
+work and validation before returning to the assigned reviewer. An earlier
+closing report or "ready for review" statement does not cancel the new
+assignment. If blocked, report the concrete blocker against the assigned work.
 
 Numbered files preserve handoff history; they do not extend the five-iteration
 fix-loop budget in [Scales of Work](./01-scales-of-work.md). Record actual
@@ -137,6 +157,67 @@ refinement passes in the assignment history; replacing an unstarted prompt
 does not count as an executed pass. At the cap without convergence, surface
 the need for re-scoping or an explicit operator decision rather than silently
 issuing more work.
+
+### Design escalation and return handoffs
+
+When CRC encounters work outside its authority, stop the affected advancement
+and create `crc-escalationNN.md` under the
+[design handoff filename contract](./02-canonical-planning-worktree.md#design-handoff-filenames-and-preservation).
+This is a decision request to CDC, not an instruction for CC to improvise.
+
+The **CRC escalation report** includes:
+
+- Owning project/arc/slice, report ID and path, current CC assignment, exact
+  source state, and governing plan versions and ledger rows.
+- The finding, reproduction/evidence pointers, uncertainty, and why the
+  existing authority or acceptance contract cannot resolve it.
+- Impact on architecture, scope, dependencies, acceptance, and previously
+  accepted evidence; distinguish facts from hypotheses.
+- Options, tradeoffs, CRC's recommendation, and the precise decisions or
+  approvals requested. Do not present a recommendation as approved work.
+- What is paused, what can proceed within existing authority, and who owns the
+  next action. Preserve all unresolved findings and iteration accounting.
+
+CRC gives the Operator the report's exact project-relative path as plain
+copy/paste text, a concise summary of the decision needed, and the instruction
+to pass the report to CDC. Supporting links may supplement, not replace, the
+packet. Do not assume CDC can see CRC's conversation or will discover the report.
+
+CDC reads the packet and canonical artifacts, resolves the design question with
+the Operator, and writes **`cdc-directiveNN.md`**, explicitly referencing the
+escalation. The directive includes:
+
+- Its assignment identity, the report and prior directive it answers or
+  supersedes, and the source/plan state on which the decision is based.
+- A disposition for every requested decision: approved, rejected, deferred
+  with re-entry conditions, or awaiting information/approval; include rationale
+  and the Operator authorization required for any gated change.
+- Exact instructions for CRC: permitted work, prohibited work, plan/ledger
+  amendments and their owners, affected acceptance/reverification requirements,
+  and whether to issue a new CC prompt. State what remains held.
+- Expected return evidence, paths, and completion/escalation conditions. A
+  deferred or unresolved decision is not an instruction to proceed past its gate.
+
+CDC gives the Operator the directive's exact project-relative path as plain
+copy/paste text, a short decision summary, and the instruction to pass it to
+CRC. CDC must also use an explicit directive for CRC's initial assignment and
+proactive changes to it; identify the initiating decision when no escalation
+exists. Do not leave new constraints only in a separate conversation.
+
+CRC reads the directive from disk, checks the cited state against the current
+work, and acknowledges it in the owning plan's **Design handoff history** before
+acting. Record packet paths, dates, predecessor, current status (awaiting CDC,
+awaiting Operator, issued, acknowledged, implemented, or superseded), affected
+rows, approval evidence, and next-action owner. Resolve stale or conflicting
+instructions with CDC through the Operator rather than guessing. Apply the
+authorized amendments, issue a distinct CC prompt when needed, and report the
+result and evidence to the Operator, referencing the directive. If the directive
+requires CDC follow-up, the Operator relays that report back to CDC before the
+specified gate advances.
+
+The Operator carrying a report between contexts is not blanket approval of its
+contents. Explicit approvals, independent verification, and the original
+quality floor still govern both directions of the exchange.
 
 ### Plan late, plan deep
 

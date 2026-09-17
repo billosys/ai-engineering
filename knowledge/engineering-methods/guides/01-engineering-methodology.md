@@ -30,26 +30,297 @@ workflow. Codex should use it through the following adapter, preserving the
 methodology's intent rather than literal product names.
 
 Within the current collaboration-framework package, this section is the
-source of truth for the CC, CDC, and Operator role terms.
+source of truth for the CC, CDC, CRC, and Operator role terms and the
+One-Contributor, Two-Contributor, and Three-Contributor Workflows below.
 
-**CC.** The code writer. CC is backronymed as **CLI Contributor** and
-originally meant "Claude Code" or "Codex CLI". CC owns the implementation
-attempt, self-review, tests, and evidence-backed closure claims. Its work is
-proposed-done until it has been evaluated by humans and CDC, and it remains
-subject to their review, refinement, rejection, or re-slicing.
+**CC: Code Contributor.** The code writer. CC originally meant "Claude Code"
+or "Codex CLI" and was previously backronymed as "CLI Contributor".
+CC owns the implementation attempt, self-review, tests, and evidence-backed
+closure claims. Its work is
+proposed-done until independently verified by the assigned reviewer, and it
+remains subject to review, refinement, rejection, or re-slicing.
 
-**CDC.** The co-architect and co-planner, peer to the Operator. CDC is
-backronymed as **Coordinating/Design Contributor** and originally meant
-"Claude Desktop Cowork" or "Codex Desktop Contributor". CDC is responsible
-for brainstorming, research framing, project planning, software architecture,
-prompt generation for the implementing agent, arc/slice decomposition, work
-ledgers at each scale, code review by the IC LLM, QA, acceptance testing, and
-the other high-level tasks that require continuity, judgment, and pressure on
-the quality floor.
+**CDC: Coordinating Design Contributor.** The co-architect and co-planner,
+peer to the Operator. CDC originally meant "Claude Desktop Cowork" or
+"Codex Desktop Contributor"; the former backronym used "Coordinating/Design".
+CDC owns architecture, research framing, project/arc planning, first-slice
+preparation, difficult investigations, and substantial replanning with the
+Operator. In the default Two-Contributor Workflow, CDC also owns subsequent
+slice preparation, implementation review, QA, and acceptance coordination.
+
+**CRC: Coordinating Review Contributor.** An optional role enabled only by
+the Operator's explicit selection of the Three-Contributor Workflow. CRC
+advances the approved plan: subsequent slice preparation, iteration prompts,
+independent implementation review, evidence reproduction, ledger maintenance,
+routine slice acceptance, and escalation. CRC is not a second design authority.
 
 **Operator.** The human in the loop, co-architect and co-planner.
 
-**Claude.** Where the document says Claude outside a CDC/CC role distinction,
+These are responsibilities, not products or model assignments. Contributor
+counts exclude the Operator, who participates in every workflow. Separate
+contributor contexts may use the same underlying model; different model names
+alone do not establish independent verification.
+
+## Roles and Shared Invariants
+
+All workflows preserve the same quality floor and Operator authority:
+
+- The Operator retains scope and approval authority. Role assignment does not
+  authorize merges, releases, external mutations, or other approval-gated work.
+- An accepted plan governs execution until explicitly amended. Discoveries
+  justify proposals, not silent changes to architecture, scope, acceptance
+  criteria, or evidence requirements. Record rationale, approval where required,
+  and plan/ledger changes before executing against a changed contract.
+- In the multi-contributor workflows, CC's completion claims remain
+  proposed-done until independently verified. In any workflow, no contributor
+  independently accepts their own implementation. A reviewer
+  who implements a repair becomes its doer and needs another verifier for the
+  repair and affected acceptance evidence. Self-review is useful, not independent.
+- Evidence requirements cannot be weakened to obtain closure. Findings stay
+  visible with ownership, disposition, and concrete re-entry conditions for
+  deferrals. Reassignment does not reset unresolved findings or iteration budgets.
+- Workflow selection and Expedited Mode are independent. Faster advancement
+  does not bypass review, escalation, or Operator gates.
+
+## Two-Contributor Workflow
+
+The default arrangement is **CDC + CC**, with the Operator participating.
+It is a complete workflow, not a lower-assurance form of the three-contributor
+arrangement.
+
+### Responsibilities
+
+CDC and the Operator develop architecture and project/arc plans. CDC prepares
+the first and subsequent slices, issues implementation and iteration prompts,
+maintains planning continuity, and reviews CC's results. CC implements, tests,
+self-reviews, and supplies evidence-backed proposed closure.
+
+### Decision Authority
+
+CDC may advance work inside the approved plan and require corrections or
+stronger tests that demonstrate the existing contract. CDC's combined planning
+and reviewing responsibilities do not authorize silently rewriting that contract
+during review. Architectural or substantive plan changes require an explicit
+decision with the Operator and recorded amendments before affected work resumes.
+
+### Handoffs
+
+CDC supplies a complete slice open set and a distinct preserved prompt for each
+iteration. CC returns the exact assignment and source state, per-row evidence,
+and unresolved findings. CDC checks the actual source and artifacts, not just
+the report. New assignments identify accepted work and outstanding work.
+The Operator relays assignments to CC and CC's reports back to CDC; each
+handoff provides the exact artifact path and a concise summary.
+
+### Verification
+
+CDC reproduces CC's evidence and checks code quality, plan conformance, ledger
+completeness, and bubble-up findings. If CDC implements a fix, acceptance of
+that fix waits for a different verifier, such as the Operator or a fresh
+review context. Renaming the same context's role is not independence.
+
+### Escalation
+
+CC raises discoveries and blockers to CDC. CDC brings changes to architectural
+assumptions, scope, acceptance contracts, or approval requirements to the
+Operator. Stop affected advancement while the decision is unresolved; do not
+hide a design change inside a correction prompt or an evidence substitution.
+
+### Closure
+
+CDC accepts slices only after the verification and bubble-up gates pass.
+Record slice acceptance in `cdc-verification.md`.
+CDC assembles arc/project closure; a fresh independent context or the Operator
+checks arc composition, and the Operator plus independent review gates project
+completion. Child acceptance does not establish higher-scale composition.
+
+## Three-Contributor Workflow
+
+The optional arrangement is **CDC + CRC + CC**, with the Operator participating.
+It can help sustained projects separate design continuity from the recurring
+implementation/review cycle. Project length or complexity never enables it
+automatically.
+
+### Responsibilities
+
+CDC and the Operator own architecture and project/arc plans; CDC prepares the
+first slice of each arc and handles difficult investigations and substantial
+replanning. CRC prepares subsequent slices, issues iteration prompts, reviews
+CC's work, reproduces evidence, maintains ledgers, and coordinates routine
+acceptance. CC implements, tests, self-reviews, and supplies proposed closure.
+
+### Decision Authority
+
+CRC can require corrections, improve tests of the agreed contract, detail the
+next planned slice, and stop advancement. CRC cannot independently change
+architectural assumptions, expand or reduce scope, redefine acceptance, waive
+evidence, or override approvals. CDC likewise cannot silently change the
+contract while resolving a CRC escalation. Neither contributor can use a new
+prompt or plan version as a substitute for the required decision.
+
+### Handoffs
+
+CDC hands CRC the approved plans and ledgers, design rationale and constraints,
+first-slice assignment, unresolved risks, delegated authority, escalation
+triggers, and approval gates. CRC reads the canonical artifacts before acting;
+a conversation summary is not the plan-of-record. CRC issues preserved CC
+prompts and reviews the exact assignment and source state returned by CC.
+The initial CDC-to-CRC assignment is an explicit `cdc-directiveNN.md` relayed
+by the Operator, using the design handoff contract below. The Operator also
+relays CRC's assignments to CC and CC's reports back to CRC; each handoff names
+the exact artifact path and provides a concise summary.
+
+### Verification
+
+CRC independently reproduces CC's evidence and checks code quality, plan
+conformance, ledger completeness, and bubble-up findings, including the first
+slice prepared by CDC. If CRC implements a repair, CDC or another independent
+reviewer must verify it and the affected acceptance evidence. CRC cannot both
+repair and independently accept the same work. CDC remains available for
+design-level review without adding a second routine slice approval gate.
+
+### Escalation
+
+CRC pauses affected advancement and sends CDC a bounded decision packet:
+finding and evidence, impacted assumptions and ledger rows, options and tradeoffs,
+recommendation, and the decision needed. Design uncertainty, scope/acceptance
+changes, evidence waivers, cross-arc impact, and exhausted iteration budgets
+require escalation, not unilateral re-slicing. CDC resolves design and planning
+questions with the Operator; required approvals and amendments are recorded
+before CRC resumes. Unaffected work may continue only within existing authority.
+
+The exchange is **Operator-mediated in both directions**, not an assumption
+that contributor conversations share context. CRC writes a preserved escalation
+report and gives the Operator its exact path plus a concise relay summary.
+The Operator passes it to CDC. CDC writes a separate, preserved directive
+answering that report and gives the Operator its exact path and relay summary
+to pass back to CRC. A status update, verbal all-clear, or CC close report is
+not a substitute for this return assignment. CRC reads and acknowledges the
+directive against current plans and source state before acting.
+
+Use the [design escalation and return handoff contract](../../project-management/guides/03-planning-top-down.md#design-escalation-and-return-handoffs)
+for filenames, packet contents, and the acknowledgement record. Relaying a
+packet does not itself approve a scope change or external operation: record
+the Operator's explicit decision wherever approval is required. CRC translates
+an accepted directive into plan/ledger updates within its authority and a new
+CC iteration prompt when needed; it never silently edits an issued prompt.
+
+### Closure
+
+CRC accepts routine slices after the same verification and bubble-up gates as
+the two-contributor workflow, recording slice acceptance in
+`crc-verification.md`. CRC assembles arc/project closure evidence; CDC
+independently reviews composition and design conformance, with Operator gates
+unchanged. If CDC contributed the implementation under review, use another
+independent verifier for that work. CDC and the Operator disposition structural
+findings before the next arc; CDC prepares that arc's first slice.
+
+At arc and project scale, retain both `crc-verification.md` for operational
+and composition evidence and `cdc-verification.md` for independent design and
+composition verification. CRC's assembly is not its own independent acceptance;
+CDC checks the actual candidate and evidence. Both records and required
+Operator gates must agree on the state being closed. Follow the
+[per-scale artifact contract](../../project-management/guides/02-canonical-planning-worktree.md#verification-records-by-workflow-and-scale),
+including preservation of historical filenames during transitions.
+
+CRC gives the Operator the closure packet's exact paths and a concise readiness
+report to pass to CDC. CDC returns its verification path and verdict through
+the Operator; any changed CRC assignment also gets an explicit directive.
+Do not assume that writing the records notified the next contributor.
+
+## One-Contributor Workflow
+
+The Operator may explicitly select **one assistant contributor**, combining
+design, implementation, and self-review in one context. This fits bounded
+maintenance, documentation, exploration, and other tasks where an additional
+contributor would add little value. It is a proportionate workflow, not a claim
+that self-review provides the safeguards of independent review.
+
+### Responsibilities
+
+The contributor and Operator clarify the task and make design decisions. The
+same contributor implements, validates, self-reviews, and reports the result.
+Do not invent separate CDC, CRC, and CC actors, simulate handoffs between role
+labels, or start other contributor contexts to satisfy a headcount.
+
+### Decision Authority
+
+Work within the Operator-approved scope and existing repository instructions.
+The combined role does not authorize scope expansion, approval-gated actions,
+or changes to existing acceptance requirements. Propose material changes to the
+Operator before affected work proceeds.
+
+### Handoffs
+
+The Operator's task and the contributor's completion report are the normal
+handoff. Use a short plan when it helps; do not create a project/arc/slice tree,
+CC prompts, escalation packets, or verification-role files solely because this
+workflow was selected. Existing ledgered work keeps its canonical artifacts
+and traceability. Record the workflow choice in that plan or, for non-ledgered
+work, in the existing task conversation or record.
+
+### Verification
+
+Run validation proportionate to risk and inspect the actual diff and output.
+Report concrete checks, results, limitations, and remaining risks as
+**self-checked**, not independently verified. Routine non-ledgered work may be
+delivered without adding a new independent-review gate merely to satisfy the
+framework. Where an existing plan, ledger, repository rule, or Operator requires
+independent verification, self-checks do not discharge it: keep that acceptance
+pending until the Operator or an explicitly assigned independent reviewer
+performs it. Do not manufacture reproduced evidence or waive a gate by changing
+workflow names.
+
+### Escalation
+
+Bring uncertainty, unexpected scope, high-impact decisions, or inconclusive
+validation directly to the Operator. Recommend a move to two or three
+contributors when sustained design/review separation would materially help.
+Do not switch automatically or create another model context without approval.
+Pause only the affected work or gates while a required decision is pending.
+
+### Closure
+
+Deliver a concise account of changes, validation, limitations, and any pending
+approvals. Ordinary completion is not a claim of independent acceptance. For
+ledgered work, preserve the evidence-strength contract: the assistant's own
+checks are attested, and required independent/Operator gates remain visible.
+Do not create `cdc-verification.md` or `crc-verification.md` pretending the
+implementer performed an independent pass; record actual reviewer identity and
+evidence when independent review occurs.
+
+## Workflow Selection and Transitions
+
+Absent explicit Operator selection, use the **Two-Contributor Workflow**.
+The Operator may explicitly select the One-Contributor Workflow for work done
+with a single assistant; natural-language requests such as "just you and me,
+no other models" are sufficient. Selecting the Three-Contributor Workflow
+likewise requires explicit Operator choice.
+Do not infer the Three-Contributor Workflow from available models, an extra
+conversation, delegation tools, project size, or examples in these guides.
+
+Record selection in the canonical project plan (or the existing task record for
+non-ledgered work): workflow, effective scope, Operator authorization, role-to-
+context assignments, delegated authority and escalation boundaries, and the
+verification artifact convention. A narrower arc-level selection must be
+explicit and linked from the project plan; do not silently propagate it elsewhere.
+
+At a workflow change, record the effective assignment/source state, accepted and
+pending evidence, open findings with owners, outstanding approvals, current
+prompt, and next-action owner. The receiving contributor acknowledges the
+handoff before acting. Any switch requires an Operator decision; an
+unavailable CRC does not silently transfer acceptance authority to CC or CDC.
+Pause affected gates until the Operator assigns a replacement or changes the
+workflow. Existing acceptance remains scoped to the state actually verified.
+
+Switching to one contributor does not waive an existing independent-review
+requirement. Disposition it explicitly with the Operator and governing rules;
+until then the gate stays pending. Conversely, adding a contributor does not
+retroactively upgrade self-checks to reproduced evidence.
+
+## Codex Interpretation and Authority
+
+**Claude.** Where the document says Claude outside a contributor-role distinction,
 read it as the active model instance in the relevant Codex surface. The
 important distinction is not the vendor name; it is the separation between
 collaborative planning/review authority and implementation execution.

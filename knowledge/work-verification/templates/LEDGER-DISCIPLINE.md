@@ -56,18 +56,26 @@ where the discipline actually lives.
 
 ## Notes for Codex
 
-For the canonical **CC**, **CDC**, and **Operator** role definitions, read
+For the canonical **CC**, **CDC**, **CRC**, and **Operator** role definitions, read
 [the methodology Notes for Codex](../../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex)
 in the collaboration-framework package. Those labels are the **slice-level
 instance** of a scale-free principle: *the closer of a row is structurally
 separate from its verifier.* At arc and project scale the labels shift (see
 those sections), but the separation does not.
 
-If the same Codex surface performs both roles, preserve as much separation as
-the environment allows: re-read the ledger from the opening state, rerun the
-Verify commands, inspect the actual diff, and treat the closing report as
-evidence to check rather than a summary to trust. When possible, use a fresh
-context, a separate thread, or a human reviewer for the verifying pass.
+The assigned slice reviewer is CDC in the default Two-Contributor Workflow or
+CRC in the Operator-enabled Three-Contributor Workflow. If the same context
+implements and reruns checks, that is self-review, not independent acceptance.
+Keep its evidence doer-attested until a fresh reviewer or the Operator checks
+it. A reviewer who implements a repair needs another verifier for that repair
+and affected acceptance evidence. Use the methodology's workflow boundaries;
+CRC escalates structural changes rather than silently amending the contract.
+
+The Operator may instead select the One-Contributor Workflow. A bounded
+non-ledgered task need not acquire a ledger or independent-review gate merely
+to simulate these roles. Where this ledger protocol already governs acceptance,
+keep self-checks attested and required independent gates pending until actually
+reviewed; workflow selection alone does not waive the evidence contract.
 
 Codex must also respect its approval and sandbox model. A Verify command that
 requires escalation, network access, GUI access, or writes outside the
@@ -143,7 +151,7 @@ workspace" is *reconciled*.)
 |------|-------|-----|---------|
 | **Rows assert** | acceptance criteria (the steps) | (a) slices closed · (b) slices **compose** into the capability · (c) bubble-up findings dispositioned | (a) arcs closed · (b) arcs **compose** into the DoD · (c) bubble-up findings dispositioned |
 | **Evidence kind** | grep / unit test, *reproduced* | integration demo *reproduced*; children-closed *attested* (pointer to closed child ledger) | system/acceptance demo *reproduced*; children-closed *attested* via arc ledgers |
-| **Doer / verifier** | CC implements / CDC verifies | CDC assembles / fresh context or operator gates | planner assembles / operator + fresh context gates |
+| **Doer / verifier** | CC implements / assigned reviewer verifies | CDC assembles by default, CRC when enabled / independent composition gate | planner assembles / operator + independent reviewer gates |
 | **Iteration** | five-iteration fix loop on the diff | failed composition → **remediation slice** (not a re-pass) | failed DoD → **remediation arc** (or roadmap re-scope) |
 | **Cadence** | opens in slice `ledger.md`, next to `slice-plan.md`; closes at slice close | opens in arc `ledger.md`, next to `arc-plan.md`; closes in arc closing-report | opens in project `ledger.md`, next to `project-plan.md`; closes in project closing-report |
 
@@ -196,9 +204,9 @@ When CC receives a slice prompt that references this skill:
    is the per-row walk with evidence. Trust the protocol over the instinct to
    report "deviations: none."
 
-### CDC protocol
+### Assigned reviewer protocol
 
-When CDC reviews a closed slice ledger:
+When CDC (default) or CRC (explicitly enabled) reviews a proposed-closed slice ledger:
 
 1. **Count the rows.** The closing report's row count must match the opening
    ledger's. Missing rows are a ledger bug, corrected before any further review.
@@ -253,12 +261,12 @@ attempts). Past five iterations, additional rounds usually make things worse.
 
 CC is both implementer and first-line self-assessor — weaker than the
 mature-field discipline where the recorder of a defect is structurally separate
-from the closer (aviation 14 CFR 121.563; NRC inspector pattern). CDC's
-independent verification is the protection, but it depends on CDC's discipline,
-not structural enforcement. Mitigations: CDC treats `done` as proposed-done
-until reproduced; CDC budgets review time proportional to the number of `done`
+from the closer (aviation 14 CFR 121.563; NRC inspector pattern). The assigned
+reviewer's independent verification is the protection, but it depends on review
+discipline, not structural enforcement. Mitigations: the reviewer treats `done`
+as proposed-done until reproduced and budgets review time proportional to the number of `done`
 rows (most review value is in checking claims that look resolved); the iteration
-budget is per-slice, so CDC's rejection of a softpedalled row counts as a new
+budget is per-slice, so the reviewer's rejection of a softpedalled row counts as a new
 iteration.
 
 ### Per-slice ledger template
@@ -295,7 +303,8 @@ different artifact home in the slice plan.
 
 ## Section B — Arc-level ledger protocol
 
-An arc is verified when its last slice closes. No one *implements* an arc — it
+An arc is ready for composition verification when its last slice closes.
+No one *implements* an arc — it
 emerges from slices — so the arc ledger does not re-verify slice rows (those are
 closed one scale down). It verifies that the slices **compose** into the
 capability the arc promised, and that every finding the slices bubbled up has a
@@ -309,7 +318,8 @@ statement decomposed into "what must be true for this capability to exist":
 
 - **(a) Slices closed.** One row per slice in the arc-plan's breakdown: this
   slice's ledger closed cleanly. Evidence: a pointer to its closed
-  `cdc-verification.md` — strength `attested` (spot-check, don't re-run the
+  reviewer record (`cdc-verification.md` for two contributors,
+  `crc-verification.md` for three) — strength `attested` (spot-check, don't re-run the
   whole slice).
 - **(b) Slices compose.** The integration claims: the capability is
   demonstrably achievable end-to-end across the slices. Evidence: an
@@ -329,11 +339,17 @@ arc-plan — a missing slice is an arc-scale silent drop.
 
 ### Roles
 
-CDC — who ran the per-slice verifications and therefore knows the arc — assembles
-the arc ledger and writes the arc closing-report. Independence is preserved by a
-**fresh context, the operator, or a subagent** acting as the arc-gate reviewer
-(the stage-gate's independent gatekeeper). The one who performed the composition
-cannot be the one who signs it off.
+In the Two-Contributor Workflow, CDC assembles the arc ledger and closing
+report; a fresh independent context or the Operator gates composition. In the
+explicitly enabled Three-Contributor Workflow, CRC assembles closure and CDC
+reviews it, with Operator gates unchanged. The assembler or implementer cannot
+independently sign off their own work. Role assignment is not permission to
+outsource judgment to an ad hoc lookup subagent.
+
+The three-contributor arc close carries both `crc-verification.md` for
+operational/composition evidence and `cdc-verification.md` for the independent
+composition/design gate. CRC's own assembly evidence is attested until CDC
+reproduces it. Both must cover the same candidate; file presence is not closure.
 
 ### Remediation, not iteration
 
@@ -370,7 +386,7 @@ Capability: <the one coherent thing this arc delivers>
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |----|-----------|--------|--------------|--------|--------|----------|-------|
-| A-1 | slice 01 closed | ptr: slice01 cdc-verification | correctness | arc-plan | open | | attested |
+| A-1 | slice 01 closed | ptr: slice01 verification record | correctness | arc-plan | open | | attested |
 | A-2 | <capability> demonstrable end-to-end | <integration demo> | serious | arc-plan | open | | reproduce at arc scale |
 | A-3 | <slice-NN bubble-up finding> routed | ptr: arc-plan change-log | <…> | bubble-up | open | | |
 
@@ -391,7 +407,8 @@ Slices: <N> (matches arc-plan breakdown). Findings dispositioned: <n>.
 > *structure* is the point; the honest register is "tested at slice and arc
 > scale, reasoned at project scale."
 
-A project is verified when its last arc closes. As with the arc, nothing is
+A project is ready for composition verification when its last arc closes.
+As with the arc, nothing is
 re-verified that closed one scale down; the project ledger verifies that the
 arcs **compose** into the definition of done, and that every arc bubble-up
 finding is dispositioned. This is the V-model's *system + acceptance* level: the
@@ -426,6 +443,14 @@ The project close is a stage gate: go / adjust / kill against the DoD, reviewed
 by the operator with an independent context. "Adjust" spawns remediation; "go"
 closes the project (or the MVP boundary); "kill" is a legitimate, recorded
 outcome.
+
+In the Three-Contributor Workflow, project-level `crc-verification.md` records
+operational/system acceptance evidence and `cdc-verification.md` records the
+independent DoD/design gate. Both cover the same candidate, with explicit
+Operator acceptance retained. In the Two-Contributor Workflow, retain the
+independent gate without inventing CRC. Historical records keep their paths;
+record active paths and transition lineage per
+[the planning contract](../../project-management/guides/02-canonical-planning-worktree.md#verification-records-by-workflow-and-scale).
 
 ### Remediation, not iteration
 
@@ -496,7 +521,8 @@ Arcs: <N> (matches roadmap). Findings dispositioned: <n>.
    is upstream of protocol quality — and this gets harder, not easier, up the
    scales, where "composes into the capability" is a judgment.
 2. **Adversarial closure.** The protocol assumes good faith; it does not defend
-   against deliberately falsified evidence. Acceptable in the CC+CDC context; a
+   against deliberately falsified evidence. Both contributor workflows retain this
+   good-faith assumption; it is a
    real limit when extended to multi-human teams where audit-trail integrity
    matters.
 3. **Systemic issues invisible to the ledger.** Hollnagel's Safety-II critique:

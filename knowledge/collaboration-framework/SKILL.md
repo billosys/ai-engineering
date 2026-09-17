@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.1.1"
+  version: "2.2.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -71,10 +71,21 @@ documents when the work calls for them.
 
 Codex should use this skill through the adapter in
 [`guides/01-engineering-methodology.md`](../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex).
-That section is the source of truth for the **CC**, **CDC**, and **Operator**
+That section is the source of truth for the **CC**, **CDC**, **CRC**, and **Operator**
 role terms. Use it for the canonical role definitions and historical
 backronyms; this skill only routes to it and preserves the separation between
 collaborative planning/review authority and implementation execution.
+
+Use the **Two-Contributor Workflow** (CDC + CC) by default. Only explicit
+Operator selection enables the **Three-Contributor Workflow** (CDC + CRC + CC).
+Read the methodology's [shared invariants, dedicated workflow sections, and transition rules](../engineering-methods/guides/01-engineering-methodology.md#roles-and-shared-invariants)
+before assigning roles. CRC advances the approved plan, not a competing design;
+escalations and CDC return directives pass explicitly through the Operator.
+The Operator may also explicitly select the **One-Contributor Workflow** for
+bounded work with one assistant. It uses proportionate self-checks without
+fictional handoffs or independent-verification claims; existing acceptance and
+Operator gates remain in force. The two multi-contributor workflows retain
+independent acceptance.
 
 The posture guide set and Methodology guide posture, craft, and the quality floor;
 they do not override Codex's standing system, developer, tool, safety,
@@ -114,7 +125,7 @@ applies:
   bubble-up/close machinery (slice → arc → project), and plan-change
   discipline. If the operator asks for **Expedited Mode**, read
   `guides/README.md` and follow its Expedited Mode section before
-  issuing CC prompts, closing slices, committing CDC updates, or advancing to
+  issuing CC prompts, closing slices, committing reviewer updates, or advancing to
   the next slice or arc. Newly opened CC prompt paths must be reported as plain
   copy/paste text, relative to the project directory, not as Markdown links
   alone. Expedited Mode only changes the explicit process behaviors listed
@@ -417,12 +428,12 @@ work demands:
 | [`guides/04-operational-routing.md`](../engineering-methods/guides/04-operational-routing.md) | Craft / routing | When applying the method through practitioner disciplines and collaboration-framework component routes. |
 | [`guides/05-component-boundary-analysis.md`](../engineering-methods/guides/05-component-boundary-analysis.md) | Craft / boundaries | When deciding whether material belongs in engineering-methods or a specialized framework component. |
 | [`guides/06-source-package-release-gates.md`](../engineering-methods/guides/06-source-package-release-gates.md) | Craft / gates | When source, package, release, validation, and provenance gates determine whether work is complete. |
-| [`guides/README.md`](../project-management/guides/README.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management guide-set README and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing CDC updates, or advancing to the next slice or arc. Newly opened CC prompt paths must be reported as plain copy/paste text, relative to the project directory, not as Markdown links alone. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the README's wayfinder; do not improvise the mechanics from the skill's summary. |
+| [`guides/README.md`](../project-management/guides/README.md) | Operational discipline | **MUST-read the moment any planning begins** — planning or closing a project, arc, or slice, or about to create a planning directory. It is the project-management guide-set README and required load set for the focused files under `guides/`: scales of work, canonical planning worktree layout, default slice artifact homes, confirmation protocol, top-down planning, bubble-up/close machinery, plan-change discipline, and operator-requested Expedited Mode. If the operator asks for Expedited Mode, read this file and follow that section before issuing CC prompts, closing slices, committing reviewer updates, or advancing to the next slice or arc. Newly opened CC prompt paths must be reported as plain copy/paste text, relative to the project directory, not as Markdown links alone. Expedited Mode only changes the explicit process behaviors listed there; it does not authorize shortcuts, skipped validation, weaker evidence or review, inferred source scope or scope reduction/change, timeline interpretation, or operator approval gate override. Follow the README's wayfinder; do not improvise the mechanics from the skill's summary. |
 | [`guides/01-ledger-discipline.md`](../work-verification/guides/01-ledger-discipline.md) | Verification protocol | At the start of any **ledgered unit — slice, arc, or project** — before the work, not as an end-of-unit checklist. Defines the scale-free spine, row format, closure statuses, and slice/arc/project adaptation. |
 | [`guides/02-evidence-strength.md`](../work-verification/guides/02-evidence-strength.md) | Verification protocol | When distinguishing `asserted`, `attested`, `reproduced`, and `reconciled` evidence, especially proposed-done versus independently verified rows. |
 | [`guides/03-row-closure.md`](../work-verification/guides/03-row-closure.md) | Verification protocol | Before updating a ledger, writing a closing report, or checking row dispositions, evidence, final statuses, and close artifacts. |
 | [`guides/04-silent-drop-checks.md`](../work-verification/guides/04-silent-drop-checks.md) | Verification protocol | When comparing scope-as-specified to scope-as-delivered, checking missing rows, spec-softening, partial adoption, vacuous tests, and inherited composition. |
-| [`guides/05-independent-verification.md`](../work-verification/guides/05-independent-verification.md) | Verification protocol | When assigning or performing CDC/fresh-context/operator verification, gate review, or sandbox-aware reproduction of evidence. |
+| [`guides/05-independent-verification.md`](../work-verification/guides/05-independent-verification.md) | Verification protocol | When assigning or performing CDC/CRC/fresh-context/operator verification, gate review, or sandbox-aware reproduction of evidence. |
 | [`templates/LEDGER-DISCIPLINE.md`](../work-verification/templates/LEDGER-DISCIPLINE.md) | Verification support asset | When a project needs the complete pre-split protocol in one file or copyable slice/arc/project ledger tables. Prefer the focused guides for selective loading. |
 | [`guides/01-audit-scope-and-map.md`](../code-auditing/guides/01-audit-scope-and-map.md) | Code audit / scope | When commissioning a diagnosis-only code audit, detecting languages/tools, loading domain skills, and building the audit map. |
 | [`guides/02-findings-and-severity.md`](../code-auditing/guides/02-findings-and-severity.md) | Code audit / findings | When writing severity-graded, file:line-cited findings, report sections, coherence observations, cross-cutting findings, or negative findings. |

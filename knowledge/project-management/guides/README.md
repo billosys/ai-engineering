@@ -20,15 +20,37 @@ improvise those mechanics from the methodology summary.
 
 For Codex, read every "Claude session" in the linked files as any fresh Codex
 Desktop, Codex CLI, or other LLM session entering the project without the full
-prior context. For the canonical **CC**, **CDC**, and **Operator** role
+prior context. For the canonical **CC**, **CDC**, **CRC**, and **Operator** role
 definitions, read
 [`01-engineering-methodology.md#notes-for-codex`](../../engineering-methods/guides/01-engineering-methodology.md#notes-for-codex).
 Keep the canonical filenames (`project-plan.md`, `arc-plan.md`,
 `slice-plan.md`, per-scale `ledger.md`, initial `cc-prompt.md`,
 follow-up `cc-prompt-iterationNN.md`,
-`closing-report.md`, `cdc-verification.md`) and the default slice
-`artifacts/` home unless the operator explicitly changes the project
-convention.
+`closing-report.md`, and the workflow-specific verification records) and the
+default slice `artifacts/` home unless the operator explicitly changes the project
+convention. Existing `cdc-verification.md` records and project conventions
+remain valid; follow the [verification filename compatibility rule](./02-canonical-planning-worktree.md#verification-filename-compatibility).
+
+Default to the **Two-Contributor Workflow** (CDC + CC). Only explicit Operator
+selection enables the **Three-Contributor Workflow** (CDC + CRC + CC).
+Read the methodology's [workflow sections](../../engineering-methods/guides/01-engineering-methodology.md#two-contributor-workflow)
+before assigning roles or changing workflows. In these guides, the **assigned
+reviewer** is CDC in the default workflow or CRC in the explicitly enabled
+three-contributor workflow; an author of implementation cannot independently
+accept that implementation. CRC prepares subsequent slices within the approved
+arc; CDC retains project/arc design and first-slice preparation. Material plan
+changes go through CDC and the Operator before affected work advances.
+
+The Operator may explicitly select the **One-Contributor Workflow**, documented
+after the two multi-contributor sections in the methodology. Do not create
+planning artifacts solely to simulate multiple roles for a bounded task.
+Existing ledgered work retains its artifact, evidence, and approval contract;
+the sole contributor's self-checks do not count as independent acceptance.
+
+At slice level, use `cdc-verification.md` for two contributors and
+`crc-verification.md` for three. Three-contributor arc/project closure requires
+both CRC and CDC records with different evidentiary responsibilities; read
+[verification records by workflow and scale](./02-canonical-planning-worktree.md#verification-records-by-workflow-and-scale).
 
 Issued prompts are preserved. Every follow-up assignment gets a new numbered
 prompt in the slice root, beside the initial prompt; `artifacts/` holds
@@ -53,6 +75,7 @@ order.
 | Create or inspect planning directories, filenames, metadata, per-scale document sets, or slice artifact homes | [`guides/02-canonical-planning-worktree.md`](./02-canonical-planning-worktree.md) |
 | Write a `project-plan.md`, `arc-plan.md`, per-scale `ledger.md`, or per-slice open set | [`guides/03-planning-top-down.md`](./03-planning-top-down.md) |
 | Issue, resume, or execute a slice iteration | [Iteration filenames and preservation](./02-canonical-planning-worktree.md#slice-iteration-filenames-and-preservation) and [issuing and executing an iteration](./03-planning-top-down.md#issuing-and-executing-an-iteration) |
+| Escalate from CRC to CDC, or return CDC instructions to CRC through the Operator | [Design handoff filenames](./02-canonical-planning-worktree.md#design-handoff-filenames-and-preservation) and [design escalation and return handoffs](./03-planning-top-down.md#design-escalation-and-return-handoffs) |
 | Close a slice and bubble findings up to the arc | [`guides/04-closing-slices.md`](./04-closing-slices.md) and [`guides/05-closing-arcs.md`](./05-closing-arcs.md#the-plan-change-discipline-make-a-change--version-history) |
 | Close an arc, check composition, and bubble findings up to the project | [`guides/05-closing-arcs.md`](./05-closing-arcs.md) |
 | Confirm a layout before creating planning directories or filenames | [`guides/06-confirmation-protocol.md`](./06-confirmation-protocol.md) |
@@ -66,11 +89,11 @@ For tighter, more temporally efficient implementation cycles, the operator may
 opt into **Expedited Mode**. When engaged, the LLMs must adhere to the
 following:
 
-- Have CC commit after his changes, even before CDC review. Because other
-  processes may be working on the same branch and staging their own files, CC
+- Have CC commit after changes, even before the assigned reviewer's acceptance.
+  Because other processes may be working on the same branch and staging their own files, CC
   commit instructions must explicitly list the files to be committed.
-- Have CDC commit after CDC changes or reviews, and provide the operator with
-  concise reports.
+- Have the assigned reviewer commit after review or planning changes, and
+  provide the operator with concise reports.
 - As soon as the evidence is in place for a full close of a slice, close it.
 - After a slice is closed, open the next slice immediately and give the
   operator the next CC prompt path as plain copy/paste text, not as a Markdown
@@ -82,6 +105,11 @@ following:
   arc close, then open the next arc and its first slice, complete with CC
   prompt, when the project roadmap provides one. Report that first slice's
   `cc-prompt.md` path in the same plain relative copy/paste form.
+
+These responsibilities follow the selected workflow: CRC advances routine
+slices when enabled, while CDC owns the next arc and its first slice. Automatic
+advancement stops at unresolved escalations and independent or Operator gates;
+it does not authorize CRC to open a new arc or change the agreed architecture.
 
 Expedited Mode only changes the explicit commit, close, and advance behaviors
 listed above. Expedited Mode means no shortcuts, no skipped validation, no
@@ -104,7 +132,8 @@ The old monolith split along its original part boundaries:
 3. [`guides/03-planning-top-down.md`](./03-planning-top-down.md) -- project
    roadmaps, arc plans, per-slice open sets, and plan-late/plan-deep.
 4. [`guides/04-closing-slices.md`](./04-closing-slices.md) -- slice
-   `closing-report.md`, `cdc-verification.md`, and slice-to-arc bubble-up.
+   `closing-report.md`, the workflow-specific verification record,
+   and slice-to-arc bubble-up.
 5. [`guides/05-closing-arcs.md`](./05-closing-arcs.md) -- arc
    `closing-report.md`, composition checks, arc-to-project bubble-up, and the
    plan-change discipline.
