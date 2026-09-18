@@ -335,3 +335,8 @@ returned status 2 because the recipe path was absent, and using source commit
 `ce3f77103eff5e07b3533a03c65f158684fc1039` as the recipe endpoint returned
 status 2 for the foreign-endpoint condition. The wrapper did not silently
 fall back to the working tree.
+
+The separate committed replay then loaded the registry from CC endpoint
+`2953953d` and the recipe bytes from replay endpoint `9f9ad2bf`; it passed with
+status 0. The endpoint pair is intentionally recorded separately so the
+recipe used for this observation is not inferred from the registry commit.
