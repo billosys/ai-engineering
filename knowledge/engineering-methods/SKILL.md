@@ -8,7 +8,7 @@ description: |
   review finding into a detailed, domain-guided CC implementation prompt.
 license: MIT
 metadata:
-  version: "1.14.0"
+  version: "1.15.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills
@@ -32,11 +32,15 @@ Before writing or reviewing a CC implementation assignment, read
 [authoring template](./templates/cc-implementation-prompt.md). The prompt author must inspect
 source, apply relevant domain guides, resolve consequential choices and supply
 an implementation recipe with concrete test oracles before issuing the work.
+For investigation/evidence work, supply a concrete method while leaving
+unsupported semantic conclusions unresolved. Check interacting rules, viable
+test sequences and whether the old behavior would pass the proposed oracles.
 A ledger, skill-reading list or collection of plan links is not that recipe.
 
 For CC execution, follow the [required-reading and intake contract](./guides/07-implementation-prompt-authoring.md#required-reading-and-cc-intake):
-load required text completely, recover truncated output, record coverage and
-produce a source-cited contract readback before dependent edits. Reading
+load required text completely, execute author-scoped structured-data queries,
+recover truncated output and record each kind of coverage separately. Produce
+a source-cited contract readback before dependent edits. Reading
 attestation does not prove comprehension or replace independent review.
 
 Read the guides:

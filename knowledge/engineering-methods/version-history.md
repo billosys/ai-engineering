@@ -1,5 +1,15 @@
 # Engineering Methods Version History
 
+## Version 1.15.0 - 2026-09-17
+
+Refined prompt authorship using reviewed code and semantic-evidence assignments.
+Added checks for interacting transitions and partial-work results, viable test
+ownership/access, oracles that distinguish old behavior, validator scope, and
+authorized identity updates alongside preservation requirements. Added bounded
+structured-data query intake and investigation guidance that separates method
+from unsupported conclusions. Updated the template and existing six readiness
+checks without adding approval roles or prescribing prompt length.
+
 ## Version 1.14.0 - 2026-09-17
 
 Added an author-defined required-reading manifest and CC intake contract.

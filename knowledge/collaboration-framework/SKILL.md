@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.4.0"
+  version: "2.5.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -141,12 +141,15 @@ applies:
   [prompt-authoring guide](../engineering-methods/guides/07-implementation-prompt-authoring.md) and relevant
   domain guides. CDC/CRC must inspect source, apply the guidance, resolve
   consequential decisions, and supply concrete implementation shapes and test
-  oracles. A skill-reading instruction to CC does not replace the author's
-  engineering work. Complete the guide's readiness check before handoff.
+  oracles. Investigation/evidence prompts require a concrete method without
+  prescribing unsupported conclusions. A skill-reading instruction to CC does
+  not replace the author's engineering work. Complete the guide's readiness
+  check, including rule interactions and discriminating tests, before handoff.
 - **Executing a CC assignment.** Follow the prompt's required-reading manifest
   and engineering-methods' [intake contract](../engineering-methods/guides/07-implementation-prompt-authoring.md#required-reading-and-cc-intake).
-  Read required contents completely, recover truncated output, and record loaded
-  extents plus a source-cited contract readback before dependent edits. Missing
+  Read required text completely and execute the author's structured-data query
+  scopes. Recover truncated output; record text extents and query coverage
+  separately, plus a source-cited contract readback before dependent edits. Missing
   or conflicting required inputs must be resolved; receipts alone do not prove
   comprehension. Proceed after coherent preflight under existing authority.
 - **Issuing or executing a slice iteration.** Preserve every issued prompt.

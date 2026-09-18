@@ -2,7 +2,8 @@
 
 Read this guide **before authoring or reviewing an initial CC implementation
 prompt or a corrective iteration**. It operationalizes SDLC step 5: the author
-turns an approved slice into an implementation-ready engineering assignment.
+turns an approved slice into an actionable code, investigation or evidence
+assignment.
 Use the [authoring template](../templates/cc-implementation-prompt.md) as a
 starting shape, adapting its sections to the work.
 
@@ -82,7 +83,7 @@ section. For each consequential guideline, record:
 
 | Source | Applied decision | Why it fits here | Implementation and proof |
 | --- | --- | --- | --- |
-| Exact skill/chapter/section or verified pattern ID and strength | Chosen type, API, ownership or behavior | Project constraint and tradeoff; any justified exception | Target symbol plus observable check |
+| Exact skill/chapter/section or verified pattern ID and strength | Chosen API, behavior, interpretation boundary or inspection method | Project constraint and tradeoff; any justified exception | Target symbol plus observable check |
 
 This is a record of engineering decisions, not a catalogue of every rule read.
 Verify pattern IDs against their chapter text; summaries can drift. Retain
@@ -121,6 +122,19 @@ Explain the important choices and rejected alternatives. “Use best practices,�
 “handle errors appropriately,” and “ensure thread safety” leave the decision
 to CC; name the actual policy and how it is achieved.
 
+Check interactions between rules, not only each rule in isolation. For a
+multi-step operation that can stop, fail, cancel or change mode partway through,
+specify when the transition takes effect, what completes, what state/time or
+resources advance, and what the caller receives. Reconcile the prose, sketch
+and tests. If both an API and shared state can trigger a transition, define
+their relationship; a guard checked only at entry may not enforce later changes.
+
+Separate immutable inputs, explicitly authorized replacements and derived
+values that must be recomputed. A request to repin an input can change its hash,
+range or manifest entry; do not also require every old value to remain unchanged.
+Name the exceptions and retain prior evidence at its historical revision.
+Neither an exception nor a refresh authorizes unrelated input changes.
+
 ## 4. Provide a concrete implementation recipe
 
 Write ordered, file-and-symbol-level steps. Each substantive step connects:
@@ -145,6 +159,22 @@ allowlisted files is not a file-level implementation plan. A complete ledger
 is not an algorithm. A long prompt full of commit commands is not necessarily
 better specified than a short one with an exact, bounded design attachment.
 
+### Investigation and semantic evidence assignments
+
+For research, metadata or ontology work, supply the inspection method rather
+than prescribing conclusions the evidence has not established. Name the input
+population, exact field paths/constructs, context and witnesses to inspect,
+comparisons, evidence representation, and decision owner for unresolved policy.
+Distinguish documented rules, observed values, author inference and unresolved
+questions in the result. Similar names at different paths need separate
+interpretation; repeated values do not establish a vocabulary or requiredness.
+
+Predeclared counts and expectations can test a pinned baseline, but CC must
+derive observations from the actual input and report discrepancies. Specify
+how insufficient or contradictory evidence is recorded and what it blocks;
+do not make a desired semantic answer the condition for passing the assignment.
+Structural replay establishes only its checked properties, not semantic warrant.
+
 ## 5. Design the tests and their oracles
 
 Map each acceptance criterion to a concrete setup, action and expected
@@ -152,6 +182,23 @@ observable result. State exact values, errors, sequences or invariants where
 the contract determines them. Include meaningful positive, negative, boundary,
 regression and feature/platform cases as applicable. Identify the plausible
 incorrect implementation each important test would reject.
+
+Walk each multi-step test through the actual APIs: which object still exists,
+which calls are visible from the test location, and how state is observed after
+each action. A consuming conversion cannot be followed by reuse of its former
+owner. Name integration versus inline/unit test homes where access differs,
+and retain the applicable feature matrix for both. Do not add a public accessor
+or move an action earlier merely to rescue an infeasible test and weaken its
+oracle; the author must supply a viable route within the approved contract.
+
+Ask whether the old or specifically rejected implementation could pass the
+proposed test. Choose inputs that force competing behaviors to disagree: if
+ordering changes from numeric IDs to names, use opposing ID/name orders and
+assert the exact winner. Stable results across two runs alone may prove neither
+ordering policy. Observe intermediate stages when claiming phase order or
+partial-failure behavior; final totals can hide both. For a validator, run
+negative inputs through the same predicate as valid inputs. This does not
+require exhaustive mutation testing or compiling every illustrative sketch.
 
 Use public or real integration paths where the promise concerns integration.
 A hook counter cannot alone prove that installed systems execute; a snapshot
@@ -167,6 +214,10 @@ Name the repository-native validation commands, working directories, feature
 matrix, prerequisites and known baseline failures. Distinguish behavior tests
 from static, package and evidence checks. Keep unavailable or failing required
 checks explicit; do not let an implementation prompt waive acceptance gates.
+Inspect what reused validators actually cover: target revision, current
+assignment, rows and properties. A passing predecessor-specific checker is
+inherited evidence, not validation of the new slice. State gaps and the check
+or owner that resolves them; preserve historical evidence and gate authority.
 Use the testing component when defining detailed validation technique.
 
 ## 6. Assemble a usable assignment
@@ -208,14 +259,25 @@ must be loaded. Use these categories:
   why they cover the current assignment. This suits large parent plans, shared
   designs and domain chapters; CC may not silently convert required-full into
   a section skim. A bare filename in a required-reading list means required-full.
+- **Required-data:** for a structured dataset, name its pinned identity,
+  population/projection, exact queries or specified query behavior, and required
+  outputs. CC executes the queries and inspects their complete results, retaining
+  commands, exits, denominators, exclusions and errors in the allowed evidence
+  home. Recover truncated results or use lossless partitions of the required
+  projection. This permits computation over a large input without dumping it
+  all into context; it does not permit sampling to stand in for a whole-set
+  check. Separately name full/section reads for witnesses whose meaning requires
+  body context. Query coverage is not a claim of full-document semantic reading.
 - **Conditional:** name the concrete trigger and exact material to load before
   the affected step. Record whether the trigger applies. Do not use this label
   to defer universally applicable scope, safety or acceptance constraints.
 - **Reference-only:** optional background/provenance, not required execution
   instructions. If implementation depends on it, it belongs above.
 
-These labels never reduce reading required by governing instructions. Enumerate
-known normative dependencies; do not leave CC to chase an unbounded chain of
+Required-data applies to structured inspection, not as a substitute for reading
+the prompt, plans, directives, guides or required witness prose. These labels
+never reduce reading required by governing instructions. Enumerate known
+normative dependencies; do not leave CC to chase an unbounded chain of
 links or infer that every historical reference is an active instruction. A newly
 encountered binding dependency must be loaded and recorded before affected work.
 Keep current authority distinct from superseded prompts and historical examples.
@@ -231,7 +293,8 @@ CC to skim, silently drop requirements, or replace normative text with a summary
 **CC preflight, before dependent implementation:**
 
 1. Confirm the active assignment and source state, then load the manifest's
-   required material into the executing context. File existence, byte counts,
+   required text into the executing context and perform the declared required-data
+   queries with visible results. File existence, byte counts,
    hashes, grep hits, headings, summaries and another agent's reading do not
    establish that this context received the full required content.
 2. Use bounded reads sized so the tool returns their complete contents. When
@@ -243,11 +306,12 @@ CC to skim, silently drop requirements, or replace normative text with a summary
    truncated portions. Cite tool-output identifiers or visible read ranges where
    the environment exposes them; do not invent receipts. A tracked revision
    identifies committed content; qualify dirty or untracked inputs separately.
-   Call an item complete only after loading all its required content. Record
-   conditional items as triggered/loaded or not applicable with a reason.
+   Call text reads complete only after loading all required content; record
+   data-query coverage and inspected results separately from document reads.
+   Record conditional items as triggered/loaded or not applicable with a reason.
 4. Write a brief **contract readback** in your own words: connect the slice's
-   consequential obligations to source sections or ledger rows, intended code
-   changes and observable tests. Cover scope/exclusions, API and data contracts,
+   consequential obligations to source sections or ledger rows, intended changes or
+   inspections and observable checks. Cover scope/exclusions, API and data contracts,
    failure/lifecycle rules, and acceptance gates as applicable. Explain the
    easily missed constraint that would invalidate an otherwise plausible
    implementation. Surface disagreements or uncertainty instead of reciting
@@ -284,18 +348,23 @@ to the relevant sections; do not add a new approval role or ceremonial artifact.
 
 1. **Source-grounded:** the recipe fits the inspected source and dependency
    baseline; assumptions are named, and critical ones are resolved.
-2. **Design-complete:** consequential decisions are made within authority;
-   CC's remaining discretion is explicit and bounded.
+2. **Design-complete:** consequential decisions and interacting state transitions
+   are resolved within authority, including partial-work results. CC's remaining
+   discretion is bounded; evidence-dependent conclusions remain open to findings.
 3. **Guideline-applied:** relevant guides changed or supported concrete
    decisions with valid citations, rationale and checks.
 4. **Executable:** files, symbols, integration order and representative shapes
-   make a viable implementation path visible.
-5. **Falsifiable:** tests specify setups and results that reject plausible bad
-   implementations; required gates and evidence remain intact.
+   make a viable path visible. Test sequences respect ownership, access and
+   observation points; investigation steps fit the available evidence.
+5. **Falsifiable:** setups and observations distinguish the intended behavior
+   from the old or rejected implementation. Test and validator coverage matches
+   the claims; required gates and evidence remain intact.
 6. **Coherent and portable:** prompt, plan, design and ledger agree; referenced
    material is accessible; current scope is separated from future work. The
    prompt carries a bounded required-reading manifest, intake/readback instructions
-   and an allowed evidence home; the reading budget leaves implementation headroom.
+   and an allowed evidence home; the reading/query budget leaves implementation
+   headroom. Preservation requirements allow exactly the authorized replacements
+   and consequent identity updates, without contradictory immutable-value claims.
 
 Ask: **Could two competent implementers follow this packet yet choose different
 observable behavior, incompatible public APIs, or different failure/lifecycle
@@ -365,4 +434,7 @@ the exact collision variant; the original spawner, accessors and behavior still
 work. A second rack independently registers once. These checks reject duplicate
 systems, registration on spawn, wrong scheduling, state reset and partial
 replacement. Record the precise fixture APIs and feature matrix in the full
-assignment after inspecting the actual repository.
+assignment after inspecting the actual repository. If accessing the application
+consumes the rack wrapper, one option is an allowed inline/unit test that
+retains the wrapper for the stateful reinstall sequence, alongside integration
+tests for public loading/execution. Do not imply that the consumed wrapper can be reused.

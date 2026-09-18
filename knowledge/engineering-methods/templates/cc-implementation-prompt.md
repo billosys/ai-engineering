@@ -4,7 +4,9 @@ Authoring aid for CDC/CRC. Read
 [From Slice to Implementation Prompt](../guides/07-implementation-prompt-authoring.md)
 first. Replace placeholders with source-grounded decisions before issuing;
 omit inapplicable sections with a short reason where omission could be ambiguous.
-This template's presence or length is not readiness evidence.
+This template's presence or length is not readiness evidence. Keep only the
+detail the assignment needs; evidence work requires a concrete investigation
+method, not artificial APIs or predetermined semantic conclusions.
 
 ## Assignment and authority
 
@@ -24,14 +26,21 @@ historical background.
 
 | Order | Exact path and revision/state | Reading scope | Purpose / before which step |
 | --- | --- | --- | --- |
-| <order> | <resolvable path; qualify dirty inputs> | <required-full, required-section with exact bounds, conditional with trigger, or reference-only> | <contract it supplies and deadline> |
+| <order> | <resolvable path; qualify dirty inputs> | <required-full, required-section with exact bounds, required-data with query scope, conditional with trigger, or reference-only> | <contract it supplies and deadline> |
 
-CC: before dependent implementation, load all required content. Use bounded,
+CC: before dependent work, load required text and inspect the declared data-query
+results. Use bounded,
 contiguous reads and recover every truncated or omitted portion. Grep hits,
 headings, summaries, another context's reading, file hashes and successful shell
 exit codes are not evidence that you received the full text. Record actual
 loaded extents/source state and gaps in <author-named allowed evidence file or
 execution log>; carry this record into the closing report.
+
+For required-data, identify the pinned dataset, exact population/projection,
+queries or query behavior, and expected output coverage. Record commands,
+complete inspected results, denominators, exclusions and errors separately
+from document reads. Identify full-body witnesses for semantic interpretation;
+data projections cannot replace required prose or hide omitted records.
 
 Then provide a brief source-cited contract readback connecting the consequential
 requirements to implementation and tests, including exclusions and failure
@@ -68,7 +77,11 @@ reason for consequential choices, including rejected alternatives. Resolve:
 - control/data flow, mutation order, state transitions and determinism;
 - errors, partial failure, panic/rollback boundaries;
 - resource lifecycle, concurrency and capacity where applicable;
-- compatibility, feature/dependency constraints and downstream obligations.
+- compatibility, feature/dependency constraints and downstream obligations;
+- transitions during multi-step work: what completes, stops, advances and is
+  returned, including API versus direct shared-state changes where applicable;
+- immutable inputs, authorized replacements and consequent hash/range/revision
+  updates, with preservation of historical evidence.
 
 Name exact supporting sections when detailed design lives elsewhere. Include
 the current slice's decision summary here, clearly excluding future designs.
@@ -85,15 +98,29 @@ registration, exports, feature wiring and docs as applicable.
 State which local mechanics CC may adapt and which deviations require the
 assigned reviewer or CDC/Operator before coding.
 
+For investigation/evidence work, specify population, exact field paths and
+constructs, contextual witnesses, comparisons, output representation and
+unresolved-result policy. Separate documented, observed, inferred and unresolved
+statements. Derive observations from inputs; a predeclared expected result is
+not an observation or permission to invent semantic policy.
+
 ## Behavioral tests and validation
 
 | Acceptance row / contract | Setup and action | Exact expected observation | Incorrect behavior rejected |
 | --- | --- | --- | --- |
 | <row> | <fixture/input/entrypoint> | <value/error/sequence/invariant> | <credible failure mode> |
 
+Walk multi-step cases through available APIs, ownership and observation points;
+name integration/inline test locations and their feature coverage where needed.
+Choose fixtures that force the old or rejected behavior to differ from the
+expected result, including intermediate observations when claiming ordering.
+Negative validator cases must exercise the same predicate as valid inputs.
+
 Include relevant negative, boundary, compatibility and feature cases; identify
 existing fixtures to extend. List repository-native commands, working directory,
 prerequisites, expected result, known baseline failures and evidence filenames.
+State the actual target and property coverage of reused validators, including
+any predecessor-only checks and how current-slice gaps are resolved.
 Blocked or failing required gates remain visible; do not weaken acceptance.
 
 ## Scope, stop conditions and return
@@ -118,6 +145,9 @@ current assignment; a previous completion report is not fresh execution.
 Before issuing, record in the existing slice plan or assignment record where
 this packet satisfies the six readiness checks: source-grounded,
 design-complete, guideline-applied, executable, falsifiable, coherent/portable.
-Include complete-reading scope, context budget and the CC preflight contract.
+Include reading/query scope, context budget and the CC preflight contract.
+Check rule interactions, viable test sequences, discriminating oracles, validator
+scope and preservation exceptions where applicable; point to the concrete
+decisions above rather than repeating generic readiness claims.
 Resolve material gaps first. This is author self-review, not independent
 acceptance or a new Operator approval gate.

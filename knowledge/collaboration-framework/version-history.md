@@ -1,5 +1,12 @@
 # Collaboration Framework Version History
 
+## Version 2.5.0 - 2026-09-17
+
+Updated authoring routes and bundled engineering guidance for interacting
+contracts, executable test sequences, discriminating oracles, preservation
+exceptions and evidence investigations. Routed structured-data query intake
+separately from complete text reads while retaining readback and review limits.
+
 ## Version 2.4.0 - 2026-09-17
 
 Added CC execution routing for required-reading manifests, complete loading,
