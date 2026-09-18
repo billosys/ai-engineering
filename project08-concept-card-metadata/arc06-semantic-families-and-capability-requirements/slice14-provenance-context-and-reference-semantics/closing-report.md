@@ -40,7 +40,7 @@ No crc-verification.md or cdc-verification.md was created.
 | S14-2 | done, CC-attested | Native 12-record kind/family/state census, 2,054 legacy comparison and inventory-derived YAML-error exclusions distinct from no-frontmatter records |
 | S14-3 | done, CC-attested | Twelve member meanings, shared contextual evidence, limits and corrected five-record source-support denominator |
 | S14-4 | done, CC-attested | Native support and template/absent diagnostics plus wrong expectation, no-match and missing-input controls |
-| S14-5 | done, CC-attested | Fail-closed Bash/jq/Git/shasum route, 42 hashes, explicit recipe-revision execution, path-scoped source checks, exclusion negative control and exact six-file fence |
+| S14-5 | done, CC-attested | Fail-closed Bash/jq/Git/shasum route, 42 hashes and 42 registered-range checks, explicit recipe-revision execution, path-scoped source checks, exclusion negative control and exact six-file fence |
 | S14-6 | done, CC-attested | Handoff questions, Slice15 boundary, candidate twenty-pair next unit and P-15 gate |
 
 ## Validation status
