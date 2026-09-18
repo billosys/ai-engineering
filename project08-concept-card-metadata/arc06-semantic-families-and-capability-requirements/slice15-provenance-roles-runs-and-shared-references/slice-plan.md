@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice15-provenance-roles-runs-and-shared-references
 status: open
 depends-on: [slice13-provenance-family-semantics, slice14-provenance-context-and-reference-semantics]
-version: "1.0"
+version: "1.1"
 ---
 
 # Actor Mode And Role In Four Record Kinds
@@ -28,7 +28,8 @@ retains design, structural scope and arc/project composition authority.
 
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
-| cc-prompt.md | 2026-09-17 | arc directive01 and closed Slice14 | Eight kind-aligned mode/role pairs with native census, contextual meanings and replay | Current initial CC assignment; no execution recorded |
+| cc-prompt.md | 2026-09-17 | arc directive01 and closed Slice14 | Eight kind-aligned mode/role pairs with native census, contextual meanings and replay | Returned at `178f1e6e`; CRC found R1-R3 in `crc-verification.md`; superseded for correction |
+| cc-prompt-iteration01.md | 2026-09-17 | Initial CC packet and CRC R1-R3 | Complete wrong-hash and wrong-exclusion controls; correct endpoint/control claims | Current CC correction assignment; pending execution |
 
 ## Exact Scope And Ownership
 
@@ -139,6 +140,9 @@ who authors an implementation repair needs another verifier.
 
 ## Version History
 
+- 1.1 (2026-09-17): CRC review keeps Slice15 open and issues focused
+  Iteration01 for two missing negative controls and accurate endpoint claims.
+  The eight-pair boundary and downstream ownership are unchanged.
 - 1.0 (2026-09-17): CRC opens the CDC-approved eight-pair actor mode/role
   unit after direct recount and witness inspection. Slice16/17 and all
   outside obligations remain owned; no pair is accepted by opening.
