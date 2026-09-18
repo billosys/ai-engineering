@@ -10,14 +10,14 @@ memory admission or runtime work.
 - Source checkout: /Users/oubiwann/lab/billosys/ai-engineering, opening
   020268248882358075b678bb855c0ac8d11b532a, clean and read-only.
 - Planning checkout: /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning,
-  opening 8e6b67708eeeca391a139bb8d1b710633cfbbeb4, clean.
+  opening 8c18f82a28b0d49d61ccc23e94939358a8777c01, clean.
 - Current coverage is a live planning artifact at the opening state:
   188 accepted / 367 remaining / 12 assigned / 355 outside.
 - The immutable transition remains 555 total, 115 accepted, 440 remaining,
   35 transition-assigned and 405 outside. It is not replaced by the current
   checkpoint.
-- The executed assignment is cc-prompt-iteration02.md, the first corrective
-  refinement after CRC review of cc-prompt-iteration01.md. The predecessor
+- The executed assignment is cc-prompt-iteration03.md, the second corrective
+  refinement after CRC review of cc-prompt-iteration02.md. The predecessor
   packet remains preserved; no pair is independently accepted.
 - The packet covers exactly the following twelve field-path/record-kind pairs:
 
@@ -40,6 +40,15 @@ Assignment is not acceptance. The exact scope, read set, source/planning
 boundaries and six-file fence are registered in
 artifacts/semantic-membership.json under the evidence IDs
 assignmentPrompt, slicePlan, projectPlan, projectLedger, arcPlan and arcLedger.
+
+### Iteration03 range correction
+
+This iteration corrects only registered evidence locations and the literal
+replay route. All 42 declared source_range values are resolved against the
+file at each row's declared authority and read mode; valid multi-span and JSON
+descriptors pass, while reversed and out-of-bounds controls fail. The native
+census, meanings, exact twelve-pair scope and acceptance boundaries are
+unchanged. This is structural evidence pending independent CRC verification.
 
 ### Iteration02 corrections
 

@@ -59,7 +59,7 @@ coverage_rel=project08-concept-card-metadata/artifacts/semantic-coverage-current
 transition_rel=project08-concept-card-metadata/artifacts/semantic-transition-coverage.json
 inventory_rel=project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
 opening_source=020268248882358075b678bb855c0ac8d11b532a
-opening_planning=8e6b67708eeeca391a139bb8d1b710633cfbbeb4
+opening_planning=8c18f82a28b0d49d61ccc23e94939358a8777c01
 historical_source=e763c661592ff1097a94bb470db9cf924524579d
 mode=precommit
 
@@ -160,6 +160,8 @@ $slice_rel/slice-plan.md
 $slice_rel/cc-prompt.md
 $slice_rel/cc-prompt-iteration01.md
 $slice_rel/cc-prompt-iteration02.md
+$slice_rel/cc-prompt-iteration03.md
+$slice_rel/crc-verification.md
 project08-concept-card-metadata/artifacts/semantic-coverage-current.json
 $transition_rel
 $inventory_rel
@@ -436,6 +438,88 @@ hash_evidence() {
 }
 hash_evidence
 
+check_line_range() {
+  local row=$1
+  local range evidence_root read_mode authority path line_count span start end
+  range=$(jq -r '.source_range // empty' <<< "$row") || return 1
+  case "$range" in
+    "JSON document"|"JSON document; selected values and YAML-error records")
+      return 0
+      ;;
+    lines\ *)
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+  evidence_root=$(jq -r '.root // empty' <<< "$row") || return 1
+  read_mode=$(jq -r '.read_mode // empty' <<< "$row") || return 1
+  authority=$(jq -r '.authority_commit // empty' <<< "$row") || return 1
+  path=$(jq -r '.path // empty' <<< "$row") || return 1
+  case "$evidence_root:$read_mode" in
+    planning:snapshot)
+      line_count=$(git -C "$root" show "$authority:$path" | awk 'END {print NR}') || return 1
+      ;;
+    source:snapshot)
+      line_count=$(git -C "$source" show "$authority:$path" | awk 'END {print NR}') || return 1
+      ;;
+    planning:live)
+      line_count=$(awk 'END {print NR}' "$root/$path") || return 1
+      ;;
+    source:live)
+      line_count=$(awk 'END {print NR}' "$source/$path") || return 1
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+  range=${range#lines }
+  IFS=',' read -ra spans <<< "$range"
+  [[ "${#spans[@]}" -gt 0 ]] || return 1
+  for span in "${spans[@]}"; do
+    span=${span# }
+    [[ "$span" =~ ^([1-9][0-9]*)-([1-9][0-9]*)$ ]] || return 1
+    start=${BASH_REMATCH[1]}
+    end=${BASH_REMATCH[2]}
+    (( start <= end && end <= line_count )) || return 1
+  done
+}
+
+check_registered_ranges() {
+  local candidate=$1 row evidence_id rows
+  [[ "$(jq '.evidence | length' <<< "$candidate")" == "42" ]] || return 1
+  rows=$(jq -c '.evidence[]' <<< "$candidate") || return 1
+  while IFS= read -r row; do
+    [[ -z "$row" ]] && continue
+    evidence_id=$(jq -r '.evidence_id' <<< "$row") || return 1
+    check_line_range "$row" || {
+      printf '%s\n' "invalid source_range: $evidence_id" >&2
+      return 1
+    }
+  done <<< "$rows"
+}
+
+registry_json=$(jq -c '.' "$registry") || fail "registry clone failed"
+check_registered_ranges "$registry_json" || fail "registered source_range check failed"
+valid_multi_span=$(jq -c '.evidence[] | select(.evidence_id == "fieldGroups")' <<< "$registry_json")
+check_line_range "$valid_multi_span" || fail "valid multi-span source_range rejected"
+valid_json_descriptor=$(jq -c '.evidence[] | select(.evidence_id == "currentCoverage")' <<< "$registry_json")
+check_line_range "$valid_json_descriptor" || fail "valid JSON source_range rejected"
+mutated_range=$(jq -c '.evidence |= map(if .evidence_id == "projectLedger" then .source_range = "lines 1-999999" else . end)' <<< "$registry_json")
+if check_registered_ranges "$mutated_range"; then
+  fail "out-of-bounds source_range mutation was accepted"
+else
+  range_oob_status=$?
+  [[ "$range_oob_status" == "1" ]] || fail "out-of-bounds source_range returned unexpected status"
+fi
+mutated_range=$(jq -c '.evidence |= map(if .evidence_id == "projectLedger" then .source_range = "lines 15-10" else . end)' <<< "$registry_json")
+if check_registered_ranges "$mutated_range"; then
+  fail "reversed source_range mutation was accepted"
+else
+  range_reversed_status=$?
+  [[ "$range_reversed_status" == "1" ]] || fail "reversed source_range returned unexpected status"
+fi
+
 source_registered_hashes=$(jq -c '[.evidence[]
   | select(.root == "source" and .read_mode == "snapshot")
   | {evidence_id, sha256}
@@ -528,6 +612,11 @@ printf '%s\n' "no_match_status=$no_match_status output=$no_match_output stderr_b
 printf '%s\n' "missing_input_status=$missing_status stderr_bytes=$(wc -c < "$temp/missing.err" | tr -d ' ')"
 printf '%s\n' "mutated_member=reject"
 printf '%s\n' "mutated_evidence=reject"
+printf '%s\n' "registered_ranges=42 valid"
+printf '%s\n' "range_multispan_status=0"
+printf '%s\n' "range_json_descriptor_status=0"
+printf '%s\n' "range_oob_negative_control_status=$range_oob_status"
+printf '%s\n' "range_reversed_negative_control_status=$range_reversed_status"
 printf '%s\n' "semantic_acceptance=not_claimed"
 ~~~
 
@@ -548,11 +637,48 @@ The route's pinned values and checks are deliberate:
   derived from the pinned native inventory;
 - all 42 registered evidence hashes are recomputed according to their declared
   root and read mode;
+- all 42 registered source_range values are checked against the file resolved
+  at their declared authority and read mode; JSON descriptors are accepted,
+  while reversed and out-of-bounds numeric spans fail;
 - expected support and template/absent cases are authored in the route,
   while wrong expectations, invalid memberships, dangling evidence, wrong
   YAML exclusions, a real no-match and a missing input exercise failure
   behavior. The committed wrapper separately rejects a missing recipe file and
   a stale valid recipe endpoint.
+
+## Iteration03 intake and contract readback
+
+The iteration03 intake loaded the source instructions at
+`AGENTS.md`, the planning instructions at
+`project08-concept-card-metadata/AGENTS.md`, the current project and Arc06
+plans/ledgers, and the current slice plan, ledger, assignment prompt and CRC
+record. The bounded prompt/plan records were read at these observed lengths:
+`slice-plan.md` 1-249, `ledger.md` 1-17, `cc-prompt-iteration03.md` 1-247 and
+`crc-verification.md` 1-87. The prior prompts remain preserved and were read as
+iteration01 1-107 and iteration02 1-72. The six output records were loaded as
+`semantic-membership.json` 1-577, this validation record 1-687,
+`semantic-evidence.md` 1-285, `handoff.md` 1-82, `ledger.md` 1-17 and
+`closing-report.md` 1-76.
+
+The source checkout was clean at HEAD
+`76a69fd9c295e78f23faa651746c2e36646e0ebd`; the planning checkout was clean
+at opening HEAD `8c18f82a28b0d49d61ccc23e94939358a8777c01`. Project-plan and
+Arc06-plan authority was read through the named schema-gate, current-direction,
+workflow, review, operating-method, roadmap and acceptance sections; the
+concept-card skill, implementation-prompt, validation, testing and independent
+verification guidance was also loaded through the required sections. Large
+records were recovered in explicit chunks; no required path was unavailable.
+
+The range audit remeasured all 42 declared locations at their declared
+authority and read mode. It corrected four registered claims: `projectLedger`
+to lines 1-43, `slicePlan` to lines 1-249 at the iteration03 opening,
+`assignmentPrompt` to lines 1-247 at that opening, and
+`slice03ReplayContract` to lines 1-93. The two JSON descriptors remain valid;
+all other numeric spans are within bounds. This is S14-5 structural evidence:
+the registry correction updates location claims and the route fails closed on
+missing, invalid, reversed or out-of-bounds ranges. The semantic census,
+S14-1 through S14-4 and S14-6 conclusions, coverage/acceptance boundaries and
+the CRC independent-review gate are unchanged.
 
 ## Recorded observations
 
@@ -561,7 +687,7 @@ route must report status 0, reject all mutations and wrong expectations, return
 status 0 with [] for the real no-match, and return status 2 for the missing
 inventory input. No status-0 route run is a semantic-acceptance decision.
 
-- precommit iteration02: status 0 at planning HEAD
+- prior precommit iteration02: status 0 at planning HEAD
   8e6b67708eeeca391a139bb8d1b710633cfbbeb4; selected census 12 and legacy
   comparison 2054; derived YAML-error count 3 and no-frontmatter count 15;
   unrelated-HEAD fixture passed; positive support actor status 0; wrong
@@ -593,3 +719,11 @@ inventory input. No status-0 route run is a semantic-acceptance decision.
   and 0 stderr bytes; missing-input status 2 with 145 stderr bytes; invalid
   membership and dangling evidence mutations rejected; semantic acceptance not
   claimed. The two endpoints are distinct revisions.
+- iteration03 precommit: status 0 at planning HEAD
+  8c18f82a28b0d49d61ccc23e94939358a8777c01; exact 12-pair assignment and
+  six-file union passed; 42 registered hashes and 42 registered ranges passed;
+  valid multi-span and JSON descriptors passed; out-of-bounds and reversed
+  range controls returned status 1; selected census 12 and legacy comparison
+  2054; YAML-error count 3 and no-frontmatter count 15; unrelated-HEAD,
+  wrong-expectation, no-match, missing-input and preservation controls matched
+  the predecessor route; semantic acceptance not claimed.

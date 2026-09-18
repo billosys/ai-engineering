@@ -5,11 +5,11 @@ Operator. This report is not a CRC or CDC verdict.
 
 ## Execution boundary
 
-- Assignment executed: cc-prompt-iteration02.md, the first corrective
-  refinement after CRC review of cc-prompt-iteration01.md.
+- Assignment executed: cc-prompt-iteration03.md, the second corrective
+  refinement after CRC review of cc-prompt-iteration02.md.
 - Source opening HEAD: 020268248882358075b678bb855c0ac8d11b532a; source was clean
   and no source file was changed.
-- Planning opening HEAD: 8e6b67708eeeca391a139bb8d1b710633cfbbeb4; planning
+- Planning opening HEAD: 8c18f82a28b0d49d61ccc23e94939358a8777c01; planning
   authority files were read-only during execution.
 - Current opening accounting: 555 full, 188 accepted, 367 remaining, 12
   assigned, 355 outside.
@@ -45,13 +45,16 @@ No crc-verification.md or cdc-verification.md was created.
 
 ## Validation status
 
-The literal route is registered in artifacts/validation-evidence.md. Iteration02
+The literal route is registered in artifacts/validation-evidence.md. Iteration03
 records the precommit run, committed-wrapper preflight, stale/missing recipe
 rejections, and a status-0 separate-revision committed replay using
 CC_COMMIT=ee80f9149a8badaa998ef65e5b8e17239164cb5f and
 REPLAY_COMMIT=3372da88c5ed2d9d070a89974473532ff0f29e4a.
-It also records the unrelated-HEAD fixture, the derived three-path YAML
-exclusion set, and the prior CRC R1-R4 findings as repaired. All route results
+It also records the registered-range checks and out-of-bounds/reversed negative
+controls, the unrelated-HEAD fixture, the derived three-path YAML
+exclusion set, and the prior CRC R1-R4 findings as repaired. The intake and
+contract readback is recorded in validation-evidence.md under
+"Iteration03 intake and contract readback". All route results
 remain structural evidence; semantic acceptance is not claimed.
 
 ## Conclusions and limits

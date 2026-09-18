@@ -6,8 +6,8 @@ implementation authority or accept any semantic membership.
 
 ## Result
 
-The current assignment was cc-prompt-iteration02.md, the first executed
-corrective refinement after CRC review of cc-prompt-iteration01.md. It covers
+The current assignment is cc-prompt-iteration03.md, the second executed
+corrective refinement after CRC review of cc-prompt-iteration02.md. It covers
 exactly twelve pairs:
 
 - actor and actor.id for memory-admission, preservation-decision,
@@ -21,7 +21,8 @@ codex-cc / agent-direct / extractor. The frozen parsed legacy comparison is
 The three named YAML-parse exclusions remain exclusions, not negative actor
 observations.
 
-Iteration02 repairs the four CRC findings without changing the assignment or
+Iteration03 preserves the iteration02 repairs and corrects only the four
+registered range findings without changing the assignment or
 the semantic boundary: the source-support member now names five selected
 records with one template/null record; committed replay executes the route
 from an explicit recipe revision separate from the CC contribution; source
