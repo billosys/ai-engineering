@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice14-provenance-context-and-reference-semantics
 status: closed
 depends-on: [slice13-provenance-family-semantics, slice03-provenance-and-shared-reference-contracts]
-version: "1.4"
+version: "1.5"
 ---
 
 # Actor Identity In Supporting And Result Records
@@ -27,6 +27,8 @@ correction after CRC review of executed iteration02. CC committed b10bb1ec
 and separate recipe a4a7047c. CRC independently accepted all six rows in
 crc-verification.md. No routine second CDC slice approval is required.
 Slice15 remains unopened pending CDC sizing of the retained obligations.
+The arc-level [CRC escalation](../crc-escalation01.md) requests that decision;
+it does not reopen this slice or assign a successor.
 
 ### Assignment History
 
@@ -229,6 +231,10 @@ headroom, stop with an evidence-backed sizing proposal; keep requirements and
 ownership, and do not start an unbounded batch hierarchy.
 
 ## Version History
+
+- 1.5 (2026-09-17): Links the arc-level CRC sizing escalation after this
+  slice's accepted closure. No Slice14 acceptance criterion or CC assignment
+  changes; Slice15 remains unopened.
 
 - 1.4 (2026-09-17): CRC independently accepts iteration03 and closes all six
   rows. Exactly twelve actor/actor.id pairs enter accepted coverage once:

@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.15"
+version: "1.16"
 ---
 
 # Semantic Families And Capability Requirements
@@ -62,6 +62,12 @@ verifier for acceptance. No extra CDC approval is added to ordinary CRC slice
 closure; design/scope decisions still require the explicit escalation route.
 Slice15 remains an unsized owner: CRC recommends a bounded open set/split to
 CDC before any structural amendment, rather than silently reshaping the arc.
+
+### Design Handoff History
+
+| Packet | Date | Predecessor / initiating decision | Scope and rows | Status | Next action |
+| --- | --- | --- | --- | --- | --- |
+| crc-escalation01.md | 2026-09-17 | Slice14 CRC closure at `febbd787`; project `cdc-directive01.md` supplies three-contributor authority | Size the next provenance unit; A6-1/A6-3/A6-6, Slice15 owner and P-15 preserved | Awaiting CDC; no Slice15 assignment | Operator relays this packet to CDC; CDC returns an arc-level `cdc-directive01.md` or an explicit held decision |
 
 ### Historical Slice03 Closure And Slice13 Opening (Superseded Assignment)
 
@@ -267,6 +273,11 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.16 (2026-09-17): Records CRC's first arc-level design escalation for
+  bounded Slice15 sizing. No successor opens, pair assignment changes, or
+  scope reduction occurs; CDC decision is pending. Was: accepted Slice14 with
+  355 Arc06-owned pairs and no next assignment.
 
 - 1.15 (2026-09-17): CRC accepts Slice14's six rows and twelve bounded
   actor-identity pairs. Current coverage becomes 200/355/0/355. Slice15 stays
