@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.29"
+version: "1.30"
 ---
 
 # Concept Card Metadata
@@ -140,7 +140,7 @@ retroactive changes to closed evidence. Was: Two-Contributor CDC + CC.
 - CDC: this continuing design context; project/arc design, difficult
   investigations, structural replanning, first slice of each new arc, and
   independent arc/project composition review.
-- CRC: separate Operator-created review context, awaiting acknowledgement of
+- CRC: separate Operator-created review context, with recorded acknowledgement of
   [cdc-directive01.md](./cdc-directive01.md); routine CC review, corrections,
   subsequent slice preparation within approved boundaries, ledger/coverage
   maintenance and closure assembly.
@@ -168,7 +168,8 @@ closure and immediate next planned slice handoff within delegated authority.
 It does not waive evidence, P-15, UAT, source fences or required escalation.
 CRC returns arc readiness to CDC; CDC owns opening the next arc and first slice.
 
-Transition state: source 020268248882358075b678bb855c0ac8d11b532a; planning
+Historical workflow-transition state (current status is in the roadmap below):
+source 020268248882358075b678bb855c0ac8d11b532a; planning
 d6252b26878ead5045c843d1086b9194d516e2ee, both clean before these amendments.
 Slice13 is closed at its recorded review; R1-R4 resolved. Live coverage remains
 188 accepted / 367 remaining / 12 assigned / 355 outside. All six Slice14 rows,
@@ -176,11 +177,14 @@ all arc rows and all project rows remain open. No Slice14 implementation or
 review packet is recorded at this transition; if concurrent work exists,
 CRC must reconcile its assignment/state before proceeding.
 
-Current CC assignment becomes Slice14's cc-prompt-iteration01.md, a routing
+At that transition the CC assignment became Slice14's cc-prompt-iteration01.md,
+a routing
 replacement of the preserved cc-prompt.md, not an executed repair pass.
 CRC first reads/acknowledges the directive and checks the replacement before
 the Operator relays it to fresh CC. The original prompt is not edited.
-Next-action owner: Operator to create CRC and relay the directive, then CRC.
+The recorded acknowledgement below completed that initial relay. Current
+handoff: arc-level cdc-directive01.md answers CRC's post-Slice14 sizing request;
+CRC acknowledgement/preparation is next. No CC assignment is currently active.
 
 ### Design Handoff History
 
@@ -211,7 +215,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12/13/14 closed; 200 accepted and 355 remaining; Slice15 retains broader provenance for CDC sizing |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12/13/14 closed; 200 accepted and 355 remaining; Slice15/16 mode-role boundaries approved for CRC preparation; Slice17 retains broader provenance for sizing |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -229,9 +233,15 @@ No CC supporting artifact was repaired by the reviewer.
 Current accounting: 200 accepted / 355 remaining; zero assigned and 355 not
 yet sliced. Slice14 accepted actor/actor.id in memory-admission,
 preservation-decision, relationship-edge, source-locator, source-support and
-validation-result. Planned Slice15 retains all other original provenance work,
-including the 20 actor.mode/actor.role pairs, run/preparation/method/shared
-references and remaining CQ interfaces; size/split before execution.
+validation-result. CDC's response to Arc06 escalation01 approves a kind-aligned
+mode/role split: eight pairs in Slice15 and twelve in Slice16. Slice17 explicitly
+retains run identity/scope/workers/outputs, preparation links, method/prompt/time
+provenance, common references and remaining CQ provenance interfaces for sizing.
+See [the arc directive](./arc06-semantic-families-and-capability-requirements/cdc-directive01.md).
+CRC must acknowledge and complete pre-opening native recount/witness inspection
+and prompt-author readiness. This directive assigns/accepts no pairs and does
+not reopen CRC-accepted Slice14. Was: all these responsibilities in unsized
+Slice15; no project capability or gate is reduced.
 Was: Slice13 Iteration 01 pending and an unsized Slice14 complement.
 This is the authorized late sizing of retained work, not scope reduction.
 P-15, all UAT requirements and later evidence/lifecycle owners are unchanged.
@@ -446,6 +456,11 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.30 (2026-09-17): Arc06 CRC escalation01 answered with an eight/twelve
+  mode-role boundary and explicit Slice17 provenance ownership. CRC prepares
+  subsequent open sets after acknowledgement/readiness. Was: unsized Slice15;
+  no acceptance, source, UAT or P-15 scope changes.
 
 - 1.29 (2026-09-17): Independent CRC review closes Slice14's six rows and
   accepts twelve bounded actor-identity pairs, bringing live coverage to
