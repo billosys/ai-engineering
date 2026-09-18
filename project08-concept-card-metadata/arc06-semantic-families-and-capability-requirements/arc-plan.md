@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.17"
+version: "1.18"
 ---
 
 # Semantic Families And Capability Requirements
@@ -77,7 +77,7 @@ requires sizing approval. Prior acceptance and iteration histories are intact.
 | Packet | Date | Predecessor / initiating decision | Scope and rows | Status | Next action |
 | --- | --- | --- | --- | --- | --- |
 | crc-escalation01.md | 2026-09-17 | Slice14 CRC closure at `febbd787`; project `cdc-directive01.md` supplies three-contributor authority | Size the next provenance unit; A6-1/A6-3/A6-6, Slice15 owner and P-15 preserved | Answered by arc-level cdc-directive01.md; escalation preserved | CRC reads the response through the Operator and records acknowledgement before advancement |
-| cdc-directive01.md | 2026-09-17 | Response to arc crc-escalation01.md; existing Operator-approved bounded-slice planning authority | Approves eight/twelve mode-role split; names Slice17 remainder; A6-1/A6-3/A6-6 and all gates retained | Issued; awaiting CRC acknowledgement | CRC records actual context/state and pre-opening readiness; then opens Slice15 and reports its prompt through the Operator |
+| cdc-directive01.md | 2026-09-17 | Response to arc crc-escalation01.md; existing Operator-approved bounded-slice planning authority | Approves eight/twelve mode-role split; names Slice17 remainder; A6-1/A6-3/A6-6 and all gates retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-09-17; planning `b748aca4f14a2c5a9418ddc2bbb08e6c3f818a28`, source `76a69fd9c295e78f23faa651746c2e36646e0ebd`, both clean; directive and coverage/frozen identities checked | CRC completes pre-opening witnesses/readiness, then opens only approved Slice15 and reports its prompt through the Operator; material drift returns to CDC |
 
 ### Historical Slice03 Closure And Slice13 Opening (Superseded Assignment)
 
@@ -290,6 +290,11 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.18 (2026-09-17): CRC acknowledges the arc directive in its actual
+  context against clean planning/source heads. Opening Slice15 remains
+  conditional on author reconnaissance and the approved eight-pair set;
+  200/355/0/355 coverage and all project/arc gates are unchanged.
 
 - 1.17 (2026-09-17): Answers CRC escalation01 after native sizing recount.
   Approves eight/twelve mode-role split under Slice15/16 and explicitly retains
