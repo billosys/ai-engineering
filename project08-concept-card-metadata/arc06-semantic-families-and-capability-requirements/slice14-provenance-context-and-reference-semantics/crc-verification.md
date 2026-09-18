@@ -1,4 +1,7 @@
-# Slice14 CRC Verification: Changes Required
+# Slice14 CRC Verification
+
+Current verdict: **accepted** after independent iteration03 review below. The
+earlier changes-required findings remain as chronological review history.
 
 Date: 2026-09-17. Reviewer: independent CRC context. CC endpoint:
 `6003975321334a0ad554d92663836317b71bd6ce`; committed replay/attestation
@@ -85,3 +88,58 @@ the existing evidence-integrity criterion, not a new scope or schema rule.
 The next preserved CC assignment is `cc-prompt-iteration03.md`; CRC will
 independently replay the corrected endpoint before closure. Slice15 remains
 unopened pending Slice14 closure and CDC-governed sizing.
+
+## Iteration03 Independent Review: Accepted
+
+Date: 2026-09-17. CC contribution `b10bb1ec`; separately committed recipe
+`a4a7047c`; planning HEAD at review `d38fc3edc8e3f004b3c7d573f6a555c3e4d5b4fb`;
+source HEAD `76a69fd9c295e78f23faa651746c2e36646e0ebd`.
+Both worktrees were clean before CRC's planning updates. The contribution
+changed exactly the six authorized files; whitespace checks passed.
+
+I extracted and executed the literal recipe from the committed recipe
+revision with `CC_COMMIT=b10bb1ec`. It exited 0 and independently reproduced
+the twelve selected mappings, 2,054 legacy mappings, 42 registered hashes,
+42 resolved reading ranges, three frozen YAML-error exclusions and 15
+no-frontmatter records. I also resolved each numeric `source_range` against
+its registered root, read mode and authority commit. The four previously
+invalid ranges now end within the pinned files: `projectLedger` lines 1-43,
+`slicePlan` lines 1-249, `assignmentPrompt` lines 1-247, and
+`slice03ReplayContract` lines 1-93. Non-line JSON and multi-span descriptors
+retain their explicit interpretation. R5 is resolved.
+
+Native positive cases and wrong-actor, absence/null, invalid-member,
+dangling-reference, YAML-exclusion, out-of-bounds and reversed-range controls
+produced the expected distinct outcomes. No-match returned `[]` with status
+0; missing input returned status 2. The older recipe revision `8e6b6770`
+was rejected with status 1, and a missing recipe at `2fa4c2a5` with status
+2. Source HEAD had advanced from the opening commit, but registered relevant
+source bytes matched; no global-HEAD-equality assertion was used. The
+membership meanings remain bounded to observed contexts and retain identity,
+subject, source and authority distinctions. Mechanical checks are evidence
+for this bounded semantic disposition, not schema or runtime validation.
+
+| Row | CRC disposition |
+| --- | --- |
+| S14-1 | Done: exact twelve-pair set, accepted-set disjointness, frozen inclusion and 355 outside pairs reproduced. |
+| S14-2 | Done: selected native census and frozen parse-error/no-frontmatter, parent-absent/child-null distinctions reproduced. |
+| S14-3 | Done: member and shared meanings were inspected against the bounded populated/template witnesses; no cross-kind principal equivalence is asserted. |
+| S14-4 | Done: native diagnostics, negative controls, successful no-match and real error remain distinct. |
+| S14-5 | Done: committed replay, 42 hashes/ranges, mutation and endpoint controls, preservation, exact file scope and whitespace passed. |
+| S14-6 | Done: handoff preserves broader provenance, unresolved identity/authority questions, all 355 outside pairs and P-15 without opening or deciding Slice15. |
+
+The CC closing report lacks a separately titled bubble-up section, but its
+row walk and handoff preserve the substantive unresolved questions. This is
+a non-blocking report-format gap, not a missing semantic or ownership gate.
+CRC accepts all six rows and transfers exactly twelve pairs to accepted
+coverage: 200 accepted / 355 remaining / zero assigned. This is independent
+slice verification, not CDC arc composition, schema adoption, memory admission
+or Operator acceptance.
+
+### Bubble-up To Arc06
+
+Slice15 remains unsized. Its 20 actor.mode/actor.role pairs, remaining
+run/preparation/method/shared-reference responsibilities and CQ provenance
+interfaces still have Arc06 ownership. The next structural sizing decision
+belongs to CDC through a preserved CRC escalation; no successor slice or
+implementation prompt is opened by this verdict.

@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice14-provenance-context-and-reference-semantics
-status: open
+status: closed
 depends-on: [slice13-provenance-family-semantics, slice03-provenance-and-shared-reference-contracts]
-version: "1.3"
+version: "1.4"
 ---
 
 # Actor Identity In Supporting And Result Records
@@ -22,10 +22,11 @@ retains design/escalation and arc/project composition. Expedited Mode applies.
 See [the initial CRC directive](../../cdc-directive01.md) and the project
 Design Handoff History. P-15 and every semantic criterion remain unchanged.
 
-Current assignment: cc-prompt-iteration03.md, a bounded correction of
-registered evidence ranges after CRC review of executed iteration02. Return
-CC results to CRC through the Operator. The chronological CRC verdicts are in
-crc-verification.md; no routine second CDC slice approval is required.
+Final assignment: cc-prompt-iteration03.md, the bounded registered-range
+correction after CRC review of executed iteration02. CC committed b10bb1ec
+and separate recipe a4a7047c. CRC independently accepted all six rows in
+crc-verification.md. No routine second CDC slice approval is required.
+Slice15 remains unopened pending CDC sizing of the retained obligations.
 
 ### Assignment History
 
@@ -34,7 +35,7 @@ crc-verification.md; no routine second CDC slice approval is required.
 | cc-prompt.md | 2026-09-17 | none | Initial 12-pair complement under CDC/CC | Superseded for routing; preserved unchanged; no execution recorded |
 | cc-prompt-iteration01.md | 2026-09-17 | cc-prompt.md | Operator-selected CRC review and three-contributor transition | Executed at 60039753; CRC changes required in crc-verification.md |
 | cc-prompt-iteration02.md | 2026-09-17 | cc-prompt-iteration01.md | Correct four CRC findings within the same six-row contract | Executed at ee80f914 with replay revision 3372da88; CRC R1-R4 resolved, R5 changes required |
-| cc-prompt-iteration03.md | 2026-09-17 | cc-prompt-iteration02.md | Correct out-of-bounds registered reading ranges and make replay reject them | Current; issued to CC through Operator; second requested corrective pass |
+| cc-prompt-iteration03.md | 2026-09-17 | cc-prompt-iteration02.md | Correct out-of-bounds registered reading ranges and make replay reject them | Executed at b10bb1ec with recipe a4a7047c; independently accepted by CRC; second corrective pass |
 
 The routing replacement did not consume a refinement pass. Iteration02 was
 the first executed corrective pass; iteration03 is the second requested pass.
@@ -228,6 +229,11 @@ headroom, stop with an evidence-backed sizing proposal; keep requirements and
 ownership, and do not start an unbounded batch hierarchy.
 
 ## Version History
+
+- 1.4 (2026-09-17): CRC independently accepts iteration03 and closes all six
+  rows. Exactly twelve actor/actor.id pairs enter accepted coverage once:
+  200 accepted / 355 remaining / zero assigned. Slice15 still requires CDC
+  sizing; P-15 and arc/project gates remain open.
 
 - 1.3 (2026-09-17): CRC review of the executed iteration02 packet reproduced
   R1-R4 repairs but found out-of-bounds registered reading ranges under S14-5.

@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.14"
+version: "1.15"
 ---
 
 # Semantic Families And Capability Requirements
@@ -21,6 +21,14 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
 
+Slice14 iteration03 is independently CRC-accepted on 2026-09-17. Its twelve
+actor/actor.id pairs enter coverage once: 200 accepted / 355 remaining /
+zero assigned. The CRC record preserves R1-R5 history and the final committed
+replay, registered-range, negative-control and bounded semantic checks.
+Slice15 is not opened by this closure: CDC must size or split its retained
+provenance work through the design-handoff route. All A6 rows and P-15 stay
+open. Was: Slice14 iteration03 CC proposed-done, twelve pairs assigned.
+
 Slice13 repair d94ab1c6 is independently accepted on 2026-09-17; all six
 rows close and its eight pairs enter coverage once. The CDC record preserves
 R1-R4 history, the literal replay's stale source-HEAD failure, and the equivalent
@@ -28,20 +36,23 @@ pinned-input execution: 51 hashes, native census/controls, both evidence layers,
 original/copy mappings and preservation pass. CC supporting artifacts are unchanged.
 Was: bounded Iteration 01 pending; no semantic memberships accepted.
 
-Open Slice14 only for actor/actor.id across the other six kinds, 12 pairs.
+The prior opening bounded Slice14 to actor/actor.id across the other six kinds,
+12 pairs.
 Its frozen population is 12 records: six templates, two synthetic examples,
 four populated pilot supports. Planned Slice15 retains the 20 actor.mode/
 actor.role pairs plus all other original run/preparation/method/shared-reference
 responsibilities and remaining CQ provenance interfaces. Size/split that
 remainder before opening. This implements the existing late-sizing authority,
 not a scope reduction or adoption of an actor model.
-Live counts: 188 accepted / 367 remaining / 12 assigned / 355 not yet sliced.
+At Slice14 opening: 188 accepted / 367 remaining / 12 assigned / 355 not yet
+sliced.
 All arc rows and P-15 remain open. Effective from Slice14, the Operator selected
 CDC + CRC + CC with Expedited Mode; was: CDC + CC. See the project
 [initial directive](../cdc-directive01.md) and project Design Handoff History.
 CRC owns routine slice review and advancement within this approved plan;
 CDC owns structural amendments and independent arc composition review.
-The new Slice14 assignment is cc-prompt-iteration01.md, replacing routing only;
+The initial three-contributor Slice14 assignment was cc-prompt-iteration01.md,
+replacing routing only;
 its original cc-prompt.md remains preserved. CRC must acknowledge the directive
 before releasing the assignment. No implementation pass is inferred.
 New slice verdicts use crc-verification.md; this arc's future closure needs
@@ -131,7 +142,7 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 
 Current coverage is recorded separately in
 [semantic-coverage-current.json](../artifacts/semantic-coverage-current.json):
-188 accepted, 367 remaining, 12 assigned to Slice14 and 355 not yet sliced.
+200 accepted, 355 remaining, zero assigned and 355 not yet sliced.
 The original transition and its registered hashes remain unchanged. Slice12
 contributes repairs to Slice01, not a second 35-pair acceptance.
 
@@ -256,6 +267,11 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.15 (2026-09-17): CRC accepts Slice14's six rows and twelve bounded
+  actor-identity pairs. Current coverage becomes 200/355/0/355. Slice15 stays
+  unsized pending CDC design handoff; all arc rows and P-15 remain open.
+  Was: Slice14 assigned at 188/367/12/355.
 
 - 1.14 (2026-09-17): Applies Operator-selected three-contributor workflow
   from Slice14 with Expedited Mode. CRC takes routine reviews; CDC retains

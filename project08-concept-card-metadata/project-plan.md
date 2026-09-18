@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.28"
+version: "1.29"
 ---
 
 # Concept Card Metadata
@@ -108,8 +108,9 @@ Preserve all 115 transition-accepted contextual pairs and all original criteria.
 The initial remainder was 440. After Slice12 repair and original Slice01
 recomposition, 150 were accepted and 405 remained. Slice02's independent
 closure added 30 CQ pairs, reaching 180 accepted / 375 remaining. Slice13's
-independent closure adds eight actor-identity pairs: now 188 accepted / 367
-remaining; use the
+independent closure adds eight actor-identity pairs; Slice14's independent
+CRC closure adds twelve more: now 200 accepted / 355 remaining, zero assigned.
+Use the
 [current coverage register](./artifacts/semantic-coverage-current.json).
 The transition snapshot stays immutable. Process the remainder by family, retaining
 exact field-path/record-kind accounting plus finer corpus/role distinctions.
@@ -210,7 +211,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12/13 closed; Slice14 opens 12 actor-identity pairs; Slice15 retains broader provenance for sizing |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12/13/14 closed; 200 accepted and 355 remaining; Slice15 retains broader provenance for CDC sizing |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -225,8 +226,8 @@ checkout advanced outside the relevant skills; the CDC report records the
 failed literal HEAD guard and the equivalent pinned-input replay explicitly.
 No CC supporting artifact was repaired by the reviewer.
 
-Current accounting: 188 accepted / 367 remaining; 12 assigned to Slice14 and
-355 not yet sliced. Slice14 is bounded to actor/actor.id in memory-admission,
+Current accounting: 200 accepted / 355 remaining; zero assigned and 355 not
+yet sliced. Slice14 accepted actor/actor.id in memory-admission,
 preservation-decision, relationship-edge, source-locator, source-support and
 validation-result. Planned Slice15 retains all other original provenance work,
 including the 20 actor.mode/actor.role pairs, run/preparation/method/shared
@@ -445,6 +446,12 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.29 (2026-09-17): Independent CRC review closes Slice14's six rows and
+  accepts twelve bounded actor-identity pairs, bringing live coverage to
+  200/355/0/355. Slice15 remains unsized under CDC design authority; all
+  Arc06 and project rows, P-15 and the UAT obligations remain open. Was:
+  Slice14 assigned at 188/367/12/355.
 
 - 1.28 (2026-09-17): Operator selects CDC/CRC/CC plus Expedited Mode for
   remaining Project08 from Slice14. Records seats, authority, initial directive,
