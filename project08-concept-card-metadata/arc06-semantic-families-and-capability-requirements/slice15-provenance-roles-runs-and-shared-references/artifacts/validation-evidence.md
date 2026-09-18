@@ -309,7 +309,15 @@ structural replay evidence only.
   dangling evidence, out-of-bounds range, and reversed range returned status
   1; real no-match returned status 0 with `[]`; missing input returned status
   2; unrelated-head fixture passed; semantic acceptance not claimed.
-- Same-revision committed wrapper preflight: pending.
-- Stale valid-recipe rejection: pending.
-- Missing recipe-file rejection: pending.
+- Same-revision committed wrapper preflight: status 0 with
+  `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=678a8c76`; the registry was loaded
+  from the CC endpoint and the route was extracted from that commit.
+- Stale/foreign recipe endpoint rejection: status 2 with
+  `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=8e6b6770`; the current Slice15
+  recipe path was absent at the older endpoint and the wrapper stopped before
+  execution. This is a fail-closed stale/foreign-path control; no prior valid
+  Slice15 recipe existed at the opening commit.
+- Missing recipe-file rejection: status 2 with
+  `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=4db8d882`; the wrapper stopped before
+  execution because the recipe path was absent.
 - Separate committed CC/recipe replay: pending.
