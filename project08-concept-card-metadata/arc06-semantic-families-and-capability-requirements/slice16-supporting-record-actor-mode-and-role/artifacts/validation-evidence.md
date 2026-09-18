@@ -324,3 +324,14 @@ status 1 for wrong YAML, invalid membership, dangling evidence, wrong hash,
 out-of-bounds range, reversed range, wrong mode, wrong role, swapped mode/role
 and support propagation; missing input returned status 2; no-match returned
 `{"count":0,"actors":[]}`.
+
+## Committed endpoint observations
+
+The committed wrapper loaded both the registry and recipe from CC endpoint
+`2953953d` and passed with status 0. The required fail-closed endpoint checks
+also passed: using valid CC endpoint `2953953d` with the opening planning
+commit `3b7790f88cd30fa6c4988a6950b4989ae1933b7d` as the recipe endpoint
+returned status 2 because the recipe path was absent, and using source commit
+`ce3f77103eff5e07b3533a03c65f158684fc1039` as the recipe endpoint returned
+status 2 for the foreign-endpoint condition. The wrapper did not silently
+fall back to the working tree.
