@@ -47,8 +47,8 @@ No crc-verification.md or cdc-verification.md was created.
 
 The literal route is registered in artifacts/validation-evidence.md. Iteration03
 records the precommit run, committed-wrapper preflight, and stale/missing
-recipe rejections. The separate-revision committed replay is recorded in the
-follow-up recipe revision below.
+recipe rejections. The status-0 separate-revision replay used
+CC_COMMIT=b10bb1ec and REPLAY_COMMIT=a4a7047c; the endpoints are distinct.
 It also records the registered-range checks and out-of-bounds/reversed negative
 controls, the unrelated-HEAD fixture, the derived three-path YAML
 exclusion set, and the prior CRC R1-R4 findings as repaired. The intake and

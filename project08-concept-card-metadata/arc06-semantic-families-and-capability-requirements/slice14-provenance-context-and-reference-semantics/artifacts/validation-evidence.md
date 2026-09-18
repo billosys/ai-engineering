@@ -739,3 +739,11 @@ inventory input. No status-0 route run is a semantic-acceptance decision.
 - iteration03 missing recipe-file rejection: status 2 with
   CC_COMMIT=b10bb1ec and REPLAY_COMMIT=2fa4c2a5273485d5bdf5bfba9a59677df79d14cf;
   the committed wrapper stopped because the recipe path was absent.
+- iteration03 committed separate-revision replay: status 0 with
+  CC_COMMIT=b10bb1ec and REPLAY_COMMIT=a4a7047c; selected census 12 and legacy
+  comparison 2054; 17 registered source-snapshot hashes passed byte comparison;
+  42 registered ranges passed, with multi-span and JSON descriptor status 0 and
+  out-of-bounds/reversed negative controls status 1; derived YAML-error count 3
+  and no-frontmatter count 15; unrelated-HEAD, wrong-expectation, no-match,
+  missing-input and preservation controls passed; semantic acceptance not
+  claimed. The endpoints are distinct revisions.
