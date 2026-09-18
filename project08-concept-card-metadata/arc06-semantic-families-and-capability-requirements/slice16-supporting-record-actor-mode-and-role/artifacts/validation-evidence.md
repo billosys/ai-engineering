@@ -345,3 +345,8 @@ The separate committed replay then loaded the registry from CC endpoint
 `2953953d` and the recipe bytes from replay endpoint `9f9ad2bf`; it passed with
 status 0. The endpoint pair is intentionally recorded separately so the
 recipe used for this observation is not inferred from the registry commit.
+
+After adding the explicit absence-as-null control, the final committed replay
+loaded the registry from `2953953d` and the recipe bytes from `39da2b4b`; it
+passed with status 0. The final route output recorded `absence_status=1` along
+with the other fail-closed mutation statuses.

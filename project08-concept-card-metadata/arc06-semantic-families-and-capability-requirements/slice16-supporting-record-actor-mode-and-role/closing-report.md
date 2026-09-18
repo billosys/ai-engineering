@@ -38,9 +38,11 @@ The committed wrapper loaded both registry and recipe from CC endpoint
 endpoint `3b7790f88cd30fa6c4988a6950b4989ae1933b7d` and the foreign source
 recipe endpoint `ce3f77103eff5e07b3533a03c65f158684fc1039` each failed closed
 with status 2. The separate committed replay used registry endpoint
-`2953953d` and recipe endpoint `9f9ad2bf`, and passed with status 0. CRC
-remains responsible for independent reproduction and CDC remains responsible
-for composition.
+`2953953d` and recipe endpoint `9f9ad2bf`, and passed with status 0. After the
+explicit absence-as-null control was added, the final committed replay used
+registry endpoint `2953953d` and recipe endpoint `39da2b4b`, and passed with
+status 0. CRC remains responsible for independent reproduction and CDC remains
+responsible for composition.
 
 ## Proposed-done limits
 
