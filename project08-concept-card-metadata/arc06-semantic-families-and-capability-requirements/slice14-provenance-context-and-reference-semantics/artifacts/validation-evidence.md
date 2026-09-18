@@ -727,3 +727,15 @@ inventory input. No status-0 route run is a semantic-acceptance decision.
   2054; YAML-error count 3 and no-frontmatter count 15; unrelated-HEAD,
   wrong-expectation, no-match, missing-input and preservation controls matched
   the predecessor route; semantic acceptance not claimed.
+- iteration03 same-revision committed-wrapper preflight: status 0 with
+  CC_COMMIT=b10bb1ec and REPLAY_COMMIT=b10bb1ec; registry was loaded from the
+  CC endpoint and the literal route was extracted from that revision. The
+  range, census, control and preservation outcomes matched precommit. This is
+  a wrapper preflight, not the required separate-revision result.
+- iteration03 stale valid recipe rejection: status 1 with
+  CC_COMMIT=b10bb1ec and REPLAY_COMMIT=8e6b67708eeeca391a139bb8d1b710633cfbbeb4;
+  the older valid recipe rejected the current source/opening contract before
+  execution.
+- iteration03 missing recipe-file rejection: status 2 with
+  CC_COMMIT=b10bb1ec and REPLAY_COMMIT=2fa4c2a5273485d5bdf5bfba9a59677df79d14cf;
+  the committed wrapper stopped because the recipe path was absent.
