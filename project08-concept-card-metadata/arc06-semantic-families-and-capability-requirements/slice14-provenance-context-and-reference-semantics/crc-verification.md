@@ -29,7 +29,7 @@ acceptance. No semantic pair is accepted and coverage remains 188/367/12/355.
 | R3 | S14-5 | The route requires current source HEAD to equal the opening source commit (`validation-evidence.md`, lines 84-85, 484), contrary to slice-plan lines 185-193 and the issued prompt, which explicitly allow an unrelated global HEAD advance when registered inputs and relevant paths are unchanged. | Remove the global HEAD equality gate; retain source cleanliness, relevant-path/registered-byte comparisons, and explicit old/current commit and hash reporting. Exercise a bounded unrelated-HEAD case without changing source files or weakening material-drift rejection. |
 | R4 | S14-2, S14-5 | The route checks only authored parse-exclusion count, list length and prose. It does not derive the three excluded YAML-error paths from the frozen inventory and compare them to the authored list. An arbitrary three-path substitution would pass this check. The frozen inventory has exactly the three named rich-rerun YAML errors, distinct from no-frontmatter entries. | Derive the scoped YAML-error path set from pinned inventory error records; compare exact paths and count to the authored exclusions. Include a wrong-exclusion negative control, and retain error versus absence distinctions. |
 
-## Row Disposition And Handoff
+## Iteration01 Row Disposition And Handoff
 
 S14-1, S14-4 and S14-6 have no finding in this review, but the slice is not
 partially accepted. S14-2, S14-3 and S14-5 need correction and fresh replay.
@@ -40,3 +40,48 @@ no CDC escalation is needed. Assignment:
 `cc-prompt-iteration02.md` in this slice root. After CC returns, CRC must
 independently replay the corrected packet and issue a new verdict before
 acceptance or advancement.
+
+## Iteration02 Independent Review: Changes Required
+
+Date: 2026-09-17. CC contribution `ee80f9149a8badaa998ef65e5b8e17239164cb5f`;
+separate recipe `3372da88c5ed2d9d070a89974473532ff0f29e4a`; reviewed planning
+HEAD `eab5e69c02afc1cce0cb983d8ba26f893a0902c0`; source HEAD
+`76a69fd9c295e78f23faa651746c2e36646e0ebd`. Both checkouts were clean.
+The CC contribution changed exactly the six allowed files.
+
+I independently executed the literal recipe from `3372da88` against registry
+`ee80f914`; it exited 0. It reproduced twelve selected mappings, 2,054
+legacy mappings, 42 evidence hashes, three YAML-error exclusions and 15
+no-frontmatter records. Wrong actor, absence/null, wrong-exclusion,
+invalid-member and dangling-reference controls rejected; no-match returned
+status 0 with `[]`, while missing inventory returned status 2. Current source
+HEAD differs from opening HEAD but registered relevant source bytes still
+matched. Native member and shared meanings now correctly say four populated
+pilot supports and one template/null. R1-R4 from iteration01 are resolved
+within their stated scope, not promoted to schema or operator acceptance.
+
+**R5, S14-5: registered reading ranges exceed pinned inputs.** The registry's
+`source_range` values are evidence-location claims required by slice-plan
+lines 120-127. I resolved each row at its declared root, read mode and
+authority commit and compared the largest cited line to the file length:
+
+| Evidence ID | Registered range | Pinned file lines |
+| --- | --- | ---: |
+| `projectLedger` | `lines 1-45` | 43 |
+| `slicePlan` | `lines 17-225` | 223 |
+| `assignmentPrompt` | `lines 1-236` | 72 |
+| `slice03ReplayContract` | `lines 1-100` | 93 |
+
+The other numeric ranges are in bounds. The literal route never reads
+`source_range`, so a whole-file hash pass cannot catch these false reading
+locations. Correct the four registrations against the pinned bytes and add a
+fail-closed line-range check over all 42 evidence rows with an out-of-bounds
+negative control. Preserve non-line `JSON document` range descriptions.
+
+S14-1 through S14-4 and S14-6 have no remaining finding in this review, but
+the slice is not partially accepted. S14-5 remains changes-required, and no
+semantic pair or coverage row is accepted. This is a bounded correction within
+the existing evidence-integrity criterion, not a new scope or schema rule.
+The next preserved CC assignment is `cc-prompt-iteration03.md`; CRC will
+independently replay the corrected endpoint before closure. Slice15 remains
+unopened pending Slice14 closure and CDC-governed sizing.

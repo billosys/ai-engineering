@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice14-provenance-context-and-reference-semantics
 status: open
 depends-on: [slice13-provenance-family-semantics, slice03-provenance-and-shared-reference-contracts]
-version: "1.2"
+version: "1.3"
 ---
 
 # Actor Identity In Supporting And Result Records
@@ -22,9 +22,9 @@ retains design/escalation and arc/project composition. Expedited Mode applies.
 See [the initial CRC directive](../../cdc-directive01.md) and the project
 Design Handoff History. P-15 and every semantic criterion remain unchanged.
 
-Current assignment: cc-prompt-iteration02.md, the first executed refinement
-pass after CRC's changes-required review of cc-prompt-iteration01.md. Return CC
-results to CRC through the Operator. The CRC verdict is in
+Current assignment: cc-prompt-iteration03.md, a bounded correction of
+registered evidence ranges after CRC review of executed iteration02. Return
+CC results to CRC through the Operator. The chronological CRC verdicts are in
 crc-verification.md; no routine second CDC slice approval is required.
 
 ### Assignment History
@@ -33,12 +33,28 @@ crc-verification.md; no routine second CDC slice approval is required.
 | --- | --- | --- | --- | --- |
 | cc-prompt.md | 2026-09-17 | none | Initial 12-pair complement under CDC/CC | Superseded for routing; preserved unchanged; no execution recorded |
 | cc-prompt-iteration01.md | 2026-09-17 | cc-prompt.md | Operator-selected CRC review and three-contributor transition | Executed at 60039753; CRC changes required in crc-verification.md |
-| cc-prompt-iteration02.md | 2026-09-17 | cc-prompt-iteration01.md | Correct four CRC findings within the same six-row contract | Current; issued to CC through Operator; first executed refinement pass |
+| cc-prompt-iteration02.md | 2026-09-17 | cc-prompt-iteration01.md | Correct four CRC findings within the same six-row contract | Executed at ee80f914 with replay revision 3372da88; CRC R1-R4 resolved, R5 changes required |
+| cc-prompt-iteration03.md | 2026-09-17 | cc-prompt-iteration02.md | Correct out-of-bounds registered reading ranges and make replay reject them | Current; issued to CC through Operator; second requested corrective pass |
 
-The routing replacement did not consume a refinement pass. Iteration02 is the
-first requested corrective pass; count it when executed. Preserve both issued
-predecessors unchanged. CC does not write either reviewer verdict, accept
-memberships, amend plans or open the next slice.
+The routing replacement did not consume a refinement pass. Iteration02 was
+the first executed corrective pass; iteration03 is the second requested pass.
+Preserve all issued predecessors unchanged. CC does not write either reviewer
+verdict, accept memberships, amend plans or open the next slice.
+
+### Iteration03 Author Readiness
+
+CRC inspected the current 42-row registry and literal route at planning
+`eab5e69c`, independently replayed contribution `ee80f914` with recipe
+`3372da88`, and resolved every numeric range at its declared evidence
+revision. Four ranges exceed their pinned file lengths; the route does not
+read `source_range`. The new prompt's `Inspected Baseline`, `Implementation
+Spine And Code Shape`, and `Test Oracles And Required Gates` sections record
+the source-grounded design, exact correction sites, an illustrative Bash/jq
+predicate and falsifiable controls. Its `Baseline And Required Reading`
+manifest bounds current plans and heavy artifacts while retaining full active
+prompt/plan/ledger/registry/route reads and intake headroom. Applied source
+guidance is cited in the prompt; JSON descriptors and historical prompts
+remain explicit boundaries. This is author self-review, not acceptance.
 
 ## Exact Scope And Sizing
 
@@ -212,6 +228,16 @@ headroom, stop with an evidence-backed sizing proposal; keep requirements and
 ownership, and do not start an unbounded batch hierarchy.
 
 ## Version History
+
+- 1.3 (2026-09-17): CRC review of the executed iteration02 packet reproduced
+  R1-R4 repairs but found out-of-bounds registered reading ranges under S14-5.
+  Issues preserved iteration03 with the same twelve pairs, six-row contract
+  and six-file output fence. No acceptance or Slice15 opening occurred.
+
+- 1.2 (2026-09-17): CRC review of iteration01 found R1-R4, recorded a
+  changes-required verdict and issued iteration02 without changing scope.
+  This history entry records the already-made 1.2 plan change; it does not
+  retroactively alter that issued assignment.
 
 - 1.1 (2026-09-17): Operator-selected three-contributor transition changes
   routine reviewer to CRC and current assignment to preserved sibling
