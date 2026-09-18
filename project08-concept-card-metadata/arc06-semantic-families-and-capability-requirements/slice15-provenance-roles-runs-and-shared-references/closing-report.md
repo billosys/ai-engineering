@@ -58,6 +58,15 @@ wrapper preflight, stale valid-recipe rejection, missing-recipe rejection,
 and separate committed CC/recipe replay. A status-0 replay is structural
 evidence only; it does not accept semantic membership or close P-15.
 
+Recorded route outcomes are: precommit status 0 at opening planning
+`4db8d882`; same-revision wrapper status 0 at `CC_COMMIT=678a8c76`,
+`REPLAY_COMMIT=678a8c76`; stale/foreign and missing recipe-path controls status
+2; and separate committed replay status 0 at
+`CC_COMMIT=678a8c76`, `REPLAY_COMMIT=89568110`. The separate endpoints are
+distinct. The route derived 37 selected and 2,054 legacy records, 3 YAML
+errors, and 15 no-frontmatter records; all requested negative controls
+rejected and semantic acceptance remained unclaimed.
+
 ## Handoff and open gates
 
 `artifacts/handoff.md` returns the eight observations to the Operator, gives

@@ -320,4 +320,9 @@ structural replay evidence only.
 - Missing recipe-file rejection: status 2 with
   `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=4db8d882`; the wrapper stopped before
   execution because the recipe path was absent.
-- Separate committed CC/recipe replay: pending.
+- Separate committed CC/recipe replay: status 0 with
+  `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=89568110`; the endpoints are
+  distinct, the registry came from the CC endpoint, and the route came from
+  the recipe endpoint. The native census, 39 registered hashes/ranges,
+  mutation controls, no-match/missing-input controls, unrelated-head fixture,
+  and preservation checks matched precommit; semantic acceptance not claimed.
