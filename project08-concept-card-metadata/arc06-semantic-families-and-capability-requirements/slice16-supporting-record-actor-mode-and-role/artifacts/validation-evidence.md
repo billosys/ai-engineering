@@ -202,6 +202,10 @@ check_scope() { jq -e --argjson assignment "$assignment_json" '(.scope.assignmen
 check_registry() { jq -e --argjson assignment "$assignment_json" '(.evidence|map(.evidence_id)) as $ids | (.memberships|map([.field_path,.record_kind])) as $pairs | (.memberships|map(.meaning_id)) as $member_meanings | (.meanings|to_entries|map(.value.evidence_ids[])|unique) as $meaning_evidence | (.memberships|map(.evidence_ids[])|unique) as $membership_evidence | (.scope.assignment == $assignment) and ((.memberships|length)==12) and (($pairs|unique|sort)==($assignment|unique|sort)) and (($member_meanings|unique|sort)==(.meanings|keys|sort)) and ((([.memberships[].evidence_ids[]]|unique)-$ids)|length==0) and (($meaning_evidence-$ids)|length==0) and (($membership_evidence-$ids)|length==0)' "$1" >/dev/null; }
 check_scope "$registry" || fail "scope boundary failed"
 check_registry "$registry" || fail "registry references or membership boundary failed"
+check_absence_boundary() { jq -e '[.native_census.mode_role_cells[]|select(.mode=="parent-absent" and .role=="parent-absent")]|length==2' <<< "$1" >/dev/null; }
+check_absence_boundary "$valid_registry" || fail "authored parent-absence boundary failed"
+absence_as_null=$(jq -c '.native_census.mode_role_cells[0].mode="child-null"' <<< "$valid_registry")
+if check_absence_boundary "$absence_as_null"; then fail "absence-as-null mutation was accepted"; else absence_status=$?; [[ "$absence_status" == 1 ]] || fail "absence-as-null control had unexpected status"; fi
 wrong_member=$(jq -c '.memberships[0].record_kind="claim"' <<< "$valid_registry")
 if printf '%s\n' "$wrong_member" | check_registry -; then fail "Slice15 or invalid member mutation was accepted"; else wrong_member_status=$?; [[ "$wrong_member_status" == 1 ]] || fail "invalid membership control had unexpected status"; fi
 mutated_evidence=$(jq -c '.meanings["actor.mode-source-support"].evidence_ids[0]="dangling-evidence-id"' <<< "$valid_registry")
@@ -297,7 +301,7 @@ fixture=$temp/support-propagation-fixture.json
 jq -n --arg id "$support_subject" --argjson actor "$expected_support" '{subject:{id:$id,actor:null},support:{subject_ref:$id,actor:$actor}}' > "$fixture"
 jq -e --arg id "$support_subject" '(.support.subject_ref==$id) and (.support.actor=={id:"codex-cc",mode:"agent-direct",role:"extractor"}) and (.subject.actor==null)' "$fixture" >/dev/null || fail "support propagation fixture failed"
 
-printf '%s\n' "native_census=$actual_census" "legacy_census=$legacy_census" "wrong_yaml_status=$wrong_yaml_status" "wrong_member_status=$wrong_member_status" "dangling_status=$dangling_status" "wrong_hash_status=$wrong_hash_status" "range_oob_status=$range_oob_status" "range_reversed_status=$range_reversed_status" "wrong_mode_status=$wrong_mode_status" "wrong_role_status=$wrong_role_status" "swapped_status=$swapped_status" "propagation_status=$propagation_status" "missing_status=$missing_status" "no_match=$no_match_output"
+printf '%s\n' "native_census=$actual_census" "legacy_census=$legacy_census" "wrong_yaml_status=$wrong_yaml_status" "wrong_member_status=$wrong_member_status" "dangling_status=$dangling_status" "wrong_hash_status=$wrong_hash_status" "range_oob_status=$range_oob_status" "range_reversed_status=$range_reversed_status" "absence_status=$absence_status" "wrong_mode_status=$wrong_mode_status" "wrong_role_status=$wrong_role_status" "swapped_status=$swapped_status" "propagation_status=$propagation_status" "missing_status=$missing_status" "no_match=$no_match_output"
 ~~~
 
 ## Recorded observations
@@ -321,8 +325,9 @@ The route passed with status 0 before the CC endpoint commit. Native output was
 populated support witnesses, three YAML exclusions, fifteen no-frontmatter
 records and 2,054 legacy parent-absent records. The negative controls returned
 status 1 for wrong YAML, invalid membership, dangling evidence, wrong hash,
-out-of-bounds range, reversed range, wrong mode, wrong role, swapped mode/role
-and support propagation; missing input returned status 2; no-match returned
+out-of-bounds range, reversed range, absence-as-null, wrong mode, wrong role,
+swapped mode/role and support propagation; missing input returned status 2;
+no-match returned
 `{"count":0,"actors":[]}`.
 
 ## Committed endpoint observations

@@ -28,7 +28,7 @@ package, memory or UAT artifact was changed.
 
 The precommit literal route passed. Its recorded expected failures are status
 1 for wrong YAML, invalid membership, dangling evidence, wrong hash,
-out-of-bounds range, reversed range, wrong mode, wrong role, swapped mode/role
+out-of-bounds range, reversed range, absence-as-null, wrong mode, wrong role, swapped mode/role
 and support-to-claim propagation; missing input returned status 2; a no-match
 returned `{"count":0,"actors":[]}`. These are fail-closed structural
 controls, not semantic acceptance.
