@@ -354,6 +354,17 @@ structural replay evidence only.
   the older/opening recipe-path checks returned status 2 because the Slice15
   recipe was absent. Those observations are not reused as current
   Iteration01 endpoints.
-- Iteration01 committed same-revision, missing/foreign recipe-path, and
-  separate CC/recipe outcomes are recorded after their commits below; no pair
-  moves to accepted coverage.
+- Iteration01 same-revision committed wrapper: status 0 with
+  `CC_COMMIT=610bdcb4` and `REPLAY_COMMIT=610bdcb4`; the registry came from
+  the CC endpoint and the repaired route came from that same commit.
+- Exploratory pre-repair recipe endpoint: status 1 with
+  `CC_COMMIT=610bdcb4` and `REPLAY_COMMIT=ea200f07`; that endpoint retained
+  the historical `4db8d882` opening fence and classified the iteration prompt
+  as out of scope. It is discarded and is not a valid current recipe result.
+- Missing/foreign recipe-path controls: status 2 with
+  `CC_COMMIT=610bdcb4` and `REPLAY_COMMIT=8e6b6770`, and with
+  `REPLAY_COMMIT=4db8d882`; both paths lack the Slice15 validation recipe and
+  the wrapper stopped before execution. No valid older Slice15 recipe exists
+  for a stale-valid-recipe claim.
+- Iteration01 separate CC/recipe replay is recorded after its distinct recipe
+  endpoint commit below; no pair moves to accepted coverage.

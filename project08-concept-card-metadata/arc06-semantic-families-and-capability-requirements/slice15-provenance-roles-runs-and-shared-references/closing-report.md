@@ -70,7 +70,11 @@ predicate rejects a three-path candidate with one plausible nonexistent path;
 and the endpoint wording now reports missing/foreign recipe-path status 2
 without inventing a valid stale predecessor. The route continues to derive
 37 selected and 2,054 legacy records, 3 YAML errors, and 15 no-frontmatter
-records; semantic acceptance remains unclaimed.
+records; semantic acceptance remains unclaimed. The same-revision committed
+wrapper passed at `CC_COMMIT=610bdcb4`/`REPLAY_COMMIT=610bdcb4`; the
+older/foreign endpoints `8e6b6770` and `4db8d882` returned status 2 because
+their Slice15 recipe path was absent. The distinct recipe-endpoint replay is
+recorded after its recipe commit.
 
 ## Handoff and open gates
 
