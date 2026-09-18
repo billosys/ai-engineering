@@ -111,7 +111,7 @@ closure added 30 CQ pairs, reaching 180 accepted / 375 remaining. Slice13's
 independent closure adds eight actor-identity pairs; Slice14's independent
 CRC closure adds twelve more; Slice15's independent CRC closure adds eight
 bounded mode/role pairs: now 208 accepted / 347 remaining / zero assigned.
-Slice16's twelve approved pairs await fresh readiness, not acceptance.
+Slice16's twelve approved pairs are assigned after fresh readiness, not accepted.
 Use the
 [current coverage register](./artifacts/semantic-coverage-current.json).
 The transition snapshot stays immutable. Process the remainder by family, retaining
@@ -217,7 +217,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12/13/14/15 closed; 208 accepted and 347 remaining; Slice16 approved for readiness, Slice17 retained for sizing |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12/13/14/15 closed; Slice16 open with twelve assigned; 208 accepted and 347 remaining; Slice17 retained for sizing |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -232,8 +232,8 @@ checkout advanced outside the relevant skills; the CDC report records the
 failed literal HEAD guard and the equivalent pinned-input replay explicitly.
 No CC supporting artifact was repaired by the reviewer.
 
-Current accounting: 208 accepted / 347 remaining; zero assigned after Slice15
-closure. Slice14 accepted actor/actor.id in memory-admission,
+Current accounting: 208 accepted / 347 remaining; twelve assigned to Slice16
+and 335 outside after fresh readiness. Slice14 accepted actor/actor.id in memory-admission,
 preservation-decision, relationship-edge, source-locator, source-support and
 validation-result. CDC's response to Arc06 escalation01 approves a kind-aligned
 mode/role split: eight pairs in Slice15 and twelve in Slice16. Slice17 explicitly
@@ -461,6 +461,9 @@ project requires an explicit operator decision recorded in the plan.
 
 ## Version History
 
+- 1.33 (2026-09-17): CRC opens CDC-approved twelve-pair Slice16 after native
+  recount and prompt-author readiness. Coverage is 208/347/12/335 with no
+  new acceptance; Slice17, P-15 and UAT gates remain unchanged.
 - 1.32 (2026-09-17): CRC independently accepts Slice15's eight bounded
   mode/role pairs after Iteration01, reaching 208/347/0/347. Slice16 awaits
   its own readiness; Slice17, P-15 and all real-use gates remain intact.
