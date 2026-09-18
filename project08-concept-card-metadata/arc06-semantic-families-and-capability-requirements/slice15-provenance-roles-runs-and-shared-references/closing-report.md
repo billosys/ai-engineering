@@ -74,7 +74,9 @@ records; semantic acceptance remains unclaimed. The same-revision committed
 wrapper passed at `CC_COMMIT=610bdcb4`/`REPLAY_COMMIT=610bdcb4`; the
 older/foreign endpoints `8e6b6770` and `4db8d882` returned status 2 because
 their Slice15 recipe path was absent. The distinct recipe-endpoint replay is
-recorded after its recipe commit.
+also passed at `CC_COMMIT=610bdcb4` and `REPLAY_COMMIT=02fb4ef8`; the registry
+was loaded from the CC endpoint and the repaired route from the distinct
+recipe endpoint.
 
 ## Handoff and open gates
 

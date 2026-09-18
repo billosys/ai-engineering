@@ -366,5 +366,10 @@ structural replay evidence only.
   `REPLAY_COMMIT=4db8d882`; both paths lack the Slice15 validation recipe and
   the wrapper stopped before execution. No valid older Slice15 recipe exists
   for a stale-valid-recipe claim.
-- Iteration01 separate CC/recipe replay is recorded after its distinct recipe
-  endpoint commit below; no pair moves to accepted coverage.
+- Iteration01 separate committed CC/recipe replay: status 0 with
+  `CC_COMMIT=610bdcb4` and `REPLAY_COMMIT=02fb4ef8`; the endpoints are
+  distinct, the registry came from the CC endpoint, and the repaired route came
+  from the recipe endpoint. The native census, 39 registered hashes/ranges,
+  mutation controls, no-match/missing-input controls, unrelated-head fixture,
+  and preservation checks matched precommit; semantic acceptance not claimed.
+- No pair moves to accepted coverage.
