@@ -1,6 +1,6 @@
 {
   "artifact_kind": "current-semantic-coverage",
-  "meaning": "Current accepted inventory interpretation. No next slice is assigned pending Slice15 sizing. Frozen semantic-transition-coverage.json remains unchanged; this register does not claim schema, source truth, extraction quality or memory acceptance.",
+  "meaning": "Current accepted inventory interpretation and bounded Slice15 assignment. Assignment is not acceptance. Frozen semantic-transition-coverage.json remains unchanged; this register does not claim schema, source truth, extraction quality or memory acceptance.",
   "basis": {
     "path": "artifacts/semantic-transition-coverage.json",
     "sha256": "3f1bf740a1c74f0e6c668b57d5c3eef5ba9ce936e56746817c2171a19daf17bd",
@@ -49,8 +49,8 @@
     "full": 555,
     "accepted": 200,
     "remaining": 355,
-    "next_slice": 0,
-    "not_yet_sliced": 355
+    "next_slice": 8,
+    "not_yet_sliced": 347
   },
   "accepted_pairs": [
     ["actor","claim"],
@@ -612,6 +612,15 @@
     ["worker_scope.worker_count","extraction-run"]
   ],
   "remaining_owner": "arc06-semantic-families-and-capability-requirements",
-  "next_slice": null,
-  "next_slice_pairs": []
+  "next_slice": "arc06-semantic-families-and-capability-requirements/slice15-provenance-roles-runs-and-shared-references",
+  "next_slice_pairs": [
+    ["actor.mode","claim"],
+    ["actor.mode","competency-question"],
+    ["actor.mode","concept-card"],
+    ["actor.mode","extraction-run"],
+    ["actor.role","claim"],
+    ["actor.role","competency-question"],
+    ["actor.role","concept-card"],
+    ["actor.role","extraction-run"]
+  ]
 }
