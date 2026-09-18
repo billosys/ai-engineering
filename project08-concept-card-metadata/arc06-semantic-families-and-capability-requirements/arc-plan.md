@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.19"
+version: "1.20"
 ---
 
 # Semantic Families And Capability Requirements
@@ -21,13 +21,12 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
 
-CRC acknowledged arc directive01, completed the pinned native recount and
-full-context witness review, and opened only the approved eight-pair Slice15.
-Live coverage is 200 accepted / 355 remaining / eight assigned / 347 outside.
-Its initial `cc-prompt.md` is the current CC assignment; CRC review follows
-CC proposed-done. Slice16 remains unopened pending Slice15 acceptance and its
-own readiness; Slice17 remains unsized. All A6 rows and P-15 stay open.
-Was: 200/355/0/355 with Slice15 issuance held for CRC readiness.
+CRC independently accepted Slice15 after its focused Iteration01 repair. The
+eight bounded mode/role pairs enter live coverage once: 208 accepted / 347
+remaining / zero assigned / 347 outside. Slice16 remains unopened pending its
+own current recount and prompt-author readiness; Slice17 remains unsized and
+requires CDC sizing. All A6 rows and P-15 stay open. Was: 200/355/8/347
+while Slice15's CC packet awaited independent review.
 
 Slice14 iteration03 is independently CRC-accepted on 2026-09-17. Its twelve
 actor/actor.id pairs entered coverage once; at that closure, accounting was
@@ -213,7 +212,7 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
 | `slice03-provenance-and-shared-reference-contracts` | Reusable planning-evidence/replay contract and two native worked cases; zero semantic pairs | Closed Slice01/02/12 | Closed with attributed minor CDC replay corrections |
 | `slice13-provenance-family-semantics` | Eight actor/actor.id pairs across claim, CQ, card and extraction-run | Closed Slice03 and accepted identity/source inputs | Independently closed after d94ab1c6; eight pairs accepted |
 | `slice14-provenance-context-and-reference-semantics` | 12 actor/actor.id pairs across remaining six record kinds | Closed Slice13 and shared replay contract | CRC-closed at febbd787; twelve pairs accepted |
-| `slice15-provenance-roles-runs-and-shared-references` | Eight actor.mode/actor.role pairs: claim, CQ, card and extraction-run; stable previously planned slug retained | Accepted Slice13/14 and arc directive01 | Open after CRC native recount/readiness; eight assigned, none accepted by opening |
+| `slice15-provenance-roles-runs-and-shared-references` | Eight actor.mode/actor.role pairs: claim, CQ, card and extraction-run; stable previously planned slug retained | Accepted Slice13/14 and arc directive01 | CRC-closed after Iteration01; eight bounded pairs accepted |
 | `slice16-supporting-record-actor-mode-and-role` | Twelve actor.mode/actor.role pairs in the other six actor-bearing kinds; cross-group comparison | Closed Slice15 plus accepted Slice14 | Approved future boundary; recount/readiness before opening |
 | `slice17-run-preparation-method-and-reference-provenance` | Remaining run identity/scope/workers/outputs, preparation links, method/prompt/time provenance, shared reference contracts and CQ provenance interfaces | Slice15/16 findings and accepted common contracts | Explicit unsized owner; CDC sizing before execution |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts and needed Slice13-17 provenance inputs | Plan when near |
@@ -300,6 +299,10 @@ change needs its own bounded explicit scope and verification.
 
 ## Version History
 
+- 1.20 (2026-09-17): CRC closes Slice15 after independently reproducing the
+  Iteration01 negative controls, native census and contextual meanings. Current
+  coverage is 208/347/0/347; Slice16 awaits fresh readiness, Slice17 CDC
+  sizing, and all arc/project gates remain open. No arc scope change.
 - 1.19 (2026-09-17): CRC opens CDC-approved Slice15 after acknowledged
   directive and pre-opening witness/readiness checks. Assigns exactly eight
   mode/role pairs at 200/355/8/347; no acceptance. Slice16/17 and all

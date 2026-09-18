@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice15-provenance-roles-runs-and-shared-references
-status: open
+status: closed
 depends-on: [slice13-provenance-family-semantics, slice14-provenance-context-and-reference-semantics]
-version: "1.1"
+version: "1.2"
 ---
 
 # Actor Mode And Role In Four Record Kinds
@@ -29,7 +29,7 @@ retains design, structural scope and arc/project composition authority.
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
 | cc-prompt.md | 2026-09-17 | arc directive01 and closed Slice14 | Eight kind-aligned mode/role pairs with native census, contextual meanings and replay | Returned at `178f1e6e`; CRC found R1-R3 in `crc-verification.md`; superseded for correction |
-| cc-prompt-iteration01.md | 2026-09-17 | Initial CC packet and CRC R1-R3 | Complete wrong-hash and wrong-exclusion controls; correct endpoint/control claims | Current CC correction assignment; pending execution |
+| cc-prompt-iteration01.md | 2026-09-17 | Initial CC packet and CRC R1-R3 | Complete wrong-hash and wrong-exclusion controls; correct endpoint/control claims | Executed at `610bdcb4`/`02fb4ef8`; CRC accepted in `crc-verification.md` |
 
 ## Exact Scope And Ownership
 
@@ -140,6 +140,9 @@ who authors an implementation repair needs another verifier.
 
 ## Version History
 
+- 1.2 (2026-09-17): CRC independently accepts Iteration01 and closes all six
+  rows. Eight bounded pairs enter current coverage once; Slice16 still needs
+  its own readiness and Slice17 retains CDC sizing.
 - 1.1 (2026-09-17): CRC review keeps Slice15 open and issues focused
   Iteration01 for two missing negative controls and accurate endpoint claims.
   The eight-pair boundary and downstream ownership are unchanged.

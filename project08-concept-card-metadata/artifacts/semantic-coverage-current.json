@@ -1,6 +1,6 @@
 {
   "artifact_kind": "current-semantic-coverage",
-  "meaning": "Current accepted inventory interpretation and bounded Slice15 assignment. Assignment is not acceptance. Frozen semantic-transition-coverage.json remains unchanged; this register does not claim schema, source truth, extraction quality or memory acceptance.",
+  "meaning": "Current accepted inventory interpretation after bounded Slice15 review. Frozen semantic-transition-coverage.json remains unchanged; this register does not claim schema, source truth, extraction quality or memory acceptance.",
   "basis": {
     "path": "artifacts/semantic-transition-coverage.json",
     "sha256": "3f1bf740a1c74f0e6c668b57d5c3eef5ba9ce936e56746817c2171a19daf17bd",
@@ -43,13 +43,23 @@
       "cc_commit": "b10bb1ec127568478bbd72f4ae929d4cb677c255",
       "replay_commit": "a4a7047cb171e66d7ec1b17ce7c3c2707c48a50b",
       "note": "Independent CRC acceptance of bounded actor/actor.id meanings; no global principal, authority, schema or memory claim."
+    },
+    {
+      "owner": "arc06-semantic-families-and-capability-requirements/slice15-provenance-roles-runs-and-shared-references",
+      "registry": "arc06-semantic-families-and-capability-requirements/slice15-provenance-roles-runs-and-shared-references/artifacts/semantic-membership.json",
+      "sha256": "c6cb82fc1bf49b4cc4b1ead8f086c0c8cfcfb0a9183e1973423c2936c9699b9f",
+      "review": "arc06-semantic-families-and-capability-requirements/slice15-provenance-roles-runs-and-shared-references/crc-verification.md",
+      "pairs": 8,
+      "cc_commit": "610bdcb4",
+      "replay_commit": "02fb4ef8",
+      "note": "Independent CRC acceptance of four-kind actor mode/role observations with absent, null and populated states; no global actor vocabulary, schema or authority claim."
     }
   ],
   "counts": {
     "full": 555,
-    "accepted": 200,
-    "remaining": 355,
-    "next_slice": 8,
+    "accepted": 208,
+    "remaining": 347,
+    "next_slice": 0,
     "not_yet_sliced": 347
   },
   "accepted_pairs": [
@@ -73,6 +83,14 @@
     ["actor.id","source-locator"],
     ["actor.id","source-support"],
     ["actor.id","validation-result"],
+    ["actor.mode","claim"],
+    ["actor.mode","competency-question"],
+    ["actor.mode","concept-card"],
+    ["actor.mode","extraction-run"],
+    ["actor.role","claim"],
+    ["actor.role","competency-question"],
+    ["actor.role","concept-card"],
+    ["actor.role","extraction-run"],
     ["aliases","concept-card"],
     ["aliases","untyped"],
     ["aliases[]","concept-card"],
@@ -255,20 +273,12 @@
     ["roles","competency-question"]
   ],
   "remaining_pairs": [
-    ["actor.mode","claim"],
-    ["actor.mode","competency-question"],
-    ["actor.mode","concept-card"],
-    ["actor.mode","extraction-run"],
     ["actor.mode","memory-admission"],
     ["actor.mode","preservation-decision"],
     ["actor.mode","relationship-edge"],
     ["actor.mode","source-locator"],
     ["actor.mode","source-support"],
     ["actor.mode","validation-result"],
-    ["actor.role","claim"],
-    ["actor.role","competency-question"],
-    ["actor.role","concept-card"],
-    ["actor.role","extraction-run"],
     ["actor.role","memory-admission"],
     ["actor.role","preservation-decision"],
     ["actor.role","relationship-edge"],
@@ -612,15 +622,6 @@
     ["worker_scope.worker_count","extraction-run"]
   ],
   "remaining_owner": "arc06-semantic-families-and-capability-requirements",
-  "next_slice": "arc06-semantic-families-and-capability-requirements/slice15-provenance-roles-runs-and-shared-references",
-  "next_slice_pairs": [
-    ["actor.mode","claim"],
-    ["actor.mode","competency-question"],
-    ["actor.mode","concept-card"],
-    ["actor.mode","extraction-run"],
-    ["actor.role","claim"],
-    ["actor.role","competency-question"],
-    ["actor.role","concept-card"],
-    ["actor.role","extraction-run"]
-  ]
+  "next_slice": null,
+  "next_slice_pairs": []
 }

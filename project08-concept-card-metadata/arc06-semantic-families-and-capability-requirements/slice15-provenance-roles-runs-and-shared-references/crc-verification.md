@@ -1,8 +1,8 @@
 # Slice15 CRC Verification
 
-Current verdict: **changes required**. This is independent CRC review of the
-initial `cc-prompt.md` packet, not CDC composition review or Operator acceptance.
-No pair is accepted; coverage remains 200/355/8/347 and Slice16 stays unopened.
+Current verdict: **accepted** after independent Iteration01 review below.
+The initial changes-required findings remain as historical review evidence.
+This is a CRC slice verdict, not CDC composition or Operator acceptance.
 
 Date: 2026-09-17. CC contribution `678a8c76`; recipe follow-up `89568110`;
 handoff/closing HEAD `178f1e6e`. Source HEAD
@@ -48,3 +48,56 @@ or plan change. The 347 outside pairs, P-15, CDC composition review, and UAT
 remain open. The next CC assignment is `cc-prompt-iteration01.md` in this
 slice root; CRC will independently replay its returned packet before any
 coverage transfer or Slice16 opening.
+
+## Iteration01 Independent Review: Accepted
+
+Date: 2026-09-17. Current assignment `cc-prompt-iteration01.md`. CC
+contribution `610bdcb4`, replay record `02fb4ef8`, closeout `db4f719f`.
+Current source HEAD `ce3f77103eff5e07b3533a03c65f158684fc1039` and
+planning HEAD `db4f719f` were clean before CRC edits. The five changed files
+from `ea200f07` through CC closeout are within the original six-file output
+fence; no source implementation file changed. Source movement from the
+initial Slice15 baseline touches neither `knowledge/concept-cards` nor
+`knowledge/document-extraction`; the two changed framework/prompt-guide
+evidence rows were repinned to their actual current bytes. The other 37
+evidence registrations retain their previous authorities.
+
+I executed the literal recipe extracted from `REPLAY_COMMIT=02fb4ef8` with
+`CC_COMMIT=610bdcb4`. It exited 0 and independently reproduced all 39
+registered hashes and reading ranges, the 37 selected/2,054 legacy native
+census, three exact YAML-error paths, 15 no-frontmatter records, eight exact
+memberships, source/plan preservation, and the five-file Iteration01 diff.
+The same production hash predicate rejected a single wrong SHA-256 candidate
+with status 1; the same exact-set exclusion predicate rejected a wrong
+three-path candidate with status 1. Wrong mode, wrong role, swapped children,
+absence-as-null, invalid member, dangling evidence, out-of-bounds and
+reversed ranges all rejected with status 1. Real no-match returned `[]`/0;
+missing input returned status 2. `git diff --check ea200f07..db4f719f`
+passed; both worktrees were clean at review intake.
+
+R1 and R2 are resolved by those same-predicate controls. R3 is resolved by
+accurate prose: the older/foreign endpoint checks are status-2 missing-path
+rejections, not tests of a present valid stale recipe. No prior valid
+Slice15 recipe is claimed. The supported meanings remain bounded to exact
+kind/family/revision observations and distinguish actor from CQ role arrays,
+worker scopes, source authors and review authority; replay success alone is
+not the semantic rationale.
+
+| Row | CRC disposition |
+| --- | --- |
+| S15-1 | Done: exact eight-pair remaining-set subset, no overlap or owner transfer. |
+| S15-2 | Done: 37 selected by kind/family/state, 2,054 legacy absent parents, exact three YAML exclusions and 15 no-frontmatter records reproduced. |
+| S15-3 | Done: eight member/shared interpretations inspected against template, synthetic and populated bodies; unknown vocabulary/authority remains explicit. |
+| S15-4 | Done: native positive and wrong-value/state controls and no-match versus error behavior reproduced. |
+| S15-5 | Done: pinned separate replay, all registered hashes/ranges, new and retained mutations, preservation, exact scope and whitespace reproduced. |
+| S15-6 | Done: handoff retains Slice16/17, all outside families, P-15 and UAT; no source/schema/memory claim. |
+
+The CC close report accounts for six opening rows and the durable four-file
+artifact inventory. It has no separately titled bubble-up section, but its
+handoff and final section account for all unresolved scope. This format gap
+does not hide an owner or change the arc. **Bubble-up to Arc06:** no arc-plan
+scope amendment is needed. Exactly eight pairs move to accepted coverage:
+208 accepted / 347 remaining / zero assigned / 347 outside at this close.
+Slice16's twelve pairs are approved for a separate readiness check, not
+accepted or opened by this verdict. Slice17 still needs CDC sizing; all A6
+rows, P-15 and UAT remain open.
