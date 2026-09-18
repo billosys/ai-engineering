@@ -7,9 +7,12 @@ review required. This report is not an acceptance verdict.
 
 Slice15 executed the initial `cc-prompt.md` for `actor.mode` and `actor.role`
 across claim, competency-question, concept-card, and extraction-run records.
-The exact eight pairs were preserved in the registry. The opening source was
-clean at `76a69fd9c295e78f23faa651746c2e36646e0ebd`; the opening canonical
-planning checkout was clean at `4db8d8829185ac8fa0a9d9c74783466cfd45682a`.
+The exact eight pairs were preserved in the registry. The authorized source
+baseline is clean at `ce3f77103eff5e07b3533a03c65f158684fc1039`; the
+iteration opening canonical planning checkout is clean at
+`ea200f07c38c43b85991426804dea10a4e250743`. The registry rebases only the two
+source evidence rows affected by the latest prompt-authorship changes; the
+ontology-support source files and native inventory remain unchanged.
 
 The six authorized output paths are the only intended planning changes:
 
@@ -49,23 +52,25 @@ frozen transition counts, preserves the six-file fence, and exercises:
 - wrong mode `human-assisted` and wrong role `validator` rejection;
 - swapped mode/role rejection;
 - absent-as-null rejection;
-- wrong YAML-exclusion, dangling evidence, and invalid membership rejection;
+- wrong registered-hash and wrong YAML-exclusion candidate rejection;
+- dangling evidence and invalid membership rejection;
 - real no-match with status 0 and `[]`; and
 - missing input with nonzero status.
 
-The final report must record the actual precommit status, same-revision
-wrapper preflight, stale valid-recipe rejection, missing-recipe rejection,
-and separate committed CC/recipe replay. A status-0 replay is structural
-evidence only; it does not accept semantic membership or close P-15.
+The final report records the actual precommit status, same-revision wrapper
+preflight, missing/foreign recipe-path rejection, and separate committed
+CC/recipe replay. The older/opening endpoint checks returned status 2 because
+no valid prior Slice15 recipe path existed; they are not a stale-valid-recipe
+semantic rejection. A status-0 replay is structural evidence only; it does
+not accept semantic membership or close P-15.
 
-Recorded route outcomes are: precommit status 0 at opening planning
-`4db8d882`; same-revision wrapper status 0 at `CC_COMMIT=678a8c76`,
-`REPLAY_COMMIT=678a8c76`; stale/foreign and missing recipe-path controls status
-2; and separate committed replay status 0 at
-`CC_COMMIT=678a8c76`, `REPLAY_COMMIT=89568110`. The separate endpoints are
-distinct. The route derived 37 selected and 2,054 legacy records, 3 YAML
-errors, and 15 no-frontmatter records; all requested negative controls
-rejected and semantic acceptance remained unclaimed.
+Iteration01 repairs are: the same 39-row hash predicate rejects a candidate
+with exactly one wrong `projectLedger` SHA-256; the same exact-set YAML
+predicate rejects a three-path candidate with one plausible nonexistent path;
+and the endpoint wording now reports missing/foreign recipe-path status 2
+without inventing a valid stale predecessor. The route continues to derive
+37 selected and 2,054 legacy records, 3 YAML errors, and 15 no-frontmatter
+records; semantic acceptance remains unclaimed.
 
 ## Handoff and open gates
 

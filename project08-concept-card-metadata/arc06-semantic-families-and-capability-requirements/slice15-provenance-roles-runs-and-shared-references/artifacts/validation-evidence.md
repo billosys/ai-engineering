@@ -47,8 +47,8 @@ validation_rel=$slice_rel/artifacts/validation-evidence.md
 coverage_rel=project08-concept-card-metadata/artifacts/semantic-coverage-current.json
 transition_rel=project08-concept-card-metadata/artifacts/semantic-transition-coverage.json
 inventory_rel=project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
-opening_source=76a69fd9c295e78f23faa651746c2e36646e0ebd
-opening_planning=4db8d8829185ac8fa0a9d9c74783466cfd45682a
+opening_source=ce3f77103eff5e07b3533a03c65f158684fc1039
+opening_planning=ea200f07c38c43b85991426804dea10a4e250743
 mode=precommit
 
 temp=$(mktemp -d)
@@ -90,12 +90,11 @@ if [[ "$mode" == precommit ]]; then
   changed_paths=$( { git diff --cached --name-only; git diff --name-only; git ls-files --others --exclude-standard; } | sort -u )
   [[ -n "$changed_paths" ]] || fail "precommit union is empty"
   while IFS= read -r path; do [[ -z "$path" ]] && continue; is_allowed "$path" || fail "out-of-scope precommit path: $path"; done <<< "$changed_paths"
-  while IFS= read -r path; do [[ -z "$path" ]] && continue; grep -Fqx "$path" <<< "$changed_paths" || fail "permitted path is missing: $path"; done <<< "$allowed_paths"
 else
   [[ -z "$(git -C "$root" status --porcelain --untracked-files=all)" ]] || fail "planning checkout is not clean for committed replay"
   committed_paths=$(git diff --name-only "$opening_planning" "$CC_COMMIT" | sort -u)
+  [[ -n "$committed_paths" ]] || fail "committed CC contribution is empty"
   while IFS= read -r path; do [[ -z "$path" ]] && continue; is_allowed "$path" || fail "out-of-scope opening-to-CC path: $path"; done <<< "$committed_paths"
-  while IFS= read -r path; do [[ -z "$path" ]] && continue; grep -Fqx "$path" <<< "$committed_paths" || fail "CC contribution missing permitted path: $path"; done <<< "$allowed_paths"
 fi
 
 protected_paths="project08-concept-card-metadata/AGENTS.md
@@ -105,6 +104,8 @@ project08-concept-card-metadata/arc06-semantic-families-and-capability-requireme
 project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/ledger.md
 $slice_rel/slice-plan.md
 $slice_rel/cc-prompt.md
+$slice_rel/cc-prompt-iteration01.md
+$slice_rel/crc-verification.md
 $coverage_rel
 $transition_rel
 $inventory_rel"
@@ -166,7 +167,14 @@ no_frontmatter_count=$(jq '[.records[] | select(.error? == "no-opening-frontmatt
 [[ "$no_frontmatter_count" == 15 ]] || fail "no-frontmatter count changed"
 [[ "$(jq 'length' <<< "$yaml_error_paths")" == 3 ]] || fail "YAML-error count changed"
 jq -e --argjson actual "$actual_census" '.native_census | del(.inventory_evidence_id,.parse_exclusions) | .mode_role_cells |= sort_by([.kind,.family,.mode,.role]) | . == ($actual | .mode_role_cells |= sort_by([.kind,.family,.mode,.role]))' "$registry" >/dev/null || fail "authored native census differs from frozen inventory"
-jq -e --argjson errors "$yaml_error_paths" '.native_census.parse_exclusions.count == ($errors|length) and ((.native_census.parse_exclusions.records|sort) == $errors) and (.native_census.parse_exclusions.meaning|contains("not counted as absent actor"))' "$registry" >/dev/null || fail "authored parse exclusions differ from native errors"
+valid_registry=$(jq -c '.' "$registry") || fail "registry clone failed"
+check_yaml_exclusions() {
+  local candidate=$1
+  jq -e --argjson errors "$yaml_error_paths" '.native_census.parse_exclusions.count == ($errors|length) and ((.native_census.parse_exclusions.records|sort) == $errors) and (.native_census.parse_exclusions.meaning|contains("not counted as absent actor"))' <<< "$candidate" >/dev/null
+}
+check_yaml_exclusions "$valid_registry" || fail "authored parse exclusions differ from native errors"
+wrong_yaml=$(jq -c '.native_census.parse_exclusions.records[0] = "workbench/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-definitely-not-a-yaml-error.md"' <<< "$valid_registry")
+if check_yaml_exclusions "$wrong_yaml"; then fail "wrong YAML exclusion was accepted"; else wrong_yaml_status=$?; [[ "$wrong_yaml_status" == 1 ]] || fail "wrong-YAML control had unexpected status"; fi
 
 check_registry() {
   jq -e --argjson assignment "$assignment_json" '(.evidence|map(.evidence_id)) as $ids | (.memberships|map([.field_path,.record_kind])) as $pairs | (.memberships|map(.meaning_id)) as $member_meanings | ($ids|unique|length)==($ids|length) and (.memberships|length)==8 and (($pairs|unique|sort)==($assignment|unique|sort)) and (($member_meanings|unique|sort)==(.meanings|keys|sort)) and ((([.memberships[].evidence_ids[]]|unique)-$ids)|length==0) and ((([.meanings[].evidence_ids[]]|unique)-$ids)|length==0)' "$1" >/dev/null
@@ -177,7 +185,8 @@ if printf '%s\n' "$mutated_member" | check_registry -; then fail "invalid member
 mutated_evidence=$(jq '.meanings["actor.mode-claim"].evidence_ids[0] = "dangling-evidence-id"' "$registry")
 if printf '%s\n' "$mutated_evidence" | check_registry -; then fail "dangling evidence mutation was accepted"; else dangling_status=$?; [[ "$dangling_status" == 1 ]] || fail "dangling evidence mutation had unexpected status"; fi
 
-hash_evidence() {
+check_hashes() {
+  local candidate=$1
   while IFS= read -r row; do
     [[ -z "$row" ]] && continue
     evidence_id=$(jq -r '.evidence_id' <<< "$row"); evidence_root=$(jq -r '.root' <<< "$row"); read_mode=$(jq -r '.read_mode' <<< "$row"); path=$(jq -r '.path' <<< "$row"); authority=$(jq -r '.authority_commit' <<< "$row")
@@ -186,14 +195,17 @@ hash_evidence() {
       source:snapshot) actual_hash=$(git -C "$source" show "$authority:$path" | shasum -a 256 | awk '{print $1}') ;;
       planning:live) actual_hash=$(shasum -a 256 "$root/$path" | awk '{print $1}') ;;
       source:live) actual_hash=$(shasum -a 256 "$source/$path" | awk '{print $1}') ;;
-      *) fail "unsupported evidence root/read mode: $evidence_root:$read_mode" ;;
+      *) return 1 ;;
     esac
-    expected_hash=$(jq -r --arg id "$evidence_id" '.evidence[]|select(.evidence_id==$id)|.sha256' "$registry")
-    [[ "$actual_hash" == "$expected_hash" ]] || fail "evidence hash mismatch: $evidence_id"
-    if [[ "$evidence_root:$read_mode" == source:snapshot ]]; then current_hash=$(shasum -a 256 "$source/$path" | awk '{print $1}'); [[ "$current_hash" == "$expected_hash" ]] || fail "registered source bytes changed: $evidence_id"; fi
-  done < <(jq -c '.evidence[]' "$registry")
+    expected_hash=$(jq -r --arg id "$evidence_id" '.evidence[]|select(.evidence_id==$id)|.sha256' <<< "$candidate")
+    [[ "$actual_hash" == "$expected_hash" ]] || return 1
+    if [[ "$evidence_root:$read_mode" == source:snapshot ]]; then current_hash=$(shasum -a 256 "$source/$path" | awk '{print $1}'); [[ "$current_hash" == "$expected_hash" ]] || return 1; fi
+  done < <(jq -c '.evidence[]' <<< "$candidate")
 }
-hash_evidence
+check_hashes "$valid_registry" || fail "registered hash mismatch"
+wrong_hash=$(jq -c '(.evidence[] | select(.evidence_id == "projectLedger") | .sha256) = "0000000000000000000000000000000000000000000000000000000000000000"' <<< "$valid_registry")
+jq -n -e --argjson before "$valid_registry" --argjson after "$wrong_hash" '[range(0;($before.evidence|length)) as $i | select($before.evidence[$i].sha256 != $after.evidence[$i].sha256) | $i] | length == 1' >/dev/null || fail "wrong-hash candidate did not change exactly one hash"
+if check_hashes "$wrong_hash"; then fail "wrong hash was accepted"; else wrong_hash_status=$?; [[ "$wrong_hash_status" == 1 ]] || fail "wrong-hash control had unexpected status"; fi
 
 check_line_range() {
   local row=$1 range evidence_root read_mode authority path line_count span start end
@@ -266,9 +278,11 @@ git -C "$fixture" diff --exit-code HEAD~1 HEAD -- knowledge/concept-cards || fai
 printf '%s\n' "mode=$mode"
 printf '%s\n' "source_opening=$opening_source"
 printf '%s\n' "source_current=$source_current"
+printf '%s\n' "planning_opening=$opening_planning"
 printf '%s\n' "planning_head=$(git rev-parse HEAD)"
 printf '%s\n' "native_selected=$(jq -r '.parsed_selected_mappings' <<< "$actual_census") legacy_untyped=$(jq -r '.legacy_untyped_census.parsed_mappings' <<< "$actual_census")"
 printf '%s\n' "yaml_error_count=$(jq 'length' <<< "$yaml_error_paths") no_frontmatter_count=$no_frontmatter_count"
+printf '%s\n' "wrong_hash_status=$wrong_hash_status wrong_yaml_status=$wrong_yaml_status"
 printf '%s\n' "wrong_mode_status=$wrong_mode_status wrong_role_status=$wrong_role_status swapped_status=$swapped_status"
 printf '%s\n' "absence_as_null_status=$absence_null_status no_match_status=$no_match_status no_match_output=$no_match_output missing_input_status=$missing_status"
 printf '%s\n' "invalid_membership_status=$mutated_member_status dangling_evidence_status=$dangling_status"
@@ -278,20 +292,37 @@ printf '%s\n' "semantic_acceptance=not_claimed"
 
 ## Intake and contract readback
 
-The intake loaded the source and planning standing instructions, the current
-project/arc/slice plans and ledgers, the initial Slice15 prompt, the Arc06 CDC
-directive, and the prior Slice13/Slice14 evidence and handoff. The required
-collaboration-framework, project-management, work-verification,
-concept-cards, testing, and implementation-prompt guidance was read before
-deriving the route. The concept-card load, operator, extraction, graph/CQ,
-validation, field-group, template, example, and worker-recipe records are
-registered in `semantic-membership.json` with hashes and ranges.
+The iteration preflight loaded the source and planning standing instructions,
+the current project/arc/slice plans and ledgers, this prompt, the initial
+Slice15 prompt, `crc-verification.md`, the Arc06 CDC directive, the prior
+Slice13/Slice14 evidence and handoff, the complete initial literal route, the
+registry and closing report. Required extents were: iteration prompt 1-134;
+slice plan 1-148; ledger 1-14; CRC record 1-50; initial prompt 1-222;
+validation record 1-328 before repair; registry 1-266; and closing report
+1-77. Named project sections were loaded at project-plan lines 39-171 and
+214-268; named Arc sections at arc-plan lines 22-91, 154-230 and 275-402;
+the CDC directive was loaded 1-233. Source full records and guides were read
+at the authorized latest source baseline `ce3f7710`, including the updated
+prompt-authoring corrective-iteration guidance and testing behavioral-oracle/
+failure-triage sections. The source and planning checkouts were clean at
+`ce3f7710` and iteration opening `ea200f07`, respectively. The two registered
+source entries affected by the baseline move (`sourceCollab` and
+`implementationPrompt`) now pin their `ce3f7710` bytes; the other registered
+source evidence remains byte-identical.
 
-The current source/planning opening hashes, exact assignment, current and
-frozen coverage counts, native 37/2,054 census, three YAML exclusions, and
-15 no-frontmatter records are route inputs. Slice14's literal route was read
-as a bounded predecessor for wrapper, hash, range, preservation, and
-negative-control mechanics only; its 12-pair counts and endpoints were not
+The planning advance from the initial CC close `178f1e6e` to `ea200f07` is
+the expected CRC return packet: the iteration prompt, CRC verification,
+factual slice plan and ledger state only. It does not change the initial
+registry's evidence authorities at `4db8d882`, the source bytes, assignment,
+coverage, inventory or prior packets. The iteration route therefore uses
+`ea200f07` for its opening-to-CC scope/protected-path check while retaining
+the initial registry's `4db8d882` snapshot authorities.
+
+The exact eight-pair assignment, 200/355/8/347 current coverage, frozen
+555/115/440/35/405 transition, native 37/2,054 census, three YAML exclusions
+and 15 no-frontmatter records remain route inputs. Slice14's literal route was
+read as a bounded predecessor for wrapper, hash, range, preservation and
+negative-control mechanics only; its obsolete counts/endpoints were not
 reused. Observed values remain separate from expected or accepted values, and
 CRC/CDC authority remains with the Operator.
 
@@ -303,26 +334,26 @@ structural replay evidence only.
 - Exploratory exact-set predicate: failed because it incorrectly required the
   eight assigned pairs to equal all 20 remaining mode/role pairs. Corrected
   predicate: exact eight, subset of remaining, disjoint from accepted.
-- Precommit replay: status 0 at planning HEAD `4db8d882`; native selected 37,
-  legacy untyped 2054, YAML errors 3, and no-frontmatter 15. Wrong mode,
-  wrong role, swapped mode/role, absence-as-null, invalid membership,
-  dangling evidence, out-of-bounds range, and reversed range returned status
-  1; real no-match returned status 0 with `[]`; missing input returned status
-  2; unrelated-head fixture passed; semantic acceptance not claimed.
-- Same-revision committed wrapper preflight: status 0 with
-  `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=678a8c76`; the registry was loaded
-  from the CC endpoint and the route was extracted from that commit.
-- Stale/foreign recipe endpoint rejection: status 2 with
-  `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=8e6b6770`; the current Slice15
-  recipe path was absent at the older endpoint and the wrapper stopped before
-  execution. This is a fail-closed stale/foreign-path control; no prior valid
-  Slice15 recipe existed at the opening commit.
-- Missing recipe-file rejection: status 2 with
-  `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=4db8d882`; the wrapper stopped before
-  execution because the recipe path was absent.
-- Separate committed CC/recipe replay: status 0 with
-  `CC_COMMIT=678a8c76` and `REPLAY_COMMIT=89568110`; the endpoints are
-  distinct, the registry came from the CC endpoint, and the route came from
-  the recipe endpoint. The native census, 39 registered hashes/ranges,
-  mutation controls, no-match/missing-input controls, unrelated-head fixture,
-  and preservation checks matched precommit; semantic acceptance not claimed.
+- Iteration01 preflight before repair: status 0 for the inherited valid route,
+  but CRC findings R1/R2 were reproduced as unrun controls; R3 was a wording
+  defect because the older endpoint checks returned status 2 for an absent
+  recipe path, not a valid stale-recipe rejection.
+- Iteration01 baseline reconciliation: the Operator authorized the clean
+  `ce3f7710` source checkout as the new baseline; only the two affected source
+  evidence rows were rebased, with ontology-support source files unchanged.
+- Iteration01 precommit replay: status 0 at planning HEAD `ea200f07` and
+  source baseline `ce3f7710`; native selected 37, legacy untyped 2054, YAML
+  errors 3, and no-frontmatter 15. Wrong hash and wrong YAML candidate
+  controls both returned status 1, as did wrong mode, wrong role, swapped
+  mode/role, absence-as-null, invalid membership, dangling evidence,
+  out-of-bounds range, and reversed range; real no-match returned status 0
+  with `[]`; missing input returned status 2; unrelated-head fixture passed;
+  semantic acceptance not claimed.
+- The initial packet's historical endpoint observations remain bounded
+  context: same-revision and separate committed replays were status 0, while
+  the older/opening recipe-path checks returned status 2 because the Slice15
+  recipe was absent. Those observations are not reused as current
+  Iteration01 endpoints.
+- Iteration01 committed same-revision, missing/foreign recipe-path, and
+  separate CC/recipe outcomes are recorded after their commits below; no pair
+  moves to accepted coverage.

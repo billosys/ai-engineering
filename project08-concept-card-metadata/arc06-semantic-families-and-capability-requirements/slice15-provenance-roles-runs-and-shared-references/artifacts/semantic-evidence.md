@@ -135,11 +135,14 @@ legacy absence census as proof of historical nonexistence.
 The companion validation route derives the census from the native inventory,
 recomputes registered hashes and ranges, checks the exact eight-pair
 assignment, exercises wrong-mode (`human-assisted`), wrong-role (`validator`),
-swapped mode/role, absent-as-null, dangling-membership, wrong-exclusion,
-no-match, and missing-input controls, and separates precommit from committed
-replay. A failed exploratory predicate that incorrectly required the eight
-assigned pairs to equal all 20 remaining mode/role pairs was discarded; the
-correct predicate is subset, disjoint from accepted, and exact in length.
+swapped mode/role, absent-as-null, dangling-membership, a wrong registered
+SHA-256 candidate, a wrong three-path YAML-exclusion candidate, no-match, and
+missing-input controls, and separates precommit from committed replay. The
+hash and YAML mutations run through the same predicates as their positive
+checks; they do not mutate registered source/planning files. A failed
+exploratory predicate that incorrectly required the eight assigned pairs to
+equal all 20 remaining mode/role pairs was discarded; the correct predicate
+is subset, disjoint from accepted, and exact in length.
 
 The report is intentionally bounded by the opening source/planning bytes and
 the frozen inventory. It does not alter the source schema or parser, update
