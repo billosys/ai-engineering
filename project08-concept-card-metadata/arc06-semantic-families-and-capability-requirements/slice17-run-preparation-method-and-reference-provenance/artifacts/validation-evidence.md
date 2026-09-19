@@ -428,19 +428,15 @@ as global requiredness or a completed run.
 
 ### Endpoint and failure record
 
-The scoped CC endpoint is
-`97a75091b6d124955762f12c72865f72d5aedd53`; the committed wrapper loaded its
-registry from that commit and loaded its recipe from the same commit. It
-exited 0 with the output recorded above. The separate-recipe replay is run
-with the same CC endpoint and distinct recipe endpoint
-`f82af9b76a5e3bc6aa063141e87445f02cc40b9b`; it exited 0. The registry was
-loaded from CC endpoint
-`97a75091b6d124955762f12c72865f72d5aedd53`.
-
-The missing-recipe endpoint `c40e52fc1318e6213c60d5e0371fd01aa3208f1d` and
-foreign-source recipe endpoint
-`ce3f77103eff5e07b3533a03c65f158684fc1039` both failed at recipe extraction
-with status 2, as required.
+The Iteration01 CC endpoint is
+`e123b60dd846f2dfaf655642c0198f6895d8d675`; its wrapper loaded the registry
+from that commit, extracted one route from the same recipe endpoint, ran
+`bash -n`, and exited 0 after the route printed the positive and control
+results above. The distinct recipe endpoint is recorded after the final
+documentation-only commit. The wrapper probes against opening planning
+`c40e52fc1318e6213c60d5e0371fd01aa3208f1d`, foreign source
+`ce3f77103eff5e07b3533a03c65f158684fc1039`, and the absent all-zero commit ID
+each failed during recipe extraction with status 2.
 
 ### Exploratory and unrun checks
 
@@ -453,6 +449,12 @@ validation then exposed a registered replay-contract range of `1-118` against
 the actual 93-line snapshot; the registry was corrected to `lines 1-93`.
 The first route invocation from the slice subdirectory failed its intended
 root-relative scope check; rerunning from the canonical planning root passed.
+The first wrapper extraction counted both literal Bash blocks and failed closed
+with status 2; a committed replay attempted while the planning checkout was
+dirty also failed closed before route execution. The route was then corrected
+to stop extraction at the committed-wrapper section, and the contribution
+baseline was corrected from the prior six-file endpoint to the current CRC
+review commit `a0f516398254a1357a86e67ab3378299120650c1`.
 
 No CRC or CDC verification, Operator acceptance, source/schema/runtime/parser
 change, package/install check, extraction execution, memory admission, UAT,

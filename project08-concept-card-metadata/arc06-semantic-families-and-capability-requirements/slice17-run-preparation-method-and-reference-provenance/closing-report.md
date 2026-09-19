@@ -24,8 +24,8 @@ read-only.
 The exact eighteen-pair assignment, 555 frozen full pairs, 220 accepted,
 335 remaining, and 317 outside pairs were preserved. No source, schema,
 runtime, parser, package, memory, extraction, graph, UAT or coverage artifact
-was changed. The six changed paths are this report, `ledger.md`, and the four
-files under `artifacts/`.
+was changed. The three changed paths are this report, `ledger.md`, and
+`artifacts/validation-evidence.md`.
 
 ## Row closure attestation
 
@@ -54,11 +54,12 @@ authority, hash, range, singular/plural, empty/absent, added-path, wrong
 identity, wrong revision, wrong path and wrong-target controls all returned
 the expected status 1.
 
-The committed correction endpoint and distinct recipe endpoint are recorded
-after the scoped commits. The preserved wrapper must syntax-check and extract
-the route from the declared recipe bytes before execution; its valid endpoint,
-opening-planning endpoint, foreign-source endpoint and absent-commit behavior
-are recorded there with actual statuses.
+The Iteration01 CC endpoint is
+`e123b60dd846f2dfaf655642c0198f6895d8d675`; its preserved wrapper extracted
+the route from committed bytes, syntax-checked it, and passed with status 0.
+The distinct recipe endpoint is recorded after the final documentation-only
+commit. Opening-planning, foreign-source and absent-commit recipe endpoints
+each failed closed at wrapper extraction with status 2.
 
 ## Proposed-done limits and follow-up
 
