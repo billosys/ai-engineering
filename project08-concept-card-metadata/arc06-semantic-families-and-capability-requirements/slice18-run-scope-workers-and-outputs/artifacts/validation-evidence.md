@@ -381,6 +381,17 @@ opening planning commit; the foreign-source endpoint failed because the
 source commit did not contain the planning route; and the all-zero endpoint
 failed Git object validation. None executed the route.
 
+### Final endpoint and scope audit
+
+The recipe wrapper was re-extracted from `2ab6679718326fc76ecf2e10d3678f385f086eb0`
+and re-run with the first contribution commit as CC. It returned `0`, with
+stdout present and stderr empty. From opening planning commit
+`961c748f7915c71ba59ef37a2dd65253800be268` through final commit
+`366fc3649efbf9926d31b44b949ffe0e5e52053f`, the changed-path set compared
+exactly to the six authorized paths. `git diff --check` and `jq empty` on the
+membership artifact returned `0`; the planning worktree and source checkout
+were both clean afterward.
+
 ## Failed or unrun checks
 
 No source package, install, runtime, graph, memory, real-extraction, UAT or
