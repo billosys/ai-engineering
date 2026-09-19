@@ -378,7 +378,17 @@ the literal `[]` with status 0, while its separate count was 0.
 
 ## Committed endpoint observations
 
-The committed wrapper observations are recorded after the CC endpoint commit.
-The wrapper must load the registry from the CC endpoint and the recipe bytes
-from the separately supplied replay endpoint; it must not fall back to the
-working tree. A successful route remains structural evidence only.
+The committed wrapper loaded the registry and recipe from the same CC endpoint
+`9c8ea3a2` and passed with status 0. The true missing-recipe endpoint, opening
+planning commit `3b7790f88cd30fa6c4988a6950b4989ae1933b7d`, failed closed with
+status 2, and the foreign source endpoint `ce3f77103eff5e07b3533a03c65f158684fc1039`
+also failed closed with status 2. An exploratory replay against intermediate
+planning endpoint `ac618e0fd3c428a68587b8195bc4c5817351a336` returned status 1
+because that older recipe still used the predecessor scope baseline and saw
+the protected iteration records as out of scope; it is not the missing-recipe
+observation. The first literal-wrapper shell invocation also failed before
+route execution because of nested-quote parsing; the equivalent quote-safe
+wrapper was then rerun and passed. The wrapper must load the registry from the
+CC endpoint and recipe bytes from the separately supplied replay endpoint; it
+must not fall back to the working tree. A successful route remains structural
+evidence only.
