@@ -57,9 +57,11 @@ the expected status 1.
 The Iteration01 CC endpoint is
 `e123b60dd846f2dfaf655642c0198f6895d8d675`; its preserved wrapper extracted
 the route from committed bytes, syntax-checked it, and passed with status 0.
-The distinct recipe endpoint is recorded after the final documentation-only
-commit. Opening-planning, foreign-source and absent-commit recipe endpoints
-each failed closed at wrapper extraction with status 2.
+The distinct recipe endpoint
+`3e4ef8362b9bd917d09b44f30cb057d936a1f71d` was loaded with the same CC
+registry endpoint and also passed with status 0. Opening-planning,
+foreign-source and absent-commit recipe endpoints each failed closed at
+wrapper extraction with status 2.
 
 ## Proposed-done limits and follow-up
 

@@ -432,8 +432,9 @@ The Iteration01 CC endpoint is
 `e123b60dd846f2dfaf655642c0198f6895d8d675`; its wrapper loaded the registry
 from that commit, extracted one route from the same recipe endpoint, ran
 `bash -n`, and exited 0 after the route printed the positive and control
-results above. The distinct recipe endpoint is recorded after the final
-documentation-only commit. The wrapper probes against opening planning
+results above. The distinct recipe endpoint
+`3e4ef8362b9bd917d09b44f30cb057d936a1f71d` was loaded with the same CC
+registry endpoint and also exited 0. The wrapper probes against opening planning
 `c40e52fc1318e6213c60d5e0371fd01aa3208f1d`, foreign source
 `ce3f77103eff5e07b3533a03c65f158684fc1039`, and the absent all-zero commit ID
 each failed during recipe extraction with status 2.
