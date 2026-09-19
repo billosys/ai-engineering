@@ -55,10 +55,12 @@ The full precommit route, all controls, the distinct committed route wrapper,
 @@jq empty@@, @@git diff --check@@, staged/unstaged/untracked union and clean
 post-commit status are recorded in @@artifacts/validation-evidence.md@@.
 The first committed endpoint `13d219abd00d6b879f87da199837beb6c9a31090`
-passed the wrapper with itself as both `CC_COMMIT` and `REPLAY_COMMIT`.
-Distinct recipe and fail-closed endpoint results remain to be recorded after
-the recipe endpoint commit. Exploratory failures and unrun checks remain
-listed there.
+passed the wrapper with itself as both `CC_COMMIT` and `REPLAY_COMMIT`. The
+distinct recipe endpoint `2ab6679718326fc76ecf2e10d3678f385f086eb0` also
+passed with the first commit as CC and the recipe commit as replay. Opening,
+foreign-source and all-zero absent endpoints failed closed with statuses 128,
+128 and 2 respectively, with empty stdout and nonempty stderr. Exploratory
+failures and unrun checks remain listed in the validation artifact.
 
 ## Scope-as-specified versus scope-as-delivered
 
@@ -84,7 +86,7 @@ open.
 ## Commits, workload and limits
 
 CC contribution commit: `13d219abd00d6b879f87da199837beb6c9a31090`.
-Recipe endpoint: pending until this result-recording change is committed.
+Recipe endpoint: `2ab6679718326fc76ecf2e10d3678f385f086eb0`.
 Required trailers are included in the scoped commit. No independent CRC
 verification, CDC composition review or Operator acceptance occurred in this
 context. No model/effort measurement or compaction event was available beyond

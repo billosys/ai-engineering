@@ -358,6 +358,29 @@ All 17 matrix mutations, four authority/range mutations, the outside-addition
 scope control, and the two tool-error controls retained their recorded
 nonzero classifications.
 
+### Distinct recipe endpoint and endpoint controls
+
+The distinct recipe endpoint is
+`2ab6679718326fc76ecf2e10d3678f385f086eb0`. The wrapper extracted from that
+commit was syntax-checked and run with
+`CC_COMMIT=13d219abd00d6b879f87da199837beb6c9a31090` and
+`REPLAY_COMMIT=2ab6679718326fc76ecf2e10d3678f385f086eb0`. It returned `0` and
+reported the same positive population, coverage, matrix, target and control
+results as the first committed endpoint.
+
+The wrapper fail-closed endpoint controls were run with the same CC commit:
+
+~~~text
+endpoint.opening.status=128 stdout_empty=true stderr_nonempty=true
+endpoint.foreign-source.status=128 stdout_empty=true stderr_nonempty=true
+endpoint.absent-recipe.status=2 stdout_empty=true stderr_nonempty=true
+~~~
+
+The opening endpoint failed because the route file did not exist at the
+opening planning commit; the foreign-source endpoint failed because the
+source commit did not contain the planning route; and the all-zero endpoint
+failed Git object validation. None executed the route.
+
 ## Failed or unrun checks
 
 No source package, install, runtime, graph, memory, real-extraction, UAT or
