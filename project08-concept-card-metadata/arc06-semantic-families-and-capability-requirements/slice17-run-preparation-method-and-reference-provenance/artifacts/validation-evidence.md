@@ -360,7 +360,7 @@ run_endpoint() {
   git cat-file -e "$cc^{commit}" || return 2
   git cat-file -e "$recipe^{commit}" || return 2
   git show "$recipe:$validation_rel" > "$doc" 2>/dev/null || return 2
-  section=$(awk '/^## Literal route$/{p=1;next} p&&/^## Required control and endpoint observations$/{exit} p' "$doc") || return 2
+  section=$(awk '/^## Literal route$/{p=1;next} p&&/^## Committed endpoint wrapper$/{exit} p' "$doc") || return 2
   starts=$(printf '%s\n' "$section" | grep -c '^~~~bash$' || true)
   closes=$(printf '%s\n' "$section" | grep -c '^~~~$' || true)
   [[ "$starts" == 1 && "$closes" == 1 ]] || return 2
@@ -479,7 +479,10 @@ from the declared-target no-match and missing synthetic-target probes.
 The corrected availability wording now says three YAML-error files and keeps
 the exact three paths separate from the fifteen no-frontmatter records.
 
-The inner literal route and the preserved outer wrapper both passed `bash -n`
-before staging. Committed wrapper extraction/execution statuses, including the
-valid separate recipe, opening planning, foreign source and absent commit
-endpoints, are recorded after the scoped correction commit below.
+The inner literal route and the preserved outer wrapper passed `bash -n` before
+staging. An initial committed-wrapper attempt failed closed with status 2
+because its extraction boundary counted both literal Bash blocks; the wrapper
+was corrected to stop at its own section header. Committed wrapper
+extraction/execution statuses, including the valid separate recipe, opening
+planning, foreign source and absent commit endpoints, are recorded after the
+scoped correction commit below.
