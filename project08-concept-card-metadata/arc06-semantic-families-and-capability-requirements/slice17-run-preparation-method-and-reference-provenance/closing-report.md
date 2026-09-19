@@ -47,9 +47,10 @@ the expected status 1.
 
 The committed CC endpoint is
 `97a75091b6d124955762f12c72865f72d5aedd53`; its same-endpoint wrapper passed
-with status 0. The distinct recipe endpoint is recorded in the final
-follow-up note in `artifacts/validation-evidence.md`. Missing-recipe and
-foreign-source recipe endpoints both failed closed with status 2.
+with status 0. The distinct recipe endpoint
+`f82af9b76a5e3bc6aa063141e87445f02cc40b9b` also passed with status 0 when
+loaded with the CC registry endpoint above. Missing-recipe and foreign-source
+recipe endpoints both failed closed with status 2.
 
 ## Proposed-done limits and follow-up
 
