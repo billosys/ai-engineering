@@ -18,7 +18,7 @@ The route has precommit mode for the working registry and committed mode for a
 registry loaded from `CC_COMMIT`. A preserved outer wrapper below loads the
 recipe bytes from a separately named `REPLAY_COMMIT`, extracts exactly the
 literal route, syntax-checks it and executes it with the declared endpoints.
-The route checks exactly the six permitted output paths and protects the
+The Iteration01 route checks exactly the three permitted repair paths and protects the
 prompt, plans, coverage, transition, directive, source authority, Slice16
 records and other historical inputs. It preserves operation stdout, status
 and stderr presence for the two successful no-matches and deliberate tool
@@ -68,6 +68,7 @@ transition_rel=project08-concept-card-metadata/artifacts/semantic-transition-cov
 inventory_rel=project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
 opening_source=ce3f77103eff5e07b3533a03c65f158684fc1039
 opening_planning=c40e52fc1318e6213c60d5e0371fd01aa3208f1d
+iteration_opening=89d1b452b26235d16508c245f9bb13d6dd616079
 preopening_planning=c6d445b8cf693e0c03a70a79d5b45c07e3337dcb
 set_authority=dee3052c88e0fd9361e74200fd1eea26ade76435
 mode=precommit
@@ -90,6 +91,7 @@ fi
 
 [[ "$root" == /Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning ]] || fail "route must run from canonical planning checkout"
 [[ "$(git rev-parse "$opening_planning")" == "$opening_planning" ]] || fail "issued planning authority is unavailable"
+[[ "$(git rev-parse "$iteration_opening")" == "$iteration_opening" ]] || fail "iteration contribution baseline is unavailable"
 [[ "$(git -C "$source" rev-parse "$opening_source")" == "$opening_source" ]] || fail "source authority is unavailable"
 source_current=$(git -C "$source" rev-parse HEAD)
 [[ -z "$(git -C "$source" status --porcelain --untracked-files=all)" ]] || fail "source checkout is not clean"
@@ -98,10 +100,7 @@ git diff --cached --check || fail "planning index has whitespace errors"
 git -C "$source" diff --exit-code "$opening_source" "$source_current" -- knowledge/concept-cards knowledge/document-extraction || fail "relevant source tree differs from opening source"
 jq empty "$registry" >/dev/null || fail "registry is not valid JSON"
 
-allowed_paths="$slice_rel/artifacts/semantic-membership.json
-$slice_rel/artifacts/semantic-evidence.md
-$slice_rel/artifacts/validation-evidence.md
-$slice_rel/artifacts/handoff.md
+allowed_paths="$slice_rel/artifacts/validation-evidence.md
 $slice_rel/ledger.md
 $slice_rel/closing-report.md"
 is_allowed() { grep -Fqx "$1" <<< "$allowed_paths"; }
@@ -111,10 +110,10 @@ if [[ "$mode" == precommit ]]; then
   while IFS= read -r path; do [[ -z "$path" ]] && continue; is_allowed "$path" || fail "out-of-scope precommit path: $path"; done <<< "$changed_paths"
 else
   [[ -z "$(git status --porcelain --untracked-files=all)" ]] || fail "planning checkout is not clean for committed replay"
-  committed_paths=$(git diff --name-only "$opening_planning" "$CC_COMMIT" | sort -u)
+  committed_paths=$(git diff --name-only "$iteration_opening" "$CC_COMMIT" | sort -u)
   expected_paths=$(printf '%s\n' "$allowed_paths" | sort)
-  [[ "$committed_paths" == "$expected_paths" ]] || fail "committed contribution is not exactly the six permitted paths"
-  git diff --check "$opening_planning" "$CC_COMMIT" || fail "committed contribution has whitespace errors"
+  [[ "$committed_paths" == "$expected_paths" ]] || fail "committed contribution is not exactly the three permitted paths"
+  git diff --check "$iteration_opening" "$CC_COMMIT" || fail "committed contribution has whitespace errors"
 fi
 
 protected_paths="project08-concept-card-metadata/AGENTS.md
@@ -139,7 +138,7 @@ project08-concept-card-metadata/arc06-semantic-families-and-capability-requireme
 project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice16-supporting-record-actor-mode-and-role/ledger.md
 project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice16-supporting-record-actor-mode-and-role/closing-report.md"
 if [[ "$mode" == committed ]]; then
-  while IFS= read -r path; do [[ -z "$path" ]] && continue; git diff --exit-code "$opening_planning" -- "$path" >/dev/null || fail "protected planning path changed: $path"; done <<< "$protected_paths"
+  while IFS= read -r path; do [[ -z "$path" ]] && continue; git diff --exit-code "$iteration_opening" -- "$path" >/dev/null || fail "protected planning path changed: $path"; done <<< "$protected_paths"
 fi
 
 assignment_json=$(git show "$opening_planning:$slice_rel/slice-plan.md" | awk '/^~~~json$/{n++;if(n==1){p=1;next}} p&&/^~~~$/{exit} p')
