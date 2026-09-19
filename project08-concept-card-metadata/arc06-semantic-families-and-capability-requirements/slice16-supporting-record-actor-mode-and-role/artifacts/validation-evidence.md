@@ -379,7 +379,7 @@ the literal `[]` with status 0, while its separate count was 0.
 ## Committed endpoint observations
 
 The committed wrapper loaded the registry and recipe from the same CC endpoint
-`9c8ea3a2` and passed with status 0. The true missing-recipe endpoint, opening
+`9c8ea3a228bc5991126b2a8daf2b1e0a154175fe` and passed with status 0. The true missing-recipe endpoint, opening
 planning commit `3b7790f88cd30fa6c4988a6950b4989ae1933b7d`, failed closed with
 status 2, and the foreign source endpoint `ce3f77103eff5e07b3533a03c65f158684fc1039`
 also failed closed with status 2. An exploratory replay against intermediate
@@ -393,7 +393,8 @@ CC endpoint and recipe bytes from the separately supplied replay endpoint; it
 must not fall back to the working tree. A successful route remains structural
 evidence only.
 
-The separate committed replay loaded the registry from CC endpoint `9c8ea3a2`
-and recipe bytes from replay endpoint `3079b62b`; it passed with status 0. The
+The separate committed replay loaded the registry from CC endpoint
+`9c8ea3a228bc5991126b2a8daf2b1e0a154175fe` and recipe bytes from replay
+endpoint `3079b62b02b8cca9e735287e808efcc7e9a16ff0`; it passed with status 0. The
 separate endpoint pair confirms that the recipe is independently selected from
 the registry endpoint rather than inferred from the same commit.

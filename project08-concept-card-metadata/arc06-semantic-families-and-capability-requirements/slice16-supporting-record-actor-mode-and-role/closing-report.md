@@ -33,9 +33,11 @@ range, reversed range, absence-as-null, wrong mode, wrong role, swapped
 mode/role and support-to-claim propagation; missing input returned status 2.
 The no-match actor projection returned literal `[]` with status 0 and its
 separate count was 0. These are fail-closed structural controls, not semantic
-acceptance. The same-endpoint committed replay used CC endpoint `9c8ea3a2`
+acceptance. The same-endpoint committed replay used CC endpoint
+`9c8ea3a228bc5991126b2a8daf2b1e0a154175fe`
 and passed with status 0. The separate committed replay used registry endpoint
-`9c8ea3a2` and recipe endpoint `3079b62b`, and passed with status 0. The
+`9c8ea3a228bc5991126b2a8daf2b1e0a154175fe` and recipe endpoint
+`3079b62b02b8cca9e735287e808efcc7e9a16ff0`, and passed with status 0. The
 foreign/missing endpoint statuses and exploratory failures are recorded in
 `artifacts/validation-evidence.md`.
 
