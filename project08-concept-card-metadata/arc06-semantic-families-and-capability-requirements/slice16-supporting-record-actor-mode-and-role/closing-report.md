@@ -20,29 +20,22 @@ package, memory or UAT artifact was changed.
 | S16-1 | Exact twelve-pair membership, coverage union and outside boundary preserved | `artifacts/semantic-membership.json`; `artifacts/validation-evidence.md` |
 | S16-2 | Native 12-record census, parent/child states, YAML exclusions, no-frontmatter and legacy census reproduced | `artifacts/semantic-evidence.md`; `artifacts/validation-evidence.md` |
 | S16-3 | All twelve meanings include applicability, observations, evidence, exceptions, reader/extractor/query/migration consequences and unresolved questions | `artifacts/semantic-membership.json`; `artifacts/semantic-evidence.md` |
-| S16-4 | Positive support witness and literal-object checks plus wrong mode/role/swap, propagation, no-match and missing-input controls are encoded | `artifacts/validation-evidence.md` |
-| S16-5 | Hash/range, registry-reference, preservation, source-drift, scope and wrapper controls are encoded | `artifacts/validation-evidence.md` |
+| S16-4 | Positive support witness and literal-object checks plus wrong mode/role/swap, propagation, literal no-match `[]` and missing-input controls are encoded | `artifacts/validation-evidence.md` |
+| S16-5 | Declared-authority hash binding, all-45 range classification, registry-reference, preservation, source-drift, scope and wrapper controls are encoded | `artifacts/validation-evidence.md` |
 | S16-6 | Slice17 retention, later owners, P-15/UAT and CDC/CRC gates are handed off | `artifacts/handoff.md`; this report |
 
 ## Validation status
 
 The precommit literal route passed. Its recorded expected failures are status
-1 for wrong YAML, invalid membership, dangling evidence, wrong hash,
-out-of-bounds range, reversed range, absence-as-null, wrong mode, wrong role, swapped mode/role
-and support-to-claim propagation; missing input returned status 2; a no-match
-returned `{"count":0,"actors":[]}`. These are fail-closed structural
-controls, not semantic acceptance.
-
-The committed wrapper loaded both registry and recipe from CC endpoint
-`2953953d` and passed with status 0. The missing opening-planning recipe
-endpoint `3b7790f88cd30fa6c4988a6950b4989ae1933b7d` and the foreign source
-recipe endpoint `ce3f77103eff5e07b3533a03c65f158684fc1039` each failed closed
-with status 2. The separate committed replay used registry endpoint
-`2953953d` and recipe endpoint `9f9ad2bf`, and passed with status 0. After the
-explicit absence-as-null control was added, the final committed replay used
-registry endpoint `2953953d` and recipe endpoint `39da2b4b`, and passed with
-status 0. CRC remains responsible for independent reproduction and CDC remains
-responsible for composition.
+1 for wrong YAML, invalid membership, dangling evidence, wrong hash, wrong
+declared authority, unknown and misplaced range descriptors, out-of-bounds
+range, reversed range, absence-as-null, wrong mode, wrong role, swapped
+mode/role and support-to-claim propagation; missing input returned status 2.
+The no-match actor projection returned literal `[]` with status 0 and its
+separate count was 0. These are fail-closed structural controls, not semantic
+acceptance. The committed registry and recipe endpoints, including the
+separate replay and foreign/missing endpoint statuses, are recorded in
+`artifacts/validation-evidence.md` after commit.
 
 ## Proposed-done limits
 

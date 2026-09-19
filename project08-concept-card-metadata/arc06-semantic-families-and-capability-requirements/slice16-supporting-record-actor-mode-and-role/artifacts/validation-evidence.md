@@ -19,6 +19,18 @@ the inventory's `.worktrees/planning/` acquisition prefix to the canonical
 planning checkout path before hashing; the frozen inventory itself is not
 modified.
 
+Iteration01 intake records the CRC corrective requirements: every evidence row
+must be read through its declared `.authority_commit`, the 45 registered
+`source_range` values must classify as exactly 42 numeric `lines a-b`
+descriptors plus the two `JSON document` descriptors and the inventory's exact
+`JSON document; selected values and YAML-error records` descriptor, and a
+real no-match actor projection must be the literal JSON array `[]` while the
+separate count remains zero. The iteration opening planning commit is
+`ac618e0fd3c428a68587b8195bc4c5817351a336`; the pinned evidence authorities
+remain planning `3b7790f88cd30fa6c4988a6950b4989ae1933b7d` and source
+`ce3f77103eff5e07b3533a03c65f158684fc1039`. The iteration prompt and CRC
+verification are protected planning records; they are not CC outputs.
+
 ## Literal route
 
 The committed wrapper is:
@@ -53,6 +65,7 @@ transition_rel=project08-concept-card-metadata/artifacts/semantic-transition-cov
 inventory_rel=project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json
 opening_source=ce3f77103eff5e07b3533a03c65f158684fc1039
 opening_planning=3b7790f88cd30fa6c4988a6950b4989ae1933b7d
+iteration_opening=ac618e0fd3c428a68587b8195bc4c5817351a336
 mode=precommit
 kinds_json='["memory-admission","preservation-decision","relationship-edge","source-locator","source-support","validation-result"]'
 
@@ -92,7 +105,7 @@ if [[ "$mode" == precommit ]]; then
   while IFS= read -r path; do [[ -z "$path" ]] && continue; is_allowed "$path" || fail "out-of-scope precommit path: $path"; done <<< "$changed_paths"
 else
   [[ -z "$(git status --porcelain --untracked-files=all)" ]] || fail "planning checkout is not clean for committed replay"
-  committed_paths=$(git diff --name-only "$opening_planning" "$CC_COMMIT" | sort -u)
+  committed_paths=$(git diff --name-only "$iteration_opening" "$CC_COMMIT" | sort -u)
   [[ -n "$committed_paths" ]] || fail "committed CC contribution is empty"
   while IFS= read -r path; do [[ -z "$path" ]] && continue; is_allowed "$path" || fail "out-of-scope opening-to-CC path: $path"; done <<< "$committed_paths"
 fi
@@ -104,6 +117,8 @@ project08-concept-card-metadata/arc06-semantic-families-and-capability-requireme
 project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/ledger.md
 project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/cdc-directive01.md
 $slice_rel/cc-prompt.md
+$slice_rel/cc-prompt-iteration01.md
+$slice_rel/crc-verification.md
 $slice_rel/slice-plan.md
 $coverage_rel
 $transition_rel
@@ -113,9 +128,9 @@ project08-concept-card-metadata/arc06-semantic-families-and-capability-requireme
 project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice15-provenance-roles-runs-and-shared-references/artifacts/handoff.md
 project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice15-provenance-roles-runs-and-shared-references/crc-verification.md
 project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice15-provenance-roles-runs-and-shared-references/artifacts/validation-evidence.md"
-while IFS= read -r path; do [[ -z "$path" ]] && continue; git diff --exit-code "$opening_planning" -- "$path" >/dev/null || fail "protected planning path changed: $path"; done <<< "$protected_paths"
+while IFS= read -r path; do [[ -z "$path" ]] && continue; git diff --exit-code "$iteration_opening" -- "$path" >/dev/null || fail "protected planning path changed: $path"; done <<< "$protected_paths"
 
-assignment_json=$(git show "$opening_planning:$slice_rel/slice-plan.md" | awk '/^~~~json$/{n++; if(n==1){p=1;next}} p && /^~~~$/{exit} p')
+assignment_json=$(git show "$iteration_opening:$slice_rel/slice-plan.md" | awk '/^~~~json$/{n++; if(n==1){p=1;next}} p && /^~~~$/{exit} p')
 [[ -n "$assignment_json" ]] || fail "assignment block is absent"
 jq -e --argjson assignment "$assignment_json" '.counts == {full:555,accepted:208,remaining:347,next_slice:12,not_yet_sliced:335} and (.accepted_pairs|length==208) and (.remaining_pairs|length==347) and ((.accepted_pairs+.remaining_pairs)|unique|length==555) and ((.next_slice_pairs|sort)==($assignment|sort)) and (((.remaining_pairs-$assignment)|length)==335)' < <(git show "$opening_planning:$coverage_rel") >/dev/null || fail "current coverage boundary failed"
 jq -e '.counts == {full:555,accepted:115,remaining:440,next_slice:35,not_yet_sliced:405} and (.counts.accepted + .counts.remaining == .counts.full) and (.counts.next_slice + .counts.not_yet_sliced == .counts.remaining)' < <(git show "$opening_planning:$transition_rel") >/dev/null || fail "frozen transition counts failed"
@@ -211,65 +226,93 @@ if printf '%s\n' "$wrong_member" | check_registry -; then fail "Slice15 or inval
 mutated_evidence=$(jq -c '.meanings["actor.mode-source-support"].evidence_ids[0]="dangling-evidence-id"' <<< "$valid_registry")
 if printf '%s\n' "$mutated_evidence" | check_registry -; then fail "dangling evidence mutation was accepted"; else dangling_status=$?; [[ "$dangling_status" == 1 ]] || fail "dangling evidence control had unexpected status"; fi
 
+resolve_snapshot() {
+  local row=$1 root path authority_commit read_mode
+  root=$(jq -r '.root' <<< "$row")
+  path=$(jq -r '.path' <<< "$row")
+  authority_commit=$(jq -r '.authority_commit' <<< "$row")
+  read_mode=$(jq -r '.read_mode' <<< "$row")
+  [[ "$read_mode" == snapshot ]] || return 1
+  case "$root" in
+    planning)
+      [[ "$authority_commit" == "$opening_planning" ]] || return 1
+      git show "$authority_commit:$path"
+      ;;
+    source)
+      [[ "$authority_commit" == "$opening_source" ]] || return 1
+      git -C "$source" show "$authority_commit:$path"
+      ;;
+    *) return 1 ;;
+  esac
+}
+
 check_hashes() {
-  local candidate=$1 row evidence_id evidence_root read_mode path authority actual_hash expected_hash current_hash
+  local candidate=$1 row evidence_id read_mode root actual_hash expected_hash current_hash snapshot_file count=0
   while IFS= read -r row; do
     evidence_id=$(jq -r '.evidence_id' <<< "$row")
-    evidence_root=$(jq -r '.evidence_root' <<< "$row")
     read_mode=$(jq -r '.read_mode' <<< "$row")
-    path=$(jq -r '.path' <<< "$row")
-    authority=$(jq -r '.root' <<< "$row")
+    root=$(jq -r '.root' <<< "$row")
     actual_hash=$(jq -r --arg id "$evidence_id" '.evidence[]|select(.evidence_id==$id)|.sha256' <<< "$candidate")
     expected_hash=$(jq -r --arg id "$evidence_id" '.evidence[]|select(.evidence_id==$id)|.sha256' <<< "$valid_registry")
     [[ -n "$actual_hash" && "$actual_hash" == "$expected_hash" ]] || return 1
-    case "$authority:$read_mode" in
-      planning:snapshot)
-        current_hash=$(git show "$opening_planning:$path" | shasum -a 256 | awk '{print $1}') || return 1
-        [[ "$current_hash" == "$actual_hash" ]] || return 1
-        ;;
-      source:snapshot)
-        current_hash=$(git -C "$source" show "$opening_source:$path" | shasum -a 256 | awk '{print $1}') || return 1
-        [[ "$current_hash" == "$actual_hash" ]] || return 1
-        ;;
-      planning:live)
-        current_hash=$(shasum -a 256 "$path" | awk '{print $1}') || return 1
-        [[ "$current_hash" == "$actual_hash" ]] || return 1
-        ;;
-      source:live)
-        current_hash=$(shasum -a 256 "$source/$path" | awk '{print $1}') || return 1
+    case "$root:$read_mode" in
+      planning:snapshot|source:snapshot)
+        snapshot_file="$temp/hash-$count"
+        resolve_snapshot "$row" > "$snapshot_file" || return 1
+        current_hash=$(shasum -a 256 "$snapshot_file" | awk '{print $1}') || return 1
         [[ "$current_hash" == "$actual_hash" ]] || return 1
         ;;
       *) return 1 ;;
     esac
+    count=$((count + 1))
   done < <(jq -c '.evidence[]' <<< "$candidate")
+  [[ "$count" == 45 ]]
 }
 check_hashes "$valid_registry" || fail "registered hashes do not reproduce"
 wrong_hash=$(jq -c '.evidence[0].sha256="0000000000000000000000000000000000000000000000000000000000000000"' <<< "$valid_registry")
 if check_hashes "$wrong_hash"; then fail "wrong hash was accepted"; else wrong_hash_status=$?; [[ "$wrong_hash_status" == 1 ]] || fail "wrong hash control had unexpected status"; fi
+wrong_authority=$(jq -c '.evidence[0].authority_commit="ce3f77103eff5e07b3533a03c65f158684fc1039"' <<< "$valid_registry")
+if check_hashes "$wrong_authority"; then fail "wrong declared authority was accepted"; else wrong_authority_status=$?; [[ "$wrong_authority_status" == 1 ]] || fail "wrong authority control had unexpected status"; fi
 
-check_line_range() {
-  local candidate=$1 entry root path source_range range_text start end total
+check_ranges() {
+  local candidate=$1 entry evidence_id source_range range_text start end total expected snapshot_file count=0 numeric=0 json=0
   while IFS= read -r entry; do
-    root=$(jq -r '.root' <<< "$entry")
-    path=$(jq -r '.path' <<< "$entry")
+    evidence_id=$(jq -r '.evidence_id' <<< "$entry")
     source_range=$(jq -r '.source_range' <<< "$entry")
+    snapshot_file="$temp/range-$count"
+    resolve_snapshot "$entry" > "$snapshot_file" || return 1
+    expected=""
+    case "$evidence_id" in
+      currentCoverage|transitionCoverage) expected="JSON document" ;;
+      inventory) expected="JSON document; selected values and YAML-error records" ;;
+    esac
+    if [[ -n "$expected" ]]; then
+      [[ "$source_range" == "$expected" ]] || return 1
+      json=$((json + 1))
+      count=$((count + 1))
+      continue
+    fi
+    [[ "$source_range" =~ ^lines[[:space:]][0-9]+-[0-9]+$ ]] || return 1
     range_text=${source_range#lines }
     start=${range_text%-*}
     end=${range_text##*-}
     [[ "$start" =~ ^[0-9]+$ && "$end" =~ ^[0-9]+$ && "$start" -ge 1 && "$start" -le "$end" ]] || return 1
-    if [[ "$root" == planning ]]; then
-      total=$(git show "$opening_planning:$path" | wc -l | awk '{print $1}') || return 1
-    else
-      total=$(git -C "$source" show "$opening_source:$path" | wc -l | awk '{print $1}') || return 1
-    fi
+    total=$(wc -l < "$snapshot_file" | awk '{print $1}') || return 1
     [[ "$end" -le "$total" ]] || return 1
-  done < <(jq -c '.evidence[]|select((.source_range|type)=="string" and (.source_range|startswith("lines ")))' <<< "$candidate")
+    numeric=$((numeric + 1))
+    count=$((count + 1))
+  done < <(jq -c '.evidence[]|select((.source_range|type)=="string")' <<< "$candidate")
+  [[ "$count" == 45 && "$numeric" == 42 && "$json" == 3 ]]
 }
-check_line_range "$valid_registry" || fail "registered line ranges do not reproduce"
+check_ranges "$valid_registry" || fail "registered source ranges do not reproduce"
+range_unknown=$(jq -c '.evidence[0].source_range="not-a-range"' <<< "$valid_registry")
+if check_ranges "$range_unknown"; then fail "unknown range descriptor was accepted"; else range_unknown_status=$?; [[ "$range_unknown_status" == 1 ]] || fail "unknown range control had unexpected status"; fi
+range_misplaced=$(jq -c '(.evidence[] | select(.evidence_id=="currentCoverage") | .source_range) = "lines 1-1"' <<< "$valid_registry")
+if check_ranges "$range_misplaced"; then fail "misplaced range descriptor was accepted"; else range_misplaced_status=$?; [[ "$range_misplaced_status" == 1 ]] || fail "misplaced range control had unexpected status"; fi
 range_oob=$(jq -c '.evidence[0].source_range="lines 1-999999"' <<< "$valid_registry")
-if check_line_range "$range_oob"; then fail "out-of-bounds range was accepted"; else range_oob_status=$?; [[ "$range_oob_status" == 1 ]] || fail "out-of-bounds range control had unexpected status"; fi
+if check_ranges "$range_oob"; then fail "out-of-bounds range was accepted"; else range_oob_status=$?; [[ "$range_oob_status" == 1 ]] || fail "out-of-bounds range control had unexpected status"; fi
 range_reversed=$(jq -c '.evidence[0].source_range="lines 2-1"' <<< "$valid_registry")
-if check_line_range "$range_reversed"; then fail "reversed range was accepted"; else range_reversed_status=$?; [[ "$range_reversed_status" == 1 ]] || fail "reversed range control had unexpected status"; fi
+if check_ranges "$range_reversed"; then fail "reversed range was accepted"; else range_reversed_status=$?; [[ "$range_reversed_status" == 1 ]] || fail "reversed range control had unexpected status"; fi
 
 support_path=$(jq -r '.native_census.support_witnesses[0].path' <<< "$valid_registry")
 support_actual=$(jq -c --arg p "$support_path" '.records[] | select(.path==(".worktrees/planning/"+$p) or .path==$p) | .values.actor' "$inventory" | head -n 1)
@@ -293,15 +336,16 @@ if check_no_propagation "$propagated_actor"; then fail "support actor propagatio
 no_match_path="project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice16-supporting-record-actor-mode-and-role/artifacts/no-such-record.md"
 no_match_count=$(jq -r --arg p "$no_match_path" '[.records[]|select(.path==$p)]|length' "$inventory")
 [[ "$no_match_count" == 0 ]] || fail "no-match path unexpectedly matched"
-no_match_output=$(jq -c --arg p "$no_match_path" '[.records[]|select(.path==$p)|.values.actor] | {count:length,actors:.}' "$inventory")
-[[ "$no_match_output" == '{"count":0,"actors":[]}' ]] || fail "no-match output was not []/0"
+no_match_actors_status=0
+no_match_actors=$(jq -c --arg p "$no_match_path" '[.records[]|select(.path==$p)|.values.actor]' "$inventory") || no_match_actors_status=$?
+[[ "$no_match_actors_status" == 0 && "$no_match_actors" == "[]" ]] || fail "no-match actor projection was not literal []"
 if jq -e '.records' "$temp/no-such-inventory.json" >/dev/null 2>&1; then fail "missing input was accepted"; else missing_status=$?; [[ "$missing_status" == 2 || "$missing_status" == 1 ]] || fail "missing input control had unexpected status"; fi
 
 fixture=$temp/support-propagation-fixture.json
 jq -n --arg id "$support_subject" --argjson actor "$expected_support" '{subject:{id:$id,actor:null},support:{subject_ref:$id,actor:$actor}}' > "$fixture"
 jq -e --arg id "$support_subject" '(.support.subject_ref==$id) and (.support.actor=={id:"codex-cc",mode:"agent-direct",role:"extractor"}) and (.subject.actor==null)' "$fixture" >/dev/null || fail "support propagation fixture failed"
 
-printf '%s\n' "native_census=$actual_census" "legacy_census=$legacy_census" "wrong_yaml_status=$wrong_yaml_status" "wrong_member_status=$wrong_member_status" "dangling_status=$dangling_status" "wrong_hash_status=$wrong_hash_status" "range_oob_status=$range_oob_status" "range_reversed_status=$range_reversed_status" "absence_status=$absence_status" "wrong_mode_status=$wrong_mode_status" "wrong_role_status=$wrong_role_status" "swapped_status=$swapped_status" "propagation_status=$propagation_status" "missing_status=$missing_status" "no_match=$no_match_output"
+printf '%s\n' "native_census=$actual_census" "legacy_census=$legacy_census" "wrong_yaml_status=$wrong_yaml_status" "wrong_member_status=$wrong_member_status" "dangling_status=$dangling_status" "wrong_hash_status=$wrong_hash_status" "wrong_authority_status=$wrong_authority_status" "range_unknown_status=$range_unknown_status" "range_misplaced_status=$range_misplaced_status" "range_oob_status=$range_oob_status" "range_reversed_status=$range_reversed_status" "absence_status=$absence_status" "wrong_mode_status=$wrong_mode_status" "wrong_role_status=$wrong_role_status" "swapped_status=$swapped_status" "propagation_status=$propagation_status" "missing_status=$missing_status" "no_match_count=$no_match_count" "no_match_actors_status=$no_match_actors_status" "no_match_actors=$no_match_actors"
 ~~~
 
 ## Recorded observations
@@ -325,28 +369,16 @@ The route passed with status 0 before the CC endpoint commit. Native output was
 populated support witnesses, three YAML exclusions, fifteen no-frontmatter
 records and 2,054 legacy parent-absent records. The negative controls returned
 status 1 for wrong YAML, invalid membership, dangling evidence, wrong hash,
+wrong declared authority, unknown and misplaced range descriptors,
 out-of-bounds range, reversed range, absence-as-null, wrong mode, wrong role,
-swapped mode/role and support propagation; missing input returned status 2;
-no-match returned
-`{"count":0,"actors":[]}`.
+swapped mode/role and support propagation; missing input returned status 2.
+The route validated all 45 rows: 42 numeric line descriptors and the three
+exact JSON-document descriptors. The real no-match actor projection returned
+the literal `[]` with status 0, while its separate count was 0.
 
 ## Committed endpoint observations
 
-The committed wrapper loaded both the registry and recipe from CC endpoint
-`2953953d` and passed with status 0. The required fail-closed endpoint checks
-also passed: using valid CC endpoint `2953953d` with the opening planning
-commit `3b7790f88cd30fa6c4988a6950b4989ae1933b7d` as the recipe endpoint
-returned status 2 because the recipe path was absent, and using source commit
-`ce3f77103eff5e07b3533a03c65f158684fc1039` as the recipe endpoint returned
-status 2 for the foreign-endpoint condition. The wrapper did not silently
-fall back to the working tree.
-
-The separate committed replay then loaded the registry from CC endpoint
-`2953953d` and the recipe bytes from replay endpoint `9f9ad2bf`; it passed with
-status 0. The endpoint pair is intentionally recorded separately so the
-recipe used for this observation is not inferred from the registry commit.
-
-After adding the explicit absence-as-null control, the final committed replay
-loaded the registry from `2953953d` and the recipe bytes from `39da2b4b`; it
-passed with status 0. The final route output recorded `absence_status=1` along
-with the other fail-closed mutation statuses.
+The committed wrapper observations are recorded after the CC endpoint commit.
+The wrapper must load the registry from the CC endpoint and the recipe bytes
+from the separately supplied replay endpoint; it must not fall back to the
+working tree. A successful route remains structural evidence only.
