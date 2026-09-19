@@ -1,9 +1,10 @@
 # Slice17 CRC Verification
 
-Current verdict: **changes required after initial CC return**. This is
-independent CRC review under the Three-Contributor Workflow, not CDC arc
-composition or Operator acceptance. No pair enters accepted coverage; live
-accounting remains 220 accepted / 335 remaining / 18 assigned / 317 outside.
+Current verdict: **accepted after Iteration01**. This is independent CRC review
+under the Three-Contributor Workflow, not CDC arc composition or Operator
+acceptance. Exactly eighteen bounded pairs enter accepted coverage once; live
+accounting becomes 238 accepted / 317 remaining / zero assigned before the
+successor opens.
 
 Date: 2026-09-18. Opening planning `c40e52fc`, CC registry endpoint
 `97a75091`, reported separate recipe endpoint `f82af9b7`, final documentation
@@ -55,3 +56,69 @@ The exact eighteen-pair boundary, 317 outside pairs, unopened Slice18-21 and
 memory, UAT and Operator gates remain open. Current correction assignment:
 `cc-prompt-iteration01.md`. CRC will independently execute the returned wrapper
 and route before any coverage transfer or Slice18 readiness work.
+
+## Iteration01 Independent Review
+
+Date: 2026-09-19. Assignment: `cc-prompt-iteration01.md`. CC contribution
+endpoint `e123b60dd846f2dfaf655642c0198f6895d8d675`; independently selected
+recipe endpoint `3e4ef8362b9bd917d09b44f30cb057d936a1f71d`; final documentation
+endpoint `eb7b606baac634f0a3beb3db5d7dcfea26c986e3`; source endpoint
+`ce3f77103eff5e07b3533a03c65f158684fc1039`. Both worktrees were clean at
+review intake. The Iteration01 diff from CRC baseline `a0f51639` through final
+documentation changes exactly the three authorized repair files, all commits
+carry both repository trailers, and `git diff --check` passes.
+
+CRC extracted the committed outer wrapper itself from `REPLAY_COMMIT=3e4ef836`,
+syntax-checked it, and executed it against `CC_COMMIT=e123b60d`. The route
+returned status 0. Same-endpoint replay at `e123b60d` also returned 0. Opening
+recipe `c40e52fc`, foreign source `ce3f7710`, and an absent all-zero commit
+failed closed with status 2. This independently establishes the preserved
+endpoint behavior rather than relying on CC's recorded status.
+
+R1 passes. The route retained every initial control and independently
+reproduced the new discriminators: null-to-absent returned 1, adding an
+accepted/outside membership returned 1, pointing a trace path at the other
+declared target returned 1, and querying a missing inventory input returned
+128 with nonempty stderr. The positive exact-set route still reports 555 full /
+220 accepted / 335 remaining / 18 assigned / 317 outside.
+
+R2 passes. The wrapper loads the recipe Markdown from its declared
+`REPLAY_COMMIT`, extracts exactly one nonempty Bash route, runs `bash -n`, and
+executes with explicit contribution and recipe endpoints. Its valid separate
+and same-endpoint cases pass; missing, stale and foreign recipe endpoints fail
+closed through the wrapper.
+
+R3 passes. The exclusion account consistently records three YAML-error files
+and fifteen no-frontmatter records. The native route also reproduced all three
+extraction-run witnesses, the complete 3 x 18 state matrix, the bounded 2,054-
+record historical absence, two successful declared-target no-matches, and the
+deliberate status-128 tool error. All earlier controls continued to return 1.
+
+The registry SHA-256 remains
+`9b1db69bb5d1628e1e47fc93e866c2be03f7617d7ebb7e3a3978247c387dd777`.
+These checks accept only the eighteen bounded contextual meanings and evidence
+route. They do not adopt a run schema, requiredness, timestamp/reference
+policy, source repair, completed extraction, claim support, runtime behavior,
+memory admission or UAT result.
+
+## Final Row Verdict
+
+S17-1 through S17-7 are independently done. The initial R1-R3 findings remain
+preserved above and are satisfied by Iteration01. All four supporting artifacts,
+both issued prompts and the two close-set records are present at their canonical
+paths. CC's repair touched only the three permitted existing files; there is no
+silent artifact, row, deferral or no-op drop.
+
+## Final Bubble-Up To Arc06
+
+Slice17 delivers directive02 Set A without changing its eighteen-pair boundary
+or any outside owner. Exactly those eighteen pairs enter accepted coverage
+once, producing 238 accepted / 317 remaining / zero assigned before the next
+open set. The evidence confirms, rather than resolves, the planned distinction
+between operation/input/method/time provenance and Slice18's run scope, worker
+and output semantics.
+
+No finding changes Arc06's capability, sequence or acceptance contract.
+Directive02 already authorizes fresh Slice18 readiness after this acceptance;
+P-15, the 248-pair later-family complement, Slices19-21, source/schema/runtime/
+package/memory/UAT work and Operator quality acceptance remain open.

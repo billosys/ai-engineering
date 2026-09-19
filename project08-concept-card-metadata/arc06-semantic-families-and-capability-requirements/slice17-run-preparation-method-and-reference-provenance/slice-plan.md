@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice17-run-preparation-method-and-reference-provenance
-status: open
+status: closed
 depends-on: [slice16-supporting-record-actor-mode-and-role]
-version: "1.1"
+version: "1.2"
 ---
 
 # Run Preparation, Method, And Reference Provenance
@@ -30,7 +30,7 @@ is `cc-prompt.md`; its return remains proposed-done until CRC verification.
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
 | cc-prompt.md | 2026-09-18 | CRC-closed Slice16 and arc directive02 | Exact Set A with native template/synthetic comparison, historical run-method comparison and fail-closed replay | Returned at `89d1b452`; CRC R1-R3 in `crc-verification.md`; superseded for correction |
-| cc-prompt-iteration01.md | 2026-09-18 | Initial CC packet and CRC R1-R3 | Complete omitted discriminating controls, preserve a literal endpoint wrapper and correct exclusion wording | Current CC correction assignment; pending execution |
+| cc-prompt-iteration01.md | 2026-09-18 | Initial CC packet and CRC R1-R3 | Complete omitted discriminating controls, preserve a literal endpoint wrapper and correct exclusion wording | Returned at `e123b60d`; independently CRC-accepted with recipe `3e4ef836` and final documentation `eb7b606b` |
 
 ## Exact Scope And Ownership
 
@@ -129,14 +129,18 @@ replay. CRC independently reviews before any pair enters accepted coverage.
 
 ## Exit Criteria
 
-All seven ledger rows are CC-attested with exact evidence; the six-file packet
-commits under the repository trailers; precommit and separate-endpoint replay
-pass; and unresolved policy questions retain owners. CRC then reviews semantic
-context and replay independently. Slice18 remains unopened until Slice17 is
-accepted and fresh readiness passes.
+All seven ledger rows are CC-attested and independently CRC-verified with exact
+evidence. The initial six-file packet and focused three-file repair carry the
+repository trailers; separate-endpoint replay passes; and unresolved policy
+questions retain owners. Exactly eighteen pairs enter accepted coverage once.
+Slice18 may open only after its separate fresh readiness pass.
 
 ## Version History
 
+- 1.2 (2026-09-19): CRC independently accepts Iteration01 after reproducing
+  all old and new controls plus the committed endpoint wrapper. Closes all
+  seven rows and transfers exactly eighteen Set A pairs to accepted coverage;
+  no schema, source, extraction or UAT claim is added.
 - 1.1 (2026-09-18): CRC review preserves the eighteen meanings and semantic
   artifacts but keeps Slice17 open for omitted controls, reproducible endpoint
   extraction and one census-wording correction. Coverage remains 220/335/18/317.
