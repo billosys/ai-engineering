@@ -1,8 +1,9 @@
 # Arc06 Ledger
 
 All arc rows remain open. After independent Slice16 closure, live coverage is
-220 accepted / 335 remaining / zero assigned. Slice17 retains broader
-provenance for CDC sizing. Was: 208/347/12/335 while Slice16 was assigned. No
+220 accepted / 335 remaining / zero assigned. Directive02 approves exact
+Slice17-21 provenance boundaries (87 pairs); CRC acknowledgement/readiness
+precedes opening. The other 248 retain later-family owners. No
 arc composition row closes.
 The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
@@ -11,7 +12,7 @@ S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | A6-1 | Frozen coverage, finer contexts and discoveries have complete ownership | Derive union and disjoint sets; inspect all transfers | serious | S1-4, S4-2/S4-6, A1-1, P-1 | open | ../artifacts/semantic-coverage-current.json | 220 accepted; 335 remain with Arc06; zero assigned |
 | A6-2 | Relationships and CQs preserve meanings and computational distinctions | Review evidence and reproduce bounded query cases without prose-invented edges | serious | S4-4/S4-5, P-3 | open | | Slices01/02; equivalence not assumed |
-| A6-3 | Provenance/common references have role-specific identity, scope and exceptions | Trace actors/runs/sources/references across populated/template contexts | serious | Arc01 Slice05, P-4/P-6 | open | slice03-provenance-and-shared-reference-contracts/cdc-verification.md; slice14-provenance-context-and-reference-semantics/crc-verification.md; slice15-provenance-roles-runs-and-shared-references/crc-verification.md; slice16-supporting-record-actor-mode-and-role/crc-verification.md | Slice13-16 bounded actor observations accepted; Slice17 awaits CDC sizing; shape is not authority |
+| A6-3 | Provenance/common references have role-specific identity, scope and exceptions | Trace actors/runs/sources/references across populated/template contexts | serious | Arc01 Slice05, P-4/P-6 | open | slice03-provenance-and-shared-reference-contracts/cdc-verification.md; slice14-provenance-context-and-reference-semantics/crc-verification.md; slice15-provenance-roles-runs-and-shared-references/crc-verification.md; slice16-supporting-record-actor-mode-and-role/crc-verification.md | Slice13-16 bounded actor observations accepted; Slice17-21 approved boundaries, unopened; directive02 supplies ownership, not acceptance; shape is not authority |
 | A6-4 | Evidence, confidence, validation and verification stay distinct | Review subject/rubric/coverage/independence/applicability cases | serious | Arc01 Slice05, P-4 | open | | Slices04/05 |
 | A6-5 | Reconciliation, preservation and admission retain decision scope/authority | Trace conflict, revision, prior value, approval and reliance cases | serious | Arc01 Slice05, P-4/P-6 | open | | Slices06-08; no automatic admission |
 | A6-6 | Every remaining family and cross-family marker has supported contextual dispositions | Review member meanings, evidence layers, exceptions and consequences | serious | S1-4/S1-5, S4-3/S4-4/S4-5, P-1 | open | | No catch-all placeholders |

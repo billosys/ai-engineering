@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.34"
+version: "1.35"
 ---
 
 # Concept Card Metadata
@@ -110,8 +110,10 @@ recomposition, 150 were accepted and 405 remained. Slice02's independent
 closure added 30 CQ pairs, reaching 180 accepted / 375 remaining. Slice13's
 independent closure adds eight actor-identity pairs; Slice14's independent
 CRC closure adds twelve more; Slice15's independent CRC closure adds eight
-bounded mode/role pairs: now 208 accepted / 347 remaining / zero assigned.
-Slice16's twelve approved pairs are assigned after fresh readiness, not accepted.
+bounded mode/role pairs, followed by Slice16's twelve independently accepted
+pairs: now 220 accepted / 335 remaining / zero assigned. Arc directive02
+approves five bounded provenance units (87 pairs) without assigning them;
+the other 248 remain owned by the evidence/lifecycle families.
 Use the
 [current coverage register](./artifacts/semantic-coverage-current.json).
 The transition snapshot stays immutable. Process the remainder by family, retaining
@@ -185,8 +187,9 @@ replacement of the preserved cc-prompt.md, not an executed repair pass.
 CRC first reads/acknowledges the directive and checks the replacement before
 the Operator relays it to fresh CC. The original prompt is not edited.
 The recorded acknowledgement below completed that initial relay. Current
-handoff: arc-level cdc-directive01.md answers CRC's post-Slice14 sizing request;
-CRC acknowledgement/preparation is next. No CC assignment is currently active.
+handoff: arc-level cdc-directive02.md answers CRC's post-Slice16 sizing request;
+CRC acknowledgement and Slice17 author readiness are next. No CC assignment
+is currently active. Arc-level exchange history lives in the arc plan.
 
 ### Design Handoff History
 
@@ -217,7 +220,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12-16 closed; 220 accepted and 335 remaining; Slice17 retained for CDC sizing |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12-16 closed; 220 accepted and 335 remaining; Slice17-21 approved boundaries, none open; CRC readiness next |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -236,10 +239,16 @@ Current accounting: 220 accepted / 335 remaining / zero assigned after
 independent Slice16 closure. Slice14 accepted actor/actor.id in memory-admission,
 preservation-decision, relationship-edge, source-locator, source-support and
 validation-result. CDC's response to Arc06 escalation01 approves a kind-aligned
-mode/role split: eight pairs in Slice15 and twelve in Slice16. Slice17 explicitly
-retains run identity/scope/workers/outputs, preparation links, method/prompt/time
-provenance, common references and remaining CQ provenance interfaces for sizing.
-See [the arc directive](./arc06-semantic-families-and-capability-requirements/cdc-directive01.md).
+mode/role split: eight pairs in Slice15 and twelve in Slice16, now accepted.
+Arc directive02 divides the retained provenance work into Slice17 operation/
+inputs/method/time (18 pairs), Slice18 scope/workers/outputs (22), Slice19
+cross-record run references (19), Slice20 creation time (11) and Slice21
+preparation/method references (17). Each opens only after predecessor acceptance
+and fresh CRC readiness, beginning with Slice17 after acknowledgement.
+See [the current arc directive](./arc06-semantic-families-and-capability-requirements/cdc-directive02.md).
+It explicitly retains the other 248 pairs with later semantic owners, including
+synthetic/surface markers and CQ retrieval/revision interfaces. Scope approval
+does not accept meanings or assign pairs; P-15 remains open.
 CRC acknowledged and completed pre-opening native recount/witness inspection
 and prompt-author readiness before opening Slice15. The directive alone
 assigned/accepted no pairs and did not reopen CRC-accepted Slice14; this
@@ -461,6 +470,11 @@ project requires an explicit operator decision recorded in the plan.
 
 ## Version History
 
+- 1.35 (2026-09-18): CDC answers arc escalation02 with five exact provenance
+  units (18/22/19/11/17) and explicit remainder ownership. CRC may open them
+  sequentially after acknowledgement, predecessor acceptance and fresh author
+  readiness. Reconciles stale live status to 220/335/0/335; no acceptance,
+  source, schema, UAT or project-criterion changes.
 - 1.34 (2026-09-18): CRC independently closes Slice16 after its focused
   replay repair. Twelve bounded supporting-kind mode/role pairs enter accepted
   coverage once, reaching 220/335/0/335. Slice17 remains held for CDC sizing;

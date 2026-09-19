@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.23"
+version: "1.24"
 ---
 
 # Semantic Families And Capability Requirements
@@ -24,28 +24,31 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 CRC independently accepted Slice16 after its focused Iteration01 repair.
 Live coverage is 220 accepted / 335 remaining / zero assigned. The twelve
 supporting-kind mode/role pairs entered coverage once; no global role
-vocabulary, authority or schema was adopted. Slice17 remains unsized and
-requires CDC sizing before any successor opens. All A6 rows and P-15 stay
+vocabulary, authority or schema was adopted. Slice17-21 now have approved
+boundaries under directive02, but none is open. All A6 rows and P-15 stay
 open. Was: 208/347/12/335 while Slice16 was assigned.
 
-CRC has now issued [crc-escalation02.md](./crc-escalation02.md). It enumerates
-87 exact retained provenance candidates in five disjoint semantic groups and
-leaves the other 248 remaining pairs with Slices04-11. This is a decision
-request, not an assignment: live coverage remains 220/335/0/335 and no
-Slice17 prompt or directory exists. CDC response is required before opening.
+CDC answers [crc-escalation02.md](./crc-escalation02.md) in
+[cdc-directive02.md](./cdc-directive02.md): approve Sets A-E as Slice17-21,
+18/22/19/11/17 pairs. The other 248 remain with Slices04-08 for semantics and
+Slices09-11 for composition/research/requirements. No pair is assigned or
+accepted by this decision: live coverage remains 220/335/0/335 and no
+Slice17 prompt or directory exists. CRC acknowledgement and fresh author
+readiness are next; no second CDC pre-opening return is needed within bounds.
 
 Slice14 iteration03 is independently CRC-accepted on 2026-09-17. Its twelve
 actor/actor.id pairs entered coverage once; at that closure, accounting was
 200 accepted / 355 remaining / zero assigned. The CRC record preserves R1-R5
 history and the final committed
 replay, registered-range, negative-control and bounded semantic checks.
-Slice15 was held for CDC sizing at that closure. The response to
-[crc-escalation01.md](./crc-escalation01.md) is now issued in
+Slice15 was held for CDC sizing at that closure. The earlier response to
+[crc-escalation01.md](./crc-escalation01.md) was issued in
 [cdc-directive01.md](./cdc-directive01.md): approve eight mode/role pairs in
 Slice15, followed by twelve in Slice16, with all broader provenance scope
-retained in Slice17 for separate sizing. CRC acknowledges and completes
-pre-opening author reconnaissance before issuing work; no CC assignment or
-coverage change is made by this directive. All A6 rows and P-15 stay open.
+retained in Slice17 for separate sizing. CRC subsequently acknowledged and
+completed both bounded units. Directive01 itself made no CC assignment or
+coverage change. Directive02 now governs the remainder; all A6 rows and P-15
+stay open.
 
 Slice13 repair d94ab1c6 is independently accepted on 2026-09-17; all six
 rows close and its eight pairs enter coverage once. The CDC record preserves
@@ -61,8 +64,8 @@ four populated pilot supports. The formerly unsized Slice15 owner is now split:
 Slice15 retains actor.mode/actor.role for claim, competency-question, concept-card
 and extraction-run; Slice16 owns the same fields for memory-admission,
 preservation-decision, relationship-edge, source-locator, source-support and
-validation-result. Slice17 owns run, preparation, method, shared-reference and
-remaining CQ provenance interfaces. Size/split Slice17 before opening.
+validation-result. Directive02 now partitions the other run, preparation,
+method, time, shared-reference and remaining CQ provenance work into Slice17-21.
 This implements the existing late-sizing authority,
 not a scope reduction or adoption of an actor model.
 At Slice14 opening: 188 accepted / 367 remaining / 12 assigned / 355 not yet
@@ -81,10 +84,11 @@ both crc-verification.md and cdc-verification.md. Existing CDC records retain
 their historical authority. A reviewer implementing a repair needs a different
 verifier for acceptance. No extra CDC approval is added to ordinary CRC slice
 closure; design/scope decisions still require the explicit escalation route.
-Slice15/16 boundaries are approved, not yet execution-ready. CRC may detail
-them within the directive after native recount and witness inspection. Any
-material mismatch or further structural change returns to CDC; Slice17 still
-requires sizing approval. Prior acceptance and iteration histories are intact.
+Slice15/16 are now accepted in their recorded CRC history. CRC may detail
+Slice17-21 sequentially within directive02 after native recount, witness
+inspection and prompt-author readiness. Any material mismatch or further
+structural change returns to CDC. Prior acceptance and iteration histories
+are intact.
 
 ### Design Handoff History
 
@@ -92,7 +96,8 @@ requires sizing approval. Prior acceptance and iteration histories are intact.
 | --- | --- | --- | --- | --- | --- |
 | crc-escalation01.md | 2026-09-17 | Slice14 CRC closure at `febbd787`; project `cdc-directive01.md` supplies three-contributor authority | Size the next provenance unit; A6-1/A6-3/A6-6, Slice15 owner and P-15 preserved | Answered by arc-level cdc-directive01.md; escalation preserved | CRC reads the response through the Operator and records acknowledgement before advancement |
 | cdc-directive01.md | 2026-09-17 | Response to arc crc-escalation01.md; existing Operator-approved bounded-slice planning authority | Approves eight/twelve mode-role split; names Slice17 remainder; A6-1/A6-3/A6-6 and all gates retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-09-17; planning `b748aca4f14a2c5a9418ddc2bbb08e6c3f818a28`, source `76a69fd9c295e78f23faa651746c2e36646e0ebd`, both clean; directive and coverage/frozen identities checked. Pre-opening recount/readiness completed; Slice15 issued under this directive. | Operator relays `slice15-provenance-roles-runs-and-shared-references/cc-prompt.md` to fresh CC; CRC independently reviews returned packet; material drift returns to CDC |
-| crc-escalation02.md | 2026-09-18 | Slice16 CRC closure at `3841734b`; arc `cdc-directive01.md` requires a new sizing decision | Enumerates 87 provenance candidates, five bounded options, 248 retained later-family pairs and CQ ownership question; A6-1/A6-3/A6-6/P-15 preserved | Awaiting CDC response through the Operator; no successor assignment | CDC returns `cdc-directive02.md`; CRC acknowledges before any Slice17 opening |
+| crc-escalation02.md | 2026-09-18 | Slice16 CRC closure at `3841734b`; arc `cdc-directive01.md` requires a new sizing decision | Enumerates 87 provenance candidates, five bounded options, 248 retained later-family pairs and CQ ownership question; A6-1/A6-3/A6-6/P-15 preserved | Answered by cdc-directive02.md; escalation preserved | Operator relays response to CRC |
+| cdc-directive02.md | 2026-09-18 | Response to arc crc-escalation02.md at `dee3052c`; follows arc directive01 | Exact Sets A-E become Slice17-21; 248 other pairs retain owners; all A6/P gates unchanged | Issued; awaiting CRC acknowledgement, not a CC assignment | CRC checks state, acknowledges and completes Slice17 author readiness before opening; no acknowledgement recorded on CRC's behalf |
 
 ### Historical Slice03 Closure And Slice13 Opening (Superseded Assignment)
 
@@ -173,7 +178,7 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 
 Current coverage is recorded separately in
 [semantic-coverage-current.json](../artifacts/semantic-coverage-current.json):
-200 accepted, 355 remaining, eight assigned to Slice15 and 347 not yet sliced.
+220 accepted, 335 remaining, zero assigned and 335 not yet sliced.
 The original transition and its registered hashes remain unchanged. Slice12
 contributes repairs to Slice01, not a second 35-pair acceptance.
 
@@ -197,8 +202,8 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
    evidence/replay contract with two worked cases; any justified tooling
    needs a separately scoped follow-up, not a framework inside Slice03.
    Slice13/14 have closed eight and twelve actor-identity pairs respectively.
-   Slice15/16 own bounded mode/role groups; Slice17 retains the other
-   provenance semantics for sizing/splitting.
+   Slice15/16 have closed their bounded mode/role groups; Slice17-21 own the
+   other provenance semantics under directive02 with fresh readiness per unit.
    Slice09 integrates
    all-input nine-root replay and validates original codec/EOF obligations.
    Earlier slices may use bounded literal existing-tool recipes, not build a
@@ -221,10 +226,14 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
 | `slice14-provenance-context-and-reference-semantics` | 12 actor/actor.id pairs across remaining six record kinds | Closed Slice13 and shared replay contract | CRC-closed at febbd787; twelve pairs accepted |
 | `slice15-provenance-roles-runs-and-shared-references` | Eight actor.mode/actor.role pairs: claim, CQ, card and extraction-run; stable previously planned slug retained | Accepted Slice13/14 and arc directive01 | CRC-closed after Iteration01; eight bounded pairs accepted |
 | `slice16-supporting-record-actor-mode-and-role` | Twelve actor.mode/actor.role pairs in the other six actor-bearing kinds; cross-group comparison | Closed Slice15 plus accepted Slice14 | CRC-closed after Iteration01; twelve bounded pairs accepted |
-| `slice17-run-preparation-method-and-reference-provenance` | Remaining run identity/scope/workers/outputs, preparation links, method/prompt/time provenance, shared reference contracts and CQ provenance interfaces | Slice15/16 findings and accepted common contracts | Explicit unsized owner; CDC sizing before execution |
-| `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts and needed Slice13-17 provenance inputs | Plan when near |
-| `slice05-validation-and-verification` | Structural checks versus semantic verification, coverage, independence and applicability | Slices03/04 | Plan when near |
-| `slice06-reconciliation-and-revision-effects` | Conflicts, decisions, affected/resulting constructs and revision consequences | Slices03-05 | Plan when near |
+| `slice17-run-preparation-method-and-reference-provenance` | Set A: 18 operation/input/method/time extraction-run pairs; stable prior slug retained | Accepted Slice16, common contracts and directive02 | Approved boundary; CRC acknowledgement/readiness before opening |
+| `slice18-run-scope-workers-and-outputs` | Set B: 22 run scope/worker/output pairs, including mapping/sequence/absence distinctions | Accepted Slice17 and fresh readiness | Approved boundary; unopened |
+| `slice19-cross-record-run-references` | Set C: 19 run-linkage pairs across kinds; no inherited authority | Accepted Slice18 and fresh readiness | Approved boundary; unopened |
+| `slice20-cross-record-creation-time` | Set D: 11 creation-time pairs; no global timestamp policy | Accepted Slice19 and fresh readiness | Approved boundary; unopened |
+| `slice21-cross-record-preparation-and-method-references` | Set E: 17 preparation/method-reference pairs with kind-specific applicability | Accepted Slice20 and fresh readiness | Approved boundary; unopened |
+| `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope, scalar/structured differences and synthetic/surface markers; includes untyped confidence | Shared contracts and needed Slice13-21 provenance inputs | Enumerate/size when near |
+| `slice05-validation-and-verification` | Structural checks versus semantic verification, coverage, independence, applicability and CQ retrieval observations | Slices03/04 | Enumerate/size when near |
+| `slice06-reconciliation-and-revision-effects` | Conflicts, decisions, affected/resulting constructs, revision consequences and CQ prior/replacement/re-entry fields | Slices03-05 | Enumerate/size when near |
 | `slice07-preservation-and-prior-value` | Retained value, destinations, prior decisions and operator-review boundaries | Slice06 and shared contracts | Plan when near |
 | `slice08-admission-and-authority` | Reliance scope, approval/authority, evidence summaries and no implied runtime write | Slices04-07 | Plan when near |
 | `slice09-inventory-recomposition-and-replay` | Complete family join, exact inputs, original S1/S4 row reconciliation and nine-root replay | All family evidence reviewed, including added slices | Final inventory gate |
@@ -254,11 +263,20 @@ Slice14. That owner amendment superseded older handoffs naming Slice03 or all of
 Slice13. Prior amendment: Slice14 takes only the 12 remaining actor/actor.id
 pairs; Slice15 inherits ALL its other original responsibilities. The 355
 outside pairs stay Arc06-owned across the retained families, not all Slice15.
-Latest amendment (arc directive01): Slice15/16 partition the 20 mode/role
+Prior amendment (arc directive01): Slice15/16 partition the 20 mode/role
 pairs; Slice17 retains the other provenance obligations, not all 335 remaining
 non-mode/role pairs. Slices04-08 keep evidence/lifecycle responsibilities;
 Slice09 recomposes coverage, Slice10 research and Slice11 requirements/P-15.
 No obligation is removed; no unbounded execution packet is authorized.
+
+Latest amendment (arc directive02): its incorporated exact Sets A-E divide
+the retained provenance boundary into Slice17-21. All 87 pairs are currently
+remaining, disjoint from 220 accepted pairs. The 248-pair complement remains
+in current coverage. Directive02's remainder-owner section explicitly assigns
+markers, CQ retrieval/revision fields and kind-local result/decision roles;
+it is planning ownership, not semantic acceptance. CRC enumerates and sizes
+later families before execution, escalating collisions rather than guessing.
+Any newly discovered non-frozen context remains separately identified work.
 
 ## Research And Capability Priorities
 
@@ -306,6 +324,11 @@ change needs its own bounded explicit scope and verification.
 
 ## Version History
 
+- 1.24 (2026-09-18): CDC approves escalation02 Option 2 with exact five-way
+  provenance ownership and explicit later-family interfaces. Records directive02,
+  sequential CRC readiness/issuance authority and unchanged 220/335/0/335
+  coverage. Reconciles stale live status; no slice acceptance, source change,
+  normative adoption or reduced composition criterion.
 - 1.23 (2026-09-18): Issues arc escalation02 after Slice16 closure. It
   enumerates 87 retained provenance candidates and recommends five bounded
   units while preserving 248 later-family pairs. No pair is assigned or
