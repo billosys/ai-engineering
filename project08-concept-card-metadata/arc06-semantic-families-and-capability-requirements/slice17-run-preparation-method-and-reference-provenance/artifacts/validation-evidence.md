@@ -15,12 +15,42 @@ registered ranges, and rejects wrong roots, authorities, hashes, descriptors,
 nulls, reversed spans and out-of-bounds spans.
 
 The route has precommit mode for the working registry and committed mode for a
-registry loaded from `CC_COMMIT` plus recipe bytes loaded from a separately
-named `REPLAY_COMMIT`. It checks exactly the six permitted output paths and
-protects the prompt, plans, coverage, transition, directive, source authority,
-Slice16 records and other historical inputs. It preserves operation stdout,
-status and stderr presence for the two successful no-matches and deliberate
-tool error.
+registry loaded from `CC_COMMIT`. A preserved outer wrapper below loads the
+recipe bytes from a separately named `REPLAY_COMMIT`, extracts exactly the
+literal route, syntax-checks it and executes it with the declared endpoints.
+The route checks exactly the six permitted output paths and protects the
+prompt, plans, coverage, transition, directive, source authority, Slice16
+records and other historical inputs. It preserves operation stdout, status
+and stderr presence for the two successful no-matches and deliberate tool
+error.
+
+## Iteration01 intake and contract readback
+
+This corrective assignment was loaded from planning `a0f51639` with source
+`ce3f77103eff5e07b3533a03c65f158684fc1039`; the preserved semantic baseline
+was read from registry endpoint `97a75091b6d124955762f12c72865f72d5aedd53`.
+The complete required-full extents were loaded before editing: this iteration
+prompt 200 lines, `crc-verification.md` 57, `slice-plan.md` 145, `ledger.md`
+16, initial prompt 400, current validation evidence 376, closing report 70,
+semantic membership 305, semantic evidence 241 and handoff 77. Required
+sections were loaded from project plan, arc plan and directive02; source
+guide07 named sections, testing-discipline sections and row-closure guidance
+were read at source `ce3f7710`. A combined required-read output was truncated;
+the omitted registry and plan material was recovered with bounded contiguous
+reads. No context compaction occurred.
+
+The contract readback is: R1 requires four additional candidates to pass
+through the existing `check_matrix`/`check_registry`/native-input predicates,
+with independent expected values unchanged: template null-to-absent,
+accepted/outside membership addition, declared other-target path substitution,
+and a missing inventory input or invalid authority. R2 requires the outer
+wrapper, not the inner route, to load recipe bytes from `REPLAY_COMMIT`, reject
+missing/multiple/malformed route blocks, run `bash -n`, and preserve the
+actual execution status; opening and foreign endpoints must therefore be
+tested at wrapper extraction. R3 is only the contradictory count wording.
+Only this validation file, `ledger.md` and `closing-report.md` may change;
+the six-file semantic baseline, exact 18/39 evidence, 220/335/18/317
+accounting, no-pair-acceptance boundary and all future owners remain intact.
 
 ## Literal route
 
@@ -291,7 +321,57 @@ if check_matrix "$wrong_path"; then fail "wrong path mutation was accepted"; els
 wrong_target_expected=$(jq -n '{path:"document-extraction/raw/synthetic-method-note-002.txt",stdout:"wrong",status:0,stderr_nonempty:false,classification:"successful_no_match"}')
 if check_target "$target1" "$wrong_target_expected"; then fail "wrong target expectation was accepted"; else wrong_target_status=$?; [[ "$wrong_target_status" == 1 ]] || fail "wrong target status unexpected"; fi
 
-printf '%s\n' "mode=$mode" "native_population=$actual_population" "matrix=$actual_matrix" "yaml_error_count=$(jq length <<< "$yaml_errors")" "no_frontmatter_count=$(jq length <<< "$no_frontmatter")" "historical=$historical" "target1=$target1" "target2=$target2" "missing_target=$missing_target" "wrong_authority_status=$wrong_authority_status" "wrong_hash_status=$wrong_hash_status" "unknown_range_status=$unknown_range_status" "null_range_status=$null_range_status" "misplaced_range_status=$misplaced_range_status" "reversed_range_status=$reversed_range_status" "wrong_field_status=$wrong_field_status" "empty_absent_status=$empty_absent_status" "path_added_status=$path_added_status" "wrong_id_status=$wrong_id_status" "wrong_revision_status=$wrong_revision_status" "wrong_path_status=$wrong_path_status" "wrong_target_status=$wrong_target_status"
+null_to_absent=$(jq -c 'map(if .record=="template" then .fields.finished_at={state:"absent",value:null} else . end)' <<< "$actual_matrix")
+if check_matrix "$null_to_absent"; then fail "null-to-absent mutation was accepted"; else null_to_absent_status=$?; [[ "$null_to_absent_status" == 1 ]] || fail "null-to-absent status unexpected"; fi
+accepted_outside_add=$(jq -c '.memberships += [(.memberships[0] | .field_path="actor" | .record_kind="claim" | .meaning_id="slice17-invalid-accepted-outside")]' <<< "$valid_registry")
+if check_registry "$accepted_outside_add"; then fail "accepted/outside membership addition was accepted"; else accepted_outside_status=$?; [[ "$accepted_outside_status" == 1 ]] || fail "accepted/outside status unexpected"; fi
+other_target_path=$(jq -c 'map(if .record=="trace" then .fields.input_source_ref.path.value="document-extraction/prepared/synthetic-method-note-002.md" else . end)' <<< "$actual_matrix")
+if check_matrix "$other_target_path"; then fail "other-target path mutation was accepted"; else other_target_path_status=$?; [[ "$other_target_path_status" == 1 ]] || fail "other-target path status unexpected"; fi
+
+lookup_missing_inventory() {
+  local out=$temp/missing-inventory-out err=$temp/missing-inventory-err status
+  set +e; git show "$opening_planning:${inventory_rel}.missing" > "$out" 2> "$err"; status=$?; set -e
+  jq -n -c --arg path "${inventory_rel}.missing" --rawfile stdout "$out" --rawfile stderr "$err" --argjson status "$status" '{path:$path,stdout_bytes:($stdout|length),status:$status,stderr_nonempty:(($stderr|length)>0),classification:(if $status==0 then "match" else "tool_error" end)}'
+}
+missing_inventory=$(lookup_missing_inventory)
+missing_inventory_status=$(jq -r '.status' <<< "$missing_inventory")
+[[ "$missing_inventory_status" != 0 && "$(jq -r '.stderr_nonempty' <<< "$missing_inventory")" == true ]] || fail "missing inventory input did not fail as a tool error"
+
+printf '%s\n' "mode=$mode" "native_population=$actual_population" "matrix=$actual_matrix" "yaml_error_count=$(jq length <<< "$yaml_errors")" "no_frontmatter_count=$(jq length <<< "$no_frontmatter")" "historical=$historical" "target1=$target1" "target2=$target2" "missing_target=$missing_target" "missing_inventory=$missing_inventory" "wrong_authority_status=$wrong_authority_status" "wrong_hash_status=$wrong_hash_status" "unknown_range_status=$unknown_range_status" "null_range_status=$null_range_status" "misplaced_range_status=$misplaced_range_status" "reversed_range_status=$reversed_range_status" "wrong_field_status=$wrong_field_status" "empty_absent_status=$empty_absent_status" "path_added_status=$path_added_status" "wrong_id_status=$wrong_id_status" "wrong_revision_status=$wrong_revision_status" "wrong_path_status=$wrong_path_status" "wrong_target_status=$wrong_target_status" "null_to_absent_status=$null_to_absent_status" "accepted_outside_status=$accepted_outside_status" "other_target_path_status=$other_target_path_status" "missing_inventory_status=$missing_inventory_status"
+~~~
+
+## Committed endpoint wrapper
+
+The following wrapper is the exact shell used for committed replay. Its route
+extraction is bounded to the `## Literal route` section, so this wrapper does
+not count itself as another literal route. Extraction failures return status 2;
+an extracted route's own status is returned unchanged.
+
+~~~bash
+set -euo pipefail
+
+validation_rel=project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice17-run-preparation-method-and-reference-provenance/artifacts/validation-evidence.md
+
+run_endpoint() {
+  local cc=$1 recipe=$2 doc script section starts closes
+  doc=$(mktemp)
+  script=$(mktemp)
+  trap 'rm -f "$doc" "$script"' RETURN
+  git cat-file -e "$cc^{commit}" || return 2
+  git cat-file -e "$recipe^{commit}" || return 2
+  git show "$recipe:$validation_rel" > "$doc" 2>/dev/null || return 2
+  section=$(awk '/^## Literal route$/{p=1;next} p&&/^## Required control and endpoint observations$/{exit} p' "$doc") || return 2
+  starts=$(printf '%s\n' "$section" | grep -c '^~~~bash$' || true)
+  closes=$(printf '%s\n' "$section" | grep -c '^~~~$' || true)
+  [[ "$starts" == 1 && "$closes" == 1 ]] || return 2
+  printf '%s\n' "$section" | awk '/^~~~bash$/{p=1;next} p&&/^~~~$/{found=1;exit} p{print} END{if (!found) exit 2}' > "$script" || return 2
+  [[ -s "$script" ]] || return 2
+  bash -n "$script" || return 2
+  CC_COMMIT="$cc" REPLAY_COMMIT="$recipe" bash "$script"
+}
+
+[[ -n "${CC_COMMIT:-}" && -n "${REPLAY_COMMIT:-}" ]] || exit 2
+run_endpoint "$CC_COMMIT" "$REPLAY_COMMIT"
 ~~~
 
 ## Required control and endpoint observations
@@ -300,9 +380,11 @@ The route must be run with `CC_PRECOMMIT=1` after the six output files are
 present and with a committed wrapper that extracts this block from a separate
 `REPLAY_COMMIT`. The recorded result below is filled after the scoped commit.
 The required mutation statuses are status 1 for wrong field, empty-list to
-absent, added path, wrong id/revision/path, wrong authority/hash/range and
-wrong target expectation. The two declared paths must be status 0 with empty
-stdout and stderr; the deliberate missing target must be nonzero with stderr.
+absent, added path, wrong id/revision/path, wrong authority/hash/range, wrong
+target expectation, null-to-absent, accepted/outside membership addition and
+other-target path. The two declared paths must be status 0 with empty stdout
+and stderr; the deliberate missing target and missing inventory input must be
+nonzero with stderr.
 
 The route's structural comparisons do not establish source support, semantic
 verification, a resolved synthetic target, schema conformance, memory
@@ -332,10 +414,13 @@ empty stdout and `stderr_nonempty=false`, classified as
 The negative controls all exited with the expected status 1:
 wrong-authority, wrong-hash, unknown-range, null-range, misplaced-range,
 reversed-range, singular/plural field mutation, empty-list-to-absent,
-path-added, wrong-id, wrong-revision, wrong-path and wrong-target expectation.
+path-added, wrong-id, wrong-revision, wrong-path, wrong-target expectation,
+null-to-absent, accepted/outside membership addition and other-target path.
+The missing inventory input returned a nonzero Git error with stderr and is
+recorded separately from the missing synthetic target.
 
 The native availability census is exact: the three YAML-error paths are the
-two compcogneuro candidate-card files for memory/priming/recognition and the
+three compcogneuro candidate-card files for memory/priming/recognition and the
 fifteen no-opening-frontmatter paths are listed in `semantic-evidence.md`.
 The native record projections are the trace's populated singular input and
 prepared mappings, the parallel recipe's populated ID/revision-only mappings,
@@ -374,3 +459,27 @@ No CRC or CDC verification, Operator acceptance, source/schema/runtime/parser
 change, package/install check, extraction execution, memory admission, UAT,
 coverage acceptance, or model/effort measurement was run or authorized by
 this slice. These are explicit open gates, not failed semantic checks.
+
+### Iteration01 correction observations
+
+The corrected precommit route exited 0. Positive structural results remain
+unchanged: exact Set A and 220/335/18/317 accounting, 3 x 18 native matrix,
+3 YAML-error records, 15 no-frontmatter records, 2,054 historical records
+with zero selected roots, two status-0 successful no-matches, and the status-128
+missing synthetic-target tool error. Existing authority/hash/range,
+singular/plural, empty/absent, path, identity, revision and target controls
+continued to return status 1.
+
+The four new production-predicate controls returned status 1:
+`null_to_absent_status=1`, `accepted_outside_status=1`,
+`other_target_path_status=1` and `missing_inventory_status=128`. The missing
+inventory probe used `git show "$opening_planning:${inventory_rel}.missing"`,
+captured zero stdout, nonempty stderr and status 128, and remained distinct
+from the declared-target no-match and missing synthetic-target probes.
+The corrected availability wording now says three YAML-error files and keeps
+the exact three paths separate from the fifteen no-frontmatter records.
+
+The inner literal route and the preserved outer wrapper both passed `bash -n`
+before staging. Committed wrapper extraction/execution statuses, including the
+valid separate recipe, opening planning, foreign source and absent commit
+endpoints, are recorded after the scoped correction commit below.
