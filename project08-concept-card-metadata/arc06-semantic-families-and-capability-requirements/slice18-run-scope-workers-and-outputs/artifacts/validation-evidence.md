@@ -342,7 +342,21 @@ function called with an argument, matrix shape/state-label mismatches, a jq
 optional-field spacing parse error, and one unmatched historical jq delimiter.
 Each failed attempt stopped before any commit, and the route was corrected and
 re-run to the passing result above. The committed replay and endpoint-control
-results remain unrun until the six-file contribution commit exists.
+results are recorded below.
+
+### First committed endpoint
+
+`CC_COMMIT=13d219abd00d6b879f87da199837beb6c9a31090` and the same value for
+`REPLAY_COMMIT` were passed through the committed wrapper extracted from the
+committed validation artifact. `bash -n` passed and the wrapper returned `0`.
+Its output was identical to the precommit control and summary block except
+for `mode=committed`; the route reported `source=ce3f77103eff5e07b3533a03c65f158684fc1039`,
+`planning_opening=961c748f7915c71ba59ef37a2dd65253800be268`,
+`population=3-extraction-runs`, `matrix=3x22`, `target=one-match-one-successful-no-match`,
+and `json=valid registry=valid evidence=authority-hash-range-valid source=clean scope=six-files`.
+All 17 matrix mutations, four authority/range mutations, the outside-addition
+scope control, and the two tool-error controls retained their recorded
+nonzero classifications.
 
 ## Failed or unrun checks
 
