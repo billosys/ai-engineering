@@ -1,0 +1,562 @@
+{
+  "artifact_kind": "arc06-slice18-semantic-membership",
+  "status": "cc-proposed-done",
+  "scope": {
+    "assignment": [
+      ["actual_coverage", "extraction-run"],
+      ["agent_scope", "extraction-run"],
+      ["intended_outputs", "extraction-run"],
+      ["intended_scope", "extraction-run"],
+      ["output_refs", "extraction-run"],
+      ["output_refs.cards", "extraction-run"],
+      ["output_refs.claims", "extraction-run"],
+      ["output_refs.cqs", "extraction-run"],
+      ["output_refs.edges", "extraction-run"],
+      ["output_refs.locators", "extraction-run"],
+      ["output_refs.source_support", "extraction-run"],
+      ["output_refs[]", "extraction-run"],
+      ["output_refs[].id", "extraction-run"],
+      ["output_refs[].record_type", "extraction-run"],
+      ["output_refs[].revision", "extraction-run"],
+      ["parallel_worker_count", "extraction-run"],
+      ["worker_outputs", "extraction-run"],
+      ["worker_scope", "extraction-run"],
+      ["worker_scope.mode", "extraction-run"],
+      ["worker_scope.roles", "extraction-run"],
+      ["worker_scope.roles[]", "extraction-run"],
+      ["worker_scope.worker_count", "extraction-run"]
+    ],
+    "counts": {
+      "full": 555,
+      "accepted": 238,
+      "remaining": 317,
+      "assigned": 22,
+      "outside": 295
+    },
+    "assignment_is_acceptance": false,
+    "unopened_successors": ["slice19", "slice20", "slice21"],
+    "outside_complement": 248
+  },
+  "memberships": [
+    {
+      "field_path": "actual_coverage",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-actual-coverage",
+      "effective_meaning": "Run-local reporting of the source or task coverage actually inspected or produced; the template exposes a null placeholder and both synthetic examples omit the root.",
+      "applicability": "Applies when a run records observed coverage. An omitted or null root is an unrecorded/placeholder state, not evidence that no work occurred.",
+      "observed_states": {
+        "template": {"state": "null", "value": null},
+        "trace": {"state": "absent", "value": null},
+        "parallel": {"state": "absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "guidance-extraction", "guidance-operator"],
+      "exceptions": ["Do not equate actual coverage with intended scope, output completeness, or accepted semantic coverage."],
+      "consequences": {
+        "reader": "Show actual coverage as unavailable when absent or null and keep it distinct from intended scope.",
+        "extractor": "Record the inspected/produced coverage with its source and omission limits when known.",
+        "query": "Answer coverage questions against the run-local observation, not against a global corpus register.",
+        "migration": "Preserve absence and null; do not backfill actual coverage from intended scope or worker assignments."
+      },
+      "unresolved_questions": [{"question": "What exact coverage vocabulary and completeness rule should a future run record use?", "owner": "Arc02/P-15 and later real-run work"}],
+      "disposition": "bounded-observation"
+    },
+    {
+      "field_path": "agent_scope",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-agent-scope",
+      "effective_meaning": "A possible run-local description of the agent's assigned scope; it is null in the template and absent in both synthetic records.",
+      "applicability": "Applies only when a run explicitly records an agent's scope. The path is not a substitute for worker_scope or contributor authority.",
+      "observed_states": {
+        "template": {"state": "null", "value": null},
+        "trace": {"state": "absent", "value": null},
+        "parallel": {"state": "absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "guidance-operator", "guidance-delegation"],
+      "exceptions": ["Do not infer a shared schema between agent_scope, actor scope and worker_scope from the names or the shared agent-direct example mode."],
+      "consequences": {
+        "reader": "Label this as an unpopulated run-local scope surface and do not display it as worker assignment unless that is separately recorded.",
+        "extractor": "Retain the exact scope subject and input revision if this surface is used.",
+        "query": "Keep contributor/lookup delegation records separate from extraction worker provenance.",
+        "migration": "Do not migrate agent_scope into worker_scope or actor scope without a named policy owner and evidence."
+      },
+      "unresolved_questions": [{"question": "Is agent_scope intended for one executing agent, a delegation packet, or a future run-local construct?", "owner": "Arc02/P-15"}],
+      "disposition": "bounded-unknown"
+    },
+    {
+      "field_path": "intended_outputs",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-intended-outputs",
+      "effective_meaning": "Run-local declaration of outputs intended before or during extraction; the template exposes a null placeholder and both synthetic records omit it.",
+      "applicability": "Applies when the run records its planned output set. It does not establish that outputs were produced, validated, verified, reconciled, preserved or admitted.",
+      "observed_states": {
+        "template": {"state": "null", "value": null},
+        "trace": {"state": "absent", "value": null},
+        "parallel": {"state": "absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "guidance-extraction", "guidance-validation"],
+      "exceptions": ["Do not derive intended outputs from output_refs or turn an output target match into production evidence."],
+      "consequences": {
+        "reader": "Keep planned outputs visibly separate from actual output references and report an unrecorded plan as such.",
+        "extractor": "Record intended output categories or candidate scope before deriving actual output identities when available.",
+        "query": "Compare intent with actual coverage and output references without treating equality as verification.",
+        "migration": "Preserve null/absent intent; do not populate it from later outputs or accepted coverage."
+      },
+      "unresolved_questions": [{"question": "What output planning granularity and requiredness should a future run contract adopt?", "owner": "Arc02/P-15"}],
+      "disposition": "bounded-observation"
+    },
+    {
+      "field_path": "intended_scope",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-intended-scope",
+      "effective_meaning": "Run-local declaration of the source/task scope intended for extraction; the template exposes a null placeholder and both synthetic records omit it.",
+      "applicability": "Applies when a run records planned source or task boundaries. It is not actual coverage and is not a corpus-wide requiredness rule.",
+      "observed_states": {
+        "template": {"state": "null", "value": null},
+        "trace": {"state": "absent", "value": null},
+        "parallel": {"state": "absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "guidance-operator", "guidance-extraction", "historical-prompt"],
+      "exceptions": ["Historical chapter assignments describe a process, not a current extraction-run field schema or required scope vocabulary."],
+      "consequences": {
+        "reader": "Display intended scope as unrecorded when absent/null and do not infer it from input references.",
+        "extractor": "Capture the bounded task/source scope and its revision before deriving output content when available.",
+        "query": "Ask intended-scope and actual-coverage questions separately and preserve omissions.",
+        "migration": "Do not synthesize scope from filenames, worker roles or historical five-agent assignments."
+      },
+      "unresolved_questions": [{"question": "What scope unit and boundary language should future real runs use?", "owner": "Arc02/P-15 and repeated real-extraction work"}],
+      "disposition": "bounded-observation"
+    },
+    {
+      "field_path": "output_refs",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-references",
+      "effective_meaning": "A run-local output attachment surface with two incompatible observed shapes: categorized mapping in the template and typed sequence in the trace; the parallel recipe omits the root.",
+      "applicability": "Applies to the literal shape present on a run record. A mapping and a sequence are separate observed models, not interchangeable serializations.",
+      "observed_states": {
+        "template": {"state": "populated-mapping", "value": {"cards": [], "claims": [], "cqs": [], "edges": [], "locators": [], "source_support": []}},
+        "trace": {"state": "populated-sequence", "value": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "record_type": "concept-card"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "record_type": "claim"}]},
+        "parallel": {"state": "absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "field-groups", "guidance-extraction"],
+      "exceptions": ["Output references identify run outputs only within their recorded shape; they are not worker_outputs or lifecycle results."],
+      "consequences": {
+        "reader": "Render the mapping and sequence as distinct record shapes and preserve a missing root as missing.",
+        "extractor": "Record output identity, revision and type in the shape authorized by the actual run context; do not silently dual-write.",
+        "query": "Branch on the observed parent type before looking up children and classify match, no-match and tool error separately.",
+        "migration": "Defer any mapping/sequence conversion to Arc02/P-15; do not infer category membership from sequence record_type."
+      },
+      "unresolved_questions": [{"question": "Is one output reference shape authoritative for future runs, or are they context-specific?", "owner": "Arc02/P-15"}],
+      "disposition": "conflicting-observed-shapes"
+    },
+    {
+      "field_path": "output_refs.cards",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-refs-cards",
+      "effective_meaning": "A categorized mapping child for card-output references in the template; synthetic trace encounters a sequence parent and the parallel record has no output_refs parent.",
+      "applicability": "Applies only when output_refs is a mapping. It is not a sequence element selector.",
+      "observed_states": {
+        "template": {"state": "empty-list", "value": []},
+        "trace": {"state": "parent-unexpected-sequence", "value": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "record_type": "concept-card"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "record_type": "claim"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe"],
+      "exceptions": ["An empty categorized list records no entries in this surface; it does not mean the run produced no cards."],
+      "consequences": {
+        "reader": "Show an empty cards category separately from an absent output_refs parent or an incompatible sequence parent.",
+        "extractor": "Populate only when the mapping model is actually in use and retain target identity/revision/path where available.",
+        "query": "Never apply mapping-child lookup to a sequence parent.",
+        "migration": "Do not populate cards from sequence entries merely because record_type is concept-card."
+      },
+      "unresolved_questions": [{"question": "How should categorized card outputs relate to future typed output sequences?", "owner": "Arc02/P-15"}],
+      "disposition": "shape-specific-observation"
+    },
+    {
+      "field_path": "output_refs.claims",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-refs-claims",
+      "effective_meaning": "A categorized mapping child for claim-output references in the template; the trace's sequence parent is not a claim category mapping.",
+      "applicability": "Applies only to the mapping-valued output_refs model.",
+      "observed_states": {
+        "template": {"state": "empty-list", "value": []},
+        "trace": {"state": "parent-unexpected-sequence", "value": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "record_type": "concept-card"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "record_type": "claim"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "field-groups"],
+      "exceptions": ["The trace claim reference is a sequence element, not evidence that the categorized claims list was populated."],
+      "consequences": {
+        "reader": "Keep an empty claims category distinct from a typed sequence containing a claim target.",
+        "extractor": "Attach claim outputs with their own target identity and revision under the chosen shape.",
+        "query": "Use exact identity/kind/revision lookup for sequence entries and category-aware lookup for mapping children.",
+        "migration": "Do not migrate a claim sequence element into the mapping child without a recorded shape decision."
+      },
+      "unresolved_questions": [{"question": "Should claim outputs be queryable by category, typed sequence, or both in a future contract?", "owner": "Arc02/P-15"}],
+      "disposition": "shape-specific-observation"
+    },
+    {
+      "field_path": "output_refs.cqs",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-refs-cqs",
+      "effective_meaning": "The template exposes an empty categorized CQ-output list; synthetic records provide no mapping child and do not establish CQ output semantics.",
+      "applicability": "Applies to the template mapping model only.",
+      "observed_states": {
+        "template": {"state": "empty-list", "value": []},
+        "trace": {"state": "parent-unexpected-sequence", "value": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "record_type": "concept-card"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "record_type": "claim"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "field-groups", "guidance-validation"],
+      "exceptions": ["An output reference does not establish CQ coverage, answerability or retrieval success."],
+      "consequences": {
+        "reader": "Keep the empty CQ category separate from CQ coverage and answerability results.",
+        "extractor": "Record CQ outputs only with explicit target kind and run-local provenance.",
+        "query": "Do not answer a CQ from the presence of an output reference alone.",
+        "migration": "Defer category/sequence mapping and keep CQ lifecycle records separate."
+      },
+      "unresolved_questions": [{"question": "What output identity and CQ coverage boundary should a future run contract expose?", "owner": "Arc02/P-15 and CQ owners"}],
+      "disposition": "bounded-observation"
+    },
+    {
+      "field_path": "output_refs.edges",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-refs-edges",
+      "effective_meaning": "The template exposes an empty categorized relationship-edge output list; no synthetic mapping child or edge output is observed.",
+      "applicability": "Applies to the template mapping model only.",
+      "observed_states": {
+        "template": {"state": "empty-list", "value": []},
+        "trace": {"state": "parent-unexpected-sequence", "value": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "record_type": "concept-card"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "record_type": "claim"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "field-groups"],
+      "exceptions": ["A run output reference does not establish relationship truth, direction, symmetry or edge support."],
+      "consequences": {
+        "reader": "Do not turn an empty edge category into a statement that no relationships were extracted.",
+        "extractor": "Keep edge identity and edge-specific support in the relationship construct when outputs are recorded.",
+        "query": "Resolve edge outputs by exact kind and revision, then inspect edge evidence separately.",
+        "migration": "Do not convert a generic typed output sequence into edge semantics without an owned decision."
+      },
+      "unresolved_questions": [{"question": "How should relationship-edge outputs be represented and queried in future runs?", "owner": "Arc02/P-15 and relationship owners"}],
+      "disposition": "bounded-observation"
+    },
+    {
+      "field_path": "output_refs.locators",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-refs-locators",
+      "effective_meaning": "The template exposes an empty categorized source-locator output list; no synthetic locator output is observed.",
+      "applicability": "Applies to the template mapping model only and does not itself supply source-span support.",
+      "observed_states": {
+        "template": {"state": "empty-list", "value": []},
+        "trace": {"state": "parent-unexpected-sequence", "value": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "record_type": "concept-card"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "record_type": "claim"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "field-groups", "audit-boundaries"],
+      "exceptions": ["Locator output identity is not source support or proof that a selected span warrants a claim."],
+      "consequences": {
+        "reader": "Keep locator output attachments distinct from source-support records.",
+        "extractor": "Record locator identity and snapshot context when produced, without claiming warrant.",
+        "query": "Follow locator targets only within their declared shape and inspect support separately.",
+        "migration": "Do not collapse locator outputs into support or validation references."
+      },
+      "unresolved_questions": [{"question": "Should locator outputs be categorized separately or attached through typed output records?", "owner": "Arc02/P-15"}],
+      "disposition": "bounded-observation"
+    },
+    {
+      "field_path": "output_refs.source_support",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-refs-source-support",
+      "effective_meaning": "The template exposes an empty categorized source-support output list; no synthetic source-support output is observed.",
+      "applicability": "Applies to the template mapping model; source support remains an assertion-to-span construct, not merely a run output.",
+      "observed_states": {
+        "template": {"state": "empty-list", "value": []},
+        "trace": {"state": "parent-unexpected-sequence", "value": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "record_type": "concept-card"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "record_type": "claim"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "field-groups", "audit-boundaries", "guidance-extraction"],
+      "exceptions": ["An output reference does not prove that the source span supports an assertion or establish an evidence grade."],
+      "consequences": {
+        "reader": "Show output attachment state separately from source-support warrant and evidence grade.",
+        "extractor": "Record source-support output identity only after preserving its assertion/span scope and caveats.",
+        "query": "Inspect the support record and selected span rather than treating run linkage as warrant.",
+        "migration": "Do not merge source-support outputs with locators, claims or verification results."
+      },
+      "unresolved_questions": [{"question": "What output/reference boundary should a future contract use for assertion-specific support?", "owner": "Arc02/P-15 and source-support owners"}],
+      "disposition": "bounded-observation"
+    },
+    {
+      "field_path": "output_refs[]",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-refs-sequence",
+      "effective_meaning": "A sequence-valued output reference surface occurs in the synthetic trace; the template instead has a mapping parent and the parallel example omits the root.",
+      "applicability": "Applies only when output_refs is an array. Sequence entries retain their own typed identity.",
+      "observed_states": {
+        "template": {"state": "parent-unexpected-mapping", "value": {"cards": [], "claims": [], "cqs": [], "edges": [], "locators": [], "source_support": []}},
+        "trace": {"state": "populated-sequence", "value": [{"id": "cc-claim-support-is-assertion-specific", "revision": 1, "record_type": "concept-card"}, {"id": "claim-support-is-assertion-specific", "revision": 1, "record_type": "claim"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "guidance-extraction"],
+      "exceptions": ["Do not flatten a mapping into sequence elements or treat absent output_refs as an empty sequence."],
+      "consequences": {
+        "reader": "Render sequence, mapping-parent mismatch and root absence as distinct states.",
+        "extractor": "Preserve sequence order only if the actual run surface gives order meaning; retain element identity and type.",
+        "query": "Iterate only arrays and classify non-array parent shapes before element lookup.",
+        "migration": "Defer mapping-to-sequence migration and do not infer ordering or category semantics."
+      },
+      "unresolved_questions": [{"question": "Does sequence order carry meaning, or is output_refs only a set-like attachment?", "owner": "Arc02/P-15"}],
+      "disposition": "conflicting-observed-shapes"
+    },
+    {
+      "field_path": "output_refs[].id",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-ref-element-id",
+      "effective_meaning": "The id child is populated on both typed sequence elements in the trace; the template has an incompatible mapping parent and the parallel record has no parent.",
+      "applicability": "Applies to object elements of a sequence-valued output_refs surface.",
+      "observed_states": {
+        "template": {"state": "parent-unexpected-mapping", "value": {"cards": [], "claims": [], "cqs": [], "edges": [], "locators": [], "source_support": []}},
+        "trace": {"state": "sequence-element-children", "value": [{"index": 0, "state": "populated-string", "value": "cc-claim-support-is-assertion-specific"}, {"index": 1, "state": "populated-string", "value": "claim-support-is-assertion-specific"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-trace", "run-template", "run-recipe", "claim-target"],
+      "exceptions": ["Element child observations do not establish that every output record must have an id or a path."],
+      "consequences": {
+        "reader": "Show each element's id independently and preserve a mapping-parent mismatch.",
+        "extractor": "Retain id with element-local record_type and revision; do not infer target kind from id text.",
+        "query": "Resolve id only as the tuple (id, record_type, revision), with nested mentions excluded.",
+        "migration": "Do not merge IDs across output shapes or create targets for missing ids."
+      },
+      "unresolved_questions": [{"question": "What target identity fields are mandatory for future output references?", "owner": "Arc02/P-15"}],
+      "disposition": "observed-element-field"
+    },
+    {
+      "field_path": "output_refs[].record_type",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-ref-element-record-type",
+      "effective_meaning": "The trace records concept-card and claim kinds on two sequence elements; the template's mapping parent and the parallel omission do not provide sequence-child values.",
+      "applicability": "Applies to object elements in a sequence-valued output_refs surface.",
+      "observed_states": {
+        "template": {"state": "parent-unexpected-mapping", "value": {"cards": [], "claims": [], "cqs": [], "edges": [], "locators": [], "source_support": []}},
+        "trace": {"state": "sequence-element-children", "value": [{"index": 0, "state": "populated-string", "value": "concept-card"}, {"index": 1, "state": "populated-string", "value": "claim"}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-trace", "run-template", "run-recipe", "claim-target", "field-groups"],
+      "exceptions": ["The observed kinds are not a closed output vocabulary and do not define a mapping migration."],
+      "consequences": {
+        "reader": "Display record kind as element-local type information and retain unknown/unseen kinds as unresolved.",
+        "extractor": "Record the target kind explicitly when an output reference is created.",
+        "query": "Require exact kind matching; a matching id with the wrong kind is a comparison failure.",
+        "migration": "Do not use the six template category keys as a universal record_type vocabulary."
+      },
+      "unresolved_questions": [{"question": "Which output record kinds are in scope and how are extensions governed?", "owner": "Arc02/P-15"}],
+      "disposition": "observed-element-field"
+    },
+    {
+      "field_path": "output_refs[].revision",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-output-ref-element-revision",
+      "effective_meaning": "Both trace sequence elements carry revision 1; the template's mapping parent and the parallel omission provide no sequence-child revision.",
+      "applicability": "Applies to object elements in a sequence-valued output_refs surface and is part of exact target identity.",
+      "observed_states": {
+        "template": {"state": "parent-unexpected-mapping", "value": {"cards": [], "claims": [], "cqs": [], "edges": [], "locators": [], "source_support": []}},
+        "trace": {"state": "sequence-element-children", "value": [{"index": 0, "state": "populated-number", "value": 1}, {"index": 1, "state": "populated-number", "value": 1}]},
+        "parallel": {"state": "parent-absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-trace", "run-template", "run-recipe", "claim-target", "field-groups"],
+      "exceptions": ["Revision 1 is an example value, not a global default or proof of current target applicability."],
+      "consequences": {
+        "reader": "Show revision with the target tuple and do not imply that an unversioned target was resolved.",
+        "extractor": "Carry the observed target revision into output references.",
+        "query": "Require exact id, record_type and revision; wrong revision is a comparison failure.",
+        "migration": "Do not fill missing revisions with 1 or transfer revision from a parent run."
+      },
+      "unresolved_questions": [{"question": "What revision compatibility and inheritance rules should future output references use?", "owner": "Arc02/P-15"}],
+      "disposition": "observed-element-field"
+    },
+    {
+      "field_path": "parallel_worker_count",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-parallel-worker-count",
+      "effective_meaning": "The template documents a count of additional workers and exposes a null placeholder; both synthetic records omit the root.",
+      "applicability": "Applies only when a run records this documented count surface. It is not interchangeable with worker_scope.worker_count.",
+      "observed_states": {
+        "template": {"state": "null", "value": null},
+        "trace": {"state": "absent", "value": null},
+        "parallel": {"state": "absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "guidance-extraction", "guidance-delegation"],
+      "exceptions": ["The template body says additional workers; synthetic worker_scope.worker_count values are on a different surface and cannot be normalized to this field."],
+      "consequences": {
+        "reader": "Label this as an additional-worker count when the template surface is used and keep absent/null visible.",
+        "extractor": "Record the count only with its documented counting basis and run context.",
+        "query": "Do not compare this field numerically with worker_scope.worker_count without a count-policy decision.",
+        "migration": "Do not replace null with zero or copy worker_scope.worker_count into this field."
+      },
+      "unresolved_questions": [{"question": "Should future runs count only additional workers, all workers, or retain both measures?", "owner": "Arc02/P-15"}],
+      "disposition": "count-surface-tension"
+    },
+    {
+      "field_path": "worker_outputs",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-worker-outputs",
+      "effective_meaning": "A worker-output provenance surface is an empty list in the template and absent in both synthetic records; current guidance asks parallel work to retain returned outputs and integration decisions.",
+      "applicability": "Applies when parallel extraction actually occurs and worker inputs, coverage, outputs, conflicts and integration need recording.",
+      "observed_states": {
+        "template": {"state": "empty-list", "value": []},
+        "trace": {"state": "absent", "value": null},
+        "parallel": {"state": "absent", "value": null}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "guidance-extraction", "guidance-reextraction", "guidance-validation"],
+      "exceptions": ["The parallel example describes two workers but omits worker_outputs; preserve that example/guidance tension rather than backfilling it."],
+      "consequences": {
+        "reader": "Distinguish no worker-output entries recorded from a missing worker-output surface.",
+        "extractor": "Retain each worker's identity, input, assigned coverage, returned outputs, conflicts and integration disposition when available.",
+        "query": "Do not infer worker output provenance from worker_scope, output_refs or worker agreement.",
+        "migration": "Defer requiredness and output item shape to Arc02/P-15 and a source-guidance repair; never silently synthesize entries."
+      },
+      "unresolved_questions": [{"question": "Is worker_outputs required for parallel runs, and what exact per-worker output record is needed?", "owner": "Arc02/P-15 and source-guidance owner"}],
+      "disposition": "guidance-example-conflict"
+    },
+    {
+      "field_path": "worker_scope",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-worker-scope",
+      "effective_meaning": "A populated worker-scope mapping occurs in both synthetic examples, while the template omits the parent; it records example mode, count and roles but is not a contributor-seat or closed delegation schema.",
+      "applicability": "Applies to actual extraction-worker provenance when such scope is recorded; example role lists are context-specific observations.",
+      "observed_states": {
+        "template": {"state": "absent", "value": null},
+        "trace": {"state": "populated-mapping", "value": {"mode": "agent-direct", "worker_count": 1, "roles": ["extractor"]}},
+        "parallel": {"state": "populated-mapping", "value": {"mode": "agent-direct", "worker_count": 2, "roles": ["source-scope", "claim-support"]}}
+      },
+      "evidence_ids": ["inventory", "run-template", "run-trace", "run-recipe", "guidance-operator", "guidance-extraction", "guidance-delegation", "guidance-antipatterns"],
+      "exceptions": ["Contributor seats CC/CRC/CDC and lookup delegation packets are authority records, not automatically extraction worker records."],
+      "consequences": {
+        "reader": "Display worker scope as an optional run-local mapping and preserve its role/count/mode children independently.",
+        "extractor": "Record actual worker scope with inputs, coverage and returned output provenance when parallel work occurs.",
+        "query": "Keep worker-scope observations separate from independent verification and contributor authority.",
+        "migration": "Do not impose a universal role vocabulary or populate worker_scope from the fixed-five historical process."
+      },
+      "unresolved_questions": [{"question": "What is the authority and requiredness boundary between worker scope, agent scope and contributor/delegation records?", "owner": "Arc02/P-15 and agent-coordination/source-guidance owners"}],
+      "disposition": "observed-contextual-surface"
+    },
+    {
+      "field_path": "worker_scope.mode",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-worker-scope-mode",
+      "effective_meaning": "Both synthetic worker_scope maps use mode agent-direct; the template has no worker_scope parent. The repeated value does not establish a universal mode vocabulary.",
+      "applicability": "Applies to the worker-scope context when an extraction worker mode is recorded.",
+      "observed_states": {
+        "template": {"state": "parent-absent", "value": null},
+        "trace": {"state": "populated-string", "value": "agent-direct"},
+        "parallel": {"state": "populated-string", "value": "agent-direct"}
+      },
+      "evidence_ids": ["inventory", "run-trace", "run-recipe", "guidance-load", "guidance-delegation"],
+      "exceptions": ["Do not equate worker_scope.mode with actor.mode or use repeated agent-direct values to close a mode vocabulary."],
+      "consequences": {
+        "reader": "Identify the subject of mode explicitly and show worker-scope mode as unavailable when the parent is absent.",
+        "extractor": "Record mode only with the worker-scope subject and its actual evidence.",
+        "query": "Do not join this mode to actor mode by spelling alone.",
+        "migration": "Defer mode vocabulary and cross-record inheritance rules to the relevant family owners."
+      },
+      "unresolved_questions": [{"question": "Is worker-scope mode a run-worker execution mode, and how does it relate to actor.mode?", "owner": "Arc02/P-15 and supporting-record owners"}],
+      "disposition": "repeated-observation-not-vocabulary"
+    },
+    {
+      "field_path": "worker_scope.roles",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-worker-scope-roles",
+      "effective_meaning": "Both synthetic worker_scope maps expose a sequence of context-specific roles, with one role in the trace and two in the parallel recipe; the template has no parent.",
+      "applicability": "Applies when worker roles are recorded as a sequence under worker_scope.",
+      "observed_states": {
+        "template": {"state": "parent-absent", "value": null},
+        "trace": {"state": "populated-sequence", "value": ["extractor"]},
+        "parallel": {"state": "populated-sequence", "value": ["source-scope", "claim-support"]}
+      },
+      "evidence_ids": ["inventory", "run-trace", "run-recipe", "guidance-extraction", "guidance-delegation", "historical-prompt"],
+      "exceptions": ["The historical five-role recipe is process comparison evidence, not a closed worker-role vocabulary or required count."],
+      "consequences": {
+        "reader": "Preserve sequence values and distinguish absent parent from an empty or populated roles sequence.",
+        "extractor": "Record actual role assignments with worker scope and task coverage when available.",
+        "query": "Treat roles as contextual data; do not use role labels as evidence of verification or authority.",
+        "migration": "Do not normalize historical coordinator/integration roles into current worker roles without an explicit decision."
+      },
+      "unresolved_questions": [{"question": "Should roles be controlled vocabulary, free text or source-specific labels?", "owner": "Arc02/P-15 and source-guidance owner"}],
+      "disposition": "contextual-sequence"
+    },
+    {
+      "field_path": "worker_scope.roles[]",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-worker-scope-role-element",
+      "effective_meaning": "The trace has one role element extractor and the parallel recipe has two role elements source-scope and claim-support; the template has no roles parent.",
+      "applicability": "Applies to each element of a sequence-valued worker_scope.roles field.",
+      "observed_states": {
+        "template": {"state": "parent-absent", "value": null},
+        "trace": {"state": "sequence-elements", "value": [{"index": 0, "state": "populated-string", "value": "extractor"}]},
+        "parallel": {"state": "sequence-elements", "value": [{"index": 0, "state": "populated-string", "value": "source-scope"}, {"index": 1, "state": "populated-string", "value": "claim-support"}]}
+      },
+      "evidence_ids": ["inventory", "run-trace", "run-recipe", "guidance-extraction", "guidance-delegation"],
+      "exceptions": ["Observed role strings are examples; no scalar/list coercion or vocabulary closure is justified."],
+      "consequences": {
+        "reader": "Retain each role element and sequence position without collapsing the list into a single role.",
+        "extractor": "Record one role value per worker/task context as actually observed.",
+        "query": "Match exact role values only within the worker-scope context.",
+        "migration": "Do not invent role IDs or convert role strings into contributor identities."
+      },
+      "unresolved_questions": [{"question": "What role identity and multiplicity rules are needed for future worker provenance?", "owner": "Arc02/P-15"}],
+      "disposition": "observed-sequence-elements"
+    },
+    {
+      "field_path": "worker_scope.worker_count",
+      "record_kind": "extraction-run",
+      "meaning_id": "extraction-run-worker-scope-worker-count",
+      "effective_meaning": "The synthetic trace records one worker and the parallel recipe records two workers under worker_scope; the template has no worker_scope parent.",
+      "applicability": "Applies to the worker_scope count surface in these synthetic examples; its counting basis is not declared as the template's additional-worker count.",
+      "observed_states": {
+        "template": {"state": "parent-absent", "value": null},
+        "trace": {"state": "populated-number", "value": 1},
+        "parallel": {"state": "populated-number", "value": 2}
+      },
+      "evidence_ids": ["inventory", "run-trace", "run-recipe", "run-template", "guidance-extraction"],
+      "exceptions": ["Do not normalize worker_scope.worker_count with parallel_worker_count or infer whether a coordinator is included."],
+      "consequences": {
+        "reader": "Label the count's surface and unknown counting basis; preserve parent absence.",
+        "extractor": "Record the observed worker count only with its scope and role context.",
+        "query": "Keep worker_scope count comparisons separate from additional-worker counts.",
+        "migration": "Do not copy this value into parallel_worker_count or replace it with a default."
+      },
+      "unresolved_questions": [{"question": "Does worker_scope.worker_count include the coordinating context, and how should it relate to additional workers?", "owner": "Arc02/P-15"}],
+      "disposition": "count-surface-tension"
+    }
+  ],
+  "evidence_registry": [
+    {"evidence_id": "set-b-authority", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/crc-escalation02.md", "read_mode": "snapshot", "authority_commit": "dee3052c88e0fd9361e74200fd1eea26ade76435", "sha256": "7fbb27267077eee831673fe688c60ad8f2e0e96975cf301227f65a037afcb592", "role": "expected", "member_scope": "exact Set B", "source_range": "lines 1-220", "interpretation": "Preserved escalation containing the authoritative exact candidate sets.", "limit": "Planning ownership is not semantic acceptance."},
+    {"evidence_id": "current-coverage", "root": "planning", "path": "project08-concept-card-metadata/artifacts/semantic-coverage-current.json", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "868a7d340be3a91df3f036f1be24cbe52cc34f84094352007af460a067f3d1ad", "role": "observed", "member_scope": "opening accounting", "source_range": "JSON document", "interpretation": "Live current coverage register at Slice18 intake.", "limit": "Assignment and counts are not acceptance."},
+    {"evidence_id": "transition", "root": "planning", "path": "project08-concept-card-metadata/artifacts/semantic-transition-coverage.json", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "3f1bf740a1c74f0e6c668b57d5c3eef5ba9ce936e56746817c2171a19daf17bd", "role": "frozen", "member_scope": "555-pair union", "source_range": "JSON document", "interpretation": "Immutable transition accounting.", "limit": "Structural inventory, not semantic acceptance."},
+    {"evidence_id": "inventory", "root": "planning", "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b", "role": "observed", "member_scope": "complete native population", "source_range": "JSON document", "interpretation": "Frozen inventory input with complete records, shapes, values and errors.", "limit": "Parsed/frontmatter inventory is not semantic corpus acceptance."},
+    {"evidence_id": "run-template", "root": "source", "path": "knowledge/concept-cards/templates/extraction-run.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "9a397dad9d92ab602dd47a232c3f0a8cf8e80e6aabb9e7015e2e135e2cda3722", "role": "witness", "member_scope": "all Set B paths", "source_range": "lines 1-81", "interpretation": "Native extraction-run template and body.", "limit": "Template placeholders do not establish requiredness or a completed run."},
+    {"evidence_id": "run-trace", "root": "source", "path": "knowledge/concept-cards/examples/extraction-run-trace.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "e555e52d8eed2ef69e16b9579613b8884052bd6854a512e438e17f24bb5b02dc", "role": "witness", "member_scope": "all Set B paths", "source_range": "lines 1-44", "interpretation": "Synthetic single-worker extraction-run witness.", "limit": "Synthetic example is not a real run."},
+    {"evidence_id": "run-recipe", "root": "source", "path": "knowledge/concept-cards/examples/parallel-worker-default-recipe.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "9701db056ae1ee25880b019e9c2de05b9634877e506d43d56861f60bff44f0f7", "role": "witness", "member_scope": "all Set B paths", "source_range": "lines 1-43", "interpretation": "Synthetic two-worker recipe and body.", "limit": "Recipe/example observations do not establish a required worker policy."},
+    {"evidence_id": "claim-target", "root": "source", "path": "knowledge/concept-cards/examples/claim-backed-card.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "1beba78c512503e78c271cff80ab5acccbb03cc1e10c31e20acc30dc034f1c3f", "role": "target-witness", "member_scope": "output_refs[] target lookup", "source_range": "lines 1-54", "interpretation": "Exact concept-card target witness for the trace output reference.", "limit": "Target resolution is not proof of production or source support."},
+    {"evidence_id": "field-groups", "root": "source", "path": "knowledge/concept-cards/references/record-field-groups.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "c37b20e9d26dec446350f76b3a24bb3ab473aa92a70c7429542b2d65047cac57", "role": "guidance", "member_scope": "output references and run construct", "source_range": "lines 1-31", "interpretation": "Field grouping and identity/reference conventions.", "limit": "Reference convention is not a closed schema."},
+    {"evidence_id": "audit-boundaries", "root": "source", "path": "knowledge/concept-cards/references/semantic-audit-boundaries.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "9da9a5ce45f1293dbd6068ac24b7c98493868f2d52d52a3f8b93d2fe64c5fb63", "role": "guidance", "member_scope": "output/source-support limits", "source_range": "lines 1-24", "interpretation": "Structural and semantic audit boundaries.", "limit": "Target/path checks do not establish semantic warrant."},
+    {"evidence_id": "concept-skill", "root": "source", "path": "knowledge/concept-cards/SKILL.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "a096893e6a908d014b795bcb2e5e38653b6c590982e99951aae3783a9e7c318a", "role": "guidance", "member_scope": "record boundaries and examples", "source_range": "lines 23-158", "interpretation": "Current concept-card ownership, record, example and evidence boundaries.", "limit": "Documentary guidance does not supply an executable schema."},
+    {"evidence_id": "guidance-load", "root": "source", "path": "knowledge/concept-cards/guides/01-load-contract.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "eb832dbbc94dbb42be1372178f492cb1440705dd9b2d3bebad091e30687eb94e", "role": "guidance", "member_scope": "construct and mode boundaries", "source_range": "lines 53-151", "interpretation": "Construct separation and agent-direct limits.", "limit": "Bounded source guidance, not a future schema decision."},
+    {"evidence_id": "guidance-operator", "root": "source", "path": "knowledge/concept-cards/guides/02-operator-workflow.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "06d1e8584d8df2adf8352f8797bded5533a223b4aaeaa3cf1926fbf58905e5a5", "role": "guidance", "member_scope": "scope, outputs, worker provenance and handoff", "source_range": "lines 34-166", "interpretation": "Run scope-before-content and separate-result guidance.", "limit": "Guidance does not prescribe worker count."},
+    {"evidence_id": "guidance-extraction", "root": "source", "path": "knowledge/concept-cards/guides/03-extraction.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "e60643e05c79ea8dc5eb93a991e08c32cd4f7a88047d7a6f21f159c1abbe5a7d", "role": "guidance", "member_scope": "run establishment, outputs and parallel workers", "source_range": "lines 37-248", "interpretation": "Source-faithful extraction-run and worker-output guidance.", "limit": "Guidance is not evidence of a populated native field."},
+    {"evidence_id": "guidance-reextraction", "root": "source", "path": "knowledge/concept-cards/guides/04-re-extraction-preservation.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "6d34102f3b3c042df6a15d3d445ef5423c1e12b24b9a442e806caac7eefe8c92", "role": "guidance", "member_scope": "worker output and prior-value boundaries", "source_range": "lines 30-222", "interpretation": "Source-primary re-extraction and worker/integration limits.", "limit": "Guidance does not resolve missing synthetic worker_outputs."},
+    {"evidence_id": "guidance-reconciliation", "root": "source", "path": "knowledge/concept-cards/guides/07-reconciliation.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "97ac6ba23ff693da14beac80e70f1f1c4c826045b45b49f02165e9c7d7280d51", "role": "guidance", "member_scope": "worker disagreement and integration limits", "source_range": "lines 10-139", "interpretation": "Conflict scope and separate reconciliation results.", "limit": "Worker agreement is not reconciliation or verification."},
+    {"evidence_id": "guidance-validation", "root": "source", "path": "knowledge/concept-cards/guides/08-validation-verification.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "095c897f934f753ba5aa1f5b7f40d22a5134f52eb8b71545e9186de4deb396d3", "role": "guidance", "member_scope": "result and verification boundaries", "source_range": "lines 16-231", "interpretation": "Review actor, evidence and false-upgrade boundaries.", "limit": "Structural checks do not establish semantic verification."},
+    {"evidence_id": "guidance-delegation", "root": "source", "path": "knowledge/agent-coordination/guides/01-when-to-delegate.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "cf80810bac169a9cf53bc55cb7fd6731d07f2029a9838d25abe654a7bf7d7d1c", "role": "guidance", "member_scope": "worker/delegation boundary", "source_range": "lines 13-115", "interpretation": "Lookup delegation versus contributor judgment boundary.", "limit": "Does not define extraction worker schema."},
+    {"evidence_id": "guidance-packets", "root": "source", "path": "knowledge/agent-coordination/guides/02-context-packets.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "a2f15a27fd0dcb9eeb0875517a129f9cf9d7ff28c044ad8fc1baf692427cae3f", "role": "guidance", "member_scope": "worker packet output limits", "source_range": "lines 12-87", "interpretation": "Context packet and output contract boundaries.", "limit": "Lookup output is not acceptance."},
+    {"evidence_id": "guidance-integration", "root": "source", "path": "knowledge/agent-coordination/guides/03-result-integration.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "59eee13f6841f65be119b64d85716d2b3fc5e6491194bbd04fd296565fbcefa4", "role": "guidance", "member_scope": "parent integration and evidence strength", "source_range": "lines 11-69", "interpretation": "Parent-context responsibility and conflict integration.", "limit": "Returned summaries remain inputs until checked."},
+    {"evidence_id": "guidance-antipatterns", "root": "source", "path": "knowledge/agent-coordination/guides/04-anti-patterns.md", "read_mode": "snapshot", "authority_commit": "ce3f77103eff5e07b3533a03c65f158684fc1039", "sha256": "742eb3b0ea58da0d29f0b0e830ce0997771866f92e5ad47da2a684b93df68301", "role": "guidance", "member_scope": "worker/acceptance boundaries", "source_range": "lines 11-131", "interpretation": "Delegation and formatting are not acceptance.", "limit": "Operational guidance, not output schema."},
+    {"evidence_id": "historical-assignments", "root": "planning", "path": "old/dev/concept-cards/0010-a-guide-for-parallel-concept-card-re-extraction-v3.2.md", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "b942d34237391d7a8d84ad463cd2c25aa72196adbc98797877dabc26a5ba337c", "role": "historical", "member_scope": "historical Step 1.3/1.4", "source_range": "lines 311-342", "interpretation": "Historical fixed-five assignment and instruction compilation.", "limit": "Historical process is comparison evidence, not current worker policy."},
+    {"evidence_id": "historical-prompt", "root": "planning", "path": "old/dev/concept-cards/0010-a-guide-for-parallel-concept-card-re-extraction-v3.2.md", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "b942d34237391d7a8d84ad463cd2c25aa72196adbc98797877dabc26a5ba337c", "role": "historical", "member_scope": "historical agent prompt template", "source_range": "lines 512-624", "interpretation": "Historical source-first re-extraction and five-role prompt shape.", "limit": "Historical template does not instantiate current extraction-run fields."},
+    {"evidence_id": "replay-contract", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/evidence-replay-contract.md", "read_mode": "snapshot", "authority_commit": "eb7b606baac634f0a3beb3db5d7dcfea26c986e3", "sha256": "73f9ee479261c536f3c96fd9f120aaa709358978c5f9922b9ab8cc77065dd70d", "role": "method", "member_scope": "replay and outcome classes", "source_range": "lines 1-93", "interpretation": "Shared evidence/replay contract.", "limit": "Replay proves checked properties only."},
+    {"evidence_id": "worked-replay", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/worked-replay.md", "read_mode": "snapshot", "authority_commit": "eb7b606baac634f0a3beb3db5d7dcfea26c986e3", "sha256": "5185ac366c3dd2cbb3e7b0559b989beff770328ec7c574705f037580efb514c8", "role": "method", "member_scope": "literal route pattern", "source_range": "lines 1-296", "interpretation": "Committed authority and native query route pattern.", "limit": "Historical route is not Slice18 validation."},
+    {"evidence_id": "project-gates", "root": "planning", "path": "project08-concept-card-metadata/project-plan.md", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "12d5855f294333e7315743985e5b946c8150bef0cccb05693440477b646acf88", "role": "authority", "member_scope": "P-15, workflow, roadmap and closure", "source_range": "lines 39-66,98-284,444-476", "interpretation": "Project gates and no-premature-acceptance boundaries.", "limit": "Project plan is authority, not a semantic result."},
+    {"evidence_id": "arc-authority", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/arc-plan.md", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "165858400138346541a761ba5b4177207eb7a44297665bf924ca78ef6948f0e5", "role": "authority", "member_scope": "Arc06 method, roadmap and acceptance", "source_range": "lines 10-98,171-330", "interpretation": "Arc family method, ownership and acceptance limits.", "limit": "Arc plan does not accept the assigned pairs."},
+    {"evidence_id": "directive", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/cdc-directive02.md", "read_mode": "snapshot", "authority_commit": "eb7b606baac634f0a3beb3db5d7dcfea26c986e3", "sha256": "2880d840f9437bd4b56711d2a72e706d69a1e26091deac1ecad073df25a8e1a4", "role": "authority", "member_scope": "Set B ownership and holds", "source_range": "lines 1-220", "interpretation": "CDC directive authority.", "limit": "Directive assigns boundaries but does not accept meanings."},
+    {"evidence_id": "slice18-plan", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice18-run-scope-workers-and-outputs/slice-plan.md", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "cc506223e86d64820e2b6a7358c39137602fea457283b7f41bb5ae7abe0ac2c4", "role": "contract", "member_scope": "Slice18", "source_range": "lines 1-175", "interpretation": "Current slice boundary and exit criteria.", "limit": "Open-set plan is not independent review."},
+    {"evidence_id": "slice18-ledger", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice18-run-scope-workers-and-outputs/ledger.md", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "24047e65e6847d1b9a126adf2079bdde0cb64ebdf37bcf155789752ffbcd7ac8", "role": "contract", "member_scope": "seven ledger rows", "source_range": "lines 1-15", "interpretation": "Opening ledger rows and required checks.", "limit": "CC status remains attested."},
+    {"evidence_id": "slice18-prompt", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice18-run-scope-workers-and-outputs/cc-prompt.md", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "08b6db6646de9bf988bdcf01d164dcb008094774290b9ec3a958c9ae2243a82a", "role": "contract", "member_scope": "required reading and output fence", "source_range": "lines 1-429", "interpretation": "Active CC assignment.", "limit": "Prompt is assignment authority, not acceptance."},
+    {"evidence_id": "project-agents", "root": "planning", "path": "project08-concept-card-metadata/AGENTS.md", "read_mode": "snapshot", "authority_commit": "961c748f7915c71ba59ef37a2dd65253800be268", "sha256": "aec4a9021b29bc03eade0f62589c8d163757825fc1ae586ab2e1aef1e3439ebb", "role": "contract", "member_scope": "planning and commit constraints", "source_range": "lines 1-90", "interpretation": "Project-local working instructions.", "limit": "Standing instructions do not provide semantic acceptance."},
+    {"evidence_id": "slice17-handoff", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice17-run-preparation-method-and-reference-provenance/artifacts/handoff.md", "read_mode": "snapshot", "authority_commit": "eb7b606baac634f0a3beb3db5d7dcfea26c986e3", "sha256": "474140e081728aeb985077b44cd77f46d56b0e4ce39920289c39294bdd64a930", "role": "predecessor", "member_scope": "accepted Set A limits", "source_range": "lines 1-77", "interpretation": "Slice17 handoff and retained later ownership.", "limit": "Predecessor limits are not Slice18 evidence."},
+    {"evidence_id": "slice17-crc", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice17-run-preparation-method-and-reference-provenance/crc-verification.md", "read_mode": "snapshot", "authority_commit": "eb7b606baac634f0a3beb3db5d7dcfea26c986e3", "sha256": "fc35b097ee82c75c8caf0eab78b9dd6988134238cc22c111f82e232a4c932cd6", "role": "predecessor-review", "member_scope": "Slice17 acceptance and replay limits", "source_range": "lines 1-57", "interpretation": "CRC-closed predecessor record.", "limit": "Does not independently verify Slice18."}
+  ]
+}
