@@ -45,9 +45,11 @@ authority, hash, range, singular/plural, empty/absent, added-path, wrong
 identity, wrong revision, wrong path and wrong-target controls all returned
 the expected status 1.
 
-The committed endpoint hashes and separate recipe endpoint are recorded in
-`artifacts/validation-evidence.md` after the scoped commit. A missing recipe
-endpoint and a foreign-source recipe endpoint remain required negative checks.
+The committed CC endpoint is
+`97a75091b6d124955762f12c72865f72d5aedd53`; its same-endpoint wrapper passed
+with status 0. The distinct recipe endpoint is recorded in the final
+follow-up note in `artifacts/validation-evidence.md`. Missing-recipe and
+foreign-source recipe endpoints both failed closed with status 2.
 
 ## Proposed-done limits and follow-up
 

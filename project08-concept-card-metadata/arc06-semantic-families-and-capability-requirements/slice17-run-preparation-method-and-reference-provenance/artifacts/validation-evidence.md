@@ -344,10 +344,17 @@ as global requiredness or a completed run.
 
 ### Endpoint and failure record
 
-The scoped commit and committed replay endpoints are recorded here after the
-six-file commit. The separate-recipe endpoint is recorded after the final
-documentation-only update. The required missing-recipe and foreign-source
-recipe checks are also recorded here, with their nonzero extraction failures.
+The scoped CC endpoint is
+`97a75091b6d124955762f12c72865f72d5aedd53`; the committed wrapper loaded its
+registry from that commit and loaded its recipe from the same commit. It
+exited 0 with the output recorded above. The separate-recipe replay is run
+with the same CC endpoint and a distinct follow-up documentation endpoint;
+that endpoint and its status are recorded in the final follow-up note below.
+
+The missing-recipe endpoint `c40e52fc1318e6213c60d5e0371fd01aa3208f1d` and
+foreign-source recipe endpoint
+`ce3f77103eff5e07b3533a03c65f158684fc1039` both failed at recipe extraction
+with status 2, as required.
 
 ### Exploratory and unrun checks
 
