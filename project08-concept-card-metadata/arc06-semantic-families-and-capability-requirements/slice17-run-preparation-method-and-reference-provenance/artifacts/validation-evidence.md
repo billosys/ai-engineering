@@ -375,7 +375,7 @@ run_endpoint "$CC_COMMIT" "$REPLAY_COMMIT"
 
 ## Required control and endpoint observations
 
-The route must be run with `CC_PRECOMMIT=1` after the six output files are
+The route must be run with `CC_PRECOMMIT=1` after the three repair files are
 present and with a committed wrapper that extracts this block from a separate
 `REPLAY_COMMIT`. The recorded result below is filled after the scoped commit.
 The required mutation statuses are status 1 for wrong field, empty-list to
