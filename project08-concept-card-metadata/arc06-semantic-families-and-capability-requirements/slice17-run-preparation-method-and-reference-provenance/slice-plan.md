@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice17-run-preparation-method-and-reference-provenance
 status: open
 depends-on: [slice16-supporting-record-actor-mode-and-role]
-version: "1.0"
+version: "1.1"
 ---
 
 # Run Preparation, Method, And Reference Provenance
@@ -29,7 +29,8 @@ is `cc-prompt.md`; its return remains proposed-done until CRC verification.
 
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
-| cc-prompt.md | 2026-09-18 | CRC-closed Slice16 and arc directive02 | Exact Set A with native template/synthetic comparison, historical run-method comparison and fail-closed replay | Active; Operator relay to fresh CC pending |
+| cc-prompt.md | 2026-09-18 | CRC-closed Slice16 and arc directive02 | Exact Set A with native template/synthetic comparison, historical run-method comparison and fail-closed replay | Returned at `89d1b452`; CRC R1-R3 in `crc-verification.md`; superseded for correction |
+| cc-prompt-iteration01.md | 2026-09-18 | Initial CC packet and CRC R1-R3 | Complete omitted discriminating controls, preserve a literal endpoint wrapper and correct exclusion wording | Current CC correction assignment; pending execution |
 
 ## Exact Scope And Ownership
 
@@ -136,6 +137,9 @@ accepted and fresh readiness passes.
 
 ## Version History
 
+- 1.1 (2026-09-18): CRC review preserves the eighteen meanings and semantic
+  artifacts but keeps Slice17 open for omitted controls, reproducible endpoint
+  extraction and one census-wording correction. Coverage remains 220/335/18/317.
 - 1.0 (2026-09-18): CRC opens directive02 Set A after clean-state, exact-set,
   native-witness and prompt-author readiness. Assigns eighteen pairs at
   220/335/18/317 without semantic acceptance or normative adoption.
