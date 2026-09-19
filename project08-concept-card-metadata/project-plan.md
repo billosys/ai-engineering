@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.35"
+version: "1.36"
 ---
 
 # Concept Card Metadata
@@ -111,9 +111,11 @@ closure added 30 CQ pairs, reaching 180 accepted / 375 remaining. Slice13's
 independent closure adds eight actor-identity pairs; Slice14's independent
 CRC closure adds twelve more; Slice15's independent CRC closure adds eight
 bounded mode/role pairs, followed by Slice16's twelve independently accepted
-pairs: now 220 accepted / 335 remaining / zero assigned. Arc directive02
-approves five bounded provenance units (87 pairs) without assigning them;
-the other 248 remain owned by the evidence/lifecycle families.
+pairs. CRC has acknowledged arc directive02 and opened only its first approved
+unit: Slice17 assigns eighteen extraction-run operation/input/method/time pairs.
+Live accounting is 220 accepted / 335 remaining / 18 assigned / 317 outside.
+The other four approved provenance units remain unopened; 248 further pairs
+retain their evidence/lifecycle-family owners.
 Use the
 [current coverage register](./artifacts/semantic-coverage-current.json).
 The transition snapshot stays immutable. Process the remainder by family, retaining
@@ -188,14 +190,15 @@ CRC first reads/acknowledges the directive and checks the replacement before
 the Operator relays it to fresh CC. The original prompt is not edited.
 The recorded acknowledgement below completed that initial relay. Current
 handoff: arc-level cdc-directive02.md answers CRC's post-Slice16 sizing request;
-CRC acknowledgement and Slice17 author readiness are next. No CC assignment
-is currently active. Arc-level exchange history lives in the arc plan.
+CRC has acknowledged it and opened exact Set A as Slice17 after fresh author
+readiness. Arc-level exchange history lives in the arc plan.
 
 ### Design Handoff History
 
 | Packet | Date | Predecessor / initiating decision | Scope / rows | Status | Next action |
 | --- | --- | --- | --- | --- | --- |
 | cdc-directive01.md | 2026-09-17 | No escalation/predecessor; Operator explicitly selects three contributors and Expedited Mode | Remaining Project08; Arc06 A6-1 through A6-10; Slice14 S14-1 through S14-6; P-1 through P-15 gates retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-09-17 after reading the directive, plans, ledgers, current and frozen coverage, Slice13 review, and both Slice14 prompts; source `020268248882358075b678bb855c0ac8d11b532a`, planning `d2a6ddcaeaadd8251156422dcc8897ccad985ab4`, both clean | CRC releases `arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/cc-prompt-iteration01.md` through the Operator to fresh CC; CC returns its packet to CRC for independent review |
+| arc06/cdc-directive02.md | 2026-09-18 | Response to CRC escalation02 after independent Slice16 closure | Exact Slice17-21 Sets A-E; A6-1/A6-3/A6-6 and all P gates retained | Acknowledged by the same CRC context on 2026-09-18 against clean planning `c6d445b8` and source `ce3f7710`; exact sets, frozen/current coverage, native extraction-run witnesses and prompt-author readiness checked | Operator relays `arc06-semantic-families-and-capability-requirements/slice17-run-preparation-method-and-reference-provenance/cc-prompt.md` to fresh CC; Slice18-21 remain unopened |
 
 Do not mark acknowledgement on CRC's behalf. CRC records its actual session
 identity, read state, date and next action in this history before execution.
@@ -470,6 +473,10 @@ project requires an explicit operator decision recorded in the plan.
 
 ## Version History
 
+- 1.36 (2026-09-18): CRC acknowledges arc directive02 and opens only its
+  approved eighteen-pair Slice17 after exact-set, native-witness and prompt-
+  author readiness checks. Live coverage becomes 220/335/18/317 with no new
+  acceptance; Slice18-21, the 248 later-family pairs, P-15 and UAT remain open.
 - 1.35 (2026-09-18): CDC answers arc escalation02 with five exact provenance
   units (18/22/19/11/17) and explicit remainder ownership. CRC may open them
   sequentially after acknowledgement, predecessor acceptance and fresh author
