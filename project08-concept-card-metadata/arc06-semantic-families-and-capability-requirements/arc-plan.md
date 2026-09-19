@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.21"
+version: "1.22"
 ---
 
 # Semantic Families And Capability Requirements
@@ -21,12 +21,12 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
 
-CRC independently accepted Slice15 after its focused Iteration01 repair, then
-completed a fresh native recount and prompt-author readiness for Slice16.
-Live coverage is 208 accepted / 347 remaining / twelve assigned to Slice16 /
-335 outside. Assignment adds no accepted pair. Slice17 remains unsized and
-requires CDC sizing. All A6 rows and P-15 stay open. Was: 208/347/0/347
-after Slice15 closure and before Slice16 opening.
+CRC independently accepted Slice16 after its focused Iteration01 repair.
+Live coverage is 220 accepted / 335 remaining / zero assigned. The twelve
+supporting-kind mode/role pairs entered coverage once; no global role
+vocabulary, authority or schema was adopted. Slice17 remains unsized and
+requires CDC sizing before any successor opens. All A6 rows and P-15 stay
+open. Was: 208/347/12/335 while Slice16 was assigned.
 
 Slice14 iteration03 is independently CRC-accepted on 2026-09-17. Its twelve
 actor/actor.id pairs entered coverage once; at that closure, accounting was
@@ -213,7 +213,7 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
 | `slice13-provenance-family-semantics` | Eight actor/actor.id pairs across claim, CQ, card and extraction-run | Closed Slice03 and accepted identity/source inputs | Independently closed after d94ab1c6; eight pairs accepted |
 | `slice14-provenance-context-and-reference-semantics` | 12 actor/actor.id pairs across remaining six record kinds | Closed Slice13 and shared replay contract | CRC-closed at febbd787; twelve pairs accepted |
 | `slice15-provenance-roles-runs-and-shared-references` | Eight actor.mode/actor.role pairs: claim, CQ, card and extraction-run; stable previously planned slug retained | Accepted Slice13/14 and arc directive01 | CRC-closed after Iteration01; eight bounded pairs accepted |
-| `slice16-supporting-record-actor-mode-and-role` | Twelve actor.mode/actor.role pairs in the other six actor-bearing kinds; cross-group comparison | Closed Slice15 plus accepted Slice14 | Open after CRC native recount/readiness; twelve assigned, none accepted by opening |
+| `slice16-supporting-record-actor-mode-and-role` | Twelve actor.mode/actor.role pairs in the other six actor-bearing kinds; cross-group comparison | Closed Slice15 plus accepted Slice14 | CRC-closed after Iteration01; twelve bounded pairs accepted |
 | `slice17-run-preparation-method-and-reference-provenance` | Remaining run identity/scope/workers/outputs, preparation links, method/prompt/time provenance, shared reference contracts and CQ provenance interfaces | Slice15/16 findings and accepted common contracts | Explicit unsized owner; CDC sizing before execution |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope and scalar/structured differences | Shared contracts and needed Slice13-17 provenance inputs | Plan when near |
 | `slice05-validation-and-verification` | Structural checks versus semantic verification, coverage, independence and applicability | Slices03/04 | Plan when near |
@@ -299,6 +299,10 @@ change needs its own bounded explicit scope and verification.
 
 ## Version History
 
+- 1.22 (2026-09-18): CRC independently closes Slice16 after reproducing the
+  authority-bound 45-row replay, all range classifications, native no-match and
+  negative controls. Coverage becomes 220/335/0/335; Slice17 remains held for
+  CDC sizing and all arc/project gates remain open.
 - 1.21 (2026-09-17): CRC opens CDC-approved Slice16 after clean-state,
   exact-set, twelve-record and source-witness readiness. Live coverage becomes
   208/347/12/335 with no new acceptance; Slice17 CDC sizing remains held.

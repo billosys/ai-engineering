@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice16-supporting-record-actor-mode-and-role
-status: open
+status: closed
 depends-on: [slice15-provenance-roles-runs-and-shared-references]
-version: "1.1"
+version: "1.2"
 ---
 
 # Actor Mode And Role In Six Supporting Record Kinds
@@ -29,7 +29,7 @@ structural changes and arc/project composition. CC's initial assignment is
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
 | cc-prompt.md | 2026-09-17 | CRC-closed Slice15 and arc directive01 | Twelve supporting-kind mode/role pairs with native census, cross-group comparison and pinned replay | Returned at `974dd26a`; CRC R1-R3 in `crc-verification.md`; superseded for correction |
-| cc-prompt-iteration01.md | 2026-09-18 | Initial CC packet and CRC R1-R3 | Bind declared evidence authority, validate every range and return literal no-match result | Current CC correction assignment; pending execution |
+| cc-prompt-iteration01.md | 2026-09-18 | Initial CC packet and CRC R1-R3 | Bind declared evidence authority, validate every range and return literal no-match result | Returned at `9c8ea3a2`; independently CRC-accepted with recipe `713b8860` |
 
 ## Exact Scope And Ownership
 
@@ -133,6 +133,9 @@ before any pair moves to accepted coverage.
 
 ## Version History
 
+- 1.2 (2026-09-18): CRC independently accepts the Iteration01 repair and
+  closes all six rows. Exactly twelve bounded mode/role pairs enter accepted
+  coverage once; Slice17 remains held for CDC sizing.
 - 1.1 (2026-09-18): CRC review keeps Slice16 open and issues Iteration01 for
   registered-authority, all-range and no-match replay corrections. The
   twelve-pair boundary and outside ownership are unchanged.
