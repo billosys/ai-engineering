@@ -392,3 +392,8 @@ wrapper was then rerun and passed. The wrapper must load the registry from the
 CC endpoint and recipe bytes from the separately supplied replay endpoint; it
 must not fall back to the working tree. A successful route remains structural
 evidence only.
+
+The separate committed replay loaded the registry from CC endpoint `9c8ea3a2`
+and recipe bytes from replay endpoint `3079b62b`; it passed with status 0. The
+separate endpoint pair confirms that the recipe is independently selected from
+the registry endpoint rather than inferred from the same commit.
