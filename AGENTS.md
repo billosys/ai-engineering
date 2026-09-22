@@ -34,15 +34,23 @@ not the implementation checkout and should not be used for source/package edits.
   Project and arc closure require composition checks against their own
   `ledger.md` files, not just all child slices being green.
 
-## Standalone local-model research documents
+## Local-model research moved to Billo Research
 
-Operator decision, 2026-09-22: keep the vLLM-Metal installation runbook and
-scientific-methods evaluation protocol as standalone documents in this planning
-worktree, without opening a project/arc/slice. Their paths are
-`vllm-metal-librechat-runbook.md` and `local-coding-model-experiment-protocol.md`.
-They are research/configuration drafts, not issued CC assignments or evidence
-of installation, executed experiments, or independent acceptance. Keep the
-Mac Pro hardware baseline and remaining deployment questions explicit in them.
+Operator decision, 2026-09-22: the former standalone runbook and evaluation
+protocol now belong to [Lab 01 — Local LLMs](https://github.com/billosys/research/tree/main/labs/lab01-local-llms).
+The runbook is [setup v0.1](https://github.com/billosys/research/blob/bdd7083d1d99c83aae4efeec6e00e8176804bccf/labs/lab01-local-llms/procedures/setup.md);
+the protocol is [Experiment 01 — Coding model evaluation](https://github.com/billosys/research/tree/main/labs/lab01-local-llms/experiment01-coding-model-evaluation).
+Do not recreate the old live copies in this worktree.
+
+The initial decision to keep standalone drafts here is preserved in local
+planning commit `08883303a2aa7f597a2f5b3aea6f53495aa3c632`, together with the
+original `vllm-metal-librechat-runbook.md` and
+`local-coding-model-experiment-protocol.md`. Recover either with
+`git show 08883303a2aa7f597a2f5b3aea6f53495aa3c632:<original-path>`.
+The [research migration record](https://github.com/billosys/research/blob/bdd7083d1d99c83aae4efeec6e00e8176804bccf/labs/lab01-local-llms/journal/2026-09-22-01-lab-establishment.md)
+provides public byte-identical originals, hashes, and old-to-new paths.
+Target installation, fixtures, and execution were still pending at migration;
+document preservation does not establish experimental acceptance.
 
 ## Workflow
 
