@@ -14,6 +14,7 @@ Use `make help` for the current target list.
 | `make skills` | Build the installable skill zips except CCDP, including domain/tooling and method skills. |
 | `make collab-framework` | Build `target/skills/collaboration-framework.zip`. |
 | `make scientific-methods` | Build `target/skills/scientific-methods.zip`. |
+| `make laboratory-recordkeeping` | Build `target/skills/laboratory-recordkeeping.zip`. |
 | `make document-extraction` | Build `target/skills/document-extraction.zip`. |
 | `make concept-cards` | Build `target/skills/concept-cards.zip`. |
 | `make rust`, `make go`, `make cpp`, `make js`, `make erlang` | Build one language skill package. |
@@ -33,6 +34,8 @@ Standalone domain, method, and framework-component skills package their own
 `document-extraction.zip` contains its entrypoint, sibling history, guides,
 templates, and examples. `concept-cards.zip` contains the same support shape
 plus its sibling `references/` review material.
+`laboratory-recordkeeping.zip` includes guides, templates, worked examples,
+and the source/adaptation register in `references/`.
 The `collaboration-framework.zip` package is the only skill zip that bundles a
 `knowledge/` support subtree, and embedded component entrypoints in that tree
 are staged as `ENTRYPOINT.md` so loaders do not discover duplicate nested

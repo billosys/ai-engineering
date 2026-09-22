@@ -37,6 +37,9 @@ The repository currently includes:
 - the [`scientific-methods`](./knowledge/scientific-methods/SKILL.md) method
   skill for practical inquiry, controlled comparison, experiment planning,
   evaluation rubrics, evidence capture, and regression analysis;
+- the [`laboratory-recordkeeping`](./knowledge/laboratory-recordkeeping/SKILL.md)
+  method skill for research collections, laboratory notebooks, experiment/run
+  records, provenance, preservation, and reconstruction;
 - the [`document-extraction`](./knowledge/document-extraction/SKILL.md) method
   skill for preparing PDF, EPUB, HTML, and converted-source inputs with
   structure, media, locator, manifest, readiness, and caveat records;
@@ -65,6 +68,7 @@ make all               # build all installable skill zips into target/skills/
 make collab-framework  # build target/skills/collaboration-framework.zip
 make document-extraction  # build target/skills/document-extraction.zip
 make concept-cards      # build target/skills/concept-cards.zip
+make laboratory-recordkeeping # build target/skills/laboratory-recordkeeping.zip
 make print-skill-zips  # list release-uploadable skill zip paths
 make check-skills      # validate SKILL.md descriptions
 make check-skill-versions # validate source and generated skill versions
@@ -102,6 +106,10 @@ ai-engineering/
 ```
 
 ## Current Boundaries
+
+[Billo Research](https://github.com/billosys/research) holds our labs and their
+research records. This repository maintains the reusable scientific-methods
+and laboratory-recordkeeping guidance those collections follow.
 
 The `docs/` guides are explanatory wrappers. They should help readers choose,
 install, build, and contribute without duplicating the full material under

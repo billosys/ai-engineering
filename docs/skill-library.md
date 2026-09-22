@@ -65,6 +65,7 @@ Every package listed below is produced by `make all`, included in
 |---|---|---|
 | `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Structuring long-lived inquiry, implementation, review, and verification work. |
 | `scientific-methods.zip` | [`knowledge/scientific-methods/SKILL.md`](../knowledge/scientific-methods/SKILL.md) | Designing controlled comparisons, experiments, evaluation rubrics, evidence capture, and regression analysis. |
+| `laboratory-recordkeeping.zip` | [`knowledge/laboratory-recordkeeping/SKILL.md`](../knowledge/laboratory-recordkeeping/SKILL.md) | Organizing research collections, notebooks, experiments, runs, provenance, preservation, and reconstruction. |
 | `engineering-methods.zip` | [`knowledge/engineering-methods/SKILL.md`](../knowledge/engineering-methods/SKILL.md) | Reasoning about knowledge substrate, process rigor, and LLM-assisted engineering methods. |
 
 ### Document Preparation And Knowledge Records
@@ -91,6 +92,11 @@ Load scientific methods when the work itself is an inquiry: comparing two
 versions, testing whether a change improved behavior, detecting regressions,
 creating a controlled prompt or tool trial, defining operational measures, or
 capturing threats to validity.
+
+Load laboratory recordkeeping to organize and preserve that inquiry's records:
+lab entrypoints, journals, run identities, raw evidence, derived artifacts,
+storage, corrections, and reconstruction paths. It is a standalone sibling
+skill; scientific methods continues to own inquiry design and interpretation.
 
 When a task crosses boundaries, load the smallest set that covers the work.
 For example, an Erlang implementation slice in a ledgered project would use
@@ -119,8 +125,10 @@ The generated `collaboration-framework.zip` still exposes package entrypoint
 
 ## Method-Skill Boundaries
 
-`scientific-methods`, `document-extraction`, and `concept-cards` are current
-installable method skills. `document-extraction` owns source preparation and
+`scientific-methods`, `laboratory-recordkeeping`, `document-extraction`, and
+`concept-cards` are current installable method skills. Laboratory recordkeeping
+ships its guides, templates, worked examples, and source references; it does
+not require a hosted notebook service. `document-extraction` owns source preparation and
 passes prepared provenance to `concept-cards` when concept-card work is
 requested; `concept-cards` does not own document conversion or source cleanup.
 These packages provide Markdown guidance and records, not executable
