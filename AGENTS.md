@@ -34,6 +34,16 @@ not the implementation checkout and should not be used for source/package edits.
   Project and arc closure require composition checks against their own
   `ledger.md` files, not just all child slices being green.
 
+## Standalone local-model research documents
+
+Operator decision, 2026-09-22: keep the vLLM-Metal installation runbook and
+scientific-methods evaluation protocol as standalone documents in this planning
+worktree, without opening a project/arc/slice. Their paths are
+`vllm-metal-librechat-runbook.md` and `local-coding-model-experiment-protocol.md`.
+They are research/configuration drafts, not issued CC assignments or evidence
+of installation, executed experiments, or independent acceptance. Keep the
+Mac Pro hardware baseline and remaining deployment questions explicit in them.
+
 ## Workflow
 
 - **Repo home:** `billosys` org, public, default implementation branch `main`;
