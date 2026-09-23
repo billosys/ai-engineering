@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice19-cross-record-run-references
 status: open
 depends-on: [slice18-run-scope-workers-and-outputs]
-version: "1.0"
+version: "1.1"
 ---
 
 # Cross-Record Run References
@@ -23,14 +23,35 @@ The Operator selected CDC + CRC + CC with Expedited Mode. Arc06
 and fresh CRC readiness. Slice18 is CRC-closed at this opening; exact Set B's
 22 pairs enter accepted coverage once. CRC owns this routine open set and later
 independent review; CDC owns structural changes and arc/project composition.
-CC's initial assignment is `cc-prompt.md`; its return remains proposed-done
-until CRC verification.
+CC's current assignment is `cc-prompt-iteration01.md`; its return remains
+proposed-done until CRC verification.
 
 ### Assignment History
 
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
-| cc-prompt.md | 2026-09-23 | CRC-closed Slice18 and arc directive02 | Exact Set C with eleven-kind census, empty/absent/populated reference states, four target outcomes and no inherited authority | Current CC assignment; pending execution |
+| cc-prompt.md | 2026-09-23 | CRC-closed Slice18 and arc directive02 | Exact Set C with eleven-kind census, empty/absent/populated reference states, four target outcomes and no inherited authority | Superseded before execution; preserved |
+| cc-prompt-iteration01.md | 2026-09-23 | cc-prompt.md | Operator-authorized verification method: direct evidence checks and independent semantic review | Current CC assignment; pending execution |
+
+No Slice19 implementation pass has run. The numbered replacement records an
+assignment revision, not an executed correction round.
+
+### Verification Method Decision
+
+The Operator authorized this Slice19-only revision on 2026-09-23. Use the
+outcome/check mapping in `cc-prompt-iteration01.md` for execution and CRC review.
+Direct pinned-data queries, evidence-row checks, inspection of all four native
+target cases and review of all 19 meanings replace the custom wrapper,
+mutation-suite and separate recipe-commit mechanisms specified in the original
+prompt, S19-5/S19-6 and directive02 items 5–6. Inherited examples retain their
+historical scope; those mechanisms are not additional acceptance gates here.
+The original assignment remains preserved.
+
+The semantic scope, source pins, required reading, complete populations,
+evidence registry, seven open ledger rows, six output paths, later ownership
+and independent acceptance remain required. This decision changes no other
+slice and closes no parent obligation. Report the replaced mechanisms as
+superseded; a missing required outcome still blocks acceptance.
 
 ## Exact Scope And Ownership
 
@@ -127,8 +148,10 @@ semantic conclusions.
   admission, runtime or contributor authority.
 - **Binding:** no source/schema/helper/package/runtime/extraction/UAT/memory
   change; no new Ruby or Python helper.
-- **Recommended:** reuse Slice03's evidence registry and Slice18's committed
-  wrapper pattern after inspecting what each actually validates.
+- **Binding:** use the current assignment's outcome/check mapping and direct
+  committed-evidence review; no custom wrapper or separate recipe commit gate.
+- **Recommended:** reuse Slice03's evidence identity conventions and Slice18's
+  registry structure while checking their applicability to each new claim.
 - **Local discretion:** private shell variable names and report table layout.
 - **Unresolved:** reference requiredness, target kind declaration, path
   authority, revision compatibility/inheritance and migration remain P-15/
@@ -149,20 +172,22 @@ The registry contains exactly 19 members with effective meaning, applicability,
 observed states, evidence IDs, exceptions, reader/extractor/query/migration
 consequences, unresolved questions with owners and bounded disposition. The
 evidence report contains the complete kind census, record-level state matrix,
-populated reference projection and target-outcome matrix. Validation is a
-literal, fail-closed Bash/jq/Git/hash route with positive and discriminating
-negative controls. Handoff retains all later owners and gates.
+populated reference projection and target-outcome matrix. Validation records
+reproducible Git/jq/hash commands, complete data observations, target inspections and
+evidence-row checks against pinned inputs. Handoff retains all later owners
+and gates.
 
 ## Ledger And Exit Criteria
 
 The seven ledger rows cover exact scope, intake/evidence, native/historical
-states, contextual meanings, target diagnostics, replay and handoff. CC may
-attest proposed-done only after all seven rows have evidence and the committed
-distinct-endpoint route passes. CRC independently reviews semantic context and
-replay before any pair enters accepted coverage. Slice20 stays unopened until
+states, contextual meanings, target diagnostics, reproducible evidence and
+handoff. CC may attest proposed-done only after all seven rows have the
+required evidence. CRC retrieves the contribution by commit, repeats data
+checks and independently reviews all target cases and semantic meanings before
+any pair enters accepted coverage. Slice20 stays unopened until
 that acceptance and its own fresh readiness pass.
 
-## Prompt-Author Readiness
+## Original Prompt-Author Readiness (1.0)
 
 - **Source-grounded:** CRC queried all 49 selected parsed records, read all
   eleven templates, inspected populated Arc07, rich-profile and preserved
@@ -182,7 +207,25 @@ that acceptance and its own fresh readiness pass.
   replace ignored workbench files as durable evidence. This author self-review
   is not CC evidence or independent acceptance.
 
+## Assignment 01 Readiness
+
+The evidence method uses the existing inventory's `records`, `record_kind` and
+`values` fields; preserves presence separately from raw value; checks target
+paths in the correct pinned tree; and retains source-cited semantic review.
+The source-support template and rich-profile example expose empty and populated
+references directly. The governing validation/verification guide distinguishes
+structural checks from semantic review and requires recoverable, scoped results;
+it does not require a general-purpose validator. The updated assignment
+supplies the concrete outcome/check mapping and keeps the original semantic
+oracles as observations to reproduce, not conclusions to force. This method
+review is neither Slice19 execution evidence nor independent acceptance.
+
 ## Version History
+
+- 1.1 (2026-09-23): Operator-authorized Slice19 verification-method revision;
+  issues preserved assignment01 and updates S19-5/S19-6. Direct evidence checks
+  and independent review replace wrapper/mutation/recipe-commit mechanics.
+  Semantic scope, required outcomes, ownership and acceptance gates retained.
 
 - 1.0 (2026-09-23): CRC opens directive02 Set C after independent Slice18
   closure and fresh exact-set, eleven-kind, populated-witness, target-outcome
