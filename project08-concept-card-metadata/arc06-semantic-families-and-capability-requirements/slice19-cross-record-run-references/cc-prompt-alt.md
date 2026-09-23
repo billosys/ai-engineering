@@ -1,4 +1,4 @@
-# Project08 Arc06 Slice19: Cross-Record Run References — Assignment 01
+# Project08 Arc06 Slice19: Cross-Record Run References — Alternate Assignment
 
 Work in this repository's canonical `.worktrees/planning` checkout. Locate the
 source checkout with `git worktree list`; use its actual path on this machine.
@@ -18,7 +18,7 @@ accepted Slice18 and opened this assignment. You are CC. Your output is
 proposed-done until CRC independently reviews it; CDC retains arc/project
 composition and design-change authority.
 
-Current assignment: `cc-prompt-iteration01.md`, replacing the unstarted
+Current assignment: `cc-prompt-alt.md`, replacing the unstarted
 `cc-prompt.md`. All seven ledger rows remain open. No prior Slice19 execution
 or acceptance is claimed.
 

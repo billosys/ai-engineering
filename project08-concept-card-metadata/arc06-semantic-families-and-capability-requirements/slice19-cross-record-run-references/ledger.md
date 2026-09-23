@@ -4,7 +4,7 @@ Opening state: 260 accepted / 295 remaining / 19 assigned / 276 outside.
 Assignment is not acceptance. Slice20-21, the 248-pair later-family complement,
 all A6 rows and all project gates remain open.
 
-Current assignment: `cc-prompt-iteration01.md`, under slice-plan version 1.1.
+Current assignment: `cc-prompt-alt.md`, under slice-plan version 1.2.
 S19-5/S19-6 use its Operator-authorized verification method; replaced wrapper,
 mutation-suite and recipe-endpoint mechanisms are superseded for Slice19.
 Required semantic outcomes, evidence identity and independent review remain.

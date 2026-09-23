@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice19-cross-record-run-references
 status: open
 depends-on: [slice18-run-scope-workers-and-outputs]
-version: "1.1"
+version: "1.2"
 ---
 
 # Cross-Record Run References
@@ -23,7 +23,7 @@ The Operator selected CDC + CRC + CC with Expedited Mode. Arc06
 and fresh CRC readiness. Slice18 is CRC-closed at this opening; exact Set B's
 22 pairs enter accepted coverage once. CRC owns this routine open set and later
 independent review; CDC owns structural changes and arc/project composition.
-CC's current assignment is `cc-prompt-iteration01.md`; its return remains
+CC's current assignment is `cc-prompt-alt.md`; its return remains
 proposed-done until CRC verification.
 
 ### Assignment History
@@ -31,15 +31,17 @@ proposed-done until CRC verification.
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
 | cc-prompt.md | 2026-09-23 | CRC-closed Slice18 and arc directive02 | Exact Set C with eleven-kind census, empty/absent/populated reference states, four target outcomes and no inherited authority | Superseded before execution; preserved |
-| cc-prompt-iteration01.md | 2026-09-23 | cc-prompt.md | Operator-authorized verification method: direct evidence checks and independent semantic review | Current CC assignment; pending execution |
+| cc-prompt-alt.md | 2026-09-23 | cc-prompt.md | Operator-authorized verification method: direct evidence checks and independent semantic review | Current CC assignment; pending execution |
 
-No Slice19 implementation pass has run. The numbered replacement records an
-assignment revision, not an executed correction round.
+No Slice19 implementation pass has run. The Operator selected
+`cc-prompt-alt.md` as a slice-local naming exception for this alternate initial
+assignment. Execute it instead of `cc-prompt.md`, not after it. This is not a
+follow-up iteration.
 
 ### Verification Method Decision
 
 The Operator authorized this Slice19-only revision on 2026-09-23. Use the
-outcome/check mapping in `cc-prompt-iteration01.md` for execution and CRC review.
+outcome/check mapping in `cc-prompt-alt.md` for execution and CRC review.
 Direct pinned-data queries, evidence-row checks, inspection of all four native
 target cases and review of all 19 meanings replace the custom wrapper,
 mutation-suite and separate recipe-commit mechanisms specified in the original
@@ -207,7 +209,7 @@ that acceptance and its own fresh readiness pass.
   replace ignored workbench files as durable evidence. This author self-review
   is not CC evidence or independent acceptance.
 
-## Assignment 01 Readiness
+## Alternate Assignment Readiness
 
 The evidence method uses the existing inventory's `records`, `record_kind` and
 `values` fields; preserves presence separately from raw value; checks target
@@ -222,8 +224,12 @@ review is neither Slice19 execution evidence nor independent acceptance.
 
 ## Version History
 
+- 1.2 (2026-09-23): Operator renames the alternate initial assignment to
+  `cc-prompt-alt.md`; records this slice-local naming exception and updates
+  current-assignment references. Work and acceptance requirements unchanged.
+
 - 1.1 (2026-09-23): Operator-authorized Slice19 verification-method revision;
-  issues preserved assignment01 and updates S19-5/S19-6. Direct evidence checks
+  issues the alternate assignment and updates S19-5/S19-6. Direct evidence checks
   and independent review replace wrapper/mutation/recipe-commit mechanics.
   Semantic scope, required outcomes, ownership and acceptance gates retained.
 
