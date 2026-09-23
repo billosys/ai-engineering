@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice18-run-scope-workers-and-outputs
-status: open
+status: closed
 depends-on: [slice17-run-preparation-method-and-reference-provenance]
-version: "1.0"
+version: "1.1"
 ---
 
 # Run Scope, Workers, And Outputs
@@ -29,7 +29,7 @@ its return remains proposed-done until CRC verification.
 
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
-| cc-prompt.md | 2026-09-19 | CRC-closed Slice17 and arc directive02 | Exact Set B with mapping/sequence/absence, worker-count, worker-output and target-resolution comparisons | Current CC assignment; pending execution |
+| cc-prompt.md | 2026-09-19 | CRC-closed Slice17 and arc directive02 | Exact Set B with mapping/sequence/absence, worker-count, worker-output and target-resolution comparisons | Returned through final candidate `981ef9ff`; independently CRC-accepted with recipe `2ab66797` |
 
 ## Exact Scope And Ownership
 
@@ -161,13 +161,19 @@ reviews before any pair enters accepted coverage.
 
 ## Exit Criteria
 
-All seven rows are CC-attested with exact evidence; the six-file contribution
-commits with required trailers; precommit and distinct-endpoint replay pass;
-unresolved policy questions retain named owners; and CRC independently accepts
-the semantics and replay. Slice19 stays unopened until that acceptance and its
-own fresh readiness pass.
+All seven rows are CC-attested and independently CRC-verified with exact
+evidence. The six-file contribution carries the required trailers; final-
+candidate and distinct-endpoint replay pass; and unresolved policy questions
+retain owners. Exactly 22 pairs enter accepted coverage once. Slice19 may open
+only after its separate fresh readiness pass.
 
 ## Version History
+
+- 1.1 (2026-09-23): CRC independently accepts the final candidate after
+  reproducing the committed wrapper, all mutation controls, native matrix,
+  target outcomes and semantic limits. Closes all seven rows and transfers
+  exactly 22 Set B pairs to accepted coverage; no schema, source, extraction,
+  runtime, memory or UAT claim is added.
 
 - 1.0 (2026-09-19): CRC opens directive02 Set B after independent Slice17
   closure and fresh exact-set, witness, guidance, target-resolution and prompt-
