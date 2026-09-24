@@ -3,25 +3,82 @@
   "status": "cc-proposed-done",
   "scope": {
     "assignment": [
-      ["run_refs", "claim"],
-      ["run_refs", "competency-question"],
-      ["run_refs", "concept-card"],
-      ["run_refs", "memory-admission"],
-      ["run_refs", "preservation-decision"],
-      ["run_refs", "reconciliation-result"],
-      ["run_refs", "relationship-edge"],
-      ["run_refs", "source-locator"],
-      ["run_refs", "source-support"],
-      ["run_refs", "validation-result"],
-      ["run_refs", "verification-result"],
-      ["run_refs[]", "concept-card"],
-      ["run_refs[]", "source-support"],
-      ["run_refs[].id", "concept-card"],
-      ["run_refs[].id", "source-support"],
-      ["run_refs[].path", "concept-card"],
-      ["run_refs[].path", "source-support"],
-      ["run_refs[].revision", "concept-card"],
-      ["run_refs[].revision", "source-support"]
+      [
+        "run_refs",
+        "claim"
+      ],
+      [
+        "run_refs",
+        "competency-question"
+      ],
+      [
+        "run_refs",
+        "concept-card"
+      ],
+      [
+        "run_refs",
+        "memory-admission"
+      ],
+      [
+        "run_refs",
+        "preservation-decision"
+      ],
+      [
+        "run_refs",
+        "reconciliation-result"
+      ],
+      [
+        "run_refs",
+        "relationship-edge"
+      ],
+      [
+        "run_refs",
+        "source-locator"
+      ],
+      [
+        "run_refs",
+        "source-support"
+      ],
+      [
+        "run_refs",
+        "validation-result"
+      ],
+      [
+        "run_refs",
+        "verification-result"
+      ],
+      [
+        "run_refs[]",
+        "concept-card"
+      ],
+      [
+        "run_refs[]",
+        "source-support"
+      ],
+      [
+        "run_refs[].id",
+        "concept-card"
+      ],
+      [
+        "run_refs[].id",
+        "source-support"
+      ],
+      [
+        "run_refs[].path",
+        "concept-card"
+      ],
+      [
+        "run_refs[].path",
+        "source-support"
+      ],
+      [
+        "run_refs[].revision",
+        "concept-card"
+      ],
+      [
+        "run_refs[].revision",
+        "source-support"
+      ]
     ],
     "counts": {
       "full": 555,
@@ -31,7 +88,10 @@
       "outside": 276
     },
     "assignment_is_acceptance": false,
-    "unopened_successors": ["slice20", "slice21"],
+    "unopened_successors": [
+      "slice20",
+      "slice21"
+    ],
     "outside_complement": 248
   },
   "memberships": [
@@ -41,11 +101,34 @@
       "meaning_id": "claim-run-refs-provenance-attachment",
       "effective_meaning": "An empty claim-local surface for attaching the run history of claim production; no populated claim witness is present in this population.",
       "applicability": "Applies only when a claim record records a producing or revising run. Empty is observed; requiredness and target policy are unresolved.",
-      "observed_states": {"parsed_records": 1, "root_absent": 0, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-extraction", "guidance-evidence"],
-      "exceptions": ["Do not transfer a run's source support, evidence grade, validation or lifecycle state to the claim."],
-      "consequences": {"reader": "Show no run history when the sequence is empty; do not display absence as a failed claim.", "extractor": "Attach only the run that actually produced or revised the claim when such provenance is known.", "query": "Treat claim-run traversal as an optional provenance query, separate from support and verification queries.", "migration": "Preserve the empty sequence and do not backfill it from a parent card or source-support record."},
-      "unresolved_questions": [{"question": "Should claims require a producing-run reference, and what run event does it denote?", "owner": "Arc02/P-15 and repeated real-run work"}],
+      "observed_states": {
+        "parsed_records": 1,
+        "root_absent": 0,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-evidence-lifecycle",
+        "guide-extraction",
+        "inventory",
+        "template-claim"
+      ],
+      "exceptions": [
+        "Do not transfer a run's source support, evidence grade, validation or lifecycle state to the claim."
+      ],
+      "consequences": {
+        "reader": "Show no run history when the sequence is empty; do not display absence as a failed claim.",
+        "extractor": "Attach only the run that actually produced or revised the claim when such provenance is known.",
+        "query": "Treat claim-run traversal as an optional provenance query, separate from support and verification queries.",
+        "migration": "Preserve the empty sequence and do not backfill it from a parent card or source-support record."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Should claims require a producing-run reference, and what run event does it denote?",
+          "owner": "Arc02/P-15 and repeated real-run work"
+        }
+      ],
       "disposition": "bounded-observation"
     },
     {
@@ -54,11 +137,34 @@
       "meaning_id": "competency-question-run-refs-provenance-attachment",
       "effective_meaning": "A competency-question-local provenance attachment surface; the example omits the root and its template is an empty sequence.",
       "applicability": "Applies when a question or its revision is attributed to a run. The two observed root states do not establish requiredness or answer provenance.",
-      "observed_states": {"parsed_records": 2, "root_absent": 1, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-graph", "guidance-extraction"],
-      "exceptions": ["Do not treat a question's run as the run that produced an answer, support record or card."],
-      "consequences": {"reader": "Render absent and empty separately when explaining question provenance.", "extractor": "Preserve whether the question was authored or revised during the current run; do not infer it from a linked card.", "query": "Keep question provenance joins separate from CQ answerability and result joins.", "migration": "Do not fill an absent root from parent-card or result provenance."},
-      "unresolved_questions": [{"question": "Does run_refs identify CQ authoring, CQ retrieval, or another question lifecycle event?", "owner": "Arc02/P-15 and Slice09/11 composition"}],
+      "observed_states": {
+        "parsed_records": 2,
+        "root_absent": 1,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-extraction",
+        "guide-graph-cq",
+        "inventory",
+        "template-competency-question"
+      ],
+      "exceptions": [
+        "Do not treat a question's run as the run that produced an answer, support record or card."
+      ],
+      "consequences": {
+        "reader": "Render absent and empty separately when explaining question provenance.",
+        "extractor": "Preserve whether the question was authored or revised during the current run; do not infer it from a linked card.",
+        "query": "Keep question provenance joins separate from CQ answerability and result joins.",
+        "migration": "Do not fill an absent root from parent-card or result provenance."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Does run_refs identify CQ authoring, CQ retrieval, or another question lifecycle event?",
+          "owner": "Arc02/P-15 and Slice09/11 composition"
+        }
+      ],
       "disposition": "bounded-unknown"
     },
     {
@@ -67,11 +173,41 @@
       "meaning_id": "concept-card-run-refs-provenance-attachment",
       "effective_meaning": "A concept-card-local link to the run context that produced the candidate card. In the observed populated cards it identifies a pilot extraction, a rich rerun, a teaching rerun, or a synthetic example context.",
       "applicability": "Applies to candidate-card production history. It is not a claim-support, source identity, lifecycle acceptance or memory-admission field.",
-      "observed_states": {"parsed_records": 31, "root_absent": 8, "root_present": 23, "empty_sequence": 1, "populated_sequence": 22},
-      "evidence_ids": ["inventory", "arc07-run", "arc07-card-set", "rich-card", "rich-rerun-card", "teaching-rerun-card", "templates", "guidance-extraction"],
-      "exceptions": ["The eight absent cards and one empty template are not evidence of no extraction run; the populated rerun README references are path-only targets."],
-      "consequences": {"reader": "Present run context with its address and identity outcome, without implying card acceptance.", "extractor": "Record the producing run and preserve its declared revision and path exactly.", "query": "Use run_refs to traverse card-production history; join claims, supports and lifecycle records only through their own explicit fields.", "migration": "Preserve absent, empty and populated roots; do not normalize README path-only references into extraction-run records."},
-      "unresolved_questions": [{"question": "May a card have multiple runs, and what ordering or supersession semantics apply?", "owner": "Arc02/P-15 and repeated real extraction"}],
+      "observed_states": {
+        "parsed_records": 31,
+        "root_absent": 8,
+        "root_present": 23,
+        "empty_sequence": 1,
+        "populated_sequence": 22
+      },
+      "evidence_ids": [
+        "arc07-card-emergent",
+        "arc07-card-memory",
+        "arc07-card-model",
+        "arc07-card-pattern",
+        "arc07-run",
+        "guide-extraction",
+        "inventory",
+        "rich-profile-card",
+        "rich-rerun-card",
+        "teaching-rerun-card",
+        "template-concept-card"
+      ],
+      "exceptions": [
+        "The eight absent cards and one empty template are not evidence of no extraction run; the populated rerun README references are path-only targets."
+      ],
+      "consequences": {
+        "reader": "Present run context with its address and identity outcome, without implying card acceptance.",
+        "extractor": "Record the producing run and preserve its declared revision and path exactly.",
+        "query": "Use run_refs to traverse card-production history; join claims, supports and lifecycle records only through their own explicit fields.",
+        "migration": "Preserve absent, empty and populated roots; do not normalize README path-only references into extraction-run records."
+      },
+      "unresolved_questions": [
+        {
+          "question": "May a card have multiple runs, and what ordering or supersession semantics apply?",
+          "owner": "Arc02/P-15 and repeated real extraction"
+        }
+      ],
       "disposition": "bounded-observation"
     },
     {
@@ -80,11 +216,34 @@
       "meaning_id": "memory-admission-run-refs-provenance-attachment",
       "effective_meaning": "An admission-record-local provenance attachment surface; the example omits the root and the template is empty.",
       "applicability": "Applies only when an admission decision records the run that prepared or proposed it. It does not itself confer admission authority.",
-      "observed_states": {"parsed_records": 2, "root_absent": 1, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-admission", "guidance-evidence"],
-      "exceptions": ["Do not interpret a referenced run as an approval, reliance scope, or runtime write."],
-      "consequences": {"reader": "Keep run history distinct from the admission authority and outcome fields.", "extractor": "Attach a run only when the admission record actually records that provenance.", "query": "Query admission authority and run history as separate predicates.", "migration": "Preserve omission and empty state; never infer run provenance from a card's run_refs."},
-      "unresolved_questions": [{"question": "Which admission event, if any, is the referenced run expected to identify?", "owner": "Arc02/P-15 and Slice08"}],
+      "observed_states": {
+        "parsed_records": 2,
+        "root_absent": 1,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-evidence-lifecycle",
+        "guide-memory-admission",
+        "inventory",
+        "template-memory-admission"
+      ],
+      "exceptions": [
+        "Do not interpret a referenced run as an approval, reliance scope, or runtime write."
+      ],
+      "consequences": {
+        "reader": "Keep run history distinct from the admission authority and outcome fields.",
+        "extractor": "Attach a run only when the admission record actually records that provenance.",
+        "query": "Query admission authority and run history as separate predicates.",
+        "migration": "Preserve omission and empty state; never infer run provenance from a card's run_refs."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Which admission event, if any, is the referenced run expected to identify?",
+          "owner": "Arc02/P-15 and Slice08"
+        }
+      ],
       "disposition": "bounded-unknown"
     },
     {
@@ -93,11 +252,34 @@
       "meaning_id": "preservation-decision-run-refs-provenance-attachment",
       "effective_meaning": "A preservation-decision-local provenance attachment surface; the template is empty and no populated decision witness occurs.",
       "applicability": "Applies when a preservation decision records the run that generated or informed the decision. It is not the preservation destination or decision authority.",
-      "observed_states": {"parsed_records": 1, "root_absent": 0, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-preservation", "guidance-evidence"],
-      "exceptions": ["Do not infer preservation outcome, retained value or operator review from a run reference."],
-      "consequences": {"reader": "Show run provenance separately from preservation choice and destination.", "extractor": "Attach only the run that made or supplied the decision evidence.", "query": "Keep decision-to-run traversal separate from prior-value and destination traversal.", "migration": "Preserve the empty template state; do not synthesize a run from source or card provenance."},
-      "unresolved_questions": [{"question": "Is this intended to identify decision preparation, source preservation, or a later review run?", "owner": "Arc02/P-15 and Slice07"}],
+      "observed_states": {
+        "parsed_records": 1,
+        "root_absent": 0,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-evidence-lifecycle",
+        "guide-preservation",
+        "inventory",
+        "template-preservation-decision"
+      ],
+      "exceptions": [
+        "Do not infer preservation outcome, retained value or operator review from a run reference."
+      ],
+      "consequences": {
+        "reader": "Show run provenance separately from preservation choice and destination.",
+        "extractor": "Attach only the run that made or supplied the decision evidence.",
+        "query": "Keep decision-to-run traversal separate from prior-value and destination traversal.",
+        "migration": "Preserve the empty template state; do not synthesize a run from source or card provenance."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Is this intended to identify decision preparation, source preservation, or a later review run?",
+          "owner": "Arc02/P-15 and Slice07"
+        }
+      ],
       "disposition": "bounded-unknown"
     },
     {
@@ -106,11 +288,34 @@
       "meaning_id": "reconciliation-result-run-refs-provenance-attachment",
       "effective_meaning": "A reconciliation-result-local provenance attachment surface; the example omits the root and the template is empty.",
       "applicability": "Applies when a reconciliation result records the run that performed or produced the result. It is not the conflict, decision or affected-construct authority.",
-      "observed_states": {"parsed_records": 2, "root_absent": 1, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-reconciliation", "guidance-evidence"],
-      "exceptions": ["Do not treat a run reference as evidence that reconciliation succeeded or that its result was accepted."],
-      "consequences": {"reader": "Display result provenance apart from outcome and affected records.", "extractor": "Preserve the run that generated the result when explicitly known.", "query": "Join reconciliation results to runs only for provenance, not for conflict resolution semantics.", "migration": "Keep absent versus empty; do not infer result provenance from inputs or decisions."},
-      "unresolved_questions": [{"question": "What reconciliation operation boundary should a future run reference identify?", "owner": "Arc02/P-15 and Slice06"}],
+      "observed_states": {
+        "parsed_records": 2,
+        "root_absent": 1,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-evidence-lifecycle",
+        "guide-reconciliation",
+        "inventory",
+        "template-reconciliation-result"
+      ],
+      "exceptions": [
+        "Do not treat a run reference as evidence that reconciliation succeeded or that its result was accepted."
+      ],
+      "consequences": {
+        "reader": "Display result provenance apart from outcome and affected records.",
+        "extractor": "Preserve the run that generated the result when explicitly known.",
+        "query": "Join reconciliation results to runs only for provenance, not for conflict resolution semantics.",
+        "migration": "Keep absent versus empty; do not infer result provenance from inputs or decisions."
+      },
+      "unresolved_questions": [
+        {
+          "question": "What reconciliation operation boundary should a future run reference identify?",
+          "owner": "Arc02/P-15 and Slice06"
+        }
+      ],
       "disposition": "bounded-unknown"
     },
     {
@@ -119,11 +324,34 @@
       "meaning_id": "relationship-edge-run-refs-provenance-attachment",
       "effective_meaning": "A relationship-edge-local provenance attachment surface; the example omits the root and the template is empty.",
       "applicability": "Applies when an edge records the run that extracted or revised the relation. It does not establish relation direction, warrant or graph acceptance.",
-      "observed_states": {"parsed_records": 2, "root_absent": 1, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-graph", "guidance-extraction"],
-      "exceptions": ["A run link cannot substitute for the edge's relation, support or verification fields."],
-      "consequences": {"reader": "Show relation provenance as a separate edge annotation.", "extractor": "Attach the producing run without inferring relation type or warrant.", "query": "Use run_refs for provenance-filtered graph traversal, not for relation inference.", "migration": "Preserve empty and absent states; do not copy card-level run_refs onto edges."},
-      "unresolved_questions": [{"question": "Does the field identify extraction of the edge, later revision, or both?", "owner": "Arc02/P-15 and Slice02/06"}],
+      "observed_states": {
+        "parsed_records": 2,
+        "root_absent": 1,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-extraction",
+        "guide-graph-cq",
+        "inventory",
+        "template-relationship-edge"
+      ],
+      "exceptions": [
+        "A run link cannot substitute for the edge's relation, support or verification fields."
+      ],
+      "consequences": {
+        "reader": "Show relation provenance as a separate edge annotation.",
+        "extractor": "Attach the producing run without inferring relation type or warrant.",
+        "query": "Use run_refs for provenance-filtered graph traversal, not for relation inference.",
+        "migration": "Preserve empty and absent states; do not copy card-level run_refs onto edges."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Does the field identify extraction of the edge, later revision, or both?",
+          "owner": "Arc02/P-15 and Slice02/06"
+        }
+      ],
       "disposition": "bounded-unknown"
     },
     {
@@ -132,11 +360,34 @@
       "meaning_id": "source-locator-run-refs-provenance-attachment",
       "effective_meaning": "A source-locator-local provenance attachment surface; the template is empty and no populated locator witness occurs.",
       "applicability": "Applies when a locator records the run that extracted or normalized the locator. It is distinct from source identity and span location.",
-      "observed_states": {"parsed_records": 1, "root_absent": 0, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-extraction", "guidance-evidence"],
-      "exceptions": ["Do not treat a run reference as the source reference or as proof that a locator is valid."],
-      "consequences": {"reader": "Render locator address and run history as different metadata.", "extractor": "Record the run responsible for locator creation when available.", "query": "Keep source-target lookup separate from production-run lookup.", "migration": "Preserve the empty state and do not derive run provenance from source_refs."},
-      "unresolved_questions": [{"question": "Should locator provenance distinguish extraction, normalization and later repair runs?", "owner": "Arc02/P-15 and Slice17/21"}],
+      "observed_states": {
+        "parsed_records": 1,
+        "root_absent": 0,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-evidence-lifecycle",
+        "guide-extraction",
+        "inventory",
+        "template-source-locator"
+      ],
+      "exceptions": [
+        "Do not treat a run reference as the source reference or as proof that a locator is valid."
+      ],
+      "consequences": {
+        "reader": "Render locator address and run history as different metadata.",
+        "extractor": "Record the run responsible for locator creation when available.",
+        "query": "Keep source-target lookup separate from production-run lookup.",
+        "migration": "Preserve the empty state and do not derive run provenance from source_refs."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Should locator provenance distinguish extraction, normalization and later repair runs?",
+          "owner": "Arc02/P-15 and Slice17/21"
+        }
+      ],
       "disposition": "bounded-unknown"
     },
     {
@@ -145,11 +396,39 @@
       "meaning_id": "source-support-run-refs-provenance-attachment",
       "effective_meaning": "A source-support-local link to the run that produced the support attachment. Four populated pilot supports use the Arc07 pilot run; the template is empty.",
       "applicability": "Applies to support-record production history. It does not replace the supported assertion, source span, evidence grade or independent verification.",
-      "observed_states": {"parsed_records": 5, "root_absent": 0, "root_present": 5, "empty_sequence": 1, "populated_sequence": 4},
-      "evidence_ids": ["inventory", "arc07-run", "arc07-support-set", "templates", "guidance-extraction", "guidance-evidence"],
-      "exceptions": ["The Arc07 run describes candidate support production but does not make the support independently verified or accepted."],
-      "consequences": {"reader": "Show the production run beside source span and caveat state, not as support strength.", "extractor": "Preserve the producing run for each support attachment.", "query": "Use run_refs to ask which run produced support, while using source/support fields for warrant.", "migration": "Preserve the empty template and four populated support references; do not move them into source_refs or verification fields."},
-      "unresolved_questions": [{"question": "Can one support record cite multiple runs, and how are re-extraction revisions ordered?", "owner": "Arc02/P-15 and repeated real extraction"}],
+      "observed_states": {
+        "parsed_records": 5,
+        "root_absent": 0,
+        "root_present": 5,
+        "empty_sequence": 1,
+        "populated_sequence": 4
+      },
+      "evidence_ids": [
+        "arc07-run",
+        "arc07-support-emergent",
+        "arc07-support-memory",
+        "arc07-support-model",
+        "arc07-support-pattern",
+        "guide-evidence-lifecycle",
+        "guide-extraction",
+        "inventory",
+        "template-source-support"
+      ],
+      "exceptions": [
+        "The Arc07 run describes candidate support production but does not make the support independently verified or accepted."
+      ],
+      "consequences": {
+        "reader": "Show the production run beside source span and caveat state, not as support strength.",
+        "extractor": "Preserve the producing run for each support attachment.",
+        "query": "Use run_refs to ask which run produced support, while using source/support fields for warrant.",
+        "migration": "Preserve the empty template and four populated support references; do not move them into source_refs or verification fields."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Can one support record cite multiple runs, and how are re-extraction revisions ordered?",
+          "owner": "Arc02/P-15 and repeated real extraction"
+        }
+      ],
       "disposition": "bounded-observation"
     },
     {
@@ -158,11 +437,34 @@
       "meaning_id": "validation-result-run-refs-provenance-attachment",
       "effective_meaning": "A validation-result-local provenance attachment surface; the template is empty and no populated validation result occurs.",
       "applicability": "Applies when a validation result records the run that executed or generated the result. It is not the validation outcome or rule authority.",
-      "observed_states": {"parsed_records": 1, "root_absent": 0, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-validation", "guidance-evidence"],
-      "exceptions": ["A referenced run does not turn structural validation into semantic verification."],
-      "consequences": {"reader": "Keep validation execution history separate from the result and its rule set.", "extractor": "Attach the execution run only when the result records it.", "query": "Query result outcome and run provenance independently.", "migration": "Preserve the empty state; do not infer a run from a validator version or target record."},
-      "unresolved_questions": [{"question": "What execution boundary and tool identity should validation-result run_refs capture?", "owner": "Arc02/P-15 and Slice05"}],
+      "observed_states": {
+        "parsed_records": 1,
+        "root_absent": 0,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-evidence-lifecycle",
+        "guide-validation-verification",
+        "inventory",
+        "template-validation-result"
+      ],
+      "exceptions": [
+        "A referenced run does not turn structural validation into semantic verification."
+      ],
+      "consequences": {
+        "reader": "Keep validation execution history separate from the result and its rule set.",
+        "extractor": "Attach the execution run only when the result records it.",
+        "query": "Query result outcome and run provenance independently.",
+        "migration": "Preserve the empty state; do not infer a run from a validator version or target record."
+      },
+      "unresolved_questions": [
+        {
+          "question": "What execution boundary and tool identity should validation-result run_refs capture?",
+          "owner": "Arc02/P-15 and Slice05"
+        }
+      ],
       "disposition": "bounded-unknown"
     },
     {
@@ -171,11 +473,34 @@
       "meaning_id": "verification-result-run-refs-provenance-attachment",
       "effective_meaning": "A verification-result-local provenance attachment surface; the template is empty and no populated verification result occurs.",
       "applicability": "Applies when a verification result records the run that performed or generated it. It is not independent authority or the verification outcome itself.",
-      "observed_states": {"parsed_records": 1, "root_absent": 0, "root_present": 1, "empty_sequence": 1, "populated_sequence": 0},
-      "evidence_ids": ["inventory", "templates", "guidance-verification", "guidance-evidence"],
-      "exceptions": ["A run reference cannot establish independence, acceptance or semantic warrant."],
-      "consequences": {"reader": "Display verification execution history separately from independence and outcome.", "extractor": "Record the verifying run only when explicitly available.", "query": "Keep run provenance distinct from independent-verifier identity and result status.", "migration": "Preserve empty state; never infer verification from a referenced extraction run."},
-      "unresolved_questions": [{"question": "How should future verification runs encode independence and authority without overloading run_refs?", "owner": "Arc02/P-15 and Slice05/11"}],
+      "observed_states": {
+        "parsed_records": 1,
+        "root_absent": 0,
+        "root_present": 1,
+        "empty_sequence": 1,
+        "populated_sequence": 0
+      },
+      "evidence_ids": [
+        "guide-evidence-lifecycle",
+        "guide-validation-verification",
+        "inventory",
+        "template-verification-result"
+      ],
+      "exceptions": [
+        "A run reference cannot establish independence, acceptance or semantic warrant."
+      ],
+      "consequences": {
+        "reader": "Display verification execution history separately from independence and outcome.",
+        "extractor": "Record the verifying run only when explicitly available.",
+        "query": "Keep run provenance distinct from independent-verifier identity and result status.",
+        "migration": "Preserve empty state; never infer verification from a referenced extraction run."
+      },
+      "unresolved_questions": [
+        {
+          "question": "How should future verification runs encode independence and authority without overloading run_refs?",
+          "owner": "Arc02/P-15 and Slice05/11"
+        }
+      ],
       "disposition": "bounded-unknown"
     },
     {
@@ -184,11 +509,36 @@
       "meaning_id": "concept-card-run-refs-element",
       "effective_meaning": "Each populated concept-card run_refs element is an object-valued provenance attachment, with identity, address and declared revision children observed in all 22 populated cards.",
       "applicability": "Applies to each element of a populated concept-card sequence. The population contains no non-object element, but general malformed-input handling remains unestablished.",
-      "observed_states": {"populated_parent_records": 22, "element_count": 22, "object": 22, "non_object": 0},
-      "evidence_ids": ["populated-projection", "arc07-card-set", "rich-rerun-card", "teaching-rerun-card"],
-      "exceptions": ["Object shape is an observation, not a universal schema or proof of target identity."],
-      "consequences": {"reader": "Render each element as an addressable reference and retain its child states.", "extractor": "Do not coalesce multiple elements or replace malformed values with a valid object.", "query": "Filter element predicates independently from root presence.", "migration": "Preserve element order and raw shape; do not invent missing children."},
-      "unresolved_questions": [{"question": "Are duplicate references, order and multiple-run semantics meaningful?", "owner": "Arc02/P-15"}],
+      "observed_states": {
+        "populated_parent_records": 22,
+        "element_count": 22,
+        "object": 22,
+        "non_object": 0
+      },
+      "evidence_ids": [
+        "arc07-card-emergent",
+        "arc07-card-memory",
+        "arc07-card-model",
+        "arc07-card-pattern",
+        "rich-rerun-card",
+        "semantic-evidence-projection",
+        "teaching-rerun-card"
+      ],
+      "exceptions": [
+        "Object shape is an observation, not a universal schema or proof of target identity."
+      ],
+      "consequences": {
+        "reader": "Render each element as an addressable reference and retain its child states.",
+        "extractor": "Do not coalesce multiple elements or replace malformed values with a valid object.",
+        "query": "Filter element predicates independently from root presence.",
+        "migration": "Preserve element order and raw shape; do not invent missing children."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Are duplicate references, order and multiple-run semantics meaningful?",
+          "owner": "Arc02/P-15"
+        }
+      ],
       "disposition": "observed-shape"
     },
     {
@@ -197,11 +547,35 @@
       "meaning_id": "source-support-run-refs-element",
       "effective_meaning": "Each populated source-support run_refs element is an object-valued provenance attachment, with identity, address and declared revision children observed in all four populated supports.",
       "applicability": "Applies to each element of a populated source-support sequence. No malformed element occurs in the frozen population.",
-      "observed_states": {"populated_parent_records": 4, "element_count": 4, "object": 4, "non_object": 0},
-      "evidence_ids": ["populated-projection", "arc07-support-set", "arc07-run"],
-      "exceptions": ["This element identifies support production history; it does not carry the support span or evidence grade."],
-      "consequences": {"reader": "Show production references alongside, not instead of, source-support content.", "extractor": "Retain each support element without collapsing it into source_refs.", "query": "Use element-level joins for support production history only.", "migration": "Preserve order and raw object shape; do not infer verification or admission from the element."},
-      "unresolved_questions": [{"question": "What is the relation between multiple support-producing runs and support revision?", "owner": "Arc02/P-15 and repeated real extraction"}],
+      "observed_states": {
+        "populated_parent_records": 4,
+        "element_count": 4,
+        "object": 4,
+        "non_object": 0
+      },
+      "evidence_ids": [
+        "arc07-run",
+        "arc07-support-emergent",
+        "arc07-support-memory",
+        "arc07-support-model",
+        "arc07-support-pattern",
+        "semantic-evidence-projection"
+      ],
+      "exceptions": [
+        "This element identifies support production history; it does not carry the support span or evidence grade."
+      ],
+      "consequences": {
+        "reader": "Show production references alongside, not instead of, source-support content.",
+        "extractor": "Retain each support element without collapsing it into source_refs.",
+        "query": "Use element-level joins for support production history only.",
+        "migration": "Preserve order and raw object shape; do not infer verification or admission from the element."
+      },
+      "unresolved_questions": [
+        {
+          "question": "What is the relation between multiple support-producing runs and support revision?",
+          "owner": "Arc02/P-15 and repeated real extraction"
+        }
+      ],
       "disposition": "observed-shape"
     },
     {
@@ -210,11 +584,35 @@
       "meaning_id": "concept-card-run-ref-id",
       "effective_meaning": "The id child is the declared identity component of a concept-card run reference; it participates in exact target comparison only after an inspected target declares record_type extraction-run.",
       "applicability": "Applies to each observed object element. All 22 values are strings; the current field does not carry target record_type.",
-      "observed_states": {"element_count": 22, "present_string": 22, "missing": 0, "null": 0, "wrong_type": 0},
-      "evidence_ids": ["populated-projection", "arc07-run", "rich-readme", "teaching-readme", "rich-profile"],
-      "exceptions": ["A matching id in a README or filename is not an extraction-run identity match."],
-      "consequences": {"reader": "Display id as a declared reference claim, with target declaration status.", "extractor": "Copy the target id from an authoritative run record when one exists.", "query": "Compare id only together with target type and revision.", "migration": "Preserve string values and do not infer record_type from the parent kind or path."},
-      "unresolved_questions": [{"question": "Should future references carry an explicit target record_type or another typed discriminator?", "owner": "Arc02/P-15"}],
+      "observed_states": {
+        "element_count": 22,
+        "present_string": 22,
+        "missing": 0,
+        "null": 0,
+        "wrong_type": 0
+      },
+      "evidence_ids": [
+        "arc07-run",
+        "rich-profile-card",
+        "rich-rerun-readme",
+        "semantic-evidence-projection",
+        "teaching-rerun-readme"
+      ],
+      "exceptions": [
+        "A matching id in a README or filename is not an extraction-run identity match."
+      ],
+      "consequences": {
+        "reader": "Display id as a declared reference claim, with target declaration status.",
+        "extractor": "Copy the target id from an authoritative run record when one exists.",
+        "query": "Compare id only together with target type and revision.",
+        "migration": "Preserve string values and do not infer record_type from the parent kind or path."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Should future references carry an explicit target record_type or another typed discriminator?",
+          "owner": "Arc02/P-15"
+        }
+      ],
       "disposition": "bounded-identity-component"
     },
     {
@@ -223,11 +621,37 @@
       "meaning_id": "source-support-run-ref-id",
       "effective_meaning": "The id child is the declared identity component of a source-support run reference; it can identify a run only when the addressed target declares matching extraction-run identity and revision.",
       "applicability": "Applies to each of the four populated support elements. All observed values are strings and the field omits target record_type.",
-      "observed_states": {"element_count": 4, "present_string": 4, "missing": 0, "null": 0, "wrong_type": 0},
-      "evidence_ids": ["populated-projection", "arc07-run", "rich-profile"],
-      "exceptions": ["Support production identity does not establish support warrant or verification."],
-      "consequences": {"reader": "Show the id as a production-reference claim, not evidence strength.", "extractor": "Retain the run id from the producing run record.", "query": "Use the id only in the exact identity predicate with path and revision.", "migration": "Do not convert it into source identity or a support-record id."},
-      "unresolved_questions": [{"question": "How should support re-extraction and supersession be represented when ids repeat across runs?", "owner": "Arc02/P-15 and Slice09"}],
+      "observed_states": {
+        "element_count": 4,
+        "present_string": 4,
+        "missing": 0,
+        "null": 0,
+        "wrong_type": 0
+      },
+      "evidence_ids": [
+        "inventory",
+        "arc07-run",
+        "arc07-support-emergent",
+        "arc07-support-memory",
+        "arc07-support-model",
+        "arc07-support-pattern",
+        "semantic-evidence-projection"
+      ],
+      "exceptions": [
+        "Support production identity does not establish support warrant or verification."
+      ],
+      "consequences": {
+        "reader": "Show the id as a production-reference claim, not evidence strength.",
+        "extractor": "Retain the run id from the producing run record.",
+        "query": "Use the id only in the exact identity predicate with path and revision.",
+        "migration": "Do not convert it into source identity or a support-record id."
+      },
+      "unresolved_questions": [
+        {
+          "question": "How should support re-extraction and supersession be represented when ids repeat across runs?",
+          "owner": "Arc02/P-15 and Slice09"
+        }
+      ],
       "disposition": "bounded-identity-component"
     },
     {
@@ -236,11 +660,35 @@
       "meaning_id": "concept-card-run-ref-path",
       "effective_meaning": "The path child is a relative address from the containing card directory to a candidate run target; it is not itself target identity.",
       "applicability": "Applies to all 22 populated concept-card elements. The pilot path resolves to an extraction-run; both rerun paths resolve to preserved README files; the synthetic path is absent in the source example tree.",
-      "observed_states": {"element_count": 22, "present_string": 22, "missing": 0, "null": 0, "wrong_type": 0},
-      "evidence_ids": ["populated-projection", "pilot-resolution", "rich-resolution", "teaching-resolution", "synthetic-resolution"],
-      "exceptions": ["Resolve relative to the containing record in the authoritative tree; do not use ignored workbench bytes or treat a missing target as a no-match."],
-      "consequences": {"reader": "Expose address resolution and identity resolution as separate results.", "extractor": "Write a path valid for the authoritative evidence tree used by the record.", "query": "Run address lookup first, then inspect target frontmatter and compare identity.", "migration": "Retain original relative paths and record unresolved or path-only targets rather than rewriting them."},
-      "unresolved_questions": [{"question": "What durable path authority and relocation/migration policy should replace workbench-relative paths?", "owner": "Arc02/P-15 and Slice09/11"}],
+      "observed_states": {
+        "element_count": 22,
+        "present_string": 22,
+        "missing": 0,
+        "null": 0,
+        "wrong_type": 0
+      },
+      "evidence_ids": [
+        "arc07-run",
+        "rich-profile-card",
+        "rich-rerun-readme",
+        "semantic-evidence-projection",
+        "teaching-rerun-readme"
+      ],
+      "exceptions": [
+        "Resolve relative to the containing record in the authoritative tree; do not use ignored workbench bytes or treat a missing target as a no-match."
+      ],
+      "consequences": {
+        "reader": "Expose address resolution and identity resolution as separate results.",
+        "extractor": "Write a path valid for the authoritative evidence tree used by the record.",
+        "query": "Run address lookup first, then inspect target frontmatter and compare identity.",
+        "migration": "Retain original relative paths and record unresolved or path-only targets rather than rewriting them."
+      },
+      "unresolved_questions": [
+        {
+          "question": "What durable path authority and relocation/migration policy should replace workbench-relative paths?",
+          "owner": "Arc02/P-15 and Slice09/11"
+        }
+      ],
       "disposition": "bounded-address-observation"
     },
     {
@@ -249,11 +697,36 @@
       "meaning_id": "source-support-run-ref-path",
       "effective_meaning": "The path child is a relative address from the containing support-record directory to a candidate producing-run target; it is not target identity or source span.",
       "applicability": "Applies to all four populated support elements. All pilot paths resolve to the preserved Arc07 extraction-run.",
-      "observed_states": {"element_count": 4, "present_string": 4, "missing": 0, "null": 0, "wrong_type": 0},
-      "evidence_ids": ["populated-projection", "pilot-resolution", "arc07-support-set"],
-      "exceptions": ["A resolvable path does not prove that the support assertion is warranted or independently verified."],
-      "consequences": {"reader": "Show support production address separately from source locator and support scope.", "extractor": "Resolve and preserve the containing-directory-relative path.", "query": "Use path for addressing, then require inspected target identity before exact joins.", "migration": "Keep the original path and record relocation as a provenance event rather than silently changing it."},
-      "unresolved_questions": [{"question": "Should support records use stable run identifiers, durable paths, or both after migration?", "owner": "Arc02/P-15 and Slice09/11"}],
+      "observed_states": {
+        "element_count": 4,
+        "present_string": 4,
+        "missing": 0,
+        "null": 0,
+        "wrong_type": 0
+      },
+      "evidence_ids": [
+        "arc07-run",
+        "arc07-support-emergent",
+        "arc07-support-memory",
+        "arc07-support-model",
+        "arc07-support-pattern",
+        "semantic-evidence-projection"
+      ],
+      "exceptions": [
+        "A resolvable path does not prove that the support assertion is warranted or independently verified."
+      ],
+      "consequences": {
+        "reader": "Show support production address separately from source locator and support scope.",
+        "extractor": "Resolve and preserve the containing-directory-relative path.",
+        "query": "Use path for addressing, then require inspected target identity before exact joins.",
+        "migration": "Keep the original path and record relocation as a provenance event rather than silently changing it."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Should support records use stable run identifiers, durable paths, or both after migration?",
+          "owner": "Arc02/P-15 and Slice09/11"
+        }
+      ],
       "disposition": "bounded-address-observation"
     },
     {
@@ -262,11 +735,35 @@
       "meaning_id": "concept-card-run-ref-revision",
       "effective_meaning": "The revision child is the declared target revision component of a concept-card run reference; exact identity requires it to match an inspected extraction-run target's revision.",
       "applicability": "Applies to all 22 populated concept-card elements. All observed values are numeric 1; no revision mismatch is present in the population.",
-      "observed_states": {"element_count": 22, "present_number": 22, "missing": 0, "null": 0, "wrong_type": 0},
-      "evidence_ids": ["populated-projection", "pilot-resolution", "rich-resolution", "teaching-resolution", "synthetic-resolution"],
-      "exceptions": ["A numeric revision alone does not prove the target exists, is an extraction-run, or was accepted."],
-      "consequences": {"reader": "Display declared revision with target declaration and comparison status.", "extractor": "Copy the target construct revision from the inspected run record.", "query": "Include revision in exact identity matching; do not use it as a lifecycle version.", "migration": "Preserve numeric values and report absent/malformed revisions rather than coercing them."},
-      "unresolved_questions": [{"question": "Is revision local to the run record, the run-reference tuple, or a future immutable provenance identity?", "owner": "Arc02/P-15"}],
+      "observed_states": {
+        "element_count": 22,
+        "present_number": 22,
+        "missing": 0,
+        "null": 0,
+        "wrong_type": 0
+      },
+      "evidence_ids": [
+        "arc07-run",
+        "rich-profile-card",
+        "rich-rerun-readme",
+        "semantic-evidence-projection",
+        "teaching-rerun-readme"
+      ],
+      "exceptions": [
+        "A numeric revision alone does not prove the target exists, is an extraction-run, or was accepted."
+      ],
+      "consequences": {
+        "reader": "Display declared revision with target declaration and comparison status.",
+        "extractor": "Copy the target construct revision from the inspected run record.",
+        "query": "Include revision in exact identity matching; do not use it as a lifecycle version.",
+        "migration": "Preserve numeric values and report absent/malformed revisions rather than coercing them."
+      },
+      "unresolved_questions": [
+        {
+          "question": "Is revision local to the run record, the run-reference tuple, or a future immutable provenance identity?",
+          "owner": "Arc02/P-15"
+        }
+      ],
       "disposition": "bounded-identity-component"
     },
     {
@@ -275,33 +772,676 @@
       "meaning_id": "source-support-run-ref-revision",
       "effective_meaning": "The revision child is the declared target revision component of a source-support run reference; exact identity requires an inspected extraction-run target with matching id and revision.",
       "applicability": "Applies to all four populated support elements. All observed values are numeric 1.",
-      "observed_states": {"element_count": 4, "present_number": 4, "missing": 0, "null": 0, "wrong_type": 0},
-      "evidence_ids": ["populated-projection", "pilot-resolution", "arc07-support-set"],
-      "exceptions": ["The declared revision does not transfer support strength, verification state or admission authority from the target run."],
-      "consequences": {"reader": "Show revision comparison as structural provenance evidence, not as a support grade.", "extractor": "Preserve the revision from the producing run target.", "query": "Require id, path address and revision together for an exact run-identity join.", "migration": "Keep the number and report target/revision mismatch explicitly; never silently default it."},
-      "unresolved_questions": [{"question": "How should support references behave when a producing run is revised or superseded?", "owner": "Arc02/P-15 and Slice09"}],
+      "observed_states": {
+        "element_count": 4,
+        "present_number": 4,
+        "missing": 0,
+        "null": 0,
+        "wrong_type": 0
+      },
+      "evidence_ids": [
+        "arc07-run",
+        "arc07-support-emergent",
+        "arc07-support-memory",
+        "arc07-support-model",
+        "arc07-support-pattern",
+        "semantic-evidence-projection"
+      ],
+      "exceptions": [
+        "The declared revision does not transfer support strength, verification state or admission authority from the target run."
+      ],
+      "consequences": {
+        "reader": "Show revision comparison as structural provenance evidence, not as a support grade.",
+        "extractor": "Preserve the revision from the producing run target.",
+        "query": "Require id, path address and revision together for an exact run-identity join.",
+        "migration": "Keep the number and report target/revision mismatch explicitly; never silently default it."
+      },
+      "unresolved_questions": [
+        {
+          "question": "How should support references behave when a producing run is revised or superseded?",
+          "owner": "Arc02/P-15 and Slice09"
+        }
+      ],
       "disposition": "bounded-identity-component"
     }
   ],
   "evidence_registry": [
-    {"evidence_id": "set-c-authority", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/crc-escalation02.md", "read_mode": "snapshot", "authority_commit": "dee3052c88e0fd9361e74200fd1eea26ade76435", "sha256": "7fbb27267077eee831673fe688c60ad8f2e0e96975cf301227f65a037afcb592", "role": "expected", "member_scope": "exact Set C block index 2", "source_range": "lines 1-220; JSON blocks 1-5, block index 2", "interpretation": "Authoritative assigned 19-pair set and opening accounting.", "limit": "Assignment is not semantic acceptance."},
-    {"evidence_id": "inventory", "root": "planning", "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json", "read_mode": "snapshot", "authority_commit": "5e6310b8", "sha256": "afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b", "role": "native-input", "member_scope": "all 19 members and exclusions", "source_range": "complete object; 2124 rows", "interpretation": "Frozen frontmatter projection queried for the selected population.", "limit": "Frontmatter projection cannot establish semantic warrant or body acceptance."},
-    {"evidence_id": "prompt-and-plan", "root": "planning", "path": "slice19 cc-prompt-alt.md, slice-plan.md and ledger.md", "read_mode": "snapshot", "authority_commit": "e60321d8", "sha256": "708a1c05509f571b9f5d901c5303e4e1fdf6b4da1330ed1add050a7ccd2cc9db; 62ff10acfb293e05f7ab973deddf4ff6b2ef75d07611c65ad17b347a67983b04; 7be1b2408eff05110a871e4328f9b88b8aef8ab30745620906f64645cb9613f2", "role": "rule", "member_scope": "all outputs and seven rows", "source_range": "prompt lines 1-418; plan lines 1-239; ledger lines 1-21", "interpretation": "Active alternate assignment, output fence and row contract.", "limit": "Prompt and plan are execution authority, not semantic proof."},
-    {"evidence_id": "project-and-arc-plan", "root": "planning", "path": "project08-concept-card-metadata/project-plan.md and arc06-semantic-families-and-capability-requirements/arc-plan.md", "read_mode": "snapshot", "authority_commit": "e60321d8", "sha256": "project 155285cf8319ed057f6e2fe6c46a32e426835780c29dddc29bf6887fe35ce51f; arc a56a72d5cc62449a5f95f354f8419ba1ec549a57de4695c606b62816911f6566", "role": "rule", "member_scope": "scope, ownership and acceptance boundary", "source_range": "named sections; project 688 lines and arc 470 lines", "interpretation": "Preserves semantic-family method, P-15 gate, exact Slice19 ownership and later owners.", "limit": "Planning direction does not accept a future schema."},
-    {"evidence_id": "project-agents", "root": "planning", "path": "project08-concept-card-metadata/AGENTS.md", "read_mode": "snapshot", "authority_commit": "e60321d8", "sha256": "aec4a9021b29bc03eade0f62589c8d163757825fc1ae586ab2e1aef1e3439ebb", "role": "rule", "member_scope": "workflow, output and commit boundary", "source_range": "complete 90-line file", "interpretation": "Requires planning-only work, preserved prompts, proposed-done status and exact trailers.", "limit": "Operational instructions do not establish semantic meaning."},
-    {"evidence_id": "directive02", "root": "planning", "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/cdc-directive02.md", "read_mode": "snapshot", "authority_commit": "e60321d8", "sha256": "2880d840f9437bd4b56711d2a72e706d69a1e26091deac1ecad073df25a8e1a4", "role": "handoff", "member_scope": "Set C and later-family ownership", "source_range": "complete 220-line file", "interpretation": "CDC authority assigns Set C to Slice19 and retains the 248-pair complement.", "limit": "Assignment and structural authority are not semantic acceptance."},
-    {"evidence_id": "arc07-run", "root": "planning", "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/extraction-run.md", "read_mode": "snapshot", "authority_commit": "5e6310b8", "sha256": "01383dc73135ca701dccbb561d479ad88da6324669963defb987e2fa8abf36ea", "role": "observation", "member_scope": "concept-card/source-support populated refs", "source_range": "complete 50-line witness", "interpretation": "Declared extraction-run target with id run-arc07-s02-pilot and revision 1.", "limit": "Candidate production trace; not independent semantic or operator acceptance."},
-    {"evidence_id": "arc07-card-set", "root": "planning", "path": "Arc07 Slice02 candidate-cards/cc-*.md (four required witnesses)", "read_mode": "snapshot", "authority_commit": "5e6310b8", "sha256": "a7b5b387434bc82885ad013b36ed65d354cdb7687d4d3fa1daaffcebadbcbead; 15cac8dc64e742430d0bec6100b491d7a0ac81de6bf740af5c26cf28f384eb07; 92ff6f44f6a43300ee970f7d8d35161035731f2ca5b91fd9b5762246ee04b8fc; a0935944764567a011e87cf81cb3dd2f97fe3438b96d8320b8ca0c8ad2f1dacc", "role": "observation", "member_scope": "concept-card populated root/element/children", "source_range": "complete files", "interpretation": "Four cards point to the Arc07 run and preserve candidate-only lifecycle caveats.", "limit": "Four full witnesses do not replace the complete inventory projection."},
-    {"evidence_id": "arc07-support-set", "root": "planning", "path": "Arc07 Slice02 candidate-cards/support-*.md (four required witnesses)", "read_mode": "snapshot", "authority_commit": "5e6310b8", "sha256": "60c2d59341dea5efacda87d10888fd03c9fa7dddc8ef9ee51bfe32900e0345c7; 81db0e748d2517d95a545742de4689c49bc91d335b202f352f6f9e9e9a6e874e; ad49017a9ea3b1649b2ff11aac6e31c5d8949f30403585f13ed9f6f79bf80dfe; bca2ac1f7714299e53d9f7293c4ce969f49b0c56e6bf9c2f24fedf101490df9c", "role": "observation", "member_scope": "source-support populated root/element/children", "source_range": "complete files", "interpretation": "Four support records point to the same Arc07 production run.", "limit": "Run provenance does not establish support warrant or verification."},
-    {"evidence_id": "rich-profile", "root": "source", "path": "knowledge/concept-cards/examples/rich-profile-card.md", "read_mode": "snapshot", "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240", "sha256": "31246186479dd275a4e2f7f1d043dd836e9e2769242a021f8eb56f1b39ef0353", "role": "observation", "member_scope": "concept-card populated root/element/children and missing target", "source_range": "complete 162-line witness", "interpretation": "Synthetic card points to records/run-synthetic-field-guide-001.md and explicitly preserves unassessed lifecycle state.", "limit": "Synthetic example is not a real extraction run."},
-    {"evidence_id": "rerun-targets", "root": "planning", "path": "Arc01 Slice01 preserved rich/teaching baseline README and one card each", "read_mode": "snapshot", "authority_commit": "5e6310b8", "sha256": "4e9a9fe1449f873cd513cd09369fcb975ef0164939008204c10385f2d9a645ec; e2bedbe19e88992cc0f3969406228a19d837b7c73c88324217a02b10df13898e; 72c0a6c723ec4fd8636106215318dc24029442a05ac74b5734894db83f40ac1e; 5f3fa3a5c46790b135e69515d0fb636fb42708aa9134d23d1cea80a2684d0d6a", "role": "observation", "member_scope": "concept-card path/id/revision and two path-only targets", "source_range": "complete README and complete representative cards", "interpretation": "Both README addresses exist in the preserved baseline tree but have no opening frontmatter identity.", "limit": "README purpose/source text is not an extraction-run declaration."},
-    {"evidence_id": "record-projection", "root": "absolute", "path": "/private/tmp/slice19-cross-record.C9w5ZX/record-run-refs.json", "read_mode": "live", "authority_commit": "5e6310b8 inventory", "sha256": "d015944e7af57d8aa4f537f5b6ee1b1899b0cccfe8062e3d51ae19c14949fcda", "role": "observed", "member_scope": "all root members", "source_range": "lossless 49-record projection", "interpretation": "Every selected path, kind, root-presence flag and complete raw value is retained.", "limit": "Derived projection is a receipt; the frozen inventory remains the native authority."},
-    {"evidence_id": "populated-projection", "root": "absolute", "path": "/private/tmp/slice19-cross-record.C9w5ZX/populated-element-projection.json", "read_mode": "live", "authority_commit": "5e6310b8 inventory", "sha256": "f8ac04730c0536d5bdba34223280aa1e794f4a1ff7331770f235f5c10258aea1", "role": "observed", "member_scope": "all run_refs[] and child members", "source_range": "lossless 26-element projection", "interpretation": "All populated elements are objects with string id/path and numeric revision; no malformed child states occur.", "limit": "Derived temporary projection is a receipt; the frozen inventory remains the native authority."},
-    {"evidence_id": "tuple-frequency", "root": "absolute", "path": "/private/tmp/slice19-cross-record.C9w5ZX/tuple-frequency.json", "read_mode": "live", "authority_commit": "5e6310b8 inventory", "sha256": "7d93f3207f6124611dcc567d67a5437ed3abf435565bf7059c2957feed0d205b", "role": "observed", "member_scope": "path/id/revision members", "source_range": "four tuple groups", "interpretation": "The populated population contains four distinct tuples with counts 8, 7, 10 and 1.", "limit": "Frequency does not establish requiredness or target validity."},
-    {"evidence_id": "target-resolution", "root": "planning/source", "path": "four authoritative containing-directory target checks", "read_mode": "snapshot", "authority_commit": "5e6310b8 and a5861c4b", "sha256": "pilot 01383dc73135ca701dccbb561d479ad88da6324669963defb987e2fa8abf36ea; rich README 4e9a9fe1449f873cd513cd09369fcb975ef0164939008204c10385f2d9a645ec; teaching README e2bedbe19e88992cc0f3969406228a19d837b7c73c88324217a02b10df13898e", "role": "observed", "member_scope": "path and identity child members", "source_range": "target headers and source-tree controls", "interpretation": "One exact match, two path-only targets and one missing target.", "limit": "Address and identity checks are structural; they do not prove semantic warrant."},
-    {"evidence_id": "templates", "root": "source", "path": "knowledge/concept-cards/templates/{claim,competency-question,concept-card,memory-admission,preservation-decision,reconciliation-result,relationship-edge,source-locator,source-support,validation-result,verification-result}.md", "read_mode": "snapshot", "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240", "sha256": "claim ff8c35e7157582ca78c15c5419ab8167152f6c1b3862d96187e061bfb0f33fd7; competency-question 11fbab44ded126d0aa49f4929db71edebc453d43099ea32af569aecbf73bf49b; concept-card 24d88eaa1edeae31ccd4943e8f635e0e3dc11e26e9a1b69ba3374b49d9700fec; memory-admission 51a237f45c0883e80a8a31e104b804116c485fe7ec3016ec4fba64f9563c277a; preservation-decision b2be8df0d18a1cac413cf00ac40a7c7234b3cf1726bc6c50f4d349fbf0a6e1c8; reconciliation-result ae9672c4ef0a4e1e6c43bc13bfd790a2e1fd8cf137e44a9cf5e2b72168f641ea; relationship-edge de9862a70450f25bb0c7e99a4be74251ad77c9ebcdbd7c96e3e32bfb2ac9ca7b; source-locator cd4073ca026fa235323a15679417c2e444a1dd34b65b19c55b64d553143be3ad; source-support 09e6e957d7a3ed2d76838ab4b85a8287577310d7e4cdedfa736666d127da523b; validation-result 07bcc435ce78982406de0212f9c12912f56838309e0c186aae1635d1c2ad916f; verification-result eb8c4015657eea27f419aba43c5f3bd500852aeffe9d9b73482620237cf86579", "role": "template", "member_scope": "eleven root members", "source_range": "complete eleven files", "interpretation": "All eleven templates expose run_refs as an empty sequence; populated meaning is not supplied for nine kinds.", "limit": "Template shape is not a universal requiredness or authority rule."},
-    {"evidence_id": "guidance", "root": "source", "path": "knowledge/concept-cards/SKILL.md and guides 01-09 plus three references", "read_mode": "snapshot", "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240", "sha256": "SKILL a096893e6a908d014b795bcb2e5e38653b6c590982e99951aae3783a9e7c318a; guides 01 eb832dbbc94dbb42be1372178f492cb1440705dd9b2d3bebad091e30687eb94e, 02 06d1e8584d8df2adf8352f8797bded5533a223b4aaeaa3cf1926fbf58905e5a5, 03 e60643e05c79ea8dc5eb93a991e08c32cd4f7a88047d7a6f21f159c1abbe5a7d, 04 6d34102f3b3c042df6a15d3d445ef5423c1e12b24b9a442e806caac7eefe8c92, 05 d470fcfa498627bb1d630cbcacc08124a5108efaacbf855e66a40999f154aabd, 06 494c6798d3d3e106fe24534aebc90478440776677c427b773ad347a7fbc1adc0, 07 97ac6ba23ff693da14beac80e70f1f1c4c826045b45b49f02165e9c7d7280d51, 08 095c897f934f753ba5aa1f5b7f40d22a5134f52eb8b71545e9186de4deb396d3, 09 0d901bb71090ce0844552af7c502958d03e2d91be00d54e4849e20b65e3a1bbd; refs record-field-groups c37b20e9d26dec446350f76b3a24bb3ab473aa92a70c7429542b2d65047cac57, semantic-audit-boundaries 9da9a5ce45f1293dbd6068ac24b7c98493868f2d52d52a3f8b93d2fe64c5fb63, structural-validation-candidates fcfdfa1e30dae102c2cf446bddbef2b5c64f3bc593029f3d89fe5b2a64a497a9", "role": "rule", "member_scope": "all 19 meanings and consequences", "source_range": "required named sections; complete files where required", "interpretation": "Guidance separates run provenance from source support, location, evidence and lifecycle authority.", "limit": "Guidance defines boundaries, not a final schema or acceptance policy."},
-    {"evidence_id": "historical-boundary", "root": "planning", "path": "Complete Musician/Erlang population in frozen inventory", "read_mode": "snapshot", "authority_commit": "5e6310b8", "sha256": "inventory-bound", "role": "control", "member_scope": "all root members", "source_range": "2054 parsed records", "interpretation": "run_refs root present 0 and absent 2054 in the bounded historical comparison.", "limit": "Not a claim about all historical or future records."},
-    {"evidence_id": "prior-contracts", "root": "planning", "path": "Slice18 handoff/CRC and Slice03 evidence-replay-contract/worked-replay", "read_mode": "snapshot", "authority_commit": "e60321d8", "sha256": "Slice18 CRC 5479e8c56d6bfacc911a5c1ee768a1152d0abd8213a8389c73a61170299aa74b; Slice18 handoff 4a1e67598d83ab762bd66b7813117a35833c704ce68a7b853275c0101927070f; replay contract 73f9ee479261c536f3c96fd9f120aaa709358978c5f9922b9ab8cc77065dd70d; worked replay 5185ac366c3dd2cbb3e7b0559b989beff770328ec7c574705f037580efb514c8", "role": "handoff", "member_scope": "evidence identity and CRC boundary", "source_range": "complete required files", "interpretation": "Reuse mechanical evidence identity while applying the alternate prompt's direct-check revision.", "limit": "Wrapper, mutation suite and separate recipe commit are superseded for Slice19."}
+    {
+      "evidence_id": "current-assignment",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/cc-prompt-iteration01.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "e451013af661d252a7d42214c3f9775ef03c996f9c2c5f6a791e0c3d866a617b",
+      "role": "rule",
+      "member_scope": "Iteration01 repair, direct-check method, four-file fence and CRC return",
+      "source_range": "lines 1-351",
+      "interpretation": "Current assignment and exact R1/R2 repair contract.",
+      "limit": "The prompt does not constitute independent acceptance."
+    },
+    {
+      "evidence_id": "alternate-assignment",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/cc-prompt-alt.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ed9d38b898a021b1d13e77250cf7b3329fcf8e91",
+      "sha256": "708a1c05509f571b9f5d901c5303e4e1fdf6b4da1330ed1add050a7ccd2cc9db",
+      "role": "rule",
+      "member_scope": "Set C meanings, population, direct-verification and return boundary",
+      "source_range": "lines 1-418",
+      "interpretation": "Still-governing semantic and native-data assignment.",
+      "limit": "Superseded wrapper, mutation suite and recipe endpoint are not current gates."
+    },
+    {
+      "evidence_id": "crc-review",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/crc-verification.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "4f6eaa602d01c54eab7fd7f7309fdc54dc8a010e26e860dd805ff9adbe19c005",
+      "role": "handoff",
+      "member_scope": "R1/R2 defects and preserved CRC findings",
+      "source_range": "lines 1-70",
+      "interpretation": "CRC reproduced the semantic baseline and identified registry/applicability repairs.",
+      "limit": "Changes-required review is not acceptance of this CC repair."
+    },
+    {
+      "evidence_id": "slice-plan",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/slice-plan.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "d43d04eb35498d5c7f26e5a36d6f96fd8236c21c3b72ffa832af4f61f3de76c1",
+      "role": "rule",
+      "member_scope": "Current assignment history, direct-check method and slice boundary",
+      "source_range": "lines 1-266",
+      "interpretation": "Records assignment and preserves the approved Set C contract.",
+      "limit": "The plan does not accept implementation evidence."
+    },
+    {
+      "evidence_id": "slice-ledger",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/ledger.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "183f7bf3a82a39f107ac26199eb93a66e1819774cbf34fef163b6057d0ece681",
+      "role": "rule",
+      "member_scope": "Seven Slice19 acceptance rows and unresolved gates",
+      "source_range": "lines 1-23",
+      "interpretation": "Defines per-row verification and prior disposition.",
+      "limit": "CC attestation leaves CRC acceptance pending."
+    },
+    {
+      "evidence_id": "project-plan",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/project-plan.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "155285cf8319ed057f6e2fe6c46a32e426835780c29dddc29bf6887fe35ce51f",
+      "role": "authority",
+      "member_scope": "Current direction, P-15, workflow, arc ownership and project gates",
+      "source_range": "lines 1-688",
+      "interpretation": "Retains semantic-family direction, independent review and Operator gates.",
+      "limit": "Planning authority does not adopt a schema or accept Set C."
+    },
+    {
+      "evidence_id": "arc-plan",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/arc-plan.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "a56a72d5cc62449a5f95f354f8419ba1ec549a57de4695c606b62816911f6566",
+      "role": "authority",
+      "member_scope": "Arc06 family method, Slice19 scope and later ownership",
+      "source_range": "lines 1-470",
+      "interpretation": "Retains exact Set C boundaries and family/recomposition criteria.",
+      "limit": "The arc plan does not semantically accept assigned pairs."
+    },
+    {
+      "evidence_id": "directive02",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/cdc-directive02.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "2880d840f9437bd4b56711d2a72e706d69a1e26091deac1ecad073df25a8e1a4",
+      "role": "handoff",
+      "member_scope": "Approved Sets A-E and the 248-pair complement owner map",
+      "source_range": "lines 1-220",
+      "interpretation": "CDC-approved ownership keeps Sets D/E and later-family pairs outside Slice19.",
+      "limit": "Assignment and structural authority do not accept member meanings."
+    },
+    {
+      "evidence_id": "set-c-authority",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/crc-escalation02.md",
+      "read_mode": "snapshot",
+      "authority_commit": "dee3052c88e0fd9361e74200fd1eea26ade76435",
+      "sha256": "7fbb27267077eee831673fe688c60ad8f2e0e96975cf301227f65a037afcb592",
+      "role": "expected",
+      "member_scope": "Exact Set C block index 2 and opening accounting",
+      "source_range": "lines 1-272",
+      "interpretation": "Preserved authority from which the assigned 19 pairs are derived.",
+      "limit": "The set is assignment, not acceptance."
+    },
+    {
+      "evidence_id": "inventory",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/frontmatter-inventory.json",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "afc1985f1998da0d1df0bdc5800aada9842e77873271fc65f3ae190c0e057b1b",
+      "role": "native-input",
+      "member_scope": "All 19 member state/value observations, exclusions, historical comparison and populated reference tuples",
+      "source_range": "complete minified JSON object; 2124 records",
+      "interpretation": "Frozen native inventory used for full-set record and child-state queries.",
+      "limit": "Frontmatter observations do not establish semantic warrant or body acceptance."
+    },
+    {
+      "evidence_id": "semantic-evidence-projection",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/artifacts/semantic-evidence.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ed9d38b898a021b1d13e77250cf7b3329fcf8e91",
+      "sha256": "20c63ebff50aa80176625d3f6cc83c40e2f3b3b1116139cee2d16aafeeeea8ae",
+      "role": "observed",
+      "member_scope": "Durable complete selected-record and populated element/child projections used by all 19 meanings",
+      "source_range": "lines 59-187",
+      "interpretation": "Committed lossless projection retained alongside native inventory observations.",
+      "limit": "Derived projection is not a second native source or semantic acceptance."
+    },
+    {
+      "evidence_id": "prior-validation-evidence",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/artifacts/validation-evidence.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ed9d38b898a021b1d13e77250cf7b3329fcf8e91",
+      "sha256": "df9501703d914c9705081871231234867a59bd6780d126a4cd877e3dff77d5d9",
+      "role": "handoff",
+      "member_scope": "Previously attested Slice19 native queries and target outcomes",
+      "source_range": "lines 1-218",
+      "interpretation": "Prior direct-check record used for regression comparison.",
+      "limit": "Earlier receipts do not establish that Iteration01 checks were rerun."
+    },
+    {
+      "evidence_id": "slice18-crc",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice18-run-scope-workers-and-outputs/crc-verification.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "5479e8c56d6bfacc911a5c1ee768a1152d0abd8213a8389c73a61170299aa74b",
+      "role": "predecessor-review",
+      "member_scope": "Accepted Slice18 evidence and limit of CRC review",
+      "source_range": "lines 1-89",
+      "interpretation": "CRC-accepted predecessor; no change to its Set B history.",
+      "limit": "Predecessor acceptance is not Slice19 acceptance."
+    },
+    {
+      "evidence_id": "slice18-handoff",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice18-run-scope-workers-and-outputs/artifacts/handoff.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "4a1e67598d83ab762bd66b7813117a35833c704ce68a7b853275c0101927070f",
+      "role": "predecessor",
+      "member_scope": "Accepted Set B handoff and later-unit boundaries",
+      "source_range": "lines 1-65",
+      "interpretation": "Predecessor handoff retains Set C-E and 248-pair complement ownership.",
+      "limit": "Handoff is not semantic evidence for Slice19 members."
+    },
+    {
+      "evidence_id": "slice18-membership-shape",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice18-run-scope-workers-and-outputs/artifacts/semantic-membership.json",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "bf1cc19c719ca43d2f1dd495afbd19dc9a3ea0b2a7cb03ad5462675f5d869179",
+      "role": "method",
+      "member_scope": "Assignment-scope precedent for atomic evidence_registry row structure",
+      "source_range": "lines 1-562",
+      "interpretation": "Shows separate exact-input evidence rows and member-scoped citations.",
+      "limit": "Structural precedent does not prove Slice19 semantics."
+    },
+    {
+      "evidence_id": "slice03-replay-contract",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc06-semantic-families-and-capability-requirements/slice03-provenance-and-shared-reference-contracts/artifacts/evidence-replay-contract.md",
+      "read_mode": "snapshot",
+      "authority_commit": "ba3850436cf79d5220da21279a5046334986faca",
+      "sha256": "73f9ee479261c536f3c96fd9f120aaa709358978c5f9922b9ab8cc77065dd70d",
+      "role": "method",
+      "member_scope": "Assignment-scope evidence identity, applicability and outcome limits",
+      "source_range": "lines 1-93",
+      "interpretation": "Separates retrievable input identity from supported semantic statement.",
+      "limit": "Replay establishes only the properties directly checked."
+    },
+    {
+      "evidence_id": "template-claim",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/claim.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "ff8c35e7157582ca78c15c5419ab8167152f6c1b3862d96187e061bfb0f33fd7",
+      "role": "template",
+      "member_scope": "run_refs root / claim",
+      "source_range": "lines 1-62",
+      "interpretation": "Complete claim template with empty run_refs surface.",
+      "limit": "Template shape does not establish claim run requiredness."
+    },
+    {
+      "evidence_id": "template-competency-question",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/competency-question.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "11fbab44ded126d0aa49f4929db71edebc453d43099ea32af569aecbf73bf49b",
+      "role": "template",
+      "member_scope": "run_refs root / competency-question",
+      "source_range": "lines 1-78",
+      "interpretation": "Complete competency-question template with empty run_refs surface.",
+      "limit": "Template shape does not establish question/answer provenance policy."
+    },
+    {
+      "evidence_id": "template-concept-card",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/concept-card.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "24d88eaa1edeae31ccd4943e8f635e0e3dc11e26e9a1b69ba3374b49d9700fec",
+      "role": "template",
+      "member_scope": "run_refs root / element / id / path / revision; concept-card",
+      "source_range": "lines 1-131",
+      "interpretation": "Complete concept-card template with empty run_refs sequence.",
+      "limit": "Template shape does not establish a universal reference schema."
+    },
+    {
+      "evidence_id": "template-memory-admission",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/memory-admission.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "51a237f45c0883e80a8a31e104b804116c485fe7ec3016ec4fba64f9563c277a",
+      "role": "template",
+      "member_scope": "run_refs root / memory-admission",
+      "source_range": "lines 1-81",
+      "interpretation": "Complete memory-admission template with empty run_refs sequence.",
+      "limit": "Template does not establish admission authority or run requiredness."
+    },
+    {
+      "evidence_id": "template-preservation-decision",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/preservation-decision.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "b2be8df0d18a1cac413cf00ac40a7c7234b3cf1726bc6c50f4d349fbf0a6e1c8",
+      "role": "template",
+      "member_scope": "run_refs root / preservation-decision",
+      "source_range": "lines 1-62",
+      "interpretation": "Complete preservation-decision template with empty run_refs sequence.",
+      "limit": "Template does not establish preservation choice or decision authority."
+    },
+    {
+      "evidence_id": "template-reconciliation-result",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/reconciliation-result.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "ae9672c4ef0a4e1e6c43bc13bfd790a2e1fd8cf137e44a9cf5e2b72168f641ea",
+      "role": "template",
+      "member_scope": "run_refs root / reconciliation-result",
+      "source_range": "lines 1-65",
+      "interpretation": "Complete reconciliation-result template with empty run_refs sequence.",
+      "limit": "Template does not establish reconciliation success or result acceptance."
+    },
+    {
+      "evidence_id": "template-relationship-edge",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/relationship-edge.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "de9862a70450f25bb0c7e99a4be74251ad77c9ebcdbd7c96e3e32bfb2ac9ca7b",
+      "role": "template",
+      "member_scope": "run_refs root / relationship-edge",
+      "source_range": "lines 1-65",
+      "interpretation": "Complete relationship-edge template with empty run_refs sequence.",
+      "limit": "Template does not establish relation direction, warrant or graph acceptance."
+    },
+    {
+      "evidence_id": "template-source-locator",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/source-locator.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "cd4073ca026fa235323a15679417c2e444a1dd34b65b19c55b64d553143be3ad",
+      "role": "template",
+      "member_scope": "run_refs root / source-locator",
+      "source_range": "lines 1-61",
+      "interpretation": "Complete source-locator template with empty run_refs sequence.",
+      "limit": "Template does not establish source identity or locator validity."
+    },
+    {
+      "evidence_id": "template-source-support",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/source-support.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "09e6e957d7a3ed2d76838ab4b85a8287577310d7e4cdedfa736666d127da523b",
+      "role": "template",
+      "member_scope": "run_refs root / element / id / path / revision; source-support",
+      "source_range": "lines 1-69",
+      "interpretation": "Complete source-support template with empty run_refs sequence.",
+      "limit": "Template does not establish support warrant or verification."
+    },
+    {
+      "evidence_id": "template-validation-result",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/validation-result.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "07bcc435ce78982406de0212f9c12912f56838309e0c186aae1635d1c2ad916f",
+      "role": "template",
+      "member_scope": "run_refs root / validation-result",
+      "source_range": "lines 1-59",
+      "interpretation": "Complete validation-result template with empty run_refs sequence.",
+      "limit": "Template does not establish validation outcome or rule authority."
+    },
+    {
+      "evidence_id": "template-verification-result",
+      "root": "source",
+      "path": "knowledge/concept-cards/templates/verification-result.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "eb8c4015657eea27f419aba43c5f3bd500852aeffe9d9b73482620237cf86579",
+      "role": "template",
+      "member_scope": "run_refs root / verification-result",
+      "source_range": "lines 1-66",
+      "interpretation": "Complete verification-result template with empty run_refs sequence.",
+      "limit": "Template does not establish independence or semantic verification."
+    },
+    {
+      "evidence_id": "arc07-run",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/extraction-run.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "01383dc73135ca701dccbb561d479ad88da6324669963defb987e2fa8abf36ea",
+      "role": "observation",
+      "member_scope": "Concept-card/source-support pilot run_refs and Arc07 target identity",
+      "source_range": "lines 1-47",
+      "interpretation": "Declared extraction-run target with matching id run-arc07-s02-pilot and revision 1.",
+      "limit": "Candidate production trace is not independent semantic or Operator acceptance."
+    },
+    {
+      "evidence_id": "arc07-card-emergent",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-emergent-explanation.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "a7b5b387434bc82885ad013b36ed65d354cdb7687d4d3fa1daaffcebadbcbead",
+      "role": "observation",
+      "member_scope": "Concept-card populated run_refs root/element/children, representative witness",
+      "source_range": "lines 1-68",
+      "interpretation": "Complete Arc07 concept-card candidate with one pilot run reference.",
+      "limit": "One witness does not replace the complete frozen inventory projection."
+    },
+    {
+      "evidence_id": "arc07-card-memory",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-memory-consolidation.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "15cac8dc64e742430d0bec6100b491d7a0ac81de6bf740af5c26cf28f384eb07",
+      "role": "observation",
+      "member_scope": "Concept-card populated run_refs root/element/children, representative witness",
+      "source_range": "lines 1-69",
+      "interpretation": "Complete Arc07 concept-card candidate with one pilot run reference.",
+      "limit": "One witness does not replace the complete frozen inventory projection."
+    },
+    {
+      "evidence_id": "arc07-card-model",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-model-data-constraints.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "92ff6f44f6a43300ee970f7d8d35161035731f2ca5b91fd9b5762246ee04b8fc",
+      "role": "observation",
+      "member_scope": "Concept-card populated run_refs root/element/children, representative witness",
+      "source_range": "lines 1-68",
+      "interpretation": "Complete Arc07 concept-card candidate with one pilot run reference.",
+      "limit": "One witness does not replace the complete frozen inventory projection."
+    },
+    {
+      "evidence_id": "arc07-card-pattern",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-pattern-separation.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "a0935944764567a011e87cf81cb3dd2f97fe3438b96d8320b8ca0c8ad2f1dacc",
+      "role": "observation",
+      "member_scope": "Concept-card populated run_refs root/element/children, representative witness",
+      "source_range": "lines 1-70",
+      "interpretation": "Complete Arc07 concept-card candidate with one pilot run reference.",
+      "limit": "One witness does not replace the complete frozen inventory projection."
+    },
+    {
+      "evidence_id": "arc07-support-emergent",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-emergent-explanation.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "60c2d59341dea5efacda87d10888fd03c9fa7dddc8ef9ee51bfe32900e0345c7",
+      "role": "observation",
+      "member_scope": "Source-support populated run_refs root/element/children, representative witness",
+      "source_range": "lines 1-55",
+      "interpretation": "Complete Arc07 source-support record with one pilot run reference.",
+      "limit": "Run linkage does not establish support warrant or independent verification."
+    },
+    {
+      "evidence_id": "arc07-support-memory",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-memory-consolidation.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "81db0e748d2517d95a545742de4689c49bc91d335b202f352f6f9e9e9a6e874e",
+      "role": "observation",
+      "member_scope": "Source-support populated run_refs root/element/children, representative witness",
+      "source_range": "lines 1-55",
+      "interpretation": "Complete Arc07 source-support record with one pilot run reference.",
+      "limit": "Run linkage does not establish support warrant or independent verification."
+    },
+    {
+      "evidence_id": "arc07-support-model",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-model-data-constraints.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "ad49017a9ea3b1649b2ff11aac6e31c5d8949f30403585f13ed9f6f79bf80dfe",
+      "role": "observation",
+      "member_scope": "Source-support populated run_refs root/element/children, representative witness",
+      "source_range": "lines 1-56",
+      "interpretation": "Complete Arc07 source-support record with one pilot run reference.",
+      "limit": "Run linkage does not establish support warrant or independent verification."
+    },
+    {
+      "evidence_id": "arc07-support-pattern",
+      "root": "planning",
+      "path": "project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-pattern-separation.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "bca2ac1f7714299e53d9f7293c4ce969f49b0c56e6bf9c2f24fedf101490df9c",
+      "role": "observation",
+      "member_scope": "Source-support populated run_refs root/element/children, representative witness",
+      "source_range": "lines 1-56",
+      "interpretation": "Complete Arc07 source-support record with one pilot run reference.",
+      "limit": "Run linkage does not establish support warrant or independent verification."
+    },
+    {
+      "evidence_id": "rich-profile-card",
+      "root": "source",
+      "path": "knowledge/concept-cards/examples/rich-profile-card.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "31246186479dd275a4e2f7f1d043dd836e9e2769242a021f8eb56f1b39ef0353",
+      "role": "observation",
+      "member_scope": "Concept-card root/element/id/path/revision; synthetic containing-record example only",
+      "source_range": "lines 1-162",
+      "interpretation": "Complete synthetic concept-card witness and containing directory for its recorded path.",
+      "limit": "Cannot establish a source-support member or fabricate the absent target as an input."
+    },
+    {
+      "evidence_id": "rich-rerun-card",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-complementary-learning-systems.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "72c0a6c723ec4fd8636106215318dc24029442a05ac74b5734894db83f40ac1e",
+      "role": "observation",
+      "member_scope": "Concept-card populated run_refs element and path-only target context",
+      "source_range": "lines 1-126",
+      "interpretation": "Byte-preserved representative rich-rerun card whose relative path addresses its sibling README.",
+      "limit": "Card metadata does not supply an extraction-run target identity declaration."
+    },
+    {
+      "evidence_id": "rich-rerun-readme",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-rich-rerun-2026-09-12/README.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "4e9a9fe1449f873cd513cd09369fcb975ef0164939008204c10385f2d9a645ec",
+      "role": "target-witness",
+      "member_scope": "Concept-card id/path/revision target outcome; rich rerun only",
+      "source_range": "lines 1-35",
+      "interpretation": "Resolved sibling README address with no opening frontmatter identity declaration.",
+      "limit": "README body text is not an extraction-run record identity."
+    },
+    {
+      "evidence_id": "teaching-rerun-card",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-complementary-learning-systems.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "5f3fa3a5c46790b135e69515d0fb636fb42708aa9134d23d1cea80a2684d0d6a",
+      "role": "observation",
+      "member_scope": "Concept-card populated run_refs element and path-only target context",
+      "source_range": "lines 1-126",
+      "interpretation": "Byte-preserved representative teaching-rerun card whose relative path addresses its sibling README.",
+      "limit": "Card metadata does not supply an extraction-run target identity declaration."
+    },
+    {
+      "evidence_id": "teaching-rerun-readme",
+      "root": "planning",
+      "path": "project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-teaching-rerun-2026-09-12/README.md",
+      "read_mode": "snapshot",
+      "authority_commit": "5e6310b8ef6d48a45b816822cdbc658a62603ba6",
+      "sha256": "e2bedbe19e88992cc0f3969406228a19d837b7c73c88324217a02b10df13898e",
+      "role": "target-witness",
+      "member_scope": "Concept-card id/path/revision target outcome; teaching rerun only",
+      "source_range": "lines 1-35",
+      "interpretation": "Resolved sibling README address with no opening frontmatter identity declaration.",
+      "limit": "README body text is not an extraction-run record identity."
+    },
+    {
+      "evidence_id": "guide-extraction",
+      "root": "source",
+      "path": "knowledge/concept-cards/guides/03-extraction.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "e60643e05c79ea8dc5eb93a991e08c32cd4f7a88047d7a6f21f159c1abbe5a7d",
+      "role": "rule",
+      "member_scope": "claim, competency-question, concept-card, relationship-edge, source-locator and source-support run-history boundaries",
+      "source_range": "lines 1-248",
+      "interpretation": "Source guidance distinguishes run provenance, production outputs, support and locator work.",
+      "limit": "Guidance is not a populated field witness or future schema."
+    },
+    {
+      "evidence_id": "guide-evidence-lifecycle",
+      "root": "source",
+      "path": "knowledge/concept-cards/guides/05-evidence-lifecycle.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "d470fcfa498627bb1d630cbcacc08124a5108efaacbf855e66a40999f154aabd",
+      "role": "rule",
+      "member_scope": "claim, source-support, memory-admission, preservation-decision, reconciliation-result, validation-result and verification-result distinctions",
+      "source_range": "lines 1-204",
+      "interpretation": "Separates assertion support, extraction history, results and lifecycle authority.",
+      "limit": "Guidance boundaries do not confer authority through a run reference."
+    },
+    {
+      "evidence_id": "guide-graph-cq",
+      "root": "source",
+      "path": "knowledge/concept-cards/guides/06-graph-cq.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "494c6798d3d3e106fe24534aebc90478440776677c427b773ad347a7fbc1adc0",
+      "role": "rule",
+      "member_scope": "competency-question and relationship-edge run-context boundaries",
+      "source_range": "lines 1-177",
+      "interpretation": "Graph/CQ guidance keeps provenance distinct from answerability, relation meaning and warrant.",
+      "limit": "Guidance does not establish a populated run_refs value."
+    },
+    {
+      "evidence_id": "guide-preservation",
+      "root": "source",
+      "path": "knowledge/concept-cards/guides/04-re-extraction-preservation.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "6d34102f3b3c042df6a15d3d445ef5423c1e12b24b9a442e806caac7eefe8c92",
+      "role": "rule",
+      "member_scope": "preservation-decision run context only",
+      "source_range": "lines 1-222",
+      "interpretation": "Re-extraction and preservation responsibilities remain separate from run linkage.",
+      "limit": "Guidance does not define a preservation-decision run schema."
+    },
+    {
+      "evidence_id": "guide-reconciliation",
+      "root": "source",
+      "path": "knowledge/concept-cards/guides/07-reconciliation.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "97ac6ba23ff693da14beac80e70f1f1c4c826045b45b49f02165e9c7d7280d51",
+      "role": "rule",
+      "member_scope": "reconciliation-result run context only",
+      "source_range": "lines 1-139",
+      "interpretation": "Reconciliation operation and outcome remain separate from referenced run history.",
+      "limit": "Guidance does not establish a populated result reference."
+    },
+    {
+      "evidence_id": "guide-validation-verification",
+      "root": "source",
+      "path": "knowledge/concept-cards/guides/08-validation-verification.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "095c897f934f753ba5aa1f5b7f40d22a5134f52eb8b71545e9186de4deb396d3",
+      "role": "rule",
+      "member_scope": "validation-result and verification-result run context, result identity and independence limits",
+      "source_range": "lines 1-231",
+      "interpretation": "Structural validation and semantic verification results and authorities are distinct.",
+      "limit": "A resolved target or successful structural check is not semantic verification."
+    },
+    {
+      "evidence_id": "guide-memory-admission",
+      "root": "source",
+      "path": "knowledge/concept-cards/guides/09-memory-admission.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "0d901bb71090ce0844552af7c502958d03e2d91be00d54e4849e20b65e3a1bbd",
+      "role": "rule",
+      "member_scope": "memory-admission run context only",
+      "source_range": "lines 1-153",
+      "interpretation": "Admission authority and reliance scope remain separate from referenced run provenance.",
+      "limit": "Guidance does not make a run reference an admission decision."
+    },
+    {
+      "evidence_id": "guide-semantic-audit-boundaries",
+      "root": "source",
+      "path": "knowledge/concept-cards/references/semantic-audit-boundaries.md",
+      "read_mode": "snapshot",
+      "authority_commit": "a5861c4b8e93af932d18cb571415cc570c758240",
+      "sha256": "9da9a5ce45f1293dbd6068ac24b7c98493868f2d52d52a3f8b93d2fe64c5fb63",
+      "role": "rule",
+      "member_scope": "concept-card/source-support warrant limits and structural-versus-semantic boundary",
+      "source_range": "lines 1-24",
+      "interpretation": "Target resolution and support presence do not establish warrant or independent review.",
+      "limit": "Boundary guide is not evidence for a specific member observation."
+    }
   ]
 }
