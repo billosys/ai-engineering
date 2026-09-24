@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice19-cross-record-run-references
 status: open
 depends-on: [slice18-run-scope-workers-and-outputs]
-version: "1.2"
+version: "1.3"
 ---
 
 # Cross-Record Run References
@@ -23,20 +23,22 @@ The Operator selected CDC + CRC + CC with Expedited Mode. Arc06
 and fresh CRC readiness. Slice18 is CRC-closed at this opening; exact Set B's
 22 pairs enter accepted coverage once. CRC owns this routine open set and later
 independent review; CDC owns structural changes and arc/project composition.
-CC's current assignment is `cc-prompt-alt.md`; its return remains
-proposed-done until CRC verification.
+CC's current assignment is `cc-prompt-iteration01.md`, a bounded evidence-
+registry repair after CRC review of the alternate-assignment contribution.
+Its return remains proposed-done until CRC verification.
 
 ### Assignment History
 
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
 | cc-prompt.md | 2026-09-23 | CRC-closed Slice18 and arc directive02 | Exact Set C with eleven-kind census, empty/absent/populated reference states, four target outcomes and no inherited authority | Superseded before execution; preserved |
-| cc-prompt-alt.md | 2026-09-23 | cc-prompt.md | Operator-authorized verification method: direct evidence checks and independent semantic review | Current CC assignment; pending execution |
+| cc-prompt-alt.md | 2026-09-23 | cc-prompt.md | Operator-authorized verification method: direct evidence checks and independent semantic review | Executed at `ed9d38b8`; CRC reproduced the semantic/data results but returned evidence registration changes |
+| cc-prompt-iteration01.md | 2026-09-24 | cc-prompt-alt.md | Repair dangling evidence IDs, non-atomic/non-durable registry rows and one cross-kind witness attribution without reopening semantics | Current CC assignment; pending execution |
 
-No Slice19 implementation pass has run. The Operator selected
-`cc-prompt-alt.md` as a slice-local naming exception for this alternate initial
-assignment. Execute it instead of `cc-prompt.md`, not after it. This is not a
-follow-up iteration.
+The Operator selected `cc-prompt-alt.md` as a slice-local naming exception for
+the alternate initial assignment; CC executed it at `ed9d38b8`. The original
+`cc-prompt.md` and the executed alternate remain preserved. Iteration01 is the
+first corrective pass and uses the canonical numbered follow-up path.
 
 ### Verification Method Decision
 
@@ -222,7 +224,32 @@ supplies the concrete outcome/check mapping and keeps the original semantic
 oracles as observations to reproduce, not conclusions to force. This method
 review is neither Slice19 execution evidence nor independent acceptance.
 
+## Iteration01 Author Readiness
+
+CRC reviewed contribution `ed9d38b8` at clean planning/source heads
+`ed9d38b8` and `a5861c4b`, reproduced the 49-record/26-element census, all four
+tuple frequencies, the 2,054-record historical boundary and the four target
+outcomes, and inspected all 19 bounded meanings. Those results are retained.
+
+The repair is confined to the evidence contract already required by S19-2,
+S19-4 and S19-6. CRC found 17 membership evidence IDs absent from the registry,
+grouped pseudo-path and multi-hash rows that cannot be retrieved as one pinned
+input, three temporary `/private/tmp` projection rows that are not durable
+committed evidence, and a source-support child that cites a concept-card-only
+witness. `cc-prompt-iteration01.md` supplies the exact set-difference and
+per-row retrieval predicates, the atomic registry shape, the wrong-kind
+applicability control and four-file edit fence. Direct Git/jq/hash inspection
+remains the Operator-authorized method; no wrapper, recipe endpoint, mutation
+battery or custom helper is reintroduced. This is source-grounded,
+design-complete, guideline-applied, executable, falsifiable and portable
+author self-review, not independent acceptance.
+
 ## Version History
+
+- 1.3 (2026-09-24): CRC records the `ed9d38b8` changes-required review and
+  issues iteration01 for evidence-registry referential integrity, atomic
+  replayability and member-specific witness applicability. Preserves the
+  Operator-authorized direct-verification method and all reproduced semantics.
 
 - 1.2 (2026-09-23): Operator renames the alternate initial assignment to
   `cc-prompt-alt.md`; records this slice-local naming exception and updates
