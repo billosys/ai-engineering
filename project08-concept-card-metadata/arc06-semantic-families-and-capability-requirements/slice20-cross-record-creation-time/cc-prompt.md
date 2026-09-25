@@ -100,17 +100,18 @@ Read each complete file, including tables and code blocks, in this order:
    - `knowledge/concept-cards/templates/source-support.md`
    - `knowledge/concept-cards/templates/validation-result.md`
    - `knowledge/concept-cards/templates/verification-result.md`
-6. representative populated records and their run context:
-   - Project05 Arc07 Slice02 `candidate-cards/cc-emergent-explanation.md`
-   - Project05 Arc07 Slice02 `candidate-cards/support-emergent-explanation.md`
-   - Project05 Arc07 Slice02 `extraction-run.md`
-   - Arc01 Slice01 baseline rich-rerun `README.md` and
-     `candidate-cards/cc-complementary-learning-systems.md`
-   - Arc01 Slice01 baseline teaching-rerun `README.md` and
-     `candidate-cards/cc-memory-forms.md`
+6. representative populated records and their run context at the opening
+   planning authority:
+   - `project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/cc-emergent-explanation.md`
+   - `project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/candidate-cards/support-emergent-explanation.md`
+   - `project05-concept-card-skill/arc07-real-corpus-uat-and-feedback/slice02-pilot-markdown-preparation-and-card-extraction/artifacts/extraction-run.md`
+   - `project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-rich-rerun-2026-09-12/README.md`
+   - `project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-rich-rerun-2026-09-12/candidate-cards/cc-complementary-learning-systems.md`
+   - `project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-teaching-rerun-2026-09-12/README.md`
+   - `project08-concept-card-metadata/arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/baseline-snapshots/compcogneuro-teaching-rerun-2026-09-12/candidate-cards/cc-memory-forms.md`
 
-Resolve the Project05 and baseline paths from the frozen inventory/input
-register; register the actual paths and authorities, not the shorthand above.
+Register these literal paths and authorities. Do not substitute ignored
+workbench paths for the preserved baseline copies.
 
 ### Required-section
 
