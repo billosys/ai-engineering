@@ -26,9 +26,9 @@ later independent review; CDC owns structural changes and arc/project
 composition. CC's current assignment is `cc-prompt.md`; its return remains
 proposed-done until CRC verification.
 
-Opening planning authority: `OPENING_COMMIT_PENDING`; source authority:
-`a5861c4b8e93af932d18cb571415cc570c758240`. The placeholder must be replaced
-with the exact committed open-set revision before Operator relay.
+Opening planning authority: `96c8045787dca18f534758aaefc5ed1cba77461c`; source authority:
+`a5861c4b8e93af932d18cb571415cc570c758240`. This is the committed
+open-set revision; later documentation commits do not replace its authority.
 
 ### Assignment History
 

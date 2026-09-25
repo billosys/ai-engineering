@@ -17,16 +17,17 @@ acceptance.
 - Source authority: `a5861c4b8e93af932d18cb571415cc570c758240`
 - Planning checkout:
   `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning`
-- Opening planning authority: `OPENING_COMMIT_PENDING`
+- Opening planning authority: `96c8045787dca18f534758aaefc5ed1cba77461c`
 - Frozen inventory authority: planning `5e6310b8ef6d48a45b816822cdbc658a62603ba6`
 - Predecessor acceptance: Slice19 CRC record at the opening planning authority;
   accepted CC candidate `30facb12959880144e1a8f0511d8f308ec7d6772`
 
-The opening placeholder must have been replaced by CRC before relay. Stop if it
-is still present, if the active assignment in `slice-plan.md` differs, or if a
-materially different source/planning state changes any binding input. Unrelated
-source HEAD movement is not itself failure: verify the declared source blobs
-and report drift. Do not silently repin or reinterpret inputs.
+This is the committed open-set revision; later documentation commits do not
+replace its authority. Stop if the active assignment in `slice-plan.md`
+differs, or if a materially different source/planning state changes any binding
+input. Unrelated source HEAD movement is not itself failure: verify the
+declared source blobs and report drift. Do not silently repin or reinterpret
+inputs.
 
 This is investigation and evidence work. It changes no source skill, template,
 schema, helper, runtime, package, extraction output or memory surface.
