@@ -1,19 +1,19 @@
 # Arc06 Ledger
 
-All arc rows remain open. After independent Slice18 closure, Slice19 assigns
-exactly 19 of 295 remaining pairs: live coverage is 260 accepted / 295
-remaining / 19 assigned / 276 outside. Directive02 approves exact Slice17-21
-provenance boundaries (87 pairs); only Slice19 is open. The other two units
-and 248 later-family pairs retain their owners. No
+All arc rows remain open. After independent Slice19 closure, Slice20 assigns
+exactly 11 of 276 remaining pairs: live coverage is 279 accepted / 276
+remaining / 11 assigned / 265 outside. Directive02 approves exact Slice17-21
+provenance boundaries (87 pairs); only Slice20 is open. Slice21 and 248
+later-family pairs retain their owners. No
 arc composition row closes.
 The transition register carries the exact original
 S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| A6-1 | Frozen coverage, finer contexts and discoveries have complete ownership | Derive union and disjoint sets; inspect all transfers | serious | S1-4, S4-2/S4-6, A1-1, P-1 | open | ../artifacts/semantic-coverage-current.json | 260 accepted; 295 remain with Arc06; Slice19 assigns 19, leaving 276 outside |
+| A6-1 | Frozen coverage, finer contexts and discoveries have complete ownership | Derive union and disjoint sets; inspect all transfers | serious | S1-4, S4-2/S4-6, A1-1, P-1 | open | ../artifacts/semantic-coverage-current.json | 279 accepted; 276 remain with Arc06; Slice20 assigns 11, leaving 265 outside |
 | A6-2 | Relationships and CQs preserve meanings and computational distinctions | Review evidence and reproduce bounded query cases without prose-invented edges | serious | S4-4/S4-5, P-3 | open | | Slices01/02; equivalence not assumed |
-| A6-3 | Provenance/common references have role-specific identity, scope and exceptions | Trace actors/runs/sources/references across populated/template contexts | serious | Arc01 Slice05, P-4/P-6 | open | slice03-provenance-and-shared-reference-contracts/cdc-verification.md; slice14-provenance-context-and-reference-semantics/crc-verification.md; slice15-provenance-roles-runs-and-shared-references/crc-verification.md; slice16-supporting-record-actor-mode-and-role/crc-verification.md; slice17-run-preparation-method-and-reference-provenance/crc-verification.md; slice18-run-scope-workers-and-outputs/crc-verification.md | Slice13-18 bounded provenance observations accepted; Slice19 open with exact Set C; Slice20-21 unopened; directive02 supplies ownership, not acceptance; shape is not authority |
+| A6-3 | Provenance/common references have role-specific identity, scope and exceptions | Trace actors/runs/sources/references across populated/template contexts | serious | Arc01 Slice05, P-4/P-6 | open | slice03-provenance-and-shared-reference-contracts/cdc-verification.md; slice14-provenance-context-and-reference-semantics/crc-verification.md; slice15-provenance-roles-runs-and-shared-references/crc-verification.md; slice16-supporting-record-actor-mode-and-role/crc-verification.md; slice17-run-preparation-method-and-reference-provenance/crc-verification.md; slice18-run-scope-workers-and-outputs/crc-verification.md; slice19-cross-record-run-references/crc-verification.md | Slice13-19 bounded provenance observations accepted; Slice20 open with exact Set D; Slice21 unopened; directive02 supplies ownership, not acceptance; creation assertion is not event authority |
 | A6-4 | Evidence, confidence, validation and verification stay distinct | Review subject/rubric/coverage/independence/applicability cases | serious | Arc01 Slice05, P-4 | open | | Slices04/05 |
 | A6-5 | Reconciliation, preservation and admission retain decision scope/authority | Trace conflict, revision, prior value, approval and reliance cases | serious | Arc01 Slice05, P-4/P-6 | open | | Slices06-08; no automatic admission |
 | A6-6 | Every remaining family and cross-family marker has supported contextual dispositions | Review member meanings, evidence layers, exceptions and consequences | serious | S1-4/S1-5, S4-3/S4-4/S4-5, P-1 | open | | No catch-all placeholders |

@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.38"
+version: "1.39"
 ---
 
 # Concept Card Metadata
@@ -113,9 +113,11 @@ CRC closure adds twelve more; Slice15's independent CRC closure adds eight
 bounded mode/role pairs, followed by Slice16's twelve independently accepted
 pairs. CRC independently closed Slice17 after one focused repair, then accepted
 Slice18's 22 extraction-run scope/worker/output pairs after reproducing its
-committed replay and semantic limits. Fresh readiness opens exact Set C as
-Slice19. Live accounting is 260 accepted / 295 remaining / 19 assigned / 276
-outside. Slice20-21 remain unopened, and 248 further pairs retain their
+committed replay and semantic limits. Slice19's focused evidence repair is now
+independently accepted, adding exact Set C's 19 cross-record run-reference
+pairs. Fresh readiness opens exact Set D as Slice20. Live accounting is 279
+accepted / 276 remaining / 11 assigned / 265 outside. Slice21 remains
+unopened, and 248 further pairs retain their
 evidence/lifecycle-family owners.
 Use the
 [current coverage register](./artifacts/semantic-coverage-current.json).
@@ -191,9 +193,9 @@ CRC first reads/acknowledges the directive and checks the replacement before
 the Operator relays it to fresh CC. The original prompt is not edited.
 The recorded acknowledgement below completed that initial relay. Current
 handoff: arc-level cdc-directive02.md answers CRC's post-Slice16 sizing request;
-CRC has acknowledged it, independently closed exact Set A after Iteration01,
-and independently closed exact Set B as Slice18 after fresh author readiness.
-Fresh Set C readiness then opened Slice19. Arc-level
+CRC has acknowledged it and independently closed exact Sets A-C, with the
+focused Slice19 evidence repair accepted after Iteration01. Fresh Set D
+readiness then opened Slice20. Arc-level
 exchange history lives in the arc plan.
 
 ### Design Handoff History
@@ -201,7 +203,7 @@ exchange history lives in the arc plan.
 | Packet | Date | Predecessor / initiating decision | Scope / rows | Status | Next action |
 | --- | --- | --- | --- | --- | --- |
 | cdc-directive01.md | 2026-09-17 | No escalation/predecessor; Operator explicitly selects three contributors and Expedited Mode | Remaining Project08; Arc06 A6-1 through A6-10; Slice14 S14-1 through S14-6; P-1 through P-15 gates retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-09-17 after reading the directive, plans, ledgers, current and frozen coverage, Slice13 review, and both Slice14 prompts; source `020268248882358075b678bb855c0ac8d11b532a`, planning `d2a6ddcaeaadd8251156422dcc8897ccad985ab4`, both clean | CRC releases `arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/cc-prompt-iteration01.md` through the Operator to fresh CC; CC returns its packet to CRC for independent review |
-| arc06/cdc-directive02.md | 2026-09-18 | Response to CRC escalation02 after independent Slice16 closure | Exact Slice17-21 Sets A-E; A6-1/A6-3/A6-6 and all P gates retained | Acknowledged by the same CRC context on 2026-09-18; Slice17 CRC-closed after Iteration01; Slice18 independently CRC-closed on 2026-09-23; Slice19 exact-set, population, target-resolution and prompt-author readiness checked against clean planning `5e6310b8` and source `a5861c4b` | Operator relays `arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/cc-prompt.md` to fresh CC; Slice20-21 remain unopened |
+| arc06/cdc-directive02.md | 2026-09-18 | Response to CRC escalation02 after independent Slice16 closure | Exact Slice17-21 Sets A-E; A6-1/A6-3/A6-6 and all P gates retained | Acknowledged by the same CRC context on 2026-09-18; Slices17-19 independently CRC-closed, with Slice19 accepted after Iteration01 at `30facb12`; Slice20 exact-set, population, temporal-boundary and prompt-author readiness checked against clean planning `30facb12` and source `a5861c4b` | Operator relays `arc06-semantic-families-and-capability-requirements/slice20-cross-record-creation-time/cc-prompt.md` to fresh CC; Slice21 remains unopened |
 
 Do not mark acknowledgement on CRC's behalf. CRC records its actual session
 identity, read state, date and next action in this history before execution.
@@ -226,7 +228,7 @@ quality review. No earlier level substitutes for a later one.
 | Arc | Capability | Depends On | Current State |
 | --- | --- | --- | --- |
 | `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12-18 closed; 260 accepted and 295 remaining; Slice19 open with 19 assigned; Slice20-21 unopened |
+| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12-19 closed; 279 accepted and 276 remaining; Slice20 open with 11 assigned; Slice21 unopened |
 | `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
 | `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
 | `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
@@ -241,8 +243,8 @@ checkout advanced outside the relevant skills; the CDC report records the
 failed literal HEAD guard and the equivalent pinned-input replay explicitly.
 No CC supporting artifact was repaired by the reviewer.
 
-Current accounting: 260 accepted / 295 remaining / 19 assigned / 276 outside
-after independent Slice18 closure and fresh Slice19 opening. Slice14 accepted actor/actor.id in memory-admission,
+Current accounting: 279 accepted / 276 remaining / 11 assigned / 265 outside
+after independent Slice19 closure and fresh Slice20 opening. Slice14 accepted actor/actor.id in memory-admission,
 preservation-decision, relationship-edge, source-locator, source-support and
 validation-result. CDC's response to Arc06 escalation01 approves a kind-aligned
 mode/role split: eight pairs in Slice15 and twelve in Slice16, now accepted.
@@ -250,7 +252,7 @@ Arc directive02 divides the retained provenance work into Slice17 operation/
 inputs/method/time (18 pairs), Slice18 scope/workers/outputs (22), Slice19
 cross-record run references (19), Slice20 creation time (11) and Slice21
 preparation/method references (17). Each opens only after predecessor acceptance
-and fresh CRC readiness. Slice18 now satisfies that gate; Slice19 is the sole
+and fresh CRC readiness. Slice19 now satisfies that gate; Slice20 is the sole
 open provenance unit.
 See [the current arc directive](./arc06-semantic-families-and-capability-requirements/cdc-directive02.md).
 It explicitly retains the other 248 pairs with later semantic owners, including
@@ -476,6 +478,13 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.39 (2026-09-24): CRC independently accepts Slice19 after its focused
+  evidence-registry repair, reproducing all 49 atomic inputs, 19 bounded
+  meanings and cross-record target outcomes. Opens exact 11-pair Set D as
+  Slice20 after fresh creation-time population, temporal-boundary and prompt-
+  author readiness. Coverage is 279/276/11/265; no global timestamp, schema,
+  source, UAT or project-criterion change occurs.
 
 - 1.38 (2026-09-23): CRC independently closes Slice18 after reproducing its
   final committed replay, native state matrix, target outcomes and semantic

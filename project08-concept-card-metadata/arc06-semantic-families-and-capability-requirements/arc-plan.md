@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: [arc02-metadata-architecture]
-version: "1.27"
+version: "1.28"
 ---
 
 # Semantic Families And Capability Requirements
@@ -21,15 +21,15 @@ dependency claim of success. The operator's 2026-09-14 decision resumes work.
 
 ## Current Review
 
-CRC independently accepted Slice18 after reproducing its final committed route,
-native state/value matrix, target outcomes and bounded semantic limits. Exactly
-Set B's 22 pairs enter accepted coverage once. CRC then completed fresh Set C
-readiness against clean source `a5861c4b` and planning `5e6310b8`. Slice19 is
-now open with exactly 19 cross-record run-reference pairs. Live coverage is 260
-accepted / 295 remaining / 19 assigned / 276 outside. Assignment is not
-acceptance; no global run-reference schema, target requiredness, path authority,
-provenance inheritance or lifecycle policy is adopted. Slice20-21 remain
-unopened, and all A6 rows and P-15 stay open.
+CRC independently accepted Slice19 after reproducing its Iteration01 repair,
+all 49 atomic evidence rows, 19 bounded meanings and four target outcomes.
+Exactly Set C's 19 pairs enter accepted coverage once. CRC then completed fresh
+Set D readiness against clean source `a5861c4b` and planning `30facb12`.
+Slice20 is now open with exactly 11 record-local creation-time pairs. Live
+coverage is 279 accepted / 276 remaining / 11 assigned / 265 outside.
+Assignment is not acceptance; no global timestamp format, precision, timezone,
+requiredness, immutability, inheritance or lifecycle policy is adopted.
+Slice21 remains unopened, and all A6 rows and P-15 stay open.
 
 CDC answers [crc-escalation02.md](./crc-escalation02.md) in
 [cdc-directive02.md](./cdc-directive02.md): approve Sets A-E as Slice17-21,
@@ -41,8 +41,11 @@ accepted its Iteration01 repair, a new readiness pass reproduced Set B's 22
 pairs, all native scope/worker/output shapes, target outcomes and current/
 historical guidance before opening Slice18. After its independent acceptance,
 fresh readiness for Set C reproduced the 49-record, eleven-kind population and
-the four distinct reference-target outcomes before opening Slice19. No second
-CDC pre-opening return is needed within these bounds.
+the four distinct reference-target outcomes before opening Slice19. After its
+focused repair and independent acceptance, fresh Set D readiness reproduced
+the same 49-record population, all eleven templates, 25 populated date-only
+values and the absence of any global timestamp guidance before opening
+Slice20. No second CDC pre-opening return is needed within these bounds.
 
 Slice14 iteration03 is independently CRC-accepted on 2026-09-17. Its twelve
 actor/actor.id pairs entered coverage once; at that closure, accounting was
@@ -105,7 +108,7 @@ are intact.
 | crc-escalation01.md | 2026-09-17 | Slice14 CRC closure at `febbd787`; project `cdc-directive01.md` supplies three-contributor authority | Size the next provenance unit; A6-1/A6-3/A6-6, Slice15 owner and P-15 preserved | Answered by arc-level cdc-directive01.md; escalation preserved | CRC reads the response through the Operator and records acknowledgement before advancement |
 | cdc-directive01.md | 2026-09-17 | Response to arc crc-escalation01.md; existing Operator-approved bounded-slice planning authority | Approves eight/twelve mode-role split; names Slice17 remainder; A6-1/A6-3/A6-6 and all gates retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-09-17; planning `b748aca4f14a2c5a9418ddc2bbb08e6c3f818a28`, source `76a69fd9c295e78f23faa651746c2e36646e0ebd`, both clean; directive and coverage/frozen identities checked. Pre-opening recount/readiness completed; Slice15 issued under this directive. | Operator relays `slice15-provenance-roles-runs-and-shared-references/cc-prompt.md` to fresh CC; CRC independently reviews returned packet; material drift returns to CDC |
 | crc-escalation02.md | 2026-09-18 | Slice16 CRC closure at `3841734b`; arc `cdc-directive01.md` requires a new sizing decision | Enumerates 87 provenance candidates, five bounded options, 248 retained later-family pairs and CQ ownership question; A6-1/A6-3/A6-6/P-15 preserved | Answered by cdc-directive02.md; escalation preserved | Operator relays response to CRC |
-| cdc-directive02.md | 2026-09-18 | Response to arc crc-escalation02.md at `dee3052c`; follows arc directive01 | Exact Sets A-E become Slice17-21; 248 other pairs retain owners; all A6/P gates unchanged | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779`; Slice17 CRC-closed after Iteration01; Slice18 independently CRC-closed on 2026-09-23; Slice19 fresh readiness checked against planning `5e6310b8` and source `a5861c4b` | Operator relays `slice19-cross-record-run-references/cc-prompt.md` to fresh CC; CRC reviews the return; Slice20-21 remain unopened |
+| cdc-directive02.md | 2026-09-18 | Response to arc crc-escalation02.md at `dee3052c`; follows arc directive01 | Exact Sets A-E become Slice17-21; 248 other pairs retain owners; all A6/P gates unchanged | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779`; Slices17-19 independently CRC-closed, with Slice19 accepted after Iteration01 at `30facb12`; Slice20 fresh readiness checked against planning `30facb12` and source `a5861c4b` | Operator relays `slice20-cross-record-creation-time/cc-prompt.md` to fresh CC; CRC reviews the return; Slice21 remains unopened |
 
 ### Historical Slice03 Closure And Slice13 Opening (Superseded Assignment)
 
@@ -186,7 +189,7 @@ Changed live inputs require drift disclosure; never silently rewrite the freeze.
 
 Current coverage is recorded separately in
 [semantic-coverage-current.json](../artifacts/semantic-coverage-current.json):
-260 accepted, 295 remaining, 19 assigned and 276 not yet sliced.
+279 accepted, 276 remaining, 11 assigned and 265 not yet sliced.
 The original transition and its registered hashes remain unchanged. Slice12
 contributes repairs to Slice01, not a second 35-pair acceptance.
 
@@ -236,8 +239,8 @@ contributes repairs to Slice01, not a second 35-pair acceptance.
 | `slice16-supporting-record-actor-mode-and-role` | Twelve actor.mode/actor.role pairs in the other six actor-bearing kinds; cross-group comparison | Closed Slice15 plus accepted Slice14 | CRC-closed after Iteration01; twelve bounded pairs accepted |
 | `slice17-run-preparation-method-and-reference-provenance` | Set A: 18 operation/input/method/time extraction-run pairs; stable prior slug retained | Accepted Slice16, common contracts and directive02 | CRC-closed after Iteration01; eighteen bounded pairs accepted |
 | `slice18-run-scope-workers-and-outputs` | Set B: 22 run scope/worker/output pairs, including mapping/sequence/absence distinctions | Accepted Slice17 and fresh readiness | CRC-closed; 22 bounded pairs accepted |
-| `slice19-cross-record-run-references` | Set C: 19 run-linkage pairs across kinds; no inherited authority | Accepted Slice18 and fresh readiness | Open; 19 exact pairs assigned at 260/295/19/276 |
-| `slice20-cross-record-creation-time` | Set D: 11 creation-time pairs; no global timestamp policy | Accepted Slice19 and fresh readiness | Approved boundary; unopened |
+| `slice19-cross-record-run-references` | Set C: 19 run-linkage pairs across kinds; no inherited authority | Accepted Slice18 and fresh readiness | CRC-closed after Iteration01; nineteen bounded pairs accepted |
+| `slice20-cross-record-creation-time` | Set D: 11 creation-time pairs; no global timestamp policy | Accepted Slice19 and fresh readiness | Open; 11 exact pairs assigned at 279/276/11/265 |
 | `slice21-cross-record-preparation-and-method-references` | Set E: 17 preparation/method-reference pairs with kind-specific applicability | Accepted Slice20 and fresh readiness | Approved boundary; unopened |
 | `slice04-evidence-and-extraction-confidence` | Assessment subject, rubric, rationale, scope, scalar/structured differences and synthetic/surface markers; includes untyped confidence | Shared contracts and needed Slice13-21 provenance inputs | Enumerate/size when near |
 | `slice05-validation-and-verification` | Structural checks versus semantic verification, coverage, independence, applicability and CQ retrieval observations | Slices03/04 | Enumerate/size when near |
@@ -278,8 +281,8 @@ Slice09 recomposes coverage, Slice10 research and Slice11 requirements/P-15.
 No obligation is removed; no unbounded execution packet is authorized.
 
 Latest amendment (arc directive02): its incorporated exact Sets A-E divide
-the retained provenance boundary into Slice17-21. Sets A and B's 40 pairs are
-now accepted; Sets C-E's 47 remain, with Set C's 19 assigned to Slice19. The
+the retained provenance boundary into Slice17-21. Sets A-C's 59 pairs are
+now accepted; Sets D-E's 28 remain, with Set D's 11 assigned to Slice20. The
 248-pair complement remains in current coverage. Directive02's remainder-owner section explicitly assigns
 markers, CQ retrieval/revision fields and kind-local result/decision roles;
 it is planning ownership, not semantic acceptance. CRC enumerates and sizes
@@ -331,6 +334,12 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.28 (2026-09-24): CRC independently closes Slice19 after its focused
+  Iteration01 evidence repair and accepts exactly nineteen Set C pairs. Opens
+  exact 11-pair Set D as Slice20 after fresh cross-kind state, precision,
+  temporal-boundary and prompt-author readiness. Coverage becomes
+  279/276/11/265; later owners and normative/source/UAT gates remain unchanged.
 
 - 1.27 (2026-09-23): CRC independently closes Slice18 after reproducing the
   final committed route, matrix, target outcomes and bounded semantics, then

@@ -2,9 +2,9 @@
 project: project08-concept-card-metadata
 arc: arc06-semantic-families-and-capability-requirements
 slice: slice19-cross-record-run-references
-status: open
+status: closed
 depends-on: [slice18-run-scope-workers-and-outputs]
-version: "1.3"
+version: "1.4"
 ---
 
 # Cross-Record Run References
@@ -23,9 +23,10 @@ The Operator selected CDC + CRC + CC with Expedited Mode. Arc06
 and fresh CRC readiness. Slice18 is CRC-closed at this opening; exact Set B's
 22 pairs enter accepted coverage once. CRC owns this routine open set and later
 independent review; CDC owns structural changes and arc/project composition.
-CC's current assignment is `cc-prompt-iteration01.md`, a bounded evidence-
+CC's final assignment was `cc-prompt-iteration01.md`, a bounded evidence-
 registry repair after CRC review of the alternate-assignment contribution.
-Its return remains proposed-done until CRC verification.
+CRC independently accepted that repair at `30facb12`; exactly 19 Set C pairs
+entered accepted coverage once.
 
 ### Assignment History
 
@@ -33,7 +34,7 @@ Its return remains proposed-done until CRC verification.
 | --- | --- | --- | --- | --- |
 | cc-prompt.md | 2026-09-23 | CRC-closed Slice18 and arc directive02 | Exact Set C with eleven-kind census, empty/absent/populated reference states, four target outcomes and no inherited authority | Superseded before execution; preserved |
 | cc-prompt-alt.md | 2026-09-23 | cc-prompt.md | Operator-authorized verification method: direct evidence checks and independent semantic review | Executed at `ed9d38b8`; CRC reproduced the semantic/data results but returned evidence registration changes |
-| cc-prompt-iteration01.md | 2026-09-24 | cc-prompt-alt.md | Repair dangling evidence IDs, non-atomic/non-durable registry rows and one cross-kind witness attribution without reopening semantics | Current CC assignment; pending execution |
+| cc-prompt-iteration01.md | 2026-09-24 | cc-prompt-alt.md | Repair dangling evidence IDs, non-atomic/non-durable registry rows and one cross-kind witness attribution without reopening semantics | Executed at `30facb12`; independently CRC-accepted |
 
 The Operator selected `cc-prompt-alt.md` as a slice-local naming exception for
 the alternate initial assignment; CC executed it at `ed9d38b8`. The original
@@ -245,6 +246,11 @@ design-complete, guideline-applied, executable, falsifiable and portable
 author self-review, not independent acceptance.
 
 ## Version History
+
+- 1.4 (2026-09-24): CRC independently accepts Iteration01 after resolving all
+  49 atomic evidence rows, reproducing the 19 meanings and native population,
+  and rejecting dangling, duplicate and wrong-kind controls. Closes Slice19
+  and transfers exactly 19 Set C pairs into accepted coverage.
 
 - 1.3 (2026-09-24): CRC records the `ed9d38b8` changes-required review and
   issues iteration01 for evidence-registry referential integrity, atomic
