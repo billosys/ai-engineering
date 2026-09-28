@@ -1,5 +1,13 @@
 # Collaboration Framework Version History
 
+## Version 2.6.0 - 2026-09-28
+
+Updated the composer bundle to include Proportionate Proof and the coordinated
+implementation-prompt and correction-review guidance. Preserve detailed design
+and code examples while selecting adequate real checks, bounding predecessor
+reading, and assessing retention of unaffected independent evidence. Mandatory
+gates, independent acceptance and explicit evidence limits remain in force.
+
 ## Version 2.5.0 - 2026-09-17
 
 Updated authoring routes and bundled engineering guidance for interacting
