@@ -1,5 +1,15 @@
 # Engineering Methods Version History
 
+## Version 1.16.0 - 2026-09-28
+
+Preserved detailed implementation recipes while making proof-method selection
+explicit in the existing authoring guide and template. Routed proportionate
+validation to testing, added source-grounded evidence-construction examples as
+an authoring technique, and bounded predecessor reading to relevant examples.
+Corrective assignments identify invalidated evidence and route retention of
+unaffected independent proof to work-verification. Return instructions distinguish
+observations, interpretations and missing proof without adding reporting gates.
+
 ## Version 1.15.0 - 2026-09-17
 
 Refined prompt authorship using reviewed code and semantic-evidence assignments.

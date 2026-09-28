@@ -1,5 +1,12 @@
 # Version History
 
+## Version 2.18.1 - 2026-09-28
+
+Aligned slice closing with work-verification's correction-review rule. Review
+accounts for every row, reproduces new and affected claims, and explicitly
+assesses applicability of retained independent evidence. Bubble-up, assignment
+preservation, bookkeeping and Operator gates remain unchanged.
+
 ## Version 2.18.0 - 2026-09-17
 
 Routed initial and iterative CC execution through the complete-reading and

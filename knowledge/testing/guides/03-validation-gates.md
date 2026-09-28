@@ -24,9 +24,34 @@ If the repository has an explicit command surface, prefer it over hand-running
 lower-level tools. If the repository has no single gate, state the selected
 commands and why they cover the change.
 
+## Proportionate Proof
+
+Choose the smallest adequate set of checks that establishes the acceptance
+criteria and satisfies mandatory repository gates. Match effort to the changed
+behavior, credible failure modes and consequences of failure. A real execution
+path, an existing test, a bounded query or static inspection may suffice for a
+claim; state what it does and does not prove. An unavailable integration check
+remains a disclosed gap, not a reason to substitute a simulated success.
+
+Before commissioning a new wrapper, reusable validator, replay protocol or broad
+mutation suite, identify the required property that existing checks cannot
+establish. Include the tool's implementation, review and maintenance in the
+scope decision. When the validator is itself the requested product, its public
+contract needs behavioral tests. An incidental query does not thereby acquire
+a reusable product's interface, configuration and compatibility obligations.
+
+When rejection behavior needs proof, use focused negative controls for credible
+failures through the same predicate as valid inputs. Do not multiply controls
+to exercise optional machinery introduced solely for verification. If repairing
+that machinery becomes new
+work, reassess whether an existing adequate check can replace it within the
+assignment's authority. Changes to binding methods or acceptance go to their
+owner; this rule does not authorize skipping gates or weakening evidence.
+
 ## Minimum Validation Set
 
-Testing-oriented changes commonly need:
+Select the applicable checks below; this list is not a requirement to add every
+kind of check to every task. Testing-oriented changes commonly need:
 
 - focused tests for the changed behavior;
 - full relevant test suite;

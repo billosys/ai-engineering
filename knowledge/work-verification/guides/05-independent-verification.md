@@ -34,7 +34,9 @@ does not establish independence; the verifier must inspect the actual work.
 CDC in the default workflow, or CRC when explicitly enabled, should:
 
 1. Count rows.
-2. Re-run every `done` verifier or a stronger equivalent.
+2. Re-run every newly proposed or affected `done` verifier or a stronger
+   equivalent. In correction review, assess previously reproduced evidence
+   under [Evidence During Correction Review](#evidence-during-correction-review).
 3. Check deferral reasons and re-entry conditions.
 4. Check no-op rationales.
 5. Inspect source and planning diffs directly.
@@ -54,6 +56,33 @@ Identify the reviewer role/context, workflow, exact assignment and source
 state, reproduced checks, unresolved findings, and verdict. A CC-authored close
 remains proposed-done until this independent pass happens. A changed source
 state needs review of the change and its affected evidence, not a copied verdict.
+
+## Evidence During Correction Review
+
+The reviewer still accounts for every row and inspects the actual delta. A
+correction need not repeat independently reproduced checks for claims that
+remain valid. Retain prior evidence only when the reviewer can establish that:
+
+- the earlier independent record identifies the claim, checked source state,
+  method, result and accessible evidence;
+- the acceptance criterion and relevant inputs, code, dependencies and
+  execution conditions are unchanged, or the delta demonstrably cannot affect
+  that claim;
+- no new finding undermines the method, witness applicability or result; and
+- no binding gate requires fresh execution for the current candidate.
+
+Record the retained evidence pointer and why it remains applicable in the
+existing verification record, separately from checks executed now. Keep its
+original revision and execution date; do not relabel it as a fresh run. One
+shared rationale may cover several rows with the same unchanged dependencies.
+An unchanged filename or a copied verdict is not this assessment.
+
+Rerun affected checks, including downstream/integration checks implicated by
+the repair. If validity or dependencies are uncertain, obtain fresh proof or
+leave the affected claim open with its blocker. Live-state checks need current
+evidence when the state can change. Doer attestation cannot be promoted by
+retention, and child evidence alone still cannot establish higher-scale
+composition. Independent acceptance and Operator gates remain in force.
 
 ## Higher-Scale Gates
 

@@ -56,9 +56,12 @@ its work against the ledger. Then CC adds a final section,
 
 ### The slice bubble-up check — in the verification record
 
-The assigned reviewer verifies the closing report against evidence: re-running
-the reproducible ledger rows and checking deferrals and no-ops, as ledger discipline
-requires. Then the reviewer verifies the **bubble-up** itself:
+The assigned reviewer verifies the closing report against evidence, accounting
+for every ledger row and checking deferrals and no-ops. Reproduce newly proposed
+and affected claims; for prior independent evidence during correction review,
+apply work-verification's
+[evidence retention rule](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review).
+Then the reviewer verifies the **bubble-up** itself:
 
 - Confirm the slice delivered its assigned piece, against the arc-plan.
 - Confirm the silent-drop diff is complete and honest.
