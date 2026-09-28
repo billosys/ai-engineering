@@ -24,6 +24,9 @@ and include definitions/dependencies; no silent narrowing by CC. Governing
 reading obligations remain binding. List current authority separately from
 historical background.
 
+For predecessor examples, name the needed example and definitions as bounded
+sections; do not require unrelated history merely to obtain a format or pattern.
+
 | Order | Exact path and revision/state | Reading scope | Purpose / before which step |
 | --- | --- | --- | --- |
 | <order> | <resolvable path; qualify dirty inputs> | <required-full, required-section with exact bounds, required-data with query scope, conditional with trigger, or reference-only> | <contract it supplies and deadline> |
@@ -94,6 +97,8 @@ uses existing code, why this ordering matters and the observable result.
 Include representative signatures, algorithms or code/pseudocode for difficult
 parts. Label sketches and their verification status. Cover construction,
 registration, exports, feature wiring and docs as applicable.
+For error-prone evidence representations, include a source-grounded example
+linking a claim to one atomic, applicable witness in the actual output schema.
 
 State which local mechanics CC may adapt and which deviations require the
 assigned reviewer or CDC/Operator before coding.
@@ -106,9 +111,14 @@ not an observation or permission to invent semantic policy.
 
 ## Behavioral tests and validation
 
-| Acceptance row / contract | Setup and action | Exact expected observation | Incorrect behavior rejected |
+| Acceptance row / contract | Real check, setup and action | Exact expected observation | Incorrect behavior rejected / coverage limits |
 | --- | --- | --- | --- |
-| <row> | <fixture/input/entrypoint> | <value/error/sequence/invariant> | <credible failure mode> |
+| <row> | <existing command/test/inspection and fixture/input/entrypoint> | <value/error/sequence/invariant> | <credible failure mode; what remains unproved> |
+
+Apply testing's [Proportionate Proof](../../testing/guides/03-validation-gates.md#proportionate-proof)
+rule. Use existing adequate checks first. If new verification machinery is
+needed, name the otherwise unproved requirement and bound its scope here.
+Retain mandatory gates; supporting tools are not implicit additional products.
 
 Walk multi-step cases through available APIs, ownership and observation points;
 name integration/inline test locations and their feature coverage where needed.
@@ -135,10 +145,15 @@ command outcomes including failed/unrun attempts, intake/readback evidence,
 self-review, deviations,
 remaining blockers and bubble-up findings. CC evidence remains proposed-done
 until the assigned independent reviewer accepts it under the selected workflow.
+Separate observed results from interpretation. Leave unsupported claims open;
+do not report a described or planned check as executed.
 
 For an iteration, distinguish accepted work from required repairs and specify
-the affected regression checks. Preserve previous prompts and identify the
-current assignment; a previous completion report is not fresh execution.
+the defect, prescribed repair, invalidated evidence and affected regression
+checks. Identify evidence proposed for retention under work-verification's
+[correction review rule](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review).
+Preserve previous prompts and identify the current assignment; a previous
+completion report is not fresh execution or independent acceptance.
 
 ## Author readiness record
 

@@ -210,10 +210,15 @@ When CDC (default) or CRC (explicitly enabled) reviews a proposed-closed slice l
 
 1. **Count the rows.** The closing report's row count must match the opening
    ledger's. Missing rows are a ledger bug, corrected before any further review.
-2. **For every `done` row, run the Verify.** Do not take evidence at face value
-   — execute the grep, run the test, read the diff. If it does not reproduce the
-   claimed result, the row is not done. (This is the `attested` → `reproduced`
-   transition.)
+2. **For every newly proposed or affected `done` row, run the Verify.** Do not
+   take evidence at face value — execute the grep, run the test, read the diff.
+   If it does not reproduce the claimed result, the row is not done.
+   (This is the `attested` → `reproduced`
+   transition.) For previously reproduced rows during correction review, apply
+   [the evidence retention rule](../guides/05-independent-verification.md#evidence-during-correction-review):
+   inspect the delta, establish that the prior proof still applies, and record
+   its pointer and rationale separately from fresh runs. Account for every row;
+   doer attestation and copied verdicts cannot supply independent acceptance.
 3. **For every `deferred` row, check the reason and re-entry condition.** Thin
    reason ("later") or absent re-entry → not validly deferred.
 4. **For every `no-op` row, check the rationale.** A documented invariant the

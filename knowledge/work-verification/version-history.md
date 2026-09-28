@@ -1,5 +1,14 @@
 # Work Verification Version History
 
+## Version 2.6.0 - 2026-09-28
+
+Defined reviewer-assessed retention of previously reproduced evidence during
+correction review. Retention requires an accessible independent record, valid
+claim and dependency scope, no undermining findings, and no mandatory fresh-run
+gate. Review still accounts for every row and reproduces new or affected claims.
+Aligned row closure and the retained ledger template; preserved independent
+acceptance, current live-state proof and higher-scale composition requirements.
+
 ## Version 2.5.0 - 2026-09-17
 
 Applied assigned-reviewer verification to both contributor workflows. Removed

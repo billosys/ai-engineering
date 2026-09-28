@@ -7,7 +7,7 @@ description: |
   whether bubble-up findings require a plan update.
 license: MIT
 metadata:
-  version: "2.18.0"
+  version: "2.18.1"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills

@@ -175,6 +175,15 @@ how insufficient or contradictory evidence is recorded and what it blocks;
 do not make a desired semantic answer the condition for passing the assignment.
 Structural replay establishes only its checked properties, not semantic warrant.
 
+Where representation is error-prone, show one source-grounded construction
+example and the check that distinguishes a plausible mistake. For an evidence
+registry, pair an atomic row with its membership citation: one resolvable object
+at a pinned revision, its digest/range, and why that witness supports this kind
+of claim. Show how cited IDs resolve and how applicability is assessed. Adapt
+the example to the actual schema; do not invent a new registry format. For code,
+put the same effort into the actual API, recipe or failure path. Examples should
+resolve implementation choices, not create additional software to maintain.
+
 ## 5. Design the tests and their oracles
 
 Map each acceptance criterion to a concrete setup, action and expected
@@ -218,7 +227,13 @@ Inspect what reused validators actually cover: target revision, current
 assignment, rows and properties. A passing predecessor-specific checker is
 inherited evidence, not validation of the new slice. State gaps and the check
 or owner that resolves them; preserve historical evidence and gate authority.
-Use the testing component when defining detailed validation technique.
+Select the proof method under testing's
+[Proportionate Proof](../../testing/guides/03-validation-gates.md#proportionate-proof)
+rule. In the existing acceptance-to-test mapping, identify the chosen real
+check and its coverage limits. Resolve consequential proof-method choices
+before handoff; new verification machinery needs a named gap or an explicit
+product requirement. Preserve detailed implementation guidance and required
+gates without turning incidental checks into additional deliverables.
 
 ## 6. Assemble a usable assignment
 
@@ -281,6 +296,10 @@ normative dependencies; do not leave CC to chase an unbounded chain of
 links or infer that every historical reference is an active instruction. A newly
 encountered binding dependency must be loaded and recorded before affected work.
 Keep current authority distinct from superseded prompts and historical examples.
+If a predecessor is needed only for a row format or implementation pattern,
+name that example and its necessary definitions as required sections; leave
+unrelated history reference-only. Resolve this at authoring time rather than
+requiring CC to discover a small example by rereading a whole historical packet.
 The author applies the same complete-loading standard to their own required
 inputs before declaring readiness.
 
@@ -387,6 +406,22 @@ is unknown, assign bounded diagnosis with a stop condition. “Fix the review”
 is insufficient. Carry forward binding constraints with precise references and
 state authorized changes explicitly. Never rewrite an already issued prompt;
 use project-management's preserved iteration and assignment-history rules.
+
+Map each repair to the evidence it invalidates and the checks that must run
+again. For accepted claims unaffected by the repair, propose retention under
+work-verification's
+[correction review rule](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review),
+with the prior independent record and relevant pinned inputs. The reviewer
+decides whether that evidence still applies; a doer's earlier completion claim
+cannot substitute for it. Recheck uncertain dependencies and changed behavior,
+including integration consequences. Do not repeat the entire investigation
+merely because its results share a file with the repair.
+
+The return must distinguish observations, interpretations and unresolved
+claims. Report actual commands and results within their coverage; leave missing
+proof explicit rather than inventing receipts or describing unrun checks as
+complete. Use the existing evidence and closing records, not a new reporting
+layer.
 
 ## Worked fragment: registration without repeated side effects
 

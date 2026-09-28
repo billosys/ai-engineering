@@ -1,5 +1,13 @@
 # Testing Version History
 
+## Version 1.2.0 - 2026-09-28
+
+Added proportionate proof selection: use the smallest adequate set of real
+checks while preserving acceptance and mandatory repository gates. New
+verification machinery needs an identified proof gap or product requirement;
+incidental queries do not inherit reusable-product obligations. Clarified
+applicable validation selection and reassessment of optional supporting tools.
+
 ## Version 1.1.1 - 2026-09-06
 
 Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.

@@ -7,7 +7,7 @@ description: |
   independent reproduced verification.
 license: MIT
 metadata:
-  version: "2.5.0"
+  version: "2.6.0"
   hermes:
     tags: [ai-engineering, ledger, verification, evidence]
     category: meta-skills

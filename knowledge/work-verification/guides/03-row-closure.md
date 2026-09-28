@@ -37,7 +37,10 @@ Operator explicitly enables the Three-Contributor Workflow. Apply the
 when the usual reviewer has implemented a repair.
 
 1. Count opening rows and closing-report rows.
-2. For every `done` row, run the verifier or stronger equivalent.
+2. For every newly proposed or affected `done` row, run the verifier or stronger
+   equivalent. For previously reproduced rows in correction review, apply
+   [the evidence retention rule](./05-independent-verification.md#evidence-during-correction-review)
+   and record the applicability decision; every row remains accounted for.
 3. For every `deferred` row, check the reason and re-entry condition.
 4. For every `no-op` row, check the rationale against the artifacts.
 5. Inspect the diff for missing rows, weaker guarantees, partial adoption, and

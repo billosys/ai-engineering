@@ -8,7 +8,7 @@ description: |
   review finding into a detailed, domain-guided CC implementation prompt.
 license: MIT
 metadata:
-  version: "1.15.0"
+  version: "1.16.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills

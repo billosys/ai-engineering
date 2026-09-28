@@ -7,7 +7,7 @@ description: |
   satisfy a metric cosmetically.
 license: MIT
 metadata:
-  version: "1.1.1"
+  version: "1.2.0"
   hermes:
     tags: [ai-engineering, testing, coverage, validation]
     category: meta-skills
