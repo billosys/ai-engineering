@@ -73,16 +73,37 @@ inputs and higher-scale gates still stop dependent advancement.
 
 ## Assignment history
 
-Current assignment: [iteration02](cc-prompt-iteration02.md), after independent
-review of partial iteration01 candidate `1c0c8acf`. Both prior prompts are preserved.
-S02-08 remains blocked by original-source inputs; accessible passage inspection
-and map/report corrections remain executable. All nine ledger rows stay open.
+Current assignment: [iteration03](cc-prompt-iteration03.md), after independent
+review of partial iteration02 candidate `bf02e970`. All prior prompts are preserved.
+S02-08 remains input-blocked; accessible citation/context and checker corrections
+remain executable. All nine ledger rows stay open.
 
 | Assignment | State | Scope and next owner |
 |---|---|---|
 | `cc-prompt.md`, 2026-10-09 | Returned partial at `db48d863`; independently reviewed, not accepted as complete | Initial artifacts delivered; F01–F05 and unavailable original readiness remain |
 | `cc-prompt-iteration01.md`, 2026-10-09; predecessor `cc-prompt.md` | Returned partial at `1c0c8acf`; scoped corrections reproduced, no slice acceptance | 37 complete-read records structurally reconcile; F02/F03/F04 corrected; F05 and 46 post-card reads remain |
-| `cc-prompt-iteration02.md`, 2026-10-09; predecessor `cc-prompt-iteration01.md` | Current; issued to Operator for relay | CC reads four full prepared articles, accounts for all 46 cards' passages/context and completes F05 recoverability; original readiness remains input-blocked |
+| `cc-prompt-iteration02.md`, 2026-10-09; predecessor `cc-prompt-iteration01.md` | Returned partial at `bf02e970`; independently reviewed, no slice acceptance | Four complete-file receipts and Brown antecedents retained; clause/context evidence, intended mapping and checker replay still incomplete |
+| `cc-prompt-iteration03.md`, 2026-10-09; predecessor `cc-prompt-iteration02.md` | Current; issued to Operator for relay | CC corrects 46-reference clause/context results, intended targets/completeness and committed link-check replay; original readiness remains input-blocked |
+
+### Iteration03 author readiness
+
+CDC reproduced strict all-row raw equality/uniqueness, full-path caveats, all 142
+hashes/physical boundaries, and all 46 table identity/reference/target joins.
+The map delta is exactly two Brown antecedents; no changed original/source input.
+Direct source witnesses distinguish theory HSL/HSV from identically named Okhsl/
+Okhsv code sections, show Brown's omitted Conclusion and the NCS comparison table,
+and confirm Oklab's HSV gamut qualification already lies in a mapped span.
+All five distinct table context bodies were inspected; article-level text alone
+cannot establish each cited clause's intended mapping. The committed link helper
+fails on its own regex string; a fence-aware review finds all 20 real links valid.
+See [current CDC review](cdc-verification.md#iteration02-independent-review--2026-10-09).
+
+The follow-up reuses CC's four whole-file receipts, inspects complete unique
+sections/context where needed, and joins every clause to all affected full paths.
+Shared results avoid repeating identical passages; no all-book, all-card-body,
+source mutation or original-fidelity assignment is inferred. Existing notes are
+sufficient for current clause results/code; no maintained validator or artifact
+schema is needed. The two-contributor gate and exact missing inputs remain.
 
 ### Iteration02 author readiness
 
@@ -150,6 +171,10 @@ performing 233 semantic reviews. Required prose/queries have separate extents
 and an existing evidence home. Author readiness is not execution or acceptance.
 
 ## Version History
+
+- 1.3 (2026-10-09): Reviewed partial iteration02 `bf02e970`; issued iteration03
+  for clause/context, intended target and committed checker corrections. Retained
+  nine open criteria, original-input gates and all prior reading attribution.
 
 - 1.2 (2026-10-09): Reviewed partial iteration01 `1c0c8acf`; issued iteration02
   for all 46 post cards' passage/context handoff and unfinished F05 evidence.

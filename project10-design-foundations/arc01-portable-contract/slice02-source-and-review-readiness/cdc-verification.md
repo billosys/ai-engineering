@@ -8,15 +8,16 @@ SOURCE: `dffa504e851b03b8e4746f1941068e4cc850b612`; accepted Slice01:
 
 ## Current verdict
 
-**Iteration01 partial packet reviewed; Slice02 remains open.** Current candidate
-`1c0c8acf89d5f8abba61399ac1b1d394b60c74a3` executes the iteration issued at
-`5a8eaccdc9902b42150afac87c0f37aba5dc2381`. F02/F03/F04 corrections are
-independently reproduced. The 37 Butterick complete-read records are present
-and structurally reconciled, with reading attributed to CC. F05's complete
-executable checks and precise guide/input extents remain incomplete. The next
-assignment is [iteration02](cc-prompt-iteration02.md), covering the 46 post cards
-and that evidence gap. All nine rows remain open; original readiness remains
-blocked. No Slice03 or full semantic/source-fidelity acceptance.
+**Iteration02 partial packet reviewed; Slice02 remains open.** Candidate
+`bf02e9709371a1ce0306f8f52d3d2a09c75dc7e9` executes iteration02 issued at
+`496c810ad251afc3b0f670420028884a9e1cc945`. Raw copies/caveats, all 142 target
+physical boundaries and all 46 table associations reproduce. Four full article
+reads remain CC attestation. F01's specific clause conclusions and F03's intended
+navigation/completeness remain incomplete; F05's first code block reproduces,
+but its committed link checker fails on code mistaken for a prose link.
+[Iteration03](cc-prompt-iteration03.md) assigns only these planning corrections.
+All nine rows remain open; original readiness is still input-blocked. No Slice03,
+semantic/source-fidelity acceptance, corpus reduction or source mutation follows.
 
 The following initial verdict and review remain historical at `db48d863`.
 CC did not propose completion.
@@ -278,3 +279,229 @@ unchanged/open; CC outputs and both prior prompts are unchanged. An attempted
 record patch used a non-matching context and made no edit; the corrected append
 is validated separately. The committed-tree scope/whitespace check is required
 after the review commit; these author checks are not independent plan acceptance.
+
+
+## Iteration02 independent review — 2026-10-09
+
+Reviewer: Sofie (CDC), separate from CC. Candidate `bf02e9709371a1ce0306f8f52d3d2a09c75dc7e9`;
+assignment `496c810ad251afc3b0f670420028884a9e1cc945`. SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`; accepted Slice01 and audit pins unchanged.
+This is independent bounded review, not independent reading of all four articles
+or any 233-card semantic acceptance. Prior reviews above remain historical.
+
+### Reproduced results and limits
+
+- Commit/path review: exactly seven authorized planning files, both required
+  trailers; `git diff 496c810 bf02e970 --check` passes. SOURCE remains clean for
+  tracked files; unrelated `knowledge/lfe/` and `project12-chcd-protocol/` remain.
+- Strict parsing of every actual JSONL line: 233 unique sorted paths exactly
+  equal the accepted index; every hash/literal identity/locator/reference/status
+  copy matches. Exact full-path caveat membership passes for all 233 cards.
+- Map delta against `496c810` is only separate line-30 targets on the two Brown
+  opening cards. All previous targets/raw assertions remain unchanged.
+- All 142 local target instances have correct pinned hashes and inclusive bounds:
+  37 complete Butterick documents/observed titles, 101 physical heading boundaries
+  (including quoted headings), four exact Brown paragraph targets. Physical
+  existence/boundaries do not establish the intended cited section; see F03.
+- All 46 current table paths, literal pairs, exact raw references and target
+  path/hash/span associations reconcile to JSONL. Their contexts reduce to five
+  distinct bodies used 12, 13, 11, 2 and 8 times. Full distinct text and all
+  reference/target projections were delivered; only the Brown pair has additional
+  paragraph-specific language. The generic per-article observations are useful
+  shared qualifications but not conclusions for every cited passage.
+- Replayed the exact two fenced Python blocks from committed execution notes.
+  The first returned all eight recorded PASS lines. Its predicates do not check
+  intended parents/clause coverage, and its sorted-only map assertion does not
+  itself prove uniqueness; CDC's stronger checks above do. The second exited 1:
+  `AssertionError` with the notes path, regex fragment `[^"\\\']+`, and
+  disposition `missing` (execution-notes published checker, line 26).
+  The regex inside its own fenced code was treated as a Markdown link. This is
+  a replay defect, not evidence of an actual broken prose link. Independently
+  skipping fenced/inline code finds 20 real local links, two fragments, all valid;
+  all seven files pass EOF/no-CRLF. Do not relabel that substituted check as a
+  successful replay of CC's published helper.
+- The primary block rechecks exact equality of all 16 DES table rows. The method
+  is unchanged. The 161-row source inventory and prior Butterick structural
+  evidence are retained at earlier review scope: their inputs are unchanged,
+  so no fresh inventory or whole-page reading is claimed.
+- Guide extents 37–97 (output contract) and 106–186 (concept-card verification)
+  cover the named sections completely. Precise receipts and executable raw-copy
+  checks improve F05. Historical failed-slurp input remains explicitly unavailable;
+  no retrospective transcript is invented. Reading receipts remain CC evidence.
+
+### Remaining findings
+
+**F01 — Partial contextual handoff (serious; S02-04/09).** The table mostly repeats
+one paragraph per article for materially different cited sections. For example,
+colour-contrast's 397–430 target receives the same HSL-history paragraph as colour
+mixing's 41–74; the row does not record its own contrast/tools context. Oklab's
+matrix/whitepoint/XYZ rows likewise share dataset caveats without a conclusion on
+their particular clauses. Iteration02 explicitly required specific inspected
+conclusions. Keep complete-file receipts and shared qualifications; add traceable
+clause-specific results, sharing identical clause results across full card paths.
+This is not a request to perform correctness review or re-read every file.
+
+**F03 — Matching headings omit intended hierarchy and complete clauses
+(correctness-grade; S02-03/04).** `chroma-vs-saturation.md` and `hsl.md` explicitly
+cite HSL under “Color spaces for color picking”, whose parent span is 104–298.
+Their 943–1136 HSL target is under “Source Code” (772–EOF), describing conversion
+to Okhsl (945). `hsv.md` similarly includes 840–942 under Source Code, describing
+Okhsv (842), as well as its intended 112–142 theory section. These are valid
+physical boundaries but false matches for the qualified theory citations. Remove
+those matches or explicitly distinguish supplemental context, preserving history.
+
+Brown's `typographic-rhythm-modular-scale.md` raw reference explicitly includes
+Conclusion, but no 352–357/section6 target or unresolved disposition exists. Its
+“tools—not dogma” qualification is at 356. `natural-colour-system.md` explicitly
+cites the comparison table, but only 53–84 is mapped; the actual Summary/table/
+subjective framing/footnotes are 278–298. Check all 46 references clause by clause,
+including unquoted prose locators, rather than treating these examples as the
+whole defect population. Oklab's HSV gamut limitation at 397 already belongs to
+the gamut card's 329–409 target; it needs a specific contextual conclusion, not
+an invented missing-span finding. Prior F03 replay established only named
+corrections and physical structure; this current intended-content review narrows
+any broader interpretation of “navigation resolved”.
+
+**F05 — Committed checker replay incomplete (serious; S02-07/09).** Retain the
+successful first-block replay and exact failed second-block receipt. Repair link
+extraction to distinguish code from prose, exercise a real missing-link negative
+control, and replay after all notes/code are present and from committed bytes.
+Keep PASS wording aligned to actual predicates. The current helper does not
+establish the required intended-parent or complete-clause/context checks.
+
+F02's caveat correction and F04's DES allocation remain reproduced within their
+actual scopes. None of these findings requires original acquisition to repair.
+Original editions/captures/lineage/fidelity remain a separate S02-08 input block.
+
+### Ledger walk and next handoff
+
+All nine statuses remain open; no row criterion is weakened or deferred.
+S02-01 has precise intake receipts but unresolved contextual/check claims;
+S02-02 retains identity limits, with the current local-navigation claim too broad;
+S02-03 raw-copy population passes but intended typed mappings need repair;
+S02-04 lacks complete clause-specific contextual results;
+S02-05's current “resolved locators” action needs reconciliation to these defects;
+S02-06's unchanged method/DES evidence remains scoped, without a whole-slice
+acceptance decision; S02-07 preservation/actual links pass but the published
+committed helper fails; S02-08 lacks originals/captures/fidelity;
+S02-09 partial accounting is candid, but overstates completion of contextual
+mapping/check replay. Correct local evidence in iteration03; retain all remaining
+original-input and independent gates. No Slice03 opening under Expedited Mode
+until full acceptance. Arc sequence and full-corpus/five-dimension scope unchanged.
+
+### Recoverable reviewer check
+
+The following inline Python was independently run from PLANNING (exit 0). It
+adds uniqueness/full-path membership, physical-boundary and table joins to CC's
+first-block replay, and explicitly uses a different fence-aware link check.
+No maintained validator or source change is introduced.
+
+```python
+from pathlib import Path
+import json, re, hashlib, collections, subprocess, urllib.parse
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+S=Path('/Users/oubiwann/lab/billosys/ai-engineering')
+L=P/'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness'
+def strict(p):
+ rows=[]
+ for n,line in enumerate(p.read_text().splitlines(),1):
+  assert line.strip(),(p,n,'blank')
+  x=json.loads(line); assert isinstance(x,dict),(p,n,'non-object'); rows.append(x)
+ return rows
+m=strict(L/'artifacts/locator-map.jsonl')
+i=strict(L.parent/'slice01-scope-and-portability-contract/artifacts/card-source-index.jsonl')
+I={x['path']:x for x in i}
+assert len(m)==len(i)==len(I)==233
+assert [x['card_path'] for x in m]==sorted(I)
+for x in m:
+ y=I[x['card_path']]; assert x['card_sha256']==y['sha256']
+ assert x['primary_source_raw']=={k:y['source_fields_raw'][k] for k in ('source','authors')}
+ a=x['asserted_locators_raw']
+ assert all(a[k]==y['source_fields_raw'][k] for k in ('chapter','pdf_page','section'))
+ assert all(a[k]==y[k] for k in ('source_reference_raw','source_reference_status'))
+ group=x['card_path'].split('/')[3]
+ prefix={'art-and-visual-perception':'ARN','munsell-colour-system':'CLE','the-new-typography':'TSCH'}.get(group)
+ expected={f'C-{prefix}-ORIGINAL-EDITION',f'C-{prefix}-PAGE-BASIS','C-BOOK-FIDELITY'} if prefix else ({'C-BUTTERICK-CAPTURE-IDENTITY','C-BUTTERICK-CAPTURE-FIDELITY'} if group=='practical-typography' else {'C-WEB-CAPTURE-IDENTITY','C-WEB-CAPTURE-FIDELITY'})
+ assert set(x['caveat_ids'])==expected,(x['card_path'],'caveats')
+print('PASS 233 unique sorted exact raw copies; full-path caveat membership')
+oldrows=[json.loads(s) for s in subprocess.check_output(['git','show','496c810:project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/locator-map.jsonl'],cwd=P,text=True).splitlines()]
+changed=[]
+for x,y in zip(m,oldrows):
+ if x!=y:
+  t=x['prepared_targets'][0]; assert t['locator_value']['line_start']==t['locator_value']['line_end']==30
+  z=dict(x); z['prepared_targets']=x['prepared_targets'][1:]; assert z==y
+  changed.append(x['card_path'])
+assert changed==['knowledge/design/concept-cards/posts/golden-ratio.md','knowledge/design/concept-cards/posts/musical-interval-typographic-ratio.md']
+print('PASS map delta only two Brown line-30 targets; all other row bytes/values retained')
+def heading(s): return re.match(r'^(#{1,6})\s+(.*)',re.sub(r'^(?:>\s*)+','',s))
+counts=collections.Counter()
+for x in m:
+ for t in x['prepared_targets']:
+  b=(S/t['path_or_uri']).read_bytes(); lines=b.decode().splitlines(); v=t['locator_value']
+  assert hashlib.sha256(b).hexdigest()==t['snapshot_sha256']
+  start,end=v['line_start'],v['line_end']; assert 1<=start<=end<=len(lines)
+  if t['locator_kind']=='local-markdown-document':
+   counts['documents']+=1; assert start==1 and end==len(lines)
+   assert v['page_title']==re.search(r'^title: "(.*)"$',b.decode(),re.M)[1]
+  elif 'paragraph_role' in v:
+   counts['paragraphs']+=1; assert start==end and start in (30,109)
+   assert lines[start-1].startswith('We have all heard of the golden mean' if start==30 else 'This and other meaningful ratios')
+  else:
+   counts['headings']+=1; h=heading(lines[start-1]); assert h and v['heading'] in h[2]
+   assert len(h[1])==v['heading_level']
+   boundary=next((n for n in range(start,len(lines)) if (a:=heading(lines[n])) and len(a[1])<=len(h[1])),len(lines))
+   assert end==boundary,(x['card_path'],v)
+assert counts=={'documents':37,'paragraphs':4,'headings':101}
+print('PASS 142 target hashes/bounds: 37 documents, 101 heading boundaries, 4 Brown paragraphs')
+posts={x['card_path']:x for x in m if '/posts/' in x['card_path']}
+notes=(L/'artifacts/execution-notes.md').read_text()
+section=notes.split('### 46-card complete association and contextual result\n')[1].split('Accounting after')[0]
+records=[s.strip()[2:-2].split(' | ') for s in section.splitlines() if s.startswith('| `knowledge/design/concept-cards/posts/')]
+assert len(records)==len(posts)==46 and {a[0].strip('`') for a in records}==set(posts)
+contexts=collections.Counter()
+for a in records:
+ x=posts[a[0].strip('`')]; pair=x['primary_source_raw']
+ assert json.loads(a[1].strip('`'))==[pair['source'],pair['authors']]
+ assert json.loads(a[2].strip('`'))==x['asserted_locators_raw']['source_reference_raw']
+ targets=a[3].split('<br>'); assert len(targets)==len(x['prepared_targets'])
+ for text,t in zip(targets,x['prepared_targets']):
+  v=t['locator_value']; assert f"`{t['path_or_uri']}`" in text and f"`{t['snapshot_sha256']}`" in text
+  assert f"{v['line_start']}–{v['line_end']}" in text
+ contexts[a[4]]+=1
+assert sorted(contexts.values())==[2,8,11,12,13]
+print('PASS 46 table identity/reference/target associations; ONLY 5 distinct context bodies:',sorted(contexts.values()))
+changed_paths=subprocess.check_output(['git','diff-tree','--no-commit-id','--name-only','-r','bf02e970'],cwd=P,text=True).splitlines()
+assert len(changed_paths)==7
+links=fragments=0
+for name in changed_paths:
+ p=P/name; b=p.read_bytes(); assert b.endswith(b'\n') and b'\r\n' not in b
+ if p.suffix!='.md': continue
+ text=re.sub(r'^```[^\n]*\n.*?^```\s*$', '',p.read_text(),flags=re.M|re.S)
+ text=re.sub(r'`[^`\n]*`','',text)
+ for dest in re.findall(r'\[[^\]]*\]\(([^)]+)\)',text):
+  dest=dest.strip().split()[0].strip('<>')
+  if re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:',dest) or dest.startswith('//'): continue
+  path,sep,frag=dest.partition('#'); target=(p.parent/urllib.parse.unquote(path)).resolve() if path else p
+  assert target.is_file(),(name,dest); links+=1
+  if sep and frag:
+   fragments+=1; content=target.read_text(); slugs=set()
+   for h in re.findall(r'^#{1,6}\s+(.+?)\s*#*$',content,re.M):
+    h=re.sub(r'\[([^\]]+)\]\([^)]*\)',r'\1',h).strip().lower()
+    slugs.add(re.sub(r'[^\w-]','',re.sub(r'\s+','-',h)))
+   ids=set(re.findall(r'\bid=["\']([^"\']+)',content))
+   assert urllib.parse.unquote(frag) in slugs|ids,(name,dest)
+print('PASS 7 newlines; actual prose local links/fragments:',links,fragments)
+```
+
+Reviewer handoff self-check: exactly six reviewer paths; all protected CC
+supporting artifacts/method/closing report and issued prompts are byte-identical
+to `bf02e970`; all nine ledger criterion/status rows are unchanged/open. Six
+files pass newlines; 34 actual local links and six fragments resolve. The embedded
+reviewer block replays from this record with exit 0. `git diff --check` passes.
+Initial aggregate output was truncated; bounded data/context projections recovered
+the affected review coverage. A guide read attempted from PLANNING failed because
+that source path does not exist there; the complete requested SOURCE section was
+then delivered. Neither failure was counted as successful reading. Original
+fidelity, media/browser/accessibility and package/semantic checks remain unrun.
+These are planning-author self-checks, not independent acceptance of this prompt.
+Committed-tree scope/whitespace verification follows the explicit-file commit.

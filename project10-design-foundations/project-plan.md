@@ -102,16 +102,14 @@ each near execution after resolving its dependencies. The active
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
 Current status: active; Arc01 Slice01 closed after independent CDC acceptance
-of iteration02 at `9cc20338`, with all seven rows done. Current assignment:
-[Slice02 iteration02](arc01-portable-contract/slice02-source-and-review-readiness/cc-prompt-iteration02.md),
-opened under Operator-selected Expedited Mode on 2026-10-09. Its source gaps and
-the complete 233-card semantic review remain binding downstream work.
-The partial Slice02 iteration01 candidate `1c0c8acf` received independent review;
-caveat/locator/DES corrections are reproduced and 37 Butterick complete-read
-records reconcile structurally. Iteration02 completes the 46 post cards' passage
-and context handoff and the remaining reproducibility/intake evidence. Original-
-source readiness remains blocked in this same slice. No release
-criterion or dependent Slice03 gate is closed by the partial packet.
+of `9cc20338`, with all seven rows done. Current assignment:
+[Slice02 iteration03](arc01-portable-contract/slice02-source-and-review-readiness/cc-prompt-iteration03.md),
+under Operator-selected Expedited Mode. CDC reviewed partial iteration02
+`bf02e970`: all 233 raw copies and 142 target hashes/boundaries reproduce;
+CC's four article reads remain attributed. Passage-specific clause conclusions,
+intended hierarchy/completeness and committed link-check replay need correction.
+Required original editions/captures and the complete five-dimension semantic
+review remain binding. No dependent Slice03 or release gate is closed.
 See the [CDC acceptance](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance);
 this evidence/proposal acceptance does not adopt final teaching formulations or
 close any release criterion. Project09 may be consulted for planning
@@ -176,6 +174,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.10 (2026-10-09): Reviewed partial Slice02 iteration02 `bf02e970`; issued
+  iteration03 for passage-specific clause evidence, intended targets/completeness
+  and committed checker replay. Retained original-readiness and release gates.
 
 - 1.9 (2026-10-09): Reviewed partial Slice02 iteration01 `1c0c8acf`; issued
   iteration02 for all 46 post-card passages and remaining evidence-log gaps.
