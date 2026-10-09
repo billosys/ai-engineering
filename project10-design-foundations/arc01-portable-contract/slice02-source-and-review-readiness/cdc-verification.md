@@ -8,16 +8,15 @@ SOURCE: `dffa504e851b03b8e4746f1941068e4cc850b612`; accepted Slice01:
 
 ## Current verdict
 
-**Iteration02 partial packet reviewed; Slice02 remains open.** Candidate
-`bf02e9709371a1ce0306f8f52d3d2a09c75dc7e9` executes iteration02 issued at
-`496c810ad251afc3b0f670420028884a9e1cc945`. Raw copies/caveats, all 142 target
-physical boundaries and all 46 table associations reproduce. Four full article
-reads remain CC attestation. F01's specific clause conclusions and F03's intended
-navigation/completeness remain incomplete; F05's first code block reproduces,
-but its committed link checker fails on code mistaken for a prose link.
-[Iteration03](cc-prompt-iteration03.md) assigns only these planning corrections.
-All nine rows remain open; original readiness is still input-blocked. No Slice03,
-semantic/source-fidelity acceptance, corpus reduction or source mutation follows.
+**Iteration03 reviewed; three bounded criteria accepted, Slice02 still open.**
+Candidate `80813b2e2b1ebd6b3bc714e9a4b86478b21cf6ae` executes iteration03 issued
+at `96137b1fb68ff7f57993e5a0b2a293d85c94cafb`. S02-03/05/06 are independently
+done for exact locator accounting, source-input action planning and the review
+procedure. Six rows remain open. The corrected map and committed checker replay
+reproduce, but a secondary join/role error, inaccurate guide receipts and weak
+exact-join validation remain. [Iteration04](cc-prompt-iteration04.md) scopes those
+planning corrections and protects accepted work. Missing originals/captures/
+lineage/fidelity still block S02-08; no Slice03 or full semantic acceptance.
 
 The following initial verdict and review remain historical at `db48d863`.
 CC did not propose completion.
@@ -505,3 +504,206 @@ then delivered. Neither failure was counted as successful reading. Original
 fidelity, media/browser/accessibility and package/semantic checks remain unrun.
 These are planning-author self-checks, not independent acceptance of this prompt.
 Committed-tree scope/whitespace verification follows the explicit-file commit.
+
+
+## Iteration03 independent review — 2026-10-09
+
+Sofie (CDC), separate from CC, Two-Contributor Workflow. Candidate
+`80813b2e2b1ebd6b3bc714e9a4b86478b21cf6ae`, assignment `96137b1f`; SOURCE
+`dffa504e851b03b8e4746f1941068e4cc850b612`. Accepted Slice01/audit pins retained.
+
+### Reproduced and retained evidence
+
+The candidate has exactly seven authorized files and both trailers. Its map
+changes five rows: remove HSL code 943–1136 twice and HSV code 840–942 once;
+add NCS Summary 278–298 and Brown Conclusion 352–357. The five appended mapping
+notes explain those changes. Raw/card/source identity fields and caveats are
+unchanged. The original captures/page bases remain unresolved.
+
+The exact committed inline checker executes with exit 0 and all eight published
+PASS lines, including 233 unique raw copies/eight pairs, full-path caveats,
+104 post/141 total hashes/bounds, hierarchy, known omission/clipping witnesses,
+83 literal parsed parts across 46 references, DES equality, 26 local links/three
+fragments and seven EOF/no-CRLF files. PASS wording about exact joins/roles exceeds
+those predicates; see the failure witness below. Its HEAD-based file selection is
+applicable to this candidate at this run, not arbitrary later reviewer commits.
+
+A stronger independent join check matches all 44 unique unit path/hash/span
+identities to the actual map and every reverse full-card membership. All 44
+observations and all 83 clause joins were delivered/inspected. Per-clause intended
+article checking finds one cross-source mismatch (secondary hsl.md, U05). This
+is substantially improved F01 evidence; full article reading remains CC attestation.
+No original comparison or all-card correctness/support review is claimed.
+
+Unchanged 161-file source inventory, earlier Butterick physical/identity checks,
+raw baseline and F02/F04 evidence are retained at their earlier records/revisions:
+accepted inputs, inventory/method and source bytes are unchanged; the five map
+changes do not affect them. This is retention, not a fresh full inventory or
+Butterick read. Current actions and complete method were inspected against the
+project contract. Method's exact 16 DES rows compare equal to accepted Slice01.
+
+### Remaining findings and contrary checks
+
+**F03 — Secondary HSL join (correctness-grade; S02-02/04).** In the notes' hsl.md
+row, the raw CSS-Tricks “HSL Values” clause joins U05 and U32. U05 is Ottosson
+HSL theory (143–178); only U32 is CSS-Tricks HSL Values (97–125). The primary
+clause's U05/U06 join is correct and the JSONL map itself correctly separates the
+secondary citation. Repair the clause join, preserving the accepted map.
+
+**F01 — Shared-unit role (serious; S02-02/04).** U32 calls the CSS-Tricks unit
+secondary, but its reverse membership includes hsl-css-syntax.md, whose primary
+pair is Drasner. Use a source-neutral unit observation and primary/secondary roles
+at each card/clause join. Article source statements remain unverified domain claims.
+
+**F05 — Exact join validation (serious; S02-07/09).** The checker verifies clause
+strings/counts and global unit-ID existence, not every claimed clause-to-map/
+source relation. In memory only, replacing the secondary HSL join's U32 with
+unrelated Brown Conclusion U43 still returns all eight PASS lines from the exact
+published checker. The contrary input passes despite being an ineligible source
+unit for that card/clause. No file was changed. The added independent check
+rejects the actual U05 cross-source assignment. Validate eligibility and intended
+source/section/role for every join and run bad cases through the same predicate.
+The repaired prose-link checker itself now reproduces; retain that success.
+
+**F05 — Source guide receipts (serious; S02-01/09).** Notes report SOURCE guide
+lengths 87/109/220; direct pinned-blob and current-file comparisons establish
+94/108/231 for locator/output/verification guides. Exact installed counterparts
+match those SOURCE hashes too. Therefore those counts cannot stand as exact
+SOURCE coverage receipts. Preserve history, recover actual earlier read path/range
+if possible, otherwise label unknown; record fresh bounded reads/readback at the
+actual pinned paths. The issued iteration03 prompt requests knowledge/...;
+notes incorrectly attribute a request for docs/... to that prompt. The failed
+path attempt is execution history, not evidence that the issued route was stale.
+Hashes: locator `6d69bd5ff0445af357b1ca39f442db40e25cbf348f7228f1be35484e8019e1ac`;
+output `7f93c35e5db153568793002b1199ea8ae3cb61d8fa2ca5e2a15fca4bd2fbbe15`;
+verification `095c897f934f753ba5aa1f5b7f40d22a5134f52eb8b71545e9186de4deb396d3`.
+
+### Ledger acceptance and remaining work
+
+| Row | CDC disposition at 80813b2e | Scope and reason |
+|---|---|---|
+| S02-01 | open | Guide receipts contradict actual SOURCE extents; fresh truthful intake required |
+| S02-02 | open | Primary identities/limits retained, but secondary clause/role evidence needs correction |
+| S02-03 | done — reproduced | All 233 raw copies and corrected typed map/caveats account for the baseline; no original-fidelity claim |
+| S02-04 | open | Unit-specific context improved; secondary join/role remain inaccurate |
+| S02-05 | done — reproduced | Every required book/capture/lineage/locator/conversion/media gap has a concrete input, owner, allowed action and falsifiable re-entry; actual acquisition is S02-08 |
+| S02-06 | done — reproduced | Complete procedure covers every claim/five dimensions, relationship/CQ components, revisions/corrections, repeated eight live files and all DES findings; examples stay illustrative |
+| S02-07 | open | Preservation/actual links/replay pass; published exact-join validation misses the contrary witness |
+| S02-08 | open — input-blocked | Missing originals for 150 book-backed cards and immutable captures/lineage/fidelity for 83 web-backed cards |
+| S02-09 | open | Partial reporting preserves original gates but overstates joins/receipts/check scope |
+
+These acceptances meet the written bounded criteria; they do not require or claim
+later semantic execution. The remaining defects are planning evidence repairs in
+iteration04, without redoing whole-file reads or accepted map/actions/method work.
+No weakening, deferral, source acquisition or Slice03 opening. Expedited Mode
+continues within remaining gates and the five-refinement budget.
+
+### Recoverable stronger reviewer check
+
+The following was executed from PLANNING, alongside exact committed-checker replay.
+It prints an expected finding rather than falsely returning a whole-packet pass.
+The first draft assumed only target fields could change and failed on authorized
+mapping-note additions; the corrected version separately inspected those notes
+and retains all other-field equality. Truncated/grouped displays and mistaken
+PLANNING-relative source reads were recovered with bounded SOURCE/data projections;
+failed delivery was not counted as reading. No CC artifact was edited by CDC.
+
+```python
+from pathlib import Path
+import json,re,subprocess,hashlib,collections
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+S=Path('/Users/oubiwann/lab/billosys/ai-engineering')
+L=P/'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness'
+rows=[json.loads(s) for s in (L/'artifacts/locator-map.jsonl').read_text().splitlines()]
+old=[json.loads(s) for s in subprocess.check_output(['git','show','96137b1f:'+str((L/'artifacts/locator-map.jsonl').relative_to(P))],cwd=P,text=True).splitlines()]
+changes=[]
+for a,b in zip(rows,old):
+ if a==b:continue
+ aa=dict(a);bb=dict(b);aa.pop('prepared_targets');bb.pop('prepared_targets');aa.pop('mapping_notes');bb.pop('mapping_notes');assert aa==bb
+ before={json.dumps(x,sort_keys=True) for x in b['prepared_targets']};after={json.dumps(x,sort_keys=True) for x in a['prepared_targets']}
+ changes.append((a['card_path'],[(json.loads(t)['locator_value']['line_start'],json.loads(t)['locator_value']['line_end']) for t in after-before],[(json.loads(t)['locator_value']['line_start'],json.loads(t)['locator_value']['line_end']) for t in before-after]))
+assert len(changes)==5
+print('Exact map delta (card, additions, removals):',changes)
+notes=(L/'artifacts/execution-notes.md').read_text()
+us=notes.split('### Iteration03 unique source-unit inspection results (CC evidence)\n')[1].split('### Iteration03 exact clause-to-unit')[0]
+units={}
+for line in us.splitlines():
+ if not re.match(r'^\| U\d{2} \|',line):continue
+ a=line.split(' | ');uid=a[0].removeprefix('| ');path=a[1].strip('`');sha=a[2].strip('`');span=re.match(r'(\d+)–(\d+);',a[3]);start,end=map(int,span.groups())
+ assert uid not in units;assert hashlib.sha256((S/path).read_bytes()).hexdigest()==sha
+ units[uid]=(path,start,end)
+ cardpaths=re.findall(r'`(knowledge/design/concept-cards/posts/[^`]+)`',a[-1])
+ actual={x['card_path'] for x in rows if any((t['path_or_uri'],t['locator_value']['line_start'],t['locator_value']['line_end'])==(path,start,end) for t in x['prepared_targets'])}
+ assert set(cardpaths)==actual,(uid,cardpaths,actual)
+keys={(t['path_or_uri'],t['locator_value']['line_start'],t['locator_value']['line_end']) for x in rows if '/posts/' in x['card_path'] for t in x['prepared_targets']}
+assert len(units)==len(set(units.values()))==44 and set(units.values())==keys
+print('PASS 44 unique unit path/hash/span identities and every reverse full-card association')
+cs=notes.split('### Iteration03 exact clause-to-unit joins for the 46 post references\n')[1].split('### Iteration03 complete retained validation')[0]
+clause_count=0;wrong=[]
+for line in cs.splitlines():
+ if not line.startswith('| `knowledge/design/concept-cards/posts/'):continue
+ a=line.split(' | ');card=a[0].removeprefix('| ').strip('`');row=next(x for x in rows if x['card_path']==card)
+ primary=next(t['path_or_uri'] for t in row['prepared_targets'] if not t['locator_value'].get('citation_role'))
+ for part in a[1].split('<br>'):
+  clause,tail=part.rsplit(' => ',1);ids=re.findall(r'\bU\d{2}\b',tail);assert ids
+  clause_count+=1
+  for uid in ids:
+   assert uid in units and units[uid] in {(t['path_or_uri'],t['locator_value']['line_start'],t['locator_value']['line_end']) for t in row['prepared_targets']}
+   expected='knowledge/design/sources/md/posts/working-with-colours.md' if 'Working With Colors Guide' in clause else primary
+   if units[uid][0]!=expected:wrong.append((card,clause,uid,units[uid][0],expected))
+assert clause_count==83
+assert len(wrong)==1 and wrong[0][2]=='U05'
+print('FAIL intended per-clause source identity:',wrong)
+# The candidate checker merely checks unit-ID existence; replacing a valid unit
+# with any other known ID preserves its generic membership/count checks.
+hsl_line=next(s for s in cs.splitlines() if s.startswith('| `knowledge/design/concept-cards/posts/hsl.md`'))
+forged=hsl_line.replace('=> U05, U32 (secondary','=> U05, U43 (secondary')
+assert forged.count('=> U')==hsl_line.count('=> U') and set(re.findall(r'\bU\d{2}\b',forged))<=set(units)
+print('Negative witness: unrelated U43 passes the published count/unit-ID membership predicates')
+for name in ['knowledge/document-extraction/guides/09-locator-model.md','knowledge/document-extraction/guides/03-output-contract.md','knowledge/concept-cards/guides/08-validation-verification.md']:
+ b=(S/name).read_bytes();assert b==subprocess.check_output(['git','show','dffa504e:'+name],cwd=S)
+ print('Pinned SOURCE guide:',name,len(b.decode().splitlines()),hashlib.sha256(b).hexdigest())
+```
+
+The complete contrary-check replay below returned all eight PASS lines after
+substitution (no disk changes); the Path method was restored in finally:
+
+```python
+from pathlib import Path
+import subprocess, re, contextlib, io
+name='project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/execution-notes.md'
+text=subprocess.check_output(['git','show','80813b2e:'+name],text=True)
+code=re.search(r'```python\n(.*?)\n```',text.split('### Iteration03 complete retained validation and prose-link checker\n')[1],re.S)[1]
+forged=text.replace('=> U05, U32 (secondary cited article; distinct from primary pair)',
+                    '=> U05, U43 (secondary cited article; distinct from primary pair)')
+assert forged!=text
+original=Path.read_text
+try:
+    def read(path,*args,**kwargs):
+        if path.resolve()==(Path.cwd()/name).resolve(): return forged
+        return original(path,*args,**kwargs)
+    Path.read_text=read
+    output=io.StringIO()
+    with contextlib.redirect_stdout(output):
+        exec(compile(code,'80813b2e-checker:in-memory-U43-substitution','exec'),{})
+    assert len(output.getvalue().splitlines())==8
+    print('Published checker accepted unrelated U43; all eight PASS lines remain green')
+finally:
+    Path.read_text=original
+```
+
+The contrary checker is intentionally candidate-dependent (HEAD was 80813b2e,
+clean tracked tree at execution); later reviewer files change its allowlist
+selection. Replay that exact historical experiment in its candidate checkout,
+not against unrelated HEAD edits. The stronger review block above remains scoped
+to candidate map/notes; revised joins will require affected checks at their new
+revision. No new acceptance is inferred from running a historical block later.
+
+Reviewer handoff self-check: six reviewer paths; protected CC supporting artifacts,
+method/input actions/map/closing report and issued prompts remain byte-identical
+to 80813b2e. All nine criteria/verifiers/significance/origins are unchanged;
+S02-03/05/06 alone changed to done, six remain open. Six EOF/no-CRLF files,
+40 local links and ten fragments resolve; the stronger reviewer block replays
+with its expected single finding. `git diff --check` passes. These are author
+self-checks of reviewer/planning records, not independent acceptance of this
+new prompt. Committed-tree exact scope and whitespace checks follow the commit.

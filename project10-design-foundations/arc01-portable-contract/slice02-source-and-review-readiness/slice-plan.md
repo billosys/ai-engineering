@@ -73,17 +73,40 @@ inputs and higher-scale gates still stop dependent advancement.
 
 ## Assignment history
 
-Current assignment: [iteration03](cc-prompt-iteration03.md), after independent
-review of partial iteration02 candidate `bf02e970`. All prior prompts are preserved.
-S02-08 remains input-blocked; accessible citation/context and checker corrections
-remain executable. All nine ledger rows stay open.
+Current assignment: [iteration04](cc-prompt-iteration04.md), after independent
+review of iteration03 candidate `80813b2e`. All issued prompts are preserved.
+S02-03/05/06 are independently done for their bounded criteria; six rows remain
+open. S02-08 is input-blocked; remaining join/role/receipt checks are executable.
 
 | Assignment | State | Scope and next owner |
 |---|---|---|
 | `cc-prompt.md`, 2026-10-09 | Returned partial at `db48d863`; independently reviewed, not accepted as complete | Initial artifacts delivered; F01–F05 and unavailable original readiness remain |
 | `cc-prompt-iteration01.md`, 2026-10-09; predecessor `cc-prompt.md` | Returned partial at `1c0c8acf`; scoped corrections reproduced, no slice acceptance | 37 complete-read records structurally reconcile; F02/F03/F04 corrected; F05 and 46 post-card reads remain |
 | `cc-prompt-iteration02.md`, 2026-10-09; predecessor `cc-prompt-iteration01.md` | Returned partial at `bf02e970`; independently reviewed, no slice acceptance | Four complete-file receipts and Brown antecedents retained; clause/context evidence, intended mapping and checker replay still incomplete |
-| `cc-prompt-iteration03.md`, 2026-10-09; predecessor `cc-prompt-iteration02.md` | Current; issued to Operator for relay | CC corrects 46-reference clause/context results, intended targets/completeness and committed link-check replay; original readiness remains input-blocked |
+| `cc-prompt-iteration03.md`, 2026-10-09; predecessor `cc-prompt-iteration02.md` | Returned at `80813b2e`; independently reviewed, S02-03/05/06 accepted, slice still open | Map corrections and committed replay reproduce; secondary join/role, guide receipts and join-check strength remain |
+| `cc-prompt-iteration04.md`, 2026-10-09; predecessor `cc-prompt-iteration03.md` | Current; issued to Operator for relay | CC corrects remaining joins/roles/receipts and validates exact clause-unit relations; accepted artifacts protected; original readiness remains input-blocked |
+
+### Iteration04 author readiness
+
+CDC replayed the exact committed checker (eight PASS lines), inspected all 44
+unit observations and all 83 raw clause joins, independently matched every unit's
+metadata/reverse card membership to the map, and checked the five map deltas.
+Only the secondary hsl.md join has an intended-source mismatch: U05 refers to
+Ottosson while that clause names CSS-Tricks. U32's shared observation also calls
+it universally secondary despite a primary Drasner card. A controlled in-memory
+U32→U43 substitution passes the published full checker, demonstrating its exact
+join-coverage gap; no file was mutated. Pinned/source and installed guide bytes
+are equal and have actual extents 94/108/231, contradicting the recorded counts.
+
+The [review](cdc-verification.md#iteration03-independent-review--2026-10-09)
+provides the source witnesses and accepted/remaining criterion boundaries.
+Locator identity/intended content and recoverable-result guidance require exact
+clause-to-unit relations and honest receipts. The follow-up uses the existing
+notes/tables/inline code with eligible-target and source/role predicates; no new
+schema or maintained validator. Correct sources/ranges and contrasting wrong-ID/
+wrong-source/role cases are concrete. Prior article reads and accepted map/actions/
+method remain protected; source preparation and full semantics are excluded.
+The next execution is refinement pass four of the five-pass budget.
 
 ### Iteration03 author readiness
 
@@ -171,6 +194,10 @@ performing 233 semantic reviews. Required prose/queries have separate extents
 and an existing evidence home. Author readiness is not execution or acceptance.
 
 ## Version History
+
+- 1.4 (2026-10-09): Independently accepted S02-03/05/06 at `80813b2e` and
+  issued iteration04 for remaining join/role, guide-receipt and checker gaps.
+  Preserved six open criteria, original readiness and the five-pass budget.
 
 - 1.3 (2026-10-09): Reviewed partial iteration02 `bf02e970`; issued iteration03
   for clause/context, intended target and committed checker corrections. Retained

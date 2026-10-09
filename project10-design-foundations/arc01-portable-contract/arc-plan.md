@@ -27,7 +27,7 @@ Project09 audit artifacts are consumed at planning commit
 | Slice | Capability | Dependency and state |
 |---|---|---|
 | slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Closed; CDC accepted `9cc20338`; all seven rows done |
-| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Open; partial iteration02 `bf02e970` reviewed; iteration03 issued; nine rows open; original readiness blocked |
+| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Open; iteration03 `80813b2e` reviewed; S02-03/05/06 done, six rows open; iteration04 issued; original readiness blocked |
 | slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Planned after accepted Slice02; no prompt issued |
 
 Slice01 is closed and Slice02 is detailed. Slice02 must follow actual source findings: record
@@ -72,13 +72,13 @@ Arc closure needs its own composition demonstration and attributed independent
 gate. Do not pre-create close or verification records.
 
 Current assignment:
-[`slice02-source-and-review-readiness/cc-prompt-iteration03.md`](slice02-source-and-review-readiness/cc-prompt-iteration03.md).
-The [Slice02 review](slice02-source-and-review-readiness/cdc-verification.md#iteration02-independent-review--2026-10-09)
-records partial iteration02 `bf02e970`: raw copies, caveats and 142 target physical
-boundaries reproduce; four full article reads remain CC attestation. Iteration03
-resolves per-clause contextual conclusions, intended hierarchy/missing clauses,
-and a committed checker replay failure. Missing originals/captures keep S02-08
-and A01-02 open. No scope or arc-sequence change follows.
+[`slice02-source-and-review-readiness/cc-prompt-iteration04.md`](slice02-source-and-review-readiness/cc-prompt-iteration04.md).
+The [Slice02 review](slice02-source-and-review-readiness/cdc-verification.md#iteration03-independent-review--2026-10-09)
+records `80813b2e`: accepted corrected locator accounting, source-input action
+planning and review procedure (S02-03/05/06). Six rows remain open. Iteration04
+repairs remaining secondary HSL joins/roles, guide receipts and insufficient
+clause-validation predicates. The original-readiness gate S02-08 and A01-02 stay
+open; no scope or arc-sequence change or Slice03 advancement follows.
 Slice02 opened on 2026-10-09; its initial assignment produces planning evidence
 only and keeps required unresolved original-source gaps as an explicit readiness
 gate. Slice01
@@ -95,6 +95,10 @@ scope, source baseline, evidence requirements or adopted design; local formattin
 and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
+
+- 1.8 (2026-10-09): Reviewed iteration03 `80813b2e`; accepted S02-03/05/06
+  as bounded deliverables and issued iteration04. Original readiness and arc
+  composition remain open; no scope or sequence change.
 
 - 1.7 (2026-10-09): Reviewed partial Slice02 iteration02 `bf02e970`; issued
   iteration03 for clause/context and checker corrections. Source-readiness and

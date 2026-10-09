@@ -102,14 +102,13 @@ each near execution after resolving its dependencies. The active
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
 Current status: active; Arc01 Slice01 closed after independent CDC acceptance
-of `9cc20338`, with all seven rows done. Current assignment:
-[Slice02 iteration03](arc01-portable-contract/slice02-source-and-review-readiness/cc-prompt-iteration03.md),
-under Operator-selected Expedited Mode. CDC reviewed partial iteration02
-`bf02e970`: all 233 raw copies and 142 target hashes/boundaries reproduce;
-CC's four article reads remain attributed. Passage-specific clause conclusions,
-intended hierarchy/completeness and committed link-check replay need correction.
-Required original editions/captures and the complete five-dimension semantic
-review remain binding. No dependent Slice03 or release gate is closed.
+of `9cc20338`. Slice02 iteration03 `80813b2e` received independent review:
+S02-03/05/06 are done for locator accounting, input-action planning and the review
+procedure. Six rows remain open, including the original-readiness gate S02-08.
+Current assignment is [iteration04](arc01-portable-contract/slice02-source-and-review-readiness/cc-prompt-iteration04.md)
+under Operator-selected Expedited Mode: correct remaining secondary citation joins,
+role/intake receipts and the clause validator. The 233-card/five-dimension semantic
+review remains binding downstream work. No Slice03 or release gate is closed.
 See the [CDC acceptance](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance);
 this evidence/proposal acceptance does not adopt final teaching formulations or
 close any release criterion. Project09 may be consulted for planning
@@ -174,6 +173,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.11 (2026-10-09): Reviewed Slice02 iteration03 `80813b2e`; independently
+  accepted S02-03/05/06 and issued bounded iteration04 for remaining joins,
+  roles and receipts/checker evidence. Original readiness and release gates stay open.
 
 - 1.10 (2026-10-09): Reviewed partial Slice02 iteration02 `bf02e970`; issued
   iteration03 for passage-specific clause evidence, intended targets/completeness
