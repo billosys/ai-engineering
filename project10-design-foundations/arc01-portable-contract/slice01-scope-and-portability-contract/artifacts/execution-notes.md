@@ -182,7 +182,7 @@ No full fidelity claim follows from these identifying passages.
   Audit bytes matched the pinned blob as recorded above. No outside-scope path
   was staged. The closing report records the subsequent explicit-path commit.
 
-## Iteration01 corrective pass — 2026-10-09
+## Iteration01 corrective pass 2026-10-09
 
 Assignment: `cc-prompt-iteration01.md`, issued in planning commit
 `fa0b2ad43527b8a1973c4848f291b82051aebc4c` (the actual assignment commit).
@@ -398,7 +398,7 @@ suffix. Results for every card:
 | font-pairing | Mixing Fonts | 3: bulleted-and-numbered-lists, mixing-fonts, text-formatting |
 | font | Font Basics | 2: font-basics, font-recommendations |
 | good-typography | What Is Good Typography | 4: are-two-spaces-better-than-one, billionaires-typewriter, what-is-good-typography, why-typography-matters |
-| headings | Headings | 23: all-caps, bold-or-italic, centered-text, hard-line-breaks, hard-page-breaks, headings, hierarchical-headings, hyphenation, keep-lines-together, keep-with-next-paragraph, letterspacing, mixing-fonts, page-break-before, paragraph-and-character-styles, point-size, research-papers, resumes, rules-and-borders, small-caps, space-above-and-below, summary-of-key-rules, underlining, websites |
+| headings | Headings | 23: all-caps, bold-or-italic, centered-text, hard-line-breaks, hard-page-breaks, headings, hierarchical-headings, hyphenation, keep-lines-together, keep-with-next-paragraph, letterspacing, mixing-fonts, page-break-before, paragraph-and-character-styles, point-size, research-papers, resumes, rules-and-borders, small-caps, space-above-and-below, text-formatting, underlining, websites |
 | hyphenation | Hyphenation | 12: block-quotations, body-text, headings, hyphenation, hyphens-and-dashes, justified-text, ligatures, optional-hyphens, page-layout, research-papers, summary-of-key-rules, why-theres-no-e-book-or-pdf |
 | hyphens-and-dashes | Hyphens and Dashes | 10: acknowledgments, ellipses, em-sizing, hyphens-and-dashes, math-symbols, point-size, rules-and-borders, summary-of-key-rules, type-composition, typewriter-habits |
 | justified-text | Justified Text | 6: alternate-figures, hyphenation, justified-text, page-layout, research-papers, summary-of-key-rules |
@@ -480,3 +480,138 @@ Butterick expected-pair string (unescaped apostrophe); the snippet was corrected
 then all four recorded Python blocks ran successfully, including the 37-row
 Butterick query. This documentation defect did not change any source or index
 bytes or the completed membership result.
+
+## Iteration02 corrective pass 2026-10-09
+
+### Intake and bounded disposition
+
+This pass executes assignment commit
+`bcc720753dae9eb7e96388890e85ead5e9fb115a`, issued after CDC review commit
+`fa0b2ad4` and iteration01 proposed output `7000ff4df723dcf00728d1507ad63a118566651e`.
+The active source pin remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`; the shared audit pin remains
+`795ac75b7d02536e0e95252457ac3282cd17d8d8`. The initial prompt and iteration01
+prompt remain binding. I reread the project, arc, and slice plans and ledgers,
+the full CDC verification, this complete execution record, the closing report,
+and the issued iteration02 prompt. The only output corrections were the
+Butterick `headings` candidate basename and the two heading strings identified
+by CDC-S01-03/04. The prior membership, population, metadata, audit, and source
+evidence was retained because its pinned inputs and criteria are unchanged.
+
+The reviewed iteration01 candidate row for `headings` had 23 entries but
+substituted `summary-of-key-rules` for `text-formatting`. Replaying the recorded
+query against the pinned raw membership index and all 156 prepared Markdown
+files compared the exact candidate basename sets, section string, and count for
+all 37 Butterick cards. Before correction the result was 36 exact rows and one
+mismatch; for `Headings`, the query returned 23 and the recorded row returned
+23, with symmetric difference `{summary-of-key-rules, text-formatting}`. The
+corrected row now contains `text-formatting`, retains count 23, and excludes
+`summary-of-key-rules`. The historical equal-count row is a negative control:
+its set equality remains false. The post-correction replay is recorded below;
+the comparison is by set, so display ordering does not affect the result.
+
+```python
+import json, re, subprocess
+from pathlib import Path
+SOURCE = Path("/Users/oubiwann/lab/billosys/ai-engineering")
+PLANNING = Path("/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning")
+SLICE = PLANNING / "project10-design-foundations/arc01-portable-contract/slice01-scope-and-portability-contract"
+index = [json.loads(s) for s in (SLICE / "artifacts/card-source-index.jsonl").read_text().splitlines() if s]
+cards = [r for r in index if r["source_fields_raw"]["source"][0] == '"Butterick\'s Practical Typography"' and r["source_fields_raw"]["authors"][0] == '"Matthew Butterick"']
+files = sorted((SOURCE / "knowledge/design/sources/md/practical-typography").glob("*.md"))
+corpus = [(p.stem, p.read_text(errors="replace").casefold()) for p in files]
+query = {}
+for r in cards:
+    raw = r["source_fields_raw"]["section"][0]
+    section = raw[1:-1] if raw.startswith('"') and raw.endswith('"') else raw
+    query[r["path"].rsplit("/", 1)[-1].removesuffix(".md")] = (section, len([1 for _, t in corpus if section.casefold() in t]), {n for n, t in corpus if section.casefold() in t})
+def candidate_rows(text):
+    out = {}
+    for line in text.splitlines():
+        if not line.startswith("| ") or line.startswith(("| Card |", "|---")): continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) != 3: continue
+        m = re.fullmatch(r"(\d+):\s*(.*)", cells[2])
+        if m: out[cells[0].strip("`")] = (cells[1], int(m.group(1)), {x.strip().removesuffix(".md") for x in m.group(2).split(",") if x.strip()})
+    return out
+actual = candidate_rows((SLICE / "artifacts/execution-notes.md").read_text())
+old_text = subprocess.check_output(["git", "show", "7000ff4df723dcf00728d1507ad63a118566651e:" + str((SLICE / "artifacts/execution-notes.md").relative_to(PLANNING))], cwd=PLANNING, text=True)
+old = candidate_rows(old_text)
+assert len(cards) == len(query) == len(actual) == len(old) == 37 and len(files) == 156
+assert all(actual[k] == query[k] for k in query)
+assert [k for k in query if old[k] != query[k]] == ["headings"]
+assert old["headings"][:2] == query["headings"][:2] == ("Headings", 23)
+assert old["headings"][2] ^ query["headings"][2] == {"summary-of-key-rules", "text-formatting"}
+assert min(len(v[2]) for v in query.values()) == 2 and max(len(v[2]) for v in query.values()) == 42
+```
+
+The replay output was: **37 cards; 156 prepared files; 37 section/count/set
+comparisons; corrected mismatches 0; historical mismatches 1; candidate range
+2–42**. The negative-control `headings` row retained section `Headings` and
+count 23, failed set equality, and differed only by
+`summary-of-key-rules`/`text-formatting`. The corrected row includes
+`text-formatting` and excludes `summary-of-key-rules`.
+
+### Heading fragments and local links
+
+CDC-S01-04 identified two headings whose em dash produced double hyphens under
+the established anchor algorithm, while their existing links used one hyphen.
+The prior heading strings, recorded here as prose, were “Iteration01 corrective
+pass — 2026-10-09” and “Iteration01 corrective addendum — proposed done.” They
+generated `iteration01-corrective-pass--2026-10-09` and
+`iteration01-corrective-addendum--proposed-done`, respectively. The headings now
+read `Iteration01 corrective pass 2026-10-09` and `Iteration01 corrective
+addendum proposed done`; the body text and referring fragments are preserved.
+The anchor rule removes punctuation, replaces each ordinary space with one
+hyphen, and does not collapse consecutive hyphens. A target-aware replay over
+execution notes, closing report, ledger, and preserved source-readiness found
+25 local links, 19 fragment links, zero missing files, and zero unresolved
+anchors. Both repaired headings now derive the single-hyphen fragments already
+used by their links. The historical heading forms are a negative control: each
+derives a double-hyphen anchor and fails its prior single-hyphen link.
+
+```text
+before: 25 local links / 19 fragments / 3 mismatched fragments
+after:  25 local links / 19 fragments / 0 missing files / 0 mismatched fragments
+```
+
+The final link replay covered these three changed records and preserved
+`artifacts/source-readiness.md`. The first attempted source-index lookup used a
+nonexistent source-relative path; it failed before reading index rows and was
+rerun against the planning artifact `artifacts/card-source-index.jsonl`. A
+first comparator then retained the `.md` suffix in card keys and raised a
+`KeyError`; the corrected comparator stripped the suffix and completed all 37
+comparisons above. A first link pass after adding four extra ledger links found
+29/23 links/fragments (all resolving); the ledger was narrowed to evidence-note
+edits without adding links, and the required final pass returned 25/19. One
+audit digest command initially named `design-synthesis.md`, which is not the
+pinned artifact path; it was rerun with the exact `audit-modernization-synthesis.md`
+path. These command corrections changed no protected inputs.
+
+### Preservation, scope, and limits
+
+The source checkout remains at the source pin and the scoped design/concept-card
+working diff is empty. Both audit inputs remain byte-identical to the pinned
+audit commit. Immutable reviewed files still match `7000ff4d`; issued prompt,
+slice plan, and CDC record still match assignment commit `bcc7207`. The only
+changed planning paths are this execution record, `closing-report.md`, and
+`ledger.md`; there are no staged paths. All three files have final newlines, no
+trailing whitespace, and `git diff --check` passes. The unrelated untracked
+`project12-chcd-protocol/` and source `knowledge/lfe/` remain excluded.
+
+Resolved findings: CDC-S01-03 is limited to the candidate-list transcription
+`summary-of-key-rules` -> `text-formatting`, with the recorded count and all
+other 36 candidate sets unchanged. CDC-S01-04 is limited to the two heading
+punctuation edits; existing bodies and link text remain unchanged. All seven
+ledger rows remain open for CDC. No unresolved data or validation failure
+remains. Transient query/helper invocation errors and their corrected reruns
+are recorded above.
+
+Unrun or still blocked: no semantic review of the 233 cards, original-source
+acquisition, browser/accessibility review, package/build validation, or source
+implementation was performed. The 150 missing-original cards and unresolved
+source fidelity remain assigned downstream. Candidate substring hits remain
+ambiguous locators. Bubble-up: none; this correction requires no change to
+project or arc scope. CC proposes this iteration done for independent CDC
+review; it is not CDC acceptance, slice closure, or authorization to open
+Slice02.

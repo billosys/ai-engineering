@@ -88,7 +88,7 @@ and method and allocates the complete population to Arc02.
 verify the corpus, repair the skill, close a parent ledger or authorize source
 work. No `cdc-verification.md` was created.
 
-## Iteration01 corrective addendum — proposed done
+## Iteration01 corrective addendum proposed done
 
 Date: 2026-10-09. This addendum preserves the initial proposed-done report above
 and reports only the two corrections requested by Sofie's independent review.
@@ -179,3 +179,48 @@ review requirement remain explicit downstream blockers.
 Sofie (CDC)'s independent review.** All seven ledger rows remain open. This
 addendum does not accept the slice, close parent work, authorize source repair,
 or open Slice02.
+
+## Iteration02 corrective addendum proposed done
+
+CC executed assignment `bcc720753dae9eb7e96388890e85ead5e9fb115a`, issued at
+that planning commit after CDC review `fa0b2ad4`, against reviewed iteration01
+output `7000ff4df723dcf00728d1507ad63a118566651e`. Source and audit pins remain
+`dffa504e851b03b8e4746f1941068e4cc850b612` and
+`795ac75b7d02536e0e95252457ac3282cd17d8d8`.
+
+CDC-S01-03 is corrected: the `headings` candidate set now contains
+`text-formatting` instead of `summary-of-key-rules`, with 23 candidates retained.
+The replay compared all 37 exact-membership Butterick cards against 156 prepared
+Markdown files, all section strings, counts, and candidate sets. The corrected
+output has 37/37 exact matches; the historical row is a negative control that
+fails exact equality despite its unchanged count of 23.
+
+CDC-S01-04 is corrected: the two heading punctuation marks were removed while
+both heading bodies and all existing links were retained. Target-aware anchor
+validation reports 25 local links, 19 fragment links, zero missing files, and
+zero unresolved anchors. The old heading forms derive double-hyphen anchors and
+fail the prior single-hyphen links; the corrected target headings derive those
+existing link fragments.
+
+The exact changed-file fence is the execution notes, this report, and the slice
+ledger. Source remains at its pinned commit with no scoped working changes; both
+audit inputs match their pinned blobs; there are no staged paths. `git diff
+--check` passes, and changed files have final newlines and no trailing
+whitespace. No unresolved data or validation failure remains; transient helper
+invocation errors and their corrected reruns are documented in the execution
+notes.
+
+Row dispositions: S01-01 intake and required rereads recorded; S01-02 prior
+population and index replay retained under unchanged inputs; S01-03 candidate
+transcription corrected and all 37 sets replayed; S01-04 contract evidence
+unchanged; S01-05 ownership map unchanged; S01-06 source/audit preservation and
+target-aware links rechecked; S01-07 this proposed-done handoff records limits
+and downstream ownership. Each row remains `open` for CDC disposition.
+
+**All seven ledger rows remain open.** No semantic review of the 233 cards,
+source acquisition, browser/accessibility review, package validation, or source
+implementation was run. The 150 missing originals and source-fidelity questions
+remain downstream blockers; substring candidates remain ambiguous locators.
+Bubble-up: none. CC proposes iteration02 proposed done for independent CDC
+review. This is not CDC acceptance or slice closure and does not authorize
+Slice02.
