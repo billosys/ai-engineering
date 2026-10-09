@@ -7,7 +7,23 @@ Workflow: Two-Contributor. Reviewed CC commit
 `dffa504e851b03b8e4746f1941068e4cc850b612`, and Project09 audit
 `795ac75b7d02536e0e95252457ac3282cd17d8d8`.
 
-## Current verdict — iteration01 review, 2026-10-09
+## Current verdict — iteration02 acceptance, 2026-10-09
+
+**Accepted; Slice01 closed.** Sofie (CDC) independently verified CC candidate
+`9cc203380aede19231b7c5119f0b43d9fe3d0e78` against issued iteration02
+`bcc720753dae9eb7e96388890e85ead5e9fb115a`, source
+`dffa504e851b03b8e4746f1941068e4cc850b612`, and audit
+`795ac75b7d02536e0e95252457ac3282cd17d8d8`. All seven original slice rows are
+done, with no deferrals/no-ops or reduced criteria. All four CDC findings are
+corrected. Prior failed reviews and CC proposed-done reports remain preserved.
+
+Acceptance covers the inventory, availability assessment, portable contract
+**proposal** and change map. It does not adopt final principle wording or
+configuration, establish semantic source support, or accept an implementation,
+package or release. Arc01 and Project10 remain active; Slice02 is planned and
+unopened.
+
+## Iteration01 verdict — correction review, 2026-10-09
 
 **Changes requested; Slice01 remains open.** Reviewed CC correction commit
 `7000ff4df723dcf00728d1507ad63a118566651e` against issued iteration01 at
@@ -213,3 +229,105 @@ locator ambiguity and web-capture identity needs stay with planned Slice02;
 principle/configuration adoption stays with Slice03. No structural arc-plan
 amendment or new Operator decision is needed. Slice02 remains unopened pending
 Slice01 acceptance. Update routine current-assignment pointers only.
+
+## Iteration02 independent verification and acceptance
+
+Reviewer/context: Sofie (CDC), separate from CC's execution context,
+2026-10-09. This closes the exact iteration02 assignment and the initial slice
+contract, with the prior independently checked evidence retained below.
+
+### Freshly executed checks
+
+CDC inspected and replayed the recorded iteration02 Python query (the fifth
+Python block in execution notes), extracted with the anchored fence expression
+recorded above and executed using `python3 -c` from SOURCE. Exit 0.
+CDC also independently reconstructed each card's section and full candidate
+basename set from the unchanged index and all prepared files, parsed every
+recorded table row, and compared section/count/set together:
+
+- 37 exact-membership Butterick cards, 156 prepared Markdown files;
+- 37/37 section, count and candidate-set comparisons match;
+- each set still has 2–42 candidates; no unique locator is established;
+- the historical `7000ff4d` table differs only at `headings`: count remains 23,
+  while its set replaces `text-formatting` with `summary-of-key-rules`;
+- corrected `headings` includes `text-formatting` and excludes
+  `summary-of-key-rules`. The equal-count negative control fails as required.
+
+Target-aware local-link checks over execution notes, source readiness, closing
+report and ledger reproduced 25 local links and 19 fragments, with zero missing
+files/unmatched fragments. The two corrected headings produce the existing
+single-hyphen link fragments; the historical spaced-em-dash headings produce
+double-hyphen fragments and fail those links. CDC-S01-03 and CDC-S01-04 close.
+
+Exact issued-to-candidate Git diff: three authorized files and both required
+trailers. Ten protected slice files match `bcc72075`, including the manifest,
+index, source report, contract, reconnaissance, plans and all issued prompts.
+Both audit inputs match `795ac75b`. Source HEAD equals `dffa504e`; the scoped
+design/concept-card diff is empty and no untracked design file exists. The
+original seven rows retain their criteria, significance, origin and open status
+in the reviewed CC candidate; only CDC closes them now.
+
+Comparing earlier report bodies allowed exactly the prescribed heading edits
+and single candidate substitution, plus appended iteration02 receipts. All
+other earlier body text is preserved. Changed files have final newlines and no
+trailing whitespace; the commit-delta `git diff --check` passes. No independent
+check failed during this pass. CC's transient helper failures remain disclosed
+in execution notes; they are not relabelled as successful attempts. Unrelated
+untracked `knowledge/lfe/` and `project12-chcd-protocol/` remain untouched.
+
+### Retained evidence and final row walk
+
+Initial and iteration01 evidence above remains attributed to its actual
+candidate/date. Protected file equality, unchanged source/method pins, and the
+exact bounded diff establish continuing applicability. No correction changes
+the inventory/index, raw identity predicates, contract, map, five analytical
+cases or their acceptance criteria. There is no binding requirement to repeat
+unaffected full hashing or contract review. Current preservation, candidate
+sets, link fragments and report coherence were checked freshly. Reading
+receipts remain CC attestation; the independent readback/contract reconciliation
+does not claim proof of attention or source fidelity.
+
+| Row | Final CDC disposition and evidence strength | Limit |
+|---|---|---|
+| S01-01 | Done; reconciled pins, intake/readback and coverage, with reproduced query checks and corrected receipts | Reading attestation is not semantic comprehension proof |
+| S01-02 | Done; reproduced exact 402-file/233-card evidence from initial/iteration01 checks, retained under verified unchanged inputs | Inventory only |
+| S01-03 | Done; reproduced eight raw identity populations and source-availability witnesses, with fresh 37-set comparison | Missing originals and locator ambiguity remain downstream |
+| S01-04 | Done; independently reconciled the proposal, binding decisions, ten profile inputs, seven dispositions and five cases; evidence retained | No final normative wording/configuration adopted |
+| S01-05 | Done; independently reconciled all eight live files and DES-001–016 allocation; unchanged map retained | Findings are allocated, not repaired |
+| S01-06 | Done; reproduced allowlist/preservation, historical-body integrity, current links and whitespace checks | No source/package mutation authorized |
+| S01-07 | Done; independently reconciled all seven reported rows, complete artifact inventory, corrections, limits and next owners | Slice closure does not close higher-scale gates |
+
+Closure-record integrity check: seven reviewer-owned files, 47 resolved local
+links/fragments, seven slice rows done, one accepted-child arc row done, four
+remaining arc rows open and all ten project rows open. All ledger criteria are
+unchanged. Ten CC artifact/report/prompt files remain byte-identical to the
+accepted candidate. No later slice was created.
+
+### Bubble-up to the arc
+
+Slice01 delivered its assigned piece: pinned population/index, source-gap map,
+portable contract proposal and full live-file/finding allocation. Scope versus
+delivery accounts for all seven opening rows and all expected outputs; no silent
+drop, deferral or no-op is needed. Five CC-produced supporting artifacts remain
+under `artifacts/`: baseline manifest, card/source index, source readiness,
+portability contract and execution notes. Author reconnaissance is preserved
+input there; ledger, closing report, CDC record and all three issued prompts
+remain first-class slice-root records.
+
+The 150 cards lacking Arnheim/Cleland/Tschichold originals, 37 unresolved
+Butterick locators and web-capture identity/fidelity needs retain Slice02
+ownership. Full semantic review of all 233 cards remains mandatory in later
+work. Slice03 retains principle/configuration adoption and Arc02 allocation.
+No structural arc/project scope amendment or Operator decision is required to
+close this bounded investigation. Record acceptance in the arc's child row and
+routine status/history; retain all remaining arc/project gates. Slice02 is not
+opened by this review.
+
+### What worked and unrun checks
+
+Literal raw identity pairs preserve quotes/escapes; candidate-set and historical
+negative-control checks catch errors that counts conceal. Bounded corrections
+retained valid independent evidence while preserving failed-review history.
+No original acquisition, full-corpus semantic verification, source repair,
+package/build/install, browser, accessibility or usability check ran in this
+slice review; none is claimed by its acceptance.

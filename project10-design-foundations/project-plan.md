@@ -89,7 +89,7 @@ a bulk relocation or transformation merely from the naming clarification.
 
 ## Arc roadmap
 
-Arc01 is open with its first slice issued. Remaining arcs are planned; detail
+Arc01 is active with Slice01 independently accepted. Remaining arcs are planned; detail
 each near execution after resolving its dependencies. The active
 [Arc01 plan](arc01-portable-contract/arc-plan.md) supplies the slice breakdown.
 
@@ -101,14 +101,13 @@ each near execution after resolving its dependencies. The active
 | arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 | DES-010, DES-013, DES-014; all repeated claims |
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
-Current status: active; Arc01 Slice01 remains open after independent CDC review
-of iteration01 completion at `7000ff4d`. Both initial findings are corrected;
-one candidate-table transcription and three section fragments need correction.
-Current assignment:
-`arc01-portable-contract/slice01-scope-and-portability-contract/cc-prompt-iteration02.md`.
-The Operator relays this bounded evidence correction to the separate CC context.
-See the [CDC record](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md);
-no later slice has opened. Project09 may be consulted for planning
+Current status: active; Arc01 Slice01 closed after independent CDC acceptance
+of iteration02 at `9cc20338`, with all seven rows done. Current assignment: none.
+Slice02 source/review readiness is planned and unopened. Its source gaps and
+the complete 233-card semantic review remain binding downstream work.
+See the [CDC acceptance](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance);
+this evidence/proposal acceptance does not adopt final teaching formulations or
+close any release criterion. Project09 may be consulted for planning
 before its formal acceptance, with its limits visible. The accepted baseline is
 required at release readiness. Coordinate any card-format/schema changes with
 Project08 rather than importing its scope by association.
@@ -159,6 +158,9 @@ remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
 
+- 1.6 (2026-10-09): Arc01/Slice01 closed on independently accepted iteration02
+  candidate `9cc20338`; recorded progress without closing project release gates
+  or changing source/semantic scope. Slice02 remains planned.
 - 1.5 (2026-10-09): Arc01/Slice01 iteration01 review resolved the initial defects;
   recorded bounded iteration02 report/link corrections without changing project
   scope, corpus review or downstream source requirements.

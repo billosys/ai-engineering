@@ -1,6 +1,6 @@
 ---
 slice: slice01-scope-and-portability-contract
-status: open
+status: closed
 ---
 
 # Slice01 — Scope and Portability Contract
@@ -56,13 +56,19 @@ does not authorize reducing the approved review scope.
 |---|---|---|
 | `cc-prompt.md`, 2026-10-09 | CC proposed done at `0e0c1d0a`; CDC requested bounded corrections | Initial evidence retained; see [CDC verification](cdc-verification.md) |
 | `cc-prompt-iteration01.md`, 2026-10-09 | CC proposed done at `7000ff4d`; both initial findings passed CDC replay | One candidate-table transcription and three fragment mismatches remain in the CDC record |
-| `cc-prompt-iteration02.md`, 2026-10-09 | Current; issued to Operator for relay | CC corrects one candidate row and two heading lines, plus receipt/closing/ledger evidence; returns proposed done to CDC |
+| `cc-prompt-iteration02.md`, 2026-10-09 | CC completed at `9cc20338`; independently accepted by CDC | Final assignment closed; all seven rows done; prior prompts and failed reviews preserved |
 
 Preserve this prompt once issued. Corrections use the next
 `cc-prompt-iterationNN.md` in this directory, with the current assignment recorded
 here. Do not overwrite the original or hide prompts in `artifacts/`.
 
 ## Verification and exit
+
+Slice01 closed on 2026-10-09 after [independent CDC acceptance](cdc-verification.md#iteration02-independent-verification-and-acceptance)
+of candidate `9cc20338`. All seven rows are done; no scope was deferred or
+reduced. Acceptance covers the evidence/proposal packet. Source readiness,
+semantic review and final teaching adoption remain downstream. There is no
+current CC assignment in this closed slice; Slice02 remains planned/unopened.
 
 CC runs the exact population/hash comparisons, output integrity checks and
 contract scenarios in the prompt; records every failed/blocked/unrun check;
@@ -110,6 +116,8 @@ execution or independent acceptance of a future correction.
 
 ## Version History
 
+- 1.3 (2026-10-09): CDC accepted iteration02 at `9cc20338`, closed all seven
+  rows, and recorded artifact/bubble-up accounting with source/semantic limits.
 - 1.2 (2026-10-09): Recorded iteration01 independent replay and issued iteration02
   for candidate-table and fragment corrections; all original scope stays fixed.
 - 1.1 (2026-10-09): Recorded independent review of CC completion and issued

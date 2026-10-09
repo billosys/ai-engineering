@@ -26,8 +26,8 @@ Project09 audit artifacts are consumed at planning commit
 
 | Slice | Capability | Dependency and state |
 |---|---|---|
-| slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Open; iteration01 reviewed; iteration02 corrects one candidate row and section links |
-| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Planned after accepted Slice01; source availability controls readiness; no prompt issued |
+| slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Closed; CDC accepted `9cc20338`; all seven rows done |
+| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Planned; Slice01 dependency accepted; source availability controls readiness; no prompt issued |
 | slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Planned after accepted Slice02; no prompt issued |
 
 Only Slice01 is detailed. Slice02 must follow actual source findings: record
@@ -66,18 +66,24 @@ Slice acceptance uses `cdc-verification.md`, written only after independent revi
 Arc closure needs its own composition demonstration and attributed independent
 gate. Do not pre-create close or verification records.
 
-Current assignment:
-`slice01-scope-and-portability-contract/cc-prompt-iteration02.md` (issued 2026-10-09).
-The initial findings at `0e0c1d0a` passed independent correction review at
-`7000ff4d`. Slice01 stays open for one candidate-table transcription and three
-section fragments in its [CDC record](slice01-scope-and-portability-contract/cdc-verification.md).
-The initial prompt remains preserved; no later slice is opened.
+Current assignment: none. Slice01
+`slice01-scope-and-portability-contract/cc-prompt-iteration02.md` was independently
+accepted at `9cc20338` on 2026-10-09; all seven rows are done in its
+[CDC record](slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance).
+The initial and both corrective prompts remain preserved. Slice02 is planned
+and unopened. Slice01 confirms 150 missing-original cards, 37 unresolved
+Butterick locators and capture identity/fidelity needs; their existing Slice02
+ownership and the full 233-card review denominator remain binding. No structural
+arc scope or sequencing change is required by the accepted bubble-up.
 CDC owns structural decisions and later slice preparation. Escalate changes to
 scope, source baseline, evidence requirements or adopted design; local formatting
 and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
 
+- 1.3 (2026-10-09): Slice01 iteration02 passed independent review at `9cc20338`;
+  recorded its closure and A01-01 child acceptance. Existing source-gap ownership
+  remains with planned Slice02; all composition/readiness gates stay open.
 - 1.2 (2026-10-09): Slice01 iteration01 replay resolved both initial findings;
   recorded iteration02 for report integrity defects. No structural arc amendment
   is needed; source gaps retain their existing Slice02 ownership.

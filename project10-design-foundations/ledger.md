@@ -5,8 +5,10 @@ inputs; they do not establish delivery or acceptance of this project.
 
 Arc01/Slice01 opened on 2026-10-09. Its
 [slice ledger](arc01-portable-contract/slice01-scope-and-portability-contract/ledger.md)
-tracks the first contract/inventory packet; issuing that assignment does not
-close any project row.
+tracks the first contract/inventory packet, independently accepted by CDC at
+`9cc20338` on 2026-10-09. All seven slice rows are done; this does not close
+any project release criterion. Source/semantic readiness and final contract
+wording adoption remain later work.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
