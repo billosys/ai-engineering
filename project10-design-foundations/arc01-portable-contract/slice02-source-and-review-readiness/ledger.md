@@ -1,15 +1,12 @@
 # Slice02 Ledger
 
-Eight of nine criteria are independently done. S02-08 alone remains open and
-input-blocked; source availability/fidelity is required before Slice03.
-
-Current [CDC review](cdc-verification.md#iteration04-independent-review--2026-10-09)
-accepts candidate `759ce2dd` for local intake, identity, prepared mapping,
-preservation and complete blocked reporting, retaining S02-03/05/06. All 233 cards
-remain in scope; 37 Butterick documents and 46 post paths/83 clauses/44 unique
-units have checked prepared navigation records. CC reading is attributed; source
-fidelity and full semantics remain unaccepted. Historical CC supplements below
-retain their handoff-time dispositions.
+Closed 2026-10-09: eight rows independently done and S02-08 deferred by
+explicit Operator order. All nine opening criteria remain present and unchanged.
+[Operator deferral](slice-plan.md#operator-deferral--2026-10-09) supersedes the
+former Slice03 sequencing gate; [CDC closure](cdc-verification.md#operator-deferral-and-slice02-closure--2026-10-09)
+retains local acceptance at `759ce2dd`/`88c1298f`. Missing-source readiness is
+carried to Arc02 under Project10 P10-11, with the same evidence and review scope.
+Historical handoff dispositions below are preserved.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
@@ -20,7 +17,7 @@ retain their handoff-time dispositions.
 | S02-05 | Every required source/acquisition/preparation gap has a concrete input, owner, allowed next action and re-entry check | Walk source-input actions against all identity, capture, locator and fidelity caveats | serious | Arc01 source needs | done | **reproduced**; [CDC iteration03](cdc-verification.md#iteration03-independent-review--2026-10-09), candidate `80813b2e`. | All required original/capture/lineage/media gaps have inputs, owners, authorization limits and falsifiable re-entry; no input acquisition accepted. |
 | S02-06 | Review procedure covers every substantive claim and all five dimensions, including relationships/CQs, repeated guide claims and revisions | Inspect executable steps, local claim-result example and contrasting method cases against project contract | correctness-grade | P10-06/09; concept-cards | done | **reproduced**; [CDC iteration03](cdc-verification.md#iteration03-independent-review--2026-10-09), candidate `80813b2e`. | Five dimensions, per-claim/revision results, relationships/CQs, eight live files, all 16 DES rows and contrasting method cases checked; semantic execution remains downstream. |
 | S02-07 | Work preserves accepted inputs, respects allowlist and validates evidence links and output integrity | Compare protected bytes/Git scopes, exact locator targets, local links/fragments, newlines and diff checks | correctness-grade | Preservation | done | **reproduced**; [CDC iteration04](cdc-verification.md#iteration04-independent-review--2026-10-09), candidate `759ce2dd`. | Exact five-file candidate scope and protected inputs; final committed checker and all three full-checker bad cases; links/fragments, EOF and diff check pass. |
-| S02-08 | Required source identities, accessible evidence and locator/fidelity mappings are sufficient for the agreed dependent source-fidelity review | Independently inspect source snapshots, original/prepared relationships, completeness/fidelity scope and per-use readiness against all 233 cards | correctness-grade | A01-02/05; P10-09/10 | open | [CDC iteration04](cdc-verification.md#iteration04-independent-review--2026-10-09); [readiness](artifacts/readiness-report.md); [required inputs](artifacts/source-input-actions.md). | Input-blocked: 150 book-backed cards need exact editions/page bases; 83 web-backed cards need immutable captures/lineage/fidelity. No Slice03 advance or source preparation authority. |
+| S02-08 | Required source identities, accessible evidence and locator/fidelity mappings are sufficient for the agreed dependent source-fidelity review | Independently inspect source snapshots, original/prepared relationships, completeness/fidelity scope and per-use readiness against all 233 cards | correctness-grade | A01-02/05; P10-09/10 | deferred | **Operator-authorized deferral**; [recorded order](slice-plan.md#operator-deferral--2026-10-09); [CDC closure](cdc-verification.md#operator-deferral-and-slice02-closure--2026-10-09); [input actions](artifacts/source-input-actions.md). | Missing originals/captures/fidelity carried to Arc02 CDC + Operator, tracked by P10-11. Re-enter before accepting dependent source-fidelity results or full-corpus/release completion, with exact inputs/mappings and independent review. Slice03 planning may proceed. |
 | S02-09 | Row accounting, artifact inventory and bubble-up preserve remaining gates and prepare Slice03 without concealed blockers | Walk all nine rows, failed/blocked/unrun checks, downstream owners and specification-versus-delivery | serious | Slice DoD | done | **reconciled**; [CDC iteration04](cdc-verification.md#iteration04-independent-review--2026-10-09), candidate `759ce2dd`. | All nine rows, artifact inventory, changed/retained evidence and failed/blocked/unrun scope accounted for; original gate remains with the arc. |
 
 

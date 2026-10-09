@@ -1,6 +1,6 @@
 ---
 slice: slice02-source-and-review-readiness
-status: open
+status: closed
 depends-on: [slice01-scope-and-portability-contract]
 ---
 
@@ -18,6 +18,25 @@ Read [the project](../../project-plan.md), [arc](../arc-plan.md),
 Expedited Mode for remaining Project10 work on 2026-10-09. Two contributors
 remain selected: Sofie (CDC) plans/reviews; a separate CC context executes;
 the Operator relays handoffs and owns input/approval decisions. No CRC is added.
+
+## Operator deferral — 2026-10-09
+
+The Operator explicitly ordered: “let's defer S02-08 by order of operator and
+continue to open slice 3”. This supersedes the previous requirement to satisfy
+S02-08 before Slice02 closure and Slice03 planning. S02-08 is **deferred**, not
+done: no source identity, original fidelity or semantic review is accepted by
+this decision. The full 233-card/five-dimension scope remains binding.
+
+Carryover owner: Arc02 CDC, with the Operator supplying/selecting exact originals
+and capture inputs; Project10 **P10-11** tracks the unresolved readiness gate.
+Slice03 must explicitly map every affected card and the existing input-action
+register into its Arc02 handoff. Re-entry is required before accepting a dependent
+source-fidelity result and before full-corpus/project release acceptance: exact
+Arnheim/Cleland/Tschichold editions/translation and page bases, 37 Butterick
+page captures and four article captures, conversion lineage and adequate
+original/prepared completeness/fidelity mappings, with independent CDC review.
+Any acquisition/conversion requires a separate exact input/output assignment.
+This is a sequencing deferral, with no source mutation or private-search authority.
 
 ## Baseline and initial execution boundary
 
@@ -73,12 +92,12 @@ inputs and higher-scale gates still stop dependent advancement.
 
 ## Assignment history
 
-Current handoff: [iteration04](cc-prompt-iteration04.md) returned at `759ce2dd`
-and is independently accepted for local criteria. Eight of nine rows are done;
-S02-08 alone is input-blocked. No active CC correction or preparation assignment.
-Operator supplies/selects exact original editions/page bases and web capture/
-conversion inputs; CDC defines any additional input/output authority before CC
-proceeds. All prompts are preserved; no Slice03 advance or semantic acceptance.
+Current disposition: closed with eight independently done criteria and S02-08
+Operator-deferred. Iteration04 `759ce2dd` was independently accepted for local
+criteria at `88c1298f`; no CC refinement remains assigned. The Operator deferral
+above supersedes the former “S02-08 before Slice03” gate. Slice03 is the next
+assignment. Earlier assignment states below are historical; all prompts remain
+unchanged. The source-readiness requirement is carried to Arc02/P10-11.
 
 | Assignment | State | Scope and next owner |
 |---|---|---|
@@ -196,6 +215,10 @@ performing 233 semantic reviews. Required prose/queries have separate extents
 and an existing evidence home. Author readiness is not execution or acceptance.
 
 ## Version History
+
+- 1.6 (2026-10-09): Operator deferred S02-08 and ordered Slice03 opening.
+  Closed Slice02 with eight accepted rows/one explicit deferral; carried original
+  readiness to Arc02/P10-11. Supersedes the former Slice03 sequencing gate only.
 
 - 1.5 (2026-10-09): Independently accepted iteration04 `759ce2dd` for five
   remaining local criteria and retained S02-03/05/06; only S02-08 stays open.

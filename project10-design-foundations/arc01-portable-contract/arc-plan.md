@@ -27,14 +27,33 @@ Project09 audit artifacts are consumed at planning commit
 | Slice | Capability | Dependency and state |
 |---|---|---|
 | slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Closed; CDC accepted `9cc20338`; all seven rows done |
-| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Open; iteration04 `759ce2dd` reviewed; eight rows done; S02-08 alone input-blocked; awaiting source intake |
-| slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Planned after accepted Slice02; no prompt issued |
+| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Closed; eight rows done; S02-08 Operator-deferred to Arc02/P10-11 |
+| slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Next: Operator authorized opening after Slice02 closure with explicit readiness carryover |
 
 Slice01 is closed and Slice02 is detailed. Slice02 must follow actual source findings: record
 missing inputs and obtain necessary evidence without pretending local Markdown
 alone proves fidelity. Any needed source acquisition/conversion edits require
 their own explicit slice allowlist. Slice03 must not silently archive unreviewed
 cards or use a representative sample as the full-corpus acceptance gate.
+
+## Operator deferral — 2026-10-09
+
+The Operator explicitly ordered: “let's defer S02-08 by order of operator and
+continue to open slice 3”. This supersedes the previous requirement to satisfy
+S02-08 before Slice02 closure and Slice03 planning. S02-08 is **deferred**, not
+done: no source identity, original fidelity or semantic review is accepted by
+this decision. The full 233-card/five-dimension scope remains binding.
+
+Carryover owner: Arc02 CDC, with the Operator supplying/selecting exact originals
+and capture inputs; Project10 **P10-11** tracks the unresolved readiness gate.
+Slice03 must explicitly map every affected card and the existing input-action
+register into its Arc02 handoff. Re-entry is required before accepting a dependent
+source-fidelity result and before full-corpus/project release acceptance: exact
+Arnheim/Cleland/Tschichold editions/translation and page bases, 37 Butterick
+page captures and four article captures, conversion lineage and adequate
+original/prepared completeness/fidelity mappings, with independent CDC review.
+Any acquisition/conversion requires a separate exact input/output assignment.
+This is a sequencing deferral, with no source mutation or private-search authority.
 
 ## Scope and composition criteria
 
@@ -71,13 +90,14 @@ Slice acceptance uses `cdc-verification.md`, written only after independent revi
 Arc closure needs its own composition demonstration and attributed independent
 gate. Do not pre-create close or verification records.
 
-Current handoff: iteration04 `759ce2dd` is independently accepted for local
-criteria; no further CC correction is assigned. The
-[Slice02 review](slice02-source-and-review-readiness/cdc-verification.md#iteration04-independent-review--2026-10-09)
-records eight of nine rows done. S02-08 alone remains input-blocked. Operator
-provides/selects exact original editions/page bases and historical or fresh web
-capture inputs; CDC scopes any preparation with explicit inputs/allowlists before
-CC acts. A01-02 stays open. No scope/sequence amendment or Slice03 opening follows.
+Current handoff: Slice02 is closed with local acceptance at `759ce2dd`/`88c1298f`
+and the Operator's explicit S02-08 deferral. Slice03 is authorized for contract/
+method composition and full Arc02 allocation. The former “Slice02 original
+readiness before Slice03” prerequisite is superseded by this recorded decision;
+original readiness itself is not accepted. A01-02 is deferred for its unmet
+readiness component, now owned by Arc02 CDC + Operator under P10-11. Slice03 must
+carry every affected card, input action and re-entry gate into its handoff.
+No complete source-fidelity or release acceptance follows from this change.
 Slice02 opened on 2026-10-09; its initial assignment produces planning evidence
 only and keeps required unresolved original-source gaps as an explicit readiness
 gate. Slice01
@@ -94,6 +114,10 @@ scope, source baseline, evidence requirements or adopted design; local formattin
 and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
+
+- 1.10 (2026-10-09): Operator deferred Slice02 S02-08 and authorized Slice03
+  opening. Closed Slice02, deferred A01-02's unmet readiness to Arc02/P10-11,
+  and changed Slice03's prerequisite to accepted local work plus explicit carryover.
 
 - 1.9 (2026-10-09): Accepted Slice02 iteration04 local evidence at `759ce2dd`;
   eight rows done and S02-08 alone input-blocked. Source intake is the next owner

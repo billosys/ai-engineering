@@ -101,14 +101,13 @@ each near execution after resolving its dependencies. The active
 | arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 | DES-010, DES-013, DES-014; all repeated claims |
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
-Current status: active; Arc01 Slice01 closed after independent CDC acceptance
-of `9cc20338`. Slice02 iteration04 `759ce2dd` is independently accepted for
-local criteria: eight of nine rows are done. S02-08 alone remains input-blocked
-by exact original editions/page bases and immutable captures/lineage/fidelity.
-No active CC correction assignment remains; Operator source-input selection and
-CDC preparation scoping precede any new work. Expedited Mode remains enabled,
-with no Slice03 advance until readiness acceptance. The 233-card/five-dimension
-semantic review remains binding downstream work; no release gate is closed.
+Current status: Arc01 active; Slice01 closed and Slice02 closed with eight
+independently done criteria and S02-08 Operator-deferred. Local acceptance remains
+`759ce2dd`/`88c1298f`; the Operator ordered Slice03 opening on 2026-10-09.
+The former “no Slice03 until source readiness acceptance” rule is superseded for
+planning composition. Source readiness carries to Arc02/P10-11 before dependent
+source-fidelity acceptance and full-corpus/release completion. Expedited Mode
+remains enabled; no release gate or complete semantic review is accepted.
 See the [CDC acceptance](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance);
 this evidence/proposal acceptance does not adopt final teaching formulations or
 close any release criterion. Project09 may be consulted for planning
@@ -136,6 +135,25 @@ These decisions supersede the corresponding options in the historical Project09
 synthesis. They authorize the planned correction, not a claim that source edits
 have already been made. Corpus scope, C&B retention and the coupling's compatibility
 treatment are settled; execution detail remains to be prepared in Arc01.
+
+## Operator deferral — 2026-10-09
+
+The Operator explicitly ordered: “let's defer S02-08 by order of operator and
+continue to open slice 3”. This supersedes the previous requirement to satisfy
+S02-08 before Slice02 closure and Slice03 planning. S02-08 is **deferred**, not
+done: no source identity, original fidelity or semantic review is accepted by
+this decision. The full 233-card/five-dimension scope remains binding.
+
+Carryover owner: Arc02 CDC, with the Operator supplying/selecting exact originals
+and capture inputs; Project10 **P10-11** tracks the unresolved readiness gate.
+Slice03 must explicitly map every affected card and the existing input-action
+register into its Arc02 handoff. Re-entry is required before accepting a dependent
+source-fidelity result and before full-corpus/project release acceptance: exact
+Arnheim/Cleland/Tschichold editions/translation and page bases, 37 Butterick
+page captures and four article captures, conversion lineage and adequate
+original/prepared completeness/fidelity mappings, with independent CDC review.
+Any acquisition/conversion requires a separate exact input/output assignment.
+This is a sequencing deferral, with no source mutation or private-search authority.
 
 ## Decisions before dependent implementation
 
@@ -173,6 +191,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.13 (2026-10-09): Operator deferred Slice02 S02-08 and ordered Slice03.
+  Closed the child with explicit carryover to Arc02/P10-11; superseded only the
+  former Slice03 sequencing gate. Full-corpus/release evidence obligations remain.
 
 - 1.12 (2026-10-09): Accepted Slice02 iteration04 `759ce2dd` for the remaining
   local criteria; eight rows done, S02-08 alone input-blocked. Recorded source

@@ -267,3 +267,59 @@ slice. `git diff <issue> <candidate> --check` was clean, both commit trailers
 were present, and no tracked PLANNING or SOURCE changes remained. The exact
 bounded evidence amendment containing this receipt remains a direct child of the
 same issue pin; the final candidate object is reported in the operator handoff.
+
+## Operator deferral and Slice02 closure — 2026-10-09
+
+**CDC-authored administrative addendum**, following the Operator's explicit
+S02-08 deferral and instruction to open Slice03; this is not a new CC execution
+or independent claim that the missing evidence exists. CC candidate is
+`759ce2dd116a4cfe03b72d43fd2791f48486251c`; local CDC acceptance is planning
+`88c1298f222be443817e8579972aca52b3a9d308`. SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`. The closure commit is pending until
+this addendum and the named planning amendments are committed; its actual object
+is reported to the Operator, not guessed inside its own contents.
+
+The [recorded Operator order](slice-plan.md#operator-deferral--2026-10-09)
+supersedes the former requirement to resolve S02-08 before Slice03. Missing
+originals/captures/lineage/fidelity remain unmet and are carried to Arc02 CDC +
+Operator under project P10-11. The input-action register supplies the exact
+requested evidence and falsifiable re-entry. Before dependent source-fidelity
+acceptance and full-corpus/release completion, independent review must establish
+adequate original/prepared identity, locators and fidelity at the actual snapshots.
+
+| Row | Final status | Evidence and limit |
+|---|---|---|
+| S02-01 | done | CDC iteration04 intake/receipt reconciliation; reading remains CC-attested |
+| S02-02 | done | CDC iteration04 raw identities and explicit provenance/role limits |
+| S02-03 | done | CDC iteration03 locator accounting retained and replayed at iteration04 |
+| S02-04 | done | CDC iteration04 prepared-navigation mappings/inspection records; no original fidelity |
+| S02-05 | done | CDC iteration03 input/owner/action/re-entry register retained |
+| S02-06 | done | CDC iteration03 five-dimension method retained; no semantic execution |
+| S02-07 | done | CDC iteration04 exact scope/metadata/joins/contrary cases/links/EOF/diff checks |
+| S02-08 | deferred | Explicit Operator order; missing originals/captures/fidelity carried to Arc02/P10-11 |
+| S02-09 | done | CDC iteration04 accounting retained; this addendum and parent plans disclose the authorized deferral |
+
+Supporting artifact inventory: artifacts/source-register.md, locator-map.jsonl,
+source-input-actions.md, review-procedure.md, readiness-report.md and
+execution-notes.md. artifacts/author-reconnaissance.md is immutable author input.
+The initial prompt and four issued corrections remain slice-root first-class
+records; no new CC artifact or original evidence is produced by this closure.
+What worked: exact raw identities, clause/unit joins and same-predicate contrary
+cases made the local navigation packet independently reviewable. No original
+comparison, full card semantics, package/browser/accessibility check is claimed.
+
+### Bubble-up to the arc
+
+The identity/navigation/method portion is accepted; original-source readiness is
+not delivered. Scope-as-specified versus delivered is eight done/one expressly
+deferred, without dropping cards or dimensions. The Operator changed sequencing,
+so Arc01 is amended before Slice03 opens: A01-02 is deferred for the remaining
+readiness component, and Slice03 receives an explicit carryover/handoff obligation.
+Arc01 composition is still open. Project10 P10-11 remains open; no release row
+is accepted. No source acquisition or conversion is authorized by deferral.
+
+Eight prior accepted criteria retain applicable evidence: source, index, map,
+method/actions and CC-produced evidence bytes are unchanged. The candidate-pinned
+reviewer replay remains applicable; closure QA checks all nine unchanged criteria,
+final dispositions, preserved prompts/artifacts and propagated ownership/re-entry.
+This administrative plan change does not spend a fifth CC refinement.

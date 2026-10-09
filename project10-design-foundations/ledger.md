@@ -22,3 +22,14 @@ wording adoption remain later work.
 | P10-08 | Independent/Operator gates, version history and the accepted handoff to Project11 are complete | Project close record identifies accepted source/package/audit revisions, findings, compatibility and limits | serious | Release and dependency contract | open | — | Release publication is separate authorization |
 | P10-09 | Every card receives source-fidelity, correctness, scope, consistency and relationship/question-coverage review | Inspect complete per-card coverage and substantive claim checks against the five dimensions in the project plan; independently verify the claimed results | correctness-grade | Operator full-corpus decision | open | — | Valid structure and extraction confidence are not semantic verification |
 | P10-10 | Source gaps, corrections and population changes remain explicit and cannot create false completion | Reconcile original 233-card manifest to final cards, source locators under sources/md/, correction history, blocked checks and dependent guidance | serious | Operator full-corpus and source-layout decisions | open | — | Required unresolved review blocks completion; any scope reduction needs an explicit Operator decision |
+
+## Operator source-readiness carryover — 2026-10-09
+
+S02-08 is deferred by explicit Operator order, allowing Slice03 planning; see
+[the decision](project-plan.md#operator-deferral--2026-10-09). The following
+successor row retains the unmet requirement and Arc02 ownership. P10-09/10 and
+all release rows remain open; the deferral is not original-fidelity evidence.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| P10-11 | Deferred S02-08 source identity, accessibility and original/prepared locator/fidelity evidence are sufficient for all dependent full-corpus source-faithfulness checks | Inspect exact original editions/page bases, immutable captures/lineage, completeness/fidelity mappings and independent readiness results against all affected cards | correctness-grade | Operator S02-08 deferral, 2026-10-09 | open | [Unmet S02-08](arc01-portable-contract/slice02-source-and-review-readiness/ledger.md); [required inputs/re-entry](arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md) | Arc02 CDC + Operator own resolution before accepting dependent source-fidelity results and full-corpus/release completion; preserve 150 book-backed and 83 web-backed cards, not a smaller population |
