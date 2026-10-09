@@ -54,6 +54,20 @@ document preservation does not establish experimental acceptance.
 
 ## Workflow
 
+### Design audit and release projects — Operator decision, 2026-10-08
+
+Planning lives on this `planning` branch/worktree under
+`project09-design-audit/`, `project10-design-foundations/` (1.5 target), and
+`project11-unified-design-practice/` (2.0 target). The Operator explicitly chose
+`project09-design-audit/artifacts/` as the shared audit home, overriding the
+slice-local default for those records. Both release projects link to that one
+baseline; Project11 also depends on Project10's accepted foundation. Use each
+project's `project-plan.md` and `ledger.md` for scope and status. Future
+slice-produced artifacts retain the normal slice-local home. No implementation
+assignment, project closure, or release approval is implied by this bootstrap.
+
+### Standing workflow
+
 - **Repo home:** `billosys` org, public, default implementation branch `main`;
   dedicated planning branch `planning`.
 - **Worktree identity:** this checkout should report branch `planning`. Use
