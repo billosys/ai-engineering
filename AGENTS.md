@@ -16,9 +16,15 @@ not the implementation checkout and should not be used for source/package edits.
 - Use the current `collaboration-framework` skill at session start. Because
   this orphan planning branch does not carry the framework source docs, load
   them from the installed skill or from the main checkout. For planning work,
-  read `docs/PROJECT-MANAGEMENT.md` as the wayfinder and then load the
-  relevant `docs/pm/` files before creating or closing project, arc, or slice
-  artifacts.
+  read the source checkout's
+  [knowledge/project-management/SKILL.md](../../knowledge/project-management/SKILL.md),
+  then [knowledge/project-management/guides/README.md](../../knowledge/project-management/guides/README.md)
+  as the wayfinder, and load the relevant `knowledge/project-management/guides/`
+  files before creating or closing project, arc, or slice artifacts.
+  These `knowledge/` paths belong to the source checkout, not this orphan
+  planning tree; use a project's explicitly designated source worktree where
+  applicable. Old `docs/` framework routes in preserved plans or issued prompts
+  are historical provenance, not instructions to recreate the retired layout.
 - The current canonical layout is
   `projectNN-<slug>/project-plan.md` plus project `ledger.md`,
   `arcNN-<slug>/arc-plan.md` plus arc `ledger.md`, and per-slice
