@@ -1,5 +1,10 @@
 # Slice01 Ledger
 
+CDC review of `0e0c1d0a` requests two bounded corrections. All rows remain open;
+see [the current verdict](cdc-verification.md) and
+[iteration01](cc-prompt-iteration01.md). Reproduced unaffected evidence is retained
+subject to unchanged inputs and criteria.
+
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
 | S01-01 | Intake identifies current assignment/source/audit state and completes required reading/query coverage | Inspect execution notes, actual loaded extents and source-cited readback | correctness-grade | Prompt intake contract | open | [Execution notes](artifacts/execution-notes.md#required-reading-coverage-and-contract-readback) | CC proposes completion; CDC must assess the readback and actual coverage |

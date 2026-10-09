@@ -54,7 +54,8 @@ does not authorize reducing the approved review scope.
 
 | Assignment | State | Scope and next owner |
 |---|---|---|
-| `cc-prompt.md`, 2026-10-09 | Issued to Operator for relay; CC execution not yet reported | Initial contract/inventory assignment; CC returns evidence to CDC |
+| `cc-prompt.md`, 2026-10-09 | CC proposed done at `0e0c1d0a`; CDC requested bounded corrections | Initial evidence retained; see [CDC verification](cdc-verification.md) |
+| `cc-prompt-iteration01.md`, 2026-10-09 | Current; issued to Operator for relay | CC corrects raw source predicates and intake/query receipts; returns proposed done to CDC |
 
 Preserve this prompt once issued. Corrections use the next
 `cc-prompt-iterationNN.md` in this directory, with the current assignment recorded
@@ -97,5 +98,7 @@ issue. No close-set records are created at opening.
 
 ## Version History
 
+- 1.1 (2026-10-09): Recorded independent review of CC completion and issued
+  iteration01 for two bounded evidence corrections. Slice and all rows remain open.
 - 1.0 (2026-10-09): Opened the initial evidence/contract slice and issued its
   source-grounded CC prompt. No source work or semantic corpus review performed.

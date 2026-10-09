@@ -101,10 +101,12 @@ each near execution after resolving its dependencies. The active
 | arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 | DES-010, DES-013, DES-014; all repeated claims |
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
-Current status: active; Arc01 Slice01 is open for CC. Current assignment:
-`arc01-portable-contract/slice01-scope-and-portability-contract/cc-prompt.md`.
-The Operator relays it to the separate CC context; execution has not yet been
-reported. Project09 may be consulted for planning
+Current status: active; Arc01 Slice01 remains open after independent CDC review
+of CC completion at `0e0c1d0a`. Current assignment:
+`arc01-portable-contract/slice01-scope-and-portability-contract/cc-prompt-iteration01.md`.
+The Operator relays this bounded evidence correction to the separate CC context.
+See the [CDC record](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md);
+no later slice has opened. Project09 may be consulted for planning
 before its formal acceptance, with its limits visible. The accepted baseline is
 required at release readiness. Coordinate any card-format/schema changes with
 Project08 rather than importing its scope by association.
@@ -155,6 +157,8 @@ remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
 
+- 1.4 (2026-10-09): Recorded independent Slice01 review and iteration01 handoff;
+  no project scope or design decision changed.
 - 1.3 (2026-10-09): Operator opened Arc01 and Slice01. Issued the bounded
   contract/inventory prompt with exact outputs, source-gap handling, contrasting
   checks, file scope and source-grounded author readiness. Full corpus semantics

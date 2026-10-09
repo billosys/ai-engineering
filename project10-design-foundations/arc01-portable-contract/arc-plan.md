@@ -26,7 +26,7 @@ Project09 audit artifacts are consumed at planning commit
 
 | Slice | Capability | Dependency and state |
 |---|---|---|
-| slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Open; initial CC assignment issued to Operator |
+| slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Open; CC proposed done; CDC requested iteration01 corrections |
 | slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Planned after accepted Slice01; source availability controls readiness; no prompt issued |
 | slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Planned after accepted Slice02; no prompt issued |
 
@@ -67,12 +67,17 @@ Arc closure needs its own composition demonstration and attributed independent
 gate. Do not pre-create close or verification records.
 
 Current assignment:
-`slice01-scope-and-portability-contract/cc-prompt.md` (initial, issued 2026-10-09).
+`slice01-scope-and-portability-contract/cc-prompt-iteration01.md` (issued 2026-10-09).
+Initial CC completion at `0e0c1d0a` received independent review; Slice01 stays
+open for the two corrections in its [CDC record](slice01-scope-and-portability-contract/cdc-verification.md).
+The initial prompt remains preserved; no later slice is opened.
 CDC owns structural decisions and later slice preparation. Escalate changes to
 scope, source baseline, evidence requirements or adopted design; local formatting
 and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
 
+- 1.1 (2026-10-09): Recorded Slice01 review and current iteration01 assignment;
+  retained arc scope and downstream acceptance dependencies.
 - 1.0 (2026-10-09): Opened Arc01 with three bounded slices; issued the first
   evidence/contract assignment under the settled Operator scope decisions.
