@@ -8,15 +8,17 @@ SOURCE: `dffa504e851b03b8e4746f1941068e4cc850b612`; accepted Slice01:
 
 ## Current verdict
 
-**Iteration03 reviewed; three bounded criteria accepted, Slice02 still open.**
-Candidate `80813b2e2b1ebd6b3bc714e9a4b86478b21cf6ae` executes iteration03 issued
-at `96137b1fb68ff7f57993e5a0b2a293d85c94cafb`. S02-03/05/06 are independently
-done for exact locator accounting, source-input action planning and the review
-procedure. Six rows remain open. The corrected map and committed checker replay
-reproduce, but a secondary join/role error, inaccurate guide receipts and weak
-exact-join validation remain. [Iteration04](cc-prompt-iteration04.md) scopes those
-planning corrections and protects accepted work. Missing originals/captures/
-lineage/fidelity still block S02-08; no Slice03 or full semantic acceptance.
+**Iteration04 accepted for local criteria; eight of nine rows done, Slice02 open.**
+Candidate `759ce2dd116a4cfe03b72d43fd2791f48486251c`, direct child of issue
+`83db00fed56a8528dfa151d9bef755b9873c6a04`, resolves the remaining prepared
+join/role, receipt and checker findings. CDC independently accepts S02-01/02/04/
+07/09; S02-03/05/06 retain their earlier acceptance. S02-08 alone remains open,
+input-blocked by original editions/page bases and immutable web capture/lineage/
+fidelity evidence. No Slice03, original fidelity or full semantic acceptance.
+[Iteration04 review](#iteration04-independent-review--2026-10-09) is the current
+verdict; prior reviews and issued prompts remain historical. No further local
+correction is assigned. Source-input intake precedes any separately authorized
+preparation assignment; Expedited Mode remains enabled within that gate.
 
 The following initial verdict and review remain historical at `db48d863`.
 CC did not propose completion.
@@ -707,3 +709,218 @@ S02-03/05/06 alone changed to done, six remain open. Six EOF/no-CRLF files,
 with its expected single finding. `git diff --check` passes. These are author
 self-checks of reviewer/planning records, not independent acceptance of this
 new prompt. Committed-tree exact scope and whitespace checks follow the commit.
+
+## Iteration04 independent review — 2026-10-09
+
+Reviewer Sofie (CDC), separate from CC; Two-Contributor Workflow. Candidate
+`759ce2dd116a4cfe03b72d43fd2791f48486251c`; issue
+`83db00fed56a8528dfa151d9bef755b9873c6a04`, preserved
+[iteration04 prompt](cc-prompt-iteration04.md). SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`; Slice01/audit pins unchanged.
+
+### Reproduced results and evidence retention
+
+The final candidate is a direct child of the exact issuing commit, with exactly
+five authorized paths and both required trailers. Protected map, actions, method,
+plans, prompts, CDC history, Slice01 and audit bytes are unchanged. SOURCE has no
+tracked changes; its `knowledge/lfe/` and planning `project12-chcd-protocol/`
+remain the unrelated untracked entries. Candidate `git diff --check` passes.
+
+CDC extracted the exact 293-line checker from **759ce2dd committed bytes**,
+inspected it, and ran it before reviewer changes: exit 0, all nine PASS lines.
+This reproduces 233 raw copies/eight pairs/caveats, 104 post/141 total targets,
+hashes/inclusive bounds, intended theory hierarchy and specified omission/clipping
+controls, all 83 joins, DES equality, 28 prose links/six fragments and five EOF/
+no-CRLF files. The retained intermediate `33e18a19` receipt is accurately identified;
+this fresh final-candidate replay supplies the final object-specific evidence.
+The unmodified checker uses HEAD only under its explicit issue/direct-child guard;
+it should not be run unchanged against a subsequent CDC commit. The pinned
+reviewer replay below preserves candidate scope after that commit.
+
+A separate article-identity check covers every one of the 83 clauses. Every one
+of the 44 unique unit IDs retains its previously independently inspected exact
+path/hash/span/heading tuple; the complete unique tuple set and every reverse
+full-card membership match the map. The independent check additionally compares
+unit heading labels to mapped heading metadata. All 43 unchanged observations
+retain earlier applicability; U32 alone changes to a source-neutral observation.
+All 46 clause rows now identify their primary/secondary/supplemental role. The
+hsl.md primary clause remains U05/U06 and its distinct CSS-Tricks clause is U32
+alone; Drasner's primary HSL clause remains U32/U18. Explicit expectations were
+checked against the literal clauses and retained unit identities, rather than
+accepted merely because the code copies those IDs.
+
+The exact full published checker rejects three **in-memory table mutations**:
+adding eligible-but-wrong-source U05 to secondary HSL, replacing U32 with globally
+known but ineligible U43, and labeling Drasner's primary clause secondary. No
+file was changed by these controls. The inline same-predicate controls also pass.
+These tests establish navigation and recorded join/role integrity, not semantic
+support or original fidelity. The independent extra heading comparison does not
+imply that the CC predicate separately compares every displayed heading label.
+
+Fresh guide receipts reconcile pinned/source/installed bytes at 94/108/231 lines
+and the three published SHA-256 values. Required fresh scopes are recorded as
+locator 1–94, output 55–97 and verification 143–186, with a coherent contract
+readback. Historical 87/109/220 extents, the incorrect docs/... prompt attribution,
+and unavailable earlier exact ranges remain visible; no earlier complete read is
+invented. CC's reading is attested; CDC reproduces input identity, required query
+coverage and the receipt/readback reconciliation, not the mental act of reading.
+
+Earlier 161-file inventory, Butterick title/URL/body-boundary and 37 complete-read
+records, whole-article receipts, F02/F04, and accepted map/actions/method evidence
+retain their earlier scopes and revisions: their inputs are unchanged. CDC did
+not repeat four whole-article or 37 Butterick reads this pass. Earlier intake and
+failure-history blocks are byte-preserved; correcting the current joins/checker
+does not turn their older green results into stronger historical predicates.
+
+### Findings, ledger walk and bubble-up
+
+F01/F03/F05 are resolved within their local evidence criteria; earlier F02/F04
+remain resolved. S02-08's required inputs are still absent. The current closing
+addendum correctly walks all nine rows as three accepted/six open at CC handoff;
+CDC's five new acceptances below supersede that handoff, without editing it.
+Six produced supporting artifacts remain under artifacts/; author reconnaissance
+is immutable input, and every issued prompt remains in the slice root.
+
+| Row | CDC disposition at 759ce2dd | Evidence and limit |
+|---|---|---|
+| S02-01 | done — reconciled | Exact pins/authority/readback, fresh truthful guide receipts and complete structured query coverage; old unverifiable read ranges remain historical, not accepted as complete reads |
+| S02-02 | done — reconciled | All eight raw identities/populations, explicit original/prepared limits and corrected secondary/supplemental joins; missing originals are disclosed, not verified |
+| S02-03 | done — retained/reproduced | Earlier accepted map unchanged; 233 raw copies, caveats and current typed targets replay |
+| S02-04 | done — reconciled | 37 Butterick records retained plus all 46 post paths/83 clause joins/44 units reproduced against context identities and attributed inspection records; prepared navigation only |
+| S02-05 | done — retained | Input/owner/action/authorization/re-entry register unchanged and applicable; acquisition remains unperformed |
+| S02-06 | done — retained/reproduced | Five-dimension claim method unchanged and applicable; all 16 DES rows replay; semantic execution remains downstream |
+| S02-07 | done — reproduced | Exact five-path commit/protected inputs, final committed checker, stronger joins/headings, full contrary controls, links, newlines and diff check |
+| S02-08 | open — input-blocked | No exact originals for 150 book-backed cards or immutable capture/lineage/fidelity evidence for 83 web-backed cards |
+| S02-09 | done — reconciled | Complete nine-row walk, actual five-file change set and existing artifact inventory, preserved failures/limits and truthful blocked arc handoff |
+
+Scope-as-specified versus delivery: the local identity/navigation/method packet
+is accepted; the required original-source readiness part of Slice02 is not yet
+delivered. No deferral, denominator reduction, quarantine substitution or weaker
+gate is adopted. Arc01 A01-02 and composition remain open. The anticipated input
+gate needs no structural arc or sequencing amendment. Parent and slice plans
+receive status/history updates only. No Slice03 opening while S02-08 is open.
+
+Next owner: Operator provides/selects exact Arnheim, Cleland and Tschichold
+original files/editions (and translation where applicable), with printed/physical
+page bases; identifies existing Butterick/four-article captures and conversion
+records or selects fresh capture preparation. CDC then defines exact input and
+output allowlists, version/capture and fidelity procedure before a separate CC
+assignment. Public URLs or bibliographic entries alone cannot close S02-08.
+No capture, purchase, conversion or private search is authorized by this review.
+No fifth refinement is spent merely repeating blocked input requests. Full
+233-card/five-dimension semantic review, original comparison, media/datasets and
+package/browser/accessibility checks remain unrun here and binding downstream.
+
+### Recoverable candidate-pinned reviewer replay
+
+Run with Python 3 from any directory on this host. It reads the exact planning
+candidate through Git objects, pins the CC checker's historical file-selection
+scope, and runs valid and bad inputs through the full published checker. Source
+and installed guidance are checked against their named pinned bytes; changing
+those inputs intentionally invalidates this replay. This is inline review evidence,
+not maintained validator software. Exit 0; exact output follows the code.
+
+```python
+from pathlib import Path
+import subprocess,json,re,hashlib,contextlib,io
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+S=P.parent.parent
+L=P/'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness'
+C='759ce2dd116a4cfe03b72d43fd2791f48486251c'
+ISSUE='83db00fed56a8528dfa151d9bef755b9873c6a04'
+def blob(pin,path):return subprocess.check_output(['git','show',pin+':'+str(path.relative_to(P))],cwd=P,text=True)
+b=blob(C,L/'artifacts/execution-notes.md');old=blob(ISSUE,L/'artifacts/execution-notes.md')
+m=[json.loads(x) for x in blob(C,L/'artifacts/locator-map.jsonl').splitlines()]
+posts=[x for x in m if '/posts/' in x['card_path']]
+def unitrows(n):return [x for x in n.split('### Iteration03 unique source-unit inspection results (CC evidence)\n')[1].split('### Iteration03 exact clause-to-unit')[0].splitlines() if re.match(r'^\| U\d{2} \|',x)]
+assert [x.split(' | ')[:4] for x in unitrows(b)]==[x.split(' | ')[:4] for x in unitrows(old)]
+units={}
+for x in unitrows(b):
+ a=x.split(' | '); uid=a[0].removeprefix('| ');path=a[1].strip('`'); start,end,heading=re.match(r'(\d+)–(\d+); (.*)',a[3]).groups()
+ units[uid]=(path,int(start),int(end))
+ matches=[t for r in posts for t in r['prepared_targets'] if (t['path_or_uri'],str(t['locator_value']['line_start']),str(t['locator_value']['line_end']))==(path,start,end)]
+ assert matches
+ if 'heading' in matches[0]['locator_value']:assert heading==matches[0]['locator_value']['heading']
+ actual={r['card_path'] for r in posts if any((t['path_or_uri'],t['locator_value']['line_start'],t['locator_value']['line_end'])==units[uid] for t in r['prepared_targets'])}
+ assert actual==set(re.findall(r'`(knowledge/design/concept-cards/posts/[^`]+)`',a[-1]))
+keys={(t['path_or_uri'],t['locator_value']['line_start'],t['locator_value']['line_end']) for r in posts for t in r['prepared_targets']}
+assert len(units)==len(set(units.values()))==44 and set(units.values())==keys
+print('PASS 44 exact predecessor unit identities, headings and reverse memberships')
+section=b.split('### Iteration03 exact clause-to-unit joins for the 46 post references\n')[1].split('### Iteration03 complete retained validation')[0]
+count=0
+for line in section.splitlines():
+ if not line.startswith('| `knowledge/design/concept-cards/posts/'):continue
+ a=line.split(' | ');card=a[0].removeprefix('| ').strip('`');row=next(r for r in posts if r['card_path']==card)
+ primary=next(t['path_or_uri'] for t in row['prepared_targets'] if not t['locator_value'].get('citation_role'))
+ for part in a[1].split('<br>'):
+  clause,tail=part.rsplit(' => ',1);ids=re.findall(r'\bU\d{2}\b',tail);assert ids
+  expected='knowledge/design/sources/md/posts/working-with-colours.md' if 'Working With Colors Guide' in clause else primary
+  assert all(units[u][0]==expected for u in ids),(card,clause,ids)
+  count+=1
+assert count==83
+print('PASS all 83 intended article joins')
+code=b.split('### Iteration03 complete retained validation and prose-link checker',1)[1].split('```python\n',1)[1].split('\n```',1)[0]
+# Pin the historical Git scope explicitly; use committed bytes for every planning read.
+code=code.replace("current=run(['git','rev-parse','HEAD'])","current='"+C+"'")
+hsl=next(x for x in section.splitlines() if x.startswith('| `knowledge/design/concept-cards/posts/hsl.md`'))
+dr=next(x for x in section.splitlines() if x.startswith('| `knowledge/design/concept-cards/posts/hsl-css-syntax.md`'))
+orig=Path.read_text
+for label,line,repl in [('valid',None,None),('wrong-source U05',hsl,hsl.replace('=> U32 (secondary','=> U05, U32 (secondary')),('ineligible U43',hsl,hsl.replace('=> U32 (secondary','=> U43 (secondary')),('wrong role',dr,dr.replace('(primary;','(secondary;'))]:
+ changed=b if line is None else b.replace(line,repl)
+ def read(self,*args,**kwargs):
+  if self==L/'artifacts/execution-notes.md':return changed
+  if self.is_relative_to(P):return blob(C,self)
+  return orig(self,*args,**kwargs)
+ Path.read_text=read
+ try:
+  try:
+   with contextlib.redirect_stdout(io.StringIO()):exec(compile(code,'committed-check','exec'),{})
+  except AssertionError:
+   assert label!='valid';print('PASS full checker rejects',label)
+  else:
+   assert label=='valid';print('PASS candidate-pinned full checker: all nine checks')
+ finally:Path.read_text=orig
+for f in ['knowledge/document-extraction/guides/09-locator-model.md','knowledge/document-extraction/guides/03-output-contract.md','knowledge/concept-cards/guides/08-validation-verification.md']:
+ data=(S/f).read_bytes();pinned=subprocess.check_output(['git','show','dffa504e:'+f],cwd=S)
+ installed=Path('/Users/oubiwann/Library/Application Support/ChatGPT-Profiles/personal/codex-home/skills')/f.removeprefix('knowledge/')
+ assert data==pinned==installed.read_bytes()
+ print('PASS source/pinned/installed guide',len(data.decode().splitlines()),hashlib.sha256(data).hexdigest())
+assert subprocess.check_output(['git','diff',ISSUE,C,'--check'],cwd=P,text=True)==''
+print('PASS candidate diff check')
+```
+
+```text
+PASS 44 exact predecessor unit identities, headings and reverse memberships
+PASS all 83 intended article joins
+PASS candidate-pinned full checker: all nine checks
+PASS full checker rejects wrong-source U05
+PASS full checker rejects ineligible U43
+PASS full checker rejects wrong role
+PASS source/pinned/installed guide 94 6d69bd5ff0445af357b1ca39f442db40e25cbf348f7228f1be35484e8019e1ac
+PASS source/pinned/installed guide 108 7f93c35e5db153568793002b1199ea8ae3cb61d8fa2ca5e2a15fca4bd2fbbe15
+PASS source/pinned/installed guide 231 095c897f934f753ba5aa1f5b7f40d22a5134f52eb8b71545e9186de4deb396d3
+PASS candidate diff check
+```
+
+Reviewer execution limits: one broad diff output was truncated; all changed
+checker code was read in bounded chunks and other changes were inspected or
+compared through complete committed projections. A refresh command initially
+requested nonexistent `04-closing-bottom-up.md`; `rg --files` resolved the live
+`04-closing-slices.md`, which was then read. Neither failed attempt is evidence
+of complete reading or a dangling issued prompt. No unresolved validation failure.
+
+### Reviewer packet validation
+
+The five reviewer paths are project-plan.md, Arc01 arc-plan.md, Slice02
+slice-plan.md, ledger.md and this CDC record. All nine criterion/verify/significance/
+origin fields remain identical to the candidate; previously accepted S02-03/05/06
+rows remain byte-identical. Eight rows are done and S02-08 remains open.
+All prior CDC review text is preserved, apart from the expressly replaced current
+verdict. A reviewer QA assertion initially expected the wrong number of trailing
+newlines at the historical/appended boundary and stopped before creating its
+replay file; comparing the unchanged historical text independently of boundary
+blank lines repaired that helper. The durable checker was then extracted from
+this record and reproduced with exit 0 and every result above. Five reviewer
+files have 40 resolving local links/17 fragments, final newlines and no CRLF;
+Git diff check passes. No package or source metadata changed, so package Make
+gates do not apply to this planning-only review.

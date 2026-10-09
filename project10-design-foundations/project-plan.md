@@ -102,13 +102,13 @@ each near execution after resolving its dependencies. The active
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
 Current status: active; Arc01 Slice01 closed after independent CDC acceptance
-of `9cc20338`. Slice02 iteration03 `80813b2e` received independent review:
-S02-03/05/06 are done for locator accounting, input-action planning and the review
-procedure. Six rows remain open, including the original-readiness gate S02-08.
-Current assignment is [iteration04](arc01-portable-contract/slice02-source-and-review-readiness/cc-prompt-iteration04.md)
-under Operator-selected Expedited Mode: correct remaining secondary citation joins,
-role/intake receipts and the clause validator. The 233-card/five-dimension semantic
-review remains binding downstream work. No Slice03 or release gate is closed.
+of `9cc20338`. Slice02 iteration04 `759ce2dd` is independently accepted for
+local criteria: eight of nine rows are done. S02-08 alone remains input-blocked
+by exact original editions/page bases and immutable captures/lineage/fidelity.
+No active CC correction assignment remains; Operator source-input selection and
+CDC preparation scoping precede any new work. Expedited Mode remains enabled,
+with no Slice03 advance until readiness acceptance. The 233-card/five-dimension
+semantic review remains binding downstream work; no release gate is closed.
 See the [CDC acceptance](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance);
 this evidence/proposal acceptance does not adopt final teaching formulations or
 close any release criterion. Project09 may be consulted for planning
@@ -173,6 +173,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.12 (2026-10-09): Accepted Slice02 iteration04 `759ce2dd` for the remaining
+  local criteria; eight rows done, S02-08 alone input-blocked. Recorded source
+  intake as the next dependency, without source authority or Slice03 advance.
 
 - 1.11 (2026-10-09): Reviewed Slice02 iteration03 `80813b2e`; independently
   accepted S02-03/05/06 and issued bounded iteration04 for remaining joins,

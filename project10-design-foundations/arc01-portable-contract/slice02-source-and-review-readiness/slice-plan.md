@@ -73,10 +73,12 @@ inputs and higher-scale gates still stop dependent advancement.
 
 ## Assignment history
 
-Current assignment: [iteration04](cc-prompt-iteration04.md), after independent
-review of iteration03 candidate `80813b2e`. All issued prompts are preserved.
-S02-03/05/06 are independently done for their bounded criteria; six rows remain
-open. S02-08 is input-blocked; remaining join/role/receipt checks are executable.
+Current handoff: [iteration04](cc-prompt-iteration04.md) returned at `759ce2dd`
+and is independently accepted for local criteria. Eight of nine rows are done;
+S02-08 alone is input-blocked. No active CC correction or preparation assignment.
+Operator supplies/selects exact original editions/page bases and web capture/
+conversion inputs; CDC defines any additional input/output authority before CC
+proceeds. All prompts are preserved; no Slice03 advance or semantic acceptance.
 
 | Assignment | State | Scope and next owner |
 |---|---|---|
@@ -84,7 +86,7 @@ open. S02-08 is input-blocked; remaining join/role/receipt checks are executable
 | `cc-prompt-iteration01.md`, 2026-10-09; predecessor `cc-prompt.md` | Returned partial at `1c0c8acf`; scoped corrections reproduced, no slice acceptance | 37 complete-read records structurally reconcile; F02/F03/F04 corrected; F05 and 46 post-card reads remain |
 | `cc-prompt-iteration02.md`, 2026-10-09; predecessor `cc-prompt-iteration01.md` | Returned partial at `bf02e970`; independently reviewed, no slice acceptance | Four complete-file receipts and Brown antecedents retained; clause/context evidence, intended mapping and checker replay still incomplete |
 | `cc-prompt-iteration03.md`, 2026-10-09; predecessor `cc-prompt-iteration02.md` | Returned at `80813b2e`; independently reviewed, S02-03/05/06 accepted, slice still open | Map corrections and committed replay reproduce; secondary join/role, guide receipts and join-check strength remain |
-| `cc-prompt-iteration04.md`, 2026-10-09; predecessor `cc-prompt-iteration03.md` | Current; issued to Operator for relay | CC corrects remaining joins/roles/receipts and validates exact clause-unit relations; accepted artifacts protected; original readiness remains input-blocked |
+| `cc-prompt-iteration04.md`, 2026-10-09; predecessor `cc-prompt-iteration03.md` | Returned at `759ce2dd`; independently accepted for local criteria | Eight rows done; S02-08 alone awaits originals/captures/fidelity. No active correction; Operator input intake and separately scoped CDC preparation next |
 
 ### Iteration04 author readiness
 
@@ -194,6 +196,11 @@ performing 233 semantic reviews. Required prose/queries have separate extents
 and an existing evidence home. Author readiness is not execution or acceptance.
 
 ## Version History
+
+- 1.5 (2026-10-09): Independently accepted iteration04 `759ce2dd` for five
+  remaining local criteria and retained S02-03/05/06; only S02-08 stays open.
+  Recorded input-dependent re-entry; no fifth correction, source authority,
+  criterion amendment or Slice03 opening.
 
 - 1.4 (2026-10-09): Independently accepted S02-03/05/06 at `80813b2e` and
   issued iteration04 for remaining join/role, guide-receipt and checker gaps.
