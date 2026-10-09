@@ -3,6 +3,11 @@
 All release criteria are open. The shared audit and synthesis are planning
 inputs; they do not establish delivery or acceptance of this project.
 
+Arc01/Slice01 opened on 2026-10-09. Its
+[slice ledger](arc01-portable-contract/slice01-scope-and-portability-contract/ledger.md)
+tracks the first contract/inventory packet; issuing that assignment does not
+close any project row.
+
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
 | P10-01 | Corpus scope, C&B treatment, compatibility and live-skill authority are explicit and approved | Inspect Arc01 decisions and Operator record against the project boundaries | serious | Synthesis; DES-001/013/015 | open | [Recorded Operator decisions](project-plan.md#recorded-operator-decisions): full-corpus review, C&B removal and bug-correction classification | These scope decisions are settled; the portable live-skill contract still needs detail |

@@ -1,0 +1,11 @@
+# Slice01 Ledger
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S01-01 | Intake identifies current assignment/source/audit state and completes required reading/query coverage | Inspect execution notes, actual loaded extents and source-cited readback | correctness-grade | Prompt intake contract | open | — | Reading receipts alone are not understanding |
+| S01-02 | Manifest covers the exact baseline population and index preserves every card's source metadata | Compare full path sets, byte sizes and SHA-256 values against Git source; check all 233 index rows and missing/null distinctions | correctness-grade | P10-06/10 | open | — | Expected 402 design files, not permission to invent matching counts |
+| S01-03 | Source availability is accounted for by actual source identity, with affected cards and next actions | Reconcile eight observed source titles across five card collections with local holdings; inspect mapped witnesses and explicit gaps | correctness-grade | DES-013/015 | open | — | Presence is not extraction fidelity or semantic readiness |
+| S01-04 | Portable contract faithfully implements settled decisions while preserving contextual craft | Walk binding/proposed labels, profile fields and all five contrast cases | correctness-grade | Operator decisions; DES-001/002 | open | — | No C&B fallback, legacy profile or universal replacement preset |
+| S01-05 | Every live file and all DES findings have accountable downstream treatment | Inspect eight-file change map and DES-001–016 mapping to arc/decision/check | correctness-grade | Project composition | open | — | Slice01 routes findings; does not claim to fix them |
+| S01-06 | Inspection leaves source and shared evidence unchanged and outputs stay within allowlist | Before/after source/audit hash and Git checks; planning diff and local-link checks | correctness-grade | Scope/preservation | open | — | Leave unrelated work untouched |
+| S01-07 | The packet is reviewable and distinguishes completed investigation from required later work | Row-by-row closing report, actual check results, source-gap ownership and proposed contract decisions | serious | Slice DoD | open | — | Independent CDC acceptance pending |

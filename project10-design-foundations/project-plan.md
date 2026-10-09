@@ -1,6 +1,6 @@
 ---
 project: project10-design-foundations
-status: planned
+status: active
 depends-on: [project09-design-audit]
 blocks: [project11-unified-design-practice]
 related: [project08-concept-card-metadata]
@@ -14,8 +14,8 @@ Make `visual-design-system` trustworthy, portable and internally coherent while
 preserving its compositional ethos. The Operator assigned the 1.5 effort to
 Project10 on 2026-10-08. Planning lives on branch `planning`, under
 `.worktrees/planning/project10-design-foundations/`; source/package work belongs
-in the main checkout. This establishes the project and initial roadmap, not an
-issued implementation assignment or an approved release.
+in the main checkout. The Operator opened Arc01/Slice01 on 2026-10-09 for a
+bounded contract/evidence assignment, not a source rewrite or release.
 
 The shared design input is Project09's
 [release synthesis](../project09-design-audit/artifacts/audit-modernization-synthesis.md),
@@ -35,7 +35,8 @@ relationships, content-led composition, intrinsic layout and expressive craft.
 
 Every DES finding must have a checked disposition. All claims admitted into live
 guidance and the complete concept-card corpus must be reviewed; unresolved
-material cannot silently become authority. Run the applicable source/version/package gates and task demonstrations
+material cannot silently become authority. Run the applicable source/version/package
+gates and task demonstrations
 against the composed package, with independent review and Operator acceptance.
 The [ledger](ledger.md) holds those release-level criteria.
 
@@ -86,11 +87,11 @@ subdirectories as appropriate, not `sources-md/`. The existing design tree alrea
 uses this convention. Preserve source provenance and original files; do not infer
 a bulk relocation or transformation merely from the naming clarification.
 
-## Initial arc roadmap
+## Arc roadmap
 
-These are candidate arc boundaries derived from the accepted direction. No arc
-directories, slice open sets or CC prompts are issued yet. Detail each arc near
-execution, after resolving its dependencies and scope decisions.
+Arc01 is open with its first slice issued. Remaining arcs are planned; detail
+each near execution after resolving its dependencies. The active
+[Arc01 plan](arc01-portable-contract/arc-plan.md) supplies the slice breakdown.
 
 | Arc | Capability | Dependencies | Audit coverage |
 |---|---|---|---|
@@ -100,7 +101,10 @@ execution, after resolving its dependencies and scope decisions.
 | arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 | DES-010, DES-013, DES-014; all repeated claims |
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
-Current status: planned; no active arc. Project09 may be consulted for planning
+Current status: active; Arc01 Slice01 is open for CC. Current assignment:
+`arc01-portable-contract/slice01-scope-and-portability-contract/cc-prompt.md`.
+The Operator relays it to the separate CC context; execution has not yet been
+reported. Project09 may be consulted for planning
 before its formal acceptance, with its limits visible. The accepted baseline is
 required at release readiness. Coordinate any card-format/schema changes with
 Project08 rather than importing its scope by association.
@@ -136,8 +140,9 @@ treatment are settled; execution detail remains to be prepared in Arc01.
 ## Workflow and acceptance
 
 Default Two-Contributor Workflow: Sofie in this chat performs CDC planning with
-the Operator; CC is unassigned. No three-contributor or Expedited selection is
-inferred. Source work requires a complete slice open set and the Operator's
+the Operator; CC is the separate context receiving the prompt through the Operator.
+No three-contributor or Expedited selection is inferred. Source work requires
+a complete slice open set and the Operator's
 implementation handoff under the standing planning instructions. Slices use
 `cdc-verification.md`; any work implemented by the reviewer needs another
 verifier. Project closure requires independent composition review and Operator
@@ -150,6 +155,10 @@ remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
 
+- 1.3 (2026-10-09): Operator opened Arc01 and Slice01. Issued the bounded
+  contract/inventory prompt with exact outputs, source-gap handling, contrasting
+  checks, file scope and source-grounded author readiness. Full corpus semantics
+  and source implementation remain subsequent work.
 - 1.2 (2026-10-08): Operator required full semantic review/reconciliation of all
   233 cards and rejected narrower completion as a defect. Recorded review dimensions,
   coverage/source-gap rules and the `sources/md/` convention; expanded Arc01/02
