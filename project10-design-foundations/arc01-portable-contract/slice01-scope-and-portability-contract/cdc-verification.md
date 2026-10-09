@@ -7,7 +7,17 @@ Workflow: Two-Contributor. Reviewed CC commit
 `dffa504e851b03b8e4746f1941068e4cc850b612`, and Project09 audit
 `795ac75b7d02536e0e95252457ac3282cd17d8d8`.
 
-## Current verdict
+## Current verdict — iteration01 review, 2026-10-09
+
+**Changes requested; Slice01 remains open.** Reviewed CC correction commit
+`7000ff4df723dcf00728d1507ad63a118566651e` against issued iteration01 at
+`fa0b2ad43527b8a1973c4848f291b82051aebc4c`. The two initial findings are
+corrected. Fresh replay found one candidate-table transcription error and three
+heading-fragment mismatches. [Iteration02](cc-prompt-iteration02.md) limits the
+remaining correction to execution notes, closing report and ledger. All seven
+rows remain open; no source acquisition or semantic review is added to Slice01.
+
+## Initial verdict — initial CC review, 2026-10-09
 
 **Changes requested; Slice01 remains open.** Two bounded evidence corrections
 are required under [iteration01](cc-prompt-iteration01.md). No ledger row is
@@ -109,3 +119,97 @@ After CC returns iteration01, compare its exact diff and rerun affected
 predicates, reading receipts and report consistency. Retain the reproduced
 inventory/contract evidence only if their exact inputs and criteria remain
 unchanged. Record the follow-up review here without erasing this verdict.
+
+## Iteration01 independent replay — 2026-10-09
+
+CDC replayed the four inspected Python blocks in execution notes together from
+SOURCE, extracting complete fenced blocks with
+`re.findall(r'^```python\n(.*?)^```$', notes, re.S | re.M)` and running the
+concatenated text with `python3 -c`. Exit 0: the 402-file byte/hash/blob check,
+233-card literal field/body check, raw membership and display negative control
+passed. Four post searches returned all True; 37 Butterick candidate rows were
+printed. Captured stdout SHA-256:
+`167d3ac140eddfad74ccbfd63775be3575eac8f70fc7af10bf2bc36ce3de5974`.
+
+Independent additional comparisons parsed the report's actual JSON and table
+keys, checked each declared count, and counted one membership for every card:
+eight groups, union 233, no duplicate/omitted membership. CDC-S01-01 is corrected.
+The initial notes/report remain prefixes of their amended versions. The fresh
+187-line audit receipt is explicit and consistent with the pinned file; complete
+query text is now executable. CDC-S01-02's missing receipt/query-text defect is
+corrected. Reading remains CC attestation supported by the coherent readback;
+hashes and this replay do not establish attention or semantic understanding.
+
+### CDC-S01-03 — One candidate set differs despite the correct count
+
+The `headings` row of execution notes lists 23 candidate basenames including
+`summary-of-key-rules`, but the recorded query yields 23 including
+`text-formatting` instead. Direct source inspection confirms `headings` occurs
+in `text-formatting.md` and does not occur in `summary-of-key-rules.md`.
+CDC compared all 37 recorded candidate **sets**, not just counts: this is the
+only mismatch; the other 36 sets agree. All 37 remain ambiguous, with 2–42
+candidates; no validated locator follows. Correct the row and record the
+transcription error. A correct denominator cannot repair an incorrect witness.
+Affected evidence: S01-01/03/07 exact-query/results and handoff accuracy.
+
+### CDC-S01-04 — Three section fragments do not match their headings
+
+The two iteration01 headings contain a spaced em dash. Removing punctuation
+and replacing each space with a hyphen yields
+`iteration01-corrective-pass--2026-10-09` and
+`iteration01-corrective-addendum--proposed-done`, while three links use single
+hyphens. Two are in the ledger and one is in the closing report. The current
+25-link/19-fragment population has zero missing files but three unmatched
+fragments. This contradicts the claimed zero unresolved anchors.
+The check follows [GitHub's section-link rules](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
+and the [slugger implementation](https://github.com/Flet/github-slugger/blob/master/index.js),
+which replaces each space without collapsing consecutive hyphens. Remove the
+spaced em dashes from those two headings under iteration02's exact recipe;
+the existing link fragments will then match. Affected evidence: S01-06/07.
+
+### Preservation, evidence retention and complete row accounting
+
+Exact diff from issued iteration01 to `7000ff4d`: the four authorized files,
+both required trailers. Eight immutable slice files match the issued commit:
+manifest, index, contract, reconnaissance, both issued prompts, slice plan and
+initial CDC record. Both Project09 input files match `795ac75b`; the initial
+notes and closing-report history were retained. Four changed files have final
+newlines and no trailing whitespace. Commit-delta whitespace check passes.
+Source remains at `dffa504e`; unrelated untracked source/planning directories
+remain untouched.
+
+| Row | Iteration01 CDC result | Current disposition |
+|---|---|---|
+| S01-01 | Fresh complete receipt and executable queries pass; one reported candidate witness differs | Open; CDC-S01-03 |
+| S01-02 | Fresh documented population/index replay passes; prior stronger exact-order/scope evidence retained | Open pending final slice acceptance |
+| S01-03 | Raw identities, declared/display counts and designated-tree gaps pass; one candidate-table cell needs correction | Open; CDC-S01-03 |
+| S01-04 | Contract bytes and acceptance criteria unchanged; initial independent proposal/case review retained | Open pending final slice acceptance; no normative adoption |
+| S01-05 | Map bytes, inputs and criteria unchanged; initial eight-file/all-16-finding review retained | Open pending final slice acceptance |
+| S01-06 | Four-path scope, immutable inputs and whitespace pass; three fragments fail | Open; CDC-S01-04 |
+| S01-07 | All seven rows and limits retained; current evidence/report must reflect the two remaining defects | Open; iteration02 |
+
+Retained initial evidence keeps its original revision/date above. Exact input
+comparisons establish its continuing applicability; no delta changes the
+manifest/index, portable contract, map or their criteria. Live-state preservation
+checks and affected queries were executed now. No package, browser, acquisition,
+assistive-technology or semantic-corpus check was run.
+
+Reviewer attempts: the first fenced-block extractor mistakenly stopped at a
+triple-backtick string inside a Python regex and produced a SyntaxError; anchored
+fence extraction resolved it and all four blocks passed. The first table check
+failed on `headings`; a set comparison ruled out presentation-order differences
+and confirmed the actual witness substitution. The fragment checker failed on
+the three links above. One attempted GitHub documentation URL was unavailable;
+the canonical section-link documentation and slugger source were accessible.
+No final check failure is represented as a pass.
+
+### Bubble-up to the arc
+
+The packet delivers the inventory, availability assessment, proposed portability
+contract and change map assigned to Slice01; the remaining defects are bounded
+report integrity issues. All original rows/artifacts are present, with no scope
+reduction or semantic-acceptance claim. The missing 150 book originals, Butterick
+locator ambiguity and web-capture identity needs stay with planned Slice02;
+principle/configuration adoption stays with Slice03. No structural arc-plan
+amendment or new Operator decision is needed. Slice02 remains unopened pending
+Slice01 acceptance. Update routine current-assignment pointers only.

@@ -55,7 +55,8 @@ does not authorize reducing the approved review scope.
 | Assignment | State | Scope and next owner |
 |---|---|---|
 | `cc-prompt.md`, 2026-10-09 | CC proposed done at `0e0c1d0a`; CDC requested bounded corrections | Initial evidence retained; see [CDC verification](cdc-verification.md) |
-| `cc-prompt-iteration01.md`, 2026-10-09 | Current; issued to Operator for relay | CC corrects raw source predicates and intake/query receipts; returns proposed done to CDC |
+| `cc-prompt-iteration01.md`, 2026-10-09 | CC proposed done at `7000ff4d`; both initial findings passed CDC replay | One candidate-table transcription and three fragment mismatches remain in the CDC record |
+| `cc-prompt-iteration02.md`, 2026-10-09 | Current; issued to Operator for relay | CC corrects one candidate row and two heading lines, plus receipt/closing/ledger evidence; returns proposed done to CDC |
 
 Preserve this prompt once issued. Corrections use the next
 `cc-prompt-iterationNN.md` in this directory, with the current assignment recorded
@@ -96,8 +97,21 @@ Readiness is the author's self-check, not independent acceptance. The output
 contract has been checked for agreement with the slice/project ledgers before
 issue. No close-set records are created at opening.
 
+## Iteration02 author readiness — 2026-10-09
+
+Inspected the actual candidate queries, all 37 recorded sets and source witnesses,
+then prescribed the single replacement and two exact heading edits. The oracles
+reject a substituted witness with the correct count and fragments that match only
+a collapsed-hyphen approximation. The three-path allowlist permits these edits
+while retaining all unchanged substantive evidence under CDC applicability
+checks. Intake, preservation and review boundaries fit the existing slice; no
+semantic or acquisition work is delegated. This is author readiness, not CC
+execution or independent acceptance of a future correction.
+
 ## Version History
 
+- 1.2 (2026-10-09): Recorded iteration01 independent replay and issued iteration02
+  for candidate-table and fragment corrections; all original scope stays fixed.
 - 1.1 (2026-10-09): Recorded independent review of CC completion and issued
   iteration01 for two bounded evidence corrections. Slice and all rows remain open.
 - 1.0 (2026-10-09): Opened the initial evidence/contract slice and issued its

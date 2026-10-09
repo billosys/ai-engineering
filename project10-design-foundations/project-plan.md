@@ -102,8 +102,10 @@ each near execution after resolving its dependencies. The active
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
 Current status: active; Arc01 Slice01 remains open after independent CDC review
-of CC completion at `0e0c1d0a`. Current assignment:
-`arc01-portable-contract/slice01-scope-and-portability-contract/cc-prompt-iteration01.md`.
+of iteration01 completion at `7000ff4d`. Both initial findings are corrected;
+one candidate-table transcription and three section fragments need correction.
+Current assignment:
+`arc01-portable-contract/slice01-scope-and-portability-contract/cc-prompt-iteration02.md`.
 The Operator relays this bounded evidence correction to the separate CC context.
 See the [CDC record](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md);
 no later slice has opened. Project09 may be consulted for planning
@@ -157,6 +159,9 @@ remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
 
+- 1.5 (2026-10-09): Arc01/Slice01 iteration01 review resolved the initial defects;
+  recorded bounded iteration02 report/link corrections without changing project
+  scope, corpus review or downstream source requirements.
 - 1.4 (2026-10-09): Recorded independent Slice01 review and iteration01 handoff;
   no project scope or design decision changed.
 - 1.3 (2026-10-09): Operator opened Arc01 and Slice01. Issued the bounded

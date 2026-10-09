@@ -1,9 +1,10 @@
 # Slice01 Ledger
 
-CDC review of `0e0c1d0a` requests two bounded corrections. All rows remain open;
-see [the current verdict](cdc-verification.md) and
-[iteration01](cc-prompt-iteration01.md). Reproduced unaffected evidence is retained
-subject to unchanged inputs and criteria.
+Initial CDC review of `0e0c1d0a` requested two bounded corrections; iteration01
+at `7000ff4d` resolves them. Current review requests one candidate-table correction
+and three fragment repairs under [iteration02](cc-prompt-iteration02.md).
+All rows remain open; see [the current verdict](cdc-verification.md). Reproduced
+unaffected evidence is retained subject to unchanged inputs and criteria.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
