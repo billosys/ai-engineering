@@ -27,10 +27,10 @@ Project09 audit artifacts are consumed at planning commit
 | Slice | Capability | Dependency and state |
 |---|---|---|
 | slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Closed; CDC accepted `9cc20338`; all seven rows done |
-| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Planned; Slice01 dependency accepted; source availability controls readiness; no prompt issued |
+| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Open; initial prompt issued; Slice01 accepted; source availability controls readiness |
 | slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Planned after accepted Slice02; no prompt issued |
 
-Only Slice01 is detailed. Slice02 must follow actual source findings: record
+Slice01 is closed and Slice02 is detailed. Slice02 must follow actual source findings: record
 missing inputs and obtain necessary evidence without pretending local Markdown
 alone proves fidelity. Any needed source acquisition/conversion edits require
 their own explicit slice allowlist. Slice03 must not silently archive unreviewed
@@ -59,19 +59,28 @@ remains a separate project release dependency; this arc does not close Project09
 ## Roles, evidence and current handoff
 
 Default Two-Contributor Workflow. CDC: Sofie in the planning chat; CC: the separate
-implementing context to which the Operator relays the prompt. No CRC or Expedited
-Mode is selected. This opening does not start another chat or execute CC's work.
+implementing context to which the Operator relays the prompt. No CRC is selected.
+The Operator enabled Expedited Mode for remaining Project10 work on 2026-10-09,
+as recorded in the project plan. Commit explicit files after changes/review,
+close when full evidence permits, and automatically open the next planned slice.
+Formal arc closure and next-arc opening follow the same mode; unresolved source,
+independent or Operator gates stop dependent advancement. Evidence and scope
+requirements remain unchanged. This opening does not execute CC's work.
 Slice evidence belongs in its `artifacts/`; shared audit evidence stays in Project09.
 Slice acceptance uses `cdc-verification.md`, written only after independent review.
 Arc closure needs its own composition demonstration and attributed independent
 gate. Do not pre-create close or verification records.
 
-Current assignment: none. Slice01
+Current assignment:
+[`slice02-source-and-review-readiness/cc-prompt.md`](slice02-source-and-review-readiness/cc-prompt.md).
+Slice02 opened on 2026-10-09; its initial assignment produces planning evidence
+only and keeps required unresolved original-source gaps as an explicit readiness
+gate. Slice01
 `slice01-scope-and-portability-contract/cc-prompt-iteration02.md` was independently
 accepted at `9cc20338` on 2026-10-09; all seven rows are done in its
 [CDC record](slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance).
-The initial and both corrective prompts remain preserved. Slice02 is planned
-and unopened. Slice01 confirms 150 missing-original cards, 37 unresolved
+The initial and both corrective prompts remain preserved. Slice01 confirms
+150 missing-original cards, 37 unresolved
 Butterick locators and capture identity/fidelity needs; their existing Slice02
 ownership and the full 233-card review denominator remain binding. No structural
 arc scope or sequencing change is required by the accepted bubble-up.
@@ -81,6 +90,10 @@ and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
 
+- 1.4 (2026-10-09): Recorded Operator-selected Project10 Expedited Mode and opened
+  Slice02 after accepted Slice01. Issued its source/locator and review-method packet
+  assignment with an explicit original-evidence readiness gate; no source edits or
+  composition acceptance are implied.
 - 1.3 (2026-10-09): Slice01 iteration02 passed independent review at `9cc20338`;
   recorded its closure and A01-01 child acceptance. Existing source-gap ownership
   remains with planned Slice02; all composition/readiness gates stay open.

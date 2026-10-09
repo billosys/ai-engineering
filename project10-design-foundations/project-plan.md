@@ -102,8 +102,9 @@ each near execution after resolving its dependencies. The active
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
 Current status: active; Arc01 Slice01 closed after independent CDC acceptance
-of iteration02 at `9cc20338`, with all seven rows done. Current assignment: none.
-Slice02 source/review readiness is planned and unopened. Its source gaps and
+of iteration02 at `9cc20338`, with all seven rows done. Current assignment:
+[Slice02 source/review readiness](arc01-portable-contract/slice02-source-and-review-readiness/cc-prompt.md),
+opened under Operator-selected Expedited Mode on 2026-10-09. Its source gaps and
 the complete 233-card semantic review remain binding downstream work.
 See the [CDC acceptance](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance);
 this evidence/proposal acceptance does not adopt final teaching formulations or
@@ -144,12 +145,24 @@ treatment are settled; execution detail remains to be prepared in Arc01.
 
 Default Two-Contributor Workflow: Sofie in this chat performs CDC planning with
 the Operator; CC is the separate context receiving the prompt through the Operator.
-No three-contributor or Expedited selection is inferred. Source work requires
+The Operator selected Expedited Mode for remaining Project10 work on 2026-10-09;
+the Two-Contributor Workflow remains selected, with no CRC role. Source work requires
 a complete slice open set and the Operator's
 implementation handoff under the standing planning instructions. Slices use
 `cdc-verification.md`; any work implemented by the reviewer needs another
 verifier. Project closure requires independent composition review and Operator
 acceptance recorded when performed, not pre-filled success files.
+
+In Expedited Mode, CC commits the explicitly named assigned files after changes;
+CDC commits after review or planning changes. Close a slice as soon as its full
+evidence permits, then automatically open the next planned slice and give the
+Operator its CC prompt path as plain project-relative copy/paste text. After an
+arc's last slice, complete formal arc closure and open the next planned arc and
+its first slice. Unresolved escalations, source-readiness requirements, independent
+review and Operator gates still stop dependent advancement. This selection changes
+cadence only: no shortcuts, skipped validation, weaker evidence/review, inferred
+source scope, scope changes or timeline interpretation. It does not select a mode
+for other projects.
 
 Keep slice-produced evidence under the owning slice's `artifacts/`. Project09
 retains the shared audit. At close, Project11 receives the actual accepted
@@ -158,6 +171,9 @@ remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
 
+- 1.7 (2026-10-09): Operator enabled Expedited Mode for remaining Project10 work;
+  opened Arc01/Slice02 with a bounded source/locator and review-method assignment.
+  Two-contributor authority, full-corpus scope and independent/source gates remain.
 - 1.6 (2026-10-09): Arc01/Slice01 closed on independently accepted iteration02
   candidate `9cc20338`; recorded progress without closing project release gates
   or changing source/semantic scope. Slice02 remains planned.

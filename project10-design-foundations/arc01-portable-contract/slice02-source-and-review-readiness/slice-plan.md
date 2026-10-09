@@ -1,0 +1,107 @@
+---
+slice: slice02-source-and-review-readiness
+status: open
+depends-on: [slice01-scope-and-portability-contract]
+---
+
+# Slice02 — Source and Review Readiness
+
+## Outcome and authority
+
+Turn accepted Slice01 evidence into a snapshot-bound source/locator handoff and
+an executable procedure for the full five-dimension review of all 233 cards and
+repeated live-guide claims. Identify and resolve required original-source gaps;
+missing inputs prevent readiness acceptance, rather than shrinking the review.
+
+Read [the project](../../project-plan.md), [arc](../arc-plan.md),
+[ledger](ledger.md) and [initial assignment](cc-prompt.md). The Operator enabled
+Expedited Mode for remaining Project10 work on 2026-10-09. Two contributors
+remain selected: Sofie (CDC) plans/reviews; a separate CC context executes;
+the Operator relays handoffs and owns input/approval decisions. No CRC is added.
+
+## Baseline and initial execution boundary
+
+- SOURCE: `/Users/oubiwann/lab/billosys/ai-engineering`, main,
+  `dffa504e851b03b8e4746f1941068e4cc850b612`.
+- PLANNING: its `.worktrees/planning`, branch planning. Slice01 CC evidence
+  candidate `9cc203380aede19231b7c5119f0b43d9fe3d0e78` was independently accepted
+  in planning commit `1944d1ed11d4e3d6f701dfe0f18c5afa713df9cd`.
+- Shared audit: Project09 inputs at `795ac75b7d02536e0e95252457ac3282cd17d8d8`.
+- Complete baseline: 402 tracked design files, 233 cards, eight primary raw
+  source/author identities, 161 source files, eight live files. Secondary
+  citations do not silently replace those primary identities.
+- Pre-existing unrelated untracked paths: SOURCE `knowledge/lfe/`, PLANNING
+  `project12-chcd-protocol/`. Recheck status and leave unrelated work untouched.
+
+This initial assignment writes planning evidence only. It can inspect the
+design source tree, exact original files explicitly supplied by the Operator,
+and public primary bibliographic/source pages. It cannot scan private storage,
+purchase/download source files, convert or rewrite the source tree, migrate card
+schemas, repair cards/guides, or change the accepted Slice01 records. Acquisition
+or preparation mutations require a named source and exact additional allowlist
+in an authorized follow-up; do not invent that authority from Expedited Mode.
+
+The initial bounded work can proceed while original inputs are unavailable:
+complete the identity register, every-card locator accounting, local prepared
+mapping, source-input requests, review procedure and actual checks. S02-08 is
+an explicit readiness gate; it remains unresolved where required evidence is
+missing. A useful packet alone does not close this slice or A01-02. If further
+preparation exceeds one context, surface the concrete split/authorization need
+to CDC and the Operator instead of quietly expanding the assignment.
+
+## Deliverables and exit
+
+Six CC-produced supporting artifacts belong in this slice's `artifacts/`:
+source register, locator map, source-input actions, review procedure, readiness
+report and execution notes. Exact shapes/checks are in the initial prompt.
+[Author reconnaissance](artifacts/author-reconnaissance.md) is immutable input.
+The initial prompt, ledger and slice plan remain first-class root records;
+follow-ups use preserved `cc-prompt-iterationNN.md` siblings.
+
+Complete all nine ledger rows under independent CDC review before closure.
+Neither a bibliographic result, source-file presence, successful conversion,
+unique prepared title nor matching count establishes original fidelity or
+semantic correctness. Preserve the five review dimensions, complete denominator,
+C&B Git-only removal/no-bridge decision and `sources/md/` convention.
+
+Expedited Mode means commit explicit files after execution/review; close when
+evidence permits; automatically open the next planned slice after acceptance,
+and continue through formal arc closure and the next arc's first slice where
+the roadmap permits. No shortcuts, skipped validation, weaker evidence, scope
+reduction, inferred source scope, or approval/independence override. Missing
+inputs and higher-scale gates still stop dependent advancement.
+
+## Assignment history
+
+| Assignment | State | Scope and next owner |
+|---|---|---|
+| `cc-prompt.md`, 2026-10-09 | Current; issued to Operator for relay | CC produces the bounded readiness/method packet and resolves accessible inputs; reports unavailable readiness evidence to CDC/Operator |
+
+## Author readiness — 2026-10-09
+
+Inspected accepted source identities/reference projections, all eight group
+populations, sampled prepared title/URL/body structures, the complete golden-
+ratio card and the Munsell locator witness. Butterick's converted files can
+lack Markdown headings; title/URL/body evidence must work without fabricated
+anchors. Null section metadata can coexist with richer reference text, and
+further-reading citations do not become primary support automatically.
+
+Concept-cards separates claim support, correctness, relationship/CQ review and
+independent acceptance; document-extraction separates original/prepared locators,
+per-use readiness and fidelity. The prompt applies these distinctions through
+exact population checks, typed spans, preserved raw assertions, explicit gap
+ownership and discriminating examples. The local record shape is specified;
+CC may choose query mechanics, not normalize raw identity or infer edition/page
+basis. Original input paths/editions are not yet supplied at opening. That is an
+explicit input-dependent gate, not an unresolved design choice delegated to CC.
+
+The initial task fits one context through structured all-card reference queries
+and bounded complete locator sections, without reading three whole books or
+performing 233 semantic reviews. Required prose/queries have separate extents
+and an existing evidence home. Author readiness is not execution or acceptance.
+
+## Version History
+
+- 1.0 (2026-10-09): Opened the planned second slice after accepted Slice01 and
+  explicit Operator Expedited selection; issued a bounded readiness/method
+  assignment with original-source gate and no source mutation authority.
