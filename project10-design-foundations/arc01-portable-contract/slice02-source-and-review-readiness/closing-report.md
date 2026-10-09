@@ -71,3 +71,46 @@ S02-01 open (intake recorded; CDC review pending); S02-02 open (identity/caveats
 CDC should bound the next CC batch for 46 post-card passages and decide whether preparation/fidelity work needs its own assignment. Operator/source owners must provide exact Arnheim, Cleland and Tschichold editions with page bases; immutable manifests/snapshots for 37 Butterick pages and four article sources are also required. Observed Markdown omissions and unrelated conversion effects need scoped review before repair. This does not defer the 233-card/five-dimension scope or authorize Slice03.
 
 **Current state:** partial and input-blocked; not proposed-done or accepted. CC performed no CDC/CRC gate.
+
+
+## Iteration02 return — partial, 2026-10-09
+
+**Assignment and revisions:** executed `cc-prompt-iteration02.md`, issued in planning commit `496c810ad251afc3b0f670420028884a9e1cc945`; SOURCE remained pinned to `dffa504e851b03b8e4746f1941068e4cc850b612` (`main`) and shared audit to `795ac75b7d02536e0e95252457ac3282cd17d8d8`. Predecessor candidate remains `1c0c8acf89d5f8abba61399ac1b1d394b60c74a3`. No source/card/schema/package edit, acquisition, capture, conversion, or CDC/CRC acceptance occurred. Only prompt-allowed evidence paths were changed. Unrelated `project12-chcd-protocol/` and SOURCE `knowledge/lfe/` remain untouched.
+
+**Current result:** all four prepared article files were read in complete contiguous delivered ranges through EOF (251,261 Unicode characters; 251,839 UTF-8 bytes). All 46 post card raw references and 105 target instances are associated with full card path, exact primary raw pair, literal raw reference body, full target path/hash/span/heading-or-paragraph/ID and target role in execution notes. The 105 are 101 existing primary targets, 2 separate secondary CSS-Tricks HSL targets and 2 added Brown line-30 antecedent targets. Combined with the 37 complete Butterick page reads, the current local target count is 142; the 233-card baseline and eight source-pair populations are unchanged.
+
+**Demonstrated locator repair:** Brown’s “Opening paragraph” citations had a target only at line 109, a paragraph beginning “This…”; the actual first article paragraph at line 30 is its antecedent, with converted sidebar markup through line 107. The map now carries separate exact line-30 and line-109 targets on the two cards that cite the opening. The raw card fields and line-109 target remain unchanged. This repairs context navigation; it does not validate a claim.
+
+**Context handoff:** Brown’s own text calls scales tools rather than magic, uses a 15px caption outside its selected scale and calls “More Perfect Typography” more inspiration than information. CSS-Tricks HSL history, code and figures remain unverified author statements. Oklab includes a 2025 preface around its original 2020 post; its CAM16 comparison is expressly nonexperimental, and Munsell chart-data quality is qualified; RIT and Luo-Rigg datasets were not reviewed. Okhsv directs readers to a remote interactive demo; its subjective table, sRGB-only scope, deferred wide gamut/HDR and external code dependency remain capture inputs/qualifications. Remote figures/dynamic assets were not acquired.
+
+### Iteration02 ledger walk
+
+| ID | Current CC result | Status |
+|---|---|---|
+| S02-01 | Required plans, prompts, ledgers, reports and policies read; actual delivered ranges, strict queries, errors and limits recorded. CDC must inspect readback/evidence. | open |
+| S02-02 | Eight primary pairs/233 cards retained; additional source roles and active capture/original caveats preserved. No exact book originals or immutable web captures. | open |
+| S02-03 | Every candidate JSONL line strictly parsed; 233/233 path/hash/raw source-author/chapter-page-section/reference/status fields compare to accepted index. CDC reproduction remains. | open |
+| S02-04 | 37 Butterick complete pages plus 46 post full-file contextual reads; 142 local targets including explicit Brown antecedents. Prepared navigation only, not original fidelity. | open |
+| S02-05 | Actions now name linked article/demo/media and external dataset preparation needs with owners and re-entry conditions; no input obtained or preparation authorized. | open |
+| S02-06 | Existing five-dimension procedure and exact 16 DES rows retained; no all-card semantic execution. | open |
+| S02-07 | Raw rows, target hashes/spans/headings, article digests and negative controls recorded. Final exact-path, protected-byte, link/newline and committed-tree checks/review remain. | open |
+| S02-08 | 150 book originals/page bases and 83 web-source original capture/fidelity sets remain unavailable; all 46 posts still lack immutable capture/manifests and fidelity comparison. | open and blocked |
+| S02-09 | Row walk, artifact inventory, failures, limits and arc bubble-up updated here; CDC review and project/arc composition remain. | open |
+
+**Recoverable F05:** current strict parsing, raw-field comparison, all post target digests/ranges/heading or paragraph text, four article hashes and DES-001..016 exact population pass. Negative controls distinguish all-JSONL from selected rows, detect an omitted raw field, retain Brown opening/qualifications and reject Cleland/post basename substitution. Historical `jq -s` failure is retained; its exact input pathname and full emitted receipt were not recorded earlier and remain unavailable. Current checks do not inherit the earlier filtered-row workaround. Shell syntax and an initial phrase-match check failed during this pass before producing evidence; the command/text was corrected and the actual checks passed. Historical truncations were recovered with bounded deliveries.
+
+### Artifact inventory and remaining gates
+
+- `artifacts/locator-map.jsonl`: 233 raw rows and exact targets; two explicit Brown context targets added.
+- `artifacts/execution-notes.md`: current readback, complete article receipts, 46 exact associations, runnable checks/results, F05, failures and unrun scope.
+- `artifacts/source-register.md`: current source context and active caveats; no originals promoted.
+- `artifacts/source-input-actions.md`: capture and dependency preparation inputs/owners/re-entry requirements.
+- `artifacts/readiness-report.md`: complete prepared reading versus blocked original-source readiness.
+- `ledger.md`: evidence/notes supplement; no criterion/status changed.
+- `closing-report.md`: iteration02 partial return.
+
+Required before CDC can scope source-fidelity preparation: exact lawful Arnheim, Cleland and Tschichold editions/copies with physical/printed page basis and edition evidence; immutable dated manifests/snapshots and conversion lineage for 37 Butterick pages and the four articles; relevant page assets, figures, datasets, demos/code dependencies with capture inclusion/exclusion. Public metadata, prepared Markdown and live-page observations are not substitutes. All-card 233/five-dimension review remains later scope.
+
+**Bubble-up to the arc:** the mapped Brown “opening paragraph” was not a single continuous paragraph in prepared line order; the new two-point mapping explicitly represents its antecedent and follow-on around converted sidebar markup. Any CDC follow-up for web fidelity should preserve the two locations and the actual captured article structure, plus remote/dynamic dependencies. No arc/project closure, source implementation, preparation authority or Slice03 assignment is implied.
+
+**Disposition:** partial CC return; not proposed-done; CDC review pending; all nine rows remain open; S02-08 input-blocked; no Slice03.

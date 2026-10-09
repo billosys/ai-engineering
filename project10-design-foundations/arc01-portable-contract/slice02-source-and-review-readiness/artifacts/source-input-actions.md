@@ -16,3 +16,10 @@
 ## Re-entry boundary
 
 S02-08 cannot be treated as met by these requests, public catalog pages, source titles, frontmatter URLs, current live-page viewing, prepared text, or successful line/hash checks. Re-entry requires the actual named original/capture evidence, source-to-prepared relationship, adequate locator interpretation, and fidelity/completeness coverage for the dependent review scope. Any source mutation or conversion requires a CDC follow-up assignment with an explicit path allowlist and preparation contract. These actions do not reduce the 233-card/five-dimension scope or imply sequencing changes.
+
+
+## Iteration02 concrete preparation inputs observed
+
+The complete prepared files reveal context dependencies to include in any separately issued CDC-scoped capture/fidelity task: A List Apart’s article body, original dated version and converted widget/sidebar ordering (Brown line 30 antecedent and line 109 follow-on; embedded figures); CSS-Tricks’ HSL section, attributed history, code, figures and linked demo; both Bottosson posts’ retained code, plot/media assets and version boundaries (especially the 2025 introduction preceding the original 2020 Oklab post); and Ottosson’s linked interactive color-picker demo plus the gamut-clipping implementation on which displayed C++ depends. Record missing or inaccessible dependencies with source URL, capture date/version, hash, retrieval outcome and explicit scope exclusion. RIT Munsell chart data and Luo-Rigg dataset remain distinct optional external sources that require their own provenance/method review if relied upon.
+
+These inputs were identified by reading the prepared files only. None was fetched, captured, converted or validated here; no preparation mutation is authorized by this iteration. CDC must issue any source-preparation assignment with exact inputs/allowlist before CC proceeds.
