@@ -53,7 +53,7 @@ execution, after resolving its dependencies and scope decisions.
 
 | Arc | Capability | Dependencies | Audit coverage |
 |---|---|---|---|
-| arc01-portable-contract | Separate method, adopting-project profile and optional historical example; settle release scope and compatibility | Project09 evidence intake | DES-001, DES-010 |
+| arc01-portable-contract | Separate reusable method from adopting-project identity; specify C&B removal and settle corpus scope | Project09 evidence intake | DES-001, DES-010 |
 | arc02-theory-and-evidence | Correct theory, arithmetic and source interpretation; establish claim register and historical-card boundary | Arc01 contract | DES-002–005, DES-007–009, DES-012, DES-013, DES-015, DES-016 |
 | arc03-accessibility-and-typesetting | Add usable accessibility obligations and transferable typography procedures | Arc01–02 decisions | DES-005, DES-006, DES-009, DES-011 |
 | arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 | DES-010, DES-013, DES-014; all repeated claims |
@@ -64,15 +64,28 @@ before its formal acceptance, with its limits visible. The accepted baseline is
 required at release readiness. Coordinate any card-format/schema changes with
 Project08 rather than importing its scope by association.
 
+## Recorded Operator decisions
+
+On 2026-10-08, the Operator resolved the C&B and compatibility questions:
+
+- Remove the C&B-specific material from the live skill and package. Do not retain
+  an opt-in C&B profile or case study; use Git history if that material is needed
+  later. Preserve portable design knowledge when separating it from the branding.
+- Tight C&B coupling was an original bug, not an intended feature. Removing it
+  is a correction within the 1.5 effort. No compatibility bridge, legacy behavior
+  or migration obligation is required for that coupling. This decision does not
+  waive version/history requirements or classify unrelated changes in advance.
+
+These decisions supersede the corresponding options in the historical Project09
+synthesis. They authorize the planned correction, not a claim that source edits
+have already been made. Corpus scope remains under discussion: the Operator asked
+for a concrete explanation of full semantic card reconciliation before choosing.
+
 ## Decisions before dependent implementation
 
 1. Define whether full self-consistency includes semantic reconciliation of the
    entire historical corpus, or the live skill plus explicitly bounded archives.
-2. Decide whether C&B remains an opt-in historical case or only Git provenance.
-3. Resolve whether removing the documented C&B defaults is a compatible correction
-   with a migration bridge. The 1.5 target is not permission to disregard the
-   repository's semantic-version contract.
-4. Adopt the revised principle formulations and concrete example configuration;
+2. Adopt the revised principle formulations and concrete example configuration;
    the synthesis contains proposals, not final normative wording.
 
 ## Workflow and acceptance
@@ -92,6 +105,9 @@ remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
 
+- 1.1 (2026-10-08): Operator selected removal of C&B material with Git-only
+  historical retention and classified the original coupling as a bug requiring
+  no compatibility bridge. Corpus scope remains undecided pending clarification.
 - 1.0 (2026-10-08): Established Project10 for the 1.5 foundation repair;
   linked the Project09 audit, mapped all findings, and recorded provisional
   arcs, explicit scope decisions, verification and Project11 handoff requirements.
