@@ -6,7 +6,7 @@ gate, not a reason to reduce coverage or infer successful fidelity review.
 Current [CDC review](cdc-verification.md) of `db48d863` reproduces selected
 structural evidence but retains all nine rows as open. F01–F05 return through
 [iteration01](cc-prompt-iteration01.md); its 37-page batch does not discharge the
-remaining 46 post-card reads or S02-08's unavailable originals/captures.
+remaining 46 post-card reads or S02-08's unavailable originals/captures. Iteration01 replaces 138 with 140 targets (37 Butterick + 101 primary post + 2 secondary HSL) and records 37 complete Butterick reads; these are not semantic acceptance.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|

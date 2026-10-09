@@ -15,7 +15,7 @@
 | Ottosson, “A Perceptual Color Space for Image Processing” | 13 | **Caveated, prepared navigation only**: local heading/HTML IDs and cited spans mapped. “Munsell data” context retains the article's caveat about chart data. | **Blocked**: live page observed; current page contains a 2025 intro and an earlier article body. No dated immutable capture or conversion comparison. Linked RIT chart dataset is not reviewed. | Blocked for source-fidelity or data-supported claims. |
 | Ottosson, “Okhsv and Okhsl” | 11 | **Caveated, prepared navigation only**: local headings/HTML IDs and cited section ranges mapped. | **Blocked**: live URL observed; immutable capture date/revision, capture completeness and local conversion fidelity absent. | Blocked for source-fidelity claims. |
 
-The `locator-map.jsonl` has 233 unique sorted card rows and preserves exact raw index fields. It currently contains 37 Butterick full-document locator targets, plus 99 article-section target instances across 46 post cards (multiple cited sections can map to one card). A target locator does not establish its content supports the card assertion. The CC verified local hashes, target starts/IDs, and mapped section boundaries, but did not fully read the prose/context of every target range across all 83 locally sourced cards; S02-04 therefore remains open for completion/review of the full cited passages. Secondary citations remain separate. Where an exact cross-article anchor or external target is unresolved, the row says so; see actions and caveats.
+The `locator-map.jsonl` has 233 unique sorted card rows and preserves exact raw index fields. It currently contains 37 fully read Butterick page documents, 101 primary article target instances across 46 post cards, and two secondary HSL targets (140 total). A target locator does not establish its content supports the card assertion. Iteration01 fully read all 37 Butterick pages. Full prose/context reads for the 46 post cards remain pending; S02-04 remains open. Brown line 109 and CSS-Tricks lines 97–125 now have explicit prepared targets; neither establishes original fidelity. Secondary citations remain separate. Where an exact cross-article anchor or external target is unresolved, the row says so; see actions and caveats.
 
 ## Preparation contract checks and limits
 
@@ -41,3 +41,12 @@ The `locator-map.jsonl` has 233 unique sorted card rows and preserves exact raw 
 ## Re-entry conditions
 
 Resolve every applicable source-input action with pinned input bytes, edition/capture identity, locator basis, source-to-prepared comparison, and explicit failure/coverage results. Then an independent reviewer must verify source readiness against the complete 233-card/five-dimension contract. Until those conditions are met, keep S02-08 open and do not call this slice proposed-done or auto-open Slice03.
+
+
+## Iteration01 reassessment
+
+The 37 Butterick prepared pages were read completely in this context, including `headings.md`'s closing modular-scale qualification. This supports bounded prepared-text inspection only. Exact title/URL/body-boundary matches and local hashes do not resolve missing capture identity/fidelity. The five conversion-report link failures do not intersect these 37 pages; other conversion/media effects remain unassessed.
+
+For the 46 post cards, locator accounting is 101 primary target instances plus two HSL secondary targets. Brown's unheaded opening is at line 109 and now mapped for both citing cards. CSS-Tricks HSL Values is mapped to lines 97–125 and anchor `aa-hsl-values` on two cards. Full passage reads of all 46 post cards remain pending. The two HSL navigation resolutions do not discharge capture identity/fidelity.
+
+Readiness remains partial/blocked: 150 book-backed cards lack exact originals and verified page bases; 46 post-backed cards lack immutable capture identity/fidelity; 37 Butterick cards lack original capture identity/fidelity. Required inputs: exact lawful Arnheim, Cleland and Tschichold editions/copies with page bases; immutable dated capture and conversion lineage for all 37 Butterick pages; immutable dated captures/manifests for the four web article sources. All rows remain open; S02-08 remains blocked.

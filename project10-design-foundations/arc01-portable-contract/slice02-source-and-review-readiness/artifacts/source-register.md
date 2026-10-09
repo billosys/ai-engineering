@@ -211,11 +211,27 @@ Direct `find` inventory of `knowledge/design/sources/md/`: 161 files, comprising
 | `knowledge/design/sources/md/practical-typography/widow-and-orphan-control.md` | 4390 | `dde4d586ae692259bc3a58f852413a18f386f29a8e0a012f5b4f5e368304cf54` |
 | `knowledge/design/sources/md/practical-typography/word-spaces.md` | 3022 | `bae27382af6b429c5893a1d4876072bcbbb8486ba68e2054a724591c860d0ada` |
 
-## Caveats
+## Active caveat register (iteration01)
 
-- `C-ARN-ORIGINAL-EDITION`, `C-CLE-ORIGINAL-EDITION`, `C-TSCH-ORIGINAL-EDITION`: exact book editions/identities and bytes unavailable; public metadata only.
-- `C-ARN-PAGE-BASIS`, `C-CLE-PAGE-BASIS`, `C-TSCH-PAGE-BASIS`: card page/chapter locators are assertions, not verified page positions. No printed-to-physical mapping was made.
-- `C-BOOK-FIDELITY`: all 150 book cards blocked for original-to-card source-fidelity comparison pending originals.
-- `C-WEB-CAPTURE-IDENTITY`, `C-WEB-CAPTURE-FIDELITY`: the four local article files are navigable prepared texts; capture date/revision, complete capture scope, source-to-prepared equality, dynamic content, and conversion fidelity remain unresolved across 46 cards.
-- `C-BUTTERICK-CAPTURE-IDENTITY`, `C-BUTTERICK-CAPTURE-FIDELITY`: 37 page files have refined unique prepared-page locators; original snapshot/capture fidelity was not established.
-- Locator rows preserve card-declared `chapter`, `pdf_page`, `section`, and raw reference verbatim. No page number asserted by a card is promoted to an inspected PDF page.
+Membership is by full card path and literal primary pair in `locator-map.jsonl`; equal basenames do not imply equal source identity. These definitions supersede earlier caveat notes.
+
+| ID | Exact population / pair | Current handling and next action |
+|---|---|---|
+| `C-ARN-ORIGINAL-EDITION` | 112 Rudolf Arnheim / *Art and Visual Perception: A Psychology of the Creative Eye* cards | Exact edition/bytes unavailable; Operator to supply/select, CDC to scope comparison. |
+| `C-ARN-PAGE-BASIS` | Same 112 cards | Printed/physical page mapping and cited positions unverified; resolve against pinned original. |
+| `C-CLE-ORIGINAL-EDITION` | 19 T. M. Cleland / *A Practical Description of The Munsell Color System* cards | Exact edition/bytes unavailable; public listing is candidate metadata only. Operator input, then CDC-scoped comparison. |
+| `C-CLE-PAGE-BASIS` | Same 19 cards | Printed versus physical scan page basis unverified. Newly named applicable issue; no former web-local ID is implied. |
+| `C-TSCH-ORIGINAL-EDITION` | 19 Jan Tschichold / *The New Typography* cards | Exact edition/translation and bytes unavailable; public pagination conflicts. Operator input, then CDC-scoped comparison. |
+| `C-TSCH-PAGE-BASIS` | Same 19 cards | Printed/physical page mapping unverified; resolve against pinned edition. |
+| `C-BOOK-FIDELITY` | 112 Arnheim + 19 Cleland + 19 Tschichold = 150 book cards | Source-to-card comparison blocked until exact originals/editions are supplied and page mappings checked. |
+| `C-BUTTERICK-CAPTURE-IDENTITY` | 37 Matthew Butterick / *Butterick's Practical Typography* cards | All 37 prepared pages fully read and locally identified by exact frontmatter title, URL and body boundary. Original capture identity/revision/date and conversion lineage remain unavailable. |
+| `C-BUTTERICK-CAPTURE-FIDELITY` | Same 37 cards | Compare supplied immutable capture/manifest with full prepared page, media/examples and cited context; not established here. |
+| `C-WEB-CAPTURE-IDENTITY` | 46 post cards across four online article pairs: Drasner 12, Brown 10, Oklab 13, Okhsv 11 | Prepared navigation exists. Immutable capture date/revision, scope and lineage unavailable; Operator/CDC to supply or authorize scoped capture. |
+| `C-WEB-CAPTURE-FIDELITY` | Same 46 cards | Source-to-prepared comparison and dynamic/media completeness not established; requires immutable captures and scoped comparison. |
+
+### Retired issue IDs and resolved local targets
+
+- `C-BUTTERICK-TITLE-UNRESOLVED` is retired: all 37 joins use literal primary pair, raw citation title, observed frontmatter title, URL and body boundary. Nine title differences retain `citation_title_raw`; no title alone is identity.
+- `C-WEB-LOCAL-LOCATOR-UNRESOLVED` is retired for ten Brown cards: exact prepared spans were checked, including the unheaded line-109 opening on the two cards whose raw references name it.
+- HSL Values is locally resolved at `working-with-colours.md#lines-97-125`, retained ID `aa-hsl-values`, for `hsl.md` and the post Munsell card. This does not resolve primary Okhsv capture identity/fidelity.
+- Conversion report broken links: `free-fonts`, `the-scorpion-express`, `times-new-roman-alternatives`, `to-pay-or-not-to-pay`, `websites`. None intersects the 37 selected Butterick target pages; other conversion/media impacts remain unassessed; no repair is authorized.
