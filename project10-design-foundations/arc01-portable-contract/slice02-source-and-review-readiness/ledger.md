@@ -3,11 +3,12 @@
 All nine rows are open. Source availability is a prerequisite to the readiness
 gate, not a reason to reduce coverage or infer successful fidelity review.
 
-Current [CDC review](cdc-verification.md#iteration02-independent-review--2026-10-09)
-of `bf02e970` reproduces 233 exact unique raw copies/full-path caveats, 142 target
-hashes/physical boundaries and 46 table associations. Four complete article reads
-remain CC attestation. Intended citation/context work and committed checker replay
-remain incomplete; [iteration03](cc-prompt-iteration03.md) assigns those repairs.
+The [CDC Iteration02 review](cdc-verification.md#iteration02-independent-review--2026-10-09)
+of `bf02e970` is historical and identified the outstanding findings. Current CC
+iteration03 evidence is recorded below: 233 raw copies/full-path caveats are retained;
+clause-specific intended navigation and committed checker replay are now documented.
+Four complete article reads remain attributed to CC. No finding is an independent
+acceptance or semantic review.
 All nine rows remain open; missing originals/captures still block S02-08. This
 partial review does not accept original fidelity or full card semantics.
 
@@ -27,3 +28,15 @@ partial review does not accept original fidelity or full card semantics.
 ### Iteration02 CC evidence supplement — 2026-10-09
 
 Current iteration02 execution notes add full prepared reads for 46 post cards, strict complete-file JSONL comparison, 105 post targets (101 prior primary + 2 secondary HSL + 2 Brown antecedent context), and 142 total local targets with 37 Butterick files. Brown line 30 was added as a separate context target on two cards because the line-109 “This…” paragraph is antecedent-dependent and converted sidebar markup separates them. Raw assertions and 233-card baseline are unchanged. Four post articles are read completely; no originals or immutable captures were supplied. This evidence is CC-attested only. S02-01 through S02-09 all remain `open`; S02-08 remains input-blocked. CDC must review the actual packet and independently reproduce before any row acceptance.
+
+Iteration03 CC evidence is recorded in [execution notes](artifacts/execution-notes.md),
+[the corrected map](artifacts/locator-map.jsonl), [readiness](artifacts/readiness-report.md),
+[the source register](artifacts/source-register.md) and [closing report](closing-report.md).
+The current post target count is 104 (83 source-reference clauses across 46 full
+card paths joined across 44 unique inspected prepared spans); including 37 Butterick documents the
+local target count is 141. Three code-section false matches were removed and the
+Brown Conclusion and Okhsv Summary/table clauses added. F01/F03 navigation/context
+is CC evidence only. F05 prior committed checker failure is preserved; repaired
+fence/inline-code-aware replay, contrasting controls and final committed-tree
+checks are documented in execution notes. No criterion or status changed: all
+nine remain open, S02-08 remains input-blocked, and no Slice03 advance is assigned.

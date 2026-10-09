@@ -23,3 +23,15 @@ S02-08 cannot be treated as met by these requests, public catalog pages, source 
 The complete prepared files reveal context dependencies to include in any separately issued CDC-scoped capture/fidelity task: A List Apart’s article body, original dated version and converted widget/sidebar ordering (Brown line 30 antecedent and line 109 follow-on; embedded figures); CSS-Tricks’ HSL section, attributed history, code, figures and linked demo; both Bottosson posts’ retained code, plot/media assets and version boundaries (especially the 2025 introduction preceding the original 2020 Oklab post); and Ottosson’s linked interactive color-picker demo plus the gamut-clipping implementation on which displayed C++ depends. Record missing or inaccessible dependencies with source URL, capture date/version, hash, retrieval outcome and explicit scope exclusion. RIT Munsell chart data and Luo-Rigg dataset remain distinct optional external sources that require their own provenance/method review if relied upon.
 
 These inputs were identified by reading the prepared files only. None was fetched, captured, converted or validated here; no preparation mutation is authorized by this iteration. CDC must issue any source-preparation assignment with exact inputs/allowlist before CC proceeds.
+
+## Iteration03 current disposition
+
+Clause-level prepared navigation is now mapped for all 46 post references, including
+the intended HSL/HSV theory parent, Brown Conclusion and Okhsv Summary/table. No
+new source input is obtained or authorized by these local corrections. All original
+book editions/page bases and capture/lineage/fidelity evidence for the 83
+web-backed cards (37 Butterick pages and four article captures), plus all
+capture-dependent media/demo evidence, remain as specified above; S02-08 stays
+input-blocked. Brown's quoted Bringhurst and further-reading material, CSS-Tricks
+HSL Values, RIT chart data and Luo-Rigg data keep their distinct supplemental or
+external roles and require their own source provenance if later relied upon.

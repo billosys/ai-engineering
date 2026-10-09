@@ -114,3 +114,82 @@ Required before CDC can scope source-fidelity preparation: exact lawful Arnheim,
 **Bubble-up to the arc:** the mapped Brown “opening paragraph” was not a single continuous paragraph in prepared line order; the new two-point mapping explicitly represents its antecedent and follow-on around converted sidebar markup. Any CDC follow-up for web fidelity should preserve the two locations and the actual captured article structure, plus remote/dynamic dependencies. No arc/project closure, source implementation, preparation authority or Slice03 assignment is implied.
 
 **Disposition:** partial CC return; not proposed-done; CDC review pending; all nine rows remain open; S02-08 input-blocked; no Slice03.
+
+## Iteration03 return — partial, 2026-10-09
+
+**Assignment and pins:** executed [iteration03](cc-prompt-iteration03.md), issued
+from planning commit `96137b1fb68ff7f57993e5a0b2a293d85c94cafb`; predecessor prompt
+commit `496c810ad251afc3b0f670420028884a9e1cc945`, predecessor candidate
+`bf02e9709371a1ce0306f8f52d3d2a09c75dc7e9`. SOURCE remained `main` at
+`dffa504e851b03b8e4746f1941068e4cc850b612`; shared audit `795ac75b`, accepted
+Slice01 `9cc20338`, CDC closure `1944d1ed`. PLANNING remains `planning`; unrelated
+`project12-chcd-protocol/` and SOURCE `knowledge/lfe/` remain untouched. No source,
+card, schema, package, acquisition or capture change occurred.
+
+**F01 — clause-specific prepared context:** execution notes preserve all 46 full
+card paths and exact raw references, split into 83 source-reference clauses and joined to 44 unique inspected path/hash/span units. The unit notes report actual passage
+content, parent, qualification, supplemental role and remaining limits. All local
+article clauses are resolved as navigation/context only. Brown's Bringhurst and
+further-reading clauses are supplemental, CSS-Tricks HSL Values is secondary,
+and RIT/Luo-Rigg data remain external/uninspected. No claim is treated as
+supported or semantically verified.
+
+**F03 — intended mapping/completeness:** removed the two `HSL-2` code targets
+from `chroma-vs-saturation.md` and `hsl.md`, and `HSV-2` from `hsv.md`; these lie
+under Source Code, while the intended theory HSL/HSV spans lie beneath
+`Color spaces for color picking`. Added Brown Conclusion lines 352–357/`section6`
+with “tools—not dogma” and Okhsv Summary/table lines 278–298 with subjective
+framing/footnotes to their explicit clauses. Oklab's HSV limitation remains in
+the existing 329–409 gamut target; its specific clause context is recorded. No
+raw source-reference field changed. Corrected count: 104 post targets and 141
+local targets including the unchanged 37 Butterick documents. Structural and
+context results do not resolve source fidelity or claim support.
+
+**F05 — checker repair:** the exact Iteration02 link-check failure remains
+preserved as a historical failure: its regex matched code inside its own notes,
+while the independent prose-only check found 20 valid local links. The new full
+checker removes fenced and inline code before extracting prose links, validates
+fragments/newlines and exact paths, and exercises an in-memory missing-prose-link
+negative control plus code-self-match control. Complete pre-commit and committed-
+bytes results, including the other mandated contrasting controls, are recorded
+in execution notes. This does not claim semantic acceptance.
+
+### Iteration03 ledger walk
+
+| ID | CC result this iteration | Status |
+|---|---|---|
+| S02-01 | Required current plans, prompt, CDC review, prior assignment details and source-guidance sections read; delivered extents, missing legacy wayfinder path and query scope recorded. CDC must inspect the receipt. | open |
+| S02-02 | Primary pairs, secondary article/data/quotation roles and original/capture caveats retained; no identity promotion. | open |
+| S02-03 | 233 raw paths/hash/pair/assertion/reference/status copies and exact full-path caveats rechecked; raw fields unchanged. | open |
+| S02-04 | 46 references/83 clauses joined to 44 unique prepared spans with passage observations; 37 Butterick reads retained from earlier CC scope. Prepared navigation only. | open |
+| S02-05 | Existing input/action/owner/re-entry requirements preserved; no originals, captures or datasets obtained. | open |
+| S02-06 | Existing five-dimension method and exact 16 DES rows remain unchanged; no semantic corpus review performed. | open |
+| S02-07 | Exact allowed paths, protected bytes, target hashes/bounds/parents, links/fragments, EOF/no-CRLF and diff checks recorded; CDC reproduction pending. | open |
+| S02-08 | Exact book editions/page bases and immutable captures/lineage/fidelity remain unavailable; blocked. | open |
+| S02-09 | Partial report, failures, limits, all nine rows and arc bubble-up retained for CDC composition review. | open |
+
+### Iteration03 artifact inventory and gates
+
+Changed evidence paths are listed in the commit receipt. Source register, actions,
+readiness, execution notes, locator map, ledger notes and this partial return are
+updated; issued prompts, review procedure, author input, plans, CDC history,
+accepted Slice01 and SOURCE are protected. The only paths outside this slice
+remain the pre-existing unrelated worktree entries. Original-input preparation,
+source fidelity, all 233 claim/five-dimension review, independent CDC acceptance,
+project/arc composition and Slice03 remain unperformed/blocked as governed above.
+
+### Bubble-up to the arc
+
+Iteration03 repairs prepared navigation ambiguity and clause completeness in the
+46-card handoff. Any later source-fidelity assignment must preserve the HSL/HSV
+theory-versus-code hierarchy, Brown's exact conclusion and split opening
+context, the Okhsv summary table/footnotes, Oklab's HSV gamut/data qualifications,
+and each supplementary/external citation role. Exact book editions/page bases,
+37 Butterick page captures, four article captures/conversion lineage, remote assets
+and data dependencies remain
+Operator/source-owner inputs and CDC-scoped work. No Arc01 closure, source
+implementation, preparation authority or Slice03 opening follows from this
+partial return.
+
+**Disposition:** CC partial return; all nine rows remain open; S02-08 remains
+input-blocked; CDC independent review and any next handoff are pending.

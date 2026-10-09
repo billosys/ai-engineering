@@ -57,3 +57,21 @@ Readiness remains partial/blocked: 150 book-backed cards lack exact originals an
 CC read all four prepared post files in full through EOF and inspected every mapped target for the 46 post cards. The target set is now 105 (101 existing primary targets, 2 separate secondary HSL targets, 2 added Brown line-30 context targets) and the prepared local denominator including the 37 fully read Butterick pages is 142. This replaces earlier 46-post-passage-pending wording, but remains CC reading/navigation evidence awaiting CDC reproduction; it is not source fidelity, claim support or semantic verification. Two Brown opening references now resolve to the actual first paragraph at line 30 and the separate unheaded “This…” paragraph at line 109.
 
 Readiness for original-source review remains blocked for all 46 post cards: no immutable article capture/manifests, dated conversion lineage, verified media/demo capture or source-to-prepared fidelity comparison is available. Required preparation evidence is still the four exact original snapshots with version/capture dates and conversion manifests; linked image/table assets, interactive comparison demo and declared dependencies must be included or their exclusion recorded against an explicit capture scope. The RIT Munsell and Luo-Rigg underlying datasets are distinct additional-source inputs and remain unreviewed if a claim depends on them. Full review of all 233 cards and five dimensions is later scope. Keep S02-08 blocked and every ledger criterion open pending independent CDC review and missing input provision.
+
+## Iteration03 prepared-navigation correction — 2026-10-09
+
+The prior 105-post/142-total target count is superseded for the current map by
+104 post target instances and 141 total local targets (37 Butterick documents
+plus 104 post targets). All 83 source-reference clauses across the 46
+post references now have prepared-unit joins and passage-specific observations.
+The HSL theory targets are at 143–178 under `Color spaces for color picking`
+(104–298), and HSV theory is at 112–142 under that parent; same-named HSL/HSV
+code headings under `Source Code` were removed as false theory matches. Brown's
+`Conclusion`/`section6` is 352–357; Okhsv's `Summary`/comparison table is 278–298,
+including its subjective framing and table notes. Per-unit observations and all
+full-path clause joins are in the linked execution-notes section. These checks
+resolve only local prepared navigation and article wording/context. They do not
+assess card claim support or semantics, source capture identity/completeness,
+original-to-prepared fidelity, remote media/demo, or external data. S02-08 remains
+blocked by the exact original editions/page bases and immutable capture evidence
+listed above; all nine ledger rows remain open.

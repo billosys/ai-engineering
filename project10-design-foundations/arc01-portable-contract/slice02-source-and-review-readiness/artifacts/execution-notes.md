@@ -356,3 +356,436 @@ Actual output: `PASS changed artifact newline/EOF checks: 7 files`; `PASS change
 Iteration02 intake status receipts: at assignment start PLANNING was branch `planning` at issued prompt commit `496c810ad251afc3b0f670420028884a9e1cc945`, with no tracked modifications and only unrelated untracked `project12-chcd-protocol/`; SOURCE was branch `main` at `dffa504e851b03b8e4746f1941068e4cc850b612`, with no tracked modifications and only unrelated untracked `knowledge/lfe/`. After the scoped seven-path commit, PLANNING remained branch `planning` with only `project12-chcd-protocol/` untracked; SOURCE remained branch `main` with only `knowledge/lfe/` untracked. No unrelated staging existed at commit time.
 
 Post-commit replay: extracted and executed the exact F05 code block from this committed execution-notes file; it returned all eight PASS lines recorded above. `git diff HEAD^ HEAD --check` returned no findings. The committed path population equaled the exact seven-path list above. No tracked planning changes remained after commit; SOURCE still had no tracked changes. The nine ledger rows parsed from the committed tree remained open. These are CC reproducibility receipts; CDC still must inspect and independently decide acceptance.
+
+### Iteration03 contract readback and current intake
+
+Assignment authority is `cc-prompt-iteration03.md`, issued from planning commit
+`96137b1fb68ff7f57993e5a0b2a293d85c94cafb`; predecessor prompt is the preserved
+iteration02 prompt and predecessor candidate is `bf02e9709371a1ce0306f8f52d3d2a09c75dc7e9`.
+SOURCE remains `main` at `dffa504e851b03b8e4746f1941068e4cc850b612`; audit,
+accepted Slice01 and its CDC closure remain `795ac75b`, `9cc20338` and
+`1944d1ed`. PLANNING is on `planning`, has the unrelated untracked
+`project12-chcd-protocol/`, and SOURCE has the unrelated untracked
+`knowledge/lfe/`; neither was opened or changed. No source, card, schema, package,
+article acquisition, capture, conversion or private-storage work is authorized.
+
+The governing contract is Project10's full-corpus/five-dimension scope and
+source-readiness gates (project-plan.md), Slice02's nine open rows and
+input-dependent S02-08 boundary (slice-plan.md and ledger.md), and the prompt's
+ordered F01/F03/F05 corrections. CDC iteration02 independent review keeps all
+nine rows open, blocks S02-08, prohibits Slice03 advance, and limits prior checks
+to structural navigation, current prepared snapshots and actual local links.
+Reuse the four CC complete-file receipts only at their pinned digests; do not
+claim those reads as independent acceptance. The locator model requires source
+identity, hierarchy, surrounding content and uncertainty, because repeated
+headings and successful locators do not establish intended content. The output
+contract separates prepared navigation from original traceability and per-use
+readiness. Concept-card verification requires each result to name exact targets,
+coverage, observation, limits and actor, and prohibits structural or self-check
+results from becoming semantic/independent acceptance. Accordingly this pass
+resolves prepared citation navigation and recorded context only; claims, support,
+correctness, fidelity and all five-dimension card review remain unassessed.
+
+Current required reads completed: Project10 project-plan.md and ledger.md in full;
+Arc01 arc-plan.md and ledger.md in full; Slice02 slice-plan.md and ledger.md in
+full; this complete iteration03 prompt; CDC verification current verdict and the
+complete Iteration02 independent review; iteration02 prompt authority/retained
+work and execution/check sections; current source-register prose and caveat
+sections, source-input-actions.md, readiness-report.md, closing-report.md; and
+the named current Iteration02 execution-notes receipt/accounting/check sections
+and five distinct context bodies. The source-register's 161 rows, locator map's
+233 raw rows and all five 46-card context bodies were required-data/query inputs,
+not a repeated inventory prose read. The full 46-card raw-reference/target
+projection was delivered from every JSONL record. Required source guidance was
+read from SOURCE `knowledge/document-extraction/guides/09-locator-model.md`
+(87 lines, full), `03-output-contract.md` (109 lines; complete Required Records,
+Locator Semantics and Readiness By Intended Use), and
+`knowledge/concept-cards/guides/08-validation-verification.md` (220 lines;
+complete Make Each Result Recoverable and Prevent False Upgrades). The first
+attempt used nonexistent `docs/...` paths; `rg --files` located the live
+`knowledge/...` paths and those complete sections were then read. This failed
+path attempt is not counted as a completed read. Prior complete-file article
+receipts remain attributed to the earlier CC context; this pass re-inspected the
+unique source units needed to distinguish all reference clauses and recorded
+their results below.
+
+
+
+
+### Iteration03 unique source-unit inspection results (CC evidence)
+
+Unit keys below refer to exact local path/hash/inclusive line span. The result is resolved only as prepared navigation and article-context identification. The observation records article wording, tables, code, captions or stated qualification; it is not a truth, support, source-fidelity or semantic verdict. A same-named target outside its cited parent is not an eligible result. Supplemental/external items are expressly separated. Identical units are inspected once and joined to every card/clause below.
+
+| Unit | Prepared path | SHA-256 | Lines / heading or paragraph | Inspected content observation, qualification and scoped result | Joined cards |
+|---|---|---|---|---|---|
+| U01 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 41–74; Color mixing | Walkthrough contrasts subtractive pigment/ink mixing with additive light mixing and includes historical narrative and examples; claims and remote figures are not independently checked. | `knowledge/design/concept-cards/posts/additive-colour-mixing.md`<br>`knowledge/design/concept-cards/posts/colour-bit-depth.md`<br>`knowledge/design/concept-cards/posts/subtractive-colour-mixing.md` |
+| U02 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 37–168; The Oklab color space | Section defines L/a/b, D65 whitepoint and polar LCh, with C and hue conversion formulas; it then uses an Oklab-versus-HSV visual example. | `knowledge/design/concept-cards/posts/chroma-perceptual.md`<br>`knowledge/design/concept-cards/posts/d65-whitepoint.md`<br>`knowledge/design/concept-cards/posts/lightness-perceptual.md`<br>`knowledge/design/concept-cards/posts/oklab.md` |
+| U03 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 251–328; Munsell data | Article compares plotted Munsell chart data and says data quality is hard to assess because the chart derives from 1940s experiments rather than direct experimental data; underlying RIT data remain external. | `knowledge/design/concept-cards/posts/chroma-perceptual.md`<br>`knowledge/design/concept-cards/posts/colour-space-comparison.md` |
+| U04 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 234–477; Comparison with other color spaces | Section reports hue/chroma/lightness comparisons and its CAM16-generated lightness/chroma data are expressly said not to establish which model best matches human perception; linked datasets remain external. | `knowledge/design/concept-cards/posts/chroma-perceptual.md`<br>`knowledge/design/concept-cards/posts/colour-space-comparison.md`<br>`knowledge/design/concept-cards/posts/colour-space.md`<br>`knowledge/design/concept-cards/posts/lightness-perceptual.md`<br>`knowledge/design/concept-cards/posts/oklab.md`<br>`knowledge/design/concept-cards/posts/perceptual-uniformity.md` |
+| U05 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 143–178; HSL | Theory section defines HSL hue, relative chroma (explicitly distinguished from HSV saturation), and lightness; the author says lightness poorly matches perception for saturated colors. The valid target is under the theory parent. | `knowledge/design/concept-cards/posts/chroma-vs-saturation.md`<br>`knowledge/design/concept-cards/posts/hsl.md` |
+| U06 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 104–298; Color spaces for color picking | Parent begins with HSL/HSV as RGB transformations, fixes the discussed instance to sRGB, and contains the theory subsections. This hierarchy disambiguates HSL/HSV from same-named source-code headings. | `knowledge/design/concept-cards/posts/chroma-vs-saturation.md`<br>`knowledge/design/concept-cards/posts/hsl.md`<br>`knowledge/design/concept-cards/posts/hsv.md` |
+| U07 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 85–103; What makes a good color picker? | Author frames a set of competing design properties and explicitly limits the article to sRGB; wide gamut and HDR are deferred. | `knowledge/design/concept-cards/posts/chroma-vs-saturation.md`<br>`knowledge/design/concept-cards/posts/colour-gamut.md`<br>`knowledge/design/concept-cards/posts/colour-picker-design-principles.md`<br>`knowledge/design/concept-cards/posts/colour-picker.md`<br>`knowledge/design/concept-cards/posts/orthogonal-colour-properties.md` |
+| U08 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 397–430; Accessibility and Other Things to Note about Color | Section says contrast depends on surrounding colors and lists accessibility tools; following subsection shifts to atmospheric color/landscape and does not by itself define a contrast metric. | `knowledge/design/concept-cards/posts/colour-contrast.md` |
+| U09 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 299–308; Finding a better tradeoff | Inspected prepared source unit; excerpt: ## Finding a better tradeoff One of the main advantages of HSL and HSV over the different Lab color spaces is that they map the sRGB gamut to a cylinder. This makes them easy to use since all parameters can be changed independently, without the risk of creating colors outside of… | `knowledge/design/concept-cards/posts/colour-gamut.md` |
+| U10 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 410–477; Blending colors | Section compares white/blue blends and describes hue shifts or rapid desaturation among tested spaces; plots are author-provided and not independently evaluated. | `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md`<br>`knowledge/design/concept-cards/posts/colour-space-comparison.md` |
+| U11 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 169–504; Motivation and derivation of Oklab | Author lists subjective design requirements (opponent coordinates, lightness/chroma/hue, blending, D65 and numerical behavior) and then describes derivation; this is author rationale, not independent validation. | `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md`<br>`knowledge/design/concept-cards/posts/d65-whitepoint.md`<br>`knowledge/design/concept-cards/posts/perceptual-uniformity.md` |
+| U12 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 55–70; Comparing Oklab to HSV | The cited comparison presents an Oklab gradient against HSV at constant HSV value/saturation and describes uneven lightness in the HSV plot; plotted media is not captured/validated here. | `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md`<br>`knowledge/design/concept-cards/posts/lightness-perceptual.md` |
+| U13 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 53–84; Color picking before computers | Historical overview describes Munsell and NCS as different perception-based systems, including their hue/chroma/value versus whiteness/blackness/chromaticness parameters; attached photos are remote. | `knowledge/design/concept-cards/posts/colour-picker.md`<br>`knowledge/design/concept-cards/posts/munsell-colour-system.md`<br>`knowledge/design/concept-cards/posts/natural-colour-system.md` |
+| U14 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 181–197; What about existing models? | Author compares CIELAB/CIELUV, CAM16-UCS, OSA-UCS, IPT and other models against the preceding criteria; statements remain attributed article conclusions. | `knowledge/design/concept-cards/posts/colour-space-comparison.md`<br>`knowledge/design/concept-cards/posts/colour-space.md` |
+| U15 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 329–409; Luo-Rigg dataset and full gamut | Section describes plots from the Luo-Rigg dataset and full visible gamut; its HSV row says data are missing because HSV does not handle colors outside sRGB. The dataset itself is linked, not inspected. | `knowledge/design/concept-cards/posts/colour-space-comparison.md`<br>`knowledge/design/concept-cards/posts/gamut-srgb.md` |
+| U16 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 23–36; A perceptual color space for image processing | Introduction gives intended image-processing uses and presents Oklab as designed for perceived lightness, chroma and hue; this is the author’s framing. | `knowledge/design/concept-cards/posts/colour-space.md` |
+| U17 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 130–171; Color Variables | Section recommends semantic color variables and shows CSS/Sass examples; it includes browser-era qualification in the article’s own time context. | `knowledge/design/concept-cards/posts/css-colour-custom-properties.md` |
+| U18 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 75–205; Color values | Parent groups RGB, hex, HSL and other CSS color-value subsections; the specific clause must be resolved to its named child rather than the parent alone. | `knowledge/design/concept-cards/posts/css-colour-custom-properties.md`<br>`knowledge/design/concept-cards/posts/css-rgba.md`<br>`knowledge/design/concept-cards/posts/hex-colour-notation.md`<br>`knowledge/design/concept-cards/posts/hsl-css-syntax.md`<br>`knowledge/design/concept-cards/posts/rgb-colour-model.md` |
+| U19 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 77–88; RGB Values | CSS-Tricks section gives RGB channel ranges, alpha range, syntax and an rgba example; source text contains a typo in the surrounding “rbga” prose, recorded as article wording. | `knowledge/design/concept-cards/posts/css-rgba.md`<br>`knowledge/design/concept-cards/posts/rgb-colour-model.md` |
+| U20 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 73–113; Converting from XYZ to Oklab | Section specifies XYZ with D65 and Y=1, transforms through approximate cone responses and matrices M1/M2, and includes an example XYZ/Oklab table where targeted. | `knowledge/design/concept-cards/posts/d65-whitepoint.md`<br>`knowledge/design/concept-cards/posts/lms-cone-responses.md`<br>`knowledge/design/concept-cards/posts/matrix-transformation-colour.md`<br>`knowledge/design/concept-cards/posts/oklab-conversion.md`<br>`knowledge/design/concept-cards/posts/xyz-colour-space.md` |
+| U21 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 364–396; feColorMatrix | Section describes SVG feColorMatrix and includes matrix/hueRotate code examples plus linked resources and a remote figure; none were executed. | `knowledge/design/concept-cards/posts/fecolormatrix.md` |
+| U22 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 334–396; Other Nice Color Effects | Parent covers multiple effects; the cited child section describes filters and later feColorMatrix material, with external galleries/demos. | `knowledge/design/concept-cards/posts/fecolormatrix.md`<br>`knowledge/design/concept-cards/posts/mix-blend-mode.md` |
+| U23 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 198–233; How Oklab was derived | Section describes optimizing transformation matrices against stated criteria; the primary article presents its own method and comparison, not independent reproduction. | `knowledge/design/concept-cards/posts/gamut-srgb.md`<br>`knowledge/design/concept-cards/posts/matrix-transformation-colour.md`<br>`knowledge/design/concept-cards/posts/oklab.md` |
+| U24 | `knowledge/design/sources/md/posts/more-meaningful-typography.md` | `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9` | 30–30; first prose paragraph of article body; antecedent of the cited unheaded opening paragraph | This is the actual unheaded prose paragraph. Brown line 30 is the first golden-mean paragraph; line 109 begins “This and other meaningful ratios…” after converted sidebar markup, so the two are separate context points. | `knowledge/design/concept-cards/posts/golden-ratio.md`<br>`knowledge/design/concept-cards/posts/musical-interval-typographic-ratio.md` |
+| U25 | `knowledge/design/sources/md/posts/more-meaningful-typography.md` | `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9` | 133–171; Modular scales and how they apply to web design | Section defines a modular scale as harmonious proportions, demonstrates multiplication/division from a ratio and cites Bringhurst; that quotation is attribution, not inspection of Bringhurst’s book. | `knowledge/design/concept-cards/posts/golden-ratio.md`<br>`knowledge/design/concept-cards/posts/modular-scale-construction.md`<br>`knowledge/design/concept-cards/posts/modular-scale.md`<br>`knowledge/design/concept-cards/posts/musical-interval-typographic-ratio.md`<br>`knowledge/design/concept-cards/posts/scale-base-unit.md`<br>`knowledge/design/concept-cards/posts/scale-ratio.md`<br>`knowledge/design/concept-cards/posts/typographic-rhythm-modular-scale.md` |
+| U26 | `knowledge/design/sources/md/posts/more-meaningful-typography.md` | `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9` | 172–189; Creating a modular scale for web design | Section narrates Brown’s Minion/Myriad design example and choice of base size/ratio; it is a specific author case rather than a universal prescription. | `knowledge/design/concept-cards/posts/golden-ratio.md`<br>`knowledge/design/concept-cards/posts/modular-scale-construction.md`<br>`knowledge/design/concept-cards/posts/modular-scale.md`<br>`knowledge/design/concept-cards/posts/ratio-selection-criteria.md`<br>`knowledge/design/concept-cards/posts/scale-base-unit.md`<br>`knowledge/design/concept-cards/posts/scale-ratio.md` |
+| U27 | `knowledge/design/sources/md/posts/more-meaningful-typography.md` | `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9` | 358–470; Further Reading | Further Reading recommends Bringhurst and describes Brown’s More Perfect Typography talk as a supplement, “more inspiration than information”; these are supplemental references, not article body evidence. | `knowledge/design/concept-cards/posts/golden-ratio.md`<br>`knowledge/design/concept-cards/posts/musical-interval-typographic-ratio.md` |
+| U28 | `knowledge/design/sources/md/posts/more-meaningful-typography.md` | `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9` | 109–109; unheaded article opening paragraph | This is the actual unheaded prose paragraph. Brown line 30 is the first golden-mean paragraph; line 109 begins “This and other meaningful ratios…” after converted sidebar markup, so the two are separate context points. | `knowledge/design/concept-cards/posts/golden-ratio.md`<br>`knowledge/design/concept-cards/posts/musical-interval-typographic-ratio.md` |
+| U29 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 214–246; Gradients | Section describes direction/color stops, opacity, SVG, remote CodePen fallbacks and external generators; embedded interactive content is not locally captured. | `knowledge/design/concept-cards/posts/gradient-colour-interpolation.md` |
+| U30 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 206–246; Color Properties | Inspected prepared source unit; excerpt: ### Color Properties Color, as a CSS property, refers to font color. If you’re setting a color on a large area, you would use `background-color`, unless it’s an SVG element in which case you would use `fill`. Border is the border around an HTML element, while `stroke` is it’s SVG… | `knowledge/design/concept-cards/posts/gradient-colour-interpolation.md` |
+| U31 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 89–96; Hex Values | Section describes hexadecimal RGB triplets, byte/range interpretation and shorthand repeated digits; code/browser behavior is not independently tested. | `knowledge/design/concept-cards/posts/hex-colour-notation.md` |
+| U32 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 97–125; HSL Values | Secondary CSS-Tricks section describes HSL syntax/ranges and makes a Munsell-history claim; it remains a secondary citation and its code/figures are not validated. | `knowledge/design/concept-cards/posts/hsl-css-syntax.md`<br>`knowledge/design/concept-cards/posts/hsl.md`<br>`knowledge/design/concept-cards/posts/munsell-colour-system.md` |
+| U33 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 112–142; HSV | Theory section defines HSV hue, saturation relative to the sRGB maximum at that hue, and value as mixing with black; it contrasts HSV/HWB construction with NCS perception/gamut goals. | `knowledge/design/concept-cards/posts/hsv.md` |
+| U34 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 114–168; Converting from linear sRGB to Oklab | Section provides forward/inverse linear-sRGB conversion code and links its earlier color-space conversion dependency; code correctness and external dependency are outside this navigation result. | `knowledge/design/concept-cards/posts/lms-cone-responses.md`<br>`knowledge/design/concept-cards/posts/matrix-transformation-colour.md`<br>`knowledge/design/concept-cards/posts/oklab-conversion.md` |
+| U35 | `knowledge/design/sources/md/posts/working-with-colours.md` | `f4cf46139cd45b5e8d78865666520520493dbafe4fe39a89b9c0e32227c0e4af` | 336–357; Mix Blend Modes and Background Blend Modes | Section names source, destination and backdrop layers, gives blend formula examples and links documentation/demo; the embedded demo and remote figure are not captured. | `knowledge/design/concept-cards/posts/mix-blend-mode.md` |
+| U36 | `knowledge/design/sources/md/posts/more-meaningful-typography.md` | `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9` | 190–337; Applying a modular scale in web design | Section applies scale values to CSS and a concrete layout, including an off-scale 15px caption and Brown’s later reminder at line 314 that scales are a tool, not magic. | `knowledge/design/concept-cards/posts/modular-scale-construction.md`<br>`knowledge/design/concept-cards/posts/modular-scale.md`<br>`knowledge/design/concept-cards/posts/scale-application-typographic-hierarchy.md`<br>`knowledge/design/concept-cards/posts/typographic-rhythm-modular-scale.md` |
+| U37 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 278–298; Summary | Summary introduces a comparison table and explicitly calls it subjective; lines 284–293 contain the ratings and 295–297 contain three explanatory footnotes. | `knowledge/design/concept-cards/posts/natural-colour-system.md` |
+| U38 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 513–744; Okhsl | Inspected prepared source unit; excerpt: ### Okhsl To derive Okhsl we also start with OkLCh. $`L_r`$ and $`h`$ are kept as is, with $`L_r`$ referred to as $`l`$ instead for consistency. For $`s`$ we want to somehow remap $`C`$ so that the sRGB gamut nicely fits into a cylinder. The simplest way to do this is to simply s… | `knowledge/design/concept-cards/posts/okhsl.md` |
+| U39 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 341–759; Introducing two new color spaces: Okhsv and Okhsl | Inspected prepared source unit; excerpt: ## Introducing two new color spaces: Okhsv and Okhsl With this new lightness estimate, we are ready to look into the construction of Okhsv and Okhsl. Here is a rough overview of the general idea behind Okhsv and Okhsl and their construction. Some details are glossed over here, fo… | `knowledge/design/concept-cards/posts/okhsl.md`<br>`knowledge/design/concept-cards/posts/okhsv.md` |
+| U40 | `knowledge/design/sources/md/posts/okhsv-and-okhsl.md` | `227d62385a8ca4dfa77e9f5a10d55c9bd8d1c2f29d8964f59a1059bfb67d5d19` | 345–512; Okhsv | Inspected prepared source unit; excerpt: ### Okhsv To derive Okhsv, we will start with OkLCh, use its estimate for hue, $`h`$ , as is and introduce $`s`$ and $`v`$ parameters that are calculated based on lightness, $`L_r`$ , and chroma, $`C`$ . To keep the triangular shape when using $`L_r`$ we also scale $`C`$ by $`L_r… | `knowledge/design/concept-cards/posts/okhsv.md` |
+| U41 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 71–168; Implementation | Implementation contains XYZ and linear-sRGB transforms, matrices, equations and C++ listings; the locator is an outer parent spanning those code sections. | `knowledge/design/concept-cards/posts/oklab.md` |
+| U42 | `knowledge/design/sources/md/posts/more-meaningful-typography.md` | `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9` | 338–351; Where does this fit with how we already work? | Section contrasts content-out design with prior box-first practice and says modular scales can coexist with grid/responsive design; the conclusion later limits scales to tools. | `knowledge/design/concept-cards/posts/responsive-type-modular-scale.md` |
+| U43 | `knowledge/design/sources/md/posts/more-meaningful-typography.md` | `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9` | 352–357; Conclusion | Conclusion states modular scales can guide deliberate web measurement and explicitly qualifies them as “tools—not dogma” before calling for responsibility in design choices. | `knowledge/design/concept-cards/posts/typographic-rhythm-modular-scale.md` |
+| U44 | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md` | `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` | 101–113; Table of example XYZ and Oklab pairs | The quoted table identifies values as transformed XYZ-to-Oklab examples rounded to three decimals and says they are provided to test implementations; no conversion was recomputed. | `knowledge/design/concept-cards/posts/xyz-colour-space.md` |
+
+### Iteration03 exact clause-to-unit joins for the 46 post references
+
+Clause boundaries below are literal semicolon-delimited clauses in each preserved `source_reference_raw`; no raw card assertion was normalized. The complete raw string remains in the preceding 46-row association table and locator-map JSONL. Unit IDs bind each clause to the inspection result above. “Prepared navigation resolved” means the named clause’s intended prepared unit was inspected at the pinned path/hash/span. Clauses that name a further-reading item or a quotation/data source retain supplemental/external status; local article mention alone does not validate that cited material. A clause with no eligible prepared target would be marked unresolved; no clause is silently dropped. The current checker asserts every parsed clause has one or more unit joins and exact full-path joins to the map.
+
+| Full card path | Exact raw clause(s) => inspection unit(s) | Clause disposition / role |
+|---|---|---|
+| `knowledge/design/concept-cards/posts/additive-colour-mixing.md` | `"Color mixing" section, Working With Colors Guide (Sarah Drasner).` => U01 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/chroma-perceptual.md` | `"The Oklab color space" (C formula)` => U02 (prepared navigation resolved)<br>`"Munsell data" (chroma prediction comparison)` => U03 (prepared navigation resolved)<br>`comparison table in "Comparison with other color spaces".` => U04 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/chroma-vs-saturation.md` | `"HSL" section under "Color spaces for color picking" and "What makes a good color picker?" section, Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U05, U06, U07 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/colour-bit-depth.md` | `"Color mixing" section, Working With Colors Guide (Sarah Drasner).` => U01 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/colour-contrast.md` | `"Accessibility and Other Things to Note about Color" section, Working With Colors Guide (Sarah Drasner).` => U08 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/colour-gamut.md` | `"What makes a good color picker?" and "Finding a better tradeoff," Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U07, U09 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | `"Blending colors"` => U10 (prepared navigation resolved)<br>`requirements list in "Motivation and derivation of Oklab" (blending requirement)` => U11 (prepared navigation resolved)<br>`"Comparing Oklab to HSV".` => U12 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/colour-picker-design-principles.md` | `"What makes a good color picker?" section, Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U07 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/colour-picker.md` | `"What makes a good color picker?" and "Color picking before computers," Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U07, U13 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `"What about existing models?"` => U14 (prepared navigation resolved)<br>`"Comparison with other color spaces"` => U04 (prepared navigation resolved)<br>`"Blending colors"` => U10 (prepared navigation resolved)<br>`"Munsell data"` => U03 (prepared navigation resolved)<br>`"Luo-Rigg dataset and full gamut" sections.` => U15 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/colour-space.md` | `"A perceptual color space for image processing" (introduction)` => U16 (prepared navigation resolved)<br>`colour space comparisons throughout "Comparison with other color spaces" and "What about existing models?".` => U04, U14 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/css-colour-custom-properties.md` | `"Color Variables" section under "Color values," Working With Colors Guide (Sarah Drasner).` => U17, U18 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/css-rgba.md` | `"RGB Values" section under "Color values," Working With Colors Guide (Sarah Drasner).` => U19, U18 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/d65-whitepoint.md` | `"The Oklab color space" section` => U02 (prepared navigation resolved)<br>`requirements list in "Motivation and derivation of Oklab"` => U11 (prepared navigation resolved)<br>`example table in "Converting from XYZ to Oklab".` => U20 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/fecolormatrix.md` | `"feColorMatrix" section under "Other Nice Color Effects," Working With Colors Guide (Sarah Drasner).` => U21, U22 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/gamut-srgb.md` | `"How Oklab was derived" (gamut convexity constraint)` => U23 (prepared navigation resolved)<br>`"Luo-Rigg dataset and full gamut" (gamut slice in plots)` => U15 (prepared navigation resolved)<br>`HSV limitation note.` => U15 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/golden-ratio.md` | `Opening paragraph` => U24, U28 (prepared navigation resolved)<br>`"Modular scales and how they apply to web design"` => U25 (prepared navigation resolved)<br>`"Creating a modular scale for web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U26 (prepared navigation resolved)<br>`Also referenced in "Further Reading": Robert Bringhurst, *The Elements of Typographic Style*, "Shaping the Page."` => U27 (supplemental/quoted or further-reading reference; local article mention only) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/gradient-colour-interpolation.md` | `"Gradients" section under "Color Properties," Working With Colors Guide (Sarah Drasner).` => U29, U30 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/hex-colour-notation.md` | `"Hex Values" section under "Color values," Working With Colors Guide (Sarah Drasner).` => U31, U18 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/hsl-css-syntax.md` | `"HSL Values" section under "Color values," Working With Colors Guide (Sarah Drasner).` => U32, U18 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/hsl.md` | `"HSL" section under "Color spaces for color picking," Okhsv and Okhsl` => U05, U06 (prepared navigation resolved)<br>`"HSL Values" section, Working With Colors Guide.` => U05, U32 (secondary cited article; distinct from primary pair) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/hsv.md` | `"HSV" section under "Color spaces for color picking," Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U33, U06 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/lightness-perceptual.md` | `"The Oklab color space" (definition)` => U02 (prepared navigation resolved)<br>`"Comparing Oklab to HSV" (visual demonstration)` => U12 (prepared navigation resolved)<br>`"Comparison with other color spaces" (error table).` => U04 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/lms-cone-responses.md` | `"Converting from XYZ to Oklab"` => U20 (prepared navigation resolved)<br>`"Converting from linear sRGB to Oklab" sections.` => U34 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | `"Converting from XYZ to Oklab"` => U20 (prepared navigation resolved)<br>`"Converting from linear sRGB to Oklab"` => U34 (prepared navigation resolved)<br>`"How Oklab was derived" (matrices M1 and M2 as parameters to optimise).` => U23 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/mix-blend-mode.md` | `"Mix Blend Modes and Background Blend Modes" section under "Other Nice Color Effects," Working With Colors Guide (Sarah Drasner).` => U35, U22 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/modular-scale-construction.md` | `"Modular scales and how they apply to web design"` => U25 (prepared navigation resolved)<br>`"Creating a modular scale for web design"` => U26 (prepared navigation resolved)<br>`"Applying a modular scale in web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U36 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/modular-scale.md` | `"Modular scales and how they apply to web design"` => U25 (prepared navigation resolved)<br>`"Creating a modular scale for web design"` => U26 (prepared navigation resolved)<br>`"Applying a modular scale in web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U36 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/munsell-colour-system.md` | `"Color picking before computers" section, Okhsv and Okhsl (Bj\u00f6rn Ottosson)` => U13 (prepared navigation resolved)<br>`"HSL Values" section, Working With Colors Guide (Sarah Drasner).` => U32 (secondary cited article; distinct from primary pair) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/musical-interval-typographic-ratio.md` | `Opening paragraph` => U24, U28 (prepared navigation resolved)<br>`"Modular scales and how they apply to web design" (Bringhurst quote)` => U25 (supplemental/quoted or further-reading reference; local article mention only)<br>`"Further Reading" (reference to "More Perfect Typography" talk) \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U27 (supplemental/quoted or further-reading reference; local article mention only) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/natural-colour-system.md` | `"Color picking before computers" and comparison table, Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U13, U37 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/okhsl.md` | `"Okhsl" and "Introducing two new color spaces: Okhsv and Okhsl" sections, Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U38, U39 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/okhsv.md` | `"Okhsv" section under "Introducing two new color spaces: Okhsv and Okhsl," Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U40, U39 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/oklab-conversion.md` | `"Converting from XYZ to Oklab"` => U20 (prepared navigation resolved)<br>`"Converting from linear sRGB to Oklab"` => U34 (prepared navigation resolved)<br>`C++ code listing.` => U34 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/oklab.md` | `"The Oklab color space", "Implementation", "How Oklab was derived", "Comparison with other color spaces" sections.` => U02, U41, U23, U04 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/orthogonal-colour-properties.md` | `"What makes a good color picker?" section, Okhsv and Okhsl (Bj\u00f6rn Ottosson).` => U07 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | `"Motivation and derivation of Oklab" and "Comparison with other color spaces" sections` => U11, U04 (prepared navigation resolved)<br>`no page numbers (web article).` => U11, U04 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/ratio-selection-criteria.md` | `"Creating a modular scale for web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U26 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/responsive-type-modular-scale.md` | `"Where does this fit with how we already work?" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U42 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/rgb-colour-model.md` | `"RGB Values" section under "Color values," Working With Colors Guide (Sarah Drasner).` => U19, U18 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/scale-application-typographic-hierarchy.md` | `"Applying a modular scale in web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U36 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/scale-base-unit.md` | `"Modular scales and how they apply to web design"` => U25 (prepared navigation resolved)<br>`"Creating a modular scale for web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U26 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/scale-ratio.md` | `"Modular scales and how they apply to web design"` => U25 (prepared navigation resolved)<br>`"Creating a modular scale for web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U26 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/subtractive-colour-mixing.md` | `"Color mixing" section, Working With Colors Guide (Sarah Drasner).` => U01 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/typographic-rhythm-modular-scale.md` | `"Applying a modular scale in web design"` => U36 (prepared navigation resolved)<br>`"Modular scales and how they apply to web design"` => U25 (prepared navigation resolved)<br>`Conclusion \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)` => U43 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+| `knowledge/design/concept-cards/posts/xyz-colour-space.md` | `"Converting from XYZ to Oklab"` => U20 (prepared navigation resolved)<br>`"Table of example XYZ and Oklab pairs" sections.` => U44 (prepared navigation resolved) | Per-clause status shown; source identity/capture fidelity remains caveated. |
+
+Clause accounting: 83 source-reference clauses (82 semicolon-delimited parts plus one separate Further Reading paragraph) across 46 full paths; every clause joins to an inspected unit. All distinct citation targets are mapped once to exact local snapshot identity and inclusive bounds; article-level original capture/fidelity is unresolved for the 46-card source group. Additional role limits: Brown further-reading/Bringhurst text is secondary context; CSS-Tricks HSL Values remains additional citation on `hsl.md` and Munsell, not a primary pair; the RIT Munsell chart and Luo-Rigg dataset remain external and uninspected. These results do not assess concept-card assertion wording or whether source text warrants it.
+
+
+### Iteration03 complete retained validation and prose-link checker
+
+This is the current complete checker. It is intentionally inline in the committed
+record so the same bytes can be extracted and replayed both before and after the
+explicit-path commit. The prior Iteration02 failure and its exact historical
+receipt above remain unchanged; a successful current run does not rewrite that
+failure. The checks establish raw population equality, target integrity and
+intended local hierarchy/coverage, exact clause joins, supplemental roles,
+DES preservation, local prose links and output integrity. They do not establish
+semantic support, reading independence or original fidelity.
+
+```python
+from pathlib import Path
+import json, re, hashlib, collections, subprocess, urllib.parse
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+S=Path('/Users/oubiwann/lab/billosys/ai-engineering')
+L=P/'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness'
+ALLOWED={
+ 'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/execution-notes.md',
+ 'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/locator-map.jsonl',
+ 'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/readiness-report.md',
+ 'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md',
+ 'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-register.md',
+ 'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/ledger.md',
+ 'project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/closing-report.md'}
+def run(args,cwd=P): return subprocess.check_output(args,cwd=cwd,text=True).strip()
+def strict(path):
+ rows=[]
+ for n,line in enumerate(path.read_text().splitlines(),1):
+  assert line.strip(),(path,n,'blank JSONL')
+  x=json.loads(line); assert isinstance(x,dict),(path,n,'non-object')
+  rows.append(x)
+ return rows
+m=strict(L/'artifacts/locator-map.jsonl')
+i=strict(P/'project10-design-foundations/arc01-portable-contract/slice01-scope-and-portability-contract/artifacts/card-source-index.jsonl')
+I={x['path']:x for x in i}
+assert len(m)==len(i)==len(I)==233
+assert [x['card_path'] for x in m]==sorted(I)
+for x in m:
+ y=I[x['card_path']]; assert x['card_sha256']==y['sha256']
+ assert x['primary_source_raw']=={k:y['source_fields_raw'][k] for k in ('source','authors')}
+ a=x['asserted_locators_raw']
+ assert all(a[k]==y['source_fields_raw'][k] for k in ('chapter','pdf_page','section'))
+ assert all(a[k]==y[k] for k in ('source_reference_raw','source_reference_status'))
+ group=x['card_path'].split('/')[3]
+ prefix={'art-and-visual-perception':'ARN','munsell-colour-system':'CLE','the-new-typography':'TSCH'}.get(group)
+ expected={f'C-{prefix}-ORIGINAL-EDITION',f'C-{prefix}-PAGE-BASIS','C-BOOK-FIDELITY'} if prefix else ({'C-BUTTERICK-CAPTURE-IDENTITY','C-BUTTERICK-CAPTURE-FIDELITY'} if group=='practical-typography' else {'C-WEB-CAPTURE-IDENTITY','C-WEB-CAPTURE-FIDELITY'})
+ assert set(x['caveat_ids'])==expected,(x['card_path'],'caveats')
+posts=[x for x in m if x['card_path'].startswith('knowledge/design/concept-cards/posts/')]
+assert len(posts)==46
+pair_counts=collections.Counter((tuple(x['primary_source_raw']['source']),tuple(x['primary_source_raw']['authors'])) for x in m)
+assert sorted(pair_counts.values())==[10,11,12,13,19,19,37,112]
+counts=collections.Counter(); target_keys=set(); all_targets=0
+for x in m:
+ for t in x['prepared_targets']:
+  all_targets+=1
+  p=S/t['path_or_uri']; b=p.read_bytes(); assert hashlib.sha256(b).hexdigest()==t['snapshot_sha256']
+  lines=b.decode('utf-8').splitlines(); v=t['locator_value']; a,z=v['line_start'],v['line_end']
+  assert 1<=a<=z<=len(lines),(x['card_path'],t)
+  if '/posts/' not in x['card_path']: continue
+  h=re.match(r'^(#{1,6})\s+(.*)',re.sub(r'^(?:>\s*)+','',lines[a-1])) if a<=len(lines) else None
+  if 'heading' in v:
+   assert h and v['heading'] in h[2] and len(h[1])==v['heading_level'],(x['card_path'],v)
+   end=next((n for n in range(a,len(lines)) if (q:=re.match(r'^(#{1,6})\s+',re.sub(r'^(?:>\s*)+','',lines[n]))) and len(q[1])<=len(h[1])),len(lines))
+   assert z==end,(x['card_path'],v,z,end)
+   counts['heading']+=1
+  else: counts['paragraph']+=1
+  target_keys.add((t['path_or_uri'],a,z))
+post_targets=sum(len(x['prepared_targets']) for x in posts)
+assert post_targets==104 and all_targets==141 and len(target_keys)==44 and post_targets+37==141
+assert all(not (t['locator_value'].get('html_id') in ('#hsl-2','#hsv-2')) for x in posts for t in x['prepared_targets'])
+def has_target(name,heading,start,end,htmlid):
+ row=next(x for x in posts if x['card_path'].endswith('/'+name))
+ return any(t['locator_value'].get('heading')==heading and t['locator_value']['line_start']==start and t['locator_value']['line_end']==end and t['locator_value'].get('html_id')==htmlid for t in row['prepared_targets'])
+def theory_target(targets,term):
+ parent=any(t['locator_value'].get('heading')=='Color spaces for color picking' and t['locator_value']['line_start']==104 for t in targets)
+ return parent and any(t['locator_value'].get('heading')==term and t['locator_value']['line_start']==({'HSL':143,'HSV':112}[term]) for t in targets)
+for card,term in [('chroma-vs-saturation.md','HSL'),('hsl.md','HSL'),('hsv.md','HSV')]:
+ row=next(x for x in posts if x['card_path'].endswith('/'+card))
+ assert theory_target(row['prepared_targets'],term)
+# Contrast: old same-named code targets have valid hashes/bounds but fail theory-parent predicate.
+old=[json.loads(x) for x in run(['git','show','bf02e9709371a1ce0306f8f52d3d2a09c75dc7e9:project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/locator-map.jsonl']).splitlines()]
+for card,term,wrong in [('chroma-vs-saturation.md','HSL','#hsl-2'),('hsl.md','HSL','#hsl-2'),('hsv.md','HSV','#hsv-2')]:
+ row=next(x for x in old if x['card_path'].endswith('/'+card)); fake=[t for t in row['prepared_targets'] if t['locator_value'].get('html_id')==wrong]
+ assert len(fake)==1 and not theory_target(fake,term)
+ for t in fake:
+  b=(S/t['path_or_uri']).read_bytes(); assert hashlib.sha256(b).hexdigest()==t['snapshot_sha256']
+  assert 1<=t['locator_value']['line_start']<=t['locator_value']['line_end']<=len(b.decode().splitlines())
+assert has_target('typographic-rhythm-modular-scale.md','Conclusion',352,357,'#section6')
+assert has_target('natural-colour-system.md','Summary',278,298,'#summary')
+def clause_coverage(row,heading,start,end): return any(t['locator_value'].get('heading')==heading and t['locator_value']['line_start']==start and t['locator_value']['line_end']==end for t in row['prepared_targets'])
+brownrow=next(x for x in posts if x['card_path'].endswith('/typographic-rhythm-modular-scale.md'))
+ncsrow=next(x for x in posts if x['card_path'].endswith('/natural-colour-system.md'))
+assert clause_coverage(brownrow,'Conclusion',352,357) and not clause_coverage({**brownrow,'prepared_targets':[t for t in brownrow['prepared_targets'] if t['locator_value'].get('heading')!='Conclusion']},'Conclusion',352,357)
+assert clause_coverage(ncsrow,'Summary',278,298) and not clause_coverage({**ncsrow,'prepared_targets':[t for t in ncsrow['prepared_targets'] if t['locator_value'].get('heading')!='Summary']},'Summary',278,298)
+brown=(S/'knowledge/design/sources/md/posts/more-meaningful-typography.md').read_text().splitlines()
+assert 'tools—not dogma' in '\n'.join(brown[351:357])
+app='\n'.join(brown[189:337]); clipped='\n'.join(brown[189:313])
+assert 'they’re not magic' in app and 'they’re not magic' not in clipped
+summary=(S/'knowledge/design/sources/md/posts/okhsv-and-okhsl.md').read_text().splitlines()
+summary_text='\n'.join(summary[277:298]); assert 'subjective' in summary_text.lower() and 'This of course depends' in summary_text and 'If desirable' in summary_text and 'NCS has a simple' in summary_text
+# Existing Oklab gamut target contains the HSV limitation clause at line 397.
+gamut=next(x for x in posts if x['card_path'].endswith('/gamut-srgb.md'))
+assert any(t['locator_value']['line_start']<=397<=t['locator_value']['line_end'] for t in gamut['prepared_targets'])
+assert 'HSV does not handle colors outside sRGB gamut' in (S/'knowledge/design/sources/md/posts/a-perceptual-colour-space.md').read_text().splitlines()[396]
+# Brown opening remains two disjoint paragraph points; identities remain full-path/pair distinct.
+for card in ('golden-ratio.md','musical-interval-typographic-ratio.md'):
+ row=next(x for x in posts if x['card_path'].endswith('/'+card)); spans={t['locator_value']['line_start'] for t in row['prepared_targets'] if t['locator_value']['line_start'] in (30,109)}; assert spans=={30,109}
+mun=[x for x in m if x['card_path'].endswith('/munsell-colour-system.md')]
+assert len(mun)==2 and len({tuple(x['primary_source_raw']['authors']) for x in mun})==2
+# Full raw-reference clause population and each exact clause-to-unit join in notes.
+notes=(L/'artifacts/execution-notes.md').read_text()
+def split_clauses(raw):
+ result=[]
+ for part in raw.strip().split(';'):
+  if 'Also referenced in ' in part:
+   before,after=part.split('Also referenced in ',1)
+   if before.strip(): result.append(before.strip())
+   result.append('Also referenced in '+after.strip())
+  elif part.strip(): result.append(part.strip())
+ return result
+clauses={x['card_path']:split_clauses(x['asserted_locators_raw']['source_reference_raw']) for x in posts}
+clause_count=sum(map(len,clauses.values())); assert clause_count==83
+unit_section=notes.split('### Iteration03 unique source-unit inspection results (CC evidence)\n',1)[1].split('### Iteration03 exact clause-to-unit joins for the 46 post references',1)[0]
+unit_rows=[line for line in unit_section.splitlines() if re.match(r'^\| U\d{2} \|',line)]
+assert len(unit_rows)==len(target_keys)==44
+unit_ids={re.match(r'^\| (U\d{2}) \|',line)[1] for line in unit_rows}
+clause_section=notes.split('### Iteration03 exact clause-to-unit joins for the 46 post references\n',1)[1].split('### Iteration03 complete retained validation',1)[0]
+for card,items in clauses.items():
+ row=next(x for x in posts if x['card_path']==card); line=next((z for z in clause_section.splitlines() if z.startswith('| `'+card+'`') and '=> U' in z),None)
+ assert line and line.count('=> U')==len(items),(card,len(items),line)
+ for c in items: assert c.replace('\n','\\n').replace('|','\\|').replace('`','\\`') in line,(card,c)
+clause_lines=[z for z in clause_section.splitlines() if z.startswith('| `knowledge/design/concept-cards/posts/') and '=> U' in z]
+assert len(clause_lines)==46
+referenced_units={u for line in clause_lines for u in re.findall(r'\bU\d{2}\b',line)}
+assert referenced_units<=unit_ids
+def unit_for(path,start,end):
+ for line in unit_rows:
+  if f'`{path}`' in line and f'{start}–{end}' in line: return re.match(r'^\| (U\d{2}) \|',line)[1]
+ raise AssertionError((path,start,end))
+ncs_line=next(z for z in clause_lines if z.startswith('| `knowledge/design/concept-cards/posts/natural-colour-system.md`'))
+assert unit_for('knowledge/design/sources/md/posts/okhsv-and-okhsl.md',278,298) in ncs_line
+brown_line=next(z for z in clause_lines if z.startswith('| `knowledge/design/concept-cards/posts/typographic-rhythm-modular-scale.md`'))
+assert unit_for('knowledge/design/sources/md/posts/more-meaningful-typography.md',352,357) in brown_line
+gamut_line=next(z for z in clause_lines if z.startswith('| `knowledge/design/concept-cards/posts/gamut-srgb.md`'))
+assert unit_for('knowledge/design/sources/md/posts/a-perceptual-colour-space.md',329,409) in gamut_line
+assert 'Brown Conclusion' not in clause_section or has_target('typographic-rhythm-modular-scale.md','Conclusion',352,357,'#section6')
+# A posts-only/selected JSON population cannot satisfy full 233-row validation.
+selected=[x for x in m if x['card_path'].startswith('knowledge/design/concept-cards/posts/')]
+assert len(selected)==46 and len(selected)!=233
+# Exact 16 DES rows remain unchanged from accepted Slice01.
+A=(P/'project10-design-foundations/arc01-portable-contract/slice01-scope-and-portability-contract/artifacts/portability-contract.md').read_text()
+B=(L/'artifacts/review-procedure.md').read_text(); des=re.compile(r'^\| DES-\d{3} \|.*$',re.M)
+assert len(des.findall(A))==len(des.findall(B))==16 and des.findall(A)==des.findall(B)
+print('PASS strict JSONL population/raw copies/caveats: 233/233; eight pair counts retained')
+print(f'PASS corrected target map: {post_targets} post targets, 44 unique inspected spans, {all_targets} all targets; every hash/inclusive bound checked')
+print('PASS theory hierarchy; physically valid predecessor HSL-2/HSV-2 controls rejected for theory clauses')
+print('PASS Brown conclusion, Okhsv summary, Oklab HSV limitation and Brown split-opening controls')
+print(f'PASS {clause_count} exact clauses joined across 46 paths to {len(unit_rows)} unique source-unit observations; secondary/external roles retained')
+print('PASS selected-JSON control fails full population; all 16 DES rows unchanged')
+# Fence/inline-code-aware prose link extraction.
+def prose_only(text):
+ text=re.sub(r'(?ms)^ {0,3}(`{3,}|~{3,})[^\n]*\n.*?^ {0,3}\1[ \t]*$', '', text)
+ return re.sub(r'(`+)([^\n]*?)\1', '', text)
+def destinations(text): return re.findall(r'\[[^\]]*\]\(([^)]+)\)',prose_only(text))
+def missing_local_links(text,base):
+ missing=[]
+ for raw in destinations(text):
+  dest=raw.strip().split()[0].strip('<>')
+  if re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:',dest) or dest.startswith('//'): continue
+  path=urllib.parse.unquote(dest.partition('#')[0])
+  target=(base/path).resolve() if path else base
+  if not target.is_file(): missing.append(dest)
+ return missing
+self_sample='A prose link [ok](valid.md).\n```python\npattern = r"\\[[^\\]]*\\]\\(([^)]+)\\)"\n```\n'
+assert destinations(self_sample)==['valid.md']
+missing_sample='Real prose target [gone](missing-target.md).'
+assert missing_local_links(missing_sample,Path('/tmp'))==['missing-target.md']
+changed=run(['git','diff','--name-only','HEAD']).splitlines()
+if not changed: changed=run(['git','diff-tree','--no-commit-id','--name-only','-r','HEAD']).splitlines()
+assert set(changed)==ALLOWED and len(changed)==7,(changed,ALLOWED)
+assert run(['git','rev-parse','HEAD'])=='96137b1fb68ff7f57993e5a0b2a293d85c94cafb' or not run(['git','diff','--name-only','HEAD']), 'record issuing pin before commit'
+assert run(['git','-C',str(S),'rev-parse','HEAD'])=='dffa504e851b03b8e4746f1941068e4cc850b612'
+assert run(['git','-C',str(S),'diff','--name-only'])=='', 'tracked SOURCE changes detected'
+links=fragments=0
+for name in changed:
+ p=P/name; b=p.read_bytes(); assert b.endswith(b'\n') and b'\r\n' not in b,(name,'newline')
+ if p.suffix!='.md': continue
+ for raw in destinations(p.read_text()):
+  dest=raw.strip().split()[0].strip('<>')
+  if not dest or re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:',dest) or dest.startswith('//'): continue
+  path,sep,frag=dest.partition('#'); target=(p.parent/urllib.parse.unquote(path)).resolve() if path else p.resolve()
+  assert target.is_file(),(name,dest,'missing')
+  links+=1
+  if sep and frag:
+   content=target.read_text(); slugs=set()
+   for h in re.findall(r'^#{1,6}\s+(.+?)\s*#*$',content,re.M):
+    h=re.sub(r'\[([^\]]+)\]\([^)]*\)',r'\1',h).strip().lower()
+    slugs.add(re.sub(r'[^\w-]','',re.sub(r'\s+','-',h)))
+   ids=set(re.findall(r'\bid=["\']([^"\']+)',content))
+   assert urllib.parse.unquote(frag) in slugs|ids,(name,dest,'fragment')
+   fragments+=1
+print(f'PASS prose-only local Markdown links/fragments: {links} destinations, {fragments} fragments; code-self match ignored and missing-link control detected')
+print(f'PASS exact seven-path allowlist and EOF/no-CRLF: {len(changed)} files')
+```
+
+### Iteration03 failed, recovered and unrun work
+
+- The requested source `docs/document-extraction/...` and
+  `docs/concept-cards/...` paths do not exist in SOURCE. `rg --files` located the
+  live files under `knowledge/`; the named complete sections were read there.
+  The failed path attempt is not counted as a completed read. No local
+  `docs/PROJECT-MANAGEMENT.md` wayfinder or `docs/pm/` directory exists in this
+  planning/source setup; the installed project-management skill and current
+  project/slice plans supplied the planning guidance for this execution.
+- The first clause-result builder stopped before writing because the unit lookup
+  dictionary used span tuples where unit IDs were expected (`KeyError: 'U01'`).
+  The lookup was corrected. Its first clause parse then reported the literal
+  `no page numbers (web article)` locator note as unmapped; that source-reference
+  qualifier was joined to both named section units. Review of the Golden Ratio
+  raw reference exposed a separate paragraph beginning “Also referenced in”; it
+  is now retained as its own supplemental Further Reading clause instead of
+  being hidden inside the preceding semicolon-delimited clause. The final count
+  is 83 clauses across 46 paths.
+- First inline-checker drafts exposed an inclusive-boundary off-by-one in the
+  checker itself, an over-specific Summary-footnote marker expectation, and a
+  table-rendering break where an exact raw clause contains a blank line. Each
+  predicate/rendering was corrected against the actual source; source/map bytes
+  were not weakened. The first prose-link negative-control draft called its
+  helper before definition, and its first self-sample incorrectly treated a
+  deliberately nonexistent `valid.md` fixture as missing. The helper now runs
+  before both controls; code-self-extraction yields only the real prose link,
+  and the in-memory missing prose destination is reported by the same
+  path-existence predicate used for actual artifacts.
+- An initial grouped read command used the nonexistent `docs/...` paths noted
+  above, and one shell command during the work had malformed quoting; neither
+  produced evidence and both were rerun with bounded paths/commands. No original
+  input, private storage, external dataset, media, demo, book, capture, or
+  source-tree write was available or performed. Original fidelity, all-card
+  semantics/five dimensions and independent CDC reproduction remain unrun.
+
+### Iteration03 final pre-commit replay — actual result
+
+The exact Python block immediately above was extracted from this execution-notes
+file and run from PLANNING after the current text/code and all seven allowed path
+edits were present. Exit 0; exact output:
+
+```text
+PASS strict JSONL population/raw copies/caveats: 233/233; eight pair counts retained
+PASS corrected target map: 104 post targets, 44 unique inspected spans, 141 all targets; every hash/inclusive bound checked
+PASS theory hierarchy; physically valid predecessor HSL-2/HSV-2 controls rejected for theory clauses
+PASS Brown conclusion, Okhsv summary, Oklab HSV limitation and Brown split-opening controls
+PASS 83 exact clauses joined across 46 paths to 44 unique source-unit observations; secondary/external roles retained
+PASS selected-JSON control fails full population; all 16 DES rows unchanged
+PASS prose-only local Markdown links/fragments: 26 destinations, 3 fragments; code-self match ignored and missing-link control detected
+PASS exact seven-path allowlist and EOF/no-CRLF: 7 files
+```
+
+The only link-extraction success/failure claims are those exact predicates. The
+prior Iteration02 committed helper still failed against its own regex string as
+recorded in the independent review and preserved above; 26 current prose-local
+destinations/3 fragments were checked here. Final committed-byte replay is a
+separate required check after the explicit-path commit.
+
+The committed-byte replay was run after the exact-path commit by extracting the
+checker from `git show HEAD:<execution-notes-path>`; its 15,217-byte code block
+exited 0 with the same eight `PASS` lines above. The final metadata-corrected
+commit tree was extracted and replayed again; it returned those same eight lines,
+with the committed path list still exactly the seven allowlisted files. The
+commit-message trailer correction changed no artifact content or scope.

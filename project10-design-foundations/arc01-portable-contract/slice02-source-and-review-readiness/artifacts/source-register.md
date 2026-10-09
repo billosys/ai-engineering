@@ -239,8 +239,20 @@ Membership is by full card path and literal primary pair in `locator-map.jsonl`;
 
 ## Iteration02 passage context — prepared post sources (2026-10-09)
 
-The 46 post-card citations have now been read in the complete prepared article files; per-card raw references and every target path/hash/span/heading-or-paragraph/role plus contextual observation are in [execution-notes.md](execution-notes.md#iteration02-complete-post-passagecontext-handoff--2026-10-09). Current target accounting is 101 prior primary article targets + 2 secondary CSS-Tricks HSL targets + 2 new Brown antecedent context targets = 105 post targets; with 37 complete Butterick page targets, 142 prepared local targets. This is navigation within the pinned prepared files only.
+The 46 post-card citations have now been read in the complete prepared article files; per-card raw references and every target path/hash/span/heading-or-paragraph/role plus contextual observation are in [execution-notes.md](execution-notes.md#iteration02-complete-post-passagecontext-handoff--2026-10-09). Historical Iteration02 accounting was 105 post targets / 142 local targets. The current Iteration03 map is 104 post targets / 141 local targets after three theory-to-code removals and two missing-clause additions. This is navigation within the pinned prepared files only.
 
 Brown’s raw “Opening paragraph” citations on the Golden Ratio and musical-interval cards point to line 109, whose first word “This” refers back to the actual first prose paragraph at line 30. Converted sidebar markup intervenes through line 107. The map now records separate exact one-line context and cited-paragraph targets for both cards; it does not misrepresent lines 30–109 as a continuous article passage. Brown’s own application section says scales are a tool and not magic and includes the off-scale 15px example; “More Perfect Typography” is labeled further reading/inspiration. This context does not establish the card claims.
 
 The CSS-Tricks HSL section says HSL derives from Munsell and shows retained code/figures; that is the article author’s historical/technical statement, not verified history or code. Oklab’s prepared article distinguishes the 2025 introduction from the original 2020 post. Its comparison says CAM16-generated values are not experimental, while its Munsell section states that the 1940s chart’s data quality is difficult to assess. RIT Munsell and Luo-Rigg are distinct linked-data roles; neither dataset was independently inspected. Okhsv’s author recommends a linked interactive demo before the technical discussion; the demo and separately required gamut-clipping dependency were not captured. Keep capture identity/fidelity caveats active for all 46 post cards, including when every local section navigation resolves.
+
+## Iteration03 current prepared-clause resolution — 2026-10-09
+
+The Iteration02 total of 105 post targets / 142 local targets is historical. The
+corrected current map has 104 post target instances (98 primary article targets,
+2 secondary CSS-Tricks HSL targets, 2 Brown opening antecedents, 1 Brown
+Conclusion target and 1 Okhsv Summary target) and 141 local targets including 37 Butterick page targets. The three matching
+code targets HSL-2/HSL-2/HSV-2 were removed from the theory citations; the exact
+Okhsv Summary table and Brown Conclusion clauses are now separately mapped.
+All 83 source-reference clauses (82 semicolon-delimited parts plus the separate “Also referenced in Further Reading” paragraph) in the 46 literal post references
+are joined to a checked local source unit or an explicitly supplemental/quoted
+reference in [execution notes](execution-notes.md#iteration03-exact-clause-to-unit-joins-for-the-46-post-references). The observations resolve prepared navigation only; they do not establish claim support, original identity, capture completeness or fidelity. Brown's Bringhurst quotation and further-reading entry remain secondary context. CSS-Tricks HSL Values remains secondary on `hsl.md` and the post Munsell card. RIT Munsell and Luo-Rigg datasets, Butterick captures, article captures and remote assets remain uninspected/unavailable as recorded in existing caveats.
