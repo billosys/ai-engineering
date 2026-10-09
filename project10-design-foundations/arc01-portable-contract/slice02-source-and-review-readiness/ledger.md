@@ -3,10 +3,13 @@
 All nine rows are open. Source availability is a prerequisite to the readiness
 gate, not a reason to reduce coverage or infer successful fidelity review.
 
-Current [CDC review](cdc-verification.md) of `db48d863` reproduces selected
-structural evidence but retains all nine rows as open. F01–F05 return through
-[iteration01](cc-prompt-iteration01.md); its 37-page batch does not discharge the
-remaining 46 post-card reads or S02-08's unavailable originals/captures. Iteration01 replaces 138 with 140 targets (37 Butterick + 101 primary post + 2 secondary HSL) and records 37 complete Butterick reads; these are not semantic acceptance.
+Current [CDC review](cdc-verification.md#iteration01-independent-review--2026-10-09)
+of `1c0c8acf` reproduces corrected caveats/locators/DES and structurally reconciles
+37 Butterick read records; reading remains CC attestation. All nine rows remain
+open. [Iteration02](cc-prompt-iteration02.md) completes the 46 post-card passage
+handoff and remaining F05 evidence. The 140 targets are 37 Butterick, 101 primary
+post and two secondary HSL instances. S02-08's unavailable originals/captures
+remain blocking; these results are not semantic acceptance.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|

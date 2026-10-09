@@ -8,11 +8,22 @@ SOURCE: `dffa504e851b03b8e4746f1941068e4cc850b612`; accepted Slice01:
 
 ## Current verdict
 
-**Partial packet reviewed; Slice02 remains open.** CC did not propose completion.
+**Iteration01 partial packet reviewed; Slice02 remains open.** Current candidate
+`1c0c8acf89d5f8abba61399ac1b1d394b60c74a3` executes the iteration issued at
+`5a8eaccdc9902b42150afac87c0f37aba5dc2381`. F02/F03/F04 corrections are
+independently reproduced. The 37 Butterick complete-read records are present
+and structurally reconciled, with reading attributed to CC. F05's complete
+executable checks and precise guide/input extents remain incomplete. The next
+assignment is [iteration02](cc-prompt-iteration02.md), covering the 46 post cards
+and that evidence gap. All nine rows remain open; original readiness remains
+blocked. No Slice03 or full semantic/source-fidelity acceptance.
+
+The following initial verdict and review remain historical at `db48d863`.
+CC did not propose completion.
 S02-08 is genuinely input-blocked; S02-04 also contains unfinished accessible
 work. All nine rows remain open. No Slice03 advance, original-source acceptance,
 semantic acceptance or changed project scope follows from this review.
-The next assignment is [iteration01](cc-prompt-iteration01.md).
+The then-issued assignment was [iteration01](cc-prompt-iteration01.md).
 
 ## Independently reproduced checks
 
@@ -133,3 +144,137 @@ prompt, author input, accepted Slice01 and Project09 remain protected. SOURCE
 still has only its pre-existing untracked `knowledge/lfe/`; planning retains
 unrelated `project12-chcd-protocol/`. Whitespace check passes. These are checks
 of this review/handoff record, not independent acceptance of author planning.
+
+## Iteration01 independent review — 2026-10-09
+
+### Reproduced results and retained evidence
+
+Candidate `1c0c8acf89d5f8abba61399ac1b1d394b60c74a3`, assignment `5a8eaccd`.
+Inspected the exact eight-path delta, required trailers and unchanged nine-row
+contract. `git diff 5a8eaccd 1c0c8acf --check` passes. SOURCE remains at `dffa504e`;
+accepted Slice01, audit, parent plans, slice plan, issued prompts and prior CDC
+record were unchanged by CC. Unrelated untracked paths remain untouched.
+
+Fresh direct checks parsed **every line** of the current JSONL with `json.loads`:
+233 sorted unique rows; all card hashes and raw source/author/chapter/page/section/
+reference/status copies match the accepted index. No non-JSON trailing record
+exists in this committed map. A filtered `rg` projection alone would not establish
+that file-integrity property.
+
+All 140 target instances have correct local SHA-256 and valid inclusive spans:
+37 Butterick full-file targets, 101 article heading targets and two unheaded
+Brown opening targets. The 101 heading ranges end at the next same-or-higher
+heading with `>` prefixes recognized. Both Brown paragraph targets are line 109,
+with the actual wrapper end/start at 107/111; no heading is fabricated. Literal
+observed Butterick titles now match frontmatter. All 233 active caveat sets match
+their full-path primary collections: Arnheim 112, Cleland 19, Tschichold 19,
+shared book fidelity 150, Butterick capture/fidelity 37, post capture/fidelity 46.
+The old `db48d863` caveat and omitted-opening records fail these controls.
+
+All 37 read-table card/page associations, SHA-256, observed titles, URLs and
+EOF extents reconcile with their source files and current map. The table and
+context notes attest CC's complete reads; checks of identity/range cannot prove
+attention or comprehension. CDC retains its own earlier full `headings.md`
+inspection and freshly inspected Brown opening, CSS HSL, Oklab data qualification
+and Okhsv opening witnesses. No new whole-page semantic verdict is asserted.
+
+The method's 16 DES rows equal the complete accepted Slice01 §5 table, including
+owners, cross-references, outcomes and checks. Seventeen local Markdown file
+links resolve; outputs have final newlines. Prior 161-file inventory reproduction
+is retained at `db48d863`: the inventory rows and pinned SOURCE bytes are unchanged
+and no finding undermines that check. This retention is not a fresh inventory run.
+
+The existing core replay needs a branch for the two new unheaded targets:
+when `paragraph_role` is present, check exact one-line span/text and recorded
+wrapper boundaries, rather than asserting a heading. The historical code remains
+scoped to `db48d863`; it is not evidence of a current failure or a universal parser.
+
+### Finding dispositions and remaining work
+
+- F01: the 37-page batch is delivered as CC-attested complete reading with
+  independently checked identity/coverage. All 46 post-card passage reads remain.
+- F02: corrected caveat membership/definitions independently reproduced.
+- F03: opening/HSL/observed-title corrections independently reproduced; prepared
+  navigation only. Source identity/fidelity remain blocked.
+- F04: complete DES allocation independently reproduced.
+- F05: partial. Execution notes still describe most comparisons without complete
+  executable commands/code and dependencies. Iteration intake lacks per-guide
+  delivered extents from the required manifest. The failed “non-JSON trailing
+  line” receipt does not name its exact input/command; current strict parsing
+  succeeds. Preserve that failure and clarify its scope instead of filtering
+  unknown records away or inventing historical receipts.
+
+S02-01 remains open for precise current intake/readback; S02-02/03/05 have useful
+reproduced accounting but incomplete source/context handoff; S02-04 awaits 46
+post cards; S02-06's method allocation is corrected without semantic execution;
+S02-07's affected structural checks pass, with evidence-log completion pending;
+S02-08 remains input-blocked; S02-09 preserves partial status and pending work.
+No criterion is weakened and no row is closed or deferred.
+
+### Bubble-up and author reconnaissance for iteration02
+
+The remaining local mapping work concerns four prepared articles, 46 primary
+cards and 103 target instances (101 primary, two secondary). Overlapping target
+spans merge to approximately 206,049 characters; all four files together contain
+251,261 characters. Read each full prepared article once with complete bounded
+delivery, then associate each card/reference/target to its inspected passage and
+context. This preserves unheaded text and qualifications outside mapped headings
+without repeating the same prose per card. It does not inspect originals or
+perform all 233 claim reviews.
+
+Direct witnesses informed the assignment: Brown line 109 uses an antecedent-
+dependent opening; CSS-Tricks HSL 97–125 contains a historical attribution plus
+code/figures; Oklab 251–255 qualifies its chart-data comparison; Okhsv 1–22 points
+to an interactive companion. Record missing context/media/dynamic evidence as
+scoped limitations, without rewriting source or deciding domain truth from a
+navigation pass. Document-extraction's structure/locator contracts require this
+context; concept-cards distinguishes source text from warranted claims.
+
+Preparation/fidelity mutations need a separate concrete assignment once exact
+book editions/capture inputs and destinations are identified. No such mutation
+is authorized by iteration02, and unavailable inputs cannot advance Slice03.
+The full corpus/five dimensions, C&B removal decision and release gates remain.
+
+Current target replay, run from PLANNING; complements the raw-copy and table
+checks above without changing the historical replay:
+
+```python
+from pathlib import Path
+import json, re, hashlib
+S = Path('/Users/oubiwann/lab/billosys/ai-engineering')
+L = Path('project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness')
+rows = list(map(json.loads, (L/'artifacts/locator-map.jsonl').read_text().splitlines()))
+def heading(line):
+    return re.match(r'^(#{1,6})\s+(.*)', re.sub(r'^(?:>\s*)+', '', line))
+counts = [0, 0, 0]
+for r in rows:
+    for t in r['prepared_targets']:
+        data = (S/t['path_or_uri']).read_bytes(); lines = data.decode().splitlines()
+        v = t['locator_value']
+        assert hashlib.sha256(data).hexdigest() == t['snapshot_sha256']
+        assert 1 <= v['line_start'] <= v['line_end'] <= len(lines)
+        if t['locator_kind'] == 'local-markdown-document':
+            counts[0] += 1
+            assert v['line_start'] == 1 and v['line_end'] == len(lines)
+            assert v['page_title'] == re.search(r'^title: "(.*)"$', data.decode(), re.M)[1]
+        elif 'paragraph_role' in v:
+            counts[2] += 1
+            assert v['line_start'] == v['line_end'] == 109
+            assert lines[108].startswith('This and other meaningful ratios')
+            assert not heading(lines[108])
+            assert lines[106] == '</div>' and lines[110].startswith('<div class="illustration')
+        else:
+            counts[1] += 1; h = heading(lines[v['line_start']-1])
+            assert h and v['heading'] in h[2]
+            end = next((i for i in range(v['line_start'], len(lines))
+                        if (n:=heading(lines[i])) and len(n[1]) <= len(h[1])), len(lines))
+            assert end == v['line_end']
+assert counts == [37, 101, 2]
+```
+
+Review/handoff self-check: six reviewer files, 33 local links and four fragments
+resolve; nine criterion/verification/significance/origin/status rows remain
+unchanged/open; CC outputs and both prior prompts are unchanged. An attempted
+record patch used a non-matching context and made no edit; the corrected append
+is validated separately. The committed-tree scope/whitespace check is required
+after the review commit; these author checks are not independent plan acceptance.

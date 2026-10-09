@@ -27,7 +27,7 @@ Project09 audit artifacts are consumed at planning commit
 | Slice | Capability | Dependency and state |
 |---|---|---|
 | slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Closed; CDC accepted `9cc20338`; all seven rows done |
-| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Open; partial `db48d863` reviewed; iteration01 issued; all nine rows open; original readiness blocked |
+| slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Open; partial iteration01 `1c0c8acf` reviewed; iteration02 issued; nine rows open; original readiness blocked |
 | slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Planned after accepted Slice02; no prompt issued |
 
 Slice01 is closed and Slice02 is detailed. Slice02 must follow actual source findings: record
@@ -72,11 +72,11 @@ Arc closure needs its own composition demonstration and attributed independent
 gate. Do not pre-create close or verification records.
 
 Current assignment:
-[`slice02-source-and-review-readiness/cc-prompt-iteration01.md`](slice02-source-and-review-readiness/cc-prompt-iteration01.md).
+[`slice02-source-and-review-readiness/cc-prompt-iteration02.md`](slice02-source-and-review-readiness/cc-prompt-iteration02.md).
 The [Slice02 review](slice02-source-and-review-readiness/cdc-verification.md)
-records partial candidate `db48d863` and five correction/completion findings.
-Iteration01 completes the 37 Butterick pages and evidence repairs; all 46 post
-cards' full cited passage reads remain required subsequently within Slice02.
+records partial iteration01 `1c0c8acf`: caveat/locator/DES corrections reproduce;
+37 Butterick complete-read records reconcile structurally. Iteration02 reads the
+four prepared articles for all 46 post cards and completes evidence-log gaps.
 Missing originals/captures retain S02-08 and A01-02 as open gates. This batching
 changes no scope, criterion or arc sequence.
 Slice02 opened on 2026-10-09; its initial assignment produces planning evidence
@@ -96,6 +96,9 @@ and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
 
+- 1.6 (2026-10-09): Reviewed partial Slice02 iteration01 `1c0c8acf` and issued
+  iteration02 for 46 post-card passage/context records and remaining F05 evidence.
+  Source-readiness and composition gates stay open; no arc sequencing change.
 - 1.5 (2026-10-09): Reviewed partial Slice02 packet `db48d863`; issued a bounded
   iteration01 for evidence corrections and Butterick reads, retaining all post
   reads and source readiness gates. No structural arc amendment or acceptance.

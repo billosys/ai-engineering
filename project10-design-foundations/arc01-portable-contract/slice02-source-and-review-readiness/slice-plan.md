@@ -73,15 +73,37 @@ inputs and higher-scale gates still stop dependent advancement.
 
 ## Assignment history
 
-Current assignment: [iteration01](cc-prompt-iteration01.md), after independent
-review of partial candidate `db48d863`. The initial assignment is preserved.
+Current assignment: [iteration02](cc-prompt-iteration02.md), after independent
+review of partial iteration01 candidate `1c0c8acf`. Both prior prompts are preserved.
 S02-08 remains blocked by original-source inputs; accessible passage inspection
 and map/report corrections remain executable. All nine ledger rows stay open.
 
 | Assignment | State | Scope and next owner |
 |---|---|---|
 | `cc-prompt.md`, 2026-10-09 | Returned partial at `db48d863`; independently reviewed, not accepted as complete | Initial artifacts delivered; F01–F05 and unavailable original readiness remain |
-| `cc-prompt-iteration01.md`, 2026-10-09; predecessor `cc-prompt.md` | Current; issued to Operator for relay | CC corrects F01–F05 and reads all 37 Butterick pages; 46 post-card full passage reads and original readiness remain required in this same slice |
+| `cc-prompt-iteration01.md`, 2026-10-09; predecessor `cc-prompt.md` | Returned partial at `1c0c8acf`; scoped corrections reproduced, no slice acceptance | 37 complete-read records structurally reconcile; F02/F03/F04 corrected; F05 and 46 post-card reads remain |
+| `cc-prompt-iteration02.md`, 2026-10-09; predecessor `cc-prompt-iteration01.md` | Current; issued to Operator for relay | CC reads four full prepared articles, accounts for all 46 cards' passages/context and completes F05 recoverability; original readiness remains input-blocked |
+
+### Iteration02 author readiness
+
+CDC independently parsed all current JSONL records and reproduced raw copies,
+140 target hashes/bounds, 101 heading boundaries/two unheaded openings, exact
+caveat membership, 37 read-record associations and all 16 DES rows. Reading
+itself remains CC attestation. Complete source/reference context for the 46 post
+cards remains assigned work; no source-fidelity or whole-card acceptance follows.
+The [current CDC review](cdc-verification.md#iteration01-independent-review--2026-10-09)
+records affected versus retained evidence and F05's remaining specific gaps.
+
+The four full articles total 251,261 characters. Whole-file delivery once per
+article preserves cross-section qualifications and shared markup/context, while
+46 card/reference records provide complete association without repeated reads.
+Direct Brown/HSL/Oklab/Okhsv witnesses and document-extraction's structure and
+locator rules informed the ordered inspection recipe and negative controls.
+Required shared-guide sections are bounded; actual prose extents and complete
+executable data checks share existing execution notes. Context/headroom permits
+this batch without all-book or all-card semantic work. No unsupported conclusion
+or consequential design choice is delegated; unavailable originals/captures
+retain named owners and gates before a separate preparation assignment.
 
 ### Iteration01 author readiness
 
@@ -129,6 +151,9 @@ and an existing evidence home. Author readiness is not execution or acceptance.
 
 ## Version History
 
+- 1.2 (2026-10-09): Reviewed partial iteration01 `1c0c8acf`; issued iteration02
+  for all 46 post cards' passage/context handoff and unfinished F05 evidence.
+  Retained nine open criteria and original-source gates; no source mutation scope.
 - 1.1 (2026-10-09): Reviewed partial `db48d863`; issued iteration01 for five
   findings and complete Butterick passage inspection. Full post inspection and
   originals remain required; all nine acceptance criteria are unchanged/open.
