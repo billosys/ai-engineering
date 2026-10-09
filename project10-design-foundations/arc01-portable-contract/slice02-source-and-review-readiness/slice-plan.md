@@ -73,9 +73,36 @@ inputs and higher-scale gates still stop dependent advancement.
 
 ## Assignment history
 
+Current assignment: [iteration01](cc-prompt-iteration01.md), after independent
+review of partial candidate `db48d863`. The initial assignment is preserved.
+S02-08 remains blocked by original-source inputs; accessible passage inspection
+and map/report corrections remain executable. All nine ledger rows stay open.
+
 | Assignment | State | Scope and next owner |
 |---|---|---|
-| `cc-prompt.md`, 2026-10-09 | Current; issued to Operator for relay | CC produces the bounded readiness/method packet and resolves accessible inputs; reports unavailable readiness evidence to CDC/Operator |
+| `cc-prompt.md`, 2026-10-09 | Returned partial at `db48d863`; independently reviewed, not accepted as complete | Initial artifacts delivered; F01–F05 and unavailable original readiness remain |
+| `cc-prompt-iteration01.md`, 2026-10-09; predecessor `cc-prompt.md` | Current; issued to Operator for relay | CC corrects F01–F05 and reads all 37 Butterick pages; 46 post-card full passage reads and original readiness remain required in this same slice |
+
+### Iteration01 author readiness
+
+CDC inspected the actual eight-path packet, complete prose reports/method/actions,
+raw 233-row/target/caveat projections and selected full contextual witnesses.
+Independent replay establishes exact raw copies, source inventory and local
+hash/span structure, with the failures/limits in [CDC verification](cdc-verification.md).
+Full-path caveat membership, unheaded opening paragraphs, asserted-versus-observed
+titles and complete DES ownership are concrete repair boundaries. Document-
+extraction's locator/output contracts and concept-cards' recoverable-result and
+relationship/CQ distinctions govern; the prompt supplies discriminating old-state
+controls rather than new validator software or an unsupported semantic verdict.
+
+All unique candidate target ranges total about 532,000 characters; the 37 Butterick
+documents total 208,966. Iteration01 bounds complete prose inspection to that batch
+and specific correction witnesses. Subsequent post inspection remains required;
+no sample, deferral, weaker criterion or slice split is introduced. The issued
+manifest bounds shared-method sections and distinguishes structured queries from
+actual complete page reads, leaving execution headroom. CC chooses query mechanics
+and evidence-dependent conclusions; source acquisition/identity and acceptance
+remain held at their named gates. Author readiness is not CC execution/acceptance.
 
 ## Author readiness — 2026-10-09
 
@@ -102,6 +129,9 @@ and an existing evidence home. Author readiness is not execution or acceptance.
 
 ## Version History
 
+- 1.1 (2026-10-09): Reviewed partial `db48d863`; issued iteration01 for five
+  findings and complete Butterick passage inspection. Full post inspection and
+  originals remain required; all nine acceptance criteria are unchanged/open.
 - 1.0 (2026-10-09): Opened the planned second slice after accepted Slice01 and
   explicit Operator Expedited selection; issued a bounded readiness/method
   assignment with original-source gate and no source mutation authority.

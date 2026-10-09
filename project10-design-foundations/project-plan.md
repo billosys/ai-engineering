@@ -103,9 +103,14 @@ each near execution after resolving its dependencies. The active
 
 Current status: active; Arc01 Slice01 closed after independent CDC acceptance
 of iteration02 at `9cc20338`, with all seven rows done. Current assignment:
-[Slice02 source/review readiness](arc01-portable-contract/slice02-source-and-review-readiness/cc-prompt.md),
+[Slice02 iteration01](arc01-portable-contract/slice02-source-and-review-readiness/cc-prompt-iteration01.md),
 opened under Operator-selected Expedited Mode on 2026-10-09. Its source gaps and
 the complete 233-card semantic review remain binding downstream work.
+The partial Slice02 candidate `db48d863` received independent review; map/report
+corrections and complete local passage reads remain, with original-source readiness
+blocked. Iteration01 completes the 37-page Butterick batch; all 46 post cards'
+full cited passage inspection remains required in the same slice. No release
+criterion or dependent Slice03 gate is closed by the partial packet.
 See the [CDC acceptance](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance);
 this evidence/proposal acceptance does not adopt final teaching formulations or
 close any release criterion. Project09 may be consulted for planning
@@ -171,6 +176,9 @@ remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
 
+- 1.8 (2026-10-09): Reviewed partial Slice02 candidate `db48d863` and issued
+  iteration01 for evidence corrections and the complete Butterick passage batch.
+  Remaining post-card reads and original readiness stay binding; scope unchanged.
 - 1.7 (2026-10-09): Operator enabled Expedited Mode for remaining Project10 work;
   opened Arc01/Slice02 with a bounded source/locator and review-method assignment.
   Two-contributor authority, full-corpus scope and independent/source gates remain.

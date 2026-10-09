@@ -3,6 +3,11 @@
 All nine rows are open. Source availability is a prerequisite to the readiness
 gate, not a reason to reduce coverage or infer successful fidelity review.
 
+Current [CDC review](cdc-verification.md) of `db48d863` reproduces selected
+structural evidence but retains all nine rows as open. F01–F05 return through
+[iteration01](cc-prompt-iteration01.md); its 37-page batch does not discharge the
+remaining 46 post-card reads or S02-08's unavailable originals/captures.
+
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
 | S02-01 | Intake reconciles issued assignment, accepted inputs, complete required prose/query coverage and authority | Inspect execution notes/readback, exact pins and loaded extents | correctness-grade | Prompt intake contract | open | [execution-notes.md](artifacts/execution-notes.md) — CC read/query record, not independent confirmation. | Reading attestation is distinct from proof of comprehension CC evidence is partial; status remains open pending CDC. |
