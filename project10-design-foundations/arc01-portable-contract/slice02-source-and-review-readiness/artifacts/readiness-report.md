@@ -75,3 +75,24 @@ assess card claim support or semantics, source capture identity/completeness,
 original-to-prepared fidelity, remote media/demo, or external data. S02-08 remains
 blocked by the exact original editions/page bases and immutable capture evidence
 listed above; all nine ledger rows remain open.
+
+
+## Iteration04 join and intake reconciliation — 2026-10-09
+
+The current prepared-navigation record corrects the `hsl.md` secondary HSL
+Values clause to U32 alone and assigns roles per clause: U32 is primary on the
+Drasner `hsl-css-syntax.md` card and secondary on `hsl.md` and the post Munsell
+card. All 83 joins across 46 full paths are checked against explicit unit/role
+expectations, exact path/hash/span, each card's eligible map targets, and reverse
+unit membership. Same-predicate in-memory controls reject the cross-clause U05,
+unrelated U43, and a secondary relabeling of the Drasner primary clause. These
+checks concern prepared navigation only. S02-08 remains input-blocked; original
+editions/page bases, immutable captures/lineage, and fidelity are not established.
+
+Fresh source-guide readbacks use the exact `knowledge/...` SOURCE paths at the
+pinned commit. Their actual extents are 94/108/231 lines; installed counterparts
+match byte-for-byte. The prior shorter 87/109/220 receipt and erroneous claim
+that iteration03's issued prompt requested `docs/...` remain recorded as history;
+earlier exact path/ranges could not be recovered. See execution notes for hashes,
+read scopes and readback. No readiness state for source fidelity or semantic
+review is upgraded.

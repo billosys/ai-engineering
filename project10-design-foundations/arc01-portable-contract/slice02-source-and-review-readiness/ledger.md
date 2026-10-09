@@ -41,3 +41,17 @@ is CC evidence only. F05 prior committed checker failure is preserved; repaired
 fence/inline-code-aware replay, contrasting controls and final committed-tree
 checks are documented in execution notes. No criterion or status changed: all
 nine remain open, S02-08 remains input-blocked, and no Slice03 advance is assigned.
+
+
+### Iteration04 CC evidence supplement — 2026-10-09
+
+The `hsl.md` secondary HSL Values join is corrected to U32; U32's source-unit
+observation is role-neutral, with primary/secondary roles assigned per clause.
+The inline checker now covers all 83 joins, exact unit identities and reverse
+memberships and rejects the three required in-memory contrary cases. Fresh
+pinned SOURCE guidance receipts correct no historical record: the earlier
+87/109/220 extents and false `docs/...` prompt attribution are retained, with
+prior precise read ranges unavailable. Exact evidence and replay are in
+[execution notes](artifacts/execution-notes.md). CDC's accepted S02-03/05/06
+statuses and evidence remain unchanged; S02-01/02/04/07/08/09 remain open, with
+S02-08 input-blocked. Criteria and statuses are not changed by this CC note.

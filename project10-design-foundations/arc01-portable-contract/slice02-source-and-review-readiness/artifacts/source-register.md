@@ -256,3 +256,18 @@ Okhsv Summary table and Brown Conclusion clauses are now separately mapped.
 All 83 source-reference clauses (82 semicolon-delimited parts plus the separate “Also referenced in Further Reading” paragraph) in the 46 literal post references
 are joined to a checked local source unit or an explicitly supplemental/quoted
 reference in [execution notes](execution-notes.md#iteration03-exact-clause-to-unit-joins-for-the-46-post-references). The observations resolve prepared navigation only; they do not establish claim support, original identity, capture completeness or fidelity. Brown's Bringhurst quotation and further-reading entry remain secondary context. CSS-Tricks HSL Values remains secondary on `hsl.md` and the post Munsell card. RIT Munsell and Luo-Rigg datasets, Butterick captures, article captures and remote assets remain uninspected/unavailable as recorded in existing caveats.
+
+
+## Iteration04 clause-role and join correction — 2026-10-09
+
+The 83 clause joins remain scoped to the 46 full card paths and 44 unique
+prepared unit identities. The current inline checker validates exact expected
+unit IDs and per-clause roles against full path/hash/span metadata, target
+eligibility, and reverse map membership. U32 is the CSS-Tricks HSL Values unit:
+primary for `hsl-css-syntax.md`, secondary for `hsl.md` and
+`munsell-colour-system.md`. The `hsl.md` CSS-Tricks clause joins only U32; U05
+is reserved for its first, Okhsv theory clause. Code, figures, historical
+statements, originals, and capture fidelity remain unverified. Iteration03's
+87/109/220 guide-read counts and mistaken attribution of `docs/...` to its issued
+prompt are preserved as historical discrepancies; fresh exact SOURCE receipts
+and the unavailable earlier path/ranges are recorded in execution notes.

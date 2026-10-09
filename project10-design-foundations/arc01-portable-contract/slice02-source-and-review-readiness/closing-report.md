@@ -193,3 +193,77 @@ partial return.
 
 **Disposition:** CC partial return; all nine rows remain open; S02-08 remains
 input-blocked; CDC independent review and any next handoff are pending.
+
+
+## Iteration04 return — partial CC evidence, 2026-10-09
+
+**Authority and scope:** iteration04 was issued from planning commit
+`83db00fed56a8528dfa151d9bef755b9873c6a04`; predecessor candidate
+`80813b2e2b1ebd6b3bc714e9a4b86478b21cf6ae`; SOURCE `main` remains at
+`dffa504e851b03b8e4746f1941068e4cc850b612`. Audit, accepted Slice01 and its
+CDC closure remain `795ac75b`, `9cc20338` and `1944d1ed`. The five authorized
+planning files only are candidates. SOURCE, map, input actions, review procedure,
+plans/prompts/CDC, accepted Slice01 and unrelated worktree content remain
+protected.
+
+**F01/F03:** corrected the `hsl.md` secondary CSS-Tricks HSL Values join to U32
+only; U05 remains on the first Okhsv theory clause. U32's observation now
+identifies the source content without a universal role. U32 is primary for the
+Drasner `hsl-css-syntax.md` clause and secondary for `hsl.md` and
+`munsell-colour-system.md`. Exact unit identities, all eligible card targets,
+all 83 clause IDs/roles, and reverse full-card memberships are checked. No
+claim support or original fidelity is accepted.
+
+**F05:** fresh bounded reads used pinned SOURCE guidance paths and report exact
+current line counts/hashes and byte-equal installed counterparts. Earlier
+87/109/220 extents remain a documented discrepancy; retained exact historical
+path/ranges are unavailable. The earlier statement attributing `docs/...` to
+the issued iteration03 prompt is recorded as execution-path error; the prompt
+names `knowledge/...`. The same inline predicate rejects secondary HSL U05,
+ineligible Brown Conclusion U43, and a secondary-labeled Drasner primary
+clause. The checker is scoped to the explicit issuing pin/direct-child candidate
+and exact five-path allowlist. Prior iteration03 green U43 substitution remains
+a historical finding.
+
+### Iteration04 ledger walk
+
+| ID | Current CDC disposition | CC result in this return |
+|---|---|---|
+| S02-01 | open | Fresh exact SOURCE guidance receipts/readback recorded; discrepant older extents and unavailable prior ranges retained. |
+| S02-02 | open | U32 role and hsl.md cross-article clause corrected; original/capture identity limits remain. |
+| S02-03 | done — reproduced | Prior CDC acceptance and exact 233-row/map evidence preserved; no map edit. |
+| S02-04 | open | All 83 prepared joins receive exact unit and per-clause role checks; no semantic claim review. |
+| S02-05 | done — reproduced | Prior CDC acceptance of input/owner/action/re-entry planning preserved; no input acquisition. |
+| S02-06 | done — reproduced | Prior CDC acceptance of full five-dimension method preserved; no semantic execution. |
+| S02-07 | open | Exact checker, three contrary cases, protected paths, links and committed replay recorded; CDC review pending. |
+| S02-08 | open — input-blocked | Original editions/page bases and immutable web captures/lineage/fidelity remain unavailable. |
+| S02-09 | open | This partial return retains failed, blocked and unrun work and arc handoff; CDC composition review remains. |
+
+Three rows remain accepted as done and six remain open. No ledger criteria/status
+were edited; this CC return does not accept rows, open Slice03, close Arc01, or
+authorize SOURCE work.
+
+### Iteration04 evidence, gates and bubble-up
+
+Changed paths are limited to execution notes, readiness report, source register,
+ledger notes and this closing report. Exact precommit/postcommit changed paths,
+protected-byte checks, local links/fragments, EOF/newline checks, checker output
+and commit trailers are recorded after replay below. Prepared witness reading is
+bounded to the HSL parent/theory and CSS-Tricks HSL Values plus parent identity;
+other article units reuse the attributed prior receipts. Original books/page
+bases, captures/lineage, media/datasets, all-card semantic/five-dimension review,
+package/browser/AT review and independent CDC reproduction remain unrun or
+input-blocked. The arc still owns exact original-source inputs, fidelity and
+composition; no Slice03 advance follows.
+
+#### Iteration04 committed-tree receipt
+
+Candidate commit `33e18a196351200dd77831960841025419a61808` was a direct child
+of issue `83db00fed56a8528dfa151d9bef755b9873c6a04`. The committed checker
+exited 0 with all nine PASS lines in execution notes; the five changed paths
+were exactly: `artifacts/execution-notes.md`, `artifacts/readiness-report.md`,
+`artifacts/source-register.md`, `ledger.md`, and `closing-report.md` under this
+slice. `git diff <issue> <candidate> --check` was clean, both commit trailers
+were present, and no tracked PLANNING or SOURCE changes remained. The exact
+bounded evidence amendment containing this receipt remains a direct child of the
+same issue pin; the final candidate object is reported in the operator handoff.
