@@ -104,6 +104,7 @@ each near execution after resolving its dependencies. The active
 Current status: Arc01 active; Slice01 closed and Slice02 closed with eight
 independently done criteria and S02-08 Operator-deferred. Local acceptance remains
 `759ce2dd`/`88c1298f`; the Operator ordered Slice03 opening on 2026-10-09.
+Slice03 is open with [its CC assignment](arc01-portable-contract/slice03-contract-composition-and-handoff/cc-prompt.md).
 The former “no Slice03 until source readiness acceptance” rule is superseded for
 planning composition. Source readiness carries to Arc02/P10-11 before dependent
 source-fidelity acceptance and full-corpus/release completion. Expedited Mode
@@ -155,12 +156,16 @@ original/prepared completeness/fidelity mappings, with independent CDC review.
 Any acquisition/conversion requires a separate exact input/output assignment.
 This is a sequencing deferral, with no source mutation or private-search authority.
 
-## Decisions before dependent implementation
+## Planning choices and dependent implementation
 
-1. Adopt the revised principle formulations and concrete example configuration;
-   the synthesis contains proposals, not final normative wording.
-2. Specify the full-corpus review packet, source acquisition needs and slice
-   boundaries without reducing the approved population or review dimensions.
+The formerly pending wording/profile/example choices are selected by CDC for
+Slice03 in [its design](arc01-portable-contract/slice03-contract-composition-and-handoff/slice-plan.md#cdc-selected-design-for-this-assignment):
+seven scoped formulations with their full caveats, a short contextual profile
+before styling, the accepted local claim-result method, and one diagnostic
+20–80rem configuration. These are planning decisions for composition, not new
+scientific evidence or adopted live teaching. Independent slice/arc composition
+and the Operator's higher-scale gate still apply. Slice03 allocates all 233 cards,
+eight live files and relevant finding/reconciliation work without source mutation.
 
 ## Workflow and acceptance
 
@@ -191,6 +196,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.14 (2026-10-09): Opened Arc01/Slice03 after Operator-deferred Slice02
+  closure `8e0be8d2`; selected bounded planning choices and full gated allocation.
+  P10-11/source-fidelity, independent composition and release gates remain.
 
 - 1.13 (2026-10-09): Operator deferred Slice02 S02-08 and ordered Slice03.
   Closed the child with explicit carryover to Arc02/P10-11; superseded only the
