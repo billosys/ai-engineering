@@ -1,0 +1,457 @@
+{
+  "format": "project13-case-evidence-1",
+  "cutoff_review_revision": "9a30f4801c41278035de24246b3d014b5b6f9d50",
+  "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+  "entries": [
+    {
+      "copy_path": "evidence/initial/cc-prompt.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt.md",
+      "revision": "208b12239cd59ccc6877b2edc0358054b27652c2",
+      "blob": "fa2ba34a41d6f05df63ec0093c8ca0cd01b5b154",
+      "sha256": "25c7805ccc9e0b5f7d0813252e04cccbcf1314a64d0fdcb4f3c96fd9662d1baa",
+      "bytes": 12430,
+      "lines": 144
+    },
+    {
+      "copy_path": "evidence/initial/slice-plan.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md",
+      "revision": "208b12239cd59ccc6877b2edc0358054b27652c2",
+      "blob": "0a8f862b08c1df5e584d62e8f8c8986bbc74ca8e",
+      "sha256": "51912a554b6d6bb81f36d71ce928c1580b960b7c27059c7532d223f3c0fc69cd",
+      "bytes": 17556,
+      "lines": 260
+    },
+    {
+      "copy_path": "evidence/initial/cdc-verification.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md",
+      "revision": "1a1fb44b25f7558f46b9395e9cf6e4b3bc71f145",
+      "blob": "4e2b8a148d3448043d5b9bab658b93dcda0e5c9b",
+      "sha256": "b082aff9e38d1164b4505d648d753638655babd0b6b7a94278f1abe8078aa5fa",
+      "bytes": 22449,
+      "lines": 301
+    },
+    {
+      "copy_path": "evidence/initial/ledger.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/ledger.md",
+      "revision": "fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0",
+      "blob": "fa540eae664ec374bff6d9ff489cd11e95ebbfe1",
+      "sha256": "f91a6424551ff0b972abc03bfe4ece34365df9811fe3095709d51e41b5cb41c2",
+      "bytes": 4675,
+      "lines": 16
+    },
+    {
+      "copy_path": "evidence/initial/closing-report.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/closing-report.md",
+      "revision": "fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0",
+      "blob": "b113c4349f18ffc60cfd252b3a3b13275ffa0b8f",
+      "sha256": "f9953ed30fdde001f293286e8ace4c2ac41832f11f1551a87d29f32ac81c47b5",
+      "bytes": 7786,
+      "lines": 58
+    },
+    {
+      "copy_path": "evidence/initial/artifacts/colour-conversion-proof.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/colour-conversion-proof.md",
+      "revision": "fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0",
+      "blob": "4171b18d2bf64dcff0a714499d98fb7cbe31df7a",
+      "sha256": "d461ccfb9c67d0fba156a7c163181471d3e27f2d8d5529bfbab13db34ffdc86c",
+      "bytes": 4616,
+      "lines": 35
+    },
+    {
+      "copy_path": "evidence/initial/artifacts/claim-results.jsonl",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/claim-results.jsonl",
+      "revision": "fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0",
+      "blob": "1b971b33f51b136a74c16fe5c2d0d0b6bfdfb38d",
+      "sha256": "4cf4226a8600a44732e0b79b459e25024bc41fe464742fa070a6317435135edd",
+      "bytes": 83066,
+      "lines": 18
+    },
+    {
+      "copy_path": "evidence/initial/artifacts/numerical-reconciliation.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/numerical-reconciliation.md",
+      "revision": "fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0",
+      "blob": "408780ee9fdb154c38a95b77da68ed6792d0fc9c",
+      "sha256": "95138abb49b52c2c7c3f5d1d59a5632fc6b38ea13ba83ff1ea8f3d71ea3187e7",
+      "bytes": 12116,
+      "lines": 80
+    },
+    {
+      "copy_path": "evidence/initial/artifacts/correction-handoff.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/correction-handoff.md",
+      "revision": "fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0",
+      "blob": "e54352343fcf217f76701616d805f4ec822d0910",
+      "sha256": "60709ae3aa7de84d061f23c9c0181f5ec8b51a23f6b986d6a5e984e88184a35c",
+      "bytes": 3703,
+      "lines": 23
+    },
+    {
+      "copy_path": "evidence/initial/artifacts/execution-notes.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md",
+      "revision": "fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0",
+      "blob": "43e85447f07aa49dd95b2de941ef77a8f74ea59a",
+      "sha256": "7083f42fc4b214e9f0a317fffeb6a5030b6e488d6b3e5f7cfce562015e7bae91",
+      "bytes": 12366,
+      "lines": 61
+    },
+    {
+      "copy_path": "evidence/iteration01/cc-prompt-iteration01.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration01.md",
+      "revision": "1a1fb44b25f7558f46b9395e9cf6e4b3bc71f145",
+      "blob": "5786b1ebd453314639e9f2080a47afcf9932f538",
+      "sha256": "0cf78fcb28bfbc975d899c8088441367e7f3eef7c608a48487b5ea6d7282d4d3",
+      "bytes": 17593,
+      "lines": 230
+    },
+    {
+      "copy_path": "evidence/iteration01/slice-plan.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md",
+      "revision": "1a1fb44b25f7558f46b9395e9cf6e4b3bc71f145",
+      "blob": "57e1932a535b6c3d9f21c4a416130e6c8e8a740c",
+      "sha256": "2e14ac9a39ff2d31ff6d93a2c7d2eb3562d5a4e312f3742e4c3a0525c33b4ce5",
+      "bytes": 19306,
+      "lines": 286
+    },
+    {
+      "copy_path": "evidence/iteration01/cdc-verification.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md",
+      "revision": "33766ea6a707e6107b236966d776c550108fea99",
+      "blob": "543492351003f350db52cd50d05666b4a6f33d74",
+      "sha256": "a0bc4914a226f6254710cfa868b7bbf1ff53e3c32605111d158a93c65d668249",
+      "bytes": 46259,
+      "lines": 608
+    },
+    {
+      "copy_path": "evidence/iteration01/ledger.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/ledger.md",
+      "revision": "73c8180b8278f88b08ed044da73930bef6f0a522",
+      "blob": "1bf1d35a83624b89502de88cc6e9b43ab402a6e7",
+      "sha256": "7cdbd84c74a31f8fc7cf34f37fb3e77806ef49cfcb89100a9cfb67c5b2090050",
+      "bytes": 6415,
+      "lines": 24
+    },
+    {
+      "copy_path": "evidence/iteration01/closing-report.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/closing-report.md",
+      "revision": "73c8180b8278f88b08ed044da73930bef6f0a522",
+      "blob": "9ba57f52f9b3e3af31e4acc3a3b7dbf616e72612",
+      "sha256": "b4d6ef79a9d12951ae201ad6cd916ac4b7f47351f218a3cb24cc725fae48ff7b",
+      "bytes": 15887,
+      "lines": 108
+    },
+    {
+      "copy_path": "evidence/iteration01/artifacts/colour-conversion-proof.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/colour-conversion-proof.md",
+      "revision": "73c8180b8278f88b08ed044da73930bef6f0a522",
+      "blob": "4171b18d2bf64dcff0a714499d98fb7cbe31df7a",
+      "sha256": "d461ccfb9c67d0fba156a7c163181471d3e27f2d8d5529bfbab13db34ffdc86c",
+      "bytes": 4616,
+      "lines": 35
+    },
+    {
+      "copy_path": "evidence/iteration01/artifacts/claim-results.jsonl",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/claim-results.jsonl",
+      "revision": "73c8180b8278f88b08ed044da73930bef6f0a522",
+      "blob": "c03abd46e6dcd1d1e124a7c44bf979c42f27e210",
+      "sha256": "624b590594bb0dcf8fefa222582549cf43bd72c015ea4d2f4a1aca7d2ff02024",
+      "bytes": 235335,
+      "lines": 60
+    },
+    {
+      "copy_path": "evidence/iteration01/artifacts/numerical-reconciliation.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/numerical-reconciliation.md",
+      "revision": "73c8180b8278f88b08ed044da73930bef6f0a522",
+      "blob": "18334ac96edd598b8503e07fffafdf24da6c68ff",
+      "sha256": "bb95ec6e02b3d4f332c58864bd38c81afc4b15ffa2d3d624b4ad61c90de8903e",
+      "bytes": 26392,
+      "lines": 147
+    },
+    {
+      "copy_path": "evidence/iteration01/artifacts/correction-handoff.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/correction-handoff.md",
+      "revision": "73c8180b8278f88b08ed044da73930bef6f0a522",
+      "blob": "c5310a4bc5e5345fcd4c312b3c36923619b42638",
+      "sha256": "a0266f6c6dea79f96e6cd682017410dc9045342a458585d38a80fb3bef81336f",
+      "bytes": 12208,
+      "lines": 70
+    },
+    {
+      "copy_path": "evidence/iteration01/artifacts/execution-notes.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md",
+      "revision": "73c8180b8278f88b08ed044da73930bef6f0a522",
+      "blob": "adbcddf3c6c90c18ca57a37670e43435956a39b0",
+      "sha256": "6465ec8c5c68ebc35a1734e7a39107fd364a0d4feb2103baca0c80136a6c9a98",
+      "bytes": 32985,
+      "lines": 230
+    },
+    {
+      "copy_path": "evidence/iteration02/cc-prompt-iteration02.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration02.md",
+      "revision": "33766ea6a707e6107b236966d776c550108fea99",
+      "blob": "f0e75fa00d597facd2e2e8f34dd0d171c223d4ef",
+      "sha256": "615b4f2ed9e1bd5415a57aff4a064b9e207b138b6000d614b58291d4d5a978f5",
+      "bytes": 16238,
+      "lines": 236
+    },
+    {
+      "copy_path": "evidence/iteration02/slice-plan.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md",
+      "revision": "33766ea6a707e6107b236966d776c550108fea99",
+      "blob": "f009eb8ce8923436fe779abe49abdb96750dcc06",
+      "sha256": "32191f3186a07f03c9206032fadad09de007967f5064d358f3cee1a65c412bd0",
+      "bytes": 20963,
+      "lines": 311
+    },
+    {
+      "copy_path": "evidence/iteration02/cdc-verification.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md",
+      "revision": "c4032ea08f61d7498d6b4ede025e9a524db1feba",
+      "blob": "90981c78fd9fe239c1f7f0b037ab7af4950d27ca",
+      "sha256": "88a43d6d80d0c380224285be6fb92f0ebb49bf966085669868f205818297ba8f",
+      "bytes": 68156,
+      "lines": 902
+    },
+    {
+      "copy_path": "evidence/iteration02/ledger.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/ledger.md",
+      "revision": "590b263c2bfa55a19435af651c304fb31eab0bcf",
+      "blob": "547f688d0496cf488b44f714ce74fc0a10d9218d",
+      "sha256": "131056766d1a3e8a1f56015400e46eba629c1dfe5907b253b326625392f8e8ba",
+      "bytes": 6624,
+      "lines": 45
+    },
+    {
+      "copy_path": "evidence/iteration02/closing-report.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/closing-report.md",
+      "revision": "590b263c2bfa55a19435af651c304fb31eab0bcf",
+      "blob": "ab4189250a8f670ecb4a9ce062f3fad5877771fd",
+      "sha256": "a9cb99f84c3241110b99a606111afa515eac290e6f6eb22c51aa9676c25b6d93",
+      "bytes": 23616,
+      "lines": 150
+    },
+    {
+      "copy_path": "evidence/iteration02/artifacts/colour-conversion-proof.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/colour-conversion-proof.md",
+      "revision": "590b263c2bfa55a19435af651c304fb31eab0bcf",
+      "blob": "4171b18d2bf64dcff0a714499d98fb7cbe31df7a",
+      "sha256": "d461ccfb9c67d0fba156a7c163181471d3e27f2d8d5529bfbab13db34ffdc86c",
+      "bytes": 4616,
+      "lines": 35
+    },
+    {
+      "copy_path": "evidence/iteration02/artifacts/claim-results.jsonl",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/claim-results.jsonl",
+      "revision": "590b263c2bfa55a19435af651c304fb31eab0bcf",
+      "blob": "2be0c56327848cf70d128406b35f1fc8b1099927",
+      "sha256": "3997f30be645ed86050de0df69ce16ed294b0481e60dac77842204a48dbe357a",
+      "bytes": 375854,
+      "lines": 70
+    },
+    {
+      "copy_path": "evidence/iteration02/artifacts/numerical-reconciliation.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/numerical-reconciliation.md",
+      "revision": "590b263c2bfa55a19435af651c304fb31eab0bcf",
+      "blob": "1bb37433b189b58efd5f876e4abf8284b9f11207",
+      "sha256": "0f0e2af848d3ad7b08514689442b7cba46c7353fb3b964c973bcd20f9210fef6",
+      "bytes": 30260,
+      "lines": 165
+    },
+    {
+      "copy_path": "evidence/iteration02/artifacts/correction-handoff.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/correction-handoff.md",
+      "revision": "590b263c2bfa55a19435af651c304fb31eab0bcf",
+      "blob": "f8eb7047ab0f02bd178a1e66d551338d360c87ae",
+      "sha256": "fe1a0e4c61f8b607e6be7ac312702c2698dc6dbc7747d2f21d246d3c83291b41",
+      "bytes": 23820,
+      "lines": 67
+    },
+    {
+      "copy_path": "evidence/iteration02/artifacts/execution-notes.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md",
+      "revision": "590b263c2bfa55a19435af651c304fb31eab0bcf",
+      "blob": "98ed6ef5d9c8fd2f9d3a47c3b6eee1775bf9d822",
+      "sha256": "19e8ae3918e7cce7db2854bd90a39382810869cca9806755d3e6b3df6cb2879f",
+      "bytes": 61951,
+      "lines": 489
+    },
+    {
+      "copy_path": "evidence/iteration03/cc-prompt-iteration03.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration03.md",
+      "revision": "c4032ea08f61d7498d6b4ede025e9a524db1feba",
+      "blob": "e0a693774a19787b36ed6dd84ea5b5da4425e9ca",
+      "sha256": "071d295b07e8dedae030f4b0645524f5458461b41d707f8e69b06a7d828cd114",
+      "bytes": 15260,
+      "lines": 214
+    },
+    {
+      "copy_path": "evidence/iteration03/slice-plan.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md",
+      "revision": "c4032ea08f61d7498d6b4ede025e9a524db1feba",
+      "blob": "15490bfb4fc2b28b9e0dc8925c2cc24a4ae5165a",
+      "sha256": "875cf58bdc4a963b0ce679d63f52596fc16f2b1f90804b34f1546e93d94258a1",
+      "bytes": 22718,
+      "lines": 338
+    },
+    {
+      "copy_path": "evidence/iteration03/cdc-verification.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md",
+      "revision": "9a30f4801c41278035de24246b3d014b5b6f9d50",
+      "blob": "cbbd6145033aee674da3083b36ee1de1bb4fc130",
+      "sha256": "b0e929f15f911390e6ffda84f6af5093c5c61704ca14c6b6e26a93f34b01bc5a",
+      "bytes": 92897,
+      "lines": 1233
+    },
+    {
+      "copy_path": "evidence/iteration03/ledger.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/ledger.md",
+      "revision": "6a016960a77d9dd2e6478aeb3df96ff6b3d905eb",
+      "blob": "05916493eaee22991a5353519ec6eeddbfac4559",
+      "sha256": "125f774e5eea2d4abe0ac4cd1314d46723f72abe4321eca73aa33f0c737afe25",
+      "bytes": 7056,
+      "lines": 50
+    },
+    {
+      "copy_path": "evidence/iteration03/closing-report.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/closing-report.md",
+      "revision": "6a016960a77d9dd2e6478aeb3df96ff6b3d905eb",
+      "blob": "07d651f5c5c47549b1f04561c7a2b4869b9a7cc4",
+      "sha256": "cd98e4ddb7d19da6e36a63930f0b90498de1e4f34101c1aa52c50307dace4c26",
+      "bytes": 31232,
+      "lines": 196
+    },
+    {
+      "copy_path": "evidence/iteration03/artifacts/colour-conversion-proof.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/colour-conversion-proof.md",
+      "revision": "6a016960a77d9dd2e6478aeb3df96ff6b3d905eb",
+      "blob": "4171b18d2bf64dcff0a714499d98fb7cbe31df7a",
+      "sha256": "d461ccfb9c67d0fba156a7c163181471d3e27f2d8d5529bfbab13db34ffdc86c",
+      "bytes": 4616,
+      "lines": 35
+    },
+    {
+      "copy_path": "evidence/iteration03/artifacts/claim-results.jsonl",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/claim-results.jsonl",
+      "revision": "6a016960a77d9dd2e6478aeb3df96ff6b3d905eb",
+      "blob": "4ec9a64730234298499d80437cc8011cdf9b7100",
+      "sha256": "b2bfcec0ccd74cb0ce8df6c3b6e83eeb6d78d19056b4fe4b31247f2b8cbce2fc",
+      "bytes": 384611,
+      "lines": 71
+    },
+    {
+      "copy_path": "evidence/iteration03/artifacts/numerical-reconciliation.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/numerical-reconciliation.md",
+      "revision": "6a016960a77d9dd2e6478aeb3df96ff6b3d905eb",
+      "blob": "67254d894680ad695f70a13ce688a1f6e605db76",
+      "sha256": "90f49ab0369e30186e0e11494d8297ffd6faa5bf1a5caf4e2e1311f32e1e4ad6",
+      "bytes": 32171,
+      "lines": 178
+    },
+    {
+      "copy_path": "evidence/iteration03/artifacts/correction-handoff.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/correction-handoff.md",
+      "revision": "6a016960a77d9dd2e6478aeb3df96ff6b3d905eb",
+      "blob": "1713cb7154425d435d57b5a394aa84ddbc749e2e",
+      "sha256": "66aa309963bdef114747a0bff38ddcc3fe88ddfe1fd05b17924596c1bb09ddef",
+      "bytes": 26218,
+      "lines": 64
+    },
+    {
+      "copy_path": "evidence/iteration03/artifacts/execution-notes.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md",
+      "revision": "6a016960a77d9dd2e6478aeb3df96ff6b3d905eb",
+      "blob": "05d8b3f320dc0d1953403b5f7672e74ba6f9619a",
+      "sha256": "64810b5315091ef3cf51624690225ffda40a4050dc4646db8482e03f82aa302d",
+      "bytes": 475086,
+      "lines": 880
+    },
+    {
+      "copy_path": "evidence/context/source/knowledge/design/SKILL.md",
+      "repository_path": "knowledge/design/SKILL.md",
+      "revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "blob": "ace843bae940d09f974bd977b8660aa2c4b1293f",
+      "sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "bytes": 20385,
+      "lines": 368
+    },
+    {
+      "copy_path": "evidence/context/source/knowledge/design/guides/foundations-of-design.md",
+      "repository_path": "knowledge/design/guides/foundations-of-design.md",
+      "revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "blob": "3131fda23d0aaef58d88b4c653d38293d0303e99",
+      "sha256": "f4cff1c1edc0ece2a368ff81f3bb1909db9b50c1767281300223f88b83f54aa4",
+      "bytes": 29008,
+      "lines": 647
+    },
+    {
+      "copy_path": "evidence/context/source/knowledge/design/guides/design.md",
+      "repository_path": "knowledge/design/guides/design.md",
+      "revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "blob": "a6efc5303368a2e29ec9bb066140bc66f68c0607",
+      "sha256": "e4953fd1452102c98df6f0fcf33bc17bd3732f011180475daa8fd256e70e687b",
+      "bytes": 16584,
+      "lines": 425
+    },
+    {
+      "copy_path": "evidence/context/source/knowledge/design/guides/colour.md",
+      "repository_path": "knowledge/design/guides/colour.md",
+      "revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "blob": "bf0d3017e1a08aea4bbb3399778ca6da69eaf37d",
+      "sha256": "7187dabc5ca00d5d7c48c2a70dd2155731cbf68716c7cb8b1a0d3579285a0aea",
+      "bytes": 12215,
+      "lines": 581
+    },
+    {
+      "copy_path": "evidence/context/source/knowledge/design/concept-cards/posts/matrix-transformation-colour.md",
+      "repository_path": "knowledge/design/concept-cards/posts/matrix-transformation-colour.md",
+      "revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "blob": "a5f49bf015cc239543820a0c85e34b8a6d128e64",
+      "sha256": "872e8c6c5e360401d1f5332ae755a5c21542d09536221e28652e305f136fc680",
+      "bytes": 7287,
+      "lines": 147
+    },
+    {
+      "copy_path": "evidence/context/source/knowledge/design/sources/md/posts/a-perceptual-colour-space.md",
+      "repository_path": "knowledge/design/sources/md/posts/a-perceptual-colour-space.md",
+      "revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "blob": "289a17be44b999b1673099616f4fef57e6ffd463",
+      "sha256": "ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4",
+      "bytes": 64438,
+      "lines": 504
+    },
+    {
+      "copy_path": "evidence/context/source/knowledge/engineering-methods/guides/07-implementation-prompt-authoring.md",
+      "repository_path": "knowledge/engineering-methods/guides/07-implementation-prompt-authoring.md",
+      "revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "blob": "e30c3a2dc97c2f32bb01a619dc273bdc33862369",
+      "sha256": "890fdc8e83aff3f130524d8f3af3f0614d41c63e221e90348bc7493c23c75d6f",
+      "bytes": 29775,
+      "lines": 475
+    },
+    {
+      "copy_path": "evidence/context/review-procedure.md",
+      "repository_path": "project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/review-procedure.md",
+      "revision": "759ce2dd116a4cfe03b72d43fd2791f48486251c",
+      "blob": "0bf22f69af21f4fdf4c080ae40c7255d0c249ac1",
+      "sha256": "a72c820ddfe4804e6056f1785b01e572473186e91a33ee87b757085c984752db",
+      "bytes": 14708,
+      "lines": 83
+    },
+    {
+      "copy_path": "evidence/context/project10/project-plan.md",
+      "repository_path": "project10-design-foundations/project-plan.md",
+      "revision": "9a30f4801c41278035de24246b3d014b5b6f9d50",
+      "blob": "dfb0fa9fc95e756ff65b5c6106bd7ab4d5d8bc9b",
+      "sha256": "758593f53078092f9b3570f6c1298e2fe4196af698529a5a065d6cc6ee51bf96",
+      "bytes": 22753,
+      "lines": 349
+    },
+    {
+      "copy_path": "evidence/context/project10/arc02-theory-and-evidence/arc-plan.md",
+      "repository_path": "project10-design-foundations/arc02-theory-and-evidence/arc-plan.md",
+      "revision": "9a30f4801c41278035de24246b3d014b5b6f9d50",
+      "blob": "8a9a2038a4fe45a0afb9324889e913131bdd1623",
+      "sha256": "0e82aec2c7191ad1f2c9b35b831446b7f99dedf4e13b5b8f034eb4ad78bbf36a",
+      "bytes": 12689,
+      "lines": 170
+    }
+  ]
+}

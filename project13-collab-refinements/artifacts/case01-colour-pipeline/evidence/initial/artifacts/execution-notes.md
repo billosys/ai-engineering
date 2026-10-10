@@ -1,0 +1,61 @@
+# CC execution notes and intake receipts
+
+## Worktree, issuing set, and authority
+
+- Planning checkout: `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning`, branch `planning`; issuing/open-set HEAD `208b12239cd59ccc6877b2edc0358054b27652c2`. The initial prompt at that commit has blob `fa2ba34a41d6f05df63ec0093c8ca0cd01b5b154` and current SHA-256 `25c7805ccc9e0b5f7d0813252e04cccbcf1314a64d0fdcb4f3c96fd9662d1baa`. Slice-plan SHA-256 `51912a554b6d6bb81f36d71ce928c1580b960b7c27059c7532d223f3c0fc69cd`; opening ledger SHA-256 `9cfe66d95324d8353866aa520db5bd07a7c5dd183db9ab2eda1792c39f19dd3c`.
+- SOURCE/main: `dffa504e851b03b8e4746f1941068e4cc850b612`, branch `main`, tracked/index clean at opening and at recheck. Existing untracked SOURCE `knowledge/lfe/` and planning `project12-chcd-protocol/` were preserved without inspection. No SOURCE or prompt/plan edits were made.
+- The nine opening ledger rows remain open. This is CC-proposed evidence returned for CDC review; it is not acceptance, closure, or authority to open Slice03.
+- Assignment authority is the exact initial `cc-prompt.md` above, interpreted under slice-plan §§1–7 and its seven-path contract. Slice01 predecessor `9a306c6f49d61b9350e6b84d454da449deca5891` and independent closure `c3d68d7d` were checked as retained evidence; their arithmetic was not replayed as this slice’s proof.
+
+## Required reading receipts
+
+All listed SOURCE inputs were read from the pinned Git worktree. Hashes below identify local pinned files; specified historical artifacts were read from their named Git revisions.
+
+| Input | Actual scope loaded | Identity / receipt |
+|---|---|---|
+| SOURCE `AGENTS.md` | Full 216 lines | SHA-256 `cf56f5e91c923811c6a620edb125dffcbc44be2980783c7deec5bf2a2ce258cc` |
+| Installed collaboration-framework skill | Full 538 lines | `/Users/oubiwann/.agents/skills/collaboration-framework/SKILL.md`; SHA-256 `63a924ef9fb841b01f1013f0e1e73fc13a95d76de2bd4ff8c1f1a024cbdeecae`; required framework posture and methodology routes followed |
+| Project-management skill and guide README | Full files | `knowledge/project-management/SKILL.md` (65 lines); `knowledge/project-management/guides/README.md` (178 lines); Expedited Mode and slice close/bubble-up route loaded |
+| Engineering-methodology guide | Required sections | `knowledge/engineering-methods/guides/01-engineering-methodology.md`: Notes for Codex, Roles and Shared Invariants, full Two-Contributor Workflow up to Three-Contributor heading |
+| Ledger/closure and validation guides | Required scopes | `knowledge/work-verification/guides/01-ledger-discipline.md` full 96 lines; `03-row-closure.md` Final Statuses through CC working protocol; `knowledge/testing/guides/03-validation-gates.md` Gate Selection and Proportionate Proof |
+| Prompt authoring | Required sections | `knowledge/engineering-methods/guides/07-implementation-prompt-authoring.md`, Required Reading and CC Intake, including readback/receipts/truncation recovery |
+| Active project, arc and slice authority | Current project/arc/slice plans and ledgers; initial prompt | Project10 plan and ledger; Arc02 plan and ledger; this slice plan/ledger/prompt. Exact prompt, slice-plan and ledger identities appear above. Arc02 includes the T-family boundary and preserves the complete R/T/C/L/G and 233-card/eight-live-file obligations. |
+| Design skill and assigned live spans | Full `knowledge/design/SKILL.md` (368 lines); all six assigned spans (89 lines) across `foundations-of-design.md`, `design.md`, and `colour.md` | SKILL SHA-256 `57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63`; foundations `f4cff1c1edc0ece2a368ff81f3bb1909db9b50c1767281300223f88b83f54aa4`; design `e4953fd1452102c98df6f0fcf33bc17bd3732f011180475daa8fd256e70e687b`; colour `7187dabc5ca00d5d7c48c2a70dd2155731cbf68716c7cb8b1a0d3579285a0aea` |
+| Contextual counterwitness card | Full 147 lines; only assigned conversion teaching claims inventoried | `knowledge/design/concept-cards/posts/matrix-transformation-colour.md`, SHA-256 `872e8c6c5e360401d1f5332ae755a5c21542d09536221e28652e305f136fc680` |
+| Prepared Oklab article | Required lines 75–113 and 115–163, including XYZ equations, four examples, actual C++ forward/inverse code and generation/use-case note | `knowledge/design/sources/md/posts/a-perceptual-colour-space.md`, SHA-256 `ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4` |
+| Accepted composition contract | Required Authority/Evidence, Claim Categories/Evidence Boundary, and complete Source-readiness/claim-result procedure | Git revision `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`; `artifacts/composed-contract.md` |
+| Accepted review procedure | Full 83 lines, EOF verified | Git revision `759ce2dd116a4cfe03b72d43fd2791f48486251c`; SHA-256 `a72c820ddfe4804e6056f1785b01e572473186e91a33ee87b757085c984752db` |
+| Accepted Arc02 handoff | Required S02-08/P10-11 through proposed stage order and final paragraph, including all eight action rows | Git revision `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`; `artifacts/arc02-handoff.md` |
+| DES-002 / DES-007 audit | Complete assigned sections | Git revision `795ac75b7d02536e0e95252457ac3282cd17d8d8`; `audit-results-design.md` DES-002 and DES-007 |
+| Current CSS Color 4 technical text | §9.2, §9.4–9.6, §10.2–10.3, §19 non-normative notice and named functions | W3C CSS Color 4 Candidate Recommendation Draft dated 2026-10-09, retrieved 2026-10-10: https://www.w3.org/TR/2026/CRD-css-color-4-20261009/ . Public page inspection only; no local immutable snapshot hash. |
+| Oklab public article | “Converting from XYZ to Oklab” through end of “Converting from linear sRGB to Oklab”, before “Motivation and derivation of Oklab” | https://bottosson.github.io/posts/oklab/ retrieved 2026-10-10. No immutable snapshot hash or complete archival capture. Prepared local copy is the pinned calculation input, not proof of original fidelity. |
+
+Relationship/CQ components, GPU/ICC application assertions, other unassigned card claims, unrelated type/unit/neuroscience assertions, the remainder of the design files, source acquisition, and empirical perception evidence were not assessed. No conditional extension requiring another normative source was triggered. Decorative prepared heading anchors were used only to locate the assigned passages.
+
+## Readback of the binding contract
+
+- **Bounded result (slice-plan §§1–2; S02-01/02):** establish a mathematical correction basis for DES-007 and only the overlapping colour/uniformity/temperament assertions in DES-002. Inventory all six live spans plus assigned counterwitness teaching claims. Keep other card dimensions, relationships/CQs, full guide/card populations, and the arc’s remaining R/C/L/G work outside this result.
+- **Actual-source interpretation (slice-plan §§2–4; S02-03/04):** use pinned prepared bytes. Keep the 2021-01-25 linear-sRGB combined matrix A and inverse separate from the article’s standalone XYZ M1/M2 examples. Decode encoded sRGB, use signed real roots and inverse cubes, avoid clipping, and compare the fixed complete populations with unrounded values. Matrix composition applies to adjacent linear stages only.
+- **Evidence limits (slice-plan §§5–6; S02-02/06):** identify source spans and five separate outcomes. A numerical/model result does not supply missing original capture fidelity; public technical reading is not an immutable archival original. Arithmetic does not establish universal perceptual brightness, accessibility, contrast, palette quality, or equal-temperament identity. Treat CSS powerless hue separately from analytic polar coordinates.
+- **Authority (prompt; S02-07/09):** CC proposes the occurrence-linked evidence and corrections; CDC independently reviews and decides row acceptance; Operator retains the recorded gates. All nine rows remain open here. No live edits, source acquisition, next slice, or C&B defaults.
+- **Output/validation gate (slice-plan §Results and seven-path contract; S02-08):** produce only the five assigned artifacts plus ledger Evidence/Notes updates and closing report; check exact joins, case/control coverage, references, paths and bytes; commit those exact seven paths with both required trailers. No Make/package/browser test is assigned; retain those gates for later applicable implementation.
+
+## Calculation method and recovery log
+
+The assigned calculation used a one-off Python 3 standard-library script in `/tmp/make_slice02.py`; it is not a repository artifact or maintained tool. It reads the pinned Markdown bytes and extracts matrix rows by the displayed `\begin{pmatrix}` boundaries. For C++ expressions it captures each signed decimal coefficient and variable term from the three `float l/m/s` forward lines, three inverse LMS-prime lines (adding the printed `c.L` coefficient 1), and three returned inverse-A lines. Assertions check three rows of three coefficients in each matrix. It uses binary64, `math.copysign(abs(x)**(1/3), x)` for signed real roots, the stated piecewise sRGB functions, and full precision for comparisons; presentation values have at least 12 fractional digits. Inputs and outputs are generated directly from extracted actual coefficients; printed expected outputs are not used to compute them.
+
+Recorded failed/recovered operations:
+
+1. First matrix locator was over-escaped and raised `ValueError: substring not found`; the next query used the literal single-backslash Markdown marker and found one row block for each matrix.
+2. The first inverse coefficient regex dropped signs separated by spaces and asserted; inspection of actual C++ lines exposed this. A sign-aware coefficient parser was used and the inverse matrices were confirmed as `[[4.0767416621,-3.3077115913,0.2309699292],[-1.2684380046,2.6097574011,-0.3413193965],[-0.0041960863,-0.7034186147,1.7076147010]]` and inverse LMS-prime rows `[[1,0.3963377774,0.2158037573],[1,-0.1055613458,-0.0638541728],[1,-0.0894841775,-1.2914855480]]`.
+3. A selector initially searched inverse return rows by coefficient variable position and raised `StopIteration`; actual initializer showed each variable appears in every row. Selection was corrected to the literal `return { ... };` block and retained row order.
+4. A standalone sanity print indexed the one-eighth linear-white row while labelling it middle grey; this was caught against case IDs. The final artifact selects `middle-gray` by its actual row ID/index (the twelfth encoded case (zero-based index 11)) and reports correct L `0.598180726623`, not the one-eighth value.
+5. A command used slice-relative shorthand without the `project10-design-foundations/` prefix and returned three “No such file” errors. The correct paths were then read; no writes occurred from the failed command.
+
+The LF/EOF validator first found doubled terminal blank lines in `closing-report.md` and `correction-handoff.md`; both were reduced to one LF before rerunning the validator. A population-check draft then counted `linear-*` names in both RGB and polar tables and returned 32 instead of 16; the query was scoped to the RGB section headings before rerun (the artifacts contain 16 RGB rows and 20 separate polar rows). None of these attempts changed or weakened the model, case set, controls, or tolerances. No scope-dependent input was blocked. Missing original capture remains a blocked fidelity dependency.
+
+## Check status and independent boundary
+
+The numerical artifact records 16 round trips, four XYZ rows/12 comparisons, 20 polar returns, and all three contrary controls. Calculated maxima: encoded `1.6839126291304935e-6` (corner-7 blue); linear `2.6128459884589006e-7` (linear white blue); XYZ printed-table difference `0.00039741995991940393` (Z-basis L); polar `1.734723475976807e-16`. Fixed tolerances passed. CSS and article statements were read for technical context, not used to claim browser behavior or archival fidelity.
+
+No Make, package, browser automation, accessibility certification, empirical study, complete card/live-file review, or source-fidelity replay was run or assigned. There is no standalone maintained runtime to validate. `git diff --check`, JSONL parse/join checks, exact-path diff, line/link/EOF review and commit-tree verification are performed at finalization and recorded in the closing report. No test suite is being added.

@@ -3,7 +3,7 @@ project: project10-design-foundations
 status: active
 depends-on: [project09-design-audit]
 blocks: [project11-unified-design-practice]
-related: [project08-concept-card-metadata]
+related: [project08-concept-card-metadata, project13-collab-refinements]
 ---
 
 # Design Foundations — 1.5 Target
@@ -215,6 +215,32 @@ fresh exact source scope. Arc06 must compose before Arc04 package freeze;
 Arc04/05 own package and final-revision checks. Arc numbers remain stable;
 roadmap dependencies, not numeric sorting, govern execution.
 
+## Operator methodology pilot — 2026-10-10
+
+The Operator requested that the Slice02 retrospective become Project13 evidence
+and that we try revised preparation/review methods on one or two slices before
+comparing results. [Project13](../project13-collab-refinements/project-plan.md)
+owns the case study and [Experiment01 protocol](../project13-collab-refinements/artifacts/experiment01-methodology-pilot/protocol.md).
+This is a bounded local methodology trial, not a change to design deliverables,
+source-readiness requirements, contributor roles, or acceptance criteria.
+
+Apply the trial to the next two **newly opened** Project10 slices, chosen in
+normal roadmap/readiness order and registered before their initial prompts are
+issued. The current Arc02/Slice02 Iteration04 is already issued and remains
+under its existing contract; its in-flight work is excluded from treatment.
+No issued prompt is modified. [Project-local instructions](AGENTS.md) carry the
+prospective approach: source-grounded examples, inventory before judgment,
+explicit verification coverage, comprehensive reviewer checks, changed approach
+on recurring defects, and compact current records with preserved history.
+
+After the first registered slice closes or reaches a recorded blocked/escalation
+stop, CDC performs the protocol's meta-review before the next trial handoff.
+After the second, perform the final comparison before extending the trial.
+These are the Operator-requested measurement checkpoints within Expedited Mode;
+normal closure, source, independent-review and Operator gates still apply.
+Follow the protocol's explicit early-stop/deviation rules if only one slice
+can be evaluated. No trial work is executed or accepted by this plan update.
+
 ## Workflow and acceptance
 
 Default Two-Contributor Workflow: Sofie in this chat performs CDC planning with
@@ -244,6 +270,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.28 (2026-10-10): Operator-requested Project13 case study and prospective
+  two-slice methodology trial, with meta-review checkpoints. Added scoped local
+  instructions; current Slice02 assignment, all criteria and quality gates retained.
 
 - 1.27 (2026-10-10): Slice02 Iteration03 reviewed at `6a016960`; intake accepted,
   four done/five open. Issued five-output Iteration04; numeric evidence protected.
