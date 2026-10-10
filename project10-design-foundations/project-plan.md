@@ -110,9 +110,10 @@ prior dispositions retained after delta review; see its
 [CDC acceptance](arc01-portable-contract/slice03-contract-composition-and-handoff/cdc-verification.md#iteration02-independent-verification-and-slice03-closure--2026-10-09).
 All three Arc01 slices are closed; the [composition packet](arc01-portable-contract/closing-report.md)
 was accepted by the Operator on 2026-10-09 (“yup, accepted!”). A01-04/05
-are done; A01-02 stays deferred. Arc02 is open with
+are done; A01-02 stays deferred. Arc02 is active;
 [Slice01](arc02-theory-and-evidence/slice01-fluid-scale-arithmetic/slice-plan.md)
-for source-independent fluid-scale arithmetic evidence. R/T/C/L/G execution
+is independently closed at `c3d68d7d` for bounded fluid-scale evidence.
+Next ready T-family preparation concerns DES-007's nonlinear colour pipeline. R/T/C/L/G execution
 families preserve the complete semantic scope and input re-entry. No
 source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
@@ -206,6 +207,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.21 (2026-10-09): Arc02/Slice01 c3d68d7d independently closed; bounded
+  arithmetic/occurrence/handoff evidence accepted, A02-01 done. Next T-family
+  preparation retains complete corpus/input/live/release and Operator gates.
 
 - 1.20 (2026-10-09): Operator-accepted Arc01 close surfaced Arc02 opening;
   detailed full theory/evidence roadmap and issued its bounded arithmetic

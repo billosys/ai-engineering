@@ -56,3 +56,8 @@ Arc02 [plan](arc02-theory-and-evidence/arc-plan.md) and
 are open under the accepted gate/Expedited Mode. P10-01 remains done;
 P10-02–11 remain open. Bounded arithmetic evidence does not discharge full
 233-card/eight-live-file semantic review or P10-11 re-entry.
+
+Arc02/Slice01 [independently closed](arc02-theory-and-evidence/slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09)
+at `c3d68d7d`: nine bounded evidence rows done, A02-01 done. This does not
+change P10-01's planning acceptance or close P10-02–11. Next T-family preparation
+retains the full input/semantic/live/package/release contract.

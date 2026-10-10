@@ -250,7 +250,7 @@ print('BASELINE: all three actual step declarations match the reported endpoint 
 
 ## Iteration01 independent review — 2026-10-09
 
-**Current verdict: partial acceptance; six done, three open. Slice01 remains open.**
+**Historical Iteration01 verdict: partial acceptance; six done, three open. Slice01 remained open.**
 CDC Sofie independently reviewed CC candidate
 `4e678b0b2d56c8c323a3aec18a3374303ae5ccca`, direct child of issue
 `24ae8a8b359d0965f93ac888ca122960eb3b6643`. SOURCE remains
@@ -425,4 +425,181 @@ notes=blob(C,S+'artifacts/execution-notes.md').decode();assert 'parent Arc02 pla
 print('FAIL complete-read receipt: issue Arc02 plan has137 lines, receipt131; SHA',sha(arc))
 print('RETAIN prior math: proof and complete numeric tail byte-identical; no new84 arithmetic execution claimed')
 msg=git('show','-s','--format=%B',C).decode();assert 'Co-authored-by: Codex <noreply@openai.com>' in msg and 'Co-authored-by: Billo AI <ai-engineering@billo.systems>' in msg
+```
+
+
+## Iteration02 independent review and Slice01 closure — 2026-10-09
+
+**Current verdict: accepted at the bounded evidence scope; all nine rows done;
+Slice01 closed.** CDC Sofie independently reviewed CC candidate
+`c3d68d7dbb195a68e2af61f86efd40023b328ca7`, direct child of issuing commit
+`a8dfdf0ba7de9926c7f41a5ebe6b4d1a998c1262`, answering the preserved
+[Iteration02 prompt](cc-prompt-iteration02.md). SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`. Two contributors; Expedited Mode.
+Earlier partial verdicts are historical. This reviewer did not implement CC's
+repairs. The local JSONL pending-review flags remain doer records; this canonical
+independent record supplies acceptance only at the stated partial-result scope.
+
+### Reproduced checks and findings
+
+Fresh inspection covered the full current project governing body, arc/slice
+plans and ledgers, issued prompt, exact four-path delta, complete new return,
+intake receipts and all changed TY-01 fields. The initial JSONL unified diff was
+truncated; a lossless field-level comparison recovered the change and showed
+all other 35 records byte-identical. The complete historical 137-line Arc02 plan
+was recovered in bounded reads; the pinned review procedure was read through 83.
+Literal SOURCE TY-01 and paired-default passages and actual configuration 46–57
+were inspected. No hash-only substitute for semantic applicability was used.
+
+- All 36 unique records retain exact subject identities/assertions. All 88
+  evidence SHA/blob/span joins and 180 dimension reference sets resolve, with
+  valid method pins and pending doer-review states. Only TY-01's evidence and
+  affected references changed; its other fields, conclusions and not-assessed
+  dimensions are preserved. The orientation witness now says only what 52
+  supports; ANALYSIS-DEFAULT correctly points at 50's actual paired defaults.
+- The positive repaired TY-01 passes the same conflict-support predicate that
+  rejects both the copied orientation-only negative and the historical record.
+  F03 is repaired. Prior F01/F02 coverage/context acceptance remains applicable:
+  all other records, configuration crosswalk and handoff are unchanged.
+- The 137-line receipt with 1–70/71–137 contiguous coverage passes the same
+  revision/hash/count/range predicate that rejects 131/1–131. Old receipt/return
+  sections are preserved byte-for-byte. Current issue 142-line plan and historical
+  issue 137-line plan are separately identified. F04 is repaired without inventing
+  earlier read extents or claiming comprehension from counts.
+- **CDC authoring correction:** the Iteration02 prompt's “Full46-line” label for
+  the 759ce2dd review procedure was wrong. Exact pinned bytes have 83 lines and
+  SHA `a72c820ddfe4804e6056f1785b01e572473186e91a33ee87b757085c984752db`.
+  CC disclosed the mismatch and recorded full 1–83 delivery/recovery; CDC freshly
+  confirmed the full file and unchanged hash. The issued prompt and earlier
+  46-line receipts stay historical. This is an authoring/count error, not a
+  reason to penalize CC or an unresolved current intake gap. Future manifests
+  use actual pinned extents and avoid inherited counts.
+- Exact four-path scope, issuing parent, both trailers, immutable nine criteria/
+  pre-review statuses, protected plans/prompts/proof/configuration/handoff and
+  appended historical notes/report preservation all pass. The source branch
+  stays pinned and tracked/index clean; unrelated untracked work is untouched.
+- Target-aware local checks pass 24 destinations/10 fragments across the four
+  candidate paths, LF/no-CRLF and `git diff-tree --check`. No failed attempt is
+  counted as evidence. CC's disclosed predicate/schema/link recovery history
+  remains in its notes; reading/delivery receipts remain attested and their
+  consistency is reproduced, not independent attention/comprehension proof.
+
+### Retention decision and nine-row close
+
+The initial independent arithmetic/proof controls and Iteration01 context/
+coverage/handoff checks remain applicable. All relevant model/SOURCE/example/
+proof/configuration/handoff inputs are unchanged from their accepted revisions;
+the only semantic delta adds applicable TY-01 evidence. It neither changes
+numeric output nor undermines the prior method/result. The current four-path
+integrity and changed semantic/receipt checks are freshly reproduced. No new
+84-case arithmetic, original fidelity, browser or package execution is claimed.
+
+| Row | Final status | Independent evidence |
+|---|---|---|
+| S01-01 | done | Fresh intake/receipt reconciliation; historical 137/current142 and procedure 83 distinguished; honest prior limits retained. |
+| S01-02 | done | Fresh 36-subject/88-join/180-reference checks and changed semantic positive/negative; prior bounded nine-span coverage retained. |
+| S01-03 | done | Retained initial general proof, determinant/special cases and finite-clamp checks; dependencies unchanged. |
+| S01-04 | done | Retained independent baseline arithmetic and Iteration01 contextual conflict/illustrative distinction. |
+| S01-05 | done | Retained actual 84-case/52-delta independent result with unchanged exact inputs/output. |
+| S01-06 | done | Retained coefficient/root/geometricity contrary controls and valid special cases. |
+| S01-07 | done | Retained accepted all 36-ID correction/replacement/owner/limits handoff; bytes unchanged. |
+| S01-08 | done | Fresh four-path scope/parent/trailers/protected bytes/joins/links/EOF/diff; original seven-path criterion has the explicit preserved iteration scope overrides. |
+| S01-09 | done | Fresh complete nine-row/four-output/current findings/attempts/limits/bubble-up reconciliation. |
+
+### Bubble-up to Arc02 and silent-drop walk
+
+Slice01 delivered its assigned mathematical evidence, bounded occurrence review,
+configuration reconciliation and concrete later-edit handoff. All nine opening
+criteria are accounted for; no deferred/no-op slice rows, missing output or
+unreported smaller denominator. Durable artifacts are exactly five:
+fluid-scale-proof.md, claim-results.jsonl, configuration-reconciliation.md,
+correction-handoff.md and execution-notes.md. Three preserved CC prompts,
+plans/ledgers, CC closing report and this independent record stay in the slice
+root. Two refinements executed within the same slice.
+
+A02-01's accepted-child requirement is done. A02-02–08 remain open; child proof
+is not arc composition. Real 1.25/1.2 default conflicts, approximate 1.333/exact4/3,
+published clamp discrepancies and conditional spacing-token decisions still
+need authorized live correction/review. DES-003/004 are not closed merely by
+this proof packet. Full 233/eight-live/five-dimension/R/T/C/L/G/P10-11 and
+source input/edition/capture/fidelity, relationships/CQs, empirical/perceptual,
+accessibility/browser/package/release and Operator gates remain unchanged.
+
+Arc-plan change decision: no architectural or scope amendment is needed.
+Record the child closure and evidence limits, then detail the ready T-family
+colour-conversion concern (DES-007) under the existing roadmap. R inputs remain
+blocked until supplied and independently accepted. Expedited Mode authorizes
+next-slice preparation/opening after this close, with its own source-grounded
+scope and readiness; it does not waive source or higher-scale gates.
+
+What worked: semantic witnesses were reviewed separately from hash validity;
+negative controls distinguished the actual omitted witness; exact input/output
+identity supported proportionate arithmetic retention. Count drift recurred in
+CDC-authored manifests as well as receipts; preserve the mistakes, load full
+pinned text and verify actual extents before future handoff.
+
+### Exact independent Iteration02 replay
+
+Command: `python3 /private/tmp/p10-a02-s01-i02-review.py`, exit0. This is an
+incidental standard-library check, not a maintained deliverable. No working-copy
+or post-review state is passed off as the pre-review committed candidate.
+
+```python
+from pathlib import Path
+import subprocess,json,hashlib,copy
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+A='project10-design-foundations/arc02-theory-and-evidence/';S=A+'slice01-fluid-scale-arithmetic/'
+C='c3d68d7dbb195a68e2af61f86efd40023b328ca7';I='a8dfdf0ba7de9926c7f41a5ebe6b4d1a998c1262';SRC='dffa504e851b03b8e4746f1941068e4cc850b612';H='24ae8a8b359d0965f93ac888ca122960eb3b6643'
+def git(*a):return subprocess.check_output(['git','-C',str(P),*a])
+def blob(r,p):return git('show',r+':'+p)
+def sha(b):return hashlib.sha256(b).hexdigest()
+def rows(r):
+ raw=blob(r,S+'artifacts/claim-results.jsonl').decode().splitlines();vals=[json.loads(l) for l in raw];assert len(vals)==36==len({x['claim_id'] for x in vals});return dict(zip([x['claim_id'] for x in vals],vals)),raw
+x,raw=rows(C);old,oldraw=rows(I);assert set(x)==set(old)
+assert [id for id in x if x[id]!=old[id]]==['TY-01'];assert sum(a!=b for a,b in zip(raw,oldraw))==1
+for k in x['TY-01']:
+ if k not in {'evidence','dimensions'}:assert x['TY-01'][k]==old['TY-01'][k]
+for k,d in x['TY-01']['dimensions'].items():
+ assert {a:b for a,b in d.items() if a!='evidence_refs'}=={a:b for a,b in old['TY-01']['dimensions'][k].items() if a!='evidence_refs'}
+ if k in {'source_faithfulness','relationship_cq_coverage'}:assert d==old['TY-01']['dimensions'][k]
+allowed={S+p for p in ('artifacts/claim-results.jsonl','artifacts/execution-notes.md','ledger.md','closing-report.md')}
+assert git('rev-parse',C+'^').decode().strip()==I
+assert set(git('diff-tree','--no-commit-id','--name-only','-r',C).decode().splitlines())==allowed
+for p in git('ls-tree','-r','--name-only',I,S).decode().splitlines():
+ if p not in allowed:assert blob(C,p)==blob(I,p)
+for p in allowed:assert blob(C,p).endswith(b'\n') and b'\r' not in blob(C,p)
+for p in ('artifacts/execution-notes.md','closing-report.md'):assert blob(C,S+p).startswith(blob(I,S+p))
+a=[l.split('|')[1:7] for l in blob(C,S+'ledger.md').decode().splitlines() if l.startswith('| S01-')];b=[l.split('|')[1:7] for l in blob(I,S+'ledger.md').decode().splitlines() if l.startswith('| S01-')];assert len(a)==9 and a==b
+joins=0
+for id,v in x.items():
+ sub=v['subject'];b=blob(SRC,sub['path']);span=sub['span'];assert sha(b)==sub['sha256'] and '\n'.join(b.decode().splitlines()[span['start']-1:span['end']])==sub['assertion']
+ assert len(v['dimensions'])==5 and v['independent_review']['state']=='pending'
+ ids=[e['evidence_id'] for e in v['evidence']];assert len(ids)==len(set(ids))
+ for e in v['evidence']:
+  l=e['locator'];p=l.get('path',l.get('artifact_path'));r=l['revision'];b=git('cat-file','blob',r.split(':',1)[1]) if r.startswith('git-blob:') else blob(r,p)
+  if r.startswith('git-blob:'):assert b==blob(C,p)
+  assert sha(b)==e['snapshot_sha256'];a,z=map(int,l['span'].split('-'));assert 1<=a<=z<=len(b.splitlines());joins+=1
+ for d in v['dimensions'].values():assert set(d['evidence_refs'])<=set(ids)
+ m=v['actor']['method_revision'];assert sha(blob(m['revision'],m['path']))==m['sha256']
+assert joins==88
+config=blob(C,S+'artifacts/configuration-reconciliation.md');assert config==blob(I,S+'artifacts/configuration-reconciliation.md')
+def supports_conflict(record):
+ witnesses={e['evidence_id']:e for e in record['evidence']};e=witnesses.get('ANALYSIS-DEFAULT')
+ if not e:return False
+ l=e['locator'];actual='\n'.join(config.decode().splitlines()[49:50])
+ return (e['type']=='derived-analysis' and e['snapshot_sha256']==sha(config) and l['revision']=='git-blob:'+git('rev-parse',C+':'+S+'artifacts/configuration-reconciliation.md').decode().strip() and l['artifact_path']==S+'artifacts/configuration-reconciliation.md' and l['span']=='50-50' and all(t in actual for t in ('SKILL.md:156',':185–187',':472–475','1.25','1.2','360px','genuine same-baseline conflict')) and all('ANALYSIS-DEFAULT' in record['dimensions'][d]['evidence_refs'] for d in ('correctness','consistency','scope_attribution')))
+assert supports_conflict(x['TY-01']) and not supports_conflict(old['TY-01'])
+negative=copy.deepcopy(x['TY-01']);negative['evidence']=[e for e in negative['evidence'] if e['evidence_id']!='ANALYSIS-DEFAULT']
+for d in negative['dimensions'].values():d['evidence_refs']=[i for i in d['evidence_refs'] if i!='ANALYSIS-DEFAULT']
+assert not supports_conflict(negative)
+arc=blob(H,A+'arc-plan.md');assert len(arc.splitlines())==137 and sha(arc)=='33fe93fa484a965801a3b071fb09213825b9d74e6acfbc5f6f8f5dfb056971a6'
+def valid_receipt(r,h,count,ranges):
+ covered=[n for a,b in ranges for n in range(a,b+1)]
+ return r==H and h==sha(arc) and count==len(arc.splitlines()) and covered==list(range(1,count+1))
+assert valid_receipt(H,sha(arc),137,[(1,70),(71,137)]) and not valid_receipt(H,sha(arc),131,[(1,131)])
+method='project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/review-procedure.md';assert len(blob('759ce2dd',method).splitlines())==83
+msg=git('show','-s','--format=%B',C).decode();assert all(s in msg for s in ('Co-authored-by: Codex <noreply@openai.com>','Co-authored-by: Billo AI <ai-engineering@billo.systems>'))
+print('PASS committed36 records/88 exact joins/180 dimension sets; only TY-01 evidence/refs changed;35 rows byte-identical; exact four paths/parent/trailers/criteria/statuses/protected inputs/history')
+print('PASS TY-01 paired-default positive; copied orientation-only negative and historical record rejected;137-line receipt positive and131-line negative; pinned procedure83 confirmed')
+print('RETAIN mathematical proof/configuration/handoff: bytes/dependencies unchanged; no new84-case arithmetic claimed')
 ```

@@ -49,7 +49,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 
 | Execution family | Capability and sizing rule | Prerequisites / state |
 |---|---|---|
-| slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Open; independent of missing original attribution/fidelity. |
+| slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Closed at c3d68d7d; independent of missing original attribution/fidelity. |
 | R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
 | T — remaining theory/evidence | Bounded slices per concern: nonlinear colour pipeline, perception/analogy scope, token-system conventions, layout/measure exceptions and CHI interpretation. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
 | C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
@@ -118,16 +118,19 @@ active: exact-path commits, independent review, closure when evidence permits,
 then automatic next-slice opening. Gates and five-iteration correction limits
 remain binding. Source and planning branches retain separate mutation boundaries.
 
-Current assignment: [Slice01 Iteration02](slice01-fluid-scale-arithmetic/cc-prompt-iteration02.md).
-Iteration01 candidate `4e678b0b` received [partial CDC acceptance](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration01-independent-review--2026-10-09):
-six slice rows done/three open. F01/F02 and the corrected handoff are accepted;
-TY-01's residual F03 and current-intake F04 prevent closure. All eight arc rows
-remain open. Initial/Iteration01 prompts and results remain historical;
-Iteration02 repairs the same scope without changing this roadmap.
-After Slice01's independent close, CDC details a ready R/T execution unit;
-input-blocked populations remain explicit.
+Current assignment: none pending the next ready T-family slice open set.
+Slice01 Iteration02 `c3d68d7d` is [independently accepted and closed](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09):
+all nine slice rows done, A02-01 done; seven other arc rows remain open.
+Initial/Iteration01/Iteration02 prompts and historical discrepancies remain.
+This is evidence acceptance, not live repair or source readiness. Next, detail
+DES-007's nonlinear colour-conversion concern with its own source-grounded
+boundaries under T; retain input-blocked R and complete C/L/G obligations.
 
 ## Version History
+
+- 1.3 (2026-10-09): Slice01 c3d68d7d independently closed; A02-01 done.
+  Child bubble-up retains live/default/token corrections and all higher gates;
+  next ready T concern is DES-007. No architecture/scope amendment.
 
 - 1.2 (2026-10-09): Slice01 Iteration01 partially accepted; six done/three open,
   current intake reopened for receipt correction. Issued Iteration02 for residual

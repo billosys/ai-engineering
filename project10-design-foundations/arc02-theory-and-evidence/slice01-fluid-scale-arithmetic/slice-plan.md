@@ -1,6 +1,6 @@
 ---
 slice: slice01-fluid-scale-arithmetic
-status: open
+status: closed
 depends-on: [arc01-portable-contract Operator-accepted composition]
 ---
 
@@ -163,8 +163,8 @@ fragments, final LF/no CRLF and `git diff --check`. Independent CDC review remai
 
 ## Assignment history
 
-Current assignment: [Iteration02](cc-prompt-iteration02.md), issued 2026-10-09.
-CC executes the focused correction and returns to CDC via the Operator.
+Current assignment: none; Slice01 closed after CDC acceptance of Iteration02
+candidate `c3d68d7d`. See [independent closure](cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09).
 
 - Initial [cc-prompt.md](cc-prompt.md), issue `3a18c51d`, returned as `e0f68c31`:
   historical partial acceptance; five done/four open. Preserved unchanged.
@@ -172,9 +172,10 @@ CC executes the focused correction and returns to CDC via the Operator.
   `4e678b0b`: first executed refinement, independently partially accepted.
   F01/F02 and the corrected handoff accepted; six done/three open after residual
   F03 and new F04. Superseded for execution; prompt/return remain historical.
-- [Iteration02](cc-prompt-iteration02.md): second refinement assignment, active.
-  Repair TY-01's applicable conflict join and the current intake receipt;
-  S01-01/02/09 remain open. No criterion/model/source-gate amendment.
+- [Iteration02](cc-prompt-iteration02.md), issue `a8dfdf0b`, returned as
+  `c3d68d7d`: second executed refinement, independently accepted; all nine rows
+  done. F03/F04 repaired and author's procedure-count error reconciled.
+  Preserved unchanged; no active CC assignment remains.
 
 ### Iteration02 bounds and author readiness
 
@@ -241,6 +242,10 @@ review/iteration headroom; no full corpus/books or broad source acquisition is
 assigned. No unresolved design choice is silently delegated to CC.
 
 ## Version History
+
+- 1.3 (2026-10-09): Iteration02 c3d68d7d independently accepted; all nine rows
+  done and Slice01 closed. Procedure83 versus prompt46 recorded as CDC authoring
+  error; historical receipts preserved. All wider gates unchanged.
 
 - 1.2 (2026-10-09): Iteration01 independently reviewed at 4e678b0b; six done/three
   open, with current intake reopened. Issued four-path Iteration02 for residual

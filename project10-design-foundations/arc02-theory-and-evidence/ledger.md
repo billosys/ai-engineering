@@ -1,11 +1,12 @@
 # Arc02 Ledger
 
-All rows open; allocation and predecessor acceptance are inputs, not this arc's
+A02-01 is done; seven rows remain open. Allocation and predecessor acceptance
+are inputs, not this arc's
 semantic or composition proof. Source readiness is retained at its full scope.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
-| A02-01 | Slice01 provides independently accepted interpolation proof, numerical reconciliation and concrete correction handoff | Walk its unchanged ledger and independent result against pinned live/example bytes | correctness-grade | DES-003/004; Arc01 contract | open | [Partial Slice01 review](slice01-fluid-scale-arithmetic/cdc-verification.md) | Six slice rows done/three open; Iteration02 assigned for residual F03/F04. Evidence alone does not repair live guidance. |
+| A02-01 | Slice01 provides independently accepted interpolation proof, numerical reconciliation and concrete correction handoff | Walk its unchanged ledger and independent result against pinned live/example bytes | correctness-grade | DES-003/004; Arc01 contract | done | [Slice01 independent closure](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09) — reproduced child acceptance | Nine slice rows done at c3d68d7d; mathematical evidence and handoff accepted. Live/DES corrections and higher-scale composition remain open. |
 | A02-02 | All P10-11 original/input readiness requirements are met for the complete retained population and every dependent input | Inspect independently accepted original/edition/capture/lineage/context/completeness/fidelity re-entry records | correctness-grade | Deferred S02-08/A01-02; P10-11 | open | — | 150 book + 83 web cards; retain eight source actions and conditional secondary evidence. |
 | A02-03 | Arc02 theory findings have accurate scoped corrections with independent proof at the corrected revisions | Reproduce declared arithmetic/colour/technical cases and inspect primary support and exceptions | correctness-grade | DES-002/003/004/005/007/008/009/012 | open | — | Mathematical truth, attribution and empirical/technical support remain separate. |
 | A02-04 | Every original card identity and every substantive claim has complete five-dimension review and reconciled correction lineage | Full 233-identity/claim/revision/dimension coverage walk, source spans and revised-card review | correctness-grade | P10-06/09/10; DES-015/016 | open | — | Full bodies, examples, relationships, prerequisites and CQ coverage; no sample/quarantine substitute. |
