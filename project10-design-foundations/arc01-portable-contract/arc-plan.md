@@ -92,8 +92,9 @@ gate. Do not pre-create close or verification records.
 
 Current assignment: no remaining CC slice assignment. Slice03 iteration02
 `0b55afd5` independently accepted; all nine criteria done and child closed. All three
-Arc01 slices are closed. Formal arc composition and its attributed independent
-or Operator gate follow; source-readiness deferral remains explicit.
+Arc01 slices are closed. The [composition packet](closing-report.md) is assembled
+and self-checked; its attributed independent or Operator gate is pending.
+Source-readiness deferral remains explicit.
 Slice02 is closed with local acceptance at `759ce2dd`/`88c1298f`
 and the Operator's explicit S02-08 deferral. Slice03 is authorized for contract/
 method composition and full Arc02 allocation. The former “Slice02 original
@@ -118,6 +119,10 @@ scope, source baseline, evidence requirements or adopted design; local formattin
 and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
+
+- 1.15 (2026-10-09): Final child closure surfaced formal composition assembly;
+  added closing-report.md with full child/arc walk, end-to-end joins and an
+  explicit pending independent/Operator gate. No scope, criteria or readiness waiver.
 
 - 1.14 (2026-10-09): Slice03 iteration02 `0b55afd5` independently accepted;
   all nine rows done and final child closed. Formal composition/gate next; no new

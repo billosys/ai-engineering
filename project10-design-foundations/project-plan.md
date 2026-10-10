@@ -107,8 +107,9 @@ independently done criteria and S02-08 Operator-deferred. Local acceptance remai
 Slice03 is closed: all nine criteria independently done at `0b55afd5` with seven
 prior dispositions retained after delta review; see its
 [CDC acceptance](arc01-portable-contract/slice03-contract-composition-and-handoff/cdc-verification.md#iteration02-independent-verification-and-slice03-closure--2026-10-09).
-All three Arc01 slices are closed; formal arc composition and the attributed
-independent/Operator gate are next. No source-fidelity or release gate is closed.
+All three Arc01 slices are closed; the [composition packet](arc01-portable-contract/closing-report.md)
+is assembled and self-checked, with the attributed independent/Operator gate
+pending. No source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
 planning composition. Source readiness carries to Arc02/P10-11 before dependent
 source-fidelity acceptance and full-corpus/release completion. Expedited Mode
@@ -200,6 +201,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.18 (2026-10-09): Arc01 final-child closure surfaced formal composition;
+  linked the assembled report and pending independent/Operator gate. Existing
+  P10-11 deferral ownership and all release criteria remain unchanged.
 
 - 1.17 (2026-10-09): Slice03 iteration02 `0b55afd5` independently accepted;
   all nine rows done and child closed. All three Arc01 children now closed; formal arc

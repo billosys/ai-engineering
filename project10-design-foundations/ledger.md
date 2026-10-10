@@ -39,3 +39,8 @@ Slice03 independently closed at `0b55afd5`, with all nine planning criteria done
 All 233-card/eight-live-file/five-dimension/16-finding allocations and the P10-11
 carryover remain. Formal Arc01 composition/gate is next; all eleven project criteria
 remain open until their own evidence/gates are satisfied.
+
+Arc01 [composition packet](arc01-portable-contract/closing-report.md) assembled
+and self-checked after final-child closure `9717f27a`. A01-04/05 remain open
+for independent/Operator gating; A01-02/S02-08 remain deferred and P10-11 open.
+All project criteria retain their original wording and open status.
