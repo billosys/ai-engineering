@@ -1,6 +1,6 @@
 ---
 slice: slice02-nonlinear-colour-pipeline
-status: open
+status: closed
 depends-on: [arc01-portable-contract Operator-accepted composition]
 ---
 
@@ -19,7 +19,9 @@ empirical perception studies and browser/package implementation remain later wor
 
 CDC Sofie authors and independently reviews; separate CC executes through
 Operator relay. The [initial prompt](cc-prompt.md) is preserved; current assignment
-is [Iteration04](cc-prompt-iteration04.md). Two contributors, Expedited Mode;
+was [Iteration04](cc-prompt-iteration04.md), now returned for review.
+CDC prepared a two-field correction; the Operator approved it and actual
+closure after checks. Slice02 is closed, all nine rows done; no I05 issued. Two contributors, Expedited Mode;
 CC retains CDC dispositions, proposes the remaining evidence and cannot
 accept/close/advance.
 Arc01 contract packet is `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`;
@@ -352,7 +354,45 @@ This fourth refinement leaves one further pass before the standing cap.
 Full R/T/C/L/G, original readiness, Arc03–05, Arc06 and release gates remain;
 no Slice03 advancement. Parent status/history updates only, no scope reduction.
 
+
+## Iteration04 reviewed; direct CDC correction awaiting Operator — 2026-10-10
+
+Candidate19dd5385 independently resolves the requested comparison/history/link
+repairs. S02-07/08 accepted; S02-01/03/04/05 retained: six done/three open.
+[Current CDC review](cdc-verification.md#iteration04-independent-review-and-cdc-authored-correction--2026-10-10)
+identifies one inherited generation-scope contradiction in two fields and
+records a directly prepared CDC repair after the Operator's routing question.
+Only those two fields in CARD-002-GENERATION change; source, all subjects,
+other70 records, evidence, proof/numeric artifact and CC notes/handoff/prompts
+remain protected. The author checks exact permitted deltas, literal identity,
+qualification and rejection of either stale field; no fresh arithmetic needed.
+
+Current CC assignment: I04 returned, reviewed with bounded independent results;
+no CC execution pending. The current action is Operator acceptance of the
+concrete CDC-authored correction, not a fictional independent CDC check.
+S02-02/06/09 stay open until that gate; no closure/next-slice handoff. Four
+refinement passes were executed; the fifth remains unused. This preserves the
+standing cap rather than resetting it. No change to complete populations,
+readiness, semantic/live/package gates or Project13's excluded-I04 contract.
+Earlier assignment-history sections are historical, not competing active prompts.
+
+## Operator-approved close — 2026-10-10
+
+[Final gate](cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
+supersedes the pending direct-repair state above. Operator explicitly approved
+CDC's two-field repair and actual slice closure; exact changes and two negative
+controls pass. All nine unchanged criteria are done, six with independent CC
+review and three through the explicit Operator-approved correction/closure.
+I04 is returned and reviewed, no execution pending; I05 remains unused. EM next
+ready slice is prepared prospectively under Project13, with all broader gates.
+
 ## Version History
+
+- 1.5 (2026-10-10): I04 candidate19dd5385 reviewed; handoff/integrity accepted,
+  six independently done; Operator approved direct CDC two-field generation
+  repair and actual closure after checks. All nine done; I05 unused, no
+  source/math/scope change.
+
 
 - 1.4 (2026-10-10): Iteration03 reviewed at `6a016960`, intake accepted; four
   done/five open. Issued five-output Iteration04 for comparison/history/link

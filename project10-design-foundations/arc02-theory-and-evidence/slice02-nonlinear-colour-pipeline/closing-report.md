@@ -236,3 +236,29 @@ Blocked or unrun scope remains explicit: original Oklab capture and transformati
 ### Iteration04 candidate receipt
 
 The first committed five-path candidate `e2a03e65da32e2eb6e493eb6bc328e5e099724e2` (tree `e587bf843424bdce11f73095a2ca4838fd9069f8`) is a direct child of issuer `9a30f4801c41278035de24246b3d014b5b6f9d50`; exact per-path Git blobs and SHA-256 values are in the [execution receipt](artifacts/execution-notes.md#iteration04-committed-candidate-replay-receipt). The extracted `ITERATION04_INTEGRITY_REPLAY_V1` exited 0 with all recorded identity, comparison, link, protection and status checks passing. The exact replay output and checker limits are preserved there. The final receipt update remains confined to assigned paths; a post-update replay is required and will be reported separately from this candidate's recorded result.
+
+## CDC-authored correction supplement — 2026-10-10
+
+This supplement is authored by CDC, not a new CC return. CC's candidate and
+all historical reports remain preserved. [CDC's I04 review](cdc-verification.md#iteration04-independent-review-and-cdc-authored-correction--2026-10-10)
+accepts S02-07/08 and retains S02-01/03/04/05: six done/three open. CDC changed
+only CARD-002-GENERATION's scope reason and literal-assessment field to remove
+an unsupported assertion that the XYZ matrices belong to the2021 sRGB update.
+The exact before/after values and bounded self-check are in that review.
+
+S02-02/06/09 await the Operator's acceptance of this direct correction; this
+is not independent verification of CDC-authored content. All71 subjects and70
+other raw JSONL lines, evidence, mathematical/numerical artifacts, original
+CC prompts/notes/handoff and all higher-scope/readiness owners are preserved.
+No I05 or Slice03 is issued; EM advances after the pending gate is accepted.
+
+## Final Operator-approved closure — 2026-10-10
+
+The pending direct-repair supplement above is historical. The Operator approved
+CDC's exact two-field repair and directed actual slice closure after checks.
+[Final gate and independent review](cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
+record the approval and self-check separately from review of CC's work. All
+nine ledger rows are done; Slice02 is closed. Mathematical/source/owner limits,
+seven original output paths and every issued prompt remain preserved. No I05.
+EM next-slice preparation proceeds subject to real readiness and Project13's
+prospective registration/checkpoint requirements.

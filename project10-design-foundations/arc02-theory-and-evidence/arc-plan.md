@@ -41,7 +41,7 @@ source acquisition, original-readiness waiver or live implementation is implied.
 
 ## Complete work breakdown and sizing
 
-Slice01 is closed; Slice02 is detailed and issued now. The remaining rows are bounded execution
+Slice01 and Slice02 are closed; the next ready T concern is prepared now. The remaining rows are bounded execution
 families, not a single giant slice or already-issued assignments. CDC assigns
 unique increasing slice numbers and records each exact population/dependency in
 this roadmap before issuing it. Family decomposition and memberships must remain
@@ -50,7 +50,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | Execution family | Capability and sizing rule | Prerequisites / state |
 |---|---|---|
 | slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Closed at c3d68d7d; independent of missing original attribution/fidelity. |
-| slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Open under T; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
+| slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Closed after I04 independent review and Operator-approved direct correction; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
 | R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
 | T — remaining theory/evidence | Bounded slices per concern: nonlinear colour pipeline, perception/analogy scope, token-system conventions, layout/measure exceptions and CHI interpretation. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
 | C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
@@ -58,7 +58,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | G — global reconciliation and arc handoff | Bounded cross-group/guide, typed-edge, CQ-component and revision/dependency reconciliation slices, followed by formal arc composition. | Complete C/L result set and P10-11; reconcile every unresolved/unclassified assertion. Split by explicit dependency populations, then demonstrate the complete union. |
 
 No fixed total slice count is invented before reading/source readiness establishes
-actual headroom. The issued slice list is Slice01 (closed) and Slice02 (open). Before arc
+actual headroom. The issued slice list is Slice01 and Slice02 (both closed). Before arc
 closure, the expanded roadmap, all issued children and the full R/T/C/L/G
 coverage union must reconcile. Additions/splits/merges/removals remain mapped to
 the original 233 identities; no sampling, quarantine substitute or lost guide
@@ -119,13 +119,12 @@ active: exact-path commits, independent review, closure when evidence permits,
 then automatic next-slice opening. Gates and five-iteration correction limits
 remain binding. Source and planning branches retain separate mutation boundaries.
 
-Current assignment: [Slice02 nonlinear colour pipeline](slice02-nonlinear-colour-pipeline/slice-plan.md),
-[Iteration04 CC prompt](slice02-nonlinear-colour-pipeline/cc-prompt-iteration04.md).
-Candidate `6a016960` has [partial independent acceptance](slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration03-independent-review--2026-10-10):
-S02-01/03/04/05 done, five rows open; residual comparison/history judgments,
-handoff labels and five fragment regressions require correction.
-Sound proof/values retained; no Slice03 advance. Earlier candidates/iterations
-remain historical.
+Current Slice02 state: closed after independent I04 review at19dd5385 and
+Operator-approved CDC two-field repair/closure. All nine rows done, I05 unused.
+[Final gate](slice02-nonlinear-colour-pipeline/cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
+separates independent evidence from direct self-check/Operator acceptance.
+Next ready T concern is prepared under EM with Project13 trial registration.
+Earlier current-assignment text is historical; all issued prompts are preserved.
 Initial prompt and CC candidate remain preserved.
 Slice01 Iteration02 `c3d68d7d` is [independently accepted and closed](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09):
 all nine slice rows done, A02-01 done; seven other arc rows remain open.
@@ -135,6 +134,12 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.9 (2026-10-10): Arc02/Slice02 I04 candidate19dd5385 independently
+  reviewed; six independently done, then Operator approved direct two-field
+  CDC repair and actual slice closure. Nine child rows done; I05 unused.
+  Next-slice preparation retains full scope, readiness and trial gates.
+
 
 - 1.8 (2026-10-10): Slice02 Iteration03 reviewed at `6a016960`; intake accepted,
   four child rows done/five open. Issued bounded Iteration04; no family, criterion

@@ -116,10 +116,15 @@ are done; A01-02 stays deferred. Arc02 is active;
 is independently closed at `c3d68d7d` for bounded fluid-scale evidence.
 [Slice02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md)
 is open for bounded nonlinear colour-pipeline evidence and selected uniformity/
-analogy claims under DES-007/002. Candidate `6a016960` has four independently done
-rows and five open; [Iteration04](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration04.md)
-corrects residual comparison/history judgments and five fragment regressions. Earlier candidate/iteration status remains historical.
-No Slice03 advance. R/T/C/L/G execution
+analogy claims under DES-007/002.
+Slice02 is closed after independent I04 review at19dd5385 and the Operator's
+explicit approval of a two-field CDC-authored repair and actual closure.
+All nine child rows done; no I05 issued. [Final gate](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
+separates independent review, direct repair/self-check and Operator acceptance.
+Project13 preparation and queued Arc06 remain unchanged. Next ready slice
+preparation follows EM and prospective trial registration; complete R/T/C/L/G
+and original-source/full-corpus/release gates remain.
+Next slice must pass source-grounded preparation before issue. R/T/C/L/G execution
 families preserve the complete semantic scope and input re-entry. No
 source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
@@ -270,6 +275,12 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.29 (2026-10-10): Arc02/Slice02 I04 candidate19dd5385 independently
+  reviewed; six independently done, then Operator approved direct two-field
+  CDC repair and actual slice closure. Nine child rows done; I05 unused.
+  Next-slice preparation retains full scope, readiness and trial gates.
+
 
 - 1.28 (2026-10-10): Operator-requested Project13 case study and prospective
   two-slice methodology trial, with meta-review checkpoints. Added scoped local

@@ -61,3 +61,20 @@ model, values and stage controls independently reproduce and are protected.
 Earlier dispositions remain historical. All parent criteria/statuses, R/T/C/L/G,
 full populations, source/fidelity and later gates remain. No Slice03 or closure;
 queued Arc06 metadata/rendering work and P10-12/13 remain unchanged.
+
+## Arc02/Slice02 Iteration04 review and direct repair — 2026-10-10
+
+[CDC review](slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration04-independent-review-and-cdc-authored-correction--2026-10-10)
+accepts S02-07/08 at19dd5385; six child rows done/three open. CDC prepared two
+stale generation fields for Operator acceptance; this authored repair is not
+independently self-accepted. No I05 or Slice03 issued. All parent row criteria/
+states, full populations, P10-11 and later gates remain unchanged. Project13
+pilot and Arc06 metadata/rendering addition are preserved.
+
+## Operator-approved Arc02/Slice02 closure — 2026-10-10
+
+[Final gate](slice02-nonlinear-colour-pipeline/cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
+supersedes the pending direct-repair note above. All nine child rows done after
+independent CC review and explicitly approved CDC two-field correction/closure.
+I05 unused; parent row wording/status unchanged. EM next-slice preparation and
+prospective Project13 registration proceed; full R/T/C/L/G and later gates remain.

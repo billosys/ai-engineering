@@ -1231,3 +1231,310 @@ explicit existing new prompt; all eight paths are included in the commit
 allowlist. git diff --check passed. No stage/package/browser/source test is
 claimed for this planning-only author change; arithmetic and CC replay results
 above were executed before authoring and remain tied to their original pins.
+
+
+## Iteration04 independent review and CDC-authored correction — 2026-10-10
+
+**Current verdict: Slice02 closed; all nine rows done.** Six rows rest on
+independent CDC review of CC work; the remaining three close after the Operator
+explicitly approved the bounded CDC repair and directed actual slice closure.
+The earlier pending-patch disposition below is historical and superseded by
+the final Operator gate at the end of this review.
+Reviewed CC candidate `19dd53854007ff269e30c380246a3c82b5f5cbf6`, direct child of
+issuer `9a30f4801c41278035de24246b3d014b5b6f9d50`. Planning intake HEAD was
+`db377d5138ce2129c938d8f4c9816fdd3287ab33`; its Project13 methodology work and
+Project10 pilot instructions remain preserved. SOURCE/main remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`, tracked/index clean; unrelated untracked
+Project12 and SOURCE knowledge/lfe are untouched.
+
+The [Iteration04 prompt](cc-prompt-iteration04.md) has returned. No Iteration05
+is issued. After CDC found the stale generation wording, the Operator asked
+whether Sofie could easily make this bounded correction directly. CDC prepared
+the two-field repair for Operator acceptance; this does not change the workflow
+or permit self-acceptance. The correction and its self-check are explicitly
+CDC-authored, separate from independent review of CC's committed candidate.
+
+### Independent review coverage and reproduced results
+
+Current project/arc/slice plans, 13/8/9 ledger criteria, full I04 prompt, latest
+I03 findings and correction-retention rules govern. Read the source design skill
+entrypoint, all six assigned live spans with foundations456 context, complete
+147-line matrix card, prepared model75–113/115–163 (formula/code/table text),
+and the accepted 83-line five-dimension procedure. Read the complete current
+handoff and I04 return/receipts/checker. Inspected the 17 changed clause
+projections and exact new comparison passages, then the current correctness,
+scope and consistency projections across all 50 assessed records. Whole-set
+queries below check all 71 subject objects, evidence objects, method metadata,
+retained identities and references; they are not full-corpus semantic review.
+
+- Extracted `ITERATION04_INTEGRITY_REPLAY_V1` from committed candidate notes;
+  replaced only the three mutable HEAD identity reads with explicit candidate
+  `19dd5385`, because current HEAD includes unrelated subsequent planning work.
+  Replay exits0: exact five paths/direct issuer parent/both trailers, protected
+  proof and full numerical artifact, 71 IDs with classes50/18/2/1, recorded
+  comparisons, four-done/five-open CC ledger, 49 local links and10 fragments,
+  double-hyphen positive/collapsed negative, newlines and clean tracked/index.
+  Its semantic wording guards remain integrity checks, not independent warrant.
+- A separate CDC committed-object check reproduces all71 literal subjects,
+  resolves all134 Git-backed evidence objects (revision/path/blob/SHA/bounds),
+  all dimension evidence references and50 method identities. Evidence kinds:
+  52 literal,45 prepared-model,11 bounded-calculation,20 pinned-context,
+  1 public observation,4 algebra,1 current-calculation,1 current-receipt.
+  Exactly17 records changed and54 remain wholly identical to issuer.
+- Eleven I04 authority-table object identities/extents plus the issued prompt
+  match committed bytes. Exact five-path diff/direct parent/trailers pass.
+  Prior prompts, slice plan, CDC history, parent plans/ledgers, proof and complete
+  numeric artifact are byte-identical between issuer and CC candidate.
+- Independent target lookup uses candidate Git blobs for both documents and
+  targets:49 links/10 fragments, zero failures. This avoids relying on mutable
+  worktree target text. The actual adjacent-double-hyphen heading passes; its
+  collapsed counterpart is absent. All50 assessed IDs occur in the handoff.
+- F01's nine meaningful matrix comparisons now inspect distinct relevant
+  propositions. CARD-003-LINEARITY compares card73 with97; invertibility compares
+ 74 with97; nonlinear75/121 agrees internally and conflicts with live
+  foundations446–449. Accurate card stages are retained. CARD-002-GENERATION's
+  consistency result is honestly not assessed, with owner/re-entry.
+- F02's six analogy results distinguish temperament/uniformity438–444 from
+  colour/music-harmony451–456. Different targets/strength labels do not establish
+  a contradiction. Universal perception, physical-accuracy tradeoff and mechanism
+  remain unestablished; empirical strength remains unassessed. This also retains
+  I03's correction of CDC's earlier overbroad musical comparison.
+- F03 separates CARD-009's recoverable historical note from this slice's current
+  code/table result. Exact code124–139/141–156, table107–110, numeric36–45 and
+  pinned I03 receipt874–878 have the claimed roles. Current calculations cannot
+  establish the historical process. The handoff now reports that limit accurately.
+  CARD-017's stable evidence ID still contains `101-110`, but its actual typed
+  span and observation are124–139; the ID is historical identity, not a locator.
+  Its attached function is correct, so no spurious join finding is raised.
+
+S02-01/03/04/05 retain prior independent acceptance. SOURCE, method, proof,
+complete numerical bytes, model generations/tolerances/case populations and
+stage controls are unchanged; no new finding invalidates that proof. Arithmetic
+and numerical corruption controls were **not rerun** for this prose-only change.
+The independent I03 executions remain pinned to their original date/revisions.
+This review independently accepts S02-07 (complete accurate correction handoff)
+and S02-08 (CC assignment scope, protected inputs and reference/byte integrity).
+
+### One remaining defect found across dimensions
+
+At CC candidate JSONL line66, CARD-002-GENERATION correctness says attribution
+of the separately displayed XYZ matrices to the 2021 update is not established;
+its repaired consistency field says not assessed. Its proposed replacement and
+handoff agree. However `dimensions.scope_attribution.reason` still says:
+
+> The displayed matrices use the 2021-01-25 higher-precision sRGB generation
+
+`independent_review.literal_assessment` repeats that same unsupported statement.
+The original literal at card63 only says the matrices were updated in2021.
+Prepared159–161 is an update note in the linear-sRGB code section; it does not
+establish the separately displayed XYZ-form matrix generation. These two stale
+fields conflict with the record's own accurate results. Cause: a pre-split
+assessment survived in two copied fields while correctness/proposal/consistency
+were repaired. This is a newly identified residual in inherited data, **not a
+failure of the specifically requested I04 pairwise repair**. CDC's earlier
+reviews also missed it. No new acquisition, empirical study or contract is added.
+
+### Concrete CDC repair awaiting Operator acceptance
+
+Only these two JSON fields change; source, subject/assessed clause, evidence,
+other dimensions, proposed wording and every other record remain unchanged:
+
+| Field | Prepared value |
+|---|---|
+| `dimensions.scope_attribution.reason` | The prepared article's 2021-01-25 update note occurs in the linear-sRGB code section and describes a higher-precision sRGB basis. Its application to the separately displayed XYZ-form M1/M2 matrices is not established by the assigned text. Keep the RGB implementation generation and XYZ-matrix attribution separate; no cross-generation equivalence is established. |
+| `independent_review.literal_assessment` | The source notes the matrices were updated in 2021 for higher precision. |
+
+[The corrected record](artifacts/claim-results.jsonl) is a CDC-authored proposal.
+The existing correctness, consistency and handoff already support these values;
+no technical result is being changed. The self-check below compares exact field
+paths, all71 identities/subjects, all70 other raw lines and protected artifacts;
+it rejects restoring either stale field independently. That is a bounded author
+check, not independent acceptance of CDC's edit. AGENTS.md says neither workflow
+permits self-acceptance; the Operator's acceptance of this concrete patch is the
+remaining gate. No fictionally independent reviewer or CC return is created.
+
+### Nine-row disposition and parent bubble-up
+
+| Row | Current status | Evidence and remaining action |
+|---|---|---|
+| S02-01 | done, retained | I03 authority/readback acceptance; fresh I04 identity reconciliation. |
+| S02-02 | open | Inventory/pairs/history repairs reviewed; Operator acceptance of the two corrected generation fields remains. |
+| S02-03 | done, retained | Unchanged independently accepted staged conversion/inverse/nonlinearity proof. |
+| S02-04 | done, retained | Unchanged independently accepted complete RGB/XYZ/polar numeric and stage populations. |
+| S02-05 | done, retained | Unchanged independently accepted contrary-model controls. |
+| S02-06 | open | Scope/readiness boundaries reviewed; same two-field Operator gate as S02-02. |
+| S02-07 | done | All50 occurrence handoffs/owners retained; accurate historical verification limit and guide conflict recorded. |
+| S02-08 | done | Independent committed five-path/protected-byte/134-object/link checks; narrow CDC patch separately self-checked and gate-labelled. |
+| S02-09 | open | CC return independently reviewed; CDC supplement accounts for residual/repair, pending Operator gate and truthful provenance. |
+
+Assigned T-family proof/inventory/handoff is delivered within its bounds,
+subject to the small pending gate; no family, parent criterion or source-fidelity
+result is closed. Parent plans roll up six child rows done/three open. R/T/C/L/G,
+233 cards/eight live files/16 DES, P10-11 and Arc03–06/release remain binding.
+Arc06 metadata and Project13 protocol are preserved. I04 was already issued and
+is excluded from the prospective Project13 treatment; the direct patch is also
+observational follow-up, not a newly opened trial slice. No run is registered.
+No Slice03 is opened while this slice is awaiting acceptance. Once accepted,
+EM requires opening the next ready planned slice with prospective registration.
+
+### Attempts, exclusions and replay evidence
+
+The initial CDC physical helper passed an absolute legacy subject path to
+`git show`, causing exit128 before completing the population. Normalizing the
+known SOURCE root to a repo-relative path fixed the helper; the complete rerun
+passed. A mistaken `07-prompt-authoring.md` lookup and a lookup for source guidance
+from the planning worktree returned no file; both were corrected to SOURCE's
+`07-implementation-prompt-authoring.md`. Earlier over-budget tool output was
+partitioned/recovered for meaningful current fields and handoff passages.
+No failed attempt is called a pass. No new external source was needed; acquisition,
+original capture/lineage, full-card/guide/relationship/CQ/empirical/Make/package/
+browser/accessibility/release checks remain unrun or blocked in their retained
+homes. Runtime/tool traces establish delivered bytes and calculations, not CC
+attention. No numerical execution was repeated in this review.
+
+The independent candidate-check program below ran against pinned CC bytes,
+with its positive gates passing and its final predicate reproducing the residual:
+
+```python
+from pathlib import Path
+import subprocess,json,hashlib,collections,re,posixpath,urllib.parse
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/';C='19dd53854007ff269e30c380246a3c82b5f5cbf6';I='9a30f4801c41278035de24246b3d014b5b6f9d50';SRC='dffa504e851b03b8e4746f1941068e4cc850b612'
+def git(*a):return subprocess.check_output(['git','-C',str(P),*a])
+def b(r,p):return git('show',r+':'+p)
+def sha(x):return hashlib.sha256(x).hexdigest()
+def unique(pairs):
+ d={}
+ for k,v in pairs:assert k not in d,('duplicate JSON key',k);d[k]=v
+ return d
+rs=[json.loads(x,object_pairs_hook=unique) for x in b(C,S+'artifacts/claim-results.jsonl').splitlines()];old=[json.loads(x) for x in b(I,S+'artifacts/claim-results.jsonl').splitlines()]
+assert len(rs)==len({r['claim_id'] for r in rs})==71
+counts=collections.Counter();refs=0
+for r,o in zip(rs,old):
+ assert r['claim_id']==o['claim_id'] and r['subject']==o['subject']
+ sub=r['subject'];p=sub['path'].removeprefix('/Users/oubiwann/lab/billosys/ai-engineering/');rev=sub.get('git_revision',SRC);bb=b(rev,p);assert sha(bb)==sub['sha256'];a,z=sub['span']['start'],sub['span']['end'];assert '\n'.join(bb.decode().splitlines()[a-1:z])==sub['assertion']
+ if sub.get('git_blob'):assert git('rev-parse',rev+':'+p).decode().strip()==sub['git_blob']
+ ev={e['evidence_id']:e for e in r.get('evidence',[])};assert len(ev)==len(r.get('evidence',[]))
+ for d in r.get('dimensions',{}).values():assert set(d.get('evidence_refs',[]))<=ev.keys()
+ for e in ev.values():
+  counts[e['kind']]+=1
+  if 'git_blob' not in e:continue
+  refs+=1;eb=git('cat-file','blob',e['git_blob']);assert sha(eb)==e['sha256'];rev=e['git_revision'];p=e['path'];p=S+p if p.startswith('artifacts/') else p;assert b(rev,p)==eb
+  sp=e.get('span')
+  if sp:assert 1<=sp['start']<=sp['end']<=len(eb.splitlines())
+print('PASS71 exact subjects; all evidence refs and',refs,'Git-backed objects; kinds',dict(counts))
+changed=[r['claim_id'] for r,o in zip(rs,old) if r!=o];assert len(changed)==17
+for r in rs:
+ if not r.get('record_kind'):
+  m=r['method'];assert sha(b(m['git_revision'],m['path']))==m['sha256'];assert git('rev-parse',m['git_revision']+':'+m['path']).decode().strip()==m['git_blob']
+notes=b(C,S+'artifacts/execution-notes.md').decode();rec=notes.split('### Iteration04 exact intake identities',1)[1].split('### Iteration04 committed candidate',1)[0]
+for p in ('project10-design-foundations/project-plan.md','project10-design-foundations/ledger.md','project10-design-foundations/arc02-theory-and-evidence/arc-plan.md','project10-design-foundations/arc02-theory-and-evidence/ledger.md',S+'slice-plan.md',S+'ledger.md',S+'cdc-verification.md',S+'artifacts/execution-notes.md',S+'artifacts/correction-handoff.md',S+'closing-report.md',S+'artifacts/claim-results.jsonl'):
+ bb=b(I,p);assert sha(bb) in rec and git('rev-parse',I+':'+p).decode().strip() in rec and str(len(bb.splitlines())) in rec,p
+assert sha(b(I,S+'cc-prompt-iteration04.md')) in rec
+allow={S+p for p in ('artifacts/claim-results.jsonl','artifacts/correction-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md')};assert set(git('diff','--name-only',I,C).decode().splitlines())==allow
+assert git('rev-parse',C+'^').decode().strip()==I
+for p in ('cc-prompt.md','cc-prompt-iteration01.md','cc-prompt-iteration02.md','cc-prompt-iteration03.md','cc-prompt-iteration04.md','slice-plan.md','cdc-verification.md','artifacts/colour-conversion-proof.md','artifacts/numerical-reconciliation.md'):
+ assert b(I,S+p)==b(C,S+p)
+for p in ('project10-design-foundations/project-plan.md','project10-design-foundations/ledger.md','project10-design-foundations/arc02-theory-and-evidence/arc-plan.md','project10-design-foundations/arc02-theory-and-evidence/ledger.md'):
+ assert b(I,p)==b(C,p)
+for p in allow:assert b(C,p).endswith(b'\n') and b'\r' not in b(C,p)
+assert all(t in git('show','-s','--format=%B',C).decode() for t in ('Co-authored-by: Codex <noreply@openai.com>','Co-authored-by: Billo AI <ai-engineering@billo.systems>'))
+assert subprocess.run(['git','-C',str(P),'diff','--check',I,C]).returncode==0
+print('PASS11 authority identities + prompt; exact5 paths/direct parent/trailers; protected math/prompts/plans/CDC;17 changed54 unchanged')
+def unfence(t):return re.sub(r'(?ms)^ {0,3}(`{3,}|~{3,})[^\n]*\n.*?^ {0,3}\1[ \t]*$','',t)
+def heads(t):
+ used=set();out=[]
+ for h in re.findall(r'^#{1,6}\s+(.+?)\s*#*$',unfence(t),re.M):
+  base=re.sub(r'[^\w -]','',h.strip().lower()).replace(' ','-');key=base;n=0
+  while key in used:n+=1;key=f'{base}-{n}'
+  used.add(key);out.append(key)
+ return set(out)
+links=frags=0
+for p in sorted(allow):
+ if not p.endswith('.md'):continue
+ for dest in re.findall(r'(?<!!)\[[^\]]*\]\(([^)]+)\)',unfence(b(C,p).decode())):
+  if re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:',dest):continue
+  path,sep,frag=dest.partition('#');target=posixpath.normpath(posixpath.join(posixpath.dirname(p),urllib.parse.unquote(path))) if path else p;links+=1;bb=b(C,target)
+  if sep and frag:frags+=1;assert urllib.parse.unquote(frag) in heads(bb.decode()),(p,dest)
+assert (links,frags)==(49,10)
+ids=heads(b(C,S+'cdc-verification.md').decode());assert 'iteration01-independent-review--2026-10-10' in ids and 'iteration01-independent-review-2026-10-10' not in ids
+h=b(C,S+'artifacts/correction-handoff.md').decode();assert all(r['claim_id'] in h for r in rs if not r.get('record_kind'))
+print('PASS committed-target49links10fragments; double-hyphen positive/collapsed negative;50 handoff IDs')
+by={r['claim_id']:r for r in rs};r=by['CARD-002-GENERATION'];assert 'not established' in r['dimensions']['correctness']['reason'];assert 'The displayed matrices use the 2021-01-25' in r['dimensions']['scope_attribution']['reason'];assert r['independent_review']['literal_assessment'].startswith('The displayed matrices use the 2021-01-25')
+print('REPRODUCED semantic residual: GEN scope reason and literal_assessment assert unresolved XYZ generation; integrity PASS is not semantic acceptance')
+```
+
+The direct-patch check appended below is separate CDC self-verification.
+
+### Direct repair self-check — executed after the Operator routing question
+
+The following CDC-authored check exited0. Positive: exactly the two stated
+fields in JSONL line66 differ, all70 other raw lines and all71 subjects/evidence/
+other dimensions/proposals are unchanged. Restoring the old scope reason or old
+literal-assessment value independently fails the same predicate (2/2). Protected
+math/proof/handoff/CC notes/all five prompts are byte-identical. This is author
+self-verification, not an independently reviewed contribution.
+
+```python
+from pathlib import Path
+import json,subprocess,copy
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/';B='db377d5138ce2129c938d8f4c9816fdd3287ab33'
+def old(p):return subprocess.check_output(['git','-C',str(P),'show',B+':'+p])
+a=old(S+'artifacts/claim-results.jsonl').splitlines(keepends=True);b=(P/S/'artifacts/claim-results.jsonl').read_bytes().splitlines(keepends=True)
+assert len(a)==len(b)==71;assert [i for i,(x,y) in enumerate(zip(a,b)) if x!=y]==[65]
+x=json.loads(a[65]);y=json.loads(b[65]);expected=copy.deepcopy(x)
+expected['dimensions']['scope_attribution']['reason']="The prepared article's 2021-01-25 update note occurs in the linear-sRGB code section and describes a higher-precision sRGB basis. Its application to the separately displayed XYZ-form M1/M2 matrices is not established by the assigned text. Keep the RGB implementation generation and XYZ-matrix attribution separate; no cross-generation equivalence is established."
+expected['independent_review']['literal_assessment']=x['subject']['assessed_clause']
+def valid(r):return r==expected
+assert valid(y)
+for field in ('scope','literal'):
+ bad=copy.deepcopy(y)
+ if field=='scope':bad['dimensions']['scope_attribution']['reason']=x['dimensions']['scope_attribution']['reason']
+ else:bad['independent_review']['literal_assessment']=x['independent_review']['literal_assessment']
+ assert not valid(bad)
+for p in ('artifacts/numerical-reconciliation.md','artifacts/colour-conversion-proof.md','artifacts/correction-handoff.md','artifacts/execution-notes.md','cc-prompt.md','cc-prompt-iteration01.md','cc-prompt-iteration02.md','cc-prompt-iteration03.md','cc-prompt-iteration04.md'):
+ assert old(S+p)==(P/S/p).read_bytes(),p
+print('PASS exact2 permitted fields in1 record;70 other raw lines identical;71 subjects/evidence/other dimensions/proposals unchanged;2 stale-field controls rejected; protected9 slice inputs byte-identical')
+```
+
+### Operator acceptance and Slice02 closure — 2026-10-10
+
+After the concrete two-field repair was prepared, the Operator stated:
+
+> So: I approve! Please fix this yourself and prepare for the slice close, and then (if nothing stands in your way) perform the actual slice close
+
+This explicitly approves the bounded direct-CDC correction and authorizes slice
+closure following checks. CDC's repair leaves no substantive residual in this
+bounded packet. The exact delta and two negative controls pass; the nine-row
+criterion text,71 subjects, protected inputs and parent populations are retained.
+S02-02/06/09 close under **Operator-approved CDC correction and closure**;
+S02-01/03/04/05/07/08 retain their independent evidence. All nine rows are done.
+No claim is made that CDC independently accepted her own patch. I05 remains
+unused; the correction limit was neither extended nor reset.
+
+The artifact union is the original seven outputs: colour-conversion
+proof, claim results, numerical reconciliation, correction handoff, execution
+notes, plus slice ledger and closing report as first-class documents. The five
+issued prompts and all historical reviewer/CC records remain preserved. No new
+supporting artifact or source file is introduced. Supporting proof/claims/math/
+handoff/notes remain under artifacts/; ledger/report/prompts/review remain here.
+
+Bubble-up verified: the slice delivers the assigned T-family staged colour
+proof, bounded occurrence accounting and correction handoff. Existing R/T/C/L/G
+and later C/L correction ownership accommodate the findings; no structural arc
+amendment or scope reduction is needed. Arc/project criteria remain unchanged
+and open except their previously accepted rows. Missing originals/captures,
+empirical/unassessed results and complete233-card/eight-live review remain owned
+later work, not exceptions silently converted to pass. Arc02 now rolls up the
+closed child and prepares the next ready T concern under EM. The Project13
+protocol remains prospective for that next newly opened slice; this I04 repair
+and closure are excluded from its treatment. No publication or live skill edit.
+
+### Closure-author checks — 2026-10-10
+
+The nine-path close set passes the unchanged13/8/9 criterion columns and parent
+status comparison; all9 slice rows are done. Prior CDC bytes are an unchanged
+prefix. All134 local destinations and48 fragments across the nine author paths
+resolve (code fences excluded), final LF/no CR and git diff --check pass.
+The exact two-field/70-raw-line preservation self-check and both stale-field
+negative controls pass after recording Operator approval. These close-author
+checks are self-verification; the Operator gate above supplies authority.
