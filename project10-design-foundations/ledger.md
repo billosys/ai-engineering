@@ -86,3 +86,12 @@ acceptance: three child rows done/six open. [Iteration02](arc02-theory-and-evide
 corrects residual F01–F05. Earlier two-done/seven-open notes are historical.
 All parent criterion texts/statuses, full populations, source re-entry and later
 live/package/release gates remain unchanged. No Slice03 or child/arc closure.
+
+## Arc02/Slice02 Iteration02 review — 2026-10-10
+
+[CDC review](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration02-independent-review--2026-10-10)
+of `590b263c` retains three child rows done/six open. [Iteration03](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration03.md)
+repairs residual original-claim/warrant/RGB-replay/handoff/receipt defects.
+Method, original-ID mapping and portable prose improvements are retained.
+All parent criterion texts/statuses, populations, input/fidelity and live/package/
+release gates remain unchanged. No Slice03 advance or slice/arc closure.

@@ -19,7 +19,7 @@ empirical perception studies and browser/package implementation remain later wor
 
 CDC Sofie authors and independently reviews; separate CC executes through
 Operator relay. The [initial prompt](cc-prompt.md) is preserved; current assignment
-is [Iteration02](cc-prompt-iteration02.md). Two contributors, Expedited Mode;
+is [Iteration03](cc-prompt-iteration03.md). Two contributors, Expedited Mode;
 CC retains CDC dispositions, proposes the remaining evidence and cannot
 accept/close/advance.
 Arc01 contract packet is `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`;
@@ -277,12 +277,12 @@ corrective iteration; no whole 233-card/eight-file review is squeezed into this
 slice. If actual qualifications require a larger technical assignment, bubble
 it up for a concrete split before pretending this bounded slice completes it.
 
-## Current Iteration02 assignment and readiness
+## Historical Iteration02 assignment and readiness
 
 [Independent Iteration01 review](cdc-verification.md#iteration01-independent-review--2026-10-10)
 of `73c8180b8278f88b08ed044da73930bef6f0a522` accepts S02-04 on complete
 source-based original/intermediate reproduction, retaining S02-03/05 done.
-Six rows remain open. Current assignment is [Iteration02](cc-prompt-iteration02.md)
+Six rows remained open. Issued assignment was [Iteration02](cc-prompt-iteration02.md)
 for residual F01–F05: literal lineage/clauses, applicable original-claim evidence,
 method resolution, signed/reliable replay, portable prose and truthful receipts.
 No Slice03. The six-output override remains; proof and correct numeric values,
@@ -299,7 +299,34 @@ Operator removal/deferral, full populations and per-dependent gates are unchange
 One bounded concern with six artifacts has correction headroom; no new model,
 schema, broad suite, source acquisition or empirical study is assigned.
 
+## Current Iteration03 assignment and author readiness
+
+Iteration02 was issued at `33766ea6a707e6107b236966d776c550108fea99` and returned
+at `9758f3f81c53272e88632202e12275cefe24a101` plus replay receipt
+`590b263c2bfa55a19435af651c304fb31eab0bcf`.
+[Independent review](cdc-verification.md#iteration02-independent-review--2026-10-10)
+retains S02-03/04/05 done and six rows open. [Iteration03](cc-prompt-iteration03.md)
+is the current CC assignment for residual F01–F05: qualifier/literal coverage,
+actual original propositions and algebraic locators, RGB intermediate replay,
+handoff labels and full identity/current-limit receipts. No Slice03 advance.
+
+CDC independently reproduced all correct primary/stage values and earlier model
+controls; method and original-ID repairs pass. The current replay rejects old
+XYZ/polar corruptions, but allows two corrupted RGB stage vectors. Exact source
+and recorded verdict/locator witnesses show the remaining semantic defects.
+Author readiness includes these executed controls and source-grounded repairs;
+all correct proof/values, criteria, source gates and issued history are protected.
+The six-output contract continues, with small algebraic evidence appendices
+explicitly allowed inside the numerical record. This is the third refinement;
+two slots remain before the standing cap. No scope reduction, new schema/runtime,
+empirical study or original acquisition is inferred; parent changes record
+status/history only. The full populations and remaining R/T/C/L/G gates persist.
+
 ## Version History
+
+- 1.3 (2026-10-10): Reviewed Iteration02 at `590b263c`; three done/six open.
+  Issued Iteration03 for residual literal/warrant/replay/handoff/receipt defects;
+  correct numeric/proof evidence and higher scope/gates retained.
 
 - 1.2 (2026-10-10): Reviewed Iteration01 at `73c8180b`; S02-04 accepted, three
   done/six open. Issued Iteration02 for residual F01–F05; scope/gates unchanged.
