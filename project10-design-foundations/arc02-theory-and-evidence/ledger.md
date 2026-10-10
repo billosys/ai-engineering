@@ -50,3 +50,14 @@ repairs residual original-claim/warrant/RGB-replay/handoff/receipt defects.
 Method, original-ID mapping and portable prose improvements are retained.
 All parent criterion texts/statuses, populations, input/fidelity and live/package/
 release gates remain unchanged. No Slice03 advance or slice/arc closure.
+
+
+## Arc02/Slice02 Iteration03 review — 2026-10-10
+
+[CDC review](slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration03-independent-review--2026-10-10) of `6a016960` accepts S02-01 and retains S02-03/04/05:
+four child rows done/five open. [Iteration04](slice02-nonlinear-colour-pipeline/cc-prompt-iteration04.md) addresses remaining
+comparison/history/handoff judgments and five fragment regressions. Numeric
+model, values and stage controls independently reproduce and are protected.
+Earlier dispositions remain historical. All parent criteria/statuses, R/T/C/L/G,
+full populations, source/fidelity and later gates remain. No Slice03 or closure;
+queued Arc06 metadata/rendering work and P10-12/13 remain unchanged.

@@ -900,3 +900,334 @@ before commit. Minor draft spacing/count wording was corrected during authoring;
 no criterion or historical code bytes were altered. Untracked Project12 and
 SOURCE knowledge/lfe remain untouched. Packaging/browser/full corpus/fidelity
 checks are unrun and remain later work.
+
+
+## Iteration03 independent review — 2026-10-10
+
+**Current verdict: partial; four rows done, five open.** CDC Sofie independently
+reviews the six-output candidate `67419add633ffdefe729f9078452731b2918532d`
+(tree `db1c3c5709857026681624b882bab0f28af01c90`) and the complete receipt chain
+through `6a016960a77d9dd2e6478aeb3df96ff6b3d905eb`. Candidate is a direct child
+of issuer `c4032ea08f61d7498d6b4ede025e9a524db1feba`; subsequent CC commits are
+`83909ea0`, `668cdde8`, `415d3d11`, `6a016960`. Each has only allowed paths and
+both trailers. Planning HEAD on intake was `6e37661f`; its separate Arc06 metadata
+addition is preserved. SOURCE/main stays `dffa504e851b03b8e4746f1941068e4cc850b612`,
+tracked/index clean. Untracked Project12 and SOURCE knowledge/lfe remain untouched.
+Assignment reviewed: [Iteration03](cc-prompt-iteration03.md). Current CC assignment:
+[Iteration04](cc-prompt-iteration04.md). No closure or Slice03 advance.
+
+### Reproduced improvements and evidence retention
+
+- Strict JSONL: 71 unique records, 50 assessed, 18 original-ID envelopes, two
+  boundaries, one non-assessed duplicate. All 71 literal subject spans match
+  pinned bytes; original 18 envelopes retain exact subjects. CARD-004's envelope
+  includes the new inverse qualifier. The stored I02 projection equals all 70
+  predecessor JSON records in order, including every nested field.
+- The new line-97 qualifier separates nonsingularity/exact inverse algebra from
+  rounded numerical inverses. Foundations' CIE sentence includes line 251;
+  the matrix assertion remains separate. Physical-accuracy language is now
+  explicitly inventoried and not established, without inventing an empirical study.
+- CARD-007-NAMING now judges the original same-result assertion; generation is
+  scoped to the RGB code; CARD-002-INVERSE no longer adds cubes to the original
+  clause. CARD-013 distinguishes inverse A/RGB from the XYZ inverse. Three actual
+  algebra receipts occupy numerical lines 172–174, including determinants
+  0.4722768434252936 and 1.6112316300395422. Historical numeric pointers are pinned;
+  the unrelated XYZ support was removed from CARD-017. CARD-007-ERROR's handoff
+  labels its original as contradicted, independently of its corrective action.
+- All 117 Git-backed evidence objects resolve revision/path/blob/SHA and any
+  spans; evidence populations are 52 literal, 43 prepared-model, 11 calculation,
+  seven paired-context, one public observation and four algebra records. This
+  checks physical identity and bounds, not semantic warrant.
+- Fresh/historical identity receipts for all 14 project/arc/slice plan, ledger
+  and review objects match exact blobs, SHA and full extents. Source/method
+  identities and prompt identity match. Contract readback distinguishes literal
+  from proposed, XYZ M1 from RGB A, exact algebra from rounded precision, and
+  per-input fidelity. Receipts remain attestation of reading; this independent
+  identity/readback comparison accepts S02-01 without claiming insight into CC attention.
+- Extracted committed I03 replay, with its receipt reader explicitly pinned to
+  `6a016960` instead of mutable HEAD, exits 0. C remains `67419add` for numeric/
+  handoff/ledger inputs. A separate source-based CDC calculation reproduces all
+  16 RGB/4 XYZ/20 polar primary cases and all staged fields. Maxima: encoded
+  1.6839126291304935e-6; linear 2.6128459884589006e-7; XYZ published error
+  0.00039741995991940393; polar 1.734723475976807e-16, with prior argmax unchanged.
+- Independently substituting incorrect numeric artifact bytes into the actual
+  I03 program rejects eight middle-gray vectors separately, plus missing and
+  duplicate RGB stage rows (10/10 exit 1). The valid program passes its seven
+  field/population control groups and four integrity controls; missing and
+  duplicate rows are separate executions within one reported group. Matrix-only
+  fails actual printed XYZ and half-white scaling; skipped decode fails the
+  declared middle-gray L; unsigned root fails finite-real Z-basis/table checking.
+- Exact six-path union and five direct commits/trailers pass. Protected proof,
+  all issued prompts, slice plan and prior CDC record are byte-identical to issuer.
+  All prior numeric bytes are retained, with actual algebra appended and duplicate
+  history identified. Six-output LF/no-CR and committed diff checks pass.
+
+Retain S02-03/04/05 from prior independent reviews: criteria, SOURCE, proof,
+models, tolerances and all correct numeric tables are unchanged; fresh arithmetic
+and stage/control checks additionally confirm their continued applicability.
+No original-fidelity, full-card/guide, relationship/CQ or live correction follows.
+
+### Residual F01 — actual consistency comparisons (S02-02/06)
+
+All ten CARD-002/003 split consistency reasons still use a shared template,
+starting with “Paired proposition” followed by the assessed clause itself and
+asserting that references identify adjacent context. No actual comparison is
+explained. CARD-003-LINEARITY's consistency evidence_refs contains **only its own
+SUBJECT**: line 73 cannot establish agreement with another assertion. Prepared
+operator equations and algebra establish correctness, not internal/cross-card/
+guide consistency by themselves. The accepted method requires named revisions
+and exact paired spans, or an honest not-assessed/limited result.
+
+Replace that template with actual comparisons: e.g. card73 versus card97's linear
+map assertion, card74 versus card97's nonsingularity requirement, card75 versus
+card121 and the contradictory live foundations446–449. These are examples of
+available pairs, not required fabricated full-corpus conclusions. Other split
+results need their own applicable comparison or explicit limits/owner. Do not
+invent a defect in a true original matrix statement merely because a replacement
+adds precision; state whether the literal conflicts, agrees or remains untested.
+
+### Residual F02 — distinct musical comparisons (S02-02/06)
+
+Six records use the shared “conflicting-context-requires-qualification” conclusion
+for foundations438–444 versus451–456: LIVE-SKILL-001-ANALOGY,
+LIVE-FOUND-003-MECHANISM, LIVE-FOUND-003-COLOUR, LIVE-FOUND-005,
+LIVE-FOUND-005-MATH and LIVE-COLOUR-002::clause. The first passage concerns
+**temperament and perceptual uniformity**; the second concerns **colour harmony,
+musical harmony and frequency-ratio evidence**. Different strength labels on
+these different propositions do not by themselves establish a contradiction.
+In particular, the harmony passage does not contradict the physical-accuracy
+claim. The latter's not-established correctness result is sound and retained.
+
+**CDC clarification:** earlier review encouraged these contextual pairs and
+failed to separate these comparison targets sufficiently. Preserve that earlier
+record as historical; this review withdraws its implication that the different
+labels alone establish internal conflict. Judge each actual analogy/limit on
+its own scope. Available evidence still does not establish an identical mechanism
+or universal perceptual result; not established remains distinct from false.
+No new empirical or music-source acquisition is required.
+
+### Residual F03 — verification history versus a current check (S02-02/06/07)
+
+CARD-009-CROSSREF's correctness reason says the original line145 assertion
+“verified against” code/table is supported because **this slice** inspected them.
+Its consistency reason simultaneously says its only prepared attachment107–110
+cannot show that the C++ listing was cross-checked and that the full assertion
+is not established. A new calculation cannot establish the historical verification
+process claimed by the old card. Distinguish recoverable statement/correspondence,
+unverified historical provenance, and today's bounded mathematical result.
+Record not-established/not-assessed for the historical process unless actual
+process evidence exists; do not require acquiring it in this correction. Bind
+any separately claimed present check to the actual code/table and result record.
+Update the handoff's literal-result label and proposed prose accordingly; inspect
+all changed dimension/evidence/action joins. A proposal cannot supply retroactive
+support for the original.
+
+### Residual F04 — five fragment regressions (S02-08/09)
+
+CDC's target-aware check of the six committed outputs finds 46 local Markdown
+destinations/six fragments, with all files present but **five fragments absent**:
+
+| File | Current fragment | Actual required fragment |
+|---|---|---|
+| ledger.md → cdc-verification.md | iteration01-independent-review-2026-10-10 | iteration01-independent-review--2026-10-10 |
+| ledger.md → closing-report.md | iteration02-cc-return-2026-10-10 | iteration02-cc-return--2026-10-10 |
+| ledger.md → artifacts/execution-notes.md | iteration02-execution-2026-10-10 | iteration02-execution--2026-10-10 |
+| ledger.md → closing-report.md | iteration03-cc-return-2026-10-10 | iteration03-cc-return--2026-10-10 |
+| closing-report.md → artifacts/execution-notes.md | replay-defect-recovery-2026-10-10 | replay-defect-recovery--2026-10-10 |
+
+A heading's spaces each become a hyphen after punctuation is removed; an em dash
+surrounded by spaces therefore leaves two hyphens. The upstream
+[github-slugger implementation](https://raw.githubusercontent.com/Flet/github-slugger/master/index.js)
+and [its punctuation/space fixtures](https://raw.githubusercontent.com/Flet/github-slugger/master/test/fixtures.json)
+support this algorithm; it does not collapse adjacent hyphens. This was a local
+committed-target check, not a live GitHub rendering acceptance. Two attempted
+GitHub Docs routes were unavailable; no claim relies on those failed retrievals.
+
+I03 changed the formerly correct fragments and calls that change a repair.
+Preserve its false-pass receipt as historical, append the actual failure and
+repair; use the target heading, not a slug-normalization rule that manufactures
+a passing anchor. Add a valid two-hyphen positive and collapsed-hyphen negative
+through the same real target-aware predicate. Count the actual scan/exclusions.
+
+### Nine-row independent disposition
+
+| Row | Current status | Evidence / remaining requirement |
+|---|---|---|
+| S02-01 | done | Exact intake identities/readback independently checked as above; reading receipts attested, identity and contract comparison reproduced. |
+| S02-02 | open | Literal coverage improvements retained; F01–F03 still prevent accurate separate dimension accounting. |
+| S02-03 | done | Prior proof acceptance retained; protected bytes/model unchanged. |
+| S02-04 | done | Prior complete arithmetic acceptance retained and reproduced, including all stages. |
+| S02-05 | done | Prior contrary-model acceptance retained and reproduced against declared positive predicates. |
+| S02-06 | open | F01–F03 scope/consistency/history judgments require repair; fidelity remains input-dependent. |
+| S02-07 | open | Literal-result/handoff must track the corrected cross-reference judgment. |
+| S02-08 | open | Physical preservation, local identities and numerical controls pass; five fragments fail. |
+| S02-09 | open | Row/inventory/bubble-up largely honest, but current link PASS claim is false; final return must disclose/correct it. |
+
+### Bubble-up, author readiness and limits
+
+No architecture/scope/criterion amendment is needed. The bounded T-family packet
+has converged numerically; residual work concerns five-dimension warrant and
+links/return. Preserve all R/T/C/L/G families, 233 cards, eight live files, 16 DES
+owners, P10-11, Arc03–05 and queued Arc06/P10-12/13. A02-01 stays done/seven
+arc rows open; P10-01 stays done/twelve project rows open. No source acquisition,
+semantic/fidelity, package/browser/accessibility or release gate is discharged.
+Expedited Mode continues within those gates; no Slice03 until this slice closes.
+
+Author reviewed the active plans/ledgers and I03 assignment; read literal live
+spans/card/model and the accepted five-dimension procedure; inspected all 50
+correctness/consistency result projections plus exact residual witnesses,
+physical identity/data joins and code. That is structured-query coverage,
+not a claim of reading every historical note or accepting all five dimensions.
+Large combined prose/projection outputs were truncated; active plan/prompt,
+current replay blocks and residual witnesses were recovered in bounded queries.
+The initial physical helper assumed legacy envelopes had git_revision; corrected
+it to the known pinned baseline without changing any envelope. A guidance read
+from planning used a SOURCE-relative path and failed; absolute SOURCE recovery
+loaded the required section. The older link helper stopped at its first failed
+fragment; the complete committed-target scan reproduced all five failures.
+No failed helper attempt is represented as a successful gate.
+
+[Iteration04](cc-prompt-iteration04.md) is a five-output repair assignment; numeric
+record and proof are now protected. It is the fourth refinement after three
+returned passes; one further refinement remains before the standing five-pass
+cap. No new runtime/schema, new cases, empirical study or source acquisition.
+CC receipts/correction data need fresh independent review; CDC did not implement
+those repairs. This record supplies concrete original-text witnesses and
+falsifiable checks, not acceptance by a renamed role.
+
+### Reproduction code used by CDC
+
+Run each block as Python3 with the planning checkout available at its explicit
+path. These are incidental reproduction receipts, not maintained source scripts.
+The numerical block recovers prior independent predicates from their immutable
+CDC record. The link block deliberately asserts the reproduced **failure count**;
+its exit zero is not a passing link gate. The I03 doer replay is extracted from
+committed execution-notes, pinned to `6a016960` for R; C remains `67419add`.
+
+```python
+from pathlib import Path
+import subprocess,math,re,itertools,ast
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/';C='6a016960a77d9dd2e6478aeb3df96ff6b3d905eb';SRC='dffa504e851b03b8e4746f1941068e4cc850b612'
+def git(*a):return subprocess.check_output(['git','-C',str(P),*a])
+def blob(r,p):return git('show',r+':'+p)
+# Recover the existing independent coefficient/case predicates from their pinned record.
+review=blob('1a1fb44b',S+'cdc-verification.md').decode();prior=re.search(r'```python\n(.*?)\n```',review,re.S).group(1)
+body=prior[prior.index('ls=blob(SRC,'):prior.index('criteria=lambda')];exec(compile(body,'CDC independent numerical replay','exec'))
+print('PASS independent source-based original16RGB/4XYZ/20polar and three contrary controls',maxes)
+text=blob(C,S+'artifacts/numerical-reconciliation.md').decode()
+def rows(start,end,select):
+ return [[v.strip().strip('`') for v in l.split('|')[1:-1]] for l in text.split(start)[1].split(end)[0].splitlines() if select(l)]
+rx=rows('### RGB forward and inverse stages','### XYZ example stages',lambda l:l.startswith('| ') and l.split('|')[2].strip() in ('encoded','linear'));assert len(rx)==16
+for cs in rx:
+ name,kind=cs[:2];v=next(v for n,k,v in cases if n==name);lin=[decode(x) for x in v] if kind=='encoded' else v;lms=dot(A,lin);roots=[root(x) for x in lms];lab=dot(B,roots);ip=dot(BI,lab);cu=[x**3 for x in ip];bl=dot(AI,cu);back=[encode(x) for x in bl] if kind=='encoded' else bl
+ for col,calc in zip(cs[2:],(lin,lms,roots,lab,ip,cu,bl,back)):assert close(ast.literal_eval(col),calc,5.1e-13),(name,col,calc)
+xx=rows('### XYZ example stages','### Polar output stages',lambda l:bool(re.match(r'\| XYZ-[1-4] \|',l)));assert len(xx)==4
+for cs in xx:
+ r=actualtable[int(cs[0][-1])-1];lms=dot(M1,r[:3]);rt=[root(x) for x in lms];lab=dot(M2,rt);err=[x-y for x,y in zip(lab,r[3:])]
+ for col,calc in zip(cs[1:],(r[:3],lms,rt,lab,r[3:],err)):assert close(ast.literal_eval(col),calc,5.1e-13),(cs[0],col,calc)
+pp=rows('### Polar output stages','## Named sanity witnesses',lambda l:l.startswith('| ') and l.split('|')[1].strip() in labs);assert len(pp)==20
+for cs in pp:
+ L,a,b=labs[cs[0]];ch=math.hypot(a,b);h=math.degrees(math.atan2(b,a))%360 if ch else None;ar=ch*math.cos(math.radians(h or 0));br=ch*math.sin(math.radians(h or 0));err=(0,ar-a,br-b)
+ for col,calc in zip(cs[1:5],(L,a,b,ch)):assert abs(float(col)-calc)<5.1e-13
+ if h is None:assert cs[5]=='undefined'
+ else:assert abs(float(cs[5])-h)<5.1e-10
+ assert close([float(cs[6]),float(cs[7])],[ar,br],5.1e-13) and close(ast.literal_eval(cs[8]),err,5.1e-13)
+print('PASS new16 RGB8-vector,4XYZ6-vector,20polar staged rows against actual source coefficients/table')
+```
+
+```python
+from pathlib import Path
+import subprocess,json,hashlib,collections
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/';C='6a016960a77d9dd2e6478aeb3df96ff6b3d905eb';I='c4032ea08f61d7498d6b4ede025e9a524db1feba';SRC='dffa504e851b03b8e4746f1941068e4cc850b612'
+def git(*a):return subprocess.check_output(['git','-C',str(P),*a])
+def b(r,p):return git('show',r+':'+p)
+def h(x):return hashlib.sha256(x).hexdigest()
+rs=list(map(json.loads,b(C,S+'artifacts/claim-results.jsonl').splitlines()));counts=collections.Counter();refs=0
+for r in rs:
+ sub=r['subject'];p=sub['path'].replace(str(P.parent.parent)+'/', '');rev=sub.get('git_revision',SRC);bb=b(rev,p);assert h(bb)==sub['sha256'];a,z=sub['span']['start'],sub['span']['end'];assert '\n'.join(bb.decode().splitlines()[a-1:z])==sub['assertion']
+ if sub.get('git_blob'):assert git('rev-parse',rev+':'+p).decode().strip()==sub['git_blob']
+ for e in r.get('evidence',[]):
+  counts[e['kind']]+=1
+  if 'git_blob' not in e:continue
+  refs+=1;eb=git('cat-file','blob',e['git_blob']);assert h(eb)==e['sha256'];rev=e.get('git_revision');assert rev,(r['claim_id'],e)
+  p=e['path'];p=S+p if p.startswith('artifacts/') else p;assert b(rev,p)==eb
+  sp=e.get('span')
+  if sp:assert 1<=sp['start']<=sp['end']<=len(eb.splitlines())
+print('PASS71 literal subjects + local revisions/blob/hash/bounds',refs,dict(counts))
+notes=b(C,S+'artifacts/execution-notes.md').decode();rec=notes.split('## Iteration03 intake',1)[1].split('### Full 70-record',1)[0]
+for rev in (I,'33766ea6a707e6107b236966d776c550108fea99'):
+ for p in ('project10-design-foundations/project-plan.md','project10-design-foundations/ledger.md','project10-design-foundations/arc02-theory-and-evidence/arc-plan.md','project10-design-foundations/arc02-theory-and-evidence/ledger.md',S+'slice-plan.md',S+'ledger.md',S+'cdc-verification.md'):
+  bb=b(rev,p);assert h(bb) in rec and git('rev-parse',rev+':'+p).decode().strip() in rec and str(len(bb.splitlines()))+' lines' in rec,(rev,p)
+print('PASS14 fresh/historical plan and ledger object identities/extents')
+outputs={S+p for p in ('artifacts/claim-results.jsonl','artifacts/numerical-reconciliation.md','artifacts/correction-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md')};assert set(git('diff','--name-only',I,C).decode().splitlines())==outputs
+commits=git('rev-list','--reverse',I+'..'+C).decode().splitlines();prev=I
+for commit in commits:
+ assert git('rev-parse',commit+'^').decode().strip()==prev;prev=commit
+ assert set(git('diff-tree','--no-commit-id','--name-only','-r',commit).decode().splitlines())<=outputs
+ assert all(t in git('show','-s','--format=%B',commit).decode() for t in ('Co-authored-by: Codex <noreply@openai.com>','Co-authored-by: Billo AI <ai-engineering@billo.systems>'))
+for p in ('cc-prompt.md','cc-prompt-iteration01.md','cc-prompt-iteration02.md','cc-prompt-iteration03.md','slice-plan.md','cdc-verification.md','artifacts/colour-conversion-proof.md'):assert b(I,S+p)==b(C,S+p)
+assert b(C,S+'artifacts/numerical-reconciliation.md').startswith(b(I,S+'artifacts/numerical-reconciliation.md'))
+print('PASS exact six-output union, five direct commits/trailers, protected inputs, all prior numerical bytes preserved')
+```
+
+```python
+from pathlib import Path
+import subprocess,re
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/';C='6a016960a77d9dd2e6478aeb3df96ff6b3d905eb';K='67419add633ffdefe729f9078452731b2918532d'
+def blob(p):return subprocess.check_output(['git','-C',str(P),'show',C+':'+S+p],text=True)
+code=Path('/private/tmp/p10-i03-replay.py').read_text();num=blob('artifacts/numerical-reconciliation.md');needle="def obj(r,p): return git('show',f'{r}:{p}')";assert needle in code
+mutations=[]
+for col in range(2,10):
+ lines=num.splitlines();start=lines.index('### RGB forward and inverse stages');i=next(i for i in range(start+1,len(lines)) if lines[i].startswith('| middle-gray |'));cells=lines[i].split('|');cells[col+1]=' `(9.,9.,9.)` ';lines[i]='|'.join(cells);mutations.append(('RGB-stage-column-'+str(col),'\n'.join(lines)+'\n'))
+for mode in ('missing','duplicate'):
+ lines=num.splitlines();start=lines.index('### RGB forward and inverse stages');i=next(i for i in range(start+1,len(lines)) if lines[i].startswith('| middle-gray |'))
+ if mode=='missing':del lines[i]
+ else:lines.insert(i,lines[i])
+ mutations.append(('RGB-stage-'+mode,'\n'.join(lines)+'\n'))
+for name,bad in mutations:
+ replacement="def obj(r,p):\n if r==C and p==S+'artifacts/numerical-reconciliation.md': return "+repr(bad.encode())+"\n return git('show',f'{r}:{p}')"
+ path=Path('/private/tmp/p10-i03-probe-'+name+'.py');path.write_text(code.replace(needle,replacement));x=subprocess.run(['python3',str(path)],cwd=P,capture_output=True,text=True);assert x.returncode!=0,(name,x.stdout);print('REJECT',name,'exit',x.returncode,x.stderr.splitlines()[-1])
+print('PASS independent 10 actual-artifact substitutions: eight RGB vectors plus missing and duplicate rows')
+```
+
+```python
+from pathlib import Path
+import subprocess,re,urllib.parse
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/';C='6a016960a77d9dd2e6478aeb3df96ff6b3d905eb'
+def blob(p):return subprocess.check_output(['git','-C',str(P),'show',C+':'+p],text=True)
+fail=[];links=fragments=0
+for f in ('artifacts/claim-results.jsonl','artifacts/numerical-reconciliation.md','artifacts/correction-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md'):
+ raw=blob(S+f);assert raw.endswith('\n') and '\r' not in raw
+ if not f.endswith('.md'):continue
+ t=re.sub(r'(?ms)^ {0,3}(`{3,}|~{3,})[^\n]*\n.*?^ {0,3}\1[ \t]*$','',raw)
+ for dest in re.findall(r'\[[^\]]*\]\(([^)]+)\)',t):
+  if re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:',dest):continue
+  path,sep,frag=dest.partition('#');target=(P/S/f).parent/urllib.parse.unquote(path) if path else P/S/f;target=target.resolve();links+=1
+  try:content=blob(target.relative_to(P).as_posix())
+  except subprocess.CalledProcessError:fail.append((f,dest,'missing'));continue
+  if sep and frag:
+   fragments+=1;slugs={re.sub(r'[^\w-]','',re.sub(r'\s','-',h.strip().lower())) for h in re.findall(r'^#{1,6}\s+(.+?)\s*#*$',content,re.M)}
+   if urllib.parse.unquote(frag) not in slugs:fail.append((f,dest,'fragment'))
+print('Committed six-output LF/CR PASS; local destinations',links,'fragments',fragments,'failures',len(fail))
+for x in fail:print(x)
+assert len(fail)==5 # reproduced historical failure population, not a passing link gate
+```
+
+### CDC authorship self-check and handoff receipt
+
+The reviewer authored exactly eight planning paths: project plan/ledger, Arc02
+plan/ledger, Slice02 plan/ledger/review and the new root Iteration04 prompt.
+Self-check preserves all 13 project/eight arc/nine slice criterion texts and
+parent statuses; child S02-01/03/04/05 done, five open. All CC artifact bytes,
+all four prior prompts, queued Arc06 files and the entire prior CDC review
+remain unchanged. Authored-path scan:116 local destinations/29 fragments,
+no new failure; four existing ledger fragments and the fifth in protected CC
+closing-report remain explicitly assigned to Iteration04. This is author
+consistency validation, not independent acceptance of the next CC return.
+
+The first author path predicate overlooked the untracked new prompt, expecting
+git diff to list it. Corrected the check to seven tracked deltas plus the
+explicit existing new prompt; all eight paths are included in the commit
+allowlist. git diff --check passed. No stage/package/browser/source test is
+claimed for this planning-only author change; arithmetic and CC replay results
+above were executed before authoring and remain tied to their original pins.

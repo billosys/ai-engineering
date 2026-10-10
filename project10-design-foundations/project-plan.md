@@ -116,9 +116,9 @@ are done; A01-02 stays deferred. Arc02 is active;
 is independently closed at `c3d68d7d` for bounded fluid-scale evidence.
 [Slice02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md)
 is open for bounded nonlinear colour-pipeline evidence and selected uniformity/
-analogy claims under DES-007/002. Candidate `590b263c` retains three independently done
-rows and six open; [Iteration03](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration03.md)
-corrects residual F01–F05. Earlier candidate/iteration status remains historical.
+analogy claims under DES-007/002. Candidate `6a016960` has four independently done
+rows and five open; [Iteration04](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration04.md)
+corrects residual comparison/history judgments and five fragment regressions. Earlier candidate/iteration status remains historical.
 No Slice03 advance. R/T/C/L/G execution
 families preserve the complete semantic scope and input re-entry. No
 source-fidelity or release gate is closed.
@@ -244,6 +244,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.27 (2026-10-10): Slice02 Iteration03 reviewed at `6a016960`; intake accepted,
+  four done/five open. Issued five-output Iteration04; numeric evidence protected.
+  All project criteria/gates and queued Arc06 addition retained.
 
 - 1.26 (2026-10-10): Operator adds Arc06 metadata harmony/GitHub rendering and
   P10-12/13. Uses historical 3.2 fallback while Project08 design is unadopted;

@@ -120,10 +120,10 @@ then automatic next-slice opening. Gates and five-iteration correction limits
 remain binding. Source and planning branches retain separate mutation boundaries.
 
 Current assignment: [Slice02 nonlinear colour pipeline](slice02-nonlinear-colour-pipeline/slice-plan.md),
-[Iteration03 CC prompt](slice02-nonlinear-colour-pipeline/cc-prompt-iteration03.md).
-Candidate `590b263c` retains [partial independent acceptance](slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration02-independent-review--2026-10-10):
-S02-03/04/05 done, six rows open; residual F01–F05 correct qualifier/literal
-judgments, actual warrants, RGB replay, handoff labels and identity receipts.
+[Iteration04 CC prompt](slice02-nonlinear-colour-pipeline/cc-prompt-iteration04.md).
+Candidate `6a016960` has [partial independent acceptance](slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration03-independent-review--2026-10-10):
+S02-01/03/04/05 done, five rows open; residual comparison/history judgments,
+handoff labels and five fragment regressions require correction.
 Sound proof/values retained; no Slice03 advance. Earlier candidates/iterations
 remain historical.
 Initial prompt and CC candidate remain preserved.
@@ -135,6 +135,10 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.8 (2026-10-10): Slice02 Iteration03 reviewed at `6a016960`; intake accepted,
+  four child rows done/five open. Issued bounded Iteration04; no family, criterion
+  or input/higher gate changed.
 
 - 1.7 (2026-10-10): Slice02 Iteration02 reviewed at `590b263c`, three done/six open.
   Issued Iteration03 for remaining evidence defects; arc scope/criteria/gates retained.

@@ -19,7 +19,7 @@ empirical perception studies and browser/package implementation remain later wor
 
 CDC Sofie authors and independently reviews; separate CC executes through
 Operator relay. The [initial prompt](cc-prompt.md) is preserved; current assignment
-is [Iteration03](cc-prompt-iteration03.md). Two contributors, Expedited Mode;
+is [Iteration04](cc-prompt-iteration04.md). Two contributors, Expedited Mode;
 CC retains CDC dispositions, proposes the remaining evidence and cannot
 accept/close/advance.
 Arc01 contract packet is `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`;
@@ -299,14 +299,14 @@ Operator removal/deferral, full populations and per-dependent gates are unchange
 One bounded concern with six artifacts has correction headroom; no new model,
 schema, broad suite, source acquisition or empirical study is assigned.
 
-## Current Iteration03 assignment and author readiness
+## Historical Iteration03 assignment and author readiness
 
 Iteration02 was issued at `33766ea6a707e6107b236966d776c550108fea99` and returned
 at `9758f3f81c53272e88632202e12275cefe24a101` plus replay receipt
 `590b263c2bfa55a19435af651c304fb31eab0bcf`.
 [Independent review](cdc-verification.md#iteration02-independent-review--2026-10-10)
 retains S02-03/04/05 done and six rows open. [Iteration03](cc-prompt-iteration03.md)
-is the current CC assignment for residual F01–F05: qualifier/literal coverage,
+was the issued CC assignment for residual F01–F05: qualifier/literal coverage,
 actual original propositions and algebraic locators, RGB intermediate replay,
 handoff labels and full identity/current-limit receipts. No Slice03 advance.
 
@@ -322,7 +322,41 @@ two slots remain before the standing cap. No scope reduction, new schema/runtime
 empirical study or original acquisition is inferred; parent changes record
 status/history only. The full populations and remaining R/T/C/L/G gates persist.
 
+## Current Iteration04 assignment and author readiness
+
+Iteration03 issued at `c4032ea08f61d7498d6b4ede025e9a524db1feba`; returned
+candidate `67419add633ffdefe729f9078452731b2918532d` plus receipts through
+`6a016960a77d9dd2e6478aeb3df96ff6b3d905eb`. Independent
+[review](cdc-verification.md#iteration03-independent-review--2026-10-10)
+accepts S02-01, retains S02-03/04/05 and leaves S02-02/06/07/08/09 open.
+Iteration03 is returned for review and partially accepted; earlier assignments
+remain historical. [Iteration04](cc-prompt-iteration04.md) is active, issued
+2026-10-10 by the commit containing this open/review set.
+
+Author independently executed committed replay, source-based math/stages, 10
+actual numeric substitutions, all local identity/physical joins and exact path/
+protected-byte checks. New algebra/qualifier/literal repairs and 14 authority
+identity receipts pass. Source-grounded residuals: ten generic comparison
+reasons (one self-only reference), six comparisons of distinct musical targets,
+verification-history versus present check, and five missing fragments. CDC
+corrects its earlier overbroad musical-pair interpretation explicitly; no
+criterion is changed. The review contains exact witnesses and recovery log.
+
+Five-output repair: claims, handoff, notes, ledger, closing report. Proof and
+complete numeric record are protected; retain prior arithmetic/controls under
+unchanged exact inputs. No source acquisition/mutation, empirical study,
+new schema/runtime/cases or full corpus/CQ task. Four accepted rows retain
+status; five open rows need independent review. Required manifest includes
+current 13-row project/Arc06 addition, but Arc06 remains queued with no prompt.
+This fourth refinement leaves one further pass before the standing cap.
+Full R/T/C/L/G, original readiness, Arc03–05, Arc06 and release gates remain;
+no Slice03 advancement. Parent status/history updates only, no scope reduction.
+
 ## Version History
+
+- 1.4 (2026-10-10): Iteration03 reviewed at `6a016960`, intake accepted; four
+  done/five open. Issued five-output Iteration04 for comparison/history/link
+  defects, protecting accepted math and retaining all broader gates.
 
 - 1.3 (2026-10-10): Reviewed Iteration02 at `590b263c`; three done/six open.
   Issued Iteration03 for residual literal/warrant/replay/handoff/receipt defects;

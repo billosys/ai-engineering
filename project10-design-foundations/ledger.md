@@ -107,3 +107,14 @@ contract has been changed. Earlier eleven-row summaries are historical.
 |---|---|---|---|---|---|---|---|
 | P10-12 | All design cards have consistent existing metadata aligned with the selected contract, with existing values/extensions preserved and no missing fields invented | Replay complete baseline/current metadata crosswalk, permitted deltas, gap register, body/identity preservation and independently accepted Arc06 union | correctness-grade | Operator metadata addition, 2026-10-10 | open | — | Historical 3.2 fallback while Project08 replacement remains unadopted; missing required information is reported, not fabricated or called full conformance |
 | P10-13 | Metadata and Markdown render correctly and consistently on GitHub for the complete final card population | Inspect exact final-revision hosted repository file views and full per-card coverage/results; repeat affected checks after later composition | serious | Operator GitHub rendering requirement, 2026-10-10 | open | — | Local YAML/GFM parsing is insufficient; Arc06 establishes source rendering, Arc04 preserves package/routes and Arc05 checks final revision |
+
+
+## Arc02/Slice02 Iteration03 review — 2026-10-10
+
+[CDC review](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration03-independent-review--2026-10-10) of `6a016960` accepts S02-01 and retains S02-03/04/05:
+four child rows done/five open. [Iteration04](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration04.md) addresses remaining
+comparison/history/handoff judgments and five fragment regressions. Numeric
+model, values and stage controls independently reproduce and are protected.
+Earlier dispositions remain historical. All parent criteria/statuses, R/T/C/L/G,
+full populations, source/fidelity and later gates remain. No Slice03 or closure;
+queued Arc06 metadata/rendering work and P10-12/13 remain unchanged.
