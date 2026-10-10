@@ -163,9 +163,37 @@ fragments, final LF/no CRLF and `git diff --check`. Independent CDC review remai
 
 ## Assignment history
 
-Current assignment: initial [cc-prompt.md](cc-prompt.md), issued 2026-10-09
-following Operator-accepted Arc01 gate. No previous Arc02 execution or correction
-passes. CC executes this investigation and returns to CDC via the Operator.
+Current assignment: [Iteration01](cc-prompt-iteration01.md), issued 2026-10-09.
+CC executes the focused correction and returns to CDC via the Operator.
+
+- Initial [cc-prompt.md](cc-prompt.md), issue `3a18c51d`, returned as `e0f68c31`:
+  partial CDC acceptance; S01-01/03/05/06/08 done, S01-02/04/07/09 open.
+  Preserved unchanged; the initial assignment is superseded for execution.
+- Iteration01 follows the initial return and [CDC review](cdc-verification.md):
+  repair F01 illustrative-example classification, F02 occurrence omissions and
+  F03 analysis applicability. Active; first refinement pass, not yet executed.
+
+### Iteration01 bounds and author readiness
+
+Original criteria/model/pins/populations remain binding. CC may update only
+claim-results.jsonl, configuration-reconciliation.md, correction-handoff.md,
+execution-notes.md (all under artifacts/), ledger.md evidence/notes and
+closing-report.md: six paths. Proof, accepted example, sources, plans, prompts,
+review and every other path are protected. Numerical tables/formulas/deltas
+remain unchanged; evidence pointer SHA/blob/ranges may update to the actual
+revised analysis artifact bytes. Preserve original33 IDs and append omissions;
+there is no final-count oracle. All done/open statuses are CDC-owned.
+
+CDC freshly read all297 witness lines and reviewed every emitted result's
+context/dimensions/evidence; independently reproduced actual84 cases and52
+nonzero deltas. The review supplies exact source distinctions and repair shapes.
+The prompt-authoring/iteration/row-closure rules support a focused evidence repair
+with full source-to-output and semantic pointer inspection, not new tooling or
+source acquisition. Checks distinguish valid alternative examples from actual
+same-default conflicts and missing/irrelevant witnesses from valid ones. No
+unresolved design choice is delegated; new contradictory evidence is reported.
+Required reading budget is bounded to current contracts, changed outputs and
+all nine spans, with unchanged proof/example retained for affected use.
 
 ## Author readiness — 2026-10-09
 
@@ -185,6 +213,9 @@ review/iteration headroom; no full corpus/books or broad source acquisition is
 assigned. No unresolved design choice is silently delegated to CC.
 
 ## Version History
+
+- 1.1 (2026-10-09): Initial CDC review of e0f68c31 accepted five rows;
+  issued focused Iteration01 for F01–F03. No scope/model/source-gate amendment.
 
 - 1.0 (2026-10-09): Opened first Arc02 slice for bounded source-independent
   fluid-scale proof and numerical/correction evidence; all nine rows open.

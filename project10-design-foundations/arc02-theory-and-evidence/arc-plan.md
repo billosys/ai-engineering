@@ -118,13 +118,19 @@ active: exact-path commits, independent review, closure when evidence permits,
 then automatic next-slice opening. Gates and five-iteration correction limits
 remain binding. Source and planning branches retain separate mutation boundaries.
 
-Current assignment: [Slice01 CC prompt](slice01-fluid-scale-arithmetic/cc-prompt.md),
-initial pass. All eight arc rows and nine slice rows start open. Slice01 creates
-supporting evidence under its own `artifacts/`; no close or verification record
-is pre-created. After its independent close, CDC details a ready R/T execution
-unit under this roadmap; input-blocked populations remain explicit.
+Current assignment: [Slice01 Iteration01](slice01-fluid-scale-arithmetic/cc-prompt-iteration01.md).
+Initial candidate `e0f68c31` received [partial CDC acceptance](slice01-fluid-scale-arithmetic/cdc-verification.md):
+five slice rows done/four open; all eight arc rows remain open. The original
+Slice01 prompt remains historical and unchanged. The same-slice correction
+repairs context/occurrence/evidence defects without changing this roadmap.
+After Slice01's independent close, CDC details a ready R/T execution unit;
+input-blocked populations remain explicit.
 
 ## Version History
+
+- 1.1 (2026-10-09): Slice01 initial review surfaced context/coverage/evidence
+  defects; recorded partial acceptance and Iteration01, retaining all family
+  populations, source gates and sequencing. Slice01 remains open.
 
 - 1.0 (2026-10-09): Opened after Operator-accepted Arc01 composition/closure;
   retained full R/T/C/L/G work, complete input gates and all 233/eight-live/16-DES
