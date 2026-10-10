@@ -89,8 +89,8 @@ a bulk relocation or transformation merely from the naming clarification.
 
 ## Arc roadmap
 
-Arc01 is active with Slice01 independently accepted. Remaining arcs are planned; detail
-each near execution after resolving its dependencies. The active
+Arc01 is closed with Operator-accepted composition and explicit source-readiness
+carryover. Arc02 is next; detail each remaining arc near execution. The closed
 [Arc01 plan](arc01-portable-contract/arc-plan.md) supplies the slice breakdown.
 
 | Arc | Capability | Dependencies | Audit coverage |
@@ -101,15 +101,16 @@ each near execution after resolving its dependencies. The active
 | arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 | DES-010, DES-013, DES-014; all repeated claims |
 | arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
 
-Current status: Arc01 active; Slice01 closed and Slice02 closed with eight
+Current status: Arc01 closed by Operator composition acceptance at `38b66d0d`; Slice01 closed and Slice02 closed with eight
 independently done criteria and S02-08 Operator-deferred. Local acceptance remains
 `759ce2dd`/`88c1298f`; the Operator ordered Slice03 opening on 2026-10-09.
 Slice03 is closed: all nine criteria independently done at `0b55afd5` with seven
 prior dispositions retained after delta review; see its
 [CDC acceptance](arc01-portable-contract/slice03-contract-composition-and-handoff/cdc-verification.md#iteration02-independent-verification-and-slice03-closure--2026-10-09).
 All three Arc01 slices are closed; the [composition packet](arc01-portable-contract/closing-report.md)
-is assembled and self-checked, with the attributed independent/Operator gate
-pending. No source-fidelity or release gate is closed.
+was accepted by the Operator on 2026-10-09 (“yup, accepted!”). A01-04/05
+are done; A01-02 stays deferred. Arc02 opening follows automatically. No
+source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
 planning composition. Source readiness carries to Arc02/P10-11 before dependent
 source-fidelity acceptance and full-corpus/release completion. Expedited Mode
@@ -168,8 +169,8 @@ Slice03 in [its design](arc01-portable-contract/slice03-contract-composition-and
 seven scoped formulations with their full caveats, a short contextual profile
 before styling, the accepted local claim-result method, and one diagnostic
 20–80rem configuration. These are planning decisions for composition, not new
-scientific evidence or adopted live teaching. Independent slice/arc composition
-and the Operator's higher-scale gate still apply. Slice03 allocates all 233 cards,
+scientific evidence or adopted live teaching. Independent slice composition and the Operator's Arc01 composition gate
+are satisfied at their stated planning scope; source/semantic/release gates remain. Slice03 allocates all 233 cards,
 eight live files and relevant finding/reconciliation work without source mutation.
 
 ## Workflow and acceptance
@@ -201,6 +202,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.19 (2026-10-09): Arc01 Operator composition gate accepted at `38b66d0d`;
+  closed the arc, accepted P10-01 planning authority and advanced preparation to
+  Arc02 under Expedited Mode. P10-11/full-corpus/live/release obligations unchanged.
 
 - 1.18 (2026-10-09): Arc01 final-child closure surfaced formal composition;
   linked the assembled report and pending independent/Operator gate. Existing

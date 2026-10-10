@@ -1,6 +1,6 @@
 ---
 arc: arc01-portable-contract
-status: active
+status: closed
 depends-on: [project09-design-audit evidence intake]
 ---
 
@@ -93,8 +93,9 @@ gate. Do not pre-create close or verification records.
 Current assignment: no remaining CC slice assignment. Slice03 iteration02
 `0b55afd5` independently accepted; all nine criteria done and child closed. All three
 Arc01 slices are closed. The [composition packet](closing-report.md) is assembled
-and self-checked; its attributed independent or Operator gate is pending.
-Source-readiness deferral remains explicit.
+and accepted by the Operator at `38b66d0d` on 2026-10-09 (“yup, accepted!”).
+Arc01 is closed: A01-04/05 done, A01-02 deferred. Source-readiness deferral
+remains explicit; Arc02 preparation follows under Expedited Mode.
 Slice02 is closed with local acceptance at `759ce2dd`/`88c1298f`
 and the Operator's explicit S02-08 deferral. Slice03 is authorized for contract/
 method composition and full Arc02 allocation. The former “Slice02 original
@@ -119,6 +120,10 @@ scope, source baseline, evidence requirements or adopted design; local formattin
 and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
+
+- 1.16 (2026-10-09): Operator accepted assembled packet `38b66d0d` (“yup,
+  accepted!”); closed Arc01 with four done/one deferred rows. Source readiness
+  remains Arc02/P10-11; no scope or evidence waiver.
 
 - 1.15 (2026-10-09): Final child closure surfaced formal composition assembly;
   added closing-report.md with full child/arc walk, end-to-end joins and an

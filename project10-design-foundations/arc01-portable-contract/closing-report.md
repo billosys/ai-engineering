@@ -2,10 +2,12 @@
 
 ## Current verdict and authority — 2026-10-09
 
-**Composition packet ready for the independent/Operator gate; Arc01 remains
-active.** Sofie (CDC) assembled and self-checked this report against child-close
-commit `9717f27a`. This report is not independent acceptance of its own assembly.
-A01-04/05 remain open. No next arc or CC assignment is opened by this packet.
+**Accepted by the Operator; Arc01 closed.** The Operator accepted reviewed
+packet `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f` with “yup, accepted!”
+on 2026-10-09. A01-04/05 are done; A01-02 remains deferred. See the
+[attributed gate and final walk](#operator-composition-gate-and-arc01-closure--2026-10-09).
+The assembly, proposed walk and pending-gate text below are preserved as
+historical pre-acceptance evidence; CDC self-checks are not relabeled independent.
 
 The [arc capability](arc-plan.md#capability-and-authority) is an executable
 portable-skill contract and complete existing-corpus review preparation:
@@ -338,3 +340,40 @@ resolved; final LF/no CRLF and `git diff --check` pass. Slice03 closure's eight
 committed paths were also checked for working/committed byte equality and its
 printed committed-byte receipt replay passed after commit. No package/build
 checks apply to these planning-only changes.
+
+## Operator composition gate and Arc01 closure — 2026-10-09
+
+Gate authority: the human Operator in the CDC planning conversation, separate
+from Sofie (CDC), who assembled the packet. Reviewed packet:
+`38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`. The immediately preceding request
+was to accept Arc01's planning composition and executable gated Arc02 handoff,
+while retaining S02-08 as deferred and P10-11 open. The Operator replied:
+
+> yup, accepted!
+
+This is attributed **Operator approval**, not a claim that the Operator executed
+the printed checks or that CDC's self-checks became independent reproduction.
+The accepted composition demonstration and independent child evidence remain
+at their stated strengths. This satisfies the Two-Contributor arc gate.
+
+| Row | Final status | Evidence and limit |
+|---|---|---|
+| A01-01 | done | Retained independent Slice01 acceptance; intake joined to composition. |
+| A01-02 | deferred | Unmet original readiness explicitly carried to Arc02 CDC + Operator/P10-11; per-dependent-scope and full-corpus/release re-entry unchanged. |
+| A01-03 | done | Retained independent Slice03 acceptance and complete allocation. |
+| A01-04 | done | Operator accepts the demonstrated planning portability behavior and selected scoped contract; actual live removal remains later work. |
+| A01-05 | done | Operator accepts the explicit input/action/method/full-allocation/stage handoff; missing evidence is owned, not waived. |
+
+All five original criteria accounted for: four done and one Operator-deferred;
+no dropped or no-op row. All three children closed, with 24 done / one deferred
+criterion among 25. Arc01 is closed. CDC automatically details Arc02 and opens
+its first bounded slice under the existing Expedited Mode. No source mutation,
+acquisition, capture, conversion, semantic acceptance, browser/package result or
+release follows from this composition approval.
+
+Project bubble-up: P10-01's approved scope/compatibility/live-authority criterion
+is satisfied by the recorded Operator decisions, selected contract and this
+composition gate. P10-02–11 remain open; source-readiness P10-11 remains binding.
+Arc02 must retain every original card/live-file/finding allocation, explicit
+input actions and all five review dimensions. No project scope amendment or
+new waiver is made.

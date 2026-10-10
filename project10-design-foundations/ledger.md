@@ -1,18 +1,18 @@
 # Project10 Ledger
 
-All release criteria are open. The shared audit and synthesis are planning
-inputs; they do not establish delivery or acceptance of this project.
+P10-01 planning authority is approved; P10-02–11 remain open. The shared audit
+and synthesis are planning inputs; no project delivery or release is accepted.
 
 Arc01/Slice01 opened on 2026-10-09. Its
 [slice ledger](arc01-portable-contract/slice01-scope-and-portability-contract/ledger.md)
 tracks the first contract/inventory packet, independently accepted by CDC at
 `9cc20338` on 2026-10-09. All seven slice rows are done; this does not close
-any project release criterion. Source/semantic readiness and final contract
-wording adoption remain later work.
+any project release criterion. Source/semantic readiness remains later work. Final planning contract wording
+is adopted by the Operator composition gate below; live corrections remain open.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
-| P10-01 | Corpus scope, C&B treatment, compatibility and live-skill authority are explicit and approved | Inspect Arc01 decisions and Operator record against the project boundaries | serious | Synthesis; DES-001/013/015 | open | [Recorded Operator decisions](project-plan.md#recorded-operator-decisions): full-corpus review, C&B removal and bug-correction classification | These scope decisions are settled; the portable live-skill contract still needs detail |
+| P10-01 | Corpus scope, C&B treatment, compatibility and live-skill authority are explicit and approved | Inspect Arc01 decisions and Operator record against the project boundaries | serious | Synthesis; DES-001/013/015 | done | **Operator-approved planning authority**; [scope decisions](project-plan.md#recorded-operator-decisions); [selected contract](arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/composed-contract.md); [Arc01 gate](arc01-portable-contract/closing-report.md#operator-composition-gate-and-arc01-closure--2026-10-09) | Scope/C&B/compatibility and selected portable contract are explicit and Operator-approved at `38b66d0d`; no source/semantic/live/release completion. |
 | P10-02 | Live skill/package contain no retained C&B profile or case study, and generic tasks preserve the supplied identity | Inspect the complete live payload; run fresh-context generic and existing-brand specimens | correctness-grade | DES-001; Operator removal decision | open | — | Preserve portable knowledge; C&B-specific history remains in Git only |
 | P10-03 | Principles and worked examples are consistent, numerically correct and supported within stated limits | Reproduce interpolation/clamp/colour cases; reconcile repeated claims and source register | correctness-grade | DES-002–005/007–009/012 | open | — | No automatic beauty or accessibility guarantees |
 | P10-04 | Retained examples and workflows meet the stated accessibility and typesetting floor | Check complete colour pairs, keyboard/focus obligations, text enlargement/reflow, motion and font-failure specimens | serious | DES-005/006/009/011 | open | — | Report actual environments and unrun checks |
@@ -44,3 +44,9 @@ Arc01 [composition packet](arc01-portable-contract/closing-report.md) assembled
 and self-checked after final-child closure `9717f27a`. A01-04/05 remain open
 for independent/Operator gating; A01-02/S02-08 remain deferred and P10-11 open.
 All project criteria retain their original wording and open status.
+
+## Operator-accepted Arc01 roll-up — 2026-10-09
+
+The earlier pending-gate notes are historical. Operator “yup, accepted!” accepts
+packet `38b66d0d`: Arc01 closed, four rows done/one deferred; P10-01 done.
+P10-02–11 remain open. Arc02 CDC + Operator retain all source re-entry duties.
