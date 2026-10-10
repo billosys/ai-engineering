@@ -1,16 +1,25 @@
 # Slice03 CDC independent verification
 
-## Current verdict — initial assignment, 2026-10-09
+## Current verdict — iteration01, 2026-10-09
 
-**Partial acceptance; Slice03 remains open.** CDC Sofie independently reviewed
-CC candidate `c58c89e486517540607dbc6364f8646b2b52abe2`, direct child of issuing
-`c033247595df43f4c41b1f6ab0c40ee816fffbdf`, against the immutable initial
-[assignment](cc-prompt.md), project/arc/slice plans and nine ledger criteria.
-SOURCE remains `dffa504e851b03b8e4746f1941068e4cc850b612` on main.
-S03-02/03/04/05/08 are independently **done** for this planning packet;
-S03-01/06/07/09 remain **open**. Four bounded corrections are assigned in
-[iteration01](cc-prompt-iteration01.md). No source readiness, semantic review,
-Arc01 closure, Arc02 opening or release criterion is accepted.
+**Partial acceptance; Slice03 remains open.** CDC independently reviewed
+`ee7b875793a127b616c1388bc059ae28aaabfcd6`, direct child of iteration01 issue
+`92120fefaa15373327ab1f271fbd9a68b3282601`.
+S03-02/03/04/05/08 retain the initial independent acceptance; S03-06/07 are
+newly done after the corrected handoff review. S03-01/09 remain open for F05,
+two inaccurate counts in the fresh intake receipt. Current CC execution is
+[iteration02](cc-prompt-iteration02.md), a receipt-only correction; no source or
+semantic scope changes. SOURCE remains dffa504e851b03b8e4746f1941068e4cc850b612.
+Arc01 closure/Arc02 opening and all original-readiness/release gates remain pending.
+
+### Historical initial verdict — 2026-10-09
+
+The following initial findings, row walk and bubble-up precede the dated
+iteration01 review below; their handoff-time statuses are historical.
+
+Initial review of c58c89e accepted S03-02/03/04/05/08 and issued iteration01 for
+S03-01/06/07/09 / F01–04. The initial findings, exact replay and evidence below
+remain at their original candidate; they are not a current four-open verdict.
 
 ## Reproduced checks and limits
 
@@ -268,3 +277,132 @@ remain byte-equal to c58c89e. The code extracted from this verification record
 was rerun as /private/tmp/project10-s03-from-record.py:exit0 with the same bounded
 results and diagnostic findings. `git diff --check` passed. No skill/package
 content changed; Make/browser/source-fidelity gates are unrun by scope.
+
+## Iteration01 independent review — 2026-10-09
+
+### Scope, actual replay and evidence retention
+
+Read active project/arc/slice plans and ledgers, exact iteration01 assignment,
+complete changed handoff and current execution-note/closing/ledger addenda;
+inspected the entire selected active verifier before execution. The candidate
+changes exactly the four assigned paths, has the exact issuing parent and both
+coauthor trailers; committed diffcheck passes. Protected contract/example/card
+JSONL/guide allocation, issued prompts, CDC record, prior slices/audit and parent
+plans remain byte-equal to issue through the exact committed path comparison.
+Source HEAD/branch and tracked/index are still clean at the source pin. Untracked
+paths are present but content preservation remains attested, not hash-verified.
+
+Replayed the active code from literal ee7b8757 Git bytes, replacing only the
+HEAD selector with that candidate and routing planning link-target text reads
+to that committed object. Exit0: all233 literal card/map/source hash/caveat/gate
+joins,47 emitted groups,8 emitted live-file rows,161 heading objects,460 repeat
+candidate objects,16 DES rows; all84 printed-table/CSS rational comparisons,
+max3/250000px at(20,1600,0); exact six-column action header and8 byte-equal rows;
+5 prior-done/4 proposed-open statuses and all9 criteria unchanged; historical
+notes/closing retained as exact prefixes;17 links/10 fragments,EOF/noCRLF.
+**Nine** negative controls executed:5 inherited and4 new (altered live coverage,
+group membership,printed table coefficient,shown CSS coefficient). The relayed
+claim of “ten new” is not the committed check population; no unseen control is
+counted. Old-float discrepancy is correctly diagnostic only (0.000018px/7 values).
+
+F01 is resolved: actual emitted numeric/coverage/member data consumed by the
+same discriminating predicates. F02 resolved: exact table header/body restored.
+F03 resolved: independently ready inputs for each specific dependent result,
+unrelated missing inputs blocked,whole P10-11/full-corpus gate open; both
+hypothetical contrasts correctly preserve this boundary. Stage3 is consistent.
+No actual input is acquired or accepted. F04's graph24–118 receipt matches the
+source hash494c6798d3d3e106fe24534aebc90478440776677c427b773ad347a7fbc1adc0;
+required Slice02 extents/reference hash reconcile. But the same fresh intake
+addendum introduces two false full-document counts, so intake is not yet accepted.
+
+Retention: unchanged S03-02/03/04/05 artifacts and substantive dependencies match
+the independently accepted c58c89e packet; no finding undermines those checks.
+Fresh numeric/whole-file/allocation replay strengthens retained evidence; it is
+identified above separately. S03-08 has fresh four-path source/protected/link/
+EOF/diff evidence as well as retained initial protected-input evidence. New
+handoff changes require and receive independent review for S03-06/07. No retained
+result becomes original fidelity,full body semantics or arc composition.
+
+### F05 — inaccurate fresh intake counts (minor; S03-01/09)
+
+The [iteration01 intake](artifacts/execution-notes.md#iteration01-actual-intake-and-f04-recovery)
+claims Slice03 slice-plan.md is244 lines and cc-prompt-iteration01.md is221 lines
+at the exact issuing object92120fef. Actual complete blobs are **246** and **127**
+lines. Their hashes are respectively100afd4511fee307e4f2467ad7451224b631889b06e3121d0e39dd0ff76331f5
+and f0894fc8768099ae9b7177c77bd62ca5bc51f096251ab1173e361da6b4b5ebd2.
+Other checked parent/document counts match. Counts prove neither reading nor
+semantic acceptance; these false extents prevent accepting the requested exact
+intake evidence. No mathematical/handoff defect is inferred from this discrepancy.
+
+Iteration02 freshly reads both complete pinned documents and records actual
+path/revision/hash/range/count plus a brief scoped readback. Preserve earlier
+receipt as historical; do not invent earlier actual read ranges or change the
+prompt/plan to fit its numbers. Check declared metadata against the pinned
+blobs, reject244/221 with the same predicate, and update the current return.
+Substantive artifacts and current artifact verifier remain unchanged.
+
+### Current nine-row walk
+
+| Row | CDC status | Evidence / remaining work |
+|---|---|---|
+| S03-01 | open | F04 requested section recovery matches; F05 fresh full-document receipt counts need correction. |
+| S03-02 | done | Initial independent composition/identity/caveat acceptance retained; contract unchanged. |
+| S03-03 | done | Actual example unchanged; fresh84 table/CSS cases and mutation controls reproduce max3/250000px. |
+| S03-04 | done | All233 allocations/raw fields/gates unchanged; fresh full population/group/negative replay passes. |
+| S03-05 | done | Whole-file projection unchanged; fresh8/47 emitted records,161/460 objects and16 owners pass. |
+| S03-06 | done | Header/actions/populations/dependent-scope and global gates independently reviewed; no real source readiness accepted. |
+| S03-07 | done | Corrected stage/handoff gates and two contrasts compose with unchanged contract/method/allocations; original input gaps explicit. |
+| S03-08 | done | Fresh exact4-path committed scope/parent/trailers/protected/source/links/EOF/diff evidence. |
+| S03-09 | open | Accurate current return and actual negatives reviewed; F05 intake discrepancies require preserved corrective receipts/row walk. |
+
+### Executable frozen candidate replay
+
+Executed Python3 code below via /private/tmp/project10-s03-i01-review-pinned.py;
+exit0 with the outputs described above and the observed246/127 metadata.
+Diagnostic F05 remains unresolved despite the bounded verifier's success.
+
+```python
+from pathlib import Path
+import subprocess, hashlib
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+C='ee7b875793a127b616c1388bc059ae28aaabfcd6'
+I='92120fefaa15373327ab1f271fbd9a68b3282601'
+R='project10-design-foundations/arc01-portable-contract/slice03-contract-composition-and-handoff/'
+def blob(rev,path):return subprocess.check_output(['git','-C',str(P),'show',rev+':'+path])
+notes=blob(C,R+'artifacts/execution-notes.md').decode()
+body=notes.split('## Iteration01 active verifier and receipts',1)[1].split('```python\n',1)[1].split('\n```',1)[0]
+needle="head=git(['git','rev-parse','HEAD'])"
+assert body.count(needle)==1
+body=body.replace(needle,'head='+repr(C))
+old_read=Path.read_text
+def committed_text(path,encoding=None,errors=None):
+ try:rel=path.resolve().relative_to(P)
+ except ValueError:return old_read(path,encoding=encoding,errors=errors)
+ return blob(C,str(rel)).decode(encoding or 'utf-8',errors or 'strict')
+Path.read_text=committed_text
+exec(compile(body,'pinned-iteration01-candidate-replay','exec'),{})
+for name,expected_count,expected_hash in [
+ ('slice-plan.md',246,'100afd4511fee307e4f2467ad7451224b631889b06e3121d0e39dd0ff76331f5'),
+ ('cc-prompt-iteration01.md',127,'f0894fc8768099ae9b7177c77bd62ca5bc51f096251ab1173e361da6b4b5ebd2')]:
+ b=blob(I,R+name);count=len(b.decode().splitlines());h=hashlib.sha256(b).hexdigest()
+ assert count==expected_count and h==expected_hash
+ print('OBSERVED intake metadata',name,count,h)
+print('FINDING F05: fresh receipt claims244/221; actual pinned extents246/127; no independent acceptance of complete intake yet')
+
+```
+
+### Bubble-up and next assignment
+
+Seven Slice03 rows now independently done; two receipt/return rows remain open.
+No scope/denominator/workflow change. Source/semantic/browser/package/global
+checks remain unrun or blocked as before. No arc close packet is created while
+this child remains unaccepted. The only new assignment is receipt-only
+iteration02, through the Operator; S02-08/A01-02/P10-11 ownership remains intact.
+
+### Iteration01 review packet checks
+
+Eight exact CDC planning paths; nine unchanged criterion/verify/significance/
+origin fields, seven done/two open. All six CC artifacts, closing report and
+both issued prompts are byte-equal to ee7b8757. Local links/EOF check:61
+destinations/21 fragments, none unresolved; final newline/noCRLF. Diffcheck
+passed. No source or package content changed.

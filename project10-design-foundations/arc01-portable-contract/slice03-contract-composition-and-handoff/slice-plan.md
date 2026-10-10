@@ -19,8 +19,9 @@ implementation, source acquisition, full semantic review or release acceptance.
 Two contributors: Sofie (CDC) selects design and independently reviews; a separate
 CC context executes [cc-prompt.md](cc-prompt.md), relayed by the Operator.
 Expedited Mode applies. All nine rows started open; no verification or closing
-record was pre-created. Initial CDC review now accepts five rows and assigns
-iteration01 for four open rows; see cdc-verification.md. CC commits only its eight listed outputs and proposes
+record was pre-created. Initial review accepted five rows; iteration01 review at `ee7b8757` accepts
+S03-06/07. Seven rows done; S03-01/09 remain open for iteration02/F05; see
+cdc-verification.md. CC commits only its eight listed outputs and proposes
 completion; CDC acceptance and formal Arc01 composition remain separate.
 
 ## Inputs and preservation
@@ -186,19 +187,23 @@ CDC review before closure. Arc01 composition remains a later attributed gate.
 
 ## Assignment history
 
-Current assignment: [cc-prompt-iteration01.md](cc-prompt-iteration01.md), issued
-2026-10-09 for F01–04 / S03-01/06/07/09. CC executes this bounded correction;
-no source authority or slice closure is assigned.
+Current assignment: [cc-prompt-iteration02.md](cc-prompt-iteration02.md), issued
+2026-10-09 for F05 / S03-01/09. Receipt-only correction; no source authority
+or slice closure assigned. Previous execution was iteration01, now reviewed.
 
 - Initial [cc-prompt.md](cc-prompt.md), issued 2026-10-09 at `c0332475` after
   predecessor closure `8e0be8d2`: CC returned `c58c89e`; CDC independently accepted
   S03-02/03/04/05/08 and found intake/verifier/handoff evidence defects. Disposition:
   returned/reviewed, superseded for current execution; immutable initial preserved.
 - Iteration01, issued 2026-10-09, predecessor initial prompt/candidate `c58c89e`:
-  active, not yet executed. Restore source-action header, align dependent-scope
+  returned at `ee7b8757` and independently reviewed; superseded for execution.
+  Restored source-action header, aligned dependent-scope
   re-entry, consume printed artifact in the verifier and recover incomplete reads.
-  Four exact output files; five independent accepted rows retain revision-specific
-  evidence. One assigned correction pass; no earlier Slice03 refinements.
+  Four exact output files; S03-06/07 newly accepted, earlier five retained.
+  Fresh intake introduced F05 counts; S03-01/09 still open.
+- Iteration02 [cc-prompt-iteration02.md](cc-prompt-iteration02.md), issued2026-10-09,
+  predecessor iteration01/ee7b8757: active, not yet executed; three receipt/return
+  outputs. Second assigned correction pass; substantive artifacts unchanged.
 
 ## Author readiness — 2026-10-09
 
@@ -237,6 +242,10 @@ failed; it was rerun from SOURCE. None is counted as a successful original read.
 No consequential choice, source acquisition or runtime design is left to CC.
 
 ## Version History
+
+- 1.2 (2026-10-09): Slice03 iteration01 `ee7b8757` independently accepted for
+  handoff rows S03-06/07; seven done/two open. Issued receipt-only iteration02
+  for F05 inaccurate fresh counts; substantive design/source/arc gates unchanged.
 
 - 1.1 (2026-10-09): CDC reviewed initial Slice03 `c58c89e`; independently accepted
   five rows and issued iteration01 for four open rows/F01–04. Planning scope,
