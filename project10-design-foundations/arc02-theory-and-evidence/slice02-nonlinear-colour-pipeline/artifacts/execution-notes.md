@@ -782,8 +782,9 @@ def stage_ok(rows_):
  mm={r[0]:r for r in rows_}
  for case in cases:
   name,kind,x=case; row=mm[name]
-  if row[1]!=kind or not close(vec(row[2]),x,0):return False
+  if row[1]!=kind:return False
   expected=stage_values(row,case)
+  if not close(vec(row[2]),expected[0],5.01e-12):return False
   if any(not close(vec(row[j+2]),v,5.01e-12) for j,v in enumerate(expected)):return False
  return True
 assert stage_ok(stagerows)
@@ -861,3 +862,8 @@ Path('/tmp/iteration03-replay.py').write_text(s[b:e]+'\n')
 PY
 python3 /tmp/iteration03-replay.py
 ```
+
+
+### Iteration03 replay recovery — stage input comparison
+
+The first committed-notes replay exited 1 at the all-RGB-stage positive assertion. A bounded diagnostic showed that each stored stage input correctly contains decoded linear RGB, while the initial new predicate mistakenly compared that stage field to the encoded case tuple. This was a checker defect, not a candidate table discrepancy: all eight displayed vectors otherwise matched the source-derived expectations at presentation precision. The predicate now compares the stage input to the decoded/linear expected vector at the fixed 5.01e-12 presentation tolerance; the original case table continues to check exact encoded/linear input tuples. The corrected code is recorded above and is rerun from a committed notes blob below. No candidate data or tolerances changed.
