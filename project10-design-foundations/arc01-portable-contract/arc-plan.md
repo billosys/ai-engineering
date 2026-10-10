@@ -28,7 +28,7 @@ Project09 audit artifacts are consumed at planning commit
 |---|---|---|
 | slice01-scope-and-portability-contract | Pin all cards/live files/local sources; identify source gaps; produce the concrete portable contract and change map | Closed; CDC accepted `9cc20338`; all seven rows done |
 | slice02-source-and-review-readiness | Resolve acquisition/preparation needs and establish the claim-level review procedure, locators and complete coverage accounting | Closed; eight rows done; S02-08 Operator-deferred to Arc02/P10-11 |
-| slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Open; [initial CC assignment](slice03-contract-composition-and-handoff/cc-prompt.md); explicit Arc02/P10-11 carryover |
+| slice03-contract-composition-and-handoff | Compose the portable contract and review method, settle proposed wording/configuration, and prepare bounded Arc02 execution groups with traceable coverage | Open; five rows CDC-done at `c58c89e`; [iteration01](slice03-contract-composition-and-handoff/cc-prompt-iteration01.md) for four open rows; explicit Arc02/P10-11 carryover |
 
 Slice01 is closed and Slice02 is detailed. Slice02 must follow actual source findings: record
 missing inputs and obtain necessary evidence without pretending local Markdown
@@ -90,7 +90,10 @@ Slice acceptance uses `cdc-verification.md`, written only after independent revi
 Arc closure needs its own composition demonstration and attributed independent
 gate. Do not pre-create close or verification records.
 
-Current assignment: [Slice03 cc-prompt.md](slice03-contract-composition-and-handoff/cc-prompt.md).
+Current assignment: [Slice03 iteration01](slice03-contract-composition-and-handoff/cc-prompt-iteration01.md).
+CDC initial review accepted S03-02/03/04/05/08 at `c58c89e`; S03-01/06/07/09
+remain open for bounded intake/checker/handoff corrections. Formal arc composition
+remains pending after all slice criteria are resolved.
 Slice02 is closed with local acceptance at `759ce2dd`/`88c1298f`
 and the Operator's explicit S02-08 deferral. Slice03 is authorized for contract/
 method composition and full Arc02 allocation. The former “Slice02 original
@@ -115,6 +118,10 @@ scope, source baseline, evidence requirements or adopted design; local formattin
 and ephemeral query mechanics are CC discretion within the assignment.
 
 ## Version History
+
+- 1.12 (2026-10-09): Slice03 initial review at `c58c89e` accepted five rows;
+  issued iteration01 for F01–04/four open rows. Correct printed arithmetic/full
+  allocation retained; source readiness and formal arc composition stay gated.
 
 - 1.11 (2026-10-09): Opened Slice03 contract/method composition and complete
   Arc02 allocation under Operator deferral; selected current planning design,

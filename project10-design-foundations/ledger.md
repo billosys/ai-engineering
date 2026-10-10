@@ -35,6 +35,9 @@ all release rows remain open; the deferral is not original-fidelity evidence.
 | P10-11 | Deferred S02-08 source identity, accessibility and original/prepared locator/fidelity evidence are sufficient for all dependent full-corpus source-faithfulness checks | Inspect exact original editions/page bases, immutable captures/lineage, completeness/fidelity mappings and independent readiness results against all affected cards | correctness-grade | Operator S02-08 deferral, 2026-10-09 | open | [Unmet S02-08](arc01-portable-contract/slice02-source-and-review-readiness/ledger.md); [required inputs/re-entry](arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md) | Arc02 CDC + Operator own resolution before accepting dependent source-fidelity results and full-corpus/release completion; preserve 150 book-backed and 83 web-backed cards, not a smaller population |
 
 Slice03 now carries P10-11 into its concrete Arc02 allocation/handoff:
-[opened assignment](arc01-portable-contract/slice03-contract-composition-and-handoff/cc-prompt.md).
+[current iteration01](arc01-portable-contract/slice03-contract-composition-and-handoff/cc-prompt-iteration01.md).
+Five Slice03 planning rows passed independent review at `c58c89e`; four remain
+open for intake/verifier/handoff corrections in its
+[CDC record](arc01-portable-contract/slice03-contract-composition-and-handoff/cdc-verification.md).
 This is planning ownership; the successor gate remains open until actual inputs
 and independent readiness evidence satisfy the retained requirement.

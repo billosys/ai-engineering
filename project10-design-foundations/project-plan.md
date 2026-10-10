@@ -104,7 +104,10 @@ each near execution after resolving its dependencies. The active
 Current status: Arc01 active; Slice01 closed and Slice02 closed with eight
 independently done criteria and S02-08 Operator-deferred. Local acceptance remains
 `759ce2dd`/`88c1298f`; the Operator ordered Slice03 opening on 2026-10-09.
-Slice03 is open with [its CC assignment](arc01-portable-contract/slice03-contract-composition-and-handoff/cc-prompt.md).
+Slice03 remains open: CDC accepted five rows at `c58c89e` and issued
+[iteration01](arc01-portable-contract/slice03-contract-composition-and-handoff/cc-prompt-iteration01.md)
+for four intake/verifier/handoff rows. The printed arithmetic and complete
+allocation passed independent checks; no source-fidelity gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
 planning composition. Source readiness carries to Arc02/P10-11 before dependent
 source-fidelity acceptance and full-corpus/release completion. Expedited Mode
@@ -196,6 +199,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.15 (2026-10-09): Slice03 initial `c58c89e` independently accepted for five
+  planning rows; issued iteration01 for four evidence/handoff rows. Arc01 stays
+  active; no scope, source, composition or release gate changed.
 
 - 1.14 (2026-10-09): Opened Arc01/Slice03 after Operator-deferred Slice02
   closure `8e0be8d2`; selected bounded planning choices and full gated allocation.

@@ -18,8 +18,9 @@ implementation, source acquisition, full semantic review or release acceptance.
 
 Two contributors: Sofie (CDC) selects design and independently reviews; a separate
 CC context executes [cc-prompt.md](cc-prompt.md), relayed by the Operator.
-Expedited Mode applies. All nine new rows start open; no verification or closing
-record is pre-created. CC commits only its eight listed outputs and proposes
+Expedited Mode applies. All nine rows started open; no verification or closing
+record was pre-created. Initial CDC review now accepts five rows and assigns
+iteration01 for four open rows; see cdc-verification.md. CC commits only its eight listed outputs and proposes
 completion; CDC acceptance and formal Arc01 composition remain separate.
 
 ## Inputs and preservation
@@ -185,10 +186,19 @@ CDC review before closure. Arc01 composition remains a later attributed gate.
 
 ## Assignment history
 
-Current assignment: cc-prompt.md, initial Slice03 CC planning/evidence execution,
-issued 2026-10-09 after Operator-deferred Slice02 closure `8e0be8d2`. No predecessor
-Slice03 prompt or refinement exists. Preserve this prompt after issue; corrective
-passes use slice-root cc-prompt-iterationNN.md, within the five-pass budget.
+Current assignment: [cc-prompt-iteration01.md](cc-prompt-iteration01.md), issued
+2026-10-09 for F01–04 / S03-01/06/07/09. CC executes this bounded correction;
+no source authority or slice closure is assigned.
+
+- Initial [cc-prompt.md](cc-prompt.md), issued 2026-10-09 at `c0332475` after
+  predecessor closure `8e0be8d2`: CC returned `c58c89e`; CDC independently accepted
+  S03-02/03/04/05/08 and found intake/verifier/handoff evidence defects. Disposition:
+  returned/reviewed, superseded for current execution; immutable initial preserved.
+- Iteration01, issued 2026-10-09, predecessor initial prompt/candidate `c58c89e`:
+  active, not yet executed. Restore source-action header, align dependent-scope
+  re-entry, consume printed artifact in the verifier and recover incomplete reads.
+  Four exact output files; five independent accepted rows retain revision-specific
+  evidence. One assigned correction pass; no earlier Slice03 refinements.
 
 ## Author readiness — 2026-10-09
 
@@ -227,6 +237,10 @@ failed; it was rerun from SOURCE. None is counted as a successful original read.
 No consequential choice, source acquisition or runtime design is left to CC.
 
 ## Version History
+
+- 1.1 (2026-10-09): CDC reviewed initial Slice03 `c58c89e`; independently accepted
+  five rows and issued iteration01 for four open rows/F01–04. Planning scope,
+  example/allocation, original-readiness and independent arc gates unchanged.
 
 - 1.0 (2026-10-09): Operator opened Slice03 after deferring S02-08; CDC selected
   portable planning wording/profile/example and complete gated allocation method.
