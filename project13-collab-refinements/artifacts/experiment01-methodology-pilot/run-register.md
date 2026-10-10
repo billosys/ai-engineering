@@ -9,7 +9,7 @@ excluded. Record each entry here before issuing its initial prompt.
 
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
-| T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; final issue identity to be recorded before relay | Registered; initial prompt prepared next | Not measured |
+| T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Issued; no CC return | Not measured |
 | T02 | Following newly opened Project10 slice; ID pending normal readiness | Pending | Not registered | Not measured |
 
 ## Entry format
@@ -89,3 +89,24 @@ protocol's raw/measured/interpreted/decision layers. Do not prefill conclusions.
 - Checkpoint: after T01 independent closure or recorded blocked/escalation stop,
   perform meta-review here before issuing T02. First-return acceptance, recurrence,
   coverage, validation gaps, reviewer errors, effort and trial benefit are unknown.
+
+### T01 issuance receipt — 2026-10-10, before Operator relay
+
+- Issuing commit: `8c0e4e897e79a9ecddd07da34fd0f2eb1dfb119d`, direct child of the protocol revision 2
+  predecessor `23c77653feda2fafd88efce01e226ee1a35b8cff`. Exact nine-path opening
+  includes the prior registration and four host opening files. Registration was
+  written before the initial prompt and committed with it; no CC return yet.
+- Prompt blob: `715338328341f2ff7df5a21c52a50722383216d5`; SHA-256
+  `d2f5304c6b740803787dd8f04a7f610362482f53eec33bc5d7e1b4afcad815c2`; 11266 bytes.
+- Plans, ledger and preparation are pinned by that issue; seven CC outputs are
+  the only execution write scope. Preparation 12948 bytes;
+  slice plan 8764 bytes; ledger 3591 bytes.
+  Historical source inputs are references, not duplicated datasets. Execution/
+  review cost and actual output utility remain unknown.
+- Opening checks reproduced committed bytes: exact paths/direct parent/trailers,
+  parent 13/eight row identities/states, nine open child rows, source pins/hashes,
+  17/168 context bounds, 83 local links/24 fragments, LF/final newline and diff
+  integrity. Author demo replay passed one positive and rejected three invalids;
+  its semantic result remains author judgment, not independent acceptance.
+- Protocol revision 2 and Slice02 history remain byte-preserved. No protocol
+  amendment or source/card/package/metadata change is part of this issuance.
