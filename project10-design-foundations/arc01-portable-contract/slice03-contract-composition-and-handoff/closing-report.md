@@ -60,3 +60,52 @@ all 233 cards, eight live files, five dimensions, 16 DES findings, and every
 known source action, external dependency and unresolved gate. Groups are planning
 units, not opened slices. CDC decides whether this handoff composes before any
 next slice or Arc02 work advances.
+
+
+## Iteration01 — CC return proposed to CDC
+
+Assignment: [cc-prompt-iteration01.md](cc-prompt-iteration01.md), issued at
+planning HEAD `92120fefaa15373327ab1f271fbd9a68b3282601`; SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`. This appended row walk supersedes
+the initial nine-open/doer-proposed walk above for this iteration only; the
+initial return, verifier, receipts and its all-open ledger state remain historical.
+Current exact candidate object is returned separately because a commit cannot
+contain its own object ID.
+
+| ID | Iteration01 CC proposal | Evidence and boundary |
+|---|---|---|
+| S03-01 | open; evidence proposed | Fresh 06-graph-cq lines 24–118 and required Slice02 plan extents are receipted in execution notes; no original-source or semantic reading. |
+| S03-02 | retain CDC done | Exact contract/prose inputs unchanged; no dependency on F01–04 delta. |
+| S03-03 | retain CDC done | Printed example unchanged; current verifier now consumes its seven rows and shown CSS expression. CDC's existing independent acceptance remains at `c58c89e`. |
+| S03-04 | retain CDC done | Allocation unchanged; current verifier compares emitted rows and preserves all five negative controls. |
+| S03-05 | retain CDC done | Guide allocation unchanged; current verifier compares emitted coverage, all 47 handoff groups, 161 headings, 460 candidate occurrences and 16 DES rows. |
+| S03-06 | open; evidence proposed | Six-column source-action header restored with eight exact body rows; per-dependent-source-fidelity gate and full P10-11 boundary reconciled. No input is ready. |
+| S03-07 | open; evidence proposed | Stage 3 now follows the same per-dependent-scope rule; two hypothetical contrasts do not create readiness or authorization. Arc02 remains unopened. |
+| S03-08 | retain CDC done | Four-path iteration allowlist and protected tracked inputs are replayed; unchanged preservation claim retained from exact earlier accepted candidate, with current path/source checks. |
+| S03-09 | open; evidence proposed | Current artifact-consuming verifier and receipt, failure/recovery history, exact four-path scope, and this row walk are recorded; CDC must independently replay. |
+
+The exact iteration change set is limited to `artifacts/arc02-handoff.md`,
+`artifacts/execution-notes.md`, `ledger.md`, and `closing-report.md`. The other
+five done rows retain their CDC dispositions and independent references; the four
+open rows remain open pending CDC. Six supporting artifacts remain under
+`artifacts/`; no new validator file or verification artifact was created.
+
+F01 repairs the checker-to-artifact gap without changing the printed example:
+exact decimal Fractions under declared six-place half-even rounding yield the
+CDC's `3/250000px` maximum at `(R=20,w=1600,n=0)`. The prior float-regenerated
+path yields `0.000018px` and seven differing grid results because its binary-float
+formatting rounds the exact `0.5296875` step-2 B midpoint down to `0.529687`;
+the printed artifact's exact half-even value is `0.529688`. Both paths stay below
+the bound, and the printed mathematics remains correct. F02 restores only the
+missing table header. F03 permits only independently ready, adequately evidenced
+dependent scopes while keeping unrelated gaps and whole P10-11/full-corpus gates
+open. F04 records fresh requested extents; historical incomplete receipts remain
+visible.
+
+Unrun and blocked: original books/captures and source-to-prepared fidelity; all
+233-card and eight-guide semantic results; global relationship/CQ/correction
+reconciliation; browser/AT/readability/accessibility checks; source preparation,
+package/runtime/Make gates; release acceptance; formal Arc01 composition and
+Operator gates. The denominator remains 233 cards, eight live files, five
+dimensions and 16 DES findings. No parent plan change, Arc01 closure, Arc02
+opening, input acquisition or source mutation is proposed.

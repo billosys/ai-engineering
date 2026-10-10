@@ -261,3 +261,345 @@ PASS exact eight-path assignment scope, SOURCE pin/clean tracked state, local li
 ```
 
 `git diff --check` is run separately after the final edits. The verifier's scope assertion compares tracked changes with untracked paths beneath the authorized Slice03 directory; it intentionally does not absorb the protected sibling `project12-chcd-protocol/`. A separate ledger-shape spot check initially expected a trailing Markdown pipe; rows use the existing no-trailing-pipe convention, so the corrected check counts nine split fields (empty prefix plus eight columns) and confirms all nine statuses are open without changing the ledger structure.
+
+
+## Iteration01 actual intake and F04 recovery
+
+Issuing PLANNING HEAD recorded before edits: `92120fefaa15373327ab1f271fbd9a68b3282601`; initial Slice03 candidate: `c58c89e486517540607dbc6364f8646b2b52abe2`; SOURCE `main`: `dffa504e851b03b8e4746f1941068e4cc850b612`. The initial combined plan/ledger read returned truncated presentation output; required governing ranges were recovered with bounded reads from the issue object. Project10 `project-plan.md` (257 lines) and `ledger.md` (43 lines) were read in full; Arc01 `arc-plan.md` (165 lines) and `ledger.md` (9 lines) were read in full; Slice03 `slice-plan.md` (244 lines), `ledger.md` (current CDC five-done/four-open rows), and complete Iteration01 prompt (221 lines) were inspected. The complete CDC review `cdc-verification.md` was read at issue revision (270 lines), including its current verdict, all four findings, nine-row walk, executable initial replay, and limits. Those reads establish the corrected state, not new CDC acceptance.
+
+The initial prompt intake table was reread at its issuing revision `c033247595df43f4c41b1f6ab0c40ee816fffbdf`, lines 32–66; the table itself is lines 40–59. It specifically requires Slice02 plan Outcome/authority, Operator deferral, Deliverables/exit and Assignment history introduction. The Slice02 plan was freshly read at this iteration's issue object `92120fefaa15373327ab1f271fbd9a68b3282601`, SHA-256 `0e0cb68ce14470f02302094c6999d65ad9152848147b2c166f7d7f3f04bd7749`: Outcome/authority lines 9–20, Operator deferral 22–40, Deliverables and exit 71–89, Assignment history introduction 93–101. Its full assigned nine-row closure criteria, Operator deferral and next-owner rule were retained; no Slice02 status or source action changed.
+
+Current example and full handoff, initial execution notes/code/receipt and initial closing row walk were inspected as historical candidate `c58c89e486517540607dbc6364f8646b2b52abe2`. The accepted input-action register and review method at `759ce2dd116a4cfe03b72d43fd2791f48486251c` were reread for the exact six-column header/eight action rows (actions lines 5–14), dependent-scope original/prepared completeness boundary (line 18), and ordered per-claim evidence and five-dimension limits (review procedure lines 7–12). No source or original was retrieved.
+
+F04's requested SOURCE guide was freshly retrieved from pinned SOURCE commit `dffa504e851b03b8e4746f1941068e4cc850b612`: `knowledge/concept-cards/guides/06-graph-cq.md`, SHA-256 `494c6798d3d3e106fe24534aebc90478440776677c427b773ad347a7fbc1adc0`, complete assigned range lines 24–118. The Git object read succeeded. It includes lines 113–118: retrieval records query/scope/method/results, retrieval success does not prove support/verification/admission, failure does not prove corpus absence, and no retrieval runtime/index is supplied. The prior initial receipt's `24–114 “in full”` claim remains unchanged as incomplete historical evidence; it is not represented as recovered or upgraded. No runtime retrieval probe, original comparison or semantic card/guide review was attempted.
+
+The old 0.000018px/7-result discrepancy is explained from the old code, not treated as an example defect: its `float(Fraction)` then six-place Python formatting sends exact B=`0.5296875` to `0.529687` due binary representation; exact rational decimal half-even yields the printed `0.529688`. The printed artifact itself evaluates to 0.000012px maximum at `(20,1600,0)`.
+
+## Iteration01 active verifier and receipts
+
+This is the selected current verifier. It is local inline evidence, not a maintained validator. It selects exactly the recorded issue/pre-commit candidate state or a direct committed child of that issue; it consumes candidate handoff/notes/ledger/closing plus the unchanged example, JSONL allocation and guide projection. It recomputes from pinned inputs, parses printed decimal strings as exact Fractions, applies declared integer-rational six-place half-even rounding, and passes corrupt artifact/table records through the same predicates. Review this code before executing it.
+
+```python
+from pathlib import Path
+import csv, hashlib, io, json, re, subprocess, urllib.parse, collections
+from fractions import Fraction
+
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+S=Path('/Users/oubiwann/lab/billosys/ai-engineering')
+L=P/'project10-design-foundations/arc01-portable-contract/slice03-contract-composition-and-handoff'
+ISSUING='92120fefaa15373327ab1f271fbd9a68b3282601'
+INITIAL='c58c89e486517540607dbc6364f8646b2b52abe2'
+SOURCE='dffa504e851b03b8e4746f1941068e4cc850b612'
+BASE='9cc203380aede19231b7c5119f0b43d9fe3d0e78'
+MAP='759ce2dd116a4cfe03b72d43fd2791f48486251c'
+BP='project10-design-foundations/arc01-portable-contract/slice01-scope-and-portability-contract/artifacts/'
+SP='project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/'
+REL='project10-design-foundations/arc01-portable-contract/slice03-contract-composition-and-handoff/'
+ALLOWED={REL+x for x in ('artifacts/arc02-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md')}
+
+def git(args,cwd=P): return subprocess.check_output(args,cwd=cwd,text=True).strip()
+def show(repo,rev,path): return subprocess.check_output(['git','-C',str(repo),'show',rev+':'+path])
+def sha(b): return hashlib.sha256(b).hexdigest()
+head=git(['git','rev-parse','HEAD'])
+if head==ISSUING:
+    candidate_mode='pre-commit issuing-tree diff'
+    changed=set(git(['git','diff','--name-only',ISSUING]).splitlines())
+    changed.update(git(['git','ls-files','--others','--exclude-standard','--',REL.rstrip('/')]).splitlines())
+    def out(name): return (L/name).read_bytes()
+else:
+    parents=git(['git','rev-list','--parents','-n','1',head]).split()
+    assert len(parents)==2 and parents[1]==ISSUING,(head,parents)
+    candidate_mode='committed direct child '+head
+    changed=set(git(['git','diff-tree','--no-commit-id','--name-only','-r',head]).splitlines())
+    def out(name): return show(P,head,REL+name)
+assert changed==ALLOWED,(candidate_mode,changed,ALLOWED)
+assert git(['git','-C',str(S),'rev-parse','HEAD'])==SOURCE
+assert git(['git','-C',str(S),'branch','--show-current'])=='main'
+assert '?? project12-chcd-protocol/' in git(['git','status','--short'])
+assert '?? knowledge/lfe/' in git(['git','-C',str(S),'status','--short'])
+assert not git(['git','-C',str(S),'diff','--name-only'])
+assert not git(['git','-C',str(S),'diff','--cached','--name-only'])
+
+def strict_jsonl(data,label):
+    rows=[]
+    for n,line in enumerate(data.decode().splitlines(),1):
+        assert line.strip(),(label,n,'blank')
+        obj=json.loads(line); assert type(obj) is dict,(label,n,'not object')
+        rows.append(obj)
+    return rows
+
+def md_cells(line): return [x.strip().strip('`') for x in line.strip().strip('|').split('|')]
+def fenced(text,label):
+    return text.split(f'<!-- BEGIN {label} -->\n',1)[1].split(f'\n<!-- END {label} -->',1)[0].removeprefix('````jsonl\n').removesuffix('\n````')
+
+# Full card identity, caveat, dimensions, grouping and five inherited negative controls.
+idx=strict_jsonl(show(P,BASE,BP+'card-source-index.jsonl'),'accepted index')
+mp=strict_jsonl(show(P,MAP,SP+'locator-map.jsonl'),'accepted locator map')
+manifest=list(csv.DictReader(io.StringIO(show(P,BASE,BP+'baseline-files.tsv').decode()),delimiter='\t'))
+I={x['path']:x for x in idx}; M={x['card_path']:x for x in mp}; sizes={x['path']:int(x['bytes']) for x in manifest}
+assert len(I)==len(M)==233 and set(I)==set(M) and [x['card_path'] for x in mp]==sorted(M)
+pairs=collections.defaultdict(list)
+for path,ix in I.items():
+    row=M[path]
+    assert ix['sha256']==row['card_sha256']
+    assert ix['source_fields_raw']['source']==row['primary_source_raw']['source']
+    assert ix['source_fields_raw']['authors']==row['primary_source_raw']['authors']
+    assert row['caveat_ids'] and isinstance(row['caveat_ids'],list)
+    raw=show(S,SOURCE,path); assert sha(raw)==ix['sha256'] and len(raw)==sizes[path]
+    pair=(tuple(ix['source_fields_raw']['source']),tuple(ix['source_fields_raw']['authors']))
+    pairs[pair].append((path,sizes[path]))
+groups=[]; assigned={}; maxbytes={}
+for pair in sorted(pairs):
+    cur=[]; total=0
+    for path,size in sorted(pairs[pair]):
+        if cur and (len(cur)>=6 or total+size>60000):
+            gid=f'C{len(groups)+1:02d}'; groups.append((gid,pair,cur,total))
+            for p,_ in cur: assigned[p]=gid
+            maxbytes[gid]=total; cur=[]; total=0
+        cur.append((path,size)); total+=size
+    if cur:
+        gid=f'C{len(groups)+1:02d}'; groups.append((gid,pair,cur,total))
+        for p,_ in cur: assigned[p]=gid
+        maxbytes[gid]=total
+assert len(groups)==47 and len(assigned)==233 and max(maxbytes.values())==58666 and max(len(g[2]) for g in groups)==6
+expected=[]
+for path in sorted(I):
+    ix=I[path]; row=M[path]
+    expected.append({'card_path':path,'card_sha256':ix['sha256'],
+      'primary_source_raw':{'source':ix['source_fields_raw']['source'],'authors':ix['source_fields_raw']['authors']},
+      'group_id':assigned[path],
+      'required_dimensions':['source_faithfulness','correctness','scope_attribution','consistency','relationship_cq_coverage'],
+      'locator_ref':{'path':SP+'locator-map.jsonl','revision':MAP,'card_path':path},
+      'method_ref':{'path':SP+'review-procedure.md','revision':MAP},
+      'input_gate':{'origin_row':'S02-08','successor_row':'P10-11','owner':'Arc02 CDC + Operator','caveat_ids':row['caveat_ids'],'state':'deferred-inputs','reentry_ref':SP+'source-input-actions.md/'+MAP}})
+actual=strict_jsonl(out('artifacts/corpus-allocation.jsonl'),'allocation')
+def validate_alloc(rows):
+    assert len(rows)==233 and len({r['card_path'] for r in rows})==233 and rows==expected
+    for row in rows:
+        assert row['required_dimensions']==['source_faithfulness','correctness','scope_attribution','consistency','relationship_cq_coverage']
+        assert row['input_gate']['state']=='deferred-inputs' and row['input_gate']['successor_row']=='P10-11'
+validate_alloc(actual)
+def rejected(label,fn):
+    try: fn()
+    except (AssertionError,KeyError,ValueError): return label
+    raise AssertionError('negative control accepted: '+label)
+rejected('missing card',lambda:validate_alloc(actual[:-1]))
+dup=list(actual); dup[-1]=dict(dup[0]); rejected('duplicate card',lambda:validate_alloc(dup))
+wrong=[dict(x) for x in actual]; target='knowledge/design/concept-cards/posts/munsell-colour-system.md'
+next(x for x in wrong if x['card_path']==target)['group_id']='C06'; rejected('same-basename/wrong-pair membership',lambda:validate_alloc(wrong))
+bad=dict(actual[0]); bad['input_gate']=dict(bad['input_gate']); bad['input_gate']['state']='ready'; rejected('false ready/source-fidelity state',lambda:validate_alloc([bad]+actual[1:]))
+bad=dict(actual[0]); bad['input_gate']=dict(bad['input_gate']); bad['input_gate'].pop('successor_row'); rejected('missing P10-11 gate',lambda:validate_alloc([bad]+actual[1:]))
+
+# Reproduce complete live-file candidate projections, then compare emitted 8 rows.
+live=sorted((x for x in manifest if x['scope']=='live'),key=lambda x:x['path']); assert len(live)==8
+ids={x['path']:f'L{n:02d}' for n,x in enumerate(live,1)}
+patterns=[('ratio',r'ratio'),('scale',r'scale'),('weber',r'weber'),('fechner',r'fechner'),('oklch',r'oklch'),('oklab',r'oklab'),('matrix',r'matrix'),('token',r'token'),('dtcg',r'dtcg'),('breakpoint',r'breakpoint'),('media.query',r'media[ ._-]?query'),('60ch',r'60ch'),('proximity',r'proximity'),('homogen',r'homogen'),('banner',r'banner')]
+heads=[]; matches=[]; expected_live=[]
+for f in live:
+    path=f['path']; raw=show(S,SOURCE,path); lines=raw.decode().splitlines(); assert sha(raw)==f['sha256'] and len(raw)==int(f['bytes'])
+    lid=ids[path]; expected_live.append([lid,path,f['sha256'],str(len(raw)),str(len(lines)),'1–EOF','whole file assigned; no body inventory claimed here'])
+    for n,line in enumerate(lines,1):
+        if re.match(r'^ {0,3}#{1,6}\s+\S',line): heads.append({'group_id':lid,'path':path,'sha256':f['sha256'],'line':n,'text':line})
+        for family,pat in patterns:
+            for m in re.finditer(pat,line,re.I): matches.append({'group_id':lid,'path':path,'sha256':f['sha256'],'line':n,'family':family,'match_span_1based':[m.start()+1,m.end()],'match_text':m.group(0),'line_text':line})
+assert len(heads)==161 and len(matches)==460
+
+def parse_live(text): return [md_cells(x) for x in text.splitlines() if re.match(r'^\| L\d\d \|',x)]
+def validate_live(rows): assert rows==expected_live and len(rows)==8
+hand=out('artifacts/arc02-handoff.md').decode(); guide=out('artifacts/guide-and-finding-allocation.md').decode()
+assert guide==show(P,INITIAL,REL+'artifacts/guide-and-finding-allocation.md').decode()
+notes=out('artifacts/execution-notes.md').decode(); closing=out('closing-report.md').decode(); ledger=out('ledger.md').decode()
+validate_live(parse_live(guide))
+rejected('altered live coverage row',lambda:validate_live(parse_live(guide.replace('1–EOF','1–999',1))))
+assert strict_jsonl(fenced(guide,'HEADING PROJECTION').encode(),'headings')==heads
+assert strict_jsonl(fenced(guide,'REPEAT MATCH PROJECTION').encode(),'repeat matches')==matches
+
+expected_groups=[{'group_id':g,'source_raw':list(pair[0]),'authors_raw':list(pair[1]),'card_count':len(cards),'pinned_card_bytes':total,'members':[p for p,_ in cards]} for g,pair,cards,total in groups]
+def parse_groups(text): return strict_jsonl(fenced(text,'GROUP MEMBERSHIP').encode(),'handoff groups')
+def validate_groups(rows): assert rows==expected_groups and len(rows)==47
+validate_groups(parse_groups(hand))
+badgroups=json.loads(json.dumps(parse_groups(hand))); badgroups[0]['members'][0]='knowledge/design/concept-cards/altered.md'
+rejected('altered group member',lambda:validate_groups(badgroups))
+contract=show(P,BASE,BP+'portability-contract.md').decode(); method=show(P,MAP,SP+'review-procedure.md').decode()
+def des_rows(text): return [x for x in text.splitlines() if x.startswith('| DES-')]
+assert len(des_rows(contract))==len(des_rows(method))==16 and des_rows(contract)==des_rows(method)
+assert all(x in guide for x in des_rows(contract))
+
+# Exact displayed decimal coefficients, half-even policy, CSS declaration and 84 emitted-value evaluations.
+def half_even_six(f):
+    z=f*1000000; q,r=divmod(z.numerator,z.denominator)
+    if 2*r>z.denominator or (2*r==z.denominator and q%2): q+=1
+    sign='-' if q<0 else ''; q=abs(q)
+    return f'{sign}{q//1000000}.{q%1000000:06d}'
+def exact_coeff(n):
+    a=Fraction(6,5)**n; b=Fraction(9,8)*Fraction(5,4)**n
+    A=a-(b-a)/3; B=Fraction(100,60)*(b-a)
+    return tuple(half_even_six(x) for x in (a,b,A,B))
+def parse_example(text):
+    rows={}
+    for line in text.splitlines():
+        if re.match(r'^\| [+-]?\d+ \|',line):
+            c=md_cells(line); n=int(c[0]); assert len(c)==5 and all(re.fullmatch(r'\d+\.\d{6}',v) for v in c[1:])
+            assert n not in rows; rows[n]=tuple(c[1:])
+    assert set(rows)==set(range(-2,5))
+    css=re.search(r'--example-step-0:\s*clamp\((\d+\.\d{6})rem,\s*calc\((\d+\.\d{6})rem\s\+\s(\d+\.\d{6})vi\),\s(\d+\.\d{6})rem\);',text)
+    assert css, 'step0 CSS declaration missing/unparseable'
+    return rows,tuple(css.groups())
+def artifact_predicate(text):
+    rows,css=parse_example(text)
+    expected={n:exact_coeff(n) for n in range(-2,5)}
+    assert rows==expected,(rows,expected)
+    assert css==(rows[0][0],rows[0][2],rows[0][3],rows[0][1]),(css,rows[0])
+    errors=[]
+    for R in (16,20):
+      for w in (160,320,800,1000,1280,1600):
+       for n,(aa,bb,AA,BB) in rows.items():
+        a,b,A,B=(Fraction(x) for x in (aa,bb,AA,BB))
+        emitted=max(R*a,min(R*b,R*A+B*Fraction(w,100)))
+        exact=Fraction(R)*((1-max(Fraction(0),min(Fraction(1),(Fraction(w,R)-20)/60)))*Fraction(6,5)**n+max(Fraction(0),min(Fraction(1),(Fraction(w,R)-20)/60))*Fraction(9,8)*Fraction(5,4)**n)
+        errors.append((abs(emitted-exact),R,w,n))
+    worst=max(errors)
+    assert len(errors)==84 and worst[0]==Fraction(3,250000) and worst[1:]==(20,1600,0) and worst[0]<Fraction(1,1000),worst
+    return worst
+example=out('artifacts/example-configuration.md').decode()
+assert example==show(P,INITIAL,REL+'artifacts/example-configuration.md').decode()
+assert out('artifacts/corpus-allocation.jsonl')==show(P,INITIAL,REL+'artifacts/corpus-allocation.jsonl')
+worst=artifact_predicate(example)
+# Both corruptions are passed through the same exact artifact predicate.
+bad_table=example.replace('| +0 | 1.000000 | 1.125000 | 0.958333 | 0.208333 |','| +0 | 1.000000 | 1.125000 | 0.858333 | 0.208333 |')
+assert bad_table!=example
+rejected('corrupted printed table coefficient',lambda:artifact_predicate(bad_table))
+bad_css=example.replace('calc(0.958333rem + 0.208333vi)','calc(0.858333rem + 0.208333vi)')
+assert bad_css!=example
+rejected('corrupted shown CSS coefficient',lambda:artifact_predicate(bad_css))
+# Reconstruct historical float formatter only to explain, not validate, the old receipt.
+def old_float_six(f): return f'{float(f):.6f}'
+def old_coeff(n):
+ a=Fraction(6,5)**n; b=Fraction(9,8)*Fraction(5,4)**n
+ return tuple(Fraction(old_float_six(x)) for x in (a,b,a-(b-a)/3,Fraction(100,60)*(b-a)))
+def reference(R,w,n):
+ t=max(Fraction(0),min(Fraction(1),(Fraction(w,R)-20)/60))
+ return R*((1-t)*Fraction(6,5)**n+t*Fraction(9,8)*Fraction(5,4)**n)
+old_diffs=[]; old_errors=[]
+for R in (16,20):
+ for w in (160,320,800,1000,1280,1600):
+  for n in range(-2,5):
+   a,b,A,B=old_coeff(n); v=max(R*a,min(R*b,R*A+B*Fraction(w,100)))
+   old_errors.append((abs(v-reference(R,w,n)),R,w,n))
+   row=dict((n,tuple(Fraction(x) for x in exact_coeff(n))) for n in range(-2,5))[n]
+   aa,bb,AA,BB=row; printed=max(R*aa,min(R*bb,R*AA+BB*Fraction(w,100)))
+   if v!=printed: old_diffs.append((R,w,n))
+old_worst=max(old_errors)
+assert len(old_diffs)==7 and old_worst[0]==Fraction(18,1000000)
+
+# Exact source-action header plus unchanged eight body rows, correct six-column table.
+action=show(P,MAP,SP+'source-input-actions.md').decode()
+def table_rows(text): return [x for x in text.splitlines() if x.startswith('| ') and not re.match(r'^\|[-:| ]+\|?$',x)]
+action_rows=table_rows(action); source_header=action_rows[0]; source_body=action_rows[1:]
+assert len(source_body)==8 and len(md_cells(source_header))==6 and all(len(md_cells(x))==6 for x in source_body)
+section=hand.split('## S02-08 / P10-11 source input gate',1)[1].split('## Proposed Arc02 stage order',1)[0]
+emitted=table_rows(section)
+assert len(emitted)==9 and emitted[0]==source_header and all(len(md_cells(x))==6 for x in emitted)
+assert emitted[1:]==source_body
+flat=' '.join(hand.split()).lower()
+for phrase in ['per-dependent-scope re-entry rule','every source input that result actually uses','whole P10-11 readiness criterion remains open','full 233-card corpus','specified scope with other populations still missing','own required original/capture absent','unrelated Cleland, Tschichold, Butterick or article populations remain blocked','cannot be replaced by prepared Markdown']:
+    assert phrase.lower() in flat,(phrase,'handoff gate/contrast missing')
+assert 'all affected populations before source-faithfulness acceptance' not in flat
+
+# Ledger preserves CDC's five accepted decisions and all nine criteria/verification/status fields.
+def ledger_rows(text): return {md_cells(x)[0]:md_cells(x) for x in text.splitlines() if x.startswith('| S03-')}
+old_ledger=show(P,ISSUING,REL+'ledger.md').decode(); oldrows=ledger_rows(old_ledger); newrows=ledger_rows(ledger)
+assert set(oldrows)==set(newrows) and len(newrows)==9
+for key,old in oldrows.items(): assert newrows[key][:6]==old[:6],key
+expected_status={'S03-01':'open','S03-02':'done','S03-03':'done','S03-04':'done','S03-05':'done','S03-06':'open','S03-07':'open','S03-08':'done','S03-09':'open'}
+assert {k:v[5] for k,v in newrows.items()}==expected_status
+for key in ('S03-01','S03-06','S03-07','S03-09'): assert 'Iteration01' in newrows[key][7]
+assert 'Iteration01' in closing and 'initial nine-open/doer-proposed walk above' in closing
+assert closing.startswith(show(P,INITIAL,REL+'closing-report.md').decode())
+assert notes.startswith(show(P,INITIAL,REL+'artifacts/execution-notes.md').decode())
+for key in expected_status: assert key in closing
+assert 'Iteration01 active verifier' in notes and '92120fefaa15373327ab1f271fbd9a68b3282601' in notes
+
+# Protected input and ordinary Markdown integrity on the four-path candidate.
+for name in ('artifacts/arc02-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md'):
+    data=out(name); assert data.endswith(b'\n') and b'\r\n' not in data
+
+def prose(text):
+    text=re.sub(r'(?ms)^ {0,3}(`{3,}|~{3,})[^\n]*\n.*?^ {0,3}\1[ \t]*$','',text)
+    return re.sub(r'(`+)([^\n]*?)\1','',text)
+links=frags=0
+for name in ('artifacts/arc02-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md'):
+    text=out(name).decode()
+    for raw in re.findall(r'(?<!!)\[[^\]]*\]\(([^)]+)\)',prose(text)):
+        dest=raw.strip().split()[0].strip('<>')
+        if not dest or re.match(r'^[A-Za-z][A-Za-z0-9+.-]*:',dest) or dest.startswith('//'): continue
+        path,sep,frag=dest.partition('#'); target=(L/name).parent/path if path else L/name; target=target.resolve()
+        assert target.is_file(),(name,dest)
+        links+=1
+        if sep and frag:
+            body=target.read_text(); slugs=set()
+            for h in re.findall(r'^#{1,6}\s+(.+?)\s*#*$',body,re.M):
+                h=re.sub(r'\[([^\]]+)\]\([^)]+\)',r'\1',h).strip().lower(); slugs.add(re.sub(r'[^\w-]','',re.sub(r'\s+','-',h)))
+            ids=set(re.findall(r'\bid=["\']([^"\']+)',body)); assert urllib.parse.unquote(frag) in slugs|ids,(name,dest)
+            frags+=1
+# Current code must be present as one selected fenced block and be read from this object/state.
+assert notes.count('```python\n')>=2
+print('PASS candidate selector and exact four-path allowlist:',candidate_mode)
+print('PASS exact 233 identities/raw pairs/caveat gates, 47 groups, five inherited negative controls')
+print('PASS emitted eight live-file coverage records; altered coverage rejected; 161 headings/460 complete candidates; exact 16 DES owners')
+print('PASS emitted 47 group pair/member/count/byte records; altered group member rejected')
+print('PASS printed seven-row exact-decimal artifact, half-even coefficients and shown step0 CSS; 84 comparisons max',str(worst[0]),'=',float(worst[0]),'px at',(worst[1],worst[2],worst[3]))
+print('PASS same artifact predicate rejects corrupted printed table and shown CSS coefficients')
+print('DIAGNOSTIC historical float replay: max',str(old_worst[0]),'=',float(old_worst[0]),'px; differing grid results',len(old_diffs),'/84; step2 B exact half tie 0.5296875 -> half-even 0.529688, float path 0.529687')
+print('PASS exact six-column action header and eight byte-equal body rows; per-scope rule, whole P10-11 gate and both analytic contrasts')
+print('PASS all nine criteria/verify/significance/origin/status fields preserved; CDC-done rows retained, four assigned rows open; initial notes/code/receipt and closing report byte-preserved as prefixes')
+print(f'PASS four-path newlines/no-CRLF, local links/fragments ({links}/{frags}), source pin/clean tracked state')
+```
+
+**Pre-commit replay receipt:** command `python3 /tmp/current_s03_i01.py`, from the PLANNING root; exit and actual output are recorded below after the final pre-commit edits. Separately run `git diff --check`. Final validation must extract this exact fenced code from the committed execution-notes object and rerun it; return that commit hash/operator receipt separately because an object cannot contain its own hash. Preserve all initial verifier code and receipt above as historical evidence.
+
+### Iteration01 validation attempts and pre-commit receipt
+
+Verifier construction had three recoverable false failures. First, a handoff
+sentinel compared lower-case expected text with a title-cased Markdown heading;
+the predicate now compares normalized case. Second, the ledger-retention check
+initially compared CDC's five `done` rows to the pre-CDC initial candidate, whose
+rows were all open; it now compares against this iteration's issuing state
+`92120fefaa15373327ab1f271fbd9a68b3282601`. Third, the newly added ledger link
+used a stale anchor; the fragment now matches the current execution-notes
+heading. The first F01 verifier finding and F04 historical read limit remain
+separately preserved above. No input retrieval or semantic result failed.
+
+Command: `python3 -m py_compile /tmp/current_s03_i01.py` (exit 0), then
+`python3 /tmp/current_s03_i01.py` from PLANNING (exit 0), then `git diff --check`
+(exit 0; no output). Actual verifier output:
+
+```text
+PASS candidate selector and exact four-path allowlist: pre-commit issuing-tree diff
+PASS exact 233 identities/raw pairs/caveat gates, 47 groups, five inherited negative controls
+PASS emitted eight live-file coverage records; altered coverage rejected; 161 headings/460 complete candidates; exact 16 DES owners
+PASS emitted 47 group pair/member/count/byte records; altered group member rejected
+PASS printed seven-row exact-decimal artifact, half-even coefficients and shown step0 CSS; 84 comparisons max 3/250000 = 1.2e-05 px at (20, 1600, 0)
+PASS same artifact predicate rejects corrupted printed table and shown CSS coefficients
+DIAGNOSTIC historical float replay: max 9/500000 = 1.8e-05 px; differing grid results 7 /84; step2 B exact half tie 0.5296875 -> half-even 0.529688, float path 0.529687
+PASS exact six-column action header and eight byte-equal body rows; per-scope rule, whole P10-11 gate and both analytic contrasts
+PASS all nine criteria/verify/significance/origin/status fields preserved; CDC-done rows retained, four assigned rows open; initial notes/code/receipt and closing report byte-preserved as prefixes
+PASS four-path newlines/no-CRLF, local links/fragments (17/10), source pin/clean tracked state
+```
+
+The checker re-derived every comparison from the unchanged pinned 233-card index,
+locator map and SOURCE blobs; it did not reread card bodies. Old versus printed
+values differ at seven finite-grid coordinates because the prior float formatter
+serializes exact midpoint B differently, not because the printed table is wrong.
+Negative controls rejected: missing allocation row; duplicate card; same-basename
+wrong-pair C41→C06; false ready gate; absent P10-11 successor; altered live-file
+coverage row; altered C01 membership; corrupted printed step0 A; corrupted shown
+CSS step0 A. The changed paths are exactly the four assigned files. SOURCE branch,
+HEAD and tracked/index are clean at the pin; protected Project12 and `knowledge/lfe/`
+untracked paths remain present and are not content-hash-verified. Local references
+resolved 17/17, including 10 fragments. No browser/AT, originals/captures, runtime
+retrieval, source preparation, semantic review, Make/package or release check ran.
+
+The committed-byte replay receipt and candidate object are returned to the
+Operator after the exact four-path commit; no self-hash is written into this
+candidate.

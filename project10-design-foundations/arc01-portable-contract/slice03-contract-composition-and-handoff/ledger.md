@@ -24,3 +24,23 @@ All nine rows remain `open`; this note proposes evidence only and changes no
 criterion or status. The exact population, case, guide and handoff projections,
 failures/limits and inline verifier are in [execution notes](artifacts/execution-notes.md).
 CDC's independent review is required before any row closes.
+
+
+### Iteration01 CC evidence supplement — proposed, 2026-10-09
+
+Only the four open-row notes below receive new CC evidence; criteria, status and
+the five CDC-done rows are unchanged. The active verifier and receipts are in
+[execution notes](artifacts/execution-notes.md#iteration01-active-verifier-and-receipts).
+
+- **S03-01 open:** fresh complete-section retrieval receipt and intake-table
+  reconciliation are appended to execution notes; no source retrieval probe or
+  semantic review was performed.
+- **S03-06 open:** the exact six-column action header and eight byte-equal rows,
+  per-dependent-scope gate and two analytic contrasts are checked in the repaired
+  [handoff](artifacts/arc02-handoff.md); no population is ready.
+- **S03-07 open:** repaired stage/group gate consistency and analytic contrasts
+  are checked in the handoff; Arc02 remains unopened.
+- **S03-09 open:** current printed-artifact verifier, unchanged allocation/search
+  evidence, negative controls, four-path scope and iteration row walk are recorded
+  in execution notes and [closing report](closing-report.md). CDC replay remains
+  required.

@@ -118,6 +118,7 @@ authorization state and falsifiable re-entry are copied below from accepted
 Slice02 action register `759ce2dd116a4cfe03b72d43fd2791f48486251c`. They are requirements, not permission to
 acquire, download, scan private storage, capture, convert or mutate.
 
+| Gap / caveat | Affected population | Required input or action | Next owner | Authorization state | Falsifiable re-entry check |
 |---|---:|---|---|---|---|
 | `C-ARN-ORIGINAL-EDITION`, `C-ARN-PAGE-BASIS`, `C-BOOK-FIDELITY` (Arnheim only) | 112 Arnheim cards | Operator provides exact original edition/file or a dated, immutable, lawful source snapshot plus edition evidence; identify physical-page numbering versus printed pagination and any errata. A catalog entry is not sufficient. | Operator to provide/select; CDC to authorize follow-up scope | Not supplied; acquisition or source-tree change not authorized | Pin file/snapshot SHA-256 and edition witness; inspect all cited target spans/qualifications for the 112 cards, resolve page basis per locator, record failed/unavailable spans, and demonstrate original/prepared mapping for the named review scope. |
 | `C-CLE-ORIGINAL-EDITION`, `C-CLE-PAGE-BASIS`, `C-BOOK-FIDELITY` (Cleland only) | 19 Cleland cards | Provide exact Cleland edition and original scan/file; resolve page 4 as printed page versus physical PDF page. The publicly listed 1937 scan at Munsell was not inspected. | Operator to provide/select; CDC to authorize follow-up scope | Not supplied; public metadata/scan listing is candidate-only | Record exact bytes/hash, edition, PDF page count and page-label map; inspect cited pp.4–6 and surrounding text, including figures/footnotes, then compare each cited card claim/locator. |
@@ -134,15 +135,46 @@ demos, Ottosson plots/demo and gamut-clipping dependency keep separate source
 identity and warrant. Obtain/inspect such material only if later assigned and
 relied upon; no citation, local article mention or prepared asset establishes it.
 
-Re-entry occurs before dependent source-fidelity acceptance and full-corpus /
-release acceptance. The Operator supplies/selects exact lawful originals and
-capture inputs; Arc02 CDC specifies an exact, separately authorized input /
-output and conversion allowlist, pinned bytes, editions/capture dates, locators,
-completeness scope, source/prepared comparison and failure reporting. A public
+### Per-dependent-scope re-entry rule
+
+Before accepting a named source-fidelity result, establish adequate original /
+prepared identity, locator, context, completeness and fidelity evidence, with
+independent CDC readiness, for every source input that result actually uses.
+Apply the gate to the result's declared card/claim/revision scope and all primary
+or secondary inputs on which its source-fidelity conclusion relies. Other missing
+populations and unrelated dimensions remain explicitly blocked; readiness for
+one input cannot waive a missing input used by another result. Source-independent
+claims may proceed only when their own technical or other evidence is adequate,
+with source-fidelity left blocked wherever it depends on absent originals.
+
+The whole P10-11 readiness criterion remains open until every affected population
+and its required evidence satisfy the retained input-action checks. Acceptance
+of the full 233-card corpus or Project10/release readiness requires complete
+re-entry and all applicable five-dimension review; a scoped result cannot imply
+whole-population readiness. The Operator supplies/selects exact lawful originals
+and capture inputs. Arc02 CDC specifies each separately authorized input/output
+and conversion allowlist, pins bytes/editions/capture dates, and checks locators,
+completeness scope, original/prepared comparison and failure reporting. A public
 catalog, current URL, prepared Markdown, hash, frontmatter or successful locator
-is not a substitute. Independent CDC readiness results must close P10-11 for
-all affected populations before source-faithfulness acceptance; the 233 denominator
-and five dimensions do not change.
+is not a substitute.
+
+#### Analytic re-entry contrasts
+
+- **Specified scope with other populations still missing:** hypothetically, the
+  Operator supplies an exact Arnheim edition and relevant page basis for a named
+  subset, and CDC independently finds the original/prepared mapping and cited
+  context adequate for that subset. A later explicitly assigned review could
+  return source-fidelity only for the claims and inputs it actually examined;
+  unrelated Cleland, Tschichold, Butterick or article populations remain blocked,
+  and P10-11 plus full-corpus/release acceptance remain open. This example does
+  not claim any input is currently available or ready.
+- **Own required original/capture absent:** an otherwise reviewed claim whose
+  fidelity depends on an unavailable Butterick page capture remains blocked for
+  source-faithfulness even if another population (for example, the hypothetical
+  Arnheim subset above) has passed independent readiness. The absent capture
+  cannot be replaced by prepared Markdown or an unrelated group's readiness.
+  Other dimensions may proceed only on their own adequate evidence; no readiness
+  or acceptance is created by this analytic example.
 
 ## Proposed Arc02 stage order
 
@@ -151,8 +183,11 @@ and five dimensions do not change.
 2. Permit narrowly source-independent theory/arithmetic investigations when
    their own exact evidence is adequate. The selected CSS example is diagnostic;
    no browser or accessibility conclusion follows.
-3. Execute complete source-based C groups only after the group’s required source
-   inputs are adequate; CDC checks full reading, method/review headroom, pins,
+3. Execute source-based C-group claims only after independent readiness is
+   established for every original/capture input those specific claims use. A
+   group can yield only a bounded result for its adequately evidenced dependent
+   scope; missing inputs used by another claim, unrelated populations and other
+   dimensions stay blocked. CDC checks full reading, method/review headroom, pins,
    exact allowlist and independent gates before each actual slice.
 4. Review each L whole-file body and every repeated claim occurrence; candidate
    headings/regex matches are not complete inventories.
