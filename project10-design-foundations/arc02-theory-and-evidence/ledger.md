@@ -14,3 +14,11 @@ semantic or composition proof. Source readiness is retained at its full scope.
 | A02-06 | Cross-card/guide consistency, typed relationship support/direction and CQ answer-component coverage are globally reconciled | Demonstrate the complete C/L result union, explicit edges/components/revisions and missing/conflicting evidence accounting | serious | Full-corpus fifth dimension; G family | open | — | Endpoint resolution or populated questions are not warrant. |
 | A02-07 | Every DES-001–016 finding has traceable Arc02 disposition or retained owner/proof in its later arc, with no silent drop | Compare accepted 16-owner table to actual results and downstream handoff | serious | Shared Project09 audit; full finding contract | open | — | Owner allocation is not acceptance; retain Project09 release dependency. |
 | A02-08 | All issued slices and R/T/C/L/G families compose into the complete theory/evidence capability and usable Arc03–05 handoff | Formal arc-scale end-to-end demonstration, silent-drop walk and independent/Operator composition gate | serious | Arc capability | open | — | Missing required semantic/readiness evidence prevents full arc close absent explicit Operator amendment. |
+
+## Slice02 opening — 2026-10-09
+
+[Slice02](slice02-nonlinear-colour-pipeline/slice-plan.md) is the next ready
+T-family assignment under Expedited Mode. All nine child rows start open;
+A02-01 retains independently closed Slice01 evidence, A02-02–08 remain open.
+DES-007/limited DES-002 proof and proposed replacements are inputs to later
+corrected-revision acceptance, not closure of A02-03/05/07 or original fidelity.

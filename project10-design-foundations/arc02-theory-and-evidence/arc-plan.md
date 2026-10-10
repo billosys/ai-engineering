@@ -41,7 +41,7 @@ source acquisition, original-readiness waiver or live implementation is implied.
 
 ## Complete work breakdown and sizing
 
-Only Slice01 is detailed and issued now. The remaining rows are bounded execution
+Slice01 is closed; Slice02 is detailed and issued now. The remaining rows are bounded execution
 families, not a single giant slice or already-issued assignments. CDC assigns
 unique increasing slice numbers and records each exact population/dependency in
 this roadmap before issuing it. Family decomposition and memberships must remain
@@ -50,6 +50,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | Execution family | Capability and sizing rule | Prerequisites / state |
 |---|---|---|
 | slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Closed at c3d68d7d; independent of missing original attribution/fidelity. |
+| slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Open under T; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
 | R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
 | T — remaining theory/evidence | Bounded slices per concern: nonlinear colour pipeline, perception/analogy scope, token-system conventions, layout/measure exceptions and CHI interpretation. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
 | C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
@@ -57,7 +58,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | G — global reconciliation and arc handoff | Bounded cross-group/guide, typed-edge, CQ-component and revision/dependency reconciliation slices, followed by formal arc composition. | Complete C/L result set and P10-11; reconcile every unresolved/unclassified assertion. Split by explicit dependency populations, then demonstrate the complete union. |
 
 No fixed total slice count is invented before reading/source readiness establishes
-actual headroom. The currently issued slice list is exactly Slice01. Before arc
+actual headroom. The issued slice list is Slice01 (closed) and Slice02 (open). Before arc
 closure, the expanded roadmap, all issued children and the full R/T/C/L/G
 coverage union must reconcile. Additions/splits/merges/removals remain mapped to
 the original 233 identities; no sampling, quarantine substitute or lost guide
@@ -118,15 +119,20 @@ active: exact-path commits, independent review, closure when evidence permits,
 then automatic next-slice opening. Gates and five-iteration correction limits
 remain binding. Source and planning branches retain separate mutation boundaries.
 
-Current assignment: none pending the next ready T-family slice open set.
+Current assignment: [Slice02 nonlinear colour pipeline](slice02-nonlinear-colour-pipeline/slice-plan.md),
+initial [CC prompt](slice02-nonlinear-colour-pipeline/cc-prompt.md); all nine rows open.
 Slice01 Iteration02 `c3d68d7d` is [independently accepted and closed](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09):
 all nine slice rows done, A02-01 done; seven other arc rows remain open.
 Initial/Iteration01/Iteration02 prompts and historical discrepancies remain.
-This is evidence acceptance, not live repair or source readiness. Next, detail
-DES-007's nonlinear colour-conversion concern with its own source-grounded
-boundaries under T; retain input-blocked R and complete C/L/G obligations.
+This is evidence acceptance, not live repair or source readiness. Slice02 details DES-007 and bounded DES-002 colour claims under T.
+Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
+its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.4 (2026-10-09): Opened Slice02 under Expedited Mode after Slice01 closure.
+  Bounded nonlinear colour evidence with fixed actual models/cases; all input,
+  complete semantic, live-correction and higher gates retained.
 
 - 1.3 (2026-10-09): Slice01 c3d68d7d independently closed; A02-01 done.
   Child bubble-up retains live/default/token corrections and all higher gates;

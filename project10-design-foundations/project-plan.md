@@ -113,7 +113,9 @@ was accepted by the Operator on 2026-10-09 (“yup, accepted!”). A01-04/05
 are done; A01-02 stays deferred. Arc02 is active;
 [Slice01](arc02-theory-and-evidence/slice01-fluid-scale-arithmetic/slice-plan.md)
 is independently closed at `c3d68d7d` for bounded fluid-scale evidence.
-Next ready T-family preparation concerns DES-007's nonlinear colour pipeline. R/T/C/L/G execution
+[Slice02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md)
+is open for bounded nonlinear colour-pipeline evidence and selected uniformity/
+analogy claims under DES-007/002; all nine new rows remain open. R/T/C/L/G execution
 families preserve the complete semantic scope and input re-entry. No
 source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
@@ -207,6 +209,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.22 (2026-10-09): Opened Arc02/Slice02 colour-pipeline evidence automatically
+  after independent Slice01 closure. Full corpus, source readiness, live fixes,
+  package and release scope/gates remain unchanged.
 
 - 1.21 (2026-10-09): Arc02/Slice01 c3d68d7d independently closed; bounded
   arithmetic/occurrence/handoff evidence accepted, A02-01 done. Next T-family

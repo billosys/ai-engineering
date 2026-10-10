@@ -61,3 +61,9 @@ Arc02/Slice01 [independently closed](arc02-theory-and-evidence/slice01-fluid-sca
 at `c3d68d7d`: nine bounded evidence rows done, A02-01 done. This does not
 change P10-01's planning acceptance or close P10-02–11. Next T-family preparation
 retains the full input/semantic/live/package/release contract.
+
+Arc02 [Slice02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md)
+opened under Expedited Mode after Slice01 closure. All nine new rows open;
+P10-01 retains Operator-accepted planning composition and P10-02–11 stay open.
+Colour-conversion evidence does not discharge full semantic/live/readiness or
+package/release obligations.
