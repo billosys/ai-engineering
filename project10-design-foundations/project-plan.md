@@ -115,16 +115,20 @@ are done; A01-02 stays deferred. Arc02 is active;
 [Slice01](arc02-theory-and-evidence/slice01-fluid-scale-arithmetic/slice-plan.md)
 is independently closed at `c3d68d7d` for bounded fluid-scale evidence.
 [Slice02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md)
-is open for bounded nonlinear colour-pipeline evidence and selected uniformity/
+is closed for bounded nonlinear colour-pipeline evidence and selected uniformity/
 analogy claims under DES-007/002.
 Slice02 is closed after independent I04 review at19dd5385 and the Operator's
 explicit approval of a two-field CDC-authored repair and actual closure.
 All nine child rows done; no I05 issued. [Final gate](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
 separates independent review, direct repair/self-check and Operator acceptance.
-Project13 preparation and queued Arc06 remain unchanged. Next ready slice
-preparation follows EM and prospective trial registration; complete R/T/C/L/G
+Queued Arc06 remains unchanged. Arc02
+[Slice03](arc02-theory-and-evidence/slice03-token-system-conventions/slice-plan.md)
+is open for token-system conventions (DES-008 and bounded DES-002), prospectively
+registered as Project13 T01 under protocol revision 2. The demonstrated method
+and complete context inventory precede its initial handoff. Complete R/T/C/L/G
 and original-source/full-corpus/release gates remain.
-Next slice must pass source-grounded preparation before issue. R/T/C/L/G execution
+After T01 closes or reaches a recorded blocked/escalation stop, complete its
+meta-review before the next trial prompt. R/T/C/L/G execution
 families preserve the complete semantic scope and input re-entry. No
 source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
@@ -275,6 +279,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.30 (2026-10-10): Opened Arc02/Slice03 token-system evidence after Slice02
+  closure; registered Project13 T01 under current protocol revision 2 before
+  issue. Full parent scope/criteria, source gates and queued Arc06 are retained.
 
 - 1.29 (2026-10-10): Arc02/Slice02 I04 candidate19dd5385 independently
   reviewed; six independently done, then Operator approved direct two-field

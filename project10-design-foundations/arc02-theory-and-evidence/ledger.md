@@ -78,3 +78,12 @@ supersedes the pending direct-repair note above. All nine child rows done after
 independent CC review and explicitly approved CDC two-field correction/closure.
 I05 unused; parent row wording/status unchanged. EM next-slice preparation and
 prospective Project13 registration proceed; full R/T/C/L/G and later gates remain.
+
+## Arc02/Slice03 opening — 2026-10-10
+
+[Slice03](slice03-token-system-conventions/slice-plan.md) opens under Expedited Mode after Slice02
+closure `c1c83264`. Complete selected token assertions, primary-system/DTCG
+comparison and exact portable correction handoff form the bounded evidence
+assignment; all nine child rows are open. Project13 T01 registration precedes
+initial issue, with a meta-review checkpoint before T02. Parent criterion text/
+status, original-source readiness, complete R/T/C/L/G and later gates are unchanged.
