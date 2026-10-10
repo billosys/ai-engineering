@@ -73,3 +73,43 @@ browser rendering/zoom/reflow, package/runtime, version/history, release,
 project closure, or Arc02 composition was performed or accepted. S02-08 and
 P10-11 remain open/deferred under their existing gates. CDC review is the next
 owner action; subsequent authorization and sequencing remain with the Operator.
+
+
+## Iteration01 CC proposed return — 2026-10-09
+
+This section supersedes the initial return's all-open status snapshot. It reports
+CC's correction candidate under issuing commit
+`24ae8a8b359d0965f93ac888ca122960eb3b6643`; it does not record CDC acceptance.
+The SOURCE pin and accepted example are unchanged. The exact six-output allowlist
+is recorded in [Iteration01 execution notes](artifacts/execution-notes.md#iteration01-correction-return--2026-10-09).
+
+| Finding | Iteration01 disposition |
+|---|---|
+| F01 | Removed the false 1240px/1.25 conflict from the configuration analysis and handoff. `layout.md:179–181` is an illustrative “say” alternative. Retained the genuine 1.25-versus-1.2 narrow-default conflict and the independent LAY-01 universal-geometricity finding. |
+| F02 | Added exact subjects `TY-07`, `SK-09`, and `LAY-15`; the complete nine-span crosswalk now maps to 36 records while retaining all original 33 IDs. Count and bibliography mentions are inventory-only. |
+| F03 | Recomputed all analysis artifact hashes, blobs and spans, and reviewed each pointer against its observation and dimension. TY-05 has growth and default evidence; LAY-02 has separate determinant and clamp evidence; FND-03 cites the source/count and explicit inventory boundary, with no determinant pointer. |
+
+| Row | Iteration01 CC evidence and proposed state |
+|---|---|
+| S01-01 | Retain CDC-done: required reads, pins and bounded intake remain unchanged. |
+| S01-02 | Open for CDC: 36 exact source-linked occurrence records and all five dimensions; nine-span membership and evidence joins checked. |
+| S01-03 | Retain CDC-done: proof bytes are unchanged. |
+| S01-04 | Open for CDC: configuration reconciliation distinguishes the illustrative pair from the actual same-default conflict; retained calculations are byte-identical. |
+| S01-05 | Retain CDC-done: adopted input and diagnostic numeric sections remain byte-identical; no fresh replay is claimed. |
+| S01-06 | Retain CDC-done: accepted proof/input controls are unchanged and no new finding undermines them. |
+| S01-07 | Open for CDC: handoff contains all 36 IDs and corrected F01/F02 scope. |
+| S01-08 | Retain CDC-done: exact six-path scope and protected input checks recorded. |
+| S01-09 | Open for CDC: iteration failures, recovery, retained gates and corrected Arc02 bubble-up recorded. |
+
+The five previously accepted rows remain CDC-done under the correction-review
+rule; the four findings-related rows remain open. The ledger criteria and status
+cells were not changed. The complete handoff and evidence pointers remain
+CC-attested and await independent CDC review.
+
+The Arc02 bubble-up retains the genuine 1.25/1.2 default conflict, exact `4/3`
+versus approximate `1.333`, published-declaration discrepancies and dependent
+space-token decisions. The 179–181 illustrative pair is not escalated as a
+project-default conflict. Source fidelity, attribution, design policy, full
+233-card/eight-live-file review, relationship/CQ coverage, DES acceptance,
+accessibility, runtime/release gates and Project10/11 boundaries remain with
+their existing owners. No live SOURCE file changed and no later slice is opened.

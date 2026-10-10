@@ -48,7 +48,8 @@ conformance sentence (`LAY-12`):
 
 ### 3. Make ratio notation and displayed precision explicit
 
-**Occurrences:** `SK-01`, `SK-03`, `TY-01`, `TY-03`, `TY-04`, `FND-02`.
+**Occurrences:** `SK-01`, `SK-03`, `TY-01`, `TY-03`, `TY-04`, `TY-07`,
+`FND-02`.
 
 > When the larger size is divided by the smaller size, the exact perfect-fourth
 > multiplier is `4/3 = 1.333…` (displayed approximately as `1.333`). Do not use
@@ -64,7 +65,7 @@ matches powers of decimal `1.333`, not exact `4/3`.
 ### 4. Reconcile the stated baseline endpoints and declarations
 
 **Occurrences:** `SK-03`, `SK-04`, `SK-05`, `SK-07`, `TY-01`, `TY-05`,
-`LAY-01`, `LAY-02`, `LAY-03`, `LAY-06`, `LAY-09`, `LAY-10`, `FND-04`.
+`LAY-02`, `LAY-06`, `LAY-09`, `LAY-10`, `LAY-11`, `FND-04`.
 
 For the baseline endpoint decisions assigned by the slice plan—360px/16px with
 ratio `6/5`, and 1440px/20px with ratio `4/3`—the step 0–2 declarations at a
@@ -77,10 +78,14 @@ ratio `6/5`, and 1440px/20px with ratio `4/3`—the step 0–2 declarations at a
 ```
 
 These coefficients are derived from the stated endpoint model, not from the
-published declarations. Keep the 1.25-at-360, 1.25-at-1240, and 1.333-at-1440
-statements visible as a decision conflict to resolve during source correction;
-do not silently substitute one for another. For the scope assigned here, the
-plan's explicit 360/16/6/5 and 1440/20/4/3 oracle controls the calculation.
+published declarations. Keep the genuine same-default narrow ratio conflict
+visible: SKILL.md:156 and type.md:472–475 say 1.25 at 360px, while the declared
+`@min` configuration at SKILL.md:185–187 and layout.md:496–500 says 1.2 there.
+The pair in layout.md:179–181 is introduced as an example (“say”) and is not a
+required default conflict; its universal geometricity claim is separately
+covered in proposal 1. For the bounded calculation, use the plan's explicit
+360/16/6/5 and 1440/20/4/3 oracle, without treating that choice as a live-source
+resolution.
 
 The `space-s`, `space-m`, `space-l` and space-pair declarations depend on the
 base-scale correction. Preserve their current named roles only if the owner
@@ -92,8 +97,16 @@ owner confirmation of those multipliers.
 
 ### 5. Keep advice and empirical claims qualified
 
-**Occurrences:** `SK-02`, `SK-06`, `SK-08`, `TY-02`, `TY-04`, `TY-06`,
-`LAY-04`, `LAY-05`, `LAY-08`, `LAY-09`, `LAY-11`, `FND-01`, `FND-03`.
+**Occurrences:** `SK-02`, `SK-06`, `SK-08`, `SK-09`, `TY-02`, `TY-04`, `TY-06`,
+`LAY-04`, `LAY-05`, `LAY-08`, `LAY-09`, `LAY-11`, `LAY-15`, `FND-01`,
+`FND-03`.
+
+**Additional numeric inventory:** `SK-09` records the three-site axis values at
+SKILL.md:173–177 without evaluating typeface/axis semantics or site suitability.
+`LAY-15` records the numbered principle marker and numeric size examples at
+layout.md:353–360; both printed differences are `+4px`, while the perceptual
+comparison and normative advice remain unassessed. `TY-07` is handled with the
+ratio notation in proposal 3.
 
 No correction to typeface/axis roles, the zero-breakpoint preference, grid
 coupling, token architecture, Weber–Fechner/noticeability claims, musical or

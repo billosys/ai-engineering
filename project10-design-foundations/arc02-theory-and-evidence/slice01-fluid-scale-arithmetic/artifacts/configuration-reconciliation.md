@@ -13,11 +13,42 @@ operations used Python `fractions.Fraction`, with integer half-even rounding to
 six decimal places. The CSS arithmetic interpretation is `1vi = w/100`; clamp
 bounds are ordered endpoint values. This does not execute a browser.
 
-## Conflicts in the bounded live witnesses
+## Iteration01 source-to-result inventory
+
+The table maps the complete nine-span population to every emitted subject.
+Ranges are inclusive SOURCE line spans; the claim records carry the full exact
+assertions and source hashes. Overlap is intentional where one passage contains
+separate numeric and broader claims.
+
+| Required witness | Covered result IDs and exact source spans | Inventory boundary |
+|---|---|---|
+| `knowledge/design/SKILL.md:144–210` | `SK-01:156`; `SK-02:158–167`; `SK-09:173–177`; `SK-03:185–187`; `SK-06:191`; `SK-04:195`; `SK-05:196`; `SK-07:199–203`; `SK-08:206–208` | Numeric step and per-site axis settings are recorded. Typeface/axis meaning, project branding, broader type/space/grid architecture and zero-breakpoint policy are not evaluated. |
+| `knowledge/design/guides/type.md:133–142` | `TY-07:133`; `TY-01:135–140`; `TY-02:137–138` | The numeric heading and scale values are recorded. Musical/historical attribution and typographic or auditory harmony are not verified. |
+| `knowledge/design/guides/type.md:456–488` | `TY-03:458–461`; `TY-04:463–470`; `TY-05:472–478`; `TY-06:480–485` | Printed ratios, percentages and fluid claims are separated from the perceptual, safety and source claims, which remain unassessed. |
+| `knowledge/design/guides/layout.md:164–228` | `LAY-01:167–184`; `LAY-02:186–191`; `LAY-03:192–196`; `LAY-04:198–209`; `LAY-05:211–218` | The `say` pair at 179–181 is an illustrative alternative. Universal geometricity is assessed separately; spacing/grid behavior and attribution remain unassessed. |
+| `knowledge/design/guides/layout.md:350–380` | `LAY-15:353–360`; `LAY-06:357–367`; `LAY-07:369–375`; `LAY-08:377–379` | The numbered heading and equal-absolute-difference examples are inventoried. Perceived magnitude and the normative “never by addition” advice are not tested. |
+| `knowledge/design/guides/layout.md:493–528` | `LAY-09:496–505`; `LAY-10:509–517`; `LAY-11:518–527` | Declared defaults and literal type/space CSS are compared under the stated model; design suitability and space-token policy are not selected. |
+| `knowledge/design/guides/layout.md:933–948` | `LAY-12:935–940`; `LAY-13:941–942`; `LAY-14:942–945` | Linear/clamp and scale claims are checked within the stated arithmetic model. Writing-mode, browser zoom, reflow and WCAG claims are not tested. |
+| `knowledge/design/guides/design.md:363–369` | `DES-01:363–369` | The universal mathematical-correctness component is checked; overall design correctness is not established. |
+| `knowledge/design/guides/foundations-of-design.md:255–286` | `FND-01:258–262`; `FND-02:264–270`; `FND-03:272–277`; `FND-04:279–284` | Bibliographic metadata, the primitive count, attribution and analogy are inventoried, not verified as facts. |
+
+The three omissions from the initial return are now explicit subjects:
+`TY-07` is the separate numeric heading at type.md:133; `SK-09` is the
+per-site numeric axis table at SKILL.md:173–177; and `LAY-15` covers the
+Roman-numeral principle marker and numeric examples at layout.md:353–360. The
+two printed differences in LAY-15 are each `+4px`; the claim about their
+perceived size and the rule in its heading are not arithmetic conclusions.
+The `(v4.0, 2012, 398 pages)` metadata and “13 layout primitives” are carried
+by FND-01/FND-03 as numeric mentions only. No bibliography, font or axis
+semantics, historical attribution, empirical perception, media-query advice,
+grid behavior, or general design-policy claim is accepted by this inventory.
+
+## Ratio and claim relationships in the bounded live witnesses
 
 | Witness | Actual bounded statement/configuration | Reconciliation |
 |---|---|---|
-| `knowledge/design/SKILL.md:156`, `:185–187`; `guides/layout.md:496–500`; `guides/type.md:139–140` | Ratios are described as 1.2/1.25/1.333 at differently named small/large widths. | These are distinct declared configurations. The 1.25-at-360 type statement conflicts with 1.2-at-360. Layout prose also says 1.25 at 1240, while another section says 1.333 at 1440. Do not silently harmonize them. For the assigned DES-003/004 baseline oracle, use the plan's 360px/16px/6/5 and 1440px/20px/4/3 model. `1.333` is a displayed approximation; exact `4/3` is `1.333…`, not equal to the decimal `1.333`. |
+| `knowledge/design/SKILL.md:156`, `:185–187`; `guides/type.md:139–140`, `:472–475`; `guides/layout.md:496–500` | Statements describing the same narrow/wide default give 1.25 at 360px in SKILL.md:156 and type.md, versus 1.2 at the `@min` 360px default in SKILL.md:186 and layout.md:498. Both give the wide endpoint as 4/3 displayed 1.333. | The narrow default is a genuine same-baseline conflict: keep 1.25 and 1.2 distinct. `1.333` is an approximate display of exact `4/3`; it is not a separate exact multiplier. The layout passage at 179–181 is handled in its own row because it explicitly introduces its 1.2-at-360/1.25-at-1240 pair with “say.” |
+| `guides/layout.md:179–184` | “Say” 1.2 at 360px and a different scale “say” 1.25 at 1240px, followed by a claim that the interpolated results are always proportionally harmonious. | The pair is an illustrative alternative, not a required project default and not a conflict with the later 360/1440 default. Its unequal ratios still contradict a mathematical reading of “always proportionally harmonious” at interior widths; any perceptual meaning of “harmonious” remains unassessed. Preserve the geometricity finding without recasting the example as a configuration error. |
 | `guides/type.md:133–140`; `foundations-of-design.md:264–270` | “4:3 = 1.333” and the interval list says “perfect fourth (3:4 ≈ 1.333).” | Under ordinary left:right numeric division, 4:3 is 4/3 while 3:4 is 3/4. The latter gives 1.333 only when the musical interval is oriented low-to-high and the scale multiplier is its reciprocal. State the orientation when using interval notation. The arithmetic resolves the ratio; it does not verify the historical attribution or musical analogy. |
 | `guides/type.md:458–461` | The sequence is called powers of `4/3` but printed as `1.000, 1.333, 1.777, 2.369, 3.157, 4.209`. | Exact `4/3` powers rounded to three decimals are `1.000, 1.333, 1.778, 2.370, 3.160, 4.214`. The printed values instead match powers of decimal `1.333` rounded to three decimals. The two representations must not be conflated. Negative powers of exact `4/3` round to `0.750, 0.563` for steps −1 and −2. |
 | `guides/layout.md:179–196`, `:362–375`; `guides/type.md:472–478`; `foundations-of-design.md:279–284`; `design.md:363–369` | Linear interpolation is said to preserve a modular/geometric scale and constant proportions at every interior width; higher steps are said to grow faster. | The determinant in [the proof](fluid-scale-proof.md#scope-and-model) is positive for a genuine interior with unequal endpoint ratios. Geometry is preserved for equal ratios or at an endpoint. Step slopes depend on their own endpoint differences; the assigned `4` versus `8/3` counterexample disproves the universal faster-higher-step rule. |
@@ -25,12 +56,14 @@ bounds are ordered endpoint values. This does not execute a browser.
 | `guides/type.md:463–485` | Exact ratios and percentages are mixed with judgments about contrast, safety and equal noticeability. | Golden-ratio step increase is about 61.8% (rounded 62%); `4/3` is a 33⅓% increase (rounded 33%); 1.125, 1.25 and 1.5 are respectively 12.5%, 25% and 50% increases. “Too much,” “safe,” “hard to create,” and “equally noticeable” are empirical or contextual claims, not consequences of those calculations. They remain unassessed. |
 | `knowledge/design/SKILL.md:191–203`; `guides/layout.md:198–218`, `:519–527` | Space is tied to type; token and pair values are presented as generated by a shared system. | The alias and printed token/pair declarations are configuration occurrences. Their displayed values follow the old printed step-0 endpoint, but they do not fix the type-scale inconsistencies above. A shared base or grid coupling does not establish the universal geometricity claim. Confirm the intended token multipliers before implementation. |
 
-The numeric metadata `(v4.0, 2012, 398 pages)` and “13 layout primitives” in
-`foundations-of-design.md:258–277` were inventoried as numeric mentions, not
-verified as facts; they are outside this arithmetic assignment. Likewise the
-font-role/axis table, zero-breakpoint advice, responsive-design framing, color,
-perception and source-attribution content remain unassessed except where an
-exact numerical configuration appears below.
+The numeric metadata `(v4.0, 2012, 398 pages)` in FND-01 and “13 layout
+primitives” in FND-03 are inventoried as numeric mentions, not verified facts.
+The numeric per-site axis table in SK-09 is likewise configuration inventory,
+not validation of axis semantics or typeface/site suitability. The initial
+return omitted these source occurrences; their inclusion here does not expand
+this assignment into font, source-fidelity or design-policy review. Other
+non-numeric typography, grid, zero-breakpoint, responsive-design, color,
+perception and source-attribution material remains unassessed.
 
 ## Published baseline CSS at root 16px
 

@@ -196,3 +196,125 @@ the seven assigned paths and passed `git diff --cached --check`; the exact-path
 commit then succeeded. Post-commit replay confirmed the candidate contains
 exactly those seven paths, all 33 JSONL records and analysis joins, both required
 trailers, and nine open ledger rows.
+
+
+## Iteration01 correction return — 2026-10-09
+
+### Assignment and issue readback
+
+This return answers `cc-prompt-iteration01.md` as issued at planning commit
+`24ae8a8b359d0965f93ac888ca122960eb3b6643`. The pinned SOURCE input remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`; the accepted diagnostic example
+remains `38b66d0d` with SHA-256
+`996d047814bf174e0def2dea7f24f619c042dbd3bfa664bdaa3f4c4af4c2ea86`. Review
+procedure remains `759ce2dd116a4cfe03b72d43fd2791f48486251c`, SHA-256
+`a72c820ddfe4804e6056f1785b01e572473186e91a33ee87b757085c984752db`. The
+iteration prompt SHA-256 is
+`4c02197e532fadeb36f79afb5afc2a40fc71541255b1c1bbc9b87e4ba20e72ac`.
+The predecessor CC candidate is `e0f68c311a6c25417e74ac87152d0a003cefc07e`;
+issue `3a18c51d08507921ad716209ecd78b268f1dc69f` and CDC review are preserved
+as history, not overwritten.
+
+The F01 correction preserves the actual 1.25-versus-1.2 conflict between
+same-default statements (`SKILL.md:156`, `type.md:472–475` versus the declared
+`@min` default at `SKILL.md:185–187`, `layout.md:496–500`). The layout pair at
+`layout.md:179–181` is introduced with “say” and is classified as an illustrative
+alternative. LAY-01 still carries the separate universal-geometricity finding.
+F02 is repaired by a complete crosswalk for all nine required source spans and
+three additional exact subjects: `TY-07` (type.md:133), `SK-09` (SKILL.md:173–177),
+and `LAY-15` (layout.md:353–360). The emitted population is 36; all original 33
+IDs remain. The bibliography metadata and “13 layout primitives” mention remain
+inventory-only. Typeface/axis semantics, typography, grid, attribution,
+perception, policy and other out-of-scope claims remain unassessed. F03 is
+addressed with passage-specific analysis pointers: `TY-05` links the growth
+counterexample and default reconciliation; `LAY-02` separately links determinant
+and finite-clamp passages; `FND-03` links its source/count context and the actual
+inventory boundary paragraph. Every remaining analysis pointer was reviewed
+against its described observation and dimension.
+
+### Required reads and source witness receipt
+
+Iteration01 was read in full (175 lines). The currently issued slice plan (221
+lines), slice ledger (16), parent Arc02 plan (131) and ledger (15), Project10 plan
+(207 required-scope lines) and ledger (58), initial CDC review through its
+finding/status/bubble-up section (151), and original CC prompt (165) were read.
+The accepted review procedure (46 lines) was read at its pinned revision.
+
+Workflow and method reads in this turn were: installed collaboration-framework
+skill (538 lines, complete); project-management skill (65) and README (178);
+Engineering Methodology guide lines 26–147; ledger discipline lines 1–96; row
+closure lines 1–31; independent verification lines 60–86; implementation prompt
+authoring lines 260–361; validation gates lines 11–50; canonical planning
+worktree guide lines 126–156 and 218–250; and planning top-down guide lines
+134–188. SOURCE `AGENTS.md` lines 1–216 was read completely. These reads
+confirmed the planning/source boundary, the six-path iteration allowlist, the
+independent CDC gate, and the rule to preserve accepted rows unless a correction
+undermines their evidence.
+
+All nine assigned witness spans were rewalked from literal pinned Git objects,
+with inclusive line numbering and full passage text: `SKILL.md:144–210`,
+`type.md:133–142`, `type.md:456–488`, `layout.md:164–228`, `layout.md:350–380`,
+`layout.md:493–528`, `layout.md:933–948`, `design.md:363–369`, and
+`foundations-of-design.md:255–286`. The 33 predecessor claim records had their
+subject/evidence/dimension/history/blocked/disposition/review fields inspected;
+the revised 36-record output was then walked for exact source path, source SHA,
+source span/text, evidence joins, all five dimensions, and pending CDC state.
+
+### Preservation, calculations and validation
+
+The proof remains byte-identical to the predecessor SHA-256
+`3974a7d8017d52675f2e1bfaa87632d1760dd9054ca64ed94c1455bd14543701` and Git
+blob `293e29829bab364f1fdb30fbc94c6fbbe32749fd`. The configuration artifact's
+published baseline and adopted diagnostic portions beginning at
+“Published baseline CSS at root 16px” were asserted byte-identical to the
+predecessor. Thus the emitted seven-row example, 84-case comparison, 32 exact
+grid matches, all 52 nonzero deltas and maximum delta `0.000012px` were retained
+without recalculation. The actual example input, source pin and result table
+remain unchanged; CDC's prior exact reproduction is retained under the
+correction rule and is not represented as freshly rerun in this iteration. No
+new numerical model or output was introduced; only direct `+4px` subtraction
+was recorded for LAY-15.
+
+The required output allowlist is exactly these six paths: `artifacts/claim-results.jsonl`,
+`artifacts/configuration-reconciliation.md`, `artifacts/correction-handoff.md`,
+`artifacts/execution-notes.md`, `ledger.md` (Evidence/Notes only), and
+`closing-report.md`. No source, proof, example, plan, prompt, CDC review or
+unassigned artifact was edited. The nine-span source-to-result crosswalk and
+all 36 IDs were checked; each ID appears in the handoff. The three added spans
+were checked as necessary occurrence controls. Each source join was checked
+against SOURCE bytes and each analysis/proof join against its exact artifact
+SHA, Git blob and inclusive line span. Critical semantic checks confirmed that a
+LAY-01 “say” pair cannot be labeled a required-default conflict, determinant
+alone does not support the TY-05 growth claim, determinant alone does not support
+the LAY-02 clamp claim, and determinant evidence is absent from FND-03. Revised
+pointers resolve to the exact relevant passages. Local links/fragments, LF EOF
+and no-CRLF, the exact six changed paths, and `git diff --check` were checked.
+
+The existing five CDC-accepted rows S01-01, S01-03, S01-05, S01-06 and S01-08
+remain accepted per the review-during-correction rule: the proof and accepted
+numeric bytes/inputs they relied on did not change, and no new result undermines
+them. S01-02, S01-04, S01-07 and S01-09 remain open pending CDC. This is CC
+proposed evidence only; no slice or Arc02 closure is claimed.
+
+### Failures and recoveries in this iteration
+
+A read command once used a duplicated `project10-design-foundations/` path and
+reported the target as missing; the correct path was read afterward. A hash
+preflight once targeted `artifacts/closing-report.md` although that report is at
+the slice root; it was rerun using the correct root path. One combined inspection
+exceeded the output budget and was truncated; the relevant configuration and
+handoff ranges were re-read in bounded output, and the numeric tail was checked
+with an exact byte-equality assertion. An initial tool-command construction had
+invalid JavaScript syntax and executed no shell command or file mutation; the
+command was reconstructed and then ran successfully. These failures produced no
+accepted evidence and no out-of-scope changes.
+
+Two composite-checker assertions also initially expected wording that differed from the exact artifact phrasing (“same-baseline conflict” and an example classification). I inspected the cited passages, corrected the assertions to the artifact text, and the complete scoped join/preservation suite passed.
+
+A first F01 negative-control assertion expected the result rationale to use the word “illustrative”; the rationale instead says “example, not a default conflict,” while the reconciliation and handoff explicitly classify it as illustrative. I corrected the assertion to check that classification and the negative-control checks passed.
+
+The following work was not run or accepted: external source/bibliography
+fidelity, semantic design or typeface/axis review, perception experiments,
+grid/token policy selection, complete corpus or relationship/CQ review,
+browser/rendering/zoom/reflow/accessibility checks, package/runtime or release
+validation, live source repair, project/arc closure, and CDC acceptance.
