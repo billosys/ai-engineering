@@ -589,7 +589,7 @@ The code is extracted from this committed execution-notes blob. At receipt time,
 ```python
 from pathlib import Path
 import subprocess, json, hashlib, math, re, ast, itertools, collections
-P=Path.cwd(); S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/'; C='I03_CANDIDATE_ID'; SRC='dffa504e851b03b8e4746f1941068e4cc850b612'; PROC='project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/review-procedure.md'; PR='759ce2dd116a4cfe03b72d43fd2791f48486251c'; PREV='fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0'
+P=Path.cwd(); S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/'; C='67419add633ffdefe729f9078452731b2918532d'; SRC='dffa504e851b03b8e4746f1941068e4cc850b612'; PROC='project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/review-procedure.md'; PR='759ce2dd116a4cfe03b72d43fd2791f48486251c'; PREV='fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0'
 def git(*a): return subprocess.check_output(['git',*a],cwd=P)
 def obj(r,p): return git('show',f'{r}:{p}')
 def H(b): return hashlib.sha256(b).hexdigest()
