@@ -28,7 +28,7 @@ all acceptance criteria and higher-scale/source/fidelity gates are unchanged.
 ## Iteration01 independent review — 2026-10-10
 
 At `73c8180b` CDC accepts S02-04 and retains S02-03/05: three done/six open.
-[Current review](cdc-verification.md#iteration01-independent-review-2026-10-10)
+[Current review](cdc-verification.md#iteration01-independent-review--2026-10-10)
 issues [Iteration02](cc-prompt-iteration02.md) for residual F01–F05. Initial
 review and issued prompts remain historical; all criteria, higher-scale/input
 requirements and correct proof/values remain unchanged. No Slice03 or closure.
@@ -41,14 +41,14 @@ Candidate 73c8180b received the Iteration02 correction prompt from issuing commi
 S02-01, S02-02, S02-06, S02-07, S02-08 and S02-09 in the six authorized outputs;
 these six rows remain open pending CDC review. S02-03/04/05 remain CDC-done at
 73c8180b; no accepted criterion text or disposition was changed. See
-[Iteration02 return](closing-report.md#iteration02-cc-return-2026-10-10) and
+[Iteration02 return](closing-report.md#iteration02-cc-return--2026-10-10) and
 [claim records](artifacts/claim-results.jsonl),
-[numerical replay](artifacts/execution-notes.md#iteration02-execution-2026-10-10).
+[numerical replay](artifacts/execution-notes.md#iteration02-execution--2026-10-10).
 
 
 ## Iteration03 CC return — 2026-10-10
 
-CC proposes corrected evidence for S02-01, S02-02, S02-06, S02-07, S02-08 and S02-09. Those six rows remain open pending independent CDC review. S02-03/04/05 remain CDC-done at `73c8180b`; no accepted criterion text or disposition changed. The return and exact six-output receipt are in [closing report](closing-report.md#iteration03-cc-return-2026-10-10). No Slice03 or closure is proposed.
+CC proposes corrected evidence for S02-01, S02-02, S02-06, S02-07, S02-08 and S02-09. Those six rows remain open pending independent CDC review. S02-03/04/05 remain CDC-done at `73c8180b`; no accepted criterion text or disposition changed. The return and exact six-output receipt are in [closing report](closing-report.md#iteration03-cc-return--2026-10-10). No Slice03 or closure is proposed.
 
 
 ## Iteration03 independent review — 2026-10-10
@@ -60,3 +60,15 @@ model, values and stage controls independently reproduce and are protected.
 Earlier dispositions remain historical. All parent criteria/statuses, R/T/C/L/G,
 full populations, source/fidelity and later gates remain. No Slice03 or closure;
 queued Arc06 metadata/rendering work and P10-12/13 remain unchanged.
+
+
+## Iteration04 CC return — 2026-10-10
+
+Candidate for CDC review: CC proposes updated evidence under the exact five-path
+allowlist in [the Iteration04 closing return](closing-report.md#iteration04-cc-return--2026-10-10).
+S02-01/03/04/05 remain independently done; S02-02/06/07/08/09 remain open.
+The correction distinguishes paired assertions, historical process evidence,
+and current bounded results; it repairs five fragment targets. No criterion
+text, numeric model/value, protected proof, or acceptance status changed. The
+candidate is proposed-done only; no slice/arc/project closure or Slice03 is
+claimed.

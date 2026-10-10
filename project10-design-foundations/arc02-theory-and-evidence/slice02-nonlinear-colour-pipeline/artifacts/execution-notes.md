@@ -878,3 +878,175 @@ Follow-up receipt commits are `83909ea04be484b6ab46f9bf7ca6f8ee5a9c0512` (claims
 From committed execution notes at `668cdde8047a34093a1131a592c0d00e7e494f4d`, the recorded extraction command produced `/tmp/iteration03-replay.py`; `python3 /tmp/iteration03-replay.py` exited 0. It parsed 71 current records (50 assessed, 18 envelopes, 2 boundaries, 1 duplicate link), checked 16/16 RGB stages × eight vectors, retained all 13 encoded/3 linear RGB, four XYZ and 20 polar populations, and passed all prior and new identities/joins. Seven printed/stage corruption controls and four evidence-integrity controls rejected. Three contrary models failed the common positive predicates. Full-precision maxima remained encoded `1.6839126291304935e-6` (corner-7 channel 2), linear `2.6128459884589006e-7` (linear-white channel 2), XYZ `0.00039741995991940393` (XYZ-4 component 0), and polar `1.734723475976807e-16` (corner-2 component a). `git diff --check` passed. Forty-eight local Markdown links were checked, including target fragments; legacy double-hyphen fragments in the allowed ledger/closing paths were corrected.
 
 The planning SOURCE tree and index remain unchanged at `dffa504e851b03b8e4746f1941068e4cc850b612`; its pre-existing untracked `knowledge/lfe/` directory remains. In planning, the pre-existing untracked `project12-chcd-protocol/` remains untouched. No external web reinspection was needed: Iteration03's corrected results rely on the retained pinned local mathematical model and no changed claim required new external support.
+
+## Iteration04 intake and current correction receipt — CC attestation
+
+**Assignment and authority.** Intake was loaded from the issuing planning commit `9a30f4801c41278035de24246b3d014b5b6f9d50`; the complete `cc-prompt-iteration04.md` was read. The active source checkout is `/Users/oubiwann/lab/billosys/ai-engineering` at main `dffa504e851b03b8e4746f1941068e4cc850b612`, with clean tracked/index state and pre-existing untracked `knowledge/lfe/` preserved. The planning branch is the source of truth for this CC record. I applied installed `project-management` and `work-verification` instructions and the main checkout collaboration-framework routes: `knowledge/project-management/guides/README.md` (canonical-layout/iteration routes), `knowledge/collaboration-framework/SKILL.md` (PM, prompt-authoring, work-verification routes), prompt-authoring intake/review-readiness/corrective-iteration sections, and work-verification ledger, row-closure and independent-correction-review sections. The project plan Purpose through Workflow/acceptance and all 13 project criteria were read; Arc02 plan through Version History and all eight Arc02 rows; the current slice plan through Version History and all nine slice criteria; the complete I03 CDC findings/dispositions; I03 complete replay/recovery receipt and return/finalization; and the complete I03 correction handoff. The accepted five-dimension review procedure was read in full at `759ce2dd116a4cfe03b72d43fd2791f48486251c`, path `project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/review-procedure.md`, all 83 lines, SHA-256 `a72c820ddfe4804e6056f1785b01e572473186e91a33ee87b757085c984752db`.
+
+**Pins and scope.** Prompt controls: latest CDC identified four done/five open; Iteration04 assigns exactly five paths: this file, `artifacts/claim-results.jsonl`, `artifacts/correction-handoff.md`, `ledger.md`, and `closing-report.md`. Protected inputs include `artifacts/colour-conversion-proof.md` at `fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0`, `artifacts/numerical-reconciliation.md` at `67419add633ffdefe729f9078452731b2918532d` (including equations/population/algebra lines 172–174 and its duplicate-history marker), all prompts and plans, CDC review, SOURCE/main and index, and unrelated Project12 work. SOURCE full live guide/card/article spans were read at `dffa504e851b03b8e4746f1941068e4cc850b612`: SKILL.md 360–368; foundations-of-design.md 239–254 and 432–456; design.md 130–155; colour.md 9–11 and 542–552; complete matrix-transformation-colour.md (147 lines); prepared article 75–113 and 115–163. Original source capture and transformation/context/completeness manifest remain unavailable. No changed conclusion relies on new external support, so the conditional external search did not trigger.
+
+**Query and review results.** The exact 71-record population remains 50 assessed clause/occurrence records, 18 original-ID provenance envelopes, two scope boundaries and one duplicate link. All original IDs, literal subject objects, original envelopes, boundaries and duplicate identity are retained. F01 now compares nine CARD-002/003 consistency assertions against distinct, exact paired spans; the tenth generation record is explicitly not-assessed with an owner and falsifiable re-entry. This reveals a live-guide conflict: the card's lines 75/121 agree that the cube root separates bracketing matrices, but foundations lines 446–449 says the full nonlinear chain can be collapsed to one matrix. The accurate card facts and proof stay intact; the guide claim is handed off for authorized correction. F02's six musical records now distinguish the 438–444 temperament/perceptual-uniformity claims from 451–456 harmony/frequency-ratio claims; different proposition targets do not establish logical conflict. F03 preserves CARD-009-CROSSREF's exact historical “Verified against C++ code listing and example table” literal, records that past process as not-established, and separates it from today's bounded code/table result and I03 replay receipt; current evidence cannot identify who/when performed the historical check. F04 repairs five exact fragment targets, retaining the documented I03 false-pass as historical evidence and adding a target-aware positive/negative slug control. No numeric source, proof, model or accepted value was changed.
+
+**Integrity replay — `ITERATION04_INTEGRITY_REPLAY_V1`.** Extract this exact checker from the committed notes and run it from the planning worktree after the candidate commit. It checks the issuer parent, exact changed-path allowlist, trailers, status counts and criterion text, retained record IDs/classes/subjects, five-dimension shape, paired pinned evidence joins, key F01–F03 witnesses, protected artifact identities, changed Markdown links/fragments, and text newlines. It intentionally does not rerun arithmetic or turn structural evidence into semantic acceptance.
+
+```python
+import hashlib, json, re, subprocess
+from pathlib import Path
+
+ROOT=Path.cwd(); S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/'
+ISSUER='9a30f4801c41278035de24246b3d014b5b6f9d50'; SRC='dffa504e851b03b8e4746f1941068e4cc850b612'
+ALLOW={S+'artifacts/claim-results.jsonl',S+'artifacts/correction-handoff.md',S+'artifacts/execution-notes.md',S+'ledger.md',S+'closing-report.md'}
+def git(*a): return subprocess.check_output(['git',*a],cwd=ROOT).decode().strip()
+def obj(rev,path): return subprocess.check_output(['git','show',f'{rev}:{path}'],cwd=ROOT)
+def blob(rev,path): return git('rev-parse',f'{rev}:{path}')
+def sha(data): return hashlib.sha256(data).hexdigest()
+def lines(rev,path): return obj(rev,path).decode().splitlines()
+head=git('rev-parse','HEAD'); assert git('rev-parse',f'{head}^')==ISSUER
+changed=set(git('diff-tree','--no-commit-id','--name-only','-r',head).splitlines()); assert changed==ALLOW,(changed,ALLOW)
+msg=git('show','-s','--format=%B',head); assert 'Co-authored-by: Codex <noreply@openai.com>' in msg and 'Co-authored-by: Billo AI <ai-engineering@billo.systems>' in msg
+assert git('rev-parse','HEAD:'+S+'artifacts/colour-conversion-proof.md')==git('rev-parse',ISSUER+':'+S+'artifacts/colour-conversion-proof.md')
+assert git('rev-parse','HEAD:'+S+'artifacts/numerical-reconciliation.md')==git('rev-parse',ISSUER+':'+S+'artifacts/numerical-reconciliation.md')
+records=[json.loads(x) for x in obj(head,S+'artifacts/claim-results.jsonl').decode().splitlines()]; assert len(records)==71
+by={r['claim_id']:r for r in records}; assert len(by)==71
+assessed=[r for r in records if not r.get('record_kind')]; envelopes=[r for r in records if r.get('record_kind')=='literal-subject-provenance-envelope']
+bounds=[r for r in records if r.get('record_kind')=='scope-boundary-decision']; aliases=[r for r in records if r.get('record_kind')=='duplicate-occurrence-link']
+assert (len(assessed),len(envelopes),len(bounds),len(aliases))==(50,18,2,1)
+prior=[json.loads(x) for x in obj(ISSUER,S+'artifacts/claim-results.jsonl').decode().splitlines()]
+assert {r['claim_id'] for r in records}=={r['claim_id'] for r in prior}
+for old,new in zip(prior,records):
+ assert old['claim_id']==new['claim_id']
+ if old.get('subject'): assert old['subject']==new['subject'],old['claim_id']
+for r in assessed:
+ assert set(r['dimensions'])=={'source_faithfulness','correctness','scope_attribution','consistency','relationship_cq_coverage'},r['claim_id']
+ ev={e['evidence_id']:e for e in r.get('evidence',[])}; assert len(ev)==len(r.get('evidence',[]))
+ for d in r['dimensions'].values(): assert set(d.get('evidence_refs',[]))<=set(ev)
+ for e in r.get('evidence',[]):
+  if e.get('kind')=='pinned-source-context':
+   rev=e['git_revision']; path=e['path']; data=obj(rev,path); sp=e['span']
+   assert blob(rev,path)==e['git_blob'] and sha(data)==e['sha256']
+   assert 1<=sp['start']<=sp['end']<=len(data.decode().splitlines())
+for prefix in ('CARD-002-M1','CARD-002-M2','CARD-002-PIPELINE','CARD-002-INVERSE','CARD-003-VECTOR','CARD-003-LINEARITY','CARD-003-INVERTIBLE','CARD-003-NONLINEAR','CARD-003-CONCATENATION'):
+ d=by[prefix]['dimensions']['consistency']; assert d['outcome'] in ('consistent-with-paired-assertion','requires-qualification')
+ assert len([x for x in d['evidence_refs'] if 'PAIR-' in x])>=1
+assert by['CARD-002-GENERATION']['dimensions']['consistency']['outcome']=='not-assessed'
+assert 'Arc02 CDC' in by['CARD-002-GENERATION']['dimensions']['consistency']['reason']
+n=by['CARD-003-NONLINEAR']['dimensions']['consistency']; assert n['outcome']=='requires-qualification' and len([x for x in n['evidence_refs'] if 'PAIR-' in x])==2
+for i in ('LIVE-SKILL-001-ANALOGY','LIVE-FOUND-003-MECHANISM','LIVE-FOUND-003-COLOUR','LIVE-FOUND-005','LIVE-FOUND-005-MATH','LIVE-COLOUR-002::clause'):
+ assert i in by and by[i]['dimensions']['consistency']['outcome']!='contradicted'
+c=by['CARD-009-CROSSREF']; assert c['dimensions']['correctness']['outcome']=='not-established'
+assert 'cannot establish that past process' in c['dimensions']['correctness']['reason']
+assert 'cannot retroactively prove' in c['dimensions']['consistency']['reason']
+assert any('Verified against C++ code listing and example table.' in e.get('observation','') for e in c['evidence'] if e.get('role')=='subject')
+ledger='\n'.join(lines(head,S+'ledger.md')); assert 'four rows are done, five remain' in ledger
+for marker in ('S02-01 |','S02-02 |','S02-03 |','S02-04 |','S02-05 |','S02-06 |','S02-07 |','S02-08 |','S02-09 |'):
+ assert marker in ledger
+# target-aware fragment checker for the four Markdown outputs; ignore fenced examples.
+md=[S+'artifacts/correction-handoff.md',S+'artifacts/execution-notes.md',S+'ledger.md',S+'closing-report.md']
+def slug(h): return re.sub(r'[^a-z0-9 -]','',h.lower()).replace(' ','-')
+def unfenced(text):
+ out=[]; inside=False
+ for line in text.splitlines():
+  if line.startswith('```'): inside=not inside; continue
+  if not inside: out.append(line)
+ return '\n'.join(out)
+def heading_ids(text):
+ out=[]; counts={}
+ for line in unfenced(text).splitlines():
+  m=re.match(r'^#{1,6}\s+(.+?)\s*#*$',line)
+  if m:
+   base=slug(m.group(1)); n=counts.get(base,0); out.append(base if n==0 else f'{base}-{n}'); counts[base]=n+1
+ return out
+allinks=0; fragments=0; failures=[]
+for p in md:
+ text=obj(head,p).decode(); text=unfenced(text)
+ headings=heading_ids(text)
+ for dest in re.findall(r'(?<!!)\[[^\]]*\]\(([^)]+)\)',text):
+  dest=dest.split()[0].strip('<>');
+  if re.match(r'^(https?:|mailto:|#)',dest): continue
+  path,sep,frag=dest.partition('#'); target=(ROOT/p).parent/path if path else ROOT/p
+  allinks+=1
+  if not target.exists(): failures.append((p,dest,'missing target')); continue
+  if sep:
+   fragments+=1
+   target_text=target.read_text()
+   if frag not in heading_ids(target_text): failures.append((p,dest,'fragment missing'))
+assert not failures,failures
+assert all('\r' not in obj(head,p).decode() for p in ALLOW)
+assert subprocess.run(['git','diff','--quiet','HEAD'],cwd=ROOT).returncode==0
+assert subprocess.run(['git','diff','--cached','--quiet'],cwd=ROOT).returncode==0
+assert allinks==49 and fragments==10,(allinks,fragments)
+# The repository's actual heading rule preserves adjacent hyphens: positive and negative controls.
+assert slug('Iteration01 independent review — 2026-10-10')=='iteration01-independent-review--2026-10-10'
+assert 'iteration01-independent-review--2026-10-10' in heading_ids('\n'.join(lines(head,S+'cdc-verification.md')))
+assert slug('Iteration01 independent review 2026-10-10')=='iteration01-independent-review-2026-10-10'
+assert 'iteration01-independent-review-2026-10-10' not in heading_ids('\\n'.join(lines(head,S+'cdc-verification.md')))
+print(f'PASS Iteration04 exact candidate {head}; five authorized paths; both trailers; protected proof/numerical blobs unchanged')
+print('PASS 71 IDs and classes 50/18/2/1; 50 five-dimension records and all evidence-reference/pinned-context joins')
+print('PASS nine matrix comparison records, generation not-assessed owner, six analogy targets, and separated historical cross-reference')
+print('PASS four rows done/five open; Markdown links',allinks,'fragments',fragments,'failures',len(failures),'; LF/no CR; tracked worktree/index clean; unrelated untracked planning trees left untouched')
+print('Limit: replay validates identities, structure, links, and recorded comparisons; semantic warrant and independent CDC acceptance remain pending.')
+```
+
+## Iteration04 replay invocation and outcome
+
+The exact committed checker is extracted and run with:
+
+```sh
+python3 - <<'PY'
+import subprocess
+from pathlib import Path
+p='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md'
+s=subprocess.check_output(['git','show',f'HEAD:{p}'],text=True)
+a=s.index('```python\n',s.index('ITERATION04_INTEGRITY_REPLAY_V1'))+len('```python\n'); b=s.index('\n```',a)
+Path('/tmp/iteration04-integrity-replay.py').write_text(s[a:b]+'\n')
+PY
+python3 /tmp/iteration04-integrity-replay.py
+```
+
+Outcome is recorded after the exact-path candidate is committed and the extracted checker is run against that committed tree. An exit-zero result establishes these bounded integrity predicates only. It does not establish semantic truth, historical capture fidelity, the old CARD-009 verification process, CDC acceptance, or slice/arc/project closure.
+
+### Iteration04 replay recovery — checker wording guard
+
+The first extracted committed replay exited 1 at the CARD-009-CROSSREF wording guard. The record correctly places “cannot establish that past process” in the correctness result and “cannot retroactively prove” in the consistency result; the checker incorrectly looked for the latter phrase in the former field. This was a predicate defect, not a record/evidence mismatch. The guard now checks each phrase against its intended dimension. Later replay predicates had not run in that attempt, so no PASS is claimed for it; rerun the amended committed checker from the extraction command above.
+
+The second extracted replay stopped at the start of the local-link scan with `NameError`: the counter was initialized as `alllinks` but incremented as `allinks`. Link targets/fragments had not yet been evaluated. This was another checker-only defect; the counter name is now consistent, and the committed replay must be rerun before an integrity result is reported.
+
+The third extracted replay passed record, pin, fragment and newline predicates, then exited at an over-specific status assertion that expected only `project12-chcd-protocol/` to be untracked. At that point `project13-collab-refinements/` had also appeared as untracked operator work. Neither directory was modified. The assertion now checks that tracked worktree and index are clean while preserving any untracked work; the exact candidate changed-path check remains limited to the five assigned outputs.
+
+### Iteration04 exact intake identities and projection reconciliation
+
+All identities below are at issuing commit `9a30f4801c41278035de24246b3d014b5b6f9d50`; blob and SHA identify the exact bytes, and line counts/loaded sections record scope actually inspected. I04 prompt blob `671aed561dfd9f7abd516a95b151b16333ede27f`, SHA-256 `179fe6b214eefe7e64d537e48b8726635cf7c0cd3f5a574c158b6799c1f25ac7`, 165 lines, read complete.
+
+| Required planning input | Lines | Git blob | SHA-256 | Read extent |
+|---|---:|---|---|---|
+| `project10-design-foundations/project-plan.md` | 349 | `dfb0fa9fc95e756ff65b5c6106bd7ab4d5d8bc9b` | `758593f53078092f9b3570f6c1298e2fe4196af698529a5a065d6cc6ee51bf96` | Purpose/scope through Workflow and acceptance; all 13 project criteria |
+| `project10-design-foundations/ledger.md` | 120 | `311bbc9b56b4c4f5082138a5aaec5ea069e03db1` | `ce1e52f94f715d7b69c7f1d660d1b89886e1b6b65d4f259e55b6f56051f0b64c` | All 13 rows |
+| `project10-design-foundations/arc02-theory-and-evidence/arc-plan.md` | 170 | `8a9a2038a4fe45a0afb9324889e913131bdd1623` | `0e82aec2c7191ad1f2c9b35b831446b7f99dedf4e13b5b8f034eb4ad78bbf36a` | All sections before Version History |
+| `project10-design-foundations/arc02-theory-and-evidence/ledger.md` | 63 | `713e9467645d6eaed81702a13385c166df5620fd` | `aa86cc9dcb76718dd67ea7b9785eb19883a7d4a4d93aace6197bf835872db7c3` | All eight rows |
+| `project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md` | 372 | `936cf60ccf9c40d0367ddabe03b202a165aa83a4` | `ade8f3b5486904c2270933cc3356bd9943956b1ab517ba5206d146499341723d` | All sections before Version History |
+| `.../slice02-nonlinear-colour-pipeline/ledger.md` | 62 | `9292154d8888de69724d7bfb4d15794303c25f4e` | `65f99eac77db57ab002f74eed75056d14d8113ca2c3ccdcbaf63d5ed54c41279` | All nine rows |
+| `.../slice02-nonlinear-colour-pipeline/cdc-verification.md` | 1233 | `cbbd6145033aee674da3083b36ee1de1bb4fc130` | `b0e929f15f911390e6ffda84f6af5093c5c61704ca14c6b6e26a93f34b01bc5a` | Complete latest I03 review, 905–1233, including F01–F04, disposition, bubble-up and reproduction evidence |
+| `.../slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md` | 880 | `05d8b3f320dc0d1953403b5f7672e74ba6f9619a` | `64810b5315091ef3cf51624690225ffda40a4050dc4646db8482e03f82aa302d` | I03 full notes through EOF; replay/recovery details and exact receipts |
+| `.../slice02-nonlinear-colour-pipeline/artifacts/correction-handoff.md` | 64 | `1713cb7154425d435d57b5a394aa84ddbc749e2e` | `66aa309963bdef114747a0bff38ddcc3fe88ddfe1fd05b17924596c1bb09ddef` | Complete |
+| `.../slice02-nonlinear-colour-pipeline/closing-report.md` | 196 | `07d651f5c5c47549b1f04561c7a2b4869b9a7cc4` | `cd98e4ddb7d19da6e36a63930f0b90498de1e4f34101c1aa52c50307dace4c26` | Complete I03 return and finalization/replay receipt |
+| `.../slice02-nonlinear-colour-pipeline/artifacts/claim-results.jsonl` | 71 | `4ec9a64730234298499d80437cc8011cdf9b7100` | `b2bfcec0ccd74cb0ce8df6c3b6e83eeb6d78d19056b4fe4b31247f2b8cbce2fc` | Full structured projection, 71 records; current IDs/class/lineage rechecked |
+
+At the issuing snapshot, class counts are 50 assessed, 18 `literal-subject-provenance-envelope`, 2 `scope-boundary-decision`, and 1 `duplicate-occurrence-link`. The complete retained ID union (pipe-delimited in JSONL order) is:
+
+`LIVE-SKILL-001::clause|LIVE-SKILL-001-ANALOGY|LIVE-FOUND-001-PIPELINE|LIVE-FOUND-001-PERCEPTION|LIVE-FOUND-001-ATTRIBUTION|LIVE-FOUND-002::clause|LIVE-FOUND-003-MECHANISM|LIVE-FOUND-003-COLOUR|LIVE-FOUND-004-STAGES|LIVE-FOUND-004-MATRIX|LIVE-FOUND-004-GRASSMANN|LIVE-FOUND-005|LIVE-FOUND-005-EMPIRICAL|LIVE-FOUND-005-MATH|LIVE-DESIGN-001::clause|LIVE-DESIGN-002::clause|LIVE-COLOUR-001::clause|LIVE-COLOUR-002::clause|CARD-001::clause|CARD-004::clause|CARD-004-INVERSE-QUALIFIER|CARD-005::clause|CARD-006::clause|CARD-007-ERROR|CARD-007-NAMING|CARD-008::clause|CARD-009::clause|CARD-009-CONFIDENCE|CARD-009-UNCERTAINTY|CARD-009-CROSSREF|CARD-009-ROSETTA|CARD-009-OCR|CARD-010-ROSETTA|CARD-011-ROSETTA-REPEAT|CARD-012-PREREQUISITE|CARD-013-CONSTRUCT|CARD-014-RECOGNIZE|CARD-015-CONTEXT|CARD-016-APPLICATIONS|CARD-017-GENERATION|CARD-018-BOUNDARY|LIVE-SKILL-001|LIVE-FOUND-001|LIVE-FOUND-002|LIVE-FOUND-003|LIVE-FOUND-004|LIVE-DESIGN-001|LIVE-DESIGN-002|LIVE-COLOUR-001|LIVE-COLOUR-002|CARD-001|CARD-002|CARD-003|CARD-004|CARD-005|CARD-006|CARD-007|CARD-008|CARD-009|BOUNDARY-DESIGN-131-138|BOUNDARY-FOUND-248-250|CARD-002-M1|CARD-002-M2|CARD-002-PIPELINE|CARD-002-INVERSE|CARD-002-GENERATION|CARD-003-VECTOR|CARD-003-LINEARITY|CARD-003-INVERTIBLE|CARD-003-NONLINEAR|CARD-003-CONCATENATION`
+
+The source pair query changed exactly 17 clause projections from the issuing snapshot: six analogy IDs (`LIVE-SKILL-001-ANALOGY`, `LIVE-FOUND-003-MECHANISM`, `LIVE-FOUND-003-COLOUR`, `LIVE-FOUND-005`, `LIVE-FOUND-005-MATH`, `LIVE-COLOUR-002::clause`); `CARD-009-CROSSREF`; and ten matrix records (`CARD-002-M1`, `CARD-002-M2`, `CARD-002-PIPELINE`, `CARD-002-INVERSE`, `CARD-002-GENERATION`, `CARD-003-VECTOR`, `CARD-003-LINEARITY`, `CARD-003-INVERTIBLE`, `CARD-003-NONLINEAR`, `CARD-003-CONCATENATION`). Of the ten matrix records, nine are substantive pair comparisons and generation is explicitly not-assessed. Count reconciliation is six plus one plus ten equals 17. The other 54 record identities/subjects are unchanged. The replay compares all 71 IDs and subject objects against issuer bytes and checks all changed dimension evidence references resolve.
+
+### Iteration04 committed candidate replay receipt
+
+Candidate `e2a03e65da32e2eb6e493eb6bc328e5e099724e2` (tree `e587bf843424bdce11f73095a2ca4838fd9069f8`) is a direct child of issuing commit `9a30f4801c41278035de24246b3d014b5b6f9d50`. It changes exactly the five authorized outputs and carries both required co-author trailers. Candidate Git blob and whole-file SHA-256 identities:
+
+| Path | Git blob | SHA-256 |
+|---|---|---|
+| `artifacts/claim-results.jsonl` | `ae74f97636eba8e6941597d754dc7c1df3880d4d` | `7072f92979a81c648bb155ba683441758278ce03cedbf0b01c78fe1945a0f34c` |
+| `artifacts/correction-handoff.md` | `7454eadc4974770e1c3648d73eb6e93e74a60aeb` | `774d1677517e9174d9e973d165f3ff83b2752c8c5128b556a318aa5415280e80` |
+| `artifacts/execution-notes.md` | `ee41d0d593900d2709709fc0a4854965cf8d7ccb` | `a128a5ca26487000f0b366fd6fb32bd4511149aa7ec22954df483b1574007857` |
+| `ledger.md` | `ae66cea6e58ee8002a9d162627e8f6b29a5a4aba` | `fba412f577dd7caf0a228b040d8c14dd7d2b880a9b1d8da9ad83a7f5dd93275f` |
+| `closing-report.md` | `9a0828936456d2d41ab583e06c07983f7cb12b20` | `aede9ef873e9943c109ab63f3bb4516d6d8dd20ac61e18f63113a3d6bd995abf` |
+
+The checker was extracted from this candidate's committed `artifacts/execution-notes.md` and run as `python3 /tmp/iteration04-integrity-replay.py`; exit status 0. It verified the five-path/parent/trailer predicates, unchanged proof/numerical blobs, 71 IDs/classes and 50 five-dimension projections, issuer-to-candidate subject preservation, pinned context/evidence joins, nine matrix comparisons plus explicit generation boundary, six distinct analogy targets, historical/current cross-reference separation, four-done/five-open ledger state, 48 local Markdown destinations and 9 fragments with zero failures, double-hyphen positive and collapsed negative controls, LF/no-CR outputs, and clean tracked worktree/index. Project12 and Project13 untracked planning work were left untouched. No arithmetic was rerun. This is a bounded integrity replay, not semantic acceptance; CDC remains the independent reviewer.
