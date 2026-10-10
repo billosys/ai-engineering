@@ -95,7 +95,7 @@ Exactly seven CC-writable slice-relative paths, all durable:
 - `artifacts/correction-handoff.md` — exact replacements/retentions, scope and owners.
 - `artifacts/execution-notes.md` — intake/example, actual queries, observations,
   failures/recovery, one current inline integrity replay and check limits.
-- `ledger.md` — evidence supplements only; criterion text and all open statuses retained.
+- `ledger.md` — evidence supplements only; criterion text and current CDC dispositions retained.
 - `closing-report.md` — proposed return, row/coverage accounting and parent bubble-up.
 
 The initial prompt, this plan and preparation notes are protected; no edits to
@@ -133,13 +133,27 @@ framework claim is predetermined.
 
 | Assignment | Date | Predecessor / reason | State |
 |---|---|---|---|
-| [cc-prompt.md](cc-prompt.md) — initial | 2026-10-10 | Slice02 closed; next ready token concern, primary technical evidence and demonstrated method | Active |
+| [cc-prompt.md](cc-prompt.md) — initial | 2026-10-10 | Slice02 closed; next ready token concern, primary technical evidence and demonstrated method | Returned; initial CDC review accepts three rows, six remain open |
+| [cc-prompt-iteration01.md](cc-prompt-iteration01.md) — Iteration01 | 2026-10-10 | Return `20852472` / receipt `2eee292c`; F01–05 complete assertions, applicable evidence, usable edits, checks and receipts | Active |
 
-Current assignment is the initial prompt. Issuing revision is the commit that
-introduces it; Project13 register records its exact identity before Operator relay.
-No correction iteration is issued. Five-iteration limits remain unchanged.
+Current assignment is Iteration01; its issuing revision is the commit introducing
+that prompt. [Initial CDC review](cdc-verification.md) accepts S03-03/05/08;
+six rows remain open. Original prompt/preparation and historical returns remain
+pinned. Seven CC paths remain; ledger evidence-only authority now preserves
+three CDC-done and six open states. Five-iteration limits remain unchanged.
+
+Author readiness: full selected context/result review, primary reinspections,
+actual printed-checker false-pass probes and a worked multiline repair precede
+issue. The original source-grounded method and five dimensions govern; only
+lossless multiline representation is clarified. No new population/gate or role.
+The initial example did not demonstrate wrapped assertions, recorded as an
+explicit author-preparation weakness in the independent review.
 
 ## Version History
+
+- 1.1 (2026-10-10): Initial return independently reviewed; three rows accepted,
+  six open. Issued Iteration01 F01–05 with worked multiline repair and actual
+  false-pass controls; full scope, input gates and historical prompts retained.
 
 - 1.0 (2026-10-10): Opened bounded token-system evidence with complete context
   inventory, actual primary-system distinctions and prospective T01 preparation.

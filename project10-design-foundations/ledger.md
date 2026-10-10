@@ -144,3 +144,12 @@ comparison and exact portable correction handoff form the bounded evidence
 assignment; all nine child rows are open. Project13 T01 registration precedes
 initial issue, with a meta-review checkpoint before T02. Parent criterion text/
 status, original-source readiness, complete R/T/C/L/G and later gates are unchanged.
+
+## Arc02/Slice03 initial review — 2026-10-10
+
+[CDC review](arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md) at `2eee292c` independently accepts
+S03-03/05/08; six child rows remain open. [Iteration01](arc02-theory-and-evidence/slice03-token-system-conventions/cc-prompt-iteration01.md)
+repairs complete assertion coverage, claim-specific evidence, usable edits,
+positive-checker coverage and intake/return receipts. T01 first-review observations
+are recorded; no parent criterion/status, R/T/C/L/G, corpus, source-readiness or
+later implementation/metadata/package/release gate changes. No child/arc closure.

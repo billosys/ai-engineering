@@ -125,7 +125,10 @@ Queued Arc06 remains unchanged. Arc02
 [Slice03](arc02-theory-and-evidence/slice03-token-system-conventions/slice-plan.md)
 is open for token-system conventions (DES-008 and bounded DES-002), prospectively
 registered as Project13 T01 under protocol revision 2. The demonstrated method
-and complete context inventory precede its initial handoff. Complete R/T/C/L/G
+and complete context inventory preceded its initial handoff. Initial review
+accepts S03-03/05/08, with six rows open; [Iteration01](arc02-theory-and-evidence/slice03-token-system-conventions/cc-prompt-iteration01.md)
+repairs complete assertions, applicable evidence, occurrence edits, checks and
+receipts. Complete R/T/C/L/G
 and original-source/full-corpus/release gates remain.
 After T01 closes or reaches a recorded blocked/escalation stop, complete its
 meta-review before the next trial prompt. R/T/C/L/G execution
@@ -279,6 +282,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.31 (2026-10-10): Arc02/Slice03 initial return reviewed at `2eee292c`;
+  three child rows done/six open, Iteration01 issued. First T01 observations
+  recorded; parent criteria, full populations and all later gates retained.
 
 - 1.30 (2026-10-10): Opened Arc02/Slice03 token-system evidence after Slice02
   closure; registered Project13 T01 under current protocol revision 2 before

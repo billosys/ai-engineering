@@ -52,7 +52,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 |---|---|---|
 | slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Closed at c3d68d7d; independent of missing original attribution/fidelity. |
 | slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Closed after I04 independent review and Operator-approved direct correction; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
-| slice03-token-system-conventions | Reconcile complete selected token assertions with DTCG and named-system primary scopes; usable portable policy and exact correction handoff. 17 contexts/168 lines in five files; evidence only. | Open; initial prompt, nine rows open. Project13 T01 registered before issue; original fidelity/export validation remain separate. |
+| slice03-token-system-conventions | Reconcile complete selected token assertions with DTCG and named-system primary scopes; usable portable policy and exact correction handoff. 17 contexts/168 lines in five files; evidence only. | Open; initial review three done/six open, Iteration01 current. Project13 T01 registered before initial issue; original fidelity/export validation remain separate. |
 | R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
 | T — remaining theory/evidence | Bounded slices per concern: nonlinear colour pipeline, perception/analogy scope, token-system conventions, layout/measure exceptions and CHI interpretation. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
 | C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
@@ -125,8 +125,9 @@ Current Slice02 state: closed after independent I04 review at19dd5385 and
 Operator-approved CDC two-field repair/closure. All nine rows done, I05 unused.
 [Final gate](slice02-nonlinear-colour-pipeline/cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
 separates independent evidence from direct self-check/Operator acceptance.
-Current assignment: [Slice03 initial prompt](slice03-token-system-conventions/cc-prompt.md),
-complete token-system comparison at the selected contexts. All nine rows open;
+Current assignment: [Slice03 Iteration01](slice03-token-system-conventions/cc-prompt-iteration01.md),
+F01–05 corrections after [initial review](slice03-token-system-conventions/cdc-verification.md)
+of `2eee292c`: S03-03/05/08 done, six rows open;
 [author preparation](slice03-token-system-conventions/artifacts/preparation-notes.md)
 and prospective Project13 T01 registration precede issue. After T01 closes or
 reaches a recorded blocked/escalation stop, meta-review precedes T02 issuance.
@@ -140,6 +141,10 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.11 (2026-10-10): Slice03 initial review accepts three child rows, six open;
+  Iteration01 repairs assertion/evidence/handoff/check/receipt defects. T01
+  observations recorded without changing full arc scope or parent gates.
 
 - 1.10 (2026-10-10): Opened Slice03 token-system conventions with source-grounded
   examples, complete selected-context inventory and prospective T01 registration.
