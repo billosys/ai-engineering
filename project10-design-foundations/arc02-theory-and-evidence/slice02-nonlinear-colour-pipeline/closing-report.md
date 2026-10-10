@@ -148,3 +148,42 @@ Numerical values and proof remain unchanged. The corrected replay is in executio
 - Three contrary model families were run against the shared positive checks: matrix-only on all 16 RGB and four XYZ cases, skipped decoding on middle-gray, and unsigned roots on all four XYZ cases. Four independent printed-field corruptions were rejected (original XYZ output, primary polar error, staged XYZ LMS, staged polar error). Four evidence-integrity probes were rejected (method pin, unresolved original ID, literal M1/input-space reinterpretation, and correctly hashed evidence assigned the wrong role/applicability). Semantic warrant and fidelity judgments remain for CDC.
 - Recovery history: replay attempts first exposed the stale candidate-parent pin, coefficient-source indexing/implicit coefficients, quoted XYZ table parsing, merged adjacent polar tables, and two evidence-guard locator/selection errors. Each failed before a PASS claim. The checker and exact failure/recovery details are preserved in [execution notes](artifacts/execution-notes.md#replay-defect-recovery--2026-10-10); the final committed candidate passed after correction.
 - `git diff --check` passed. Forty-three local Markdown links/fragments across the changed Markdown outputs resolved. The candidate has LF endings, final newlines, both required co-author trailers, exactly six changed paths, and retains the protected proof identity. Planning status remains three CDC-done and six open; the rows stay open for CDC review. SOURCE, unrelated paths, and planning Project12 untracked content were not changed.
+
+
+## Iteration03 CC return — 2026-10-10
+
+**Status:** CC proposes this bounded correction for CDC review. The issuing planning commit is `c4032ea08f61d7498d6b4ede025e9a524db1feba`; Iteration03 prompt blob `e0a693774a19787b36ed6dd84ea5b5da4425e9ca`, SHA-256 `071d295b07e8dedae030f4b0645524f5458461b41d707f8e69b06a7d828cd114`. SOURCE remains `dffa504e851b03b8e4746f1941068e4cc850b612`. This is a CC proposal; it is not Slice02 closure or an arc/project acceptance.
+
+Iteration03 adds a separate assessment of CARD line 97's determinant/exact-roundtrip qualifier; completes the foundations CIE context through the sentence ending at line 251 while retaining the separate 251–252 matrix claim; and includes the “compromise physical accuracy” assertion in the uniformity/analogy inventory. It assesses the original same-result assertion of CARD-007-NAMING without substituting decode advice, scopes the 2021 generation attribution to the linear-sRGB code, corrects the inverse XYZ versus inverse-A/RGB distinction, and separates CARD-007-ERROR's contradicted literal result from the proposed correction action. The RGB example's evidence points to its actual code operators; unrelated XYZ numeric examples were removed from that join.
+
+### Nine-row walk
+
+| Row | Status | Iteration03 proposal/evidence |
+|---|---|---|
+| S02-01 | open | Fresh exact prompt/current authority/source/method/data receipt and historical metadata correction are in [execution notes](artifacts/execution-notes.md). CDC must inspect the committed receipt. |
+| S02-02 | open | 50 assessed clause/occurrence records preserve 18 original envelopes, 2 boundaries and 1 duplicate link. Lineage remains explicit; five dimensions remain independently reported; literal and proposed clauses are separated. |
+| S02-03 | **done** | Retained CDC acceptance and protected proof at `fd73d993`; proof bytes unchanged. |
+| S02-04 | **done** | Retained accepted 13 encoded/3 linear RGB, four XYZ and 20 polar values. The new replay additionally validates every one of 16 RGB stage rows and eight vectors, alongside original and XYZ/polar stages. |
+| S02-05 | **done** | Retained CDC acceptance. I03 reruns matrix-only against XYZ table and scaling, skipped-decode against middle-gray L, and unsigned-root against finite-real XYZ Z-basis/table predicates. |
+| S02-06 | open | Corrected original-claim/evidence scope, generation and analogy assessments; fidelity is blocked only for results requiring missing original capture lineage. |
+| S02-07 | open | Handoff table pairs each assessed literal-result label and proposed action/replacement with owner. No C&B profile/default. |
+| S02-08 | open | Exact input identities, source/evidence joins, full population and stage checks, fixed models/tolerances, controls, links and path/commit checks are recorded. Mechanical replay does not settle semantic warrant. |
+| S02-09 | open | This return accounts for all nine rows, corrected denominators, failures/recoveries, limits and the Arc02 handoff. No scope change or next slice proposed. |
+
+### Output inventory and counts
+
+Exactly six output paths are assigned: `artifacts/claim-results.jsonl`, `artifacts/numerical-reconciliation.md`, `artifacts/correction-handoff.md`, `artifacts/execution-notes.md`, `ledger.md`, and `closing-report.md`. Claim data has 50 assessed rows, 18 original-ID provenance envelopes, 2 scope-boundary records, and 1 non-assessed duplicate link. The 16 RGB stage rows each carry and are checked for 8 vectors (128 vector comparisons); three focused stage-table controls reject decoded-input corruption, LMS corruption, and missing/duplicate-row populations. Existing 4 XYZ and 20 polar primary/stage checks remain. Numeric model positives cover 16 RGB cases, 4 XYZ cases and 20 polar cases; contrary-model families are 3. Integrity controls include the prior 4 and the new 3 stage controls.
+
+### Checks, limits, and failures
+
+The revised replay consumes code coefficients at prepared lines 124–156, XYZ matrix/table values at lines 91–110 and all printed candidate stages. Common positive predicates require finite-real XYZ results within 0.0005 of the actual four printed rows; one-eighth white L equal to half-white at 5.01e-13; and middle-gray L equal to 0.598180726623 within 5e-10. Matrix-only fails both XYZ and scaling predicates, skipped decoding fails the middle-gray predicate, and unsigned roots fail the real-valued XYZ Z-basis/table route. Separate exact-algebraic derivations establish row-wise matrix linearity, adjacent linear composition, and nonsingularity of the displayed matrices; no equality across generations is inferred.
+
+Iteration02’s second numerical correction section was identified as a historical duplicate of its first copy. Both are preserved; the duplicate is explicitly marked as carrying no extra receipt or denominator. The Iteration02 historical replay claims of full stage coverage are superseded by the new all-field checker; the two former false-pass stage corruptions now fail the actual field predicate. Any failed/recovered Iteration03 attempts and exact commands are retained in execution notes.
+
+Original Oklab source capture and transformation/context/completeness manifest remain absent; no fidelity conclusion dependent on them is proposed as accepted. No empirical colour/music study, full 233-card/eight-live-file review, relationship/CQ execution, live source/card edit, package/Make/browser/accessibility test, acquisition, release review, or next-slice work was run. Per-input P10-11 and Operator acquisition gates remain. The prepared local model supports bounded arithmetic, not an immutable original-source comparison.
+
+### Arc02 bubble-up and authority
+
+This bounded T-family correction supplies a proposed evidence package for the assigned nonlinear-pipeline, uniformity and analogy issues. It closes none of Arc02 A02-02–08 or Project10 P10-02–11. R/C/L/G, full corpus, original readiness and relationship/CQ work remain open. CC sees no evidence requiring a plan/sequencing change; CDC must perform its plan-change check before a later assignment, and no Slice03 is opened.
+
+**Return:** all three independently accepted rows remain done; six rows remain open for CDC. No semantic, source-fidelity, Arc02 or Project10 acceptance is claimed.

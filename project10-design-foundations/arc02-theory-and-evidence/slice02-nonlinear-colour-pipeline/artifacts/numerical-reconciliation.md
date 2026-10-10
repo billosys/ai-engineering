@@ -163,3 +163,16 @@ The original 16 RGB, four XYZ and 20 polar table rows remain byte-for-byte uncha
 The current replay checks exact unique IDs and input tuples for all 13 encoded RGB, three linear RGB, four XYZ and 20 polar cases. It checks each primary RGB Oklab/returned-input/error field; each XYZ calculated value, rounded oracle, signed component error and LMS field; and each staged XYZ LMS/root/Oklab/printed/error vector and staged polar restored `a`,`b` and all three error components. XYZ inputs/results are read from prepared source lines 107–110; RGB forward A/root/B and inverse arrays are consumed at the exact 124–139 and 141–156 code spans. Three original contrary models use the same positive scaling, middle-gray and finite-real predicates as the valid model.
 
 Iteration01’s six claimed negative controls are retained as historical; current counts are reported separately by the current replay: four printed-field/oracle checks (including in-memory corruption of an original XYZ printed value and polar error), three original numerical-model controls, and four evidence-integrity controls (method pin, original-ID mapping, literal M1/input-space interpretation, and correctly hashed but wrong-role evidence). These are mechanical guard checks only; semantic warrant remains a CDC human-review question.
+
+
+## Iteration03 bounded algebraic receipts
+
+The following exact algebraic identities are CC-derived from the displayed operators, not additional source quotations. They are included here because the earlier Iteration02 pointers named locators absent from its numeric blob. At the final receipt, each record binds this section to the I03 candidate revision/blob/hash and exact line span.
+
+1. **Matrix linearity.** For a matrix A and vectors x,y, each row dot product distributes over addition and scalar multiplication, so A(0.5x+0.5y)=0.5Ax+0.5Ay component by component. This applies to an individual matrix stage; it does not cross the cube-root stage.
+2. **Displayed determinants.** Direct cofactor expansion of the rounded printed matrices gives det(M1)=0.4722768434252936 and det(M2)=1.6112316300395422. Both are nonzero at the displayed decimal values, so those two rounded matrices are nonsingular. This numerical calculation establishes nonsingularity of the displayed matrices only; it does not show that separately printed inverse coefficients are exact inverses.
+3. **Adjacent composition.** For linear maps S (linear-sRGB to XYZ) and M1 (XYZ to LMS), (M1 S)v=M1(Sv) for every compatible v; therefore adjacent linear stages can be represented by the product matrix M1S before the componentwise cube root. The assigned prepared article gives the combined C++ matrix A but does not provide S's full coefficients here, so this identity proves composability, not coefficient-by-coefficient equality or cross-generation output equality.
+
+### Iteration02 duplicate-history marker
+
+The second `Iteration02 replay correction — values retained` block above is a byte-preserved duplicate from the Iteration02 return. It duplicates lines 150–156 and contributes no additional evidence or denominator. It remains visible as historical text; the Iteration03 replay below supersedes its stated field coverage.
