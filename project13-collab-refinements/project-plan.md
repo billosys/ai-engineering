@@ -60,6 +60,36 @@ only favorable slices or discard blocked/failed runs. Treat this as a prospectiv
 case series with a retrospective comparator, not a randomized or same-task A/B
 test. The protocol defines how to end after one run if necessary.
 
+## Operator concern: artifact accumulation and goal displacement
+
+Recorded 2026-10-10 for observation, not immediate framework changes. The Operator
+reports introducing artifact-directory support at project, arc and slice levels
+within roughly the preceding three months (release/date not investigated here).
+The benefit is substantial: preserved evidence supports reproducibility, process
+comparisons over time and evaluations of frontier models. Preserve that benefit.
+
+The concern has two parts: excessive data is deposited in artifacts, and the
+artifact collection can become the perceived project, displacing its actual
+purpose and deliverable. The provisional hypothesis is that producing and
+maintaining evidence can become a substitute for advancing or verifying the
+intended outcome. Volume alone does not establish that failure; a large necessary
+archive can be useful, and a small ceremonial record can still distract.
+
+In subsequent passes, examine concrete links between artifacts, decisions,
+verification and actual project progress. Look for unused/duplicated payload,
+maintenance without new evidentiary value, and completion claims about packets
+that obscure unfinished deliverables. Also record counterexamples where retained
+evidence prevented error, enabled independent review or made later science possible.
+Apply the same scrutiny to Project13's own research outputs. Its expressly
+requested frozen case-study copies are not presumed waste merely because they
+are numerous; their utility and handling cost are questions to inspect.
+
+The trial protocol adds this as a qualitative observation alongside evidence
+burden. No cleanup, size cap, new acceptance gate, changed CC assignment or
+framework/skill edit is authorized by recording it. If the evidence supports
+later guidance on artifact use, investigate the owning specification and propose
+a bounded change through normal review; do not assume its location or diagnosis.
+
 ## Provisional roadmap and definition of done
 
 | Candidate workstream | Outcome | Depends on |
@@ -93,6 +123,10 @@ amendment and a deviation record; do not rescore history silently. No current
 skill/package or repository-wide AGENTS change is authorized by this bootstrap.
 
 ## Version History
+
+- 1.1 (2026-10-10): Recorded Operator concern about artifact accumulation and
+  displacement of project goals; added prospective qualitative observation,
+  preserving the benefits of evidence retention and deferring framework changes.
 
 - 1.0 (2026-10-10): Operator-requested placeholder project, frozen Case01 and
   prospective Experiment01; local Project10 trial instructions added. Trial

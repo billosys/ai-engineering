@@ -1,6 +1,6 @@
 # Experiment01 — Source-grounded preparation and review pilot
 
-Protocol revision 1, recorded 2026-10-10 before any treatment assignment.
+Protocol revision 2, recorded 2026-10-10 before any treatment assignment.
 Status: prepared; zero registered/executed treatment runs.
 
 ## Question, hypothesis and decision
@@ -119,6 +119,7 @@ run register; CC need not edit Project13. No fabricated time or token estimates.
 | Validation gaps and false passes | Record each promised property actually left unchecked and each supplied invalid specimen accepted by its claimed check; do not count several probes of the same gap as distinct defects | Baseline examples: XYZ/polar fields, RGB stages, fragments; property-level comparison required |
 | Reviewer contribution | Record mistaken examples, changed interpretations, late requirements and own corrected findings separately from CC execution defects | Baseline C05 and receipt tightening in C06; do not attribute all rework to CC |
 | Evidence burden and effort | Bytes of prompt/current outputs/notes, historical payload versus current working content; observed preparation, execution and review time/tokens only when available | Baseline JSON has bytes; complete effort unknown. Smaller files alone do not show improvement |
+| Artifact utility and goal displacement | Relate significant artifact work to an actual deliverable, decision or verification need; record duplicated/unconsumed material, maintenance-only churn, and packet completion substituted for outcome progress, with concrete examples and counterexamples | Qualitative prospective observation added in revision 2; baseline burden alone does not establish displacement; no size threshold or retrospective score |
 | Intervention adherence | For each of the seven components record used / partial / not applicable / not used, with a pointer and explanation | Distinguish a failed intervention from an intervention never applied; no composite score |
 | Quality and authority gates | Scope retained, meaningful checks, honest unresolved inputs, independent acceptance, no unsupported closure | A failure prevents any clean improvement conclusion regardless of iteration count |
 
@@ -130,6 +131,23 @@ Assign one primary type and optional secondary tags. Distinguish persistence
 regression (previously correct/accepted behavior broken), and new discovery.
 A recurrence count must include its cited finding pairs. New classes are allowed
 but logged as exploratory additions; never silently recode the baseline.
+
+### Artifact-use observation added before treatment
+
+At each review/meta-review, ask what the artifact work enabled for the actual
+project purpose, and whether its creation, navigation or upkeep displaced that
+work. Distinguish necessary evidence production, legitimate research preservation,
+useful reuse, justified awaiting-use material, and avoidable accumulation. A file
+not yet consumed is not automatically waste. Cite the observed activity and its
+consequence; unknown utility or cost remains unknown. Record benefits as well as
+costs, including evidence that changed a decision or caught an error.
+
+Use a short paragraph in the existing review/register, including Project13's own
+research overhead where observable. Do not create a per-file bureaucracy to
+measure bureaucracy. This is an observation addition, not a new treatment
+component, retention policy, cleanup assignment or acceptance gate. The frozen
+Case01 remains unchanged; any later reanalysis under this lens must be explicitly
+labeled retrospective, not a predeclared baseline result.
 
 ## Review checkpoints, stopping and decision rule
 
@@ -165,5 +183,9 @@ independent reviewer or Operator must challenge it before framework-wide adoptio
 no such review is pre-recorded. Do not invent significance tests for n=1–2.
 
 ## Amendment history
+
+- Revision 2 (2026-10-10): Before any treatment registration, added the Operator's
+  artifact-utility/goal-displacement concern as a qualitative measure. No change
+  to the seven-component intervention, selection, quality gates or frozen baseline.
 
 - Revision 1 (2026-10-10): Prospectively defined before treatment registration.

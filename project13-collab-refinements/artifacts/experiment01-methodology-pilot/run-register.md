@@ -29,6 +29,9 @@ Keep authoritative evidence in the host slice and link exact revisions/sections.
   and failed/unrun attempts. Unknown measurements remain unknown.
 - Checkpoint: scope/quality gates, per-measure comparison, contrary evidence,
   comparability limits and recommendation; distinguish self-analysis from review.
+  Under protocol revision 2, include a brief artifact-utility/goal-displacement
+  observation: actual outcome supported, evidence benefit, observed distraction
+  or upkeep cost, and unknowns. Use this record rather than another artifact.
 
 After T01 append its meta-review here or link a named report in this directory.
 After T02 (or documented early stop), create `comparison.md` here with the
