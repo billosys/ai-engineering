@@ -133,6 +133,18 @@ Numerical values and proof remain unchanged. The corrected replay is in executio
 5. `ledger.md` — unchanged nine criterion texts and three-done/six-open status with this return pointer.
 6. `closing-report.md` — this row walk, limits and candidate/replay receipt.
 
-### Output-candidate receipt
+### Final candidate and replay receipt
 
-The following will be filled after the six-path candidate is committed and replayed.
+- Issuing commit: `33766ea6a707e6107b236966d776c550108fea99`; Iteration02 prompt blob `f0e75fa00d597facd2e2e8f34dd0d171c223d4ef`, SHA-256 `615b4f2ed9e1bd5415a57aff4a064b9e207b138b6000d614b58291d4d5a978f5`. SOURCE/main pin: `dffa504e851b03b8e4746f1941068e4cc850b612`.
+- Six-path candidate: `9758f3f81c53272e88632202e12275cefe24a101`, tree `3e5c699fee4e0371e4e395c42ecf56f11a93a797`, direct parent/issuer `33766ea6a707e6107b236966d776c550108fea99`. Its changed-path inventory is exactly:
+  1. `artifacts/claim-results.jsonl` — blob `2be0c56327848cf70d128406b35f1fc8b1099927`
+  2. `artifacts/numerical-reconciliation.md` — blob `1bb37433b189b58efd5f876e4abf8284b9f11207`
+  3. `artifacts/correction-handoff.md` — blob `f8eb7047ab0f02bd178a1e66d551338d360c87ae`
+  4. `artifacts/execution-notes.md` — blob `0d16fa102066fa862e926c6ad8eeb06b97bd30a8`
+  5. `ledger.md` — blob `547f688d0496cf488b44f714ce74fc0a10d9218d`
+  6. `closing-report.md` — blob `a49a550d76ea4bd53d47b37d52fb3223d23d88ff`
+- Protected proof remains blob `4171b18d2bf64dcff0a714499d98fb7cbe31df7a`, SHA-256 `d461ccfb9c67d0fba156a7c163181471d3e27f2d8d5529bfbab13db34ffdc86c`.
+- The corrected `ITERATION02_REPLAY_V1` was extracted from the candidate’s committed execution notes and run as `python3 /tmp/iteration02-replay.py`; exit status 0. It passed the 13 encoded + 3 linear case IDs and inputs, all 16 RGB output/inverse/error fields, four pinned XYZ rows and all original/staged fields, and all 20 original/staged polar fields. Signed decode/encode witnesses passed. Full-precision maxima: encoded `1.6839126291304935e-6` (corner-7 channel 2); linear `2.6128459884589006e-7` (linear-white channel 2); XYZ `0.00039741995991940393` (XYZ-4 component 0); polar `1.734723475976807e-16` (corner-2 component a).
+- Three contrary model families were run against the shared positive checks: matrix-only on all 16 RGB and four XYZ cases, skipped decoding on middle-gray, and unsigned roots on all four XYZ cases. Four independent printed-field corruptions were rejected (original XYZ output, primary polar error, staged XYZ LMS, staged polar error). Four evidence-integrity probes were rejected (method pin, unresolved original ID, literal M1/input-space reinterpretation, and correctly hashed evidence assigned the wrong role/applicability). Semantic warrant and fidelity judgments remain for CDC.
+- Recovery history: replay attempts first exposed the stale candidate-parent pin, coefficient-source indexing/implicit coefficients, quoted XYZ table parsing, merged adjacent polar tables, and two evidence-guard locator/selection errors. Each failed before a PASS claim. The checker and exact failure/recovery details are preserved in [execution notes](artifacts/execution-notes.md#replay-defect-recovery--2026-10-10); the final committed candidate passed after correction.
+- `git diff --check` passed. Forty-three local Markdown links/fragments across the changed Markdown outputs resolved. The candidate has LF endings, final newlines, both required co-author trailers, exactly six changed paths, and retains the protected proof identity. Planning status remains three CDC-done and six open; the rows stay open for CDC review. SOURCE, unrelated paths, and planning Project12 untracked content were not changed.

@@ -239,7 +239,7 @@ The self-contained program uses Python 3 standard library, binary64, no clipping
 ```python
 from pathlib import Path
 import subprocess, json, hashlib, math, re, ast, itertools, collections
-P=Path.cwd(); S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/'; C=subprocess.check_output(['git','rev-parse','HEAD'],cwd=P,text=True).strip(); SRC='dffa504e851b03b8e4746f1941068e4cc850b612'; PROC='project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/review-procedure.md'; PR='759ce2dd116a4cfe03b72d43fd2791f48486251c'; PREV='fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0'
+P=Path.cwd(); S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/'; C='9758f3f81c53272e88632202e12275cefe24a101'; SRC='dffa504e851b03b8e4746f1941068e4cc850b612'; PROC='project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/review-procedure.md'; PR='759ce2dd116a4cfe03b72d43fd2791f48486251c'; PREV='fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0'
 def git(*a): return subprocess.check_output(['git',*a],cwd=P)
 def obj(r,p): return git('show',f'{r}:{p}')
 def H(b): return hashlib.sha256(b).hexdigest()
@@ -432,8 +432,10 @@ Extract and run this exact fence from the committed notes (from the planning wor
 
 ```sh
 python3 - <<'PY'
+import subprocess
 from pathlib import Path
-s=Path('project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md').read_text()
+p='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md'
+s=subprocess.check_output(['git','show',f'HEAD:{p}'],text=True)
 a=s.index('### Current self-contained replay program — `ITERATION02_REPLAY_V1`')
 b=s.index('```python\n',a)+len('```python\n')
 e=s.index('\n```',b)
@@ -442,7 +444,7 @@ PY
 python3 /tmp/iteration02-replay.py
 ```
 
-The current code intentionally reads candidate bytes from committed `HEAD`; rerun only after the six-output candidate commit. No current replay result is claimed before that run. The historical Iteration01 checker and its six-control PASS receipt remain above as history; Iteration02’s CDC findings supersede their completeness and signed-extension claims.
+The current checker pins six-path candidate `9758f3f81c53272e88632202e12275cefe24a101` directly and reads every candidate input from its committed blobs. It remains replayable after this receipt commit. The historical Iteration01 checker and its six-control PASS receipt remain above as history; Iteration02’s CDC findings supersede their completeness and signed-extension claims.
 
 ### Iteration01 prompt identity correction — 2026-10-10
 
