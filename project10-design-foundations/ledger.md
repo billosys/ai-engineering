@@ -67,3 +67,12 @@ opened under Expedited Mode after Slice01 closure. All nine new rows open;
 P10-01 retains Operator-accepted planning composition and P10-02–11 stay open.
 Colour-conversion evidence does not discharge full semantic/live/readiness or
 package/release obligations.
+
+## Arc02/Slice02 partial review — 2026-10-10
+
+[CDC review](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md)
+accepts two child rows at fd73d993 and retains seven open; current
+[Iteration01](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration01.md)
+corrects F01–F05. Proof/numerical truth does not complete occurrence review,
+source fidelity, live fixes or corpus/release. P10-01 remains done/P10-02–11 open;
+all original criterion wording, input owners and Operator deferral remain.

@@ -22,3 +22,12 @@ T-family assignment under Expedited Mode. All nine child rows start open;
 A02-01 retains independently closed Slice01 evidence, A02-02–08 remain open.
 DES-007/limited DES-002 proof and proposed replacements are inputs to later
 corrected-revision acceptance, not closure of A02-03/05/07 or original fidelity.
+
+## Slice02 initial independent review — 2026-10-10
+
+[CDC review](slice02-nonlinear-colour-pipeline/cdc-verification.md) of fd73d993
+accepts S02-03/05, leaves seven child rows open and issues
+[Iteration01](slice02-nonlinear-colour-pipeline/cc-prompt-iteration01.md) for
+F01–F05. Staged proof and numerical controls pass; claim/applicability/replay/
+handoff evidence remains incomplete. A02-01 stays done and A02-02–08 open;
+no family, source-fidelity or corrected-revision gate is waived. No Slice03.

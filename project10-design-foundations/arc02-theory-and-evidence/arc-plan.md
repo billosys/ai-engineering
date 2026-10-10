@@ -120,7 +120,11 @@ then automatic next-slice opening. Gates and five-iteration correction limits
 remain binding. Source and planning branches retain separate mutation boundaries.
 
 Current assignment: [Slice02 nonlinear colour pipeline](slice02-nonlinear-colour-pipeline/slice-plan.md),
-initial [CC prompt](slice02-nonlinear-colour-pipeline/cc-prompt.md); all nine rows open.
+[Iteration01 CC prompt](slice02-nonlinear-colour-pipeline/cc-prompt-iteration01.md).
+Candidate fd73d993 has [partial independent acceptance](slice02-nonlinear-colour-pipeline/cdc-verification.md):
+S02-03/05 done, seven rows open; F01–F05 correct claim coverage, applicability,
+receipts and replacement text. Sound proof/values retained; no Slice03 advance.
+Initial prompt and CC candidate remain preserved.
 Slice01 Iteration02 `c3d68d7d` is [independently accepted and closed](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09):
 all nine slice rows done, A02-01 done; seven other arc rows remain open.
 Initial/Iteration01/Iteration02 prompts and historical discrepancies remain.
@@ -129,6 +133,9 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.5 (2026-10-10): Slice02 fd73d993 partially reviewed; two child rows done,
+  seven open. Issued bounded Iteration01; all arc criteria/gates retained.
 
 - 1.4 (2026-10-09): Opened Slice02 under Expedited Mode after Slice01 closure.
   Bounded nonlinear colour evidence with fixed actual models/cases; all input,

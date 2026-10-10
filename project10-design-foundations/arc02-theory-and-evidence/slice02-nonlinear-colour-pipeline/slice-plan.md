@@ -17,9 +17,11 @@ T-family evidence work under the [arc plan](../arc-plan.md),
 Whole-card/guide acceptance, live edits, original fidelity, source acquisition,
 empirical perception studies and browser/package implementation remain later work.
 
-CDC Sofie authors and independently reviews; separate CC executes the
-[initial prompt](cc-prompt.md) through Operator relay. Two contributors, Expedited
-Mode; CC proposes results, keeps every row open and cannot accept/close/advance.
+CDC Sofie authors and independently reviews; separate CC executes through
+Operator relay. The [initial prompt](cc-prompt.md) is preserved; current assignment
+is [Iteration01](cc-prompt-iteration01.md). Two contributors, Expedited Mode;
+CC retains CDC dispositions, proposes the remaining evidence and cannot
+accept/close/advance.
 Arc01 contract packet is `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`;
 Operator closure is `fb33d8cf43e8bb99d9dc9835ded134bd8268933f`.
 Slice01 is independently closed at `c3d68d7d`, recorded in planning predecessor
@@ -213,10 +215,31 @@ requires no Make/package/browser gate; record those as unrun/later scope.
 
 ## Assignment history and author readiness
 
-Current assignment: initial `cc-prompt.md`, issued with this open set. No prior
-CC return or acceptance; `cdc-verification.md` will be created by actual review.
+Initial assignment: `cc-prompt.md` issued at `208b12239cd59ccc6877b2edc0358054b27652c2`,
+returned by CC at `fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0`. The
+[initial independent review](cdc-verification.md) on 2026-10-10 accepts S02-03/05
+and leaves seven rows open. Current assignment: [Iteration01](cc-prompt-iteration01.md)
+for F01–F05, issued in the commit containing this review/prompt. No Slice03.
 CDC owns next review/decision; Operator retains original inputs and release gate.
-All nine rows start open. Any new normative dependency or crossed qualification
+The original seven-output/all-open contract above describes initial execution.
+Iteration01 overrides only its write allowlist to six paths (claim results,
+numerical reconciliation, correction handoff, execution notes, ledger, closing
+report), protects the sound proof, and retains two CDC-done/seven-open statuses.
+All nine criterion texts, fixed models/tolerances and higher gates are unchanged.
+
+Current author readiness: independently consumed candidate/source blobs and
+reproduced all 16 RGB returns, 12 published XYZ components and 20 polar returns,
+plus rejection of all three contrary models. Actual numbers and proof pass;
+missing contextual claims, generic verdicts, erroneous locators, intermediate/
+replay receipts and replacement text are documented as F01–F05. Read foundations
+451–456 to finish the assigned sentence: base89 plus one context line. Reviewed
+literal card teaching spans, exact model coefficient/function bounds and accepted
+five-dimension/per-dependent-readiness contract before issuing the correction.
+No artifact schema or full-card/population reduction is introduced. Six bounded
+output corrections preserve sound proof/table values and provide iteration
+headroom; unavailable fidelity/perception/implementation inputs remain separate.
+
+Any new normative dependency or crossed qualification
 boundary must be read before dependent work, with an actual receipt. Source drift,
 contradictory required evidence/oracles, needed mutation or a scope decision
 outside this plan stops the affected work; continue independent work honestly.
@@ -255,6 +278,9 @@ slice. If actual qualifications require a larger technical assignment, bubble
 it up for a concrete split before pretending this bounded slice completes it.
 
 ## Version History
+
+- 1.1 (2026-10-10): Independently reviewed fd73d993; two rows done/seven open.
+  Issued Iteration01 for F01–F05, preserving proof, values and full higher gates.
 
 - 1.0 (2026-10-09): Opened source-grounded T-family colour-pipeline evidence
   after independent Slice01 closure; complete corpus/readiness gates retained.
