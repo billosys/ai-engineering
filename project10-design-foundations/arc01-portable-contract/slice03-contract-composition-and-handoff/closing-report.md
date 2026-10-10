@@ -109,3 +109,41 @@ package/runtime/Make gates; release acceptance; formal Arc01 composition and
 Operator gates. The denominator remains 233 cards, eight live files, five
 dimensions and 16 DES findings. No parent plan change, Arc01 closure, Arc02
 opening, input acquisition or source mutation is proposed.
+
+## Iteration02 CC return proposed to CDC
+
+Assignment: [cc-prompt-iteration02.md](cc-prompt-iteration02.md), issued at
+PLANNING `70184b87ed6bd3626c370bd67bb9747a5168b3f9`; SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`. This receipt-only return corrects
+F05 against the full pinned Iteration01 issue blobs. The prior intake paragraph
+and all earlier closing walks remain preserved. Candidate commit is reported
+after commit because it cannot include its own hash.
+
+| ID | Iteration02 disposition | Evidence and boundary |
+|---|---|---|
+| S03-01 | open; CC evidence proposed | Complete text of `slice-plan.md` (1–246) and `cc-prompt-iteration01.md` (1–127) freshly inspected at `92120fef`; SHA-256 receipts and emitted-record checker are in execution notes. F05 count discrepancy corrected; no semantic source review. |
+| S03-02 | retain CDC done | No contract/artifact delta; prior independent acceptance and evidence retained. |
+| S03-03 | retain CDC done | No numerical artifact delta; prior independent 84-case replay and exact maximum `3/250000px` at `(R=20,w=1600,n=0)` retained, not rerun in this receipt-only iteration. |
+| S03-04 | retain CDC done | Allocation unchanged; prior 233-row and grouping evidence retained. |
+| S03-05 | retain CDC done | Guide/finding allocation unchanged; prior eight-file, 47-group, 161-heading, 460-occurrence and 16-owner evidence retained. |
+| S03-06 | retain CDC done | Handoff unchanged; Iteration01's independent disposition retained. |
+| S03-07 | retain CDC done | Handoff unchanged; Iteration01's independent composition disposition retained. |
+| S03-08 | retain CDC done | Protected artifacts/source unchanged; prior independent preservation evidence retained, with current exact-three-path and protected-state checks recorded for this candidate. |
+| S03-09 | open; CC evidence proposed | This nine-row return, six-artifact inventory, exact verifier/receipt control accounting and retained/unrun boundaries; CDC replay remains required. |
+
+The existing artifact verifier's negative population is **nine total**: five
+inherited controls plus four Iteration01 controls. The earlier relayed “ten
+new” count is corrected here; it is not treated as ten additional controls.
+The two new Iteration02 receipt negatives (244 and 221) are separate controls
+against the emitted-record receipt predicate. No artifact verifier or
+84-case arithmetic replay was run for this receipt-only delta.
+
+The six supporting artifacts remain `composed-contract.md`,
+`example-configuration.md`, `corpus-allocation.jsonl`,
+`guide-and-finding-allocation.md`, `arc02-handoff.md`, and `execution-notes.md`.
+No new substantive output, source change, capture, conversion, or validator
+file was created. Seven rows remain CDC-done; two rows remain open with CC
+proposals only. Original-source readiness/fidelity, all 233-card and eight-file
+semantic review, global edge/CQ/revision reconciliation, browser/accessibility,
+package/runtime/release gates, Arc01 composition, and Operator acceptance remain
+unrun, blocked, or assigned to their existing later gates.

@@ -603,3 +603,122 @@ retrieval, source preparation, semantic review, Make/package or release check ra
 The committed-byte replay receipt and candidate object are returned to the
 Operator after the exact four-path commit; no self-hash is written into this
 candidate.
+
+## Iteration02 full-document intake correction and emitted-record checker
+
+Issue: PLANNING `70184b87ed6bd3626c370bd67bb9747a5168b3f9`; SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612` on `main`. The Iteration01
+intake paragraph above is preserved as historical evidence, including its
+incorrect 244/221 counts. This current receipt corrects those counts against the
+complete blobs at Iteration01's actual issue, `92120fefaa15373327ab1f271fbd9a68b3282601`.
+
+| Slice-relative path | Pinned revision | SHA-256 | Lines | Full range | Read outcome |
+|---|---|---|---:|---|---|
+| `slice-plan.md` | `92120fefaa15373327ab1f271fbd9a68b3282601` | `100afd4511fee307e4f2467ad7451224b631889b06e3121d0e39dd0ff76331f5` | 246 | 1–246 | Complete decoded text inspected in contiguous chunks 1–100, 101–200, 201–246; no truncation. |
+| `cc-prompt-iteration01.md` | `92120fefaa15373327ab1f271fbd9a68b3282601` | `f0894fc8768099ae9b7177c77bd62ca5bc51f096251ab1173e361da6b4b5ebd2` | 127 | 1–127 | Complete decoded text inspected in contiguous chunks 1–70, 71–127; no truncation. |
+
+Read command: `git show 92120fefaa15373327ab1f271fbd9a68b3282601:<project-relative-slice-path>`;
+receipt command decoded the returned bytes, emitted every numbered line in the
+ranges above, and computed SHA-256 and `splitlines()` count over the same bytes.
+Observed byte lengths were 15,413 and 8,019 respectively. The plan composes a
+selected portable contract, seven caveated principles, the contextual profile,
+one diagnostic numerical configuration, five-dimension allocation for all 233
+cards/eight live files/16 findings, and the explicit S02-08/P10-11 input gate;
+its last sections preserve the nine-row/open-scope and assignment history. The
+Iteration01 prompt is the four-finding correction and return: repair the emitted
+numeric verifier and source-action handoff, maintain per-dependent-scope gates,
+recover requested source/intake extents, retain five accepted rows, and leave
+four assigned rows open for CDC. This is a complete-text intake receipt, not a
+new semantic review or CDC acceptance. The independently accepted Iteration01
+return at `ee7b875793a127b616c1388bc059ae28aaabfcd6` left seven done and only
+S03-01/09 open for this F05 receipt correction.
+
+The emitted records checked below are the two rows in this section's receipt
+table. The checker parses those records from the notes text, reads each pinned
+Git blob, and applies one predicate to valid rows and both in-memory bad counts.
+It is inline evidence, not a maintained validator file.
+
+```python
+from pathlib import Path
+import hashlib, re, subprocess
+
+PLANNING = Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+SLICE = 'project10-design-foundations/arc01-portable-contract/slice03-contract-composition-and-handoff/'
+PIN = '92120fefaa15373327ab1f271fbd9a68b3282601'
+EXPECTED_PATHS = {'slice-plan.md', 'cc-prompt-iteration01.md'}
+
+
+def emitted_records(notes_text):
+    section = notes_text.split('## Iteration02 full-document intake correction and emitted-record checker', 1)[1]
+    section = section.split('\n```python', 1)[0]
+    rows = []
+    for line in section.splitlines():
+        if not line.startswith('| `'):
+            continue
+        cells = [cell.strip() for cell in line.strip('|').split('|')]
+        if len(cells) != 6 or cells[0] == 'Slice-relative path':
+            continue
+        rows.append({
+            'path': cells[0].strip('`'), 'revision': cells[1].strip('`'),
+            'sha256': cells[2].strip('`'), 'lines': int(cells[3]),
+            'range': cells[4],
+        })
+    return rows
+
+
+def receipt_valid(records):
+    if len(records) != 2 or {r['path'] for r in records} != EXPECTED_PATHS:
+        return False
+    for record in records:
+        if record['revision'] != PIN:
+            return False
+        blob = subprocess.check_output(
+            ['git', '-C', str(PLANNING), 'show', f"{record['revision']}:{SLICE}{record['path']}"]
+        )
+        try:
+            count = len(blob.decode('utf-8').splitlines())
+        except UnicodeDecodeError:
+            return False
+        actual = {
+            'sha256': hashlib.sha256(blob).hexdigest(),
+            'lines': count,
+            'range': f'1–{count}',
+        }
+        if any(record[key] != actual[key] for key in actual):
+            return False
+    return True
+
+
+def run(notes_text):
+    records = emitted_records(notes_text)
+    assert receipt_valid(records), 'emitted pinned receipt rows rejected'
+    print('PASS emitted full-document receipt records match pinned Git blobs: 246 and 127 lines')
+    for path, wrong_count in [('slice-plan.md', 244), ('cc-prompt-iteration01.md', 221)]:
+        bad = [dict(record) for record in records]
+        target = next(record for record in bad if record['path'] == path)
+        target['lines'] = wrong_count
+        assert not receipt_valid(bad), f'incorrect {path} count accepted'
+        print(f'PASS same receipt predicate rejects in-memory {path} count {wrong_count}')
+```
+
+Pre-commit receipt persistence is the table above; final after-commit replay
+must load this checker and table from the literal candidate commit, since a
+commit cannot contain its own hash. Current selected intake is 246/127 only;
+the earlier 244/221 values remain historical and are not reused.
+
+### Iteration02 validation recovery log
+
+The first combined integrity/link command failed before reaching its final diff
+check: the ad hoc heading-slug regular expression used an invalid `\\w- ` range
+(Python `re.PatternError`, exit 1). After correcting the expression, its broad
+triple-backtick remover treated Markdown-like syntax inside the inline checker as
+a link and reported a false missing target (exit 1); the link scan was changed
+to skip fenced blocks line by line. That pass then found the new closing-report
+fragment did not match the heading containing an em dash (exit 1); the heading
+was changed to plain ASCII words, and the final scan passed: execution notes
+1 local link, ledger 15, closing report 2, all targets/fragments resolved.
+The earlier `git diff --check` also reported one extra blank line at EOF in each
+of the three appended files (exit 2). Each was normalized to exactly one final
+LF; the final diff check passed with no output. These were checker/formatting
+issues corrected before commit; receipt data and protected inputs were not
+changed.

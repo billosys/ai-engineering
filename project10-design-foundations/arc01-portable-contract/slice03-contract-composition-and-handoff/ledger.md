@@ -45,3 +45,20 @@ the five CDC-done rows are unchanged. The active verifier and receipts are in
   evidence, negative controls, four-path scope and iteration row walk are recorded
   in execution notes and [closing report](closing-report.md). CDC replay remains
   required.
+
+### Iteration02 CC evidence supplement — proposed, 2026-10-09
+
+Only the two receipt/open-row notes receive this iteration's evidence. The
+criteria and statuses are unchanged; seven independently accepted rows remain
+done, and S03-01/09 remain open pending CDC review. The complete pinned
+`slice-plan.md` and Iteration01 prompt receipts plus an inline emitted-record
+checker are appended in [execution notes](artifacts/execution-notes.md#iteration02-full-document-intake-correction-and-emitted-record-checker).
+The checker passes both declared records and rejects the in-memory 244- and
+221-line variants with the same predicate. No substantive artifact, source
+input, or semantic review was added.
+
+- **S03-01 open:** proposed corrected complete-text intake receipts and scoped
+  readback for F05; historical inaccurate counts remain preserved.
+- **S03-09 open:** proposed current nine-row return and artifact inventory in
+  [closing report](closing-report.md#iteration02-cc-return-proposed-to-cdc); no
+  artifact verifier was rerun for this receipt-only delta.
