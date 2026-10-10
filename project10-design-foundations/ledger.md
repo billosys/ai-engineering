@@ -50,3 +50,9 @@ All project criteria retain their original wording and open status.
 The earlier pending-gate notes are historical. Operator “yup, accepted!” accepts
 packet `38b66d0d`: Arc01 closed, four rows done/one deferred; P10-01 done.
 P10-02–11 remain open. Arc02 CDC + Operator retain all source re-entry duties.
+
+Arc02 [plan](arc02-theory-and-evidence/arc-plan.md) and
+[first slice](arc02-theory-and-evidence/slice01-fluid-scale-arithmetic/slice-plan.md)
+are open under the accepted gate/Expedited Mode. P10-01 remains done;
+P10-02–11 remain open. Bounded arithmetic evidence does not discharge full
+233-card/eight-live-file semantic review or P10-11 re-entry.

@@ -90,7 +90,8 @@ a bulk relocation or transformation merely from the naming clarification.
 ## Arc roadmap
 
 Arc01 is closed with Operator-accepted composition and explicit source-readiness
-carryover. Arc02 is next; detail each remaining arc near execution. The closed
+carryover. [Arc02](arc02-theory-and-evidence/arc-plan.md) is active; detail each
+remaining arc near execution. The closed
 [Arc01 plan](arc01-portable-contract/arc-plan.md) supplies the slice breakdown.
 
 | Arc | Capability | Dependencies | Audit coverage |
@@ -109,7 +110,10 @@ prior dispositions retained after delta review; see its
 [CDC acceptance](arc01-portable-contract/slice03-contract-composition-and-handoff/cdc-verification.md#iteration02-independent-verification-and-slice03-closure--2026-10-09).
 All three Arc01 slices are closed; the [composition packet](arc01-portable-contract/closing-report.md)
 was accepted by the Operator on 2026-10-09 (“yup, accepted!”). A01-04/05
-are done; A01-02 stays deferred. Arc02 opening follows automatically. No
+are done; A01-02 stays deferred. Arc02 is open with
+[Slice01](arc02-theory-and-evidence/slice01-fluid-scale-arithmetic/slice-plan.md)
+for source-independent fluid-scale arithmetic evidence. R/T/C/L/G execution
+families preserve the complete semantic scope and input re-entry. No
 source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
 planning composition. Source readiness carries to Arc02/P10-11 before dependent
@@ -202,6 +206,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.20 (2026-10-09): Operator-accepted Arc01 close surfaced Arc02 opening;
+  detailed full theory/evidence roadmap and issued its bounded arithmetic
+  Slice01 under Expedited Mode. No original/source mutation or semantic waiver.
 
 - 1.19 (2026-10-09): Arc01 Operator composition gate accepted at `38b66d0d`;
   closed the arc, accepted P10-01 planning authority and advanced preparation to
