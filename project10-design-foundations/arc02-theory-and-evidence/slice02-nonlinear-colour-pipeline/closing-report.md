@@ -99,4 +99,10 @@ Original Oklab capture and complete transformation/context/completeness lineage 
 
 ### Finalization receipt
 
-The exact six-path candidate commit and committed-blob replay are performed after this pre-commit report is written. The commit/tree/blob identities, protected-proof identity, and committed replay exit are recorded in the finalization receipt commit below; the final CC return also names the containing commit.
+The six authorized outputs were committed together, then replayed from the committed execution-notes blob.
+
+- Output candidate commit: `0adaeb8d34c35b9349032f5a051dea1f31cec55b`; tree `c342d82e466b661f445705a62d5ec3b14c5f8f3a`; parent/issuing revision `1a1fb44b25f7558f46b9395e9cf6e4b3bc71f145`. Its exact changed paths are the six listed above.
+- Candidate blob identities: claim results `c03abd46e6dcd1d1e124a7c44bf979c42f27e210`; correction handoff `c5310a4bc5e5345fcd4c312b3c36923619b42638`; execution notes `adbcddf3c6c90c18ca57a37670e43435956a39b0`; numerical reconciliation `18334ac96edd598b8503e07fffafdf24da6c68ff`; ledger `1bf1d35a83624b89502de88cc6e9b43ab402a6e7`; closing report before this receipt `5059539338ad26cf79c1f277375765fbfaebe3d5`.
+- Protected proof blob is `4171b18d2bf64dcff0a714499d98fb7cbe31df7a` both at candidate `0adaeb8d` and accepted baseline `fd73d993`; SHA-256 remains `d461ccfb9c67d0fba156a7c163181471d3e27f2d8d5529bfbab13db34ffdc86c`.
+- Replayed code extracted from the committed execution notes; `python3 /tmp/replay_committed.py` exited 0. It passed all source/table/stage predicates and the six controls. Maxima/argmax: encoded `1.683912629130494e-6` (corner-7 channel 2); linear `2.612845988458901e-7` (linear-white channel 2); XYZ `0.0003974199599194039` (XYZ-4 L); polar `1.734723475976807e-16` (corner-2 a). `git diff --check` passed.
+- The review-receipt change itself is committed separately to the same authorized `closing-report.md` path with the required trailers; the containing finalization commit is reported in the CC return. This report cannot embed its own commit ID.
