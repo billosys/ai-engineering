@@ -163,17 +163,45 @@ fragments, final LF/no CRLF and `git diff --check`. Independent CDC review remai
 
 ## Assignment history
 
-Current assignment: [Iteration01](cc-prompt-iteration01.md), issued 2026-10-09.
+Current assignment: [Iteration02](cc-prompt-iteration02.md), issued 2026-10-09.
 CC executes the focused correction and returns to CDC via the Operator.
 
 - Initial [cc-prompt.md](cc-prompt.md), issue `3a18c51d`, returned as `e0f68c31`:
-  partial CDC acceptance; S01-01/03/05/06/08 done, S01-02/04/07/09 open.
-  Preserved unchanged; the initial assignment is superseded for execution.
-- Iteration01 follows the initial return and [CDC review](cdc-verification.md):
-  repair F01 illustrative-example classification, F02 occurrence omissions and
-  F03 analysis applicability. Active; first refinement pass, not yet executed.
+  historical partial acceptance; five done/four open. Preserved unchanged.
+- [Iteration01](cc-prompt-iteration01.md), issue `24ae8a8b`, returned as
+  `4e678b0b`: first executed refinement, independently partially accepted.
+  F01/F02 and the corrected handoff accepted; six done/three open after residual
+  F03 and new F04. Superseded for execution; prompt/return remain historical.
+- [Iteration02](cc-prompt-iteration02.md): second refinement assignment, active.
+  Repair TY-01's applicable conflict join and the current intake receipt;
+  S01-01/02/09 remain open. No criterion/model/source-gate amendment.
 
-### Iteration01 bounds and author readiness
+### Iteration02 bounds and author readiness
+
+Exactly four CC paths: artifacts/claim-results.jsonl, artifacts/execution-notes.md,
+ledger.md Evidence/Notes only, and closing-report.md. Preserve the six-done/
+three-open CDC statuses and criteria. Configuration, handoff, proof and all
+numeric tables/deltas are protected. Change TY-01's evidence/affected references
+and observation wording only; preserve subject and supported conclusions. The
+prompt specifies configuration 50 as the conflict witness, preserves52 for
+orientation, and requires a control rejecting the old 52-only conflict join.
+
+CDC reloaded the governing project body, full Arc02 and slice plans, ledgers,
+actual candidate delta, all 297 SOURCE witness lines, TY-01's complete record
+and actual configuration witnesses. Prompt-authoring/intake/readiness,
+iteration-preservation and correction-retention guidance determines the small
+repair and exact four-path boundary. The issued 24ae Arc02 plan has137 lines at
+the recorded SHA; no earlier loaded extent can be reconstructed from 131 alone.
+Fresh pinned complete reading plus preserved historical discrepancy is the
+required remedy. No new scientific claim, source acquisition or design choice
+is assigned. Current prompt/plan/ledger and changed-data queries form a bounded
+reading packet (approximately 12–18k tokens with correction/review headroom);
+unchanged mathematical evidence is retained under the independent review rule.
+Semantic applicability and honest receipts have distinct positive/negative
+checks; counts/hashes alone do not prove either. Scope and partial-return gates
+remain explicit, with no new maintained validator or reporting artifact.
+
+### Historical Iteration01 bounds and author readiness
 
 Original criteria/model/pins/populations remain binding. CC may update only
 claim-results.jsonl, configuration-reconciliation.md, correction-handoff.md,
@@ -181,11 +209,11 @@ execution-notes.md (all under artifacts/), ledger.md evidence/notes and
 closing-report.md: six paths. Proof, accepted example, sources, plans, prompts,
 review and every other path are protected. Numerical tables/formulas/deltas
 remain unchanged; evidence pointer SHA/blob/ranges may update to the actual
-revised analysis artifact bytes. Preserve original33 IDs and append omissions;
+revised analysis artifact bytes. Preserve original 33 IDs and append omissions;
 there is no final-count oracle. All done/open statuses are CDC-owned.
 
-CDC freshly read all297 witness lines and reviewed every emitted result's
-context/dimensions/evidence; independently reproduced actual84 cases and52
+CDC freshly read all 297 witness lines and reviewed every emitted result's
+context/dimensions/evidence; independently reproduced actual 84 cases and52
 nonzero deltas. The review supplies exact source distinctions and repair shapes.
 The prompt-authoring/iteration/row-closure rules support a focused evidence repair
 with full source-to-output and semantic pointer inspection, not new tooling or
@@ -213,6 +241,10 @@ review/iteration headroom; no full corpus/books or broad source acquisition is
 assigned. No unresolved design choice is silently delegated to CC.
 
 ## Version History
+
+- 1.2 (2026-10-09): Iteration01 independently reviewed at 4e678b0b; six done/three
+  open, with current intake reopened. Issued four-path Iteration02 for residual
+  F03 and F04; proof/numeric evidence retained and all wider gates unchanged.
 
 - 1.1 (2026-10-09): Initial CDC review of e0f68c31 accepted five rows;
   issued focused Iteration01 for F01–F03. No scope/model/source-gate amendment.

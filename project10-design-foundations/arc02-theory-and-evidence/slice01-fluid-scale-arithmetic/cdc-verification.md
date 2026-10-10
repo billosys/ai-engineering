@@ -2,7 +2,7 @@
 
 ## Initial independent review — 2026-10-09
 
-**Current verdict: partial acceptance; Slice01 remains open.** CDC Sofie is the
+**Historical initial verdict: partial acceptance; Slice01 remained open.** CDC Sofie is the
 independent reviewer of CC candidate `e0f68c311a6c25417e74ac87152d0a003cefc07e`,
 a direct child of issue `3a18c51d08507921ad716209ecd78b268f1dc69f`.
 SOURCE is `dffa504e851b03b8e4746f1941068e4cc850b612`. Two contributors;
@@ -245,4 +245,184 @@ for n in (0,1,2):
  expected=[[F('16.19664'),F('21.33920')],[F('19.49356'),F('27.41104')],[F('23.46752'),F('34.99328')]][n]
  assert observed==expected,(n,observed)
 print('BASELINE: all three actual step declarations match the reported endpoint table')
+```
+
+
+## Iteration01 independent review — 2026-10-09
+
+**Current verdict: partial acceptance; six done, three open. Slice01 remains open.**
+CDC Sofie independently reviewed CC candidate
+`4e678b0b2d56c8c323a3aec18a3374303ae5ccca`, direct child of issue
+`24ae8a8b359d0965f93ac888ca122960eb3b6643`. SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`. The initial review above is historical;
+its unaffected mathematical evidence is retained on the grounds below.
+[Iteration02](cc-prompt-iteration02.md) is the current CC assignment.
+
+### Fresh inspection, reproduction and retained evidence
+
+Reviewed the actual six-path delta, current contracts/ledgers and new return;
+reloaded all nine bounded SOURCE spans (five files, 297 inclusive lines).
+Inspected revised result fields, observations and their pointed passages, using
+lossless differences/projections for the original 33 and complete new records;
+no record sampling. F01 now correctly distinguishes the illustrative “say” pair
+from the real default conflict. F02's TY-07, SK-09 and LAY-15 additions supply
+exact witnesses; the source-to-result crosswalk accounts for the bounded
+mathematical/configuration occurrences. Inventory-only advice, attribution,
+axis/perceptual/bibliographic claims remain unassessed.
+
+Fresh committed-byte checks reproduced 36 unique subjects with all original 33
+subject identities unchanged, 87 source/analysis/proof SHA/blob/span joins,
+180 dimension reference sets, method pins and pending independent-review states.
+Each of the three added-occurrence deletion controls is rejected by the same
+coverage predicate. All36 IDs join concrete handoff proposals/dependencies.
+TY-05's growth/default, LAY-02's determinant/clamp and FND-03's inventory pointers
+now apply to their observations. The remaining TY-01 defect is described below;
+structural resolution alone did not establish applicability.
+
+Candidate has exactly the six authorized paths, the exact issuing parent and
+both trailers. Criteria/status cells remain unchanged from issue (five done/four
+open before this review). Protected plans/prompts/review/proof and SOURCE are
+unchanged. Target-aware checks resolve **28 local destinations/eight fragments**
+across the six candidate files; LF/no-CRLF and `git diff-tree --check` pass.
+Unrelated untracked paths were neither inspected nor changed.
+
+S01-03/05/06 retain the initial independent proof, controls and actual 84-case
+arithmetic evidence. The proof is byte-identical to `e0f68c31`; the complete
+configuration tail from `## Published baseline CSS at root 16px` through EOF
+is byte-identical, including all 52 deltas. SOURCE, accepted diagnostic example,
+model, criteria and calculation dependencies are unchanged. Neither finding
+below undermines that mathematical evidence. No fresh84-case calculation or
+browser/package/source-fidelity execution is claimed. S01-04 combines the
+retained numeric reproduction with fresh contextual inspection. S01-07's exact
+replacement/owner/limits criterion is satisfied by the corrected handoff;
+TY-01's result-reference metadata remains separately open under S01-02.
+S01-08 has fresh six-path integrity evidence, rather than a copied seven-path
+initial check. The original S01-01 intake acceptance remains historical, but
+current-iteration intake is reopened for F04.
+
+### F03 — Residual serious defect: TY-01's conflict lacks an applicable join
+
+TY-01 claims a `1.25-at-360` default conflict in correctness/disposition and
+`ratio-precision-and-endpoint-conflict` in consistency. Its ANALYSIS observation
+also claims to distinguish that conflict, but points only to configuration
+**52–52**, the RATIO-ORIENTATION row. That row discusses reciprocal ratio
+notation, not the narrow-default conflict. Its SRC 135–140 supplies 1.25 without
+360px or the contrasting1.2. The applicable paired witness is configuration
+**50–50**: SKILL 156/type 472–475 versus SKILL 186/layout 498.
+
+Configuration SHA-256 is
+`098148202d5c074eecf08286d0524e643c9f437b2f91d9d66ea280a8343af74f`, blob
+`f8132a368319a9315ddc3c6533870cb0a4dd8a41`. Add a separately named default
+witness to TY-01 and the affected dimension references; make each observation
+match its own passage. Preserve the supported conflict and existing orientation
+witness, source identity and conclusions. Recheck changed semantic joins and
+reject the historical orientation-only conflict join. Affected rows S01-02/09.
+F01/F02 and the originally named F03 pointers are accepted as repaired; F03 is
+not globally discharged by those repairs.
+
+### F04 — Serious intake defect: current full-plan receipt does not reconcile
+
+Iteration01 execution notes say the parent Arc02 plan was read in full as 131
+lines. At the named issue `24ae8a8b...` it is **137 lines**, SHA-256
+`33fe93fa484a965801a3b071fb09213825b9d74e6acfbc5f6f8f5dfb056971a6`.
+Lines132–137 include the end of its version history. The record names no alternate
+plan pin. This is a receipt inconsistency, not proof that CC did or did not read
+those lines. The actual earlier loaded extent cannot be inferred from a stale
+count. Preserve that receipt as historical/disputed; freshly load the exact
+issue's plan1–137 and record actual visible coverage, identity and limits.
+Do not invent a retrospective complete-read receipt. Reconcile the current
+assignment's full required reads before dependent edits. Affected S01-01/09.
+
+### Current nine-row disposition
+
+| Row | CDC status | Basis / remaining condition |
+|---|---|---|
+| S01-01 | open | Initial intake acceptance retained historically; current Iteration01 receipt reopened for F04. |
+| S01-02 | open | F01/F02 repaired;36 exact identities and bounded coverage accepted, but TY-01's F03 semantic join remains. |
+| S01-03 | done | Retained initial independent proof/controls with verified unchanged dependencies. |
+| S01-04 | done | Fresh correct illustrative/default distinction plus retained byte-identical numerical reproduction. |
+| S01-05 | done | Retained actual 84-case and52-delta independent evidence; unchanged input/model/output bytes. |
+| S01-06 | done | Retained meaningful coefficient/root/geometricity controls; dependencies unaffected. |
+| S01-07 | done | Fresh all 36-ID replacement/owner/limits walk; JSONL semantic-pointer repair remains S01-02. |
+| S01-08 | done | Fresh six-path/direct-parent/trailers/protection/87 joins/28 links/eight fragments/EOF/diff checks. |
+| S01-09 | open | Current return must account honestly for residual F03, F04 and reopened intake. |
+
+### Bubble-up, attempts and limits
+
+Arc02 A02-01 and all other arc rows remain open. This is the first executed
+refinement; Iteration02 is the second assignment inside the same slice. No
+architecture, source scope, review population or acceptance criterion changes.
+Full233/eight-live/R/T/C/L/G/P10-11, source input/re-entry, original fidelity,
+relationship/CQ, accessibility, package/live/release and Operator gates remain.
+No Slice02 is opened before full Slice01 acceptance. The numerical retention
+rule avoided unnecessary repeated calculation while the source/evidence walk
+caught an applicability failure that hash checks cannot detect.
+
+Reviewer attempts: combined reads/projections exceeded an output limit and
+were recovered with bounded source/record/guide reads. One route search included
+a nonexistent project-management `06-prompt-authoring.md`; the actual skill
+route is engineering-methods `07-implementation-prompt-authoring.md`, loaded
+before authoring. These failures produced no accepted evidence. The incidental
+script below ran successfully against candidate bytes before reviewer edits;
+its exit0 means its assertions reproduced both passes and the two reported
+failures, **not overall acceptance**. Later reviewer-ledger edits intentionally
+break its pre-edit working-copy equality condition; committed-candidate checks
+remain pinned. Links were checked by the existing incidental link recipe with
+its file population explicitly set to the candidate's six paths.
+
+### Exact Iteration01 review replay
+
+Command: `python3 /private/tmp/p10-a02-s01-i01-review.py` (exit0).
+The code is an incidental standard-library review, not a maintained deliverable.
+
+```python
+from pathlib import Path
+import subprocess,json,hashlib,re,copy
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice01-fluid-scale-arithmetic/'
+C='4e678b0b2d56c8c323a3aec18a3374303ae5ccca';I='24ae8a8b359d0965f93ac888ca122960eb3b6643';OLD='e0f68c311a6c25417e74ac87152d0a003cefc07e';SRC='dffa504e851b03b8e4746f1941068e4cc850b612'
+def git(*a):return subprocess.check_output(['git','-C',str(P),*a])
+def blob(r,p):return git('show',r+':'+p)
+def sha(b):return hashlib.sha256(b).hexdigest()
+def data(r):return {x['claim_id']:x for x in map(json.loads,blob(r,S+'artifacts/claim-results.jsonl').decode().splitlines())}
+r=data(C);old=data(OLD);assert len(r)==36 and len(old)==33 and set(old)<=set(r)
+allowed={S+x for x in ('artifacts/claim-results.jsonl','artifacts/configuration-reconciliation.md','artifacts/correction-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md')}
+assert set(git('diff-tree','--no-commit-id','--name-only','-r',C).decode().splitlines())==allowed
+assert git('rev-parse',C+'^').decode().strip()==I
+for p in allowed:
+ b=blob(C,p);assert b.endswith(b'\n') and b'\r' not in b and (P/p).read_bytes()==b
+assert blob(C,S+'artifacts/fluid-scale-proof.md')==blob(OLD,S+'artifacts/fluid-scale-proof.md')
+marker=b'## Published baseline CSS at root 16px\n'
+a=blob(C,S+'artifacts/configuration-reconciliation.md');b=blob(OLD,S+'artifacts/configuration-reconciliation.md');assert a[a.index(marker):]==b[b.index(marker):]
+for p in ('slice-plan.md','cc-prompt.md','cc-prompt-iteration01.md','cdc-verification.md'):assert blob(C,S+p)==blob(I,S+p)
+newledger=[l.split('|')[1:7] for l in blob(C,S+'ledger.md').decode().splitlines() if l.startswith('| S01-')];oldledger=[l.split('|')[1:7] for l in blob(I,S+'ledger.md').decode().splitlines() if l.startswith('| S01-')];assert newledger==oldledger and len(newledger)==9
+joins=0
+for id,x in r.items():
+ if id in old:assert x['subject']==old[id]['subject']
+ sub=x['subject'];b=blob(SRC,sub['path']);sp=sub['span'];assert sha(b)==sub['sha256'] and '\n'.join(b.decode().splitlines()[sp['start']-1:sp['end']])==sub['assertion']
+ assert len(x['evidence'])==len({e['evidence_id'] for e in x['evidence']})
+ for e in x['evidence']:
+  loc=e['locator'];p=loc.get('path',loc.get('artifact_path'));rev=loc['revision'];b=git('cat-file','blob',rev.split(':',1)[1]) if rev.startswith('git-blob:') else blob(rev,p)
+  if rev.startswith('git-blob:'):assert b==blob(C,p)
+  assert sha(b)==e['snapshot_sha256'];a,z=map(int,loc['span'].split('-'));assert 1<=a<=z<=len(b.decode().splitlines());joins+=1
+ for d in x['dimensions'].values():assert set(d['evidence_refs'])<={e['evidence_id'] for e in x['evidence']}
+ assert x['independent_review']['state']=='pending'
+ method=x['actor']['method_revision'];assert sha(blob(method['revision'],method['path']))==method['sha256']
+ handoff=blob(C,S+'artifacts/correction-handoff.md').decode();assert '`'+id+'`' in handoff
+required={'TY-07':('knowledge/design/guides/type.md',133,133),'SK-09':('knowledge/design/SKILL.md',173,177),'LAY-15':('knowledge/design/guides/layout.md',353,360)}
+def covers(records):
+ return all(id in records and (records[id]['subject']['path'],records[id]['subject']['span']['start'],records[id]['subject']['span']['end'])==v for id,v in required.items())
+assert covers(r)
+for id in required:
+ bad=copy.deepcopy(r);del bad[id];assert not covers(bad)
+config=blob(C,S+'artifacts/configuration-reconciliation.md').decode();assert 'illustrative alternative, not a required project default' in config and 'genuine same-baseline conflict' in config
+print('PASS 36 exact subjects; original33 stable; new3 omission controls;',joins,'hash/blob/span joins; all180 dimension ref sets; exact six paths/parent/criteria/statuses/protected inputs; math tail byte-identical')
+print('PASS corrected F01 classification and all36 handoff IDs; F02 bounded inventory')
+x=r['TY-01'];e=next(e for e in x['evidence'] if e['evidence_id']=='ANALYSIS');assert e['locator']['span']=='52-52'
+assert 'conflict' not in config.splitlines()[51] and 'genuine same-baseline conflict' in config.splitlines()[49]
+print('FAIL semantic TY-01 conflict join: its ANALYSIS points to orientation52; actual conflict witness is50')
+arc=blob(I,'project10-design-foundations/arc02-theory-and-evidence/arc-plan.md');assert len(arc.splitlines())==137
+notes=blob(C,S+'artifacts/execution-notes.md').decode();assert 'parent Arc02 plan (131)' in notes
+print('FAIL complete-read receipt: issue Arc02 plan has137 lines, receipt131; SHA',sha(arc))
+print('RETAIN prior math: proof and complete numeric tail byte-identical; no new84 arithmetic execution claimed')
+msg=git('show','-s','--format=%B',C).decode();assert 'Co-authored-by: Codex <noreply@openai.com>' in msg and 'Co-authored-by: Billo AI <ai-engineering@billo.systems>' in msg
 ```

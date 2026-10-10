@@ -118,15 +118,20 @@ active: exact-path commits, independent review, closure when evidence permits,
 then automatic next-slice opening. Gates and five-iteration correction limits
 remain binding. Source and planning branches retain separate mutation boundaries.
 
-Current assignment: [Slice01 Iteration01](slice01-fluid-scale-arithmetic/cc-prompt-iteration01.md).
-Initial candidate `e0f68c31` received [partial CDC acceptance](slice01-fluid-scale-arithmetic/cdc-verification.md):
-five slice rows done/four open; all eight arc rows remain open. The original
-Slice01 prompt remains historical and unchanged. The same-slice correction
-repairs context/occurrence/evidence defects without changing this roadmap.
+Current assignment: [Slice01 Iteration02](slice01-fluid-scale-arithmetic/cc-prompt-iteration02.md).
+Iteration01 candidate `4e678b0b` received [partial CDC acceptance](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration01-independent-review--2026-10-09):
+six slice rows done/three open. F01/F02 and the corrected handoff are accepted;
+TY-01's residual F03 and current-intake F04 prevent closure. All eight arc rows
+remain open. Initial/Iteration01 prompts and results remain historical;
+Iteration02 repairs the same scope without changing this roadmap.
 After Slice01's independent close, CDC details a ready R/T execution unit;
 input-blocked populations remain explicit.
 
 ## Version History
+
+- 1.2 (2026-10-09): Slice01 Iteration01 partially accepted; six done/three open,
+  current intake reopened for receipt correction. Issued Iteration02 for residual
+  applicability/receipt defects; complete families, gates and sequencing retained.
 
 - 1.1 (2026-10-09): Slice01 initial review surfaced context/coverage/evidence
   defects; recorded partial acceptance and Iteration01, retaining all family
