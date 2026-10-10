@@ -9,7 +9,7 @@ excluded. Record each entry here before issuing its initial prompt.
 
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
-| T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Initial return reviewed; Iteration01 issued, not returned | First acceptance3/9; complete cost unknown |
+| T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Two returns reviewed; Iteration02 issued, not returned | First acceptance3/9; complete cost unknown |
 | T02 | Following newly opened Project10 slice; ID pending normal readiness | Pending | Not registered | Not measured |
 
 ## Entry format
@@ -199,3 +199,68 @@ is unknown. Large or awaiting-use artifacts alone are not waste. First-review
 3/9 versus Case01's2/9 is not causal or efficiency evidence: tasks differ, costs
 are incomplete and both endpoints remain censored. T01 stays active for correction;
 meta-review occurs at closure or recorded blocked/escalation stop before T02.
+
+## T01 Iteration01 review — 2026-10-10
+
+Host [current independent review](../../../project10-design-foundations/arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration01-independent-review--2026-10-10)
+is authoritative at candidate578e68f81a28bb7742b9fc754a93fd87f9591c5e, direct child
+of issue7bd3a7ab38c93bf847021fab53a703714317d0a7. Review/Iteration02 issue is the
+commit introducing this section and that prompt; discoverable by path history.
+Frozen protocol revision 2 and Case01 are unchanged.
+
+- Two returned assignments: initial plus one executed correction. No I01
+  receipt-only follow-up; Iteration02 issued, not returned. First-review 3/9
+  remains historical; current 3/9 retain S03-03/05/08. Six open, no closure or
+  accepted semantic-coverage percentage. T02 remains unregistered.
+- Current 139 inventory rows=18 manifests+121 units (42 token/28 boundary/51 context);
+ 42 results, 21 actions. Original17/168 windows plus one declared markup extension
+  remain. Complete token subjects improve; colour/CSS boundary assertions still
+  fragment. Counts are representation, not an accepted assertion denominator.
+- Persistent types after expressly targeted I01: F01 boundary completeness;
+  F02 verdicts assessing the wrong proposition (A006/A085/A048); F03 coherent
+  occurrence edits (ACT-16 clips retained A065); F04 independently declared
+  classification coverage and inclusive pair bounds. F05's new receipt mostly
+  resolves identities but omits the required open-set section. These are
+  specific chains from first review, not aggregate F-number defect rates.
+- Newly identified manifestations: local repository observations attached to
+  external E-DTCG locations, duplicate embedded evidence IDs, and two mismatched
+  action heading ranges. Bounds clipping and omitted-line variants exercise
+  already required properties. No new semantic population or acceptance gate.
+- Validation: all 15 I01 supplied invalids reject; five further invalid variants
+  pass across three properties (classification coverage, inclusive source/pair
+  bounds, unambiguous evidence IDs). Do not count five specimens as five gaps.
+  Valid packet passes an author guard and all five variants reject; semantic
+  completeness/applicability remains human. The separate guard does not accept
+  or repair CC's checker. Recurrence response demonstrates a changed method
+  (literal-specific A006 result, bounded ACT-16 edit and independent guards)
+  before the next bulk pass, as protocol requires.
+- Reviewer contribution: guessed observations.md lookup failed; no new artifact
+  created. Action helper first missed unquoted ACT-20 offsets and stopped;
+  corrected parsing validates all 21 joins. Truncated output recovered in smaller
+  ranges. These are reviewer errors, not CC finding events. Embedded evidence
+  provenance and duplicate-ID manifestations are new discoveries, identified
+  separately from expressly targeted failures; no hidden contract change.
+- Conditions: source/quality gates, contributor roles, tools and output family
+  unchanged. Current correction scope narrows writes to six paths while retaining
+  the accepted source register and all original semantic scope. Exact model/
+  reasoning settings and CC context reuse remain unknown. CC attests no protocol
+  exposure; CDC retains exposure and reused context including compaction.
+- Adherence: author preparation partial (earlier demonstration missed wrapping);
+  inventory-first partial (boundary fragments); verification design partial
+  (three residual properties); CC execution partial; reviewer method used;
+  recurrence response used before I02; record economy partial (sound reductions
+  and shared blocks, but repeated mismatched templates still need correction).
+- Bytes at `578e68f8`: inventory82505, register7704, results126845, handoff24782,
+  notes21831, ledger9652, closing6965; current seven-output total280284 versus
+  initial 284519. Size difference is not effort, quality or efficiency evidence.
+  Operator-relayed CC report20m53s is attested execution duration; independently
+  timed execution, preparation/review/token cost and observation upkeep unknown.
+- Utility: complete token subjects and exact old blocks support a portable token
+  decision and expose a clipped future edit. The wrong-subject assessments still
+  prevent reliable use of the entire handoff. Whether corrective artifact work
+  or Project13 upkeep displaced other useful work, and net cost, remain unknown.
+  No causal/general framework conclusion or task-normalized improvement claim.
+
+T01 remains active under unchanged protocol revision 2. Meta-review occurs at
+closure or recorded blocked/escalation stop before T02; no retrospective trial
+selection or reset of the five-iteration correction limit.

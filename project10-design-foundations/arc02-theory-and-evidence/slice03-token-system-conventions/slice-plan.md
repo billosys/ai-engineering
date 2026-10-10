@@ -134,13 +134,15 @@ framework claim is predetermined.
 | Assignment | Date | Predecessor / reason | State |
 |---|---|---|---|
 | [cc-prompt.md](cc-prompt.md) — initial | 2026-10-10 | Slice02 closed; next ready token concern, primary technical evidence and demonstrated method | Returned; initial CDC review accepts three rows, six remain open |
-| [cc-prompt-iteration01.md](cc-prompt-iteration01.md) — Iteration01 | 2026-10-10 | Return `20852472` / receipt `2eee292c`; F01–05 complete assertions, applicable evidence, usable edits, checks and receipts | Active |
+| [cc-prompt-iteration01.md](cc-prompt-iteration01.md) — Iteration01 | 2026-10-10 | Return `20852472` / receipt `2eee292c`; F01–05 complete assertions, applicable evidence, usable edits, checks and receipts | Returned; CDC retains three done/six open; residual F01–05 |
+| [cc-prompt-iteration02.md](cc-prompt-iteration02.md) — Iteration02 | 2026-10-10 | Return578e68f8; residual F01–05 with diagnosed method and bounded repair examples | Active |
 
-Current assignment is Iteration01; its issuing revision is the commit introducing
-that prompt. [Initial CDC review](cdc-verification.md) accepts S03-03/05/08;
+Current assignment is Iteration02; its issuing revision is the commit introducing
+that prompt. [Current CDC review](cdc-verification.md#iteration01-independent-review--2026-10-10) retains S03-03/05/08;
 six rows remain open. Original prompt/preparation and historical returns remain
-pinned. Seven CC paths remain; ledger evidence-only authority now preserves
-three CDC-done and six open states. Five-iteration limits remain unchanged.
+pinned. The initial seven-output family remains; Iteration02 permits six
+correction paths and protects source-comparison.md. Ledger evidence-only authority
+preserves three CDC-done and six open states. Five-iteration limits remain unchanged.
 
 Author readiness: full selected context/result review, primary reinspections,
 actual printed-checker false-pass probes and a worked multiline repair precede
@@ -149,7 +151,24 @@ lossless multiline representation is clarified. No new population/gate or role.
 The initial example did not demonstrate wrapped assertions, recorded as an
 explicit author-preparation weakness in the independent review.
 
+## Iteration02 author readiness
+
+CDC reviewed all current subjects/results/actions and exercised the committed
+validator plus five discriminating invalid variants. The
+[review](cdc-verification.md#iteration01-independent-review--2026-10-10) diagnoses persistent template/
+coverage mechanisms and demonstrates an A006 literal-specific assessment,
+ACT-16's [0,267] substring preserving A065, and a bounded guard accepting the
+valid packet and rejecting all five variants. Actual source/primary/authority
+inspection precedes issue. Scope/gates and sound subject/register/policy work
+are retained; no original fidelity or self-acceptance. Iteration02 is the second
+issued correction; one correction has returned, budget unchanged.
+
 ## Version History
+
+- 1.2 (2026-10-10): Iteration01 reviewed at578e68f8; three done/six open retained.
+  Issued bounded Iteration02 for residual F01–05 with diagnosed and exercised repairs;
+  full populations, independent/input gates and protected history unchanged.
+
 
 - 1.1 (2026-10-10): Initial return independently reviewed; three rows accepted,
   six open. Issued Iteration01 F01–05 with worked multiline repair and actual

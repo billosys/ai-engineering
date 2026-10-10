@@ -153,3 +153,12 @@ repairs complete assertion coverage, claim-specific evidence, usable edits,
 positive-checker coverage and intake/return receipts. T01 first-review observations
 are recorded; no parent criterion/status, R/T/C/L/G, corpus, source-readiness or
 later implementation/metadata/package/release gate changes. No child/arc closure.
+
+## Arc02/Slice03 Iteration01 review — 2026-10-10
+
+[CDC review](arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration01-independent-review--2026-10-10) of `578e68f8` retains S03-03/05/08:
+three child rows done/six open. [Iteration02](arc02-theory-and-evidence/slice03-token-system-conventions/cc-prompt-iteration02.md)
+uses bounded demonstrated repairs for residual F01–05. All parent criterion
+texts/statuses, complete R/T/C/L/G, source/fidelity and later implementation/
+metadata/package/release gates remain unchanged. T01 persistence is recorded;
+no slice/arc closure or T02 handoff.
