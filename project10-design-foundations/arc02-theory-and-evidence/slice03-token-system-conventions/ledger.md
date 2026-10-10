@@ -48,3 +48,21 @@ and proposed, not independent acceptance:
 six rows remain open. The earlier CC supplement is historical proposed evidence,
 not current acceptance. [Iteration01](cc-prompt-iteration01.md) repairs F01–05
 without changing criterion wording, bounded population or parent gates.
+
+## CC Iteration01 proposed evidence supplement — 2026-10-10
+
+This supplement does not change any criterion text or CDC status. The accepted
+S03-03/05/08 dispositions remain done; the other six rows remain open pending
+independent review of this correction.
+
+| Criterion | CC evidence proposed | Strength and limit |
+|---|---|---|
+| S03-01 | [Execution notes](artifacts/execution-notes.md) | Fresh pinned read receipts, contract readback and the 142-character multiline example; checker identity evidence, not semantic acceptance. |
+| S03-02 | [Occurrence inventory](artifacts/occurrence-inventory.jsonl) | 42 complete token assertion units, 28 owned boundaries and 51 context/markup units over 17/168 original lines plus the declared one-line colour markup extension; exact lineage for U001–U145. Machine coverage does not establish semantic completeness. |
+| S03-03 | [Source comparison](artifacts/source-comparison.md) | Previously accepted bounded register remains byte-preserved. DTCG Status/§9.8 and Utopia generator/configuration were freshly checked; Material 3 and historical Polaris gaps remain. |
+| S03-04 | [Claim results](artifacts/claim-results.jsonl) | 42 unique complete subjects with distinct dimension outcomes, evidence observations, warrants, proposals and pending independent review. Original fidelity and graph/CQ coverage remain unassessed. |
+| S03-05 | [Source comparison](artifacts/source-comparison.md) and [handoff](artifacts/correction-handoff.md) | Previously accepted portable policy facts remain; no new architecture requirement is asserted. |
+| S03-06 | [Correction handoff](artifacts/correction-handoff.md) | 21 exact source-block actions map all 42 result units once, with old hashes/ranges/literals, proposal and owners. No live source edit. The colour.md:249 extension is retained markup, not an action target. |
+| S03-07 | [Execution notes](artifacts/execution-notes.md) | One current inline validator rejects the nine CDC probes, three multiline-demo corruptions and three additional routes through the same positive function. It checks shape/identity/coverage, not truth or human atomization. |
+| S03-08 | [Execution notes](artifacts/execution-notes.md) | Precommit checks are proposed CC evidence only; exact path scope, protected bytes, links, line endings, trailers and committed-tree replay remain for verification. |
+| S03-09 | [Closing report](closing-report.md) | Accounts for current denominators, all nine retained statuses, failures/recovery, unknown costs and unresolved owner re-entry; no trial improvement asserted. |
