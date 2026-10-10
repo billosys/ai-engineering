@@ -106,3 +106,33 @@ The six authorized outputs were committed together, then replayed from the commi
 - Protected proof blob is `4171b18d2bf64dcff0a714499d98fb7cbe31df7a` both at candidate `0adaeb8d` and accepted baseline `fd73d993`; SHA-256 remains `d461ccfb9c67d0fba156a7c163181471d3e27f2d8d5529bfbab13db34ffdc86c`.
 - Replayed code extracted from the committed execution notes; `python3 /tmp/replay_committed.py` exited 0. It passed all source/table/stage predicates and the six controls. Maxima/argmax: encoded `1.683912629130494e-6` (corner-7 channel 2); linear `2.612845988458901e-7` (linear-white channel 2); XYZ `0.0003974199599194039` (XYZ-4 L); polar `1.734723475976807e-16` (corner-2 a). `git diff --check` passed.
 - The review-receipt change itself is committed separately to the same authorized `closing-report.md` path with the required trailers; the containing finalization commit is reported in the CC return. This report cannot embed its own commit ID.
+
+
+## Iteration02 CC return — 2026-10-10
+
+**Status:** proposed for CDC review. The issuing prompt is at `33766ea6a707e6107b236966d776c550108fea99`; SOURCE is `dffa504e851b03b8e4746f1941068e4cc850b612`. CC preserves S02-03/04/05 as CDC-done and proposes evidence for the other six open rows. This is not Slice02 closure, an arc/project decision, or authorization to edit SOURCE/open Slice03.
+
+Five F01–F05 findings were corrected; these are not the count of open ledger rows. The original seven-output assignment is narrowed for this iteration to exactly six files; the sound proof remains outside the allowlist. Claim evidence contains 49 assessed clause/occurrence rows, 18 exact original-ID provenance envelopes, two explicit non-assessed scope boundaries, one non-assessed duplicate-link record for card line 146, and a stable new-occurrence identity for foundations 451–456. Card 45–63 and 72–76 are split into five distinct stage/property clauses each. The repeated line-146 Rosetta statement remains in occurrence lineage but does not add a distinct claim to the denominator. Methods now resolve to the pinned 83-line procedure; evidence IDs are clause-specific; original M1/error, C++ weighted sums, “None significant,” and music analogy are assessed against their literal subjects. Exact confidence in original-source fidelity remains blocked for dependent results because the archival capture and transformation/context/completeness manifest are unavailable.
+
+The correction handoff supplies actual proposed prose, including portable colour-palette wording, separates XYZ M1 from combined linear-sRGB A, and retains R/T/C/L/G, DES-007/limited DES-002, Arc03–05, per-input P10-11 and future fresh-source-mutation review. GPU/ICC, perceptual experiments, CIE/ΔE background and machine/perception analogy remain outside this result with later owners. No C&B profile/default is proposed.
+
+Numerical values and proof remain unchanged. The corrected replay is in execution notes and checks signed transfer witnesses; exact case memberships; original and intermediate printed values; all XYZ table/error and polar error fields; and three original contrary models against common positive predicates. It also probes four printed-field corruption controls, three numerical-model families, and four evidence-integrity controls. Historical Iteration01 claims that every reference was applicable, the source-table predicates passed, or all 42 replacements were literal remain historical claims superseded by CDC’s F01–F05 review.
+
+**Row walk:** S02-03, S02-04 and S02-05 remain independently accepted by CDC at `73c8180b`; no new status is proposed for those accepted rows. CC proposes corrected evidence for S02-01, S02-02, S02-06, S02-07, S02-08 and S02-09; all six remain open until CDC review. All nine criterion texts are unchanged. No project or arc criteria are closed.
+
+**Unrun/blocked:** no immutable original capture/fidelity comparison or acquisition, empirical perception/music study, whole-card or 233-card/eight-live-file review, relationship/CQ execution, live source edit, browser/accessibility/package/Make gate or release review. Exact mathematics is independently reproducible without the missing original; only fidelity-dependent conclusions are blocked by it. Full P10-11 and release gates remain open.
+
+**Bubble-up:** the bounded T-family correction is returned to Arc02; R/C/L/G execution and Arc03–05 remain future owners. CC found no basis to alter parent scope or sequence. CDC must independently replay committed bytes and decide the six open rows; no next slice is assigned by this return.
+
+### Exact six-output inventory
+
+1. `artifacts/claim-results.jsonl` — 49 assessed clause/occurrence rows; 18 original-ID provenance envelopes; two scope boundaries; one non-assessed duplicate link.
+2. `artifacts/numerical-reconciliation.md` — preserved 16 RGB, four XYZ and 20 polar values with corrected replay interpretation.
+3. `artifacts/correction-handoff.md` — exact proposed prose and pending-owner entries joined to each assessed occurrence.
+4. `artifacts/execution-notes.md` — intake and identity corrections, current self-contained replay code, controls and receipts.
+5. `ledger.md` — unchanged nine criterion texts and three-done/six-open status with this return pointer.
+6. `closing-report.md` — this row walk, limits and candidate/replay receipt.
+
+### Output-candidate receipt
+
+The following will be filled after the six-path candidate is committed and replayed.

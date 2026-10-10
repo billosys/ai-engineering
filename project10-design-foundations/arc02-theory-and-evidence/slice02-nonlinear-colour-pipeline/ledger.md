@@ -31,3 +31,15 @@ At `73c8180b` CDC accepts S02-04 and retains S02-03/05: three done/six open.
 issues [Iteration02](cc-prompt-iteration02.md) for residual F01–F05. Initial
 review and issued prompts remain historical; all criteria, higher-scale/input
 requirements and correct proof/values remain unchanged. No Slice03 or closure.
+
+
+## Iteration02 CC return — 2026-10-10
+
+Candidate 73c8180b received the Iteration02 correction prompt from issuing commit
+33766ea6a707e6107b236966d776c550108fea99. CC proposes corrected evidence for
+S02-01, S02-02, S02-06, S02-07, S02-08 and S02-09 in the six authorized outputs;
+these six rows remain open pending CDC review. S02-03/04/05 remain CDC-done at
+73c8180b; no accepted criterion text or disposition was changed. See
+[Iteration02 return](closing-report.md#iteration02-cc-return--2026-10-10) and
+[claim records](artifacts/claim-results.jsonl),
+[numerical replay](artifacts/execution-notes.md#iteration02-execution--2026-10-10).

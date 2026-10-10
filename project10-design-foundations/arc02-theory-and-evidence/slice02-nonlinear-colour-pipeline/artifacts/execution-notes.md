@@ -228,3 +228,260 @@ print('PASS evidence controls: required 451-456 coverage/clipping fail; full-mat
 Run command from the planning worktree: `python3 /tmp/replay_iter01.py`. Observed result before commit: exit 0; all positive populations/stages and all six contrary controls reported PASS. Required counts were 13 encoded + 3 linear, 16 inverse returns, 12 printed XYZ table components, four XYZ inputs, and 20 polar rows. Maxima/argmax were encoded `1.683912629130494e-6` at corner-7 channel 2; linear `2.612845988458901e-7` at linear-white channel 2; XYZ `0.000397419959919404` at XYZ-4 L; polar `1.734723475976807e-16` at corner-2 (a component). Three numerical controls: matrix-only, skipped decode, and unsigned root each failed the applicable positive predicate while positive witnesses passed. Three separate evidence controls: deleting the 451–456 occurrence and clipping its required qualification both fail occurrence coverage; falsely tagging the full-matrix claim supported fails its scaling-witness predicate; relabeling a correctly hashed source’s coefficient evidence to M2 lines 93–95 fails operator/input-space applicability. These controls aid review and are not semantic acceptance.
 
 The self-contained program uses Python 3 standard library, binary64, no clipping, no persistent project script/package, and no tests. No Make, packaging, browser, accessibility, empirical perception, source-acquisition, or whole-card/CQ work was run or assigned. Their later gates remain open. Independent CDC must replay the committed blob and decide the seven open criteria.
+
+
+## Iteration02 execution — 2026-10-10
+
+**Fresh intake/readback.** Issuing prompt commit: `33766ea6a707e6107b236966d776c550108fea99`; prompt blob `f0e75fa00d597facd2e2e8f34dd0d171c223d4ef`, SHA-256 `615b4f2ed9e1bd5415a57aff4a064b9e207b138b6000d614b58291d4d5a978f5`. SOURCE/main remains `dffa504e851b03b8e4746f1941068e4cc850b612`. Required model, subject boundaries, exact six-path allowlist, proof/table values, three CDC-done/six open rows, per-result original-fidelity gate and Operator C&B removal decision are unchanged. Source and prompt pins were read from Git objects; current plan/ledger/prompt/CDC and prior candidate were read from the planning worktree. The two unrelated untracked directories were left untouched. The first authority-receipt pass omitted Project10 ledger lines 33–35 containing P10-11; those lines were then loaded and the recorded range corrected to include all eleven criteria.
+
+### Current self-contained replay program — `ITERATION02_REPLAY_V1`
+
+```python
+from pathlib import Path
+import subprocess, json, hashlib, math, re, ast, itertools, collections
+P=Path.cwd(); S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/'; C=subprocess.check_output(['git','rev-parse','HEAD'],cwd=P,text=True).strip(); SRC='dffa504e851b03b8e4746f1941068e4cc850b612'; PROC='project10-design-foundations/arc01-portable-contract/slice02-source-and-review-readiness/artifacts/review-procedure.md'; PR='759ce2dd116a4cfe03b72d43fd2791f48486251c'; PREV='fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0'
+def git(*a): return subprocess.check_output(['git',*a],cwd=P)
+def obj(r,p): return git('show',f'{r}:{p}')
+def H(b): return hashlib.sha256(b).hexdigest()
+def close(a,b,tol=5.01e-13): return len(a)==len(b) and max((abs(x-y) for x,y in zip(a,b)),default=0)<=tol
+def vec(s): return tuple(ast.literal_eval(s.strip().strip('`')))
+def rows(section):
+ out=[]; started=False
+ for line in section.splitlines():
+  if line.startswith('|'):
+   started=True; c=[x.strip().strip('`') for x in line.split('|')[1:-1]]
+   if c and not all(re.fullmatch(r':?-+:?',x) for x in c) and c[0] not in ('Case','Row'): out.append(c)
+  elif started: break
+ return out
+assert git('rev-parse',C+'^').decode().strip()=='33766ea6a707e6107b236966d776c550108fea99'
+assert git('rev-parse',SRC).decode().strip()==SRC
+outputs=['artifacts/claim-results.jsonl','artifacts/numerical-reconciliation.md','artifacts/correction-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md']
+assert set(git('diff-tree','--no-commit-id','--name-only','-r',C).decode().splitlines())=={S+x for x in outputs}
+msg=git('show','-s','--format=%B',C).decode(); assert 'Co-authored-by: Codex <noreply@openai.com>' in msg and 'Co-authored-by: Billo AI <ai-engineering@billo.systems>' in msg
+for f in outputs: assert obj(C,S+f).endswith(b'\n') and b'\r' not in obj(C,S+f)
+proof='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/colour-conversion-proof.md'
+assert git('rev-parse',f'{C}:{proof}').decode().strip()=='4171b18d2bf64dcff0a714499d98fb7cbe31df7a'
+# Exact current local source and method identities, then literal source-line joins.
+proc=obj(PR,PROC); assert len(proc.decode().splitlines())==83 and H(proc)== 'a72c820ddfe4804e6056f1785b01e572473186e91a33ee87b757085c984752db'
+source_paths={'knowledge/design/SKILL.md','knowledge/design/guides/foundations-of-design.md','knowledge/design/guides/design.md','knowledge/design/guides/colour.md','knowledge/design/concept-cards/posts/matrix-transformation-colour.md'}
+records=[json.loads(x) for x in obj(C,S+'artifacts/claim-results.jsonl').decode().splitlines()]
+assert len(records)==70 and len({r['claim_id'] for r in records})==70
+assessed=[r for r in records if r.get('record_kind') not in ('literal-subject-provenance-envelope','scope-boundary-decision','duplicate-occurrence-link')]
+envelopes=[r for r in records if r.get('record_kind')=='literal-subject-provenance-envelope']
+bounds=[r for r in records if r.get('record_kind')=='scope-boundary-decision']; aliases=[r for r in records if r.get('record_kind')=='duplicate-occurrence-link']
+assert len(assessed)==49 and len(envelopes)==18 and len(bounds)==2 and len(aliases)==1
+assert len({e['evidence_id'] for r in assessed for e in r.get('evidence',[])})==sum(len(r.get('evidence',[])) for r in assessed)
+original=[json.loads(x) for x in obj(PREV,S+'artifacts/claim-results.jsonl').decode().splitlines()]
+orig={r['claim_id']:r for r in original}; assert len(orig)==18 and {e['claim_id'] for e in envelopes}==set(orig)
+for e in envelopes:
+ oid=e['claim_id']; assert e['origin_claim_id']==oid and e['subject']==orig[oid]['subject'] and e['assessed_coverage'] is False
+ assert all(x in {r['claim_id'] for r in assessed} for x in e['split_clause_ids'])
+for r in assessed:
+ assert r['method']['path']==PROC and r['method']['git_revision']==PR and r['method']['git_blob']==git('rev-parse',f'{PR}:{PROC}').decode().strip() and r['method']['sha256']==H(proc)
+ s=r['subject']; assert s['path'] in source_paths
+ b=obj(SRC,s['path']); lines=b.decode().splitlines(); a,z=s['span']['start'],s['span']['end']; assert H(b)==s['sha256'] and git('rev-parse',f'{SRC}:{s["path"]}').decode().strip()==s['git_blob']
+ assert '\n'.join(lines[a-1:z])==s['assertion']
+ assert set(r['dimensions'])=={'source_faithfulness','correctness','scope_attribution','consistency','relationship_cq_coverage'}
+ valid={e['evidence_id'] for e in r.get('evidence',[])}
+ for d in r['dimensions'].values(): assert set(d['evidence_refs'])<=valid
+ assert all(e['evidence_id'].startswith(r['claim_id']+'::') for e in r.get('evidence',[]))
+# The actual article inputs and exact coefficient/operator spans.
+prep_path='knowledge/design/sources/md/posts/a-perceptual-colour-space.md'; prep=obj(SRC,prep_path).decode().splitlines()
+assert len(prep)==504 and H(obj(SRC,prep_path))=='ffe5494da6f0d040fb341d8e1f03d3e396600f6787088b6d57e32613798375f4'
+def coeff(line_numbers):
+ out=[]
+ for n in line_numbers:
+  row=[float(sign+number) for sign,number in re.findall(r'([+-]?)\s*(\d+\.\d+)f',prep[n-1])]
+  if len(row)==2: row.insert(0,1.0) # the C++ inverse rows begin with an implicit +1*c.L
+  assert len(row)==3
+  out.append(row)
+ return out
+A=coeff((126,127,128)); B=coeff((135,136,137)); BI=coeff((143,144,145)); AI=coeff((152,153,154))
+assert all(len(r)==3 for m in (A,B,AI) for r in m) and all(len(r)==3 for r in BI)
+def matvec(M,v): return tuple(sum(x*y for x,y in zip(row,v)) for row in M)
+def mm(A,B): return tuple(tuple(sum(A[i][k]*B[k][j] for k in range(3)) for j in range(3)) for i in range(3))
+def cbrt(x): return math.copysign(abs(x)**(1/3),x)
+def decode(x): return x/12.92 if abs(x)<=.04045 else math.copysign(((abs(x)+.055)/1.055)**2.4,x)
+def encode(x): return 12.92*x if abs(x)<=.0031308 else math.copysign(1.055*abs(x)**(1/2.4)-.055,x)
+def fwd(v,M=A): return matvec(B,tuple(cbrt(x) for x in matvec(M,v)))
+def inv(v): return matvec(AI,tuple(x**3 for x in matvec(BI,v)))
+assert abs(decode(-.5)-(-.21404114048223255))<1e-15 and abs(encode(-.125)-(-.3885728590463344))<1e-15
+def determinant(m):
+ a,b,c=m;return a[0]*(b[1]*c[2]-b[2]*c[1])-a[1]*(b[0]*c[2]-b[2]*c[0])+a[2]*(b[0]*c[1]-b[1]*c[0])
+def literal_matrix(line_no):
+ v=[float(t) for t in re.findall(r'[+-]?\d+\.\d+',prep[line_no-1])];assert len(v)==9;return [v[j:j+3] for j in (0,3,6)]
+M1=literal_matrix(91);M2=literal_matrix(93);assert abs(determinant(M1)-0.4722768434252936)<1e-15 and abs(determinant(M2)-1.6112316300395422)<1e-15
+text=obj(C,S+'artifacts/numerical-reconciliation.md').decode()
+# Primary table memberships and all displayed RGB values/errors.
+rgbsec=text.split('## 16 RGB forward and inverse cases',1)[1].split('## Four published XYZ examples',1)[0]
+rgbs=rows(rgbsec); expected_ids={f'corner-{i}' for i in range(1,9)}|{'neutral-0.04044','neutral-0.04045','neutral-0.04046','middle-gray','mixed','linear-white','linear-white-1/8','linear-negative-white'}
+assert {r[0] for r in rgbs}==expected_ids and len(rgbs)==16
+cases=[('corner-'+str(i+1),'encoded',v) for i,v in enumerate(itertools.product((0.,1.),repeat=3))]+[('neutral-0.04044','encoded',(.04044,)*3),('neutral-0.04045','encoded',(.04045,)*3),('neutral-0.04046','encoded',(.04046,)*3),('middle-gray','encoded',(.5,)*3),('mixed','encoded',(.2,.4,.6)),('linear-white','linear',(1.,)*3),('linear-white-1/8','linear',(.125,)*3),('linear-negative-white','linear',(-.125,)*3)]
+rgbmap={r[0]:r for r in rgbs}; labs={}; maxima={'encoded':(0.,None),'linear':(0.,None)}
+for name,kind,x in cases:
+ r=rgbmap[name]; assert r[1]==kind and close(vec(r[2]),x,0)
+ lin=tuple(decode(v) for v in x) if kind=='encoded' else x; lab=fwd(lin); back=inv(lab); back=tuple(encode(v) for v in back) if kind=='encoded' else back; err=tuple(u-v for u,v in zip(back,x)); labs[name]=lab
+ assert close(vec(r[3]),lab) and close(vec(r[4]),back) and close(vec(r[5]),err),(name,r)
+ for ch,v in enumerate(err):
+  if abs(v)>maxima[kind][0]:maxima[kind]=(abs(v),(name,ch))
+# XYZ oracle table is parsed from SOURCE lines 107-110; assert exact four unique source cases and all six printed fields.
+table=[]
+for line in prep[106:110]:
+ if line.lstrip('> ').startswith('|'):
+  line=line.lstrip('> ')
+  cell=[x.strip() for x in line.split('|')[1:-1]]
+  if len(cell)==6 and cell[0].replace('.','',1).isdigit(): table.append(tuple(float(x) for x in cell))
+assert len(table)==4
+xyzsec=text.split('## Four published XYZ examples',1)[1].split('## Twenty analytic polar round trips',1)[0]
+xyzrows=rows(xyzsec); assert {r[0] for r in xyzrows}=={f'XYZ-{i}' for i in range(1,5)} and len(xyzrows)==4
+xyzmap={r[0]:r for r in xyzrows}; xyz_labs={}; xyzmax=(0.,None)
+for i,oracle in enumerate(table,1):
+ name=f'XYZ-{i}'; row=xyzmap[name]; x=oracle[:3]; printed=oracle[3:]; lab=fwd(x,coeff((90,91,92))) if False else None
+ # M1/M2 are parsed from their literal matrix rows, not the RGB coefficient set.
+ m1rows=[]
+ for line_no in (90,):
+  nums=[float(t) for t in re.findall(r'[+-]?\d+\.\d+',prep[line_no])]
+  if len(nums)==9:m1rows=[nums[j:j+3] for j in (0,3,6)]
+ # Matrix display occupies source line 91 in one-based coordinates.
+ if not m1rows:
+  m1line=prep[90]; vals=[float(t) for t in re.findall(r'[+-]?\d+\.\d+',m1line)]
+  if len(vals)==9:m1rows=[vals[j:j+3] for j in (0,3,6)]
+ assert len(m1rows)==3
+ m2line=prep[92]; vals2=[float(t) for t in re.findall(r'[+-]?\d+\.\d+',m2line)]
+ if len(vals2)!=9:
+  m2line=prep[91]; vals2=[float(t) for t in re.findall(r'[+-]?\d+\.\d+',m2line)]
+ assert len(vals2)==9
+ m2=[vals2[j:j+3] for j in (0,3,6)]; lm=matvec(m1rows,x); lab=matvec(m2,tuple(cbrt(v) for v in lm)); err=tuple(a-b for a,b in zip(lab,printed)); xyz_labs[name]=lab
+ assert close(vec(row[1]),x) and close(vec(row[2]),lab) and close(vec(row[3]),printed) and close(vec(row[4]),err) and close(vec(row[5]),lm),(name,row,lab)
+ for ch,v in enumerate(err):
+  if abs(v)>xyzmax[0]:xyzmax=(abs(v),(name,ch))
+# Validate staged XYZ computed/LMS/root/Oklab/printed/error fields against the same actual oracle.
+stage_xyz=rows(text.split('### XYZ example stages',1)[1].split('### Polar output stages',1)[0]); assert {r[0] for r in stage_xyz}=={f'XYZ-{i}' for i in range(1,5)} and len(stage_xyz)==4
+for row in stage_xyz:
+ i=int(row[0][-1]); x=table[i-1][:3]; printed=table[i-1][3:]; vals=[float(t) for t in re.findall(r'[+-]?\d+\.\d+',prep[90])]; m1=[vals[j:j+3] for j in (0,3,6)]; lms=matvec(m1,x); roots=tuple(cbrt(v) for v in lms); vals2=[float(t) for t in re.findall(r'[+-]?\d+\.\d+',prep[92])]; m2=[vals2[j:j+3] for j in (0,3,6)]; lab=matvec(m2,roots); err=tuple(a-b for a,b in zip(lab,printed))
+ assert close(vec(row[1]),x) and close(vec(row[2]),lms) and close(vec(row[3]),roots) and close(vec(row[4]),lab) and close(vec(row[5]),printed) and close(vec(row[6]),err)
+# Polar table checks both reported primary errors and stage restored coordinates/error.
+polsec=text.split('## Twenty analytic polar round trips',1)[1].split('## Named sanity witnesses',1)[0]; pol=rows(polsec); assert {r[0] for r in pol}==set(labs)|set(xyz_labs) and len(pol)==20
+polmap={r[0]:r for r in pol}; polarmax=(0.,None)
+for name,lab in {**labs,**xyz_labs}.items():
+ L,a,b=lab; c=math.hypot(a,b); hue=None if c==0 else math.degrees(math.atan2(b,a))%360; aa=c*math.cos(math.radians(hue or 0)); bb=c*math.sin(math.radians(hue or 0)); err=(0.,aa-a,bb-b); r=polmap[name]
+ assert abs(float(r[1])-c)<=5.01e-13 and ((hue is None and r[2]=='undefined') or (hue is not None and abs(float(r[2])-hue)<=5.01e-10)) and close(vec(r[3]),err)
+ for j,v in enumerate(err):
+  if abs(v)>polarmax[0]:polarmax=(abs(v),(name,j))
+stagepol=rows(text.split('### Polar output stages',1)[1].split('## Named sanity witnesses',1)[0]); assert {r[0] for r in stagepol}==set(labs)|set(xyz_labs) and len(stagepol)==20
+for row in stagepol:
+ name=row[0]; lab=(labs|xyz_labs)[name]; L,a,b=lab;c=math.hypot(a,b); hue=None if c==0 else math.degrees(math.atan2(b,a))%360; aa=c*math.cos(math.radians(hue or 0));bb=c*math.sin(math.radians(hue or 0));err=(0.,aa-a,bb-b)
+ assert close(tuple(float(x) for x in row[1:4]),lab) and abs(float(row[4])-c)<=5.01e-13 and ((hue is None and row[5]=='undefined') or (hue is not None and abs(float(row[5])-hue)<=5.01e-10)) and abs(float(row[6])-aa)<=5.01e-13 and abs(float(row[7])-bb)<=5.01e-13 and close(vec(row[8]),err)
+# Focused stage-field corruptions use the same comparators as the positive stage checks.
+xyz_stage4=next(r for r in stage_xyz if r[0]=='XYZ-4'); good_lms=matvec([[float(t) for t in re.findall(r'[+-]?\d+\.\d+',prep[90])][j:j+3] for j in (0,3,6)],table[3][:3]); bad_lms=list(good_lms);bad_lms[0]+=.001;assert not close(tuple(bad_lms),vec(xyz_stage4[2]))
+polar_stage2=next(r for r in stagepol if r[0]=='corner-2'); good_err=vec(polmap['corner-2'][3]);bad_err=list(good_err);bad_err[1]+=.001;assert not close(tuple(bad_err),vec(polar_stage2[8]))
+# Controls use the same field comparators and all three original model witnesses.
+def xyz_positive(r,expected): return close(vec(r[2]),expected)
+def polar_error_positive(r,expected): return close(vec(r[3]),expected)
+probe=json.loads(json.dumps(xyzmap['XYZ-4'])); bad=list(vec(probe[2]));bad[0]+=0.001;probe[2]=repr(tuple(bad)); assert not xyz_positive(probe,vec(xyzmap['XYZ-4'][2]))
+probe=json.loads(json.dumps(polmap['corner-2']));bad=list(vec(probe[3]));bad[1]+=0.001;probe[3]=repr(tuple(bad));assert not polar_error_positive(probe,vec(polmap['corner-2'][3]))
+# Three original contrary models run through the same positive oracles/tolerances as the valid model.
+white=fwd((1.,1.,1.)); eighth=fwd((.125,.125,.125)); assert close(eighth,tuple(x*.5 for x in white),5.01e-13)
+mat=mm(B,A);matrix_only_matches_rgb=[]
+for name,kind,x in cases:
+ lin=tuple(decode(v) for v in x) if kind=='encoded' else x; got=matvec(mat,lin); expected=fwd(lin);matrix_only_matches_rgb.append(close(got,expected,5.01e-13))
+assert not all(matrix_only_matches_rgb)
+mat1rows=M1; m2rows=M2; matrix_only_matches_xyz=[]
+for oracle in table:
+ x=oracle[:3];got=matvec(mm(m2rows,mat1rows),x);expected=matvec(m2rows,tuple(cbrt(v) for v in matvec(mat1rows,x)));matrix_only_matches_xyz.append(max(abs(a-b) for a,b in zip(got,expected))<=.0005)
+assert not all(matrix_only_matches_xyz) # same published XYZ component tolerance
+mid=next(x for x in cases if x[0]=='middle-gray')[2]; correct=fwd(tuple(decode(v) for v in mid)); skipped=fwd(mid); middle_pass=lambda got:close(got,correct,5.01e-13); assert middle_pass(correct) and not middle_pass(skipped)
+unsigned_real_matches=[]
+for oracle in table:
+ lms=matvec(M1,oracle[:3])
+ try:
+  naive=tuple(x**(1/3) for x in lms);real_values=all(isinstance(x,(float,int)) and math.isfinite(x) for x in naive)
+ except (ValueError,OverflowError,TypeError):real_values=False
+ unsigned_real_matches.append(real_values)
+assert not all(unsigned_real_matches) and not unsigned_real_matches[3]
+# Independent integrity/application guards; each mutated record keeps valid hashes where applicable.
+def method_ok(r):
+ m=r.get('method',{});return m.get('path')==PROC and m.get('git_revision')==PR and m.get('git_blob')==git('rev-parse',f'{PR}:{PROC}').decode().strip() and m.get('sha256')==H(proc)
+def lineage_ok(rs):
+ env={r['claim_id']:r for r in rs if r.get('record_kind')=='literal-subject-provenance-envelope'}
+ return set(env)==set(orig) and all(env[k].get('origin_claim_id')==k and env[k].get('subject')==orig[k]['subject'] for k in orig)
+def original_clause_ok(r):return 'M1 matrix to gamma-encoded sRGB' in r['subject']['assertion'] and 'M1' in r['subject']['assessed_clause'] and 'linear-sRGB matrix A' not in r['subject']['assessed_clause'] and r['dimensions']['correctness']['outcome']=='contradicted'
+def evidence_applicable(r):
+ return any(e.get('role')=='supporting' and e.get('kind')=='prepared-technical-model' and e.get('path')==prep_path and e.get('span')=={'start':124,'end':139,'inclusive':True} and 'c.r' in e.get('observation','') for e in r.get('evidence',[]))
+assert all(method_ok(r) for r in assessed)
+assert lineage_ok(records)
+assert original_clause_ok(next(r for r in assessed if r['claim_id']=='CARD-007-ERROR'))
+assert evidence_applicable(next(r for r in assessed if r['claim_id']=='CARD-007-NAMING'))
+# Negative integrity controls: wrong method, unresolved ID, literal reinterpretation, and true hash/wrong role all fail the same guards.
+x=json.loads(json.dumps(assessed[0]));x['method']['path']='missing.md';assert not method_ok(x)
+xrecords=[r for r in records if not (r.get('record_kind')=='literal-subject-provenance-envelope' and r['claim_id']=='CARD-007')];assert not lineage_ok(xrecords)
+x=json.loads(json.dumps(next(r for r in assessed if r['claim_id']=='CARD-007-ERROR')));x['subject']['assessed_clause']='Only decode before the combined linear-sRGB A';assert not original_clause_ok(x)
+x=json.loads(json.dumps(next(r for r in assessed if r['claim_id']=='CARD-007-NAMING')));ev=next(e for e in x['evidence'] if e.get('kind')=='prepared-technical-model' and e.get('span')=={'start':124,'end':139,'inclusive':True});ev['role']='subject';assert not evidence_applicable(x)
+# Three CDC-accepted rows remain three done; six are open. These are integrity facts, not semantic acceptance.
+ledger=obj(C,S+'ledger.md').decode();assert ledger.count('| done |')==3 and ledger.count('| open |')==6
+print('PASS exact 13 encoded + 3 linear IDs/inputs; 16 RGB output/inverse/error fields; 4 XYZ source-oracle rows and all original/staged fields; 20 polar original/staged fields')
+print('PASS signed transfer witnesses; maxima encoded',maxima['encoded'],'linear',maxima['linear'],'XYZ',xyzmax,'polar',polarmax)
+print('PASS three original contrary models: matrix-only checked against all 16 RGB and four XYZ table cases; skipped decode checked against middle-gray; unsigned root checked against all four XYZ cases')
+print('PASS 4 printed-field corruption controls: original XYZ output, primary polar error, staged XYZ LMS, and staged polar error vector rejected')
+print('PASS 4 evidence-integrity controls: method pin, original-ID map, literal M1/input-space, and hashed-evidence role/applicability')
+print('Human review remains required for semantic warrant, source fidelity and five-dimension conclusions; these predicates verify joins/content, not truth.')
+
+```
+
+Extract and run this exact fence from the committed notes (from the planning worktree):
+
+```sh
+python3 - <<'PY'
+from pathlib import Path
+s=Path('project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/artifacts/execution-notes.md').read_text()
+a=s.index('### Current self-contained replay program — `ITERATION02_REPLAY_V1`')
+b=s.index('```python\n',a)+len('```python\n')
+e=s.index('\n```',b)
+Path('/tmp/iteration02-replay.py').write_text(s[b:e]+'\n')
+PY
+python3 /tmp/iteration02-replay.py
+```
+
+The current code intentionally reads candidate bytes from committed `HEAD`; rerun only after the six-output candidate commit. No current replay result is claimed before that run. The historical Iteration01 checker and its six-control PASS receipt remain above as history; Iteration02’s CDC findings supersede their completeness and signed-extension claims.
+
+### Iteration01 prompt identity correction — 2026-10-10
+
+The prior Iteration01 return called `fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0` the prompt blob. That is the candidate commit, not the prompt blob. At issuing commit `1a1fb44b25f7558f46b9395e9cf6e4b3bc71f145`, `cc-prompt-iteration01.md` has Git blob `5786b1ebd453314639e9f2080a47afcf9932f538` and SHA-256 `0cf78fcb28bfbc975d899c8088441367e7f3eef7c608a48487b5ea6d7282d4d3`. The earlier statement is preserved as a historical receipt error.
+
+### Fresh Iteration02 required-read receipt — 2026-10-10
+
+The required current plans and CDC review were read from working-tree `planning` at `33766ea6a707e6107b236966d776c550108fea99`: project plan lines 1–212 (before version history; 11 project criteria individually inspected), project ledger lines 1–35 and 48–88 (all eleven criteria, including P10-11/current status), Arc02 plan lines 1–134, Arc02 ledger lines 1–43, Slice02 plan lines 1–311, Slice02 ledger lines 1–33, CDC verification lines 1–608 including initial F01–F05 and complete Iteration01 review/code. The complete current Iteration02 prompt is 236 lines. The complete issued Iteration01 prompt was reread from `1a1fb44b`; its content was recovered in bounded tool output, including F01–F05 and all exact output/row/preservation gates.
+
+Candidate `73c8180b8278f88b08ed044da73930bef6f0a522` six outputs and protected proof were consumed from `git show`; its 60 JSONL rows were read structurally. Original 18 records were consumed from `fd73d993`; each exact subject object was compared to a one-per-original-ID provenance envelope. The pinned 83-line review procedure was read at `759ce2dd116a4cfe03b72d43fd2791f48486251c`, blob and SHA verified by the current replay. SOURCE live subjects were reread: SKILL 360–368; foundations 239–254, 432–456 (including line 456); design 130–155; colour 9–11 and 542–552; complete matrix card 1–147; prepared model 75–113 and 115–163. Method and source spans are in the current output records. Collaboration-framework, PM entrypoint/wayfinder, prompt-authoring, verification and validation-gate paths were consulted; previously issued CDC receipts remain historical where exact old ranges were not recoverable. No old range has been inferred from a file hash.
+
+The dated W3C CSS Color 4 Candidate Recommendation Draft (9 October 2026) was freshly read for §19’s sample-code notice and complete `lin_sRGB`/`gam_sRGB` definitions, current rendered lines 3095–3142. Its explicit signed reflection uses `abs` with the sign retained; it is sample code and not a conformance claim. The prepared Oklab article is the pinned local SOURCE transcription, not an immutable original capture. No external-page capture hash or original fidelity is claimed.
+
+**Failures/recovery:** initial combined plan/CDC/guide outputs were truncated and then recovered with direct, contiguous range reads and bounded structured projections. The first candidate writer caught a bare-original-ID/clause collision; original clauses were aliased and bare IDs reserved for envelopes. Follow-up edit helpers then exposed a legacy string-shaped `independent_review` field, a stale pre-alias ID lookup, and a closed notes-file handle; each was corrected before final serialization, with execution notes reset from the immutable `73c8180b` candidate before rebuilding. A pre-commit checker compared the method blob to its SHA-256 and failed; the check was corrected to compare the actual Git blob and the separate SHA. A scope probe initially expected CARD-017 at line 101; the literal was rechecked and its exact Example 2 subject is line 103. No protected input changed. No acquisition, empirical study, full-card/CQ, browser, package or Make work was run.
+
+
+### Workflow guidance identity and coverage — 2026-10-10
+
+All guidance below was read from SOURCE `dffa504e851b03b8e4746f1941068e4cc850b612`; Git blob and whole-file SHA-256 are recorded to identify inputs, while the loaded ranges record actual content reviewed:
+
+| Path | Lines | Git blob | SHA-256 | Loaded range |
+|---|---:|---|---|---|
+| `knowledge/collaboration-framework/SKILL.md` | 538 | `bab6c01e27b0ef68fd2c0e7d7e6881cecfeda7c8` | `d5f48b0b06d23cc33e55400952e46596822192c64401c8621ec1708d00846135` | 126–181: execution/intake, prompt iterations, Expedited Mode route |
+| `knowledge/project-management/guides/README.md` | 178 | `d953d84f4aca6bf03aac8c138120109233e72e14` | `5de496704990ba211f31707f2bfaaa467b66e51555d1232c19420284ae6a4280` | 1–178: complete wayfinder and Expedited Mode |
+| `knowledge/project-management/guides/02-canonical-planning-worktree.md` | 250 | `e6e6525c145c28306f0f0fd87473268832754f4b` | `4705221f3452b59ad215da153d7b8b4c62679663033e6c4088bfc1d4d5e2d221` | 126–250: slice docs, verification filenames and iteration preservation |
+| `knowledge/project-management/guides/03-planning-top-down.md` | 262 | `46f8d0bd2cb3293314801b30ce37e98a78274a84` | `f8fde26da011201f211249fc0bc57a394a10fba1770a7273a5354a2381e3d5ce` | 134–188: complete iteration handoff/execution procedure |
+| `knowledge/engineering-methods/guides/07-implementation-prompt-authoring.md` | 475 | `e30c3a2dc97c2f32bb01a619dc273bdc33862369` | `890fdc8e83aff3f130524d8f3af3f0614d41c63e221e90348bc7493c23c75d6f` | 260–425: required-reading/CC intake, review readiness, corrective iterations |
+| `knowledge/work-verification/guides/01-ledger-discipline.md` | 96 | `1574db8e1a347371eb5dcafb3595e49380cd64d2` | `06892429a188bdc4e70236a5ac430e5f04cae1a9690a4c025d291ed6d417d09a` | 1–95: full ledger contract except final component-history link |
+| `knowledge/work-verification/guides/02-evidence-strength.md` | 72 | `3540260a7bcafb1ac5e89e8a87df3216e22fd9b7` | `457725e7a9680f31df8e13fbbaf3f8920d5d982055fcb98d59a4d76f3168b8b7` | 1–72: complete evidence-strength guidance |
+| `knowledge/work-verification/guides/03-row-closure.md` | 81 | `d236fe86c1f6942e53de76f712602130de8d7f37` | `8947d3ab72d59422d0f90f7fb041f7e3131ce85e190c04985937e63ef1737a5b` | 1–68: status, CC/reviewer protocol and close-report shape |
+| `knowledge/work-verification/guides/05-independent-verification.md` | 127 | `c9a3d449170e22483be002cceb589d4bfb575eed` | `f011927b69299fc71cc98dcffe4d53a055a944dc9dc56d2e0745c74410069741` | 1–86: separation, assigned reviewer and correction-retention rules |
+| `knowledge/testing/guides/03-validation-gates.md` | 107 | `fb075d7e1f677e9a759a56b3820078630f90127b` | `3862c66eaa5614099d62a3ee0c3aa296fc66de2a605876cac98a7fbfd01a88aa` | 1–51: gate selection, proportionate proof and negative-control rules |
+
+A combined output for these guidance reads was truncated; the ranges above were then recovered in bounded reads. The method followed the required CC intake: exact pinned text and structured data were reloaded, truncated required outputs recovered, and original literal subjects kept distinct from proposed corrections. The consequential readback is that Iteration02 is a six-path correction inside Slice02: preserve the proof/numeric values and three CDC-accepted rows, keep six rows open, attach each claim to exact identity plus applicable evidence, replay corrected calculations from committed bytes, and leave fidelity-dependent conclusions blocked until their own P10-11 input/re-entry gate is satisfied. Self-checks are CC-attested proposals; CDC remains the independent verifier.
+
+### Replay pin correction — 2026-10-10
+
+The first post-commit extraction of `ITERATION02_REPLAY_V1` exited 1 before numerical checks because its candidate-parent assertion retained the Iteration01 parent `1a1fb44b`. The actual Iteration02 candidate parent is the issuing commit `33766ea6a707e6107b236966d776c550108fea99`; the checker now pins that exact parent. No source, data, proof or calculation ran or changed during the failed attempt. The corrected committed checker is rerun below after this notes-only receipt commit.
+
+### Replay defect recovery — 2026-10-10
+
+After correcting the stale Iteration01 parent pin, bounded replay attempts exposed checker defects before any result was accepted: the coefficient parser indexed its tuple of line numbers rather than the prepared source and failed to insert the implicit `+1*c.L` terms; the pinned XYZ table is Markdown-quoted and required stripping `> `; the row reader merged three adjacent polar tables instead of reading the first contiguous table; and the evidence applicability guard expected the wrong card-example start line (126 instead of 124), while its negative probe changed an unrelated supporting pointer. Each was corrected in `ITERATION02_REPLAY_V1`. The original committed attempts failed at assertions and produced no PASS claim. The final replay result is recorded in the closing-report finalization receipt after running this corrected program from committed bytes.
