@@ -23,3 +23,21 @@ Bounded technical evidence cannot close P10-11 or full-card/live/release work.
 Complete literal inventory is required before verdicts; no claim denominator is
 invented from 17 navigation contexts. SOURCE/parent and original-readiness gates
 remain; all parent criterion texts/statuses are unchanged.
+
+## CC proposed evidence supplement — 2026-10-10
+
+All nine criterion texts and statuses remain unchanged/open pending CDC review.
+The bounded return supplies the following evidence pointers; each is CC-produced
+and proposed, not independent acceptance:
+
+| Criterion | Proposed evidence | Strength and limit |
+|---|---|---|
+| S03-01 | [execution notes](artifacts/execution-notes.md) | Intake pins/readback and author demo replay; identity/method receipt, not semantic acceptance. |
+| S03-02 | [occurrence inventory](artifacts/occurrence-inventory.jsonl) | 145 evidence units across all 17/168 selected contexts: 51 token units, 59 boundaries, 35 context units. The line-level population keeps exact context identity; compound assertion decomposition remains a CDC inspection point. |
+| S03-03 | [source comparison](artifacts/source-comparison.md) | Seven accessible technical source rows read; three direct access gaps retained with re-entry criteria. No immutable source captures. |
+| S03-04 | [claim results](artifacts/claim-results.jsonl) | 51 token result records with five dimension fields and pending independent review. |
+| S03-05 | [correction handoff](artifacts/correction-handoff.md) | Portable policy separates interchange syntax, role choices, optional bindings and conditional theme propagation. |
+| S03-06 | [correction handoff](artifacts/correction-handoff.md) | Occurrence groups map to replacements, reasons, and future owners; CDC should reconcile line-level inventory units and grouped handoff IDs. |
+| S03-07 | [execution notes](artifacts/execution-notes.md) | Current inline identity/join checks and requested negative predicates recorded; structural checks do not validate semantic warrants. |
+| S03-08 | [execution notes](artifacts/execution-notes.md) | Exact seven-path candidate, protected bytes, links, newlines and committed replay are to be reported after commit. |
+| S03-09 | [closing report](closing-report.md) | Proposed row accounting, gaps, failures and modest utility observation; no accepted result or trial improvement asserted. |
