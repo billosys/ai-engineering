@@ -98,9 +98,10 @@ remaining arc near execution. The closed
 |---|---|---|---|
 | arc01-portable-contract | Separate reusable method from adopting-project identity; specify C&B removal and the full-corpus review method, manifest and source needs | Project09 evidence intake | DES-001, DES-010, DES-013, DES-015 |
 | arc02-theory-and-evidence | Correct theory and arithmetic; verify and reconcile the complete card corpus against sources and guides with claim-level evidence | Arc01 contract | DES-002–005, DES-007–009, DES-012, DES-013, DES-015, DES-016 |
+| [arc06-card-metadata-and-rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Harmonize existing metadata across all cards without filling missing fields; demonstrate GitHub rendering | Arc01 baseline; accepted local contract/pilot before mutation; queued | Operator addition 2026-10-10; supplements full-corpus obligations |
 | arc03-accessibility-and-typesetting | Add usable accessibility obligations and transferable typography procedures | Arc01–02 decisions | DES-005, DES-006, DES-009, DES-011 |
-| arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 | DES-010, DES-013, DES-014; all repeated claims |
-| arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04; accepted Project09 baseline | DES-001–016 |
+| arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 plus Arc06 | DES-010, DES-013, DES-014; all repeated claims |
+| arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04 plus Arc06; accepted Project09 baseline | DES-001–016 |
 
 Current status: Arc01 closed by Operator composition acceptance at `38b66d0d`; Slice01 closed and Slice02 closed with eight
 independently done criteria and S02-08 Operator-deferred. Local acceptance remains
@@ -183,6 +184,37 @@ scientific evidence or adopted live teaching. Independent slice composition and 
 are satisfied at their stated planning scope; source/semantic/release gates remain. Slice03 allocates all 233 cards,
 eight live files and relevant finding/reconciliation work without source mutation.
 
+## Operator metadata and rendering addition — 2026-10-10
+
+The Operator adds [Arc06](arc06-card-metadata-and-rendering/arc-plan.md): reconcile
+existing concept-card fields with the standardized representation and make
+metadata plus Markdown render correctly on GitHub. Use the historical 3.2
+contract if the unified replacement is not ready. Project08's replacement is
+still provisional/P-15 open; select the preserved 3.2 field definitions now.
+Skill version 4.8.1 is not a ready card-schema 4.0. Reassess only through an
+explicit recorded contract amendment before affected mutation.
+
+Never fill missing fields: no guessed facts, null/empty defaults, generated
+provenance, IDs, dates or review states. Preserve existing extensions and values;
+record absent/ambiguous fields separately. Alignment of available fields does
+not imply full schema conformance, semantic verification or source-fidelity.
+This explicitly expands the prior format/schema boundary for this bounded
+normalization and rendering correction. Broader schema redesign remains
+Project08-owned; its gates and existing plans are unchanged.
+
+Arc06 has four planned slices: contract/full field inventory, book metadata,
+web metadata, and complete GitHub rendering/revision handoff. Exact rollout
+batches/pilot are prepared from the inventory; split oversized cohorts without
+losing any of the 233 baseline identities. New P10-12/13 criteria track this
+addition independently of all existing project rows.
+
+Arc02's issued assignment continues. Arc06 is queued, with no CC prompt issued;
+its read-only contract work can be activated at a later handoff without missing
+book originals. Metadata mutation needs the accepted local contract/pilot and
+fresh exact source scope. Arc06 must compose before Arc04 package freeze;
+Arc04/05 own package and final-revision checks. Arc numbers remain stable;
+roadmap dependencies, not numeric sorting, govern execution.
+
 ## Workflow and acceptance
 
 Default Two-Contributor Workflow: Sofie in this chat performs CDC planning with
@@ -212,6 +244,11 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.26 (2026-10-10): Operator adds Arc06 metadata harmony/GitHub rendering and
+  P10-12/13. Uses historical 3.2 fallback while Project08 design is unadopted;
+  forbids missing-field population and preserves all prior scope/gates. Arc06
+  is queued before package freeze; current Arc02 handoff remains active.
 
 - 1.25 (2026-10-10): Arc02/Slice02 Iteration02 reviewed at `590b263c`; three child
   rows done/six open. Issued bounded Iteration03; all project criteria/gates retained.
