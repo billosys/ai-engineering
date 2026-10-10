@@ -104,10 +104,11 @@ each near execution after resolving its dependencies. The active
 Current status: Arc01 active; Slice01 closed and Slice02 closed with eight
 independently done criteria and S02-08 Operator-deferred. Local acceptance remains
 `759ce2dd`/`88c1298f`; the Operator ordered Slice03 opening on 2026-10-09.
-Slice03 remains open: seven rows independently done after `ee7b8757` review;
-S03-01/09 alone need [receipt-only iteration02](arc01-portable-contract/slice03-contract-composition-and-handoff/cc-prompt-iteration02.md).
-Artifact-consuming verification and corrected handoff gates pass; two fresh
-intake counts remain inaccurate. No source-fidelity or arc gate is closed.
+Slice03 is closed: all nine criteria independently done at `0b55afd5` with seven
+prior dispositions retained after delta review; see its
+[CDC acceptance](arc01-portable-contract/slice03-contract-composition-and-handoff/cdc-verification.md#iteration02-independent-verification-and-slice03-closure--2026-10-09).
+All three Arc01 slices are closed; formal arc composition and the attributed
+independent/Operator gate are next. No source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
 planning composition. Source readiness carries to Arc02/P10-11 before dependent
 source-fidelity acceptance and full-corpus/release completion. Expedited Mode
@@ -199,6 +200,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.17 (2026-10-09): Slice03 iteration02 `0b55afd5` independently accepted;
+  all nine rows done and child closed. All three Arc01 children now closed; formal arc
+  composition/gate next, while Operator-deferred readiness and release scope remain.
 
 - 1.16 (2026-10-09): Slice03 iteration01 `ee7b8757` accepted for corrected
   handoff rows; seven done/two receipt rows open. Issued iteration02 for F05;

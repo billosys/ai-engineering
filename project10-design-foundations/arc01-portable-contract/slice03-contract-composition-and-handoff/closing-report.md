@@ -147,3 +147,24 @@ proposals only. Original-source readiness/fidelity, all 233-card and eight-file
 semantic review, global edge/CQ/revision reconciliation, browser/accessibility,
 package/runtime/release gates, Arc01 composition, and Operator acceptance remain
 unrun, blocked, or assigned to their existing later gates.
+
+## CDC administrative closure — 2026-10-09
+
+This addendum is authored by Sofie (CDC), not CC. The original and iteration01/02
+CC returns above remain unchanged historical proposals. CDC independently
+accepted `0b55afd56d529023746b7f532825fc9ca476f9d5` against iteration02 at
+`70184b87ed6bd3626c370bd67bb9747a5168b3f9`:S03-01/09 newly done; other seven
+independent dispositions retained after actual-delta/dependency inspection.
+All nine ledger rows done; Slice03 closed. See the
+[full independent review](cdc-verification.md#iteration02-independent-verification-and-slice03-closure--2026-10-09)
+and [final ledger](ledger.md).
+
+F05 corrected; both emitted receipt records and both wrong-count controls
+reproduced from committed bytes. Earlier 84 arithmetic cases and nine artifact
+negatives are retained; two receipt negatives are new. Six supporting artifacts
+remain under artifacts/; no new source/semantic/package output. The slice
+matches its assigned Arc01 capability, with all 233 cards/eight live files/
+five dimensions/16 findings and source actions retained. No structural arc
+change is required by this bubble-up. S02-08/A01-02 remain Operator-deferred;
+P10-11/Arc02 CDC + Operator own per-dependent-scope readiness and complete-corpus/
+release re-entry. Formal Arc01 composition and its attributed gate are next.

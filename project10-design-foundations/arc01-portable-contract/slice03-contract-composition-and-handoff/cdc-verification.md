@@ -1,25 +1,23 @@
 # Slice03 CDC independent verification
 
-## Current verdict — iteration01, 2026-10-09
+## Current verdict — iteration02 acceptance and Slice03 closure, 2026-10-09
 
-**Partial acceptance; Slice03 remains open.** CDC independently reviewed
-`ee7b875793a127b616c1388bc059ae28aaabfcd6`, direct child of iteration01 issue
-`92120fefaa15373327ab1f271fbd9a68b3282601`.
-S03-02/03/04/05/08 retain the initial independent acceptance; S03-06/07 are
-newly done after the corrected handoff review. S03-01/09 remain open for F05,
-two inaccurate counts in the fresh intake receipt. Current CC execution is
-[iteration02](cc-prompt-iteration02.md), a receipt-only correction; no source or
-semantic scope changes. SOURCE remains dffa504e851b03b8e4746f1941068e4cc850b612.
-Arc01 closure/Arc02 opening and all original-readiness/release gates remain pending.
+**Accepted; Slice03 closed.** CDC Sofie independently reviewed CC candidate
+`0b55afd56d529023746b7f532825fc9ca476f9d5`, direct child of issuing
+`70184b87ed6bd3626c370bd67bb9747a5168b3f9`, for the exact
+[iteration02 assignment](cc-prompt-iteration02.md). F05 is resolved;
+S03-01/09 are newly done. The seven prior independent dispositions remain
+applicable after actual-delta/dependency inspection. All nine criteria are done,
+without amendment, deferral or no-op. SOURCE remains dffa504e851b03b8e4746f1941068e4cc850b612.
+This is acceptance of the complete planning packet; no source readiness, full
+semantic verification, Arc01 gate or release is accepted.
 
-### Historical initial verdict — 2026-10-09
+### Historical verdicts
 
-The following initial findings, row walk and bubble-up precede the dated
-iteration01 review below; their handoff-time statuses are historical.
-
-Initial review of c58c89e accepted S03-02/03/04/05/08 and issued iteration01 for
-S03-01/06/07/09 / F01–04. The initial findings, exact replay and evidence below
-remain at their original candidate; they are not a current four-open verdict.
+Initial c58c89e acceptance: S03-02/03/04/05/08 done, four open. Iteration01
+ee7b8757 acceptance: S03-06/07 newly done, S03-01/09 open for F05. Both failed
+intake extents, prior findings/results/code and handoff-time statuses below are
+preserved as historical evidence; the current verdict is the one above.
 
 ## Reproduced checks and limits
 
@@ -406,3 +404,124 @@ origin fields, seven done/two open. All six CC artifacts, closing report and
 both issued prompts are byte-equal to ee7b8757. Local links/EOF check:61
 destinations/21 fragments, none unresolved; final newline/noCRLF. Diffcheck
 passed. No source or package content changed.
+
+## Iteration02 independent verification and Slice03 closure — 2026-10-09
+
+### Fresh scope, receipt reproduction and evidence retention
+
+Read active project, arc and slice plans/ledgers in authority order, the exact
+iteration02 assignment, complete new receipt/readback/checker/recovery log,
+current CC closing walk and ledger supplement. Earlier combined output was
+truncated at the ledger; recovered its full nine-row table in a bounded read.
+All substantive input artifacts and the selected iteration01 artifact verifier
+are unchanged; this correction appends only receipt/return evidence.
+
+Independently extracted the inspected receipt code from **0b55afd5 Git bytes**
+and ran it against that same committed notes object: both emitted records pass;
+the same predicate rejects244 and221. Full pinned source documents at92120fef
+are246 lines/15413 bytes and127 lines/8019 bytes, with the exact declared hashes.
+Contiguous reading ranges and scoped readback match the complete assigned texts;
+reading is attested by CC and its intake is independently checked here. Hashes
+and counts are not treated as reading, source support or full semantic review.
+The earlier inaccurate receipt remains present, explicitly historical.
+
+Fresh committed preservation checks: exact3 paths and issuing parent, both
+trailers, all9 criterion/verify/significance/origin/status fields unchanged at
+CC handoff, earlier notes/ledger/closing retained as exact prefixes, no CRLF and
+final LF. Candidate links/EOF checker passes18 destinations/12 fragments; no
+unresolved references. `git diff 70184b87 0b55afd5 --check` passes. SOURCE HEAD,
+branch, tracked/index are clean at the source pin. Untracked Project12 and
+knowledge/lfe remain present; content preservation is attested, not inventoried.
+
+Retain the earlier reproduced S03-02/03/04/05 at c58c89e/92120fef and S03-06/07
+at ee7b8757/70184b87: criteria, subject artifacts, baseline/method/map, handoff,
+code and substantive dependencies are byte-unchanged. The receipt append cannot
+alter those numerical/population/policy/gate results, and no new finding
+undermines them. S03-08 additionally receives fresh three-path/source/byte/link/
+diff checks. The earlier84 numeric cases/max3/250000px and9 artifact negatives
+(5 inherited+4 added) are **retained evidence**, not freshly rerun here. Two new
+receipt negatives are separately reproduced. No blanket rerun or false upgrade.
+
+### Current nine-row walk
+
+| Row | CDC final status | Evidence and limit |
+|---|---|---|
+| S03-01 | done | F05 emitted records, actual246/127 extents/hashes/ranges, two negative counts and contract readback independently checked; prior accepted data/intake retained. |
+| S03-02 | done | Scoped contract, supplied identity, profile, full principles/map/cases acceptance retained at c58c89e; no scientific upgrade. |
+| S03-03 | done | Unchanged exact printed example; prior84 table/CSS cases,max3/250000px and contrary controls retained. No browser inference. |
+| S03-04 | done | Unchanged233 identities/raw fields/caveats/gates/five dimensions and47 groups; prior reproduced full-population evidence retained. |
+| S03-05 | done | Unchanged8 whole-file rows,161 headings,460 candidate occurrences,16 owners and global reconciliation obligations; prior evidence retained. |
+| S03-06 | done | Unchanged exact input actions/header/populations and dependent-scope/global gates; ee7b8757 acceptance retained. No actual original readiness. |
+| S03-07 | done | Unchanged stage/handoff/contrast composition accepted at ee7b8757; missing source dimensions remain explicit. |
+| S03-08 | done | Fresh exact3-path/parent/trailer/source/protected/links/EOF/diff checks; unchanged earlier preservation evidence retained. |
+| S03-09 | done | Current9-row return,6-artifact inventory, accurate9+2 separate negative populations, failed/retained/unrun scope and correction history independently reconciled. |
+
+### Executable committed-byte receipt and preservation check
+
+Executed the following as /private/tmp/project10-s03-i02-cdc-replay.py, exit0.
+It targets the literal CC candidate, not this reviewer close commit or a future
+HEAD. Required source live-state checks are explicitly current observations.
+
+```python
+from pathlib import Path
+import subprocess, hashlib
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+S=Path('/Users/oubiwann/lab/billosys/ai-engineering')
+C='0b55afd56d529023746b7f532825fc9ca476f9d5'
+I='70184b87ed6bd3626c370bd67bb9747a5168b3f9'
+PIN='92120fefaa15373327ab1f271fbd9a68b3282601'
+SOURCE='dffa504e851b03b8e4746f1941068e4cc850b612'
+R='project10-design-foundations/arc01-portable-contract/slice03-contract-composition-and-handoff/'
+def git(args,cwd=P):return subprocess.check_output(args,cwd=cwd,text=True).strip()
+def blob(rev,path):return subprocess.check_output(['git','-C',str(P),'show',rev+':'+path])
+assert git(['git','rev-parse',C+'^'])==I
+allowed={R+n for n in ('artifacts/execution-notes.md','ledger.md','closing-report.md')}
+changed=git(['git','diff-tree','--no-commit-id','--name-only','-r',C]).splitlines()
+assert len(changed)==3 and set(changed)==allowed
+msg=git(['git','show','-s','--format=%B',C])
+assert 'Co-authored-by: Codex <noreply@openai.com>' in msg and 'Co-authored-by: Billo AI <ai-engineering@billo.systems>' in msg
+notes=blob(C,R+'artifacts/execution-notes.md').decode()
+section=notes.split('## Iteration02 full-document intake correction and emitted-record checker',1)[1]
+body=section.split('```python\n',1)[1].split('\n```',1)[0]
+env={};exec(compile(body,'committed-iteration02-receipt-checker','exec'),env);env['run'](notes)
+for n,count,size in [('slice-plan.md',246,15413),('cc-prompt-iteration01.md',127,8019)]:
+ b=blob(PIN,R+n);assert len(b)==size and len(b.decode().splitlines())==count
+ print('PASS exact pinned extent',n,count,size,hashlib.sha256(b).hexdigest())
+for n in ('artifacts/execution-notes.md','ledger.md','closing-report.md'):
+ b=blob(C,R+n);assert b.startswith(blob(I,R+n)) and b.endswith(b'\n') and b'\r\n' not in b
+rows=lambda t:[l.split('|')[1:7] for l in t.splitlines() if l.startswith('| S03-')]
+old=rows(blob(I,R+'ledger.md').decode());new=rows(blob(C,R+'ledger.md').decode())
+assert old==new and len(new)==9
+for n in ('slice-plan.md','cc-prompt.md','cc-prompt-iteration01.md','cc-prompt-iteration02.md','cdc-verification.md','artifacts/composed-contract.md','artifacts/example-configuration.md','artifacts/corpus-allocation.jsonl','artifacts/guide-and-finding-allocation.md','artifacts/arc02-handoff.md'):
+ assert blob(C,R+n)==blob(I,R+n)
+assert git(['git','rev-parse','HEAD'],S)==SOURCE and git(['git','branch','--show-current'],S)=='main'
+assert not git(['git','diff','--name-only'],S) and not git(['git','diff','--cached','--name-only'],S)
+subprocess.check_call(['git','-C',str(P),'diff',I,C,'--check'])
+print('PASS exact3 path/parent/trailers,9 original criterion/status fields,preserved histories/inputs and clean pinned SOURCE')
+
+```
+
+Receipt: emitted246/127 records PASS;244/221 negatives rejected PASS; exact pinned
+ranges/bytes/hashes PASS;3 paths/parent/trailers,9 criteria/status fields,historical
+prefix/protected bytes and clean pinned SOURCE PASS. Candidate local links:
+18/12 all resolved. Historical failure counts are preserved; no current
+unresolved check remains within the slice contract.
+
+### Bubble-up and administrative close
+
+All9 rows meet their unchanged criteria. Six supporting artifacts remain under
+artifacts/:composed-contract.md,example-configuration.md,corpus-allocation.jsonl,
+guide-and-finding-allocation.md,arc02-handoff.md,execution-notes.md. Closing report,
+ledger,all3 prompts and this independent record remain first-class slice files.
+The exact original233-card/eight-live-file/five-dimension/16-finding allocation
+and all source input actions remain; no sample,quarantine or dropped population.
+
+The slice delivers its Arc01 planning capability: composed selected contract,
+consistent diagnostic arithmetic, accepted method links and executable gated
+Arc02 allocation. No new arc scope/sequence change is required by its bubble-up;
+the existing Operator deferral already owns unavailable originals/captures.
+S02-08/A01-02 remain deferred and P10-11 open under Arc02 CDC+Operator. Whole
+corpus source/semantic/global review,source mutation,package/browser/AT and
+release work remain later scope. Arc01 composition is the next formal step,
+with its own demonstration and attributed independent/Operator gate. Closing
+this child does not accept that higher-scale assembly.
