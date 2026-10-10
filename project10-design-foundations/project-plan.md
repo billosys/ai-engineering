@@ -115,9 +115,10 @@ are done; A01-02 stays deferred. Arc02 is active;
 is independently closed at `c3d68d7d` for bounded fluid-scale evidence.
 [Slice02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md)
 is open for bounded nonlinear colour-pipeline evidence and selected uniformity/
-analogy claims under DES-007/002. Candidate fd73d993 has two independently done
-rows and seven open; [Iteration01](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration01.md)
-corrects F01–F05. No Slice03 advance. R/T/C/L/G execution
+analogy claims under DES-007/002. Candidate `73c8180b` has three independently done
+rows and six open; [Iteration02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration02.md)
+corrects residual F01–F05. Earlier fd73d993/Iteration01 status is historical.
+No Slice03 advance. R/T/C/L/G execution
 families preserve the complete semantic scope and input re-entry. No
 source-fidelity or release gate is closed.
 The former “no Slice03 until source readiness acceptance” rule is superseded for
@@ -211,6 +212,10 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.24 (2026-10-10): Arc02/Slice02 Iteration01 reviewed at `73c8180b`; complete
+  stage numerics accepted, three child rows done/six open. Iteration02 issued
+  for residual literal evidence/replay/portability defects; all project gates retained.
 
 - 1.23 (2026-10-10): Recorded partial Arc02/Slice02 review and Iteration01;
   two child rows done/seven open, no higher criterion or readiness gate closed.

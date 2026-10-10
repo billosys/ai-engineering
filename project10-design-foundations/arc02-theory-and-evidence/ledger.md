@@ -31,3 +31,13 @@ accepts S02-03/05, leaves seven child rows open and issues
 F01–F05. Staged proof and numerical controls pass; claim/applicability/replay/
 handoff evidence remains incomplete. A02-01 stays done and A02-02–08 open;
 no family, source-fidelity or corrected-revision gate is waived. No Slice03.
+
+
+## Arc02/Slice02 Iteration01 review — 2026-10-10
+
+[CDC review](slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration01-independent-review--2026-10-10)
+of `73c8180b` accepts complete stage numerics (S02-04), retaining proof/control
+acceptance: three child rows done/six open. [Iteration02](slice02-nonlinear-colour-pipeline/cc-prompt-iteration02.md)
+corrects residual F01–F05. Earlier two-done/seven-open notes are historical.
+All parent criterion texts/statuses, full populations, source re-entry and later
+live/package/release gates remain unchanged. No Slice03 or child/arc closure.

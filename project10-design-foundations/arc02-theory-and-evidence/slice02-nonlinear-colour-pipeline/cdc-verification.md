@@ -299,3 +299,310 @@ HEAD/index are unchanged. Durable fenced CDC code matches the independently
 executed helper. Eight changed/new records resolve 80 local destinations and
 12 target-aware fragments; final LF/no CR and git diff --check pass. These are
 issuing consistency checks, not CC execution or acceptance of Iteration01.
+
+
+## Iteration01 independent review — 2026-10-10
+
+**Current verdict: partial acceptance, three done/six open.** CDC independently
+reviewed final candidate `73c8180b8278f88b08ed044da73930bef6f0a522`
+(tree `7b70ff747a816ee4fc4ca0c9e1ae008173bedf21`), direct child of six-output
+candidate `0adaeb8d34c35b9349032f5a051dea1f31cec55b`, whose parent is issuing
+`1a1fb44b25f7558f46b9395e9cf6e4b3bc71f145`. The final child changes only the
+closing-report receipt; the union is exactly six authorized paths, both commits
+have both required trailers. SOURCE stays at `dffa504e851b03b8e4746f1941068e4cc850b612`,
+tracked/index unchanged. Unrelated Project12 and knowledge/lfe were not inspected.
+
+S02-04 is now independently done: the original values and every added stage row
+reproduce from actual SOURCE coefficients and actual published table lines 107–110.
+S02-03/05 retain prior independently accepted proof and contrary-model results;
+this review reproduced their numerical predicates as well. The defective CC
+checker below does not invalidate correct independently reproduced numbers, but
+cannot close S02-08 or prove the semantic rows. [Iteration02](cc-prompt-iteration02.md)
+is assigned for residual F01–F05. No Slice03, slice/arc closure or higher waiver.
+
+### Inputs, actual review and reproduction
+
+Current project/arc/slice plans, all ledgers, issued Iteration01 prompt and all
+candidate outputs were inspected, with bounded recovery of truncated guidance/
+planning output. SOURCE readings cover the six live spans 89 plus foundations lines 456,
+complete 147-line card and prepared75–113/115–163. Current protocol routes and
+independent-review/row-closure rules govern. Identity measurements do not establish
+unrecoverable historical read ranges; no full-source/full-corpus read is claimed.
+
+Primary read-only reinspection on 2026-10-10 covered the [Oklab article](https://bottosson.github.io/posts/oklab/)'s
+XYZ conversion/functions/table context and the [dated CSS Color 4 draft](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/)'s
+§19 non-normative notice and complete signed transfer functions. This supports the
+sign-preserving formulas, not historical-original fidelity or CSS conformance.
+The initial review's larger primary inspection remains historical, not a new
+whole-spec read. No capture/acquisition, empirical study or browser/package test.
+
+Strict JSONL/physical joins pass:60 unique IDs, 42 assessed clauses, 18 literal
+subject envelopes, 210 dimension outcomes (42 in each dimension).98 evidence
+entries:47 pinned-source-literal, 38 prepared-model, 12 bounded-calculation and one
+public-standard. Local blob/hash/bounds and dimension-ID membership resolve.
+Method resolution fails for all 42; original-ID lineage fails for all 18 envelopes.
+These are semantic/applicability and method/lineage defects despite valid source
+subject hashes. One duplicated evidence ID also remains in CARD-006.
+
+Independent replay passes 13 encoded+3 linear RGB returns, four actual XYZ rows/
+12 component comparisons and 20 polar returns, plus original three contrary
+controls. All new16 RGB stage rows (eight vectors each),four XYZ stage rows (six
+vectors each) and 20 complete polar stage rows match calculated values at printed
+precision. Original RGB/XYZ sections retain printed values; the original polar
+values also reproduce. Protected proof is byte-identical to fd73d993.
+Maxima/argmax remain encoded1.6839126291304935e-6 (corner7 blue),
+linear2.6128459884589006e-7 (linear-white blue), XYZ0.00039741995991940393
+(XYZ4 L), polar1.734723475976807e-16 (corner2 a).
+
+The committed-notes checker exits0 on the unchanged packet. In a copied temporary
+snapshot, independently setting the original XYZ4 computed output to(9, 9, 9)
+and independently setting the original corner2 polar error to(.1,.1,.1) each
+still exits0. Both mutations were restored; no repository bytes were mutated.
+Its declared signed implementation also returns decode(-.5)=-.03869969040247678
+and encode(-.125)=-1.615, rather than -.21404114048223255 and
+-.3885728590463344. Current assigned values remain valid because their sampled
+encoded inputs are nonnegative and returned negatives are tiny roundoff.
+
+### F01 — Improved coverage, unresolved clause boundaries and lineage
+
+Added harmony qualifications451–456, prerequisites/construction/recognition,
+33–35/146 and generality lines 92 are useful. All 18 envelopes preserve original literal
+subjects, but `origin_claim_id` wrongly prefixes the bare original ID, and their
+own IDs duplicate the prefix. Coverage must map literal original IDs once, not
+infer semantic acceptance from envelopes. Remaining compound boundaries include
+card lines 45–63's matrices/inverse/generation, 72–76's nonsingularity and concatenation,
+97's exact-inverse qualification and 101–103's distinct examples. Explicitly
+classify live design lines 131/134–138 and foundations lines 248–250 context. Avoid counting
+duplicate card lines 146 assessments as new occurrence coverage; no required record
+count is invented. Unassigned GPU/ICC/relationships/CQs remain later work.
+
+### F02 — Wrong method and original-versus-replacement assessment
+
+All 42 records point to nonexistent Slice02/artifacts/review-procedure.md at
+759ce2dd. The actual83-line procedure is Arc01/Slice02/artifacts/review-procedure.md,
+SHA a72c820ddfe4804e6056f1785b01e572473186e91a33ee87b757085c984752db.
+The corrected prompt gives the full exact path and requires object resolution.
+
+CARD-007-ERROR silently changes the original 125–126 M1 claim into a combined-RGB
+claim before judging it supported/consistent. CARD-017-GENERATION treats literal
+103's C++ matrix example as a published-table rounding assertion. CARD-009's
+“None significant” uncertainty verdict evaluates the narrower proposed correction.
+Harmony/equivalence-limit records use unrelated card lines 112–118 relationships as
+warrant; conversion formulae alone cannot support SKILL's musical analogy.
+Generic bounded-faithfulness/consistency wording does not establish applicable
+paired observations in each record. Original assertions need their own verdicts;
+proposals are separate. Retain valid matrix distinctions and not-established/
+false separation. Missing originals block only dependent fidelity conclusions.
+
+### F03 — Valid stage tables, incomplete and non-discriminating checker
+
+S02-04 is accepted by the stronger independent source-based replay. Current CC
+code does not read actual SOURCE table lines 107–110 as its oracle; uses staged candidate
+printed values instead; counts rather than enforces exact case inputs; ignores
+original XYZ computed/error and polar error fields, staged restored polar values
+and some staged error fields. Both printed-field probes falsely pass. Repair the
+signed transfer functions and require all reported fields equal calculated values,
+not merely lie below a loose tolerance. Original contrary controls in CC code
+use large defect thresholds/complex summaries rather than all binding positive
+predicates. Prior CDC's genuine model rejections remain accepted.
+
+The evidence controls also cannot establish applicability from verdict enums or
+hash equality. Strengthen targeted method/origin/literal/role checks and state
+where human judgment remains necessary. Preserve historical code/receipts and
+append an unambiguous current block. This remains incidental stdlib evidence,
+not a new maintained test framework or implementation scope.
+
+### F04 — Residual C&B scope and editor commands
+
+LIVE-COLOUR-001's literal proposal still says “This guide concerns the named C&B
+sites,” in both JSONL and handoff. This violates the Operator removal decision
+and Iteration01's no-retained-house-profile rule. Replace it with portable prose.
+Several other quoted proposals remain instructions (“describe,” “omit,” “Remove
+... unless,” “Retain table ...”) rather than replacement sentences. CARD-017's
+proposal is also joined to the wrong literal example. Accurate retention and
+explicitly pending unassessed content are permitted; invented replacements are
+not. Use precise matrix/input and componentwise-cube language. The repaired
+R/T/C/L/G and Arc03–05/per-input-fidelity owners are retained improvements.
+
+### F05 — Receipt identity and current claims
+
+Notes/report identify the issued prompt's blob as fd73d993 (a commit). Actual
+blob is 5786b1ebd453314639e9f2080a47afcf9932f538; the recorded SHA
+0cf78fcb28bfbc975d899c8088441367e7f3eef7c608a48487b5ea6d7282d4d3 is correct.
+Counts/hashes without actual ranges do not establish the claimed fresh plan
+reads. Preserve erroneous/unrecoverable historical receipts and append actual
+current ones. “All references,” “source XYZ table predicates” and “42 literal
+replacements” overstate the delivered check/text coverage. Five findings were
+issued for seven then-open rows; the six-path override restricts seven outputs.
+Current return must distinguish 3 done/6 open and actual control denominators.
+
+### Current row dispositions and parent handoff
+
+| Row | CDC disposition | Basis / remaining work |
+|---|---|---|
+| S02-01 | open | F05 current intake/range/blob correction. |
+| S02-02 | open | F01/F02 original lineage, clause coverage, literal/applicable five-dimension evidence. |
+| S02-03 | done, retained | Protected proof; independent staged model/homogeneity reproduction. |
+| S02-04 | done, newly accepted at `73c8180b` | Complete original and intermediate values independently reproduced from actual source. |
+| S02-05 | done, retained | Prior and fresh independent contrary-model rejection through positive predicates. |
+| S02-06 | open | F02/F04 perception/analogy warrant and honest original scope. |
+| S02-07 | open | F04 portable actual replacement prose and correct subject joins. |
+| S02-08 | open | F01/F02/F03 method/lineage/applicability and credible complete replay. |
+| S02-09 | open | F05 truthful nine-row/controls/receipts/limits return. |
+
+A02-01 remains done; A02-02–08 remain open. P10-01 remains done, P10-02–11
+open. All criterion wording, R/T/C/L/G, 233 cards/eight live files, DES owners,
+Operator source deferral and P10-11 re-entry remain unchanged. No architecture
+or scope amendment. Six bounded output corrections have remaining iteration
+headroom; missing empirical/original inputs do not force acquisition here.
+
+### Executed independent replay and temporary negative probes
+
+The following three blocks are the exact incidental Python scripts executed by
+CDC. They recover pinned initial independent coefficient/case predicates, read
+current committed outputs and probe only a copied temporary snapshot. Each ran
+successfully. A PASS of a helper means its described assertions ran; the probe's
+exit0 mutation results explicitly demonstrate CC false passes. These are durable
+recovery evidence, not a maintained runtime. First run the numerical block, then
+the negative-probe block and physical-join block; absolute paths/pins are explicit.
+The join helper initially used a root-relative path for a slice-relative artifact;
+that was corrected. A preservation check initially included added blank padding;
+inspection confirmed unchanged printed values, followed by stripped section
+comparison and independent value reproduction. These two helper recoveries do
+not establish a defect in CC's literal source hashes or printed numerical values.
+
+```python
+from pathlib import Path
+import subprocess,math,re,itertools,ast
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/';C='73c8180b8278f88b08ed044da73930bef6f0a522';SRC='dffa504e851b03b8e4746f1941068e4cc850b612'
+def git(*a):return subprocess.check_output(['git','-C',str(P),*a])
+def blob(r,p):return git('show',r+':'+p)
+# Recover the existing independent coefficient/case predicates from their pinned record.
+review=blob('1a1fb44b',S+'cdc-verification.md').decode();prior=re.search(r'```python\n(.*?)\n```',review,re.S).group(1)
+body=prior[prior.index('ls=blob(SRC,'):prior.index('criteria=lambda')];exec(compile(body,'CDC independent numerical replay','exec'))
+print('PASS independent source-based original16RGB/4XYZ/20polar and three contrary controls',maxes)
+text=blob(C,S+'artifacts/numerical-reconciliation.md').decode()
+def rows(start,end,select):
+ return [[v.strip().strip('`') for v in l.split('|')[1:-1]] for l in text.split(start)[1].split(end)[0].splitlines() if select(l)]
+rx=rows('### RGB forward and inverse stages','### XYZ example stages',lambda l:l.startswith('| ') and l.split('|')[2].strip() in ('encoded','linear'));assert len(rx)==16
+for cs in rx:
+ name,kind=cs[:2];v=next(v for n,k,v in cases if n==name);lin=[decode(x) for x in v] if kind=='encoded' else v;lms=dot(A,lin);roots=[root(x) for x in lms];lab=dot(B,roots);ip=dot(BI,lab);cu=[x**3 for x in ip];bl=dot(AI,cu);back=[encode(x) for x in bl] if kind=='encoded' else bl
+ for col,calc in zip(cs[2:],(lin,lms,roots,lab,ip,cu,bl,back)):assert close(ast.literal_eval(col),calc,5.1e-13),(name,col,calc)
+xx=rows('### XYZ example stages','### Polar output stages',lambda l:bool(re.match(r'\| XYZ-[1-4] \|',l)));assert len(xx)==4
+for cs in xx:
+ r=actualtable[int(cs[0][-1])-1];lms=dot(M1,r[:3]);rt=[root(x) for x in lms];lab=dot(M2,rt);err=[x-y for x,y in zip(lab,r[3:])]
+ for col,calc in zip(cs[1:],(r[:3],lms,rt,lab,r[3:],err)):assert close(ast.literal_eval(col),calc,5.1e-13),(cs[0],col,calc)
+pp=rows('### Polar output stages','## Named sanity witnesses',lambda l:l.startswith('| ') and l.split('|')[1].strip() in labs);assert len(pp)==20
+for cs in pp:
+ L,a,b=labs[cs[0]];ch=math.hypot(a,b);h=math.degrees(math.atan2(b,a))%360 if ch else None;ar=ch*math.cos(math.radians(h or 0));br=ch*math.sin(math.radians(h or 0));err=(0,ar-a,br-b)
+ for col,calc in zip(cs[1:5],(L,a,b,ch)):assert abs(float(col)-calc)<5.1e-13
+ if h is None:assert cs[5]=='undefined'
+ else:assert abs(float(cs[5])-h)<5.1e-10
+ assert close([float(cs[6]),float(cs[7])],[ar,br],5.1e-13) and close(ast.literal_eval(cs[8]),err,5.1e-13)
+print('PASS new16 RGB8-vector,4XYZ6-vector,20polar staged rows against actual source coefficients/table')
+```
+
+```python
+from pathlib import Path
+import subprocess,re,hashlib,json,collections
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');C='73c8180b8278f88b08ed044da73930bef6f0a522';I='1a1fb44b25f7558f46b9395e9cf6e4b3bc71f145';S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/'
+def git(*a):return subprocess.check_output(['git','-C',str(P),*a])
+def blob(p,r=C):return git('show',r+':'+p)
+SNAP=Path('/private/tmp/p10-s02-i01-candidate');(SNAP/S/'artifacts').mkdir(parents=True,exist_ok=True)
+for p in ['artifacts/claim-results.jsonl','artifacts/colour-conversion-proof.md','artifacts/numerical-reconciliation.md','artifacts/correction-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md']:(SNAP/S/p).write_bytes(blob(S+p))
+notes=blob(S+'artifacts/execution-notes.md').decode();code=re.search(r'```python\n(.*?)\n```',notes,re.S).group(1);runner=Path('/private/tmp/p10-s02-i01-replay.py');runner.write_text(code+'\n')
+res=subprocess.run(['python3',str(runner)],cwd=SNAP,capture_output=True,text=True);print('CC committed-note replay',res.returncode,res.stdout,res.stderr)
+# Mutate a printed XYZ table output and a polar return-error vector independently.
+nump=SNAP/S/'artifacts/numerical-reconciliation.md';orig=nump.read_text();lines=orig.splitlines();i=next(i for i,l in enumerate(lines) if l.startswith('| XYZ-4 |'));cells=lines[i].split('|');cells[3]=' `(9.000000000000, 9.000000000000, 9.000000000000)` ';lines[i]='|'.join(cells);nump.write_text('\n'.join(lines)+'\n');r=subprocess.run(['python3',str(runner)],cwd=SNAP,capture_output=True,text=True);print('Corrupted original XYZ Oklab output (9,9,9) checker exit',r.returncode);nump.write_text(orig)
+lines=orig.splitlines();a=lines.index('## Twenty analytic polar round trips');i=next(i for i,l in enumerate(lines[a+1:],a+1) if l.startswith('| corner-2 |'));cells=lines[i].split('|');cells[4]=' `(0.100000000000, 0.100000000000, 0.100000000000)` ';lines[i]='|'.join(cells);nump.write_text('\n'.join(lines)+'\n');r=subprocess.run(['python3',str(runner)],cwd=SNAP,capture_output=True,text=True);print('Corrupted original polar error (0.1,0.1,0.1) checker exit',r.returncode);nump.write_text(orig)
+ns={};exec(compile(code,'CC committed code','exec'),ns) if False else None
+# Literal-defined transfer functions, safely evaluate only two known expressions.
+def ccdec(x):return x/12.92 if x<=.04045 else ((x+.055)/1.055)**2.4
+def ccenc(x):return 12.92*x if x<=.0031308 else 1.055*x**(1/2.4)-.055
+print('Signed-transfer witness:',ccdec(-.5),'required',-.21404114048223255,ccenc(-.125),'required',-(1.055*.125**(1/2.4)-.055))
+r=[json.loads(l) for l in blob(S+'artifacts/claim-results.jsonl').decode().splitlines()];cla=[v for v in r if 'dimensions' in v];env=[v for v in r if 'dimensions' not in v]
+print('Clauses/envelopes',len(cla),len(env));methods=collections.Counter((v['method']['path'],v['method']['git_revision'],v['method']['sha256']) for v in cla);print('method populations',methods)
+for p,rev,sha in methods:
+ x=subprocess.run(['git','-C',str(P),'cat-file','-e',rev+':'+p],capture_output=True);print('Method resolves',x.returncode==0)
+p=S+'cc-prompt-iteration01.md';print('Actual issued prompt blob/hash:',git('rev-parse',I+':'+p).decode().strip(),hashlib.sha256(blob(p,I)).hexdigest())
+print('Envelope original-IDs sample',[(v['claim_id'],v.get('origin_claim_id'),v['split_clause_ids']) for v in env[:3]])
+print('Duplicate evidence IDs:',[(v['claim_id'],[eid for eid,n in collections.Counter(e['evidence_id'] for e in v['evidence']).items() if n>1]) for v in cla if len({e['evidence_id'] for e in v['evidence']})<len(v['evidence'])])
+```
+
+```python
+from pathlib import Path
+import subprocess,hashlib,json,collections,re
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');S='project10-design-foundations/arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/';C='73c8180b8278f88b08ed044da73930bef6f0a522';I='1a1fb44b25f7558f46b9395e9cf6e4b3bc71f145';SRC='dffa504e851b03b8e4746f1941068e4cc850b612';ROOT=P.parent.parent
+
+def git(*a):return subprocess.check_output(['git','-C',str(P),*a])
+def blob(r,p):return git('show',r+':'+p)
+def sha(b):return hashlib.sha256(b).hexdigest()
+def rel(p):return Path(p).relative_to(ROOT).as_posix() if p.startswith('/') else p
+rows=[json.loads(l) for l in blob(C,S+'artifacts/claim-results.jsonl').decode().splitlines()];cla=[v for v in rows if 'dimensions' in v];env=[v for v in rows if 'dimensions' not in v]
+assert len(rows)==60 and len(cla)==42 and len(env)==18 and len({v['claim_id'] for v in rows})==60
+cnt=collections.Counter();issues=[]
+for r in rows:
+ s=r['subject'];b=blob(SRC,rel(s['path']));a,z=s['span']['start'],s['span']['end'];assert sha(b)==s['sha256'] and '\n'.join(b.decode().splitlines()[a-1:z])==s['assertion'],r['claim_id'];cnt['subjects']+=1
+for r in cla:
+ assert len(r['dimensions'])==5
+ ids={e['evidence_id'] for e in r['evidence']}
+ for d in r['dimensions'].values():assert set(d['evidence_refs'])<=ids
+ for e in r['evidence']:
+  cnt[e['kind']]+=1
+  if 'path' in e and 'git_blob' in e:
+   eb=git('cat-file','blob',e['git_blob']);assert sha(eb)==e['sha256'],(r['claim_id'],e['kind'],'sha');p=rel(e['path']);p=S+p if p.startswith('artifacts/') else p;rev=e.get('git_revision')
+   if rev:assert blob(rev,p)==eb
+   else:
+    pp=S+p if p.startswith('artifacts/') else p
+    if blob(C,pp)!=eb:issues.append((r['claim_id'],e['evidence_id'],'points to old candidate bytes'))
+   if 'span' in e:
+    a,z=e['span']['start'],e['span']['end'];assert 1<=a<=z<=len(eb.decode().splitlines())
+ for cl in r.get('dimensions',{}):cnt['dimension:'+cl]+=1
+original=[json.loads(l) for l in blob('fd73d993',S+'artifacts/claim-results.jsonl').decode().splitlines()]
+for e in env:
+ old=next(o for o in original if o['subject']==e['subject']);assert all(x in {v['claim_id'] for v in cla} for x in e['split_clause_ids'])
+ if e['origin_claim_id']!=old['claim_id']:issues.append((e['claim_id'],'wrong origin',e['origin_claim_id'],'expected',old['claim_id']))
+for r in cla:
+ if r['origin_claim_id'] not in {v['claim_id'] for v in original}:cnt['new subject origins']+=1
+# Exact commit scopes and protected bytes
+want={S+p for p in ['artifacts/claim-results.jsonl','artifacts/numerical-reconciliation.md','artifacts/correction-handoff.md','artifacts/execution-notes.md','ledger.md','closing-report.md']};assert set(git('diff','--name-only',I,C).decode().splitlines())==want
+assert git('rev-parse','0adaeb8d^').decode().strip()==I and git('rev-parse',C+'^').decode().strip()==git('rev-parse','0adaeb8d').decode().strip()
+for rev in ['0adaeb8d',C]:
+ msg=git('show','-s','--format=%B',rev).decode();assert all(t in msg for t in ['Co-authored-by: Codex <noreply@openai.com>','Co-authored-by: Billo AI <ai-engineering@billo.systems>'])
+assert blob(C,S+'artifacts/colour-conversion-proof.md')==blob('fd73d993',S+'artifacts/colour-conversion-proof.md')
+# Original printed candidate case sections preserved verbatim.
+x=blob(C,S+'artifacts/numerical-reconciliation.md').decode();y=blob('fd73d993',S+'artifacts/numerical-reconciliation.md').decode()
+for heading,end in [('## 16 RGB forward and inverse cases','## Four published XYZ examples'),('## Four published XYZ examples','## Twenty analytic polar round trips')]:assert x.split(heading)[1].split(end)[0].strip()==y.split(heading)[1].split(end)[0].strip()
+print('PASS exact six-path union/two commit chain/trailers/protected proof;60 literal subjects (42 assessed+18 envelopes),five42-dimension memberships')
+print('Evidence populations',dict(cnt));print('Unresolved join/lineage issues',issues)
+```
+
+### Iteration02 author readiness
+
+Author consumed exact candidate/source predicates and tested current replay
+before issuing this correction. Findings name concrete original assertions,
+nonresolving method/origin identities, actual false-pass probes and portable
+replacement obligations. The prompt preserves the accepted proof/values and
+three accepted statuses, protects issued records, assigns six outputs and keeps
+all higher gates. It does not force a fixed clause count, empirical research or
+whole-corpus review into this bounded correction. Independent original/stage
+replay and join/probe scripts above passed their stated assertions; the two
+probed CC false passes remain findings. No unresolved CDC helper failure.
+Final authoring checks/committed scope are recorded below after validation.
+
+Final authoring checks: exact eight CDC paths; nine/eight/eleven child/arc/project
+criterion populations and wording unchanged; child three-done/six-open statuses,
+parent statuses and SOURCE HEAD/index retained. Initial/Iteration01 prompts,
+protected proof and all six CC output blobs except CDC-owned ledger preserved.
+The three embedded scripts match their executed temporary originals; initial
+CDC recovery code remains byte-identical. All scripts reran successfully after
+authoring with the same true numeric values and explicitly observed false-pass
+findings. Eight-file target-aware Markdown check:88 destinations/18 fragments,
+none unresolved; final LF/no CRLF and git diff --check pass. The issuing commit's
+exact path/trailer/preservation check follows the commit in the CDC return.
+
+One final authoring preservation check caught an incidental whitespace change
+inside an existing ledger Verify cell. The original first-five criterion columns
+were restored from73c8180b; no criterion/scope change is intended. The exact
+criterion/status/path/link/script/EOF/diff checks then reran as below. This
+failed check and recovery are authoring evidence, not a CC finding.

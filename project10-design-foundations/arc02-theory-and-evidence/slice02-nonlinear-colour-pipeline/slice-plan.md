@@ -19,7 +19,7 @@ empirical perception studies and browser/package implementation remain later wor
 
 CDC Sofie authors and independently reviews; separate CC executes through
 Operator relay. The [initial prompt](cc-prompt.md) is preserved; current assignment
-is [Iteration01](cc-prompt-iteration01.md). Two contributors, Expedited Mode;
+is [Iteration02](cc-prompt-iteration02.md). Two contributors, Expedited Mode;
 CC retains CDC dispositions, proposes the remaining evidence and cannot
 accept/close/advance.
 Arc01 contract packet is `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`;
@@ -218,7 +218,7 @@ requires no Make/package/browser gate; record those as unrun/later scope.
 Initial assignment: `cc-prompt.md` issued at `208b12239cd59ccc6877b2edc0358054b27652c2`,
 returned by CC at `fd73d993e69c0e6fc6607d6c8d0032c7ef605fe0`. The
 [initial independent review](cdc-verification.md) on 2026-10-10 accepts S02-03/05
-and leaves seven rows open. Current assignment: [Iteration01](cc-prompt-iteration01.md)
+and leaves seven rows open. Historical next assignment: [Iteration01](cc-prompt-iteration01.md)
 for F01–F05, issued in the commit containing this review/prompt. No Slice03.
 CDC owns next review/decision; Operator retains original inputs and release gate.
 The original seven-output/all-open contract above describes initial execution.
@@ -227,7 +227,7 @@ numerical reconciliation, correction handoff, execution notes, ledger, closing
 report), protects the sound proof, and retains two CDC-done/seven-open statuses.
 All nine criterion texts, fixed models/tolerances and higher gates are unchanged.
 
-Current author readiness: independently consumed candidate/source blobs and
+Initial Iteration01 author readiness: independently consumed candidate/source blobs and
 reproduced all 16 RGB returns, 12 published XYZ components and 20 polar returns,
 plus rejection of all three contrary models. Actual numbers and proof pass;
 missing contextual claims, generic verdicts, erroneous locators, intermediate/
@@ -277,7 +277,32 @@ corrective iteration; no whole 233-card/eight-file review is squeezed into this
 slice. If actual qualifications require a larger technical assignment, bubble
 it up for a concrete split before pretending this bounded slice completes it.
 
+## Current Iteration02 assignment and readiness
+
+[Independent Iteration01 review](cdc-verification.md#iteration01-independent-review--2026-10-10)
+of `73c8180b8278f88b08ed044da73930bef6f0a522` accepts S02-04 on complete
+source-based original/intermediate reproduction, retaining S02-03/05 done.
+Six rows remain open. Current assignment is [Iteration02](cc-prompt-iteration02.md)
+for residual F01–F05: literal lineage/clauses, applicable original-claim evidence,
+method resolution, signed/reliable replay, portable prose and truthful receipts.
+No Slice03. The six-output override remains; proof and correct numeric values,
+all issued prompts, SOURCE and all nine criteria are protected.
+
+CDC reproduced actual source/table/stage values, read literal counterclaims and
+probed the committed-note checker in a temporary snapshot. The checker falsely
+passes two corrupted printed results and mishandles signed extended transfer
+inputs. All 42 method paths and 18 envelope origins need correction. Original
+teaching claims must be judged separately from proposed rewrites; C&B scope must
+be removed from proposals. Current review contains exact executed recovery code,
+failed/recovered helper attempts and explicit limitations. Parent contract,
+Operator removal/deferral, full populations and per-dependent gates are unchanged.
+One bounded concern with six artifacts has correction headroom; no new model,
+schema, broad suite, source acquisition or empirical study is assigned.
+
 ## Version History
+
+- 1.2 (2026-10-10): Reviewed Iteration01 at `73c8180b`; S02-04 accepted, three
+  done/six open. Issued Iteration02 for residual F01–F05; scope/gates unchanged.
 
 - 1.1 (2026-10-10): Independently reviewed fd73d993; two rows done/seven open.
   Issued Iteration01 for F01–F05, preserving proof, values and full higher gates.

@@ -76,3 +76,13 @@ accepts two child rows at fd73d993 and retains seven open; current
 corrects F01–F05. Proof/numerical truth does not complete occurrence review,
 source fidelity, live fixes or corpus/release. P10-01 remains done/P10-02–11 open;
 all original criterion wording, input owners and Operator deferral remain.
+
+
+## Arc02/Slice02 Iteration01 review — 2026-10-10
+
+[CDC review](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md#iteration01-independent-review--2026-10-10)
+of `73c8180b` accepts complete stage numerics (S02-04), retaining proof/control
+acceptance: three child rows done/six open. [Iteration02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cc-prompt-iteration02.md)
+corrects residual F01–F05. Earlier two-done/seven-open notes are historical.
+All parent criterion texts/statuses, full populations, source re-entry and later
+live/package/release gates remain unchanged. No Slice03 or child/arc closure.
