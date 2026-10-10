@@ -318,3 +318,154 @@ fidelity, semantic design or typeface/axis review, perception experiments,
 grid/token policy selection, complete corpus or relationship/CQ review,
 browser/rendering/zoom/reflow/accessibility checks, package/runtime or release
 validation, live source repair, project/arc closure, and CDC acceptance.
+
+
+### Iteration02 correction return — 2026-10-09
+
+#### Issued inputs, pins, and intake receipts
+
+This return follows `cc-prompt-iteration02.md` as issued at planning commit
+`a8dfdf0ba7de9926c7f41a5ebe6b4d1a998c1262` (prompt SHA-256
+`c79a4b079f0acef677e56966738d359e9b012dd3ce057e41de1e90e006ead78a`). The
+Iteration01 candidate is `4e678b0b2d56c8c323a3aec18a3374303ae5ccca`; the prior
+issue named by the correction is `24ae8a8b359d0965f93ac888ca122960eb3b6643`.
+The SOURCE checkout is `/Users/oubiwann/lab/billosys/ai-engineering`, branch
+`main`, pinned `dffa504e851b03b8e4746f1941068e4cc850b612`; its tracked and index
+state were clean. The planning worktree was on `planning` at the issuing commit,
+with no staged or tracked changes at intake. The pre-existing untracked
+`project12-chcd-protocol/` tree was not inspected or changed. The unrelated
+prunable `/private/tmp/ai-engineering-focused-verification` worktree was left
+alone. SOURCE `knowledge/lfe/` was also left uninspected and untouched.
+
+The issuing prompt was read in full (170 lines). Required current planning reads
+and visible ranges were: slice plan 1–90, 91–180, 181–253 (253 lines); slice
+ledger 1–16 (16); Project10 plan governing scope 1–80, 81–150, 151–207 (207
+required lines; the file has later history); Project10 ledger 1–25, 26–58 (58);
+current Arc02 plan 1–85, 86–142 (142; SHA-256
+`bdeb976801dde019f49838ce316fa7f70ca9c9014f379f42d6afda1943376416`); Arc02
+ledger 1–15 (15); and the CDC Iteration01 review 251–340 and 336–428 through
+EOF. The plan bytes match the issuing commit. The historical Arc02 plan at
+`24ae...` was freshly read at 1–70 and 71–137; it contains 137 lines and has
+SHA-256 `33fe93fa484a965801a3b071fb09213825b9d74e6acfbc5f6f8f5dfb056971a6`.
+The current `a8df...` plan is a distinct 142-line document and was read fully.
+
+Candidate4e Iteration01 execution notes were read at 201–260 and 261–320 through
+EOF; its closing report was read at 78–115 through EOF. All 36 claim records
+were queried with source/evidence/dimension references: 36 unique subjects, 87
+validated joins, 180 dimension-reference sets, all resolvable, and all records
+pending CDC. Existing 33 records remain present. The accepted procedure pinned
+at `759ce2dd116a4cfe03b72d43fd2791f48486251c` was read in full. Its exact
+SHA-256 is `a72c820ddfe4804e6056f1785b01e572473186e91a33ee87b757085c984752db`,
+but it has 83 lines (not the prompt's stated 46): actual visible reads were
+1–45, 46–65, and 66–83, with lines 77 and 78 separately recovered after a
+truncated combined view. This count discrepancy is disclosed; the file was
+fully read and its pinned identity/hash matched. It does not imply a content
+intake gap.
+
+The installed collaboration-framework skill (538 lines) was read in ranges
+1–90, 91–180, 181–270, 271–360, 361–450, and 451–538. Additional route/method
+reads were SOURCE project-management skill 1–65, guide README 1–90 and 91–178,
+canonical planning guide 218–250, top-down guide 134–188, engineering-methods
+prompt-authoring guide 260–330, 331–400, 401–425, work-verification
+independent-verification guide 32–86, ledger discipline 1–96, and row closure
+1–31. The engineering methodology guide lines 26–147 were also read. These
+confirmed proposed-done versus CDC acceptance, preservation, and row-evidence
+requirements.
+
+#### F03 — TY-01 evidence join
+
+Only TY-01 was changed. The existing `ANALYSIS` witness at configuration row
+52–52 remains attached to orientation and 4/3 versus approximate 1.333; its
+observation was narrowed to that support. The subject, category, result
+conclusions, outcomes, actor, history, blocked state, disposition, and review
+state were preserved. A new unique `ANALYSIS-DEFAULT` derived-analysis witness
+points to this exact artifact SHA-256
+`098148202d5c074eecf08286d0524e643c9f437b2f91d9d66ea280a8343af74f`, blob
+`f8132a368319a9315ddc3c6533870cb0a4dd8a41`, and span 50–50. That row supports
+the same narrow-default conflict: 1.25 at 360px (SKILL 156/type 472–475)
+versus 1.2 at the `@min` 360px default (SKILL 185–187/layout 496–500). It keeps
+exact 4/3 distinct from displayed approximate 1.333. Layout 179–181 remains a
+separate illustrative “say” pair, not a default conflict. The new pointer is
+referenced by correctness, consistency, and bounded scope attribution;
+source-faithfulness and relationship/CQ remain not assessed.
+
+A single paired-default predicate checked evidence type, exact artifact path,
+SHA, Git blob and span, the actual paired-default row content, the observation's
+1.25/1.2/360px and precision/illustration cues, and that both
+conflict-bearing correctness and consistency dimensions cite the witness.
+Scope attribution also had to cite it. The repaired TY-01 passed. A copied
+negative with `ANALYSIS-DEFAULT` and its three dimension references removed
+failed. The originally attached orientation-only evidence remains independently
+insufficient: row 52 supports ratio orientation but not the same-default
+conflict. The final predicate output was positive=true, negative=false, with
+config SHA/blob as above.
+
+The first predicate attempt required unqualified path strings, while the
+artifact uses a compact `:472–475` range after a prior path; its diagnostic
+failed two textual cues. The next attempt loaded the Iteration01 predecessor
+instead of the current candidate and returned false for both cases. A following
+checker expected top-level evidence path/span fields; the actual schema stores
+them under `locator`, so the positive record was rejected. These were checker
+construction/input failures, not artifact evidence. The checker was corrected
+to validate the exact nested locator and contextual path/range identity; its
+positive and negative results are recorded above. An initial edit verification
+also treated parsed JSON objects as raw strings and raised `TypeError` after the
+write; the corrected verifier confirmed only TY-01 changed and protected fields
+were stable. No failed attempt was counted as a passing check.
+
+#### F04 — historical intake receipt
+
+The earlier candidate4e note claiming a 131-line parent Arc02 plan is retained
+verbatim as historical evidence. At the exact `24ae...` predecessor issue, the
+pinned plan actually has 137 lines and the SHA recorded above. The complete
+fresh read was visibly 1–70 and 71–137. This cannot establish retrospectively
+which ranges an earlier reader saw, and does not prove comprehension. A
+receipt-consistency predicate compared source revision, actual SHA/count, and
+contiguous exact coverage. A copied 131-line receipt covering 1–131 failed
+against the actual 137-line input; the fresh 137-line receipt with ranges
+1–70 and 71–137 passed. This is a consistency check on the newly recorded
+receipt only, not retrospective evidence.
+
+#### Preservation and validation boundary
+
+The applicable output allowlist for this iteration is exactly four paths:
+`artifacts/claim-results.jsonl`, `artifacts/execution-notes.md`, `ledger.md`
+(Evidence/Notes only), and `closing-report.md`. No numeric recalculation was
+performed. The proof, configuration, handoff, examples, all plans/prompts/reviews,
+other claim records, and SOURCE files are protected. The prior 84-case and
+52-delta numeric evidence remains retained under the CDC correction rationale;
+it is not claimed as a fresh replay. Six rows remain CDC-done (S01-03/04/05/06/07/08); S01-01/02/09 remain open. CC proposes the corrected packet for review;
+there is no CDC acceptance, slice or Arc02 closure, or Slice02 opening.
+
+Read/recovery history for this iteration: one combined current-plan/ledger view
+was truncated and the needed ranges were re-read; an early review-procedure view
+truncated and was recovered in bounded chunks plus lines 77 and 78; an initial
+skill-file route lookup missed its installed path and was resolved through the
+SOURCE route and installed skill. These attempts did not alter files or count as
+complete reads until the recovered ranges were visible. No numerical 84-case
+replay, external fidelity review, semantic design review, full corpus/CQ review,
+rendering/accessibility check, package/runtime/release validation, or live-source
+repair was performed.
+
+Final pre-commit validation re-read the candidate against committed Iteration01:
+all 36 JSONL lines parse, all 36 IDs are unique and retained, and only TY-01
+(line 11) differs. Its subject/category/actor/history/blocked/disposition/review,
+unchanged dimension outcomes, and both not-assessed dimensions are byte/value
+preserved. The final candidate has 88 evidence joins (the 87 baseline joins plus
+the new paired-default witness); all dimension references resolve, live-source
+SHA/span pins match SOURCE `dffa...`, artifact hashes/blobs/spans resolve, and
+all 36 reviews remain pending. Ledger row criteria, verification, significance,
+origin, and statuses compare unchanged; only Evidence/Notes changed for
+S01-01/02/09. `git diff --check` passed.
+
+Two pre-commit checker assertions were corrected before relying on results: a
+line-index expectation incorrectly assumed TY-01 was JSONL line 8 (it is line
+11), and a ledger parser assumed nine pipe-separated fields (the table has
+eight). The corrected checks confirmed the one-record change and that only the
+allowed ledger columns changed. These checker-shape errors did not affect the
+artifacts or predicate outcomes.
+
+The first local-link check guessed the generated heading slug for the new anchor;
+that fragment was not present. I removed the guessed fragments from the two new
+links, kept both direct relative links to the execution-notes file, and verified
+the targets exist. `git diff --check` remained clean.

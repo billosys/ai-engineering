@@ -113,3 +113,41 @@ project-default conflict. Source fidelity, attribution, design policy, full
 233-card/eight-live-file review, relationship/CQ coverage, DES acceptance,
 accessibility, runtime/release gates and Project10/11 boundaries remain with
 their existing owners. No live SOURCE file changed and no later slice is opened.
+
+
+## Iteration02 CC proposed return — 2026-10-09
+
+This is a bounded correction candidate issued against
+`a8dfdf0ba7de9926c7f41a5ebe6b4d1a998c1262`; the complete intake, exact pins,
+read receipts, predicate results, recovery history, and protected-path checks are
+recorded in [Iteration02 execution notes](artifacts/execution-notes.md).
+It does not record CDC acceptance. The four-path Iteration02 allowlist is claim
+results, execution notes, ledger Evidence/Notes only, and this report.
+
+| Finding | Iteration02 disposition |
+|---|---|
+| F03 | Repaired TY-01: retained and narrowed the row52 ratio-orientation evidence, added the exact row50 paired-default witness, and referenced it from correctness, consistency, and scope attribution. A shared predicate passed the repaired record and rejected a negative without the paired-default witness. No result conclusion or other record changed. |
+| F04 | Preserved the earlier 131-line receipt verbatim as historical. At the pinned predecessor issue the Arc02 plan is 137 lines, SHA-256 `33fe93fa484a965801a3b071fb09213825b9d74e6acfbc5f6f8f5dfb056971a6`; fresh visible coverage 1–70 and 71–137 passes a receipt consistency check, while the copied 131-line receipt fails. No retrospective range or comprehension claim is made. |
+| Intake discrepancy | The prompt describes the pinned review procedure as 46 lines; exact pinned bytes/hash contain 83 lines. The full 83-line file was visibly read. This additional count mismatch is recorded without changing the prior receipt or treating it as an unread-content gap. |
+
+| Row | Iteration02 CC proposal |
+|---|---|
+| S01-01 | Open for CDC: the predecessor and current plans are distinguished by revision/count/hash; current complete visible intake and receipt predicate are recorded. |
+| S01-02 | Open for CDC: TY-01 now joins the actual paired-default evidence; the orientation-only negative control fails the shared predicate. All other 35 records are retained. |
+| S01-03 | Retain CDC-done: proof bytes and relied-on controls are untouched. |
+| S01-04 | Retain CDC-done: configuration and prior independently reproduced reconciliation evidence are untouched. |
+| S01-05 | Retain CDC-done: prior 84-case/52-delta result and inputs are unchanged; no fresh replay is claimed. |
+| S01-06 | Retain CDC-done: accepted controls and dependencies are unchanged. |
+| S01-07 | Retain CDC-done: handoff and occurrence inventory are unchanged. |
+| S01-08 | Retain CDC-done: protected inputs and six prior accepted output boundaries are unchanged; this iteration observes its narrower four-path allowlist. |
+| S01-09 | Open for CDC: this return records the correction, receipts, failures/recoveries, limits, status, and remaining Arc02 gates. |
+
+Six rows remain CDC-done; S01-01, S01-02, and S01-09 remain open. The ledger
+criteria and status cells are unchanged. The genuine narrow-default conflict
+(1.25 versus 1.2 at 360px) and exact 4/3 versus approximate 1.333 distinction
+remain Arc02 evidence for owner decision. The layout 179–181 “say” example is
+not bubbled up as a default conflict. External source fidelity/attribution,
+empirical or perceptual review, design/token policy, full corpus and
+relationship/CQ coverage, DES gates, accessibility/rendering, runtime/release,
+and Arc02 composition remain open with their existing owners. No source file
+changed; no slice or arc closure or later-slice opening is proposed.
