@@ -1,8 +1,8 @@
 # CC proposed return — Arc02/Slice03 token-system conventions
 
 Status: proposed-done for CDC review only. This report does not accept or close
-the slice. The candidate commit and replay receipt are added after the authorized
-exact-path commit. All nine S03 rows remain open pending CDC review.
+the slice. Candidate evidence commit: 208524724295391a3fc4d2650c7165e857758ed3. All nine
+S03 rows remain open pending CDC review.
 
 ## Scope and denominators
 
@@ -34,7 +34,7 @@ and correction-handoff.md.
 | S03-05 | Proposed met as handoff proposal | Separates DTCG structure from optional system architecture, explicit tradeoffs and conditional propagation. |
 | S03-06 | Proposed met with CDC reconciliation | Grouped occurrence IDs map to literal replacement or retention, reason and owners; reconcile grouped units against every inventoried token line. |
 | S03-07 | Proposed met for declared structural predicates | Positive demo and invalid controls pass; missing-unit, bad-source-identity and false-pair/capture mutations reject. Semantic truth remains human-review work. |
-| S03-08 | Pending candidate commit replay | Seven-path boundary and protected-state review follow below. |
+| S03-08 | Proposed met for preservation checks | Candidate 208524724295391a3fc4d2650c7165e857758ed3 has the exact seven paths, both trailers, protected-input equality and committed-byte replay. Independent CDC review remains pending. |
 | S03-09 | Proposed met as report | Failures/recovery, limits, blocked work and cautious utility observation stated. |
 
 ## Checks, failures and limitations
@@ -43,8 +43,7 @@ The author demo exited zero: one positive and three invalid records rejected.
 The current inline JSONL/source-identity/join checker passed. Negative mutations
 for a missing result unit, mismatched source identity and false paired/capture
 claim were rejected. Local links/fragments, LF/final newline, exact seven paths,
-and git diff --check were checked. The commit path and committed-byte replay
-receipt are reported after execution below.
+and git diff --check passed before commit. Commit 208524724295391a3fc4d2650c7165e857758ed3 changed exactly the seven authorized paths, carries both trailers, and passed committed-byte replay.
 
 Recovered authoring failures: a wrong initial source path (corrected using the
 SOURCE tree), an initial output command targeting SOURCE rather than PLANNING,
@@ -72,7 +71,13 @@ measurement was collected, so no efficiency or trial improvement is claimed.
 
 ## Candidate commit and preservation receipt
 
-To be completed from committed bytes after exact-path commit. Required path set:
-the five artifacts listed in the slice prompt, this ledger, and this report.
-Protected prompt, preparation note, slice plan, parent records, unrelated
-Project12 directory and SOURCE working tree remain outside the commit.
+Candidate: 208524724295391a3fc4d2650c7165e857758ed3. Changed paths are exactly
+occurrence-inventory.jsonl, source-comparison.md, claim-results.jsonl,
+correction-handoff.md, execution-notes.md, ledger.md and closing-report.md under
+this slice. Both required trailers are present. Protected prompt, preparation
+note, slice plan, parent records, unrelated Project12 directory and SOURCE
+working tree remain outside the candidate; prompt/preparation/plan blobs were
+byte-compared with its parent. Replay from committed bytes passed source
+identity/result joins, evidence/dimension, handoff, local-link/newline and path
+set checks. All nine canonical child ledger rows remain open. The replay is CC
+evidence and is not CDC acceptance.

@@ -39,5 +39,5 @@ and proposed, not independent acceptance:
 | S03-05 | [correction handoff](artifacts/correction-handoff.md) | Portable policy separates interchange syntax, role choices, optional bindings and conditional theme propagation. |
 | S03-06 | [correction handoff](artifacts/correction-handoff.md) | Occurrence groups map to replacements, reasons, and future owners; CDC should reconcile line-level inventory units and grouped handoff IDs. |
 | S03-07 | [execution notes](artifacts/execution-notes.md) | Current inline identity/join checks and requested negative predicates recorded; structural checks do not validate semantic warrants. |
-| S03-08 | [execution notes](artifacts/execution-notes.md) | Exact seven-path candidate, protected bytes, links, newlines and committed replay are to be reported after commit. |
+| S03-08 | [execution notes](artifacts/execution-notes.md) | Candidate 208524724295391a3fc4d2650c7165e857758ed3 has exactly seven paths, required trailers, protected-input equality, committed identity/link/newline replay; CC evidence, independent review pending. |
 | S03-09 | [closing report](closing-report.md) | Proposed row accounting, gaps, failures and modest utility observation; no accepted result or trial improvement asserted. |

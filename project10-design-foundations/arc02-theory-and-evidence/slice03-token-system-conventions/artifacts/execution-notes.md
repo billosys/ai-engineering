@@ -142,3 +142,29 @@ qualifiers, and handoff. Historical pages, original capture, full 233-card/
 eight-live-file evidence, actual export validation and P10-11 remain blocked or
 unrun. Trial utility and elapsed effort were not measured independently; no
 improvement is claimed.
+
+
+## Candidate commit and committed-byte replay
+
+Candidate commit: 208524724295391a3fc4d2650c7165e857758ed3. Its tree changes
+exactly the seven authorized paths and includes both required Co-authored-by
+trailers. The prompt, preparation notes, slice plan and all paths outside that
+allowlist are absent from its path list; prompt/preparation/plan bytes were
+compared between parent and candidate and are identical. The canonical nine
+ledger criterion rows remain byte-identical/open. Project12 remains untracked
+and outside the commit. SOURCE remains at dffa504e851b03b8e4746f1941068e4cc850b612
+with its pre-existing knowledge/lfe/ untracked directory.
+
+Committed-byte replay passed: all 145 inventory source identities, 51 exact
+result joins, five dimensions and evidence references, 51 handoff IDs,
+evidence snapshot-null checks, local links/final newlines, and exact seven-path
+tree check. Missing-unit, bad-source-path, empty paired-subject, and fabricated
+snapshot mutations were rejected. The author demo still passes one positive and
+rejects three corruptions. This replay establishes committed shape and identity,
+not semantic acceptance.
+
+One first replay harness invocation incorrectly double-prefixed HEAD while
+reading protected paths and failed at that final comparison; the candidate
+checks before that point had passed. The lookup was corrected to compare explicit
+parent:path and candidate:path blobs, and the full replay then passed. No files
+were changed by the failed lookup.
