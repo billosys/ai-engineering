@@ -100,3 +100,19 @@ S03-02/06/07 and retains S03-03/05/08: six done; S03-01/04/09 open.
 the current receipt hash and count/return wording. Complete inventory/actions/
 checker/register evidence and all broader gates are retained. Prior CC/CDC
 supplements remain historical. No slice or arc closure.
+
+## CC Iteration03 proposed evidence supplement — 2026-10-11
+
+This append-only supplement leaves all nine criterion texts and current CDC dispositions unchanged. S03-02/03/05/06/07/08 remain done; S03-01/04/09 remain open pending independent review.
+
+| Criterion | CC evidence proposed | Strength and limit |
+|---|---|---|
+| S03-01 | [Execution notes](artifacts/execution-notes.md) | Current pinned receipt hash corrected and bounded intake/readback recorded; hash identity and author attestation do not establish comprehension or acceptance. |
+| S03-02 | [Occurrence inventory](artifacts/occurrence-inventory.jsonl) | Retained accepted 114-unit/132-row population and lineage; no inventory change. |
+| S03-03 | [Source comparison](artifacts/source-comparison.md) | Retained accepted bounded source register and access-gap limits; byte-preserved. |
+| S03-04 | [Claim results](artifacts/claim-results.jsonl) and [execution notes](artifacts/execution-notes.md) | A055 correctness and scope explanations repaired against the literal, warrant and exercised illustrative dependency paths; other 41 result lines and all other A055 fields retained. Manual CC assessment remains proposed, not semantic acceptance. |
+| S03-05 | [Correction handoff](artifacts/correction-handoff.md) | Retained accepted portable policy and exact action set; byte-preserved. |
+| S03-06 | [Correction handoff](artifacts/correction-handoff.md) | Retained accepted 21-action mapping; byte-preserved. |
+| S03-07 | [Execution notes](artifacts/execution-notes.md) | Existing checker bytes retained; committed positive/20-negative replay is reported with this return. Checker coverage does not determine semantic truth. |
+| S03-08 | [Execution notes](artifacts/execution-notes.md) | Four-path scope and protected-byte evidence recorded for independent tree review; no self-acceptance. |
+| S03-09 | [Closing report](closing-report.md) | Corrected ten-to-three/net-seven accounting and current nine-row status; effort and utility remain unmeasured. |
