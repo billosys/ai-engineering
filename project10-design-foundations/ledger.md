@@ -205,3 +205,14 @@ of742de371 accepts S04-08 only: one done/eight open.
 repairs F01–F06. Full13/184 context scope,233/eight/16, R/T/C/L/G, P10-11 and
 all parent criterion texts/statuses remain. No slice/arc closure or next advance;
 T02's initial return/observations are recorded without research acceptance.
+
+## Slice04 Iteration01 independent review — 2026-10-11
+
+[CDC C1/H1 review](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cdc-verification.md#iteration01-independent-review--2026-10-11)
+accepts S04-01/02/05/08: four done/five open. [Iteration02](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt-iteration02.md)
+repairs residual original-proposition warrants, applicable primary evidence,
+authoritative literal handoff and four actual checker false passes. Intake,
+complete inventory, worked cases and integrity accepted; no slice/arc closure.
+Parent criterion text/status and all233/eight/16, R/T/C/L/G, P10-11, later proof,
+metadata/package/release/Operator gates remain. T02 has one executed correction;
+final comparison/research acceptance remain pending.

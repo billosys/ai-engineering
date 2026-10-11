@@ -1,5 +1,9 @@
 # Slice04 CDC verification
 
+Current verdict: [Iteration01 review](#iteration01-independent-review--2026-10-11),
+S04-01/02/05/08 done; five open. [Iteration02](cc-prompt-iteration02.md) is assigned.
+Earlier current-verdict/assignment statements below are historical.
+
 ## Initial independent review — 2026-10-11
 
 **Reviewer:** CDC Sofie, separate from CC; default Two-Contributor Workflow.
@@ -226,3 +230,219 @@ SOURCE remains pinned/clean tracked-index. These are handoff self-checks, not
 independent acceptance of CDC's research analysis or a corrected CC packet.
 Actual issue is the commit containing this prompt/review; post-commit exact-path,
 parent/trailer and committed-byte replay are required before Operator relay.
+
+## Iteration01 independent review — 2026-10-11
+
+CDC Sofie, separate from CC, reviewed C1 `2758549e922371125114f7e25017779f73977c01`,
+tree `806845873f50866addf5dd2f53a1e5bad234d68f`, direct parent I1
+`ed048ab69cc18c0e8852d6534e66bfe1c182d440`. Receipt-only H1
+`7eb7a38e754bffbec207b43580a9bf9d44976b88`, tree
+`26135aec10d4e2e921f893d8903ea93d9b5e9529`, is C1's direct child. C0 remains
+742de371, initial issue db77543d and initial receipt83b10880; these are distinct.
+SOURCE remains `dffa504e851b03b8e4746f1941068e4cc850b612`.
+
+**Verdict: partial; S04-01/02/05/08 done, five rows open.**
+[Iteration02](cc-prompt-iteration02.md) is the current CC assignment. No slice
+closure or advancement. Earlier current-verdict statements are historical.
+
+### Independent reproduction and accepted progress
+
+- Exact C1 seven-path scope and H1 three-path receipt scope; parents, trees,
+  trailers, committed diff checks and committed/working equality reproduced.
+  Protected prompts, preparation, plans, CDC review, source and research inputs
+  unchanged. SOURCE and planning tracked/index clean before this review.
+  Seven current outputs have LF/final newlines;24 local links/eight fragments
+  resolve. This renews S04-08 for C1/H1, independently of semantic acceptance.
+- All13 windows/184 literal rows walked with classifications/owners and all84
+  complete source-offset assertion units.101 assigned physical lines,40 retained
+  boundary lines and43 context/markup lines; counts are different populations.
+  All27 predecessor IDs accounted for. Clipped subjects/prefixes recovered;
+  current unit inventory accepted under S04-02. An accepted inventory does not
+  make its later self-derived coverage checker an independent omission oracle.
+- All84 five-dimension records inspected (420 assessments),25 exact actions,
+  complete policy/cases and comparison/notes/report.66 directed pair memberships
+  form33 reciprocal edges: both denominators matter, neither proves warrant.
+- Extracted H1's Python fence, adapting only file reads to Git H1; positive and
+  all16 supplied negatives passed/rejected. Durable author-example replay from
+  preserved preparation: one positive/five negatives and60/120 toy glyph counts.
+  Eight intake plan/prompt/ledger/review/preparation hash/extent pairs independently
+  match I1. Fresh81/127 guide receipts and design hash correct the recorded earlier
+  discrepancies. Read-order deviation and recovery remain visible. S04-01 done.
+- Worked data-review action grouping, stipulated408px row requirement,
+  360/480px cases, intrinsic prose and expanded-label/long-token/font/wide2D
+  adverse cases provide assumptions, expected/contrary outcomes and later owners.
+  Intrinsic-first policy and contextual adaptation accepted as bounded reasoning
+  under S04-05, with no browser/AT/accessibility conformance claim.
+- Virtually applied all25 literal actions to all three complete pinned files;
+  inspected source/replacement/neighbor integration. Table/CSS/list and clipped
+  paragraph repairs are substantial progress. Residual handoff defects below
+  prevent S04-06. No live mutation, acquisition, package or browser execution.
+
+### Consolidated residual findings
+
+| ID | Primary type / significance | Observed defect and bounded correction |
+|---|---|---|
+| I1-F01 | evidence applicability/consistency; correctness-grade | C01.01 says “Every layout is a composition of these”; C23.01 says the thirteen primitives compose “any layout.” The registry and both pair reasons incorrectly say only C23 makes the exhaustive claim. C01.01's correctness reason assesses “No bespoke,” which belongs to C01.02. C04.01 and C24.06 both prohibit queries; their pair reason incorrectly imports an intrinsic-first diagnostic into C04.01. C05.02 copies that prohibition reasoning onto C04.03, the actual diagnostic. Reconcile each original proposition/edge individually, including other copied sibling reasons; do not use a repaired policy as the meaning of the original. |
+| I1-F02 | evidence applicability/identity; correctness-grade | C10.01 claims SZ/FX define min/max/clamp although the recorded SZ §§3.1–3.3 and FX sizing clauses do not define clamp. C21.03 declares auto inline margins a supported centering mechanism but cites only SZ's sizing/box-edge definitions. Supply applicable conditional primary clauses or bound those assessments as unassessed/local reasoning. FX/GR version/status fields say identity was observed without recording that identity or exact consulted algorithm sections. Record actual status/date/section bounds, updating dependent copies; no full-spec or runtime assignment. C09.03's target-size qualification also needs its applicable WC evidence. |
+| I1-F03 | replacement/handoff; serious | Proposal parts duplicate broad advice rather than identify literal parts of the inserted action: all five C13 clauses receive the same ch advice, while A-C13 contains distinct block-size/spacing/grid proposals. C21 “retain” entries contain editing instructions; C24.02 is labelled correct for an incomplete dependency instruction while the composed action repeats it unchanged. Make one authoritative composed replacement and explicit exact clause-to-part/action pointers, with honest disposition/retention. A-C09-C10 loses its promised named target criterion/level; A-C17 names24/44 CSS px but should preserve both dimensions and criterion-specific exceptions. The composed SKILL still labels the qualified query policy “Zero Breakpoints.” Include that already-selected heading in the coherent proposal. Review resulting files and every repaired action join, preserving useful examples and unrelated boundaries. |
+| I1-F04 | validation coverage; correctness-grade | Four additional same-validator specimens pass: unrelated A-C13 authoritative replacement; C13.01 changed to retain while its action/parts remain qualify; duplicate line claim membership; and coherent deletion of C13.02 from results/line memberships/action joins while all184 lines and27 predecessor groups remain. Checking proposal_parts against results never checks what replacement is actually inserted; set equality hides duplication; self-derived memberships hide omitted clauses. Bind literal parts/pointers to composed replacement, validate declared dispositions, reject duplicate memberships and compare with the reviewed unit inventory/explicit revision lineage. Keep existing16 controls and human semantic oracles. Do not hardcode84 as a universal answer or turn the illustrative witness into an engine. |
+
+These are persistence/recurrence of expressly targeted I1 F02/F03/F04, not a
+new slice scope or whole-corpus requirement. F01 complete inventory, F05 worked
+cases and F06 intake/state repairs are accepted. Current reporting is honest
+about partial authority; S04-09 awaits a reconciled usable packet and row return.
+
+### Source inspection and limits
+
+Fresh technical observations: complete current Every Layout Axioms; SZ header
+and §§3.1–3.3 (with focused recovery through the end of3.3); FX/GR headers and
+FX flex-basis excerpts; CV header/contents/ch excerpts; WC target-size criteria
+and exceptions. FX/GR full algorithms, CV comparison functions and logical-margin
+centering rules were not independently fully read in this pass; they remain
+conditional repair inputs. No fresh complete-read claim for those mechanisms.
+Prior unchanged CDC standards observations remain historical bounded evidence.
+
+Applicable primary routes: [CSS Values4 comparison functions §10.2](https://www.w3.org/TR/2024/WD-css-values-4-20240312/#comp-func),
+[CSS Sizing3 §§3.1–3.3](https://www.w3.org/TR/css-sizing-3/#sizing-properties),
+[Flexbox1](https://www.w3.org/TR/2025/CRD-css-flexbox-1-20251014/),
+[Grid2](https://www.w3.org/TR/2025/CRD-css-grid-2-20250326/),
+[WCAG2.2 target criteria](https://www.w3.org/TR/2024/REC-WCAG22-20241212/#target-size-enhanced).
+Fresh FX/GR header identities are Candidate Recommendation Draft14 October2025
+and26 March2025 respectively. Inspect the actual edition used and all conditions
+before claiming support. SC2.5.5 AAA44×44 and SC2.5.8 AA24×24 CSS-pixel criteria
+have distinct exceptions; a local target policy remains separate. These current
+pages are not immutable historical captures and do not close P10-11.
+
+### Bounded recurrence repair and falsification
+
+Before issuing another batch, CDC exercised the following actual C1/H1 false
+passes and a bounded A-C13 repair. It demonstrates literal composition, disposition,
+membership uniqueness and pin-relative unit completeness. Each invalid specimen
+goes through the same repair predicate. It is author preparation, not acceptance
+of the demonstration as a design packet or a general semantic checker. CC may use
+exact pointers instead of concatenation; substantive changes still require review.
+
+```python
+import copy, json, re, subprocess
+from pathlib import Path
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning')
+H='7eb7a38e754bffbec207b43580a9bf9d44976b88'
+S='project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/'
+def pinned(name):
+ return subprocess.check_output(['git','-C',str(P),'show',H+':'+S+'artifacts/'+name]).decode()
+code=re.search(r'```python\n(.*?)\n```',pinned('execution-notes.md'),re.S).group(1)
+# Git adapters change only input reads; the candidate validator/controls are unchanged.
+code=code.replace("(BASE/name).read_text()","pinned(name)").replace("(BASE/'correction-handoff.md').read_text()","pinned('correction-handoff.md')")
+ns={'pinned':pinned};exec(code,ns)
+i,c,a=ns['inv'],ns['claims'],ns['actions']
+def omit(i,c,a):
+ cid='C13.02';c[:]=[r for r in c if r['claim_id']!=cid]
+ for row in i: row['claim_ids']=[v for v in row['claim_ids'] if v!=cid]
+ for action in a:
+  for k in ('claim_ids','result_ids'): action[k]=[v for v in action[k] if v!=cid]
+  for k in ('unit_subjects','proposal_parts'): action[k].pop(cid,None)
+def wrong_text(i,c,a): next(x for x in a if x['action_id']=='A-C13')['replacement']='UNRELATED.'
+def wrong_disposition(i,c,a): next(x for x in c if x['claim_id']=='C13.01')['disposition']['proposed']='retain'
+def duplicate_member(i,c,a):
+ row=next(x for x in i if x['claim_ids']);row['claim_ids'].append(row['claim_ids'][0])
+mutations=[('authoritative replacement',wrong_text),('result disposition',wrong_disposition),
+           ('duplicate membership',duplicate_member),('coherent unit omission',omit)]
+false_passes=[]
+for label,mutate in mutations:
+ x,y,z=copy.deepcopy(i),copy.deepcopy(c),copy.deepcopy(a);mutate(x,y,z)
+ assert ns['validate'](x,y,z);false_passes.append(label)
+# Bounded author repair: actual parts compose the inserted A-C13 replacement.
+# The reviewed pin supplies expected identities, not a universal target count.
+expected=frozenset(r['claim_id'] for r in c)
+parts={
+ 'C13.01':'The web is content-driven.',
+ 'C13.02':'Use a reviewed prose measure.',
+ 'C13.03':'Let content contribute to block-size.',
+ 'C13.04':'Choose spacing from the project scale where appropriate.',
+ 'C13.05':'Set grid tracks from tested item needs and available space with `auto-fit`/`minmax()` where suitable.'}
+x,y,z=copy.deepcopy(i),copy.deepcopy(c),copy.deepcopy(a)
+action=next(v for v in z if v['action_id']=='A-C13')
+action['proposal_parts']=parts;action['replacement']=' '.join(parts.values())
+for r in y:
+ if r['claim_id'] in parts:r['disposition']['replacement']=parts[r['claim_id']]
+def repaired(i,c,a):
+ assert frozenset(r['claim_id'] for r in c)==expected
+ assert all(len(row['claim_ids'])==len(set(row['claim_ids'])) for row in i)
+ ns['validate'](i,c,a)
+ action=next(v for v in a if v['action_id']=='A-C13')
+ assert action['result_ids']==list(parts)
+ assert action['replacement']==' '.join(action['proposal_parts'][cid] for cid in action['result_ids'])
+ assert all(next(r for r in c if r['claim_id']==cid)['disposition']['proposed']=='qualify' for cid in parts)
+ return True
+assert repaired(x,y,z)
+rejected=[]
+for label,mutate in mutations:
+ ii,cc,aa=copy.deepcopy(x),copy.deepcopy(y),copy.deepcopy(z);mutate(ii,cc,aa)
+ try:repaired(ii,cc,aa)
+ except (AssertionError,ValueError,KeyError):rejected.append(label)
+ else:raise AssertionError(('repair false pass',label))
+assert len(rejected)==4
+print(json.dumps({'candidate_false_passes':false_passes,'bounded_repair_positive':1,
+ 'bounded_repair_rejected':rejected,'semantic_oracle':'human; author demonstration only'}))
+```
+
+Result: current positive/all16 controls reproduced; four additional false passes;
+bounded repair positive passed and all four defects rejected. An earlier omission
+probe for C13.04 failed at line331 classification; the corrected C13.02 probe
+demonstrates actual omission acceptance on shared physical lines. Both outcomes
+are retained. The omission control does not imply the current inventory omits it.
+No hardcoded semantic denominator is added to the governing contract.
+
+### Nine-row CDC disposition
+
+| Row | Status | Independent evidence / remaining work |
+|---|---|---|
+| S04-01 | done | Reconciled I1 intake hashes/extents, required recovery and preserved author positive/five negatives reproduced; receipt is not semantic acceptance. |
+| S04-02 | done | Complete13/184 context/unit/qualifier walk,84 source-offset units and27 predecessor groups;101/40/43 physical-line classes with owners. |
+| S04-03 | open | I1-F02 applicable clauses and explicit observed identities/read bounds remain. |
+| S04-04 | open | All84×5 inspected; I1-F01/F02 actual-proposition warrants/pairs unresolved. |
+| S04-05 | done | Bounded portable policy and worked/adverse/contrary cases inspected; browser/AT proof remains later. |
+| S04-06 | open | Exact25 virtual edits reproduced; I1-F03 literal-proposal/disposition/standards/heading joins unresolved. |
+| S04-07 | open | Positive/16 negatives reproduced; I1-F04 four actual false passes and human property coverage unresolved. |
+| S04-08 | done | Renewed C1/H1 exact scopes/parents/trees/trailers/protected bytes/24 links/eight fragments/LF/diff. |
+| S04-09 | open | Partial return read; reconcile corrected packet, all nine rows, failures and parent/trial limits. |
+
+### Trial, reviewer contribution and handoff limits
+
+T02 has initial return plus one executed correction; H1 is receipt-only. First
+acceptance remains1/9; cumulative current acceptance4/9, with differing criterion
+content, not an effort or quality percentage. C1 seven outputs474213 bytes,
+H1 current outputs476515; compared with C0's219903, size reflects finer records
+and receipts, not measured goal displacement or benefit. CC24m32s is Operator-
+relayed attestation; reviewer/preparation/upkeep/token costs remain unknown.
+Literal inventory/action evidence enabled direct discovery and downstream decisions;
+duplicated broad proposal parts still incur upkeep without faithful composed joins.
+No final comparison, research acceptance, third run or adoption is claimed.
+
+Reviewer aggregate reads clipped and were recovered with focused loads; wrong
+PM guide filename failed and the canonical top-down guide recovered the route.
+Sandbox urllib fetches failed DNS; purpose-built web reads supplied the observed
+headers/sections. Those are CDC tool errors/limits, not CC failures. The first
+omission probe failed rather than proving the proposed validator gap, as recorded.
+The Operator-relayed arc02-theory-and-measure-exceptions link is a transcription
+typo; committed report uses the proper arc02-theory-and-evidence path.
+
+Iteration02 retains the same seven-output authority, corpus/families/gates and
+independent review. Protected prompts/author preparation and research protocol/
+Case01 remain unchanged. No source acquisition, live edits, browser/package run,
+Arc02/full233/eight/16/R/T/C/L/G, Arc03 proof, Arc04 release, Arc06 metadata or
+Project09/Project11/Operator gate is accepted here.
+
+### Iteration02 handoff self-check
+
+CDC-authored handoff checks passed: exact11 planning paths; unchanged13 Project10,
+eight Arc02 and five Project13 criterion/status sets; nine unchanged child criteria
+with S04-01/02/05/08 done/five open; protected CC outputs/prompts/preparation and
+frozen protocol/Case01 unchanged. All161 local links/61 fragments, LF/EOF and diff
+checks passed. The durable Git-input probe/repair fence replay passed: current
+positive/16 supplied negatives plus four reproduced false passes and four repair
+rejections. SOURCE remains pinned with clean tracked/index; unrelated untracked
+work retained. These are handoff self-checks, not independent acceptance of CDC
+author preparation. Exact commit parent/path/trailers and committed fence replay
+are checked after issue, before Operator relay; actual issue is the commit
+containing this prompt/review, never a prefilled candidate identity.

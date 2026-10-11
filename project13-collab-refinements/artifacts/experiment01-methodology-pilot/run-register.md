@@ -597,3 +597,40 @@ Continue the selected host correction under the existing protocol and full
 criteria. T02's final comparison follows independent closure or a recorded stop;
 all Project13 rows remain open pending their own acceptance. Frozen protocol and
 Case01 remain unchanged; no third treatment assignment authorized.
+
+## T02 Iteration01 return and independent review — 2026-10-11
+
+Host I1 ed048ab6; C1 `2758549e922371125114f7e25017779f73977c01`, tree
+806845873f50866addf5dd2f53a1e5bad234d68f, direct child of I1; receipt H1
+`7eb7a38e754bffbec207b43580a9bf9d44976b88` is C1's direct child, not another
+assignment. Initial plus one executed correction; Iteration02 now issued.
+[Independent host review](../../../project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cdc-verification.md#iteration01-independent-review--2026-10-11)
+accepts S04-01/02/05/08, cumulative4/9; first-return acceptance remains1/9.
+Five rows open, no host closure/final comparison or research acceptance.
+
+| Observation | Requirement / predecessor | Result and classification |
+|---|---|---|
+| Complete inventory/receipts/cases repaired | I1 F01/F05/F06 |84 complete units/184 lines, meaningful worked/adverse cases and recovered intake accepted. Different populations/criterion content do not yield a numeric quality rate. |
+| Original pair meaning still wrong | I1 F02 actual originals | C01/C23 both exhaustive and C04/C24 both bans; copied reasons misidentify them. Persistence: proposition meaning/evidence applicability. |
+| Technical support still incomplete | I1 F02 applicable primary clauses/identity | C10 comparison-function definition and C21 centering mechanism not warranted by named clauses; FX/GR identity omitted. Persistence of evidence applicability; no whole-spec requirement added. |
+| Literal handoff still unbound | I1 F03 coherent result/action proposals | Broad C13 parts duplicate advice while authoritative insertion differs; C24 disposition contradicts unchanged instruction. Persistence of replacement/handoff mechanism despite improved structured prose. |
+| Current validator still permits claimed invalid states | I1 F04 omission/disposition/replacement joins | Positive/16 supplied negatives replayed, but four additional specimens pass: authoritative insertion, result disposition, duplicate membership, coherently omitted C13.02. Property witnesses in host review; not four independent semantic defects. |
+| Concrete recurrence response | Protocol bounded repair before bulk | Actual false passes exercised; A-C13 literal-parts repair positive and four same-predicate invalid cases rejected before I2 issue. Demonstration is author preparation, not CC acceptance. |
+| Reviewer overhead/errors | Research contribution requirement | Clipped reads recovered; wrong guide route recovered; sandbox network failure bypassed via web tool; first C13.04 omission probe rejected, later C13.02 probe accepted. Recorded separately from CC defects. |
+
+Intervention adherence is partial in effect: scoped preparation/inventory and
+full-context source units now useful; applicable verdicts, authoritative joins
+and verification design still incomplete. Comprehensive review and exercised
+recurrence response supplied. Current records/pinned history retained; no new
+research/acceptance tree or maintained helper. Literal inventory and exact actions
+support actual discovery/downstream edit decisions; duplicate broad proposal parts
+add upkeep without complete joins. No measured goal displacement or net benefit.
+
+C1 outputs474213 bytes; H1 outputs476515, versus initial219903. Increased clause
+detail/receipts explain part of the burden; bytes alone do not measure effort or
+benefit. Operator-relayed CC24m32s attested; preparation/review/upkeep/tokens and
+settings unknown. Continuing CC context attested; protocol-body exposure not
+claimed; CDC reused/compacted context and knows research/prior cases. No causal
+trial conclusion, success target, third run or adoption. Scope/quality/authority
+held: only four actual criteria accepted; final comparison follows host closure
+or recorded stop. Protocol revision2 and Case01 remain frozen, all P13 rows open.

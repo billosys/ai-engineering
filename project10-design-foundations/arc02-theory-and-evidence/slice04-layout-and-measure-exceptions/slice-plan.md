@@ -131,15 +131,21 @@ revision2 at23c77653. No research acceptance or success target is inferred.
 | Assignment | Issue/predecessor | Disposition and reason |
 |---|---|---|
 | [Initial prompt](cc-prompt.md) |2026-10-11; issue db77543df9f6785f9b1889112ac12a79383db400; planning predecessor370cfc8f | Returned as742de371 after receipt-only83b10880; independently reviewed, S04-08 done/eight open. |
-| [Iteration01](cc-prompt-iteration01.md) |2026-10-11; preceding initial prompt; candidate742de371; exact issue is commit containing this handoff | Active CC evidence correction for consolidated F01–F06; complete scope/gates retained. |
+| [Iteration01](cc-prompt-iteration01.md) |2026-10-11; issue ed048ab69cc18c0e8852d6534e66bfe1c182d440; predecessor initial prompt/C0 | Returned C1 2758549e with receipt H1 7eb7a38e; independently reviewed, four done/five open. |
+| [Iteration02](cc-prompt-iteration02.md) |2026-10-11; predecessor Iteration01; C1/H1 above; issue is commit containing this prompt | Active bounded correction for I1-F01–F04; accepted intake/inventory/policy/integrity retained. |
 
-Current assignment: [Iteration01](cc-prompt-iteration01.md), seven-path evidence
-correction returned to CDC Sofie via Operator. [Independent review](cdc-verification.md#initial-independent-review--2026-10-11)
-accepts preservation only; eight rows remain open. No slice closure/next advance.
+Current assignment: [Iteration02](cc-prompt-iteration02.md), same seven-path evidence
+correction returned to CDC Sofie via Operator. [Independent I1 review](cdc-verification.md#iteration01-independent-review--2026-10-11)
+accepts S04-01/02/05/08; five rows remain open. One correction actually executed;
+I2 is issued, not executed. No slice closure/next advance.
 Commit exact paths with both trailers; report actual issue/candidate/receipt
 identities distinctly. Initial prompt/preparation and prior results remain pinned.
 
 ## Version History
+
+- 1.2 (2026-10-11): C1/H1 independently reviewed; four rows done/five open.
+  Exercised persistent warrant/action/check gaps before issuing bounded Iteration02;
+  accepted inventory/policy/intake retained, scope/criteria/gates unchanged.
 
 - 1.1 (2026-10-11): Independently reviewed initial742de371; S04-08 done/eight
   open, consolidated F01–F06 and exercised repairs issued as Iteration01.
