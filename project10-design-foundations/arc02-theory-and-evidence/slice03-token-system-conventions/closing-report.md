@@ -1,70 +1,56 @@
-# CC proposed return — Iteration03: token-system conventions
+# CC proposed return — Iteration04: reconcile current return identity
 
-**Status:** Iteration03 correction evidence is proposed to CDC. This report does not record CC acceptance, slice closure, source implementation or next-slice authority. Issued assignment: `arc02-theory-and-evidence/slice03-token-system-conventions/cc-prompt-iteration02.md`, introduced by PLANNING commit `7745b3d4b7e1ab8b3233eefacd9cf4e339a90681`. SOURCE remains pinned at `dffa504e851b03b8e4746f1941068e4cc850b612` on `main`. The candidate is committed only at the six paths authorized by the Iteration03 prompt; its commit identity is supplied to the Operator with this return.
+**Status:** This is CC's reporting-only proposed return to CDC for S03-09. It is not CDC acceptance, slice closure, next-slice authority or release approval. Assignment: [Iteration04 prompt](cc-prompt-iteration04.md), issued by I4 `28999d8a0a2d5e9585b52812e345e72b91514117` (tree `dbeb464dfc4ae175c03de9f9bb64bc8ad9a0f63b`). I4's direct parent is C3 `c51a21ad4f3258246740cb904f66aab2c6a1bf33`; C3's parent/issue is I3 `cce88f57ecbd747b329384fd6d80ba64ae2d528c`, and C3's tree is `a1c0d6f2937aa538b130568f11f3e2661f908387`. The prior substantive candidate `c2f36b623ca988f5eb36d2125f09cd7bcd3531d4` is not C3's direct parent. C4 is the exact-path commit for this return; its commit and tree IDs are supplied with the Operator handoff.
 
-## Scope and derived counts
+## Scope and delivered changes
 
-The original 17 source windows remain 168 lines across five files. The separately declared `colour.md:249` markup extension remains one additional line and does not add an assertion or target. The inventory contains **114 source units**: 42 token assertions, 21 retained boundary assertions, and 51 context/markup units. Eighteen manifests plus 114 units yield 132 JSONL records. All 145 predecessor IDs remain accounted for; U145 is explicitly mapped to and retired as a nonassertive checklist prompt. The results contain the same 42 unique token subjects, each with five separate dimensions. Twenty-one actions map every result subject once.
+The assignment permits a coherent current report plus concise append-only notes and an optional ledger supplement. Delivered paths are:
 
-Ten old current units (A090/A091 and A112–A119) have been recomposed into three complete units (B002/B003/B004), a net reduction of seven. B002 joins the two colour-format/trend sentence fragments and supersedes A090/A091. B003 and B004 capture the two complete layout/cascade assertions and supersede A112–A119. The current-ID maps and predecessor lineage are explicit; A116/U140 map to both units because line128 contains the boundary. No original window line was dropped. These remain T/L or L/Arc04-owned claims; this pass does not assess their correctness.
+- `closing-report.md` — replaced with this current Iteration04 report.
+- `artifacts/execution-notes.md` — appended Iteration04 intake, contract readback, preservation and check results; earlier bytes and the checker are retained.
 
-## Prior Iteration02 evidence retained
+No ledger change was needed. C3 itself changed exactly four paths: `artifacts/claim-results.jsonl`, `artifacts/execution-notes.md`, `ledger.md` and `closing-report.md`. This return changes no source files; SOURCE remains `dffa504e851b03b8e4746f1941068e4cc850b612` on `main`.
 
-The following finding summaries and validation history describe the preceding return and remain historical evidence; Iteration03 changed only the two A055 dimension objects plus the current receipt/count wording.
+## Retained accepted evidence and counts
 
-## Finding dispositions
+The [Iteration03 CDC review](cdc-verification.md#iteration03-independent-review--2026-10-11) accepted S03-01 and S03-04 and retained six previously accepted rows. It independently verified C3's exact four-path delta and accepted A055's two repaired dimensions. Those dispositions and substantive artifacts are referenced at C3; this pass does not repeat semantic, numerical or checker review.
 
-- **F01 — revised for review:** complete boundary units and explicit supersession mappings replace incomplete physical-line fragments. Original windows, the colour extension, all 42 token subjects and all predecessor lineage remain present. Inventory counts are derived from the revised records.
-- **F02 — revised for review:** every result has an exact pinned local observation distinct from observed external passages, a subject-specific warrant, five separate assessments and a proposed action. DTCG remains only where the assertion concerns applicable format, name/reference, status or type facts, with precise sections. A006 is scoped to the local prospective example; A048 is only the two-name illustration and leaves necessity to A049; A085 is a broader undefined notation-convergence claim, not the named trio. The local consistency pair, DTCG typography composite, configurable Utopia example and unresolved Material 3/historical Polaris/fidelity/graph/CQ boundaries retain their applicable limits.
-- **F03 — revised for review:** all 21 action targets join exact pinned source spans and virtual application finds no overlap. ACT-12 and ACT-18 target headings now cover `74–80` and `106–111`. ACT-16 targets only source329–332 offsets `[0,267]`, ending “not style but structure”; ` The structure` from offset267 and lines333–334 remain unchanged under T/L ownership. Table, heading and code structure checks pass. SOURCE was not edited.
-- **F04 — revised for review:** the one inline standard-library checker drives the positive packet and all 20 invalid specimens through the same `validate` function. The positive packet passed; all 15 prior Iteration01 negatives and all five CDC Iteration01 variants reject. The checker verifies strict JSON, unique IDs, exact source/result/local/pair joins and bounds, selected-window scope, independent declared-line coverage, complete predecessor and supersession maps, evidence-ID/reference integrity, null capture claims, five dimensions, complete action membership, non-overlapping virtual edits and Markdown structure. It does not decide semantic completeness or evidence applicability.
-- **F05 — supplied:** Iteration02 receipts record exact paths, hashes and loaded extents, including the fresh complete PM guide range `89–188`; the older incomplete `134–188` receipt remains historical. The notes account for prior/current counts, all findings, errors and recoveries, all nine rows, remaining gates, and unknown effort/cost. No efficiency or trial-improvement claim is made.
+Current population remains 114 units in 132 inventory records: 42 token assertions, 21 boundary units and 51 context/markup units, plus 18 manifests. The 42 results retain five dimensions each; 21 actions cover the result subjects. Ten old current units (A090/A091 and A112–A119) compose into B002/B003/B004, net minus seven. A116/U140 remains mapped to both layout sentences. No source or inventory population changed.
+
+## Artifact inventory
+
+Produced slice artifacts under `artifacts/`:
+
+- `occurrence-inventory.jsonl`
+- `source-comparison.md`
+- `claim-results.jsonl`
+- `correction-handoff.md`
+- `execution-notes.md`
+
+`preparation-notes.md` is the author-provided preparation input, not a CC-produced artifact. No other artifact was added.
 
 ## Nine-row accounting
 
-Current CDC dispositions remain unchanged. CC evidence for open rows is proposed for independent review only.
-
-| Row | Current CDC status | Iteration02 return |
+| Row | Current CDC status | Iteration04 return |
 |---|---|---|
-| S03-01 | open | Proposes met: complete current assignment/read receipts and source-cited contract readback are recorded. |
-| S03-02 | open | Proposes corrected: 42 assertions, 21 boundaries and 51 context/markup units; 17/168 original lines plus one declared extension; 145 predecessor IDs mapped. |
-| S03-03 | done | Retained: accepted bounded register, applicable DTCG/Utopia facts and three access gaps are unchanged; `source-comparison.md` is byte-preserved. |
-| S03-04 | open | Proposes corrected: all 42 subjects have separated local/external observations, warrants and five distinct dimensions. |
-| S03-05 | done | Retained: accepted portable policy and source facts are unchanged. |
-| S03-06 | open | Proposes corrected: 21 exact, virtually joined actions map the 42 subjects once and preserve retained boundaries. |
-| S03-07 | open | Proposes corrected: one current positive route accepts the packet and rejects all 20 prior/new negative specimens; semantic review remains human. |
-| S03-08 | done | Retained CDC acceptance; exact path scope and protected bytes are proposed for independent precommit/tree review. |
-| S03-09 | open | Proposes corrected: denominators, all nine statuses, failed attempts/recovery, gates, and unknown costs are recorded. |
+| S03-01 | done | Retain C3's independently reproduced intake/hash disposition. |
+| S03-02 | done | Retain C3's accepted complete inventory, boundary composition and lineage. |
+| S03-03 | done | Retain C3's accepted bounded source comparison and access limits. |
+| S03-04 | done | Retain C3's accepted A055 assessment and repaired dimensions. |
+| S03-05 | done | Retain C3's accepted portable policy and scope distinctions. |
+| S03-06 | done | Retain C3's accepted 21 action joins and ownership mapping. |
+| S03-07 | done | Retain the unchanged checker and C3's reproduced positive/20-negative replay. |
+| S03-08 | done | Retain C3's independent exact-path, protected-byte and commit-integrity review. |
+| S03-09 | open | Proposes current assignment/issue/parent identity, exact scope, accounting, artifact inventory and Arc02 bubble-up for CDC review. |
 
-## Checks, failures and re-entry
+## Checks, failures and limits
 
-The current inline checker replay from the slice directory produced `positive ACCEPTED` and `negative_rejections 20`. The five CDC variants were: omit the selected SKILL line; extend the A001 source and result spans beyond EOF; extend the paired-subject span beyond EOF; duplicate an evidence ID; and omit B003/layout124 while attempting to transfer its predecessor lineage. All reject. The invalid missing-source-path probe emits Git’s expected missing-object diagnostic, which is caught as rejection. Iteration01’s printed checker had already been reproduced as accepting seven malformed samples and rejecting two controls; those remain historical evidence, not current acceptance.
+Fresh checks for this return: Git-derived C3 identity and exact four-path diff; current I4 identity/path history; PLANNING branch and clean tracked/index state before edits; SOURCE pin and clean tracked/index state; preservation of all substantive C3 artifacts and protected I4 inputs; exact return path scope; Markdown links/fragments, LF/final newlines, `git diff --check`, direct parent and required trailers. Results and read coverage are recorded in [execution notes](artifacts/execution-notes.md).
 
-During this pass, the first B003 offset estimate was outside the unit’s narrower span and was corrected by the exact join. The first checker run used the wrong working directory; the corrected run starts from the slice directory. A snapshot-negative probe initially selected a result whose inapplicable DTCG observation had just been removed; it was rerouted to a result with actual external evidence. An earlier truncated handoff output was recovered through contiguous reads; one wrong review-procedure lookup was corrected to the pinned accepted procedure. No protected path changed during these recoveries.
+Retained by C3/CDC pin, not rerun: positive checker and 20 existing negative specimens; the manual A055 witness/dimension review; full 42-result semantic review; exact inventory/action composition. Checker replay is unnecessary for this prose-only pass. Material 3 overview and historical Polaris bodies remain inaccessible. Original-source fidelity, all 233 cards, all eight live files, export/runtime validation, implementation, accessibility and release checks remain outstanding or unrun. Effort, token cost, elapsed time and reviewer utility are unknown; no efficiency claim is made. Four corrective assignments have returned so far; no fifth correction is issued here.
 
-Material 3’s overview and two historical Polaris colour bodies remain inaccessible and require CDC/Operator re-entry with exact generation/category evidence. Original-source fidelity, all 233 cards/eight live files, export validation, implementation, accessibility, browser, typography arithmetic and broader T/L/Arc04/Arc03 work remain outside this assignment or unrun. There is no Project13 write or trial outcome claim. CC submits this packet for CDC review; S03-03/05/08 stay done and S03-01/02/04/06/07/09 stay open until independently resolved.
+## Scope-as-specified and Arc02 bubble-up
 
-## Practical utility and cost
+Specified: reconcile the current Iteration04 return identity and S03-09 reporting while preserving C3 evidence and eight done statuses. Delivered: only this report and append-only execution notes; S03-09 remains open for independent CDC review.
 
-The revised joins make the two complete layout assertions and the colour trend sentence available for their owners without implying token-system acceptance. Separating local assertions from external passage observations clarifies what each cited source actually supports. The packet’s repeated per-claim dimensions and exact action literals cost maintenance effort; elapsed time, token cost and reviewer effort were not measured. No efficiency improvement is claimed.
-
-
-## Iteration03 proposed correction and current row accounting
-
-This return proposes evidence for CDC review; it does not accept or close the slice. The exact candidate is the path-scoped commit reported with this return, directly based on `c2f36b623ca988f5eb36d2125f09cd7bcd3531d4`; the issuing prompt commit is `cce88f57ecbd747b329384fd6d80ba64ae2d528c`. Only four authorized paths changed: `artifacts/claim-results.jsonl` (A055 correctness and scope_attribution dimensions only), `artifacts/execution-notes.md` (current Iteration02 receipt hash correction and Iteration03 intake/results), `ledger.md` (evidence supplement), and this report.
-
-A055 now assesses conditional primitive-value propagation through references that resolve to the changed value and records that actual resolver/update behavior is unstated. Its scope assessment describes the unqualified consequence without introducing a changed role or site inventory. The literal, local observation, external evidence objects, warrant, disposition and remaining three dimensions are retained; all other 41 result lines are byte-identical to the predecessor. The primitive witness produced button=`new`, badge=`new`, fixed=`old` after changing only the primitive and resolving. This is a dependency illustration, not a DTCG export or runtime observation. Ten predecessor units became three complete boundary units, for a net reduction of seven; inventory counts and mappings remain unchanged at 114 units/132 rows/42 results/21 boundaries/51 context units/21 actions. The current receipt hash now matches the pinned 137-line PLANNING AGENTS bytes; this hash correction does not claim a fresh reading. Existing positive and 20-negative checker replay is retained and is rerun against the committed return. Utility, elapsed time, token cost and reviewer effort are unmeasured; no efficiency claim is made.
-
-| Row | Current CDC status | Iteration03 return |
-|---|---|---|
-| S03-01 | open | Proposes corrected current receipt identity and records bounded intake/readback; independent review remains open. |
-| S03-02 | done | Retained accepted inventory, boundary composition and lineage evidence. |
-| S03-03 | done | Retained accepted bounded source comparison and access-gap limits. |
-| S03-04 | open | Proposes correction of A055 correctness/scope explanations; all other results retained. |
-| S03-05 | done | Retained accepted portable policy evidence. |
-| S03-06 | done | Retained accepted action joins and ownership evidence. |
-| S03-07 | done | Retained accepted checker scope and 20-negative evidence; checker bytes preserved. |
-| S03-08 | done | Retained accepted preservation evidence, with exact four-path return to be independently checked. |
-| S03-09 | open | Proposes corrected ten-to-three/net-seven accounting and complete current return report. |
-
-No source implementation, slice/arc closure, T02 issuance or release authority is inferred. S03-01/04/09 remain open until independent CDC resolves them; the six done rows remain done.
+The bounded token evidence and proposed handoff inform Arc02 A02-03 (scoped theory findings), A02-05 (repeated claims across all live files) and A02-07 (complete DES disposition). They do not close those parent rows. Full R/T/C/L/G coverage, original inputs and P10-11, all-card/fidelity review, full live-file review, source implementation, missing primary passages, package/export validation, Project13 T01 meta-review before T02, and parent/project/release gates remain outstanding. No Arc02, Project10, source or release acceptance is inferred.
