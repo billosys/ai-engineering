@@ -2,7 +2,7 @@
 
 Prepared 2026-10-10; T01 independently closed on 2026-10-11; checkpoint below.
 Protocol revision 2's initial zero-run status is historical; this register tracks
-current registrations. T02 is prospectively registered below; execution has not begun.
+current registrations. T02 has an initial CC return and partial independent review.
 The next two newly opened Project10 slices are selected by the protocol's
 consecutive-entry rule, not by expected success. Slice02's ongoing correction is
 excluded. Record each entry here before issuing its initial prompt.
@@ -10,7 +10,7 @@ excluded. Record each entry here before issuing its initial prompt.
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
 | T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Closed after initial + four corrections; checkpoint completed below | First3/9; final9/9 bounded criteria; comparative benefit inconclusive |
-| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue `db77543d` | Initial assignment issued; not executed | Not measured |
+| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue `db77543d` | Initial return742de371 reviewed; Iteration01 issued, not yet executed | First1/9; preservation done, eight open; completion/final comparison pending |
 
 ## Entry format
 
@@ -526,3 +526,74 @@ unchanged/open;22 local links/five fragments resolve. A whole-host preservation
 helper initially dereferenced CLAUDE.md symlinks instead of comparing their Git
 link blobs and falsely failed. Corrected mode-aware comparison passed all host
 entries; frozen protocol/Case01 unchanged. No host assignment bytes changed.
+
+## T02 initial return and independent review — 2026-10-11
+
+Host candidate `742de3710a81f6ef86109f8ae5eddd3ed808c183`, tree
+`99d5c32f56b445781c27bcd3d97f5408578f5d00`, direct parent
+`83b10880d1bb6ce4c686942438c6da512532dc9a` (receipt-only issue pin).
+Initial issue remainsdb77543d, protocol revision2 at23c77653 unchanged.
+[CDC review](../../../project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cdc-verification.md#initial-independent-review--2026-10-11)
+is authoritative for host acceptance: **first1/9**, S04-08 preservation done;
+eight open. [Iteration01](../../../project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt-iteration01.md)
+issued with consolidated F01–F06. One executed initial return, zero executed
+corrections at this checkpoint; issued correction is not an executed pass.
+No closure, final comparison, additional run or methodological adoption.
+
+### Observations and failure classification
+
+| Finding/event | Primary type | Observed result / limit |
+|---|---|---|
+| F01 | coverage/context |184 exact physical lines but clipped C07/C08/C24 sentences, missing substantive prefix970–972 and compound subjects. Clausal denominator not independently established;27 is CC's result count, not verified full atomic population. |
+| F02 | evidence applicability/consistency | Generic warrant templates, missing conditional cqw/cqh/sizing/grid/mechanism scopes, copied tension reason on agreeing C07/C17, desired query caveat imported into originals, omitted applicable same-object pairs. No count of all unsupported propositions claimed. |
+| F03 | replacement/handoff | Literal edits destroy table rows/CSS/numbering and sentence joins; “retain” deletes mechanisms/examples; duplicated result/action proposals disagree. Exact byte preservation did not establish usable composed guidance. |
+| F04 | validation coverage | Positive/eight supplied negatives replayed; three additional specimens accepted (replacement agreement, outside-span reverse membership, retention). JSON duplicate keys overwrite. Actual invalid declared WINDOW independently rejected: that guard works and is not counted as a missing property. Human semantic/integration gaps remain separate. |
+| F05 | replacement/handoff | Policy direction useful; dense/prose/stress cases name conditions but do not work a specific task/grouping failure/transition with expected observations. |
+| F06 | receipt/identity | Required parent section receipt missing, guide extents/hash shorthand inconsistent, current return says T02 not executed. Historical registration status was copied as present state. |
+| CDC contribution | reviewer-introduced error | Aggregate read clipping recovered; temporary helper row-shape/path mistakes corrected; own stale arc issued-child summary repaired. These are CDC overhead/errors, not attributed to CC. Exact partial-line/action/task examples clarify the issued contract; no acceptance/scope change. |
+
+These are bundled findings, not atomic defect counts. No corrective-pass
+persistence/recurrence is claimed before Iteration01 executes. Similar mechanisms
+were observed in T01's [initial and correction reviews](../../../project10-design-foundations/arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md):
+wrapped assertion boundaries, incomplete membership checks and handoff consistency.
+Those are cross-run descriptive comparisons, not a numeric recurrence score or
+causal estimate. Different tasks/context/learning/reviewer expectations remain.
+
+### Adherence, effort and artifact utility
+
+- Author preparation supplied actual windows, four cases and one exercised
+  five-dimension record; the query example did not ensure complete wrapped units
+  or usable CSS/table/paragraph edits in the batch. Adherence partial in effect.
+- Inventory-first/read order and representative execution are CC-attested.
+  Positive/five-negative author receipt retained, but complete assertion inventory
+  and consistent method application failed. Inventory and execution partial.
+- Verification design partial: current checker works for its supplied controls
+  but misses promised properties. CDC review considered coverage, meaning,
+  applicability, checks, actions and preservation together; bounded repairs/probes
+  exercised before another pass. Recurrence response not yet triggered by a
+  failed expressly targeted Slice04 correction.
+- Record economy: one current dataset/checker, historical versions pinned in Git,
+  no duplicate predecessor dataset or maintained helper. Literal line inventory
+  and exact target records enabled finding clipped/omitted units and invalid
+  composed edits. Repeated generic warrants/action prose produced review volume
+  without completing the usable design handoff. That is a demonstrated repair
+  need, not measured goal displacement or proof that evidence size is excessive.
+- Protocol body exposure: CC attests not reading it, while host plans exposed
+  registration/checkpoint status; continuing conversation attested. CDC reused/
+  compacted context and knows hypotheses/prior runs. Observable model/settings,
+  tokens, preparation/review/research-upkeep and independent execution intervals
+  remain unknown. Operator-relayed CC28m54s is attestation only.
+- Committed initial output bytes: inventory70279, comparison5650, results73613,
+  handoff37198, notes20082, ledger4745, closing8336; total219903. Initial prompt
+ 10373/preparation13586 from the pre-issue receipt remain unchanged. Physical
+  counts184,27 results/135 dimensions,26 actions are recorded as observations,
+  not normalizers for semantic quality or comparable work/effort.
+- Quality/authority held: source and protected scope preserved, no self-acceptance,
+  original/fidelity/browser/parent gates retained; only integrity accepted.
+  Net benefit/cost and final outcome unknown. The research record itself adds
+  upkeep; elapsed burden and downstream reuse remain unmeasured.
+
+Continue the selected host correction under the existing protocol and full
+criteria. T02's final comparison follows independent closure or a recorded stop;
+all Project13 rows remain open pending their own acceptance. Frozen protocol and
+Case01 remain unchanged; no third treatment assignment authorized.

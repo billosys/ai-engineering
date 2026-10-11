@@ -139,3 +139,12 @@ completed T01 checkpoint370cfc8f. DES-009/bounded DES-002 layout/measure evidenc
 13 complete contexts/184 lines/three files, all nine child rows open. Project13
 T02 registered before issue. Parent criterion text/status,233 cards/eight files,
 R/T/C/L/G, P10-11, Arc03/browser proof and Arc06/package/release gates unchanged.
+
+## Slice04 initial independent review — 2026-10-11
+
+[CDC review](slice04-layout-and-measure-exceptions/cdc-verification.md#initial-independent-review--2026-10-11)
+of742de371 accepts S04-08 only: one done/eight open.
+[Iteration01](slice04-layout-and-measure-exceptions/cc-prompt-iteration01.md)
+repairs F01–F06. Full13/184 context scope,233/eight/16, R/T/C/L/G, P10-11 and
+all parent criterion texts/statuses remain. No slice/arc closure or next advance;
+T02's initial return/observations are recorded without research acceptance.

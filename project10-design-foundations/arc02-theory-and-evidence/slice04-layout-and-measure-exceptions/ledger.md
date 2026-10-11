@@ -1,6 +1,6 @@
 # Arc02 Slice04 Ledger
 
-All nine rows open. CC proposes evidence/dispositions; CDC independently closes
+S04-08 is independently done; eight rows remain open. CC proposes evidence; CDC closes
 rows. Author examples/structural replay do not establish semantic acceptance.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
@@ -12,7 +12,7 @@ rows. Author examples/structural replay do not establish semantic acceptance.
 | S04-05 | Portable layout policy preserves intrinsic-first composition, justified adaptation, scoped measure and verification needs | Review dense/prose/expanded/long-token/changed-font/wide-content cases and contrary interpretations | correctness-grade | DES-009; bounded DES-002; Arc03 | open | **attested** [policy and cases](artifacts/correction-handoff.md#portable-policy) | Independent CDC review pending; browser/AT unrun |
 | S04-06 | Every assessed occurrence has usable exact correction or retention and explicit later owners | Trace results to literal non-overlapping actions; virtual-apply complete file proposals; retain blocked re-entry | serious | Arc02 handoff | open | **attested** [26 exact actions for 27 results](artifacts/correction-handoff.md#exact-proposed-actions) | C09/C10 share one coherent, non-overlapping source replacement; independent CDC review pending; no SOURCE edits |
 | S04-07 | Checks discriminate actual coverage/identity defects and preserve human semantic and historical limits | Replay current checker/meaningful negatives; manual review property map and oracles | correctness-grade | Evidence strength; trial | open | **attested** [inline checker and eight negative controls](artifacts/execution-notes.md#inline-structural-checker-and-discriminating-controls) | Independent CDC review pending; semantic truth is human-only |
-| S04-08 | Seven-output scope and all protected bytes/pins/links/commit integrity are preserved | Exact paths/parent/trailers/protected inputs; LF/EOF/link/fragment and git diff --check | correctness-grade | Preservation | open | **attested** candidate integrity checks and exact-path commit, closing report | Independent CDC review pending |
+| S04-08 | Seven-output scope and all protected bytes/pins/links/commit integrity are preserved | Exact paths/parent/trailers/protected inputs; LF/EOF/link/fragment and git diff --check | correctness-grade | Preservation | done | **reproduced** [CDC initial review](cdc-verification.md#initial-independent-review--2026-10-11), candidate742de371 exact seven-path/parent/tree/trailers/protected bytes/11 links/four fragments/LF/diff | Artifact semantics remain open; subsequent candidate integrity requires fresh affected checks |
 | S04-09 | Return accounts for all rows, real failures, actual denominators and honest parent/trial limits | Nine-row closing walk; artifact inventory and bounded Arc02 bubble-up; utility/cost observation | serious | Slice DoD; trial | open | **attested** [closing report](closing-report.md) | Independent CDC review pending; no parent acceptance |
 
 ## Opening and proof boundaries — 2026-10-11
@@ -29,3 +29,12 @@ primary warrant, portable policy and proposal consistency. An unavailable
 original/capture blocks dependent fidelity. No real browser/AT/package or
 full-card/live/DES/release acceptance is exercised here. Contrary controls must
 use the same actual predicate, not an unrelated hand-written rejection.
+
+## Initial CDC review — 2026-10-11
+
+[Independent review](cdc-verification.md#initial-independent-review--2026-10-11)
+of742de371 accepts S04-08 only; eight other rows remain open against F01–F06.
+Historical CC-attested counts/proposals above describe C, not accepted atomic
+coverage. [Iteration01](cc-prompt-iteration01.md) repairs complete assertions,
+warrants/pairs, exact edits/checks, worked cases and truthful receipts/trial state.
+All nine criterion texts and parent gates retained; no slice closure/advance.

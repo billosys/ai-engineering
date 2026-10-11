@@ -61,7 +61,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | G — global reconciliation and arc handoff | Bounded cross-group/guide, typed-edge, CQ-component and revision/dependency reconciliation slices, followed by formal arc composition. | Complete C/L result set and P10-11; reconcile every unresolved/unclassified assertion. Split by explicit dependency populations, then demonstrate the complete union. |
 
 No fixed total slice count is invented before reading/source readiness establishes
-actual headroom. The issued slice list is Slice01–03 (closed). Before arc
+actual headroom. The issued slice list is Slice01–03 (closed) and Slice04 (open). Before arc
 closure, the expanded roadmap, all issued children and the full R/T/C/L/G
 coverage union must reconcile. Additions/splits/merges/removals remain mapped to
 the original 233 identities; no sampling, quarantine substitute or lost guide
@@ -128,8 +128,9 @@ Operator-approved CDC two-field repair/closure. All nine rows done, I05 unused.
 separates independent evidence from direct self-check/Operator acceptance.
 Slice03 Iteration04 at3817d83c is [accepted and closed](slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11);
 all nine child rows done. T01 checkpoint completed at370cfc8f with inconclusive
-comparative benefit. Current [Slice04 initial assignment](slice04-layout-and-measure-exceptions/cc-prompt.md)
-details the next ready T concern, DES-009/bounded DES-002, all nine rows open.
+comparative benefit. Current [Slice04 Iteration01](slice04-layout-and-measure-exceptions/cc-prompt-iteration01.md)
+repairs F01–F06 from initial742de371: S04-08 done/eight open. DES-009/bounded
+DES-002 full selected scope remains; no child/arc closure.
 T02 registration precedes issue under unchanged protocol; other families/gates
 remain. Arc03 retains accessibility proof and later T retains vi-guarantee review.
 Earlier current-assignment text is historical; all issued prompts are preserved.
@@ -142,6 +143,10 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.17 (2026-10-11): Slice04 initial review accepts S04-08 only and issues
+  consolidated Iteration01; corrected CDC-owned issued-slice summary to include
+  Slice04. All arc criteria/families/readiness/implementation gates retained.
 
 - 1.16 (2026-10-11): Opened Slice04 layout/measure evidence after Slice03 closure
   and T01 checkpoint. All DES-009 navigation locations included at current bounds;

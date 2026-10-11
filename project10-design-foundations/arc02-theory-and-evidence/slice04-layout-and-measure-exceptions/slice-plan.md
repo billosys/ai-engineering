@@ -126,12 +126,24 @@ R/T/C/L/G or queued Arc06 metadata/rendering work.
 Project13 T02 was [registered](../../../project13-collab-refinements/artifacts/experiment01-methodology-pilot/run-register.md#t02-registration--2026-10-11-before-initial-issuance)
 before this initial prompt, after T01 meta-review, under unchanged protocol
 revision2 at23c77653. No research acceptance or success target is inferred.
-Current assignment: [initial CC prompt](cc-prompt.md), seven-path evidence packet.
-Issue commit/blob recorded by CDC before Operator relay. No prior Slice04 handoff.
-Commit exact paths on planning with both required trailers; report candidate
-parent/tree and any receipt-only follow-up separately. Independent review pending.
+## Assignment history
+
+| Assignment | Issue/predecessor | Disposition and reason |
+|---|---|---|
+| [Initial prompt](cc-prompt.md) |2026-10-11; issue db77543df9f6785f9b1889112ac12a79383db400; planning predecessor370cfc8f | Returned as742de371 after receipt-only83b10880; independently reviewed, S04-08 done/eight open. |
+| [Iteration01](cc-prompt-iteration01.md) |2026-10-11; preceding initial prompt; candidate742de371; exact issue is commit containing this handoff | Active CC evidence correction for consolidated F01–F06; complete scope/gates retained. |
+
+Current assignment: [Iteration01](cc-prompt-iteration01.md), seven-path evidence
+correction returned to CDC Sofie via Operator. [Independent review](cdc-verification.md#initial-independent-review--2026-10-11)
+accepts preservation only; eight rows remain open. No slice closure/next advance.
+Commit exact paths with both trailers; report actual issue/candidate/receipt
+identities distinctly. Initial prompt/preparation and prior results remain pinned.
 
 ## Version History
+
+- 1.1 (2026-10-11): Independently reviewed initial742de371; S04-08 done/eight
+  open, consolidated F01–F06 and exercised repairs issued as Iteration01.
+  Selected scope, criteria and parent/readiness/release gates unchanged.
 
 - 1.0 (2026-10-11): Opened the next ready T concern after Slice03 closure and T01
   checkpoint. Complete thirteen-context scope, worked examples and seven outputs;
