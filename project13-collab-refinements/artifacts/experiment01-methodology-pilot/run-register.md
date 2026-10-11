@@ -10,7 +10,7 @@ excluded. Record each entry here before issuing its initial prompt.
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
 | T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Closed after initial + four corrections; checkpoint completed below | First3/9; final9/9 bounded criteria; comparative benefit inconclusive |
-| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue receipt follows | Registered before initial issue; not executed | Not measured |
+| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue `db77543d` | Initial assignment issued; not executed | Not measured |
 
 ## Entry format
 
@@ -497,3 +497,32 @@ registration/initial issue and imposes no new host acceptance gate.
 Pre-issue T02 boundary clarification: W01 expanded78–89 to78–99 for the
 complete primitive table/composition example; final184 lines across13 contexts.
 This is full-context author preparation, not a treatment-driven decomposition.
+
+## T02 issue receipt — 2026-10-11, before Operator relay
+
+- Initial issue `db77543df9f6785f9b1889112ac12a79383db400`, tree `f96b26190b6edb7082ab5fb024877841be433ce7`, direct parent
+  `370cfc8f79cbac56055bef49f1472467b85a2569`. Exact nine-path opening includes
+  prospective registration, four host open/preparation records and four parent
+  pointers. Both trailers verified. This receipt follows issue and does not amend
+  its preserved prompt/preparation or claim CC execution.
+- Prompt Git blob `84b08d225a33a2ef0e20457d088553671efb2f2e`; SHA-256
+  `eb2d69a0cdc23e8efe0ecdf338d447e96450d0eca62bd7b2b0bc20f03098ce88`. Host opening/preparation paths/sizes:
+  - `project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt.md`: 10373 bytes.
+  - `project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/artifacts/preparation-notes.md`: 13586 bytes.
+  - `project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/slice-plan.md`: 8693 bytes.
+  - `project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/ledger.md`: 3769 bytes.
+- Replayed from committed issue bytes: author positive/five invalid records
+  passed/rejected; hypothetical60/120 reproduced;13 contexts/184 lines/three
+  hashes and all bounds match.13 project/eight arc rows unchanged; nine child
+  rows open;17 protected files unchanged. 114 local links/40 fragments
+  resolved; LF/EOF, exact parent/path/trailers and committed diff check passed.
+  SOURCE remains pinned/clean tracked-index; unrelated untracked paths remain.
+- Author checks only. No independent semantic acceptance or CC result; actual
+  preparation effort unknown. Initial prompt/preparation remain immutable after
+  issue. Final comparison follows T02; frozen protocol/Case01 unchanged.
+
+Receipt self-check: three exact research paths; five research criteria/statuses
+unchanged/open;22 local links/five fragments resolve. A whole-host preservation
+helper initially dereferenced CLAUDE.md symlinks instead of comparing their Git
+link blobs and falsely failed. Corrected mode-aware comparison passed all host
+entries; frozen protocol/Case01 unchanged. No host assignment bytes changed.

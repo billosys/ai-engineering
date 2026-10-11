@@ -50,8 +50,8 @@ are follow-up context, not a prospectively assigned treatment run.
   predeclares the intervention, selection, measures, limits and review points.
 - [Run register](artifacts/experiment01-methodology-pilot/run-register.md)
   records eligibility and results. T01 is independently closed; its first checkpoint
-  is complete and comparative benefit is inconclusive. T02 remains unregistered
-  pending normal host readiness.
+  is complete and comparative benefit is inconclusive. T02 is registered and
+  issued for Project10 Arc02/Slice04; CC execution remains pending.
 
 The intervention bundles worked examples, inventory-first analysis, explicit
 verification coverage, comprehensive reviewer checks, a response to recurring
@@ -125,6 +125,10 @@ amendment and a deviation record; do not rescore history silently. No current
 skill/package or repository-wide AGENTS change is authorized by this bootstrap.
 
 ## Version History
+
+- 1.3 (2026-10-11): Prospectively registered and issued T02 for the next ready
+  Project10 layout/measure concern after completed T01 checkpoint; frozen protocol
+  unchanged, execution/research acceptance and final comparison remain pending.
 
 - 1.2 (2026-10-11): Recorded T01 host closure and first meta-review checkpoint;
   mixed/inconclusive results, unchanged protocol and authorized second consecutive
