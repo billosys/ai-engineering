@@ -131,3 +131,11 @@ metadata/implementation/package/release and T01 checkpoint gates remain.
 at3817d83c closes all nine child rows. Bounded token policy/evidence/handoff is
 accepted; all parent criterion texts/statuses remain unchanged. Complete
 R/T/C/L/G, P10-11, corpus/live and later gates remain. T01 checkpoint precedes T02.
+
+## Slice04 opening — 2026-10-11
+
+[Slice04](slice04-layout-and-measure-exceptions/slice-plan.md) opens automatically after independently closed Slice03 and
+completed T01 checkpoint370cfc8f. DES-009/bounded DES-002 layout/measure evidence;
+13 complete contexts/184 lines/three files, all nine child rows open. Project13
+T02 registered before issue. Parent criterion text/status,233 cards/eight files,
+R/T/C/L/G, P10-11, Arc03/browser proof and Arc06/package/release gates unchanged.

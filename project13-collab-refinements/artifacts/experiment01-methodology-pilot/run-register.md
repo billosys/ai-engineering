@@ -2,7 +2,7 @@
 
 Prepared 2026-10-10; T01 independently closed on 2026-10-11; checkpoint below.
 Protocol revision 2's initial zero-run status is historical; this register tracks
-current registrations. T02 remains unregistered.
+current registrations. T02 is prospectively registered below; execution has not begun.
 The next two newly opened Project10 slices are selected by the protocol's
 consecutive-entry rule, not by expected success. Slice02's ongoing correction is
 excluded. Record each entry here before issuing its initial prompt.
@@ -10,7 +10,7 @@ excluded. Record each entry here before issuing its initial prompt.
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
 | T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Closed after initial + four corrections; checkpoint completed below | First3/9; final9/9 bounded criteria; comparative benefit inconclusive |
-| T02 | Following newly opened Project10 slice; ID pending normal readiness | Pending | Not registered | Not measured |
+| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue receipt follows | Registered before initial issue; not executed | Not measured |
 
 ## Entry format
 
@@ -211,7 +211,7 @@ Frozen protocol revision 2 and Case01 are unchanged.
 - Two returned assignments: initial plus one executed correction. No I01
   receipt-only follow-up; Iteration02 issued, not returned. First-review 3/9
   remains historical; current 3/9 retain S03-03/05/08. Six open, no closure or
-  accepted semantic-coverage percentage. T02 remains unregistered.
+  accepted semantic-coverage percentage. T02 is prospectively registered below; execution has not begun.
 - Current 139 inventory rows=18 manifests+121 units (42 token/28 boundary/51 context);
  42 results, 21 actions. Original17/168 windows plus one declared markup extension
   remain. Complete token subjects improve; colour/CSS boundary assertions still
@@ -451,3 +451,49 @@ Capture partial adherence and difficult/blocked outcomes again. Compare after
 T02 before extension; fresh independent/Operator challenge is still required
 before any framework-wide adoption. This checkpoint is completed before T02
 registration/initial issue and imposes no new host acceptance gate.
+
+## T02 registration — 2026-10-11, before initial issuance
+
+- Host: [Arc02/Slice04](../../../project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/slice-plan.md),
+  layout/measure exceptions, evidence-only T family. Normal roadmap order selects
+  DES-009 after token conventions. All audit DES-009 locations are included at
+  verified current SOURCE lines; no easier substitute or treatment-only slice.
+- T01 closure `46e729cd0a48b1860a52e8b1228f73c1eb055ca1`; checkpoint
+  `370cfc8f79cbac56055bef49f1472467b85a2569` precedes this entry. Comparative
+  benefit remains inconclusive. Protocol revision2 at
+  `23c77653feda2fafd88efce01e226ee1a35b8cff` is unchanged; no third run.
+- SOURCE `dffa504e851b03b8e4746f1941068e4cc850b612`; planning predecessor
+  `370cfc8f79cbac56055bef49f1472467b85a2569`; method759ce2dd, audit795ac75b.
+  Initial prompt: `project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt.md`.
+  This registration is written before that file; issue commit/blob/sizes follow
+  before Operator relay. No CC result is prefilled.
+- Population:13 complete contexts/184 lines in three live files. Claim denominator
+  unknown until atomic inventory; all units become assessed layout assertions,
+  explicit owned substantive boundaries or context/markup. All remaining T,
+  R/C/L/G,233 cards/eight live files and16 findings remain. Browser/accessibility
+  implementation and the vi guarantee remain Arc03/later T work.
+- Inputs: Every Layout Axioms, CSS Values4, Containment3, Media Queries5 and
+  WCAG2.2 primary sections in host preparation. Readable current pages are
+  technical observations, not immutable historical capture/fidelity evidence;
+  missing originals/lineage retain P10-11. No acquisition/live mutation.
+- Outputs: seven CC host paths (inventory, source comparison, claim results,
+  correction handoff, notes, ledger, closing report). CDC preparation protected.
+  Git/read-only browsing/inline standard-library checks; no maintained helper,
+  package build or browser conformance test.
+- Contributors: CDC Sofie, separate CC via Operator, no CRC. Models/settings and
+  CC reuse/exposure unknown; CDC reused/compacted context and knows prior cases/
+  protocol. No experiment-directed model change. CC reports observed settings/
+  exposure; missing observations remain unknown.
+- [Preparation](../../../project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/artifacts/preparation-notes.md)
+  contains four difficult cases, one five-dimension example and positive/negative
+  checks. Ledger distinguishes mechanical and human oracles. Preparation elapsed
+  time/tokens unknown. Author preparation/verification design supplied as
+  self-attested; inventory, CC, review, recurrence/economy outcomes await work.
+- Returns record actual utility/benefit/distraction/upkeep/unknown costs in host
+  records and this register, not a parallel acceptance tree. Necessary future
+  scope/method changes are deviations. Comparison follows T02 or recorded stop;
+  Project13 research acceptance remains independently pending.
+
+Pre-issue T02 boundary clarification: W01 expanded78–89 to78–99 for the
+complete primitive table/composition example; final184 lines across13 contexts.
+This is full-context author preparation, not a treatment-driven decomposition.

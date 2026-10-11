@@ -126,8 +126,8 @@ Queued Arc06 remains unchanged. Arc02
 is independently closed for bounded token-system conventions (DES-008 and
 bounded DES-002) at3817d83c; [final verification](arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11)
 records all nine child rows done. Initial and four correction assignments are
-preserved; Project13 T01 was prospectively registered and now requires its
-meta-review before T02. The earlier current Iteration04 pending state is
+preserved; Project13 T01 checkpoint is complete at370cfc8f (comparative benefit
+inconclusive). T02 is registered before the next ready Slice04 initial issue. The earlier current Iteration04 pending state is
 superseded by this acceptance; no source implementation is accepted.
 Complete R/T/C/L/G
 and original-source/full-corpus/release gates remain.
@@ -282,7 +282,17 @@ retains the shared audit. At close, Project11 receives the actual accepted
 package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
+Arc02 [Slice04](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/slice-plan.md)
+is the current evidence assignment: layout/measure exceptions under DES-009
+and bounded DES-002,13 contexts/184 lines/three files. All nine child rows open;
+source and all parent criteria remain unchanged. Arc03 retains actual
+accessibility/typesetting proof; remaining T and complete R/C/L/G stay assigned.
+
 ## Version History
+
+- 1.36 (2026-10-11): Opened next ready Arc02/Slice04 under Expedited Mode after
+  Slice03 closure and completed T01 checkpoint; prospectively registered T02.
+  Complete bounded context/semantic contract; all parent/input/release gates retained.
 
 - 1.35 (2026-10-11): Arc02/Slice03 Iteration04 at3817d83c independently accepted;
   all nine child rows done and slice closed. T01 checkpoint precedes next trial
