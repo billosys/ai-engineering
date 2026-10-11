@@ -75,3 +75,19 @@ rejections are retained. Residual boundary, proposition/evidence, coherent-edit,
 coverage/bounds/reference and receipt defects are assigned to
 [Iteration02](cc-prompt-iteration02.md). The prior CC supplements are historical
 proposals; no criterion text/status or parent gate is changed.
+
+## CC Iteration02 proposed evidence supplement — 2026-10-11
+
+This append-only supplement does not change criterion wording or CDC status. S03-03/05/08 remain done; the other six rows remain open pending independent CDC review of Iteration02 evidence.
+
+| Criterion | CC evidence proposed | Strength and limit |
+|---|---|---|
+| S03-01 | [Execution notes](artifacts/execution-notes.md) | Current assignment identity, accurate reads/extents and a source-cited contract readback; no semantic acceptance. |
+| S03-02 | [Occurrence inventory](artifacts/occurrence-inventory.jsonl) and [handoff](artifacts/correction-handoff.md) | 42 assertions, 21 owned boundaries, 51 context/markup units over the unchanged 17/168 lines plus declared extension; complete old-ID lineage and explicit current-ID supersession maps. Human atomization review remains required. |
+| S03-03 | [Source comparison](artifacts/source-comparison.md) | Accepted register is byte-preserved. Existing bounded DTCG/Utopia observations and Material 3/historical Polaris access gaps remain. |
+| S03-04 | [Claim results](artifacts/claim-results.jsonl) | 42 exact local subjects, distinct external passage observations where applicable, warrants and five separate dimension results; no original-fidelity, graph or CQ acceptance. |
+| S03-05 | [Source comparison](artifacts/source-comparison.md) and [handoff](artifacts/correction-handoff.md) | Accepted policy facts and evidence boundaries are unchanged; no new universal architecture requirement. |
+| S03-06 | [Correction handoff](artifacts/correction-handoff.md) | 21 exact actions map all 42 subjects once; all joins virtually apply without overlap, with retained target boundaries and owners explicit. No SOURCE edit. |
+| S03-07 | [Execution notes](artifacts/execution-notes.md) | One current inline validator accepts the positive packet and rejects 20 historical/current invalid specimens through the same function; semantic support/applicability remains human-reviewed. |
+| S03-08 | [Execution notes](artifacts/execution-notes.md) | Proposed exact-path scope and protected-byte evidence for independent tree verification; no CC acceptance. |
+| S03-09 | [Closing report](closing-report.md) | Current counts, nine unchanged row states, attempts/recoveries, owner re-entry and unknown utility/cost are recorded; no efficiency claim. |

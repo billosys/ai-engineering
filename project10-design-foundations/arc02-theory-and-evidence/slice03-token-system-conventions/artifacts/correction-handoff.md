@@ -244,7 +244,7 @@ Rationale: The named trio remains unestablished; Fluent 2 does not decide it.
 Owners: Design guide maintainer; CDC re-entry for Material 3 and historical Polaris evidence.
 
 
-## ACT-12 — knowledge/design/guides/design.md:74–78
+## ACT-12 — knowledge/design/guides/design.md:74–80
 
 Units: A042, A043
 Boundary units: A044, A045 — preserve typography and colour propositions for T/L review.
@@ -357,13 +357,15 @@ Units: A063, A064
 
 Old source: SOURCE `dffa504e851b03b8e4746f1941068e4cc850b612`; SHA-256 `e4953fd1452102c98df6f0fcf33bc17bd3732f011180475daa8fd256e70e687b`; inclusive lines `329–332`.
 
-Complete old target:
+Complete old target (exact action span, source lines 329–332, joined literal offsets `[0,267]`):
 ```text
 This is also why the convergence of Material Design, Carbon, and Polaris
 is significant. These systems were built by teams with different
 aesthetic preferences, different brand requirements, different technical
-constraints. What they share is not style but structure. The structure
+constraints. What they share is not style but structure.
 ```
+
+Retained adjacent source (outside ACT-16, unchanged and still owned by T/L unit A065 and boundary unit A066): line 332 offset 267 begins ` The structure`, followed by source lines 333–334. It remains outside this action target.
 
 Proposed replacement (verbatim):
 ```text
@@ -401,7 +403,7 @@ Rationale: DTCG defines file format and typing, not cross-platform semantic equi
 Owners: Design guide maintainer; CDC reviews attribution; T/source owner validates any future export.
 
 
-## ACT-18 — knowledge/design/guides/foundations-of-design.md:107–111
+## ACT-18 — knowledge/design/guides/foundations-of-design.md:106–111
 
 Units: A081, A082
 Boundary unit: A080 — retain the documentation-category statement for L/Arc04 review.
@@ -447,6 +449,19 @@ Proposed replacement (verbatim):
 Rationale: The prior heading asserts convergence before the section supplies evidence; the replacement names the subject without implying a population result.
 
 Owners: Design guide maintainer; CDC reviews attribution; T/source owner validates any future export.
+
+
+## Complete boundary composition (no source edits)
+
+The inventory’s prior line fragments are superseded by three complete, joined boundary subjects. These are retained for their existing T/L and L/Arc04 owners; CC makes no correctness or fidelity claim for them.
+
+| New unit | Exact pinned source span and literal offsets | Supersedes current IDs | Preserved predecessor lineage | Owner |
+|---|---|---|---|---|
+| B002 | `foundations-of-design.md:470–471`, `[0,124]`; complete colour-format/trend sentence ending `token definition.` | A090, A091 | U107, U108 | T/L colour-format and trend evidence |
+| B003 | `layout.md:124–128`, `[0,302]`; first complete global/local styling assertion ending `provide targeted overrides.` | A112–A116 | U136–U140 | L/Arc04 CSS cascade; token roles are separate |
+| B004 | `layout.md:128–131`, `[27,253]`; complete CSS cascade assertion beginning `The insight is that CSS\'s cascade is not a` | A116–A119 | U140–U143 | L/Arc04 CSS cascade; token roles are separate |
+
+A116 and U140 map to both B003 and B004 because source line 128 contains the end of the first assertion and the beginning of the next. No selected source window or source line is removed. No inherited fragment ID is used as an ambiguous current unit ID.
 
 
 ## ACT-20 — knowledge/design/guides/foundations-of-design.md:471–475
