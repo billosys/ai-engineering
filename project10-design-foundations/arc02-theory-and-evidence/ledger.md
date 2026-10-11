@@ -115,3 +115,12 @@ repairs A055's two dimensions, a current intake hash and one count sentence.
 All parent criterion texts/statuses, full R/T/C/L/G, source/fidelity and later
 implementation/metadata/package/release gates remain unchanged. T01 continues;
 no child/arc closure or T02 handoff.
+
+## Arc02/Slice03 Iteration03 review — 2026-10-11
+
+[CDC review](slice03-token-system-conventions/cdc-verification.md#iteration03-independent-review--2026-10-11)
+ofc51a21ad accepts S03-01/04: eight child rows done; S03-09 open.
+[Iteration04](slice03-token-system-conventions/cc-prompt-iteration04.md)
+repairs current report assignment/scope/parent identity only. All parent row
+criteria/statuses, substantive artifacts, full families/populations, P10-11,
+metadata/implementation/package/release and T01 checkpoint gates remain.

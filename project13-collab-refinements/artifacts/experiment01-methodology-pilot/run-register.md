@@ -318,3 +318,45 @@ byte-preserved; no trial or framework amendment.
   Adherence improves inventory/verification/handoff; semantic execution is partial
   at A055. Reviewer method/recurrence response used; record economy remains mixed.
   No early stop, scope reduction or prospective T02 selection yet.
+
+## T01 Iteration03 review — 2026-10-11
+
+Host [independent review](../../../project10-design-foundations/arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration03-independent-review--2026-10-11)
+of `c51a21ad4f3258246740cb904f66aab2c6a1bf33` is authoritative; direct parent/issue
+`cce88f57ecbd747b329384fd6d80ba64ae2d528c`. Frozen protocol revision2/Case01 are unchanged.
+
+- Four assignments returned: initial plus three executed corrections; no new
+  receipt-only follow-up. First3/9 remains historical; now8/9 done, S03-09 alone
+  open. Reporting-only Iteration04 issued, not executed; five-correction cap
+  unchanged. No T01 stop/closure or T02 registration; checkpoint still due.
+- F02 A055 wrong-subject persistence resolves: both repaired dimensions now
+  address primitive-value propagation and its unstated conditions. Independent
+  primitive witness reproduces button=new/badge=new/fixed=old. All other41 result
+  lines and remaining A055 fields are identical. Current receipt hash and
+  ten-to-three/net-seven count repairs resolve. Complete inventory/actions and
+  source register retain independent acceptance.
+- New receipt/identity discovery: current report still names I02/7745b3d4 and
+  six paths at its opening; its current I03 section wrongly calls c2f36b62 the
+  direct parent. Git establishes I3 as direct parent and four paths. This is
+  recurring current/historical identity mixing, not failure of A055 or a newly
+  imposed semantic rule. Earlier CDC review also missed the copied opening.
+- Positive and20 supplied invalids independently replay from committed notes;
+  checker unchanged. No new mechanical gap in assigned properties. Four-path,
+  parent/trailer, protected-byte,58-link/11-fragment, LF/EOF and diff checks pass.
+  Coverage132/114/42/21/51 and17/168+one extension/145 lineage remain unchanged.
+- Reviewer contribution: a hash-preservation assertion used a wrong cell
+  delimiter and was corrected after literal diff inspection; a wrong-cwd read
+  was rerun; clipped projections recovered. These are reviewer errors, not CC
+  execution defects. No late population/schema/acceptance change.
+- Utility: the semantic dependency repair completes the bounded result/handoff
+  basis; the current return's copied metadata still needs reconciliation for
+  safe downstream use. A reporting-only pass preserves useful substantive work.
+  Repeated receipt/report and planning/trial upkeep is observable maintenance;
+  displacement of other useful work and net effort remain unknown. No causal,
+  efficiency or general framework conclusion.
+- Operator-relayed CC4m39s is attested duration. CDC preparation/review/context/
+  token and Project13 upkeep cost remain unknown. Intervention adherence retains
+  demonstrated source/recurrence methods and verification; reporting record
+  economy remains mixed. Authority/scope/input gates hold; conditions unchanged.
+
+C3 seven-output bytes: artifacts/occurrence-inventory.jsonl=79576, artifacts/source-comparison.md=7704, artifacts/claim-results.jsonl=147947, artifacts/correction-handoff.md=26350, artifacts/execution-notes.md=49322, ledger.md=15636, closing-report.md=11589; total 338124. These are payload measures, not quality or time estimates.

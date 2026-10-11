@@ -136,15 +136,15 @@ framework claim is predetermined.
 | [cc-prompt.md](cc-prompt.md) — initial | 2026-10-10 | Slice02 closed; next ready token concern, primary technical evidence and demonstrated method | Returned; initial CDC review accepts three rows, six remain open |
 | [cc-prompt-iteration01.md](cc-prompt-iteration01.md) — Iteration01 | 2026-10-10 | Return `20852472` / receipt `2eee292c`; F01–05 complete assertions, applicable evidence, usable edits, checks and receipts | Returned; CDC retains three done/six open; residual F01–05 |
 | [cc-prompt-iteration02.md](cc-prompt-iteration02.md) — Iteration02 | 2026-10-10 | Return578e68f8; residual F01–05 with diagnosed method and bounded repair examples | Returned; CDC six done/three open; small residual F02/F05 |
-| [cc-prompt-iteration03.md](cc-prompt-iteration03.md) — Iteration03 | 2026-10-11 | Returnc2f36b62; residual A055 dimension mismatch, current receipt hash and count sentence | Active |
+| [cc-prompt-iteration03.md](cc-prompt-iteration03.md) — Iteration03 | 2026-10-11 | Returnc2f36b62; residual A055 dimension mismatch, current receipt hash and count sentence | Returned; CDC eight done/one reporting row open |
+| [cc-prompt-iteration04.md](cc-prompt-iteration04.md) — Iteration04 | 2026-10-11 | Returnc51a21ad; conflicting current report assignment/issue, path count and direct parent | Active |
 
-Current assignment is Iteration03; its issuing revision is the commit introducing
-that prompt. [Current CDC review](cdc-verification.md#iteration02-independent-review--2026-10-11) accepts six rows;
-S03-01/04/09 remain open. Original prompt/preparation and historical returns remain
-pinned. The initial seven-output family remains; Iteration03 permits four
-correction paths and protects the accepted inventory/register/handoff/checker.
-Ledger evidence-only authority preserves six CDC-done and three open states.
-Five-iteration limits remain unchanged; two corrective passes have returned.
+Current assignment is Iteration04; its issue is the commit introducing that prompt.
+[Current review](cdc-verification.md#iteration03-independent-review--2026-10-11) accepts eight rows; only S03-09
+remains open. This reporting-only pass permits closing-report.md, concise notes
+append and an optional ledger evidence supplement. All substantive artifacts,
+checker, criterion texts and eight done statuses are protected. Initial scope
+and independent gates remain. Three corrections returned; fourth issued.
 
 Author readiness: full selected context/result review, primary reinspections,
 actual printed-checker false-pass probes and a worked multiline repair precede
@@ -179,7 +179,23 @@ oracle. Author-readiness/intake and preservation guides were applied; no contrac
 population, architecture or acceptance change. Third correction issued, budget
 unchanged; no T01 checkpoint or next slice before this slice's gate.
 
+## Iteration04 author readiness
+
+CDC inspected the full current report, actual parent/tree/path queries and the
+four-path issued contract before authoring. The review demonstrates C3's exact
+Git-derived tuple and distinguishes issue/direct parent from prior substantive
+candidate. Only current reporting needs repair; earlier data/actions/checker
+are unchanged and accepted. A coherent current report may reference prior returns
+by Git pin instead of copying contradictory current headers. Fresh metadata,
+links and preservation checks suffice; do not repeat semantic/numerical/checker
+work merely for this prose change. Default independence and trial gates remain.
+
 ## Version History
+
+- 1.4 (2026-10-11): Accepted c51a21ad A055/intake repairs; eight done, S03-09 open.
+  Issued reporting-only Iteration04 for current assignment/scope/parent identity;
+  all substantive evidence and scope retained.
+
 
 - 1.3 (2026-10-11): Reviewedc2f36b62; accepted S03-02/06/07, retained03/05/08.
   Issued four-path Iteration03 for A055 dimensions and two reporting repairs;

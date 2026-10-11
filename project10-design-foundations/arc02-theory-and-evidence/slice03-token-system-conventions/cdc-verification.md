@@ -1,7 +1,7 @@
 # CDC verification — Arc02/Slice03
 
-Current: [Iteration02 review](#iteration02-independent-review--2026-10-11);
-six rows done; S03-01/04/09 open. [Iteration03](cc-prompt-iteration03.md) is assigned.
+Current: [Iteration03 review](#iteration03-independent-review--2026-10-11);
+eight rows done; S03-09 open. [Iteration04](cc-prompt-iteration04.md) is assigned.
 Earlier review/assignment statements below are historical.
 
 ## Initial independent review — 2026-10-10
@@ -766,3 +766,99 @@ assignment agrees across the plans, ledger, review and prompt. SOURCE pin and
 tracked/index state are unchanged. Checks apply to this planning handoff,
 not to implementation, slice closure or higher-scale acceptance. The handoff
 commit is the path-specific commit introducing cc-prompt-iteration03.md.
+
+## Iteration03 independent review — 2026-10-11
+
+CDC Sofie independently reviewed candidate `c51a21ad4f3258246740cb904f66aab2c6a1bf33`,
+parent/issue `cce88f57ecbd747b329384fd6d80ba64ae2d528c`, tree
+`a1c0d6f2937aa538b130568f11f3e2661f908387`. SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`. Default CDC + CC and Expedited Mode
+remain. **Eight rows done; S03-09 alone remains open.** S03-01/04 are newly
+accepted; the six earlier done dispositions retain applicable evidence.
+
+### Review and reproduced evidence
+
+Loaded current project/arc plans and ledgers, full Slice03 plan, Iteration03
+prompt, current closing report and the new execution-note section. The changed
+A055 object was inspected in full with the pinned design158–180 passage,
+warrant and retained ACT-14. Compared all42 committed result lines againstc2f36b62:
+only A055 differs; only correctness/scope_attribution dimensions within it differ.
+The other41 lines and remaining nested A055 fields are identical.
+
+- **S03-01:** the current receipt now reproduces the pinned137-line PLANNING
+  AGENTS.md SHA-256
+  `c0d058b394f2c82e96a05d66413b89e81fbf345df19017766e3ebfab40b2de7c`.
+  All earlier note bytes are preserved except that current occurrence and
+  separating blank lines. The older historical truncated receipt is unchanged.
+  Current intake/readback reflects the bounded assignment. Receipt identity is
+  reproduced; CC reading/comprehension is not inferred from a hash.
+- **S03-04:** correctness and scope now concern the actual primitive-value
+  assertion, retained references, resolution and update conditions. Neither
+  substitutes a changed role or site set. CDC independently exercised the
+  dependency witness: changing primitive yields button=new, badge=new, fixed=old.
+  The original categorical wording omits those conditions; the repaired two
+  dimensions agree with the retained warrant/action. This is a dependency
+  illustration, not an export/runtime or original-fidelity result. Retained
+  other41 assessments and other A055 fields remain applicable.
+- **S03-02/03/05/06:** inventory, source comparison, handoff and preparation are
+  byte-identical toc2f36b62. Accepted complete boundaries, lineage, primary-source
+  scope, portable policy and21 action joins remain applicable. No fresh external
+  acquisition or repeated whole-packet semantic review is claimed.
+- **S03-07:** the single Python fence is byte-identical. Extracted it from C3's
+  committed notes to a temporary file and ran from the slice directory: exit0,
+  positive ACCEPTED and20/20 supplied negatives rejected through the common
+  predicate. The missing-source probe emits expected Git stderr. Mechanical
+  acceptance does not resolve semantic reporting contradictions.
+- **S03-08:** independently verified exact four changed paths, direct parent,
+  both trailers, protected artifacts/prompts/plans/parents/Project13,58 local
+  links and11 fragments, LF/final newlines and candidate diff --check. Main
+  tracked/index state remains clean at the SOURCE pin. Unrelated planning
+  Project12 and source knowledge/lfe/ remain untouched.
+
+Ten old units becoming three (net minus seven) is now accurate. All114 units,
+132 records,42 results,21 boundaries,51 context units and21 actions remain.
+Reviewer attempts: one preservation assertion used the wrong hash-cell delimiter;
+inspecting the actual diff corrected it, confirming only the current occurrence
+changed. One read used the source cwd for planning paths and was rerun in
+PLANNING. Large outputs clipped portions; smaller explicit projections/ranges
+recovered required changed material. These are CDC errors, not CC defects.
+
+### S03-09 residual — current assignment, path count and direct parent disagree
+
+The report's opening identifies `cc-prompt-iteration02.md` and issue7745b3d4,
+yet labels itself Iteration03 and says **six** paths. Its current Iteration03
+section says the candidate is **directly based onc2f36b62**. Actual committed
+history shows C3 is directly based onI3 `cce88f57ecbd747b329384fd6d80ba64ae2d528c`;
+c2f36b62 is the prior substantive candidate, not that direct parent. The correct
+four-path statement later in the report does not reconcile its current opening.
+
+Iteration03's explicit Return and four-path contract require an accurate current
+assignment/issue/candidate and scope. This is receipt/identity recurrence in the
+current report, newly detected at these fields; it is not failure of the repaired
+A055 or a new semantic requirement. CDC also did not flag the copied opening
+in the earlier review. All substantive evidence is accepted/retained; no bulk
+work is needed. [Iteration04](cc-prompt-iteration04.md) is a reporting-only
+repair, with a demonstrated Git-derived identity tuple and a coherent current
+report referencing historical versions by pin. No new validator or semantic pass.
+
+### Nine-row independent disposition
+
+| Row | CDC status | Evidence and applicability |
+|---|---|---|
+| S03-01 | done | Reproduced corrected current receipt; bounded intake/readback reconciled; historical receipt preserved. |
+| S03-02 | done | Retained independently accepted unchanged complete inventory/boundaries/lineage. |
+| S03-03 | done | Retained unchanged bounded primary register and access/fidelity limits. |
+| S03-04 | done | Literal/warrant/action comparison and independently exercised primitive witness accept repaired dimensions; other41 retained. |
+| S03-05 | done | Retained unchanged portable architecture/format/theme/exception distinctions. |
+| S03-06 | done | Retained unchanged21 action joins,42 memberships and virtual composition. |
+| S03-07 | done | Fresh committed positive/20-negative replay; unchanged checker and its semantic limits. |
+| S03-08 | done | Fresh four-path/parent/trailer/protected-byte/link/LF/EOF/diff checks. |
+| S03-09 | open | Counts corrected; current report still conflicts with actual assignment/issue/scope/direct parent. |
+
+Four assignments returned: initial plus three executed corrections. Iteration04
+is issued, not yet executed; five-correction cap unchanged. The report can be
+reconciled without another data/checker change. No slice/arc closure, T01 stop or
+T02 issue. Meta-review remains due at closure or a recorded blocked/escalation
+stop. Full R/T/C/L/G,233 cards/eight live files, P10-11 and later gates remain.
+
+CDC handoff checks: exact nine planning paths; unchanged13 project and8 arc rows; unchanged nine child criteria with8 done/1 open;181 local links and53 fragments resolved; prior review body, CC artifacts, issued prompts, frozen protocol/Case01 and SOURCE preserved; LF/EOF and diff --check passed. This validates the reviewer/assignment packet, not S03-09 completion.
