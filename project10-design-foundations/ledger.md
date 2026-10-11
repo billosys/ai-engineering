@@ -162,3 +162,13 @@ uses bounded demonstrated repairs for residual F01–05. All parent criterion
 texts/statuses, complete R/T/C/L/G, source/fidelity and later implementation/
 metadata/package/release gates remain unchanged. T01 persistence is recorded;
 no slice/arc closure or T02 handoff.
+
+## Arc02/Slice03 Iteration02 review — 2026-10-11
+
+[CDC review](arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration02-independent-review--2026-10-11)
+atc2f36b62 accepts S03-02/06/07 and retains03/05/08: six done,01/04/09 open.
+[Iteration03](arc02-theory-and-evidence/slice03-token-system-conventions/cc-prompt-iteration03.md)
+repairs A055's two dimensions, a current intake hash and one count sentence.
+All parent criterion texts/statuses, full R/T/C/L/G, source/fidelity and later
+implementation/metadata/package/release gates remain unchanged. T01 continues;
+no child/arc closure or T02 handoff.

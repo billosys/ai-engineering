@@ -1,7 +1,7 @@
 # CDC verification — Arc02/Slice03
 
-Current: [Iteration01 review](#iteration01-independent-review--2026-10-10);
-S03-03/05/08 done, six open. [Iteration02](cc-prompt-iteration02.md) is assigned.
+Current: [Iteration02 review](#iteration02-independent-review--2026-10-11);
+six rows done; S03-01/04/09 open. [Iteration03](cc-prompt-iteration03.md) is assigned.
 Earlier review/assignment statements below are historical.
 
 ## Initial independent review — 2026-10-10
@@ -586,3 +586,183 @@ All138 local links and42 target fragments, final LF and git diff --check pass.
 Exact paths/direct parent/both trailers are checked again from the commit.
 SOURCE remains pinned with no tracked/index changes. No source/package gate
 is claimed by these planning checks.
+
+## Iteration02 independent review — 2026-10-11
+
+CDC Sofie independently reviewed CC candidate
+`c2f36b623ca988f5eb36d2125f09cd7bcd3531d4`, direct child of issuing commit
+`7745b3d4b7e1ab8b3233eefacd9cf4e339a90681`. SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`. Default CDC + CC and Expedited Mode
+remain; no source implementation or Operator acceptance is inferred.
+
+**Six rows done; S03-01/04/09 open.** Newly accepted S03-02/06/07 join retained
+S03-03/05/08. The remaining repairs are one assessment's two dimensions, one
+current receipt hash and one count sentence. [Iteration03](cc-prompt-iteration03.md)
+is the third issued correction; two corrective assignments have returned.
+No slice/arc closure or T02 issuance. Earlier direct-repair approval belonged to
+Slice02; CDC has not edited or self-accepted these CC artifacts.
+
+### Review coverage and retained evidence
+
+Loaded current governing project/arc/slice plans and ledgers, Iteration02 prompt,
+all 304 lines of current execution notes, complete source comparison/handoff/
+closing report, all 132 inventory rows and all 42 result subjects, observations,
+warrants, dimension reasons/references and dispositions. Inspected all 13 distinct
+embedded external evidence objects and checked every pinned local observation.
+Full inventory literal/classification/owner projection covers the selected
+17/168 source lines plus the declared colour249 extension; the complete boundary
+joins were checked against Git bytes. Query coverage is distinct from full prose
+reading. Full design SKILL.md (368 lines), local design165–173 context and focused
+planning/verification/intake/author-readiness guidance were loaded. Prior source
+preparation and semantic-method evidence are retained under their accepted pins;
+this is not a claim of fresh historical-source acquisition or every earlier read.
+Tool truncations were recovered in smaller projections/ranges; no clipped content
+is claimed as fully loaded.
+
+- S03-03: accepted register is byte-identical to its predecessor. No new source
+  acquisition or changed comparison fact; retained independent evidence applies.
+  Fresh official checks of [Material Web Reference/System/Component](https://material-web.dev/theming/material-theming/),
+  [Carbon anatomy/definitions/themes](https://www.carbondesignsystem.com/building-blocks/foundations/color/overview)
+  and [DTCG 2025.10 Abstract/Status/type headings/typography](https://www.designtokens.org/tr/2025.10/format/)
+  confirm bounded facts used here. These are live observations dated 2026-10-11,
+  with no immutable capture hash; prior Fluent/Polaris/Shopify/Utopia evidence
+  retains its original observation date and limits. Access gaps are retained,
+  not represented as freshly retried or resolved.
+- S03-05: portable policy remains values, contextual role aliases, optional
+  component bindings and conditional resolution/consumer coverage. Complete
+  action review retains its usability and exceptions; no universal layer mandate,
+  export validation, brand default or fidelity guarantee is accepted.
+- S03-08: exact six-path return, required trailers, protected inputs, all local
+  links/fragments, EOF/LF and whitespace were freshly checked, described below.
+  Earlier preservation acceptance alone was not copied onto changed files.
+
+### Reproduced and reconciled checks
+
+1. Exact candidate parent and six changed paths match the issued allowlist.
+   Source comparison, preparation, all issued prompts, slice plan and previous
+   CDC record are byte-identical to the issue. The exact changed-path set also
+   preserves all parents, Project13/frozen protocol/Case01 and unrelated tracked
+   inputs. Both co-author trailers are present. Main tracked/index state is
+   clean at the source pin; planning's unrelated project12-chcd-protocol/ and
+   main's knowledge/lfe/ remain untouched.
+2. Extracted the single Python fence from committed execution notes into a
+   temporary file and ran it from the slice directory. Exit 0: positive ACCEPTED;
+   all 20 supplied invalid specimens reject through the same validate function.
+   The deliberately missing source path emits expected Git stderr. Inspected
+   source-bound checks before slicing, independently declared line coverage,
+   evidence-ID uniqueness, local joins and action virtual composition. This
+   resolves F04's five prior false-pass variants; semantic truth remains human
+   judgment. No additional mechanical gap was found in the assigned properties.
+3. 132 JSONL rows = 18 manifests +114 units: 42 token,21 boundary,51 context.
+   Every old U001–U145 lineage identity remains, with explicit U145 checklist
+   retirement. B002–B004 are complete joined assertions with retained owners.
+   Ten old current units (A090/A091 and A112–A119) become three; net reduction
+   seven. A116/U140 legitimately maps to both layout sentences at line128.
+4. Independently parsed all 21 old blocks/hash/line/character offsets, converted
+   them to absolute source positions and composed replacements in memory.
+   Targets are non-overlapping and all 42 result IDs have one authoritative
+   action. ACT-12/18 headings now match ranges74–80/106–111. ACT-16 offsets[0,267]
+   preserve ` The structure` and lines333–334; the composed sentence remains
+   `The structure
+is dictated by human perception`. Reviewed every replacement
+   and retained boundary, table/heading/code form. No SOURCE writes.
+5. Complete 42-result review confirms repaired A006/A048/A085 subjects and
+   separated pinned local versus external observations. DTCG composite/status,
+   configurable Utopia and local consistency pair retain their bounds. Original
+   fidelity and graph/CQ are unassessed throughout. A055's warrant and ACT-14 are
+   correct, but its correctness/scope dimensions still answer a different object.
+6. Current receipt pins/counts for governing plans/prompt/verification reproduce:
+   412/164 project plan/ledger,195/107 arc plan/ledger,178/77 slice plan/ledger,
+   133-line prompt and588-line review at7745b3d4. Complete fresh PM89–188 extent
+   and exact installed paths are recorded; older incompleteness stays historical.
+   A current planning AGENTS.md hash is truncated to63 characters, detailed below.
+   Hash identity is reproduced; reading extent and comprehension remain attestation.
+7. Candidate prose: 46 local links and10 fragments resolve (code fences skipped).
+   All six outputs have LF/final newline; candidate git diff --check passes.
+   No semantic-card, package, browser, accessibility, original-fidelity or higher
+   composition gate was run or claimed.
+
+### Residual findings and demonstrated repair
+
+**F02 — S03-04: A055 still uses the wrong proposition in two dimensions.**
+Its literal is `Changing a primitive\'s value
+propagates automatically.` at
+design.md169–170. Its correctness reason discusses the **changed role** and
+**complete site coverage**; scope says the excerpt names a local intended mapping.
+This assertion names neither a changed role nor sites. Those reasons/outcomes
+survive from578e68f8 (the irrelevant DTCG reference was removed). Its correct
+warrant already limits propagation to references resolving to the changed value;
+ACT-14 is also correct. Apply that object-specific distinction to correctness
+and scope, preserving the literal, local observation, warrant, action and the
+other 41 records. This is persistence of the targeted wrong-subject mechanism,
+not a new population or requirement. Removing an irrelevant citation did not
+repair the residual shared explanation.
+
+Author-worked illustration, actually executed before issue: a primitive is
+referenced through a role by button, directly by badge, and copied as a concrete
+value by fixed. Change only the primitive and re-resolve:
+
+| Consumer | Reference path | Before | After |
+|---|---|---|---|
+| button | role → primitive | old | new |
+| badge | primitive directly | old | new |
+| fixed | own concrete value | old | old |
+
+The role-only prediction misses badge; an every-consumer prediction wrongly
+changes fixed. Both were rejected against the resolved result. This is an
+illustrative dependency calculation, not an exported DTCG file, original-source
+fidelity or validation of a real runtime's update mechanism. Human comparison
+of literal/observation/warrant/dimension remains the semantic check; no keyword
+truth oracle is required. Correctness should concern conditional primitive-value
+propagation; scope should describe the original unqualified consequence and its
+unstated resolver/consumer conditions, without introducing sites or a changed role.
+
+**F05 — S03-01: current receipt hash loses its final character.**
+Execution notes current Iteration02 table at line271 records PLANNING AGENTS.md
+as `c0d058b394f2c82e96a05d66413b89e81fbf345df19017766e3ebfab40b2de7`.
+Pinned7745b3d4 bytes are137 lines with SHA-256
+`c0d058b394f2c82e96a05d66413b89e81fbf345df19017766e3ebfab40b2de7c`.
+Correct the current receipt or append an explicit current correction; preserve
+older historical receipts. This is a newly detected manifestation; the reviewer
+also missed it previously. No reading-comprehension conclusion follows from it.
+
+**F05 — S03-09: net reduction is described as the input population.**
+The closing report says seven fragments were recomposed into three units.
+Actually ten old current units became three (net minus seven). Current114/132/
+42/21 counts and mappings are correct; clarify that sentence only. This is a
+reporting correction, not a new inventory task or defect in accepted coverage.
+
+### Nine-row independent disposition
+
+| Row | CDC status | Evidence and applicability |
+|---|---|---|
+| S03-01 | open | Open-set/readback repaired; one current receipt hash needs correction. |
+| S03-02 | done | Reproduced exact source/lineage joins and human complete-boundary review; F01 resolved. |
+| S03-03 | done | Accepted source register retained under unchanged facts/pins and bounded current reinspection. |
+| S03-04 | open | All42 reviewed; A055 correctness/scope mismatch remains; other41 assessments and sound A055 fields retained. |
+| S03-05 | done | Bounded portable policy remains valid; source/architecture/theme/exception distinctions retained. |
+| S03-06 | done | All21 exact actions and42 memberships reconciled; virtual composition preserves adjacent text; F03 resolved. |
+| S03-07 | done | Committed positive/20-negative replay and inspected coverage/bounds/reference guards; F04 resolved. |
+| S03-08 | done | Fresh exact-path/protected-byte/link/fragment/LF/EOF/trailer/diff checks. |
+| S03-09 | open | Nine rows and actual limits/failures recorded; count sentence/current final return need correction. |
+
+Criterion text and full parent populations/gates are unchanged. No source fidelity,
+complete card/live-file acceptance, Arc02 composition or release is implied.
+Project13 records this third return and narrower persistence; no efficiency claim.
+T01 meta-review remains due at closure or a recorded blocked/escalation stop,
+before T02. This review is continuing correction, not such a stop.
+
+### CDC handoff checks
+
+The review/Iteration03 packet changes exactly nine planning paths: project
+plan/ledger; Arc02 plan/ledger; this slice plan/ledger/current verification and
+new Iteration03 prompt; Project13 run register. Parent13/eight criterion rows
+and their states are byte-equivalent as parsed tables; child nine criterion
+texts are unchanged, with six done and01/04/09 open. All seven CC output
+artifacts except the CDC ledger updates, preparation, issued prompts and frozen
+protocol/Case01 remain unchanged fromc2f36b62. Current handoff validation
+resolved161 local links/48 fragments, LF/EOF and git diff --check. The current
+assignment agrees across the plans, ledger, review and prompt. SOURCE pin and
+tracked/index state are unchanged. Checks apply to this planning handoff,
+not to implementation, slice closure or higher-scale acceptance. The handoff
+commit is the path-specific commit introducing cc-prompt-iteration03.md.

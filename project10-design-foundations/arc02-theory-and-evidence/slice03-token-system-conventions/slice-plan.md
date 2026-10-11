@@ -135,14 +135,16 @@ framework claim is predetermined.
 |---|---|---|---|
 | [cc-prompt.md](cc-prompt.md) — initial | 2026-10-10 | Slice02 closed; next ready token concern, primary technical evidence and demonstrated method | Returned; initial CDC review accepts three rows, six remain open |
 | [cc-prompt-iteration01.md](cc-prompt-iteration01.md) — Iteration01 | 2026-10-10 | Return `20852472` / receipt `2eee292c`; F01–05 complete assertions, applicable evidence, usable edits, checks and receipts | Returned; CDC retains three done/six open; residual F01–05 |
-| [cc-prompt-iteration02.md](cc-prompt-iteration02.md) — Iteration02 | 2026-10-10 | Return578e68f8; residual F01–05 with diagnosed method and bounded repair examples | Active |
+| [cc-prompt-iteration02.md](cc-prompt-iteration02.md) — Iteration02 | 2026-10-10 | Return578e68f8; residual F01–05 with diagnosed method and bounded repair examples | Returned; CDC six done/three open; small residual F02/F05 |
+| [cc-prompt-iteration03.md](cc-prompt-iteration03.md) — Iteration03 | 2026-10-11 | Returnc2f36b62; residual A055 dimension mismatch, current receipt hash and count sentence | Active |
 
-Current assignment is Iteration02; its issuing revision is the commit introducing
-that prompt. [Current CDC review](cdc-verification.md#iteration01-independent-review--2026-10-10) retains S03-03/05/08;
-six rows remain open. Original prompt/preparation and historical returns remain
-pinned. The initial seven-output family remains; Iteration02 permits six
-correction paths and protects source-comparison.md. Ledger evidence-only authority
-preserves three CDC-done and six open states. Five-iteration limits remain unchanged.
+Current assignment is Iteration03; its issuing revision is the commit introducing
+that prompt. [Current CDC review](cdc-verification.md#iteration02-independent-review--2026-10-11) accepts six rows;
+S03-01/04/09 remain open. Original prompt/preparation and historical returns remain
+pinned. The initial seven-output family remains; Iteration03 permits four
+correction paths and protects the accepted inventory/register/handoff/checker.
+Ledger evidence-only authority preserves six CDC-done and three open states.
+Five-iteration limits remain unchanged; two corrective passes have returned.
 
 Author readiness: full selected context/result review, primary reinspections,
 actual printed-checker false-pass probes and a worked multiline repair precede
@@ -163,7 +165,25 @@ inspection precedes issue. Scope/gates and sound subject/register/policy work
 are retained; no original fidelity or self-acceptance. Iteration02 is the second
 issued correction; one correction has returned, budget unchanged.
 
+## Iteration03 author readiness
+
+CDC inspected every current result and all21 action joins, retained the accepted
+inventory/checker/policy and identified the precise residual fields. The
+[worked primitive dependency witness](cdc-verification.md#iteration02-independent-review--2026-10-11) rejects
+role-only and every-consumer interpretations before issue. The literal/warrant/
+action already concern the correct object; only A055 correctness/scope change.
+Exact137-line planning AGENTS.md hash and ten-to-three boundary accounting were
+computed from pinned bytes. The four-path assignment uses changed-field checks
+plus the retained current validator, not a new bulk review or semantic keyword
+oracle. Author-readiness/intake and preservation guides were applied; no contract,
+population, architecture or acceptance change. Third correction issued, budget
+unchanged; no T01 checkpoint or next slice before this slice's gate.
+
 ## Version History
+
+- 1.3 (2026-10-11): Reviewedc2f36b62; accepted S03-02/06/07, retained03/05/08.
+  Issued four-path Iteration03 for A055 dimensions and two reporting repairs;
+  complete inventory/actions/checker and all source/parent gates retained.
 
 - 1.2 (2026-10-10): Iteration01 reviewed at578e68f8; three done/six open retained.
   Issued bounded Iteration02 for residual F01–05 with diagnosed and exercised repairs;

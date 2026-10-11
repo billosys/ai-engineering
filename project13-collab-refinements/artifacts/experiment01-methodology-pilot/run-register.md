@@ -9,7 +9,7 @@ excluded. Record each entry here before issuing its initial prompt.
 
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
-| T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Two returns reviewed; Iteration02 issued, not returned | First acceptance3/9; complete cost unknown |
+| T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Three returns reviewed; Iteration03 issued, not returned | First acceptance3/9; current6/9; complete cost unknown |
 | T02 | Following newly opened Project10 slice; ID pending normal readiness | Pending | Not registered | Not measured |
 
 ## Entry format
@@ -264,3 +264,57 @@ Frozen protocol revision 2 and Case01 are unchanged.
 T01 remains active under unchanged protocol revision 2. Meta-review occurs at
 closure or recorded blocked/escalation stop before T02; no retrospective trial
 selection or reset of the five-iteration correction limit.
+
+## T01 Iteration02 review — 2026-10-11
+
+Host [independent review](../../../project10-design-foundations/arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration02-independent-review--2026-10-11)
+atc2f36b623ca988f5eb36d2125f09cd7bcd3531d4 is authoritative; direct child of
+issue7745b3d4b7e1ab8b3233eefacd9cf4e339a90681. This section/Iteration03 issue
+identity is the commit introducing them. Frozen protocol revision2/Case01 remain
+byte-preserved; no trial or framework amendment.
+
+- Three returned assignments: initial plus two executed corrections. Current
+  correction has no receipt-only follow-up. First3/9 remains historical;
+  current6/9:02/03/05/06/07/08 done;01/04/09 open. Iteration03 issued, not executed.
+  T02 remains unregistered; T01 meta-review at closure or recorded stop remains due.
+- 132 rows =18 manifests+114 source units (42token/21boundary/51context),42results,
+  21actions. Original17/168 windows plus exact one-line extension and145 old IDs
+  remain. Complete boundary coverage and coherent edits now independently accepted;
+  no whole-card/source-fidelity/full-live or release acceptance percentage.
+- Persistence: F02 wrong-object explanation remains in A055 correctness/scope,
+  despite the explicit all42 assignment; literal/warrant/action are sound.
+  Prior A006/A048/A085 repairs succeed. F01 complete boundaries, F03 exact coherent
+  edits and F04 coverage/bounds/unique-evidence controls resolve. A current63-character
+  hash is a newly identified receipt manifestation (also missed by CDC earlier),
+  and ten-to-three input accounting is misworded as seven-to-three. Distinguish
+  those new discoveries from persistence of the old PM89–133 omission, now fixed.
+- Validation: current common predicate positive passes and all20 invalid specimens
+  reject from committed notes. No new mechanical gap found in assigned properties;
+  semantic applicability remains human. Third correction changes two assessment
+  dimensions and report/receipt fields, retaining inventory,actions,checker,register.
+- Recurrence response: object-specific literal/warrant comparison and an executed
+  primitive dependency example show both transitive and direct reference changes,
+  excluding a copied fixed value. Role-only/every-consumer interpretations fail.
+  This demonstrates the remaining semantic mechanism before the next small pass;
+  no keyword oracle or fresh bulk assessment is assigned.
+- Reviewer contribution: first result projection clipped a portion and was
+  recovered; other broad outputs were partitioned. First comparison of whole
+  A055 dimension objects returned unequal because references changed; comparison
+  of reason/outcome confirmed persistence. Earlier review missed the truncated
+  hash. These are reviewer errors/limits, not extra CC defect events.
+- Bytes atc2f36b62: inventory79576,register7704,results147799,handoff26350,
+  notes42806,ledger12705,closing8273; seven-output total325213. Increase reflects
+  explicit local witnesses/guards/receipts; bytes are not time or quality measures.
+  Operator-relayed CC15m10s is attested duration, not independently timed. Author/
+  reviewer/token/context cost and observation upkeep remain unknown.
+- Utility: complete joined boundaries, corrected source-block actions and guards
+  now support downstream portable corrections and preserve other owners' text.
+  The A055 generic explanation shows remaining maintenance risk in reused fields.
+  Project13 observation/upkeep and whether artifact correction displaced other
+  useful work remain unmeasured. No efficiency/causal or broad adoption conclusion.
+- Conditions/authority unchanged: default two contributors, Expedited Mode,
+  source pin,full scope,independent and original-input gates. CDC reused the session
+  including compaction; exact model/settings, CC reuse and exposure remain unknown.
+  Adherence improves inventory/verification/handoff; semantic execution is partial
+  at A055. Reviewer method/recurrence response used; record economy remains mixed.
+  No early stop, scope reduction or prospective T02 selection yet.
