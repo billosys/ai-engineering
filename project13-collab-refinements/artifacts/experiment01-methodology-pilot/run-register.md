@@ -1,6 +1,6 @@
 # Experiment01 Run Register
 
-Prepared 2026-10-10; T01 registered prospectively, initial return reviewed below.
+Prepared 2026-10-10; T01 independently closed on 2026-10-11; checkpoint below.
 Protocol revision 2's initial zero-run status is historical; this register tracks
 current registrations. T02 remains unregistered.
 The next two newly opened Project10 slices are selected by the protocol's
@@ -9,7 +9,7 @@ excluded. Record each entry here before issuing its initial prompt.
 
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
-| T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Three returns reviewed; Iteration03 issued, not returned | First acceptance3/9; current6/9; complete cost unknown |
+| T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Closed after initial + four corrections; checkpoint completed below | First3/9; final9/9 bounded criteria; comparative benefit inconclusive |
 | T02 | Following newly opened Project10 slice; ID pending normal readiness | Pending | Not registered | Not measured |
 
 ## Entry format
@@ -379,3 +379,75 @@ The anchor-helper false failure and Git lock/escalation recovery remain disclose
 Current/historical separation helps downstream interpretation; repeated metadata
 repair and observation upkeep are maintenance effort with unmeasured net cost.
 T01 meta-review is now due before T02; frozen protocol/Case01 remain unchanged.
+
+## T01 meta-review checkpoint — 2026-10-11, before T02
+
+CDC-authored analysis/self-check, not an independent research verdict. Host
+closure is `46e729cd0a48b1860a52e8b1228f73c1eb055ca1`; accepted CC candidate
+`3817d83cbc0e23292325d0501859e7c8e6d87d4a`. Compare frozen
+[Case01](../case01-colour-pipeline/case-study.md) and its
+[measures](../case01-colour-pipeline/baseline-measures.json) at protocol revision2
+`23c77653feda2fafd88efce01e226ee1a35b8cff` with T01's dated host reviews and
+observations above. Protocol and baseline are byte-preserved; no retrospective
+rescoring, new threshold or task-normalized defect rate.
+
+### Raw and measured results
+
+| Predeclared measure | Case01 at its frozen cutoff | T01 | Interpretation and limit |
+|---|---|---|---|
+| Returns/corrections | Initial +3 corrections; still open at9a30f480 | Initial +4 corrections; closed at46e729cd; initial receipt-only follow-up is not a second return | No demonstrated reduction in corrections. Censored Case01 cannot provide completed time-to-acceptance. |
+| First-return acceptance | 2/9; proof/control criteria | 3/9; source comparison, portable policy, preservation | One more criterion accepted descriptively; tasks and criterion difficulty differ, not a comparable productivity rate. |
+| Same four-return window | Acceptance2/3/3/4 of9; endpoint open | Acceptance3/3/6/8 of9; endpoint open; fifth return closes reporting | Faster criterion accumulation is observable, but cannot isolate the bundle or imply equal effort/quality per criterion. |
+| Recurrent failures | C02 context; C03 wrong original/comparison; C04 uncovered numerical fields; C06 receipts/links | Fragmented boundaries, wrong proposition/warrant, clipped edits and unchecked declared inputs persist afterI01; repaired byI02 except A055, repaired byI03; copied current identity remains untilI04 | Recurrence remains contrary evidence to a clean improvement claim. See dated finding pairs, not F-number counts. |
+| Coverage/correctness | Initial18 broad records; eventual50 assessed/71 rows; missing-claim denominator unknown | Initial145 physical-line units/51 results; final114 complete source units/42 results with original17/168 windows+one extension and145 lineage | Both initial inventories missed complete propositions. Final representation is reconciled; JSONL counts cannot compare semantic coverage or whole-project completion. |
+| Validation/false passes | XYZ/polar then RGB-stage coverage gaps; broken fragments | Initial7 malformed specimens accepted over5 properties; I01 supplies15 rejects but5 further variants pass over3 residual properties; I02 common positive/20-negative route discriminates them | Concrete gaps resolve in both cases after review. No common task/field denominator supports a comparative false-pass rate; semantic truth remains human. |
+| Reviewer contribution | C05 invalid musical comparison; C06 evolving receipt requirements | Initial demo lacked wrapping; missed copied report/hash fields; mistaken paths/delimiters/parsing probes and clipping recoveries recorded | Author/reviewer error contributed to rework. Do not charge every correction to CC or treat reviewer assertions as ground truth. |
+| Evidence burden/effort | Notes12366→475086 bytes at fourth return; full predecessor dataset in notes; full cost unknown | Notes10286→49322 bytes at fourth return,54677 at fifth; final seven-output packet337865 bytes; initial284519 | Smaller historical payload than the comparator, while T01 notes and packet grew. Bytes alone establish neither savings nor goal displacement. |
+| Artifact utility/displacement | Frozen archive supports comparison; original handoff and checks initially incomplete | Exact literals, source scopes, virtual edits and guards enabled a portable decision/handoff; final report-only pass repaired reuse hazards | Evidence benefits are concrete. Repeated record repair and this register's upkeep are maintenance; displaced work and net cost are unmeasured. |
+| Quality/authority | Endpoint remains open with required gaps disclosed | All9 bounded child criteria independently accepted; no source edits, full-corpus/fidelity or parent/release acceptance | Host quality gates held. Closure is useful project progress at its declared evidence scope, not delivery of the live skill. |
+
+T01 issued prompt bytes by actual issue: initial11266,I01=9655,I02=10327,
+I03=9648,I04=7436; whitespace word counts1326/1141/1212/1165/878 are not model
+tokens. Final C4 output bytes: inventory79576,register7704,results147947,
+handoff26350,notes54677,ledger15947,closing5664; total337865. These were read
+from Git blobs, not reconstructed from file timestamps. Operator-relayed CC
+elapsed summaries are attestation only; independent execution intervals, total
+preparation/review/tokens/context and Project13 upkeep cost remain unknown.
+
+### Adherence to the seven components
+
+| Component | Overall observed status | Evidence and limit |
+|---|---|---|
+| Author preparation | partial | Source cases and example existed; wrapping/compound boundaries were missing initially. Later demonstrated multiline, bounded edit and primitive examples are used, without proving avoided rework. |
+| Inventory before judgment | partial, then used | Initial and I01 physical-line boundaries fail; I02 complete boundaries/lineage independently reconcile. Execution order remains CC-attested. |
+| Verification design | partial, then used | Property map existed but checker missed declared coverage/bounds/reference properties; I02 common-route guards and20 negatives resolve. |
+| CC representative execution | partial, then used | Examples were exercised but early batch reasoning did not apply them consistently; final42 results and21 actions accepted with explicit limits. |
+| Reviewer method | used, with errors | Coverage, subjects, evidence, actions and preservation considered together; missed/copied metadata and invalid helper assumptions remain disclosed. |
+| Recurrence response | used | Before further passes, worked object-specific assessments, exact substring preservation, independent-window guards and primitive dependency witnesses were executed. Persistence was narrowed, not eliminated immediately. |
+| Record economy | partial | One current checker and Git-pinned historical datasets avoided baseline-scale inline duplication; accumulated receipts and copied metadata still required repair. |
+
+### Interpretation, threats and decision
+
+**Outcome: inconclusive about comparative benefit.** H1 is not established:
+recurring interpretation/verification failures still occurred despite preparation,
+and preparation itself was incomplete at difficult boundaries. H2 has a useful
+representation observation (no enormous embedded predecessor dataset), but
+unmeasured effort prevents an efficiency conclusion. No causal effect, component
+benefit, CRC benefit, regression-free general claim or framework adoption.
+
+Alternative explanations: nonlinear colour versus token-policy task differences,
+unequal criterion difficulty, evolving instructions, learning/order effects,
+CDC's prior exposure and reused/compacted context, unknown CC reuse/model/settings,
+reviewer expectancy and non-blinded evaluation. The study author is the CDC being
+studied. A final correct packet cannot show the counterfactual or absence of all
+unobserved defects. Source-readiness gates remain outstanding in both cases.
+
+**Decision:** continue the already authorized second consecutive newly opened
+Project10 slice under unchanged protocol revision2, in normal readiness order.
+Do not replace it for expected success, add a third run, or amend the bundle on
+these mixed data. Apply the existing complete-boundary/example/property/record
+methods carefully; this is fidelity to the protocol, not a new treatment.
+Capture partial adherence and difficult/blocked outcomes again. Compare after
+T02 before extension; fresh independent/Operator challenge is still required
+before any framework-wide adoption. This checkpoint is completed before T02
+registration/initial issue and imposes no new host acceptance gate.

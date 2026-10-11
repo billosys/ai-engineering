@@ -49,7 +49,9 @@ are follow-up context, not a prospectively assigned treatment run.
 - [Experiment01 protocol](artifacts/experiment01-methodology-pilot/protocol.md)
   predeclares the intervention, selection, measures, limits and review points.
 - [Run register](artifacts/experiment01-methodology-pilot/run-register.md)
-  records eligibility and eventual results. No trial has run yet.
+  records eligibility and results. T01 is independently closed; its first checkpoint
+  is complete and comparative benefit is inconclusive. T02 remains unregistered
+  pending normal host readiness.
 
 The intervention bundles worked examples, inventory-first analysis, explicit
 verification coverage, comprehensive reviewer checks, a response to recurring
@@ -123,6 +125,11 @@ amendment and a deviation record; do not rescore history silently. No current
 skill/package or repository-wide AGENTS change is authorized by this bootstrap.
 
 ## Version History
+
+- 1.2 (2026-10-11): Recorded T01 host closure and first meta-review checkpoint;
+  mixed/inconclusive results, unchanged protocol and authorized second consecutive
+  host run. No research acceptance or broad adoption inferred.
+
 
 - 1.1 (2026-10-10): Recorded Operator concern about artifact accumulation and
   displacement of project goals; added prospective qualitative observation,
