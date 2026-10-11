@@ -123,16 +123,12 @@ All nine child rows done; no I05 issued. [Final gate](arc02-theory-and-evidence/
 separates independent review, direct repair/self-check and Operator acceptance.
 Queued Arc06 remains unchanged. Arc02
 [Slice03](arc02-theory-and-evidence/slice03-token-system-conventions/slice-plan.md)
-is open for token-system conventions (DES-008 and bounded DES-002), prospectively
-registered as Project13 T01 under protocol revision 2. The demonstrated method
-and complete context inventory preceded its initial handoff. Initial review
-accepts S03-03/05/08, with six rows open; [Iteration01](arc02-theory-and-evidence/slice03-token-system-conventions/cc-prompt-iteration01.md)
-is historical. Iteration01 return578e68f8 retains S03-03/05/08 done and six open;
-[Iteration02](arc02-theory-and-evidence/slice03-token-system-conventions/cc-prompt-iteration02.md)
-returnedc2f36b62. Iteration03 returnedc51a21ad; [current review](arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration03-independent-review--2026-10-11)
-accepts S03-01/04 and retains six done: eight done; only S03-09 open.
-[Iteration04](arc02-theory-and-evidence/slice03-token-system-conventions/cc-prompt-iteration04.md)
-repairs current return identity/scope only; substantive evidence is retained.
+is independently closed for bounded token-system conventions (DES-008 and
+bounded DES-002) at3817d83c; [final verification](arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11)
+records all nine child rows done. Initial and four correction assignments are
+preserved; Project13 T01 was prospectively registered and now requires its
+meta-review before T02. The earlier current Iteration04 pending state is
+superseded by this acceptance; no source implementation is accepted.
 Complete R/T/C/L/G
 and original-source/full-corpus/release gates remain.
 After T01 closes or reaches a recorded blocked/escalation stop, complete its
@@ -287,6 +283,11 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 ## Version History
+
+- 1.35 (2026-10-11): Arc02/Slice03 Iteration04 at3817d83c independently accepted;
+  all nine child rows done and slice closed. T01 checkpoint precedes next trial
+  issue; full project scope and later gates remain unchanged.
+
 
 - 1.34 (2026-10-11): Arc02/Slice03 c51a21ad reviewed; eight done/one reporting
   row open. Issued reporting-only Iteration04; substantive evidence, full scope,

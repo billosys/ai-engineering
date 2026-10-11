@@ -41,7 +41,7 @@ source acquisition, original-readiness waiver or live implementation is implied.
 
 ## Complete work breakdown and sizing
 
-Slice01 and Slice02 are closed; Slice03 is open for the next ready token concern.
+Slice01–03 are independently closed; remaining theory concerns need bounded preparation.
 The remaining rows are bounded execution
 families, not a single giant slice or already-issued assignments. CDC assigns
 unique increasing slice numbers and records each exact population/dependency in
@@ -52,7 +52,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 |---|---|---|
 | slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Closed at c3d68d7d; independent of missing original attribution/fidelity. |
 | slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Closed after I04 independent review and Operator-approved direct correction; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
-| slice03-token-system-conventions | Reconcile complete selected token assertions with DTCG and named-system primary scopes; usable portable policy and exact correction handoff. 17 contexts/168 lines in five files; evidence only. | Open; c51a21ad review eight done/one open, reporting-only Iteration04 current. Project13 T01 registered before initial issue; original fidelity/export validation remain separate. |
+| slice03-token-system-conventions | Reconcile complete selected token assertions with DTCG and named-system primary scopes; usable portable policy and exact correction handoff. 17 contexts/168 lines in five files; evidence only. | Closed at3817d83c after Iteration04 acceptance; all nine child rows done. Project13 T01 registered before initial issue; original fidelity/export validation remain separate. |
 | R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
 | T — remaining theory/evidence | Bounded slices per concern: nonlinear colour pipeline, perception/analogy scope, token-system conventions, layout/measure exceptions and CHI interpretation. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
 | C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
@@ -60,7 +60,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | G — global reconciliation and arc handoff | Bounded cross-group/guide, typed-edge, CQ-component and revision/dependency reconciliation slices, followed by formal arc composition. | Complete C/L result set and P10-11; reconcile every unresolved/unclassified assertion. Split by explicit dependency populations, then demonstrate the complete union. |
 
 No fixed total slice count is invented before reading/source readiness establishes
-actual headroom. The issued slice list is Slice01/Slice02 (closed) and Slice03 (open). Before arc
+actual headroom. The issued slice list is Slice01–03 (closed). Before arc
 closure, the expanded roadmap, all issued children and the full R/T/C/L/G
 coverage union must reconcile. Additions/splits/merges/removals remain mapped to
 the original 233 identities; no sampling, quarantine substitute or lost guide
@@ -125,12 +125,10 @@ Current Slice02 state: closed after independent I04 review at19dd5385 and
 Operator-approved CDC two-field repair/closure. All nine rows done, I05 unused.
 [Final gate](slice02-nonlinear-colour-pipeline/cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
 separates independent evidence from direct self-check/Operator acceptance.
-Current assignment: [Slice03 Iteration04](slice03-token-system-conventions/cc-prompt-iteration04.md),
-report identity/scope only after [Iteration03 review](slice03-token-system-conventions/cdc-verification.md#iteration03-independent-review--2026-10-11)
-ofc51a21ad: eight rows done; S03-09 open;
-[author preparation](slice03-token-system-conventions/artifacts/preparation-notes.md)
-and prospective Project13 T01 registration precede issue. After T01 closes or
-reaches a recorded blocked/escalation stop, meta-review precedes T02 issuance.
+Slice03 Iteration04 at3817d83c is [accepted and closed](slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11);
+all nine child rows done. No next assignment is issued yet. T01 meta-review
+precedes T02 issuance; remaining theory concerns are prepared under the existing
+full roadmap and readiness rules.
 Earlier current-assignment text is historical; all issued prompts are preserved.
 Initial prompt and CC candidate remain preserved.
 Slice01 Iteration02 `c3d68d7d` is [independently accepted and closed](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09):
@@ -141,6 +139,11 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.15 (2026-10-11): Slice03 at3817d83c independently closed with nine done rows;
+  bounded token inputs delivered, parent criteria/families unchanged. T01
+  checkpoint precedes next ready theory assignment; no new scope amendment.
+
 
 - 1.14 (2026-10-11): Slice03 c51a21ad A055/intake accepted; eight done/one open.
   Iteration04 repairs current report identity/scope only. Full families, parent

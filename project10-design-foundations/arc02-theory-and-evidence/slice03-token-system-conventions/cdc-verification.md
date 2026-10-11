@@ -1,7 +1,7 @@
 # CDC verification — Arc02/Slice03
 
-Current: [Iteration03 review](#iteration03-independent-review--2026-10-11);
-eight rows done; S03-09 open. [Iteration04](cc-prompt-iteration04.md) is assigned.
+Current: [Iteration04 acceptance and Slice03 closure](#iteration04-independent-review-and-slice03-closure--2026-10-11);
+all nine rows done. No further correction is assigned.
 Earlier review/assignment statements below are historical.
 
 ## Initial independent review — 2026-10-10
@@ -862,3 +862,95 @@ T02 issue. Meta-review remains due at closure or a recorded blocked/escalation
 stop. Full R/T/C/L/G,233 cards/eight live files, P10-11 and later gates remain.
 
 CDC handoff checks: exact nine planning paths; unchanged13 project and8 arc rows; unchanged nine child criteria with8 done/1 open;181 local links and53 fragments resolved; prior review body, CC artifacts, issued prompts, frozen protocol/Case01 and SOURCE preserved; LF/EOF and diff --check passed. This validates the reviewer/assignment packet, not S03-09 completion.
+
+## Iteration04 independent review and Slice03 closure — 2026-10-11
+
+CDC Sofie independently accepts CC candidate
+`3817d83cbc0e23292325d0501859e7c8e6d87d4a`, tree
+`993cfb1347dc03d82977975f6364cacf8497b1f2`, direct child of Iteration04 issue
+`28999d8a0a2d5e9585b52812e345e72b91514117`. SOURCE remains
+`dffa504e851b03b8e4746f1941068e4cc850b612`. Exact assignment:
+[cc-prompt-iteration04.md](cc-prompt-iteration04.md). Default CDC + CC and
+Expedited Mode remain. **S03-09 is done; all nine criteria are done; Slice03 closes.**
+CC's proposed report/notes remain unedited; this independent record supplies
+acceptance. No reviewer-authored CC repair or Operator override was needed.
+
+### Fresh verification and evidence retention
+
+Loaded current project plan first, Arc02 plan, Slice03 plan/current ledger,
+entire Iteration04 prompt and closing report, and complete new CC note section.
+Inspected the actual two-file delta, pinned identities and ancestor relationships.
+The report now distinguishes I4, its C3 parent and C3's I3 parent; c2f36b62 is
+correctly a prior substantive candidate. The two current paths are report plus
+append-only notes; the four-path statement is explicitly about C3, not C4.
+All nine row dispositions, retained counts, limits and actual delivered scope
+agree with the existing contract. C4's externally supplied identity matches Git.
+
+Reproduced exact two-path commit scope, parent/tree and both required trailers.
+Entire C3 note prefix and sole Python fence are preserved. All substantive
+artifacts match C3; all other tracked inputs match I4 by the exact two-path diff.
+Three local links and one fragment resolve; LF/EOF, candidate diff --check and
+planning tracked/index state pass. Main remains clean at the SOURCE pin, with
+unrelated Project12 and knowledge/lfe/ untouched. CC's anchor-helper error and
+Git worktree-lock recovery remain disclosed; no semantic or source change.
+A broad CDC read clipped part of the report; a separate complete read recovered
+it before disposition. No clipped output is treated as a full read.
+
+S03-01–08 retain [Iteration03 evidence](#iteration03-independent-review--2026-10-11)
+and its earlier independent dependencies: criteria and relevant inventory,
+source register, results, action targets, checker and source state are unchanged.
+Current metadata/prose repair cannot alter those bounded semantic/technical
+results, and no new finding undermines them. Preservation/link/commit checks are
+fresh; the positive/20-negative replay, primitive witness, complete42-subject
+review and21-action composition are retained at their original pins/dates,
+not rerun or relabeled. No package/browser/original-fidelity gate is discharged.
+
+### Final nine-row disposition
+
+| Row | Final status | Independent evidence and limit |
+|---|---|---|
+| S03-01 | done | Retained reproduced current receipt/intake/hash and exercised author example. |
+| S03-02 | done | Retained complete114-unit inventory,168 original lines plus declared extension and145 predecessor lineage. |
+| S03-03 | done | Retained bounded primary register; inaccessible Material3/Polaris and original-fidelity gaps remain explicit. |
+| S03-04 | done | Retained all42 five-dimension assessments; repaired A055 concerns primitive-value dependency with actual limitations. |
+| S03-05 | done | Retained portable token policy separating interchange, architecture choices, optional bindings and theme conditions. |
+| S03-06 | done | Retained21 exact action joins/42 memberships and coherent virtual edits with future owners. |
+| S03-07 | done | Retained committed positive/20-negative replay and explicitly human semantic judgment. |
+| S03-08 | done | Fresh two-path integrity/preservation/parent/trailer/link checks extend prior accepted protection. |
+| S03-09 | done | Fresh actual identity/scope/count/row/artifact/bubble-up reconciliation; no contradictory current assignment. |
+
+### Artifact inventory, bubble-up and silent-drop check
+
+Git confirms exactly six artifacts: five CC-produced inventory, source comparison,
+claim results, correction handoff and execution notes, plus the author-provided
+preparation notes. No supporting artifact is missing or misplaced. Initial and
+four corrective prompts remain in the slice root; no fifth correction is issued.
+
+Delivered against the Arc02 token assignment: bounded selected-token evidence,
+portable policy and exact proposed handoff over17 contexts/168 lines plus the
+one declared colour markup extension;114 units/132 records,42 token results,
+21 boundary units,51 context units and21 actions. Ten prior units became three,
+net minus seven, with145 old IDs accounted for. This is the assigned evidence
+piece for DES-008/bounded DES-002, not source implementation or entire DES closure.
+No assigned child criterion was silently dropped, deferred or weakened.
+
+Arc02 A02-03/05/07 receive these accepted inputs but remain open. No new scope
+or architecture amendment is required by the bubble-up. Update arc/project
+status and retain the complete R/T/C/L/G work, missing original editions/captures,
+P10-11, all233 cards/eight live files, graph/CQ and later accessibility/metadata/
+package/release gates. Optional token layers and real reference/update conditions
+must survive later composition. Access gaps need versioned readable re-entry,
+not replacement with inferred historical claims. The next ready work remains
+in the approved theory family; prepare its actual bounded scope after T01 review.
+
+### What worked and trial handoff
+
+Literal-specific assessment, transitive/direct/fixed primitive examples, exact
+virtual edits and independent declared-window guards produced usable correction
+evidence. Separating current reporting from pinned history resolved the final
+identity conflicts without redoing sound semantic work. The initial physical-line
+inventory, reused generic reasons and copied metadata caused corrective effort;
+CDC also contributed missed fields and invalid comparison attempts, as recorded.
+Five assignments returned (initial plus four corrections); no fifth correction.
+T01 is closed, with the protocol checkpoint now due before T02 issuance.
+No efficiency, causal or framework-wide adoption conclusion follows from closure.

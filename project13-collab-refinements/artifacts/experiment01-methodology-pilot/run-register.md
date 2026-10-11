@@ -360,3 +360,22 @@ of `c51a21ad4f3258246740cb904f66aab2c6a1bf33` is authoritative; direct parent/is
   economy remains mixed. Authority/scope/input gates hold; conditions unchanged.
 
 C3 seven-output bytes: artifacts/occurrence-inventory.jsonl=79576, artifacts/source-comparison.md=7704, artifacts/claim-results.jsonl=147947, artifacts/correction-handoff.md=26350, artifacts/execution-notes.md=49322, ledger.md=15636, closing-report.md=11589; total 338124. These are payload measures, not quality or time estimates.
+
+## T01 Iteration04 acceptance and host closure — 2026-10-11
+
+Host [independent acceptance](../../../project10-design-foundations/arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11)
+at3817d83cbc0e23292325d0501859e7c8e6d87d4a, direct child ofI4
+28999d8a0a2d5e9585b52812e345e72b91514117, closes T01's host slice.
+Five assignments returned: initial plus four corrections; no fifth correction.
+First-return3/9 is historical; final9/9 bounded child criteria accepted.
+
+Current identity/scope recurrence resolves with one coherent proposed report and
+Git-derived I4/C3/I3 relationships. Exact two-path return, append-only note prefix,
+protected artifacts/checker, parent/tree/trailers,3 local links/1 fragment, LF/EOF
+and diff checks reproduce. Semantic/checker evidence is retained at prior pins,
+not rerun. Original-readiness and complete corpus/live/release gates remain.
+CC reports3m15s via Operator (attested); review/preparation/tokens/upkeep unknown.
+The anchor-helper false failure and Git lock/escalation recovery remain disclosed.
+Current/historical separation helps downstream interpretation; repeated metadata
+repair and observation upkeep are maintenance effort with unmeasured net cost.
+T01 meta-review is now due before T02; frozen protocol/Case01 remain unchanged.

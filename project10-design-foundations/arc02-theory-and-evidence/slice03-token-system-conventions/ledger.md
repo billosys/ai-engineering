@@ -1,6 +1,6 @@
 # Arc02 Slice03 Ledger
 
-Eight rows are CDC-done; S03-09 remains open. CC supplies evidence and proposes dispositions;
+All nine rows are CDC-done; Slice03 is independently closed. CC supplies evidence and proposes dispositions;
 independent CDC review closes criteria. No author example is an accepted result.
 Bounded technical evidence cannot close P10-11 or full-card/live/release work.
 
@@ -14,7 +14,7 @@ Bounded technical evidence cannot close P10-11 or full-card/live/release work.
 | S03-06 | Every assessed occurrence has usable exact correction or retention and retained implementation/review owners | Trace all result IDs to literal replacements, roles, DES/Arc04/L owners and blocked re-entry | serious | Arc02 handoff | done | [CDC Iteration03 review](cdc-verification.md#iteration03-independent-review--2026-10-11) — retained independent evidence | Retained unchanged21 exact action joins and42 memberships. |
 | S03-07 | Checks discriminate declared coverage/identity failures and do not overstate semantic or historical verification | Replay current checker and meaningful negatives; human-review property map, including qualifiers/comparison/capture applicability | correctness-grade | Evidence strength; trial | done | [CDC Iteration03 review](cdc-verification.md#iteration03-independent-review--2026-10-11) — reproduced/reconciled | Fresh committed positive and20-negative replay; checker unchanged. |
 | S03-08 | Seven-path output scope, protected inputs, links and committed-byte integrity are preserved | Check exact candidate paths, pins/hashes, local links/fragments, final newlines, diff and both trailers | correctness-grade | Preservation | done | [CDC Iteration03 review](cdc-verification.md#iteration03-independent-review--2026-10-11) — reproduced/reconciled | Fresh exact four-path/parent/protected-byte/link/EOF/trailer/diff verification. |
-| S03-09 | Return accounts for all rows, actual failures, scope limits and honest parent/trial observations | Nine-row/complete-unit/blocked/unrun walk; proposed handoff and brief utility/cost observation | serious | Slice DoD; trial | open | [CDC Iteration03 review](cdc-verification.md#iteration03-independent-review--2026-10-11) — residual identity finding | Current report disagrees on assignment/issue, path count and direct parent; reporting-only Iteration04. |
+| S03-09 | Return accounts for all rows, actual failures, scope limits and honest parent/trial observations | Nine-row/complete-unit/blocked/unrun walk; proposed handoff and brief utility/cost observation | serious | Slice DoD; trial | done | [CDC Iteration04 acceptance](cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11) — reproduced/reconciled | Current return identity, exact scope, nine-row/artifact accounting and bubble-up match committed evidence. |
 
 ## Opening — 2026-10-10
 
@@ -123,3 +123,9 @@ This append-only supplement leaves all nine criterion texts and current CDC disp
 S03-01/04 and retains the previous six done rows: eight done; S03-09 open.
 [Iteration04](cc-prompt-iteration04.md) repairs current return identity/scope only.
 All substantive artifacts and criterion texts are preserved; no slice closure.
+
+## CDC Iteration04 acceptance and closure — 2026-10-11
+
+[Independent acceptance](cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11) of3817d83c closes
+S03-09 and retains S03-01–08: all nine rows done. Bounded token evidence only;
+complete parent/input/corpus/live/release obligations remain. T01 checkpoint next.

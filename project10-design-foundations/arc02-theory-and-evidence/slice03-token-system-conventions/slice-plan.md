@@ -1,6 +1,6 @@
 ---
 slice: slice03-token-system-conventions
-status: open
+status: closed
 family: T
 ---
 
@@ -137,14 +137,13 @@ framework claim is predetermined.
 | [cc-prompt-iteration01.md](cc-prompt-iteration01.md) — Iteration01 | 2026-10-10 | Return `20852472` / receipt `2eee292c`; F01–05 complete assertions, applicable evidence, usable edits, checks and receipts | Returned; CDC retains three done/six open; residual F01–05 |
 | [cc-prompt-iteration02.md](cc-prompt-iteration02.md) — Iteration02 | 2026-10-10 | Return578e68f8; residual F01–05 with diagnosed method and bounded repair examples | Returned; CDC six done/three open; small residual F02/F05 |
 | [cc-prompt-iteration03.md](cc-prompt-iteration03.md) — Iteration03 | 2026-10-11 | Returnc2f36b62; residual A055 dimension mismatch, current receipt hash and count sentence | Returned; CDC eight done/one reporting row open |
-| [cc-prompt-iteration04.md](cc-prompt-iteration04.md) — Iteration04 | 2026-10-11 | Returnc51a21ad; conflicting current report assignment/issue, path count and direct parent | Active |
+| [cc-prompt-iteration04.md](cc-prompt-iteration04.md) — Iteration04 | 2026-10-11 | Returnc51a21ad; conflicting current report assignment/issue, path count and direct parent | Accepted at3817d83c; Slice03 closed |
 
-Current assignment is Iteration04; its issue is the commit introducing that prompt.
-[Current review](cdc-verification.md#iteration03-independent-review--2026-10-11) accepts eight rows; only S03-09
-remains open. This reporting-only pass permits closing-report.md, concise notes
-append and an optional ledger evidence supplement. All substantive artifacts,
-checker, criterion texts and eight done statuses are protected. Initial scope
-and independent gates remain. Three corrections returned; fourth issued.
+Final assignment was Iteration04, issued at28999d8a and independently accepted
+at3817d83c. [Closure](cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11) records all nine criteria done
+with prior evidence retained. No further correction is active; four corrections
+returned. T01 meta-review precedes the next trial prompt. All original source,
+parent and release obligations remain.
 
 Author readiness: full selected context/result review, primary reinspections,
 actual printed-checker false-pass probes and a worked multiline repair precede
@@ -191,6 +190,11 @@ links and preservation checks suffice; do not repeat semantic/numerical/checker
 work merely for this prose change. Default independence and trial gates remain.
 
 ## Version History
+
+- 1.5 (2026-10-11): Independently accepted Iteration04 at3817d83c; all nine rows
+  done and Slice03 closed. Retained substantive evidence and full parent/input
+  gates; T01 checkpoint before next trial issue.
+
 
 - 1.4 (2026-10-11): Accepted c51a21ad A055/intake repairs; eight done, S03-09 open.
   Issued reporting-only Iteration04 for current assignment/scope/parent identity;

@@ -124,3 +124,10 @@ ofc51a21ad accepts S03-01/04: eight child rows done; S03-09 open.
 repairs current report assignment/scope/parent identity only. All parent row
 criteria/statuses, substantive artifacts, full families/populations, P10-11,
 metadata/implementation/package/release and T01 checkpoint gates remain.
+
+## Arc02/Slice03 closure — 2026-10-11
+
+[CDC acceptance](slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11)
+at3817d83c closes all nine child rows. Bounded token policy/evidence/handoff is
+accepted; all parent criterion texts/statuses remain unchanged. Complete
+R/T/C/L/G, P10-11, corpus/live and later gates remain. T01 checkpoint precedes T02.
