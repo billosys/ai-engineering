@@ -1,4 +1,8 @@
-# Slice04 CC execution notes — Iteration01
+# Slice04 CC execution notes — Iteration02
+
+## Historical Iteration01 record
+
+The following assignment/read receipts and candidate records document the completed CC record for Iteration01. They are retained for provenance and are not the active assignment or Iteration02 evidence.
 
 ## Assignment identity, state and scope
 
@@ -30,13 +34,13 @@ The selected source extents are `knowledge/design/SKILL.md` (368 lines, SHA-256 
 
 ## Readback, execution and boundaries
 
-A physical-line inventory is a coverage index, not a claim denominator: a single line can contain more than one proposition, a complete proposition can cross lines, and unrelated content can share a selected context. This pass records exact joined-text character offsets for 84 derived assertion units, maps each unit to every intersecting selected line in both directions, and preserves every predecessor C01–C27 lineage ID. The 13 windows/184 lines remain input bounds, never an asserted semantic count.
+A physical-line inventory is a coverage index, not a claim denominator: a single line can contain more than one proposition, a complete proposition can cross lines, and unrelated content can share a selected context. This pass records exact joined-text character offsets for 84 derived assertion units, maps each unit to every intersecting selected line in both directions, and preserves every predecessor C01–C27 lineage ID. The 13 windows/184 lines remain input bounds, never an asserted semantic count. H1’s unit identities are the baseline for this correction; an explicitly reconciled successor mapping is the only permitted deviation.
 
 Likewise a byte-accurate target proves which bytes a proposal addresses; it does not prove the edit reads as a complete sentence, valid table row, numbered step, CSS example, or sound guidance. Each action preserves its original literal separately from the proposal. The checker inserts targets into each complete pinned file; I also reviewed the resulting table-cell structure, numbered checklist role, CSS fence, grouped-clause join and retained adjacent attribution manually. Grammar, meaning, evidence applicability, pair comparability, source history and integration remain human-review tasks.
 
 The CDC’s prescribed multiline-repair example and old-checker probes were replayed against candidate C before the batch. The bounded probe confirmed the old checker false-passed the replacement-as-original, outside-span reverse-membership and retain-deletes-example mutations; it did reject an actual invalid WINDOW and duplicate-key construction overwrote under its former JSON route. The prescribed valid repair and clipped-subject negative behaved as reported in the CDC review. The complete preparation example was rerun from the exact fence: exit 0, positive 1, invalid records rejected 5, hypothetical glyph counts `[60,120]`, semantic oracle explicitly human.
 
-A first atomic extraction attempted to split a source phrase at the wrong boundary and failed before writing; I reread the pinned sentence and corrected the boundary. A first exact join audit then caught bundled C17: the paragraph combines a universal rule, three distinct examples and an enforcement conclusion. I split it into five source-offset units, gave them separate dimension reasons, retained the measure/target/spacing examples in one composed action, and reconciled reciprocal pair/action links. The final derived denominator is 84; neither correction changed the 13/184 source scope. The current one-positive/sixteen-negative checker replay is included below. All failures/recoveries are retained; none is counted as an acceptance event.
+A first atomic extraction attempted to split a source phrase at the wrong boundary and failed before writing; I reread the pinned sentence and corrected the boundary. A first exact join audit then caught bundled C17: the paragraph combines a universal rule, three distinct examples and an enforcement conclusion. I split it into five source-offset units, gave them separate dimension reasons, retained the measure/target/spacing examples in one composed action, and reconciled reciprocal pair/action links. At H1 the independently reviewed unit population was 84; this correction keeps the same exact identities and reconciles no split/merge. The 13/184 source scope is unchanged. The current one-positive/sixteen-negative checker replay is included below. All failures/recoveries are retained; none is counted as an acceptance event.
 
 ## T02, reviewer contribution and artifact utility
 
@@ -44,9 +48,19 @@ T02 has one initial return, candidate C=`742de371…`; this Iteration01 is a cor
 
 The inventory exposes missed clauses/line membership, and the composed action registry is usable for later implementation planning; these are direct decision/verification functions. They also add 184 occurrence rows, 84 five-dimension result records (420 dimension judgments) and 25 detailed actions for reviewers to inspect. Downstream implementation utility, reviewer minutes, maintenance burden and opportunity cost are unknown. No artifact cap or methodology change is inferred from volume or this run.
 
+## Iteration02 correction execution
+
+Active assignment: `cc-prompt-iteration02.md`, issue commit `877ff958dd89553fe3c5a326e4b833ce1f8637cd`, tree `c43db0869a7687f85394438e7bea39fe3f17bf5b`, direct parent H1 `7eb7a38e754bffbec207b43580a9bf9d44976b88`; prompt SHA-256 `6201bdbb30eb8f791e95b28c75a76411758241d796589e363a81101f04a66871`. Current issue HEAD was exact at intake. SOURCE remains pinned to `dffa504e851b03b8e4746f1941068e4cc850b612`, with tracked/index bytes unchanged. Only the seven prompt-authorized outputs are in the proposed candidate; the inventory remains byte-identical to H1. Existing untracked planning `project12-chcd-protocol/` and SOURCE `knowledge/lfe/` were preserved.
+
+The exact H1 pin remains the independently reviewed unit-identity baseline; no split/merge was justified. The original 13 windows and 184 occurrence rows are unchanged. A repeated-reason walk reviewed every unit’s five dimensions and all reciprocal consistency edges. I corrected C01.01/C23.01 to recognize that both originals quantify all layouts; repaired diagnostic-versus-ban distinctions for C04/C05/C24; and rewrote copied sibling warrants for sizing, target-size standards, flex wrapping, examples, and paired C14/C16 stress questions. Repeated source-faithfulness and relationship/CQ reasons remain shared where the same fixed limits apply to each unit.
+
+I reread the complete 83-line five-dimension procedure and rechecked full H1 population/action records. Current primary reads include CSS Values §10.2; CSS 2.1 §10.3.3; CSS Logical §4.2; WCAG 2.2 SC 2.5.5/2.5.8; Flexbox §§7.2.3, 9.3 and 9.7; Grid §§6.4, 7.2.1 and 7.2.3.2. Their observed publication dates/status, applicability and bounded conclusions are in `source-comparison.md`. The source comparison records nine primary/informative source IDs, with technical scope; historic fidelity remains unassessed.
+
+The current PM route was loaded from `knowledge/project-management/`; the standing AGENTS path `docs/PROJECT-MANAGEMENT.md` is absent in this checkout. No planning files were redirected. The previously recorded I1 clipped-read recovery and wrong-path attempt remain historical. In this pass, a manual virtual-compose script exposed missing paragraph separation in C21/C22 and was corrected; a subsequent composition assertion mistakenly searched `layout.md` for the `### Zero Breakpoints` heading, which belongs to the design SKILL. That assertion was corrected to check the composed SKILL. These attempts made no file changes themselves. No source/install/package/browser/AT/conformance execution occurred.
+
 ## Inline structural checker and discriminating controls
 
-This standard-library checker reads the committed SOURCE pin and the three current evidence outputs. The expected window list is the assigned contract; its valid bounds and total are checked before any slicing. Assertion count is derived from complete subjects/lineage, not hard-coded. The positive and corrupted packets use the same `validate()` route. This proves structure and exact joins only. Human reviewers still decide whether the subjects are semantically complete, whether each primary source applies, whether paired propositions are comparable, and whether the composed policy is valid in real contexts.
+This standard-library checker reads the committed SOURCE pin, the three current evidence outputs, and the H1 independently reviewed unit identity map. The expected window list is the assigned contract; its valid bounds and total are checked before any slicing. Assertion count is derived from complete subjects/lineage, not hard-coded. The positive and corrupted packets use the same `validate()` route. This proves structure and exact joins only. Human reviewers still decide whether the subjects are semantically complete, whether each primary source applies, whether paired propositions are comparable, and whether the composed policy is valid in real contexts.
 
 ```python
 import copy, hashlib, json, subprocess
@@ -120,11 +134,18 @@ def validate(inv,claims,actions,windows=WINDOWS,table_ok=True,css_ok=True):
   if not r['disposition'].get('action_id') or not r['disposition'].get('replacement'): raise ValueError(('missing-proposal',cid))
   by[cid]=r
  if set(pid for r in claims for pid in r['predecessor_claim_ids'])!=parent_map: raise ValueError(('incomplete-predecessor-lineage',))
+ # H1 is the independently reviewed unit-identity baseline; any split/merge must be explicit here.
+ base_claims=[strict_json(x) for x in subprocess.check_output(['git','-C',str(ROOT),'show','7eb7a38e754bffbec207b43580a9bf9d44976b88:project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/artifacts/claim-results.jsonl']).decode().splitlines() if x]
+ base_units={r['claim_id']:(r['subject']['path'],r['subject']['assertion'],tuple(r['predecessor_claim_ids'])) for r in base_claims}
+ now_units={r['claim_id']:(r['subject']['path'],r['subject']['assertion'],tuple(r['predecessor_claim_ids'])) for r in claims}
+ reconciled=set()
+ if {k:v for k,v in base_units.items() if k not in reconciled}!=now_units: raise ValueError(('H1-unit-lineage-mismatch',))
  for r in claims:
   for other in r['dimensions']['consistency'].get('paired_subjects',[]):
    if r['claim_id'] not in by[other]['dimensions']['consistency'].get('paired_subjects',[]): raise ValueError(('nonreciprocal-pair',r['claim_id'],other))
  for k,row in got.items():
   want=expected_members[k]
+  if len(row['claim_ids'])!=len(set(row['claim_ids'])): raise ValueError(('duplicate-line-membership',k))
   if set(row['claim_ids'])!=want: raise ValueError(('line-membership',k,sorted(row['claim_ids']),sorted(want)))
   if bool(want)!=(row['classification']=='assigned-assertion'): raise ValueError(('line-classification',k))
  # Action/result joins, exact line/byte targets and full-file virtual composition.
@@ -136,15 +157,19 @@ def validate(inv,claims,actions,windows=WINDOWS,table_ok=True,css_ok=True):
   if not ids or len(ids)!=len(set(ids)) or any(i not in by for i in ids): raise ValueError(('dangling-result',aid))
   if set(ids)!=set(a['claim_ids']): raise ValueError(('action-result-ids',aid))
   if any(by[i]['disposition']['action_id']!=aid for i in ids): raise ValueError(('result-action-reverse',aid))
-  if set(a['proposal_parts'])!=set(ids) or set(a['unit_subjects'])!=set(ids): raise ValueError(('action-parts',aid))
+  if set(a['proposal_parts'])!=set(ids) or set(a['unit_subjects'])!=set(ids) or set(a['proposal_pointers'])!=set(ids): raise ValueError(('action-parts',aid))
   for i in ids:
+   pointer=a['proposal_pointers'][i]; lo_part=pointer['start']; hi_part=pointer['end']
+   if lo_part<0 or hi_part<lo_part or hi_part>len(a['replacement']) or a['replacement'][lo_part:hi_part]!=a['proposal_parts'][i]: raise ValueError(('replacement-pointer',aid,i))
    if a['proposal_parts'][i]!=by[i]['disposition']['replacement'] or a['unit_subjects'][i]!=by[i]['subject']['assertion'] or by[i]['subject']['assertion'] not in a['original']: raise ValueError(('replacement-result-mismatch',aid,i))
+   if by[i]['disposition']['proposed']=='retain' and by[i]['subject']['assertion'] not in a['replacement']: raise ValueError(('retain-not-preserved',aid,i))
   path=a['path']; data,lines=source[path]; lo,hi=a['span']
   if lo<1 or hi<lo or hi>len(lines): raise ValueError(('action-span',aid))
   joined='\n'.join(lines[lo-1:hi]); oa,ob=a['literal_offset_0based']; x,y=a['file_byte_offsets']
   if oa<0 or ob<oa or ob>len(joined): raise ValueError(('action-char-bounds',aid))
   original=joined[oa:ob]; prefix='\n'.join(lines[:lo-1]); line_start=len(prefix.encode())+(1 if lo>1 else 0); start=line_start+len(joined[:oa].encode()); end=start+len(original.encode())
   if a['source_revision']!=REV or a['source_sha256']!=hashlib.sha256(data).hexdigest() or a['original']!=original or [x,y]!=[start,end] or data[x:y].decode()!=original: raise ValueError(('action-source-target',aid))
+  if a['replacement_sha256']!=hashlib.sha256(a['replacement'].encode()).hexdigest(): raise ValueError(('replacement-digest',aid))
   if a['disposition']=='retain' and a['replacement']!=a['original']: raise ValueError(('retain-changes-source',aid))
   if a['disposition']!='retain' and a['replacement']==a['original']: raise ValueError(('changed-label-noop',aid))
   target_spans.setdefault(path,[]).append((x,y,aid,a))
@@ -167,8 +192,11 @@ def validate(inv,claims,actions,windows=WINDOWS,table_ok=True,css_ok=True):
   if path.endswith('SKILL.md'):
    if not css_ok: raise ValueError(('malformed-css-target',))
    css=aids['A-C06']['replacement']
-   if '```' in css or not css.startswith('/*') or '.prose {' not in css or not css.endswith('}'): raise ValueError(('css-target-shape',))
+   if '```' in css or not css.startswith('/*') or '.prose {' not in css or not css.rstrip().endswith('}'): raise ValueError(('css-target-shape',))
    if '```css' not in composed or composed.count('```')%2: raise ValueError(('css-fence-composition',))
+   heading='### Zero Breakpoints\n\n'; marker=aids['A-C04']['replacement']
+   at=composed.find(heading)
+   if at<0 or not composed[at+len(heading):].startswith(marker): raise ValueError(('retained-zero-breakpoints-heading-context',))
  return True
 inv=jsonl('occurrence-inventory.jsonl'); claims=jsonl('claim-results.jsonl'); actions=registry()
 validate(inv,claims,actions)
@@ -204,15 +232,31 @@ mutate_check('malformed table target',lambda i,c,a:rewrite_proposal(a,c,'A-C02',
 mutate_check('malformed CSS target',lambda i,c,a:rewrite_proposal(a,c,'A-C06','/* no fence or rule */'))
 reject('duplicate JSON object key',lambda:strict_json('{"x":1,"x":2}'))
 reject('invalid JSON constant',lambda:strict_json('{"x":NaN}'))
-if len(controls)!=16: raise AssertionError(('negative-control-count',controls))
+# Four CDC recurrence specimens, each sent through the same current validate() predicate.
+mutate_check('C13 inserted replacement only',lambda i,c,a:next(x for x in a if x['action_id']=='A-C13').update(replacement='replacement-only corruption'))
+mutate_check('C13.01 changed to retain only',lambda i,c,a:next(x for x in c if x['claim_id']=='C13.01')['disposition'].update(proposed='retain'))
+def duplicate_existing_membership(i,c,a):
+ row=next(x for x in i if 'C13.01' in x['claim_ids']); row['claim_ids'].append('C13.01')
+mutate_check('duplicate existing line membership',duplicate_existing_membership)
+def coherent_omit_c13_02(i,c,a):
+ c[:]=[x for x in c if x['claim_id']!='C13.02']
+ for row in i: row['claim_ids']=[x for x in row['claim_ids'] if x!='C13.02']
+ for action in a:
+  if 'C13.02' in action['claim_ids']:
+   for k in ('claim_ids','result_ids'): action[k]=[x for x in action[k] if x!='C13.02']
+   for k in ('proposal_parts','proposal_pointers','unit_subjects'): action[k].pop('C13.02')
+mutate_check('coherent omission of accepted C13.02 unit',coherent_omit_c13_02)
+if len(controls)!=20: raise AssertionError(('negative-control-count',controls))
 print(json.dumps({'positive_packets':1,'negative_controls_rejected':len(controls),'controls':controls,'selected_lines':len(inv),'atomic_results':len(claims),'dimensions':len(claims)*5,'actions':len(actions),'semantic_oracle':'human review; CDC pending'}))
 ```
 
-Replay on the current draft: one complete packet passed; 16 negative controls were rejected by the same checker: omitted selected line, actual invalid WINDOW, clipped subject, replacement used as original, duplicate evidence ID, dangling evidence reference, dangling action result, invented capture, invented/nonreciprocal pair, outside-span reverse membership, retain deletes original, result/action replacement mismatch, malformed table target, malformed CSS target, duplicate JSON object key and invalid JSON constant. Output: 184 selected lines, 84 atomic results, 420 dimension records, 25 actions; semantic oracle remains human review and CDC is pending.
+Replay on the current draft: one complete packet passed; 16 inherited negative controls and four CDC recurrence mutations were rejected by the same checker: omitted selected line, actual invalid WINDOW, clipped subject, replacement used as original, duplicate evidence ID, dangling evidence reference, dangling action result, invented capture, invented/nonreciprocal pair, outside-span reverse membership, retain deletes original, result/action replacement mismatch, malformed table target, malformed CSS target, duplicate JSON object key and invalid JSON constant. The four recurrence mutations rejected were replacement-only mutation of A-C13, C13.01 changed to retain, duplicate C13.01 membership on an existing line, and coherent removal of C13.02 from all candidate joins. Output: 184 selected lines, the H1-derived current unit population, five dimensions per unit, 25 actions; semantic oracle remains human review and CDC is pending.
 
 The malformed table/CSS controls update the associated proposal and result part too, so they reach the structural-form predicates rather than failing an earlier cross-file mismatch. The checker does not establish language grammar, CSS parsing, a browser’s behavior, WCAG conformance, historical fidelity, full DES disposition, complete card/live coverage, or independent acceptance.
 
-## Candidate integrity receipt — Iteration01
+## Iteration01 candidate integrity receipt — historical
+
+The following is preserved as the prior iteration’s receipt; it is not current I2 evidence.
 
 Substantive candidate C is `2758549e922371125114f7e25017779f73977c01`, tree `806845873f50866addf5dd2f53a1e5bad234d68f`, direct child of issue `ed048ab69cc18c0e8852d6534e66bfe1c182d440`. Its exact changed paths are `artifacts/claim-results.jsonl`, `artifacts/correction-handoff.md`, `artifacts/execution-notes.md`, `artifacts/occurrence-inventory.jsonl`, `artifacts/source-comparison.md`, `closing-report.md` and `ledger.md` in this slice directory. `git show C:<path>` bytes matched all seven worktree outputs. The commit message contains both required Co-authored-by trailers. `git diff --check C^ C` passed; the inline checker replay passed with one positive packet and 16 rejected negative controls; all seven candidate files are LF-only and end in a newline. The local Markdown check resolved 22 targets with zero errors.
 

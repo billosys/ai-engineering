@@ -1,8 +1,8 @@
-# Slice04 CC closing report — proposed return, Iteration01
+# Slice04 CC closing report — proposed return, Iteration02
 
-**Assignment:** [Iteration01 prompt](cc-prompt-iteration01.md), issued at commit ed048ab69cc18c0e8852d6534e66bfe1c182d440 (tree a99a2ebef3395b37993ed5f8918fcc2ab128a141, parent 742de3710a81f6ef86109f8ae5eddd3ed808c183). The initial prompt was issued at db77543df9f6785f9b1889112ac12a79383db400; its candidate was 742de3710a81f6ef86109f8ae5eddd3ed808c183, a child of receipt-only pin 83b10880d1bb6ce4c686942438c6da512532dc9a. SOURCE remained main at dffa504e851b03b8e4746f1941068e4cc850b612. Iteration01 issue, earlier candidate and this proposed return are distinct records.
+**Assignment:** [Iteration02 prompt](cc-prompt-iteration02.md), issued at commit `877ff958dd89553fe3c5a326e4b833ce1f8637cd` (tree `c43db0869a7687f85394438e7bea39fe3f17bf5b`, parent H1 `7eb7a38e754bffbec207b43580a9bf9d44976b88`). Prompt SHA-256: `6201bdbb30eb8f791e95b28c75a76411758241d796589e363a81101f04a66871`. SOURCE remains pinned to `dffa504e851b03b8e4746f1941068e4cc850b612`. This is a CC proposed return for CDC review; it does not accept or close Slice04, DES-009, a parent criterion or release gate.
 
-This is CC evidence returned for independent review. CDC has accepted S04-08 at the earlier candidate only. That historical row remains done; S04-01/02/03/04/05/06/07/09 remain open pending review of this candidate. This report does not accept or close Slice04, DES-009, any parent criterion or release gate.
+The independently accepted C1/H1 evidence remains scoped to S04-01/02/05/08. Five rows S04-03/04/06/07/09 remain open. The ledger statuses and criterion text are unchanged here; the new return is proposed evidence pending CDC review.
 
 ## Delivered scope and derived accounting
 
@@ -11,8 +11,8 @@ This is CC evidence returned for independent review. CDC has accepted S04-08 at 
 | Declared complete source contexts | 13 |
 | Inclusive selected physical lines | 184 |
 | Pinned SOURCE files | 3 |
-| Occurrence records | 184: 101 intersect assigned assertion subjects; 40 retained-boundary owners; 43 context/markup owners |
-| Derived clause-level result records | 84 |
+| Occurrence records | 184: 101 assertion intersections; 40 retained-boundary owners; 43 context/markup owners |
+| Derived clause-level results | 84 |
 | Five-dimension records | 420 |
 | Reciprocal original-proposition comparison links | 33 |
 | Exact composed source actions | 25 for 84 results |
@@ -20,52 +20,50 @@ This is CC evidence returned for independent review. CDC has accepted S04-08 at 
 | Card relationships or competency questions reviewed | 0; outside assignment |
 | Browser, assistive-technology, package, full-card/live-file or conformance checks | 0 |
 
-The 84 results were derived after clause reconstruction, including five separate units in the universal-size paragraph and the removal of a bare ordered-list number from the claim denominator. The 13 contexts/184 physical lines remain coverage bounds. Every occurrence row has exact pinned identity and an owner; exact character-span intersections are checked in both directions. No desired count is treated as semantic evidence.
+The 84-unit identity and subject population were compared to the H1 independently reviewed baseline; no split or merge was justified. The counts are derived from the full identity map and five-dimension records. The 13 windows and 184 physical lines remain bounded coverage, not evidence of semantic completeness by themselves.
 
 ## Seven authorized output paths
 
-- [Occurrence inventory](artifacts/occurrence-inventory.jsonl) — 184 selected-line identities, exact assertion intersections, owner-only lines and C01–C27 lineage.
-- [Source comparison](artifacts/source-comparison.md) — nine current primary sources, observed version/status, actual read scopes and limits; historic source fidelity remains unassessed.
-- [Claim results](artifacts/claim-results.jsonl) — 84 distinct source subjects, each with five dimension records, per-claim evidence and exact action links.
-- [Correction handoff](artifacts/correction-handoff.md) — portable intrinsic-first policy, dense/prose/adverse-content cases, 25 complete action targets, clause-level proposal parts and later owners.
-- [Execution notes](artifacts/execution-notes.md) — read receipts and recovered order deviation, readback, example/probe replay, T02 and utility limits, plus the exact current inline checker and controls.
-- [Slice ledger](ledger.md) — unchanged criterion text and CDC state, with current CC evidence pointers only.
-- [Closing report](closing-report.md) — this proposed return and bounded parent/trial account.
+- [Occurrence inventory](artifacts/occurrence-inventory.jsonl) remains byte-identical to H1.
+- [Source comparison](artifacts/source-comparison.md) records the observed source versions/statuses, complete consulted clauses and limits. Source fidelity remains unassessed because original captures and authoring lineage are unavailable under P10-11.
+- [Claim results](artifacts/claim-results.jsonl) retains all 84 H1 units with five separate dimensions per unit, specific warrants/evidence and corrected reciprocal original-subject comparisons.
+- [Correction handoff](artifacts/correction-handoff.md) contains 25 exact non-overlapping actions, 84 exact proposal parts, dispositions, original-subject joins, target owners and rationale.
+- [Execution notes](artifacts/execution-notes.md) separates historical I1 receipts from I2 evidence; records required reads, correction walk, failed/recovered attempts, author example, inline checker and limits.
+- [Slice ledger](ledger.md) retains all nine criteria/statuses and appends the current proposed-evidence account.
+- [Closing report](closing-report.md) is this proposed return and bounded parent/trial account.
 
-No auxiliary helper remains in the repository. The preparation notes, issued prompts, plans, independent review, parent records, audit/source pins, Project13 protocol/Case01/records and unrelated Project12 work remain protected.
+No auxiliary checker/helper remains in the repository. Plans, issued prompts, source files, original evidence inputs, independent reviews, parent records and unrelated Project12 files remain outside the candidate.
 
 ## Nine-row return
 
-| Row | CC account | Remaining status/gate |
+| Row | CC account | Remaining gate |
 |---|---|---|
-| S04-01 | Current issue, full required reads, recovered clipping/order deviation, author example and checker replay are recorded. | Open for CDC intake review. |
-| S04-02 | All 13/184 bounds are retained; each complete assigned assertion unit and each boundary/context line has a checked exact owner. | Open for CDC manual clause/window walk. |
-| S04-03 | Current scoped primary comparisons include relevant sizing, flex, grid, container-unit, measure and WCAG definitions with applicability limits. | Open for CDC source-scope review; original captures/editions and lineage remain unavailable under P10-11. |
-| S04-04 | All 84 units have five separate dimension records; 33 reciprocal source-proposition links are named. | Open for CDC warrant, completeness and pair-comparability review; graph/CQ remains unassessed. |
-| S04-05 | Portable policy keeps intrinsic behavior first while allowing justified content/task adaptation; includes prose without a query, dense-action assumptions and contrary/failure checks. | Open for CDC policy review; actual browser/AT behavior remains unrun. |
-| S04-06 | Every result points to an exact, non-overlapping action with original bytes distinct from its proposal; the 25 actions are composed against all three complete pinned files. | Open for CDC manual grammar, semantic and owner review; SOURCE has not been edited. |
-| S04-07 | One inline standard-library checker accepts the positive packet and rejects 16 actual corrupted packets through the same validation route. | Open for CDC replay and property review; it is not a truth oracle. |
-| S04-08 | CDC’s prior acceptance at candidate 742de371 is retained for that candidate. Fresh seven-path integrity evidence for Iteration01 is recorded after commit below. | Historical done status retained; CDC must reproduce current candidate integrity. |
-| S04-09 | This report accounts for all rows, counts, failures/recovery, T02 state, utility, unknown costs and parent boundaries. | Open for CDC composition and silent-drop review. |
-
-No criterion text/status changed. The ledger’s eight-open/one-done state is preserved until CDC updates it.
+| S04-01 | I2 prompt/issue, pinned SOURCE, required reads, exact author example and repaired checker are recorded. | Existing done status is inherited from accepted C1/H1 evidence; review the I2 intake and replay evidence. |
+| S04-02 | H1’s 13/184 selected population and every occurrence identity/owner are unchanged; the checker derives each claim’s exact line intersections in both directions. | Existing done status remains bounded to accepted C1/H1 inventory; review unchanged inventory and I2 joins. |
+| S04-03 | Current scoped primary comparisons include CSS Values comparison functions, CSS2.1 block constraints, CSS Logical mapping, Flexbox, Grid, and WCAG target-size criteria with limits. | Open for CDC source scope and applicability review; original editions/captures remain unavailable. |
+| S04-04 | All 84 original units have five dimension records; 33 reciprocal links remain about original propositions, with corrected warrants and pair distinctions. | Open for CDC manual warrant, completeness and pair-comparability review; graph/CQ remains unassessed. |
+| S04-05 | H1’s bounded intrinsic-first portable policy is retained; new evidence clarifies applicability and task/content limits. | Existing done status is only for accepted C1/H1 work; this iteration does not run browser/AT checks. |
+| S04-06 | Each result joins an exact proposal part and pointer in one of 25 complete-file virtual actions; all three pinned source files are composed in memory. | Open for CDC manual grammar, semantic, owner and full-file review; SOURCE is unchanged. |
+| S04-07 | One inline standard-library checker accepts the full packet and rejects 20 corrupt packets through the same validation route, including four I1 recurrence cases. | Open for CDC replay/property review; structural acceptance is not a truth oracle. |
+| S04-08 | Changes are confined to six of seven authorized output paths; the inventory is unchanged; protected SOURCE and unrelated untracked content remain. | Existing done status belongs to C1/H1. Fresh I2 parent/trailer/tree/LF/EOF/link/diff receipts require post-commit review. |
+| S04-09 | This report accounts for all nine rows, denominators, attempts/recovery, T02 state, artifact utility, unknown costs and parent limits. | Open for CDC composition and silent-drop review. |
 
 ## Findings, failures and recoveries
 
-The correction answers F01–F06 from the initial independent review: line coverage is separated from complete propositions; dimension warrants now name each clause and evidence limit; exact action targets retain complete original boundaries and preserve neighboring attribution; the checker guards declared windows, bidirectional memberships, strict JSON and current joins; worked cases retain their assumptions and failure checks; and current intake/T02 states are separated from predecessor claims.
+I corrected original-proposition and repeated-warrant defects: C01.01 and C23.01 both quantify all layouts; the distinction is composition wording versus explicit capability/exhaustiveness. C04.01/C24.06 are categorical zero-query prescriptions, while C04.03/C05.02/C12.01 are diagnostic questions. The C04.02 guarantee and C24.03 breadth claim remain separate. Repeated sibling warrants were individualized where subjects differ, including target-size levels/exceptions, the scope of flex wrapping, example versus complete-grammar claims, and the C14/C16 stress cases.
 
-The first intake read the current prompt/plan/ledger before completing Orders 0–2. No dependent batch work followed; the full remaining reads and a reread were completed and the deviation is explicit in the notes. A preparation-notes output clipped; bounded chunks recovered the full 186-line file. The author example’s first path lookup failed from the SOURCE working directory; the exact fenced example was then run from SOURCE with its absolute planning input and produced one positive, five rejected invalid records and the stipulated 60/120 arithmetic. An early atomic-boundary extraction failed before writing; rereading the pinned source corrected it. Record reconciliation found bundled C17 and four additional list/example distinctions; splitting the C17 assertions changed the derived denominator. The exact target checker and all 16 current negative controls then passed/rejected as recorded. These are execution observations, not independent acceptance.
+Primary-source rechecks corrected the `clamp()` evidence, WCAG 2.5.5 AAA versus 2.5.8 AA target-size clauses/exceptions, CSS2.1 auto-margin conditions, logical-property mapping and Grid’s grid-item-only auto-margin scope. Flexbox line collection is cited at §9.3. I removed uninspected Grid clause references. These remain bounded current technical observations; none reconstructs historical author/source fidelity or proves a real layout outcome.
 
-## Bounded Arc02 handoff
+A manual composition pass found missing paragraph boundaries in C21/C22 proposals; they were restored. A composition assertion first searched `layout.md` for `### Zero Breakpoints`, but that heading is in the SKILL file; the path assertion was corrected and the composed SKILL now checks retained heading context. Both attempts were non-mutating. The I1 execution notes separately preserve its clipped-read, wrong-path and atomic-boundary recovery history. The current exact author example was replayed from SOURCE: one positive, five invalid rejections and stipulated `[60, 120]` arithmetic. No source, browser, package, AT or conformance check was run.
 
-The packet is evidence for DES-009 and bounded DES-002: reusable primitives and intrinsic sizing remain first-line methods; prose measure, grid/flex thresholds and broad selectors require stated scope; discrete query modes are justified by an identified task failure and checked behavior; and design rules do not guarantee unanticipated outcomes. The dense-action case assumes 408px of content-plus-gaps and a task consequence when one action separates; arithmetic alone does not prove that the threshold or task is real. A prose case is given that needs no query. Expanded labels, an unbreakable token, changed font metrics and wide two-dimensional content each have contrary results and later owners.
+## Bounded Arc02 handoff and trial limits
 
-This work does not close DES-002/009 or alter the Arc02 ledger. Full R/T/C/L/G, all 233 cards, eight live files and 16 findings, original-source readiness/P10-11, Arc03 interaction/browser proof, Arc04 live composition/package, Arc06 metadata/rendering and Project10/11 release gates remain. Project13 remains CDC-owned and its protocol remains frozen.
+This packet provides proposed evidence for DES-009 and bounded DES-002: intrinsic sizing remains a first-line method; prose measure, selectors, thresholds and Grid/Flexbox recipes require stated scope; query modes are justified by an identified task failure and checked behavior; design rules do not guarantee unanticipated outcomes. The dense-action arithmetic assumes 408px of content plus gaps and a task consequence if an action separates; arithmetic alone does not establish either premise. A prose case needs no query. Expanded labels, an unbreakable token, changed font metrics and wide two-dimensional content retain contrary/failure checks and later owners.
 
-## Trial and artifact utility
+T02’s initial return was executed at candidate C; this is a correction pass. Completion, correction classification and final measurement remain separate pending states. The current task prompt and host planning record were used for status; protocol body and Case01 were not reopened. Model/provider settings, token counts, I2 elapsed time, reviewer minutes, downstream utility and maintenance cost are unknown. The prior 28m54s duration is only Operator-attested in the CDC review. This is a continuing conversation, not independent-session evidence. The inventory and action registry serve review and handoff decisions; their volume is not a methodology result.
 
-T02’s initial return was executed at candidate C. This pass is a correction; completion, corrections and final measurement remain separate pending states. The current task prompt and host register were read for those status facts; the protocol body and Case01 were not reopened. Model/provider settings, sampling, token counts, this iteration’s elapsed time, reviewer minutes, downstream implementation utility and ongoing maintenance cost are unknown. The earlier 28m54s duration is Operator-attested as reported in the CDC review, not independently timed here. The continuing conversation is not an independent-session run. The occurrence map and composed action registry serve the assigned review/handoff decision; their volume alone is not a methodology result.
+This work does not close DES-002/009 or alter the Arc02 ledger. Full R/T/C/L/G, all 233 cards, eight live files and 16 findings, source-readiness/P10-11, Arc03 interaction/browser proof, Arc04 live composition/package, Arc06 metadata/rendering and Project10/11 release gates remain. Project13 remains CDC-owned and its protocol remains frozen.
 
 ## Candidate integrity receipt
 
-**Substantive seven-path candidate:** commit `2758549e922371125114f7e25017779f73977c01`, tree `806845873f50866addf5dd2f53a1e5bad234d68f`, direct parent Iteration01 issue `ed048ab69cc18c0e8852d6534e66bfe1c182d440`. The issue-to-candidate diff contains exactly the seven authorized outputs listed in `execution-notes.md`; committed bytes equal the candidate worktree bytes. The commit carries both required co-author trailers. Post-commit checks replayed the inline checker (one positive packet, 16 negative controls rejected), verified all seven files use LF and end with a newline, and passed `git diff --check`. The local Markdown link/fragment check found 22 targets and zero errors. SOURCE remains at `dffa504e851b03b8e4746f1941068e4cc850b612` with only its pre-existing untracked `knowledge/lfe/extraction-metadata/lfe-taxonomy.md`; planning's pre-existing untracked `project12-chcd-protocol/` remains outside the candidate. These are integrity receipts, not independent acceptance. CDC review of this candidate remains required; eight criteria remain open, and S04-08's done state records the prior independently accepted candidate only.
+The substantive seven-path candidate and receipt-only child will be recorded here after commit. At this point the issue baseline and allowed worktree changes are reviewable, but the candidate commit/tree identity does not yet exist. These CC checks are not independent acceptance; five criteria remain open and the done rows retain their accepted C1/H1 scope.
