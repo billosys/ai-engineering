@@ -51,9 +51,11 @@ are follow-up context, not a prospectively assigned treatment run.
 - [Run register](artifacts/experiment01-methodology-pilot/run-register.md)
   records eligibility and results. T01 is independently closed; its first checkpoint
   is complete and comparative benefit is inconclusive. T02 is registered and
-  executed for Project10 Arc02/Slice04 as initial742de371 plus one correction
-  C1/H1; first acceptance remains1/9, cumulative current4/9. Iteration02 issued
-  for residual gaps; host completion/final comparison remain pending.
+  executed for Project10 Arc02/Slice04 as initial742de371 plus two corrections.
+  Latest C2/H2 `35f6d01e`/`273deaba` awaits CDC; first acceptance remains1/9,
+  cumulative reviewed4/9. The [interim analysis](artifacts/experiment01-methodology-pilot/interim-analysis.md)
+  records recurring failures, repair progress and a reproduced duplicate-registry
+  finding for the pending host review. Host closure/final comparison remain pending.
 
 The intervention bundles worked examples, inventory-first analysis, explicit
 verification coverage, comprehensive reviewer checks, a response to recurring
@@ -127,6 +129,11 @@ amendment and a deviation record; do not rescore history silently. No current
 skill/package or repository-wide AGENTS change is authorized by this bootstrap.
 
 ## Version History
+
+- 1.6 (2026-10-12): Operator-requested interim analysis through T02 I02 return;
+  no new host acceptance. Reproduced packet measurements and six competing
+  registries, reconciled stale research summary, retained protocol/baseline and
+  deferred final comparison/adoption until their evidence and gates are satisfied.
 
 - 1.5 (2026-10-11): Recorded T02 first corrective return C1/H1, independent
   host4/9 cumulative acceptance and targeted persistence/recurrence witnesses.

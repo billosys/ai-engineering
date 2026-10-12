@@ -2,7 +2,9 @@
 
 Prepared 2026-10-10; T01 independently closed on 2026-10-11; checkpoint below.
 Protocol revision 2's initial zero-run status is historical; this register tracks
-current registrations. T02 has an initial CC return and partial independent review.
+current registrations. At the 2026-10-12 interim cutoff, T02 has returned its
+initial assignment and two corrections. Initial and Iteration01 are reviewed;
+Iteration02 at `273deaba` awaits CDC review, with inherited four-of-nine acceptance.
 The next two newly opened Project10 slices are selected by the protocol's
 consecutive-entry rule, not by expected success. Slice02's ongoing correction is
 excluded. Record each entry here before issuing its initial prompt.
@@ -10,7 +12,7 @@ excluded. Record each entry here before issuing its initial prompt.
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
 | T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Closed after initial + four corrections; checkpoint completed below | First3/9; final9/9 bounded criteria; comparative benefit inconclusive |
-| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue `db77543d` | Initial return742de371 reviewed; Iteration01 issued, not yet executed | First1/9; preservation done, eight open; completion/final comparison pending |
+| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue `db77543d`; I02 issue `877ff958` | Initial + two corrections returned; I02 candidate35f6d01e / receipt273deaba awaits CDC | First1/9; cumulative reviewed4/9; [interim analysis](interim-analysis.md); closure/final comparison pending |
 
 ## Entry format
 
@@ -634,3 +636,34 @@ claimed; CDC reused/compacted context and knows research/prior cases. No causal
 trial conclusion, success target, third run or adoption. Scope/quality/authority
 held: only four actual criteria accepted; final comparison follows host closure
 or recorded stop. Protocol revision2 and Case01 remain frozen, all P13 rows open.
+
+
+## Interim analysis and T02 Iteration02 return — 2026-10-12
+
+Operator-requested [interim analysis](interim-analysis.md), cutoff planning
+`273deaba3bc6cb474e35dc61b34696fa758e0416`. T02 C2 `35f6d01e` is a direct child
+of issue `877ff958`; receipt H2 `273deaba` is its direct child. This is the second
+returned correction, not a newly accepted result. The most recent host review
+remains I01: S04-01/02/05/08 done, five open. CC reports 84 result units and 25
+actions and claims its positive/20-negative replay passes; those claims are not
+independently accepted by this analysis.
+
+Fresh research measurements: the seven-output H2 packet is 898,382 bytes; notes
+34,604 and handoff472,636. The handoff contains six distinct arrays with the
+same25 action IDs; five extra arrays occupy384,778 bytes. The recorded parser
+selects only the first. A read-only extraction probe confirms later invalid
+payload does not alter that parsed result. See analysis R05 and its reproducible
+code. This is a new artifact/verification finding for the pending CDC review,
+not a full candidate replay, host repair, new assignment or host-row disposition.
+
+Interpretation: accepted T01 progress and more specific repairs are real, but
+cross-task recurrence persists. Net effort benefit remains unknown. Smaller notes
+do not establish overall record economy; duplicated competing registries supply
+a concrete misuse example, while goal displacement at project scale is unmeasured.
+All prior exposure/effort/task-comparability limits remain. No treatment amendment,
+third run, final comparison or broad adoption is authorized.
+
+The current T02 summary above was stale at the cutoff: it said I01 had not
+executed despite the appended I01 review. It is now reconciled, with the earlier
+bytes retained at273deaba. Frozen protocol/Case01 and host evidence are unchanged.
+This housekeeping is research overhead, not independently accepted host progress.
