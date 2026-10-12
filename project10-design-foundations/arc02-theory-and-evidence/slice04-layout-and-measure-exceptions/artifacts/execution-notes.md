@@ -468,3 +468,288 @@ The following is preserved as the prior iteration’s receipt; it is not current
 Substantive candidate C is `2758549e922371125114f7e25017779f73977c01`, tree `806845873f50866addf5dd2f53a1e5bad234d68f`, direct child of issue `ed048ab69cc18c0e8852d6534e66bfe1c182d440`. Its exact changed paths are `artifacts/claim-results.jsonl`, `artifacts/correction-handoff.md`, `artifacts/execution-notes.md`, `artifacts/occurrence-inventory.jsonl`, `artifacts/source-comparison.md`, `closing-report.md` and `ledger.md` in this slice directory. `git show C:<path>` bytes matched all seven worktree outputs. The commit message contains both required Co-authored-by trailers. `git diff --check C^ C` passed; the inline checker replay passed with one positive packet and 16 rejected negative controls; all seven candidate files are LF-only and end in a newline. The local Markdown check resolved 22 targets with zero errors.
 
 The Iteration01 issue prompt and its blob/hash remain pinned as recorded above; candidate C's direct parent is that exact issue. SOURCE HEAD remains `dffa504e851b03b8e4746f1941068e4cc850b612` and its tracked/index bytes are unchanged; the existing untracked `knowledge/lfe/extraction-metadata/lfe-taxonomy.md` remains. Planning retains its existing untracked `project12-chcd-protocol/` directory. No unrelated path entered C. This follow-up records the integrity check only: eight criteria remain open, S04-08 is done only for the earlier candidate accepted in the initial CDC review, and independent CDC replay of C is pending.
+
+## Iteration04 required-reading intake and contract readback
+
+**Identity and state.** I4 prompt SHA-256 is `1a34d996819f1e7e28056c3a7d09a3b0fc499e8472cecb213a5d8d2ac5bb1919`, in issue commit `a23a7ae420c1d2135cd70cd4dbc7bdec3befb56f`, direct child of H3 `d626e7373d550a8a5a27d2614ee0daa96ac32e74`. Initial state was clean planning HEAD at H3 plus preserved `?? project12-chcd-protocol/`. SOURCE is pinned at `dffa504e851b03b8e4746f1941068e4cc850b612` with pre-existing `?? knowledge/lfe/`; no source mutation is assigned. The exact four-path allowance is in I4 lines 10–24 and 26–84.
+
+**Complete required text loaded before dependent edits.**
+
+| Order | Required content and loaded extent | Readback relevance |
+|---|---|---|
+| 0 | SOURCE `AGENTS.md` (216 lines); installed collaboration-framework `SKILL.md` (538 lines); SOURCE Project Management `SKILL.md` and guides `README.md`; planning-root `AGENTS.md`; actual Project10 `AGENTS.md` (48 lines at H3, SHA-256 `15389b3c985c28a574b062fa9421602a3cbe89676a25ba0ecb661c7381ed7182`). | Planning is planning-only, SOURCE stays pinned; Two-Contributor CDC+CC and Expedited Mode require exact-path commits and preserve independent acceptance. Project10 instructions do exist; I3’s “does not exist” is a path mistake, retained as history rather than retroactively repaired. |
+| 1 | Project10 `project-plan.md` full (all 13 rows through P10-13); Arc02 `arc-plan.md` full; Project10 and Arc02 ledger criteria full (P10-01–13; A02-01–08). | No reduction of 233 cards, eight live files, 16 findings, five dimensions or R/T/C/L/G; P10-11 and release gates remain open. |
+| 2 | I4 prompt full; current `slice-plan.md` (167 lines), `ledger.md` (78); CDC Iteration03 independent-review section including the complete repair example and registry consumer; current I3 closing report (51 lines). | Six slice rows remain accepted at their scoped revisions; S04-06/07/09 are open. The four named repairs govern; no slice/parent gate closes here. |
+| 3 | SOURCE PM guide03 complete; engineering-methods guide07 investigation/semantic assignments, §§5–6, intake and corrective iterations; work-verification guides01/03/05 full. | Preserve the issued prompt, report attested evidence honestly, and leave independent acceptance with CDC. |
+| 4 | SOURCE design `SKILL.md` full (368 lines), lines206–208 complete; H3 handoff lead, complete portable policy, worked/adverse cases and ownership/gates (all prose before/after arrays). | A-C04’s heading is the only proposal-content edit; policy, cases, owners and gates remain byte-identical. |
+| 5 | H3 `claim-results.jsonl`: complete84 IDs, subjects, spans/offsets, literals and disposition projections; occurrence inventory complete184 rows; first registry all25 actions, with A-C04 displayed fully. All six arrays decoded with `JSONDecoder.raw_decode` after each opening marker: each contains25 actions and comparison found 6/6/6/7/24 changed replacements; H3 has six opens and one closer. | Complete denominator inspected, without sampling. The first25 actions are the current set; the other24 action objects are protected for exact structured equality. No first-array-only blind spot is retained. |
+| 6 | H3 execution notes “Iteration03 correction execution” through candidate receipt and full I3 checker/20 controls; H2 checker action-loop/bounds/form/return sections (H2 notes lines84–200); current closing report full. | Preserve I1–I3 failures/receipts as history. I4 restores five H2 action guards and replays the current complete registry. |
+| Reference-only | Earlier prompts/reviews, primary-source register, and Project13 interim R05/history remain provenance; no changed technical judgment, acquisition or research-success claim is needed. | No new primary source or Project13 write is authorized. |
+| Conditional | No materially changed CSS/WCAG/technical judgment is proposed, so no conditional governing-source read was triggered. | Such expansion is outside this assignment. |
+
+**Recovery and uncertainty.** My first relative prompt lookup omitted `project10-design-foundations/`; I recovered using the actual repository path. A combined long read display was truncated, so I used bounded follow-up reads before edits. I2/I3 reading exposure remains unknown; this fresh intake does not establish earlier exposure. The I3 Project10-AGENTS error is corrected as a current fact while its historical claim remains intact.
+
+**Contract readback.** I4 is an evidence-only correction limited to `artifacts/correction-handoff.md`, `artifacts/execution-notes.md`, `ledger.md` and `closing-report.md`. Preserve all84 accepted result/subject identities and literal proposal parts; only A-C04’s heading plus consequent digest/pointers may change. Deliver one strict current25-action JSON registry, rejecting duplicate keys, nonfinite constants, malformed/multiple/unclosed fences and trailing invalid block content. Restore source-span/character and replacement-pointer bounds before slicing, unique action memberships, and exact retain-versus-changed semantics while preserving prior guards and all20 controls. Recompose three complete pinned SOURCE files in memory. Structural replay does not decide meaning, prose grammar, CSS runtime, accessibility, source fidelity, card/CQ coverage or release readiness. Keep nine criterion texts and six-done/three-open status; return proposed evidence to CDC without self-acceptance.
+
+## Iteration04 integrated checker and execution
+
+The I4 checker below supersedes the I3 validator for this candidate; the I3 checker and its results remain preserved above as history. It reuses the exact windows, H1 identity, result joins and composition logic, and restores H2 action guards before slicing. Its `registry()` consumer parses exactly one complete Markdown JSON fence with the same strict duplicate-key/nonfinite decoder as current JSONL data. All current negative controls use this delivered `validate()` or its strict `registry()` reader. This is structural evidence, not a semantic, prose grammar, CSS runtime, accessibility or original-fidelity oracle.
+
+```python
+import copy, hashlib, json, re, subprocess
+from pathlib import Path
+ROOT=Path('/Users/oubiwann/lab/billosys/ai-engineering')
+BASE=ROOT/'.worktrees/planning/project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/artifacts'
+REV='dffa504e851b03b8e4746f1941068e4cc850b612'
+H1='7eb7a38e754bffbec207b43580a9bf9d44976b88'
+WINDOWS=[('knowledge/design/SKILL.md',78,99),('knowledge/design/SKILL.md',206,208),('knowledge/design/SKILL.md',266,273),('knowledge/design/SKILL.md',328,333),('knowledge/design/guides/layout.md',142,154),('knowledge/design/guides/layout.md',271,295),('knowledge/design/guides/layout.md',324,351),('knowledge/design/guides/layout.md',383,412),('knowledge/design/guides/layout.md',598,609),('knowledge/design/guides/layout.md',669,680),('knowledge/design/guides/layout.md',698,702),('knowledge/design/guides/layout.md',966,977),('knowledge/design/guides/breaking-the-layout-monoculture.md',105,112)]
+DIMS={'source_faithfulness','correctness','scope_attribution','consistency','relationship_cq_coverage'}
+def obj(pairs):
+ d={}
+ for k,v in pairs:
+  if k in d: raise ValueError(('duplicate-json-key',k))
+  d[k]=v
+ return d
+def constant(x): raise ValueError(('invalid-json-constant',x))
+def parse(s): return json.loads(s,object_pairs_hook=obj,parse_constant=constant)
+def rows(n): return [parse(x) for x in (BASE/n).read_text().splitlines() if x]
+def registry(text=None):
+ if text is None: text=(BASE/'correction-handoff.md').read_text()
+ opens=list(re.finditer(r'^```json\n',text,re.M)); closes=list(re.finditer(r'^```[ \t]*(?:\n|$)',text,re.M))
+ fences=list(re.finditer(r'^```',text,re.M))
+ if len(opens)!=1 or len(closes)!=1 or len(fences)!=2 or closes[0].start()<opens[0].end(): raise ValueError(('one-complete-json-registry-required',len(opens),len(closes),len(fences)))
+ raw=text[opens[0].end():closes[0].start()]
+ value,end=json.JSONDecoder(object_pairs_hook=obj,parse_constant=constant).raw_decode(raw)
+ if raw[end:].strip(): raise ValueError(('trailing-registry-content',raw[end:].strip()[:40]))
+ if not isinstance(value,list): raise ValueError(('registry-not-array',))
+ return value
+def actions(): return registry()
+def validate(inv,claims,acts,windows=WINDOWS,table_ok=True,css_ok=True):
+ src={}; expected=set(); wins=[]
+ for i,(p,lo,hi) in enumerate(windows,1):
+  data=subprocess.check_output(['git','-C',str(ROOT),'show',REV+':'+p]); lines=data.decode().splitlines()
+  if lo<1 or hi<lo or hi>len(lines): raise ValueError(('window-bounds',p,lo,hi))
+  src[p]=(data,lines); w=f'W{i:02}'; wins.append((p,lo,hi,w)); expected.update((p,n,w) for n in range(lo,hi+1))
+ if len(expected)!=184: raise ValueError(('window-population',len(expected)))
+ got={}
+ for r in inv:
+  k=(r['path'],r['line'],r['window']); data,lines=src[r['path']]
+  if k in got or k not in expected: raise ValueError(('occurrence-key',k))
+  if r['revision']!=REV or r['sha256']!=hashlib.sha256(data).hexdigest() or r['literal']!=lines[r['line']-1] or not r['owner']: raise ValueError(('occurrence-identity',k))
+  got[k]=r
+ if set(got)!=expected: raise ValueError(('omitted-occurrence',))
+ by={}; members={k:set() for k in expected}; prior={f'C{i:02}' for i in range(1,28)}
+ for r in claims:
+  cid=r['claim_id']; s=r['subject']; p=s['path']; data,lines=src[p]; lo,hi=s['span']; joined='\n'.join(lines[lo-1:hi]); a,b=s['offsets']
+  if cid in by or lo<1 or hi<lo or hi>len(lines) or a<0 or b<a or b>len(joined) or joined[a:b]!=s['assertion'] or s['revision']!=REV or s['sha256']!=hashlib.sha256(data).hexdigest(): raise ValueError(('subject-identity',cid))
+  at=0
+  for n in range(lo,hi+1):
+   end=at+len(lines[n-1])
+   if max(a,at)<min(b,end): members[(p,n,next(w for q,l,h,w in wins if q==p and l<=n<=h))].add(cid)
+   at=end+1
+  if set(r['dimensions'])!=DIMS: raise ValueError(('five-dimensions',cid))
+  eids=[e['id'] for e in r['evidence']]
+  if len(eids)!=len(set(eids)): raise ValueError(('duplicate-evidence',cid))
+  for e in r['evidence']:
+   if e.get('snapshot_sha256') is not None: raise ValueError(('invented-capture',cid))
+  for name,d in r['dimensions'].items():
+   if not d.get('reason','').strip() or not set(d.get('evidence_refs',[]))<=set(eids): raise ValueError(('dimension-warrant',cid,name))
+  c=r['dimensions']['consistency']; pairs=c.get('paired_subjects',[])
+  if c['outcome']!='not assessed' and not pairs: raise ValueError(('pairless-verdict',cid))
+  if r['dimensions']['source_faithfulness']['outcome']!='not assessed': raise ValueError(('fidelity-upgrade',cid))
+  if not set(r['predecessor_claim_ids'])<=prior: raise ValueError(('predecessor',cid))
+  by[cid]=r
+ if {x for r in claims for x in r['predecessor_claim_ids']}!=prior: raise ValueError(('incomplete-lineage',))
+ h1=[parse(x) for x in subprocess.check_output(['git','-C',str(ROOT),'show',H1+':project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/artifacts/claim-results.jsonl']).decode().splitlines() if x]
+ old={r['claim_id']:(r['subject']['path'],r['subject']['assertion'],tuple(r['predecessor_claim_ids'])) for r in h1}; now={r['claim_id']:(r['subject']['path'],r['subject']['assertion'],tuple(r['predecessor_claim_ids'])) for r in claims}
+ if old!=now: raise ValueError(('H1-lineage',))
+ for r in claims:
+  for other in r['dimensions']['consistency'].get('paired_subjects',[]):
+   if other not in by or r['claim_id'] not in by[other]['dimensions']['consistency'].get('paired_subjects',[]): raise ValueError(('nonreciprocal-pair',r['claim_id'],other))
+ for k,r in got.items():
+  if len(r['claim_ids'])!=len(set(r['claim_ids'])) or set(r['claim_ids'])!=members[k]: raise ValueError(('membership',k))
+  if bool(members[k])!=(r['classification']=='assigned-assertion'): raise ValueError(('classification',k))
+ amap={}; targets={}
+ for a in acts:
+  aid=a['action_id']; ids=a['result_ids']; p=a['path']; data,lines=src[p]
+  if aid in amap or set(ids)!=set(a['claim_ids']) or not ids: raise ValueError(('action-membership',aid))
+  for cid in ids:
+   if by[cid]['disposition']['action_id']!=aid: raise ValueError(('reverse-action',aid))
+  if set(a['proposal_parts'])!=set(ids) or set(a['proposal_pointers'])!=set(ids) or set(a['unit_subjects'])!=set(ids): raise ValueError(('part-membership',aid))
+  if len(ids)!=len(set(ids)) or len(a['claim_ids'])!=len(set(a['claim_ids'])): raise ValueError(('duplicate-action-membership',aid))
+  for cid in ids:
+   q=a['proposal_pointers'][cid]; lo,hi=q['start'],q['end']
+   if not 0<=lo<=hi<=len(a['replacement']): raise ValueError(('replacement-pointer-bounds',aid,cid,lo,hi,len(a['replacement'])))
+   if a['replacement'][lo:hi]!=a['proposal_parts'][cid] or a['proposal_parts'][cid]!=by[cid]['disposition']['replacement'] or a['unit_subjects'][cid]!=by[cid]['subject']['assertion'] or by[cid]['subject']['assertion'] not in a['original']: raise ValueError(('replacement-pointer',aid,cid))
+   if by[cid]['disposition']['proposed']=='retain' and by[cid]['subject']['assertion'] not in a['replacement']: raise ValueError(('retain-not-preserved',aid,cid))
+  lo,hi=a['span']
+  if not 1<=lo<=hi<=len(lines): raise ValueError(('action-span-bounds',aid,lo,hi,len(lines)))
+  joined='\n'.join(lines[lo-1:hi]); x,y=a['literal_offset_0based']
+  if not 0<=x<=y<=len(joined): raise ValueError(('action-char-bounds',aid,x,y,len(joined)))
+  start=len('\n'.join(lines[:lo-1]).encode())+(1 if lo>1 else 0)+len(joined[:x].encode()); end=start+len(a['original'].encode())
+  bx,byte_end=a['file_byte_offsets']
+  if not 0<=bx<=byte_end<=len(data): raise ValueError(('action-byte-bounds',aid,bx,byte_end,len(data)))
+  if joined[x:y]!=a['original'] or a['file_byte_offsets']!=[start,end] or data[start:end].decode()!=a['original'] or a['source_revision']!=REV or a['source_sha256']!=hashlib.sha256(data).hexdigest(): raise ValueError(('action-source-target',aid))
+  if a['disposition']=='retain' and a['replacement']!=a['original']: raise ValueError(('retain-changes-source',aid))
+  if a['disposition']!='retain' and a['replacement']==a['original']: raise ValueError(('changed-label-noop',aid))
+  if a['replacement_sha256']!=hashlib.sha256(a['replacement'].encode()).hexdigest(): raise ValueError(('replacement-digest',aid))
+  targets.setdefault(p,[]).append((start,end,aid,a)); amap[aid]=a
+ if set(amap)!={r['disposition']['action_id'] for r in claims}: raise ValueError(('reverse-actions',))
+ for p,edits in targets.items():
+  edits.sort(); prev=0; data=src[p][0]; out=[]
+  for x,y,aid,a in edits:
+   if x<prev: raise ValueError(('overlap',p,aid))
+   out.extend((data[prev:x],a['replacement'].encode())); prev=y
+  out.append(data[prev:]); composed=b''.join(out).decode()
+  if not composed.endswith('\n'): raise ValueError(('composed-eof',p))
+  if p.endswith('layout.md'):
+   if not table_ok: raise ValueError(('bad-table',))
+   for aid in ('A-C02','A-C03'):
+    cells=amap[aid]['replacement'].split('|')
+    if len(cells)!=6 or not amap[aid]['replacement'].startswith('|') or not amap[aid]['replacement'].endswith('|'): raise ValueError(('table-cells',aid))
+   if not amap['A-C05']['replacement'].startswith('5. '): raise ValueError(('ordered-list',))
+  if p.endswith('SKILL.md'):
+   if not css_ok: raise ValueError(('bad-css',))
+   css=amap['A-C06']['replacement']
+   if '```' in css or not css.startswith('/*') or '.prose {' not in css or not css.rstrip().endswith('}'): raise ValueError(('css-target-shape',))
+   if '```css' not in composed or composed.count('```')%2: raise ValueError(('css-fence',))
+   if not amap['A-C04']['replacement'].startswith('### Start with intrinsic layout\n\nStart with intrinsic layout'): raise ValueError(('heading-target',))
+ return True
+inv=rows('occurrence-inventory.jsonl'); claims=rows('claim-results.jsonl'); acts=actions(); validate(inv,claims,acts)
+controls=[]; routes=[]
+def reject(name,fn,route=None):
+ try: fn()
+ except (AssertionError,KeyError,TypeError,ValueError,IndexError,StopIteration) as e:
+  got=e.args[0][0] if e.args and isinstance(e.args[0],tuple) else None
+  if route and got!=route: raise AssertionError((name,route,got,e))
+  controls.append(name)
+  if route: routes.append((name,got))
+ else: raise AssertionError(('negative-accepted',name))
+def cloned(): return copy.deepcopy(inv),copy.deepcopy(claims),copy.deepcopy(acts)
+def mutate(name,fn,route=None):
+ i,c,a=cloned(); fn(i,c,a); reject(name,lambda:validate(i,c,a),route)
+def rewrite(a,c,aid,value):
+ x=next(v for v in a if v['action_id']==aid); x['replacement']=value; x['replacement_sha256']=hashlib.sha256(value.encode()).hexdigest(); x['proposal_parts']={i:value for i in x['result_ids']}; x['proposal_pointers']={i:{'start':0,'end':len(value)} for i in x['result_ids']}
+ for i in x['result_ids']: next(r for r in c if r['claim_id']==i)['disposition']['replacement']=value
+mutate('omitted selected line',lambda i,c,a:i.pop())
+reject('invalid WINDOW',lambda:validate(inv,claims,acts,windows=[('knowledge/design/SKILL.md',0,2)]))
+mutate('clipped subject',lambda i,c,a:c[0]['subject'].update(offsets=[0,3]))
+mutate('replacement posed as original',lambda i,c,a:c[0]['subject'].update(assertion=c[0]['disposition']['replacement']))
+mutate('duplicate evidence ID',lambda i,c,a:c[0]['evidence'].append(copy.deepcopy(c[0]['evidence'][0])))
+mutate('dangling evidence reference',lambda i,c,a:c[0]['dimensions']['correctness'].update(evidence_refs=['MISSING']))
+mutate('dangling action result',lambda i,c,a:a[0]['result_ids'].append('MISSING'))
+mutate('invented capture',lambda i,c,a:c[0]['evidence'][0].update(snapshot_sha256='0'*64))
+mutate('invented pair',lambda i,c,a:c[0]['dimensions']['consistency'].update(paired_subjects=['MISSING'],outcome='conflicts'))
+mutate('outside-span reverse membership',lambda i,c,a:i[-1]['claim_ids'].append(c[0]['claim_id']))
+mutate('retain deletes original',lambda i,c,a:a[0].update(disposition='retain',replacement=''))
+mutate('result/action replacement mismatch',lambda i,c,a:a[0]['proposal_parts'].update({a[0]['claim_ids'][0]:'different'}))
+mutate('malformed table target',lambda i,c,a:rewrite(a,c,'A-C02','not a row'),'table-cells')
+mutate('malformed CSS target',lambda i,c,a:rewrite(a,c,'A-C06','/* no rule or selector */'),'css-target-shape')
+reject('duplicate JSON object key',lambda:parse('{"x":1,"x":2}'))
+reject('invalid JSON constant',lambda:parse('{"x":NaN}'))
+mutate('C13 inserted replacement only',lambda i,c,a:next(x for x in a if x['action_id']=='A-C13').update(replacement='replacement-only corruption'))
+mutate('C13.01 changed to retain only',lambda i,c,a:next(x for x in c if x['claim_id']=='C13.01')['disposition'].update(proposed='retain'))
+def duplicate_member(i,c,a): next(x for x in i if 'C13.01' in x['claim_ids'])['claim_ids'].append('C13.01')
+mutate('duplicate existing line membership',duplicate_member)
+def coherent_omit(i,c,a):
+ c[:]=[x for x in c if x['claim_id']!='C13.02']
+ for r in i: r['claim_ids']=[x for x in r['claim_ids'] if x!='C13.02']
+ for x in a:
+  if 'C13.02' in x['claim_ids']:
+   for k in ('claim_ids','result_ids'): x[k]=[v for v in x[k] if v!='C13.02']
+   for k in ('proposal_parts','proposal_pointers','unit_subjects'): x[k].pop('C13.02')
+mutate('coherent omission of accepted C13.02 unit',coherent_omit)
+if (len(inv),len(claims),len(acts),len(controls))!=(184,84,25,20): raise AssertionError(('counts',len(inv),len(claims),len(acts),controls))
+import re
+SLICE=BASE.parent
+surface=[SLICE/'artifacts/correction-handoff.md',SLICE/'artifacts/execution-notes.md',SLICE/'closing-report.md',SLICE/'ledger.md',SLICE/'artifacts/source-comparison.md']
+links=[]; local=[]; fragments=[]
+for f in surface:
+ text=f.read_text()
+ for label,target in re.findall(r'\[([^\]]*)\]\(([^)]+)\)',text):
+  links.append((f,target))
+  if target.startswith(('http://','https://','mailto:')): continue
+  local.append((f,target)); pathpart,_,fragment=target.partition('#'); dest=(f.parent/pathpart).resolve() if pathpart else f.resolve()
+  if not dest.exists(): raise ValueError(('broken-local-link',str(f),target))
+  if fragment:
+   fragments.append((f,target))
+   if dest.suffix=='.md':
+    headings=re.findall(r'^#{1,6}\s+(.+?)\s*#*$',dest.read_text(),re.M)
+    def slug(h):
+     h=re.sub(r'[`*_~]','',h).lower(); h=h.replace('—','-').replace('–','-'); h=re.sub(r'[^\w\- ]','',h); h=re.sub(r'\s+','-',h.strip()); return re.sub(r'-{3,}','--',h)
+    if fragment not in {slug(h) for h in headings}: raise ValueError(('broken-fragment',str(f),target))
+link_counts={'markdown_links':len(links),'local_links':len(local),'fragment_refs':len(fragments)}
+head=subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
+if head!=REV: raise AssertionError(('source-head-drift',head))
+for flag in ('--cached',''):
+ cmd=['git','-C',str(ROOT),'diff','--quiet']+([flag] if flag else [])
+ if subprocess.run(cmd).returncode: raise AssertionError(('source-tracked-or-index-dirty',flag))
+print(json.dumps({'positive_packets':1,'negative_controls_rejected':len(controls),'controls':controls,'required_routes':routes,'selected_lines':len(inv),'atomic_results':len(claims),'five_dimension_records':len(claims)*5,'actions':len(acts),'markdown_links':len(links),'local_links':len(local),'fragment_refs':len(fragments),'source_head':head,'semantic_oracle':'human review; CDC pending'}))
+# I4 full registry, recurrence, and current integrated-control replay.
+i3_controls_replayed=list(controls); i3_routes_replayed=list(routes)
+controls=[]; routes=[]
+HANDOFF=(BASE/'correction-handoff.md').read_text()
+def read_h3_handoff():
+ return subprocess.check_output(['git','-C',str(ROOT/'.worktrees/planning'),'show','d626e7373d550a8a5a27d2614ee0daa96ac32e74:project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/artifacts/correction-handoff.md']).decode()
+assert registry(HANDOFF)==acts and len(acts)==25 and len(inv)==184 and len(claims)==84
+
+def i4_reject(name, fn, route=None):
+ try: fn()
+ except (AssertionError,KeyError,TypeError,ValueError,IndexError,StopIteration) as e:
+  got=e.args[0][0] if e.args and isinstance(e.args[0],tuple) else None
+  if route and got!=route: raise AssertionError((name,route,got,e))
+  controls.append(name)
+  if route: routes.append((name,got))
+ else: raise AssertionError(('negative-accepted',name))
+
+def i4_cloned(): return copy.deepcopy(inv),copy.deepcopy(claims),copy.deepcopy(acts)
+def i4_mutate(name, fn, route=None):
+ i,c,a=i4_cloned(); fn(i,c,a); i4_reject(name,lambda:validate(i,c,a),route)
+def i4_rewrite(a,c,aid,value):
+ x=next(v for v in a if v['action_id']==aid); x['replacement']=value; x['replacement_sha256']=hashlib.sha256(value.encode()).hexdigest(); x['proposal_parts']={i:value for i in x['result_ids']}; x['proposal_pointers']={i:{'start':0,'end':len(value)} for i in x['result_ids']}
+ for i in x['result_ids']: next(r for r in c if r['claim_id']==i)['disposition']['replacement']=value
+# Five H2 regressions are sent through the actual restored validate() predicate.
+def i4_regression(name):
+ i,c,a=i4_cloned(); x=next(v for v in a if v['action_id']=='A-C13'); cid=x['result_ids'][0]
+ if name=='negative proposal pointer':
+  q=x['proposal_pointers'][cid]; q.update(start=-1,end=q['end']-len(x['replacement']))
+ elif name=='pointer past replacement end': x['proposal_pointers'][x['result_ids'][-1]]['end']=len(x['replacement'])+1
+ elif name=='duplicate action memberships': x['result_ids'].append(cid); x['claim_ids'].append(cid)
+ elif name=='retain label with changed action': x['disposition']='retain'
+ else: x['span'][1]=len(subprocess.check_output(['git','-C',str(ROOT),'show',REV+':'+x['path']]).decode().splitlines())+1
+ i4_reject(name,lambda:validate(i,c,a))
+for n in ('negative proposal pointer','pointer past replacement end','duplicate action memberships','retain label with changed action','action source span past EOF'): i4_regression(n)
+# Additional source-character and file-byte bounds.
+def i4_bad_char(i,c,a): next(x for x in a if x['action_id']=='A-C13')['literal_offset_0based']=[-1,2]
+i4_mutate('negative source character offset',i4_bad_char)
+def i4_bad_byte(i,c,a): next(x for x in a if x['action_id']=='A-C13')['file_byte_offsets']=[-1,3]
+i4_mutate('negative source byte offset',i4_bad_byte)
+# Stale heading must fail through validate(), while the committed current heading is positive.
+def i4_stale_heading(i,c,a):
+ x=next(v for v in a if v['action_id']=='A-C04'); x['replacement']=x['replacement'].replace('### Start with intrinsic layout','### Zero Breakpoints',1); x['replacement_sha256']=hashlib.sha256(x['replacement'].encode()).hexdigest()
+ for cid,part in x['proposal_parts'].items():
+  at=x['replacement'].index(part); x['proposal_pointers'][cid]={'start':at,'end':at+len(part)}
+i4_mutate('stale A-C04 heading',i4_stale_heading)
+# The same full-artifact consumer rejects every competing or malformed registry envelope.
+for n,bad in [
+ ('six conflicting arrays',read_h3_handoff()),
+ ('extra complete array',HANDOFF+'\n```json\n[]\n```\n'),
+ ('unclosed array fence',HANDOFF+'\n```json\n[]\n'),
+ ('trailing invalid JSON',HANDOFF.replace('\n```\n\n## Ownership','\nNOT JSON\n```\n\n## Ownership',1)),
+ ('malformed JSON fence',HANDOFF.replace('```json\n','```json  \n',1))]:
+ i4_reject('registry '+n,lambda bad=bad:registry(bad))
+validate(inv,claims,acts)
+if len(controls)!=13: raise AssertionError(('I4-additional-negative-count',len(controls),controls))
+print(json.dumps({'additional_controls_rejected':len(controls),'additional_controls':controls,'additional_routes':routes,'inherited_controls_replayed':len(i3_controls_replayed),'unique_control_properties':len(i3_controls_replayed)+len(controls),'selected_lines':len(inv),'atomic_results':len(claims),'five_dimension_records':len(claims)*5,'actions':len(acts),'link_counts':link_counts,'semantic_oracle':'human review; CDC pending'}))
+```
+
+
+
+
+### I4 execution results and failure/recovery record
+
+The current inline checker, including its strict whole-registry consumer, was executed after the candidate content was assembled. It returned one positive; all20 inherited controls rejected through `validate()` with table at `table-cells` and CSS at `css-target-shape`. The five CDC regressions also rejected through the same `validate()`: negative proposal pointer, pointer beyond replacement end, duplicate action result/claim membership, changed replacement labelled `retain`, and source span beyond EOF. Additional source character-offset and file-byte-offset negatives rejected; the stale A-C04 heading rejected. The strict registry consumer rejected the H3 six-array artifact, an added valid array, an unclosed array fence, trailing invalid block content and a malformed JSON fence. Thus there are33 distinct negative properties (20 inherited plus13 I4) in addition to the positive. These are the checker’s actual structural properties; they do not prove human semantic judgment.
+
+The derived current Markdown surface is35 links,23 local links and13 fragment references; every target-aware local path and fragment check passed. Current registry has one JSON fence (one opening and one closing), 25 actions; 84 results carry420 dimension records; the complete selected population is184 occurrence lines across13 contexts. Exact structured comparison to H3 confirms claim-results and occurrence-inventory are byte-identical; all24 non-A-C04 first-array action objects are identical; A-C04 proposal parts stay exact and only the authorized heading, replacement digest and shifted pointers differ. The other five H3 arrays and their differing replacement counts remain preserved in Git history. All six raw-decoded arrays have the same unique ordered action IDs: A-C01, A-C27, A-C02, A-C03, A-C04, A-C05, A-C06, A-C07-C08, A-C09-C10, A-C11, A-C12, A-C13, A-C14, A-C15, A-C16, A-C17, A-C18, A-C19, A-C20, A-C21, A-C22, A-C23, A-C24, A-C25, A-C26. Their canonical-JSON SHA-256 identities in array order are 661524c8a04945d8f451a1a58b686735dc3d6511a1777925f6e6f6c28da92952, da993873c4b6f9e4ac21aa18472e8680dec1f1a77d8e0207e0622dc546ab6520, eb1d39e1769c210232a3a6b79b5b9471a006cf533ec288593f71d28d41cdc0f5, 7570d45c69430a045dd611c03506ab25660d77bb7cc24623eaefa5b868e20e7f, 0bb6a06b457bc5d8f7ac9b21779d67bb228e77aa1506c2251f7bea008f0802ed, and f46d456c7b3145350131de013d0a1ad742ab8e64c3c28d9de8387f1630e1ae3f. Full virtual composition passed for all three pinned SOURCE files; the composed design SKILL around the changed heading and next “Breaking Templates” section was inspected. SOURCE remains at the pinned commit with tracked/index clean and its prior untracked `knowledge/lfe/`; planning’s unrelated `project12-chcd-protocol/` remains untouched.
+
+Failures and recoveries in this I4 pass: the initial relative prompt read used the incomplete path and was recovered via `project10-design-foundations/`; a combined read output was truncated and recovered with bounded reads. First generated checker source had malformed embedded newline quoting and failed syntax compilation; corrected and recompiled. First checker run lacked `re` for strict fence parsing; added it. A restored byte-bound variable named `by` shadowed the result map, so the checker failed at A-C27; renamed it `byte_end` and replayed. The inherited fixed link-count assertion no longer matched the newly expanded current notes (it observed40/28/13 instead of38/26/12); replaced the stale count expectation with derived reporting while retaining target and fragment failure checks. An intermediate control harness repeated the same20 checks; removed the duplicate executions and reran to obtain20 inherited plus13 additional distinct properties. Each failed attempt and its recovery is recorded here; failed drafts are not acceptance evidence.

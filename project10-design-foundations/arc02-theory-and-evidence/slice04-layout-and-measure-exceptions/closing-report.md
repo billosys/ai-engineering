@@ -1,51 +1,31 @@
-# Slice04 CC closing report — proposed return, Iteration03
+# Slice04 CC closing report — proposed return, Iteration04
 
-**Assignment:** [Iteration03 prompt](cc-prompt-iteration03.md), issued at `e0738129b6beb53a17ebe6106033aea773dec65f` (tree `070fe8da097f064c84fe2cde4164c13766e723ad`, parent `18cf2b479542a56022b42704187090c371bd7645`). SOURCE remains pinned at `dffa504e851b03b8e4746f1941068e4cc850b612`. This is CC-proposed evidence returned for CDC review. It does not accept or close Slice04, DES-009, a parent criterion, or a release gate.
+**Assignment:** [Iteration04 prompt](cc-prompt-iteration04.md), issued by `a23a7ae420c1d2135cd70cd4dbc7bdec3befb56f` directly after H3 `d626e7373d550a8a5a27d2614ee0daa96ac32e74`. SOURCE remains at `dffa504e851b03b8e4746f1941068e4cc850b612`. This is CC-proposed evidence returned to CDC Sofie through the Operator; it does not accept or close Slice04, DES-009, a parent criterion or a release gate.
 
-Accepted statuses remain S04-01/02/03/05/08 done and S04-04/06/07/09 open. I3 corrects the four findings in the Iteration02 independent review. No source, card, package or AGENTS file was changed; no browser, assistive-technology, package or conformance run occurred.
+## Scope, retained status and denominators
 
-## Delivered scope and denominators
+Exactly four authorized paths are proposed: `artifacts/correction-handoff.md`, `artifacts/execution-notes.md`, `ledger.md`, and this report. The H3 claim results and occurrence inventory, source comparison, policy/cases and ownership/gates are preserved. I3 prompt, history, checker, candidate and receipt remain available at their issued/committed revisions.
 
-The five authorized outputs are [claim results](artifacts/claim-results.jsonl), [correction handoff](artifacts/correction-handoff.md), [execution notes](artifacts/execution-notes.md), this report and the [ledger](ledger.md). The H2 [occurrence inventory](artifacts/occurrence-inventory.jsonl) and [source comparison](artifacts/source-comparison.md), issued prompts, preparation, plans and CDC reviews remain protected and unchanged.
+The checker derives 13 contexts / 184 selected lines, 184 occurrence rows, 84 result subjects, 420 five-dimension records, 25 complete actions, 35 Markdown links / 23 local / 13 fragments in the current checked surface, and one complete JSON registry fence with25 actions. H3’s six opening array markers each decode to25 actions; the checked first-array action identity set is the retained source for the current registry. Their later replacement differences are6/6/6/7/24. Twenty inherited controls and13 additional distinct I4 controls reject; table and CSS controls reach `table-cells` and `css-target-shape`. Full denoms and limitations are detailed in execution notes.
 
-| Measure | I3 return |
-|---|---:|
-| H1/H2 selected source contexts / lines | 13 / 184 |
-| Occurrence inventory rows | 184 |
-| Atomic original-subject results | 84 |
-| Five-dimension records | 420 |
-| Reciprocal original-proposition links | 33 |
-| Complete composed source actions | 25 for 84 result units |
-| Parent claim IDs | C01–C27 |
-| Relationship/CQ corpus review | 0; outside scope |
-| Browser, AT, package, full-card/live-file or conformance runs | 0 |
-
-The source comparison has 12 register rows. Results reference 13 distinct evidence IDs; `CV10.2`, `GRID-6.4` and `WC-TARGET` are section aliases. At H2, the bounded Markdown surface had 45 total links, 33 local links and 13 fragment references. I3’s returned surface has 38 total links, 26 local links and 12 fragment references. The seven-link/one-fragment reduction was already present in the issued I3 baseline’s condensed ledger. In the I3 return, the report has one fewer local link and the ledger one more than in that issue tree, so the aggregate remains 38/26/12. The execution notes contain the fresh count method and committed-byte receipt.
-
-## Nine-row return
-
-| Row | CC proposed account | Remaining independent gate |
+| Row | CC proposed account | Current status / independent gate |
 |---|---|---|
-| S04-01 (done) | I3 issue, actual readback, recoveries and limits are recorded. | CDC reviews the current receipt; prior accepted scope stays C1/H1. |
-| S04-02 (done) | The 184 occurrence identities and all 84 subject joins retain H1 lineage and exact source bounds. | CDC reviews complete population and reverse membership; no new semantic read is claimed for unchanged boundaries. |
-| S04-03 (done) | Existing primary comparisons and their bounded applicability remain; no new technical source claim was added. | Existing acceptance remains limited to the cited source versions and unavailable historical originals. |
-| S04-04 (open) | Corrected C04/C05/C24 original warrants distinguish categorical rules, universal guarantees and diagnostics; other paired reasons remain tied to their original propositions. | CDC manually reviews all warrants and the 33 reciprocal links; relationship/CQ coverage remains unassessed. |
-| S04-05 (done) | The H2 intrinsic-first portable policy and worked/adverse cases are retained unchanged. | Prior accepted scope remains bounded; real browser/AT behavior is unrun. |
-| S04-06 (open) | All 84 results join semantically reviewed parts across 25 complete virtual edits; C10, C07/C08, A-C04 heading and A-C14 height treatment are corrected. | CDC reviews meaning, grammar, owners and composed context; SOURCE is unchanged. |
-| S04-07 (open) | One inline checker passes one packet and rejects 20 controls through the same validator; malformed table/CSS now fail at their actual guards. | CDC replays controls and reviews their properties; structural checking is not a semantic oracle. |
-| S04-08 (done) | Exactly five authorized paths changed; protected files and unrelated untracked work are preserved. | CDC checks I3 parent, trailers, tree, links, line endings and committed bytes. |
-| S04-09 (open) | This return accounts for all nine rows, read-route failures, I2 unknown exposure, denominators and remaining limits. | CDC reviews the complete composition and trial account; no parent or trial gate closes here. |
+| S04-01 | Current intake corrects the actual Project10 `AGENTS.md` path and preserves unknown earlier I2/I3 exposure. | Done at prior accepted scope; CDC reviews current receipt. |
+| S04-02 | All184 selected occurrence identities and84 subject/result joins remain byte-identical to H3. | Done at prior accepted scope; CDC may retain prior evidence against unchanged inputs. |
+| S04-03 | Pinned technical source comparison and its limits are unchanged. | Done at prior accepted scope; original fidelity remains unassessed. |
+| S04-04 | I3’s accepted original-proposition warrants and reciprocal pairs remain unchanged. | Done at C3/H3; no new semantic judgment is claimed. |
+| S04-05 | Portable policy and all worked/adverse cases are byte-identical to H3. | Done at prior accepted scope; actual browser/AT behavior remains unrun. |
+| S04-06 | A-C04 heading now reads “Start with intrinsic layout”; one strict complete25-action registry remains, and the other five copies were removed from current prose. Result parts and other24 actions are unchanged. | Open pending CDC review of meaning, exact joins, grammar, owners and complete composition. |
+| S04-07 | One current validator passes the positive packet, replays all20 inherited controls, five H2 regressions, added bounds/heading controls and strict registry-envelope controls. | Open pending CDC reproduction and judgment; structural checking is not a semantic oracle. |
+| S04-08 | Proposed diff uses exactly four paths; protected inputs, SOURCE pin/dirty state, candidate integrity, links/fragments, LF/EOF and trailers are checked. | Done at C3/H3 scope; I4 integrity evidence is CC-attested until CDC checks the new candidate. |
+| S04-09 | This report identifies I4, all nine rows, denominators, actual failures/recoveries and retained parent/trial limits. | Open pending CDC inspection of the complete current packet and honest accounting. |
 
-## Corrections and limits
+## Correction and limits
 
-C04.01 and C24.06 remain categorical zero-query prescriptions. C04.03 and C05.02 are diagnostic questions. C04.02 is separately treated as the all-responsiveness guarantee; C05.02’s warrant names its three paired subjects. Existing original-edge memberships and reciprocal count are retained.
+Only A-C04’s replacement heading changes in the first-array25 action objects. Its replacement digest and exact proposal pointers are recomputed; all three result parts and all84 claim/result records remain byte-identical. The current Markdown artifact has one balanced JSON fence. A strict duplicate-key/nonfinite decoder consumes the whole JSON block and rejects extra arrays, malformed/unclosed fences and non-whitespace trailing block content. The integrated predicate checks source line spans and character/byte offsets before source slicing, checks replacement pointer bounds before replacement slicing, rejects duplicate action memberships, and enforces retain actions as byte-identical and changed actions as byte-different. It retains the original20 control properties and actual table/CSS failure routes.
 
-C10 parts now correspond to the source clauses: bounds plus `clamp()`, `auto` versus `100%`, `flex-basis` versus `width`, and the lack of guaranteed context-appropriate outcomes. A-C07-C08 distinguishes scoped axiom policy, broad-selector applicability, the `ch` used-font “0” glyph-advance mechanism, and limits on claims about intent or sound outcomes. A-C04’s exact target includes “Zero Breakpoints” and retains an intrinsic-first, qualified body. A-C14 no longer says a fixed height necessarily claims knowledge of content quantity: fixed height can intentionally scroll or crop unknown content, with clipping/overflow and task behavior tested.
+The full virtual composition of the three complete pinned source files passed; the composed design SKILL heading and neighboring section were inspected. No SOURCE mutation, browser/AT/conformance/package/install run, new source acquisition or Project13 write occurred. The I4 execution notes retain failed attempts and recoveries. Human semantic judgments, prose grammar, CSS runtime/fidelity, complete card/live-file/DES work, relationship/CQ review and every R/T/C/L/G, P10-11, Arc03/04/06, Project10/11 and Operator gate remain in force.
 
-The I3 readback records actual source paths and ranges. I2 reading exposure is unknown; a new I3 intake cannot establish it retroactively. The H2 occurrence inventory and source comparison remain untouched. The original source captures and authoring lineage remain unavailable under P10-11; relationship/CQ coverage was not reviewed. All 233 cards, eight live files, 16 findings, full R/T/C/L/G, Arc03 interaction proof, Arc04 source/package work, Arc06 metadata/rendering and Project10/11 release gates remain in force.
+## Candidate and integrity receipt
 
-Actual read failures and recoveries are listed in the execution notes. The checker’s exact table/CSS rejection routes are recorded there. The 408px dense-action arithmetic remains a stipulated hypothetical design witness, not a browser measurement. Project13 remains CDC-owned; no research-success claim follows from this packet.
-
-## Candidate receipt
-
-Substantive candidate `cf5d2d05d9096cb0739e6dc46805494744be7880`, tree `9eb09e990b886b46fea11db809853c03663079e3`, is the direct child of I3 issue `e0738129b6beb53a17ebe6106033aea773dec65f` (issue tree `070fe8da097f064c84fe2cde4164c13766e723ad`). The exact changed paths are the five authorized outputs listed above. A receipt-only direct child of this candidate contains the final integrity receipt; its parent and exact three-path scope are recorded in that receipt and ledger. Both commits carry the required co-author trailers. The receipt records committed-byte checker replay, protected inputs, links/fragments, line endings and `git diff --check`. CDC review is pending; this is not acceptance.
+Substantive candidate: pending until this report is committed. Its required parent is I4 issue `a23a7ae420c1d2135cd70cd4dbc7bdec3befb56f`; changed paths must be exactly the four listed above, with both required co-author trailers. A receipt-only direct child may record the actual candidate/tree identity and post-commit replay. SOURCE HEAD and tracked/index state remain pinned/clean; unrelated pre-existing untracked `knowledge/lfe/` and `project12-chcd-protocol/` remain outside scope. Independent CDC review is pending.
