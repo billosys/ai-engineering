@@ -1,0 +1,14 @@
+# Project12 Arc01 Slice01 Ledger
+
+All rows are open. CC records proposed-done evidence; CDC independently checks
+the artifacts and records acceptance separately. See [slice-plan.md](slice-plan.md).
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S01-01 | Intake identifies the active assignment, complete required reading/data coverage and pinned versus working source state | Inspect execution-notes intake/readback, plan hashes, revision and scoped dirty-state checks | serious | Prompt intake contract | open | — | Missing required material blocks dependent inspection |
+| S01-02 | Baseline manifest exactly covers tracked predecessor files and selected integration files with reproducible identities | Fresh Git tree enumeration; exact path-set equality; compare mode, blob OID, length and SHA-256 for every row | serious | P12-01; A01-01 | open | — | Author observed 103 predecessor files; derive count rather than hardcode it |
+| S01-03 | Migration inventory accounts for all matched files and distinct legacy-name surface categories without equating history with rename targets | Replay case-insensitive content/path census; reconcile every path to rows/exclusions; inspect each category's supporting context | correctness-grade | P12-05, P12-07; A01-04 | open | — | Include wire, schema/capability, security/audit, tooling, navigation, guide and history classifications |
+| S01-04 | Archive, distribution and publication populations and guide divergence are distinguished with concrete evidence | Trace Makefile/package checker/Pages workflow; compare raw and decoded guide content and identify exact differing passage | correctness-grade | P12-01, P12-08, P12-09 | open | — | Neither guide is changed; publication workflow included even without CCDP text |
+| S01-05 | Inherited gaps and unresolved migration decisions have traceable IDs, locators and downstream owners | Reconcile README blockers, all five open-question sections and every FINDINGS ID to report index; inspect version-boundary witness | serious | P12-10; A01-05 | open | — | Historical findings are not freshly verified or silently accepted |
+| S01-06 | Reproduction checks establish complete records and unchanged source without overclaiming semantic or runtime verification | Validate JSONL records/unique identities and witness resolution; rerun full set/hash checks; compare start/end relevant source state | serious | Evidence and preservation contract | open | — | Retain errors and discrepancies; builds and live-source verification are outside this slice |
+| S01-07 | Return accounts for every row, scope difference, blocker and arc implication | Closing-report row walk and bubble-up against issued prompt, actual artifacts and checks | correctness-grade | Workflow | open | — | Independent CDC acceptance and later-slice opening remain pending |
