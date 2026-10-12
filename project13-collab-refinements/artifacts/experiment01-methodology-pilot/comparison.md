@@ -145,6 +145,124 @@ Project10 AGENTS remains historical authority for these two registered slices;
 its wording does not extend the treatment to subsequent ordinary assignments.
 No framework/skill/package or repository-wide instruction edit is made.
 
+## Post-closure research challenge — 2026-10-12
+
+Operator returned this study to the research chat after CDC closed Slice04 and
+opened Slice05. This supplement challenges the synthesis at planning `58d8e5a1`;
+it does not replace the host verdict or the earlier comparison. This chat also
+contributed the protocol and interim analysis, so its review is not an independent
+acceptance of its own methodology. Research ledger dispositions remain open.
+
+**The result stands, with a more precise practical diagnosis:** convergence is
+observed; prevention and efficient transfer are not established. The evidence
+supports investigating how instructions become demonstrated, checked final work,
+rather than assuming another increase in prompt specificity will solve recurrence.
+
+- **Progress:** both hosts reached bounded acceptance, with usable correction
+  handoffs and preserved quality gates. Fresh replay of the comparison's byte
+  script reproduces all14 rows. Replay of the final host review's committed-byte
+  script passes the positive packet,33 supplied negative specimens and five
+  additional reviewer probes. The registry is singular; the other24 actions and
+  all84 claim records are preserved. This reproduces structural repairs; prior
+  semantic judgments remain attributed to their host reviews.
+- **Adaptation:** correction became increasingly tied to actual failing examples,
+  but some repairs did not survive subsequent work. T02 I3 restored one area while
+  dropping five prior guards; the final pass restored them. Passing33 specimens
+  does not mean33 independent guarantees: several specimens exercise the same
+  underlying property. Assess property coverage and rejection routes, not counts.
+- **Prompt authorship:** initial preparation included useful examples, but the
+  T02 author record explicitly left paired consistency unassessed and did not
+  compose the eventual structured edit. The difficult-case prose requested some
+  work rather than demonstrating that complete path. This weakens the test of the
+  proposed intervention. Later explicit heading instructions also failed: I3
+  still retained “Zero Breakpoints” and checked for it. Lack of specificity alone
+  cannot explain the observed repetitions. Inspect the [preparation](../../../project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/artifacts/preparation-notes.md#one-complete-author-record-and-discriminating-checks)
+  and [I3 findings](../../../project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cdc-verification.md#iteration03-independent-review--2026-10-12).
+- **Reviewer contribution:** the research chat exposed competing registries at H2;
+  CDC missed carrying that finding into the next review, then recovered at I3.
+  This is an observed failure to incorporate available evidence, not simply a CC
+  failure to follow instructions. No estimate of the rounds or time it caused is
+  justified. The same record also shows the value of retained artifacts: they
+  made the discrepancy and its later repair reproducible.
+- **Artifact concern:** the duplicate current registries establish a concrete
+  misuse, and their removal repairs an actual consumption problem. They do not
+  establish that artifact directories caused it, that all large packets are
+  wasteful, or that Project10 has lost its purpose. Evidence production was an
+  assigned intermediate deliverable. Track whether the accepted handoffs are
+  later applied and useful before judging project-level goal displacement.
+
+### Previously unreported prompt and reviewer surface
+
+The protocol includes prompt bytes; the table above covers CC's seven outputs
+only. These supplementary measurements make the author/reviewer surface visible.
+Each issued prompt is counted once, from the historical slice tree. Preparation
+and cumulative review are measured once at the stated checkpoint, not summed
+across versions. Baseline preparation in other documents is not counted as zero.
+
+| Run / review checkpoint | Initial prompt bytes | First four prompts combined | All returned-assignment prompts | Separate preparation notes | Cumulative CDC review |
+|---|---:|---:|---:|---:|---:|
+| B / `9a30f480` | 12,430 | 61,521 | 61,521 (4) | No separate file; other preparation unmeasured | 92,897 |
+| T01 / `46e729cd` | 11,266 | 40,896 | 48,332 (5) | 12,948 | 63,103 |
+| T02 / `dc7b0732` | 10,373 | 45,919 | 55,669 (5) | 13,586 | 85,678 |
+
+T02 uses the explicit reviewer-measurement erratum checkpoint; its final CC packet
+remains H4b. Trial prompts are smaller in both the initial and common four-prompt
+windows, so “the pilot merely made prompts longer” is not supported by this
+measure. However, preparation and referenced material can move work outside the
+prompt. These bytes are neither complete assigned reading nor actual context
+consumption; they exclude parent plans, referenced sources, chat, model reasoning
+and Project13 upkeep. They do not demonstrate reduced total workload.
+
+### What to change in the next experiment, if authorized
+
+Prefer one narrow change with an observable mechanism: the author demonstrates
+one difficult original-to-final-output path, including a complete multiline unit,
+an actual original pair, the reason for judgment and the literal composed edit.
+The CC then applies that demonstrated method to a different reserved case before
+bulk execution. Distinct cases matter: copying the author's answer tests imitation,
+not transfer. Keep the existing acceptance standard and tools constant; compare
+separate contexts on the same bounded task, recording preparation, CC and review
+effort as well as defects. A small initial comparison remains exploratory.
+
+Retain the complete existing regression suite across a repair and inspect the
+whole delivered artifact. Those are lessons supported by concrete failures here;
+their separate contribution is not identified by this bundled pilot. Avoid adding
+several new interventions and then attributing any improvement to the example.
+No new framework rule, trial assignment, cleanup policy or file-size cap is issued.
+Slice05's [plan](../../../project10-design-foundations/arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/slice-plan.md)
+and [prompt](../../../project10-design-foundations/arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt.md)
+explicitly exclude T03. Ordinary later work can inform future observations, but
+is not a newly registered treatment or an uncontaminated control.
+
+Supplementary measurements can be reproduced from planning with:
+
+```python
+import subprocess
+root = 'project10-design-foundations/arc02-theory-and-evidence/'
+for run, slug, rev, last in [
+    ('B', 'slice02-nonlinear-colour-pipeline', '9a30f480', 3),
+    ('T01', 'slice03-token-system-conventions', '46e729cd', 4),
+    ('T02', 'slice04-layout-and-measure-exceptions', 'dc7b0732', 4),
+]:
+    base = root + slug + '/'
+    def blob(path):
+        return subprocess.check_output(['git', 'show', rev + ':' + base + path])
+    prompts = ['cc-prompt.md'] + [
+        f'cc-prompt-iteration{i:02}.md' for i in range(1, last + 1)]
+    sizes = [len(blob(path)) for path in prompts]
+    paths = subprocess.check_output(
+        ['git', 'ls-tree', '-r', '--name-only', rev, base], text=True).splitlines()
+    prep = 'artifacts/preparation-notes.md'
+    print(run, sizes[0], sum(sizes[:4]), sum(sizes),
+          len(blob(prep)) if base + prep in paths else None,
+          len(blob('cdc-verification.md')))
+```
+
+This supplement adds research interpretation and reproducible measurements only.
+The protocol, frozen case, interim cutoff, run registrations and host files remain
+unchanged. Slice05 was active during this read; its untracked output is unrelated
+work. No original-source, browser, full semantic or package validation was rerun.
+
 ## Reproduction and self-check scope
 
 From planning, this read-only script reproduces every byte-table row from Git.
