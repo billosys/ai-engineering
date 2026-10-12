@@ -36,6 +36,26 @@ Seven unchanged source windows, 98 lines, five file hashes and complete selected
 {
   "retained_substantive": [
     {
+      "boundary_id": "B14",
+      "window_id": "W01",
+      "path": "knowledge/design/SKILL.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "byte_offsets": [
+        5639,
+        5698
+      ],
+      "line_span": [
+        64,
+        64
+      ],
+      "literal_subject": "Memorize these. They resolve almost every design trade-off.",
+      "disposition": "retained; not separately assessed",
+      "reason": "General exhortation and near-universal trade-off claim; this pass does not adjudicate principle scope or applicability.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
       "boundary_id": "B01",
       "predecessor_ids": [
         "B01"
@@ -168,6 +188,126 @@ Seven unchanged source windows, 98 lines, five file hashes and complete selected
       "owner": "Arc02 remaining T/L; Arc04 composition"
     },
     {
+      "boundary_id": "B15",
+      "window_id": "W02",
+      "path": "knowledge/design/SKILL.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "byte_offsets": [
+        12150,
+        12174
+      ],
+      "line_span": [
+        183,
+        183
+      ],
+      "literal_subject": "The Two Design Decisions",
+      "disposition": "retained; not separately assessed",
+      "reason": "Section label introducing local endpoint choices; not a claim that the choices resolve every dependent design decision.",
+      "owner": "Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B16",
+      "window_id": "W02",
+      "path": "knowledge/design/SKILL.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "byte_offsets": [
+        12176,
+        12206
+      ],
+      "line_span": [
+        185,
+        185
+      ],
+      "literal_subject": "Everything derives from these:",
+      "disposition": "retained; not separately assessed",
+      "reason": "Broad derivation claim is preserved as unassessed context; no universal dependency is inferred in this pass.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B17",
+      "window_id": "W02",
+      "path": "knowledge/design/SKILL.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "byte_offsets": [
+        12346,
+        12359
+      ],
+      "line_span": [
+        189,
+        189
+      ],
+      "literal_subject": "Utopia Tokens",
+      "disposition": "retained; not separately assessed",
+      "reason": "Section label preserved separately from the CSS declarations and their syntax.",
+      "owner": "Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B18",
+      "window_id": "W02",
+      "path": "knowledge/design/SKILL.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "byte_offsets": [
+        12560,
+        12570
+      ],
+      "line_span": [
+        194,
+        194
+      ],
+      "literal_subject": "Type scale",
+      "disposition": "retained; not separately assessed",
+      "reason": "CSS comment label; the adjacent declarations, rather than this label, are the assessed literal inputs.",
+      "owner": "Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B19",
+      "window_id": "W02",
+      "path": "knowledge/design/SKILL.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "byte_offsets": [
+        12692,
+        12723
+      ],
+      "line_span": [
+        198,
+        198
+      ],
+      "literal_subject": "Space scale (derived from type)",
+      "disposition": "retained; not separately assessed",
+      "reason": "CSS comment states a derivation relation beyond the assigned alias/formula facts; preserve for Arc02/Arc04 review.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B20",
+      "window_id": "W02",
+      "path": "knowledge/design/SKILL.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "byte_offsets": [
+        12816,
+        12851
+      ],
+      "line_span": [
+        202,
+        202
+      ],
+      "literal_subject": "Space pairs (steeper interpolation)",
+      "disposition": "retained; not separately assessed",
+      "reason": "CSS comment states a qualitative steepness claim beyond arithmetic and axis review; preserve for Arc02/Arc04 review.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
       "boundary_id": "B07",
       "predecessor_ids": [
         "B07"
@@ -234,26 +374,24 @@ Seven unchanged source windows, 98 lines, five file hashes and complete selected
       "owner": "Arc02 remaining T/L; Arc04 composition"
     },
     {
-      "boundary_id": "B11",
-      "predecessor_ids": [
-        "B11"
-      ],
-      "window_id": "W06",
+      "boundary_id": "B21",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
       "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
-      "path": "knowledge/design/guides/design.md",
-      "line_span": [
-        151,
-        152
-      ],
-      "source_sha256": "e4953fd1452102c98df6f0fcf33bc17bd3732f011180475daa8fd256e70e687b",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
       "byte_offsets": [
-        5651,
-        5727
+        7302,
+        7329
       ],
-      "literal_subject": "Every unit of\nmeasurement should describe the experience, not the mechanism.",
+      "line_span": [
+        195,
+        195
+      ],
+      "literal_subject": "Utopia\\'s Fluid Mathematics",
       "disposition": "retained; not separately assessed",
-      "reason": "general unit maxim",
-      "owner": "Arc02 remaining T/L; Arc04 composition"
+      "reason": "Section construction label is retained; no historical attribution or universal behavior follows from the heading.",
+      "owner": "Arc04 composition",
+      "predecessor_ids": []
     },
     {
       "boundary_id": "B12",
@@ -278,6 +416,228 @@ Seven unchanged source windows, 98 lines, five file hashes and complete selected
       "owner": "Arc02 remaining T/L; Arc04 composition"
     },
     {
+      "boundary_id": "B22",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8228,
+        8254
+      ],
+      "line_span": [
+        214,
+        214
+      ],
+      "literal_subject": "The Full Stack at a Glance",
+      "disposition": "retained; not separately assessed",
+      "reason": "Table heading retained as a guide label, not as evidence that its construction labels or purpose claims are correct.",
+      "owner": "Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B23",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8483,
+        8493
+      ],
+      "line_span": [
+        218,
+        218
+      ],
+      "literal_subject": "Typography",
+      "disposition": "retained; not separately assessed",
+      "reason": "Table layer label retained; Q20 alone targets the Typography purpose cell.",
+      "owner": "Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B24",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8498,
+        8521
+      ],
+      "line_span": [
+        218,
+        218
+      ],
+      "literal_subject": "Utopia fluid type scale",
+      "disposition": "retained; not separately assessed",
+      "reason": "Typography construction label retained outside the Q20 purpose target.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B25",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8574,
+        8581
+      ],
+      "line_span": [
+        219,
+        219
+      ],
+      "literal_subject": "Spacing",
+      "disposition": "retained; not separately assessed",
+      "reason": "Table layer label retained outside the accessibility purpose correction.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B26",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8589,
+        8613
+      ],
+      "line_span": [
+        219,
+        219
+      ],
+      "literal_subject": "Utopia fluid space scale",
+      "disposition": "retained; not separately assessed",
+      "reason": "Spacing construction label retained outside Q20.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B27",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8626,
+        8661
+      ],
+      "line_span": [
+        219,
+        219
+      ],
+      "literal_subject": "Harmonised with type, clamp()-based",
+      "disposition": "retained; not separately assessed",
+      "reason": "Spacing purpose cell is retained without assessing harmony, token derivation or clamp behavior in this pass.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B28",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8664,
+        8670
+      ],
+      "line_span": [
+        220,
+        220
+      ],
+      "literal_subject": "Colour",
+      "disposition": "retained; not separately assessed",
+      "reason": "Table layer label retained outside Q20.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B29",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8679,
+        8713
+      ],
+      "line_span": [
+        220,
+        220
+      ],
+      "literal_subject": "OKLCH + color-mix() + light-dark()",
+      "disposition": "retained; not separately assessed",
+      "reason": "Colour construction label retained; no fresh colour/token judgment is made.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B30",
+      "window_id": "W05",
+      "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "76d209306a8ade1da51f62ad86fb7f01f103f0f4d033e7235c3b4b023397b845",
+      "byte_offsets": [
+        8716,
+        8748
+      ],
+      "line_span": [
+        220,
+        220
+      ],
+      "literal_subject": "Perceptually uniform, CSS-native",
+      "disposition": "retained; not separately assessed",
+      "reason": "Colour purpose cell is retained without fresh perceptual or colour-system assessment.",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B31",
+      "window_id": "W06",
+      "path": "knowledge/design/guides/design.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "e4953fd1452102c98df6f0fcf33bc17bd3732f011180475daa8fd256e70e687b",
+      "byte_offsets": [
+        5384,
+        5425
+      ],
+      "line_span": [
+        148,
+        148
+      ],
+      "literal_subject": "The same principle applies beyond colour.",
+      "disposition": "retained; not separately assessed",
+      "reason": "Cross-topic bridge sentence is preserved; generality/application remains for Arc02/Arc04 scope. ",
+      "owner": "Arc02 remaining theory/context; Arc04 composition",
+      "predecessor_ids": []
+    },
+    {
+      "boundary_id": "B11",
+      "predecessor_ids": [
+        "B11"
+      ],
+      "window_id": "W06",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "path": "knowledge/design/guides/design.md",
+      "line_span": [
+        151,
+        152
+      ],
+      "source_sha256": "e4953fd1452102c98df6f0fcf33bc17bd3732f011180475daa8fd256e70e687b",
+      "byte_offsets": [
+        5651,
+        5727
+      ],
+      "literal_subject": "Every unit of\nmeasurement should describe the experience, not the mechanism.",
+      "disposition": "retained; not separately assessed",
+      "reason": "general unit maxim",
+      "owner": "Arc02 remaining T/L; Arc04 composition"
+    },
+    {
       "boundary_id": "B13",
       "predecessor_ids": [
         "C15"
@@ -291,12 +651,12 @@ Seven unchanged source windows, 98 lines, five file hashes and complete selected
       ],
       "source_sha256": "8a9f1ab35dee3373ebbf1460416e334adffcd908f095463fa015c6ef0a5f5d7c",
       "byte_offsets": [
-        18228,
+        18223,
         18356
       ],
-      "literal_subject": "Bringhurst\\'s principle that\ndisplay type needs more air, and text type needs more density,\nimplemented in pure CSS mathematics.",
+      "literal_subject": " --- Bringhurst\\'s principle that\ndisplay type needs more air, and text type needs more density,\nimplemented in pure CSS mathematics.",
       "disposition": "retained; not separately assessed",
-      "reason": "Bringhurst attribution/perception retained",
+      "reason": "Bringhurst attribution/perception continuation, including its original em-dash separator; exact wording remains unassessed and is preserved for source-attribution/perception review.",
       "owner": "Arc02 remaining T/L; Arc04 composition"
     }
   ],
@@ -306,48 +666,1541 @@ Seven unchanged source windows, 98 lines, five file hashes and complete selected
       "predecessor_id": "M01",
       "window_id": "W01",
       "path": "knowledge/design/SKILL.md",
-      "literal_subject": "Markdown table structure",
-      "disposition": "markup only; representation retained"
+      "literal_subject": "Markdown table header and separator rows",
+      "disposition": "markup only; representation retained",
+      "byte_spans": [
+        [
+          5700,
+          5755
+        ],
+        [
+          5756,
+          5811
+        ]
+      ]
     },
     {
       "boundary_id": "M02",
       "predecessor_id": "M02",
       "window_id": "W02",
       "path": "knowledge/design/SKILL.md",
-      "literal_subject": "heading and fenced CSS delimiters",
-      "disposition": "markup only; representation retained"
+      "literal_subject": "Markdown heading/fence markers and CSS comment delimiters; comment labels are separate retained boundaries",
+      "disposition": "markup only; representation retained",
+      "byte_spans": [
+        [
+          12146,
+          12149
+        ],
+        [
+          12342,
+          12345
+        ],
+        [
+          12550,
+          12556
+        ],
+        [
+          12557,
+          12560
+        ],
+        [
+          12570,
+          12573
+        ],
+        [
+          12689,
+          12692
+        ],
+        [
+          12723,
+          12726
+        ],
+        [
+          12813,
+          12816
+        ],
+        [
+          12851,
+          12854
+        ],
+        [
+          12914,
+          12917
+        ]
+      ]
     },
     {
       "boundary_id": "M03",
       "predecessor_id": "M03",
       "window_id": "W04",
       "path": "knowledge/design/guides/layout.md",
-      "literal_subject": "::: prose delimiters",
-      "disposition": "markup only; representation retained"
+      "literal_subject": "::: prose opening and closing delimiters",
+      "disposition": "markup only; representation retained",
+      "byte_spans": [
+        [
+          44589,
+          44598
+        ],
+        [
+          45315,
+          45318
+        ]
+      ]
     },
     {
       "boundary_id": "M04",
       "predecessor_id": "M04",
       "window_id": "W05",
       "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
-      "literal_subject": "heading anchor, ::: prose and fixed-column table",
-      "disposition": "markup only; representation retained"
+      "literal_subject": "Markdown heading/anchor and prose delimiters plus fixed-column table header/rule syntax; data cells are separate boundaries/units",
+      "disposition": "markup only; representation retained",
+      "byte_spans": [
+        [
+          7298,
+          7301
+        ],
+        [
+          7330,
+          7394
+        ],
+        [
+          7396,
+          7405
+        ],
+        [
+          8219,
+          8222
+        ],
+        [
+          8224,
+          8227
+        ],
+        [
+          8255,
+          8320
+        ],
+        [
+          8322,
+          8383
+        ],
+        [
+          8384,
+          8480
+        ]
+      ]
+    },
+    {
+      "boundary_id": "M05",
+      "predecessor_id": null,
+      "window_id": "W06",
+      "path": "knowledge/design/guides/design.md",
+      "literal_subject": "Closing ::: prose delimiter; preceding bridge sentence is a separate retained boundary.",
+      "disposition": "markup only; representation retained",
+      "byte_spans": [
+        [
+          5728,
+          5731
+        ]
+      ]
     }
-  ]
+  ],
+  "local_witnesses": [
+    {
+      "witness_id": "W02-ALIAS",
+      "owner_claim_id": "Q04",
+      "window_id": "W02",
+      "path": "knowledge/design/SKILL.md",
+      "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+      "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
+      "byte_offsets": [
+        12727,
+        12752
+      ],
+      "line_span": [
+        199,
+        199
+      ],
+      "literal": "--space-s: var(--step-0);",
+      "purpose": "Exact CSS alias witnessing the Q04 equality statement; source data, not code-fence markup."
+    }
+  ],
+  "source_projection": {
+    "classification_counts": {
+      "unit": 25,
+      "retained": 30,
+      "markup": 23,
+      "witness": 1,
+      "whitespace": 73
+    },
+    "classification_byte_counts": {
+      "unit": 2580,
+      "retained": 2944,
+      "markup": 462,
+      "witness": 25,
+      "whitespace": 137
+    },
+    "windows": [
+      {
+        "window_id": "W01",
+        "path": "knowledge/design/SKILL.md",
+        "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+        "byte_interval": [
+          5638,
+          7290
+        ],
+        "segments": [
+          {
+            "byte_offsets": [
+              5638,
+              5639
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5639,
+              5698
+            ],
+            "classification": "retained",
+            "record_id": "B14"
+          },
+          {
+            "byte_offsets": [
+              5698,
+              5700
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5700,
+              5755
+            ],
+            "classification": "markup",
+            "record_id": "M01"
+          },
+          {
+            "byte_offsets": [
+              5755,
+              5756
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5756,
+              5811
+            ],
+            "classification": "markup",
+            "record_id": "M01"
+          },
+          {
+            "byte_offsets": [
+              5811,
+              5812
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5812,
+              6012
+            ],
+            "classification": "retained",
+            "record_id": "B01"
+          },
+          {
+            "byte_offsets": [
+              6012,
+              6013
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              6013,
+              6226
+            ],
+            "classification": "unit",
+            "record_id": "Q01"
+          },
+          {
+            "byte_offsets": [
+              6226,
+              6227
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              6227,
+              6459
+            ],
+            "classification": "retained",
+            "record_id": "B02"
+          },
+          {
+            "byte_offsets": [
+              6459,
+              6460
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              6460,
+              6664
+            ],
+            "classification": "retained",
+            "record_id": "B03"
+          },
+          {
+            "byte_offsets": [
+              6664,
+              6665
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              6665,
+              6867
+            ],
+            "classification": "retained",
+            "record_id": "B04"
+          },
+          {
+            "byte_offsets": [
+              6867,
+              6868
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              6868,
+              7066
+            ],
+            "classification": "retained",
+            "record_id": "B05"
+          },
+          {
+            "byte_offsets": [
+              7066,
+              7067
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7067,
+              7288
+            ],
+            "classification": "retained",
+            "record_id": "B06"
+          },
+          {
+            "byte_offsets": [
+              7288,
+              7290
+            ],
+            "classification": "whitespace"
+          }
+        ]
+      },
+      {
+        "window_id": "W02",
+        "path": "knowledge/design/SKILL.md",
+        "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+        "byte_interval": [
+          12146,
+          12918
+        ],
+        "segments": [
+          {
+            "byte_offsets": [
+              12146,
+              12149
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12149,
+              12150
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12150,
+              12174
+            ],
+            "classification": "retained",
+            "record_id": "B15"
+          },
+          {
+            "byte_offsets": [
+              12174,
+              12176
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12176,
+              12206
+            ],
+            "classification": "retained",
+            "record_id": "B16"
+          },
+          {
+            "byte_offsets": [
+              12206,
+              12207
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12207,
+              12340
+            ],
+            "classification": "unit",
+            "record_id": "Q02"
+          },
+          {
+            "byte_offsets": [
+              12340,
+              12342
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12342,
+              12345
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12345,
+              12346
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12346,
+              12359
+            ],
+            "classification": "retained",
+            "record_id": "B17"
+          },
+          {
+            "byte_offsets": [
+              12359,
+              12361
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12361,
+              12423
+            ],
+            "classification": "unit",
+            "record_id": "Q03"
+          },
+          {
+            "byte_offsets": [
+              12423,
+              12424
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12424,
+              12471
+            ],
+            "classification": "unit",
+            "record_id": "Q04"
+          },
+          {
+            "byte_offsets": [
+              12471,
+              12472
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12472,
+              12548
+            ],
+            "classification": "unit",
+            "record_id": "Q05"
+          },
+          {
+            "byte_offsets": [
+              12548,
+              12550
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12550,
+              12556
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12556,
+              12557
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12557,
+              12560
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12560,
+              12570
+            ],
+            "classification": "retained",
+            "record_id": "B18"
+          },
+          {
+            "byte_offsets": [
+              12570,
+              12573
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12573,
+              12574
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12574,
+              12629
+            ],
+            "classification": "unit",
+            "record_id": "Q06"
+          },
+          {
+            "byte_offsets": [
+              12629,
+              12630
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12630,
+              12687
+            ],
+            "classification": "unit",
+            "record_id": "Q07"
+          },
+          {
+            "byte_offsets": [
+              12687,
+              12689
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12689,
+              12692
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12692,
+              12723
+            ],
+            "classification": "retained",
+            "record_id": "B19"
+          },
+          {
+            "byte_offsets": [
+              12723,
+              12726
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12726,
+              12727
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12727,
+              12752
+            ],
+            "classification": "witness",
+            "record_id": "W02-ALIAS"
+          },
+          {
+            "byte_offsets": [
+              12752,
+              12753
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12753,
+              12811
+            ],
+            "classification": "unit",
+            "record_id": "Q08"
+          },
+          {
+            "byte_offsets": [
+              12811,
+              12813
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12813,
+              12816
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12816,
+              12851
+            ],
+            "classification": "retained",
+            "record_id": "B20"
+          },
+          {
+            "byte_offsets": [
+              12851,
+              12854
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12854,
+              12855
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12855,
+              12913
+            ],
+            "classification": "unit",
+            "record_id": "Q09"
+          },
+          {
+            "byte_offsets": [
+              12913,
+              12914
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              12914,
+              12917
+            ],
+            "classification": "markup",
+            "record_id": "M02"
+          },
+          {
+            "byte_offsets": [
+              12917,
+              12918
+            ],
+            "classification": "whitespace"
+          }
+        ]
+      },
+      {
+        "window_id": "W03",
+        "path": "knowledge/design/guides/layout.md",
+        "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+        "byte_interval": [
+          4609,
+          5357
+        ],
+        "segments": [
+          {
+            "byte_offsets": [
+              4609,
+              4883
+            ],
+            "classification": "retained",
+            "record_id": "B07"
+          },
+          {
+            "byte_offsets": [
+              4883,
+              4884
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              4884,
+              5039
+            ],
+            "classification": "retained",
+            "record_id": "B08"
+          },
+          {
+            "byte_offsets": [
+              5039,
+              5040
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5040,
+              5144
+            ],
+            "classification": "unit",
+            "record_id": "Q10"
+          },
+          {
+            "byte_offsets": [
+              5144,
+              5145
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5145,
+              5356
+            ],
+            "classification": "retained",
+            "record_id": "B09"
+          },
+          {
+            "byte_offsets": [
+              5356,
+              5357
+            ],
+            "classification": "whitespace"
+          }
+        ]
+      },
+      {
+        "window_id": "W04",
+        "path": "knowledge/design/guides/layout.md",
+        "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+        "byte_interval": [
+          44589,
+          45319
+        ],
+        "segments": [
+          {
+            "byte_offsets": [
+              44589,
+              44598
+            ],
+            "classification": "markup",
+            "record_id": "M03"
+          },
+          {
+            "byte_offsets": [
+              44598,
+              44599
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              44599,
+              44776
+            ],
+            "classification": "unit",
+            "record_id": "Q11"
+          },
+          {
+            "byte_offsets": [
+              44776,
+              44777
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              44777,
+              44969
+            ],
+            "classification": "unit",
+            "record_id": "Q12"
+          },
+          {
+            "byte_offsets": [
+              44969,
+              44970
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              44970,
+              45051
+            ],
+            "classification": "unit",
+            "record_id": "Q13"
+          },
+          {
+            "byte_offsets": [
+              45051,
+              45052
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              45052,
+              45208
+            ],
+            "classification": "unit",
+            "record_id": "Q14"
+          },
+          {
+            "byte_offsets": [
+              45208,
+              45209
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              45209,
+              45314
+            ],
+            "classification": "unit",
+            "record_id": "Q15"
+          },
+          {
+            "byte_offsets": [
+              45314,
+              45315
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              45315,
+              45318
+            ],
+            "classification": "markup",
+            "record_id": "M03"
+          },
+          {
+            "byte_offsets": [
+              45318,
+              45319
+            ],
+            "classification": "whitespace"
+          }
+        ]
+      },
+      {
+        "window_id": "W05",
+        "path": "knowledge/design/guides/breaking-the-layout-monoculture.md",
+        "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+        "byte_interval": [
+          7298,
+          8749
+        ],
+        "segments": [
+          {
+            "byte_offsets": [
+              7298,
+              7301
+            ],
+            "classification": "markup",
+            "record_id": "M04"
+          },
+          {
+            "byte_offsets": [
+              7301,
+              7302
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7302,
+              7329
+            ],
+            "classification": "retained",
+            "record_id": "B21"
+          },
+          {
+            "byte_offsets": [
+              7329,
+              7330
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7330,
+              7394
+            ],
+            "classification": "markup",
+            "record_id": "M04"
+          },
+          {
+            "byte_offsets": [
+              7394,
+              7396
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7396,
+              7405
+            ],
+            "classification": "markup",
+            "record_id": "M04"
+          },
+          {
+            "byte_offsets": [
+              7405,
+              7406
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7406,
+              7622
+            ],
+            "classification": "unit",
+            "record_id": "Q16"
+          },
+          {
+            "byte_offsets": [
+              7622,
+              7623
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7623,
+              7682
+            ],
+            "classification": "unit",
+            "record_id": "Q17"
+          },
+          {
+            "byte_offsets": [
+              7682,
+              7683
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7683,
+              7734
+            ],
+            "classification": "unit",
+            "record_id": "Q18"
+          },
+          {
+            "byte_offsets": [
+              7734,
+              7735
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7735,
+              7845
+            ],
+            "classification": "unit",
+            "record_id": "Q19"
+          },
+          {
+            "byte_offsets": [
+              7845,
+              7847
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              7847,
+              8218
+            ],
+            "classification": "retained",
+            "record_id": "B12"
+          },
+          {
+            "byte_offsets": [
+              8218,
+              8219
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8219,
+              8222
+            ],
+            "classification": "markup",
+            "record_id": "M04"
+          },
+          {
+            "byte_offsets": [
+              8222,
+              8224
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8224,
+              8227
+            ],
+            "classification": "markup",
+            "record_id": "M04"
+          },
+          {
+            "byte_offsets": [
+              8227,
+              8228
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8228,
+              8254
+            ],
+            "classification": "retained",
+            "record_id": "B22"
+          },
+          {
+            "byte_offsets": [
+              8254,
+              8255
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8255,
+              8320
+            ],
+            "classification": "markup",
+            "record_id": "M04"
+          },
+          {
+            "byte_offsets": [
+              8320,
+              8322
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8322,
+              8383
+            ],
+            "classification": "markup",
+            "record_id": "M04"
+          },
+          {
+            "byte_offsets": [
+              8383,
+              8384
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8384,
+              8480
+            ],
+            "classification": "markup",
+            "record_id": "M04"
+          },
+          {
+            "byte_offsets": [
+              8480,
+              8483
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8483,
+              8493
+            ],
+            "classification": "retained",
+            "record_id": "B23"
+          },
+          {
+            "byte_offsets": [
+              8493,
+              8498
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8498,
+              8521
+            ],
+            "classification": "retained",
+            "record_id": "B24"
+          },
+          {
+            "byte_offsets": [
+              8521,
+              8535
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8535,
+              8571
+            ],
+            "classification": "unit",
+            "record_id": "Q20"
+          },
+          {
+            "byte_offsets": [
+              8571,
+              8574
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8574,
+              8581
+            ],
+            "classification": "retained",
+            "record_id": "B25"
+          },
+          {
+            "byte_offsets": [
+              8581,
+              8589
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8589,
+              8613
+            ],
+            "classification": "retained",
+            "record_id": "B26"
+          },
+          {
+            "byte_offsets": [
+              8613,
+              8626
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8626,
+              8661
+            ],
+            "classification": "retained",
+            "record_id": "B27"
+          },
+          {
+            "byte_offsets": [
+              8661,
+              8664
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8664,
+              8670
+            ],
+            "classification": "retained",
+            "record_id": "B28"
+          },
+          {
+            "byte_offsets": [
+              8670,
+              8679
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8679,
+              8713
+            ],
+            "classification": "retained",
+            "record_id": "B29"
+          },
+          {
+            "byte_offsets": [
+              8713,
+              8716
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              8716,
+              8748
+            ],
+            "classification": "retained",
+            "record_id": "B30"
+          },
+          {
+            "byte_offsets": [
+              8748,
+              8749
+            ],
+            "classification": "whitespace"
+          }
+        ]
+      },
+      {
+        "window_id": "W06",
+        "path": "knowledge/design/guides/design.md",
+        "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+        "byte_interval": [
+          5384,
+          5732
+        ],
+        "segments": [
+          {
+            "byte_offsets": [
+              5384,
+              5425
+            ],
+            "classification": "retained",
+            "record_id": "B31"
+          },
+          {
+            "byte_offsets": [
+              5425,
+              5426
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5426,
+              5562
+            ],
+            "classification": "unit",
+            "record_id": "Q21"
+          },
+          {
+            "byte_offsets": [
+              5562,
+              5563
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5563,
+              5650
+            ],
+            "classification": "unit",
+            "record_id": "Q22"
+          },
+          {
+            "byte_offsets": [
+              5650,
+              5651
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5651,
+              5727
+            ],
+            "classification": "retained",
+            "record_id": "B11"
+          },
+          {
+            "byte_offsets": [
+              5727,
+              5728
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              5728,
+              5731
+            ],
+            "classification": "markup",
+            "record_id": "M05"
+          },
+          {
+            "byte_offsets": [
+              5731,
+              5732
+            ],
+            "classification": "whitespace"
+          }
+        ]
+      },
+      {
+        "window_id": "W07",
+        "path": "knowledge/design/guides/type.md",
+        "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+        "byte_interval": [
+          17910,
+          18357
+        ],
+        "segments": [
+          {
+            "byte_offsets": [
+              17910,
+              18046
+            ],
+            "classification": "unit",
+            "record_id": "Q25"
+          },
+          {
+            "byte_offsets": [
+              18046,
+              18047
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              18047,
+              18138
+            ],
+            "classification": "unit",
+            "record_id": "Q23"
+          },
+          {
+            "byte_offsets": [
+              18138,
+              18139
+            ],
+            "classification": "whitespace"
+          },
+          {
+            "byte_offsets": [
+              18139,
+              18223
+            ],
+            "classification": "unit",
+            "record_id": "Q24"
+          },
+          {
+            "byte_offsets": [
+              18223,
+              18356
+            ],
+            "classification": "retained",
+            "record_id": "B13"
+          },
+          {
+            "byte_offsets": [
+              18356,
+              18357
+            ],
+            "classification": "whitespace"
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
 ### Paired originals
 
-- Q10↔Q22 are rem/root preference originals; Q12↔Q19 are vi/zoom/WCAG originals. Each pair is exact, reciprocal and independently assessed. Both pairs repeat, rather than contradict, the local inference.
-- Q02↔Q23 preserves the 1.2/1.25 narrow endpoint conflict. Q11/Q21 compare inline-axis recommendations. Pairing does not establish truth.
-- Card/graph/CQ review was not assigned.
+Every asserted pair below records its shared property, exact pinned source clauses and observed relation. The labels agreement/conflict/conditional difference describe the local texts only; repetition does not establish truth. Q12 appears in two pair records because its selected clause bundles axis advice and a distinct zoom/WCAG guarantee.
 
-Accepted Slice01 Clamp behavior/correction handoff remains separate. Q06–Q09 preserve literal coefficients, Q13 retains the bounded progression fact, and Q14 corrects the separate asymptote proposition. No proposal is installed; Arc04 owns composition.
+```json
+[
+  {
+    "pair_id": "PAIR-Q10-Q22",
+    "claim_ids": [
+      "Q10",
+      "Q22"
+    ],
+    "common_property": "Whether rem sizing follows a user font-size preference.",
+    "exact_originals": [
+      {
+        "claim_id": "Q10",
+        "text": "The `rem` unit anchors to the user\\'s chosen root font size,\nrespecting their accessibility preferences."
+      },
+      {
+        "claim_id": "Q22",
+        "text": "Spacing should be defined in\n`rem`, which scales with the user\\'s font size preference."
+      }
+    ],
+    "observed_relation": "agreement with a conditional difference",
+    "observation": "Both connect rem with user preference. Q10 states a chosen root size and preference outcome; Q22 says rem scales with that preference. CV defines rem relative to computed root font-size, so the realized preference effect depends on computed root size. The repetitions do not prove either outcome."
+  },
+  {
+    "pair_id": "PAIR-Q12-Q19",
+    "claim_ids": [
+      "Q12",
+      "Q19"
+    ],
+    "common_property": "Whether vi alone preserves zoom accessibility or satisfies WCAG.",
+    "exact_originals": [
+      {
+        "claim_id": "Q12",
+        "text": "The `vi` unit (viewport inline) is\nused instead of `vw` because it respects writing direction and,\ncritically, does not prevent browser zoom from scaling\ntext --- satisfying WCAG SC 1.4.4."
+      },
+      {
+        "claim_id": "Q19",
+        "text": "The use of `vi` (viewport\ninline) rather than `vw` preserves zoom accessibility, satisfying WCAG\nrequirements."
+      }
+    ],
+    "observed_relation": "agreement as repeated guarantee",
+    "observation": "Both source clauses infer zoom accessibility/WCAG from vi. Q12 adds the inline-axis rationale. Neither clause is behavioral evidence; the future protocol keeps enlargement and reflow tests separate."
+  },
+  {
+    "pair_id": "PAIR-Q02-Q23",
+    "claim_ids": [
+      "Q02",
+      "Q23"
+    ],
+    "common_property": "The configured/effective ratio at the 360px narrow endpoint.",
+    "exact_originals": [
+      {
+        "claim_id": "Q02",
+        "text": "- **@min**: 360px viewport, 16px base, ratio 1.200 (minor third)\n- **@max**: 1440px viewport, 20px base, ratio 1.333 (perfect fourth)"
+      },
+      {
+        "claim_id": "Q23",
+        "text": "At\n360px the effective ratio is 1.25 (major third); at 1440px it\\'s 1.333\n(perfect fourth)."
+      }
+    ],
+    "observed_relation": "conflict at 360px; approximate agreement at 1440px",
+    "observation": "The 360px values conflict: configuration Q02 says 1.200 and local type prose Q23 says 1.25. The 1440px 1.333 values are approximate for 4/3. This pass preserves Q23 unchanged and does not choose a source or project endpoint; Arc04 owns resolution and re-entry before application."
+  },
+  {
+    "pair_id": "PAIR-Q11-Q25",
+    "claim_ids": [
+      "Q11",
+      "Q25"
+    ],
+    "common_property": "A linear preferred/interpolation term for the named clamp construction.",
+    "exact_originals": [
+      {
+        "claim_id": "Q11",
+        "text": "The fluid interpolation in Utopia\\'s `clamp()` declarations is a linear\nfunction: `y = mx + b`, where `m` is the slope between the min and max\nvalues and `b` is the y-intercept."
+      },
+      {
+        "claim_id": "Q25",
+        "text": "The fluid interpolation uses `clamp(min, preferred, max)` where the\npreferred value is a linear function of `vi` (viewport inline size)."
+      }
+    ],
+    "observed_relation": "agreement with a conditional difference",
+    "observation": "Both name a linear construction. Q11 gives y=mx+b for the selected Utopia declarations; Q25 specifies a preferred term linear in vi for the W07 type construction. Q25 is local to that term and does not generalize to all clamp() functions; the clamp still bounds its central value."
+  },
+  {
+    "pair_id": "PAIR-Q12-Q21",
+    "claim_ids": [
+      "Q12",
+      "Q21"
+    ],
+    "common_property": "The vi unit expresses viewport sizing on the logical inline axis.",
+    "exact_originals": [
+      {
+        "claim_id": "Q12",
+        "text": "The `vi` unit (viewport inline) is\nused instead of `vw` because it respects writing direction and,\ncritically, does not prevent browser zoom from scaling\ntext --- satisfying WCAG SC 1.4.4."
+      },
+      {
+        "claim_id": "Q21",
+        "text": "Fluid type scales that\ninterpolate between viewport widths should use the `vi` unit (viewport\ninline), which respects writing direction."
+      }
+    ],
+    "observed_relation": "agreement on axis choice; conditional difference on scope",
+    "observation": "Both select vi in relation to the inline axis/writing direction. Q21 is a sizing recommendation; Q12 bundles that axis statement with a separate zoom/WCAG guarantee, which is not entailed by the unit definition and is addressed in Q12/Q19."
+  },
+  {
+    "pair_id": "PAIR-Q17-Q18",
+    "claim_ids": [
+      "Q17",
+      "Q18"
+    ],
+    "common_property": "Whether the described type and spacing transitions remain continuous and free of jarring changes across viewports.",
+    "exact_originals": [
+      {
+        "claim_id": "Q17",
+        "text": "The result: smooth, continuous type and spacing transitions"
+      },
+      {
+        "claim_id": "Q18",
+        "text": "with\nno jarring layout shifts at any viewport size."
+      }
+    ],
+    "observed_relation": "agreement with a conditional difference",
+    "observation": "Q17 describes smooth, continuous transitions; Q18 describes no jarring layout shifts at any viewport size. They share an intended continuity property, while Q18 makes a broader viewport-wide outcome claim. Neither phrase supplies behavioral evidence."
+  }
+]
+```
+
+The W02-ALIAS witness is an exact same-window CSS declaration linked to Q04; code-fence/comment delimiters remain classified as markup, not as that witness. Source projection accounts for every selected byte: each is assigned to a Q unit, retained boundary, literal witness, syntax span or ASCII whitespace. The projection is structural coverage only; human review determines whether the clause/boundary atomization and owner are semantically appropriate.
+
+Card/graph/CQ review was not assigned. Accepted Slice01 Clamp behavior/correction handoff remains separately pinned. No proposal is installed; Arc04 owns composition and the pending Q23 endpoint decision.
 
 ## Current literal action registry
 
-Strict complete registry; each of the 24 result IDs appears exactly once. Retain means the target bytes remain unchanged.
+Strict complete registry; each of the 25 result IDs appears exactly once. Retain means the target bytes remain unchanged.
 
 ```json
 [
@@ -831,22 +2684,22 @@ Strict complete registry; each of the 24 result IDs appears exactly once. Retain
       7682
     ],
     "literal_original": "The result: smooth, continuous type and spacing transitions",
-    "replacement": "a given set of values should be checked for intended continuity.",
-    "replacement_sha256": "ba7c69bd2f3cb6f136d27aac4cff4846d2da67463c8e0648c925996e5ae4ca9a",
+    "replacement": "The result: check type and spacing transitions for continuity",
+    "replacement_sha256": "e967736aaa7454c24bcf8fa8d0a05de839b07803c6a129c8d2188d2af989bfd0",
     "owner": "Arc04 application; Arc03 behavior evidence",
     "replacement_bounds": [
       0,
-      64
+      61
     ],
     "replacement_parts": [
       {
         "part_id": "A-Q17.P1",
         "byte_bounds": [
           0,
-          64
+          61
         ],
-        "text": "a given set of values should be checked for intended continuity.",
-        "sha256": "ba7c69bd2f3cb6f136d27aac4cff4846d2da67463c8e0648c925996e5ae4ca9a"
+        "text": "The result: check type and spacing transitions for continuity",
+        "sha256": "e967736aaa7454c24bcf8fa8d0a05de839b07803c6a129c8d2188d2af989bfd0"
       }
     ]
   },
@@ -868,22 +2721,22 @@ Strict complete registry; each of the 24 result IDs appears exactly once. Retain
       7734
     ],
     "literal_original": "with\nno jarring layout shifts at any viewport size.",
-    "replacement": " Evaluate layout stability in actual content and viewport range.",
-    "replacement_sha256": "d0a2da12bb98721f47ea28ace695993074897c7769c7a24259c07c47816fd263",
+    "replacement": "and layout stability across actual content and viewport ranges.",
+    "replacement_sha256": "afb64f4fff0dcd0bcc045bfdab217cba9d3b9cf069466ee9182ef68a7877c53c",
     "owner": "Arc04 application; Arc03 behavior evidence",
     "replacement_bounds": [
       0,
-      64
+      63
     ],
     "replacement_parts": [
       {
         "part_id": "A-Q18.P1",
         "byte_bounds": [
           0,
-          64
+          63
         ],
-        "text": " Evaluate layout stability in actual content and viewport range.",
-        "sha256": "d0a2da12bb98721f47ea28ace695993074897c7769c7a24259c07c47816fd263"
+        "text": "and layout stability across actual content and viewport ranges.",
+        "sha256": "afb64f4fff0dcd0bcc045bfdab217cba9d3b9cf069466ee9182ef68a7877c53c"
       }
     ]
   },
@@ -1040,7 +2893,7 @@ Strict complete registry; each of the 24 result IDs appears exactly once. Retain
     "result_ids": [
       "Q23"
     ],
-    "disposition": "qualify",
+    "disposition": "retain",
     "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
     "source_sha256": "8a9f1ab35dee3373ebbf1460416e334adffcd908f095463fa015c6ef0a5f5d7c",
     "path": "knowledge/design/guides/type.md",
@@ -1053,24 +2906,11 @@ Strict complete registry; each of the 24 result IDs appears exactly once. Retain
       18138
     ],
     "literal_original": "At\n360px the effective ratio is 1.25 (major third); at 1440px it\\'s 1.333\n(perfect fourth).",
-    "replacement": "At 360px, reconcile the printed 1.25 with Project10 baseline 1.2 before describing a project endpoint. The 1440px 1.333 value is approximate for 4/3.",
-    "replacement_sha256": "63ba0133aeb44f38872b5a288c49faf475c1b657895fe0aa4ad61b9a00ea04ad",
-    "owner": "Arc04 application; Arc03 behavior evidence",
-    "replacement_bounds": [
-      0,
-      149
-    ],
-    "replacement_parts": [
-      {
-        "part_id": "A-Q23.P1",
-        "byte_bounds": [
-          0,
-          149
-        ],
-        "text": "At 360px, reconcile the printed 1.25 with Project10 baseline 1.2 before describing a project endpoint. The 1440px 1.333 value is approximate for 4/3.",
-        "sha256": "63ba0133aeb44f38872b5a288c49faf475c1b657895fe0aa4ad61b9a00ea04ad"
-      }
-    ]
+    "replacement": null,
+    "replacement_sha256": null,
+    "owner": "Arc04 owns the unresolved endpoint choice; re-entry is required before application.",
+    "replacement_bounds": null,
+    "replacement_parts": []
   },
   {
     "action_id": "A-Q24",
@@ -1090,24 +2930,48 @@ Strict complete registry; each of the 24 result IDs appears exactly once. Retain
       18223
     ],
     "literal_original": "This means headings grow proportionally faster than\nbody text as the viewport widens",
-    "replacement": "Whether headings grow proportionally faster than body text depends on selected values and content.",
-    "replacement_sha256": "d311301841b61ffaa99da609b71adc152185385b1b1e811fffd15ecf3e8bd4d6",
+    "replacement": "This comparison depends on the selected values and content; it does not redefine the cited principle",
+    "replacement_sha256": "a71c6cf9beabb788bcb60d37cceb487989ed440b4e3e6225112e591006fe23eb",
     "owner": "Arc04 application; Arc03 behavior evidence",
     "replacement_bounds": [
       0,
-      98
+      100
     ],
     "replacement_parts": [
       {
         "part_id": "A-Q24.P1",
         "byte_bounds": [
           0,
-          98
+          100
         ],
-        "text": "Whether headings grow proportionally faster than body text depends on selected values and content.",
-        "sha256": "d311301841b61ffaa99da609b71adc152185385b1b1e811fffd15ecf3e8bd4d6"
+        "text": "This comparison depends on the selected values and content; it does not redefine the cited principle",
+        "sha256": "a71c6cf9beabb788bcb60d37cceb487989ed440b4e3e6225112e591006fe23eb"
       }
     ]
+  },
+  {
+    "action_id": "A-Q25",
+    "result_ids": [
+      "Q25"
+    ],
+    "disposition": "retain",
+    "source_revision": "dffa504e851b03b8e4746f1941068e4cc850b612",
+    "source_sha256": "8a9f1ab35dee3373ebbf1460416e334adffcd908f095463fa015c6ef0a5f5d7c",
+    "path": "knowledge/design/guides/type.md",
+    "line_span": [
+      472,
+      473
+    ],
+    "byte_offsets": [
+      17910,
+      18046
+    ],
+    "literal_original": "The fluid interpolation uses `clamp(min, preferred, max)` where the\npreferred value is a linear function of `vi` (viewport inline size).",
+    "replacement": null,
+    "replacement_sha256": null,
+    "owner": "Arc04 application; Arc03 behavior evidence",
+    "replacement_bounds": null,
+    "replacement_parts": []
   }
 ]
 ```
