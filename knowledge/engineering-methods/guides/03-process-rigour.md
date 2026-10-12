@@ -19,7 +19,7 @@ Before the sequence, the units it operates on. Every project decomposes along th
 
 - **Project** — the whole effort, with a name, a goal, and a definition of done; approached through the first three SDLC steps (research, project definition, design doc), planned by breaking it into arcs, and verified by its own project-level ledger.
 - **Arc** — a set of related slices delivering one coherent capability, and the scale at which you check that the slices _compose_; a planning unit, not an execution unit, approached through arc-and-slice breakdown (SDLC step 4) and verified by its own arc-level ledger.
-- **Slice** — the unit of execution: the work that lands in one branch as one mergeable diff, sized to be _held in a single model context with headroom to spare_. One slice, one ledger; approached through a per-slice implementation plan (SDLC step 5). Durable artifacts produced by the slice default to the slice's `artifacts/` directory unless the operator records an override. If a slice will not fit in one context, it was two slices.
+- **Slice** — the unit of execution: the work that lands in one branch as one mergeable diff, sized to be _held in a single model context with headroom to spare_. One slice, one ledger; approached through a per-slice implementation plan (SDLC step 5). Durable supporting evidence defaults to the slice's `artifacts/` directory unless the operator records an override; deliverable source, guidance and examples belong in their intended product home. If a slice will not fit in one context, it was two slices.
 
 Two more words name things _inside_ a slice, not scales of their own. A **step** is a single item in a slice's implementation plan — the fine-grained unit the ledger's rows verify; steps do not cross slice boundaries. An **iteration** is a refinement pass on a slice whose delivery misses its acceptance criteria — reserved for that and only that, never a unit of planning, budgeted at five per slice. Read together: _a project bends through several arcs; each arc is cut into slices; a slice is planned as a handful of steps, and if its delivery misses spec it is refined over a bounded number of iterations._ For collaborators arriving with Agile or Scrum habits the rough translation is project ≈ epic, arc ≈ feature, slice ≈ the branch-scale unit those frameworks never named cleanly — a courtesy for onboarding, not an adoption.
 
@@ -31,7 +31,18 @@ The slice rests on a bottleneck worth naming, because it is where this practice 
 
 The sequence below is the backbone discipline. Each step catches a different scale of drift.
 
-1. **Research and brainstorm.** Open-ended surface mapping. What is the actual shape of the thing? What are the neighbors, predecessors, failure modes in adjacent domains?
+These are activities, not a requirement for nine separate phases or document
+sets. Establish enough framing and architecture to choose a responsible first
+increment, then revisit research, design and validation as delivery reveals more.
+Resolve consequential uncertainty before dependent implementation; independent
+ready work need not await a comprehensive survey. Apply project-management's
+[usable-increment planning](../../project-management/guides/03-planning-top-down.md#plan-for-usable-increments)
+when decomposing the work.
+Before beginning an investigation, agree its usefulness, applicability and budget
+with the Operator under the [investigation contract](../../project-management/guides/03-planning-top-down.md#agree-investigations-before-starting).
+Open-ended curiosity informs proposals; it does not authorize unbounded execution.
+
+1. **Research and brainstorm.** Explore the problem's shape, neighbors, predecessors and adjacent failure modes. Turn that exploration into the questions needed for framing and the next delivery decision; bound further investigation by those questions and its stopping conditions.
 2. **Project definition.** Bounded scope. What are we doing, what are we not doing, and what is the smallest complete thing?
 3. **Design doc.** Architectural commitments. What are the pieces, how do they fit, what are the trade-offs, what are the alternatives considered and rejected?
 4. **Arc and slice breakdown.** Sequencing. Which slices land when; which are load-bearing for which.

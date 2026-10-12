@@ -20,6 +20,62 @@ handoffs. The detailed artifact rules below apply to ledgered work, not as a
 requirement to turn every bounded task into a project. Existing plans, evidence
 requirements, and approvals remain binding.
 
+### Plan for usable increments
+
+For implementation projects, decompose by useful capability increments. A normal
+slice inspects the relevant source, makes the change, checks it and returns
+it for independent review. Separate research, evidence, correction and validation
+arcs are justified by real dependencies, not by the names of SDLC activities.
+Include entrypoints, documentation, packaging and integration needed to use each
+increment in its delivery scope; reserve final integration for composition and
+remaining gaps. Apply cross-cutting quality requirements where affected behavior
+lands, while retaining their full-project coverage and release gates.
+
+For example, a new retrieval capability might first land one supported query
+through its public API, documentation and tests, then add another query shape.
+It need not first catalogue every possible query and postpone API wiring and
+validation to separate arcs. The first query still needs the architecture and
+checks that make it a responsible increment.
+
+Research and audit projects may legitimately deliver findings or decisions.
+Within an implementation project, an investigation-only slice needs the
+Operator agreement described below: the question blocking a responsible change,
+bounded answer needed, consumer, budget and stop/re-entry condition with an owner.
+An unchanged missing input is not a reason to commission another readiness
+packet; choose ready work within the approved plan or escalate the actual
+dependency. Do not manufacture source edits
+to make a justified investigation or no-op look productive.
+
+Use the existing roadmap, scope and acceptance sections for these decisions;
+this adds no document. Optimize for useful, reviewable progress, not the fewest
+slices. A split must preserve the original obligations and assign
+each to an owner; consolidation must leave implementation and review headroom.
+
+### Agree investigations before starting
+
+An LLM may suggest an investigation; it may not unilaterally start or commission
+one. Before work begins, discuss and agree with the Operator its **usefulness**
+(which decision or deliverable it could improve), **applicability** (why that
+question and method fit this project now), and **budget** (agreed scope and a
+concrete limit on time, effort or other relevant resource). Include the expected
+output/consumer, stopping conditions and what happens if the answer remains
+unavailable. Record the agreement in the existing plan or assignment and carry
+it into the prompt. A proposed budget is not an approved budget.
+
+This applies to investigation-only projects and slices, and investigations
+embedded in implementation or corrective work. Labels such as "spike," "pilot,"
+"diagnosis" or "evidence pass" do not bypass it. Routine source inspection and
+checks needed to execute an already agreed assignment remain within that scope;
+expanding them into a separate inquiry requires the discussion above. A plan's
+general aspiration, author discretion or Expedited Mode is not authorization.
+An already agreed investigation need not be approved again while it stays within
+its recorded scope and budget.
+
+At the stopping condition or budget limit, report findings, uncertainty and the
+decision now possible. Discuss any extension or changed question with the Operator
+before continuing the investigation; do not silently renew the budget or keep
+collecting evidence. Continue unrelated authorized work where possible.
+
 ### The project plan — `project-plan.md`
 
 After research (SDLC step 1), project definition (step 2), and the design doc
@@ -35,8 +91,9 @@ arcs at once**, before opening any single `arc-plan.md`.
    it explicitly does not. A pointer to the design doc for the architecture;
    this file is the plan, not the design.
 2. **The arc roadmap.** The arcs in dependency order, each with a one-line
-   capability statement and its dependencies on earlier arcs. This is the
-   project's decomposition — the `project → arc` edge made explicit.
+   capability statement, intended delivery destination and actual prerequisite
+   inputs. Identify the first usable increment. This is the project's
+   decomposition — the `project → arc` edge made explicit.
 3. **Current status.** Which arc is active, which are closed, which are not
    yet planned in detail. Detailed arc planning is deliberately deferred until
    an arc is near — see *plan late, plan deep* below.
@@ -75,7 +132,10 @@ arc-and-slice breakdown). `arc-plan.md` carries, at minimum:
    (see [`The scales of work`](./01-scales-of-work.md)) here: each entry must be a body of work that fits one context with
    iteration headroom.
 3. **Dependencies.** What this arc consumes from earlier arcs, and what it
-   leaves for later ones.
+   leaves for later ones. Name the required accepted result and applicable
+   revision, rather than treating an entire upstream project or arc as a blocker
+   when only a bounded input is needed. Record why that input suffices; unresolved
+   claims still block work that relies on them. Whole-release gates remain binding.
 4. **A sibling `ledger.md`.** The composition criteria that verify the
    capability, stated up front as ledger rows — the arc ledger from
    [`Ledger Discipline`](../../work-verification/guides/01-ledger-discipline.md)
@@ -96,8 +156,16 @@ the `cc-prompt.md` is the assignment CC receives. The ledger is the contract:
 its rows are what "done" means for this slice, and every row must reach a
 final status before the slice advances.
 
-If the slice will produce durable artifacts, the open set must also name the
-artifact home. The default is `artifacts/` inside the slice directory. The
+For implementation, name the user or downstream task, source paths and baseline,
+before/after behavior, useful existing behavior/examples to preserve, adequate
+checks and intended integration destination. Distinguish a reviewable candidate
+from an integrated, accepted result and from a published release. Record which
+state the slice promises and who owns any remaining integration; a planning packet
+or candidate commit alone does not establish usable delivery. Coordinate
+overlapping mutations and assess drift before accepting on the integration baseline.
+
+If the slice will produce durable supporting artifacts, the open set must also
+name the artifact home. The default is `artifacts/` inside the slice directory. The
 operator can override that default, but the override must be explicit in
 `slice-plan.md` and repeated in `cc-prompt.md` so the implementing context does
 not invent a second location. If no durable artifacts are expected, say so in

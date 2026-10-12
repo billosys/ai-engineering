@@ -7,6 +7,11 @@ It is the single source of truth for where planning artifacts live; the
 [methodology](../../engineering-methods/guides/01-engineering-methodology.md) used to carry an abridged copy
 and now points here.
 
+This layout governs planning and supporting evidence. Deliverable source, user
+documentation and shipped examples belong in their intended implementation or
+publication home; they do not need an artifact-location override. An artifact
+directory is not a substitute for making a capability available to its users.
+
 The default planning substrate is:
 
 1. **Find the repository's worktree convention.** Inspect the repository before
@@ -154,6 +159,14 @@ directory. If no durable artifacts are expected, a short "Artifacts: none
 expected" line is enough. If the operator wants those artifacts somewhere else,
 record the override and rationale in the slice plan before work begins, and
 carry the chosen path into the prompt and close evidence.
+
+For any scale's supporting artifacts, identify the decision, deliverable or check
+they serve in the existing plan or record. Prefer references to pinned evidence
+over duplicate payloads unless a copy is needed for reproducibility or access.
+Use canonical records and existing tools before adding another report or verifier.
+Keep significant failures, unknowns and provenance; neither file counts nor size
+limits establish evidence quality. Preserve historical records rather than
+reorganizing them merely to match a new preference.
 
 ### Design handoff filenames and preservation
 

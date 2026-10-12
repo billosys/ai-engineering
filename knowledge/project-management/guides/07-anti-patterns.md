@@ -9,11 +9,12 @@ migration of an in-flight project's layout is its own failure mode.
 - **`tasks/`, `work/`, `progress/`, or `reports/` at the project root.** The
   most common inventions; they conflict with the `project → arc → slice`
   vocabulary and route artifacts away from the scale they belong to.
-- **Slice-produced artifacts scattered outside the owning slice.** Durable
-  outputs created by a slice belong in `sliceNN-<slug>/artifacts/` by default.
+- **Supporting evidence scattered outside the owning slice.** Durable
+  supporting outputs belong in `sliceNN-<slug>/artifacts/` by default.
   Putting them in root `workbench/`, `reports/`, scratch directories, or
   implementation docs without an operator-recorded override makes the slice's
-  evidence harder to find and audit.
+  evidence harder to find and audit. Deliverable code, user documentation and
+  shipped examples belong in their intended product home, not in that inventory.
 - **Reusing an issued prompt for a new assignment.** Editing or appending to
   `cc-prompt.md` hides the handoff change and can make CC treat new work as an
   already-completed assignment. Preserve issued prompts and create the next

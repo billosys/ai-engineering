@@ -55,7 +55,11 @@ its work against the ledger. Then CC adds a final section,
 
 1. **Did this slice deliver the piece of the arc's capability the arc-plan
    assigned it?** State it against the arc-plan's slice breakdown, not in the
-   abstract.
+   abstract. Identify the delivered revision, integration state and usable
+   improvement with its check. For investigation, identify the answered question
+   and the decision or work it enables. If the intended delivery did not land,
+   name the blocker and next-action owner; artifact completion alone is not
+   capability delivery.
 2. **What did implementing this slice reveal that the arc-plan did not
    anticipate?** A new slice the arc now needs; a re-sequencing; a scope
    correction; a discovered dependency; an item deferred to a later slice.
@@ -74,7 +78,8 @@ apply work-verification's
 [evidence retention rule](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review).
 Then the reviewer verifies the **bubble-up** itself:
 
-- Confirm the slice delivered its assigned piece, against the arc-plan.
+- Confirm the slice delivered its assigned piece, against the arc-plan, including
+  the promised integration state and preservation of useful existing behavior.
 - Confirm the silent-drop diff is complete and honest.
 - Confirm the reviewed assignment matches the current prompt recorded in
   `slice-plan.md`, its unresolved work is accounted for, and all issued prompts

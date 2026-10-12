@@ -1,5 +1,19 @@
 # Engineering Methods Version History
 
+## Version 1.18.0 - 2026-10-12
+
+Clarified that SDLC activities recur within delivery increments rather than
+requiring separate project phases. Refined prompt authorship and its existing
+template/readiness checks with usable outcomes, integration destinations,
+positive preservation, bounded investigation and representative execution where
+uncertainty warrants it. Required a changed diagnosis or repair method for
+recurring defects and distinguished task adequacy from comparative effectiveness
+claims. Adopted these as design improvements following the Operator-endorsed
+Project11 revision, without claiming experimentally established efficiency gains
+or requiring new documents or pilot phases. Routed proposed investigations,
+including corrective diagnosis, through prior Operator agreement on usefulness,
+applicability and budget; stop at the agreed limit and discuss extensions first.
+
 ## Version 1.17.0 - 2026-10-12
 
 Assigned methodology stewardship to CDC in the Three-Contributor Workflow,

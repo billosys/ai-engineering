@@ -8,7 +8,7 @@ description: |
   review finding into a detailed, domain-guided CC implementation prompt.
 license: MIT
 metadata:
-  version: "1.17.0"
+  version: "1.18.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills
@@ -40,6 +40,9 @@ For investigation/evidence work, supply a concrete method while leaving
 unsupported semantic conclusions unresolved. Check interacting rules, viable
 test sequences and whether the old behavior would pass the proposed oracles.
 A ledger, skill-reading list or collection of plan links is not that recipe.
+Investigation proposals require [Operator agreement on usefulness, applicability
+and budget](../project-management/guides/03-planning-top-down.md#agree-investigations-before-starting)
+before execution, including investigations embedded in corrective work.
 
 For CC execution, follow the [required-reading and intake contract](./guides/07-implementation-prompt-authoring.md#required-reading-and-cc-intake):
 load required text completely, execute author-scoped structured-data queries,

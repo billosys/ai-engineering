@@ -1,5 +1,20 @@
 # Version History
 
+## Version 2.20.0 - 2026-10-12
+
+Refined new-project decomposition around usable increments, scoped prerequisite
+inputs, positive preservation and explicit integration states. Clarified that
+project planning establishes architecture while the project delivers its promised
+result; supporting artifacts do not replace source or product delivery. Bounded
+investigation-only work by its decision consumer and stop/re-entry conditions.
+Connected closing evidence to usable outcomes and incremental composition checks.
+Required prior Operator discussion and agreement on investigation usefulness,
+applicability and budget, including embedded inquiries and extensions; a proposal
+or a "bounded" label is not authorization. These refinements carry forward the
+Operator-endorsed Project11 planning changes and subsequent investigation decision;
+they add no document layer and make no measured efficiency claim. Existing scope,
+independent review, iteration limits and release gates remain in force.
+
 ## Version 2.19.0 - 2026-10-12
 
 Added the three-contributor CDC retrospective record at every closing scale,
