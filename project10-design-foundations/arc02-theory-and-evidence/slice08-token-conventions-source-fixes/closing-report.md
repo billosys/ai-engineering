@@ -87,3 +87,58 @@ A02-10, Arc04, Arc06, P10-02/04–08 and P10-11–13 ownership remains unchanged
 No slice, arc or project closure is claimed. CDC review is pending; the next
 assignment and parent composition gates remain governed by their existing
 records.
+
+## Iteration01 CC proposed return — 2026-10-12
+
+This is the I1 return for independent CDC review. The missed F01 instruction is
+now implemented: `design.md` Section I is headed `Comparing Design Systems`,
+matching its bounded product/generation/token-category comparisons. Source
+commit `1489e76730b759f01fb1e839a18b363d8296b610` has parent
+`d644db46913823eed957bb16a48d062e1a7dd71f`, tree
+`6058b581fb4d4c9c25599e07fca72e635bb4b392`, and changes exactly the one
+authorized path by one line. Byte comparison confirms every other byte in that
+file and every other tracked live source file is unchanged. No inbound old
+fragment route exists. Metadata/history remain 1.0.3.
+
+### Row-by-row proposal
+
+The ledger preserves CDC's current states: S08-02/03 are `done`; S08-01/04 are
+`open` pending CDC review. CC proposes:
+
+| Row | I1 proposal | Evidence and limit |
+|---|---|---|
+| S08-01 | Proposed satisfied | All seven accepted source corrections remain; the previously missed heading now matches the required scope. CDC must review the composed source. |
+| S08-02 | Retain CDC `done` | The exact substitution leaves the initial accepted 21-action reconciliation and protected teachings byte-applicable; the batch record preserves historical action pointers and names the current heading anchor. |
+| S08-03 | Retain CDC `done` | Exact one-path source commit, fresh package-path check, fresh design archive and eight actual Markdown member byte matches are recorded. Archive SHA-256: `904a19186aab75f119c463bb5e26dce10594b81ef6d60c42bc713b2e0a63f074`. |
+| S08-04 | Proposed satisfied | Corrected heading, four row outcomes, one-artifact inventory, analytic cases and unchanged Arc02 owners are accounted for. These are CC proposals, not slice acceptance. |
+
+`make help` and fresh `make design` passed. `make check-package-paths` passed on
+the authorized retry: 24 ZIPs, 388 Markdown files, zero hard failures, 596
+warnings at 594 unique locations, three exceptions and 681 skipped external
+URLs. Its first sandbox-denied generated-write attempt is retained as failed;
+the successful retry and its actual exit are recorded in the batch record. All
+eight actual packaged Markdown members match committed source bytes. The
+unchanged skill-description check evidence is retained from CDC's initial
+review because its source inputs did not change. `git diff --check` passed on
+source and this planning return.
+The first planning staging/commit attempt was blocked by sandbox denial on the
+planning worktree's Git index lock; no files were staged. The bounded retry is
+the single three-path planning return commit.
+
+### Artifact inventory and scope diff
+
+One supporting artifact exists: the existing
+[batch record](artifacts/batch-record.md), now appended with I1 intake,
+readback, preservation proof, actual checks, package/source identities and
+current pointer. No new artifact or validation machinery was created. The
+issued initial prompt, I1 prompt, slice plan, initial CDC review and original
+source return are preserved. This I1 correction closes the F01 heading omission
+only; it does not widen the four criteria or parent assignment. S08-01/04 are
+proposed only, with CDC-owned statuses unchanged pending review.
+
+Arc02 retains its full 233-card/eight-live/five-dimension review, original-source
+fidelity and input readiness, global claim/relationship/CQ reconciliation,
+fresh-context and actual browser/accessibility behavior, Arc06 metadata/rendering,
+and Arc04 composition/package/release gates. Earlier type/spacing/tonal and
+perception claims and the other recorded T/L/Arc02/Arc04 owners remain unchanged.
+No slice, arc, project, installation or publication closure is claimed.

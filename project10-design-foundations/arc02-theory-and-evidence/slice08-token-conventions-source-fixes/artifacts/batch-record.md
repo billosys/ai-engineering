@@ -193,3 +193,83 @@ and P10-12/13; and final package, composition and release gates with Arc04 and
 P10-05/07/08 plus the existing CDC/Operator owners. These are unchanged owners,
 not Slice08 acceptance claims. This return adds one artifact only: this batch
 record. All four S08 statuses remain open pending independent CDC review.
+
+## Iteration01 intake and contract readback — 2026-10-12
+
+**Assignment:** `cc-prompt-iteration01.md`, issued by planning commit
+`e1b92a96e5b9d536b0ec24eeb8d1ea96150f7854`; initial source return
+`d644db46913823eed957bb16a48d062e1a7dd71f`; planning initial return
+`a29727836b4ccfe4b149d625dd0f887142d7d3df`. Main was at the exact I1 source
+pin, and planning was clean at the issue. Main's pre-existing untracked
+`knowledge/lfe/` is preserved. Before-edit `design.md` SHA-256 matches the
+issued `ea3a5f5ced2aa1c72dd406aec7265e6a92c7bd7c309fdcdb9dff7469492ff118`.
+
+The I1 prompt, complete slice plan/ledger, complete initial CDC review
+(including F01, row dispositions and Bubble-up), required current project and
+arc sections, and their complete 13/10 criterion ledgers were read. Project
+Scope/DoD, Immediate sequence, Evidence/workload economy, Recorded Operator
+decisions and Workflow/acceptance were covered; arc Complete coverage and
+Workflow/current assignment were covered. The complete design `SKILL.md` and
+Section I of `design.md`, including its section label and closing boundary,
+were read. The Source/case results/Open boundaries portions of this batch
+record and the complete initial closing report were read. Current collaboration,
+project-management, prompt-intake/iteration-preservation and independent-review
+routes were applied from their current installed/repository guidance.
+
+Some combined terminal reads were clipped. I recovered the initial CDC review,
+source guide and entrypoint, planning sections, closing report, and full batch
+record in separate bounded reads before editing; no clipped output was treated
+as complete. The current heading was confirmed unique. A repository route query
+found no live inbound `#the-convergence-thesis` link, so no alias or neighbor
+repair is required.
+
+**I1 readback:** replace only `## The Convergence Thesis` with
+`## Comparing Design Systems` in `knowledge/design/guides/design.md`. Preserve
+all other source bytes, the seven accepted corrections and all other live files;
+leave metadata/history at 1.0.3. Planning writes are limited to this batch
+record, this ledger's evidence/notes, and the existing closing report. Preserve
+the initial accounting historically, retain accepted 21-action and teaching
+evidence only after unchanged-byte applicability, and report S08-01/04 as
+proposed only. No new theory/source acquisition, checker, version entry,
+installation, publication or parent-gate change is authorized.
+
+## Iteration01 source correction, preservation and checks
+
+The exact one-line substitution was made and committed in
+`1489e76730b759f01fb1e839a18b363d8296b610` (tree
+`6058b581fb4d4c9c25599e07fca72e635bb4b392`, parent
+`d644db46913823eed957bb16a48d062e1a7dd71f`). The commit changes only
+`knowledge/design/guides/design.md` and carries both required co-author
+trailers. A byte comparison against its parent proves the file equals the
+initial return with exactly the old heading replaced: old heading count 0, new
+heading count 1. The tracked source diff names only this path; all other live
+files are unchanged. Initial ACT-10/11 pointers under the old heading are
+historical; the current owner pointer is
+`design.md#comparing-design-systems`. Section I composition and routes were
+inspected, including the absence of a live inbound old fragment.
+
+`make help` passed. The first `make check-package-paths` attempt could not write
+its generated `build/` and package files under sandbox permissions and returned
+a failed gate attempt; the authorized retry exited 0. It checked 24 ZIPs and
+388 Markdown files, with zero hard failures, 596 warnings at 594 unique
+locations, three explicit exceptions and 681 skipped external URLs. Warning
+categories and limits match the initial post-rebase review. Fresh `make design`
+exited 0 after the source commit; all eight actual packaged Markdown members
+were individually byte-compared with committed source and passed. The packaged
+design guide has exactly one `## Comparing Design Systems` and no old heading.
+Archive SHA-256: `904a19186aab75f119c463bb5e26dce10594b81ef6d60c42bc713b2e0a63f074`.
+Source commit diff-check passed. Existing `make check-skills`/description
+evidence is retained because SKILL.md metadata/description and gate inputs are
+unchanged; it was not relabeled as rerun. Planning diff-check is recorded with
+this return. The first planning `git add`/commit attempt was denied when the
+sandbox could not create `.git/worktrees/planning/index.lock`; the follow-up
+status and staged-path check showed that no files were staged by that attempt.
+The authorized scoped retry is the single planning return commit. No package
+timestamp is used as content identity.
+
+The accepted 21-action semantic/case and protected-teaching evidence remains
+applicable: only the section label changed, and the full design guide byte
+comparison otherwise matches the initial accepted return. No broader claim is
+made for unchanged neighboring type, spacing, tonal-scale or perception
+assertions, historical-source fidelity, browser behavior, export, fresh-context
+use, full corpus, metadata rendering or release readiness.
