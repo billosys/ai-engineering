@@ -41,7 +41,8 @@ source acquisition, original-readiness waiver or live implementation is implied.
 
 ## Complete work breakdown and sizing
 
-Slice01–04 are independently closed; remaining families below stay open.
+Slice01–04 are independently closed; Slice05 is open for fluid-type/accessibility
+limits. Other remaining families below stay open.
 The remaining rows are bounded execution
 families, not a single giant slice or already-issued assignments. CDC assigns
 unique increasing slice numbers and records each exact population/dependency in
@@ -53,15 +54,16 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Closed at c3d68d7d; independent of missing original attribution/fidelity. |
 | slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Closed after I04 independent review and Operator-approved direct correction; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
 | slice03-token-system-conventions | Reconcile complete selected token assertions with DTCG and named-system primary scopes; usable portable policy and exact correction handoff. 17 contexts/168 lines in five files; evidence only. | Closed at3817d83c after Iteration04 acceptance; all nine child rows done. Project13 T01 registered before initial issue; original fidelity/export validation remain separate. |
-| slice04-layout-and-measure-exceptions | Reconcile complete selected layout/measure assertions; intrinsic-first policy, justified adaptation, scoped measure and exact correction handoff.13 contexts/184 lines/three live files; evidence only. | Closed at C4/H4/H4b after I4 independent review; nine child rows done. Was a stale I3/five-done summary at I4 issue (CDC maintenance error). T02 complete; final comparison due; originals/browser proof remain separate. |
+| slice04-layout-and-measure-exceptions | Reconcile complete selected layout/measure assertions; intrinsic-first policy, justified adaptation, scoped measure and exact correction handoff.13 contexts/184 lines/three live files; evidence only. | Closed at C4/H4/H4b after I4 independent review; nine child rows done. Was a stale I3/five-done summary at I4 issue (CDC maintenance error). T02 and final comparison complete at dc7b0732; originals/browser proof remain separate. |
+| slice05-fluid-type-accessibility-limits | Reconcile logical-axis/root/clamp/resize guarantees with scoped primary evidence, model witnesses and literal portable corrections; seven contexts/98 lines/five files. | Open after Slice04 close b6acb22f and final Project13 comparison dc7b0732; ordinary T work, not a third trial. Arc03 owns actual browser proof. |
 | R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
-| T — remaining theory/evidence | Bounded slices per concern: nonlinear colour pipeline, perception/analogy scope, token-system conventions, layout/measure exceptions and CHI interpretation. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
+| T — remaining theory/evidence | Bounded slices per concern: perception/analogy scope, other unassessed theoretical assertions and CHI interpretation. Selected fluid-type/accessibility implications are now Slice05; prior closed T slices remain bounded inputs, not full T completion. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
 | C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
 | L — complete live-file review | Start from eight L whole-file assignments. Full bodies, each repeated claim and relevant examples; history/provenance plus substantive history assertions. | C/T results and required source inputs; partition claim spans with complete 1–EOF coverage accounting if needed. Headings/regex candidates are navigation only. |
 | G — global reconciliation and arc handoff | Bounded cross-group/guide, typed-edge, CQ-component and revision/dependency reconciliation slices, followed by formal arc composition. | Complete C/L result set and P10-11; reconcile every unresolved/unclassified assertion. Split by explicit dependency populations, then demonstrate the complete union. |
 
 No fixed total slice count is invented before reading/source readiness establishes
-actual headroom. The issued slice list is Slice01–04 (closed). Before arc
+actual headroom. The issued slice list is Slice01–04 (closed) and Slice05 (open). Before arc
 closure, the expanded roadmap, all issued children and the full R/T/C/L/G
 coverage union must reconcile. Additions/splits/merges/removals remain mapped to
 the original 233 identities; no sampling, quarantine substitute or lost guide
@@ -128,10 +130,13 @@ Operator-approved CDC two-field repair/closure. All nine rows done, I05 unused.
 separates independent evidence from direct self-check/Operator acceptance.
 Slice03 Iteration04 at3817d83c is [accepted and closed](slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11);
 all nine child rows done. T01 checkpoint completed at370cfc8f with inconclusive
-comparative benefit. Current Slice04 is [independently closed](slice04-layout-and-measure-exceptions/cdc-verification.md#iteration04-independent-review-and-slice04-closure--2026-10-12)
-at C4/H4/H4b, all nine rows done after four corrections. T02 final comparison
-is due before any trial extension. Remaining T concerns, including vi-guarantee
-review, and full R/C/L/G remain; Arc03 retains actual accessibility proof.
+comparative benefit. Current Slice04 is independently closed at C4/H4/H4b, all nine rows done.
+Project13 final comparison dc7b0732 completes the two-run checkpoint: comparative
+benefit inconclusive, no trial extension/adoption. Current [Slice05](slice05-fluid-type-accessibility-limits/cc-prompt.md)
+is ordinary T work on the retained vi/zoom guarantee and root/resize implications,
+seven complete contexts/98 lines/five files, all nine rows open. Arc03 owns real
+browser proof; full R/C/L/G and other T concerns remain. This details an already
+retained execution concern without changing design scope or parent criteria.
 Earlier current-assignment text is historical; all issued prompts are preserved.
 Initial prompt and CC candidate remain preserved.
 Slice01 Iteration02 `c3d68d7d` is [independently accepted and closed](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09):
@@ -142,6 +147,11 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.22 (2026-10-12): After Slice04 close and final Project13 comparison,
+  opened Slice05 for retained DES-005 fluid-type/accessibility limits with
+  bounded primaries/model/correction scope. Full families/criteria/gates unchanged;
+  trial ended, ordinary assignment is not T03.
 
 - 1.21 (2026-10-12): Slice04 C4/H4/H4b independently closed, nine rows done;
   corrected stale breakdown (CDC error), retained all families/criteria/gates.

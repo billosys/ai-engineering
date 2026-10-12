@@ -187,3 +187,13 @@ accepts C4/H4/H4b: all nine child criteria done after four corrections. Portable
 layout/measure handoff supplied; parent criteria/statuses remain unchanged.
 Full233/eight/16, R/T/C/L/G, P10-11 and Arc03/04/06/package/release/Operator gates
 remain. T02 comparison is due before any extension of its two-case trial.
+
+## Slice05 opening — 2026-10-12
+
+[Slice05](slice05-fluid-type-accessibility-limits/slice-plan.md) opens after
+Slice04 independent close b6acb22f and Project13 final comparison dc7b0732.
+Seven complete contexts/98 lines/five files; nine child rows open. Retained
+DES-005 unit/zoom/root/resize evidence and literal handoff; actual browser proof
+Arc03-owned. Parent criterion texts/statuses and all233/eight/16, R/T/C/L/G,
+P10-11, metadata/live/package/release/Operator gates unchanged. Ordinary work,
+not a third trial or framework-wide method adoption.

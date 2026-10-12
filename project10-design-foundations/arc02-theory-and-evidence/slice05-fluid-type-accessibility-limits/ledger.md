@@ -1,0 +1,22 @@
+# Arc02 Slice05 Ledger
+
+All nine rows open; CC supplies proposed evidence, CDC independently accepts.
+Author examples/arithmetic are not independent semantic or browser proof.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S05-01 | Intake reconciles current assignment, complete required scopes/pins and exercised construction | Inspect scoped receipts/readback; example positive/four invalids | serious | Authoring/intake | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+| S05-02 | All selected assertions/qualifiers are inventoried or explicitly retained with owners | Complete7/98 source-context clause walk and independent coverage projection | correctness-grade | DES-005/bounded T | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+| S05-03 | Primary comparisons preserve applicable versions, full qualifications and missing historic evidence | Inspect CV/WC/RT/RF/F94/UT sections and warrant applicability | correctness-grade | Source/technical distinction | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+| S05-04 | Every assigned unit has separate five-dimensional assessments and real original pair joins | Human literal/evidence/verdict walk; exact IDs and reverse pairs | correctness-grade | Accepted semantic procedure | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+| S05-05 | Zoom/root/axis arithmetic observes all stated model fields and distinguishes empirical limits | 144 source-coefficient evaluations plus independent pure/mixed/branch/root/axis witnesses; reject numeric corruption | correctness-grade | DES-005; Slice01 preservation | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+| S05-06 | Usable complete literal corrections and Arc03 behavior handoff retain source qualifiers/owners | Trace all results through single strict registry; virtual-compose each complete file; inspect future protocol | serious | Arc04 application/Arc03 runtime proof | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+| S05-07 | Actual checks discriminate promised defects and preserve human-only limitations | Replay positive/meaningful invalids through actual consumer; property-to-check map | correctness-grade | Evidence strength | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+| S05-08 | Exact seven-path output scope, protected inputs and source/commit integrity are preserved | Pins/paths/parents/trailers/links/fragments/LF/EOF/diff; source tracked/index unchanged | correctness-grade | Preservation | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+| S05-09 | Return accounts for every row/output/failure/limit and honest arc bubble-up | Nine-row proposed report; silent-drop/owner walk; no conformance/full-fidelity claim | serious | Slice DoD | open | — | [Plan](slice-plan.md); retained parent/readiness/runtime gates. |
+
+## Verification boundaries
+
+No card/CQ, historic capture/fidelity or actual browser conformance is accepted
+by this opening. Model/identity checks and human technical judgments are distinct;
+Arc03 owns behavior proof, Arc04 edits, full R/T/C/L/G and P10-11 remain.

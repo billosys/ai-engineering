@@ -282,15 +282,20 @@ retains the shared audit. At close, Project11 receives the actual accepted
 package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
-Arc02 [Slice04](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/slice-plan.md)
-is independently closed at C4/H4/H4b with nine rows done. It supplies bounded
-layout/measure evidence and an exact handoff; SOURCE and parent criteria remain
-unchanged. T02 final comparison precedes any trial extension. Remaining T and
-complete R/C/L/G stay assigned; Arc03 retains actual accessibility/typesetting
-proof. No full-corpus, source-readiness, metadata, live/package/release or parent
-completion is inferred.
+Arc02 Slice04 is independently closed at b6acb22f with nine rows done.
+Project13 final comparison dc7b0732 completes the two-run pilot; benefit remains
+inconclusive and no third run/general adoption is authorized. Current
+[Slice05](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt.md)
+is the next ordinary retained T concern: fluid-type/accessibility limits, DES-005,
+seven contexts/98 lines/five files; all nine child rows open. Arc03 retains actual
+accessibility/typesetting proof. SOURCE and all parent criteria remain unchanged;
+full R/T/C/L/G,233/eight/16, P10-11, metadata/live/package/release gates remain.
 
 ## Version History
+
+- 1.42 (2026-10-12): Arc02/Slice05 opened after Slice04 closure and completed
+  Project13 two-run comparison; retained DES-005 technical/model concern with
+  actual behavior later. Ordinary work, no trial extension or scope/gate change.
 
 - 1.41 (2026-10-12): Arc02/Slice04 C4/H4/H4b independently closed, all nine
   child criteria done; bounded handoff accepted, full scope/parent/later gates
