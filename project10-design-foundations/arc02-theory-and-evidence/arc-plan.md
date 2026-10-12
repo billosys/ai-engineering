@@ -22,7 +22,7 @@ source acquisition, original-readiness waiver or live implementation is implied.
 
 ## Accepted inputs and preservation
 
-- SOURCE remains `dffa504e851b03b8e4746f1941068e4cc850b612`, main checkout. Refresh
+- Assigned design snapshot is `dffa504e851b03b8e4746f1941068e4cc850b612`. SOURCE/main externally advanced to 314e5802; selected design blobs equal the assigned snapshot. Refresh
   and inspect tracked/index state before every later source mutation assignment.
 - Accepted [composed contract](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/composed-contract.md),
   [diagnostic example](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/example-configuration.md),
@@ -55,7 +55,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Closed after I04 independent review and Operator-approved direct correction; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
 | slice03-token-system-conventions | Reconcile complete selected token assertions with DTCG and named-system primary scopes; usable portable policy and exact correction handoff. 17 contexts/168 lines in five files; evidence only. | Closed at3817d83c after Iteration04 acceptance; all nine child rows done. Project13 T01 registered before initial issue; original fidelity/export validation remain separate. |
 | slice04-layout-and-measure-exceptions | Reconcile complete selected layout/measure assertions; intrinsic-first policy, justified adaptation, scoped measure and exact correction handoff.13 contexts/184 lines/three live files; evidence only. | Closed at C4/H4/H4b after I4 independent review; nine child rows done. Was a stale I3/five-done summary at I4 issue (CDC maintenance error). T02 and final comparison complete at dc7b0732; originals/browser proof remain separate. |
-| slice05-fluid-type-accessibility-limits | Reconcile logical-axis/root/clamp/resize guarantees with scoped primary evidence, model witnesses and literal portable corrections; seven contexts/98 lines/five files. | Initial C37f74622/H9254e094 reviewed: S05-03/08 done, seven open. Iteration01 addresses F01–F05 within scope; ordinary T work, no third trial. Arc03 owns actual browser proof. |
+| slice05-fluid-type-accessibility-limits | Reconcile logical-axis/root/clamp/resize guarantees with scoped primary evidence, model witnesses and literal portable corrections; seven contexts/98 lines/five files. | I1 C5bb54471/Hb418607d reviewed: four done/five open. Iteration02 repairs remaining coverage/pairs/prose/guards; numerical evidence accepted. Arc03 owns actual browser proof. |
 | R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
 | T — remaining theory/evidence | Bounded slices per concern: perception/analogy scope, other unassessed theoretical assertions and CHI interpretation. Selected fluid-type/accessibility implications are now Slice05; prior closed T slices remain bounded inputs, not full T completion. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
 | C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
@@ -134,9 +134,10 @@ comparative benefit. Current Slice04 is independently closed at C4/H4/H4b, all n
 Project13 final comparison dc7b0732 completes the two-run checkpoint: comparative
 benefit inconclusive, no trial extension/adoption. Current [Slice05](slice05-fluid-type-accessibility-limits/cc-prompt.md)
 is ordinary T work on the retained vi/zoom guarantee and root/resize implications,
-seven complete contexts/98 lines/five files. Initial C37f74622/H9254e094 has
-S05-03/08 accepted and seven rows open; current [Iteration01](slice05-fluid-type-accessibility-limits/cc-prompt-iteration01.md)
-repairs F01–F05 under the existing contract. Arc03 owns real
+seven complete contexts/98 lines/five files. I1 C5bb54471/Hb418607d has
+S05-01/03/05/08 done and five rows open; current [Iteration02](slice05-fluid-type-accessibility-limits/cc-prompt-iteration02.md)
+repairs residual coverage, pair identity, prose joins and input/control guards.
+Assigned design snapshot remains dffa504e despite external SOURCE advance to 314e5802. Arc03 owns real
 browser proof; full R/C/L/G and other T concerns remain. This details an already
 retained execution concern without changing design scope or parent criteria.
 Earlier current-assignment text is historical; all issued prompts are preserved.
@@ -149,6 +150,10 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.24 (2026-10-12): Slice05 I1 independently reviewed, four done/five open;
+  I2 issued with accepted model/primary protected. External SOURCE movement
+  recorded without design repin; families/criteria/readiness/later gates retained.
 
 - 1.23 (2026-10-12): Slice05 initial review accepts two criteria; I1 restores
   complete assertions/targets/model/checker/intake evidence for seven open rows.

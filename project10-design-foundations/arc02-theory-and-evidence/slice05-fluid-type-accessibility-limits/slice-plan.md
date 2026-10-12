@@ -47,7 +47,7 @@ Exactly seven CC paths under this slice:
 `artifacts/occurrence-inventory.jsonl`, `artifacts/source-comparison.md`, `artifacts/claim-results.jsonl`, `artifacts/correction-handoff.md`, `artifacts/execution-notes.md`, `ledger.md`, `closing-report.md`.
 Durable artifacts live under artifacts/. Preparation/this plan/issued prompt and
 CDC records protected; ledger evidence/notes only. All nine criterion texts and CDC statuses are
-protected; S05-03/08 are done and seven rows remain open. No maintained helper/new format standard or software runtime.
+protected; S05-01/03/05/08 are done and five rows remain open. No maintained helper/new format standard or software runtime.
 Human review covers complete assertion meaning, primary applicability, original
 pairs, usable prose and scoped behavioral requirements. Mechanical checks cover
 literal identities/bounds/joins/numbers and composition, not semantic truth.
@@ -58,9 +58,11 @@ All original/source/corpus/runtime/Arc04/Arc06/release/Operator gates remain.
 | Assignment | Issue/predecessor | Status |
 |---|---|---|
 | [Initial prompt](cc-prompt.md) |2026-10-12; predecessor dc7b0732fa8a78cf47713aecdaabbc5ef05686b6; issue is commit containing prompt | Returned as C37f74622/H9254e094; two rows accepted, seven open; I1 supersedes current execution. |
-| [Iteration01](cc-prompt-iteration01.md) | 2026-10-12; predecessor 9254e094901e619717abf09e9b3ee7683d56fbb0; issue is commit containing I1 | Active: F01–F05 complete targets/coverage/models/guards/intake; same scope and nine criteria. |
+| [Iteration01](cc-prompt-iteration01.md) | 2026-10-12; predecessor 9254e094901e619717abf09e9b3ee7683d56fbb0; issue is commit containing I1 | Returned C5bb54471/Hb418607d; four done/five open; I2 supersedes current execution. |
+| [Iteration02](cc-prompt-iteration02.md) | 2026-10-12; predecessor b418607dee4ba499b1d32e0c643e8d10158cd529; issue is commit containing I2 | Active: I1-F01–F04; same seven windows/nine criteria; primary/model sections protected. |
 
-Current assignment is **Iteration01**. The [initial independent review](cdc-verification.md#initial-independent-review--2026-10-12) accepts S05-03/08; seven rows open. Initial prompt is preserved.
+Current assignment is **Iteration02**. The [I1 independent review](cdc-verification.md#iteration01-independent-review--2026-10-12) accepts four rows; five remain open. All issued prompts are preserved.
+SOURCE/main externally advanced to 314e5802; all five assigned design blobs remain byte-identical to dffa504e. No design repin or source mutation is assigned.
 
 CDC applied the ordinary engineering-methods readiness check: read governing
 scope/domain/primary sections, resolved evidence-only boundaries and exact outputs,
@@ -70,6 +72,10 @@ remain evidence-dependent. Author examples are self-checked, not independently
 accepted CC results. Reading/recovery is recorded by actual scope, not count claims.
 
 ## Version History
+
+- 1.2 (2026-10-12): I1 independently reviewed, four done/five open; I2 addresses
+  residual source coverage, pair identity, prose joins and formula/control guards.
+  Recorded external SOURCE advance with identical design inputs; all gates retained.
 
 - 1.1 (2026-10-12): Initial return independently reviewed; two rows done, seven
   open. Issued I1 for F01–F05 within the original seven-window evidence contract.

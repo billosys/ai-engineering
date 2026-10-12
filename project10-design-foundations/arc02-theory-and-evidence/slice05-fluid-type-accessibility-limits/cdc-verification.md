@@ -1,8 +1,12 @@
 # Slice05 CDC verification
 
+**Current verdict:** Iteration01 partially accepted at C5bb54471/Hb418607d.
+S05-01/03/05/08 done; S05-02/04/06/07/09 open. Iteration02 below is current;
+initial findings and receipts remain historical evidence. Slice05 remains open.
+
 ## Initial independent review — 2026-10-12
 
-**Current verdict: partial acceptance; slice open.** CDC Sofie independently
+**Initial verdict: partial acceptance; slice open.** CDC Sofie independently
 reviewed CC's initial return under the default Two-Contributor Workflow and
 Operator-authorized Project10 Expedited Mode. S05-03 and S05-08 are done at their bounded
 criteria; S05-01/02/04/05/06/07/09 remain open. No Slice06, source mutation,
@@ -75,7 +79,7 @@ carried into the handoff, F01/F03.
 ### Findings and prescribed correction
 
 **F01 — correctness-grade: complete target and composed output are broken.**
-[Current registry](artifacts/correction-handoff.md#exact-proposed-actions):
+[Historical registry at C/H](#reviewed-identities-and-independently-reproduced-evidence):
 A-C08 replaces whole line118, dropping `density.` from the preceding ch sentence,
 and leaves line119 `respecting their accessibility preferences.` as an orphaned
 unqualified claim. Its actual rem assertion spans118–119. A-C09 drops
@@ -120,7 +124,7 @@ fixed-root model kept distinct from computed-root variation/axis/browser results
 Preserve the valid existing 144 observations and independent toy witnesses.
 
 **F04 — correctness-grade: advertised semantic joins and evidence guards false-pass.**
-[Consumer](artifacts/execution-notes.md#checker-source-and-replay) ignores window_id
+[Historical consumer replay](#committed-byte-false-pass-replay) ignores window_id
 and literal_subject, admits an out-of-window source target with coherent hashes,
 and rejects invented capture only when it adds an unexpected key; the same
 fabrication in the allowed evidence envelope passes. Validate actual window/path/
@@ -240,3 +244,177 @@ strengths. Fresh target-aware checks across the eight reviewer files resolved
 148 local links and59 fragments; LF/final newlines and git diff --check passed.
 No package/browser/source work was run. The commit containing this record and
 I1 is the issuing commit; it follows H, and is not a CC candidate acceptance.
+
+
+## Iteration01 independent review — 2026-10-12
+
+CDC Sofie reviewed the actual committed packet under Two-Contributor Workflow
+and Operator-authorized Expedited Mode. Current issue I1 is
+`bea98797546d72bbd0314edf915887b3e62e815d`; candidate C is
+`5bb54471ca4a85a812c34d0d3f7352aee15bfe20`, tree
+`0a7644d8a6ce362cfac0e38e520d4a93cd7cab88`, direct I1 child. Receipt H is
+`b418607dee4ba499b1d32e0c643e8d10158cd529`, direct C child changing only
+closing-report.md. C changes exactly the seven authorized outputs; both commits
+have both separate trailers. [Iteration02](cc-prompt-iteration02.md) addresses
+five remaining rows; no slice close or next-slice opening is authorized by this review.
+
+### Source movement, retained evidence and reproduced checks
+
+Assigned design snapshot remains `dffa504e851b03b8e4746f1941068e4cc850b612`.
+SOURCE/main advanced externally through acd70809 to
+`314e580282d2c801e41f6decfbbf07483957268c`. Independently inspected the 24-path
+source delta: framework stewardship/routing/packaging changes, no selected
+design file changes. All five complete design blobs equal the assigned snapshot.
+SOURCE and planning tracked/index states were clean at review intake, with only
+the preserved knowledge/lfe/ and project12-chcd-protocol/ untracked paths.
+This records an external advance; it does not repin design evidence or authorize
+source mutation. The new mandatory retrospective applies to Three-Contributor
+Workflow; that workflow is not selected here.
+
+The nine slice criterion texts/statuses are preserved I1-to-H, as are all parent
+plans/ledgers, issued prompts, preparation and the earlier CDC record. The seven
+window identities/ranges/counts/hashes/complete texts remain unchanged. S05-03's
+accepted primary section is byte-identical at its initial hash; prior bounded
+acceptance remains applicable, without claiming a fresh whole-source fidelity
+review. Current framework/domain/plan routes, initial/I1 assignment and findings,
+all seven source windows, all24 result objects/120 dimension entries, all12
+literal boundaries/four markup classifications, all24 registry actions and
+corresponding complete-file composition, current notes/report were inspected.
+Long structured data were queried in complete populations; counts are not
+substitutes for reading assertion meaning. Earlier receipt discrepancies remain
+preserved and are explicitly superseded by I1's fresh coherent intake.
+
+Extracted H's single four-backtick Python checker and executed it on temporary
+copies of H's committed inventory/results/comparison. Only ROOT input location
+was adapted, with no predicate change. Positive packet and all29 supplied
+negative controls passed their advertised accept/reject result, plus duplicate
+JSON-key and four registry parser/envelope controls. This proves those rejection
+results, not that each specimen reached its named guard.
+
+A separate regex/Fraction calculation parsed SOURCE lines195/196/200/203,
+confirmed exact formula identities and the unique 144-key Cartesian product,
+and reproduced all six output fields per key: baseline/intermediate/apparent/
+ratio and both branches. Independently checked the toy pure/mixed/root/lower/
+upper and axis witnesses under their declared assumptions. No numeric error
+was found. S05-05 is **done, reproduced/reconciled**, at this bounded model scope.
+Its protected section body between the model heading and Human-readable witnesses
+has SHA-256 `c0ddd2c5969f6adaf6e871761d17f0ac6a8516ca8ac334077f87e81b79e0c299`.
+
+Fresh integrity checks resolved22 local links/17 fragments across the seven
+outputs, with LF/EOF, diff checks, exact commit scopes/parents/tree/trailers and
+protected bytes. S05-08 is freshly reproduced at C/H, extending its earlier
+bounded acceptance. S05-01 is newly done: fresh I1 manifest/extents/identity,
+source-cited readback and exercised construction reconcile the earlier receipt
+errors. This does not certify a doer's internal reading process or historical
+fidelity. One CDC helper accidentally compared main's dffa object with planning
+HEAD, producing an irrelevant large diff; it was rerun in SOURCE explicitly.
+That reviewer error and recovered truncated combined reads are not CC failures.
+
+The Arc03 handoff now carries SC1.4.4 exceptions/no-AT/baseline-relative doubling,
+intermediate no-loss, one supported path and separate SC1.4.10 requirements.
+Rechecked the applicable [normative criteria](https://www.w3.org/TR/2024/REC-WCAG22-20241212/)
+and [Resize Text guidance](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html).
+That future protocol is usable at this scope; actual browser/conformance remains
+unrun. Complete composition and claim accounting still fail the findings below.
+
+### Remaining findings
+
+**I1-F01 — serious: composed teaching still contains broken joins.**
+Q17 begins `a given set...` after Q16's full stop; Q18 adds a double space.
+Q24 supplies a complete sentence ending in a full stop before the untouched
+` --- Bringhurst...` continuation. Q23's literal replacement tells a future
+skill reader to `reconcile ... with Project10 baseline ... before describing...`:
+it is a planning instruction, not a resolved teaching correction. Preserve the
+unassessed Bringhurst remainder without a detached fragment; retain Q23's
+original pending endpoint-owner resolution and record that unresolved decision
+in the handoff, rather than installing a planning TODO. The corrected rem,
+intercept/modular neighbors, Vignelli/maxim boundaries and fixed-column table
+are genuine improvements and should remain intact. Read each full final paragraph,
+not only isolated replacement strings; no universal grammar oracle is required.
+
+**I1-F02 — correctness-grade: complete selected-text coverage remains incomplete.**
+The construction sentence at type.md:472–473 (`clamp(min, preferred, max)` with a
+linear vi preferred term) has neither a Q result nor a literal retained record.
+It directly concerns the assigned construction. W01's `Memorize these. They
+resolve almost every design trade-off.` and W02's `Everything derives from
+these:` are substantive unclassified assertions, not table/heading syntax.
+W05 M04 generically calls the fixed-column table markup, swallowing the selected
+Spacing/Colour purpose assertions and construction labels outside Q20. These
+may be explicitly retained with exact literals/reasons/owners, without fresh
+out-of-scope judgments. W02's alias is cited in Q04's reason but needs an explicit
+source witness mapping distinct from fence syntax. Complete the source-to-unit
+projection using all selected text, qualifying bridge/continuation text and
+actual markup separately. Do not shrink seven windows/98 lines or expand this
+accessibility pass into retained harmony/perception/token/colour claims.
+
+**I1-F03 — correctness-grade: reciprocal IDs do not make an actual comparison.**
+Q11's subject is interpolation arithmetic and the y-intercept; Q21's is an
+inline-axis recommendation. Q11's reason incorrectly claims Q21 is a corresponding
+vi recommendation, and the paired-originals section repeats that misidentification.
+Use the actual Q12 axis clause for Q21, and the unaccounted W07 construction for
+Q11 if comparing those. Give every claimed pair its source-bound common property
+and observed relation (agreement/conflict/conditional difference); the repeated
+`Exact local pair IDs...Comparison does not prove truth` is not the result of
+that comparison. Preserve the demonstrated root and vi/conformance relationships
+and the 1.2/1.25 conflict. Source-faithfulness/card/CQ remain not assessed.
+
+**I1-F04 — correctness-grade: formula identity guard and control claims remain incomplete.**
+Through the unchanged H validate(), CDC substituted a second copy of the SK195
+source declaration under formula_id SK196, coherently recomputing all36 SK196
+rows. The packet still passes with144 unique keys, while omitting required SOURCE
+line196. Source-role parsing is good; it lacks a source-bound exact four-input
+membership check. Add that guard before grid construction, protecting valid data.
+
+Two supplied composition specimens reject for earlier incoherence: the table
+specimen leaves the claim replacement hash stale; the neighbor specimen uses
+literal `x`. They do not demonstrate the intended table/neighbor properties.
+CDC's coherent replacements reach `table-cell-not-row` and
+`complete-critical-subject`, respectively, showing those existing guards work.
+Retain the guards and repair the specimens; emit actual exception routes for
+all controls. Adapt source coverage guards to the complete F02 projection;
+mechanical coverage and human semantic applicability remain distinct.
+
+### Row walk and Arc02 bubble-up
+
+| Row | CDC disposition | Evidence / remainder |
+|---|---|---|
+| S05-01 | done, reconciled | Fresh coherent I1 intake, readback and construction; old receipts preserved. |
+| S05-02 | open | I1-F02 source assertion/retained/witness/markup coverage. |
+| S05-03 | done, retained | Unchanged accepted primary block; original fidelity remains unavailable. |
+| S05-04 | open | I1-F03 actual comparison results plus new source-bound units from F02. |
+| S05-05 | done, reproduced/reconciled | Independent exact144-key/six-field model and witnesses; no runtime inference. |
+| S05-06 | open | I1-F01 usable final prose/continuations and pending endpoint handoff; future Arc03 protocol checked. |
+| S05-07 | open | I1-F04 input-identity false-pass and coherent control routes; F02 projection update. |
+| S05-08 | done, freshly reproduced | Current C/H integrity, protected inputs, selected design bytes and external SOURCE delta. |
+| S05-09 | open | Account for corrected coverage/pairs/composition/routes and all nine rows. |
+
+Slice05 is open with four done/five open rows. Arc02 still owns remaining R/T/C/L/G,
+233-card/eight-live/16-DES review, P10-11 and corrected-revision/finding/composition
+proof. Arc03/04/06, package/release/Operator gates remain. No parent criterion or
+status changes, methodology trial extension, or scope amendment is needed. The
+numerical completion, complete rem target and preserved table/neighbor bytes are
+useful progress. The failed method was counting static IDs without complete literal
+classification, and reading isolated replacement strings instead of final paragraphs.
+Iteration02 supplies an exercised input-identity guard and coherent composition
+specimens plus a source-complete walk; no extra artifact layer or helper is assigned.
+
+### I2 author readiness and reviewer checks
+
+CDC executed the literal I2 input-identity predicate: positive H data accepted;
+coherent missing-SK196 data passed the old consumer and failed the new predicate.
+Coherent table/neighbor specimens rejected through the unchanged consumer at
+the routes recorded above. The continuation witness preserves the original
+suffix and all non-target bytes; human wording review remains explicit.
+Current guides informed these bounded repairs; no extra runtime/helper is assigned.
+The first review link check found two initial-record anchors removed by I1's
+artifact restructuring. Historical registry navigation now points to the initial
+C/H identity receipt, and historical checker navigation to its pinned diagnostic
+replay; the findings/pins/replay themselves are preserved. Current outputs are
+not evidence that those earlier findings were absent.
+
+Fresh checks across the eight reviewer files resolved153 local links/65 fragments;
+LF/EOF, git diff --check, exact write scope, protected CC outputs and all13/eight/
+nine criterion texts passed. Exactly S05-01/05 become newly done; S05-03 is
+retained and current S05-08 integrity is reproduced. SOURCE remains314e5802,
+with assigned design bytes unchanged. The commit containing this I2 prompt is
+the issue commit, a child of H; it is not a CC candidate or slice closure.

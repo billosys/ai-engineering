@@ -287,13 +287,18 @@ Project13 final comparison dc7b0732 completes the two-run pilot; benefit remains
 inconclusive and no third run/general adoption is authorized. Current
 [Slice05](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt.md)
 is the next ordinary retained T concern: fluid-type/accessibility limits, DES-005,
-seven contexts/98 lines/five files; initial C37f74622/H9254e094 has two child rows
-accepted and seven open. [Iteration01](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt-iteration01.md)
-addresses complete targets/coverage/model/guard/intake defects. Arc03 retains actual
-accessibility/typesetting proof. SOURCE and all parent criteria remain unchanged;
-full R/T/C/L/G,233/eight/16, P10-11, metadata/live/package/release gates remain.
+seven contexts/98 lines/five files. I1 C5bb54471/Hb418607d is independently
+reviewed: four child rows done/five open. Current [Iteration02](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt-iteration02.md)
+repairs residual source coverage, actual pair results, prose joins and input/control
+guards. SOURCE/main advanced externally to 314e5802; assigned design blobs still
+equal dffa504e. Arc03 retains actual accessibility/typesetting proof; all parent
+criteria, R/T/C/L/G,233/eight/16, P10-11, metadata/live/package/release gates remain.
 
 ## Version History
+
+- 1.44 (2026-10-12): Slice05 I1 review accepts four rows and issues I2 for five
+  open; recorded external SOURCE movement, protected valid model/primary evidence.
+  Scope/parent criteria/readiness/later gates remain unchanged.
 
 - 1.43 (2026-10-12): Arc02/Slice05 initial CDC review accepts S05-03/08 and
   issues I1 for seven open rows; full scope/parent gates preserved, no advancement.

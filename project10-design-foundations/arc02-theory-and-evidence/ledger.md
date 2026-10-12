@@ -205,3 +205,11 @@ seven child rows remain open. I1 addresses complete targets/assertions, missing
 model fields/coverage, false-pass guards and intake/report discrepancies. Slice
 remains open; parent criterion texts/statuses and all R/T/C/L/G, 233/eight/16,
 P10-11, runtime/live/metadata/package/release/Operator gates unchanged.
+
+## Slice05 Iteration01 independent review — 2026-10-12
+
+[CDC review](slice05-fluid-type-accessibility-limits/cdc-verification.md#iteration01-independent-review--2026-10-12)
+records four done/five open rows at C5bb54471/Hb418607d; current I2 restores
+coverage/pairs/prose/input guards. Valid model and primary evidence are protected.
+External SOURCE at 314e5802 preserves assigned design bytes. Parent criteria/statuses
+and all full-corpus, R/T/C/L/G, P10-11, live/metadata/package/release gates remain.
