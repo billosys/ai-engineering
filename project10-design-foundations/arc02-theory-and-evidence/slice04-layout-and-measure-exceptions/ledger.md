@@ -80,4 +80,4 @@ assignment statements are historical. No slice closure or next advance.
 
 ## Iteration04 CC proposed return — 2026-10-12
 
-[Current Iteration04 return](closing-report.md) records the four-path candidate and attested replay. S04-01/02/03/04/05/08 remain done at their prior independently accepted scope; S04-06/07/09 remain open for CDC. No slice, DES, parent criterion, source-readiness, trial or release gate closes here.
+[Current Iteration04 return](closing-report.md) records candidate `8f60e7e1` and the committed-byte attested replay. S04-01/02/03/04/05/08 remain done at their prior independently accepted scope; S04-06/07/09 remain open for CDC. No slice, DES, parent criterion, source-readiness, trial or release gate closes here.
