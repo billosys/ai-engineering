@@ -254,6 +254,12 @@ Replay on the current draft: one complete packet passed; 16 inherited negative c
 
 The malformed table/CSS controls update the associated proposal and result part too, so they reach the structural-form predicates rather than failing an earlier cross-file mismatch. The checker does not establish language grammar, CSS parsing, a browser’s behavior, WCAG conformance, historical fidelity, full DES disposition, complete card/live coverage, or independent acceptance.
 
+## Iteration02 candidate integrity receipt
+
+Substantive candidate: commit `35f6d01e2fc03eb527afe0d2657ccb5d4c4a9009`, tree `8488ead003cc8e45598bbf0c08e418728a73e196`, direct child of issue `877ff958dd89553fe3c5a326e4b833ce1f8637cd`. Its exact changed paths are `artifacts/claim-results.jsonl`, `artifacts/correction-handoff.md`, `artifacts/execution-notes.md`, `artifacts/source-comparison.md`, `closing-report.md` and `ledger.md`. The seventh authorized output, `artifacts/occurrence-inventory.jsonl`, is byte-identical to H1. Each of the seven authorized output files is LF-only, ends in a newline, and matches the candidate tree bytes. The commit message carries both required co-author trailers.
+
+Post-commit replay of the committed inline checker produced one positive packet and 20 rejected negative controls (16 inherited plus four recurrence controls); its semantic oracle remains human review and CDC pending. `git diff --check` passed for issue-to-candidate. The local Markdown target/fragment check resolved 45 links with zero errors. SOURCE remains at `dffa504e851b03b8e4746f1941068e4cc850b612`, tracked/index clean, with only pre-existing untracked `knowledge/lfe/`; planning’s pre-existing untracked `project12-chcd-protocol/` remains outside the candidate. These are CC integrity receipts, not independent acceptance. CDC review is pending; the four previously accepted row states remain scoped to C1/H1 and five rows remain open.
+
 ## Iteration01 candidate integrity receipt — historical
 
 The following is preserved as the prior iteration’s receipt; it is not current I2 evidence.
