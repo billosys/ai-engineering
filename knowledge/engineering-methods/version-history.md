@@ -1,5 +1,11 @@
 # Engineering Methods Version History
 
+## Version 1.17.0 - 2026-10-12
+
+Assigned methodology stewardship to CDC in the Three-Contributor Workflow,
+including retrospectives at slice, arc and project close. Routed analysis to
+the new skill while preserving CRC acceptance and existing change authority.
+
 ## Version 1.16.0 - 2026-09-28
 
 Preserved detailed implementation recipes while making proof-method selection

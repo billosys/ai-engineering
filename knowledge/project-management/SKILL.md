@@ -7,7 +7,7 @@ description: |
   whether bubble-up findings require a plan update.
 license: MIT
 metadata:
-  version: "2.18.1"
+  version: "2.19.0"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills
@@ -42,6 +42,10 @@ Use the [workflow-specific verification records](./guides/02-canonical-planning-
 CDC at slices by default, CRC at slices and both CRC/CDC at higher scales when
 three contributors are enabled. Preserve historical paths under the
 [compatibility rule](./guides/02-canonical-planning-worktree.md#verification-filename-compatibility).
+
+In the Three-Contributor Workflow, CDC performs a retrospective at every closing
+scale. Read the [record and handoff contract](./guides/02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow)
+and [methodology-stewardship](../methodology-stewardship/SKILL.md).
 
 Read first:
 

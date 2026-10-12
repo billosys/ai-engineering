@@ -56,6 +56,7 @@ Every package listed below is produced by `make all`, included in
 | Skill package | Source entrypoint | Use when |
 |---|---|---|
 | `project-management.zip` | [`knowledge/project-management/SKILL.md`](../knowledge/project-management/SKILL.md) | Planning or closing projects, arcs, and slices. |
+| `methodology-stewardship.zip` | [`knowledge/methodology-stewardship/SKILL.md`](../knowledge/methodology-stewardship/SKILL.md) | CDC closing retrospectives, recurring collaboration difficulties, and recommendation follow-through. |
 | `work-verification.zip` | [`knowledge/work-verification/SKILL.md`](../knowledge/work-verification/SKILL.md) | Applying ledger discipline, row closure, evidence strength, and independent verification. |
 | `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Running sustained planning, implementation, review, and verification work. |
 

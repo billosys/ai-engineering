@@ -44,7 +44,10 @@ every workflow and retains scope and approval authority.
 For sustained projects, the Operator may explicitly enable the
 **Three-Contributor Workflow**, adding a Coordinating Review Contributor (CRC)
 for subsequent slice preparation, independent review, evidence reproduction,
-and routine acceptance. CDC retains architecture and substantive replanning.
+and routine acceptance. CDC retains architecture and substantive replanning,
+and owns [methodology stewardship](../knowledge/methodology-stewardship/SKILL.md):
+a `cdc-retrospective.md` at slice, arc and project close, connecting observed
+difficulties and successes to recommendations and later follow-through.
 These are roles, not mandatory model or vendor choices; neither workflow has a
 lower quality standard.
 

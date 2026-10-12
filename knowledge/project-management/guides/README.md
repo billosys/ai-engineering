@@ -52,6 +52,11 @@ At slice level, use `cdc-verification.md` for two contributors and
 both CRC and CDC records with different evidentiary responsibilities; read
 [verification records by workflow and scale](./02-canonical-planning-worktree.md#verification-records-by-workflow-and-scale).
 
+Three-contributor closing activities also include CDC
+[retrospectives at every scale](./02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow).
+Load [methodology-stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md)
+for analysis; a retrospective does not replace the verification records.
+
 Issued prompts are preserved. Every follow-up assignment gets a new numbered
 prompt in the slice root, beside the initial prompt; `artifacts/` holds
 supporting outputs. Before issuing or executing a follow-up, load the layout
@@ -79,6 +84,7 @@ order.
 | Escalate from CRC to CDC, or return CDC instructions to CRC through the Operator | [Design handoff filenames](./02-canonical-planning-worktree.md#design-handoff-filenames-and-preservation) and [design escalation and return handoffs](./03-planning-top-down.md#design-escalation-and-return-handoffs) |
 | Close a slice and bubble findings up to the arc | [`guides/04-closing-slices.md`](./04-closing-slices.md) and [`guides/05-closing-arcs.md`](./05-closing-arcs.md#the-plan-change-discipline-make-a-change--version-history) |
 | Close an arc, check composition, and bubble findings up to the project | [`guides/05-closing-arcs.md`](./05-closing-arcs.md) |
+| Perform a three-contributor closing retrospective | [Record and handoff contract](./02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow), then [methodology-stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md). |
 | Confirm a layout before creating planning directories or filenames | [`guides/06-confirmation-protocol.md`](./06-confirmation-protocol.md) |
 | Detect or refuse recurring bad planning shapes | [`guides/07-anti-patterns.md`](./07-anti-patterns.md) |
 | Update this project-management spec | [`guides/08-maintenance.md`](./08-maintenance.md) and [`version-history.md`](../version-history.md) |

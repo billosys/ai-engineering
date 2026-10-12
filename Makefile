@@ -28,7 +28,7 @@ SKILL_ZIP_NAMES := \
 	collaboration-framework.zip \
 	agent-coordination.zip code-auditing.zip contribution-style.zip \
 	engineering-methods.zip project-management.zip testing.zip work-verification.zip \
-	scientific-methods.zip laboratory-recordkeeping.zip \
+	scientific-methods.zip methodology-stewardship.zip laboratory-recordkeeping.zip \
 	document-extraction.zip concept-cards.zip \
 	rust-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
 	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
@@ -43,7 +43,7 @@ CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
 	agent-coordination code-auditing contribution-style engineering-methods project-management \
-	testing work-verification scientific-methods laboratory-recordkeeping document-extraction concept-cards \
+	testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
 	rust go cpp js erlang cobalt design tailwindcss deno biome
 
 # Every SKILL.md (and the two biome/deno variants) packaged by this Makefile.
@@ -54,6 +54,7 @@ ALL_SKILL_FILES := \
 	knowledge/contribution-style/SKILL.md \
 	knowledge/engineering-methods/SKILL.md \
 	knowledge/project-management/SKILL.md \
+	knowledge/methodology-stewardship/SKILL.md \
 	knowledge/scientific-methods/SKILL.md \
 	knowledge/laboratory-recordkeeping/SKILL.md \
 	knowledge/testing/SKILL.md \
@@ -83,6 +84,7 @@ help:
 	@echo "  make project-management -> project-management.zip"
 	@echo "  make testing            -> testing.zip"
 	@echo "  make work-verification  -> work-verification.zip"
+	@echo "  make methodology-stewardship -> methodology-stewardship.zip"
 	@echo "  make scientific-methods -> scientific-methods.zip"
 	@echo "  make laboratory-recordkeeping -> laboratory-recordkeeping.zip"
 	@echo "  make document-extraction -> document-extraction.zip"
@@ -138,7 +140,10 @@ CF_FILES := \
 	knowledge/engineering-methods/version-history.md \
 	knowledge/project-management/SKILL.md \
 	knowledge/project-management/version-history.md \
+	knowledge/methodology-stewardship/SKILL.md \
 	knowledge/scientific-methods/SKILL.md \
+	knowledge/methodology-stewardship/version-history.md \
+	knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md \
 	knowledge/scientific-methods/version-history.md \
 	knowledge/testing/SKILL.md \
 	knowledge/testing/version-history.md \
@@ -356,6 +361,9 @@ testing:
 work-verification:
 	$(call pack_component_skill,work-verification)
 
+methodology-stewardship:
+	$(call pack_component_skill,methodology-stewardship)
+
 scientific-methods:
 	$(call pack_component_skill,scientific-methods)
 
@@ -374,11 +382,11 @@ concept-cards:
 
 ## skills: build every installable skill zip except collaboration-framework
 skills: agent-coordination code-auditing contribution-style engineering-methods project-management \
-	testing work-verification scientific-methods laboratory-recordkeeping document-extraction concept-cards \
+	testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
 	rust go cpp js erlang cobalt design tailwindcss deno biome
 
 collab-framework agent-coordination code-auditing contribution-style engineering-methods \
-project-management testing work-verification scientific-methods laboratory-recordkeeping document-extraction concept-cards \
+project-management testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
 rust go cpp js erlang \
 cobalt design tailwindcss deno biome: check-skill-version-source
 

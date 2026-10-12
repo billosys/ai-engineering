@@ -1,5 +1,11 @@
 # Collaboration Framework Version History
 
+## Version 2.7.0 - 2026-10-12
+
+Added methodology-stewardship to component routing and the composite bundle.
+Routed three-contributor closing retrospectives to CDC with scale-specific
+analysis, evidence economy and recommendation follow-through.
+
 ## Version 2.6.0 - 2026-09-28
 
 Updated the composer bundle to include Proportionate Proof and the coordinated

@@ -48,6 +48,11 @@ preparation, difficult investigations, and substantial replanning with the
 Operator. In the default Two-Contributor Workflow, CDC also owns subsequent
 slice preparation, implementation review, QA, and acceptance coordination.
 
+In the Three-Contributor Workflow, CDC also owns methodology stewardship:
+observe collaboration difficulties and successes, and perform a retrospective
+at each slice, arc and project close using
+[methodology-stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md).
+
 **CRC: Coordinating Review Contributor.** An optional role enabled only by
 the Operator's explicit selection of the Three-Contributor Workflow. CRC
 advances the approved plan: subsequent slice preparation, iteration prompts,
@@ -156,7 +161,9 @@ automatically.
 
 CDC and the Operator own architecture and project/arc plans; CDC prepares the
 first slice of each arc and handles difficult investigations and substantial
-replanning. CRC prepares subsequent slices, issues iteration prompts, reviews
+replanning. CDC also writes closing retrospectives at every scale, synthesizing
+slice observations into arc patterns and project-level methodology proposals.
+CRC prepares subsequent slices, issues iteration prompts, reviews
 CC's work, reproduces evidence, maintains ledgers, and coordinates routine
 acceptance. CC implements, tests, self-reviews, and supplies proposed closure.
 
@@ -215,6 +222,21 @@ packet does not itself approve a scope change or external operation: record
 the Operator's explicit decision wherever approval is required. CRC translates
 an accepted directive into plan/ledger updates within its authority and a new
 CC iteration prompt when needed; it never silently edits an issued prompt.
+
+### Methodology stewardship
+
+CDC records a `cdc-retrospective.md` in the closing slice, arc or project root.
+CRC relays the operational closure evidence through the Operator; CDC examines
+the actual work, difficulties, successful repairs and its own contribution.
+Slice analysis identifies symptoms and watch items; arc analysis examines
+recurrence and project-level prompting; project analysis proposes changes to
+the framework or owning component skills. Recommendations are not automatic
+policy changes or independent proof that a method works.
+
+Follow project-management
+[retrospective records and handoff](../../project-management/guides/02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow)
+and the methodology-stewardship guide. This closing responsibility does not
+replace CRC slice acceptance, CDC composition verification, or Operator gates.
 
 ### Closure
 
