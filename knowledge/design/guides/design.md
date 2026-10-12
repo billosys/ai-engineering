@@ -50,7 +50,7 @@ describes why.
 Section I
 :::
 
-## The Convergence Thesis
+## Comparing Design Systems
 
 ::: prose
 Material Design, Carbon and Polaris name distinct products and generations.
