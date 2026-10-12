@@ -6,7 +6,7 @@
 - Assignment issue: `58d8e5a19a2efc973b5e23c4d86a6685c412f8db`; assignment parent/predecessor: `dc7b0732fa8a78cf47713aecdaabbc5ef05686b6`.
 - SOURCE remained pinned at `dffa504e851b03b8e4746f1941068e4cc850b612`; its pre-existing untracked `knowledge/lfe/` remains untouched. Planning intake HEAD was `c48a1fd671155fad7c666ead7d21fc57529f9112`; pre-existing untracked Project12 remains untouched.
 - CC disposition: proposed done for bounded authoring return; all nine child criteria remain **open** pending independent CDC review. No accessibility, fidelity, card/CQ, slice, arc, project, research or release acceptance is claimed.
-- The candidate is the single seven-path CC commit whose tree is recorded by this return; the commit object SHA is the Git receipt produced after this file is committed. Its parent is the intake HEAD above. (A commit cannot contain its own object SHA.)
+- Seven-path candidate commit: `37f74622c52414fffd26d8f6adb4ac81634b0a2e`; tree: `d444231e72d0aa40e86031fd20a3d36365486492`; parent: `c48a1fd671155fad7c666ead7d21fc57529f9112` (intake HEAD). A separate one-path report receipt commit records these identifiers; it does not change the seven-path candidate tree.
 
 ## Deliverables
 
@@ -53,4 +53,4 @@ The bounded result informs A02-03 (scoped technical corrections) and A02-05 (rep
 
 ## Integrity receipt
 
-The final Git verification will identify the seven-path candidate commit, its tree and parent; confirm both required co-author trailers; confirm no protected path changed; run `git diff --check`; and verify local links/fragments and LF/final newline. The receipt will be completed before return.
+The seven-path candidate commit `37f74622c52414fffd26d8f6adb4ac81634b0a2e` has exactly the seven allowlisted paths, tree `d444231e72d0aa40e86031fd20a3d36365486492`, parent `c48a1fd671155fad7c666ead7d21fc57529f9112`, and both required co-author trailers on separate lines. Before that commit, `git diff --cached --check` passed; local Markdown links/fragments and LF/final newline checks passed; the source checkout remained pinned and only its pre-existing `knowledge/lfe/` was untracked. The report-receipt commit contains only this closing report and records the candidate identifiers; Project12 remains the only pre-existing untracked planning directory.
