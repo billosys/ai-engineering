@@ -283,16 +283,18 @@ package/source revision, finding dispositions, compatibility decision and
 remaining limitations. Publication remains a distinct Operator decision.
 
 Arc02 [Slice04](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/slice-plan.md)
-is the current evidence assignment: layout/measure exceptions under DES-009
-and bounded DES-002,13 contexts/184 lines/three files. C3/H3 independently reviewed:
-S04-01/02/03/04/05/08 done, three open. Current
-[Iteration04](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt-iteration04.md)
-repairs heading persistence, competing registries, checker regressions and
-current intake; source and parent criteria remain unchanged. The former I3 assignment
-is preserved in the slice history. Arc03 retains actual
-accessibility/typesetting proof; remaining T and complete R/C/L/G stay assigned.
+is independently closed at C4/H4/H4b with nine rows done. It supplies bounded
+layout/measure evidence and an exact handoff; SOURCE and parent criteria remain
+unchanged. T02 final comparison precedes any trial extension. Remaining T and
+complete R/C/L/G stay assigned; Arc03 retains actual accessibility/typesetting
+proof. No full-corpus, source-readiness, metadata, live/package/release or parent
+completion is inferred.
 
 ## Version History
+
+- 1.41 (2026-10-12): Arc02/Slice04 C4/H4/H4b independently closed, all nine
+  child criteria done; bounded handoff accepted, full scope/parent/later gates
+  retained. T02 final comparison due before any trial extension.
 
 - 1.40 (2026-10-12): Slice04 C3/H3 original warrants accepted; six done/
   three open. Four-path Iteration04 addresses heading, competing registries,

@@ -1,8 +1,8 @@
 # Slice04 CDC verification
 
-Current verdict: [Iteration03 review](#iteration03-independent-review--2026-10-12),
-S04-01/02/03/04/05/08 done; three open. [Iteration04](cc-prompt-iteration04.md) is assigned.
-Earlier current-verdict/assignment statements below are historical.
+Current verdict: [Iteration04 acceptance and closure](#iteration04-independent-review-and-slice04-closure--2026-10-12).
+All nine rows are done; Slice04 is closed. Earlier assignments/verdicts below
+are historical; parent/source/release gates remain.
 
 ## Initial independent review — 2026-10-11
 
@@ -911,3 +911,176 @@ done. CC outputs, prior prompts/reviews and frozen research inputs remain intact
 Both durable repair fences replayed successfully. All172 local links/69 fragments
 in the nine-file handoff resolve; LF/EOF and git diff --check pass. These author
 checks validate issuance, not independent acceptance of the future CC correction.
+
+## Iteration04 independent review and Slice04 closure — 2026-10-12
+
+**Verdict:** accept S04-06/07/09, renew current preservation, retain the other
+accepted evidence at its recorded scope; all nine rows are done. Slice04 closes
+under approved Expedited Mode. CDC Sofie independently reviewed separate CC's
+work; no source or CC evidence repair was performed by CDC in this pass.
+
+I4 issue `a23a7ae420c1d2135cd70cd4dbc7bdec3befb56f`; C4
+`8f60e7e131ee69999af9eda58291544505aa35a3`, tree
+`13d388152e796c7ea237bb7dd9c3376e6ad9aea3`, direct child of I4; receipt H4
+`2d0f17de2e496d2d67810168e2415f79a58975de`, tree
+`500dc7a6ad51217d6821459074f101942840966d`, direct child of C4; clarification
+H4b `13eb1a142eb25f1f7207fae4743ecb577321998d`, direct child of H4.
+SOURCE remains `dffa504e851b03b8e4746f1941068e4cc850b612` with tracked/index
+clean and pre-existing untracked knowledge/lfe/. Planning retains only the
+unrelated untracked Project12 directory before CDC updates.
+
+### Fresh reproduction, semantic inspection and retention
+
+The current checker was extracted from H4b committed notes; only input reads
+were adapted to committed blobs. Its positive packet,20 inherited and13 added
+negative properties pass, including actual table-cells/css-target-shape routes.
+Separate CDC probes reproduce the original five regressions using the same
+validate(): negative/end-overflow proposal pointers, duplicate action membership,
+changed action labelled retain and source span beyond EOF now all reject.
+Source character/byte bounds are checked before slicing; retain/changed guards
+are restored. Registry parsing consumes the complete strict block and rejects
+competing, malformed, unclosed and trailing-content envelopes. These checks
+establish their stated structural properties, not arbitrary semantic truth.
+
+All184 occurrence rows,84 results/420 dimensions,25 actions and complete
+three-file virtual compositions reproduce. CDC compares every other24 action
+object exactly against H3's first registry. A-C04 changes only its heading to
+“Start with intrinsic layout” and consequent replacement digest/pointers; its
+three accepted literal result parts remain exact. The full composed section
+now coherently recommends intrinsic layout first with justified discrete
+adaptation, retaining the neighboring section. One current registry remains;
+policy/cases and ownership/gates are byte-identical. This resolves I3-F01–03
+without changing accepted subjects, evidence, judgments or ownership.
+
+Inventory, all84 full claim records and source comparison are byte-identical
+to I4's protected inputs. Prior scoped independent semantic evidence for
+S04-02/03/04/05 is retained from I1–I3: unchanged inputs and no new finding
+undermine its applicability. This is retention, not a fresh full semantic or
+primary-source replay. Current intake/readback/report coherently record the
+actual48-line planning Project10 AGENTS, historical path mistake, unknown
+previous exposure, actual failures/recoveries, current counts and limits.
+Receipts remain CC attestation; identity and completed work are independently
+checked. Intake's phrase “Initial state ... at H3” describes the predecessor
+rather than the issuing HEAD; the actual executable baseline is I4, proven by
+C4's direct parent and protected bytes. No inferred earlier read or new intake
+failure is used to reopen previously accepted S04-01.
+
+Git verifies C4's exact four paths, H4's three receipt paths, H4b's two-path notes/report
+clarification, every protected tracked issue blob, required trailers and each
+parent diff --check. Seven outputs match H4b worktree bytes, LF/EOF intact.
+The replay derives35 Markdown links/23 local/13 fragments on its five-file
+surface; a separate GFM-aware review-record check covers CDC's updated records.
+The Operator's report uses an incorrect arc path for two links; actual files
+and artifact links resolve under arc02-theory-and-evidence. Chat spelling is
+not treated as a candidate defect.
+
+### Nine-row disposition and honest bubble-up
+
+| Row | CDC disposition | Evidence strength and limit |
+|---|---|---|
+| S04-01 | done, retained | Prior intake acceptance; inspected current correction/readback, earlier exposure remains unknown. |
+| S04-02 | done, retained | Unchanged accepted inventory/identity population; fresh byte comparison. |
+| S04-03 | done, retained | Unchanged applicable primary comparison; historical original fidelity not assessed. |
+| S04-04 | done, retained | All84 accepted original-proposition records unchanged; no new semantic judgments. |
+| S04-05 | done, retained | Policy/adverse cases unchanged; actual browser/AT proof remains later. |
+| S04-06 | done, newly accepted | Exact25 actions, one complete registry and full virtual composition inspected; Arc04 owns live application. |
+| S04-07 | done, newly reproduced | Positive/33 negative properties plus five independent recurrence probes; human/CSS/runtime limitations retained. |
+| S04-08 | done, renewed | New parents/trees/exact scopes/trailers/protected bytes/links/LF/diff verified. |
+| S04-09 | done, newly accepted | Complete report/row walk, candidate/receipt chain and truthful boundaries inspected. |
+
+The slice delivers its assigned layout/measure policy and usable correction
+handoff, including full selected scope; no promised child row is silently
+dropped. Arc02 remains open: all233 cards/eight live files/16 DES findings and
+R/T/C/L/G, P10-11, source fidelity, complete semantic/CQ review and Arc03/04/06,
+package/release/Operator gates remain. DES-009 is evidence input to later live
+and browser proof, not globally closed. Remaining vi-guarantee theory review
+stays T-owned, with actual accessibility behavior Arc03-owned.
+
+T02 ends after initial+four corrections (five assignments); I05 unused.
+Operator-relayed I4 duration15m57s is attestation, not total effort. Current
+seven-output C4/H4b sizes288254/290957 bytes; removing competing arrays serves
+an actual authoritative handoff and enables whole-artifact validation. Net
+labor/token benefit and project-goal displacement remain unmeasured. CDC's
+previous missed duplicate registries and stale arc breakdown are reviewer
+errors: the latter is corrected in this close update, preserving its history.
+Project13 final comparison is due before any trial extension; it is separate
+research interpretation, not an additional host acceptance verdict.
+
+### Reproduction from pinned committed bytes
+
+Run this read-only script from the planning worktree. It extracts the current
+checker and adds the same independent probes and exact-delta checks; private
+composed file outputs are inspection aids, not maintained project artifacts.
+
+```python
+import copy,hashlib,json,pathlib,re,subprocess
+R=pathlib.Path('/Users/oubiwann/lab/billosys/ai-engineering');P=R/'.worktrees/planning';S='project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/'
+I='a23a7ae420c1d2135cd70cd4dbc7bdec3befb56f';C='8f60e7e131ee69999af9eda58291544505aa35a3';H='13eb1a142eb25f1f7207fae4743ecb577321998d';H2='273deaba3bc6cb474e35dc61b34696fa758e0416';H1='7eb7a38e754bffbec207b43580a9bf9d44976b88'
+def g(*a):return subprocess.check_output(['git','-C',str(P),*a],text=True)
+def b(rev,path):return subprocess.check_output(['git','-C',str(P),'show',rev+':'+path])
+def pinned(n):return b(H,S+'artifacts/'+n).decode()
+allowed={S+x for x in ['artifacts/correction-handoff.md','artifacts/execution-notes.md','closing-report.md','ledger.md']}
+assert set(g('diff','--name-only',I,C).splitlines())==allowed
+assert set(g('diff','--name-only',C,H).splitlines())=={S+x for x in ['artifacts/execution-notes.md','closing-report.md','ledger.md']}
+assert g('rev-parse',C+'^').strip()==I
+assert g('rev-parse',H+'^').strip()=='2d0f17de2e496d2d67810168e2415f79a58975de'
+assert g('rev-parse',H+'^^').strip()==C
+for rev in [C,'2d0f17de2e496d2d67810168e2415f79a58975de',H]:
+ for t in ['Co-authored-by: Codex <noreply@openai.com>','Co-authored-by: Billo AI <ai-engineering@billo.systems>']:assert t in g('show','-s','--format=%B',rev)
+ subprocess.check_call(['git','-C',str(P),'diff','--check',rev+'^',rev])
+for path in g('ls-tree','-r','--name-only',I).splitlines():
+ if path not in allowed:assert b(I,path)==b(H,path),path
+all7=sorted(allowed|{S+'artifacts/occurrence-inventory.jsonl',S+'artifacts/source-comparison.md'})
+for path in all7:
+ data=b(H,path);assert b'\r' not in data and data.endswith(b'\n');assert data==(P/path).read_bytes()
+for path in ['artifacts/occurrence-inventory.jsonl','artifacts/source-comparison.md']:assert b(H,S+path)==b(H2,S+path)
+t=pinned('correction-handoff.md');assert t.split('## Exact proposed actions')[0]==b(H2,S+'artifacts/correction-handoff.md').decode().split('## Exact proposed actions')[0]
+rr=lambda rev:[json.loads(x) for x in b(rev,S+'artifacts/claim-results.jsonl').decode().splitlines()];r=rr(H);old=rr(H2)
+assert [(x['claim_id'],x['subject'],x['predecessor_claim_ids']) for x in r]==[(x['claim_id'],x['subject'],x['predecessor_claim_ids']) for x in old]
+code=pinned('execution-notes.md').split('## Iteration04 integrated checker and execution',1)[1].split('```python\n',1)[1].split('\n```',1)[0]
+code=code.replace('(BASE/n).read_text()','pinned(n)').replace("(BASE/'correction-handoff.md').read_text()","pinned('correction-handoff.md')").replace('text=f.read_text()','text=b(H,str(f.relative_to(P))).decode()')
+ns={'pinned':pinned,'b':b,'H':H,'P':P};exec(compile(code,'H4b committed current checker','exec'),ns)
+print('PASS scope, parent, trailers, all issue protected blobs, seven output bytes/LF/EOF, H2 inventory/register/policy, 84 complete subject identities')
+print('seven outputs candidate/receipt bytes',sum(len(b(C,x)) for x in all7),sum(len(b(H,x)) for x in all7))
+by={x['claim_id']:x for x in r};acts=ns['acts'];ad={x['action_id']:x for x in acts}
+print('A-C04 literal:',repr(ad['A-C04']['replacement']))
+probes={}
+for name in ['negative-pointer','past-end-pointer','duplicate-action-membership','action-retain-changed','action-span-outside-file']:
+ i,c,a=ns['cloned']();act=next(x for x in a if x['action_id']=='A-C13');cid=act['result_ids'][0]
+ if name=='negative-pointer':
+  q=act['proposal_pointers'][cid];q.update(start=q['start']-len(act['replacement']),end=q['end']-len(act['replacement']))
+ elif name=='past-end-pointer':
+  q=act['proposal_pointers'][act['result_ids'][-1]];q['end']=len(act['replacement'])+100
+ elif name=='duplicate-action-membership':act['result_ids'].append(cid);act['claim_ids'].append(cid)
+ elif name=='action-retain-changed':act['disposition']='retain'
+ else:act['span'][1]=100000
+ try:ns['validate'](i,c,a)
+ except Exception as e:probes[name]={'rejected':str(e)}
+ else:probes[name]='FALSE PASS'
+print('additional same-validator probes',json.dumps(probes))
+
+assert all(v!='FALSE PASS' for v in probes.values())
+oldtext=b(I,S+'artifacts/correction-handoff.md').decode()
+prev=json.JSONDecoder().raw_decode(oldtext.split('```json\n',1)[1])[0]
+now=ns['registry'](t)
+assert len(now)==25 and [a['action_id'] for a in prev]==[a['action_id'] for a in now]
+for before,after in zip(prev,now):
+ if before['action_id']!='A-C04':assert before==after,before['action_id']
+ else:
+  assert after['replacement']==before['replacement'].replace('### Zero Breakpoints','### Start with intrinsic layout',1)
+  assert {k:v for k,v in before.items() if k not in ['replacement','replacement_sha256','proposal_pointers']}=={k:v for k,v in after.items() if k not in ['replacement','replacement_sha256','proposal_pointers']}
+assert t.split('## Ownership and gates')[1]==oldtext.split('## Ownership and gates')[1]
+assert b(I,S+'artifacts/claim-results.jsonl')==b(H,S+'artifacts/claim-results.jsonl')
+print('PASS exact other24 actions, all84 records, protected policy and owners')
+```
+
+### CDC close-record self-check
+
+Seven CDC paths,13/8 unchanged parent rows and nine unchanged child criteria
+checked; all child rows done/plan closed. GFM-aware154 local links/65 fragments
+resolved, LF/EOF/diff passed. An initial CDC scope assertion incorrectly assumed
+H4b changed notes only; Git shows notes plus report, both permitted receipt
+paths. Corrected the reviewer record and predicate; this is CDC error, not CC
+noncompliance. The first helper lookup also used SOURCE for a planning path and
+failed; corrected the worktree. Truncated source/guide outputs were recovered
+with scoped reads where their contents govern the review/handoff.

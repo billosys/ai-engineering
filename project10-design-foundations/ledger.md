@@ -236,3 +236,11 @@ exercised heading/registry/guard repairs. Three corrections have executed;
 no slice/arc closure. All parent criterion texts/statuses,233/eight/16,
 R/T/C/L/G, P10-11, Arc03/04/06, package/release/Operator gates unchanged.
 T02 final comparison remains due at closure or recorded stop.
+
+## Slice04 Iteration04 acceptance and closure — 2026-10-12
+
+[Independent child closure](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cdc-verification.md#iteration04-independent-review-and-slice04-closure--2026-10-12)
+accepts C4/H4/H4b: all nine child criteria done after four corrections. Portable
+layout/measure handoff supplied; parent criteria/statuses remain unchanged.
+Full233/eight/16, R/T/C/L/G, P10-11 and Arc03/04/06/package/release/Operator gates
+remain. T02 comparison is due before any extension of its two-case trial.

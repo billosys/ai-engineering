@@ -1,6 +1,6 @@
 ---
 slice: slice04-layout-and-measure-exceptions
-status: open
+status: closed
 family: T
 ---
 
@@ -134,17 +134,19 @@ revision2 at23c77653. No research acceptance or success target is inferred.
 | [Iteration01](cc-prompt-iteration01.md) |2026-10-11; issue ed048ab69cc18c0e8852d6534e66bfe1c182d440; predecessor initial prompt/C0 | Returned C1 2758549e with receipt H1 7eb7a38e; independently reviewed, four done/five open. |
 | [Iteration02](cc-prompt-iteration02.md) |2026-10-11; issue877ff958; C2 35f6d01e/H2 273deaba | Independently reviewed2026-10-12: S04-03 newly done, five done/four open; I2-F01–F04 remain. |
 | [Iteration03](cc-prompt-iteration03.md) |2026-10-12; predecessor I2/C2/H2; issue is commit containing this prompt | Returned C3 cf5d2d05/H3 d626e737; six done/three open after CDC review; four residual findings. |
-| [Iteration04](cc-prompt-iteration04.md) |2026-10-12; predecessor I3/C3/H3; issue is commit containing this prompt | Active four-path repair of heading, competing registries, checker regressions and current receipt. |
+| [Iteration04](cc-prompt-iteration04.md) |2026-10-12; predecessor I3/C3/H3; issue is commit containing this prompt | Returned C4/H4/H4b; independently accepted, all nine rows done; I05 unused. |
 
-Current assignment: [Iteration04](cc-prompt-iteration04.md), four-path evidence
-correction returned to CDC Sofie via Operator. [Independent I3 review](cdc-verification.md#iteration03-independent-review--2026-10-12)
-accepts S04-01/02/03/04/05/08; three rows remain open. Three corrections have
-executed; I4 is issued, not executed. I3's five-output authority is superseded
-for this assignment by four outputs; claim results are now protected. Criteria,
-selected scope and gates unchanged; no slice closure or next advance.
-Commit exact paths with both trailers. Preserve issue/candidate/receipt identities.
+Current assignment: none; [Iteration04](cc-prompt-iteration04.md) returned and
+[independently accepted](cdc-verification.md#iteration04-independent-review-and-slice04-closure--2026-10-12). All nine rows done;
+Slice04 closes2026-10-12 after four corrective passes. Issued prompts/history
+remain; no source, parent or release closure. Project13 T02 comparison precedes
+any trial extension; normal next ready work follows under Expedited Mode.
 
 ## Version History
+
+- 1.5 (2026-10-12): C4/H4/H4b independently accepted; all nine rows done,
+  Slice04 closed. Exact registry/heading/guard/intake repairs resolve residuals;
+  full corpus/families/source/runtime/later gates retained.
 
 - 1.4 (2026-10-12): C3/H3 warrants accepted, six done/three open; four-path
   Iteration04 after demonstrated heading/whole-registry/guard repairs. Current
