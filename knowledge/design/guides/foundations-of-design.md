@@ -248,8 +248,9 @@ manipulation from a single token.
 **CIE colour science** provides the mathematical foundation. Colour
 difference formulas progress from simple Euclidean distance in CIELAB
 (ΔE\*₇₆) through the sophisticated CIEDE2000 with its five correction
-terms. For the target user: **colour space conversions are 3×3 matrix
-multiplications** --- this is literally linear algebra, not metaphor.
+terms. For the target user: **linear colour-space conversion stages use 3×3 matrices** --- literal
+linear algebra. Complete conversions can also include nonlinear decoding
+and componentwise cube roots.
 :::
 
 ### Typography: From Bringhurst\'s Proportions to Utopia\'s Fluid Interpolation {#typography-from-bringhursts-proportions-to-utopias-fluid-interpolation style="margin-top: var(--space-xl);"}
@@ -443,10 +444,13 @@ compromise physical accuracy so all regions have equal perceptual step
 sizes. Both solve the identical mathematical problem: uniformising a
 perceptual space that is inherently non-uniform.
 
-**Linear algebra → colour space transformations (RIGOROUS).** Colour
-space conversions are 3×3 matrix multiplications. sRGB → XYZ, XYZ → LMS,
-LMS → Oklab --- each step is a matrix multiply, and the chain can be
-collapsed into a single matrix per Grassmann\'s additivity law.
+**Linear algebra → colour space transformations (RIGOROUS).** Matrix
+stages are literal linear algebra. To convert encoded sRGB to Oklab,
+first decode to linear sRGB. Transform linear sRGB to XYZ and then LMS
+using the D65 matrices, apply a componentwise real cube root, and use a
+final matrix to obtain Oklab. Adjacent linear stages can be composed into
+one matrix; the complete pipeline cannot be collapsed across its
+nonlinear operations.
 
 **Colour harmony ↔ musical harmony (LOOSE to STRUCTURAL).** The 12-hue
 wheel / 12-semitone parallel is structurally suggestive, but colour

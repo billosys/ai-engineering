@@ -9,7 +9,7 @@ description: |
   theming across multiple sites, or answering any visual design question.
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
   hermes:
     tags: [design, css, color, typography, layout, oklch, cube-css, utopia]
     category: web-frontend
@@ -363,6 +363,6 @@ When principles seem to conflict, these foundational insights resolve them:
 - **Proximity is processed before all other cues** (Gestalt). Spacing is not decoration; it is syntax.
 - **Regular patterns are metabolically cheap to process** (neural efficiency). "It just looks off" = the viewer detected a mathematical irregularity they can't name.
 - **Musical intervals and type ratios use the same mathematics** (rigorous, not metaphor). Perfect fourth in music = perfect fourth in type = 4:3 ratio.
-- **Colour space conversions are 3×3 matrix multiplications** (linear algebra). OKLCH's perceptual uniformity is analogous to equal temperament in music — both uniformise inherently non-uniform perceptual spaces.
+- **Colour-space conversions combine linear and nonlinear stages**. Linear stages use 3×3 matrices; a complete conversion can also include sRGB decoding and componentwise cube roots. OKLCH's perceptual uniformity is analogous to equal temperament in music — both uniformise inherently non-uniform perceptual spaces.
 - **"Composition over inheritance" applies to CSS exactly as to software** (Every Layout explicitly argues this). Compose from primitives; don't build monolithic components.
 - **The token architecture IS the separation of concerns** — primitives are type definitions, semantic tokens are interfaces, component tokens are implementations.
