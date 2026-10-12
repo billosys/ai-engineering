@@ -141,9 +141,9 @@ CF_FILES := \
 	knowledge/project-management/SKILL.md \
 	knowledge/project-management/version-history.md \
 	knowledge/methodology-stewardship/SKILL.md \
-	knowledge/scientific-methods/SKILL.md \
 	knowledge/methodology-stewardship/version-history.md \
 	knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md \
+	knowledge/scientific-methods/SKILL.md \
 	knowledge/scientific-methods/version-history.md \
 	knowledge/testing/SKILL.md \
 	knowledge/testing/version-history.md \

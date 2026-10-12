@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.7.0"
+  version: "2.7.1"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -472,6 +472,7 @@ work demands:
 | [`guides/01-contribution-style.md`](../contribution-style/guides/01-contribution-style.md) | Contribution style / voice | When **drafting an upstream contribution ticket** against a project you don't maintain and the work needs maintainer-facing voice: friendly, specific, calibrated, respectful of ownership, no severity overclaim, and no pressure on timing. |
 | [`guides/02-upstream-ticket-workflow.md`](../contribution-style/guides/02-upstream-ticket-workflow.md) | Contribution style / workflow | When preparing local ticket drafts, line-reference checks, blockquote headers, paste boundaries, one-ticket-per-problem structure, cross-linking, filing, and template use. |
 | [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style and workflow guides when actually writing a ticket. Carries the reusable ticket shape for confirmed bugs, additive features, doc fixes, and unconfirmed questions. |
+| [Methodology stewardship](../methodology-stewardship/SKILL.md) | Closing retrospectives | CDC analysis at slice, arc and project close in the Three-Contributor Workflow; recurring collaboration difficulties, evidence utility and recommendation follow-through. Included in this bundle and available standalone. |
 | [`scientific-methods`](../scientific-methods/SKILL.md) | Adjacent method skill | Load when the conversation becomes a controlled inquiry: comparing versions, testing whether a change helped, detecting regressions, designing an A/B prompt or framework trial, defining operational measures, writing an experiment protocol, building an evaluation rubric, or analyzing threats to validity. It is included in `collaboration-framework.zip` and also ships as its own standalone skill. |
 
 The posture guide set and Methodology are maintained as parts of their owning skills. The five
