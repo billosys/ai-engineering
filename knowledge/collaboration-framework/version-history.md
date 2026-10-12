@@ -1,5 +1,10 @@
 # Collaboration Framework Version History
 
+## Version 2.7.1 - 2026-10-12
+
+Completed the main composer load table with methodology-stewardship routing,
+matching the focused component table and existing bundled dependency.
+
 ## Version 2.7.0 - 2026-10-12
 
 Added methodology-stewardship to component routing and the composite bundle.

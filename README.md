@@ -71,6 +71,7 @@ make all               # build all installable skill zips into target/skills/
 make collab-framework  # build target/skills/collaboration-framework.zip
 make document-extraction  # build target/skills/document-extraction.zip
 make concept-cards      # build target/skills/concept-cards.zip
+make methodology-stewardship # build target/skills/methodology-stewardship.zip
 make laboratory-recordkeeping # build target/skills/laboratory-recordkeeping.zip
 make print-skill-zips  # list release-uploadable skill zip paths
 make check-skills      # validate SKILL.md descriptions

@@ -65,6 +65,7 @@ Every package listed below is produced by `make all`, included in
 | Skill package | Source entrypoint | Use when |
 |---|---|---|
 | `collaboration-framework.zip` | [`knowledge/collaboration-framework/SKILL.md`](../knowledge/collaboration-framework/SKILL.md) | Structuring long-lived inquiry, implementation, review, and verification work. |
+| `methodology-stewardship.zip` | [`knowledge/methodology-stewardship/SKILL.md`](../knowledge/methodology-stewardship/SKILL.md) | Analyzing collaboration difficulties and successes across slices, arcs, and projects; tracking recommendations and their outcomes. |
 | `scientific-methods.zip` | [`knowledge/scientific-methods/SKILL.md`](../knowledge/scientific-methods/SKILL.md) | Designing controlled comparisons, experiments, evaluation rubrics, evidence capture, and regression analysis. |
 | `laboratory-recordkeeping.zip` | [`knowledge/laboratory-recordkeeping/SKILL.md`](../knowledge/laboratory-recordkeeping/SKILL.md) | Organizing research collections, notebooks, experiments, runs, provenance, preservation, and reconstruction. |
 | `engineering-methods.zip` | [`knowledge/engineering-methods/SKILL.md`](../knowledge/engineering-methods/SKILL.md) | Reasoning about knowledge substrate, process rigor, and LLM-assisted engineering methods. |
@@ -88,6 +89,11 @@ planning, ledgered implementation, code audit, coverage hardening, subagent
 delegation decisions, or contribution-ticket writing. It is a composite
 framework/operational skill: the "how we work" layer and daily-driver
 composer, not a substitute for language or tooling expertise.
+
+Load methodology stewardship for retrospectives and recurring process patterns.
+It owns the analysis and recommendation follow-through; project management owns
+closing mechanics and scientific methods owns controlled evaluation of a proposed
+change. It ships standalone and inside the collaboration-framework bundle.
 
 Load scientific methods when the work itself is an inquiry: comparing two
 versions, testing whether a change improved behavior, detecting regressions,
