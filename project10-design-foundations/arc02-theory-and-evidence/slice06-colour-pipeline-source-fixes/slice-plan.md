@@ -1,11 +1,14 @@
 ---
 slice: slice06-colour-pipeline-source-fixes
-status: open
+status: closed
 ---
 
 # Arc02 Slice06 — Colour-Pipeline Source Fixes
 
 ## Deliverable and authority
+
+Current status: [independently accepted and closed](cdc-verification.md#independent-acceptance-and-closure--2026-10-12)
+at source3658f79a/planninge8076bec. The issued assignment below is retained.
 
 Install the three accepted live corrections distinguishing linear matrix stages
 from a complete nonlinear conversion. Preserve the system's mathematical teaching
@@ -186,6 +189,10 @@ found only the owning metadata/history version declarations. A nonexistent
 `templates/` path was discarded; it is not an owned directory or required input.
 
 ## Version History
+
+- 1.1 (2026-10-12): Independently accepted source3658f79a/planninge8076bec;
+  all four rows done and source/package slice closed. Three prescribed corrections
+  are shipped; broader content/fidelity/runtime and parent criteria remain open.
 
 - 1.0 (2026-10-12): Opened the first actual source-fix batch after independent
   Slice05 closure. Three accepted colour-pipeline occurrences; compact evidence,

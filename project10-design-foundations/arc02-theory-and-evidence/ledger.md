@@ -235,3 +235,13 @@ its unresolved endpoint/retained-attribution and actual behavior follow-up.
 live colour-pipeline corrections and source/version/package checks. All ten arc
 criterion texts/statuses remain unchanged: one done, nine open. No DES finding,
 whole live file or full-corpus gate is closed by child evidence acceptance.
+
+## Slice06 source acceptance and Slice07 opening — 2026-10-12
+
+[Slice06 independent closure](slice06-colour-pipeline-source-fixes/cdc-verification.md)
+accepts all four criteria: source3658f79a ships three nonlinear-pipeline corrections
+and matching history; fresh package and version gates passed. A02-03/05 remain
+open for complete corrected-claim/live-file review. [Slice07](slice07-portable-identity-source-fixes/slice-plan.md)
+opens the portable-default removal batch, including adopter-led colour/type
+methods and context-specific examples. A02-09 and all other parent statuses
+remain unchanged; fresh-context identity specimens and final composition remain.

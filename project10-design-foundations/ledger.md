@@ -286,3 +286,13 @@ accessibility model/corrections are accepted, not installed or browser-proven.
 is now the source implementation handoff. It applies three accepted colour-stage
 corrections, updates skill history and verifies fresh packaged guidance. All
 thirteen project criterion texts/statuses remain unchanged; no release acceptance.
+
+## Shipped correction and current identity assignment — 2026-10-12
+
+[Arc02/Slice06 independent acceptance](arc02-theory-and-evidence/slice06-colour-pipeline-source-fixes/cdc-verification.md)
+closes four source/package criteria at source3658f79a/planninge8076bec. The three
+live colour-pipeline corrections are shipped; DES-007/full-live review remains.
+[Slice07](arc02-theory-and-evidence/slice07-portable-identity-source-fixes/slice-plan.md)
+now implements portable identity removal. All thirteen project criteria/statuses
+remain unchanged, including P10-02's actual fresh-context identity cases and
+P10-11/full-corpus/release requirements.

@@ -41,8 +41,8 @@ before each source assignment. Keep all 233 identities and eight live-file owner
 | [Slice03 — token conventions](slice03-token-system-conventions/slice-plan.md) | Closed at `3817d83c`; reuse scoped policy and proposed corrections | No universal layer rule or live adoption implied |
 | [Slice04 — layout and measure](slice04-layout-and-measure-exceptions/slice-plan.md) | Closed at `b6acb22f`; reuse intrinsic-first/contextual exception evidence | Final behavior remains to be checked |
 | [Slice05 — fluid-type limits](slice05-fluid-type-accessibility-limits/slice-plan.md) | Closed after independent I2 review at `8d0a10c2`/`9541e4cf`; nine criteria done | Reuse bounded model/primary/correction evidence; actual behavior remains |
-| [Slice06 — colour-pipeline source fixes](slice06-colour-pipeline-source-fixes/slice-plan.md) | Open: correct three live matrix/pipeline assertions, update the owning skill version/history and verify the fresh package | Accepted Slice02 proof; fresh exact main pin; no full-corpus wait |
-| Portable-default batch | Remove C&B names/domains/palettes/font/site prescriptions while retaining portable guidance and supplied identity | Accepted Arc01 contract; inspect full affected scope |
+| [Slice06 — colour-pipeline source fixes](slice06-colour-pipeline-source-fixes/slice-plan.md) | Closed at source`3658f79a`/planning`e8076bec`: three corrections shipped, version/history and fresh package checked | Accepted Slice02 proof; fresh exact main pin; no full-corpus wait |
+| [Slice07 — portable identity source fixes](slice07-portable-identity-source-fixes/slice-plan.md) | Open: remove inherited C&B profile/case studies and replace the colour/type presets with context-led methods across all eight live files | Accepted Arc01 contract; fresh source3658f79a; preserve source/card provenance |
 | Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
 | Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
 | Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
@@ -106,11 +106,12 @@ string-equality or endpoint-resolution checks.
 
 Two contributors: CDC Sofie plans/reviews separate CC work via Operator relay.
 Expedited Mode remains active. Slice05 I2 is independently accepted and closed;
-its issued prompts and historical evidence are preserved. Slice06 is the current
-source implementation assignment, issued through its complete open set. Its
-three occurrence fixes do not close the entire colour finding or live-file review.
-Next, prepare the bounded portable-default/C&B removal batch; reconcile pending
-fluid-scale configuration choices before issuing their source mutation scope.
+its issued prompts and historical evidence are preserved. Slice06 is independently
+closed and its three colour corrections are shipped. Slice07 is the current source
+assignment for portable identity removal. Its complete open set retains the brief,
+method and context-specific choice distinction. Original/input, complete semantic
+review, actual browser and fresh-context task gates remain; no full finding or
+whole-file closure is inferred from the three Slice06 corrections.
 
 New mutation assignments require fresh exact main pins/paths, complete open sets,
 author readiness, meaningful affected checks and applicable version/package gates.
@@ -121,6 +122,11 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.27 (2026-10-12): Slice06 independently closed at source3658f79a/planninge8076bec;
+  shipped corrections verified. Opened Slice07 for the already-authorized identity
+  removal across the eight live files, preserving reusable method and supplied
+  choices. Full-corpus, source-fidelity, behavior and parent criteria are unchanged.
 
 - 1.26 (2026-10-12): Slice05 I2 independently closed, all nine criteria done;
   completed the Operator-amended first source-fix handoff as Slice06. The batch

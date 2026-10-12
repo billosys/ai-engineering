@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.46**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.47**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -108,14 +108,12 @@ revision applicability for both.
 
 1. Slice05 Iteration02 is independently closed under its original contract.
    Preserve its evidence and remaining configuration/runtime follow-up in Arc02.
-2. Execute [Arc02/Slice06](arc02-theory-and-evidence/slice06-colour-pipeline-source-fixes/slice-plan.md):
-   correct three live colour-pipeline assertions using accepted Slice02 evidence,
-   update the skill history and check the package in that same slice. Resolve
-   remaining fluid-scale configuration choices before their later mutation batch.
-3. Remove C&B coupling in a bounded source batch using the accepted portable
-   contract. Then take the next ready content cohort or Arc06 normalization
-   batch according to evidence, dependencies and context headroom. Original-input
-   blockers do not impose an all-project wait.
+2. Slice06 is independently closed: source`3658f79a` ships the three accepted
+   colour-pipeline corrections and history update; fresh package checks passed.
+3. Execute [Arc02/Slice07](arc02-theory-and-evidence/slice07-portable-identity-source-fixes/slice-plan.md):
+   remove inherited C&B identity/presets and preserve context-led method and
+   supplied choices. Then take the next ready content cohort or Arc06 batch.
+   Original-input blockers do not impose an all-project wait.
 4. Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -227,12 +225,17 @@ Publication remains a separate Operator decision.
 
 Arc01 is Operator-accepted and closed. Arc02/Slices01–05 are independently
 closed for bounded evidence; Slice05 I2 at `8d0a10c2`/`9541e4cf` closes all nine
-child criteria. Slice06 is open for actual colour-pipeline source corrections;
-no live change is claimed before its execution/review. Arc06 is queued with no
-prompt issued. Arc04 is a roadmap entry, not an opened arc. P10-01 remains done;
-P10-02–13 open. Full-corpus, source-readiness and release gates remain.
+child criteria. Slice06 is independently closed at source`3658f79a`/planning`e8076bec`,
+with three actual colour corrections shipped and fresh package checks passed.
+Slice07 is open for portable identity source fixes. Arc06 is queued with no prompt
+issued; Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
+Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
 
 ## Version History
+
+- 1.47 (2026-10-12): Slice06 source/package return independently accepted and
+  closed; opened Slice07 for inherited identity/preset removal. Concrete source
+  progress replaces another theory handoff; all parent and corpus gates retained.
 
 - 1.46 (2026-10-12): Independently accepted Slice05 I2 and closed its nine
   criteria; opened Arc02/Slice06 for the first actual live colour-pipeline fixes.
