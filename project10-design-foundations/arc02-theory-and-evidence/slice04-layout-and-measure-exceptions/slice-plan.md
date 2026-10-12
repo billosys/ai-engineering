@@ -133,17 +133,22 @@ revision2 at23c77653. No research acceptance or success target is inferred.
 | [Initial prompt](cc-prompt.md) |2026-10-11; issue db77543df9f6785f9b1889112ac12a79383db400; planning predecessor370cfc8f | Returned as742de371 after receipt-only83b10880; independently reviewed, S04-08 done/eight open. |
 | [Iteration01](cc-prompt-iteration01.md) |2026-10-11; issue ed048ab69cc18c0e8852d6534e66bfe1c182d440; predecessor initial prompt/C0 | Returned C1 2758549e with receipt H1 7eb7a38e; independently reviewed, four done/five open. |
 | [Iteration02](cc-prompt-iteration02.md) |2026-10-11; issue877ff958; C2 35f6d01e/H2 273deaba | Independently reviewed2026-10-12: S04-03 newly done, five done/four open; I2-F01–F04 remain. |
-| [Iteration03](cc-prompt-iteration03.md) |2026-10-12; predecessor I2/C2/H2; issue is commit containing this prompt | Active five-path correction; accepted primary comparison/inventory/policy and prior intake retained. |
+| [Iteration03](cc-prompt-iteration03.md) |2026-10-12; predecessor I2/C2/H2; issue is commit containing this prompt | Returned C3 cf5d2d05/H3 d626e737; six done/three open after CDC review; four residual findings. |
+| [Iteration04](cc-prompt-iteration04.md) |2026-10-12; predecessor I3/C3/H3; issue is commit containing this prompt | Active four-path repair of heading, competing registries, checker regressions and current receipt. |
 
-Current assignment: [Iteration03](cc-prompt-iteration03.md), five-path evidence
-correction returned to CDC Sofie via Operator. [Independent I2 review](cdc-verification.md#iteration02-independent-review--2026-10-12)
-accepts S04-01/02/03/05/08; four rows remain open. Two corrections actually
-executed; I3 is issued, not executed. I2's broader seven-output authority is
-superseded for this assignment by the narrower five-output prompt. Criteria,
+Current assignment: [Iteration04](cc-prompt-iteration04.md), four-path evidence
+correction returned to CDC Sofie via Operator. [Independent I3 review](cdc-verification.md#iteration03-independent-review--2026-10-12)
+accepts S04-01/02/03/04/05/08; three rows remain open. Three corrections have
+executed; I4 is issued, not executed. I3's five-output authority is superseded
+for this assignment by four outputs; claim results are now protected. Criteria,
 selected scope and gates unchanged; no slice closure or next advance.
 Commit exact paths with both trailers. Preserve issue/candidate/receipt identities.
 
 ## Version History
+
+- 1.4 (2026-10-12): C3/H3 warrants accepted, six done/three open; four-path
+  Iteration04 after demonstrated heading/whole-registry/guard repairs. Current
+  result dataset protected; parent scope/gates unchanged.
 
 - 1.3 (2026-10-12): C2/H2 independently reviewed; applicable primary comparison
   accepted, five done/four open. Exercised semantic-join/control repairs before

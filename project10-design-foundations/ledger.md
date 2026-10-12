@@ -226,3 +226,13 @@ meaningful literal joins, intended-guard controls and honest reporting. No child
 or parent closure. Parent criterion texts/statuses,233/eight/16, R/T/C/L/G,
 P10-11 and later runtime/metadata/package/release/Operator gates unchanged.
 T02 has two executed corrections; no final comparison/research acceptance.
+
+## Slice04 Iteration03 independent review — 2026-10-12
+
+[CDC C3/H3 review](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cdc-verification.md#iteration03-independent-review--2026-10-12)
+accepts S04-04 and renews preservation: six done/three open.
+[Iteration04](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt-iteration04.md) is a four-path correction after
+exercised heading/registry/guard repairs. Three corrections have executed;
+no slice/arc closure. All parent criterion texts/statuses,233/eight/16,
+R/T/C/L/G, P10-11, Arc03/04/06, package/release/Operator gates unchanged.
+T02 final comparison remains due at closure or recorded stop.

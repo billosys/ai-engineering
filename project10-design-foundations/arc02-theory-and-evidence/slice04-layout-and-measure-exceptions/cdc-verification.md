@@ -1,7 +1,7 @@
 # Slice04 CDC verification
 
-Current verdict: [Iteration02 review](#iteration02-independent-review--2026-10-12),
-S04-01/02/03/05/08 done; four open. [Iteration03](cc-prompt-iteration03.md) is assigned.
+Current verdict: [Iteration03 review](#iteration03-independent-review--2026-10-12),
+S04-01/02/03/04/05/08 done; three open. [Iteration04](cc-prompt-iteration04.md) is assigned.
 Earlier current-verdict/assignment statements below are historical.
 
 ## Initial independent review — 2026-10-11
@@ -680,3 +680,234 @@ Parallel Project13 work was subsequently committed independently as
 Project13 paths do not alter Project10 or the reviewed H2 evidence. It is the
 planning predecessor for this handoff, not another CC return or CDC research
 acceptance. Its contents are preserved; no competing Project13 verdict is written.
+
+## Iteration03 independent review — 2026-10-12
+
+CDC Sofie, separate from CC, reviewed C3
+`cf5d2d05d9096cb0739e6dc46805494744be7880`, tree
+`9eb09e990b886b46fea11db809853c03663079e3`, direct parent I3
+`e0738129b6beb53a17ebe6106033aea773dec65f`. Receipt H3
+`d626e7373d550a8a5a27d2614ee0daa96ac32e74`, tree
+`37c9de41211953b8636ee5c1c44c787c5f94eab2`, is C3's direct child.
+SOURCE remains `dffa504e851b03b8e4746f1941068e4cc850b612`.
+
+**Verdict: partial. S04-01/02/03/04/05/08 done; S04-06/07/09 open.**
+[Iteration04](cc-prompt-iteration04.md) is the four-path CC correction.
+Three corrective assignments have executed; this issues the fourth, without
+resetting the five-iteration limit. No slice/arc closure or next-slice advance.
+
+### Fresh proof and retained evidence
+
+- Reproduced C3's exact five-path scope and H3's three receipt paths, both
+  parents/trees/trailers and diff checks. Every tracked I3 input outside those
+  five paths is byte-identical at H3. Seven current outputs match committed
+  bytes, have LF/final newlines. SOURCE tracked/index clean; unrelated planning
+  `project12-chcd-protocol/` and source `knowledge/lfe/` preserved.
+- H2 inventory/source comparison and full portable policy/cases remain byte-equal.
+  All84 complete subject records and predecessor IDs are identical to H2; H1
+  remains their reviewed identity baseline. Retain S04-01/02/03/05 evidence from
+  [I2 review](#iteration02-independent-review--2026-10-12) with its original
+  claim/input/method/date and limitations. The unchanged inputs support that
+  bounded acceptance; this does not certify the changed checker or fresh intake.
+  S04-08 preservation is freshly renewed for C3/H3.
+- Replayed the current **I3** checker from H3 bytes, with only artifact-read
+  adapters to Git H3: one positive, all20 supplied negatives rejected;
+  malformed table actually reaches `table-cells`, CSS `css-target-shape`.
+  Derived184 rows/84 results/420 dimensions/25 first-array actions,38 total
+  Markdown links/26 local links/12 fragment references. Current targets resolve.
+  This establishes the checked subset, not the entire handoff; see I3-F02/F03.
+- Inspected the complete changed result delta: original C04/C05/C24 warrants
+  now distinguish ban, all-responsiveness guarantee and diagnostic, with the
+  C05 three-edge explanation repaired. No other dimension change undermines
+  the previous bounded review; shared fidelity/CQ limits remain unassessed.
+  Rechecked all84 literal identities, five-dimension/evidence/action membership
+  shapes and33 reciprocal edges (66 directed memberships). Previously inspected
+  unchanged warrants retain their pins; this is not a new full standards read.
+  **S04-04 accepted for the current claim-results dataset.** Conflicting handoff
+  copies remain separate failures of S04-06/07, not a reason to edit accepted results.
+- Inspected corrected literal parts for C07/C08, C10 and height treatment against
+  complete W02/W05–08 source context; those first-array repairs are useful.
+  The heading and competing arrays below prevent whole-handoff acceptance.
+  Applicable primary/source-version limits stay at accepted H2; no new technical
+  observation, historical capture, browser/AT/package/conformance execution.
+
+### Consolidated residual findings
+
+| ID | Primary type / significance | Observed defect and bounded correction |
+|---|---|---|
+| I3-F01 | replacement/handoff; serious | A-C04 now includes206–208 but its proposed heading is still `Zero Breakpoints`, and the new checker explicitly demands that heading. This is persistence of I1-F03/I2-F02 despite I3's explicit rename instruction. Use `Start with intrinsic layout`, retaining the qualified body; shift exact part pointers/digest and change the heading expectation. Result parts need no edits. |
+| I3-F02 | replacement/handoff and consumer coverage; correctness-grade | The delivered handoff still contains six distinct25-action arrays, six opening JSON fences and only one closing fence. Relative to the current first array, later arrays change6,6,6,7,24 replacement strings; they are neither clearly historical nor checked. The parser reads only the first and ignores invalid later material. Keep one correctly fenced current registry containing the reviewed first25 actions, with the heading repair; remove competing copies from current artifact, preserving them in Git H3. The actual consumer must reject extra/malformed registry payload rather than silently selecting the first. |
+| I3-F03 | validation coverage/regression; correctness-grade | The I3 rewrite dropped H2 guards. Five same-validator specimens now pass: negative proposal pointer, pointer beyond replacement end, duplicate action result/claim membership, a changed action labelled retain, and a source span ending beyond EOF. All five reject under H2. Restore explicit pointer/span/offset bounds before slicing, membership uniqueness and both action disposition checks (retain must be identical; changed label must change bytes). Keep all20 controls and corrected table/CSS routes; add discriminating regressions. |
+| I3-F04 | receipt/identity; serious | I3 notes state the Project10-local AGENTS file does not exist, but it exists at `project10-design-foundations/AGENTS.md` at I3/H3:48 lines, SHA-256 `15389b3c985c28a574b062fa9421602a3cbe89676a25ba0ecb661c7381ed7182`. Read it and correct the current receipt; preserve the prior claim as a documented mistake, not invented retrospective exposure. Return the actual current registry/check coverage and all nine rows after the repairs. |
+
+I3-F02 implements the existing single-current-record/usable-handoff contract,
+not a new output category or six-array semantic assignment. Project13's
+[interim analysis R05](../../../project13-collab-refinements/artifacts/experiment01-methodology-pilot/interim-analysis.md#r05--t02-i02-contains-six-competing-action-registries)
+identified it at H2. **Reviewer contribution:** CDC's I2 review failed to carry
+that finding into I3 and inspected only the parser-selected registry. This review
+corrects that omission; it is not solely new CC noncompliance. H3 confirms the
+artifact remains defective. S04-08's byte preservation is compatible with a
+semantically/structurally defective preserved file; no whole-handoff acceptance
+was previously justified. The remaining heading is persistence; the five
+checker probes are regressions; the AGENTS statement is a current factual error.
+
+### Bounded method repair before another correction
+
+The following read-only H3/H2 example compares actual predicates, restores the
+lost mechanical guards and exercises the heading change without altering any
+result. It is CDC author preparation, not an accepted CC artifact or maintained
+runtime. Full current20-control replay is separately reproduced above; CC must
+exercise the repaired integrated checker and complete registry consumer on return.
+
+```python
+import copy,hashlib,json,re,subprocess
+from pathlib import Path
+P=Path('/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning');R=P.parents[1]
+S='project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/'
+H3='d626e7373d550a8a5a27d2614ee0daa96ac32e74';H2='273deaba3bc6cb474e35dc61b34696fa758e0416'
+def read(rev,n):return subprocess.check_output(['git','-C',str(P),'show',rev+':'+S+'artifacts/'+n]).decode()
+def load(rev):
+ t=read(rev,'execution-notes.md')
+ if rev==H3:t=t.split('### I3 inline checker',1)[1]
+ code=t.split('```python\n',1)[1].split('\n```',1)[0]
+ marker='inv=rows(' if rev==H3 else 'inv=jsonl('
+ ns={};exec(code.split(marker,1)[0],ns)
+ i=[json.loads(x) for x in read(rev,'occurrence-inventory.jsonl').splitlines()];c=[json.loads(x) for x in read(rev,'claim-results.jsonl').splitlines()];a=json.loads(read(rev,'correction-handoff.md').split('```json\n',1)[1].split('\n```',1)[0]);return ns,i,c,a
+n,i,c,a=load(H3);old,oi,oc,oa=load(H2)
+def specimen(i,c,a,name):
+ i,c,a=copy.deepcopy((i,c,a));x=next(v for v in a if v['action_id']=='A-C13');cid=x['result_ids'][0]
+ if name=='negative-pointer':
+  q=x['proposal_pointers'][cid];q.update(start=q['start']-len(x['replacement']),end=q['end']-len(x['replacement']))
+ elif name=='past-end-pointer':x['proposal_pointers'][x['result_ids'][-1]]['end']=len(x['replacement'])+100
+ elif name=='duplicate-action-membership':x['result_ids'].append(cid);x['claim_ids'].append(cid)
+ elif name=='action-retain-changed':x['disposition']='retain'
+ else:x['span'][1]=100000
+ return i,c,a
+names=['negative-pointer','past-end-pointer','duplicate-action-membership','action-retain-changed','action-span-outside-file']
+def outcome(fn,args):
+ try:fn(*args)
+ except ValueError as e:return str(e.args[0])
+ else:return 'accepted'
+for name in names:
+ assert outcome(n['validate'],specimen(i,c,a,name))=='accepted'
+ before=outcome(old['validate'],specimen(oi,oc,oa,name));assert before!='accepted';print('regression',name,'H2 rejects',before,'H3 accepts')
+# Bounded author demonstration: retain current validate, restore mechanical gates first.
+def repair(inv,claims,acts):
+ for x in acts:
+  ids=x['result_ids'];cids=x['claim_ids']
+  if len(ids)!=len(set(ids)) or len(cids)!=len(set(cids)):raise ValueError(('duplicate-action-membership',x['action_id']))
+  lines=subprocess.check_output(['git','-C',str(R),'show',n['REV']+':'+x['path']]).decode().splitlines();lo,hi=x['span']
+  if not 1<=lo<=hi<=len(lines):raise ValueError(('action-span',x['action_id']))
+  joined='\n'.join(lines[lo-1:hi]);start,end=x['literal_offset_0based']
+  if not 0<=start<=end<=len(joined):raise ValueError(('action-char-bounds',x['action_id']))
+  for cid in ids:
+   q=x['proposal_pointers'][cid]
+   if not 0<=q['start']<=q['end']<=len(x['replacement']):raise ValueError(('replacement-pointer-bounds',x['action_id'],cid))
+  if x['disposition']=='retain' and x['replacement']!=x['original']:raise ValueError(('retain-changes-source',x['action_id']))
+  if x['disposition']!='retain' and x['replacement']==x['original']:raise ValueError(('changed-label-noop',x['action_id']))
+ return n['validate'](inv,claims,acts)
+assert repair(i,c,a)
+for name in names:
+ result=outcome(repair,specimen(i,c,a,name));assert result!='accepted';print('repair rejects',name,result)
+# A-C04 heading repair keeps every result part unchanged, only shifts pointers.
+ci,cc,aa=copy.deepcopy((i,c,a));x=next(v for v in aa if v['action_id']=='A-C04');x['replacement']=x['replacement'].replace('### Zero Breakpoints','### Start with intrinsic layout',1);x['replacement_sha256']=hashlib.sha256(x['replacement'].encode()).hexdigest()
+for cid,part in x['proposal_parts'].items():
+ start=x['replacement'].index(part);x['proposal_pointers'][cid]={'start':start,'end':start+len(part)}
+# Exact predicate expectation also needs this one heading change.
+code=read(H3,'execution-notes.md').split('### I3 inline checker',1)[1].split('```python\n',1)[1].split('\n```',1)[0].split('inv=rows(',1)[0]
+code=code.replace("'### Zero Breakpoints\\n\\nStart with intrinsic layout'","'### Start with intrinsic layout\\n\\nStart with intrinsic layout'")
+exec(code,n);assert repair(ci,cc,aa)
+assert outcome(repair,(i,c,a))!='accepted'
+print('heading repair positive; stale Zero Breakpoints negative rejected; no result changes')
+```
+
+Observed: H2 rejects all five; H3 accepts all five; restored guards reject all five.
+Heading repair positive passes; unchanged Zero Breakpoints negative rejects.
+
+The whole-artifact consumer example below demonstrates one current registry and
+rejects conflicting/unchecked payloads through the same parser.
+
+```python
+import json,re,subprocess
+P='/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/planning'
+S='project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/'
+H='d626e7373d550a8a5a27d2614ee0daa96ac32e74'
+t=subprocess.check_output(['git','-C',P,'show',H+':'+S+'artifacts/correction-handoff.md']).decode()
+marks=list(re.finditer(r'^```json\n',t,re.M));arrays=[]
+for m in marks:
+ v,end=json.JSONDecoder().raw_decode(t[m.end():]);arrays.append(v)
+assert len(marks)==6 and all(len(a)==25 for a in arrays)
+first={a['action_id']:a for a in arrays[0]}
+print('competing replacement counts',[sum(a['replacement']!=first[a['action_id']]['replacement'] for a in ar) for ar in arrays[1:]])
+assert sum(x=='```' for x in t.splitlines())==1
+# Same consumer currently returns the first even with corrupted later payload.
+consume=lambda s:json.loads(s.split('```json\n',1)[1].split('\n```',1)[0])
+corrupt=t[:marks[1].start()]+'```json\nNOT JSON\n```\n';assert consume(corrupt)==arrays[0]
+# One current artifact; old competing versions remain available through Git H3.
+prefix=t[:marks[0].start()];suffix=t[t.index('## Ownership and gates'):]
+fixed=prefix+'```json\n'+json.dumps(arrays[0],ensure_ascii=False,indent=2)+'\n```\n\n'+suffix
+assert fixed.split('## Exact proposed actions')[0]==t.split('## Exact proposed actions')[0]
+def registry(text):
+ opens=list(re.finditer(r'^```json\n',text,re.M));ends=list(re.finditer(r'^```\s*$',text,re.M))
+ if len(opens)!=1 or len(ends)!=1 or ends[0].start()<opens[0].end():raise ValueError('one complete current JSON fence required')
+ data=json.loads(text[opens[0].end():ends[0].start()])
+ if not isinstance(data,list):raise ValueError('action registry must be an array')
+ return data
+assert registry(fixed)==arrays[0]
+for name,value in [('six conflicting arrays',t),('extra valid fenced array',fixed+'\n```json\n[]\n```\n'),('invalid unchecked later payload',corrupt),('trailing invalid JSON',fixed.replace('\n```\n\n## Ownership','\nNOT JSON\n```\n\n## Ownership',1))]:
+ try:registry(value)
+ except ValueError as e:print('strict consumer rejects',name,str(e))
+ else:raise AssertionError('false pass '+name)
+print('one-registry repair positive; all25 first actions preserved; policy and ownership preserved')
+```
+
+Observed: one-registry positive preserves all25 first actions, policy and ownership;
+old six-array artifact, extra valid array, invalid later payload and trailing
+invalid JSON reject. Additional copies total384,778 payload bytes at H3.
+Neither example is a CSS parser, prose grammar oracle or semantic truth checker.
+
+### Nine-row walk and bubble-up
+
+| Row | CDC disposition at C3/H3 | Evidence and limits |
+|---|---|---|
+| S04-01 | done, retained | Prior accepted intake/example; fresh erroneous AGENTS receipt is explicitly unresolved under S04-09. No invented I2/I3 exposure. |
+| S04-02 | done, retained/reproduced | Exact unchanged inventory and84 complete subject identities/lineage; no silent scope reduction. |
+| S04-03 | done, retained | Accepted primary register/technical versions unchanged; original-source fidelity remains unassessed. |
+| S04-04 | done, newly inspected/reproduced | Repaired original warrants, current dimension/evidence joins and unchanged reciprocal memberships; shared unavailable fidelity/CQ limits preserved. |
+| S04-05 | done, retained | Portable policy/worked cases byte-equal to accepted H2; real runtime/accessibility remains later. |
+| S04-06 | open | I3-F01/F02: heading persistence and competing current literal registries. |
+| S04-07 | open | I3-F02/F03: parser blind spot and five regressed guards; supplied20 rejections alone are insufficient. |
+| S04-08 | done, freshly reproduced | Exact C3/H3 scope/protected bytes/pins/trailers/LF/EOF/diff and current26 local links12 fragments. |
+| S04-09 | open | I3-F04 plus final repaired packet accounting; all nine statuses must remain truthful. |
+
+All nine original criteria retained: six done/three open, no deferral or no-op.
+The bounded intrinsic-first policy,84 results and scoped correction work remain
+useful inputs; current handoff cannot yet be adopted. Seven slice outputs plus
+protected preparation remain in artifacts; prompts/close records remain first-class
+slice files. No live mutation or full-card/full-file/DES acceptance occurred.
+Arc/project criterion wording/statuses,233 cards/eight files/16 DES, R/T/C/L/G,
+P10-11, Arc03/04/06, package/release and Operator gates remain unchanged.
+No structural roadmap amendment: finish the same slice by four-path correction.
+
+T02 now has initial plus three returned corrections, still open after four
+returns; I4 is issued, not executed. Operator-relayed27m15s is CC-attested for
+I3, not total effort. H3 seven-output packet919,943 bytes (C3 917,365); extra
+registry payload384,778 bytes is concrete unchecked duplication, while literal
+joins and negative specimens enabled review. Preparation/reviewer/token totals,
+downstream usefulness and goal displacement remain unknown. Final Project13
+comparison follows T02 closure or recorded stop; no third run/broad adoption.
+
+Author readiness: verified the four-file recipe against actual artifacts;
+exercised five regression repairs, heading and whole-registry consumer before
+issue. One attempted `python` command failed (not installed); `python3` recovered.
+An attempted process listing was sandbox-denied; no approval or process state
+was inferred. Two mistaken PM/authoring guide filenames were corrected to their
+canonical routes. Long result displays were recovered with focused partitions;
+no whole six-array semantic read is claimed. Use the supplied focused I4 manifest.
+
+I4 handoff self-check: exact nine planning paths; all13 project/eight arc criteria
+and states preserved, all nine child criteria preserved with only S04-04 newly
+done. CC outputs, prior prompts/reviews and frozen research inputs remain intact.
+Both durable repair fences replayed successfully. All172 local links/69 fragments
+in the nine-file handoff resolve; LF/EOF and git diff --check pass. These author
+checks validate issuance, not independent acceptance of the future CC correction.

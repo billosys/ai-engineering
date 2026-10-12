@@ -2,9 +2,10 @@
 
 Prepared 2026-10-10; T01 independently closed on 2026-10-11; checkpoint below.
 Protocol revision 2's initial zero-run status is historical; this register tracks
-current registrations. At the 2026-10-12 interim cutoff, T02 has returned its
-initial assignment and two corrections. Initial and Iteration01 are reviewed;
-Iteration02 at `273deaba` awaits CDC review, with inherited four-of-nine acceptance.
+current registrations. T02 has returned its initial assignment and three
+corrections; the latest CDC review accepts six of nine rows. Iteration04 is
+issued, not executed. The interim analysis retains its earlier H2 cutoff;
+host closure and the final comparison remain pending.
 The next two newly opened Project10 slices are selected by the protocol's
 consecutive-entry rule, not by expected success. Slice02's ongoing correction is
 excluded. Record each entry here before issuing its initial prompt.
@@ -12,7 +13,7 @@ excluded. Record each entry here before issuing its initial prompt.
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
 | T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Closed after initial + four corrections; checkpoint completed below | First3/9; final9/9 bounded criteria; comparative benefit inconclusive |
-| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue `db77543d`; I02 issue `877ff958` | Initial + two corrections returned; I02 candidate35f6d01e / receipt273deaba awaits CDC | First1/9; cumulative reviewed4/9; [interim analysis](interim-analysis.md); closure/final comparison pending |
+| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue `db77543d`; I03 issue `e0738129` | Initial + three corrections returned; C3 cf5d2d05 / H3 d626e737 reviewed; I04 issued, unexecuted | First1/9; cumulative reviewed6/9; [interim analysis](interim-analysis.md) retained at its cutoff; closure/final comparison pending |
 
 ## Entry format
 
@@ -667,3 +668,36 @@ The current T02 summary above was stale at the cutoff: it said I01 had not
 executed despite the appended I01 review. It is now reconciled, with the earlier
 bytes retained at273deaba. Frozen protocol/Case01 and host evidence are unchanged.
 This housekeeping is research overhead, not independently accepted host progress.
+
+## T02 Iteration03 return and independent review — 2026-10-12
+
+[Host review](../../../project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cdc-verification.md#iteration03-independent-review--2026-10-12)
+checks C3 cf5d2d05/H3 d626e737 against issue e0738129. Initial plus three
+corrective returns, four assignments total; receipt child is not another return.
+S04-04 newly accepted: six done/three open. I4 is issued, not executed; frozen
+protocol/Case01/interim cutoff remain unchanged. No closure/final comparison,
+third run or general adoption. Host authority remains Project10.
+
+- Persistence: Zero Breakpoints heading survives I1-F03/I2-F02/I3 instruction.
+- Regressions: I3 validate rewrite drops pointer bounds, action span bounds,
+  duplicate action membership and action-disposition guards. Five distinct
+  specimens pass H3 and reject H2; two pointer specimens test one bound property.
+  Supplied20 controls still reject, including corrected actual table/CSS routes.
+- Complete-artifact/consumer gap: six competing25-action arrays remain at H3;
+  only first consumed. Later replacements differ6/6/6/7/24 actions;384,778
+  bytes in five extra payloads. Interim R05 anticipated this. **CDC error:**
+  I2 review failed to carry it into I3 and inspected the selected registry;
+  do not attribute that review omission solely to CC.
+- Receipt: current claim that48-line planning Project10 AGENTS is absent is false.
+  Prior unknown exposure remains unknown; new reads cannot repair history.
+- Adaptation: before I4, CDC exercised restored guards against actual H3/H2,
+  a heading positive/stale-heading negative and complete-registry consumer
+  positive/four negatives. Four-file CC correction protects accepted results.
+- Burden: seven-output C3 917,365 bytes/H3 919,943. Operator-relayed I3 duration
+  27m15s is CC-attested, not preparation/review/whole-cycle effort. Concrete
+  unchecked duplication is misuse; exact joins and negative examples enabled
+  useful review. Goal displacement and net efficiency remain unmeasured.
+
+This is CDC's measurement of her own process, not independent research acceptance.
+The current table is updated; previous cutoff descriptions remain historical.
+Final comparison still follows T02 closure or recorded stop before any extension.

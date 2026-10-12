@@ -128,9 +128,9 @@ Operator-approved CDC two-field repair/closure. All nine rows done, I05 unused.
 separates independent evidence from direct self-check/Operator acceptance.
 Slice03 Iteration04 at3817d83c is [accepted and closed](slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11);
 all nine child rows done. T01 checkpoint completed at370cfc8f with inconclusive
-comparative benefit. Current [Slice04 Iteration03](slice04-layout-and-measure-exceptions/cc-prompt-iteration03.md)
-repairs I2-F01–F04 after C2/H2 review: S04-01/02/03/05/08 done/four open.
-The earlier I2 assignment/four-done state is preserved in the slice history. DES-009/bounded
+comparative benefit. Current [Slice04 Iteration04](slice04-layout-and-measure-exceptions/cc-prompt-iteration04.md)
+repairs I3-F01–F04 after C3/H3 review: S04-01/02/03/04/05/08 done/three open.
+The earlier I3 assignment/five-done state is preserved in the slice history. DES-009/bounded
 DES-002 full selected scope remains; no child/arc closure.
 T02 registration precedes issue under unchanged protocol; other families/gates
 remain. Arc03 retains accessibility proof and later T retains vi-guarantee review.
@@ -144,6 +144,10 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.20 (2026-10-12): Slice04 C3/H3 original warrants accepted; six done/
+  three open. Four-path Iteration04 addresses heading, competing registries,
+  regressed guards and intake. Scope/criteria/readiness/later gates unchanged.
 
 - 1.19 (2026-10-12): Arc02/Slice04 C2/H2 primary comparison accepted, five
   done/four open; bounded Iteration03 issued for residual warrants, literal
