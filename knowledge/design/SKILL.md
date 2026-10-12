@@ -87,6 +87,41 @@ Imposter, Icon and Container are useful spatial patterns described in [Layout](g
 They are a vocabulary for composition, not a required inventory: use the
 patterns that help the content and supplied components.
 
+## CSS composition examples
+
+These snippets illustrate reusable layout relationships. Review their numeric
+values with actual content. Any referenced custom properties must be defined
+by the adopting project; these examples prescribe no spacing system, palette,
+font or token architecture.
+
+### Stack Primitive
+
+```css
+.stack { display: flex; flex-direction: column; gap: var(--space-s); }
+```
+
+### Sidebar Primitive
+
+```css
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-l);
+}
+.with-sidebar > .sidebar { flex-basis: 20rem; flex-grow: 1; }
+.with-sidebar > .main { flex-basis: 0; flex-grow: 999; min-inline-size: 55%; }
+```
+
+### Intrinsic Grid (no column count)
+
+```css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--space-s-m);
+}
+```
+
 ## Colour and type at a glance
 
 For colour, begin with supplied values and map the needed surface, text,
@@ -94,6 +129,8 @@ interaction, border and state roles. A primitive/semantic/component token
 architecture is optional; it must not displace the adopting project's existing
 semantics. Check complete rendered foreground/background pairs, including
 states, compositing and gamut on the target.
+
+**Colour-space conversions combine linear and nonlinear stages**. Linear stages use 3×3 matrices; a complete conversion can also include sRGB decoding and componentwise cube roots.
 
 For type, begin with language, script, content and reading conditions. Assign
 roles from the hierarchy the task needs, evaluate candidate families and

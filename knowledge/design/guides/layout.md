@@ -253,9 +253,8 @@ thinking at the wrong level of abstraction.
 ::: prose
 The web is a content-driven medium. The width of a paragraph should be
 determined by its measure (in `ch` units). The height of a section
-should be determined by the amount of content it contains. The gap
-between elements should be determined by the typographic scale (in `rem`
-or Utopia space tokens). The number of columns in a grid should be
+should be determined by the amount of content it contains. The gap between elements should support their grouping and interaction; choose
+fixed, fluid or shared spacing values for the actual task. The number of columns in a grid should be
 determined by the minimum acceptable item width and the available space
 (via `auto-fit` and `minmax()`).
 
@@ -277,7 +276,7 @@ happen simultaneously, does it still work?
 ::::
 
 :::: {.principle-card numeral="IV"}
-### Scale by Ratio, Never by Addition
+### Use Ratios Where They Help
 
 ::: prose
 Ratios can help coordinate sizes when proportional steps suit the task. A
@@ -351,18 +350,18 @@ the philosophy.
 ### The Fluid Foundation: A Scoped Arithmetic Illustration
 
 ::: prose
-This named exercise reuses one accepted diagnostic configuration to show how
-root-relative endpoints and per-step interpolation work. Its inputs are
-arithmetic illustrations, not recommended type, spacing, palette or role
-defaults. The expression covers step zero only; negative steps are arithmetic
-probes, not functional-text recommendations.
+This named exercise uses an accepted diagnostic configuration: minimum and
+maximum bases of `1rem` and `1.125rem`, endpoint ratios of `1.2` and `1.25`,
+and an interval of `20rem`–`80rem`. These are inputs to an arithmetic-only
+illustration, not recommended type sizes, roles, spacing values or defaults.
+The expression shows step zero only and assigns no font or accessibility
+outcome; negative steps are arithmetic probes, not functional-text
+recommendations.
 :::
 
-::: code-block
-`css
+```css
 --example-step-0: clamp(1.000000rem, calc(0.958333rem + 0.208333vi), 1.125000rem);
-`
-:::
+```
 
 At a 16px root the 20rem–80rem interval is nominally 320–1280 CSS pixels. At a
 20px root it moves to 400–1600 CSS pixels. The interval is root-relative;
@@ -374,10 +373,10 @@ the actual interface.
 ### The Compositional Layer: Every Layout Primitives
 
 ::: prose
-With the fluid foundation in place, layouts are composed from a
-vocabulary of spatial primitives. Each primitive has a single
-responsibility and is implemented as a CSS class (following CUBE CSS
-methodology). They consume Utopia tokens for their spacing values.
+Layouts can be composed from a vocabulary of spatial primitives. Each primitive
+has a single responsibility and can be implemented as a CSS class. Supply values
+from the adopting project; fixed, fluid and independently chosen spacing are all
+available. Utopia is one possible source of values, not a prerequisite.
 :::
 
 ::::::::::::::::::::::::::::::::: concept-grid

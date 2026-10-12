@@ -45,7 +45,7 @@ negative steps to functional text by default.
 If sizes interpolate between contexts, state the roots, endpoints, interval,
 units and rounding. Interpolation is calculated per step and does not
 necessarily retain geometric ratios at intermediate widths. The named
-[diagnostic fluid-type exercise](layout.md#the-fluid-foundation) illustrates
+[diagnostic fluid-type exercise](layout.md#the-fluid-foundation-a-scoped-arithmetic-illustration) illustrates
 arithmetic only; its values are not typography or spacing defaults.
 
 ## Use only available axes
