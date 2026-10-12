@@ -1,5 +1,11 @@
 # Arc02 Slice07 CC proposed return
 
+> **Historical initial return:** the report and five proposed outcomes below
+> refer to source `c4531c8c`. The appended Iteration01 correction/results
+> section is the current CC return and supersedes the initial return where it
+> corrects F01–F03. CDC's status remains S07-01 done and S07-02–05 open pending
+> review of the new evidence.
+
 This is the CC return for CDC review, not independent acceptance or slice
 closure. Assignment: `cc-prompt.md`, planning issue `bf7713477cfca0821dc1597b0f0d12ee40b21574`,
 against SOURCE/main baseline `3658f79a06cd3d28ebca5e05622e02c229bd29b6`.
@@ -73,3 +79,53 @@ anonymized profile, new harness, card/schema change or publish/install action
 was introduced. No scope reduction, silent drop, independent acceptance, slice
 closure or parent closure is claimed. CDC/Operator review is the next owner
 action.
+
+## Iteration01 correction and results — CC proposed return
+
+Assignment: `cc-prompt-iteration01.md`, issued by planning commit
+`52d442077d78d939a2c5181064d99141ff509fdd`; source before I1 was
+`c4531c8c4fc3187968d3d79fcb065892b89fe2a8`. Source after is
+`52f0b5208b538d9e1e351e22aa3e2c88e620014f` (tree
+`7e420edb0b81b9399be23c3e686856df83c2e61c`, parent exactly the prior source).
+The current package is `target/skills/visual-design-system.zip`, SHA-256
+`507859f0d1fc4b5abc0a00f87a982d5dbc8731fff6903cb4c324abd23014e729`.
+
+The first return remains preserved above as historical evidence. Its three
+superseded claims are corrected here: the original brief-led entrypoint lacked
+the accepted colour-conversion teaching and all three primitive examples; only
+the two protected foundations passages had survived. I1 restores the missing
+entrypoint teaching and the exact baseline Stack, Sidebar and Intrinsic Grid
+CSS. Also, the initial eight-file union contained zero Fraunces mentions; this
+repair adds none. The current eight-file source/package identity scan remains
+clear of the removed defaults.
+
+| Row | Current CC proposed outcome | Evidence and limit |
+|---|---|---|
+| S07-01 | done (CDC accepted at c4531c8c; I1 applicability checked) | I1 is restricted to the three authorized source files; full eight-file source and package scans found no reintroduced identity or preset. CDC owns any decision to retain its earlier acceptance after review of the changed bytes. |
+| S07-02 | done (CC proposed) | The specified gap and composition neighbors now agree with optional/contextual values; the corrected method was walked through all three contract specimens and the renamed-preset negative. These remain source-guidance walks, not fresh-context trials. |
+| S07-03 | done (CC proposed) | Exact entrypoint teaching and three CSS blocks restored; protected foundations CIE and Linear Algebra passages are byte-identical to baseline. The diagnostic now declares all inputs, uses a proper CSS fence and retains root/interpolation limits. Arithmetic is not behavior evidence. |
+| S07-04 | done (CC proposed) | Exactly three source paths committed with valid trailers; metadata/history remain at 1.0.2. Required Make gates passed and all eight fresh packaged Markdown members match committed source. Actual warnings are listed below. |
+| S07-05 | done (CC proposed) | This report and the existing batch record distinguish historical from corrected claims, inventory one artifact and retain current owners/limits. CDC's one-done/four-open statuses remain unchanged in the ledger. |
+
+### I1 checks and pending work
+
+`make help`, `make check-skills`, `make check-package-paths`, fresh `make design`
+and `git diff --check` completed. Version checks report zero errors. The soft
+description report remains 18 skills above its 300-character editorial target;
+the design entrypoint is 360 characters. Package paths report 24 sources/24
+packages, 24 zips/388 Markdown files, zero hard failures, 593 warnings at 592
+unique locations, three explicit exceptions and 678 skipped external URLs.
+Detailed warnings remain hidden by the default gate output. The eight Markdown
+members in the fresh archive were inspected individually and byte-match source.
+
+The corrected I1 section of [artifacts/batch-record.md](artifacts/batch-record.md)
+is the sole supporting artifact. No new evidence artifact was added. Earlier
+claims and archive hash remain historical; the final package identity above is
+the post-commit build.
+
+CDC/Operator review of S07-02–05 is pending. Fresh-context specimens remain
+owned by A02-09/P10-02; full corpus, source readiness and fidelity by the current
+A02-02/04–08 and P10-06/09–11 gates; actual browser/accessibility evidence by
+A02-10/P10-04; final package/release and parent composition by P10-05/08 and
+the existing Arc04/Project10 owners. No self-acceptance, slice closure or parent
+closure is claimed.

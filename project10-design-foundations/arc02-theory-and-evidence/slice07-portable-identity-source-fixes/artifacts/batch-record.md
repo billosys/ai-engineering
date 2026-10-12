@@ -74,6 +74,64 @@ row open in the doer return. Fresh-context behavior, full corpus review,
 original fidelity, browser/AT behavior, final composition and independent
 acceptance remain outside this batch's proof.
 
+## Iteration01 intake and contract readback — before source edits
+
+- Active assignment is the complete `cc-prompt-iteration01.md`, issued by
+  planning commit `52d442077d78d939a2c5181064d99141ff509fdd`, predecessor
+  `cc-prompt.md`/issue `bf7713477cfca0821dc1597b0f0d12ee40b21574`. Planning
+  HEAD is the issued I1 commit; tracked worktree clean. SOURCE/main is exactly
+  `c4531c8c4fc3187968d3d79fcb065892b89fe2a8`, with only pre-existing untracked
+  `knowledge/lfe/`; no source drift was present.
+- Read the I1 prompt, current slice plan/ledger, initial CDC review, initial
+  batch record and closing report in full; read Project10's required scope/DoD,
+  evidence-economy, workflow/acceptance and current-status sections, Arc02's
+  authority, accepted-input and current-assignment sections, and all 13/10
+  project/arc criterion/status rows. CDC accepts S07-01; S07-02–05 remain open.
+- Loaded current repository `AGENTS.md`, collaboration-framework entrypoint and
+  posture-and-ethics route, Project Management wayfinder and iteration filename/
+  execution guides, engineering-methods CC-intake contract, work-verification
+  ledger/row-closure guidance, and the Visual Design skill entrypoint. `make
+  help` will be rerun before validation. Full current `SKILL.md` and `type.md`,
+  assigned `layout.md` contexts, required baseline Quick Reference excerpts,
+  and protected foundations passages were inspected.
+- Extracted Stack Primitive, Sidebar Primitive and Intrinsic Grid CSS blocks
+  directly from source `3658f79a`; all three have one baseline occurrence.
+  Byte comparisons confirmed the foundations CIE paragraph and Linear Algebra
+  bridge are unchanged from `3658f79a`. The precise two-sentence entrypoint
+  colour teaching is present at baseline and absent at `c4531c8c`.
+
+### Iteration01 contract readback
+
+Repair only F01–F03 under the I1 allowlists. Restore the exact accepted
+two-sentence colour conversion teaching and the three literal baseline CSS
+blocks to the brief-led entrypoint. Label block values as examples, and say
+that custom properties need definitions from the adopting project; do not
+restore the measure axiom, profile snippets, mandatory aliases, or the adjacent
+equal-temperament analogy. Keep the two already-preserved foundations passages
+byte-identical.
+
+In layout, repair the diagnostic as a true fenced CSS block and declare its
+illustration inputs (bases 1rem/1.125rem, endpoint ratios 1.2/1.25, interval
+20rem–80rem); retain the exact step-zero expression and root/interpolation
+limits. Treat these as arithmetic inputs only. Point Type to the actual full
+layout heading fragment. Make the prescribed three neighboring layout edits
+verbatim. Do not revise other research/theory or alter metadata/history.
+
+The initial batch and closing report are historical evidence. Their statements
+that entrypoint teaching/primitives and all three Slice06 teachings survived,
+and that a Fraunces example remains, are inaccurate for `c4531c8c`. Correct
+them additively in I1 sections: the entrypoint item and three CSS blocks were
+absent; two protected foundations passages were present; there are zero
+Fraunces mentions in the eight-file union. Do not add a font example to repair
+the reporting error. S07-01 remains CDC-accepted; CC may propose S07-02–05 done,
+but must leave CDC's one-done/four-open ledger statuses untouched.
+
+Only `knowledge/design/SKILL.md`, `guides/layout.md`, and `guides/type.md` may
+change in SOURCE. Planning updates are appended to this record and the existing
+closing report; the ledger may change in evidence/notes only. Preserve all
+issued inputs and unrelated work. No install, publication, new artifact, or
+full theory/fresh-context acceptance is authorized.
+
 ## Change and validation record
 
 ### Source delivery
@@ -184,3 +242,104 @@ technology, or user studies.
 
 This record is CC attestation for CDC review, not independent acceptance or
 parent closure.
+
+## Iteration01 correction and results — 2026-10-12
+
+### Historical claim correction
+
+The original return above describes source `c4531c8c` and is preserved as
+historical CC evidence. CDC's review supersedes the affected claims: at that
+revision the brief-led entrypoint's accepted colour-conversion teaching and
+three primitive CSS blocks were missing. The two protected foundations passages
+were present and remain unchanged; the third teaching was restored to the
+entrypoint by I1. The prior return also said a Fraunces example survived, but
+the initial eight-file union had zero Fraunces mentions. I1 did not add a font
+example; the current eight-file union still has zero. Initial five-row proposed
+outcomes, package hash and limits refer to that earlier candidate, not the I1
+return below.
+
+### I1 source and preservation checks
+
+- Active source before: `c4531c8c4fc3187968d3d79fcb065892b89fe2a8`. Source after:
+  `52f0b5208b538d9e1e351e22aa3e2c88e620014f`, tree
+  `7e420edb0b81b9399be23c3e686856df83c2e61c`, parent exactly `c4531c8c`.
+  Commit contains exactly `knowledge/design/SKILL.md`,
+  `knowledge/design/guides/layout.md`, and `knowledge/design/guides/type.md`,
+  with the two separate required trailers. No metadata/history change.
+- Restored the accepted two-sentence entrypoint teaching verbatim from the
+  assigned `3658f79a` source. Restored each of the Stack Primitive, Sidebar
+  Primitive and Intrinsic Grid fenced CSS contents; direct extraction/comparison
+  against the original Quick Reference confirmed all three byte-identical.
+  The surrounding entrypoint calls values illustrative, requires the adopting
+  project to define referenced custom properties, and introduces no spacing,
+  palette, font or token system. The old measure axiom, profile snippets and
+  equal-temperament analogy were not restored.
+- Repaired the layout code fence and declared the bases (`1rem`/`1.125rem`),
+  endpoint ratios (`1.2`/`1.25`) and interval (`20rem`–`80rem`) as inputs to an
+  arithmetic-only illustration. The literal step-zero expression is unchanged.
+  Root witnesses at width 800 are 16.999992px for root 16px and 20.833324px for
+  root 20px; these rounded arithmetic checks do not establish browser behavior.
+  Direct heading/route resolution fails old `#the-fluid-foundation` and resolves
+  the repaired `#the-fluid-foundation-a-scoped-arithmetic-illustration` exactly
+  once. The Type guide points to that fragment.
+- Applied the exact requested ratio heading, gap sentence and compositional
+  opening paragraph. Existing CIE and Linear Algebra bridge passages in
+  `foundations-of-design.md` compare byte-identically with source `3658f79a`.
+  The previously CDC-accepted identity removal remains applicable: the I1 change
+  is limited to these three files; targeted full eight-file source and package
+  scans found zero organization/site/font-roster/renamed-palette residues.
+
+### I1 guidance walks
+
+These update the initial source-based analytic walks; they are not fresh-context,
+browser or assistive-technology trials.
+
+1. **Literary page, no supplied identity.** Begin with the entrypoint brief and
+   Colour/Type context sections. Mark unknowns, propose choices for this task,
+   and evaluate actual prose, scripts and rendered colour pairs. The restored
+   CSS patterns are reusable starting points: define any custom properties for
+   this project and review the illustrative dimensions with the content. Ratios
+   and fixed, fluid or independent gaps remain local choices.
+2. **Existing interface with the three supplied `--client-*` tokens and its
+   chosen typeface.** Preserve names and mappings. Add a purpose alias only if
+   the existing semantics need it; preserve and inspect the supplied face,
+   scripts and fallback. The layout examples do not replace project spacing
+   definitions.
+3. **Independently supplied brown palette and Fraunces.** Both remain legitimate
+   user choices. Keep them if suitable, inspect actual rendered state pairs and
+   the supplied font's asset/axes. Current guidance contains no Fraunces example
+   and imposes no font or colour blacklist.
+4. **Renamed-preset negative control.** Anonymous warm-earth aliases bundled
+   with three site accents, fixed `1.333` scale and preset font-role mapping
+   still fail: changed labels do not make inherited identity choices brief-led.
+
+### I1 gates, package and recovery
+
+- Ran `make help`, `make check-skills`, `make check-package-paths`, fresh
+  `make design` and `git diff --check`. Skill metadata/version validation had
+  zero errors. The editorial summary again reported 18 skills above its soft
+  300-character target; the design entrypoint remains 360 characters. This
+  target is soft and was not repaired.
+- Package-path validation scanned 24 source skills/24 packages and 24 zips/388
+  Markdown files: zero version errors, zero hard failures, 593 warnings at 592
+  unique locations, three explicit exceptions and 678 skipped external URLs.
+  The default output hid detailed warning rows, as before.
+- Final package `target/skills/visual-design-system.zip`, built from committed
+  source, has SHA-256
+  `507859f0d1fc4b5abc0a00f87a982d5dbc8731fff6903cb4c324abd23014e729`.
+  Inspected all eight Markdown members and matched each byte-for-byte to the
+  committed source. Archive hash differs from the pre-commit build because
+  package timestamps change; member bytes are the content identity check.
+- A first route assertion used a prefix test and incorrectly treated the
+  repaired fragment as the old fragment. The corrected full-fragment heading
+  resolver confirms old fails/new resolves. This probe did not alter source.
+- Remaining unrun: fresh-context behavior (A02-09/P10-02), the complete
+  233-card/eight-file semantic review and original fidelity (A02-02/04–08,
+  P10-06/09–11), browser/accessibility behavior (A02-10/P10-04), and final
+  package/release and parent composition (P10-05/08 and existing Arc04/Project10
+  owners). No install or publication.
+
+The I1 facts above supersede only conflicting initial CC claims; the initial
+prompt, initial batch record, initial report and CDC verification remain
+preserved. This remains proposed CC evidence for CDC review; ledger statuses are
+not changed by the doer.
