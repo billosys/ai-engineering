@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.47**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.48**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -111,7 +111,8 @@ revision applicability for both.
 2. Slice06 is independently closed: source`3658f79a` ships the three accepted
    colour-pipeline corrections and history update; fresh package checks passed.
 3. Execute [Arc02/Slice07](arc02-theory-and-evidence/slice07-portable-identity-source-fixes/slice-plan.md):
-   remove inherited C&B identity/presets and preserve context-led method and
+   complete current Iteration01, preserving the accepted identity removal and
+   restoring usable teaching/examples; retain context-led method and
    supplied choices. Then take the next ready content cohort or Arc06 batch.
    Original-input blockers do not impose an all-project wait.
 4. Continue complete card/guide review in coherent source/topic cohorts, fixing
@@ -227,11 +228,18 @@ Arc01 is Operator-accepted and closed. Arc02/Slices01–05 are independently
 closed for bounded evidence; Slice05 I2 at `8d0a10c2`/`9541e4cf` closes all nine
 child criteria. Slice06 is independently closed at source`3658f79a`/planning`e8076bec`,
 with three actual colour corrections shipped and fresh package checks passed.
-Slice07 is open for portable identity source fixes. Arc06 is queued with no prompt
+Slice07 initial review accepts identity removal at source`c4531c8c`;
+its [Iteration01](arc02-theory-and-evidence/slice07-portable-identity-source-fixes/cc-prompt-iteration01.md)
+repairs deleted protected teaching/CSS, example/route/coherence and return accuracy.
+One child row done/four open; no slice closure or source repair by CDC. Arc06 is queued with no prompt
 issued; Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
 Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
 
 ## Version History
+
+- 1.48 (2026-10-12): Slice07 initial review accepts the identity-removal row;
+  issued bounded I1 for source preservation, usable example/route and honest
+  return accounting. Full scope, execution amendment and parent gates unchanged.
 
 - 1.47 (2026-10-12): Slice06 source/package return independently accepted and
   closed; opened Slice07 for inherited identity/preset removal. Concrete source

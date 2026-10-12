@@ -220,7 +220,31 @@ the literal six-decimal step0 expression at the two named root/width witnesses:
 inspection and the three analytic cases remain CC execution plus independent
 review; neither reading receipts nor this author witness proves future behavior.
 
+## Assignment history and current handoff
+
+- Initial `cc-prompt.md`, issuebf771347, returned at sourcec4531c8c/planning3e592fe8.
+  CDC initial review accepts S07-01; S07-02–05 remain open (F01–03).
+- **Current assignment:** `cc-prompt-iteration01.md`, issued2026-10-12 by the
+  commit containing this entry. Predecessor initial prompt; active for separate
+  CC repair of preservation, example/route/coherence and return accuracy.
+  SOURCE is c4531c8c4fc3187968d3d79fcb065892b89fe2a8. Exact narrower three-source/
+  three-planning write scope is in I1; all original five criteria/gates remain.
+
+CDC author readiness: inspected actual changed methods, original literal CSS
+and three correction passages, actual fragment/heading and example markup.
+Applied the new brief-led type/colour method and original preservation contract:
+restore reusable code as illustrations, preserve the accepted technical sentences,
+reconcile only necessary neighbors. Temporary virtual restoration/fence/target
+checks passed and the delivered c453 bytes failed those same witnesses. Root
+arithmetic already reproduces; two foundations teachings remain unchanged.
+No source repair by CDC, new software harness or broader theory rewrite.
+The prescribed recipe resolves actual output and leaves prose placement local.
+
 ## Version History
+
+- 1.1 (2026-10-12): Initial independent review accepts removal only; I1 repairs
+  missing protected teaching/CSS, unusable exercise and inconsistent neighbors,
+  and false return claims. Original criteria and parent gates remain.
 
 - 1.0 (2026-10-12): Opened authorized identity/preset removal on source3658f79a
   after Slice06 closure. Reuse accepted portable contract and arithmetic; compact
