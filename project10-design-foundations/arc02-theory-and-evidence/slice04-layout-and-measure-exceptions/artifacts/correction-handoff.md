@@ -253,20 +253,20 @@ The JSON below is the authoritative action registry. `retain` is used only where
     "path": "knowledge/design/SKILL.md",
     "source_sha256": "57833e7cecd5984bf1cd6c7b26def1194f7cbbdf83e24a4960bd739a6f26ff63",
     "span": [
-      208,
+      206,
       208
     ],
     "literal_offset_0based": [
       0,
-      154
+      176
     ],
     "file_byte_offsets": [
-      12941,
+      12919,
       13095
     ],
-    "original": "No media queries for layout. Primitives + fluid tokens handle all responsiveness. The test: if you removed every media query, would the layout still work?",
+    "original": "### Zero Breakpoints\n\nNo media queries for layout. Primitives + fluid tokens handle all responsiveness. The test: if you removed every media query, would the layout still work?",
     "disposition": "correct",
-    "replacement": "Start with intrinsic layout and fluid constraints. Use a justified media or container query when content, interaction, user need or output medium requires discrete adaptation. Treat query removal as a diagnostic, not a universal pass condition.",
+    "replacement": "### Zero Breakpoints\n\nStart with intrinsic layout and fluid constraints. Use a justified media or container query when content, interaction, user need or output medium requires discrete adaptation. Treat query removal as a diagnostic, not a universal pass condition.",
     "rationale": "Composed action for C04; zero-query rule and universal claim",
     "owner": "Arc04 implementation planning for live guidance; Arc03 owns browser/accessibility validation where implicated; P10-11 Operator/R owns missing original-source inputs. No implementation is assigned or accepted here.",
     "proposal_parts": {
@@ -282,20 +282,20 @@ The JSON below is the authoritative action registry. `retain` is used only where
     "line_target_contract": "literal_offset_0based is a half-open Unicode codepoint span within LF-joined inclusive source lines; file_byte_offsets is the equivalent half-open UTF-8 byte span in the pinned file.",
     "proposal_pointers": {
       "C04.01": {
-        "start": 0,
-        "end": 50
+        "start": 22,
+        "end": 72
       },
       "C04.02": {
-        "start": 51,
-        "end": 175
+        "start": 73,
+        "end": 197
       },
       "C04.03": {
-        "start": 176,
-        "end": 244
+        "start": 198,
+        "end": 266
       }
     },
     "part_rationale": "Each pointer identifies the exact inserted or retained literal clause for its source unit; identical parts are shared only where the source unit is retained verbatim.",
-    "replacement_sha256": "1a8f7b8a870a41c3eeacb327a08e83c7ee9476e805d98f80f5685f95eb796e40"
+    "replacement_sha256": "d447d26fb88b761c545970f4456268d751822b62b4a09638e49ff9237380c663"
   },
   {
     "action_id": "A-C05",
@@ -416,14 +416,14 @@ The JSON below is the authoritative action registry. `retain` is used only where
     ],
     "original": "An axiom is a rule that pervades the system without exception --- \\\"the\nmeasure should never exceed 60ch,\\\" for instance. You don\\'t manually\napply this rule to each element; you write it once, as a universal\nstyle, and then *the browser enforces it everywhere*. The consequences\nthat emerge from this axiom may surprise you --- elements with larger\nfont sizes will be physically wider, because `1ch` scales with font\nsize --- but those consequences are *sound*. They are your CSS doing\nexactly what you intended.",
     "disposition": "qualify",
-    "replacement": "Use a broad selector only when its inheritance and exception set are explicit, bounded and checked. Treat an axiom as a reusable default constraint, not a rule that must apply to every element without exception. A 60ch measure can guide prose; choose controls, data and other content by role. Use project conventions consistently while stating their scope and exceptions.",
+    "replacement": "Treat an axiom as a project-wide default within a stated domain, with explicit exceptions. Apply a broad selector only to an explicit subject set; check inheritance and exclusions. CSS Values defines `1ch` from the used font’s “0” glyph advance, subject to fallback rules; its width varies with font metrics, but layout outcomes still need review. A rendered result may reflect the declared CSS without proving the designer’s intent or that the outcome is suitable.",
     "rationale": "Composed action for C07; exceptionless axiom and universal enforcement",
     "owner": "Arc04 implementation planning for live guidance; Arc03 owns browser/accessibility validation where implicated; P10-11 Operator/R owns missing original-source inputs. No implementation is assigned or accepted here.",
     "proposal_parts": {
-      "C07.01": "Use a broad selector only when its inheritance and exception set are explicit, bounded and checked.",
-      "C07.02": "Treat an axiom as a reusable default constraint, not a rule that must apply to every element without exception.",
-      "C08.01": "A 60ch measure can guide prose; choose controls, data and other content by role.",
-      "C08.02": "Use project conventions consistently while stating their scope and exceptions."
+      "C07.01": "Treat an axiom as a project-wide default within a stated domain, with explicit exceptions.",
+      "C07.02": "Apply a broad selector only to an explicit subject set; check inheritance and exclusions.",
+      "C08.01": "CSS Values defines `1ch` from the used font’s “0” glyph advance, subject to fallback rules; its width varies with font metrics, but layout outcomes still need review.",
+      "C08.02": "A rendered result may reflect the declared CSS without proving the designer’s intent or that the outcome is suitable."
     },
     "unit_subjects": {
       "C07.01": "An axiom is a rule that pervades the system without exception --- \\\"the\nmeasure should never exceed 60ch,\\\" for instance.",
@@ -435,23 +435,23 @@ The JSON below is the authoritative action registry. `retain` is used only where
     "proposal_pointers": {
       "C07.01": {
         "start": 0,
-        "end": 99
+        "end": 90
       },
       "C07.02": {
-        "start": 100,
-        "end": 211
+        "start": 91,
+        "end": 180
       },
       "C08.01": {
-        "start": 212,
-        "end": 292
+        "start": 181,
+        "end": 347
       },
       "C08.02": {
-        "start": 293,
-        "end": 371
+        "start": 348,
+        "end": 465
       }
     },
     "part_rationale": "Each pointer identifies the exact inserted or retained literal clause for its source unit; identical parts are shared only where the source unit is retained verbatim.",
-    "replacement_sha256": "4fed4d0b7f32457d064cad64d8713dec9dd44764a4abb1b675d1d32a50eb8081"
+    "replacement_sha256": "c8486868c2cada75cb35c73865ca50dbf679f961a8b0934012a7f72b7338bece"
   },
   {
     "action_id": "A-C09-C10",
@@ -490,17 +490,17 @@ The JSON below is the authoritative action registry. `retain` is used only where
     ],
     "original": "The single most important principle. Every fixed value in your CSS is a\nplace where you have overridden the browser\\'s judgment with your own.\nSometimes this is necessary --- a maximum measure of `60ch`, a minimum\ntouch-target of `44px` --- but the default posture should always be to\n*suggest* rather than prescribe. Use `min-`, `max-`, and `clamp()`\ninstead of fixed values. Use `auto` instead of `100%`. Use `flex-basis`\ninstead of `width`. Each of these is an invitation for the browser to\nmake a contextually appropriate decision.",
     "disposition": "qualify",
-    "replacement": "Use constraints as a default method, while naming cases where a fixed value serves a requirement. A fixed CSS value is an author choice; assess its context and user effects rather than assuming the browser knows the task. For pointer targets, distinguish WCAG 2.2 SC 2.5.8 AA (24 by 24 CSS px with spacing, equivalent, inline, user-agent-control and essential exceptions) from SC 2.5.5 AAA (44 by 44 CSS px with equivalent, inline, user-agent-control and essential exceptions); a project may choose 44px as its own stronger target. Use `min-` and `max-` sizing properties to set bounds suited to the content. Use `clamp()` when its minimum, preferred and maximum calculations express the intended range; CSS Values §10.2 defines its comparison behavior, including minimum preference when bounds conflict. Use `auto` where the property’s layout algorithm makes it appropriate; `auto` and `100%` have property-specific meanings. Choose `flex-basis` for a flex item’s initial main-size input when that behavior is intended; it is not a general replacement for `width`. These mechanisms contribute values to layout algorithms; they do not guarantee a contextually appropriate result without review.",
+    "replacement": "Use constraints as a default method, while naming cases where a fixed value serves a requirement. A fixed CSS value is an author choice; assess its context and user effects rather than assuming the browser knows the task. For pointer targets, distinguish WCAG 2.2 SC 2.5.8 AA (24 by 24 CSS px with spacing, equivalent, inline, user-agent-control and essential exceptions) from SC 2.5.5 AAA (44 by 44 CSS px with equivalent, inline, user-agent-control and essential exceptions); a project may choose 44px as its own stronger target. Use `min-` and `max-` sizing properties to bound content; use `clamp()` when chosen minimum, preferred and maximum calculations express the intended range. Use `auto` or `100%` according to the property and formatting context; neither is universally preferable. For a flex item, choose `flex-basis` when its initial main-size input is intended; it is not a general substitute for `width`. These mechanisms contribute inputs to layout algorithms; they do not guarantee contextually appropriate outcomes without review.",
     "rationale": "Composed action for C09, C10; fixed values, measure and target examples CSS technique preference",
     "owner": "Arc04 implementation planning for live guidance; Arc03 owns browser/accessibility validation where implicated; P10-11 Operator/R owns missing original-source inputs. No implementation is assigned or accepted here.",
     "proposal_parts": {
       "C09.01": "Use constraints as a default method, while naming cases where a fixed value serves a requirement.",
       "C09.02": "A fixed CSS value is an author choice; assess its context and user effects rather than assuming the browser knows the task.",
       "C09.03": "For pointer targets, distinguish WCAG 2.2 SC 2.5.8 AA (24 by 24 CSS px with spacing, equivalent, inline, user-agent-control and essential exceptions) from SC 2.5.5 AAA (44 by 44 CSS px with equivalent, inline, user-agent-control and essential exceptions); a project may choose 44px as its own stronger target.",
-      "C10.01": "Use `min-` and `max-` sizing properties to set bounds suited to the content.",
-      "C10.02": "Use `clamp()` when its minimum, preferred and maximum calculations express the intended range; CSS Values §10.2 defines its comparison behavior, including minimum preference when bounds conflict.",
-      "C10.03": "Use `auto` where the property’s layout algorithm makes it appropriate; `auto` and `100%` have property-specific meanings.",
-      "C10.04": "Choose `flex-basis` for a flex item’s initial main-size input when that behavior is intended; it is not a general replacement for `width`. These mechanisms contribute values to layout algorithms; they do not guarantee a contextually appropriate result without review."
+      "C10.01": "Use `min-` and `max-` sizing properties to bound content; use `clamp()` when chosen minimum, preferred and maximum calculations express the intended range.",
+      "C10.02": "Use `auto` or `100%` according to the property and formatting context; neither is universally preferable.",
+      "C10.03": "For a flex item, choose `flex-basis` when its initial main-size input is intended; it is not a general substitute for `width`.",
+      "C10.04": "These mechanisms contribute inputs to layout algorithms; they do not guarantee contextually appropriate outcomes without review."
     },
     "unit_subjects": {
       "C09.01": "The single most important principle.",
@@ -527,23 +527,23 @@ The JSON below is the authoritative action registry. `retain` is used only where
       },
       "C10.01": {
         "start": 532,
-        "end": 608
+        "end": 687
       },
       "C10.02": {
-        "start": 609,
-        "end": 804
+        "start": 688,
+        "end": 793
       },
       "C10.03": {
-        "start": 805,
-        "end": 926
+        "start": 794,
+        "end": 920
       },
       "C10.04": {
-        "start": 927,
-        "end": 1194
+        "start": 921,
+        "end": 1049
       }
     },
     "part_rationale": "Each pointer identifies the exact inserted or retained literal clause for its source unit; identical parts are shared only where the source unit is retained verbatim.",
-    "replacement_sha256": "dc5d34cb586c0753218f9d0134a48caa232fdc92d2b233915488fd20babcf408"
+    "replacement_sha256": "ccb9c3a538c2b1fe40968e20678118a1f60c5d8a0c10ea564cb27b086b2fe284"
   },
   {
     "action_id": "A-C11",
@@ -768,12 +768,12 @@ The JSON below is the authoritative action registry. `retain` is used only where
     ],
     "original": "When you prescribe a height, you are declaring that you know how much\ncontent will be present. You almost certainly do not. When you prescribe\na width in pixels, you are declaring that you know the user\\'s viewport\nsize. You do not. When you prescribe a column count, you are declaring\nthat you know the container\\'s width. In a world of container queries\nand intrinsic design, you should not need to.",
     "disposition": "qualify",
-    "replacement": "A prescribed height assumes a content amount; use content-driven height where the task permits and test expanded content. Content can change, so this is a reason to test the assumption, not a universal ban on heights. A pixel width encodes a fixed size; test it across viewport and user settings. A fixed width may still serve a defined task when its consequences are checked. A column count depends on available container space and track sizing. Intrinsic layout and container queries offer alternatives, but fixed column counts may still be justified by task needs.",
+    "replacement": "A prescribed height constrains the box; content may overflow, clip or scroll, so verify that behavior against the task. Unknown or changing content is a reason to test clipping and overflow, not a universal argument against fixed heights. A pixel width encodes a fixed size; test it across viewport and user settings. A fixed width may still serve a defined task when its consequences are checked. A column count depends on available container space and track sizing. Intrinsic layout and container queries offer alternatives, but fixed column counts may still be justified by task needs.",
     "rationale": "Composed action for C14; fixed geometry assumptions and container-query claim",
     "owner": "Arc04 implementation planning for live guidance; Arc03 owns browser/accessibility validation where implicated; P10-11 Operator/R owns missing original-source inputs. No implementation is assigned or accepted here.",
     "proposal_parts": {
-      "C14.01": "A prescribed height assumes a content amount; use content-driven height where the task permits and test expanded content.",
-      "C14.02": "Content can change, so this is a reason to test the assumption, not a universal ban on heights.",
+      "C14.01": "A prescribed height constrains the box; content may overflow, clip or scroll, so verify that behavior against the task.",
+      "C14.02": "Unknown or changing content is a reason to test clipping and overflow, not a universal argument against fixed heights.",
       "C14.03": "A pixel width encodes a fixed size; test it across viewport and user settings.",
       "C14.04": "A fixed width may still serve a defined task when its consequences are checked.",
       "C14.05": "A column count depends on available container space and track sizing.",
@@ -791,31 +791,31 @@ The JSON below is the authoritative action registry. `retain` is used only where
     "proposal_pointers": {
       "C14.01": {
         "start": 0,
-        "end": 121
+        "end": 119
       },
       "C14.02": {
-        "start": 122,
-        "end": 217
+        "start": 120,
+        "end": 238
       },
       "C14.03": {
-        "start": 218,
-        "end": 296
+        "start": 239,
+        "end": 317
       },
       "C14.04": {
-        "start": 297,
-        "end": 376
+        "start": 318,
+        "end": 397
       },
       "C14.05": {
-        "start": 377,
-        "end": 446
+        "start": 398,
+        "end": 467
       },
       "C14.06": {
-        "start": 447,
-        "end": 567
+        "start": 468,
+        "end": 588
       }
     },
     "part_rationale": "Each pointer identifies the exact inserted or retained literal clause for its source unit; identical parts are shared only where the source unit is retained verbatim.",
-    "replacement_sha256": "5b6a8b773598cd68090989852ac1728094b529af5fcdad1eee303098fc402931"
+    "replacement_sha256": "763f7fe98e8150a40a3ec40019cfda8c48958a229ddb4624d89f46f4a519505f"
   },
   {
     "action_id": "A-C15",

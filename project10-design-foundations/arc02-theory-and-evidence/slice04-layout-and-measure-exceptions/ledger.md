@@ -53,3 +53,11 @@ Current [C2/H2 review](cdc-verification.md#iteration02-independent-review--2026-
 accepts S04-03 and renews preservation; five done/four open. [Iteration03](cc-prompt-iteration03.md)
 repairs I2-F01–F04. Earlier proposal/pending statements are historical; all nine
 criterion texts, accepted work and parent gates retained. No slice closure/advance.
+
+## Iteration03 CC proposed return — 2026-10-12
+
+The current [proposed return](closing-report.md) records the exact five-path
+assignment, corrected semantic joins, current readback and bounded replay.
+I2-F01–F04 have CC-proposed corrections; CDC review is pending. S04-01/02/03/05/08
+remain done only within their prior independently accepted scope. S04-04/06/07/09
+remain open. No row, slice, arc, project or release gate is closed or advanced.
