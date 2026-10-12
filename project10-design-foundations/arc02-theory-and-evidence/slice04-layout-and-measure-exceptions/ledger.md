@@ -61,3 +61,9 @@ assignment, corrected semantic joins, current readback and bounded replay.
 I2-F01–F04 have CC-proposed corrections; CDC review is pending. S04-01/02/03/05/08
 remain done only within their prior independently accepted scope. S04-04/06/07/09
 remain open. No row, slice, arc, project or release gate is closed or advanced.
+
+Substantive candidate `cf5d2d05d9096cb0739e6dc46805494744be7880` (tree
+`9eb09e990b886b46fea11db809853c03663079e3`) is a direct child of the I3 issue.
+The receipt-only child is a direct child of that candidate and changes only the
+execution notes, closing report and this ledger. Commit/trailer/path integrity is
+recorded in those receipt notes. CDC review remains pending; status is unchanged.
