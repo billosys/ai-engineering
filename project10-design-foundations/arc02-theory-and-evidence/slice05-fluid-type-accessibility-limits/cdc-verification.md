@@ -1,8 +1,8 @@
 # Slice05 CDC verification
 
-**Current verdict:** Iteration01 partially accepted at C5bb54471/Hb418607d.
-S05-01/03/05/08 done; S05-02/04/06/07/09 open. Iteration02 below is current;
-initial findings and receipts remain historical evidence. Slice05 remains open.
+**Current verdict:** Iteration02 accepted at C8d0a10c2/H9541e4cf; all nine
+rows done and Slice05 closed. The final review below is current; earlier
+partial verdicts, findings and issued prompts remain historical evidence.
 
 ## Initial independent review — 2026-10-12
 
@@ -418,3 +418,80 @@ nine criterion texts passed. Exactly S05-01/05 become newly done; S05-03 is
 retained and current S05-08 integrity is reproduced. SOURCE remains314e5802,
 with assigned design bytes unchanged. The commit containing this I2 prompt is
 the issue commit, a child of H; it is not a CC candidate or slice closure.
+
+## Iteration02 independent review and Slice05 closure — 2026-10-12
+
+**Accepted and closed: all nine rows done.** CDC Sofie independently reviewed
+[Iteration02](cc-prompt-iteration02.md) against its unchanged nine criteria.
+Issue `bea46d544aa8ae7e6ad596f5fdf30339db83a758`; candidate
+`8d0a10c2d4480f17109393bdaa1fbd9ee98ed19f`, tree
+`bfac7d6049ecf9dd3cc00c611eb130ef30921500`; report-only child
+`9541e4cf9749a5a956c8686b3d7c7ce404f9a017`. Current packet bytes match H.
+The independently reviewed [CC report](closing-report.md) remains the doer record;
+this section supplies acceptance, rather than rewriting its proposed statuses.
+
+### Independent evidence and row decisions
+
+CDC read all seven complete windows/98 lines, all25 results/125 dimension
+assessments, all30 retained substantive boundaries and five markup classifications,
+the exact W02 spacing/type alias, and all six original-clause comparisons. The
+coverage projection accounts for each selected byte; retained substantive claims
+have owners and are not silently recast as markup. The previously missing W07
+construction is Q25. Root, inline-axis, endpoint and conformance comparisons now
+use the actual originals and explain their conditional agreement or conflict.
+
+CDC virtually composed all25 actions into the five complete files and inspected
+the affected paragraphs, table cells and neighboring continuations. Q17/Q18 form
+one usable paragraph; Q19 preserves the complete resize assertion; Q20 keeps
+the spacing row and table shape. Q23 explicitly retains the unresolved 1.25/1.2
+endpoint choice; its placeholder is not an installed correction. Q24 preserves
+the Bringhurst continuation as a separately owned, unassessed claim. Application
+must reconcile that retained attribution; this acceptance does not validate it.
+
+CDC extracted and executed the current checker from committed notes: positive
+25-unit packet passed; all29 inherited and both I2 controls rejected. The new
+coherent substituted-SK196 dataset fails at `exact-four-source-inputs`; omitted
+B14 fails at `source-projection-segment-join`. Coherent table/neighbor controls
+reach `table-cell-not-row` and `complete-critical-subject`. Strict duplicate-key,
+JSON and registry-envelope controls reject. The output prints the two I2 routes
+again in its inherited-control listing; the actual construction/assertions prove
+29 inherited plus two new controls. This presentation duplication is not an
+additional control or a substantive failure. No keyword/structural checker is
+used as a semantic oracle.
+
+| Row | Independent disposition and evidence |
+|---|---|
+| S05-01 | done, reconciled: fresh I2 intake/readback and unchanged original contract; retained I1 construction acceptance applies. |
+| S05-02 | done, reproduced and human-reviewed: complete windows, claims, boundaries, markup and alias witness; no selected assertion omitted. |
+| S05-03 | done, retained: accepted primary-comparison block is byte-identical and applicable to the same source/windows; historic fidelity and runtime remain separate. |
+| S05-04 | done, human-reviewed: all five dimensions for25 units and six actual clause comparisons; original warrants and not-assessed boundaries are explicit. |
+| S05-05 | done, retained/reconciled: accepted model block is unchanged; current replay consumes all144 cases and exact four formula inputs. Prior independent numeric witnesses apply; no new browser inference. |
+| S05-06 | done, composed and inspected:25 source-bound actions, complete prose/table joins and usable future protocol; endpoint and retained attribution have explicit re-entry. |
+| S05-07 | done, independently replayed: positive packet,29+2 meaningful controls and strict parser/envelope failures; human-only limits retained. |
+| S05-08 | done, freshly reproduced: exact seven-path candidate and one-path receipt, direct parents and both trailers, preserved inputs and selected source blobs, LF/EOF and diff checks. |
+| S05-09 | done, reconciled: report inventories all five supporting outputs, all nine rows, recoveries, unrun scope and arc consequences; no source/runtime/full-corpus completion claim. |
+
+Before reviewer edits, the rendered-prose link check resolved56 local links and
+34 fragments across Slice05 Markdown. Its initial naive pass matched a Python
+subscript/call inside a historical fenced replay as a Markdown link; excluding
+fenced/inline code corrected that helper error. Candidate/receipt integrity and
+all seven current output bytes matched committed H; CC preserved criterion texts
+and statuses. Main is `314e580282d2c801e41f6decfbbf07483957268c`; all five selected
+design files still equal assigned `dffa504e851b03b8e4746f1941068e4cc850b612`.
+
+### Bubble-up to Arc02 and next assignment
+
+The assigned bounded fluid-type/accessibility evidence and literal handoff are
+delivered. All seven windows, nine criteria and five supporting outputs are
+accounted for, with no silent drop. Repeated assumptions were exposed by complete
+paragraph/source walks and coherent controls; fixed-ID counting alone was not
+adequate. Accepted model/primary evidence was reused rather than regenerated.
+
+The Operator's authorized project revision1.45 already moves historical Arc03
+behavior and Arc04 application owners into current Arc02. Preserve those tables
+as issued history; Arc02 now owns their runtime, configuration and content
+follow-up, including Q23 and the retained Bringhurst continuation. No new scope
+amendment is needed. Update the arc's status/sequence now and open Slice06 for
+actual colour-pipeline source fixes under Expedited Mode. All parent criteria,
+233-card/eight-live review, P10-11, actual browser/accessibility, metadata/GitHub,
+package/composition and release/Operator gates remain open at their prior scope.

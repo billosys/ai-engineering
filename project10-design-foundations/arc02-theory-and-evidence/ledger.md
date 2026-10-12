@@ -225,3 +225,13 @@ records four done/five open rows at C5bb54471/Hb418607d; current I2 restores
 coverage/pairs/prose/input guards. Valid model and primary evidence are protected.
 External SOURCE at 314e5802 preserves assigned design bytes. Parent criteria/statuses
 and all full-corpus, R/T/C/L/G, P10-11, live/metadata/package/release gates remain.
+
+## Slice05 closure and Slice06 source handoff — 2026-10-12
+
+[Slice05 independent closure](slice05-fluid-type-accessibility-limits/cdc-verification.md#iteration02-independent-review-and-slice05-closure--2026-10-12)
+accepts all nine child criteria at C8d0a10c2/H9541e4cf. Current Arc02 owns
+its unresolved endpoint/retained-attribution and actual behavior follow-up.
+[Slice06](slice06-colour-pipeline-source-fixes/slice-plan.md) opens for three
+live colour-pipeline corrections and source/version/package checks. All ten arc
+criterion texts/statuses remain unchanged: one done, nine open. No DES finding,
+whole live file or full-corpus gate is closed by child evidence acceptance.

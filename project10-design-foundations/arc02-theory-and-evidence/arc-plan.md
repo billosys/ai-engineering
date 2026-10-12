@@ -40,8 +40,8 @@ before each source assignment. Keep all 233 identities and eight live-file owner
 | [Slice02 — nonlinear colour pipeline](slice02-nonlinear-colour-pipeline/slice-plan.md) | Closed after independent review and Operator-approved bounded repair | Fidelity remains distinct from technical evidence |
 | [Slice03 — token conventions](slice03-token-system-conventions/slice-plan.md) | Closed at `3817d83c`; reuse scoped policy and proposed corrections | No universal layer rule or live adoption implied |
 | [Slice04 — layout and measure](slice04-layout-and-measure-exceptions/slice-plan.md) | Closed at `b6acb22f`; reuse intrinsic-first/contextual exception evidence | Final behavior remains to be checked |
-| [Slice05 — fluid-type limits](slice05-fluid-type-accessibility-limits/slice-plan.md) | Current I2 return `8d0a10c2`/`9541e4cf` unreviewed; existing contract unchanged | Review returned evidence; close when its original criteria pass |
-| Next new slice — first live fixes | Apply a coherent accepted correction set across affected guide/entrypoint repeats; settle configuration choices, validate and commit | Accepted applicable evidence and fresh exact source scope; no wait for full corpus |
+| [Slice05 — fluid-type limits](slice05-fluid-type-accessibility-limits/slice-plan.md) | Closed after independent I2 review at `8d0a10c2`/`9541e4cf`; nine criteria done | Reuse bounded model/primary/correction evidence; actual behavior remains |
+| [Slice06 — colour-pipeline source fixes](slice06-colour-pipeline-source-fixes/slice-plan.md) | Open: correct three live matrix/pipeline assertions, update the owning skill version/history and verify the fresh package | Accepted Slice02 proof; fresh exact main pin; no full-corpus wait |
 | Portable-default batch | Remove C&B names/domains/palettes/font/site prescriptions while retaining portable guidance and supplied identity | Accepted Arc01 contract; inspect full affected scope |
 | Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
 | Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
@@ -105,10 +105,12 @@ string-equality or endpoint-resolution checks.
 ## Workflow and current assignment
 
 Two contributors: CDC Sofie plans/reviews separate CC work via Operator relay.
-Expedited Mode remains active. Current Slice05 I2 prompt is preserved and its
-return is unreviewed; do not retrofit new outputs or source edits into that
-assignment. Review it next under its original contract, then make the next new
-assignment a source-fix slice. No initial source prompt is issued by this roadmap.
+Expedited Mode remains active. Slice05 I2 is independently accepted and closed;
+its issued prompts and historical evidence are preserved. Slice06 is the current
+source implementation assignment, issued through its complete open set. Its
+three occurrence fixes do not close the entire colour finding or live-file review.
+Next, prepare the bounded portable-default/C&B removal batch; reconcile pending
+fluid-scale configuration choices before issuing their source mutation scope.
 
 New mutation assignments require fresh exact main pins/paths, complete open sets,
 author readiness, meaningful affected checks and applicable version/package gates.
@@ -119,6 +121,11 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.26 (2026-10-12): Slice05 I2 independently closed, all nine criteria done;
+  completed the Operator-amended first source-fix handoff as Slice06. The batch
+  corrects three repeated colour-pipeline assertions using accepted Slice02 proof.
+  Retain Slice05 endpoint/attribution/runtime follow-up in Arc02 and all parent gates.
 
 - 1.25 (2026-10-12): Operator amendment after Slices01–05 exposed evidence-heavy
   execution; combine investigation and source fixes, reuse accepted evidence and

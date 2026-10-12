@@ -277,3 +277,12 @@ records four done/five open rows at C5bb54471/Hb418607d; current I2 restores
 coverage/pairs/prose/input guards. Valid model and primary evidence are protected.
 External SOURCE at 314e5802 preserves assigned design bytes. Parent criteria/statuses
 and all full-corpus, R/T/C/L/G, P10-11, live/metadata/package/release gates remain.
+
+## First source-fix assignment — 2026-10-12
+
+Arc02/Slice05 is independently closed at C8d0a10c2/H9541e4cf; its bounded
+accessibility model/corrections are accepted, not installed or browser-proven.
+[Arc02/Slice06](arc02-theory-and-evidence/slice06-colour-pipeline-source-fixes/slice-plan.md)
+is now the source implementation handoff. It applies three accepted colour-stage
+corrections, updates skill history and verifies fresh packaged guidance. All
+thirteen project criterion texts/statuses remain unchanged; no release acceptance.

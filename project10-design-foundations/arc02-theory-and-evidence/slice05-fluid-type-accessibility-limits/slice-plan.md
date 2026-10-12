@@ -1,6 +1,6 @@
 ---
 slice: slice05-fluid-type-accessibility-limits
-status: open
+status: closed
 family: T
 ---
 
@@ -59,9 +59,9 @@ All original/source/corpus/runtime/Arc04/Arc06/release/Operator gates remain.
 |---|---|---|
 | [Initial prompt](cc-prompt.md) |2026-10-12; predecessor dc7b0732fa8a78cf47713aecdaabbc5ef05686b6; issue is commit containing prompt | Returned as C37f74622/H9254e094; two rows accepted, seven open; I1 supersedes current execution. |
 | [Iteration01](cc-prompt-iteration01.md) | 2026-10-12; predecessor 9254e094901e619717abf09e9b3ee7683d56fbb0; issue is commit containing I1 | Returned C5bb54471/Hb418607d; four done/five open; I2 supersedes current execution. |
-| [Iteration02](cc-prompt-iteration02.md) | 2026-10-12; predecessor b418607dee4ba499b1d32e0c643e8d10158cd529; issue is commit containing I2 | Active: I1-F01–F04; same seven windows/nine criteria; primary/model sections protected. |
+| [Iteration02](cc-prompt-iteration02.md) | 2026-10-12; predecessor b418607dee4ba499b1d32e0c643e8d10158cd529; issue is commit containing I2 | Returned C8d0a10c2/H9541e4cf; independently accepted and closed, all nine criteria done. |
 
-Current assignment is **Iteration02**. The [I1 independent review](cdc-verification.md#iteration01-independent-review--2026-10-12) accepts four rows; five remain open. All issued prompts are preserved.
+Final assignment **Iteration02** is [independently accepted](cdc-verification.md#iteration02-independent-review-and-slice05-closure--2026-10-12); all nine rows done and Slice05 closed. All issued prompts and prior partial acceptance records are preserved. Historical owner labels are superseded for future work by the current project/arc amendment, not retroactively changed here.
 SOURCE/main externally advanced to 314e5802; all five assigned design blobs remain byte-identical to dffa504e. No design repin or source mutation is assigned.
 
 CDC applied the ordinary engineering-methods readiness check: read governing
@@ -72,6 +72,10 @@ remain evidence-dependent. Author examples are self-checked, not independently
 accepted CC results. Reading/recovery is recorded by actual scope, not count claims.
 
 ## Version History
+
+- 1.3 (2026-10-12): I2 independently accepted at C8d0a10c2/H9541e4cf; all
+  nine rows done and bounded evidence slice closed. Runtime/configuration/content
+  follow-up belongs to current Arc02; full-corpus and parent gates unchanged.
 
 - 1.2 (2026-10-12): I1 independently reviewed, four done/five open; I2 addresses
   residual source coverage, pair identity, prose joins and formula/control guards.

@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.45**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.46**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -106,14 +106,12 @@ revision applicability for both.
 
 ## Immediate sequence and working method
 
-1. Review the existing Arc02/Slice05 Iteration02 return under its issued contract.
-   Close it when its existing criteria are satisfied; do not add implementation
-   work or new process requirements to the in-flight assignment.
-2. Make the **next new Arc02 assignment a source-fix batch**, starting with a
-   coherent set of independently accepted Slice01–04 corrections and Slice05
-   corrections once accepted. Resolve remaining configuration choices before
-   mutation, rather than blindly applying a proposed handoff. Update every
-   affected repeat, verify the result and commit source changes in that slice.
+1. Slice05 Iteration02 is independently closed under its original contract.
+   Preserve its evidence and remaining configuration/runtime follow-up in Arc02.
+2. Execute [Arc02/Slice06](arc02-theory-and-evidence/slice06-colour-pipeline-source-fixes/slice-plan.md):
+   correct three live colour-pipeline assertions using accepted Slice02 evidence,
+   update the skill history and check the package in that same slice. Resolve
+   remaining fluid-scale configuration choices before their later mutation batch.
 3. Remove C&B coupling in a bounded source batch using the accepted portable
    contract. Then take the next ready content cohort or Arc06 normalization
    batch according to evidence, dependencies and context headroom. Original-input
@@ -206,8 +204,8 @@ new measurement project or general framework adoption follows from this amendmen
 
 CDC Sofie plans and independently reviews separate CC execution, with Operator
 relay: Two-Contributor Workflow, no CRC. Expedited Mode remains enabled. Preserve
-issued prompts and existing acceptance scopes; this plan does not rewrite or
-accept Slice05's current return. Independent slice reviews use
+issued prompts and existing acceptance scopes. Slice05's current return is
+accepted by its independent record. Independent slice reviews use
 `cdc-verification.md`. Reviewer-authored source repairs need another verifier.
 
 Prepare a complete source-scoped slice open set and author-readiness check before
@@ -227,14 +225,19 @@ Publication remains a separate Operator decision.
 
 ## Current status
 
-Arc01 is Operator-accepted and closed. Arc02/Slices01–04 are closed for bounded
-evidence; their live fixes remain to be applied. Slice05 I1 accepted four rows
-and left five open; I2 candidate `8d0a10c2` and receipt `9541e4cf` arrived while
-this amendment was prepared and remain **unreviewed**. Its issued prompt and
-outputs are unchanged by this amendment. Arc06 is queued with no prompt issued.
-Arc04 is a roadmap entry, not an opened arc. P10-01 remains done; P10-02–13 open.
+Arc01 is Operator-accepted and closed. Arc02/Slices01–05 are independently
+closed for bounded evidence; Slice05 I2 at `8d0a10c2`/`9541e4cf` closes all nine
+child criteria. Slice06 is open for actual colour-pipeline source corrections;
+no live change is claimed before its execution/review. Arc06 is queued with no
+prompt issued. Arc04 is a roadmap entry, not an opened arc. P10-01 remains done;
+P10-02–13 open. Full-corpus, source-readiness and release gates remain.
 
 ## Version History
+
+- 1.46 (2026-10-12): Independently accepted Slice05 I2 and closed its nine
+  criteria; opened Arc02/Slice06 for the first actual live colour-pipeline fixes.
+  Reuse accepted proof and retain endpoint/attribution/runtime work in Arc02.
+  Execution amendment and all parent/corpus/release criteria are unchanged.
 
 - 1.45 (2026-10-12): Operator requested less complexity/workload and earlier
   fixes after Arc02/Slices01–05 exposed a long evidence-to-implementation delay.
