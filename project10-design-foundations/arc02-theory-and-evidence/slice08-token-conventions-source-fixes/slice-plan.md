@@ -1,6 +1,6 @@
 ---
 slice: slice08-token-conventions-source-fixes
-status: open
+status: closed
 ---
 
 # Arc02 Slice08 — Token Conventions Source Fixes
@@ -264,8 +264,8 @@ rerunning with `python3` completed it and the link check successfully.
 - Initial `cc-prompt.md`, issued at `5f7c11ed`, returned at source `d644db46` /
   planning `a2972783` after rebase onto byte-identical live inputs. CDC accepts
   S08-02/03; S08-01/04 remain open for F01.
-- **Current assignment:** `cc-prompt-iteration01.md`, issued 2026-10-12 by this
-  introducing commit, predecessor `cc-prompt.md`; active for separate CC.
+- **Final assignment:** `cc-prompt-iteration01.md`, issued 2026-10-12 by this
+  introducing commit, predecessor `cc-prompt.md`; returned by separate CC and independently accepted at source `1489e767` / planning `a900b68a`.
   Rename the missed design heading and update its existing return records.
   I1 source allowlist is only design.md; planning allowlist is only the existing
   batch record, ledger evidence/notes and closing report. Its narrow delta scope
@@ -289,7 +289,17 @@ confirm six planning writes, unchanged issued prompt/CC return/parent ledgers,
 four preserved criteria with two done/two open, 34 local destinations and four
 fragments resolved, LF/EOF and diff checks passed. Main remains unchanged.
 
+## Closure
+
+All four criteria are independently done in [the current CDC closure](cdc-verification.md#iteration01-independent-review-and-closure--2026-10-12).
+No further CC assignment. Expedited Mode advances to Arc06/Slice01; all parent
+and broader research/fidelity/behavior gates remain open.
+
 ## Version History
+
+- 1.2 (2026-10-12): Accept exact one-line I1 repair and current return/package
+  evidence; close all four rows without changing parent scope.
+
 
 - 1.1 (2026-10-12): Initial review accepts S08-02/03; issued one-line I1 for the
   omitted design heading and accurate return scope. Accepted token corrections,

@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.50**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.51**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -80,7 +80,7 @@ stay stable; numerical order does not imply a dependency barrier.
 |---|---|---|
 | [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Closed; accepted contract, baseline and explicit source-readiness carryover | Operator composition acceptance at `38b66d0d` |
 | [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Active; apply accepted corrections, remove C&B coupling, review/fix cards and guides, and implement/test the accessibility/typesetting floor | Accepted contract and evidence for each changed claim; originals only for dependent fidelity checks |
-| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Queued, independently ready; select contract, pilot and normalize all existing metadata, then prove GitHub rendering | Accepted mapping and pilot before bulk changes; no book-original dependency |
+| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Active Slice01:3.2 existing-field contract, all233 census and ten actual normalized pilot cards; bulk plus hosted checks follow independent acceptance | Accepted mapping and pilot before bulk changes; no book-original dependency |
 | Arc04 — package and release readiness (`arc04-guides-and-package`) | Plan near execution; complete routes/snippets, isolated package, final specimens and Project11 handoff | Accepted input revisions for each task; full Arc02/06 completion and Project09 acceptance before release |
 
 **Was:** a separate Arc03 accessibility/typesetting phase and Arc05 final
@@ -112,10 +112,11 @@ revision applicability for both.
    colour-pipeline corrections and history update; fresh package checks passed.
 3. Slice07 is independently closed at source`52f0b520`/planning`7a135d80`:
    identity removed, usable brief-led methods and protected teaching restored.
-   Execute [Arc02/Slice08](arc02-theory-and-evidence/slice08-token-conventions-source-fixes/slice-plan.md)
-   to complete Iteration01: seven token corrections pass; the prescribed comparison
-   heading and its final return remain. Then take the next ready
-   content cohort or Arc06 batch; originals do not impose an all-project wait.
+   [Arc02/Slice08](arc02-theory-and-evidence/slice08-token-conventions-source-fixes/slice-plan.md)
+   is independently closed at source `1489e767`/planning `a900b68a`, all four done.
+   Execute [Arc06/Slice01](arc06-card-metadata-and-rendering/slice01-schema-and-field-inventory/cc-prompt.md):
+   complete metadata contract/census and ten actual source pilots, then normalize
+   the remaining corpus after acceptance. Originals do not impose an all-project wait.
 4. Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -230,12 +231,18 @@ closed for bounded evidence; Slice05 I2 at `8d0a10c2`/`9541e4cf` closes all nine
 child criteria. Slice06 is independently closed at source`3658f79a`/planning`e8076bec`,
 with three actual colour corrections shipped and fresh package checks passed.
 Slice07 is independently closed at source`52f0b520`/planning`7a135d80`, all five
-criteria done. Slice08 initial return ships seven token corrections; two rows
-are accepted and two remain open for its one-line heading/return Iteration01. Arc06 is queued with no prompt issued;
+criteria done. Slice08 is independently closed at source `1489e767`/planning
+`a900b68a`, four criteria done, seven token repairs and prescribed heading shipped.
+Arc06/Slice01 is active with a complete initial contract/source-pilot assignment;
 Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
 Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
 
 ## Version History
+
+- 1.51 (2026-10-12): Independently close Slice08 after exact one-line I1 repair;
+  activate Arc06/Slice01 in Expedited Mode with historical3.2 contract and ten
+  actual metadata pilots. Preserve all thirteen project criteria and parent gates.
+
 
 - 1.50 (2026-10-12): Arc02/Slice08 initial source/package review accepts two
   rows; bounded I1 repairs the prescribed comparison heading and final return.

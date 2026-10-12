@@ -1,6 +1,6 @@
 ---
 arc: arc06-card-metadata-and-rendering
-status: planned
+status: active
 depends-on: [arc01-portable-contract]
 blocks: [arc04-guides-and-package final release readiness]
 related: [arc02-theory-and-evidence, project08-concept-card-metadata]
@@ -50,7 +50,7 @@ shapes and GitHub behavior, not copied values from newer cards.
 
 ## Revised slice breakdown
 
-No CC prompt has been issued in this arc. These are the current execution units:
+Slice01 is now active under its initial `cc-prompt.md`; Slice02 is still unissued. These are the current execution units:
 
 | Unit and retained identifier | Delivery | Gate |
 |---|---|---|
@@ -102,8 +102,11 @@ release is not changed by this migration.
 
 Arc06 can run at the next ready handoff after the first live-correction batch,
 without waiting for Arc02's entire corpus/input work. Two contributors, CDC Sofie
-and separate CC via Operator relay; Expedited Mode remains active. No competing
-assignment is issued here, and current Arc02/Slice05 work is preserved.
+and separate CC via Operator relay; Expedited Mode remains active. Arc02/Slice08 is independently closed; current assignment is Arc06/Slice01,
+main input `1489e767`/planning predecessor `a900b68a`. Other Arc02 work is open
+and preserved. Project08 P-15 remains open: select historical3.2 fallback for
+the ten-card candidate, then freeze its exact crosswalk through independent
+Slice01 acceptance before bulk normalization.
 
 Arc04 consumes accepted normalization/rendering revisions and owns package/final
 release validation, including applicability after any later source edits. Former
@@ -112,6 +115,11 @@ baseline-to-final union and attributed independent/Operator composition gate.
 No ledger row is accepted by this amendment.
 
 ## Version History
+
+- 1.2 (2026-10-12): Activate combined Slice01 after Slice08 closure; authorized
+  3.2 fallback, complete census and ten actual source cards/helper. Retain all
+  seven arc criteria and all233 hosted/body/no-fill obligations.
+
 
 - 1.1 (2026-10-12): Operator workload/latency amendment after Arc02 evidence-only
   slices; combine contract with pilot and combine book/web mutation with hosted

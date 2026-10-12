@@ -118,3 +118,59 @@ remain at their recorded T/L/Arc02/Arc04 owners. Full 233-card/eight-live/five-
 dimension review, P10-11 readiness/fidelity, actual fresh-context/browser/
 accessibility, Arc06 metadata/GitHub and Arc04 final package/composition/release
 remain open. Main's unrelated knowledge/lfe and other planning work are preserved.
+
+## Iteration01 independent review and closure — 2026-10-12
+
+**Current verdict: all four S08 rows done; Slice08 closed.** The initial verdict
+above remains historical. CDC Sofie reviewed separate CC's source `1489e76730b759f01fb1e839a18b363d8296b610`,
+parent `d644db46913823eed957bb16a48d062e1a7dd71f`, and planning `a900b68a10a0110c453867b827f865a4d8008bb6`,
+parent issue `e1b92a96e5b9d536b0ec24eeb8d1ea96150f7854`.
+Both exact parents, the one-source/three-planning path scopes and separate
+required trailers reproduce. No CDC source repair was performed.
+
+The source equals its predecessor with exactly one replacement of
+`## The Convergence Thesis` by `## Comparing Design Systems`. Every other
+byte in design.md and the other seven live Markdown files is preserved.
+The seven accepted correction blocks, 21-action reconciliation, contextual cases,
+colour teachings and CSS therefore retain their earlier applicability. Metadata
+and sibling history remain unchanged at 1.0.3. Earlier heading pointers are
+historical; the new context is `design.md#comparing-design-systems`.
+The unchanged eight-file inbound-route check needs no alias. The accepted
+unique-heading predicate now passes; its initial wrong/duplicate specimens
+remain discriminating. No fresh theory replay or historical-fidelity claim.
+
+CDC independently compared the CC return: batch/report preserve their issued
+prefixes and append the exact heading repair, current context, preservation,
+checks and limits. All four original criterion/verification/significance/origin
+fields and CC's reviewer-owned statuses remain exact. Issued plans/prompts and
+the earlier CDC record match their issuing bytes. CC's sandbox-denied attempt
+and authorized recovery remain visible. Its sole supporting artifact remains
+the batch record; no extra evidence framework was introduced.
+
+Fresh CDC main `make help`, `make check-package-paths` and `make design` exited
+zero. The package gate reports 24 source skills/24 packages/zero version errors,
+zero hard path failures, 596 warnings at 594 locations, three exceptions and
+681 skipped external URLs. The unchanged description evidence is retained:
+18 above the soft target, including design at 360 characters. All eight actual
+packaged Markdown members equal source `1489e76730b759f01fb1e839a18b363d8296b610` byte-for-byte.
+CDC ZIP SHA-256: `4460beb48d098748f855d6e7f3975e5ed2c9382fd867cd4c6ec9469c41a7b4e1`.
+CC's different archive hash reflects archive metadata; content identity was
+checked member by member. Source/planning committed diffs pass `git diff --check`.
+
+| Row | Current CDC status | Closure evidence |
+|---|---|---|
+| S08-01 | done | Seven prior corrections plus the separately prescribed heading now delivered; every other source byte preserved. |
+| S08-02 | done | Accepted 21-action/counterpart and preservation evidence remains applicable by byte comparison. |
+| S08-03 | done | Current exact scopes, parents, trailers, heading/route, fresh gates and all eight package identities reproduced. |
+| S08-04 | done | Accurate appended return covers four outcomes, cases, sole artifact, attempts and explicit downstream limits. |
+
+Expedited Mode opens Arc06/Slice01 next, a ten-card metadata pilot with the
+complete 233-header census. Missing originals do not block that representation
+work. Arc02 is still open: remaining type/layout/perception/body assertions,
+all233/eight-live/five-dimensional semantic review and dependent fidelity remain.
+The hosted matrix sample separately reveals literal Unicode escapes in its body;
+that content/presentation repair belongs to Arc02, not metadata-only mutation.
+P10-11 readiness, fresh-context/browser/accessibility, full Arc06 hosted rendering
+and Arc04 package/composition/release gates remain open. Neither this child
+closure nor the next assignment accepts a parent criterion. No push/install/
+publication; unrelated planning projects and SOURCE knowledge/lfe remain untouched.
