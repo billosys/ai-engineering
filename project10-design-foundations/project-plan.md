@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.49**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.50**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -113,7 +113,8 @@ revision applicability for both.
 3. Slice07 is independently closed at source`52f0b520`/planning`7a135d80`:
    identity removed, usable brief-led methods and protected teaching restored.
    Execute [Arc02/Slice08](arc02-theory-and-evidence/slice08-token-conventions-source-fixes/slice-plan.md)
-   to apply seven surviving accepted token corrections. Then take the next ready
+   to complete Iteration01: seven token corrections pass; the prescribed comparison
+   heading and its final return remain. Then take the next ready
    content cohort or Arc06 batch; originals do not impose an all-project wait.
 4. Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
@@ -229,12 +230,16 @@ closed for bounded evidence; Slice05 I2 at `8d0a10c2`/`9541e4cf` closes all nine
 child criteria. Slice06 is independently closed at source`3658f79a`/planning`e8076bec`,
 with three actual colour corrections shipped and fresh package checks passed.
 Slice07 is independently closed at source`52f0b520`/planning`7a135d80`, all five
-criteria done. Slice08 is open for seven residual token source corrections and
-current 21-action reconciliation. Arc06 is queued with no prompt issued;
+criteria done. Slice08 initial return ships seven token corrections; two rows
+are accepted and two remain open for its one-line heading/return Iteration01. Arc06 is queued with no prompt issued;
 Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
 Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
 
 ## Version History
+
+- 1.50 (2026-10-12): Arc02/Slice08 initial source/package review accepts two
+  rows; bounded I1 repairs the prescribed comparison heading and final return.
+  Rebase preserves all eight live input images. No scope or gate change.
 
 - 1.49 (2026-10-12): Slice07 I1 independently closed at source 52f0b520/
   planning 7a135d80; identity removal, teaching/method preservation and package

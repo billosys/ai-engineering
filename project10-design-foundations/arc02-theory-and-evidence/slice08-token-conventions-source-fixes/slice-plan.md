@@ -259,10 +259,41 @@ and 44 fragments resolve across the ten files. LF/EOF and diff checks pass.
 The first formatting-helper invocation used an unavailable `python` command;
 rerunning with `python3` completed it and the link check successfully.
 
-Current assignment: `cc-prompt.md`, issued by the commit containing this open set;
-active for separate CC implementation on source 52f0b520. No prior Slice08 handoff.
+## Assignment history
+
+- Initial `cc-prompt.md`, issued at `5f7c11ed`, returned at source `d644db46` /
+  planning `a2972783` after rebase onto byte-identical live inputs. CDC accepts
+  S08-02/03; S08-01/04 remain open for F01.
+- **Current assignment:** `cc-prompt-iteration01.md`, issued 2026-10-12 by this
+  introducing commit, predecessor `cc-prompt.md`; active for separate CC.
+  Rename the missed design heading and update its existing return records.
+  I1 source allowlist is only design.md; planning allowlist is only the existing
+  batch record, ledger evidence/notes and closing report. Its narrow delta scope
+  supersedes the initial four-source mutation instruction, not its four criteria.
+  Preserve all seven corrections and all other bytes; complete the same 1.0.3
+  correction. Full I1 reading/check/return contract is in that preserved prompt.
+
+### I1 author readiness
+
+CDC inspected the actual unique heading, complete Section I, accepted replacements
+and eight-file route union, and applied current domain guidance on contextual
+comparisons and no universal architecture. A virtual exact one-line change
+passes the same heading check that rejects the current and duplicate-new-heading
+specimens; every other source byte is preserved. No live inbound fragment needs
+repair. This resolves the entire remaining source decision; new theory inquiry
+is unnecessary. Current source/package/row checks and contextual cases are
+independently reproduced in cdc-verification.md; I1 reruns only affected checks
+and preserves accepted evidence after byte applicability. One artifact, roles,
+original criteria and all parent obligations remain unchanged. Final author checks
+confirm six planning writes, unchanged issued prompt/CC return/parent ledgers,
+four preserved criteria with two done/two open, 34 local destinations and four
+fragments resolved, LF/EOF and diff checks passed. Main remains unchanged.
 
 ## Version History
+
+- 1.1 (2026-10-12): Initial review accepts S08-02/03; issued one-line I1 for the
+  omitted design heading and accurate return scope. Accepted token corrections,
+  original criteria and all parent gates preserved.
 
 - 1.0 (2026-10-12): Opened the next ready source batch after Slice07 closure;
   apply seven residual token corrections and reconcile 21 accepted actions without
