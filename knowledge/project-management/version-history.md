@@ -1,6 +1,6 @@
 # Version History
 
-## Version 2.20.0 - 2026-10-12
+## Version 2.19.1 - 2026-10-12
 
 Refined new-project decomposition around usable increments, scoped prerequisite
 inputs, positive preservation and explicit integration states. Clarified that

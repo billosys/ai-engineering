@@ -1,6 +1,6 @@
 # Engineering Methods Version History
 
-## Version 1.18.0 - 2026-10-12
+## Version 1.17.1 - 2026-10-12
 
 Clarified that SDLC activities recur within delivery increments rather than
 requiring separate project phases. Refined prompt authorship and its existing
