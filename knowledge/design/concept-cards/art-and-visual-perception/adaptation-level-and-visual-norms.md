@@ -1,56 +1,41 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Adaptation Level and Visual Norms
-slug: adaptation-level-and-visual-norms
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Adaptation Level and Visual Norms"
+slug: "adaptation-level-and-visual-norms"
+category: "visual-perception"
 subcategory: null
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "What Looks Lifelike?"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - pictorial-norm-level
-  - artistic-reality-level
-  - Helson-adaptation-level
-  - style-norm
-
-# === TYPED RELATIONSHIPS ===
+  - "pictorial-norm-level"
+  - "artistic-reality-level"
+  - "Helson-adaptation-level"
+  - "style-norm"
 prerequisites:
-  - representation-in-art
+  - "representation-in-art"
 extends: []
 related:
-  - medium-specificity-of-form
-  - form-vs-shape
-  - perceptual-simplicity
+  - "medium-specificity-of-form"
+  - "form-vs-shape"
+  - "perceptual-simplicity"
 contrasts_with:
-  - absolute-visual-judgment
-
-# === COMPETENCY QUESTIONS ===
+  - "absolute-visual-judgment"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Weber fractions (ΔI/I = k) / just-noticeable differences relative to baseline"
-    rating: structural
+    rating: "structural"
     note: "Weber's law states that the just-noticeable difference is proportional to the baseline stimulus intensity; adaptation level is the visual/aesthetic analogue — what registers as 'different' or 'lifelike' is always relative to the prevailing norm, not to absolute standards."
-
 css_implementation: []
 ---
 

@@ -23,3 +23,7 @@ contextual review requirements.
 ## Version 1.0.3 - 2026-10-12
 
 Scoped token-convention corrections distinguish DTCG interchange and value types from optional token architecture and project-defined names, qualify cross-system comparisons, and describe reference propagation conditionally.
+
+## Version 1.0.4 - 2026-10-12
+
+Normalized ten assigned concept-card frontmatter headers while preserving existing typed metadata, nested extension values, and body bytes.

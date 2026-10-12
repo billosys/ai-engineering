@@ -1,45 +1,50 @@
 ---
-concept: Golden Ratio (\u03c6)
-slug: golden-ratio
-category: design-principles
-subcategory: proportion
-tier: foundational
-layer: 1-principles
+concept: "Golden Ratio (\\u03c6)"
+slug: "golden-ratio"
+category: "design-principles"
+subcategory: "proportion"
+tier: "foundational"
+layer: "1-principles"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Modular scales and how they apply to web design"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - [golden mean, golden section, phi, \u03c6, 1.618]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "golden mean"
+    - "golden section"
+    - "phi"
+    - "\\u03c6"
+    - 1.618
+prerequisites: []
+extends: []
 related:
-  - scale-ratio
-  - modular-scale
-  - ratio-selection-criteria
-contrasts_with:
-  - []
+  - "scale-ratio"
+  - "modular-scale"
+  - "ratio-selection-criteria"
+contrasts_with: []
 answers_questions:
   - "How do you select an appropriate scale ratio for a given design context?"
 rosetta_stone:
-  - domain: mathematics
-    concept: "\u03c6 (phi) \u2014 the irrational number (1 + \u221a5) / 2 \u2248 1.6180339..."
-    rating: rigorous
-    note: "The golden ratio is a precisely defined mathematical constant. Its defining property: a line divided such that the whole is to the longer part as the longer part is to the shorter part. This produces \u03c6 \u2248 1.618."
-  - domain: music
-    concept: "No direct musical interval equivalent \u2014 \u03c6 is irrational and does not correspond to a simple integer frequency ratio"
-    rating: loose
-    note: "Unlike perfect fourth (4:3) or perfect fifth (3:2), \u03c6 is not a simple integer ratio and does not produce a consonant musical interval. Its harmonic grounding is different \u2014 it appears in growth patterns and self-similar geometric forms."
+  -
+    domain: "mathematics"
+    concept: "φ (phi) — the irrational number (1 + √5) / 2 ≈ 1.6180339..."
+    rating: "rigorous"
+    note: "The golden ratio is a precisely defined mathematical constant. Its defining property: a line divided such that the whole is to the longer part as the longer part is to the shorter part. This produces φ ≈ 1.618."
+  -
+    domain: "music"
+    concept: "No direct musical interval equivalent — φ is irrational and does not correspond to a simple integer frequency ratio"
+    rating: "loose"
+    note: "Unlike perfect fourth (4:3) or perfect fifth (3:2), φ is not a simple integer ratio and does not produce a consonant musical interval. Its harmonic grounding is different — it appears in growth patterns and self-similar geometric forms."
 css_implementation:
-  - property: "font-size (scale step)"
-    example: "/* Golden ratio scale from 18px */ font-size: 18px; /* step 0 */ font-size: 29.124px; /* 18 \u00d7 1.618, step 1 */ font-size: 47.124px; /* step 2 */"
-    support: baseline
+  -
+    property: "font-size (scale step)"
+    example: "/* Golden ratio scale from 18px */ font-size: 18px; /* step 0 */ font-size: 29.124px; /* 18 × 1.618, step 1 */ font-size: 47.124px; /* step 2 */"
+    support: "baseline"
 ---
 
 # Quick Definition

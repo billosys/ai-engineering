@@ -1,31 +1,31 @@
 ---
-concept: Colour Gamut
-slug: colour-gamut
-category: colour-theory
-subcategory: colour-spaces
-tier: foundational
-layer: 2-domain
+concept: "Colour Gamut"
+slug: "colour-gamut"
+category: "colour-theory"
+subcategory: "colour-spaces"
+tier: "foundational"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "What makes a good color picker?"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["gamut", "color gamut", "sRGB gamut"]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "gamut"
+    - "color gamut"
+    - "sRGB gamut"
+prerequisites: []
+extends: []
 related:
-  - hsl
-  - hsv
-  - okhsl
-  - okhsv
-contrasts_with:
-  - []
+  - "hsl"
+  - "hsv"
+  - "okhsl"
+  - "okhsv"
+contrasts_with: []
 answers_questions:
   - "What makes a colour picker perceptually well-designed?"
 rosetta_stone: []

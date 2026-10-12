@@ -1,52 +1,37 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Active White Space
-slug: active-white-space
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: spacing-systems
-tier: foundational
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Active White Space"
+slug: "active-white-space"
+category: "layout-composition"
+subcategory: "spacing-systems"
+tier: "foundational"
+layer: "1-principles"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "negative space"
   - "white space as design element"
   - "active background"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - asymmetric-typography
-  - typographic-contrast
-  - functional-typography
+  - "asymmetric-typography"
+  - "typographic-contrast"
+  - "functional-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "margin, padding, gap"
+  -
+    property: "margin, padding, gap"
     example: "/* Use generous whitespace as a compositional element, not merely as 'leftover' space */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

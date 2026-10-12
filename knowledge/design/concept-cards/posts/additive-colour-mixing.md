@@ -1,36 +1,38 @@
 ---
-concept: Additive Colour Mixing
-slug: additive-colour-mixing
-category: visual-perception
-subcategory: colour-physics
-tier: foundational
-layer: 0-perception
+concept: "Additive Colour Mixing"
+slug: "additive-colour-mixing"
+category: "visual-perception"
+subcategory: "colour-physics"
+tier: "foundational"
+layer: "0-perception"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color mixing"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["additive mixing", "light mixing", "RGB mixing"]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "additive mixing"
+    - "light mixing"
+    - "RGB mixing"
+prerequisites: []
+extends: []
 related:
-  - subtractive-colour-mixing
-  - rgb-colour-model
-  - colour-bit-depth
+  - "subtractive-colour-mixing"
+  - "rgb-colour-model"
+  - "colour-bit-depth"
 contrasts_with:
-  - subtractive-colour-mixing
+  - "subtractive-colour-mixing"
 answers_questions:
   - "What distinguishes additive from subtractive colour mixing, and which does a monitor use?"
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Vector addition"
-    rating: structural
+    rating: "structural"
     note: "Additive colour mixing is literally vector addition of light intensities in each channel. Combining red and green light is R + G = yellow in the same way as adding component vectors."
 ---
 

@@ -1,61 +1,45 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Why We See Depth — The Simplicity Principle
-slug: depth-why-we-see-it
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-perception-theory
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Why We See Depth — The Simplicity Principle"
+slug: "depth-why-we-see-it"
+category: "visual-perception"
+subcategory: "depth-perception-theory"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Why Do We See Depth?"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - simplicity principle of depth
-  - depth from structural simplification
-  - third dimension as avenue of freedom
-
-# === TYPED RELATIONSHIPS ===
+  - "simplicity principle of depth"
+  - "depth from structural simplification"
+  - "third dimension as avenue of freedom"
 prerequisites:
-  - pictorial-space
-extends:
-  - []
+  - "pictorial-space"
+extends: []
 related:
-  - overlap-depth-cue
-  - deformation-depth-cue
-  - depth-gradient-principle
-  - figure-ground
-contrasts_with:
-  - []
-
-# === COMPETENCY QUESTIONS ===
+  - "overlap-depth-cue"
+  - "deformation-depth-cue"
+  - "depth-gradient-principle"
+  - "figure-ground"
+contrasts_with: []
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Minimum description length / Occam's razor / Kolmogorov complexity"
-    rating: structural
+    rating: "structural"
     note: "The simplicity principle in depth perception corresponds to minimum description length — the visual system chooses the 3D interpretation that requires the shortest description (fewest parameters, most regular structure)."
-
 css_implementation:
-  - property: "N/A — conceptual foundation"
+  -
+    property: "N/A — conceptual foundation"
     example: "/* This is a theoretical card explaining why depth cues work, not a CSS technique */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

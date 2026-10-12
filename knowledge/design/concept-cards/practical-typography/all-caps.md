@@ -1,55 +1,40 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: All Caps
-slug: all-caps
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "All Caps"
+slug: "all-caps"
+category: "typography"
+subcategory: "type-formatting"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "All Caps"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "uppercase"
   - "capitalization"
   - "caps"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typographic-emphasis
+  - "typographic-emphasis"
 extends: []
 related:
-  - small-caps
-  - letterspacing
-  - kerning
-  - headings
+  - "small-caps"
+  - "letterspacing"
+  - "kerning"
+  - "headings"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "text-transform"
+  -
+    property: "text-transform"
     example: ".caps { text-transform: uppercase; letter-spacing: 0.05em; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

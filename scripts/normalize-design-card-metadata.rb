@@ -1,0 +1,254 @@
+#!/usr/bin/env ruby
+# Normalize only the four exact historical list sentinels in design concept-card frontmatter.
+require 'digest'
+require 'json'
+require 'English'
+require 'pathname'
+require 'tempfile'
+require 'psych'
+
+module DesignCardMetadata
+  ALLOWED_LISTS = %w[aliases prerequisites extends contrasts_with].freeze
+  STANDARD_TAG_PREFIX = 'tag:yaml.org,2002:'.freeze
+  ROOT = File.realpath(File.expand_path('..', __dir__))
+
+  def self.fail!(message)
+    raise ArgumentError, message
+  end
+
+  def self.reject_unsafe_ast!(node, path, seen = {})
+    case node
+    when Psych::Nodes::Alias
+      fail!("#{path}: YAML aliases are not supported")
+    when Psych::Nodes::Scalar
+      if node.anchor
+        fail!("#{path}: YAML anchors are not supported")
+      end
+      if node.tag && !node.tag.start_with?(STANDARD_TAG_PREFIX)
+        fail!("#{path}: custom YAML tag is not supported")
+      end
+    when Psych::Nodes::Sequence
+      fail!("#{path}: YAML anchors are not supported") if node.anchor
+      fail!("#{path}: custom YAML tag is not supported") if node.tag && !node.tag.start_with?(STANDARD_TAG_PREFIX)
+      node.children.each { |child| reject_unsafe_ast!(child, path, seen) }
+    when Psych::Nodes::Mapping
+      fail!("#{path}: YAML anchors are not supported") if node.anchor
+      fail!("#{path}: custom YAML tag is not supported") if node.tag && !node.tag.start_with?(STANDARD_TAG_PREFIX)
+      keys = {}
+      node.children.each_slice(2) do |key, value|
+        fail!("#{path}: mapping key must be a scalar") unless key.is_a?(Psych::Nodes::Scalar)
+        fail!("#{path}: YAML merge keys are not supported") if key.value == '<<'
+        identity = key.value
+        fail!("#{path}: duplicate YAML key #{identity.inspect}") if keys.key?(identity)
+        keys[identity] = true
+        reject_unsafe_ast!(key, path, seen)
+        reject_unsafe_ast!(value, path, seen)
+      end
+    else
+      fail!("#{path}: unsupported YAML node #{node.class}")
+    end
+  end
+
+  def self.split_frontmatter(bytes, path)
+    utf8 = bytes.dup.force_encoding(Encoding::UTF_8)
+    fail!("#{path}: invalid UTF-8") unless utf8.valid_encoding?
+    data = bytes.dup.force_encoding(Encoding::BINARY)
+    fail!("#{path}: UTF-8 BOM is not supported") if data.byteslice(0, 3) == "\xEF\xBB\xBF".b
+    fail!("#{path}: expected leading --- LF delimiter") unless data.start_with?("---\n")
+    match = /^---\r?$/n.match(data, 4)
+    fail!("#{path}: closing frontmatter delimiter not found") unless match
+    close_start = match.begin(0)
+    yaml = data.byteslice(4, close_start - 4)
+    body = data.byteslice(match.end(0), data.bytesize - match.end(0)) || ''.b
+    [yaml, body]
+  end
+
+  def self.load_metadata(yaml, path)
+    stream = Psych.parse_stream(yaml)
+    fail!("#{path}: expected exactly one YAML document") unless stream.children.length == 1
+    document = stream.children.first
+    root = document.root
+    fail!("#{path}: frontmatter root must be a mapping") unless root.is_a?(Psych::Nodes::Mapping)
+    reject_unsafe_ast!(root, path)
+    value = Psych.safe_load(yaml, permitted_classes: [], permitted_symbols: [], aliases: false)
+    fail!("#{path}: frontmatter root must load as a mapping") unless value.is_a?(Hash)
+    fail!("#{path}: root metadata keys must be strings") unless value.keys.all? { |key| key.is_a?(String) }
+    value.each do |key, item|
+      if item.is_a?(Array) && item == [[]] && ALLOWED_LISTS.include?(key)
+        next
+      end
+      validate_value!(item, path, key)
+    end
+    value
+  rescue Psych::Exception => error
+    fail!("#{path}: YAML parse/load error: #{error.class}: #{error.message.lines.first.to_s.strip}")
+  end
+
+  def self.validate_value!(value, path, at)
+    case value
+    when String, NilClass, TrueClass, FalseClass, Integer, Float
+      true
+    when Array
+      value.each_with_index { |child, index| validate_value!(child, path, "#{at}[#{index}]") }
+    when Hash
+      value.each do |key, child|
+        fail!("#{path}: non-string mapping key at #{at}") unless key.is_a?(String)
+        validate_value!(child, path, "#{at}.#{key}")
+      end
+    else
+      fail!("#{path}: unsupported value type #{value.class} at #{at}")
+    end
+  end
+
+  def self.quote_string(value)
+    JSON.generate(value, ascii_only: false)
+  end
+
+  def self.render_key(key)
+    key.match?(/\A[A-Za-z0-9_-]+\z/) ? key : quote_string(key)
+  end
+
+  def self.scalar?(value)
+    !(value.is_a?(Array) || value.is_a?(Hash))
+  end
+
+  def self.render_scalar(value)
+    case value
+    when String then quote_string(value)
+    when NilClass then 'null'
+    when TrueClass then 'true'
+    when FalseClass then 'false'
+    when Integer, Float then JSON.generate(value, ascii_only: false)
+    else fail!("unsupported scalar type #{value.class}")
+    end
+  end
+
+  def self.render_block(value, depth)
+    spaces = ' ' * depth
+    case value
+    when Hash
+      return [spaces + '{}'] if value.empty?
+      lines = []
+      value.each do |key, child|
+        fail!('non-string mapping key during emission') unless key.is_a?(String)
+        prefix = spaces + render_key(key) + ':'
+        if scalar?(child)
+          lines << prefix + ' ' + render_scalar(child)
+        elsif child.empty?
+          lines << prefix + (child.is_a?(Array) ? ' []' : ' {}')
+        else
+          lines << prefix
+          lines.concat(render_block(child, depth + 2))
+        end
+      end
+      lines
+    when Array
+      return [spaces + '[]'] if value.empty?
+      lines = []
+      value.each do |child|
+        if scalar?(child)
+          lines << spaces + '- ' + render_scalar(child)
+        elsif child.empty?
+          lines << spaces + '- ' + (child.is_a?(Array) ? '[]' : '{}')
+        else
+          lines << spaces + '-'
+          lines.concat(render_block(child, depth + 2))
+        end
+      end
+      lines
+    else
+      [spaces + render_scalar(value)]
+    end
+  end
+
+  def self.transform(metadata)
+    result = metadata.dup
+    ALLOWED_LISTS.each do |key|
+      result[key] = [] if result.key?(key) && result[key] == [[]]
+    end
+    result
+  end
+
+  def self.process(path)
+    absolute = File.expand_path(path)
+    fail!("#{path}: path is outside the repository") unless absolute.start_with?(ROOT + File::SEPARATOR)
+    relative = Pathname.new(absolute).relative_path_from(Pathname.new(ROOT)).to_s
+    fail!("#{path}: only tracked .md concept cards under knowledge/design/concept-cards are allowed") unless relative.match?(%r{\Aknowledge/design/concept-cards/.+\.md\z})
+    current = ROOT
+    relative.split(File::SEPARATOR).each do |part|
+      current = File.join(current, part)
+      fail!("#{path}: symlinks are not supported") if File.symlink?(current)
+    end
+    fail!("#{path}: not a regular file") unless File.file?(absolute)
+    tracked = IO.popen(['git', '-C', ROOT, 'ls-files', '--error-unmatch', '--', relative], 'r', &:read)
+    status = $CHILD_STATUS
+    fail!("#{path}: not tracked by git") unless status&.success? && tracked.lines.map(&:strip) == [relative]
+
+    original = File.binread(absolute)
+    yaml, body = split_frontmatter(original, relative)
+    metadata = load_metadata(yaml, relative)
+    transformed = transform(metadata)
+    rendered = render_block(transformed, 0).join("\n")
+    output = ("---\n" + rendered + "\n---").b + body
+    output.force_encoding(Encoding::UTF_8)
+    fail!("#{path}: proposed output is invalid UTF-8") unless output.valid_encoding?
+    # Reparse the proposed bytes before any caller can write them.
+    candidate_yaml, candidate_body = split_frontmatter(output, relative)
+    candidate = load_metadata(candidate_yaml, relative)
+    fail!("#{path}: emitter failed typed round trip") unless candidate == transformed && candidate_body == body
+    {
+      'path' => relative,
+      'input_sha256' => Digest::SHA256.hexdigest(original),
+      'output_sha256' => Digest::SHA256.hexdigest(output),
+      'metadata' => metadata,
+      'transformed_metadata' => transformed,
+      'body_bytes' => body.bytesize,
+      'body_sha256' => Digest::SHA256.hexdigest(body),
+      'output' => output
+    }
+  end
+
+  def self.atomic_replace(path, bytes)
+    stat = File.stat(path)
+    temp = Tempfile.new(['.normalize-design-card-', '.tmp'], File.dirname(path), binmode: true)
+    begin
+      temp.write(bytes)
+      temp.flush
+      temp.fsync
+      temp.chmod(stat.mode & 0o777)
+      temp.close
+      File.rename(temp.path, path)
+    ensure
+      temp.close! rescue nil
+    end
+  end
+end
+
+if $PROGRAM_NAME == __FILE__
+  begin
+    mode = ARGV.shift
+    if ARGV.empty?
+      warn 'usage: ruby scripts/normalize-design-card-metadata.rb --check|--write PATH...'
+      exit 2 if mode
+      exit 0
+    end
+    unless %w[--check --write].include?(mode)
+      warn 'first argument must be --check or --write'
+      exit 2
+    end
+    paths = ARGV.dup
+    expanded = paths.map { |path| File.expand_path(path) }
+    raise ArgumentError, 'repeated input path' unless expanded.uniq.length == expanded.length
+    records = paths.map { |path| DesignCardMetadata.process(path) }
+    if mode == '--write'
+      records.each { |record| DesignCardMetadata.atomic_replace(File.join(DesignCardMetadata::ROOT, record['path']), record['output']) }
+    end
+    records.each do |record|
+      record.delete('output')
+      puts JSON.generate(record, ascii_only: false)
+    end
+  rescue StandardError => error
+    warn "normalize-design-card-metadata: #{error.message}"
+    exit 1
+  end
+end

@@ -1,38 +1,37 @@
 ---
-concept: Matrix Transformation in Colour Conversion
-slug: matrix-transformation-colour
-category: colour-theory
-subcategory: colour mathematics
-tier: intermediate
-layer: 2-domain
+concept: "Matrix Transformation in Colour Conversion"
+slug: "matrix-transformation-colour"
+category: "colour-theory"
+subcategory: "colour mathematics"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Converting from XYZ to Oklab"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
-aliases:
-  - []
+extraction_confidence: "high"
+aliases: []
 prerequisites:
-  - colour-space
-  - xyz-colour-space
+  - "colour-space"
+  - "xyz-colour-space"
 extends:
-  - oklab-conversion
+  - "oklab-conversion"
 related:
-  - lms-cone-responses
-  - oklab
-  - oklab-conversion
-contrasts_with:
-  - []
+  - "lms-cone-responses"
+  - "oklab"
+  - "oklab-conversion"
+contrasts_with: []
 answers_questions:
   - "How do you convert between colour spaces for image processing?"
 rosetta_stone:
-  - domain: mathematics
-    concept: "3\u00d73 matrix multiplication (linear map between vector spaces)"
-    rating: rigorous
-    note: "The M1 and M2 operations in Oklab are literal 3\u00d73 matrix multiplications \u2014 not an analogy but the exact mathematical operation."
+  -
+    domain: "mathematics"
+    concept: "3×3 matrix multiplication (linear map between vector spaces)"
+    rating: "rigorous"
+    note: "The M1 and M2 operations in Oklab are literal 3×3 matrix multiplications — not an analogy but the exact mathematical operation."
 css_implementation: []
 ---
 

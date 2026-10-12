@@ -1,32 +1,28 @@
 ---
-concept: Colour Space (General)
-slug: colour-space
-category: colour-theory
-subcategory: colour models
-tier: foundational
-layer: 2-domain
+concept: "Colour Space (General)"
+slug: "colour-space"
+category: "colour-theory"
+subcategory: "colour models"
+tier: "foundational"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "A perceptual color space for image processing"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
-aliases:
-  - []
-prerequisites:
-  - []
-extends:
-  - []
+extraction_confidence: "medium"
+aliases: []
+prerequisites: []
+extends: []
 related:
-  - oklab
-  - xyz-colour-space
-  - lms-cone-responses
-  - d65-whitepoint
-  - gamut-srgb
-contrasts_with:
-  - []
+  - "oklab"
+  - "xyz-colour-space"
+  - "lms-cone-responses"
+  - "d65-whitepoint"
+  - "gamut-srgb"
+contrasts_with: []
 answers_questions:
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
 ---

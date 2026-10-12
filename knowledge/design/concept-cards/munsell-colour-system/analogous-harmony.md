@@ -1,55 +1,40 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Analogous Harmony
-slug: analogous-harmony
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Analogous Harmony"
+slug: "analogous-harmony"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Color Combinations"
 chapter_number: 9
 pdf_page: 15
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "neighbouring hue harmony"
   - "analogous colour scheme"
   - "adjacent hue harmony"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - hue
-  - munsell-hue-circle
+  - "hue"
+  - "munsell-hue-circle"
 extends: []
 related:
-  - monochromatic-harmony
-  - complementary-harmony
-  - colour-harmony-as-order
+  - "monochromatic-harmony"
+  - "complementary-harmony"
+  - "colour-harmony-as-order"
 contrasts_with:
-  - complementary-harmony
-
-# === COMPETENCY QUESTIONS ===
+  - "complementary-harmony"
 answers_questions:
   - "CQ 23: How do you construct a colour palette starting from a single brand colour using OKLCH?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "oklch() hue offset"
+  -
+    property: "oklch() hue offset"
     example: "/* Analogous palette: base hue ± 30-36 degrees */\n--base: oklch(0.6 0.15 240);\n--warm: oklch(0.6 0.12 210);\n--cool: oklch(0.6 0.12 270);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition
