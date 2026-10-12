@@ -7,7 +7,7 @@ description: |
   whether bubble-up findings require a plan update.
 license: MIT
 metadata:
-  version: "2.19.0"
+  version: "2.20.0"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills
@@ -18,6 +18,14 @@ metadata:
 Use this component before planning or closing anything at project, arc, or
 slice scale. Start with the wayfinder, then load the focused guide that matches
 the operation.
+
+When decomposing new work, apply [usable-increment planning](./guides/03-planning-top-down.md#plan-for-usable-increments):
+name the first useful result, its delivery home and actual input dependencies.
+Keep quality checks with delivery and supporting evidence tied to a decision,
+deliverable or check. Research and audit outcomes remain valid when explicitly scoped.
+Before starting or assigning any investigation, [agree its usefulness, applicability
+and budget with the Operator](./guides/03-planning-top-down.md#agree-investigations-before-starting).
+An LLM may propose the inquiry, but may not authorize or extend it itself.
 
 Before authoring an initial or corrective CC implementation prompt, load
 engineering-methods' [prompt-authoring guide](../engineering-methods/guides/07-implementation-prompt-authoring.md).

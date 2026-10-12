@@ -32,6 +32,13 @@ from the per-slice closing-reports one level down). It carries:
    so the arc's drift from its original plan is visible in one place.
 5. **Bubble-up to the project** (the next subsection).
 
+Plan composition checks from the first increment and reuse suitable fixtures
+as the capability grows. At close, demonstrate the assembled result on the
+intended baseline, covering interactions, changed behavior and unresolved gaps.
+Retain applicable independent evidence for unchanged parts with its scope and
+revision; do not reconstruct every earlier investigation merely to populate a
+closing packet. Required composition and release checks still run.
+
 ### The arc bubble-up report and check
 
 The bubble-up to the project answers, in the arc `closing-report.md`:

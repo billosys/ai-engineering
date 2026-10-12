@@ -15,6 +15,13 @@ Current assignment record, assigned author/reviewer and Operator relay.
 Source checkout/branch/revision, relevant dirty state and drift handling.
 Approved outcome, scope/non-goals, plan/design/ledger authority and exact sections.
 State whether this is implementation, investigation or evidence-only work.
+Name the user/downstream task, intended before/after result, integration destination
+and promised delivery state (candidate, integrated/accepted, or released).
+For any investigation, including embedded diagnosis, cite the Operator agreement
+on usefulness, applicability and budget. Name the decision consumer, agreed
+question, resource limit and stop/re-entry conditions. If agreement is absent,
+present a proposal for discussion, not an executable investigation assignment.
+Do not invent source edits or conclusions to satisfy this template.
 
 ## Required reading and execution preflight
 
@@ -61,6 +68,9 @@ Receipts are attestation, not proof of comprehension or independent acceptance.
 
 State dependency/API checks, existing callers and tests, unresolved assumptions,
 and the owner/stop condition for any uncertainty that affects implementation.
+Identify useful existing behavior, teaching and examples to preserve, plus any
+deliberate replacements. Scope dependencies to the accepted inputs this work
+actually needs, with their revisions and applicability; retain whole-release gates.
 
 ## Applied engineering guidance
 
@@ -97,6 +107,10 @@ uses existing code, why this ordering matters and the observable result.
 Include representative signatures, algorithms or code/pseudocode for difficult
 parts. Label sketches and their verification status. Cover construction,
 registration, exports, feature wiring and docs as applicable.
+Include routes/package wiring needed to use this increment. For a novel or
+error-prone batch, use a difficult representative case through the complete output
+path within the agreed scope before scaling up; do not add a pilot phase by
+default. Obtain Operator agreement before any investigation to settle the method.
 For error-prone evidence representations, include a source-grounded example
 linking a claim to one atomic, applicable witness in the actual output schema.
 
@@ -132,6 +146,9 @@ prerequisites, expected result, known baseline failures and evidence filenames.
 State the actual target and property coverage of reused validators, including
 any predecessor-only checks and how current-slice gaps are resolved.
 Blocked or failing required gates remain visible; do not weaken acceptance.
+Include positive preservation checks and exercise applicable quality requirements
+at the point of use. Reuse suitable fixtures and applicable accepted evidence;
+reserve final integration for composition and remaining gaps, not first use.
 
 ## Scope, stop conditions and return
 
@@ -139,6 +156,8 @@ List permitted source/evidence paths, prohibited changes, exact artifact home,
 commit authority and required staging discipline from the governing plan.
 State escalation triggers and who resolves each. Include source mismatch,
 invalid design assumptions and changes to API, scope or acceptance.
+Stop an investigation at its agreed limit and report what was learned; discuss
+extensions or changed questions with the Operator before continuing it.
 
 Return the exact assignment/source state, changed paths, per-row evidence,
 command outcomes including failed/unrun attempts, intake/readback evidence,
@@ -147,6 +166,8 @@ remaining blockers and bubble-up findings. CC evidence remains proposed-done
 until the assigned independent reviewer accepts it under the selected workflow.
 Separate observed results from interpretation. Leave unsupported claims open;
 do not report a described or planned check as executed.
+Identify the usable improvement and actual integration state, or the answered
+question and enabled decision. Name the next-action owner for undelivered work.
 
 For an iteration, distinguish accepted work from required repairs and specify
 the defect, prescribed repair, invalidated evidence and affected regression
@@ -154,6 +175,8 @@ checks. Identify evidence proposed for retention under work-verification's
 [correction review rule](../../work-verification/guides/05-independent-verification.md#evidence-during-correction-review).
 Preserve previous prompts and identify the current assignment; a previous
 completion report is not fresh execution or independent acceptance.
+For recurring defects, state what changed in the diagnosis or repair method and
+how the correction will be demonstrated; repeating instructions alone is inadequate.
 
 ## Author readiness record
 

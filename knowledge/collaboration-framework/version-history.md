@@ -1,5 +1,15 @@
 # Collaboration Framework Version History
 
+## Version 2.8.0 - 2026-10-12
+
+Routed and bundled delivery-oriented planning and prompt-authoring refinements:
+usable increments, scoped dependencies, positive preservation, bounded inquiry
+and evidence serving actual outcomes. Clarified the SDLC summary so its activities
+do not imply separate delivery-delaying phases. Preserved independent acceptance,
+scope and release gates without adding another planning or reporting layer.
+Routed investigation proposals and extensions through prior Operator agreement
+on usefulness, applicability and budget, as explicitly requested by the Operator.
+
 ## Version 2.7.1 - 2026-10-12
 
 Completed the main composer load table with methodology-stewardship routing,

@@ -43,8 +43,15 @@ the author. Label each consequential decision:
 - **Local discretion:** choices such as private helper names that have no
   contract, ownership, ordering, performance-budget or scope consequences.
 - **Unresolved:** owner, decision needed and affected work held. Resolve before
-  issuing dependent implementation, or explicitly assign bounded investigation
-  whose output is a decision packet rather than production code.
+  issuing dependent implementation, or propose an investigation for Operator
+  agreement before assigning it.
+
+Apply project-management's [investigation agreement](../../project-management/guides/03-planning-top-down.md#agree-investigations-before-starting):
+the Operator and LLM discuss usefulness, applicability and budget before any
+investigation starts, including one embedded in an implementation or correction.
+Carry the agreed question, limits, stopping conditions and decision reference
+into the assignment. Author readiness or a label of "bounded" does not authorize
+an investigation, and its budget cannot be extended unilaterally.
 
 For explicitly selected one-contributor work, apply the engineering reasoning
 proportionately in the existing task record; do not manufacture a CC handoff.
@@ -68,6 +75,14 @@ authoritative documentation. Do not write plausible signatures from memory
 and leave CC to discover whether they exist. If an API cannot be checked,
 label the uncertainty and specify who resolves it before dependent work.
 CC rechecks source drift; that recheck supplements the author's reconnaissance.
+
+Name the task this increment makes possible and its intended integration home.
+Include the routes, exports, documentation or package wiring needed to use it
+in the current slice. Record the useful existing behavior, teaching and examples
+that must survive the change, with positive checks where appropriate. A removal
+scan alone cannot show that the remaining result still works or teaches enough.
+Preservation need not mean byte equality: identify deliberate replacements and
+the behavior or value their replacements must retain.
 
 ## 2. Apply the relevant domain guides yourself
 
@@ -159,6 +174,15 @@ allowlisted files is not a file-level implementation plan. A complete ledger
 is not an algorithm. A long prompt full of commit commands is not necessarily
 better specified than a short one with an exact, bounded design attachment.
 
+Spend up-front effort on the uncertainties that could invalidate this delivery.
+For a novel or error-prone batch, include a difficult representative case in the
+agreed implementation scope, work through its complete output path and check it
+before scaling up. If settling the method needs an investigation, propose it for
+Operator agreement first.
+Use that case in the delivery when appropriate; do not create a separate pilot
+phase by default. This informs the method and sizing, not a claim that one case
+verifies the full population. Routine changes need no ceremonial pilot.
+
 ### Investigation and semantic evidence assignments
 
 For research, metadata or ontology work, supply the inspection method rather
@@ -174,6 +198,12 @@ derive observations from the actual input and report discrepancies. Specify
 how insufficient or contradictory evidence is recorded and what it blocks;
 do not make a desired semantic answer the condition for passing the assignment.
 Structural replay establishes only its checked properties, not semantic warrant.
+
+Record the Operator's agreement on usefulness, applicability and budget, which
+decision the investigation enables, who consumes the answer, and when to stop or
+re-enter if inputs are unavailable. An unresolved input blocks
+the claims that need it, not unrelated supported work within the approved scope.
+Repeatedly restating the same blocker is not a new investigation result.
 
 Where representation is error-prone, show one source-grounded construction
 example and the check that distinguishes a plausible mistake. For an evidence
@@ -234,6 +264,13 @@ check and its coverage limits. Resolve consequential proof-method choices
 before handoff; new verification machinery needs a named gap or an explicit
 product requirement. Preserve detailed implementation guidance and required
 gates without turning incidental checks into additional deliverables.
+
+Check the result at its actual point of use as it lands, including applicable
+accessibility, integration and package behavior. Reuse suitable task specimens
+as capabilities grow. Distinguish showing that the promised task works from a
+comparative claim that a method is better: the latter may need a controlled
+experiment, but ordinary delivery does not require one merely to justify a
+reasoned design choice. Keep untested comparative claims unasserted.
 
 ## 6. Assemble a usable assignment
 
@@ -372,12 +409,15 @@ to the relevant sections; do not add a new approval role or ceremonial artifact.
    discretion is bounded; evidence-dependent conclusions remain open to findings.
 3. **Guideline-applied:** relevant guides changed or supported concrete
    decisions with valid citations, rationale and checks.
-4. **Executable:** files, symbols, integration order and representative shapes
-   make a viable path visible. Test sequences respect ownership, access and
-   observation points; investigation steps fit the available evidence.
+4. **Executable:** files, symbols, integration destination and representative
+   shapes make a viable path to a usable increment visible. Investigation outputs
+   have Operator-agreed usefulness, applicability, budget and stopping conditions.
+   Test sequences respect ownership,
+   access and observation points; investigation steps fit the available evidence.
 5. **Falsifiable:** setups and observations distinguish the intended behavior
-   from the old or rejected implementation. Test and validator coverage matches
-   the claims; required gates and evidence remain intact.
+   from the old or rejected implementation and check useful behavior retained.
+   Test and validator coverage matches the claims; required gates and evidence
+   remain intact.
 6. **Coherent and portable:** prompt, plan, design and ledger agree; referenced
    material is accessible; current scope is separated from future work. The
    prompt carries a bounded required-reading manifest, intake/readback instructions
@@ -392,8 +432,9 @@ that preserve the same contract are fine. Ask also: **Did I merely repeat the
 acceptance criteria, or did I supply the engineering route that meets them?**
 
 Do not issue dependent implementation while a material gap remains. Resolve it,
-escalate it, or issue an explicitly bounded investigation. Do not silently shrink
-the slice. Context pressure and Expedited Mode do not lower this readiness bar.
+escalate it, or propose an investigation and obtain Operator agreement before
+issuing it. Do not silently shrink the slice. Context pressure and Expedited Mode
+do not lower this readiness bar.
 There is no minimum byte count: detail is judged by resolved decisions and
 usable guidance, not length or template-section count.
 
@@ -402,10 +443,18 @@ usable guidance, not length or template-section count.
 Keep the same standard at smaller scope. Identify each unresolved row and
 reproduced defect, its cause if known, the prescribed repair, affected contracts
 and regression tests, and what accepted work must remain intact. If the cause
-is unknown, assign bounded diagnosis with a stop condition. “Fix the review”
-is insufficient. Carry forward binding constraints with precise references and
+is unknown and an investigation is needed, propose bounded diagnosis for Operator
+agreement on usefulness, applicability and budget before assigning it. “Fix the
+review” is insufficient. Carry forward binding constraints with precise references and
 state authorized changes explicitly. Never rewrite an already issued prompt;
 use project-management's preserved iteration and assignment-history rules.
+
+When the same defect recurs, revisit the causal explanation, prompt, example
+and check before issuing another repair. Demonstrate the correction on a
+representative failure within the agreed scope, or propose an investigation if
+the cause remains unknown; a longer restatement of the requirement is not a
+changed method. Keep the existing
+iteration limit and escalate any needed scope or acceptance change.
 
 Map each repair to the evidence it invalidates and the checks that must run
 again. For accepted claims unaffected by the repair, propose retention under

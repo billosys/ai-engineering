@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.7.1"
+  version: "2.8.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -360,6 +360,15 @@ breakdown → per-slice implementation plan → self-review → peer review → 
 feedback loop → audits. Each step catches a different *altitude* of error.
 Skipping a step doesn't just forgo its value — it routes errors of that
 altitude further downstream where they cost more.
+
+These activities recur within useful delivery increments; they need not become
+separate research, evidence, correction and validation arcs. Apply
+[usable-increment planning](../project-management/guides/03-planning-top-down.md#plan-for-usable-increments)
+to name delivery outcomes, actual dependencies and quality checks alongside the
+work. Supporting artifacts serve that delivery or an explicitly scoped inquiry.
+Before starting an investigation, [agree its usefulness, applicability and budget
+with the Operator](../project-management/guides/03-planning-top-down.md#agree-investigations-before-starting);
+the LLM may suggest one, but may not authorize or extend it on its own.
 
 Planning runs **top-down** and produces one plan-of-record and one ledger per
 scale: `project-plan.md` + `ledger.md`, `arc-plan.md` + `ledger.md`, and the

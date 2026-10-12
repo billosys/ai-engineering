@@ -11,9 +11,11 @@ The three scales, largest to smallest:
 
 **Project.** The whole effort — the thing with a name, a goal, and a
 definition of done. A project is approached through the first three SDLC
-steps: research, project definition, design doc. Its output is not code but
+steps: research, project definition, design doc. Those planning steps establish
 boundaries and architecture: what we are building, what we are explicitly
-not, and how the pieces fit. A project is planned by breaking it into arcs,
+not, and how the pieces fit. The project's output is the accepted capability
+or other result promised by its definition of done; plans enable that delivery.
+A project is planned by breaking it into arcs,
 and that plan-of-record lives in **`project-plan.md`** (see
 [`Planning, top-down`](./03-planning-top-down.md)).
 
@@ -33,8 +35,9 @@ one mergeable diff. A slice does one thing, end to end, and is sized to be
 implementation, tests, and self-review all carried without compaction, plus
 slack for the fix-iterations the review process will surface. The slice is
 where ledger discipline attaches — one slice, one ledger — and where the work
-actually gets written, tested, and reviewed. Durable artifacts created by that
-work belong to the slice by default; supporting outputs go under `artifacts/`,
+actually gets written, tested, and reviewed. Deliverable code, guidance and
+examples belong in their intended source or product home. Supporting evidence
+belongs to the slice by default and goes under `artifacts/`,
 while plans, ledgers, all CC prompts, and close documents live in the slice root,
 unless the operator records an override. If a slice will not fit in one context,
 it was two slices.
