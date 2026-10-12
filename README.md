@@ -81,7 +81,28 @@ make audit-live-skills # measure descriptions actually rendered by Codex
 make test-skill-tools  # verify parsing and per-file approval behavior
 make check-package-paths
 make install           # install built skills into ~/.agents/skills
+make test-skill-install # verify destination prompts and install behavior
 ```
+
+If the default `~/.agents/skills` directory is missing or is a dangling
+symlink, `make install` prompts for a destination. When `CODEX_HOME` is set,
+the prompt suggests that profile's `skills` directory. You can enter another
+path or type `cancel`. Without an interactive terminal, installation stops
+with instructions for setting `INSTALL_DIR`.
+
+`INSTALL_DIR` accepts either an environment variable or a Make command-line
+override, including paths containing spaces. For a profile session with
+`CODEX_HOME` set:
+
+```sh
+INSTALL_DIR="$CODEX_HOME/skills" make install
+# Or supply a directory directly:
+make install INSTALL_DIR="/path/to/profile/skills"
+```
+
+An explicit destination is created if needed and skips the prompt. Use the
+same `INSTALL_DIR` override with `make uninstall` to remove that profile's
+installed ai-engineering skills.
 
 Skill checks require Python and PyYAML. See
 [Skill Description Maintenance](./docs/skill-description-tooling.md) for setup,

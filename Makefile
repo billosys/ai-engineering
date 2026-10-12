@@ -39,7 +39,7 @@ CCDP_NAME := ccdp
 CCDP_ZIP := $(ZIP_OUTPUT_DIR)/$(CCDP_NAME).zip
 CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 
-.PHONY: all skills install uninstall clean help check-skills audit-skills audit-live-skills prepare-skill-rewrites test-skill-tools check-package-paths check-skill-versions check-skill-version-source test-skill-versions print-skill-zips \
+.PHONY: all skills install _install-skills uninstall test-skill-install clean help check-skills audit-skills audit-live-skills prepare-skill-rewrites test-skill-tools check-package-paths check-skill-versions check-skill-version-source test-skill-versions print-skill-zips \
 	ccdp ccdp-package ccdp-package-clean check-ccdp-package \
 	collab-framework collab-framework-clean \
 	agent-coordination code-auditing contribution-style engineering-methods project-management \
@@ -113,6 +113,8 @@ help:
 	@echo "  make ccdp-package       -> build $(CCDP_ZIP) (protocol package)"
 	@echo "  make check-ccdp-package -> validate $(CCDP_ZIP) zipped and unzipped"
 	@echo "  make install            -> build all zips and install them into $(INSTALL_DIR)"
+	@echo "                             prompts if the default is missing; override with INSTALL_DIR"
+	@echo "  make test-skill-install -> verify install destination selection and installation"
 	@echo "  make uninstall          -> remove installed skills from $(INSTALL_DIR)"
 	@echo "  make clean              -> remove build/ and generated zips in $(ZIP_OUTPUT_DIR)"
 	@echo "  make check-package-paths -> validate Markdown paths inside generated zips"
@@ -233,7 +235,7 @@ collab-framework: collab-framework-clean
 	@cd "$(BUILD)" && zip -r -q -X "../$(CF_ZIP)" "$(CF_NAME)"
 	@echo ">> contents:"
 	@unzip -l "$(CF_ZIP)"
-	@rm -rf "$(BUILD)"
+	@rm -rf "$(CF_STAGE)"
 	@echo ">> done: $(CF_ZIP)"
 
 ## collab-framework-clean: remove the staging dir (leaves the zip in place)
@@ -274,7 +276,7 @@ define pack_skill
 	( cd "$(BUILD)" && zip -r -q -X "../$$zip_path" "$$name" ); \
 	echo ">> contents:"; \
 	unzip -l "$$zip_path"; \
-	rm -rf "$(BUILD)"; \
+	rm -rf "$$stage"; \
 	echo ">> done: $$zip_path"
 endef
 
@@ -303,7 +305,7 @@ define pack_component_skill
 	( cd "$(BUILD)" && zip -r -q -X "../$$zip_path" "$$name" ); \
 	echo ">> contents:"; \
 	unzip -l "$$zip_path"; \
-	rm -rf "$(BUILD)"; \
+	rm -rf "$$stage"; \
 	echo ">> done: $$zip_path"
 endef
 
@@ -430,19 +432,33 @@ check-package-paths: check-skill-versions
 print-skill-zips:
 	@printf '%s\n' $(INSTALL_ZIPS)
 
-$(INSTALL_DIR):
-	@mkdir -p "$@"
+test-skill-install:
+	@$(SKILL_PYTHON) -m unittest discover -s tests -p 'test_skill_install.py' -v
 
-## install: uninstall old copies, build all zips, and install them into $(INSTALL_DIR)
-install: $(INSTALL_DIR) uninstall all
-	@echo ">> installing skill zips into $(INSTALL_DIR)"
-	@for zip in $(INSTALL_ZIPS); do \
+## install: choose a destination before building or replacing installed skills
+install:
+	@install_dir=$$(bash scripts/resolve-skill-install-dir "$(INSTALL_DIR)" "$(origin INSTALL_DIR)") && \
+		$(MAKE) INSTALL_DIR="$$install_dir" _install-skills
+
+# Keep build, directory creation, removal and extraction ordered even with -j.
+# INSTALL_DIR is a shell value, not a Make target: profile paths can contain spaces.
+_install-skills: all
+	@set -eu; \
+	for zip in $(INSTALL_ZIPS); do \
 		if [ ! -f "$$zip" ]; then \
 			echo "ERROR: missing zip: $$zip" >&2; exit 1; \
 		fi; \
+		unzip -tqq "$$zip"; \
+	done; \
+	mkdir -p "$(INSTALL_DIR)"; \
+	echo ">> installing skill zips into $(INSTALL_DIR)"; \
+	for skill in $(INSTALL_SKILLS); do \
+		rm -rf "$(INSTALL_DIR)/$$skill"; \
+	done; \
+	for zip in $(INSTALL_ZIPS); do \
 		unzip -o -q "$$zip" -d "$(INSTALL_DIR)"; \
-	done
-	@echo ">> installed skills into $(INSTALL_DIR)"
+	done; \
+	echo ">> installed skills into $(INSTALL_DIR)"
 
 ## uninstall: remove installed skills from $(INSTALL_DIR)
 uninstall:

@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+# Print only the selected directory on stdout; prompts and guidance go to stderr.
+set -eu
+
+destination=$1
+origin=$2
+
+# An environment or command-line INSTALL_DIR is already an explicit choice.
+if [ "$origin" != file ] || [ -d "$destination" ]; then
+    if [ -z "$destination" ]; then
+        echo 'ERROR: INSTALL_DIR must not be empty.' >&2
+        exit 1
+    fi
+    printf '%s\n' "$destination"
+    exit 0
+fi
+
+printf 'The default skill directory is unavailable: %s\n' "$destination" >&2
+if [ -L "$destination" ]; then
+    printf 'It is a dangling symlink to: %s\n' "$(readlink "$destination")" >&2
+fi
+echo 'You may be using a nonstandard GPT/Codex profile installation.' >&2
+echo 'Set INSTALL_DIR to the skill directory for the profile you want to update.' >&2
+
+suggestion=
+if [ -n "${CODEX_HOME:-}" ]; then
+    suggestion="${CODEX_HOME%/}/skills"
+elif [ ! -L "$destination" ]; then
+    suggestion=$destination
+fi
+
+if [ ! -t 0 ]; then
+    echo 'No interactive terminal; rerun with an explicit destination, for example:' >&2
+    printf '  INSTALL_DIR=%q make install\n' "${suggestion:-/path/to/profile/skills}" >&2
+    exit 1
+fi
+
+if [ -n "$suggestion" ]; then
+    printf 'Install directory [%s] (or cancel): ' "$suggestion" >&2
+else
+    printf 'Install directory (or cancel): ' >&2
+fi
+if ! IFS= read -r answer; then
+    echo 'Install cancelled.' >&2
+    exit 1
+fi
+if [ "$answer" = cancel ]; then
+    echo 'Install cancelled.' >&2
+    exit 1
+fi
+destination=${answer:-$suggestion}
+case "$destination" in
+    '~') destination=$HOME ;;
+    '~/'*) destination="$HOME/${destination#\~/}" ;;
+esac
+if [ -z "$destination" ]; then
+    echo 'ERROR: an install directory is required.' >&2
+    exit 1
+fi
+printf '%s\n' "$destination"
