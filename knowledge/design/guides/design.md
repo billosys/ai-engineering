@@ -1,6 +1,4 @@
 :::: hero
-[![Cowboys & Beans --- Back to
-home](../../images/cowboys-and-beans_monogram-1.1-on-dark.png){.hero-monogram}](../../)
 
 A Manifesto for Visual Systems
 
@@ -35,13 +33,10 @@ It argues that the best design systems are not collections of components
 but algebraic structures: closed under composition, governed by
 invariants, and provably consistent.
 
-These principles emerged from the practical work of building a unified
-identity for a small publishing and arts collective. But they are not
-specific to that project. They are an articulation of what happens when
-you take seriously the idea that visual design and software engineering
-are not adjacent disciplines but convergent ones --- that the same
-mathematical structures underpin both, and that recognising this
-convergence produces better work in each.
+These principles were refined through practical work with a design system.
+They are not specific to that project. They explore useful connections between
+visual design and software engineering while leaving room for their different
+materials, goals and forms of evidence.
 
 This is not a style guide. Style guides describe what to do. This
 describes why.
@@ -71,17 +66,10 @@ sizes. All three enforce spacing systems built on a base unit with
 constrained multipliers. All three separate colour into tonal scales
 with systematic lightness progressions.
 
-This convergence is not coincidence. It is the signature of underlying
-mathematical structure asserting itself through independent discovery
---- the same way calculus was discovered independently by Newton and
-Leibniz, because the problems they were solving demanded it. The
-problems of visual consistency at scale demand token architecture. The
-problems of typographic hierarchy demand geometric progression. The
-problems of colour harmony demand perceptually uniform spaces.
-
-**When multiple teams, working independently, arrive at the same
-solution, the solution is no longer a design choice. It is a design
-fact.**
+Similar structures across systems can reveal useful approaches, but they do
+not establish one mandatory architecture. Tokens, scales and color models are
+choices whose value depends on the project’s needs. Convergence is evidence to
+inspect, not proof that alternatives are wrong.
 :::
 
 ::: dot-divider
@@ -104,26 +92,12 @@ Just-noticeable differences are proportional to the stimulus intensity.
 :::
 
 ::: prose
-Human perception is logarithmic. Weber and Fechner established this in
-the nineteenth century: the smallest detectable change in a stimulus is
-a constant proportion of the stimulus itself. This is why we perceive
-the difference between 12px and 16px text as roughly the same \"jump\"
-as between 24px and 32px --- both are a ratio of 1.333, even though the
-absolute differences are 4px and 8px.
+A geometric scale is useful when proportional steps support the hierarchy,
+but not every type size, spacing value or colour choice needs to be geometric.
+Content, function, fixed dimensions and optical judgment can justify other
+values. If a ratio helps, declare it as a local construction choice and inspect
+the resulting hierarchy; departures are not errors by definition.
 
-This means every quantitative scale in a design system --- type sizes,
-spacing values, colour lightness steps --- must be geometric
-(multiplicative), not arithmetic (additive). An arithmetic scale with a
-constant increment of 4px would produce steps that feel compressed at
-large sizes and spread apart at small ones. A geometric scale with a
-constant ratio produces steps that feel perceptually equal.
-
-**The practical implication:** choose a ratio and commit to it. The
-perfect fourth (4:3 = 1.333) is not the only valid choice, but it is a
-good one --- assertive enough for clear hierarchy, gentle enough for
-nuanced intermediate levels. The ratio is the grammar of your visual
-language. Every departure from it is a grammatical error that the eye
-detects even when the mind cannot name it.
 :::
 :::::
 
@@ -131,25 +105,15 @@ detects even when the mind cannot name it.
 ### Perception Is the Only Coordinate System That Matters
 
 ::: prose
-For most of typographic history, colour was specified in spaces that
-describe how displays produce light (sRGB) rather than how humans
-perceive it. This is like measuring distance in engine revolutions
-instead of kilometres. It tells you something about the machine and
-nothing about the journey.
+OKLCH is a useful perceptual color space for exploring lightness, chroma and
+hue. Its coordinates can help construct candidates, but equal numeric lightness
+steps are not an exact guarantee of equal appearance across hues, contexts or
+displays. Check rendered colors and complete foreground/background pairs.
 
-OKLCH is, at present, the best available perceptually uniform colour
-space for design work. Its lightness axis is calibrated so that equal
-numerical steps produce equal perceived brightness --- across all hues.
-This means you can hold chroma and hue constant, step lightness from 15%
-to 95% in equal increments, and produce a tonal scale where every
-adjacent pair feels like the same \"jump.\" You cannot do this in HSL.
-You cannot do this in sRGB.
+Units such as `rem`, `ch` and `vi` describe different relationships and can be
+useful in different contexts. Choose them for the intended behavior; no unit
+alone proves a layout accessible or correct.
 
-The same principle applies beyond colour. Fluid type scales that
-interpolate between viewport widths should use the `vi` unit (viewport
-inline), which respects writing direction. Spacing should be defined in
-`rem`, which scales with the user\'s font size preference. Every unit of
-measurement should describe the experience, not the mechanism.
 :::
 ::::
 
@@ -157,27 +121,13 @@ measurement should describe the experience, not the mechanism.
 ### Name the Role, Not the Value
 
 ::: prose
-A colour called `brand-700` describes what it is. A colour called
-`interactive-primary` describes what it does. Both are necessary, but
-they serve different functions in the system, and conflating them is the
-single most common architectural error in design token systems.
+Purpose-based aliases can distinguish a supplied value from the role that uses
+it. For example, a project might keep `--client-action` and add
+`--interactive-primary` as an alias if that name matches its existing
+semantics. This is optional architecture: preserve established token names,
+and add layers only when they solve a real maintenance need. A role name does
+not prove that its value is appropriate in every component or state.
 
-The three-tier token architecture --- primitive, semantic, component ---
-is not a convention. It is the design equivalent of the separation of
-concerns that every competent software architecture enforces. Primitives
-are your type definitions. Semantic tokens are your interfaces.
-Component tokens are your implementations. Changing a primitive\'s value
-propagates automatically. Renaming a semantic token requires deliberate
-refactoring. This is not a limitation; it is a feature. It means the
-system is legible in the same way that well-structured code is legible:
-you can understand any part of it without understanding all of it.
-
-**The practical implication:** never write
-`background: var(--brand-700)` in a component. Write
-`background: var(--interactive-primary)`. When the brand evolves, the
-interactive colour changes in one place. When a new site joins the
-system, it maps its own primitives to the same semantic tokens and
-inherits every component for free.
 :::
 ::::
 
@@ -192,24 +142,12 @@ right structure.
 :::
 
 ::: prose
-A spacing system with nine named values (3xs through 3xl) is more useful
-than one that permits arbitrary pixel values, for the same reason that a
-pentatonic scale is more useful to an improvising musician than the
-instruction \"play any frequency you like.\" Constraint creates
-coherence. It makes the right choice easy and the wrong choice
-effortful.
+A small, coherent set of spacing choices can make a project easier to use and
+maintain, just as a useful constraint can support creative work. The right
+constraints depend on the task and existing system. There is no required number
+of type families, palette hues, spacing tokens or scale ratios. Keep the choices
+that help people make and review the work.
 
-This applies at every level of the system. A type stack of three
-families (display, body, mono) is a constraint. A palette with one
-accent hue per site is a constraint. A modular scale with a single ratio
-is a constraint. Each one eliminates a category of bad decisions while
-preserving the full space of good ones.
-
-The test of a well-constrained system is not whether it prevents ugly
-outcomes --- any sufficiently restrictive system does that --- but
-whether it still permits beautiful ones. The best constraints are like
-the rules of a sonnet: they do not limit expression, they concentrate
-it.
 :::
 :::::
 
@@ -217,25 +155,16 @@ it.
 ### Unity Is Not Uniformity
 
 ::: prose
-Three sites that look identical are not a design system. They are a
-template applied three times. A design system is the set of shared
-principles and primitives that allows different expressions to be
-recognisably part of the same family --- the way siblings share bone
-structure without sharing faces.
+A coherent system can support distinct expressions without requiring them to
+look alike. Decide which principles, components or names should remain shared
+and which should vary for the project’s audience, content, medium and task.
+The useful boundary preserves meaning and makes work easier to maintain; it
+does not require a fixed number of sites or a prescribed font/color scheme.
 
-The mechanism is the separation of what is shared from what is
-site-specific. Shared: the colour primitives, the type scale ratio, the
-spacing rhythm, the semantic token names. Site-specific: the accent hue,
-the display font\'s axis settings, the surface temperature, the amount
-of whitespace, the attitude.
+A variable font illustrates one way an asset can vary along supported axes;
+its use depends on the selected file and typographic goal. Shared structure and
+contextual expression can coexist without making every project look the same.
 
-A variable font with multiple axes is the typographic embodiment of this
-principle. The same typeface --- the same letterforms, the same
-underlying design --- can be sharp and editorial in one context, soft
-and airy in another, and bold and playful in a third. The unity is in
-the skeleton. The variety is in the posture. This is what allows
-\"different departments, each an expert in their own field\" to produce
-work that belongs together without being interchangeable.
 :::
 ::::
 
@@ -243,24 +172,13 @@ work that belongs together without being interchangeable.
 ### Proximity Carries Meaning; Uniformity Erases It
 
 ::: prose
-Gestalt psychology established, a century ago, that the human visual
-system groups elements by proximity before it considers any other cue
---- colour, shape, size, label. Two elements 8px apart feel related. The
-same two elements 32px apart feel independent. This is not a design
-preference. It is a perceptual fact, as reliable as gravity.
+Proximity is one cue that can help viewers infer grouping; its effect depends
+on other visual signals and the viewing task. Repeated spacing can obscure
+some relationships, while consistent spacing can aid comparison or scanning.
+Use distance to support the intended grouping and inspect it with the actual
+content. Other cues can establish relationships without a numerically smaller
+gap.
 
-A design that uses the same spacing value everywhere --- 16px padding,
-16px between items, 16px between sections --- is a design that has
-destroyed all spatial information. The eye cannot determine what belongs
-together because everything is equidistant. This is the visual
-equivalent of writing without punctuation: technically complete,
-structurally illegible.
-
-**The rule is simple and absolute:** intra-group spacing must be tighter
-than inter-group spacing. Title to author: 8px. Card padding: 16px.
-Between cards: 32px. Three different scales communicate three different
-structural relationships. The numbers are secondary. The principle ---
-that spacing is not decoration but syntax --- is primary.
 :::
 ::::
 
@@ -276,21 +194,13 @@ flowchart.
 :::
 
 ::: prose
-A design system is not a collection of designed screens. It is a set of
-invariants --- relationships that remain true across all screens, all
-viewports, all contexts. The ratio between heading sizes is an
-invariant. The mapping from semantic token to primitive token is an
-invariant. The rule that body text never exceeds 60ch is an invariant.
+A design system can capture relationships that should remain stable across
+screens or components, such as shared token meanings or a useful type
+hierarchy. Which properties are invariants depends on the project. Screens
+still need to be designed and checked against their content, viewport, users
+and context; a system can guide decisions without determining every
+composition in advance.
 
-Screens are instances. They are generated by applying the invariants to
-specific content in specific contexts. If you have defined your
-invariants well, most screens design themselves --- the constraints
-leave only a narrow corridor of valid compositions, and the corridor
-leads somewhere good.
-
-This is why a token file and a type scale and a spacing system are not
-preliminary work that precedes design. **They are the design.**
-Everything else is layout.
 :::
 :::::
 
@@ -345,35 +255,23 @@ Section IV
 ## On Tools and Technology
 
 ::: prose
-**Variable fonts** are not an incremental improvement over static font
-files. They are a phase transition --- the moment when a typeface stops
-being a fixed artifact and becomes a continuous design space. A
-four-axis variable font like Fraunces does not contain styles; it
-contains the mathematical surface from which any style can be derived.
-This is the difference between a table of values and a function. The
-function is infinitely more powerful because it can produce values that
-were never explicitly designed but are nonetheless correct.
+**Variable fonts** can expose ranges of variation along documented axes.
+Their practical value depends on the selected asset, supported axes, browser
+behavior and typographic goal. Inspect the actual font and rendered samples;
+not every value in an axis range is a designed or suitable style.
 
-**OKLCH** is not merely a \"better colour picker.\" It is the first
-widely-supported colour space in CSS that is aligned with human
-perception rather than display hardware. Designing in OKLCH is the
-typographic equivalent of switching from imperial to metric: the numbers
-finally mean what you think they mean.
+**OKLCH** is a useful CSS color space for exploring lightness, chroma and hue.
+It does not make coordinates exact predictions of perceived color. Check
+rendered values and complete pairs in their actual context.
 
-**Fluid type and spacing via CSS `clamp()`** is not a responsive design
-technique. It is the elimination of responsive design as a separate
-concern. When your type scale interpolates continuously between two
-viewport widths, there are no breakpoints to manage, no discrete jumps
-to smooth over, no \"mobile version\" and \"desktop version.\" There is
-one design that is correct at every size, because the mathematical
-relationships that define it hold across the entire range.
+**Fluid type and spacing via CSS `clamp()`** can interpolate values between
+declared bounds. It can reduce abrupt changes for some content, while a
+breakpoint or fixed value may fit other behavior better. Review the actual
+interface across its supported conditions.
 
-**The design token specification (DTCG)** is not a file format. It is a
-contract --- an agreement that the same semantic name means the same
-thing in every context, on every platform, in every tool. A token file
-is to a design system what a type signature is to a function: a
-guarantee about the shape of the input and the shape of the output,
-independent of implementation.
+**Design tokens** can record shared values and roles. Their scope and semantics
+come from the adopting project; a token name does not by itself guarantee a
+particular value, behavior or cross-platform result.
 :::
 
 ::: dot-divider
@@ -414,10 +312,6 @@ a skilled practitioner to produce music instead of noise.
 
 :::::: footer
 ::::: footer-inner
-::: brand
-[Cowboys](../../) [&]{.amp} [Beans](../../)
-:::
-
 ::: meta
 Design Manifesto · March 2026 · CC0 Public Domain
 :::

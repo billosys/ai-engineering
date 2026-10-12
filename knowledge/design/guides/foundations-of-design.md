@@ -1,6 +1,4 @@
 :::: hero
-[![Cowboys & Beans --- Back to
-home](../../images/cowboys-and-beans_monogram-1.1-on-dark.png){.hero-monogram}](../../)
 
 Colour theory, typography, & layout-composition
 
@@ -602,23 +600,23 @@ its foundation.
 :::
 
 ::::::: layer-stack
-::: {.layer-item style="background: var(--neutral-900); color: var(--neutral-100);"}
+::: {.layer-item}
 [Layer 0 --- Perception Science]{.layer-name} [Gestalt laws,
 preattentive processing, Stevens\'s Power Law,
 Weber-Fechner]{.layer-desc}
 :::
 
-::: {.layer-item style="background: var(--neutral-800); color: var(--neutral-100);"}
+::: {.layer-item}
 [Layer 1 --- Design Principles]{.layer-name} [Hierarchy, contrast,
 rhythm, proportion, balance --- the \"theorems\"]{.layer-desc}
 :::
 
-::: {.layer-item style="background: var(--brand-700); color: var(--brand-50);"}
+::: {.layer-item}
 [Layer 2 --- Domain Knowledge]{.layer-name} [The ten-category taxonomy
 with specific concepts and vocabulary]{.layer-desc}
 :::
 
-::: {.layer-item style="background: var(--brand-400); color: var(--brand-950);"}
+::: {.layer-item}
 [Layer 3 --- Implementation]{.layer-name} [CSS capabilities, design
 tokens, component architecture, fluid systems]{.layer-desc}
 :::
@@ -640,10 +638,6 @@ foundation on which the entire knowledge base should be built.**
 
 :::::: footer
 ::::: footer-inner
-::: brand
-[Cowboys](../../) [&]{.amp} [Beans](../../)
-:::
-
 ::: meta
 Foundations of Design · Research · March 2026 · CC0 Public Domain
 :::

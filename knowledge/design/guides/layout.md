@@ -1,14 +1,11 @@
 :::: hero
-[![Cowboys & Beans --- Back to
-home](../../images/cowboys-and-beans_monogram-1.1-on-dark.png){.hero-monogram}](../../)
 
 A Philosophy of Spatial Composition
 
 # The Layout Philosophy
 
-On fluid composition, algorithmic restraint, and the art of letting the
-browser think. A unified layout design philosophy for Cowboys & Beans
-projects.
+On fluid composition, spatial relationships and letting the browser help
+while checking the result against actual content.
 
 ::: tag-row
 [Intrinsic Design]{.tag} [Every Layout]{.tag} [Utopia]{.tag} [CUBE
@@ -26,27 +23,21 @@ Preamble
 ## Why This Document Exists
 
 ::: prose
-This is the layout counterpart to the Cowboys & Beans colour system,
-type system, and brand guidelines. Where those documents describe *what
-things look like*, this one describes *how things are arranged* --- and,
-more importantly, *why*.
+This guide focuses on how content and interface elements are arranged. Colour
+and type choices come from the adopting project and the task at hand.
 
 Most layout documentation tells you which CSS properties to use. This
 document does something different. It articulates a **philosophy of
 spatial composition** that can generate an infinite variety of layouts
-from a small set of principles --- all of them consistent, all of them
-fluid, none of them requiring media-query breakpoints, and every one of
-them genuinely tailored to its content rather than stamped from a
-template.
+from a small set of principles. Intrinsic and fluid methods can suit many
+layouts; use a breakpoint when content or behavior needs a discrete change.
 
 The philosophy synthesises two bodies of work that represent the current
 state of the art in CSS layout thinking: **Every Layout** by Heydon
 Pickering and Andy Bell, which defines composable layout primitives; and
 **Utopia** by James Gilyead and Trys Mudford, which defines fluid
-responsive mathematics. It also draws from the Arts & Crafts tradition,
-from Müller-Brockmann\'s grid systems, from Vignelli\'s systematic
-restraint, and from the C&B engineering manifesto\'s conviction that
-good design is algebraic structure, not decorative intuition.
+responsive mathematics. It also draws from the Arts & Crafts tradition, Müller-Brockmann’s grid
+systems and Vignelli’s systematic restraint.
 
 The goal is not to create a new set of constraints in which to bind
 ourselves. It is to provide the knowledge, the vocabulary, and the tools
@@ -109,26 +100,18 @@ button row), and a Center (for the content width). The dialog is not a
 thing to be styled; it is a *composition* of simpler things, each with a
 single, reusable responsibility.
 
-The **Units** chapter makes the case against pixels with precision. The
-value of `1px` is not what it seems --- it varies across devices, zoom
-levels, and display densities. More importantly, pixels create *no
-relationship* between the value and the content it measures. The `ch`
-unit, by contrast, is defined by the font\'s own geometry: `60ch` is
-always roughly 60 characters wide, regardless of font size or screen
-density. The `rem` unit anchors to the user\'s chosen root font size,
-respecting their accessibility preferences. The `em` unit creates local
-proportional relationships, so that a child element scales with its
-parent. Each unit encodes a *kind of relationship*, and choosing the
-right unit is choosing the right relationship.
+CSS units describe different relationships. `ch` is based on the advance
+measure of the zero glyph in the active font; a `ch` measure is a starting
+point to review against actual text, language, typeface and reading conditions.
+`rem` follows the root font size, and `em` follows the relevant font size.
+Pixels may suit values tied to device or asset dimensions. Choose units for the
+behavior needed, then inspect the rendered result and user settings.
 
-**Global and local styling** establishes a three-tier architecture:
-universal styles that pervade the entire document (set with the `*`
-selector and element selectors), layout primitives that compose spatial
-relationships (set with class selectors), and utility classes that
-provide targeted overrides. The insight is that CSS\'s cascade is not a
-bug to be worked around but a *feature to be exploited* --- the most
-general rules should be the most pervasive, and exceptions should be
-layered on top with increasing specificity.
+Global styles, compositional classes and utilities are one way to organize
+a stylesheet. Choose layers and selector scope to fit the project; broad rules
+need review against every content type and component they affect. The cascade
+can express intentional defaults and exceptions without requiring a fixed
+number of layers.
 
 The **Modular scale** chapter introduces the mathematical foundation
 that Utopia will later make fluid. A modular scale generates values
@@ -139,18 +122,11 @@ values are *proportional*, which is what human perception requires:
 Weber\'s Law tells us that we perceive differences as ratios, not as
 absolute distances.
 
-Finally, **Axioms** introduces the most philosophically rich concept in
-the entire project: *designing by constraint rather than by artifact*.
-An axiom is a rule that pervades the system without exception --- \"the
-measure should never exceed 60ch,\" for instance. You don\'t manually
-apply this rule to each element; you write it once, as a universal
-style, and then *the browser enforces it everywhere*. The consequences
-that emerge from this axiom may surprise you --- elements with larger
-font sizes will be physically wider, because `1ch` scales with font
-size --- but those consequences are *sound*. They are your CSS doing
-exactly what you intended. Designing for the web, Pickering and Bell
-argue, is designing *without seeing* --- writing programs that generate
-visual artefacts, rather than crafting the artefacts directly.
+Finally, **Axioms** introduces designing by constraint rather than by artifact.
+A project may declare an invariant, such as a prose measure or minimum target
+size, where it suits the content and task. Scope the rule to the elements it
+serves, and inspect its effects rather than assuming one declaration is sound
+everywhere. CSS generates rendered results that still need review.
 :::
 
 ::: {.epigraph style="margin-top: var(--space-xs);"}
@@ -164,58 +140,17 @@ their screen, and device.
 ### Utopia: The Mathematics of Continuous Adaptation
 
 ::: prose
-Where Every Layout asks *how should things be arranged?*, Utopia asks
-*how large should things be?* And it answers with a single, elegant
-idea: define your design at two viewport sizes, and let the browser
-interpolate smoothly between them.
+Utopia describes one way to interpolate between values chosen for two reference
+conditions. Select the roots and interval for the adopting project, then
+inspect each result with representative content. Each value is interpolated
+separately; intermediate steps do not generally form the same geometric
+progression as the endpoints.
 
-The origin story is instructive. James Gilyead, a designer at Clearleft,
-had grown frustrated with breakpoint-based typography. Every responsive
-design required specifying font sizes at three, four, or five
-breakpoints --- a process that felt like \"equal parts guesswork and
-compromise, where the better we want it to work, the more stuff we need
-to design.\" The insight that changed his practice was deceptively
-simple: instead of setting discrete sizes at discrete widths, define a
-*modular type scale* for small screens (say, 1.2 at 360px) and a
-different one for large screens (say, 1.25 at 1240px), then let each
-step in the scale interpolate linearly between the two endpoints. The
-result is a set of type sizes that is always proportionally
-harmonious --- always \"in tune with itself\" --- at every possible
-viewport width, not just the three or four you happened to design for.
+Spacing may share parameters with type, or use independent values. Fluid space
+pairs and grids are options for cases where their behavior helps; they do not
+require every margin, gutter and component size to derive from one base or
+ratio. Check wrapping and relationships across the intended container range.
 
-The CSS mechanism is `clamp()`, which takes a minimum value, a preferred
-value (expressed as a linear function of viewport width), and a maximum
-value. But the power of Utopia is not in the CSS function itself --- it
-is in the *system* that generates the `clamp()` declarations. Because
-both the minimum and maximum scales are modular (generated by repeated
-multiplication), the interpolated values at any viewport width are also
-modular. Headings grow *faster* than body text as the viewport widens,
-because they occupy higher steps in the scale, and higher steps have a
-greater absolute difference between their minimum and maximum values.
-This is not an accidental side effect; it is a mathematically necessary
-consequence of interpolating between two geometric progressions.
-
-Trys Mudford, Utopia\'s developer co-creator, extended the same
-principle to **spacing**. The base spacing unit (\"S\") equals the base
-type size (\"step 0\"). From this origin, multipliers generate a palette
-of space tokens: 3XS, 2XS, XS, S, M, L, XL, 2XL, 3XL. Because they are
-built on the same fluid base, every space token is inherently
-responsive. But Utopia\'s masterstroke is **space
-pairs** --- interpolations *between* two space tokens. Where an
-individual token like \"M\" grows modestly from mobile to desktop, a
-pair like \"S→L\" grows at a much steeper rate. This gives developers
-precise control over how aggressively different spacings scale, using a
-single custom property: `var(--space-s-l)` in one declaration instead of
-separate values at multiple breakpoints.
-
-Utopia\'s most recent extension, the **fluid layout grid**, completes
-the system. The grid calculator generates column and gutter widths from
-the same space palette, so that the layout grid is mathematically
-entangled with the type and space system. Change the base font size, and
-the grid adjusts. Change the modular scale ratio, and every proportion
-in the system shifts in concert. Gilyead describes this as *declarative
-design* --- \"we describe some rules and let the browser interpret those
-rules according to its current situation.\"
 :::
 
 ::: {.epigraph style="margin-top: var(--space-xs);"}
@@ -229,17 +164,11 @@ to our design foundations.
 ### Where They Meet: The Interface Between Composition and Scale
 
 ::: prose
-Every Layout and Utopia are solving different problems, and their
-overlap is narrow --- but that narrow overlap is the joint at which the
-entire system connects.
-
-Every Layout\'s primitives *consume* spacing values. The Stack needs a
-`space` property. The Cluster needs a `gap`. The Grid needs a gutter.
-But Every Layout is deliberately silent about where those values come
-from. Utopia *produces* spacing values --- fluid tokens that interpolate
-continuously across viewports. The interface between the two systems is
-clean: Utopia provides the tokens, Every Layout consumes them. One
-decides *where things go*; the other decides *how big they are*.
+Every Layout and Utopia address different concerns that can work together.
+Compositional patterns need values for gaps, gutters and padding; a project can
+supply fixed, fluid or independently chosen values. Utopia offers methods for
+interpolating selected values across a declared range. It is one possible
+source, not a dependency for the primitives.
 
 The shared philosophical commitments run deeper than the technical
 interface. Both projects advocate: letting the browser resolve layout
@@ -260,13 +189,12 @@ This is the foundation upon which our layout philosophy is built.
 Part II
 :::
 
-## Seven Precepts for Fluid Composition
+## Principles for Fluid Composition
 
-These precepts synthesise Every Layout\'s compositional thinking,
-Utopia\'s fluid mathematics, and the C&B engineering manifesto\'s
-commitment to algebraic design into a single, coherent framework. They
-are not rules to follow but principles to internalise --- once
-understood, they generate correct decisions automatically.
+These principles draw on Every Layout\'s compositional thinking and Utopia\'s
+fluid mathematics. They are prompts for judgment. Test choices against the
+content and constraints; no principle generates a correct decision
+automatically.
 
 :::: {.principle-card numeral="I"}
 ### Suggest, Never Prescribe
@@ -274,12 +202,10 @@ understood, they generate correct decisions automatically.
 ::: prose
 The single most important principle. Every fixed value in your CSS is a
 place where you have overridden the browser\'s judgment with your own.
-Sometimes this is necessary --- a maximum measure of `60ch`, a minimum
-touch-target of `44px` --- but the default posture should always be to
-*suggest* rather than prescribe. Use `min-`, `max-`, and `clamp()`
-instead of fixed values. Use `auto` instead of `100%`. Use `flex-basis`
-instead of `width`. Each of these is an invitation for the browser to
-make a contextually appropriate decision.
+A project may set a maximum measure or minimum target size when that constraint
+serves its content or interaction. Intrinsic sizing, `min-`, `max-`, `clamp()`,
+`auto`, `flex-basis` and fixed values each have uses. Choose among them for the
+required behavior and verify the browser's rendered result.
 
 This is not laziness. It is recognition that the browser knows things
 you do not --- the user\'s font size preferences, their zoom level,
@@ -288,9 +214,9 @@ whether they have a notch or a toolbar. Your CSS should provide
 *constraints within which good outcomes are inevitable*, not blueprints
 that are correct in one context and broken in all others.
 
-**The test:** if you removed every media query from your stylesheet,
-would the layout still be usable? If not, your constraints are not yet
-well enough chosen.
+**The test:** inspect whether intrinsic behavior covers the needed cases. Add a
+media or container query when content, task or interaction calls for a discrete
+change.
 :::
 ::::
 
@@ -354,29 +280,16 @@ happen simultaneously, does it still work?
 ### Scale by Ratio, Never by Addition
 
 ::: prose
-Human perception is logarithmic. The jump from 16px to 20px (+4px) looks
-like a bigger change than the jump from 40px to 44px (+4px), even though
-both are the same absolute difference. This is Weber\'s Law, and it is
-the reason every sizing system in this philosophy is *multiplicative*.
+Ratios can help coordinate sizes when proportional steps suit the task. A
+geometric scale is one available construction, not a requirement for every
+type or spacing value. Fluid interpolation evaluates each value between its
+own endpoints; ratios at an intermediate width are not generally preserved.
 
-Type sizes are generated by a modular scale: each step is the previous
-step multiplied by a ratio (perfect fourth at 1.333 for C&B projects).
-Spacing tokens are multiples of the base type size. Fluid interpolation
-between two modular scales preserves the proportional relationships at
-every viewport width. This is the mathematical invariant that holds the
-entire system together: *proportions are constant across contexts*.
+Choose roots, ratios, steps, units and intervals for the actual project. A
+value that departs from a scale may be justified by content, interaction,
+script coverage or optical fit. Check rendered hierarchy and wrapping rather
+than treating a formula as proof of a correct composition.
 
-The Utopia system makes this concrete. Because both the minimum-viewport
-and maximum-viewport scales use modular ratios, the interpolated scale
-at *any* intermediate viewport is also modular. Headings grow faster
-than body text, larger gaps grow faster than smaller gaps, and the
-visual hierarchy intensifies on larger screens --- not because anyone
-specified that behaviour, but because it is a mathematical consequence
-of interpolating between two geometric progressions.
-
-**The test:** are all the size values in your system derivable from a
-base value and a ratio? If any value is arbitrary (\"I just thought 24px
-looked right here\"), it is a crack in the system.
 :::
 ::::
 
@@ -384,30 +297,11 @@ looked right here\"), it is a crack in the system.
 ### Encode Axioms, Not Artefacts
 
 ::: prose
-An axiom is a design rule that pervades the entire system without
-exception. \"The measure shall not exceed 60ch.\" \"The minimum touch
-target shall be 44px.\" \"Spacing between sibling elements shall use
-Utopia space tokens.\" These are not guidelines to remember; they are
-*CSS declarations* that are written once and enforced everywhere.
+A broad CSS rule can encode a real project invariant when its scope is clear.
+The browser applies the rule literally; it does not decide whether the result
+fits every script, content type, viewport or user setting. Inspect it against
+representative content, then scope or override it where needed.
 
-The crucial insight from Every Layout\'s Axioms chapter is that
-designing by axiom means designing *without seeing*. You cannot predict
-every visual consequence of a well-chosen axiom, and *you do not need
-to*. The axiom generates correct outcomes in contexts you never
-anticipated, because it encodes a *principle* rather than a *specific
-arrangement*. This is what makes axiom-based design scale: it does not
-require a designer to manually verify every combination of content and
-context.
-
-Axioms are best implemented using exception-based CSS: apply the rule to
-everything (`*`), then remove it from the specific elements that are
-logical exceptions (containers, wrappers, structural elements). This
-inverted approach means you only need to *remember the exceptions*, not
-enumerate every element that should follow the rule.
-
-**The test:** can you state each design rule in a single sentence? Can
-that sentence be translated into a single CSS declaration? If so, it is
-an axiom. If not, it may be a convention masquerading as a principle.
 :::
 ::::
 
@@ -415,30 +309,11 @@ an axiom. If not, it may be a convention masquerading as a principle.
 ### Unify Type, Space, and Grid
 
 ::: prose
-In the Utopian system, type, space, and grid are not separate concerns.
-They are three expressions of a single mathematical structure. The base
-font size *is* the base space unit. The modular type scale *generates*
-the spacing palette. The spacing palette *defines* the grid gutters.
-Change the base, and everything changes in concert. Change the ratio,
-and every proportion in the system shifts harmoniously.
+Type, spacing and grids can share parameters when that simplifies a project,
+but need not use one mathematical base. A spacing value or gutter may have its
+own constraints. Compare proportions in context and keep exceptions that better
+serve the content or task.
 
-This unification has practical consequences. You never need to choose a
-spacing value by eye, because the palette is already determined by the
-type system. You never need to wonder whether a gutter is \"consistent\"
-with the rest of the design, because it is derived from the same
-mathematical root. The system cannot become inconsistent unless you
-explicitly break it by introducing values from outside the scale.
-
-Massimo Vignelli called this \"syntactical consistency\" --- the quality
-that emerges when every element in a composition follows the same
-proportional logic. When your type scale is built on musical interval
-ratios, your space system inherits that proportional harmony
-automatically, and your grid inherits it from both. The entire visual
-system resonates at the same frequency.
-
-**The test:** is every numerical value in your CSS traceable back to the
-base font size and the modular scale ratio? If any value exists in
-isolation, it is a foreign body in the system.
 :::
 ::::
 
@@ -446,33 +321,16 @@ isolation, it is a foreign body in the system.
 ### Design Systems, Not Pages
 
 ::: prose
-The word \"system\" has two meanings, as Heydon Pickering observes: a
-set of principles (a method), and a set of interconnecting parts (a
-mechanism). An effective design system is both --- an exemplification of
-how to proceed. Weak systems are one or the other: either documentation
-without mechanism (\"do as I say\") or components without principles
-(\"here\'s what was done\").
+A design system can combine principles with reusable parts. Spatial primitives
+and fluid values can help describe how a page adapts, but the browser does not
+supply a finished design or guarantee correctness. Check choices with the
+project’s actual content, users and supported conditions.
 
-An algorithmic approach to layout design is the synthesis. Your
-primitives are the mechanism. Your axioms are the principles. Your fluid
-tokens are the mathematical glue. Together, they constitute a *program
-for generating layouts* --- not a collection of pre-built pages, but a
-generative system from which any page can be composed.
+William Morris’s repeating patterns are one historical example of combining
+constraints with variation. A layout method should help people respond to their
+own content and tasks, not make every result belong to an inherited visual
+family.
 
-This is the deepest connection between our layout philosophy and the
-Arts & Crafts movement that inspires C&B\'s broader identity. William
-Morris did not design wallpapers; he designed *systems for generating
-patterns*. His repeating motifs follow strict mathematical symmetry
-groups (the 17 wallpaper groups, the 7 frieze groups), but the patterns
-they produce are endlessly various. Similarly, our layout system does
-not produce \"a C&B layout.\" It produces an *infinite family of
-layouts*, all consistent, all fluid, all grounded in the same
-mathematical structure, and every one of them different.
-
-**The test:** could someone who has never seen any existing C&B page use
-these principles to create a new layout that is recognisably part of the
-family? If so, the system works. If they would need to copy an existing
-page as a starting point, it is a template, not a system.
 :::
 ::::
 
@@ -490,42 +348,28 @@ How the seven precepts materialise as CSS. This is the technical
 layer --- the specific primitives, tokens, and patterns that implement
 the philosophy.
 
-### The Fluid Foundation: Utopia Tokens
+### The Fluid Foundation: A Scoped Arithmetic Illustration
 
 ::: prose
-Every C&B project begins by defining two states: a `@min` viewport
-(typically 360px) and a `@max` viewport (typically 1440px). At `@min`,
-the base font size is 16px and the type scale ratio is 1.2 (minor
-third). At `@max`, the base is 20px and the ratio is 1.333 (perfect
-fourth). The Utopia calculators generate the `clamp()` declarations for
-each step.
-
-These two endpoints --- and the modular ratios that govern them --- are
-the *only design decisions* required to generate the entire type and
-space system. Everything else is mathematics.
+This named exercise reuses one accepted diagnostic configuration to show how
+root-relative endpoints and per-step interpolation work. Its inputs are
+arithmetic illustrations, not recommended type, spacing, palette or role
+defaults. The expression covers step zero only; negative steps are arithmetic
+probes, not functional-text recommendations.
 :::
 
 ::: code-block
-[/\* The two design decisions that generate everything \*/]{.comment}
-[/\* \@min: 360px viewport, 16px base, 1.200 ratio (minor third)
-\*/]{.comment} [/\* \@max: 1440px viewport, 20px base, 1.333 ratio
-(perfect fourth) \*/]{.comment} [:root]{.sel} { [/\* Type scale: each
-step is a clamp() between the two scales \*/]{.comment}
-[\--step-0]{.prop}: [clamp(1rem, 0.9015rem + 0.4924vi,
-1.3337rem)]{.val}; [\--step-1]{.prop}: [clamp(1.2rem, 1.0534rem +
-0.7331vi, 1.7783rem)]{.val}; [\--step-2]{.prop}: [clamp(1.44rem,
-1.2266rem + 1.0672vi, 2.3706rem)]{.val}; [/\* \... and so on
-\*/]{.comment} [/\* Space scale: derived from the same base
-\*/]{.comment} [\--space-s]{.prop}: [var(\--step-0)]{.val}; [/\* Space
-\"S\" = type \"step 0\" \*/]{.comment} [\--space-m]{.prop}:
-[clamp(1.5rem, 1.3523rem + 0.7385vi, 2.0006rem)]{.val};
-[\--space-l]{.prop}: [clamp(2rem, 1.8030rem + 0.9848vi,
-2.6674rem)]{.val}; [/\* \... \*/]{.comment} [/\* Space pairs: steeper
-interpolation for component padding \*/]{.comment}
-[\--space-s-m]{.prop}: [clamp(1rem, 0.7523rem + 1.2385vi,
-2.0006rem)]{.val}; [\--space-s-l]{.prop}: [clamp(1rem, 0.5038rem +
-2.4808vi, 2.6674rem)]{.val}; }
+`css
+--example-step-0: clamp(1.000000rem, calc(0.958333rem + 0.208333vi), 1.125000rem);
+`
 :::
+
+At a 16px root the 20rem–80rem interval is nominally 320–1280 CSS pixels. At a
+20px root it moves to 400–1600 CSS pixels. The interval is root-relative;
+treating it as fixed pixel endpoints changes the configuration. Interpolation
+is linear per step, not generally a geometric progression at intermediate
+widths. A calculation does not establish readability or zoom behavior; inspect
+the actual interface.
 
 ### The Compositional Layer: Every Layout Primitives
 
@@ -538,8 +382,8 @@ methodology). They consume Utopia tokens for their spacing values.
 
 ::::::::::::::::::::::::::::::::: concept-grid
 ::::::: concept-card
-::::: {.card-head style="background: var(--brand-950); color: var(--brand-100);"}
-::: {.card-label style="color: var(--brand-400);"}
+::::: {.card-head}
+::: {.card-label}
 Vertical Flow
 :::
 
@@ -548,7 +392,7 @@ The Stack
 :::
 :::::
 
-::: {.card-body style="background: var(--brand-50);"}
+::: {.card-body}
 **Responsibility:** vertical spacing between adjacent sibling elements.
 The most frequently used primitive --- nearly every block of content
 lives inside a Stack.
@@ -562,17 +406,17 @@ common.
 :::::::
 
 ::::::: concept-card
-::::: {.card-head style="background: var(--neutral-100); color: var(--neutral-950); border-bottom: 1px solid var(--neutral-200);"}
-::: {.card-label style="color: var(--neutral-600);"}
+::::: {.card-head}
+::: {.card-label}
 Padding & Containment
 :::
 
-::: {.card-title style="font-variation-settings: 'SOFT' 30, 'WONK' 0, 'opsz' 48;"}
+::: {.card-title}
 The Box
 :::
 :::::
 
-::: {.card-body style="background: var(--neutral-50);"}
+::: {.card-body}
 **Responsibility:** inset padding around content. A Box is any element
 that needs uniform internal spacing.
 
@@ -585,8 +429,8 @@ pair like `--space-s-m` for fluid component padding).
 :::::::
 
 ::::::: concept-card
-::::: {.card-head style="background: var(--books-700); color: var(--books-100);"}
-::: {.card-label style="color: var(--books-300);"}
+::::: {.card-head}
+::: {.card-label}
 Width Constraint
 :::
 
@@ -595,7 +439,7 @@ The Center
 :::
 :::::
 
-::: {.card-body style="background: var(--books-100);"}
+::: {.card-body}
 **Responsibility:** constraining content to a maximum width and centring
 it horizontally. The measure axiom is typically enforced here.
 
@@ -603,14 +447,14 @@ it horizontally. The measure axiom is typically enforced here.
 `box-sizing: content-box` so that padding does not reduce the content
 area.
 
-**Key parameter:** `--measure` (maximum width, typically `60ch` for
-prose, wider for layout containers).
+**Key parameter:** `--measure`, chosen for the actual typeface, language, text
+and reading conditions; review the rendered line length.
 :::
 :::::::
 
 ::::::: concept-card
-::::: {.card-head style="background: var(--art-700); color: var(--art-100);"}
-::: {.card-label style="color: var(--art-300);"}
+::::: {.card-head}
+::: {.card-label}
 Horizontal Grouping
 :::
 
@@ -619,7 +463,7 @@ The Cluster
 :::
 :::::
 
-::: {.card-body style="background: var(--art-100);"}
+::: {.card-body}
 **Responsibility:** grouping items horizontally with wrapping. Tags,
 button rows, navigation links, metadata.
 
@@ -631,8 +475,8 @@ space token. Items wrap naturally when space runs out.
 :::::::
 
 ::::::: concept-card
-::::: {.card-head style="background: var(--home-700); color: var(--home-100);"}
-::: {.card-label style="color: var(--home-300);"}
+::::: {.card-head}
+::: {.card-label}
 Main + Aside
 :::
 
@@ -641,14 +485,13 @@ The Sidebar
 :::
 :::::
 
-::: {.card-body style="background: var(--home-100);"}
+::: {.card-body}
 **Responsibility:** a two-element layout where one element has a
 preferred width (the sidebar) and the other takes the remaining space.
 Stacks vertically when the main element would become too narrow.
 
 **Mechanism:** Flexbox with `flex-basis` on the sidebar and `flex-grow`
-on the main content. The `clamp()`-based variant uses no media query at
-all.
+on the main content. A `clamp()`-based variant can avoid a media query for some uses.
 
 **Key parameter:** `--sidebar-width` and `--content-min` (minimum main
 content percentage before stacking).
@@ -656,19 +499,20 @@ content percentage before stacking).
 :::::::
 
 ::::::: concept-card
-::::: {.card-head style="background: var(--neutral-900); color: var(--neutral-100);"}
-::: {.card-label style="color: var(--neutral-400);"}
+::::: {.card-head}
+::: {.card-label}
 Responsive Columns
 :::
 
-::: {.card-title style="font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: var(--step-1);"}
+::: {.card-title style="font-weight: 500; font-size: var(--step-1);"}
 The Switcher
 :::
 :::::
 
-::: {.card-body style="background: var(--neutral-50);"}
-**Responsibility:** switching between a multi-column and a single-column
-layout based on available space. No breakpoints.
+::: {.card-body}
+**Responsibility:** switching between multi-column and single-column layouts
+based on available space. Intrinsic wrapping may suit the task; a breakpoint
+may be clearer when behavior changes discretely.
 
 **Mechanism:** `flex-wrap: wrap` with a calculated `flex-basis` that
 causes items to wrap at the threshold width. The threshold is defined by
@@ -695,57 +539,57 @@ element outside normal flow (modals, tooltips). The **Icon** sizes an
 inline SVG relative to its adjacent text. The **Container** provides the
 outermost width constraint for page content.
 
-Together, these thirteen primitives can compose any layout. They are the
-*atoms* of the system. Everything else --- cards, headers, navigation,
-forms, footers --- is a *molecule* composed from these atoms.
+Together, these thirteen primitives offer reusable ways to describe spatial
+relationships. They can help compose cards, headers, navigation, forms and
+footers; use other structures when they better fit the content.
 :::
 ::::
 
 ### The Unified Stack
 
 ::: prose
-When the Utopia fluid foundation and the Every Layout compositional
-primitives are combined, they form a layered architecture that covers
-the full spectrum of layout concerns.
+A project may combine fluid values with compositional primitives. Keep type,
+spacing, composition, methodology and progressive enhancement as useful areas
+of concern; their implementation and relationship depend on the project.
 :::
 
 :::::::::::::::::: layer-stack
-::::: {.layer style="border-color: var(--brand-700); background: var(--brand-50);"}
-::: {.layer-name style="color: var(--brand-800);"}
+::::: {.layer}
+::: {.layer-name}
 Typography
 :::
 
 ::: layer-desc
-Utopia fluid type scale. Breakpoint-free, modular, accessible. Governs
-all font sizes from captions to display headings.
+Choose type sizes and any fluid interpolation for the actual hierarchy;
+review rendered text and use discrete changes where the content calls for them.
 :::
 :::::
 
-::::: {.layer style="border-color: var(--brand-600); background: oklch(96% 0.01 55);"}
-::: {.layer-name style="color: var(--brand-700);"}
+::::: {.layer}
+::: {.layer-name}
 Spacing
 :::
 
 ::: layer-desc
-Utopia fluid space scale + space pairs. Derived from the type scale.
-Provides every margin, padding, and gap value in the system.
+Choose spacing values for their roles and relationships. Shared parameters,
+fluid pairs and independent values are all available constructions.
 :::
 :::::
 
-::::: {.layer style="border-color: var(--books-500); background: var(--books-100);"}
-::: {.layer-name style="color: var(--books-700);"}
+::::: {.layer}
+::: {.layer-name}
 Composition
 :::
 
 ::: layer-desc
 Every Layout primitives (Stack, Box, Center, Cluster, Sidebar, Switcher,
-Cover, Grid, Frame, Reel, Imposter, Icon, Container). Consumes Utopia
-tokens.
+Cover, Grid, Frame, Reel, Imposter, Icon, Container). Uses values supplied
+by the adopting project.
 :::
 :::::
 
-::::: {.layer style="border-color: var(--art-500); background: var(--art-100);"}
-::: {.layer-name style="color: var(--art-700);"}
+::::: {.layer}
+::: {.layer-name}
 Methodology
 :::
 
@@ -756,8 +600,8 @@ component-specific styles interact.
 :::
 :::::
 
-::::: {.layer style="border-color: var(--home-500); background: var(--home-100);"}
-::: {.layer-name style="color: var(--home-700);"}
+::::: {.layer}
+::: {.layer-name}
 Enhancement
 :::
 
@@ -801,27 +645,23 @@ Users have learned to filter it out.
 Our response mirrors Morris\'s: not to reject the tools, but to insist
 on *craft within the tools*. Every Layout and Utopia are not
 anti-framework; they are the intellectual infrastructure for building
-layouts that *deserve to exist*. A layout composed from tested
-primitives, scaled by mathematical proportion, and fluid across every
-viewport is not a template. It is a *considered response to specific
-content in a specific context*.
+layouts that *deserve to exist*. A layout composed from suitable
+primitives and values is a considered response to specific content in a
+specific context. Inspect it at the widths and settings the project supports.
 
 The Arts & Crafts movement believed that beautiful, well-made objects
 had moral force --- that they improved the lives of both their makers
 and their users. We believe something similar about layout. A site whose
-spatial relationships are harmonious, whose typography breathes at every
-viewport width, whose composition responds to content rather than
-imposing a grid upon it --- such a site is not merely functional. It is
-*hospitable*. It invites people in. It respects their time and their
+spatial relationships support their content, whose typography remains
+usable across supported widths, and whose composition responds to its task
+can be hospitable. It invites people in. It respects their time and their
 attention. And it demonstrates, by example, that the web can be better
 than it currently is.
 
 This document is released under CC0 because we believe this knowledge
 should be common property --- not locked behind a paywall or a
-proprietary framework. The point is not that everyone should make C&B
-layouts. The point is that everyone should be able to make *their own*
-layouts, with the same rigour, the same mathematical foundation, and the
-same respect for the medium. Mission chairs, not metal folding chairs.
+proprietary framework. The point is that people should be able to make layouts for their own
+content, with care and respect for the medium. Mission chairs, not metal folding chairs.
 But not *only* Mission chairs --- whatever chair *you* need, built
 beautifully.
 :::
@@ -845,9 +685,8 @@ Part V
 
 ## Applying the Philosophy: A Worked Example
 
-To demonstrate that these principles are practical and not merely
-aspirational, here is how a C&B book detail page might be composed from
-the system.
+To demonstrate how the principles can be applied, consider a book detail
+page composed from the adopting project’s content and available components.
 
 ::: prose
 Imagine a page displaying a single book: cover image, title, author,
@@ -862,7 +701,7 @@ mathematics handle responsiveness.
 :::
 
 ::: code-block
-[/\* The page structure --- no breakpoints, no media queries
+[/\* Page composition illustration; evaluate queries from observed needs
 \*/]{.comment} [/\* Page: Container → Stack \*/]{.comment} [.page]{.sel}
 { [/\* Container: max-width, centred \*/]{.comment}
 [max-inline-size]{.prop}: [1200px]{.val}; [margin-inline]{.prop}:
@@ -879,7 +718,7 @@ aspect-ratio locked \*/]{.comment} [flex-basis]{.prop}: [clamp(200px,
 [min-inline-size]{.prop}: [55%]{.val}; [/\* Stacks when too narrow
 \*/]{.comment} } [/\* Description: Center (measure-constrained prose)
 \*/]{.comment} [.book-description]{.sel} { [max-inline-size]{.prop}:
-[60ch]{.val}; [/\* The measure axiom \*/]{.comment} } [/\* Related
+[var(\--prose-measure)]{.val}; [/\* supplied project value; review with actual text \*/]{.comment} } [/\* Related
 titles: Grid (intrinsic column count) \*/]{.comment}
 [.related-grid]{.sel} { [display]{.prop}: [grid]{.val};
 [grid-template-columns]{.prop}: [repeat(auto-fit, minmax(min(100%,
@@ -887,19 +726,12 @@ titles: Grid (intrinsic column count) \*/]{.comment}
 :::
 
 ::: prose
-This stylesheet is approximately 30 lines of CSS. It handles every
-viewport from 320px to 4K. The cover image and title info sit
-side-by-side on wide viewports and stack on narrow ones, with no
-breakpoint --- the `min-inline-size: 55%` on the info panel triggers the
-stack naturally when the sidebar primitive runs out of room. The related
-titles grid shows 1 column on phones, 2 on tablets, 3--4 on desktops,
-and more on ultrawides, with no column count ever specified --- it is
-derived from the minimum acceptable card width (180px) and the available
-space. All spacing is fluid, all type is fluid, and the whole thing is a
-composition of four named primitives: Container, Sidebar, Center, and
-Grid.
-
-This is what \"designing systems, not pages\" looks like in practice.
+This stylesheet is an illustration to review with representative content and
+container sizes. Intrinsic wrapping can handle some width changes; evaluate any
+queries against observed behavior. The measure, card width, spacing and type
+values are examples whose suitability depends on the adopting project. The
+composition uses Container, Sidebar, Center and Grid relationships; adapt or
+replace them when the content calls for it.
 :::
 
 ------------------------------------------------------------------------
@@ -967,22 +799,17 @@ is about making systems that *produce* beautiful things.
 #### For the practically inclined
 
 ::: prose
-Start at utopia.fyi and generate a type scale and space scale. Paste the
-custom properties into your stylesheet. Read the Every Layout chapters
-on Stack and Sidebar --- those two primitives alone cover the majority
-of layout needs. Set `max-inline-size: 60ch` on all text elements. Use
-`gap` with Utopia space tokens for all spacing. Write zero media
-queries. You will be astonished at how far this gets you.
+Start with supplied components and content. Try intrinsic sizing and fluid
+values where they help. Add a container or viewport query when content, task or
+interaction needs a discrete change. Choose measures and spacing for their
+actual roles, then check supported widths and relevant text settings.
+
 :::
 ::::
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::: footer
 ::::: footer-inner
-::: brand
-[Cowboys](../../) [&]{.amp} [Beans](../../)
-:::
-
 ::: meta
 Layout Philosophy · March 2026 · CC0 Public Domain
 :::

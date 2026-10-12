@@ -1,6 +1,4 @@
 :::: hero
-[![Cowboys & Beans --- Back to
-home](../../images/cowboys-and-beans_monogram-1.1-on-dark.png){.hero-monogram}](../../)
 
 Strategies for Post-Template Web Design
 
@@ -83,8 +81,8 @@ The Toolkit
 
 The most important development of 2023--2025 is not any single CSS
 feature but their compound effect: for the first time, the web platform
-supports genuinely two-dimensional, content-responsive, breakpoint-free
-layout without JavaScript.
+supports two-dimensional, content-responsive layouts that can often reduce
+the need for JavaScript or discrete breakpoints.
 
 ::::::: feature-grid
 ::: feature-card
@@ -104,10 +102,9 @@ Müller-Brockmann.
 
 #### Container Queries
 
-Shift responsive design from viewport to component. Using `ch` units in
-container queries eliminates magic-number breakpoints entirely.
-Components adapt based on the space they actually occupy, not the
-browser window size. Combined with container query units (`cqw`, `cqh`),
+Shift responsive design from viewport to component. Using content-aware thresholds in
+container queries can reduce viewport-specific tuning. Components can adapt
+based on the space they occupy, while some tasks still need discrete changes. Combined with container query units (`cqw`, `cqh`),
 sizing becomes relative to context.
 :::
 
@@ -195,29 +192,25 @@ animations for progress indicators.
 ### Utopia\'s Fluid Mathematics {#utopias-fluid-mathematics style="margin-top: var(--space-l);"}
 
 ::: prose
-Utopia (James Gilyead and Trys Mudford) defines type and space at
-minimum and maximum viewport widths with different modular scale ratios,
-then interpolates between them via `clamp()` with mixed `rem` and `vi`
-units. The result: smooth, continuous type and spacing transitions with
-no jarring layout shifts at any viewport size. The use of `vi` (viewport
-inline) rather than `vw` preserves zoom accessibility, satisfying WCAG
-requirements.
+Utopia offers methods for interpolating selected type or space values
+between declared endpoints with CSS `clamp()`. The result depends on the
+chosen roots, intervals, content and browser behavior; inspect it across the
+conditions the project supports. Viewport-relative units describe different
+axes, but no unit alone establishes zoom behavior or WCAG conformance.
 
-Space tokens derived from the same modular scale as typography create
-what Massimo Vignelli called \"syntactical consistency\" --- spacing and
-type as a unified mathematical system. When the type scale is built on
-musical interval ratios (perfect fourth at 4:3, perfect fifth at 3:2,
-major third at 5:4), the space system inherits that proportional harmony
-automatically.
+A project may coordinate spacing and type with shared parameters, including a
+ratio or musical interval, when that supports its hierarchy. These are
+construction choices. Interpolation is calculated per value and does not
+preserve a geometric relationship at every intermediate width.
 :::
 
 ### The Full Stack at a Glance {#the-full-stack-at-a-glance style="margin-top: var(--space-l);"}
 
   Layer          Tool                                 Purpose
   -------------- ------------------------------------ ------------------------------------------
-  Typography     Utopia fluid type scale              Breakpoint-free, modular, accessible
-  Spacing        Utopia fluid space scale             Harmonised with type, clamp()-based
-  Colour         OKLCH + color-mix() + light-dark()   Perceptually uniform, CSS-native
+  Typography     Contextual sizes and optional interpolation   Review hierarchy and rendered text
+  Spacing        Contextual values and relationships   Shared or independent as useful
+  Colour         Supplied values and rendered pairs   Check actual states and context
   Layout         Every Layout primitives              Composable, intrinsically responsive
   Alignment      CSS Subgrid                          Nested content alignment
   Adaptation     Container queries                    Component-level responsiveness
@@ -585,10 +578,6 @@ Appendix
 
 :::::: footer
 ::::: footer-inner
-::: brand
-[Cowboys](../../) [&]{.amp} [Beans](../../)
-:::
-
 ::: meta
 Breaking the Layout Monoculture · Research · March 2026 · CC0 Public
 Domain
