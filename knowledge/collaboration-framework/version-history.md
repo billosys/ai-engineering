@@ -1,6 +1,6 @@
 # Collaboration Framework Version History
 
-## Version 2.8.0 - 2026-10-12
+## Version 2.7.2 - 2026-10-12
 
 Routed and bundled delivery-oriented planning and prompt-authoring refinements:
 usable increments, scoped dependencies, positive preservation, bounded inquiry
