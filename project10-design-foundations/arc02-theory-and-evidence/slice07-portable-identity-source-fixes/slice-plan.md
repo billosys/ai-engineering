@@ -1,6 +1,6 @@
 ---
 slice: slice07-portable-identity-source-fixes
-status: open
+status: closed
 ---
 
 # Arc02 Slice07 — Portable Identity Source Fixes
@@ -224,9 +224,10 @@ review; neither reading receipts nor this author witness proves future behavior.
 
 - Initial `cc-prompt.md`, issuebf771347, returned at sourcec4531c8c/planning3e592fe8.
   CDC initial review accepts S07-01; S07-02–05 remain open (F01–03).
-- **Current assignment:** `cc-prompt-iteration01.md`, issued2026-10-12 by the
-  commit containing this entry. Predecessor initial prompt; active for separate
-  CC repair of preservation, example/route/coherence and return accuracy.
+- **Final assignment:** `cc-prompt-iteration01.md`, issued 2026-10-12 at
+  `52d44207`. Predecessor initial prompt; completed by separate
+  CC at source 52f0b520/planning 7a135d80; CDC accepted all five rows and closed
+  the slice. The repair covers preservation, example/route/coherence and return accuracy.
   SOURCE is c4531c8c4fc3187968d3d79fcb065892b89fe2a8. Exact narrower three-source/
   three-planning write scope is in I1; all original five criteria/gates remain.
 
@@ -241,6 +242,10 @@ No source repair by CDC, new software harness or broader theory rewrite.
 The prescribed recipe resolves actual output and leaves prose placement local.
 
 ## Version History
+
+- 1.2 (2026-10-12): I1 independently accepted at source 52f0b520/planning 7a135d80;
+  all five criteria done, slice closed. Parent gates remain; next ready source
+  batch is Slice08 token conventions.
 
 - 1.1 (2026-10-12): Initial independent review accepts removal only; I1 repairs
   missing protected teaching/CSS, unusable exercise and inconsistent neighbors,

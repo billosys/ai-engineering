@@ -1,5 +1,8 @@
 # Slice07 independent CDC verification
 
+Current status: closed after the Iteration01 review below. Earlier findings
+and proposed statuses remain historical evidence.
+
 ## Initial return review — 2026-10-12
 
 CDC Sofie reviewed the preserved initial assignment issued at
@@ -8,7 +11,7 @@ CDC Sofie reviewed the preserved initial assignment issued at
 `3e592fe8bbdae4748a180f98acce01b1b9e2e7c7`. Planning HEAD additionally contains
 unrelated Project12 commit `bf0dedc0`; this review does not modify its work.
 
-**Current verdict: one row done, four open. Slice07 remains open.**
+**Initial verdict: one row done, four open. Slice07 remained open at this review.**
 The identity removal is accepted at this source revision. The other findings
 are defects against the original preservation/usability/reporting contract,
 not a new full-theory review or changed acceptance standard. Separate CC will
@@ -119,3 +122,77 @@ corpus/readiness/fresh-context/browser/metadata/package/release owners remain.
 Broader retained perception, token, analogy and layout research still requires
 Arc02 review; this bounded identity review does not accept those assertions.
 No source mutation by CDC, closure, install or publication occurred.
+
+## Iteration01 independent review and Slice07 closure — 2026-10-12
+
+**Final verdict: all five rows done; Slice07 closed.** CDC Sofie independently
+reviewed source `52f0b5208b538d9e1e351e22aa3e2c88e620014f` and planning return `7a135d80934ce7c4fc376ba86336f166a1547c61`
+against I1 issued at 52d44207. Source parent is c4531c8c; source changes exactly
+SKILL/layout/type. Planning changes exactly the three CC outputs; its parent
+a5b8c5e3 is unrelated Project11 planning, preserved here. Both commits contain
+separate required Codex/Billo AI trailers. Issued prompts, plan and CDC initial
+record match their issuing bytes; the doer preserved all five criteria/statuses.
+
+### Reproduced correction and retained acceptance
+
+F01 is resolved: the exact accepted two-sentence entrypoint colour teaching and
+three fenced Stack/Sidebar/Grid CSS blocks compare byte-for-byte to 3658f79a.
+The two foundations colour passages also remain byte-identical. New surrounding
+text makes numeric values illustrative and custom properties project-supplied;
+it restores neither a profile nor the old global measure/alias prescriptions.
+F02 is resolved: exact parameters 1rem/1.125rem, 1.2/1.25 and 20rem–80rem are named;
+the literal step-zero expression is in a proper CSS fence. Actual heading
+resolution finds the new Type target exactly once and rejects the former short
+fragment. The ratio heading, gap sentence and compositional opening paragraph
+now agree with optional project choices. Root/800px arithmetic reproduces
+16.999992px and 20.833324px, each within 0.001px of 17px and 125/6px.
+F03 is resolved: current report and batch sections explicitly supersede false
+initial preservation/Fraunces claims, while retaining that historical return.
+Zero Fraunces mentions remain, with no blacklist on an independently supplied face.
+
+CDC inspected the complete changed contexts and fresh eight-file removal scan,
+then checked the actual source-guidance contract walks: absent identity calls
+for contextual proposals; supplied client tokens/typeface remain authoritative;
+independently chosen brown/Fraunces are valid; an anonymized inherited preset
+still fails. The restored CSS does not replace client spacing. The prior S07-01
+semantic removal evidence remains applicable: unchanged five-file payload plus
+inspected three-file additions introduce no old profile/roster/site presets.
+These are analytic checks, not actual model/browser trials or full-live semantics.
+
+### Fresh source and package validation
+
+CDC ran main's `make help`, `make check-skills`, `make check-package-paths`,
+fresh `make design` and source/planning `git diff --check`. All pass; 24 source
+skills/24 packages, zero version errors and zero hard path failures. Retained
+warnings: 593 at 592 locations, three exceptions, 678 skipped URLs. Description
+remains 360 characters, below the hard limit and above the soft editorial target.
+Skill metadata/history remain 1.0.2; this repair completes the same correction.
+All eight Markdown members of the fresh zip equal the committed source bytes.
+CDC archive SHA-256: `7e919b8d53f51f722cbd633ef103a5558782b9fc32e51d3420b7c6bd77e014e5`. CC's earlier archive
+hash 507859f0 differs; content identity uses member bytes, not ZIP timestamps.
+No new independent-check failure occurred in this I1 preservation/package pass.
+
+| Row | Final status | Independent evidence and limit |
+|---|---|---|
+| S07-01 | done | Prior removal review retained after changed-context/eight-member applicability check. |
+| S07-02 | done | Repaired layout neighbors/route and contextual method checked with all prescribed analytic cases. |
+| S07-03 | done | Three protected teachings/three CSS blocks preserved; declared example/fence/root arithmetic reproduced. |
+| S07-04 | done | Exact scope/trailers, version/history, actual target, fresh Make gates and eight packaged member identities reproduced. |
+| S07-05 | done | Current five-row return, additive corrections, one-artifact inventory, limits and successor owners checked. |
+
+### Bubble-up, silent-drop check and next delivery
+
+The sole supporting artifact is the existing batch record. All five original
+criteria are satisfied at this bounded source/package scope; no criterion was
+dropped/deferred or weakened. The slice delivers inherited-identity removal and
+usable brief-led replacements, preserving accepted teaching. It does not close
+DES-001/013, A02-09/P10-02 fresh-context behavior, full 233-card/eight-live semantics,
+P10-11 fidelity, actual accessibility, metadata/GitHub or final release gates.
+Unrelated main knowledge/lfe and Project11/12 planning work remain untouched.
+
+No structural arc amendment is needed. Update status and open the next ready
+source batch under Expedited Mode: Slice08 applies the seven accepted token
+corrections that still survive in design/foundations, reconciling the full 21
+historical actions against the rewritten payload. Remaining broader perception,
+spacing/cascade, colour-trend and full-corpus work retains Arc02 owners. No
+installation, publication or CDC source mutation occurred.
