@@ -19,3 +19,7 @@ Replaced inherited publishing and arts identity defaults with brief-led colour,
 type and layout methods. Preserved supplied project tokens and assets, made
 scales and token layers optional, scoped fluid arithmetic examples, and retained
 contextual review requirements.
+
+## Version 1.0.3 - 2026-10-12
+
+Scoped token-convention corrections distinguish DTCG interchange and value types from optional token architecture and project-defined names, qualify cross-system comparisons, and describe reference propagation conditionally.

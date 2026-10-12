@@ -102,11 +102,14 @@ architecture:
 
 ::: {.prose style="margin-top: var(--space-s);"}
 **Universal visual style categories** across all five systems: colour,
-typography, spacing/layout, motion, icons, and elevation/depth. The W3C
-Design Tokens Community Group published its first stable specification
-(October 2025) defining seven primitive types (colour, dimension,
-fontFamily, fontWeight, duration, cubicBezier, number) and six composite
-types (shadow, typography, border, gradient, transition, strokeStyle).
+typography, spacing/layout, motion, icons, and elevation/depth.
+[The DTCG 2025.10 Format Module](https://www.designtokens.org/tr/2025.10/format/)
+is a stable Final Community Group Report intended for implementation, not a
+W3C Standard or Standards Track document. It specifies a JSON interchange
+format with value types: `color`, `dimension`, `fontFamily`, `fontWeight`,
+`duration`, `cubicBezier`, and `number`; composite types include `strokeStyle`,
+`border`, `transition`, `shadow`, `gradient`, and `typography`. These type
+categories describe value structure, not a required token-layer architecture.
 :::
 
 ------------------------------------------------------------------------
@@ -464,17 +467,23 @@ but mathematical equivalence is unsupported.
 Section 6
 :::
 
-## Notation Conventions Converge on Three-Tier Token Architecture
+## Token Architecture Choices
 
 ::: notes
 #### Colour Notation: Shifting from Hex to OKLCH
 
 Hex remains the universal interchange format, but the industry is moving
-toward OKLCH for manipulation and token definition. The dominant pattern
-is a **three-tier token architecture**: primitive tokens
-(`color.blue.500`) → semantic tokens (`color.primary`,
-`color.surface.default`) → component tokens
-(`color.button.primary.background.hover`). With CSS relative colour
+toward OKLCH for manipulation and token definition.
+One possible notation uses primitive values (`color.blue.500`),
+semantic aliases (`color.primary`, `color.surface.default`), and
+component bindings (`color.button.primary.background.hover`). This
+example is not evidence that three tiers are the dominant industry
+pattern. Choose reusable values when reuse helps, semantic aliases when
+shared meaning or theme variation benefits, and component bindings when
+local control warrants their maintenance. Additional layers add
+indirection; fewer can couple consumers to shared values. A value change
+reaches only consumers whose references resolve through it; local literals
+and separate mappings need their own review. With CSS relative colour
 syntax now baseline, teams can define `--brand-l`, `--brand-c`,
 `--brand-h` as separate properties and generate tonal scales via
 `calc()`.
@@ -494,12 +503,13 @@ numeric scales (`space.1` through `space.8`), and semantic aliases
 ::: notes
 #### Typography Tokens: Composite Structures
 
-The DTCG specification defines typography as a composite token type
-combining fontFamily, fontSize, fontWeight, lineHeight, and
-letterSpacing. Material Design 3 uses category × size naming:
-`typescale-display-large`. Utopia names scale steps numerically
-(`--step--2` through `--step-5`) with each step getting its own
-`clamp()` declaration.
+DTCG 2025.10 defines a typography composite with `fontFamily`, `fontSize`,
+`fontWeight`, `lineHeight`, and `letterSpacing` values or appropriately typed
+references. Composite value structure is separate from token naming and layers.
+Utopia's calculator example uses numbered steps such as `--step--2` and
+`--step-5`; its method and prefix are configurable. Choose names and scale
+construction for the adopting project rather than treating an example as a
+universal convention.
 :::
 
 ::: notes

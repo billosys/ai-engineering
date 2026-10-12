@@ -53,14 +53,16 @@ Section I
 ## The Convergence Thesis
 
 ::: prose
-The three most influential design systems of the current era ---
-Google\'s Material Design, IBM\'s Carbon, and Shopify\'s Polaris ---
-were built independently, by different teams, for different products,
-serving different users. And yet they converged on the same fundamental
-architecture.
+Material Design, Carbon and Polaris name distinct products and generations.
+Compare their token models only after identifying the product, generation,
+page date and token category. The available examples do not establish that
+these systems share one architecture.
 
-All three define a layered token system: primitive values at the base,
-semantic aliases in the middle, component-specific bindings at the top.
+[Material Web's theming documentation](https://material-web.dev/theming/material-theming/)
+distinguishes reference, system and component tokens, and allows concrete
+component values. [Fluent 2's token documentation](https://fluent2.microsoft.design/design-tokens)
+presents global and alias layers. These are bounded documentation examples,
+not evidence that every design system requires the same layer count.
 All three use multiplicative type scales rather than arbitrary font
 sizes. All three enforce spacing systems built on a base unit with
 constrained multipliers. All three separate colour into tonal scales
@@ -236,12 +238,10 @@ system is to make that violation structurally impossible --- to ensure
 that every composition the system permits is one that the visual cortex
 will process as coherent.
 
-This is also why the convergence of Material Design, Carbon, and Polaris
-is significant. These systems were built by teams with different
-aesthetic preferences, different brand requirements, different technical
-constraints. What they share is not style but structure. The structure
-is dictated by human perception, and human perception does not vary by
-brand.
+Comparisons between Material Design, Carbon and Polaris need an identified
+product generation and token category. Their available examples do not
+establish one shared token architecture. A token-model comparison also does
+not establish a universal law of perception.
 :::
 
 ::: dot-divider
