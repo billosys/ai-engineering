@@ -287,11 +287,16 @@ Project13 final comparison dc7b0732 completes the two-run pilot; benefit remains
 inconclusive and no third run/general adoption is authorized. Current
 [Slice05](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt.md)
 is the next ordinary retained T concern: fluid-type/accessibility limits, DES-005,
-seven contexts/98 lines/five files; all nine child rows open. Arc03 retains actual
+seven contexts/98 lines/five files; initial C37f74622/H9254e094 has two child rows
+accepted and seven open. [Iteration01](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt-iteration01.md)
+addresses complete targets/coverage/model/guard/intake defects. Arc03 retains actual
 accessibility/typesetting proof. SOURCE and all parent criteria remain unchanged;
 full R/T/C/L/G,233/eight/16, P10-11, metadata/live/package/release gates remain.
 
 ## Version History
+
+- 1.43 (2026-10-12): Arc02/Slice05 initial CDC review accepts S05-03/08 and
+  issues I1 for seven open rows; full scope/parent gates preserved, no advancement.
 
 - 1.42 (2026-10-12): Arc02/Slice05 opened after Slice04 closure and completed
   Project13 two-run comparison; retained DES-005 technical/model concern with

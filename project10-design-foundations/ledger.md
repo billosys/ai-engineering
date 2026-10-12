@@ -254,3 +254,11 @@ DES-005 unit/zoom/root/resize evidence and literal handoff; actual browser proof
 Arc03-owned. Parent criterion texts/statuses and all233/eight/16, R/T/C/L/G,
 P10-11, metadata/live/package/release/Operator gates unchanged. Ordinary work,
 not a third trial or framework-wide method adoption.
+
+## Slice05 initial independent review — 2026-10-12
+
+[CDC review](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cdc-verification.md) accepts S05-03/08 at C37f74622/H9254e094;
+seven child rows remain open. I1 addresses complete targets/assertions, missing
+model fields/coverage, false-pass guards and intake/report discrepancies. Slice
+remains open; parent criterion texts/statuses and all R/T/C/L/G, 233/eight/16,
+P10-11, runtime/live/metadata/package/release/Operator gates unchanged.

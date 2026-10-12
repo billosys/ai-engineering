@@ -46,8 +46,8 @@ in an explicit owner/re-entry queue; no silent full-corpus scope shrink.
 Exactly seven CC paths under this slice:
 `artifacts/occurrence-inventory.jsonl`, `artifacts/source-comparison.md`, `artifacts/claim-results.jsonl`, `artifacts/correction-handoff.md`, `artifacts/execution-notes.md`, `ledger.md`, `closing-report.md`.
 Durable artifacts live under artifacts/. Preparation/this plan/issued prompt and
-CDC records protected; ledger evidence/notes only, all nine criteria/statuses
-remain open for CDC. No maintained helper/new format standard or software runtime.
+CDC records protected; ledger evidence/notes only. All nine criterion texts and CDC statuses are
+protected; S05-03/08 are done and seven rows remain open. No maintained helper/new format standard or software runtime.
 Human review covers complete assertion meaning, primary applicability, original
 pairs, usable prose and scoped behavioral requirements. Mechanical checks cover
 literal identities/bounds/joins/numbers and composition, not semantic truth.
@@ -57,7 +57,10 @@ All original/source/corpus/runtime/Arc04/Arc06/release/Operator gates remain.
 
 | Assignment | Issue/predecessor | Status |
 |---|---|---|
-| [Initial prompt](cc-prompt.md) |2026-10-12; predecessor dc7b0732fa8a78cf47713aecdaabbc5ef05686b6; issue is commit containing prompt | Active, all nine rows open; CC executes/returns to CDC through Operator. |
+| [Initial prompt](cc-prompt.md) |2026-10-12; predecessor dc7b0732fa8a78cf47713aecdaabbc5ef05686b6; issue is commit containing prompt | Returned as C37f74622/H9254e094; two rows accepted, seven open; I1 supersedes current execution. |
+| [Iteration01](cc-prompt-iteration01.md) | 2026-10-12; predecessor 9254e094901e619717abf09e9b3ee7683d56fbb0; issue is commit containing I1 | Active: F01–F05 complete targets/coverage/models/guards/intake; same scope and nine criteria. |
+
+Current assignment is **Iteration01**. The [initial independent review](cdc-verification.md#initial-independent-review--2026-10-12) accepts S05-03/08; seven rows open. Initial prompt is preserved.
 
 CDC applied the ordinary engineering-methods readiness check: read governing
 scope/domain/primary sections, resolved evidence-only boundaries and exact outputs,
@@ -67,6 +70,10 @@ remain evidence-dependent. Author examples are self-checked, not independently
 accepted CC results. Reading/recovery is recorded by actual scope, not count claims.
 
 ## Version History
+
+- 1.1 (2026-10-12): Initial return independently reviewed; two rows done, seven
+  open. Issued I1 for F01–F05 within the original seven-window evidence contract.
+  No parent-gate or source-scope change.
 
 - 1.0 (2026-10-12): Opened next remaining T concern after Slice04 close and
   final two-run comparison; seven-context bounded evidence contract, all rows open.
