@@ -73,6 +73,22 @@ project-plan change, `project-plan.md` must be updated before the next arc is
 planned in detail** — using the plan-change discipline below, recording which
 arc surfaced the change and why.
 
+### CDC retrospectives at arc and project close
+
+In the Three-Contributor Workflow, CDC must write `cdc-retrospective.md` in the
+arc root at arc close and in the project root at project close. Link each from
+its closing report and return it with CDC's closure handoff through the Operator.
+Apply the [record contract](./02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow)
+and [methodology-stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md).
+
+At arc close, synthesize patterns and counterexamples across slice retrospectives,
+check earlier recommendations, and recommend project-level prompting or process
+adjustments. At project close, synthesize across arcs, assess the relationship
+between process work and delivered capability, and propose scoped framework or
+component-skill changes with evidence and applicability limits. Reconcile missing
+child analyses explicitly. Neither repetition nor a completed retrospective
+proves a cause, adopts a recommendation, or replaces composition/DoD verification.
+
 ### The plan-change discipline (make-a-change + version-history)
 
 Both the slice → arc update and the arc → project update use one discipline.

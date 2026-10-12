@@ -34,6 +34,9 @@ The repository currently includes:
 
 - domain/tooling skill packages for Rust, Go, Erlang/OTP, C++,
   JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, Biome, and Deno lint;
+- the [`methodology-stewardship`](./knowledge/methodology-stewardship/SKILL.md)
+  skill for closing retrospectives, recurring collaboration difficulties, and
+  evidence-backed process recommendations;
 - the [`scientific-methods`](./knowledge/scientific-methods/SKILL.md) method
   skill for practical inquiry, controlled comparison, experiment planning,
   evaluation rubrics, evidence capture, and regression analysis;

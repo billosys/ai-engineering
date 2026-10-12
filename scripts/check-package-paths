@@ -64,6 +64,7 @@ SKILL_PACKAGE_TOPS = set(DOMAIN_BY_PACKAGE) | {
     "collaboration-framework",
     "contribution-style",
     "engineering-methods",
+    "methodology-stewardship",
     "project-management",
     "scientific-methods",
     "testing",

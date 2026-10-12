@@ -1,5 +1,12 @@
 # Version History
 
+## Version 2.19.0 - 2026-10-12
+
+Added the three-contributor CDC retrospective record at every closing scale,
+Operator-relayed handoff, explicit pending/completed responsibility, and routes
+to methodology-stewardship. Kept learning records separate from acceptance and
+preserved existing workflow gates, history and filename overrides.
+
 ## Version 2.18.1 - 2026-09-28
 
 Aligned slice closing with work-verification's correction-review rule. Review

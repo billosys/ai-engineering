@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.6.0"
+  version: "2.7.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -98,6 +98,11 @@ between planning/review judgment and implementation execution; use tools for
 evidence when exactness matters; keep thinking work in the main context and
 parallelize lookup work only when it can be independently checked; treat
 ledger closure as proposed-done until independently verified.
+
+In the Three-Contributor Workflow, CDC also owns closing retrospectives at
+slice, arc and project scale. Load
+[methodology-stewardship](../methodology-stewardship/SKILL.md) for the analysis
+and project-management for the record and closing handoff.
 
 ## When to use this skill
 

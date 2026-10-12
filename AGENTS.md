@@ -34,6 +34,11 @@ framework documents and a packaging surface for installable assistant skills.
   `cdc-directiveNN.md`, both relayed by the Operator and preserved under the
   planning guide's design handoff contract. Neither workflow permits
   self-acceptance or silent changes to the agreed contract.
+  In the Three-Contributor Workflow, CDC also owns methodology stewardship:
+  write `cdc-retrospective.md` at each slice, arc and project close, following
+  `knowledge/methodology-stewardship/SKILL.md` and project-management's
+  retrospective record/handoff contract. Retrospectives do not replace the
+  required verification records or enact recommendations automatically.
 - The Operator may explicitly select the One-Contributor Workflow for bounded
   single-assistant work. Use proportionate self-checks and a completion report,
   not fictional role handoffs or new planning trees solely for the workflow.

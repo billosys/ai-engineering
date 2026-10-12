@@ -8,7 +8,7 @@ description: |
   review finding into a detailed, domain-guided CC implementation prompt.
 license: MIT
 metadata:
-  version: "1.16.0"
+  version: "1.17.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills
@@ -26,6 +26,10 @@ The Two-Contributor Workflow is the default. The Operator may explicitly select
 the Three-Contributor Workflow for sustained design/review separation or the
 One-Contributor Workflow for proportionate single-assistant work. All preserve
 scope and evidence honesty; self-checks are not independent acceptance.
+
+For CDC retrospectives at slice, arc and project close in the Three-Contributor
+Workflow, load [methodology-stewardship](../methodology-stewardship/SKILL.md).
+Keep process observations and recommendations distinct from acceptance verdicts.
 
 Before writing or reviewing a CC implementation assignment, read
 [From Slice to Implementation Prompt](./guides/07-implementation-prompt-authoring.md) and use its

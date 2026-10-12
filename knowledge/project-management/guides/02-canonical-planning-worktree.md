@@ -140,6 +140,7 @@ first-class document set when another assignment is issued:
 | `cdc-directiveNN.md` | as needed | Preserved CDC-to-CRC assignment or response to an escalation, relayed by the Operator. |
 | `closing-report.md` | close | The per-row walk written at slice close, plus the **bubble-up to the arc** (see [`Closing slices`](./04-closing-slices.md)). |
 | `cdc-verification.md` (two contributors) or `crc-verification.md` (three contributors) | close | The assigned reviewer's independent re-run that verifies the closing report against evidence, plus the **bubble-up check** (see [`Closing slices`](./04-closing-slices.md)). |
+| `cdc-retrospective.md` (three contributors) | close | CDC methodology analysis and follow-through; separate from the acceptance verdict. See the retrospective record contract below. |
 | `artifacts/` | as needed | Default home for supporting outputs such as research, findings, logs, and analysis. Excludes the first-class slice documents above. Create only when needed or when it clarifies the handoff. |
 
 Opening the close-set documents at slice start, or leaving the open-set
@@ -204,6 +205,36 @@ both records to address the same current candidate, dispositioned findings,
 and the required independent and Operator gates, not merely both files existing.
 Link them from the owning ledger and closing report. See
 [independent verification](../../work-verification/guides/05-independent-verification.md).
+
+### Retrospective records in the Three-Contributor Workflow
+
+CDC must perform a retrospective as part of each slice, arc and project closing
+activity. Place `cdc-retrospective.md` beside that unit's plan and closing report,
+not in `artifacts/`. It is an additional first-class learning record in this
+workflow, separate from the verification records above. Other workflows may
+use the skill when requested; this rule does not add a mandatory file to them.
+
+CRC sends the closure report, verification, ledger and relevant prompt/evidence
+paths through the Operator to CDC, identifying difficulties and unresolved
+watch items. CDC inspects the underlying evidence and returns the retrospective
+path and actionable recommendations through the Operator. Link the record from
+the owning closing report. Follow
+[methodology-stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md)
+for content and scale-specific synthesis.
+
+CRC's implementation acceptance remains valid if CDC's retrospective is pending;
+record that pending CDC responsibility in the current plan/closing report and
+return handoff, rather than claiming every closing activity complete. A pending
+retrospective alone does not block unrelated approved slice advancement in
+Expedited Mode. CDC completes it during closing follow-through; at arc/project
+close, reconcile child retrospectives and outstanding recommendations, recording
+any Operator-authorized deferral explicitly. Do not silently drop the duty.
+Correctness or structural findings use normal review/escalation gates immediately.
+
+Retrospective completion requires an evidence-grounded analysis, not a favorable
+verdict or an invented finding. Create the record when analysis occurs, preserve
+historical records and explicit project filename overrides, and do not backfill
+already closed work as though this requirement applied at its original close.
 
 ### Verification filename compatibility
 

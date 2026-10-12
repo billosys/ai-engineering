@@ -5,7 +5,7 @@ closed *and* its outcome has been rolled up to the arc — because a slice that
 delivered its diff but silently invalidated the arc's plan has not finished
 its job; it has deferred a problem to whoever plans the next slice.
 
-Two documents close a slice: `closing-report.md` (written by CC, the
+Two documents establish slice implementation acceptance: `closing-report.md` (written by CC, the
 implementer) and the assigned independent reviewer's record:
 `cdc-verification.md` in the Two-Contributor Workflow, or `crc-verification.md`
 in the Three-Contributor Workflow. Existing records are preserved per
@@ -13,6 +13,17 @@ in the Three-Contributor Workflow. Existing records are preserved per
 The ledger-row mechanics of both are defined in
 [`Row Closure`](../../work-verification/guides/03-row-closure.md). This section adds
 the two things that make a close also a *bubble-up*.
+
+### CDC retrospective in the Three-Contributor Workflow
+
+As part of slice closing, CRC relays the accepted work and review history through
+the Operator to CDC. CDC writes `cdc-retrospective.md`, examining difficulties,
+successes, planning/review contributions and recommendations for observation or
+subsequent prompting. Link it from the closing report. Apply the
+[record, pending-duty and handoff contract](./02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow)
+and [methodology-stewardship guide](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md).
+This analysis complements the existing bubble-up and does not duplicate its
+scope accounting or replace CRC's acceptance.
 
 ### When review requires another iteration
 
