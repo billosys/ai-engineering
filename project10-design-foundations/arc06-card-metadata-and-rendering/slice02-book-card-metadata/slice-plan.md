@@ -7,6 +7,10 @@ blocks: [slice04-github-rendering-and-handoff]
 
 # Slice02 — Book Card Metadata
 
+## Operator amendment — 2026-10-12
+
+This unissued draft is superseded by Arc06 revision 1.1: cover all 233 cards (150 book + 83 web), including actual GitHub rendering and final handoff. The retained directory name does not limit coverage. Revise this plan and ledger before issuing any CC prompt. The [current arc plan](../arc-plan.md#revised-slice-breakdown) governs; the remaining text below is the preserved former draft.
+
 ## Goal and complete population
 
 Normalize existing metadata for all 150 baseline book-backed design cards:
@@ -83,3 +87,8 @@ headroom; no missing cohort member becomes deferred by omission.
 
 - 1.0 (2026-10-10): Planned existing-field normalization for the complete
   150-card book cohort, with pilot/no-invention/preservation constraints.
+
+- 1.1 (2026-10-12): Operator workload amendment; former unissued draft
+  explicitly superseded by the combined contract/pilot and all-card normalization/
+  rendering sequence in Arc06. Scope/checks transferred without acceptance;
+  surviving open sets require revision before issuance.

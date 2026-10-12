@@ -3,6 +3,13 @@
 P10-01 planning authority is approved; P10-02–11 and added P10-12/13 remain open.
 The shared audit and synthesis are planning inputs; no project delivery or release is accepted.
 
+Operator amendment 2026-10-12: all thirteen criteria and their statuses are
+retained. Arc02 owns content/source corrections plus former Arc03 accessibility/
+typesetting proof; Arc06 owns metadata/rendering; Arc04 owns package, composition
+and former Arc05 release validation. The source-fidelity gate remains open.
+The next new assignment applies accepted corrections to source. Older roll-ups
+below are historical and do not override the current project roadmap.
+
 Arc01/Slice01 opened on 2026-10-09. Its
 [slice ledger](arc01-portable-contract/slice01-scope-and-portability-contract/ledger.md)
 tracks the first contract/inventory packet, independently accepted by CDC at
@@ -106,7 +113,7 @@ contract has been changed. Earlier eleven-row summaries are historical.
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
 | P10-12 | All design cards have consistent existing metadata aligned with the selected contract, with existing values/extensions preserved and no missing fields invented | Replay complete baseline/current metadata crosswalk, permitted deltas, gap register, body/identity preservation and independently accepted Arc06 union | correctness-grade | Operator metadata addition, 2026-10-10 | open | — | Historical 3.2 fallback while Project08 replacement remains unadopted; missing required information is reported, not fabricated or called full conformance |
-| P10-13 | Metadata and Markdown render correctly and consistently on GitHub for the complete final card population | Inspect exact final-revision hosted repository file views and full per-card coverage/results; repeat affected checks after later composition | serious | Operator GitHub rendering requirement, 2026-10-10 | open | — | Local YAML/GFM parsing is insufficient; Arc06 establishes source rendering, Arc04 preserves package/routes and Arc05 checks final revision |
+| P10-13 | Metadata and Markdown render correctly and consistently on GitHub for the complete final card population | Inspect exact final-revision hosted repository file views and full per-card coverage/results; repeat affected checks after later composition | serious | Operator GitHub rendering requirement, 2026-10-10 | open | — | Local YAML/GFM parsing is insufficient; Arc06 establishes source rendering; Arc04 preserves package/routes and checks the final revision |
 
 
 ## Arc02/Slice02 Iteration03 review — 2026-10-10

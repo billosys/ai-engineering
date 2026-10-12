@@ -7,6 +7,10 @@ blocks: [slice02-book-card-metadata, slice03-web-card-metadata]
 
 # Slice01 — Schema and Field Inventory
 
+## Operator amendment — 2026-10-12
+
+This unissued draft is superseded by Arc06 revision 1.1: combine contract selection with an exercised candidate pilot. Revise this plan and ledger to the compact output contract before issuing any CC prompt. The [current arc plan](../arc-plan.md#revised-slice-breakdown) governs; the remaining text below is the preserved former draft.
+
 ## Goal and exact scope
 
 Establish the selected metadata contract, complete field-state inventory and
@@ -93,3 +97,8 @@ alignment is not full conformance or semantic verification.
 
 - 1.0 (2026-10-10): Planned read-only contract/census and GitHub diagnosis from
   Operator addition; preliminary source counts do not close any row.
+
+- 1.1 (2026-10-12): Operator workload amendment; former unissued draft
+  explicitly superseded by the combined contract/pilot and all-card normalization/
+  rendering sequence in Arc06. Scope/checks transferred without acceptance;
+  surviving open sets require revision before issuance.

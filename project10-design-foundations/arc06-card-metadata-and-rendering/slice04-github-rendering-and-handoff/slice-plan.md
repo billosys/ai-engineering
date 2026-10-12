@@ -1,11 +1,15 @@
 ---
 slice: slice04-github-rendering-and-handoff
-status: planned
+status: superseded
 depends-on: [slice02-book-card-metadata, slice03-web-card-metadata]
 blocks: [arc04-guides-and-package, arc05-validation-and-release-readiness]
 ---
 
-# Slice04 — GitHub Rendering and Revision Handoff
+# Slice04 — GitHub Rendering and Revision Hando
+## Operator amendment — 2026-10-12
+
+This unissued child is superseded, not accepted or completed. All its population, preservation and rendering obligations transfer to Slice02 under Arc06 revision 1.1. No prompt will be issued from this draft; its historical ledger rows are not completion evidence. The [current arc plan](../arc-plan.md#revised-slice-breakdown) governs; the remaining text below is the preserved former draft.
+ff
 
 ## Goal and complete scope
 
@@ -85,3 +89,8 @@ required rendering property cannot be silently converted into success.
 
 - 1.0 (2026-10-10): Planned whole-population GitHub rendering and revision
   composition; Arc04 package and Arc05 release gates remain separately owned.
+
+- 1.1 (2026-10-12): Operator workload amendment; former unissued draft
+  explicitly superseded by the combined contract/pilot and all-card normalization/
+  rendering sequence in Arc06. Scope/checks transferred without acceptance;
+  surviving open sets require revision before issuance.

@@ -1,48 +1,39 @@
-# Project10 methodology trial instructions
+# Project10 execution instructions
 
 Parent planning-worktree instructions and [project-plan.md](project-plan.md)
-remain authoritative. Planning stays on branch `planning` under this project;
-source implementation stays in the separately authorized main checkout.
+are authoritative. The Operator's 2026-10-12 amendment reduces execution
+complexity and brings source fixes into each ready review batch. Planning stays
+here; implementation stays in the main checkout under an exact authorized prompt.
+CDC Sofie + separate CC remains the Two-Contributor Workflow; Expedited Mode is active.
 
-## Bounded Experiment01
+## Current practice
 
-Operator authorization: 2026-10-10. Read the
+- New content slices normally read, decide, edit and verify one coherent batch.
+  Reuse accepted evidence; fix ready in-scope issues in the same assignment.
+- Preserve complete 233-card/five-dimension/eight-live-file review and actual
+  accessibility/typesetting and GitHub-rendering obligations. Missing inputs
+  block dependent claims; record them once and continue independent fixes.
+- Prefer one compact batch record alongside the canonical plan, ledger, prompts,
+  closing report and independent verification. Avoid duplicated datasets,
+  routine receipt-only commits and cosmetic-only iteration handoffs. Existing
+  issued reading/output contracts remain binding.
+- Inspect actual sources and settle consequential choices before authoring a
+  mutation prompt. Pin fresh main revisions and exact paths; check affected
+  repetitions, relationships and prior-evidence applicability after edits.
+- Verify the actual delivered content and behavior. Parser passes, endpoint
+  resolution, intake receipts and doer reports are not semantic acceptance.
+  Use meaningful controls for consequential transformation/checker failure modes.
+- Preserve issued prompts, historical evidence, failures, unrun checks and
+  unrelated work. Material scope/authority changes need recorded Operator
+  decisions; contributor self-checks are not independent acceptance.
+
+## Completed Experiment01
+
+The 2026-10-10 trial applied only to its two registered slices. Project13's
 [protocol](../project13-collab-refinements/artifacts/experiment01-methodology-pilot/protocol.md)
-before preparing a treatment assignment. These adjustments apply prospectively
-to the next two newly opened slices, registered before issuance in the
-[run register](../project13-collab-refinements/artifacts/experiment01-methodology-pilot/run-register.md).
-The already-issued Arc02/Slice02 Iteration04 and its return/review continue under
-their existing instructions. Do not add requirements to that assignment through
-this file. Preserve all issued prompts, scope, original-source gates and accepted
-evidence. Default CDC + CC remains selected; mentioning CRC does not enable it.
-
-- **CDC preparation:** inspect actual sources; demonstrate a small representative
-  end-to-end record or implementation path, with a plausible wrong case and the
-  check that rejects it. Resolve consequential choices before bulk execution.
-- **Semantic work:** inventory complete assertions and their qualifying context
-  before judging them. Separate literal original, evidence, verdict and proposed
-  replacement. Consistency requires an actual comparable second proposition;
-  a current calculation cannot establish an earlier verification process.
-- **Verification:** map each promised property to a real check or explicit human
-  judgment. Audit field/case coverage and use discriminating failures. Report
-  exactly what mechanical checks prove; identity is not semantic support.
-- **CC execution:** exercise the representative method before applying it to the
-  batch. Diagnose a failed example first. Successful self-check permits ordinary
-  execution but is not independent acceptance. Record limitations honestly.
-- **CDC review:** inspect coverage, proposition identity, evidence applicability,
-  check coverage, handoff consistency and preservation together. Check your own
-  examples; distinguish late requirements or reviewer errors from CC omissions.
-- **Recurrence:** if a failure type survives an expressly targeted correction,
-  diagnose the failed method and demonstrate a bounded repair before another
-  bulk pass. Retain iteration counts and all unresolved findings.
-- **Evidence economy:** keep one identifiable current record/checker; reference
-  pinned historical evidence rather than duplicating full old datasets without
-  a specific need. Preserve required readings, historical bytes and failed
-  attempts. Generate routine identity metadata where practical.
-
-Use existing slice plans, prompts, notes and independent reviews for these
-observations. CDC records trial measures in Project13; CC has no implied write
-permission there. Review after the first trial and compare after the second,
-including costs, regressions and unknowns, before continuing the trial. Do not
-optimize iteration count by shrinking scope or weakening acceptance. No general
-framework adoption follows automatically from this pilot.
+and [run register](../project13-collab-refinements/artifacts/experiment01-methodology-pilot/run-register.md)
+retain that history; final comparison is `dc7b0732`, benefit inconclusive.
+The old prospective trial instructions are superseded as current scheduling
+instructions. No further trial, measurement work, or general framework adoption
+is authorized here. The current execution choices come from the Operator's
+2026-10-12 Project10 amendment, not a claimed experimental improvement.

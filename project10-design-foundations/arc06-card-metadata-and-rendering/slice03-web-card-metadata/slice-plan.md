@@ -1,11 +1,15 @@
 ---
 slice: slice03-web-card-metadata
-status: planned
+status: superseded
 depends-on: [slice01-schema-and-field-inventory]
 blocks: [slice04-github-rendering-and-handoff]
 ---
 
-# Slice03 — Web Card Metadata
+# Slice03 — Web Card Metada
+## Operator amendment — 2026-10-12
+
+This unissued child is superseded, not accepted or completed. All its population, preservation and rendering obligations transfer to Slice02 under Arc06 revision 1.1. No prompt will be issued from this draft; its historical ledger rows are not completion evidence. The [current arc plan](../arc-plan.md#revised-slice-breakdown) governs; the remaining text below is the preserved former draft.
+ta
 
 ## Goal and complete population
 
@@ -83,3 +87,8 @@ headroom; no missing cohort member becomes deferred by omission.
 
 - 1.0 (2026-10-10): Planned existing-field normalization for the complete
   83-card web cohort, with pilot/no-invention/preservation constraints.
+
+- 1.1 (2026-10-12): Operator workload amendment; former unissued draft
+  explicitly superseded by the combined contract/pilot and all-card normalization/
+  rendering sequence in Arc06. Scope/checks transferred without acceptance;
+  surviving open sets require revision before issuance.

@@ -4,152 +4,127 @@ status: active
 depends-on: [arc01-portable-contract Operator-accepted composition]
 ---
 
-# Arc02 — Theory and Evidence
+# Arc02 — Review and Fix Design Foundations
 
 ## Capability and authority
 
-Correct theory and arithmetic; verify and reconcile the complete 233-card design
-corpus and all eight live design files with claim-level evidence. Deliver
-traceable corrections, source support and scoped exceptions for Arc03–05.
-Preserve the portable compositional ethos and the five distinct review dimensions.
-The [project plan](../project-plan.md) and [project ledger](../ledger.md) govern.
+Deliver corrected portable design content, complete 233-card/eight-live-file
+review and reconciliation, and usable accessibility/typesetting procedures with
+actual behavior evidence. The Operator's 2026-10-12 amendment in the
+[project plan](../project-plan.md) replaces analysis-first staging with source
+changes in each ready batch and transfers former Arc03 obligations here.
+[Arc ledger](ledger.md) and [project ledger](../ledger.md) govern acceptance.
 
-The Operator accepted Arc01 composition packet `38b66d0de7d5e8cba98e7d588075f5c6d4ede90f`
-with “yup, accepted!” on 2026-10-09; closure is `fb33d8cf43e8bb99d9dc9835ded134bd8268933f`.
-See the [attributed gate](../arc01-portable-contract/closing-report.md#operator-composition-gate-and-arc01-closure--2026-10-09).
-Opening this roadmap follows approved Expedited Mode; no new scope reduction,
-source acquisition, original-readiness waiver or live implementation is implied.
+**Was:** separate R/T/C/L/G execution families followed by later implementation
+and Arc03 browser work. **Now:** those are coverage dimensions within end-to-end
+source/topic batches, not required separate slice chains. Source-readiness,
+complete review and global reconciliation remain required; no existing acceptance
+or issued prompt is widened by this change.
 
 ## Accepted inputs and preservation
 
-- Assigned design snapshot is `dffa504e851b03b8e4746f1941068e4cc850b612`. SOURCE/main externally advanced to 314e5802; selected design blobs equal the assigned snapshot. Refresh
-  and inspect tracked/index state before every later source mutation assignment.
-- Accepted [composed contract](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/composed-contract.md),
-  [diagnostic example](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/example-configuration.md),
-  [card allocation](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/corpus-allocation.jsonl),
-  [guide/finding allocation](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/guide-and-finding-allocation.md)
-  and [gated handoff](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/arc02-handoff.md)
-  are consumed at planning packet `38b66d0d`; their subject revisions and independent
-  acceptance remain explicit in the Arc01 records. The final Slice03 close is `9717f27a`.
-- Method/map/input-action revision: `759ce2dd116a4cfe03b72d43fd2791f48486251c`;
-  index/manifest revision: `9cc203380aede19231b7c5119f0b43d9fe3d0e78`.
-- Project09 audit: `795ac75b7d02536e0e95252457ac3282cd17d8d8`, evidence intake with
-  its stated limits; formal audit acceptance remains a project release dependency.
-- Preserve `knowledge/design/sources/md/`, issued prompts, original identities,
-  historical results and unrelated Project12 / `knowledge/lfe/` work. No Project08
-  card-schema migration or whole-book re-extraction is inferred.
+Reuse the accepted Arc01 contract/allocation at `38b66d0d`, card index/manifest at
+`9cc20338`, readiness/method packet at `759ce2dd`, and Project09 audit consumed at
+`795ac75b`. Exact links and lineage are retained in the
+[Arc01 handoff](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/arc02-handoff.md).
+Historical assignments and acceptance records are immutable inputs, not current
+mutation instructions. The original design baseline is `dffa504e`; main is
+`314e5802` at amendment preparation. Pin full current revisions and inspect drift
+before each source assignment. Keep all 233 identities and eight live-file owners.
 
-## Complete work breakdown and sizing
+## Slice breakdown and sizing
 
-Slice01–04 are independently closed; Slice05 is open for fluid-type/accessibility
-limits. Other remaining families below stay open.
-The remaining rows are bounded execution
-families, not a single giant slice or already-issued assignments. CDC assigns
-unique increasing slice numbers and records each exact population/dependency in
-this roadmap before issuing it. Family decomposition and memberships must remain
-traceable; arc closure cannot omit a family because it lacks an issued number.
-
-| Execution family | Capability and sizing rule | Prerequisites / state |
+| Work | State / delivery | Dependency |
 |---|---|---|
-| slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Closed at c3d68d7d; independent of missing original attribution/fidelity. |
-| slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Closed after I04 independent review and Operator-approved direct correction; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
-| slice03-token-system-conventions | Reconcile complete selected token assertions with DTCG and named-system primary scopes; usable portable policy and exact correction handoff. 17 contexts/168 lines in five files; evidence only. | Closed at3817d83c after Iteration04 acceptance; all nine child rows done. Project13 T01 registered before initial issue; original fidelity/export validation remain separate. |
-| slice04-layout-and-measure-exceptions | Reconcile complete selected layout/measure assertions; intrinsic-first policy, justified adaptation, scoped measure and exact correction handoff.13 contexts/184 lines/three live files; evidence only. | Closed at C4/H4/H4b after I4 independent review; nine child rows done. Was a stale I3/five-done summary at I4 issue (CDC maintenance error). T02 and final comparison complete at dc7b0732; originals/browser proof remain separate. |
-| slice05-fluid-type-accessibility-limits | Reconcile logical-axis/root/clamp/resize guarantees with scoped primary evidence, model witnesses and literal portable corrections; seven contexts/98 lines/five files. | I1 C5bb54471/Hb418607d reviewed: four done/five open. Iteration02 repairs remaining coverage/pairs/prose/guards; numerical evidence accepted. Arc03 owns actual browser proof. |
-| R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
-| T — remaining theory/evidence | Bounded slices per concern: perception/analogy scope, other unassessed theoretical assertions and CHI interpretation. Selected fluid-type/accessibility implications are now Slice05; prior closed T slices remain bounded inputs, not full T completion. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
-| C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
-| L — complete live-file review | Start from eight L whole-file assignments. Full bodies, each repeated claim and relevant examples; history/provenance plus substantive history assertions. | C/T results and required source inputs; partition claim spans with complete 1–EOF coverage accounting if needed. Headings/regex candidates are navigation only. |
-| G — global reconciliation and arc handoff | Bounded cross-group/guide, typed-edge, CQ-component and revision/dependency reconciliation slices, followed by formal arc composition. | Complete C/L result set and P10-11; reconcile every unresolved/unclassified assertion. Split by explicit dependency populations, then demonstrate the complete union. |
+| [Slice01 — fluid-scale arithmetic](slice01-fluid-scale-arithmetic/slice-plan.md) | Closed bounded evidence at `c3d68d7d`; reuse proof, occurrence reconciliation and handoff | No automatic live adoption |
+| [Slice02 — nonlinear colour pipeline](slice02-nonlinear-colour-pipeline/slice-plan.md) | Closed after independent review and Operator-approved bounded repair | Fidelity remains distinct from technical evidence |
+| [Slice03 — token conventions](slice03-token-system-conventions/slice-plan.md) | Closed at `3817d83c`; reuse scoped policy and proposed corrections | No universal layer rule or live adoption implied |
+| [Slice04 — layout and measure](slice04-layout-and-measure-exceptions/slice-plan.md) | Closed at `b6acb22f`; reuse intrinsic-first/contextual exception evidence | Final behavior remains to be checked |
+| [Slice05 — fluid-type limits](slice05-fluid-type-accessibility-limits/slice-plan.md) | Current I2 return `8d0a10c2`/`9541e4cf` unreviewed; existing contract unchanged | Review returned evidence; close when its original criteria pass |
+| Next new slice — first live fixes | Apply a coherent accepted correction set across affected guide/entrypoint repeats; settle configuration choices, validate and commit | Accepted applicable evidence and fresh exact source scope; no wait for full corpus |
+| Portable-default batch | Remove C&B names/domains/palettes/font/site prescriptions while retaining portable guidance and supplied identity | Accepted Arc01 contract; inspect full affected scope |
+| Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
+| Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
+| Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
 
-No fixed total slice count is invented before reading/source readiness establishes
-actual headroom. The issued slice list is Slice01–04 (closed) and Slice05 (open). Before arc
-closure, the expanded roadmap, all issued children and the full R/T/C/L/G
-coverage union must reconcile. Additions/splits/merges/removals remain mapped to
-the original 233 identities; no sampling, quarantine substitute or lost guide
-occurrence. Later live/card corrections require freshly pinned mutation scopes,
-version/history rules and applicable repository gates.
+Rows without slice numbers are the near-term delivery sequence, not issued
+assignments. Allocate only the next exact batch and unique increasing number
+when ready; choose sizes by source context and iteration headroom, not one slice
+per field, review dimension, article or historical provisional group. The 47 C
+groups, eight L assignments, 161 headings and 460 keyword candidates are reusable
+navigation aids, not prescribed work units or proof of completeness.
 
-## Source-readiness carryover — S02-08 / A01-02 / P10-11
+Use read → decide → edit → check → independent review within each new slice.
+Fix ready in-scope issues before returning; carry uncertain/cross-batch issues
+with exact owners, evidence needs and next actions. Evidence-only slices require
+a concrete blocker to editing. Do not repeat accepted theory proofs merely to
+produce a new handoff. Use one compact batch evidence record unless a distinct
+artifact/check has a demonstrated purpose; preserve current issued contracts.
 
-S02-08 and A01-02 remain Operator-deferred, not done. P10-11 remains open.
-The exact [source-input actions](../arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md)
-and [handoff re-entry rule](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/arc02-handoff.md#per-dependent-scope-re-entry-rule)
-are binding, including all eight action rows, conversion/media caveats and
-conditional secondary inputs actually relied upon.
+## Complete coverage and source re-entry
 
-| Raw primary identity population | Cards | Required outstanding evidence |
-|---|---:|---|
-| Arnheim | 112 | Exact edition/original and page basis; original/prepared fidelity. |
-| Cleland | 19 | Exact edition/original and page basis; original/prepared fidelity. |
-| Tschichold | 19 | Exact edition/translation/original and page basis; fidelity. |
-| Butterick | 37 | Immutable captures for 37 prepared pages, manifest/lineage/context/fidelity. |
-| Drasner | 12 | Immutable article capture, completeness/lineage/context/fidelity. |
-| Brown | 10 | Immutable article capture, completeness/lineage/context/fidelity. |
-| Ottosson Oklab | 13 | Immutable article capture, completeness/lineage/context/fidelity. |
-| Ottosson Okhsv/Okhsl | 11 | Immutable article capture, completeness/lineage/context/fidelity. |
+All 233 cards retain complete body/examples/mappings/relationship/CQ review and
+all five dimensions in the project contract. All eight live files retain full
+coverage, including substantive history assertions and every repeated claim.
+Incremental batches check impacted edges, questions and guide repeats. Final
+composition checks the complete union, not a second full extraction/review.
+Changed content needs revised-card and downstream review; unchanged evidence is
+reused only after an explicit revision/applicability check.
 
-The total is 233: 150 book-backed and 83 web-backed. A scoped fidelity result
-requires independently accepted adequate evidence for every input it uses.
-Unrelated gaps remain blocked. Source-independent mathematical work can proceed
-on its own exact evidence while fidelity/empirical/domain claims remain blocked
-or unassessed. Full P10-11, full corpus and release require complete re-entry;
-prepared text, hashes, current URLs or closed planning records cannot substitute.
+Missing originals/captures retain S02-08/A01-02 deferral and P10-11 ownership.
+Reuse the eight [input-action rows](../arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md)
+and conditional secondary inputs. Population: Arnheim112, Cleland19,
+Tschichold19, Butterick37, Drasner12, Brown10, Oklab13 and Okhsv/Okhsl11.
+That is 150 book-backed plus 83 web-backed cards, still 233 total.
 
-Current input owner: Operator supplies/selects exact originals/captures; CDC
-prepares precise authorization and readiness assignments. Slice01 neither
-acquires inputs nor closes readiness. No external capture, private search,
-conversion, source repair or reconversion is assigned in this opening.
+Exact editions/page bases, immutable captures, conversion lineage and adequate
+completeness/fidelity mappings are required for the dependent results. The
+Operator supplies/selects inputs; CDC prepares scoped acquisition/preparation
+assignments when available. Current URLs/prepared files cannot prove historical
+fidelity. Track missing checks once and continue source-independent corrections;
+no repeated readiness-only slice for an unchanged absent input. Required gaps
+still prevent full arc/corpus/release completion.
 
-## Findings, composition and later arcs
+## Findings and accessibility/typesetting ownership
 
-All 16 DES owners remain in the accepted guide/finding allocation. Arc02 owns
-DES-002/003/004/007/008/009/012/013/015/016 at their assigned scope and coordinates
-DES-005 with Arc03; Arc03–05 retain their own findings/proofs. Actual DES closure
-requires corrections at the relevant revision plus independent verification;
-a planning proof or owner row alone does not close the finding.
+Arc02 now owns DES-001–009, DES-011–013 and DES-015–016, including former Arc03
+responsibilities DES-005/006/009/011. Retain actual checks of complete colour
+pairs, semantics/keyboard/focus/reading order, motion preferences, text enlargement,
+reflow/spacing, justified breakpoints, available font axes and font failure.
+A revised warning or mathematical witness does not establish browser behavior.
+Use maintained patterns where a geometry snippet is not a complete widget;
+avoid building a component/font framework for the 1.5 correction.
 
-The [arc ledger](ledger.md) separates child acceptance, source readiness,
-all-card/all-live review, global relationships/CQs, finding accounting and
-composition. Arc02 close requires its own end-to-end demonstration and attributed
-independent/Operator gate. No complete source/semantic capability is deferred
-by this opening. Arc03 receives actual accepted decisions, corrected revisions,
-complete result maps and any explicit remaining non-acceptance limits.
+Arc04 owns DES-010/014 and final package/composition validation of all findings.
+Arc06 owns metadata normalization/rendering; semantic body changes remain here.
+The project amendment supersedes historical owner tables without editing them.
+Current result revisions and actual corrected source are required for finding
+closure. Global consistency and CQ/edge support are substantive review, not
+string-equality or endpoint-resolution checks.
 
 ## Workflow and current assignment
 
-Two contributors: CDC Sofie prepares/reviews; CC is the separate executing
-context, with the Operator relaying the prompt. No CRC. Expedited Mode remains
-active: exact-path commits, independent review, closure when evidence permits,
-then automatic next-slice opening. Gates and five-iteration correction limits
-remain binding. Source and planning branches retain separate mutation boundaries.
+Two contributors: CDC Sofie plans/reviews separate CC work via Operator relay.
+Expedited Mode remains active. Current Slice05 I2 prompt is preserved and its
+return is unreviewed; do not retrofit new outputs or source edits into that
+assignment. Review it next under its original contract, then make the next new
+assignment a source-fix slice. No initial source prompt is issued by this roadmap.
 
-Current Slice02 state: closed after independent I04 review at19dd5385 and
-Operator-approved CDC two-field repair/closure. All nine rows done, I05 unused.
-[Final gate](slice02-nonlinear-colour-pipeline/cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
-separates independent evidence from direct self-check/Operator acceptance.
-Slice03 Iteration04 at3817d83c is [accepted and closed](slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11);
-all nine child rows done. T01 checkpoint completed at370cfc8f with inconclusive
-comparative benefit. Current Slice04 is independently closed at C4/H4/H4b, all nine rows done.
-Project13 final comparison dc7b0732 completes the two-run checkpoint: comparative
-benefit inconclusive, no trial extension/adoption. Current [Slice05](slice05-fluid-type-accessibility-limits/cc-prompt.md)
-is ordinary T work on the retained vi/zoom guarantee and root/resize implications,
-seven complete contexts/98 lines/five files. I1 C5bb54471/Hb418607d has
-S05-01/03/05/08 done and five rows open; current [Iteration02](slice05-fluid-type-accessibility-limits/cc-prompt-iteration02.md)
-repairs residual coverage, pair identity, prose joins and input/control guards.
-Assigned design snapshot remains dffa504e despite external SOURCE advance to 314e5802. Arc03 owns real
-browser proof; full R/C/L/G and other T concerns remain. This details an already
-retained execution concern without changing design scope or parent criteria.
-Earlier current-assignment text is historical; all issued prompts are preserved.
-Initial prompt and CC candidate remain preserved.
-Slice01 Iteration02 `c3d68d7d` is [independently accepted and closed](slice01-fluid-scale-arithmetic/cdc-verification.md#iteration02-independent-review-and-slice01-closure--2026-10-09):
-all nine slice rows done, A02-01 done; seven other arc rows remain open.
-Initial/Iteration01/Iteration02 prompts and historical discrepancies remain.
-This is evidence acceptance, not live repair or source readiness. Slice02 details DES-007 and bounded DES-002 colour claims under T.
-Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
-its evidence will inform A02-03/05/07 without accepting actual corrections.
+New mutation assignments require fresh exact main pins/paths, complete open sets,
+author readiness, meaningful affected checks and applicable version/package gates.
+Slice acceptance is independent in `cdc-verification.md`; CDC-authored repairs
+need another verifier. No new trial or additional retrospective system is added.
+Arc closure requires actual corrected/reviewed revisions, full coverage and an
+independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
+accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.25 (2026-10-12): Operator amendment after Slices01–05 exposed evidence-heavy
+  execution; combine investigation and source fixes, reuse accepted evidence and
+  absorb former Arc03 accessibility/typesetting delivery and browser proof.
+  Preserve issued Slice05 I2 and all full-corpus/input/release obligations; record
+  its concurrent return as unreviewed. Existing R/T/C/L/G work is regrouped, not dropped.
 
 - 1.24 (2026-10-12): Slice05 I1 independently reviewed, four done/five open;
   I2 issued with accepted model/primary protected. External SOURCE movement

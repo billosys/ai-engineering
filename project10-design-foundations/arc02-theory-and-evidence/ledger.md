@@ -1,6 +1,7 @@
 # Arc02 Ledger
 
-A02-01 is done; seven rows remain open. Allocation and predecessor acceptance
+A02-01 is done; nine rows remain open after the two delivery criteria added
+by the Operator amendment below. Allocation and predecessor acceptance
 are inputs, not this arc's
 semantic or composition proof. Source readiness is retained at its full scope.
 
@@ -13,7 +14,18 @@ semantic or composition proof. Source readiness is retained at its full scope.
 | A02-05 | All eight live files and every repeated substantive assertion are reviewed consistently with accepted card/theory results | Whole-file/claim/revision coverage plus exact repeated-claim joins and exceptions | correctness-grade | P10-03/09/10; L01–L08 | open | — | 161 headings/460 candidates are navigation, not an exhaustive claim inventory. |
 | A02-06 | Cross-card/guide consistency, typed relationship support/direction and CQ answer-component coverage are globally reconciled | Demonstrate the complete C/L result union, explicit edges/components/revisions and missing/conflicting evidence accounting | serious | Full-corpus fifth dimension; G family | open | — | Endpoint resolution or populated questions are not warrant. |
 | A02-07 | Every DES-001–016 finding has traceable Arc02 disposition or retained owner/proof in its later arc, with no silent drop | Compare accepted 16-owner table to actual results and downstream handoff | serious | Shared Project09 audit; full finding contract | open | — | Owner allocation is not acceptance; retain Project09 release dependency. |
-| A02-08 | All issued slices and R/T/C/L/G families compose into the complete theory/evidence capability and usable Arc03–05 handoff | Formal arc-scale end-to-end demonstration, silent-drop walk and independent/Operator composition gate | serious | Arc capability | open | — | Missing required semantic/readiness evidence prevents full arc close absent explicit Operator amendment. |
+| A02-08 | All issued slices and retained input/theory/card/live/global obligations compose into corrected portable content and usable Arc04 handoff | Formal arc-scale end-to-end demonstration, complete coverage walk and independent/Operator composition gate | serious | Arc capability; Operator amendment 2026-10-12 | open | — | Former R/T/C/L/G families are combined in review/fix batches; source readiness and all 233 cards/eight files remain required. |
+| A02-09 | Live skill content removes C&B coupling and preserves portable method and supplied identity | Inspect complete affected source payload; reproduce generic and supplied-brand cases | correctness-grade | DES-001; P10-02; Operator amendment 2026-10-12 | open | — | Former later-arc implementation is now Arc02-owned; final package check remains Arc04. |
+| A02-10 | Accessibility/typesetting procedures and retained examples meet the agreed floor with actual behavior evidence | Test complete colour pairs, semantics/keyboard/focus/order, text enlargement/reflow/spacing, motion and font/axis/fallback cases in named environments | serious | Former Arc03; DES-005/006/009/011; P10-04 | open | — | Model or prose evidence alone cannot establish actual browser behavior; final revision applicability remains Arc04. |
+
+## Operator execution amendment — 2026-10-12
+
+A02-08's former R/T/C/L/G-chain and Arc03–05-handoff wording is replaced above
+with combined review/fix delivery and Arc04 handoff. All coverage, fidelity and
+composition obligations survive. A02-09/10 explicitly receive portable-source
+implementation and former Arc03 accessibility/typesetting delivery. Existing
+A02-01–07 criteria/statuses are unchanged; no new row is done. Historical
+roll-ups below describe earlier revisions, not current scheduling.
 
 ## Slice02 opening — 2026-10-09
 

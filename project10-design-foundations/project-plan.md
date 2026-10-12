@@ -10,291 +10,238 @@ related: [project08-concept-card-metadata, project13-collab-refinements]
 
 ## Purpose and authority
 
-Make `visual-design-system` trustworthy, portable and internally coherent while
-preserving its compositional ethos. The Operator assigned the 1.5 effort to
-Project10 on 2026-10-08. Planning lives on branch `planning`, under
-`.worktrees/planning/project10-design-foundations/`; source/package work belongs
-in the main checkout. The Operator opened Arc01/Slice01 on 2026-10-09 for a
-bounded contract/evidence assignment, not a source rewrite or release.
+Deliver a corrected, portable `visual-design-system` skill and usable installed
+package, preserving relationships, content-led composition, intrinsic layout
+and expressive craft. Project10 repairs the existing tool; Project11 owns the
+broader design-practice expansion. Planning belongs here on `planning`;
+source and package changes belong in the main checkout.
 
-The shared design input is Project09's
-[release synthesis](../project09-design-audit/artifacts/audit-modernization-synthesis.md),
-especially the five 1.5 workstreams. The
-[audit](../project09-design-audit/artifacts/audit-results-design.md) owns DES-001–016
-and the original evidence limits. Link to those records rather than copying them.
-The initial source baseline is `dffa504e851b03b8e4746f1941068e4cc850b612`;
-refresh it before issuing source work and pin the audit revision consumed.
+Plan revision **1.45**, authorized by the Operator on 2026-10-12: reduce project
+complexity and workload, and shorten the distance between finding an issue and
+fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
+live implementation. This amendment replaces that sequence with end-to-end
+review, correction and validation batches. It changes execution and ownership,
+not the agreed corpus or release obligations.
+
+Use the shared Project09 [audit](../project09-design-audit/artifacts/audit-results-design.md)
+and [synthesis](../project09-design-audit/artifacts/audit-modernization-synthesis.md).
+Reuse accepted Arc01/02 evidence at its verified scope; do not regenerate it to
+fit a new reporting format. Historical plans, issued prompts and acceptance
+records remain evidence. Earlier roadmap and status prose is superseded by this
+revision; the previous complete plan remains in Git history.
 
 ## Scope and definition of done
 
-Deliver a corrected live skill and isolated installable package: project-specific
-identity separated from portable method; scoped and supported principles;
-consistent numerical examples; an accessibility/typesetting floor; usable routes
-and snippets; and an explicit claim/source boundary. Preserve deliberate
-relationships, content-led composition, intrinsic layout and expressive craft.
+The deliverable has portable defaults, supported and appropriately scoped
+principles, consistent calculations/examples, usable accessibility/typesetting
+procedures, readable card metadata, reliable routes and runnable snippets.
+Every DES-001–016 finding receives a checked disposition at the changed revision.
+All eight live design files and all 233 baseline cards receive complete review.
+The [project ledger](ledger.md) retains all thirteen criteria and their states.
+No source fix, semantic acceptance or release is claimed by this plan amendment.
 
-Every DES finding must have a checked disposition. All claims admitted into live
-guidance and the complete concept-card corpus must be reviewed; unresolved
-material cannot silently become authority. Run the applicable source/version/package
-gates and task demonstrations
-against the composed package, with independent review and Operator acceptance.
-The [ledger](ledger.md) holds those release-level criteria.
-
-The full research-to-validation design practice belongs to Project11. This
-project does not automatically redesign the concept-card schema, overwrite
-historical evidence, or claim product conformance from examples. Full semantic
-review and reconciliation of all 233 existing design cards is binding scope,
-alongside the live skill and guides. Anything short of the agreed review is a
-project defect, not an acceptable smaller interpretation of the 1.5 deliverable.
+Preserve source originals under `knowledge/design/sources/`, including the
+`sources/md/` convention. Do not rewrite historical records, invent card fields,
+redesign Project08's schema, or expand into Project11's broader practice.
 
 ### Full-corpus review contract
 
-For every card, read its complete teaching body, examples, technical mappings,
-relationships and attributed competency questions. Identify substantive claims
-and inspect the relevant original passages with enough context to assess:
+Read every card's complete teaching body, examples, technical mappings,
+relationships, prerequisites and competency questions. Review all five dimensions:
 
-1. Source fidelity, including qualifications, exceptions and attribution.
-2. Mathematical, technical and domain correctness, distinguished from faithful
-   reporting of a source's historical position.
-3. Scope: general principle, contextual advice, historical account, or added
-   analogy/inference, with the appropriate support for each.
-4. Internal consistency and consistency with relevant cards and live guides,
-   retaining legitimate contextual differences rather than manufacturing agreement.
-5. Whether relationships, prerequisites and claimed question coverage actually
-   hold and make the card useful for its stated purpose.
+1. Source fidelity, including context, qualifications and attribution.
+2. Mathematical, technical and domain correctness, distinct from a source's
+   historical position.
+3. Scope: general principle, contextual advice, historical account or added
+   inference/analogy, with appropriate support.
+4. Internal and cross-card/guide consistency, retaining legitimate differences.
+5. Relationship support/direction, prerequisites and actual question coverage.
 
-Preserve sound content; correct or qualify errors; remove unsupported additions
-with recorded reasons; and review revised cards plus affected downstream guidance.
-Track findings, source support, corrections and review outcomes at the claim level
-where card-level summaries would hide partial coverage. Keep prior revisions and
-the reasons for changes traceable. This does not require indiscriminate rewriting,
-whole-book re-extraction, or a concept-card schema migration.
+Reuse the accepted 233-card manifest, raw index and source/locator records.
+Reconcile every addition, split, merge or removal to that baseline. Full reads
+and all five outcomes remain explicit per card; claim-level evidence is required
+where a summary would hide an unsupported, conflicting, changed or blocked
+claim. Sound claims can share a precise source-span assessment when its coverage
+is explicit. Do not manufacture five separate records for every markup line.
 
-Pin a manifest of all 233 existing cards before execution. Any additions, splits,
-merges or removals must map back to that baseline and appear in the final coverage
-accounting; they cannot silently shrink the denominator. Sampling, format-only
-checks, or checking only claims reused in the live skill cannot satisfy this scope.
-
-Establish source availability early and obtain the necessary evidence. Missing
-sources leave affected checks unresolved; absence of evidence does not establish
-falsity. Record those gaps and continue independent work, but do not call the full
-corpus verified or the project complete while required review remains blocked.
-Quarantining unreviewed cards is not a substitute for this work. Any proposed
-deferral or scope reduction returns explicitly to the Operator.
-
-Markdown source material uses `knowledge/design/sources/md/`, with collection
-subdirectories as appropriate, not `sources-md/`. The existing design tree already
-uses this convention. Preserve source provenance and original files; do not infer
-a bulk relocation or transformation merely from the naming clarification.
+Correct or qualify supported defects during the same batch. Preserve reasons
+and before/after revisions, review revised cards and check affected downstream
+claims and relationships. Record source gaps separately from technical outcomes.
+Sampling, format-only checks, live-guidance-only review and quarantine cannot
+satisfy full-corpus completion. Missing originals still block dependent fidelity
+results and full-corpus/release acceptance; they do not block unrelated fixes.
 
 ## Arc roadmap
 
-Arc01 is closed with Operator-accepted composition and explicit source-readiness
-carryover. [Arc02](arc02-theory-and-evidence/arc-plan.md) is active; detail each
-remaining arc near execution. The closed
-[Arc01 plan](arc01-portable-contract/arc-plan.md) supplies the slice breakdown.
+There are **three remaining arcs**, rather than five. IDs and existing paths
+stay stable; numerical order does not imply a dependency barrier.
 
-| Arc | Capability | Dependencies | Audit coverage |
-|---|---|---|---|
-| arc01-portable-contract | Separate reusable method from adopting-project identity; specify C&B removal and the full-corpus review method, manifest and source needs | Project09 evidence intake | DES-001, DES-010, DES-013, DES-015 |
-| arc02-theory-and-evidence | Correct theory and arithmetic; verify and reconcile the complete card corpus against sources and guides with claim-level evidence | Arc01 contract | DES-002–005, DES-007–009, DES-012, DES-013, DES-015, DES-016 |
-| [arc06-card-metadata-and-rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Harmonize existing metadata across all cards without filling missing fields; demonstrate GitHub rendering | Arc01 baseline; accepted local contract/pilot before mutation; queued | Operator addition 2026-10-10; supplements full-corpus obligations |
-| arc03-accessibility-and-typesetting | Add usable accessibility obligations and transferable typography procedures | Arc01–02 decisions | DES-005, DES-006, DES-009, DES-011 |
-| arc04-guides-and-package | Compose corrected guides, brief-to-review routing, runnable examples and isolated package | Arc01–03 plus Arc06 | DES-010, DES-013, DES-014; all repeated claims |
-| arc05-validation-and-release-readiness | Exercise cross-context specimens, reconcile every finding and demonstrate the complete package | Arc01–04 plus Arc06; accepted Project09 baseline | DES-001–016 |
+| Arc | Delivery and current state | Actual prerequisites |
+|---|---|---|
+| [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Closed; accepted contract, baseline and explicit source-readiness carryover | Operator composition acceptance at `38b66d0d` |
+| [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Active; apply accepted corrections, remove C&B coupling, review/fix cards and guides, and implement/test the accessibility/typesetting floor | Accepted contract and evidence for each changed claim; originals only for dependent fidelity checks |
+| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Queued, independently ready; select contract, pilot and normalize all existing metadata, then prove GitHub rendering | Accepted mapping and pilot before bulk changes; no book-original dependency |
+| Arc04 — package and release readiness (`arc04-guides-and-package`) | Plan near execution; complete routes/snippets, isolated package, final specimens and Project11 handoff | Accepted input revisions for each task; full Arc02/06 completion and Project09 acceptance before release |
 
-Current status: Arc01 closed by Operator composition acceptance at `38b66d0d`; Slice01 closed and Slice02 closed with eight
-independently done criteria and S02-08 Operator-deferred. Local acceptance remains
-`759ce2dd`/`88c1298f`; the Operator ordered Slice03 opening on 2026-10-09.
-Slice03 is closed: all nine criteria independently done at `0b55afd5` with seven
-prior dispositions retained after delta review; see its
-[CDC acceptance](arc01-portable-contract/slice03-contract-composition-and-handoff/cdc-verification.md#iteration02-independent-verification-and-slice03-closure--2026-10-09).
-All three Arc01 slices are closed; the [composition packet](arc01-portable-contract/closing-report.md)
-was accepted by the Operator on 2026-10-09 (“yup, accepted!”). A01-04/05
-are done; A01-02 stays deferred. Arc02 is active;
-[Slice01](arc02-theory-and-evidence/slice01-fluid-scale-arithmetic/slice-plan.md)
-is independently closed at `c3d68d7d` for bounded fluid-scale evidence.
-[Slice02](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/slice-plan.md)
-is closed for bounded nonlinear colour-pipeline evidence and selected uniformity/
-analogy claims under DES-007/002.
-Slice02 is closed after independent I04 review at19dd5385 and the Operator's
-explicit approval of a two-field CDC-authored repair and actual closure.
-All nine child rows done; no I05 issued. [Final gate](arc02-theory-and-evidence/slice02-nonlinear-colour-pipeline/cdc-verification.md#operator-acceptance-and-slice02-closure--2026-10-10)
-separates independent review, direct repair/self-check and Operator acceptance.
-Queued Arc06 remains unchanged. Arc02
-[Slice03](arc02-theory-and-evidence/slice03-token-system-conventions/slice-plan.md)
-is independently closed for bounded token-system conventions (DES-008 and
-bounded DES-002) at3817d83c; [final verification](arc02-theory-and-evidence/slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11)
-records all nine child rows done. Initial and four correction assignments are
-preserved; Project13 T01 checkpoint is complete at370cfc8f (comparative benefit
-inconclusive). T02 is registered before the next ready Slice04 initial issue. The earlier current Iteration04 pending state is
-superseded by this acceptance; no source implementation is accepted.
-Complete R/T/C/L/G
-and original-source/full-corpus/release gates remain.
-After T01 closes or reaches a recorded blocked/escalation stop, complete its
-meta-review before the next trial prompt. R/T/C/L/G execution
-families preserve the complete semantic scope and input re-entry. No
-source-fidelity or release gate is closed.
-The former “no Slice03 until source readiness acceptance” rule is superseded for
-planning composition. Source readiness carries to Arc02/P10-11 before dependent
-source-fidelity acceptance and full-corpus/release completion. Expedited Mode
-remains enabled; no release gate or complete semantic review is accepted.
-See the [CDC acceptance](arc01-portable-contract/slice01-scope-and-portability-contract/cdc-verification.md#iteration02-independent-verification-and-acceptance);
-this evidence/proposal acceptance does not adopt final teaching formulations or
-close any release criterion. Project09 may be consulted for planning
-before its formal acceptance, with its limits visible. The accepted baseline is
-required at release readiness. Coordinate any card-format/schema changes with
-Project08 rather than importing its scope by association.
+**Was:** a separate Arc03 accessibility/typesetting phase and Arc05 final
+validation phase. **Now:** Arc03's entire delivery and browser-proof obligations
+belong to Arc02; Arc05's entire composition, final validation and release-readiness
+obligations belong to Arc04. Neither arc had a detailed plan or issued slice.
+Do not create those two planning trees. Their work is reassigned, not accepted
+or dropped. Arc04 no longer waits for full Arc02 closure to begin useful package
+work; its final acceptance still does.
+
+| Finding ownership after consolidation | Findings | Closure evidence |
+|---|---|---|
+| Arc02 | DES-001–009, DES-011–013, DES-015–016 | Corrected source, complete review/support, relevant numerical/browser checks and cross-file reconciliation |
+| Arc04 | DES-010, DES-014 | Usable installed routes/examples and brief → guidance → choice → review demonstration |
+| Arc04 final composition | All DES-001–016; P10-01–13 | Complete final package, finding/corpus accounting, independent review and Operator release-readiness acceptance |
+| Arc06 | P10-12/13 metadata/rendering; coordinate DES-016 with Arc02 | No-loss field normalization, preserved bodies and actual final-revision GitHub views |
+
+This table supersedes owners in the historical Arc01 allocation; retain that
+artifact unchanged. Accessibility findings DES-005/006/009/011 retain actual
+behavior checks, not merely revised prose. Arc02 owns substantive body repairs;
+Arc06 owns lossless representation. Arc04 checks package preservation and final
+revision applicability for both.
+
+## Immediate sequence and working method
+
+1. Review the existing Arc02/Slice05 Iteration02 return under its issued contract.
+   Close it when its existing criteria are satisfied; do not add implementation
+   work or new process requirements to the in-flight assignment.
+2. Make the **next new Arc02 assignment a source-fix batch**, starting with a
+   coherent set of independently accepted Slice01–04 corrections and Slice05
+   corrections once accepted. Resolve remaining configuration choices before
+   mutation, rather than blindly applying a proposed handoff. Update every
+   affected repeat, verify the result and commit source changes in that slice.
+3. Remove C&B coupling in a bounded source batch using the accepted portable
+   contract. Then take the next ready content cohort or Arc06 normalization
+   batch according to evidence, dependencies and context headroom. Original-input
+   blockers do not impose an all-project wait.
+4. Continue complete card/guide review in coherent source/topic cohorts, fixing
+   supported defects and checking dependent claims in each slice. Add the
+   accessibility/typesetting procedures and browser checks where they are used.
+   Plan only the next executable batch, not a tree for every review dimension.
+5. Build and inspect the package once useful corrected inputs are accepted;
+   reserve Arc04's final pass for composition, remaining gaps and release gates.
+
+A new content slice normally delivers **read → decide → edit → check → review**.
+Evidence-only work is exceptional: a missing input or genuinely unresolved
+question must prevent a responsible edit. State that reason and its next action.
+A batch finding that is safe and in scope is fixed before that batch returns;
+cross-batch or uncertain findings retain an owner and next ready assignment.
+Do not create another analysis/handoff slice solely to pass an already-resolved
+correction to a later implementation phase.
+
+## Evidence and workload economy
+
+Use the existing canonical plans, ledgers, preserved prompts and review records.
+For new slices, prefer one compact supporting batch record for coverage,
+exceptions, before/after pointers, validation and unresolved work. Create another
+artifact only when it serves a distinct deliverable or reproducible check.
+The source diff and usable result are primary outputs, not a new evidence packet.
+Existing issued output contracts remain binding.
+
+Use result-oriented acceptance rows; avoid separate closure criteria for routine
+receipt formatting. Record required intake and provenance concisely. Keep failed,
+blocked and unrun checks visible. Do not require receipt-only commit chains,
+copied historical datasets, repeated whole-project narratives or bespoke checker
+frameworks for each slice. Reuse existing checks; write a maintained helper only
+when repeated transformations or a consequential failure need one. Meaningful
+negative controls remain necessary for claimed transformation/validator safety.
+
+Independent review covers the delivered source, scope, substantive evidence and
+affected dependencies in one pass. Reuse unchanged accepted evidence with an
+explicit applicability check; rerun changed/affected checks. Preserve history and
+correctness while avoiding cosmetic-only handoff cycles. Parent plans receive
+material scope/ownership/sequence changes and child closure links, not a fresh
+copy of every iteration's counts. These are Project10 execution choices, not a
+general framework change or an extension of Project13's completed trial.
 
 ## Recorded Operator decisions
 
-On 2026-10-08, the Operator resolved the C&B and compatibility questions:
-
-- Remove the C&B-specific material from the live skill and package. Do not retain
-  an opt-in C&B profile or case study; use Git history if that material is needed
-  later. Preserve portable design knowledge when separating it from the branding.
-- Tight C&B coupling was an original bug, not an intended feature. Removing it
-  is a correction within the 1.5 effort. No compatibility bridge, legacy behavior
-  or migration obligation is required for that coupling. This decision does not
-  waive version/history requirements or classify unrelated changes in advance.
-- The full semantic card review described above is required for all 233 cards.
-  The Operator considers anything short of that agreed review a bug; the narrower
-  live-guidance-only option is rejected.
-- Use the current `sources/md/` subdirectory convention rather than `sources-md/`.
-
-These decisions supersede the corresponding options in the historical Project09
-synthesis. They authorize the planned correction, not a claim that source edits
-have already been made. Corpus scope, C&B retention and the coupling's compatibility
-treatment are settled; execution detail remains to be prepared in Arc01.
+The 2026-10-08 decisions remain binding: remove C&B-specific material from the
+live skill/package, retain it only in Git history, and treat the coupling as a
+bug requiring no compatibility bridge. Preserve portable method and supplied
+project identity. Review all 233 cards across the agreed five dimensions and use
+`sources/md/`. The 2026-10-12 amendment authorizes the reduced execution structure
+and earlier fixes; it does not waive these deliverables.
 
 ## Operator deferral — 2026-10-09
 
-The Operator explicitly ordered: “let's defer S02-08 by order of operator and
-continue to open slice 3”. This supersedes the previous requirement to satisfy
-S02-08 before Slice02 closure and Slice03 planning. S02-08 is **deferred**, not
-done: no source identity, original fidelity or semantic review is accepted by
-this decision. The full 233-card/five-dimension scope remains binding.
-
-Carryover owner: Arc02 CDC, with the Operator supplying/selecting exact originals
-and capture inputs; Project10 **P10-11** tracks the unresolved readiness gate.
-Slice03 must explicitly map every affected card and the existing input-action
-register into its Arc02 handoff. Re-entry is required before accepting a dependent
-source-fidelity result and before full-corpus/project release acceptance: exact
-Arnheim/Cleland/Tschichold editions/translation and page bases, 37 Butterick
-page captures and four article captures, conversion lineage and adequate
-original/prepared completeness/fidelity mappings, with independent CDC review.
-Any acquisition/conversion requires a separate exact input/output assignment.
-This is a sequencing deferral, with no source mutation or private-search authority.
+S02-08/A01-02 remain Operator-deferred, not done. Arc02 CDC and the Operator own
+[P10-11 input re-entry](arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md):
+exact Arnheim/Cleland/Tschichold editions/page bases, Butterick/article captures,
+conversion lineage and adequate original/prepared completeness/fidelity evidence.
+Each dependent result needs sufficient inputs; unrelated work may proceed.
+Acquisition/conversion needs an exact separately authorized input/output scope.
+Do not call the complete corpus or release verified while this work is unresolved.
 
 ## Planning choices and dependent implementation
 
-The formerly pending wording/profile/example choices are selected by CDC for
-Slice03 in [its design](arc01-portable-contract/slice03-contract-composition-and-handoff/slice-plan.md#cdc-selected-design-for-this-assignment):
-seven scoped formulations with their full caveats, a short contextual profile
-before styling, the accepted local claim-result method, and one diagnostic
-20–80rem configuration. These are planning decisions for composition, not new
-scientific evidence or adopted live teaching. Independent slice composition and the Operator's Arc01 composition gate
-are satisfied at their stated planning scope; source/semantic/release gates remain. Slice03 allocates all 233 cards,
-eight live files and relevant finding/reconciliation work without source mutation.
+The accepted [Arc01 composed contract](arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/composed-contract.md)
+and diagnostic example are inputs, not adopted live teaching. New source
+assignments pin the current main revision, inspect drift, name exact mutation
+paths and settle consequential choices before handoff. Preserve old/new locator
+bridges and assess which prior evidence still applies after edits.
 
 ## Operator metadata and rendering addition — 2026-10-10
 
-The Operator adds [Arc06](arc06-card-metadata-and-rendering/arc-plan.md): reconcile
-existing concept-card fields with the standardized representation and make
-metadata plus Markdown render correctly on GitHub. Use the historical 3.2
-contract if the unified replacement is not ready. Project08's replacement is
-still provisional/P-15 open; select the preserved 3.2 field definitions now.
-Skill version 4.8.1 is not a ready card-schema 4.0. Reassess only through an
-explicit recorded contract amendment before affected mutation.
-
-Never fill missing fields: no guessed facts, null/empty defaults, generated
-provenance, IDs, dates or review states. Preserve existing extensions and values;
-record absent/ambiguous fields separately. Alignment of available fields does
-not imply full schema conformance, semantic verification or source-fidelity.
-This explicitly expands the prior format/schema boundary for this bounded
-normalization and rendering correction. Broader schema redesign remains
-Project08-owned; its gates and existing plans are unchanged.
-
-Arc06 has four planned slices: contract/full field inventory, book metadata,
-web metadata, and complete GitHub rendering/revision handoff. Exact rollout
-batches/pilot are prepared from the inventory; split oversized cohorts without
-losing any of the 233 baseline identities. New P10-12/13 criteria track this
-addition independently of all existing project rows.
-
-Arc02's issued assignment continues. Arc06 is queued, with no CC prompt issued;
-its read-only contract work can be activated at a later handoff without missing
-book originals. Metadata mutation needs the accepted local contract/pilot and
-fresh exact source scope. Arc06 must compose before Arc04 package freeze;
-Arc04/05 own package and final-revision checks. Arc numbers remain stable;
-roadmap dependencies, not numeric sorting, govern execution.
+Normalize existing fields only; never invent absent IDs, facts, null/default
+placeholders or review states. Use the historical 3.2 definitions unless Project08
+has an explicitly accepted unified replacement at contract selection. A skill
+release number is not a schema version. Preserve extensions, typed values,
+null/empty distinctions, list order and bodies. Arc06 uses an accepted contract
+and representative pilot before bulk mutation and must demonstrate actual
+GitHub rendering for the complete reconciled population. Its former four-stage
+sequence is replaced by the combined batches in its current arc plan.
 
 ## Operator methodology pilot — 2026-10-10
 
-The Operator requested that the Slice02 retrospective become Project13 evidence
-and that we try revised preparation/review methods on one or two slices before
-comparing results. [Project13](../project13-collab-refinements/project-plan.md)
-owns the case study and [Experiment01 protocol](../project13-collab-refinements/artifacts/experiment01-methodology-pilot/protocol.md).
-This is a bounded local methodology trial, not a change to design deliverables,
-source-readiness requirements, contributor roles, or acceptance criteria.
-
-Apply the trial to the next two **newly opened** Project10 slices, chosen in
-normal roadmap/readiness order and registered before their initial prompts are
-issued. The current Arc02/Slice02 Iteration04 is already issued and remains
-under its existing contract; its in-flight work is excluded from treatment.
-No issued prompt is modified. [Project-local instructions](AGENTS.md) carry the
-prospective approach: source-grounded examples, inventory before judgment,
-explicit verification coverage, comprehensive reviewer checks, changed approach
-on recurring defects, and compact current records with preserved history.
-
-After the first registered slice closes or reaches a recorded blocked/escalation
-stop, CDC performs the protocol's meta-review before the next trial handoff.
-After the second, perform the final comparison before extending the trial.
-These are the Operator-requested measurement checkpoints within Expedited Mode;
-normal closure, source, independent-review and Operator gates still apply.
-Follow the protocol's explicit early-stop/deviation rules if only one slice
-can be evaluated. No trial work is executed or accepted by this plan update.
+Project13's two-run pilot is complete at `dc7b0732`; comparative benefit was
+inconclusive. Preserve its records and earlier trial assignments. No third run,
+new measurement project or general framework adoption follows from this amendment.
 
 ## Workflow and acceptance
 
-Default Two-Contributor Workflow: Sofie in this chat performs CDC planning with
-the Operator; CC is the separate context receiving the prompt through the Operator.
-The Operator selected Expedited Mode for remaining Project10 work on 2026-10-09;
-the Two-Contributor Workflow remains selected, with no CRC role. Source work requires
-a complete slice open set and the Operator's
-implementation handoff under the standing planning instructions. Slices use
-`cdc-verification.md`; any work implemented by the reviewer needs another
-verifier. Project closure requires independent composition review and Operator
-acceptance recorded when performed, not pre-filled success files.
+CDC Sofie plans and independently reviews separate CC execution, with Operator
+relay: Two-Contributor Workflow, no CRC. Expedited Mode remains enabled. Preserve
+issued prompts and existing acceptance scopes; this plan does not rewrite or
+accept Slice05's current return. Independent slice reviews use
+`cdc-verification.md`. Reviewer-authored source repairs need another verifier.
 
-In Expedited Mode, CC commits the explicitly named assigned files after changes;
-CDC commits after review or planning changes. Close a slice as soon as its full
-evidence permits, then automatically open the next planned slice and give the
-Operator its CC prompt path as plain project-relative copy/paste text. After an
-arc's last slice, complete formal arc closure and open the next planned arc and
-its first slice. Unresolved escalations, source-readiness requirements, independent
-review and Operator gates still stop dependent advancement. This selection changes
-cadence only: no shortcuts, skipped validation, weaker evidence/review, inferred
-source scope, scope changes or timeline interpretation. It does not select a mode
-for other projects.
+Prepare a complete source-scoped slice open set and author-readiness check before
+mutation; Operator relay/acceptance of that prompt remains the implementation
+handoff. Commit explicit assigned paths with both required trailers. Close and
+advance when evidence permits. Missing inputs stop dependent claims, not unrelated
+slices or package preparation. Arc/project composition and Operator gates remain.
 
-Keep slice-produced evidence under the owning slice's `artifacts/`. Project09
-retains the shared audit. At close, Project11 receives the actual accepted
-package/source revision, finding dispositions, compatibility decision and
-remaining limitations. Publication remains a distinct Operator decision.
+Run applicable source/version/package checks from main, beginning with `make help`:
+`make check-skills`, `make check-skill-versions`, `make check-package-paths` and
+fresh `make design` as relevant. Test actual retained examples in named browser
+conditions; local parsing is not GitHub rendering or accessibility conformance.
+Final release readiness requires all thirteen project criteria, complete corpus
+coverage, accepted Project09 input and independently checked final composition.
+Hand Project11 the accepted source/package revisions and explicit limitations.
+Publication remains a separate Operator decision.
 
-Arc02 Slice04 is independently closed at b6acb22f with nine rows done.
-Project13 final comparison dc7b0732 completes the two-run pilot; benefit remains
-inconclusive and no third run/general adoption is authorized. Current
-[Slice05](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt.md)
-is the next ordinary retained T concern: fluid-type/accessibility limits, DES-005,
-seven contexts/98 lines/five files. I1 C5bb54471/Hb418607d is independently
-reviewed: four child rows done/five open. Current [Iteration02](arc02-theory-and-evidence/slice05-fluid-type-accessibility-limits/cc-prompt-iteration02.md)
-repairs residual source coverage, actual pair results, prose joins and input/control
-guards. SOURCE/main advanced externally to 314e5802; assigned design blobs still
-equal dffa504e. Arc03 retains actual accessibility/typesetting proof; all parent
-criteria, R/T/C/L/G,233/eight/16, P10-11, metadata/live/package/release gates remain.
+## Current status
+
+Arc01 is Operator-accepted and closed. Arc02/Slices01–04 are closed for bounded
+evidence; their live fixes remain to be applied. Slice05 I1 accepted four rows
+and left five open; I2 candidate `8d0a10c2` and receipt `9541e4cf` arrived while
+this amendment was prepared and remain **unreviewed**. Its issued prompt and
+outputs are unchanged by this amendment. Arc06 is queued with no prompt issued.
+Arc04 is a roadmap entry, not an opened arc. P10-01 remains done; P10-02–13 open.
 
 ## Version History
+
+- 1.45 (2026-10-12): Operator requested less complexity/workload and earlier
+  fixes after Arc02/Slices01–05 exposed a long evidence-to-implementation delay.
+  Consolidated Arc03 into Arc02 and Arc05 into Arc04; introduced end-to-end
+  review/fix batches, combined metadata stages and compact evidence reuse.
+  Preserved all corpus, finding, source-fidelity, rendering and release criteria,
+  issued assignments, accepted evidence and completed Project13 trial.
 
 - 1.44 (2026-10-12): Slice05 I1 review accepts four rows and issues I2 for five
   open; recorded external SOURCE movement, protected valid model/primary evidence.
