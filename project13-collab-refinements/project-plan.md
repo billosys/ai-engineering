@@ -49,13 +49,14 @@ are follow-up context, not a prospectively assigned treatment run.
 - [Experiment01 protocol](artifacts/experiment01-methodology-pilot/protocol.md)
   predeclares the intervention, selection, measures, limits and review points.
 - [Run register](artifacts/experiment01-methodology-pilot/run-register.md)
-  records eligibility and results. T01 is independently closed; its first checkpoint
-  is complete and comparative benefit is inconclusive. T02 is registered and
-  executed for Project10 Arc02/Slice04 as initial742de371 plus two corrections.
-  Latest C2/H2 `35f6d01e`/`273deaba` awaits CDC; first acceptance remains1/9,
-  cumulative reviewed4/9. The [interim analysis](artifacts/experiment01-methodology-pilot/interim-analysis.md)
-  records recurring failures, repair progress and a reproduced duplicate-registry
-  finding for the pending host review. Host closure/final comparison remain pending.
+  records eligibility and outcomes: both T01/T02 independently closed after
+  initial+four corrections, with full bounded host acceptance. The
+  [final comparison](artifacts/experiment01-methodology-pilot/comparison.md)
+  completes the two-run checkpoint at host closeb6acb22f; benefit remains
+  inconclusive and the recommendation is to revise before another authorized test.
+  The pilot ends; no third run or general adoption. The preserved
+  [interim analysis](artifacts/experiment01-methodology-pilot/interim-analysis.md)
+  retains its H2 cutoff; research acceptance/challenge remain pending.
 
 The intervention bundles worked examples, inventory-first analysis, explicit
 verification coverage, comprehensive reviewer checks, a response to recurring
@@ -129,6 +130,10 @@ amendment and a deviation record; do not rescore history silently. No current
 skill/package or repository-wide AGENTS change is authorized by this bootstrap.
 
 ## Version History
+
+- 1.7 (2026-10-12): T02 independent host closure and final two-run comparison;
+  pilot ends, comparative benefit inconclusive, revise-before-testing recommendation.
+  Frozen evidence/research criteria retained; no third run/adoption/research acceptance.
 
 - 1.6 (2026-10-12): Operator-requested interim analysis through T02 I02 return;
   no new host acceptance. Reproduced packet measurements and six competing

@@ -1,11 +1,11 @@
 # Experiment01 Run Register
 
 Prepared 2026-10-10; T01 independently closed on 2026-10-11; checkpoint below.
-Protocol revision 2's initial zero-run status is historical; this register tracks
-current registrations. T02 has returned its initial assignment and three
-corrections; the latest CDC review accepts six of nine rows. Iteration04 is
-issued, not executed. The interim analysis retains its earlier H2 cutoff;
-host closure and the final comparison remain pending.
+Protocol revision2 zero-run status is historical. T01 and T02 are now independently
+closed, each after initial+four corrections; final [comparison](comparison.md)
+completes the two-case checkpoint. Comparative benefit remains inconclusive;
+the trial ends, no third run or broad adoption is authorized. Research acceptance
+and independent/Operator challenge remain pending.
 The next two newly opened Project10 slices are selected by the protocol's
 consecutive-entry rule, not by expected success. Slice02's ongoing correction is
 excluded. Record each entry here before issuing its initial prompt.
@@ -13,7 +13,7 @@ excluded. Record each entry here before issuing its initial prompt.
 | Run | Slice | Protocol / issue pins | State | Review / measurements |
 |---|---|---|---|---|
 | T01 | Project10 / Arc02 / slice03-token-system-conventions (T family) | Protocol revision 2 at `23c77653`; issue `8c0e4e89` | Closed after initial + four corrections; checkpoint completed below | First3/9; final9/9 bounded criteria; comparative benefit inconclusive |
-| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue `db77543d`; I03 issue `e0738129` | Initial + three corrections returned; C3 cf5d2d05 / H3 d626e737 reviewed; I04 issued, unexecuted | First1/9; cumulative reviewed6/9; [interim analysis](interim-analysis.md) retained at its cutoff; closure/final comparison pending |
+| T02 | Project10 / Arc02 / slice04-layout-and-measure-exceptions (T family) | Protocol revision2 at23c77653; issue db77543d; I04 a23a7ae4 | Closed after initial+four corrections; C4/H4/H4b independently accepted | First1/9; final9/9; [final comparison](comparison.md), trial ended; benefit inconclusive |
 
 ## Entry format
 
@@ -701,3 +701,20 @@ third run or general adoption. Host authority remains Project10.
 This is CDC's measurement of her own process, not independent research acceptance.
 The current table is updated; previous cutoff descriptions remain historical.
 Final comparison still follows T02 closure or recorded stop before any extension.
+
+## T02 Iteration04 acceptance and final checkpoint — 2026-10-12
+
+C4 8f60e7e1/H4 2d0f17de/H4b13eb1a14 independently accepted in host close
+b6acb22f9af11bc9ca76f678adbc4d52224c9267; initial+four corrections, five assignments; I05 unused.
+All nine host rows done. Complete one25-action registry,184 rows/84 results/420
+dimensions, positive/33 supplied controls and five separate recurrence probes
+reproduce. Protected results and other24 actions unchanged; no source mutation.
+Current seven-output packet564270 at C4/566973 at H4b; notes90297/handoff87818
+at H4b. Operator-relayed I4 CC15m57s is attestation; full effort/settings unknown.
+
+The [final comparison](comparison.md) supplies all predeclared measures, adherence,
+contrary evidence, reviewer errors, utility/cost and threats. Comparative outcome
+inconclusive; recommendation revise before another explicitly authorized test.
+Two-run pilot ends; ordinary Project10 work may proceed without extending trial.
+Frozen protocol/Case01/interim cutoff unchanged. This is CDC-authored self-checked
+research; all Project13 criteria remain open for independent/Operator challenge.

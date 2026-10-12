@@ -998,7 +998,7 @@ stays T-owned, with actual accessibility behavior Arc03-owned.
 
 T02 ends after initial+four corrections (five assignments); I05 unused.
 Operator-relayed I4 duration15m57s is attestation, not total effort. Current
-seven-output C4/H4b sizes288254/290957 bytes; removing competing arrays serves
+seven-output C4/H4b sizes564270/566973 bytes (corrected below); removing competing arrays serves
 an actual authoritative handoff and enables whole-artifact validation. Net
 labor/token benefit and project-goal displacement remain unmeasured. CDC's
 previous missed duplicate registries and stale arc breakdown are reviewer
@@ -1028,11 +1028,10 @@ assert g('rev-parse',H+'^^').strip()==C
 for rev in [C,'2d0f17de2e496d2d67810168e2415f79a58975de',H]:
  for t in ['Co-authored-by: Codex <noreply@openai.com>','Co-authored-by: Billo AI <ai-engineering@billo.systems>']:assert t in g('show','-s','--format=%B',rev)
  subprocess.check_call(['git','-C',str(P),'diff','--check',rev+'^',rev])
-for path in g('ls-tree','-r','--name-only',I).splitlines():
- if path not in allowed:assert b(I,path)==b(H,path),path
-all7=sorted(allowed|{S+'artifacts/occurrence-inventory.jsonl',S+'artifacts/source-comparison.md'})
+assert set(g('diff','--name-only',I,H).splitlines())<=allowed
+all7=sorted(allowed|{S+'artifacts/occurrence-inventory.jsonl',S+'artifacts/source-comparison.md',S+'artifacts/claim-results.jsonl'})
 for path in all7:
- data=b(H,path);assert b'\r' not in data and data.endswith(b'\n');assert data==(P/path).read_bytes()
+ data=b(H,path);assert b'\r' not in data and data.endswith(b'\n')
 for path in ['artifacts/occurrence-inventory.jsonl','artifacts/source-comparison.md']:assert b(H,S+path)==b(H2,S+path)
 t=pinned('correction-handoff.md');assert t.split('## Exact proposed actions')[0]==b(H2,S+'artifacts/correction-handoff.md').decode().split('## Exact proposed actions')[0]
 rr=lambda rev:[json.loads(x) for x in b(rev,S+'artifacts/claim-results.jsonl').decode().splitlines()];r=rr(H);old=rr(H2)
@@ -1084,3 +1083,15 @@ paths. Corrected the reviewer record and predicate; this is CDC error, not CC
 noncompliance. The first helper lookup also used SOURCE for a planning path and
 failed; corrected the worktree. Truncated source/guide outputs were recovered
 with scoped reads where their contents govern the review/handoff.
+
+### Reviewer measurement correction — 2026-10-12
+
+The first CDC byte subtotal omitted claim-results.jsonl while labelling its six
+files “seven outputs”:288254/290957 is therefore superseded by564270/566973
+for C4/H4b. The full84 claim records were independently protected/parsed/joined
+in the original review; this denominator mistake does not change their acceptance.
+The durable reproduction now enumerates all seven outputs and uses committed
+bytes without requiring a later worktree ledger to equal its pre-closure blob.
+All changed paths between I4/H4b prove protected tracked bytes unchanged; Git
+diff supplies this equivalent check without one process per unchanged file.
+Fresh replay passes the same positive/33 controls and five recurrence probes.
