@@ -53,7 +53,7 @@ traceable; arc closure cannot omit a family because it lacks an issued number.
 | slice01-fluid-scale-arithmetic | Prove the interpolation model, reconcile selected existing examples, and propose exact corrections. Five bounded live-file witness sets; evidence only. | Closed at c3d68d7d; independent of missing original attribution/fidelity. |
 | slice02-nonlinear-colour-pipeline | Prove staged conversion, reconcile actual models and scope selected OKLCH/temperament assertions. Six live spans/89 lines, one contextual card, bounded primary evidence; seven CC outputs. | Closed after I04 independent review and Operator-approved direct correction; mathematical/technical evidence only, no fidelity or whole-card acceptance. |
 | slice03-token-system-conventions | Reconcile complete selected token assertions with DTCG and named-system primary scopes; usable portable policy and exact correction handoff. 17 contexts/168 lines in five files; evidence only. | Closed at3817d83c after Iteration04 acceptance; all nine child rows done. Project13 T01 registered before initial issue; original fidelity/export validation remain separate. |
-| slice04-layout-and-measure-exceptions | Reconcile complete selected layout/measure assertions; intrinsic-first policy, justified adaptation, scoped measure and exact correction handoff.13 contexts/184 lines/three live files; evidence only. | Open, four child rows done/five open after C1/H1 independent review; Iteration02 assigned. T02 registered after completed T01 checkpoint; originals/browser proof remain separate. |
+| slice04-layout-and-measure-exceptions | Reconcile complete selected layout/measure assertions; intrinsic-first policy, justified adaptation, scoped measure and exact correction handoff.13 contexts/184 lines/three live files; evidence only. | Open, five child rows done/four open after C2/H2 independent review; Iteration03 assigned. Was four/five at I1. T02 registered after completed T01 checkpoint; originals/browser proof remain separate. |
 | R — source input re-entry | Separate slices per supplied original edition, capture/preparation batch or other coherent input scope. Resolve identity, page/locator bases, context, completeness, lineage and fidelity. | Input-blocked where originals/captures are absent; CDC + Operator/P10-11. Each acquisition/preparation needs its own authorization and exact paths. |
 | T — remaining theory/evidence | Bounded slices per concern: nonlinear colour pipeline, perception/analogy scope, token-system conventions, layout/measure exceptions and CHI interpretation. | Adequate primary evidence for each technical/empirical result; dependent attribution gated separately. DES-002/005/007/008/009/012. |
 | C — complete card review | Start from all 47 C groups / 233 identities. Full card bodies and all five dimensions, claim/edge/CQ witnesses and revision effects. Split groups further if source context and iteration headroom require it. | Independent readiness for every primary/secondary input a fidelity result uses; exact group/path/hash/claim assignment. No group count is a claim of review completion. |
@@ -128,8 +128,9 @@ Operator-approved CDC two-field repair/closure. All nine rows done, I05 unused.
 separates independent evidence from direct self-check/Operator acceptance.
 Slice03 Iteration04 at3817d83c is [accepted and closed](slice03-token-system-conventions/cdc-verification.md#iteration04-independent-review-and-slice03-closure--2026-10-11);
 all nine child rows done. T01 checkpoint completed at370cfc8f with inconclusive
-comparative benefit. Current [Slice04 Iteration02](slice04-layout-and-measure-exceptions/cc-prompt-iteration02.md)
-repairs residual I1-F01–F04 after C1/H1 review: S04-01/02/05/08 done/five open. DES-009/bounded
+comparative benefit. Current [Slice04 Iteration03](slice04-layout-and-measure-exceptions/cc-prompt-iteration03.md)
+repairs I2-F01–F04 after C2/H2 review: S04-01/02/03/05/08 done/four open.
+The earlier I2 assignment/four-done state is preserved in the slice history. DES-009/bounded
 DES-002 full selected scope remains; no child/arc closure.
 T02 registration precedes issue under unchanged protocol; other families/gates
 remain. Arc03 retains accessibility proof and later T retains vi-guarantee review.
@@ -143,6 +144,10 @@ Retain input-blocked R, remaining T concerns and complete C/L/G obligations;
 its evidence will inform A02-03/05/07 without accepting actual corrections.
 
 ## Version History
+
+- 1.19 (2026-10-12): Arc02/Slice04 C2/H2 primary comparison accepted, five
+  done/four open; bounded Iteration03 issued for residual warrants, literal
+  joins, actual control routes and reporting. Parent criteria/scope/gates retained.
 
 - 1.18 (2026-10-11): Slice04 C1/H1 independently reviewed, four done/five
   open; bounded Iteration02 issued after exercised recurrence repair. Parent

@@ -284,12 +284,19 @@ remaining limitations. Publication remains a distinct Operator decision.
 
 Arc02 [Slice04](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/slice-plan.md)
 is the current evidence assignment: layout/measure exceptions under DES-009
-and bounded DES-002,13 contexts/184 lines/three files. C1/H1 independently reviewed: S04-01/02/05/08 done, five open. Current
-[Iteration02](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt-iteration02.md)
-repairs residual warrants/authoritative actions/checks; source and parent criteria remain unchanged. Arc03 retains actual
+and bounded DES-002,13 contexts/184 lines/three files. C2/H2 independently reviewed:
+S04-01/02/03/05/08 done, four open. Current
+[Iteration03](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt-iteration03.md)
+repairs residual original warrants, meaningful literal joins, control routes and
+reporting; source and parent criteria remain unchanged. The former I2 assignment
+is preserved in the slice history. Arc03 retains actual
 accessibility/typesetting proof; remaining T and complete R/C/L/G stay assigned.
 
 ## Version History
+
+- 1.39 (2026-10-12): Arc02/Slice04 C2/H2 primary comparison accepted, five
+  done/four open; bounded Iteration03 issued for residual warrants, literal
+  joins, actual control routes and reporting. Parent criteria/scope/gates retained.
 
 - 1.38 (2026-10-11): Slice04 C1/H1 independently reviewed, four done/five
   open; bounded Iteration02 issued after exercised recurrence repair. Parent

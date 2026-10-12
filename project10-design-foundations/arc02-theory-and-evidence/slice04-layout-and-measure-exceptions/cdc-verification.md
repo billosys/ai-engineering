@@ -1,7 +1,7 @@
 # Slice04 CDC verification
 
-Current verdict: [Iteration01 review](#iteration01-independent-review--2026-10-11),
-S04-01/02/05/08 done; five open. [Iteration02](cc-prompt-iteration02.md) is assigned.
+Current verdict: [Iteration02 review](#iteration02-independent-review--2026-10-12),
+S04-01/02/03/05/08 done; four open. [Iteration03](cc-prompt-iteration03.md) is assigned.
 Earlier current-verdict/assignment statements below are historical.
 
 ## Initial independent review — 2026-10-11
@@ -446,3 +446,237 @@ work retained. These are handoff self-checks, not independent acceptance of CDC
 author preparation. Exact commit parent/path/trailers and committed fence replay
 are checked after issue, before Operator relay; actual issue is the commit
 containing this prompt/review, never a prefilled candidate identity.
+
+## Iteration02 independent review — 2026-10-12
+
+CDC Sofie, independent of CC, reviewed issue I2
+`877ff958dd89553fe3c5a326e4b833ce1f8637cd`, candidate C2
+`35f6d01e2fc03eb527afe0d2657ccb5d4c4a9009` (tree
+`8488ead003cc8e45598bbf0c08e418728a73e196`, direct child of I2), and
+receipt-only H2 `273deaba3bc6cb474e35dc61b34696fa758e0416` (tree
+`04c91870045ef331cffca593f528a165b9d9349f`, direct child of C2).
+SOURCE remains `dffa504e851b03b8e4746f1941068e4cc850b612`.
+
+**Partial: S04-01/02/03/05/08 done; S04-04/06/07/09 open.** S04-03 is newly
+accepted for the bounded current primary comparison, not historical fidelity
+or every dependent verdict. [Iteration03](cc-prompt-iteration03.md) is assigned.
+No slice/arc closure or next-slice advance; the earlier current verdicts are historical.
+
+### Reproduction and accepted progress
+
+- C2 changes exactly six permitted outputs; H2 changes only notes, ledger and
+  closing report. Parent/tree/trailers and both committed diff checks pass.
+  All seven outputs initially match H2 working bytes with LF/final newlines.
+  Exact inventory bytes and all84 complete subject/lineage identities match H1;
+  the portable policy and worked/adverse cases before the action registry are
+  byte-identical to H1. S04-02/05 accepted work is retained, not re-created.
+- All84 correctness/scope/consistency reasons and original pair memberships,
+  all25 literal actions and their unit parts, current comparison/report/269-line
+  notes inspected. The other two dimensions have one shared reason each, honestly
+  unassessed for historical fidelity and graph/CQ. Mechanical population remains
+  184 lines,84 results,420 dimensions,25 actions,27 predecessor groups;
+  66 directed memberships/33 reciprocal edges are navigation, not their warrants.
+- Extracted H2's actual Python fence with two Git input adapters: positive packet
+  passes and all20 supplied corruptions reject. The four I1 false-pass witnesses
+  now reject; I1-F04's literal insertion, disposition, duplicate membership and
+  coherent unit-omission repairs are substantial progress. Two controls still
+  reject at the wrong guard, as demonstrated below; replay is not semantic proof.
+- Virtually composed all25 actions in the three complete pinned files. Table,
+  list, CSS and paragraph separation repairs work mechanically. Literal clause
+  meaning and heading integration still fail S04-06 at the specified witnesses.
+- 33 local Markdown links/13 fragments resolve. The12 source-register web links
+  make45 links total;45 is not the local-only denominator. SOURCE HEAD/tracked/
+  index remain unchanged; untracked knowledge/lfe and Project12 preserved.
+  This renews S04-08 for C2/H2 without accepting semantics or CC's intake claim.
+
+### Primary comparison accepted within limits
+
+Freshly inspected complete CSS Values4 §10.2 (including bound conflicts/types),
+CSS2.1 §10.3.3, Logical Properties §4.2, Flexbox §9.3 line collection and §9.7
+flexible-length resolution, Grid §6.4 and §7.2.3.2; the relied-on track definitions
+were also inspected. Web output clipping was recovered with focused calls.
+Observed headers agree: Flexbox CR Draft14 October2025, Grid CR Draft26 March2025,
+Logical Properties WD4 December2025. Previous bounded CV ch/SZ/FX basis/CQ/MQ/WC/
+Every Layout observations remain retained evidence, not new full-document reads.
+The register now supplies the formerly missing applicable routes and preserves
+draft status, unavailable original captures/lineage, and browser/conformance limits.
+
+Comparison functions have defined value/type behavior, rather than selecting
+appropriate design values. Auto-margin centering is contextual; logical mapping
+is distinct from the formatting algorithm. Wrapping/track mechanics do not prove
+task operability. These observations support S04-03 while residual record and
+replacement errors remain S04-04/06. Relevant inspected primary sources:
+[Values4 §10.2](https://www.w3.org/TR/2024/WD-css-values-4-20240312/#comp-func),
+[CSS2.1 §10.3.3](https://www.w3.org/TR/2011/REC-CSS2-20110607/visudet.html#blockwidth),
+[Logical Properties §4.2](https://www.w3.org/TR/2025/WD-css-logical-1-20251204/#margin-properties),
+[Flexbox algorithms](https://www.w3.org/TR/2025/CRD-css-flexbox-1-20251014/#layout-algorithm),
+[Grid margins](https://www.w3.org/TR/2025/CRD-css-grid-2-20250326/#item-margins)
+and [auto-repeat](https://www.w3.org/TR/2025/CRD-css-grid-2-20250326/#auto-repeat).
+WC AA24×24 and AAA44×44 with their separate exceptions are correctly distinguished
+in the proposed target examples; this retains the earlier bounded inspection of
+[WCAG2.2](https://www.w3.org/TR/2024/REC-WCAG22-20241212/), not a conformance result.
+
+### Consolidated residual findings
+
+| ID | Type / significance | Literal witness and bounded correction |
+|---|---|---|
+| I2-F01 | evidence applicability/consistency; correctness-grade | C24.06 correctness now correctly calls C04.01 a ban, but its consistency reason still calls that same C04.01 an intrinsic-first diagnostic. C04.02's own subject is the all-responsiveness guarantee; its correctness/scope reasons still assess the neighboring ban. C05.02 names three paired subjects but its new reason explains only C04.01. Correct each affected original-proposition and edge warrant; do not merely change the registry or infer truth from standards' silence. Persistence of I1-F01, despite useful fixes elsewhere. |
+| I2-F02 | replacement/handoff; serious | A-C09-C10 maps C10.02 (auto/100%) to the clamp sentence and C10.03 (flex-basis/width) to the auto sentence; C10.01 lacks its clamp part. A-C07-C08 likewise assigns the axiom definition to selector advice and the font-relative/sound-outcome claim to prose-role advice, obscuring independent decisions. Correct meaning-to-literal joins, not just byte pointers. The selected SKILL heading remains “Zero Breakpoints”; the checker now explicitly requires retaining it although I2 required including it in the qualified proposal. Expand A-C04 within already-selected206–208 and make heading/body agree. A-C14's “A prescribed height assumes a content amount” also repeats the implication that C14.01's correctness reason rejects; state a risk/condition instead of that implication. Walk the84 joins against source meaning and every changed composed passage; preserve accepted examples/owners. |
+| I2-F03 | validation coverage; correctness-grade | Both malformed table/CSS specimens reject at replacement-pointer, before table-cells/css-target-shape. rewrite_proposal updates literal/result parts but leaves stale pointers and replacement hash; notes falsely say the intended guards were reached. The guards themselves exist and work when the specimen is coherent. Refresh all dependent specimen metadata, assert the actual rejection reason, retain all20 covered properties and the four repaired recurrence controls. This is a newly exposed control-route flaw after pointer strengthening, not an assertion that I1's four false passes persist. |
+| I2-F04 | receipt/identity; serious | The required-read table is explicitly historical I1; I2 supplies selected procedure/data/primary reads but no complete current required-reading/readback reconciliation. Do not infer that missing receipts prove missing reads. Record fresh I3 intake truthfully and mark unrecoverable I2 exposure unknown; never retroclaim reading. Current notes say nine source IDs although the register has12 rows and results use13 distinct IDs including section aliases. They also misattribute the old docs/PROJECT-MANAGEMENT.md path to standing AGENTS; actual SOURCE AGENTS uses knowledge/project-management. Reconcile attribution, alias/population denominators and45 total versus33 local links, preserving historical statements as such. S04-09 remains open for an honest composed return. |
+
+### Exercised bounded repair before another pass
+
+The replay below is pinned to H2, not mutable working files. C10's repaired
+mapping assigns bounds plus clamp to C10.01, auto to C10.02, flex-basis to C10.03,
+and the outcome qualification to C10.04, without changing the composed literal.
+The same mechanical validator accepts that repair. Meaning is judged by the
+original/part pairs printed, not by a keyword oracle or fixed population target.
+Coherent malformed specimens now reach and are rejected by the actual table/CSS
+guards. This is CDC author preparation, not acceptance of a corrected CC packet.
+
+```python
+import copy, hashlib, json, pathlib, re, subprocess
+R=pathlib.Path('/Users/oubiwann/lab/billosys/ai-engineering'); P=R/'.worktrees/planning'
+S='project10-design-foundations/arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/'
+I='877ff958dd89553fe3c5a326e4b833ce1f8637cd'; C='35f6d01e2fc03eb527afe0d2657ccb5d4c4a9009'; H='273deaba3bc6cb474e35dc61b34696fa758e0416'; H1='7eb7a38e754bffbec207b43580a9bf9d44976b88'
+def g(*args):return subprocess.check_output(['git','-C',str(P),*args]).decode()
+def b(rev,path):return subprocess.check_output(['git','-C',str(P),'show',rev+':'+path])
+def pinned(name):return b(H,S+'artifacts/'+name).decode()
+allowed={S+x for x in ['artifacts/claim-results.jsonl','artifacts/correction-handoff.md','artifacts/execution-notes.md','artifacts/source-comparison.md','closing-report.md','ledger.md']}
+assert set(g('diff','--name-only',I,C).splitlines())==allowed
+assert set(g('diff','--name-only',C,H).splitlines())=={S+x for x in ['artifacts/execution-notes.md','closing-report.md','ledger.md']}
+assert g('rev-parse',C+'^').strip()==I and g('rev-parse',H+'^').strip()==C
+for rev in [C,H]:
+ for trailer in ['Co-authored-by: Codex <noreply@openai.com>','Co-authored-by: Billo AI <ai-engineering@billo.systems>']:assert trailer in g('show','-s','--format=%B',rev)
+ subprocess.check_call(['git','-C',str(P),'diff','--check',rev+'^',rev])
+all7=sorted(allowed|{S+'artifacts/occurrence-inventory.jsonl'})
+for path in all7:
+ data=b(H,path);assert b'\r' not in data and data.endswith(b'\n')
+assert b(H,S+'artifacts/occurrence-inventory.jsonl')==b(H1,S+'artifacts/occurrence-inventory.jsonl')
+rr=lambda rev:[json.loads(x) for x in b(rev,S+'artifacts/claim-results.jsonl').decode().splitlines()]
+r=rr(H);old=rr(H1)
+assert [(x['claim_id'],x['subject'],x['predecessor_claim_ids']) for x in r]==[(x['claim_id'],x['subject'],x['predecessor_claim_ids']) for x in old]
+t=pinned('correction-handoff.md');t1=b(H1,S+'artifacts/correction-handoff.md').decode()
+assert t.split('## Exact proposed actions')[0]==t1.split('## Exact proposed actions')[0]
+ids={x['claim_id']:x for x in r};a=json.loads(t.split('```json\n',1)[1].split('\n```',1)[0]);ad={x['action_id']:x for x in a}
+for cid in ['C04.02','C24.06','C05.02']:
+ x=ids[cid];print(cid,x['subject']['assertion']);print('correctness',x['dimensions']['correctness']['reason']);print('consistency',x['dimensions']['consistency']['reason']);print('scope',x['dimensions']['scope_attribution']['reason'])
+print('C10 part joins')
+for cid in ['C10.01','C10.02','C10.03','C10.04']:print(cid,ad['A-C09-C10']['unit_subjects'][cid],'=>',ad['A-C09-C10']['proposal_parts'][cid])
+print('PASSED: parents/scopes/trailers/LF/EOF/candidate bytes; exact inventory and complete unit identities; portable policy/cases unchanged')
+print('output bytes C2/H2',sum(len(b(C,x)) for x in all7),sum(len(b(H,x)) for x in all7))
+# Run the committed checker: two input-read adapters only, so all artifacts are pinned H2.
+code=pinned('execution-notes.md').split('```python\n',1)[1].split('\n```',1)[0]
+code=code.replace("(BASE/name).read_text()","pinned(name)").replace("(BASE/'correction-handoff.md').read_text()","pinned('correction-handoff.md')")
+ns={'pinned':pinned};exec(compile(code,'H2 committed checker','exec'),ns)
+print('Actual rejection routes, then coherent repaired specimen routes:')
+def error(i,c,a):
+ try:ns['validate'](i,c,a)
+ except ValueError as e:return e.args[0][0]
+ raise AssertionError('invalid specimen accepted')
+for aid,value,wanted in [('A-C02','not a row','table-cells'),('A-C06','/* no fence or rule */','css-target-shape')]:
+ i,c,a=ns['cloned']();ns['rewrite_proposal'](a,c,aid,value)
+ before=error(i,c,a);assert before=='replacement-pointer'
+ act=next(x for x in a if x['action_id']==aid)
+ act['replacement_sha256']=hashlib.sha256(value.encode()).hexdigest()
+ for cid in act['claim_ids']:act['proposal_pointers'][cid]={'start':0,'end':len(value)}
+ after=error(i,c,a);assert after==wanted
+ print(aid,before,'=>',after)
+# Bounded semantic repair example. Same literal action, meaningful unit-part mapping.
+i,c,a=ns['cloned']();act=next(x for x in a if x['action_id']=='A-C09-C10');text=act['replacement']
+print('C10 full literal:',text)
+parts=dict(act['proposal_parts'])
+parts['C10.01']=act['proposal_parts']['C10.01']+' '+act['proposal_parts']['C10.02']
+parts['C10.02']=act['proposal_parts']['C10.03']
+combined=act['proposal_parts']['C10.04']
+split=combined.index(' These mechanisms')
+parts['C10.03']=combined[:split];parts['C10.04']=combined[split+1:]
+for cid in ['C10.01','C10.02','C10.03','C10.04']:
+ part=parts[cid];start=text.index(part);act['proposal_parts'][cid]=part;act['proposal_pointers'][cid]={'start':start,'end':start+len(part)}
+ next(x for x in c if x['claim_id']==cid)['disposition']['replacement']=part
+ print('repaired meaning join',cid,part)
+assert ns['validate'](i,c,a)
+print('Bounded C10 repair: positive same structural route passed; meaning judgment remains human')
+print('source state',subprocess.check_output(['git','-C',str(R),'rev-parse','HEAD']).decode().strip())
+print('source tracked/index',subprocess.check_output(['git','-C',str(R),'status','--porcelain','--untracked-files=no']).decode())
+```
+
+Result: retained positive/20 supplied rejections; two original controls fail at
+replacement-pointer, and two coherent repairs reject specifically at table-cells
+and css-target-shape. Meaning-aligned C10 mapping passes the common validator.
+No live file or CC output was altered by these in-memory demonstrations.
+
+### Nine-row CDC disposition
+
+| Row | Status | Evidence / remaining work |
+|---|---|---|
+| S04-01 | done | Accepted I1 intake/author example retained; new I2 intake reporting gap is explicit under S04-09, not proof that prior reads failed. |
+| S04-02 | done | Exact accepted inventory and complete subject/lineage identities retained at H2. |
+| S04-03 | done | Current bounded primary comparison inspected; missing original fidelity remains unassessed under P10-11. |
+| S04-04 | open | All five dimensions inspected; I2-F01 affected original-proposition/edge warrants remain. |
+| S04-05 | done | Exact accepted portable policy and worked/adverse cases retained by byte equality. |
+| S04-06 | open | I2-F02 meaningful parts, coherent heading and height implication remain despite valid byte joins. |
+| S04-07 | open | Positive/20 reproduced and four recurrence repairs work; I2-F03 intended-guard controls/reporting remain. |
+| S04-08 | done | Renewed C2/H2 exact scopes/parents/trees/trailers/preservation/LF/diff/33 local links13 fragments. |
+| S04-09 | open | I2-F04 current intake/denominators/attribution and corrected composed packet/row return remain. |
+
+### Trial, reviewer contribution and handoff boundary
+
+T02 now has initial plus two executed corrections; H2 is receipt-only, not another
+assignment. First acceptance remains1/9, cumulative5/9; these criteria have different
+content and are not a measured quality/effort percentage. C2's seven outputs total
+896104 bytes, H2's898382, versus H1's476515. More literal parts improve traceability
+and expose semantic misjoins, but repeated fields add upkeep; size alone cannot
+establish benefit or goal displacement. CC21m29s is Operator-relayed attestation;
+CDC preparation/review/tokens/upkeep/settings unknown. No causal/final comparison,
+research acceptance, protocol change, third run or adoption is claimed.
+
+Recurring original-target and literal-handoff errors remain after express repair
+instructions; four structural false passes and missing primary routes are repaired.
+The new early-guard control problem is a separate discovery. The source/pointer
+records enabled actual independent decisions, not merely an artifact count.
+This review uses the registered response: exercise a bounded repair before I3.
+
+Reviewer errors: two obsolete guide filename lookups and a planning-cwd source
+lookup failed; canonical routes recovered. Aggregate outputs clipped and focused
+reads recovered needed text. First private integrity assertion incorrectly expected
+H2 to change one path; actual receipt changes three permitted paths. First C10
+demo searched for an absent sentence prefix; corrected to the actual literal.
+A later clean-planning assertion discovered concurrent Project13 edits, not CC
+scope drift. Project13 plan/ledger/register and new interim-analysis are preserved,
+excluded from this commit. Trial observations are recorded here for its owner to
+reconcile; frozen protocol/Case01 unchanged. No acceptance of that parallel analysis.
+
+Author intake loaded current Project10/Arc02 plans, slice contract/ledger/assignment,
+current return and operative verification history; SOURCE design/PM/verification
+and iteration-authoring guidance,83-line semantic procedure, applicable primary
+sections, complete required result/action projections and policy. Original audit/
+selected-window and accepted preparation evidence are retained by their pins;
+no new full historical reread claim. This is CDC intake, not CC's absent I2 receipt.
+
+Iteration03 permits only five evidence/report paths; accepted source comparison,
+inventory, policy/cases, issued prompts and preparation remain protected. All233
+cards/eight live files/16 DES, R/T/C/L/G, P10-11, Arc03 runtime proof, Arc04 live/
+package, Arc06 metadata, Project09 dependency and release/Operator gates remain.
+No slice/arc close, source acquisition or next-slice opening is authorized here.
+
+### Iteration03 handoff self-check
+
+CDC-authored handoff checks passed: eight Project10 paths, unchanged13 Project10
+and eight Arc02 criterion rows/statuses, nine unchanged slice criteria with only
+S04-03 newly done, retained historical review/plan entries and protected CC
+outputs/prompts/preparation/protocol/Case01. All143 local links/57 fragments,
+LF/EOF, diff whitespace, source pin/tracked/index and durable committed-H2
+checker/repair replay pass. A first history-prefix check treated the new blank
+separator as a historical mutation; the exact preserved-prefix check passed.
+These are author self-checks, not independent research or corrected-CC acceptance.
+Actual I3 issue is the commit containing this prompt; exact scope/parent/trailers
+and committed-byte replay are checked before Operator relay. Concurrent Project13
+work is excluded; its owner retains reconciliation authority.
+
+Parallel Project13 work was subsequently committed independently as
+18cf2b479542a56022b42704187090c371bd7645, direct child of H2. Its four
+Project13 paths do not alter Project10 or the reviewed H2 evidence. It is the
+planning predecessor for this handoff, not another CC return or CDC research
+acceptance. Its contents are preserved; no competing Project13 verdict is written.

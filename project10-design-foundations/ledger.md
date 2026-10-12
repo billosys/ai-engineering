@@ -216,3 +216,13 @@ complete inventory, worked cases and integrity accepted; no slice/arc closure.
 Parent criterion text/status and all233/eight/16, R/T/C/L/G, P10-11, later proof,
 metadata/package/release/Operator gates remain. T02 has one executed correction;
 final comparison/research acceptance remain pending.
+
+## Slice04 Iteration02 independent review — 2026-10-12
+
+[CDC C2/H2 review](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cdc-verification.md#iteration02-independent-review--2026-10-12)
+accepts S04-03 and retains/renews S04-01/02/05/08: five done/four open.
+[Iteration03](arc02-theory-and-evidence/slice04-layout-and-measure-exceptions/cc-prompt-iteration03.md) corrects original warrants,
+meaningful literal joins, intended-guard controls and honest reporting. No child
+or parent closure. Parent criterion texts/statuses,233/eight/16, R/T/C/L/G,
+P10-11 and later runtime/metadata/package/release/Operator gates unchanged.
+T02 has two executed corrections; no final comparison/research acceptance.
