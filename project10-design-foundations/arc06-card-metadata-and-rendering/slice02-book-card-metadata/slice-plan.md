@@ -1,6 +1,6 @@
 ---
 slice: slice02-book-card-metadata
-status: open
+status: closed
 depends-on: [slice01-schema-and-field-inventory]
 blocks: [arc06 composition, arc04 final release readiness]
 ---
@@ -211,7 +211,7 @@ final-revision views remain the re-entry route for this slice; no automatic clos
   literal escapes across46 bodies; retain five done/one open, authorize next
   already-owned Arc02 presentation repair and correct false rendering passes.
 
-## Current hosted follow-up — 2026-10-13
+## Historical hosted follow-up — 2026-10-13
 
 Was: Arc02/Slice09 source repair was active, then five prepared evidence strings
 awaited Operator acceptance. Now: Slice09 is closed; source589d7c21 remains
@@ -231,3 +231,22 @@ at eac665f5 remains historical. No source mutation or metadata re-normalization.
 - 1.6 (2026-10-13): Record Operator evidence acceptance and separate CC normal-
   publication authorization after Slice09 closure. The already-issued hosted
   Iteration01 proceeds after actual source access; five done/one open retained.
+
+## Current closure and arc handoff — 2026-10-13
+
+Plan revision **1.7**. Was: five done/one hosted row open. Now: all six rows
+done after independent review of5020db52 at exact published589d7c21; see
+[final verification](cdc-verification.md#iteration01-independent-hosted-review-and-slice02-close--2026-10-13).
+All233 actual metadata/body views and source/history joins pass. Initial and
+Iteration01 prompts remain preserved; no active CC assignment or source repair.
+Original metadata-only body proof remains historical;46 intentional Arc02
+presentation changes are checked separately. No schema/semantic acceptance added.
+
+Expedited handoff proceeds to the [Arc06 composition report](../closing-report.md)
+and its Operator gate. No further rendering slice or invented readiness work.
+Arc02 content/fidelity and Arc04 package/final-revision/release owners retain
+all obligations. Publication of the source is complete; this review is local
+planning work and does not perform a push.
+
+- 1.7 (2026-10-13): Independently accept Iteration01 hosted result and close all
+  six criteria; retain historical failures/pins and prepare formal arc composition.

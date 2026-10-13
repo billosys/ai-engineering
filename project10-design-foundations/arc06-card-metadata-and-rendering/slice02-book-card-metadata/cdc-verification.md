@@ -1,5 +1,9 @@
 # Arc06 Slice02 independent CDC verification
 
+**Current verdict: Slice02 closed; all six rows done at exact source589d7c21.**
+[Final hosted review](#iteration01-independent-hosted-review-and-slice02-close--2026-10-13) supersedes
+the historical c4 body failures. Arc06 composition remains Operator-gated.
+
 ## Initial return review — 2026-10-13
 
 **Initial verdict: five rows done; S02-05 open. Slice02 remained open.**
@@ -114,7 +118,7 @@ met or an explicit Operator amendment, not by inventing an acceptance.
 
 ## Hosted return independent review — 2026-10-13
 
-**Current verdict: five rows done; S02-05 fails and remains open. Slice02 and
+**Historical hosted verdict: five rows done; S02-05 fails and remains open. Slice02 and
 Arc06 remain open.** This supersedes the earlier unpublished-input blocker.
 Reviewed CC return `eac665f569d269b6a913e2f9349ef3e73656781e`, published source
 `c4cc74279ac845003b0c80f55907981241c58a99`, against the preserved initial prompt
@@ -229,3 +233,126 @@ for all233 actual exact589d7c21 GitHub views and independent CDC review. Bridge
 fields, prior observation history, accepted source, package inputs and issued
 prompts are unchanged by this approval-only close. No further source correction,
 new analysis slice, semantic acceptance or Arc06 composition close is claimed.
+
+## Iteration01 independent hosted review and Slice02 close — 2026-10-13
+
+Separate CDC Sofie reviewed CC candidate
+`5020db5296d58e4c43988494b9ca806423f60309`, parent
+`acdea6547253e5a6bc96b5d848d7ab5f1153749e`, against preserved
+[Iteration01](cc-prompt-iteration01.md). Exact source is
+`589d7c21bd6c9a415b921b80479822561861fa79`; main remains there with no tracked
+change and only the pre-existing untracked knowledge/lfe/. Two contributors,
+Expedited Mode. CDC made no source edit or push.
+
+### Fresh reproduction and coverage
+
+- Candidate changes exactly the four authorized planning outputs; parent,
+  separate required trailers and committed whitespace pass. Issued prompts,
+  plans/reviewer records, parent ledgers and immutable233 inventory remain
+  byte-equal to the assignment baseline. Six criterion texts/statuses were
+  preserved by CC. Result bridge is233 unique exact paths, SHA-256
+  `8121246fe4d4010942ca48fc30779156b5a09841868e8e33fd7b9a5487c41d01`.
+- All233 non-hosted objects and serialized prefixes remain unchanged. Prior
+  observation arrays are retained as flat siblings; each complete preceding
+  hosted object, excluding its own history array, is appended exactly.279
+  observations include the old CC passes,46 CDC failures and five accepted
+  expected-snippet repairs; none is promoted to a new observation.
+- All233 checked-source whole/body hashes, sizes, byte offsets and closing
+  lines reproduce directly from committed589d7c21 blobs. All46 post pointers
+  resolve to the correct Slice09 table row;187 other cards are whole-file exact
+  against c4cc742. Every changed post equals the old header plus only the
+ 23 whitelisted body-token replacements.1062 tokens and full source table
+  applicability remain intact.
+- CDC independently fetched **all233** actual exact589d7c21 GitHub `/blob/`
+  pages, not raw files:233 HTTP200, exact final URLs, complete embedded articles,
+  `richTextTruncated:false`. All233 rendered-article hashes equal CC's recorded
+  hashes. CDC fetched72,534,798 response bytes and6,523,194 article UTF-8 bytes;
+  full-response hashes may differ with request/UI data, while exact article
+  identities agree. Fresh remote read confirms main589d7c21 and planningb3aabcdf;
+  CC's return and the later local closure are not claimed pushed.
+- Every displayed metadata key/value and recursive mapping/list member/order
+  matches the independently source-checked typed data.265 null fields and483
+  empty-list fields remain distinguishable; all233 root key sequences match.
+- Complete body text, in order, matches exact-source Pandoc GFM output after
+  whitespace folding and removing only Pandoc-added U+FE0E selectors on its
+  comparison side (eight cards). No actual hosted/source bytes are normalized.
+  Counts and content match:2458 paragraphs,4193 headings/permalinks,7447 list
+  items,1958 unordered/707 ordered lists, one table, seven code fences and337
+  inline code spans. Code content and permalink labels/IDs/hrefs match; no
+  authored body links/images or blockquotes are present.
+- All46 actual old hosted post bodies project to the fresh rendered bodies
+  by exactly the whitelist:1062 visible old escapes become zero current ones.
+  The actual c4 Matrix article fails the same glyph/escape predicate with60
+  escapes; current Matrix passes with3×3 and inverse superscripts. Missing
+  article and truncated-response controls cannot pass the coverage predicate.
+
+Actual DOM inspection is the hosted evidence. Pandoc/local YAML are comparison
+oracles, not substitutes for fetching the pages. The read-only helper `--check`
+was freshly run on all233 current files and is idempotent. Source/helper/Makefile/
+package inputs remain unchanged since accepted Slice09: retain its independently
+reproduced version, Make and8/8 package-member evidence without rerunning or
+calling it a fresh package/release check.
+
+### Failures, recovery and chronology
+
+The web viewer returned a cache miss for a guessed Matrix filename; the frozen
+roster resolves the actual path `posts/matrix-transformation-colour.md`.
+Direct actual GitHub page retrieval succeeded for all233. Eight initial HTTP503
+responses (deformation-depth-cue, depth-cue-interaction, depth-gradient-principle,
+saturation, visual-balance, justified-text, modernist-book-design,
+sans-serif-advocacy) succeeded on bounded retry; no page remains unavailable.
+The fetch receipt retains attempts, final URLs and response/article sizes/hashes.
+Temporary CDC checks initially assumed an unquoted table path, a nonexistent
+Matrix filename and matching href/id without GitHub's `user-content-` ID prefix;
+these assumptions were corrected from actual input and the full checks rerun.
+An optional BeautifulSoup import was unavailable; the actual HTMLParser-based
+comparison did not need it. No failed helper changed repository inputs.
+
+CC's intake says acdea654 issued Iteration01. **Correct chronology:** b3aabcdf
+introduced the prompt; acdea654 recorded Operator approval/closure and is the
+execution baseline. Prompt bytes at both revisions and candidate are identical.
+Publication through b3aabcdf is confirmed; the authorization also covered the
+local acdea654 closure, but that later record was not pushed. Preserve CC's
+receipt as history and this explicit correction as the current interpretation.
+This attribution discrepancy does not change the assignment, approval, source
+or observed pages and requires no source/evidence repair cycle.
+
+### Final six-row walk and bubble-up
+
+| Row | Final status | Basis |
+|---|---|---|
+| S02-01 | done | Retain independent accepted contract/pilot/223-ten write-scope proof; protected inputs unchanged. |
+| S02-02 | done | Retain accepted233 disposition union; fresh full roster/cohort joins cover150 book/83 web. |
+| S02-03 | done | Retain independent no-loss typed/order proof; fresh source decoding and all233 displayed values agree. |
+| S02-04 | done | Retain metadata-only body/identity acceptance at its historical revision; fresh46/187 intentional-change bridge and233 idempotence pass. |
+| S02-05 | done | All233 actual exact589d7c21 views, full metadata/body comparisons, controls and current locators independently reproduced. |
+| S02-06 | done | Scope, history, two-artifact inventory, current outcomes/limits/owners reproduced; chronology correction above retained explicitly. |
+
+All six opening rows close; no deferral/no-op/silent drop. The two supporting
+artifacts remain [batch record](artifacts/batch-record.md) and
+[233-row bridge](artifacts/batch-results.jsonl); prompts/review/ledger/close set
+stay in the slice root. CC's closing report remains its historical proposal,
+now independently accepted by this record. No issued prompt or CC artifact is
+rewritten by CDC.
+
+Capability delivered: all233 metadata representations and full hosted teaching
+bodies are usable at the published revision. The discovered body escapes were
+fixed under separate accepted Arc02/Slice09 authority, preserving the metadata
+contract. Parent plan changes now reflect delivered rendering and formal arc
+composition next. Source-fidelity, semantic claims/relationships/questions,
+actual browser/accessibility behavior and installed-package/release outcomes
+remain unreviewed here under Arc02/04. Later edits require affected rendering
+and locator revalidation; this result is exact-revision evidence.
+
+**What worked:** complete-body comparison caught the old encoding defect;
+flat history plus exact source pointers retained prior failures and made the
+corrected-revision check a bounded read-only follow-up.
+
+### Closing-record checks
+
+Exact ten CDC planning paths;6 slice/7 arc/10 Arc02/13 project criterion texts
+remain intact. Slice02 six done; Arc06 six done/one Operator-gated.146 local
+destinations and52 fragments resolve; LF/EOF and whitespace checks pass. CC
+artifacts/closing report, issued prompts, immutable inventory and source are
+byte-preserved by this close. New arc documents are the required close/verification
+records, with no duplicate supporting artifact.

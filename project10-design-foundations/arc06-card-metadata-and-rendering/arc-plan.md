@@ -10,6 +10,8 @@ related: [arc02-theory-and-evidence, project08-concept-card-metadata]
 
 ## Capability and Operator authority
 
+Plan revision **1.10**; both execution slices closed, composition Operator-gated.
+
 Normalize existing metadata across the full 233-card baseline and demonstrate
 correct metadata/Markdown rendering on GitHub, without inventing missing fields.
 The 2026-10-10 addition remains binding. The Operator's 2026-10-12 amendment in the
@@ -51,11 +53,11 @@ shapes and GitHub behavior, not copied values from newer cards.
 ## Revised slice breakdown
 
 Slice01 is independently closed at `4ccc6f60` / `9934079a`, all six done.
-A06-01 is done after complete mapping/authority review; six arc rows remain open.
-Slice02 local223 normalization and233 preservation are independently accepted
-at `b49f4589` / `877cd9d2`; five child rows done, hosted S02-05 open.
-That publication handoff is complete. Current hosted review finds46 body escape
-defects; Arc02/Slice09 repairs them while Arc06 remains open.
+Was: six arc rows and the Slice02 hosted row remained open after local delivery.
+Now: Slice02 is closed after independent5020db52 review at published589d7c21.
+All233 actual metadata/body views pass; the46 old escape defects are repaired
+by independently accepted Arc02/Slice09. A06-01–06 are done; the composed arc
+result awaits Operator acceptance of A06-07.
 These are the current execution units:
 
 | Unit and retained identifier | Delivery | Gate |
@@ -167,7 +169,7 @@ accepts local source preservation. At that earlier review, all233 hosted observa
 remote integration/publication has since completed. See current hosted status below.
 No new CC source repair or next slice is issued while that binding gate is open.
 
-## Current hosted status — 2026-10-13
+## Historical c4 hosted status — 2026-10-13
 
 [Slice02 CDC review](slice02-book-card-metadata/cdc-verification.md#hosted-return-independent-review--2026-10-13)
 fetched all233 published views at `c4cc7427`: metadata renders correctly;46 post
@@ -179,7 +181,7 @@ criteria survive. Slice02 remains five done/one open; no arc composition close.
 - 1.7 (2026-10-13): Slice02 hosted return reveals falsely passing body escapes;
   retain whole233 rendering gate and route a direct source correction to Arc02.
 
-## Slice09 source result and hosted re-entry — 2026-10-13
+## Historical Slice09 source result and hosted re-entry — 2026-10-13
 
 Was: Arc02/Slice09 had one Operator evidence gate open. Now: Slice09 is closed
 with all four rows done: source589d7c21 independently accepted, five CDC evidence
@@ -196,3 +198,23 @@ A06-01 remains done; other six parent rows stay open.
 - 1.9 (2026-10-13): Operator accepts the prepared Slice09 evidence repair and
   authorizes CC publication; child closes, hosted Iteration01 resumes after push.
   Preserve seven arc criteria/statuses and independent composition obligation.
+
+## Current composition handoff — 2026-10-13
+
+All233 exact589d7c21 GitHub views pass independent metadata/body review; Slice02
+is closed, six done. The current [composition report](closing-report.md) covers
+both execution children,150/83/eight source cohorts, accepted sentinel/header
+mapping, later46-card presentation correction and current/historical locator
+bridges. [Arc verification](cdc-verification.md) separates independently reviewed
+CC delivery from CDC's assembled composition. A06-07 awaits the Operator;
+Arc06 stays active and Expedited advance stops at that explicit gate.
+
+The complete no-fill/no-loss and hosted capability is ready. Missing schema
+information, originals/fidelity, mathematical/relationship/CQ warrant, actual
+browser accessibility and final installed-package/release checks remain with
+Arc02/04; none is accepted by this metadata/rendering close. Subsequent edits
+must refresh affected locator/rendering proof. No extra arc/slice is added.
+
+- 1.10 (2026-10-13): Slice02 closes after independent complete233 hosted review;
+  reproduce integrated no-loss/source/history coverage and prepare A06-07 for
+  Operator composition acceptance. Earlier46 body failures remain historical.

@@ -1,10 +1,9 @@
 # Arc06 Slice02 Ledger
 
-Reviewed 2026-10-13: five criteria remain independently done. S02-05 remains
-open after [CDC hosted review](cdc-verification.md#hosted-return-independent-review--2026-10-13):
-all 233 metadata views pass, but 46 post-card bodies visibly retain literal Unicode
-escapes at historical c4cc742. Arc02/Slice09 is now closed at corrected589d7c21;
-CC owns approved normal publication and the existing all233 hosted Iteration01.
+Closed2026-10-13: all six criteria independently done at exact589d7c21.
+[Final CDC hosted review](cdc-verification.md#iteration01-independent-hosted-review-and-slice02-close--2026-10-13)
+supersedes the historical46 body failures at c4cc742; those observations remain
+preserved. Arc06 composition and Arc02/04 semantic/release gates remain separate.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
@@ -12,7 +11,7 @@ CC owns approved normal publication and the existing all233 hosted Iteration01.
 | S02-02 | Every one of the233 baseline cards receives explicit normalization disposition, covering150 book and83 web cards | Reproduce233-row membership,223 normalized/ten protected pilots and eight source-identity cohorts | correctness-grade | Operator combined metadata scope | done | [CDC initial review](cdc-verification.md#initial-return-review--2026-10-13) — reproduced local scope | Accepted at source `b49f4589` / planning `877cd9d2`; hosted/semantic gates remain separate |
 | S02-03 | Existing metadata and states survive with only mapped representation deltas | Independent full typed/key/member comparison against immutable inventory; exact90 new sentinel corrections plus prior16 | correctness-grade | Operator no-fill rule | done | [CDC initial review](cdc-verification.md#initial-return-review--2026-10-13) — reproduced local scope | Accepted at source `b49f4589` / planning `877cd9d2`; hosted/semantic gates remain separate |
 | S02-04 | Body bytes and identity/references are preserved and all233 outputs are idempotent | Compare pinned body bytes, paths/slugs/reference destinations,233 second-pass hashes and corruption controls | correctness-grade | Metadata-only boundary | done | [CDC initial review](cdc-verification.md#initial-return-review--2026-10-13) — reproduced local scope | Accepted at source `b49f4589` / planning `877cd9d2`; hosted/semantic gates remain separate |
-| S02-05 | The whole233-card population has correct actual GitHub rendering at the final revision and an explicit revision/locator bridge | Inspect233 exact-revision file views and recorded expectations/observations; reconcile original/current body locators | serious | Operator GitHub rendering requirement | open | [artifacts/batch-results.jsonl](artifacts/batch-results.jsonl), [Iteration01 hosted return](artifacts/batch-record.md#iteration01-corrected-revision-hosted-review) — CC attested: all 233 exact-589d7c21 pages complete; metadata/body pass; current 233-row source locators and 46 Slice09 pointers reconcile | CC proposes pass at 589d7c21; retain open for CDC independent review. No semantic or source-fidelity acceptance. |
+| S02-05 | The whole233-card population has correct actual GitHub rendering at the final revision and an explicit revision/locator bridge | Inspect233 exact-revision file views and recorded expectations/observations; reconcile original/current body locators | serious | Operator GitHub rendering requirement | done | [Final independent hosted review](cdc-verification.md#iteration01-independent-hosted-review-and-slice02-close--2026-10-13) — reproduced:233/233 actual views, metadata/body/history/locator checks | Exact published589d7c21; all1062 old escaped tokens display correctly; no semantic/fidelity or release acceptance. |
 | S02-06 | Return accounts for all paths/rows/checks/limits and downstream owners | Inspect225 source/four planning scope, applicable fresh Make/package gates, trailers and complete row/bubble-up return | serious | Slice DoD | done | [CDC initial review](cdc-verification.md#initial-return-review--2026-10-13) — reproduced local scope | Accepted at source `b49f4589` / planning `877cd9d2`; hosted/semantic gates remain separate |
 
 ## Activation and preserved obligations
@@ -35,3 +34,10 @@ closes Slice09's evidence gate and authorizes CC normal publication. CC records
 push results and executes preservedcc-prompt-iteration01.md. All six criterion
 texts and five done/one open states remain exact; local glyph proof is not
 actual hosted acceptance. CDC has not pushed or observed corrected589d7c21 views.
+
+## Iteration01 acceptance and slice close — 2026-10-13
+
+All six criteria done after independent review of5020db52. Current exact-revision
+rendering and locators pass233/233; original metadata-only preservation and later
+Arc02 presentation deltas remain distinct. Arc06 composition is prepared for the
+Operator; this slice close does not itself accept that higher-scale gate.

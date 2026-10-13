@@ -296,3 +296,14 @@ live colour-pipeline corrections are shipped; DES-007/full-live review remains.
 now implements portable identity removal. All thirteen project criteria/statuses
 remain unchanged, including P10-02's actual fresh-context identity cases and
 P10-11/full-corpus/release requirements.
+
+## Arc06 complete delivery and pending composition gate — 2026-10-13
+
+[Slice02 independent close](arc06-card-metadata-and-rendering/slice02-book-card-metadata/cdc-verification.md#iteration01-independent-hosted-review-and-slice02-close--2026-10-13)
+accepts all233 exact589d7c21 metadata/body views. Both Arc06 execution slices are
+closed; original-to-final no-loss checks compose their source work and the
+accepted Arc02 presentation correction. [Arc06 report](arc06-card-metadata-and-rendering/closing-report.md)
+is ready for the Operator; A06-07 remains open. All thirteen project criteria/
+statuses stay unchanged, including full corpus/fidelity/accessibility and final
+package/release gates. P10-12/13 require the accepted union and final applicability,
+not automatic promotion from this child close.

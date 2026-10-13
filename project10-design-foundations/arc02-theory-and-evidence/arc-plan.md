@@ -118,8 +118,9 @@ Was: Slice09 source was accepted with one Operator evidence gate open. Now:
 Slice09 is closed, all four child rows done at source589d7c21 after Operator
 acceptance of the five evidence strings at planningb3aabcdf. CC is authorized
 to normal-push reviewed main/planning through the closure and resume the issued
-Arc06/Slice02 hosted Iteration01. No further source repair is active; actual
-corrected-revision views remain open until CC executes and CDC reviews them.
+Arc06/Slice02 hosted Iteration01. No further presentation repair is active. Was: corrected-revision views pending.
+Now: independent5020db52 review passes all233 views; Arc06/Slice02 is closed.
+Arc06 composition awaits Operator acceptance before the next project advance.
 All corpus/readiness, broader research, actual browser and fresh-context task
 gates remain; no whole-file or full-finding closure follows from these source batches.
 
@@ -132,6 +133,10 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.35 (2026-10-13): Arc06 final hosted review validates the Slice09 corrected
+  source across all233 views; metadata/rendering child closes, arc composition
+  Operator gate next. Remaining content/fidelity/behavior obligations unchanged.
 
 - 1.34 (2026-10-13): Slice09 closes all four rows after Operator acceptance of
   the five prepared evidence fields. Record CC normal-publication authorization
