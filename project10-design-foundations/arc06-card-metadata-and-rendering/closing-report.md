@@ -1,11 +1,11 @@
-# Arc06 composition report — ready for Operator acceptance
+# Arc06 closing report — accepted and closed
 
 The complete233-card metadata and GitHub presentation capability is delivered
 at published source `589d7c21bd6c9a415b921b80479822561861fa79`. Both execution
-slices are closed; A06-01–06 are done. **Arc06 remains active solely for A06-07's
-Operator composition gate.** CDC Sofie assembled this report; its self-checks are
-not independent acceptance of the assembly. [Verification](cdc-verification.md)
-records the independent source checks and pending gate separately.
+slices are closed; all seven criteria are done. **Arc06 is closed after Operator
+acceptance on2026-10-13 of the prepared planning1fffb9dc packet.** CDC Sofie
+assembled this report; its self-checks remain distinct from the attributed
+Operator gate. [Verification](cdc-verification.md) records both.
 
 ## Children and integration
 
@@ -66,7 +66,7 @@ are retained at their true revision/date; they were not cosmetically rerun.
 | A06-04 | done: complete existing data preserved, explicit representation changes, no invented fields. |
 | A06-05 | done: all233 exact current metadata/Markdown file views render correctly. |
 | A06-06 | done: old/current locators, intentional body deltas and gap owners are explicit. |
-| A06-07 | open: whole-set composition demonstrated; Operator acceptance required for closure. |
+| A06-07 | done: Operator accepts the demonstrated whole-set composition at planning1fffb9dc/source589d7c21 on2026-10-13. |
 
 No row or promised cohort is silently dropped. The historical3.2 existing-field
 fallback is the selected contract, not Project08 schema4.0 adoption or full schema
@@ -88,15 +88,38 @@ release composition; design ZIP contains its accepted guidance payload, not a
 claim that all concept cards were packaged. Subsequent source edits need affected
 rendering/locator revalidation. P10-12 retains the independently accepted arc
 union gate; P10-13 retains final-revision applicability after later composition.
-No overall project semantic, package or release criterion is accepted here.
+P10-12 is now done on the Operator-accepted union; no overall project semantic,
+package or release criterion is accepted here.
 
 No new supporting artifact is added at arc scale: this mandatory close report
 and the verification record reference existing slice artifacts/current source.
 CC's local5020db52 return and this close packet have not been pushed by CDC.
 
-## Concrete acceptance requested
+## Historical concrete acceptance request
 
 Accept the assembled Arc06 metadata/presentation capability at589d7c21 and its
 complete scope/preservation/history accounting. CDC can then close A06-07/Arc06
 and resume remaining Project10 work in Expedited Mode. This is the sole remaining
 arc gate; it does not authorize a release or accept the remaining Arc02/04 work.
+
+## Operator acceptance, project roll-up and next work — 2026-10-13
+
+The Operator accepts this complete composition at planning1fffb9dc/source589d7c21:
+“I accept! Close arc6 and continue 2!” All seven rows are done; Arc06 closes.
+The accepted capability is consistent existing metadata plus correct full-card
+GitHub presentation for233 paths, with the preserved baseline/current bridge,
+no filled fields and explicit later presentation deltas. All promised coverage
+landed in the two executed children; no obligation is left inside this arc.
+
+Project P10-12 closes for this accepted mapping and union. P10-13 remains open
+for final revision applicability after subsequent composition; its present
+source589d7c21 hosted evidence is accepted. Unchanged card bytes in a later
+source revision permit explicit reuse of this content proof; any changed card
+needs affected locator/rendering checks. Arc02 still owns full five-dimension
+review and actual accessibility/typesetting behavior; Arc04 owns final installed
+package/routes and release readiness. These owners and limits are unchanged.
+
+Expedited Mode resumes [Arc02/Slice10](../arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/cc-prompt.md):
+correct the remaining fluid-scale arithmetic in two guides, preserving every
+card and the accepted diagnostic. This closure writes planning records only;
+source stays589d7c21, and no release or new publication is performed.

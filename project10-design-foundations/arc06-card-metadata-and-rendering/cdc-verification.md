@@ -1,6 +1,6 @@
 # Arc06 verification and composition gate
 
-**Current verdict: A06-01–06 done; A06-07 open for Operator composition acceptance.**
+**Current verdict: all seven criteria done; Arc06 closed by Operator composition acceptance on2026-10-13.**
 CDC Sofie assembles this record in the Two-Contributor Workflow; Expedited Mode.
 This record independently reviews CC source/evidence but does not independently
 accept CDC's own arc-close assembly. No CRC or fictional fresh reviewer is added.
@@ -12,7 +12,7 @@ Exact source `589d7c21bd6c9a415b921b80479822561861fa79`; original design baselin
 `5020db5296d58e4c43988494b9ca806423f60309`. Current main still equals the source;
 its published ref is confirmed, while planning is published throughb3aabcdf.
 New planning close records remain local. The [composition report](closing-report.md)
-and [seven-row ledger](ledger.md) govern the remaining gate.
+and [seven-row ledger](ledger.md) govern the now-accepted composition gate.
 
 At arc scale, CDC freshly compared the assembled result **from original baseline
 to current source**, not just child verdicts. Every233 whole card/body was read
@@ -61,9 +61,11 @@ locators; Arc04 owns final revision/routes/installed-package/release acceptance.
 | A06-04 | done | Full233 original-to-final keys/typed values/order/body/reference preservation,106 permitted sentinels and explicit token deltas; no filled fields. |
 | A06-05 | done | Independently fetched233 exact current hosted pages; complete rendering and meaningful coverage/glyph controls pass. |
 | A06-06 | done | Full233 old/current source locator joins,46 correction references, preserved history and named Arc02/04 gap owners. |
-| A06-07 | open | Composition demonstrated and assembled by CDC; explicit Operator gate remains, not self-acceptance. |
+| A06-07 | done | Operator accepts the complete assembled packet at planning1fffb9dc/source589d7c21 on2026-10-13; this is an attributed Operator gate, not independent self-acceptance. |
 
 ## Operator composition gate
+
+Historical request at planning1fffb9dc; acceptance is recorded below.
 
 The Operator is asked to accept the complete **metadata/presentation capability
 at exact589d7c21**, as documented in [closing-report.md](closing-report.md).
@@ -80,6 +82,8 @@ requirement. No independent sign-off of this assembled packet is claimed.
 
 ## Assembly self-check
 
+Historical assembly checks at planning1fffb9dc, before Operator acceptance.
+
 Ten scoped planning records,146 local destinations/52 fragments, LF/EOF and
 whitespace checks pass. Existing7 arc/13 project/10 Arc02/6 Slice02 criteria
 remain intact; Slice02 six done, Arc06 six done/one pending Operator gate.
@@ -90,3 +94,29 @@ The first scoped commit attempt rejected the two new arc documents as untracked
 pathspecs; no commit was created. Stage only those named new files, then retry
 the same ten-path commit. This is Git bookkeeping, not an evidence failure or
 publication action.
+
+## Operator acceptance and arc close — 2026-10-13
+
+The Operator's “I accept! Close arc6 and continue 2!” accepts the complete
+composition prepared at planning1fffb9dc578b948d21d00ab9bf451682fccb7861,
+exact source589d7c21bd6c9a415b921b80479822561861fa79. A06-07 is done and
+Arc06 closes. The independently reproduced A06-01–06 evidence and both closed
+children remain applicable: source, helper, inventories and CC return bytes
+are unchanged. No evidence suite is rerun or relabelled fresh for approval.
+
+The acceptance is Operator-attributed; CDC's assembly checks remain self-checks.
+It accepts existing-field normalization and current GitHub presentation, not
+full schema conformance, card semantics, original-source fidelity, accessibility,
+installation or release. Project P10-12 is closed on this accepted union;
+P10-13 retains final-revision applicability after subsequent composition.
+[Arc02/Slice10](../arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/slice-plan.md)
+is the next implementation assignment, with every current card protected.
+
+
+Closure/open-set record checks pass for eleven scoped planning files:170 local
+destinations/56 fragments, LF/EOF/whitespace and exact allowed changes. All7/13/10
+parent criterion texts remain intact; only A06-07 and P10-12 change to done;
+Slice10's four rows start open. Five prescribed prompt blocks match the inspected
+source, virtual replacement/reversal preserves all surrounding bytes and the
+diagnostic, and all source/CC evidence remains unchanged. These are CDC record
+and author-readiness self-checks; the Operator acceptance supplies the arc gate.

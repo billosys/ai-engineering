@@ -112,8 +112,8 @@ contract has been changed. Earlier eleven-row summaries are historical.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
-| P10-12 | All design cards have consistent existing metadata aligned with the selected contract, with existing values/extensions preserved and no missing fields invented | Replay complete baseline/current metadata crosswalk, permitted deltas, gap register, body/identity preservation and independently accepted Arc06 union | correctness-grade | Operator metadata addition, 2026-10-10 | open | — | Historical 3.2 fallback while Project08 replacement remains unadopted; missing required information is reported, not fabricated or called full conformance |
-| P10-13 | Metadata and Markdown render correctly and consistently on GitHub for the complete final card population | Inspect exact final-revision hosted repository file views and full per-card coverage/results; repeat affected checks after later composition | serious | Operator GitHub rendering requirement, 2026-10-10 | open | — | Local YAML/GFM parsing is insufficient; Arc06 establishes source rendering; Arc04 preserves package/routes and checks the final revision |
+| P10-12 | All design cards have consistent existing metadata aligned with the selected contract, with existing values/extensions preserved and no missing fields invented | Replay complete baseline/current metadata crosswalk, permitted deltas, gap register, body/identity preservation and independently accepted Arc06 union | correctness-grade | Operator metadata addition, 2026-10-10 | done | [Arc06 Operator-accepted composition](arc06-card-metadata-and-rendering/cdc-verification.md#operator-acceptance-and-arc-close--2026-10-13) — complete233 baseline/current typed-value/body union at source589d7c21 | Historical3.2 existing-field mapping; no filled fields or full-schema conformance. Preserve accepted bytes and refresh affected evidence after later card edits. |
+| P10-13 | Metadata and Markdown render correctly and consistently on GitHub for the complete final card population | Inspect exact final-revision hosted repository file views and full per-card coverage/results; repeat affected checks after later composition | serious | Operator GitHub rendering requirement, 2026-10-10 | open | [Accepted current233 hosted views](arc06-card-metadata-and-rendering/cdc-verification.md#whole-set-evidence) — source589d7c21; final composition applicability remains open | Local YAML/GFM parsing is insufficient; Arc06 establishes source rendering; Arc04 preserves package/routes and checks the final revision |
 
 
 ## Arc02/Slice02 Iteration03 review — 2026-10-10
@@ -307,3 +307,19 @@ is ready for the Operator; A06-07 remains open. All thirteen project criteria/
 statuses stay unchanged, including full corpus/fidelity/accessibility and final
 package/release gates. P10-12/13 require the accepted union and final applicability,
 not automatic promotion from this child close.
+
+## Arc06 Operator acceptance and Arc02 continuation — 2026-10-13
+
+The Operator accepts the composed metadata/presentation capability prepared at
+planning1fffb9dc/source589d7c21. [Arc06 closes](arc06-card-metadata-and-rendering/closing-report.md),
+seven rows done. P10-12 is done on the complete accepted233-card no-loss/no-fill
+union. P10-13 remains open for final revision applicability after subsequent
+composition; current complete hosted evidence is accepted and retained at its
+actual revision. All thirteen criterion texts remain unchanged; no other row
+is promoted. Original-source fidelity, full semantics, browser behavior and
+final package/release proof retain their existing owners and gates.
+
+[Arc02/Slice10](arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/slice-plan.md)
+opens a direct five-block guide correction with four child criteria. Every card
+and the existing diagnostic are protected; this batch neither reopens Arc06 nor
+claims complete semantic or accessibility acceptance.

@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.59**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.60**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -73,14 +73,15 @@ results and full-corpus/release acceptance; they do not block unrelated fixes.
 
 ## Arc roadmap
 
-There are **three remaining arcs**, rather than five. IDs and existing paths
+Was: three remaining arcs after consolidation, rather than five. Now: Arc06 is
+closed; **Arc02 and Arc04 remain**. IDs and existing paths
 stay stable; numerical order does not imply a dependency barrier.
 
 | Arc | Delivery and current state | Actual prerequisites |
 |---|---|---|
 | [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Closed; accepted contract, baseline and explicit source-readiness carryover | Operator composition acceptance at `38b66d0d` |
 | [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Active; apply accepted corrections, remove C&B coupling, review/fix cards and guides, and implement/test the accessibility/typesetting floor | Accepted contract and evidence for each changed claim; originals only for dependent fidelity checks |
-| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Both slices closed; all233 exact589d7c21 metadata/body views independently pass; arc composition ready for Operator gate | Accepted mapping and pilot before bulk changes; no book-original dependency |
+| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Closed: both slices and all seven arc criteria accepted at source589d7c21; Operator accepts composition at planning1fffb9dc | Accepted mapping and pilot before bulk changes; no book-original dependency |
 | Arc04 — package and release readiness (`arc04-guides-and-package`) | Plan near execution; complete routes/snippets, isolated package, final specimens and Project11 handoff | Accepted input revisions for each task; full Arc02/06 completion and Project09 acceptance before release |
 
 **Was:** a separate Arc03 accessibility/typesetting phase and Arc05 final
@@ -126,8 +127,13 @@ revision applicability for both.
    planning through this closure and execute Arc06/Slice02 hosted Iteration01.
    Was: corrected-revision views pending. Now: independent5020db52 review passes
    all233 actual views; Arc06/Slice02 is closed, all six done. Arc06 whole-set
-   composition is prepared; A06-07 awaits the Operator before arc closure/advance.
-4. Continue complete card/guide review in coherent source/topic cohorts, fixing
+   composition was Operator-gated. Now: the Operator accepts the prepared
+   planning1fffb9dc packet; all seven arc rows are done and Arc06 is closed.
+   P10-12 closes on that union; P10-13 retains final revision applicability.
+4. Open [Arc02/Slice10](arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/cc-prompt.md)
+   now: apply the accepted arithmetic correction to five remaining guide blocks
+   at source589d7c21; preserve all cards and the diagnostic configuration.
+   Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
    Plan only the next executable batch, not a tree for every review dimension.
@@ -236,27 +242,30 @@ Publication remains a separate Operator decision.
 
 ## Current status
 
-Arc01 is Operator-accepted and closed. Arc02/Slices01–05 are independently
-closed for bounded evidence; Slice05 I2 at `8d0a10c2`/`9541e4cf` closes all nine
-child criteria. Slice06 is independently closed at source`3658f79a`/planning`e8076bec`,
-with three actual colour corrections shipped and fresh package checks passed.
-Slice07 is independently closed at source`52f0b520`/planning`7a135d80`, all five
-criteria done. Slice08 is independently closed at source `1489e767`/planning
-`a900b68a`, four criteria done, seven token repairs and prescribed heading shipped.
-Arc06/Slice01 I2 is independently closed at source `4ccc6f60` / planning
-`9934079a`, all six done. Ten cards, complete233 metadata inventory and frozen
-existing-field mapping/helper are accepted. Arc06 A06-01 is independently done;
-six arc rows remain open. Slice02 local223 conversions and233 preservation are independently accepted
-at `b49f4589` / `877cd9d2`, five rows done and hosted S02-05 open. Operator
-publication/access handoff is complete. Actual233 metadata views pass;46 body
-views fail at the old published revision. Arc02/Slice09 source589d7c21 is
-independently accepted; three rows done, five-string CDC evidence repair and
-publication await Operator decisions. Slice02/Arc06 actual corrected-revision
-rendering and composition remain open. No semantic or whole-arc acceptance yet.
-Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
-Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
+Was: Arc06's corrected-revision hosted gate and final composition remained open.
+Now: Arc01 and Arc06 are accepted and closed. Arc06's Operator acceptance on
+2026-10-13 acts on planning1fffb9dc, exact source589d7c21; both executed slices
+are closed and all seven arc rows are done. The complete233-card metadata/body
+GitHub proof and baseline/current bridge remain applicable. P10-01 and P10-12
+are done; P10-02–11 and P10-13 remain open. Existing-field alignment is accepted,
+not missing-field completion or full schema conformance.
+
+Arc02/Slices01–09 are independently closed at their recorded scopes. The current
+assignment is [Slice10](arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/slice-plan.md):
+ship remaining ratio/rounding/interpolation corrections in layout and foundations
+without changing cards, defaults or the existing diagnostic. Four child rows
+start open; the ten arc criteria keep their prior dispositions. Arc04 remains
+a roadmap entry. Complete card/live semantics and global reconciliation,
+originals/fidelity, actual browser behavior, fresh-context and final installed
+package/release gates remain open with their existing owners.
 
 ## Version History
+
+- 1.60 (2026-10-13): Operator accepts Arc06 composition prepared at1fffb9dc;
+  close all seven arc criteria and P10-12's existing-field union. Retain P10-13
+  final applicability and open Arc02/Slice10 for direct remaining fluid-scale
+  guide corrections after the already-accepted theory and portable changes.
+
 
 - 1.59 (2026-10-13): Arc06/Slice02 closes after complete independent final233
   hosted review; assemble original-to-final arc composition for A06-07 Operator

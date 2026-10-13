@@ -269,3 +269,14 @@ Operator accepts the five CDC evidence fields at b3aabcdf and authorizes CC's
 normal publication followed by Arc06/Slice02 hosted Iteration01. All ten arc
 criteria/statuses remain unchanged. Source display correction does not establish
 full-corpus semantics, original-source fidelity, browser behavior or arc composition.
+
+## Slice10 direct source-fix opening — 2026-10-13
+
+After Operator acceptance of Arc06 at planning1fffb9dc/source589d7c21,
+[Slice10](slice10-fluid-scale-source-fixes/slice-plan.md) applies remaining
+accepted fluid-scale arithmetic to five current guide blocks. Prior portable
+corrections retired most historical36 occurrences; their preserved proof is
+an input, not a request to restore legacy configuration. Four child criteria
+start open. All ten parent criterion texts and statuses remain unchanged;
+full card/live/relationship review, originals/fidelity and actual behavior
+remain incomplete. Every current card and the existing diagnostic are protected.

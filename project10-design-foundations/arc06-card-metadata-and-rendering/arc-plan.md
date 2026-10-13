@@ -1,6 +1,6 @@
 ---
 arc: arc06-card-metadata-and-rendering
-status: active
+status: closed
 depends-on: [arc01-portable-contract]
 blocks: [arc04-guides-and-package final release readiness]
 related: [arc02-theory-and-evidence, project08-concept-card-metadata]
@@ -10,7 +10,7 @@ related: [arc02-theory-and-evidence, project08-concept-card-metadata]
 
 ## Capability and Operator authority
 
-Plan revision **1.10**; both execution slices closed, composition Operator-gated.
+Plan revision **1.11**; closed after Operator acceptance of the assembled composition at source589d7c21.
 
 Normalize existing metadata across the full 233-card baseline and demonstrate
 correct metadata/Markdown rendering on GitHub, without inventing missing fields.
@@ -57,7 +57,7 @@ Was: six arc rows and the Slice02 hosted row remained open after local delivery.
 Now: Slice02 is closed after independent5020db52 review at published589d7c21.
 All233 actual metadata/body views pass; the46 old escape defects are repaired
 by independently accepted Arc02/Slice09. A06-01–06 are done; the composed arc
-result awaits Operator acceptance of A06-07.
+result was Operator-gated; it is now accepted, with A06-07 done and Arc06 closed.
 These are the current execution units:
 
 | Unit and retained identifier | Delivery | Gate |
@@ -108,19 +108,14 @@ release is not changed by this migration.
 
 ## Sequencing, composition and workflow
 
-Arc06 can run at the next ready handoff after the first live-correction batch,
-without waiting for Arc02's entire corpus/input work. Two contributors, CDC Sofie
-and separate CC via Operator relay; Expedited Mode remains active. Arc02/Slice08
-is independently closed. Arc06/Slice02 initial
-[cc-prompt.md](slice02-book-card-metadata/cc-prompt.md) returned source `b49f4589` /
-planning `877cd9d2`; local work accepted, hosted gate open. Next action is
-the current hosted re-entry below. The earlier publication/access proposal
-and source-repair handoff are historical; the issued rendering follow-up resumes
-after CC executes the approved corrected-source publication.
-Slice01 has accepted ten pilots, complete233
-inventory and safe helper; its historical3.2 mapping is frozen for this batch.
-Other Arc02 work and Project08 schema adoption remain distinct/open. Hosted
-unavailability permits local checked delivery but leaves S02-05/A06-05 open.
+Was: Arc06 ran between ready Arc02 source-fix batches, with hosted access and
+body presentation holding completion. Now: both execution children and the
+whole-set composition are accepted at source589d7c21. The Operator accepted the
+prepared packet at planning1fffb9dc on2026-10-13: “I accept! Close arc6 and
+continue 2!” Two contributors, CDC Sofie and separate CC via Operator relay;
+Expedited Mode remains active. Slice01's historical3.2 mapping/helper is frozen;
+all233 actual hosted views and the later46-card presentation deltas are covered.
+No new source mutation or publication is part of this arc closure.
 
 Arc04 consumes accepted normalization/rendering revisions and owns package/final
 release validation, including applicability after any later source edits. Former
@@ -206,8 +201,8 @@ is closed, six done. The current [composition report](closing-report.md) covers
 both execution children,150/83/eight source cohorts, accepted sentinel/header
 mapping, later46-card presentation correction and current/historical locator
 bridges. [Arc verification](cdc-verification.md) separates independently reviewed
-CC delivery from CDC's assembled composition. A06-07 awaits the Operator;
-Arc06 stays active and Expedited advance stops at that explicit gate.
+CC delivery from CDC's assembled composition. Was: A06-07 awaited the Operator and stopped advance. Now: the2026-10-13
+Operator acceptance below closes that gate; Arc06 is closed.
 
 The complete no-fill/no-loss and hosted capability is ready. Missing schema
 information, originals/fidelity, mathematical/relationship/CQ warrant, actual
@@ -218,3 +213,19 @@ must refresh affected locator/rendering proof. No extra arc/slice is added.
 - 1.10 (2026-10-13): Slice02 closes after independent complete233 hosted review;
   reproduce integrated no-loss/source/history coverage and prepare A06-07 for
   Operator composition acceptance. Earlier46 body failures remain historical.
+
+## Operator acceptance and arc closure — 2026-10-13
+
+The Operator accepts the complete metadata/presentation composition prepared at
+planning1fffb9dc, exact source589d7c21. [Gate record](cdc-verification.md#operator-acceptance-and-arc-close--2026-10-13)
+closes A06-07; all seven rows are done. No protected inputs changed, so the
+previous complete independent evidence remains applicable rather than rerun.
+Project P10-12 is now done for the accepted no-fill existing-field mapping;
+P10-13 retains final-revision applicability after later composition. Arc02
+resumes with [Slice10](../arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/slice-plan.md),
+a direct guide correction. Full semantic/fidelity/accessibility and Arc04
+installed-package/release obligations remain open with their existing owners.
+
+- 1.11 (2026-10-13): Operator accepts the whole-set composition prepared at
+  planning1fffb9dc; close all seven arc criteria, bubble the accepted existing-field
+  union to P10-12, retain final rendering applicability and resume Arc02/Slice10.

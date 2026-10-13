@@ -1,7 +1,7 @@
 # Arc06 Ledger
 
-A06-01–06 done on complete baseline-to-final and hosted review; A06-07 awaits
-Operator acceptance of the assembled composition record. Arc06 remains active. Arc06 consolidates execution into
+All seven criteria are done. Arc06 is closed after the Operator accepts the
+composition prepared at planning1fffb9dc, exact source589d7c21, on2026-10-13. Arc06 consolidates execution into
 contract/pilot and complete normalization/rendering. A06-02/03 retain separate
 population checks but share the same all-card Slice02 delivery. Superseded
 unissued child drafts are not completion evidence. CC proposes; CDC verifies.
@@ -14,7 +14,7 @@ unissued child drafts are not completion evidence. CC proposes; CDC verifies.
 | A06-04 | Every final card preserves existing data and records explicit representation changes without invented fields | Whole-set before/after field-value bridge plus body-byte and reference checks | correctness-grade | Operator no-fill rule | done | [Whole-set review](cdc-verification.md#whole-set-evidence) — reproduced independent CC delivery: Independent233 typed/value/order comparisons from dffa504e to589d7c21;106 exact sentinel changes and1062 authorized body escape replacements. | No invented fields; populated nested lists/nulls/absence/extensions retained; no full-schema conformance claim. |
 | A06-05 | Metadata and Markdown render correctly for the whole reconciled card population on GitHub | Inspect exact-commit hosted file-view evidence, expected metadata/body values and per-card coverage matrix | serious | Operator GitHub rendering requirement | done | [Whole-set review](cdc-verification.md#whole-set-evidence) — reproduced independent CC delivery: Independent233 exact589d7c21 hosted pages, complete metadata/body/code/permalink checks. | Future substantive or representation edits require affected revalidation at their actual revision. |
 | A06-06 | All new revision/locator dependencies and gaps have explicit downstream owners | Trace field/body locators and evidence applicability into Arc02/04 handoff | serious | Arc01 baseline and full semantic review | done | [Whole-set review](cdc-verification.md#whole-set-evidence) — reproduced independent CC delivery: Current233 source hashes/locators and46 Slice09 pointers verified; old body preservation stays historical, source/fidelity and final-package owners explicit. | Arc02 consumes current source/locators; Arc04 checks final revision/package/routes and release. |
-| A06-07 | Child slices compose into the arc capability with independent composition acceptance | Whole-set demonstration, row walk and attributed independent/Operator gate | serious | Arc composition | open | [Composition report](closing-report.md), [gate record](cdc-verification.md#operator-composition-gate) — CDC assembled; Operator acceptance pending | Six criteria met; both execution children closed. Operator accepts this composed result before arc closure/advance. |
+| A06-07 | Child slices compose into the arc capability with independent composition acceptance | Whole-set demonstration, row walk and attributed independent/Operator gate | serious | Arc composition | done | [Operator gate acceptance](cdc-verification.md#operator-acceptance-and-arc-close--2026-10-13) — Operator acceptance of CDC composition at planning1fffb9dc/source589d7c21 | Both executed children closed; all233/eight-cohort preservation and actual hosted capability compose. No semantic or release acceptance. |
 
 ## Operator amendment — 2026-10-12
 
@@ -44,3 +44,12 @@ cohorts; A06-02–06 are now reproduced against CC's integrated delivery. The
 assembled [composition report](closing-report.md) is ready; A06-07 alone stays
 open for the Operator. Superseded unissued Slice03/04 drafts are not extra work
 or completion evidence; their83-web/whole-rendering scope landed in Slice02.
+
+## Operator composition acceptance and closure — 2026-10-13
+
+The Operator accepts the concrete packet at planning1fffb9dc/source589d7c21:
+“I accept! Close arc6 and continue 2!” A06-07 is done; all seven criteria close.
+The complete independent evidence for A06-01–06 is unchanged and retained.
+[Close report](closing-report.md) records the whole-set delivery and remaining
+Arc02/04 owners. Superseded unissued drafts are neither dropped scope nor
+additional executed children. No source/schema/release change is implied.
