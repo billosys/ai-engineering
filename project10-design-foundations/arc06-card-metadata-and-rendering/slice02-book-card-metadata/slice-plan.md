@@ -210,3 +210,17 @@ final-revision views remain the re-entry route for this slice; no automatic clos
 - 1.4 (2026-10-13): Published hosted review reproduces metadata success but finds
   literal escapes across46 bodies; retain five done/one open, authorize next
   already-owned Arc02 presentation repair and correct false rendering passes.
+
+## Current hosted follow-up — 2026-10-13
+
+Was: Arc02/Slice09 source repair was active. Now: source589d7c21 is independently
+accepted, and a five-string expected-display evidence repair is prepared for
+Operator acceptance. [Iteration01](cc-prompt-iteration01.md) is the current CC
+hosted assignment, issued by this introducing commit; its execution is held until
+that acceptance and corrected-source publication/access are satisfied. Predecessor
+is preserved initialcc-prompt.md; intervening Operator-authorized hosted return
+at eac665f5 remains historical. No source mutation or metadata re-normalization.
+
+- 1.5 (2026-10-13): Prepare exact233 corrected-revision hosted follow-up after
+  independent source review. Retain evidence repair/publication gates, original
+  six criteria and five done/one open; no advance by copied source-match verdict.

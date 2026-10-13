@@ -253,3 +253,10 @@ already-owned literal body Unicode presentation correction found by Arc06's
 hosted review. Four new child rows start open; all ten parent criterion texts
 and statuses remain unchanged. Mechanical encoding repair is not five-dimension
 semantic review or P10-11 fidelity acceptance. Arc06's hosted gate remains open.
+
+## Slice09 source review — 2026-10-13
+
+[Independent review](slice09-post-card-unicode-presentation/cdc-verification.md)
+accepts S09-01/02/03 at source589d7c21 / planninge1e59efe; S09-04 awaits Operator
+acceptance of five prepared evidence strings. All ten parent texts/statuses
+remain unchanged. Source glyph correction is not complete corpus/semantic proof.

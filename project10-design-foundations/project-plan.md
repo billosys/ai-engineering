@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.56**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.57**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -80,7 +80,7 @@ stay stable; numerical order does not imply a dependency barrier.
 |---|---|---|
 | [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Closed; accepted contract, baseline and explicit source-readiness carryover | Operator composition acceptance at `38b66d0d` |
 | [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Active; apply accepted corrections, remove C&B coupling, review/fix cards and guides, and implement/test the accessibility/typesetting floor | Accepted contract and evidence for each changed claim; originals only for dependent fidelity checks |
-| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Slice01 closed; Slice02 metadata accepted, hosted checks reveal46 body escape failures; Arc02/Slice09 fixes source | Accepted mapping and pilot before bulk changes; no book-original dependency |
+| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Slice01 closed; Slice02 metadata accepted; Slice09 source repair accepted, evidence/publication gate precedes hosted recheck | Accepted mapping and pilot before bulk changes; no book-original dependency |
 | Arc04 — package and release readiness (`arc04-guides-and-package`) | Plan near execution; complete routes/snippets, isolated package, final specimens and Project11 handoff | Accepted input revisions for each task; full Arc02/06 completion and Project09 acceptance before release |
 
 **Was:** a separate Arc03 accessibility/typesetting phase and Arc05 final
@@ -120,7 +120,9 @@ revision applicability for both.
    five rows done/one hosted row open. Was: publication/access was pending. Now:
    publication at `c4cc7427` is complete; CDC fetched all233 views, with metadata
    success and46 body escape failures. [Arc02/Slice09](arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cc-prompt.md)
-   directly fixes the bodies and corrects hosted evidence; no extra analysis phase.
+   delivered source589d7c21, independently accepted. Three Slice09 rows are done;
+   five evidence strings prepared by CDC await Operator acceptance alongside
+   publication. Arc06 hosted re-entry is ready; no extra source correction cycle.
 4. Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -243,13 +245,19 @@ existing-field mapping/helper are accepted. Arc06 A06-01 is independently done;
 six arc rows remain open. Slice02 local223 conversions and233 preservation are independently accepted
 at `b49f4589` / `877cd9d2`, five rows done and hosted S02-05 open. Operator
 publication/access handoff is complete. Actual233 metadata views pass;46 body
-views fail due to literal Unicode escapes. Arc02/Slice09 is open for their source
-repair; Slice02/Arc06 rendering and composition remain open. No semantic or
-whole-arc acceptance yet.
+views fail at the old published revision. Arc02/Slice09 source589d7c21 is
+independently accepted; three rows done, five-string CDC evidence repair and
+publication await Operator decisions. Slice02/Arc06 actual corrected-revision
+rendering and composition remain open. No semantic or whole-arc acceptance yet.
 Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
 Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
 
 ## Version History
+
+- 1.57 (2026-10-13): Arc02/Slice09 source correction independently accepted;
+  prepare tiny evidence repair and normal publication for Operator approval, then
+  resume Arc06's actual233-view gate. Preserve all thirteen project criteria.
+
 
 - 1.56 (2026-10-13): Arc06/Slice02 independent hosted review finds46 body escape
   defects despite successful metadata rendering. Open immediate Arc02/Slice09

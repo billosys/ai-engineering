@@ -176,3 +176,14 @@ criteria survive. Slice02 remains five done/one open; no arc composition close.
 
 - 1.7 (2026-10-13): Slice02 hosted return reveals falsely passing body escapes;
   retain whole233 rendering gate and route a direct source correction to Arc02.
+
+## Slice09 source result and hosted re-entry — 2026-10-13
+
+Arc02/Slice09 source589d7c21 is independently accepted, with a five-string
+CDC evidence repair awaiting Operator acceptance. All233 metadata and187 other
+cards are preserved;46 bodies now contain intended glyphs. Arc06 remains open:
+normal publication/access and its actual233-view follow-up still gate rendering.
+A06-01 remains done; other six parent rows stay open.
+
+- 1.8 (2026-10-13): Record reviewed Slice09 source delivery and gated hosted
+  re-entry; no implied publication, corrected-revision view or composition acceptance.

@@ -101,3 +101,17 @@ new token or an intentional escape witness; return the specific discrepancy.
 
 - 1.0 (2026-10-13): Open direct46-card presentation correction after Arc06 hosted
   F01; preserve all metadata, prior results and complete hosted/semantic gates.
+
+## Current review and approval handoff — 2026-10-13
+
+Initial CC source589d7c21 / planninge1e59efe returned and independently reviewed.
+S09-01/02/03 are done; S09-04 remains open only for Operator acceptance of the
+[prepared five-string CDC evidence repair](cdc-verification.md#f01-and-the-prepared-cdc-repair).
+No further source correction or CC iteration is active. Was: four rows open for
+review. Now: source/package delivery accepted; evidence repair and normal
+publication are concrete Operator decisions. Arc06's already-open Slice02 resumes
+via its new hosted follow-up when this gate/publication is cleared.
+
+- 1.1 (2026-10-13): Independently accept all source/package work; prepare five
+  expected-display string corrections for Operator acceptance and publication.
+  Retain four criteria and all hosted/semantic/release obligations; no slice close yet.

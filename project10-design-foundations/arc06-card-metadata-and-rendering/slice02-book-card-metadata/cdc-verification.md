@@ -200,3 +200,15 @@ rows are not automatically promoted. Arc02 consumes the existing revision/body
 locator bridge and records its intentional body changes separately; metadata-only
 preservation evidence stays historical at `c4cc742`. Arc04 retains final revision,
 package, release and composition checks. No schema or corpus scope changes.
+
+## Slice09 reviewed source and evidence preparation — 2026-10-13
+
+[Slice09 CDC review](../../arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cdc-verification.md)
+accepts source589d7c21; all233 metadata and187 other cards preserved,46 bodies
+corrected. Five expected-display snippets in the current correction records
+retained a second literal escape; CDC prepared those five field repairs with
+complete prior text/provenance retained. Their Operator acceptance remains pending.
+No source or hosted status changed in this CDC preparation; c4 records still show
+46 body failures. [Current hosted prompt](cc-prompt-iteration01.md) is ready but
+gated on that acceptance and corrected-source publication/access. S02-05 stays
+open. Earlier actual c4 hosted checks are retained historical evidence.
