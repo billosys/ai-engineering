@@ -136,13 +136,15 @@ committed parent/path/trailer integrity, links/EOF/diff. No install/publication.
 ## Assignment history and author readiness
 
 Initial [cc-prompt.md](cc-prompt.md) issued2026-10-13 by this introducing commit,
-planning parent `9934079aecc5a8c9bc2888c9a1b627fb4f3c55ff`. Current assignment: active separate CC
-implementation. It delivers main source corrections now; hosted evidence can
-remain partial without pretending the complete slice is accepted. No pre-created
-close/review record. CDC closes only after all binding rows are satisfied or an
-explicit Operator disposition is recorded.
+planning parent `9934079aecc5a8c9bc2888c9a1b627fb4f3c55ff`. Initial assignment returned source `b49f4589` / planning `877cd9d2`;
+local work independently accepted2026-10-13, five done/one hosted row open.
+Current next action: Operator publication/access decision; no active source
+repair. Local source corrections are accepted; hosted evidence remains pending.
+CDC closes only after all binding rows are satisfied or an explicit Operator
+disposition is recorded.
 
-CDC has inspected actual helper semantics, byte recovery/Unicode controls,
+Initial author preparation retained at input `4ccc6f60`:
+CDC inspected actual helper semantics, byte recovery/Unicode controls,
 all233 check results and inventory. All223 remaining outputs differ, ten pilots
 are idempotent,90 sentinel deltas/53 cards reproduce,225-path source scope is
 fully determined before handoff. Guide08's structural/semantic distinction and
@@ -167,3 +169,22 @@ seven arc/six Slice01 criteria, all six Slice01 done, A06-01 done/six open,
 all six Slice02 open. Three issued Slice01 prompts and all original CC artifacts
 remain byte-exact. Sixty local destinations and twenty fragments resolve;
 LF/EOF/diff checks pass. Main remains `4ccc6f60` with no tracked change.
+
+## Current review and Operator handoff — 2026-10-13
+
+[CDC initial review](cdc-verification.md#initial-return-review--2026-10-13)
+accepts S02-01/02/03/04/06; S02-05 stays open. Nine reviewed local design commits
+and one remote install commit need integration before publishing exact card
+revision `b49f4589`. CDC's uncommitted merge simulation preserves both; no branch
+was changed. [Operator publication proposal](cdc-verification.md#hosted-blocker-and-concrete-operator-handoff)
+is the next handoff. After approval/access, CDC issues a read-only hosted-check
+follow-up; no duplicate normalization, census or evidence phase is needed.
+
+- 1.3 (2026-10-13): Initial return independently accepts all local obligations;
+  leave actual233 hosted rendering open and give concrete Operator publication
+  handoff. Preserve original prompt and all six acceptance criteria.
+
+Review-record checks: exact six planning paths; six criteria unchanged, five
+done/one open; issued prompt, CC artifacts and parent ledgers byte-exact.
+Thirty-eight local destinations/fourteen fragments resolve; EOF/diff checks pass.
+Main unchanged at `b49f4589`; remote tracking refreshed to `1bbef13e` only.

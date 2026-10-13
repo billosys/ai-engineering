@@ -52,7 +52,9 @@ shapes and GitHub behavior, not copied values from newer cards.
 
 Slice01 is independently closed at `4ccc6f60` / `9934079a`, all six done.
 A06-01 is done after complete mapping/authority review; six arc rows remain open.
-Slice02 is active for223 remaining mutations and233 preservation/hosted checks.
+Slice02 local223 normalization and233 preservation are independently accepted
+at `b49f4589` / `877cd9d2`; five child rows done, hosted S02-05 open.
+Next action is Operator publication/access approval, followed by CDC hosted handoff.
 These are the current execution units:
 
 | Unit and retained identifier | Delivery | Gate |
@@ -106,9 +108,11 @@ release is not changed by this migration.
 Arc06 can run at the next ready handoff after the first live-correction batch,
 without waiting for Arc02's entire corpus/input work. Two contributors, CDC Sofie
 and separate CC via Operator relay; Expedited Mode remains active. Arc02/Slice08
-is independently closed. Current assignment is Arc06/Slice02
-[cc-prompt.md](slice02-book-card-metadata/cc-prompt.md), main input `4ccc6f60` /
-planning predecessor `9934079a`. Slice01 has accepted ten pilots, complete233
+is independently closed. Arc06/Slice02 initial
+[cc-prompt.md](slice02-book-card-metadata/cc-prompt.md) returned source `b49f4589` /
+planning `877cd9d2`; local work accepted, hosted gate open. Next action is
+Operator publication/access approval, then CDC rendering assignment.
+Slice01 has accepted ten pilots, complete233
 inventory and safe helper; its historical3.2 mapping is frozen for this batch.
 Other Arc02 work and Project08 schema adoption remain distinct/open. Hosted
 unavailability permits local checked delivery but leaves S02-05/A06-05 open.
@@ -121,6 +125,10 @@ A06-01 is independently accepted by the linked complete mapping review; no
 other arc or project criterion is promoted by the slice close.
 
 ## Version History
+
+- 1.6 (2026-10-13): Slice02 local return independently accepted, five child rows
+  done/one hosted row open. Record concrete Operator publication handoff; preserve
+  all seven arc criteria and composition/release gates.
 
 - 1.5 (2026-10-13): Slice01 I2 independently closes all six criteria and freezes
   mapping/helper; accept A06-01 at complete233 review scope, activate approved
@@ -148,3 +156,10 @@ other arc or project criterion is promoted by the slice close.
 - 1.0 (2026-10-10): Operator adds existing-field schema harmony and mandatory
   GitHub rendering; planned four slices, selected historical 3.2 fallback and
   preserved Project08, semantic-review and source-readiness boundaries.
+
+## Slice02 local review — 2026-10-13
+
+[CDC review/Operator handoff](slice02-book-card-metadata/cdc-verification.md#hosted-blocker-and-concrete-operator-handoff)
+accepts local source preservation. All233 hosted observations remain unperformed;
+remote main contains separate install tooling and needs preserved integration.
+No new CC source repair or next slice is issued while that binding gate is open.

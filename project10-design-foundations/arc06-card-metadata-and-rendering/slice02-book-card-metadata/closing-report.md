@@ -1,5 +1,9 @@
 # Arc06 Slice02 — CC closing report
 
+**Current state:** CDC independently accepts local work2026-10-13: five rows
+done, S02-05 open for hosted rendering. See [CDC review and Operator handoff](cdc-verification.md#hosted-blocker-and-concrete-operator-handoff).
+The earlier CC proposal below retains its historical dispositions.
+
 ## Disposition
 
 CC implementation and local evidence return are complete for the authorized
@@ -53,3 +57,12 @@ must be resumed after the Operator supplies access or publishes the candidate,
 then CDC reviews every recorded file view. Arc02 retains semantic/source-
 fidelity and body-rendering questions. Arc04 retains release/package
 acceptance. No other project or arc status is changed.
+
+## CDC local acceptance and next action — 2026-10-13
+
+S02-01/02/03/04/06 done at source `b49f4589` / planning `877cd9d2` by the
+independent record. S02-05 open; Slice02 is not closed. No additional metadata
+repair is assigned. Operator owns publication/access approval; CDC has prepared
+an uncommitted, conflict-free integration preserving reviewed design bytes and
+remote install tooling. After publication CDC issues the hosted-check follow-up.
+No push, release, installation, deferral or parent acceptance has occurred.
