@@ -101,3 +101,51 @@ is claimed.
 All six ledger status values remain CDC-owned and unchanged: S01-01/02/03 are
 done; S01-04/05/06 are open. Slice01 remains open, Slice02 remains unissued,
 and no parent composition or release approval is implied.
+
+## Iteration02 return
+
+CC proposes this two-site recovery correction for independent CDC review. The
+source candidate is `4ccc6f6055743d8e8b53251d7e8852f04d1ed181`, parent
+`d2188c45a451be8b5e82f534f9a9ac067c137b64`; its only changed path is
+`scripts/normalize-design-card-metadata.rb`. The two recovery comparisons now
+compare file bytes against `record.fetch('output').b`; UTF-8 serialization,
+cards, inventory, parser, transformation, serializer and all other helper
+lines remain unchanged. The planning return is limited to this batch record,
+ledger evidence/notes and this closing report. These records are proposed-done
+for CDC review; this report does not close the slice.
+
+The official two-case CLI fixture ran against the committed helper and pinned
+original blobs in additive-first and matrix-first order. Both prewrite edit
+cases exited nonzero with zero JSONL, retained exact external first bytes and
+untouched exact second originals, and reported conflict/held paths. Both
+second-rename failures exited nonzero with zero JSONL, restored exact originals
+for both paths, and reported written/restored without held or recovery-failed
+paths while preserving the injected error. Matrix-first ordinary conversion
+and check each returned two public rows; typed values followed only the four
+exact sentinel rules, body bytes/hashes matched the inventory, private state
+was absent, and the second check was byte-idempotent. Additional real-CLI
+cases retained a literal edit made during failure and reported held; injected
+rollback failure retained the completed output and reported recovery-failed;
+a disposable helper with only the second `.b` reverted failed exact-original
+restoration as expected.
+
+The candidate's nonmutating `--check` returned233 records. All233 current input
+hashes, typed inputs, body byte/hash observations, exact transformations and
+public seven-field records matched the immutable inventory; ten pilot rows
+were idempotent and90 exact non-pilot sentinels remain. `ruby -c` and
+`git diff --check` passed. Each of the eight packaged design Markdown inputs
+and `Makefile` compares byte-identically with accepted source parent `fe4e0558`,
+so the accepted package gates remain applicable; they were not rerun and no ZIP
+was rebuilt. Prior parser/serialization/path/symlink/duplicate controls remain
+applicable because those methods and bytes are unchanged. No live `--write`,
+card mutation, inventory change, hosted check, semantic acceptance, source
+fidelity claim or release check occurred. The batch record preserves the
+corrected one-off harness attempts and their successful reruns.
+
+Planning candidate: parent `ce393b8cdcac47818538518a21c526ceda59482a`; exact
+three-path scope is `artifacts/batch-record.md`, `ledger.md`, and
+`closing-report.md`. Both source and planning commits carry the required
+co-author trailers. The six row statuses remain CDC-owned and unchanged:
+S01-01/02/03 done; S01-04/05/06 open. Slice01 remains open; no Slice02 prompt,
+bulk conversion, changed-revision hosted acceptance, semantic acceptance,
+parent composition or release approval is claimed.

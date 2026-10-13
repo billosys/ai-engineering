@@ -52,3 +52,26 @@ inputs reproduce; current F02 correction is accepted. F03's Unicode own-output
 recovery fails in an actual CLI witness. Current assignment is
 [Iteration02](cc-prompt-iteration02.md); no criterion waived, parent promotion,
 bulk mutation, hosted acceptance or Slice02 opening.
+
+## Iteration02 CC return — evidence update only
+
+CC returned source candidate `4ccc6f6055743d8e8b53251d7e8852f04d1ed181`
+(parent `d2188c45a451be8b5e82f534f9a9ac067c137b64`), changing only the two
+recovery comparisons to byte-exact `.b` comparisons. The issued additive-first
+and reversed matrix-first real-CLI fixtures both restore exact pinned originals
+after the injected second rename failure and preserve literal external edits
+during prewrite conflict. Matrix-first ordinary write/check, edit-during-failure,
+recovery-failure and second-site-reverted negative witnesses reproduce their
+expected byte outcomes and stderr accounting. All233 candidate `--check` rows
+match the immutable inventory, exact four sentinel transformations and public
+record shape; ten pilot outputs are idempotent and90 non-pilot sentinels remain.
+No live card or inventory changed. The eight packaged Markdown inputs and
+Makefile remain byte-identical to accepted parent `fe4e0558`; package gates
+were not rerun.
+
+Statuses remain CDC-owned and unchanged: S01-01/02/03 done; S01-04/05/06 open
+pending CDC review. This CC return proposes the helper repair but does not
+independently accept it, close Slice01, authorize bulk conversion, provide
+changed-revision hosted evidence or open Slice02. Full receipts and recovered
+harness attempts are recorded in the linked [Iteration02 batch record](artifacts/batch-record.md#iteration02-execution-and-current-dispositions)
+and [closing report](closing-report.md#iteration02-return).

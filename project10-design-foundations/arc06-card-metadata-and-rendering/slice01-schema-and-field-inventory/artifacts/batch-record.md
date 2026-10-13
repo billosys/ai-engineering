@@ -431,6 +431,32 @@ No source or planning file had been changed when this readback was written.
   for both commits. No implementation defect was found by these harness or
   audit retries.
 
+## Iteration02 intake and baseline
+
+Iteration02 prompt SHA-256 `7be2c8b87f7fdab640cecfe655e7f93c25e66b3820015e6d6e83de0e5dedf4ae`
+pins the current CDC review SHA-256
+`0e750099dbb54d1d9df318665ebc3c094a7e9df56949d6b15f52ff63a172c00b`, inventory
+SHA-256 `c7306e8a62291fa635e154463553fd990a9b12d91d70cb4403a0259f9e49dd5c`
+(233 records), I1 source candidate `d2188c45a451be8b5e82f534f9a9ac067c137b64`,
+and helper SHA-256
+`db068ee4b161bd3e026ab868a9ac46a99eb1df28b17c98f945557587dfbd909b`. CDC F03
+identifies Ruby 2.6.10 String encoding inequality as the recovery defect. Its
+durable real-CLI fixture was replayed against the pinned candidate in both
+orders before editing: additive-first restored the first original after the
+second rename failure, while matrix-first exited nonzero with zero JSONL but
+incorrectly held the first output as “current bytes differ” instead of
+restoring its original. Both orders retained a concurrent external edit during
+prevalidation and left the other input unchanged.
+
+I2's source change is limited to adding `.b` to both `record.fetch('output')`
+operands in the recovery equality and immediate pre-replacement recheck. The
+serialized output remains UTF-8; no loader, transformation, serializer, card,
+inventory, package input or other helper method is authorized to change. The
+contract is byte identity for rollback ownership, with concurrent external
+bytes held untouched. Replays use isolated tracked repositories, pinned
+original bytes and literal external edits; all-233 `--check` remains a
+structural inventory reconciliation, not semantic acceptance.
+
 ### F02 correction and current six-row return
 
 The initial evidence table's two alias-sentinel entries are retained as
@@ -454,4 +480,57 @@ profile.
 
 No row status was edited by CC. Slice01 remains open; no Slice02 prompt,
 semantic acceptance, changed-revision hosted check, bulk conversion, parent
+composition or release approval is claimed.
+
+## Iteration02 execution and current dispositions
+
+Source candidate `4ccc6f6055743d8e8b53251d7e8852f04d1ed181`, parent
+`d2188c45a451be8b5e82f534f9a9ac067c137b64`, changes only
+`scripts/normalize-design-card-metadata.rb`; its SHA-256 is
+`8ce4f31322aaa63389283b6a5ce3b41ddc184c73a971f55771997ee343a731ba`. The
+diff adds `.b` to both recovery comparisons and no other source lines. `ruby
+-c` returned `Syntax OK`. `git diff --check` passed. The eight packaged design
+Markdown inputs and `Makefile` each compare byte-for-byte with accepted parent
+`fe4e0558`; no ZIP rebuild or package-gate rerun was needed. Prior parser,
+serializer, path, symlink, duplicate and unsafe-YAML controls remain applicable
+because their methods and source bytes are unchanged.
+
+The exact CDC-supplied real-CLI two-case fixture used helper commit `4ccc6f60`
+and pinned `1489e767` card blobs in additive-first and matrix-first order. In
+both orders, a concurrent prewrite external edit exited1 with zero JSONL, kept
+the first file exactly equal to original bytes plus the literal edit, kept the
+second exactly original, and named the conflict/held path. In both orders, the
+injected second rename failure exited1 with zero JSONL, restored both files to
+their exact pinned originals, reported the first written and restored, and
+reported held/recovery-failed none while retaining the injected failure. A
+matrix-first ordinary write/check returned0 with two rows apiece, exact seven
+public fields and no private buffer; typed transformations matched the four
+sentinel-only rules, body bytes/hashes matched the pinned inventory, and the
+second check was byte-idempotent. Additional matrix-first real-CLI witnesses
+retained exact external bytes edited during failure and reported the first
+path held; a separate recovery-rename failure retained the first output and
+reported recovery-failed plus the original failure. A negative helper copy
+reverted only the second `.b` while retaining the first: the same matrix-first
+rename-failure witness exited1/zero JSONL and falsely held the normalized
+first file, so exact-original restoration failed as expected.
+
+Candidate `--check` ran over all233 inventory paths without writing. All233
+input hashes, complete typed inputs, body byte counts/hashes, exact expected
+transforms and seven-field public records matched; no private buffer was
+serialized. All10 pilot outputs were byte-idempotent; exactly90 exact
+sentinels remain among the non-pilot rows. The inventory hash remains
+`c7306e8a62291fa635e154463553fd990a9b12d91d70cb4403a0259f9e49dd5c`. No live
+`--write`, card mutation, inventory mutation, semantic review or hosted check
+occurred. One all-233 comparison invocation initially ran from the wrong
+worktree and failed before reading the inventory; it was rerun successfully.
+An initial ordinary-witness body oracle used the wrong delimiter offset and
+compared old fixture blobs to current typed inventory; those harness-only
+assertions were corrected to use the pinned inventory body and fixture input
+metadata, after which the ordinary witness passed. No source defect or card
+change resulted from these retries.
+
+S01-01/02/03 remain done at accepted evidence; S01-04/05/06 remain open for
+CDC review of this candidate. The source, this record and the planning return
+are proposed for review only. Slice01 remains open; no Slice02 prompt, bulk
+conversion, changed-revision hosted acceptance, semantic acceptance, parent
 composition or release approval is claimed.
