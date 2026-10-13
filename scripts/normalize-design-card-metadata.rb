@@ -277,7 +277,7 @@ module DesignCardMetadata
         return
       end
       current_bytes = File.binread(absolute)
-      unless current_bytes == record.fetch('output')
+      unless current_bytes == record.fetch('output').b
         held << "#{relative} (current bytes differ from this command's output)"
         return
       end
@@ -296,7 +296,7 @@ module DesignCardMetadata
         elsif !File.file?(absolute)
           hold_reason = 'target became missing or non-regular before recovery replacement'
           false
-        elsif File.binread(absolute) != record.fetch('output')
+        elsif File.binread(absolute) != record.fetch('output').b
           hold_reason = 'current bytes changed before recovery replacement'
           false
         else
