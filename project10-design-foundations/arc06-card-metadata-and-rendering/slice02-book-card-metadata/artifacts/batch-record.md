@@ -1,3 +1,9 @@
+> **Current correction status (2026-10-13):** the postpublication all 233-body-pass
+> statements below are the historical CC proposal from `eac665f5`. CDC F01 showed
+> that46 post-card bodies visibly retain literal Unicode escapes. Slice09 corrects
+> those 46 source bodies locally and changes their hosted records to `fail` while
+> preserving the original observations. See [the Arc02 correction record](../../../arc02-theory-and-evidence/slice09-post-card-unicode-presentation/artifacts/batch-record.md).
+
 # Arc06 Slice02 — CC batch record
 
 ## Intake and source-cited contract readback
@@ -232,3 +238,29 @@ Operator's push and are superseded by this exact-revision inspection. CDC's init
 `c4cc742`; that row remains open until CDC reviews the new exact-revision
 evidence. Semantic/source-fidelity questions remain with Arc02; Arc04 retains
 release/package acceptance. No parent release or Project10 closure follows.
+
+
+## Arc02/Slice09 hosted correction — 2026-10-13
+
+The prior postpublication section records CC's `c4cc742` all 233-body-pass
+proposal. That proposal is superseded for the 46 post-card bodies by CDC Sofie's
+independent F01 review at planning `eac665f569d269b6a913e2f9349ef3e73656781e`. The original raw HTTP response
+hashes, exact URLs and structural observations remain in the 46 hosted rows and
+in each row's complete `prior_observations` item. They identify the original CC
+fetch at `c4cc74279ac845003b0c80f55907981241c58a99`; this correction did not fetch GitHub again.
+
+All 46 records now report overall `fail`, metadata `pass`, body `fail`, the
+observed escaped-token count for that card and an expected-glyph versus visible
+escape example. The correction review and its observer/date/reason are distinct
+from the retained fetch provenance. All other 187 hosted records are byte-exact
+unchanged. The hosted JSONL bridge still has233 unique paths; only its46 hosted
+objects changed, and every field outside `hosted` is byte-preserved.
+
+The source repair is candidate `589d7c21bd6c9a415b921b80479822561861fa79`, not a published revision.
+No repaired body is classified hosted-pass. Actual corrected-revision views
+require independent CDC acceptance followed by the Operator's publication/access
+decision and Arc06's exact-revision checks. The initial local/unavailable records,
+CC's233-pass proposal and CDC's superseding finding remain chronological history;
+none is rewritten as if the corrected revision had been hosted. Arc06 remains
+five rows done and S02-05 open. Metadata-only body preservation at `c4cc742`
+remains true for its historical scope; the later body correction is separate.

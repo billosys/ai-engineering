@@ -50,3 +50,23 @@ The batch record preserves the earlier blocked state, the Operator's
 publication/rebase handoff and the subsequent 233-page hosted review. Arc02
 retains semantic/source-fidelity questions; Arc04 retains release/package
 acceptance. No other project or arc status is changed.
+
+
+## Arc02/Slice09 correction — 2026-10-13
+
+The earlier report's all 233-body-pass language is the historical CC proposal
+for published `c4cc74279ac845003b0c80f55907981241c58a99`; CDC F01 showed visible escapes in all 46
+post-card bodies. Slice09's local source candidate is `589d7c21bd6c9a415b921b80479822561861fa79`. Its
+planning correction changes only the `hosted` objects for those 46 cards:
+overall/body `fail`, metadata `pass`, per-card token counts/examples, current
+correction observer/date/reason, and the complete original `eac665f569d269b6a913e2f9349ef3e73656781e`
+hosted object preserved as `prior_observations`. The raw c4 response evidence,
+URLs and structural observations retain their fetch provenance. No new GitHub
+fetch was made for the correction. The other 187 hosted records are unchanged.
+
+The corrected source has not been published or actually checked on GitHub.
+S02-05 remains open; all six ledger statuses remain as CDC left them (five done,
+one open). Arc06's previous metadata-only body-preservation result remains true
+at its historical revision and is distinct from this subsequent Arc02 body
+correction. CDC source review, Operator publication/access, and exact corrected-
+revision hosted inspection remain the re-entry sequence; P10-13 remains open.
