@@ -16,11 +16,11 @@ the [project plan](../../project-plan.md). CDC Sofie reviews separate CC via
 Operator relay; Two-Contributor Workflow, Expedited Mode. No bulk mutation
 until independent acceptance. The six [ledger criteria](ledger.md) remain binding.
 
-**Current assignment:** `cc-prompt-iteration01.md`, issued by this introducing
-commit after partial initial acceptance. Main input `fe4e0558`, planning
-predecessor `be623972`; full pins and exact one-helper/three-return scope in I1.
+**Current assignment:** `cc-prompt-iteration02.md`, issued by this introducing
+commit after I1 review. Main input `d2188c45`, planning predecessor `1e7dc84c`;
+full pins and exact two-comparison/three-return scope in I2.
 The initial assignment at `e8718605` remains preserved; its thirteen-source
-write scope is historical and does not authorize I1 card changes.
+write scope is historical and does not authorize I2 card changes.
 The superseded unissued read-only draft is replaced; its complete census,
 crosswalk, preservation, GitHub diagnosis, allocation and return obligations
 are retained in this exercised pilot. Historical preparation notes are unchanged.
@@ -37,8 +37,8 @@ No new IDs, lifecycle/review states or `schema_version`; no inferred missing
 values, new placeholders or confidence upgrades. This slice does not change
 Project08 or the concept-cards skill.
 
-All 233 baseline headers are structurally in scope. At the current main input,
-all 233 card paths and complete file bytes still equal `dffa504e851b03b8e4746f1941068e4cc850b612`.
+All 233 baseline headers are structurally in scope. At the original pre-pilot input,
+all 233 card paths and complete file bytes equalled `dffa504e851b03b8e4746f1941068e4cc850b612`.
 The accepted index `project10-design-foundations/arc01-portable-contract/slice01-scope-and-portability-contract/artifacts/card-source-index.jsonl` (SHA-256 `ce5207eb89ddcfd4cb301dd49fc9cc6286561c6428c82b46bdaf7dc8aa6463cb`) supplies the historical
 identity bridge; use parsed current identities independently, not displayed
 aliases. Emit all233 rows with raw header identity, full typed metadata, body
@@ -245,8 +245,9 @@ and six fragments resolved, LF/EOF and diff checks passed. Main unchanged.
 - Initial `cc-prompt.md`, issued `e87186057c4795dfc342f15e06dc8e5a031c9ad2`, returned source `fe4e055885983be6d0b4bbbff1ef201485499aac` / planning `be623972b71f7be1002ed3932743c16a23dadb95`:
   S01-01/02/03 independently done; S01-04/05/06 open for F01 write-time drift/
   interrupted-batch handling and F02 sentinel-table accuracy.
-- **Current:** `cc-prompt-iteration01.md`, issued2026-10-12 by this introducing
-  commit, predecessor initial prompt; active separate CC implementation.
+- **Returned:** `cc-prompt-iteration01.md`, issued2026-10-12 by this introducing
+  commit, predecessor initial prompt; returned source `d2188c45` / planning `1e7dc84c`;
+  reviewed2026-10-13, F02 resolved but Unicode recovery F03 remains.
   Only main helper plus existing batch/ledger evidence/closing report change.
   All ten cards,233 inventory rows, version/history1.0.4 and schema mapping stay
   exact. I1's delta scope/check applicability supersedes initial source mutation
@@ -278,3 +279,30 @@ I1 open-set checks: six planning paths only; initial prompt/CC reports/inventory
 and all13/seven parent criteria unchanged; six slice criteria preserved with
 three done/three open. Thirty local destinations and six fragments resolve;
 LF/EOF and diff checks pass. Main remains `fe4e0558` with no tracked changes.
+
+## Iteration02 assignment and author readiness
+
+**Current:** [cc-prompt-iteration02.md](cc-prompt-iteration02.md), issued
+2026-10-13 by this introducing commit, predecessor I1. Main `d2188c45` /
+planning `1e7dc84c`. Three rows done/three open; Slice02 remains unissued.
+Only two recovery byte comparisons and the same three CC return files change.
+
+CDC inspected both output-identity guards and exercised the actual CLI with
+original and reversed source fixtures. Ruby2.6.10 UTF-8 versus ASCII-8BIT string
+equality falsely rejects identical Unicode bytes. A temporary first-site-only
+repair still fails at the final guard; both `.b` comparisons restore the exact
+original. This is source-grounded preparation, not an integrated self-repair.
+Mapping, ten cards, immutable233 inventory and package inputs reproduce unchanged.
+Guide08 keeps byte-preservation validation separate from semantic verification;
+work-verification retains accepted claims by explicit unchanged-input comparison.
+The ordered recipe, real failure oracle, two-site negative and compact reading/
+return contract are in I2. No new decision or investigation is left to CC.
+
+- 1.4 (2026-10-13): I1 review reproduces233/ten and resolves F02; hold bulk for
+  F03 Unicode recovery. Issue two-comparison I2, preserve all six criteria and
+  parent gates. Expedited Mode opens Slice02 after actual independent acceptance.
+
+I2 open-set checks: exact six planning paths; six criteria/statuses unchanged
+(three done/three open); issued prompts, CC outputs, inventory and parent ledgers
+byte-equal to `1e7dc84c`. Thirty-five local destinations and nine fragments resolve;
+LF/EOF and diff checks pass. Main remains `d2188c45` with no tracked change.

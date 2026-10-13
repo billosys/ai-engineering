@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.52**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.53**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -80,7 +80,7 @@ stay stable; numerical order does not imply a dependency barrier.
 |---|---|---|
 | [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Closed; accepted contract, baseline and explicit source-readiness carryover | Operator composition acceptance at `38b66d0d` |
 | [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Active; apply accepted corrections, remove C&B coupling, review/fix cards and guides, and implement/test the accessibility/typesetting floor | Accepted contract and evidence for each changed claim; originals only for dependent fidelity checks |
-| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Slice01 I1: ten cards/census/crosswalk delivered and reproduced; correct reusable helper write safety before bulk and hosted checks | Accepted mapping and pilot before bulk changes; no book-original dependency |
+| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Slice01 I2: ten cards/census/crosswalk delivered and reproduced; correct reusable helper write safety before bulk and hosted checks | Accepted mapping and pilot before bulk changes; no book-original dependency |
 | Arc04 — package and release readiness (`arc04-guides-and-package`) | Plan near execution; complete routes/snippets, isolated package, final specimens and Project11 handoff | Accepted input revisions for each task; full Arc02/06 completion and Project09 acceptance before release |
 
 **Was:** a separate Arc03 accessibility/typesetting phase and Arc05 final
@@ -114,8 +114,9 @@ revision applicability for both.
    identity removed, usable brief-led methods and protected teaching restored.
    [Arc02/Slice08](arc02-theory-and-evidence/slice08-token-conventions-source-fixes/slice-plan.md)
    is independently closed at source `1489e767`/planning `a900b68a`, all four done.
-   Execute [Arc06/Slice01 Iteration01](arc06-card-metadata-and-rendering/slice01-schema-and-field-inventory/cc-prompt-iteration01.md):
-   fix the reproduced helper write-time conflict/recovery defect. Ten source cards
+   Execute [Arc06/Slice01 Iteration02](arc06-card-metadata-and-rendering/slice01-schema-and-field-inventory/cc-prompt-iteration02.md):
+   correct both Unicode-sensitive recovery comparisons; I1 guards/accounting pass
+   their original witnesses, but matrix-first interrupted recovery fails. Ten source cards
    and the complete census/crosswalk are sound; bulk follows full pilot acceptance.
    Originals do not impose an all-project wait.
 4. Continue complete card/guide review in coherent source/topic cohorts, fixing
@@ -235,12 +236,18 @@ Slice07 is independently closed at source`52f0b520`/planning`7a135d80`, all five
 criteria done. Slice08 is independently closed at source `1489e767`/planning
 `a900b68a`, four criteria done, seven token repairs and prescribed heading shipped.
 Arc06/Slice01 initial review independently accepts three rows at source
-`fe4e0558`/planning `be623972`; three open rows receive a narrow helper/evidence I1.
+`fe4e0558`/planning `be623972`; I1 at `d2188c45`/`1e7dc84c` reproduces
+233 checks/ten idempotence and resolves F02. Three open rows receive two-site
+Unicode recovery I2; no bulk or hosted acceptance.
 Ten cards and complete metadata census/crosswalk are delivered; bulk remains held.
 Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
 Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
 
 ## Version History
+
+- 1.53 (2026-10-13): Arc06/Slice01 I1 reproduces preservation and resolves
+  evidence correction; matrix-first Unicode recovery F03 remains. Issue only
+  two-comparison I2 and affected tests; preserve thirteen criteria and bulk gate.
 
 - 1.52 (2026-10-12): Review actual metadata pilot: intake/census/crosswalk
   independently accepted; hold bulk for write-time helper conflict/recovery

@@ -179,3 +179,71 @@ Full233 changed-revision GitHub rendering, Arc02 body-escape/substantive/fidelit
 P10-11 readiness and Arc04 final composition/release remain open. Main's unrelated
 knowledge/lfe and other planning projects stay untouched. Parent criteria are
 not waived or promoted by this partial acceptance.
+
+## Iteration01 independent review — 2026-10-13
+
+CDC Sofie reviewed separate CC's source `d2188c45a451be8b5e82f534f9a9ac067c137b64` (parent `fe4e0558`)
+and planning `1e7dc84c43f3a9b823b402132971f93d82a0f045` (parent `7b9f6090`). Exact one/three-path scopes,
+parents, both required trailers and committed diff checks pass. No CDC source
+repair was integrated. F02 is resolved: additive prerequisites/extends and
+gamut prerequisites/extends/contrasts_with; populated nested aliases are retained.
+
+Actual `ruby -c` and candidate `--check` pass. Independently compared all233
+public records against immutable inventory and current disk bytes: complete
+input metadata, expected four-field transformations, full body bytes/hash,
+input hashes and seven-field public shape match233/233; ten pilots are byte-
+idempotent10/10. Remaining exact sentinels90. Inventory SHA remains
+`c7306e8a62291fa635e154463553fd990a9b12d91d70cb4403a0259f9e49dd5c`.
+All design files and Makefile compare byte-identically to accepted `fe4e0558`;
+prior package/version gates remain applicable and were not rerun. Protected
+cards, schema, source index, inventory and issued prompts remain unchanged.
+These are structural/preservation checks, not semantic or hosted acceptance.
+
+### F03 — Recovery compares encoding-sensitive strings instead of bytes
+
+At source `d2188c4`, `recover_written!` compares `File.binread` (ASCII-8BIT)
+with UTF-8 `record['output']` at both the initial output-identity guard and
+its immediately-before-rename guard. Ruby2.6.10 returns false for identical
+non-ASCII content with these encodings (`"Björn" == "Björn".b` is false).
+Thus an unchanged own Unicode output is falsely held as external work.
+
+The original durable two-case CLI witness above passes at `d2188c4`: prewrite
+conflict retains external first bytes, and additive-first second-rename failure
+restores the first original. Repeating the exact fixture with its two paths
+**reversed** makes matrix-transformation-colour first (Björn and decoded Unicode).
+Prewrite conflict still passes. The injected second rename fails as expected
+with exit1 and zero JSONL, but matrix remains normalized, second additive remains
+original, `restored: none`, and matrix is falsely `held` despite no external edit.
+This fails the binding recover-own-outputs contract; it does not erase external work.
+
+Reproduce by extracting the first Python fence from this record, reversing only
+its literal two-element `paths` list, and running with source revision argument
+`d2188c45a451be8b5e82f534f9a9ac067c137b64`. The fixture copies pinned original
+`1489e767` blobs and helper into disposable tracked repositories; no live writes.
+The second case's independent oracle is first/second raw bytes equal originals,
+not the helper's diagnostic or calculated output hashes.
+
+Author preparation: in a disposable helper copy, changing only the initial
+comparison to `record.fetch('output').b` still leaves matrix normalized and held
+at the second guard (`current bytes changed before recovery replacement`).
+Changing **both** comparisons to `.b` yields exit1/zero JSONL, exact original
+bytes for both targets, written/restored matrix, held none, recovery-failed none.
+This settles the two-site recipe; it is not acceptance of an integrated repair.
+No new dependency, serializer/mapping change or broader investigation is needed.
+
+### Current six-row disposition
+
+| Row | CDC disposition | Evidence / remaining work |
+|---|---|---|
+| S01-01 | done retained | Accepted authority/intake inputs unchanged. |
+| S01-02 | done retained | Immutable233 inventory and candidate observations reproduce. |
+| S01-03 | done retained | Exact mapping unchanged; F02 corrected without flattening. |
+| S01-04 | open | ASCII recovery/conflict cases pass; Unicode recovery fails F03. |
+| S01-05 | open | Ten cards/233 allocation retained; bulk waits for safe reusable helper. |
+| S01-06 | open | Scope/return checks pass; current follow-up must account for F03 and repaired witnesses. |
+
+This is the current verdict; earlier conclusions retain their named revisions.
+[Iteration02](cc-prompt-iteration02.md) replaces the returned I1 assignment.
+Slice01 stays open and Slice02 unissued. All233 exact-revision GitHub rendering,
+Arc02 substantive/body/fidelity work, P10-11 and release/composition gates remain
+open. No additional source or schema review is commissioned here.

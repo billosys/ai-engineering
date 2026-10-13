@@ -50,7 +50,7 @@ shapes and GitHub behavior, not copied values from newer cards.
 
 ## Revised slice breakdown
 
-Slice01 Iteration01 is active: three criteria independently done; helper write
+Slice01 Iteration02 is active: three criteria independently done; helper write
 safety and current evidence remain open. Slice02 is still unissued. These are the current execution units:
 
 | Unit and retained identifier | Delivery | Gate |
@@ -104,9 +104,9 @@ release is not changed by this migration.
 Arc06 can run at the next ready handoff after the first live-correction batch,
 without waiting for Arc02's entire corpus/input work. Two contributors, CDC Sofie
 and separate CC via Operator relay; Expedited Mode remains active. Arc02/Slice08 is independently closed; current assignment is Arc06/Slice01,
-main input `fe4e0558`/planning predecessor `be623972`. The ten-card pilot and
+main input `d2188c45`/planning predecessor `1e7dc84c`. The ten-card pilot and
 233-header inventory/mapping are reproduced; only the helper and current
-return evidence are assigned in `cc-prompt-iteration01.md`. Other Arc02 work is open
+return evidence are assigned in `cc-prompt-iteration02.md`. Other Arc02 work is open
 and preserved. Project08 P-15 remains open: select historical3.2 fallback for
 the ten-card candidate, then freeze its exact crosswalk through independent
 Slice01 acceptance before bulk normalization.
@@ -118,6 +118,10 @@ baseline-to-final union and attributed independent/Operator composition gate.
 No ledger row is accepted by this amendment.
 
 ## Version History
+
+- 1.4 (2026-10-13): I1 preserves233/ten and resolves F02; Unicode recovery
+  F03 holds bulk. Issue two-site I2; three slice rows done/three open and all
+  seven arc criteria retained. Slice02 remains unissued.
 
 - 1.3 (2026-10-12): Slice01 initial review accepts intake/census/crosswalk;
   reproduced write-time drift and partial-write failure hold bulk mutation.
