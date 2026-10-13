@@ -1,13 +1,13 @@
 # Arc06 Ledger
 
-All seven rows remain open. Arc06 revision 1.1 consolidates execution into
+A06-01 independently done; A06-02–07 remain open. Arc06 consolidates execution into
 contract/pilot and complete normalization/rendering. A06-02/03 retain separate
 population checks but share the same all-card Slice02 delivery. Superseded
 unissued child drafts are not completion evidence. CC proposes; CDC verifies.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 |---|---|---|---|---|---|---|---|
-| A06-01 | Selected contract and complete metadata/field-state crosswalk are independently accepted | Inspect Slice01 evidence against all 233 baseline headers and actual upstream authority | correctness-grade | Operator metadata addition | open | — | No schema adoption by skill version or draft status |
+| A06-01 | Selected contract and complete metadata/field-state crosswalk are independently accepted | Inspect Slice01 evidence against all 233 baseline headers and actual upstream authority | correctness-grade | Operator metadata addition | done | [Slice01 CDC acceptance](slice01-schema-and-field-inventory/cdc-verification.md#iteration02-independent-acceptance-and-slice-close--2026-10-13) — reproduced across233 headers/actual authority | Frozen historical3.2 existing-field mapping; no inferred4.0 adoption |
 | A06-02 | All 150 book-backed cards have accepted no-loss normalization evidence | Reconcile exact book cohorts and all child ledgers to the baseline manifest | correctness-grade | Slice02 coverage | open | — | Additional bounded children retain the original complete denominator |
 | A06-03 | All 83 web-backed cards have accepted no-loss normalization evidence | Reconcile Butterick37/posts46 and all child ledgers to baseline | correctness-grade | Slice02 all-card coverage; former Slice03 | open | — | No invented page/edition/capture or article attribution |
 | A06-04 | Every final card preserves existing data and records explicit representation changes without invented fields | Whole-set before/after field-value bridge plus body-byte and reference checks | correctness-grade | Operator no-fill rule | open | — | Missing required information is reported separately; no false full-conformance claim |
@@ -21,3 +21,9 @@ All criteria and statuses are retained. Revised execution: A06-01 is delivered
 by contract/pilot Slice01; A06-02–06 by all-card normalization/rendering Slice02;
 A06-07 by whole-arc composition. Former Arc05 checks now belong to Arc04.
 No book/web cohort, typed-value/body preservation or hosted-view obligation is dropped.
+
+## Slice01 close — 2026-10-13
+
+A06-01 independently checked across complete233 mapping and authority; done.
+A06-02–07 remain open for all-card normalization, hosted correctness, locator
+composition and attributed arc gate. No automatic whole-arc acceptance.

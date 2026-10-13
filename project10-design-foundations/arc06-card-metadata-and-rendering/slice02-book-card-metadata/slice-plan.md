@@ -1,94 +1,169 @@
 ---
 slice: slice02-book-card-metadata
-status: planned
+status: open
 depends-on: [slice01-schema-and-field-inventory]
-blocks: [slice04-github-rendering-and-handoff]
+blocks: [arc06 composition, arc04 final release readiness]
 ---
 
-# Slice02 — Book Card Metadata
+# Slice02 — All-Card Metadata Normalization and Rendering
 
-## Operator amendment — 2026-10-12
+## Result and authority
 
-This unissued draft is superseded by Arc06 revision 1.1: cover all 233 cards (150 book + 83 web), including actual GitHub rendering and final handoff. The retained directory name does not limit coverage. Revise this plan and ledger before issuing any CC prompt. The [current arc plan](../arc-plan.md#revised-slice-breakdown) governs; the remaining text below is the preserved former draft.
+Apply the accepted existing-field mapping to the remaining223 cards on main;
+verify the complete233-card population (150 book +83 web), including ten already
+accepted pilots, and inspect actual GitHub file rendering at the final revision.
+This implements the Operator's2026-10-12 combined delivery amendment, not the
+superseded150-book-only draft. The retained directory name is historical.
+Two contributors: separate CC implements; CDC Sofie independently reviews via
+Operator relay. Expedited Mode. All [six criteria](ledger.md), [seven arc rows](../ledger.md)
+and [thirteen project rows](../../ledger.md) remain binding.
 
-## Goal and complete population
+[Project plan](../../project-plan.md) and [Arc06 plan](../arc-plan.md) govern.
+Slice01 is independently closed at source `4ccc6f6055743d8e8b53251d7e8852f04d1ed181` /
+planning `9934079aecc5a8c9bc2888c9a1b627fb4f3c55ff`; [CDC acceptance](../slice01-schema-and-field-inventory/cdc-verification.md#iteration02-independent-acceptance-and-slice-close--2026-10-13)
+freezes historical3.2 mapping and reusable helper. No renewed schema selection,
+separate pilot, header census or source-acquisition assignment is needed.
 
-Normalize existing metadata for all 150 baseline book-backed design cards:
-Arnheim112, Cleland19 and Tschichold19. Apply the independently accepted Slice01 contract to freshly pinned
-source bytes. These are whole-cohort obligations, not an issued giant assignment.
-CDC must record exact disjoint child batches when headroom requires a split;
-the original 150-card row remains open until their complete union is accepted.
+## Exact input and mutation scope
 
-## Authority and preservation
+Main input `4ccc6f6055743d8e8b53251d7e8852f04d1ed181`. Immutable [Slice01 inventory](../slice01-schema-and-field-inventory/artifacts/header-inventory.jsonl)
+SHA-256 `c7306e8a62291fa635e154463553fd990a9b12d91d70cb4403a0259f9e49dd5c`;233 unique rows,
+current card revisions `fe4e0558` remain byte-applicable to current input.
+The **exact card allowlist** is `current.path` for rows whose `pilot` is false,
+in this hash-pinned file:223 paths. Ten `pilot:true` paths are protected. Complete
+union equals tracked design card paths; additions/deletions/renames unauthorized.
+The only two extra source write paths are `knowledge/design/SKILL.md` and
+`knowledge/design/version-history.md`:225 source paths total. Helper SHA-256
+`8ce4f31322aaa63389283b6a5ce3b41ddc184c73a971f55771997ee343a731ba` stays exact; no helper edit.
+The [prompt](cc-prompt.md#exact-allowlist-and-baseline) supplies the executable
+selection. No glob/tree-level commit. Drift in any selected/protected design
+input is resolved before mutation; unrelated main advances may be retained only
+with an explicit byte-applicability/parent record. Preserve unrelated work.
 
-The [arc plan](../arc-plan.md), [arc ledger](../ledger.md),
-[project plan](../../project-plan.md) and [project ledger](../../ledger.md) govern.
-Operator addition 2026-10-10; Two-Contributor Workflow, Expedited Mode.
-This is a planned slice, not a CC assignment. At activation CDC issues a complete
-`cc-prompt.md` with exact pins/read manifest, paths and commit instructions.
-There is no current prompt or implied permission to modify SOURCE.
+## Frozen existing-field contract
 
-All existing values/extensions and absent/null/empty states remain explicit.
-No missing-field population or source/semantic acceptance. Preserve original
-233-card lineage, all issued Arc01/02 records, source originals and unrelated
-Project12/knowledge/lfe. Per-card metadata-only changes must leave body bytes
-unchanged and record new whole-file hashes/line locators. No close/CDC record
-is created before actual delivery and review.
+Exactly `[[]]` in `aliases`, `prerequisites`, `extends`, `contrasts_with` becomes
+`[]`; no other typed value changes. Remaining90 occurrences affect53 non-pilot
+cards; original106 include16 already fixed in six pilots. Preserve populated
+nested aliases/lists and all22 observed root fields/extensions, member/key order,
+null/empty/absence, scalar types, decoded Unicode, slugs/paths/source references,
+confidence, relationships/CQs and domain extension values. Missing stays absent;
+no added IDs, dates, review states, schema_version, defaults or inferred facts.
+Existing missing/non-flat fields remain recorded conformance limitations.
 
-## Mutation recipe and pilot
+Use accepted helper serialization: leading UTF-8/LF YAML mapping, unindented
+`---` delimiters, two-space nesting, JSON-quoted string values with direct
+Unicode, explicit null/empty collections and unchanged body bytes after the
+closing delimiter. Source originals and Project08 are untouched. Metadata
+formatting is not semantic or source-fidelity acceptance; originals are not
+required to preserve their existing edition/page strings. Arc02 owns body
+escape/presentation and substantive fixes. Whole rendering gates are not waived.
 
-Before any bulk change, run the common Slice01-selected representative pilot,
-including all actual source identities/shapes and tricky strings/extensions.
-Record raw and typed before/after metadata plus unmodified body hashes; inspect
-actual GitHub rendering and negative controls. Separate a bounded pilot child
-if necessary and require its independent acceptance before rollout. The same
-accepted pilot may serve both cohorts only after explicit applicability checks.
+## Implementation and proof
 
-For each exactly allowlisted card, parse its leading mapping with duplicate-key
-checks, apply only the accepted crosswalk and serialize in the frozen style.
-Compare every existing key/value/member, including nested extensions and nulls,
-against the allowed deltas. Prohibit new missing keys or default values; keep
-existing extraction confidence without claiming new evidence. Preserve Unicode
-meaning, slugs, filenames, list order, reference destinations and exact body
-bytes. Record each sentinel repair and unresolved field; no body/source repair.
+1. Before writes reconcile all233 input hashes/typed metadata/body bytes with
+   the immutable inventory; select223 exact remaining paths and ten protected
+   pilots. Check helper hash/current skill authority/history. Run its nonmutating
+   `--check` all233; compare expected values independently of converter output.
+2. Execute accepted helper `--write` only223 selected paths. Any conflict or I/O
+   interruption stops the batch; inspect written/restored/held/recovery-failed
+   accounting and actual bytes before considering retry. Never overwrite external
+   work, rebaseline it silently or promise all-file transactional guarantees.
+3. Independently decode every final header with installed Perl YAML::XS/JSON::PP,
+   comparing to inventory current metadata plus only four exact sentinel rules.
+   Compare recursive mapping-key order from original/final YAML ASTs as well;
+   unordered decoder hashes alone do not prove it. Compare every body's bytes directly to pinned input blobs, not only converter
+   hashes. Ten pilots stay whole-byte exact. Check all233 idempotent and zero
+   remaining permitted sentinels. Preserve paths/slugs/references; disclose any
+   pre-existing unresolved target rather than claim semantic relationship review.
+4. Bump owning skill metadata1.0.4→1.0.5 and append one corresponding significant
+   correction entry to sibling history. No skill version prose in other owned
+   files or independent guide history. No packaging-list change is needed:
+   cards/helper remain unbundled; validate them as source, eight packaged Markdown
+   members as actual ZIP entries. Run applicable Make gates in the prompt.
+5. Emit one233-row result bridge and one concise batch record, plus ledger
+   evidence and closing report. Exercise actual preservation/parser negatives
+   on representative current data; do not add a general validator framework.
+6. Inspect full hosted file views for all233 at the exact final card revision;
+   record per-card coverage/observations. Use available approved read access.
+   Publication/push is not authorized here. If that revision is unavailable,
+   deliver checked local source changes and return partial with S02-05 open,
+   exact blocker/re-entry owner. Do not replace actual observation with raw
+   fetch, local YAML/GFM parsing or a prior different revision's screenshot.
 
-Retain existing edition, chapter, page and source strings; absent originals are not needed to preserve them and do not validate their truth.
+## Result bridge and hosted boundary
 
-Run the accepted parser/preservation/idempotence/negative checks on every path
-in a batch. Refresh whole-file hashes and locator bridges for dependent Arc02
-claims; retain the pinned historical manifest/index unchanged. Review ownership
-and applicable skill version/history gates under AGENTS.md; exact source and
-planning evidence paths are listed in the future prompt. Start with make help
-when source validation is assigned and use applicable Make gates. Do not install
-skills globally or change Project08/concept-cards as part of this cohort.
+`artifacts/batch-results.jsonl` has exactly one unique record per accepted233
+path. Each links the immutable inventory row/path and baseline `dffa504e`,
+prechange `4ccc6f6055743d8e8b53251d7e8852f04d1ed181` and actual postchange commit/path/hash;
+records normalized versus unchanged-pilot disposition, exact sentinel deltas,
+complete after typed metadata, original/preserved body bytes/hash and old/new
+body byte offsets/closing-delimiter lines. Offset convention equals inventory:
+body begins immediately after closing `---`, including its existing following
+newline. Header line changes are an explicit locator delta, not a content edit.
+Recover full headers from pinned Git blobs rather than duplicate the census.
 
-## Outputs, handoff and prerequisites
+Per record include hosted status (pass/fail/unavailable/unrun), exact revision
+and URL when applicable, observer/method/date, concrete metadata/Markdown checks,
+evidence location/observation and failure or unavailable reason. These are review
+records, not new card metadata fields. Record all233, including unchecked ones.
+Inspect metadata keys/values, nested lists/mappings, nulls, quoting/Unicode and
+whole-body headings/lists/tables/fences/code/links as present against actual
+expected content. A parsed table alone does not establish the whole rendered view.
+Existing literal body escapes or other rendering defects are reported to Arc02;
+they cannot be silently repaired here or counted as passing a correctness gate.
+Unavailable views or unresolved defects leave S02-05/A06-05 open. Sampling and
+local previews cannot close the whole-population hosted obligation.
 
-Source output is restricted to freshly enumerated card paths and any explicitly
-assigned owning-skill version/history files. Durable evidence under `artifacts/`:
-`metadata-change-register.jsonl`, `preservation-and-validation.md`,
-`locator-and-gap-handoff.md`, `execution-notes.md`. Exact commit allowlists and
-required coauthor trailers come in each future CC prompt; no directory commits.
-CDC reviews each actual candidate and all affected values/controls before a
-batch becomes accepted. The [slice03-web-card-metadata sibling](../slice03-web-card-metadata/slice-plan.md) consumes
-the same frozen style but is not automatically accepted by this cohort.
+Arc02 consumes baseline/current/postchange path/hash/body-location bridge and
+owns substantive/body/fidelity gaps. Arc04 consumes applicable source/package
+revisions for final composition. Historical manifests/index/locators stay pinned;
+a header change invalidates old whole-file hashes, not unchanged body content.
+Record that applicability explicitly, without blanket semantic acceptance.
 
-At cohort close, reconcile all 150 baseline identities and changed/current
-paths with explicit mappings for any accepted population changes. Pass source
-representation, rendering and evidence applicability forward to Slice04 and
-Arc02/04/05. Missing semantic support stays unresolved; mechanical normalization
-is not a whole-card or source-fidelity verdict.
+## Compact outputs and checks
 
-## Exit criteria and version history
+Exactly four CC planning write paths in this slice: `artifacts/batch-record.md`,
+`artifacts/batch-results.jsonl`, `ledger.md` (evidence/notes only) and
+`closing-report.md`. Record intake, commands/coverage, positives/negatives,
+failed/recovered/unrun attempts, package identities, hosted coverage limits,
+all six proposed row outcomes and downstream owners in those existing files.
+No recreated schema/census/gap/readiness reports; no new source checker product.
+Checks: whole233 independent typed/body/reference/idempotence comparisons,
+eight preservation/parser negatives, fresh affected package/version gates,
+committed parent/path/trailer integrity, links/EOF/diff. No install/publication.
 
-All [six ledger rows](ledger.md) require independent CDC review. The proposed
-slice is detailed and split before issue if its actual size lacks refinement
-headroom; no missing cohort member becomes deferred by omission.
+## Assignment history and author readiness
 
-- 1.0 (2026-10-10): Planned existing-field normalization for the complete
-  150-card book cohort, with pilot/no-invention/preservation constraints.
+Initial [cc-prompt.md](cc-prompt.md) issued2026-10-13 by this introducing commit,
+planning parent `9934079aecc5a8c9bc2888c9a1b627fb4f3c55ff`. Current assignment: active separate CC
+implementation. It delivers main source corrections now; hosted evidence can
+remain partial without pretending the complete slice is accepted. No pre-created
+close/review record. CDC closes only after all binding rows are satisfied or an
+explicit Operator disposition is recorded.
 
-- 1.1 (2026-10-12): Operator workload amendment; former unissued draft
-  explicitly superseded by the combined contract/pilot and all-card normalization/
-  rendering sequence in Arc06. Scope/checks transferred without acceptance;
-  surviving open sets require revision before issuance.
+CDC has inspected actual helper semantics, byte recovery/Unicode controls,
+all233 check results and inventory. All223 remaining outputs differ, ten pilots
+are idempotent,90 sentinel deltas/53 cards reproduce,225-path source scope is
+fully determined before handoff. Guide08's structural/semantic distinction and
+work-verification retention apply: mapping/body preservation uses independent
+raw blobs/decoder; hosted claims require actual view evidence. Installed Ruby/
+Perl interfaces are already exercised. The approved recipe reuses the safe
+helper, not new conversion logic. Missing host access blocks hosted acceptance,
+not these authorized local mutations; complete coverage records leave no silent
+exclusions. Work is one repeated mechanical operation with refinement headroom.
+
+## Version History
+
+- 1.2 (2026-10-13): Activate approved combined233 normalization/rendering after
+  Slice01 I2 closure. Exact223 card mutations, ten protected pilots, frozen3.2
+  mapping, six complete criteria and compact outputs; retain hosted gate.
+- 1.1 (2026-10-12): Operator consolidates book/web/rendering drafts; former
+  unissued text superseded before any assignment.
+- 1.0 (2026-10-10): Original unissued150-book-card cohort draft, retained in Git.
+
+Open-set/close checks: exact ten planning paths, unchanged thirteen project/
+seven arc/six Slice01 criteria, all six Slice01 done, A06-01 done/six open,
+all six Slice02 open. Three issued Slice01 prompts and all original CC artifacts
+remain byte-exact. Sixty local destinations and twenty fragments resolve;
+LF/EOF/diff checks pass. Main remains `4ccc6f60` with no tracked change.

@@ -1,6 +1,6 @@
 ---
 slice: slice01-schema-and-field-inventory
-status: open
+status: closed
 depends-on: [arc01-portable-contract]
 blocks: [slice02-book-card-metadata]
 ---
@@ -16,9 +16,10 @@ the [project plan](../../project-plan.md). CDC Sofie reviews separate CC via
 Operator relay; Two-Contributor Workflow, Expedited Mode. No bulk mutation
 until independent acceptance. The six [ledger criteria](ledger.md) remain binding.
 
-**Current assignment:** `cc-prompt-iteration02.md`, issued by this introducing
-commit after I1 review. Main input `d2188c45`, planning predecessor `1e7dc84c`;
-full pins and exact two-comparison/three-return scope in I2.
+**Current state:** Iteration02 independently accepted2026-10-13; Slice01 closed,
+all six rows done at source `4ccc6f60` / planning `9934079a`. Last assignment
+`cc-prompt-iteration02.md` was issued `ce393b8c`; its prompt remains unchanged.
+Next active assignment belongs to Slice02, not this closed slice.
 The initial assignment at `e8718605` remains preserved; its thirteen-source
 write scope is historical and does not authorize I2 card changes.
 The superseded unissued read-only draft is replaced; its complete census,
@@ -282,9 +283,9 @@ LF/EOF and diff checks pass. Main remains `fe4e0558` with no tracked changes.
 
 ## Iteration02 assignment and author readiness
 
-**Current:** [cc-prompt-iteration02.md](cc-prompt-iteration02.md), issued
-2026-10-13 by this introducing commit, predecessor I1. Main `d2188c45` /
-planning `1e7dc84c`. Three rows done/three open; Slice02 remains unissued.
+**Accepted:** [cc-prompt-iteration02.md](cc-prompt-iteration02.md), issued
+2026-10-13 by this introducing commit, predecessor I1. Input main `d2188c45` / planning `1e7dc84c`; returned `4ccc6f60` /
+`9934079a`, accepted2026-10-13. Its former three-open state is historical.
 Only two recovery byte comparisons and the same three CC return files change.
 
 CDC inspected both output-identity guards and exercised the actual CLI with
@@ -306,3 +307,13 @@ I2 open-set checks: exact six planning paths; six criteria/statuses unchanged
 (three done/three open); issued prompts, CC outputs, inventory and parent ledgers
 byte-equal to `1e7dc84c`. Thirty-five local destinations and nine fragments resolve;
 LF/EOF and diff checks pass. Main remains `d2188c45` with no tracked change.
+
+## Final acceptance and next assignment
+
+[CDC final acceptance](cdc-verification.md#iteration02-independent-acceptance-and-slice-close--2026-10-13)
+closes all six rows. Frozen helper, mapping and immutable inventory enable the
+already authorized [Slice02 all-card assignment](../slice02-book-card-metadata/cc-prompt.md).
+No card body/semantic, hosted-final or parent release gate is accepted here.
+
+- 1.5 (2026-10-13): Independently accept I2's two-site byte correction; close
+  six rows, preserve all earlier issued prompts/receipts and activate Slice02.

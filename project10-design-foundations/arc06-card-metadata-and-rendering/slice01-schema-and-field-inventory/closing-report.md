@@ -1,4 +1,8 @@
-# Arc06 Slice01 — CC proposed closing report
+# Arc06 Slice01 — Closing Report
+
+**Current state:** CDC accepted Iteration02 on2026-10-13; all six rows done,
+Slice01 closed. See [independent final acceptance](cdc-verification.md#iteration02-independent-acceptance-and-slice-close--2026-10-13).
+Earlier CC dispositions below retain their historical scope.
 
 ## Disposition
 
@@ -149,3 +153,26 @@ co-author trailers. The six row statuses remain CDC-owned and unchanged:
 S01-01/02/03 done; S01-04/05/06 open. Slice01 remains open; no Slice02 prompt,
 bulk conversion, changed-revision hosted acceptance, semantic acceptance,
 parent composition or release approval is claimed.
+
+## CDC acceptance and bubble-up — 2026-10-13
+
+Assignment `cc-prompt-iteration02.md` accepted at source `4ccc6f60` / planning
+`9934079a`; S01-01/02/03/04/05/06 all done by the linked independent record.
+Source scope: only `scripts/normalize-design-card-metadata.rb`; planning scope:
+`artifacts/batch-record.md`, `ledger.md`, `closing-report.md`. Earlier ten source
+pilot files and version/history remain accepted and unchanged. Produced artifacts
+are `artifacts/batch-record.md` and `artifacts/header-inventory.jsonl`; retained
+`artifacts/preparation-notes.md` is author input. No additional evidence artifact.
+
+The independent record reproduces233 preservation observations, ten idempotence
+results, ordinary Unicode write/check, conflict/recovery/held/failure outcomes
+and the second-site regression negative. It retains applicable package gates
+at their original revision after exact input comparison. Scope is fully delivered;
+no deferral or silent drop. This close is recorded by the planning commit that
+introduces this section and Slice02's open set; its identity is recoverable from
+Git history, with no invented self-hash or required receipt-only follow-up.
+
+Arc06 receives the frozen3.2 mapping,233 inventory and safe helper. Its approved
+Slice02 now handles remaining223 mutations and full233 preservation/rendering.
+Current body-escape, semantic/fidelity, hosted and Arc04 composition/release
+obligations remain owned and open. No publication or whole-arc acceptance occurs.

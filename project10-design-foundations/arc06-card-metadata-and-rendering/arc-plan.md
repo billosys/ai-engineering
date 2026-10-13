@@ -50,8 +50,10 @@ shapes and GitHub behavior, not copied values from newer cards.
 
 ## Revised slice breakdown
 
-Slice01 Iteration02 is active: three criteria independently done; helper write
-safety and current evidence remain open. Slice02 is still unissued. These are the current execution units:
+Slice01 is independently closed at `4ccc6f60` / `9934079a`, all six done.
+A06-01 is done after complete mapping/authority review; six arc rows remain open.
+Slice02 is active for223 remaining mutations and233 preservation/hosted checks.
+These are the current execution units:
 
 | Unit and retained identifier | Delivery | Gate |
 |---|---|---|
@@ -103,21 +105,26 @@ release is not changed by this migration.
 
 Arc06 can run at the next ready handoff after the first live-correction batch,
 without waiting for Arc02's entire corpus/input work. Two contributors, CDC Sofie
-and separate CC via Operator relay; Expedited Mode remains active. Arc02/Slice08 is independently closed; current assignment is Arc06/Slice01,
-main input `d2188c45`/planning predecessor `1e7dc84c`. The ten-card pilot and
-233-header inventory/mapping are reproduced; only the helper and current
-return evidence are assigned in `cc-prompt-iteration02.md`. Other Arc02 work is open
-and preserved. Project08 P-15 remains open: select historical3.2 fallback for
-the ten-card candidate, then freeze its exact crosswalk through independent
-Slice01 acceptance before bulk normalization.
+and separate CC via Operator relay; Expedited Mode remains active. Arc02/Slice08
+is independently closed. Current assignment is Arc06/Slice02
+[cc-prompt.md](slice02-book-card-metadata/cc-prompt.md), main input `4ccc6f60` /
+planning predecessor `9934079a`. Slice01 has accepted ten pilots, complete233
+inventory and safe helper; its historical3.2 mapping is frozen for this batch.
+Other Arc02 work and Project08 schema adoption remain distinct/open. Hosted
+unavailability permits local checked delivery but leaves S02-05/A06-05 open.
 
 Arc04 consumes accepted normalization/rendering revisions and owns package/final
 release validation, including applicability after any later source edits. Former
 Arc05 responsibilities are consolidated there. Arc06 closure retains the complete
 baseline-to-final union and attributed independent/Operator composition gate.
-No ledger row is accepted by this amendment.
+A06-01 is independently accepted by the linked complete mapping review; no
+other arc or project criterion is promoted by the slice close.
 
 ## Version History
+
+- 1.5 (2026-10-13): Slice01 I2 independently closes all six criteria and freezes
+  mapping/helper; accept A06-01 at complete233 review scope, activate approved
+  Slice02 all-card delivery with225 source paths and whole hosted gate retained.
 
 - 1.4 (2026-10-13): I1 preserves233/ten and resolves F02; Unicode recovery
   F03 holds bulk. Issue two-site I2; three slice rows done/three open and all

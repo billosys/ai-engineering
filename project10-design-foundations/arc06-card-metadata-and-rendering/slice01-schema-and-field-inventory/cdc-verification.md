@@ -1,8 +1,12 @@
 # Arc06 Slice01 independent CDC verification
 
+**Current verdict:** Slice01 closed2026-10-13; all six rows done.
+See [I2 acceptance](#iteration02-independent-acceptance-and-slice-close--2026-10-13).
+Earlier sections below are historical at their cited revisions.
+
 ## Initial return — 2026-10-12
 
-**Current verdict: S01-01/02/03 done; S01-04/05/06 open. Slice01 remains open.**
+**Initial verdict at the original candidate: S01-01/02/03 done; S01-04/05/06 open. Slice01 remained open.**
 CDC Sofie independently reviews separate CC via Operator relay, Two-Contributor
 Workflow, Expedited Mode. Issued initial prompt at `e87186057c4795dfc342f15e06dc8e5a031c9ad2`;
 source candidate `fe4e055885983be6d0b4bbbff1ef201485499aac`, parent `1489e76730b759f01fb1e839a18b363d8296b610`;
@@ -247,3 +251,84 @@ This is the current verdict; earlier conclusions retain their named revisions.
 Slice01 stays open and Slice02 unissued. All233 exact-revision GitHub rendering,
 Arc02 substantive/body/fidelity work, P10-11 and release/composition gates remain
 open. No additional source or schema review is commissioned here.
+
+## Iteration02 independent acceptance and slice close — 2026-10-13
+
+**Current verdict: Slice01 closed, all six rows done.** CDC Sofie independently
+reviewed separate CC's `4ccc6f6055743d8e8b53251d7e8852f04d1ed181` / `9934079aecc5a8c9bc2888c9a1b627fb4f3c55ff` against
+[Iteration02](cc-prompt-iteration02.md), issued `ce393b8c`. Source parent
+`d2188c45` and planning parent `ce393b8c` reproduce. The exact source delta is
+only `.b` on both `recover_written!` comparisons; exact planning delta is the
+three allowed batch/ledger/closing files. Both commits carry both required
+trailers; committed diff checks pass. F01/F02/F03 are resolved at these bytes.
+Earlier failed results retain their original revisions and dates.
+
+### Reproduced checks and retained evidence
+
+- Ruby syntax passes. Actual nonmutating candidate check emits233 public rows;
+  all input hashes, complete typed inputs, expected transforms, full body bytes/
+  hashes and seven-field public shapes match the immutable accepted inventory.
+  Ten pilot outputs remain byte-idempotent;90 prospective sentinels across53
+  remaining cards. The223 non-pilot cards all need the accepted serialization.
+- Durable actual-CLI fixture with committed helper and original `1489e767`
+  blobs passes in additive-first and Unicode matrix-first order: prewrite
+  external edits preserved with second input untouched; second rename failure
+  restores exact originals for both files, exits1/zero JSONL, reports written/
+  restored first path, held/recovery-failed none, and retains original error.
+- Matrix-first ordinary write then check in an isolated tracked repository
+  returns0/two public rows, independently decoded Perl YAML::XS typed values
+  equal only the four allowed transformations, exact body bytes preserved,
+  no private buffers and byte-idempotence. No live card writes were performed.
+- Matrix-first external-during-failure retains the literal external edit and
+  reports held. Restore-rename failure reports original and recovery errors
+  and the unrecovered own output. Late second conflict restores first and holds
+  second external bytes. Nine failure runs across these fixture orders/suites
+  pass (including repeated controls; not nine unique failure mechanisms).
+- A disposable helper copy with only the second `.b` reverted fails exact
+  matrix-original restoration and falsely reports held at the final guard.
+  This negative exercises the real CLI and distinguishes the required repair.
+- Inventory SHA `c7306e8a62291fa635e154463553fd990a9b12d91d70cb4403a0259f9e49dd5c` and all card bytes
+  remain unchanged from accepted pilot `fe4e0558`. Accepted schema/index,
+  parser/emitter/path/unsafe-YAML controls remain applicable: no changed input,
+  criterion or relevant method. F02's corrected current sentinel fields and
+  populated nested aliases are preserved. Prior controls remain original runs.
+- All eight packaged design Markdown inputs plus Makefile remain byte-equal
+  to accepted `fe4e0558`. Prior fresh Make/version/package gates are retained,
+  not rerun or relabelled fresh. This unbundled helper is the only source delta.
+  Version authority remains1.0.4 and paired history unchanged. No ZIP/installation/
+  publication, hosted or semantic evidence is claimed by this review.
+
+| Row | Final status | Independent basis |
+|---|---|---|
+| S01-01 | done | Accepted authority/intake and upstream definition retained by exact input/scope checks. |
+| S01-02 | done | Complete233 raw/typed inventory remains exact; candidate233/hash/body/public observations reproduce. |
+| S01-03 | done | Existing22 root fields/extensions and four exact sentinel mappings retained; no invented values or flattening. |
+| S01-04 | done | Preserved rendering diagnosis/contract, accepted parser controls and freshly reproduced safe write/failure/Unicode checks. Actual final hosted views remain the separate Slice02 obligation. |
+| S01-05 | done | Ten delivered pilots unchanged/idempotent; disjoint10/223 union covers233, now backed by accepted reusable helper and version/history. |
+| S01-06 | done | Exact source/planning commits, retained inputs, accurate current return, all six rows and downstream limits/owners checked. |
+
+### Bubble-up check and what worked
+
+Delivered the assigned contract and ten integrated source pilots, complete
+inventory and reusable conversion helper. Artifacts produced: `batch-record.md`
+and `header-inventory.jsonl`; `preparation-notes.md` is retained author input.
+All are under `artifacts/`. Three issued prompts remain in the slice root.
+Scope-as-specified equals scope-as-delivered; no row deferred or silently dropped.
+The safe failure contract is optimistic snapshot detection and per-file atomic
+replacement, not an all-file transaction or atomic cross-process compare-and-swap.
+A real Unicode card in the first completed-write position exposed the encoding
+issue; byte oracles and the second-site negative now distinguish correct recovery.
+
+Freeze the accepted historical3.2 mapping/helper at `4ccc6f6055743d8e8b53251d7e8852f04d1ed181`;
+no new schema choice is needed for bulk conversion. Record Arc06 A06-01 done
+because the complete233 mapping/upstream authority was independently checked,
+not merely because a child closed. A06-02–07 and all project release/fidelity/
+semantic gates remain open. Arc plan changes only to accept this input and
+activate the already approved combined Slice02; no new arc or investigation.
+
+In Expedited Mode open [Slice02](../slice02-book-card-metadata/slice-plan.md)
+now: normalize remaining223, verify all233, retain actual GitHub rendering as
+an unsatisfied gate until observed. Arc02 owns substantive/body-escape fixes;
+Arc04 owns final package/composition. Missing originals do not block metadata
+preservation. Any hosted body defect remains explicit and blocks claims that
+require it; no body modification is authorized by the next metadata assignment.
