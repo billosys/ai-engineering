@@ -47,7 +47,7 @@ Compared across perceptual error metrics, Oklab outperforms CIELAB on lightness 
 
 # Core Definition
 
-The source provides a systematic comparison of eight colour spaces \u2014 Oklab, CIELAB, CIELUV, OSA-UCS, IPT, JzAzBz, HSV, and CAM16-UCS \u2014 across three error metrics (L RMS, C RMS, H RMS) and three supplementary metrics (L 95, C 95, H 95).
+The source provides a systematic comparison of eight colour spaces — Oklab, CIELAB, CIELUV, OSA-UCS, IPT, JzAzBz, HSV, and CAM16-UCS — across three error metrics (L RMS, C RMS, H RMS) and three supplementary metrics (L 95, C 95, H 95).
 
 Key verdicts from the source on the main competitors:
 
@@ -66,10 +66,10 @@ Error table (RMS errors; best non-CAM16 in bold):
 
 # Prerequisites
 
-- **Perceptual uniformity** \u2014 The comparison is structured around which spaces achieve it.
-- **Oklab** \u2014 The primary space being advocated.
-- **Colour space** \u2014 Background on what each space is.
-- **Chroma (perceptual)** and **Lightness (perceptual)** \u2014 The metrics being compared.
+- **Perceptual uniformity** — The comparison is structured around which spaces achieve it.
+- **Oklab** — The primary space being advocated.
+- **Colour space** — Background on what each space is.
+- **Chroma (perceptual)** and **Lightness (perceptual)** — The metrics being compared.
 
 # Key Properties
 
@@ -108,20 +108,20 @@ Error table (RMS errors; best non-CAM16 in bold):
 # Relationships
 
 ## Builds Upon
-- **Perceptual uniformity** \u2014 This is what is being measured and compared.
-- **All individual colour spaces listed** \u2014 Understanding each space's design is required to interpret the comparison.
+- **Perceptual uniformity** — This is what is being measured and compared.
+- **All individual colour spaces listed** — Understanding each space's design is required to interpret the comparison.
 
 ## Enables
-- **Colour space selection** \u2014 The comparison provides the basis for choosing Oklab for image processing tasks.
-- **Understanding tradeoffs** \u2014 The comparison makes explicit that no single space is optimal on all metrics; Oklab is chosen for the best overall balance.
+- **Colour space selection** — The comparison provides the basis for choosing Oklab for image processing tasks.
+- **Understanding tradeoffs** — The comparison makes explicit that no single space is optimal on all metrics; Oklab is chosen for the best overall balance.
 
 ## Related
-- **Colour interpolation (perceptual)** \u2014 The blending comparison is a practical consequence.
-- **Chroma (perceptual)** \u2014 Chroma prediction is one of the three metrics.
+- **Colour interpolation (perceptual)** — The blending comparison is a practical consequence.
+- **Chroma (perceptual)** — Chroma prediction is one of the three metrics.
 
 ## Contrasts With
-- **HSV/HSL** \u2014 The comparison makes quantitative the intuitive failure of HSV/HSL for perceptual tasks.
-- **CIELAB** \u2014 Closely related structure but inferior lightness, chroma, and blue-hue prediction.
+- **HSV/HSL** — The comparison makes quantitative the intuitive failure of HSV/HSL for perceptual tasks.
+- **CIELAB** — Closely related structure but inferior lightness, chroma, and blue-hue prediction.
 
 # Common Errors
 
@@ -140,7 +140,7 @@ Error table (RMS errors; best non-CAM16 in bold):
 # Verification Notes
 
 - Definition source: Error table reproduced from source; verdict quotes are direct from "What about existing models?" bullet list.
-- Confidence rationale: High \u2014 quantitative data and qualitative verdicts are all explicit in the source.
+- Confidence rationale: High — quantitative data and qualitative verdicts are all explicit in the source.
 - Uncertainties: The error data was generated against CAM16-derived test data, which the source acknowledges may not perfectly represent human perception.
 - Cross-reference status: Verified against table, Munsell plots description, and blending description.
 - Rosetta Stone check: No rosetta stone mappings.

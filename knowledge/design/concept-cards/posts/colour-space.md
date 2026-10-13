@@ -33,7 +33,7 @@ A colour space is a mathematical coordinate system in which every colour is repr
 
 # Core Definition
 
-The source uses the term "color space" throughout to refer to systems that assign numerical coordinates to colours. Multiple colour spaces are compared: CIELAB, CIELUV, HSV, sRGB, XYZ, IPT, JzAzBz, CAM16-UCS, OSA-UCS, and Oklab. Each represents the same physical colours with different coordinate systems, chosen for different purposes \u2014 device representation (sRGB), perceptual uniformity (CIELAB, Oklab), or computational simplicity (HSV).
+The source uses the term "color space" throughout to refer to systems that assign numerical coordinates to colours. Multiple colour spaces are compared: CIELAB, CIELUV, HSV, sRGB, XYZ, IPT, JzAzBz, CAM16-UCS, OSA-UCS, and Oklab. Each represents the same physical colours with different coordinate systems, chosen for different purposes — device representation (sRGB), perceptual uniformity (CIELAB, Oklab), or computational simplicity (HSV).
 
 A colour space involves at minimum: a set of axes (dimensions), a whitepoint reference, and a conversion relationship to other colour spaces. Many colour spaces are derived by applying a mathematical transform to another space.
 
@@ -70,24 +70,24 @@ This is a foundational concept with no prerequisites within this source.
 
 **Example 1** (from source): The source compares eight colour spaces (Oklab, CIELAB, CIELUV, OSA-UCS, IPT, JzAzBz, HSV, CAM16-UCS) on the same three perceptual error metrics, demonstrating that different colour spaces make very different trade-offs. (Section: "Comparison with other color spaces")
 
-**Example 2** (from source): sRGB is described as a colour space using a D65 whitepoint, whose colours can be converted to Oklab via linear sRGB \u2192 XYZ \u2192 LMS \u2192 Oklab. (Section: "Implementation")
+**Example 2** (from source): sRGB is described as a colour space using a D65 whitepoint, whose colours can be converted to Oklab via linear sRGB → XYZ → LMS → Oklab. (Section: "Implementation")
 
 # Relationships
 
 ## Builds Upon
-- **Human visual perception** \u2014 Colour spaces ultimately reference the three-channel nature of human cone responses.
+- **Human visual perception** — Colour spaces ultimately reference the three-channel nature of human cone responses.
 
 ## Enables
-- **Oklab colour space** \u2014 Oklab is a specific colour space.
-- **XYZ colour space** \u2014 XYZ is the reference intermediary between most other colour spaces.
-- **Colour interpolation** \u2014 Requires a colour space to define the coordinates to interpolate.
+- **Oklab colour space** — Oklab is a specific colour space.
+- **XYZ colour space** — XYZ is the reference intermediary between most other colour spaces.
+- **Colour interpolation** — Requires a colour space to define the coordinates to interpolate.
 
 ## Related
-- **Gamut** \u2014 Each colour space has an associated gamut (the set of colours it can represent).
-- **Whitepoint** \u2014 Every colour space requires a reference white for normalisation.
+- **Gamut** — Each colour space has an associated gamut (the set of colours it can represent).
+- **Whitepoint** — Every colour space requires a reference white for normalisation.
 
 ## Contrasts With
-- (No specific contrasts defined at this foundational level \u2014 the concept encompasses all colour spaces equally.)
+- (No specific contrasts defined at this foundational level — the concept encompasses all colour spaces equally.)
 
 # Common Errors
 
@@ -106,8 +106,8 @@ This is a foundational concept with no prerequisites within this source.
 # Verification Notes
 
 - Definition source: Synthesised from usage across the entire article; the source assumes prior knowledge of colour spaces rather than defining the concept explicitly.
-- Confidence rationale: Medium \u2014 the concept is implicit rather than explicitly defined in the source; definition was constructed from the article's consistent usage.
-- Uncertainties: The source does not offer a single-sentence definition of "colour space" \u2014 it is background knowledge assumed of the reader.
+- Confidence rationale: Medium — the concept is implicit rather than explicitly defined in the source; definition was constructed from the article's consistent usage.
+- Uncertainties: The source does not offer a single-sentence definition of "colour space" — it is background knowledge assumed of the reader.
 - Cross-reference status: Verified as consistent with all colour space references throughout the source.
 - Rosetta Stone check: No rosetta stone mappings for this foundational concept.
 - OCR issues: None significant.

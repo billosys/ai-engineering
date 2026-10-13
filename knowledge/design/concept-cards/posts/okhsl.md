@@ -41,24 +41,24 @@ rosetta_stone:
 
 # Quick Definition
 
-Okhsl is a colour space designed by Bj\u00f6rn Ottosson as a perceptually-improved replacement for HSL, built on the Oklab colour space. It maps the sRGB gamut to a cylinder while achieving orthogonal lightness and hue \u2014 properties HSL lacks.
+Okhsl is a colour space designed by Björn Ottosson as a perceptually-improved replacement for HSL, built on the Oklab colour space. It maps the sRGB gamut to a cylinder while achieving orthogonal lightness and hue — properties HSL lacks.
 
 # Core Definition
 
-Ottosson introduces Okhsl as part of a pair: "For consistency with the naming of Oklab, these new color spaces will be called Okhsl and Okhsv." Okhsl is derived from OkLCh (the cylindrical form of Oklab): "To derive Okhsl we also start with OkLCh. L_r and h are kept as is, with L_r referred to as l instead for consistency." The lightness L_r is a new perceptual lightness estimate introduced in the same post, which "closely matches the lightness estimate of CIELab overall." The saturation parameter s is constructed using three chroma reference values \u2014 C_0 (hue-independent, used for low-saturation colours), C_mid (an optimised smooth mid-range value), and C_max (the maximum chroma in the sRGB gamut for the given lightness and hue) \u2014 interpolated so that: at s=0 the slope matches C_0; at s=0.8 the value matches C_mid; at s=1.0 it reaches C_max. This construction keeps the interior of the colour space smooth while confining the gamut irregularity to the high-saturation edge. "Altogether this gives a model with a simple geometrical shape that has parameters for lightness and hue that closely match perception."
+Ottosson introduces Okhsl as part of a pair: "For consistency with the naming of Oklab, these new color spaces will be called Okhsl and Okhsv." Okhsl is derived from OkLCh (the cylindrical form of Oklab): "To derive Okhsl we also start with OkLCh. L_r and h are kept as is, with L_r referred to as l instead for consistency." The lightness L_r is a new perceptual lightness estimate introduced in the same post, which "closely matches the lightness estimate of CIELab overall." The saturation parameter s is constructed using three chroma reference values — C_0 (hue-independent, used for low-saturation colours), C_mid (an optimised smooth mid-range value), and C_max (the maximum chroma in the sRGB gamut for the given lightness and hue) — interpolated so that: at s=0 the slope matches C_0; at s=0.8 the value matches C_mid; at s=1.0 it reaches C_max. This construction keeps the interior of the colour space smooth while confining the gamut irregularity to the high-saturation edge. "Altogether this gives a model with a simple geometrical shape that has parameters for lightness and hue that closely match perception."
 
 # Prerequisites
 
-- **HSL colour space** \u2014 Okhsl is designed as a drop-in improvement for HSL pickers
-- **Colour gamut** \u2014 The sRGB gamut shape drives the construction of C_0, C_mid, and C_max
-- **Orthogonal colour properties** \u2014 Okhsl is designed to achieve Orthogonal Lightness and Orthogonal Hue
+- **HSL colour space** — Okhsl is designed as a drop-in improvement for HSL pickers
+- **Colour gamut** — The sRGB gamut shape drives the construction of C_0, C_mid, and C_max
+- **Orthogonal colour properties** — Okhsl is designed to achieve Orthogonal Lightness and Orthogonal Hue
 
 # Key Properties
 
-1. Achieves Orthogonal Lightness (yes) and Orthogonal Hue (yes) \u2014 improvements over HSL (both no)
+1. Achieves Orthogonal Lightness (yes) and Orthogonal Hue (yes) — improvements over HSL (both no)
 2. Uses a cylindrical shape identical to HSL in structure, making it a usable drop-in replacement
 3. Saturation varies smoothly even where the gamut boundary is irregular, by using a three-point interpolation (C_0, C_mid, C_max)
-4. Does NOT achieve Orthogonal Chroma (no) \u2014 the price paid for the simple cylindrical shape
+4. Does NOT achieve Orthogonal Chroma (no) — the price paid for the simple cylindrical shape
 
 # Construction / Recognition
 
@@ -82,36 +82,36 @@ Ottosson introduces Okhsl as part of a pair: "For consistency with the naming of
 
 ## Cross-Domain Connections
 
-**Music \u2192 RIGOROUS**: Equal temperament divides the octave into 12 equal semitones so that every half-step sounds the same size regardless of starting pitch. Okhsl achieves the analogous goal for colour: equal-sized slider steps in lightness or hue produce equally-perceived colour differences regardless of starting position. Both are deliberate calibration systems designed to make a non-linear perceptual continuum behave linearly for practical use.
+**Music → RIGOROUS**: Equal temperament divides the octave into 12 equal semitones so that every half-step sounds the same size regardless of starting pitch. Okhsl achieves the analogous goal for colour: equal-sized slider steps in lightness or hue produce equally-perceived colour differences regardless of starting position. Both are deliberate calibration systems designed to make a non-linear perceptual continuum behave linearly for practical use.
 
 # Examples
 
 **Example 1** (from source): "Altogether this gives a model with a simple geometrical shape that has parameters for lightness and hue that closely match perception. The model is quite different from regular HSL, in order to achieve a better lightness estimate. I believe Okhsl delivers a better overall compromise, and keeps many of the benefits of Lab-like color spaces, without the complexity of an irregular shape."
 
-**Example 2** (from source \u2014 summary table): Okhsl achieves Orthogonal Lightness: yes; Orthogonal Hue: yes; Simple Geometrical Shape: yes; Varies Smoothly: yes; Orthogonal Chroma: no; Max Chroma at Edge: no.
+**Example 2** (from source — summary table): Okhsl achieves Orthogonal Lightness: yes; Orthogonal Hue: yes; Simple Geometrical Shape: yes; Varies Smoothly: yes; Orthogonal Chroma: no; Max Chroma at Edge: no.
 
 # Relationships
 
 ## Builds Upon
-- **Oklab** \u2014 Okhsl derives its hue and lightness from Oklab coordinates
-- **HSL** \u2014 Okhsl was designed as a structural successor to HSL for picker use
+- **Oklab** — Okhsl derives its hue and lightness from Oklab coordinates
+- **HSL** — Okhsl was designed as a structural successor to HSL for picker use
 
 ## Enables
-- **Perceptually uniform colour pickers** \u2014 Okhsl enables pickers where lightness feels consistent across hues
-- **Accessible colour palette generation** \u2014 Uniform lightness enables all-hue palettes with consistent perceived contrast
+- **Perceptually uniform colour pickers** — Okhsl enables pickers where lightness feels consistent across hues
+- **Accessible colour palette generation** — Uniform lightness enables all-hue palettes with consistent perceived contrast
 
 ## Related
-- **Okhsv** \u2014 Sibling space optimised for a different set of tradeoffs (Value-based rather than Lightness-based)
+- **Okhsv** — Sibling space optimised for a different set of tradeoffs (Value-based rather than Lightness-based)
 
 ## Contrasts With
-- **HSL** \u2014 HSL has non-orthogonal lightness and hue; Okhsl corrects both
-- **Okhsv** \u2014 Okhsv preserves maximum chroma at the edge (good for finding vivid colours); Okhsl prioritises orthogonal lightness (good for uniform brightness)
-- **HSLuv** \u2014 HSLuv also attempts uniform lightness but fails on smooth saturation variation; Okhsl is smoother
+- **HSL** — HSL has non-orthogonal lightness and hue; Okhsl corrects both
+- **Okhsv** — Okhsv preserves maximum chroma at the edge (good for finding vivid colours); Okhsl prioritises orthogonal lightness (good for uniform brightness)
+- **HSLuv** — HSLuv also attempts uniform lightness but fails on smooth saturation variation; Okhsl is smoother
 
 # Common Errors
 
 - **Error**: Assuming Okhsl Saturation values are directly comparable to HSL Saturation values.
-  **Correction**: The two saturation parameters are differently constructed; they share a 0\u20131 range but represent different quantities.
+  **Correction**: The two saturation parameters are differently constructed; they share a 0–1 range but represent different quantities.
 
 # Common Confusions
 
@@ -120,12 +120,12 @@ Ottosson introduces Okhsl as part of a pair: "For consistency with the naming of
 
 # Source Reference
 
-"Okhsl" and "Introducing two new color spaces: Okhsv and Okhsl" sections, Okhsv and Okhsl (Bj\u00f6rn Ottosson).
+"Okhsl" and "Introducing two new color spaces: Okhsv and Okhsl" sections, Okhsv and Okhsl (Björn Ottosson).
 
 # Verification Notes
 
 - Definition source: Direct quotes and close paraphrase from Ottosson
-- Confidence rationale: High \u2014 Okhsl is defined, derived, and fully documented in source including C++ implementation
+- Confidence rationale: High — Okhsl is defined, derived, and fully documented in source including C++ implementation
 - Uncertainties: The saturation construction involves an optimised polynomial (C_mid); details require reference to source code
 - Cross-reference status: Not present in Drasner source
 - Rosetta Stone check: Music/equal-temperament mapping added as rigorous

@@ -45,32 +45,32 @@ css_implementation:
 
 # Quick Definition
 
-The CSS RGB colour model specifies colours by three integer values (0\u2013255) for red, green, and blue channels, directly encoding the additive light intensities of each primary colour on a monitor display.
+The CSS RGB colour model specifies colours by three integer values (0–255) for red, green, and blue channels, directly encoding the additive light intensities of each primary colour on a monitor display.
 
 # Core Definition
 
-Drasner explains: "In terms of web color values in an RGB channel, we specify color on a range from 0-255." The syntax is `rgb(x, x, x)` or `rgba(x, x, x, y)` where x is 0\u2013255 and y (alpha) is 0.0\u20131.0. This directly follows from the 8-bit-per-channel structure of 24-bit True Color displays: "In this 24-bit depth, 8 bits are dedicated to red, green, and blue. The rest are used for transparency or alpha channels." RGB values in CSS are sRGB values \u2014 they describe the intensity of red, green, and blue phosphors (or equivalent sub-pixels) in a monitor's additive light output.
+Drasner explains: "In terms of web color values in an RGB channel, we specify color on a range from 0-255." The syntax is `rgb(x, x, x)` or `rgba(x, x, x, y)` where x is 0–255 and y (alpha) is 0.0–1.0. This directly follows from the 8-bit-per-channel structure of 24-bit True Color displays: "In this 24-bit depth, 8 bits are dedicated to red, green, and blue. The rest are used for transparency or alpha channels." RGB values in CSS are sRGB values — they describe the intensity of red, green, and blue phosphors (or equivalent sub-pixels) in a monitor's additive light output.
 
 # Prerequisites
 
-- **Additive colour mixing** \u2014 RGB directly encodes additive primaries
-- **Colour bit depth** \u2014 The 0\u2013255 range comes from 8 bits per channel
+- **Additive colour mixing** — RGB directly encodes additive primaries
+- **Colour bit depth** — The 0–255 range comes from 8 bits per channel
 
 # Key Properties
 
-1. Three channels: Red, Green, Blue, each 0\u2013255
+1. Three channels: Red, Green, Blue, each 0–255
 2. (0, 0, 0) = black; (255, 255, 255) = white
 3. rgba() adds a fourth parameter for alpha (opacity): 0.0 = fully transparent, 1.0 = fully opaque
-4. Values are sRGB, not linear light \u2014 gamma encoding is applied
+4. Values are sRGB, not linear light — gamma encoding is applied
 
 # Construction / Recognition
 
 ## To Construct/Create:
 1. Determine desired colour as R, G, B values each in [0, 255]
-2. Write as `rgb(R, G, B)` or with alpha as `rgba(R, G, B, A)` where A is 0.0\u20131.0
+2. Write as `rgb(R, G, B)` or with alpha as `rgba(R, G, B, A)` where A is 0.0–1.0
 
 ## To Identify/Recognise:
-1. Look for three comma-separated integers 0\u2013255 inside `rgb()` or `rgba()`
+1. Look for three comma-separated integers 0–255 inside `rgb()` or `rgba()`
 2. `rgb(255, 0, 0)` = pure red; `rgb(0, 255, 0)` = pure green; `rgb(0, 0, 255)` = pure blue
 
 # Context & Application
@@ -80,31 +80,31 @@ Drasner explains: "In terms of web color values in an RGB channel, we specify co
 
 # Examples
 
-**Example 1** (from source): `rgba(150, 150, 150, 0.5)` \u2014 Drasner's canonical example showing a medium grey at 50% opacity.
+**Example 1** (from source): `rgba(150, 150, 150, 0.5)` — Drasner's canonical example showing a medium grey at 50% opacity.
 
-**Example 2** (from source \u2014 JavaScript): Drasner's React component generates colours as `rgb(200, ${addColor1}, ${addColor2})` by iterating over calculated values, demonstrating programmatic RGB colour generation.
+**Example 2** (from source — JavaScript): Drasner's React component generates colours as `rgb(200, ${addColor1}, ${addColor2})` by iterating over calculated values, demonstrating programmatic RGB colour generation.
 
 # Relationships
 
 ## Builds Upon
-- **Additive colour mixing** \u2014 RGB encodes additive primaries
-- **Colour bit depth** \u2014 8 bits per channel \u2192 0\u2013255 range
+- **Additive colour mixing** — RGB encodes additive primaries
+- **Colour bit depth** — 8 bits per channel → 0–255 range
 
 ## Enables
-- **Hex colour notation** \u2014 Hex is an alternative encoding of the same RGB values
-- **HSL colour space** \u2014 HSL is a coordinate transformation of RGB values
+- **Hex colour notation** — Hex is an alternative encoding of the same RGB values
+- **HSL colour space** — HSL is a coordinate transformation of RGB values
 
 ## Related
-- **CSS rgba()** \u2014 The alpha extension of rgb()
+- **CSS rgba()** — The alpha extension of rgb()
 
 ## Contrasts With
-- **HSL** \u2014 HSL is more human-readable for choosing and adjusting colours; RGB is closer to the hardware representation
-- **CMYK** \u2014 Print colour model based on subtractive mixing; RGB must be converted for print output
+- **HSL** — HSL is more human-readable for choosing and adjusting colours; RGB is closer to the hardware representation
+- **CMYK** — Print colour model based on subtractive mixing; RGB must be converted for print output
 
 # Common Errors
 
 - **Error**: Using floating-point values (e.g. rgb(0.5, 0.5, 0.5)) in CSS rgb().
-  **Correction**: CSS rgb() expects integers 0\u2013255. rgb(128, 128, 128) is the correct form for 50% grey in legacy syntax. (CSS Color 4 does allow percentages and new syntax, but the classic form requires integers.)
+  **Correction**: CSS rgb() expects integers 0–255. rgb(128, 128, 128) is the correct form for 50% grey in legacy syntax. (CSS Color 4 does allow percentages and new syntax, but the classic form requires integers.)
 
 # Source Reference
 
@@ -113,8 +113,8 @@ Drasner explains: "In terms of web color values in an RGB channel, we specify co
 # Verification Notes
 
 - Definition source: Direct quotes from Drasner
-- Confidence rationale: High \u2014 explicitly defined with syntax examples
-- Uncertainties: Source predates CSS Color 4's new syntax; the integer 0\u2013255 description reflects the classic syntax
+- Confidence rationale: High — explicitly defined with syntax examples
+- Uncertainties: Source predates CSS Color 4's new syntax; the integer 0–255 description reflects the classic syntax
 - Cross-reference status: Not discussed in detail in Ottosson source
 - Rosetta Stone check: No mappings added
 - OCR issues: None significant

@@ -40,7 +40,7 @@ rosetta_stone:
 
 # Quick Definition
 
-Hex colour notation is a compact hexadecimal encoding of RGB colour values as a six-character string (preceded by `#`), where each pair of characters encodes one colour channel (0\u2013255 as 00\u2013FF).
+Hex colour notation is a compact hexadecimal encoding of RGB colour values as a six-character string (preceded by `#`), where each pair of characters encodes one colour channel (0–255 as 00–FF).
 
 # Core Definition
 
@@ -48,21 +48,21 @@ Drasner explains: "Hex colors are a slightly different format to represent the v
 
 # Prerequisites
 
-- **RGB colour model** \u2014 Hex is an alternative encoding of the same R, G, B integer values
-- **Colour bit depth** \u2014 Each hex pair represents one 8-bit byte (0\u2013255)
+- **RGB colour model** — Hex is an alternative encoding of the same R, G, B integer values
+- **Colour bit depth** — Each hex pair represents one 8-bit byte (0–255)
 
 # Key Properties
 
 1. Six hex digits (plus `#`): two per channel, in R-G-B order
-2. Values 00\u2013FF per channel correspond to decimal 0\u2013255
-3. Shorthand `#RGB` works when each hex pair has repeated digits (e.g. `#AABBCC` \u2192 `#ABC`)
+2. Values 00–FF per channel correspond to decimal 0–255
+3. Shorthand `#RGB` works when each hex pair has repeated digits (e.g. `#AABBCC` → `#ABC`)
 4. Case-insensitive: `#FF0000` and `#ff0000` are equivalent
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Take the decimal R, G, B values (0\u2013255)
-2. Convert each to a two-digit hexadecimal string (0 \u2192 "00", 255 \u2192 "FF", 128 \u2192 "80")
+1. Take the decimal R, G, B values (0–255)
+2. Convert each to a two-digit hexadecimal string (0 → "00", 255 → "FF", 128 → "80")
 3. Concatenate as `#RRGGBB`
 
 ## To Identify/Recognise:
@@ -76,33 +76,33 @@ Drasner explains: "Hex colors are a slightly different format to represent the v
 
 ## Cross-Domain Connections
 
-**Mathematics \u2192 RIGOROUS**: Hex colour notation is direct base-16 positional notation. Converting `#FF0000` to decimal: FF = 15\u00d716+15 = 255 (red channel at max); 00 = 0 (green off); 00 = 0 (blue off). The encoding is a mechanical mathematical identity.
+**Mathematics → RIGOROUS**: Hex colour notation is direct base-16 positional notation. Converting `#FF0000` to decimal: FF = 15×16+15 = 255 (red channel at max); 00 = 0 (green off); 00 = 0 (blue off). The encoding is a mechanical mathematical identity.
 
 # Examples
 
-**Example 1** (from source): "`#00FFFF` becomes `#0FF`" \u2014 Drasner's example of the shorthand rule; each channel pair (00, FF, FF) has a repeated digit so each reduces to one character.
+**Example 1** (from source): "`#00FFFF` becomes `#0FF`" — Drasner's example of the shorthand rule; each channel pair (00, FF, FF) has a repeated digit so each reduces to one character.
 
-**Example 2** (from source): "`#000000` being black and `#FFFFFF` being white" \u2014 the boundary values.
+**Example 2** (from source): "`#000000` being black and `#FFFFFF` being white" — the boundary values.
 
 # Relationships
 
 ## Builds Upon
-- **RGB colour model** \u2014 Hex encodes the same R, G, B values as rgb()
-- **Colour bit depth** \u2014 Two hex digits per channel = one byte = 8 bits = 256 values
+- **RGB colour model** — Hex encodes the same R, G, B values as rgb()
+- **Colour bit depth** — Two hex digits per channel = one byte = 8 bits = 256 values
 
 ## Enables
-- **Design token storage** \u2014 Hex is the most common format for storing colours in design tokens and configuration files
+- **Design token storage** — Hex is the most common format for storing colours in design tokens and configuration files
 
 ## Related
-- **CSS rgba()** \u2014 For alpha channel support, rgba() is needed; CSS Color 4 adds `#RRGGBBAA` 8-digit hex
+- **CSS rgba()** — For alpha channel support, rgba() is needed; CSS Color 4 adds `#RRGGBBAA` 8-digit hex
 
 ## Contrasts With
-- **HSL** \u2014 Drasner notes: "if you're going to work with colors in a more involved way, though, HSL is a little bit more human-readable"
+- **HSL** — Drasner notes: "if you're going to work with colors in a more involved way, though, HSL is a little bit more human-readable"
 
 # Common Errors
 
 - **Error**: Expecting `#RGB` shorthand to work for all hex colours.
-  **Correction**: Shorthand only works when each channel's two hex digits are identical: `#AABBCC` \u2192 `#ABC`. `#A1B2C3` cannot be shortened.
+  **Correction**: Shorthand only works when each channel's two hex digits are identical: `#AABBCC` → `#ABC`. `#A1B2C3` cannot be shortened.
 
 - **Error**: Using hex for programmatic colour manipulation.
   **Correction**: Hex is string-based and difficult to manipulate mathematically. For programmatic adjustment, use HSL or RGB numeric forms and convert to hex for output.
@@ -119,7 +119,7 @@ Drasner explains: "Hex colors are a slightly different format to represent the v
 # Verification Notes
 
 - Definition source: Direct quotes from Drasner
-- Confidence rationale: High \u2014 complete and explicit definition with examples
+- Confidence rationale: High — complete and explicit definition with examples
 - Uncertainties: Drasner's article predates 8-digit hex support becoming widely available; omits alpha-in-hex
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: Mathematics/base-16 mapping added as rigorous

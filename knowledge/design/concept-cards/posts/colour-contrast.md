@@ -49,12 +49,12 @@ Note: The WCAG 4.5:1 (normal text) and 3:1 (large text) contrast ratio requireme
 
 # Prerequisites
 
-- **RGB colour model** \u2014 Contrast ratio calculations require computing relative luminance from RGB values
-- **Additive colour mixing** \u2014 Luminance is derived from the additive combination of the RGB channels
+- **RGB colour model** — Contrast ratio calculations require computing relative luminance from RGB values
+- **Additive colour mixing** — Luminance is derived from the additive combination of the RGB channels
 
 # Key Properties
 
-1. Contrast is always measured between two colours \u2014 foreground and background \u2014 not in isolation
+1. Contrast is always measured between two colours — foreground and background — not in isolation
 2. WCAG 2.1 AA requires: 4.5:1 for normal text (under 18pt/14pt bold), 3:1 for large text (18pt+ or 14pt+ bold)
 3. WCAG 2.1 AAA requires: 7:1 for normal text, 4.5:1 for large text
 4. Contrast is calculated from relative luminance (a weighted sum of linearised RGB channels), not from HSL Lightness
@@ -73,21 +73,21 @@ Note: The WCAG 4.5:1 (normal text) and 3:1 (large text) contrast ratio requireme
 
 # Examples
 
-**Example 1** (from source): "A light green on a black may be accessible, but when you change it to a white background it no longer is" \u2014 Drasner's illustration of contrast as context-dependent.
+**Example 1** (from source): "A light green on a black may be accessible, but when you change it to a white background it no longer is" — Drasner's illustration of contrast as context-dependent.
 
-**Example 2** (from source \u2014 tools): Drasner lists Colorable, Contrast-A, Accessible Colors, and Color Safe as tools for measuring and designing for colour contrast.
+**Example 2** (from source — tools): Drasner lists Colorable, Contrast-A, Accessible Colors, and Color Safe as tools for measuring and designing for colour contrast.
 
 # Relationships
 
 ## Builds Upon
-- **RGB colour model** \u2014 Relative luminance is computed from linearised RGB values
+- **RGB colour model** — Relative luminance is computed from linearised RGB values
 
 ## Enables
-- **Accessible colour palettes** \u2014 Knowing contrast requirements allows proactive palette design
-- **CSS custom properties** \u2014 Contrast-aware palettes are often stored and managed via CSS custom properties
+- **Accessible colour palettes** — Knowing contrast requirements allows proactive palette design
+- **CSS custom properties** — Contrast-aware palettes are often stored and managed via CSS custom properties
 
 ## Related
-- **Colour atmosphere** \u2014 Drasner notes "Things that are closer to you are in higher saturation, and in more contrast" \u2014 contrast is also a perceptual depth cue
+- **Colour atmosphere** — Drasner notes "Things that are closer to you are in higher saturation, and in more contrast" — contrast is also a perceptual depth cue
 
 # Common Errors
 
@@ -109,7 +109,7 @@ Note: The WCAG 4.5:1 (normal text) and 3:1 (large text) contrast ratio requireme
 # Verification Notes
 
 - Definition source: Drasner for general principle and tools; WCAG ratio numbers synthesised from standard knowledge (not directly quoted from source)
-- Confidence rationale: Medium \u2014 Drasner covers the concept correctly but with limited technical depth; ratio numbers are external knowledge applied to fill the card
+- Confidence rationale: Medium — Drasner covers the concept correctly but with limited technical depth; ratio numbers are external knowledge applied to fill the card
 - Uncertainties: WCAG ratio values (4.5:1, 3:1, 7:1) are NOT directly stated in the Drasner source and are synthesised from WCAG specifications. This should be verified against a primary WCAG source before treating as source-verified.
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: No mappings added

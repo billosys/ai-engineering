@@ -49,7 +49,7 @@ css_implementation:
 
 # Quick Definition
 
-Typographic rhythm via modular scale is the visual coherence produced when all spacings and sizes in a composition are derived from the same proportional sequence \u2014 creating a perceptible regularity analogous to meter in music.
+Typographic rhythm via modular scale is the visual coherence produced when all spacings and sizes in a composition are derived from the same proportional sequence — creating a perceptible regularity analogous to meter in music.
 
 # Core Definition
 
@@ -57,7 +57,7 @@ Brown does not use the term "typographic rhythm" explicitly, but the concept per
 
 The key passage articulating the result of scale-based measurement: "By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers."
 
-The rhythm argument is implicit in the multi-domain application of the scale: when font sizes, line heights, margins, and column widths all derive from the same geometric sequence, each measurement resonates with every other. The composition is not just well-proportioned in individual relationships \u2014 the same proportion echoes throughout.
+The rhythm argument is implicit in the multi-domain application of the scale: when font sizes, line heights, margins, and column widths all derive from the same geometric sequence, each measurement resonates with every other. The composition is not just well-proportioned in individual relationships — the same proportion echoes throughout.
 
 Brown's discussion of line spacing directly addresses rhythm's perceptual effects: "I am especially wary of line spacing that feels too tight or too loose. Tight line spacing is extremely distracting to readers, pulling their attention to pieces of text above and below the line they're trying to read. Loose line spacing is wasteful, ugly, and dilutes negative space such that margins and pauses elsewhere in a composition are less effective."
 
@@ -65,13 +65,13 @@ The analogy to musical scales is explicit in Bringhurst's definition quoted by B
 
 # Prerequisites
 
-- **Modular scale** \u2014 Rhythm via scale requires a scale.
-- **Scale application to typographic hierarchy** \u2014 The application of the scale to all measurements is what produces the rhythm.
+- **Modular scale** — Rhythm via scale requires a scale.
+- **Scale application to typographic hierarchy** — The application of the scale to all measurements is what produces the rhythm.
 
 # Key Properties
 
 1. **Cross-element coherence**: Rhythm is produced not within a single element but across all elements, because they share the same proportional relationships.
-2. **Perceptual**: The rhythm is experienced, not calculated \u2014 a reader who does not know the scale's ratio perceives the composition as harmonious, balanced, or "right."
+2. **Perceptual**: The rhythm is experienced, not calculated — a reader who does not know the scale's ratio perceives the composition as harmonious, balanced, or "right."
 3. **Undermined by arbitrary measurement**: Introducing arbitrary (non-scale) values disrupts the rhythm; this is why Brown endorses improvisation cautiously and recommends documenting it.
 4. **Vertical and horizontal**: Rhythm applies both vertically (line heights, margins, spacing between text blocks) and horizontally (column widths, measure, margins).
 
@@ -95,36 +95,36 @@ The analogy to musical scales is explicit in Bringhurst's definition quoted by B
 
 ## Cross-Domain Connections
 
-**Music \u2192 STRUCTURAL**: Musical rhythm arises from proportional time intervals; typographic rhythm arises from proportional spatial intervals. In both cases, a consistent underlying ratio generates a perceptible pattern of relationships. Bringhurst's definition ("like a musical scale, a prearranged set of harmonious proportions") explicitly invokes this structural parallel. The mapping is structural rather than rigorous because time and space are different physical quantities, but the mathematical structure (consistent ratio generating ordered sequence) is shared.
+**Music → STRUCTURAL**: Musical rhythm arises from proportional time intervals; typographic rhythm arises from proportional spatial intervals. In both cases, a consistent underlying ratio generates a perceptible pattern of relationships. Bringhurst's definition ("like a musical scale, a prearranged set of harmonious proportions") explicitly invokes this structural parallel. The mapping is structural rather than rigorous because time and space are different physical quantities, but the mathematical structure (consistent ratio generating ordered sequence) is shared.
 
 # Examples
 
-**Example 1** (from source, "Applying a modular scale in web design"): "I often think of this as my paragraphs' measure (another term for line length), rather than width. Years ago, when designers sent written instructions to typesetters, their shorthand went something like this: size/leading \u2014 measure." \u2014 Brown frames measure as a rhythmic element alongside size and leading, embedded in a historical tradition of compositional balance.
+**Example 1** (from source, "Applying a modular scale in web design"): "I often think of this as my paragraphs' measure (another term for line length), rather than width. Years ago, when designers sent written instructions to typesetters, their shorthand went something like this: size/leading — measure." — Brown frames measure as a rhythmic element alongside size and leading, embedded in a historical tradition of compositional balance.
 
-**Example 2** (from source, "Applying a modular scale in web design"): "I am especially wary of line spacing that feels too tight or too loose. Tight line spacing is extremely distracting to readers, pulling their attention to pieces of text above and below the line they're trying to read." \u2014 Rhythm disrupted by incorrect spacing is explicitly described as perceptually harmful.
+**Example 2** (from source, "Applying a modular scale in web design"): "I am especially wary of line spacing that feels too tight or too loose. Tight line spacing is extremely distracting to readers, pulling their attention to pieces of text above and below the line they're trying to read." — Rhythm disrupted by incorrect spacing is explicitly described as perceptually harmful.
 
-**Example 3** (from source, conclusion): "we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers" \u2014 the positive outcome of consistent scale application.
+**Example 3** (from source, conclusion): "we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers" — the positive outcome of consistent scale application.
 
 # Relationships
 
 ## Builds Upon
-- **Scale application to typographic hierarchy** \u2014 Rhythm is the perceptual outcome of holistic scale application.
-- **Modular scale** \u2014 The scale is the source of the proportional relationships that produce rhythm.
+- **Scale application to typographic hierarchy** — Rhythm is the perceptual outcome of holistic scale application.
+- **Modular scale** — The scale is the source of the proportional relationships that produce rhythm.
 
 ## Enables
 - (No further concepts in this source depend on typographic rhythm as a prerequisite.)
 
 ## Related
-- **Typographic color** \u2014 Brown cites monitoring "typographic color" (overall density of text) as part of achieving balanced rhythm.
-- **Measure (line length)** \u2014 Line length is one of the key rhythm-determining measurements Brown derives from the scale.
+- **Typographic color** — Brown cites monitoring "typographic color" (overall density of text) as part of achieving balanced rhythm.
+- **Measure (line length)** — Line length is one of the key rhythm-determining measurements Brown derives from the scale.
 
 ## Contrasts With
-- **Arbitrary measurement** \u2014 "The arbitrary dimensional choices I used to make had nothing to do with my intended designs' underlying meaning."
+- **Arbitrary measurement** — "The arbitrary dimensional choices I used to make had nothing to do with my intended designs' underlying meaning."
 
 # Common Errors
 
 - **Error**: Applying the scale to font sizes but using arbitrary values for line heights and margins, expecting rhythm to result.
-  **Correction**: Rhythm depends on proportional consistency across all measurements \u2014 type sizes, line heights, margins, and widths. Partial scale application produces partial (and likely invisible) rhythm.
+  **Correction**: Rhythm depends on proportional consistency across all measurements — type sizes, line heights, margins, and widths. Partial scale application produces partial (and likely invisible) rhythm.
 
 # Common Confusions
 
@@ -133,13 +133,13 @@ The analogy to musical scales is explicit in Bringhurst's definition quoted by B
 
 # Source Reference
 
-"Applying a modular scale in web design"; "Modular scales and how they apply to web design"; Conclusion \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+"Applying a modular scale in web design"; "Modular scales and how they apply to web design"; Conclusion — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
 # Verification Notes
 
-- Definition source: Synthesised \u2014 the term "typographic rhythm" does not appear in the source, but the concept is present in Brown's discussion of visual harmony, proportional consistency, and line spacing effects.
-- Confidence rationale: Medium \u2014 the concept is supported but not named; definition is synthesised from implied content rather than direct statement.
+- Definition source: Synthesised — the term "typographic rhythm" does not appear in the source, but the concept is present in Brown's discussion of visual harmony, proportional consistency, and line spacing effects.
+- Confidence rationale: Medium — the concept is supported but not named; definition is synthesised from implied content rather than direct statement.
 - Uncertainties: The distinction between "typographic rhythm" (vertical) and "visual harmony" (overall) as Brown uses the concepts is not entirely clear. Brown uses "visual harmony" as the primary term for the result; "rhythm" is the interpretive frame applied here.
 - Cross-reference status: Verified as synthesised from source; the musical rhythm analogy is explicit in the Bringhurst quote but not developed by Brown beyond that.
-- Rosetta Stone check: Mapping added \u2014 music/rhythmic-meter (structural, not rigorous).
+- Rosetta Stone check: Mapping added — music/rhythmic-meter (structural, not rigorous).
 - OCR issues: None significant.

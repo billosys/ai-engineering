@@ -40,11 +40,11 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 
 # Prerequisites
 
-- None \u2014 this is a foundational physical concept
+- None — this is a foundational physical concept
 
 # Key Properties
 
-1. Adding colours decreases brightness \u2014 more pigment = darker, closer to black
+1. Adding colours decreases brightness — more pigment = darker, closer to black
 2. Traditional primaries are red, yellow, blue (artists); professional print uses cyan, magenta, yellow (CMY)
 3. Combining all pigments produces near-black (or in paint, brown)
 4. Pigments work by absorbing (subtracting) light; the reflected remainder is what we see as colour
@@ -52,7 +52,7 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. Physical media \u2014 paint, ink, markers, dyes \u2014 use subtractive mixing
+1. Physical media — paint, ink, markers, dyes — use subtractive mixing
 2. Mixing more colours produces a darker, muddier result
 3. Red + blue = purple; red + yellow = orange (not the result you get from light)
 
@@ -63,18 +63,18 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 
 # Examples
 
-**Example 1** (from source): "The more colors you add to it, the darker it becomes, until we get brown" \u2014 Drasner's description of what happens when mixing many paint colours together, contrasted with white light as the additive complement.
+**Example 1** (from source): "The more colors you add to it, the darker it becomes, until we get brown" — Drasner's description of what happens when mixing many paint colours together, contrasted with white light as the additive complement.
 
 # Relationships
 
 ## Builds Upon
-- **Physics of pigments and light absorption** \u2014 Subtractive mixing reflects how pigment particles selectively absorb wavelengths
+- **Physics of pigments and light absorption** — Subtractive mixing reflects how pigment particles selectively absorb wavelengths
 
 ## Related
-- **CMYK colour model** \u2014 The print industry colour model based on subtractive mixing with cyan, magenta, yellow (and black) inks
+- **CMYK colour model** — The print industry colour model based on subtractive mixing with cyan, magenta, yellow (and black) inks
 
 ## Contrasts With
-- **Additive colour mixing** \u2014 Red + green = yellow (light); red + green in paint = brown (pigment); all colours combined in light = white; all in pigment = near-black
+- **Additive colour mixing** — Red + green = yellow (light); red + green in paint = brown (pigment); all colours combined in light = white; all in pigment = near-black
 
 # Common Errors
 
@@ -88,7 +88,7 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 # Verification Notes
 
 - Definition source: Direct quote from Drasner
-- Confidence rationale: High \u2014 clearly stated in dedicated section
+- Confidence rationale: High — clearly stated in dedicated section
 - Uncertainties: None
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: No mappings added

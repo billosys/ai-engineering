@@ -43,19 +43,19 @@ HSV describes colours with three parameters, as Ottosson defines them: Hue, whic
 
 # Prerequisites
 
-- **RGB colour model** \u2014 HSV is a cylindrical re-parameterisation of RGB
+- **RGB colour model** — HSV is a cylindrical re-parameterisation of RGB
 
 # Key Properties
 
 1. V=0 always yields black regardless of H or S; V=1 and S=1 yields the purest colour for a given hue
 2. The maximum chroma colour for any hue sits on the edge of the colour solid (V=1, S=1), satisfying the "Max Chroma at Edge" design goal
 3. Maps sRGB to a simple cylindrical shape, preventing out-of-gamut values when parameters are adjusted independently
-4. Hue angle has severe perceptual non-uniformity \u2014 equal angular steps do not correspond to equally-perceived hue differences
+4. Hue angle has severe perceptual non-uniformity — equal angular steps do not correspond to equally-perceived hue differences
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the hue angle (0\u2013360 or 0\u20131 normalised)
+1. Identify the hue angle (0–360 or 0–1 normalised)
 2. Set Saturation: 0 = grey axis, 1 = maximum colourfulness for the hue
 3. Set Value: 0 = black, 1 = maximum brightness; the resulting colour is a mixture of the fully-saturated hue and black
 
@@ -77,19 +77,19 @@ HSV describes colours with three parameters, as Ottosson defines them: Hue, whic
 # Relationships
 
 ## Builds Upon
-- **sRGB colour model** \u2014 HSV is a coordinate transformation of sRGB
+- **sRGB colour model** — HSV is a coordinate transformation of sRGB
 
 ## Enables
-- **Okhsv** \u2014 Okhsv was designed as a perceptually-improved replacement for HSV while preserving its cylindrical structure
-- **HWB colour model** \u2014 HSV can be transformed to HWB (hue, whiteness, blackness) form, which is structurally similar to NCS
+- **Okhsv** — Okhsv was designed as a perceptually-improved replacement for HSV while preserving its cylindrical structure
+- **HWB colour model** — HSV can be transformed to HWB (hue, whiteness, blackness) form, which is structurally similar to NCS
 
 ## Related
-- **HSL** \u2014 Sibling model from the same 1978 paper; shares the hue calculation
-- **Natural Colour System (NCS)** \u2014 Ottosson notes "HSV is quite similar to the Natural Color System in its structure"
+- **HSL** — Sibling model from the same 1978 paper; shares the hue calculation
+- **Natural Colour System (NCS)** — Ottosson notes "HSV is quite similar to the Natural Color System in its structure"
 
 ## Contrasts With
-- **Okhsv** \u2014 Okhsv corrects HSV's perceptual distortions using Oklab while maintaining cylindrical geometry
-- **HSL** \u2014 Different lightness axis: HSL places grey at L=50%, S=0; HSV has grey at V=any, S=0
+- **Okhsv** — Okhsv corrects HSV's perceptual distortions using Oklab while maintaining cylindrical geometry
+- **HSL** — Different lightness axis: HSL places grey at L=50%, S=0; HSV has grey at V=any, S=0
 
 # Common Errors
 
@@ -106,12 +106,12 @@ HSV describes colours with three parameters, as Ottosson defines them: Hue, whic
 
 # Source Reference
 
-"HSV" section under "Color spaces for color picking," Okhsv and Okhsl (Bj\u00f6rn Ottosson).
+"HSV" section under "Color spaces for color picking," Okhsv and Okhsl (Björn Ottosson).
 
 # Verification Notes
 
 - Definition source: Direct quotes from Ottosson
-- Confidence rationale: High \u2014 source dedicates a full named section to HSV with properties table
+- Confidence rationale: High — source dedicates a full named section to HSV with properties table
 - Uncertainties: None significant
 - Cross-reference status: Verified within source; no substantial HSV content in Drasner source
 - Rosetta Stone check: No rigorous cross-domain mappings added

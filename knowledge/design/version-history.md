@@ -33,3 +33,7 @@ Normalized ten assigned concept-card frontmatter headers while preserving existi
 Normalized the remaining 223 concept-card frontmatter headers using the
 accepted existing-field mapping while preserving typed metadata and body
 bytes. Exact-revision hosted rendering remains unverified.
+
+## Version 1.0.6 - 2026-10-13
+
+Decoded the 1,062 whitelisted escaped Unicode display tokens in 46 post-card bodies, preserving all frontmatter and all other body bytes. This presentation correction does not assess technical claims or source fidelity.

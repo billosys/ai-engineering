@@ -43,12 +43,12 @@ Ottosson describes NCS as taking "a different approach" to Munsell: "it is desig
 
 # Prerequisites
 
-- None \u2014 NCS is a foundational colour description system
+- None — NCS is a foundational colour description system
 
 # Key Properties
 
 1. Six elementary colours: white, black, yellow, red, green, blue (not the same as RGB primaries)
-2. Any colour is described by its resemblance to these six, expressed as whiteness (w), blackness (s), and chromaticness (c) \u2014 any two of which are sufficient since w + s + c = 1
+2. Any colour is described by its resemblance to these six, expressed as whiteness (w), blackness (s), and chromaticness (c) — any two of which are sufficient since w + s + c = 1
 3. Hue is a circular scale based on similarity to the four chromatic elementaries (Y, R, G, B)
 4. Shape is a swept triangle per hue; this is geometrically simple but does not match the sRGB gamut
 
@@ -65,22 +65,22 @@ Ottosson describes NCS as taking "a different approach" to Munsell: "it is desig
 
 # Examples
 
-**Example 1** (from source): Ottosson's comparison table shows NCS achieves "partial" for Orthogonal Chroma and "yes" for Orthogonal Hue \u2014 better than HSL/HSV on hue, but its gamut does not match sRGB which limits digital applicability.
+**Example 1** (from source): Ottosson's comparison table shows NCS achieves "partial" for Orthogonal Chroma and "yes" for Orthogonal Hue — better than HSL/HSV on hue, but its gamut does not match sRGB which limits digital applicability.
 
 **Example 2** (from source): Ottosson shows an NCS colour picker screenshot from the "Colourpin" app as an example of a real-world non-HSL picker.
 
 # Relationships
 
 ## Builds Upon
-- **Perceptual colour research** \u2014 NCS was derived from experiments on human colour appearance
+- **Perceptual colour research** — NCS was derived from experiments on human colour appearance
 
 ## Related
-- **Munsell colour system** \u2014 Both are perceptual colour ordering systems; NCS uses similarity to elementaries while Munsell uses independent dimensions (Hue, Chroma, Value)
-- **HWB colour model** \u2014 HWB (hue, whiteness, blackness) is structurally similar to NCS but based on RGB rather than perception
+- **Munsell colour system** — Both are perceptual colour ordering systems; NCS uses similarity to elementaries while Munsell uses independent dimensions (Hue, Chroma, Value)
+- **HWB colour model** — HWB (hue, whiteness, blackness) is structurally similar to NCS but based on RGB rather than perception
 
 ## Contrasts With
-- **Munsell colour system** \u2014 "The Munsell Color System... colors are described with three parameters, designed to match the perceived appearance of colors: Hue, Chroma and Value. The parameters are designed to be independent and each have a uniform scale." NCS uses similarity/resemblance framing rather than independent orthogonal parameters.
-- **HSV / HWB** \u2014 NCS is derived from perceptual research; HSV/HWB from a simple RGB transformation
+- **Munsell colour system** — "The Munsell Color System... colors are described with three parameters, designed to match the perceived appearance of colors: Hue, Chroma and Value. The parameters are designed to be independent and each have a uniform scale." NCS uses similarity/resemblance framing rather than independent orthogonal parameters.
+- **HSV / HWB** — NCS is derived from perceptual research; HSV/HWB from a simple RGB transformation
 
 # Common Errors
 
@@ -94,12 +94,12 @@ Ottosson describes NCS as taking "a different approach" to Munsell: "it is desig
 
 # Source Reference
 
-"Color picking before computers" and comparison table, Okhsv and Okhsl (Bj\u00f6rn Ottosson).
+"Color picking before computers" and comparison table, Okhsv and Okhsl (Björn Ottosson).
 
 # Verification Notes
 
 - Definition source: Direct quotes from Ottosson
-- Confidence rationale: Medium \u2014 NCS is described accurately but briefly; no deep technical detail in source
+- Confidence rationale: Medium — NCS is described accurately but briefly; no deep technical detail in source
 - Uncertainties: Source provides overview only; detailed NCS specifications require primary NCS sources
 - Cross-reference status: Not present in Drasner source
 - Rosetta Stone check: No mappings added

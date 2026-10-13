@@ -45,46 +45,46 @@ Drasner explains: "Monitors are made in a few different display modes that chang
 
 # Prerequisites
 
-- **Additive colour mixing** \u2014 Bit depth quantises the continuous additive light values into discrete steps
+- **Additive colour mixing** — Bit depth quantises the continuous additive light values into discrete steps
 
 # Key Properties
 
-1. Bit depth n \u2192 2^n representable values per channel; for 8-bit: 256 values (0\u2013255) per R, G, B channel
-2. 24-bit "True Color" = 8 bits \u00d7 3 channels = 16,777,216 distinct colours
+1. Bit depth n → 2^n representable values per channel; for 8-bit: 256 values (0–255) per R, G, B channel
+2. 24-bit "True Color" = 8 bits × 3 channels = 16,777,216 distinct colours
 3. 32-bit adds an 8-bit alpha channel for transparency, leaving 24 bits for colour
-4. Human vision can distinguish approximately 10,000,000 colours \u2014 24-bit exceeds this threshold
+4. Human vision can distinguish approximately 10,000,000 colours — 24-bit exceeds this threshold
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. CSS rgb() and rgba() values range from 0\u2013255 per channel \u2014 this is the 8-bit range
-2. Hex colour values use two hexadecimal digits per channel (00\u2013FF), representing 256 values = 8 bits
+1. CSS rgb() and rgba() values range from 0–255 per channel — this is the 8-bit range
+2. Hex colour values use two hexadecimal digits per channel (00–FF), representing 256 values = 8 bits
 3. A "1-bit" display is monochrome (two colours: black/white)
 
 # Context & Application
 
 - **Typical contexts**: Display technology specifications, image file formats, CSS colour value ranges
-- **Common applications**: Understanding why RGB values go from 0 to 255; understanding why hex colours have 6 digits (2 per channel \u00d7 3 channels)
+- **Common applications**: Understanding why RGB values go from 0 to 255; understanding why hex colours have 6 digits (2 per channel × 3 channels)
 
 ## Cross-Domain Connections
 
-**Mathematics \u2192 RIGOROUS**: The number of colours at n-bit depth is exactly 2^n. At 24 bits: 2^24 = 16,777,216. Per-channel at 8 bits: 2^8 = 256. This is a direct mathematical identity.
+**Mathematics → RIGOROUS**: The number of colours at n-bit depth is exactly 2^n. At 24 bits: 2^24 = 16,777,216. Per-channel at 8 bits: 2^8 = 256. This is a direct mathematical identity.
 
 # Examples
 
-**Example 1** (from source): "In terms of web color values in an RGB channel, we specify color on a range from 0-255" \u2014 Drasner's description of the 8-bit-per-channel range that underlies CSS rgb() values.
+**Example 1** (from source): "In terms of web color values in an RGB channel, we specify color on a range from 0-255" — Drasner's description of the 8-bit-per-channel range that underlies CSS rgb() values.
 
 # Relationships
 
 ## Builds Upon
-- **Additive colour mixing** \u2014 Bit depth quantises the continuous spectrum of additive light values
+- **Additive colour mixing** — Bit depth quantises the continuous spectrum of additive light values
 
 ## Enables
-- **RGB colour model** \u2014 The 0\u2013255 range in CSS rgb() is the direct expression of 8-bit channels
-- **Hex colour notation** \u2014 Hex uses two hexadecimal digits (00\u2013FF) to represent each 8-bit channel
+- **RGB colour model** — The 0–255 range in CSS rgb() is the direct expression of 8-bit channels
+- **Hex colour notation** — Hex uses two hexadecimal digits (00–FF) to represent each 8-bit channel
 
 ## Related
-- **Alpha channel** \u2014 The extra 8 bits in 32-bit colour are used for transparency
+- **Alpha channel** — The extra 8 bits in 32-bit colour are used for transparency
 
 # Common Errors
 
@@ -103,7 +103,7 @@ Drasner explains: "Monitors are made in a few different display modes that chang
 # Verification Notes
 
 - Definition source: Direct quotes from Drasner
-- Confidence rationale: High \u2014 explicitly defined with specific numbers
+- Confidence rationale: High — explicitly defined with specific numbers
 - Uncertainties: None significant
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: Mathematics/binary-exponentiation added as rigorous

@@ -43,9 +43,9 @@ Responsive type sizing with a modular scale uses scale-derived fixed values as a
 
 # Core Definition
 
-Brown's treatment of responsive design and modular scales is brief \u2014 a single paragraph in the "Where does this fit with how we already work?" section. He does not develop this concept in depth, but establishes that the two approaches are compatible: "Designing with modular scales does not preclude grid-based or responsive design."
+Brown's treatment of responsive design and modular scales is brief — a single paragraph in the "Where does this fit with how we already work?" section. He does not develop this concept in depth, but establishes that the two approaches are compatible: "Designing with modular scales does not preclude grid-based or responsive design."
 
-His specific technical guidance: "When building toward a responsive design reference point\u2014a carefully measured layout for one particular setting\u2014we can use numbers from a modular scale and then convert to percentages as we normally would." This describes a two-step process: (1) design a fixed-width reference layout using scale values; (2) convert those values to percentages for responsiveness.
+His specific technical guidance: "When building toward a responsive design reference point—a carefully measured layout for one particular setting—we can use numbers from a modular scale and then convert to percentages as we normally would." This describes a two-step process: (1) design a fixed-width reference layout using scale values; (2) convert those values to percentages for responsiveness.
 
 He also notes that smaller scale values can serve as grid column widths, and larger values can be divided into columns (with rounding): "Smaller numbers from a scale can be used as a grid's column width; or, a large number from a scale can be divided into columns (rounding the numbers first helps)."
 
@@ -53,23 +53,23 @@ The article predates widespread adoption of fluid type sizing techniques (CSS `c
 
 # Prerequisites
 
-- **Modular scale** \u2014 Must understand the scale before applying it responsively.
-- **Scale application to typographic hierarchy** \u2014 The fixed reference-point layout is the prerequisite for the responsive conversion.
-- **Modular scale construction** \u2014 Must have a constructed scale.
+- **Modular scale** — Must understand the scale before applying it responsively.
+- **Scale application to typographic hierarchy** — The fixed reference-point layout is the prerequisite for the responsive conversion.
+- **Modular scale construction** — Must have a constructed scale.
 
 # Key Properties
 
 1. **Reference-point first**: Design a fully specified fixed layout using scale values before converting to responsive.
 2. **Percentage conversion**: Convert scale-derived pixel values to percentages within their containing context.
 3. **Grid compatibility**: Scale values can serve as column widths for responsive grid systems.
-4. **Not precluded**: Responsive design does not conflict with modular scale design \u2014 they are complementary.
+4. **Not precluded**: Responsive design does not conflict with modular scale design — they are complementary.
 
 # Construction / Recognition
 
 ## To Construct/Create:
 1. Build a fixed reference-point layout using modular scale values (pixel or em values).
 2. Identify the containing context for each element.
-3. Convert each scale-derived pixel value to a percentage: (element width / container width) \u00d7 100.
+3. Convert each scale-derived pixel value to a percentage: (element width / container width) × 100.
 4. Apply the resulting percentages in CSS.
 5. Test across viewport sizes.
 
@@ -84,24 +84,24 @@ The article predates widespread adoption of fluid type sizing techniques (CSS `c
 
 # Examples
 
-**Example 1** (from source, "Where does this fit with how we already work?"): "When building toward a responsive design reference point\u2014a carefully measured layout for one particular setting\u2014we can use numbers from a modular scale and then convert to percentages as we normally would."
+**Example 1** (from source, "Where does this fit with how we already work?"): "When building toward a responsive design reference point—a carefully measured layout for one particular setting—we can use numbers from a modular scale and then convert to percentages as we normally would."
 
 **Example 2** (from source): "Smaller numbers from a scale can be used as a grid's column width; or, a large number from a scale can be divided into columns (rounding the numbers first helps)."
 
 # Relationships
 
 ## Builds Upon
-- **Scale application to typographic hierarchy** \u2014 The fixed-point scale-based layout is the input to the responsive conversion.
-- **Modular scale construction** \u2014 The scale must be built before responsive application.
+- **Scale application to typographic hierarchy** — The fixed-point scale-based layout is the input to the responsive conversion.
+- **Modular scale construction** — The scale must be built before responsive application.
 
 ## Enables
 - (No further concepts in this source.)
 
 ## Related
-- **Scale application to typographic hierarchy** \u2014 Responsive application extends the fixed-layout application.
+- **Scale application to typographic hierarchy** — Responsive application extends the fixed-layout application.
 
 ## Contrasts With
-- **Viewport-based sizing (not in source)** \u2014 Brown does not address viewport-unit or `clamp()`-based fluid type sizing; these are post-2011 techniques.
+- **Viewport-based sizing (not in source)** — Brown does not address viewport-unit or `clamp()`-based fluid type sizing; these are post-2011 techniques.
 
 # Common Errors
 
@@ -115,13 +115,13 @@ The article predates widespread adoption of fluid type sizing techniques (CSS `c
 
 # Source Reference
 
-"Where does this fit with how we already work?" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+"Where does this fit with how we already work?" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
 # Verification Notes
 
 - Definition source: Directly supported by one paragraph in the source; content is thin.
-- Confidence rationale: Low \u2014 the concept is mentioned but not developed. Brown devotes one paragraph to responsive design compatibility; there is no worked example, no specific CSS, and no detailed guidance. Marking as low confidence accordingly, per extraction instructions.
+- Confidence rationale: Low — the concept is mentioned but not developed. Brown devotes one paragraph to responsive design compatibility; there is no worked example, no specific CSS, and no detailed guidance. Marking as low confidence accordingly, per extraction instructions.
 - Uncertainties: The article does not address: fluid type sizing via viewport units; CSS `clamp()` for responsive type; custom property token systems; or multi-breakpoint scale adjustments. These are later developments not present in the 2011 source.
-- Cross-reference status: Verified \u2014 source text directly supports what is claimed; nothing extrapolated beyond the paragraph.
+- Cross-reference status: Verified — source text directly supports what is claimed; nothing extrapolated beyond the paragraph.
 - Rosetta Stone check: No mappings.
 - OCR issues: None significant.

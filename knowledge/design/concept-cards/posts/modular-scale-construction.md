@@ -54,40 +54,40 @@ Modular scale construction is the procedure by which a designer selects a ratio 
 Brown describes the construction process directly: "Making a modular scale is easy. You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers."
 
 The source articulates a multi-step process spanning three phases:
-1. **Input selection** \u2014 choosing base typeface, body text size, ratio, and optionally a second important number.
-2. **Scale generation** \u2014 multiplying and dividing repeatedly to produce the full sequence.
-3. **Application** \u2014 drawing values from the scale for all measurements in the composition (type sizes, widths, margins, line heights).
+1. **Input selection** — choosing base typeface, body text size, ratio, and optionally a second important number.
+2. **Scale generation** — multiplying and dividing repeatedly to produce the full sequence.
+3. **Application** — drawing values from the scale for all measurements in the composition (type sizes, widths, margins, line heights).
 
-Brown also describes a fourth element: **documentation** \u2014 commenting the scale URL and origins in the CSS so others can recreate the decisions.
+Brown also describes a fourth element: **documentation** — commenting the scale URL and origins in the CSS so others can recreate the decisions.
 
 He explicitly endorses improvisation at the application stage: scale values are "educated suggestions," not mandates. Designers may round values, combine values (addition/subtraction of two scale numbers), or break from the scale when a better-looking measurement is found.
 
 # Prerequisites
 
-- **Modular scale** \u2014 Understanding what a modular scale is and why one is being built.
-- **Scale ratio** \u2014 How to select and apply a ratio.
-- **Base unit** \u2014 How to identify and justify the starting number(s).
+- **Modular scale** — Understanding what a modular scale is and why one is being built.
+- **Scale ratio** — How to select and apply a ratio.
+- **Base unit** — How to identify and justify the starting number(s).
 
 # Key Properties
 
-1. **Typeface-first**: Procedure begins by selecting a typeface and finding its optimal body text size \u2014 this is the primary base unit.
+1. **Typeface-first**: Procedure begins by selecting a typeface and finding its optimal body text size — this is the primary base unit.
 2. **Ratio selection precedes generation**: The ratio must be chosen before computation; it is not determined by the output.
 3. **Double-stranded option**: A second important number can be added to merge two geometric sequences, providing more values and filling gaps.
-4. **Iterative application**: Applying scale values to CSS involves trial, testing in browser, and educated selection among values \u2014 not mechanical assignment.
+4. **Iterative application**: Applying scale values to CSS involves trial, testing in browser, and educated selection among values — not mechanical assignment.
 5. **Documentation in CSS**: Best practice includes a stylesheet comment specifying the scale's starting values and ratio (or a URL to the modularscale.com result), enabling the scale to be recreated.
 6. **Permissive improvisation**: The procedure tolerates and endorses deviation when visual judgment overrides mathematical output.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. **Select typeface** \u2014 Choose the body text face before making layout decisions.
-2. **Find optimal body size** \u2014 Test the face at various sizes; find the size at which it looks best ("crisp") for the project's rendering conditions.
-3. **Choose ratio** \u2014 Select a ratio with meaningful cultural, historical, or contextual relevance (e.g., 1:1.618 for Renaissance humanist contexts).
-4. **Identify secondary base (optional)** \u2014 Find a second important number from a key compositional element (large headline, media width, caption size).
-5. **Generate scale** \u2014 Multiply and divide from each base by the ratio to produce ascending and descending sequences. Merge sequences if double-stranded.
-6. **Apply to CSS** \u2014 Use scale values for font sizes, line heights, column widths, margins. Test in browser; select among adjacent scale values when multiple seem plausible.
-7. **Document** \u2014 Add a CSS comment identifying the scale parameters (or linking to the modularscale.com URL).
-8. **Improvise as needed** \u2014 When no scale value looks right, combine values (comment math), round values, or use a non-scale value; document any improvisations.
+1. **Select typeface** — Choose the body text face before making layout decisions.
+2. **Find optimal body size** — Test the face at various sizes; find the size at which it looks best ("crisp") for the project's rendering conditions.
+3. **Choose ratio** — Select a ratio with meaningful cultural, historical, or contextual relevance (e.g., 1:1.618 for Renaissance humanist contexts).
+4. **Identify secondary base (optional)** — Find a second important number from a key compositional element (large headline, media width, caption size).
+5. **Generate scale** — Multiply and divide from each base by the ratio to produce ascending and descending sequences. Merge sequences if double-stranded.
+6. **Apply to CSS** — Use scale values for font sizes, line heights, column widths, margins. Test in browser; select among adjacent scale values when multiple seem plausible.
+7. **Document** — Add a CSS comment identifying the scale parameters (or linking to the modularscale.com URL).
+8. **Improvise as needed** — When no scale value looks right, combine values (comment math), round values, or use a non-scale value; document any improvisations.
 
 ## To Identify/Recognise:
 1. Look for a CSS comment at the top of the stylesheet naming scale parameters.
@@ -102,33 +102,33 @@ He explicitly endorses improvisation at the application stage: scale values are 
 
 ## Cross-Domain Connections
 
-**Mathematics \u2192 RIGOROUS**: Scale construction is the computation of terms in a geometric sequence. Phase 2 (scale generation) is precisely: for i in integers: value = base \u00d7 ratio^i. The procedure is mathematically identical to generating a geometric sequence; only the naming and application context differ.
+**Mathematics → RIGOROUS**: Scale construction is the computation of terms in a geometric sequence. Phase 2 (scale generation) is precisely: for i in integers: value = base × ratio^i. The procedure is mathematically identical to generating a geometric sequence; only the naming and application context differ.
 
 # Examples
 
-**Example 1** (from source, "Modular scales and how they apply to web design" \u2014 simple scale): Starting number 10, ratio 1:1.618. Ascending: 10 \u00d7 1.618 = 16.180; 16.180 \u00d7 1.618 = 26.179; 26.179 \u00d7 1.618 = 42.358. Descending: 10 / 1.618 = 6.180; 6.180 / 1.618 = 3.819; 3.819 / 1.618 = 2.360.
+**Example 1** (from source, "Modular scales and how they apply to web design" — simple scale): Starting number 10, ratio 1:1.618. Ascending: 10 × 1.618 = 16.180; 16.180 × 1.618 = 26.179; 26.179 × 1.618 = 42.358. Descending: 10 / 1.618 = 6.180; 6.180 / 1.618 = 3.819; 3.819 / 1.618 = 2.360.
 
-**Example 2** (from source, "Creating a modular scale for web design" \u2014 full project): (a) Typeface: Minion Pro. (b) Body size: 18px (tested on Web Font Specimen until crisp). (c) Ratio: 1:1.618 (golden ratio, chosen for Renaissance cultural fit). (d) Second base: 190px (h2 headline, tested until it "anchor[s] the composition"). (e) Scale generated at modularscale.com. (f) Values applied: 29.124px (h1), 497.406px (main column), 845.479px (container), 44.856px and 27.723px and 307.420px (margins).
+**Example 2** (from source, "Creating a modular scale for web design" — full project): (a) Typeface: Minion Pro. (b) Body size: 18px (tested on Web Font Specimen until crisp). (c) Ratio: 1:1.618 (golden ratio, chosen for Renaissance cultural fit). (d) Second base: 190px (h2 headline, tested until it "anchor[s] the composition"). (e) Scale generated at modularscale.com. (f) Values applied: 29.124px (h1), 497.406px (main column), 845.479px (container), 44.856px and 27.723px and 307.420px (margins).
 
-**Example 3** (from source, "Applying a modular scale in web design" \u2014 improvisation): Sidebar font-size: 15px, not present in the scale, used because "15px Minion Pro Caption sure looks good next to 18px Minion Pro." Intro paragraph: 21.178px, documented as `27.723 - 6.545` (combining two scale values). Left margin on h2: 20px ("Optical alignment of T stem to left edge of .side"), not from scale, "emerged from the lay of the letterforms."
+**Example 3** (from source, "Applying a modular scale in web design" — improvisation): Sidebar font-size: 15px, not present in the scale, used because "15px Minion Pro Caption sure looks good next to 18px Minion Pro." Intro paragraph: 21.178px, documented as `27.723 - 6.545` (combining two scale values). Left margin on h2: 20px ("Optical alignment of T stem to left edge of .side"), not from scale, "emerged from the lay of the letterforms."
 
 # Relationships
 
 ## Builds Upon
-- **Modular scale** \u2014 Procedure operationalises the concept.
-- **Scale ratio** \u2014 The ratio is the procedure's second required input.
-- **Base unit** \u2014 The base unit is the procedure's first required input.
+- **Modular scale** — Procedure operationalises the concept.
+- **Scale ratio** — The ratio is the procedure's second required input.
+- **Base unit** — The base unit is the procedure's first required input.
 
 ## Enables
-- **Scale application to typographic hierarchy** \u2014 The constructed scale is the prerequisite for applying values to type sizes.
-- **Typographic rhythm via modular scale** \u2014 Consistent proportional spacing depends on having a scale to draw from.
+- **Scale application to typographic hierarchy** — The constructed scale is the prerequisite for applying values to type sizes.
+- **Typographic rhythm via modular scale** — Consistent proportional spacing depends on having a scale to draw from.
 
 ## Related
-- **Ratio selection criteria** \u2014 The procedure depends on ratio selection; the criteria for selecting well are a related concept.
-- **Double-stranded modular scale** \u2014 An extension of the construction procedure using two base values.
+- **Ratio selection criteria** — The procedure depends on ratio selection; the criteria for selecting well are a related concept.
+- **Double-stranded modular scale** — An extension of the construction procedure using two base values.
 
 ## Contrasts With
-- **Grid-first design** \u2014 Starting with a grid and pouring content in; Brown argues this is less web-native than starting with type and building outward.
+- **Grid-first design** — Starting with a grid and pouring content in; Brown argues this is less web-native than starting with type and building outward.
 
 # Common Errors
 
@@ -148,13 +148,13 @@ He explicitly endorses improvisation at the application stage: scale values are 
 
 # Source Reference
 
-"Modular scales and how they apply to web design"; "Creating a modular scale for web design"; "Applying a modular scale in web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+"Modular scales and how they apply to web design"; "Creating a modular scale for web design"; "Applying a modular scale in web design" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
 # Verification Notes
 
 - Definition source: Synthesised from the full procedural account across three sections; individual steps are directly supported by source text.
-- Confidence rationale: High \u2014 the article is primarily a worked example of this procedure, with explicit steps and actual CSS values.
-- Uncertainties: The source does not address what to do when a scale produces unusable values for all steps in a particular range \u2014 whether to change ratio, base, or tolerate improvisation throughout. The improvisation guidance is permissive but not fully systematic.
+- Confidence rationale: High — the article is primarily a worked example of this procedure, with explicit steps and actual CSS values.
+- Uncertainties: The source does not address what to do when a scale produces unusable values for all steps in a particular range — whether to change ratio, base, or tolerate improvisation throughout. The improvisation guidance is permissive but not fully systematic.
 - Cross-reference status: Verified.
-- Rosetta Stone check: Mapping added \u2014 mathematics/geometric-sequence-computation (rigorous).
-- OCR issues: CSS code blocks contain some HTML artifacts (escaped characters, line-break issues in figure captions) \u2014 ignored; article prose is clean.
+- Rosetta Stone check: Mapping added — mathematics/geometric-sequence-computation (rigorous).
+- OCR issues: CSS code blocks contain some HTML artifacts (escaped characters, line-break issues in figure captions) — ignored; article prose is clean.

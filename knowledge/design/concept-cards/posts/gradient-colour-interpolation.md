@@ -56,12 +56,12 @@ She notes gradients "support opacity so we can have some nice effects and layer 
 
 # Prerequisites
 
-- **RGB colour model** \u2014 Intermediate gradient colours are computed by interpolating RGB channel values
-- **Additive colour mixing** \u2014 The interpolation happens in the additive sRGB space
+- **RGB colour model** — Intermediate gradient colours are computed by interpolating RGB channel values
+- **Additive colour mixing** — The interpolation happens in the additive sRGB space
 
 # Key Properties
 
-1. Colour stops specify a colour and an optional position (0%\u2013100% or 0.0\u20131.0)
+1. Colour stops specify a colour and an optional position (0%–100% or 0.0–1.0)
 2. Intermediate colours are computed by linear interpolation between adjacent stops in sRGB
 3. CSS supports `linear-gradient()`, `radial-gradient()`, and `conic-gradient()` as gradient types
 4. Transparency (via rgba() or hsla() stops) is interpolated in the alpha channel independently
@@ -86,35 +86,35 @@ She notes gradients "support opacity so we can have some nice effects and layer 
 
 ## Cross-Domain Connections
 
-**Mathematics \u2192 RIGOROUS**: CSS gradient interpolation between two stops is linear interpolation (lerp): for position t \u2208 [0,1] between stop A and stop B, the computed colour per channel is `A + t*(B - A)`. This is identical to the mathematical definition of lerp applied component-wise to the colour vector.
+**Mathematics → RIGOROUS**: CSS gradient interpolation between two stops is linear interpolation (lerp): for position t ∈ [0,1] between stop A and stop B, the computed colour per channel is `A + t*(B - A)`. This is identical to the mathematical definition of lerp applied component-wise to the colour vector.
 
 # Examples
 
-**Example 1** (from source \u2014 SVG): The `<linearGradient>` with stops from white (opacity 0) at offset 0 to black (opacity 1) at offset 0.3, demonstrating opacity interpolation in an SVG gradient.
+**Example 1** (from source — SVG): The `<linearGradient>` with stops from white (opacity 0) at offset 0 to black (opacity 1) at offset 0.3, demonstrating opacity interpolation in an SVG gradient.
 
-**Example 2** (from source): Drasner references using gradients "as a mask" and combined with animation \u2014 demonstrating gradients as dynamic compositing elements, not just static fills.
+**Example 2** (from source): Drasner references using gradients "as a mask" and combined with animation — demonstrating gradients as dynamic compositing elements, not just static fills.
 
 # Relationships
 
 ## Builds Upon
-- **RGB colour model** \u2014 Interpolation operates on RGB channel values
+- **RGB colour model** — Interpolation operates on RGB channel values
 
 ## Enables
-- **Colour scale design** \u2014 Gradient interpolation is the foundation of continuous colour scales in data visualisation
+- **Colour scale design** — Gradient interpolation is the foundation of continuous colour scales in data visualisation
 
 ## Related
-- **CSS rgba()** \u2014 Used in gradient stops for transparency
-- **feColorMatrix** \u2014 An alternative way to perform colour transformations on gradient-filled SVG elements
+- **CSS rgba()** — Used in gradient stops for transparency
+- **feColorMatrix** — An alternative way to perform colour transformations on gradient-filled SVG elements
 
 # Common Errors
 
 - **Error**: Expecting a gradient between red and green to pass through yellow in the middle.
-  **Correction**: In sRGB interpolation, red (255, 0, 0) to green (0, 255, 0) passes through brown/olive (128, 128, 0) \u2014 not yellow (255, 255, 0). To get a perceptually pleasing rainbow effect, interpolate through hue using multiple stops or use a different colour space (e.g. Oklab interpolation in CSS Color 4).
+  **Correction**: In sRGB interpolation, red (255, 0, 0) to green (0, 255, 0) passes through brown/olive (128, 128, 0) — not yellow (255, 255, 0). To get a perceptually pleasing rainbow effect, interpolate through hue using multiple stops or use a different colour space (e.g. Oklab interpolation in CSS Color 4).
 
 # Common Confusions
 
 - **Confusion**: The "direction" in `linear-gradient` refers to the direction the gradient flows.
-  **Clarification**: `to right` means the gradient flows from left to right \u2014 the first colour stop appears on the left and the last on the right. The direction keyword specifies the ending side/corner, not the starting side.
+  **Clarification**: `to right` means the gradient flows from left to right — the first colour stop appears on the left and the last on the right. The direction keyword specifies the ending side/corner, not the starting side.
 
 # Source Reference
 
@@ -123,7 +123,7 @@ She notes gradients "support opacity so we can have some nice effects and layer 
 # Verification Notes
 
 - Definition source: Direct quotes and code examples from Drasner; interpolation mechanism synthesised from standard CSS knowledge
-- Confidence rationale: Medium \u2014 Drasner covers gradients adequately but does not explain the interpolation mechanism explicitly; the lerp characterisation is synthesised
+- Confidence rationale: Medium — Drasner covers gradients adequately but does not explain the interpolation mechanism explicitly; the lerp characterisation is synthesised
 - Uncertainties: CSS Color 4 gradient interpolation in non-sRGB spaces (Oklab, etc.) is not mentioned in source; this is a significant omission for modern usage
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: Mathematics/lerp mapping added as rigorous

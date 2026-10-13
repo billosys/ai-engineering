@@ -46,11 +46,11 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 
 # Prerequisites
 
-- None \u2014 this is a foundational physical concept
+- None — this is a foundational physical concept
 
 # Key Properties
 
-1. Adding colours increases brightness \u2014 more light = brighter result
+1. Adding colours increases brightness — more light = brighter result
 2. Red + Green + Blue at full intensity = white
 3. In the absence of all light = black (the default background)
 4. The primary colours are Red, Green, Blue (not the red/yellow/blue of paint mixing)
@@ -69,29 +69,29 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 
 ## Cross-Domain Connections
 
-**Mathematics \u2192 STRUCTURAL**: Additive colour mixing corresponds structurally to vector addition. Each colour channel (R, G, B) is a component; combining colours is summing the vectors. This is why RGB is a linear colour space at its base \u2014 before gamma encoding.
+**Mathematics → STRUCTURAL**: Additive colour mixing corresponds structurally to vector addition. Each colour channel (R, G, B) is a component; combining colours is summing the vectors. This is why RGB is a linear colour space at its base — before gamma encoding.
 
 # Examples
 
-**Example 1** (from source): "red and green create yellow" \u2014 Drasner's primary example of additive mixing, contrasted with paint mixing where red and green produce brown.
+**Example 1** (from source): "red and green create yellow" — Drasner's primary example of additive mixing, contrasted with paint mixing where red and green produce brown.
 
-**Example 2** (from source): Monitors as "many combinations of small bits of light combined that resonate to create a myriad of colors" \u2014 each pixel is a small additive mixture of R, G, B sub-pixels.
+**Example 2** (from source): Monitors as "many combinations of small bits of light combined that resonate to create a myriad of colors" — each pixel is a small additive mixture of R, G, B sub-pixels.
 
 # Relationships
 
 ## Builds Upon
-- **Physics of light** \u2014 Additive mixing reflects the physical behaviour of photons
+- **Physics of light** — Additive mixing reflects the physical behaviour of photons
 
 ## Enables
-- **RGB colour model** \u2014 RGB is the direct expression of additive mixing with red, green, blue primaries
-- **Colour bit depth** \u2014 The quantisation of additive light intensities per channel
-- **CSS colour specification** \u2014 All CSS colour formats ultimately resolve to additive RGB values
+- **RGB colour model** — RGB is the direct expression of additive mixing with red, green, blue primaries
+- **Colour bit depth** — The quantisation of additive light intensities per channel
+- **CSS colour specification** — All CSS colour formats ultimately resolve to additive RGB values
 
 ## Related
-- **HSL colour space** \u2014 HSL re-parameterises RGB; it still describes additive light values
+- **HSL colour space** — HSL re-parameterises RGB; it still describes additive light values
 
 ## Contrasts With
-- **Subtractive colour mixing** \u2014 Used by paint, ink, and print; primaries are cyan/magenta/yellow; combining produces darker colours; more colours \u2192 approaches black
+- **Subtractive colour mixing** — Used by paint, ink, and print; primaries are cyan/magenta/yellow; combining produces darker colours; more colours → approaches black
 
 # Common Errors
 
@@ -101,7 +101,7 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 # Common Confusions
 
 - **Confusion**: Monitors use subtractive mixing because they produce colours by "filtering" the backlight.
-  **Clarification**: LCD screens do filter light, but the resulting pixel colour is perceived additively by the eye \u2014 the colour model of the output is still additive RGB.
+  **Clarification**: LCD screens do filter light, but the resulting pixel colour is perceived additively by the eye — the colour model of the output is still additive RGB.
 
 # Source Reference
 
@@ -110,7 +110,7 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 # Verification Notes
 
 - Definition source: Direct quotes from Drasner
-- Confidence rationale: High \u2014 Drasner provides a clear, dedicated section on this concept
+- Confidence rationale: High — Drasner provides a clear, dedicated section on this concept
 - Uncertainties: None significant
 - Cross-reference status: Not discussed in Ottosson source
 - Rosetta Stone check: Mathematics/vector-addition mapping added as structural

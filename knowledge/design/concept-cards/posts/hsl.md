@@ -42,7 +42,7 @@ css_implementation:
 
 # Quick Definition
 
-HSL is a cylindrical colour model that describes colours by three parameters \u2014 Hue (0\u2013360 degrees), Saturation (0\u2013100%), and Lightness (0\u2013100%) \u2014 designed as a more human-readable alternative to RGB.
+HSL is a cylindrical colour model that describes colours by three parameters — Hue (0–360 degrees), Saturation (0–100%), and Lightness (0–100%) — designed as a more human-readable alternative to RGB.
 
 # Core Definition
 
@@ -50,7 +50,7 @@ HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describe
 
 # Prerequisites
 
-- **RGB colour model** \u2014 HSL is a transformation of RGB values to alternative coordinates
+- **RGB colour model** — HSL is a transformation of RGB values to alternative coordinates
 
 # Key Properties
 
@@ -62,13 +62,13 @@ HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describe
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose a Hue angle (0\u2013360): 0/360 = red, 120 = green, 240 = blue
+1. Choose a Hue angle (0–360): 0/360 = red, 120 = green, 240 = blue
 2. Choose Saturation (0% = achromatic grey, 100% = most vivid at this hue/lightness)
 3. Choose Lightness (0% = black, 50% = nominal colour, 100% = white)
 
 ## To Identify/Recognise:
 1. Look for `hsl(H, S%, L%)` or `hsla(H, S%, L%, A)` syntax
-2. Yellow at 50% lightness appears far brighter than blue at 50% lightness \u2014 a sign of HSL's perceptual non-uniformity
+2. Yellow at 50% lightness appears far brighter than blue at 50% lightness — a sign of HSL's perceptual non-uniformity
 
 # Context & Application
 
@@ -77,26 +77,26 @@ HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describe
 
 # Examples
 
-**Example 1** (from source \u2014 Working With Colors Guide): Drasner shows `hsla(150, 50%, 50%, 0.5)` as a canonical usage and a Sass mixin that steps through `hsl(($i - 10)*($color*1.25), ($i - 1)*($color / $color-frequency), 40%)` to generate fruit-loop colour sequences.
+**Example 1** (from source — Working With Colors Guide): Drasner shows `hsla(150, 50%, 50%, 0.5)` as a canonical usage and a Sass mixin that steps through `hsl(($i - 10)*($color*1.25), ($i - 1)*($color / $color-frequency), 40%)` to generate fruit-loop colour sequences.
 
-**Example 2** (from source \u2014 Okhsv and Okhsl): Ottosson illustrates HSL's failure: "colors HSL considers to have the same lightness" includes a bright yellow and a dim blue at equal L values \u2014 a perceptual inconsistency.
+**Example 2** (from source — Okhsv and Okhsl): Ottosson illustrates HSL's failure: "colors HSL considers to have the same lightness" includes a bright yellow and a dim blue at equal L values — a perceptual inconsistency.
 
 # Relationships
 
 ## Builds Upon
-- **sRGB colour model** \u2014 HSL is a transformation of sRGB coordinates
+- **sRGB colour model** — HSL is a transformation of sRGB coordinates
 
 ## Enables
-- **Okhsl** \u2014 Okhsl was built to improve upon HSL's perceptual shortcomings while retaining its cylindrical structure
-- **Generative colour** \u2014 Predictable 0\u2013360 hue cycle enables looping colour sequences
+- **Okhsl** — Okhsl was built to improve upon HSL's perceptual shortcomings while retaining its cylindrical structure
+- **Generative colour** — Predictable 0–360 hue cycle enables looping colour sequences
 
 ## Related
-- **HSV** \u2014 Sibling model from the same 1978 paper; shares the same hue calculation
-- **Munsell colour system** \u2014 HSL's three-channel structure traces conceptually to Munsell
+- **HSV** — Sibling model from the same 1978 paper; shares the same hue calculation
+- **Munsell colour system** — HSL's three-channel structure traces conceptually to Munsell
 
 ## Contrasts With
-- **Okhsl** \u2014 Okhsl corrects HSL's lightness and hue distortions using Oklab
-- **HSV** \u2014 Different arrangement of axes; HSL places white/black at L extremes whereas HSV places white at V=1, S=0
+- **Okhsl** — Okhsl corrects HSL's lightness and hue distortions using Oklab
+- **HSV** — Different arrangement of axes; HSL places white/black at L extremes whereas HSV places white at V=1, S=0
 
 # Common Errors
 
@@ -121,8 +121,8 @@ HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describe
 # Verification Notes
 
 - Definition source: Direct quotes from both Ottosson (perceptual critique) and Drasner (CSS usage)
-- Confidence rationale: High \u2014 both sources discuss HSL explicitly with code examples and comparative analysis
+- Confidence rationale: High — both sources discuss HSL explicitly with code examples and comparative analysis
 - Uncertainties: Drasner's article predates CSS Color 4; some syntax notes may be dated
 - Cross-reference status: Verified across both sources
-- Rosetta Stone check: No mappings added \u2014 no strong cross-domain analogies with rigorous correspondence found for HSL alone (distinct from Okhsl)
+- Rosetta Stone check: No mappings added — no strong cross-domain analogies with rigorous correspondence found for HSL alone (distinct from Okhsl)
 - OCR issues: HTML artifacts present in source; prose content clean

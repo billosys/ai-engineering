@@ -48,15 +48,15 @@ Colour pickers are described by Ottosson as a "common operation in many applicat
 
 # Prerequisites
 
-- **HSL colour space** \u2014 The dominant colour space underlying most current pickers
-- **HSV colour space** \u2014 The other dominant colour space underlying most current pickers
-- **Colour gamut** \u2014 Pickers must confine selections to the target gamut
+- **HSL colour space** — The dominant colour space underlying most current pickers
+- **HSV colour space** — The other dominant colour space underlying most current pickers
+- **Colour gamut** — Pickers must confine selections to the target gamut
 
 # Key Properties
 
 1. The colour space choice determines whether adjusting one axis distorts others perceptually
 2. A simple geometrical shape (cylinder or triangle) keeps all parameters adjustable without producing out-of-gamut colours
-3. Maximum-chroma colours should be easily findable \u2014 ideally at the edge of the colour solid
+3. Maximum-chroma colours should be easily findable — ideally at the edge of the colour solid
 4. The interface should vary smoothly and evenly so that equal UI movements produce equal perceived colour changes
 
 # Construction / Recognition
@@ -68,7 +68,7 @@ Colour pickers are described by Ottosson as a "common operation in many applicat
 4. Optionally expose numeric input fields for precise values
 
 ## To Identify/Recognise:
-1. A colour picker typically shows a two-dimensional gradient field (hue \u00d7 saturation, or saturation \u00d7 value) with a separate hue strip
+1. A colour picker typically shows a two-dimensional gradient field (hue × saturation, or saturation × value) with a separate hue strip
 2. A crosshair or circle marks the selected colour within the field
 
 # Context & Application
@@ -85,17 +85,17 @@ Colour pickers are described by Ottosson as a "common operation in many applicat
 # Relationships
 
 ## Builds Upon
-- **HSL / HSV** \u2014 Foundational colour spaces that nearly all common pickers use
+- **HSL / HSV** — Foundational colour spaces that nearly all common pickers use
 
 ## Enables
-- **Okhsl / Okhsv** \u2014 Purpose-built to be drop-in improvements for HSL/HSV pickers
+- **Okhsl / Okhsv** — Purpose-built to be drop-in improvements for HSL/HSV pickers
 
 ## Related
-- **Colour picker design principles** \u2014 The 8-property framework Ottosson articulates for evaluating picker quality
-- **NCS colour system** \u2014 An alternative pre-digital colour ordering system also used in picker UIs
+- **Colour picker design principles** — The 8-property framework Ottosson articulates for evaluating picker quality
+- **NCS colour system** — An alternative pre-digital colour ordering system also used in picker UIs
 
 ## Contrasts With
-- **Numeric colour input** \u2014 Raw numeric entry (hex, rgb()) lacks the affordance of spatial navigation
+- **Numeric colour input** — Raw numeric entry (hex, rgb()) lacks the affordance of spatial navigation
 
 # Common Errors
 
@@ -109,12 +109,12 @@ Colour pickers are described by Ottosson as a "common operation in many applicat
 
 # Source Reference
 
-"What makes a good color picker?" and "Color picking before computers," Okhsv and Okhsl (Bj\u00f6rn Ottosson).
+"What makes a good color picker?" and "Color picking before computers," Okhsv and Okhsl (Björn Ottosson).
 
 # Verification Notes
 
 - Definition source: Synthesised from Ottosson's framing; Drasner native input mention
-- Confidence rationale: High \u2014 colour picker is the central topic of the Ottosson source
+- Confidence rationale: High — colour picker is the central topic of the Ottosson source
 - Uncertainties: Drasner's article doesn't analyse picker design in depth
 - Cross-reference status: Verified in both sources
 - Rosetta Stone check: No mappings added

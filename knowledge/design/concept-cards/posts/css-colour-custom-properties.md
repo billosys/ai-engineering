@@ -39,7 +39,7 @@ rosetta_stone:
 
 # Quick Definition
 
-CSS custom properties (CSS variables) allow colour values to be defined once, given semantic names, and reused throughout a stylesheet \u2014 enabling systematic colour theming and centralised palette management.
+CSS custom properties (CSS variables) allow colour values to be defined once, given semantic names, and reused throughout a stylesheet — enabling systematic colour theming and centralised palette management.
 
 # Core Definition
 
@@ -68,8 +68,8 @@ She notes the importance of abstract naming: "Abstract naming is sometimes usefu
 
 # Prerequisites
 
-- **RGB / Hex / HSL syntax** \u2014 The values stored in custom properties use these formats
-- **CSS cascade** \u2014 Custom properties inherit through the DOM tree and can be overridden per scope
+- **RGB / Hex / HSL syntax** — The values stored in custom properties use these formats
+- **CSS cascade** — Custom properties inherit through the DOM tree and can be overridden per scope
 
 # Key Properties
 
@@ -97,34 +97,34 @@ She notes the importance of abstract naming: "Abstract naming is sometimes usefu
 
 ## Cross-Domain Connections
 
-**Engineering \u2192 RIGOROUS**: CSS custom properties implement a form of dependency injection through the cascade. A colour value defined at `:root` is "injected" into every element that references it via `var()`. Overriding the custom property on a parent element changes the injected value for the entire subtree, without requiring any change to the leaf components \u2014 identical to how dependency injection enables configuration changes at system boundaries without modifying dependent components.
+**Engineering → RIGOROUS**: CSS custom properties implement a form of dependency injection through the cascade. A colour value defined at `:root` is "injected" into every element that references it via `var()`. Overriding the custom property on a parent element changes the injected value for the entire subtree, without requiring any change to the leaf components — identical to how dependency injection enables configuration changes at system boundaries without modifying dependent components.
 
 # Examples
 
-**Example 1** (from source): The `:root { --brandColor: red; }` / `body { background: var(--brandColor); }` pattern \u2014 the minimal demonstration of CSS custom properties for colour.
+**Example 1** (from source): The `:root { --brandColor: red; }` / `body { background: var(--brandColor); }` pattern — the minimal demonstration of CSS custom properties for colour.
 
-**Example 2** (from source): The Sass map equivalent \u2014 `$colors: (mainBrand: #FA6ACC, ...)` with a `color()` function \u2014 demonstrates the same semantic naming pattern in a preprocessor context.
+**Example 2** (from source): The Sass map equivalent — `$colors: (mainBrand: #FA6ACC, ...)` with a `color()` function — demonstrates the same semantic naming pattern in a preprocessor context.
 
-**Example 3** (from source): `currentColor` \u2014 `div-external { color: orange; }` / `.div-internal { border: 1px solid currentColor; }` \u2014 the inherited colour keyword that propagates the cascade value automatically.
+**Example 3** (from source): `currentColor` — `div-external { color: orange; }` / `.div-internal { border: 1px solid currentColor; }` — the inherited colour keyword that propagates the cascade value automatically.
 
 # Relationships
 
 ## Builds Upon
-- **CSS cascade** \u2014 Custom properties work through the same inheritance and specificity rules as other CSS properties
-- **HSL / hex / RGB syntax** \u2014 These are the value formats stored in custom properties
+- **CSS cascade** — Custom properties work through the same inheritance and specificity rules as other CSS properties
+- **HSL / hex / RGB syntax** — These are the value formats stored in custom properties
 
 ## Enables
-- **Design token systems** \u2014 Custom properties are the native CSS implementation of design tokens
-- **Dark mode theming** \u2014 Override a set of custom properties on a `[data-theme="dark"]` selector
-- **Component colour scoping** \u2014 Override custom properties on a component root to re-theme a subtree
+- **Design token systems** — Custom properties are the native CSS implementation of design tokens
+- **Dark mode theming** — Override a set of custom properties on a `[data-theme="dark"]` selector
+- **Component colour scoping** — Override custom properties on a component root to re-theme a subtree
 
 ## Related
-- **CSS currentColor** \u2014 The cascading colour keyword that further leverages the CSS custom property pattern
+- **CSS currentColor** — The cascading colour keyword that further leverages the CSS custom property pattern
 
 # Common Errors
 
 - **Error**: Naming custom properties with literal colour names (e.g. `--blue: #3B82F6`).
-  **Correction**: Drasner warns: "if you change a variable that was representing a blue color to an orange color, you don't have to go through and rename all of your color values" \u2014 use semantic names (`--color-primary`) or at least scale names (`--color-blue-500`) that don't encode the colour in the name.
+  **Correction**: Drasner warns: "if you change a variable that was representing a blue color to an orange color, you don't have to go through and rename all of your color values" — use semantic names (`--color-primary`) or at least scale names (`--color-blue-500`) that don't encode the colour in the name.
 
 # Common Confusions
 
@@ -138,8 +138,8 @@ She notes the importance of abstract naming: "Abstract naming is sometimes usefu
 # Verification Notes
 
 - Definition source: Direct quotes and code examples from Drasner
-- Confidence rationale: High \u2014 full code examples provided; concept well-defined
-- Uncertainties: Drasner's article notes (in 2016) that CSS variables "haven't made their way into Microsoft browsers" \u2014 this is now resolved; IE11 is the only holdout and is obsolete
+- Confidence rationale: High — full code examples provided; concept well-defined
+- Uncertainties: Drasner's article notes (in 2016) that CSS variables "haven't made their way into Microsoft browsers" — this is now resolved; IE11 is the only holdout and is obsolete
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: Engineering/dependency-injection mapping added as rigorous
 - OCR issues: None significant

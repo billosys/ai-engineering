@@ -36,13 +36,13 @@ css_implementation:
 
 # Quick Definition
 
-Chroma is the perceptual magnitude of a colour's colourfulness, measured as the distance from the neutral (grey) axis in a perceptual colour space \u2014 distinct from saturation, which is relative colourfulness scaled to lightness.
+Chroma is the perceptual magnitude of a colour's colourfulness, measured as the distance from the neutral (grey) axis in a perceptual colour space — distinct from saturation, which is relative colourfulness scaled to lightness.
 
 # Core Definition
 
 The source introduces chroma as the C coordinate in Oklab's polar (LCh) form. Chroma is defined geometrically as:
 
-C = sqrt(a\u00b2 + b\u00b2)
+C = sqrt(a² + b²)
 
 where a and b are the Oklab Cartesian coordinates (red-green and blue-yellow axes respectively). The source links to the Wikipedia definition of chroma (colorfulness) and distinguishes it from saturation implicitly by framing it as an absolute distance in colour space rather than a ratio relative to lightness.
 
@@ -50,8 +50,8 @@ The source's requirements state that a perceptual colour space should "predict l
 
 # Prerequisites
 
-- **Oklab** \u2014 Chroma in this source is defined specifically within Oklab (and LCh polar form).
-- **Perceptual uniformity** \u2014 Chroma's value as a concept depends on the space being perceptually uniform; otherwise equal C steps do not equal equal perceived colourfulness steps.
+- **Oklab** — Chroma in this source is defined specifically within Oklab (and LCh polar form).
+- **Perceptual uniformity** — Chroma's value as a concept depends on the space being perceptually uniform; otherwise equal C steps do not equal equal perceived colourfulness steps.
 
 # Key Properties
 
@@ -65,9 +65,9 @@ The source's requirements state that a perceptual colour space should "predict l
 
 ## To Construct/Create:
 1. Convert a colour to Oklab (L, a, b).
-2. Compute C = sqrt(a\u00b2 + b\u00b2).
+2. Compute C = sqrt(a² + b²).
 3. Optionally compute hue: h = atan2(b, a).
-4. To construct a colour at a specific chroma: set a = C\u00b7cos(h), b = C\u00b7sin(h).
+4. To construct a colour at a specific chroma: set a = C·cos(h), b = C·sin(h).
 
 ## To Identify/Recognise:
 1. Chroma = 0: pure grey (a=0, b=0 at any L).
@@ -88,24 +88,24 @@ The source's requirements state that a perceptual colour space should "predict l
 # Relationships
 
 ## Builds Upon
-- **Oklab** \u2014 Chroma is derived from Oklab's a and b coordinates.
-- **Perceptual uniformity** \u2014 Chroma is only meaningful as a perceptual quantity if the underlying space is uniform.
+- **Oklab** — Chroma is derived from Oklab's a and b coordinates.
+- **Perceptual uniformity** — Chroma is only meaningful as a perceptual quantity if the underlying space is uniform.
 
 ## Enables
-- **Colour interpolation (perceptual)** \u2014 Holding C constant during hue interpolation produces transitions without desaturation artefacts.
-- **Palette design** \u2014 Constant-C, varying-h, varying-L palettes can be systematically designed.
+- **Colour interpolation (perceptual)** — Holding C constant during hue interpolation produces transitions without desaturation artefacts.
+- **Palette design** — Constant-C, varying-h, varying-L palettes can be systematically designed.
 
 ## Related
-- **Lightness (perceptual)** \u2014 Chroma and lightness are orthogonal axes in Oklab; changing one should not appear to change the other.
-- **Hue** \u2014 Chroma and hue together define the chromaticity in LCh polar form.
+- **Lightness (perceptual)** — Chroma and lightness are orthogonal axes in Oklab; changing one should not appear to change the other.
+- **Hue** — Chroma and hue together define the chromaticity in LCh polar form.
 
 ## Contrasts With
-- **Saturation (HSV/HSL)** \u2014 Saturation is relative (chroma/lightness ratio); HSV saturation is not perceptually uniform. The source notes that HSV "does not meet any of the requirements" for perceptual uniformity.
+- **Saturation (HSV/HSL)** — Saturation is relative (chroma/lightness ratio); HSV saturation is not perceptually uniform. The source notes that HSV "does not meet any of the requirements" for perceptual uniformity.
 
 # Common Errors
 
 - **Error**: Using HSV saturation as a proxy for perceptual chroma.
-  **Correction**: HSV saturation is not perceptually uniform \u2014 equal saturation steps in HSV produce very different perceived colourfulness changes. Use Oklab C instead.
+  **Correction**: HSV saturation is not perceptually uniform — equal saturation steps in HSV produce very different perceived colourfulness changes. Use Oklab C instead.
 
 # Common Confusions
 
@@ -118,8 +118,8 @@ The source's requirements state that a perceptual colour space should "predict l
 
 # Verification Notes
 
-- Definition source: Formula C = sqrt(a\u00b2+b\u00b2) is explicit in the source. The distinction from saturation is inferred from the Wikipedia link and the source's consistent use of "chroma" alongside "lightness" and "hue" as orthogonal perceptual attributes.
-- Confidence rationale: High \u2014 formula and context are explicit; the saturation distinction is strongly implied.
+- Definition source: Formula C = sqrt(a²+b²) is explicit in the source. The distinction from saturation is inferred from the Wikipedia link and the source's consistent use of "chroma" alongside "lightness" and "hue" as orthogonal perceptual attributes.
+- Confidence rationale: High — formula and context are explicit; the saturation distinction is strongly implied.
 - Uncertainties: The source does not give an explicit numerical range for C in sRGB colours; the approximate range stated in Key Properties was inferred from the example table values and colour science convention.
 - Cross-reference status: Verified against LCh formula, Munsell discussion, and comparison table.
 - Rosetta Stone check: No rosetta stone mappings.

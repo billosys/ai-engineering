@@ -42,18 +42,18 @@ CSS `mix-blend-mode` composites the colours of overlapping HTML/CSS elements usi
 
 # Core Definition
 
-Drasner explains: "If you've used layer effects in Photoshop, you're probably familiar with mix blend modes... Mix and background blend modes composite two different layered images together, and there are 16 modes available." The terminology: "The top image or color is called the source, and the bottom layer is called the destination. The area between the two is where the blending magic happens and is called the backdrop. We're mixing both according to fairly simple mathematical formulas." She provides the key examples: "the color formulas for the blend modes depend on the type of effect used. For instance, multiply is `destination \u00d7 source = backdrop`. Other effects are variations of simple math using subtraction, multiplication, addition, and division. Linear is `A+B\u22121`, while Color Burn is `1\u2212(1\u2212B)\u00f7A`."
+Drasner explains: "If you've used layer effects in Photoshop, you're probably familiar with mix blend modes... Mix and background blend modes composite two different layered images together, and there are 16 modes available." The terminology: "The top image or color is called the source, and the bottom layer is called the destination. The area between the two is where the blending magic happens and is called the backdrop. We're mixing both according to fairly simple mathematical formulas." She provides the key examples: "the color formulas for the blend modes depend on the type of effect used. For instance, multiply is `destination × source = backdrop`. Other effects are variations of simple math using subtraction, multiplication, addition, and division. Linear is `A+B−1`, while Color Burn is `1−(1−B)÷A`."
 
 # Prerequisites
 
-- **RGB colour model** \u2014 Blend modes operate on normalised RGB channel values (0.0\u20131.0)
-- **Additive colour mixing** \u2014 The multiply mode in particular produces subtractive-like effects from additive components
+- **RGB colour model** — Blend modes operate on normalised RGB channel values (0.0–1.0)
+- **Additive colour mixing** — The multiply mode in particular produces subtractive-like effects from additive components
 
 # Key Properties
 
 1. 16 available blend modes including: normal, multiply, screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, color, luminosity
-2. Multiply: `destination \u00d7 source` \u2014 darkens (analogous to subtractive mixing)
-3. Screen: `1 \u2212 (1\u2212A)(1\u2212B)` \u2014 lightens (analogous to additive mixing)
+2. Multiply: `destination × source` — darkens (analogous to subtractive mixing)
+3. Screen: `1 − (1−A)(1−B)` — lightens (analogous to additive mixing)
 4. Operates per channel in normalised [0,1] space
 
 # Construction / Recognition
@@ -74,24 +74,24 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 
 ## Cross-Domain Connections
 
-**Mathematics \u2192 STRUCTURAL**: Blend mode formulas are pointwise arithmetic operations on colour channel values treated as real numbers in [0,1]. Multiply is exactly f(a,b) = a\u00b7b; Screen is f(a,b) = 1\u2212(1\u2212a)(1\u2212b). These are the same operations as pointwise function multiplication and complement-multiplication in analysis \u2014 the structural mapping is precise, though colour blend modes are defined discretely per pixel.
+**Mathematics → STRUCTURAL**: Blend mode formulas are pointwise arithmetic operations on colour channel values treated as real numbers in [0,1]. Multiply is exactly f(a,b) = a·b; Screen is f(a,b) = 1−(1−a)(1−b). These are the same operations as pointwise function multiplication and complement-multiplication in analysis — the structural mapping is precise, though colour blend modes are defined discretely per pixel.
 
 # Examples
 
-**Example 1** (from source): "multiply is `destination \u00d7 source = backdrop`" \u2014 the canonical blend mode; multiplying a red (1, 0, 0) by a blue (0, 0, 1) produces black (0, 0, 0) because all channels multiply to 0.
+**Example 1** (from source): "multiply is `destination × source = backdrop`" — the canonical blend mode; multiplying a red (1, 0, 0) by a blue (0, 0, 1) produces black (0, 0, 0) because all channels multiply to 0.
 
-**Example 2** (from source): "Color Burn is `1\u2212(1\u2212B)\u00f7A`" \u2014 a more complex formula demonstrating that blend modes can be non-trivial mathematical operations.
+**Example 2** (from source): "Color Burn is `1−(1−B)÷A`" — a more complex formula demonstrating that blend modes can be non-trivial mathematical operations.
 
 # Relationships
 
 ## Builds Upon
-- **RGB colour model** \u2014 Blend modes operate on per-channel float values
+- **RGB colour model** — Blend modes operate on per-channel float values
 
 ## Enables
-- **Complex visual effects** \u2014 Chaining multiple blend modes (as mentioned by Drasner referencing Robin) creates advanced compositing effects
+- **Complex visual effects** — Chaining multiple blend modes (as mentioned by Drasner referencing Robin) creates advanced compositing effects
 
 ## Related
-- **feColorMatrix** \u2014 An SVG filter that provides similar colour manipulation capabilities with matrix operations
+- **feColorMatrix** — An SVG filter that provides similar colour manipulation capabilities with matrix operations
 
 # Common Errors
 
@@ -110,7 +110,7 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 # Verification Notes
 
 - Definition source: Direct quotes from Drasner, including blend mode formulas
-- Confidence rationale: High \u2014 formulas and terminology explicitly provided
+- Confidence rationale: High — formulas and terminology explicitly provided
 - Uncertainties: Drasner notes 16 modes are available but does not list all 16; source coverage is overview-level
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: Mathematics/pointwise-operations mapping added as structural

@@ -54,27 +54,27 @@ css_implementation:
 
 # Quick Definition
 
-Scale application is the process of selecting values from a constructed modular scale and assigning them to CSS measurements \u2014 font sizes, widths, margins, and line heights \u2014 to produce a typographic hierarchy in which all measurements share a common proportional logic.
+Scale application is the process of selecting values from a constructed modular scale and assigning them to CSS measurements — font sizes, widths, margins, and line heights — to produce a typographic hierarchy in which all measurements share a common proportional logic.
 
 # Core Definition
 
 Brown describes the application phase directly: "Having marked up my text, and with my scale at my side, I applied CSS rules to our example, grabbing an exact number from my scale for each decision. Throughout the process, I made educated guesses that built a harmonious composition, one measurement at a time."
 
-The scope of application extends far beyond font sizes alone: "Using a modular scale on the web means choosing numbers from the scale for type sizes, line height, line length, margins, column widths, and more." The scale is applied holistically \u2014 every significant measurement in the composition is drawn from the same proportional sequence.
+The scope of application extends far beyond font sizes alone: "Using a modular scale on the web means choosing numbers from the scale for type sizes, line height, line length, margins, column widths, and more." The scale is applied holistically — every significant measurement in the composition is drawn from the same proportional sequence.
 
 The application process is iterative and visual, not mechanical: "I alternate between CSS editor and browser, checking to see how each value looks... I keep an eye on the overall density of my paragraphs (typographic color) and the readability of the text as a whole."
 
-Brown explicitly endorses improvisation: scale values are "educated suggestions." Designers may round them (22.162 \u2192 22), combine them (3.56 + 16 = 19.56), or use non-scale values when the result looks better ("15px Minion Pro Caption sure looks good next to 18px Minion Pro").
+Brown explicitly endorses improvisation: scale values are "educated suggestions." Designers may round them (22.162 → 22), combine them (3.56 + 16 = 19.56), or use non-scale values when the result looks better ("15px Minion Pro Caption sure looks good next to 18px Minion Pro").
 
 # Prerequisites
 
-- **Modular scale** \u2014 You must have a constructed scale before you can apply it.
-- **Modular scale construction** \u2014 The procedure that produces the scale to be applied.
-- **Scale ratio** \u2014 Understanding the ratio determines what values are available.
+- **Modular scale** — You must have a constructed scale before you can apply it.
+- **Modular scale construction** — The procedure that produces the scale to be applied.
+- **Scale ratio** — Understanding the ratio determines what values are available.
 
 # Key Properties
 
-1. **Holistic scope**: Type sizes, line heights, column widths, and margins all come from the same scale \u2014 not from separate systems.
+1. **Holistic scope**: Type sizes, line heights, column widths, and margins all come from the same scale — not from separate systems.
 2. **Iterative visual testing**: Values are tried, viewed in the browser, and adjusted; visual judgment arbitrates between adjacent scale options.
 3. **Permissive improvisation**: Non-scale values are acceptable when they look better, but should be documented.
 4. **Comment math**: When combining scale values arithmetically, the calculation should be noted in CSS comments (e.g., `font-size: 21.178px; /* 27.723 - 6.545 */`).
@@ -105,41 +105,41 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 
 # Examples
 
-**Example 1 \u2014 Font sizes** (from source, "Applying a modular scale in web design"):
-- `body { font-size: 18px; }` \u2014 scale origin
-- `h1 { font-size: 29.124px; }` \u2014 one step up from 18px \u00d7 1.618
-- `h2 { font-size: 190px; }` \u2014 second scale origin
-- `.side p { font-size: 15px; }` \u2014 improvised (not in scale)
-- `p.intro { font-size: 21.178px; /* 27.723 - 6.545 */ }` \u2014 combined from scale
+**Example 1 — Font sizes** (from source, "Applying a modular scale in web design"):
+- `body { font-size: 18px; }` — scale origin
+- `h1 { font-size: 29.124px; }` — one step up from 18px × 1.618
+- `h2 { font-size: 190px; }` — second scale origin
+- `.side p { font-size: 15px; }` — improvised (not in scale)
+- `p.intro { font-size: 21.178px; /* 27.723 - 6.545 */ }` — combined from scale
 
-**Example 2 \u2014 Column widths** (from source):
-- `.main { width: 497.406px; }` \u2014 scale value chosen after testing "many different numbers"
-- `.group { width: 845.479px; }` \u2014 scale value chosen to fit h2
-- `.side { width: 274px; }` \u2014 derived from resizing image to 190px height (a scale origin)
+**Example 2 — Column widths** (from source):
+- `.main { width: 497.406px; }` — scale value chosen after testing "many different numbers"
+- `.group { width: 845.479px; }` — scale value chosen to fit h2
+- `.side { width: 274px; }` — derived from resizing image to 190px height (a scale origin)
 
-**Example 3 \u2014 Margins** (from source):
-- `h1 { margin: 44.856px 0 0 307.420px; }` \u2014 both values from scale
-- `.side { margin: 27.723px 29.124px 0 0; }` \u2014 both values from scale
-- `h2 { margin-left: 20px; /* Optical alignment */ }` \u2014 improvised, not from scale
+**Example 3 — Margins** (from source):
+- `h1 { margin: 44.856px 0 0 307.420px; }` — both values from scale
+- `.side { margin: 27.723px 29.124px 0 0; }` — both values from scale
+- `h2 { margin-left: 20px; /* Optical alignment */ }` — improvised, not from scale
 
-**Example 4 \u2014 Improvisation** (from source):
+**Example 4 — Improvisation** (from source):
 "Modular scales are a tool, they're not magic. They're not going to work for every measurement, and that's okay. Math is no substitute for an experienced designer's eye, but it can provide both hints and constraints for decision making."
 
 # Relationships
 
 ## Builds Upon
-- **Modular scale** \u2014 Application is the use of the constructed scale.
-- **Modular scale construction** \u2014 The constructed scale is the prerequisite for application.
+- **Modular scale** — Application is the use of the constructed scale.
+- **Modular scale construction** — The constructed scale is the prerequisite for application.
 
 ## Enables
-- **Typographic rhythm via modular scale** \u2014 Consistent spacing and sizing rhythm results from holistic scale application.
+- **Typographic rhythm via modular scale** — Consistent spacing and sizing rhythm results from holistic scale application.
 
 ## Related
-- **Typographic color** \u2014 Brown cites monitoring "typographic color" (density of the text block) as part of the visual testing in application.
-- **Progressive enhancement** \u2014 Fallback CSS strategy is discussed as part of the application practice.
+- **Typographic color** — Brown cites monitoring "typographic color" (density of the text block) as part of the visual testing in application.
+- **Progressive enhancement** — Fallback CSS strategy is discussed as part of the application practice.
 
 ## Contrasts With
-- **Arbitrary measurement** \u2014 "The arbitrary dimensional choices I used to make had nothing to do with my intended designs' underlying meaning. At best, I chose ballpark measurements in CSS, command-tabbed over to my browser, and eyeballed the results."
+- **Arbitrary measurement** — "The arbitrary dimensional choices I used to make had nothing to do with my intended designs' underlying meaning. At best, I chose ballpark measurements in CSS, command-tabbed over to my browser, and eyeballed the results."
 
 # Common Errors
 
@@ -159,13 +159,13 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 
 # Source Reference
 
-"Applying a modular scale in web design" \u2014 More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+"Applying a modular scale in web design" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
 # Verification Notes
 
 - Definition source: Direct quotes and paraphrase from the "Applying a modular scale in web design" section; CSS code blocks extracted directly from the source.
-- Confidence rationale: High \u2014 the section is a detailed worked example with actual CSS values and explicit justification for each decision.
-- Uncertainties: Line-height values (1.54, 1.394) \u2014 it is not entirely clear from the text whether these are drawn from the scale or from visual testing independent of the scale. Brown says he "tried many different numbers for measure and line-height before settling on" these values, which suggests visual testing rather than strict scale derivation.
+- Confidence rationale: High — the section is a detailed worked example with actual CSS values and explicit justification for each decision.
+- Uncertainties: Line-height values (1.54, 1.394) — it is not entirely clear from the text whether these are drawn from the scale or from visual testing independent of the scale. Brown says he "tried many different numbers for measure and line-height before settling on" these values, which suggests visual testing rather than strict scale derivation.
 - Cross-reference status: Verified.
-- Rosetta Stone check: No mappings \u2014 application is a straightforward CSS/design practice without meaningful cross-domain analogues.
+- Rosetta Stone check: No mappings — application is a straightforward CSS/design practice without meaningful cross-domain analogues.
 - OCR issues: CSS code blocks have some HTML formatting artifacts; the actual CSS values are cleanly readable.
