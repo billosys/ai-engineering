@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.55**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.56**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -80,7 +80,7 @@ stay stable; numerical order does not imply a dependency barrier.
 |---|---|---|
 | [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Closed; accepted contract, baseline and explicit source-readiness carryover | Operator composition acceptance at `38b66d0d` |
 | [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Active; apply accepted corrections, remove C&B coupling, review/fix cards and guides, and implement/test the accessibility/typesetting floor | Accepted contract and evidence for each changed claim; originals only for dependent fidelity checks |
-| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Slice01 closed; Slice02 local normalization/preservation accepted, five rows done; hosted gate awaits Operator publication/access | Accepted mapping and pilot before bulk changes; no book-original dependency |
+| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Slice01 closed; Slice02 metadata accepted, hosted checks reveal46 body escape failures; Arc02/Slice09 fixes source | Accepted mapping and pilot before bulk changes; no book-original dependency |
 | Arc04 — package and release readiness (`arc04-guides-and-package`) | Plan near execution; complete routes/snippets, isolated package, final specimens and Project11 handoff | Accepted input revisions for each task; full Arc02/06 completion and Project09 acceptance before release |
 
 **Was:** a separate Arc03 accessibility/typesetting phase and Arc05 final
@@ -117,10 +117,10 @@ revision applicability for both.
    Arc06/Slice01 is independently closed at source `4ccc6f60` / planning
    `9934079a`, all six done; mapping/helper frozen and A06-01 independently done.
    Arc06/Slice02 local work is independently accepted at `b49f4589` / `877cd9d2`,
-   five rows done/one hosted row open. Next handoff is the
-   [Operator publication proposal](arc06-card-metadata-and-rendering/slice02-book-card-metadata/cdc-verification.md#hosted-blocker-and-concrete-operator-handoff),
-   followed by CDC assignment of all233 actual GitHub views. No further metadata
-   implementation prompt is needed; do not count local checks as hosted proof.
+   five rows done/one hosted row open. Was: publication/access was pending. Now:
+   publication at `c4cc7427` is complete; CDC fetched all233 views, with metadata
+   success and46 body escape failures. [Arc02/Slice09](arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cc-prompt.md)
+   directly fixes the bodies and corrects hosted evidence; no extra analysis phase.
 4. Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -242,12 +242,19 @@ Arc06/Slice01 I2 is independently closed at source `4ccc6f60` / planning
 existing-field mapping/helper are accepted. Arc06 A06-01 is independently done;
 six arc rows remain open. Slice02 local223 conversions and233 preservation are independently accepted
 at `b49f4589` / `877cd9d2`, five rows done and hosted S02-05 open. Operator
-publication/access handoff precedes actual GitHub checks. No hosted, semantic
-or whole-arc acceptance yet.
+publication/access handoff is complete. Actual233 metadata views pass;46 body
+views fail due to literal Unicode escapes. Arc02/Slice09 is open for their source
+repair; Slice02/Arc06 rendering and composition remain open. No semantic or
+whole-arc acceptance yet.
 Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
 Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
 
 ## Version History
+
+- 1.56 (2026-10-13): Arc06/Slice02 independent hosted review finds46 body escape
+  defects despite successful metadata rendering. Open immediate Arc02/Slice09
+  source correction under existing ownership; retain all thirteen project gates.
+
 
 - 1.55 (2026-10-13): Arc06/Slice02 local implementation independently accepted;
   five done/one hosted row open. Supply missing Operator publication/access

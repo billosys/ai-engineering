@@ -44,6 +44,7 @@ before each source assignment. Keep all 233 identities and eight live-file owner
 | [Slice06 — colour-pipeline source fixes](slice06-colour-pipeline-source-fixes/slice-plan.md) | Closed at source`3658f79a`/planning`e8076bec`: three corrections shipped, version/history and fresh package checked | Accepted Slice02 proof; fresh exact main pin; no full-corpus wait |
 | [Slice07 — portable identity source fixes](slice07-portable-identity-source-fixes/slice-plan.md) | Closed at source 52f0b520/planning 7a135d80: five criteria done; identity/default removal, usable methods and preserved teaching | Actual fresh-context and full-live/corpus checks remain |
 | [Slice08 — token conventions source fixes](slice08-token-conventions-source-fixes/slice-plan.md) | Closed at source`1489e767`/planning`a900b68a`: seven source corrections,21-action walk, prescribed heading and fresh package independently accepted | Accepted Slice03; fresh source 52f0b520; preserve Slice06/07 corrections |
+| [Slice09 — post-card Unicode presentation](slice09-post-card-unicode-presentation/slice-plan.md) | Open: decode1062 leaked display escapes in46 bodies; preserve metadata and all other content; correct Arc06 hosted evidence in the same return | Published `c4cc7427`; no original-source dependency for this encoding correction |
 | Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
 | Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
 | Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
@@ -111,10 +112,10 @@ its issued prompts and historical evidence are preserved. Slice06 is independent
 closed and its three colour corrections are shipped. Slice07 is independently
 closed after I1 at source 52f0b520/planning 7a135d80: all five child criteria done.
 Slice08 is independently closed at source `1489e767`/planning `a900b68a`: all
-four criteria done. The next active project assignment is Arc06/Slice01 for
-metadata contract and actual source pilot; no new Arc02 assignment is issued.
-Literal body Unicode escapes observed on GitHub remain an Arc02 presentation
-repair to scope with the next relevant content batch, not a metadata-only edit.
+four criteria done. Was: Arc06/Slice01 was the next active assignment. Now: Arc06/Slice02 local
+metadata work is accepted, but actual hosted body checks fail across46 posts.
+The current source assignment is Slice09 for that already-owned presentation
+repair; Arc06/Slice02 stays open for corrected final-revision rendering.
 All corpus/readiness, broader research, actual browser and fresh-context task
 gates remain; no whole-file or full-finding closure follows from these source batches.
 
@@ -127,6 +128,11 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.32 (2026-10-13): Arc06/Slice02 hosted review exposes1062 literal escapes in
+  all46 post bodies. Open direct source-fix Slice09 under existing Arc02 ownership;
+  preserve metadata acceptance, all233/five-dimension and parent gate obligations.
+
 
 - 1.31 (2026-10-12): Close Slice08 after independently checked I1 heading/return;
   next ready project work is Arc06/Slice01. Preserve all ten arc rows, remaining

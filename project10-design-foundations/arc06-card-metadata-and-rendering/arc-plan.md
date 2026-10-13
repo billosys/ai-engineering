@@ -54,7 +54,8 @@ Slice01 is independently closed at `4ccc6f60` / `9934079a`, all six done.
 A06-01 is done after complete mapping/authority review; six arc rows remain open.
 Slice02 local223 normalization and233 preservation are independently accepted
 at `b49f4589` / `877cd9d2`; five child rows done, hosted S02-05 open.
-Next action is Operator publication/access approval, followed by CDC hosted handoff.
+That publication handoff is complete. Current hosted review finds46 body escape
+defects; Arc02/Slice09 repairs them while Arc06 remains open.
 These are the current execution units:
 
 | Unit and retained identifier | Delivery | Gate |
@@ -160,6 +161,18 @@ other arc or project criterion is promoted by the slice close.
 ## Slice02 local review — 2026-10-13
 
 [CDC review/Operator handoff](slice02-book-card-metadata/cdc-verification.md#hosted-blocker-and-concrete-operator-handoff)
-accepts local source preservation. All233 hosted observations remain unperformed;
-remote main contains separate install tooling and needs preserved integration.
+accepts local source preservation. At that earlier review, all233 hosted observations were unperformed;
+remote integration/publication has since completed. See current hosted status below.
 No new CC source repair or next slice is issued while that binding gate is open.
+
+## Current hosted status — 2026-10-13
+
+[Slice02 CDC review](slice02-book-card-metadata/cdc-verification.md#hosted-return-independent-review--2026-10-13)
+fetched all233 published views at `c4cc7427`: metadata renders correctly;46 post
+bodies still show literal Unicode escapes. Was: unavailable hosting. Now: actual
+body correctness fails, with [Arc02/Slice09](../arc02-theory-and-evidence/slice09-post-card-unicode-presentation/slice-plan.md)
+as its existing content-owner repair. The two-slice Arc06 grouping and all seven
+criteria survive. Slice02 remains five done/one open; no arc composition close.
+
+- 1.7 (2026-10-13): Slice02 hosted return reveals falsely passing body escapes;
+  retain whole233 rendering gate and route a direct source correction to Arc02.

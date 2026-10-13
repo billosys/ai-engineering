@@ -27,3 +27,10 @@ No book/web cohort, typed-value/body preservation or hosted-view obligation is d
 A06-01 independently checked across complete233 mapping and authority; done.
 A06-02–07 remain open for all-card normalization, hosted correctness, locator
 composition and attributed arc gate. No automatic whole-arc acceptance.
+
+## Slice02 hosted review — 2026-10-13
+
+All seven criteria/statuses remain unchanged. Actual233 metadata views succeed;
+46 body presentations fail because literal Unicode escapes remain. A06-05/07
+cannot close on CC's source-match checks. Arc02/Slice09 owns correction, then
+actual corrected-revision inspection re-enters Slice02 and arc composition.

@@ -2,7 +2,7 @@
 
 ## Initial return review — 2026-10-13
 
-**Current verdict: five rows done; S02-05 open. Slice02 remains open.**
+**Initial verdict: five rows done; S02-05 open. Slice02 remained open.**
 CDC Sofie independently reviewed separate CC via Operator relay, Two-Contributor
 Workflow, Expedited Mode. Source `b49f4589c4455b4e1121fae7c5a4587d3fbd0ce9` (parent `4ccc6f60`),
 planning `877cd9d288229d198550a4dc41fcfd7a09744e4c` (parent `4b294114`) implement the preserved
@@ -111,3 +111,92 @@ body/locator bridge and owns body/semantic corrections; Arc04 owns final package
 composition and revision applicability. Parent plans receive current status and
 Operator publication handoff. Expedited Mode advances after the binding gate is
 met or an explicit Operator amendment, not by inventing an acceptance.
+
+## Hosted return independent review — 2026-10-13
+
+**Current verdict: five rows done; S02-05 fails and remains open. Slice02 and
+Arc06 remain open.** This supersedes the earlier unpublished-input blocker.
+Reviewed CC return `eac665f569d269b6a913e2f9349ef3e73656781e`, published source
+`c4cc74279ac845003b0c80f55907981241c58a99`, against the preserved initial prompt
+and unchanged six criteria. Separate CDC review; no source repair by CDC.
+
+### Publication and retained evidence
+
+The Operator authorized CC to proceed with publication in the conversation,
+then published both branches after CC's attempted push was rejected by automatic
+approval review. CC records that rejection as historical; it is not an active
+approval request from CDC. Actual publication used a rebase rather than CDC's
+proposed merge. Fresh `git ls-remote` reproduces main `c4cc7427` and planning
+`eac665f5`. Remote install commit `1bbef13e` is an ancestor of main; its Makefile,
+README, install resolver and tests remain exact. Every design/helper byte equals
+the independently accepted `b49f4589` candidate. All233 bridge local records are
+unchanged except the explicit final-revision mapping to published `c4cc742`.
+The hosted return changes exactly the four authorized planning outputs; both
+source/return trailers and `git show --check` pass.
+
+S02-01/02/03/04/06 retain their initial independent evidence at its original
+revision and date: mapping, converter, card/guide contents, roster and local
+results are byte-applicable. The Makefile delta also changes staging cleanup;
+prior Make runs are retained historical results, not relabelled as checks of
+that changed machinery. New source-fix work reruns required Make gates on the
+integrated baseline. This review does not newly accept install tooling.
+
+### Independent hosted observations and F01
+
+CDC fetched all233 exact-revision public GitHub `/blob/c4cc742.../` pages with
+read-only Python urllib requests, independently of CC's downloaded copies.
+All233 ultimately returned HTTP200 at the expected URL, with a complete embedded
+GitHub-rendered article and `richTextTruncated:false`. Achromatic Colour initially
+returned HTTP503; the bounded retry succeeded. The temporary fetch receipt retains
+that failed attempt alongside its final200 result. No view remains unavailable.
+
+CDC inspected the supplied HTML comparison method before using it on these fresh
+responses. Complete233 rendered metadata tables match field order and nested
+values:265 null fields are blank cells without nested tables;483 empty lists
+have empty nested tables. Existing field vocabulary/states and decoded Unicode
+remain visible. Structural body replay reproduces4193 headings,7447 list items,
+one table and seven fenced blocks. These are bounded observations; a matching
+source structure alone does not establish correct presentation.
+
+**F01 — preserved literal Unicode escapes were falsely counted as rendering
+passes.** All46 post-card bodies contain1062 literal `\uXXXX` tokens across23
+characters, and CDC observes those tokens in the body of all46 fresh hosted
+articles. Example: [Matrix Transformation exact GitHub view](https://github.com/billosys/ai-engineering/blob/c4cc74279ac845003b0c80f55907981241c58a99/knowledge/design/concept-cards/posts/matrix-transformation-colour.md)
+displays `3\u00d73` in the definition instead of `3×3`. Its inverse formulas also
+show literal `\u207b\u00b9` instead of `⁻¹`. All233 metadata views pass;46 body
+views fail this explicit correctness check. The other187 have no such defect
+observed in the performed structural/escape checks; this is not semantic review.
+
+The source already contained these defects. Their preservation satisfies the
+metadata-only body rule, but the slice plan explicitly says existing literal
+body escapes cannot be counted as passing a correctness gate. CC's published
+all233-body-pass proposal therefore does not satisfy S02-05. Preserve the original
+proposal by revision and record its correction; do not edit source under Arc06's
+metadata-only authority or silently waive the whole-body obligation.
+
+### Row walk and direct repair handoff
+
+S02-01/02/03/04/06 remain done at their accepted metadata-only scope. S02-05
+remains open: its locator bridge is accepted and hosted access is available,
+but46 body presentation defects need correction and final-revision observation.
+All six IDs and criteria remain unchanged. CC's two supporting artifacts remain
+in their existing home; issued prompts and frozen inventories are protected.
+
+[Arc02/Slice09](../../arc02-theory-and-evidence/slice09-post-card-unicode-presentation/slice-plan.md)
+is the next implementation assignment under the already authorized Arc02 body
+repair and2026-10-12 delivery amendment. It repairs the46 source bodies, preserves
+all metadata, and corrects these hosted observations in the same CC return.
+No separate evidence-only iteration is issued. After independent source review,
+publication/access to the corrected revision and affected exact-view checks
+re-enter S02-05; source publication remains an Operator decision. No new source
+acquisition or semantic theory review is needed for this encoding correction.
+
+### Bubble-up
+
+The metadata capability is delivered and preserved through publication. Full
+GitHub presentation is not yet delivered; F01 has an immediate source-fix owner,
+not a hidden deferral. Arc06 A06-05/07 and project P10-13 remain open; other parent
+rows are not automatically promoted. Arc02 consumes the existing revision/body
+locator bridge and records its intentional body changes separately; metadata-only
+preservation evidence stays historical at `c4cc742`. Arc04 retains final revision,
+package, release and composition checks. No schema or corpus scope changes.

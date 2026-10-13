@@ -245,3 +245,11 @@ open for complete corrected-claim/live-file review. [Slice07](slice07-portable-i
 opens the portable-default removal batch, including adopter-led colour/type
 methods and context-specific examples. A02-09 and all other parent statuses
 remain unchanged; fresh-context identity specimens and final composition remain.
+
+## Slice09 source repair opening — 2026-10-13
+
+[Slice09](slice09-post-card-unicode-presentation/slice-plan.md) delivers the
+already-owned literal body Unicode presentation correction found by Arc06's
+hosted review. Four new child rows start open; all ten parent criterion texts
+and statuses remain unchanged. Mechanical encoding repair is not five-dimension
+semantic review or P10-11 fidelity acceptance. Arc06's hosted gate remains open.

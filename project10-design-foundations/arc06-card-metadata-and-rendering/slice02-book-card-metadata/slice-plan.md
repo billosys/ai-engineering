@@ -138,8 +138,8 @@ committed parent/path/trailer integrity, links/EOF/diff. No install/publication.
 Initial [cc-prompt.md](cc-prompt.md) issued2026-10-13 by this introducing commit,
 planning parent `9934079aecc5a8c9bc2888c9a1b627fb4f3c55ff`. Initial assignment returned source `b49f4589` / planning `877cd9d2`;
 local work independently accepted2026-10-13, five done/one hosted row open.
-Current next action: Operator publication/access decision; no active source
-repair. Local source corrections are accepted; hosted evidence remains pending.
+This local-review handoff is historical. Current next action is Arc02/Slice09
+source presentation repair after the hosted F01 finding; see the current handoff below.
 CDC closes only after all binding rows are satisfied or an explicit Operator
 disposition is recorded.
 
@@ -188,3 +188,25 @@ Review-record checks: exact six planning paths; six criteria unchanged, five
 done/one open; issued prompt, CC artifacts and parent ledgers byte-exact.
 Thirty-eight local destinations/fourteen fragments resolve; EOF/diff checks pass.
 Main unchanged at `b49f4589`; remote tracking refreshed to `1bbef13e` only.
+
+## Hosted review and current handoff — 2026-10-13
+
+Was: publication/access blocked. Now: Operator publication is complete at
+`c4cc7427`; CDC independently fetched all233 exact views. Metadata passes across
+233, but46 post-card bodies display1062 literal Unicode escapes. S02-05 stays
+open under its existing requirement, not by a new criterion or deferred scope.
+[CDC F01](cdc-verification.md#hosted-return-independent-review--2026-10-13)
+supersedes CC's all233-body-pass proposal. Initial prompt remains preserved;
+CC's publication/hosted follow-up returned at `eac665f5` under the Operator's
+conversation approval without a new CDC-issued iteration prompt.
+
+**Current assignment:** [Arc02/Slice09 CC prompt](../../arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cc-prompt.md).
+Body repair belongs to Arc02. That assignment also permits correction of the
+four existing Arc06 CC outputs while retaining local fields and historical
+observations. No active Arc06 source mutation, repeated normalization or extra
+readiness/evidence-only iteration. Publication of the repaired source and actual
+final-revision views remain the re-entry route for this slice; no automatic close.
+
+- 1.4 (2026-10-13): Published hosted review reproduces metadata success but finds
+  literal escapes across46 bodies; retain five done/one open, authorize next
+  already-owned Arc02 presentation repair and correct false rendering passes.
