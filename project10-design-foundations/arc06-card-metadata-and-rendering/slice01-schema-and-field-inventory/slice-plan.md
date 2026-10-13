@@ -16,8 +16,11 @@ the [project plan](../../project-plan.md). CDC Sofie reviews separate CC via
 Operator relay; Two-Contributor Workflow, Expedited Mode. No bulk mutation
 until independent acceptance. The six [ledger criteria](ledger.md) remain binding.
 
-**Current assignment:** initial `cc-prompt.md`, issued by the commit introducing
-this open set, planning predecessor `a900b68a10a0110c453867b827f865a4d8008bb6`. Main input `1489e76730b759f01fb1e839a18b363d8296b610`.
+**Current assignment:** `cc-prompt-iteration01.md`, issued by this introducing
+commit after partial initial acceptance. Main input `fe4e0558`, planning
+predecessor `be623972`; full pins and exact one-helper/three-return scope in I1.
+The initial assignment at `e8718605` remains preserved; its thirteen-source
+write scope is historical and does not authorize I1 card changes.
 The superseded unissued read-only draft is replaced; its complete census,
 crosswalk, preservation, GitHub diagnosis, allocation and return obligations
 are retained in this exercised pilot. Historical preparation notes are unchanged.
@@ -236,3 +239,42 @@ Open-set checks: nine planning writes only, protected inputs/parent ledgers
 unchanged, all13/10/7 parent criteria retained, four Slice08 done/six Slice01 open,
 233 exact identities, ten hashes/eight source identities, 44 local destinations
 and six fragments resolved, LF/EOF and diff checks passed. Main unchanged.
+
+## Assignment history and I1 author readiness
+
+- Initial `cc-prompt.md`, issued `e87186057c4795dfc342f15e06dc8e5a031c9ad2`, returned source `fe4e055885983be6d0b4bbbff1ef201485499aac` / planning `be623972b71f7be1002ed3932743c16a23dadb95`:
+  S01-01/02/03 independently done; S01-04/05/06 open for F01 write-time drift/
+  interrupted-batch handling and F02 sentinel-table accuracy.
+- **Current:** `cc-prompt-iteration01.md`, issued2026-10-12 by this introducing
+  commit, predecessor initial prompt; active separate CC implementation.
+  Only main helper plus existing batch/ledger evidence/closing report change.
+  All ten cards,233 inventory rows, version/history1.0.4 and schema mapping stay
+  exact. I1's delta scope/check applicability supersedes initial source mutation
+  and repeated-build instructions, not the six criteria or any parent obligation.
+
+CDC inspected the actual helper and full raw/typed committed inventory, read
+all233 headers through independent structured projections (not teaching bodies),
+ran actual helper233/ten and positive/eight corruption controls, and reproduced
+write-time losses in disposable tracked repositories containing actual input
+card bytes. The algorithmic decisions for I1 are settled in its concrete recipe.
+A temporary candidate buffer/guard/write-ledger/recovery shape passes conflict,
+second-rename recovery and external-during-recovery witnesses without modifying
+main. Ruby2.6.10/Psych3.1.0 APIs used are installed and exercised. No new schema
+investigation or maintained checker framework. Runtime-private snapshots never
+become card fields or public JSONL data; untouched ownership/path guards remain.
+
+The crosswalk treats structural preservation separately from semantic warrant;
+existing populated nested lists remain preserved and a conformance limitation
+in F02, not an invitation to flatten them. Failure paths account for all own
+writes, condition recovery on current output identity and preserve external work.
+Optimistic checks do not promise a global filesystem transaction. The current
+method leaves failed batches nonzero even when all own outputs recover.
+
+- 1.3 (2026-10-12): Initial return independently accepts three criteria; issue
+  one-helper I1 for reproduced write-time conflict/recovery failure and two
+  inaccurate sentinel-table entries. Preserve six rows, source pilot and parent gates.
+
+I1 open-set checks: six planning paths only; initial prompt/CC reports/inventory
+and all13/seven parent criteria unchanged; six slice criteria preserved with
+three done/three open. Thirty local destinations and six fragments resolve;
+LF/EOF and diff checks pass. Main remains `fe4e0558` with no tracked changes.
