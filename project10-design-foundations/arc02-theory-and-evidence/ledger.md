@@ -260,3 +260,12 @@ semantic review or P10-11 fidelity acceptance. Arc06's hosted gate remains open.
 accepts S09-01/02/03 at source589d7c21 / planninge1e59efe; S09-04 awaits Operator
 acceptance of five prepared evidence strings. All ten parent texts/statuses
 remain unchanged. Source glyph correction is not complete corpus/semantic proof.
+
+## Slice09 closure and hosted handoff — 2026-10-13
+
+[Final Slice09 acceptance](slice09-post-card-unicode-presentation/cdc-verification.md#operator-acceptance-and-slice09-closure--2026-10-13)
+closes all four child rows: source589d7c21 remains independently checked; the
+Operator accepts the five CDC evidence fields at b3aabcdf and authorizes CC's
+normal publication followed by Arc06/Slice02 hosted Iteration01. All ten arc
+criteria/statuses remain unchanged. Source display correction does not establish
+full-corpus semantics, original-source fidelity, browser behavior or arc composition.

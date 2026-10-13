@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.57**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.58**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -80,7 +80,7 @@ stay stable; numerical order does not imply a dependency barrier.
 |---|---|---|
 | [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Closed; accepted contract, baseline and explicit source-readiness carryover | Operator composition acceptance at `38b66d0d` |
 | [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Active; apply accepted corrections, remove C&B coupling, review/fix cards and guides, and implement/test the accessibility/typesetting floor | Accepted contract and evidence for each changed claim; originals only for dependent fidelity checks |
-| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Slice01 closed; Slice02 metadata accepted; Slice09 source repair accepted, evidence/publication gate precedes hosted recheck | Accepted mapping and pilot before bulk changes; no book-original dependency |
+| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Slice01 closed; Slice02 metadata accepted; Slice09 closed after Operator evidence acceptance; CC publication/hosted recheck authorized and pending | Accepted mapping and pilot before bulk changes; no book-original dependency |
 | Arc04 — package and release readiness (`arc04-guides-and-package`) | Plan near execution; complete routes/snippets, isolated package, final specimens and Project11 handoff | Accepted input revisions for each task; full Arc02/06 completion and Project09 acceptance before release |
 
 **Was:** a separate Arc03 accessibility/typesetting phase and Arc05 final
@@ -120,9 +120,11 @@ revision applicability for both.
    five rows done/one hosted row open. Was: publication/access was pending. Now:
    publication at `c4cc7427` is complete; CDC fetched all233 views, with metadata
    success and46 body escape failures. [Arc02/Slice09](arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cc-prompt.md)
-   delivered source589d7c21, independently accepted. Three Slice09 rows are done;
-   five evidence strings prepared by CDC await Operator acceptance alongside
-   publication. Arc06 hosted re-entry is ready; no extra source correction cycle.
+   delivered source589d7c21, independently accepted. Was: one evidence gate open.
+   Now: all four Slice09 rows are done after Operator acceptance of the five CDC
+   evidence strings at b3aabcdf. CC is authorized to normal-push reviewed main/
+   planning through this closure and execute Arc06/Slice02 hosted Iteration01.
+   Actual233 corrected-revision views remain pending; no extra source correction cycle.
 4. Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -253,6 +255,10 @@ Arc04 remains a roadmap entry. P10-01 is done; P10-02–13 open.
 Full-corpus, source-readiness, fresh-context/behavior and release gates remain.
 
 ## Version History
+
+- 1.58 (2026-10-13): Arc02/Slice09 closes after Operator acceptance of the five
+  evidence fields; authorize CC normal publication and resume Arc06/Slice02 hosted
+  Iteration01. No project criterion, full-corpus or release gate is promoted.
 
 - 1.57 (2026-10-13): Arc02/Slice09 source correction independently accepted;
   prepare tiny evidence repair and normal publication for Operator approval, then

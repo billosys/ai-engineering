@@ -1,8 +1,13 @@
 # Arc02 Slice09 independent CDC verification
 
+**Current verdict: Slice09 closed; all four rows done.** Source S09-01/02/03
+remain independently reproduced; the Operator accepted the five CDC-authored
+evidence corrections for S09-04 and authorized CC publication on 2026-10-13.
+See [the final closure](#operator-acceptance-and-slice09-closure--2026-10-13).
+
 ## Initial return review and prepared evidence correction — 2026-10-13
 
-**Current verdict: S09-01/02/03 done; S09-04 open solely for Operator acceptance
+**Historical initial verdict: S09-01/02/03 done; S09-04 open solely for Operator acceptance
 of the five-field CDC-authored evidence repair below. Slice09 remains open.**
 Separate CDC Sofie reviewed CC source `589d7c21bd6c9a415b921b80479822561861fa79`
 (parent `c4cc74279ac845003b0c80f55907981241c58a99`) and planning
@@ -124,3 +129,63 @@ reviewable five-string fix and named Operator gate. No hidden source gap, new
 investigation or semantic acceptance. Slice09 can close immediately after that
 acceptance; Arc06 rendering can resume after publication. Parent plans record this
 current state rather than pretending source delivery proves hosted correctness.
+
+## Operator acceptance and Slice09 closure — 2026-10-13
+
+The Operator replied **“I approve”** to the concrete proposal covering the five
+expected-snippet corrections and CC's normal publication of source
+`589d7c21bd6c9a415b921b80479822561861fa79` and planning review
+`b3aabcdfae209201499c90a598f712814689c275`. This acceptance resolves F01/S09-04;
+CDC records Operator acceptance of its own evidence repair, not independent
+self-verification. The prior pending-gate statements above are historical.
+No further source correction or CC repair iteration is required.
+
+| Row | Final disposition | Accepted evidence |
+|---|---|---|
+| S09-01 | done | Retained independent complete233 scope and exact48 source/seven CC planning-path checks at source589d7c21/returne1e59efe. |
+| S09-02 | done | Retained independent1062/23 token transformation, all233 metadata and187 whole-file preservation,46-row bridge and three negatives. |
+| S09-03 | done | Retained independent owning version/history, Make/version/path gates and8/8 packaged Markdown comparisons at source589d7c21. |
+| S09-04 | done | Independent lineage/failure-history checks plus explicit Operator acceptance of the five expected-display fields at planningb3aabcdf; all six Arc06 criteria retained. |
+
+Applicability: this close changes approval/status/handoff documents only. Main
+remains the exact reviewed source589d7c21; correction bridge, helper, Makefile,
+package inputs and issued prompts remain unchanged. The earlier independent
+checks retain their original execution date and revision; they were not rerun
+or relabelled fresh. Closure checks now cover exact planning scope, criteria and
+statuses, retained input bytes, links, newlines and whitespace. No new hosted
+observation or source/package execution is asserted.
+
+**Artifact inventory and bubble-up.** The sole new Slice09 supporting artifact
+is [artifacts/batch-record.md](artifacts/batch-record.md); the revised Arc06
+records remain in their original artifacts directory. All four opening rows
+close with no deferral/no-op or silent drop. Source presentation is delivered
+locally; publication and complete corrected-revision views have their explicit
+Arc06 owner. Parent plans now record the closed child and the resumed handoff.
+All ten Arc02 criteria and their statuses remain unchanged; full corpus/live
+semantics, fidelity, actual browser/accessibility and release gates remain open.
+
+**Publication and immediate handoff.** CC is authorized to make normal pushes
+of the reviewed source and planning range through this approval/closure record.
+Recheck drift first, preserve unrelated work and use no force; reconcile a
+conflicting range before publication. CDC has not pushed. CC records the actual
+push results, then executes the already-issued
+[Arc06/Slice02 Iteration01](../../arc06-card-metadata-and-rendering/slice02-book-card-metadata/cc-prompt-iteration01.md).
+The prompt itself remains unchanged; its separate Operator-acceptance gate is
+now satisfied. Source publication/access is still pending CC execution. Arc06
+S02-05 remains open for all233 actual exact589d7c21 GitHub views and CDC review;
+local byte checks are not hosted acceptance. No installation/release authority
+or higher-scale acceptance is implied.
+
+**What worked.** Exact body-byte projection isolated presentation repair from
+metadata/semantic changes; preserving prior hosted observations made the five
+small expected-string defects repairable without another source cycle.
+
+### Approval-only closure checks
+
+Passed: exact eleven planning paths; original13 project/10 Arc02/7 Arc06/
+6 Arc06-Slice02/4 Slice09 criteria preserved; Slice09 four done and Arc06
+five done/one open. Issued prompts, expected-snippet bridge and correction
+batch record remain byte-equal to b3aabcdf; main remains589d7c21 with no
+tracked changes.132 local destinations and46 fragments resolve across the
+eleven files; LF/EOF and `git diff --check` pass. Source/package checks were
+retained for their unchanged inputs, not rerun.

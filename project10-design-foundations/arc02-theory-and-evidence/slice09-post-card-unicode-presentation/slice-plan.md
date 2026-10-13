@@ -1,6 +1,6 @@
 ---
 slice: slice09-post-card-unicode-presentation
-status: open
+status: closed
 depends-on: [accepted Arc06 metadata at c4cc7427]
 blocks: [Arc06 Slice02 hosted acceptance]
 ---
@@ -102,7 +102,7 @@ new token or an intentional escape witness; return the specific discrepancy.
 - 1.0 (2026-10-13): Open direct46-card presentation correction after Arc06 hosted
   F01; preserve all metadata, prior results and complete hosted/semantic gates.
 
-## Current review and approval handoff — 2026-10-13
+## Historical review and approval handoff — 2026-10-13
 
 Initial CC source589d7c21 / planninge1e59efe returned and independently reviewed.
 S09-01/02/03 are done; S09-04 remains open only for Operator acceptance of the
@@ -115,3 +115,23 @@ via its new hosted follow-up when this gate/publication is cleared.
 - 1.1 (2026-10-13): Independently accept all source/package work; prepare five
   expected-display string corrections for Operator acceptance and publication.
   Retain four criteria and all hosted/semantic/release obligations; no slice close yet.
+
+## Current closure and handoff — 2026-10-13
+
+Plan revision **1.2**. Was: S09-04 awaited acceptance of five expected-display
+strings prepared by CDC. Now: the Operator's explicit “I approve” accepts those
+fields at planningb3aabcdf and authorizes CC normal publication. All four rows
+are done and Slice09 is closed; see the [final verification](cdc-verification.md#operator-acceptance-and-slice09-closure--2026-10-13).
+The source remains independently accepted589d7c21; initial CC returne1e59efe and
+issuedcc-prompt.md remain preserved. No active Slice09 implementation assignment.
+
+CC rechecks drift and normal-pushes reviewed main and planning through this
+closure, records outcomes, then executes
+[Arc06/Slice02 Iteration01](../../arc06-card-metadata-and-rendering/slice02-book-card-metadata/cc-prompt-iteration01.md).
+Publication has been authorized, not performed by CDC. That read-only hosted
+assignment retains all233 views, historical metadata/body lineage and five done/
+one open Arc06 statuses. All parent semantic/fidelity/behavior/release gates stay.
+
+- 1.2 (2026-10-13): Record Operator acceptance of the five prepared evidence
+  fields; close all four Slice09 criteria and authorize CC's normal publication
+  followed by the already-issued Arc06 hosted follow-up. No source/scope change.

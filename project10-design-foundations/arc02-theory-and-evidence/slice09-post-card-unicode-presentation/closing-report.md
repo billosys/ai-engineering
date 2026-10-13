@@ -1,6 +1,8 @@
 # Arc02 Slice09 — CC closing report
 
-## Proposed disposition
+**Current close:** all four rows done under [CDC review and Operator acceptance](cdc-verification.md#operator-acceptance-and-slice09-closure--2026-10-13). The original CC proposal below is preserved as historical.
+
+## Historical CC proposed disposition
 
 CC completed the source and evidence correction assigned by the initial
 [Slice09 prompt](cc-prompt.md). The exact source commit is `589d7c21bd6c9a415b921b80479822561861fa79`
@@ -77,3 +79,21 @@ completed. Four criteria remain open for CDC, and corrected-revision hosting,
 all-card semantic/fidelity review, browser/accessibility behavior, Arc04 final
 composition and release remain unperformed or open under their named owners.
 No authorized scope was silently dropped.
+
+## CDC/Operator closure addendum — 2026-10-13
+
+CDC retained independently reproduced S09-01/02/03 evidence for source589d7c21
+and CC returne1e59efe. The Operator accepted CDC's five expected-snippet repairs
+at planningb3aabcdf and authorized CC normal publication. S09-04 is now done by
+that attributed acceptance; this is not CDC independent acceptance of its own
+repair. All four rows close, with no criterion change, deferral or silent drop.
+See the [canonical four-row final walk](cdc-verification.md#operator-acceptance-and-slice09-closure--2026-10-13)
+and [closed ledger](ledger.md). Supporting-artifact inventory remains one batch
+record; issued prompts and prior CC findings/limits above are preserved.
+
+Bubble-up: Arc02 records the closed presentation child; Arc06 resumes its
+already-open all233 corrected-revision hosted check. CC owns the authorized
+normal pushes and actual views; neither has been performed by CDC. Source checks
+and package proof remain applicable to unchanged589d7c21; no new Make run or
+hosting success is claimed. Parent full-corpus, fidelity, browser/accessibility,
+composition and release obligations remain open.

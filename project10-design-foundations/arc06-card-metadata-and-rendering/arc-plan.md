@@ -112,7 +112,9 @@ and separate CC via Operator relay; Expedited Mode remains active. Arc02/Slice08
 is independently closed. Arc06/Slice02 initial
 [cc-prompt.md](slice02-book-card-metadata/cc-prompt.md) returned source `b49f4589` /
 planning `877cd9d2`; local work accepted, hosted gate open. Next action is
-Operator publication/access approval, then CDC rendering assignment.
+the current hosted re-entry below. The earlier publication/access proposal
+and source-repair handoff are historical; the issued rendering follow-up resumes
+after CC executes the approved corrected-source publication.
 Slice01 has accepted ten pilots, complete233
 inventory and safe helper; its historical3.2 mapping is frozen for this batch.
 Other Arc02 work and Project08 schema adoption remain distinct/open. Hosted
@@ -179,11 +181,18 @@ criteria survive. Slice02 remains five done/one open; no arc composition close.
 
 ## Slice09 source result and hosted re-entry — 2026-10-13
 
-Arc02/Slice09 source589d7c21 is independently accepted, with a five-string
-CDC evidence repair awaiting Operator acceptance. All233 metadata and187 other
+Was: Arc02/Slice09 had one Operator evidence gate open. Now: Slice09 is closed
+with all four rows done: source589d7c21 independently accepted, five CDC evidence
+fields at b3aabcdf Operator-accepted on2026-10-13. All233 metadata and187 other
 cards are preserved;46 bodies now contain intended glyphs. Arc06 remains open:
-normal publication/access and its actual233-view follow-up still gate rendering.
+CC's normal publication is authorized, with execution pending; its actual233-view
+Iteration01 follow-up still gates rendering. CDC has not pushed or observed that
+corrected revision on GitHub.
 A06-01 remains done; other six parent rows stay open.
 
 - 1.8 (2026-10-13): Record reviewed Slice09 source delivery and gated hosted
   re-entry; no implied publication, corrected-revision view or composition acceptance.
+
+- 1.9 (2026-10-13): Operator accepts the prepared Slice09 evidence repair and
+  authorizes CC publication; child closes, hosted Iteration01 resumes after push.
+  Preserve seven arc criteria/statuses and independent composition obligation.

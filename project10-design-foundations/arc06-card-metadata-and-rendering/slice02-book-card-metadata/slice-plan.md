@@ -200,7 +200,7 @@ supersedes CC's all233-body-pass proposal. Initial prompt remains preserved;
 CC's publication/hosted follow-up returned at `eac665f5` under the Operator's
 conversation approval without a new CDC-issued iteration prompt.
 
-**Current assignment:** [Arc02/Slice09 CC prompt](../../arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cc-prompt.md).
+**Historical source-repair assignment:** [Arc02/Slice09 CC prompt](../../arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cc-prompt.md).
 Body repair belongs to Arc02. That assignment also permits correction of the
 four existing Arc06 CC outputs while retaining local fields and historical
 observations. No active Arc06 source mutation, repeated normalization or extra
@@ -213,14 +213,21 @@ final-revision views remain the re-entry route for this slice; no automatic clos
 
 ## Current hosted follow-up — 2026-10-13
 
-Was: Arc02/Slice09 source repair was active. Now: source589d7c21 is independently
-accepted, and a five-string expected-display evidence repair is prepared for
-Operator acceptance. [Iteration01](cc-prompt-iteration01.md) is the current CC
-hosted assignment, issued by this introducing commit; its execution is held until
-that acceptance and corrected-source publication/access are satisfied. Predecessor
+Was: Arc02/Slice09 source repair was active, then five prepared evidence strings
+awaited Operator acceptance. Now: Slice09 is closed; source589d7c21 remains
+independently accepted and the Operator accepted the five fields at b3aabcdf.
+[Iteration01](cc-prompt-iteration01.md), issued at b3aabcdf, is the current CC
+hosted assignment. The Operator also authorizes CC normal publication of the
+reviewed main/planning range through the Slice09 closure. CC rechecks drift,
+records push results, then executes the read-only all233 check once exact-source
+publication/access succeeds. No force push or extra source mutation is authorized. Predecessor
 is preserved initialcc-prompt.md; intervening Operator-authorized hosted return
 at eac665f5 remains historical. No source mutation or metadata re-normalization.
 
 - 1.5 (2026-10-13): Prepare exact233 corrected-revision hosted follow-up after
   independent source review. Retain evidence repair/publication gates, original
   six criteria and five done/one open; no advance by copied source-match verdict.
+
+- 1.6 (2026-10-13): Record Operator evidence acceptance and separate CC normal-
+  publication authorization after Slice09 closure. The already-issued hosted
+  Iteration01 proceeds after actual source access; five done/one open retained.

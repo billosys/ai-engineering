@@ -212,3 +212,20 @@ No source or hosted status changed in this CDC preparation; c4 records still sho
 46 body failures. [Current hosted prompt](cc-prompt-iteration01.md) is ready but
 gated on that acceptance and corrected-source publication/access. S02-05 stays
 open. Earlier actual c4 hosted checks are retained historical evidence.
+
+## Operator acceptance and resumed hosted assignment — 2026-10-13
+
+The Operator's explicit “I approve” accepts the five expected-display fields
+at b3aabcdf and authorizes CC normal publication of source589d7c21 plus reviewed
+planning through the Slice09 closure. [Slice09 final record](../../arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cdc-verification.md#operator-acceptance-and-slice09-closure--2026-10-13)
+closes all four child rows with source/evidence authority distinguished.
+Earlier pending-approval statements are historical; no new hosted pass is asserted.
+
+CC rechecks drift, makes the approved normal pushes, records actual results and
+runs [the preserved Iteration01](cc-prompt-iteration01.md). Its separate approval
+gate is satisfied; exact-source publication/access still awaits execution.
+S02-01/02/03/04/06 retain historical metadata-only acceptance; S02-05 stays open
+for all233 actual exact589d7c21 GitHub views and independent CDC review. Bridge
+fields, prior observation history, accepted source, package inputs and issued
+prompts are unchanged by this approval-only close. No further source correction,
+new analysis slice, semantic acceptance or Arc06 composition close is claimed.
