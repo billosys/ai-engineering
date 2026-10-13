@@ -204,11 +204,37 @@ module DesignCardMetadata
       'transformed_metadata' => transformed,
       'body_bytes' => body.bytesize,
       'body_sha256' => Digest::SHA256.hexdigest(body),
-      'output' => output
+      'output' => output,
+      '_original_bytes' => original
     }
   end
 
-  def self.atomic_replace(path, bytes)
+  def self.target_path!(record)
+    relative = record.fetch('path')
+    fail!("#{relative}: path is outside the allowed concept-card tree") unless relative.match?(%r{\Aknowledge/design/concept-cards/.+\.md\z})
+    absolute = File.expand_path(relative, ROOT)
+    fail!("#{relative}: path is outside the repository") unless absolute.start_with?(ROOT + File::SEPARATOR)
+    current = ROOT
+    relative.split(File::SEPARATOR).each do |part|
+      current = File.join(current, part)
+      fail!("#{relative}: symlink target is not allowed") if File.symlink?(current)
+    end
+    fail!("#{relative}: target is not a regular file") unless File.file?(absolute)
+    tracked = IO.popen(['git', '-C', ROOT, 'ls-files', '--error-unmatch', '--', relative], 'r', &:read)
+    status = $CHILD_STATUS
+    fail!("#{relative}: target is no longer tracked") unless status&.success? && tracked.lines.map(&:strip) == [relative]
+    absolute
+  end
+
+  def self.ensure_unchanged!(record)
+    path = target_path!(record)
+    observed = Digest::SHA256.hexdigest(File.binread(path))
+    expected = record.fetch('input_sha256')
+    fail!("#{record['path']}: input changed after prevalidation (expected #{expected}, found #{observed})") unless observed == expected
+    path
+  end
+
+  def self.atomic_replace(path, bytes, &before_replace)
     stat = File.stat(path)
     temp = Tempfile.new(['.normalize-design-card-', '.tmp'], File.dirname(path), binmode: true)
     begin
@@ -217,9 +243,136 @@ module DesignCardMetadata
       temp.fsync
       temp.chmod(stat.mode & 0o777)
       temp.close
+      return false if before_replace && !before_replace.call
       File.rename(temp.path, path)
     ensure
       temp.close! rescue nil
+    end
+  end
+
+  def self.recover_written!(record, restored, held, recovery_failed)
+    relative = record.fetch('path')
+    begin
+      absolute = File.expand_path(relative, ROOT)
+      unless absolute.start_with?(ROOT + File::SEPARATOR) && relative.match?(%r{\Aknowledge/design/concept-cards/.+\.md\z})
+        recovery_failed << "#{relative} (path is outside the allowed concept-card tree)"
+        return
+      end
+      current = ROOT
+      relative.split(File::SEPARATOR).each do |part|
+        current = File.join(current, part)
+        if File.symlink?(current)
+          held << "#{relative} (target or parent is now a symlink)"
+          return
+        end
+      end
+      unless File.file?(absolute)
+        held << "#{relative} (target is missing or not a regular file)"
+        return
+      end
+      tracked = IO.popen(['git', '-C', ROOT, 'ls-files', '--error-unmatch', '--', relative], 'r', &:read)
+      status = $CHILD_STATUS
+      unless status&.success? && tracked.lines.map(&:strip) == [relative]
+        recovery_failed << "#{relative} (target is no longer tracked)"
+        return
+      end
+      current_bytes = File.binread(absolute)
+      unless current_bytes == record.fetch('output')
+        held << "#{relative} (current bytes differ from this command's output)"
+        return
+      end
+      hold_reason = nil
+      replaced = atomic_replace(absolute, record.fetch('_original_bytes')) do
+        current_path = ROOT
+        relative.split(File::SEPARATOR).each do |part|
+          current_path = File.join(current_path, part)
+          if File.symlink?(current_path)
+            hold_reason = 'target or parent became a symlink before recovery replacement'
+            break
+          end
+        end
+        if hold_reason
+          false
+        elsif !File.file?(absolute)
+          hold_reason = 'target became missing or non-regular before recovery replacement'
+          false
+        elsif File.binread(absolute) != record.fetch('output')
+          hold_reason = 'current bytes changed before recovery replacement'
+          false
+        else
+          true
+        end
+      end
+      if replaced
+        restored << relative
+      else
+        held << "#{relative} (#{hold_reason || 'recovery replacement was not performed'})"
+      end
+    rescue StandardError => error
+      recovery_failed << "#{relative} (#{error.class}: #{error.message})"
+    end
+  end
+
+  def self.hold_unwritten_drift!(record, held)
+    relative = record.fetch('path')
+    absolute = File.expand_path(relative, ROOT)
+    unless absolute.start_with?(ROOT + File::SEPARATOR) && relative.match?(%r{\Aknowledge/design/concept-cards/.+\.md\z})
+      held << "#{relative} (path is outside the allowed concept-card tree)"
+      return
+    end
+    current = ROOT
+    relative.split(File::SEPARATOR).each do |part|
+      current = File.join(current, part)
+      if File.symlink?(current)
+        held << "#{relative} (target or parent is now a symlink)"
+        return
+      end
+    end
+    unless File.file?(absolute)
+      held << "#{relative} (target is missing or not a regular file)"
+      return
+    end
+    observed = Digest::SHA256.hexdigest(File.binread(absolute))
+    expected = record.fetch('input_sha256')
+    held << "#{relative} (current bytes differ from prevalidated input #{expected}; found #{observed})" unless observed == expected
+  rescue StandardError => error
+    held << "#{relative} (unable to inspect after interruption: #{error.class}: #{error.message})"
+  end
+
+  def self.report_interruption!(written, restored, held, recovery_failed, original_error)
+    warn "normalize-design-card-metadata: batch interrupted by #{original_error.class}: #{original_error.message}"
+    warn "normalize-design-card-metadata: written: #{written.empty? ? 'none' : written.map { |r| r['path'] }.join(', ')}"
+    warn "normalize-design-card-metadata: restored: #{restored.empty? ? 'none' : restored.join(', ')}"
+    warn "normalize-design-card-metadata: held: #{held.empty? ? 'none' : held.join('; ')}"
+    warn "normalize-design-card-metadata: recovery-failed: #{recovery_failed.empty? ? 'none' : recovery_failed.join('; ')}"
+  end
+
+  def self.write_records!(records)
+    written = []
+    begin
+      records.each { |record| ensure_unchanged!(record) }
+      records.each do |record|
+        target = ensure_unchanged!(record)
+        replaced = atomic_replace(target, record.fetch('output')) do
+          ensure_unchanged!(record)
+          true
+        end
+        fail!("#{record['path']}: replacement was not performed") unless replaced
+        written << record
+      end
+    rescue StandardError => original_error
+      restored = []
+      held = []
+      recovery_failed = []
+      written.reverse_each do |record|
+        recover_written!(record, restored, held, recovery_failed)
+      end
+      records.each do |record|
+        hold_unwritten_drift!(record, held) unless written.include?(record) || held.any? { |item| item.start_with?(record['path'] + ' ') }
+      end
+      report_interruption!(written, restored, held, recovery_failed, original_error)
+      records.each { |record| record['_original_bytes'].clear }
+      raise original_error
     end
   end
 end
@@ -240,10 +393,10 @@ if $PROGRAM_NAME == __FILE__
     expanded = paths.map { |path| File.expand_path(path) }
     raise ArgumentError, 'repeated input path' unless expanded.uniq.length == expanded.length
     records = paths.map { |path| DesignCardMetadata.process(path) }
-    if mode == '--write'
-      records.each { |record| DesignCardMetadata.atomic_replace(File.join(DesignCardMetadata::ROOT, record['path']), record['output']) }
-    end
+    DesignCardMetadata.write_records!(records) if mode == '--write'
     records.each do |record|
+      record['_original_bytes'].clear
+      record.delete('_original_bytes')
       record.delete('output')
       puts JSON.generate(record, ascii_only: false)
     end
