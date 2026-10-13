@@ -1,68 +1,52 @@
 # Arc06 Slice02 — CC closing report
 
-**Current state:** CDC independently accepts local work2026-10-13: five rows
-done, S02-05 open for hosted rendering. See [CDC review and Operator handoff](cdc-verification.md#hosted-blocker-and-concrete-operator-handoff).
-The earlier CC proposal below retains its historical dispositions.
-
 ## Disposition
 
-CC implementation and local evidence return are complete for the authorized
-source mutation. This is a proposed handoff for independent CDC review, not
-acceptance or slice closure. The source candidate is
-`b49f4589c4455b4e1121fae7c5a4587d3fbd0ce9`, parent
-`4ccc6f6055743d8e8b53251d7e8852f04d1ed181`. It contains exactly 225 allowed
-paths. The planning return is limited to the four authorized files: this
-report, `ledger.md`, `artifacts/batch-record.md` and
-`artifacts/batch-results.jsonl`.
+CC implementation and hosted evidence collection are complete for the
+authorized source mutation. The Operator pushed `main` and `planning`. The
+published source revision is `c4cc74279ac845003b0c80f55907981241c58a99`, parent
+`1212f111886a6a1609cec3f590021d80a47070eb`. The earlier candidate reviewed by
+CDC, `b49f4589`, was rewritten during rebase; all 225 source path blobs from
+that candidate are byte-identical at `c4cc742`, and the rebased source commit
+changes exactly the same 225 allowed paths.
 
-| Criterion | CC disposition | Evidence and remaining gate |
+CDC's initial independent review accepted S02-01/02/03/04/06 against
+`b49f4589` and planning `877cd9d2`. This return provides CDC follow-up evidence
+for S02-05 at the published revision. CC does not accept or close that row.
+The Slice02 ledger keeps those five rows `done` and S02-05 `open` pending CDC's
+review of the new hosted observations.
+
+| Criterion | Current ledger status | Evidence and remaining gate |
 |---|---|---|
-| S02-01 | Ready for CDC review | Frozen Slice01 contract, 233-row inventory, exact 223/10 split, pinned helper and 225-path write set reconciled before mutation. CDC must independently accept. |
-| S02-02 | Ready for CDC review | Bridge has 233 unique inventory-linked rows: 223 normalized and ten protected pilots across both cohorts. CDC must reproduce membership and dispositions. |
-| S02-03 | Ready for CDC review | Independent typed-value comparison, recursive YAML mapping-key order check and stage-specific 90/16 sentinel deltas recorded. No semantic acceptance is claimed. |
-| S02-04 | Ready for CDC review | All 233 bodies match pinned bytes; all 233 committed outputs are helper-idempotent; identities/source-index statuses and eight corruption controls are recorded. Relationship meaning remains Arc02 work. |
-| S02-05 | Open; blocked on exact-revision hosted access | All 233 views are `unavailable`; one exact GitHub view returned `Cache miss`, and the unpushed local candidate cannot be observed on GitHub. Requires Operator-provided publication/access and CDC inspection of all 233 views. |
-| S02-06 | Ready for CDC review, subject to S02-05 | Exact source and planning scopes, package gates, warnings, interruptions, recovery, artifacts and handoff are accounted. CDC must review the full return. |
+| S02-01 | done | CDC accepted frozen Slice01 contract, 233-row inventory, exact 223/10 split, pinned helper and 225-path write set at `b49f4589`; all 225 assigned source blobs are identical at published `c4cc742`. |
+| S02-02 | done | CDC accepted the complete 233-row inventory-linked disposition union: 223 normalized and ten protected pilots across both cohorts. |
+| S02-03 | done | CDC accepted independent typed-value/mapping-order preservation and exact stage-specific 90/16 sentinel changes. No semantic acceptance is claimed. |
+| S02-04 | done | CDC accepted body/identity preservation, 233-row idempotence and corruption controls. Relationship meaning remains Arc02 work. |
+| S02-05 | open | CC fetched and inspected all 233 exact `c4cc742` GitHub views; HTTP 200, complete rendered article, metadata and body observations are in the bridge. CDC follow-up review remains required. |
+| S02-06 | done | CDC accepted the initial exact-scope return, affected package checks, interruptions, limits and downstream owners. This addendum records the hosted follow-up. |
 
-The bridge SHA-256 is
-`81a2350e5bd03009129a6cb57704068f40f3f5247715129d89a96941d537686e`.
-All six ledger statuses remain `open`; CC does not change status or close the
-slice. Do not issue the next Slice02 iteration while the hosted-rendering gate
-is unavailable. No push, publication, release approval, Arc06 closure, or
-Project10 release claim is included.
+The updated bridge SHA-256 is
+`3b990a637074cf19dfcecd8709e2712ccaefb394d0e85c44b20ed36e34f9041b`. No
+slice closure, semantic/full-conformance review, Arc06 closure, release
+approval or Project10 release claim is included.
 
-## Validation and boundaries
+## Hosted observations and limits
 
-The batch record holds the full intake/readback, prewrite reconciliation,
-interrupted-write accounting, independent validation, negative controls,
-package checks, accepted warnings and access blocker. The result bridge binds
-every card to its inventory row and revisions, stores complete after-state
-typed metadata and body locator/hash evidence, and records hosted availability
-per path. Local checks passed for all 233 rows. The source commit changes only
-the 223 selected cards plus the paired design skill version/history update.
+All 233 exact-revision GitHub `/blob/` pages at `c4cc742` returned HTTP 200
+with complete, untruncated rendered articles. Each bridge row contains the
+exact URL, response and rendered-article hashes/sizes, per-card metadata
+observations, and visible body structure.
 
-The fresh design ZIP contains eight Markdown members byte-identical to the
-committed source; its SHA-256 and size are in the batch record. `make
-check-package-paths` returned zero hard failures but reported 596 warnings
-across 594 locations, three explicit exceptions and 681 skipped external URLs;
-detailed warning rows were hidden, and parser-suppressed material was omitted
-by that parser. These warnings remain visible in the evidence and were not
-recast as a zero-warning result.
+The displayed metadata fields match each card's present typed mapping in key
+order; the 22-name corpus vocabulary is preserved without adding absent keys.
+Nested keys and values, list members/order, Unicode and scalar values match.
+Nulls display as blank cells without nested tables; empty lists display as
+empty nested tables. Headings, lists, the comparison table, inline/fenced code
+and heading permalink labels were compared with the committed source. These
+are actual hosted rendering checks, not semantic/source-fidelity or
+full-corpus conformance acceptance. CDC must independently review S02-05.
 
-The only hosted request attempted was an exact-revision GitHub file view for
-`achromatic-colour.md`; it returned `Cache miss` with no content. Since the
-candidate has not been published and this slice does not authorize publication,
-all 233 hosted observations remain unavailable. The exact-revision hosted gate
-must be resumed after the Operator supplies access or publishes the candidate,
-then CDC reviews every recorded file view. Arc02 retains semantic/source-
-fidelity and body-rendering questions. Arc04 retains release/package
+The batch record preserves the earlier blocked state, the Operator's
+publication/rebase handoff and the subsequent 233-page hosted review. Arc02
+retains semantic/source-fidelity questions; Arc04 retains release/package
 acceptance. No other project or arc status is changed.
-
-## CDC local acceptance and next action — 2026-10-13
-
-S02-01/02/03/04/06 done at source `b49f4589` / planning `877cd9d2` by the
-independent record. S02-05 open; Slice02 is not closed. No additional metadata
-repair is assigned. Operator owns publication/access approval; CDC has prepared
-an uncommitted, conflict-free integration preserving reviewed design bytes and
-remote install tooling. After publication CDC issues the hosted-check follow-up.
-No push, release, installation, deferral or parent acceptance has occurred.

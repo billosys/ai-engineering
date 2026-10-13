@@ -180,3 +180,55 @@ views. Until then S02-05 remains open. Arc02 retains semantic/source-fidelity
 and existing body rendering defects; Arc04 retains release/package acceptance.
 No full-conformance or Project10 release conclusion follows from this local
 mechanical correction.
+
+## Postpublication exact-revision hosted inspection
+
+The Operator pushed both branches after the initial local return. The observed
+local tracking refs are `main` = `origin/main` at
+`c4cc74279ac845003b0c80f55907981241c58a99` and `planning` = `origin/planning`
+at `6f054a1dc8c9a69a734c656b27d6b58f56805e32`. An initial local push attempt was rejected by automatic approval review because it would have published the full nine-commit main range; no push occurred in that attempt. The Operator then pushed both branches. The source candidate was
+rebased onto the then-current main history: the final Slice02 commit is
+`c4cc74279ac845003b0c80f55907981241c58a99`, parent
+`1212f111886a6a1609cec3f590021d80a47070eb`, with exactly 225 changed paths
+(the 223 selected cards and the paired design skill entrypoint/history).
+The earlier local candidate `b49f4589` was rewritten by that rebase. All 225
+source path blobs from that candidate are byte-identical at `c4cc742`, including
+all 233 card blobs; the 225-path commit diff contains no path outside the
+authorized source set.
+
+The first exact-page attempt through the web viewer still returned `Cache
+miss`. I then fetched the actual public GitHub `/blob/c4cc742.../<path>` pages
+read-only. All 233 exact-revision URLs returned HTTP 200, redirected to the
+same exact-revision URL, and contained the complete embedded rendered article
+with `richTextTruncated: false`. The per-row bridge records the exact URL,
+HTTP result, downloaded HTML SHA-256/size and rendered-article SHA-256/size.
+No row is unavailable, failed or unrun. The final bridge SHA-256 is
+`3b990a637074cf19dfcecd8709e2712ccaefb394d0e85c44b20ed36e34f9041b`.
+
+The hosted metadata table was checked against all 233 after-state typed
+mappings. Every field present on a card appears in inventory key order; the corpus-wide
+22-name root-field vocabulary matches the inventory, with no absent field
+invented. Nested mapping keys and values, list members/order, Unicode and
+scalar values match.
+Across the corpus, 265 null fields render as blank cells without a nested
+table, while 483 empty lists render as empty nested tables; the hosted view
+therefore retains a visible distinction between those states. No missing or
+mismatched rendered metadata value was found.
+
+The rendered Markdown body was checked against the exact committed source
+bytes. Across 233 views, all 4,193 heading texts and their order match, as do
+7,447 list items. The one Markdown comparison table renders with the same
+header and three data rows, all eight cells per row. Seven fenced code blocks
+and 337 inline code spans display the exact source text. All 4,193 GitHub
+heading permalink labels match their heading text; there are no authored
+inline Markdown links in these card bodies. Every page's article was
+untruncated. This is an actual hosted rendering check and structural
+preservation result, not semantic/source-fidelity review or full-corpus
+conformance acceptance.
+
+The earlier hosted-unavailable statements above record the state before the
+Operator's push and are superseded by this exact-revision inspection. CDC's initial review has accepted S02-01/02/03/04/06 at `b49f4589` and planning
+`877cd9d2`. This hosted addendum is ready for CDC follow-up on S02-05 at
+`c4cc742`; that row remains open until CDC reviews the new exact-revision
+evidence. Semantic/source-fidelity questions remain with Arc02; Arc04 retains
+release/package acceptance. No parent release or Project10 closure follows.
