@@ -1,66 +1,53 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Tonal Value
-slug: tonal-value
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: brightness
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Tonal Value"
+slug: "tonal-value"
+category: "visual-elements"
+subcategory: "brightness"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VI. Light"
 chapter_number: 6
 pdf_page: 356
 section: "Relative Brightness"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - brightness value
-  - lightness value
-  - value
-  - light-dark range
-
-# === TYPED RELATIONSHIPS ===
+  - "brightness value"
+  - "lightness value"
+  - "value"
+  - "light-dark range"
 prerequisites: []
 extends: []
 related:
-  - brightness-constancy
-  - chiaroscuro
-  - tonal-contrast
-  - luminosity
-  - hue
-  - saturation
+  - "brightness-constancy"
+  - "chiaroscuro"
+  - "tonal-contrast"
+  - "luminosity"
+  - "hue"
+  - "saturation"
 contrasts_with:
-  - hue
-  - saturation
-
-# === COMPETENCY QUESTIONS ===
+  - "hue"
+  - "saturation"
 answers_questions:
   - "What is the difference between hue, saturation/chroma, and lightness/value?"
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Ordinal scale / linear range"
-    rating: structural
+    rating: "structural"
     note: "Value is an ordered one-dimensional scale from black to white, analogous to a bounded ordinal dimension in measurement theory."
-
 css_implementation:
-  - property: "lightness (in hsl/oklch)"
+  -
+    property: "lightness (in hsl/oklch)"
     example: "color: oklch(0.75 0.1 270);"
-    support: baseline
-  - property: "filter: brightness()"
+    support: "baseline"
+  -
+    property: "filter: brightness()"
     example: "filter: brightness(1.5);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

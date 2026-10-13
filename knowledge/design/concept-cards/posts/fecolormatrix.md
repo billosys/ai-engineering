@@ -1,35 +1,38 @@
 ---
-concept: feColorMatrix (SVG Filter)
-slug: fecolormatrix
-category: colour-theory
-subcategory: colour-effects
-tier: intermediate
-layer: 3-implementation
+concept: "feColorMatrix (SVG Filter)"
+slug: "fecolormatrix"
+category: "colour-theory"
+subcategory: "colour-effects"
+tier: "intermediate"
+layer: "3-implementation"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Other Nice Color Effects / feColorMatrix"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
+extraction_confidence: "medium"
 aliases:
-  - ["feColorMatrix SVG", "SVG color matrix filter", "SVG feColorMatrix"]
+  -
+    - "feColorMatrix SVG"
+    - "SVG color matrix filter"
+    - "SVG feColorMatrix"
 prerequisites:
-  - rgb-colour-model
-  - css-rgba
-extends:
-  - []
+  - "rgb-colour-model"
+  - "css-rgba"
+extends: []
 related:
-  - mix-blend-mode
+  - "mix-blend-mode"
 contrasts_with:
-  - mix-blend-mode
+  - "mix-blend-mode"
 answers_questions: []
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Matrix multiplication / linear transformation"
-    rating: rigorous
-    note: "feColorMatrix applies a 5\u00d74 matrix to each pixel's RGBA colour vector [R, G, B, A, 1]. The operation is literal matrix-vector multiplication: the output colour is the matrix product of the input colour vector and the transformation matrix."
+    rating: "rigorous"
+    note: "feColorMatrix applies a 5×4 matrix to each pixel's RGBA colour vector [R, G, B, A, 1]. The operation is literal matrix-vector multiplication: the output colour is the matrix product of the input colour vector and the transformation matrix."
 ---
 
 # Quick Definition

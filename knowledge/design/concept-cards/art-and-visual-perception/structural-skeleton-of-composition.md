@@ -1,74 +1,62 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Structural Skeleton of Composition
-slug: structural-skeleton-of-composition
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: compositional structure
-tier: foundational
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Structural Skeleton of Composition"
+slug: "structural-skeleton-of-composition"
+category: "design-principles"
+subcategory: "compositional structure"
+tier: "foundational"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "The Hidden Structure of a Square"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - hidden structure
-  - compositional skeleton
-  - structural framework
-  - balance skeleton
-
-# === TYPED RELATIONSHIPS ===
+  - "hidden structure"
+  - "compositional skeleton"
+  - "structural framework"
+  - "balance skeleton"
 prerequisites:
-  - gestalt-theory-in-art
-  - visual-forces
-extends:
-  []
+  - "gestalt-theory-in-art"
+  - "visual-forces"
+extends: []
 related:
-  - visual-balance
-  - visual-weight
-  - weight-by-location
-  - directed-tension
+  - "visual-balance"
+  - "visual-weight"
+  - "weight-by-location"
+  - "directed-tension"
 contrasts_with:
-  - physically-visible-elements
-
-# === COMPETENCY QUESTIONS ===
+  - "physically-visible-elements"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Coordinate system / reference frame"
-    rating: structural
+    rating: "structural"
     note: "The structural skeleton functions as a perceptual coordinate system — it defines the reference frame within which the position and tension of every element is measured, just as a mathematical coordinate system defines where points are located relative to axes and origin."
-  - domain: music
+  -
+    domain: "music"
     concept: "Musical scale / tonal key"
-    rating: structural
+    rating: "structural"
     note: "Arnheim explicitly compares the structural skeleton to a musical scale: 'a skeleton that helps determine the role of each pictorial element within the balance system of the whole; it serves as a frame of reference, just as a musical scale defines the pitch value of each tone in a composition.'"
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Grid system / layout grid"
-    rating: rigorous
+    rating: "rigorous"
     note: "The invisible structural skeleton in visual composition is the perceptual equivalent of the designer's layout grid — both are invisible organisational frameworks that determine where elements can be placed for stability and order."
-
 css_implementation:
-  - property: "CSS Grid"
+  -
+    property: "CSS Grid"
     example: "display: grid; grid-template-columns: repeat(12, 1fr); /* establishes a visible structural skeleton */"
-    support: baseline
-  - property: "CSS custom properties for layout anchors"
+    support: "baseline"
+  -
+    property: "CSS custom properties for layout anchors"
     example: "--center-x: 50%; --axis-h: 50%; /* explicit structural skeleton tokens */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

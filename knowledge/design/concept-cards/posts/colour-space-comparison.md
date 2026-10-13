@@ -1,44 +1,44 @@
 ---
-concept: Colour Space Comparison (Oklab vs CIELAB vs HSL)
-slug: colour-space-comparison
-category: colour-theory
-subcategory: perceptual colour models
-tier: advanced
-layer: 2-domain
+concept: "Colour Space Comparison (Oklab vs CIELAB vs HSL)"
+slug: "colour-space-comparison"
+category: "colour-theory"
+subcategory: "perceptual colour models"
+tier: "advanced"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "What about existing models?"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
-aliases:
-  - []
+extraction_confidence: "high"
+aliases: []
 prerequisites:
-  - perceptual-uniformity
-  - oklab
-  - colour-space
-  - chroma-perceptual
-  - lightness-perceptual
+  - "perceptual-uniformity"
+  - "oklab"
+  - "colour-space"
+  - "chroma-perceptual"
+  - "lightness-perceptual"
 extends:
-  - perceptual-uniformity
+  - "perceptual-uniformity"
 related:
-  - colour-interpolation-perceptual
-  - gamut-srgb
-contrasts_with:
-  - []
+  - "colour-interpolation-perceptual"
+  - "gamut-srgb"
+contrasts_with: []
 answers_questions:
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
   - "How do you construct a palette that changes lightness uniformly across hues?"
 rosetta_stone: []
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "color: oklab(0.7 0.1 -0.08);"
-    support: baseline
-  - property: "color"
+    support: "baseline"
+  -
+    property: "color"
     example: "color: hsl(200deg 50% 60%);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

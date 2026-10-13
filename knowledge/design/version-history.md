@@ -27,3 +27,9 @@ Scoped token-convention corrections distinguish DTCG interchange and value types
 ## Version 1.0.4 - 2026-10-12
 
 Normalized ten assigned concept-card frontmatter headers while preserving existing typed metadata, nested extension values, and body bytes.
+
+## Version 1.0.5 - 2026-10-13
+
+Normalized the remaining 223 concept-card frontmatter headers using the
+accepted existing-field mapping while preserving typed metadata and body
+bytes. Exact-revision hosted rendering remains unverified.

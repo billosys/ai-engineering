@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: First-Line Indent
-slug: first-line-indent
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: layout-spacing
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "First-Line Indent"
+slug: "first-line-indent"
+category: "typography"
+subcategory: "layout-spacing"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "First-Line Indents"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "paragraph indent"
   - "text indent"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
-  - point-size
+  - "body-text"
+  - "point-size"
 extends: []
 related:
-  - paragraph-spacing
-  - line-length
+  - "paragraph-spacing"
+  - "line-length"
 contrasts_with:
-  - paragraph-spacing
-
-# === COMPETENCY QUESTIONS ===
+  - "paragraph-spacing"
 answers_questions:
   - "CQ 13: How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "text-indent"
+  -
+    property: "text-indent"
     example: "p + p { text-indent: 1em; } /* 1-4x point size; not on first paragraph */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

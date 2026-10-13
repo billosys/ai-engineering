@@ -1,68 +1,55 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Texture Gradient as Depth Cue
-slug: texture-gradient
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Texture Gradient as Depth Cue"
+slug: "texture-gradient"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Gradients Create Depth"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - texture density gradient
-  - grain gradient
-  - surface texture recession
-
-# === TYPED RELATIONSHIPS ===
+  - "texture density gradient"
+  - "grain gradient"
+  - "surface texture recession"
 prerequisites:
-  - pictorial-space
-  - depth-gradient-principle
-extends:
-  - []
+  - "pictorial-space"
+  - "depth-gradient-principle"
+extends: []
 related:
-  - size-gradient
-  - atmospheric-perspective
-  - linear-perspective
+  - "size-gradient"
+  - "atmospheric-perspective"
+  - "linear-perspective"
 contrasts_with:
-  - atmospheric-perspective
-
-# === COMPETENCY QUESTIONS ===
+  - "atmospheric-perspective"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Spatial frequency — high spatial frequency (fine texture) vs. low spatial frequency (coarse texture)"
-    rating: rigorous
+    rating: "rigorous"
     note: "Texture gradient is a gradient of spatial frequency: coarse texture (low spatial frequency) is perceived as close; fine texture (high spatial frequency) is perceived as distant."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Group theory: 17 wallpaper groups — all possible 2D repeating patterns"
-    rating: structural
+    rating: "structural"
     note: "Any of the 17 wallpaper group patterns can serve as a texture gradient surface when the element spacing is systematically reduced."
-
 css_implementation:
-  - property: "background-size"
+  -
+    property: "background-size"
     example: "background-size: 4px 4px; /* fine texture implies recession */ background-size: 16px 16px; /* coarse texture implies proximity */"
-    support: baseline
-  - property: "filter: blur()"
+    support: "baseline"
+  -
+    property: "filter: blur()"
     example: "filter: blur(1px); /* softens texture, implying recession */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

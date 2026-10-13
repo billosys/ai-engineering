@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Tonal Weight
-slug: tonal-weight
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: balance
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Tonal Weight"
+slug: "tonal-weight"
+category: "design-principles"
+subcategory: "balance"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "Weight"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - lightness weight
-  - value weight
-  - brightness weight
-  - luminance weight
-
-# === TYPED RELATIONSHIPS ===
+  - "lightness weight"
+  - "value weight"
+  - "brightness weight"
+  - "luminance weight"
 prerequisites:
-  - visual-weight
+  - "visual-weight"
 extends:
-  - visual-weight
+  - "visual-weight"
 related:
-  - weight-of-colour
-  - visual-balance
-  - contrast
+  - "weight-of-colour"
+  - "visual-balance"
+  - "contrast"
 contrasts_with:
-  - weight-by-size
-  - weight-by-location
-
-# === COMPETENCY QUESTIONS ===
+  - "weight-by-size"
+  - "weight-by-location"
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Irradiation / blooming (optical spreading of light)"
-    rating: structural
+    rating: "structural"
     note: "Irradiation — the optical phenomenon where bright surfaces appear larger than dark surfaces of equal physical size — directly explains why a white area must be larger than a black area to achieve equal visual weight; this is a physically grounded structural mapping."
-
 css_implementation:
-  - property: "opacity"
+  -
+    property: "opacity"
     example: "opacity: 0.4; /* reduces both lightness and visual weight of secondary elements */"
-    support: baseline
-  - property: "color (text) / background-color"
+    support: "baseline"
+  -
+    property: "color (text) / background-color"
     example: "color: #111; background: #fff; /* high-contrast dark text: heavy tonal weight */"
-    support: baseline
-  - property: "mix-blend-mode / filter: brightness()"
+    support: "baseline"
+  -
+    property: "mix-blend-mode / filter: brightness()"
     example: "filter: brightness(0.6); /* darkens element, increasing contrast weight against light background */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

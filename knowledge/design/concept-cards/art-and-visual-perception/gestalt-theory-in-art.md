@@ -1,56 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Gestalt Theory in Art
-slug: gestalt-theory-in-art
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual organisation
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Gestalt Theory in Art"
+slug: "gestalt-theory-in-art"
+category: "visual-perception"
+subcategory: "perceptual organisation"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "Introduction"
 chapter_number: 0
 pdf_page: 6
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - gestalt psychology
-  - gestalt principles
-  - whole-field perception
-
-# === TYPED RELATIONSHIPS ===
-prerequisites:
-  []
-extends:
-  []
+  - "gestalt psychology"
+  - "gestalt principles"
+  - "whole-field perception"
+prerequisites: []
+extends: []
 related:
-  - vision-as-creative-act
-  - perceptual-experience-as-foundation
-  - visual-balance
-  - directed-tension
+  - "vision-as-creative-act"
+  - "perceptual-experience-as-foundation"
+  - "visual-balance"
+  - "directed-tension"
 contrasts_with:
-  - element-by-element-analysis
-
-# === COMPETENCY QUESTIONS ===
+  - "element-by-element-analysis"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Field theory / holistic systems"
-    rating: structural
+    rating: "structural"
     note: "Both gestalt field theory and mathematical field theory describe how properties at any point are determined by the state of the whole field, not by local properties alone — a structural parallel in how interaction and context govern outcomes."
-
 css_implementation: []
 ---
 

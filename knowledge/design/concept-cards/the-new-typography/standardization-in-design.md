@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Standardization in Design
-slug: standardization-in-design
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: design-movements
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Standardization in Design"
+slug: "standardization-in-design"
+category: "design-principles"
+subcategory: "design-movements"
+tier: "intermediate"
+layer: "1-principles"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "New Typography and Standardization"
 chapter_number: 14
 pdf_page: 134
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "Normung"
   - "format standardization"
   - "design standards"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - functional-typography
+  - "functional-typography"
 extends: []
 related:
-  - din-paper-formats
-  - the-new-typography
+  - "din-paper-formats"
+  - "the-new-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 7: What is a grid system, and what problem does it solve in visual composition?"
   - "CQ 11: What distinguishes a spacing system from arbitrary padding values — what problem does constraint solve?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "industrial standardization"
-    rating: structural
+    rating: "structural"
     note: "DIN standards for paper sizes apply the same industrial standardization principles used in engineering — rational systems replacing arbitrary individual choices."
-
 css_implementation: []
 ---
 

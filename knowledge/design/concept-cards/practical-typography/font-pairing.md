@@ -1,47 +1,32 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Font Pairing
-slug: font-pairing
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-elements
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Font Pairing"
+slug: "font-pairing"
+category: "typography"
+subcategory: "type-elements"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Mixing Fonts"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "mixing fonts"
   - "font combination"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - font
-  - body-text
+  - "font"
+  - "body-text"
 extends: []
 related:
-  - headings
-  - typographic-emphasis
+  - "headings"
+  - "typographic-emphasis"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 26: How do you evaluate and select a typeface pairing for a web application? What properties should contrast, and what should harmonise?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

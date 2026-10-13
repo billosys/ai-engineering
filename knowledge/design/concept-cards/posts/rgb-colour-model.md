@@ -1,42 +1,46 @@
 ---
-concept: RGB Colour Model (CSS)
-slug: rgb-colour-model
-category: colour-theory
-subcategory: colour-models
-tier: foundational
-layer: 2-domain
+concept: "RGB Colour Model (CSS)"
+slug: "rgb-colour-model"
+category: "colour-theory"
+subcategory: "colour-models"
+tier: "foundational"
+layer: "2-domain"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color values / RGB Values"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["rgb()", "rgba()", "CSS RGB"]
+  -
+    - "rgb()"
+    - "rgba()"
+    - "CSS RGB"
 prerequisites:
-  - additive-colour-mixing
-  - colour-bit-depth
-extends:
-  - []
+  - "additive-colour-mixing"
+  - "colour-bit-depth"
+extends: []
 related:
-  - hex-colour-notation
-  - hsl
-  - css-rgba
+  - "hex-colour-notation"
+  - "hsl"
+  - "css-rgba"
 contrasts_with:
-  - hsl
+  - "hsl"
 answers_questions:
   - "What distinguishes additive from subtractive colour mixing, and which does a monitor use?"
   - "What is the relationship between bit depth and available colour range?"
 rosetta_stone: []
 css_implementation:
-  - property: "color / background-color"
+  -
+    property: "color / background-color"
     example: "rgb(150, 150, 150);"
-    support: baseline
-  - property: "color / background-color"
+    support: "baseline"
+  -
+    property: "color / background-color"
     example: "rgba(150, 150, 150, 0.5);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

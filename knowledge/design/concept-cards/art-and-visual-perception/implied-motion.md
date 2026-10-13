@@ -1,65 +1,52 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Implied Motion
-slug: implied-motion
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: motion perception
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Implied Motion"
+slug: "implied-motion"
+category: "visual-perception"
+subcategory: "motion perception"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VIII. Movement"
 chapter_number: 8
 pdf_page: 395
 section: "When Do We See Motion?"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - suggested motion
-  - kinetic suggestion
-  - virtual motion
-
-# === TYPED RELATIONSHIPS ===
+  - "suggested motion"
+  - "kinetic suggestion"
+  - "virtual motion"
 prerequisites:
-  - visual-perception
-  - figure-ground
+  - "visual-perception"
+  - "figure-ground"
 extends:
-  - gestalt-theory-in-art
+  - "gestalt-theory-in-art"
 related:
-  - phi-phenomenon
-  - visual-rhythm
-  - common-fate
-  - structural-skeleton
+  - "phi-phenomenon"
+  - "visual-rhythm"
+  - "common-fate"
+  - "structural-skeleton"
 contrasts_with:
-  - phi-phenomenon
-
-# === COMPETENCY QUESTIONS ===
+  - "phi-phenomenon"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Melodic contour and melodic direction (ascending vs. descending lines)"
-    rating: structural
+    rating: "structural"
     note: "Just as melodic direction implies forward momentum or resolution, visual shape direction implies movement along an axis — both are inferred directional forces in a static snapshot."
-
 css_implementation:
-  - property: "transform"
+  -
+    property: "transform"
     example: "transform: rotate(15deg) translateX(4px);"
-    support: baseline
-  - property: "clip-path"
+    support: "baseline"
+  -
+    property: "clip-path"
     example: "clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

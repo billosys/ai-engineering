@@ -1,59 +1,45 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Brightness Constancy
-slug: brightness-constancy
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual-constancy
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Brightness Constancy"
+slug: "brightness-constancy"
+category: "visual-perception"
+subcategory: "perceptual-constancy"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VI. Light"
 chapter_number: 6
 pdf_page: 356
 section: "Relative Brightness"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - lightness constancy
-  - brightness constancy
-  - value constancy
-
-# === TYPED RELATIONSHIPS ===
+  - "lightness constancy"
+  - "brightness constancy"
+  - "value constancy"
 prerequisites:
-  - tonal-value
+  - "tonal-value"
 extends: []
 related:
-  - colour-constancy
-  - tonal-value
-  - chiaroscuro
-  - illumination
+  - "colour-constancy"
+  - "tonal-value"
+  - "chiaroscuro"
+  - "illumination"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
   - "A dark-mode implementation simply inverts all colours. Text on some backgrounds becomes unreadable. What went wrong?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Normalisation / relative scaling"
-    rating: structural
+    rating: "structural"
     note: "The visual system effectively normalises perceived brightness against the field average — analogous to z-score normalisation in statistics, where absolute values matter less than relative position."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Auto gain control (AGC) in signal processing"
-    rating: structural
+    rating: "structural"
     note: "Brightness constancy operates like AGC — the visual system adjusts its sensitivity to the ambient level, preserving relative brightness relationships rather than absolute signal strength."
-
 css_implementation: []
 ---
 

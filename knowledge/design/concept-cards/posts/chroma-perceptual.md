@@ -1,39 +1,37 @@
 ---
-concept: Chroma (Perceptual)
-slug: chroma-perceptual
-category: colour-theory
-subcategory: perceptual colour attributes
-tier: intermediate
-layer: 2-domain
+concept: "Chroma (Perceptual)"
+slug: "chroma-perceptual"
+category: "colour-theory"
+subcategory: "perceptual colour attributes"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "The Oklab color space"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
-aliases:
-  - []
+extraction_confidence: "high"
+aliases: []
 prerequisites:
-  - oklab
-  - perceptual-uniformity
-extends:
-  - []
+  - "oklab"
+  - "perceptual-uniformity"
+extends: []
 related:
-  - lightness-perceptual
-  - colour-space-comparison
-  - colour-interpolation-perceptual
-contrasts_with:
-  - []
+  - "lightness-perceptual"
+  - "colour-space-comparison"
+  - "colour-interpolation-perceptual"
+contrasts_with: []
 answers_questions:
   - "What distinguishes chroma from saturation in perceptual colour models?"
   - "How do you construct a palette that changes lightness uniformly across hues?"
 rosetta_stone: []
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "color: oklch(70% 0.15 200);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

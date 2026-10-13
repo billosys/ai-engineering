@@ -1,79 +1,70 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Stroboscopic Motion
-slug: stroboscopic-motion
-
-# === CLASSIFICATION ===
-category: motion-design
-subcategory: apparent motion
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Stroboscopic Motion"
+slug: "stroboscopic-motion"
+category: "motion-design"
+subcategory: "apparent motion"
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VIII. Movement"
 chapter_number: 8
 pdf_page: 395
 section: "Stroboscopic Movement"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - stroboscopic movement
-  - apparent motion in animation
-  - frame-based motion
-
-# === TYPED RELATIONSHIPS ===
+  - "stroboscopic movement"
+  - "apparent motion in animation"
+  - "frame-based motion"
 prerequisites:
-  - phi-phenomenon
-  - visual-perception
-  - gestalt-theory-in-art
+  - "phi-phenomenon"
+  - "visual-perception"
+  - "gestalt-theory-in-art"
 extends:
-  - phi-phenomenon
+  - "phi-phenomenon"
 related:
-  - implied-motion
-  - common-fate
-  - visual-expression
+  - "implied-motion"
+  - "common-fate"
+  - "visual-expression"
 contrasts_with:
-  - implied-motion
-
-# === COMPETENCY QUESTIONS ===
+  - "implied-motion"
 answers_questions:
   - "How do you design the states of an interactive component (default, hover, active, focus, disabled, loading, error)? What visual properties change for each state, and why?"
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "State machine transitions — discrete states connected by animated transitions"
-    rating: rigorous
+    rating: "rigorous"
     note: "UI state transitions (default → hover → active) are stroboscopic motion sequences: the visual system interpolates continuous change between discrete states, and the animation design problem is specifying the interpolation (easing, duration, properties) to make the transition perceptually smooth and meaningful."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Video codec inter-frame prediction (P-frames, B-frames)"
-    rating: structural
+    rating: "structural"
     note: "Video compression exploits the phi phenomenon: only keyframes are fully encoded; inter-frames encode only the difference from the preceding frame, exactly mirroring the perceptual mechanism by which the visual system interpolates between discrete positions."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Linear interpolation (lerp) and cubic Bézier easing"
-    rating: rigorous
+    rating: "rigorous"
     note: "Easing functions (cubic-bezier) mathematically define the interpolation curve between keyframe states; the phi phenomenon is the perceptual system performing its own interpolation, and animation design is the craft of specifying that interpolation explicitly."
-
 css_implementation:
-  - property: "animation-timing-function"
+  -
+    property: "animation-timing-function"
     example: "animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);"
-    support: baseline
-  - property: "animation-fill-mode"
+    support: "baseline"
+  -
+    property: "animation-fill-mode"
     example: "animation-fill-mode: both;"
-    support: baseline
-  - property: "will-change"
+    support: "baseline"
+  -
+    property: "will-change"
     example: "will-change: transform, opacity;"
-    support: baseline
-  - property: "@keyframes"
+    support: "baseline"
+  -
+    property: "@keyframes"
     example: "@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

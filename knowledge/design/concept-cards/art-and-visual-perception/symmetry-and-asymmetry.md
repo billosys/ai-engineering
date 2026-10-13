@@ -1,70 +1,57 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Symmetry and Asymmetry in Composition
-slug: symmetry-and-asymmetry
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: balance
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Symmetry and Asymmetry in Composition"
+slug: "symmetry-and-asymmetry"
+category: "design-principles"
+subcategory: "balance"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "Why Balance?"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - symmetrical balance
-  - asymmetrical balance
-  - bilateral symmetry
-  - dynamic asymmetry
-
-# === TYPED RELATIONSHIPS ===
+  - "symmetrical balance"
+  - "asymmetrical balance"
+  - "bilateral symmetry"
+  - "dynamic asymmetry"
 prerequisites:
-  - visual-balance
-  - visual-weight
-extends:
-  []
+  - "visual-balance"
+  - "visual-weight"
+extends: []
 related:
-  - visual-balance
-  - visual-forces
-  - left-right-asymmetry
-  - directed-tension
+  - "visual-balance"
+  - "visual-forces"
+  - "left-right-asymmetry"
+  - "directed-tension"
 contrasts_with:
-  - visual-imbalance
-
-# === COMPETENCY QUESTIONS ===
+  - "visual-imbalance"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "A card layout uses 16px padding inside cards, 16px between cards, and 16px between card title and body text. Everything feels 'flat.' What principle was violated, and what's the fix?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Symmetry group / axis of symmetry"
-    rating: rigorous
+    rating: "rigorous"
     note: "Symmetry in visual composition corresponds rigorously to mathematical symmetry: a composition is symmetric with respect to an axis if reflection across that axis maps every element to a corresponding element of equal weight. Asymmetric compositions lack this invariance — which is why they require deliberate compensatory strategies to achieve balance."
-  - domain: music
+  -
+    domain: "music"
     concept: "Exact repetition vs. varied repetition (sequences, sequences with melodic variation)"
-    rating: structural
+    rating: "structural"
     note: "Symmetrical composition (identical mirrored halves) parallels exact repetition in music; asymmetrical composition (compensated unequal halves) parallels varied repetition or sequence — both are strategies for creating coherence while maintaining interest, with exact repetition being most stable and variation adding expressive life."
-
 css_implementation:
-  - property: "text-align: center / margin: auto"
+  -
+    property: "text-align: center / margin: auto"
     example: "margin-inline: auto; /* centres element, creating symmetrical left-right balance */"
-    support: baseline
-  - property: "CSS Grid asymmetric columns"
+    support: "baseline"
+  -
+    property: "CSS Grid asymmetric columns"
     example: "grid-template-columns: 2fr 1fr; /* asymmetric layout requiring weight compensation in the narrow column */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

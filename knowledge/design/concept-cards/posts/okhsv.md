@@ -1,39 +1,41 @@
 ---
-concept: Okhsv Colour Space
-slug: okhsv
-category: colour-theory
-subcategory: colour-models
-tier: advanced
-layer: 2-domain
+concept: "Okhsv Colour Space"
+slug: "okhsv"
+category: "colour-theory"
+subcategory: "colour-models"
+tier: "advanced"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Okhsv"
 chapter_number: null
 pdf_page: null
 section: "Introducing two new color spaces: Okhsv and Okhsl"
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["Ok HSV"]
+  -
+    - "Ok HSV"
 prerequisites:
-  - hsv
-  - colour-gamut
-  - orthogonal-colour-properties
+  - "hsv"
+  - "colour-gamut"
+  - "orthogonal-colour-properties"
 extends:
-  - hsv
+  - "hsv"
 related:
-  - okhsl
-  - colour-picker-design-principles
+  - "okhsl"
+  - "colour-picker-design-principles"
 contrasts_with:
-  - hsv
-  - okhsl
+  - "hsv"
+  - "okhsl"
 answers_questions:
   - "What distinguishes Okhsl from Okhsv, and when would you use each?"
   - "What makes a colour picker perceptually well-designed?"
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Equal temperament tuning"
-    rating: rigorous
+    rating: "rigorous"
     note: "Like Okhsl, Okhsv makes perceptual hue steps uniform across the hue circle, analogous to equal temperament making semitone intervals perceptually equal across pitch registers."
 ---
 

@@ -1,43 +1,43 @@
 ---
-concept: Oklab Conversion (sRGB to Oklab)
-slug: oklab-conversion
-category: colour-theory
-subcategory: colour space conversion
-tier: intermediate
-layer: 2-domain
+concept: "Oklab Conversion (sRGB to Oklab)"
+slug: "oklab-conversion"
+category: "colour-theory"
+subcategory: "colour space conversion"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Implementation"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
-aliases:
-  - []
+extraction_confidence: "high"
+aliases: []
 prerequisites:
-  - oklab
-  - xyz-colour-space
-  - lms-cone-responses
-  - matrix-transformation-colour
+  - "oklab"
+  - "xyz-colour-space"
+  - "lms-cone-responses"
+  - "matrix-transformation-colour"
 extends:
-  - oklab
+  - "oklab"
 related:
-  - d65-whitepoint
-  - gamut-srgb
-contrasts_with:
-  - []
+  - "d65-whitepoint"
+  - "gamut-srgb"
+contrasts_with: []
 answers_questions:
   - "How do you convert between colour spaces for image processing?"
 rosetta_stone:
-  - domain: mathematics
-    concept: "Composed function: affine transform \u2192 pointwise nonlinearity \u2192 affine transform"
-    rating: rigorous
-    note: "The sRGB\u2192Oklab conversion is exactly this structure: matrix multiply (M1), then cube-root applied elementwise, then matrix multiply (M2)."
+  -
+    domain: "mathematics"
+    concept: "Composed function: affine transform → pointwise nonlinearity → affine transform"
+    rating: "rigorous"
+    note: "The sRGB→Oklab conversion is exactly this structure: matrix multiply (M1), then cube-root applied elementwise, then matrix multiply (M2)."
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "color: oklab(0.7 0.1 -0.08);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

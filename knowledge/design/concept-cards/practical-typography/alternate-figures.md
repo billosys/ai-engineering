@@ -1,52 +1,37 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Alternate Figures
-slug: alternate-figures
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-elements
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Alternate Figures"
+slug: "alternate-figures"
+category: "typography"
+subcategory: "type-elements"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Alternate Figures"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "alternate numerals"
   - "figure styles"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - font
-  - opentype-features
+  - "font"
+  - "opentype-features"
 extends: []
 related:
-  - all-caps
-  - body-text
+  - "all-caps"
+  - "body-text"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 5: What are the basic anatomical parts of a letterform (baseline, x-height, cap height, ascender, descender, counter)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-variant-numeric"
+  -
+    property: "font-variant-numeric"
     example: ".body { font-variant-numeric: oldstyle-nums proportional-nums; } .table { font-variant-numeric: lining-nums tabular-nums; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

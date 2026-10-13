@@ -1,47 +1,32 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Typographic Symbol
-slug: typographic-symbol
-
-# === CLASSIFICATION ===
-category: design-systems
-subcategory: identity-systems
-tier: intermediate
-layer: 3-implementation
-
-# === PROVENANCE ===
+concept: "Typographic Symbol"
+slug: "typographic-symbol"
+category: "design-systems"
+subcategory: "identity-systems"
+tier: "intermediate"
+layer: "3-implementation"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Typographic Symbol"
 chapter_number: 16
 pdf_page: 147
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "typo-symbol"
   - "typographic mark"
   - "printer's symbol"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - functional-typography  # must understand functional design to design functional symbols
+  - "functional-typography"
 extends: []
 related:
-  - typographic-contrast  # symbol effectiveness depends on contrast principles
-  - the-new-typography  # symbols are part of the movement's practical programme
+  - "typographic-contrast"
+  - "the-new-typography"
 contrasts_with:
-  - ornament-rejection  # symbols are functional marks, not decoration; ornament is rejected precisely because it lacks the communicative function that symbols serve
-
-# === COMPETENCY QUESTIONS ===
+  - "ornament-rejection"
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

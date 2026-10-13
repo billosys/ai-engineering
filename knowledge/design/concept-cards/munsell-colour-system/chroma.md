@@ -1,63 +1,50 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Chroma
-slug: chroma
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-properties
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Chroma"
+slug: "chroma"
+category: "colour-theory"
+subcategory: "colour-properties"
+tier: "foundational"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "III. Chroma"
 chapter_number: 6
 pdf_page: 7
 section: "III. Chroma"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "colour strength"
   - "saturation"
   - "purity"
   - "Munsell chroma"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - munsell-colour-system
-  - hue
-  - colour-value
-  - neutral-axis
+  - "munsell-colour-system"
+  - "hue"
+  - "colour-value"
+  - "neutral-axis"
 contrasts_with:
-  - hue
-  - colour-value
-
-# === COMPETENCY QUESTIONS ===
+  - "hue"
+  - "colour-value"
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Radial coordinate in cylindrical space"
-    rating: rigorous
+    rating: "rigorous"
     note: "Chroma is the radial coordinate (r) in the Munsell cylindrical system. Unlike hue (bounded, cyclic) and value (bounded, linear), chroma is open-ended — r ∈ [0, ∞) theoretically, limited only by available pigments or display gamut."
-
 css_implementation:
-  - property: "oklch() chroma channel"
+  -
+    property: "oklch() chroma channel"
     example: "color: oklch(0.7 0.15 240); /* C = 0.15 */"
-    support: baseline
-  - property: "hsl() saturation channel"
+    support: "baseline"
+  -
+    property: "hsl() saturation channel"
     example: "color: hsl(240, 50%, 50%); /* S = 50% (not directly comparable) */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,68 +1,55 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Picture Frame and Window — Boundary as Spatial Cue
-slug: picture-frame-window
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: framing-and-containment
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Picture Frame and Window — Boundary as Spatial Cue"
+slug: "picture-frame-window"
+category: "layout-composition"
+subcategory: "framing-and-containment"
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Frames and Windows"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - frame as figure
-  - picture as figure
-  - viewport boundary
-  - composition boundary
-
-# === TYPED RELATIONSHIPS ===
+  - "frame as figure"
+  - "picture as figure"
+  - "viewport boundary"
+  - "composition boundary"
 prerequisites:
-  - figure-ground
-  - pictorial-space
+  - "figure-ground"
+  - "pictorial-space"
 extends:
-  - figure-ground
+  - "figure-ground"
 related:
-  - negative-space
-  - flat-pictorial-space
-  - perspective-symbolism
-contrasts_with:
-  - []
-
-# === COMPETENCY QUESTIONS ===
+  - "negative-space"
+  - "flat-pictorial-space"
+  - "perspective-symbolism"
+contrasts_with: []
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS viewport, overflow: hidden, aspect-ratio, container queries"
-    rating: rigorous
+    rating: "rigorous"
     note: "The viewport and CSS overflow control directly implement the picture-frame/window distinction — overflow:hidden creates a 'window' frame while overflow:visible allows content to extend beyond the frame like a figure."
-
 css_implementation:
-  - property: "overflow"
+  -
+    property: "overflow"
     example: "overflow: hidden; /* frame = figure: content clipped at boundary */ overflow: visible; /* frame = ground: content can extend beyond */"
-    support: baseline
-  - property: "aspect-ratio"
+    support: "baseline"
+  -
+    property: "aspect-ratio"
     example: "aspect-ratio: 16/9; /* defines the frame proportions */"
-    support: baseline
-  - property: "clip-path"
+    support: "baseline"
+  -
+    property: "clip-path"
     example: "clip-path: inset(0); /* sharp frame edge = frame as figure */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

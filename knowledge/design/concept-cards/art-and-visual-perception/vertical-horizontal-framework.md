@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Vertical-Horizontal Framework
-slug: vertical-horizontal-framework
-
-# === CLASSIFICATION ===
-category: visual-elements
+concept: "Vertical-Horizontal Framework"
+slug: "vertical-horizontal-framework"
+category: "visual-elements"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IV. Growth"
 chapter_number: 4
 pdf_page: 108
 section: "Obliqueness"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - spatial-trellis
-  - cardinal-directions
-  - right-angular-framework
-  - orthogonal-framework
-
-# === TYPED RELATIONSHIPS ===
+  - "spatial-trellis"
+  - "cardinal-directions"
+  - "right-angular-framework"
+  - "orthogonal-framework"
 prerequisites:
-  - law-of-differentiation
+  - "law-of-differentiation"
 extends: []
 related:
-  - obliqueness-as-visual-dynamism
-  - structural-skeleton
-  - perceptual-simplicity
+  - "obliqueness-as-visual-dynamism"
+  - "structural-skeleton"
+  - "perceptual-simplicity"
 contrasts_with:
-  - oblique-orientation
-  - undifferentiated-spatial-direction
-
-# === COMPETENCY QUESTIONS ===
+  - "oblique-orientation"
+  - "undifferentiated-spatial-direction"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Cartesian coordinate system / basis vectors"
-    rating: rigorous
+    rating: "rigorous"
     note: "The vertical-horizontal framework is the perceptual equivalent of the standard Cartesian basis: the two orthogonal reference directions (vertical, horizontal) that define all spatial relations in the visual field, just as x and y define all positions in 2D space."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Grid systems / CSS grid layout"
-    rating: rigorous
+    rating: "rigorous"
     note: "The vertical-horizontal framework is literally implemented as the grid in layout systems: CSS Grid and Flexbox are built on orthogonal axes (block/inline, main/cross), encoding the perceptual primacy of vertical and horizontal directions in structural layout."
-
 css_implementation:
-  - property: "display: grid"
+  -
+    property: "display: grid"
     example: "display: grid; grid-template-columns: repeat(12, 1fr);"
-    support: baseline
-  - property: "display: flex"
+    support: "baseline"
+  -
+    property: "display: flex"
     example: "display: flex; flex-direction: row;"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,55 +1,40 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Block Quotation
-slug: block-quotation
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-elements
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Block Quotation"
+slug: "block-quotation"
+category: "typography"
+subcategory: "type-elements"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Block Quotations"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "block quote"
   - "extract"
   - "long quotation"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
-  - point-size
-  - line-spacing
+  - "body-text"
+  - "point-size"
+  - "line-spacing"
 extends: []
 related:
-  - first-line-indent
-  - line-length
+  - "first-line-indent"
+  - "line-length"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 13: How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "margin, font-size, line-height"
+  -
+    property: "margin, font-size, line-height"
     example: "blockquote { margin: 1em 2em; font-size: 0.95em; line-height: 1.3; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

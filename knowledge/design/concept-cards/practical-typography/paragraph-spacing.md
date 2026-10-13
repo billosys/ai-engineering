@@ -1,54 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Paragraph Spacing
-slug: paragraph-spacing
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: layout-spacing
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Paragraph Spacing"
+slug: "paragraph-spacing"
+category: "typography"
+subcategory: "layout-spacing"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Space Between Paragraphs"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "space between paragraphs"
   - "paragraph gap"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
-  - point-size
+  - "body-text"
+  - "point-size"
 extends: []
 related:
-  - first-line-indent
-  - line-spacing
+  - "first-line-indent"
+  - "line-spacing"
 contrasts_with:
-  - first-line-indent
-
-# === COMPETENCY QUESTIONS ===
+  - "first-line-indent"
 answers_questions:
   - "CQ 13: How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
   - "CQ 18: A card layout uses 16px padding inside cards, 16px between cards, and 16px between card title and body text. Everything feels 'flat.' What principle was violated, and what's the fix?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "margin-bottom"
+  -
+    property: "margin-bottom"
     example: "p { margin-bottom: 0.75em; } /* 50-100% of body text size */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

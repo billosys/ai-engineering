@@ -1,69 +1,57 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Saturation
-slug: saturation
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-properties
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Saturation"
+slug: "saturation"
+category: "colour-theory"
+subcategory: "colour-properties"
+tier: "foundational"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "Interaction of Color"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - chroma
-  - purity
-  - colour intensity
-  - vividness
-
-# === TYPED RELATIONSHIPS ===
+  - "chroma"
+  - "purity"
+  - "colour intensity"
+  - "vividness"
 prerequisites:
-  - hue
+  - "hue"
 extends: []
 related:
-  - hue
-  - tonal-value
-  - simultaneous-contrast
-  - colour-constancy
+  - "hue"
+  - "tonal-value"
+  - "simultaneous-contrast"
+  - "colour-constancy"
 contrasts_with:
-  - tonal-value
-  - achromatic-colour
-
-# === COMPETENCY QUESTIONS ===
+  - "tonal-value"
+  - "achromatic-colour"
 answers_questions:
   - "What is the difference between hue, saturation/chroma, and lightness/value?"
   - "What are the three components of HSL, and why is HSL more useful than hex notation for palette construction?"
   - "How do you ensure a coloured status badge communicates its meaning without relying solely on colour? What redundant encoding strategies exist?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Chroma (C) in cylindrical colour spaces (OKLCH)"
-    rating: rigorous
+    rating: "rigorous"
     note: "In OKLCH, chroma C is the radial distance from the achromatic axis, directly representing saturation in a perceptually uniform space."
-
 css_implementation:
-  - property: "chroma (in oklch)"
+  -
+    property: "chroma (in oklch)"
     example: "color: oklch(0.6 0.25 150); /* chroma = 0.25, high saturation */"
-    support: baseline
-  - property: "saturation (in hsl)"
+    support: "baseline"
+  -
+    property: "saturation (in hsl)"
     example: "color: hsl(150 80% 45%); /* saturation = 80% */"
-    support: baseline
-  - property: "filter: saturate()"
+    support: "baseline"
+  -
+    property: "filter: saturate()"
     example: "filter: saturate(1.5);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

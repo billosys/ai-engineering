@@ -1,50 +1,32 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Perceptual Experience as Foundation of Art
-slug: perceptual-experience-as-foundation
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual foundations
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Perceptual Experience as Foundation of Art"
+slug: "perceptual-experience-as-foundation"
+category: "visual-perception"
+subcategory: "perceptual foundations"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "Introduction"
 chapter_number: 0
 pdf_page: 6
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - sensory foundation of art
-  - percept over concept
-  - vision as primary aesthetic medium
-
-# === TYPED RELATIONSHIPS ===
-prerequisites:
-  []
-extends:
-  []
+  - "sensory foundation of art"
+  - "percept over concept"
+  - "vision as primary aesthetic medium"
+prerequisites: []
+extends: []
 related:
-  - vision-as-creative-act
-  - gestalt-principles
+  - "vision-as-creative-act"
+  - "gestalt-principles"
 contrasts_with:
-  - verbal-conceptual-analysis
-
-# === COMPETENCY QUESTIONS ===
+  - "verbal-conceptual-analysis"
 answers_questions:
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation: []
 ---
 

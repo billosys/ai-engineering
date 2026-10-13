@@ -1,65 +1,52 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Left-Right Asymmetry in Visual Space
-slug: left-right-asymmetry
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: balance
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Left-Right Asymmetry in Visual Space"
+slug: "left-right-asymmetry"
+category: "design-principles"
+subcategory: "balance"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "Right and Left"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - lateral asymmetry
-  - left-right visual bias
-  - directional vector in composition
-  - reading direction bias
-
-# === TYPED RELATIONSHIPS ===
+  - "lateral asymmetry"
+  - "left-right visual bias"
+  - "directional vector in composition"
+  - "reading direction bias"
 prerequisites:
-  - visual-weight
-  - weight-by-location
+  - "visual-weight"
+  - "weight-by-location"
 extends:
-  - weight-by-location
+  - "weight-by-location"
 related:
-  - visual-balance
-  - top-bottom-asymmetry
-  - directional-vector-left-right
+  - "visual-balance"
+  - "top-bottom-asymmetry"
+  - "directional-vector-left-right"
 contrasts_with:
-  - bilateral-symmetry
-
-# === COMPETENCY QUESTIONS ===
+  - "bilateral-symmetry"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Pickup / anacrusis / directional vector in melody"
-    rating: loose
+    rating: "loose"
     note: "The left-to-right directional vector in visual compositions (movement feels easier going left-to-right, harder going right-to-left) is loosely analogous to the directional momentum in a melody — notes moving in the established direction of a scale feel easier; notes that push against the tonal gravity feel more effortful. Both are directional biases in a field, but the mechanisms differ."
-
 css_implementation:
-  - property: "direction / writing-mode"
+  -
+    property: "direction / writing-mode"
     example: "direction: ltr; /* left-to-right reading direction — establishes the lateral bias */"
-    support: baseline
-  - property: "margin-left / padding-left (compensating for left-zone dominance)"
+    support: "baseline"
+  -
+    property: "margin-left / padding-left (compensating for left-zone dominance)"
     example: "margin-inline-start: 1.5rem; /* logical property respects writing direction */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

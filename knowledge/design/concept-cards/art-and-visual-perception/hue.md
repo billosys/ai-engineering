@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Hue
-slug: hue
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-properties
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Hue"
+slug: "hue"
+category: "colour-theory"
+subcategory: "colour-properties"
+tier: "foundational"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "The Generative Primaries"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - chromatic quality
-  - colour quality
-
-# === TYPED RELATIONSHIPS ===
+  - "chromatic quality"
+  - "colour quality"
 prerequisites: []
 extends: []
 related:
-  - saturation
-  - tonal-value
-  - colour-constancy
-  - simultaneous-contrast
-  - complementary-colours
-  - colour-temperature
+  - "saturation"
+  - "tonal-value"
+  - "colour-constancy"
+  - "simultaneous-contrast"
+  - "complementary-colours"
+  - "colour-temperature"
 contrasts_with:
-  - tonal-value
-  - saturation
-
-# === COMPETENCY QUESTIONS ===
+  - "tonal-value"
+  - "saturation"
 answers_questions:
   - "What is the difference between hue, saturation/chroma, and lightness/value?"
   - "What are the three components of HSL, and why is HSL more useful than hex notation for palette construction?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Angular coordinate on a circular/cylindrical colour space"
-    rating: rigorous
+    rating: "rigorous"
     note: "In OKLCH and HSL, hue is represented as an angle (0–360°) on the hue circle, a mathematical encoding of the perceptual hue dimension."
-  - domain: music
+  -
+    domain: "music"
     concept: "Pitch class (note quality, e.g. C, D, E)"
-    rating: loose
+    rating: "loose"
     note: "Both hue and pitch class are circular, categorical qualities that cycle back to their starting point, but the perceptual mechanisms and interval structures differ entirely."
-
 css_implementation:
-  - property: "hue (in oklch/hsl)"
+  -
+    property: "hue (in oklch/hsl)"
     example: "color: oklch(0.6 0.15 270); /* hue = 270° (blue-violet) */"
-    support: baseline
-  - property: "filter: hue-rotate()"
+    support: "baseline"
+  -
+    property: "filter: hue-rotate()"
     example: "filter: hue-rotate(90deg);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

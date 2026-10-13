@@ -1,72 +1,60 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Leveling and Sharpening
-slug: leveling-and-sharpening
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual distortion
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Leveling and Sharpening"
+slug: "leveling-and-sharpening"
+category: "visual-perception"
+subcategory: "perceptual distortion"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Leveling and Sharpening"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceptual leveling
-  - perceptual sharpening
-  - memory simplification
-  - normalisation and exaggeration
-
-# === TYPED RELATIONSHIPS ===
+  - "perceptual leveling"
+  - "perceptual sharpening"
+  - "memory simplification"
+  - "normalisation and exaggeration"
 prerequisites:
-  - praegnanz
-  - visual-simplicity
-extends:
-  []
+  - "praegnanz"
+  - "visual-simplicity"
+extends: []
 related:
-  - visual-shape
-  - structural-skeleton
+  - "visual-shape"
+  - "structural-skeleton"
 contrasts_with:
-  - veridical-perception
-
-# === COMPETENCY QUESTIONS ===
+  - "veridical-perception"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Lossy compression / quantisation"
-    rating: structural
+    rating: "structural"
     note: "Leveling is analogous to lossy compression: perceptual detail is discarded and the signal is reconstructed at a lower bit depth, snapping ambiguous values to the nearest canonical form."
-  - domain: music
+  -
+    domain: "music"
     concept: "Classicism vs. Expressionism as stylistic poles"
-    rating: structural
+    rating: "structural"
     note: "Arnheim explicitly maps leveling to classicistic style (symmetry, normality, reduced tension) and sharpening to expressionistic style (asymmetry, intensity, increased tension) — both are applications of the same Praegnanz drive in opposite structural directions."
-  - domain: art
+  -
+    domain: "art"
     concept: "Caricature vs. idealisation"
-    rating: structural
+    rating: "structural"
     note: "Caricature is systematic sharpening of distinctive features; idealisation (classical portraiture) is systematic leveling toward a canonical norm — both operate on the same dimension of structural distortion."
-
 css_implementation:
-  - property: "border-radius (leveling: rounding all corners to same value)"
+  -
+    property: "border-radius (leveling: rounding all corners to same value)"
     example: "border-radius: 8px; /* leveling: snaps all corners to a consistent canonical value */"
-    support: baseline
-  - property: "CSS transitions easing (ease-in-out = leveling; linear = sharpening)"
+    support: "baseline"
+  -
+    property: "CSS transitions easing (ease-in-out = leveling; linear = sharpening)"
     example: "transition: all 0.3s ease-in-out; /* smooth, leveled motion */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,68 +1,55 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Arnheim's Theory of Expression
-slug: arnheim-expression-theory
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: expressive perception
-tier: advanced
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Arnheim's Theory of Expression"
+slug: "arnheim-expression-theory"
+category: "visual-perception"
+subcategory: "expressive perception"
+tier: "advanced"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "X. Expression"
 chapter_number: 10
 pdf_page: 437
 section: "Expression Embedded in Structure"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - structural theory of expression
-  - expression as perceptual primary
-
-# === TYPED RELATIONSHIPS ===
+  - "structural theory of expression"
+  - "expression as perceptual primary"
 prerequisites:
-  - visual-perception
-  - gestalt-theory-in-art
-  - physiognomic-perception
-  - isomorphism-expression
+  - "visual-perception"
+  - "gestalt-theory-in-art"
+  - "physiognomic-perception"
+  - "isomorphism-expression"
 extends:
-  - gestalt-theory-in-art
+  - "gestalt-theory-in-art"
 related:
-  - physiognomic-perception
-  - isomorphism-expression
-  - visual-expression
-  - perceptual-experience-as-foundation
+  - "physiognomic-perception"
+  - "isomorphism-expression"
+  - "visual-expression"
+  - "perceptual-experience-as-foundation"
 contrasts_with:
-  - physiognomic-perception
-
-# === COMPETENCY QUESTIONS ===
+  - "physiognomic-perception"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Expressive character of musical structure (tempo, key, dynamics, articulation communicating mood)"
-    rating: structural
+    rating: "structural"
     note: "Arnheim's claim that expression is a property of the stimulus pattern, not a projected human feeling, applies identically to music: the sadness of a slow, minor-key melody is not projected by the listener but is a structural property of the pattern itself. Both are structural theories of expression in their respective domains."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Semantic design — choosing visual properties that communicate their function (affordances, signifiers)"
-    rating: structural
+    rating: "structural"
     note: "Arnheim's theory underlies semantic design: a visual element should look like what it does (structural expression), not just be labelled. The theory provides the perceptual grounding for why form-follows-function produces more intuitive interfaces."
-
 css_implementation:
-  - property: null
+  -
+    property: null
     example: "/* Arnheim's expression theory is not directly CSS-implementable but underlies all formal property choices in design systems */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

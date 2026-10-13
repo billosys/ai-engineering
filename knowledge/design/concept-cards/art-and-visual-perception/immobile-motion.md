@@ -1,67 +1,53 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Immobile Motion
-slug: immobile-motion
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: visual dynamics
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Immobile Motion"
+slug: "immobile-motion"
+category: "visual-perception"
+subcategory: "visual dynamics"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IX. Dynamics"
 chapter_number: 9
 pdf_page: 416
 section: "Immobile Motion"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - motion in static images
-  - visual movement in immobile media
-  - frozen motion
-  - timeless pose
-
-# === TYPED RELATIONSHIPS ===
+  - "motion in static images"
+  - "visual movement in immobile media"
+  - "frozen motion"
+  - "timeless pose"
 prerequisites:
-  - directed-tension
-  - visual-forces
-  - oblique-orientation
-extends:
-  []
+  - "directed-tension"
+  - "visual-forces"
+  - "oblique-orientation"
+extends: []
 related:
-  - dynamic-composition
-  - stroboscopic-effects
-  - deformation-tension
+  - "dynamic-composition"
+  - "stroboscopic-effects"
+  - "deformation-tension"
 contrasts_with:
-  - literal-locomotion
-  - snapshot-photography
-
-# === COMPETENCY QUESTIONS ===
+  - "literal-locomotion"
+  - "snapshot-photography"
 answers_questions:
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Counterpoint / suspended resolution (music outside the dimension of time)"
-    rating: structural
+    rating: "structural"
     note: "The concept of immobile motion (a timeless image that contains the quality of movement outside actual time) is structurally analogous to a sustained chord in music that contains harmonic tension outside temporal movement — both are 'frozen' states that carry dynamic quality without temporal unfolding."
-
 css_implementation:
-  - property: "animation-play-state: paused (frozen dynamic frame)"
+  -
+    property: "animation-play-state: paused (frozen dynamic frame)"
     example: "animation-play-state: paused; /* freeze at dynamic peak of an animation to create immobile motion */"
-    support: baseline
-  - property: "transform: rotate() + scale() (maximum-action pose)"
+    support: "baseline"
+  -
+    property: "transform: rotate() + scale() (maximum-action pose)"
     example: "transform: rotate(-5deg) scale(1.05); /* captures peak of implied motion in static element */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

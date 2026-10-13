@@ -1,72 +1,60 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Negative Space
-slug: negative-space
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: spatial-composition
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Negative Space"
+slug: "negative-space"
+category: "visual-elements"
+subcategory: "spatial-composition"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Application to Painting"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - negative form
-  - interstices
-  - ground space
-  - white space (graphic design)
-
-# === TYPED RELATIONSHIPS ===
+  - "negative form"
+  - "interstices"
+  - "ground space"
+  - "white space (graphic design)"
 prerequisites:
-  - figure-ground
-extends:
-  - []
+  - "figure-ground"
+extends: []
 related:
-  - figure-ground
-  - depth-levels
-  - layout-spatial-depth
+  - "figure-ground"
+  - "depth-levels"
+  - "layout-spatial-depth"
 contrasts_with:
-  - positive-space
-
-# === COMPETENCY QUESTIONS ===
+  - "positive-space"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Complementary sets / set partitioning"
-    rating: structural
+    rating: "structural"
     note: "Negative space is the complement of positive space — together they partition the 2D plane. Each is fully defined by the other's boundary."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS whitespace, padding, margin, gap"
-    rating: rigorous
+    rating: "rigorous"
     note: "CSS padding, margin, and gap are the implementation of negative space — they are the deliberately shaped empty regions between and around content elements."
-
 css_implementation:
-  - property: "padding"
+  -
+    property: "padding"
     example: "padding: 1.5rem; /* shapes the negative space inside a container */"
-    support: baseline
-  - property: "margin"
+    support: "baseline"
+  -
+    property: "margin"
     example: "margin: 0 auto; /* controls negative space around an element */"
-    support: baseline
-  - property: "gap"
+    support: "baseline"
+  -
+    property: "gap"
     example: "gap: 1rem; /* negative space between flex/grid items */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

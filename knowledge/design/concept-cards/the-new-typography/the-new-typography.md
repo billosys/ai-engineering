@@ -1,48 +1,33 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: The New Typography
-slug: the-new-typography
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: design-movements
-tier: foundational
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "The New Typography"
+slug: "the-new-typography"
+category: "design-principles"
+subcategory: "design-movements"
+tier: "foundational"
+layer: "1-principles"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
   - "Die Neue Typographie"
   - "modernist typography"
   - "New Typography movement"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - functional-typography
-  - asymmetric-typography
-  - active-white-space
-  - typographic-contrast
-  - ornament-rejection
+  - "functional-typography"
+  - "asymmetric-typography"
+  - "active-white-space"
+  - "typographic-contrast"
+  - "ornament-rejection"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

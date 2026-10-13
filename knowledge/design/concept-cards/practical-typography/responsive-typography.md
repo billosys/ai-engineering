@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Responsive Typography
-slug: responsive-typography
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Responsive Typography"
+slug: "responsive-typography"
+category: "typography"
+subcategory: "type-formatting"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Appendix"
 chapter_number: null
 pdf_page: null
 section: "Responsive Web Design"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "responsive web typography"
   - "fluid typography"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - line-length
-  - point-size
-  - page-margins
+  - "line-length"
+  - "point-size"
+  - "page-margins"
 extends: []
 related:
-  - body-text
-  - typographic-grids
+  - "body-text"
+  - "typographic-grids"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "clamp(), vw, max-width"
+  -
+    property: "clamp(), vw, max-width"
     example: "body { font-size: clamp(1rem, 0.5rem + 1.5vw, 1.25rem); } .content { max-width: 40vw; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

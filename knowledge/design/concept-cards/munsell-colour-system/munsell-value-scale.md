@@ -1,59 +1,45 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Munsell Value Scale
-slug: munsell-value-scale
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-systems
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Munsell Value Scale"
+slug: "munsell-value-scale"
+category: "colour-theory"
+subcategory: "colour-systems"
+tier: "foundational"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "II. Value"
 chapter_number: 5
 pdf_page: 6
 section: "II. Value"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "Munsell gray scale"
   - "value scale"
   - "lightness scale"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - colour-value
+  - "colour-value"
 extends:
-  - colour-value
+  - "colour-value"
 related:
-  - munsell-colour-system
-  - neutral-axis
-  - munsell-colour-notation
+  - "munsell-colour-system"
+  - "neutral-axis"
+  - "munsell-colour-notation"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
   - "CQ 14: How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Discrete psychophysical scale on [0, 10]"
-    rating: rigorous
+    rating: "rigorous"
     note: "The Munsell value scale is a photometrically calibrated discrete scale where equal step differences correspond to equal perceived lightness differences. The underlying physical-to-perceptual mapping follows an approximate power law (Stevens), not a linear function."
-
 css_implementation:
-  - property: "oklch() lightness channel"
+  -
+    property: "oklch() lightness channel"
     example: "/* Munsell V5 ≈ oklch(0.53 ...) — not a simple linear mapping */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

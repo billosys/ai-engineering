@@ -1,54 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Medium Specificity of Form
-slug: medium-specificity-of-form
-
-# === CLASSIFICATION ===
-category: visual-elements
+concept: "Medium Specificity of Form"
+slug: "medium-specificity-of-form"
+category: "visual-elements"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Form as Invention"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - form-invention
-  - medium-dependent-form
-  - representational-translation
-
-# === TYPED RELATIONSHIPS ===
+  - "form-invention"
+  - "medium-dependent-form"
+  - "representational-translation"
 prerequisites:
-  - representation-in-art
-  - form-vs-shape
+  - "representation-in-art"
+  - "form-vs-shape"
 extends: []
 related:
-  - structural-skeleton
-  - perceptual-simplicity
+  - "structural-skeleton"
+  - "perceptual-simplicity"
 contrasts_with:
-  - mechanical-replication
-
-# === COMPETENCY QUESTIONS ===
+  - "mechanical-replication"
 answers_questions:
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Abstraction / platform-specific implementation"
-    rating: structural
+    rating: "structural"
     note: "Just as an interface specification is realised differently in different programming languages while maintaining the same structural contract, the visual concept of an object is realised differently in different media — pencil, paint, clay, dance — while maintaining structural equivalence."
-
 css_implementation: []
 ---
 

@@ -1,51 +1,36 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Typewriter Habits
-slug: typewriter-habits
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: typography-foundations
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Typewriter Habits"
+slug: "typewriter-habits"
+category: "typography"
+subcategory: "typography-foundations"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Appendix"
 chapter_number: null
 pdf_page: null
 section: "Typewriter Habits"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "typewriter conventions"
   - "typewriter legacy"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typography
+  - "typography"
 extends: []
 related:
-  - curly-quotes
-  - sentence-spacing
-  - hyphens-and-dashes
-  - point-size
-  - line-spacing
-  - line-length
+  - "curly-quotes"
+  - "sentence-spacing"
+  - "hyphens-and-dashes"
+  - "point-size"
+  - "line-spacing"
+  - "line-length"
 contrasts_with:
-  - good-typography
-
-# === COMPETENCY QUESTIONS ===
+  - "good-typography"
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 19: A landing page hero section uses a 14px body font, a 16px heading, and a 14px subheading. Why does it feel like nothing stands out?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

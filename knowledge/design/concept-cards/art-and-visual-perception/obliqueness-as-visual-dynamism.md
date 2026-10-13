@@ -1,64 +1,51 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Obliqueness as Visual Dynamism
-slug: obliqueness-as-visual-dynamism
-
-# === CLASSIFICATION ===
-category: visual-elements
+concept: "Obliqueness as Visual Dynamism"
+slug: "obliqueness-as-visual-dynamism"
+category: "visual-elements"
 subcategory: null
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IV. Growth"
 chapter_number: 4
 pdf_page: 108
 section: "Obliqueness"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - diagonal-dynamism
-  - oblique-direction
-  - directional-deviation
-
-# === TYPED RELATIONSHIPS ===
+  - "diagonal-dynamism"
+  - "oblique-direction"
+  - "directional-deviation"
 prerequisites:
-  - vertical-horizontal-framework
-  - law-of-differentiation
+  - "vertical-horizontal-framework"
+  - "law-of-differentiation"
 extends: []
 related:
-  - spatial-orientation-of-form
-  - structural-skeleton
-  - design-principles
+  - "spatial-orientation-of-form"
+  - "structural-skeleton"
+  - "design-principles"
 contrasts_with:
-  - static-form
-  - undifferentiated-direction
-
-# === COMPETENCY QUESTIONS ===
+  - "static-form"
+  - "undifferentiated-direction"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Tension-resolution (dissonance and resolution)"
-    rating: structural
+    rating: "structural"
     note: "Oblique directions in composition create visual tension (deviation from the stable vertical-horizontal tonic) in the same way a dissonant interval in music creates harmonic tension — the tension resolves when oblique movement returns to or resolves against the stable framework."
-
 css_implementation:
-  - property: "transform"
+  -
+    property: "transform"
     example: "transform: rotate(15deg);"
-    support: baseline
-  - property: "clip-path"
+    support: "baseline"
+  -
+    property: "clip-path"
     example: "clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

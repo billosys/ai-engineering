@@ -1,33 +1,34 @@
 ---
-concept: Colour Picker Design Principles
-slug: colour-picker-design-principles
-category: interaction-design
-subcategory: colour-controls
-tier: intermediate
-layer: 2-domain
+concept: "Colour Picker Design Principles"
+slug: "colour-picker-design-principles"
+category: "interaction-design"
+subcategory: "colour-controls"
+tier: "intermediate"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "What makes a good color picker?"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["colour space design goals", "picker design criteria"]
+  -
+    - "colour space design goals"
+    - "picker design criteria"
 prerequisites:
-  - colour-picker
-  - colour-gamut
-  - hsl
-  - hsv
+  - "colour-picker"
+  - "colour-gamut"
+  - "hsl"
+  - "hsv"
 extends:
-  - colour-picker
+  - "colour-picker"
 related:
-  - okhsl
-  - okhsv
-  - orthogonal-colour-properties
-contrasts_with:
-  - []
+  - "okhsl"
+  - "okhsv"
+  - "orthogonal-colour-properties"
+contrasts_with: []
 answers_questions:
   - "What makes a colour picker perceptually well-designed?"
 rosetta_stone: []

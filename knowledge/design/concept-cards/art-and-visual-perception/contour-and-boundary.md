@@ -1,68 +1,54 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Contour and Boundary
-slug: contour-and-boundary
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: shape
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Contour and Boundary"
+slug: "contour-and-boundary"
+category: "visual-elements"
+subcategory: "shape"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "What Is Shape? / The Structural Skeleton"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - outline
-  - edge
-  - boundary
-  - silhouette contour
-
-# === TYPED RELATIONSHIPS ===
-prerequisites:
-  []
-extends:
-  []
+  - "outline"
+  - "edge"
+  - "boundary"
+  - "silhouette contour"
+prerequisites: []
+extends: []
 related:
-  - visual-shape
-  - structural-skeleton
-  - visual-subdivision
-  - figure-ground
+  - "visual-shape"
+  - "structural-skeleton"
+  - "visual-subdivision"
+  - "figure-ground"
 contrasts_with:
-  - structural-skeleton
-
-# === COMPETENCY QUESTIONS ===
+  - "structural-skeleton"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "An icon set mixes outlined and filled styles, some at 16px and some at 24px, some with rounded corners and some with sharp corners. It feels 'off.' What principle was violated?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Boundary of a set in topology"
-    rating: structural
+    rating: "structural"
     note: "The topological boundary of a region — the set of points that separate inside from outside — corresponds to contour as Arnheim defines it: the physical boundary that delimits a shape without exhausting its perceptual character."
-
 css_implementation:
-  - property: "border / outline / box-shadow"
+  -
+    property: "border / outline / box-shadow"
     example: "border: 1px solid currentColor; /* Explicit contour */"
-    support: baseline
-  - property: "clip-path"
+    support: "baseline"
+  -
+    property: "clip-path"
     example: "clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Defines triangle contour */"
-    support: baseline
-  - property: "SVG stroke"
+    support: "baseline"
+  -
+    property: "SVG stroke"
     example: "<path stroke='currentColor' stroke-width='2' fill='none' d='M...' />"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

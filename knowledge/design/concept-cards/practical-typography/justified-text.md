@@ -1,52 +1,37 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Justified Text
-slug: justified-text
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Justified Text"
+slug: "justified-text"
+category: "typography"
+subcategory: "type-formatting"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Justified Text"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "full justification"
   - "justified alignment"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
-  - line-length
+  - "body-text"
+  - "line-length"
 extends: []
 related:
-  - hyphenation
-  - line-spacing
+  - "hyphenation"
+  - "line-spacing"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "text-align"
+  -
+    property: "text-align"
     example: "p { text-align: justify; hyphens: auto; } /* always pair with hyphenation */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

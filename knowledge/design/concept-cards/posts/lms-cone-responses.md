@@ -1,30 +1,27 @@
 ---
-concept: LMS Cone Responses
-slug: lms-cone-responses
-category: visual-perception
-subcategory: photoreceptor physiology
-tier: foundational
-layer: 0-perception
+concept: "LMS Cone Responses"
+slug: "lms-cone-responses"
+category: "visual-perception"
+subcategory: "photoreceptor physiology"
+tier: "foundational"
+layer: "0-perception"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Converting from XYZ to Oklab"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
-aliases:
-  - []
+extraction_confidence: "medium"
+aliases: []
 prerequisites:
-  - colour-space
-extends:
-  - []
+  - "colour-space"
+extends: []
 related:
-  - xyz-colour-space
-  - oklab
-  - matrix-transformation-colour
-contrasts_with:
-  - []
+  - "xyz-colour-space"
+  - "oklab"
+  - "matrix-transformation-colour"
+contrasts_with: []
 answers_questions:
   - "How do you convert between colour spaces for image processing?"
 rosetta_stone: []

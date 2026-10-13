@@ -1,39 +1,43 @@
 ---
-concept: CSS rgba() (Alpha Channel)
-slug: css-rgba
-category: colour-theory
-subcategory: colour-notation
-tier: intermediate
-layer: 3-implementation
+concept: "CSS rgba() (Alpha Channel)"
+slug: "css-rgba"
+category: "colour-theory"
+subcategory: "colour-notation"
+tier: "intermediate"
+layer: "3-implementation"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color values / RGB Values"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["rgba()", "CSS alpha", "opacity in color"]
+  -
+    - "rgba()"
+    - "CSS alpha"
+    - "opacity in color"
 prerequisites:
-  - rgb-colour-model
-  - colour-bit-depth
+  - "rgb-colour-model"
+  - "colour-bit-depth"
 extends:
-  - rgb-colour-model
+  - "rgb-colour-model"
 related:
-  - hsl-css-syntax
-  - hex-colour-notation
-contrasts_with:
-  - []
+  - "hsl-css-syntax"
+  - "hex-colour-notation"
+contrasts_with: []
 answers_questions: []
 rosetta_stone: []
 css_implementation:
-  - property: "color / background-color"
+  -
+    property: "color / background-color"
     example: "rgba(150, 150, 150, 0.5);"
-    support: baseline
-  - property: "color / background-color"
+    support: "baseline"
+  -
+    property: "color / background-color"
     example: "rgba(0, 0, 0, 0);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

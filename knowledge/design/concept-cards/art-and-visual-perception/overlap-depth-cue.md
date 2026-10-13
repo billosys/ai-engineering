@@ -1,67 +1,53 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Overlap as Depth Cue
-slug: overlap-depth-cue
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Overlap as Depth Cue"
+slug: "overlap-depth-cue"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Depth by Overlapping"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - occlusion
-  - interposition
-  - superposition
-  - overlapping
-
-# === TYPED RELATIONSHIPS ===
+  - "occlusion"
+  - "interposition"
+  - "superposition"
+  - "overlapping"
 prerequisites:
-  - figure-ground
-  - pictorial-space
-extends:
-  - []
+  - "figure-ground"
+  - "pictorial-space"
+extends: []
 related:
-  - depth-levels
-  - transparency-perceptual
-  - size-gradient
+  - "depth-levels"
+  - "transparency-perceptual"
+  - "size-gradient"
 contrasts_with:
-  - size-gradient
-  - atmospheric-perspective
-
-# === COMPETENCY QUESTIONS ===
+  - "size-gradient"
+  - "atmospheric-perspective"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "z-index / CSS stacking context"
-    rating: rigorous
+    rating: "rigorous"
     note: "Overlap is the perceptual mechanism that z-index exploits: the element with higher z-index visually occludes elements below, establishing the 'in front of' relationship."
-
 css_implementation:
-  - property: "z-index"
+  -
+    property: "z-index"
     example: "z-index: 2; /* overlaps z-index: 1 elements */"
-    support: baseline
-  - property: "position"
+    support: "baseline"
+  -
+    property: "position"
     example: "position: absolute; /* enables z-index-based overlap */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

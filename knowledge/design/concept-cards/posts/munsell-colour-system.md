@@ -1,30 +1,30 @@
 ---
-concept: Munsell Colour System
-slug: munsell-colour-system
-category: colour-theory
-subcategory: colour-ordering-systems
-tier: intermediate
-layer: 2-domain
+concept: "Munsell Colour System"
+slug: "munsell-colour-system"
+category: "colour-theory"
+subcategory: "colour-ordering-systems"
+tier: "intermediate"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Color picking before computers"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
+extraction_confidence: "medium"
 aliases:
-  - ["Munsell", "Munsell color model"]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "Munsell"
+    - "Munsell color model"
+prerequisites: []
+extends: []
 related:
-  - natural-colour-system
-  - hsl
-  - okhsl
+  - "natural-colour-system"
+  - "hsl"
+  - "okhsl"
 contrasts_with:
-  - natural-colour-system
+  - "natural-colour-system"
 answers_questions:
   - "What makes a colour picker perceptually well-designed?"
 rosetta_stone: []

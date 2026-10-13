@@ -1,55 +1,41 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: DIN Paper Formats
-slug: din-paper-formats
-
-# === CLASSIFICATION ===
-category: design-systems
-subcategory: format-standards
-tier: intermediate
-layer: 3-implementation
-
-# === PROVENANCE ===
+concept: "DIN Paper Formats"
+slug: "din-paper-formats"
+category: "design-systems"
+subcategory: "format-standards"
+tier: "intermediate"
+layer: "3-implementation"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "New Typography and Standardization"
 chapter_number: 14
 pdf_page: 134
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "DIN 476"
   - "A-series paper sizes"
   - "ISO 216"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - standardization-in-design
+  - "standardization-in-design"
 extends: []
 related:
-  - the-new-typography
+  - "the-new-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 7: What is a grid system, and what problem does it solve in visual composition?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "1:√2 ratio"
-    rating: rigorous
+    rating: "rigorous"
     note: "DIN paper formats use the ratio 1:√2, which ensures that halving a sheet preserves the aspect ratio — a mathematical invariant that makes the system internally consistent."
-
 css_implementation:
-  - property: "@page size"
+  -
+    property: "@page size"
     example: "@page { size: A4; } /* 210mm × 297mm */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

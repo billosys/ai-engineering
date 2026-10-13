@@ -1,47 +1,32 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Sans-Serif Advocacy
-slug: sans-serif-advocacy
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: typography-foundations
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Sans-Serif Advocacy"
+slug: "sans-serif-advocacy"
+category: "typography"
+subcategory: "typography-foundations"
+tier: "intermediate"
+layer: "2-domain"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: "Type"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "Grotesque typeface"
   - "sanserif advocacy"
   - "skeleton letters"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - the-new-typography
-  - functional-typography
+  - "the-new-typography"
+  - "functional-typography"
 extends: []
 related:
-  - type-expressiveness
-  - ornament-rejection
+  - "type-expressiveness"
+  - "ornament-rejection"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 6: What distinguishes a serif typeface from a sans-serif, and what are the historical/functional reasons for each?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

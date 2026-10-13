@@ -1,62 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Height in Picture Plane as Depth Cue
-slug: height-in-picture-plane
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Height in Picture Plane as Depth Cue"
+slug: "height-in-picture-plane"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Gradients Create Depth"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - vertical position in picture plane
-  - height gradient
-  - elevation depth cue
-  - baseline convention
-
-# === TYPED RELATIONSHIPS ===
+  - "vertical position in picture plane"
+  - "height gradient"
+  - "elevation depth cue"
+  - "baseline convention"
 prerequisites:
-  - pictorial-space
-extends:
-  - []
+  - "pictorial-space"
+extends: []
 related:
-  - size-gradient
-  - atmospheric-perspective
-  - texture-gradient
-  - linear-perspective
-contrasts_with:
-  - []
-
-# === COMPETENCY QUESTIONS ===
+  - "size-gradient"
+  - "atmospheric-perspective"
+  - "texture-gradient"
+  - "linear-perspective"
+contrasts_with: []
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Coordinate systems: screen y-axis vs. world y-axis"
-    rating: structural
+    rating: "structural"
     note: "In screen coordinates, y increases downward; in world space (and in the height-in-plane depth cue), objects higher in the visual field are perceived as farther away — a convention that maps to CSS top/bottom values differently for ground-plane vs. sky-plane contexts."
-
 css_implementation:
-  - property: "margin-top / top"
+  -
+    property: "margin-top / top"
     example: "/* Higher vertical position in a landscape layout implies greater spatial depth */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

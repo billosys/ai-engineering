@@ -1,72 +1,60 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Simplicity
-slug: visual-simplicity
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: structural quality
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Visual Simplicity"
+slug: "visual-simplicity"
+category: "visual-elements"
+subcategory: "structural quality"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Simplicity"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - structural simplicity
-  - figural goodness
-  - perceptual economy
-
-# === TYPED RELATIONSHIPS ===
+  - "structural simplicity"
+  - "figural goodness"
+  - "perceptual economy"
 prerequisites:
-  - praegnanz
-extends:
-  []
+  - "praegnanz"
+extends: []
 related:
-  - visual-shape
-  - perceptual-concept
-  - structural-skeleton
+  - "visual-shape"
+  - "perceptual-concept"
+  - "structural-skeleton"
 contrasts_with:
-  - visual-complexity
-
-# === COMPETENCY QUESTIONS ===
+  - "visual-complexity"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "A developer says 'I tried making it look good by adding more colours.' The result looks chaotic. What foundational principle are they missing?"
   - "An icon set mixes outlined and filled styles, some at 16px and some at 24px, some with rounded corners and some with sharp corners. It feels 'off.' What principle was violated?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Minimum description length / Kolmogorov complexity"
-    rating: rigorous
+    rating: "rigorous"
     note: "Visual simplicity, measured by counting structural features rather than elements, is equivalent to Kolmogorov complexity: the simplest visual form requires the shortest description (fewest independent parameters)."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Single Responsibility Principle / DRY"
-    rating: structural
+    rating: "structural"
     note: "Orderliness (each part serving one function in the simplest way) parallels SRP; parsimony (not more complexity than required) parallels DRY — both eliminate redundant structural features."
-  - domain: music
+  -
+    domain: "music"
     concept: "Economy of means / motivic unity"
-    rating: structural
+    rating: "structural"
     note: "A musical composition achieves simplicity when a small number of motifs generate all its material — structurally equivalent to a visual composition achieving orderliness through a minimal set of structural features."
-
 css_implementation:
-  - property: "Design token system (limited set of spacing, colour, type values)"
+  -
+    property: "Design token system (limited set of spacing, colour, type values)"
     example: "--space-unit: 8px; /* All spacing is multiples of one unit — one structural feature */"
-    support: baseline
-  - property: "CSS custom properties / design tokens"
+    support: "baseline"
+  -
+    property: "CSS custom properties / design tokens"
     example: ":root { --color-brand: #0055ff; --color-neutral: #6b7280; } /* Minimal colour set */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

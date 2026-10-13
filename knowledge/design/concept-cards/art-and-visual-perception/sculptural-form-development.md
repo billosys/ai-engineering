@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Sculptural Form Development
-slug: sculptural-form-development
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Sculptural Form Development"
+slug: "sculptural-form-development"
+category: "visual-perception"
 subcategory: null
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IV. Growth"
 chapter_number: 4
 pdf_page: 108
 section: "The Birth of Form in Sculpture"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - three-dimensional-form-development
-  - sculptural-differentiation
-  - volume-conception
-
-# === TYPED RELATIONSHIPS ===
+  - "three-dimensional-form-development"
+  - "sculptural-differentiation"
+  - "volume-conception"
 prerequisites:
-  - law-of-differentiation
-  - vertical-horizontal-framework
-  - fusion-of-parts
+  - "law-of-differentiation"
+  - "vertical-horizontal-framework"
+  - "fusion-of-parts"
 extends: []
 related:
-  - structural-skeleton
-  - perceptual-simplicity
-  - canonical-view
+  - "structural-skeleton"
+  - "perceptual-simplicity"
+  - "canonical-view"
 contrasts_with:
-  - two-dimensional-representation
-
-# === COMPETENCY QUESTIONS ===
+  - "two-dimensional-representation"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "3D modelling — from box modelling to subdivision surfaces"
-    rating: structural
+    rating: "structural"
     note: "The sequence from stick/slab/cube to continuous round volume in sculpture parallels 3D modelling workflows: box modelling starts with primitive volumes (cube), subdivides and rounds to achieve organic forms — the same progression from rectangular to round described by Arnheim."
-
 css_implementation:
-  - property: "border-radius"
+  -
+    property: "border-radius"
     example: "border-radius: 50%;"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

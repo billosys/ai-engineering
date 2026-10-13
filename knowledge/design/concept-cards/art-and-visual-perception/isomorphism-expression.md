@@ -1,66 +1,53 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Isomorphism in Expression
-slug: isomorphism-expression
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: expressive perception
-tier: advanced
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Isomorphism in Expression"
+slug: "isomorphism-expression"
+category: "visual-perception"
+subcategory: "expressive perception"
+tier: "advanced"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "X. Expression"
 chapter_number: 10
 pdf_page: 437
 section: "Expression Embedded in Structure"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - structural isomorphism
-  - expressive isomorphism
-  - structural kinship
-
-# === TYPED RELATIONSHIPS ===
+  - "structural isomorphism"
+  - "expressive isomorphism"
+  - "structural kinship"
 prerequisites:
-  - visual-perception
-  - gestalt-theory-in-art
-  - physiognomic-perception
+  - "visual-perception"
+  - "gestalt-theory-in-art"
+  - "physiognomic-perception"
 extends:
-  - gestalt-theory-in-art
+  - "gestalt-theory-in-art"
 related:
-  - arnheim-expression-theory
-  - physiognomic-perception
-  - visual-expression
-  - structural-skeleton
+  - "arnheim-expression-theory"
+  - "physiognomic-perception"
+  - "visual-expression"
+  - "structural-skeleton"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Mathematical isomorphism — structure-preserving mapping between two systems"
-    rating: rigorous
+    rating: "rigorous"
     note: "Arnheim uses the term 'isomorphism' in its mathematical sense: a bijective mapping between two structures that preserves all structural relations. Expression occurs when the dynamic structure of a visual form and the structure of the expressed state are isomorphic — the same pattern realised in different media."
-  - domain: music
+  -
+    domain: "music"
     concept: "Structural analogy between musical form and emotional arc (tension-resolution curves)"
-    rating: structural
+    rating: "structural"
     note: "The sadness of a slow minor melody is isomorphic to the structure of sadness (low energy, yielding, unresolved) — the same structural pattern instantiated in acoustic rather than visual medium. Arnheim's isomorphism applies cross-modally."
-
 css_implementation:
-  - property: null
+  -
+    property: null
     example: "/* Isomorphism is a theoretical concept; it governs which formal properties to choose to express a target state, but is not directly expressed in CSS */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

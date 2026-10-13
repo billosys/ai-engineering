@@ -1,48 +1,33 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Typographic Contrast
-slug: typographic-contrast
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: visual-hierarchy
-tier: foundational
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Typographic Contrast"
+slug: "typographic-contrast"
+category: "design-principles"
+subcategory: "visual-hierarchy"
+tier: "foundational"
+layer: "1-principles"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "contrast in typography"
   - "visual contrast"
   - "typographic emphasis through contrast"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - functional-typography
-  - active-white-space
-  - typographic-color
-  - functional-color
+  - "functional-typography"
+  - "active-white-space"
+  - "typographic-color"
+  - "functional-color"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

@@ -1,32 +1,32 @@
 ---
-concept: Natural Colour System (NCS)
-slug: natural-colour-system
-category: colour-theory
-subcategory: colour-ordering-systems
-tier: intermediate
-layer: 2-domain
+concept: "Natural Colour System (NCS)"
+slug: "natural-colour-system"
+category: "colour-theory"
+subcategory: "colour-ordering-systems"
+tier: "intermediate"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Color picking before computers"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
+extraction_confidence: "medium"
 aliases:
-  - ["NCS", "NCS color system"]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "NCS"
+    - "NCS color system"
+prerequisites: []
+extends: []
 related:
-  - munsell-colour-system
-  - colour-picker-design-principles
-  - hsv
+  - "munsell-colour-system"
+  - "colour-picker-design-principles"
+  - "hsv"
 contrasts_with:
-  - munsell-colour-system
-  - hsl
-  - hsv
+  - "munsell-colour-system"
+  - "hsl"
+  - "hsv"
 answers_questions:
   - "What makes a colour picker perceptually well-designed?"
 rosetta_stone: []

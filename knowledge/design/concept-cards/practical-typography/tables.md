@@ -1,51 +1,36 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Tables
-slug: tables
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: layout-patterns
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Tables"
+slug: "tables"
+category: "layout-composition"
+subcategory: "layout-patterns"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Tables"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "data tables"
   - "layout tables"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
+  - "body-text"
 extends: []
 related:
-  - rules-and-borders
-  - typographic-grids
+  - "rules-and-borders"
+  - "typographic-grids"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 7: What is a grid system, and what problem does it solve in visual composition?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "display: grid / table"
+  -
+    property: "display: grid / table"
     example: "td { padding: 0.3em 0.5em; border: none; } /* remove borders, add cell padding */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

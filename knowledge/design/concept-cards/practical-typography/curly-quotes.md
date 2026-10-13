@@ -1,52 +1,37 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Curly Quotes
-slug: curly-quotes
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-composition
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Curly Quotes"
+slug: "curly-quotes"
+category: "typography"
+subcategory: "type-composition"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Type Composition"
 chapter_number: null
 pdf_page: null
 section: "Straight and Curly Quotes"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "smart quotes"
   - "typographer's quotes"
   - "proper quotation marks"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typewriter-habits
+  - "typewriter-habits"
 extends: []
 related:
-  - sentence-spacing
-  - hyphens-and-dashes
+  - "sentence-spacing"
+  - "hyphens-and-dashes"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "q element / content"
+  -
+    property: "q element / content"
     example: "q { quotes: '\\201C' '\\201D' '\\2018' '\\2019'; } /* Unicode curly quotes */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

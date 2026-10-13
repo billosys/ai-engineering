@@ -1,45 +1,30 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Typography
-slug: typography
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: typography-foundations
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Typography"
+slug: "typography"
+category: "typography"
+subcategory: "typography-foundations"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Why Typography Matters"
 chapter_number: null
 pdf_page: null
 section: "What Is Typography"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "type design"
   - "typesetting"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - good-typography
-  - body-text
-  - typewriter-habits
+  - "good-typography"
+  - "body-text"
+  - "typewriter-habits"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

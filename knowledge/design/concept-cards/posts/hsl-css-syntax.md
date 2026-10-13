@@ -1,41 +1,46 @@
 ---
-concept: HSL CSS Syntax
-slug: hsl-css-syntax
-category: colour-theory
-subcategory: colour-notation
-tier: foundational
-layer: 3-implementation
+concept: "HSL CSS Syntax"
+slug: "hsl-css-syntax"
+category: "colour-theory"
+subcategory: "colour-notation"
+tier: "foundational"
+layer: "3-implementation"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color values / HSL Values"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["hsl()", "hsla()", "CSS HSL"]
+  -
+    - "hsl()"
+    - "hsla()"
+    - "CSS HSL"
 prerequisites:
-  - hsl
-  - rgb-colour-model
+  - "hsl"
+  - "rgb-colour-model"
 extends:
-  - hsl
+  - "hsl"
 related:
-  - hex-colour-notation
-  - rgb-colour-model
-  - css-rgba
+  - "hex-colour-notation"
+  - "rgb-colour-model"
+  - "css-rgba"
 contrasts_with:
-  - hex-colour-notation
+  - "hex-colour-notation"
 answers_questions:
   - "How do CSS custom properties enable systematic colour theming?"
 rosetta_stone: []
 css_implementation:
-  - property: "color / background-color"
+  -
+    property: "color / background-color"
     example: "hsl(150, 50%, 50%);"
-    support: baseline
-  - property: "color / background-color"
+    support: "baseline"
+  -
+    property: "color / background-color"
     example: "hsla(150, 50%, 50%, 0.5);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

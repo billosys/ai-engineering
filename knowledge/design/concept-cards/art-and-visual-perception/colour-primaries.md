@@ -1,66 +1,54 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Primaries
-slug: colour-primaries
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-systems
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Colour Primaries"
+slug: "colour-primaries"
+category: "colour-theory"
+subcategory: "colour-systems"
+tier: "foundational"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "The Generative Primaries"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - primary colours
-  - fundamental primaries (Arnheim)
-  - generative primaries (Arnheim)
-
-# === TYPED RELATIONSHIPS ===
+  - "primary colours"
+  - "fundamental primaries (Arnheim)"
+  - "generative primaries (Arnheim)"
 prerequisites:
-  - hue
+  - "hue"
 extends: []
 related:
-  - hue
-  - saturation
-  - complementary-colours
-  - colour-harmony
+  - "hue"
+  - "saturation"
+  - "complementary-colours"
+  - "colour-harmony"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What is the difference between hue, saturation/chroma, and lightness/value?"
   - "What are the three components of HSL, and why is HSL more useful than hex notation for palette construction?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Basis vectors in a vector space"
-    rating: rigorous
+    rating: "rigorous"
     note: "Generative primaries are basis vectors: any colour in the gamut is a linear combination of the three primaries (by Grassmann's laws); the primary triad spans the colour space as a basis spans a vector space."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Linear independence"
-    rating: rigorous
+    rating: "rigorous"
     note: "A set of primaries is valid when no primary can be expressed as an additive mixture of the others — analogous to linear independence of basis vectors; red, green, blue are linearly independent in the sense that no one can be produced by combining the other two."
-
 css_implementation:
-  - property: "color (RGB primaries for additive)"
+  -
+    property: "color (RGB primaries for additive)"
     example: "color: rgb(255, 0, 0); /* pure red additive primary */"
-    support: baseline
-  - property: "color (oklch fundamental hue anchors)"
+    support: "baseline"
+  -
+    property: "color (oklch fundamental hue anchors)"
     example: "/* Fundamental primaries by hue angle: red ≈ 30°, yellow ≈ 110°, blue ≈ 250° (approximate in OKLCH) */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

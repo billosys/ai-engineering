@@ -1,55 +1,40 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Point Size
-slug: point-size
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Point Size"
+slug: "point-size"
+category: "typography"
+subcategory: "type-formatting"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Point Size"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "font size"
   - "type size"
   - "text size"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
+  - "body-text"
 extends: []
 related:
-  - line-spacing
-  - line-length
-  - em-unit
-  - headings
+  - "line-spacing"
+  - "line-length"
+  - "em-unit"
+  - "headings"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 5: What are the basic anatomical parts of a letterform (baseline, x-height, cap height, ascender, descender, counter)?"
   - "CQ 19: A landing page hero section uses a 14px body font, a 16px heading, and a 14px subheading. Why does it feel like nothing stands out?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-size"
+  -
+    property: "font-size"
     example: "body { font-size: 18px; } /* web body text: 15-25px range */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

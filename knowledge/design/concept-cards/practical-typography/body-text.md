@@ -1,56 +1,41 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Body Text
-slug: body-text
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-elements
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Body Text"
+slug: "body-text"
+category: "typography"
+subcategory: "type-elements"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Body Text"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "body copy"
   - "running text"
   - "main text"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typography
+  - "typography"
 extends: []
 related:
-  - point-size
-  - line-spacing
-  - line-length
-  - font
-  - headings
+  - "point-size"
+  - "line-spacing"
+  - "line-length"
+  - "font"
+  - "headings"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-size, line-height, max-width"
+  -
+    property: "font-size, line-height, max-width"
     example: "body { font-size: clamp(1rem, 0.5rem + 1.5vi, 1.25rem); line-height: 1.35; max-width: 65ch; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

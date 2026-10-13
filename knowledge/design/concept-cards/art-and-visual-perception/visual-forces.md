@@ -1,63 +1,48 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Forces
-slug: visual-forces
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual dynamics
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Visual Forces"
+slug: "visual-forces"
+category: "visual-perception"
+subcategory: "perceptual dynamics"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "What Are Perceptual Forces?"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceptual forces
-  - psychological forces
-  - field forces in vision
-  - dynamic forces in perception
-
-# === TYPED RELATIONSHIPS ===
+  - "perceptual forces"
+  - "psychological forces"
+  - "field forces in vision"
+  - "dynamic forces in perception"
 prerequisites:
-  - gestalt-theory-in-art
-extends:
-  []
+  - "gestalt-theory-in-art"
+extends: []
 related:
-  - directed-tension
-  - visual-balance
-  - structural-skeleton-of-composition
-  - visual-weight
+  - "directed-tension"
+  - "visual-balance"
+  - "structural-skeleton-of-composition"
+  - "visual-weight"
 contrasts_with:
-  - physical-forces
-  - static-measurement
-
-# === COMPETENCY QUESTIONS ===
+  - "physical-forces"
+  - "static-measurement"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Vector / force with magnitude and direction"
-    rating: rigorous
+    rating: "rigorous"
     note: "Visual forces meet the mathematical definition of forces: 'they have magnitude and direction' (Arnheim's explicit statement) — the mapping is definitionally rigorous, not merely analogical."
-  - domain: physics
+  -
+    domain: "physics"
     concept: "Field theory / electromagnetic field"
-    rating: structural
+    rating: "structural"
     note: "Visual forces are field processes in the nervous system — every point in the visual field is influenced by forces from all others, exactly as in a physical field where each point has a defined field strength. Arnheim uses the iron-filings-in-a-magnetic-field analogy explicitly."
-
 css_implementation: []
 ---
 

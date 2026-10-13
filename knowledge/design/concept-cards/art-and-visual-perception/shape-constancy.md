@@ -1,56 +1,41 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Shape Constancy
-slug: shape-constancy
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Shape Constancy"
+slug: "shape-constancy"
+category: "visual-perception"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Projections"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - constancy-of-shape
-  - size-constancy
-  - perceptual-constancy
-  - shape-and-size-constancy
-
-# === TYPED RELATIONSHIPS ===
+  - "constancy-of-shape"
+  - "size-constancy"
+  - "perceptual-constancy"
+  - "shape-and-size-constancy"
 prerequisites:
-  - picture-plane-projection
+  - "picture-plane-projection"
 extends: []
 related:
-  - structural-skeleton
-  - perceptual-simplicity
-  - foreshortening
+  - "structural-skeleton"
+  - "perceptual-simplicity"
+  - "foreshortening"
 contrasts_with:
-  - projective-distortion
-
-# === COMPETENCY QUESTIONS ===
+  - "projective-distortion"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does Stevens's Power Law (ψ = k × Iⁿ) with its compressive exponent for visual area (n ≈ 0.7) explain why perceived size doesn't scale linearly — and what does this imply for icon sizing, spacing scales, and data visualisation?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Gauge invariance / invariant properties under transformations"
-    rating: structural
+    rating: "structural"
     note: "Shape constancy is the perceptual analogue of gauge invariance: the visual system extracts properties of the object that are invariant under the family of transformations produced by changing viewpoint, maintaining a stable representation despite varying input."
-
 css_implementation: []
 ---
 

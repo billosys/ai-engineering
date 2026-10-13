@@ -1,74 +1,62 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Linear Perspective
-slug: linear-perspective
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Linear Perspective"
+slug: "linear-perspective"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Toward a Convergence of Space"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - central perspective
-  - convergent perspective
-  - one-point perspective
-  - two-point perspective
-
-# === TYPED RELATIONSHIPS ===
+  - "central perspective"
+  - "convergent perspective"
+  - "one-point perspective"
+  - "two-point perspective"
 prerequisites:
-  - pictorial-space
-  - size-gradient
-  - depth-gradient-principle
+  - "pictorial-space"
+  - "size-gradient"
+  - "depth-gradient-principle"
 extends:
-  - isometric-perspective
+  - "isometric-perspective"
 related:
-  - size-gradient
-  - texture-gradient
-  - atmospheric-perspective
-  - height-in-picture-plane
-  - vanishing-point
+  - "size-gradient"
+  - "texture-gradient"
+  - "atmospheric-perspective"
+  - "height-in-picture-plane"
+  - "vanishing-point"
 contrasts_with:
-  - isometric-perspective
-  - flat-pictorial-space
-
-# === COMPETENCY QUESTIONS ===
+  - "isometric-perspective"
+  - "flat-pictorial-space"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Projective geometry — vanishing points, cross-ratio, perspective transform"
-    rating: rigorous
+    rating: "rigorous"
     note: "Linear perspective is geometrically identical to a projective transformation: parallel lines map to convergent lines through a vanishing point, and the cross-ratio of four collinear points is preserved under projection."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Linear interpolation / perspective-correct interpolation"
-    rating: rigorous
+    rating: "rigorous"
     note: "Rendering linear perspective in 3D graphics requires perspective-correct interpolation (1/z interpolation), not linear interpolation, to avoid the 'swimming textures' artifact — a direct consequence of projective geometry."
-
 css_implementation:
-  - property: "perspective"
+  -
+    property: "perspective"
     example: "perspective: 800px; /* sets viewing distance for CSS 3D transforms */"
-    support: baseline
-  - property: "transform: perspective()"
+    support: "baseline"
+  -
+    property: "transform: perspective()"
     example: "transform: perspective(600px) rotateY(30deg);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

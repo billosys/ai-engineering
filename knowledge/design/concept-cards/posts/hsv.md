@@ -1,31 +1,32 @@
 ---
-concept: HSV Colour Space
-slug: hsv
-category: colour-theory
-subcategory: colour-models
-tier: foundational
-layer: 2-domain
+concept: "HSV Colour Space"
+slug: "hsv"
+category: "colour-theory"
+subcategory: "colour-models"
+tier: "foundational"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "HSV"
 chapter_number: null
 pdf_page: null
 section: "Color spaces for color picking"
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["Hue Saturation Value", "HSB", "Hue Saturation Brightness"]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "Hue Saturation Value"
+    - "HSB"
+    - "Hue Saturation Brightness"
+prerequisites: []
+extends: []
 related:
-  - hsl
-  - okhsv
-  - colour-gamut
+  - "hsl"
+  - "okhsv"
+  - "colour-gamut"
 contrasts_with:
-  - hsl
-  - okhsv
+  - "hsl"
+  - "okhsv"
 answers_questions:
   - "What distinguishes Okhsl from Okhsv, and when would you use each?"
 rosetta_stone: []

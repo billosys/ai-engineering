@@ -1,71 +1,59 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Weight of Colour
-slug: weight-of-colour
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: balance
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Weight of Colour"
+slug: "weight-of-colour"
+category: "design-principles"
+subcategory: "balance"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "Weight"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - chromatic weight
-  - hue weight
-  - colour balance
-  - saturation weight
-
-# === TYPED RELATIONSHIPS ===
+  - "chromatic weight"
+  - "hue weight"
+  - "colour balance"
+  - "saturation weight"
 prerequisites:
-  - visual-weight
-  - tonal-weight
+  - "visual-weight"
+  - "tonal-weight"
 extends:
-  - visual-weight
+  - "visual-weight"
 related:
-  - visual-balance
-  - tonal-weight
-  - colour-theory
+  - "visual-balance"
+  - "tonal-weight"
+  - "colour-theory"
 contrasts_with:
-  - weight-by-size
-  - weight-by-location
-
-# === COMPETENCY QUESTIONS ===
+  - "weight-by-size"
+  - "weight-by-location"
 answers_questions:
   - "A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Timbre / tonal colour (klangfarbe)"
-    rating: loose
+    rating: "loose"
     note: "Musical timbre (the qualitative 'colour' of a sound — oboe vs. violin on the same pitch) is loosely analogous to hue in visual experience: both are qualitative dimensions orthogonal to the basic magnitude dimension (loudness/brightness), both affect the expressive weight or character of an element without necessarily changing its fundamental identity. The analogy is loose because no quantitative mapping between specific hues and timbres is established."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Wavelength / perceptual salience"
-    rating: loose
+    rating: "loose"
     note: "Longer-wavelength colours (red, orange) are physiologically more activating and perceptually more salient than shorter-wavelength colours (blue, violet) — loosely grounded in the differential sensitivity of retinal cones. The salience difference contributes to hue weight differences, but the mapping is not quantitatively specified."
-
 css_implementation:
-  - property: "color / background-color (semantic colour roles)"
+  -
+    property: "color / background-color (semantic colour roles)"
     example: "color: hsl(0 80% 45%); /* saturated red: high chromatic weight */"
-    support: baseline
-  - property: "filter: saturate()"
+    support: "baseline"
+  -
+    property: "filter: saturate()"
     example: "filter: saturate(0.3); /* desaturate to reduce chromatic weight */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

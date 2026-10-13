@@ -1,67 +1,55 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Shadow
-slug: shadow
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: light-and-dark
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Shadow"
+slug: "shadow"
+category: "visual-elements"
+subcategory: "light-and-dark"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VI. Light"
 chapter_number: 6
 pdf_page: 356
 section: "Shadows"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - attached shadow
-  - cast shadow
-  - drop shadow (design term)
-
-# === TYPED RELATIONSHIPS ===
+  - "attached shadow"
+  - "cast shadow"
+  - "drop shadow (design term)"
 prerequisites:
-  - tonal-value
-  - chiaroscuro
+  - "tonal-value"
+  - "chiaroscuro"
 extends:
-  - chiaroscuro
+  - "chiaroscuro"
 related:
-  - tonal-contrast
-  - luminosity
-  - depth-cue
+  - "tonal-contrast"
+  - "luminosity"
+  - "depth-cue"
 contrasts_with:
-  - highlight
-
-# === COMPETENCY QUESTIONS ===
+  - "highlight"
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Box-shadow / drop-shadow filter in CSS"
-    rating: structural
+    rating: "structural"
     note: "CSS box-shadow and filter drop-shadow implement the perceptual conventions of cast shadow — offset direction, blur radius (edge softness), and opacity correspond to light-source direction, shadow diffuseness, and transparency."
-
 css_implementation:
-  - property: "box-shadow"
+  -
+    property: "box-shadow"
     example: "box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* cast shadow */"
-    support: baseline
-  - property: "filter: drop-shadow()"
+    support: "baseline"
+  -
+    property: "filter: drop-shadow()"
     example: "filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));"
-    support: baseline
-  - property: "box-shadow (inset, attached)"
+    support: "baseline"
+  -
+    property: "box-shadow (inset, attached)"
     example: "box-shadow: inset 0 2px 8px rgba(0,0,0,0.2); /* attached shadow */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

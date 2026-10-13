@@ -1,56 +1,41 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Triadic Colour Balance
-slug: triadic-colour-balance
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: advanced
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Triadic Colour Balance"
+slug: "triadic-colour-balance"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "advanced"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Color Combinations"
 chapter_number: 9
 pdf_page: 15
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "three-colour balance"
   - "triadic harmony"
   - "split-complement balance"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - complementary-colours
-  - colour-balance
-  - munsell-balance-formula
+  - "complementary-colours"
+  - "colour-balance"
+  - "munsell-balance-formula"
 extends:
-  - colour-balance
-  - complementary-harmony
+  - "colour-balance"
+  - "complementary-harmony"
 related:
-  - colour-harmony-as-order
-  - munsell-colour-solid
+  - "colour-harmony-as-order"
+  - "munsell-colour-solid"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 30: A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Partition of a vector into components"
-    rating: structural
+    rating: "structural"
     note: "Splitting a complement into two component hues is structurally analogous to decomposing a vector into orthogonal components. The component areas must sum to the original area-weight to maintain balance, just as vector components must sum to the original vector."
-
 css_implementation: []
 ---
 

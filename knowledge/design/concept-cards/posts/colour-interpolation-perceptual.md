@@ -1,47 +1,48 @@
 ---
-concept: Colour Interpolation (Perceptual)
-slug: colour-interpolation-perceptual
-category: colour-theory
-subcategory: colour operations
-tier: intermediate
-layer: 2-domain
+concept: "Colour Interpolation (Perceptual)"
+slug: "colour-interpolation-perceptual"
+category: "colour-theory"
+subcategory: "colour operations"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Blending colors"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
-aliases:
-  - []
+extraction_confidence: "high"
+aliases: []
 prerequisites:
-  - oklab
-  - perceptual-uniformity
-  - oklab-conversion
+  - "oklab"
+  - "perceptual-uniformity"
+  - "oklab-conversion"
 extends:
-  - perceptual-uniformity
+  - "perceptual-uniformity"
 related:
-  - chroma-perceptual
-  - lightness-perceptual
-  - colour-space-comparison
-contrasts_with:
-  - []
+  - "chroma-perceptual"
+  - "lightness-perceptual"
+  - "colour-space-comparison"
+contrasts_with: []
 answers_questions:
   - "How do you construct a palette that changes lightness uniformly across hues?"
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Glissando / pitch slide in equal temperament"
-    rating: structural
+    rating: "structural"
     note: "A glissando through equal-tempered semitones sounds even; linear interpolation through Oklab coordinates looks even. Non-uniform spaces produce the auditory equivalent of a glissando that jumps pitch unevenly."
 css_implementation:
-  - property: "color-interpolation"
+  -
+    property: "color-interpolation"
     example: "@keyframes fade { to { color: oklab(0.9 0 0); } } /* interpolates in Oklab */"
-    support: experimental
-  - property: "background"
+    support: "experimental"
+  -
+    property: "background"
     example: "background: linear-gradient(in oklch, red, blue);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

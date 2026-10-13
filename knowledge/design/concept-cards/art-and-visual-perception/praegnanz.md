@@ -1,72 +1,59 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Praegnanz (Law of Good Form)
-slug: praegnanz
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: gestalt laws
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Praegnanz (Law of Good Form)"
+slug: "praegnanz"
+category: "visual-perception"
+subcategory: "gestalt laws"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Simplicity / Leveling and Sharpening"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - law of praegnanz
-  - law of good form
-  - law of simplicity
-  - minimum principle
-  - principle of good gestalt
-
-# === TYPED RELATIONSHIPS ===
+  - "law of praegnanz"
+  - "law of good form"
+  - "law of simplicity"
+  - "minimum principle"
+  - "principle of good gestalt"
 prerequisites:
-  - perceptual-concept
-extends:
-  []
+  - "perceptual-concept"
+extends: []
 related:
-  - visual-simplicity
-  - leveling-and-sharpening
-  - shape-completion
-  - visual-subdivision
+  - "visual-simplicity"
+  - "leveling-and-sharpening"
+  - "shape-completion"
+  - "visual-subdivision"
 contrasts_with:
-  - complexity
-
-# === COMPETENCY QUESTIONS ===
+  - "complexity"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "A developer says 'I tried making it look good by adding more colours.' The result looks chaotic. What foundational principle are they missing?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Minimum energy / minimum description length"
-    rating: rigorous
+    rating: "rigorous"
     note: "Praegnanz maps rigorously to minimum description length (MDL): the brain selects the perceptual interpretation requiring the fewest structural features to specify — equivalent to selecting the shortest programme that generates the observed data."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Occam's razor / parsimony in model selection"
-    rating: structural
+    rating: "structural"
     note: "The principle of parsimony in science (choose the simplest hypothesis that fits the data) is structurally identical to Praegnanz: the perceptual system adopts the simplest available organisation of the stimulus."
-  - domain: music
+  -
+    domain: "music"
     concept: "Voice leading (smoothest melodic motion between chords)"
-    rating: structural
+    rating: "structural"
     note: "The preference for minimal voice movement in harmonic progressions parallels Praegnanz: musical lines resolve to the simplest, most consistent available continuation."
-
 css_implementation:
-  - property: "Reducing visual noise: minimising competing z-index layers, colour count, font variant count"
+  -
+    property: "Reducing visual noise: minimising competing z-index layers, colour count, font variant count"
     example: "/* Praegnanz in CSS: fewer distinct values = simpler perceptual structure */ --font-weight-body: 400; --font-weight-heading: 700; /* only two weights */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

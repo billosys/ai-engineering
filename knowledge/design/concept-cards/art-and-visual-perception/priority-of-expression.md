@@ -1,70 +1,59 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Priority of Expression
-slug: priority-of-expression
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: expressive perception
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Priority of Expression"
+slug: "priority-of-expression"
+category: "visual-perception"
+subcategory: "expressive perception"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "X. Expression"
 chapter_number: 10
 pdf_page: 437
 section: "The Priority of Expression"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - expressive primacy
-  - physiognomic primacy
-
-# === TYPED RELATIONSHIPS ===
+  - "expressive primacy"
+  - "physiognomic primacy"
 prerequisites:
-  - visual-perception
-  - physiognomic-perception
+  - "visual-perception"
+  - "physiognomic-perception"
 extends:
-  - physiognomic-perception
+  - "physiognomic-perception"
 related:
-  - arnheim-expression-theory
-  - visual-expression
-  - perceptual-experience-as-foundation
+  - "arnheim-expression-theory"
+  - "visual-expression"
+  - "perceptual-experience-as-foundation"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "First-impressions heuristic in UX — emotional response precedes functional evaluation"
-    rating: structural
+    rating: "structural"
     note: "The priority of expression maps structurally to the established UX finding (Norman, Tractinsky) that aesthetic-emotional response to an interface precedes and colours functional evaluation; Arnheim's theory is the perceptual grounding for why 'first impressions' are primarily expressive, not analytical."
-  - domain: music
+  -
+    domain: "music"
     concept: "Emotional impact precedes musical analysis — listeners feel before they theorise"
-    rating: structural
+    rating: "structural"
     note: "The priority of expression in vision mirrors the well-established primacy of emotional response in music: listeners experience the expressive character of a piece before (and often without) analytical understanding of its harmonic or rhythmic structure."
-
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "/* First visual read: overall colour mood/temperature — warm vs. cool, saturated vs. muted */"
-    support: baseline
-  - property: "font-family"
+    support: "baseline"
+  -
+    property: "font-family"
     example: "/* Typeface expressive character is read before content: serif=authoritative, rounded sans=friendly */"
-    support: baseline
-  - property: "border-radius"
+    support: "baseline"
+  -
+    property: "border-radius"
     example: "/* Corner geometry is read expressively (sharp=precise/formal, rounded=friendly/soft) before functionally */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,76 +1,64 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Whole and Part
-slug: visual-whole-and-part
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: gestalt organisation
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Visual Whole and Part"
+slug: "visual-whole-and-part"
+category: "visual-perception"
+subcategory: "gestalt organisation"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "A Whole Maintains Itself / What Is a Part?"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - whole-part dynamics
-  - gestalt holism
-  - part-whole relationship
-  - genuine parts vs. portions
-
-# === TYPED RELATIONSHIPS ===
+  - "whole-part dynamics"
+  - "gestalt holism"
+  - "part-whole relationship"
+  - "genuine parts vs. portions"
 prerequisites:
-  - praegnanz
-  - visual-shape
-  - visual-subdivision
-extends:
-  []
+  - "praegnanz"
+  - "visual-shape"
+  - "visual-subdivision"
+extends: []
 related:
-  - structural-skeleton
-  - visual-simplicity
-  - perceptual-grouping-similarity
-  - consistent-shape
+  - "structural-skeleton"
+  - "visual-simplicity"
+  - "perceptual-grouping-similarity"
+  - "consistent-shape"
 contrasts_with:
-  - reductionism-visual
-
-# === COMPETENCY QUESTIONS ===
+  - "reductionism-visual"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Encapsulation and cohesion / system architecture"
-    rating: structural
+    rating: "structural"
     note: "The distinction between genuine parts (structurally independent subwholes within a context) and mere portions (arbitrary cuts) maps directly to the distinction between well-encapsulated modules with high cohesion and arbitrary code partitioning."
-  - domain: music
+  -
+    domain: "music"
     concept: "Phrase structure / motif-theme-movement hierarchy"
-    rating: structural
+    rating: "structural"
     note: "Music's hierarchical part-whole structure (motif → phrase → period → section → movement) parallels the hierarchical visual part-whole structure Arnheim describes: each level is a genuine part only when it functions as a structurally independent subwhole within the larger context."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Hierarchical decomposition / recursive structure"
-    rating: structural
+    rating: "structural"
     note: "The hierarchical subdivision Arnheim describes (primary parts → secondary parts → tertiary) is structurally equivalent to recursive decomposition: each part is itself a whole that can be further subdivided by the same structural principles."
-
 css_implementation:
-  - property: "Component hierarchy in CSS (BEM / component structure)"
+  -
+    property: "Component hierarchy in CSS (BEM / component structure)"
     example: "/* Block > Element > Modifier mirrors genuine part hierarchy */ .card { } .card__header { } .card__body { } .card__footer { } /* each is a genuine part, not an arbitrary slice */"
-    support: baseline
-  - property: "CSS Grid / Flexbox nested layouts"
+    support: "baseline"
+  -
+    property: "CSS Grid / Flexbox nested layouts"
     example: "/* Outer grid is the whole; inner grid is a genuine part that maintains its own internal structure */ .layout { display: grid; grid-template-columns: 1fr 2fr; } .sidebar { display: flex; flex-direction: column; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

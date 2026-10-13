@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Type Expressiveness
-slug: type-expressiveness
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: typography-foundations
-tier: advanced
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Type Expressiveness"
+slug: "type-expressiveness"
+category: "typography"
+subcategory: "typography-foundations"
+tier: "advanced"
+layer: "2-domain"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: "On the expressiveness of type"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "expressiveness of typefaces"
   - "type character"
   - "typeface expression"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - sans-serif-advocacy  # the expressiveness argument culminates in sans-serif as the type of our time
-  - the-new-typography  # the argument is embedded in the movement's worldview
+  - "sans-serif-advocacy"
+  - "the-new-typography"
 extends:
-  - typographic-contrast  # expressiveness theory deepens the understanding of why contrast works — type expresses its era, not individual emotions
+  - "typographic-contrast"
 related:
-  - functional-typography  # type expressiveness serves function, not personal emotion
+  - "functional-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 6: What distinguishes a serif typeface from a sans-serif, and what are the historical/functional reasons for each?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: philosophy
+  -
+    domain: "philosophy"
     concept: "Zeitgeist / spirit of the age"
-    rating: analogical
+    rating: "analogical"
     note: "Tschichold's theory of type expressiveness is essentially a Hegelian argument: each typeface expresses not a personal emotion but the 'spirit of its time.' The parallel is analogical — the philosophical framework (Zeitgeist) illuminates the typographic argument, but the domains operate differently."
-
 css_implementation: []
 ---
 

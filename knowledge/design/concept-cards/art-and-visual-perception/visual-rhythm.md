@@ -1,69 +1,58 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Rhythm
-slug: visual-rhythm
-
-# === CLASSIFICATION ===
-category: design-principles
+concept: "Visual Rhythm"
+slug: "visual-rhythm"
+category: "design-principles"
 subcategory: null
-tier: foundational
-layer: 1-principles
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VIII. Movement"
 chapter_number: 8
 pdf_page: 395
 section: "Simultaneity and Sequence"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - spatial rhythm
-  - compositional rhythm
-  - rhythmic repetition
-
-# === TYPED RELATIONSHIPS ===
+  - "spatial rhythm"
+  - "compositional rhythm"
+  - "rhythmic repetition"
 prerequisites:
-  - visual-perception
-  - visual-elements
+  - "visual-perception"
+  - "visual-elements"
 extends: []
 related:
-  - implied-motion
-  - common-fate
-  - design-principles
+  - "implied-motion"
+  - "common-fate"
+  - "design-principles"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Rhythmic metre — patterns of strong and weak beats repeating over time"
-    rating: structural
+    rating: "structural"
     note: "Musical rhythm distributes strong and weak beats across temporal intervals; visual rhythm distributes visual accents (size, colour, contrast) across spatial intervals — both are patterns of emphasis and relaxation, the only difference being the perceptual dimension (temporal vs. spatial)."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Periodic functions — patterns that repeat at regular intervals (e.g., sin/cos waves)"
-    rating: structural
+    rating: "structural"
     note: "Regular visual rhythm maps structurally to a periodic function; irregular/complex visual rhythm maps to aperiodic or polymeric patterns, analogous to polyrhythm in music."
-
 css_implementation:
-  - property: "gap"
+  -
+    property: "gap"
     example: "gap: 1.5rem; /* regular spatial rhythm in grid/flex */"
-    support: baseline
-  - property: "margin"
+    support: "baseline"
+  -
+    property: "margin"
     example: "margin-bottom: 1.5rem; /* typographic vertical rhythm */"
-    support: baseline
-  - property: "grid-template-columns"
+    support: "baseline"
+  -
+    property: "grid-template-columns"
     example: "grid-template-columns: repeat(3, 1fr); /* equal-interval spatial rhythm */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

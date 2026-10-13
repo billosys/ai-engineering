@@ -1,70 +1,57 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Size Gradient as Depth Cue
-slug: size-gradient
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Size Gradient as Depth Cue"
+slug: "size-gradient"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Gradients Create Depth"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - size decrease with distance
-  - relative size cue
-  - size recession
-
-# === TYPED RELATIONSHIPS ===
+  - "size decrease with distance"
+  - "relative size cue"
+  - "size recession"
 prerequisites:
-  - pictorial-space
-extends:
-  - []
+  - "pictorial-space"
+extends: []
 related:
-  - texture-gradient
-  - atmospheric-perspective
-  - linear-perspective
-  - height-in-picture-plane
-  - overlap-depth-cue
+  - "texture-gradient"
+  - "atmospheric-perspective"
+  - "linear-perspective"
+  - "height-in-picture-plane"
+  - "overlap-depth-cue"
 contrasts_with:
-  - overlap-depth-cue
-
-# === COMPETENCY QUESTIONS ===
+  - "overlap-depth-cue"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does Stevens's Power Law (ψ = k × Iⁿ) with its compressive exponent for visual area (n ≈ 0.7) explain why perceived size doesn't scale linearly — and what does this imply for icon sizing, spacing scales, and data visualisation?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Power laws (Stevens: ψ = k × Iⁿ, n ≈ 0.7 for visual area)"
-    rating: rigorous
+    rating: "rigorous"
     note: "Perceived size does not scale linearly with physical size; the size-gradient-to-depth mapping is non-linear, meaning equal physical size reductions do not produce equal perceived depth steps."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Projective geometry — projective scaling"
-    rating: rigorous
+    rating: "rigorous"
     note: "In central perspective, size diminishes according to 1/d (inverse distance law from projective geometry), making the size gradient a precise geometric consequence of the viewing pyramid."
-
 css_implementation:
-  - property: "transform: scale()"
+  -
+    property: "transform: scale()"
     example: "transform: scale(0.8); /* suggests recession */"
-    support: baseline
-  - property: "font-size"
+    support: "baseline"
+  -
+    property: "font-size"
     example: "font-size: clamp(0.75rem, 2vw, 1rem); /* size hierarchy implies depth/distance */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

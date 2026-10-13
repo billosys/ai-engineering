@@ -1,74 +1,61 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Spatial Depth in Layout and Interface Design
-slug: layout-spatial-depth
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: depth-and-layering
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Spatial Depth in Layout and Interface Design"
+slug: "layout-spatial-depth"
+category: "layout-composition"
+subcategory: "depth-and-layering"
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Application to Painting"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - UI depth hierarchy
-  - interface layering
-  - elevation system
-
-# === TYPED RELATIONSHIPS ===
+  - "UI depth hierarchy"
+  - "interface layering"
+  - "elevation system"
 prerequisites:
-  - depth-levels
-  - figure-ground
-  - overlap-depth-cue
-  - atmospheric-perspective
-extends:
-  - []
+  - "depth-levels"
+  - "figure-ground"
+  - "overlap-depth-cue"
+  - "atmospheric-perspective"
+extends: []
 related:
-  - negative-space
-  - depth-levels
-  - size-gradient
-  - atmospheric-perspective
-  - perceptual-transparency
+  - "negative-space"
+  - "depth-levels"
+  - "size-gradient"
+  - "atmospheric-perspective"
+  - "perceptual-transparency"
 contrasts_with:
-  - flat-design
-
-# === COMPETENCY QUESTIONS ===
+  - "flat-design"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
   - "A dark-mode implementation simply inverts all colours. Text on some backgrounds becomes unreadable. What went wrong?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
   - "An admin panel organises its UI by database tables — Users page, Orders page, Products page, each showing all columns in a table. Users complain they can't get their work done efficiently. Diagnose the fundamental mistake and propose the restructuring principle."
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS z-index stacking, elevation tokens, shadow scale"
-    rating: rigorous
+    rating: "rigorous"
     note: "Design system elevation tokens (0dp to 24dp in Material Design) directly implement depth levels — each elevation value specifies a depth plane with associated shadow rendering."
-
 css_implementation:
-  - property: "box-shadow"
+  -
+    property: "box-shadow"
     example: "box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* low elevation */ box-shadow: 0 8px 24px rgba(0,0,0,0.2); /* high elevation */"
-    support: baseline
-  - property: "z-index"
+    support: "baseline"
+  -
+    property: "z-index"
     example: "--z-base: 0; --z-content: 1; --z-nav: 10; --z-modal: 100;"
-    support: baseline
-  - property: "filter: drop-shadow()"
+    support: "baseline"
+  -
+    property: "filter: drop-shadow()"
     example: "filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

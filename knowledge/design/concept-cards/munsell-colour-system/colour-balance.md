@@ -1,57 +1,42 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Balance
-slug: colour-balance
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Colour Balance"
+slug: "colour-balance"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Balance"
 chapter_number: 8
 pdf_page: 11
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "color balance"
   - "chromatic balance"
   - "colour equilibrium"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - hue
-  - colour-value
-  - chroma
-  - complementary-colours
+  - "hue"
+  - "colour-value"
+  - "chroma"
+  - "complementary-colours"
 extends: []
 related:
-  - munsell-colour-system
-  - munsell-balance-formula
-  - colour-harmony-as-order
-  - munsell-colour-solid
+  - "munsell-colour-system"
+  - "munsell-balance-formula"
+  - "colour-harmony-as-order"
+  - "munsell-colour-solid"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 30: A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Inverse proportionality"
-    rating: rigorous
+    rating: "rigorous"
     note: "Colour balance follows a precise inverse proportionality: Area ∝ 1/(Chroma × Value). This is the same mathematical relationship as a lever/fulcrum system where torque = force × distance, and balance requires equal torques on both sides."
-
 css_implementation: []
 ---
 

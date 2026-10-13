@@ -1,56 +1,41 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Headings
-slug: headings
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-elements
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Headings"
+slug: "headings"
+category: "typography"
+subcategory: "type-elements"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Headings"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "headers"
   - "heading hierarchy"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
-  - typographic-emphasis
-  - point-size
+  - "body-text"
+  - "typographic-emphasis"
+  - "point-size"
 extends: []
 related:
-  - all-caps
-  - typographic-color
-  - line-spacing
+  - "all-caps"
+  - "typographic-color"
+  - "line-spacing"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
   - "CQ 19: A landing page hero section uses a 14px body font, a 16px heading, and a 14px subheading. Why does it feel like nothing stands out?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-size, font-weight, margin"
+  -
+    property: "font-size, font-weight, margin"
     example: "h2 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

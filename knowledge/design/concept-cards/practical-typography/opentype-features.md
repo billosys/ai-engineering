@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: OpenType Features
-slug: opentype-features
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-elements
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "OpenType Features"
+slug: "opentype-features"
+category: "typography"
+subcategory: "type-elements"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "OpenType Features"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "OT features"
   - "OpenType layout features"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - font
+  - "font"
 extends: []
 related:
-  - small-caps
-  - ligatures
-  - alternate-figures
-  - kerning
+  - "small-caps"
+  - "ligatures"
+  - "alternate-figures"
+  - "kerning"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-feature-settings"
+  -
+    property: "font-feature-settings"
     example: "body { font-feature-settings: 'kern' 1, 'liga' 1; } .sc { font-feature-settings: 'smcp' 1; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

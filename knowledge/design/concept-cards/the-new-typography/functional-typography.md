@@ -1,52 +1,37 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Functional Typography
-slug: functional-typography
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: design-movements
-tier: foundational
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Functional Typography"
+slug: "functional-typography"
+category: "design-principles"
+subcategory: "design-movements"
+tier: "foundational"
+layer: "1-principles"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
   - "form follows function in typography"
   - "functional design"
   - "Zweckmässigkeit"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - the-new-typography
-  - typographic-contrast
-  - ornament-rejection
+  - "the-new-typography"
+  - "typographic-contrast"
+  - "ornament-rejection"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "form follows function"
-    rating: structural
+    rating: "structural"
     note: "Tschichold explicitly draws the parallel between engineering products and typographic form — both derive shape from purpose, not aesthetics."
-
 css_implementation: []
 ---
 

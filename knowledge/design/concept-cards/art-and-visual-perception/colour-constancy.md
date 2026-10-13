@@ -1,64 +1,51 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Constancy
-slug: colour-constancy
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual-constancy
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Colour Constancy"
+slug: "colour-constancy"
+category: "visual-perception"
+subcategory: "perceptual-constancy"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "Shape and Color"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - chromatic constancy
-  - hue constancy
-
-# === TYPED RELATIONSHIPS ===
+  - "chromatic constancy"
+  - "hue constancy"
 prerequisites:
-  - hue
-  - saturation
-  - tonal-value
+  - "hue"
+  - "saturation"
+  - "tonal-value"
 extends: []
 related:
-  - brightness-constancy
-  - simultaneous-contrast
-  - colour-temperature
+  - "brightness-constancy"
+  - "simultaneous-contrast"
+  - "colour-temperature"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
   - "A dark-mode implementation simply inverts all colours. Text on some backgrounds becomes unreadable. What went wrong?"
   - "How do you ensure a coloured status badge communicates its meaning without relying solely on colour? What redundant encoding strategies exist?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Von Kries adaptation model (diagonal matrix in cone space)"
-    rating: rigorous
+    rating: "rigorous"
     note: "The visual system's colour constancy is computationally modelled as a diagonal scaling matrix in cone-response space (von Kries model), multiplying each cone channel by an adaptation gain — a linear algebra operation."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "White balance / colour temperature correction in cameras"
-    rating: structural
+    rating: "structural"
     note: "Camera white balance implements an engineered version of colour constancy: a matrix transform corrects for the spectral bias of the illuminant, mimicking the visual system's perceptual normalisation."
-
 css_implementation:
-  - property: "filter: color-matrix / backdrop-filter"
+  -
+    property: "filter: color-matrix / backdrop-filter"
     example: "/* CSS cannot directly reproduce colour constancy; awareness informs design decisions about ambient light */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

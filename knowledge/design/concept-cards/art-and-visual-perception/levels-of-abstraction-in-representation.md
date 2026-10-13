@@ -1,57 +1,42 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Levels of Abstraction in Representation
-slug: levels-of-abstraction-in-representation
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Levels of Abstraction in Representation"
+slug: "levels-of-abstraction-in-representation"
+category: "visual-perception"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Levels of Abstraction"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - degree-of-abstraction
-  - representational-abstraction
-  - abstraction-realism-continuum
-
-# === TYPED RELATIONSHIPS ===
+  - "degree-of-abstraction"
+  - "representational-abstraction"
+  - "abstraction-realism-continuum"
 prerequisites:
-  - representation-in-art
-  - medium-specificity-of-form
+  - "representation-in-art"
+  - "medium-specificity-of-form"
 extends: []
 related:
-  - adaptation-level-and-visual-norms
-  - perceptual-simplicity
-  - form-vs-shape
+  - "adaptation-level-and-visual-norms"
+  - "perceptual-simplicity"
+  - "form-vs-shape"
 contrasts_with:
-  - mechanical-replication
-  - pure-ornament
-
-# === COMPETENCY QUESTIONS ===
+  - "mechanical-replication"
+  - "pure-ornament"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Abstraction layers in software architecture"
-    rating: structural
+    rating: "structural"
     note: "Just as software architecture defines levels of abstraction (hardware → OS → runtime → application → API), visual representation operates across levels of abstraction (photorealistic → naturalistic → schematic → symbolic → abstract), each appropriate for different purposes and audiences."
-
 css_implementation: []
 ---
 

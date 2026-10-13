@@ -1,46 +1,31 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Photomontage
-slug: photomontage
-
-# === CLASSIFICATION ===
-category: imagery
-subcategory: image-techniques
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Photomontage"
+slug: "photomontage"
+category: "imagery"
+subcategory: "image-techniques"
+tier: "intermediate"
+layer: "2-domain"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "Photography and Typography"
 chapter_number: 13
 pdf_page: 125
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "photo-montage"
   - "photo composition"
   - "photo-collage"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typo-photo
+  - "typo-photo"
 extends: []
 related:
-  - typographic-poster
-  - functional-typography
+  - "typographic-poster"
+  - "functional-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

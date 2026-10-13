@@ -8,7 +8,7 @@ description: |
   wayfinding, theming, or answering a visual design question.
 license: MIT
 metadata:
-  version: "1.0.4"
+  version: "1.0.5"
   hermes:
     tags: [design, css, color, typography, layout, oklch, cube-css, utopia]
     category: web-frontend

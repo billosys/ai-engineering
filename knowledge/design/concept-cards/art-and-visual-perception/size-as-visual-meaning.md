@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Size as Visual Meaning
-slug: size-as-visual-meaning
-
-# === CLASSIFICATION ===
-category: visual-elements
+concept: "Size as Visual Meaning"
+slug: "size-as-visual-meaning"
+category: "visual-elements"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IV. Growth"
 chapter_number: 4
 pdf_page: 108
 section: "Size"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - pictorial-size
-  - hierarchical-size
-  - semantic-size
-
-# === TYPED RELATIONSHIPS ===
+  - "pictorial-size"
+  - "hierarchical-size"
+  - "semantic-size"
 prerequisites:
-  - law-of-differentiation
+  - "law-of-differentiation"
 extends: []
 related:
-  - vertical-horizontal-framework
-  - perceptual-simplicity
-  - design-principles
+  - "vertical-horizontal-framework"
+  - "perceptual-simplicity"
+  - "design-principles"
 contrasts_with:
-  - realistic-size
-  - scale-as-proportion
-
-# === COMPETENCY QUESTIONS ===
+  - "realistic-size"
+  - "scale-as-proportion"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does Stevens's Power Law (ψ = k × Iⁿ) with its compressive exponent for visual area (n ≈ 0.7) explain why perceived size doesn't scale linearly — and what does this imply for icon sizing, spacing scales, and data visualisation?"
   - "A page uses five different font sizes (13px, 15px, 17px, 22px, 31px) with no apparent pattern. What's wrong, and what system would fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Stevens's Power Law (ψ = k × Iⁿ, n ≈ 0.7 for visual area)"
-    rating: rigorous
+    rating: "rigorous"
     note: "Stevens's law quantifies that perceived size is not proportional to physical size (compressive exponent n ≈ 0.7 for visual area); Arnheim's point that 'realistic size is only marginally relevant' aligns with this — visual size serves categorical meaning, not measurement."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Typographic scale / design tokens for size"
-    rating: structural
+    rating: "structural"
     note: "The principle that size expresses categorical importance maps onto design token systems where size tokens express hierarchy (h1, h2, h3) rather than arbitrary measurements."
-
 css_implementation:
-  - property: "font-size"
+  -
+    property: "font-size"
     example: "font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);"
-    support: baseline
-  - property: "width / height"
+    support: "baseline"
+  -
+    property: "width / height"
     example: "width: 2em; height: 2em;"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

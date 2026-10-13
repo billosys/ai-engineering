@@ -1,61 +1,45 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Vision as Active Exploration
-slug: vision-as-active-exploration
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual foundations
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Vision as Active Exploration"
+slug: "vision-as-active-exploration"
+category: "visual-perception"
+subcategory: "perceptual foundations"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Vision as Active Exploration"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - active vision
-  - vision as creative act
-  - eyesight as insight
-  - visual grasping
-
-# === TYPED RELATIONSHIPS ===
-prerequisites:
-  []
-extends:
-  []
+  - "active vision"
+  - "vision as creative act"
+  - "eyesight as insight"
+  - "visual grasping"
+prerequisites: []
+extends: []
 related:
-  - perceptual-concept
-  - visual-shape
-  - praegnanz
+  - "perceptual-concept"
+  - "visual-shape"
+  - "praegnanz"
 contrasts_with:
-  - passive-registration
-
-# === COMPETENCY QUESTIONS ===
+  - "passive-registration"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Query-driven data access vs. passive data push"
-    rating: loose
+    rating: "loose"
     note: "Active vision (the eye reaches out to grasp selected features) is loosely analogous to query-driven data access: the system actively selects what it needs from the environment rather than passively registering everything indiscriminately."
-  - domain: art
+  -
+    domain: "art"
     concept: "Gestural drawing / direct perception"
-    rating: structural
+    rating: "structural"
     note: "The 'active grasp' quality of vision — tracing, touching, scanning — corresponds to the kinesthetic understanding sought in gesture drawing: the artist re-enacts the visual reaching-out by physically tracing the forms of objects."
-
 css_implementation: []
 ---
 

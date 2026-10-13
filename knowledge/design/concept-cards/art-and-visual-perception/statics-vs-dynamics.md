@@ -1,72 +1,59 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Statics versus Dynamics in Visual Composition
-slug: statics-vs-dynamics
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: visual dynamics
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Statics versus Dynamics in Visual Composition"
+slug: "statics-vs-dynamics"
+category: "design-principles"
+subcategory: "visual dynamics"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IX. Dynamics"
 chapter_number: 9
 pdf_page: 416
 section: "Simplicity Is Not Enough"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - tension-simplicity balance
-  - dynamic-static continuum
-  - tension-reduction vs. tension-heightening
-  - anabolic-catabolic in visual design
-
-# === TYPED RELATIONSHIPS ===
+  - "tension-simplicity balance"
+  - "dynamic-static continuum"
+  - "tension-reduction vs. tension-heightening"
+  - "anabolic-catabolic in visual design"
 prerequisites:
-  - directed-tension
-  - visual-forces
-  - gestalt-theory-in-art
-extends:
-  []
+  - "directed-tension"
+  - "visual-forces"
+  - "gestalt-theory-in-art"
+extends: []
 related:
-  - visual-balance
-  - oblique-orientation
-  - deformation-tension
-  - dynamic-composition
+  - "visual-balance"
+  - "oblique-orientation"
+  - "deformation-tension"
+  - "dynamic-composition"
 contrasts_with:
-  - minimalism
-  - simplicity-as-sole-criterion
-
-# === COMPETENCY QUESTIONS ===
+  - "minimalism"
+  - "simplicity-as-sole-criterion"
 answers_questions:
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Tension-resolution / consonance-dissonance spectrum"
-    rating: structural
+    rating: "structural"
     note: "The statics-dynamics continuum in visual composition directly parallels the consonance-dissonance spectrum in music: both describe a continuum of tension from minimal (pure intervals / orthogonal forms) to maximum (tritone / oblique deformed figures), with the most satisfying art occupying a calibrated position between the extremes rather than at either pole."
-  - domain: physics
+  -
+    domain: "physics"
     concept: "Open vs. closed systems / entropy"
-    rating: structural
+    rating: "structural"
     note: "Arnheim explicitly invokes thermodynamics: closed systems tend toward equilibrium (maximum simplicity = minimum tension); open systems resist this by drawing energy from the environment. The static-dynamic contrast in visual composition parallels the closed-open system distinction: static composition tends toward minimal tension (closed system equilibrium); dynamic composition maintains high tension by drawing on structural themes (open system)."
-
 css_implementation:
-  - property: "animation-timing-function"
+  -
+    property: "animation-timing-function"
     example: "animation-timing-function: ease-in-out; /* both acceleration (tension) and deceleration (resolution) — dynamic */"
-    support: baseline
-  - property: "transition (tension through change)"
+    support: "baseline"
+  -
+    property: "transition (tension through change)"
     example: "transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1); /* dynamic timing adds life to state changes */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

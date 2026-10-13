@@ -1,36 +1,40 @@
 ---
-concept: Gradient Colour Interpolation (CSS)
-slug: gradient-colour-interpolation
-category: colour-theory
-subcategory: colour-effects
-tier: intermediate
-layer: 3-implementation
+concept: "Gradient Colour Interpolation (CSS)"
+slug: "gradient-colour-interpolation"
+category: "colour-theory"
+subcategory: "colour-effects"
+tier: "intermediate"
+layer: "3-implementation"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color Properties / Gradients"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
+extraction_confidence: "medium"
 aliases:
-  - ["CSS gradients", "linear-gradient", "radial-gradient", "color stops", "SVG gradient"]
+  -
+    - "CSS gradients"
+    - "linear-gradient"
+    - "radial-gradient"
+    - "color stops"
+    - "SVG gradient"
 prerequisites:
-  - rgb-colour-model
-  - additive-colour-mixing
-extends:
-  - []
+  - "rgb-colour-model"
+  - "additive-colour-mixing"
+extends: []
 related:
-  - css-rgba
-  - hsl-css-syntax
-contrasts_with:
-  - []
+  - "css-rgba"
+  - "hsl-css-syntax"
+contrasts_with: []
 answers_questions: []
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Linear interpolation (lerp)"
-    rating: rigorous
-    note: "CSS gradient colour stops are computed by linearly interpolating between stop colours in sRGB space (or another colour space in CSS Color 4). The value at position t between stop A and stop B is exactly lerp(A, B, t) = A + t(B-A) applied per channel \u2014 a direct mathematical identity."
+    rating: "rigorous"
+    note: "CSS gradient colour stops are computed by linearly interpolating between stop colours in sRGB space (or another colour space in CSS Color 4). The value at position t between stop A and stop B is exactly lerp(A, B, t) = A + t(B-A) applied per channel — a direct mathematical identity."
 ---
 
 # Quick Definition

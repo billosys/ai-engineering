@@ -1,70 +1,57 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Depth Gradient Principle
-slug: depth-gradient-principle
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Depth Gradient Principle"
+slug: "depth-gradient-principle"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Gradients Create Depth"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - gradient depth cue
-  - perceptual gradient
-  - depth from gradients
-
-# === TYPED RELATIONSHIPS ===
+  - "gradient depth cue"
+  - "perceptual gradient"
+  - "depth from gradients"
 prerequisites:
-  - pictorial-space
-  - size-gradient
-extends:
-  - []
+  - "pictorial-space"
+  - "size-gradient"
+extends: []
 related:
-  - size-gradient
-  - texture-gradient
-  - atmospheric-perspective
-  - linear-perspective
-  - height-in-picture-plane
+  - "size-gradient"
+  - "texture-gradient"
+  - "atmospheric-perspective"
+  - "linear-perspective"
+  - "height-in-picture-plane"
 contrasts_with:
-  - flat-pictorial-space
-
-# === COMPETENCY QUESTIONS ===
+  - "flat-pictorial-space"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does Stevens's Power Law (ψ = k × Iⁿ) with its compressive exponent for visual area (n ≈ 0.7) explain why perceived size doesn't scale linearly — and what does this imply for icon sizing, spacing scales, and data visualisation?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Monotonic functions, rate of change, derivatives"
-    rating: structural
+    rating: "structural"
     note: "A depth-creating gradient is a monotonic function of position — the rate of change (steepness) determines perceived depth range; a non-monotone function (irregular gradient) fails to create depth."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Power laws (Stevens: ψ = k × Iⁿ)"
-    rating: rigorous
+    rating: "rigorous"
     note: "The perceptual response to size gradients follows Stevens's Power Law — perceived depth does not scale linearly with physical gradient steepness, implying designers must use steeper physical gradients to produce proportionally deeper perceived space."
-
 css_implementation:
-  - property: "CSS custom properties for spacing scales"
+  -
+    property: "CSS custom properties for spacing scales"
     example: "--space-1: 4px; --space-2: 8px; --space-3: 16px; --space-4: 32px; /* geometric scale creates consistent perceived steps */"
-    support: baseline
-  - property: "filter: blur() with gradient"
+    support: "baseline"
+  -
+    property: "filter: blur() with gradient"
     example: "/* Use opacity/blur gradients to create atmospheric recession */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

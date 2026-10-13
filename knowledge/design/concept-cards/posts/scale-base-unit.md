@@ -1,37 +1,39 @@
 ---
-concept: Base Unit (for Scale Construction)
-slug: scale-base-unit
-category: typography
-subcategory: type-scale
-tier: foundational
-layer: 2-domain
+concept: "Base Unit (for Scale Construction)"
+slug: "scale-base-unit"
+category: "typography"
+subcategory: "type-scale"
+tier: "foundational"
+layer: "2-domain"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Modular scales and how they apply to web design"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - [starting number, scale origin, base value, important number]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "starting number"
+    - "scale origin"
+    - "base value"
+    - "important number"
+prerequisites: []
+extends: []
 related:
-  - modular-scale
-  - scale-ratio
-  - modular-scale-construction
-contrasts_with:
-  - []
+  - "modular-scale"
+  - "scale-ratio"
+  - "modular-scale-construction"
+contrasts_with: []
 answers_questions:
   - "How do you construct a modular scale for a typographic system?"
 rosetta_stone: []
 css_implementation:
-  - property: "font-size"
+  -
+    property: "font-size"
     example: "body { font-size: 18px; /* Scale origin */ } h2 { font-size: 190px; /* Scale origin (second strand) */ }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

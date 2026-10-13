@@ -1,70 +1,58 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Interaction
-slug: colour-interaction
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-relationships
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Colour Interaction"
+slug: "colour-interaction"
+category: "colour-theory"
+subcategory: "colour-relationships"
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "Interaction of Color"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - colour instability
-  - mutual colour modification
-  - chromatic interdependence
-
-# === TYPED RELATIONSHIPS ===
+  - "colour instability"
+  - "mutual colour modification"
+  - "chromatic interdependence"
 prerequisites:
-  - hue
-  - saturation
-  - tonal-value
-  - simultaneous-contrast
+  - "hue"
+  - "saturation"
+  - "tonal-value"
+  - "simultaneous-contrast"
 extends:
-  - simultaneous-contrast
+  - "simultaneous-contrast"
 related:
-  - simultaneous-contrast
-  - colour-harmony
-  - complementary-colours
+  - "simultaneous-contrast"
+  - "colour-harmony"
+  - "complementary-colours"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "How do you construct a colour palette starting from a single brand colour using OKLCH? What systematic steps ensure adequate contrast and accessible combinations?"
   - "A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
   - "How do you systematically audit an existing interface for visual design quality?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Mutual dependency / coupled system of equations"
-    rating: structural
+    rating: "structural"
     note: "Colour interaction means that perceived colour values form a coupled system: each colour's appearance is a function of all other colours, analogous to a system of simultaneous equations where no variable can be solved independently."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Feedback loop / mutual coupling in circuits"
-    rating: structural
+    rating: "structural"
     note: "Colour interaction is like mutual coupling in a circuit: each element affects all others, and changing one element propagates changes throughout the system — palette design must account for system-level effects, not just individual element properties."
-
 css_implementation:
-  - property: "CSS custom properties for context-aware colour"
+  -
+    property: "CSS custom properties for context-aware colour"
     example: "--color-text: oklch(0.2 0.01 270); /* test in all contexts where this appears */"
-    support: baseline
-  - property: "color-mix() for predictable blending"
+    support: "baseline"
+  -
+    property: "color-mix() for predictable blending"
     example: "color-mix(in oklch, var(--primary) 60%, var(--secondary) 40%);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

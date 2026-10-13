@@ -1,37 +1,40 @@
 ---
-concept: CSS Colour Contrast (Accessibility)
-slug: colour-contrast
-category: accessibility
-subcategory: wcag-contrast
-tier: intermediate
-layer: 2-domain
+concept: "CSS Colour Contrast (Accessibility)"
+slug: "colour-contrast"
+category: "accessibility"
+subcategory: "wcag-contrast"
+tier: "intermediate"
+layer: "2-domain"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Accessibility and Other Things to Note about Color"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
+extraction_confidence: "medium"
 aliases:
-  - ["color contrast", "WCAG contrast", "contrast ratio", "a11y color"]
+  -
+    - "color contrast"
+    - "WCAG contrast"
+    - "contrast ratio"
+    - "a11y color"
 prerequisites:
-  - rgb-colour-model
-  - additive-colour-mixing
-extends:
-  - []
+  - "rgb-colour-model"
+  - "additive-colour-mixing"
+extends: []
 related:
-  - colour-bit-depth
-  - css-colour-custom-properties
-contrasts_with:
-  - []
+  - "colour-bit-depth"
+  - "css-colour-custom-properties"
+contrasts_with: []
 answers_questions:
   - "What WCAG contrast ratio requirements apply to normal vs large text?"
 rosetta_stone: []
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "color: #000; background-color: #fff; /* ratio: 21:1 */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,70 +1,58 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Simultaneous Contrast
-slug: simultaneous-contrast
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-interaction
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Simultaneous Contrast"
+slug: "simultaneous-contrast"
+category: "colour-theory"
+subcategory: "colour-interaction"
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "Interaction of Color"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - colour contrast (Chevreul)
-  - simultaneous colour contrast
-  - colour interaction
-
-# === TYPED RELATIONSHIPS ===
+  - "colour contrast (Chevreul)"
+  - "simultaneous colour contrast"
+  - "colour interaction"
 prerequisites:
-  - hue
-  - saturation
-  - tonal-value
+  - "hue"
+  - "saturation"
+  - "tonal-value"
 extends: []
 related:
-  - colour-constancy
-  - complementary-colours
-  - colour-harmony
-  - tonal-contrast
+  - "colour-constancy"
+  - "complementary-colours"
+  - "colour-harmony"
+  - "tonal-contrast"
 contrasts_with:
-  - colour-assimilation
-
-# === COMPETENCY QUESTIONS ===
+  - "colour-assimilation"
 answers_questions:
   - "What is the difference between hue, saturation/chroma, and lightness/value?"
   - "How do you construct a colour palette starting from a single brand colour using OKLCH? What systematic steps ensure adequate contrast and accessible combinations?"
   - "A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Lateral inhibition / opponent process (antagonistic neural computation)"
-    rating: rigorous
+    rating: "rigorous"
     note: "Simultaneous contrast is the perceptual manifestation of lateral inhibition in the retina — a computational subtraction of neighbour signals that is mathematically describable as a difference-of-Gaussians spatial filter."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Edge sharpening / unsharp mask"
-    rating: structural
+    rating: "structural"
     note: "Unsharp mask (USM) in digital imaging deliberately amplifies the lateral inhibition effect — it exaggerates contrast at edges, producing the same kind of perceptual enhancement that simultaneous contrast creates."
-
 css_implementation:
-  - property: "isolation: isolate (containing blend mode contexts)"
+  -
+    property: "isolation: isolate (containing blend mode contexts)"
     example: "isolation: isolate; /* prevent unintended blend mode propagation */"
-    support: baseline
-  - property: "background-color (context matters)"
+    support: "baseline"
+  -
+    property: "background-color (context matters)"
     example: "/* Same hex colour looks different on different backgrounds — test in context */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,38 +1,40 @@
 ---
-concept: CSS Custom Properties for Colour
-slug: css-colour-custom-properties
-category: design-systems
-subcategory: colour-tokens
-tier: intermediate
-layer: 3-implementation
+concept: "CSS Custom Properties for Colour"
+slug: "css-colour-custom-properties"
+category: "design-systems"
+subcategory: "colour-tokens"
+tier: "intermediate"
+layer: "3-implementation"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color values / Color Variables"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["CSS variables for color", "CSS custom properties", "--color tokens"]
+  -
+    - "CSS variables for color"
+    - "CSS custom properties"
+    - "--color tokens"
 prerequisites:
-  - rgb-colour-model
-  - hex-colour-notation
-  - hsl-css-syntax
-extends:
-  - []
+  - "rgb-colour-model"
+  - "hex-colour-notation"
+  - "hsl-css-syntax"
+extends: []
 related:
-  - hex-colour-notation
-  - hsl-css-syntax
-contrasts_with:
-  - []
+  - "hex-colour-notation"
+  - "hsl-css-syntax"
+contrasts_with: []
 answers_questions:
   - "How do CSS custom properties enable systematic colour theming?"
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Dependency injection / inversion of control"
-    rating: rigorous
-    note: "CSS custom properties cascade through the DOM in the same way injected dependencies propagate through a dependency graph. A custom property defined on :root is 'injected' into all descendants; overriding it on a child component changes all colour references within that subtree \u2014 analogous to injecting a different implementation at a scope boundary."
+    rating: "rigorous"
+    note: "CSS custom properties cascade through the DOM in the same way injected dependencies propagate through a dependency graph. A custom property defined on :root is 'injected' into all descendants; overriding it on a child component changes all colour references within that subtree — analogous to injecting a different implementation at a scope boundary."
 ---
 
 # Quick Definition

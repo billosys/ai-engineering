@@ -1,55 +1,40 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Small Caps
-slug: small-caps
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Small Caps"
+slug: "small-caps"
+category: "typography"
+subcategory: "type-formatting"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Small Caps"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "SC"
   - "smcp"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typographic-emphasis
-  - font
+  - "typographic-emphasis"
+  - "font"
 extends: []
 related:
-  - all-caps
-  - letterspacing
-  - kerning
-  - opentype-features
-  - typographic-color
+  - "all-caps"
+  - "letterspacing"
+  - "kerning"
+  - "opentype-features"
+  - "typographic-color"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-variant"
+  -
+    property: "font-variant"
     example: ".sc { font-variant-caps: small-caps; letter-spacing: 0.05em; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

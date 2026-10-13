@@ -1,39 +1,41 @@
 ---
-concept: Colour Picker (UI)
-slug: colour-picker
-category: interaction-design
-subcategory: colour-controls
-tier: intermediate
-layer: 2-domain
+concept: "Colour Picker (UI)"
+slug: "colour-picker"
+category: "interaction-design"
+subcategory: "colour-controls"
+tier: "intermediate"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "What makes a good color picker?"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["color picker", "colour selector", "color wheel"]
+  -
+    - "color picker"
+    - "colour selector"
+    - "color wheel"
 prerequisites:
-  - hsl
-  - hsv
-  - colour-gamut
-extends:
-  - []
+  - "hsl"
+  - "hsv"
+  - "colour-gamut"
+extends: []
 related:
-  - okhsl
-  - okhsv
-  - colour-picker-design-principles
-contrasts_with:
-  - []
+  - "okhsl"
+  - "okhsv"
+  - "colour-picker-design-principles"
+contrasts_with: []
 answers_questions:
   - "What makes a colour picker perceptually well-designed?"
 rosetta_stone: []
 css_implementation:
-  - property: "input[type=color]"
+  -
+    property: "input[type=color]"
     example: "<input type=\"color\" value=\"#ff0000\">"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

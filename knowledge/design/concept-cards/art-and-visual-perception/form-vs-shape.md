@@ -1,54 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Form vs. Shape
-slug: form-vs-shape
-
-# === CLASSIFICATION ===
-category: visual-elements
+concept: "Form vs. Shape"
+slug: "form-vs-shape"
+category: "visual-elements"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - shape-vs-form
-  - meaningful-form
-
-# === TYPED RELATIONSHIPS ===
+  - "shape-vs-form"
+  - "meaningful-form"
 prerequisites:
-  - visual-elements
+  - "visual-elements"
 extends: []
 related:
-  - structural-skeleton
-  - representation-in-art
-  - perceptual-simplicity
+  - "structural-skeleton"
+  - "representation-in-art"
+  - "perceptual-simplicity"
 contrasts_with:
-  - pure-shape
-
-# === COMPETENCY QUESTIONS ===
+  - "pure-shape"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Topology (homeomorphism as form-invariance under continuous deformation)"
-    rating: structural
+    rating: "structural"
     note: "Form in Arnheim's sense — the structural identity that persists through transformations — parallels topological homeomorphism, where deformations that preserve essential connectivity do not change the fundamental class of the object."
-
 css_implementation: []
 ---
 

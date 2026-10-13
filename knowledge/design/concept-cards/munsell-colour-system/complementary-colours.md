@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Complementary Colours
-slug: complementary-colours
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-relationships
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Complementary Colours"
+slug: "complementary-colours"
+category: "colour-theory"
+subcategory: "colour-relationships"
+tier: "foundational"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Opposite or Complementary Colors"
 chapter_number: 7
 pdf_page: 10
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "opposite colours"
   - "complementary colors"
   - "opposite hues"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - hue
-  - munsell-hue-circle
+  - "hue"
+  - "munsell-hue-circle"
 extends: []
 related:
-  - munsell-colour-system
-  - neutral-axis
-  - colour-balance
-  - complementary-harmony
+  - "munsell-colour-system"
+  - "neutral-axis"
+  - "colour-balance"
+  - "complementary-harmony"
 contrasts_with:
-  - analogous-harmony
-
-# === COMPETENCY QUESTIONS ===
+  - "analogous-harmony"
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Tritone / consonance-dissonance"
-    rating: loose
+    rating: "loose"
     note: "Complementary colours provide maximum contrast and mutual enhancement, loosely analogous to the tritone's maximum intervallic tension. However, trichromatic colour perception and frequency-based pitch perception are fundamentally different mechanisms, so the parallel is suggestive, not formally grounded."
-
 css_implementation:
-  - property: "oklch() relative colour syntax"
+  -
+    property: "oklch() relative colour syntax"
     example: "color: oklch(from var(--base) l c calc(h + 180)); /* complementary hue */"
-    support: partial
+    support: "partial"
 ---
 
 # Quick Definition

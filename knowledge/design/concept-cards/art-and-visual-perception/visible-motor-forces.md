@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visible Motor Forces
-slug: visible-motor-forces
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: motion perception
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Visible Motor Forces"
+slug: "visible-motor-forces"
+category: "visual-perception"
+subcategory: "motion perception"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VIII. Movement"
 chapter_number: 8
 pdf_page: 395
 section: "Visible Motor Forces"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - perceptual causality
-  - perceived causality
-  - motor force perception
-
-# === TYPED RELATIONSHIPS ===
+  - "perceptual causality"
+  - "perceived causality"
+  - "motor force perception"
 prerequisites:
-  - visual-perception
-  - implied-motion
+  - "visual-perception"
+  - "implied-motion"
 extends:
-  - implied-motion
+  - "implied-motion"
 related:
-  - phi-phenomenon
-  - stroboscopic-motion
-  - physiognomic-perception
-  - arnheim-expression-theory
+  - "phi-phenomenon"
+  - "stroboscopic-motion"
+  - "physiognomic-perception"
+  - "arnheim-expression-theory"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you design the states of an interactive component (default, hover, active, focus, disabled, loading, error)? What visual properties change for each state, and why?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Physics-based animation — spring systems, momentum, collision response"
-    rating: rigorous
+    rating: "rigorous"
     note: "Physics-based animation makes visible motor forces explicit and computationally real: spring tension, mass, damping, and collision all produce the visible motor force patterns that Arnheim identifies as directly perceived. The perceptual quality of physics-based animation (it feels 'real') is explained by Arnheim's account of why causality is perceived rather than inferred."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Direct manipulation — drag, pinch, inertial scrolling"
-    rating: structural
+    rating: "structural"
     note: "Direct manipulation in touch interfaces exploits visible motor forces: the user perceives their input force as directly causing the visual response, creating the sense of tactile causality that Arnheim identifies as a primary perceptual phenomenon."
-
 css_implementation:
-  - property: "transition"
+  -
+    property: "transition"
     example: "transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* spring-like overshoot */"
-    support: baseline
-  - property: "animation"
+    support: "baseline"
+  -
+    property: "animation"
     example: "@keyframes bounce { 0% { transform: translateY(0); } 60% { transform: translateY(-20px); } 80% { transform: translateY(-10px); } 100% { transform: translateY(0); } }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,54 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Kerning
-slug: kerning
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Kerning"
+slug: "kerning"
+category: "typography"
+subcategory: "type-formatting"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Kerning"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "kern pairs"
   - "pair kerning"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - font
+  - "font"
 extends: []
 related:
-  - letterspacing
-  - optical-vs-metric-spacing
-  - opentype-features
+  - "letterspacing"
+  - "optical-vs-metric-spacing"
+  - "opentype-features"
 contrasts_with:
-  - letterspacing
-
-# === COMPETENCY QUESTIONS ===
+  - "letterspacing"
 answers_questions:
   - "CQ 5: What are the basic anatomical parts of a letterform (baseline, x-height, cap height, ascender, descender, counter)?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-kerning / font-feature-settings"
+  -
+    property: "font-kerning / font-feature-settings"
     example: "body { font-kerning: normal; text-rendering: optimizeLegibility; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

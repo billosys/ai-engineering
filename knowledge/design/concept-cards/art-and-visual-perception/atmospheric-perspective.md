@@ -1,72 +1,60 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Atmospheric Perspective
-slug: atmospheric-perspective
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Atmospheric Perspective"
+slug: "atmospheric-perspective"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Gradients Create Depth"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - aerial perspective
-  - haze depth cue
-  - tonal recession
-
-# === TYPED RELATIONSHIPS ===
+  - "aerial perspective"
+  - "haze depth cue"
+  - "tonal recession"
 prerequisites:
-  - pictorial-space
-extends:
-  - []
+  - "pictorial-space"
+extends: []
 related:
-  - size-gradient
-  - texture-gradient
-  - linear-perspective
-  - depth-gradient-principle
+  - "size-gradient"
+  - "texture-gradient"
+  - "linear-perspective"
+  - "depth-gradient-principle"
 contrasts_with:
-  - linear-perspective
-
-# === COMPETENCY QUESTIONS ===
+  - "linear-perspective"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Dynamics: pp (pianissimo) to ff (fortissimo)"
-    rating: structural
+    rating: "structural"
     note: "Atmospheric perspective follows the same logic as musical dynamics: elements close-up are sharp, high-contrast, and 'loud'; distant elements are soft, low-contrast, and 'quiet'."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Exponential decay of contrast with distance"
-    rating: structural
+    rating: "structural"
     note: "Atmospheric softening follows an approximate exponential decay — contrast and saturation reduce with increasing layers of air between viewer and object."
-
 css_implementation:
-  - property: "filter: blur()"
+  -
+    property: "filter: blur()"
     example: "filter: blur(2px); /* implies spatial recession */"
-    support: baseline
-  - property: "opacity"
+    support: "baseline"
+  -
+    property: "opacity"
     example: "opacity: 0.6; /* lower opacity suggests greater distance */"
-    support: baseline
-  - property: "color"
+    support: "baseline"
+  -
+    property: "color"
     example: "color: hsl(220 10% 70%); /* desaturated, lightened — atmospheric recession */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

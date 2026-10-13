@@ -1,66 +1,53 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Weight by Location
-slug: weight-by-location
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: balance
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Weight by Location"
+slug: "weight-by-location"
+category: "design-principles"
+subcategory: "balance"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "Weight"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - locational weight
-  - positional weight
-  - weight through position
-
-# === TYPED RELATIONSHIPS ===
+  - "locational weight"
+  - "positional weight"
+  - "weight through position"
 prerequisites:
-  - visual-weight
-  - structural-skeleton-of-composition
+  - "visual-weight"
+  - "structural-skeleton-of-composition"
 extends:
-  - visual-weight
+  - "visual-weight"
 related:
-  - visual-balance
-  - top-bottom-asymmetry
-  - left-right-asymmetry
+  - "visual-balance"
+  - "top-bottom-asymmetry"
+  - "left-right-asymmetry"
 contrasts_with:
-  - weight-by-size
-  - weight-by-colour
-
-# === COMPETENCY QUESTIONS ===
+  - "weight-by-size"
+  - "weight-by-colour"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
   - "A card layout uses 16px padding inside cards, 16px between cards, and 16px between card title and body text. Everything feels 'flat.' What principle was violated, and what's the fix?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Moment of force / torque (lever arm)"
-    rating: rigorous
+    rating: "rigorous"
     note: "Arnheim explicitly applies the lever principle: visual weight increases with distance from the compositional centre — exactly the definition of torque (force × distance). An element far from centre exerts greater compositional moment than one near it, regardless of size."
-
 css_implementation:
-  - property: "position / margin"
+  -
+    property: "position / margin"
     example: "position: absolute; top: 0; left: 50%; /* centred position — structurally strong, carries less compensating weight than off-centre */"
-    support: baseline
-  - property: "z-index / elevation"
+    support: "baseline"
+  -
+    property: "z-index / elevation"
     example: "z-index: 10; box-shadow: 0 8px 32px rgba(0,0,0,0.2); /* visual depth adds locational weight */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

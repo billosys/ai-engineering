@@ -1,46 +1,31 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Reading Order
-slug: reading-order
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Reading Order"
+slug: "reading-order"
+category: "typography"
+subcategory: "type-formatting"
+tier: "intermediate"
+layer: "2-domain"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
   - "visual reading sequence"
   - "typographic flow"
   - "Leseordnung"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - functional-typography
-  - asymmetric-typography
+  - "functional-typography"
+  - "asymmetric-typography"
 extends: []
 related:
-  - typographic-contrast
+  - "typographic-contrast"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

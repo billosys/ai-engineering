@@ -1,67 +1,53 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Isometric Perspective
-slug: isometric-perspective
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: spatial-systems
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Isometric Perspective"
+slug: "isometric-perspective"
+category: "visual-perception"
+subcategory: "spatial-systems"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Boxes in Three Dimensions"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - oblique projection
-  - parallel projection
-  - axonometric perspective
-  - divergent perspective (Arnheim's term for one variant)
-
-# === TYPED RELATIONSHIPS ===
+  - "oblique projection"
+  - "parallel projection"
+  - "axonometric perspective"
+  - "divergent perspective (Arnheim's term for one variant)"
 prerequisites:
-  - pictorial-space
-  - deformation-depth-cue
-extends:
-  - []
+  - "pictorial-space"
+  - "deformation-depth-cue"
+extends: []
 related:
-  - linear-perspective
-  - flat-pictorial-space
-  - deformation-depth-cue
+  - "linear-perspective"
+  - "flat-pictorial-space"
+  - "deformation-depth-cue"
 contrasts_with:
-  - linear-perspective
-  - flat-pictorial-space
-
-# === COMPETENCY QUESTIONS ===
+  - "linear-perspective"
+  - "flat-pictorial-space"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "A responsive design uses 6 breakpoints with completely different layouts at each. The CSS is 4,000 lines and breaks constantly between breakpoints. What's the systematic alternative?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Affine transformations — parallel lines map to parallel lines"
-    rating: rigorous
+    rating: "rigorous"
     note: "Isometric perspective is geometrically an affine projection: parallel lines remain parallel (unlike perspective which is a projective transformation). The mathematical preservation of parallelism is the key distinguishing property."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS isometric transforms — fixed rotation angles for 3D appearance"
-    rating: rigorous
+    rating: "rigorous"
     note: "Isometric UI design uses fixed rotation (typically 30° or 26.565°) and a 2:1 width:height ratio to create the parallel-projection depth effect without convergence — directly implementing Arnheim's isometric system."
-
 css_implementation:
-  - property: "transform"
+  -
+    property: "transform"
     example: "transform: rotateX(60deg) rotateZ(-45deg) scale(1.2); /* isometric approximation */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

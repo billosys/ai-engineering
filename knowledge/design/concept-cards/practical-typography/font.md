@@ -1,54 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Font
-slug: font
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-elements
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Font"
+slug: "font"
+category: "typography"
+subcategory: "type-elements"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Font Recommendations"
 chapter_number: null
 pdf_page: null
 section: "Font Basics"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "typeface"
   - "font family"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
+  - "body-text"
 extends: []
 related:
-  - point-size
-  - kerning
-  - opentype-features
-  - font-pairing
+  - "point-size"
+  - "kerning"
+  - "opentype-features"
+  - "font-pairing"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 6: What distinguishes a serif typeface from a sans-serif, and what are the historical/functional reasons for each?"
   - "CQ 26: How do you evaluate and select a typeface pairing for a web application? What properties should contrast, and what should harmonise?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-family"
+  -
+    property: "font-family"
     example: "@font-face { font-family: 'MyFont'; src: url('font.woff2'); } body { font-family: 'MyFont', serif; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

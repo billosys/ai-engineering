@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Kinesthetic Body Image
-slug: kinesthetic-body-image
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: embodied perception
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Kinesthetic Body Image"
+slug: "kinesthetic-body-image"
+category: "visual-perception"
+subcategory: "embodied perception"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VIII. Movement"
 chapter_number: 8
 pdf_page: 395
 section: "The Kinesthetic Body Image"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - kinesthetic self-image
-  - embodied visual perception
-  - proprioceptive visual gap
-
-# === TYPED RELATIONSHIPS ===
+  - "kinesthetic self-image"
+  - "embodied visual perception"
+  - "proprioceptive visual gap"
 prerequisites:
-  - visual-perception
-  - implied-motion
+  - "visual-perception"
+  - "implied-motion"
 extends:
-  - visible-motor-forces
+  - "visible-motor-forces"
 related:
-  - physiognomic-perception
-  - visual-expression
-  - visible-motor-forces
+  - "physiognomic-perception"
+  - "visual-expression"
+  - "visible-motor-forces"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "How do you design the states of an interactive component (default, hover, active, focus, disabled, loading, error)? What visual properties change for each state, and why?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "The gap between developer/designer internal mental model and the user's external visual perception"
-    rating: structural
+    rating: "structural"
     note: "The kinesthetic body image problem (the performer cannot see themselves as the audience does) maps structurally to the creator-user perception gap in design: designers who build their own interfaces lack the naive first-contact perception of actual users; what feels obvious internally is opaque externally."
-
 css_implementation:
-  - property: null
+  -
+    property: null
     example: "/* Kinesthetic body image is a theoretical concept; its design application is primarily methodological (user testing, external review) rather than directly CSS-implementable */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,70 +1,59 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Phi Phenomenon
-slug: phi-phenomenon
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: apparent motion
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Phi Phenomenon"
+slug: "phi-phenomenon"
+category: "visual-perception"
+subcategory: "apparent motion"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VIII. Movement"
 chapter_number: 8
 pdf_page: 395
 section: "Stroboscopic Movement"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - stroboscopic motion
-  - stroboscopic movement
-  - apparent motion
-  - beta movement
-
-# === TYPED RELATIONSHIPS ===
+  - "stroboscopic motion"
+  - "stroboscopic movement"
+  - "apparent motion"
+  - "beta movement"
 prerequisites:
-  - visual-perception
+  - "visual-perception"
 extends:
-  - gestalt-theory-in-art
+  - "gestalt-theory-in-art"
 related:
-  - implied-motion
-  - common-fate
+  - "implied-motion"
+  - "common-fate"
 contrasts_with:
-  - implied-motion
-
-# === COMPETENCY QUESTIONS ===
+  - "implied-motion"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you design the states of an interactive component (default, hover, active, focus, disabled, loading, error)? What visual properties change for each state, and why?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Frame-rate rendering / discrete sampling (e.g., 60fps display refresh)"
-    rating: rigorous
+    rating: "rigorous"
     note: "The minimum threshold for continuous perceived motion (~20 frames/second) directly governs display refresh rate requirements; below threshold, phi phenomenon degrades into flicker rather than smooth motion."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Nyquist–Shannon sampling theorem — continuous signal reconstructed from discrete samples"
-    rating: structural
+    rating: "structural"
     note: "Phi phenomenon is the perceptual analogue of signal reconstruction from discrete frames: the visual system interpolates continuous motion from discrete positional samples, much as a DAC reconstructs a waveform."
-
 css_implementation:
-  - property: "animation"
+  -
+    property: "animation"
     example: "animation: slide 0.3s ease-in-out;"
-    support: baseline
-  - property: "transition"
+    support: "baseline"
+  -
+    property: "transition"
     example: "transition: transform 200ms ease;"
-    support: baseline
-  - property: "@keyframes"
+    support: "baseline"
+  -
+    property: "@keyframes"
     example: "@keyframes slide { from { transform: translateX(0); } to { transform: translateX(100px); } }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

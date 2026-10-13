@@ -1,37 +1,41 @@
 ---
-concept: Hex Colour Notation
-slug: hex-colour-notation
-category: colour-theory
-subcategory: colour-notation
-tier: foundational
-layer: 3-implementation
+concept: "Hex Colour Notation"
+slug: "hex-colour-notation"
+category: "colour-theory"
+subcategory: "colour-notation"
+tier: "foundational"
+layer: "3-implementation"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color values / Hex Values"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["hex color", "hexadecimal color", "#rrggbb"]
+  -
+    - "hex color"
+    - "hexadecimal color"
+    - "#rrggbb"
 prerequisites:
-  - rgb-colour-model
-  - colour-bit-depth
+  - "rgb-colour-model"
+  - "colour-bit-depth"
 extends:
-  - rgb-colour-model
+  - "rgb-colour-model"
 related:
-  - rgb-colour-model
-  - css-rgba
+  - "rgb-colour-model"
+  - "css-rgba"
 contrasts_with:
-  - hsl
+  - "hsl"
 answers_questions:
   - "What is the relationship between bit depth and available colour range?"
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Base-16 (hexadecimal) positional numeral system"
-    rating: rigorous
-    note: "Hex colour notation is literally base-16 positional notation. Each two-character group represents one byte (8 bits, 0\u2013255 in decimal, 00\u2013FF in hex). The mapping is exact and mechanical."
+    rating: "rigorous"
+    note: "Hex colour notation is literally base-16 positional notation. Each two-character group represents one byte (8 bits, 0–255 in decimal, 00–FF in hex). The mapping is exact and mechanical."
 ---
 
 # Quick Definition

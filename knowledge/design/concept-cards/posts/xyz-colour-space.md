@@ -1,39 +1,38 @@
 ---
-concept: XYZ Colour Space
-slug: xyz-colour-space
-category: colour-theory
-subcategory: colorimetry
-tier: intermediate
-layer: 2-domain
+concept: "XYZ Colour Space"
+slug: "xyz-colour-space"
+category: "colour-theory"
+subcategory: "colorimetry"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Converting from XYZ to Oklab"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
-aliases:
-  - []
+extraction_confidence: "medium"
+aliases: []
 prerequisites:
-  - colour-space
-  - d65-whitepoint
+  - "colour-space"
+  - "d65-whitepoint"
 extends:
-  - colour-space
+  - "colour-space"
 related:
-  - lms-cone-responses
-  - oklab
-  - oklab-conversion
-  - matrix-transformation-colour
-contrasts_with:
-  - []
+  - "lms-cone-responses"
+  - "oklab"
+  - "oklab-conversion"
+  - "matrix-transformation-colour"
+contrasts_with: []
 answers_questions:
   - "How do you convert between colour spaces for image processing?"
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Linear vector space"
-    rating: rigorous
-    note: "XYZ is a linear colour space \u2014 all operations on it are linear transformations (matrix multiplications). Non-linear steps are applied after leaving XYZ."
+    rating: "rigorous"
+    note: "XYZ is a linear colour space — all operations on it are linear transformations (matrix multiplications). Non-linear steps are applied after leaving XYZ."
 css_implementation: []
 ---
 

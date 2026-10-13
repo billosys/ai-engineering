@@ -1,65 +1,52 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Value
-slug: colour-value
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-properties
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Colour Value"
+slug: "colour-value"
+category: "colour-theory"
+subcategory: "colour-properties"
+tier: "foundational"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "II. Value"
 chapter_number: 5
 pdf_page: 6
 section: "II. Value"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "value"
   - "lightness"
   - "Munsell value"
   - "tone"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - munsell-colour-system
-  - hue
-  - chroma
-  - neutral-axis
-  - munsell-value-scale
+  - "munsell-colour-system"
+  - "hue"
+  - "chroma"
+  - "neutral-axis"
+  - "munsell-value-scale"
 contrasts_with:
-  - hue
-  - chroma
-
-# === COMPETENCY QUESTIONS ===
+  - "hue"
+  - "chroma"
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
   - "CQ 14: How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Scalar on a bounded interval [0, 10]"
-    rating: rigorous
+    rating: "rigorous"
     note: "Value is a scalar quantity on the interval [0, 10] with photometric measurement. The steps are perceptually calibrated, meaning equal differences in value number correspond to equal perceived lightness differences — a psychophysical scale, not a linear physical one."
-
 css_implementation:
-  - property: "oklch() lightness channel"
+  -
+    property: "oklch() lightness channel"
     example: "color: oklch(0.5 0.1 240); /* L = 0.5 = Munsell ~V5 */"
-    support: baseline
-  - property: "hsl() lightness channel"
+    support: "baseline"
+  -
+    property: "hsl() lightness channel"
     example: "color: hsl(240, 50%, 50%); /* L = 50% */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

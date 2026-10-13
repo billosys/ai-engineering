@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Light as Compositional Element
-slug: light-as-compositional-element
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: composition
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Light as Compositional Element"
+slug: "light-as-compositional-element"
+category: "design-principles"
+subcategory: "composition"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VI. Light"
 chapter_number: 6
 pdf_page: 356
 section: "The Symbolism of Light"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - light as active agent
-  - compositional lighting
-  - light as design element
-
-# === TYPED RELATIONSHIPS ===
+  - "light as active agent"
+  - "compositional lighting"
+  - "light as design element"
 prerequisites:
-  - tonal-value
-  - chiaroscuro
-  - tonal-contrast
+  - "tonal-value"
+  - "chiaroscuro"
+  - "tonal-contrast"
 extends: []
 related:
-  - tonal-contrast
-  - chiaroscuro
-  - shadow
-  - luminosity
+  - "tonal-contrast"
+  - "chiaroscuro"
+  - "shadow"
+  - "luminosity"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "Spotlight via radial-gradient overlay"
+  -
+    property: "Spotlight via radial-gradient overlay"
     example: "background: radial-gradient(circle at 50% 30%, rgba(255,255,200,0.3), transparent 70%);"
-    support: baseline
-  - property: "box-shadow / filter for attention highlighting"
+    support: "baseline"
+  -
+    property: "box-shadow / filter for attention highlighting"
     example: "box-shadow: 0 0 32px 8px rgba(255,220,100,0.5);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

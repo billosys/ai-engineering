@@ -1,41 +1,43 @@
 ---
-concept: HSL Colour Space
-slug: hsl
-category: colour-theory
-subcategory: colour-models
-tier: foundational
-layer: 2-domain
+concept: "HSL Colour Space"
+slug: "hsl"
+category: "colour-theory"
+subcategory: "colour-models"
+tier: "foundational"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "HSL"
 chapter_number: null
 pdf_page: null
 section: "Color spaces for color picking"
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["Hue Saturation Lightness", "HSLA"]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "Hue Saturation Lightness"
+    - "HSLA"
+prerequisites: []
+extends: []
 related:
-  - hsv
-  - hsl-css-syntax
-  - okhsl
+  - "hsv"
+  - "hsl-css-syntax"
+  - "okhsl"
 contrasts_with:
-  - hsv
-  - okhsl
+  - "hsv"
+  - "okhsl"
 answers_questions:
   - "What distinguishes Okhsl from Okhsv, and when would you use each?"
 rosetta_stone: []
 css_implementation:
-  - property: "color / background-color"
+  -
+    property: "color / background-color"
     example: "hsl(150, 50%, 50%);"
-    support: baseline
-  - property: "color / background-color"
+    support: "baseline"
+  -
+    property: "color / background-color"
     example: "hsla(150, 50%, 50%, 0.5);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

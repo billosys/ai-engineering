@@ -1,48 +1,33 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Modernist Book Design
-slug: modernist-book-design
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: layout-patterns
-tier: intermediate
-layer: 3-implementation
-
-# === PROVENANCE ===
+concept: "Modernist Book Design"
+slug: "modernist-book-design"
+category: "layout-composition"
+subcategory: "layout-patterns"
+tier: "intermediate"
+layer: "3-implementation"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The New Book"
 chapter_number: 34
 pdf_page: 258
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "the new book"
   - "modern book typography"
   - "contemporary book design"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - the-new-typography  # modernist book design is the application of new typography to the book form
-  - asymmetric-typography  # book layout uses asymmetric principles
+  - "the-new-typography"
+  - "asymmetric-typography"
 extends: []
 related:
-  - typo-photo  # photography is introduced into the book as a new element
-  - din-paper-formats  # book formats follow DIN standards
-  - functional-typography  # book design serves communicative function
+  - "typo-photo"
+  - "din-paper-formats"
+  - "functional-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

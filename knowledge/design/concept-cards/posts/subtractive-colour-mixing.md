@@ -1,28 +1,29 @@
 ---
-concept: Subtractive Colour Mixing
-slug: subtractive-colour-mixing
-category: visual-perception
-subcategory: colour-physics
-tier: foundational
-layer: 0-perception
+concept: "Subtractive Colour Mixing"
+slug: "subtractive-colour-mixing"
+category: "visual-perception"
+subcategory: "colour-physics"
+tier: "foundational"
+layer: "0-perception"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color mixing"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["subtractive mixing", "pigment mixing", "paint mixing"]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "subtractive mixing"
+    - "pigment mixing"
+    - "paint mixing"
+prerequisites: []
+extends: []
 related:
-  - additive-colour-mixing
+  - "additive-colour-mixing"
 contrasts_with:
-  - additive-colour-mixing
+  - "additive-colour-mixing"
 answers_questions:
   - "What distinguishes additive from subtractive colour mixing, and which does a monitor use?"
 rosetta_stone: []

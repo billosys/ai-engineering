@@ -1,54 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Line Spacing
-slug: line-spacing
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Line Spacing"
+slug: "line-spacing"
+category: "typography"
+subcategory: "type-formatting"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Line Spacing"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "leading"
   - "line height"
   - "vertical spacing"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
+  - "body-text"
 extends: []
 related:
-  - point-size
-  - line-length
-  - font
+  - "point-size"
+  - "line-length"
+  - "font"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
   - "CQ 18: A card layout uses 16px padding inside cards, 16px between cards, and 16px between card title and body text. Everything feels 'flat.' What principle was violated, and what's the fix?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "line-height"
+  -
+    property: "line-height"
     example: "body { line-height: 1.35; } /* unitless preferred; 120-145% of font-size */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

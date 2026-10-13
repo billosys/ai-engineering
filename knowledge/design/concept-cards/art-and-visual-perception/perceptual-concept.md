@@ -1,56 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Perceptual Concept
-slug: perceptual-concept
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual organisation
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Perceptual Concept"
+slug: "perceptual-concept"
+category: "visual-perception"
+subcategory: "perceptual organisation"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Perceptual Concepts"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceptual generalisation
-  - visual concept
-  - sensory category
-
-# === TYPED RELATIONSHIPS ===
-prerequisites:
-  []
-extends:
-  []
+  - "perceptual generalisation"
+  - "visual concept"
+  - "sensory category"
+prerequisites: []
+extends: []
 related:
-  - visual-shape
-  - praegnanz
-  - vision-as-active-exploration
+  - "visual-shape"
+  - "praegnanz"
+  - "vision-as-active-exploration"
 contrasts_with:
-  - intellectual-abstraction
-
-# === COMPETENCY QUESTIONS ===
+  - "intellectual-abstraction"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Type / class in object-oriented programming"
-    rating: structural
+    rating: "structural"
     note: "A perceptual concept is to a specific perceived shape what a class is to an instance: the general pattern that subsumes all particular cases sharing its structural features."
-
 css_implementation: []
 ---
 

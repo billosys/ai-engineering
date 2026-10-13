@@ -1,63 +1,50 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Convexity and Concavity in Depth Perception
-slug: convexity-concavity-depth
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Convexity and Concavity in Depth Perception"
+slug: "convexity-concavity-depth"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Concavity in Sculpture"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - convex-concave figure-ground
-  - surface curvature depth cue
-  - sculptural depth
-
-# === TYPED RELATIONSHIPS ===
+  - "convex-concave figure-ground"
+  - "surface curvature depth cue"
+  - "sculptural depth"
 prerequisites:
-  - figure-ground
-  - pictorial-space
+  - "figure-ground"
+  - "pictorial-space"
 extends:
-  - figure-ground
+  - "figure-ground"
 related:
-  - contour-rivalry
-  - negative-space
-  - depth-levels
+  - "contour-rivalry"
+  - "negative-space"
+  - "depth-levels"
 contrasts_with:
-  - flat-pictorial-space
-
-# === COMPETENCY QUESTIONS ===
+  - "flat-pictorial-space"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS convex vs. concave UI elements — raised buttons vs. inset fields"
-    rating: structural
+    rating: "structural"
     note: "Convex UI elements (raised buttons with top-lit shadows) advance perceptually; concave elements (inset text fields, well/inset containers) recede — directly applying the Arnheim/Rubin convex-figure principle."
-
 css_implementation:
-  - property: "box-shadow"
+  -
+    property: "box-shadow"
     example: "/* Convex (raised): box-shadow: 0 2px 4px rgba(0,0,0,0.2), 0 -1px 0 rgba(255,255,255,0.1) inset; */"
-    support: baseline
-  - property: "box-shadow (inset)"
+    support: "baseline"
+  -
+    property: "box-shadow (inset)"
     example: "/* Concave (inset): box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,66 +1,52 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Flat Pictorial Space
-slug: flat-pictorial-space
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: spatial-systems
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Flat Pictorial Space"
+slug: "flat-pictorial-space"
+category: "visual-perception"
+subcategory: "spatial-systems"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "SPACE"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - two-dimensional pictorial space
-  - Egyptian method
-  - frontal plane representation
-  - flat representation
-
-# === TYPED RELATIONSHIPS ===
+  - "two-dimensional pictorial space"
+  - "Egyptian method"
+  - "frontal plane representation"
+  - "flat representation"
 prerequisites:
-  - pictorial-space
-extends:
-  - []
+  - "pictorial-space"
+extends: []
 related:
-  - figure-ground
-  - isometric-perspective
-  - depth-levels
-  - perspective-symbolism
+  - "figure-ground"
+  - "isometric-perspective"
+  - "depth-levels"
+  - "perspective-symbolism"
 contrasts_with:
-  - linear-perspective
-  - isometric-perspective
-
-# === COMPETENCY QUESTIONS ===
+  - "linear-perspective"
+  - "isometric-perspective"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Flat design / Material Design baseline / skeuomorphism avoidance"
-    rating: rigorous
+    rating: "rigorous"
     note: "Flat UI design directly corresponds to Arnheim's flat pictorial space — deliberately suppressing depth cues (shadows, gradients, perspective) to keep all elements on equivalent frontal planes."
-
 css_implementation:
-  - property: "box-shadow: none"
+  -
+    property: "box-shadow: none"
     example: "box-shadow: none; /* removes depth implication */"
-    support: baseline
-  - property: "border-radius"
+    support: "baseline"
+  -
+    property: "border-radius"
     example: "/* flat design often uses zero or minimal border-radius to maintain 2D quality */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

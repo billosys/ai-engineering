@@ -1,73 +1,62 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Physiognomic Perception
-slug: physiognomic-perception
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: expressive perception
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Physiognomic Perception"
+slug: "physiognomic-perception"
+category: "visual-perception"
+subcategory: "expressive perception"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "X. Expression"
 chapter_number: 10
 pdf_page: 437
 section: "Traditional Theories"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - physiognomic seeing
-  - physiognomic reading
-  - expressive perception
-  - animistic perception
-
-# === TYPED RELATIONSHIPS ===
+  - "physiognomic seeing"
+  - "physiognomic reading"
+  - "expressive perception"
+  - "animistic perception"
 prerequisites:
-  - visual-perception
-  - visual-elements
+  - "visual-perception"
+  - "visual-elements"
 extends:
-  - gestalt-theory-in-art
+  - "gestalt-theory-in-art"
 related:
-  - arnheim-expression-theory
-  - visual-expression
-  - perceptual-experience-as-foundation
+  - "arnheim-expression-theory"
+  - "visual-expression"
+  - "perceptual-experience-as-foundation"
 contrasts_with:
-  - arnheim-expression-theory
-
-# === COMPETENCY QUESTIONS ===
+  - "arnheim-expression-theory"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is an affordance (in Norman's corrected sense), and how does it differ from a signifier?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Affordance signalling — visual properties that communicate interaction possibilities"
-    rating: structural
+    rating: "structural"
     note: "Physiognomic perception is the perceptual mechanism underlying affordance recognition: users read the character and invitation of a UI element (button looks pressable, link looks clickable) through the same immediate expressive reading Arnheim describes."
-  - domain: music
+  -
+    domain: "music"
     concept: "Expressive character of musical intervals and keys (major/minor, bright/dark)"
-    rating: structural
+    rating: "structural"
     note: "The perceived emotional quality of a musical key (D minor feels melancholy) and a visual form (drooping curves feel sad) are structurally analogous: both are immediate perceptual attributions of character that do not require intellectual inference."
-
 css_implementation:
-  - property: "border-radius"
+  -
+    property: "border-radius"
     example: "border-radius: 4px; /* sharp corners read as precise/angular; large radius reads as friendly/soft */"
-    support: baseline
-  - property: "box-shadow"
+    support: "baseline"
+  -
+    property: "box-shadow"
     example: "box-shadow: 0 1px 3px rgba(0,0,0,0.2); /* elevation implies pressability */"
-    support: baseline
-  - property: "cursor"
+    support: "baseline"
+  -
+    property: "cursor"
     example: "cursor: pointer; /* makes element read as interactive — physiognomic affordance signal */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,69 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Shape Completion
-slug: shape-completion
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: gestalt laws
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Shape Completion"
+slug: "shape-completion"
+category: "visual-perception"
+subcategory: "gestalt laws"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "A Whole Maintains Itself"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceptual closure
-  - gestalt closure
-  - perceptual completion
-  - amodal completion
-
-# === TYPED RELATIONSHIPS ===
+  - "perceptual closure"
+  - "gestalt closure"
+  - "perceptual completion"
+  - "amodal completion"
 prerequisites:
-  - praegnanz
-  - visual-shape
-extends:
-  []
+  - "praegnanz"
+  - "visual-shape"
+extends: []
 related:
-  - structural-skeleton
-  - visual-simplicity
-  - visual-subdivision
+  - "structural-skeleton"
+  - "visual-simplicity"
+  - "visual-subdivision"
 contrasts_with:
-  - visual-subdivision
-
-# === COMPETENCY QUESTIONS ===
+  - "visual-subdivision"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Completion in metric spaces / Cauchy sequence completion"
-    rating: loose
+    rating: "loose"
     note: "Mathematical completion fills in missing elements to make an incomplete structure whole; perceptual completion analogously 'fills in' missing shape segments to produce a complete, stable whole — the analogy is loose because mathematical completion is exact, perceptual completion is probabilistic."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Error correction / forward error correction (FEC)"
-    rating: structural
+    rating: "structural"
     note: "The perceptual system reconstructs complete shapes from partial input just as forward error correction reconstructs the original signal from a corrupted or incomplete transmission — both use redundancy and structural expectations to fill gaps."
-
 css_implementation:
-  - property: "clip-path with overflow: visible (implying continuation outside bounds)"
+  -
+    property: "clip-path with overflow: visible (implying continuation outside bounds)"
     example: "clip-path: inset(0); overflow: visible; /* element continues visually beyond visible area, implying completion */"
-    support: partial
-  - property: "border-radius on partially visible elements"
+    support: "partial"
+  -
+    property: "border-radius on partially visible elements"
     example: "/* A circle partially behind a container edge is perceived as continuing as a circle */ .circle { border-radius: 50%; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

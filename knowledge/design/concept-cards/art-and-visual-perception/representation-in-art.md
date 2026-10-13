@@ -1,53 +1,37 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Representation in Art
-slug: representation-in-art
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Representation in Art"
+slug: "representation-in-art"
+category: "visual-perception"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - pictorial-representation
-  - image-making
-  - visual-representation
-
-# === TYPED RELATIONSHIPS ===
+  - "pictorial-representation"
+  - "image-making"
+  - "visual-representation"
 prerequisites:
-  - form-vs-shape
+  - "form-vs-shape"
 extends: []
 related:
-  - structural-skeleton
-  - canonical-view
-  - picture-plane-projection
-  - medium-specificity-of-form
+  - "structural-skeleton"
+  - "canonical-view"
+  - "picture-plane-projection"
+  - "medium-specificity-of-form"
 contrasts_with:
-  - illusionistic-replication
-  - mechanical-projection
-
-# === COMPETENCY QUESTIONS ===
+  - "illusionistic-replication"
+  - "mechanical-projection"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation: []
 ---
 

@@ -1,50 +1,34 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Typographic Poster
-slug: typographic-poster
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: layout-patterns
-tier: intermediate
-layer: 3-implementation
-
-# === PROVENANCE ===
+concept: "Typographic Poster"
+slug: "typographic-poster"
+category: "layout-composition"
+subcategory: "layout-patterns"
+tier: "intermediate"
+layer: "3-implementation"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Typo-Poster / The Pictorial Poster"
 chapter_number: 26
 pdf_page: 215
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "typo-poster"
   - "typographic placard"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - asymmetric-typography  # poster design requires asymmetric composition
-  - typographic-contrast  # poster effectiveness depends on contrast
+  - "asymmetric-typography"
+  - "typographic-contrast"
 extends: []
 related:
-  - active-white-space  # white space is a key poster design device
-  - functional-color  # colour is used functionally in posters
-  - typo-photo  # photography integrated into poster design
-  - din-paper-formats  # poster sizes follow DIN standards
+  - "active-white-space"
+  - "functional-color"
+  - "typo-photo"
+  - "din-paper-formats"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation: []
 ---
 

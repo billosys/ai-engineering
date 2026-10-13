@@ -1,55 +1,40 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Munsell Balance Formula
-slug: munsell-balance-formula
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: advanced
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Munsell Balance Formula"
+slug: "munsell-balance-formula"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "advanced"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Balance"
 chapter_number: 8
 pdf_page: 11
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "area-chroma-value formula"
   - "Munsell balance equation"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - colour-balance
-  - colour-value
-  - chroma
+  - "colour-balance"
+  - "colour-value"
+  - "chroma"
 extends:
-  - colour-balance
+  - "colour-balance"
 related:
-  - complementary-colours
-  - triadic-colour-balance
-  - munsell-colour-solid
+  - "complementary-colours"
+  - "triadic-colour-balance"
+  - "munsell-colour-solid"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 30: A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Inverse proportionality / lever equation"
-    rating: rigorous
+    rating: "rigorous"
     note: "The formula Area_A/Area_B = (C_B × V_B)/(C_A × V_A) is a direct inverse proportionality. It is mathematically identical to the lever equation: balance requires torque_A = torque_B, where torque = force × distance from fulcrum."
-
 css_implementation: []
 ---
 

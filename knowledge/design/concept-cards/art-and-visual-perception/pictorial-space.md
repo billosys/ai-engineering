@@ -1,65 +1,51 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Pictorial Space
-slug: pictorial-space
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: spatial-perception
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Pictorial Space"
+slug: "pictorial-space"
+category: "visual-perception"
+subcategory: "spatial-perception"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "SPACE"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - pictorial depth
-  - representational space
-
-# === TYPED RELATIONSHIPS ===
+  - "pictorial depth"
+  - "representational space"
 prerequisites:
-  - figure-ground
-extends:
-  - []
+  - "figure-ground"
+extends: []
 related:
-  - overlap-depth-cue
-  - size-gradient
-  - atmospheric-perspective
-  - linear-perspective
-  - texture-gradient
-  - depth-levels
+  - "overlap-depth-cue"
+  - "size-gradient"
+  - "atmospheric-perspective"
+  - "linear-perspective"
+  - "texture-gradient"
+  - "depth-levels"
 contrasts_with:
-  - flat-pictorial-space
-
-# === COMPETENCY QUESTIONS ===
+  - "flat-pictorial-space"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "z-index / z-axis layering"
-    rating: rigorous
+    rating: "rigorous"
     note: "CSS z-index directly implements the same pictorial-depth concept — assigning integer depth values to layered elements on a 2D surface."
-
 css_implementation:
-  - property: "z-index"
+  -
+    property: "z-index"
     example: "z-index: 10;"
-    support: baseline
-  - property: "transform: translateZ()"
+    support: "baseline"
+  -
+    property: "transform: translateZ()"
     example: "transform: translateZ(20px);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

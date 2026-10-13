@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Rules and Borders
-slug: rules-and-borders
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: layout-patterns
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Rules and Borders"
+slug: "rules-and-borders"
+category: "layout-composition"
+subcategory: "layout-patterns"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Rules and Borders"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "lines and boxes"
   - "horizontal rules"
   - "dividers"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
+  - "body-text"
 extends: []
 related:
-  - tables
-  - headings
-  - typewriter-habits
+  - "tables"
+  - "headings"
+  - "typewriter-habits"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "border"
+  -
+    property: "border"
     example: "hr { border: none; border-top: 0.5pt solid #333; } /* classic half-point rule */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

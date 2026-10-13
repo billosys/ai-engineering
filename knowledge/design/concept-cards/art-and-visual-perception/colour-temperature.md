@@ -1,64 +1,51 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Temperature
-slug: colour-temperature
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-properties
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Colour Temperature"
+slug: "colour-temperature"
+category: "colour-theory"
+subcategory: "colour-properties"
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "Warm and Cold"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - warm/cool colour
-  - warm and cold (Arnheim's terms)
-  - chromatic temperature
-
-# === TYPED RELATIONSHIPS ===
+  - "warm/cool colour"
+  - "warm and cold (Arnheim's terms)"
+  - "chromatic temperature"
 prerequisites:
-  - hue
-  - saturation
+  - "hue"
+  - "saturation"
 extends: []
 related:
-  - hue
-  - saturation
-  - colour-harmony
-  - complementary-colours
-  - colour-weight
+  - "hue"
+  - "saturation"
+  - "colour-harmony"
+  - "complementary-colours"
+  - "colour-weight"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "How do you construct a colour palette starting from a single brand colour using OKLCH? What systematic steps ensure adequate contrast and accessible combinations?"
   - "How does temperament problem in music theory map to perceptual uniformity problem in colour science?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Colour temperature in Kelvin (blackbody radiation)"
-    rating: structural
+    rating: "structural"
     note: "Physical colour temperature (Kelvin) describes the chromaticity of blackbody radiation: lower K = warmer (reddish), higher K = cooler (bluish) — the same warm/cool vocabulary applies to physical and perceptual colour temperature, though the mechanisms differ."
-
 css_implementation:
-  - property: "hue angle (oklch)"
+  -
+    property: "hue angle (oklch)"
     example: "/* Warm: H ≈ 0–60° (reds, oranges, yellows); Cool: H ≈ 180–270° (greens, blues) */"
-    support: baseline
-  - property: "filter: hue-rotate() for temperature shift"
+    support: "baseline"
+  -
+    property: "filter: hue-rotate() for temperature shift"
     example: "filter: hue-rotate(-20deg); /* shifts toward warm (red) */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,47 +1,32 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Typo-Photo
-slug: typo-photo
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-elements
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Typo-Photo"
+slug: "typo-photo"
+category: "typography"
+subcategory: "type-elements"
+tier: "intermediate"
+layer: "2-domain"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "Photography and Typography"
 chapter_number: 13
 pdf_page: 125
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "typophoto"
   - "typography-photography synthesis"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - the-new-typography
-  - functional-typography
+  - "the-new-typography"
+  - "functional-typography"
 extends: []
 related:
-  - photomontage
-  - typographic-contrast
-  - sans-serif-advocacy
+  - "photomontage"
+  - "typographic-contrast"
+  - "sans-serif-advocacy"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

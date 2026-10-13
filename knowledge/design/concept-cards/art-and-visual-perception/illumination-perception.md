@@ -1,59 +1,45 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Illumination Perception
-slug: illumination-perception
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: scene-interpretation
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Illumination Perception"
+slug: "illumination-perception"
+category: "visual-perception"
+subcategory: "scene-interpretation"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VI. Light"
 chapter_number: 6
 pdf_page: 356
 section: "Illumination"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceived illumination
-  - illumination vs. surface colour
-  - perceptual light-split
-
-# === TYPED RELATIONSHIPS ===
+  - "perceived illumination"
+  - "illumination vs. surface colour"
+  - "perceptual light-split"
 prerequisites:
-  - tonal-value
-  - brightness-constancy
+  - "tonal-value"
+  - "brightness-constancy"
 extends: []
 related:
-  - chiaroscuro
-  - brightness-constancy
-  - colour-constancy
-  - shadow
+  - "chiaroscuro"
+  - "brightness-constancy"
+  - "colour-constancy"
+  - "shadow"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Render pipeline layer separation (emissive / diffuse / specular)"
-    rating: structural
+    rating: "structural"
     note: "3D rendering separates illumination (lighting pass) from surface colour (diffuse/albedo), mirroring the perceptual split Arnheim describes — the render pipeline makes explicit what the visual system computes implicitly."
-
 css_implementation:
-  - property: "Transparency / overlay blend modes"
+  -
+    property: "Transparency / overlay blend modes"
     example: "mix-blend-mode: multiply; /* simulates transparent shadow overlay on surface colour */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

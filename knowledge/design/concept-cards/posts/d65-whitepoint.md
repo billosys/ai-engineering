@@ -1,30 +1,27 @@
 ---
-concept: D65 Whitepoint
-slug: d65-whitepoint
-category: colour-theory
-subcategory: illuminants
-tier: foundational
-layer: 2-domain
+concept: "D65 Whitepoint"
+slug: "d65-whitepoint"
+category: "colour-theory"
+subcategory: "illuminants"
+tier: "foundational"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "The Oklab color space"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
-aliases:
-  - []
+extraction_confidence: "medium"
+aliases: []
 prerequisites:
-  - colour-space
-extends:
-  - []
+  - "colour-space"
+extends: []
 related:
-  - oklab
-  - xyz-colour-space
-  - gamut-srgb
-contrasts_with:
-  - []
+  - "oklab"
+  - "xyz-colour-space"
+  - "gamut-srgb"
+contrasts_with: []
 answers_questions:
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
 rosetta_stone: []

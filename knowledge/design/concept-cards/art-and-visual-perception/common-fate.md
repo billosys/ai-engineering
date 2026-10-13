@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Common Fate
-slug: common-fate
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: gestalt grouping
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Common Fate"
+slug: "common-fate"
+category: "visual-perception"
+subcategory: "gestalt grouping"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VIII. Movement"
 chapter_number: 8
 pdf_page: 395
 section: "When Do We See Motion?"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - law of common fate
-  - synchronous motion grouping
-  - co-motion grouping
-
-# === TYPED RELATIONSHIPS ===
+  - "law of common fate"
+  - "synchronous motion grouping"
+  - "co-motion grouping"
 prerequisites:
-  - visual-perception
-  - gestalt-theory-in-art
+  - "visual-perception"
+  - "gestalt-theory-in-art"
 extends:
-  - gestalt-theory-in-art
+  - "gestalt-theory-in-art"
 related:
-  - phi-phenomenon
-  - implied-motion
-  - visual-rhythm
+  - "phi-phenomenon"
+  - "implied-motion"
+  - "visual-rhythm"
 contrasts_with:
-  - figure-ground
-
-# === COMPETENCY QUESTIONS ===
+  - "figure-ground"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Voice leading — independent voices that move in parallel motion are perceived as grouped"
-    rating: structural
+    rating: "structural"
     note: "In counterpoint, voices moving in the same direction at the same time (parallel motion) are perceptually fused into a single unit, structurally identical to how elements sharing a visual trajectory are grouped by common fate."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Pub/sub event synchronisation — components that respond to the same event are functionally grouped"
-    rating: structural
+    rating: "structural"
     note: "Common fate in interaction design: UI elements that animate in synchrony in response to the same user trigger are perceptually grouped as a unit, mirroring pub/sub coupling."
-
 css_implementation:
-  - property: "animation"
+  -
+    property: "animation"
     example: "animation: fadeIn 0.3s ease both; /* applied to multiple sibling elements simultaneously */"
-    support: baseline
-  - property: "transition"
+    support: "baseline"
+  -
+    property: "transition"
     example: "transition: opacity 200ms, transform 200ms; /* same timing = common fate grouping */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

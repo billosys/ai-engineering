@@ -1,58 +1,44 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Munsell Hue Circle
-slug: munsell-hue-circle
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-models
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Munsell Hue Circle"
+slug: "munsell-hue-circle"
+category: "colour-theory"
+subcategory: "colour-models"
+tier: "foundational"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "I. Hue"
 chapter_number: 4
 pdf_page: 4
 section: "I. Hue"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "Munsell Color Circle"
   - "Munsell hue wheel"
   - "10-hue circle"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - hue
+  - "hue"
 extends:
-  - hue
+  - "hue"
 related:
-  - munsell-colour-system
-  - munsell-hue-notation
-  - complementary-colours
+  - "munsell-colour-system"
+  - "munsell-hue-notation"
+  - "complementary-colours"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Cyclic group Z/10Z"
-    rating: structural
+    rating: "structural"
     note: "The 10 principal hue steps form a cyclic group Z/10Z. Complementary hues are related by the order-2 element (+5 mod 10). The structure is the same as pitch-class set theory (Z/12Z) in music, differing only in the modulus."
-
 css_implementation:
-  - property: "oklch() hue angle mapping"
+  -
+    property: "oklch() hue angle mapping"
     example: "/* Approximate: 5R~29deg, 5Y~100deg, 5G~155deg, 5B~245deg, 5P~310deg */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

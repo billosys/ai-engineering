@@ -1,63 +1,48 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Shape
-slug: visual-shape
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: form
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Visual Shape"
+slug: "visual-shape"
+category: "visual-elements"
+subcategory: "form"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "What Is Shape?"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceptual shape
-  - form
-  - visual form
-
-# === TYPED RELATIONSHIPS ===
-prerequisites:       # "you need A first" — removing A makes B's definition nonsensical
-  []
-extends:             # "B is a kind of A" — IS-A relationship
-  []
-related:             # lateral peers — neither requires the other
-  - contour-and-boundary
-  - structural-skeleton
-  - praegnanz
-contrasts_with:      # commonly confused or opposing approaches
-  - physical-object-shape
-
-# === COMPETENCY QUESTIONS ===
+  - "perceptual shape"
+  - "form"
+  - "visual form"
+prerequisites: []
+extends: []
+related:
+  - "contour-and-boundary"
+  - "structural-skeleton"
+  - "praegnanz"
+contrasts_with:
+  - "physical-object-shape"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "An icon set mixes outlined and filled styles, some at 16px and some at 24px, some with rounded corners and some with sharp corners. It feels 'off.' What principle was violated?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Topological equivalence (continuous deformation preserving connectivity)"
-    rating: structural
+    rating: "structural"
     note: "Shapes that share a structural skeleton are perceptually equivalent in the same way topologically equivalent forms preserve identity under continuous deformation."
-
 css_implementation:
-  - property: "clip-path / border-radius / shape-outside"
+  -
+    property: "clip-path / border-radius / shape-outside"
     example: "clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);"
-    support: baseline
-  - property: "SVG path (d attribute)"
+    support: "baseline"
+  -
+    property: "SVG path (d attribute)"
     example: "<path d='M 0 0 L 100 0 L 50 100 Z' />"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,62 +1,49 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Contour Rivalry
-slug: contour-rivalry
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual-organisation
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Contour Rivalry"
+slug: "contour-rivalry"
+category: "visual-perception"
+subcategory: "perceptual-organisation"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Contour Rivalry"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - border rivalry
-  - shared contour ambiguity
-  - contour ownership
-
-# === TYPED RELATIONSHIPS ===
+  - "border rivalry"
+  - "shared contour ambiguity"
+  - "contour ownership"
 prerequisites:
-  - figure-ground
+  - "figure-ground"
 extends:
-  - figure-ground
+  - "figure-ground"
 related:
-  - spatial-ambiguity-paradox
-  - negative-space
-  - overlap-depth-cue
+  - "spatial-ambiguity-paradox"
+  - "negative-space"
+  - "overlap-depth-cue"
 contrasts_with:
-  - clear-figure-ground
-
-# === COMPETENCY QUESTIONS ===
+  - "clear-figure-ground"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Border/outline ownership in CSS — which element 'owns' the boundary?"
-    rating: structural
+    rating: "structural"
     note: "In CSS, borders belong to individual elements and cannot be 'shared' — a conceptual contrast to the perceptual phenomenon where contours are claimed by one of two adjacent surfaces."
-
 css_implementation:
-  - property: "border"
+  -
+    property: "border"
     example: "/* CSS borders belong to individual elements — no perceptual contour rivalry possible */"
-    support: baseline
-  - property: "outline"
+    support: "baseline"
+  -
+    property: "outline"
     example: "/* Use gap between adjacent elements (not shared borders) to prevent visual rivalry */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,64 +1,51 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Picture Plane Projection
-slug: picture-plane-projection
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Picture Plane Projection"
+slug: "picture-plane-projection"
+category: "visual-perception"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Projections"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - projective-image
-  - 2D-projection-of-3D
-  - retinal-projection
-  - orthogonal-projection
-
-# === TYPED RELATIONSHIPS ===
+  - "projective-image"
+  - "2D-projection-of-3D"
+  - "retinal-projection"
+  - "orthogonal-projection"
 prerequisites:
-  - representation-in-art
+  - "representation-in-art"
 extends: []
 related:
-  - canonical-view
-  - shape-constancy
-  - foreshortening
-  - structural-skeleton
+  - "canonical-view"
+  - "shape-constancy"
+  - "foreshortening"
+  - "structural-skeleton"
 contrasts_with:
-  - all-around-visual-concept
-  - three-dimensional-form
-
-# === COMPETENCY QUESTIONS ===
+  - "all-around-visual-concept"
+  - "three-dimensional-form"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Linear projection / projection operators in linear algebra"
-    rating: rigorous
+    rating: "rigorous"
     note: "The picture plane projection is literally a linear projection operator: it maps 3D coordinates to 2D by dropping (or compressing) depth information, and different projection matrices (orthogonal, perspective) correspond to Arnheim's different representational methods."
-
 css_implementation:
-  - property: "perspective"
+  -
+    property: "perspective"
     example: "perspective: 800px;"
-    support: baseline
-  - property: "transform"
+    support: "baseline"
+  -
+    property: "transform"
     example: "transform: rotateY(45deg);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

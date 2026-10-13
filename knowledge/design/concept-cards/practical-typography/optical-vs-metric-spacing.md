@@ -1,48 +1,33 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Optical vs. Metric Spacing
-slug: optical-vs-metric-spacing
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: advanced
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Optical vs. Metric Spacing"
+slug: "optical-vs-metric-spacing"
+category: "typography"
+subcategory: "type-formatting"
+tier: "advanced"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Metrics vs. Optical Spacing"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "metrics vs optical"
   - "InDesign spacing modes"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - kerning
-  - font
+  - "kerning"
+  - "font"
 extends: []
 related:
-  - letterspacing
-  - typographic-color
-  - body-text
+  - "letterspacing"
+  - "typographic-color"
+  - "body-text"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 5: What are the basic anatomical parts of a letterform (baseline, x-height, cap height, ascender, descender, counter)?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

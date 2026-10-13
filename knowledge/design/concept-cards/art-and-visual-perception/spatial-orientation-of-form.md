@@ -1,57 +1,43 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Spatial Orientation of Form
-slug: spatial-orientation-of-form
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Spatial Orientation of Form"
+slug: "spatial-orientation-of-form"
+category: "visual-perception"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Orientation in Space"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - orientation-in-space
-  - retinal-orientation
-  - environmental-orientation
-
-# === TYPED RELATIONSHIPS ===
+  - "orientation-in-space"
+  - "retinal-orientation"
+  - "environmental-orientation"
 prerequisites:
-  - structural-skeleton
-  - vertical-horizontal-framework
+  - "structural-skeleton"
+  - "vertical-horizontal-framework"
 extends: []
 related:
-  - form-vs-shape
-  - perceptual-simplicity
+  - "form-vs-shape"
+  - "perceptual-simplicity"
 contrasts_with:
-  - shape-as-geometric-object
-
-# === COMPETENCY QUESTIONS ===
+  - "shape-as-geometric-object"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "transform"
+  -
+    property: "transform"
     example: "transform: rotate(45deg);"
-    support: baseline
-  - property: "writing-mode"
+    support: "baseline"
+  -
+    property: "writing-mode"
     example: "writing-mode: vertical-rl;"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

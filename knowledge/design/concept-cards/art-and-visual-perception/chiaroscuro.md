@@ -1,69 +1,57 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Chiaroscuro
-slug: chiaroscuro
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: tonal-modelling
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Chiaroscuro"
+slug: "chiaroscuro"
+category: "visual-elements"
+subcategory: "tonal-modelling"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VI. Light"
 chapter_number: 6
 pdf_page: 356
 section: "Light Creates Space"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - light and shadow
-  - tonal modelling
-  - sfumato (Leonardo's related term)
-  - claro-obscuro
-
-# === TYPED RELATIONSHIPS ===
+  - "light and shadow"
+  - "tonal modelling"
+  - "sfumato (Leonardo's related term)"
+  - "claro-obscuro"
 prerequisites:
-  - tonal-value
+  - "tonal-value"
 extends:
-  - tonal-value
+  - "tonal-value"
 related:
-  - brightness-constancy
-  - tonal-contrast
-  - luminosity
-  - shadow
+  - "brightness-constancy"
+  - "tonal-contrast"
+  - "luminosity"
+  - "shadow"
 contrasts_with:
-  - silhouette
-  - flat-colour
-
-# === COMPETENCY QUESTIONS ===
+  - "silhouette"
+  - "flat-colour"
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Gradient / ramp (smooth continuous value change)"
-    rating: structural
+    rating: "structural"
     note: "Chiaroscuro is implemented as a brightness gradient; in CSS this maps directly to radial/linear gradients applied to surface colour."
-
 css_implementation:
-  - property: "background: linear-gradient() / radial-gradient()"
+  -
+    property: "background: linear-gradient() / radial-gradient()"
     example: "background: radial-gradient(circle at 30% 30%, #fff8e1, #3e2723);"
-    support: baseline
-  - property: "box-shadow (soft)"
+    support: "baseline"
+  -
+    property: "box-shadow (soft)"
     example: "box-shadow: inset -8px 8px 24px rgba(0,0,0,0.5);"
-    support: baseline
-  - property: "filter: drop-shadow()"
+    support: "baseline"
+  -
+    property: "filter: drop-shadow()"
     example: "filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.6));"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

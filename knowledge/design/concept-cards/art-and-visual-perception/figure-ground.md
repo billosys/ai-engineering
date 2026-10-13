@@ -1,69 +1,55 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Figure-Ground
-slug: figure-ground
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual-organisation
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Figure-Ground"
+slug: "figure-ground"
+category: "visual-perception"
+subcategory: "perceptual-organisation"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Figure and Ground"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - figure/ground
-  - positive and negative space
-  - foreground-background
-
-# === TYPED RELATIONSHIPS ===
-prerequisites:
-  - []
-extends:
-  - []
+  - "figure/ground"
+  - "positive and negative space"
+  - "foreground-background"
+prerequisites: []
+extends: []
 related:
-  - depth-levels
-  - pictorial-space
-  - contour-rivalry
-  - negative-space
+  - "depth-levels"
+  - "pictorial-space"
+  - "contour-rivalry"
+  - "negative-space"
 contrasts_with:
-  - depth-levels
-
-# === COMPETENCY QUESTIONS ===
+  - "depth-levels"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "z-index layering (foreground vs background elements)"
-    rating: rigorous
+    rating: "rigorous"
     note: "The figure-ground distinction is the simplest case of z-index logic: foreground elements have higher z-index than background elements."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Set partitioning (complementary sets)"
-    rating: structural
+    rating: "structural"
     note: "Figure and ground are complementary: every region of the visual field belongs to one or the other, making them a partition of the image plane."
-
 css_implementation:
-  - property: "z-index"
+  -
+    property: "z-index"
     example: "z-index: 1; /* figure */ z-index: 0; /* ground */"
-    support: baseline
-  - property: "background-color"
+    support: "baseline"
+  -
+    property: "background-color"
     example: "background-color: var(--surface-ground);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

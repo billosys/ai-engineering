@@ -1,64 +1,48 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Symbolism of Perspective Spatial Systems
-slug: perspective-symbolism
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: spatial-expression
-tier: advanced
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Symbolism of Perspective Spatial Systems"
+slug: "perspective-symbolism"
+category: "design-principles"
+subcategory: "spatial-expression"
+tier: "advanced"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "The Symbolism of a Focused World"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - spatial symbolism
-  - perspective as expression
-  - spatial system meaning
-
-# === TYPED RELATIONSHIPS ===
+  - "spatial symbolism"
+  - "perspective as expression"
+  - "spatial system meaning"
 prerequisites:
-  - linear-perspective
-  - isometric-perspective
-  - pictorial-space
-extends:
-  - []
+  - "linear-perspective"
+  - "isometric-perspective"
+  - "pictorial-space"
+extends: []
 related:
-  - linear-perspective
-  - isometric-perspective
-  - spatial-ambiguity-paradox
-  - pyramidal-space
-contrasts_with:
-  - []
-
-# === COMPETENCY QUESTIONS ===
+  - "linear-perspective"
+  - "isometric-perspective"
+  - "spatial-ambiguity-paradox"
+  - "pyramidal-space"
+contrasts_with: []
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
   - "An admin panel organises its UI by database tables — Users page, Orders page, Products page, each showing all columns in a table. Users complain they can't get their work done efficiently. Diagnose the fundamental mistake and propose the restructuring principle."
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Tonic-centered vs. modal harmony — implied focal hierarchy"
-    rating: structural
+    rating: "structural"
     note: "Central perspective's converging focal point is analogous to tonic-centered harmony — all musical material implies a hierarchical return to the tonic, as all perspective lines return to the vanishing point. Isometric perspective corresponds to modal or non-functional harmony — no single pitch hierarchy, all directions equal."
-
 css_implementation:
-  - property: "N/A — symbolic/expressive card"
+  -
+    property: "N/A — symbolic/expressive card"
     example: "/* Choose between perspective (viewer-centered, hierarchical) and isometric (neutral, panoramic) for UI spatial system */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

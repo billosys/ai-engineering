@@ -1,39 +1,41 @@
 ---
-concept: Okhsl Colour Space
-slug: okhsl
-category: colour-theory
-subcategory: colour-models
-tier: advanced
-layer: 2-domain
+concept: "Okhsl Colour Space"
+slug: "okhsl"
+category: "colour-theory"
+subcategory: "colour-models"
+tier: "advanced"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Okhsl"
 chapter_number: null
 pdf_page: null
 section: "Introducing two new color spaces: Okhsv and Okhsl"
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["Ok HSL"]
+  -
+    - "Ok HSL"
 prerequisites:
-  - hsl
-  - colour-gamut
-  - orthogonal-colour-properties
+  - "hsl"
+  - "colour-gamut"
+  - "orthogonal-colour-properties"
 extends:
-  - hsl
+  - "hsl"
 related:
-  - okhsv
-  - colour-picker-design-principles
+  - "okhsv"
+  - "colour-picker-design-principles"
 contrasts_with:
-  - hsl
-  - okhsv
+  - "hsl"
+  - "okhsv"
 answers_questions:
   - "What distinguishes Okhsl from Okhsv, and when would you use each?"
   - "What makes a colour picker perceptually well-designed?"
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Equal temperament tuning"
-    rating: rigorous
+    rating: "rigorous"
     note: "Okhsl achieves perceptual uniformity in colour the same way equal temperament achieves perceptual uniformity in pitch: equal numerical steps (slider increments) produce equal perceived differences, regardless of where on the scale you start."
 ---
 

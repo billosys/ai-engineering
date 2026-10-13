@@ -1,48 +1,33 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Hyphens and Dashes
-slug: hyphens-and-dashes
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-composition
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Hyphens and Dashes"
+slug: "hyphens-and-dashes"
+category: "typography"
+subcategory: "type-composition"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Type Composition"
 chapter_number: null
 pdf_page: null
 section: "Hyphens and Dashes"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "dashes"
   - "en dash"
   - "em dash"
   - "hyphenation marks"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typewriter-habits
+  - "typewriter-habits"
 extends: []
 related:
-  - em-unit
-  - curly-quotes
-  - sentence-spacing
+  - "em-unit"
+  - "curly-quotes"
+  - "sentence-spacing"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

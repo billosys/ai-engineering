@@ -1,59 +1,45 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Munsell Colour System
-slug: munsell-colour-system
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-systems
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Munsell Colour System"
+slug: "munsell-colour-system"
+category: "colour-theory"
+subcategory: "colour-systems"
+tier: "foundational"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Foreword / By T. M. Cleland"
 chapter_number: 1
 pdf_page: 2
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "Munsell Color System"
   - "Munsell system"
   - "Munsell Color Order System"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - hue
-  - colour-value
-  - chroma
-  - munsell-colour-notation
-  - munsell-colour-solid
+  - "hue"
+  - "colour-value"
+  - "chroma"
+  - "munsell-colour-notation"
+  - "munsell-colour-solid"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
   - "CQ 40: How does the temperament problem in music theory map precisely to the perceptual uniformity problem in colour science?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "3D cylindrical coordinate system"
-    rating: rigorous
+    rating: "rigorous"
     note: "The Munsell system is a cylindrical coordinate system in perceptual colour space: hue = angle (θ), value = height (z), chroma = radius (r). Colour specification is literally coordinate addressing."
-  - domain: music
+  -
+    domain: "music"
     concept: "Equal temperament (12-TET)"
-    rating: rigorous
+    rating: "rigorous"
     note: "Munsell's goal of perceptually equal steps between hue, value, and chroma positions is the identical mathematical problem as equal temperament: uniformising a perceptually non-uniform space. Both solve it by empirical calibration of step sizes."
-
 css_implementation: []
 ---
 

@@ -1,59 +1,45 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Luminosity
-slug: luminosity
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: brightness
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Luminosity"
+slug: "luminosity"
+category: "visual-elements"
+subcategory: "brightness"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VI. Light"
 chapter_number: 6
 pdf_page: 356
 section: "Relative Brightness"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - glow
-  - self-luminosity
-  - film colour (Katz)
-
-# === TYPED RELATIONSHIPS ===
+  - "glow"
+  - "self-luminosity"
+  - "film colour (Katz)"
 prerequisites:
-  - tonal-value
+  - "tonal-value"
 extends:
-  - tonal-value
+  - "tonal-value"
 related:
-  - brightness-constancy
-  - surface-colour
-  - chiaroscuro
+  - "brightness-constancy"
+  - "surface-colour"
+  - "chiaroscuro"
 contrasts_with:
-  - surface-colour
-
-# === COMPETENCY QUESTIONS ===
+  - "surface-colour"
 answers_questions:
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
   - "A dark-mode implementation simply inverts all colours. Text on some backgrounds becomes unreadable. What went wrong?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "mix-blend-mode: screen / lighten"
+  -
+    property: "mix-blend-mode: screen / lighten"
     example: "mix-blend-mode: screen;"
-    support: baseline
-  - property: "box-shadow (glow effect)"
+    support: "baseline"
+  -
+    property: "box-shadow (glow effect)"
     example: "box-shadow: 0 0 16px 4px rgba(255,255,200,0.8);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

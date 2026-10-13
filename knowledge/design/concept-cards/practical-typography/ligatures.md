@@ -1,51 +1,36 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Ligatures
-slug: ligatures
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-composition
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Ligatures"
+slug: "ligatures"
+category: "typography"
+subcategory: "type-composition"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Type Composition"
 chapter_number: null
 pdf_page: null
 section: "Ligatures"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "character ligatures"
   - "fi ligature"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - font
+  - "font"
 extends: []
 related:
-  - opentype-features
-  - kerning
+  - "opentype-features"
+  - "kerning"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 5: What are the basic anatomical parts of a letterform (baseline, x-height, cap height, ascender, descender, counter)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-variant-ligatures / font-feature-settings"
+  -
+    property: "font-variant-ligatures / font-feature-settings"
     example: "body { font-variant-ligatures: common-ligatures; text-rendering: optimizeLegibility; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

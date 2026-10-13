@@ -1,80 +1,69 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Subdivision
-slug: visual-subdivision
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual organisation
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Visual Subdivision"
+slug: "visual-subdivision"
+category: "visual-perception"
+subcategory: "perceptual organisation"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Subdivision / What Is a Part?"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceptual segregation
-  - figure isolation
-  - part-whole articulation
-  - visual segmentation
-
-# === TYPED RELATIONSHIPS ===
+  - "perceptual segregation"
+  - "figure isolation"
+  - "part-whole articulation"
+  - "visual segmentation"
 prerequisites:
-  - praegnanz
-  - visual-shape
-  - perceptual-concept
-extends:
-  []
+  - "praegnanz"
+  - "visual-shape"
+  - "perceptual-concept"
+extends: []
 related:
-  - perceptual-grouping-similarity
-  - shape-completion
-  - figure-ground
-  - structural-skeleton
+  - "perceptual-grouping-similarity"
+  - "shape-completion"
+  - "figure-ground"
+  - "structural-skeleton"
 contrasts_with:
-  - perceptual-grouping-similarity
-  - shape-completion
-
-# === COMPETENCY QUESTIONS ===
+  - "perceptual-grouping-similarity"
+  - "shape-completion"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Partitioning a set / topology of connected components"
-    rating: structural
+    rating: "structural"
     note: "Visual subdivision partitions the visual field into perceptually distinct units analogous to connected components in topology — each isolated region is a perceptual unit, and the rules governing isolation are the perceptual analogue of connectedness conditions."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Encapsulation / module boundaries"
-    rating: structural
+    rating: "structural"
     note: "Visual subdivision — isolating a region with a clear, simple shape independent of surrounding structure — is structurally analogous to encapsulation: defining a module boundary that makes internal structure independent of external context."
-  - domain: music
+  -
+    domain: "music"
     concept: "Phrase structure / musical segmentation"
-    rating: structural
+    rating: "structural"
     note: "Musical phrases are auditory units isolated by closure cues (cadences, rests, melodic peaks) from their context, just as visual units are isolated by shape clarity and structural independence from the visual field."
-
 css_implementation:
-  - property: "Whitespace (margin/padding) as subdivision mechanism"
+  -
+    property: "Whitespace (margin/padding) as subdivision mechanism"
     example: "margin: 24px 0; /* creates visual isolation through spatial separation */"
-    support: baseline
-  - property: "border / box-shadow as explicit boundary"
+    support: "baseline"
+  -
+    property: "border / box-shadow as explicit boundary"
     example: "border: 1px solid var(--color-border); /* explicit contour strengthens subdivision */"
-    support: baseline
-  - property: "background-color contrast for region isolation"
+    support: "baseline"
+  -
+    property: "background-color contrast for region isolation"
     example: "background: var(--surface-raised); /* distinct surface colour creates perceptual region */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

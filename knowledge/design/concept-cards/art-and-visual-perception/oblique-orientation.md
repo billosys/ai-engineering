@@ -1,69 +1,57 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Oblique Orientation
-slug: oblique-orientation
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: visual dynamics
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Oblique Orientation"
+slug: "oblique-orientation"
+category: "design-principles"
+subcategory: "visual dynamics"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IX. Dynamics"
 chapter_number: 9
 pdf_page: 416
 section: "The Dynamics of Obliqueness"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - diagonal orientation
-  - oblique direction
-  - obliqueness
-  - diagonal tension
-
-# === TYPED RELATIONSHIPS ===
+  - "diagonal orientation"
+  - "oblique direction"
+  - "obliqueness"
+  - "diagonal tension"
 prerequisites:
-  - directed-tension
-  - visual-forces
+  - "directed-tension"
+  - "visual-forces"
 extends:
-  - directed-tension
+  - "directed-tension"
 related:
-  - deformation-tension
-  - visual-balance
-  - statics-vs-dynamics
+  - "deformation-tension"
+  - "visual-balance"
+  - "statics-vs-dynamics"
 contrasts_with:
-  - vertical-horizontal-orientation
-
-# === COMPETENCY QUESTIONS ===
+  - "vertical-horizontal-orientation"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Deviation from orthogonal basis / non-zero off-diagonal components"
-    rating: structural
+    rating: "structural"
     note: "Oblique orientation is the deviation from the vertical-horizontal coordinate basis — exactly as a non-orthogonal vector has non-zero components in both axes of the reference frame, creating tension between the vector's actual direction and the canonical axes. The structural parallel captures why oblique elements feel like 'straining' away from an orthogonal rest state."
-  - domain: music
+  -
+    domain: "music"
     concept: "Dissonance / interval tension (tritone, major 7th)"
-    rating: structural
+    rating: "structural"
     note: "Musical dissonance (an interval that strains toward resolution) is structurally parallel to visual obliqueness (a shape that strains toward vertical or horizontal rest) — both are states of heightened tension defined by their distance from a stable reference state (consonance / orthogonality)."
-
 css_implementation:
-  - property: "transform: rotate()"
+  -
+    property: "transform: rotate()"
     example: "transform: rotate(-3deg); /* subtle oblique tension for dynamic emphasis */"
-    support: baseline
-  - property: "transform: skewX() / skewY()"
+    support: "baseline"
+  -
+    property: "transform: skewX() / skewY()"
     example: "transform: skewX(5deg); /* oblique shear creates directional tension */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

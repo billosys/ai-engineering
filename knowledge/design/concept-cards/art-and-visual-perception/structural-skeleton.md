@@ -1,76 +1,64 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Structural Skeleton
-slug: structural-skeleton
-
-# === CLASSIFICATION ===
-category: visual-elements
-subcategory: shape
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Structural Skeleton"
+slug: "structural-skeleton"
+category: "visual-elements"
+subcategory: "shape"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "The Structural Skeleton"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceptual skeleton
-  - shape skeleton
-  - dominant axes
-  - visual skeleton
-  - shape character
-
-# === TYPED RELATIONSHIPS ===
+  - "perceptual skeleton"
+  - "shape skeleton"
+  - "dominant axes"
+  - "visual skeleton"
+  - "shape character"
 prerequisites:
-  - visual-shape
-  - praegnanz
-  - contour-and-boundary
-extends:
-  []
+  - "visual-shape"
+  - "praegnanz"
+  - "contour-and-boundary"
+extends: []
 related:
-  - visual-simplicity
-  - leveling-and-sharpening
-  - visual-subdivision
+  - "visual-simplicity"
+  - "leveling-and-sharpening"
+  - "visual-subdivision"
 contrasts_with:
-  - contour-and-boundary
-
-# === COMPETENCY QUESTIONS ===
+  - "contour-and-boundary"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "An icon set mixes outlined and filled styles, some at 16px and some at 24px, some with rounded corners and some with sharp corners. It feels 'off.' What principle was violated?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Medial axis transform / skeleton in computational geometry"
-    rating: rigorous
+    rating: "rigorous"
     note: "The mathematical medial axis transform computes the geometric skeleton of a shape as the locus of centres of maximal inscribed circles — this is the formal computational equivalent of Arnheim's perceptual structural skeleton."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Abstract syntax tree (AST) / semantic model"
-    rating: structural
+    rating: "structural"
     note: "The structural skeleton abstracts from literal contour to dominant organisational axes, just as an AST abstracts from literal syntax to the underlying semantic structure of a programme."
-  - domain: art
+  -
+    domain: "art"
     concept: "Compositional armature / gesture drawing"
-    rating: structural
+    rating: "structural"
     note: "In figure drawing, 'gesture' captures the primary axes and energy flow of a pose (the skeleton) before rendering any contour — artists are taught to find the skeleton first, precisely as Arnheim describes."
-
 css_implementation:
-  - property: "SVG path skeleton / simplified path data"
+  -
+    property: "SVG path skeleton / simplified path data"
     example: "<!-- Skeleton: main axes of a figure, not its outline --> <line x1='50' y1='0' x2='50' y2='100' stroke='red'/> <!-- vertical axis -->"
-    support: baseline
-  - property: "Layout grid as structural skeleton"
+    support: "baseline"
+  -
+    property: "Layout grid as structural skeleton"
     example: "display: grid; grid-template-columns: 1fr 2fr 1fr; /* The grid IS the structural skeleton of the layout */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

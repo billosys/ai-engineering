@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Monochromatic Harmony
-slug: monochromatic-harmony
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Monochromatic Harmony"
+slug: "monochromatic-harmony"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Color Combinations"
 chapter_number: 9
 pdf_page: 15
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "single-hue harmony"
   - "monochromatic colour scheme"
   - "monochromatic palette"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - hue
-  - colour-value
-  - chroma
+  - "hue"
+  - "colour-value"
+  - "chroma"
 extends: []
 related:
-  - analogous-harmony
-  - complementary-harmony
-  - colour-harmony-as-order
+  - "analogous-harmony"
+  - "complementary-harmony"
+  - "colour-harmony-as-order"
 contrasts_with:
-  - complementary-harmony
-
-# === COMPETENCY QUESTIONS ===
+  - "complementary-harmony"
 answers_questions:
   - "CQ 23: How do you construct a colour palette starting from a single brand colour using OKLCH?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Variation within a single key/mode"
-    rating: structural
+    rating: "structural"
     note: "Monochromatic harmony is structurally analogous to musical variation within a single key — varying dynamics (value) and articulation (chroma) while maintaining the same tonal centre (hue). The parallel captures the essential idea of unity through constraint."
-
 css_implementation:
-  - property: "oklch() value/chroma variation"
+  -
+    property: "oklch() value/chroma variation"
     example: "/* Monochromatic palette from a single hue */\n--base: oklch(0.5 0.15 240);\n--light: oklch(0.8 0.08 240);\n--dark: oklch(0.3 0.12 240);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

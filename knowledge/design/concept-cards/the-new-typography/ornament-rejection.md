@@ -1,46 +1,31 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Ornament Rejection
-slug: ornament-rejection
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: design-movements
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Ornament Rejection"
+slug: "ornament-rejection"
+category: "design-principles"
+subcategory: "design-movements"
+tier: "intermediate"
+layer: "1-principles"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "anti-ornament"
   - "Ornament und Verbrechen"
   - "decoration elimination"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - functional-typography
+  - "functional-typography"
 extends: []
 related:
-  - the-new-typography
-  - geometric-form
+  - "the-new-typography"
+  - "geometric-form"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

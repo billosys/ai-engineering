@@ -1,52 +1,37 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Em Unit
-slug: em-unit
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Em Unit"
+slug: "em-unit"
+category: "typography"
+subcategory: "type-formatting"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Appendix"
 chapter_number: null
 pdf_page: null
 section: "Em Sizing"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "em"
   - "em square"
   - "em sizing"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - point-size
+  - "point-size"
 extends: []
 related:
-  - font
-  - hyphens-and-dashes
+  - "font"
+  - "hyphens-and-dashes"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 5: What are the basic anatomical parts of a letterform (baseline, x-height, cap height, ascender, descender, counter)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "em (CSS unit)"
+  -
+    property: "em (CSS unit)"
     example: "p { text-indent: 1em; margin-bottom: 0.5em; } /* 1em = element's computed font-size */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

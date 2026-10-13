@@ -1,64 +1,50 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Binocular Disparity and Stereoscopy
-slug: binocular-disparity
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Binocular Disparity and Stereoscopy"
+slug: "binocular-disparity"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Help From Physical Space"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - stereoscopy
-  - stereoscopic depth
-  - spatial parallax
-  - binocular depth cue
-
-# === TYPED RELATIONSHIPS ===
+  - "stereoscopy"
+  - "stereoscopic depth"
+  - "spatial parallax"
+  - "binocular depth cue"
 prerequisites:
-  - pictorial-space
-extends:
-  - []
+  - "pictorial-space"
+extends: []
 related:
-  - overlap-depth-cue
-  - size-gradient
-  - depth-gradient-principle
+  - "overlap-depth-cue"
+  - "size-gradient"
+  - "depth-gradient-principle"
 contrasts_with:
-  - monocular-depth-cues
-
-# === COMPETENCY QUESTIONS ===
+  - "monocular-depth-cues"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Stereoscopic 3D displays, VR headsets, anaglyph rendering"
-    rating: rigorous
+    rating: "rigorous"
     note: "VR headsets and stereoscopic displays are direct engineering implementations of binocular disparity — each eye receives a slightly different image matched to the disparity that would arise from actual spatial depth."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Trigonometric parallax — angular difference as function of depth and interocular distance"
-    rating: rigorous
+    rating: "rigorous"
     note: "Binocular disparity is geometrically the angular difference in object position between the two eyes, which varies as arctan(d/D) where d is interocular distance and D is viewing distance."
-
 css_implementation:
-  - property: "N/A for standard screens"
+  -
+    property: "N/A for standard screens"
     example: "/* Binocular disparity requires different images per eye — VR/WebXR, not CSS */"
-    support: experimental
+    support: "experimental"
 ---
 
 # Quick Definition

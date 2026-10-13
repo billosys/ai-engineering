@@ -1,47 +1,32 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Munsell Hue Notation
-slug: munsell-hue-notation
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-notation
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Munsell Hue Notation"
+slug: "munsell-hue-notation"
+category: "colour-theory"
+subcategory: "colour-notation"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "I. Hue"
 chapter_number: 4
 pdf_page: 5
 section: "I. Hue"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "Munsell hue designation"
   - "H component of Munsell notation"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - hue
-  - munsell-hue-circle
+  - "hue"
+  - "munsell-hue-circle"
 extends:
-  - munsell-hue-circle
+  - "munsell-hue-circle"
 related:
-  - munsell-colour-system
-  - munsell-colour-notation
+  - "munsell-colour-system"
+  - "munsell-colour-notation"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

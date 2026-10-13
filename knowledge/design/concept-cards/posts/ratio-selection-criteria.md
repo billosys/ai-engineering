@@ -1,31 +1,33 @@
 ---
-concept: Ratio Selection Criteria
-slug: ratio-selection-criteria
-category: typography
-subcategory: type-scale
-tier: intermediate
-layer: 2-domain
+concept: "Ratio Selection Criteria"
+slug: "ratio-selection-criteria"
+category: "typography"
+subcategory: "type-scale"
+tier: "intermediate"
+layer: "2-domain"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Creating a modular scale for web design"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
+extraction_confidence: "medium"
 aliases:
-  - [choosing a scale ratio, ratio selection, ratio justification]
+  -
+    - "choosing a scale ratio"
+    - "ratio selection"
+    - "ratio justification"
 prerequisites:
-  - scale-ratio
-  - modular-scale
+  - "scale-ratio"
+  - "modular-scale"
 extends:
-  - scale-ratio
+  - "scale-ratio"
 related:
-  - golden-ratio
-  - musical-interval-typographic-ratio
-  - modular-scale-construction
-contrasts_with:
-  - []
+  - "golden-ratio"
+  - "musical-interval-typographic-ratio"
+  - "modular-scale-construction"
+contrasts_with: []
 answers_questions:
   - "How do you select an appropriate scale ratio for a given design context?"
   - "What makes a type hierarchy feel harmonious vs arbitrary?"

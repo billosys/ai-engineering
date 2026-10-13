@@ -1,67 +1,55 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Complementary Colours
-slug: complementary-colours
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Complementary Colours"
+slug: "complementary-colours"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "The Fundamental Complementaries"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - complementary pairs
-  - colour complements
-  - fundamental complementaries (Arnheim's term)
-
-# === TYPED RELATIONSHIPS ===
+  - "complementary pairs"
+  - "colour complements"
+  - "fundamental complementaries (Arnheim's term)"
 prerequisites:
-  - hue
-  - saturation
+  - "hue"
+  - "saturation"
 extends: []
 related:
-  - colour-harmony
-  - simultaneous-contrast
-  - colour-temperature
-  - achromatic-colour
+  - "colour-harmony"
+  - "simultaneous-contrast"
+  - "colour-temperature"
+  - "achromatic-colour"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "How do you construct a colour palette starting from a single brand colour using OKLCH? What systematic steps ensure adequate contrast and accessible combinations?"
   - "A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Antipodal points on a circular space (180° rotation of hue angle)"
-    rating: rigorous
+    rating: "rigorous"
     note: "In OKLCH, complementary colours are approximately opposite on the hue circle — adding 180° to the hue angle H gives the complementary; OKLCH's perceptual uniformity makes this more reliable than in HSL."
-  - domain: music
+  -
+    domain: "music"
     concept: "Tritone (6-semitone interval, maximum tonal distance)"
-    rating: loose
+    rating: "loose"
     note: "Both tritone and complementary pair are the 'most distant' pairing in their respective circular systems, but the perceptual mechanisms (harmonic resonance vs. colour opponency) are entirely different."
-
 css_implementation:
-  - property: "hue rotation (180° in oklch)"
+  -
+    property: "hue rotation (180° in oklch)"
     example: "/* Complementary: add 180 to hue angle */ color: oklch(0.6 0.2 calc(270 + 180)); /* = 90 */"
-    support: baseline
-  - property: "color-mix()"
+    support: "baseline"
+  -
+    property: "color-mix()"
     example: "color-mix(in oklch, red 50%, green 50%); /* additive mix toward grey */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

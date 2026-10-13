@@ -1,36 +1,39 @@
 ---
-concept: CSS mix-blend-mode (Colour Blend Modes)
-slug: mix-blend-mode
-category: colour-theory
-subcategory: colour-effects
-tier: intermediate
-layer: 3-implementation
+concept: "CSS mix-blend-mode (Colour Blend Modes)"
+slug: "mix-blend-mode"
+category: "colour-theory"
+subcategory: "colour-effects"
+tier: "intermediate"
+layer: "3-implementation"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Other Nice Color Effects / Mix Blend Modes and Background Blend Modes"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["blend modes", "mix-blend-mode", "background-blend-mode", "CSS blending"]
+  -
+    - "blend modes"
+    - "mix-blend-mode"
+    - "background-blend-mode"
+    - "CSS blending"
 prerequisites:
-  - rgb-colour-model
-  - additive-colour-mixing
-extends:
-  - []
+  - "rgb-colour-model"
+  - "additive-colour-mixing"
+extends: []
 related:
-  - fecolormatrix
-contrasts_with:
-  - []
+  - "fecolormatrix"
+contrasts_with: []
 answers_questions:
   - "How does CSS mix-blend-mode implement colour blending mathematically?"
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Pointwise operations on bounded functions"
-    rating: structural
-    note: "Blend mode formulas apply arithmetic operations (multiplication, addition, subtraction, division) channel-by-channel to pixel values treated as normalised floats [0,1]. Multiply is literally f(a,b) = a \u00d7 b. The structural analogy to pointwise function composition is exact."
+    rating: "structural"
+    note: "Blend mode formulas apply arithmetic operations (multiplication, addition, subtraction, division) channel-by-channel to pixel values treated as normalised floats [0,1]. Multiply is literally f(a,b) = a × b. The structural analogy to pointwise function composition is exact."
 ---
 
 # Quick Definition

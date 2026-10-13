@@ -1,65 +1,52 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Achromatic Colour
-slug: achromatic-colour
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-properties
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Achromatic Colour"
+slug: "achromatic-colour"
+category: "colour-theory"
+subcategory: "colour-properties"
+tier: "foundational"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "From Light to Color"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - neutral colour
-  - grey scale
-  - monochrome
-  - black-white-grey
-
-# === TYPED RELATIONSHIPS ===
+  - "neutral colour"
+  - "grey scale"
+  - "monochrome"
+  - "black-white-grey"
 prerequisites:
-  - tonal-value
+  - "tonal-value"
 extends:
-  - tonal-value
+  - "tonal-value"
 related:
-  - saturation
-  - hue
-  - tonal-value
+  - "saturation"
+  - "hue"
+  - "tonal-value"
 contrasts_with:
-  - saturation
-  - hue
-
-# === COMPETENCY QUESTIONS ===
+  - "saturation"
+  - "hue"
 answers_questions:
   - "What is the difference between hue, saturation/chroma, and lightness/value?"
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "The achromatic axis (L axis) in cylindrical colour spaces"
-    rating: rigorous
+    rating: "rigorous"
     note: "Achromatic colours occupy the central axis of OKLCH/CIELAB where chroma C = 0; the lightness L axis is the full achromatic dimension."
-
 css_implementation:
-  - property: "filter: grayscale()"
+  -
+    property: "filter: grayscale()"
     example: "filter: grayscale(1); /* full desaturation */"
-    support: baseline
-  - property: "color (neutral values)"
+    support: "baseline"
+  -
+    property: "color (neutral values)"
     example: "color: oklch(0.5 0 0); /* mid-grey, zero chroma */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

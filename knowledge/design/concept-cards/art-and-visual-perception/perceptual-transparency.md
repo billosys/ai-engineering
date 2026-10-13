@@ -1,73 +1,62 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Perceptual Transparency
-slug: perceptual-transparency
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Perceptual Transparency"
+slug: "perceptual-transparency"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Transparency"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - visual transparency
-  - transparency effect
-  - see-through effect
-
-# === TYPED RELATIONSHIPS ===
+  - "visual transparency"
+  - "transparency effect"
+  - "see-through effect"
 prerequisites:
-  - overlap-depth-cue
-  - figure-ground
-  - depth-levels
+  - "overlap-depth-cue"
+  - "figure-ground"
+  - "depth-levels"
 extends:
-  - overlap-depth-cue
+  - "overlap-depth-cue"
 related:
-  - depth-levels
-  - colour-theory
-  - figure-ground
+  - "depth-levels"
+  - "colour-theory"
+  - "figure-ground"
 contrasts_with:
-  - overlap-depth-cue
-
-# === COMPETENCY QUESTIONS ===
+  - "overlap-depth-cue"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "A dark-mode implementation simply inverts all colours. Text on some backgrounds becomes unreadable. What went wrong?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS opacity, rgba() alpha channel, mix-blend-mode, backdrop-filter"
-    rating: rigorous
+    rating: "rigorous"
     note: "CSS opacity and alpha channels directly implement perceptual transparency — the same three-plane condition Arnheim identifies (background plane, transparent layer, and the brightness/colour relationship between them) is what determines whether transparency reads correctly."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Colour mixing: additive (light) vs. subtractive (pigment) models"
-    rating: rigorous
+    rating: "rigorous"
     note: "Whether a transparency area reads as additive (brighter = light projected) or subtractive (darker = material overlaid) depends on the relative brightness of the overlap area — the exact numerical relationship Arnheim identifies."
-
 css_implementation:
-  - property: "opacity"
+  -
+    property: "opacity"
     example: "opacity: 0.5; /* partial transparency — must maintain readable contrast */"
-    support: baseline
-  - property: "mix-blend-mode"
+    support: "baseline"
+  -
+    property: "mix-blend-mode"
     example: "mix-blend-mode: multiply; /* subtractive transparency */"
-    support: baseline
-  - property: "backdrop-filter"
+    support: "baseline"
+  -
+    property: "backdrop-filter"
     example: "backdrop-filter: blur(10px); /* frosted glass transparency */"
-    support: partial
+    support: "partial"
 ---
 
 # Quick Definition

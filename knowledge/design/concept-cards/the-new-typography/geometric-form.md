@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Geometric Form
-slug: geometric-form
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: form-theory
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Geometric Form"
+slug: "geometric-form"
+category: "design-principles"
+subcategory: "form-theory"
+tier: "intermediate"
+layer: "1-principles"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The New World-View / The Principles of the New Typography"
 chapter_number: 6
 pdf_page: 49
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
   - "primary shapes"
   - "geometric construction"
   - "pure form"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - the-new-typography  # geometric form is grounded in the movement's worldview
+  - "the-new-typography"
 extends: []
 related:
-  - functional-typography  # geometric form follows from functional principles
-  - ornament-rejection  # geometric purity is the positive counterpart to ornament rejection
-  - sans-serif-advocacy  # sans-serif is the typographic expression of geometric form
+  - "functional-typography"
+  - "ornament-rejection"
+  - "sans-serif-advocacy"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 3: How do basic shapes (circle, square, triangle) function in visual design, and how does each shape connote different qualities (stability, motion, tension)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "precision engineering"
-    rating: structural
+    rating: "structural"
     note: "Tschichold's geometric form derives directly from engineering: 'The engineer shapes our age. Distinguishing marks of his work: economy, precision, use of pure constructional forms that correspond to the functions of the object.' The parallel is structural — both fields derive form from function through geometric precision."
-
 css_implementation: []
 ---
 

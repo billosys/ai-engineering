@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Law of Differentiation
-slug: law-of-differentiation
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Law of Differentiation"
+slug: "law-of-differentiation"
+category: "visual-perception"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IV. Growth"
 chapter_number: 4
 pdf_page: 108
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - differentiation-principle
-  - visual-development-law
-  - simple-to-complex
-
-# === TYPED RELATIONSHIPS ===
+  - "differentiation-principle"
+  - "visual-development-law"
+  - "simple-to-complex"
 prerequisites:
-  - perceptual-simplicity
+  - "perceptual-simplicity"
 extends: []
 related:
-  - vertical-horizontal-framework
-  - obliqueness-as-visual-dynamism
-  - fusion-of-parts
+  - "vertical-horizontal-framework"
+  - "obliqueness-as-visual-dynamism"
+  - "fusion-of-parts"
 contrasts_with:
-  - undifferentiated-form
-  - random-complexity
-
-# === COMPETENCY QUESTIONS ===
+  - "undifferentiated-form"
+  - "random-complexity"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Differential calculus — progressive refinement / successive approximation"
-    rating: loose
+    rating: "loose"
     note: "The law of differentiation describes how visual representation proceeds from global, undifferentiated form to local, specific distinctions — analogous to how differential calculus refines a global function approximation with successively higher-order terms."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Progressive enhancement / graceful degradation"
-    rating: structural
+    rating: "structural"
     note: "The law of differentiation maps onto progressive enhancement in UI design: start with the simplest adequate structure (works for all), then layer increasingly specific differentiations — exactly as Arnheim's visual development proceeds from circle to articulated figure."
-
 css_implementation: []
 ---
 

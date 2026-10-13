@@ -1,79 +1,69 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Directed Visual Movement
-slug: directed-visual-movement
-
-# === CLASSIFICATION ===
-category: design-principles
+concept: "Directed Visual Movement"
+slug: "directed-visual-movement"
+category: "design-principles"
 subcategory: null
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VIII. Movement"
 chapter_number: 8
 pdf_page: 395
 section: "Simultaneity and Sequence"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - visual flow
-  - compositional flow
-  - eye movement through composition
-  - directed gaze movement
-
-# === TYPED RELATIONSHIPS ===
+  - "visual flow"
+  - "compositional flow"
+  - "eye movement through composition"
+  - "directed gaze movement"
 prerequisites:
-  - visual-perception
-  - visual-elements
-  - implied-motion
-  - visual-rhythm
+  - "visual-perception"
+  - "visual-elements"
+  - "implied-motion"
+  - "visual-rhythm"
 extends:
-  - visual-rhythm
+  - "visual-rhythm"
 related:
-  - implied-motion
-  - common-fate
-  - visual-rhythm
-  - structural-skeleton
-  - visual-expression
+  - "implied-motion"
+  - "common-fate"
+  - "visual-rhythm"
+  - "structural-skeleton"
+  - "visual-expression"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Melodic line and phrase direction — leading the listener from one point to the next"
-    rating: structural
+    rating: "structural"
     note: "A melodic phrase directs the listener's attention through a sequence of pitches with specific pacing and emphasis; compositional flow directs the viewer's eye through visual elements with specific pacing and emphasis. Both are navigation systems through structured perceptual space."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Information architecture — hierarchy and navigation guiding user through content"
-    rating: structural
+    rating: "structural"
     note: "Directed visual movement is the perceptual instantiation of information architecture: the visual design of hierarchy, flow, and navigation paths is the visible surface of IA structure. Well-directed visual movement and well-structured IA should be mutually reinforcing."
-
 css_implementation:
-  - property: "z-index"
+  -
+    property: "z-index"
     example: "z-index: 10; /* elevation creates visual hierarchy priority that directs eye */"
-    support: baseline
-  - property: "font-size"
+    support: "baseline"
+  -
+    property: "font-size"
     example: "font-size: 2rem; /* size differential establishes reading sequence */"
-    support: baseline
-  - property: "color"
+    support: "baseline"
+  -
+    property: "color"
     example: "color: hsl(220, 80%, 40%); /* high-saturation accent draws eye to entry point */"
-    support: baseline
-  - property: "margin"
+    support: "baseline"
+  -
+    property: "margin"
     example: "margin-bottom: 2rem; /* spatial separation establishes visual grouping that governs flow */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,64 +1,51 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Harmony
-slug: colour-harmony
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-relationships
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Colour Harmony"
+slug: "colour-harmony"
+category: "colour-theory"
+subcategory: "colour-relationships"
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "The Fundamental Complementaries"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - colour scheme
-  - chromatic balance
-
-# === TYPED RELATIONSHIPS ===
+  - "colour scheme"
+  - "chromatic balance"
 prerequisites:
-  - hue
-  - saturation
-  - complementary-colours
+  - "hue"
+  - "saturation"
+  - "complementary-colours"
 extends: []
 related:
-  - simultaneous-contrast
-  - complementary-colours
-  - colour-temperature
-  - colour-weight
+  - "simultaneous-contrast"
+  - "complementary-colours"
+  - "colour-temperature"
+  - "colour-weight"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "How do you construct a colour palette starting from a single brand colour using OKLCH? What systematic steps ensure adequate contrast and accessible combinations?"
   - "A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Tonal harmony / consonance (complementary frequency ratios)"
-    rating: loose
+    rating: "loose"
     note: "Musical harmony involves frequency ratios producing acoustic consonance; colour harmony involves hue relationships producing perceptual completion — both are about structured relationships in circular perceptual spaces, but the mechanisms differ entirely."
-
 css_implementation:
-  - property: "Custom properties for palette"
+  -
+    property: "Custom properties for palette"
     example: "--color-primary: oklch(0.5 0.2 270); --color-accent: oklch(0.6 0.18 90); /* complementary */"
-    support: baseline
-  - property: "color-mix() for palette exploration"
+    support: "baseline"
+  -
+    property: "color-mix() for palette exploration"
     example: "color-mix(in oklch, var(--color-primary) 70%, var(--color-accent) 30%);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

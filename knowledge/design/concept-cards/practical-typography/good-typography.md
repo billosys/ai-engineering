@@ -1,45 +1,30 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Good Typography
-slug: good-typography
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: typography-foundations
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Good Typography"
+slug: "good-typography"
+category: "typography"
+subcategory: "typography-foundations"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Why Typography Matters"
 chapter_number: null
 pdf_page: null
 section: "What Is Good Typography"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "effective typography"
   - "typography quality"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typography
+  - "typography"
 extends: []
 related:
-  - body-text
-  - page-layout-maxims
+  - "body-text"
+  - "page-layout-maxims"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

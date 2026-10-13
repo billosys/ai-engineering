@@ -1,78 +1,68 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Expression
-slug: visual-expression
-
-# === CLASSIFICATION ===
-category: design-principles
+concept: "Visual Expression"
+slug: "visual-expression"
+category: "design-principles"
 subcategory: null
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "X. Expression"
 chapter_number: 10
 pdf_page: 437
 section: "Expression Embedded in Structure"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - formal expression
-  - expressive form
-  - design expression
-  - expressive visual qualities
-
-# === TYPED RELATIONSHIPS ===
+  - "formal expression"
+  - "expressive form"
+  - "design expression"
+  - "expressive visual qualities"
 prerequisites:
-  - physiognomic-perception
-  - visual-elements
-  - visual-perception
+  - "physiognomic-perception"
+  - "visual-elements"
+  - "visual-perception"
 extends:
-  - arnheim-expression-theory
+  - "arnheim-expression-theory"
 related:
-  - physiognomic-perception
-  - isomorphism-expression
-  - visual-rhythm
-  - structural-skeleton
-  - implied-motion
+  - "physiognomic-perception"
+  - "isomorphism-expression"
+  - "visual-rhythm"
+  - "structural-skeleton"
+  - "implied-motion"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Musical dynamics and articulation (forte, piano, staccato, legato)"
-    rating: structural
+    rating: "structural"
     note: "Musical dynamics directly control expressive intensity (loud = aggressive/powerful, soft = gentle/intimate); visual weight and contrast serve the same function — high contrast reads as emphatic/powerful, low contrast as recessive/gentle. Both are structural controls on expressive intensity."
-  - domain: music
+  -
+    domain: "music"
     concept: "Musical tension-resolution (dissonance to consonance)"
-    rating: structural
+    rating: "structural"
     note: "Visual tension (angular shapes, competing directions, high contrast) and resolution (harmonious alignment, low contrast, stable forms) map structurally to musical dissonance-consonance cycles — both control the arc of expressive engagement."
-
 css_implementation:
-  - property: "font-weight"
+  -
+    property: "font-weight"
     example: "font-weight: 700; /* heavier weight = greater visual energy / emphasis */"
-    support: baseline
-  - property: "color"
+    support: "baseline"
+  -
+    property: "color"
     example: "color: hsl(220, 90%, 50%); /* high saturation = more expressive force */"
-    support: baseline
-  - property: "border-radius"
+    support: "baseline"
+  -
+    property: "border-radius"
     example: "border-radius: 0; /* sharp corners = angular expression; high radius = soft/friendly */"
-    support: baseline
-  - property: "letter-spacing"
+    support: "baseline"
+  -
+    property: "letter-spacing"
     example: "letter-spacing: 0.1em; /* wide tracking = open, expansive; tight = dense, compressed */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

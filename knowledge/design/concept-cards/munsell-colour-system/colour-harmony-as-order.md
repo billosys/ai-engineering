@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Harmony as Order
-slug: colour-harmony-as-order
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Colour Harmony as Order"
+slug: "colour-harmony-as-order"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Color Combinations"
 chapter_number: 9
 pdf_page: 15
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "harmony as order"
   - "colour order principle"
   - "orderly colour paths"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - munsell-colour-system
-  - munsell-colour-solid
+  - "munsell-colour-system"
+  - "munsell-colour-solid"
 extends: []
 related:
-  - colour-balance
-  - monochromatic-harmony
-  - analogous-harmony
-  - complementary-harmony
-  - munsell-elliptical-path
+  - "colour-balance"
+  - "monochromatic-harmony"
+  - "analogous-harmony"
+  - "complementary-harmony"
+  - "munsell-elliptical-path"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 30: A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Tonality / key system"
-    rating: structural
+    rating: "structural"
     note: "Cleland's thesis that 'colour harmony is only another term for colour order' is structurally analogous to tonality in music, where harmony arises from orderly relationships within a key system. Both define harmony not as a fixed set of combinations but as any path through a structured space that maintains orderly intervals."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Continuous paths in metric spaces"
-    rating: structural
+    rating: "structural"
     note: "Orderly paths through the colour solid are continuous curves in a three-dimensional metric space (H, V, C). Harmony corresponds to path regularity — smooth, predictable trajectories rather than erratic jumps. This parallels the mathematical notion that continuous functions preserve neighbourhood structure."
-
 css_implementation: []
 ---
 

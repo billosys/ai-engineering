@@ -1,52 +1,37 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Hyphenation
-slug: hyphenation
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-composition
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Hyphenation"
+slug: "hyphenation"
+category: "typography"
+subcategory: "type-composition"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Hyphenation"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "automatic hyphenation"
   - "word breaking"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - justified-text
-  - line-length
+  - "justified-text"
+  - "line-length"
 extends: []
 related:
-  - hyphens-and-dashes
-  - headings
+  - "hyphens-and-dashes"
+  - "headings"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "hyphens"
+  -
+    property: "hyphens"
     example: "p { hyphens: auto; } /* requires lang attribute on html element */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

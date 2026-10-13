@@ -1,56 +1,41 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Typographic Emphasis
-slug: typographic-emphasis
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Typographic Emphasis"
+slug: "typographic-emphasis"
+category: "typography"
+subcategory: "type-formatting"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Bold or Italic"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "bold or italic"
   - "text emphasis"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
-  - font
+  - "body-text"
+  - "font"
 extends: []
 related:
-  - all-caps
-  - small-caps
-  - headings
-  - typographic-color
+  - "all-caps"
+  - "small-caps"
+  - "headings"
+  - "typographic-color"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
   - "CQ 19: A landing page hero section uses a 14px body font, a 16px heading, and a 14px subheading. Why does it feel like nothing stands out?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "font-weight, font-style"
+  -
+    property: "font-weight, font-style"
     example: "em { font-style: italic; } strong { font-weight: bold; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

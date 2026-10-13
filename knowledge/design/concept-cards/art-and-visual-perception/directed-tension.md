@@ -1,75 +1,63 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Directed Tension
-slug: directed-tension
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: visual dynamics
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Directed Tension"
+slug: "directed-tension"
+category: "visual-perception"
+subcategory: "visual dynamics"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IX. Dynamics"
 chapter_number: 9
 pdf_page: 416
 section: "A Diagram of Forces"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - visual tension
-  - perceptual tension
-  - visual dynamics
-  - tension in visual form
-
-# === TYPED RELATIONSHIPS ===
+  - "visual tension"
+  - "perceptual tension"
+  - "visual dynamics"
+  - "tension in visual form"
 prerequisites:
-  - gestalt-theory-in-art
-  - visual-forces
-extends:
-  []
+  - "gestalt-theory-in-art"
+  - "visual-forces"
+extends: []
 related:
-  - visual-balance
-  - oblique-orientation
-  - deformation-tension
-  - statics-vs-dynamics
+  - "visual-balance"
+  - "oblique-orientation"
+  - "deformation-tension"
+  - "statics-vs-dynamics"
 contrasts_with:
-  - perceived-locomotion
-  - static-measurement
-
-# === COMPETENCY QUESTIONS ===
+  - "perceived-locomotion"
+  - "static-measurement"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "A page uses five different font sizes (13px, 15px, 17px, 22px, 31px) with no apparent pattern. What's wrong, and what system would fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Vector field / force field"
-    rating: rigorous
+    rating: "rigorous"
     note: "Directed tension is precisely a vector field phenomenon: each visual element generates forces with magnitude and direction, and the total tension at any point in the composition is the vector sum of all contributing forces — the mapping is rigorous in that Arnheim explicitly uses force-vector language and the concept satisfies the mathematical definition."
-  - domain: music
+  -
+    domain: "music"
     concept: "Tension-resolution (dominant→tonic, leading tone)"
-    rating: structural
+    rating: "structural"
     note: "Musical tension (the pull of a leading tone toward the tonic, a dominant chord toward resolution) is structurally identical to visual directed tension: both describe a state of heightened potential seeking release toward a stable base — the underlying dynamic is the same in both domains."
-  - domain: physics
+  -
+    domain: "physics"
     concept: "Elastic tension / spring force"
-    rating: structural
+    rating: "structural"
     note: "Directed tension in visual forms parallels elastic tension in springs: a deformation from the rest position creates a restoring force proportional to the displacement — visual directed tension creates a perceptual 'pull' toward the norm position from which a shape deviates."
-
 css_implementation:
-  - property: "transform: rotate() / skew()"
+  -
+    property: "transform: rotate() / skew()"
     example: "transform: rotate(5deg); /* oblique orientation creates directed tension */"
-    support: baseline
-  - property: "transition / animation direction"
+    support: "baseline"
+  -
+    property: "transition / animation direction"
     example: "transition: transform 300ms ease; /* directional motion mirrors visual tension-resolution */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

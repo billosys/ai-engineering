@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Tonal Contrast
-slug: tonal-contrast
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: contrast
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Tonal Contrast"
+slug: "tonal-contrast"
+category: "design-principles"
+subcategory: "contrast"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VI. Light"
 chapter_number: 6
 pdf_page: 356
 section: "Relative Brightness"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - value contrast
-  - brightness contrast
-  - light-dark contrast
-
-# === TYPED RELATIONSHIPS ===
+  - "value contrast"
+  - "brightness contrast"
+  - "light-dark contrast"
 prerequisites:
-  - tonal-value
+  - "tonal-value"
 extends:
-  - tonal-value
+  - "tonal-value"
 related:
-  - chiaroscuro
-  - simultaneous-contrast
-  - visual-hierarchy
+  - "chiaroscuro"
+  - "simultaneous-contrast"
+  - "visual-hierarchy"
 contrasts_with:
-  - chiaroscuro
-  - colour-contrast
-
-# === COMPETENCY QUESTIONS ===
+  - "chiaroscuro"
+  - "colour-contrast"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does the visual-elements concept of 'value' (light-dark range) connect to colour theory's 'lightness' and to contrast as a design principle?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Weber fraction / just-noticeable difference"
-    rating: structural
+    rating: "structural"
     note: "Perceptible tonal contrast follows Weber's law: the detectable difference is proportional to the background intensity — equal ratios produce equal perceived contrast steps."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Signal-to-noise ratio / contrast ratio in display standards"
-    rating: structural
+    rating: "structural"
     note: "WCAG contrast ratio is an engineered application of Weber fraction logic: the ratio of relative luminances rather than their absolute difference determines legibility."
-
 css_implementation:
-  - property: "WCAG contrast ratio"
+  -
+    property: "WCAG contrast ratio"
     example: "/* Test with tools; minimum 4.5:1 for WCAG AA text */"
-    support: baseline
-  - property: "color (value difference)"
+    support: "baseline"
+  -
+    property: "color (value difference)"
     example: "color: oklch(0.9 0.01 270); background: oklch(0.15 0.01 270); /* high L contrast */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

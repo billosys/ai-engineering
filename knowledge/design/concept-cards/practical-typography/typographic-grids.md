@@ -1,51 +1,36 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Typographic Grids
-slug: typographic-grids
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: grid-systems
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Typographic Grids"
+slug: "typographic-grids"
+category: "layout-composition"
+subcategory: "grid-systems"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Grids"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "layout grids"
   - "page grids"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - page-layout-maxims
+  - "page-layout-maxims"
 extends: []
 related:
-  - page-margins
-  - tables
+  - "page-margins"
+  - "tables"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 7: What is a grid system, and what problem does it solve in visual composition?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "display: grid"
+  -
+    property: "display: grid"
     example: ".layout { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

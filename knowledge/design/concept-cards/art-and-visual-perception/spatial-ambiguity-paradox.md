@@ -1,63 +1,49 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Spatial Ambiguity and Paradox
-slug: spatial-ambiguity-paradox
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: spatial-perception
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Spatial Ambiguity and Paradox"
+slug: "spatial-ambiguity-paradox"
+category: "visual-perception"
+subcategory: "spatial-perception"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Playing With the Rules"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - spatial paradox
-  - multistability
-  - spatial contradiction
-  - depth ambiguity
-
-# === TYPED RELATIONSHIPS ===
+  - "spatial paradox"
+  - "multistability"
+  - "spatial contradiction"
+  - "depth ambiguity"
 prerequisites:
-  - pictorial-space
-  - figure-ground
-  - linear-perspective
-  - isometric-perspective
+  - "pictorial-space"
+  - "figure-ground"
+  - "linear-perspective"
+  - "isometric-perspective"
 extends:
-  - figure-ground
+  - "figure-ground"
 related:
-  - contour-rivalry
-  - perceptual-transparency
-  - depth-levels
+  - "contour-rivalry"
+  - "perceptual-transparency"
+  - "depth-levels"
 contrasts_with:
-  - unambiguous-depth
-
-# === COMPETENCY QUESTIONS ===
+  - "unambiguous-depth"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Multistable systems — systems with multiple stable equilibria"
-    rating: structural
+    rating: "structural"
     note: "Ambiguous figures are perceptual multistable systems: the visual system oscillates between two or more stable interpretations, as a ball might oscillate between two energy minima in a double-well potential."
-
 css_implementation:
-  - property: "N/A — spatial paradox is an anti-pattern for UI"
+  -
+    property: "N/A — spatial paradox is an anti-pattern for UI"
     example: "/* Avoid conflicting z-index/depth cues — they create spatial confusion */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,58 +1,43 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Information Design
-slug: visual-information-design
-
-# === CLASSIFICATION ===
-category: information-architecture
+concept: "Visual Information Design"
+slug: "visual-information-design"
+category: "information-architecture"
 subcategory: null
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "2-domain"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Visual Information"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - informational-illustration
-  - technical-illustration
-  - scientific-illustration-principles
-
-# === TYPED RELATIONSHIPS ===
+  - "informational-illustration"
+  - "technical-illustration"
+  - "scientific-illustration-principles"
 prerequisites:
-  - representation-in-art
-  - visual-form-as-structured-equivalence
-  - perceptual-simplicity
+  - "representation-in-art"
+  - "visual-form-as-structured-equivalence"
+  - "perceptual-simplicity"
 extends: []
 related:
-  - canonical-view
-  - structural-skeleton
-  - levels-of-abstraction-in-representation
+  - "canonical-view"
+  - "structural-skeleton"
+  - "levels-of-abstraction-in-representation"
 contrasts_with:
-  - photographic-documentation
-  - decorative-illustration
-
-# === COMPETENCY QUESTIONS ===
+  - "photographic-documentation"
+  - "decorative-illustration"
 answers_questions:
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "API documentation / technical specification writing"
-    rating: structural
+    rating: "structural"
     note: "Technical illustration, like API documentation, must communicate exactly the properties that matter for the user's task (structural properties of the function/object), omit irrelevant detail, and use unambiguous conventions — not just describe everything."
-
 css_implementation: []
 ---
 

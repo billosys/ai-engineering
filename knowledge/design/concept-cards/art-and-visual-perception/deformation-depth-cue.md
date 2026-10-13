@@ -1,67 +1,54 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Deformation as Depth Cue
-slug: deformation-depth-cue
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Deformation as Depth Cue"
+slug: "deformation-depth-cue"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Deformations Create Space"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - obliqueness as depth cue
-  - deformed shape perception
-  - projective deformation
-
-# === TYPED RELATIONSHIPS ===
+  - "obliqueness as depth cue"
+  - "deformed shape perception"
+  - "projective deformation"
 prerequisites:
-  - pictorial-space
-extends:
-  - []
+  - "pictorial-space"
+extends: []
 related:
-  - size-gradient
-  - linear-perspective
-  - isometric-perspective
-  - depth-gradient-principle
+  - "size-gradient"
+  - "linear-perspective"
+  - "isometric-perspective"
+  - "depth-gradient-principle"
 contrasts_with:
-  - flat-pictorial-space
-
-# === COMPETENCY QUESTIONS ===
+  - "flat-pictorial-space"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Affine vs. projective transformations — shear, scale, projection"
-    rating: rigorous
+    rating: "rigorous"
     note: "A deformed shape is the affine or projective transform of a simpler shape; the visual system inverts the transform by seeking the simplest 3D shape whose projection matches the deformed 2D figure."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS transform: skewX(), skewY(), perspective()"
-    rating: rigorous
+    rating: "rigorous"
     note: "CSS skew transforms apply exactly the kind of deformation Arnheim describes — a skewed rectangle is perceived as a rectangle receding in depth, not as an intrinsically skewed shape."
-
 css_implementation:
-  - property: "transform: skew()"
+  -
+    property: "transform: skew()"
     example: "transform: skewX(-15deg); /* implies spatial tilt/recession */"
-    support: baseline
-  - property: "transform: perspective() rotateX()"
+    support: "baseline"
+  -
+    property: "transform: perspective() rotateX()"
     example: "transform: perspective(600px) rotateX(20deg);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

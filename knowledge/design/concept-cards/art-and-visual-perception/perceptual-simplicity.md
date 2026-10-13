@@ -1,61 +1,47 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Perceptual Simplicity
-slug: perceptual-simplicity
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Perceptual Simplicity"
+slug: "perceptual-simplicity"
+category: "visual-perception"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Projections"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - principle-of-simplicity
-  - law-of-simplicity
-  - simplest-structure
-  - parsimony-of-form
-
-# === TYPED RELATIONSHIPS ===
+  - "principle-of-simplicity"
+  - "law-of-simplicity"
+  - "simplest-structure"
+  - "parsimony-of-form"
 prerequisites: []
 extends: []
 related:
-  - structural-skeleton
-  - form-vs-shape
-  - canonical-view
-  - gestalt-grouping
+  - "structural-skeleton"
+  - "form-vs-shape"
+  - "canonical-view"
+  - "gestalt-grouping"
 contrasts_with:
-  - complexity
-  - ornamental-elaboration
-
-# === COMPETENCY QUESTIONS ===
+  - "complexity"
+  - "ornamental-elaboration"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Minimum Description Length (MDL) / Kolmogorov complexity"
-    rating: structural
+    rating: "structural"
     note: "Perceptual simplicity operates like MDL: the visual system selects the interpretation that requires the least complexity to describe — the shortest 'programme' that generates the perceived form, analogous to Kolmogorov complexity."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "DRY principle / YAGNI"
-    rating: loose
+    rating: "loose"
     note: "Both DRY and perceptual simplicity favour eliminating redundancy and resolving to the minimal, non-repeated form; the analogy is loose because perceptual simplicity is a descriptive natural principle, not a prescriptive design rule."
-
 css_implementation: []
 ---
 

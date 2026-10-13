@@ -1,55 +1,40 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Neutral Axis
-slug: neutral-axis
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-systems
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Neutral Axis"
+slug: "neutral-axis"
+category: "colour-theory"
+subcategory: "colour-systems"
+tier: "foundational"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "II. Value / III. Chroma"
 chapter_number: 5
 pdf_page: 6
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "gray pole"
   - "neutral pole"
   - "neutral center"
   - "achromatic axis"
   - "value axis"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - munsell-colour-system
-  - colour-value
-  - chroma
-  - munsell-colour-solid
+  - "munsell-colour-system"
+  - "colour-value"
+  - "chroma"
+  - "munsell-colour-solid"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "oklch() with zero chroma"
+  -
+    property: "oklch() with zero chroma"
     example: "color: oklch(0.5 0 0); /* neutral gray at L=0.5 */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

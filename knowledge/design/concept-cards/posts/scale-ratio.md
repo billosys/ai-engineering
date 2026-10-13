@@ -1,48 +1,51 @@
 ---
-concept: Scale Ratio
-slug: scale-ratio
-category: typography
-subcategory: type-scale
-tier: foundational
-layer: 2-domain
+concept: "Scale Ratio"
+slug: "scale-ratio"
+category: "typography"
+subcategory: "type-scale"
+tier: "foundational"
+layer: "2-domain"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Modular scales and how they apply to web design"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - [ratio, proportion, typographic ratio]
-prerequisites:
-  - []
-extends:
-  - []
+  -
+    - "ratio"
+    - "proportion"
+    - "typographic ratio"
+prerequisites: []
+extends: []
 related:
-  - modular-scale
-  - golden-ratio
-  - perfect-fourth-ratio
-  - perfect-fifth-ratio
-  - ratio-selection-criteria
-contrasts_with:
-  - []
+  - "modular-scale"
+  - "golden-ratio"
+  - "perfect-fourth-ratio"
+  - "perfect-fifth-ratio"
+  - "ratio-selection-criteria"
+contrasts_with: []
 answers_questions:
   - "Why must visual scales be geometric (multiplicative) rather than arithmetic (additive)?"
   - "How do you select an appropriate scale ratio for a given design context?"
 rosetta_stone:
-  - domain: music
-    concept: "Interval ratio \u2014 the frequency ratio between two tones defining a musical interval (e.g., 3:2 for a perfect fifth)"
-    rating: rigorous
+  -
+    domain: "music"
+    concept: "Interval ratio — the frequency ratio between two tones defining a musical interval (e.g., 3:2 for a perfect fifth)"
+    rating: "rigorous"
     note: "Typographic scale ratios derived from musical intervals carry identical numeric values. The ratio 4:3 (perfect fourth) applied to frequencies produces a musical interval; applied to type sizes produces a scale step. Same number, different domain."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Common ratio of a geometric sequence"
-    rating: rigorous
-    note: "The scale ratio is precisely the common ratio r in the geometric sequence a, ar, ar\u00b2, ar\u00b3. This is a definitional identity, not an analogy."
+    rating: "rigorous"
+    note: "The scale ratio is precisely the common ratio r in the geometric sequence a, ar, ar², ar³. This is a definitional identity, not an analogy."
 css_implementation:
-  - property: "font-size (computed from ratio)"
-    example: "/* Base 18px, ratio 1.618 */ font-size: 18px; /* step 0 */ font-size: 29.124px; /* step 1: 18 \u00d7 1.618 */ font-size: 47.124px; /* step 2: 18 \u00d7 1.618\u00b2 */"
-    support: baseline
+  -
+    property: "font-size (computed from ratio)"
+    example: "/* Base 18px, ratio 1.618 */ font-size: 18px; /* step 0 */ font-size: 29.124px; /* step 1: 18 × 1.618 */ font-size: 47.124px; /* step 2: 18 × 1.618² */"
+    support: "baseline"
 ---
 
 # Quick Definition

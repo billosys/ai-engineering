@@ -1,72 +1,60 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Depth Levels
-slug: depth-levels
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: spatial-organisation
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Depth Levels"
+slug: "depth-levels"
+category: "visual-perception"
+subcategory: "spatial-organisation"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Depth Levels"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - spatial planes
-  - depth planes
-  - pictorial layers
-
-# === TYPED RELATIONSHIPS ===
+  - "spatial planes"
+  - "depth planes"
+  - "pictorial layers"
 prerequisites:
-  - figure-ground
-  - overlap-depth-cue
-  - pictorial-space
+  - "figure-ground"
+  - "overlap-depth-cue"
+  - "pictorial-space"
 extends:
-  - figure-ground
+  - "figure-ground"
 related:
-  - overlap-depth-cue
-  - transparency-perceptual
-  - negative-space
+  - "overlap-depth-cue"
+  - "transparency-perceptual"
+  - "negative-space"
 contrasts_with:
-  - figure-ground
-
-# === COMPETENCY QUESTIONS ===
+  - "figure-ground"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "A dark-mode implementation simply inverts all colours. Text on some backgrounds becomes unreadable. What went wrong?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS stacking context / z-index layers"
-    rating: rigorous
+    rating: "rigorous"
     note: "CSS stacking contexts directly implement depth levels: each z-index value corresponds to a discrete depth plane, and elements at the same z-index share a depth level."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Layered architecture in UI (DOM tree, stacking contexts, compositing layers)"
-    rating: rigorous
+    rating: "rigorous"
     note: "The browser rendering pipeline's compositing layers are a direct implementation of depth levels — each composited layer corresponds to one depth plane in the pictorial stack."
-
 css_implementation:
-  - property: "z-index"
+  -
+    property: "z-index"
     example: "z-index: 0; /* ground */ z-index: 1; /* content */ z-index: 100; /* overlay */"
-    support: baseline
-  - property: "isolation: isolate"
+    support: "baseline"
+  -
+    property: "isolation: isolate"
     example: "isolation: isolate; /* creates new stacking context = new depth level */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,66 +1,51 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Dynamic Composition
-slug: dynamic-composition
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: visual dynamics
-tier: advanced
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Dynamic Composition"
+slug: "dynamic-composition"
+category: "design-principles"
+subcategory: "visual dynamics"
+tier: "advanced"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IX. Dynamics"
 chapter_number: 9
 pdf_page: 416
 section: "Dynamic Composition"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - dynamic pictorial structure
-  - coherent directed tension
-  - compositional dynamism
-  - organised visual movement
-
-# === TYPED RELATIONSHIPS ===
+  - "dynamic pictorial structure"
+  - "coherent directed tension"
+  - "compositional dynamism"
+  - "organised visual movement"
 prerequisites:
-  - directed-tension
-  - oblique-orientation
-  - deformation-tension
-  - statics-vs-dynamics
-  - visual-balance
-extends:
-  []
+  - "directed-tension"
+  - "oblique-orientation"
+  - "deformation-tension"
+  - "statics-vs-dynamics"
+  - "visual-balance"
+extends: []
 related:
-  - visual-forces
-  - structural-skeleton-of-composition
-  - visual-balance
+  - "visual-forces"
+  - "structural-skeleton-of-composition"
+  - "visual-balance"
 contrasts_with:
-  - incoherent-tension
-  - piecemeal-composition
-
-# === COMPETENCY QUESTIONS ===
+  - "incoherent-tension"
+  - "piecemeal-composition"
 answers_questions:
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Counterpoint / voice leading / tonal coherence"
-    rating: structural
+    rating: "structural"
     note: "Dynamic composition requires that the directional tensions of every element cohere with the dominant tension of the whole — exactly as voice leading in counterpoint requires each voice's motion to conform to the overall harmonic and directional movement. Both are systems where local elements must serve global structure, and Zuckerkandl's account of tonal dynamic fields is explicitly invoked by Arnheim."
-
 css_implementation:
-  - property: "Overall compositional axis (CSS transform / grid tilt)"
+  -
+    property: "Overall compositional axis (CSS transform / grid tilt)"
     example: "/* No single property — dynamic composition is a systems property of the whole layout */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

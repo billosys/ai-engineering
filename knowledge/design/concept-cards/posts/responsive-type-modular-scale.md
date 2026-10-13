@@ -1,37 +1,40 @@
 ---
-concept: Responsive Type Sizing with Modular Scale
-slug: responsive-type-modular-scale
-category: typography
-subcategory: responsive-design
-tier: advanced
-layer: 3-implementation
+concept: "Responsive Type Sizing with Modular Scale"
+slug: "responsive-type-modular-scale"
+category: "typography"
+subcategory: "responsive-design"
+tier: "advanced"
+layer: "3-implementation"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Where does this fit with how we already work?"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: low
+extraction_confidence: "low"
 aliases:
-  - [responsive modular scale, adaptive type scale, fluid type sizing]
+  -
+    - "responsive modular scale"
+    - "adaptive type scale"
+    - "fluid type sizing"
 prerequisites:
-  - modular-scale
-  - scale-application-typographic-hierarchy
-  - modular-scale-construction
+  - "modular-scale"
+  - "scale-application-typographic-hierarchy"
+  - "modular-scale-construction"
 extends:
-  - modular-scale
+  - "modular-scale"
 related:
-  - scale-application-typographic-hierarchy
-contrasts_with:
-  - []
+  - "scale-application-typographic-hierarchy"
+contrasts_with: []
 answers_questions:
   - "How do you construct a modular scale for a typographic system?"
 rosetta_stone: []
 css_implementation:
-  - property: "percentage widths (converted from scale)"
+  -
+    property: "percentage widths (converted from scale)"
     example: "/* Scale value 497.406px in context of 845.479px container */ .main { width: 58.8%; /* 497.406 / 845.479 */ }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,39 +1,41 @@
 ---
-concept: Orthogonal Colour Properties
-slug: orthogonal-colour-properties
-category: colour-theory
-subcategory: colour-spaces
-tier: intermediate
-layer: 2-domain
+concept: "Orthogonal Colour Properties"
+slug: "orthogonal-colour-properties"
+category: "colour-theory"
+subcategory: "colour-spaces"
+tier: "intermediate"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "What makes a good color picker?"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["independent colour axes", "colour axis independence"]
+  -
+    - "independent colour axes"
+    - "colour axis independence"
 prerequisites:
-  - colour-gamut
-  - hsl
-  - hsv
+  - "colour-gamut"
+  - "hsl"
+  - "hsv"
 extends:
-  - colour-picker-design-principles
+  - "colour-picker-design-principles"
 related:
-  - okhsl
-  - okhsv
-  - chroma-vs-saturation
-contrasts_with:
-  - []
+  - "okhsl"
+  - "okhsv"
+  - "chroma-vs-saturation"
+contrasts_with: []
 answers_questions:
   - "What makes a colour picker perceptually well-designed?"
   - "What distinguishes chroma from saturation in a colour space?"
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Orthogonal basis vectors in a vector space"
-    rating: rigorous
+    rating: "rigorous"
     note: "Perceptual orthogonality in colour is directly analogous to mathematical orthogonality: changing one axis component should produce no component change along other axes, in perceptual space rather than Euclidean space."
 ---
 

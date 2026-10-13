@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Columns
-slug: columns
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: layout-patterns
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Columns"
+slug: "columns"
+category: "layout-composition"
+subcategory: "layout-patterns"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Columns"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "multi-column layout"
   - "newspaper columns"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - line-length
-  - line-spacing
+  - "line-length"
+  - "line-spacing"
 extends: []
 related:
-  - page-margins
-  - paragraph-spacing
-  - typographic-grids
+  - "page-margins"
+  - "paragraph-spacing"
+  - "typographic-grids"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 7: What is a grid system, and what problem does it solve in visual composition?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "columns"
+  -
+    property: "columns"
     example: "article { columns: 2; column-gap: 2em; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

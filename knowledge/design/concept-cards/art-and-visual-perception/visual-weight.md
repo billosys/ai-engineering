@@ -1,74 +1,62 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Weight
-slug: visual-weight
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: balance
-tier: foundational
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Visual Weight"
+slug: "visual-weight"
+category: "design-principles"
+subcategory: "balance"
+tier: "foundational"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "Weight"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perceptual weight
-  - compositional weight
-  - pictorial weight
-
-# === TYPED RELATIONSHIPS ===
+  - "perceptual weight"
+  - "compositional weight"
+  - "pictorial weight"
 prerequisites:
-  - visual-balance
-  - gestalt-theory-in-art
-extends:
-  []
+  - "visual-balance"
+  - "gestalt-theory-in-art"
+extends: []
 related:
-  - weight-by-location
-  - tonal-weight
-  - weight-of-colour
-  - visual-balance
-  - structural-skeleton-of-composition
+  - "weight-by-location"
+  - "tonal-weight"
+  - "weight-of-colour"
+  - "visual-balance"
+  - "structural-skeleton-of-composition"
 contrasts_with:
-  - physical-weight
-
-# === COMPETENCY QUESTIONS ===
+  - "physical-weight"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
   - "A dashboard uses teal header, red error badges, green success indicators, blue links, yellow warning banners, and purple notification badges. It looks like a 'clown car.' What principle was violated, and how do you fix it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Torque / moment of force (lever principle)"
-    rating: rigorous
+    rating: "rigorous"
     note: "Arnheim explicitly applies the lever principle to visual composition: weight increases with distance from the compositional centre, exactly as torque increases with lever arm length — a rigorous quantitative mapping."
-  - domain: music
+  -
+    domain: "music"
     concept: "Dynamics (pp to ff) / emphasis scale"
-    rating: structural
+    rating: "structural"
     note: "Musical dynamics (pianissimo to fortissimo) is structurally parallel to visual weight as an emphasis scale — both describe the degree of perceptual force or prominence assigned to an element."
-
 css_implementation:
-  - property: "font-weight"
+  -
+    property: "font-weight"
     example: "font-weight: 700; /* heavy visual weight for headings */"
-    support: baseline
-  - property: "opacity"
+    support: "baseline"
+  -
+    property: "opacity"
     example: "opacity: 0.5; /* reduces perceptual weight of secondary elements */"
-    support: baseline
-  - property: "font-size"
+    support: "baseline"
+  -
+    property: "font-size"
     example: "font-size: 2rem; /* larger = heavier */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour and Space
-slug: colour-and-space
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: depth-and-space
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Colour and Space"
+slug: "colour-and-space"
+category: "design-principles"
+subcategory: "depth-and-space"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "Reactions to Color"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - colour depth
-  - spatial colour
-  - advancing and receding colours
-
-# === TYPED RELATIONSHIPS ===
+  - "colour depth"
+  - "spatial colour"
+  - "advancing and receding colours"
 prerequisites:
-  - colour-temperature
-  - tonal-value
-  - saturation
+  - "colour-temperature"
+  - "tonal-value"
+  - "saturation"
 extends: []
 related:
-  - colour-temperature
-  - colour-weight
-  - tonal-contrast
-  - simultaneous-contrast
+  - "colour-temperature"
+  - "colour-weight"
+  - "tonal-contrast"
+  - "simultaneous-contrast"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How do you construct a colour palette starting from a single brand colour using OKLCH? What systematic steps ensure adequate contrast and accessible combinations?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "z-index with colour reinforcement"
+  -
+    property: "z-index with colour reinforcement"
     example: "/* Warm, dark, saturated = visually forward; cool, light, desaturated = visually back */"
-    support: baseline
-  - property: "box-shadow (depth via shadow)"
+    support: "baseline"
+  -
+    property: "box-shadow (depth via shadow)"
     example: "box-shadow: 0 8px 24px rgba(0,0,0,0.3); /* reinforces z-height */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

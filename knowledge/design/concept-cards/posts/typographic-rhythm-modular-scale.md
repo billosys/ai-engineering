@@ -1,45 +1,50 @@
 ---
-concept: Typographic Rhythm via Modular Scale
-slug: typographic-rhythm-modular-scale
-category: typography
-subcategory: rhythm-spacing
-tier: intermediate
-layer: 2-domain
+concept: "Typographic Rhythm via Modular Scale"
+slug: "typographic-rhythm-modular-scale"
+category: "typography"
+subcategory: "rhythm-spacing"
+tier: "intermediate"
+layer: "2-domain"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Applying a modular scale in web design"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
+extraction_confidence: "medium"
 aliases:
-  - [visual harmony through scale, proportional rhythm, scale-based rhythm]
+  -
+    - "visual harmony through scale"
+    - "proportional rhythm"
+    - "scale-based rhythm"
 prerequisites:
-  - modular-scale
-  - scale-application-typographic-hierarchy
+  - "modular-scale"
+  - "scale-application-typographic-hierarchy"
 extends:
-  - modular-scale
+  - "modular-scale"
 related:
-  - scale-application-typographic-hierarchy
-  - typographic-color
-contrasts_with:
-  - []
+  - "scale-application-typographic-hierarchy"
+  - "typographic-color"
+contrasts_with: []
 answers_questions:
   - "What makes a type hierarchy feel harmonious vs arbitrary?"
   - "What distinguishes a modular scale from arbitrary type size selection?"
 rosetta_stone:
-  - domain: music
-    concept: "Rhythmic meter \u2014 regularly recurring proportional time intervals that create coherent musical rhythm"
-    rating: structural
+  -
+    domain: "music"
+    concept: "Rhythmic meter — regularly recurring proportional time intervals that create coherent musical rhythm"
+    rating: "structural"
     note: "Musical rhythm arises from proportional time relationships; typographic rhythm arises from proportional spatial relationships. Both depend on a consistent underlying ratio producing perceptible regularity. The analogy is structural (shared architecture) rather than rigorous (different physical quantities)."
 css_implementation:
-  - property: "line-height"
+  -
+    property: "line-height"
     example: "p { margin: 1em 0; line-height: 1.54; } /* scale-informed vertical rhythm */"
-    support: baseline
-  - property: "margin"
+    support: "baseline"
+  -
+    property: "margin"
     example: ".side { margin: 27.723px 29.124px 0 0; } /* consistent scale-derived spacing */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

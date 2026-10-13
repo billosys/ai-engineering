@@ -1,56 +1,42 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Lower-Case Typography
-slug: lower-case-typography
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: typography-foundations
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Lower-Case Typography"
+slug: "lower-case-typography"
+category: "typography"
+subcategory: "typography-foundations"
+tier: "intermediate"
+layer: "2-domain"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: "Orthography as at present or all in lower case?"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
   - "Kleinschreibung"
   - "minuscule-only typography"
   - "single-alphabet typography"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - sans-serif-advocacy  # the argument for lower-case depends on sans-serif as the base form
+  - "sans-serif-advocacy"
 extends: []
 related:
-  - the-new-typography  # lower-case advocacy is part of the movement's reform programme
-  - functional-typography  # the argument is grounded in economy and function
+  - "the-new-typography"
+  - "functional-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 56: What typographic details (ligatures, true small caps, old-style figures, proper dashes, correct quotation marks) distinguish professionally set text from amateur typography?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: linguistics
+  -
+    domain: "linguistics"
     concept: "orthographic reform"
-    rating: structural
+    rating: "structural"
     note: "Tschichold's argument for abolishing capitals parallels broader linguistic reform movements — the methodology (rational simplification based on functional analysis) matches, though the application domain (visual form vs. language rules) differs."
-
 css_implementation:
-  - property: "text-transform"
+  -
+    property: "text-transform"
     example: "text-transform: lowercase; /* All text in lower case */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

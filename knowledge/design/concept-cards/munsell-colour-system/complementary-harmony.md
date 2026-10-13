@@ -1,62 +1,48 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Complementary Harmony
-slug: complementary-harmony
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Complementary Harmony"
+slug: "complementary-harmony"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Color Combinations"
 chapter_number: 9
 pdf_page: 15
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "opposite-hue harmony"
   - "complementary colour scheme"
   - "contrast harmony"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - complementary-colours
-  - colour-balance
+  - "complementary-colours"
+  - "colour-balance"
 extends:
-  - complementary-colours
+  - "complementary-colours"
 related:
-  - monochromatic-harmony
-  - analogous-harmony
-  - colour-harmony-as-order
-  - munsell-balance-formula
+  - "monochromatic-harmony"
+  - "analogous-harmony"
+  - "colour-harmony-as-order"
+  - "munsell-balance-formula"
 contrasts_with:
-  - analogous-harmony
-  - monochromatic-harmony
-
-# === COMPETENCY QUESTIONS ===
+  - "analogous-harmony"
+  - "monochromatic-harmony"
 answers_questions:
   - "CQ 23: How do you construct a colour palette starting from a single brand colour using OKLCH?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Resolution of dissonance"
-    rating: loose
+    rating: "loose"
     note: "Complementary harmony uses maximum chromatic contrast resolved through proportional balance, loosely analogous to how musical dissonance (e.g., a tritone) resolves to consonance. Both involve tension that is managed, not avoided. The parallel is suggestive rather than formally grounded."
-
 css_implementation:
-  - property: "oklch() hue offset"
+  -
+    property: "oklch() hue offset"
     example: "/* Complementary palette: base hue + 180 degrees */\n--base: oklch(0.5 0.15 240);\n--complement: oklch(0.6 0.10 60);\n/* Balance: complement occupies smaller area at higher chroma */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

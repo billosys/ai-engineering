@@ -1,46 +1,31 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Sentence Spacing
-slug: sentence-spacing
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-composition
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Sentence Spacing"
+slug: "sentence-spacing"
+category: "typography"
+subcategory: "type-composition"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Type Composition"
 chapter_number: null
 pdf_page: null
 section: "One Space Between Sentences"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "sentence space"
   - "one space rule"
   - "inter-sentence spacing"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - typewriter-habits
+  - "typewriter-habits"
 extends: []
 related:
-  - curly-quotes
-  - hyphens-and-dashes
+  - "curly-quotes"
+  - "hyphens-and-dashes"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

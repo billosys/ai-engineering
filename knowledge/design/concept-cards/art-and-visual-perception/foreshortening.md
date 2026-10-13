@@ -1,57 +1,42 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Foreshortening
-slug: foreshortening
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Foreshortening"
+slug: "foreshortening"
+category: "visual-perception"
 subcategory: null
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Foreshortening"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - projective-contraction
-  - oblique-view
-  - perspective-distortion
-
-# === TYPED RELATIONSHIPS ===
+  - "projective-contraction"
+  - "oblique-view"
+  - "perspective-distortion"
 prerequisites:
-  - picture-plane-projection
-  - structural-skeleton
-  - shape-constancy
+  - "picture-plane-projection"
+  - "structural-skeleton"
+  - "shape-constancy"
 extends: []
 related:
-  - canonical-view
-  - overlapping
-  - spatial-orientation-of-form
+  - "canonical-view"
+  - "overlapping"
+  - "spatial-orientation-of-form"
 contrasts_with:
-  - orthogonal-projection
-  - canonical-view
-
-# === COMPETENCY QUESTIONS ===
+  - "orthogonal-projection"
+  - "canonical-view"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "perspective"
+  -
+    property: "perspective"
     example: "perspective: 400px; transform: rotateX(45deg);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

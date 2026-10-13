@@ -1,48 +1,33 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Page Layout Maxims
-slug: page-layout-maxims
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: layout-principles
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Page Layout Maxims"
+slug: "page-layout-maxims"
+category: "design-principles"
+subcategory: "layout-principles"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Maxims of Page Layout"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "layout principles"
   - "typography maxims"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - good-typography
-  - body-text
+  - "good-typography"
+  - "body-text"
 extends: []
 related:
-  - typographic-grids
-  - page-margins
-  - typographic-color
+  - "typographic-grids"
+  - "page-margins"
+  - "typographic-color"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 7: What is a grid system, and what problem does it solve in visual composition?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

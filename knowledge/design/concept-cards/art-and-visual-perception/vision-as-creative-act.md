@@ -1,50 +1,32 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Vision as Creative Act
-slug: vision-as-creative-act
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: perceptual foundations
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Vision as Creative Act"
+slug: "vision-as-creative-act"
+category: "visual-perception"
+subcategory: "perceptual foundations"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "Introduction"
 chapter_number: 0
 pdf_page: 6
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - creative seeing
-  - active vision
-  - perceptual creativity
-
-# === TYPED RELATIONSHIPS ===
-prerequisites:
-  []
-extends:
-  []
+  - "creative seeing"
+  - "active vision"
+  - "perceptual creativity"
+prerequisites: []
+extends: []
 related:
-  - gestalt-principles
-  - perceptual-experience-as-foundation
+  - "gestalt-principles"
+  - "perceptual-experience-as-foundation"
 contrasts_with:
-  - passive-recording-of-reality
-
-# === COMPETENCY QUESTIONS ===
+  - "passive-recording-of-reality"
 answers_questions:
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation: []
 ---
 

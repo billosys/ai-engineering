@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Colour Weight
-slug: colour-weight
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: visual-weight
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Colour Weight"
+slug: "colour-weight"
+category: "design-principles"
+subcategory: "visual-weight"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "VII. Color"
 chapter_number: 7
 pdf_page: 371
 section: "Reactions to Color"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - visual weight of colour
-  - chromatic weight
-
-# === TYPED RELATIONSHIPS ===
+  - "visual weight of colour"
+  - "chromatic weight"
 prerequisites:
-  - tonal-value
-  - saturation
-  - colour-temperature
+  - "tonal-value"
+  - "saturation"
+  - "colour-temperature"
 extends: []
 related:
-  - tonal-contrast
-  - colour-harmony
-  - colour-temperature
-  - simultaneous-contrast
+  - "tonal-contrast"
+  - "colour-harmony"
+  - "colour-temperature"
+  - "simultaneous-contrast"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "A dark theme was implemented by swapping background and foreground colours, but the interface feels 'heavy' and fatiguing. What perceptual principle explains this, and what's the correct approach to dark theme design?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Weighted summation / centre of gravity"
-    rating: structural
+    rating: "structural"
     note: "Visual weight of colour elements functions like mass in a centre-of-gravity calculation; compositional balance requires the weighted sum of all elements to be centred on the visual axis."
-
 css_implementation:
-  - property: "Contrast ratio / oklch lightness as weight proxy"
+  -
+    property: "Contrast ratio / oklch lightness as weight proxy"
     example: "/* Low L in oklch = dark = heavier visual weight */ color: oklch(0.2 0.15 270);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

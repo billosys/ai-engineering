@@ -1,49 +1,54 @@
 ---
-concept: Musical Interval \u2194 Typographic Ratio (Rosetta Stone)
-slug: musical-interval-typographic-ratio
-category: design-principles
-subcategory: cross-domain-mapping
-tier: advanced
-layer: 1-principles
+concept: "Musical Interval \\u2194 Typographic Ratio (Rosetta Stone)"
+slug: "musical-interval-typographic-ratio"
+category: "design-principles"
+subcategory: "cross-domain-mapping"
+tier: "advanced"
+layer: "1-principles"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Modular scales and how they apply to web design"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
+extraction_confidence: "medium"
 aliases:
-  - [harmonic ratios in typography, musical ratios for type, interval-based scale ratios]
+  -
+    - "harmonic ratios in typography"
+    - "musical ratios for type"
+    - "interval-based scale ratios"
 prerequisites:
-  - scale-ratio
-  - modular-scale
-  - golden-ratio
+  - "scale-ratio"
+  - "modular-scale"
+  - "golden-ratio"
 extends:
-  - scale-ratio
-  - ratio-selection-criteria
+  - "scale-ratio"
+  - "ratio-selection-criteria"
 related:
-  - modular-scale-construction
-  - typographic-rhythm-modular-scale
-contrasts_with:
-  - []
+  - "modular-scale-construction"
+  - "typographic-rhythm-modular-scale"
+contrasts_with: []
 answers_questions:
   - "What is the mathematical relationship between musical intervals and typographic scale ratios?"
   - "Why must visual scales be geometric (multiplicative) rather than arithmetic (additive)?"
   - "How do you select an appropriate scale ratio for a given design context?"
 rosetta_stone:
-  - domain: music
-    concept: "Musical interval \u2014 the frequency ratio between two tones (e.g., perfect fifth = 3:2 = 1.5; perfect fourth = 4:3 \u2248 1.333)"
-    rating: rigorous
-    note: "The numeric ratio defining a musical interval (derived from harmonic series integer ratios) is identical to the numeric ratio used as a typographic scale multiplier. 3:2 applied to frequencies produces a perfect fifth; 1.5 applied to type sizes produces a modular scale step. Same number, different physical domain. Not a metaphor \u2014 a literal numerical identity."
-  - domain: mathematics
-    concept: "Rational number ratios derived from small integers \u2014 harmonic series ratios n:(n+1) and n:(n+k)"
-    rating: rigorous
+  -
+    domain: "music"
+    concept: "Musical interval — the frequency ratio between two tones (e.g., perfect fifth = 3:2 = 1.5; perfect fourth = 4:3 ≈ 1.333)"
+    rating: "rigorous"
+    note: "The numeric ratio defining a musical interval (derived from harmonic series integer ratios) is identical to the numeric ratio used as a typographic scale multiplier. 3:2 applied to frequencies produces a perfect fifth; 1.5 applied to type sizes produces a modular scale step. Same number, different physical domain. Not a metaphor — a literal numerical identity."
+  -
+    domain: "mathematics"
+    concept: "Rational number ratios derived from small integers — harmonic series ratios n:(n+1) and n:(n+k)"
+    rating: "rigorous"
     note: "Musical interval ratios are ratios of small integers (2:1 octave, 3:2 fifth, 4:3 fourth, 5:4 major third, 9:8 major second). These same ratios, expressed as decimals, are the typographic scale ratios in Tim Brown's framework."
 css_implementation:
-  - property: "font-size (via scale ratio)"
-    example: "/* Perfect fourth scale (ratio 1.333) from 16px */ font-size: 16px; /* step 0 */ font-size: 21.33px; /* step 1: 16 \u00d7 1.333 */ font-size: 28.43px; /* step 2: 16 \u00d7 1.333\u00b2 */ /* Perfect fifth scale (ratio 1.5) from 16px */ font-size: 16px; /* step 0 */ font-size: 24px; /* step 1: 16 \u00d7 1.5 */ font-size: 36px; /* step 2: 16 \u00d7 1.5\u00b2 */"
-    support: baseline
+  -
+    property: "font-size (via scale ratio)"
+    example: "/* Perfect fourth scale (ratio 1.333) from 16px */ font-size: 16px; /* step 0 */ font-size: 21.33px; /* step 1: 16 × 1.333 */ font-size: 28.43px; /* step 2: 16 × 1.333² */ /* Perfect fifth scale (ratio 1.5) from 16px */ font-size: 16px; /* step 0 */ font-size: 24px; /* step 1: 16 × 1.5 */ font-size: 36px; /* step 2: 16 × 1.5² */"
+    support: "baseline"
 ---
 
 # Quick Definition

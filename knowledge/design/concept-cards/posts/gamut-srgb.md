@@ -1,38 +1,37 @@
 ---
-concept: Gamut (sRGB)
-slug: gamut-srgb
-category: colour-theory
-subcategory: colour gamuts
-tier: foundational
-layer: 2-domain
+concept: "Gamut (sRGB)"
+slug: "gamut-srgb"
+category: "colour-theory"
+subcategory: "colour gamuts"
+tier: "foundational"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "How Oklab was derived"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: medium
-aliases:
-  - []
+extraction_confidence: "medium"
+aliases: []
 prerequisites:
-  - colour-space
-  - d65-whitepoint
+  - "colour-space"
+  - "d65-whitepoint"
 extends:
-  - colour-space
+  - "colour-space"
 related:
-  - oklab
-  - xyz-colour-space
-  - colour-space-comparison
-contrasts_with:
-  - []
+  - "oklab"
+  - "xyz-colour-space"
+  - "colour-space-comparison"
+contrasts_with: []
 answers_questions:
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
 rosetta_stone: []
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "color(display-p3 1 0 0); /* wider than sRGB */"
-    support: partial
+    support: "partial"
 ---
 
 # Quick Definition

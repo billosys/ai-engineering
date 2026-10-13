@@ -1,48 +1,49 @@
 ---
-concept: Oklab Colour Space
-slug: oklab
-category: colour-theory
-subcategory: perceptual colour models
-tier: foundational
-layer: 2-domain
+concept: "Oklab Colour Space"
+slug: "oklab"
+category: "colour-theory"
+subcategory: "perceptual colour models"
+tier: "foundational"
+layer: "2-domain"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "The Oklab color space"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
-aliases:
-  - []
+extraction_confidence: "high"
+aliases: []
 prerequisites:
-  - perceptual-uniformity
-  - colour-space
-  - xyz-colour-space
+  - "perceptual-uniformity"
+  - "colour-space"
+  - "xyz-colour-space"
 extends:
-  - perceptual-uniformity
+  - "perceptual-uniformity"
 related:
-  - lms-cone-responses
-  - d65-whitepoint
-  - chroma-perceptual
-  - lightness-perceptual
-  - colour-interpolation-perceptual
-  - oklab-conversion
-  - colour-space-comparison
+  - "lms-cone-responses"
+  - "d65-whitepoint"
+  - "chroma-perceptual"
+  - "lightness-perceptual"
+  - "colour-interpolation-perceptual"
+  - "oklab-conversion"
+  - "colour-space-comparison"
 contrasts_with:
-  - colour-space-comparison
+  - "colour-space-comparison"
 answers_questions:
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
   - "How do you construct a palette that changes lightness uniformly across hues?"
   - "How do you convert between colour spaces for image processing?"
 rosetta_stone: []
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "color: oklab(0.7 0.1 -0.08);"
-    support: baseline
-  - property: "color"
+    support: "baseline"
+  -
+    property: "color"
     example: "color: oklch(70% 0.15 200);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

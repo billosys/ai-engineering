@@ -1,56 +1,41 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Munsell Elliptical Path
-slug: munsell-elliptical-path
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-harmony
-tier: advanced
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Munsell Elliptical Path"
+slug: "munsell-elliptical-path"
+category: "colour-theory"
+subcategory: "colour-harmony"
+tier: "advanced"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "Color Combinations"
 chapter_number: 9
 pdf_page: 15
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
   - "Cooper's elliptical path"
   - "elliptical colour selection zone"
   - "safe colour path"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - complementary-colours
-  - chroma
-  - neutral-axis
-  - munsell-colour-solid
+  - "complementary-colours"
+  - "chroma"
+  - "neutral-axis"
+  - "munsell-colour-solid"
 extends:
-  - colour-balance
+  - "colour-balance"
 related:
-  - colour-harmony-as-order
-  - complementary-harmony
+  - "colour-harmony-as-order"
+  - "complementary-harmony"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 23: How do you construct a colour palette starting from a single brand colour using OKLCH?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Elliptical constraint / convex safe region"
-    rating: structural
+    rating: "structural"
     note: "The elliptical path defines a convex region in the chroma plane within which any colour selection is safe. This is structurally analogous to a feasible region in optimisation — a convex constraint boundary inside which all solutions satisfy the harmony condition."
-
 css_implementation: []
 ---
 

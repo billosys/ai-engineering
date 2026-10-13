@@ -1,54 +1,39 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Letterspacing
-slug: letterspacing
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Letterspacing"
+slug: "letterspacing"
+category: "typography"
+subcategory: "type-formatting"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Text Formatting"
 chapter_number: null
 pdf_page: null
 section: "Letterspacing"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "tracking"
   - "character spacing"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - font
+  - "font"
 extends: []
 related:
-  - kerning
-  - all-caps
-  - small-caps
+  - "kerning"
+  - "all-caps"
+  - "small-caps"
 contrasts_with:
-  - kerning
-
-# === COMPETENCY QUESTIONS ===
+  - "kerning"
 answers_questions:
   - "CQ 11: What distinguishes a spacing system from arbitrary padding values — what problem does constraint solve?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "letter-spacing"
+  -
+    property: "letter-spacing"
     example: ".caps { letter-spacing: 0.05em; } /* 5-12% for caps/small caps */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

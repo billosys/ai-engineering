@@ -1,60 +1,46 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Fusion of Parts
-slug: fusion-of-parts
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Fusion of Parts"
+slug: "fusion-of-parts"
+category: "visual-perception"
 subcategory: null
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "IV. Growth"
 chapter_number: 4
 pdf_page: 108
 section: "The Fusion of Parts"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - contour-fusion
-  - part-integration
-  - compositional-fusion
-
-# === TYPED RELATIONSHIPS ===
+  - "contour-fusion"
+  - "part-integration"
+  - "compositional-fusion"
 prerequisites:
-  - law-of-differentiation
-  - vertical-horizontal-framework
+  - "law-of-differentiation"
+  - "vertical-horizontal-framework"
 extends: []
 related:
-  - obliqueness-as-visual-dynamism
-  - structural-skeleton
-  - perceptual-simplicity
+  - "obliqueness-as-visual-dynamism"
+  - "structural-skeleton"
+  - "perceptual-simplicity"
 contrasts_with:
-  - additive-combination-of-parts
-  - analytic-construction
-
-# === COMPETENCY QUESTIONS ===
+  - "additive-combination-of-parts"
+  - "analytic-construction"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Integral calculus — continuous function vs. piecewise approximation"
-    rating: structural
+    rating: "structural"
     note: "The fusion of parts moves from discrete, piecewise-assembled forms (sum of separate simple shapes) to continuous, integrated wholes — analogous to moving from a Riemann sum approximation to the smooth integral it converges toward."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Composition over inheritance / component composition"
-    rating: structural
+    rating: "structural"
     note: "Early additive construction in visual art (assemble from separate simple units) parallels building systems from independent components; fusion (integrated complex contour) parallels the higher-level composition that makes parts work together as a unified system."
-
 css_implementation: []
 ---
 

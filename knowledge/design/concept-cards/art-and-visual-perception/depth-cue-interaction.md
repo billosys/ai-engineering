@@ -1,69 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Depth Cue Interaction and Reinforcement
-slug: depth-cue-interaction
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: depth-cues
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Depth Cue Interaction and Reinforcement"
+slug: "depth-cue-interaction"
+category: "visual-perception"
+subcategory: "depth-cues"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Gradients Create Depth"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - cue combination
-  - depth cue redundancy
-  - multi-cue depth
-
-# === TYPED RELATIONSHIPS ===
+  - "cue combination"
+  - "depth cue redundancy"
+  - "multi-cue depth"
 prerequisites:
-  - overlap-depth-cue
-  - size-gradient
-  - atmospheric-perspective
-  - texture-gradient
-  - depth-gradient-principle
+  - "overlap-depth-cue"
+  - "size-gradient"
+  - "atmospheric-perspective"
+  - "texture-gradient"
+  - "depth-gradient-principle"
 extends:
-  - depth-gradient-principle
+  - "depth-gradient-principle"
 related:
-  - spatial-ambiguity-paradox
-  - layout-spatial-depth
-  - linear-perspective
+  - "spatial-ambiguity-paradox"
+  - "layout-spatial-depth"
+  - "linear-perspective"
 contrasts_with:
-  - spatial-ambiguity-paradox
-
-# === COMPETENCY QUESTIONS ===
+  - "spatial-ambiguity-paradox"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Bayesian inference — combining independent evidence"
-    rating: structural
+    rating: "structural"
     note: "Depth cues interact like independent evidence in Bayesian inference: multiple depth cues pointing to the same spatial interpretation multiply the confidence in that interpretation, while conflicting cues reduce confidence and create ambiguity."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Redundant encoding in data visualisation"
-    rating: structural
+    rating: "structural"
     note: "Using multiple depth/hierarchy cues simultaneously (size + colour + position + shadow) creates redundant encoding — the same design principle that makes accessible data visualisations (redundantly encoding data through multiple channels)."
-
 css_implementation:
-  - property: "Multiple depth cues in combination"
+  -
+    property: "Multiple depth cues in combination"
     example: "/* Shadow + scale + contrast + blur = strong depth */ .card { box-shadow: 0 4px 12px rgba(0,0,0,0.15); transform: scale(1.0); filter: none; } .card-background { opacity: 0.7; filter: blur(2px); }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

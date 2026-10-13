@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Top-Bottom Asymmetry in Visual Space
-slug: top-bottom-asymmetry
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: balance
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Top-Bottom Asymmetry in Visual Space"
+slug: "top-bottom-asymmetry"
+category: "design-principles"
+subcategory: "balance"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "Top and Bottom"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - vertical anisotropy
-  - upper-lower weight asymmetry
-  - gravitational visual asymmetry
-
-# === TYPED RELATIONSHIPS ===
+  - "vertical anisotropy"
+  - "upper-lower weight asymmetry"
+  - "gravitational visual asymmetry"
 prerequisites:
-  - visual-weight
-  - weight-by-location
+  - "visual-weight"
+  - "weight-by-location"
 extends:
-  - weight-by-location
+  - "weight-by-location"
 related:
-  - visual-balance
-  - left-right-asymmetry
-  - anisotropic-visual-space
+  - "visual-balance"
+  - "left-right-asymmetry"
+  - "anisotropic-visual-space"
 contrasts_with:
-  - symmetric-top-bottom-distribution
-
-# === COMPETENCY QUESTIONS ===
+  - "symmetric-top-bottom-distribution"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "A card layout uses 16px padding inside cards, 16px between cards, and 16px between card title and body text. Everything feels 'flat.' What principle was violated, and what's the fix?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Anisotropic space / non-uniform metric"
-    rating: structural
+    rating: "structural"
     note: "Anisotropic visual space parallels anisotropic mathematical spaces: the same distance or weight has different effective magnitude depending on direction (vertical vs. horizontal), exactly as an anisotropic metric assigns different 'lengths' to the same interval depending on direction."
-  - domain: physics
+  -
+    domain: "physics"
     concept: "Gravitational potential energy"
-    rating: structural
+    rating: "structural"
     note: "Arnheim explicitly invokes physics: 'moving away from the center of gravity requires work, the potential energy in a mass high up is greater than that in one low down' — upper positions carry more visual weight because higher physical potential energy corresponds to greater perceptual weight. The physical mechanism is directly cited."
-
 css_implementation:
-  - property: "padding-top / padding-bottom"
+  -
+    property: "padding-top / padding-bottom"
     example: "padding-top: 1.5rem; padding-bottom: 2rem; /* more bottom padding compensates for upper-zone visual weight */"
-    support: baseline
-  - property: "margin-top / margin-bottom"
+    support: "baseline"
+  -
+    property: "margin-top / margin-bottom"
     example: "margin-top: 1rem; margin-bottom: 1.5rem; /* bottom margin heavier: follows book/typography convention */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

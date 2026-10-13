@@ -1,68 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Overlapping as Depth Cue
-slug: overlapping-as-depth-cue
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Overlapping as Depth Cue"
+slug: "overlapping-as-depth-cue"
+category: "visual-perception"
 subcategory: null
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Overlapping"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - superposition
-  - occlusion
-  - overlap-hierarchy
-
-# === TYPED RELATIONSHIPS ===
+  - "superposition"
+  - "occlusion"
+  - "overlap-hierarchy"
 prerequisites:
-  - picture-plane-projection
-  - structural-skeleton
+  - "picture-plane-projection"
+  - "structural-skeleton"
 extends: []
 related:
-  - foreshortening
-  - canonical-view
-  - design-principles
+  - "foreshortening"
+  - "canonical-view"
+  - "design-principles"
 contrasts_with:
-  - side-by-side-arrangement
-  - depth-stratification
-
-# === COMPETENCY QUESTIONS ===
+  - "side-by-side-arrangement"
+  - "depth-stratification"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "CSS z-index / stacking contexts"
-    rating: rigorous
+    rating: "rigorous"
     note: "CSS z-index implements overlapping depth order exactly: higher z-index elements appear in front of lower ones, creating the same dominator-subservient hierarchy Arnheim describes in pictorial overlapping."
-  - domain: music
+  -
+    domain: "music"
     concept: "Harmonic counterpoint (two voices sharing a compositional space)"
-    rating: structural
+    rating: "structural"
     note: "Arnheim draws the music analogy directly: 'in music the effect of harmony or disharmony is similarly more compelling when several tones are combined in one chord rather than played in succession' — overlapping intensifies formal relations the way chords intensify harmonic relations."
-
 css_implementation:
-  - property: "z-index"
+  -
+    property: "z-index"
     example: "z-index: 10; position: relative;"
-    support: baseline
-  - property: "mix-blend-mode"
+    support: "baseline"
+  -
+    property: "mix-blend-mode"
     example: "mix-blend-mode: multiply;"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

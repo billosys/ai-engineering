@@ -1,70 +1,57 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Balance
-slug: visual-balance
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: balance
-tier: foundational
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Visual Balance"
+slug: "visual-balance"
+category: "design-principles"
+subcategory: "balance"
+tier: "foundational"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "I. Balance"
 chapter_number: 1
 pdf_page: 11
 section: "Psychological and Physical Balance"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - compositional balance
-  - pictorial balance
-  - equilibrium in composition
-  - perceptual equilibrium
-
-# === TYPED RELATIONSHIPS ===
+  - "compositional balance"
+  - "pictorial balance"
+  - "equilibrium in composition"
+  - "perceptual equilibrium"
 prerequisites:
-  - visual-weight
-  - gestalt-theory-in-art
-extends:
-  []
+  - "visual-weight"
+  - "gestalt-theory-in-art"
+extends: []
 related:
-  - symmetry
-  - asymmetry
-  - structural-skeleton-of-composition
-  - visual-forces
+  - "symmetry"
+  - "asymmetry"
+  - "structural-skeleton-of-composition"
+  - "visual-forces"
 contrasts_with:
-  - visual-imbalance
-
-# === COMPETENCY QUESTIONS ===
+  - "visual-imbalance"
 answers_questions:
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "Given a data-rich card (title, status badge, three metrics, timestamp, action button), how do you assign visual hierarchy: what gets the most weight, what gets de-emphasized, and why?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Mechanical equilibrium / force balance"
-    rating: rigorous
+    rating: "rigorous"
     note: "Visual balance is explicitly modelled on physical balance: a composition has a centre of gravity, and elements are distributed so that perceptual forces compensate one another — the mapping is rigorous in that Arnheim uses the physical definition of equilibrium (forces compensate one another) directly."
-  - domain: music
+  -
+    domain: "music"
     concept: "Tonal resolution / harmonic closure"
-    rating: structural
+    rating: "structural"
     note: "Musical tension-resolution (dominant to tonic) is structurally parallel to visual imbalance resolving to balance — both describe a system seeking the lowest available tension state."
-
 css_implementation:
-  - property: "justify-content / align-items (flexbox)"
+  -
+    property: "justify-content / align-items (flexbox)"
     example: "display: flex; justify-content: center; align-items: center;"
-    support: baseline
-  - property: "CSS Grid symmetric placement"
+    support: "baseline"
+  -
+    property: "CSS Grid symmetric placement"
     example: "grid-template-columns: 1fr 1fr; /* symmetric two-column balance */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

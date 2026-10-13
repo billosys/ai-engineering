@@ -1,54 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Canonical View
-slug: canonical-view
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Canonical View"
+slug: "canonical-view"
+category: "visual-perception"
 subcategory: null
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Which Aspect is Best?"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - best-aspect
-  - characteristic-view
-  - optimal-projection
-  - representative-view
-
-# === TYPED RELATIONSHIPS ===
+  - "best-aspect"
+  - "characteristic-view"
+  - "optimal-projection"
+  - "representative-view"
 prerequisites:
-  - picture-plane-projection
-  - structural-skeleton
+  - "picture-plane-projection"
+  - "structural-skeleton"
 extends: []
 related:
-  - representation-in-art
-  - perceptual-simplicity
-  - form-vs-shape
+  - "representation-in-art"
+  - "perceptual-simplicity"
+  - "form-vs-shape"
 contrasts_with:
-  - atypical-view
-  - foreshortened-view
-
-# === COMPETENCY QUESTIONS ===
+  - "atypical-view"
+  - "foreshortened-view"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation: []
 ---
 

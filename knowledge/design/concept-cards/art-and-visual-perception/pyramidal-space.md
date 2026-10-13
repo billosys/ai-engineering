@@ -1,73 +1,62 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Pyramidal Space
-slug: pyramidal-space
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: spatial-systems
-tier: advanced
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Pyramidal Space"
+slug: "pyramidal-space"
+category: "visual-perception"
+subcategory: "spatial-systems"
+tier: "advanced"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "V. Space"
 chapter_number: 5
 pdf_page: 141
 section: "Pyramidal Space"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - perspective space
-  - convergent space
-  - non-Euclidean visual space
-
-# === TYPED RELATIONSHIPS ===
+  - "perspective space"
+  - "convergent space"
+  - "non-Euclidean visual space"
 prerequisites:
-  - linear-perspective
-  - size-gradient
+  - "linear-perspective"
+  - "size-gradient"
 extends:
-  - linear-perspective
+  - "linear-perspective"
 related:
-  - size-gradient
-  - depth-gradient-principle
-  - spatial-ambiguity-paradox
+  - "size-gradient"
+  - "depth-gradient-principle"
+  - "spatial-ambiguity-paradox"
 contrasts_with:
-  - isometric-perspective
-  - flat-pictorial-space
-
-# === COMPETENCY QUESTIONS ===
+  - "isometric-perspective"
+  - "flat-pictorial-space"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does Stevens's Power Law (ψ = k × Iⁿ) with its compressive exponent for visual area (n ≈ 0.7) explain why perceived size doesn't scale linearly — and what does this imply for icon sizing, spacing scales, and data visualisation?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Non-Euclidean geometry — inhomogeneous space where equal-sized objects are not perceived as equal"
-    rating: rigorous
+    rating: "rigorous"
     note: "Pyramidal space is a non-Euclidean perceptual geometry: two objects of equal physical size at different depths are perceived as both different AND the same size simultaneously — an apparent paradox resolved by the non-homogeneous spatial framework."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Projective geometry — the projective plane, where parallel lines meet at infinity"
-    rating: rigorous
+    rating: "rigorous"
     note: "The vanishing point in pyramidal space is the projective-geometry 'point at infinity' — parallel lines meeting at infinity is a defining feature of projective geometry."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Perspective-correct rendering, depth buffer (z-buffer), perspective division"
-    rating: rigorous
+    rating: "rigorous"
     note: "3D graphics engines implement pyramidal space through perspective division (dividing by z) and the z-buffer — the direct computational implementation of the pyramidal perceptual space Arnheim describes."
-
 css_implementation:
-  - property: "perspective"
+  -
+    property: "perspective"
     example: "perspective: 500px; /* viewing distance defines pyramid apex to picture plane distance */"
-    support: baseline
-  - property: "transform-style: preserve-3d"
+    support: "baseline"
+  -
+    property: "transform-style: preserve-3d"
     example: "transform-style: preserve-3d; /* enables true 3D pyramidal space for child elements */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

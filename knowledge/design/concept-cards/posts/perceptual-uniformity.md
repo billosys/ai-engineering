@@ -1,46 +1,45 @@
 ---
-concept: Perceptual Uniformity (Colour)
-slug: perceptual-uniformity
-category: visual-perception
-subcategory: colour psychophysics
-tier: foundational
-layer: 0-perception
+concept: "Perceptual Uniformity (Colour)"
+slug: "perceptual-uniformity"
+category: "visual-perception"
+subcategory: "colour psychophysics"
+tier: "foundational"
+layer: "0-perception"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "Motivation and derivation of Oklab"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
-aliases:
-  - []
-prerequisites:
-  - []
-extends:
-  - []
+extraction_confidence: "high"
+aliases: []
+prerequisites: []
+extends: []
 related:
-  - colour-space
-  - oklab
-  - cielab
-contrasts_with:
-  - []
+  - "colour-space"
+  - "oklab"
+  - "cielab"
+contrasts_with: []
 answers_questions:
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
   - "What is the mathematical relationship between perceptual uniformity in colour and equal temperament in music?"
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Equal temperament (12-TET)"
-    rating: rigorous
+    rating: "rigorous"
     note: "Both solve the same problem: imposing uniform perceptual step-sizes on a physically non-linear space. Equal temperament makes semitones equal; perceptual colour spaces make colour differences equal."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Metric space with uniform distance function"
-    rating: structural
-    note: "A perceptually uniform colour space is one whose distance metric corresponds to perceived difference \u2014 equal metric distances imply equal perceived differences."
+    rating: "structural"
+    note: "A perceptually uniform colour space is one whose distance metric corresponds to perceived difference — equal metric distances imply equal perceived differences."
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "color: oklch(70% 0.15 180);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

@@ -1,76 +1,66 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Consistent Shape (Grouping by Continuation)
-slug: consistent-shape
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: gestalt laws
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Consistent Shape (Grouping by Continuation)"
+slug: "consistent-shape"
+category: "visual-perception"
+subcategory: "gestalt laws"
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Similarity and Difference"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - good continuation
-  - grouping by continuation
-  - continuity (gestalt)
-  - consistent contour
-
-# === TYPED RELATIONSHIPS ===
+  - "good continuation"
+  - "grouping by continuation"
+  - "continuity (gestalt)"
+  - "consistent contour"
 prerequisites:
-  - praegnanz
-  - perceptual-grouping-similarity
+  - "praegnanz"
+  - "perceptual-grouping-similarity"
 extends:
-  - perceptual-grouping-similarity
+  - "perceptual-grouping-similarity"
 related:
-  - visual-shape
-  - structural-skeleton
-  - visual-subdivision
+  - "visual-shape"
+  - "structural-skeleton"
+  - "visual-subdivision"
 contrasts_with:
-  - visual-subdivision
-
-# === COMPETENCY QUESTIONS ===
+  - "visual-subdivision"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Smooth curve continuity (C1/C2 continuity in spline design)"
-    rating: rigorous
+    rating: "rigorous"
     note: "C1 continuity (matching tangent directions at joins) and C2 continuity (matching curvature) in Bezier/spline design directly implement consistent shape: the eye groups curve segments that share direction and curvature, exactly as spline continuity conditions specify."
-  - domain: music
+  -
+    domain: "music"
     concept: "Voice leading / melodic continuation"
-    rating: structural
+    rating: "structural"
     note: "In harmonic progressions, melodic lines are kept consistent by moving each voice to the nearest available note — the melodic 'consistent shape' of the voice maintains continuity across chord changes, grouping notes into a single line."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "API consistency / interface coherence"
-    rating: structural
+    rating: "structural"
     note: "Consistent shape across interface elements (same naming conventions, same parameter order, same return types) groups them perceptually into a coherent 'line' of design, just as consistent contour direction groups visual elements into a single path."
-
 css_implementation:
-  - property: "Consistent border-radius across component family"
+  -
+    property: "Consistent border-radius across component family"
     example: "/* All interactive controls share same border-radius — consistent shape across the component set */ .btn, .input, .select { border-radius: var(--radius-control); }"
-    support: baseline
-  - property: "SVG path continuity (smooth joins)"
+    support: "baseline"
+  -
+    property: "SVG path continuity (smooth joins)"
     example: "<path d='M 0 0 C 30 0 70 100 100 100 S 170 0 200 0' /> <!-- S = smooth continuation -->"
-    support: baseline
-  - property: "CSS transition / animation easing for motion continuation"
+    support: "baseline"
+  -
+    property: "CSS transition / animation easing for motion continuation"
     example: "animation: slide 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* smooth continuation of motion */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

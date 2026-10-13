@@ -1,39 +1,37 @@
 ---
-concept: Lightness (Perceptual, L Axis)
-slug: lightness-perceptual
-category: visual-perception
-subcategory: perceptual colour attributes
-tier: intermediate
-layer: 0-perception
+concept: "Lightness (Perceptual, L Axis)"
+slug: "lightness-perceptual"
+category: "visual-perception"
+subcategory: "perceptual colour attributes"
+tier: "intermediate"
+layer: "0-perception"
 source: "A Perceptual Color Space for Image Processing"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "The Oklab color space"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
-aliases:
-  - []
+extraction_confidence: "high"
+aliases: []
 prerequisites:
-  - oklab
-  - perceptual-uniformity
-extends:
-  - []
+  - "oklab"
+  - "perceptual-uniformity"
+extends: []
 related:
-  - chroma-perceptual
-  - colour-space-comparison
-  - colour-interpolation-perceptual
-contrasts_with:
-  - []
+  - "chroma-perceptual"
+  - "colour-space-comparison"
+  - "colour-interpolation-perceptual"
+contrasts_with: []
 answers_questions:
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
   - "How do you construct a palette that changes lightness uniformly across hues?"
 rosetta_stone: []
 css_implementation:
-  - property: "color"
+  -
+    property: "color"
     example: "color: oklch(70% 0.15 200);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

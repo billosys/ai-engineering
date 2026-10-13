@@ -1,49 +1,55 @@
 ---
-concept: Scale Application to Typographic Hierarchy
-slug: scale-application-typographic-hierarchy
-category: typography
-subcategory: type-hierarchy
-tier: intermediate
-layer: 2-domain
+concept: "Scale Application to Typographic Hierarchy"
+slug: "scale-application-typographic-hierarchy"
+category: "typography"
+subcategory: "type-hierarchy"
+tier: "intermediate"
+layer: "2-domain"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Applying a modular scale in web design"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - [applying a modular scale, type hierarchy from scale, scale-based sizing]
+  -
+    - "applying a modular scale"
+    - "type hierarchy from scale"
+    - "scale-based sizing"
 prerequisites:
-  - modular-scale
-  - modular-scale-construction
-  - scale-ratio
+  - "modular-scale"
+  - "modular-scale-construction"
+  - "scale-ratio"
 extends:
-  - modular-scale
+  - "modular-scale"
 related:
-  - typographic-rhythm-modular-scale
-  - scale-base-unit
-contrasts_with:
-  - []
+  - "typographic-rhythm-modular-scale"
+  - "scale-base-unit"
+contrasts_with: []
 answers_questions:
   - "What distinguishes a modular scale from arbitrary type size selection?"
   - "What makes a type hierarchy feel harmonious vs arbitrary?"
   - "How do you construct a modular scale for a typographic system?"
 rosetta_stone: []
 css_implementation:
-  - property: "font-size"
+  -
+    property: "font-size"
     example: "body { font-size: 18px; } /* scale origin */ h1 { font-size: 29.124px; } /* one step up */ h2 { font-size: 190px; } /* scale origin, second strand */ .side p { font-size: 15px; } /* improvised */"
-    support: baseline
-  - property: "width"
+    support: "baseline"
+  -
+    property: "width"
     example: ".main { width: 497.406px; } /* scale-derived measure */ .group { width: 845.479px; } /* scale-derived container */"
-    support: baseline
-  - property: "margin"
+    support: "baseline"
+  -
+    property: "margin"
     example: "h1 { margin: 44.856px 0 0 307.420px; } /* scale values */ .side { margin: 27.723px 29.124px 0 0; } /* scale values */"
-    support: baseline
-  - property: "line-height"
+    support: "baseline"
+  -
+    property: "line-height"
     example: "p { line-height: 1.54; } /* scale-informed */ .main, p.intro { line-height: 1.394; } /* combined from scale */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

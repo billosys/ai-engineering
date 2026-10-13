@@ -1,46 +1,31 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Paragraph Flow Control
-slug: paragraph-flow-control
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-composition
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Paragraph Flow Control"
+slug: "paragraph-flow-control"
+category: "typography"
+subcategory: "type-composition"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Widow and Orphan Control"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "widow and orphan control"
   - "straggler control"
   - "page break management"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
+  - "body-text"
 extends: []
 related:
-  - line-spacing
-  - headings
+  - "line-spacing"
+  - "headings"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

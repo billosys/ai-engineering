@@ -1,46 +1,31 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Functional Color
-slug: functional-color
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: visual-hierarchy
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Functional Color"
+slug: "functional-color"
+category: "design-principles"
+subcategory: "visual-hierarchy"
+tier: "intermediate"
+layer: "1-principles"
 source: "The New Typography"
-source_slug: the-new-typography
+source_slug: "the-new-typography"
 authors: "Jan Tschichold"
 chapter: "The Principles of the New Typography"
 chapter_number: 12
 pdf_page: 102
 section: "Colour"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "functional use of colour"
   - "colour for emphasis"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - functional-typography
+  - "functional-typography"
 extends: []
 related:
-  - typographic-contrast
-  - typographic-color
+  - "typographic-contrast"
+  - "typographic-color"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 12: How do font weight, colour, and spacing work together with font size to create typographic hierarchy — why is size alone insufficient?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
 css_implementation: []
 ---

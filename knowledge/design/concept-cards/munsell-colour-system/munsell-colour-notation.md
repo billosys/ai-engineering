@@ -1,62 +1,48 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Munsell Colour Notation
-slug: munsell-colour-notation
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-notation
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Munsell Colour Notation"
+slug: "munsell-colour-notation"
+category: "colour-theory"
+subcategory: "colour-notation"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "III. Chroma"
 chapter_number: 6
 pdf_page: 9
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "Munsell notation"
   - "HV/C notation"
   - "Munsell colour formula"
   - "colour formula"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - hue
-  - colour-value
-  - chroma
-  - munsell-hue-notation
+  - "hue"
+  - "colour-value"
+  - "chroma"
+  - "munsell-hue-notation"
 extends:
-  - munsell-colour-system
+  - "munsell-colour-system"
 related:
-  - munsell-colour-solid
-  - munsell-hue-circle
-  - neutral-axis
+  - "munsell-colour-solid"
+  - "munsell-hue-circle"
+  - "neutral-axis"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: software-engineering
+  -
+    domain: "software-engineering"
     concept: "Structured identifier / addressing system"
-    rating: rigorous
+    rating: "rigorous"
     note: "The HV/C notation is a structured addressing system for colour space, analogous to structured identifiers in code (namespaced identifiers, semantic versioning, coordinate addresses). Each component (H, V, C) addresses one axis of the coordinate system."
-
 css_implementation:
-  - property: "oklch() function"
+  -
+    property: "oklch() function"
     example: "color: oklch(0.5 0.1 240); /* L C H — different order from Munsell H V/C */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

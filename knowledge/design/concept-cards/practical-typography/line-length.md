@@ -1,55 +1,40 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Line Length
-slug: line-length
-
-# === CLASSIFICATION ===
-category: typography
-subcategory: type-formatting
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Line Length"
+slug: "line-length"
+category: "typography"
+subcategory: "type-formatting"
+tier: "foundational"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Line Length"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "measure"
   - "line measure"
   - "column width"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - body-text
+  - "body-text"
 extends: []
 related:
-  - point-size
-  - line-spacing
-  - page-margins
-  - responsive-typography
+  - "point-size"
+  - "line-spacing"
+  - "page-margins"
+  - "responsive-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 18: A card layout uses 16px padding inside cards, 16px between cards, and 16px between card title and body text. Everything feels 'flat.' What principle was violated, and what's the fix?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "max-width"
+  -
+    property: "max-width"
     example: "p { max-width: 65ch; } /* ~2.5 alphabets; within 45-90 char range */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

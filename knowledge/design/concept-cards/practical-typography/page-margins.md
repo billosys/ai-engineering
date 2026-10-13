@@ -1,53 +1,38 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Page Margins
-slug: page-margins
-
-# === CLASSIFICATION ===
-category: layout-composition
-subcategory: spacing-systems
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Page Margins"
+slug: "page-margins"
+category: "layout-composition"
+subcategory: "spacing-systems"
+tier: "intermediate"
+layer: "2-domain"
 source: "Butterick's Practical Typography"
-source_slug: practical-typography
+source_slug: "practical-typography"
 authors: "Matthew Butterick"
 chapter: "Page Layout"
 chapter_number: null
 pdf_page: null
 section: "Page Margins"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "margins"
   - "page insets"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - line-length
+  - "line-length"
 extends: []
 related:
-  - body-text
-  - typographic-grids
-  - responsive-typography
+  - "body-text"
+  - "typographic-grids"
+  - "responsive-typography"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 1: What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "CQ 7: What is a grid system, and what problem does it solve in visual composition?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone: []
-
 css_implementation:
-  - property: "margin, padding, max-width"
+  -
+    property: "margin, padding, max-width"
     example: ".content { max-width: 65ch; margin: 0 auto; padding: 0 2rem; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

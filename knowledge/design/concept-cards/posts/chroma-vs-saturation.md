@@ -1,31 +1,31 @@
 ---
-concept: Chroma vs Saturation (Colour Picker Context)
-slug: chroma-vs-saturation
-category: colour-theory
-subcategory: colour-properties
-tier: intermediate
-layer: 2-domain
+concept: "Chroma vs Saturation (Colour Picker Context)"
+slug: "chroma-vs-saturation"
+category: "colour-theory"
+subcategory: "colour-properties"
+tier: "intermediate"
+layer: "2-domain"
 source: "Okhsv and Okhsl"
-source_slug: posts
-authors: "Bj\u00f6rn Ottosson"
+source_slug: "posts"
+authors: "Björn Ottosson"
 chapter: "HSL"
 chapter_number: null
 pdf_page: null
 section: "Color spaces for color picking"
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["saturation vs chroma", "colorfulness"]
+  -
+    - "saturation vs chroma"
+    - "colorfulness"
 prerequisites:
-  - hsl
-  - hsv
-extends:
-  - []
+  - "hsl"
+  - "hsv"
+extends: []
 related:
-  - orthogonal-colour-properties
-  - okhsl
-  - okhsv
-contrasts_with:
-  - []
+  - "orthogonal-colour-properties"
+  - "okhsl"
+  - "okhsv"
+contrasts_with: []
 answers_questions:
   - "What distinguishes chroma from saturation in a colour space?"
   - "What makes a colour picker perceptually well-designed?"

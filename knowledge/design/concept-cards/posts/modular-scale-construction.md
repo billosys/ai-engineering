@@ -1,44 +1,48 @@
 ---
-concept: Modular Scale Construction (Procedure)
-slug: modular-scale-construction
-category: typography
-subcategory: type-scale
-tier: intermediate
-layer: 2-domain
+concept: "Modular Scale Construction (Procedure)"
+slug: "modular-scale-construction"
+category: "typography"
+subcategory: "type-scale"
+tier: "intermediate"
+layer: "2-domain"
 source: "More Meaningful Typography"
-source_slug: posts
+source_slug: "posts"
 authors: "Tim Brown"
 chapter: "Creating a modular scale for web design"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - [building a modular scale, generating a type scale, constructing a proportional scale]
+  -
+    - "building a modular scale"
+    - "generating a type scale"
+    - "constructing a proportional scale"
 prerequisites:
-  - modular-scale
-  - scale-ratio
-  - scale-base-unit
+  - "modular-scale"
+  - "scale-ratio"
+  - "scale-base-unit"
 extends:
-  - modular-scale
+  - "modular-scale"
 related:
-  - scale-application-typographic-hierarchy
-  - ratio-selection-criteria
-  - golden-ratio
-contrasts_with:
-  - []
+  - "scale-application-typographic-hierarchy"
+  - "ratio-selection-criteria"
+  - "golden-ratio"
+contrasts_with: []
 answers_questions:
   - "How do you construct a modular scale for a typographic system?"
   - "What distinguishes a modular scale from arbitrary type size selection?"
 rosetta_stone:
-  - domain: mathematics
-    concept: "Computing terms of a geometric sequence: a\u2099 = a\u2080 \u00d7 r\u207f"
-    rating: rigorous
+  -
+    domain: "mathematics"
+    concept: "Computing terms of a geometric sequence: aₙ = a₀ × rⁿ"
+    rating: "rigorous"
     note: "Constructing a modular scale is literally computing terms of a geometric sequence. The procedure is identical; only the naming convention differs."
 css_implementation:
-  - property: "font-size, width, margin, line-height"
+  -
+    property: "font-size, width, margin, line-height"
     example: "/* Scale: 18px @ 1:1.618, 190px @ 1:1.618 */ body { font-size: 18px; } h1 { font-size: 29.124px; margin: 44.856px 0 0 307.420px; } h2 { font-size: 190px; } .main { width: 497.406px; } .group { width: 845.479px; }"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

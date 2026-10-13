@@ -1,74 +1,62 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Perceptual Grouping by Similarity
-slug: perceptual-grouping-similarity
-
-# === CLASSIFICATION ===
-category: visual-perception
-subcategory: gestalt laws
-tier: foundational
-layer: 0-perception
-
-# === PROVENANCE ===
+concept: "Perceptual Grouping by Similarity"
+slug: "perceptual-grouping-similarity"
+category: "visual-perception"
+subcategory: "gestalt laws"
+tier: "foundational"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Similarity and Difference"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - gestalt similarity
-  - grouping by similarity
-  - homogeneity principle
-  - similarity grouping
-
-# === TYPED RELATIONSHIPS ===
+  - "gestalt similarity"
+  - "grouping by similarity"
+  - "homogeneity principle"
+  - "similarity grouping"
 prerequisites:
-  - praegnanz
-  - visual-shape
-extends:
-  []
+  - "praegnanz"
+  - "visual-shape"
+extends: []
 related:
-  - visual-subdivision
-  - consistent-shape
-  - contour-and-boundary
+  - "visual-subdivision"
+  - "consistent-shape"
+  - "contour-and-boundary"
 contrasts_with:
-  - visual-subdivision
-
-# === COMPETENCY QUESTIONS ===
+  - "visual-subdivision"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How does the relationship between inter-group and intra-group spacing communicate which elements belong together (gestalt proximity)?"
   - "An icon set mixes outlined and filled styles, some at 16px and some at 24px, some with rounded corners and some with sharp corners. It feels 'off.' What principle was violated?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Equivalence classes / partition of a set"
-    rating: structural
+    rating: "structural"
     note: "Grouping by similarity partitions the visual field into equivalence classes — elements within a class share one or more perceptual features; the partition depends on which feature defines the equivalence relation."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Type checking / duck typing"
-    rating: loose
+    rating: "loose"
     note: "The visual system groups elements that share structural properties, regardless of other differences — loosely analogous to duck typing, where elements are grouped by what they do, not what they are declared to be."
-  - domain: music
+  -
+    domain: "music"
     concept: "Voice leading by common tone / harmonic proximity"
-    rating: structural
+    rating: "structural"
     note: "In Piston's voice leading rule (common tones held, other voices move to nearest available note), voices are grouped by similarity of pitch location — a direct musical application of grouping by similarity of spatial location."
-
 css_implementation:
-  - property: "Consistent visual tokens (colour, size, weight) to signal group membership"
+  -
+    property: "Consistent visual tokens (colour, size, weight) to signal group membership"
     example: "/* All primary actions share --color-brand; all destructive actions share --color-danger */ .btn-primary { background: var(--color-brand); } .btn-danger { background: var(--color-danger); }"
-    support: baseline
-  - property: "gap / margin for proximity grouping alongside similarity"
+    support: "baseline"
+  -
+    property: "gap / margin for proximity grouping alongside similarity"
     example: ".form-group { display: flex; flex-direction: column; gap: 4px; } /* tight gap = similarity of location = same group */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

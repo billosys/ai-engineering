@@ -1,69 +1,56 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Visual Form as Structured Equivalence
-slug: visual-form-as-structured-equivalence
-
-# === CLASSIFICATION ===
-category: design-principles
+concept: "Visual Form as Structured Equivalence"
+slug: "visual-form-as-structured-equivalence"
+category: "design-principles"
 subcategory: null
-tier: advanced
-layer: 1-principles
-
-# === PROVENANCE ===
+tier: "advanced"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Form as Invention"
-
-# === CONFIDENCE ===
-extraction_confidence: medium
-
-# === VARIANTS ===
+extraction_confidence: "medium"
 aliases:
-  - structural-equivalence
-  - formal-invention
-  - visual-translation
-
-# === TYPED RELATIONSHIPS ===
+  - "structural-equivalence"
+  - "formal-invention"
+  - "visual-translation"
 prerequisites:
-  - form-vs-shape
-  - representation-in-art
-  - structural-skeleton
-  - medium-specificity-of-form
-  - levels-of-abstraction-in-representation
+  - "form-vs-shape"
+  - "representation-in-art"
+  - "structural-skeleton"
+  - "medium-specificity-of-form"
+  - "levels-of-abstraction-in-representation"
 extends: []
 related:
-  - adaptation-level-and-visual-norms
-  - perceptual-simplicity
-  - canonical-view
+  - "adaptation-level-and-visual-norms"
+  - "perceptual-simplicity"
+  - "canonical-view"
 contrasts_with:
-  - mechanical-replication
-  - arbitrary-stylisation
-
-# === COMPETENCY QUESTIONS ===
+  - "mechanical-replication"
+  - "arbitrary-stylisation"
 answers_questions:
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
   - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Homomorphism (structure-preserving map between algebraic structures)"
-    rating: structural
+    rating: "structural"
     note: "Structural equivalence is precisely a homomorphism: the visual representation f maps the structure of the subject S to the medium M such that the relations among structural elements in S are preserved in f(S) in M — without requiring that f be bijective or that physical properties be preserved."
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Abstraction / interface implementation"
-    rating: structural
+    rating: "structural"
     note: "A successful visual representation is like a correct implementation of an interface: it must satisfy all the structural requirements (structural skeleton) while being free to choose any implementation (medium-specific form) — failure is not 'looks different' but 'violates structural contract.'"
-  - domain: music
+  -
+    domain: "music"
     concept: "Musical transposition (same melody in different key)"
-    rating: structural
+    rating: "structural"
     note: "Transposing a melody to a different key is structural equivalence in music: all the interval relations are preserved (structure-preserving map) even though every note has changed. Arnheim's representational translation works the same way — structural relations preserved, surface properties changed."
-
 css_implementation: []
 ---
 

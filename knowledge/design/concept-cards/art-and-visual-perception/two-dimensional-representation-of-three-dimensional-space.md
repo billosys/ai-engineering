@@ -1,65 +1,52 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Two-Dimensional Representation of Three-Dimensional Space
-slug: two-dimensional-representation-of-three-dimensional-space
-
-# === CLASSIFICATION ===
-category: visual-perception
+concept: "Two-Dimensional Representation of Three-Dimensional Space"
+slug: "two-dimensional-representation-of-three-dimensional-space"
+category: "visual-perception"
 subcategory: null
-tier: intermediate
-layer: 0-perception
-
-# === PROVENANCE ===
+tier: "intermediate"
+layer: "0-perception"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "III. Form"
 chapter_number: 3
 pdf_page: 65
 section: "Interplay of Plane and Depth"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - picture-space
-  - interplay-of-plane-and-depth
-  - spatial-depth-in-pictures
-  - pictorial-space
-
-# === TYPED RELATIONSHIPS ===
+  - "picture-space"
+  - "interplay-of-plane-and-depth"
+  - "spatial-depth-in-pictures"
+  - "pictorial-space"
 prerequisites:
-  - picture-plane-projection
-  - overlapping-as-depth-cue
-  - shape-constancy
+  - "picture-plane-projection"
+  - "overlapping-as-depth-cue"
+  - "shape-constancy"
 extends: []
 related:
-  - foreshortening
-  - canonical-view
-  - structural-skeleton
+  - "foreshortening"
+  - "canonical-view"
+  - "structural-skeleton"
 contrasts_with:
-  - full-three-dimensional-space
-  - purely-flat-representation
-
-# === COMPETENCY QUESTIONS ===
+  - "full-three-dimensional-space"
+  - "purely-flat-representation"
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: music
+  -
+    domain: "music"
     concept: "Monophony to polyphony to homophony — development of musical voices"
-    rating: structural
+    rating: "structural"
     note: "Arnheim explicitly draws this parallel: depth in pictorial representation develops like musical voices — from independent horizontal strips (monophony), through overlapping foreground-middleground-background (counterpoint), to unified depth continuum (homophony)."
-
 css_implementation:
-  - property: "perspective"
+  -
+    property: "perspective"
     example: "perspective: 1000px; transform-style: preserve-3d;"
-    support: baseline
-  - property: "box-shadow"
+    support: "baseline"
+  -
+    property: "box-shadow"
     example: "box-shadow: 0 4px 12px rgba(0,0,0,0.15);"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

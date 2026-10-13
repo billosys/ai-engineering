@@ -1,59 +1,44 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Munsell Colour Solid
-slug: munsell-colour-solid
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-systems
-tier: intermediate
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Munsell Colour Solid"
+slug: "munsell-colour-solid"
+category: "colour-theory"
+subcategory: "colour-systems"
+tier: "intermediate"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "III. Chroma"
 chapter_number: 6
 pdf_page: 7
 section: null
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "Munsell colour space"
   - "colour tree"
   - "colour sphere"
   - "Munsell color solid"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites:
-  - hue
-  - colour-value
-  - chroma
-  - neutral-axis
-  - munsell-hue-circle
+  - "hue"
+  - "colour-value"
+  - "chroma"
+  - "neutral-axis"
+  - "munsell-hue-circle"
 extends:
-  - munsell-colour-system
+  - "munsell-colour-system"
 related:
-  - munsell-colour-notation
-  - colour-balance
-  - complementary-colours
+  - "munsell-colour-notation"
+  - "colour-balance"
+  - "complementary-colours"
 contrasts_with: []
-
-# === COMPETENCY QUESTIONS ===
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "3D cylindrical coordinate system with irregular boundary"
-    rating: rigorous
+    rating: "rigorous"
     note: "The Munsell solid is a cylindrical coordinate system (r, θ, z) where the ideal sphere constrains r to a constant maximum and the practical colour tree allows r_max to vary as a function of θ (hue) and z (value), defining an irregular gamut boundary surface."
-
 css_implementation: []
 ---
 

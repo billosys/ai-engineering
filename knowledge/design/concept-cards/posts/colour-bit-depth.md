@@ -1,36 +1,38 @@
 ---
-concept: Colour Bit Depth
-slug: colour-bit-depth
-category: colour-theory
-subcategory: digital-colour
-tier: foundational
-layer: 2-domain
+concept: "Colour Bit Depth"
+slug: "colour-bit-depth"
+category: "colour-theory"
+subcategory: "digital-colour"
+tier: "foundational"
+layer: "2-domain"
 source: "Working With Colors Guide"
-source_slug: posts
+source_slug: "posts"
 authors: "Sarah Drasner"
 chapter: "Color mixing"
 chapter_number: null
 pdf_page: null
 section: null
-extraction_confidence: high
+extraction_confidence: "high"
 aliases:
-  - ["bit depth", "color depth", "True Color"]
+  -
+    - "bit depth"
+    - "color depth"
+    - "True Color"
 prerequisites:
-  - additive-colour-mixing
-extends:
-  - []
+  - "additive-colour-mixing"
+extends: []
 related:
-  - rgb-colour-model
-  - hex-colour-notation
-contrasts_with:
-  - []
+  - "rgb-colour-model"
+  - "hex-colour-notation"
+contrasts_with: []
 answers_questions:
   - "What is the relationship between bit depth and available colour range?"
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Binary exponentiation (2^n)"
-    rating: rigorous
-    note: "The number of representable colours at a given bit depth is exactly 2^n. At 24-bit (3\u00d78-bit channels) this is 2^24 = 16,777,216. This is a direct mathematical identity, not an analogy."
+    rating: "rigorous"
+    note: "The number of representable colours at a given bit depth is exactly 2^n. At 24-bit (3×8-bit channels) this is 2^24 = 16,777,216. This is a direct mathematical identity, not an analogy."
 ---
 
 # Quick Definition

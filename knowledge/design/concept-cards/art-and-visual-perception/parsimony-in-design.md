@@ -1,77 +1,67 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Parsimony in Design
-slug: parsimony-in-design
-
-# === CLASSIFICATION ===
-category: design-principles
-subcategory: economy
-tier: intermediate
-layer: 1-principles
-
-# === PROVENANCE ===
+concept: "Parsimony in Design"
+slug: "parsimony-in-design"
+category: "design-principles"
+subcategory: "economy"
+tier: "intermediate"
+layer: "1-principles"
 source: "Art and Visual Perception: A Psychology of the Creative Eye"
-source_slug: art-and-visual-perception
+source_slug: "art-and-visual-perception"
 authors: "Rudolf Arnheim"
 chapter: "II. Shape"
 chapter_number: 2
 pdf_page: 31
 section: "Simplicity"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
-  - economy of means
-  - visual parsimony
-  - principle of parsimony
-  - aesthetic economy
-
-# === TYPED RELATIONSHIPS ===
+  - "economy of means"
+  - "visual parsimony"
+  - "principle of parsimony"
+  - "aesthetic economy"
 prerequisites:
-  - visual-simplicity
-  - praegnanz
+  - "visual-simplicity"
+  - "praegnanz"
 extends:
-  - visual-simplicity
+  - "visual-simplicity"
 related:
-  - visual-shape
-  - structural-skeleton
+  - "visual-shape"
+  - "structural-skeleton"
 contrasts_with:
-  - visual-complexity
-
-# === COMPETENCY QUESTIONS ===
+  - "visual-complexity"
 answers_questions:
   - "A developer says 'I tried making it look good by adding more colours.' The result looks chaotic. What foundational principle are they missing?"
   - "An icon set mixes outlined and filled styles, some at 16px and some at 24px, some with rounded corners and some with sharp corners. It feels 'off.' What principle was violated?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: engineering
+  -
+    domain: "engineering"
     concept: "Occam's razor / minimum viable model / DRY principle"
-    rating: rigorous
+    rating: "rigorous"
     note: "Arnheim's parsimony in design maps directly to Occam's razor in science and DRY in engineering: use the minimum number of independent structural types to account for the entire design requirement."
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Minimum description length (MDL) / Kolmogorov complexity"
-    rating: rigorous
+    rating: "rigorous"
     note: "Parsimony in design is the applied form of minimum description length: the simplest design that communicates the full intended meaning uses the fewest independent structural parameters."
-  - domain: music
+  -
+    domain: "music"
     concept: "Economy of means / motivic development"
-    rating: structural
+    rating: "structural"
     note: "Musical parsimony (deriving maximum variety from a minimal set of motifs) is structurally equivalent to visual parsimony: maximum expressive range from minimum structural material."
-
 css_implementation:
-  - property: "CSS custom properties / design tokens (single source of truth)"
+  -
+    property: "CSS custom properties / design tokens (single source of truth)"
     example: ":root { --space-unit: 8px; --space-sm: calc(var(--space-unit) * 1); --space-md: calc(var(--space-unit) * 2); --space-lg: calc(var(--space-unit) * 4); } /* One structural feature (the unit) generates all spacing */"
-    support: baseline
-  - property: "Modular type scale"
+    support: "baseline"
+  -
+    property: "Modular type scale"
     example: ":root { --type-scale: 1.25; --size-base: 1rem; --size-lg: calc(var(--size-base) * var(--type-scale)); --size-xl: calc(var(--size-lg) * var(--type-scale)); } /* One parameter generates all sizes */"
-    support: baseline
-  - property: "Limited colour palette"
+    support: "baseline"
+  -
+    property: "Limited colour palette"
     example: ":root { --color-brand: hsl(220 90% 55%); --color-neutral: hsl(220 10% 45%); --color-danger: hsl(0 80% 55%); } /* Three colours — each independent type serves a distinct function */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition

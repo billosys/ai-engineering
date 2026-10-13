@@ -1,60 +1,47 @@
 ---
-# === CORE IDENTIFICATION ===
-concept: Hue
-slug: hue
-
-# === CLASSIFICATION ===
-category: colour-theory
-subcategory: colour-properties
-tier: foundational
-layer: 2-domain
-
-# === PROVENANCE ===
+concept: "Hue"
+slug: "hue"
+category: "colour-theory"
+subcategory: "colour-properties"
+tier: "foundational"
+layer: "2-domain"
 source: "A Practical Description of The Munsell Color System"
-source_slug: munsell-colour-system
+source_slug: "munsell-colour-system"
 authors: "T. M. Cleland"
 chapter: "I. Hue"
 chapter_number: 4
 pdf_page: 4
 section: "I. Hue"
-
-# === CONFIDENCE ===
-extraction_confidence: high
-
-# === VARIANTS ===
+extraction_confidence: "high"
 aliases:
   - "colour family"
   - "spectral identity"
-
-# === TYPED RELATIONSHIPS ===
 prerequisites: []
 extends: []
 related:
-  - munsell-colour-system
-  - colour-value
-  - chroma
+  - "munsell-colour-system"
+  - "colour-value"
+  - "chroma"
 contrasts_with:
-  - colour-value
-  - chroma
-
-# === COMPETENCY QUESTIONS ===
+  - "colour-value"
+  - "chroma"
 answers_questions:
   - "CQ 3: What is the difference between hue, saturation/chroma, and lightness/value?"
-
-# === VISUAL DESIGN EXTENSIONS ===
 rosetta_stone:
-  - domain: mathematics
+  -
+    domain: "mathematics"
     concept: "Angular coordinate / modular arithmetic"
-    rating: structural
+    rating: "structural"
     note: "Hue maps to the angular coordinate in cylindrical colour space. The 100-step Munsell hue circle is a cyclic group Z/100Z. Complementary hues relate by h → (h + 50) mod 100. Structurally identical to pitch classes in music theory (Z/12Z) and angles in trigonometry (mod 360)."
-
 css_implementation:
-  - property: "oklch() hue channel"
+  -
+    property: "oklch() hue channel"
     example: "color: oklch(0.7 0.15 240); /* H = 240deg = blue */"
-    support: baseline
-  - property: "hsl() hue channel"
+    support: "baseline"
+  -
+    property: "hsl() hue channel"
     example: "color: hsl(240, 50%, 50%); /* H = 240deg = blue */"
-    support: baseline
+    support: "baseline"
 ---
 
 # Quick Definition
