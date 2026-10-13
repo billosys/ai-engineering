@@ -70,3 +70,21 @@ one open). Arc06's previous metadata-only body-preservation result remains true
 at its historical revision and is distinct from this subsequent Arc02 body
 correction. CDC source review, Operator publication/access, and exact corrected-
 revision hosted inspection remain the re-entry sequence; P10-13 remains open.
+
+
+## Iteration01 hosted return — 2026-10-13
+
+CC completed the authorized read-only follow-up at exact source `589d7c21bd6c9a415b921b80479822561861fa79`, after the Operator-approved source/planning publication. All 233 exact-revision GitHub pages returned HTTP 200 with complete embedded rendered articles; zero were unavailable, failed or unrun. The [updated bridge](artifacts/batch-results.jsonl) records each exact URL, response and rendered-content hashes/sizes, metadata/body results, flat prior history and current source locator. The [batch record](artifacts/batch-record.md#iteration01-corrected-revision-hosted-review) documents the whole-population inspection and its limits.
+
+| Row | Current ledger status | CC Iteration01 outcome |
+|---|---|---|
+| S02-01 | done | Retained CDC acceptance of the frozen metadata contract, inventory and exact write scope; current source revision applicability reconciles. |
+| S02-02 | done | Retained CDC acceptance of all 233 disposition memberships and both source cohorts. |
+| S02-03 | done | Retained typed metadata/order preservation; current hosted metadata keys, values, nested members and null/empty states all match. |
+| S02-04 | done | Retained CDC body/identity/idempotence acceptance at its historical scope; current 46 intentional body deltas are bridged to Slice09 and the other 187 cards remain byte-identical. |
+| S02-05 | open | CC proposes pass: all 233 exact-589d7c21 hosted views are complete; metadata and full body presentation match, including all 46 corrected posts. CDC independent review remains required. |
+| S02-06 | done | Return includes all 233 pages, zero access exceptions, source locators, history preservation, check methods, limitations and owners. |
+
+**Durable evidence inventory.** The two supporting artifacts are the 233-row [`artifacts/batch-results.jsonl`](artifacts/batch-results.jsonl) and this slice's [`artifacts/batch-record.md`](artifacts/batch-record.md). The bridge retains historical `c4cc742` fields while adding fresh `589d7c21` locators under `hosted.source_revision_bridge`. Its only row-value changes are inside `hosted`; all non-hosted bytes remain exact, and prior assessments remain flat siblings.
+
+**Arc06 bubble-up.** The corrected source now has complete current-revision metadata/body presentation evidence for all 233 cards. This supplies the proposed S02-05 result and a useful Arc06 rendering capability. It does not close S02-05 before CDC review, change the five previously accepted rows, or close A06-05/A06-07 without independent arc composition. Arc02 still owns semantic correctness, original-source fidelity, scope and relationship/question review; Arc04 retains final package and release gates. No source edit, metadata re-normalization, semantic acceptance, release/install claim or new publication authority is part of this return.
