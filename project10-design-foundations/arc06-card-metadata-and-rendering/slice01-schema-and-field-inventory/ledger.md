@@ -23,3 +23,24 @@ is `cc-prompt-iteration01.md`; no semantic, hosted-final or schema4.0 acceptance
 
 S01-01/02/03 done at the accepted inventory/mapping bytes; S01-04/05/06
 open for write-time conflict/recovery and accurate evidence. Criteria unchanged.
+
+## Iteration01 CC return — evidence update only
+
+CC returned the helper-only candidate `d2188c45a451be8b5e82f534f9a9ac067c137b64`
+and current F02 correction in the linked [batch record](artifacts/batch-record.md#iteration01-execution-and-current-dispositions)
+and [closing report](closing-report.md#iteration01-return). The candidate's
+all-233 `--check` replay matched every immutable current input hash, typed
+metadata object and body hash/length; ten pilot outputs remained idempotent.
+Isolated actual-CLI witnesses covered prewrite conflict, second-rename failure,
+external edit held during recovery, late second-target conflict, recovery
+failure, missing/symlink targets, duplicate paths and invalid second input.
+Every interrupted batch exited nonzero without JSONL success rows, with paths
+and failure disposition reported. Package inputs and Makefile remain identical
+to the accepted main parent. The historical additive/gamut alias-table entries
+are corrected in current evidence; their populated nested values remain
+preserved, with strict string-list conformance recorded as a limitation.
+
+Statuses above are unchanged: S01-01/02/03 remain independently done;
+S01-04/05/06 remain open pending CDC review and CDC-owned disposition. This
+evidence update does not accept the candidate, close Slice01, authorize bulk
+conversion, or satisfy changed-revision hosted checks.

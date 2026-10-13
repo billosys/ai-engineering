@@ -61,3 +61,43 @@ claimed.
   after later source revisions. The inventory's immutable baseline index rows,
   current commit/path mapping and preserved body hashes are the locator bridge
   for both.
+
+## Iteration01 return
+
+CC proposes this correction for independent review by CDC Sofie via Operator
+relay. The assignment and its exact behavior are recorded in the linked
+[Iteration01 batch evidence](artifacts/batch-record.md#iteration01-execution-and-current-dispositions).
+It corrects F01's helper write path and F02's two historical sentinel-table
+entries. It does not re-open accepted intake, census, or mapping conclusions.
+
+| Criterion | Current CC disposition | Evidence and limit |
+|---|---|---|
+| S01-01 — authority and populations | Remains done at accepted evidence | Prior independent disposition retained; no authority or population change. |
+| S01-02 — raw/typed census | Remains done at accepted inventory bytes | All 233 actual candidate `--check` records matched current input hashes, typed input metadata, body hashes/lengths and the expected exact transformations. Inventory bytes are unchanged. |
+| S01-03 — existing-field crosswalk | Remains done at accepted mapping | F02 table is corrected: additive prerequisites/extends; gamut prerequisites/extends/contrasts_with. Both populated nested alias arrays remain preserved. This does not accept a 4.0 profile or claim full string-list conformance. |
+| S01-04 — preservation/rendering contract and controls | Open, return for CDC review | CDC's supplied two-case fixture plus actual CLI witnesses cover prewrite conflict, interrupted replacement, external edit held during recovery, late conflict, recovery failure, missing/symlink targets, invalid input and duplicate path. All interrupted cases exited nonzero with zero JSONL and path/failure accounting. Hosted observations remain attributed to prior CDC; changed-revision hosting remains open. |
+| S01-05 — pilot and allocation | Open, return for CDC review | Main helper candidate is `d2188c45a451be8b5e82f534f9a9ac067c137b64`, parent `fe4e055885983be6d0b4bbbff1ef201485499aac`, exact one-file scope. All ten pilot outputs remain byte-idempotent, and no card or 233-row inventory bytes changed. Bulk conversion still awaits CDC review and authorization. |
+| S01-06 — scoped return and owner accounting | Open, return for CDC review | Main candidate has both required trailers; planning update is limited to this batch record, ledger evidence/notes and closing report. Package inputs plus `Makefile` compare byte-identically to the accepted source parent. Failed harness setup assertions were corrected and disclosed in the batch record. |
+
+The exact CDC-supplied fixture ran against candidate `d2188c4` from committed
+source bytes and original `1489e767` card blobs. Ordinary two-file conversion
+and follow-up check each returned two rows with exact seven-field public
+records, no private original-byte field, exact typed transformation/body
+preservation, and byte-idempotent output. The full 233-path `--check` returned
+0; no private buffers were serialized, 90 remaining sentinels were the only
+prospective typed changes, and all ten pilots were idempotent. Ruby syntax
+validation returned `Syntax OK`. The last input-hash check occurs inside the
+atomic replacement helper after temporary-file staging and immediately before
+`rename`; the write hook witnesses were rerun against this final candidate.
+
+CDC-accepted `make help`, `make check-skills`, `make check-package-paths`, and
+fresh `make design` at the parent revision remain applicable because the
+helper is unbundled and all eight packaged Markdown sources, design version
+history, and Makefile are byte-identical to that parent. No new ZIP build was
+needed. These checks were not rerun for this helper-only change. No live card
+was used by any witness; no hosted, semantic, source-fidelity or release result
+is claimed.
+
+All six ledger status values remain CDC-owned and unchanged: S01-01/02/03 are
+done; S01-04/05/06 are open. Slice01 remains open, Slice02 remains unissued,
+and no parent composition or release approval is implied.

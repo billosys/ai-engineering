@@ -1,5 +1,63 @@
 # Slice01 CC batch record
 
+## Iteration01 intake and contract readback (before source mutation)
+
+- Assignment identity: `cc-prompt-iteration01.md`, issued by planning commit
+  `7b9f6090a85645a02d82ded304ab0ca09fe176d4` after predecessor
+  `be623972b71f7be1002ed3932743c16a23dadb95`; source input
+  `fe4e055885983be6d0b4bbbff1ef201485499aac`. Prompt SHA-256
+  `6ea7f40b22b0854f038f31ac874b8309346f5ec2c469cdef5efab519b93b7ea1`;
+  current CDC review SHA-256
+  `8d5711d6b6d7ed35443230ad13002000d9a288154dc56422151dd92766176921`.
+  The source worktree retains only the unrelated pre-existing untracked
+  `knowledge/lfe/`; no card or helper changes existed at intake.
+- Required-full reads: this I1 prompt and complete `cdc-verification.md`;
+  current `slice-plan.md` and `ledger.md`; initial `cc-prompt.md`; existing
+  batch record and full 233-row inventory. Prompt/slice plan/ledger/inventory
+  SHA-256 values respectively `6ea7f40b22b0854f038f31ac874b8309346f5ec2c469cdef5efab519b93b7ea1`,
+  `194e1e144096685ac2d5df1ea8990ebb3c1a1e94f86a3bed3aac3351ff9ae756`,
+  `f2e0b3810d45cc0f26247e786466b95b06c1f5a433b3cd47b36dbba06783f6d6`,
+  and `c7306e8a62291fa635e154463553fd990a9b12d91d70cb4403a0259f9e49dd5c`.
+  Historical authority, original crosswalk, null/absence distinctions, all
+  pilot headers/body boundaries and old negative-control receipts were retained
+  at those immutable bytes. The full machine inventory remains the input-hash,
+  typed-value, sentinel-delta and baseline bridge; no new corpus narrative or
+  inventory rewrite is in scope.
+- Required sections rechecked: slice-plan Assignment history and Author
+  readiness; initial recipe step 5 and no-fill/no-loss constraints; Project10
+  Immediate sequence, Evidence and workload economy, metadata addition,
+  Workflow and acceptance, Current status; Arc06 current two-slice workflow;
+  Project08 P-15 adoption restriction; concept-cards guide 08 introduction and
+  “Perform Structural Validation”; work-verification Silent-Drop Checks and
+  project-management iteration handoff/intake. The current Arc06 ledger still
+  has seven parent rows, and the Slice01 ledger has six criteria; no parent
+  scope or row state is changed here.
+- Contract readback: as the CDC review demonstrates from the pinned card bytes,
+  `additive-colour-mixing.md` has exact `[[]]` only in `prerequisites` and
+  `extends`, while its populated nested `aliases` array is preserved;
+  `colour-gamut.md` has the three exact sentinels in `prerequisites`,
+  `extends`, and `contrasts_with`, while its populated nested `aliases` is
+  preserved. Therefore the historical batch-table alias entries remain
+  discrepancies; 16 authorized conversions across six pilots remain the total.
+  No list flattening or schema/conformance decision is authorized.
+- F01 readback: retain original bytes privately with each record; keep public
+  JSONL fields byte-for-byte in shape; check every captured input before any
+  write and check its current target again immediately before replacement. On
+  interruption, reverse-recover completed replacements only when each target
+  remains a safe regular non-symlink file equal byte-for-byte to this command’s
+  recorded output. Keep external edits untouched, enumerate written/restored/
+  held/recovery-failed paths and original error on stderr, exit nonzero and emit
+  no success JSONL. This is optimistic per-file replacement with a check-to-
+  rename interval, not cross-process compare-and-swap or a multi-file
+  transaction. CDC’s two-case hook fixture in `cdc-verification.md` is the
+  executable baseline; tests will copy exact original card blobs at their real
+  tracked paths into disposable repositories.
+- Independent acceptance boundary: S01-01/02/03 remain done; S01-04/05/06
+  remain open pending CDC. Concept-cards structural checks establish only the
+  named representation/preservation properties, not semantic warrant,
+  hosted rendering, acceptance, or closure. No schema, source corpus or
+  inventory reassessment is implied.
+
 ## Intake and pins
 
 - Assignment: initial `cc-prompt.md`, issued by planning commit
@@ -290,3 +348,110 @@ No source or planning file had been changed when this readback was written.
   metadata-only commit did not change body bytes. Arc04 owns release/package
   composition after downstream source revisions. The inventory's baseline
   source-index records and body hashes provide the Arc02/Arc04 locator bridge.
+
+## Iteration01 execution and current dispositions
+
+- Source candidate `d2188c45a451be8b5e82f534f9a9ac067c137b64`, parent
+  `fe4e055885983be6d0b4bbbff1ef201485499aac`, changes only
+  `scripts/normalize-design-card-metadata.rb`. The helper SHA-256 is
+  `db068ee4b161bd3e026ab868a9ac46a99eb1df28b17c98f945557587dfbd909b`.
+  Ruby 2.6.10 syntax validation returned `Syntax OK`. The helper diff leaves
+  AST guards, typed loader, transformation, serializer, and body split intact;
+  the prior parser/emitter/eight serialized negative-control evidence remains
+  applicable. The final snapshot check runs after temporary-file staging,
+  immediately before each `rename`. The only record-shape addition is private
+  `_original_bytes`, removed and cleared before public output.
+- Actual candidate `--check` over every inventory path returned 0 and emitted
+  exactly233 public JSONL records. Against immutable current inventory rows:
+  input hashes233/233, complete typed input metadata233/233, body byte/hash
+  observations233/233, expected transformed typed metadata233/233, public
+  record field shapes233/233, and no private-buffer key in any emitted row.
+  The 90 remaining exact sentinels in the non-pilot current population matched
+  only the four authorized transformations. The ten pilots remained byte-
+  idempotent10/10; all233 rows still reconcile by unique path to the unchanged
+  inventory SHA-256 `c7306e8a62291fa635e154463553fd990a9b12d91d70cb4403a0259f9e49dd5c`.
+  No card or inventory bytes changed. These are structural/hash observations,
+  not semantic or hosted-rendering acceptance.
+- Ordinary two-file isolated tracked-repository witness: no arguments exited0
+  without mutation; `--write` and subsequent `--check` exited0 with two rows
+  each; exact seven public fields, no private buffer, exact sentinel-only typed
+  mapping, original body bytes/hash and output-byte hashes all matched; second
+  check was byte-idempotent. The CDC-supplied two-case fixture, run from its
+  issued source against this committed candidate and exact original blobs at
+  real paths, returned the following: concurrent first-input edit during second
+  prevalidation exited1/zero JSONL, retained the external edit and untouched
+  second input, and reported the conflict plus held first path; injected second
+  rename failure exited1/zero JSONL, restored the first original and left the
+  second original untouched, with written/restored/original-failure reporting.
+- Additional actual CLI hook witnesses in disposable tracked repositories:
+  (a) an edit to the completed first output before recovery stayed untouched
+  and was reported held; (b) a late second-target conflict retained that
+  external edit, safely restored the first output, and reported exact written,
+  restored and held paths; (c) injected restoration failure exited1 and
+  reported the first path as recovery-failed together with both original and
+  recovery errors, while accounting for the completed path; (d) missing and
+  symlinked completed targets were held untouched, with any symlink destination
+  bytes unchanged; (e) duplicate and invalid second paths exited nonzero before
+  writes and both original inputs remained byte-identical. Every interrupted
+  case emitted zero JSONL success rows. No witness used live cards.
+- Package applicability: all eight packaged design Markdown source inputs
+  (`SKILL.md`, version history and six guides) plus `Makefile` are byte-identical
+  to source parent `fe4e0558`:
+
+  | Path | Bytes | SHA-256 |
+  |---|---:|---|
+  | `knowledge/design/SKILL.md` | 8950 | `b0b91010ac762616dd420cbfe37c00256e97dec043ecd7b5ddf29c199ecf2ea8` |
+  | `knowledge/design/version-history.md` | 1396 | `f62d7909b93fbe3e0cc0f9c8868a001526ba95cbee0b1b6094f25e3f40f20c7c` |
+  | `knowledge/design/guides/colour.md` | 3840 | `cff6170bbeb08c62a26580a9b0d768b42e50d042bac40f4d7b829f01690ab97a` |
+  | `knowledge/design/guides/foundations-of-design.md` | 29583 | `347378644c54e53bf4a3ab8025b8449e74b6cdd50bbd1050661297dc7696c60a` |
+  | `knowledge/design/guides/breaking-the-layout-monoculture.md` | 21764 | `8dfc00d23b870087b83d0c322c6fd95406e8ae7c001515a4bd7dae7ecb450d6f` |
+  | `knowledge/design/guides/design.md` | 10977 | `9347a9277528f008f2428627dced9531e8d7bcd7a2ebe135120a2a9811d74d2a` |
+  | `knowledge/design/guides/type.md` | 3396 | `ec74e3cf8ef1b32dd340d27c0fcae6e923c52b59778e7cbe8d226aa92fe672b2` |
+  | `knowledge/design/guides/layout.md` | 35706 | `af50575508c1f44cd870b480f729ff64897943293576f047ac9737875941822c` |
+  | `Makefile` | 22571 | `1d0406833b1eb7c9dfa16b68a848f86e4c00ef8d158f32f05f5ebb82fdc6f19e` |
+
+  The only candidate path is the unbundled helper, so the
+  accepted base package/version gates still apply; no new ZIP build was needed.
+  The CDC-accepted gates remain `make help`, `make check-skills`,
+  `make check-package-paths`, and fresh `make design` at the parent revision;
+  they were not rerun because the inputs and dependency definitions are exact.
+- Failure log: the first inventory comparison assumed a top-level `path`
+  property, then was corrected to the actual nested `current.path` structure;
+  no source or evidence file changed. Two early witness-harness assertions also
+  used a delimiter/body extraction that omitted the closing delimiter's
+  trailing newline, and one recovery-failure hook failed the first replacement
+  instead of the restoration. These harness conditions were corrected; the
+  committed-candidate witnesses above then passed, including direct body-byte
+  comparison. A post-amend full-check invocation initially used the planning
+  inventory's relative path from the source checkout and failed before running
+  `--check`; rerunning from the planning worktree completed the exact233-row
+  replay recorded above. The first post-commit scope assertion compared Git's
+  lexically sorted path list with the prompt's different listing order; the
+  expected list was sorted and the exact path/trailer/parent audit then passed
+  for both commits. No implementation defect was found by these harness or
+  audit retries.
+
+### F02 correction and current six-row return
+
+The initial evidence table's two alias-sentinel entries are retained as
+historical discrepancies. Rechecked pinned current typed pilot headers and the
+immutable inventory: additive-colour-mixing has exact sentinels only in
+`prerequisites` and `extends`; colour-gamut has exact sentinels in
+`prerequisites`, `extends`, and `contrasts_with`. Both populated nested
+`aliases` arrays were preserved. The actual pilot delta remains16 values across
+six cards. These nested values are a strict string-list conformance limitation;
+they are neither invented metadata nor grounds for a new or accepted4.0
+profile.
+
+| Criterion | Current CC disposition | CDC boundary |
+|---|---|---|
+| S01-01 | Done at the independently accepted evidence bytes; no change | CDC retains done |
+| S01-02 | Done at the independently accepted 233-row inventory bytes; candidate replay applies to that immutable input | CDC retains done |
+| S01-03 | Done at the accepted 3.2 existing-field mapping; no schema decision | CDC retains done |
+| S01-04 | Open pending CDC review of write-safety witnesses and corrected current F02 table; hosted observations remain attributed to earlier CDC | CDC owns status and acceptance |
+| S01-05 | Open pending CDC review of the helper candidate; ten-card and inventory bytes are preserved | CDC owns status and bulk-migration applicability |
+| S01-06 | Open pending CDC review of scoped commits, receipts, failed-attempt disclosure and row accounting | CDC owns status and acceptance |
+
+No row status was edited by CC. Slice01 remains open; no Slice02 prompt,
+semantic acceptance, changed-revision hosted check, bulk conversion, parent
+composition or release approval is claimed.
