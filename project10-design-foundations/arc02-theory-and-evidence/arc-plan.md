@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.39**; Slice11 closed; Slice12 Iteration01 is the active CC assignment.
+Plan revision **1.40**; Slice11 closed; Slice12 Iteration02 is the active CC assignment.
 
 Deliver corrected portable design content, complete 233-card/eight-live-file
 review and reconciliation, and usable accessibility/typesetting procedures with
@@ -49,7 +49,7 @@ before each source assignment. Keep all 233 identities and eight live-file owner
 | [Slice09 — post-card Unicode presentation](slice09-post-card-unicode-presentation/slice-plan.md) | Closed: source589d7c21 independently accepted; all four child rows done after Operator acceptance of five evidence strings; published and fully hosted-checked in accepted/closed Arc06 | Published `c4cc7427`; no original-source dependency for this encoding correction |
 | [Slice10 — fluid-scale source fixes](slice10-fluid-scale-source-fixes/slice-plan.md) | Closed at sourcecbb5b893/planningd665c388: all four rows done; five exact corrections and fresh package independently checked | Accepted Slice01 proof and Slice07 current applicability; fresh source589d7c21, no originals needed for independent arithmetic |
 | [Slice11 — layout and measure source fixes](slice11-layout-and-measure-source-fixes/slice-plan.md) | Closed at sourcefce72353/planning8df2776a: four contexts and four criteria done; preserved teaching and fresh package independently checked | Accepted Slice04 policy, current sourcecbb5b893 and protected Slice10/Arc06 inputs; actual behavior remains separately owned |
-| [Slice12 — modular-scale card fixes](slice12-modular-scale-card-fixes/slice-plan.md) | Active Iteration01: one row done, three open after initial review; repair remaining scope/ratio-direction clauses and exact support/lineage joins in the three-card core | Current sourcefd876e7c; accepted arithmetic and bounded integration; immutable capture/lineage still gates original fidelity; remaining230 cards keep existing ownership |
+| [Slice12 — modular-scale card fixes](slice12-modular-scale-card-fixes/slice-plan.md) | Active Iteration02: three rows done, S12-02 open after refinement; one Related approximation label remains | Current sourcea0555038; accepted arithmetic and bounded integration; immutable capture/lineage still gates original fidelity; remaining230 cards keep existing ownership |
 | Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
 | Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
 | Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
@@ -127,8 +127,10 @@ Slice10 is closed. Was: [Slice11](slice11-layout-and-measure-source-fixes/cc-pro
 was active. Now: it is closed at sourcefce72353/planning8df2776a, four criteria done.
 Was: Slice12 initial assignment, four rows open. Now: initial return
 sourcefd876e7c/planning0631c98a has one independently done row and three open.
-Current assignment: [Slice12 Iteration01](slice12-modular-scale-card-fixes/cc-prompt-iteration01.md),
-repair remaining scope/direction clauses and exact source/lineage joins.
+Was: Slice12 Iteration01 active. Now: sourcea0555038/planningf142e917 has
+three done rows, only S12-02 open. Current assignment:
+[Slice12 Iteration02](slice12-modular-scale-card-fixes/cc-prompt-iteration02.md),
+replace the one missed Related approximation label with every other source byte fixed.
 [CDC review](slice12-modular-scale-card-fixes/cdc-verification.md) retains passing
 arithmetic, six metadata leaves and protected corpus/package checks.
 Do not repeat the accepted theory packet or restore removed legacy defaults.
@@ -144,6 +146,10 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.40 (2026-10-14): Arc02/Slice12 Iteration01 accepts three rows; issue
+  one-line Related-label correction with retained math/package/bridge evidence.
+  No new slice, inquiry or parent scope/status reduction.
 
 - 1.39 (2026-10-14): Arc02/Slice12 initial review retains passing arithmetic/preservation and
   accepts integration, but returns remaining teaching/support/lineage defects

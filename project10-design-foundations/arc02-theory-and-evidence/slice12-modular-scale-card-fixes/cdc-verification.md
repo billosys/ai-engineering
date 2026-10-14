@@ -139,3 +139,75 @@ four fragments resolve, LF/EOF and whitespace checks pass. The four criterion
 texts/verification contracts are unchanged; only S12-04 becomes done. Original
 prompt, CC batch/closing report and both parent ledgers are byte-exact to the
 reviewed planning return. Source remains atfd876e7c with no tracked CDC edits.
+
+
+## Iteration01 independent review — 2026-10-14
+
+Current verdict: **three done, S12-02 open**. Reviewed source
+`a05550386eefe021140a55e110a1868dd978f893`, direct child of initial source
+`fd876e7ca906ef350a051ad2c17196064fe43147`, and planning return
+`f142e9172a1b7d90f3c99f6681214183bd5d9a8c`, direct child of issuing
+`cdf0dc0158593e6c62e3295bb59950ac629b63e7`. Assignment:
+[Iteration01](cc-prompt-iteration01.md). CDC authored no source repair.
+
+The scoped three-card source diff and three-output planning diff, actual
+parents, trailers and both commit whitespace checks pass. All three metadata
+prefixes are byte-exact tofd876e7c; all233 paths remain, exactly three changed
+and230 unchanged. Original bibliography and teaching sections survive. Source,
+guide, owning entrypoint/history and Makefile objects are unchanged. Retain the
+initial independent complete-card/source/math checks where this delta cannot
+alter them; inspect the changed clauses and their evidence freshly. The entire
+ratio card was read again, including the remaining Related label below.
+
+F01's positive-domain, indexed-direction, exact-versus-rounded, contextual
+selection, scope and historical-workflow changes pass. Fresh exact Fraction
+witnesses reproduce indexed ratios1/2,2 and1; source output6.180/3.819/2.360
+and independent47.123/11.125 remain distinct. F02 corrected locators156,166,
+168–170,144–154,174–188 and338–350 match inspected pinned source passages;
+initial wrong joins remain expressly superseded. F03 now identifies the actual
+planning artifact5020db52 (SHA8121246fe4d4010942ca48fc30779156b5a09841868e8e33fd7b9a5487c41d01)
+and normalized sourcec4cc7427. Independently selected rows158/159/174 reproduce
+one/three/three sentinel changes and exact historical body equality/hashes at
+the stated LF-inclusive offsets. Current whole/header/body hashes and counts
+match the refinement table. The initial suffix/count mistakes are superseded.
+
+Retain S12-04's independent Make checks atfd876e7c: every relevant source/
+package input is unchanged by this body-only diff. Independently inspected the
+present ZIP: all eight Markdown members equal current source, and no cards
+are members. CC additionally attests fresh gates; this record does not relabel
+those executions as CDC runs. The previously reproduced two seven-value numeric
+sequences and merge controls remain valid; their model and examples are intact.
+No new original fidelity, hosted, browser/AT, installation or publication check.
+
+### F04 — One prescribed Related label was not repaired
+
+At current `scale-ratio.md:115`, the old label remains:
+“Golden ratio — One specific, historically prominent scale ratio (1.618).”
+Iteration01 repair2 explicitly required the Related labels to identify1.618
+as an approximation toφ. The card's surrounding definitions now qualify this
+correctly, so this is a missed local repair rather than an overturned numerical
+analysis. Replace only that one sentence using
+[Iteration02](cc-prompt-iteration02.md); retain all other accepted changes.
+No broad research or package replay is needed for this unbundled one-line fix.
+The initial explicit replacement/list check missed this clause; the new prompt
+supplies the literal old/new line and requires whole-file reverse comparison.
+
+Incidental wording in the batch's preservation paragraph calls the six prior
+metadata changes “empty-list” corrections. They are the six **semantic scalar**
+changes from the initial prompt; the seven Arc06 sentinel changes are a separate
+historical transformation. This distinction is reproduced above and can be
+clarified in the same return; it does not create another criterion or blocker.
+
+| Row | Current CDC disposition | Independent result |
+|---|---|---|
+| S12-01 | done | Complete available-evidence three-card review and corrected five-dimension/support/edge/CQ accounting; remaining F04 explicitly identified, not hidden. Original fidelity/empirical/endpoint gaps remain open at parent owners. |
+| S12-02 | open | All other corrections pass; F04's required local approximation label remains unchanged. |
+| S12-03 | done | Exact prefixes, unaffected corpus/source/live payloads, actual historical bridge/sentinels and corrected revision-aware hashes reproduce. |
+| S12-04 | done | Retained independent integration/gates with exact input applicability; fresh ZIP member comparison. Cards remain unbundled and unhosted here. |
+
+Four criteria retained, three done/one open; no deferrals or no-ops. One existing
+supporting artifact remains. Slice12/Arc02/Project10 stay open; broader corpus,
+original fidelity, global consistency, actual behavior and final-revision hosted/
+release obligations are not accepted. Current assignment is Iteration02 for the
+one missed line, with the same three planning return homes. Parent dispositions
+and issued prompts remain unchanged; no Slice13 is opened before Slice12 closes.

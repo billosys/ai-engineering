@@ -6,9 +6,10 @@ depends-on: [accepted fluid-scale arithmetic, slice11-layout-and-measure-source-
 
 # Slice12 — Correct the Modular-Scale Card Core
 
-Plan revision **1.1**, updated2026-10-14. Was: initial assignment, four open.
-Now: [Iteration01](cc-prompt-iteration01.md) is active after independent initial
-review; S12-04 done at sourcefd876e7c, S12-01/02/03 open. The initial prompt
+Plan revision **1.2**, updated2026-10-14. Was: initial assignment, four open.
+Was: Iteration01 active, one row done. Now: [Iteration02](cc-prompt-iteration02.md)
+is active after independent refinement review; S12-01/03/04 done at sourcea0555038,
+S12-02 open for one missing Related approximation label. The initial prompt
 and CC return remain historical inputs; [CDC record](cdc-verification.md) governs.
 [Project](../../project-plan.md), [arc](../arc-plan.md), [ledger](ledger.md) and
 [initial prompt](cc-prompt.md) govern. Two contributors: CDC Sofie authors/reviews,
@@ -27,10 +28,12 @@ ratio. Brown's method and historical values stay attributable, not universal
 requirements or exact recalculations. The useful result is corrected cards on
 main with explicit source support and original-fidelity/edge/CQ limits.
 
-Initial assignment's historical source/write contract follows. For the current
-Iteration01, sourcefd876e7c and the new prompt's three body-only paths supersede
+Initial assignment's historical source/write contract follows. For the prior
+Iteration01, sourcefd876e7c and its three body-only paths superseded
 the five-path initial write set; all metadata and owning version/history are
-now protected. Planning outputs stay the same three records.
+protected. Current Iteration02 narrows further: sourcea0555038, exactly one
+body line in scale-ratio.md, every other source byte fixed. The three planning
+return records remain; preserve initial and Iteration01 history.
 
 Exact initial source`fce72353178c4cb8e742268e7715d70050ebc397`; planning preparation predecessor`8df2776a98bd6ff79a55fe2675a5bbdfb57413c5`.
 Pin actual issuing commit at intake. Five source output paths: three cards in
@@ -106,7 +109,8 @@ required-full cards and bounded source/registry reads, no full-corpus shortcuts.
 | Assignment | Issue/predecessor | Scope/status |
 |---|---|---|
 | [Initial cc-prompt.md](cc-prompt.md) |2026-10-14; preparation8df2776a; actual issuing commit recorded at intake | Returned for review at sourcefd876e7c/planning0631c98a; one done, three open after F01–F03. |
-| [Iteration01](cc-prompt-iteration01.md) |2026-10-14; sourcefd876e7c; planning predecessor0631c98a; actual issuing commit recorded at CC intake | Active: F01 remaining scope/ratio-direction clauses, F02 exact source joins, F03 historical bridge; three body-only source paths and the same three planning records. |
+| [Iteration01](cc-prompt-iteration01.md) |2026-10-14; sourcefd876e7c; planning predecessor0631c98a; actual issuing commit recorded at CC intake | Returned at sourcea0555038/planningf142e917; three done, S12-02 open after F04. |
+| [Iteration02](cc-prompt-iteration02.md) |2026-10-14; sourcea0555038; planning predecessor f142e917 | Active: one missed Related label; literal replacement/reverse byte check, retained independent math/package/bridge evidence. |
 
 ## Iteration01 author readiness
 
@@ -124,7 +128,20 @@ shape the correction. Executable/falsifiable/coherent: three source body paths,
 three existing planning outputs, exact input hashes, retained sound arithmetic
 and meaningful affected checks. Broader fidelity/corpus/hosted gates unchanged.
 
+## Iteration02 author readiness
+
+CDC inspected the actual unchanged Related label against Iteration01 repair2
+and Brown174–186. The prompt supplies the literal old/new line, one permitted
+source path and a complete reverse-byte comparison; all other accepted inputs
+remain unchanged. Applied design/context and concept-card support distinctions
+avoid presenting a rounded decimal as exactφ or a universal ratio choice.
+No new design decision/inquiry, schema field or repeated theory/package work.
+The existing method, original four criteria and actual unresolved gates remain.
+
 ## Version History
+
+- 1.2 (2026-10-14): Iteration01 accepts three rows; one literal Related-label
+  repair remains. Issue one-line refinement with retained accepted evidence.
 
 - 1.1 (2026-10-14): Initial CDC review accepts integration only; issue a narrow
   source/evidence correction for repeated scope, ratio direction and actual
