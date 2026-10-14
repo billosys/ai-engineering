@@ -1,0 +1,11 @@
+# Slice12 Ledger
+
+Four rows open. CC proposes; CDC independently reviews. Original fidelity and
+full card/corpus acceptance do not follow from a bounded prepared-source review.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S12-01 | All three complete cards have explicit five-dimension review outcomes against available evidence with no hidden claim/source omissions | Walk full bodies and structured extensions, prepared support spans, independent math, scope/consistency and relationship/CQ results; retain original-fidelity and other unresolved limits | correctness-grade | Operator full233 review; complete core unit | open | — | Initial assignment; three selected cards, six permitted metadata leaves; missing stays absent. |
+| S12-02 | Supported single/merged-scale, numeric, scope and legacy-verification defects are corrected consistently in the teaching bodies and six specified metadata leaves | Inspect full revised cards, exact arithmetic/contrary cases, prepared quotations versus recalculation and explicit leaf replacements | correctness-grade | DES-003/004/015/016; inspected core defects | open | — | Initial assignment; three selected cards, six permitted metadata leaves; missing stays absent. |
+| S12-03 | Card identity, metadata representation, original evidence and unaffected corpus are preserved with exact semantic delta and revision accounting | Check key/type/order/value equality except six leaves, Source Reference text, sections/CQs/relations, all230 other cards/161 originals/live-guide bytes and three old/new hashes/locators | correctness-grade | Arc06 no-fill contract; intentional Arc02 semantic changes | open | — | Initial assignment; three selected cards, six permitted metadata leaves; missing stays absent. |
+| S12-04 | Corrected cards are integrated with owning version/history and honest source/package/rendering limits in a complete four-row return | Required Make/version/path gates and fresh design eight-member comparison; exact source/planning scopes; record unbundled cards and affected future hosted/fidelity gates | serious | Usable source increment; final applicability | open | — | Initial assignment; three selected cards, six permitted metadata leaves; missing stays absent. |

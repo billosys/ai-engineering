@@ -334,3 +334,15 @@ criterion texts/statuses remain unchanged; P10-01/12 stay done. Arc06 content
 proof remains applicable to unchanged cards, while P10-13 retains final-revision
 applicability. [Slice11](arc02-theory-and-evidence/slice11-layout-and-measure-source-fixes/slice-plan.md)
 is the next direct layout-method correction, not a new evidence-only phase.
+
+## Arc02/Slice11 acceptance and first core-card batch — 2026-10-14
+
+[Slice11](arc02-theory-and-evidence/slice11-layout-and-measure-source-fixes/cdc-verification.md)
+closes four child rows at sourcefce72353/planning8df2776a; all thirteen project
+criterion texts/statuses remain unchanged. [Slice12](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/slice-plan.md)
+repairs three core Brown cards within the complete233 review. Original-source
+fidelity remains blocked by capture/lineage, not substituted with a prepared-text
+match. Future intentional semantic body/metadata changes need explicit deltas
+and affected locator/rendering re-entry; accepted Arc06 evidence stays historical
+for changed cards and applicable only to unchanged inputs. No full-corpus,
+metadata-schema migration, installed-package or release gate closes automatically.

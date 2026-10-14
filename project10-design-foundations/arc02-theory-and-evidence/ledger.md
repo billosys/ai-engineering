@@ -290,3 +290,14 @@ All ten arc criterion texts/statuses remain unchanged. [Slice11](slice11-layout-
 opens four result-oriented child rows for remaining layout-method overclaims,
 including a foundations repeat. Accepted Slice04 policy is reused; actual
 browser behavior and full guide/card semantic/fidelity coverage remain open.
+
+## Slice11 closure and core-card correction opening — 2026-10-14
+
+[Slice11 CDC review](slice11-layout-and-measure-source-fixes/cdc-verification.md)
+closes all four child criteria at sourcefce72353/planning8df2776a. All ten parent
+criteria/statuses remain unchanged. [Slice12](slice12-modular-scale-card-fixes/slice-plan.md)
+starts the modular-scale/construction/ratio core: three complete card bodies and
+five available-evidence outcomes per card, with supported corrections now.
+Original Brown capture/fidelity remains P10-11-blocked; unresolved endpoints and
+CQs stay visible. This is neither sampling to satisfy233 coverage nor a new
+analysis-only phase. All other230 cards retain existing full-review ownership.

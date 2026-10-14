@@ -1,12 +1,12 @@
 ---
 slice: slice11-layout-and-measure-source-fixes
-status: active
+status: closed
 depends-on: [slice04-layout-and-measure-exceptions accepted policy, slice10-fluid-scale-source-fixes accepted current source]
 ---
 
 # Slice11 — Correct Remaining Layout-Method Overclaims
 
-Plan revision **1.0**, opened2026-10-13; initial CC assignment, four rows open.
+Plan revision **1.1**, closed2026-10-14; initial CC assignment accepted, four rows done.
 [Project](../../project-plan.md), [arc](../arc-plan.md), [ledger](ledger.md) and
 [initial prompt](cc-prompt.md) govern. Two contributors, CDC Sofie and separate
 CC through Operator relay; Expedited Mode. The2026-10-12 combined review/fix
@@ -95,10 +95,22 @@ No author source edits or unresolved material design decision remains.
 
 | Assignment | Issue/predecessor | Scope/status |
 |---|---|---|
-| [Initial cc-prompt.md](cc-prompt.md) |2026-10-13; preparationd665c388; actual issuing commit recorded at intake | Active: four coherent guide contexts, version/history, fresh package and compact return; no closure/push. |
+| [Initial cc-prompt.md](cc-prompt.md) |2026-10-13; preparationd665c388; actual issuing commit recorded at intake | Accepted: sourcefce72353/planning8df2776a; four contexts and all four criteria independently done, source/package integrated; no publication. |
 
 ## Version History
 
 - 1.0 (2026-10-13): Open coherent layout-method source batch after Slice10 close;
   apply accepted exceptions and current repeats while preserving teaching and
   full semantic/behavior obligations, with no extra analysis handoff.
+
+## Independent closure and continuation — 2026-10-14
+
+[CDC acceptance](cdc-verification.md) closes all four criteria at sourcefce72353 /
+planning8df2776a. Four exact contexts, preservation and fresh package checks pass;
+no new architecture/input dependency or parent status change. CC records and
+issued prompt stay unchanged. [Slice12](../slice12-modular-scale-card-fixes/slice-plan.md)
+starts a coherent three-card modular-scale correction/review from current source;
+original fidelity, full corpus and actual behavior retain their existing owners.
+
+- 1.1 (2026-10-14): Accept initial CC source/package return, close four criteria
+  and continue the approved corpus review/fix roadmap in three related core cards.
