@@ -133,7 +133,7 @@ edge warrant remains unresolved with the endpoint owner; no neighbor is edited.
 | Construction `Related` / `Contrasts With` body labels | Double-stranded modular scale; grid-first design. | No exact slug for either phrase. Brown's content-out/canvas-in contrast is attributed, and the text explicitly says grid use is not incompatible. Owner: full-corpus relationship reconciliation. |
 | Scale ratio `prerequisites`, `extends`, `contrasts_with` | Empty arrays retained; no structured edge asserted. | Empty means no entries recorded. |
 | Scale ratio `related` | `modular-scale`, `golden-ratio`, `perfect-fourth-ratio`, `perfect-fifth-ratio`, `ratio-selection-criteria`; symmetric association listed from ratio card. | Modular scale was read in full; all except the perfect-fourth/fifth exact slugs exist. `perfect-fourth-ratio` and `perfect-fifth-ratio` are unresolved references, retained without aliases/placeholders. Existing out-of-cohort endpoints are not semantically assessed here. |
-| Scale ratio `Enables` prose | `modular-scale`, `modular-scale-construction`; ratio → each destination. | Both endpoints read in full. Body scopes this to a required input for a ratio-generated construction, not a requirement for every design scale. |
+| Scale ratio `Enables` prose | `modular-scale`, `modular-scale-construction`; ratio → each destination. | Both endpoints read in full. The corrected first description is “A declared ratio generates one geometric strand. A modular construction may use separate strand inputs; visual scales may also use additive or independently selected values.” The procedure relation scopes ratio input to ratio-generated construction. |
 | Scale ratio `Related` / `Contrasts With` body labels | Golden ratio; perfect fourth/fifth ratio; ratio-selection criteria; independent measurement choices. | Exact golden-ratio and ratio-selection endpoints exist; perfect-fourth/fifth do not. Independent-measurement label has no exact slug. No semantic warrant is transferred from endpoint existence. |
 
 | Preserved CQ text | Required answer components and scoped answerability |
@@ -263,3 +263,176 @@ or checked. Prepared-source fidelity remains blocked on immutable capture,
 conversion lineage and comparison of the cited full contexts/code/media. Full
 233-card semantic review, unresolved out-of-cohort edge warrant, final hosted
 applicability, accessibility behavior and release remain open at their owners.
+
+
+## Slice12 Iteration01 correction and current return
+
+This section supersedes the initial-return assertions identified below; it does
+not erase their history. The assigned iteration prompt is
+`cc-prompt-iteration01.md`, issued by planning commit
+`cdf0dc0158593e6c62e3295bb59950ac629b63e7`, parent
+`0631c98ac118e918fed8f68a5b333685f765e24e`. Source intake was exactly
+`fd876e7ca906ef350a051ad2c17196064fe43147`; CC committed the three body-only
+card edits as `a05550386eefe021140a55e110a1868dd978f893`, parent
+`fd876e7ca906ef350a051ad2c17196064fe43147`, with the two required trailers.
+The existing `knowledge/lfe/` untracked source-tree item remained untouched and
+excluded.
+
+### F01 — mathematical domain, direction and selection scope
+
+All three full revised cards were reread. Formula-bearing body statements now
+state `a>0`, `r>0`; indexed terms use `v[n+1]/v[n]=r`. They distinguish index
+direction from value direction for `r>1`, `0<r<1`, and `r=1`, and distinguish
+exact terms from rounded displays. The ratio recognition step preserves the
+declared order; the larger/smaller quotient can discard direction and report
+`1/r`. “Nearer one” step spacing is limited to the increasing `r>1` regime.
+The ratio-selection entry starts from content, hierarchy and constraints, with
+Brown's cultural/historical example optional. Decimal `1.618` is identified as
+an approximation to φ, decimal `1.333` to `4/3`, and `1.5 (=3:2)` stays exact.
+The ratio card's first Enables description now reads exactly: “A declared ratio
+generates one geometric strand. A modular construction may use separate
+strand inputs; visual scales may also use additive or independently selected
+values.” The construction card attributes the “canvas in” / “content out”
+inversion to Brown's historical framing and does not universalize it. Existing
+CQs, false-premise response, useful examples, merge caveat, bibliography and
+unresolved relationship endpoints remain. No metadata or header byte changed.
+
+The ordered Fraction checks reproduce the discriminator: `a=10, r=1/2,
+n=0..2` gives `10, 5, 2.5`, indexed quotients `1/2, 1/2`, while larger/smaller
+returns `2, 2`; the positive control `a=10, r=2` gives `10, 20, 40` and
+quotients `2, 2`; `r=1` repeats `10`; `r=0` cannot supply negative-index terms.
+The retained seven-term exact-decimal (`809/500`) outputs remain `2.361, 3.820,
+6.180, 10.000, 16.180, 26.179, 42.358` for base 10 and `4.249, 6.876,
+11.125, 18.000, 29.124, 47.123, 76.244` for base 18, rounded half-even only
+for display. Brown's printed `3.819` and `2.360` remain distinguished from the
+independent model's `3.820` and `2.361`; earlier `47.124` and `11.124` remain
+falsified. The two merge witnesses remain: bases 10/15 with `r=2` yield sorted
+`[10,15,20,30,40,60]` and adjacent quotients `[3/2,4/3,3/2,4/3,3/2]`; bases
+10/20 with `r=2` yield a geometric union after duplicate removal. These are
+arithmetic/model outcomes, not Brown quotations or visual-suitability claims.
+
+### F02 — corrected Brown passage joins
+
+The complete pinned prepared Brown article was reread at identity lines 1–30
+and article lines 109–356 (lines 31–108 and material after 356 were not counted
+as supporting passages). Its SHA-256 remains
+`6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9`.
+The first-return locator joins are retained as superseded history: two-strand
+choice `146–148`, application `151–152`, typeface-first `153–155`, and the
+construction two-strand join `146–148` were incorrect. Correct pinned clauses:
+
+| Claim | Correct prepared-source locator | Support boundary |
+|---|---:|---|
+| Two-strand choices | 156 | Brown says at least two starting ratios or two starting numbers produce separate strands that are merged. |
+| Scale applications | 166 | Brown lists type sizes, line height, line length, margins, column widths and more. |
+| Typeface-first route | 168–170 | Brown describes choosing a text face before layout/typesetting and relates the tested crisp body size to one scale input. |
+| Numeric lists | 144–154 | The base-10 displayed ascending and descending multiplication/division operations appear here; these remain source reports, separate from exact recomputation. |
+| Contextual construction | 174–188 | Brown narrates project inputs, tested 18px Minion, contextual `1:1.618`, secondary number and application transition. |
+| Workflow contrast | 338–350 | Brown's paraphrase of Boulton and his historical content-out/canvas-in framing appear here; line 350 also says modular scales do not preclude grid or responsive design. |
+
+Brown's statements are attributed to him. Indexed quotient, domain and
+rounding claims are mathematical interpretation; the prepared text does not
+establish perceived harmony or universal selection rules. Original capture,
+conversion lineage and original-to-prepared fidelity remain unresolved. The
+initial five-dimension, teaching-section, relationship and CQ maps remain
+bounded to these three cards; no out-of-cohort endpoint or empirical harmony
+question is promoted to pass.
+
+### F03 — revision and sentinel bridge correction
+
+The exact Arc06 artifact is the planning object at
+`5020db5296d58e4c43988494b9ca806423f60309`, SHA-256
+`8121246fe4d4010942ca48fc30779156b5a09841868e8e33fd7b9a5487c41d01`
+(2,724,127 bytes). It is not source revision `c4cc74279ac845003b0c80f55907981241c58a99`.
+The selected complete JSONL rows are 158 construction, 159 modular scale,
+and 174 scale ratio. The initial bridge's wording that named planning
+`c4cc7427` and implied only the modular row changed was wrong; its old joins
+are explicitly superseded here. The exact seven `current_to_final` root
+sentinels were:
+
+| JSONL row / card | Sentinel leaves normalized | Body bytes / SHA-256 and Arc06 final body offset |
+|---|---|---|
+| 158 `modular-scale-construction.md` | `contrasts_with`: `[[]]` → `[]` (1) | 9,672 / `e38d32beabb285c82034c3383d6cb29541106a19ec750c5bed7d09110654cf67`; offset 1,536, closing line 46 |
+| 159 `modular-scale.md` | `prerequisites`, `extends`, `contrasts_with`: each `[[]]` → `[]` (3) | 10,526 / `5b93499e9ed20a830839561e9c23b51de29bfc14da264f19845b5693d9684297`; offset 1,971, closing line 52 |
+| 174 `scale-ratio.md` | `prerequisites`, `extends`, `contrasts_with`: each `[[]]` → `[]` (3) | 7,672 / `a2a0c82b69bb25541e3d303535d670dac69ed59796a2274cf5fe4ff2fbdc76f1`; offset 1,779, closing line 49 |
+
+At Arc06 all three complete card headers changed and all three bodies were
+byte-preserved. The selected row revisions point from raw baseline
+`dffa504e851b03b8e4746f1941068e4cc850b612` through prechange source
+`4ccc6f6055743d8e8b53251d7e8852f04d1ed181` and current
+`fe4e055885983be6d0b4bbbff1ef201485499aac` to normalized source
+`c4cc74279ac845003b0c80f55907981241c58a99`. For the three rows, the raw /
+prechange/current whole-file SHAs respectively remain construction
+`9cfcf85279084f6513c3d686a98f7be32bd670f79e8a41dec26ad66eaa86ff5c`, modular
+`7cef08f7fb6c25a61d9063a581a828b8c558e2289f45b7921f180221dc02bbab`, and
+ratio `d2d8db66423f2745fdc69b4d110dd7abd36c8a12967e0f873b7acc92edbc2e3f`;
+normalized whole-file SHAs are construction
+`eb54832a713afc3a8ec3c862170f19cd9937f3684279ae4ebbcbb203c98fc8cf`, modular
+`55dee48f182cb70c6794ba0c75bebad43229226960f642ed404ba0adfbe426e4`, and
+ratio `afea99af5a70069d9c770024bc5fa2dc6e90c3062e8b42c6e8d68573834802b8`.
+The normalization changed metadata representation only.
+
+Keep the full chronology distinct: Arc06 raw source `dffa504e` → normalized
+source `c4cc7427`; Slice09 Unicode source `589d7c21` (same three card blobs as
+`fce72353`); assigned correction source `fd876e7c`; this body-only refinement
+`a0555038`. The historic Arc06 digests begin one byte before the later
+frontmatter/body convention: the Arc06 body offsets 1,536 / 1,971 / 1,779
+include the LF immediately after the closing `---`; the later convention begins
+at 1,537 / 1,972 / 1,780 after that LF. This explains the one-byte offset and
+body-digest difference; these digests are not cross-convention equality claims.
+The accepted Arc01 index and locator datasets and their selected three rows
+remain unchanged; the denominator was 233 indexed identities and three
+selected card/locator pairs, not an expanded semantic census.
+
+The first-return preparation-parent suffix `8df2776a98bd6ff79a55fe2675a5bbdfb57413c`
+is explicitly superseded: `git rev-parse ff87331d^` returns
+`8df2776a98bd6ff79a55fe2675a5bbdfb57413c5`. The earlier phrase “all six
+displayed sequences” is superseded: there are two seven-value base sequences
+plus two distinct merge witnesses, as reproduced above.
+
+### Current candidate, preservation and gates
+
+| Card | Current whole SHA-256 / bytes | Header SHA-256 / bytes | Body SHA-256 / bytes; body start |
+|---|---|---|---|
+| `modular-scale.md` | `19708d3212177486e7c20b7374a2d938ca918f662adcbbff29f6474a3f56e52c` / 13,813 | `0a9853e156654017eae91a28f84c4d9f8d9b9b5d35dc203a438c0637cab750f2` / 1,971 | `538b8cbd68ff2d2f4ffe674da3f5ab9e822f4300fa33c6842d3f8479fe56e6a0` / 11,842; byte 1,971, line 53 |
+| `modular-scale-construction.md` | `879969b22436bd55ae0652f3c7b9011ec6183b20d42afec1c3bf307c5a0a0340` / 12,660 | `9cf8898a951708e5248dbf32e6311b307e0d247f48a308343e84a5508acdf0a5` / 1,585 | `4e5df4a6102d413031485d4c1f421e366d8fac4fda770e083eb5b0d2d9b68e7b` / 11,075; byte 1,585, line 47 |
+| `scale-ratio.md` | `1888f5ee41bc12150f0e41fbcefd99ea48067c29ea339311d71fc3d2015123e3` / 11,291 | `441ed95ef57802db876fec34dee283a7c995cd5ad01e85de8eade20344bc34e6` / 1,832 | `9299c3c274e8687d61e48b53cfbfd888dd4e59f2f1c6fd2d9f3a652070ea41d1` / 9,459; byte 1,832, line 50 |
+
+Each complete metadata prefix is byte-equal to its `fd876e7c` prefix, including
+all six accepted empty-list leaf corrections, types, recursive key/list order,
+identity, CQs, and relationships. The exact three card paths are the only
+changed members of the 233-card tree (3 changed, 230 byte-identical). All 161
+source files and all six live design guides are byte-identical; design
+`SKILL.md` and `version-history.md` are unchanged. LF line endings and final
+newline are present; `git diff --check` passes. The committed diff contains
+only those three cards and has both required co-author trailers.
+
+Fresh main-checkout gates and package observation after the exact source
+commit:
+
+| Check | Result |
+|---|---|
+| `make help` | Passed; target inventory read first. |
+| `make check-skills` | Passed for 24 skills; 18 descriptions exceed the editorial target, within the configured threshold. |
+| `make check-skill-versions` | Passed: 24 source skills, 24 generated packages, 0 errors. |
+| `make check-package-paths` | Passed: 24 archives, 388 Markdown files, 0 hard failures, 596 warnings at 594 unique locations, 3 explicit exceptions, 681 external URLs skipped. |
+| separate `make design` | Passed after source commit; ZIP SHA-256 `f1c0b916533bcec9507f97d3478ee94beb2d9105ef1319c5a59e14d7697e755f` (48,015 bytes); its 8 Markdown members match committed source bytes. The three cards are not package members. |
+| Fraction witnesses, exact-decimal sequences, preservation comparison and `git diff --check` | Passed as recorded above. |
+
+These checks do not render or host the three unbundled cards. Their current
+re-entry URLs are the exact `a05550386eefe021140a55e110a1868dd978f893`
+revision links below; this CC return did not open or verify hosted views:
+
+- `https://github.com/billosys/ai-engineering/blob/a05550386eefe021140a55e110a1868dd978f893/knowledge/design/concept-cards/posts/modular-scale.md`
+- `https://github.com/billosys/ai-engineering/blob/a05550386eefe021140a55e110a1868dd978f893/knowledge/design/concept-cards/posts/modular-scale-construction.md`
+- `https://github.com/billosys/ai-engineering/blob/a05550386eefe021140a55e110a1868dd978f893/knowledge/design/concept-cards/posts/scale-ratio.md`
+
+Original-source fidelity, any applicable exact-revision hosted gate, perceptual
+or accessibility behavior, endpoint warrant outside the read cohort, global
+233-card semantic review, and release remain unresolved at their owners.
+Nothing here changes CDC's ledger statuses or closes/advances Slice12. The one
+supporting artifact is this existing `artifacts/batch-record.md`; no helper,
+secondary validator, or copied data artifact was added. The prior initial
+return's claim that all four rows remained open is historical: current CDC
+status is S12-01/02/03 `open`, S12-04 `done`; this CC return makes no CDC
+acceptance claim.

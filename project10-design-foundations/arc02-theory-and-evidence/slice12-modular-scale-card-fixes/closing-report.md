@@ -68,3 +68,69 @@ result supplies corrected evidence for these three committed cards only; it
 does not close any Arc02 or Project10 parent criterion or authorize another
 slice. The planning commit self-ID is supplied in the Operator handoff after
 that exact three-output commit is created.
+
+
+## Iteration01 — CC corrective return
+
+The initial return above is retained as historical. This refinement was issued
+by planning commit `cdf0dc0158593e6c62e3295bb59950ac629b63e7`, parent
+`0631c98ac118e918fed8f68a5b333685f765e24e`, against main source
+`fd876e7ca906ef350a051ad2c17196064fe43147`. CC committed only the three
+assigned card bodies as `a05550386eefe021140a55e110a1868dd978f893`, parent
+`fd876e7ca906ef350a051ad2c17196064fe43147`. The source commit includes both
+required co-author trailers. Planning commit identity is reported by the
+Operator handoff after this exact three-output planning commit.
+
+### F01–F03 return
+
+- **F01:** All three cards now state `a>0`, `r>0`, use `v[n+1]/v[n]=r` in
+declared order, distinguish exact values from rounded display, and reconcile
+index and value direction for `r>1`, `0<r<1` and `r=1`. The ratio card's
+selection step begins with content, hierarchy and constraints, scopes the
+“nearer one” spacing observation to increasing `r>1`, corrects its Enables
+wording, and labels `1.618`/φ, `1.333`/`4/3`, and exact `1.5 (=3:2)` accurately.
+The workflow contrast is Brown's attributed historical framing. The ordered
+witnesses, two seven-value displays and both merge witnesses are in the
+[batch record](artifacts/batch-record.md#f01--mathematical-domain-direction-and-selection-scope).
+- **F02:** The [corrected passage map](artifacts/batch-record.md#f02--corrected-brown-passage-joins)
+records exact support at 156, 166, 168–170, 144–154, 174–188 and 338–350,
+and preserves each first-return locator as explicitly superseded history.
+- **F03:** The [revision bridge correction](artifacts/batch-record.md#f03--revision-and-sentinel-bridge-correction)
+distinguishes planning artifact `5020db52` from normalized source
+`c4cc7427`, records seven Arc06 sentinel changes across all three headers and
+no Arc06 body changes, retains the complete revision chain, explains the
+historical one-byte body split, and corrects the first-return parent suffix and
+sequence count.
+
+The complete body changes and current three-file hashes/locators, byte-exact
+metadata-prefix check, all-233 preservation result, corrected support map,
+validation outputs and limits are in the single supporting artifact
+[batch-record.md](artifacts/batch-record.md#current-candidate-preservation-and-gates).
+No source fidelity, endpoint warrant, empirical harmony, hosted view,
+accessibility behavior or release is claimed.
+
+### Fresh integration checks
+
+`make help`, `make check-skills`, `make check-skill-versions`,
+`make check-package-paths`, and a separate post-commit `make design` were run
+in the main checkout. The package-path scan covered 24 archives and 388
+Markdown files with 0 hard failures; a fresh design ZIP has eight Markdown
+members byte-equal to committed source, and none is a concept card. The three
+current hosted URLs in the batch record are re-entry targets only; this CC
+return did not open them. There was no push, install, browser/AT run,
+publication or release action.
+
+### Current four-row accounting
+
+| Row | Current CDC status | CC Iteration01 return |
+|---|---|---|
+| S12-01 | open | F01/F02 support and full-card walk corrected; awaiting CDC review. |
+| S12-02 | open | Directional/domain/scope corrections and arithmetic witnesses recorded; awaiting CDC review. |
+| S12-03 | open | F03 path/revision bridge and preservation checks corrected; awaiting CDC review. |
+| S12-04 | done | Fresh required skill/version/package gates and separate design build pass; cards remain unbundled and exact-revision hosted/fidelity gates remain outside this local result. |
+
+No row status was changed. Slice12 remains open for CDC on S12-01/02/03 and
+was not closed or advanced. The only supporting artifact is the existing
+`artifacts/batch-record.md`; no helper, copied roster or secondary validator
+was created. Planning writes are limited to that record, ledger Evidence and
+Notes cells, and this closing report.
