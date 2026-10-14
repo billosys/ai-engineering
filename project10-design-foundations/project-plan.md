@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.62**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.63**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -135,8 +135,10 @@ revision applicability for both.
    at sourcecbb5b893/planningd665c388, all four rows done. Open
    [Arc02/Slice11](arc02-theory-and-evidence/slice11-layout-and-measure-source-fixes/cc-prompt.md)
    has now independently closed at sourcefce72353/planning8df2776a, four rows done.
-   Continue with [Arc02/Slice12](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt.md):
-   three core Brown cards, complete available-evidence review and same-batch fixes.
+   Was: [Arc02/Slice12 initial assignment](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt.md)
+   for three core Brown cards. Now: execute its
+   [Iteration01](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt-iteration01.md)
+   to complete remaining teaching/support/lineage repairs; one row done, three open.
    Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -258,9 +260,12 @@ Arc02/Slices01–11 are independently closed at their recorded scopes. Slice10
 ships five guide corrections at sourcecbb5b893; its four criteria are done. Was:
 Slice10 and then Slice11 were active. Now Slice11 is independently closed at
 sourcefce72353/planning8df2776a, with its four guide contexts accepted. Current
-assignment: [Slice12](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/slice-plan.md),
+slice: [Slice12](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/slice-plan.md),
 review three related core cards completely against available evidence and
-apply supported corrections in that batch. Four new child rows start open; original fidelity
+apply supported corrections in that batch. Was: four child rows open. Now: sourcefd876e7c/planning0631c98a is reviewed;
+one integration row is done and three remain open. Execute
+[Iteration01](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt-iteration01.md)
+for remaining teaching and support/lineage defects before slice closure; original fidelity
 and any unresolved relationship/CQ support remain explicit. This bounded unit
 does not satisfy the rest of the233-card review. All230 other cards remain owned;
 the ten arc criteria keep their prior dispositions. Arc04 remains
@@ -269,6 +274,10 @@ originals/fidelity, actual browser behavior, fresh-context and final installed
 package/release gates remain open with their existing owners.
 
 ## Version History
+
+- 1.63 (2026-10-14): Arc02/Slice12 initial review retains passing arithmetic/preservation and
+  accepts integration, but returns remaining teaching/support/lineage defects
+  to one body-only refinement. All parent criteria and release gates unchanged.
 
 - 1.62 (2026-10-14): Arc02/Slice11 independently closes the guide correction;
   open Slice12 for coherent core-card review/fixes with current math/scope and

@@ -6,7 +6,10 @@ depends-on: [accepted fluid-scale arithmetic, slice11-layout-and-measure-source-
 
 # Slice12 — Correct the Modular-Scale Card Core
 
-Plan revision **1.0**, opened2026-10-14. Initial CC assignment; four criteria open.
+Plan revision **1.1**, updated2026-10-14. Was: initial assignment, four open.
+Now: [Iteration01](cc-prompt-iteration01.md) is active after independent initial
+review; S12-04 done at sourcefd876e7c, S12-01/02/03 open. The initial prompt
+and CC return remain historical inputs; [CDC record](cdc-verification.md) governs.
 [Project](../../project-plan.md), [arc](../arc-plan.md), [ledger](ledger.md) and
 [initial prompt](cc-prompt.md) govern. Two contributors: CDC Sofie authors/reviews,
 separate CC executes through Operator relay; Expedited Mode. This details the
@@ -24,7 +27,12 @@ ratio. Brown's method and historical values stay attributable, not universal
 requirements or exact recalculations. The useful result is corrected cards on
 main with explicit source support and original-fidelity/edge/CQ limits.
 
-Exact source`fce72353178c4cb8e742268e7715d70050ebc397`; planning preparation predecessor`8df2776a98bd6ff79a55fe2675a5bbdfb57413c5`.
+Initial assignment's historical source/write contract follows. For the current
+Iteration01, sourcefd876e7c and the new prompt's three body-only paths supersede
+the five-path initial write set; all metadata and owning version/history are
+now protected. Planning outputs stay the same three records.
+
+Exact initial source`fce72353178c4cb8e742268e7715d70050ebc397`; planning preparation predecessor`8df2776a98bd6ff79a55fe2675a5bbdfb57413c5`.
 Pin actual issuing commit at intake. Five source output paths: three cards in
 the prompt's hash table, design SKILL version only1.0.8→1.0.9, and its matching
 sibling history entry. All eight live-guide/entrypoint content bytes,161 originals
@@ -97,9 +105,30 @@ required-full cards and bounded source/registry reads, no full-corpus shortcuts.
 
 | Assignment | Issue/predecessor | Scope/status |
 |---|---|---|
-| [Initial cc-prompt.md](cc-prompt.md) |2026-10-14; preparation8df2776a; actual issuing commit recorded at intake | Active: three complete core-card reviews/fixes, six existing metadata leaves, version/history and scoped return; original fidelity/changed hosting remain open. |
+| [Initial cc-prompt.md](cc-prompt.md) |2026-10-14; preparation8df2776a; actual issuing commit recorded at intake | Returned for review at sourcefd876e7c/planning0631c98a; one done, three open after F01–F03. |
+| [Iteration01](cc-prompt-iteration01.md) |2026-10-14; sourcefd876e7c; planning predecessor0631c98a; actual issuing commit recorded at CC intake | Active: F01 remaining scope/ratio-direction clauses, F02 exact source joins, F03 historical bridge; three body-only source paths and the same three planning records. |
+
+## Iteration01 author readiness
+
+CDC inspected all three current full cards, Brown identity/article1–30 and
+109–356, actual historical bridge path-selected rows and current data/source
+deltas. F01’s indexed ratio1/2 witness demonstrates the recognition error;
+F02’s claimed arithmetic-list locators do not support its two-strand/application
+claims; F03’s main revision lacks the planning artifact and omits four other
+header normalizations. The new prompt supplies exact repair shapes, real source
+locators, revision/row joins and discriminating positive/contrary checks.
+Design-complete within existing scope: no new metadata changes, bodies only,
+current1.0.9/history retained as preacceptance refinement, no new inquiry.
+Concept-card evidence/relationship distinctions and optional design/type guidance
+shape the correction. Executable/falsifiable/coherent: three source body paths,
+three existing planning outputs, exact input hashes, retained sound arithmetic
+and meaningful affected checks. Broader fidelity/corpus/hosted gates unchanged.
 
 ## Version History
+
+- 1.1 (2026-10-14): Initial CDC review accepts integration only; issue a narrow
+  source/evidence correction for repeated scope, ratio direction and actual
+  support/lineage joins. No new slice or weaker full-corpus contract.
 
 - 1.0 (2026-10-14): Begin coherent corpus-core correction after guide batch
   acceptance; preserve complete review obligations and historical/source/data
