@@ -43,3 +43,10 @@ Decoded the 1,062 whitelisted escaped Unicode display tokens in 46 post-card bod
 Corrected fluid-scale ratio orientation and displayed rounding, qualified
 per-step interpolation and finite clamp bounds, and scoped the musical-interval
 connection as a construction option without a perceptual guarantee.
+
+## Version 1.0.8 - 2026-10-14
+
+Corrected layout principles and their foundations summary to present intrinsic
+composition and spatial patterns as contextual methods. Clarified that justified
+fixed values and discrete queries remain available, and that tested diagnostics
+do not guarantee outcomes across content, users or browsers.

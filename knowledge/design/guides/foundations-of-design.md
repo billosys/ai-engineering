@@ -275,12 +275,15 @@ prearranged set of harmonious proportions.\" This attributed description
 does not prove that every constructed scale is visually harmonious,
 readable or accessible; judge it with the project's content and conditions.
 
-**Every Layout (Heydon Pickering & Andy Bell)** defines 13 layout
-primitives --- Stack, Box, Center, Cluster, Sidebar, Switcher, Cover,
-Grid, Frame, Reel, Imposter, Icon, Container --- that are intrinsically
-responsive without media queries. Philosophy: \"composition over
-inheritance\" applied to CSS. This directly maps the GoF software
-engineering principle to front-end architecture.
+**Every Layout (Heydon Pickering & Andy Bell)** offers a vocabulary of
+13 layout primitives: Stack, Box, Center, Cluster, Sidebar, Switcher,
+Cover, Grid, Frame, Reel, Imposter, Icon and Container. Intrinsic sizing
+and wrapping can make compositions adapt without a query where the task
+permits; content or interaction may still require a discrete mode.
+The emphasis on composing reusable parts has a useful parallel with
+software design, rather than proving identical semantics or universal
+coverage. Select the patterns that fit, retain appropriate markup and
+interaction behavior, and check the result with actual content and conditions.
 
 **Utopia (James Gilyead & Trys Mudford)** offers one approach to fluid
 responsive design: choose endpoint bases, ratios and an interpolation

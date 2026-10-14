@@ -197,53 +197,51 @@ content and constraints; no principle generates a correct decision
 automatically.
 
 :::: {.principle-card numeral="I"}
-### Suggest, Never Prescribe
+### Start with Constraints
 
 ::: prose
-The single most important principle. Every fixed value in your CSS is a
-place where you have overridden the browser\'s judgment with your own.
-A project may set a maximum measure or minimum target size when that constraint
-serves its content or interaction. Intrinsic sizing, `min-`, `max-`, `clamp()`,
-`auto`, `flex-basis` and fixed values each have uses. Choose among them for the
-required behavior and verify the browser's rendered result.
+Express the relationships and constraints the task needs, then choose
+CSS values that support them. A project may set a maximum measure or
+minimum target size when it serves the content or interaction. Intrinsic
+sizing, `min-`, `max-`, `clamp()`, `auto`, `flex-basis` and fixed values
+each have uses; select them for the required behavior.
 
-This is not laziness. It is recognition that the browser knows things
-you do not --- the user\'s font size preferences, their zoom level,
-their screen dimensions, whether they are using a split-screen view,
-whether they have a notch or a toolbar. Your CSS should provide
-*constraints within which good outcomes are inevitable*, not blueprints
-that are correct in one context and broken in all others.
+The browser evaluates layout from its available space, used fonts and
+CSS rules. It does not know the task or guarantee a good composition.
+Check the result with representative content, user font preferences,
+zoom and relevant viewport or container conditions. Constraints can
+support adaptable design; they do not make good outcomes inevitable.
 
-**The test:** inspect whether intrinsic behavior covers the needed cases. Add a
-media or container query when content, task or interaction calls for a discrete
-change.
+**The test:** inspect whether intrinsic behavior preserves the task.
+Add a media or container query when content, interaction, user needs or
+output conditions call for a discrete change. State the reason and test
+the resulting modes, rather than treating query removal as a universal test.
 :::
 ::::
 
 :::: {.principle-card numeral="II"}
-### Compose, Never Inherit
+### Compose Reusable Relationships
 
 ::: prose
-No layout should be designed as a monolithic component. Every layout is
-a composition of simpler, reusable primitives --- Stacks for vertical
-flow, Boxes for padding, Centers for width constraints, Clusters for
-horizontal groups, Sidebars for main-plus-aside patterns, Switchers for
-responsive column-to-stack transitions, Covers for vertically centered
-content, Grids for repeating patterns, Frames for aspect-ratio-locked
-media, Reels for horizontal scrolling sequences.
+Use reusable spatial patterns where they make relationships clearer:
+Stacks for vertical flow, Boxes for padding, Centers for inline-size
+constraints, Clusters for horizontal groups, Sidebars for main-plus-aside
+patterns, Switchers for column-to-stack arrangements, Covers for centered
+content, Grids for repeating patterns, Frames for aspect ratios and Reels
+for horizontal sequences. This vocabulary supports composition; it is
+not a proof that every task must fit these patterns.
 
-These primitives have no semantic meaning in isolation. A Stack is not a
-\"card body\" or a \"page section\" --- it is just vertical space
-between adjacent elements. Meaning emerges from *composition*: a card is
-a Box containing a Stack; a page header is a Cover containing a Center
-containing a Stack. By working with primitives, you guarantee that every
-spatial relationship in your system comes from a small, tested
-vocabulary. Inconsistency becomes structurally impossible.
+A card might be a Box containing a Stack; a page header might combine
+Cover, Center and Stack. These examples describe spatial arrangement.
+Choose appropriate markup and interaction behavior separately. Shared
+patterns can support consistency, but token choices, exceptions and
+interactions still need review. Composition is a design method, not a
+ban on CSS inheritance or justified additional rules.
 
-**The test:** can you describe any layout in your system as a
-composition of named primitives? If you need a word that is not a
-primitive name, you have either found a new primitive or you are
-thinking at the wrong level of abstraction.
+**The test:** describe the relationships that matter to the task and
+check whether the chosen patterns express them. If the vocabulary is
+insufficient, adapt or extend it with a reason; an unfamiliar pattern
+does not by itself show that the designer used the wrong abstraction.
 :::
 ::::
 
@@ -251,27 +249,26 @@ thinking at the wrong level of abstraction.
 ### Let Dimensions Flow From Content
 
 ::: prose
-The web is a content-driven medium. The width of a paragraph should be
-determined by its measure (in `ch` units). The height of a section
-should be determined by the amount of content it contains. The gap between elements should support their grouping and interaction; choose
-fixed, fluid or shared spacing values for the actual task. The number of columns in a grid should be
-determined by the minimum acceptable item width and the available space
-(via `auto-fit` and `minmax()`).
+Let content inform dimensions where the task permits. A paragraph may
+use a font-relative measure such as `ch`, checked with the used fonts
+and scripts; the unit does not count arbitrary characters. Let section
+block-size follow content where appropriate, and choose gaps for grouping
+and interaction. Fixed, fluid and shared spacing can each serve a task.
+A grid may use `auto-fit` and `minmax()` when their track-sizing behavior
+fits the content and available space; a fixed column count may also be justified.
 
-When you prescribe a height, you are declaring that you know how much
-content will be present. You almost certainly do not. When you prescribe
-a width in pixels, you are declaring that you know the user\'s viewport
-size. You do not. When you prescribe a column count, you are declaring
-that you know the container\'s width. In a world of container queries
-and intrinsic design, you should not need to.
+A preferred or fixed size does not show that its author knows all future
+content or viewport sizes. Depending on sizing and overflow rules,
+content may exceed the box, clip or scroll. Review the used size and
+content access. Explicit heights, pixel widths and column counts can
+serve requirements when their consequences are checked; intrinsic sizing
+and container queries are alternatives, not a ban on explicit values.
 
-Content determines dimensions. Context determines arrangement. The
-designer\'s job is to set the *rules of derivation*, not the values
-themselves.
-
-**The test:** if the content doubles in length, does the layout still
-work? If the viewport halves in width, does it still work? If both
-happen simultaneously, does it still work?
+**The test:** expand real content, narrow the available space and check
+the combined case. Inspect reflow, overflow, grouping and task operation,
+including access to essential labels, controls and meaningful wide data.
+These are diagnostics for the tested conditions, not proof across all
+content, users or browsers. Record exceptions and untested cases.
 :::
 ::::
 
