@@ -153,8 +153,8 @@ returned all ten selected action projections. The first named planning
 `git commit --only` attempt rejected the two new untracked paths; no staged
 content was changed. A second `--only` attempt had a mistyped ledger path and
 was rejected; only the two authorized new planning outputs were staged, and no
-commit was created. The recovery is to stage the updated batch record and
-ledger, then retry the exact three-path `--only` commit. No assigned check
-failed or was blocked. No browser, assistive-technology, WCAG, full-guide,
-full-card or historical-source-fidelity check was commissioned or claimed by
-this batch.
+commit was created. Recovery: the updated batch record and ledger were staged,
+the cached path set was verified against the exact three planned outputs, and
+the named-path commit then succeeded. No assigned check failed or was blocked.
+No browser, assistive-technology, WCAG, full-guide, full-card or
+historical-source-fidelity check was commissioned or claimed by this batch.
