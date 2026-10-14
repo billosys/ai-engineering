@@ -50,13 +50,13 @@ css_implementation:
 
 # Quick Definition
 
-A scale ratio is the declared multiplier for one ratio-generated strand: multiply by it to move one step up that strand and divide by it to move down. A construction with several strands can have more than one declared ratio.
+A scale ratio is the declared multiplier `r>0` in one strand `v[n]=a*r^n` with `a>0`. In declared index order, `v[n+1]=v[n]*r` and `v[n+1]/v[n]=r`; when `r>1`, values rise as `n` increases, when `0<r<1` they fall, and `r=1` repeats the same value. “Up” and “down” describe value direction, which depends on `r`, not index direction alone. A construction with several strands can have more than one declared ratio.
 
 # Core Definition
 
-For one strand, the ratio and a base determine its values. Brown writes: "You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers." In a multi-strand construction, each strand has its own inputs; adjacent values in the sorted union do not generally share one ratio.
+For one strand, a positive base `a>0` and ratio `r>0` determine exact values `v[n]=a*r^n` for integer `n`, and adjacent indexed terms satisfy `v[n+1]/v[n]=r`. Brown writes: "You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers." In a multi-strand construction, each strand has its own inputs; adjacent values in the sorted union do not generally share one ratio.
 
-A ratio expresses a proportion between two quantities. Brown uses the notation "1:1.618" throughout, where the left term is always 1 and the right term is the multiplier. Equivalently, the ratio can be expressed as a single decimal (1.618) representing how much larger each successive scale step is relative to the previous.
+A ratio expresses a proportion between two quantities. Brown uses notation such as `1:1.618`, where the left term is 1 and the right term is the multiplier. The decimal `1.618` represents the multiplier; it approximates, but is not equal to, the golden ratio. For `r>1`, each next indexed value is larger than the previous; for `0<r<1` it is smaller, and `r=1` repeats it.
 
 Brown explains why `1:1.618` felt meaningful for his Minion/Renaissance example, citing historical and cultural connections. That is his contextual rationale; the article does not establish that every project must choose a historically grounded ratio or that such a choice guarantees a better result.
 
@@ -66,22 +66,22 @@ This is a foundational concept with no prerequisites within this source.
 
 # Key Properties
 
-1. **Generative within one strand**: A declared ratio and positive base generate the values `a*r^n` for integer steps `n`. A multi-strand construction has separate inputs for each strand.
-2. **Constant within a strand**: The ratio relates each successive pair in one strand. The adjacent sorted values of a multi-strand merge generally have different quotients.
-3. **Contextual selection**: Brown gives historical and cultural reasons for his ratio in one project. The source does not make that rationale a rule for other projects.
-4. **Step spacing within a strand**: Ratios nearer 1 produce smaller multiplicative steps than larger ratios. Suitability for a hierarchy depends on content and rendered results.
+1. **Generative within one strand**: A declared positive base `a>0` and ratio `r>0` generate exact values `a*r^n` for integer steps `n`, with `v[n+1]/v[n]=r`. A multi-strand construction has separate inputs for each strand.
+2. **Constant within a strand**: Exact adjacent indexed terms satisfy `v[n+1]/v[n]=r`; rounded displayed values may not yield exactly constant quotients. The adjacent sorted values of a multi-strand merge generally have different quotients.
+3. **Contextual selection**: Begin with the content, hierarchy and constraints of the design context. Brown’s historical and cultural rationale for `1.618` is optional context for his example, not a universal selection rule.
+4. **Step spacing within a strand**: For `r>1`, ratios nearer 1 produce smaller multiplicative increases between indexed steps than larger ratios. At `r=1` values repeat; for `0<r<1`, describe the factor and value direction explicitly. Suitability for a hierarchy depends on content and rendered results.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the design context and its relevant cultural, historical, or aesthetic associations.
+1. Identify the content, hierarchy and constraints that the scale is meant to serve. Cultural, historical or aesthetic associations may be considered when relevant; Brown’s 1.618 example is one contextual choice.
 2. If using a geometric strand, declare its ratio for the project. Brown gives a contextual reason for his choice; he does not establish a universal preference for musical or geometric origins.
-3. The ratio may be written as `1:N` where `N` is the multiplier; `1:1.333` is a three-decimal display approximation to the perfect-fourth ratio `4/3`.
-4. Apply: next value = current value × N; previous value = current value / N.
+3. The ratio may be written as `1:N` where `N` is the multiplier. Decimal `1.333` approximates `4/3`; decimal `1.618` approximates φ; preserve exact `1.5 (=3:2)` for the perfect-fifth ratio.
+4. Apply in declared indexed order: `v[n+1]=v[n]*r` and `v[n-1]=v[n]/r`. Value direction is ascending with increasing `n` only when `r>1`; it reverses for `0<r<1`, and `r=1` repeats a value.
 
 ## To Identify/Recognise:
-1. In a claimed single strand, take two adjacent values and divide the larger by the smaller.
-2. A consistent quotient across adjacent values supports a single-strand ratio claim. Do not use this test on a sorted multi-strand union as though it were one strand.
+1. In a claimed single strand, preserve declared index order and calculate `v[n+1]/v[n]`; dividing the larger value by the smaller discards direction and may return `1/r`.
+2. Compare exact terms when asserting an exactly constant quotient; rounded displays may only approximate it. Do not use this test on a sorted multi-strand union as though it were one strand.
 3. Check designer's CSS comments — Tim Brown's practice is to document the scale in the stylesheet header (e.g., "18px @ 1:1.618").
 
 # Context & Application
@@ -94,7 +94,7 @@ This is a foundational concept with no prerequisites within this source.
 
 **Music → SHARED CONSTRUCTION**: A selected musical interval ratio such as `3:2` can be reused as the multiplier for one typographic strand. The numeric construction is shared; a musical scale as a whole is not thereby a geometric type strand, and auditory harmony does not establish visual harmony.
 
-**Mathematics → RIGOROUS WITHIN ONE STRAND**: For a strand with declared base `a` and ratio `r`, values `a*r^n` have common ratio `r`. A merged multi-strand list generally does not inherit a common ratio across its adjacent sorted values.
+**Mathematics → RIGOROUS WITHIN ONE STRAND**: For a strand with declared positive base `a>0` and ratio `r>0`, exact values `a*r^n` have indexed quotient `v[n+1]/v[n]=r`. A merged multi-strand list generally does not inherit a common ratio across its adjacent sorted values.
 
 # Examples
 
@@ -108,13 +108,13 @@ This is a foundational concept with no prerequisites within this source.
 - (None in this source — the ratio is a primitive input to the scale system.)
 
 ## Enables
-- **Modular scale** — The ratio is the scale's generative parameter; no scale exists without it.
-- **Modular scale construction (procedure)** — The ratio is the required second input (alongside the base unit) to the construction procedure.
+- **Modular scale** — A declared ratio generates one geometric strand. A modular construction may use separate strand inputs; visual scales may also use additive or independently selected values.
+- **Modular scale construction (procedure)** — The ratio is an input to a ratio-generated construction, alongside its positive base; other visual scale choices may be additive or independent.
 
 ## Related
 - **Golden ratio** — One specific, historically prominent scale ratio (1.618).
-- **Perfect fourth ratio** — Another specific ratio (1.333), derived from music.
-- **Perfect fifth ratio** — Another specific ratio (1.5), derived from music.
+- **Perfect fourth ratio** — Decimal `1.333` approximates the exact ratio `4/3`, derived from music.
+- **Perfect fifth ratio** — Exact ratio `1.5 (=3:2)`, derived from music.
 - **Ratio selection criteria** — The guidelines for choosing an appropriate ratio.
 
 ## Contrasts With

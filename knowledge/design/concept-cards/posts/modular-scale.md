@@ -59,7 +59,7 @@ A modular scale uses one or more ratio-generated strands as a source of proporti
 
 Tim Brown defines a modular scale through both paraphrase and direct quotation: "A modular scale is a sequence of numbers that relate to one another in a meaningful way." He then quotes Robert Bringhurst: "A modular scale, like a musical scale, is a prearranged set of harmonious proportions."
 
-For one strand, choose a positive base a and ratio r; its values are a*r^n for integer n. With r greater than 1, increasing n gives ascending steps and decreasing n gives descending steps. A multi-strand construction generates each strand from its own starting number or ratio, then may combine and sort the results. Brown describes using scale values for type sizes, line height, line length, margins, column widths and more; this is his design approach, not a requirement that every measurement use one scale.
+For one strand, choose a positive base `a>0` and ratio `r>0`; its exact terms are `v[n]=a*r^n` for integer `n`, with `v[n+1]/v[n]=r` in the declared indexed order. When `r>1`, increasing `n` gives ascending values and decreasing `n` gives descending values; when `0<r<1`, value direction reverses, and `r=1` repeats the same value. A multi-strand construction generates each strand from its own starting number or ratio, then may combine and sort the results. Brown describes using scale values for type sizes, line height, line length, margins, column widths and more; this is his design approach, not a requirement that every measurement use one scale.
 
 # Prerequisites
 
@@ -67,8 +67,8 @@ This is a foundational concept with no prerequisites within this source. It is i
 
 # Key Properties
 
-1. **Ratio-derived strands**: Each strand is generated from its declared base and ratio (for example, `a*r^n`). A construction may combine multiple strands.
-2. **Geometric within a strand**: Each strand advances by multiplication rather than addition, giving a constant relative step within that strand. Adjacent values in a merged list need not share that ratio.
+1. **Ratio-derived strands**: Each strand is generated from its declared positive base and ratio (`a>0`, `r>0`; for example, `a*r^n`). A construction may combine multiple strands.
+2. **Geometric within a strand**: In declared index order, exact terms satisfy `v[n+1]/v[n]=r`; rounded displays may not preserve an exactly constant quotient. For `r>1`, increasing the index raises values; for `0<r<1`, it lowers them; `r=1` repeats one value. Adjacent values in a merged list need not share that ratio.
 3. **Possible applications**: Brown's article draws on scale values for type sizes, line height, line length, margins and column widths. A project may choose independent or optical values where they fit better.
 4. **Declared starting values**: A strand needs a positive base. Brown's example starts with a tested body-text size and a second important number; that typeface-first choice is his contextual method, not a universal requirement.
 5. **Can be multi-stranded**: Brown describes using two starting numbers or two starting ratios and combining the resulting scales. The sorted union provides additional options, but need not be geometric or guarantee visual or auditory harmony.
@@ -76,8 +76,8 @@ This is a foundational concept with no prerequisites within this source. It is i
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Declare a positive base for each strand. Brown's example starts from 18px after testing Minion body text; this is a contextual choice, not a required base-selection method.
-2. Choose a ratio if a ratio-generated strand serves the design context; Brown's example uses 1:1.618, a decimal approximation to the golden ratio.
+1. Declare a positive base `a>0` and ratio `r>0` for each strand. Brown's example starts from 18px after testing Minion body text; this is a contextual choice, not a required base-selection method.
+2. Choose a ratio if a ratio-generated strand serves the design context; Brown's example uses `1:1.618`, whose decimal multiplier 1.618 approximates the golden ratio.
 3. For the independent base-18 example at `r = 1.618`, calculate from the base: `18*r = 29.124` and `18*r² = 47.123` after half-even rounding to three decimals. Do not reuse rounded terms as the next input.
 4. For this independent calculation from the exact base, divide by successive powers of the selected ratio; at `r = 1.618`, `18/r` rounds to `11.125` to three decimals. Brown's separate printed example for base 10 reports `3.819` and `2.360` descending; those are retained as his printed values, not verified recalculations.
 5. Optionally: introduce a second important number (e.g., a large headline size) to create a double-stranded scale, merging both sequences in ascending order.
@@ -99,7 +99,7 @@ This is a foundational concept with no prerequisites within this source. It is i
 
 **Music → SHARED CONSTRUCTION**: Brown quotes Bringhurst's comparison of a modular scale to a musical scale and uses a selected ratio as a typographic multiplier. A particular musical interval ratio can therefore be reused in one typographic strand. This does not mean every musical scale has a single constant adjacent ratio, nor that auditory harmony establishes visual harmony.
 
-**Mathematics → RIGOROUS WITHIN A STRAND**: With a declared base `a` and ratio `r`, one strand has terms `a*r^n` for integer n. A sorted union of strands is a separate construction and need not itself be geometric.
+**Mathematics → RIGOROUS WITHIN A STRAND**: With declared positive base `a>0` and ratio `r>0`, one strand has exact terms `a*r^n` for integer `n`, with adjacent indexed quotient `v[n+1]/v[n]=r`. A sorted union of strands is a separate construction and need not itself be geometric.
 
 # Examples
 

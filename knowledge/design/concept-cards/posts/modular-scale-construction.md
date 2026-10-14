@@ -47,7 +47,7 @@ css_implementation:
 
 # Quick Definition
 
-Modular-scale construction is one procedure for declaring a ratio and one or more positive starting values, generating each corresponding strand, and considering selected values for a composition. A sorted merge is a list of options, not generally one geometric sequence, and using it for every measurement is optional.
+Modular-scale construction is one procedure for declaring a positive ratio `r>0` and one or more positive starting values `a>0`, generating each corresponding strand as `a*r^n`, and considering selected values for a composition. In a strand, `v[n+1]/v[n]=r` in declared index order; `r>1` rises as `n` increases, `0<r<1` falls, and `r=1` repeats a value. A sorted merge is a list of options, not generally one geometric sequence, and using it for every measurement is optional.
 
 # Core Definition
 
@@ -84,7 +84,7 @@ He explicitly endorses improvisation at the application stage: scale values are 
 2. **If using Brown's route, test a body size** — He looks for a size that works for his design goals and rendering, calling the chosen 18px Minion size crisp. This example does not set a universal optimal size.
 3. **Declare a ratio for each strand** — Brown chooses `1:1.618` for historical and cultural reasons specific to his Minion/Renaissance example. A project's ratio choice is contextual, not governed by a universal preference rule.
 4. **Identify secondary base (optional)** — Find a second important number from a key compositional element (large headline, media width, caption size).
-5. **Generate scale** — Multiply and divide from each base by the ratio to produce ascending and descending sequences. Merge sequences if double-stranded.
+5. **Generate scale** — For each declared base `a>0` and ratio `r>0`, generate exact terms `v[n]=a*r^n`; adjacent indexed terms satisfy `v[n+1]/v[n]=r`. For `r>1`, increasing `n` raises values and decreasing `n` lowers them; for `0<r<1` the value direction reverses; `r=1` repeats the base. Merge sequences if double-stranded.
 6. **Apply selected values if useful** — Brown tests type sizes, line height, column widths and margins in the browser. Keep independent, fixed or optical values where they work better.
 7. **Document** — Add a CSS comment identifying the scale parameters (or linking to the modularscale.com URL).
 8. **Improvise as needed** — When no scale value looks right, combine values (comment math), round values, or use a non-scale value; document any improvisations.
@@ -98,11 +98,11 @@ He explicitly endorses improvisation at the application stage: scale values are 
 
 - **Typical contexts**: Beginning of a web design project; redesign; building a new type system.
 - **Common applications**: Full-page layout with modular scale; establishing a type hierarchy; providing a documented measurement rationale for a design system.
-- **Historical/stylistic notes**: Brown notes this approach aligns with "content-out" design (from Mark Boulton), in contrast to "canvas-in" design that starts with viewport/grid dimensions. The procedure inverts conventional web design workflow.
+- **Historical/stylistic notes**: Brown paraphrases Mark Boulton’s “canvas in” and “content out” positions and presents his content-out approach as an inversion of the then-common web design workflow. This is Brown’s historical framing, not a claim that every design workflow is inverted.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS WITHIN EACH STRAND**: For a declared positive base `a` and ratio `r`, the generated strand has terms `a*r^n` for integer `n`. Merging and sorting multiple generated strands is a distinct operation; the result need not be geometric.
+**Mathematics → RIGOROUS WITHIN EACH STRAND**: For declared positive base `a>0` and ratio `r>0`, a strand has exact terms `a*r^n` for integer `n`, with `v[n+1]/v[n]=r`. Merging and sorting multiple generated strands is a distinct operation; the result need not be geometric.
 
 # Examples
 
