@@ -280,3 +280,13 @@ an input, not a request to restore legacy configuration. Four child criteria
 start open. All ten parent criterion texts and statuses remain unchanged;
 full card/live/relationship review, originals/fidelity and actual behavior
 remain incomplete. Every current card and the existing diagnostic are protected.
+
+## Slice10 closure and Slice11 opening — 2026-10-13
+
+[Independent Slice10 review](slice10-fluid-scale-source-fixes/cdc-verification.md)
+closes all four child criteria at sourcecbb5b893/planningd665c388: five exact guide
+corrections and fresh design package pass arithmetic/scope/preservation checks.
+All ten arc criterion texts/statuses remain unchanged. [Slice11](slice11-layout-and-measure-source-fixes/slice-plan.md)
+opens four result-oriented child rows for remaining layout-method overclaims,
+including a foundations repeat. Accepted Slice04 policy is reused; actual
+browser behavior and full guide/card semantic/fidelity coverage remain open.

@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.36**; Arc06 closed and Slice10 is the active CC assignment.
+Plan revision **1.37**; Slice10 closed and Slice11 is the active CC assignment.
 
 Deliver corrected portable design content, complete 233-card/eight-live-file
 review and reconciliation, and usable accessibility/typesetting procedures with
@@ -47,7 +47,8 @@ before each source assignment. Keep all 233 identities and eight live-file owner
 | [Slice07 — portable identity source fixes](slice07-portable-identity-source-fixes/slice-plan.md) | Closed at source 52f0b520/planning 7a135d80: five criteria done; identity/default removal, usable methods and preserved teaching | Actual fresh-context and full-live/corpus checks remain |
 | [Slice08 — token conventions source fixes](slice08-token-conventions-source-fixes/slice-plan.md) | Closed at source`1489e767`/planning`a900b68a`: seven source corrections,21-action walk, prescribed heading and fresh package independently accepted | Accepted Slice03; fresh source 52f0b520; preserve Slice06/07 corrections |
 | [Slice09 — post-card Unicode presentation](slice09-post-card-unicode-presentation/slice-plan.md) | Closed: source589d7c21 independently accepted; all four child rows done after Operator acceptance of five evidence strings; published and fully hosted-checked in accepted/closed Arc06 | Published `c4cc7427`; no original-source dependency for this encoding correction |
-| [Slice10 — fluid-scale source fixes](slice10-fluid-scale-source-fixes/slice-plan.md) | Active initial CC assignment: five remaining guide blocks; exact ratios/rounding, bounded interpolation and scoped music connection; all cards and diagnostic preserved | Accepted Slice01 proof and Slice07 current applicability; fresh source589d7c21, no originals needed for independent arithmetic |
+| [Slice10 — fluid-scale source fixes](slice10-fluid-scale-source-fixes/slice-plan.md) | Closed at sourcecbb5b893/planningd665c388: all four rows done; five exact corrections and fresh package independently checked | Accepted Slice01 proof and Slice07 current applicability; fresh source589d7c21, no originals needed for independent arithmetic |
+| [Slice11 — layout and measure source fixes](slice11-layout-and-measure-source-fixes/slice-plan.md) | Active: four coherent guide contexts correct inevitable-outcome, fixed-size, primitive-completeness and query-free overclaims; preserve useful composition | Accepted Slice04 policy, current sourcecbb5b893 and protected Slice10/Arc06 inputs; actual behavior remains separately owned |
 | Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
 | Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
 | Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
@@ -118,9 +119,11 @@ Slice08 is independently closed at source `1489e767`/planning `a900b68a`: all
 four criteria done. Slice09 is closed at source589d7c21; its corrected post
 presentation is now fully independently hosted-checked by Arc06/Slice02.
 Was: Arc06 composition awaited Operator acceptance. Now: the Operator accepts
-planning1fffb9dc/source589d7c21 on2026-10-13; Arc06 is closed. Current assignment:
-[Slice10 initial prompt](slice10-fluid-scale-source-fixes/cc-prompt.md), four child
-rows open, applies ready ratio/interpolation corrections directly in two guides.
+planning1fffb9dc/source589d7c21 on2026-10-13; Arc06 is closed.
+Was: [Slice10 initial prompt](slice10-fluid-scale-source-fixes/cc-prompt.md) was active.
+Now: all four rows are independently done at sourcecbb5b893/planningd665c388;
+Slice10 is closed. Current assignment: [Slice11](slice11-layout-and-measure-source-fixes/cc-prompt.md),
+four child rows open, applies remaining layout-method corrections directly.
 Do not repeat the accepted theory packet or restore removed legacy defaults.
 All corpus/readiness, broader research, actual browser and fresh-context task
 gates remain; no whole-file or full-finding closure follows from these source batches.
@@ -134,6 +137,12 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.37 (2026-10-13): Slice10 initial return independently closes all four rows;
+  exact fluid arithmetic/source/package delivery lands. Open coherent Slice11
+  layout-method corrections from accepted Slice04 policy and current repeats;
+  retain all ten arc criteria and full corpus/source/actual-behavior gates.
+
 
 - 1.36 (2026-10-13): Operator closes Arc06; resume Arc02 with Slice10 source
   corrections after current applicability inspection. Five exact guide blocks,

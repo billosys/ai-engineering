@@ -1,6 +1,7 @@
 # Project10 Ledger
 
-P10-01 planning authority is approved; P10-02–11 and added P10-12/13 remain open.
+P10-01 planning authority and P10-12 existing-field union are done;
+P10-02–11 and P10-13 final rendering applicability remain open.
 The shared audit and synthesis are planning inputs; no project delivery or release is accepted.
 
 Operator amendment 2026-10-12: all thirteen criteria and their statuses are
@@ -323,3 +324,13 @@ final package/release proof retain their existing owners and gates.
 opens a direct five-block guide correction with four child criteria. Every card
 and the existing diagnostic are protected; this batch neither reopens Arc06 nor
 claims complete semantic or accessibility acceptance.
+
+## Arc02/Slice10 source acceptance and continuation — 2026-10-13
+
+[Slice10](arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/cdc-verification.md)
+closes four child rows at sourcecbb5b893/planningd665c388, with arithmetic,
+233-card/161-original preservation and fresh package proof. All thirteen parent
+criterion texts/statuses remain unchanged; P10-01/12 stay done. Arc06 content
+proof remains applicable to unchanged cards, while P10-13 retains final-revision
+applicability. [Slice11](arc02-theory-and-evidence/slice11-layout-and-measure-source-fixes/slice-plan.md)
+is the next direct layout-method correction, not a new evidence-only phase.

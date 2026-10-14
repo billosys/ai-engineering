@@ -1,12 +1,12 @@
 ---
 slice: slice10-fluid-scale-source-fixes
-status: active
+status: closed
 depends-on: [slice01-fluid-scale-arithmetic accepted proof, slice07-portable-identity-source-fixes current applicability]
 ---
 
 # Slice10 — Correct the Remaining Fluid-Scale Guide Arithmetic
 
-Plan revision **1.0**, opened2026-10-13. Initial CC assignment; four criteria open.
+Plan revision **1.1**, closed2026-10-13. Initial CC assignment accepted; four criteria done.
 [Project plan](../../project-plan.md), [arc plan](../arc-plan.md) and
 [ledger](ledger.md) govern. Two contributors: CDC Sofie authors/reviews;
 separate CC implements through Operator relay. Expedited Mode remains active.
@@ -107,10 +107,24 @@ readiness self-checks, not acceptance of future CC implementation.
 
 | Assignment | Issue/predecessor | Scope and disposition |
 |---|---|---|
-| [Initial cc-prompt.md](cc-prompt.md) |2026-10-13; planning predecessor1fffb9dc; actual issuing commit recorded at intake | Active: apply five guide corrections, protect all current cards/diagnostic, return source and three planning outputs for CDC review. |
+| [Initial cc-prompt.md](cc-prompt.md) |2026-10-13; planning predecessor1fffb9dc; actual issuing commit recorded at intake | Accepted: sourcecbb5b893 / planningd665c388; all four rows independently done, source/package integrated and slice closed. |
 
 ## Version History
 
 - 1.0 (2026-10-13): Open direct fluid-scale source batch after Operator-accepted
   Arc06 closure; current-source recipe reuses accepted theory and preserves
   already-delivered portable methods rather than restoring old configurations.
+
+## Independent close and next assignment — 2026-10-13
+
+[CDC review](cdc-verification.md) accepts all four rows at sourcecbb5b893 /
+planningd665c388. Five exact guide replacements, owning version/history, arithmetic,
+reverse byte preservation and fresh package checks pass. Source233-card/161-original
+identities and the diagnostic remain unchanged. No full-finding, semantic,
+fidelity/browser or parent gate closes. Preserve the initial prompt and CC return.
+The next ready batch is [Slice11](../slice11-layout-and-measure-source-fixes/slice-plan.md),
+remaining layout-method corrections under the existing Arc02 review/fix authority.
+
+- 1.1 (2026-10-13): Initial CC return independently accepted with four criteria
+  done and usable source/package checked; close and advance to remaining layout
+  guidance without a new analysis phase or weakened higher-scale gates.

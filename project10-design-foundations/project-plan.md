@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.60**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.61**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -130,9 +130,11 @@ revision applicability for both.
    composition was Operator-gated. Now: the Operator accepts the prepared
    planning1fffb9dc packet; all seven arc rows are done and Arc06 is closed.
    P10-12 closes on that union; P10-13 retains final revision applicability.
-4. Open [Arc02/Slice10](arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/cc-prompt.md)
-   now: apply the accepted arithmetic correction to five remaining guide blocks
-   at source589d7c21; preserve all cards and the diagnostic configuration.
+4. Was: [Arc02/Slice10](arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/cc-prompt.md)
+   applied five ready arithmetic corrections. Now: it is independently closed
+   at sourcecbb5b893/planningd665c388, all four rows done. Open
+   [Arc02/Slice11](arc02-theory-and-evidence/slice11-layout-and-measure-source-fixes/cc-prompt.md)
+   for remaining layout-method overclaims; preserve all cards and shipped corrections.
    Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -250,16 +252,24 @@ GitHub proof and baseline/current bridge remain applicable. P10-01 and P10-12
 are done; P10-02–11 and P10-13 remain open. Existing-field alignment is accepted,
 not missing-field completion or full schema conformance.
 
-Arc02/Slices01–09 are independently closed at their recorded scopes. The current
-assignment is [Slice10](arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/slice-plan.md):
-ship remaining ratio/rounding/interpolation corrections in layout and foundations
-without changing cards, defaults or the existing diagnostic. Four child rows
-start open; the ten arc criteria keep their prior dispositions. Arc04 remains
+Arc02/Slices01–10 are independently closed at their recorded scopes. Slice10
+ships five guide corrections at sourcecbb5b893; its four criteria are done. Was:
+Slice10 was active. Now the current assignment is
+[Slice11](arc02-theory-and-evidence/slice11-layout-and-measure-source-fixes/slice-plan.md):
+correct remaining layout-method overclaims in four current guide contexts,
+preserving all cards and shipped changes. Four new child rows start open;
+the ten arc criteria keep their prior dispositions. Arc04 remains
 a roadmap entry. Complete card/live semantics and global reconciliation,
 originals/fidelity, actual browser behavior, fresh-context and final installed
 package/release gates remain open with their existing owners.
 
 ## Version History
+
+- 1.61 (2026-10-13): Arc02/Slice10 independently closes its direct arithmetic
+  correction and source/package checks; continue combined read/fix delivery in
+  Slice11 for remaining layout-method assertions. Keep all thirteen criteria,
+  accepted Arc06 content proof and final-revision/semantic/behavior gates.
+
 
 - 1.60 (2026-10-13): Operator accepts Arc06 composition prepared at1fffb9dc;
   close all seven arc criteria and P10-12's existing-field union. Retain P10-13
