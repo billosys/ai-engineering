@@ -40,25 +40,25 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Common ratio of a geometric sequence"
     rating: "rigorous"
-    note: "The scale ratio is precisely the common ratio r in the geometric sequence a, ar, ar², ar³. This is a definitional identity, not an analogy."
+    note: "For one declared geometric strand, the scale ratio is its common ratio r. These mathematical properties apply to that strand, not generally to the adjacent values of a merged multi-strand list."
 css_implementation:
   -
     property: "font-size (computed from ratio)"
-    example: "/* Base 18px, ratio 1.618 */ font-size: 18px; /* step 0 */ font-size: 29.124px; /* step 1: 18 × 1.618 */ font-size: 47.124px; /* step 2: 18 × 1.618² */"
+    example: "/* Base 18px, ratio 1.618 */ font-size: 18px; /* step 0 */ font-size: 29.124px; /* step 1: 18 × 1.618 */ font-size: 47.123px; /* step 2: 18 × 1.618² */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-A scale ratio is the fixed multiplier that generates every value in a modular scale — the single number by which you multiply to move one step up the scale, or divide to move one step down.
+A scale ratio is the declared multiplier for one ratio-generated strand: multiply by it to move one step up that strand and divide by it to move down. A construction with several strands can have more than one declared ratio.
 
 # Core Definition
 
-The scale ratio is the defining parameter of a modular scale. Brown states: "You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers." The ratio is not decorative — it is the generative engine. Every pair of adjacent values in the scale shares the same ratio.
+For one strand, the ratio and a base determine its values. Brown writes: "You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers." In a multi-strand construction, each strand has its own inputs; adjacent values in the sorted union do not generally share one ratio.
 
 A ratio expresses a proportion between two quantities. Brown uses the notation "1:1.618" throughout, where the left term is always 1 and the right term is the multiplier. Equivalently, the ratio can be expressed as a single decimal (1.618) representing how much larger each successive scale step is relative to the previous.
 
-The source emphasises that the ratio should be "meaningful" — chosen for cultural, historical, or contextual reasons, not arbitrarily. For Brown's Minion/Renaissance typography example, he chose 1:1.618 because golden-ratio proportions are historically connected to Renaissance book design and page layout.
+Brown explains why `1:1.618` felt meaningful for his Minion/Renaissance example, citing historical and cultural connections. That is his contextual rationale; the article does not establish that every project must choose a historically grounded ratio or that such a choice guarantees a better result.
 
 # Prerequisites
 
@@ -66,41 +66,41 @@ This is a foundational concept with no prerequisites within this source.
 
 # Key Properties
 
-1. **Generative**: The ratio alone (together with a base number) is sufficient to produce the entire scale — infinitely in both directions.
-2. **Constant**: The same ratio applies between every adjacent pair of values in the scale; it does not vary across the scale.
-3. **Meaningful selection**: Brown argues ratios should be chosen for relevance to the project's design, content, history, or cultural context — not for convenience.
-4. **Determines scale character**: A smaller ratio (e.g., 1.125) produces closely spaced values suitable for subtle hierarchy; a larger ratio (e.g., 1.618) produces widely spaced values with dramatic contrast between levels.
+1. **Generative within one strand**: A declared ratio and positive base generate the values `a*r^n` for integer steps `n`. A multi-strand construction has separate inputs for each strand.
+2. **Constant within a strand**: The ratio relates each successive pair in one strand. The adjacent sorted values of a multi-strand merge generally have different quotients.
+3. **Contextual selection**: Brown gives historical and cultural reasons for his ratio in one project. The source does not make that rationale a rule for other projects.
+4. **Step spacing within a strand**: Ratios nearer 1 produce smaller multiplicative steps than larger ratios. Suitability for a hierarchy depends on content and rendered results.
 
 # Construction / Recognition
 
 ## To Construct/Create:
 1. Identify the design context and its relevant cultural, historical, or aesthetic associations.
-2. Select a ratio that fits: ratios with harmonic grounding (derived from musical intervals or geometry) are preferred over arbitrary decimals.
-3. Express the ratio in the form 1:N where N is the multiplier (e.g., 1:1.333 for the perfect fourth).
+2. If using a geometric strand, declare its ratio for the project. Brown gives a contextual reason for his choice; he does not establish a universal preference for musical or geometric origins.
+3. The ratio may be written as `1:N` where `N` is the multiplier; `1:1.333` is a three-decimal display approximation to the perfect-fourth ratio `4/3`.
 4. Apply: next value = current value × N; previous value = current value / N.
 
 ## To Identify/Recognise:
-1. Take any two adjacent values in a claimed scale and divide the larger by the smaller.
-2. If the result is consistent across all adjacent pairs, that quotient is the scale ratio.
+1. In a claimed single strand, take two adjacent values and divide the larger by the smaller.
+2. A consistent quotient across adjacent values supports a single-strand ratio claim. Do not use this test on a sorted multi-strand union as though it were one strand.
 3. Check designer's CSS comments — Tim Brown's practice is to document the scale in the stylesheet header (e.g., "18px @ 1:1.618").
 
 # Context & Application
 
 - **Typical contexts**: Any modular scale construction; type hierarchy planning; spacing system design.
 - **Common applications**: Selecting the ratio before building a modular scale; documenting the ratio in CSS comments so future designers can recreate the scale.
-- **Historical/stylistic notes**: Brown drew his 1:1.618 choice from Renaissance typography practice. Other practitioners choose ratios from musical intervals (see Musical Intervals as Ratio Sources), from geometric proportions found in nature, or from dimensions meaningful to a specific project.
+- **Historical/stylistic notes**: Brown explains his `1.618` choice through historical and cultural connections to his chosen typefaces and text. Other practitioners' ratio-selection rationales are outside the source passages reviewed here.
 
 ## Cross-Domain Connections
 
-**Music → RIGOROUS**: Musical interval ratios (derived from harmonic series integer ratios) produce exactly the numeric values used as typographic scale ratios. The ratio 3:2 defines both the perfect fifth in music and, when used as a typographic multiplier, produces a bold type scale. The numbers are identical; the domain of application differs.
+**Music → SHARED CONSTRUCTION**: A selected musical interval ratio such as `3:2` can be reused as the multiplier for one typographic strand. The numeric construction is shared; a musical scale as a whole is not thereby a geometric type strand, and auditory harmony does not establish visual harmony.
 
-**Mathematics → RIGOROUS**: The scale ratio is the common ratio r of a geometric sequence. Every property of geometric sequences (exponential growth, constant relative step size, multiplicative reversibility) applies directly to typographic modular scales.
+**Mathematics → RIGOROUS WITHIN ONE STRAND**: For a strand with declared base `a` and ratio `r`, values `a*r^n` have common ratio `r`. A merged multi-strand list generally does not inherit a common ratio across its adjacent sorted values.
 
 # Examples
 
-**Example 1** (from source, "Creating a modular scale for web design"): Brown chose ratio 1:1.618 (golden ratio) for his Minion/Renaissance example. Justification given: "It is a beautiful proportion with historical and cultural connections that make sense for the typefaces I've chosen and the text I'm setting... Page and textblock proportions in Renaissance works were based on the golden mean."
+**Example 1** (Brown's contextual choice, "Creating a modular scale for web design"): Brown chose decimal ratio `1.618` for his Minion/Renaissance example and gives historical and cultural reasons connected to his selected typefaces and text. The decimal approximates, but is not exactly, the golden ratio `φ`; this example is not a universal recommendation.
 
-**Example 2** (from source, "Modular scales and how they apply to web design"): The introductory worked example uses ratio 1:1.618 with base 10, producing the sequence 2.360, 3.819, 6.180, 10.000, 16.180, 26.179, 42.358.
+**Example 2** (source transcription, "Modular scales and how they apply to web design"): Brown prints `2.360, 3.819, 6.180, 10.000, 16.180, 26.179, 42.358` for base 10 and ratio `1.618`. The downward printed figures are retained as source report. Independent calculation from the exact base and decimal ratio, rounded half-even to three places, gives `2.361, 3.820, 6.180, 10.000, 16.180, 26.179, 42.358`.
 
 # Relationships
 
@@ -118,20 +118,20 @@ This is a foundational concept with no prerequisites within this source.
 - **Ratio selection criteria** — The guidelines for choosing an appropriate ratio.
 
 ## Contrasts With
-- **Arbitrary multipliers** — Choosing a multiplier (e.g., 1.25 or 2) without grounding in geometric, musical, or cultural significance; Brown argues this produces less meaningful results.
+- **Independent measurement choices** — Values selected without one shared geometric ratio; they may still suit a project's content, interaction or optical needs.
 
 # Common Errors
 
-- **Error**: Choosing a ratio because it is a "round" or easily divisible number rather than because it has harmonic or cultural meaning.
-  **Correction**: Brown argues ratio selection should be grounded in context: the ratio "should be meaningful to a project's design, content, or both."
+- **Error**: Treating one ratio origin as required for every typographic scale.
+  **Correction**: Brown explains the contextual reason for his choice. A project may use a geometric ratio when it helps, or select independent values when that construction does not suit its content or task.
 
-- **Error**: Using a ratio that is too large for the design context, creating extreme size jumps that overwhelm the hierarchy.
-  **Correction**: Match ratio size to the degree of contrast needed. A large ratio (1.618) suits display/editorial contexts; a smaller ratio may be more appropriate for dense informational UIs.
+- **Error**: Assuming a ratio alone guarantees a suitable hierarchy.
+  **Correction**: Check the generated values with actual content and rendered type. The article's 1.618 example does not establish that ratio as suitable for other projects or contexts.
 
 # Common Confusions
 
 - **Confusion**: The ratio and the base number are interchangeable — it doesn't matter which you change.
-  **Clarification**: They have completely different effects. Changing the base number shifts all values uniformly up or down. Changing the ratio alters the spacing between scale steps — the fundamental character of the scale.
+  **Clarification**: Within one strand, changing the base scales every term by the same factor; changing the ratio changes the relative step size. In a multi-strand construction, record each strand's own inputs.
 
 # Source Reference
 
@@ -139,9 +139,8 @@ This is a foundational concept with no prerequisites within this source.
 
 # Verification Notes
 
-- Definition source: Synthesised from procedural description — "You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers." No single-sentence definition of "ratio" as a standalone term is given; the concept is defined through use.
-- Confidence rationale: High — the ratio is central to every example and procedure in the article.
-- Uncertainties: The source does not explicitly explain why geometric (multiplicative) ratios are perceptually preferable to arithmetic progressions. This is domain knowledge; it should not be attributed to this source directly.
-- Cross-reference status: Verified.
-- Rosetta Stone check: Mapping added — music/interval-ratio (rigorous), mathematics/common-ratio (rigorous).
-- OCR issues: None significant in the relevant sections.
+- Historical extraction note: The prior record synthesized Brown's procedural description, retained extraction confidence `high`, and marked the cross-reference “Verified.” These are historical extraction observations, not current source-fidelity or semantic-review results.
+- Current scoped review: Prepared article lines 109–189 support Brown's contextual ratio example and ratio-and-number procedure. Independent calculations use exact decimal `1.618`; it approximates `φ`, not equals it.
+- Answerability: The retained CQ asking why visual scales “must” be geometric has a false universal premise. They need not be; a geometric strand is one available construction. The retained ratio-selection CQ is answerable only as a contextual decision, not a universal rule.
+- Relationships: The exact roster contains `golden-ratio` and `ratio-selection-criteria`; `perfect-fourth-ratio` and `perfect-fifth-ratio` have no exact slug endpoint. Preserve those two unresolved references for owner review; existence of other endpoints does not itself establish edge warrant.
+- Limits: Prepared-source support is not original-source fidelity; capture identity, conversion lineage and original-to-prepared comparison remain unresolved. The old extraction-confidence value is unchanged. CDC independent review is pending.

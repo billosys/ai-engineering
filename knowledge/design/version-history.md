@@ -50,3 +50,14 @@ Corrected layout principles and their foundations summary to present intrinsic
 composition and spatial patterns as contextual methods. Clarified that justified
 fixed values and discrete queries remain available, and that tested diagnostics
 do not guarantee outcomes across content, users or browsers.
+
+## Version 1.0.9 - 2026-10-14
+
+- Correct the three Brown modular-scale cards: scope geometric properties to an
+  individual strand, distinguish a sorted multi-strand merge, reconcile the
+  article's printed rounded values with independent calculation, and retain
+  contextual advice and improvisation as attributed examples. Clarify the
+  musical-ratio mapping without implying that a full musical scale is
+  geometric or that auditory harmony guarantees visual harmony. Record current
+  prepared-source and technical review limits while preserving prior extraction
+  observations and confidence.

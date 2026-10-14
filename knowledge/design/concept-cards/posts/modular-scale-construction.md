@@ -37,7 +37,7 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Computing terms of a geometric sequence: aₙ = a₀ × rⁿ"
     rating: "rigorous"
-    note: "Constructing a modular scale is literally computing terms of a geometric sequence. The procedure is identical; only the naming convention differs."
+    note: "Generating each strand computes a*r^n from its own declared base and ratio. Sorting the combined values of multiple strands is a separate operation; the merged list need not itself be geometric."
 css_implementation:
   -
     property: "font-size, width, margin, line-height"
@@ -47,20 +47,20 @@ css_implementation:
 
 # Quick Definition
 
-Modular scale construction is the procedure by which a designer selects a ratio and one or more base values, generates a sequence of proportionally related numbers, and then applies those numbers to all significant measurements in a composition.
+Modular-scale construction is one procedure for declaring a ratio and one or more positive starting values, generating each corresponding strand, and considering selected values for a composition. A sorted merge is a list of options, not generally one geometric sequence, and using it for every measurement is optional.
 
 # Core Definition
 
 Brown describes the construction process directly: "Making a modular scale is easy. You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers."
 
-The source articulates a multi-step process spanning three phases:
-1. **Input selection** — choosing base typeface, body text size, ratio, and optionally a second important number.
-2. **Scale generation** — multiplying and dividing repeatedly to produce the full sequence.
-3. **Application** — drawing values from the scale for all measurements in the composition (type sizes, widths, margins, line heights).
+The article's example spans three phases:
+1. **Contextual input selection** — Brown begins with an already selected typeface and text, tests a body-text size, chooses a ratio for that project, and adds an optional second important number.
+2. **Scale generation** — each starting value and its declared ratio generate a strand by multiplication or division.
+3. **Application** — Brown tries selected scale values for type sizes, widths, margins and line height, then adjusts where the result does not suit the composition. This is an approach, not a universal requirement.
 
 Brown also describes a fourth element: **documentation** — commenting the scale URL and origins in the CSS so others can recreate the decisions.
 
-He explicitly endorses improvisation at the application stage: scale values are "educated suggestions," not mandates. Designers may round values, combine values (addition/subtraction of two scale numbers), or break from the scale when a better-looking measurement is found.
+He explicitly endorses improvisation at the application stage: scale values are "educated suggestions," not mandates. In his example he rounds values, combines values through comment math, and uses non-scale values when they better fit the design. These are source-specific examples, not required procedures.
 
 # Prerequisites
 
@@ -70,28 +70,28 @@ He explicitly endorses improvisation at the application stage: scale values are 
 
 # Key Properties
 
-1. **Typeface-first**: Procedure begins by selecting a typeface and finding its optimal body text size — this is the primary base unit.
+1. **Typeface-first in Brown's example**: He has selected a typeface and text, then tests a body-text size as one starting value. Projects may begin from other fixed or contextual inputs.
 2. **Ratio selection precedes generation**: The ratio must be chosen before computation; it is not determined by the output.
-3. **Double-stranded option**: A second important number can be added to merge two geometric sequences, providing more values and filling gaps.
+3. **Multi-strand option**: Brown says a double-stranded construction can start from two numbers or two ratios. Each generates its own strand; sorting their union may add options or fill gaps, but does not generally preserve one adjacent ratio.
 4. **Iterative application**: Applying scale values to CSS involves trial, testing in browser, and educated selection among values — not mechanical assignment.
-5. **Documentation in CSS**: Best practice includes a stylesheet comment specifying the scale's starting values and ratio (or a URL to the modularscale.com result), enabling the scale to be recreated.
+5. **Documentation in Brown's workflow**: He records the scale inputs or calculator URL in a stylesheet comment so others can recreate his example. Projects may document their own decisions in a suitable form.
 6. **Permissive improvisation**: The procedure tolerates and endorses deviation when visual judgment overrides mathematical output.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. **Select typeface** — Choose the body text face before making layout decisions.
-2. **Find optimal body size** — Test the face at various sizes; find the size at which it looks best ("crisp") for the project's rendering conditions.
-3. **Choose ratio** — Select a ratio with meaningful cultural, historical, or contextual relevance (e.g., 1:1.618 for Renaissance humanist contexts).
+1. **Optional typeface-first route** — Brown selects the text face before layout decisions in his example; another project may have fixed or independent inputs.
+2. **If using Brown's route, test a body size** — He looks for a size that works for his design goals and rendering, calling the chosen 18px Minion size crisp. This example does not set a universal optimal size.
+3. **Declare a ratio for each strand** — Brown chooses `1:1.618` for historical and cultural reasons specific to his Minion/Renaissance example. A project's ratio choice is contextual, not governed by a universal preference rule.
 4. **Identify secondary base (optional)** — Find a second important number from a key compositional element (large headline, media width, caption size).
 5. **Generate scale** — Multiply and divide from each base by the ratio to produce ascending and descending sequences. Merge sequences if double-stranded.
-6. **Apply to CSS** — Use scale values for font sizes, line heights, column widths, margins. Test in browser; select among adjacent scale values when multiple seem plausible.
+6. **Apply selected values if useful** — Brown tests type sizes, line height, column widths and margins in the browser. Keep independent, fixed or optical values where they work better.
 7. **Document** — Add a CSS comment identifying the scale parameters (or linking to the modularscale.com URL).
 8. **Improvise as needed** — When no scale value looks right, combine values (comment math), round values, or use a non-scale value; document any improvisations.
 
 ## To Identify/Recognise:
 1. Look for a CSS comment at the top of the stylesheet naming scale parameters.
-2. Check that font-size, width, and margin values in the CSS correspond to computed values of a geometric sequence with the documented ratio and base.
+2. For each claimed strand, compare its declared base and ratio with the values attributed to it. A merged list and improvised CSS values require separate interpretation.
 3. Look for "comment math" in the CSS (e.g., `font-size: 21.178px; /* 27.723 - 6.545 */`) indicating combined scale values.
 
 # Context & Application
@@ -102,13 +102,13 @@ He explicitly endorses improvisation at the application stage: scale values are 
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Scale construction is the computation of terms in a geometric sequence. Phase 2 (scale generation) is precisely: for i in integers: value = base × ratio^i. The procedure is mathematically identical to generating a geometric sequence; only the naming and application context differ.
+**Mathematics → RIGOROUS WITHIN EACH STRAND**: For a declared positive base `a` and ratio `r`, the generated strand has terms `a*r^n` for integer `n`. Merging and sorting multiple generated strands is a distinct operation; the result need not be geometric.
 
 # Examples
 
-**Example 1** (from source, "Modular scales and how they apply to web design" — simple scale): Starting number 10, ratio 1:1.618. Ascending: 10 × 1.618 = 16.180; 16.180 × 1.618 = 26.179; 26.179 × 1.618 = 42.358. Descending: 10 / 1.618 = 6.180; 6.180 / 1.618 = 3.819; 3.819 / 1.618 = 2.360.
+**Example 1** (source transcription, "Modular scales and how they apply to web design"): Brown prints the base-10 ascending values `10.000, 16.180, 26.179, 42.358` and descending values `10.000, 6.180, 3.819, 2.360` for decimal ratio `1.618`. The descending figures are reported source text. Independent calculation from the exact base and ratio, rounded half-even to three places, gives `2.361, 3.820, 6.180, 10.000, 16.180, 26.179, 42.358`.
 
-**Example 2** (from source, "Creating a modular scale for web design" — full project): (a) Typeface: Minion Pro. (b) Body size: 18px (tested on Web Font Specimen until crisp). (c) Ratio: 1:1.618 (golden ratio, chosen for Renaissance cultural fit). (d) Second base: 190px (h2 headline, tested until it "anchor[s] the composition"). (e) Scale generated at modularscale.com. (f) Values applied: 29.124px (h1), 497.406px (main column), 845.479px (container), 44.856px and 27.723px and 307.420px (margins).
+**Example 2** (Brown's source example, "Creating a modular scale for web design"): (a) Typeface: Minion Pro. (b) Body size: 18px, tested until crisp for this design. (c) Decimal ratio: `1.618`, chosen for his stated Renaissance context and an approximation to the golden ratio. (d) Second important number: 190px for the `h2`, tested until it would anchor his composition. (e) Scale generated at modularscale.com. (f) Source-reported applied values include 29.124px (`h1`), 497.406px (main column), 845.479px (container), and margins 44.856px, 27.723px and 307.420px. These are historical example reports, not defaults or recalculated values.
 
 **Example 3** (from source, "Applying a modular scale in web design" — improvisation): Sidebar font-size: 15px, not present in the scale, used because "15px Minion Pro Caption sure looks good next to 18px Minion Pro." Intro paragraph: 21.178px, documented as `27.723 - 6.545` (combining two scale values). Left margin on h2: 20px ("Optical alignment of T stem to left edge of .side"), not from scale, "emerged from the lay of the letterforms."
 
@@ -121,19 +121,19 @@ He explicitly endorses improvisation at the application stage: scale values are 
 
 ## Enables
 - **Scale application to typographic hierarchy** — The constructed scale is the prerequisite for applying values to type sizes.
-- **Typographic rhythm via modular scale** — Consistent proportional spacing depends on having a scale to draw from.
+- **Typographic rhythm via modular scale** — A scale is one possible source for coordinating selected measures, while independent and optical values remain available.
 
 ## Related
 - **Ratio selection criteria** — The procedure depends on ratio selection; the criteria for selecting well are a related concept.
 - **Double-stranded modular scale** — An extension of the construction procedure using two base values.
 
 ## Contrasts With
-- **Grid-first design** — Starting with a grid and pouring content in; Brown argues this is less web-native than starting with type and building outward.
+- **Grid-first design** — Brown contrasts his content-out workflow with canvas-in approaches; this card does not treat a grid as incompatible with a modular scale.
 
 # Common Errors
 
-- **Error**: Generating the scale from an arbitrarily chosen base number rather than from the body text size.
-  **Correction**: Find the optimal body text size through careful testing before beginning scale construction. "One pixel of font-size up or down can completely change how a typeface looks."
+- **Error**: Treating Brown's body-text starting point as a rule for every construction.
+  **Correction**: Brown tests a size for his selected typeface and design; a project may have fixed or independently chosen inputs. His one-pixel observation concerns the rendering sensitivity he describes, not a universal base-selection requirement.
 
 - **Error**: Applying scale values mechanically to every measurement without visual testing.
   **Correction**: "I alternate between CSS editor and browser, checking to see how each value looks" (Brown). The scale guides; visual judgment decides.
@@ -143,8 +143,8 @@ He explicitly endorses improvisation at the application stage: scale values are 
 
 # Common Confusions
 
-- **Confusion**: The double-stranded scale uses a different ratio from the single-stranded scale.
-  **Clarification**: A double-stranded scale uses the same ratio as a single-stranded scale, but with two different starting numbers. The result is two geometric sequences with the same ratio, merged and sorted. Brown's example uses ratio 1:1.618 for both strands (18px and 190px).
+- **Confusion**: A double-stranded scale must use one common ratio.
+  **Clarification**: Brown says the two strands can be generated from two starting numbers or two starting ratios. Each strand has its own declared base and ratio. His example uses 18px and 190px with `1:1.618`; that example does not constrain other constructions. A sorted merge is not generally geometric.
 
 # Source Reference
 
@@ -152,9 +152,7 @@ He explicitly endorses improvisation at the application stage: scale values are 
 
 # Verification Notes
 
-- Definition source: Synthesised from the full procedural account across three sections; individual steps are directly supported by source text.
-- Confidence rationale: High — the article is primarily a worked example of this procedure, with explicit steps and actual CSS values.
-- Uncertainties: The source does not address what to do when a scale produces unusable values for all steps in a particular range — whether to change ratio, base, or tolerate improvisation throughout. The improvisation guidance is permissive but not fully systematic.
-- Cross-reference status: Verified.
-- Rosetta Stone check: Mapping added — mathematics/geometric-sequence-computation (rigorous).
-- OCR issues: CSS code blocks contain some HTML artifacts (escaped characters, line-break issues in figure captions) — ignored; article prose is clean.
+- Historical extraction note: The prior record synthesized Brown's three article sections, assigned extraction confidence `high`, and recorded the cross-reference as “Verified.” Those are historical extraction observations, not current source-fidelity or semantic-review results.
+- Current scoped review: The prepared article at lines 133–337 supports Brown's contextual inputs, two-starting-number-or-ratio wording, examples and departures. Exact mathematical outcomes are checked separately below and in the batch record.
+- Technical scope: Each strand is geometric under its declared inputs; a sorted multi-strand union need not be. No scale is required for every measurement.
+- Limits: Prepared text includes HTML/CSS conversion residue; immutable capture identity, conversion lineage and original-to-prepared fidelity remain unresolved. The old extraction-confidence value is retained without upgrade. CDC independent review is pending.
