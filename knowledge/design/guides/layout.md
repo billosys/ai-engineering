@@ -113,14 +113,14 @@ need review against every content type and component they affect. The cascade
 can express intentional defaults and exceptions without requiring a fixed
 number of layers.
 
-The **Modular scale** chapter introduces the mathematical foundation
-that Utopia will later make fluid. A modular scale generates values
-through repeated multiplication by a ratio --- the same ratios used in
-musical intervals. A perfect fourth (4:3 = 1.333) produces steps of
-1rem, 1.333rem, 1.777rem, 2.369rem. The relationships between these
-values are *proportional*, which is what human perception requires:
-Weber\'s Law tells us that we perceive differences as ratios, not as
-absolute distances.
+The **Modular scale** chapter offers one way to generate proportional
+values: `size(n) = base × r^n`. For an increasing perfect-fourth scale,
+`r = 4/3`; `1.333` is a displayed approximation, not that exact ratio.
+With a `1rem` base, steps 0–3 round to `1.000rem`, `1.333rem`,
+`1.778rem`, and `2.370rem` at three decimal places. Compute with the
+selected ratio before rounding the displayed result. These proportions
+are a construction choice; arithmetic alone does not establish
+perceptual harmony, readability or a requirement that all spacing be geometric.
 
 Finally, **Axioms** introduces designing by constraint rather than by artifact.
 A project may declare an invariant, such as a prose measure or minimum target
@@ -763,17 +763,22 @@ where to go deeper.
 #### For the mathematically inclined
 
 ::: prose
-The fluid interpolation in Utopia\'s `clamp()` declarations is a linear
-function: `y = mx + b`, where `m` is the slope between the min and max
-values and `b` is the y-intercept. The `vi` unit (viewport inline) is
-used instead of `vw` because it respects writing direction and,
-critically, does not prevent browser zoom from scaling
-text --- satisfying WCAG SC 1.4.4. The modular scale itself is a
-geometric progression: `size(n) = base × ratio^n`. Interpolating between
-two geometric progressions produces a family of curves, each
-asymptotically approaching the higher progression as the viewport
-widens. This is why the visual hierarchy intensifies on larger screens
-without any explicit instruction to do so.
+With ordered finite bounds, `clamp(min, preferred, max)` limits its
+preferred calculation to those bounds. When that calculation is linear
+in the selected inline extent, the result changes linearly only inside
+its unsaturated interval and is fixed at a bound outside it; there is
+no asymptotic approach.
+
+For positive endpoint bases `a`, `b`, positive ratios `r`, `q`, integer
+step `n`, and a shared clamped parameter `t` in `[0,1]`, each interpolated
+step is `s_n = (1-t)a r^n + t b q^n`. At an interior parameter (`0<t<1`)
+this is geometric across steps only when `r = q`; either endpoint retains
+its own geometric sequence. Each step's change depends on its own endpoint
+difference, so higher steps need not grow faster.
+
+`vi` is a logical inline viewport unit. It does not alone establish
+browser text enlargement, reflow or WCAG conformance. Declare the roots
+and interval, then test the actual interface and user settings.
 :::
 ::::
 

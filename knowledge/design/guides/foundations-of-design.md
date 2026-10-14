@@ -263,13 +263,17 @@ and componentwise cube roots.
 content on proportional systems directly inspired Tim Brown\'s modular
 scale work. Standing: canonical but print-focused.
 
-**Tim Brown\'s modular scale** is the critical bridge between
-typographic tradition and web implementation. A modular scale generates
-font sizes through repeated multiplication by a ratio --- **the ratios
-are explicitly musical intervals**: minor second (15:16 ≈ 1.067), major
-third (4:5 = 1.250), perfect fourth (3:4 ≈ 1.333), perfect fifth (2:3 =
-1.500). Brown explicitly quotes Bringhurst: \"A modular scale, like a
-musical scale, is a prearranged set of harmonious proportions.\"
+**Tim Brown\'s modular scale** connects typographic proportion with
+web implementation. A modular scale generates values by repeated
+multiplication by a selected ratio. Musical intervals can supply such
+ratios: low-to-high pairs `15:16`, `4:5`, `3:4` and `2:3` correspond to
+increasing multipliers `16/15 ≈ 1.067`, `5/4 = 1.250`, `4/3 ≈ 1.333`
+and `3/2 = 1.500`, respectively. The pair notation names the smaller and
+larger values; the multiplier is the larger divided by the smaller.
+Brown quotes Bringhurst: \"A modular scale, like a musical scale, is a
+prearranged set of harmonious proportions.\" This attributed description
+does not prove that every constructed scale is visually harmonious,
+readable or accessible; judge it with the project's content and conditions.
 
 **Every Layout (Heydon Pickering & Andy Bell)** defines 13 layout
 primitives --- Stack, Box, Center, Cluster, Sidebar, Switcher, Cover,
@@ -278,12 +282,15 @@ responsive without media queries. Philosophy: \"composition over
 inheritance\" applied to CSS. This directly maps the GoF software
 engineering principle to front-end architecture.
 
-**Utopia (James Gilyead & Trys Mudford)** provides the mathematical
-framework for fluid responsive design. Core math: CSS `clamp()` performs
-linear interpolation between viewport widths. Define a modular scale
-ratio at minimum and maximum viewports; each scale step gets its own
-`clamp()` declaration, causing **headings to grow faster than body
-text** as the viewport widens.
+**Utopia (James Gilyead & Trys Mudford)** offers one approach to fluid
+responsive design: choose endpoint bases, ratios and an interpolation
+interval, then calculate each step independently. A linear preferred
+expression supplies interpolation; `clamp()` bounds that expression.
+With positive endpoint bases and ratios and a shared interior parameter,
+the interpolated steps form a geometric sequence only when the endpoint
+ratios are equal. Each step's slope depends on its own endpoint difference,
+so higher headings do not necessarily grow faster than body text.
+These calculations do not establish visual harmony or accessibility.
 :::
 
 ### UI/UX: Norman\'s Affordances Through Laws of UX to Refactoring UI {#uiux-normans-affordances-through-laws-of-ux-to-refactoring-ui style="margin-top: var(--space-xl);"}
@@ -428,14 +435,16 @@ rated **RIGOROUS**: same concepts, not analogies.
 :::
 
 ::: bridge-card
-#### Music Theory → Visual Design: Three Rigorous Connections
+#### Music Theory → Visual Design: Three Connections
 
-**Musical intervals → type scale ratios (RIGOROUS).** Tim Brown
-explicitly adopted musical interval ratios for modular type scales. The
-mathematics is identical: perfect fourth (4:3 = 1.333), perfect fifth
-(3:2 = 1.500), golden ratio (1:φ = 1.618). A music theorist immediately
-understands that a perfect-fourth type scale means each step is 4:3 of
-the previous.
+**Musical intervals → type scale ratios (SHARED CONSTRUCTION).** Brown's
+modular-scale discussion uses musical ratios as one source of proportions.
+An increasing perfect-fourth scale uses `4/3 ≈ 1.333`; a perfect-fifth
+scale uses `3/2 = 1.500`. The common mathematics is repeated multiplication
+by a chosen ratio. The golden ratio `φ = (1 + sqrt(5))/2 ≈ 1.618` is another
+possible geometric multiplier, not a musical interval. Shared arithmetic
+does not transfer auditory harmony into a guarantee of visual harmony,
+readability or suitability for a project's content.
 
 **Temperament → perceptual uniformity in colour spaces (RIGOROUS).** The
 deepest and most intellectually satisfying bridge. Equal temperament

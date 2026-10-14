@@ -37,3 +37,9 @@ bytes. Exact-revision hosted rendering remains unverified.
 ## Version 1.0.6 - 2026-10-13
 
 Decoded the 1,062 whitelisted escaped Unicode display tokens in 46 post-card bodies, preserving all frontmatter and all other body bytes. This presentation correction does not assess technical claims or source fidelity.
+
+## Version 1.0.7 - 2026-10-13
+
+Corrected fluid-scale ratio orientation and displayed rounding, qualified
+per-step interpolation and finite clamp bounds, and scoped the musical-interval
+connection as a construction option without a perceptual guarantee.
