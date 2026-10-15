@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.66**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.67**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -155,8 +155,10 @@ revision applicability for both.
    Was: Arc02/Slice12 was active. Now: its three-card core is independently
    closed at source8b408c03/planning7c65468e, all four rows done. Continue with
    [Slice13](arc02-theory-and-evidence/slice13-base-and-ratio-selection/cc-prompt.md):
-   three complete Brown input/selection cards, supported corrections in the
-   same batch, explicit metadata exceptions and owning micro version/history.
+   three Brown input/selection cards. Its initial return is reviewed at
+   source1e0b9620/planning0681c509: two rows done, two open. Continue with
+   [Iteration01](arc02-theory-and-evidence/slice13-base-and-ratio-selection/cc-prompt-iteration01.md)
+   for protected reference bytes and source joins; passing math/package work is retained.
    Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -278,8 +280,11 @@ Arc02/Slices01–12 are independently closed at their recorded scopes. Slice12's
 corrected core is accepted at source8b408c03/planning7c65468e, four child criteria
 done; original-fidelity and empirical/external endpoint results retain limits.
 Current assignment: [Slice13](arc02-theory-and-evidence/slice13-base-and-ratio-selection/slice-plan.md),
-base unit, ratio-selection criteria and golden ratio. Four new child rows open;
-all other230 cards are protected by this batch, and227 outside this/prior core
+base unit, ratio-selection criteria and golden ratio. Was: four child rows open.
+Now: initial source1e0b9620/planning0681c509 has S13-02/04 done and S13-01/03
+open. Execute [Iteration01](arc02-theory-and-evidence/slice13-base-and-ratio-selection/cc-prompt-iteration01.md)
+for protected bibliographies and source pointers; no next slice opens yet.
+All other230 cards are protected by this batch, and227 outside this/prior core
 retain their complete-review owners. No full-corpus acceptance follows from the
 first three bounded outcomes. Arc04 remains a roadmap entry. Complete live/global
 reconciliation, originals/fidelity, actual browser behavior, final hosted and
@@ -287,6 +292,10 @@ installed-package/release gates remain open. The Operator-corrected1.1.0 target
 and final bump at accepted Arc02 completion are unchanged.
 
 ## Version History
+
+- 1.67 (2026-10-15): Arc02/Slice13 review accepts mathematical/metadata and
+  package integration evidence but returns exact reference preservation/source
+  joins for repair. Full populations, parent criteria and1.1.0 sequence unchanged.
 
 - 1.66 (2026-10-15): Arc02/Slice12 independently closes its final repair with
   four rows done. Open Slice13 for the next three Brown selection cards; preserve

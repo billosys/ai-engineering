@@ -6,8 +6,11 @@ depends-on: [slice12-modular-scale-card-fixes accepted core, Brown prepared-sour
 
 # Slice13 — Base and Ratio Selection
 
-Plan revision **1.0**, opened 2026-10-15. [Project](../../project-plan.md),
-[arc](../arc-plan.md), [ledger](ledger.md) and [CC assignment](cc-prompt.md)
+Plan revision **1.1**, updated 2026-10-15. Was: initial assignment/four open.
+Now: S13-02/04 independently done; S13-01/03 open for reference/source-join
+repair. Current assignment is [Iteration01](cc-prompt-iteration01.md); the
+[CDC review](cdc-verification.md) is the current independent verdict. [Project](../../project-plan.md),
+[arc](../arc-plan.md), [ledger](ledger.md) and [initial assignment](cc-prompt.md)
 govern. Two contributors: CDC Sofie plans/reviews; separate CC implements through
 Operator relay. Expedited Mode. This is the next approved complete-corpus
 read → decide → edit → check batch, not a new inquiry or expanded release.
@@ -21,7 +24,12 @@ definitions, procedures, examples, relationships, CQs, bibliography and appropri
 uncertainty. The base and ratio are declared inputs, Brown's example is contextual,
 and an exact constant must be distinguished from a chosen decimal approximation.
 
-Source baseline `8b408c038d7fc8d1df3fdd478640376cb461ad74`; planning preparation
+The following is the initial assignment contract. Current Iteration01 narrows
+source to the three cards at1e0b9620: restore their8b408c03 reference blocks and
+one base title/span fragment. Every other source byte, including metadata and
+owning1.0.10/history, is protected. The same three planning return files apply.
+
+Initial source baseline `8b408c038d7fc8d1df3fdd478640376cb461ad74`; planning preparation
 `00c66066` includes the Operator's corrected **1.1.0** target. Actual issuing
 commit is pinned at CC intake. Five source output paths only: the three cards,
 owning SKILL metadata.version **1.0.9→1.0.10**, and matching sibling history.
@@ -89,9 +97,28 @@ within authorized bodies is CC discretion constrained by evidence.
 
 | Assignment | Preparation / status |
 |---|---|
-| [Initial CC prompt](cc-prompt.md) | Opened2026-10-15 from source8b408c03/planning00c66066; actual issuing commit pinned at intake. Active: three complete-card reviews/fixes, five existing golden scalar leaves and owning micro version/history. |
+| [Initial CC prompt](cc-prompt.md) | Opened2026-10-15 from source8b408c03/planning00c66066; actual issuing commit pinned at intake. Returned at source1e0b9620/planning0681c509; two done, two open after F01/F02. |
+| [Iteration01](cc-prompt-iteration01.md) |2026-10-15; source1e0b9620/planning predecessor0681c509; actual issue pinned at intake. Active: three protected reference blocks, one source-title/span fragment and current evidence corrections only. |
+
+## Iteration01 author readiness
+
+CDC read all three candidate cards, inspected the protected byte ranges against
+8b408c03 and matched actual prepared source30/109/133/156/172. The literal
+reference equality predicate fails3/3 despite the return claim; a temporary
+copy-and-fragment repair produces exact expected card hashes without source
+mutation. The new recipe repairs selected ranges and then reverses those changes
+to prove whole-file preservation. This tests the missing property rather than
+repeating metadata/parser checks. Concept-card support distinguishes a true
+clause from a wrong heading locator; existing independent math/package evidence
+can be retained because only unbundled bibliographies/pointers change. The
+assignment is source-grounded, design-complete, executable and falsifiable within
+the original scope; no additional inquiry or schema change.
 
 ## Version History
+
+- 1.1 (2026-10-15): Initial CDC review accepts math/metadata and integration
+  rows; return exact bibliography preservation and source joins for one narrow
+  refinement with retained passing evidence. Parent scope/gates remain intact.
 
 - 1.0 (2026-10-15): Continue after Slice12 acceptance with the next connected
   Brown selection cohort, known same-batch repairs and precise metadata/math
