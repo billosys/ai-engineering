@@ -48,3 +48,28 @@ The sole slice-produced durable supporting artifact is `artifacts/batch-record.m
 ## Arc bubble-up and ownership
 
 This batch resolves only the next three-card Brown selection unit and its permitted micro version/history update. No Arc02 plan or scope amendment is indicated: the remaining capture/fidelity gap stays with P10-11; whole-corpus semantic/source review remains under P10-06/P10-09/P10-10 and Arc02; affected hosted rendering remains under P10-13/Arc04; package composition and final release remain with Arc04 and their existing gates. Exact endpoint existence, empty prerequisite arrays, and prepared locators are not promoted to semantic acceptance. Do not close or advance the slice until CDC records independent dispositions; do not treat this return as the final `1.1.0` bump or publication authorization.
+
+## Iteration01 CC return — 2026-10-15
+
+This is the current CC return for [Iteration01](cc-prompt-iteration01.md), issued by planning commit `888a142af330114052f2004c70fe0d2fea5a0d32` (parent `0681c509e885b0acd10d984afdbc768e13ab6496`). It supersedes the initial return's proposed dispositions for current CDC re-entry; the initial report remains as historical evidence. Source commit `eeb1afa56d57cf6f0d2c71e5a8f56e5073b1cc80` is a direct child of assigned source `1e0b9620d5951c9ed11bc7372d74a9d5f26a2160` and contains exactly the three authorized cards. Planning changes are based on `888a142af330114052f2004c70fe0d2fea5a0d32`; this report does not self-reference its eventual commit.
+
+F01 is repaired at the byte boundary: each entire Source Reference range equals the `8b408c03` range, including golden's Further Reading line (3/3); reversing the three restorations and one body citation replacement reproduces the complete `1e0b9620` file bytes for every card. F02 is repaired: the base two-input clause cites the correct Brown title at prepared line156, and the golden opening claim is pointed to line30; line109 is recorded only as broad domain framing. Current whole/header/body hashes, source-reference line locators, the three-card/230-card population comparison, 161 source files, six live guides, unchanged skill/history/Makefile, LF/EOF and whitespace checks are in the [batch record](artifacts/batch-record.md#iteration01-repair-results--2026-10-15). Original capture fidelity and source identity remain open under P10-11.
+
+The batch record also discloses an intake-order deviation: initial combined output for the repository instructions and current framework/design skills was truncated, and complete bounded-range reading finished after the source edit. The scoped prompt/CDC repair contract and relevant PM routes were read before editing. CDC should consider the disclosed sequencing when reviewing this return.
+
+The assigned checks did not require new mathematics or a Make replay. CDC's accepted S13-02 arithmetic and five-leaf metadata evidence is retained after the exact whole-file comparison shows those inputs are unchanged. S13-04's accepted skill-version and eight-member package evidence is retained after checking that its skill/history/Makefile inputs remain byte-identical and the cards are not package members. These are retained prior checks, not fresh executions; CDC should confirm affected applicability.
+
+| ID | Current CC return | Current state / CDC re-entry |
+|---|---|---|
+| S13-01 | Corrected source-specific joins and documented their prepared extents in the batch record. | **Open** for CDC review of the complete-card outcomes; original-fidelity, empirical and uninspected-endpoint limits remain. |
+| S13-02 | No math, input or accepted golden leaf changed; retained evidence applicability is stated. | **Done** pending CDC confirmation that the citation-only change leaves its accepted technical result applicable. |
+| S13-03 | Restored all three protected sections byte-for-byte and reversed the complete repair to the assigned files. | **Open** for CDC reproduction of exact ranges, scope and preservation evidence. |
+| S13-04 | Skill/history and package inputs are unchanged; accepted package evidence is retained and identified as not rerun. | **Done** pending CDC confirmation of retained evidence applicability; hosted, fidelity and release gates remain open at their owners. |
+
+Artifact inventory remains exactly one supporting artifact: `artifacts/batch-record.md`. This report and Evidence/Notes-only ledger update are the other two assigned planning outputs. No status or criterion cell changed. Exact-revision hosted re-entry targets for the three affected cards are:
+
+- `https://github.com/billosys/ai-engineering/blob/eeb1afa56d57cf6f0d2c71e5a8f56e5073b1cc80/knowledge/design/concept-cards/posts/scale-base-unit.md`
+- `https://github.com/billosys/ai-engineering/blob/eeb1afa56d57cf6f0d2c71e5a8f56e5073b1cc80/knowledge/design/concept-cards/posts/ratio-selection-criteria.md`
+- `https://github.com/billosys/ai-engineering/blob/eeb1afa56d57cf6f0d2c71e5a8f56e5073b1cc80/knowledge/design/concept-cards/posts/golden-ratio.md`
+
+These are re-entry URLs only; no hosted view was opened or claimed available. No push, publication, slice close, or next slice was performed. The source worktree retains only its pre-existing untracked `knowledge/lfe/` item.
