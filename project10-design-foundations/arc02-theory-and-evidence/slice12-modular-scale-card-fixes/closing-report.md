@@ -134,3 +134,17 @@ was not closed or advanced. The only supporting artifact is the existing
 `artifacts/batch-record.md`; no helper, copied roster or secondary validator
 was created. Planning writes are limited to that record, ledger Evidence and
 Notes cells, and this closing report.
+
+
+## Iteration02 — CC corrective return
+
+The active assignment was issued by planning commit `07a75e409a1ab584f7188c10803c5a2f7ca93d7d` (parent `f142e9172a1b7d90f3c99f6681214183bd5d9a8c`). Against source baseline `a05550386eefe021140a55e110a1868dd978f893`, CC changed only the prescribed Related label in `scale-ratio.md`; source commit `8b408c038d7fc8d1df3fdd478640376cb461ad74` has that baseline as parent and includes both required co-author trailers. It is linked to the exact current hosted re-entry revision in the [batch record](artifacts/batch-record.md#exact-local-repair-and-preservation). The old label occurred once before and zero times after; the prescribed new label occurs once after. Reversing the replacement restores the complete pinned blob. Whole/header/body hashes, body locator, all-233 roster and protected-input checks are recorded in the same evidence artifact. The metadata header is unchanged; 232 other cards, 161 prepared sources, six guides, skill entrypoint, version history, and Makefile are byte-identical. Package inputs did not change, so prior accepted package gates remain applicable and were not rerun.
+
+| Row | Current CDC status | CC Iteration02 return |
+|---|---|---|
+| S12-01 | done | CDC Iteration01 acceptance retained. |
+| S12-02 | open | One missed Related label repaired and returned for CDC review; no acceptance claimed. |
+| S12-03 | done | CDC Iteration01 acceptance retained, including the distinct seven Arc06 sentinels. |
+| S12-04 | done | CDC Iteration01 gates retained after unchanged package-input comparison; unbundled card hosting remains separate. |
+
+The sole supporting artifact is the existing [batch record](artifacts/batch-record.md). No helper or copied roster was added. Original-source fidelity, exact-revision hosted rendering, full 233-card semantic and relationship review, accessibility behavior and release remain open at their owners. No push or publication occurred. Slice12 remains open and was not advanced.

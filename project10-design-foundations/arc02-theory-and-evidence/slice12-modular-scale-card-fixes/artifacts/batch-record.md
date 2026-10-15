@@ -399,7 +399,7 @@ plus two distinct merge witnesses, as reproduced above.
 | `scale-ratio.md` | `1888f5ee41bc12150f0e41fbcefd99ea48067c29ea339311d71fc3d2015123e3` / 11,291 | `441ed95ef57802db876fec34dee283a7c995cd5ad01e85de8eade20344bc34e6` / 1,832 | `9299c3c274e8687d61e48b53cfbfd888dd4e59f2f1c6fd2d9f3a652070ea41d1` / 9,459; byte 1,832, line 50 |
 
 Each complete metadata prefix is byte-equal to its `fd876e7c` prefix, including
-all six accepted empty-list leaf corrections, types, recursive key/list order,
+all six prior semantic scalar corrections, types, recursive key/list order,
 identity, CQs, and relationships. The exact three card paths are the only
 changed members of the 233-card tree (3 changed, 230 byte-identical). All 161
 source files and all six live design guides are byte-identical; design
@@ -436,3 +436,28 @@ secondary validator, or copied data artifact was added. The prior initial
 return's claim that all four rows remained open is historical: current CDC
 status is S12-01/02/03 `open`, S12-04 `done`; this CC return makes no CDC
 acceptance claim.
+
+
+## Iteration02 — CC corrective return: Related Golden ratio label
+
+### Intake and governing readback
+
+Iteration02 was issued by planning commit `07a75e409a1ab584f7188c10803c5a2f7ca93d7d`, parent `f142e9172a1b7d90f3c99f6681214183bd5d9a8c`; the prompt, CDC Iteration01 record, Slice12 plan/ledger, Iteration01 prompt and repair2 evidence, this batch's Iteration01 results/limits, and the closing report's prior row walk were read. The source and planning worktrees were confirmed as `main` and `planning`. Required project/Arc criteria were read: all 13 P10 rows and 10 A02 rows; Project/Arc scope and active acceptance remain full-population obligations. PM readback covered Expedited Mode, canonical iteration filenames and immutable issued prompts, current-assignment requirements and execution/return handoff. Design and collaboration-framework instructions, concept-cards evidence lifecycle and relationship/CQ distinctions were consulted; the 233-card path roster and byte-preservation comparison were run without a corpus semantic read. One initial PM-path lookup against the planning checkout was inapplicable because framework sources are carried by main/installed guidance; the canonical path was then resolved and read. The earlier review's F04 is exactly the one outstanding local defect; S12-01/03/04 remain CDC-accepted and S12-02 remains open.
+
+The prepared Brown source `knowledge/design/sources/md/posts/more-meaningful-typography.md` was checked at lines 174–186; its full-file SHA-256 is `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9`. These passages describe Brown's chosen Minion text face, selected 18px size, and contextual use of the decimal ratio `1:1.618`. This supports the label's attribution and example scope; it does not establish general ratio superiority, original-source fidelity, or independent semantic acceptance.
+
+### Exact local repair and preservation
+
+At assigned source baseline `a05550386eefe021140a55e110a1868dd978f893`, the target whole hash matched `1888f5ee41bc12150f0e41fbcefd99ea48067c29ea339311d71fc3d2015123e3` (11,291 bytes), with exactly one old-line match and no new-line match. The issued single replacement was made at body line 115. Afterward the old-line count is zero and the new-line count is one; reversing that one replacement yields byte-for-byte equality with the entire pinned source blob. The card retains LF endings and final newline; `git diff --check` passes.
+
+| Revision component | SHA-256 | Bytes / locator |
+|---|---|---|
+| Whole `scale-ratio.md` | `2f72765ddee3adb0dadf454240f471dcb78d9b1ccb0cdd06d62b48e0dde7e3c3` | 11,335 bytes |
+| Complete metadata header | `441ed95ef57802db876fec34dee283a7c995cd5ad01e85de8eade20344bc34e6` | 1,832 bytes; unchanged, body begins byte 1,832 / line 50 |
+| Complete body | `68dac45673fadaf3f1446fec416917738e7531d123d50a5bf9bce28cef1b1923` | 9,503 bytes; changed Related line at body line 115 |
+
+At commit `8b408c038d7fc8d1df3fdd478640376cb461ad74` (parent `a05550386eefe021140a55e110a1868dd978f893`), the commit contains only `knowledge/design/concept-cards/posts/scale-ratio.md` and both required co-author trailers. The unchanged roster contains 233 card paths; all 232 other card blobs are byte-identical to the assignment baseline, and reversing the target edit restores its baseline blob. The 161 prepared source files, six live design guides, `knowledge/design/SKILL.md`, `knowledge/design/version-history.md`, and `Makefile` (170 protected files) are also byte-identical to baseline. The sole edit is an unbundled card body and no package input changed, so the CDC-accepted skill/version/path/package gates remain applicable; no Make gate was rerun.
+
+Planning changes for this return are limited to this batch record, the S12-02 Evidence and Notes cells, and the closing report. The current hosted re-entry target is the exact source revision URL: <https://github.com/billosys/ai-engineering/blob/8b408c038d7fc8d1df3fdd478640376cb461ad74/knowledge/design/concept-cards/posts/scale-ratio.md>. It is a target only; this return did not open or verify GitHub rendering. The distinct seven historical Arc06 sentinel changes remain unchanged and are not conflated with the six prior semantic scalar corrections.
+
+The correction is returned for CDC review. It does not close S12-02, alter other row statuses, establish source fidelity, hosted rendering, global card/edge semantics, accessibility behavior, or release acceptance. No push/publication occurred. This existing batch record remains the sole supporting artifact; no helper, copied roster, or permanent validator was added.
