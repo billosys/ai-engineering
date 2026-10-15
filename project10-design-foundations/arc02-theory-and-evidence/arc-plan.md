@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.40**; Slice11 closed; Slice12 Iteration02 is the active CC assignment.
+Plan revision **1.41**; Slice11 closed; Slice12 Iteration02 is the active CC assignment.
 
 Deliver corrected portable design content, complete 233-card/eight-live-file
 review and reconciliation, and usable accessibility/typesetting procedures with
@@ -22,6 +22,19 @@ and Arc03 browser work. **Now:** those are coverage dimensions within end-to-end
 source/topic batches, not required separate slice chains. Source-readiness,
 complete review and global reconciliation remain required; no existing acceptance
 or issued prompt is widened by this change.
+
+## Release version sequence — Operator correction, 2026-10-15
+
+The former 1.5 target is superseded by **1.1.0** under the
+[project decision](../project-plan.md#release-target--operator-correction-2026-10-15).
+Continue **1.0.x** micro increments for corrections during this arc. Include the
+final **1.1.0** owning metadata/history bump in the accepted Arc02 closing source
+delivery, with the required fresh version/package checks and independent review.
+Plan that exact source mutation in the final assignment; no immediate source bump
+or rewrite of existing issued prompts is authorized by this planning edit.
+Arc closure still requires its complete ledger and composition/Operator gates;
+version selection does not satisfy them. Project/Arc04 final readiness and
+publication retain their separate gates. Project11 remains targeted at 2.0.
 
 ## Accepted inputs and preservation
 
@@ -100,7 +113,7 @@ pairs, semantics/keyboard/focus/reading order, motion preferences, text enlargem
 reflow/spacing, justified breakpoints, available font axes and font failure.
 A revised warning or mathematical witness does not establish browser behavior.
 Use maintained patterns where a geometry snippet is not a complete widget;
-avoid building a component/font framework for the 1.5 correction.
+avoid building a component/font framework for the 1.1 correction.
 
 Arc04 owns DES-010/014 and final package/composition validation of all findings.
 Arc06 owns metadata normalization/rendering; semantic body changes remain here.
@@ -146,6 +159,10 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.41 (2026-10-15): Apply the Operator's corrected 1.1.0 target; retain 1.0.x
+  micro work and add the final minor bump to accepted Arc02 closing delivery.
+  No child acceptance, source mutation, scope or publication change.
 
 - 1.40 (2026-10-14): Arc02/Slice12 Iteration01 accepts three rows; issue
   one-line Related-label correction with retained math/package/bridge evidence.

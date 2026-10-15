@@ -22,6 +22,15 @@ Importing the work does not retroactively create CC assignments or independent
 acceptance. The Operator endorsed the direction and project separation; detailed
 release scope and the remaining decisions are still subject to planning.
 
+## Current release references — 2026-10-15
+
+Plan revision **1.1**. The original audit's **1.5** foundation target is
+historical: the Operator corrected it to **1.1.0** in the
+[Project10 plan](../project10-design-foundations/project-plan.md#release-target--operator-correction-2026-10-15).
+Project10 keeps 1.0.x correction increments and the final minor bump at accepted
+Arc02 completion. Project11's 2.0 target remains. Preserve the dated audit and
+synthesis unchanged; the consumer plans govern current implementation and gates.
+
 ## Shared evidence and ownership
 
 - [Audit index](artifacts/audit-index.md): scope, coverage and reading route.
@@ -84,10 +93,14 @@ The project-level artifact home is the Operator's explicit override for shared
 audit evidence. Future slice-specific outputs use their slice's `artifacts/`
 unless another override is recorded. Remaining substantive decisions include the
 historical-card reconciliation boundary, optional C&B case retention, and the
-1.5 compatibility interpretation; Project10 owns their resolution with the
-Operator, and Project11 inherits only the recorded decisions.
+foundation compatibility interpretation (historically labelled 1.5); Project10
+owns their resolution with the Operator, and Project11 inherits only the recorded decisions.
 
 ## Version History
+
+- 1.1 (2026-10-15): Align current consumer references with the Operator's
+  corrected 1.1.0 foundation target; retain the original audit/synthesis and
+  historical 1.5 wording as provenance. No audit acceptance or source change.
 
 - 1.0 (2026-10-08): Operator established Project09 as the shared audit owner,
   with Project10 for the 1.5 repair and Project11 for the 2.0 expansion. Imported

@@ -17,7 +17,7 @@ craft. Initial operational scope remains web, product and editorial design.
 Full native-platform specialization, print, spatial/industrial design and full
 service-design practice remain future extensions requiring scope decisions.
 
-Plan revision **1.1**: the Operator requested assessment of Project10's delivery
+Plan revision **1.2**: the Operator requested assessment of Project10's delivery
 amendment `fdb073f5` and a streamlined Project11 plan that lands useful changes
 while retaining quality. This revision replaces the initial seven discipline
 arcs with four delivery arcs, preserving all seven capabilities and ten project
@@ -32,6 +32,15 @@ remain provenance, not current observations of the corrected skill. Consume
 and pin the relevant revisions. Its full-corpus correction, metadata work and
 source-fidelity obligations remain there; Project11 does not repeat them or
 silently claim them complete. The [ledger](ledger.md) governs final acceptance.
+
+## Foundation version reference — 2026-10-15
+
+The Operator corrected Project10's former 1.5 target to **1.1.0**, with 1.0.x
+correction increments continuing through Arc02 and the final minor bump at its
+accepted completion. Consume the actual accepted Project10 inputs and final
+handoff under the [corrected project contract](../project10-design-foundations/project-plan.md#release-target--operator-correction-2026-10-15).
+Project11's **2.0** scope, target and dependency/acceptance gates are unchanged;
+the version milestone alone does not establish foundation/release acceptance.
 
 ## Assessment of the Project10 amendment
 
@@ -52,7 +61,7 @@ not a new semantic acceptance of Project10 or a controlled efficiency experiment
   [Slice07 initial review](../project10-design-foundations/arc02-theory-and-evidence/slice07-portable-identity-source-fixes/cdc-verification.md)
   accepts identity removal at `c4531c8c`, but leaves four of five criteria open.
   These are concrete source changes; they do not yet prove lower total effort
-  or complete 1.5 delivery.
+  or complete foundation delivery.
 - **Add explicit preservation and usable-output checks.** Slice07's first return
   deleted protected teaching/CSS and left example/route inconsistencies. The
   independent review caught them. Faster edits still need positive requirements
@@ -230,6 +239,10 @@ system composition, dispositioned findings, independent review and the Operator
 gate. No close-set records or acceptance claims are created by this revision.
 
 ## Version History
+
+- 1.2 (2026-10-15): Align the foundation dependency reference with the
+  Operator-corrected 1.1.0 target and Arc02 version milestone; preserve the 2.0
+  expansion and actual accepted-input/final-handoff gates.
 
 - 1.1 (2026-10-12): Operator-requested delivery revision after Project10 amendment
   `fdb073f5`. Assessed its source-first consolidation and the first actual returns;

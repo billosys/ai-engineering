@@ -6,7 +6,7 @@ blocks: [project11-unified-design-practice]
 related: [project08-concept-card-metadata, project13-collab-refinements]
 ---
 
-# Design Foundations — 1.5 Target
+# Design Foundations — 1.1 Target
 
 ## Purpose and authority
 
@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.64**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.65**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -29,6 +29,23 @@ Reuse accepted Arc01/02 evidence at its verified scope; do not regenerate it to
 fit a new reporting format. Historical plans, issued prompts and acceptance
 records remain evidence. Earlier roadmap and status prose is superseded by this
 revision; the previous complete plan remains in Git history.
+
+## Release target — Operator correction, 2026-10-15
+
+**Was:** the corrective release was called 1.5. **Now:** its target is **1.1.0**
+(short name 1.1). The Operator corrected the original version request; scope,
+acceptance criteria and Project11's 2.0 target are unchanged. Continue compatible
+correction increments on **1.0.x** during Arc02. On successful completion and
+acceptance of [Arc02](arc02-theory-and-evidence/arc-plan.md), include the final
+**1.1.0** source version/history bump and applicable fresh version/package checks
+in its closing delivery. Record that step in the final source-scoped assignment;
+this planning correction does not bump the current skill or alter an issued prompt.
+
+The owning SKILL metadata and sibling history remain the only skill version
+records. Arc04's final package/composition, independent/Operator release-readiness
+and separate publication gates remain binding after the Arc02 version milestone.
+Historical plans, audit recommendations and issued prompts using 1.5 retain their
+original wording as provenance, superseded for current targeting by this decision.
 
 ## Scope and definition of done
 
@@ -278,6 +295,10 @@ originals/fidelity, actual browser behavior, fresh-context and final installed
 package/release gates remain open with their existing owners.
 
 ## Version History
+
+- 1.65 (2026-10-15): Operator corrects the original 1.5 target to 1.1.0;
+  continue 1.0.x corrections and schedule the final minor bump at accepted Arc02
+  completion. Preserve scope, issued prompts, project/release gates and history.
 
 - 1.64 (2026-10-14): Arc02/Slice12 Iteration01 accepts three rows; issue
   one-line Related-label correction with retained math/package/bridge evidence.
