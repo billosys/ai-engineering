@@ -117,7 +117,7 @@ For example, a designer might declare a 16px starting value and `r=1.25` for a d
 
 # Source Reference
 
-“Creating a modular scale for web design” — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+"Creating a modular scale for web design" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
 # Verification Notes
 

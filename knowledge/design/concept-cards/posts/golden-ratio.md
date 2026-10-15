@@ -143,9 +143,9 @@ This card introduces the proportion as a standalone concept. Applying it to scal
 
 # Source Reference
 
-Opening paragraph; “Modular scales and how they apply to web design”; “Creating a modular scale for web design” — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+Opening paragraph; "Modular scales and how they apply to web design"; "Creating a modular scale for web design" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
-Also referenced in “Further Reading”: Robert Bringhurst, *The Elements of Typographic Style*, “Shaping the Page.”
+Also referenced in "Further Reading": Robert Bringhurst, *The Elements of Typographic Style*, "Shaping the Page."
 
 # Verification Notes
 

@@ -46,7 +46,7 @@ Brown presents the starting number alongside the ratio: “You start with a rati
 
 Brown also uses a second “important” number, 190px for an h2 in his example, to make a double-stranded scale. He suggests that a caption size or a media dimension may be relevant when the project calls for it. These are possible contextual inputs; they are not mandatory choices. A convenient fixed value can also be valid when it suits the intended system and is declared clearly.
 
-A scale strand is generated from its own positive starting value and ratio. A double-stranded construction can start from two numbers or two ratios, as Brown says at “Creating a modular scale for web design” (prepared article, lines 156–171). The two geometric strands should be distinguished from a sorted merge of their values: adjacent values in the merged list need not be adjacent steps within either strand.
+A scale strand is generated from its own positive starting value and ratio. A double-stranded construction can start from two numbers or two ratios, as Brown says in “Modular scales and how they apply to web design” (prepared article, line 156). The two geometric strands should be distinguished from a sorted merge of their values: adjacent values in the merged list need not be adjacent steps within either strand.
 
 # Prerequisites
 
@@ -120,7 +120,7 @@ This is a foundational concept with no prerequisites within this source.
 
 # Source Reference
 
-“Modular scales and how they apply to web design”; “Creating a modular scale for web design” — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+"Modular scales and how they apply to web design"; "Creating a modular scale for web design" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
 # Verification Notes
 
