@@ -301,3 +301,14 @@ five available-evidence outcomes per card, with supported corrections now.
 Original Brown capture/fidelity remains P10-11-blocked; unresolved endpoints and
 CQs stay visible. This is neither sampling to satisfy233 coverage nor a new
 analysis-only phase. All other230 cards retain existing full-review ownership.
+
+
+## Slice12 closure and selection continuation — 2026-10-15
+
+[Slice12 CDC closure](slice12-modular-scale-card-fixes/cdc-verification.md#iteration02-independent-review-and-slice12-closure--2026-10-15)
+accepts its three-card core correction at source8b408c03/planning7c65468e, four
+rows done. [Slice13](slice13-base-and-ratio-selection/slice-plan.md) opens the
+next three Brown input/selection cards. All ten arc criterion texts/statuses stay
+unchanged. Original fidelity, remaining corpus/live/global/behavior and final
+hosted/package gates remain open; micro corrections continue until the final
+1.1.0 bump at accepted Arc02 completion.

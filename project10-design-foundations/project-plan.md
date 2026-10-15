@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.65**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.66**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -152,12 +152,11 @@ revision applicability for both.
    at sourcecbb5b893/planningd665c388, all four rows done. Open
    [Arc02/Slice11](arc02-theory-and-evidence/slice11-layout-and-measure-source-fixes/cc-prompt.md)
    has now independently closed at sourcefce72353/planning8df2776a, four rows done.
-   Was: [Arc02/Slice12 initial assignment](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt.md)
-   for three core Brown cards. Its
-   [Iteration01](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt-iteration01.md)
-   completed its main teaching/support/lineage repairs. Continue
-   [Iteration02](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt-iteration02.md)
-   for the missed Related label; three rows done, S12-02 open.
+   Was: Arc02/Slice12 was active. Now: its three-card core is independently
+   closed at source8b408c03/planning7c65468e, all four rows done. Continue with
+   [Slice13](arc02-theory-and-evidence/slice13-base-and-ratio-selection/cc-prompt.md):
+   three complete Brown input/selection cards, supported corrections in the
+   same batch, explicit metadata exceptions and owning micro version/history.
    Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -275,26 +274,23 @@ GitHub proof and baseline/current bridge remain applicable. P10-01 and P10-12
 are done; P10-02–11 and P10-13 remain open. Existing-field alignment is accepted,
 not missing-field completion or full schema conformance.
 
-Arc02/Slices01–11 are independently closed at their recorded scopes. Slice10
-ships five guide corrections at sourcecbb5b893; its four criteria are done. Was:
-Slice10 and then Slice11 were active. Now Slice11 is independently closed at
-sourcefce72353/planning8df2776a, with its four guide contexts accepted. Current
-slice: [Slice12](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/slice-plan.md),
-review three related core cards completely against available evidence and
-apply supported corrections in that batch. Was: initial sourcefd876e7c/planning0631c98a
-review accepted one integration row and left three open.
-[Iteration01](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt-iteration01.md)
-is now reviewed at sourcea0555038/planningf142e917: three rows done.
-[Iteration02](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cc-prompt-iteration02.md)
-finishes one missed Related label before closure; original fidelity
-and any unresolved relationship/CQ support remain explicit. This bounded unit
-does not satisfy the rest of the233-card review. All230 other cards remain owned;
-the ten arc criteria keep their prior dispositions. Arc04 remains
-a roadmap entry. Complete card/live semantics and global reconciliation,
-originals/fidelity, actual browser behavior, fresh-context and final installed
-package/release gates remain open with their existing owners.
+Arc02/Slices01–12 are independently closed at their recorded scopes. Slice12's
+corrected core is accepted at source8b408c03/planning7c65468e, four child criteria
+done; original-fidelity and empirical/external endpoint results retain limits.
+Current assignment: [Slice13](arc02-theory-and-evidence/slice13-base-and-ratio-selection/slice-plan.md),
+base unit, ratio-selection criteria and golden ratio. Four new child rows open;
+all other230 cards are protected by this batch, and227 outside this/prior core
+retain their complete-review owners. No full-corpus acceptance follows from the
+first three bounded outcomes. Arc04 remains a roadmap entry. Complete live/global
+reconciliation, originals/fidelity, actual browser behavior, final hosted and
+installed-package/release gates remain open. The Operator-corrected1.1.0 target
+and final bump at accepted Arc02 completion are unchanged.
 
 ## Version History
+
+- 1.66 (2026-10-15): Arc02/Slice12 independently closes its final repair with
+  four rows done. Open Slice13 for the next three Brown selection cards; preserve
+  all thirteen criteria, corpus/fidelity/global gates and1.1.0 version sequence.
 
 - 1.65 (2026-10-15): Operator corrects the original 1.5 target to 1.1.0;
   continue 1.0.x corrections and schedule the final minor bump at accepted Arc02

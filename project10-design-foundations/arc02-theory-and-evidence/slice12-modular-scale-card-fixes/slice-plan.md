@@ -1,16 +1,17 @@
 ---
 slice: slice12-modular-scale-card-fixes
-status: active
+status: closed
 depends-on: [accepted fluid-scale arithmetic, slice11-layout-and-measure-source-fixes current source, Brown prepared-source readiness]
 ---
 
 # Slice12 — Correct the Modular-Scale Card Core
 
-Plan revision **1.2**, updated2026-10-14. Was: initial assignment, four open.
-Was: Iteration01 active, one row done. Now: [Iteration02](cc-prompt-iteration02.md)
-is active after independent refinement review; S12-01/03/04 done at sourcea0555038,
-S12-02 open for one missing Related approximation label. The initial prompt
-and CC return remain historical inputs; [CDC record](cdc-verification.md) governs.
+Plan revision **1.3**, closed2026-10-15. Was: Iteration02 active with S12-02
+open. Now: all four criteria independently done at source8b408c03/planning7c65468e;
+[CDC closure](cdc-verification.md#iteration02-independent-review-and-slice12-closure--2026-10-15)
+is current. All issued prompts and CC history are preserved. No active CC source
+assignment remains in this slice; continue with
+[Slice13](../slice13-base-and-ratio-selection/slice-plan.md).
 [Project](../../project-plan.md), [arc](../arc-plan.md), [ledger](ledger.md) and
 [initial prompt](cc-prompt.md) govern. Two contributors: CDC Sofie authors/reviews,
 separate CC executes through Operator relay; Expedited Mode. This details the
@@ -110,7 +111,7 @@ required-full cards and bounded source/registry reads, no full-corpus shortcuts.
 |---|---|---|
 | [Initial cc-prompt.md](cc-prompt.md) |2026-10-14; preparation8df2776a; actual issuing commit recorded at intake | Returned for review at sourcefd876e7c/planning0631c98a; one done, three open after F01–F03. |
 | [Iteration01](cc-prompt-iteration01.md) |2026-10-14; sourcefd876e7c; planning predecessor0631c98a; actual issuing commit recorded at CC intake | Returned at sourcea0555038/planningf142e917; three done, S12-02 open after F04. |
-| [Iteration02](cc-prompt-iteration02.md) |2026-10-14; sourcea0555038; planning predecessor f142e917 | Active: one missed Related label; literal replacement/reverse byte check, retained independent math/package/bridge evidence. |
+| [Iteration02](cc-prompt-iteration02.md) |2026-10-14; sourcea0555038; planning predecessor f142e917 | Accepted and closed at source8b408c03/planning7c65468e on2026-10-15; all four criteria done with bounded limits. |
 
 ## Iteration01 author readiness
 
@@ -139,6 +140,10 @@ No new design decision/inquiry, schema field or repeated theory/package work.
 The existing method, original four criteria and actual unresolved gates remain.
 
 ## Version History
+
+- 1.3 (2026-10-15): Independently accept the exact final label repair, retain
+  unaffected review/package evidence, close four rows and pass the next connected
+  Brown input/selection cohort to Slice13. Full parent/fidelity gates stay open.
 
 - 1.2 (2026-10-14): Iteration01 accepts three rows; one literal Related-label
   repair remains. Issue one-line refinement with retained accepted evidence.

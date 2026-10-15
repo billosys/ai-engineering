@@ -346,3 +346,15 @@ match. Future intentional semantic body/metadata changes need explicit deltas
 and affected locator/rendering re-entry; accepted Arc06 evidence stays historical
 for changed cards and applicable only to unchanged inputs. No full-corpus,
 metadata-schema migration, installed-package or release gate closes automatically.
+
+
+## Arc02/Slice12 acceptance and next selection cohort — 2026-10-15
+
+[Slice12 CDC closure](arc02-theory-and-evidence/slice12-modular-scale-card-fixes/cdc-verification.md#iteration02-independent-review-and-slice12-closure--2026-10-15)
+accepts four child criteria at source8b408c03/planning7c65468e. The complete three
+core-card available-evidence review retains its original-fidelity/edge/CQ limits.
+[Slice13](arc02-theory-and-evidence/slice13-base-and-ratio-selection/slice-plan.md)
+continues with base/selection/golden cards and same-batch fixes. All thirteen
+project criterion texts/statuses remain unchanged; P10-01/12 stay done, all other
+rows stay open. Current changed-card hosted proof, original captures and final
+composition remain owned; no project/release gate or immediate1.1.0 bump follows.

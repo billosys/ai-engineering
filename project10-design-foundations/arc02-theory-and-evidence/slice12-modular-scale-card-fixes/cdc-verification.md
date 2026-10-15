@@ -211,3 +211,81 @@ original fidelity, global consistency, actual behavior and final-revision hosted
 release obligations are not accepted. Current assignment is Iteration02 for the
 one missed line, with the same three planning return homes. Parent dispositions
 and issued prompts remain unchanged; no Slice13 is opened before Slice12 closes.
+
+
+## Iteration02 independent review and Slice12 closure — 2026-10-15
+
+**Current verdict: accepted; Slice12 closed, all four criteria done.** CDC Sofie
+independently reviewed [Iteration02](cc-prompt-iteration02.md), source
+`8b408c038d7fc8d1df3fdd478640376cb461ad74` (parent
+`a05550386eefe021140a55e110a1868dd978f893`) and CC planning return
+`7c65468ef2bea0d600ef17511c97a90f26f86628` (parent/issue
+`07a75e409a1ab584f7188c10803c5a2f7ca93d7d`). Current planning00c66066 also
+contains the subsequent Operator-authorized target correction to1.1.0; it
+changes no Slice12 source/acceptance evidence. CDC made no implementation edits.
+
+Fresh reproduction against committed bytes: exactly one old label before, one
+prescribed new label after, zero old labels after; reversing that literal line
+restores the complete pinned a0555038 blob. Whole-file hash
+`2f72765ddee3adb0dadf454240f471dcb78d9b1ccb0cdd06d62b48e0dde7e3c3`
+and11335 bytes match the report; unchanged1832-byte header leaves9503 body bytes.
+Line115 is the whole-card locator (not an independently numbered body line).
+The same233 paths remain;232 other card blobs equal the assigned baseline.
+Sources/guides/entrypoint/history/Makefile objects are exact. The one source path
+and three planning output paths, actual parents, separate required trailers and
+both commit whitespace checks pass. Planning statuses/criterion contracts were
+preserved by CC. Prior source/dataset inputs remain unchanged; the source worktree
+retains only its pre-existing untracked knowledge/lfe/.
+
+F04 is resolved: the Related label explicitly attributes decimal1.618 to Brown's
+contextual Minion example and identifies approximation toφ. This agrees with
+inspected prepared174–186 and the card's existing exact-versus-decimal scope.
+S12-01/03/04 retain the independently reproduced Iteration01 evidence above;
+the exact one-line diff cannot alter their accepted coverage, prefix/identity,
+historical bridge or actual bundled inputs. S12-02's prior arithmetic, six
+semantic scalar corrections and scoped/source distinctions likewise remain
+applicable with this last repeated label repaired. No84-case arithmetic replay
+or unchanged package gate was rerun; retention is input-specific independent
+evidence, not promotion of CC's gate attestations. Cards remain unbundled.
+
+| Row | Final status | Evidence strength and applicability |
+|---|---|---|
+| S12-01 | done | Retained independently reproduced complete available-evidence review of the three cards; explicit fidelity/empirical/endpoint limitations remain. |
+| S12-02 | done | Fresh committed exact one-line/reverse comparison resolves F04; retained independent mathematical, six-leaf and scoped teaching checks. |
+| S12-03 | done | Fresh reverse-byte,233/232 and protected-input checks extend retained complete three-card/230-other preservation and corrected historical bridge to8b408c03. |
+| S12-04 | done | Retained independent version/history/package gates after exact input comparison; current source/planning scope and return boundaries independently checked. |
+
+Four opening criteria, four done; zero deferred/no-op/dropped rows. Exactly one
+supporting artifact, `artifacts/batch-record.md`; the root closing report and
+all three issued prompts remain preserved. The accepted usable result is the
+three corrected modular-scale core cards on main at8b408c03, owning version1.0.9,
+with explicit original-fidelity and relationship/CQ limits. This is bounded
+available-evidence acceptance, not full original-source or entire corpus acceptance.
+
+### Bubble-up and next delivery
+
+The assigned three-card core correction is delivered; no scope silently drops.
+Known source-fidelity inputs, unresolved empirical/endpoint warrant, remaining230
+card reviews, complete live/global reconciliation, actual browser/accessibility,
+affected hosted/P10-13 and final Arc04/release composition retain their owners.
+The latest ratio card needs hosted re-entry at8b408c03; other two accepted core
+cards are byte-equal to their a0555038 versions. No hosted/push/install/publication
+or parent closure is claimed. All thirteen project and ten arc criteria keep
+existing dispositions; the1.1.0 milestone still waits for accepted Arc02 completion.
+
+The arc plan changes from this closed core to the next coherent Brown input/
+selection unit: [Slice13](../slice13-base-and-ratio-selection/slice-plan.md),
+base unit, ratio-selection criteria and golden ratio. It fixes inspected known
+repeats while reviewing the three complete cards, with five exact existing
+metadata corrections and micro version/history. This follows the approved cohort
+method; it is not another inquiry or an expansion into Project11. Other Brown
+music/application cards remain later owners, with no global graph shortcut.
+
+
+Closing/opening plan checks: ten exact planning paths,175 local links and52
+fragments resolve; LF/EOF and whitespace pass. The original four Slice12
+criteria are unchanged and all done; four Slice13 rows start open. Parent13/10
+criteria/statuses, all issued Slice12 prompts, CC batch/closing reports and prior
+plan histories are preserved. The five literal metadata values in the new prompt
+match the exercised temporary typed recipe. Source remains at8b408c03 without
+tracked CDC edits; new source changes are assigned to CC only.

@@ -1,0 +1,11 @@
+# Slice13 Ledger
+
+Four rows open. CC proposes evidence; CDC independently accepts. Missing original
+fidelity or endpoint/CQ warrant stays explicit within this bounded correction.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S13-01 | All three complete cards have explicit five-dimension available-evidence outcomes and recoverable claim/source exceptions | Read all teaching/structured content against pinned prepared passages, independent mathematics, scopes and edge/CQ answer components | correctness-grade | Operator full 233 review; next Brown selection unit | open | — | Original fidelity and unsupported historical/perceptual/endpoint results remain separate. |
+| S13-02 | Supported base-selection, ratio-scope, exactφ/decimal, arithmetic and legacy-verification defects are consistently corrected in bodies and the five prescribed existing golden leaves | Inspect revised cards and repeated claims; exact arithmetic/contrary cases; exact five parsed scalar deltas and contextual source joins | correctness-grade | DES-003/004/015/016; Slice12 companion consistency | open | — | Preserve useful examples and question text; no universal ratio/beauty/consonance rule or silent historical-quote repair. |
+| S13-03 | Identities, preserved metadata/teaching/evidence and unaffected corpus survive with exact correction lineage | Check two exact prefixes, golden duplicate-safe key/type/order/value preservation except five leaves, references/headings/CQs/relations;233=3selected+230unchanged;161 originals/live payloads and actual raw/current/new bridge | correctness-grade | Arc06 no-fill contract; current-source semantic correction | open | — | No baseline hash is treated as current-byte expectation across historical normalization/Unicode changes. |
+| S13-04 | Corrected cards are integrated with owning micro history and honest package/hosted limits in a complete four-row return | Required Make/version/path checks, fresh eight-member ZIP comparison and exact source/planning commit scopes, artifact inventory and bubble-up | serious | Usable source increment; final applicability | open | — | Current1.0.9→1.0.10; final 1.1.0 waits for accepted Arc02 completion. Cards are not ZIP members; no hosted or release acceptance follows. |
