@@ -112,7 +112,7 @@ This is a foundational concept with no prerequisites within this source.
 - **Modular scale construction (procedure)** — The ratio is an input to a ratio-generated construction, alongside its positive base; other visual scale choices may be additive or independent.
 
 ## Related
-- **Golden ratio** — One specific, historically prominent scale ratio (1.618).
+- **Golden ratio** — Brown used the decimal multiplier `1.618`, an approximation to φ, for his contextual Minion example.
 - **Perfect fourth ratio** — Decimal `1.333` approximates the exact ratio `4/3`, derived from music.
 - **Perfect fifth ratio** — Exact ratio `1.5 (=3:2)`, derived from music.
 - **Ratio selection criteria** — The guidelines for choosing an appropriate ratio.
