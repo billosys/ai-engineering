@@ -38,17 +38,15 @@ css_implementation:
 
 # Quick Definition
 
-The base unit is the meaningful starting number (or numbers) from which a modular scale is generated — anchoring the entire measurement system to a concrete typographic or design decision.
+A base unit is a positive starting value for one declared scale strand. Pair it with that strand's positive ratio and indexing convention; the base is an input, not a claim that one font size or measurement is universally optimal.
 
 # Core Definition
 
-Brown describes the base unit as the foundational input to scale construction alongside the ratio: "You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers."
+Brown presents the starting number alongside the ratio: “You start with a ratio (for example, 1:1.618) and a number (like 10), then multiply and divide to get many resonant numbers.” In his project he first chose a text face and tested sizes, then used 18px Minion as one starting value. That is his typeface-first method and contextual example, not a requirement for every project or proof of a unique optimum.
 
-Critically, Brown argues the starting number should not be arbitrary. He recommends grounding it in a direct typographic decision: "By choosing a text face at the beginning of a project...we can use the size at which body text looks most crisp as the basis for a project's modular scale." In his own example: "once I found the size I liked, 18px, I had a number upon which to base my modular scale."
+Brown also uses a second “important” number, 190px for an h2 in his example, to make a double-stranded scale. He suggests that a caption size or a media dimension may be relevant when the project calls for it. These are possible contextual inputs; they are not mandatory choices. A convenient fixed value can also be valid when it suits the intended system and is declared clearly.
 
-The source also introduces the concept of a second starting number — an "important number" — used to create a double-stranded scale. This second number can be: the optimal caption text size; a large media dimension (width of an embedded video or ad unit); or a headline size that "anchor[s] the composition." For Brown's example, 190px (his h2 size) served this function.
-
-Brown's CSS documents both origins with comments: `font-size: 18px; /* Scale origin */` and `font-size: 190px; /* Scale origin */`.
+A scale strand is generated from its own positive starting value and ratio. A double-stranded construction can start from two numbers or two ratios, as Brown says at “Creating a modular scale for web design” (prepared article, lines 156–171). The two geometric strands should be distinguished from a sorted merge of their values: adjacent values in the merged list need not be adjacent steps within either strand.
 
 # Prerequisites
 
@@ -56,79 +54,76 @@ This is a foundational concept with no prerequisites within this source.
 
 # Key Properties
 
-1. **Meaningful**: The base unit should be derived from a real design decision (e.g., optimal body text size) rather than chosen arbitrarily or for computational convenience.
-2. **Typographically grounded**: Using body text size as the base unit anchors the entire measurement system to a visual quality judgment designers make with confidence.
-3. **Multiple bases possible**: A double-stranded scale uses two starting numbers, generating two interleaved geometric sequences that together provide more measurement options.
-4. **Documented in CSS**: Best practice (per Brown) is to comment the scale origin(s) in the stylesheet, enabling future designers to recreate or extend the scale.
+1. **Positive declared input**: A strand starts from a positive value and uses a declared ratio and indexing convention. The value may be selected by contextual testing, convenience, or another stated constraint.
+2. **Contextual choice, not a universal optimum**: Brown tests typeface sizes in his project and describes his approach; the article does not establish that body text must supply every scale's base or that a single size is objectively best.
+3. **More than one strand**: A double-stranded scale may use two starting numbers or two ratios. Keep each strand's construction separate from any sorted merge of its outputs.
+4. **Documentation**: CSS comments that explain intended origins can help future readers. A comment does not prove that the body font size is the computational base or that every value outside one sequence has another origin.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Set the body text face before making layout decisions.
-2. Try different font-sizes to find the one at which that face looks best at your target rendering conditions.
-3. Record that size (e.g., 18px) as the scale's primary base unit.
-4. Optionally, identify a second "important number" — a size that has special significance in the composition (a large headline, a media width, a caption size).
-5. Feed both numbers into the scale generator alongside the chosen ratio.
+1. Declare a positive starting value, ratio, and indexing convention for each strand.
+2. Choose the inputs that suit the project. Brown's typeface-first trial is one approach: he tested Minion and selected 18px. A fixed or convenient value is also usable when it meets the stated design or implementation constraints.
+3. If a second strand is useful, declare its starting number or ratio as an additional input. Brown's 190px h2, caption size, and project-required media dimension are attributed possibilities, not a required recipe.
+4. Generate each strand from its own inputs. Keep strand indices explicit; if values are sorted and merged, do not describe every neighbor in that merged list as a step in one strand.
+5. Document the chosen inputs and their roles. CSS comments are documentation, not independent evidence of how values were computed.
 
 ## To Identify/Recognise:
-1. Look for CSS comments marking `/* Scale origin */` or similar notations.
-2. Identify the body `font-size` value — this is typically the primary base unit.
-3. Check whether large or small outlier sizes in the CSS (very large headlines, very small captions) correspond to secondary scale origins.
+1. Look for declared base values, ratios, and indexing rules in the scale specification or implementation.
+2. Treat CSS comments such as `/* Scale origin */` as evidence of stated intent only.
+3. Check whether values follow a strand's declared rule before assigning an origin. Body `font-size` is not necessarily the computational base, and an outlier does not by itself establish a second strand.
 
 # Context & Application
 
-- **Typical contexts**: Beginning of any project using a modular scale; body text size selection; double-stranded scale construction.
-- **Common applications**: Using body text size as the primary base; using a significant headline or image dimension as a secondary base for double-stranded scales.
-- **Historical/stylistic notes**: Brown's recommendation to "start with type" — to select the text face and its optimal size before layout — represents a content-out design philosophy (he cites Mark Boulton's "going from content out, rather than canvas in" as a kindred approach).
+- **Typical contexts**: Declaring the starting value for a modular scale; deciding whether a second strand is useful.
+- **Common applications**: Brown's 18px Minion example and his 190px h2 example; his article also mentions a caption size or a project-required media dimension as possible inputs.
+- **Historical/stylistic notes**: Brown's “start with type” approach chooses a text face and tests its size before layout decisions. He relates that approach to going from content out rather than canvas in. This is an attributed design method, not a universal rule for choosing bases.
 
 # Examples
 
-**Example 1** (from source, "Modular scales and how they apply to web design"): "If 16px Adobe Caslon is readable and renders well, we'll multiply and divide from 16 to create our scale. Thus, an entire system of harmonious measurement can be grounded in a visual decision—body text size—that designers routinely make with confidence."
+**Example 1** (from source, “Modular scales and how they apply to web design”): “If 16px Adobe Caslon is readable and renders well, we'll multiply and divide from 16 to create our scale. Thus, an entire system of harmonious measurement can be grounded in a visual decision—body text size—that designers routinely make with confidence.” This is Brown's illustration, not evidence that 16px is appropriate for every typeface, context, or user.
 
-**Example 2** (from source, "Creating a modular scale for web design"): "Sizing type on the web is tricky because of the limited resolution involved. One pixel of font-size up or down can completely change how a typeface—and thus a whole text—looks. But once I found the size I liked, 18px, I had a number upon which to base my modular scale."
+**Example 2** (from source, “Creating a modular scale for web design”): Brown writes that web type is sensitive to one-pixel changes and that after testing he liked 18px for Minion. The prepared source records this project-specific choice; it does not independently establish a general optimum.
 
-**Example 3** (from source, "Creating a modular scale for web design"): "I also decided to include a second, 'important' number, because I wanted the flexibility of a double-stranded modular scale... I played with the text a bit, and the resulting font-size, 190px, became my important number."
+**Example 3** (from source, “Creating a modular scale for web design”): Brown says he included a second “important” number for a double-stranded scale; he selected 190px for his h2 after working with the text.
 
-**Example 4** (from source, "Creating a modular scale for web design"): Other possible second numbers: "The size at which caption text looks best, for instance, or a large number like the width of a piece of media—if the project at hand mandates ads or embedded videos, for instance—ensures that something about those elements resonates with the layout as a whole."
+**Example 4** (from source, “Creating a modular scale for web design”): Brown suggests that a caption size or a media width may be a second number when the project calls for captions, ads, or embedded video. The choice remains contextual.
 
 # Relationships
 
 ## Builds Upon
-- (None in this source — the base unit is a primitive input.)
+- (None in this source — a starting value is a primitive input.)
 
 ## Enables
-- **Modular scale** — The base unit, combined with the ratio, generates the full scale.
-- **Modular scale construction (procedure)** — The base unit is the required first input to the construction procedure.
-- **Double-stranded modular scale** — Requires two base units (or two ratios).
+- **Modular scale** — A declared starting value paired with a ratio contributes one scale strand.
+- **Modular scale construction (procedure)** — The procedure needs the strand's starting value and ratio.
+- **Double-stranded modular scale** — Brown's construction allows two starting numbers or two ratios. These inputs define two strands; the sorted merge is a separate representation.
 
 ## Related
-- **Scale ratio** — The complementary required input to scale generation; neither alone produces the scale.
+- **Scale ratio** — The complementary input for generating a strand; neither input alone specifies it.
 
 ## Contrasts With
-- **Arbitrary starting numbers** — Choosing 10 or 16 out of convenience rather than because those sizes represent the optimal rendering of a chosen typeface.
+- **Undeclared starting values** — A sequence whose starting value or role is not stated is harder to reproduce. This is a documentation distinction, not a claim that convenient numerical choices are invalid.
 
 # Common Errors
 
-- **Error**: Choosing a base number (e.g., 10, 16) without first checking whether that size is actually the optimal rendering size for the chosen typeface.
-  **Correction**: Test the typeface at various sizes in context before committing. "One pixel of font-size up or down can completely change how a typeface—and thus a whole text—looks" (Brown).
+- **Error**: Treating Brown's typeface-first method as a requirement to find the objectively optimal body size before choosing any scale input.
+  **Correction**: Attribute the method to Brown and state the project context. A fixed or convenient positive input can be valid; its suitability depends on the declared use and constraints.
 
-- **Error**: Selecting an "important number" arbitrarily rather than deriving it from a real compositional element.
-  **Correction**: The important number should emerge from the design — a headline tested until it "anchor[s] the composition," or a media element resized until it "resonates."
+- **Error**: Treating every large or small CSS value as a separate scale origin, or assuming the body font size is necessarily the base.
+  **Correction**: Compare values with declared per-strand rules and indices. Comments document intent but do not establish the arithmetic.
 
 # Common Confusions
 
-- **Confusion**: The base unit and the scale ratio are the same concept.
-  **Clarification**: They are two distinct inputs. The base unit anchors the scale to a specific size in CSS units. The ratio determines how widely spaced the scale steps are. Both are required; neither substitutes for the other.
+- **Confusion**: The base value and the scale ratio are interchangeable.
+  **Clarification**: They are separate declared inputs: the value sets a strand's starting magnitude, while the ratio sets its multiplicative progression. A double-stranded scale may use two numbers or two ratios; merged-list adjacency remains distinct from per-strand steps.
 
 # Source Reference
 
-"Modular scales and how they apply to web design"; "Creating a modular scale for web design" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+“Modular scales and how they apply to web design”; “Creating a modular scale for web design” — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
 # Verification Notes
 
-- Definition source: Synthesised from procedural description; no standalone definition of "base unit" given. The concept is described through worked examples and justification.
-- Confidence rationale: High — the article provides multiple explicit examples, rationale, and CSS documentation practice for the base unit concept.
-- Uncertainties: None significant within the scope of this source.
-- Cross-reference status: Verified.
-- Rosetta Stone check: No mappings — the base unit is a straightforward typographic/computational concept without meaningful cross-domain analogues in this source.
-- OCR issues: None significant.
+- Definition and examples: Brown's prepared article, “Modular scales and how they apply to web design” and “Creating a modular scale for web design,” especially lines 133–189; the article describes worked inputs rather than giving a standalone universal definition.
+- Available-evidence review: The card's definitions and procedures have been qualified to distinguish Brown's contextual method from general requirements; arithmetic/construction is checked against the declared strand inputs; relation language is limited to the input dependency described here; the existing construction question is addressed only at this input level. Original capture identity/fidelity and broader endpoint/CQ review remain pending.
+- Legacy evidence: “High,” “Verified,” and OCR observations are inherited extraction-era records, not new semantic or fidelity acceptance. The locator points to prepared text; no immutable original capture or lineage was reviewed. CDC review remains pending.

@@ -1,5 +1,5 @@
 ---
-concept: "Golden Ratio (\\u03c6)"
+concept: "Golden Ratio (φ)"
 slug: "golden-ratio"
 category: "design-principles"
 subcategory: "proportion"
@@ -18,7 +18,7 @@ aliases:
     - "golden mean"
     - "golden section"
     - "phi"
-    - "\\u03c6"
+    - "φ"
     - 1.618
 prerequisites: []
 extends: []
@@ -37,107 +37,119 @@ rosetta_stone:
     note: "The golden ratio is a precisely defined mathematical constant. Its defining property: a line divided such that the whole is to the longer part as the longer part is to the shorter part. This produces φ ≈ 1.618."
   -
     domain: "music"
-    concept: "No direct musical interval equivalent — φ is irrational and does not correspond to a simple integer frequency ratio"
+    concept: "Irrational frequency ratios versus simple integer ratios"
     rating: "loose"
-    note: "Unlike perfect fourth (4:3) or perfect fifth (3:2), φ is not a simple integer ratio and does not produce a consonant musical interval. Its harmonic grounding is different — it appears in growth patterns and self-similar geometric forms."
+    note: "φ is irrational and cannot equal a ratio of two integers. That mathematical distinction does not establish whether a frequency interval is consonant or whether a typographic proportion is harmonious; the Brown article does not verify those perceptual judgments."
 css_implementation:
   -
     property: "font-size (scale step)"
-    example: "/* Golden ratio scale from 18px */ font-size: 18px; /* step 0 */ font-size: 29.124px; /* 18 × 1.618, step 1 */ font-size: 47.124px; /* step 2 */"
+    example: "/* Decimal approximation r=1.618, base 18px; compute from base before three-place rounding */ font-size: 18px; /* step 0 */ font-size: 29.124px; /* step 1 */ font-size: 47.123px; /* step 2 */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-The golden ratio (φ ≈ 1.618) is a proportion found throughout geometry, nature, and historical design; expressed as the ratio 1:1.618, it is one of the most historically prominent ratio choices for constructing a typographic modular scale.
+The exact golden ratio is the positive number φ=(1+√5)/2, the positive solution of x²=x+1. Brown's typographic example uses the decimal approximation r=1.618=809/500. The approximation is a chosen rational ratio, not the exact irrational constant.
 
 # Core Definition
 
-Brown introduces the golden ratio in the article's opening sentence: "We have all heard of the golden mean (also known as the golden ratio or golden section): the self-replicating page with a proportion of 1:1.618 that is said to be found in everything from the design of ancient Greek architecture to the growth patterns of plants."
+Brown introduces a “self-replicating page” with a proportion of 1:1.618 and says it is “said to be found” in examples from Greek architecture to plant growth (prepared article, opening paragraph). Those are his attributed, hedged statements. The prepared article does not establish historical priority, actual proportions, natural-growth explanations, or a universal perceptual effect.
 
-He then uses 1:1.618 as the ratio for both worked examples in the article. His stated rationale for the choice: "It is a beautiful proportion with historical and cultural connections that make sense for the typefaces I've chosen and the text I'm setting." Specifically, Renaissance page and textblock proportions were based on the golden mean, and his text face (Minion) draws on Renaissance ideals.
+For a positive long length L and short length S, set x=L/S. The golden-section condition (L+S)/L=L/S becomes 1+1/x=x, hence x²=x+1; its positive solution is exact φ. It follows that 1/φ=φ−1. This independently derived definition is not supplied as a formal equation by Brown.
 
-The golden ratio is self-replicating: if you divide a line segment in the golden ratio, the ratio of the whole to the longer segment equals the ratio of the longer segment to the shorter segment. This self-similar property is what Brown references when he calls it "the self-replicating page."
+A practical scale may instead declare decimal r=1.618=809/500. For that rational value, r²−r−1=−19/250000, so it does not satisfy the defining equation; its reciprocal is 500/809, not exactly 0.618. A measured ratio close to either value can suggest a chosen approximation, but measurement alone cannot prove exact φ, design intent, or a historical source.
 
 # Prerequisites
 
-This is a foundational concept with no prerequisites within this source.
+This card introduces the proportion as a standalone concept. Applying it to scale construction also requires a declared base, ratio convention, and indexing rule.
 
 # Key Properties
 
-1. **Value**: φ ≈ 1.6180339... (irrational — its decimal expansion never terminates or repeats).
-2. **Self-similar**: The ratio of the whole to the larger part equals the ratio of the larger part to the smaller part: (a+b)/a = a/b = φ.
-3. **Historical**: Associated with ancient Greek architecture, Renaissance page design, and natural growth patterns (phyllotaxis).
-4. **Strong contrast**: As a typographic scale ratio, 1.618 produces relatively large jumps between scale steps — best suited for display typography, editorial layouts, or designs needing strong hierarchical contrast.
+1. **Exact value**: φ=(1+√5)/2 is irrational and is the positive root of x²=x+1. The decimal 1.618 is a separate rational approximation.
+2. **Segment relation**: For positive L>S, the exact condition (L+S)/L=L/S=x yields x=φ. This relation describes the exact model, not a tolerance-based measurement.
+3. **Reciprocal**: Exact 1/φ=φ−1. For the decimal approximation 809/500, the reciprocal is 500/809, approximately 0.618047, not exactly 0.618.
+4. **Scale progression**: A strand using exact φ or chosen decimal r can be computed by indexed powers of that declared value. Do not transfer exact identities to the decimal model or infer adjacency from a sorted merge of strands.
+5. **Context is not proof**: Brown selected 1:1.618 for a contextual example. That choice does not prove historical priority, suitability for every display or dense interface, beauty, or musical consonance.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Use the ratio 1:1.618 (or more precisely, 1:(1+√5)/2) as the multiplier in a modular scale.
-2. From any base value b, the next scale step up is b × 1.618; the next step down is b / 1.618 (equivalently, b × 0.618).
+1. Choose whether the model uses exact φ or a declared decimal approximation. Keep that distinction in data and explanation.
+2. Declare a positive base b, ratio r, and index n; compute each strand value as b·rⁿ from the unrounded base. State units and rounding rule for displayed values.
+3. Brown reports using 1.618 with 18px Minion and a second 190px h2. Those are his contextual selections; the article does not show that its decimal is exact φ or that these inputs suit other projects.
+4. When checking an observed proportion, calculate with unrounded measurements and state tolerance and uncertainty. Approximate agreement is evidence of closeness only, not of exact construction or intent.
 
 ## To Identify/Recognise:
-1. Check the ratio between adjacent values in a scale; if consistent at approximately 1.618, the scale uses the golden ratio.
-2. Look for the proportion 1:1.618 in page dimensions, text block proportions, or column relationships.
+1. A ratio near 1.618 is compatible with a rounded display of φ, a deliberately selected decimal such as 809/500, or another approximate choice. It does not by itself identify which model was intended.
+2. Check indexed values against the declared ratio before rounding. In a merged set of strands, compare like-for-like per-strand indices rather than assuming adjacent sorted values share one ratio.
+3. Treat source-reported values as source reports. For example, Brown's descending base-10 display includes 6.180, 3.819, and 2.360; independent recomputation under the exact decimal 1.618 gives different later values. Preserve the report when quoting it and identify any recalculation separately.
 
 # Context & Application
 
-- **Typical contexts**: Editorial typography, book design, display-heavy web design, designs with cultural or historical references to classical or Renaissance aesthetics.
-- **Common applications**: Generating modular scale values for type size hierarchies; proportioning page layouts and text blocks; providing a culturally resonant ratio choice for designs with humanist or classical associations.
-- **Historical/stylistic notes**: Brown chose φ specifically because Minion Pro "draws upon Renaissance ideals, in everything from its humanist structure to the ways in which parts of letters reveal a history in pen and ink," and because "page and textblock proportions in Renaissance works were based on the golden mean." The ratio is contextually motivated, not universally prescribed.
+- **Typical contexts**: Defining the exact geometric proportion; declaring an exact or approximate ratio in a modular scale.
+- **Common applications**: Brown's attributed 1:1.618 scale examples; independent calculations using an explicitly chosen exact or decimal model.
+- **Historical/stylistic notes**: Brown connects his choice to Minion and a text about typographic tradition, and refers to Renaissance page proportions. These remain his contextual rationale. The prepared article and its Further Reading pointer do not independently verify the historical claims or support a universal style prescription.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: φ is a precisely defined irrational constant, (1 + √5)/2. Its defining geometric property (self-similar division) is mathematically exact. Using it as a scale ratio means every step in the scale carries φ's self-similar property: the ratio between any two values separated by one step is always exactly φ.
+**Mathematics → exact definition**: The segment equation above entails x²=x+1 and its positive root φ. A decimal approximation can be useful for computation but does not inherit every exact identity. The music mapping's irrationality claim only says φ cannot equal a ratio of two integers; it does not decide whether a frequency interval is consonant or how it is perceived.
 
 # Examples
 
-**Example 1** (from source, opening): Brown describes the golden ratio as "the self-replicating page with a proportion of 1:1.618 that is said to be found in everything from the design of ancient Greek architecture to the growth patterns of plants."
+**Example 1** (from source, opening): Brown describes “the self-replicating page with a proportion of 1:1.618 that is said to be found in everything from the design of ancient Greek architecture to the growth patterns of plants.” This preserves his attribution and hedge; it is not independent evidence for those cases.
 
-**Example 2** (from source, "Modular scales and how they apply to web design"): Scale from base 10 at ratio 1:1.618: ascending — 10, 16.18, 26.179, 42.358; descending — 10, 6.180, 3.819, 2.360.
+**Example 2** (from source, “Modular scales and how they apply to web design”): Brown reports an ascending base-10 sequence 10, 16.18, 26.179, 42.358 and a descending display 10, 6.180, 3.819, 2.360 for his 1:1.618 example. The descending printed values are retained as his report, not silently corrected. Recomputing the later descending values from base 10 and decimal r=1.618 yields approximately 3.81982 and 2.36083 before display rounding, so conventions and source rounding matter; this does not turn the quote into a calculation from exact φ.
 
-**Example 3** (from source, "Creating a modular scale for web design"): Brown's full project scale at 18px and 190px base values, ratio 1:1.618. Applied CSS values include 29.124px (h1), 497.406px (main column width), 307.420px (h1 left margin), 845.479px (container width), 44.856px and 27.723px (margins).
+**Example 3** (from source, “Creating a modular scale for web design”): Brown's project reports 18px Minion, a second 190px h2, and applied CSS values including 29.124px (h1), 497.406px (main column width), 307.420px (h1 left margin), 845.479px (container width), and 44.856px and 27.723px (margins). These are preserved as source-reported values and are not independently validated here as exact-φ outputs.
+
+**Example 4** (independent decimal calculation): With base 18px and declared r=809/500, compute from the unrounded base: 18r=29.124 and 18r²=47.122632. Rounding each to three decimal places with half-even gives 29.124px and 47.123px. Do not calculate step 2 from a rounded step 1.
+
+**Example 5** (independent exact-φ calculation): With the same 18px base and exact φ, high-precision decimal evaluation gives approximately 29.1246118px and 47.1246118px; to three places these display as 29.125px and 47.125px. These values belong to a different model from the decimal example.
 
 # Relationships
 
 ## Builds Upon
-- (None in this source — the golden ratio is introduced as a known proportion requiring no prior concepts.)
+- (None in this source — the exact proportion can be introduced by its equation.)
 
 ## Enables
-- **Scale ratio** — φ is one concrete instantiation of the abstract concept "scale ratio."
-- **Modular scale** — The article's primary worked example uses φ as its ratio.
+- **Scale ratio** — The exact constant or an explicitly chosen decimal approximation can serve as a ratio input. They remain distinct values.
+- **Modular scale** — Brown's example uses decimal 1.618 as one scale ratio; the card does not establish that it is exact φ.
 
 ## Related
-- **Renaissance typography** — Historical context for φ's use in book design (referenced in source).
-- **Ratio selection criteria** — φ is one option in the menu of culturally/historically meaningful ratios.
+- **Ratio selection criteria** — Brown's contextual reason is one example, not a universal recommendation.
+- **Renaissance typography** — The prepared article refers to Renaissance proportions; historical truth and applicability are not independently established by that reference.
 
 ## Contrasts With
-- **Musical interval ratios** — Unlike perfect fourth (4:3) and perfect fifth (3:2), φ is not a simple integer ratio and has no direct musical interval equivalent. Its grounding is geometric/natural rather than harmonic.
+- **Integer frequency ratios** — Exact φ is irrational and cannot equal a quotient of two integers. This mathematical fact alone does not rule out a frequency interval or determine consonance or perception. The referenced music/application endpoint has not been reviewed here.
 
 # Common Errors
 
-- **Error**: Assuming the golden ratio is the "correct" or universally superior ratio for all typographic scales.
-  **Correction**: Brown chose φ specifically for its fit with Renaissance humanist typefaces and a text about typographic tradition. He explicitly identifies cultural and historical fit as the selection criterion — implying other ratios are appropriate for other contexts.
+- **Error**: Treating decimal 1.618 as exact φ, or assuming its reciprocal is exactly 0.618.
+  **Correction**: Name the model. For r=809/500, r²−r−1=−19/250000 and 1/r=500/809≠309/500. Exact φ alone satisfies φ²=φ+1 and 1/φ=φ−1.
 
-- **Error**: Using φ for dense informational interfaces where strong hierarchical contrast is not needed.
-  **Correction**: The 1.618 ratio produces large jumps between steps. For subtle hierarchies or small UI text, a smaller ratio (e.g., 1.333 or 1.25) may be more appropriate.
+- **Error**: Treating an approximate measurement or Brown's contextual example as proof of exact ratio, historical intent, suitability, beauty, or consonance.
+  **Correction**: Report measurement precision and tolerance; keep Brown's rationale attributed. None of those conclusions follows from numeric closeness alone.
+
+- **Error**: Rounding intermediate scale steps and using them to generate later terms.
+  **Correction**: Compute indexed values from the declared ratio and unrounded base, then apply the stated display rounding. For base 18 and decimal 1.618, step 2 is 47.123px at three-place half-even rounding; exact φ gives a different display.
 
 # Common Confusions
 
-- **Confusion**: The golden ratio is a mystical or universal law of beauty that automatically produces beautiful design.
-  **Clarification**: Brown frames it as a proportion with "historical and cultural connections" relevant to specific design contexts — a meaningful choice for specific projects, not a universal prescription. He uses it because it fits his typeface and text subject, not because it is inherently superior.
+- **Confusion**: “Irrational” means the number cannot describe any musical frequency interval or cannot have a perceptual effect.
+  **Clarification**: Irrationality means exact φ cannot equal a ratio of two integers. It does not establish whether an interval is used, consonant, or perceived in a particular way. The Brown article does not verify musical or typographic harmony.
+
+- **Confusion**: A proportion associated with a historical or natural example automatically prescribes a modern design choice.
+  **Clarification**: Brown's examples and rationale are contextual, attributed claims. Neither prepared-source mention nor mathematical identity establishes historical priority, universal applicability, or aesthetic outcome.
 
 # Source Reference
 
-Opening paragraph; "Modular scales and how they apply to web design"; "Creating a modular scale for web design" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
+Opening paragraph; “Modular scales and how they apply to web design”; “Creating a modular scale for web design” — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
-Also referenced in "Further Reading": Robert Bringhurst, *The Elements of Typographic Style*, "Shaping the Page."
+Also referenced in “Further Reading”: Robert Bringhurst, *The Elements of Typographic Style*, “Shaping the Page.”
 
 # Verification Notes
 
-- Definition source: Direct quote from Brown's opening paragraph.
-- Confidence rationale: High — the golden ratio is the primary ratio used throughout the article; Brown provides contextual justification for the choice.
-- Uncertainties: The source does not provide the mathematical definition of φ (only its decimal approximation 1.618 and its self-similar geometric property). The description "said to be found in" ancient Greek architecture and plant growth is Brown's appropriately hedged framing — the source does not overclaim.
-- Cross-reference status: Verified.
-- Rosetta Stone check: Checked — mathematics/phi mapping added (rigorous); music mapping noted as loose (φ is not a simple integer ratio and has no standard musical interval equivalent).
-- OCR issues: None significant.
+- Definition: Brown's prepared opening and scale passages describe decimal 1.618 and a contextual use; the exact equation and root are independently derived here, not attributed to Brown.
+- Available-evidence review: Prepared-source claims and quoted examples are separated from independent arithmetic; the exact and decimal models are checked separately; relation statements describe ratio use without asserting historical endpoints; the existing selection question has a contextual answer but no empirical harmony result.
+- Claim exceptions: Historical Greek/Renaissance/natural-growth claims and perceptual suitability remain attributed or unresolved. Further Reading establishes only that Bringhurst is cited. The musical endpoint, talk, and original source capture were not inspected. Approximate measurements do not establish exact construction or intent.
+- Legacy evidence: “High,” “Verified,” and OCR observations are inherited extraction-era records, not new semantic or fidelity acceptance. The locator references prepared text with capture-identity/fidelity caveats; CDC review remains pending.

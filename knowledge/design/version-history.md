@@ -61,3 +61,11 @@ do not guarantee outcomes across content, users or browsers.
   geometric or that auditory harmony guarantees visual harmony. Record current
   prepared-source and technical review limits while preserving prior extraction
   observations and confidence.
+
+## Version 1.0.10 - 2026-10-15
+
+- Correct the base and ratio-selection cards to describe contextual inputs and
+  Brown's example with bounded attribution; distinguish exact φ from the
+  decimal approximation 1.618 and correct its scale arithmetic and metadata.
+- Retain original-source, historical, perceptual, full-corpus, and hosted-review
+  limits explicitly; this correction does not establish release acceptance.
