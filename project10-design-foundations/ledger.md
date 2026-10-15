@@ -358,3 +358,15 @@ continues with base/selection/golden cards and same-batch fixes. All thirteen
 project criterion texts/statuses remain unchanged; P10-01/12 stay done, all other
 rows stay open. Current changed-card hosted proof, original captures and final
 composition remain owned; no project/release gate or immediate1.1.0 bump follows.
+
+## Slice13 closure and application continuation — 2026-10-15
+
+[Independent Slice13 closure](arc02-theory-and-evidence/slice13-base-and-ratio-selection/cdc-verification.md#iteration01-independent-review-and-slice13-closure--2026-10-15)
+accepts all four bounded criteria at sourceeeb1afa5/planninge7517f61. Reference
+preservation and source joins now reproduce; unaffected independent math/package
+evidence is retained. [Slice14](arc02-theory-and-evidence/slice14-scale-application-and-responsive-scope/slice-plan.md)
+opens three connected application/rhythm/responsive cards with direct supported
+repairs. The music-interval card stays owned by later Arc02. All parent criterion
+texts/statuses, full corpus/live/global/fidelity/behavior and final hosted/release
+gates remain unchanged. The late-read intake deviation is disclosed in CDC's
+review; next preflight must recover truncated required output before editing.

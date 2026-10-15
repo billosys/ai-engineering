@@ -1,15 +1,15 @@
 ---
 slice: slice13-base-and-ratio-selection
-status: active
+status: closed
 depends-on: [slice12-modular-scale-card-fixes accepted core, Brown prepared-source readiness]
 ---
 
 # Slice13 — Base and Ratio Selection
 
-Plan revision **1.1**, updated 2026-10-15. Was: initial assignment/four open.
-Now: S13-02/04 independently done; S13-01/03 open for reference/source-join
-repair. Current assignment is [Iteration01](cc-prompt-iteration01.md); the
-[CDC review](cdc-verification.md) is the current independent verdict. [Project](../../project-plan.md),
+Plan revision **1.2**, updated 2026-10-15. Was: initial assignment/four open.
+Now: all four criteria independently done at sourceeeb1afa5/planninge7517f61.
+Slice13 is closed; [final CDC verdict](cdc-verification.md#iteration01-independent-review-and-slice13-closure--2026-10-15)
+supersedes the initial two-open review. [Project](../../project-plan.md),
 [arc](../arc-plan.md), [ledger](ledger.md) and [initial assignment](cc-prompt.md)
 govern. Two contributors: CDC Sofie plans/reviews; separate CC implements through
 Operator relay. Expedited Mode. This is the next approved complete-corpus
@@ -98,7 +98,7 @@ within authorized bodies is CC discretion constrained by evidence.
 | Assignment | Preparation / status |
 |---|---|
 | [Initial CC prompt](cc-prompt.md) | Opened2026-10-15 from source8b408c03/planning00c66066; actual issuing commit pinned at intake. Returned at source1e0b9620/planning0681c509; two done, two open after F01/F02. |
-| [Iteration01](cc-prompt-iteration01.md) |2026-10-15; source1e0b9620/planning predecessor0681c509; actual issue pinned at intake. Active: three protected reference blocks, one source-title/span fragment and current evidence corrections only. |
+| [Iteration01](cc-prompt-iteration01.md) |2026-10-15; source1e0b9620/planning predecessor0681c509; actual issue pinned at intake. Accepted/closed at sourceeeb1afa5/planninge7517f61: three protected reference blocks, one source-title/span fragment and current evidence corrections only. |
 
 ## Iteration01 author readiness
 
@@ -115,6 +115,10 @@ assignment is source-grounded, design-complete, executable and falsifiable withi
 the original scope; no additional inquiry or schema change.
 
 ## Version History
+
+- 1.2 (2026-10-15): Independently accept the reference/source-join repair and
+  close all four rows. Disclose late intake reads without fictional compliance;
+  retain unaffected math/package evidence and complete parent gates.
 
 - 1.1 (2026-10-15): Initial CDC review accepts math/metadata and integration
   rows; return exact bibliography preservation and source joins for one narrow

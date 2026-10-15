@@ -7,7 +7,7 @@ issued at planning `bc35a1f4195ae522e15f52b27b52dee6b3b0f82c`. Source candidate
 `1e0b9620d5951c9ed11bc7372d74a9d5f26a2160` is a direct child of assigned
 `8b408c038d7fc8d1df3fdd478640376cb461ad74`; planning return
 `0681c509e885b0acd10d984afdbc768e13ab6496` is a direct child of issue.
-No CDC source edits. Two-Contributor Workflow; current verdict: **two done,
+No CDC source edits. Two-Contributor Workflow; initial verdict: **two done,
 two open; Slice13 remains open**. Execute [Iteration01](cc-prompt-iteration01.md).
 
 ## Reproduced checks and substantive results
@@ -114,3 +114,88 @@ Planning checks pass for six exact changed/new files,57 local links and six
 fragments, LF/EOF and whitespace. The original four criterion texts and all
 parent dispositions are retained. Issued prompt, CC batch/closing records and
 prior plan histories remain byte-exact; main has no tracked CDC edits.
+
+## Iteration01 independent review and Slice13 closure — 2026-10-15
+
+**Current verdict: accepted and closed, four of four criteria done.** CDC Sofie
+independently reviewed separate CC's [Iteration01](cc-prompt-iteration01.md),
+issue888a142af330114052f2004c70fe0d2fea5a0d32, sourceeeb1afa56d57cf6f0d2c71e5a8f56e5073b1cc80,
+planninge7517f61e815d0669fce8d65bcaf2a2bad0c0c35. Source is a direct child of1e0b9620;
+planning is a direct child of issue. CDC made no source repairs.
+The initial verdict above remains historical, superseded by this result.
+
+### Reproduced delta and evidence applicability
+
+A temporary read-only Python/Git comparison (exit0) checked actual committed
+bytes, not CC's reported hash alone. Source has exactly three authorized card
+paths; planning exactly batch record, ledger and closing report. Both parents,
+required co-author trailers, committed whitespace and live-source equality pass.
+Each Source Reference range, including blank lines and golden's Further Reading,
+is exactly equal to8b408c03,3/3. Whole-file SHA-256 values match the independently
+predicted initial-review digests: base458ddf07…/9602 bytes,
+selectione046de20…/10157, golden47ff4974…/12726. Reversing the three bibliography
+repairs and base's single prescribed citation fragment reproduces the complete
+1e0b9620 inputs,3/3. All three headers are unchanged from that accepted candidate.
+
+The Brown prepared source retains SHA256
+6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9.
+CDC inspected lines30/109/133/156/172:30 contains the Greek/nature opening;
+109 is broad domain framing;156 contains the two-number/two-ratio clause under
+the heading at133; Creating starts172. Current base and batch joins now agree.
+The initial inaccurate exact-preservation and opening-locator statements are
+explicitly superseded in the CC record, with prior observations retained.
+
+Git object/population comparison:233 exact card paths, only these three changed,
+230 unchanged;161 prepared-source files and six guides unchanged. Owning SKILL,
+history and Makefile are byte-identical to1e0b9620. LF/EOF checks pass. Therefore
+retain the initial independent S13-02 mathematics/five typed scalar checks and
+S13-04 Make/version/eight-member ZIP evidence at their original revision/date:
+these citation-only unbundled changes cannot alter their inputs/results. No new
+math or Make execution is claimed. The complete-card outcome remains the earlier
+semantic assessment with the now-corrected source joins and preserved references.
+
+### Intake deviation and acceptance rationale
+
+CC discloses that full AGENTS/framework/design reads completed after editing
+because earlier output was truncated. This violates the required intake order;
+later reads do not retroactively make it compliant. Its actual readback covers
+the protected byte ranges, narrow replacement, unchanged metadata/math/package,
+missing fidelity and independent-review limits. CDC compared the governing
+contract to the literal repair and affected evidence; no additional conflicting
+source behavior or weakened gate is found. Acceptance rests on that independent
+outcome verification, not a false pre-edit receipt. No undo/re-edit or cosmetic
+receipt cycle is warranted. The next assignment explicitly requires recovering
+all truncated required reads before any dependent edit.
+
+### Four-row disposition and bubble-up
+
+| Row | CDC final disposition | Evidence |
+|---|---|---|
+| S13-01 | done | Complete initial five-dimension/claim/edge/CQ assessment retained; corrected source joins independently checked against30/109/133/156/172. Original fidelity remains unresolved. |
+| S13-02 | done | Initial independently reproduced mathematics, contextual corrections and five-leaf typed result retained after exact header and whole-file reversal checks. |
+| S13-03 | done | Exact reference equality3/3, whole-file reversal3/3, metadata and233/161/6 preservation reproduced. |
+| S13-04 | done | Exact source/planning scopes, parent/trailers and current limits reproduced; earlier independent owning-version/package result remains applicable. |
+
+Four opening rows, four done, no deferral/no-op or silent drop. One supporting
+artifact, [batch record](artifacts/batch-record.md), matches actual outputs;
+closing report accounts for the four rows and arc limits. Issued prompts and CC
+records remain preserved. The usable result is corrected base/ratio teaching
+and exact-versus-decimal examples at owning1.0.10, with honest source limits.
+
+Arc-plan update: close this child and open [Slice14](../slice14-scale-application-and-responsive-scope/slice-plan.md)
+for three connected application/rhythm/responsive cards. The remaining Brown
+music-interval card stays explicitly owned by a later Arc02 batch; no whole-Brown
+or full-corpus fidelity acceptance follows. P10-11 owns absent capture/lineage;
+P10-13/Arc04 own changed-revision hosted re-entry. No push, hosted view, browser,
+AT, installation or publication was run. All13 project/10 arc criterion states,
+full233/eight-live/global/behavior/composition and release gates remain binding.
+Micro corrections continue; final1.1.0 belongs to accepted Arc02 completion.
+
+Planning close/open checks: ten exact paths,182 local links and55 fragments
+resolved; LF/EOF and whitespace pass. Original four child criteria,13 project
+and10 arc criteria/states and all issued prompts/CC outputs are preserved.
+Authoring recovery: an obsolete closing-guide filename failed and was replaced
+with the wayfinder's04-closing-slices.md; a temporary Python YAML import was
+unavailable, so virtual metadata checks used installed Ruby/Psych. No dependency
+installation or extra source mutation. Combined read truncation was recovered in
+focused reads before planning edits. Main still contains only unrelated lfe/.

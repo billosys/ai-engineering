@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.43**; Slices01–12 closed; Slice13 Iteration01 is active.
+Plan revision **1.44**; Slices01–13 closed; Slice14 is active.
 
 Deliver corrected portable design content, complete 233-card/eight-live-file
 review and reconciliation, and usable accessibility/typesetting procedures with
@@ -63,7 +63,8 @@ before each source assignment. Keep all 233 identities and eight live-file owner
 | [Slice10 — fluid-scale source fixes](slice10-fluid-scale-source-fixes/slice-plan.md) | Closed at sourcecbb5b893/planningd665c388: all four rows done; five exact corrections and fresh package independently checked | Accepted Slice01 proof and Slice07 current applicability; fresh source589d7c21, no originals needed for independent arithmetic |
 | [Slice11 — layout and measure source fixes](slice11-layout-and-measure-source-fixes/slice-plan.md) | Closed at sourcefce72353/planning8df2776a: four contexts and four criteria done; preserved teaching and fresh package independently checked | Accepted Slice04 policy, current sourcecbb5b893 and protected Slice10/Arc06 inputs; actual behavior remains separately owned |
 | [Slice12 — modular-scale card fixes](slice12-modular-scale-card-fixes/slice-plan.md) | Closed at source8b408c03/planning7c65468e: all four bounded review/correction criteria done | Original capture/fidelity, uninspected endpoint/empirical scope and affected hosted applicability remain owned |
-| [Slice13 — base and ratio selection](slice13-base-and-ratio-selection/slice-plan.md) | Active Iteration01: two rows done; restore protected reference bytes and repair title/span/opening joins | Candidate1e0b9620/planning0681c509; math/metadata and package independently accepted at their bounded scopes |
+| [Slice13 — base and ratio selection](slice13-base-and-ratio-selection/slice-plan.md) | Closed at sourceeeb1afa5/planninge7517f61; all four criteria done, exact references and joins repaired | Retained independent math/metadata/package; source fidelity and affected hosted re-entry remain |
+| [Slice14 — scale application and responsive scope](slice14-scale-application-and-responsive-scope/slice-plan.md) | Active: three complete application/rhythm/responsive cards, supported body repairs and five exact existing scalar corrections | Accept Slice13; sourceeeb1afa5; shared Brown prepared context, no original-fidelity dependency for independent corrections |
 | Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
 | Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
 | Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
@@ -142,14 +143,15 @@ was active. Now: it is closed at sourcefce72353/planning8df2776a, four criteria 
 Was: Slice12 Iteration02 remained active after three criteria were accepted.
 Now: [Slice12 closes](slice12-modular-scale-card-fixes/cdc-verification.md#iteration02-independent-review-and-slice12-closure--2026-10-15)
 at source8b408c03/planning7c65468e, all four criteria done with its explicit limits.
-Was: Slice13 initial assignment, four open. Now: source1e0b9620/planning0681c509
-has S13-02/04 done and S13-01/03 open after independent review. Current assignment:
-[Slice13 Iteration01](slice13-base-and-ratio-selection/cc-prompt-iteration01.md),
-restore protected reference sections and correct source joins without repeating
-accepted math/package work. [CDC review](slice13-base-and-ratio-selection/cdc-verification.md)
-records the actual failed preservation predicate and scoped evidence.
-This moves from corrected core definitions to their actual input-selection advice,
-with exact-versus-decimal and historical/perceptual claims checked in the same batch.
+Was: Slice13 Iteration01 repaired protected references and source joins.
+Now: [Slice13 closes](slice13-base-and-ratio-selection/cdc-verification.md#iteration01-independent-review-and-slice13-closure--2026-10-15)
+at sourceeeb1afa5/planninge7517f61, four rows done. Current assignment is
+[Slice14](slice14-scale-application-and-responsive-scope/cc-prompt.md): correct
+three connected Brown application/rhythm/responsive cards in the same batch.
+The fourth remaining Brown card, musical-interval-typographic-ratio, retains
+later Arc02 ownership for its tuning/analogy/table/support boundaries. No new
+slice is issued for it yet. This sequencing keeps one coherent application task
+within a context while preserving all ten Brown identities and five outcomes.
 Do not repeat the accepted theory packet or restore removed legacy defaults.
 All corpus/readiness, broader research, actual browser and fresh-context task
 gates remain; no whole-file or full-finding closure follows from these source batches.
@@ -163,6 +165,10 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.44 (2026-10-15): Slice13 repair independently closes all four criteria.
+  Open Slice14 for application/rhythm/responsive corrections; retain the music
+  card as later owned work and all input/global/behavior/release obligations.
 
 - 1.43 (2026-10-15): Slice13 initial review accepts two criteria; a protected
   bibliography failure and mismatched source joins require one bounded correction.
