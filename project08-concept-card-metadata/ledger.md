@@ -32,7 +32,16 @@ See [the transfer register](./artifacts/arc01-transition-obligations.md).
 Arc06 A6-1 through A6-10 inherit inventory, research and requirements proof;
 Arc02 supplies architecture, Arc03/04 implementation and real-use evidence,
 and Arc05 final gates. The 115 accepted pairs are evidence inputs, not P-1 done.
-Arc06 must reconcile all transferred S1/S4/A1 rows before architecture acceptance.
+Arc06 must reconcile all transferred S1/S4/A1 rows before complete-profile
+architecture acceptance. Under the Operator's 2026-10-16 amendment, a bounded
+Arc02 decision may use independently accepted inputs before full Arc06 closure,
+with explicit unknowns and preservation boundaries. P-15 still precedes adoption
+of that bounded contract; no P row is closed by partial delivery.
+
+Completion amendment: project-plan.md and cdc-directive02.md change sequencing
+and future proof-method selection, not any criterion/status in this ledger.
+P-1/P-6 retain exhaustive no-loss/migration accountability; P-7/P-8/P-10/P-11/
+P-14 retain repeated runs, source diversity, Operator review and full-book gates.
 
 ## Workflow Transition (2026-09-17)
 

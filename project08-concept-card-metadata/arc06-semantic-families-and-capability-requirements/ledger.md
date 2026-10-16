@@ -20,7 +20,7 @@ S1/S4/A1 obligations; these rows add owners, not weaker replacement criteria.
 | A6-7 | Original inventory/remediation obligations are independently recomposed | Walk original S1/S4 rows, codec/EOF, identities, both prompts and nine-root replay | correctness-grade | A1-1, S1-1/S1-3/S1-7, S4-1/S4-7 | open | | Slice09; preserve previously accepted rows |
 | A6-8 | Primary-source research answers gaps with alternatives and tradeoffs | Inspect cited source-model/classification/relationship/provenance analysis | correctness-grade | A1-2, Arc01 Slice02, P-2 | open | | Slice10 plus family research |
 | A6-9 | Requirements/UAT design retain all no-loss and real-use obligations | Trace operator concerns, body effects, fixtures and P-1 through P-14 | serious | A1-3/A1-4, Arc01 Slice03, P-14 | open | | Slice11; design is not execution |
-| A6-10 | Children/transfers compose into an actionable architecture handoff | Independent original-to-delivered walk, contradiction review and decision agenda | serious | A1-5, P-13 | open | | Final acceptance before Arc02 |
+| A6-10 | Children/transfers compose into an actionable architecture handoff | Independent original-to-delivered walk, contradiction review and decision agenda | serious | A1-5, P-13 | open | | Final composition before complete-profile adoption; bounded Arc02 decisions use accepted inputs under project directive02 |
 
 Additive 2026-09-14 ownership: A6-2/A6-6/A6-7 consume Slice12 repair evidence
 through original Slice01 recomposition; no duplicate membership acceptance.

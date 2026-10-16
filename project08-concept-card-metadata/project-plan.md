@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.39"
+version: "1.40"
 ---
 
 # Concept Card Metadata
@@ -34,7 +34,8 @@ The initial design hypothesis is recorded in
 [the planning brief](./arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/planning-brief.md).
 It combines directly usable discovery/graph metadata with scoped evidence and
 lifecycle records. Exact fields, nesting, authorities and migration rules remain
-research/design decisions. Arc02 will supply the accepted architecture artifact.
+research/design decisions. Arc02 will supply the accepted architecture artifact
+incrementally; the delivery/dependency amendment below governs current sequencing.
 
 ## Schema And Specification Discussion Gate
 
@@ -44,9 +45,14 @@ This makes the existing Arc02 schema/validator decision an explicit operator
 checkpoint, not an implied approval from inventory or template conformance.
 See [the discussion agenda](./artifacts/schema-and-spec-discussion-agenda.md).
 
-Arc06 Slice11 must carry the evidence, alternatives and unresolved decisions
-into that discussion. Arc02 owns the resulting design and any specification/
-schema deliverables agreed there. Do not accept a normative profile, choose its
+Begin the discussion using the existing agenda and accepted identity, source,
+relationship/CQ and provenance evidence; do not wait for all 276 remaining pairs.
+Arc06 Slice11 owns the final reconciled handoff, not permission to begin talking.
+Arc02 owns the resulting design and any specification/schema deliverables agreed
+there. A bounded profile decision must name the accepted inputs it relies on,
+what remains unknown and how unhandled historical data survives. Complete-profile
+adoption still requires Arc06 composition and the full no-loss crosswalk.
+Do not accept a normative profile, choose its
 final schema form, or start implementing it as the accepted contract before
 recording the operator discussion and decision. Exploratory comparisons and
 clearly provisional drafts remain possible; they are not adoption.
@@ -95,48 +101,111 @@ not the future schema or specification. The P-15 discussion gate remains open.
 - Fresh package/version/install checks and independent composition review,
   plus explicit operator acceptance of output quality before project closure.
 
-## Current Direction: Semantic Families And Capabilities
+## Completion Reassessment (2026-10-16)
 
-Operator decision, 2026-09-14, following Arc01 Slice09 and the progress review:
-adopt [the preserved assessment](./artifacts/semantic-family-processing-assessment.md).
-The operator regards all prior work as well spent, explicitly retains the
-rigorous bounded-packet approach when warranted, and prefers semantic
-organization consistent with the work's ontological roots.
+Authority: the Operator requests a framework reload, comparison with original
+goals/work-to-date and a pragmatic completion-focused plan edit. This is that
+bounded existing-record review, not authorization for an external study, new
+corpus run or open-ended investigation. The installed collaboration-framework
+is 2.7.2; its usable-increment, investigation-agreement and proportionate-proof
+guides match source at `8f622e44`. Planning review baseline: `e04d8846`.
 
-This is a modest execution pivot, not a reduction in scope or a schema decision.
-Preserve all 115 transition-accepted contextual pairs and all original criteria.
-The initial remainder was 440. After Slice12 repair and original Slice01
-recomposition, 150 were accepted and 405 remained. Slice02's independent
-closure added 30 CQ pairs, reaching 180 accepted / 375 remaining. Slice13's
-independent closure adds eight actor-identity pairs; Slice14's independent
-CRC closure adds twelve more; Slice15's independent CRC closure adds eight
-bounded mode/role pairs, followed by Slice16's twelve independently accepted
-pairs. CRC independently closed Slice17 after one focused repair, then accepted
-Slice18's 22 extraction-run scope/worker/output pairs after reproducing its
-committed replay and semantic limits. Slice19's focused evidence repair is now
-independently accepted, adding exact Set C's 19 cross-record run-reference
-pairs. Fresh readiness opens exact Set D as Slice20. Live accounting is 279
-accepted / 276 remaining / 11 assigned / 265 outside. Slice21 remains
-unopened, and 248 further pairs retain their
-evidence/lifecycle-family owners.
-Use the
-[current coverage register](./artifacts/semantic-coverage-current.json).
-The transition snapshot stays immutable. Process the remainder by family, retaining
-exact field-path/record-kind accounting plus finer corpus/role distinctions.
-Shared rules need explicit applicability, member roles and exceptions; repeated
-field spelling, shape or lifecycle words never establish semantic equivalence.
+**Assessment:** product scope remains substantially faithful to the original
+plan at `03c5b207` and the [planning brief](./arc01-metadata-research-and-requirements/slice01-metadata-inventory-and-research-questions/artifacts/planning-brief.md).
+The Complete Musician same-chapter trial and schema/spec checkpoint were
+explicit Operator additions, not accidental scope creep. Broad metadata
+preservation, readable bodies, source diversity, repeated extraction and the
+conditional full-book goal were already central. Do not remove those outcomes
+to make the plan appear smaller.
 
-Distinguish documented rules, populated observations, contradictions and
-unspecified behavior. A bounded, evidenced unknown is an acceptable inventory
-finding, not permission to silently omit the information or invent a rule.
-Each family must explain concrete reader/extractor/query/migration consequences.
+Execution has become too front-loaded on inventory and evidence maintenance.
+There are 18 tracked slice plans; current coverage is 279 accepted / 276 remaining,
+with 11 assigned to Slice20. These counts are not a product-completion measure.
+The source Git history from opening `e763c661` through `8f622e44` has no
+changes to concept-cards or document-extraction. The reviewed Project08 roadmap
+has not yet delivered an improved extractor or its new real-run comparisons.
 
-Reuse registered evidence and a common validation route where justified. Keep
-small sequential correction packets for difficult or ambiguous areas.
-Repairs remain implementation work subject to independent review. Under the
-current framework, a reviewer who implements any repair needs another verifier
-for that repair and its affected evidence. Earlier attributed CDC completions
-remain historical records; they are not precedent for self-acceptance.
+Concrete evidence of process displacement, with counterevidence:
+- [Slice17 review](./arc06-semantic-families-and-capability-requirements/slice17-run-preparation-method-and-reference-provenance/crc-verification.md)
+  required controls, wrapper/provenance and reporting corrections while retaining
+  the semantic registry. Those defects mattered to the issued contract, but the
+  machinery was supporting work, not the requested product.
+- [Slice19 review](./arc06-semantic-families-and-capability-requirements/slice19-cross-record-run-references/crc-verification.md)
+  retained all 19 meanings while repairing atomic evidence registration and
+  witness applicability. Its Operator-approved direct checks demonstrate an
+  available alternative to custom replay machinery, not proof of reduced cost.
+- [Slice18 review](./arc06-semantic-families-and-capability-requirements/slice18-run-scope-workers-and-outputs/crc-verification.md)
+  accepted the initial assignment and identified useful output-shape and
+  worker-count distinctions. Bounded analysis itself is not the problem.
+- CDC's own directive02 made five sequential provenance packets the next path.
+  That protected local scope but postponed consuming the findings. The original
+  [semantic-family assessment](./artifacts/semantic-family-processing-assessment.md)
+  recommended tiny sequential packets selectively, not universally.
+
+This is a planning judgment based on the cited records and current source
+history, not a fresh semantic audit, a causal model comparison or a measured
+time/token-cost estimate. Retain the prior work and independent verdicts.
+The correction is to consume evidence sooner, not declare missing evidence done.
+
+## Current Delivery Direction
+
+Keep all original outcomes and P-1 through P-15. Change the sequence:
+
+1. CDC and the Operator discuss the first bounded profile using existing
+   accepted evidence and the P-15 agenda. Resolve direct relationship exposure,
+   identity/lookup, source locators, readable names and state/reference authority
+   needed by that increment. Unknowns become explicit design questions, not
+   repeated searches for a historical rule that the records never supplied.
+2. Once that bounded contract is approved, Arc03 implements one usable path in
+   `knowledge/concept-cards/`: the template, extraction instructions, example,
+   entrypoint and applicable package checks together. Document-extraction changes
+   join only where a demonstrated handoff defect requires them.
+3. Arc04 uses the integrated candidate on the pinned CompCogNeuro subset under
+   its agreed run protocol. Inspect real body/metadata and native graph queries
+   promptly; findings drive the next small design/source/refinement increment.
+4. Arc06 completes every outstanding family, crosswalk and original transfer
+   obligation alongside the relevant decisions. It remains accountable for all
+   555 pairs and full composition; no current coverage or acceptance is changed
+   by this amendment. Complete-profile adoption and final project acceptance
+   still require that work.
+
+The **first usable increment** is an integrated skill capable of producing a
+small, source-grounded rich card set with directly machine-readable relationships,
+useful source locators and honest lifecycle limits. Its checks include a positive
+prerequisite traversal, a missing/unsupported-target case, preservation of
+teaching examples and source qualifications, valid metadata and the affected
+package routes. A schema sketch, hand-written demonstration or green inventory
+alone does not deliver it. A bounded candidate is not a complete-profile release.
+
+Unresolved evidence blocks only claims that depend on it. Before opening a
+dependent slice, name the exact accepted inputs, affected unknowns, preserved
+legacy data and adequate checks. It cannot claim no loss for an unexamined
+family or silently ignore current control records. Where a safe boundary is
+not established, finish that specific analysis first.
+
+### Investigation And Proof Limits
+
+For every new inquiry, agree usefulness, applicability, a concrete resource
+budget, output/consumer and stop/re-entry conditions with the Operator before
+execution. Record these in the existing plan/assignment; this edit does not
+approve future budgets. Existing agreed work may continue within its original
+scope; neither an old aspiration nor Expedited Mode renews an inquiry.
+
+Group repeated fields by demonstrated shared meaning plus per-kind exceptions,
+while retaining exact membership and evidence. Do not turn each spelling or
+unknown into a mandatory new slice. Reuse pinned sources and accepted checks;
+reread/recheck only the affected dependency scope, with independent semantic
+review intact. Direct queries and source inspection are the default adequate
+proof route where they establish the contract. New replay wrappers or broad
+mutation suites need a named missing property and explicitly scoped cost.
+Issued assignments change only through a preserved replacement prompt.
+
+Each next slice must name the decision or usable behavior it delivers, its
+consumer, actual prerequisites and stopping condition. Corrections address
+the failed claim and affected regressions; they do not restart accepted analysis.
+At closure, review whether the handoff was consumed and whether work moved
+toward the next real extraction. A process improvement is not a new deliverable
+unless separately authorized.
 
 ## Contributor Workflow (2026-09-17)
 
@@ -177,26 +246,16 @@ closure and immediate next planned slice handoff within delegated authority.
 It does not waive evidence, P-15, UAT, source fences or required escalation.
 CRC returns arc readiness to CDC; CDC owns opening the next arc and first slice.
 
-Historical workflow-transition state (current status is in the roadmap below):
-source 020268248882358075b678bb855c0ac8d11b532a; planning
-d6252b26878ead5045c843d1086b9194d516e2ee, both clean before these amendments.
-Slice13 is closed at its recorded review; R1-R4 resolved. Live coverage remains
-188 accepted / 367 remaining / 12 assigned / 355 outside. All six Slice14 rows,
-all arc rows and all project rows remain open. No Slice14 implementation or
-review packet is recorded at this transition; if concurrent work exists,
-CRC must reconcile its assignment/state before proceeding.
+The transition at `d2a6ddca` and historical assignments remain preserved in
+the initial directive and handoff history. Current coverage and assignment are
+reported once in the roadmap below. The new project-level
+[cdc-directive02.md](./cdc-directive02.md) carries this completion-oriented
+amendment to CRC; it is distinct from the preserved arc-level directive02.
 
-At that transition the CC assignment became Slice14's cc-prompt-iteration01.md,
-a routing
-replacement of the preserved cc-prompt.md, not an executed repair pass.
-CRC first reads/acknowledges the directive and checks the replacement before
-the Operator relays it to fresh CC. The original prompt is not edited.
-The recorded acknowledgement below completed that initial relay. Current
-handoff: arc-level cdc-directive02.md answers CRC's post-Slice16 sizing request;
-CRC has acknowledged it and independently closed exact Sets A-C, with the
-focused Slice19 evidence repair accepted after Iteration01. Fresh Set D
-readiness then opened Slice20. Arc-level
-exchange history lives in the arc plan.
+CDC also owns closing retrospectives under methodology-stewardship. Apply that
+duty at subsequent closes; do not invent retroactive success records for old
+work. A pending retrospective does not revoke CRC acceptance or block unrelated
+approved work. Reconcile child learning records at arc/project closure.
 
 ### Design Handoff History
 
@@ -204,122 +263,64 @@ exchange history lives in the arc plan.
 | --- | --- | --- | --- | --- | --- |
 | cdc-directive01.md | 2026-09-17 | No escalation/predecessor; Operator explicitly selects three contributors and Expedited Mode | Remaining Project08; Arc06 A6-1 through A6-10; Slice14 S14-1 through S14-6; P-1 through P-15 gates retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-09-17 after reading the directive, plans, ledgers, current and frozen coverage, Slice13 review, and both Slice14 prompts; source `020268248882358075b678bb855c0ac8d11b532a`, planning `d2a6ddcaeaadd8251156422dcc8897ccad985ab4`, both clean | CRC releases `arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/cc-prompt-iteration01.md` through the Operator to fresh CC; CC returns its packet to CRC for independent review |
 | arc06/cdc-directive02.md | 2026-09-18 | Response to CRC escalation02 after independent Slice16 closure | Exact Slice17-21 Sets A-E; A6-1/A6-3/A6-6 and all P gates retained | Acknowledged by the same CRC context on 2026-09-18; Slices17-19 independently CRC-closed, with Slice19 accepted after Iteration01 at `30facb12`; Slice20 exact-set, population, temporal-boundary and prompt-author readiness checked against clean planning `30facb12` and source `a5861c4b` | Operator relays `arc06-semantic-families-and-capability-requirements/slice20-cross-record-creation-time/cc-prompt.md` to fresh CC; Slice21 remains unopened |
+| cdc-directive02.md | 2026-10-16 | Operator asks for completion-focused reassessment under the refreshed framework | Project roadmap and Arc06 sequencing; all P/A6 criteria retained | Issued, awaiting CRC acknowledgement; not a CC execution prompt | CRC reconciles active Slice20, stops automatic inventory-only successors and applies delivery-linked preparation; CDC brings the existing P-15 agenda to the Operator |
 
 Do not mark acknowledgement on CRC's behalf. CRC records its actual session
 identity, read state, date and next action in this history before execution.
 Any later assignment correction gets a new packet; issued packets stay intact.
 
-## Continued Research Direction
+## Arc Roadmap: Delivery And Actual Dependencies
 
-Targeted primary-source research may now accompany family work before the
-entire inventory closes. Compare alternatives against actual capability gaps;
-do not adopt standards by name or design a final profile inside an inventory
-packet. Final requirements/architecture still wait for complete, composed
-inventory and research evidence. An early fixture is a diagnostic aid, not
-proof of final-profile equivalence or real extraction quality.
-
-Acceptance has three separate levels: evidence-backed inventory interpretation;
-researched architecture with loss analysis and executable behavior checks; and
-implemented skills demonstrated through repeated real extraction and operator
-quality review. No earlier level substitutes for a later one.
-
-## Arc Roadmap: Current Dependency Order
-
-| Arc | Capability | Depends On | Current State |
+| Arc | Useful result and delivery home | Required inputs / advancement gate | Current state |
 | --- | --- | --- | --- |
-| `arc01-metadata-research-and-requirements` | Historical inventory foundation and bounded contextual evidence; original broader scope preserved below | Baseline/operator brief | Closed-with-transfers, not fully delivered; 115 accepted pairs retained |
-| `arc06-semantic-families-and-capability-requirements` | Complete family semantics, reusable evidence/replay, targeted standards research and no-loss capability/UAT requirements | Accepted Arc01 inputs and explicit transfer register | Active; Slice01/02/03/12-19 closed; 279 accepted and 276 remaining; Slice20 open with 11 assigned; Slice21 unopened |
-| `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration, specification and schema design as agreed with the operator | Independently composed Arc06, including transferred Arc01 requirements; P-15 discussion gate | Hypothesis; discuss before finalizing the contract |
-| `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
-| `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
-| `arc05-package-gates-and-closure` | Fresh packaging/install evidence, migration and UAT reconciliation, independent project acceptance | Arc04 quality and coverage evidence | Closure cannot outrun UAT |
+| `arc01-metadata-research-and-requirements` | Preserved historical inventory and 115 accepted pairs in its existing packets | Already transferred unfinished work to Arc06 | Closed-with-transfers; unchanged |
+| `arc06-semantic-families-and-capability-requirements` | No-loss findings and complete crosswalk consumed by each profile decision; evidence in current family packets | Inspect the family needed by the next decision; full join still gates complete-profile adoption | Active; 279 accepted, 276 remaining; Slice20 has 11 assigned; Slice21 unopened |
+| `arc02-metadata-architecture` | Readable, explicitly scoped profile/specification decisions and worked records in its architecture artifact; agreed normative material later ships with the skill | Accepted evidence for the chosen behavior, relevant primary-source findings and Operator P-15 decision; not blanket Arc06 closure for every bounded decision | Next design activity; no detailed arc plan/open set exists yet |
+| `arc03-skill-and-template-updates` | Integrated, usable generation path in `knowledge/concept-cards/`, including guides, template, examples, entrypoint and affected packaging | Approved bounded Arc02 contract and its dependencies; full profile remains incomplete until all families compose | Next implementation after the scoped decision; no source work authorized by this edit alone |
+| `arc04-real-extraction-and-refinement` | New real cards, native-query results, fair comparisons and accepted full-book corpus; durable run manifests/results in the planned slice home | An integrated candidate plus agreed protocol/source access; refinements return to the affected Arc02/03 contract without waiting for unrelated families | Start subset use as soon as responsible; all run minima and quality gates below retained |
+| `arc05-package-gates-and-closure` | Fresh installed/package evidence and independently composed project close | Complete Arc06 no-loss obligations, delivered profile, Arc04 quality/coverage and Operator acceptance | Final integration/closure, not the first time a changed package is checked |
 
-Arc06 is the next arc in dependency order, not a post-closure addendum.
-Slice02 and Slice03 remain independently closed in their recorded history.
-Slice13 repair d94ab1c6 now closes all six rows after independent CDC review
-of R1-R4. Its 51 hashes, 37-record census, 2,054-record legacy comparison,
-native diagnostics and exact contribution boundaries reproduce. The source
-checkout advanced outside the relevant skills; the CDC report records the
-failed literal HEAD guard and the equivalent pinned-input replay explicitly.
-No CC supporting artifact was repaired by the reviewer.
+Arc02-05 do not yet have arc-plan files. Keep future detail here until each arc
+is near; do not manufacture four speculative open sets. Their IDs and ownership
+remain stable. Relevant architecture, implementation and UAT increments may
+overlap Arc06; this supersedes earlier whole-arc sequencing, not its completion
+requirements. No arc is declared closed or dependency result accepted here.
 
-Current accounting: 279 accepted / 276 remaining / 11 assigned / 265 outside
-after independent Slice19 closure and fresh Slice20 opening. Slice14 accepted actor/actor.id in memory-admission,
-preservation-decision, relationship-edge, source-locator, source-support and
-validation-result. CDC's response to Arc06 escalation01 approves a kind-aligned
-mode/role split: eight pairs in Slice15 and twelve in Slice16, now accepted.
-Arc directive02 divides the retained provenance work into Slice17 operation/
-inputs/method/time (18 pairs), Slice18 scope/workers/outputs (22), Slice19
-cross-record run references (19), Slice20 creation time (11) and Slice21
-preparation/method references (17). Each opens only after predecessor acceptance
-and fresh CRC readiness. Slice19 now satisfies that gate; Slice20 is the sole
-open provenance unit.
-See [the current arc directive](./arc06-semantic-families-and-capability-requirements/cdc-directive02.md).
-It explicitly retains the other 248 pairs with later semantic owners, including
-synthetic/surface markers and CQ retrieval/revision interfaces. Scope approval
-does not accept meanings or assign pairs; P-15 remains open.
-CRC acknowledged and completed pre-opening native recount/witness inspection
-and prompt-author readiness before opening Slice15. The directive alone
-assigned/accepted no pairs and did not reopen CRC-accepted Slice14; this
-CRC-issued Slice15 open set assigned eight without accepting them; the later
-independent Iteration01 review accepted exactly those eight. Was: all these
-responsibilities in unsized Slice15; no project capability or gate is reduced.
-Was: Slice13 Iteration 01 pending and an unsized Slice14 complement.
-This is the authorized late sizing of retained work, not scope reduction.
-P-15, all UAT requirements and later evidence/lifecycle owners are unchanged.
-The [three-slice workload assessment](./artifacts/cc-workload-observations.md)
-is complete; its observations support a bounded, better-integrated repair,
-not an automatic model change or a reduction of evidence requirements.
-Existing Arc02-05 IDs and Arc04's operating contract remain stable. Numeric
-order is not dependency order. Further findings may split or add arcs/slices;
-record the changed owners and re-entry conditions before issuing new work.
+**Immediate handoff:** Slice20 is the only issued unfinished assignment on disk;
+there is no returned packet or verification record in its directory at this
+review cutoff. CRC reconciles actual execution state before changing it. Do not
+rewrite its prompt or discard work in flight. If still unstarted, prepare a
+preserved replacement applying proportionate direct checks to the same eleven
+pairs and exit criteria; no new investigation or budget extension is approved.
+If executed, review the actual assignment and retain unaffected evidence.
+Then select work by the next profile decision, not automatic Slice21 numbering.
+CDC owns opening Arc02 and its first slice after the Operator discussion.
 
-[The transition register](./artifacts/arc01-transition-obligations.md) retains
-every original S1/S4/A1 row and never-opened Slice02/03/05 obligation. Arc01
-administrative closure accepts the transfer, not the unperformed semantics,
-research or composition. Arc06's final acceptance must reconcile those exact
-criteria. All project ledger rows remain open.
+The [transition register](./artifacts/arc01-transition-obligations.md) remains
+the complete record of inherited S1/S4/A1 obligations. Arc06 owns all of them,
+including all-input/nine-root reproduction, prompt comparisons, research,
+requirements and final cross-family consistency. This amendment changes their
+consumption sequence, not their evidence requirements or final acceptance.
+The frozen transition and live coverage registers are unchanged.
 
-The operator's request to implement this direction supersedes the prior pause.
-Expedited Mode resumes for scoped commits, independent review and planning
-advance; it does not authorize CC to execute unopened work or override operator
-quality gates.
-
-## Historical Roadmap And Pause (Superseded As Execution Instructions)
-
-The following v1.13 roadmap and pause are retained verbatim as planning history.
-Their research sequencing and active-arc routing are superseded by v1.14 above;
-their required outcomes and Arc04/05 quality obligations are not reduced.
-
-### Original Five-Arc Starting Hypothesis
-
-| Arc | Capability | Depends On | Current State |
-| --- | --- | --- | --- |
-| `arc01-metadata-research-and-requirements` | Historical/current inventory, primary-source standards research, capability and no-loss requirements | Baseline and operator brief | Batch01 and Slice06 through Slice09 accepted; execution paused by operator for progress/process discussion; Slice04/01 still unclosed |
-| `arc02-metadata-architecture` | Usable profile, field authorities, compatibility/migration and validation design | Arc01 | Hypothesis; detailed plan when near |
-| `arc03-skill-and-template-updates` | Implemented profile and extraction handoffs with representative examples and focused checks | Arc02 | Hypothesis; detailed plan when near |
-| `arc04-real-extraction-and-refinement` | Repeated real-source extraction, body/metadata refinements, cross-source trials and conditional full-book delivery | Initial Arc03 profile; feeds back into design and implementation | Intentionally expandable; no fixed slice count |
-| `arc05-package-gates-and-closure` | Fresh packaging/install evidence, migration and UAT reconciliation, independent project acceptance | Arc04 quality and coverage evidence | Closure cannot outrun UAT |
-
-These arcs can split, grow or be resequenced when findings justify it. Arc04 can
-change skills and revisit Arc02 decisions through newly scoped slices; Arc03's
-completion does not freeze implementation. Record additions and superseded
-assumptions in plan histories and ledgers. A coherent new capability may warrant
-an additional arc rather than overloading Arc04.
-
-Operator pause after Slice09 review (2026-09-13): complete independent review
-and report progress, then stop before opening further work. Slice09 is now
-CDC-closed after 4ae905c2. No next slice or revised execution strategy is
-authorized by this pause; all required outcomes remain. Discuss the balance
-between substantive semantic work and repeated evidence-maintenance cycles
-before resuming. Was: automatic next-slice opening in Expedited Mode.
+Research now answers a named choice: for example classification, source identity
+or relation authority needed by the current increment. Candidate standards are
+alternatives, not a checklist requiring exhaustive surveys or compliance.
+Unknown historical behavior can be reported as unknown with a new design
+decision subject to P-15. Do not keep investigating merely to eliminate every
+unknown or invent evidence that earlier records do not contain.
 
 ## Arc04 Operating Contract
 
 Plan each next slice using the findings from the previous run. A normal sequence
 is protocol/baseline capture, CC extraction, independent comparison and operator
 review, targeted source refinement, then extraction in a fresh CC session. Keep
-execution units bounded while allowing arbitrarily many such slices.
+execution units bounded while allowing arbitrarily many such slices. Each new
+refinement must address an observed quality gap and name the next run that will
+check it. Uncapped refinement is not authorization for open-ended inquiry;
+agree investigation/trial budgets before execution. Stop extending a successful
+subset experiment once its predeclared criteria and Operator gate are met,
+and proceed to the full-book work rather than inventing another readiness loop.
 
 Require at least three new, separately identified CC extraction runs during
 Arc04, including at least two fresh sessions on the final candidate profile and
@@ -478,6 +479,14 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.40 (2026-10-16): Operator-requested completion reassessment under the refreshed
+  framework. Preserves product/no-loss/UAT outcomes; replaces blanket Arc06-first
+  sequencing with accepted-input gates, early P-15 discussion and an integrated
+  first card-generation increment. Requires agreed investigation budgets and
+  proportionate checks. Condenses duplicated historical status; prior plans at
+  e04d8846 and all version entries/issued artifacts remain available. No closure,
+  coverage acceptance, source edit or new execution budget is claimed.
 
 - 1.39 (2026-09-24): CRC independently accepts Slice19 after its focused
   evidence-registry repair, reproducing all 49 atomic inputs, 19 bounded
