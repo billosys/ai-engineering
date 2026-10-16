@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.48**, updated2026-10-16 under the Operator-approved
+Plan revision **1.49**, updated2026-10-16 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -56,14 +56,15 @@ remain in the previous plan revision and the unchanged child/history records.
 | Evidence foundations, Slices01–05 | Closed: [arithmetic](slice01-fluid-scale-arithmetic/slice-plan.md), [colour](slice02-nonlinear-colour-pipeline/slice-plan.md), [tokens](slice03-token-system-conventions/slice-plan.md), [layout](slice04-layout-and-measure-exceptions/slice-plan.md), [fluid-type limits](slice05-fluid-type-accessibility-limits/slice-plan.md). Reuse verified proofs; no automatic fidelity/behavior acceptance. |
 | Source corrections, Slices06–11 | Closed: [colour](slice06-colour-pipeline-source-fixes/slice-plan.md), [portable identity](slice07-portable-identity-source-fixes/slice-plan.md), [tokens](slice08-token-conventions-source-fixes/slice-plan.md), [Unicode](slice09-post-card-unicode-presentation/slice-plan.md), [fluid scale](slice10-fluid-scale-source-fixes/slice-plan.md), [layout](slice11-layout-and-measure-source-fixes/slice-plan.md). Broader live/task/fidelity gates remain. |
 | Brown cohorts, Slices12–14 | Closed: [core](slice12-modular-scale-card-fixes/slice-plan.md), [selection](slice13-base-and-ratio-selection/slice-plan.md), [application](slice14-scale-application-and-responsive-scope/slice-plan.md). Bounded review/fixes, not full Brown fidelity/global edge acceptance. |
-| [Slice15 — musical-ratio boundaries](slice15-musical-ratio-boundaries/slice-plan.md) | Closed: [independent review](slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16) accepts all four bounded criteria at source65ed7a05/planningb5ebd593; Operator hold on new slices retained. |
+| [Slice15 — musical-ratio boundaries](slice15-musical-ratio-boundaries/slice-plan.md) | Closed: [independent review](slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16) accepts all four bounded criteria at source65ed7a05/planningb5ebd593; historical hold lifted by the Operator on2026-10-16. |
+| [Slice16 — CSS colour mechanics](slice16-css-colour-mechanics/slice-plan.md) | Active: twelve connected Drasner cards, dependent HSL/guide repairs, local edges/CQs and source/package checks in one delivery. Historical capture fidelity stays input-blocked. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice15 are delivery choices, not issued assignments or a fixed slice
-count. Choose the next ready useful batch after the Operator hold is lifted. Prefer
+Rows after Slice16 are delivery choices, not issued assignments or a fixed slice
+count. The Operator has lifted the hold; Slice16 is the next ready batch. Prefer
 several related cards/guide contexts when coherent; split for actual input/context
 or implementation risk, not one field/card/dimension by default. The47 provisional
 groups,161 headings and460 keyword candidates are navigation, not mandatory slices
@@ -120,24 +121,30 @@ string-equality or endpoint-resolution checks.
 
 Two contributors; CDC Sofie plans/reviews separate CC via Operator relay.
 Expedited Mode. Slices01–15 are closed at their recorded bounded scopes.
-Most recent child: [Slice15](slice15-musical-ratio-boundaries/slice-plan.md),
+Most recent closed child: [Slice15](slice15-musical-ratio-boundaries/slice-plan.md),
 accepted in its [independent record](slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16).
-The concurrent closure/hold at planning2e3bc843 is preserved; this reassessment
+The historical closure/hold at planning2e3bc843 is preserved; resuming execution
 does not reperform or self-accept that source review.
 
-**No new slice is issued.** The Operator hold remains pending the reassessment
-outcome and execution direction. This amendment delivers the requested plan
-changes only. When resumed, choose the next ready batch from the breakdown;
-the slice plan will own its exact assignment/iteration and ledger row states.
+**Current assignment: [Slice16 initial prompt](slice16-css-colour-mechanics/cc-prompt.md).**
+The Operator's2026-10-16 execution direction lifts the reassessment hold. Slice16
+owns its exact scope, implementation, evidence and four open criteria; no new
+parent criterion is accepted by opening it. The reassessed batch/evidence rules
+apply prospectively. No subsequent slice is pre-authored.
 Future handoffs need the actual source, exact scope, complete bounded reads,
 preservation and adequate checks, without copied parent chronology. Routine
 corrections stay local; update this plan for child/sequence/dependency/arc changes,
 checking bubble-up at every close. Project decisions stay in the project plan.
 No new trial, retrospective system, CRC role or self-acceptance. Independent arc
 composition and Operator gates remain; useful Arc04 preparation can use accepted
-inputs after the sequencing hold is lifted.
+inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.49 (2026-10-16): Operator lifts the reassessment hold. Open Slice16 as one
+  coherent twelve-card CSS colour repair with affected local semantics and guide
+  reconciliation; keep the implementation/evidence detail in its open set.
+  Preserve all parent criteria/states, source-input and final release gates.
 
 - 1.48 (2026-10-16): Operator-approved framework2.7.2 reassessment after
   Slices12–15: consolidate close narratives, select useful cohorts/live tasks,

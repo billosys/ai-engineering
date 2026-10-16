@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs on `planning`; implementation
 and packages belong on `main`. [Project ledger](ledger.md) is the acceptance contract.
 
-Plan revision **1.72**, updated2026-10-16 after the Operator-approved bounded
+Plan revision **1.73**, updated2026-10-16 after the Operator-approved bounded
 reassessment under collaboration-framework2.7.2. This refines the2026-10-12
 execution amendment; deliverables and all thirteen criteria/states are unchanged.
 Use the shared Project09 [audit](../project09-design-audit/artifacts/audit-results-design.md)
@@ -96,9 +96,9 @@ Consumer: subsequent CDC planning/review and CC assignments. Output: edits to
 these two existing plans only; stop after recording concrete simplifications
 and checking scope/links. No new audit, corpus review, trial or source mutation.
 Slice15 is independently closed by its preserved review record; its issued
-contract/evidence is unchanged. The Operator hold on new assignments remains
-pending execution direction. New choices apply to unissued work, not retroactive
-acceptance or a new source assignment.
+contract/evidence is unchanged. The hold was retained for that reassessment and
+subsequently lifted by the Operator execution direction recorded below. The
+reassessment itself did not issue source work or retroactively accept delivery.
 Prior bodies remain at the input commit and all Version History entries below
 remain intact; superseded chronology is not another current assignment.
 
@@ -127,11 +127,11 @@ obligations survive; no delivery is accepted by consolidation.
 
 ## Immediate sequence and working method
 
-1. This pass delivers the reassessment only. Preserve Slice15 closure and the
-   Operator hold on new assignments pending execution direction. The active/next
+1. The Operator accepted the reassessment for execution on2026-10-16 and lifted
+   the hold on new assignments. Preserve Slice15 closure. The active/next
    work is tracked in the [arc plan](arc02-theory-and-evidence/arc-plan.md);
    each issued slice owns its exact current prompt, evidence and row states.
-2. When execution resumes, continue ready source/topic and live-use batches:
+2. Continue ready source/topic and live-use batches:
    complete reads, decisions, supported fixes, affected checks and independent
    review together. Include
    affected local edges/CQs and repeated guide claims rather than deferring them
@@ -235,11 +235,16 @@ limitations handoff to Project11. Publication is separate Operator authorization
 
 Arc01/Arc06 are accepted and closed. P10-01/P10-12 are done; P10-02–11/P10-13
 remain open. Existing-field alignment is accepted, not full-schema conformance.
-Arc02 owns its child status and the retained Operator hold; follow its [current assignment](arc02-theory-and-evidence/arc-plan.md#workflow-and-current-assignment).
+Arc02 owns its child status and resumed execution; follow its [current assignment](arc02-theory-and-evidence/arc-plan.md#workflow-and-current-assignment).
 Arc04 remains a roadmap entry. This reassessment accepts no source, CC return,
-child, finding or parent criterion and changes no release gate or advancement hold.
+child, finding or parent criterion and changes no release gate. The Operator
+subsequently resumed execution; the reassessed working method now governs new work.
 
 ## Version History
+
+- 1.73 (2026-10-16): Operator resumes execution after the reassessment and lifts
+  the new-assignment hold. Apply the compact delivery/evidence rules to new work;
+  Arc02 owns its current slice. Criteria, states and release gates are unchanged.
 
 - 1.72 (2026-10-16): Operator-approved framework2.7.2 reassessment after Arc02/
   Slices12–15 exposed repeated handoff/status overhead and a stale Slice13
