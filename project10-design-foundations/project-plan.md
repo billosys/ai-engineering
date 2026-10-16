@@ -16,7 +16,7 @@ and expressive craft. Project10 repairs the existing tool; Project11 owns the
 broader design-practice expansion. Planning belongs here on `planning`;
 source and package changes belong in the main checkout.
 
-Plan revision **1.69**, authorized by the Operator on 2026-10-12: reduce project
+Plan revision **1.70**, authorized by the Operator on 2026-10-12: reduce project
 complexity and workload, and shorten the distance between finding an issue and
 fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
 live implementation. This amendment replaces that sequence with end-to-end
@@ -155,12 +155,13 @@ revision applicability for both.
    Was: Arc02/Slice12 was active. Now: its three-card core is independently
    closed at source8b408c03/planning7c65468e, all four rows done. Was: Slice13
    Iteration01 remained active. Now: Slice13 is independently closed at sourceeeb1afa5/planninge7517f61,
-   all four rows done. Continue with
-   [Slice14 Iteration01](arc02-theory-and-evidence/slice14-scale-application-and-responsive-scope/cc-prompt-iteration01.md):
-   the initial sourceaf2c7fd4/planning89fc69d5 passes preservation and package
-   review; two criteria remain open for local qualifiers and edge/CQ components.
-   Was: the initial three-card correction and five scalar repairs were active. The remaining music-interval card stays
-   owned by a later Arc02 batch; no whole-source fidelity completion is claimed.
+   all four rows done.
+   Was: Slice14 Iteration01 was active. Now: its sourced36f74bb/planningc24461a1
+   return is independently accepted, all four criteria done. Continue with
+   [Slice15](arc02-theory-and-evidence/slice15-musical-ratio-boundaries/cc-prompt.md),
+   the remaining Brown musical-interval card: conditional mathematical identity,
+   exact/decimal distinctions and scoped source/analogy claims. Missing original
+   and secondary warrants remain owned; no whole-source/global acceptance.
    Continue complete card/guide review in coherent source/topic cohorts, fixing
    supported defects and checking dependent claims in each slice. Add the
    accessibility/typesetting procedures and browser checks where they are used.
@@ -294,6 +295,10 @@ installed-package/release gates remain open. The Operator-corrected1.1.0 target
 and final bump at accepted Arc02 completion are unchanged.
 
 ## Version History
+
+- 1.70 (2026-10-16): Arc02/Slice14 independently closes with source qualifiers
+  and recoverable local edge/CQ components. Open the final Brown card as Slice15;
+  preserve complete review, missing inputs, actual behavior and release gates.
 
 - 1.69 (2026-10-15): Arc02/Slice14 initial review accepts two criteria and
   issues a bounded refinement for remaining source/status and edge/CQ records.

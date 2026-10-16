@@ -6,7 +6,7 @@ CDC Sofie independently reviewed separate CC's [initial assignment](cc-prompt.md
 issued at0e30c4a16d16dd65492cb1d4917ef5d53f7a9b60. Source candidate
 `af2c7fd4387741e8e84597c1c78cdbd423ab1b70` is a direct child of assignedeeb1afa5;
 planning return `89fc69d506551c5637b373f4cf912f4e79117853` is a direct child of issue.
-**Current verdict: S14-03/04 done; S14-01/02 open. Slice14 remains open.**
+**Initial verdict: S14-03/04 done; S14-01/02 open. Slice14 remains open.**
 Execute [Iteration01](cc-prompt-iteration01.md). CDC made no source repairs.
 
 ## Independent checks and accepted work
@@ -122,3 +122,86 @@ all13 project/10 arc criterion texts/states, initial issued prompt and CC
 batch/closing report remain preserved. New prompt provides four virtual-tested
 source replacements; the exact six-CQ membership predicate accepts the positive
 projection and rejects deleting one member. No reusable verifier was added.
+
+## Iteration01 independent review and Slice14 closure — 2026-10-16
+
+**Current verdict: accepted and closed; all four criteria done.** CDC Sofie
+reviewed separate CC's [Iteration01](cc-prompt-iteration01.md), issued at
+833fadd5c25fdbeb39bcfbeeac0668000afa98d7. Source `d36f74bbc173c84d2a0a979ae1770fbe604d1b76`
+is a direct child ofaf2c7fd4; planning `c24461a185a2e966ff4fc7757f4b9169b2b346bf`
+is a direct child of issue. The earlier two-open verdict remains historical,
+superseded by this result. CDC made no source repairs.
+
+### Reproduced repair, coverage and retained proof
+
+- Extracted the four replacements from the actual issued JSON; each old string
+  occurs once at its named path. Cumulative application exactly equals both
+  committed outputs. Ordered reversal restores both completeaf2c7fd4 inputs.
+  Current full hashes: applicatione30693955b765f372c2fb8b8e1683054edfcbc996b04c90a22438f4178a5d1c5,
+  responsive2cb2d36c5ee8dc2208244645f918fd10070d277cca8967802821acc4a151e610.
+  Brown's fallback is contextual, the unestablished ranking is removed, and
+  current notes distinguish legacy Verified/confidence/OCR entries from the
+  later width illustration and bounded source/arithmetic review.
+- Parsed actual selected headers and compared the new16-row relationship table
+  against all16 subject/field/index/value occurrences; exact equality. Target
+  locations/slug identity resolve in the actual snapshot, including Butterick's
+  practical-typography/typographic-color path. Read each rationale, orientation,
+  editorial/unassessed outcome and re-entry owner; reciprocal related views are
+  navigation rather than independent support. Body-only labels stay narrative.
+- Compared all six actual question occurrences to the six coverage-table rows,
+  preserving card/index/exact text and three distinct texts. A missing membership
+  fails the same multiset predicate. Read the component maps and bounded answers
+  against selected-card/source context. Width conversion is correctly separated
+  from scale construction; harmony judgments remain attributed and empirical
+  effects unresolved. These results establish recoverable local coverage,
+  not complete endpoint/graph semantics or universal answerability.
+- The table's wording that the selected application endpoint was “uninspected”
+  is imprecise: all three selected bodies were read locally. The separate formal
+  endpoint/edge-warrant assessment remains unassessed, as the table's outcomes
+  say. CDC records that actual distinction here; it does not claim those local
+  body reads establish graph warrant, or that a read body was never loaded.
+  This wording limit does not invalidate the explicit subject/direction/gap result.
+- Reproduced233 unchanged paths,2 changed/231 equal blobs fromaf2c7fd4 (the initial
+  eeb1afa5 comparison remains3/230),161 source files and six guides unchanged.
+  All three selected headers/references and the entire rhythm card are protected.
+  Owning SKILL/history/Makefile and every packaged input are byte-equal. Exact
+  two-source/three-planning scope, direct parents, separate trailers, LF/EOF,
+  committed whitespace and unchanged four criteria/states in CC's return pass.
+  The historical batch remains an exact prefix of its appended current record.
+
+Retain initial independent math, five-leaf typed/ordered metadata, dataset/bridge,
+version and Make/package evidence ataf2c7fd4, recorded above. The exact four
+unbundled prose replacements cannot affect their inputs or results. No fresh
+Make, arithmetic or package execution is claimed. New card bytes and affected
+source/status semantics were checked now. The360-character description is60
+above300; the incorrect earlier one-character receipt is explicitly superseded.
+The recorded pre-edit readback and recovery history cover this assignment;
+intake remains CC attestation, not independent proof of comprehension.
+
+### Four-row disposition and bubble-up
+
+| Row | CDC final state | Evidence |
+|---|---|---|
+| S14-01 | done | Initial complete-card/five-dimension outcomes plus current16 relationship subjects and6 question components have recoverable warrants/gaps; independent membership/source-scope review above. |
+| S14-02 | done | Main initial repairs retained; four exact qualifiers/status corrections independently reproduced and reviewed. No math/metadata drift. |
+| S14-03 | done | Retain independent typed/lineage results; current header/reference/full-reversal and233/161/6 preservation reproduced. |
+| S14-04 | done | Retain independent owning-version/Make/eight-member ZIP result after exact input comparison; fresh candidate scopes/parents/trailers and honest four-row return pass. |
+
+Four opening rows, four done, no deferred/no-op or silent drop. Artifact inventory
+is one [batch record](artifacts/batch-record.md); CC's closing report accounts for
+all four and honest arc limits. Issued prompts and historical CC/CDC findings
+remain preserved. The usable result is contextual scale application, explicit
+rhythm interpretation and correct width arithmetic at owning1.0.11.
+
+Update the arc for this closure and open [Slice15](../slice15-musical-ratio-boundaries/slice-plan.md)
+for the remaining Brown music-interval card. Original capture/lineage remains
+P10-11/A02-02; unresolved empirical and endpoint/global warrants stay A02-03–06;
+actual behavior A02-10, changed-revision hosted/rendering P10-13/Arc04 and final
+composition/release retain their gates. All13 project/10 arc criterion states
+remain unchanged. No source acquisition, push, hosted/browser/AT, install or
+publication check. Final1.1.0 remains the accepted Arc02 closing milestone.
+
+Planning checks: ten exact changed/new paths,189 local links and58 fragments
+resolved; LF/EOF/whitespace pass. Original four criteria and13/10 parent criteria/
+states remain accounted for; issued prompts, CC batch/closing records and prior
+plan histories are preserved. Main has no tracked CDC edits.

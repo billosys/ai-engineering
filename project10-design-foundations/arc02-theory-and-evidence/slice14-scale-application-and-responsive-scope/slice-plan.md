@@ -1,24 +1,25 @@
 ---
 slice: slice14-scale-application-and-responsive-scope
-status: active
+status: closed
 depends-on: [slice13-base-and-ratio-selection accepted core, Brown prepared-source context]
 ---
 
 # Slice14 — Scale Application and Responsive Scope
 
-Plan revision **1.1**, opened2026-10-15. [Project](../../project-plan.md),
+Plan revision **1.2**, opened2026-10-15. [Project](../../project-plan.md),
 [arc](../arc-plan.md), [ledger](ledger.md) and [initial assignment](cc-prompt.md)
 govern. Two contributors, CDC Sofie plans/reviews, separate CC implements through
 Operator relay; Expedited Mode. Source baseline `eeb1afa56d57cf6f0d2c71e5a8f56e5073b1cc80`;
 planning predecessor `e7517f61e815d0669fce8d65bcaf2a2bad0c0c35`. Initial issue0e30c4a1
-returned at sourceaf2c7fd4/planning89fc69d5. Was: four open. Now:S14-03/04
-independently done,01/02 open. Current assignment is
-[Iteration01](cc-prompt-iteration01.md), governed by [CDC review](cdc-verification.md).
+returned at sourceaf2c7fd4/planning89fc69d5. Was: two criteria open after initial review.
+Now: all four independently done at sourced36f74bb/planningc24461a1; Slice14
+is closed. [Final CDC result](cdc-verification.md#iteration01-independent-review-and-slice14-closure--2026-10-16)
+supersedes the initial verdict; [Iteration01](cc-prompt-iteration01.md) is accepted.
 
 ## Usable result and boundaries
 
-The original assignment scope below is retained as history. Current Iteration01
-narrows source to four exact replacements in application/responsive bodies;
+The original assignment scope below is retained as history. Accepted Iteration01
+narrowed source to four exact replacements in application/responsive bodies;
 all headers, the entire rhythm card and owning version/history stay protected.
 
 Correct three complete Brown cards as one application task: scale-application-
@@ -83,7 +84,7 @@ headroom. Music-interval remains separately owned for the next ready batch.
 | Assignment | Issue / predecessor / disposition |
 |---|---|
 | [Initial prompt](cc-prompt.md) | Issued2026-10-15 at0e30c4a1; predecessor planninge7517f61/sourceeeb1afa5; returned ataf2c7fd4/89fc69d5, two criteria accepted and two requiring refinement. |
-| [Iteration01](cc-prompt-iteration01.md) |2026-10-15; predecessor initial returnaf2c7fd4/89fc69d5; active for two card-note/context repairs and existing batch's edge/CQ specificity. Actual issue pinned at intake. |
+| [Iteration01](cc-prompt-iteration01.md) |2026-10-15; predecessor initial returnaf2c7fd4/89fc69d5; accepted at sourced36f74bb/planningc24461a1; two card-note/context repairs and existing batch's edge/CQ specificity verified. Issue833fadd5. |
 
 ## Iteration01 author readiness
 
@@ -105,6 +106,10 @@ The narrowed reading packet and retained independent proof leave correction
 headroom. Current1.0.11/history stays unchanged within this correction group.
 
 ## Version History
+
+- 1.2 (2026-10-16): Independently accept the four source qualifiers and exact
+  relationship/CQ accounting, close all four rows, and retain applicable proof.
+  Parent fidelity/global/behavior/release obligations remain unchanged.
 
 - 1.1 (2026-10-15): Initial CDC review accepts preservation and integration;
   issue one bounded refinement for edge/CQ specificity and surviving scope/status
