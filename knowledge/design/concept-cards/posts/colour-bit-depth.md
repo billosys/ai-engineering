@@ -102,11 +102,13 @@ Drasner describes the growth in representable values with bit depth and gives a 
 
 # Verification Notes
 
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
+
 - Current technical context: [CSS Color 4 §5.1](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#rgb-functions) defines CSS RGB values; bit allocation is a storage-format property, distinct from CSS gamut.
 
 - Definition source: Direct quotes from Drasner
 - Confidence rationale: High — explicitly defined with specific numbers
-- Uncertainties: None significant
+- Uncertainties: The prepared 32-bit allocation and human-discrimination statements remain source assertions, not general guarantees. Original-capture fidelity is unassessed because the immutable capture is unavailable.
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: Mathematics/binary-exponentiation added as rigorous
 - OCR issues: None significant

@@ -143,6 +143,8 @@ She notes the `type` attribute supports multiple modes: `matrix` (full 5×4 matr
 
 # Verification Notes
 
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
+
 - Current SVG support: [Filter Effects 1 §§9.1, 9.6 and 10](https://www.w3.org/TR/filter-effects-1/) defines matrix rows, unpremultiplied components, clipping and the default `linearRGB` filter space. Its `hue-rotate()` function is separately defined. The linked W3C document is a 2018 Working Draft.
 
 - Definition source: Direct quotes and code examples from Drasner; matrix interpretation synthesised

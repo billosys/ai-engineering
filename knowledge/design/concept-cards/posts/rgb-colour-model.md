@@ -112,11 +112,13 @@ Drasner explains: "In terms of web color values in an RGB channel, we specify co
 
 # Verification Notes
 
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
+
 - Current syntax: [CSS Color 4 §§4.1–4.3 and 5.1](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#rgb-functions) defines modern/legacy forms, alpha and RGB components. The 2026-10-09 CRD is work in progress.
 
 - Definition source: Direct quotes from Drasner
 - Confidence rationale: High — explicitly defined with syntax examples
-- Uncertainties: Source predates CSS Color 4's new syntax; the integer 0–255 description reflects the classic syntax
+- Uncertainties: The prepared article describes numeric components on the 0–255 reference scale. Current CSS also permits fractional numeric components on that scale and percentage values; the historical integer examples do not establish an integer-only syntax. Original-capture fidelity is unassessed because the immutable capture is unavailable.
 - Cross-reference status: Not discussed in detail in Ottosson source
 - Rosetta Stone check: No mappings added
 - OCR issues: None significant

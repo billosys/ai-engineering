@@ -109,10 +109,12 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 
 # Verification Notes
 
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
+
 - Current model: [Compositing and Blending 1 §§3.4.1–3.4.3, 5.1, 7, 10.1–10.3](https://www.w3.org/TR/compositing-1/) distinguishes backdrop, blend function, alpha compositing, separable/non-separable modes and isolation. Color-burn uses defined clipped branches.
 
 - Definition source: Direct quotes from Drasner, including blend mode formulas
-- Confidence rationale: Medium — Drasner supplies examples, but some terminology and formulas need the normative qualification above
+- Confidence rationale (retained body rationale): Medium describes the prepared article’s coverage of terminology/formulas and the need for normative qualification; this is distinct from the unchanged `extraction_confidence: high` metadata and does not re-rate it.
 - Uncertainties: Drasner notes 16 modes are available but does not list all 16; source coverage is overview-level
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: Mathematics/pointwise-operations mapping added as structural

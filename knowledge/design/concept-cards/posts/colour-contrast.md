@@ -108,6 +108,8 @@ WCAG 2.2 SC 1.4.3 (AA) requires 4.5:1 for text and images of text, except large-
 
 # Verification Notes
 
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
+
 - Formula scope: For opaque rendered sRGB pairs, decode each channel, calculate relative luminance and compare the unrounded ratio. Resolve transparency, overlays and backgrounds to the actual rendered pair first; pair arithmetic does not establish page conformance.
 - Primary criteria and formula: [WCAG 2.2 SC 1.4.1, 1.4.3, 1.4.6, 1.4.11 and glossary](https://www.w3.org/TR/WCAG22/). The sRGB relative-luminance definition uses the piecewise sRGB decoding and 0.2126/0.7152/0.0722 weights.
 

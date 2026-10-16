@@ -118,6 +118,8 @@ Drasner presents hexadecimal as another way to represent the same RGB values and
 
 # Verification Notes
 
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
+
 - Current syntax and alpha ordering: [CSS Color 4 §5.2](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#hex-notation) defines all four forms and shorthand expansion.
 
 - Definition source: Direct quotes from Drasner

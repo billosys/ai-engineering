@@ -87,11 +87,13 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 
 # Verification Notes
 
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
+
 - Current technical context: [CSS Color 4 §2](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#color-space) defines additive linear-light spaces; it does not make encoded sRGB arithmetic or pigment outcomes interchangeable.
 
 - Definition source: Direct quote from Drasner
 - Confidence rationale: High — clearly stated in dedicated section
-- Uncertainties: None
+- Uncertainties: The prepared account does not establish a universal result for every pigment recipe; outcomes depend on materials and conditions. Original-capture fidelity is unassessed because the immutable capture is unavailable.
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: No mappings added
 - OCR issues: None significant

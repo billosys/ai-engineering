@@ -57,7 +57,7 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 
 1. Optional alpha component: number or percentage, clamped to the 0–1 range
 2. Applies only to the colour value, not to child elements (unlike `opacity` property)
-3. Current alpha accepts a number or percentage: `rgba(255,0,0,1)` is opaque and `rgb(255 0 0 / 50%)` is half alpha; legacy comma syntax uses a numeric alpha
+3. Both legacy and modern forms accept number or percentage alpha: `rgba(255, 0, 0, 50%)` and `rgba(255, 0, 0, 0.5)` have the same alpha. `rgb()` and `rgba()` remain aliases with optional alpha.
 4. `hsla()` is an alias of `hsl()`; both support optional alpha
 
 # Construction / Recognition
@@ -94,8 +94,8 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 
 # Common Errors
 
-- **Error**: Treating alpha as an 8-bit CSS channel or expecting `255` to mean opaque.
-  **Correction**: `rgba(255, 0, 0, 1)` is valid and opaque; alpha `255` is outside the nominal range and is clamped to 1 by CSS Color. Alpha syntax does not imply an 8-bit storage field.
+- **Error**: Assuming CSS alpha is specified on a 0–255 channel scale.
+  **Correction**: `rgba(255, 0, 0, 1)` is valid and opaque. Alpha `255` is outside the nominal 0–1 range and is clamped to 1, so it also yields opaque alpha; that result is not itself an error. Alpha syntax does not imply an 8-bit storage field.
 
 - **Error**: Confusing rgba() alpha with CSS `opacity`.
   **Correction**: `opacity: 0.5` makes the entire element (including text and children) 50% transparent. `background-color: rgba(0,0,0,0.5)` makes only the background colour 50% transparent; children remain fully opaque.
@@ -105,6 +105,8 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 "RGB Values" section under "Color values," Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
 
 - Current syntax and alpha: [CSS Color 4 §§3.3, 4.1–4.2 and 5.1](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#alpha-syntax) distinguishes colour alpha and element opacity; `rgb()` and `rgba()` are aliases.
 

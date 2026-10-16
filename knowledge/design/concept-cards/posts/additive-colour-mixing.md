@@ -109,11 +109,13 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 
 # Verification Notes
 
+- Iteration02 scope: The current technical support below uses the prepared text and linked rules; this correction does not assess fidelity to the unavailable original capture or browser behavior. Extraction-confidence metadata is unchanged. Retained extraction/provenance remarks below are predecessor assertions present at source 19c7a08a; their authorship is not inferred here, and they are not new current results. Where this iteration clarifies a note, that clarification scopes a prior assertion rather than recording a new extraction or verification result.
+
 - Current technical support: [CSS Color 4 §2](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#color-space) distinguishes additive linear-light colour spaces from gamma-encoded RGB; the gamut of real displays is bounded. This 2026-10-09 Candidate Recommendation Draft is work in progress.
 
 - Definition source: Direct quotes from Drasner
 - Confidence rationale: High — Drasner provides a clear, dedicated section on this concept
-- Uncertainties: None significant
+- Uncertainties: The prepared red/green account does not establish outcomes beyond the specified RGB primaries and conditions. Original-capture fidelity is unassessed because the immutable capture is unavailable.
 - Cross-reference status: Not discussed in Ottosson source
 - Rosetta Stone check: Mathematics/vector-addition mapping added as structural
 - OCR issues: HTML figure markup stripped; prose content clean
