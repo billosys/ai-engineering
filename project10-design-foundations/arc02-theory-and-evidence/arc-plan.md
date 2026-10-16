@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.49**, updated2026-10-16 under the Operator-approved
+Plan revision **1.50**, updated2026-10-16 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -126,9 +126,10 @@ accepted in its [independent record](slice15-musical-ratio-boundaries/cdc-verifi
 The historical closure/hold at planning2e3bc843 is preserved; resuming execution
 does not reperform or self-accept that source review.
 
-**Current assignment: [Slice16 initial prompt](slice16-css-colour-mechanics/cc-prompt.md).**
+**Active slice: [Slice16](slice16-css-colour-mechanics/slice-plan.md#assignment-history).**
+Its assignment history owns the current prompt and iteration disposition.
 The Operator's2026-10-16 execution direction lifts the reassessment hold. Slice16
-owns its exact scope, implementation, evidence and four open criteria; no new
+owns its exact scope, implementation, evidence and criterion dispositions; no new
 parent criterion is accepted by opening it. The reassessed batch/evidence rules
 apply prospectively. No subsequent slice is pre-authored.
 Future handoffs need the actual source, exact scope, complete bounded reads,
@@ -140,6 +141,10 @@ composition and Operator gates remain; useful Arc04 preparation can use accepted
 inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.50 (2026-10-16): Route the active-slice pointer to its assignment history,
+  so same-slice refinements and row states stay local rather than repeating them
+  in this plan. No child, criterion, source dependency or release acceptance.
 
 - 1.49 (2026-10-16): Operator lifts the reassessment hold. Open Slice16 as one
   coherent twelve-card CSS colour repair with affected local semantics and guide

@@ -6,13 +6,15 @@ depends-on: [accepted Arc01 corpus and prepared-source records, current design s
 
 # Slice16 — CSS Colour Mechanics
 
-Revision **1.0**, opened2026-10-16 after the Operator lifted the reassessment hold.
+Revision **1.1**, opened2026-10-16 after the Operator lifted the reassessment hold.
 Two contributors, Expedited Mode: CDC Sofie authors/reviews; separate CC implements
 through Operator relay. [Project](../../project-plan.md), [arc](../arc-plan.md),
 [ledger](ledger.md) and [initial assignment](cc-prompt.md) govern. Planning predecessor
 `c64c5835fed0ac5d2377ff3dc12fe854e35438ce`; SOURCE/main baseline
 `65ed7a05d602e775bfa5cec16bfb4ccf206c8c63`. The issuing commit is the commit adding
-this open set. No CC return or independent acceptance exists yet.
+this open set. Initial CC return: source8f622e44/planninge04d8846.
+CDC accepts S16-03 at that revision; S16-01/02/04 remain open. The current
+assignment is [Iteration01](cc-prompt-iteration01.md); see Assignment history.
 
 ## Deliverable and exact scope
 
@@ -101,7 +103,7 @@ build a reusable validator or a broad mutation suite):
    `#0f08` expands to `#00ff0088`, whose alpha is136/255, not exactly0.5.
 2. Count: 2^8=256; 256^3=16,777,216 colour triples. Adding eight alpha bits
    changes RGBA combinations, not the RGB gamut or a universal vision threshold.
-3. Gradient: explicitly in sRGB, opaque red/blue midpoint is(0.5,0,0,1).
+3. Gradient: explicitly in sRGB, opaque red/blue midpoint is(0.5,0,0.5,1).
    Transparent white(1,1,1,0) → opaque black(0,0,0,1) at t=0.5 gives
    non-premultiplied output(0,0,0,0.5), not independent-grey(0.5,0.5,0.5,0.5).
    Keep gradient colour space/default claims scoped to the named spec/environment.
@@ -163,7 +165,8 @@ acceptance. No publication, push, installed-task, browser/AT or hosted acceptanc
 is promised here. Final changed-revision hosted work remains P10-13/Arc04; actual
 behavior and complete review remain Arc02; historical fidelity remains P10-11.
 
-CC may change exactly three planning paths: `artifacts/batch-record.md`,
+**Initial return contract (historical; Iteration01 now governs):** CC could change
+exactly three planning paths: `artifacts/batch-record.md`,
 `ledger.md` Evidence/Notes only (criteria/statuses remain open), and
 `closing-report.md`. Preserve this plan/prompt and all predecessor records.
 Commit scoped source and planning work separately with both required trailers;
@@ -193,7 +196,44 @@ witnesses discriminate known mistakes; prompt/ledger/plan agree. Approximately
 spec sections leave implementation/review headroom in a normal CC context. This
 is a ready source-fix batch under the approved project, not a new research trial.
 
+## Assignment history
+
+- Initial: `cc-prompt.md`, issued2026-10-16 atf8205b36 after predecessorc64c5835;
+  returned at source8f622e44/planninge04d8846. Independently reviewed: S16-03 done,
+  remaining rows open. Preserved unchanged.
+- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-16 in the commit
+  adding it, predecessore04d8846. Resolve F01–F03 after E00's author-erratum
+  correction; SOURCE pin8f622e44. No next slice or parent gate acceptance.
+
+## Iteration01 author readiness and erratum
+
+Was: witness3 gave `(0.5,0,0,1)` for opaque red/blue. Now:
+`(0.5,0,0.5,1)`, independently computed by CDC and correctly raised by CC.
+This repairs the author arithmetic, not the acceptance texts or source boundary.
+The initial prompt and initial CC observation remain preserved.
+
+CDC read all twelve revised primary cards, the HSL/guide/source delta and the
+complete263-line batch/49-line closing report at8f622e44/e04d8846. The observed
+failure is incomplete propagation through repeated body assertions; the refinement
+therefore follows each claim family through the existing full-card sections,
+checks concrete contrary examples and repairs the joined semantic evidence in
+place. No new investigation or verifier is commissioned. The scoped primary
+specifications and concept-card evidence/graph rules support the prescribed
+repairs; source/citation preservation and fresh package integration already
+reproduce. Iteration mutation is narrowed to twelve card bodies and the colour
+guide; all headers, HSL endpoint, foundations, entrypoint/history are now frozen
+at8f622e44. Keep version1.0.13 for this unfinished correction. One existing batch
+record and three CC return paths suffice; corrected guide inputs need fresh gates.
+Readiness is source-grounded, design-complete within the approved semantics,
+guideline-applied, executable in named paths, falsifiable by contrary examples,
+and coherent with the four-row contract. No required original-source evidence
+is manufactured and no recipe depends on the false midpoint.
+
 ## Version History
+
+- 1.1 (2026-10-16): Initial CDC review accepts preservation, resolves its own
+  midpoint typo and issues one consolidated source/guide/evidence refinement.
+  Preserve the initial prompt and parent criteria; Slice16 remains active.
 
 - 1.0 (2026-10-16): Open the connected twelve-card CSS colour repair with local
   edge/CQ work, dependent HSL/guide reconciliation and proportionate evidence under
