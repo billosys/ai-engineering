@@ -54,7 +54,7 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 ## To Identify/Recognise:
 1. Physical media — paint, ink, markers, dyes — use subtractive mixing
 2. Compare mixtures in context; additional pigments can shift hue, chroma and lightness in different ways
-3. Red + blue = purple; red + yellow = orange (not the result you get from light)
+3. Pigment mixtures depend on their spectra, concentration, medium and illumination; traditional red/blue/purple and red/yellow/orange outcomes are examples, not guaranteed recipes
 
 # Context & Application
 
@@ -78,8 +78,8 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 
 # Common Errors
 
-- **Error**: Applying paint-mixing intuition to digital colour selection.
-  **Correction**: On screen, mixing red and green produces yellow, not brown. Digital colour is additive.
+- **Error**: Treating “digital colour mixing” as one operation with a guaranteed red-plus-green result.
+  **Correction**: Specified emitted RGB primary contributions combine additively, so full red plus full green gives the RGB yellow primary. CSS interpolation, blend functions and compositing follow their own rules; pigment mixtures depend on materials and conditions.
 
 # Source Reference
 

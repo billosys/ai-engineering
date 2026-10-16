@@ -53,14 +53,14 @@ Drasner explains: "In terms of web color values in an RGB channel, we specify co
 
 # Prerequisites
 
-- **Additive colour mixing** — RGB directly encodes additive primaries
-- **Colour bit depth** — The 0–255 range comes from 8 bits per channel
+- **Additive colour mixing** — RGB coordinates can represent additive primaries; only linear-light channel contributions under fixed primaries are directly additive
+- **Colour bit depth** — A legacy numeric CSS component uses a 0–255 scale; this is not a claim about storage bit depth
 
 # Key Properties
 
 1. Three channels: Red, Green, Blue; CSS accepts numbers or percentages
 2. (0, 0, 0) = black; (255, 255, 255) = white
-3. rgba() adds a fourth parameter for alpha (opacity): 0.0 = fully transparent, 1.0 = fully opaque
+3. `rgba()` is an alias of `rgb()`; optional alpha may be numeric or a percentage (for example `rgb(255 0 0 / 50%)`), with 0 transparent and 1/100% opaque
 4. Values are sRGB, not linear light — gamma encoding is applied
 
 # Construction / Recognition
@@ -88,14 +88,14 @@ Drasner explains: "In terms of web color values in an RGB channel, we specify co
 
 ## Builds Upon
 - **Additive colour mixing** — RGB encodes additive primaries
-- **Colour bit depth** — 8 bits per channel → 0–255 range
+- **Colour bit depth** — Legacy numeric notation maps the 0–255 scale; CSS component syntax is not a storage allocation
 
 ## Enables
 - **Hex colour notation** — Hex is an alternative encoding of the same RGB values
 - **HSL colour space** — HSL is a coordinate transformation of RGB values
 
 ## Related
-- **CSS rgba()** — The alpha extension of rgb()
+- **CSS rgba()** — `rgba()` and `rgb()` are aliases; both accept optional alpha in current syntax
 
 ## Contrasts With
 - **HSL** — HSL is a cylindrical transformation of RGB coordinates that some authors find easier to adjust; neither representation guarantees perceptual uniformity

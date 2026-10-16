@@ -100,7 +100,7 @@ She notes the `type` attribute supports multiple modes: `matrix` (full 5×4 matr
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Each output component is a weighted sum of R, G, B, A plus a constant. The constant makes the mapping affine rather than linear on RGBA alone.
+**Mathematics → RIGOROUS (bounded)**: For each input pixel, the specified four rows multiply `[R,G,B,A,1]`; the first four columns weight RGBA and the fifth supplies the constant. This is exact homogeneous matrix multiplication for the stated input and coefficients before the specified clipping; it does not imply a five-component pixel.
 
 # Examples
 
@@ -127,10 +127,10 @@ She notes the `type` attribute supports multiple modes: `matrix` (full 5×4 matr
 # Common Errors
 
 - **Error**: Providing fewer than 20 values for `type="matrix"`.
-  **Correction**: The matrix type requires exactly 20 space-separated values (4 rows × 5 columns). Fewer values will produce unexpected or null results.
+  **Correction**: The matrix type is defined as four output rows with five coefficients each. This definition does not establish a malformed-input fallback result.
 
-- **Error**: Expecting feColorMatrix to work as a CSS property directly.
-  **Correction**: feColorMatrix is an SVG filter primitive. To apply it to HTML elements, define the SVG filter in an `<svg>` block and reference it via `filter: url(#id)` in CSS, or use the CSS shorthand equivalents (`hue-rotate()`, `saturate()`, `brightness()`, etc.) for simpler cases.
+- **Error**: Treating similarly named CSS filter functions as equivalent SVG filter operations.
+  **Correction**: `feColorMatrix` is an SVG filter primitive and can be referenced by CSS `filter: url(#id)`. SVG filter primitives use the selected filter interpolation space (default `linearRGB`); CSS filter functions operate in sRGB. Similar names do not establish equivalent rendering.
 
 # Common Confusions
 
@@ -147,7 +147,7 @@ She notes the `type` attribute supports multiple modes: `matrix` (full 5×4 matr
 
 - Definition source: Direct quotes and code examples from Drasner; matrix interpretation synthesised
 - Confidence rationale: Medium — Drasner provides correct overview and examples but directs readers to Una Kravets's article for depth; matrix semantics require supplementary knowledge
-- Uncertainties: The specific matrix example's output behaviour requires external verification; Drasner does not explain the matrix values in detail
+- Verification scope: The displayed example’s output is calculated from its four rows and `[R,G,B,A,1]`; clipping applies after the matrix operation. This is a specification-based calculation, not runtime observation.
 - Cross-reference status: Not in Ottosson source
-- Rosetta Stone check: Mathematics/matrix-multiplication mapping added as rigorous
+- Rosetta Stone check: Mathematics/homogeneous matrix multiplication is rigorous for the stated four-row, five-input operation before clipping
 - OCR issues: None significant

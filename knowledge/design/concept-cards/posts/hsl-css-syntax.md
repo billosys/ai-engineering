@@ -61,7 +61,7 @@ Drasner explains that "hsl values work with hue, saturation, lightness values" a
 1. Hue: 0–360 degrees (0=red, 120=green, 240=blue, 360=red again; circular, values outside 0–360 wrap)
 2. Saturation: 0% (grey) to 100% (maximum colourfulness at that lightness)
 3. Lightness: 0% (black) to 100% (white); 50% at S=100% gives the nominal saturated hue
-4. Alpha (in hsla): 0.0 (fully transparent) to 1.0 (fully opaque)
+4. Optional alpha accepts a number or percentage; 0 is transparent and 1/100% is opaque
 
 # Construction / Recognition
 
@@ -72,8 +72,8 @@ Drasner explains that "hsl values work with hue, saturation, lightness values" a
 4. Optionally add alpha for transparency
 
 ## To Identify/Recognise:
-1. `hsl(H, S%, L%)` or `hsla(H, S%, L%, A)` pattern
-2. First value is always a bare number (degrees), second and third always have `%`
+1. Recognize modern space/slash syntax or legacy comma syntax; hue may be a number or angle, with optional alpha
+2. Saturation and lightness are percentages; hue may use degrees, turns, radians or gradians
 
 # Context & Application
 
@@ -82,11 +82,11 @@ Drasner explains that "hsl values work with hue, saturation, lightness values" a
 
 # Examples
 
-**Example 1** (from source): `hsla(150, 50%, 50%, 0.5)` — Drasner's canonical example showing a semi-transparent greenish colour.
+**Example 1** (from source): `hsla(150, 50%, 50%, 0.5)` — Drasner's canonical example showing a semi-transparent greenish colour. **Example 1a** (current CSS syntax): `hsl(0.5turn 100% 50% / 50%)` uses an angle hue and percentage alpha.
 
-**Example 2** (from source — Sass mixin): `hsl(($i - 10)*($color*1.25), ($i - 1)*($color / $color-frequency), 40%)` — Drasner's Sass loop steps through HSL values to generate sequences of colours.
+**Example 2** (historical source example — Sass mixin, not standalone CSS): `hsl(($i - 10)*($color*1.25), ($i - 1)*($color / $color-frequency), 40%)` — Drasner's Sass loop steps through HSL values to generate sequences of colours.
 
-**Example 3** (from source — GreenSock): `fill:"hsl(+=0, +=50%, +=0%)"` — animating HSL saturation relative to current value, demonstrating HSL's utility for parametric animation.
+**Example 3** (historical source example — GreenSock interpolation syntax, not standalone CSS): `fill:"hsl(+=0, +=50%, +=0%)"` — animating HSL saturation relative to current value, demonstrating HSL's utility for parametric animation.
 
 # Relationships
 
@@ -98,7 +98,7 @@ Drasner explains that "hsl values work with hue, saturation, lightness values" a
 - **CSS custom properties for colour** — HSL values can be stored in custom properties when that representation suits the project
 
 ## Related
-- **CSS rgba()** — The equivalent alpha extension for RGB syntax
+- **CSS rgba()** — RGB alpha syntax; `rgb()` and `rgba()` are aliases, as are `hsl()` and `hsla()`
 - **Hex colour notation** — Alternative encoding of the same sRGB values, less human-readable
 
 ## Contrasts With
@@ -119,7 +119,7 @@ Drasner explains that "hsl values work with hue, saturation, lightness values" a
 
 - Definition source: Direct quotes from Drasner
 - Confidence rationale: High — complete syntax definition with multiple examples
-- Uncertainties: CSS Color 4 introduces updated `hsl()` syntax (without commas); source uses legacy comma syntax
+- Historical source note: Drasner’s examples use legacy comma syntax; current CSS also accepts modern space-separated components, angle units and slash alpha.
 - Cross-reference status: HSL model verified across both sources; syntax specifics from Drasner only
 - Rosetta Stone check: No mappings added
 - OCR issues: None significant

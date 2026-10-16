@@ -39,7 +39,7 @@ rosetta_stone:
 
 # Quick Definition
 
-CSS gradients define geometry and colour stops; CSS Images specifies an optional interpolation method for the gradient line, using CSS Color interpolation rules. Name a colour space for numerical examples; do not assume a universal default across syntax, specifications or implementations.
+CSS gradients define geometry and colour stops; CSS Images specifies an optional interpolation method for the gradient line, using CSS Color interpolation rules. The current CSS Images 4 Editor’s Draft default is Oklab; name the space for numerical examples and do not infer implementation support from draft text.
 
 # Core Definition
 
@@ -56,15 +56,15 @@ She notes gradients "support opacity so we can have some nice effects and layer 
 
 # Prerequisites
 
-- **RGB colour model** — Intermediate gradient colours are computed by interpolating RGB channel values
+- **RGB colour model** — Gradient colors are interpolated in the selected space; RGB is one option, and the channel path depends on that choice
 - **Additive colour mixing** — The interpolation space is a selected CSS colour space; sRGB components are encoded and are not physical light-addition values
 
 # Key Properties
 
-1. Colour stops specify a colour and an optional position (0%–100% or 0.0–1.0)
+1. CSS stops accept positions appropriate to the gradient type (length/percentage or angle/percentage); SVG offsets use their own syntax and may be normalized fractions or percentages
 2. Intermediate colours follow the selected interpolation space and method; name the space for numerical results
 3. CSS supports `linear-gradient()`, `radial-gradient()`, and `conic-gradient()` as gradient types
-4. CSS Color interpolation premultiplies non-opaque colours by alpha before interpolating; this avoids treating hidden transparent RGB components as visible colour
+4. CSS Color interpolation uses premultiplied alpha for non-opaque colours, with hue-specific rules where applicable; transparent endpoint channels do not create visible colour
 5. CSS Images defines gradient syntax and delegates colour interpolation to CSS Color; the current editor draft is not browser-support evidence
 
 # Construction / Recognition
@@ -72,7 +72,7 @@ She notes gradients "support opacity so we can have some nice effects and layer 
 ## To Construct/Create:
 1. Use `background: linear-gradient(direction, color-stop-1, color-stop-2, ...)`
 2. Direction: `to right`, `to bottom`, `45deg`, etc.
-3. Colour stops: any CSS colour value optionally followed by a position
+3. CSS colour stops may have a CSS `<length-percentage>` position (or `<angle-percentage>` for conic gradients); SVG `<stop offset>` has separate syntax. CSS stops can extend outside the 0–100% range
 4. Optionally add explicit positions: `linear-gradient(to right, red 0%, blue 50%, green 100%)`
 
 ## To Identify/Recognise:
@@ -86,18 +86,18 @@ She notes gradients "support opacity so we can have some nice effects and layer 
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Within a selected colour space, interpolation varies components between stops according to the specified method. Hue handling and non-opaque colours have additional rules, including premultiplied alpha; this does not imply physical light addition or perceptual uniformity.
+**Mathematics → RIGOROUS (bounded)**: For two stops and a fixed interpolation parameter, each applicable component follows the specified interpolation operation in the selected space; hue and alpha follow their specified rules, including premultiplication. This exact operation does not imply physical light addition or perceptual uniformity.
 
 # Examples
 
-**Example 1** (from source — SVG): The `<linearGradient>` with stops from white (opacity 0) at offset 0 to black (opacity 1) at offset 0.3, demonstrating opacity interpolation in an SVG gradient.
+**Example 1** (from source — SVG): The `<linearGradient>` with transparent white at offset 0 and opaque black at offset 0.3 is an SVG stop example. Separately, under CSS explicit sRGB interpolation, opaque `rgb(255 0 0)` to `rgb(0 0 255)` at t=0.5 gives normalized `(0.5, 0, 0.5, 1)`; transparent white to opaque black at t=0.5 gives `(0, 0, 0, 0.5)` after unpremultiplication.
 
 **Example 2** (from source): Drasner references using gradients "as a mask" and combined with animation — demonstrating gradients as dynamic compositing elements, not just static fills.
 
 # Relationships
 
 ## Builds Upon
-- **RGB colour model** — Interpolation operates on RGB channel values
+- **RGB colour model** — RGB is one available coordinate system for interpolation; the selected gradient space determines the interpolated components
 
 ## Enables
 - **Colour scale design** — Gradient interpolation is the foundation of continuous colour scales in data visualisation
@@ -108,8 +108,8 @@ She notes gradients "support opacity so we can have some nice effects and layer 
 
 # Common Errors
 
-- **Error**: Expecting a gradient between red and green to pass through yellow in the middle.
-  **Correction**: In explicitly named sRGB interpolation, opaque red and green produce midpoint `(0.5, 0.5, 0, 1)` in normalized components. Other interpolation spaces produce different paths; no space guarantees a perceptually perfect rainbow.
+- **Error**: Treating a keyword or an unspecified space as a universal numeric interpolation example.
+  **Correction**: State the space and exact endpoint colors. For explicit sRGB interpolation, opaque `rgb(255 0 0)` and `rgb(0 0 255)` yield `(0.5, 0, 0.5, 1)` at t=0.5; another interpolation space can yield a different midpoint.
 
 # Common Confusions
 
@@ -128,5 +128,5 @@ She notes gradients "support opacity so we can have some nice effects and layer 
 - Confidence rationale: Medium — Drasner covers gradients adequately but does not explain the interpolation mechanism explicitly; the lerp characterisation is synthesised
 - Uncertainties: The prepared source does not describe interpolation algorithms. CSS Images 4 is an Editor’s Draft and this card does not claim implementation support or original-source fidelity.
 - Cross-reference status: Not in Ottosson source
-- Rosetta Stone check: Mathematics/lerp mapping qualified as structural
+- Rosetta Stone check: Mathematics/component interpolation is rigorous only for the specified operation and stated hue/alpha rules
 - OCR issues: CodePen embed fallbacks noted; SVG code block cleanly extracted

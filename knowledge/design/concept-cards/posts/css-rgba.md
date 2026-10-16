@@ -50,26 +50,26 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 
 # Prerequisites
 
-- **RGB colour model** — rgba() is an extension of rgb()
-- **Colour bit depth** — The alpha channel is the extra 8 bits in 32-bit colour
+- **RGB colour model** — `rgb()` and `rgba()` are aliases with the same RGB components; either may include optional alpha
+- **Colour bit depth** — RGBA8 commonly allocates a further 8-bit alpha field, but CSS alpha syntax does not prescribe storage
 
 # Key Properties
 
 1. Optional alpha component: number or percentage, clamped to the 0–1 range
 2. Applies only to the colour value, not to child elements (unlike `opacity` property)
-3. The alpha value is a floating-point decimal, not an integer or percentage (in the classic syntax)
-4. Equivalent alpha support exists in hsla()
+3. Current alpha accepts a number or percentage: `rgba(255,0,0,1)` is opaque and `rgb(255 0 0 / 50%)` is half alpha; legacy comma syntax uses a numeric alpha
+4. `hsla()` is an alias of `hsl()`; both support optional alpha
 
 # Construction / Recognition
 
 ## To Construct/Create:
 1. Start with an rgb() value
-2. Add a fourth comma-separated value between 0.0 and 1.0
+2. Add optional alpha: modern `rgb(255 0 0 / 50%)` or legacy `rgba(255, 0, 0, 0.5)`
 3. Example: `rgba(255, 0, 0, 0.5)` = 50% transparent red
 
 ## To Identify/Recognise:
-1. `rgba(R, G, B, A)` with four parameters
-2. The fourth value is always a decimal between 0 and 1
+1. `rgb()`/`rgba()` accept three RGB components and optional alpha; commas indicate legacy syntax, while modern syntax uses spaces and an optional slash
+2. Alpha may be a number or percentage; out-of-range values are clamped to the allowed range
 
 # Context & Application
 
@@ -94,8 +94,8 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 
 # Common Errors
 
-- **Error**: Using an integer (e.g. rgba(255, 0, 0, 1)) expecting 100% opacity.
-  **Correction**: This is correct — 1 (or 1.0) does mean fully opaque. However, using a value like `255` for alpha is wrong; it will be treated as `1` or may be invalid depending on browser strictness.
+- **Error**: Treating alpha as an 8-bit CSS channel or expecting `255` to mean opaque.
+  **Correction**: `rgba(255, 0, 0, 1)` is valid and opaque; alpha `255` is outside the nominal range and is clamped to 1 by CSS Color. Alpha syntax does not imply an 8-bit storage field.
 
 - **Error**: Confusing rgba() alpha with CSS `opacity`.
   **Correction**: `opacity: 0.5` makes the entire element (including text and children) 50% transparent. `background-color: rgba(0,0,0,0.5)` makes only the background colour 50% transparent; children remain fully opaque.
@@ -110,7 +110,7 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 
 - Definition source: Direct quote from Drasner
 - Confidence rationale: High — clearly defined with example
-- Uncertainties: CSS Color 4 syntax allows `rgb(R G B / A)` form; source describes only legacy comma syntax
+- Historical source note: Drasner’s example uses legacy comma syntax and describes numeric alpha; current CSS also accepts modern space/slash syntax and percentage alpha.
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: No mappings added
 - OCR issues: None significant

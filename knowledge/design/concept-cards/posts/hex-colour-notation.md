@@ -82,7 +82,7 @@ Drasner presents hexadecimal as another way to represent the same RGB values and
 
 **Example 1** (from source): "`#00FFFF` becomes `#0FF`" — Drasner's example of the shorthand rule; each channel pair (00, FF, FF) has a repeated digit so each reduces to one character.
 
-**Example 2** (from source): "`#000000` being black and `#FFFFFF` being white" — the boundary values.
+**Example 2** (corrected source-example paraphrase): the prepared passage’s `#00000` appears to be a typo; valid six-digit black is `#000000`, while `#FFFFFF` is white.
 
 # Relationships
 
@@ -94,7 +94,7 @@ Drasner presents hexadecimal as another way to represent the same RGB values and
 - **Design token storage** — Hex is one possible notation for sRGB token values; a project may choose another representation
 
 ## Related
-- **CSS rgba()** — For alpha channel support, rgba() is needed; CSS Color 4 adds `#RRGGBBAA` 8-digit hex
+- **CSS rgba()** — `#RGBA` and `#RRGGBBAA` also encode alpha; `rgba()` is an alternative notation
 
 ## Contrasts With
 - **HSL** — Drasner notes: "if you're going to work with colors in a more involved way, though, HSL is a little bit more human-readable"

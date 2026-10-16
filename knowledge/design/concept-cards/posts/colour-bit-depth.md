@@ -45,7 +45,7 @@ Drasner describes the growth in representable values with bit depth and gives a 
 
 # Prerequisites
 
-- **Additive colour mixing** — Bit depth quantises the continuous additive light values into discrete steps
+- **Additive colour mixing** — A storage format may quantise encoded channel values used to represent colour; bit depth does not itself quantise a physical light spectrum
 
 # Key Properties
 
@@ -57,9 +57,9 @@ Drasner describes the growth in representable values with bit depth and gives a 
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. CSS rgb() and rgba() values range from 0–255 per channel — this is the 8-bit range
+1. Legacy numeric CSS RGB components use a 0–255 scale, but CSS syntax permits fractional and percentage values and does not assert 8-bit storage
 2. Hex colour values use two hexadecimal digits per channel (00–FF), representing 256 values = 8 bits
-3. A "1-bit" display is monochrome (two colours: black/white)
+3. A one-bit field has two code patterns; whether a display uses them for black/white is a format/device choice
 
 # Context & Application
 
@@ -89,7 +89,7 @@ Drasner describes the growth in representable values with bit depth and gives a 
 # Common Errors
 
 - **Error**: Assuming 32-bit colour means more colour than 24-bit.
-  **Correction**: 32-bit colour typically uses the same 24 bits for RGB colour as 24-bit, with the extra 8 bits dedicated to an alpha (transparency) channel.
+  **Correction**: RGBA8 is one common 32-bit allocation with 8 bits each for RGB and alpha; the label “32-bit colour” alone does not guarantee that layout.
 
 # Common Confusions
 

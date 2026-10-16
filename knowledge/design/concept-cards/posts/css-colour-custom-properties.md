@@ -87,10 +87,9 @@ when its consumers should also resolve to red.
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Define raw colour palette on `:root` with descriptive names
-2. Define semantic roles referencing the palette variables
-3. Apply semantic variables to component styles
-4. Override on scoped selectors for theming (e.g. `[data-theme="dark"]`)
+1. Either define role properties directly on `:root`, or define primitive values and optional aliases when useful
+2. Apply the chosen role properties to component styles
+3. For a scoped theme, either redeclare role values directly or redeclare both the overridden primitive and any alias that must resolve against it (e.g. `[data-theme="dark"]`)
 
 ## To Identify/Recognise:
 1. `var(--something)` in a CSS colour value
@@ -111,7 +110,7 @@ when its consumers should also resolve to red.
 
 **Example 2** (from source): The Sass map equivalent — `$colors: (mainBrand: #FA6ACC, ...)` with a `color()` function — demonstrates the same semantic naming pattern in a preprocessor context.
 
-**Example 3** (from source): `currentColor` — `div-external { color: orange; }` / `.div-internal { border: 1px solid currentColor; }` — the inherited colour keyword that propagates the cascade value automatically.
+**Example 3** (corrected source-example paraphrase): `currentColor` — `.div-external { color: orange; }` / `.div-internal { border: 1px solid currentColor; }` — the inherited colour keyword that propagates the cascade value automatically.
 
 # Relationships
 
@@ -147,7 +146,7 @@ when its consumers should also resolve to red.
 
 - Definition source: Direct quotes and code examples from Drasner
 - Confidence rationale: High — full code examples provided; concept well-defined
-- Uncertainties: Drasner's article notes (in 2016) that CSS variables "haven't made their way into Microsoft browsers" — this is now resolved; IE11 is the only holdout and is obsolete
+- Historical source note: Drasner’s 2016 browser-support statement is retained as historical context and is not a current compatibility claim
 - Cross-reference status: Not in Ottosson source
-- Rosetta Stone check: Engineering/dependency-injection mapping added as rigorous
+- Rosetta Stone check: Engineering/dependency-injection is a qualified structural analogy only
 - OCR issues: None significant

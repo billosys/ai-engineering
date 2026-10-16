@@ -42,7 +42,7 @@ CSS `mix-blend-mode` selects a blend function between an element’s source colo
 
 # Core Definition
 
-Drasner explains: "If you've used layer effects in Photoshop, you're probably familiar with mix blend modes... Mix and background blend modes composite two different layered images together, and there are 16 modes available." The terminology distinguishes the source from the backdrop, which is the already-composited content behind the element. Drasner’s prepared passage calls the backdrop the destination; the specification uses the backdrop in the blend function. She provides examples and shorthand formulas: multiply as `destination × source`, and a prepared-source line calling `A+B−1` “Linear.” That name is not a CSS blend-mode value, and the expression alone is not a complete blend-and-composite algorithm. Color-burn also requires its defined clipped branches.
+Drasner explains: "If you've used layer effects in Photoshop, you're probably familiar with mix blend modes... Mix and background blend modes composite two different layered images together, and there are 16 modes available." This is the prepared article’s count, not a current exhaustive count asserted by this card. The terminology distinguishes the source (top element) from the destination (bottom element) and the backdrop (the already-composited content behind the source). The specification uses backdrop colour in the blend function, then applies compositing. She provides examples and shorthand formulas: multiply as `destination × source`, and a prepared-source line calling `A+B−1` “Linear.” That name is not a CSS blend-mode value, and the expression alone is not a complete blend-and-composite algorithm. Color-burn also requires its defined clipped branches.
 
 # Prerequisites
 
@@ -54,7 +54,7 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 1. Blend modes include separable and non-separable functions; consult the current specification for the defined values
 2. Multiply: `destination × source` — darkens (analogous to subtractive mixing)
 3. Screen: `1 − (1−A)(1−B)` — lightens (analogous to additive mixing)
-4. Operates per channel in normalised [0,1] space
+4. Separable blend functions operate per component on normalized colour values; non-separable modes depend on relationships across components
 
 # Construction / Recognition
 
@@ -80,7 +80,7 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 
 **Example 1** (from source): "multiply is `destination × source = backdrop`" — the canonical blend mode; multiplying a red (1, 0, 0) by a blue (0, 0, 1) produces black (0, 0, 0) because all channels multiply to 0.
 
-**Example 2** (from source): Drasner gives the abbreviated color-burn expression `1−(1−B)÷A`. The CSS definition has clipped branches for boundary inputs; this shorthand is not the full algorithm.
+**Example 2** (from source): Drasner gives the abbreviated color-burn expression `1−(1−B)÷A`. For normalized backdrop `Cb` and source `Cs`, the defined separable blend function is: if `Cb==1`, return 1; else if `Cs==0`, return 0; otherwise return `1−min(1,(1−Cb)/Cs)`. This blend function is followed by, and is distinct from, alpha compositing.
 
 # Relationships
 
@@ -96,7 +96,7 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 # Common Errors
 
 - **Error**: Expecting mix-blend-mode to work if the parent has `overflow: hidden` or `isolation: isolate`.
-  **Correction**: `isolation: isolate` creates an isolated stacking context that limits how descendants blend with content outside the group. `overflow` controls clipping/scrolling and does not itself mean isolation.
+  **Correction**: `isolation: isolate` makes the element a group whose descendants blend internally; the group is then composited with the external backdrop as a unit. `overflow` controls clipping/scrolling and does not itself mean isolation.
 
 # Common Confusions
 

@@ -50,8 +50,8 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 
 # Key Properties
 
-1. Adding colours increases brightness — more light = brighter result
-2. Red + Green + Blue at full intensity = white
+1. Adding emitted-light contributions increases the result in a specified linear-light space; perceived brightness and encoded-sRGB arithmetic are not this operation
+2. Under fixed RGB primaries, full red + full green + full blue contributions produce the additive white point
 3. In the absence of all light = black (the default background)
 4. The primary colours are Red, Green, Blue (not the red/yellow/blue of paint mixing)
 
@@ -59,8 +59,8 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 
 ## To Identify/Recognise:
 1. Monitors, projectors, and phone screens use additive mixing
-2. If mixing two colours produces something lighter than either original, it is additive
-3. Red + Green = Yellow is the canonical non-obvious result of additive mixing that distinguishes it from paint
+2. Identify additive mixing from emitted-light contributions and the specified primaries; a lighter result alone does not identify the operation
+3. With full contributions from the specified red and green primaries (for example `rgb(255 0 0)` and `rgb(0 255 0)` in an additive RGB display model), the result is the RGB yellow primary; this does not describe arbitrary CSS interpolation or pigment recipes
 
 # Context & Application
 
@@ -73,7 +73,7 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 
 # Examples
 
-**Example 1** (from source): "red and green create yellow" — Drasner's primary example of additive mixing, contrasted with paint mixing where red and green produce brown.
+**Example 1** (source claim, bounded): Drasner says red and green create yellow. For emitted RGB light this means full red plus full green primary contributions; it is not a general rule for every digital colour operation or pigment mixture.
 
 **Example 2** (from source): Monitors as "many combinations of small bits of light combined that resonate to create a myriad of colors" — each pixel is a small additive mixture of R, G, B sub-pixels.
 
@@ -95,8 +95,8 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 
 # Common Errors
 
-- **Error**: Expecting red and green to produce brown or muddy colour on a monitor.
-  **Correction**: In additive mixing, red + green = yellow. The brain-learned expectation from paint mixing does not apply.
+- **Error**: Treating every operation on digital colour values as additive light mixing.
+  **Correction**: Additive mixing describes emitted-light contributions under specified primaries. It does not determine encoded-sRGB interpolation, blend modes, alpha compositing or pigment outcomes. For full red and green RGB primary contributions, the additive result is yellow.
 
 # Common Confusions
 

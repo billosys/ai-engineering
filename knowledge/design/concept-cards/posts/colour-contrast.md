@@ -64,7 +64,7 @@ WCAG 2.2 SC 1.4.3 (AA) requires 4.5:1 for text and images of text, except large-
 ## To Identify/Recognise:
 1. Use automated tools: browser DevTools, Colorable, WAVE, or Accessible Colors
 2. Decode sRGB components to linear values, calculate relative luminance `L = 0.2126R + 0.7152G + 0.0722B`, then use `(Llighter + 0.05)/(Ldarker + 0.05)`; compare the unrounded result
-3. A ratio of 1:1 means identical colours (no contrast); 21:1 is the maximum (black on white)
+3. A ratio of 1:1 means equal relative luminance (the colours may differ chromatically); 21:1 is the maximum for opaque sRGB black and white
 
 # Context & Application
 
@@ -108,6 +108,7 @@ WCAG 2.2 SC 1.4.3 (AA) requires 4.5:1 for text and images of text, except large-
 
 # Verification Notes
 
+- Formula scope: For opaque rendered sRGB pairs, decode each channel, calculate relative luminance and compare the unrounded ratio. Resolve transparency, overlays and backgrounds to the actual rendered pair first; pair arithmetic does not establish page conformance.
 - Primary criteria and formula: [WCAG 2.2 SC 1.4.1, 1.4.3, 1.4.6, 1.4.11 and glossary](https://www.w3.org/TR/WCAG22/). The sRGB relative-luminance definition uses the piecewise sRGB decoding and 0.2126/0.7152/0.0722 weights.
 
 - Definition source: Drasner for general principle and tools; WCAG ratio numbers synthesised from standard knowledge (not directly quoted from source)
