@@ -1,5 +1,14 @@
 # visual-design-system Version History
 
+## Version 1.0.11 - 2026-10-15
+
+- Bound scale application to selected, contextual design choices and correct the
+  Brown line-height selector and comment math.
+- Describe typographic rhythm as this card's synthesis and retain the optional
+  music analogy without claiming equivalence or perceptual benefit.
+- Limit the responsive example to an accurately calculated width conversion;
+  it does not describe responsive font sizing or prove behavior.
+
 ## Version 1.0.0 - 2026-09-06
 
 Placed the skill version inside entrypoint metadata for compatibility with the skill-creator frontmatter validator.

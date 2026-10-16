@@ -48,23 +48,23 @@ css_implementation:
     support: "baseline"
   -
     property: "line-height"
-    example: "p { line-height: 1.54; } /* scale-informed */ .main, p.intro { line-height: 1.394; } /* combined from scale */"
+    example: "p { line-height: 1.54; } /* Brown example: visually selected */ p.intro { line-height: 1.394; /* 1.54 - 0.146 */ } /* Brown comment math; not a universal line-height */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Scale application is the process of selecting values from a constructed modular scale and assigning them to CSS measurements — font sizes, widths, margins, and line heights — to produce a typographic hierarchy in which all measurements share a common proportional logic.
+Scale application is an optional design method: a designer may select or adapt values from a constructed modular scale for chosen CSS measurements. Brown presents it as a contextual aid to visual decisions, not a rule that every measurement must come from one scale or sequence.
 
 # Core Definition
 
 Brown describes the application phase directly: "Having marked up my text, and with my scale at my side, I applied CSS rules to our example, grabbing an exact number from my scale for each decision. Throughout the process, I made educated guesses that built a harmonious composition, one measurement at a time."
 
-The scope of application extends far beyond font sizes alone: "Using a modular scale on the web means choosing numbers from the scale for type sizes, line height, line length, margins, column widths, and more." The scale is applied holistically — every significant measurement in the composition is drawn from the same proportional sequence.
+Brown lists type sizes, line height, line length, margins, column widths, and other measurements as possible applications. His worked example also shows limits: the 15px caption is explicitly outside the scale; the 20px heading margin is an optical adjustment; and the 274px sidebar width came from resizing an image to 190px high. These are contextual choices, not scale-derived defaults.
 
 The application process is iterative and visual, not mechanical: "I alternate between CSS editor and browser, checking to see how each value looks... I keep an eye on the overall density of my paragraphs (typographic color) and the readability of the text as a whole."
 
-Brown explicitly endorses improvisation: scale values are "educated suggestions." Designers may round them (22.162 → 22), combine them (3.56 + 16 = 19.56), or use non-scale values when the result looks better ("15px Minion Pro Caption sure looks good next to 18px Minion Pro").
+Brown explicitly endorses improvisation: scale values are "educated suggestions." Designers may round, combine, or use non-scale values when a contextual visual choice works better. His 18px body size, 29.124px heading, 190px display heading, 497.406px measure, 845.479px container, and margin examples describe one historical composition; they are not universal recommendations. The separate sequences in a double-stranded scale also need not form one geometric sequence.
 
 # Prerequisites
 
@@ -74,53 +74,51 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 
 # Key Properties
 
-1. **Holistic scope**: Type sizes, line heights, column widths, and margins all come from the same scale — not from separate systems.
+1. **Selected scope**: A designer may use scale values for selected type sizes, line heights, widths, or margins; other values may be chosen optically or for the content and assets.
 2. **Iterative visual testing**: Values are tried, viewed in the browser, and adjusted; visual judgment arbitrates between adjacent scale options.
-3. **Permissive improvisation**: Non-scale values are acceptable when they look better, but should be documented.
-4. **Comment math**: When combining scale values arithmetically, the calculation should be noted in CSS comments (e.g., `font-size: 21.178px; /* 27.723 - 6.545 */`).
+3. **Permissive improvisation**: Non-scale values are acceptable when they suit the design; Brown documents several such decisions.
+4. **Comment math**: Brown records arithmetic for a combined value. The source states `21.178px` from `27.723 - 6.545`; the displayed arithmetic gives `21.178`. For line height, `1.54 - 0.146 = 1.394`. By contrast, `18 × 1.54 = 27.72`, not `27.723`. Nearby values or their comments do not by themselves establish scale membership.
 5. **Progressive enhancement**: Base/fallback CSS with generic fonts and conventional measurements should precede scale-based measurements; scale values depend on the specific typeface and may render poorly with fallback fonts.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Mark up content semantically (h1, h2, h3, p, aside, etc.) before applying measurements.
-2. Apply scale values from largest (display/hero) to smallest (caption, footnote), testing each in the browser.
-3. For each element, try several adjacent scale values; keep the one that best serves typographic color, readability, and hierarchy.
-4. Apply scale values to widths and margins as well as type sizes.
-5. Where no single scale value works, try combining two scale values or rounding one.
-6. Document any non-scale values or combined values in CSS comments.
-7. Specify progressive-enhancement fallback CSS before scale-based CSS.
+1. Establish the content, typeface, assets, and visual context before deciding whether a scale will help.
+2. Select scale values for measurements where they support the composition; test and adjust them visually.
+3. Choose other values when optical alignment, comfortable reading, image dimensions, or another project constraint calls for them.
+4. Record meaningful arithmetic or design rationale in CSS comments when it helps explain a choice.
+5. Where typeface-specific measurements depend on a preferred font, provide suitable fallback styles; Brown's example discusses this as one progressive-enhancement approach.
 
 ## To Identify/Recognise:
 1. Check whether type sizes in the CSS correspond to values in a geometric sequence.
-2. Check whether widths and margins also correspond to the same sequence.
+2. Check which widths and margins are asserted to come from a scale; verify each against the declared scale rather than assuming one sequence.
 3. Look for CSS comment math documenting combinations.
 4. Look for the scale URL or parameters in a CSS header comment.
 
 # Context & Application
 
 - **Typical contexts**: Full-page editorial web design; any project where a modular scale has been constructed.
-- **Common applications**: Setting font-size hierarchy (body, h3, h2, h1); deriving column widths from scale; ensuring margins and padding share the scale's proportional logic.
+- **Common applications**: Selecting some type sizes and spatial measurements from a scale, with other values chosen for their context.
 - **Historical/stylistic notes**: Brown's CSS example is fully documented with actual numeric values, making it one of the most detailed public worked examples of modular scale application in web typography.
 
 # Examples
 
 **Example 1 — Font sizes** (from source, "Applying a modular scale in web design"):
 - `body { font-size: 18px; }` — scale origin
-- `h1 { font-size: 29.124px; }` — one step up from 18px × 1.618
+- `h1 { font-size: 29.124px; }` — an example value Brown describes as selected from his scale
 - `h2 { font-size: 190px; }` — second scale origin
 - `.side p { font-size: 15px; }` — improvised (not in scale)
-- `p.intro { font-size: 21.178px; /* 27.723 - 6.545 */ }` — combined from scale
+- `p.intro { font-size: 21.178px; /* 27.723 - 6.545 */ }` — Brown's stated comment math
 
 **Example 2 — Column widths** (from source):
-- `.main { width: 497.406px; }` — scale value chosen after testing "many different numbers"
-- `.group { width: 845.479px; }` — scale value chosen to fit h2
-- `.side { width: 274px; }` — derived from resizing image to 190px height (a scale origin)
+- `.main { width: 497.406px; }` — Brown's visually selected measure after testing alternatives
+- `.group { width: 845.479px; }` — Brown's contextual container example
+- `.side { width: 274px; }` — chosen in a composition after resizing an image to 190px high; the passage does not assert scale membership for 274px
 
 **Example 3 — Margins** (from source):
 - `h1 { margin: 44.856px 0 0 307.420px; }` — both values from scale
-- `.side { margin: 27.723px 29.124px 0 0; }` — both values from scale
-- `h2 { margin-left: 20px; /* Optical alignment */ }` — improvised, not from scale
+- `.side { margin: 27.723px 29.124px 0 0; }` — Brown's example values
+- `h2 { margin-left: 20px; /* Optical alignment */ }` — Brown says this value does not come from his scale
 
 **Example 4 — Improvisation** (from source):
 "Modular scales are a tool, they're not magic. They're not going to work for every measurement, and that's okay. Math is no substitute for an experienced designer's eye, but it can provide both hints and constraints for decision making."
@@ -132,7 +130,7 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 - **Modular scale construction** — The constructed scale is the prerequisite for application.
 
 ## Enables
-- **Typographic rhythm via modular scale** — Consistent spacing and sizing rhythm results from holistic scale application.
+- **Typographic rhythm via modular scale** — This is an optional interpretive relationship; a scale does not guarantee a perceptual outcome.
 
 ## Related
 - **Typographic color** — Brown cites monitoring "typographic color" (density of the text block) as part of the visual testing in application.
@@ -143,8 +141,8 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 
 # Common Errors
 
-- **Error**: Applying scale values only to font sizes, using arbitrary numbers for widths and margins.
-  **Correction**: "Using a modular scale on the web means choosing numbers from the scale for type sizes, line height, line length, margins, column widths, and more."
+- **Error**: Assuming a scale must govern every measurement.
+  **Correction**: Brown names many possible applications but also describes improvisation and values he selected for optical or image-related reasons.
 
 - **Error**: Treating the scale as a mechanical rule that eliminates the need for visual judgment.
   **Correction**: "I alternate between CSS editor and browser, checking to see how each value looks." Brown's process involves constant visual testing, not just numerical assignment.
@@ -154,8 +152,8 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 
 # Common Confusions
 
-- **Confusion**: If you apply a scale value and it looks wrong, the scale is wrong.
-  **Clarification**: A scale value that looks wrong for one element may look right for another. Try adjacent values, combine values, or improvise when needed. "Math is no substitute for an experienced designer's eye."
+- **Confusion**: Values near a scale sequence must belong to it.
+  **Clarification**: Brown's examples include visually selected, combined, rounded, and non-scale values. Establish provenance for each value rather than inferring membership from numerical proximity.
 
 # Source Reference
 

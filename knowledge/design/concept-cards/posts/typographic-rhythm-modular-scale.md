@@ -33,13 +33,13 @@ answers_questions:
 rosetta_stone:
   -
     domain: "music"
-    concept: "Rhythmic meter — regularly recurring proportional time intervals that create coherent musical rhythm"
+    concept: "Optional analogy between recurring temporal and spatial relationships"
     rating: "structural"
-    note: "Musical rhythm arises from proportional time relationships; typographic rhythm arises from proportional spatial relationships. Both depend on a consistent underlying ratio producing perceptible regularity. The analogy is structural (shared architecture) rather than rigorous (different physical quantities)."
+    note: "This card proposes an analogy between recurring temporal and spatial relationships. Brown quotes Bringhurst comparing modular and musical scales; that does not establish rhythmic meter, a shared generating ratio, or a perceptual benefit. The analogy is optional and interpretive, not a verified equivalence of music and typography."
 css_implementation:
   -
     property: "line-height"
-    example: "p { margin: 1em 0; line-height: 1.54; } /* scale-informed vertical rhythm */"
+    example: "p { margin: 1em 0; line-height: 1.54; } /* Brown's visually selected example; no guaranteed rhythm or exact scale derivation */"
     support: "baseline"
   -
     property: "margin"
@@ -49,87 +49,87 @@ css_implementation:
 
 # Quick Definition
 
-Typographic rhythm via modular scale is the visual coherence produced when all spacings and sizes in a composition are derived from the same proportional sequence — creating a perceptible regularity analogous to meter in music.
+This card uses “typographic rhythm” as an interpretive label for possible visual relationships among type and spacing choices. Brown discusses visual harmony and line spacing, but does not define this term or establish that using a modular scale creates a perceptual effect. A scale may inform selected decisions; other choices may be optical or contextual.
 
 # Core Definition
 
-Brown does not use the term "typographic rhythm" explicitly, but the concept pervades his discussion of why modular scales produce "visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers."
+Brown does not use the term "typographic rhythm" explicitly. He argues that using scale values can support visual harmony; this is his design rationale, not evidence that a named rhythm concept or reader response is established.
 
-The key passage articulating the result of scale-based measurement: "By using culturally relevant, historically pleasing ratios to create modular scales and basing the measurements in our compositions on values from those scales, we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers."
+Brown argues that using scale values can support visual harmony. This is his design rationale, not a demonstrated universal effect or perceptual guarantee.
 
-The rhythm argument is implicit in the multi-domain application of the scale: when font sizes, line heights, margins, and column widths all derive from the same geometric sequence, each measurement resonates with every other. The composition is not just well-proportioned in individual relationships — the same proportion echoes throughout.
+Brown lists type sizes, line height, line length, margins, column widths, and more as possible applications. He also describes values chosen through visual testing and improvisation, including a 15px caption outside the scale. A double-stranded scale consists of two generated strands combined in sequence; it is not necessarily one geometric sequence. On the same strand `10, 20, 40` with generating ratio `2`, the selected pairs `20/10 = 2` and `40/10 = 4` have different ratios: a shared generating ratio does not force equality for arbitrarily selected size, width, or margin pairs. Nor does a sequence prescribe the ratio between gaps selected from a design. For example, values `10, 20, 30` have equal additive gaps of `10` but adjacent ratios `2` and `1.5`; this is a valid additive design, not an invalid scale application. These examples show why ratio claims need their own evidence.
 
-Brown's discussion of line spacing directly addresses rhythm's perceptual effects: "I am especially wary of line spacing that feels too tight or too loose. Tight line spacing is extremely distracting to readers, pulling their attention to pieces of text above and below the line they're trying to read. Loose line spacing is wasteful, ugly, and dilutes negative space such that margins and pauses elsewhere in a composition are less effective."
+Brown gives his judgment about line spacing: "I am especially wary of line spacing that feels too tight or too loose. Tight line spacing is extremely distracting to readers, pulling their attention to pieces of text above and below the line they're trying to read. Loose line spacing is wasteful, ugly, and dilutes negative space such that margins and pauses elsewhere in a composition are less effective." These are his stated design claims, not independent empirical findings.
 
-The analogy to musical scales is explicit in Bringhurst's definition quoted by Brown: "A modular scale, like a musical scale, is a prearranged set of harmonious proportions." Musical scales produce tonal harmony and rhythmic coherence; typographic modular scales produce visual harmony and spatial rhythm.
+Brown quotes Bringhurst: “A modular scale, like a musical scale, is a prearranged set of harmonious proportions.” This is the source for the optional analogy recorded in metadata. Brown does not extend the quotation into a theory of rhythmic meter, claim a common generating ratio, or verify equivalent musical and typographic effects.
 
 # Prerequisites
 
 - **Modular scale** — Rhythm via scale requires a scale.
-- **Scale application to typographic hierarchy** — The application of the scale to all measurements is what produces the rhythm.
+- **Scale application to typographic hierarchy** — Scale application can inform selected measurements; this does not establish a perceptual rhythm.
 
 # Key Properties
 
-1. **Cross-element coherence**: Rhythm is produced not within a single element but across all elements, because they share the same proportional relationships.
-2. **Perceptual**: The rhythm is experienced, not calculated — a reader who does not know the scale's ratio perceives the composition as harmonious, balanced, or "right."
-3. **Undermined by arbitrary measurement**: Introducing arbitrary (non-scale) values disrupts the rhythm; this is why Brown endorses improvisation cautiously and recommends documenting it.
-4. **Vertical and horizontal**: Rhythm applies both vertically (line heights, margins, spacing between text blocks) and horizontally (column widths, measure, margins).
+1. **Interpretive label**: “Rhythm” names this card's synthesis, not a term Brown defines.
+2. **Possible relationships**: Scale values can inform several measurements, while optical and other contextual values may coexist.
+3. **No guaranteed perception**: Neither a sequence nor its use proves that readers perceive harmony or benefit.
+4. **Separate systems can coexist**: A baseline grid uses additive spacing; a modular scale uses multiplicative relationships. A design may use either or both.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Apply scale values consistently to both horizontal (widths, margins) and vertical (line heights, margins, padding) measurements.
-2. Avoid introducing arbitrary measurements that break the proportional chain.
-3. Where improvisation is necessary, prefer combining or rounding scale values over using entirely unrelated numbers.
-4. Monitor typographic color (text density) and spacing perceived as the composition develops.
+1. Decide whether scale values help the specific composition and identify which measurements they inform.
+2. Choose other values where optical alignment, reading comfort, content, or assets call for them.
+3. Inspect line spacing, typographic color, and composition in context; treat these as design judgments, not a guaranteed scale effect.
+4. Record scale membership and any arithmetic explicitly when the provenance matters.
 
 ## To Identify/Recognise:
-1. Ask: does the composition feel cohesive and balanced, even if you cannot identify why?
-2. Check whether the ratio between major type sizes equals the ratio between column width and margin width.
-3. Look for perceptible consistency in spatial relationships throughout the page.
+1. Identify the values actually selected from each scale strand and distinguish them from other choices.
+2. Calculate claimed value or gap ratios directly; do not infer them from the word “rhythm.”
+3. Treat any claim about reader perception or benefit as requiring separate evidence.
 
 # Context & Application
 
 - **Typical contexts**: Editorial web design; long-form reading experiences; any composition where sustained reading is the primary use case.
-- **Common applications**: Establishing line heights and margins that "breathe" consistently with text sizes; ensuring that spatial pauses in a composition (margins, section breaks) have the same proportional weight as the text itself.
+- **Common applications**: Considering line spacing and margins alongside text sizes, with scale and non-scale choices assessed in context.
 
 ## Cross-Domain Connections
 
-**Music → STRUCTURAL**: Musical rhythm arises from proportional time intervals; typographic rhythm arises from proportional spatial intervals. In both cases, a consistent underlying ratio generates a perceptible pattern of relationships. Bringhurst's definition ("like a musical scale, a prearranged set of harmonious proportions") explicitly invokes this structural parallel. The mapping is structural rather than rigorous because time and space are different physical quantities, but the mathematical structure (consistent ratio generating ordered sequence) is shared.
+**Music → optional analogy**: Brown quotes Bringhurst comparing modular and musical scales. This card's proposed analogy between temporal and spatial relationships is interpretive; no shared ratio, musical-meter mechanism, or perceptual equivalence is established by that quotation.
 
 # Examples
 
-**Example 1** (from source, "Applying a modular scale in web design"): "I often think of this as my paragraphs' measure (another term for line length), rather than width. Years ago, when designers sent written instructions to typesetters, their shorthand went something like this: size/leading — measure." — Brown frames measure as a rhythmic element alongside size and leading, embedded in a historical tradition of compositional balance.
+**Example 1** (from source, "Applying a modular scale in web design"): "I often think of this as my paragraphs' measure (another term for line length), rather than width. Years ago, when designers sent written instructions to typesetters, their shorthand went something like this: size/leading — measure." — Brown places measure alongside size and leading in his account of composition; calling that relationship “rhythm” is this card's interpretation.
 
-**Example 2** (from source, "Applying a modular scale in web design"): "I am especially wary of line spacing that feels too tight or too loose. Tight line spacing is extremely distracting to readers, pulling their attention to pieces of text above and below the line they're trying to read." — Rhythm disrupted by incorrect spacing is explicitly described as perceptually harmful.
+**Example 2** (from source, "Applying a modular scale in web design"): Brown says he watches for line spacing that feels too tight or loose and describes the effects he associates with those choices. This reports his design judgment; it does not prove a universal effect.
 
-**Example 3** (from source, conclusion): "we can achieve a visual harmony not found in layouts that use arbitrary, conventional, or easily divisible numbers" — the positive outcome of consistent scale application.
+**Example 3** (arithmetic control): Values `10, 20, 30` have equal additive gaps of `10`, while their adjacent ratios are `2` and `1.5`. This is a valid design example with equal spacing and unequal ratios; additive and multiplicative patterns are distinct.
 
 # Relationships
 
 ## Builds Upon
-- **Scale application to typographic hierarchy** — Rhythm is the perceptual outcome of holistic scale application.
-- **Modular scale** — The scale is the source of the proportional relationships that produce rhythm.
+- **Scale application to typographic hierarchy** — Related interpretive label; no perceptual outcome is guaranteed.
+- **Modular scale** — A possible source of selected proportional relationships discussed by this card; perceptual rhythm is not established.
 
 ## Enables
 - (No further concepts in this source depend on typographic rhythm as a prerequisite.)
 
 ## Related
 - **Typographic color** — Brown cites monitoring "typographic color" (overall density of text) as part of achieving balanced rhythm.
-- **Measure (line length)** — Line length is one of the key rhythm-determining measurements Brown derives from the scale.
+- **Measure (line length)** — Brown discusses measure as an important composition decision; this card's rhythm framing is interpretive.
 
 ## Contrasts With
 - **Arbitrary measurement** — "The arbitrary dimensional choices I used to make had nothing to do with my intended designs' underlying meaning."
 
 # Common Errors
 
-- **Error**: Applying the scale to font sizes but using arbitrary values for line heights and margins, expecting rhythm to result.
-  **Correction**: Rhythm depends on proportional consistency across all measurements — type sizes, line heights, margins, and widths. Partial scale application produces partial (and likely invisible) rhythm.
+- **Error**: Assuming every spacing or size must belong to one scale, or that a scale guarantees perceptual rhythm.
+  **Correction**: Brown presents scale values as tools and documents improvisation. Keep any perception claim separate from the mathematical construction.
 
 # Common Confusions
 
-- **Confusion**: Typographic rhythm requires a baseline grid (fixed vertical unit repeated throughout).
-  **Clarification**: Brown's modular scale approach produces rhythm through proportional relationships (multiplicative) rather than through a fixed baseline unit (additive). These are two different rhythm systems; the scale approach does not require a baseline grid.
+- **Confusion**: A modular scale and baseline grid are interchangeable.
+  **Clarification**: A grid may repeat an additive unit; a geometric scale relates values multiplicatively. A design may use either or both, and neither alone establishes perceptual benefit.
 
 # Source Reference
 
@@ -137,9 +137,9 @@ The analogy to musical scales is explicit in Bringhurst's definition quoted by B
 
 # Verification Notes
 
-- Definition source: Synthesised — the term "typographic rhythm" does not appear in the source, but the concept is present in Brown's discussion of visual harmony, proportional consistency, and line spacing effects.
-- Confidence rationale: Medium — the concept is supported but not named; definition is synthesised from implied content rather than direct statement.
-- Uncertainties: The distinction between "typographic rhythm" (vertical) and "visual harmony" (overall) as Brown uses the concepts is not entirely clear. Brown uses "visual harmony" as the primary term for the result; "rhythm" is the interpretive frame applied here.
-- Cross-reference status: Verified as synthesised from source; the musical rhythm analogy is explicit in the Bringhurst quote but not developed by Brown beyond that.
-- Rosetta Stone check: Mapping added — music/rhythmic-meter (structural, not rigorous).
+- Definition source: This card's synthesis from Brown's discussion of visual harmony and line spacing; Brown does not name or define “typographic rhythm.”
+- Confidence rationale: Medium — source discussion supports the bounded context, while this card's label and interpretation remain synthetic.
+- Uncertainties: Brown's source does not establish the interpretive label, a musical equivalence, or a reader-perception result.
+- Cross-reference status: The musical comparison is Bringhurst's quoted analogy; this card does not treat it as verified equivalence.
+- Rosetta Stone check: Optional interpretive music analogy retained with explicit limits.
 - OCR issues: None significant.
