@@ -1,5 +1,13 @@
 # visual-design-system Version History
 
+## Version 1.0.12 - 2026-10-16
+
+- Bound the remaining Brown musical-ratio card to conditional numerical reuse;
+  distinguish exact and decimal arithmetic, preserve legacy interval examples
+  with unassessed domain labels, and answer the geometric-scale question
+  without its false universal premise. Original-source and full-corpus review
+  remain open.
+
 ## Version 1.0.11 - 2026-10-15
 
 - Bound scale application to selected, contextual design choices and correct the

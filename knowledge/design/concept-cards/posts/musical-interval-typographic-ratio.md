@@ -1,5 +1,5 @@
 ---
-concept: "Musical Interval \\u2194 Typographic Ratio (Rosetta Stone)"
+concept: "Musical Interval ↔ Typographic Ratio (Rosetta Stone)"
 slug: "musical-interval-typographic-ratio"
 category: "design-principles"
 subcategory: "cross-domain-mapping"
@@ -36,118 +36,139 @@ answers_questions:
 rosetta_stone:
   -
     domain: "music"
-    concept: "Musical interval — the frequency ratio between two tones (e.g., perfect fifth = 3:2 = 1.5; perfect fourth = 4:3 ≈ 1.333)"
+    concept: "A chosen positive frequency ratio reused as a type-size multiplier"
     rating: "rigorous"
-    note: "The numeric ratio defining a musical interval (derived from harmonic series integer ratios) is identical to the numeric ratio used as a typographic scale multiplier. 3:2 applied to frequencies produces a perfect fifth; 1.5 applied to type sizes produces a modular scale step. Same number, different physical domain. Not a metaphor — a literal numerical identity."
+    note: "If a chosen frequency pair has ratio r and a type-size step is defined using that same r, the numerical factor is identical. For example, 300/200 = 24/16 = 3/2. This conditional arithmetic does not establish a tuning-system identity, an interval-name table, consonance, or visual harmony; those claims need separate evidence."
   -
     domain: "mathematics"
-    concept: "Rational number ratios derived from small integers — harmonic series ratios n:(n+1) and n:(n+k)"
+    concept: "One positive factor reused across quantities; rationality is a separate property"
     rating: "rigorous"
-    note: "Musical interval ratios are ratios of small integers (2:1 octave, 3:2 fifth, 4:3 fourth, 5:4 major third, 9:8 major second). These same ratios, expressed as decimals, are the typographic scale ratios in Tim Brown's framework."
+    note: "For declared positive bases and r>0, sequences a*r^n and b*r^n share the same adjacent factor. This does not imply that every musical scale is geometric or that every interval ratio is a small-integer fraction. Exact 4/3 differs from decimal 1.333=1333/1000; exact irrational φ differs from rational decimal 1.618=809/500. Brown’s inspected article does not enumerate the legacy interval table."
 css_implementation:
   -
     property: "font-size (via scale ratio)"
-    example: "/* Perfect fourth scale (ratio 1.333) from 16px */ font-size: 16px; /* step 0 */ font-size: 21.33px; /* step 1: 16 × 1.333 */ font-size: 28.43px; /* step 2: 16 × 1.333² */ /* Perfect fifth scale (ratio 1.5) from 16px */ font-size: 16px; /* step 0 */ font-size: 24px; /* step 1: 16 × 1.5 */ font-size: 36px; /* step 2: 16 × 1.5² */"
+    example: "/* Independent numeric illustration; base 16px, unrounded generation, two-place display. No type-role default or verified musical label. */ /* Exact r=4/3 */ .r43-step0 { font-size: 16.00px; } .r43-step1 { font-size: 21.33px; } .r43-step2 { font-size: 28.44px; } /* Decimal r=1.333 */ .r1333-step0 { font-size: 16.00px; } .r1333-step1 { font-size: 21.33px; } .r1333-step2 { font-size: 28.43px; } /* Exact r=3/2 */ .r32-step0 { font-size: 16.00px; } .r32-step1 { font-size: 24.00px; } .r32-step2 { font-size: 36.00px; }"
     support: "baseline"
 ---
-
 # Quick Definition
 
-Musical interval ratios (the frequency ratios that define consonant musical intervals) are numerically identical to the ratios used to construct typographic modular scales — making the correspondence between music theory and type scale construction not a metaphor but a mathematical identity.
+A designer may reuse a chosen positive frequency ratio `r` as a type-size multiplier. The number is the same only when both choices declare that same factor; this conditional arithmetic does not make music and typography one system or establish consonance or visual harmony.
 
 # Core Definition
 
-Brown's source text establishes the conceptual bridge in the article's opening: "This and other meaningful ratios rooted in geometry, music, nature, and history can be expressed as modular scales and put to work on the web." The explicit invocation of "music" as a source domain for typographic ratios is the seed of this mapping.
+Brown's prepared article opens by saying that meaningful ratios rooted in “geometry, music, nature, and history” can be expressed as modular scales (lines 109–112). Later Brown quotes Bringhurst: “A modular scale, like a musical scale, is a prearranged set of harmonious proportions” (lines 133–140). Brown then describes generating values from a ratio and a starting number and combining strands (lines 142–156). These passages establish an invocation, an attributed comparison and a construction procedure. They do not enumerate an interval-name/value table or verify tuning, consonance, a complete ratio menu, or a perceptual effect.
 
-The operational identification is this: a musical interval is defined by the ratio of the frequencies of two tones. The perfect fifth is 3:2 (1.5); the perfect fourth is 4:3 (approximately 1.333); the major third is 5:4 (1.25); the minor third is 6:5 (1.2); the major second is 9:8 (1.125). These ratios are derived from the harmonic series — integer multiples of a fundamental frequency — and produce the consonant intervals Western music is built on.
+If a selected pair of frequencies has ratio `r`, and a type-size step is also defined with `r`, the numerical factor is identical. For example, `300/200 = 24/16 = 3/2`. This identity is an equation between declared quantities; it does not transfer a musical judgment to type.
 
-When Tim Brown selects a ratio for a typographic modular scale, he is selecting from exactly this menu of numbers. The ratio 1.333 that produces a "classic" type scale step is the same number as the frequency ratio of a perfect fourth. The ratio 1.5 that produces a "bold" type scale step is the same number as the frequency ratio of a perfect fifth. The mathematical relationship is identical; the physical domain differs.
+For positive bases `a` and `b`, a declared common factor `r>0` generates strands `a*r^n` and `b*r^n`. Each strand has adjacent indexed quotient `r` by construction. This does not imply that every musical scale is geometric, every musical frequency ratio is rational or a small-integer fraction, or that type sizes must follow music. A geometric strand is one available model; independent values such as `10, 20, 30` have equal additive gaps of `10` and unequal adjacent ratios `2` and `1.5`.
 
-**Critical note on source evidence**: The article establishes that ratios from "music" are candidates and demonstrates the golden ratio in detail. The specific interval names (perfect fourth, perfect fifth, major second, minor third) and their specific ratios are NOT enumerated in this article text. They are part of Tim Brown's broader framework documented at modularscale.com and in his "More Perfect Typography" talk (referenced in the Further Reading section). The musical interval table is established domain knowledge about Brown's framework, not text extracted from this article. Cards for perfect-fourth-ratio and perfect-fifth-ratio are therefore not well-supported by this specific source text and are omitted per the extraction instructions.
-
-Bringhurst's definition (quoted by Brown) makes the structural parallel explicit: "A modular scale, like a musical scale, is a prearranged set of harmonious proportions." The "like a musical scale" is not merely poetic — it identifies the source domain from which scale ratios can be drawn.
+The former card's named examples are retained below as legacy associations. Their numeric fractions and decimal arithmetic are checked here; interval names, tuning systems and typographic applications are unassessed. Keeping a label as historical card content does not certify it, and lack of inspection does not show that it is false.
 
 # Prerequisites
 
-- **Scale ratio** — Understanding what a typographic scale ratio is.
-- **Modular scale** — Understanding the system the ratios generate.
+- **Scale ratio** — A declared multiplier can generate one typographic strand; no musical origin is required.
+- **Modular scale** — The card concerns an optional ratio-generated construction, not a rule that every visual scale use one.
+- **Golden ratio** — The earlier card contrasted φ with musical ratios. This review distinguishes exact irrational φ from rational decimal `1.618`; irrationality alone does not establish musical exclusion, consonance or beauty.
+
+These are retained navigation relationships. The seven field occurrences and their local direction, rationale and unresolved edge support are itemized in the batch record; a valid endpoint does not by itself verify an edge.
 
 # Key Properties
 
-1. **Numerical identity**: Musical interval ratios and typographic scale ratios carry the same numbers — not approximately similar, but identical.
-2. **Harmonic grounding**: Musical interval ratios are derived from the harmonic series (integer frequency ratios), giving them a physical basis in acoustic consonance.
-3. **Perceptual parallel**: Just as consonant musical intervals feel resolved and harmonious to the ear, scales derived from those same ratios may produce proportional relationships that feel visually resolved — though this perceptual claim is stronger in the music domain than in the visual domain.
-4. **Geometric sequence shared**: Both musical scales and typographic modular scales are ordered sequences generated by a consistent ratio — the same mathematical structure.
-5. **The golden ratio exception**: φ (1.618) is NOT a simple integer ratio and does not correspond to a consonant musical interval. It belongs to the geometric/natural category of ratios, not the musical interval category.
+1. **Conditional numerical reuse**: If a chosen frequency pair and a chosen type-size step use the same `r`, the factor is numerically identical. The domains and any judgments about them remain separate.
+2. **Declared construction**: A strand `a*r^n` is geometric under its declared positive base and ratio. This is a property of that construction, not a universal property of music or visual scales.
+3. **Exact and decimal values differ**: `4/3` is not `1.333`, which equals `1333/1000`; the difference is `1/3000`. For base `16`, exact `4/3` gives `16`, `64/3`, `256/9`, displayed `16.00`, `21.33`, `28.44` at two-place half-even rounding. Decimal `1.333` gives `16`, `21.328`, `28.430224`, displayed `16.00`, `21.33`, `28.43`. The first rounded step hides the different models; the second distinguishes them.
+4. **Compute from the unrounded base**: Do not feed a displayed rounded step into the next multiplication. Exact `3/2` from `16` yields `16`, `24`, `36`.
+5. **φ and its decimal approximation differ**: Exact `φ=(1+√5)/2` is irrational; decimal `1.618=809/500` is rational. This arithmetic distinction does not decide whether an interval is used or consonant, or whether a type scale is pleasing.
+6. **No prescribed ratio menu or role**: Brown's prepared article does not supply the interval table represented by the card's earlier labels. The calculations below are independent numeric illustrations, not type-role defaults or verified musical labels.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify that you want a typographic scale with harmonic/musical grounding.
-2. Select a musical interval whose character matches the design's needed contrast level:
-   - Major second (9:8 ≈ 1.125) — very subtle, dense hierarchy
-   - Minor third (6:5 = 1.2) — moderate, editorial
-   - Perfect fourth (4:3 ≈ 1.333) — classic, most body text
-   - Perfect fifth (3:2 = 1.5) — bold, strong hierarchy
-   - (Golden ratio 1.618 — extreme, not a musical interval)
-3. Use that interval's frequency ratio as your typographic scale ratio.
-4. Construct the modular scale as normal.
+1. State the design context and fixed inputs. A musical or historical association is optional.
+2. If using a geometric strand, declare its positive base and ratio.
+3. Generate each term from the unrounded base; document the precision and display-rounding rule.
+4. Inspect the actual type, content and layout. Keep permitted fixed, additive or optical exceptions where they serve the project.
+5. If reusing a frequency ratio, state the selected pair and independently chosen type multiplier so the conditional equality is explicit. Do not infer a default from a musical label.
 
 ## To Identify/Recognise:
-1. Check whether a scale ratio (1.125, 1.2, 1.25, 1.333, 1.5) corresponds to a musical interval ratio.
-2. Ask whether the designer explicitly invoked music theory or harmonic ratios as the source of their ratio choice.
+1. Check which exact or decimal factor is declared and whether each displayed value was computed from the unrounded base.
+2. Keep a source's report, an independently derived calculation and a legacy domain label distinct.
+3. Treat named interval/value associations, tuning assumptions and perceptual claims as unresolved unless their own evidence is inspected.
 
 # Context & Application
 
-- **Typical contexts**: Ratio selection stage of modular scale construction; design system documentation; teaching the origins of type scale ratios.
-- **Common applications**: Selecting a type scale ratio based on the degree of hierarchical contrast needed, using musical interval terminology to communicate the choice to other designers.
-- **Historical/stylistic notes**: Robert Bringhurst's *Elements of Typographic Style* is the canonical source for this mapping in print typography. Tim Brown extended it to web typography and built modularscale.com to make the computation accessible.
+- **Typical contexts**: Explaining a deliberately shared numerical factor, or documenting an optional ratio-generated type scale.
+- **Common applications**: State the context, base and ratio; calculate unrounded values; document precision; inspect actual type and retain justified exceptions. Independent selection can also fit content or fixed inputs.
+- **Historical/stylistic notes**: Brown invokes music and quotes Bringhurst's comparison. His prepared article does not confer “classic,” “bold,” “editorial,” or other style character on the legacy interval labels. This card does not inspect the cited book, talk or calculator contents.
 
 ## Cross-Domain Connections
 
-**Music → RIGOROUS**: The frequency ratio of a perfect fifth (3:2 = 1.5) is numerically identical to the typographic scale ratio 1.5. Applied to frequencies, it produces the consonant interval; applied to type sizes, it produces a bold modular scale step. The mathematics is identical; only the physical quantity being scaled differs. This is not a metaphor — it is a literal numerical identity.
+**Music → conditional arithmetic**: A selected frequency pair and a separately chosen type step share the numerical factor when both are defined by the same `r`. Example: `300/200 = 24/16 = 3/2`. This does not verify an interval-name table, tuning-system identity, consonance or visual harmony.
 
-**Mathematics → RIGOROUS**: Both musical interval ratios and typographic scale ratios are rational numbers (ratios of small integers) applied as common ratios of geometric sequences. The harmonic series origin of musical intervals (integer multiples of a fundamental) provides their mathematical grounding; the same numbers applied to type sizes carry that grounding into the visual domain.
+**Mathematics → declared model**: For positive `a`, `b` and `r`, strands `a*r^n` and `b*r^n` share adjacent factor `r`; that follows from their construction. Exact and decimal inputs can produce different later results even where rounded first steps coincide. Rigor in the two retained metadata mappings applies only to this explicitly declared arithmetic, not to the music domain or every source claim.
 
 # Examples
 
-**Example 1** (from source, opening): "This and other meaningful ratios rooted in geometry, music, nature, and history can be expressed as modular scales and put to work on the web." — explicitly names music as a source domain for typographic ratios.
+**Example 1 (Brown's prepared-source examples):** The opening says: “This and other meaningful ratios rooted in geometry, music, nature, and history can be expressed as modular scales and put to work on the web” (lines 109–112). Later Brown quotes Bringhurst: “A modular scale, like a musical scale, is a prearranged set of harmonious proportions” (lines 133–140). These are source statements, not a complete interval table or independent proof of shared systems or perceptual results.
 
-**Example 2** (from source, "Modular scales and how they apply to web design"): Bringhurst quoted: "A modular scale, like a musical scale, is a prearranged set of harmonious proportions." — structural parallel made explicit.
+**Example 2 (numeric reuse):** `300/200 = 24/16 = 3/2`. Both fractions reduce to `3/2`. This illustrates conditional factor reuse only.
 
-**Example 3** (from source, Further Reading): "More Perfect Typography" (Vimeo) — Brown's talk explicitly about starting with type and using modular scales; described as "more inspiration than information."
+**Example 3 (retained legacy associations, labels unassessed):** The prior card listed octave `2:1 = 2`, major second `9:8 = 1.125`, minor third `6:5 = 1.2`, major third `5:4 = 1.25`, perfect fourth `4:3 ≈ 1.333`, and perfect fifth `3:2 = 1.5`. Their fraction/decimal arithmetic is shown; this review does not assess interval names, tuning context, or mapping to typographic applications. Exact `4/3` is approximately `1.333333…`, not decimal `1.333`.
 
-**Note on the interval table**: The specific mapping of interval names to ratios to typographic applications (the table in the extraction prompt) is derived from Brown's modularscale.com tool and broader framework, not from this article's text. The article supports the existence and principle of the mapping; the detailed table requires the modularscale.com source.
+**Example 4 (independent scale arithmetic):** With base `16`, exact `r=4/3` yields `16`, `64/3`, `256/9`; two-place half-even display is `16.00`, `21.33`, `28.44`. With decimal `r=1.333=1333/1000`, it yields `16`, `21.328`, `28.430224`; display is `16.00`, `21.33`, `28.43`. Generate each term from `16`, not from rounded `21.33`.
+
+**Example 5 (exact and decimal φ):** Exact `φ=(1+√5)/2` is irrational, whereas decimal `1.618=809/500` is rational. Exactness alone says nothing about musical exclusion, consonance or aesthetic result.
+
+**Example 6 (contrary construction):** `10, 20, 30` has equal additive gaps `10` and adjacent ratios `2` then `1.5`. It refutes a claim that every visual scale must have a constant ratio. It does not establish that this sequence suits any particular typography.
 
 # Relationships
 
 ## Builds Upon
-- **Scale ratio** — The musical interval mapping provides the source domain from which typographic scale ratios are derived.
-- **Modular scale** — The mapping populates the menu of candidate ratios for scale construction.
+- **Scale ratio** — Editorial prerequisite: understanding a declared multiplier helps explain the optional type strand. A musical origin is not necessary.
+- **Modular scale** — Editorial prerequisite: this card explains one possible ratio-generated strand, while additive and independent choices remain possible.
+- **Golden ratio** — Editorial comparison: it clarifies exact φ versus decimal `1.618`; it does not show that φ is excluded from music or visually beneficial.
 
 ## Enables
-- **Ratio selection criteria** — Knowing that musical intervals provide ratios enables principled ratio selection with harmonic grounding.
-- **Modular scale construction** — The mapping provides concrete ratio candidates with established character.
+- **Scale ratio** — This card supplies a conditional cross-domain example; whether it elaborates the endpoint concept remains an editorial edge assessment.
+- **Ratio selection criteria** — It offers one optional consideration, not a required selection rule or supported interval menu.
 
 ## Related
-- **Typographic rhythm via modular scale** — The music ↔ typography analogy extends to rhythm: both depend on proportional relationships structured by consistent ratios.
-- **Golden ratio** — The golden ratio occupies a different position in the ratio menu: geometric/natural, not musical interval.
+- **Modular scale construction** — The ratio example can be used in a declared construction; this does not establish a musical source table.
+- **Typographic rhythm via modular scale** — Brown's quotation is an analogy; this review does not establish rhythmic equivalence or perceptual benefit.
 
 ## Contrasts With
-- **Arbitrary ratio selection** — Using a decimal (e.g., 1.4, 1.35) without grounding in musical, geometric, or cultural significance.
+- **Arbitrary ratio selection** — Earlier body prose framed this as a contrast, but no `contrasts_with` metadata edge is recorded. This review does not treat a convenient or independently chosen ratio as invalid.
 
 # Common Errors
 
-- **Error**: Treating the music ↔ typography analogy as merely metaphorical or inspirational.
-  **Correction**: The correspondence is numerical — the same rational number (e.g., 3:2) defines both the perfect fifth in music and the typographic scale ratio 1.5. It is a mathematical identity, not a metaphor.
+- **Error**: Treating the analogy as proof that musical and typographic scales are the same system.
+  **Correction**: Only the numerical factor is shared when both choices explicitly use the same `r`; source attribution, domain truth and perceptual claims have separate warrants.
 
-- **Error**: Assuming the golden ratio (1.618) is a musical interval.
-  **Correction**: φ is irrational and does not correspond to a simple integer frequency ratio. It is a geometric/natural proportion, not a harmonic series ratio. The two categories (musical intervals and geometric proportions) are both valid ratio sources but are mathematically distinct.
+- **Error**: Treating every visual scale as necessarily geometric.
+  **Correction**: A geometric strand is optional. Additive `10, 20, 30` has equal gaps and unequal adjacent ratios; neither construction alone proves typographic suitability.
+
+- **Error**: Treating `4/3` and decimal `1.333` as identical, or generating a later step from a rounded display.
+  **Correction**: `4/3` differs from `1333/1000` by `1/3000`; compute each term from the unrounded base and round only for display.
+
+- **Error**: Treating the old interval-name menu or style adjectives as verified by Brown's article.
+  **Correction**: Retain those names and values as legacy associations with unassessed interval/tuning/application labels. Brown invokes music and quotes an analogy but does not enumerate the table. Its absence from this article does not establish a label is false.
+
+- **Error**: Treating irrationality of exact φ as evidence of musical exclusion, consonance or beauty.
+  **Correction**: Irrationality distinguishes φ from every rational number; the music and perceptual questions need separate evidence.
 
 # Common Confusions
 
-- **Confusion**: A typographic scale "sounds" like music in some mystical sense because it uses musical ratios.
-  **Clarification**: The correspondence is mathematical, not perceptual in that direct sense. The claim is that both domains use ratios derived from the same mathematical family (integer ratios), and that this shared mathematical structure may contribute to harmonic coherence in both domains. The perceptual analogy is structural, not literal.
+- **Confusion**: A shared factor means the physical quantities or their domain judgments are equivalent.
+  **Clarification**: The factor is numerically equal under the stated condition. Frequency and type size remain different quantities.
+
+- **Confusion**: A geometric strand is required for every visual scale.
+  **Clarification**: The original question is answered directly: it is not required. Additive or independent values are possible; evaluate the actual design separately.
+
+- **Confusion**: A first rounded display proves two input models are identical.
+  **Clarification**: Exact `4/3` and decimal `1.333` both display `21.33` at the first step from base `16`, but their second-step displays differ (`28.44` versus `28.43`).
+
+- **Confusion**: A rigorous mapping rating verifies the entire music mapping.
+  **Clarification**: The retained ratings apply only to explicitly declared arithmetic. They do not verify the music domain, the legacy interval table, Brown's full account or every claim in this card.
 
 # Source Reference
 
@@ -155,9 +176,9 @@ Opening paragraph; "Modular scales and how they apply to web design" (Bringhurst
 
 # Verification Notes
 
-- Definition source: Synthesised from the article's explicit invocation of "music" as a ratio source domain and Bringhurst's quoted definition. The detailed interval-to-ratio mapping is established domain knowledge about Brown's broader framework, not text from this article.
-- Confidence rationale: Medium — the principle is clearly supported by the source; the specific interval mappings (perfect fourth = 1.333, etc.) require the modularscale.com source or "More Perfect Typography" talk to verify at the detail level.
-- Uncertainties: The article does not provide the interval table. Attribution of specific ratio values (1.333, 1.5, etc.) to this source would be inaccurate — they are from Brown's broader framework. Cards for perfect-fourth-ratio and perfect-fifth-ratio are not well-enough supported by this article text to include.
-- Cross-reference status: Partially verified — principle verified; detail table requires additional source.
-- Rosetta Stone check: Mapping added — music/musical-interval (rigorous), mathematics/harmonic-series-ratios (rigorous).
-- OCR issues: None significant.
+- **Historical extraction record**: Extraction confidence remains `medium`, and the earlier OCR observation remains “None significant.” These are preserved observations about the prior extraction act, not current source-fidelity or semantic acceptance.
+- **Superseded claims**: The earlier “partially verified” cross-reference, interval-table attribution, broad music/typography identity, perceptual parallel, geometric-sequence equivalence, φ exception and style prescriptions describe the former card. They are not current verified facts. Legacy interval names and values remain visible as unassessed associations; their arithmetic is checked independently.
+- **Current bounded review**: Prepared Brown lines 109–112 invoke music; 133–140 quote Bringhurst's comparison; 142–156 describe ratio generation and merging. These support those attributed observations and the procedure, not an interval-name/value table, complete menu, tuning claim or perceptual benefit. Original capture identity/fidelity remains unresolved under P10-11.
+- **Technical result**: Exact rational arithmetic distinguishes `4/3` from `1.333=1333/1000` (difference `1/3000`), and exact irrational φ from decimal `1.618=809/500`. Two-place half-even values are derived from the unrounded base. The `rigorous` mapping ratings are preserved but scoped to explicitly declared arithmetic only; they do not grade the music domain or all source claims.
+- **Relationships and questions**: The header's seven relation occurrences and three questions remain unchanged. The batch record itemizes each occurrence and question with endpoints, direction, inspected components, source/math mapping and unresolved limits. Resolved slugs and partial endpoint sections do not establish edge support or complete answerability.
+- **Limits**: No interval-name verification, new music/tuning inquiry, empirical harmony test, complete endpoint/global review, browser/accessibility claim or original-source acceptance was performed. CDC independent review remains pending.
