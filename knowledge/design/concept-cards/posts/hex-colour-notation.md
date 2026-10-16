@@ -40,11 +40,11 @@ rosetta_stone:
 
 # Quick Definition
 
-Hex colour notation is a compact hexadecimal encoding of RGB colour values as a six-character string (preceded by `#`), where each pair of characters encodes one colour channel (0–255 as 00–FF).
+CSS hexadecimal notation encodes sRGB channels as `#RGB`, `#RGBA`, `#RRGGBB` or `#RRGGBBAA`. In the four/eight-digit forms the final component is alpha. Each full pair is one 8-bit value; shorthand duplicates each digit (`#0f08` → `#00ff0088`). Numeric `rgb()` can express fractional values that an 8-bit hex channel cannot.
 
 # Core Definition
 
-Drasner explains: "Hex colors are a slightly different format to represent the values in the same way. Hex values are probably the most common way developers designate color on the web." The structure: "If you recall that a byte is 8 bits, each Hex color or number represents a byte. A color is specified according to the intensity of its red, green and blue components, so we call it a triplet, with each expressed in two places. One byte represents a number in the range 00 to FF (in hexadecimal notation), or 0 to 255 in decimal notation. Byte 1 is Red, byte 2 is green, and byte 3 is blue." The base: "Hexadecimal is named this because it uses a base 16 system. The values use ranges from 0-9 and A-F, 0 being the lowest value and F being the highest, or `#000000` being black and `#FFFFFF` being white." Shorthand: "For triplets with repeated values, you can eliminate the repetition by writing in shorthand, for instance, `#00FFFF` becomes `#0FF`."
+Drasner presents hexadecimal as another way to represent the same RGB values and describes it as a common web notation; that popularity statement is attributed to her prepared article, not a universal current ranking. She explains that each full two-digit channel is a byte (00–FF, or 0–255), ordered red, green and blue, and demonstrates shorthand with `#00FFFF` becoming `#0FF`. CSS also defines four/eight-digit forms with alpha last. Shorthand expands only when each channel's two digits repeat. The prepared passage contains a `#00000` typo for black; the valid six-digit value is `#000000`.
 
 # Prerequisites
 
@@ -53,7 +53,7 @@ Drasner explains: "Hex colors are a slightly different format to represent the v
 
 # Key Properties
 
-1. Six hex digits (plus `#`): two per channel, in R-G-B order
+1. CSS supports 3/4/6/8 hexadecimal digits: RGB, RGBA, RRGGBB, RRGGBBAA
 2. Values 00–FF per channel correspond to decimal 0–255
 3. Shorthand `#RGB` works when each hex pair has repeated digits (e.g. `#AABBCC` → `#ABC`)
 4. Case-insensitive: `#FF0000` and `#ff0000` are equivalent
@@ -91,7 +91,7 @@ Drasner explains: "Hex colors are a slightly different format to represent the v
 - **Colour bit depth** — Two hex digits per channel = one byte = 8 bits = 256 values
 
 ## Enables
-- **Design token storage** — Hex is the most common format for storing colours in design tokens and configuration files
+- **Design token storage** — Hex is one possible notation for sRGB token values; a project may choose another representation
 
 ## Related
 - **CSS rgba()** — For alpha channel support, rgba() is needed; CSS Color 4 adds `#RRGGBBAA` 8-digit hex
@@ -105,7 +105,7 @@ Drasner explains: "Hex colors are a slightly different format to represent the v
   **Correction**: Shorthand only works when each channel's two hex digits are identical: `#AABBCC` → `#ABC`. `#A1B2C3` cannot be shortened.
 
 - **Error**: Using hex for programmatic colour manipulation.
-  **Correction**: Hex is string-based and difficult to manipulate mathematically. For programmatic adjustment, use HSL or RGB numeric forms and convert to hex for output.
+  **Correction**: Hex is a notation, not a prohibition on string processing. Numeric RGB or another suitable colour space may be more convenient for calculations; convert when the required output format is hex.
 
 # Common Confusions
 
@@ -117,6 +117,8 @@ Drasner explains: "Hex colors are a slightly different format to represent the v
 "Hex Values" section under "Color values," Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Current syntax and alpha ordering: [CSS Color 4 §5.2](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#hex-notation) defines all four forms and shorthand expansion.
 
 - Definition source: Direct quotes from Drasner
 - Confidence rationale: High — complete and explicit definition with examples

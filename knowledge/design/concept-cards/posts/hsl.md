@@ -46,7 +46,7 @@ HSL is a cylindrical colour model that describes colours by three parameters —
 
 # Core Definition
 
-HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describes colours with three parameters: Hue, which is identical to Hue in HSV (and shares the same perceptual distortions); Saturation, described by Ottosson as "roughly the chroma of the color relative to the most colorful color with the same 'lightness' and 'hue'" (referred to as "relative chroma" in the original paper, not true perceptual saturation); and Lightness, which has "some correlation with the perception of lightness, with 0% corresponding to black and 100% to white" but "does not match the perception of lightness well at all for saturated colors" (referred to as "Intensity" in the original paper). As Drasner notes, "hsl values work with hue, saturation, lightness values" and the "system is based on a Munsell color system."
+HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describes colours with three parameters: Hue, which is identical to Hue in HSV (and shares the same perceptual distortions); Saturation, described by Ottosson as "roughly the chroma of the color relative to the most colorful color with the same 'lightness' and 'hue'" (referred to as "relative chroma" in the original paper, not true perceptual saturation); and Lightness, which has "some correlation with the perception of lightness, with 0% corresponding to black and 100% to white" but "does not match the perception of lightness well at all for saturated colors" (referred to as "Intensity" in the original paper). As Drasner notes, "hsl values work with hue, saturation, lightness values" and compares the system with Munsell. This records Drasner’s comparison, not a verified history or mathematical equivalence.
 
 # Prerequisites
 
@@ -92,7 +92,7 @@ HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describe
 
 ## Related
 - **HSV** — Sibling model from the same 1978 paper; shares the same hue calculation
-- **Munsell colour system** — HSL's three-channel structure traces conceptually to Munsell
+- **Munsell colour system** — Drasner compares HSL with Munsell; the prepared passage does not establish a direct historical derivation or mathematical equivalence
 
 ## Contrasts With
 - **Okhsl** — Okhsl corrects HSL's lightness and hue distortions using Oklab

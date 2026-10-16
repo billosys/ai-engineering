@@ -33,12 +33,12 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Vector addition"
     rating: "structural"
-    note: "Additive colour mixing is literally vector addition of light intensities in each channel. Combining red and green light is R + G = yellow in the same way as adding component vectors."
+    note: "In a specified linear-light RGB space, adding channel contributions is component-wise vector addition. This mapping is limited to fixed primaries and does not describe encoded-sRGB arithmetic, interpolation or alpha compositing."
 ---
 
 # Quick Definition
 
-Additive colour mixing is the process of combining light of different wavelengths, where each added colour increases the total luminance; combining red, green, and blue light at full intensity produces white.
+Additive colour mixing combines light from specified primaries. In a linear-light RGB space, the channel contributions add; real displays have bounded primaries and gamut, so RGB cannot reproduce every visible colour.
 
 # Core Definition
 
@@ -65,11 +65,11 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 # Context & Application
 
 - **Typical contexts**: Display technology, photography, digital colour authoring, stage lighting, CSS colour specification
-- **Common applications**: All CSS and web colour is additive; RGB, hex, HSL, and other web colour formats all ultimately describe additive light values
+- **Common applications**: CSS colour values describe colours for rendering; many map to RGB spaces, but this does not make encoded-channel arithmetic, interpolation or compositing equivalent to physical light summation
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Additive colour mixing corresponds structurally to vector addition. Each colour channel (R, G, B) is a component; combining colours is summing the vectors. This is why RGB is a linear colour space at its base — before gamma encoding.
+**Mathematics → STRUCTURAL**: Additive colour mixing corresponds structurally to vector addition. Each colour channel (R, G, B) is a component; combining colours is summing the vectors. The analogy applies to linear-light channel coordinates under fixed primaries. Encoded sRGB values are nonlinear; averaging, CSS interpolation and alpha compositing are separate operations.
 
 # Examples
 
@@ -80,18 +80,18 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 # Relationships
 
 ## Builds Upon
-- **Physics of light** — Additive mixing reflects the physical behaviour of photons
+- **Physics of light** — Additive mixing models the summation of emitted light under specified primaries
 
 ## Enables
-- **RGB colour model** — RGB is the direct expression of additive mixing with red, green, blue primaries
-- **Colour bit depth** — The quantisation of additive light intensities per channel
-- **CSS colour specification** — All CSS colour formats ultimately resolve to additive RGB values
+- **RGB colour model** — RGB is a coordinate system for specifying display colours; linear-light RGB channel contributions add for fixed primaries
+- **Colour bit depth** — Bit allocation can quantize encoded RGB values; it does not itself define physical light intensity or gamut
+- **CSS colour specification** — CSS values are rendered as colours; some RGB spaces model additive light, while notation and interpolation remain distinct
 
 ## Related
-- **HSL colour space** — HSL re-parameterises RGB; it still describes additive light values
+- **HSL colour space** — CSS HSL is a cylindrical transformation of sRGB coordinates; this is a representational relationship, not a claim that HSL channel arithmetic adds light
 
 ## Contrasts With
-- **Subtractive colour mixing** — Used by paint, ink, and print; primaries are cyan/magenta/yellow; combining produces darker colours; more colours → approaches black
+- **Subtractive colour mixing** — Contrasts emitted-light mixing with pigment absorption; actual pigment mixtures depend on materials and conditions
 
 # Common Errors
 
@@ -108,6 +108,8 @@ Drasner explains additive colour mixing in terms of its historical and physical 
 "Color mixing" section, Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Current technical support: [CSS Color 4 §2](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#color-space) distinguishes additive linear-light colour spaces from gamma-encoded RGB; the gamut of real displays is bounded. This 2026-10-09 Candidate Recommendation Draft is work in progress.
 
 - Definition source: Direct quotes from Drasner
 - Confidence rationale: High — Drasner provides a clear, dedicated section on this concept

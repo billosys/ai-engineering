@@ -30,14 +30,14 @@ answers_questions: []
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Matrix multiplication / linear transformation"
+    concept: "Affine transformation in homogeneous coordinates"
     rating: "rigorous"
-    note: "feColorMatrix applies a 5×4 matrix to each pixel's RGBA colour vector [R, G, B, A, 1]. The operation is literal matrix-vector multiplication: the output colour is the matrix product of the input colour vector and the transformation matrix."
+    note: "The 20 SVG matrix values form four output rows with five input coefficients for [R, G, B, A, 1]. The constant term makes the RGBA mapping affine; this is a concrete matrix operation, not a five-component pixel."
 ---
 
 # Quick Definition
 
-`feColorMatrix` is an SVG filter primitive that transforms pixel colour values using a 5×4 matrix multiplication, enabling complex colour remapping including hue rotation, saturation adjustment, and arbitrary RGBA channel mixing.
+`feColorMatrix` is an SVG filter primitive. Its `matrix` type has four output rows and five coefficients per row, multiplying the input components `[R, G, B, A, 1]`; the constant column supplies an affine bias. SVG also defines `hueRotate`, `saturate` and `luminanceToAlpha` types.
 
 # Core Definition
 
@@ -70,12 +70,12 @@ She notes the `type` attribute supports multiple modes: `matrix` (full 5×4 matr
 # Prerequisites
 
 - **RGB colour model** — feColorMatrix operates on RGBA channel values
-- **Mathematics (matrix multiplication)** — The full `matrix` type requires understanding 5×4 matrix-vector products
+- **Mathematics (matrix multiplication)** — The `matrix` type supplies 20 coefficients as four output rows with five input columns `[R, G, B, A, 1]`
 
 # Key Properties
 
-1. The `matrix` type applies a 5×4 matrix to each pixel's [R, G, B, A] vector (with an implicit constant 1 as the 5th input element)
-2. `hueRotate` type accepts a single angle in degrees and rotates hue of all pixels
+1. The `matrix` type uses four output rows × five input columns `[R, G, B, A, 1]` (20 values); the bias term makes the mapping affine
+2. SVG `hueRotate` accepts an angle and applies its predefined matrix operation; it is not identical to HSL hue rotation
 3. `saturate` type accepts a scaling value (0 = greyscale, 1 = unchanged, >1 = more saturated)
 4. Applied via `filter="url(#filterID)"` on SVG elements; can also be applied to HTML elements via the CSS `filter` property
 5. Can be composed with other SVG filter primitives in a filter chain
@@ -86,7 +86,7 @@ She notes the `type` attribute supports multiple modes: `matrix` (full 5×4 matr
 1. Define a `<filter>` element with a unique `id` in SVG `<defs>` or inline
 2. Inside the filter, place `<feColorMatrix in="SourceGraphic" type="[type]" values="[values]" />`
 3. Reference the filter with `filter="url(#id)"` on the target element
-4. For `type="matrix"`: provide 20 space-separated values (5 columns × 4 rows)
+4. For `type="matrix"`, provide 20 values as four output rows of five coefficients for `[R, G, B, A, 1]`
 5. For `type="hueRotate"`: provide a single degree value
 
 ## To Identify/Recognise:
@@ -95,34 +95,34 @@ She notes the `type` attribute supports multiple modes: `matrix` (full 5×4 matr
 
 # Context & Application
 
-- **Typical contexts**: SVG colour manipulation, photo filter effects in CSS/SVG, colour accessibility adjustments (simulating colour blindness), Instagram-style CSS image filters
-- **Common applications**: Converting colour images to greyscale; applying hue shifts to all colours uniformly; creating duotone effects; simulating colour vision deficiencies for accessibility testing
+- **Typical contexts**: SVG colour manipulation, photo filter effects in CSS/SVG, illustrative colour transformations (not, by themselves, validated colour-vision simulations), Instagram-style CSS image filters
+- **Common applications**: Converting colour images to greyscale; applying hue shifts to all colours uniformly; creating duotone effects; exploring channel remapping; a matrix alone does not validate colour-vision-deficiency simulation or accessibility
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: The `matrix` type is literal matrix-vector multiplication. Each output channel (R_out, G_out, B_out, A_out) is a linear combination of all input channels plus a constant: `R_out = M[0]*R_in + M[1]*G_in + M[2]*B_in + M[3]*A_in + M[4]`. This is identical in structure to a linear transformation in linear algebra, with the 5th column serving as a bias/translation term (homogeneous coordinates).
+**Mathematics → STRUCTURAL**: Each output component is a weighted sum of R, G, B, A plus a constant. The constant makes the mapping affine rather than linear on RGBA alone.
 
 # Examples
 
-**Example 1** (from source): The matrix `"0 0 0 0 0 / 1 1 1 1 0 / 0 0 0 0 0 / 0 0 0 1 0"` — this sets R=0, G=R+G+B+A (clamped to 1), B=0, keeping alpha unchanged. In practice this creates a green-channel-only image that produces a green monochrome effect.
+**Example 1** (from source): The matrix `"0 0 0 0 0 / 1 1 1 1 0 / 0 0 0 0 0 / 0 0 0 1 0"` — this sets R=0, G=R+G+B+A (clamped to 1), B=0, keeping alpha unchanged. For opaque black `(0,0,0,1)`, the second row produces green `1` because its alpha coefficient is `1`; this example does not simply extract the input green channel. The result may be clipped.
 
-**Example 2** (from source): `type="hueRotate" values="150"` — rotates all hues 150 degrees on the colour wheel, shifting reds toward blue, greens toward red, etc.
+**Example 2** (from source): `type="hueRotate" values="150"` applies the SVG-defined matrix operation. It is not a promise of an HSL hue-wheel rotation; CSS `hue-rotate()` is a separate filter function.
 
 # Relationships
 
 ## Builds Upon
-- **RGB colour model** — feColorMatrix works on linear RGBA channel values per pixel
+- **RGB colour model** — `feColorMatrix` transforms per-pixel RGBA components; SVG filter operations use the specified filter colour-interpolation space
 
 ## Enables
-- **Accessible colour simulation** — Colour-blindness simulation matrices are a well-known application
+- **Accessible colour simulation** — A matrix can be used to explore a colour transformation, but an arbitrary matrix is not validated as a colour-vision simulation or accessibility test
 - **CSS Instagram-style filters** — Drasner mentions Una Kravets's CSSgram as combining feColorMatrix-style effects
 
 ## Related
 - **mix-blend-mode** — An alternative approach to colour effect compositing; blend modes work between layers while feColorMatrix transforms a single layer's colours
-- **CSS filter property** — feColorMatrix effects can be applied to HTML via CSS `filter: url(#id)` or the shorthand `filter: hue-rotate(150deg)` (which is a simplified CSS equivalent)
+- **CSS filter property** — SVG filters can be referenced from CSS; CSS `hue-rotate()` is separately defined and is not an equivalent spelling of SVG `hueRotate`
 
 ## Contrasts With
-- **mix-blend-mode** — Blend modes require two layers to composite; feColorMatrix operates on a single layer's colours independently
+- **mix-blend-mode** — Blend modes combine a source with a backdrop; `feColorMatrix` transforms filter input components within a filter chain
 
 # Common Errors
 
@@ -142,6 +142,8 @@ She notes the `type` attribute supports multiple modes: `matrix` (full 5×4 matr
 "feColorMatrix" section under "Other Nice Color Effects," Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Current SVG support: [Filter Effects 1 §§9.1, 9.6 and 10](https://www.w3.org/TR/filter-effects-1/) defines matrix rows, unpremultiplied components, clipping and the default `linearRGB` filter space. Its `hue-rotate()` function is separately defined. The linked W3C document is a 2018 Working Draft.
 
 - Definition source: Direct quotes and code examples from Drasner; matrix interpretation synthesised
 - Confidence rationale: Medium — Drasner provides correct overview and examples but directs readers to Una Kravets's article for depth; matrix semantics require supplementary knowledge

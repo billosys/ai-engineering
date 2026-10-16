@@ -33,17 +33,17 @@ rosetta_stone:
   -
     domain: "engineering"
     concept: "Dependency injection / inversion of control"
-    rating: "rigorous"
-    note: "CSS custom properties cascade through the DOM in the same way injected dependencies propagate through a dependency graph. A custom property defined on :root is 'injected' into all descendants; overriding it on a child component changes all colour references within that subtree — analogous to injecting a different implementation at a scope boundary."
+    rating: "structural"
+    note: "Scoped CSS custom properties offer a structural analogy to substituting a value at a scope boundary. The analogy is limited: CSS cascade, inheritance and computed-value resolution are not dependency injection."
 ---
 
 # Quick Definition
 
-CSS custom properties (CSS variables) allow colour values to be defined once, given semantic names, and reused throughout a stylesheet — enabling systematic colour theming and centralised palette management.
+CSS custom properties hold author-defined values that participate in the cascade and inheritance; `var()` substitutes them into property values. They can support colour themes, while semantic aliases and multiple naming layers remain optional design choices.
 
 # Core Definition
 
-Drasner introduces CSS custom properties for colour: "A good practice is to store color variables and never use them directly, mapping them instead to other variables with more semantic naming schemes. CSS has native variables, like:" showing the example:
+Drasner recommends storing colour variables and mapping them to semantic names. This is one optional architecture; preserve existing tokens and add aliases only when shared meaning or theme variation justifies the extra indirection. She illustrates the approach with CSS custom properties:
 
 ```css
 :root {
@@ -76,7 +76,13 @@ She notes the importance of abstract naming: "Abstract naming is sometimes usefu
 1. Defined with `--` prefix: `--brand-primary: #FA6ACC;`
 2. Referenced with `var()`: `color: var(--brand-primary);`
 3. Cascade-aware: a custom property defined on `:root` is available to all elements; overriding it on a child scope affects only that subtree
-4. Separation of palette from semantic roles: define raw colours as `--color-blue-500: #3B82F6;` and semantic roles as `--color-text-link: var(--color-blue-500);`
+4. A project may separate palette values from semantic roles when that indirection supports real reuse or theming; a primitive value can also be used directly
+
+At computed-value time, an inherited alias keeps the value computed on its
+ancestor. For example, if `:root` sets `--ink: black` and `--alias: var(--ink)`,
+a child overriding only `--ink: red` gets red from `color: var(--ink)` but
+black from `color: var(--alias)`. Redeclare `--alias: var(--ink)` on that child
+when its consumers should also resolve to red.
 
 # Construction / Recognition
 
@@ -97,7 +103,7 @@ She notes the importance of abstract naming: "Abstract naming is sometimes usefu
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: CSS custom properties implement a form of dependency injection through the cascade. A colour value defined at `:root` is "injected" into every element that references it via `var()`. Overriding the custom property on a parent element changes the injected value for the entire subtree, without requiring any change to the leaf components — identical to how dependency injection enables configuration changes at system boundaries without modifying dependent components.
+**Engineering → STRUCTURAL**: A scoped custom property can resemble supplying a different value at a scope boundary. The analogy has limits: CSS values follow cascade, inheritance and computed-value rules, rather than dependency-injection semantics.
 
 # Examples
 
@@ -114,17 +120,17 @@ She notes the importance of abstract naming: "Abstract naming is sometimes usefu
 - **HSL / hex / RGB syntax** — These are the value formats stored in custom properties
 
 ## Enables
-- **Design token systems** — Custom properties are the native CSS implementation of design tokens
+- **Design token systems** — Custom properties can carry design-token values in CSS; token meaning and architecture are project-defined
 - **Dark mode theming** — Override a set of custom properties on a `[data-theme="dark"]` selector
-- **Component colour scoping** — Override custom properties on a component root to re-theme a subtree
+- **Component colour scoping** — A custom property override on a component root can affect inheriting descendants, subject to cascade and computed-value rules
 
 ## Related
-- **CSS currentColor** — The cascading colour keyword that further leverages the CSS custom property pattern
+- **CSS `currentColor`** — A keyword that resolves to the element’s `color` value for other colour properties; it is distinct from a custom property
 
 # Common Errors
 
-- **Error**: Naming custom properties with literal colour names (e.g. `--blue: #3B82F6`).
-  **Correction**: Drasner warns: "if you change a variable that was representing a blue color to an orange color, you don't have to go through and rename all of your color values" — use semantic names (`--color-primary`) or at least scale names (`--color-blue-500`) that don't encode the colour in the name.
+- **Error**: Assuming every palette needs semantic aliases or a fixed number of naming layers.
+  **Correction**: Drasner recommends abstract names, which can help when values change meaning. Preserve established names; add aliases when shared meaning or theme variation justifies them.
 
 # Common Confusions
 
@@ -136,6 +142,8 @@ She notes the importance of abstract naming: "Abstract naming is sometimes usefu
 "Color Variables" section under "Color values," Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Current behavior: [CSS Variables §§2–3.1](https://www.w3.org/TR/css-variables-1/) defines custom-property cascade/inheritance and computed-value substitution. A child override of a primitive does not re-evaluate an alias already inherited with its computed value; redeclare the alias at the child scope when required.
 
 - Definition source: Direct quotes and code examples from Drasner
 - Confidence rationale: High — full code examples provided; concept well-defined

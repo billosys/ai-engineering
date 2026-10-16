@@ -35,6 +35,9 @@ create unused roles or layers merely to match this table.
 
 ## Choose candidate values
 
+For text, evaluate each actual foreground/background pair after applying alpha, overlays and the rendered background. Under WCAG 2.2 SC 1.4.3 (AA), target at least 4.5:1 for normal text and 3:1 for large-scale text; SC 1.4.6 (AAA) uses 7:1 and 4.5:1 respectively. Do not round a failing value up. Check non-text controls and essential graphics against SC 1.4.11 separately (3:1 against adjacent colours), and do not use colour alone to convey information (SC 1.4.1). Exceptions and applicability depend on the criterion. Recheck hover, focus, disabled and other relevant states in the rendered context; a palette-level result does not establish whole-page accessibility.
+
+
 Start with supplied tokens and accepted guidance. When values are absent, propose
 candidates that fit the identified task, content and identity; state why and
 what remains uncertain. OKLCH can help explore lightness, chroma and hue, but

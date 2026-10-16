@@ -1,5 +1,11 @@
 # visual-design-system Version History
 
+## Version 1.0.13 - 2026-10-16
+
+- Correct CSS colour mechanics, scoped relationship/CQ explanations, WCAG pair
+  guidance and qualified colour-analogy claims while preserving source
+  citations and unresolved original-capture fidelity.
+
 ## Version 1.0.12 - 2026-10-16
 
 - Bound the remaining Brown musical-ratio card to conditional numerical reuse;

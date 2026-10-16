@@ -239,9 +239,10 @@ accessible.
 
 **OKLCH/OKLAB (Björn Ottosson, 2020).** The most important modern colour
 space for web design. Mathematical structure: XYZ → LMS via matrix M₁ →
-cube-root nonlinearity → opponent-colour transform via M₂. Superior to
-HSL because **equal L changes produce equal perceived brightness across
-all hues** --- critical for accessible palette generation. CSS support
+cube-root nonlinearity → opponent-colour transform via M₂. Unlike HSL, OKLCH is designed for more perceptually consistent
+lightness/chroma/hue coordinates. Equal L changes are not an exact guarantee
+of equal appearance across hues, contexts or displays and do not establish
+contrast or accessibility. CSS support
 is now baseline: `oklch(L C H)`. The relative colour syntax
 `oklch(from var(--base) calc(l + 0.15) c h)` enables dynamic palette
 manipulation from a single token.
@@ -449,13 +450,12 @@ possible geometric multiplier, not a musical interval. Shared arithmetic
 does not transfer auditory harmony into a guarantee of visual harmony,
 readability or suitability for a project's content.
 
-**Temperament → perceptual uniformity in colour spaces (RIGOROUS).** The
-deepest and most intellectually satisfying bridge. Equal temperament
-compromises interval purity so all keys are equally usable --- every
-semitone is exactly 2\^(1/12). Perceptually uniform colour spaces
-compromise physical accuracy so all regions have equal perceptual step
-sizes. Both solve the identical mathematical problem: uniformising a
-perceptual space that is inherently non-uniform.
+**Temperament → perceptual uniformity in colour spaces (LOOSE ANALOGY).**
+Equal temperament divides an octave into equal frequency ratios, while
+perceptual colour spaces aim to make coordinate differences more consistent
+with perceived colour differences. The design goals are comparable, but the
+mathematics and perceptual measurements differ; equal coordinate steps do
+not guarantee equal appearance in every context.
 
 **Linear algebra → colour space transformations (RIGOROUS).** Matrix
 stages are literal linear algebra. To convert encoded sRGB to Oklab,
@@ -484,8 +484,9 @@ Section 6
 ::: notes
 #### Colour Notation: Shifting from Hex to OKLCH
 
-Hex remains the universal interchange format, but the industry is moving
-toward OKLCH for manipulation and token definition.
+Hex is a widely used sRGB notation and remains useful for interchange. Other
+CSS colour syntaxes, including OKLCH, serve different authoring and modelling
+needs; adoption and suitability depend on the project and target environment.
 One possible notation uses primitive values (`color.blue.500`),
 semantic aliases (`color.primary`, `color.surface.default`), and
 component bindings (`color.button.primary.background.hover`). This

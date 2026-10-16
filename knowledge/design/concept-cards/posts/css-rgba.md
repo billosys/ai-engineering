@@ -42,11 +42,11 @@ css_implementation:
 
 # Quick Definition
 
-CSS rgba() extends rgb() with a fourth alpha channel parameter specifying opacity, where 0.0 is fully transparent and 1.0 is fully opaque.
+In current CSS, `rgba()` is an alias of `rgb()`. The optional alpha component may be a number or percentage; values outside the accepted range are clamped. Colour alpha affects that colour during compositing, while the `opacity` property applies to the rendered element group, including descendants.
 
 # Core Definition
 
-Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channels], y is a number from 0.0 to 1.0 [for alpha]" in the form `rgba(x, x, x, y)`. The alpha channel corresponds to the 8-bit transparency component in 32-bit colour: "In this 24-bit depth, 8 bits are dedicated to red, green, and blue. The rest are used for transparency or alpha channels." Alpha controls the compositing of the element's colour over its background — 0.0 means the element's colour is entirely transparent (background shows through), 1.0 means fully opaque. Alpha is distinct from CSS `opacity`, which affects the entire element including its children; rgba() affects only the colour value of the specific property it is applied to.
+Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channels], y is a number from 0.0 to 1.0 [for alpha]" in the form `rgba(x, x, x, y)`. Alpha is a colour component; CSS syntax does not require a particular in-memory bit allocation. "In this 24-bit depth, 8 bits are dedicated to red, green, and blue. The rest are used for transparency or alpha channels." Alpha contributes to compositing the colour over the backdrop; 0 is transparent and 1 is opaque. It is distinct from the `opacity` property, which applies to the element’s rendered group including descendants, while colour alpha affects the selected colour value.
 
 # Prerequisites
 
@@ -55,7 +55,7 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 
 # Key Properties
 
-1. Fourth parameter: 0.0 (fully transparent) to 1.0 (fully opaque)
+1. Optional alpha component: number or percentage, clamped to the 0–1 range
 2. Applies only to the colour value, not to child elements (unlike `opacity` property)
 3. The alpha value is a floating-point decimal, not an integer or percentage (in the classic syntax)
 4. Equivalent alpha support exists in hsla()
@@ -105,6 +105,8 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 "RGB Values" section under "Color values," Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Current syntax and alpha: [CSS Color 4 §§3.3, 4.1–4.2 and 5.1](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#alpha-syntax) distinguishes colour alpha and element opacity; `rgb()` and `rgba()` are aliases.
 
 - Definition source: Direct quote from Drasner
 - Confidence rationale: High — clearly defined with example

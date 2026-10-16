@@ -39,31 +39,31 @@ css_implementation:
 
 # Quick Definition
 
-Colour contrast in accessibility refers to the luminance ratio between foreground and background colours; WCAG defines minimum ratios (4.5:1 for normal text, 3:1 for large text) below which text is considered inaccessible to users with low vision or colour-blindness.
+Colour contrast is evaluated between a foreground and its background. WCAG 2.2 defines distinct text contrast criteria and non-text contrast requirements; passing a pair calculation alone does not establish page conformance.
 
 # Core Definition
 
 Drasner introduces colour contrast as a relational, context-dependent property: "A color is only a color in reference to another color. This is part of what makes color so difficult. You're probably a little familiar with this in terms of accessibility. A light green on a black may be accessible, but when you change it to a white background it no longer is." She provides several accessibility checking tools but does not state WCAG ratios explicitly. She recommends establishing accessible palettes from the start: "It's also really nice to set up your palette for accessibility from the start. Color Safe is a great tool that helps with that."
 
-Note: The WCAG 4.5:1 (normal text) and 3:1 (large text) contrast ratio requirements are standard accessibility specifications not explicitly cited in the Drasner source text. The card content for those ratios is synthesised from standard WCAG knowledge, not from the source.
+WCAG 2.2 SC 1.4.3 (AA) requires 4.5:1 for text and images of text, except large-scale text (at least 18 pt or 14 pt bold, with CJK equivalent sizing), which requires 3:1. Inactive UI components, pure decoration, invisible text and text in images containing significant other visual content are excepted; logos have no minimum. SC 1.4.6 (AAA) uses 7:1 and 4.5:1 for large-scale text with the same exceptions. SC 1.4.11 separately requires 3:1 for essential UI component/state information and graphical objects against adjacent colours, subject to its stated exceptions. SC 1.4.1 says colour is not the only visual means of conveying information.
 
 # Prerequisites
 
 - **RGB colour model** — Contrast ratio calculations require computing relative luminance from RGB values
-- **Additive colour mixing** — Luminance is derived from the additive combination of the RGB channels
+- **Additive colour mixing** — WCAG relative luminance is calculated from linearized sRGB components using its specified weights
 
 # Key Properties
 
 1. Contrast is always measured between two colours — foreground and background — not in isolation
-2. WCAG 2.1 AA requires: 4.5:1 for normal text (under 18pt/14pt bold), 3:1 for large text (18pt+ or 14pt+ bold)
-3. WCAG 2.1 AAA requires: 7:1 for normal text, 4.5:1 for large text
+2. WCAG 2.2 SC 1.4.3 (AA): 4.5:1 for text; 3:1 for large-scale text (at least 18 pt or 14 pt bold; see the criterion’s exceptions)
+3. WCAG 2.2 SC 1.4.6 (AAA): 7:1 for text; 4.5:1 for large-scale text, with criterion exceptions
 4. Contrast is calculated from relative luminance (a weighted sum of linearised RGB channels), not from HSL Lightness
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
 1. Use automated tools: browser DevTools, Colorable, WAVE, or Accessible Colors
-2. Contrast ratio = (L1 + 0.05) / (L2 + 0.05), where L1 is the lighter colour's relative luminance and L2 is the darker
+2. Decode sRGB components to linear values, calculate relative luminance `L = 0.2126R + 0.7152G + 0.0722B`, then use `(Llighter + 0.05)/(Ldarker + 0.05)`; compare the unrounded result
 3. A ratio of 1:1 means identical colours (no contrast); 21:1 is the maximum (black on white)
 
 # Context & Application
@@ -84,7 +84,7 @@ Note: The WCAG 4.5:1 (normal text) and 3:1 (large text) contrast ratio requireme
 
 ## Enables
 - **Accessible colour palettes** — Knowing contrast requirements allows proactive palette design
-- **CSS custom properties** — Contrast-aware palettes are often stored and managed via CSS custom properties
+- **CSS custom properties** — A project may store chosen palette values in custom properties; the token mechanism does not establish contrast
 
 ## Related
 - **Colour atmosphere** — Drasner notes "Things that are closer to you are in higher saturation, and in more contrast" — contrast is also a perceptual depth cue
@@ -92,10 +92,10 @@ Note: The WCAG 4.5:1 (normal text) and 3:1 (large text) contrast ratio requireme
 # Common Errors
 
 - **Error**: Using HSL Lightness to estimate whether two colours will pass contrast requirements.
-  **Correction**: HSL Lightness does not correlate with perceptual luminance. Two colours with very different HSL Lightness values may still fail contrast requirements (e.g. saturated yellow vs. saturated blue), and two colours with similar Lightness may have very different luminance.
+  **Correction**: HSL Lightness is not WCAG relative luminance. For example, `#ffff00` and `#0000ff` have equal HSL lightness but a contrast ratio of about 8.0016:1; equal HSL lightness neither predicts equal luminance nor establishes a passing text pair.
 
-- **Error**: Testing contrast only for the primary text colour and forgetting placeholder text, disabled states, or icon colours.
-  **Correction**: WCAG contrast requirements apply to all informational content, including placeholder text (which frequently fails due to low opacity), UI components, and focus indicators.
+- **Error**: Applying one text threshold to every visual element.
+  **Correction**: Evaluate text under SC 1.4.3 or 1.4.6, and essential UI component/state information and graphical objects under SC 1.4.11. Their scopes and exceptions differ; a focus indicator may also need review under the applicable focus criteria.
 
 # Common Confusions
 
@@ -108,9 +108,11 @@ Note: The WCAG 4.5:1 (normal text) and 3:1 (large text) contrast ratio requireme
 
 # Verification Notes
 
+- Primary criteria and formula: [WCAG 2.2 SC 1.4.1, 1.4.3, 1.4.6, 1.4.11 and glossary](https://www.w3.org/TR/WCAG22/). The sRGB relative-luminance definition uses the piecewise sRGB decoding and 0.2126/0.7152/0.0722 weights.
+
 - Definition source: Drasner for general principle and tools; WCAG ratio numbers synthesised from standard knowledge (not directly quoted from source)
-- Confidence rationale: Medium — Drasner covers the concept correctly but with limited technical depth; ratio numbers are external knowledge applied to fill the card
-- Uncertainties: WCAG ratio values (4.5:1, 3:1, 7:1) are NOT directly stated in the Drasner source and are synthesised from WCAG specifications. This should be verified against a primary WCAG source before treating as source-verified.
+- Confidence rationale: Medium — Drasner covers the contextual principle and tools; current WCAG 2.2 criteria and formula are separately linked as technical support
+- Uncertainties: Drasner’s prepared passage does not state WCAG thresholds. The added criteria are based on the linked WCAG 2.2 recommendation; actual conformance still requires checking page content and rendered contexts.
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: No mappings added
 - OCR issues: None significant

@@ -32,16 +32,16 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Binary exponentiation (2^n)"
     rating: "rigorous"
-    note: "The number of representable colours at a given bit depth is exactly 2^n. At 24-bit (3×8-bit channels) this is 2^24 = 16,777,216. This is a direct mathematical identity, not an analogy."
+    note: "For a specified n-bit field there are 2^n bit patterns; for three independent 8-bit RGB channels there are 2^24 combinations. Keep the field/channel allocation explicit: this count is not a gamut or human-discrimination claim."
 ---
 
 # Quick Definition
 
-Colour bit depth specifies how many bits are used to encode colour information per pixel; higher bit depth allows more distinct colour values to be represented, with 24-bit being the standard for web displays ("True Color").
+Bit depth describes the number of bits used for a particular encoded value. State whether the count is per channel or per pixel: three independent 8-bit RGB channels yield 256³ = 16,777,216 code combinations; RGBA8 uses 32 bits per pixel including alpha. These counts do not specify gamut or reproduction accuracy.
 
 # Core Definition
 
-Drasner explains: "Monitors are made in a few different display modes that change the way we perceive color through them. We express this the term 'color bit depth'. The number of colors that can be displayed at one time is determined by this color bit depth. If we have a bit depth of 1, we can produce two colors, or monochrome. Bit depth of two levels creates 4, and so on until we reach a bit-depth of 32, though commonly monitors that project the web have 24 bit-depth density and 16,777,216 colors which is True Color and Alpha Channel." She further explains: "We call this True Color because our human eyes can discern 10,000,000 unique colors, so 24-bit depth will certainly allow for this. In this 24-bit depth, 8 bits are dedicated to red, green, and blue. The rest are used for transparency or alpha channels."
+Drasner describes the growth in representable values with bit depth and gives a 24-bit RGB example. Her prepared passage also associates 32-bit with alpha and asserts a fixed human discrimination count; those are source claims, not general guarantees. An n-bit field has 2^n patterns. Three 8-bit RGB channels have 2^24 = 16,777,216 combinations. RGBA8 is a common 32-bit allocation, but formats allocate bits differently; a larger code count does not by itself increase gamut, accuracy or match a universal vision threshold.
 
 # Prerequisites
 
@@ -49,10 +49,10 @@ Drasner explains: "Monitors are made in a few different display modes that chang
 
 # Key Properties
 
-1. Bit depth n → 2^n representable values per channel; for 8-bit: 256 values (0–255) per R, G, B channel
-2. 24-bit "True Color" = 8 bits × 3 channels = 16,777,216 distinct colours
-3. 32-bit adds an 8-bit alpha channel for transparency, leaving 24 bits for colour
-4. Human vision can distinguish approximately 10,000,000 colours — 24-bit exceeds this threshold
+1. An n-bit field has 2^n patterns; 8-bit channels have 256 patterns each
+2. 24-bit RGB8 has 8 bits × 3 channels = 16,777,216 code combinations
+3. RGBA8 is one common 32-bit-per-pixel allocation; other formats allocate channels differently
+4. Code combinations do not establish a fixed number of distinguishable colours
 
 # Construction / Recognition
 
@@ -68,7 +68,7 @@ Drasner explains: "Monitors are made in a few different display modes that chang
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: The number of colours at n-bit depth is exactly 2^n. At 24 bits: 2^24 = 16,777,216. Per-channel at 8 bits: 2^8 = 256. This is a direct mathematical identity.
+**Mathematics → RIGOROUS**: An n-bit field has exactly 2^n bit patterns. Three independent 8-bit RGB fields have 256^3 = 2^24 = 16,777,216 code combinations. The channel allocation must be stated; the count does not specify gamut or how many colours a person can distinguish.
 
 # Examples
 
@@ -77,14 +77,14 @@ Drasner explains: "Monitors are made in a few different display modes that chang
 # Relationships
 
 ## Builds Upon
-- **Additive colour mixing** — Bit depth quantises the continuous spectrum of additive light values
+- **Additive colour mixing** — Bit depth quantises encoded channel values; it does not define the continuous light spectrum
 
 ## Enables
-- **RGB colour model** — The 0–255 range in CSS rgb() is the direct expression of 8-bit channels
-- **Hex colour notation** — Hex uses two hexadecimal digits (00–FF) to represent each 8-bit channel
+- **RGB colour model** — CSS `rgb()` accepts numeric 0–255 values and percentages; this syntax is not a promise of 8-bit storage
+- **Hex colour notation** — Six-digit CSS hex uses two digits per sRGB channel; this encoding has 8 bits per channel
 
 ## Related
-- **Alpha channel** — The extra 8 bits in 32-bit colour are used for transparency
+- **Alpha channel** — Some formats allocate a separate alpha field; RGBA8 is one common 32-bit layout
 
 # Common Errors
 
@@ -94,13 +94,15 @@ Drasner explains: "Monitors are made in a few different display modes that chang
 # Common Confusions
 
 - **Confusion**: "True Color" means the display can show colours that look exactly like reality.
-  **Clarification**: "True Color" is a technical term meaning the display has sufficient bit depth (24-bit) to exceed human colour discrimination ability (~10 million colours). It does not guarantee accurate reproduction of absolute colour values.
+  **Clarification**: “True Color” is a format label associated with 24-bit RGB code combinations; it does not guarantee accurate reproduction or a universal human discrimination threshold.
 
 # Source Reference
 
 "Color mixing" section, Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Current technical context: [CSS Color 4 §5.1](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#rgb-functions) defines CSS RGB values; bit allocation is a storage-format property, distinct from CSS gamut.
 
 - Definition source: Direct quotes from Drasner
 - Confidence rationale: High — explicitly defined with specific numbers

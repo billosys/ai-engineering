@@ -45,11 +45,11 @@ css_implementation:
 
 # Quick Definition
 
-CSS HSL syntax specifies colours using hsl(H, S%, L%) or hsla(H, S%, L%, A), where H is a hue angle in degrees (0–360), S and L are saturation and lightness percentages (0–100%), and A is optional opacity (0.0–1.0).
+CSS HSL uses `hsl()` with hue, saturation, lightness and optional alpha components. Modern space-separated syntax and legacy comma-separated syntax are accepted; `hsla()` is an alias. Hue accepts an angle and wraps around the hue circle; HSL coordinates are a convenient sRGB transformation, not a perceptually uniform scale.
 
 # Core Definition
 
-Drasner explains that "hsl values work with hue, saturation, lightness values" and that "this system is based on a Munsell color system." The syntax ranges: "x is a number from 0–360 [for hue], y is a percentage from 0% to 100% [for saturation and lightness], z is a number from 0.0 to 1.0 [for alpha]" with forms `hsl(x, y, y)` or `hsla(x, y, y, z)`. Drasner emphasises its human-readability advantage: "It's a relatively easy change (around 11 lines of code, to be precise) for the browsers to exchange between rgb and hsl values, but for us humans, the use of hsl can be a lot easier to interpret." She also notes its practical advantage for generative colour: "hsl is very easy to work with to step through color because you know that looping through the hue from 0 to 360 will give you a full range."
+Drasner explains that "hsl values work with hue, saturation, lightness values" and compares the system with Munsell. Treat this as Drasner’s attributed comparison, not as proof of direct derivation or mathematical equivalence. Her prepared article gives legacy comma-separated examples and bounded ranges. Current CSS permits modern space-separated syntax, angle units, hue wrapping, and number or percentage alpha; the same HSL coordinates remain nonuniform in perceived lightness. Drasner emphasises its human-readability advantage: "It's a relatively easy change (around 11 lines of code, to be precise) for the browsers to exchange between rgb and hsl values, but for us humans, the use of hsl can be a lot easier to interpret." She also notes its practical advantage for generative colour: "hsl is very easy to work with to step through color because you know that looping through the hue from 0 to 360 will give you a full range."
 
 # Prerequisites
 
@@ -94,8 +94,8 @@ Drasner explains that "hsl values work with hue, saturation, lightness values" a
 - **HSL colour space** — CSS hsl() directly expresses the HSL colour model
 
 ## Enables
-- **Generative colour** — The circular, predictable hue angle makes HSL ideal for colour loops
-- **CSS custom properties for colour** — HSL values are commonly stored as custom properties for theming
+- **Generative colour** — The hue angle can be varied to generate a sequence; resulting perceptual spacing is not uniform
+- **CSS custom properties for colour** — HSL values can be stored in custom properties when that representation suits the project
 
 ## Related
 - **CSS rgba()** — The equivalent alpha extension for RGB syntax
@@ -114,6 +114,8 @@ Drasner explains that "hsl values work with hue, saturation, lightness values" a
 "HSL Values" section under "Color values," Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Current syntax: [CSS Color 4 §§4.1–4.3 and 7](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#the-hsl-notation) defines modern and legacy HSL syntax, hue, alpha, and `hsl()`/`hsla()` aliases. The Munsell statement above is only an attribution to Drasner’s comparison.
 
 - Definition source: Direct quotes from Drasner
 - Confidence rationale: High — complete syntax definition with multiple examples

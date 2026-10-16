@@ -33,16 +33,16 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Pointwise operations on bounded functions"
     rating: "structural"
-    note: "Blend mode formulas apply arithmetic operations (multiplication, addition, subtraction, division) channel-by-channel to pixel values treated as normalised floats [0,1]. Multiply is literally f(a,b) = a × b. The structural analogy to pointwise function composition is exact."
+    note: "Separable blend modes apply a component-wise function to source and backdrop colour components. Non-separable modes operate on colour relationships across components; blending is followed by alpha compositing."
 ---
 
 # Quick Definition
 
-CSS `mix-blend-mode` composites the colours of overlapping HTML/CSS elements using one of 16 mathematical blend modes inherited from photo-editing software, where each mode applies a per-channel formula to the source (top) and destination (bottom) colours.
+CSS `mix-blend-mode` selects a blend function between an element’s source colour and its backdrop. The blend result then participates in alpha compositing. Separable modes such as multiply and screen use component-wise formulas; hue, saturation, color and luminosity are non-separable. The available mode set is defined by the specification, not a fixed count in this card.
 
 # Core Definition
 
-Drasner explains: "If you've used layer effects in Photoshop, you're probably familiar with mix blend modes... Mix and background blend modes composite two different layered images together, and there are 16 modes available." The terminology: "The top image or color is called the source, and the bottom layer is called the destination. The area between the two is where the blending magic happens and is called the backdrop. We're mixing both according to fairly simple mathematical formulas." She provides the key examples: "the color formulas for the blend modes depend on the type of effect used. For instance, multiply is `destination × source = backdrop`. Other effects are variations of simple math using subtraction, multiplication, addition, and division. Linear is `A+B−1`, while Color Burn is `1−(1−B)÷A`."
+Drasner explains: "If you've used layer effects in Photoshop, you're probably familiar with mix blend modes... Mix and background blend modes composite two different layered images together, and there are 16 modes available." The terminology distinguishes the source from the backdrop, which is the already-composited content behind the element. Drasner’s prepared passage calls the backdrop the destination; the specification uses the backdrop in the blend function. She provides examples and shorthand formulas: multiply as `destination × source`, and a prepared-source line calling `A+B−1` “Linear.” That name is not a CSS blend-mode value, and the expression alone is not a complete blend-and-composite algorithm. Color-burn also requires its defined clipped branches.
 
 # Prerequisites
 
@@ -51,7 +51,7 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 
 # Key Properties
 
-1. 16 available blend modes including: normal, multiply, screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, color, luminosity
+1. Blend modes include separable and non-separable functions; consult the current specification for the defined values
 2. Multiply: `destination × source` — darkens (analogous to subtractive mixing)
 3. Screen: `1 − (1−A)(1−B)` — lightens (analogous to additive mixing)
 4. Operates per channel in normalised [0,1] space
@@ -74,21 +74,21 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Blend mode formulas are pointwise arithmetic operations on colour channel values treated as real numbers in [0,1]. Multiply is exactly f(a,b) = a·b; Screen is f(a,b) = 1−(1−a)(1−b). These are the same operations as pointwise function multiplication and complement-multiplication in analysis — the structural mapping is precise, though colour blend modes are defined discretely per pixel.
+**Mathematics → STRUCTURAL**: Separable modes such as multiply and screen apply a component-wise function to source and backdrop channels. Non-separable modes such as hue, saturation, color and luminosity operate on relationships among colour components; the separable arithmetic analogy does not cover them.
 
 # Examples
 
 **Example 1** (from source): "multiply is `destination × source = backdrop`" — the canonical blend mode; multiplying a red (1, 0, 0) by a blue (0, 0, 1) produces black (0, 0, 0) because all channels multiply to 0.
 
-**Example 2** (from source): "Color Burn is `1−(1−B)÷A`" — a more complex formula demonstrating that blend modes can be non-trivial mathematical operations.
+**Example 2** (from source): Drasner gives the abbreviated color-burn expression `1−(1−B)÷A`. The CSS definition has clipped branches for boundary inputs; this shorthand is not the full algorithm.
 
 # Relationships
 
 ## Builds Upon
-- **RGB colour model** — Blend modes operate on per-channel float values
+- **RGB colour model** — Separable modes use component functions; non-separable modes use relationships among colour components
 
 ## Enables
-- **Complex visual effects** — Chaining multiple blend modes (as mentioned by Drasner referencing Robin) creates advanced compositing effects
+- **Complex visual effects** — Blend modes can be combined in layered compositions; resulting appearance depends on backdrop, alpha, stacking and isolation
 
 ## Related
 - **feColorMatrix** — An SVG filter that provides similar colour manipulation capabilities with matrix operations
@@ -96,7 +96,7 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 # Common Errors
 
 - **Error**: Expecting mix-blend-mode to work if the parent has `overflow: hidden` or `isolation: isolate`.
-  **Correction**: `isolation: isolate` on a parent creates a new stacking context that prevents the child's blend mode from compositing with elements outside the isolated container.
+  **Correction**: `isolation: isolate` creates an isolated stacking context that limits how descendants blend with content outside the group. `overflow` controls clipping/scrolling and does not itself mean isolation.
 
 # Common Confusions
 
@@ -109,8 +109,10 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 
 # Verification Notes
 
+- Current model: [Compositing and Blending 1 §§3.4.1–3.4.3, 5.1, 7, 10.1–10.3](https://www.w3.org/TR/compositing-1/) distinguishes backdrop, blend function, alpha compositing, separable/non-separable modes and isolation. Color-burn uses defined clipped branches.
+
 - Definition source: Direct quotes from Drasner, including blend mode formulas
-- Confidence rationale: High — formulas and terminology explicitly provided
+- Confidence rationale: Medium — Drasner supplies examples, but some terminology and formulas need the normative qualification above
 - Uncertainties: Drasner notes 16 modes are available but does not list all 16; source coverage is overview-level
 - Cross-reference status: Not in Ottosson source
 - Rosetta Stone check: Mathematics/pointwise-operations mapping added as structural

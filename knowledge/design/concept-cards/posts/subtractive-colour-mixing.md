@@ -32,11 +32,11 @@ css_implementation: []
 
 # Quick Definition
 
-Subtractive colour mixing is the process of combining pigments or dyes that each absorb (subtract) portions of the light spectrum, where combining more colours absorbs more light and produces darker results.
+Subtractive colour mixing is a simplified model of combining pigments or dyes: each selectively absorbs portions of the illuminating spectrum and reflects the remainder. Outcomes depend on materials, concentrations, illumination and mixing process.
 
 # Core Definition
 
-Drasner introduces subtractive mixing through the contrast with digital work: "As a child, you're working with paint. Paint and inks from a printer have tiny particles called pigments that mix together and reflect to present color to your eye. This is subtractive color mixing. The more colors you add to it, the darker it becomes, until we get brown. Primaries are close to what you're used to: red, yellow, blue. But when you mix these colors with subtractive color mixing, you arrive at brown." The mechanism is that each pigment absorbs certain wavelengths and reflects others; combining pigments removes more wavelengths from the reflected light, reducing total luminance and shifting toward grey or black.
+Drasner introduces subtractive mixing through the contrast with digital work: "As a child, you're working with paint. Paint and inks from a printer have tiny particles called pigments that mix together and reflect to present color to your eye. This is subtractive color mixing. The more colors you add to it, the darker it becomes, until we get brown. Primaries are close to what you're used to: red, yellow, blue. But when you mix these colors with subtractive color mixing, you arrive at brown." The absorption model explains why many pigment mixtures become darker or less saturated, but does not guarantee that every added pigment darkens every mixture or that the result approaches brown or black. Traditional red-yellow-blue painting practice differs from cyan-magenta-yellow process printing.
 
 # Prerequisites
 
@@ -44,16 +44,16 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 
 # Key Properties
 
-1. Adding colours decreases brightness — more pigment = darker, closer to black
+1. Absorptive mixtures often reduce reflected light; the actual result depends on pigment and conditions
 2. Traditional primaries are red, yellow, blue (artists); professional print uses cyan, magenta, yellow (CMY)
-3. Combining all pigments produces near-black (or in paint, brown)
+3. Combining pigments does not guarantee a particular neutral or dark result
 4. Pigments work by absorbing (subtracting) light; the reflected remainder is what we see as colour
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
 1. Physical media — paint, ink, markers, dyes — use subtractive mixing
-2. Mixing more colours produces a darker, muddier result
+2. Compare mixtures in context; additional pigments can shift hue, chroma and lightness in different ways
 3. Red + blue = purple; red + yellow = orange (not the result you get from light)
 
 # Context & Application
@@ -74,7 +74,7 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 - **CMYK colour model** — The print industry colour model based on subtractive mixing with cyan, magenta, yellow (and black) inks
 
 ## Contrasts With
-- **Additive colour mixing** — Red + green = yellow (light); red + green in paint = brown (pigment); all colours combined in light = white; all in pigment = near-black
+- **Additive colour mixing** — A useful contrast between emitted light and reflected pigment, but not a universal prediction for every pigment recipe
 
 # Common Errors
 
@@ -86,6 +86,8 @@ Drasner introduces subtractive mixing through the contrast with digital work: "A
 "Color mixing" section, Working With Colors Guide (Sarah Drasner).
 
 # Verification Notes
+
+- Current technical context: [CSS Color 4 §2](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/#color-space) defines additive linear-light spaces; it does not make encoded sRGB arithmetic or pigment outcomes interchangeable.
 
 - Definition source: Direct quote from Drasner
 - Confidence rationale: High — clearly stated in dedicated section
