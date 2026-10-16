@@ -127,3 +127,84 @@ fixture or source artifact was added. The pre-existing untracked
 
 No arc/project ledger state, plan, finding disposition, release version,
 publication or next assignment was changed.
+
+
+---
+
+# Slice14 Iteration01 Closing Report — qualifiers and coverage components
+
+CC return for `arc02-theory-and-evidence/slice14-scale-application-and-responsive-scope/cc-prompt-iteration01.md`.
+Status: **S14-01/02 proposed-done by CC; S14-03/04 remain independently done.**
+The ledger remains open/open/done/done; CDC review of Iteration01 is pending
+for S14-01/02. This is not slice closure. No push, hosted or browser check, publication, self-acceptance, or next
+assignment was performed or authorized.
+
+## Assignment and commits
+
+- Issuing planning commit: `833fadd5c25fdbeb39bcfbeeac0668000afa98d7`, direct
+  parent `89fc69d506551c5637b373f4cf912f4e79117853`.
+- Issued prompt: `cc-prompt-iteration01.md`, SHA-256
+  `f8414f48c112c83f98d67fc1cf38f8274ed8b732e2e8fc5a5cc3072e17c1f0a6`.
+- Source baseline: `af2c7fd4387741e8e84597c1c78cdbd423ab1b70`.
+- Source result: `d36f74bbc173c84d2a0a979ae1770fbe604d1b76`, direct parent exactly
+  `af2c7fd4387741e8e84597c1c78cdbd423ab1b70`.
+- Exact source paths (two):
+  - `knowledge/design/concept-cards/posts/scale-application-typographic-hierarchy.md`
+  - `knowledge/design/concept-cards/posts/responsive-type-modular-scale.md`
+- Planning predecessor: `833fadd5c25fdbeb39bcfbeeac0668000afa98d7`.
+- Planning return paths (three):
+  - `project10-design-foundations/arc02-theory-and-evidence/slice14-scale-application-and-responsive-scope/artifacts/batch-record.md`
+  - `project10-design-foundations/arc02-theory-and-evidence/slice14-scale-application-and-responsive-scope/ledger.md` (Evidence/Notes cells only)
+  - `project10-design-foundations/arc02-theory-and-evidence/slice14-scale-application-and-responsive-scope/closing-report.md`
+- Planning commit hash is recorded in the handoff after this commit; no
+  receipt-only follow-up commit is required. Both commits use the required
+  separate Codex and Billo AI trailers.
+
+## F01 and F02 results
+
+F01 records all 16 relationship occurrences (application 6, rhythm 5,
+responsive 5), exact fields/indices/values, target paths resolved through the
+pinned 233-row identity index, relation orientation, local/source context and
+warrant limits. The two reciprocal application/rhythm `related` entries are
+identified as one symmetric navigation pair. Empty `contrasts_with` lists remain
+observations, not evidence that no contrasts exist. Body-only references remain
+editorial prose; no new edges or schema were added.
+
+All six question occurrences (three exact texts) are retained separately by
+card membership. Each row states adequate-answer components, selected sections
+and Brown spans, a bounded answer, and its gap. The responsive width example
+provides no scale-construction components; the selected application card and
+Brown's source provide base/ratio/generation context, leaving the step range and
+unread construction endpoint unresolved. The six-member positive projection
+passed and deleting one membership failed the same predicate. These are CC
+coverage judgments, not independent graph acceptance.
+
+F02 applies exactly four replacements: Brown's contextual fallback approach,
+removal of an unsupported public-example ranking, and bounded current-review
+notes beside the retained application and responsive extraction-era statements.
+All four were reconstructed cumulatively from the pinned baseline; reversing
+them restores both complete source blobs. The 360-character description is 60
+over the 300-character soft target. The earlier “one above” receipt remains in
+the initial report as history and is superseded by the corrected statement in
+the batch record. No skill/package input changed.
+
+## Four-row walk
+
+| ID | Iteration01 CC result | Current ledger state and limits |
+|---|---|---|
+| S14-01 | **Proposed-done; attested.** Three five-dimension results now have recoverable relationship and CQ occurrence membership, orientations, answer components, source spans and named gaps. | **open.** CDC must review F01; endpoint bodies/warrants and full-corpus/global coverage remain open. |
+| S14-02 | **Proposed-done; attested.** Exactly four prescribed body strings corrected in two cards; no metadata, question, relationship, source-reference or arithmetic edits. | **open.** CDC must review F02 and the revised complete cards. |
+| S14-03 | Prior CDC acceptance retained; current preservation checks are fresh. | **done.** Three selected headers/references unchanged; 233 cards = 2 changed + 231 unchanged; 161 sources/six guides unchanged; rhythm card unchanged. |
+| S14-04 | Prior CDC acceptance retained where package/version inputs are unchanged; current exact source scope, commit parent and trailers are fresh. | **done.** Package inputs are unchanged and cards are unbundled. Prior Make/ZIP evidence remains at its original revision, not a fresh run. |
+
+## Validation, evidence and artifact inventory
+
+Fresh check details and recovery history are in the single [batch record](artifacts/batch-record.md#fresh-checks-and-retained-cdc-evidence). Direct checks pass for the exact four replacements and complete-blob reversals, all selected headers/Source Reference ranges, 233-card accounting, protected 161/6 and skill/package inputs, relation/CQ query membership and negative control, LF/EOF, link inventory, `git diff --check`, and the two-path source commit.
+
+CDC's initial independent arithmetic, metadata, corpus-bridge, version and package checks remain retained at `af2c7fd`, not relabeled fresh: the body-only delta does not change their inputs, and the packaged Markdown, skill files and Makefile are byte-identical. No Make or package build was rerun. The initial sandbox build failure and reviewed recovery remain preserved in the initial batch record. The iteration's transient non-cumulative writer and inverse-check mistakes were caught before commit and recovered; neither touched a path outside the two-card allowlist.
+
+One supporting artifact remains: `artifacts/batch-record.md`, updated in place with the Iteration01 intake, F01 tables, F02 and validation. The ledger and this closing report are existing slice records. No helper, fixture or additional evidence file was created. `knowledge/lfe/` remains untouched.
+
+## Bubble-up and retained gates
+
+P10-11/A02-02 original capture and conversion fidelity remain unresolved; the prepared article is not historical-source proof. A02-03 retains empirical harmony/readability and endpoint-warrant limits; A02-04/05/06 retain full-corpus, live-file, global relationship and CQ work. The fourth Brown music-interval card remains owned by later Arc02 work. A02-10 retains actual browser/accessibility and typesetting behavior. P10-13 and Arc04 retain current exact-revision hosted rendering, final package/composition and release checks. No current hosted result is inferred from a local comparison. Parent criteria and ownership are unchanged; Slice14 stays open and no Slice15 is issued.

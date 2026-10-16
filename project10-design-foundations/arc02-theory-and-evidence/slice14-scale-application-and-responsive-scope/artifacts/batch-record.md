@@ -142,3 +142,203 @@ explicitly outside this CC assignment. Exact-revision hosted checks remain a
 P10-13/Arc04 re-entry gate. Prepared-source fidelity remains P10-11/A02-02;
 uninspected endpoint warrants and full-corpus/global relationships remain
 A02-03–06. This batch does not close a finding, parent criterion or release.
+
+
+## Iteration01 — intake, F01 coverage, F02 corrections and retained evidence
+
+### Assignment pin and pre-edit readback
+
+- Current assignment: `cc-prompt-iteration01.md`, issued by planning commit
+  `833fadd5c25fdbeb39bcfbeeac0668000afa98d7` (direct parent
+  `89fc69d506551c5637b373f4cf912f4e79117853`). Prompt SHA-256:
+  `f8414f48c112c83f98d67fc1cf38f8274ed8b732e2e8fc5a5cc3072e17c1f0a6`.
+- Iteration source baseline: `af2c7fd4387741e8e84597c1c78cdbd423ab1b70`.
+  Before edits, main was exactly at this revision, with no tracked changes;
+  `knowledge/lfe/` was the only untracked path and was preserved.
+- Iteration planning predecessor: `89fc69d506551c5637b373f4cf912f4e79117853`.
+  The planning worktree was exactly at issuing commit `833fadd5`; no planning
+  changes were present before the permitted three-file return.
+- The three input card hashes matched the prompt: application
+  `050489da81334d84080f9723e58cc533f9af4b38620706f2bab8b712a98f11a4`, rhythm
+  `c37d0287cbcb8c7ec6d0b3fba400abaa54940af949759d6d42e7f3b5c076d1e6`, and
+  responsive `8e93eed915fcecac367697aa8d88af43bce3ddaf52f0cac0de2dfd5dbe1c6982`.
+  Prepared Brown source SHA-256 matched
+  `6b63c1ca5bf9d2d92ebb0f8cda8bf05ecd2fffdabf3d068e496b42c2794f33b9`.
+
+Actual loaded extents before dependent edits (all source knowledge paths are
+from main at `af2c7fd`; planning documents are from the planning worktree at
+`833fadd5`):
+
+| Required material | Loaded extent |
+|---|---|
+| Main `AGENTS.md` | Entire file, lines 1–221. |
+| Iteration01 prompt | Entire file, lines 1–[end]; prompt hash above. |
+| Slice plan, ledger and current CDC review | Entire files: slice plan 1–114, ledger 1–11, CDC review 1–124. |
+| Initial prompt and prior evidence | Initial prompt lines 9–42 and 123–239; prior batch record 1–144; prior closing report 1–129. |
+| Project and Arc plans | Project plan: release target 33–49, scope/DoD 50–90, evidence/workload economy 179–203. Arc plan: release version sequence 26–38, accepted inputs/slice breakdown 39–85, complete coverage/source re-entry 86–109, workflow/current assignment 127–168. |
+| Project and Arc criteria | All 13 P10 criteria from project ledger (P10-01–10, 11, 12–13); all 10 A02 criteria from Arc ledger. |
+| Collaboration and project-management | Collaboration-framework “Notes for Codex”; project-management SKILL operational routes; guides README Required Load Set and Expedited Mode; canonical worktree sections on slice documents, artifacts, workflow records and iteration filenames; planning-top-down usable increments, investigation agreement and issuing/executing iterations. |
+| Prompt authoring and work verification | Engineering-methods guide 07 “Required reading and CC intake” and corrective iterations; row-closure guide complete; independent-verification separation rule and “Evidence During Correction Review.” |
+| Design guidance | Design SKILL “Principles to guide judgment”, “Fluid values and layout”, “Review”; type guide “Check candidates and fallbacks”, “Choose a scale, then judge it optically”, and context/review guidance. |
+| Concept-card guidance | Concept-cards SKILL “Ownership And Dependencies”; evidence-lifecycle start through evidence gaps and “Keep Rich Prose Attached To Its Warrant”; graph/CQ guide from start through “Assess Coverage And Answerability.” |
+| Three candidate cards | Complete files, including all headers, examples, relationship prose, CQs, references and verification notes; after edits, both changed cards were read again in full. |
+| Brown prepared source | Required spans 133–171, 225–237 and 310–362, in full; SHA-256 above. The spans support source-bounded construction, visual-selection and responsive/fallback discussion, not historical capture fidelity or empirical/browser outcomes. |
+| Accepted identity index and structured query | `card-source-index.jsonl` at planning commit `9cc20338`, SHA-256 `ce5207eb89ddcfd4cb301dd49fc9cc6286561c6428c82b46bdaf7dc8aa6463cb`; all 233 JSONL rows parsed, 233 unique paths. Selected all relationship-field and question memberships from the three actual candidate headers; full query results and negative control are below. |
+
+Conditional endpoint-body reads: not triggered for making semantic-warrant
+claims because this return does not claim that the resolved endpoints prove the
+edges or answer the questions. The prompt explicitly permits exact endpoint
+warrants to remain unassessed. No endpoint body was inspected; each such need is
+named below for Arc02 A02-06 re-entry. No new source investigation, acquisition or
+global graph review was undertaken.
+
+Contract readback: only four prescribed strings may change, across the application
+and responsive card bodies. Their complete headers, Source Reference bytes, the
+full rhythm card, other corpus/source/guide files, skill entrypoint/history and
+Makefile are protected. The first pass left two of the three application
+replacements unapplied because its writer rebuilt from original bytes for each
+replacement; a full-card read caught that before commit. Both candidates were
+then rebuilt cumulatively from the pinned `af2c7fd` blobs, and reversing all four
+changes restored both complete blobs. For F01, relation-field orientation and
+question components must be recorded independently of endpoint resolution;
+Brown's responsive width fraction is not a scale-construction answer. A local
+source answer may be partial while empirical, endpoint and original-fidelity
+claims stay open. S14-03/04 are already accepted; only their affected
+preservation/applicability checks are refreshed. CDC remains the independent
+reviewer and the four row states remain open/open/done/done.
+
+### F01 — current fifth-dimension result
+
+The following updates the initial three generic fifth-dimension cells above; it
+records occurrences, meanings, warrant limits and re-entry rather than treating
+preserved lists as checked graph semantics. Occurrence indices are zero-based
+indices in each card's parsed YAML list. Subject revisions below are the current
+candidate at source commit `d36f74bbc173c84d2a0a979ae1770fbe604d1b76`; target
+locations resolve through the accepted 233-identity index and are observed in
+that same source snapshot. The selected rhythm card and every non-selected target
+are unchanged from the `af2c7fd` iteration baseline.
+
+Field orientation used in the table: if subject A lists target B under
+`prerequisites`, B → A means B supports understanding A; if A lists B under
+`extends`, A → B means A elaborates B; `related` is a symmetric association.
+These are the field meanings, not findings that any specific edge is supported.
+
+| # | Subject revision and occurrence | Target location at `d36f74bb` | Meaning / direction | Subject-side wording or supplied source; outcome and owner |
+|---:|---|---|---|---|
+| 1 | Application, `prerequisites[0]` = `modular-scale` | `knowledge/design/concept-cards/posts/modular-scale.md` | `modular-scale → application` supports understanding application. | Application body says a constructed scale precedes application; Brown 133–171 describes generating a scale. Local fit only; endpoint and edge warrant unassessed. CDC / A02-06: inspect both endpoint bodies and a supporting premise. |
+| 2 | Application, `prerequisites[1]` = `modular-scale-construction` | `knowledge/design/concept-cards/posts/modular-scale-construction.md` | Construction → application supports understanding application. | Application “Prerequisites” calls this the procedure that produces the scale. Local explanatory dependency; endpoint and edge warrant unassessed. CDC / A02-06: inspect endpoint and whether the local dependency matches its construct. |
+| 3 | Application, `prerequisites[2]` = `scale-ratio` | `knowledge/design/concept-cards/posts/scale-ratio.md` | Ratio → application supports understanding application. | Application says the ratio determines available values; Brown 133–171 describes a ratio used to generate values. Local/source context only; endpoint and edge warrant unassessed. CDC / A02-06: inspect endpoint and premise. |
+| 4 | Application, `extends[0]` = `modular-scale` | `knowledge/design/concept-cards/posts/modular-scale.md` | Application → modular scale elaborates the target. | Application body explains choosing scale values for CSS measurements. Editorially plausible elaboration; endpoint and edge warrant unassessed. CDC / A02-06: inspect both constructs. |
+| 5 | Application, `related[0]` = `typographic-rhythm-modular-scale` | `knowledge/design/concept-cards/posts/typographic-rhythm-modular-scale.md` | Symmetric association. | Application body describes visual harmony/density; the selected rhythm card frames “rhythm” as its interpretation. The reciprocal occurrence is row 10 and is one navigation pair, not two independently supported edges. Editorial association; semantic warrant unassessed. CDC / A02-06: inspect both bodies and decide whether one recoverable edge is warranted. |
+| 6 | Application, `related[1]` = `scale-base-unit` | `knowledge/design/concept-cards/posts/scale-base-unit.md` | Symmetric association. | No selected application passage establishes a relationship to this endpoint. Location resolves; relationship is unassessed. CDC / A02-06: read both endpoint bodies and locate a connecting premise or retain as editorial. |
+| 7 | Rhythm, `prerequisites[0]` = `modular-scale` | `knowledge/design/concept-cards/posts/modular-scale.md` | Modular scale → rhythm supports understanding rhythm. | Rhythm body discusses possible visual relationships among selected scale values; Brown 133–171 supplies the scale context. Local fit only; endpoint and edge warrant unassessed. CDC / A02-06: inspect endpoint and premise. |
+| 8 | Rhythm, `prerequisites[1]` = `scale-application-typographic-hierarchy` | `knowledge/design/concept-cards/posts/scale-application-typographic-hierarchy.md` | Application → rhythm supports understanding rhythm. | Rhythm “Prerequisites” says application may inform selected measurements, without establishing perceptual rhythm. Local rationale; the reciprocal related occurrence is row 10. Edge warrant remains unassessed. CDC / A02-06: inspect both bodies and reconcile the two navigation views. |
+| 9 | Rhythm, `extends[0]` = `modular-scale` | `knowledge/design/concept-cards/posts/modular-scale.md` | Rhythm → modular scale elaborates the target. | Rhythm card adds an explicitly interpretive label to Brown's scale discussion; Brown does not name “typographic rhythm.” Editorial synthesis only; endpoint and edge warrant unassessed. CDC / A02-06: inspect both endpoint constructs; do not attribute the label to Brown. |
+| 10 | Rhythm, `related[0]` = `scale-application-typographic-hierarchy` | `knowledge/design/concept-cards/posts/scale-application-typographic-hierarchy.md` | Symmetric association. | Reciprocal navigation view of row 5. Shared source and overlapping discussion do not independently support an edge. Editorial association; semantic warrant unassessed. CDC / A02-06: inspect both endpoints and reconcile as one symmetric relation or retain as navigation. |
+| 11 | Rhythm, `related[1]` = `typographic-color` | `knowledge/design/concept-cards/practical-typography/typographic-color.md` | Symmetric association. | Brown 225–237 discusses monitoring paragraph density (“typographic color”) while visually evaluating line measure/leading. This supports a source-context observation, not an edge to the uninspected endpoint. Warrant unassessed. CDC / A02-06: inspect endpoint and relationship premise. |
+| 12 | Responsive, `prerequisites[0]` = `modular-scale` | `knowledge/design/concept-cards/posts/modular-scale.md` | Modular scale → responsive card supports understanding responsive use. | Responsive body requires understanding a scale before applying it; Brown 338–351 describes scale values in a responsive reference-point layout. Local fit only; endpoint and edge warrant unassessed. CDC / A02-06: inspect endpoint/premise. |
+| 13 | Responsive, `prerequisites[1]` = `scale-application-typographic-hierarchy` | `knowledge/design/concept-cards/posts/scale-application-typographic-hierarchy.md` | Application → responsive card supports understanding responsive use. | Responsive body calls scale-informed reference values one possible input to width conversion; Brown 338–351 makes that connection. Partial local rationale; endpoint and edge warrant unassessed. CDC / A02-06: inspect endpoint and premise. |
+| 14 | Responsive, `prerequisites[2]` = `modular-scale-construction` | `knowledge/design/concept-cards/posts/modular-scale-construction.md` | Construction → responsive card supports understanding responsive use. | Responsive body says a scale must be constructed when selected values come from one. Local condition only; endpoint and edge warrant unassessed. CDC / A02-06: inspect endpoint and decide whether construction is necessary for the stated optional case. |
+| 15 | Responsive, `extends[0]` = `modular-scale` | `knowledge/design/concept-cards/posts/modular-scale.md` | Responsive → modular scale elaborates the target. | Brown 338–351 says scale values may inform a reference-point layout then convert to percentages. This supports attributed compatibility/context, not a complete responsive technique or edge by itself. Endpoint and edge warrant unassessed. CDC / A02-06: inspect both endpoints. |
+| 16 | Responsive, `related[0]` = `scale-application-typographic-hierarchy` | `knowledge/design/concept-cards/posts/scale-application-typographic-hierarchy.md` | Symmetric association. | Responsive body connects selected scale-informed reference values to width conversion. Related association is editorial; application endpoint uninspected in this iteration. CDC / A02-06: inspect both endpoints and relationship premise. |
+
+Index query: parsed all 233 accepted index rows/unique paths, selected exact raw
+slug identities, and resolved every target above. `typographic-color` resolves to
+its `practical-typography` collection, not a guessed post path. This establishes
+location only. No target-body query was run. All three `contrasts_with: []` values
+remain preserved empty-list observations; they do not establish absence of
+contrasts. The nested aliases are not relation edges.
+
+Body-only references remain card prose, not newly inferred metadata edges.
+Application's prose names modular scale/construction, typographic rhythm,
+typographic color, progressive enhancement and arbitrary measurement; the
+selected two occurrences of modular-scale and the rhythm related field overlap
+some of that prose, while the rest are explanatory, optional or source-quoted.
+Rhythm's prose names application, modular scale, typographic color, measure and
+arbitrary measurement; responsive prose names application, construction and
+viewport-based sizing. These references may guide later identity/warrant review,
+but are not added to the 16-field occurrence set. “Measure,” “arbitrary
+measurement,” “progressive enhancement” and “viewport-based sizing” are treated
+as narrative labels here, not asserted indexed endpoint identities. Their
+semantic relationship status remains unassessed under A02-06; no broader graph
+review was performed.
+
+### F01 — six question occurrences and component coverage
+
+Fresh query: duplicate-safe YAML parse with Ruby Psych `safe_load` and aliases
+disabled, over the three exact selected headers at the candidate source state;
+project `answers_questions` preserving card, zero-based index, exact text and
+order. Result: six occurrences, three unique texts, no exclusions. The committed projection matched the literal six-membership expected list. A contrary
+expected list deleting one membership failed the same exact-list equality predicate
+(`deleted_membership_rejected=true`). This checks membership only, not answerability. Adequate components and results:
+
+| Occurrence and exact retained text | Adequate answer components | Mapped selected material and prepared span | Bounded answer; coverage and gap |
+|---|---|---|---|
+| Application `answers_questions[0]`: “What distinguishes a modular scale from arbitrary type size selection?” | Explain a scale as values generated from declared starting number/base and ratio; distinguish intentional, contextual use from unrelated arbitrary choices; retain optionality and exceptions without claiming superior perception. | Application Quick/Core Definition, Selected Scope, Improvisation and Examples; Brown 133–171 (ratio/number and multiplication/division), 310–336 (exceptions), 342, 354–357 (his arbitrary-measurement contrast and conclusion). | Brown describes a generated set used as an optional aid to meaningful design choices, while calling unrelated ballpark choices arbitrary in his own historical account. Partly answerable at Brown's scoped account; no general taxonomy or empirical advantage is established. The scale-construction endpoint was not read. |
+| Rhythm `answers_questions[1]`: “What distinguishes a modular scale from arbitrary type size selection?” | Same components as above, with the card's interpretive rhythm claim kept separate from the arithmetic construction. | Rhythm Core Definition, Key Properties and Examples; Brown 133–171 and 342, 354–357. | The selected card's counterexamples show why ratio relationships must be checked directly, while Brown's source contrasts generated measurements with arbitrary dimensions. Partly answerable as this card/source synthesis; it does not establish reader benefit or a universal distinction. `modular-scale` endpoint remains uninspected. |
+| Application `answers_questions[1]`: “What makes a type hierarchy feel harmonious vs arbitrary?” | State which choices are contextual/optical, how visual evaluation is used, and separate an author's harmony judgment from evidence of reader perception or benefit. | Application Core Definition and Key Properties 1–2; Brown 225–237 (measure/line-height selection and visual review), 310–336 (exceptions), 342 and 354–357 (arbitrary contrast and conclusion). | Brown reports visually trying measures and line-height and describes his own harmony rationale; the card limits scale values to optional candidates. Partly answerable as attributed design judgment. Empirical harmony/readability benefit and present browser behavior are unassessed. |
+| Rhythm `answers_questions[0]`: “What makes a type hierarchy feel harmonious vs arbitrary?” | Same components as above, including the card's interpretive use of “rhythm” and the distinction between arithmetic and perception. | Rhythm Core Definition, Key Properties, Examples and Common Errors; Brown 225–237 and 342, 354–357. | Brown's line-spacing and harmony statements are his judgments; the card's arithmetic counterexamples show that selected ratios do not guarantee a perceptual result. Partly answerable as an attributed historical view. Independent empirical effect and endpoint warrants are unresolved. |
+| Application `answers_questions[2]`: “How do you construct a modular scale for a typographic system?” | Identify meaningful starting/base value and ratio, generate indexed values by multiplication/division, state which strand/step range is in scope, and relate choices to actual content/context. | Application Construction/Recognition and Key Properties; Brown 133–171 (ratio, starting number, generated values, double-strand/context) and 225–237 (visual selection). | Brown's bounded procedure starts with a ratio and number, multiplies/divides to produce values, and says inputs should fit project/content. Partly answerable: a finite step range and the named `modular-scale-construction` endpoint's treatment were not inspected. |
+| Responsive `answers_questions[0]`: “How do you construct a modular scale for a typographic system?” | Same construction components as above; distinguish scale construction from converting one existing layout width to a percentage. | Responsive Construction section supplies only a width conversion; application Construction/Recognition supplies contextual selection; Brown 133–171 supplies ratio/number/generation and 225–237 selection context. | The responsive card's own `100 × 497.406 / 845.479` example contributes no base, ratio or indexed-scale construction component. The selected application/source supply those components, so the CQ is partly answerable in this bounded packet; finite step range and `modular-scale-construction` endpoint remain uninspected. |
+
+These are CC coverage judgments for the six preserved occurrences. Source support
+is distinct from current empirical truth, original capture fidelity, verification,
+or semantic edge acceptance. Full-card and global CQ review remains A02-04/06;
+source-fidelity re-entry remains A02-02/P10-11. The responsive question is not
+marked wholly unresolved merely because its own width example is insufficient;
+its actual selected peer/source components and remaining construction gap are
+separated above.
+
+### F02 — four exact body replacements and corrected soft-target statement
+
+At source baseline `af2c7fd`, each old string occurred once at the named path.
+The final source candidate applies all four supplied replacements: the generic
+fallback rule is recast as Brown's contextual approach; the unsupported ranking
+of the example is removed; application Verification Notes identify retained
+Verified/confidence/OCR text as extraction-era observations; and responsive
+Verification Notes scope the old Verified statement to its extraction history
+and distinguish the later width calculation from source CSS or browser proof.
+No headers, references, CQs, relationships, arithmetic, rhythm content or
+confidence/OCR observations were rewritten.
+Current source commit hashes and affected locators: application SHA-256
+`e30693955b765f372c2fb8b8e1683054edfcbc996b04c90a22438f4178a5d1c5` (fallback
+line 81, historical-ranking correction line 102, current-review note line 164);
+responsive SHA-256
+`2cb2d36c5ee8dc2208244645f918fd10070d277cca8967802821acc4a151e610`
+(current-review note line 122).
+
+Correction to the initial validation receipt: the design description is 360
+characters, which is 60 characters over the 300-character soft target. “One
+over” counts one description, not one character. The original erroneous receipt
+above is retained as history and superseded here. This report-only correction
+requires no entrypoint change, package rerun or new validation gate.
+
+### Fresh checks and retained CDC evidence
+
+| Check | Iteration01 result and strength |
+|---|---|
+| Exact recipes and reversal | Rebuilt both candidates from pinned `af2c7fd` blobs; each of the four old strings was unique and each new string appears once. Final candidates equal the cumulative recipe output. Reversing the replacements in reverse order reproduces both entire baseline blobs byte-for-byte. |
+| Headers and references | All three complete frontmatter/header byte ranges equal the iteration baseline; all three complete `# Source Reference` ranges equal baseline byte-for-byte. Relationships/questions and nested aliases are unchanged. |
+| Card population and protected source | 233 cards at baseline and candidate: 2 changed / 231 byte-identical. The full rhythm card is unchanged. All 161 files under `knowledge/design/sources/`, six design guides, `knowledge/design/SKILL.md`, `knowledge/design/version-history.md` and `Makefile` are byte-identical to baseline. |
+| Data and contrary control | Current exact-header query returns 16 relation-field occurrences (application 6, rhythm 5, responsive 5), six CQ occurrences and three unique question texts. Deleting one CQ membership fails the same membership predicate. Resolved slug paths were checked against all 233 index rows; this is not semantic edge acceptance. |
+| Format and links | Both revised cards have LF line endings and final LF; no Markdown link targets are present in either changed card; `git diff --check` passes. Source diff contains exactly the two assigned paths. |
+| Source commit | `d36f74bbc173c84d2a0a979ae1770fbe604d1b76`, direct parent `af2c7fd4387741e8e84597c1c78cdbd423ab1b70`; exactly the application and responsive card paths; required two trailers verified. |
+
+CDC's initial independent checks at `af2c7fd` remain retained, not fresh, where
+inputs are unchanged: exact metadata/header and mathematical proofs, all 233
+identity/index and source-bridge results, version/history, Make gates, and fresh
+design ZIP with all eight packaged Markdown members. Applicability was checked:
+this iteration changes body prose only; all headers, arithmetic, skill/version
+files, guides, Makefile and the eight package inputs remain identical. Cards are
+not packaged. No repeated Make/package build was run or represented as fresh.
+The new card hashes and affected semantic prose were freshly inspected above.
+
+The earlier failed sandbox build and reviewed reruns remain recorded in the
+initial validation section. Two transient iteration checker mistakes were also
+recovered before commit: a non-cumulative writer was caught by the full-card
+read and replaced with cumulative baseline reconstruction; an inverse-check
+predicate that tried one inverse at a time was replaced with an ordered reverse
+sequence. The corrected recipe and reversal checks both pass; neither attempt
+changed any path outside the two-card allowlist or entered a commit. No hosted,
+browser/accessibility, installation, source-acquisition, publication or push
+check was run. Exact-revision hosted review remains a later P10-13/Arc04 gate.
