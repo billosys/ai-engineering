@@ -13,22 +13,14 @@ related: [project08-concept-card-metadata, project13-collab-refinements]
 Deliver a corrected, portable `visual-design-system` skill and usable installed
 package, preserving relationships, content-led composition, intrinsic layout
 and expressive craft. Project10 repairs the existing tool; Project11 owns the
-broader design-practice expansion. Planning belongs here on `planning`;
-source and package changes belong in the main checkout.
+broader design-practice expansion. Planning belongs on `planning`; implementation
+and packages belong on `main`. [Project ledger](ledger.md) is the acceptance contract.
 
-Plan revision **1.71**, authorized by the Operator on 2026-10-12: reduce project
-complexity and workload, and shorten the distance between finding an issue and
-fixing the source. Arc02/Slices01–05 exposed an evidence-heavy sequence with no
-live implementation. This amendment replaces that sequence with end-to-end
-review, correction and validation batches. It changes execution and ownership,
-not the agreed corpus or release obligations.
-
+Plan revision **1.72**, updated2026-10-16 after the Operator-approved bounded
+reassessment under collaboration-framework2.7.2. This refines the2026-10-12
+execution amendment; deliverables and all thirteen criteria/states are unchanged.
 Use the shared Project09 [audit](../project09-design-audit/artifacts/audit-results-design.md)
 and [synthesis](../project09-design-audit/artifacts/audit-modernization-synthesis.md).
-Reuse accepted Arc01/02 evidence at its verified scope; do not regenerate it to
-fit a new reporting format. Historical plans, issued prompts and acceptance
-records remain evidence. Earlier roadmap and status prose is superseded by this
-revision; the previous complete plan remains in Git history.
 
 ## Release target — Operator correction, 2026-10-15
 
@@ -88,121 +80,95 @@ Sampling, format-only checks, live-guidance-only review and quarantine cannot
 satisfy full-corpus completion. Missing originals still block dependent fidelity
 results and full-corpus/release acceptance; they do not block unrelated fixes.
 
+## Bounded reassessment — Operator approval, 2026-10-16
+
+**Was:** repeated slice/iteration narratives in parent plans, small correction
+packets with repeated reading and historical checks, and local edge/CQ gaps often
+left for a later global pass. The project even retained a stale Slice13-current
+paragraph beside its newer Slice15 sequence. **Now:** use the plan/reporting
+rules below; the active arc and slice own their respective current details.
+
+The Operator authorized one pass over this roadmap, Arc02 and intended Arc04,
+using framework2.7.2's usable increments, proportionate proof and evidence
+retention. Inputs began at planningb5ebd593/source65ed7a05; concurrent Slice15 closure
+at planning2e3bc843 was incorporated before edits.
+Consumer: subsequent CDC planning/review and CC assignments. Output: edits to
+these two existing plans only; stop after recording concrete simplifications
+and checking scope/links. No new audit, corpus review, trial or source mutation.
+Slice15 is independently closed by its preserved review record; its issued
+contract/evidence is unchanged. The Operator hold on new assignments remains
+pending execution direction. New choices apply to unissued work, not retroactive
+acceptance or a new source assignment.
+Prior bodies remain at the input commit and all Version History entries below
+remain intact; superseded chronology is not another current assignment.
+
 ## Arc roadmap
 
-Was: three remaining arcs after consolidation, rather than five. Now: Arc06 is
-closed; **Arc02 and Arc04 remain**. IDs and existing paths
-stay stable; numerical order does not imply a dependency barrier.
+Arc01 and Arc06 are closed; Arc02 is active and Arc04 remains planned. Stable
+IDs express ownership, not a requirement for numerical execution order.
 
-| Arc | Delivery and current state | Actual prerequisites |
+| Arc | Delivery | Dependency / current state |
 |---|---|---|
-| [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Closed; accepted contract, baseline and explicit source-readiness carryover | Operator composition acceptance at `38b66d0d` |
-| [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Active; apply accepted corrections, remove C&B coupling, review/fix cards and guides, and implement/test the accessibility/typesetting floor | Accepted contract and evidence for each changed claim; originals only for dependent fidelity checks |
-| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Closed: both slices and all seven arc criteria accepted at source589d7c21; Operator accepts composition at planning1fffb9dc | Accepted mapping and pilot before bulk changes; no book-original dependency |
-| Arc04 — package and release readiness (`arc04-guides-and-package`) | Plan near execution; complete routes/snippets, isolated package, final specimens and Project11 handoff | Accepted input revisions for each task; full Arc02/06 completion and Project09 acceptance before release |
+| [Arc01 — portable contract](arc01-portable-contract/arc-plan.md) | Accepted authority, baseline and explicit source-readiness carryover | Closed; Operator composition acceptance38b66d0d |
+| [Arc02 — review and fix](arc02-theory-and-evidence/arc-plan.md) | Complete card/live review, supported corrections, identity preservation and actual accessibility/typesetting checks | Active; each result depends on its actual inputs; see the arc for the current slice |
+| [Arc06 — metadata and rendering](arc06-card-metadata-and-rendering/arc-plan.md) | Existing-field normalization and hosted rendering evidence | Closed at source589d7c21/planning1fffb9dc; later edits retain final applicability checks |
+| Arc04 — package and release readiness (`arc04-guides-and-package`) | Useful isolated-package routes/examples and final composition/release readiness | Detail when executable; early work uses accepted inputs, final acceptance requires Arc02/06 and Project09 acceptance |
 
-**Was:** a separate Arc03 accessibility/typesetting phase and Arc05 final
-validation phase. **Now:** Arc03's entire delivery and browser-proof obligations
-belong to Arc02; Arc05's entire composition, final validation and release-readiness
-obligations belong to Arc04. Neither arc had a detailed plan or issued slice.
-Do not create those two planning trees. Their work is reassigned, not accepted
-or dropped. Arc04 no longer waits for full Arc02 closure to begin useful package
-work; its final acceptance still does.
+Former Arc03 accessibility/typesetting work belongs to Arc02; former Arc05 final
+validation belongs to Arc04. Neither unissued tree is to be created. All original
+obligations survive; no delivery is accepted by consolidation.
 
-| Finding ownership after consolidation | Findings | Closure evidence |
-|---|---|---|
-| Arc02 | DES-001–009, DES-011–013, DES-015–016 | Corrected source, complete review/support, relevant numerical/browser checks and cross-file reconciliation |
-| Arc04 | DES-010, DES-014 | Usable installed routes/examples and brief → guidance → choice → review demonstration |
-| Arc04 final composition | All DES-001–016; P10-01–13 | Complete final package, finding/corpus accounting, independent review and Operator release-readiness acceptance |
-| Arc06 | P10-12/13 metadata/rendering; coordinate DES-016 with Arc02 | No-loss field normalization, preserved bodies and actual final-revision GitHub views |
-
-This table supersedes owners in the historical Arc01 allocation; retain that
-artifact unchanged. Accessibility findings DES-005/006/009/011 retain actual
-behavior checks, not merely revised prose. Arc02 owns substantive body repairs;
-Arc06 owns lossless representation. Arc04 checks package preservation and final
-revision applicability for both.
+| Current finding owner | Findings / obligation |
+|---|---|
+| Arc02 | DES-001–009, DES-011–013, DES-015–016: corrected source and complete review, including actual behavior where applicable |
+| Arc04 | DES-010/014: installed routes/examples and brief → guidance → choice → review task |
+| Arc04 final composition | All DES-001–016 and P10-01–13 at the final candidate |
+| Arc06 / Arc02 / Arc04 | Arc06 accepted representation; Arc02 owns semantic body changes; Arc04 checks final rendering/package applicability |
 
 ## Immediate sequence and working method
 
-1. Slice05 Iteration02 is independently closed under its original contract.
-   Preserve its evidence and remaining configuration/runtime follow-up in Arc02.
-2. Slice06 is independently closed: source`3658f79a` ships the three accepted
-   colour-pipeline corrections and history update; fresh package checks passed.
-3. Slice07 is independently closed at source`52f0b520`/planning`7a135d80`:
-   identity removed, usable brief-led methods and protected teaching restored.
-   [Arc02/Slice08](arc02-theory-and-evidence/slice08-token-conventions-source-fixes/slice-plan.md)
-   is independently closed at source `1489e767`/planning `a900b68a`, all four done.
-   Arc06/Slice01 is independently closed at source `4ccc6f60` / planning
-   `9934079a`, all six done; mapping/helper frozen and A06-01 independently done.
-   Arc06/Slice02 local work is independently accepted at `b49f4589` / `877cd9d2`,
-   five rows done/one hosted row open. Was: publication/access was pending. Now:
-   publication at `c4cc7427` is complete; CDC fetched all233 views, with metadata
-   success and46 body escape failures. [Arc02/Slice09](arc02-theory-and-evidence/slice09-post-card-unicode-presentation/cc-prompt.md)
-   delivered source589d7c21, independently accepted. Was: one evidence gate open.
-   Now: all four Slice09 rows are done after Operator acceptance of the five CDC
-   evidence strings at b3aabcdf. CC is authorized to normal-push reviewed main/
-   planning through this closure and execute Arc06/Slice02 hosted Iteration01.
-   Was: corrected-revision views pending. Now: independent5020db52 review passes
-   all233 actual views; Arc06/Slice02 is closed, all six done. Arc06 whole-set
-   composition was Operator-gated. Now: the Operator accepts the prepared
-   planning1fffb9dc packet; all seven arc rows are done and Arc06 is closed.
-   P10-12 closes on that union; P10-13 retains final revision applicability.
-4. Was: [Arc02/Slice10](arc02-theory-and-evidence/slice10-fluid-scale-source-fixes/cc-prompt.md)
-   applied five ready arithmetic corrections. Now: it is independently closed
-   at sourcecbb5b893/planningd665c388, all four rows done. Open
-   [Arc02/Slice11](arc02-theory-and-evidence/slice11-layout-and-measure-source-fixes/cc-prompt.md)
-   has now independently closed at sourcefce72353/planning8df2776a, four rows done.
-   Was: Arc02/Slice12 was active. Now: its three-card core is independently
-   closed at source8b408c03/planning7c65468e, all four rows done. Was: Slice13
-   Iteration01 remained active. Now: Slice13 is independently closed at sourceeeb1afa5/planninge7517f61,
-   all four rows done.
-   Was: Slice14 Iteration01 was active. Now: its sourced36f74bb/planningc24461a1
-   return is independently accepted, all four criteria done. Was: Slice15 was
-   active. Now: [Slice15 is independently closed](arc02-theory-and-evidence/slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16)
-   at source65ed7a05/planningb5ebd593, all four bounded criteria done. Original,
-   secondary/global/empirical and actual behavior/release warrants remain owned.
-   **Operator hold (2026-10-16): do not open another slice until the reassessment
-   in the forked conversation is finished.** Await its agreed outcome and
-   Operator direction; no new slice or reassessment assignment is issued here.
-   When execution resumes, continue complete card/guide review in coherent cohorts, fixing
-   supported defects and checking dependent claims in each slice. Add the
-   accessibility/typesetting procedures and browser checks where they are used.
-   Plan only the next executable batch, not a tree for every review dimension.
-5. Once the hold is lifted, build and inspect the package on accepted inputs;
-   reserve Arc04's final pass for composition, remaining gaps and release gates.
+1. This pass delivers the reassessment only. Preserve Slice15 closure and the
+   Operator hold on new assignments pending execution direction. The active/next
+   work is tracked in the [arc plan](arc02-theory-and-evidence/arc-plan.md);
+   each issued slice owns its exact current prompt, evidence and row states.
+2. When execution resumes, continue ready source/topic and live-use batches:
+   complete reads, decisions, supported fixes, affected checks and independent
+   review together. Include
+   affected local edges/CQs and repeated guide claims rather than deferring them
+   automatically. Missing originals stop dependent fidelity claims, not other fixes.
+3. Prepare useful Arc04 work from accepted inputs when ready. Its intended
+   increments are isolated-package navigation/snippet repair and usable task
+   specimens, then final composition/readiness and Project11 handoff. Reuse
+   applicable Arc02 behavior checks; retain final-revision checks and all gates.
 
-A new content slice normally delivers **read → decide → edit → check → review**.
-Evidence-only work is exceptional: a missing input or genuinely unresolved
-question must prevent a responsible edit. State that reason and its next action.
-A batch finding that is safe and in scope is fixed before that batch returns;
-cross-batch or uncertain findings retain an owner and next ready assignment.
-Do not create another analysis/handoff slice solely to pass an already-resolved
-correction to a later implementation phase.
+Choose only the next executable slice; no fixed card-per-slice rule or detailed
+future slice tree. Research-only work needs an actual blocker and prior Operator
+agreement on usefulness, applicability, budget, consumer and stopping condition.
 
 ## Evidence and workload economy
 
-Use the existing canonical plans, ledgers, preserved prompts and review records.
-For new slices, prefer one compact supporting batch record for coverage,
-exceptions, before/after pointers, validation and unresolved work. Create another
-artifact only when it serves a distinct deliverable or reproducible check.
-The source diff and usable result are primary outputs, not a new evidence packet.
-Existing issued output contracts remain binding.
-
-Use result-oriented acceptance rows; avoid separate closure criteria for routine
-receipt formatting. Record required intake and provenance concisely. Keep failed,
-blocked and unrun checks visible. Do not require receipt-only commit chains,
-copied historical datasets, repeated whole-project narratives or bespoke checker
-frameworks for each slice. Reuse existing checks; write a maintained helper only
-when repeated transformations or a consequential failure need one. Meaningful
-negative controls remain necessary for claimed transformation/validator safety.
-
-Independent review covers the delivered source, scope, substantive evidence and
-affected dependencies in one pass. Reuse unchanged accepted evidence with an
-explicit applicability check; rerun changed/affected checks. Preserve history and
-correctness while avoiding cosmetic-only handoff cycles. Parent plans receive
-material scope/ownership/sequence changes and child closure links, not a fresh
-copy of every iteration's counts. These are Project10 execution choices, not a
-general framework change or an extension of Project13's completed trial.
+- **One home per decision.** Project: scope/arc ownership/dependencies/release
+  gates. Arc: current slice and remaining delivery sequence. Slice: exact inputs,
+  implementation, iteration, evidence and row states. Update/version parents when
+  their own decisions or status change; routine same-slice corrections stay local.
+  Check bubble-up at each close and record material changes before advancing.
+- **Compact, complete handoff.** Give the implementation spine, exact mutation
+  scope, preservation, adequate checks and bounded required-reading manifest.
+  Link precise shared sections; do not paste whole predecessor narratives or
+  require unrelated histories. Required text must still be loaded completely,
+  truncation recovered and actual intake/readback recorded before dependent edits.
+- **Evidence serves acceptance.** Prefer one supporting batch record. Reuse pinned
+  index/source/revision bridges and unchanged independent results after an explicit
+  applicability check; recheck changed inputs/results. Do not re-extract/copy the
+  corpus or replay historical transformations solely to populate another receipt.
+- **Proportionate proof.** Use direct review, existing repository checks and focused
+  witnesses. A temporary query is not automatically a maintained validator product.
+  Add machinery or negative controls for a named credible failure/property, not
+  to manufacture work. Mandatory gates and independent review remain binding.
+- **Finish meaningful corrections.** Fix supported in-scope defects now; return
+  real contract/evidence/behavior failures for refinement. Avoid cosmetic-only
+  cycles and receipt-only commit chains; report final hashes in the handoff.
+  Keep failures, limits and unresolved owners explicit without repeated narratives.
 
 ## Recorded Operator decisions
 
@@ -215,88 +181,72 @@ and earlier fixes; it does not waive these deliverables.
 
 ## Operator deferral — 2026-10-09
 
-S02-08/A01-02 remain Operator-deferred, not done. Arc02 CDC and the Operator own
+S02-08/A01-02 are Operator-deferred, not done. Arc02 CDC and the Operator own
 [P10-11 input re-entry](arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md):
-exact Arnheim/Cleland/Tschichold editions/page bases, Butterick/article captures,
-conversion lineage and adequate original/prepared completeness/fidelity evidence.
-Each dependent result needs sufficient inputs; unrelated work may proceed.
-Acquisition/conversion needs an exact separately authorized input/output scope.
-Do not call the complete corpus or release verified while this work is unresolved.
+exact editions/page bases, immutable captures, conversion lineage and adequate
+original/prepared completeness/fidelity. Acquisition/conversion needs separately
+agreed input/output scope. Reuse those eight actions; no repeated readiness-only
+slice for an unchanged missing input. The full corpus/release remains blocked
+where required fidelity is unresolved; continue unrelated supported delivery.
 
 ## Planning choices and dependent implementation
 
-The accepted [Arc01 composed contract](arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/composed-contract.md)
-and diagnostic example are inputs, not adopted live teaching. New source
-assignments pin the current main revision, inspect drift, name exact mutation
-paths and settle consequential choices before handoff. Preserve old/new locator
-bridges and assess which prior evidence still applies after edits.
+The [Arc01 composed contract](arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/composed-contract.md)
+and diagnostic are inputs, not automatically adopted teaching. Before issuing
+source work, inspect the actual baseline, resolve consequential choices, name
+exact outputs/preservation and meaningful checks, and record author readiness in
+the existing slice plan. No new schema, research program or Project11 capability
+is authorized by a cleanup label. Preserve supplied identity and useful examples.
 
 ## Operator metadata and rendering addition — 2026-10-10
 
-Normalize existing fields only; never invent absent IDs, facts, null/default
-placeholders or review states. Use the historical 3.2 definitions unless Project08
-has an explicitly accepted unified replacement at contract selection. A skill
-release number is not a schema version. Preserve extensions, typed values,
-null/empty distinctions, list order and bodies. Arc06 uses an accepted contract
-and representative pilot before bulk mutation and must demonstrate actual
-GitHub rendering for the complete reconciled population. Its former four-stage
-sequence is replaced by the combined batches in its current arc plan.
+Arc06's accepted historical3.2 mapping aligns existing fields only; never fill
+absent facts/IDs/default placeholders or invent review states. Schema selection
+is separate from skill versions and needs an explicitly accepted Project08
+replacement to change. Preserve extensions, types, null/empty distinctions and
+list order. Later edits need affected checks and P10-13's complete final-population
+exact-revision GitHub evidence; local YAML/GFM checks cannot substitute.
 
 ## Operator methodology pilot — 2026-10-10
 
-Project13's two-run pilot is complete at `dc7b0732`; comparative benefit was
-inconclusive. Preserve its records and earlier trial assignments. No third run,
-new measurement project or general framework adoption follows from this amendment.
+Project13's two-run pilot completed atdc7b0732 with inconclusive comparative
+benefit. Retain records; no third run or general method adoption is authorized.
 
 ## Workflow and acceptance
 
-CDC Sofie plans and independently reviews separate CC execution, with Operator
-relay: Two-Contributor Workflow, no CRC. Expedited Mode remains enabled. Preserve
-issued prompts and existing acceptance scopes. Slice05's current return is
-accepted by its independent record. Independent slice reviews use
-`cdc-verification.md`. Reviewer-authored source repairs need another verifier.
+Two contributors: CDC Sofie plans/reviews separate CC through Operator relay;
+no CRC. Expedited Mode remains enabled. Preserve issued prompts and existing
+acceptance scopes; use `cdc-verification.md` for independent slice review.
+Reviewer-authored source repairs need another verifier. New work needs a complete
+open set/readiness check before execution; numbered iterations preserve handoffs.
+Commit only explicit paths with both required trailers. Close/advance when evidence
+permits; independent arc/project composition and Operator gates remain binding.
 
-Prepare a complete source-scoped slice open set and author-readiness check before
-mutation; Operator relay/acceptance of that prompt remains the implementation
-handoff. Commit explicit assigned paths with both required trailers. Close and
-advance when evidence permits. Missing inputs stop dependent claims, not unrelated
-slices or package preparation. Arc/project composition and Operator gates remain.
-
-Run applicable source/version/package checks from main, beginning with `make help`:
+Use main's Make entrypoint, beginning with `make help`: applicable
 `make check-skills`, `make check-skill-versions`, `make check-package-paths` and
-fresh `make design` as relevant. Test actual retained examples in named browser
-conditions; local parsing is not GitHub rendering or accessibility conformance.
-Final release readiness requires all thirteen project criteria, complete corpus
-coverage, accepted Project09 input and independently checked final composition.
-Hand Project11 the accepted source/package revisions and explicit limitations.
-Publication remains a separate Operator decision.
+fresh `make design` remain required. Retain unchanged independent checks only
+under the framework's applicability rule; fresh mandatory gates still run.
+Actual browser/AT, font failure and hosted behavior require actual observations.
+Final acceptance needs all thirteen criteria, full corpus coverage, accepted
+Project09 input, independently checked composition and an accepted source/package/
+limitations handoff to Project11. Publication is separate Operator authorization.
 
 ## Current status
 
-Was: Arc06's corrected-revision hosted gate and final composition remained open.
-Now: Arc01 and Arc06 are accepted and closed. Arc06's Operator acceptance on
-2026-10-13 acts on planning1fffb9dc, exact source589d7c21; both executed slices
-are closed and all seven arc rows are done. The complete233-card metadata/body
-GitHub proof and baseline/current bridge remain applicable. P10-01 and P10-12
-are done; P10-02–11 and P10-13 remain open. Existing-field alignment is accepted,
-not missing-field completion or full schema conformance.
-
-Arc02/Slices01–12 are independently closed at their recorded scopes. Slice12's
-corrected core is accepted at source8b408c03/planning7c65468e, four child criteria
-done; original-fidelity and empirical/external endpoint results retain limits.
-Current assignment: [Slice13](arc02-theory-and-evidence/slice13-base-and-ratio-selection/slice-plan.md),
-base unit, ratio-selection criteria and golden ratio. Was: four child rows open.
-Now: initial source1e0b9620/planning0681c509 has S13-02/04 done and S13-01/03
-open. Execute [Iteration01](arc02-theory-and-evidence/slice13-base-and-ratio-selection/cc-prompt-iteration01.md)
-for protected bibliographies and source pointers; no next slice opens yet.
-All other230 cards are protected by this batch, and227 outside this/prior core
-retain their complete-review owners. No full-corpus acceptance follows from the
-first three bounded outcomes. Arc04 remains a roadmap entry. Complete live/global
-reconciliation, originals/fidelity, actual browser behavior, final hosted and
-installed-package/release gates remain open. The Operator-corrected1.1.0 target
-and final bump at accepted Arc02 completion are unchanged.
+Arc01/Arc06 are accepted and closed. P10-01/P10-12 are done; P10-02–11/P10-13
+remain open. Existing-field alignment is accepted, not full-schema conformance.
+Arc02 owns its child status and the retained Operator hold; follow its [current assignment](arc02-theory-and-evidence/arc-plan.md#workflow-and-current-assignment).
+Arc04 remains a roadmap entry. This reassessment accepts no source, CC return,
+child, finding or parent criterion and changes no release gate or advancement hold.
 
 ## Version History
+
+- 1.72 (2026-10-16): Operator-approved framework2.7.2 reassessment after Arc02/
+  Slices12–15 exposed repeated handoff/status overhead and a stale Slice13
+  current-state paragraph. Consolidate current authority, delivery batches and
+  proportional evidence; clarify Arc04 increments. Preserve all criteria/states,
+  issued work and prior history; preserve concurrent Slice15 closure and Operator
+  hold, with no new source or child acceptance.
 
 - 1.71 (2026-10-16): Arc02/Slice15 independently closes its four bounded
   criteria; record Operator hold on opening new slices until the forked plan

@@ -8,21 +8,19 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.47**; Slices01–15 closed; no next slice issued.
-Operator hold: await the forked plan reassessment before opening subsequent work.
+Plan revision **1.48**, updated2026-10-16 under the Operator-approved
+[bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
+Deliver corrected portable design content, complete233-card/eight-live-file
+review/reconciliation, and usable accessibility/typesetting with actual behavior
+proof. [Arc ledger](ledger.md) and [project ledger](../ledger.md) retain their
+unchanged ten/thirteen criteria and states. Source fixes land with their review.
 
-Deliver corrected portable design content, complete 233-card/eight-live-file
-review and reconciliation, and usable accessibility/typesetting procedures with
-actual behavior evidence. The Operator's 2026-10-12 amendment in the
-[project plan](../project-plan.md) replaces analysis-first staging with source
-changes in each ready batch and transfers former Arc03 obligations here.
-[Arc ledger](ledger.md) and [project ledger](../ledger.md) govern acceptance.
-
-**Was:** separate R/T/C/L/G execution families followed by later implementation
-and Arc03 browser work. **Now:** those are coverage dimensions within end-to-end
-source/topic batches, not required separate slice chains. Source-readiness,
-complete review and global reconciliation remain required; no existing acceptance
-or issued prompt is widened by this change.
+**Was:** evidence families, small correction packets and repeated parent status
+narratives could become the execution structure. **Now:** families are coverage
+dimensions inside useful source/topic or live-use batches; current iteration
+detail stays in its slice. Scope, independent acceptance and release gates remain.
+The2026-10-12 consolidation and this reassessment supersede older sequencing,
+not issued contracts or accepted evidence. Preserve prior versions in history.
 
 ## Release version sequence — Operator correction, 2026-10-15
 
@@ -39,75 +37,67 @@ publication retain their separate gates. Project11 remains targeted at 2.0.
 
 ## Accepted inputs and preservation
 
-Reuse the accepted Arc01 contract/allocation at `38b66d0d`, card index/manifest at
-`9cc20338`, readiness/method packet at `759ce2dd`, and Project09 audit consumed at
-`795ac75b`. Exact links and lineage are retained in the
-[Arc01 handoff](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/arc02-handoff.md).
-Historical assignments and acceptance records are immutable inputs, not current
-mutation instructions. The original design baseline is `dffa504e`; main is
-`314e5802` at amendment preparation. Pin full current revisions and inspect drift
-before each source assignment. Keep all 233 identities and eight live-file owners.
+Reuse Arc01 contract/allocation38b66d0d, index/manifest9cc20338,
+readiness/method759ce2dd and Project09 audit consumed at795ac75b; exact routes
+and lineage remain in the [Arc01 handoff](../arc01-portable-contract/slice03-contract-composition-and-handoff/artifacts/arc02-handoff.md).
+The historical design baseline isdffa504e. Pin the actual implementation state
+for each assignment; old amendment/source pins are historical, not current main.
+Preserve all233 identities, eight live-file owners, issued prompts and source
+originals. Reuse checked bridges without copying datasets into every new batch.
 
 ## Slice breakdown and sizing
 
-| Work | State / delivery | Dependency |
-|---|---|---|
-| [Slice01 — fluid-scale arithmetic](slice01-fluid-scale-arithmetic/slice-plan.md) | Closed bounded evidence at `c3d68d7d`; reuse proof, occurrence reconciliation and handoff | No automatic live adoption |
-| [Slice02 — nonlinear colour pipeline](slice02-nonlinear-colour-pipeline/slice-plan.md) | Closed after independent review and Operator-approved bounded repair | Fidelity remains distinct from technical evidence |
-| [Slice03 — token conventions](slice03-token-system-conventions/slice-plan.md) | Closed at `3817d83c`; reuse scoped policy and proposed corrections | No universal layer rule or live adoption implied |
-| [Slice04 — layout and measure](slice04-layout-and-measure-exceptions/slice-plan.md) | Closed at `b6acb22f`; reuse intrinsic-first/contextual exception evidence | Final behavior remains to be checked |
-| [Slice05 — fluid-type limits](slice05-fluid-type-accessibility-limits/slice-plan.md) | Closed after independent I2 review at `8d0a10c2`/`9541e4cf`; nine criteria done | Reuse bounded model/primary/correction evidence; actual behavior remains |
-| [Slice06 — colour-pipeline source fixes](slice06-colour-pipeline-source-fixes/slice-plan.md) | Closed at source`3658f79a`/planning`e8076bec`: three corrections shipped, version/history and fresh package checked | Accepted Slice02 proof; fresh exact main pin; no full-corpus wait |
-| [Slice07 — portable identity source fixes](slice07-portable-identity-source-fixes/slice-plan.md) | Closed at source 52f0b520/planning 7a135d80: five criteria done; identity/default removal, usable methods and preserved teaching | Actual fresh-context and full-live/corpus checks remain |
-| [Slice08 — token conventions source fixes](slice08-token-conventions-source-fixes/slice-plan.md) | Closed at source`1489e767`/planning`a900b68a`: seven source corrections,21-action walk, prescribed heading and fresh package independently accepted | Accepted Slice03; fresh source 52f0b520; preserve Slice06/07 corrections |
-| [Slice09 — post-card Unicode presentation](slice09-post-card-unicode-presentation/slice-plan.md) | Closed: source589d7c21 independently accepted; all four child rows done after Operator acceptance of five evidence strings; published and fully hosted-checked in accepted/closed Arc06 | Published `c4cc7427`; no original-source dependency for this encoding correction |
-| [Slice10 — fluid-scale source fixes](slice10-fluid-scale-source-fixes/slice-plan.md) | Closed at sourcecbb5b893/planningd665c388: all four rows done; five exact corrections and fresh package independently checked | Accepted Slice01 proof and Slice07 current applicability; fresh source589d7c21, no originals needed for independent arithmetic |
-| [Slice11 — layout and measure source fixes](slice11-layout-and-measure-source-fixes/slice-plan.md) | Closed at sourcefce72353/planning8df2776a: four contexts and four criteria done; preserved teaching and fresh package independently checked | Accepted Slice04 policy, current sourcecbb5b893 and protected Slice10/Arc06 inputs; actual behavior remains separately owned |
-| [Slice12 — modular-scale card fixes](slice12-modular-scale-card-fixes/slice-plan.md) | Closed at source8b408c03/planning7c65468e: all four bounded review/correction criteria done | Original capture/fidelity, uninspected endpoint/empirical scope and affected hosted applicability remain owned |
-| [Slice13 — base and ratio selection](slice13-base-and-ratio-selection/slice-plan.md) | Closed at sourceeeb1afa5/planninge7517f61; all four criteria done, exact references and joins repaired | Retained independent math/metadata/package; source fidelity and affected hosted re-entry remain |
-| [Slice14 — scale application and responsive scope](slice14-scale-application-and-responsive-scope/slice-plan.md) | Closed at sourced36f74bb/planningc24461a1, all four criteria done; exact qualifiers and16/6 local coverage accepted | Original fidelity and formal endpoint/global/empirical/hosted gates remain |
-| [Slice15 — musical-ratio boundaries](slice15-musical-ratio-boundaries/slice-plan.md) | Closed at source65ed7a05/planningb5ebd593; four bounded criteria independently done | Local conditional arithmetic/source limits accepted; original/global/behavior/hosted obligations remain |
-| Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
-| Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
-| Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
+Closed child records remain authoritative at their bounded scopes. This table
+replaces the long repeated close narrative; original detailed tables/chronology
+remain in the previous plan revision and the unchanged child/history records.
 
-Rows without slice numbers are the near-term delivery sequence, not issued
-assignments. Allocate only the next exact batch and unique increasing number
-when ready; choose sizes by source context and iteration headroom, not one slice
-per field, review dimension, article or historical provisional group. The 47 C
-groups, eight L assignments, 161 headings and 460 keyword candidates are reusable
-navigation aids, not prescribed work units or proof of completeness.
+| Work | State / delivery and dependency |
+|---|---|
+| Evidence foundations, Slices01–05 | Closed: [arithmetic](slice01-fluid-scale-arithmetic/slice-plan.md), [colour](slice02-nonlinear-colour-pipeline/slice-plan.md), [tokens](slice03-token-system-conventions/slice-plan.md), [layout](slice04-layout-and-measure-exceptions/slice-plan.md), [fluid-type limits](slice05-fluid-type-accessibility-limits/slice-plan.md). Reuse verified proofs; no automatic fidelity/behavior acceptance. |
+| Source corrections, Slices06–11 | Closed: [colour](slice06-colour-pipeline-source-fixes/slice-plan.md), [portable identity](slice07-portable-identity-source-fixes/slice-plan.md), [tokens](slice08-token-conventions-source-fixes/slice-plan.md), [Unicode](slice09-post-card-unicode-presentation/slice-plan.md), [fluid scale](slice10-fluid-scale-source-fixes/slice-plan.md), [layout](slice11-layout-and-measure-source-fixes/slice-plan.md). Broader live/task/fidelity gates remain. |
+| Brown cohorts, Slices12–14 | Closed: [core](slice12-modular-scale-card-fixes/slice-plan.md), [selection](slice13-base-and-ratio-selection/slice-plan.md), [application](slice14-scale-application-and-responsive-scope/slice-plan.md). Bounded review/fixes, not full Brown fidelity/global edge acceptance. |
+| [Slice15 — musical-ratio boundaries](slice15-musical-ratio-boundaries/slice-plan.md) | Closed: [independent review](slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16) accepts all four bounded criteria at source65ed7a05/planningb5ebd593; Operator hold on new slices retained. |
+| Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
+| Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
+| Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
+| Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Use read → decide → edit → check → independent review within each new slice.
-Fix ready in-scope issues before returning; carry uncertain/cross-batch issues
-with exact owners, evidence needs and next actions. Evidence-only slices require
-a concrete blocker to editing. Do not repeat accepted theory proofs merely to
-produce a new handoff. Use one compact batch evidence record unless a distinct
-artifact/check has a demonstrated purpose; preserve current issued contracts.
+Rows after Slice15 are delivery choices, not issued assignments or a fixed slice
+count. Choose the next ready useful batch after the Operator hold is lifted. Prefer
+several related cards/guide contexts when coherent; split for actual input/context
+or implementation risk, not one field/card/dimension by default. The47 provisional
+groups,161 headings and460 keyword candidates are navigation, not mandatory slices
+or completeness proof. Do not pre-author future open sets or an Arc04 slice tree.
+
+Review → decide → edit → check → independent review is one batch. Fix supported
+in-scope issues before return; preserve useful teaching. Complete impacted local
+edges/CQ components when inputs fit the batch instead of automatically deferring
+all of them to global work. Read required endpoints before warrant claims; exact
+unavailable inputs or genuinely unreviewed constructs retain named re-entry.
+Final global work checks the combined results/conflicts/gaps, not a second full
+extraction. Any new inquiry needs prior Operator usefulness/applicability/budget
+agreement. More detailed execution/evidence economy lives once in the
+[project rule](../project-plan.md#evidence-and-workload-economy).
 
 ## Complete coverage and source re-entry
 
-All 233 cards retain complete body/examples/mappings/relationship/CQ review and
-all five dimensions in the project contract. All eight live files retain full
-coverage, including substantive history assertions and every repeated claim.
-Incremental batches check impacted edges, questions and guide repeats. Final
-composition checks the complete union, not a second full extraction/review.
-Changed content needs revised-card and downstream review; unchanged evidence is
-reused only after an explicit revision/applicability check.
+All233 complete cards and all eight live files retain the project's five review
+dimensions, substantive history/repeated claims, relationships and actual CQ
+components. A source or guide fix is not full-card/finding acceptance. Record
+per-card outcomes with claim-specific support where needed; do not manufacture
+five rows for every markup line. Reuse accepted results only after checking
+revision applicability; each changed result and affected downstream claim needs
+review. Preserve full population and correction lineage for final composition.
 
-Missing originals/captures retain S02-08/A01-02 deferral and P10-11 ownership.
-Reuse the eight [input-action rows](../arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md)
-and conditional secondary inputs. Population: Arnheim112, Cleland19,
-Tschichold19, Butterick37, Drasner12, Brown10, Oklab13 and Okhsv/Okhsl11.
-That is 150 book-backed plus 83 web-backed cards, still 233 total.
-
-Exact editions/page bases, immutable captures, conversion lineage and adequate
-completeness/fidelity mappings are required for the dependent results. The
-Operator supplies/selects inputs; CDC prepares scoped acquisition/preparation
-assignments when available. Current URLs/prepared files cannot prove historical
-fidelity. Track missing checks once and continue source-independent corrections;
-no repeated readiness-only slice for an unchanged absent input. Required gaps
-still prevent full arc/corpus/release completion.
+P10-11/A02-02 retain the Operator-deferred S02-08/A01-02 requirements and the
+[eight input actions](../arc01-portable-contract/slice02-source-and-review-readiness/artifacts/source-input-actions.md):
+Arnheim112, Cleland19, Tschichold19, Butterick37, Drasner12, Brown10, Oklab13,
+Okhsv/Okhsl11 =150 book-backed+83 web-backed cards. Exact editions/page bases,
+immutable captures, conversion lineage and adequate original/prepared context/
+completeness/fidelity remain required for dependent results. Current URLs or
+prepared text cannot prove historical fidelity. Operator supplies/selects inputs;
+CDC scopes authorized preparation. Unchanged missing input gets no repeat
+readiness-only assignment. Full arc/corpus/release completion still needs it.
 
 ## Findings and accessibility/typesetting ownership
 
@@ -128,49 +118,31 @@ string-equality or endpoint-resolution checks.
 
 ## Workflow and current assignment
 
-Two contributors: CDC Sofie plans/reviews separate CC work via Operator relay.
-Expedited Mode remains active. Slice05 I2 is independently accepted and closed;
-its issued prompts and historical evidence are preserved. Slice06 is independently
-closed and its three colour corrections are shipped. Slice07 is independently
-closed after I1 at source 52f0b520/planning 7a135d80: all five child criteria done.
-Slice08 is independently closed at source `1489e767`/planning `a900b68a`: all
-four criteria done. Slice09 is closed at source589d7c21; its corrected post
-presentation is now fully independently hosted-checked by Arc06/Slice02.
-Was: Arc06 composition awaited Operator acceptance. Now: the Operator accepts
-planning1fffb9dc/source589d7c21 on2026-10-13; Arc06 is closed.
-Was: [Slice10 initial prompt](slice10-fluid-scale-source-fixes/cc-prompt.md) was active.
-Now: all four rows are independently done at sourcecbb5b893/planningd665c388;
-Slice10 is closed. Was: [Slice11](slice11-layout-and-measure-source-fixes/cc-prompt.md)
-was active. Now: it is closed at sourcefce72353/planning8df2776a, four criteria done.
-Was: Slice12 Iteration02 remained active after three criteria were accepted.
-Now: [Slice12 closes](slice12-modular-scale-card-fixes/cdc-verification.md#iteration02-independent-review-and-slice12-closure--2026-10-15)
-at source8b408c03/planning7c65468e, all four criteria done with its explicit limits.
-Was: Slice13 Iteration01 repaired protected references and source joins.
-Now: [Slice13 closes](slice13-base-and-ratio-selection/cdc-verification.md#iteration01-independent-review-and-slice13-closure--2026-10-15)
-at sourceeeb1afa5/planninge7517f61, four rows done.
-Was: Slice14 Iteration01 was active after two accepted criteria. Now:
-[Slice14 closes](slice14-scale-application-and-responsive-scope/cdc-verification.md#iteration01-independent-review-and-slice14-closure--2026-10-16)
-at sourced36f74bb/planningc24461a1, all four done.
-Was: Slice15 was active. Now: [Slice15 closes](slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16)
-at source65ed7a05/planningb5ebd593, all four criteria done. The ten Brown
-identities have bounded local review/fix records, with original/secondary,
-empirical and global obligations still owned. **No next slice is issued.**
-The Operator directs a hold on new assignments until the reassessment in the
-forked conversation is finished. Await its agreed outcome and Operator direction;
-no structural roadmap change or new inquiry is commissioned in this review.
-Do not repeat the accepted theory packet or restore removed legacy defaults.
-All corpus/readiness, broader research, actual browser and fresh-context task
-gates remain; no whole-file or full-finding closure follows from these source batches.
+Two contributors; CDC Sofie plans/reviews separate CC via Operator relay.
+Expedited Mode. Slices01–15 are closed at their recorded bounded scopes.
+Most recent child: [Slice15](slice15-musical-ratio-boundaries/slice-plan.md),
+accepted in its [independent record](slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16).
+The concurrent closure/hold at planning2e3bc843 is preserved; this reassessment
+does not reperform or self-accept that source review.
 
-New mutation assignments require fresh exact main pins/paths, complete open sets,
-author readiness, meaningful affected checks and applicable version/package gates.
-Slice acceptance is independent in `cdc-verification.md`; CDC-authored repairs
-need another verifier. No new trial or additional retrospective system is added.
-Arc closure requires actual corrected/reviewed revisions, full coverage and an
-independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
-accepted inputs while unrelated source-fidelity work remains blocked.
+**No new slice is issued.** The Operator hold remains pending the reassessment
+outcome and execution direction. This amendment delivers the requested plan
+changes only. When resumed, choose the next ready batch from the breakdown;
+the slice plan will own its exact assignment/iteration and ledger row states.
+Future handoffs need the actual source, exact scope, complete bounded reads,
+preservation and adequate checks, without copied parent chronology. Routine
+corrections stay local; update this plan for child/sequence/dependency/arc changes,
+checking bubble-up at every close. Project decisions stay in the project plan.
+No new trial, retrospective system, CRC role or self-acceptance. Independent arc
+composition and Operator gates remain; useful Arc04 preparation can use accepted
+inputs after the sequencing hold is lifted.
 
 ## Version History
+
+- 1.48 (2026-10-16): Operator-approved framework2.7.2 reassessment after
+  Slices12–15: consolidate close narratives, select useful cohorts/live tasks,
+  resolve ready local semantics and reuse proof. Preserve all criteria/states,
+  concurrent Slice15 closure/hold, input gates and final composition.
 
 - 1.47 (2026-10-16): Slice15 independently closes all four bounded criteria.
   Record Operator hold on new slices pending the forked reassessment; no Slice16
