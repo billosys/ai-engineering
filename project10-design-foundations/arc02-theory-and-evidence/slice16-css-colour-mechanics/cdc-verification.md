@@ -145,3 +145,155 @@ Issue [Iteration01](cc-prompt-iteration01.md). Keep detailed refinement here and
 the slice; no next slice opens. The arc's navigation pointer is changed once to
 this slice's assignment history so future iterations do not require parent-plan
 status repetition. No project-plan amendment is needed.
+
+
+## Iteration01 independent review
+
+2026-10-16, CDC Sofie, Two-Contributor Workflow. **Refinement required; no
+slice close or next-slice opening.** Reviewed final SOURCE
+`19c7a08a459d19aa0a51e76cd7f6156fe18111b3` (three commits after8f622e44)
+and PLANNING `40c801963d2910d67503fde2f7ed5d3396097bc1`, under issue
+`cf61f017d67d0d399575240c4d8d0ccb18ff2967` /
+[Iteration01](cc-prompt-iteration01.md). CDC made no source edits and preserves
+the CC batch/report and both issued prompts. Unrelated Project08 work is unchanged.
+
+The major F01 repairs are useful: encoded values/light contributions, bit
+allocation, aliases, alpha clamping, hex forms, historical dependency examples,
+scoped substitution, gradient space/alpha, blend branches, matrix semantics and
+equal-luminance contrast are substantially reconciled. E00 remains resolved.
+Initial F02 is satisfied: the colour guide now teaches the worked pair procedure,
+links primary criteria and retains identity/state/rendering limits. The displayed
+rounded denominator is an approximation; independently evaluating the stated
+unrounded method reproduces the result and decision. No precision-only rewrite
+is a new gate. F03's explicit five-outcome table and recoverable occurrence map
+are substantial improvements; F06 below identifies the remaining narrow errors.
+
+| Row | Current CDC disposition | Remaining / retained evidence |
+|---|---|---|
+| S16-01 | open | F04 syntax and F05 verification-scope contradictions remain; other inspected repairs and unchanged numerical witnesses retained. |
+| S16-02 | open | Worked guide accepted at19c7a08a; F06 direction/CQ evidence repair remains, alongside accurate affected syntax/provenance joins. No requirement to rebuild the 53-edge inventory. |
+| S16-03 | done | Initial65ed7a05→8f622e44 preservation proof retained; fresh8f622e44→19c7a08a delta independently passes below. |
+| S16-04 | open | Fresh native/package/version integration accepted at19c7a08a. Complete accurate return awaits F04–F06; package evidence may be retained for the narrowed unbundled-card iteration after applicability checks. |
+
+### F04 Current CSS grammar still excludes valid values
+
+Correctness-grade; S16-01/02. At19c7a08a:
+
+- `posts/css-rgba.md:60` says legacy comma syntax uses numeric alpha, retaining
+  an exclusion the earlier finding requested removing. CSS Color4 §§4.2/5.1
+  uses number **or percentage** alpha in legacy syntax too. `rgba(255, 0, 0,
+  50%)` and `rgba(255, 0, 0, 0.5)` denote the same alpha. The Common Errors
+  heading also calls expecting alpha255 to be opaque an error, while its own
+  correction correctly says it clamps to1. Make the error the assumed0–255
+  channel scale, not the actual specified opaque result.
+- `posts/hsl-css-syntax.md:76` still requires percentage saturation/lightness
+  across all forms. CSS Color4 §7 permits numbers or percentages in modern
+  syntax, with100 corresponding to100%; legacy comma S/L require percentages.
+  `hsl(180 100 50 / 50%)` and `hsl(180 100% 50% / 50%)` agree;
+  `hsl(180, 100, 50)` fails the legacy grammar. State the scope consistently.
+
+CDC freshly inspected the actual grammar and reference ranges in the cited
+[2026-10-09 CSS Color4 CRD](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/),
+§§4.1–4.3,5.1,7. These are specification conclusions, not browser observations.
+The failure mechanism is an overbroad historical/current-syntax restriction;
+Iteration02 uses contrasting valid legacy/modern forms, rather than another
+general instruction to make the opening accurate.
+
+### F05 Retained verification remarks still read as current findings
+
+Correctness-grade; S16-01/02. Initial F01 explicitly required separating old
+confidence/verification remarks from current support. Merely adding a new
+technical link above the old list does not perform that separation:
+
+- additive:116, subtractive:94 and bit-depth:109 retain unqualified
+  `Uncertainties: None[/significant]` despite missing immutable capture evidence.
+- RGB:119 still describes the integer0–255 restriction as classic syntax,
+  although the same card now correctly permits fractional legacy components.
+- HSL CSS:123 still says the model was verified across both sources without
+  separating the predecessor assertion from the current bounded comparison.
+- Blend's body Medium rationale and frozen High metadata can describe different
+  subjects, but those subjects are not identified. Do not silently reassign the
+  extractor's confidence or fabricate a new historical extraction observation.
+
+Use a short explicit scope distinction within each primary card's existing
+Verification Notes. Preserve predecessor assertions as identified historical
+remarks where appropriate; remove their appearance of a new independent result.
+Distinguish current technical support, frozen extraction confidence, original
+capture fidelity and actual runtime checks. An accurate note already covering
+these concerns need not be rewritten. This is body-only, not schema work.
+Concept-cards guide05, Record Extraction Confidence Separately and Keep Rich
+Prose Attached To Its Warrant, supplies the applicable distinction.
+
+### F06 Direction and one CQ support row remain misaligned
+
+Correctness-grade; S16-02/04. The batch's table at310–365 explicitly says its
+arrows are focal-card→listed-target navigation, but labels that column
+“Occurrence and orientation” and never emits the required dependency direction.
+Keep the exact field/index identity and locator arrows; state the semantic
+reading unambiguously: if A lists B as prerequisite, **B→A**; extends is A→B;
+related/contrast are symmetric. One precise shared field rule can cover the
+explicit member rows; no duplicated table or new edge files are needed.
+
+At393, RGB `answers_questions[1]` asks about bit depth/range but its answer cell
+copies the additive/pigment answer. Replace that cell with RGB's actual partial
+contribution (component range/precision distinct from storage), plus the named
+bit-depth/hex passages supplying code counts and gamut distinction. Qualify the
+shared answer, rather than implying this one RGB passage supplies all components.
+Retain the other checked memberships and supported shared-answer synthesis.
+Concept-cards guide06, Identify Endpoints And Meaning and Assess Coverage And
+Answerability, requires these distinctions. No metadata lists/question text change.
+
+### Fresh checks and applicability
+
+- Independently inspected all twelve complete revised cards, current colour
+  guide, current five-outcome/claim/edge/CQ evidence and the scoped source/planning
+  deltas. Prior prepared-source and unchanged HSL endpoint reads remain applicable:
+  all161 source inputs and that endpoint are byte-identical. This does not turn
+  prepared agreement into historical capture fidelity.
+- Fresh temporary comparison passes exact13-path source delta,12 unchanged raw
+  headers/literal Source References/heading sets,221 unchanged other cards,
+  all161 unchanged sources, protected guides/entrypoint/history,13 before/after
+  SHA256 rows, LF/EOF/local source links, three source commits and required
+  trailers. Planning return is exactly its three allowed paths; four CDC/issued
+  input records remain byte-identical to the issue. Whitespace checks pass.
+- Independently parsed accepted233-row index and compared exact tree identities:
+  233/233. Parsed all53 header edge occurrences (24related,20prerequisites,
+  6contrast,3extends) and10 exact CQ occurrences; each field/index/member occurs
+  in the returned tables. Full relationship-body walk covers58 statements.
+  Counts/membership pass; F06 concerns their direction/answer meaning.
+- Fresh calculation of the guide method: #777 luminance0.18447499450044097;
+  #777/white4.478089453577215 (fails normal-text AA), black/white21;
+  yellow/blue8.00163666121113. Earlier gradient/matrix/blend/count/substitution
+  witnesses are retained at their original reviewed revision: equations and
+  premises remain unchanged; no new runtime or historical-fidelity result.
+- Fresh **sequential** `make help`, `make check-skill-versions`,
+  `make check-package-paths`, then separate fresh `make design` pass. Versions:
+  24 source skills/24 packages/0 errors; paths:388 Markdown,0 hard failures,
+  596 warnings at594 locations,3 exceptions,684 external URLs skipped. Design's
+  existing360-character description exceeds its soft300 target. Earlier independent
+  `make check-skills` is retained: its source description/metadata/check inputs
+  are unchanged. Eight ZIP Markdown members match committed source19c7a08a;
+  CDC ZIP SHA256 `b3aced072f02dff51e842d2d7be873d792cc900d252fed1dd43a52a75904ec35`.
+  Timestamp-dependent archive hashes need not equal CC's; member bytes do.
+- CC's disclosed first concurrent build failure and successful sequential
+  recovery remain in its record. CDC's sequential run has no gate failure.
+  Review helpers/logs are temporary, not a new product or acceptance surface.
+- The four CDC handoff files pass18 local links/7 fragments, LF/EOF, unchanged
+  criteria/statuses and prior-prompt/CC-record preservation. An initial combined
+  helper wrapper reused its root variable and failed a later path lookup after
+  links passed; isolated namespace rerun passes the complete check. No input
+  was changed by that failed read-only wrapper.
+
+### Iteration02 handoff and parent scope
+
+Issue [Iteration02](cc-prompt-iteration02.md): two syntax-rule repairs, scope
+labels/notes within the same twelve card bodies, and the small existing-evidence
+repairs above. Freeze the accepted guide and every other source input at19c7a08a.
+Keep1.0.13 for this unfinished grouped correction. Do not reopen accepted
+arithmetic/guide/package proof or build another validator. Same three CC return
+files; current criteria/statuses preserved. The accurate final return is still
+needed before S16-04 closes. Historical fidelity, full-corpus/global review,
+actual browser/AT/hosted and parent/release gates remain open with their existing
+owners. No new project/arc decision, investigation, scope reduction or source
+acquisition: parents therefore need no amendment. This is the second refinement,
+within the existing five-iteration limit.

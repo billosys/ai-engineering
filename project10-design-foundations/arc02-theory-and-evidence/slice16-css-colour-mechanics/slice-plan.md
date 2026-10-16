@@ -6,15 +6,17 @@ depends-on: [accepted Arc01 corpus and prepared-source records, current design s
 
 # Slice16 — CSS Colour Mechanics
 
-Revision **1.1**, opened2026-10-16 after the Operator lifted the reassessment hold.
+Revision **1.2**, opened2026-10-16 after the Operator lifted the reassessment hold.
 Two contributors, Expedited Mode: CDC Sofie authors/reviews; separate CC implements
 through Operator relay. [Project](../../project-plan.md), [arc](../arc-plan.md),
 [ledger](ledger.md) and [initial assignment](cc-prompt.md) govern. Planning predecessor
 `c64c5835fed0ac5d2377ff3dc12fe854e35438ce`; SOURCE/main baseline
 `65ed7a05d602e775bfa5cec16bfb4ccf206c8c63`. The issuing commit is the commit adding
 this open set. Initial CC return: source8f622e44/planninge04d8846.
-CDC accepts S16-03 at that revision; S16-01/02/04 remain open. The current
-assignment is [Iteration01](cc-prompt-iteration01.md); see Assignment history.
+CDC accepts S16-03; S16-01/02/04 remain open after Iteration01 review at
+source19c7a08a/planning40c80196. The current assignment is
+[Iteration02](cc-prompt-iteration02.md); see Assignment history. The narrowed
+body/evidence correction below governs over earlier mutation/check instructions.
 
 ## Deliverable and exact scope
 
@@ -201,9 +203,13 @@ is a ready source-fix batch under the approved project, not a new research trial
 - Initial: `cc-prompt.md`, issued2026-10-16 atf8205b36 after predecessorc64c5835;
   returned at source8f622e44/planninge04d8846. Independently reviewed: S16-03 done,
   remaining rows open. Preserved unchanged.
-- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-16 in the commit
-  adding it, predecessore04d8846. Resolve F01–F03 after E00's author-erratum
-  correction; SOURCE pin8f622e44. No next slice or parent gate acceptance.
+- Returned / reviewed: `cc-prompt-iteration01.md`, issued2026-10-16 atcf61f017,
+  predecessore04d8846; returned at source19c7a08a/planning40c80196. Guide/native
+  integration and preservation pass; F04–F06 remain. S16-03 done, three rows open.
+- **Current / active:** `cc-prompt-iteration02.md`, issued2026-10-16 in the commit
+  adding it, predecessor40c801963d2910d67503fde2f7ed5d3396097bc1. SOURCE pin19c7a08a.
+  Correct F04–F06 within twelve card bodies and the same three return files;
+  freeze the guide and retain applicable independent evidence. No next slice.
 
 ## Iteration01 author readiness and erratum
 
@@ -229,7 +235,35 @@ guideline-applied, executable in named paths, falsifiable by contrary examples,
 and coherent with the four-row contract. No required original-source evidence
 is manufactured and no recipe depends on the false midpoint.
 
+## Iteration02 author readiness and active delta
+
+CDC independently read the complete revised cohort/guide and changed support
+records at19c7a08a/40c80196; grammar inspection reproduces valid legacy percentage
+alpha and modern numeric HSL components excluded by the cards. The remaining
+verification-note scope and exact RGB CQ/direction mismatches are located in
+[F04–F06](cdc-verification.md#f04-current-css-grammar-still-excludes-valid-values).
+Their cause and repair are known; no diagnostic inquiry is assigned. Contrasting
+grammar examples distinguish the correction without a browser or new validator.
+Concept-card confidence/edge/CQ rules determine the preserved distinctions.
+
+Current mutation scope: only the two grammar families in css-rgba/hsl-css-syntax,
+and needed Verification Notes qualifications in the twelve primary card bodies.
+All headers, Source References, section headings and other source bytes are
+frozen19c7a08a, including the colour guide, HSL endpoint, entrypoint/history,
+all161 source files and other221 cards. Same three CC return files. Keep1.0.13.
+Retain accepted guide/arithmetic/native evidence after checking dependencies;
+fresh native builds are not required for unbundled-card-only prose if their
+inputs remain unchanged. Exact delta/preservation/meaning checks remain required.
+The prompt carries the complete executable delta, focused reading/query scope,
+positive/contrary examples and return contract. Readiness is source-grounded,
+guideline-applied, design-complete, executable, falsifiable and within the current
+four-row contract; accepted work is protected and context remains for execution.
+
 ## Version History
+
+- 1.2 (2026-10-16): Review Iteration01; retain passing guide, preservation and
+  package integration, and issue a narrower syntax/provenance/evidence refinement.
+  No parent-plan change or new slice.
 
 - 1.1 (2026-10-16): Initial CDC review accepts preservation, resolves its own
   midpoint typo and issues one consolidated source/guide/evidence refinement.
