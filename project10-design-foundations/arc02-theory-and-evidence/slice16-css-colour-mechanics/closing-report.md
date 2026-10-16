@@ -1,49 +1,26 @@
-# Slice16 CC closing report — CSS Colour Mechanics
+# Slice16 CC closing report — CSS Colour Mechanics (Iteration01)
 
-Status: **CC return prepared; the four ledger rows remain open for CDC.** This
-report attests the bounded work in batch record `artifacts/batch-record.md`;
-it is not independent acceptance or slice closure.
+Status: **Iteration01 returned; CDC review required.** This is the bounded CC attestation supported by [`artifacts/batch-record.md`](artifacts/batch-record.md). Ledger states remain S16-01 open, S16-02 open, S16-03 CDC-done, S16-04 open until independent CDC reproduction. The initial prompt and initial return remain preserved; this iteration supersedes the earlier unresolved red/blue witness and incomplete F01–F03 evidence.
 
 ## Proposals by criterion
 
 | ID | CC proposal | Evidence and limit |
 |---|---|---|
-| S16-01 | **Not proposed done; remains open.** The twelve cards were assessed across the five required outcomes and supported corrections were made, but the prompt's opaque red/blue midpoint expectation is arithmetically false. | The batch record gives the exact contradiction: component-wise sRGB interpolation yields `(0.5, 0, 0.5, 1)`, while the prompt expects `(0.5, 0, 0, 1)`. The dependent red/blue edit was held. CDC/Operator resolution is required before this row can be proposed complete. Historical capture fidelity also remains unavailable. |
-| S16-02 | **Proposed done; attested.** All 53 relationship occurrences, 10 question occurrences/five texts, relevant body relationships/questions and named guide repeats were reconciled within the bounded cohort. | The batch record preserves ordered edge membership/direction, endpoint checks, answer components, source-span distinctions and accessible limitations. This is a local review, not global semantic acceptance. |
-| S16-03 | **Proposed done; attested.** The 233-card identity set, all 13 Source Reference sections, typed header order and protected source/corpus scope were checked against the pinned baseline. | Exactly 17 authorized source paths changed; 220 other cards and all 161 prepared-source files are unchanged. Recursive frontmatter comparison found only the authorized scalar exceptions. CDC should reproduce the preservation evidence. |
-| S16-04 | **Proposed done; attested.** Skill version/history, native validation gates, fresh design package and separate scoped source commit are recorded. | Version contract: 24 source skills/24 packages/0 errors. Package-path check: 388 Markdown files, 0 hard failures, 596 warnings and 3 documented exceptions. Fresh `make design` archive SHA256 is recorded; all eight Markdown members match committed source byte-for-byte. The ZIP omits cards. |
+| S16-01 | **Proposed done for this bounded correction.** The complete twelve-card reread repaired repeated assertions across affected sections; numeric/syntax examples and mapping scopes now agree. | Batch record contains the per-card five-outcome review and corrected numeric witnesses. E00 resolves the red/blue sRGB midpoint to `(0.5,0,0.5,1)`. The immutable historical Drasner capture remains unavailable, so original-source fidelity is not asserted. CDC acceptance remains pending. |
+| S16-02 | **Proposed done for this bounded reconciliation.** The 53 header relationship occurrences, ten CQ occurrences/five texts, card-body relationship statements and guide repetitions are recorded at their actual subjects. | Batch record gives exact zero-based metadata field/index, endpoint revision/direction, support construct and outcome; body heading inventory; CQ occurrence indices and bounded answer locations. The guide now includes a decoded opaque rendered-sRGB pair, luminance/ratio calculation and criterion context. This is not global semantic acceptance. |
+| S16-03 | **CDC-done retained; iteration preservation rechecked.** | The accepted baseline comparison remains source `8f622e44` / planning `e04d8846`. This iteration’s net source delta is exactly thirteen allowed files: twelve card bodies and the colour guide. All 233 identities remain; twelve headers and literal Source Reference sections are byte-identical; 221 other cards, 161 source files, foundations, design entrypoint and version history are unchanged. |
+| S16-04 | **Proposed done for local integration and return.** | Three scoped source commits carry required trailers. Sequential version gate: 24/24, zero errors. Package-path gate: 388 Markdown files, zero hard failures, 596 warnings, three explicit exceptions. Fresh final `make design`: archive SHA256 `19cd7ca6d7363b84e0f598f837c62ab650c143fa5fdd7ca611383602f14bf757`; all eight Markdown members match committed source bytes. The package excludes cards. No hosted, runtime, AT or release acceptance is claimed. CDC review remains open. |
 
 ## Source and validation return
 
-Source commit: `8f622e4426484eed56c918f69206c429129f9e32` on `main`, containing
-exactly the 17 source paths listed in the assignment and both required
-co-author trailers. Planning changes are separately scoped to this report,
-the batch record and ledger Evidence/Notes fields.
+Source `main` final: `19c7a08a459d19aa0a51e76cd7f6156fe18111b3`. Scoped commits: `fe03d10d8d38ee9d7c78a6442f6274aeb1a88fa3`, `3883a2fdfe88a069180c8e6df3e3e2338d0e125c` and `19c7a08a459d19aa0a51e76cd7f6156fe18111b3`, each with `Co-authored-by: Codex <noreply@openai.com>` and `Co-authored-by: Billo AI <ai-engineering@billo.systems>`. Exact 13 paths and before/after hashes are in the batch record. Existing untracked `knowledge/lfe/` was preserved.
 
-`make help`, `make check-skills`, `make check-skill-versions` and
-`make check-package-paths` passed. An earlier sandbox attempt could not write
-generated package artifacts; the approved source-checkout rerun completed with
-zero errors and zero package-path hard failures. A separate fresh `make design`
-produced `target/skills/visual-design-system.zip`, SHA256
-`4e0fd8895ddd5c38b07e623c03c8d94fb648db66c470e5f02029c6cfc7a7a691`; all eight
-Markdown members matched committed source bytes. There were zero mismatches.
-The package omits concept cards and proves neither their semantics nor hosted
-rendering.
+`make help` passed. Sequential `make check-skill-versions` passed with 24 source skills, 24 packages and zero errors. The first concurrent run collided in shared build output; its transient errors did not reproduce sequentially. `make check-package-paths` passed with 24 zips, 388 Markdown files, zero hard failures, 596 warnings, three explicit exceptions and 684 skipped external URLs. The CDC `make check-skills` result remains applicable because design skill description/metadata inputs were unchanged. The final separate `make design` passed after the final source commit; it reported the existing 360-character design skill description as one over its 300-character editorial target. All eight Markdown members compare byte-for-byte with committed source.
 
-Additional checks: 233 unique indexed paths equal the current card roster;
-13/13 literal Source Reference sections match; recursive frontmatter order and
-types match except the explicitly authorized scalar exceptions; 220 cards and
-161 prepared-source files are unchanged; changed-path scope is exactly 17;
-21 changed-Markdown local reference targets resolved with zero broken targets;
-all 17 changed tracked files use LF and end in a newline; `git diff --check`
-passed.
+Structural checks on the iteration delta: accepted index 233 rows/233 unique exact paths; only the named 13 source paths changed; all 221 non-cohort cards and all 161 prepared-source files match baseline; all twelve card headers and literal Source Reference sections match baseline; changed local relative Markdown links resolve; modified Markdown uses LF and final newline; `git diff --check` passes. Numeric calculations are direct arithmetic/spec reasoning, not browser execution.
 
 ## Boundaries and handoff
 
-The immutable historical Drasner capture remains missing, so source fidelity is
-limited to agreement with the prepared text. Browser/runtime behavior, hosted
-exact-revision views, assistive-technology checks, full-corpus review and release
-remain with their named owners. No push, publication, acceptance, slice close,
-or parent closure is claimed. CDC should independently inspect the source
-revision and reproduce the batch evidence, with the invalid gradient witness
-resolved through the Operator before S16-01 advances.
+The prepared article is not an immutable original capture; capture fidelity stays unresolved. Browser behavior/support, actual rendered UI and assistive-technology checks, exact-revision hosted views, full-corpus review and release remain with their named owners. This return creates no publication, push, acceptance, slice closure or parent closure. CDC should independently reproduce the evidence and decide the four ledger rows. No next slice is opened.
+
+Supporting artifact inventory: this report, `artifacts/batch-record.md`, and the ledger Evidence/Notes updates. Bubble-up: the CDC review required claim-by-claim correction across repeated card sections and occurrence-attached evidence; the current assignment resolves those defects within the approved cohort, with no plan or source-scope expansion.
