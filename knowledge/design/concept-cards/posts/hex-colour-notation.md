@@ -66,7 +66,7 @@ Drasner presents hexadecimal as another way to represent the same RGB values and
 3. Concatenate as `#RRGGBB`
 
 ## To Identify/Recognise:
-1. Starts with `#` followed by exactly 6 (or 3 shorthand) alphanumeric characters using [0-9A-Fa-f]
+1. Starts with `#` followed by exactly 3, 4, 6 or 8 hexadecimal digits using [0-9A-Fa-f]; 4/8-digit forms include alpha last
 2. `#000000` = black; `#FFFFFF` = white; `#FF0000` = red; `#00FF00` = green; `#0000FF` = blue
 
 # Context & Application

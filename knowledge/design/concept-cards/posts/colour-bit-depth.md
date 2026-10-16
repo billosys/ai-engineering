@@ -72,7 +72,7 @@ Drasner describes the growth in representable values with bit depth and gives a 
 
 # Examples
 
-**Example 1** (from source): "In terms of web color values in an RGB channel, we specify color on a range from 0-255" — Drasner's description of the 8-bit-per-channel range that underlies CSS rgb() values.
+**Example 1** (from source): "In terms of web color values in an RGB channel, we specify color on a range from 0-255" — Drasner’s historical description of the legacy 0–255 component scale; CSS syntax does not prescribe channel storage depth.
 
 # Relationships
 

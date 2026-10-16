@@ -83,13 +83,13 @@ Drasner describes the rgba syntax: "x is a number from 0-255 [for colour channel
 # Relationships
 
 ## Builds Upon
-- **RGB colour model** — rgba() adds transparency to RGB
+- **RGB colour model** — `rgb()` and `rgba()` are aliases; optional alpha adds transparency to the selected colour value
 
 ## Enables
 - **Semi-transparent colour** — Enables layering visual elements without full opacity
 
 ## Related
-- **CSS hsla()** — The HSL equivalent with the same alpha parameter
+- **CSS `hsl()` / `hsla()`** — Aliases that also accept optional alpha
 - **CSS opacity property** — A related but distinct transparency mechanism affecting the whole element
 
 # Common Errors

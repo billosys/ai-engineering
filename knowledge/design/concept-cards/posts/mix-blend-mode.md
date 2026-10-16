@@ -78,7 +78,7 @@ Drasner explains: "If you've used layer effects in Photoshop, you're probably fa
 
 # Examples
 
-**Example 1** (from source): "multiply is `destination × source = backdrop`" — the canonical blend mode; multiplying a red (1, 0, 0) by a blue (0, 0, 1) produces black (0, 0, 0) because all channels multiply to 0.
+**Example 1** (prepared-source shorthand): Drasner writes multiply as `destination × source = backdrop`. In the blend-function stage, multiplying opaque red `(1, 0, 0)` and opaque blue `(0, 0, 1)` produces black `(0, 0, 0)` because every channel product is zero; the blend result then enters the separate compositing stage.
 
 **Example 2** (from source): Drasner gives the abbreviated color-burn expression `1−(1−B)÷A`. For normalized backdrop `Cb` and source `Cs`, the defined separable blend function is: if `Cb==1`, return 1; else if `Cs==0`, return 0; otherwise return `1−min(1,(1−Cb)/Cs)`. This blend function is followed by, and is distinct from, alpha compositing.
 

@@ -58,7 +58,7 @@ Drasner explains that "hsl values work with hue, saturation, lightness values" a
 
 # Key Properties
 
-1. Hue: 0–360 degrees (0=red, 120=green, 240=blue, 360=red again; circular, values outside 0–360 wrap)
+1. Hue wraps around one full turn; numeric hues use degrees (0=red, 120=green, 240=blue), and CSS accepts angle units such as `turn`, `rad` and `grad`
 2. Saturation: 0% (grey) to 100% (maximum colourfulness at that lightness)
 3. Lightness: 0% (black) to 100% (white); 50% at S=100% gives the nominal saturated hue
 4. Optional alpha accepts a number or percentage; 0 is transparent and 1/100% is opaque

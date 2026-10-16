@@ -67,7 +67,7 @@ Drasner explains: "In terms of web color values in an RGB channel, we specify co
 
 ## To Construct/Create:
 1. Choose numeric components on the 0–255 scale or percentage components on the 0%–100% scale
-2. Write as `rgb(R, G, B)` or with alpha as `rgba(R, G, B, A)` where A is 0.0–1.0
+2. Write legacy comma syntax or modern space-separated syntax; add alpha with a comma in legacy form or a slash in modern form, using a number or percentage
 
 ## To Identify/Recognise:
 1. Recognize both legacy comma-separated and modern space-separated forms; component values need not be integers
