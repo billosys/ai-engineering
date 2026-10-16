@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.44**; Slices01–13 closed; Slice14 is active.
+Plan revision **1.45**; Slices01–13 closed; Slice14 Iteration01 is active.
 
 Deliver corrected portable design content, complete 233-card/eight-live-file
 review and reconciliation, and usable accessibility/typesetting procedures with
@@ -64,7 +64,7 @@ before each source assignment. Keep all 233 identities and eight live-file owner
 | [Slice11 — layout and measure source fixes](slice11-layout-and-measure-source-fixes/slice-plan.md) | Closed at sourcefce72353/planning8df2776a: four contexts and four criteria done; preserved teaching and fresh package independently checked | Accepted Slice04 policy, current sourcecbb5b893 and protected Slice10/Arc06 inputs; actual behavior remains separately owned |
 | [Slice12 — modular-scale card fixes](slice12-modular-scale-card-fixes/slice-plan.md) | Closed at source8b408c03/planning7c65468e: all four bounded review/correction criteria done | Original capture/fidelity, uninspected endpoint/empirical scope and affected hosted applicability remain owned |
 | [Slice13 — base and ratio selection](slice13-base-and-ratio-selection/slice-plan.md) | Closed at sourceeeb1afa5/planninge7517f61; all four criteria done, exact references and joins repaired | Retained independent math/metadata/package; source fidelity and affected hosted re-entry remain |
-| [Slice14 — scale application and responsive scope](slice14-scale-application-and-responsive-scope/slice-plan.md) | Active: three complete application/rhythm/responsive cards, supported body repairs and five exact existing scalar corrections | Accept Slice13; sourceeeb1afa5; shared Brown prepared context, no original-fidelity dependency for independent corrections |
+| [Slice14 — scale application and responsive scope](slice14-scale-application-and-responsive-scope/slice-plan.md) | Initial review: S14-03/04 done,01/02 open; Iteration01 repairs local scope/status claims and exact edge/CQ accounting | Candidateaf2c7fd4/planning89fc69d5; preserve independent math/metadata/package proof |
 | Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
 | Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
 | Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
@@ -146,8 +146,10 @@ at source8b408c03/planning7c65468e, all four criteria done with its explicit lim
 Was: Slice13 Iteration01 repaired protected references and source joins.
 Now: [Slice13 closes](slice13-base-and-ratio-selection/cdc-verification.md#iteration01-independent-review-and-slice13-closure--2026-10-15)
 at sourceeeb1afa5/planninge7517f61, four rows done. Current assignment is
-[Slice14](slice14-scale-application-and-responsive-scope/cc-prompt.md): correct
-three connected Brown application/rhythm/responsive cards in the same batch.
+[Slice14 Iteration01](slice14-scale-application-and-responsive-scope/cc-prompt-iteration01.md):
+its initial return atsourceaf2c7fd4/planning89fc69d5 independently passes
+preservation/package rows; correct remaining local scope/status and edge/CQ
+accounting before closure. Was: the initial three-card correction was active.
 The fourth remaining Brown card, musical-interval-typographic-ratio, retains
 later Arc02 ownership for its tuning/analogy/table/support boundaries. No new
 slice is issued for it yet. This sequencing keeps one coherent application task
@@ -165,6 +167,10 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.45 (2026-10-15): Slice14 initial review accepts two criteria; a local
+  refinement completes source qualifiers and field/component-specific outcomes.
+  Retain passing math/package evidence, later music-card ownership and all gates.
 
 - 1.44 (2026-10-15): Slice13 repair independently closes all four criteria.
   Open Slice14 for application/rhythm/responsive corrections; retain the music
