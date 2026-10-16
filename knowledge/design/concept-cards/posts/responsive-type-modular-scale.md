@@ -119,6 +119,8 @@ The inspected article does not discuss fluid type sizing with CSS `clamp()`, vie
 
 # Verification Notes
 
+Current bounded review (Slice14): The original “Verified” statement below, including “nothing extrapolated beyond the paragraph”, is retained as extraction history. It does not apply to this revision’s independently calculated width illustration. That calculation is a later worked example using Brown’s measurements, not CSS extracted from his responsive paragraph; it establishes neither font sizing nor tested browser behavior. Extraction-confidence and OCR observations are historical signals, not current original-source acceptance.
+
 - Definition source: Bounded paraphrase of one paragraph about responsive design and layout reference points; content is thin.
 - Confidence rationale: Low — the concept is mentioned but not developed. Brown devotes one paragraph to responsive design compatibility; there is no worked example, no specific CSS, and no detailed guidance. Marking as low confidence accordingly, per extraction instructions.
 - Uncertainties: The inspected article does not develop viewport-unit type sizing, CSS `clamp()`, custom-property token systems, multi-breakpoint scale adjustments, or actual responsive behavior.

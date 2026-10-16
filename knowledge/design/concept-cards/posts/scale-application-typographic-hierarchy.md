@@ -78,7 +78,7 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 2. **Iterative visual testing**: Values are tried, viewed in the browser, and adjusted; visual judgment arbitrates between adjacent scale options.
 3. **Permissive improvisation**: Non-scale values are acceptable when they suit the design; Brown documents several such decisions.
 4. **Comment math**: Brown records arithmetic for a combined value. The source states `21.178px` from `27.723 - 6.545`; the displayed arithmetic gives `21.178`. For line height, `1.54 - 0.146 = 1.394`. By contrast, `18 × 1.54 = 27.72`, not `27.723`. Nearby values or their comments do not by themselves establish scale membership.
-5. **Progressive enhancement**: Base/fallback CSS with generic fonts and conventional measurements should precede scale-based measurements; scale values depend on the specific typeface and may render poorly with fallback fonts.
+5. **Brown's fallback approach**: For his typeface-specific composition, Brown reports specifying baseline fonts and generic measurements before preferred-font and scale-based styles. This is a contextual strategy; fallback adequacy and current browser behavior require testing.
 
 # Construction / Recognition
 
@@ -99,7 +99,7 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 
 - **Typical contexts**: Full-page editorial web design; any project where a modular scale has been constructed.
 - **Common applications**: Selecting some type sizes and spatial measurements from a scale, with other values chosen for their context.
-- **Historical/stylistic notes**: Brown's CSS example is fully documented with actual numeric values, making it one of the most detailed public worked examples of modular scale application in web typography.
+- **Historical/stylistic notes**: Brown's prepared article contains a worked CSS example with numeric values and his explanations. The inspected inputs do not establish a ranking against other public examples.
 
 # Examples
 
@@ -160,6 +160,8 @@ Brown explicitly endorses improvisation: scale values are "educated suggestions.
 "Applying a modular scale in web design" — More Meaningful Typography, Tim Brown (A List Apart, May 2011)
 
 # Verification Notes
+
+Current bounded review (Slice14): The “Verified”, confidence-rationale and OCR entries below are retained extraction-era observations, not current whole-card or original-source verification. Current support is limited to inspected prepared passages and separately checked arithmetic; browser/fallback behavior, empirical benefit and original capture fidelity remain unassessed or unresolved.
 
 - Definition source: Direct quotes and paraphrase from the "Applying a modular scale in web design" section; CSS code blocks extracted directly from the source.
 - Confidence rationale: High — the section is a detailed worked example with actual CSS values and explicit justification for each decision.
