@@ -8,7 +8,8 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.46**; Slices01–14 closed; Slice15 is active.
+Plan revision **1.47**; Slices01–15 closed; no next slice issued.
+Operator hold: await the forked plan reassessment before opening subsequent work.
 
 Deliver corrected portable design content, complete 233-card/eight-live-file
 review and reconciliation, and usable accessibility/typesetting procedures with
@@ -65,7 +66,7 @@ before each source assignment. Keep all 233 identities and eight live-file owner
 | [Slice12 — modular-scale card fixes](slice12-modular-scale-card-fixes/slice-plan.md) | Closed at source8b408c03/planning7c65468e: all four bounded review/correction criteria done | Original capture/fidelity, uninspected endpoint/empirical scope and affected hosted applicability remain owned |
 | [Slice13 — base and ratio selection](slice13-base-and-ratio-selection/slice-plan.md) | Closed at sourceeeb1afa5/planninge7517f61; all four criteria done, exact references and joins repaired | Retained independent math/metadata/package; source fidelity and affected hosted re-entry remain |
 | [Slice14 — scale application and responsive scope](slice14-scale-application-and-responsive-scope/slice-plan.md) | Closed at sourced36f74bb/planningc24461a1, all four criteria done; exact qualifiers and16/6 local coverage accepted | Original fidelity and formal endpoint/global/empirical/hosted gates remain |
-| [Slice15 — musical-ratio boundaries](slice15-musical-ratio-boundaries/slice-plan.md) | Active: final Brown card, conditional numerical identity, exact ratios and source/analogy limits with same-batch corrections | Accepted core/selection/application results; currentd36f74bb and supplied Brown text; no new acquisition |
+| [Slice15 — musical-ratio boundaries](slice15-musical-ratio-boundaries/slice-plan.md) | Closed at source65ed7a05/planningb5ebd593; four bounded criteria independently done | Local conditional arithmetic/source limits accepted; original/global/behavior/hosted obligations remain |
 | Content review/fix batches | Read complete coherent card cohorts and guide contexts; inspect sources, assess all five dimensions, correct supported defects and reconcile affected relationships/CQs | Only inputs each result actually uses; preserve full population accounting |
 | Accessibility/typesetting batches | Add procedures and runnable examples where needed; test actual retained behavior, font fallbacks and text/layout adaptation | Accepted local technical decisions, not full Arc02 closure |
 | Final arc composition | Demonstrate complete card/live coverage, revision-aware global consistency, corrected findings and accessibility floor | All required content/input checks plus independent/Operator gate |
@@ -149,13 +150,14 @@ Now: [Slice13 closes](slice13-base-and-ratio-selection/cdc-verification.md#itera
 at sourceeeb1afa5/planninge7517f61, four rows done.
 Was: Slice14 Iteration01 was active after two accepted criteria. Now:
 [Slice14 closes](slice14-scale-application-and-responsive-scope/cdc-verification.md#iteration01-independent-review-and-slice14-closure--2026-10-16)
-at sourced36f74bb/planningc24461a1, all four done. Current assignment:
-[Slice15](slice15-musical-ratio-boundaries/cc-prompt.md) corrects the remaining
-Brown musical-interval card, preserving useful numerical teaching while
-separating supplied-source attribution, conditional mathematics, unsupported
-tuning/table provenance and perception. This is the final one of ten Brown
-identities to enter a bounded review/fix slice; it is not full original fidelity
-or whole-corpus/global acceptance. No acquisition or broader music inquiry.
+at sourced36f74bb/planningc24461a1, all four done.
+Was: Slice15 was active. Now: [Slice15 closes](slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16)
+at source65ed7a05/planningb5ebd593, all four criteria done. The ten Brown
+identities have bounded local review/fix records, with original/secondary,
+empirical and global obligations still owned. **No next slice is issued.**
+The Operator directs a hold on new assignments until the reassessment in the
+forked conversation is finished. Await its agreed outcome and Operator direction;
+no structural roadmap change or new inquiry is commissioned in this review.
 Do not repeat the accepted theory packet or restore removed legacy defaults.
 All corpus/readiness, broader research, actual browser and fresh-context task
 gates remain; no whole-file or full-finding closure follows from these source batches.
@@ -169,6 +171,10 @@ independent/Operator composition gate. Useful Arc06 or Arc04 work can proceed on
 accepted inputs while unrelated source-fidelity work remains blocked.
 
 ## Version History
+
+- 1.47 (2026-10-16): Slice15 independently closes all four bounded criteria.
+  Record Operator hold on new slices pending the forked reassessment; no Slice16
+  or new arc is opened, and full parent obligations remain unchanged.
 
 - 1.46 (2026-10-16): Slice14 independently closes all four criteria. Open
   the remaining Brown music card in Slice15 with direct, precisely scoped

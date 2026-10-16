@@ -1,16 +1,19 @@
 ---
 slice: slice15-musical-ratio-boundaries
-status: active
+status: closed
 depends-on: [slice14-scale-application-and-responsive-scope accepted, Brown prepared-source context]
 ---
 
 # Slice15 — Musical-Ratio Boundaries
 
-Plan revision **1.0**, opened2026-10-16. [Project](../../project-plan.md),
+Plan revision **1.1**, opened2026-10-16. [Project](../../project-plan.md),
 [arc](../arc-plan.md), [ledger](ledger.md) and [initial prompt](cc-prompt.md)
 govern. Two contributors; CDC Sofie plans/reviews separate CC via Operator relay.
 Expedited Mode. Source baseline `d36f74bbc173c84d2a0a979ae1770fbe604d1b76`;
-planning predecessor `c24461a185a2e966ff4fc7757f4b9169b2b346bf`. Actual issuing commit pinned at intake.
+planning predecessor `c24461a185a2e966ff4fc7757f4b9169b2b346bf`. Issuece424755; CC return source65ed7a05/planningb5ebd593.
+All four criteria independently accepted; [CDC close](cdc-verification.md)
+records the bounded result. The Operator holds new slices pending the forked
+plan reassessment; no next assignment is opened here.
 
 ## Useful result and boundaries
 
@@ -78,6 +81,10 @@ within this contract. One card/shared source and bounded peer context leave
 implementation, review and recovery headroom. No new investigation is required.
 
 ## Version History
+
+- 1.1 (2026-10-16): Independently accept all four bounded criteria at
+  source65ed7a05/planningb5ebd593; close the slice and record the Operator
+  hold on opening subsequent work until the forked reassessment is finished.
 
 - 1.0 (2026-10-16): Open the remaining Brown musical-ratio card for direct
   numerical/source repairs with six exact existing-field changes and scoped proof.
