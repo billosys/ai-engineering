@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 status: active
 depends-on: [arc01-metadata-research-and-requirements]
 blocks: []
-version: "1.29"
+version: "1.30"
 ---
 
 # Semantic Families And Capability Requirements
@@ -39,6 +39,13 @@ ledger method wording explicitly. Do not silently treat the new method as
 what the initial prompt required. An executed packet is reviewed against its
 actual assignment; any method change receives the same explicit treatment.
 No coverage change or new investigation budget is authorized by this plan.
+
+CRC acknowledged the project directive on 2026-10-16 at planning `4bf6338b`
+and source `8f622e44`. The Operator reports the Slice20 CC return is
+forthcoming, so the initial prompt is preserved as the dispatched/work-in-flight
+contract and no replacement is issued. CRC will inspect the actual return
+before deciding whether any proof-method amendment is needed. Slice21 remains
+unopened.
 
 The next design consumption is the existing P-15 discussion: portable, readable
 card metadata with direct graph lookup and scoped source/lifecycle information.
@@ -86,7 +93,7 @@ scope. Arc03/04 own integrated source delivery and real use after their gates.
 | cdc-directive01.md | 2026-09-17 | Response to arc crc-escalation01.md; existing Operator-approved bounded-slice planning authority | Approves eight/twelve mode-role split; names Slice17 remainder; A6-1/A6-3/A6-6 and all gates retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-09-17; planning `b748aca4f14a2c5a9418ddc2bbb08e6c3f818a28`, source `76a69fd9c295e78f23faa651746c2e36646e0ebd`, both clean; directive and coverage/frozen identities checked. Pre-opening recount/readiness completed; Slice15 issued under this directive. | Operator relays `slice15-provenance-roles-runs-and-shared-references/cc-prompt.md` to fresh CC; CRC independently reviews returned packet; material drift returns to CDC |
 | crc-escalation02.md | 2026-09-18 | Slice16 CRC closure at `3841734b`; arc `cdc-directive01.md` requires a new sizing decision | Enumerates 87 provenance candidates, five bounded options, 248 retained later-family pairs and CQ ownership question; A6-1/A6-3/A6-6/P-15 preserved | Answered by cdc-directive02.md; escalation preserved | Operator relays response to CRC |
 | cdc-directive02.md | 2026-09-18 | Response to arc crc-escalation02.md at `dee3052c`; follows arc directive01 | Exact Sets A-E become Slice17-21; 248 other pairs retain owners; all A6/P gates unchanged | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779`; Slices17-19 independently CRC-closed, with Slice19 accepted after Iteration01 at `30facb12`; Slice20 fresh readiness checked against planning `30facb12` and source `a5861c4b` | Operator relays `slice20-cross-record-creation-time/cc-prompt.md` to fresh CC; CRC reviews the return; Slice21 remains unopened |
-| ../cdc-directive02.md | 2026-10-16 | Operator-requested completion reassessment; supersedes automatic sequencing/machinery defaults of arc directive02 | All retained families and A6/P gates; exact accepted/remaining sets unchanged | Issued; CRC acknowledgement pending | Reconcile Slice20, apply the explicit replacement method if unstarted, and select further inquiry by delivery need and agreed budget; CDC owns early Arc02/P-15 work |
+| ../cdc-directive02.md | 2026-10-16 | Operator-requested completion reassessment; supersedes automatic sequencing/machinery defaults of arc directive02 | All retained families and A6/P gates; exact accepted/remaining sets unchanged | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-10-16 against planning `4bf6338b`, source `8f622e44`, project 1.40, arc 1.29 and the Slice20 open set; unrelated untracked `knowledge/lfe/` preserved | Operator reports the Slice20 return is forthcoming; preserve and review the issued contract, record any proof-method change explicitly before acceptance, hold Slice21, and select later inquiry only by delivery need plus Operator-agreed budget; CDC owns early Arc02/P-15 work |
 
 ## Accepted Foundation And Preservation
 
@@ -196,6 +203,12 @@ or memory system changes belong to this arc's default scope. Any tooling
 change needs its own bounded explicit scope and verification.
 
 ## Version History
+
+- 1.30 (2026-10-16): CRC acknowledges project directive02 and reconciles
+  Slice20 as dispatched/work in flight based on the Operator's forthcoming-
+  report notice. Preserves the issued prompt, defers any proof-method amendment
+  until the actual return is inspected, and holds Slice21. No coverage,
+  criterion, source or inquiry-budget change.
 
 - 1.29 (2026-10-16): Operator-requested delivery refocus. Removes blanket
   Arc02 blocking and automatic field-count successors; retains every family,

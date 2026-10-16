@@ -4,7 +4,7 @@ status: active
 depends-on: [project05-concept-card-skill]
 blocks: []
 related: [project03-concept-card-method, CompCogNeuro/book, ai-music-theory]
-version: "1.40"
+version: "1.41"
 ---
 
 # Concept Card Metadata
@@ -263,7 +263,7 @@ approved work. Reconcile child learning records at arc/project closure.
 | --- | --- | --- | --- | --- | --- |
 | cdc-directive01.md | 2026-09-17 | No escalation/predecessor; Operator explicitly selects three contributors and Expedited Mode | Remaining Project08; Arc06 A6-1 through A6-10; Slice14 S14-1 through S14-6; P-1 through P-15 gates retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-09-17 after reading the directive, plans, ledgers, current and frozen coverage, Slice13 review, and both Slice14 prompts; source `020268248882358075b678bb855c0ac8d11b532a`, planning `d2a6ddcaeaadd8251156422dcc8897ccad985ab4`, both clean | CRC releases `arc06-semantic-families-and-capability-requirements/slice14-provenance-context-and-reference-semantics/cc-prompt-iteration01.md` through the Operator to fresh CC; CC returns its packet to CRC for independent review |
 | arc06/cdc-directive02.md | 2026-09-18 | Response to CRC escalation02 after independent Slice16 closure | Exact Slice17-21 Sets A-E; A6-1/A6-3/A6-6 and all P gates retained | Acknowledged by the same CRC context on 2026-09-18; Slices17-19 independently CRC-closed, with Slice19 accepted after Iteration01 at `30facb12`; Slice20 exact-set, population, temporal-boundary and prompt-author readiness checked against clean planning `30facb12` and source `a5861c4b` | Operator relays `arc06-semantic-families-and-capability-requirements/slice20-cross-record-creation-time/cc-prompt.md` to fresh CC; Slice21 remains unopened |
-| cdc-directive02.md | 2026-10-16 | Operator asks for completion-focused reassessment under the refreshed framework | Project roadmap and Arc06 sequencing; all P/A6 criteria retained | Issued, awaiting CRC acknowledgement; not a CC execution prompt | CRC reconciles active Slice20, stops automatic inventory-only successors and applies delivery-linked preparation; CDC brings the existing P-15 agenda to the Operator |
+| cdc-directive02.md | 2026-10-16 | Operator asks for completion-focused reassessment under the refreshed framework | Project roadmap and Arc06 sequencing; all P/A6 criteria retained | Acknowledged by CRC context `01a0b07b-a4f0-7882-9881-b95ebb600779` on 2026-10-16 after reading framework 2.7.2, methodology-stewardship, directive02, project 1.40, Arc06 1.29 and the Slice20 open set; planning `4bf6338b` clean, source `8f622e44` with unrelated untracked `knowledge/lfe/` preserved | Operator reports the Slice20 CC return is forthcoming; CRC preserves the issued prompt, issues no replacement, reviews the actual return before any proof-method amendment or acceptance, and does not open Slice21; CDC brings the existing P-15 agenda to the Operator |
 
 Do not mark acknowledgement on CRC's behalf. CRC records its actual session
 identity, read state, date and next action in this history before execution.
@@ -295,6 +295,12 @@ pairs and exit criteria; no new investigation or budget extension is approved.
 If executed, review the actual assignment and retain unaffected evidence.
 Then select work by the next profile decision, not automatic Slice21 numbering.
 CDC owns opening Arc02 and its first slice after the Operator discussion.
+
+CRC acknowledgement on 2026-10-16 records the Operator's statement that the
+Slice20 CC report is forthcoming. Treat the issued assignment as work in flight:
+no replacement prompt is issued before inspecting the return. The original
+proof contract remains the review baseline unless a proportionate replacement
+is explicitly recorded before acceptance. Slice21 remains unopened.
 
 The [transition register](./artifacts/arc01-transition-obligations.md) remains
 the complete record of inherited S1/S4/A1 obligations. Arc06 owns all of them,
@@ -479,6 +485,13 @@ Reducing a required capability or moving unfinished quality work to a future
 project requires an explicit operator decision recorded in the plan.
 
 ## Version History
+
+- 1.41 (2026-10-16): CRC acknowledges project directive02 against clean
+  planning `4bf6338b` and source `8f622e44` with unrelated untracked
+  `knowledge/lfe/` preserved. Reconciles Slice20 as dispatched/work in flight
+  because the Operator reports its CC return is forthcoming; preserves the
+  issued prompt, issues no replacement and holds Slice21. No coverage,
+  criterion, source or investigation-budget change.
 
 - 1.40 (2026-10-16): Operator-requested completion reassessment under the refreshed
   framework. Preserves product/no-loss/UAT outcomes; replaces blanket Arc06-first

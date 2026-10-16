@@ -4,9 +4,16 @@ Opening state: 279 accepted / 276 remaining / 11 assigned / 265 outside.
 Assignment is not acceptance. Slice21, the 248-pair later-family complement,
 all A6 rows and all project gates remain open.
 
-Current assignment: `cc-prompt.md`, under slice-plan version 1.0. CC updates
+Current assignment: `cc-prompt.md`, under slice-plan version 1.1. CC updates
 rows only with doer-attested evidence. CRC independently reproduces every done
 verifier before closure; CDC composition and Operator acceptance remain open.
+
+Project directive02 reconciliation: the Operator reports CC's return is
+forthcoming, so the issued prompt remains the review baseline and no replacement
+is issued before inspection. If CRC adopts a proportionate direct-check method
+after reviewing the return, it must amend this ledger and slice plan explicitly
+before acceptance, preserve failed/unrun required checks, and prove the same
+eleven outcomes. Slice21 is held; closure does not authorize it automatically.
 
 | ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |

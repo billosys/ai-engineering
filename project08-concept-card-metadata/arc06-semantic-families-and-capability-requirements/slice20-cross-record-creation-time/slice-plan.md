@@ -4,7 +4,7 @@ arc: arc06-semantic-families-and-capability-requirements
 slice: slice20-cross-record-creation-time
 status: open
 depends-on: [slice19-cross-record-run-references]
-version: "1.0"
+version: "1.1"
 ---
 
 # Cross-Record Creation Time
@@ -34,7 +34,24 @@ open-set revision; later documentation commits do not replace its authority.
 
 | Prompt | Issued | Predecessor | Reason | Disposition |
 | --- | --- | --- | --- | --- |
-| cc-prompt.md | 2026-09-24 | Independently accepted Slice19 and arc directive02 | Exact Set D with eleven-kind state census, precision analysis, temporal-boundary diagnostics and no global timestamp policy | Current CC assignment; pending execution |
+| cc-prompt.md | 2026-09-24 | Independently accepted Slice19 and arc directive02 | Exact Set D with eleven-kind state census, precision analysis, temporal-boundary diagnostics and no global timestamp policy | Dispatched; Operator reports CC return forthcoming; preserved current assignment pending CRC review |
+
+## Project Directive Reconciliation (2026-10-16)
+
+CRC acknowledges project `cdc-directive02.md` at planning `4bf6338b` and source
+`8f622e44`. The Operator reports that CC's Slice20 return is forthcoming.
+Therefore this initial prompt is preserved as the dispatched/work-in-flight
+contract; CRC issues no numbered replacement before inspecting the actual
+return.
+
+The prompt's wrapper, distinct recipe endpoint and mutation controls remain the
+issued review baseline for now. The refreshed framework does not silently erase
+them. If review shows that a proportionate direct-check method can establish
+the same eleven meanings and acceptance outcomes, CRC must record that method
+explicitly in this plan and ledger before acceptance, preserving successful
+unaffected evidence and every failed required check. No helper framework or new
+inquiry is commissioned. Slice21 is not an automatic successor and remains
+unopened pending an Operator-agreed usefulness/applicability/budget decision.
 
 ## Exact Scope And Ownership
 
@@ -136,9 +153,11 @@ registered inputs. Handoff retains all later owners and gates.
 The seven ledger rows cover exact scope, intake/evidence registration, native
 and historical states, kind-specific meanings, temporal/precision diagnostics,
 committed replay and handoff. CC may attest proposed-done only after every row
-has evidence. CRC retrieves committed bytes, executes the declared replay and
-independently reviews all eleven meanings before any pair enters accepted
-coverage. Slice21 stays unopened until that acceptance and fresh readiness.
+has evidence. CRC retrieves committed bytes, reviews the actual issued proof
+contract and independently reviews all eleven meanings before any pair enters
+accepted coverage. Any revised proof method is recorded before acceptance.
+Slice21 stays unopened; Slice20 acceptance does not itself authorize a
+successor inquiry.
 
 ## Prompt-Author Readiness
 
@@ -161,6 +180,11 @@ coverage. Slice21 stays unopened until that acceptance and fresh readiness.
   scope. This author self-review is not CC evidence or independent acceptance.
 
 ## Version History
+
+- 1.1 (2026-10-16): CRC acknowledges project directive02 and records the
+  Operator's forthcoming CC-return notice. Preserves the initial prompt as the
+  dispatched/work-in-flight contract, issues no replacement, requires any
+  proof-method revision to be explicit before acceptance, and holds Slice21.
 
 - 1.0 (2026-09-24): CRC opens directive02 Set D after independent Slice19
   acceptance and fresh population, precision, temporal-boundary and prompt-
