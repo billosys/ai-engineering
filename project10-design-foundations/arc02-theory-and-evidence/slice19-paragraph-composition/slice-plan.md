@@ -6,11 +6,13 @@ depends-on: [accepted corpus and source records, Slice18 closure]
 
 # Slice19 — Paragraph Composition
 
-Revision **1.0**, opened2026-10-17. Two contributors: CDC Sofie plans/reviews
+Revision **1.1**, opened2026-10-17; updated2026-10-17. Two contributors: CDC Sofie plans/reviews
 separate CC through the Operator; Expedited Mode. [Project](../../project-plan.md)1.73,
-[arc](../arc-plan.md)1.56, [ledger](ledger.md), [assignment](cc-prompt.md).
-SOURCE/main pin `7068045aacd6cb75b856786a1de070791f21c2a8`; planning predecessor
-`da8dfaeb9950c55b3e6992664a3535bf5464d020` independently closes Slice18. The adding commit issues this open set.
+[arc](../arc-plan.md)1.56, [ledger](ledger.md), [current assignment](cc-prompt-iteration01.md).
+Initial SOURCE/main pin `7068045aacd6cb75b856786a1de070791f21c2a8`; initial planning
+predecessor `da8dfaeb9950c55b3e6992664a3535bf5464d020` independently closes Slice18.
+Current Iteration01 uses SOURCE096fb4b3 and planning predecessor4c080693;
+its narrower mutation boundary and preserved handoff are recorded below.
 
 ## Usable delivery and bounds
 
@@ -97,13 +99,38 @@ identity; new technical clarification is labelled and supported separately.
 Required text/data plus eleven-card/source batch fits one implementation context
 with correction headroom; no separate preparation phase. Ready for CC execution.
 
+### Iteration01 author readiness
+
+CDC inspected the current source, whole guide and complete CC return against
+this contract. The [iteration](cc-prompt-iteration01.md) resolves both guide
+reference values and two card-body repetitions, applies Concept Cards guide06
+with recoverable final premises/directions, and supplies direct child-percentage
+and WCAG calculations that distinguish the rejected readings. Three source
+paths and the existing evidence outputs suffice; preserve current headers and
+owning version. No new investigation, tooling, schema or consequential design
+choice is left to CC. Native/package checks and retention boundaries are named;
+implementation and independent acceptance remain separate. Ready for execution.
+
 ## Assignment history
 
-- **Current / active:** `cc-prompt.md`, issued2026-10-17 by the adding commit;
-  predecessorda8dfaeb, SOURCE7068045a. Implement and return to CDC. All four
-  rows open; no source/semantic acceptance by opening and no CC successor.
+- **Initial / returned, partially accepted:** `cc-prompt.md`, issued2026-10-17
+  at4c1861e3; predecessor da8dfaeb, SOURCE7068045a. CC returned source096fb4b3
+  and planning4c080693. CDC accepts S19-03/04 at that candidate;01/02 remain
+  open for F01–F03 in [independent verification](cdc-verification.md).
+- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-17 by the
+  adding commit; planning predecessor4c080693, SOURCE096fb4b3. Repair the
+  guide's computation references, two cards' remaining repeated claims and
+  final relationship evidence. Exactly two card bodies/type guide plus the
+  existing three planning outputs; current headers/citations and1.0.16 freeze.
+  Retain accepted preservation/package evidence at its recorded revision;
+  rerun affected checks for the return. No closure or successor authority.
 
 ## Version History
+
+- 1.1 (2026-10-17): Independent initial review accepts preservation/integration
+  at096fb4b3/4c080693 and issues Iteration01 for F01–F03. Explicitly resolve the
+  initial WCAG shorthand to font-size-based values; preserve parent scope,
+  issued prompt and all four criteria. No project/arc roadmap amendment.
 
 - 1.0 (2026-10-17): Open the connected paragraph-control correction and practical
   packaged method after Slice18; preserve complete corpus and remaining owners.
