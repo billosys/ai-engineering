@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.56**, updated2026-10-17 under the Operator-approved
+Plan revision **1.57**, updated2026-10-17 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -130,7 +130,8 @@ accepted at SOURCE7068045a/CC planningb4b02892 by its
 Its close reveals no new architecture, scope or input dependency. **Active
 assignment: [Slice19](slice19-paragraph-composition/slice-plan.md#assignment-history)**,
 eleven connected paragraph/size/em cards and the packaged type method. Its open
-set owns the exact source, six scalar exceptions and four open child criteria.
+set owns the exact source, permitted metadata exceptions and current child
+criteria/dispositions; routine corrective iterations remain local there.
 All ten arc/thirteen project criterion states and higher gates remain unchanged.
 The Operator's2026-10-16 reassessment hold remains lifted.
 Future handoffs need the actual source, exact scope, complete bounded reads,
@@ -142,6 +143,12 @@ composition and Operator gates remain; useful Arc04 preparation can use accepted
 inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.57 (2026-10-17): Slice19 remains active after Iteration01 review. Keep exact
+  metadata exceptions/child dispositions in its slice plan/ledger rather than
+  duplicate a stale six-scalar/four-open summary here. Two existing CSS examples
+  and two source-table transcriptions need its local Iteration02; no sequence,
+  parent criterion, capability or release-gate change.
 
 - 1.56 (2026-10-17): After Slice18 closure, open Slice19 for the next ready
   connected Butterick paragraph controls and packaged type method. Source

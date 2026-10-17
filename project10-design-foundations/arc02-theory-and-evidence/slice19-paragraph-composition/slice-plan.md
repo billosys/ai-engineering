@@ -6,12 +6,12 @@ depends-on: [accepted corpus and source records, Slice18 closure]
 
 # Slice19 — Paragraph Composition
 
-Revision **1.1**, opened2026-10-17; updated2026-10-17. Two contributors: CDC Sofie plans/reviews
+Revision **1.2**, opened2026-10-17; updated2026-10-17. Two contributors: CDC Sofie plans/reviews
 separate CC through the Operator; Expedited Mode. [Project](../../project-plan.md)1.73,
-[arc](../arc-plan.md)1.56, [ledger](ledger.md), [current assignment](cc-prompt-iteration01.md).
+[arc](../arc-plan.md)1.57, [ledger](ledger.md), [current assignment](cc-prompt-iteration02.md).
 Initial SOURCE/main pin `7068045aacd6cb75b856786a1de070791f21c2a8`; initial planning
 predecessor `da8dfaeb9950c55b3e6992664a3535bf5464d020` independently closes Slice18.
-Current Iteration01 uses SOURCE096fb4b3 and planning predecessor4c080693;
+Current Iteration02 uses SOURCE0428cbfd and planning predecessorcfb084c2;
 its narrower mutation boundary and preserved handoff are recorded below.
 
 ## Usable delivery and bounds
@@ -37,8 +37,10 @@ Maximum14 source paths: these eleven cards, `knowledge/design/guides/type.md`,
 owning `knowledge/design/SKILL.md` and sibling history (1.0.15→1.0.16).
 Preserve all233 identities,222 other cards,161 source files, other five guides,
 Make/helper/schema/package lists and existing eleven heading sequences/literal
-Source References. Metadata is frozen except the **six existing CSS scalars**
-enumerated in the prompt. No fields, sources, confidence or identities invented.
+Source References. Metadata is frozen except **eight existing CSS scalars**:
+the six initial-prompt values plus exactly the two existing example scalars
+explicitly amended in [Iteration02](cc-prompt-iteration02.md). This corrects CDC
+freeze omissions in the same cohort, not new fields, schema or invented facts.
 
 Prepared sources under `knowledge/design/sources/md/practical-typography/`:
 body-text, typography-in-ten-minutes, point-size, em-sizing, line-spacing,
@@ -117,15 +119,30 @@ implementation and independent acceptance remain separate. Ready for execution.
   at4c1861e3; predecessor da8dfaeb, SOURCE7068045a. CC returned source096fb4b3
   and planning4c080693. CDC accepts S19-03/04 at that candidate;01/02 remain
   open for F01–F03 in [independent verification](cdc-verification.md).
-- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-17 by the
-  adding commit; planning predecessor4c080693, SOURCE096fb4b3. Repair the
+- **Iteration01 / returned:** `cc-prompt-iteration01.md`, issued2026-10-17 at
+  ca97cd41; planning predecessor4c080693, SOURCE096fb4b3. Repair the
   guide's computation references, two cards' remaining repeated claims and
   final relationship evidence. Exactly two card bodies/type guide plus the
   existing three planning outputs; current headers/citations and1.0.16 freeze.
   Retain accepted preservation/package evidence at its recorded revision;
   rerun affected checks for the return. No closure or successor authority.
 
+- **Current / active:** `cc-prompt-iteration02.md`, issued2026-10-17 by the
+  adding commit; planning predecessorcfb084c2, SOURCE0428cbfd. F01/F02 body/guide
+  work passes; F03 current joins pass with two predecessor transcriptions still
+  to repair. Correct only two frozen existing CSS example scalars and two batch
+  predecessor/status cells (F04/F05). Explicit six→eight exception amendment and
+  matching S19-03 count preserve all other metadata/bodies and1.0.16. S19-01/02
+  open;03/04 independently checked atC1 with affected return checks required.
+  The iteration's literal replacements/reversal/join recipe is author-ready;
+  no new inquiry or build machinery. No closure or successor authority.
+
 ## Version History
+
+- 1.2 (2026-10-17): Review Iteration01 at0428cbfd/cfb084c2; issue Iteration02 for
+  two existing CSS comments overlooked by CDC's freeze and two predecessor-table
+  transcriptions. Explicitly amend six→eight scalar exceptions/S19-03's count;
+  preserve all other criteria, accepted body/guide work and package evidence.
 
 - 1.1 (2026-10-17): Independent initial review accepts preservation/integration
   at096fb4b3/4c080693 and issues Iteration01 for F01–F03. Explicitly resolve the
