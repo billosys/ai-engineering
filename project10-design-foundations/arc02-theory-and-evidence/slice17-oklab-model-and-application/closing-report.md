@@ -10,7 +10,7 @@ the 17-path prompt allowlist. The planning return consists of this report, the
 | Criterion | CC proposal | Evidence and limit |
 |---|---|---|
 | S17-01 | **Open** | Bounded repairs across the 13 primary cards and focused article/spec calculations are recorded. Complete five-dimension outcomes and reconciliation of all repeated teaching have not been demonstrated. |
-| S17-02 | **Open** | The dangling `cielab` route was changed to `colour-space-comparison`; the dependent terminology family and two guide passages were repaired. Exact 79-edge/body-relationship and 20-CQ/body-question warrant mapping remains incomplete. |
+| S17-02 | **Open** | The dangling `cielab` route was changed to `colour-space-comparison`; the dependent terminology family and two guide passages were repaired. Exact 79-edge paths/directions and 20-CQ texts/components are recorded; per-edge premise support and body-relationship/body-question warrant mapping remains incomplete. |
 | S17-03 | **Proposed evidence only** | Exact 233-path roster, ordered typed header comparison outside 11 authorized scalars, preserved citations/headings and 17-path source scope were checked. CDC should independently reproduce. |
 | S17-04 | **Proposed evidence only** | Version/history 1.0.14, sequential native gates, fresh design ZIP and 8/8 packaged Markdown comparison passed. CDC should inspect commits and warning/failure record. |
 

@@ -21,8 +21,7 @@ validation-gate guidance; all 13 primary cards and the complete dependent
 `chroma-vs-saturation.md`; prepared Ottosson article (504 lines, display-only
 icon omission); prepared Okhsv/Okhsl sections 85–198 and 234–277; assigned
 foundations passages, design guide OKLCH passages and colour guide. Primary
-technical reading: Ottosson, CSS Color 4 CRD dated 2026-10-09 §§2, 9.1–9.6,
-10.9–12, 13.1–13.5, 14.1.6; CIE S 017:2020 terms 17-22-073 and 17-22-074.
+technical reading: [Ottosson, “A Perceptual Color Space for Image Processing”](https://bottosson.github.io/posts/oklab/); [CSS Color 4 CRD dated 2026-10-09](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/) §§2, 9.1–9.6, 10.9–12, 13.1–13.5, 14.1.6; CIE S 017:2020 [saturation 17-22-073](https://cie.co.at/eilvterm/17-22-073) and [chroma 17-22-074](https://cie.co.at/eilvterm/17-22-074).
 CSS Color 4 is a work-in-progress Candidate Recommendation Draft. Current web
 access is not an immutable historical capture. Source plots were not visually
 inspected; no original capture, browser, accessibility-tool or hosted behaviour
@@ -113,13 +112,119 @@ its packaged files, not concept cards or hosted rendering.
 ## Outstanding semantic work / limits
 
 The required complete occurrence-level review is not finished in this return:
-79 header edges were counted, but their exact per-occurrence direction, endpoint
-revision, premise, support and outcome have not all been recorded; the 102 body
-relationship statements and body-question occurrences have not received a
-complete occurrence-level reconciliation. The grouped CQ readback above is not
-substitute evidence for exact answer-component mapping. Several old examples and
-secondary statements may still need occurrence-by-occurrence review. This is why
+79 header edges now have exact source field/index, direction and resolved endpoint
+path/revision, but premise support and outcome have not been recorded for each.
+The exact 102 body statements were counted by source card but have not been
+cross-walked occurrence-by-occurrence to endpoint premises and outcomes. The CQ
+groups account for all 20 header question texts and map answer components present
+in the cards, but body-question occurrences and each occurrence-to-warrant join
+remain incomplete. Several old examples and secondary statements may still need
+occurrence-by-occurrence review. This is why
 S17-01 and S17-02 remain open. The exact path/typed-header preservation and native
 package evidence support S17-03/S17-04 only as proposed checks, not CDC closure.
 No parent, full-corpus, original-fidelity, hosted-rendering or release gate is
 accepted here.
+
+## Exact primary header-edge occurrence inventory
+
+The 79 entries below preserve each source card, field/index, endpoint path and typed direction. All endpoint paths are resolved in the current source candidate `485585ef`. “Target resolves” proves identity only; the table does not provide premise support/outcome for every relation. The corrected `perceptual-uniformity.related[2]` now targets the comparison card.
+
+| Source card | Field[index] | Relationship meaning | Endpoint card | Occurrence outcome |
+|---|---|---|---|---|
+| `knowledge/design/concept-cards/posts/chroma-perceptual.md` | `prerequisites[0]` | requires `chroma-perceptual` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/chroma-perceptual.md` | `prerequisites[1]` | requires `chroma-perceptual` ↔ `perceptual-uniformity` | `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/chroma-perceptual.md` | `related[0]` | related `chroma-perceptual` ↔ `lightness-perceptual` | `knowledge/design/concept-cards/posts/lightness-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/chroma-perceptual.md` | `related[1]` | related `chroma-perceptual` ↔ `colour-space-comparison` | `knowledge/design/concept-cards/posts/colour-space-comparison.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/chroma-perceptual.md` | `related[2]` | related `chroma-perceptual` ↔ `colour-interpolation-perceptual` | `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | `prerequisites[0]` | requires `colour-interpolation-perceptual` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | `prerequisites[1]` | requires `colour-interpolation-perceptual` ↔ `perceptual-uniformity` | `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | `prerequisites[2]` | requires `colour-interpolation-perceptual` ↔ `oklab-conversion` | `knowledge/design/concept-cards/posts/oklab-conversion.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | `extends[0]` | extends `colour-interpolation-perceptual` ↔ `perceptual-uniformity` | `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | `related[0]` | related `colour-interpolation-perceptual` ↔ `chroma-perceptual` | `knowledge/design/concept-cards/posts/chroma-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | `related[1]` | related `colour-interpolation-perceptual` ↔ `lightness-perceptual` | `knowledge/design/concept-cards/posts/lightness-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | `related[2]` | related `colour-interpolation-perceptual` ↔ `colour-space-comparison` | `knowledge/design/concept-cards/posts/colour-space-comparison.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `prerequisites[0]` | requires `colour-space-comparison` ↔ `perceptual-uniformity` | `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `prerequisites[1]` | requires `colour-space-comparison` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `prerequisites[2]` | requires `colour-space-comparison` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `prerequisites[3]` | requires `colour-space-comparison` ↔ `chroma-perceptual` | `knowledge/design/concept-cards/posts/chroma-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `prerequisites[4]` | requires `colour-space-comparison` ↔ `lightness-perceptual` | `knowledge/design/concept-cards/posts/lightness-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `extends[0]` | extends `colour-space-comparison` ↔ `perceptual-uniformity` | `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `related[0]` | related `colour-space-comparison` ↔ `colour-interpolation-perceptual` | `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space-comparison.md` | `related[1]` | related `colour-space-comparison` ↔ `gamut-srgb` | `knowledge/design/concept-cards/posts/gamut-srgb.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space.md` | `related[0]` | related `colour-space` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space.md` | `related[1]` | related `colour-space` ↔ `xyz-colour-space` | `knowledge/design/concept-cards/posts/xyz-colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space.md` | `related[2]` | related `colour-space` ↔ `lms-cone-responses` | `knowledge/design/concept-cards/posts/lms-cone-responses.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space.md` | `related[3]` | related `colour-space` ↔ `d65-whitepoint` | `knowledge/design/concept-cards/posts/d65-whitepoint.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/colour-space.md` | `related[4]` | related `colour-space` ↔ `gamut-srgb` | `knowledge/design/concept-cards/posts/gamut-srgb.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/d65-whitepoint.md` | `prerequisites[0]` | requires `d65-whitepoint` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/d65-whitepoint.md` | `related[0]` | related `d65-whitepoint` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/d65-whitepoint.md` | `related[1]` | related `d65-whitepoint` ↔ `xyz-colour-space` | `knowledge/design/concept-cards/posts/xyz-colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/d65-whitepoint.md` | `related[2]` | related `d65-whitepoint` ↔ `gamut-srgb` | `knowledge/design/concept-cards/posts/gamut-srgb.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/gamut-srgb.md` | `prerequisites[0]` | requires `gamut-srgb` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/gamut-srgb.md` | `prerequisites[1]` | requires `gamut-srgb` ↔ `d65-whitepoint` | `knowledge/design/concept-cards/posts/d65-whitepoint.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/gamut-srgb.md` | `extends[0]` | extends `gamut-srgb` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/gamut-srgb.md` | `related[0]` | related `gamut-srgb` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/gamut-srgb.md` | `related[1]` | related `gamut-srgb` ↔ `xyz-colour-space` | `knowledge/design/concept-cards/posts/xyz-colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/gamut-srgb.md` | `related[2]` | related `gamut-srgb` ↔ `colour-space-comparison` | `knowledge/design/concept-cards/posts/colour-space-comparison.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lightness-perceptual.md` | `prerequisites[0]` | requires `lightness-perceptual` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lightness-perceptual.md` | `prerequisites[1]` | requires `lightness-perceptual` ↔ `perceptual-uniformity` | `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lightness-perceptual.md` | `related[0]` | related `lightness-perceptual` ↔ `chroma-perceptual` | `knowledge/design/concept-cards/posts/chroma-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lightness-perceptual.md` | `related[1]` | related `lightness-perceptual` ↔ `colour-space-comparison` | `knowledge/design/concept-cards/posts/colour-space-comparison.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lightness-perceptual.md` | `related[2]` | related `lightness-perceptual` ↔ `colour-interpolation-perceptual` | `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lms-cone-responses.md` | `prerequisites[0]` | requires `lms-cone-responses` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lms-cone-responses.md` | `related[0]` | related `lms-cone-responses` ↔ `xyz-colour-space` | `knowledge/design/concept-cards/posts/xyz-colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lms-cone-responses.md` | `related[1]` | related `lms-cone-responses` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/lms-cone-responses.md` | `related[2]` | related `lms-cone-responses` ↔ `matrix-transformation-colour` | `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | `prerequisites[0]` | requires `matrix-transformation-colour` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | `prerequisites[1]` | requires `matrix-transformation-colour` ↔ `xyz-colour-space` | `knowledge/design/concept-cards/posts/xyz-colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | `extends[0]` | extends `matrix-transformation-colour` ↔ `oklab-conversion` | `knowledge/design/concept-cards/posts/oklab-conversion.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | `related[0]` | related `matrix-transformation-colour` ↔ `lms-cone-responses` | `knowledge/design/concept-cards/posts/lms-cone-responses.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | `related[1]` | related `matrix-transformation-colour` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | `related[2]` | related `matrix-transformation-colour` ↔ `oklab-conversion` | `knowledge/design/concept-cards/posts/oklab-conversion.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab-conversion.md` | `prerequisites[0]` | requires `oklab-conversion` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab-conversion.md` | `prerequisites[1]` | requires `oklab-conversion` ↔ `xyz-colour-space` | `knowledge/design/concept-cards/posts/xyz-colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab-conversion.md` | `prerequisites[2]` | requires `oklab-conversion` ↔ `lms-cone-responses` | `knowledge/design/concept-cards/posts/lms-cone-responses.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab-conversion.md` | `prerequisites[3]` | requires `oklab-conversion` ↔ `matrix-transformation-colour` | `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab-conversion.md` | `extends[0]` | extends `oklab-conversion` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab-conversion.md` | `related[0]` | related `oklab-conversion` ↔ `d65-whitepoint` | `knowledge/design/concept-cards/posts/d65-whitepoint.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab-conversion.md` | `related[1]` | related `oklab-conversion` ↔ `gamut-srgb` | `knowledge/design/concept-cards/posts/gamut-srgb.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `prerequisites[0]` | requires `oklab` ↔ `perceptual-uniformity` | `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `prerequisites[1]` | requires `oklab` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `prerequisites[2]` | requires `oklab` ↔ `xyz-colour-space` | `knowledge/design/concept-cards/posts/xyz-colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `extends[0]` | extends `oklab` ↔ `perceptual-uniformity` | `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `related[0]` | related `oklab` ↔ `lms-cone-responses` | `knowledge/design/concept-cards/posts/lms-cone-responses.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `related[1]` | related `oklab` ↔ `d65-whitepoint` | `knowledge/design/concept-cards/posts/d65-whitepoint.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `related[2]` | related `oklab` ↔ `chroma-perceptual` | `knowledge/design/concept-cards/posts/chroma-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `related[3]` | related `oklab` ↔ `lightness-perceptual` | `knowledge/design/concept-cards/posts/lightness-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `related[4]` | related `oklab` ↔ `colour-interpolation-perceptual` | `knowledge/design/concept-cards/posts/colour-interpolation-perceptual.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `related[5]` | related `oklab` ↔ `oklab-conversion` | `knowledge/design/concept-cards/posts/oklab-conversion.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `related[6]` | related `oklab` ↔ `colour-space-comparison` | `knowledge/design/concept-cards/posts/colour-space-comparison.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/oklab.md` | `contrasts_with[0]` | contrasts with `oklab` ↔ `colour-space-comparison` | `knowledge/design/concept-cards/posts/colour-space-comparison.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | `related[0]` | related `perceptual-uniformity` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | `related[1]` | related `perceptual-uniformity` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/perceptual-uniformity.md` | `related[2]` | related `perceptual-uniformity` ↔ `colour-space-comparison` | `knowledge/design/concept-cards/posts/colour-space-comparison.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/xyz-colour-space.md` | `prerequisites[0]` | requires `xyz-colour-space` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/xyz-colour-space.md` | `prerequisites[1]` | requires `xyz-colour-space` ↔ `d65-whitepoint` | `knowledge/design/concept-cards/posts/d65-whitepoint.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/xyz-colour-space.md` | `extends[0]` | extends `xyz-colour-space` ↔ `colour-space` | `knowledge/design/concept-cards/posts/colour-space.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/xyz-colour-space.md` | `related[0]` | related `xyz-colour-space` ↔ `lms-cone-responses` | `knowledge/design/concept-cards/posts/lms-cone-responses.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/xyz-colour-space.md` | `related[1]` | related `xyz-colour-space` ↔ `oklab` | `knowledge/design/concept-cards/posts/oklab.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/xyz-colour-space.md` | `related[2]` | related `xyz-colour-space` ↔ `oklab-conversion` | `knowledge/design/concept-cards/posts/oklab-conversion.md` | Target resolves; warrant not independently accepted |
+| `knowledge/design/concept-cards/posts/xyz-colour-space.md` | `related[3]` | related `xyz-colour-space` ↔ `matrix-transformation-colour` | `knowledge/design/concept-cards/posts/matrix-transformation-colour.md` | Target resolves; warrant not independently accepted |
+
+## Frozen-prompt body-relationship denominator
+
+The issued pin contains 102 relationship statements in the thirteen `# Relationships` sections. The source card occurrence counts are: `chroma-perceptual.md` 7; `colour-interpolation-perceptual.md` 9; `colour-space-comparison.md` 8; `colour-space.md` 6; `d65-whitepoint.md` 4; `gamut-srgb.md` 8; `lightness-perceptual.md` 10; `lms-cone-responses.md` 6; `matrix-transformation-colour.md` 8; `oklab-conversion.md` 7; `oklab.md` 14; `perceptual-uniformity.md` 7; `xyz-colour-space.md` 8. The prose relationship sections were revised in the named cards, but the 102 occurrence-by-occurrence endpoint-premise/outcome map is still incomplete; see outstanding-work boundary above.
+
+## Exact primary CQ occurrence map
+
+| Exact question | Primary occurrences | Answer component present in current card body | Support and limit |
+|---|---|---|---|
+| “What makes a colour space perceptually uniform, and why does it matter for design?” | `colour-interpolation-perceptual`, `colour-space-comparison`, `colour-space`, `d65-whitepoint`, `gamut-srgb`, `lightness-perceptual`, `oklab`, `perceptual-uniformity` (8) | Coordinate differences aim to correspond consistently to perceived differences under stated conditions; Oklab is fitted/approximate. This can inform candidate construction/interpolation; check gamut and rendering. | Ottosson model goals and CSS Color 4 §9.2; no all-context guarantee, and each card's remaining claim premises still need CDC review. |
+| “How do you construct a palette that changes lightness uniformly across hues?” | `chroma-perceptual`, `colour-interpolation-perceptual`, `colour-space-comparison`, `lightness-perceptual`, `oklab` (5) | Choose contextual L/C/h candidates; vary hue as intended; check target gamut/rendering and actual rendered sRGB foreground/background pairs for contrast; adjust. | Current colour/design guide method and approximate Oklab model; L is not WCAG luminance and does not certify equal appearance. |
+| “How do you convert between colour spaces for image processing?” | `lms-cone-responses`, `matrix-transformation-colour`, `oklab-conversion`, `oklab`, `xyz-colour-space` (5) | State input encoding/reference; decode encoded sRGB; use matching coefficients; compose compatible linear stages around a signed real cube-root stage; reverse for inverse; encode only when needed. XYZ is useful but not mandatory. | Ottosson's two formula forms; CSS Color 4 conversion distinctions. Coefficient family and finite-precision limits must stay explicit. |
+| “What distinguishes chroma from saturation in perceptual colour models?” | `chroma-perceptual` (1) | Oklab C is `hypot(a,b)`; CIE chroma references a similarly illuminated achromatic field, while CIE saturation references the stimulus's own brightness. HSL/HSV parameters are model-specific; no universal C/L law. | CIE S 017:2020 17-22-073/074 and Ottosson picker discussion. No broader Okhsl/Okhsv family acceptance. |
+| “What is the mathematical relationship between perceptual uniformity in colour and equal temperament in music?” | `perceptual-uniformity` (1) | There is no identity: a fitted colour transform and 12-TET frequency ratios are different mathematics. The literal coordinate operation can be rigorous while the perceptual correspondence remains approximate. | Corrected loose analogy and rosetta note; no music-history or psychophysics inquiry. |
+
+These groups account for all 20 frozen header occurrences and their exact texts.
+They do not establish complete body-question coverage: body question statements
+and each occurrence's exact component/warrant joins remain for CRC to inspect.
