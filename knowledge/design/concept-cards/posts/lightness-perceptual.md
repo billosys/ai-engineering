@@ -53,9 +53,9 @@ Oklab L is produced by the model's complete conversion, including its nonlinear 
 
 # Construction / Recognition
 ## To Construct/Create:
-1. Choose contextual L/C/h candidates for the intended task.
-2. Check each converted colour against target gamut and inspect its rendering.
-3. Calculate contrast for each actual foreground/background sRGB pair using the accepted colour-guide procedure; adjust as needed. L cannot certify contrast.
+1. Choose contextual L_start, L_end and an integer n>0. For i=0…n, compute L_i=L_start+i(L_end−L_start)/n; this gives n+1 targets with equal numeric Oklab L steps.
+2. Apply the chosen L targets across the intended hues, selecting contextual C values for each candidate; equal numeric L steps do not promise equal perceived appearance.
+3. Convert candidates, check destination gamut/mapping and inspect rendering. Calculate contrast for each actual foreground/background sRGB pair using the accepted colour-guide procedure. Adjust as needed and report adjustments rather than presenting them as uniform L steps.
 
 ## To Identify/Recognise:
 1. Oklab L is a model lightness coordinate, not XYZ Y, CIELAB L*, HSV V or WCAG relative luminance.
@@ -64,7 +64,7 @@ Oklab L is produced by the model's complete conversion, including its nonlinear 
 # Context & Application
 
 - **Typical contexts**: Approximate neutral-ramp construction, palette candidates and contrast review. WCAG contrast is calculated from the relative luminance of the actual rendered foreground/background pair, not by comparing Oklab L values.
-- **Common applications**: Turning an image grayscale while preserving perceived lightness (set a=0, b=0 in Oklab); CSS `oklch()` first parameter; generating tonal scales for design systems.
+- **Common applications**: Constructing a neutral Oklab coordinate at the chosen model L by setting a=b=0; the resulting appearance is approximate and requires output, gamut and viewing-context checks. CSS `oklch()` first parameter; generating tonal-scale candidates for design systems.
 
 # Examples
 **Example 1** (source description): Ottosson describes a constant-L Oklab hue sweep and compares it with HSV. This is an attributed example; its image was not independently inspected and it is not a universal appearance claim. (Section: “Comparing Oklab to HSV”)

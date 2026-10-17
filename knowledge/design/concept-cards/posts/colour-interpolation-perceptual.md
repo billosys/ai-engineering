@@ -53,7 +53,7 @@ Ottosson describes even transitions as a design requirement and illustrates sele
 
 # Prerequisites
 
-- **Oklab** — The interpolation is performed in Oklab coordinates.
+- **Oklab** — For the article's Oklab interpolation example, endpoints are represented in Oklab coordinates; other selected interpolation spaces are also valid.
 - **Perceptual uniformity** — An approximate model property can inform a chosen interpolation path, but it is not required for interpolation to be mathematically defined. Compare the actual rendered result.
 - **Oklab conversion** — For the article’s Oklab example, convert endpoints into Oklab and convert to the selected output representation. Other spaces and output targets are also valid.
 

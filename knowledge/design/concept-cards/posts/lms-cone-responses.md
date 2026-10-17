@@ -50,7 +50,7 @@ In the article's XYZ-form expression, M1 multiplies XYZ to produce approximate l
 ## To Construct/Create:
 1. Start with normalised XYZ coordinates (D65 whitepoint, white = Y=1).
 2. Apply the published XYZ matrix with the stated order: M1 (3×3) × XYZ column (3×1).
-3. Apply the componentwise signed real cube root before the second transform; the resulting lowercase l/m/s values are fitted intermediate coordinates, not measured cone responses.
+3. Apply the componentwise signed real cube root to the unprimed M1 outputs (l,m,s), yielding primed (l′,m′,s′); then apply M2 to that primed column to obtain final uppercase (L,a,b). The lowercase intermediates are fitted coordinates, not measured cone responses.
 
 ## To Identify/Recognise:
 1. LMS is an intermediate step — l, m, s values are not directly presented as the output colour; they are transformed further.

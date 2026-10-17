@@ -44,14 +44,14 @@ css_implementation:
 Oklab conversion from encoded sRGB first decodes to linear sRGB, applies a linear transform, a real cube-root stage and another linear transform; reverse conversion reverses those stages and re-encodes when encoded output is wanted.
 
 # Core Definition
-The article presents a compact linear-sRGB implementation and an XYZ-form matrix sequence. In the XYZ form, M1 takes XYZ to approximate LMS-like values; in the RGB implementation, combined coefficients already include the linear-sRGB-to-XYZ stage. The forward route is linear transform → pointwise real cube root → linear transform. Its inverse reverses the stages, followed by sRGB encoding for encoded output. Adjacent linear stages compose, but the complete route is nonlinear. Use a matched published coefficient family; the article's 2021 update refers to its linear-sRGB code, not every XYZ matrix. The article’s structural neural-network comparison is an analogy about stages only; it does not claim biological fidelity, learned equivalence, or a measured performance relationship.
+The article presents a compact linear-sRGB implementation and an XYZ-form matrix sequence. In the XYZ form, M1 takes XYZ to approximate LMS-like values; in the RGB implementation, combined coefficients already include the linear-sRGB-to-XYZ stage. The forward route is linear transform → pointwise real cube root → linear transform. Its inverse reverses the stages, followed by sRGB encoding for encoded output. Adjacent linear stages compose, but the complete route is nonlinear. Use a matched published coefficient family; the article's 2021 update refers to its linear-sRGB code, not every XYZ matrix. Any neural-network comparison is optional card-author synthesis, absent from the prepared article; it implies no physiology, learned equivalence or measured performance relationship.
 
 # Prerequisites
 
 - **Oklab** — The target space must be understood.
 - **XYZ colour space** — The printed XYZ M1 accepts XYZ; the article’s combined linear-sRGB coefficients fold the sRGB-to-XYZ stage into that route. Neither makes XYZ mandatory for conversion.
 - **LMS cone responses** — The intermediate l, m, s values are approximate cone responses.
-- **Matrix transformation in colour conversion** — The algorithm consists of matrix multiplications.
+- **Matrix transformation in colour conversion** — The linear stages are matrix multiplications around a componentwise signed real cube-root stage; the complete algorithm is not only matrices.
 
 # Key Properties
 1. Decode encoded sRGB before using linear-sRGB conversion coefficients.
@@ -112,12 +112,12 @@ The article presents a compact linear-sRGB implementation and an XYZ-form matrix
 
 # Common Confusions
 
-- **Confusion**: The M1 matrix in the XYZ-form equations and the coefficient rows in the sRGB C++ code are different things.
-  **Clarification**: The C++ code combines the sRGB→XYZ and XYZ→LMS steps into a single matrix (M_combined = M1 × M_sRGB_to_XYZ), so the coefficients differ numerically from the XYZ-form M1, but the operations are equivalent.
+- **Confusion**: The XYZ-form M1 coefficients and combined linear-sRGB coefficients are interchangeable.
+  **Clarification**: For compatible RGB/XYZ definitions and column vectors, adjacent linear stages conceptually compose as M_combined = M_XYZ_to_LMS × M_RGB_to_XYZ. The separately printed, rounded XYZ and updated combined linear-sRGB coefficient families have different stated inputs and are not literally identical coefficient sets. Combined coefficients accept already-linear RGB; decode encoded sRGB first.
 
 # Source Reference
 
 "Converting from XYZ to Oklab"; "Converting from linear sRGB to Oklab"; C++ code listing.
 
 # Verification Notes
-Formulas and article versions were checked against the prepared source. The pipeline description is exact at the stated stage level; numerical examples use the article's literal coefficient family and ordinary precision. The prepared article compares the transform structure with a simple neural network; this is a structural analogy only, not a claim of biological fidelity, learned equivalence, or measured performance.
+Formulas and article versions were checked against the prepared source. The pipeline description is exact at the stated stage level; numerical examples use the article's literal coefficient family and ordinary precision. The prepared article contains no neural-network comparison. The optional analogy in Cross-Domain Connections is card-author synthesis only; it does not imply physiology, learned equivalence or measured performance.
