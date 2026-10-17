@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.55**, updated2026-10-17 under the Operator-approved
+Plan revision **1.56**, updated2026-10-17 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -60,13 +60,14 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice16 — CSS colour mechanics](slice16-css-colour-mechanics/slice-plan.md) | Closed: [independent acceptance](slice16-css-colour-mechanics/cdc-verification.md#iteration02-independent-review-and-slice16-closure) at source4acfec6d / planning0dced6bb; all four bounded criteria done. Twelve connected Drasner cards, local edges/CQs and dependent HSL/guide integration corrected; historical fidelity remains input-blocked. |
 | [Slice17 — Oklab model/application](slice17-oklab-model-and-application/slice-plan.md) | Closed: [independent acceptance](slice17-oklab-model-and-application/cdc-verification.md#iteration02-independent-acceptance-and-slice17-closure) at source4e635bb3 / CC return58905959; thirteen Oklab cards, bounded dependent terminology and two guide passages corrected/reconciled. Original-capture fidelity and higher gates remain open. |
 | [Slice18 — picker tradeoffs](slice18-colour-picker-tradeoffs/slice-plan.md) | Closed: [independent acceptance](slice18-colour-picker-tradeoffs/cdc-verification.md#iteration02-independent-acceptance-and-slice18-closure--2026-10-17) at SOURCE7068045a/CC planningb4b02892; eleven-card picker family, usable recipes and bounded local semantics; owning1.0.15. |
+| [Slice19 — paragraph composition](slice19-paragraph-composition/slice-plan.md) | Active: eleven connected Butterick paragraph/size/em cards plus the packaged type method; supported source corrections and local semantic review together; owning1.0.16. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice18 are delivery choices, not issued assignments or a fixed slice
-count. The Operator has lifted the hold; Slice18 is independently closed; select the next ready connected source/topic batch. Prefer
+Rows after Slice19 are delivery choices, not issued assignments or a fixed slice
+count. The Operator has lifted the hold; Slice19 is the current connected paragraph-composition batch. Prefer
 several related cards/guide contexts when coherent; split for actual input/context
 or implementation risk, not one field/card/dimension by default. The47 provisional
 groups,161 headings and460 keyword candidates are navigation, not mandatory slices
@@ -126,9 +127,11 @@ Expedited Mode. Slices01–18 are closed at their recorded bounded scopes.
 Most recent child: [Slice18](slice18-colour-picker-tradeoffs/slice-plan.md),
 accepted at SOURCE7068045a/CC planningb4b02892 by its
 [independent record](slice18-colour-picker-tradeoffs/cdc-verification.md#iteration02-independent-acceptance-and-slice18-closure--2026-10-17).
-Its close reveals no new architecture, scope or input dependency. No active
-child assignment while CDC prepares the next ready connected batch. All ten
-arc/thirteen project criterion states and higher gates remain unchanged.
+Its close reveals no new architecture, scope or input dependency. **Active
+assignment: [Slice19](slice19-paragraph-composition/slice-plan.md#assignment-history)**,
+eleven connected paragraph/size/em cards and the packaged type method. Its open
+set owns the exact source, six scalar exceptions and four open child criteria.
+All ten arc/thirteen project criterion states and higher gates remain unchanged.
 The Operator's2026-10-16 reassessment hold remains lifted.
 Future handoffs need the actual source, exact scope, complete bounded reads,
 preservation and adequate checks, without copied parent chronology. Routine
@@ -139,6 +142,11 @@ composition and Operator gates remain; useful Arc04 preparation can use accepted
 inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.56 (2026-10-17): After Slice18 closure, open Slice19 for the next ready
+  connected Butterick paragraph controls and packaged type method. Source
+  corrections, local semantics and integration stay together; other cohorts,
+  original-fidelity/behavior and higher gates retain their owners.
 
 - 1.55 (2026-10-17): Slice18 independently closes its eleven-card picker delivery
   and local semantics at7068045a/b4b02892; update child/current status only.
