@@ -6,10 +6,12 @@ depends-on: [accepted source and locator records, Slice16 CSS mechanics, Slice17
 
 # Slice18 — Colour Picker Tradeoffs
 
-Revision **1.0**, opened2026-10-17. Two contributors; CDC Sofie plans/reviews
+Revision **1.1**, updated2026-10-17 after the initial independent review.
+Opened2026-10-17. Two contributors; CDC Sofie plans/reviews
 separate CC through Operator; Expedited Mode. [Project](../../project-plan.md)1.73,
-[arc](../arc-plan.md)1.54, [ledger](ledger.md), [assignment](cc-prompt.md).
-SOURCE/main pin `4e635bb39b2c6151014b316f45f279d3682416d4`; planning predecessor
+[arc](../arc-plan.md)1.54, [ledger](ledger.md),
+[current assignment](cc-prompt-iteration01.md).
+Initial SOURCE/main pin `4e635bb39b2c6151014b316f45f279d3682416d4`; planning predecessor
 `a888e85710b18f031186b2bafde97d57bd8d0c02` independently closes Slice17.
 Issue is the commit adding this open set. No source or row accepted by opening.
 
@@ -101,13 +103,38 @@ review remains CC's execution work, not delegation of unresolved design policy.
 No new investigation or corpus/schema acquisition is authorized. Ready for the
 existing source-repair task with complete inputs and bounded acceptance.
 
+## Initial review and Iteration01 readiness
+
+[CDC review](cdc-verification.md) accepts S18-03/04 and leaves S18-01/02 open.
+Source7b20ccc3 contains useful revised recipes and passes preservation/integration;
+F01/F02 identify residual teaching errors and a lost accepted definition. F03
+requires actual connecting warrants and the corresponding CQ answer. No parent
+plan/criterion or scope change; routine refinement remains here, without advance.
+
+Iteration01 pins current SOURCEc9d98a3e and planning predecessor5d8f3a9f. External
+Fennel commits preserve the complete design tree at reviewed7b20ccc3 and planning
+Project10 atcc1f7ceb. Author inspected all eleven current bodies, complete return
+and actual affected source/endpoint premises; refreshed CIE definitions. Replayed
+the grey/chromatic countercases and retained positive toe/rational construction.
+The prescribed correction is limited to five bodies plus existing CC return
+records. Freeze all metadata/citations/headings and owning1.0.15. The prompt
+provides the actual repairs, one worked grouped warrant and discriminating
+checks; no converter, validator, new inquiry or historical replay is commissioned.
+Required reading is bounded to active instructions and this existing endpoint
+set. Ready for CC correction; no remaining design choice is delegated silently.
+
 ## Assignment history
 
-- **Current / active:** `cc-prompt.md`, issued2026-10-17 by the adding commit,
-  predecessor a888e857; SOURCE4e635bb3. Execute the coherent picker correction
-  and return to CDC. No CC return yet; no slice closure or successor by CC.
+- **Returned for review / refinement required:** `cc-prompt.md`, issued2026-10-17
+  in fe91602e, predecessor a888e857; SOURCE4e635bb3. CC source7b20ccc3/planningcc1f7ceb
+  independently reviewed: S18-03/04 done;01/02 open. Preserve the issued prompt.
+- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-17 by the commit
+  adding it, predecessor5d8f3a9f; SOURCEc9d98a3e (design equals7b20ccc3).
+  Repair F01–F03 and return to CDC. No slice closure or successor by CC.
 
 ## Version History
 
+- 1.1 (2026-10-17): Record independent initial review, two accepted rows and
+  the five-body teaching/semantic correction; preserve initial assignment.
 - 1.0 (2026-10-17): Open the remaining picker-source cohort with immediate
   teaching corrections, meaningful local semantics and owning micro integration.
