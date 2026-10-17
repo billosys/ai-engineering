@@ -58,7 +58,7 @@ Ottosson’s eight proposed goals are Orthogonal Lightness, Orthogonal Chroma, O
 1. Four distinct perceptual-control goals: lightness, chroma, saturation and hue.
 2. Two target-geometry goals: simple shape and maximum chroma at an edge.
 3. Two behavior goals: continuous variation and equally perceived change are not the same.
-4. The article’s table reports HSL/HSV, HSLuv, Munsell/NCS and Okhsl/Okhsv profiles for its sRGB discussion; all ratings retain their stated scope and subjectivity.
+4. The first comparison table reports HSV, HSL, HSLuv, Lab-like and NCS profiles; a later table compares Okhsv and Okhsl. Munsell is historical context, not a rated table profile. Ratings remain subjective and scoped to the article’s sRGB discussion.
 
 # Construction / Recognition
 
@@ -72,7 +72,7 @@ Ottosson’s eight proposed goals are Orthogonal Lightness, Orthogonal Chroma, O
 # Context & Application
 
 - **Typical contexts**: Colour picker software design, colour space research, evaluation of existing picker implementations
-- **Common applications**: Comparing HSL, HSV, HSLuv, NCS, and Oklab-based pickers against each other; guiding the design of future picker colour spaces
+- **Common applications**: Comparing the first table’s HSV, HSL, HSLuv, Lab-like and NCS profiles, then the later Okhsv/Okhsl comparison, against the eight criteria; guiding discussion of picker tradeoffs. Munsell provides historical context, not a rated profile.
 
 ## Cross-Domain Connections
 

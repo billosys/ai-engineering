@@ -83,7 +83,7 @@ The source toe constants are k1=.206, k2=.03 and k3=(1+k1)/(1+k2); toe(L)=(k3Lâˆ
 # Context & Application
 
 - **Typical contexts**: Colour picker design for applications where finding vivid/saturated colours is important, digital painting, graphic design tools
-- **Common applications**: Selecting the most vivid colour for a given hue; adjusting brightness of a colour while preserving its saturation relative to maximum
+- **Common applications**: Exploring maximum-chroma candidates for a specified hue in the article's sRGB/Okhsv construction; holding numeric h and s fixed while changing v. The source rates Okhsv no for Orthogonal Lightness and Varies Evenly, so changing v does not guarantee unchanged perceived hue or saturation, or a specified brightness.
 
 ## Cross-Domain Connections
 

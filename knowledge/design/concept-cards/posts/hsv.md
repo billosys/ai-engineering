@@ -72,11 +72,11 @@ Ottosson describes HSV saturation as relative to the maximum for the same hue at
 # Context & Application
 
 - **Typical contexts**: Digital painting applications (Photoshop, Procreate, GIMP), colour pickers in design tools, image processing
-- **Common applications**: Adjusting colour brightness while keeping hue consistent; selecting the most vivid version of a hue at V=1, S=1
+- **Common applications**: Holding numeric H and S controls fixed while changing V to explore candidates; selecting a maximum-chroma candidate at S=1, V=1 for the specified encoded-sRGB model and hue. Changing V does not guarantee preserved perceived hue or saturation, or a specified brightness.
 
 # Examples
 
-**Example 1** (source description): Ottosson illustrates HSV's hue distortion; the figure was not independently inspected: deep blue colours in HSV show "a purple shift as saturation decreases," demonstrating that S=0 achromatic axis produces different perceived hues than expected.
+**Example 1** (source description): Ottosson reports a purple shift as deep-blue HSV saturation decreases. This is attributed to the plotted example; the figure was not independently inspected. It does not assign perceived hue to the neutral endpoint, where Δ=0 and hue is powerless.
 
 **Example 2** (from source): The comparison table shows that HSV achieves "yes" for Simple Geometrical Shape and Max Chroma at Edge, but "no" for Orthogonal Lightness and Orthogonal Chroma, and only "partial" for Orthogonal Hue and Saturation.
 
@@ -99,7 +99,7 @@ Ottosson describes HSV saturation as relative to the maximum for the same hue at
 ## Contrasts With
 
 - **Okhsv** — Distinct coordinate construction and source-reported tradeoffs; avoid “drop-in” or numeric-compatibility claims.
-- **HSL** — At S=0, HSV V and HSL L describe different parameterizations of neutrals.
+- **HSL** — For encoded sRGB (.8,.2,.2), HSV gives S=.75,V=.8 while HSL gives S=.6,L=.5; their saturation and third-coordinate definitions differ.
 
 # Common Errors
 
@@ -116,7 +116,7 @@ Ottosson describes HSV saturation as relative to the maximum for the same hue at
 # Common Confusions
 
 - **Confusion**: HSV Saturation and HSL Saturation mean the same thing.
-  **Clarification**: Ottosson explicitly states they are not the same. HSV Saturation is relative to the maximum saturation of the same hue at V=1; HSL Saturation is relative to the most colourful colour at the same lightness.
+  **Clarification**: For classic encoded-sRGB formulas, HSV S=Δ/M when M>0, while HSL S=Δ/(1−|2L−1|) when Δ>0; both use S=0 for Δ=0. Ottosson's rough appearance account of HSV saturation relative to a same-hue maximum at V=1 is not the formula's universal perceptual meaning or CIE saturation.
 
 # Source Reference
 

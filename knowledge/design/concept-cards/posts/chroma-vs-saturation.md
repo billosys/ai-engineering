@@ -34,11 +34,11 @@ css_implementation: []
 ---
 
 # Quick Definition
-Chroma is a model-specific colourfulness coordinate; saturation is an appearance term or a model parameter whose meaning depends on its definition. HSL/HSV saturation parameters are not interchangeable with CIE perceptual saturation.
+In CIE appearance terminology, chroma relates colourfulness to the brightness of a similarly illuminated achromatic reference, while saturation relates it to the area’s own brightness. Oklab C and HSL/HSV “saturation” are model coordinates or parameters, not automatically those CIE attributes.
 
 # Core Definition
 
-Ottosson describes HSL saturation as roughly chroma relative to the most colourful colour at the same HSL lightness and hue, and says “relative chroma” is more accurate. HSV saturation has a different RGB-model definition. CIE chroma and saturation are appearance attributes with distinct reference relationships; neither yields a universal formula for HSL/HSV saturation. The picker article separately proposes orthogonal chroma and orthogonal saturation goals. Those labels do not prove perceptual independence. HSLuv and the newer picker models provide specific construction tradeoffs, not general tests of colour appearance.
+Ottosson describes HSL saturation as roughly chroma relative to the most colourful colour at the same HSL lightness and hue, and says “relative chroma” is more accurate; HSV saturation has a different RGB-model definition. CIE defines saturation as colourfulness of an area judged in proportion to its brightness, and chroma as colourfulness judged in proportion to the brightness of a similarly illuminated area that appears grey, white or highly transmitting ([saturation, 17-22-073](https://cie.co.at/eilvterm/17-22-073); [chroma, 17-22-074](https://cie.co.at/eilvterm/17-22-074)). The entries' notes condition approximate constancy on viewing and luminance conditions; chroma's notes also distinguish related and unrelated colours and surface luminance factor. These appearance terms do not yield a universal formula for HSL/HSV saturation. Oklab C=hypot(a,b) is a model coordinate, not CIE chroma by itself. The picker article separately proposes orthogonal chroma and orthogonal saturation goals; those labels do not prove perceptual independence. HSLuv and the newer picker models provide specific construction tradeoffs, not general tests of colour appearance.
 
 # Prerequisites
 
@@ -48,7 +48,7 @@ Ottosson describes HSL saturation as roughly chroma relative to the most colourf
 # Key Properties
 
 1. Oklab C=hypot(a,b) is a coordinate formula within that model; its perceptual interpretation depends on the model and conditions.
-2. CIE chroma and saturation differ in their reference relationships; avoid an unqualified C/L conversion rule.
+2. CIE saturation relates colourfulness to an area's own brightness; CIE chroma uses the brightness of a similarly illuminated achromatic reference. Both terms are conditioned by their viewing definitions; neither gives a universal C/L conversion.
 3. HSL and HSV saturation are distinct parameters derived from encoded RGB formulas.
 4. HSLuv and Okhsl/Okhsv define their own mappings; do not treat the shared word “saturation” as interchangeability.
 5. Independent numeric parameters, perceptual independence and even appearance steps are separate questions.
@@ -107,4 +107,4 @@ Ottosson describes HSL saturation as roughly chroma relative to the most colourf
 
 # Verification Notes
 
-This full available-evidence review checked the card’s teaching and relationships against the prepared picker article, the accepted Oklab/chroma terminology, CIE S 017:2020 entries 17-22-073/074, and the bounded CSS/HTML/NCS sources named in Slice18 where relevant. Corrected and retained claims are scoped to their named model/source; unsupported universal tests and maxima were removed or qualified. Extraction-confidence metadata remains predecessor metadata and was not recalculated. The prepared text does not establish original capture fidelity; figures, inaccessible Munsell-owner material, browser behavior and accessibility behavior were not independently checked.
+This full available-evidence review checked the card’s teaching and relationships against the prepared picker article, the accepted Slice17 Oklab/chroma endpoint, and CIE S 017:2020 entries 17-22-073/074 (definitions and notes) at https://cie.co.at/eilvterm/17-22-073 and https://cie.co.at/eilvterm/17-22-074. The bounded CSS/HTML/NCS sources were consulted only where relevant. Corrected and retained claims are scoped to their named model/source; unsupported universal tests and maxima were removed or qualified. Extraction-confidence metadata remains predecessor metadata and was not recalculated. The prepared text does not establish original capture fidelity; figures, inaccessible Munsell-owner material, browser behavior and accessibility behavior were not independently checked.

@@ -70,7 +70,7 @@ Ottosson frames this article around selecting colours in sRGB and shows how that
 
 # Examples
 
-**Example 1** (from source): Ottosson shows that the sRGB gamut plotted in Oklab coordinates with L_r on the Y-axis and chroma on the X-axis produces triangular cross-sections that differ substantially by hue (yellow versus blue versus magenta). The article presents this as motivation for its Okhsv and Okhsl tradeoffs; it does not establish a universal solution.
+**Example 1** (source description): In the Okhsv construction, the source uses L_r vertically and C·L_r/L horizontally for hue-specific sRGB cross-sections, then describes a triangular approximation, cusp remapping and a curved-top compensation through v. The axes and geometry are attributed to the prepared text; the figures were not independently inspected. The horizontal coordinate is scaled chroma, not raw Oklab C.
 
 **Example 2** (source-reported observation, not independently tested): "Several color pickers have been made using either CIELab or more modern lab-like color spaces... it is also common to see CIELab based color pickers showing colors outside the target gamut and often they are mapped back by simply clamping individual RGB components. This creates severe distortions in hue, lightness and chroma."
 
@@ -114,4 +114,4 @@ Ottosson frames this article around selecting colours in sRGB and shows how that
 # Verification Notes
 
 
-This full available-evidence review checked the definition and source-specific examples against the complete prepared picker article and the current CSS Color 4 Editor’s Draft dated 2026-10-09, especially §§7–7.2 and 14. The sRGB and picker comparisons remain source-scoped; conversion, mapping and clipping are distinguished. Figures were described from prepared text and not independently inspected. No device, browser, HDR, print or accessibility behavior was tested; original capture fidelity and full-corpus review remain open. Extraction-confidence metadata is unchanged.
+This full available-evidence review checked the definition and source-specific examples against the complete prepared picker article and CSS Color Module Level 4, a W3C Candidate Recommendation Draft published 2026-10-09 (https://www.w3.org/TR/2026/CRD-css-color-4-20261009/), especially §§7–7.2 and 14. The sRGB and picker comparisons remain source-scoped; conversion, mapping and clipping are distinguished. Figures were described from prepared text and not independently inspected. No device, browser, HDR, print or accessibility behavior was tested; original capture fidelity and full-corpus review remain open. Extraction-confidence metadata is unchanged.
