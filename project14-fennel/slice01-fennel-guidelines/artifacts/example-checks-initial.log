@@ -256,4 +256,3 @@ AP-06-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-example
 (assert (= 12 (double 6))))
 * Try deleting ).
 * Try adding matching opening delimiter earlier.
-

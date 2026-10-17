@@ -75,3 +75,11 @@ Limit: these executions use Fennel 1.6.1, fnlfmt 0.3.2 and PUC Lua 5.5. They do 
 establish compatibility on Lua 5.1/5.2/5.3/5.4 or LuaJIT or an embedded production
 host. The guide makes those target-specific checks explicit. No comparative
 performance or universal correctness claim is made.
+
+## Final record hygiene
+
+The planning-tree whitespace gate flagged a terminal blank line in the rendered
+initial example log. Its trailing blank lines were normalized to one newline;
+all diagnostic text and the full initial JSON results remain preserved. The source
+whitespace gate was already clean. The corrected planning diff is checked again
+before its final record commit.
