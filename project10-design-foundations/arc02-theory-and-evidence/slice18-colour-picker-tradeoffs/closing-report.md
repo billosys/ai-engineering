@@ -1,74 +1,22 @@
-# Slice18 CC return — Iteration01 proposal, not CDC acceptance
+# Slice18 CC return — Iteration02 proposal, not CDC acceptance
 
-This is the bounded CC return for `cc-prompt-iteration01.md`, issued by
-planning commit `c5670897d904c4d5dcb44902dd4928d6882cfe23` from predecessor
-`5d8f3a9ffed74dbf69255956e450b855a10a3ed6`. The assignment pinned SOURCE at
-`c9d98a3ec3d0a24c30a18431d7aeaa13f6451872`; the checkout contained a later,
-unrelated README deletion at `c5e743abb40db2f14b9332cea635a30f8b8a8d5b`, which
-was preserved. The exact source delivery is commit `7068045aacd6cb75b856786a1de070791f21c2a8`,
-parented on that checkout state and limited to the five authorized card bodies.
-The sole durable evidence artifact is the
-[Iteration01 batch record](artifacts/batch-record.md). CDC review is pending;
-this report proposes two rows open and carries the two already accepted rows.
+This planning-record-only correction is submitted for independent CDC review under `cc-prompt-iteration02.md`, issued by planning commit `de3560d169151f00ec03ac0523c81f74be89b667` from predecessor `0cf5991ea5465d89d4d6807f7c17cc255bd0a7e8`. Frozen SOURCE/main is `7068045aacd6cb75b856786a1de070791f21c2a8`. The only durable artifact is the [corrected batch record](artifacts/batch-record.md). This return does not close Slice18 or authorize a successor, source change, push or publication.
 
 ## Criterion dispositions
 
-| Criterion | Iteration01 CC disposition | Evidence and limit |
+| Criterion | Iteration02 CC disposition | Evidence and limit |
 |---|---|---|
-| S18-01 | **Proposed open** | The five-body F01/F02 teaching corrections and current fixtures are recorded. All eleven cards remain within the original five-dimension available-evidence review; this iteration corrects the five CDC-identified bodies. Source examples, model profiles and CIE definitions are carefully scoped. No accessibility, rendered-perception or original capture-fidelity result is claimed. |
-| S18-02 | **Proposed open** | All 66 edge identities/directions now point to exact grouped warrants with enumerated membership; the 65 predecessor joins and 15 CQ occurrences/three texts remain preserved. The changed HSV body join and chroma/saturation CQ now include actual formula and CIE-reference content. CDC must judge the support, not counts alone. |
-| S18-03 | **CDC done; renewed preservation replay** | Against assigned c9, all 233 identities and raw metadata headers survive; only five assigned bodies differ. Their headings and literal Source Reference sections are unchanged; the other 228 cards, all 161 prepared source files, guides, helpers, skill/history, schema and package inputs remain unchanged. No metadata exception was added. |
-| S18-04 | **CDC done; retained gate applicability checked** | CDC’s fresh native and package results at c9 remain applicable: this correction changes unbundled card bodies only; SKILL/history, Make/package dependencies and all eight packaged Markdown inputs are unchanged from c9. These are retained CDC results, not fresh CC gate runs. Both commits have exact path scopes and required trailers. |
+| S18-01 | **CDC-done** | Iteration01 independent acceptance stands for its bounded eleven-card available-evidence teaching scope. Original-source fidelity and full-corpus review remain open elsewhere. |
+| S18-02 | **Proposed complete for independent CDC review; ledger remains open** | Restored all65 predecessor body dispositions/final joins with only row11 corrected to current HSV/HSL text; retained six additions; repaired W09, W14 and W05; retained all66 header identities/directions and bounded CQ answers. See exact comparisons and group replay in the artifact. |
+| S18-03 | **CDC-done** | Iteration01 accepted source identity/metadata/header/citation/preservation replay remains at frozen source `7068045a`; this iteration makes no source change. |
+| S18-04 | **CDC-done** | Previously accepted applicable native/package results remain retained at their recorded revisions. This planning-only repair does not rerun them or claim fresh execution. |
 
-## F01–F03 delivery
+## Iteration02 correction
 
-F01 removes the false neutral-hue inference, keeps Ottosson’s attributed
-blue-shift example, replaces the neutral HSL/HSV contrast with encoded-sRGB
-RGB(.8,.2,.2), and reconciles HSV/Okhsv application and confusion text with
-their model limits. The gray cases RGB(.2,.2,.2) and RGB(.5,.5,.5) both give
-S=0 and V=L=g; hue is powerless. The chromatic case gives HSV
-S=.75,V=.8 and HSL S=.6,L=.5.
+The Iteration01 return at planning `0cf5991e` regressed the F04 table: all65 disposition/final-join rows became header-warrant references, and the prior report incorrectly claimed only row11 changed. Its F05 warrant also named HSLuv for row35, used Okhsv lines 345–425 for the HSL/Okhsl comparison, and left W05’s 17 learning routes vague. This return preserves that failure as history, restores the exact65-row table from planning `c5670897` with only row11’s final assertion changed, and keeps all six additions and bounded CQ answers unchanged. It corrects the three warrants and identifies 19 defined groups with intentional numbering gaps.
 
-F02 records Okhsv’s Lr and C·Lr/L axes, triangular approximation, curved-top
-compensation and v adjustment as prepared-text descriptions; the figures remain
-uninspected. The CSS note identifies the 2026-10-09 Candidate Recommendation
-Draft. The principles card distinguishes the first table’s HSV/HSL/HSLuv/
-Lab-like/NCS profiles from the later Okhsv/Okhsl table; Munsell is historical
-context. Chroma/saturation restores the CIE distinction: saturation relates
-colourfulness to an area’s own brightness; chroma relates it to a similarly
-illuminated achromatic reference. The CIE viewing/reference notes, Oklab
-C=hypot(a,b), HSL/HSV formulas and limits are captured in the card and CQ
-answer without a universal C/L equation.
+The exact artifact comparison, source-endpoint check, group membership recount, prior-evidence applicability and local record checks are detailed in the batch. Sole artifact: `artifacts/batch-record.md`. The finding bubbles up to Arc02 as a routine same-slice record correction; no parent plan, criterion or source scope changes.
 
-F03 replaces generic edge assertions with exact W-group row membership and
-endpoint-specific reasons in the batch record. The HSL/CSS syntax relationship
-is grounded in the accepted endpoint’s notation and normalization rules; the
-model-family edges distinguish source statements from editorial inference.
-The batch records the corrected #11 body join, unchanged remaining joins and CQ
-memberships, and the refreshed bounded answer for the chroma/saturation CQ.
+## Remaining boundaries
 
-## Source, planning and verification scope
-
-Source changes are exactly `hsv.md`, `okhsv.md`, `colour-gamut.md`,
-`colour-picker-design-principles.md` and `chroma-vs-saturation.md` under
-`knowledge/design/concept-cards/posts/`. No metadata, heading, citation, skill,
-history, helper, guide, schema, source, package-list or other card was changed.
-The unrelated source README deletion and untracked LFE work remain outside the
-source commit.
-
-Planning changes are exactly this report, the batch record, and Evidence/Notes
-cells in `ledger.md`. The initial prompt, Iteration01 prompt, slice plan, row
-criteria/statuses and CDC review are preserved. Source and planning commits are
-separate and path-limited. Current worktree check results, exact identities and
-limits are in the batch record. CDC’s toe/inverse, rational-map and Okhwb
-arithmetic are retained with the initial independent-review pointer because
-this iteration changes none of those inputs or constructions; they were not
-rerun or relabeled as current observations.
-
-The prior CDC-accepted S18-03/04 rows remain done. S18-01/02 return to CDC as
-proposals and remain open. This is not Slice18 closure, Arc02 composition,
-Project10 acceptance, source-fidelity/full-corpus review, live picker or
-accessibility verification, hosted rendering, release approval, push or
-publication. No successor slice is opened. The arc may use these findings in
-its normal composition review; any plan or parent-gate change remains for CDC
-to assess.
+P10-11 source-fidelity requirements, whole-corpus/global/live review, actual browser picker and accessibility/AT behavior, final hosted rendering, Arc02/Project10 composition and release remain open. The batch’s carried-forward math/native/package observations retain their original provenance and are not fresh runs. S18-02 remains open pending CDC; S18-01/03/04 retain their accepted done status. No source or ledger was edited.
