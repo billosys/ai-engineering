@@ -95,7 +95,7 @@ ordered YAML and differ only at the 11 enumerated primary scalar values. All 14
 literal Source Reference sections and heading sequences match the source pin.
 The dependent header/citation remain frozen. No helpers, schema, Makefile,
 packaging list, other cards or source files were changed. `git diff --check`
-passed. Source `main` is ahead six; no push.
+passed. Source `main` is ahead seven; no push.
 
 Sequential source gates: `make help` passed; `make check-skills` passed (24
 skills; 18 descriptions exceed the 300-character editorial target, none violate
