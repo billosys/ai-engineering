@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.51**, updated2026-10-17 under the Operator-approved
+Plan revision **1.52**, updated2026-10-17 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -58,13 +58,14 @@ remain in the previous plan revision and the unchanged child/history records.
 | Brown cohorts, Slices12–14 | Closed: [core](slice12-modular-scale-card-fixes/slice-plan.md), [selection](slice13-base-and-ratio-selection/slice-plan.md), [application](slice14-scale-application-and-responsive-scope/slice-plan.md). Bounded review/fixes, not full Brown fidelity/global edge acceptance. |
 | [Slice15 — musical-ratio boundaries](slice15-musical-ratio-boundaries/slice-plan.md) | Closed: [independent review](slice15-musical-ratio-boundaries/cdc-verification.md#independent-review-and-slice15-closure--2026-10-16) accepts all four bounded criteria at source65ed7a05/planningb5ebd593; historical hold lifted by the Operator on2026-10-16. |
 | [Slice16 — CSS colour mechanics](slice16-css-colour-mechanics/slice-plan.md) | Closed: [independent acceptance](slice16-css-colour-mechanics/cdc-verification.md#iteration02-independent-review-and-slice16-closure) at source4acfec6d / planning0dced6bb; all four bounded criteria done. Twelve connected Drasner cards, local edges/CQs and dependent HSL/guide integration corrected; historical fidelity remains input-blocked. |
+| [Slice17 — Oklab model/application](slice17-oklab-model-and-application/slice-plan.md) | Active: thirteen connected Oklab cards, dependent chroma/saturation terminology repair and two live-guide passages; local review/fixes, preservation and owning1.0.14 integration together. Original-capture fidelity and higher gates remain open. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice16 are delivery choices, not issued assignments or a fixed slice
-count. The Operator has lifted the hold; Slice16 is closed and the next ready batch is to be selected. Prefer
+Rows after Slice17 are delivery choices, not issued assignments or a fixed slice
+count. The Operator has lifted the hold; Slice17 is the next ready source/topic batch. Prefer
 several related cards/guide contexts when coherent; split for actual input/context
 or implementation risk, not one field/card/dimension by default. The47 provisional
 groups,161 headings and460 keyword candidates are navigation, not mandatory slices
@@ -125,8 +126,8 @@ Most recent child: [Slice16](slice16-css-colour-mechanics/slice-plan.md), accept
 at source4acfec6d / CC planning0dced6bb by its
 [independent record](slice16-css-colour-mechanics/cdc-verification.md#iteration02-independent-review-and-slice16-closure).
 Its close reveals no new project/arc scope or dependency; remaining delivery
-choices and all ten arc/thirteen project criteria retain their states. No active
-CC assignment until the next coherent ready batch's open set is issued.
+choices and all ten arc/thirteen project criteria retain their states. **Active slice: [Slice17](slice17-oklab-model-and-application/slice-plan.md#assignment-history).**
+Its open set owns the exact assignment and all four criteria start open.
 The Operator's2026-10-16 reassessment hold remains lifted.
 Future handoffs need the actual source, exact scope, complete bounded reads,
 preservation and adequate checks, without copied parent chronology. Routine
@@ -137,6 +138,10 @@ composition and Operator gates remain; useful Arc04 preparation can use accepted
 inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.52 (2026-10-17): After Slice16 closes, open the coherent Oklab model/application
+  batch with its directly affected terminology/guide repairs; no new investigation,
+  parent criterion or release acceptance.
 
 - 1.51 (2026-10-17): Slice16 closes after Iteration02 independent review. Record
   its bounded delivery and select the next ready batch under the unchanged scope;
