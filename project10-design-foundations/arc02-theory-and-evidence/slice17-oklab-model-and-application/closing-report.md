@@ -1,6 +1,6 @@
 # Slice17 CC return — proposed evidence, not CDC acceptance
 
-SOURCE commits: `c8b16c7e` and `26320610` on `main`. The source edits stay within
+SOURCE commits: `c8b16c7e`, `26320610` and `485585ef` on `main`. The source edits stay within
 the 17-path prompt allowlist. The planning return consists of this report, the
 [batch record](artifacts/batch-record.md), and evidence/notes updates in the
 [slice ledger](ledger.md). No push or publication occurred.

@@ -81,12 +81,14 @@ rendering, gamut mapping, original capture fidelity, or universal appearance.
 
 ## Preservation, integration and commits
 
-Two source commits, both with required co-author trailers:
+Three source commits, each with required co-author trailers:
 
 - `c8b16c7e` — exact 17-path Slice17 source write set, including 14 cards,
   foundations guide, design entrypoint and history.
 - `26320610` — additional substantive consistency repairs to seven of those
   named card paths; no path outside the issued set.
+- `485585ef` — further body-relationship corrections to five named cards; no
+  path outside the issued set.
 
 The exact 233-card roster was reproduced; the 14 touched card headers parse as
 ordered YAML and differ only at the 11 enumerated primary scalar values. All 14
