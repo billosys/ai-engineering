@@ -1,22 +1,22 @@
 ---
 slice: slice16-css-colour-mechanics
-status: active
+status: closed
 depends-on: [accepted Arc01 corpus and prepared-source records, current design source]
 ---
 
 # Slice16 — CSS Colour Mechanics
 
-Revision **1.2**, opened2026-10-16 after the Operator lifted the reassessment hold.
+Revision **1.3**, opened2026-10-16 after the Operator lifted the reassessment hold.
 Two contributors, Expedited Mode: CDC Sofie authors/reviews; separate CC implements
 through Operator relay. [Project](../../project-plan.md), [arc](../arc-plan.md),
 [ledger](ledger.md) and [initial assignment](cc-prompt.md) govern. Planning predecessor
 `c64c5835fed0ac5d2377ff3dc12fe854e35438ce`; SOURCE/main baseline
 `65ed7a05d602e775bfa5cec16bfb4ccf206c8c63`. The issuing commit is the commit adding
 this open set. Initial CC return: source8f622e44/planninge04d8846.
-CDC accepts S16-03; S16-01/02/04 remain open after Iteration01 review at
-source19c7a08a/planning40c80196. The current assignment is
-[Iteration02](cc-prompt-iteration02.md); see Assignment history. The narrowed
-body/evidence correction below governs over earlier mutation/check instructions.
+CDC accepted all four criteria on2026-10-17 at source4acfec6d / CC planning0dced6bb;
+see [independent closure](cdc-verification.md#iteration02-independent-review-and-slice16-closure).
+No active CC assignment. The initial prompt and both iterations remain historical
+issued records; their exact mutation/check constraints still delimit acceptance.
 
 ## Deliverable and exact scope
 
@@ -206,10 +206,11 @@ is a ready source-fix batch under the approved project, not a new research trial
 - Returned / reviewed: `cc-prompt-iteration01.md`, issued2026-10-16 atcf61f017,
   predecessore04d8846; returned at source19c7a08a/planning40c80196. Guide/native
   integration and preservation pass; F04–F06 remain. S16-03 done, three rows open.
-- **Current / active:** `cc-prompt-iteration02.md`, issued2026-10-16 in the commit
+- Accepted / final: `cc-prompt-iteration02.md`, issued2026-10-16 in the commit
   adding it, predecessor40c801963d2910d67503fde2f7ed5d3396097bc1. SOURCE pin19c7a08a.
   Correct F04–F06 within twelve card bodies and the same three return files;
-  freeze the guide and retain applicable independent evidence. No next slice.
+  freeze the guide and retain applicable independent evidence. Returned at source4acfec6d /
+  planning0dced6bb; CDC accepts all four rows on2026-10-17. No active assignment.
 
 ## Iteration01 author readiness and erratum
 
@@ -260,6 +261,9 @@ guideline-applied, design-complete, executable, falsifiable and within the curre
 four-row contract; accepted work is protected and context remains for execution.
 
 ## Version History
+
+- 1.3 (2026-10-17): Independently accept Iteration02 and close all four criteria;
+  preserve source-fidelity, actual-behavior, global and release boundaries.
 
 - 1.2 (2026-10-16): Review Iteration01; retain passing guide, preservation and
   package integration, and issue a narrower syntax/provenance/evidence refinement.

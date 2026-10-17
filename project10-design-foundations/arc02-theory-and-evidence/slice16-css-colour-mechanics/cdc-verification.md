@@ -297,3 +297,67 @@ actual browser/AT/hosted and parent/release gates remain open with their existin
 owners. No new project/arc decision, investigation, scope reduction or source
 acquisition: parents therefore need no amendment. This is the second refinement,
 within the existing five-iteration limit.
+
+
+## Iteration02 independent review and Slice16 closure
+
+2026-10-17. **Accepted; Slice16 is closed.** CDC Sofie independently reviewed
+SOURCE `4acfec6d8fa17e1ecb869bda28a6e71d17ef771e` and CC planning return
+`0dced6bb60ff0fb0bc53804297f252c14eddff77`, under issue
+`026d92e6a4f61571ecfa6c5ef663c9deee738d32` /
+[Iteration02](cc-prompt-iteration02.md). CDC made no source edits. All four
+opening criteria are done; no deferred/no-op/missing rows.
+
+| Row | Independent result and evidence |
+|---|---|
+| S16-01 | done — F04 now teaches percentage or number alpha in either syntax, modern number/percentage HSL S/L on the0–100 reference scale, and legacy percentage-only S/L. The stated valid/invalid examples agree with the pinned CSS Color4 grammar already inspected. F05 explicitly distinguishes all twelve cards' predecessor notes, frozen extraction confidence, current technical support, unavailable capture fidelity and unrun runtime behavior; specific RGB/HSL/blend and uncertainty contradictions are resolved. Prior whole-card/prepared-passage review and unaffected witness results remain applicable after direct delta inspection. |
+| S16-02 | done — F06 distinguishes locator arrows from semantic direction with the precise shared field rule. The RGB bit-depth CQ occurrence now supplies partial component range/precision support and names the actual bit-depth/hex count/gamut passages. The corrected row, five-outcome table and shared synthesis agree with those bodies. Existing53-edge/10-CQ membership,58 body relationships, affected HSL endpoint and worked guide results remain applicable; metadata, relationships prose and guide are unchanged in this delta. |
+| S16-03 | done — Fresh exact12-path delta comparison passes frozen raw headers, literal Source References and heading sets; only the two grammar families and authorized Verification Notes change. Accepted233-path index equals the current roster;221 other cards and all161 sources are unchanged. Prior65ed7a05→8f622e44→19c7a08a preservation composes with this directly inspected delta. |
+| S16-04 | done — Current source/planning commits have exact authorized paths, assigned parents and both trailers; twelve full-file before/after SHA256 pairs match committed bytes. Complete bounded CC return accounts for all four rows. Design metadata/history and every build/checker/package input are unchanged; prior independent sequential gates and8/8 package result at19c7a08a remain applicable. Current archive's eight Markdown members also match committed4acfec6d bytes by fresh read-only comparison. No native build is relabelled as freshly executed. |
+
+### Checks and evidence retention
+
+Fresh inspection covers the complete source/planning delta and the changed
+grammar/support notes in their previously reviewed card contexts. The pinned
+CSS Color4 CRD2026-10-09 §§4.2,5.1,7 supplies the contrasting grammar examples;
+no new browser-support claim is made. Exact source parent19c7a08a and planning
+parent026d92e6 match the assignment. Whitespace, LF/EOF, unchanged source-link
+inventory and all five protected issued/reviewer input records pass. All12
+reported SHA256 pairs reproduce. Planning paths are exactly batch/ledger/report.
+The unchanged header bytes preserve typed values and order as well as their
+53 relationship/10 question memberships. Current source changes no build input
+outside these unbundled cards, so unchanged equations, prepared sources, guide,
+native checker/dependency conditions and package bytes retain prior evidence
+under the correction-review rule. No historical-normalization replay or new
+validator is needed. CC's disclosed read-only Date-library query failure and
+successful recovery remain in its evidence; no unresolved validation failure.
+
+The canonical supporting-artifact inventory is **one file**,
+`artifacts/batch-record.md`. The CC report's broader enumeration also names the
+first-class report/ledger; those remain in the root and are not supporting
+artifacts. All issued prompts stay preserved in the root. The batch's hash
+table is verified as full-file hashes despite its informal “body” column label;
+the separately checked frozen header/citation establishes body-only mutation.
+The intake's “Slice03” wording is a receipt typo; the actual four-row report and
+ledger unambiguously retain S16-03. Neither wording issue changes the contract.
+
+### Bubble-up to Arc02
+
+Delivered the twelve connected Drasner cards' available-evidence correction,
+their local relationship/CQ reconciliation, dependent HSL attribution and live
+guide repairs, plus owning1.0.13 integration. The scope-as-specified versus
+delivered walk covers all17 initial source paths and narrowed iteration deltas;
+no silent drop or new source/criterion reduction. Existing examples and practical
+teaching survive with bounded claims. Current mathematical/technical support is
+accepted at its stated scope; missing immutable captures still block dependent
+historical fidelity. This close does not accept all233 cards/eight live files,
+global reconciliation, actual browser/AT behavior, final hosted views or release.
+Those remain P10-11 and the existing Arc02/Arc04 gates/owners.
+
+The two refinements resolved local rule/provenance/evidence errors; no new
+investigation, acquisition, project scope or sequencing dependency is required.
+Update Arc02's child/current-delivery pointer before choosing its next coherent
+ready batch. Project plan/parent criterion states do not change. What worked:
+contrasting syntax examples and explicit evidence subjects resolved the remaining
+issues while retaining independently passing guide/arithmetic/package work.
+The CC report remains the doer attestation; this record supplies acceptance.
