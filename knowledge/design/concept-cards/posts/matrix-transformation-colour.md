@@ -65,13 +65,11 @@ For column vectors, a zero-bias matrix operation is linear. Oklab's conversion u
 2. The pattern: output_channel = c1·in1 + c2·in2 + c3·in3 for each of three output channels.
 
 # Context & Application
-
-- **Typical contexts**: All colour space conversions in image processing and display pipeline engineering; the sRGB → XYZ matrix is ubiquitous.
-- **Common applications**: GPU shader colour conversion (matrix operations are hardware-accelerated); the Oklab C++ code; CSS Color Level 4 conversion algorithms; ICC profile conversion.
+- **Typical contexts**: Colour-conversion stages that use linear matrices, including the article's Oklab route.
+- **Common applications**: Express a specified linear stage compactly; identify input/output coordinate domains before composing matrices.
 
 ## Cross-Domain Connections
-
-**Mathematics → RIGOROUS**: The M1 and M2 steps in Oklab conversion are literal 3×3 matrix multiplications — linear maps between 3-dimensional real vector spaces. This is not an analogy: the operation is mathematically identical to applying a linear transformation in R³. The invertibility condition (det(M) ≠ 0) must hold for the round-trip conversion to be exact.
+**Mathematics → RIGOROUS**: The stated M1 and M2 operations are literal matrix multiplications (linear maps for the stated coordinates). The complete conversion includes a nonlinear cube-root stage, and rounded coefficients/finite precision do not guarantee an exact round trip.
 
 # Examples
 

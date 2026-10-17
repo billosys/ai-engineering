@@ -62,27 +62,21 @@ This is a foundational concept with no prerequisites within this source.
 - **Common applications**: Converting colours between display devices; specifying colours in CSS; comparing perceived colour differences; designing palettes.
 
 # Examples
-
-**Example 1** (from source): The source compares eight colour spaces (Oklab, CIELAB, CIELUV, OSA-UCS, IPT, JzAzBz, HSV, CAM16-UCS) on the same three perceptual error metrics, demonstrating that different colour spaces make very different trade-offs. (Section: "Comparison with other color spaces")
-
-**Example 2** (from source): sRGB is described as a colour space using a D65 whitepoint, whose colours can be converted to Oklab via linear sRGB → XYZ → LMS → Oklab. (Section: "Implementation")
+**Example 1** (source): Ottosson describes sRGB using D65 and presents a linear-sRGB → XYZ → LMS-like → Oklab route. This is one stated conversion route, not a requirement for every conversion. (Section: “Implementation”)
 
 # Relationships
-
 ## Builds Upon
-- **Human visual perception** — Colour spaces ultimately reference the three-channel nature of human cone responses.
+- **Coordinate system** — A model assigns meaning to coordinates.
 
 ## Enables
-- **Oklab colour space** — Oklab is a specific colour space.
-- **XYZ colour space** — XYZ is the reference intermediary between most other colour spaces.
-- **Colour interpolation** — Requires a colour space to define the coordinates to interpolate.
+- **Colour conversion** — Requires compatible definitions and a specified route.
 
 ## Related
-- **Gamut** — Each colour space has an associated gamut (the set of colours it can represent).
-- **Whitepoint** — Every colour space requires a reference white for normalisation.
+- **XYZ colour space** — One useful tristimulus representation.
+- **D65 whitepoint** — A reference condition used by some spaces.
 
 ## Contrasts With
-- (No specific contrasts defined at this foundational level — the concept encompasses all colour spaces equally.)
+- **Device gamut** — A bounded representable subset is distinct from a general coordinate model.
 
 # Common Errors
 - **Error**: Assuming every colour space uniquely represents every visible colour.

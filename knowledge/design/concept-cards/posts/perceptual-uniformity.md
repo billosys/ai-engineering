@@ -71,9 +71,8 @@ This is a foundational concept with no prerequisites within this source.
 3. Numerical equality alone does not establish equal visual appearance.
 
 # Context & Application
-
-- **Typical contexts**: Image processing, gradient generation, palette construction, saturation adjustment, greyscale conversion.
-- **Common applications**: Turning an image grayscale while preserving perceived lightness; increasing saturation without introducing hue shifts; creating smooth transitions between colours.
+- **Typical contexts**: Comparing a model against specified perceptual data and conditions.
+- **Common applications**: Coordinate-based candidates for grey ramps, hue sweeps or interpolation, followed by gamut and rendered-pair checks; these do not guarantee unchanged hue, lightness or saturation.
 
 ## Cross-Domain Connections
 **Music → LOOSE analogy**: A 12-tone equal-tempered frequency ratio and a fitted three-dimensional colour transform are different mathematics. Neither establishes universal equal auditory or visual distance. **Mathematical operation**: The stated coordinate calculation can be rigorous as arithmetic while its perceptual interpretation remains approximate.

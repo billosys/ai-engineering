@@ -63,17 +63,15 @@ Distinguish a coordinate value being syntactically valid, a colour being mathema
 2. Colours outside sRGB: conversion to linear sRGB produces values < 0 or > 1 on at least one channel.
 
 # Context & Application
-
-- **Typical contexts**: Web design (sRGB is the default gamut for standard monitors); CSS (sRGB colours specified with `rgb()`, `hsl()`, `hex`); display pipeline engineering.
-- **Common applications**: Determining whether a colour in Oklab is displayable on an sRGB monitor; gamut mapping; understanding which colours are "in range" for web design.
+- **Typical contexts**: Web and display work where sRGB is a relevant target; actual devices and host defaults vary.
+- **Common applications**: Check target linear RGB after conversion, then select a mapping/rendering policy for out-of-gamut colours.
 
 # Examples
+**Example 1** (source report): Ottosson says a blue-fold constraint was added after an earlier Oklab version showed a local non-convex sRGB boundary. This local design history does not prove global convexity. (Section: “How Oklab was derived”)
 
-**Example 1** (from source): During Oklab's derivation, early versions of the model caused blue sRGB gamut colours to "fold in on themselves slightly, resulting in a non-convex sRGB gamut." A constraint was added to prevent this. (Section: "How Oklab was derived")
+**Example 2** (source description): The article describes Luo–Rigg plots of sRGB within a wider dataset/gamut comparison. Plot images were not independently inspected; this does not establish all visible colours. (Section: “Luo-Rigg dataset and full gamut”)
 
-**Example 2** (from source): The Luo-Rigg plots show the sRGB gamut as a slice within the full visible gamut, with the sRGB gamut visible as a bounded region in each colour space's ab plane. (Section: "Luo-Rigg dataset and full gamut")
-
-**Example 3** (from source): HSV fails for the Luo-Rigg full gamut plot because "HSV does not handle colors outside sRGB gamut" — confirming the gamut as a hard limit for HSV. (Section: "Luo-Rigg dataset and full gamut")
+**Example 3** (source quote): The article says HSV does not handle colours outside sRGB in its described plot. Scope that statement to the cited model and data. (Section: “Luo-Rigg dataset and full gamut”)
 
 # Relationships
 

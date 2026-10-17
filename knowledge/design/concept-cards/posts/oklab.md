@@ -59,37 +59,32 @@ Oklab represents a colour with L, a and b coordinates and may be expressed in po
 - **XYZ colour space** — The conversion pipeline from sRGB to Oklab goes through XYZ; the intermediate representation is XYZ.
 
 # Key Properties
-1. Oklab uses a D65 reference; diffuse reference white does not set a display's absolute maximum.
-2. The route for linear sRGB uses two linear transforms around real cube roots; encoded sRGB must first be decoded.
-3. Approximate uniformity and model-coordinate independence do not guarantee equal appearance across all conditions.
-4. Oklab coordinates can convert outside a destination gamut; conversion and gamut mapping are distinct.
-5. The article's examples and comparisons remain attributed to its stated conditions and datasets.
+1. Oklab uses a D65 reference; diffuse reference white does not set a display maximum.
+2. Linear-sRGB conversion uses two linear transforms around real cube-root stages; decode encoded sRGB first.
+3. Uniformity and coordinate independence are approximate modelling goals, not guarantees across all conditions.
+4. Valid coordinates may convert outside a destination gamut; conversion is distinct from gamut mapping.
+5. The article coefficient family is distinct from CSS Color standardized coefficients.
 
 # Construction / Recognition
-
 ## To Construct/Create:
-1. Start with a linear sRGB colour (gamma-decoded).
-2. Multiply by the first matrix M1 to produce approximate cone responses (l, m, s).
-3. Apply cube-root non-linearity: l' = l^(1/3), m' = m^(1/3), s' = s^(1/3).
-4. Multiply by the second matrix M2 to produce (L, a, b).
-5. Optionally convert to LCh polar form: C = sqrt(a² + b²), h = atan2(b, a).
+1. Decode encoded sRGB, convert with a matched coefficient family, and use Oklab coordinates to propose colours.
+2. For a palette across hues, choose candidate L/C/h values and vary h as intended.
+3. Convert to the target representation, inspect gamut/rendering, and assess actual colour pairs for contrast.
 
 ## To Identify/Recognise:
-1. Three-channel Lab-like space with L ∈ [0, 1] for colours within the sRGB gamut.
-2. D65 white maps to (L=1, a=0, b=0).
-3. Typical sRGB red maps to approximately (L=0.63, a=0.22, b=0.13) — highly saturated colours have large a or b magnitude.
+1. Check the stated reference white, input encoding and coefficient family.
+2. Treat L/C/h as model coordinates with approximate perceptual interpretation, not a universal equal-appearance guarantee.
 
 # Context & Application
 - **Typical contexts**: Colour transformations and candidate palette construction, followed by destination gamut/render checks.
 - **Common applications**: CSS Color 4 defines `oklab()` and `oklch()` syntax and explicit interpolation-space choices; actual host support was not tested here.
 
 # Examples
+**Example 1** (source description): The article describes an Oklab hue sweep and an HSV comparison. This is attributed to that example; the image was not independently inspected and does not establish equal appearance across all hues. (Section: “Comparing Oklab to HSV”)
 
-**Example 1** (from source): An Oklab gradient with varying hue, constant lightness (L) and chroma (C) appears even and uniform. By contrast, an HSV gradient with constant value and saturation shows yellow, magenta, and cyan dramatically lighter than red and blue. (Section: "Comparing Oklab to HSV")
+**Example 2** (source description): Oklab has reported L RMS 0.20 and C RMS 0.81 in the article's table, whose reference predictions derive from CAM16. These are scoped metrics, not independent human ground truth. (Section: “Comparison with other color spaces”)
 
-**Example 2** (from source): The quantitative error table shows Oklab achieving the lowest L RMS (0.20) and C RMS (0.81) of all tested colour spaces except CAM16-UCS (the source of training data). (Section: "Comparison with other color spaces")
-
-**Example 3** (from source): Blending white with blue in Oklab produces no hue shift toward purple — unlike CIELAB, CIELUV, and HSV, which all show a purple shift when blending blue. (Section: "Blending colors")
+**Example 3** (source description): The article describes selected white/blue blend results across named models; the figure was not visually inspected, and the result is limited to those examples. (Section: “Blending colors”)
 
 # Relationships
 ## Builds Upon

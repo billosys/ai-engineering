@@ -52,16 +52,14 @@ Oklab L is produced by the model's complete conversion, including its nonlinear 
 4. L alone cannot certify contrast; use the rendered sRGB pair procedure in the accepted colour guide.
 
 # Construction / Recognition
-
 ## To Construct/Create:
-1. Convert a colour to Oklab using the M1 → cube root → M2 pipeline.
-2. The first component of the result is L.
-3. To create a greyscale version of an image: keep L for each pixel, set a=0, b=0, convert back.
+1. Choose contextual L/C/h candidates for the intended task.
+2. Check each converted colour against target gamut and inspect its rendering.
+3. Calculate contrast for each actual foreground/background sRGB pair using the accepted colour-guide procedure; adjust as needed. L cannot certify contrast.
 
 ## To Identify/Recognise:
-1. L ∈ [0, 1] for colours within the sRGB gamut.
-2. Achromatic greys lie on the L axis with a=0, b=0.
-3. When varying hue or chroma, L should remain visually constant if the space is perceptually uniform.
+1. Oklab L is a model lightness coordinate, not XYZ Y, CIELAB L*, HSV V or WCAG relative luminance.
+2. A constant-L hue sweep is a coordinate construction; its rendered appearance may vary with hue, gamut and context.
 
 # Context & Application
 
@@ -84,7 +82,7 @@ Oklab L is produced by the model's complete conversion, including its nonlinear 
 - **Colour interpolation** — Linear interpolation of L produces smooth lightness transitions.
 
 ## Related
-- **Chroma (perceptual)** — The complementary axis; L and C are orthogonal in Oklab.
+- **Chroma (perceptual)** — C is a distinct coordinate; coordinate distinction does not guarantee perceptual independence.
 - **D65 whitepoint** — L=1 is defined as D65 white.
 
 ## Contrasts With
