@@ -88,3 +88,35 @@ rendering remains P10-13/Arc04; release gates remain Arc04/P10-13.
 
 No push or publication was performed. S19-01/02 remain open pending independent
 CDC review through the Operator; S19-03/04 remain done at the recorded C/H scope.
+
+
+## Iteration02 return — F04/F05 corrected; CDC review pending
+
+Iteration02 issue: planning `a0ab108d4e84c406ede6a28e571ab7d9728e6bcc`, parent
+`cfb084c27e9315de029732e5d456e8eaa3a7a9cc`; source input C1:
+`0428cbfd6adedfa83305086d3b5ea4e54cfe2a5a`. Source return:
+`3c31bc11e8513ddce10fd6a9c9227e82abd51092`, direct child of C1. The planning
+return is this exact-path commit, identified to the Operator with its final hash.
+
+Only `justified-text.md` and `hyphenation.md` changed in source, each at the one
+prompt-authorized existing example scalar. The sole supporting artifact remains
+[the batch record](artifacts/batch-record.md), which records required-read
+coverage/readback, F04/F05, exact reverse-byte and 233-path preservation checks,
+the47-row join, unchanged49 warrants/CQ table, package-input equality and retained
+gates. Planning changes are limited to this report, that batch record, and the
+four ledger Evidence/Notes cells; plans, criteria, statuses, issued prompts and
+CDC verification remain unchanged.
+
+| Criterion | Iteration02 return | Evidence and boundary |
+|---|---|---|
+| S19-01 | **Proposed met for this bounded correction; open pending CDC.** | The two existing CSS comments now align with the accepted contextual teaching and known-language/resource conditions. Prior F01/F02 teaching corrections remain accepted at C1. No browser/support/conformance test. |
+| S19-02 | **Proposed met for this bounded correction; open pending CDC.** | Corrected two predecessor cells exactly match SOURCE7068045a; both dispositions are retained-with-limit, and all47 predecessor/final joins match. The49 warrant and CQ tables are unchanged. This is transcription/classification repair, not a new semantic finding. |
+| S19-03 | **CDC-done at C1; current bounded preservation replayed.** | All233 identities/headers accounted for; both current target headers differ only at the exact two added scalar exceptions, and reverse edits recover the complete C1 files. The other231 cards remain byte-identical. |
+| S19-04 | **CDC-done at C1/H1; package evidence retained after input equality checks.** | Recorded ZIP hash matches; all8 packaged Markdown members, Makefile, package checker, version checker and path-exception list remain byte-equal at C1. Changed cards are unbundled, so no package rebuild was required or run. |
+
+The original-fidelity gate remains P10-11; whole-corpus/global composition remains
+Project10 P10-06/09 and Arc02 A02-04/05/06/08; actual browser/AT behavior remains
+A02-10; exact-revision hosted rendering remains P10-13/Arc04; package release and
+publication remain Arc04/P10-13. No push, publication, closure or successor was
+performed. S19-01/02 stay open for CDC review; S19-03/04 retain their accepted C1
+scope.

@@ -488,11 +488,11 @@ endpoint memberships).
 | em-unit | Point Size | The em is the unit of measurement underlying point size. | retained with supported limit | - **Point Size** — The em is the unit of measurement underlying point size. | Unit/nominal-size relation does not measure cap height or bound glyph outlines. |
 | em-unit | Font | Each font uses its em space differently, causing apparent size variation. | retained with supported limit | - **Font** — Each font uses its em space differently, causing apparent size variation. | Variation is face-specific; no uniform apparent-size prediction. |
 | em-unit | Hyphens and Dashes | Em dash and en dash are named for these units. | retained with supported limit | - **Hyphens and Dashes** — Em dash and en dash are named for these units. | Naming association only; modern dash widths can differ. |
-| line-spacing | Body Text | Line spacing is one of the four primary body text controls. | reworded | - **Body Text** — Line spacing is one of body text's four primary controls. | One of four primary controls, not a universal priority. |
+| line-spacing | Body Text | Line spacing is one of body text's four primary controls. | retained with supported limit | - **Body Text** — Line spacing is one of body text's four primary controls. | One of four primary controls, not a universal priority. |
 | line-spacing | Point Size | Line spacing is calculated as a percentage of point size. | reworded | - **Point Size** — Butterick relates leading to type size; CSS `line-height` has defined unitless, percentage and length computation rules. | Reworded: Butterick advice and CSS property semantics remain distinct. |
 | line-spacing | Line Length | Longer lines need more line spacing for vertical tracking. | reworded | - **Line Length** — Butterick recommends considering leading with measure; judge the actual text and face. | Reworded: review interaction; no automatic monotonic rule. |
 | line-spacing | Font | Different fonts at the same point size may need different line spacing. | reworded | - **Font** — Different faces may call for different leading; review actual text. | Reworded: different faces may call for different leading; inspect actual text. |
-| line-length | Body Text | Line length is one of the four primary body text controls. | reworded | - **Body Text** — Line length is one of body text's four primary controls. | One of four primary controls, not a universal priority. |
+| line-length | Body Text | Line length is one of body text's four primary controls. | retained with supported limit | - **Body Text** — Line length is one of body text's four primary controls. | One of four primary controls, not a universal priority. |
 | line-length | Point Size | Affects how many characters fit per inch. | retained with supported limit | - **Point Size** — Affects how many characters fit per inch. | Character fit varies with face, size, shaping, language and content. |
 | line-length | Line Spacing | Longer lines need more line spacing for vertical tracking. | reworded | - **Line Spacing** — Butterick relates line length and leading; review their interaction with the selected face and content. | Reworded: a contextual interaction, not a fixed direction of change. |
 | line-length | Page Margins | The primary mechanism for controlling line length. | reworded | - **Page Margins** — Butterick discusses margins for print measure; web layout may use text-container max-width or other constraints. | Reworded: margin technique is print-contextual; web constraints can differ. |
@@ -559,3 +559,118 @@ composition; live browser/AT/font-failure behavior; exact-revision hosted
 rendering; Arc02/Project10 composition and release gates remain with their
 existing owners. No source-fidelity, semantic full-corpus, actual behavior,
 hosted rendering, conformance, release, publication or push claim is made.
+
+## Iteration02 correction record — F04/F05
+
+Issue: planning `a0ab108d4e84c406ede6a28e571ab7d9728e6bcc`, parent
+`cfb084c27e9315de029732e5d456e8eaa3a7a9cc`; SOURCE input C1 is
+`0428cbfd6adedfa83305086d3b5ea4e54cfe2a5a`. Required CC intake is complete
+before edits. Read full: Iteration02 prompt, current slice plan1.2/ledger, source
+AGENTS, collaboration-framework skill, PM skill/README, CDC verification, both
+complete target cards, and the closing report's Iteration01 return. Read required sections:
+Project plan1.73 active body; Arc02 plan1.57 active body; all13 Project/10 Arc
+ledger criterion/status rows; PM2 iteration preservation and PM3 iteration
+workflow; engineering-methods guide07 intake and corrective iteration; work-
+verification guide05 correction retention; Concept Cards guide06; context-led
+Visual Design rules. Current batch sections reviewed: initial47-row inventory,
+Iteration01 F03 disposition, and preservation/validation; the two F05 originals
+were queried at SOURCE7068045a and both target metadata scalars at C1. Their
+relevant source ranges and complete final-card bodies were inspected. CSS Text
+§1.3/§5.3 was checked at the W3C published CSS Text Level3 Candidate
+Recommendation Draft dated2026-08-14. Required-data query finds233 current and
+233 pinned card paths, equal rosters; Project/Arc parent ledgers contain13/10
+rows. The pinned design ZIP contains8 Markdown files, byte-equal to C1 and to
+current packaged source; its recorded SHA-256 matches CDC's Iteration01 record.
+`Makefile`, package-path checker, version checker, and packaging exceptions also
+match C1 exactly. Neither target card is included in the design ZIP.
+
+**Contract readback.** F04 authorizes exactly two existing frontmatter scalar
+replacements in `justified-text.md` and `hyphenation.md`; all other metadata,
+body bytes, relationships, identities and version1.0.16 stay frozen. The six
+previous scalar exceptions remain accepted; these exact two additions bring the
+exception total to eight, with no general metadata permission. F05 corrects only
+the predecessor-text and disposition cells for the `line-spacing`/Body Text and
+`line-length`/Body Text rows. Original7068045a says “one of body text's four
+primary controls,” and current C1 relationship prose has that same wording, so
+both are retained-with-limit rather than reworded. The initial inventory's two
+paraphrases remain historical and must be marked superseded; the corrected F03
+table is the exact predecessor source-of-record. This is transcription and
+classification repair, not a new semantic finding. S19-01/02 remain open pending
+CDC; S19-03/04 retain their accepted C1 scope only after affected bytes are
+rechecked. Package evidence is retained only if all eight shipped Markdown
+inputs and the Makefile/version/package-check inputs remain byte-identical;
+these unbundled card comments do not trigger another build. No plan, criterion,
+status, prompt, CDC record, hosted/browser, full-corpus, fidelity or release gate
+is changed.
+
+
+### F04 — the two authorized CSS example values
+
+At SOURCE C1, the existing values contradicted the accepted body teaching. In
+`justified-text.md`, `css_implementation[0].example` is now exactly:
+
+`p { text-align: justify; hyphens: auto; } /* illustrative; Butterick recommends hyphenation for suitable prose; check language, resources and output */`
+
+In `hyphenation.md`, `css_implementation[0].example` is now exactly:
+
+`p { hyphens: auto; } /* needs known content language and a suitable resource; HTML lang may be on this element or an ancestor */`
+
+CSS Text §1.3 says authors should identify content language; §5.3 says
+automatic hyphenation requires known content language and an appropriate
+language resource, and recommends correctly tagging content. These conditions
+do not support the former “always pair” or html-only comments. This is metadata
+example correction only; no browser behavior, availability survey or conformance
+claim is made. Both source replacements reverse byte-for-byte to their complete
+C1 card blobs.
+
+### F05 — corrected predecessor transcription and classification
+
+The earlier `Body-relationship inventory — 47 predecessor statements` is
+preserved as historical intake, but its `line-spacing`/Body Text and
+`line-length`/Body Text wording was paraphrased and is not a verbatim source
+transcription. That historical table is superseded for those two rows only by
+the corrected exact C0 text in the F03 disposition table below; it must not be
+read as the current verbatim record. The two corrected predecessor cells now
+match original7068045a Relationships/Builds Upon: “Line spacing is one of body
+text's four primary controls.” and “Line length is one of body text's four
+primary controls.” Their C1 final body cells already had those exact sentences;
+only predecessor text and disposition changed. Both dispositions are now
+`retained with supported limit`. Their final-body and scope-limit cells, the
+other45 rows,49 warrants and CQ table are unchanged. This corrects transcription
+and classification, not source semantics.
+
+### Preservation and proportionate validation at C2
+
+Exact SOURCE commit `3c31bc11e8513ddce10fd6a9c9227e82abd51092`, direct child of
+C1, contains only `justified-text.md` and `hyphenation.md`; both required
+trailers are present. The accepted/current card path sets each contain233 paths.
+Only these two card blobs differ from C1, and reversing each exact scalar
+replacement restores the entire pinned file byte-for-byte; the other231 cards
+are unchanged. Parsed target headers preserve field names/order, value types,
+nulls, list identities/order and all other values; exactly the two authorized
+`css_implementation[0].example` values differ. Thus both bodies, headings and
+Source References remain byte-identical. The previously accepted six scalar
+corrections are untouched; the exact exception population is now eight.
+
+The bounded join query checked all47 distinct assigned predecessor rows against
+the original7068045a relationship sections and all47 final rows against C1; both
+mismatch counts are0. Dispositions total25 retained-with-limit and22 reworded.
+No endpoint additions/removals occurred. The49-warrant section and16-occurrence/
+six-text CQ section match planning H1 byte-for-byte. An initial query parser
+looked for the wrong Markdown heading level, and its first correction selected
+all Practical Typography cards (163 relationship rows) rather than the assigned
+eleven; no result was accepted from either run. Restricting to the eleven named
+slugs and all four relationship subsections (`Builds Upon`, `Enables`, `Related`,
+`Contrasts With`) yielded the complete47/47 comparison above.
+
+CDC's Iteration01 design ZIP hash remains
+`94273e08587c3afe8d37477da4180c5e0856c45a2e469e9674a9c721d49c36d4`. Each of its
+eight Markdown members equals both the C1 blob and current packaged source;
+neither changed card is bundled. The complete `Makefile`,
+`scripts/check-package-paths`, `scripts/check-skill-versions`, and
+`assets/packaging/path-exceptions.tsv` equal C1 byte-for-byte. The package list
+and check inputs therefore remain those CDC accepted. Native/package evidence
+is retained at its original revision and hash, not relabelled fresh; no duplicate
+build was triggered by these two unbundled card comments. `git diff --check`,
+changed-file LF/EOF, exact source scope and commit trailers pass. No browser or
+hosted-rendering check was run.
