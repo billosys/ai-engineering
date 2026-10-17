@@ -70,24 +70,23 @@ Oklab L is produced by the model's complete conversion, including its nonlinear 
 **Example 1** (source description): Ottosson describes a constant-L Oklab hue sweep and compares it with HSV. This is an attributed example; its image was not independently inspected and it is not a universal appearance claim. (Section: “Comparing Oklab to HSV”)
 
 # Relationships
-
 ## Builds Upon
-- **Oklab** — L is derived from Oklab's conversion pipeline.
-- **Perceptual uniformity** — L is the lightness axis of a perceptually uniform space.
-- **LMS cone responses + cube-root non-linearity** — The cube root applied to cone responses is what produces the approximately linear perceptual response.
+- **Oklab** — L is its model lightness coordinate.
+- **Perceptual uniformity** — The model aims for approximate agreement with perception.
+- **LMS-like intermediate and cube-root stage** — Part of the article's conversion, not a universal physiological explanation.
 
 ## Enables
-- **Greyscale conversion** — Setting a=0, b=0 in Oklab produces a greyscale colour at the original perceived lightness.
-- **Palette construction** — Tonal scales (varying L, fixed h and C) produce palettes with uniform perceived brightness steps.
-- **Colour interpolation** — Linear interpolation of L produces smooth lightness transitions.
+- **Greyscale construction** — Setting a=b=0 constructs a neutral model coordinate; check target encoding/rendering.
+- **Palette construction** — L/C/h values provide candidates; check gamut, rendering and actual contrast pairs.
+- **Colour interpolation** — L may be interpolated as a coordinate; appearance remains context-dependent.
 
 ## Related
-- **Chroma (perceptual)** — C is a distinct coordinate; coordinate distinction does not guarantee perceptual independence.
-- **D65 whitepoint** — L=1 is defined as D65 white.
+- **Chroma (perceptual)** — C is a distinct coordinate, not guaranteed perceptually independent.
+- **D65 whitepoint** — The normalized reference white maps approximately to L=1.
 
 ## Contrasts With
-- **HSV Value** — HSV Value is not a perceptual lightness measure; it is simply the maximum of the R, G, B channels and has no perceptual uniformity.
-- **Luminance (Y in XYZ)** — Y is a physical luminance measure, not perceptually uniform; L is a cube-root-compressed, perceptually linearised version.
+- **HSV Value** — A different model parameter, not an equivalent perceptual lightness measure.
+- **XYZ Y / WCAG relative luminance** — Different quantities; compute contrast from rendered sRGB pairs.
 
 # Common Errors
 - **Error**: Using an L value or L difference as a WCAG contrast test.

@@ -78,22 +78,21 @@ For column vectors, a zero-bias matrix operation is linear. Oklab's conversion u
 **Example 2** (from source): In C++ the two matrix steps are implemented as explicit weighted sums. The first group of three lines computes M1 (combined with sRGB→XYZ); the final three lines of the return statement compute M2. (Section: "Converting from linear sRGB to Oklab")
 
 # Relationships
-
 ## Builds Upon
-- **Colour space** — Matrix transforms map between colour spaces.
-- **Linear algebra (3×3 matrices)** — The operation is standard matrix-vector multiplication.
+- **Colour space** — Compatible matrices map between specified coordinate representations.
+- **Linear algebra (3×3 matrices)** — Matrix-vector multiplication is the literal operation.
 
 ## Enables
-- **Oklab conversion** — M1 and M2 are the two linear steps of the conversion.
-- **LMS cone responses** — M1 produces the approximate cone response vector.
-- **All colour space interoperability** — Virtually all colour space conversions rely on 3×3 matrix steps.
+- **Oklab conversion** — The article uses linear stages before and after a pointwise nonlinearity.
+- **LMS-like intermediates** — The XYZ-form M1 produces fitted approximate values.
+- **Colour conversion** — Some routes use 3×3 matrices; not all conversions consist only of them.
 
 ## Related
-- **XYZ colour space** — The source space for M1.
-- **Oklab** — The target space of the combined M1+nonlinearity+M2 pipeline.
+- **XYZ colour space** — Input to the article's printed XYZ-form M1.
+- **Oklab** — Its full pipeline includes matrices and a nonlinear stage.
 
 ## Contrasts With
-- **Non-linear colour operations** — The cube root step in Oklab is non-linear and cannot be represented as a matrix; only the bracketing linear steps are matrices.
+- **Nonlinear colour operations** — A pointwise real cube root cannot be represented by a single fixed linear matrix.
 
 # Common Errors
 - **Error**: Calling every matrix operation affine or claiming every colour conversion uses a single 3×3 matrix.

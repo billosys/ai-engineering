@@ -72,20 +72,19 @@ float s = 0.0883024619f * c.r + 0.2817188376f * c.g + 0.6299787005f * c.b;
 (Section: "Converting from linear sRGB to Oklab")
 
 # Relationships
-
 ## Builds Upon
-- **XYZ colour space** — LMS is derived from XYZ via matrix multiplication.
-- **Human photoreceptor biology** — The three channels correspond to the three types of cone cells in the human retina.
+- **XYZ colour space** — The article's XYZ-form M1 maps XYZ into fitted l/m/s intermediates.
+- **Human photoreceptor biology** — The terminology is cone-like, but the article's values are not established as physiological cone signals.
 
 ## Enables
-- **Oklab conversion** — LMS is the required intermediate space before the cube-root non-linearity.
-- **Perceptual colour modelling** — Working in a cone-like space is the foundation of perceptually motivated colour spaces.
+- **Oklab conversion** — These are the article's intermediate coordinates before the cube-root and opponent transform.
+- **Perceptual colour modelling** — The fitted transform is one modelling construction; no physiological equivalence is implied.
 
 ## Related
-- **Matrix transformation in colour conversion** — The M1 operation is a canonical matrix transform.
+- **Matrix transformation in colour conversion** — M1 is a linear matrix stage for the stated input.
 
 ## Contrasts With
-- **XYZ** — XYZ is a linear transform of LMS (they represent the same physical information but with different axes).
+- **XYZ** — Different coordinate representations; do not infer universal positivity or direct measured biological correspondence.
 
 # Common Errors
 - **Error**: Calling the intermediate values exact cone responses or asserting they are non-negative for all physical/extended colours.

@@ -74,22 +74,20 @@ Distinguish a coordinate value being syntactically valid, a colour being mathema
 **Example 3** (source quote): The article says HSV does not handle colours outside sRGB in its described plot. Scope that statement to the cited model and data. (Section: “Luo-Rigg dataset and full gamut”)
 
 # Relationships
-
 ## Builds Upon
-- **Colour space** — Gamut is a property of a colour space.
-- **sRGB** — sRGB is the specific colour space defining this gamut.
+- **Colour space** — Gamut is the representable subset under a specified space/device definition.
+- **sRGB** — The primaries, transfer encoding and bounds define this destination gamut.
 
 ## Enables
-- **Gamut mapping** — Understanding the sRGB gamut boundary allows mapping out-of-gamut Oklab colours to displayable values.
-- **Oklab design** — The sRGB gamut's shape in Oklab space was a constraint in Oklab's derivation.
+- **Gamut mapping** — Out-of-gamut coordinates require an explicit destination mapping policy.
+- **Oklab design** — The article reports a local sRGB boundary constraint in its model derivation; it does not establish global convexity.
 
 ## Related
-- **D65 whitepoint** — sRGB is defined with D65.
-- **XYZ colour space** — The visible gamut and sRGB gamut are both expressible in XYZ chromaticity.
+- **D65 whitepoint** — sRGB uses a D65 reference.
+- **XYZ colour space** — Gamut boundaries can be represented in chromaticity coordinates, which are a projection.
 
 ## Contrasts With
-- **Full visible gamut** — The set of all colours human eyes can perceive, which is significantly larger than sRGB.
-- **Display P3, Rec. 2020** — Wider gamuts that supersede sRGB for HDR and cinema displays.
+- **Wider gamuts** — P3/Rec.2020 have different primaries and bounds; they do not inherently supersede sRGB for every task or imply HDR.
 
 # Common Errors
 - **Error**: Treating a plotted triangle as the complete RGB gamut or inferring global convexity from one boundary constraint.

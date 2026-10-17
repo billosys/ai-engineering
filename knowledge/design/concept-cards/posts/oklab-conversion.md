@@ -89,19 +89,18 @@ The article presents a compact linear-sRGB implementation and an XYZ-form matrix
 **Example 2** (from source): The full C++ code listing for both `linear_srgb_to_oklab` and `oklab_to_linear_srgb` is provided verbatim. (Section: "Converting from linear sRGB to Oklab")
 
 # Relationships
-
 ## Builds Upon
-- **LMS cone responses** — Step 1 produces approximate cone responses.
-- **Matrix transformation in colour conversion** — Both M1 and M2 multiplications.
-- **XYZ colour space** — M1 encodes the sRGB→XYZ→LMS chain.
+- **LMS-like intermediate coordinates** — The XYZ form produces these with M1 before a signed real cube root.
+- **Matrix transformation in colour conversion** — Linear stages operate on their stated input/output domains.
+- **XYZ colour space** — One article route starts at XYZ; the combined linear-sRGB code has different coefficients.
 
 ## Enables
-- **Colour interpolation (perceptual)** — Colours must first be converted to Oklab to interpolate perceptually.
-- **Palette construction in Oklab** — Requires conversion from sRGB to Oklab to manipulate L, C, h.
+- **Colour interpolation** — Convert endpoints to the chosen host interpolation space when needed.
+- **Palette construction** — Convert coordinates for candidates, then check gamut and rendered pairs.
 
 ## Related
-- **D65 whitepoint** — The matrices are calibrated for D65 normalisation.
-- **gamut-srgb** — Conversions operate within (or out of) the sRGB gamut.
+- **D65 whitepoint** — Match the reference conditions expected by the chosen coefficient family.
+- **sRGB gamut** — Conversion may produce values outside the destination gamut.
 
 # Common Errors
 - **Error**: Applying Oklab matrices to gamma-encoded sRGB.
