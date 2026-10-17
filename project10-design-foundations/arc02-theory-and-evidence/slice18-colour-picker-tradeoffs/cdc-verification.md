@@ -138,3 +138,102 @@ applicability; no complete converter, new inquiry, schema or receipt-only chain.
 Routine refinement stays in this slice; project/arc plans and criterion states
 need no change. P10-11 fidelity, full corpus/global/live review, browser/AT,
 final hosted rendering, composition and release gates retain their owners.
+
+## Iteration01 independent review — 2026-10-17
+
+Reviewed CC source `7068045aacd6cb75b856786a1de070791f21c2a8` and planning
+`0cf5991ea5465d89d4d6807f7c17cc255bd0a7e8` against Iteration01 issue
+`c5670897d904c4d5dcb44902dd4928d6882cfe23`. **Current verdict: three done,
+S18-02 open. Source teaching accepted; evidence corrections still required.**
+This supersedes the initial two-done row accounting, not its recorded findings.
+
+### Reproduced changes and retained evidence
+
+Read all five revised bodies completely, their exact source diff, current
+closing report, all66 header rows and19 warrant groups, affected body/CQ records
+and iteration receipts. Compared F01/F02 repairs to the inspected prepared-source
+and CIE definitions from the initial review. Source no longer attributes hue
+to the neutral endpoint; the chromatic and grey examples agree with the formulas.
+Numeric H/h,S/s controls are distinguished from appearance guarantees. The
+scaled gamut axis, two actual comparison tables and positive CIE definitions
+are repaired, including their repeats and CQ contribution. F01/F02 are resolved.
+
+Independent `colorsys` replay reproduces RGB(.8,.2,.2)→HSV(0,.75,.8) versus
+HSL(0,.6,.5), and greys.2/.5→both S=0,V=L=g within1e-9. Hue0 is merely stored
+convention at the neutral. The six other cohort cards and accepted toe/rational/
+Okhwb formulas/examples are byte-identical to the initial reviewed state, so
+retain their initial independent results and source limits; not fresh reruns.
+
+Exact source commit:five authorized card paths, parent
+`c5e743abb40db2f14b9332cea635a30f8b8a8d5b`. That parent's only delta from
+assignedc9d98a3e is a separately committed README deletion, outside this assignment.
+Exact CC planning commit:three authorized return paths. Both commits carry both
+trailers and pass `git show --check`. Issued prompts, plan, CDC record, ledger
+criteria and all prior row statuses survived CC unchanged.
+
+Reproduced233-card path/header identity preservation, all233 raw metadata prefixes,
+five literal Source Reference/heading sequences,228 unchanged cards and161
+unchanged source files. All other code/guides/skill/history/package inputs are
+unchanged fromc9; only the unrelated README deletion lies outside the five
+card-body differences. Source remains unmodified by CDC. Source has the same
+untracked LFE directory; planning was clean before this review.
+
+Retain initial CDC native gates atc9: the complete delta changes only five
+unbundled card bodies and unrelated README, with no changed gate, dependency,
+Make or packaged Markdown input. No implicated execution condition changed.
+The existing archive still compares8/8 to committed source7068045a and retains
+SHA256 `716e3a3cea6073296a1ed961d25ac21c6c1a5841da83658c14ecf317d25befe8`.
+This is a current byte comparison of the prior build, not a fresh Make run.
+Three CC planning records pass16 local-link/12 fragment checks and LF/EOF;
+five edited cards pass LF/EOF and whitespace checks.
+
+### F04 — Body dispositions were overwritten
+
+In the current batch's “Body relationship statement joins,” **all65 rows** have
+lost their retained/rephrased/removed dispositions and literal final joins.
+Each now has four cells under a three-column header, with an empty disposition
+cell and a header-warrant reference. Example: body row7 is HSV→HWB but now points
+to W01, a gamut↔HSL/HSV association. Header and body row numbers are different
+populations. This is a semantic join regression as well as malformed Markdown;
+the report's claim that only body join11 changed is false for the returned bytes.
+
+Restore the complete accepted predecessor table from planningc5670897, then
+update only body row11's final text to the corrected HSV/HSL contrast. Preserve
+the65 predecessor identities and six separately listed final additions. Verify
+actual before/after dispositions and final source text, not row counts alone.
+
+### F05 — One wrong endpoint and incomplete grouped premises
+
+All66 header tuples occur exactly once in19 groups; the structural membership
+check passes. It does not catch these content errors:
+
+- Header row35 is `okhsl contrasts_with hsl`; W09 instead discusses **HSLuv**.
+  Supply the HSL encoded-RGB versus Okhsl Oklab-derived construction comparison.
+- W14's Okhsl mapping support cites345–425, which is the **Okhsv** construction.
+  Use actual Okhsl513–531/659–758 with the HSL106–178 premises and endpoint text.
+- W05 combines17 prerequisites with “HSL/HSV, gamut, or orthogonality” background
+  but omits row21's actual `colour-picker` prerequisite and leaves the other
+  target-specific connections implicit. State the small set of distinct reasons
+  once with exact member IDs; no need for17 separate essays.
+
+The iteration summary says W01–W23, but only19 groups are defined (IDs have gaps).
+Correct the current summary to the actual membership; no cosmetic renumbering.
+Keep the remaining sound groups and bounded CQ answers. F03 remains unresolved
+through F04/F05; it is not fixed by the passing66-ID check.
+
+### Current row dispositions and next action
+
+| Row | CDC status | Current evidence |
+|---|---|---|
+| S18-01 | done | All eleven available-evidence teaching outcomes retained/reviewed; five repaired bodies and positive examples pass. Graph/CQ reconciliation is separately open under02. Original fidelity remains outside this bounded acceptance. |
+| S18-02 | open | F04 body-join regression and F05 mismatched/incomplete header premises. |
+| S18-03 | done | Renewed233/header/citation/heading and protected-file comparisons at7068045a. |
+| S18-04 | done | Source/planning integrity reproduced; independent native/package results retained with explicit unchanged-input checks. Current semantic evidence defects belong to02. |
+
+[Iteration02](cc-prompt-iteration02.md) is a **planning-record-only** repair of
+the batch and closing report. Freeze every source file and retain1.0.15; no
+further source commit or Make run is needed for those records. No new inquiry,
+validator, source acquisition, schema or successor. Routine same-slice repair
+does not change project/arc plans or any parent criterion. Existing P10-11,
+full-corpus/global/live, actual browser/AT, hosted, composition and release
+requirements remain open with their recorded owners. Slice18 is not closed.

@@ -6,11 +6,11 @@ depends-on: [accepted source and locator records, Slice16 CSS mechanics, Slice17
 
 # Slice18 — Colour Picker Tradeoffs
 
-Revision **1.1**, updated2026-10-17 after the initial independent review.
+Revision **1.2**, updated2026-10-17 after Iteration01 independent review.
 Opened2026-10-17. Two contributors; CDC Sofie plans/reviews
 separate CC through Operator; Expedited Mode. [Project](../../project-plan.md)1.73,
 [arc](../arc-plan.md)1.54, [ledger](ledger.md),
-[current assignment](cc-prompt-iteration01.md).
+[current assignment](cc-prompt-iteration02.md).
 Initial SOURCE/main pin `4e635bb39b2c6151014b316f45f279d3682416d4`; planning predecessor
 `a888e85710b18f031186b2bafde97d57bd8d0c02` independently closes Slice17.
 Issue is the commit adding this open set. No source or row accepted by opening.
@@ -128,12 +128,32 @@ set. Ready for CC correction; no remaining design choice is delegated silently.
 - **Returned for review / refinement required:** `cc-prompt.md`, issued2026-10-17
   in fe91602e, predecessor a888e857; SOURCE4e635bb3. CC source7b20ccc3/planningcc1f7ceb
   independently reviewed: S18-03/04 done;01/02 open. Preserve the issued prompt.
-- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-17 by the commit
-  adding it, predecessor5d8f3a9f; SOURCEc9d98a3e (design equals7b20ccc3).
-  Repair F01–F03 and return to CDC. No slice closure or successor by CC.
+- **Returned for review / refinement required:** `cc-prompt-iteration01.md`,
+  issued2026-10-17 in c5670897, predecessor5d8f3a9f; SOURCEc9d98a3e.
+  CC source7068045a/planning0cf5991e resolves source F01/F02; CDC accepts01/03/04.
+  F04/F05 retain02 open: overwritten body joins and incorrect grouped premises.
+- **Current / active:** `cc-prompt-iteration02.md`, issued2026-10-17 by the commit
+  adding it, predecessor0cf5991e; SOURCE7068045a, entirely read-only.
+  Repair only batch/closing records and return to CDC. No closure or successor.
+
+## Iteration02 readiness
+
+The [Iteration01 review](cdc-verification.md#iteration01-independent-review--2026-10-17)
+checks the actual five-body correction and protected inputs. Source teaching
+and integration are accepted; the remaining evidence error does not authorize
+more source changes. CDC inspected all66 group memberships and19 actual groups,
+identified the wrong HSLuv endpoint and incorrect Okhsv locator, and compared
+the65 overwritten body rows to their preserved predecessor table atc5670897.
+The prompt prescribes restoration plus the one actual changed final body join,
+and compact target-specific prerequisite reasons. No unresolved design choice,
+new inquiry or tooling product; only two existing CC planning outputs may change.
+Retain unaffected independent source/math/package evidence with applicability.
+Project/arc scope and criterion states stay unchanged; Slice18 remains active.
 
 ## Version History
 
+- 1.2 (2026-10-17): Accept Iteration01 teaching/preservation and issue a two-file
+  evidence repair for body-join regression and grouped warrant mismatches.
 - 1.1 (2026-10-17): Record independent initial review, two accepted rows and
   the five-body teaching/semantic correction; preserve initial assignment.
 - 1.0 (2026-10-17): Open the remaining picker-source cohort with immediate
