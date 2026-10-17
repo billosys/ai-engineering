@@ -1,0 +1,45 @@
+{
+  "style.md": [
+    "style.md"
+  ],
+  "values.md": [
+    "values.md"
+  ],
+  "setup.md": [
+    "setup.md"
+  ],
+  "tutorial.md": [
+    "tutorial.md"
+  ],
+  "reference.md": [
+    "reference.md"
+  ],
+  "macros.md": [
+    "macros.md"
+  ],
+  "api.md": [
+    "README.md",
+    "api.md"
+  ],
+  "lua-primer.md": [
+    "lua-primer.md"
+  ],
+  "rationale.md": [
+    "rationale.md"
+  ],
+  "from-clojure.md": [
+    "from-clojure.md"
+  ],
+  "security.md": [
+    "security.md"
+  ],
+  "changelog.md": [
+    "changelog.md"
+  ],
+  "README.md": [
+    "README.md"
+  ],
+  "LICENSE": [
+    "LICENSE"
+  ]
+}

@@ -30,7 +30,7 @@ SKILL_ZIP_NAMES := \
 	engineering-methods.zip project-management.zip testing.zip work-verification.zip \
 	scientific-methods.zip methodology-stewardship.zip laboratory-recordkeeping.zip \
 	document-extraction.zip concept-cards.zip \
-	rust-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
+	rust-guidelines.zip fennel-guidelines.zip go-guidelines.zip cpp-guidelines.zip javascript-deno-guidelines.zip \
 	erlang-guidelines.zip cobalt-guidelines.zip visual-design-system.zip \
 	tailwindcss.zip deno-js-linter.zip biome-js-linter.zip biome-linter.zip
 INSTALL_ZIPS := $(addprefix $(ZIP_OUTPUT_DIR)/,$(SKILL_ZIP_NAMES))
@@ -44,7 +44,7 @@ CCDP_STAGE := $(BUILD)/$(CCDP_NAME)
 	collab-framework collab-framework-clean \
 	agent-coordination code-auditing contribution-style engineering-methods project-management \
 	testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
-	rust go cpp js erlang cobalt design tailwindcss deno biome
+	rust fennel go cpp js erlang cobalt design tailwindcss deno biome
 
 # Every SKILL.md (and the two biome/deno variants) packaged by this Makefile.
 ALL_SKILL_FILES := \
@@ -62,6 +62,7 @@ ALL_SKILL_FILES := \
 	knowledge/document-extraction/SKILL.md \
 	knowledge/concept-cards/SKILL.md \
 	knowledge/rust/SKILL.md \
+	knowledge/fennel/SKILL.md \
 	knowledge/go/SKILL.md \
 	knowledge/cpp/SKILL.md \
 	knowledge/js/SKILL.md \
@@ -90,6 +91,7 @@ help:
 	@echo "  make document-extraction -> document-extraction.zip"
 	@echo "  make concept-cards      -> concept-cards.zip"
 	@echo "  make rust               -> rust-guidelines.zip"
+	@echo "  make fennel             -> fennel-guidelines.zip"
 	@echo "  make go                 -> go-guidelines.zip"
 	@echo "  make cpp                -> cpp-guidelines.zip"
 	@echo "  make js                 -> javascript-deno-guidelines.zip"
@@ -312,6 +314,9 @@ endef
 rust:
 	$(call pack_skill,rust,SKILL.md)
 
+fennel:
+	$(call pack_skill,fennel,SKILL.md)
+
 go:
 	$(call pack_skill,go,SKILL.md)
 
@@ -385,11 +390,11 @@ concept-cards:
 ## skills: build every installable skill zip except collaboration-framework
 skills: agent-coordination code-auditing contribution-style engineering-methods project-management \
 	testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
-	rust go cpp js erlang cobalt design tailwindcss deno biome
+	rust fennel go cpp js erlang cobalt design tailwindcss deno biome
 
 collab-framework agent-coordination code-auditing contribution-style engineering-methods \
 project-management testing work-verification scientific-methods methodology-stewardship laboratory-recordkeeping document-extraction concept-cards \
-rust go cpp js erlang \
+rust fennel go cpp js erlang \
 cobalt design tailwindcss deno biome: check-skill-version-source
 
 ## all: build every installable skill zip including the collaboration-framework zip

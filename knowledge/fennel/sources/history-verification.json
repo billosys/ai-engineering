@@ -1,0 +1,109 @@
+{
+  "upstream_pin": "9af5e47fa7ddea806544d15507412ddc51bd046d",
+  "filtered_tip": "a9acb3b88012ac923ff9b23c5cf37d9ed6b7cb7c",
+  "rewritten_commits": 749,
+  "historical_blob_comparisons": 7493,
+  "tip_files": 14,
+  "author_committer_message_checks": "all pass",
+  "tree_checks": "all pass",
+  "files": [
+    {
+      "upstream_path": "style.md",
+      "retained_path": "knowledge/fennel/sources/md/style.md",
+      "blob": "43fbb9b93e4c999e97f18469dae301b2296f9ff2",
+      "sha256": "3ef886cc725372ab9fdb18e7c1e5f3bbefe1528b2a3d8a27a43e639faf29362b",
+      "bytes": 23494
+    },
+    {
+      "upstream_path": "values.md",
+      "retained_path": "knowledge/fennel/sources/md/values.md",
+      "blob": "02c07a7509bd6610e97c226fb33f2523f107ff69",
+      "sha256": "f4702e14f02d52eead0ad9f118bbc5c75ab5f7f46bf63524da6a16c19df2ea9e",
+      "bytes": 7057
+    },
+    {
+      "upstream_path": "setup.md",
+      "retained_path": "knowledge/fennel/sources/md/setup.md",
+      "blob": "f98096cd371efa36422e4a65720339cbed8d0828",
+      "sha256": "b8c7c73ecb3d3a05342740bbb65c8cee867b25cd4dea6271734c8a196a6ae2f8",
+      "bytes": 9769
+    },
+    {
+      "upstream_path": "tutorial.md",
+      "retained_path": "knowledge/fennel/sources/md/tutorial.md",
+      "blob": "c50fef5488733deba02bb71e9635a1ab6c5d3e6c",
+      "sha256": "219c9471aac52f905a37726f1c0014595d8419c4adbbd2d3e8f92afb3dd8d74d",
+      "bytes": 26765
+    },
+    {
+      "upstream_path": "reference.md",
+      "retained_path": "knowledge/fennel/sources/md/reference.md",
+      "blob": "175b78c3358f8e4fe8aa08f5c4430d15d57b79a1",
+      "sha256": "9be1b1704a2e1d5de9470a74f6acf2e7e03c76a504b810ef83020c05ffe94395",
+      "bytes": 59588
+    },
+    {
+      "upstream_path": "macros.md",
+      "retained_path": "knowledge/fennel/sources/md/macros.md",
+      "blob": "f251baea1d95f3f229aa1c8f3609113bb4ff19a8",
+      "sha256": "47a0dece56fc8846ae8f41b8b020e099bb089e22170a66eca67ca3936fd9fabc",
+      "bytes": 17221
+    },
+    {
+      "upstream_path": "api.md",
+      "retained_path": "knowledge/fennel/sources/md/api.md",
+      "blob": "e26ef6859e9e8a068aa704405e418dc7830fa460",
+      "sha256": "62db54c97b9b70c36aa21c14dc873a8afcb1df0123a3bb4d1a51437d81fcd9c3",
+      "bytes": 31389
+    },
+    {
+      "upstream_path": "lua-primer.md",
+      "retained_path": "knowledge/fennel/sources/md/lua-primer.md",
+      "blob": "98de2c839d46f63a251929d9a04df404eac03cf5",
+      "sha256": "bedbce53660d1d4b811f8eb37622779b895a2e3972cfd021d3944fbf389031cc",
+      "bytes": 11166
+    },
+    {
+      "upstream_path": "rationale.md",
+      "retained_path": "knowledge/fennel/sources/md/rationale.md",
+      "blob": "910dce57b03587f3c4fbff02309226d899b009e9",
+      "sha256": "a70af6beefe03f001f3ebbdaf0cac16a25d6e386902da2fcb81a17e012d0ead0",
+      "bytes": 4750
+    },
+    {
+      "upstream_path": "from-clojure.md",
+      "retained_path": "knowledge/fennel/sources/md/from-clojure.md",
+      "blob": "cd3aca0bca78ba25ee83a1e1fe7338240afa66bc",
+      "sha256": "2ceba8f6e5ba2160f75e68c00d316a46d37328611b6c20ea7d53eb0c0527da62",
+      "bytes": 18279
+    },
+    {
+      "upstream_path": "security.md",
+      "retained_path": "knowledge/fennel/sources/md/security.md",
+      "blob": "e0621ecd27c8e209d19e8a0260e71cee7cdffbad",
+      "sha256": "e51bd2360e3cb27ca83eaaa7174a76f87bed3d6f5b3ef93a91456c8ba27d06e2",
+      "bytes": 2163
+    },
+    {
+      "upstream_path": "changelog.md",
+      "retained_path": "knowledge/fennel/sources/md/changelog.md",
+      "blob": "6b31bebe9e7186672a8a8e9eca97bde9e144999a",
+      "sha256": "be3fd028b3d29c0d2d864351cf448015a2badde3ded6f289d4bcfcde3fed0635",
+      "bytes": 28401
+    },
+    {
+      "upstream_path": "README.md",
+      "retained_path": "knowledge/fennel/sources/md/README.md",
+      "blob": "72ea65b8a0146fe2583d7bf6ca13c7aef2e94e2d",
+      "sha256": "376015f85200085c0cf445d476d9a55b9d3e04880fb823b096f6b015b801e589",
+      "bytes": 5754
+    },
+    {
+      "upstream_path": "LICENSE",
+      "retained_path": "knowledge/fennel/sources/md/LICENSE",
+      "blob": "9cf106272ac3b56b0c4c80218e8fc10a664ca5f4",
+      "sha256": "508a77d2e7b51d98adeed32648ad124b7b30241a8e70b2e72c99f92d8e5874d1",
+      "bytes": 1036
+    }
+  ]
+}

@@ -32,7 +32,7 @@ is built around a simple split:
 
 The repository currently includes:
 
-- domain/tooling skill packages for Rust, Go, Erlang/OTP, C++,
+- domain/tooling skill packages for Rust, Fennel, Go, Erlang/OTP, C++,
   JavaScript/Deno, Cobalt, Tailwind CSS, Visual Design, Biome, and Deno lint;
 - the [`methodology-stewardship`](./knowledge/methodology-stewardship/SKILL.md)
   skill for closing retrospectives, recurring collaboration difficulties, and
@@ -63,11 +63,17 @@ For implementation handoffs, engineering-methods provides
 and a [CC prompt template](./knowledge/engineering-methods/templates/cc-implementation-prompt.md),
 available standalone and through collaboration-framework.
 
+The [Fennel skill](./knowledge/fennel/SKILL.md) covers Lua runtime semantics,
+macros, modules and distribution, with history-preserved official sources. Its
+adapted prose retains the upstream style guide’s CC BY-NC-SA license; see its
+[source and license guide](./knowledge/fennel/guides/00-sources-and-license.md).
+
 ## Quick Commands
 
 ```sh
 make help              # list package, validation, and install targets
 make all               # build all installable skill zips into target/skills/
+make fennel            # build target/skills/fennel-guidelines.zip
 make collab-framework  # build target/skills/collaboration-framework.zip
 make document-extraction  # build target/skills/document-extraction.zip
 make concept-cards      # build target/skills/concept-cards.zip

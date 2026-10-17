@@ -23,6 +23,7 @@ Every package listed below is produced by `make all`, included in
 | Skill package | Source entrypoint | Use when |
 |---|---|---|
 | `rust-guidelines.zip` | [`knowledge/rust/SKILL.md`](../knowledge/rust/SKILL.md) | Writing, reviewing, or refactoring Rust. |
+| `fennel-guidelines.zip` | [`knowledge/fennel/SKILL.md`](../knowledge/fennel/SKILL.md) | Writing, reviewing and debugging Fennel; Lua semantics, macros, modules, fnlfmt and AOT/embedded distribution. Adapted prose uses CC BY-NC-SA. |
 | `go-guidelines.zip` | [`knowledge/go/SKILL.md`](../knowledge/go/SKILL.md) | Writing, reviewing, or refactoring Go. |
 | `cpp-guidelines.zip` | [`knowledge/cpp/SKILL.md`](../knowledge/cpp/SKILL.md) | Working with modern C++ and C++ Core Guidelines material. |
 | `javascript-deno-guidelines.zip` | [`knowledge/js/SKILL.md`](../knowledge/js/SKILL.md) | Writing JavaScript with Deno-first conventions. |
