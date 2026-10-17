@@ -63,17 +63,22 @@ For implementation handoffs, engineering-methods provides
 and a [CC prompt template](./knowledge/engineering-methods/templates/cc-implementation-prompt.md),
 available standalone and through collaboration-framework.
 
-The [Fennel skill](./knowledge/fennel/SKILL.md) covers Lua runtime semantics,
-macros, modules and distribution, with history-preserved official sources. Its
-adapted prose retains the upstream style guide’s CC BY-NC-SA license; see its
-[source and license guide](./knowledge/fennel/guides/00-sources-and-license.md).
-
 ## Quick Commands
 
 ```sh
 make help              # list package, validation, and install targets
 make all               # build all installable skill zips into target/skills/
+make rust              # build target/skills/rust-guidelines.zip
 make fennel            # build target/skills/fennel-guidelines.zip
+make go                # build target/skills/go-guidelines.zip
+make cpp               # build target/skills/cpp-guidelines.zip
+make js                # build target/skills/javascript-deno-guidelines.zip
+make erlang            # build target/skills/erlang-guidelines.zip
+make cobalt            # build target/skills/cobalt-guidelines.zip
+make design            # build target/skills/visual-design-system.zip
+make tailwindcss       # build target/skills/tailwindcss.zip
+make deno              # build target/skills/deno-js-linter.zip
+make biome             # build target/skills/biome-js-linter.zip and biome-linter.zip
 make collab-framework  # build target/skills/collaboration-framework.zip
 make document-extraction  # build target/skills/document-extraction.zip
 make concept-cards      # build target/skills/concept-cards.zip
