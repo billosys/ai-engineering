@@ -6,7 +6,7 @@ depends-on: [accepted corpus and prepared-source records, Slice16 accepted colou
 
 # Slice17 — Oklab Model and Application
 
-Revision **1.0**, opened2026-10-17. Two contributors; CDC Sofie authors/reviews,
+Revision **1.1**, updated2026-10-17 (opened2026-10-17). Two contributors; CDC Sofie authors/reviews,
 separate CC implements through Operator relay; Expedited Mode.
 [Project](../../project-plan.md), [arc](../arc-plan.md), [ledger](ledger.md) and
 [initial assignment](cc-prompt.md) govern. SOURCE/main pin
@@ -74,8 +74,8 @@ intake/readback, thirteen five-outcome rows, dependent terminology scope,
 claim/source exceptions, explicit local edge/CQ support, affected guide joins,
 focused witness results, source deltas, checks and limits. Compact groups with
 explicit members are valid; a blanket read or endpoint count is not warrant.
-CC writes first-class `closing-report.md` and ledger Evidence/Notes only; all
-four criteria/statuses remain open for independent CDC review. No duplicate
+CC writes first-class `closing-report.md` and ledger Evidence/Notes only; at
+initial issue all four criteria/statuses were open for independent CDC review. No duplicate
 corpus/index, new validator, receipt-only chain or separate analysis phase.
 
 The prompt supplies discriminating calculations and current technical sections;
@@ -108,12 +108,51 @@ The complete bounded inputs leave context for implementation/review; no arbitrar
 card quota or new scope/approval gate. Ready: source-grounded, design-complete,
 guideline-applied, executable, falsifiable and coherent with the four criteria.
 
+## Current refinement contract
+
+The [initial CDC review](cdc-verification.md) accepts S17-03 and retains the
+passing dependent terminology, guide and native/package components. S17-01/02/04
+remain open. Iteration01 completes this source delivery, rather than creating
+another analysis-only packet. Project1.73 and Arc02 1.52 remain governing.
+
+SOURCE refinement pin: `485585efe99c2d2cf3b956356989664bc6ffa262`;
+planning return pin: `61b3c427433f324a0933f7bcdccc507e6a03accb`.
+The current write set supersedes the initial maximum: **only the thirteen
+primary card bodies** may change. Freeze all thirteen full metadata prefixes,
+literal Source Reference sections and existing heading sequences at this pin.
+Freeze the dependent card, all guides, SKILL/history at1.0.14, helpers/Make inputs,
+other220 cards and all161 sources. No further metadata exceptions or version bump.
+
+Complete substantive edge/CQ support and five-dimension outcomes in the sole
+existing batch artifact. Trace102 baseline relationships to final dispositions;
+current86 is an observation, not a target or evidence of semantic completion.
+The same three CC return paths remain authorized; CC changes ledger Evidence/Notes,
+not criteria or CDC statuses. Preserve initial prompt and review. Native/package
+checks may be retained after byte-comparing their inputs; these thirteen cards
+are unbundled. Fresh body-delta, support and preservation checks remain required.
+No new schema, validation program, external-input search or extra phase.
+
+Author readiness for refinement: complete candidate/return and governing active
+plans inspected; the review names actual contradictory sections and omitted
+teaching. Prepared coefficient domains, source data families and normative XYZ Y
+were compared. The prompt supplies a worked prerequisite support join, matched
+coefficient recipe and discriminating arithmetic; wording/grouping is local CC
+discretion. The existing bounded review is authorized; no investigation extension.
+
 ## Assignment history
 
-- **Current / active:** `cc-prompt.md`, issued2026-10-17 by the commit adding this
-  open set, predecessor bddbda7b; SOURCE pin4acfec6d. No CC return yet.
+- **Returned, partial:** `cc-prompt.md`, issue
+  `1855cdea5cdcda4c78c4350b5901cf2c77965e2a` (2026-10-17), predecessor
+  bddbda7b; SOURCE pin4acfec6d. SOURCE return485585ef / planning return61b3c427.
+  CDC accepts preservation only as a whole row; refinements are F01–F03.
+- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-17 by the commit
+  adding it, predecessor61b3c427; SOURCE485585ef. Finish contradictory teaching,
+  restore usable examples and complete existing semantic joins. Execute as CC;
+  return to CDC through Operator. No successor authorized before review/close.
 
 ## Version History
 
+- 1.1 (2026-10-17): Record initial partial review, retain passing evidence and
+  issue body-only refinement without expanding the approved delivery.
 - 1.0 (2026-10-17): Open a coherent Oklab model/application source-fix batch with
   dependent terminology and guide reconciliation; preserve full parent gates.
