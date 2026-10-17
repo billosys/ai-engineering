@@ -36,30 +36,10 @@ css_implementation: []
 ---
 
 # Quick Definition
-
-Matrix transformation in colour conversion is the use of 3×3 matrix multiplication to linearly map colour coordinates from one space to another, forming the backbone of the Oklab conversion pipeline.
+A matrix transformation applies a linear map to coordinates; an affine map additionally permits a translation term.
 
 # Core Definition
-
-The source explicitly presents two 3×3 matrices, M1 and M2, as the primary computational operations in converting between XYZ and Oklab:
-
-**M1** (XYZ → approximate LMS):
-
-M1 = [[+0.8189330101, +0.3618667424, -0.1288597137],
-       [+0.0329845436, +0.9293118715, +0.0361456387],
-       [+0.0482003018, +0.2643662691, +0.6338517070]]
-
-**M2** (LMS' → Lab):
-
-M2 = [[+0.2104542553, +0.7936177850, -0.0040720468],
-       [+1.9779984951, -2.4285922050, +0.4505937099],
-       [+0.0259040371, +0.7827717662, -0.8086757660]]
-
-The source describes the full pipeline as:
-
-(l, m, s)^T = M1 × (X, Y, Z)^T   [then cube root]   (L, a, b)^T = M2 × (l', m', s')^T
-
-The inverse pipeline uses M2⁻¹ and M1⁻¹. The source notes the matrices were updated in 2021 for higher precision.
+For column vectors, a zero-bias matrix operation is linear. Oklab's conversion uses linear transforms around a pointwise real cube-root stage; the complete route is therefore nonlinear. The article prints an XYZ-to-LMS matrix and separately gives combined linear-sRGB coefficients. Do not apply one coefficient set to the other's input. Rounded published coefficients and finite floating-point arithmetic do not guarantee exact round-trip identity.
 
 # Prerequisites
 
@@ -67,12 +47,10 @@ The inverse pipeline uses M2⁻¹ and M1⁻¹. The source notes the matrices wer
 - **XYZ colour space** — M1 takes XYZ as input.
 
 # Key Properties
-
-1. A 3×3 matrix transforms a 3-component colour vector (e.g., XYZ) to another 3-component colour vector (e.g., LMS).
-2. Matrix operations are linear: they preserve the relationship between mixed colours (if C = 0.5·A + 0.5·B in input, then M·C = 0.5·M·A + 0.5·M·B).
-3. Invertible matrices allow round-trip conversion; both M1 and M2 must be non-singular.
-4. In Oklab, the two matrix steps bracket a non-linear step (cube root); the matrices themselves are purely linear.
-5. Concatenating multiple linear transforms into a single matrix is valid: the C++ code combines the sRGB→XYZ and XYZ→LMS steps into one set of coefficients.
+1. A matrix with no added offset is a linear transformation, not a general affine transformation.
+2. Adjacent linear stages may be composed; a nonlinear pointwise cube root cannot be absorbed into one linear matrix.
+3. Oklab's XYZ and combined linear-sRGB coefficient rows have different inputs.
+4. Rounded coefficients and finite precision produce approximate numerical round trips.
 
 # Construction / Recognition
 
@@ -120,12 +98,10 @@ The inverse pipeline uses M2⁻¹ and M1⁻¹. The source notes the matrices wer
 - **Non-linear colour operations** — The cube root step in Oklab is non-linear and cannot be represented as a matrix; only the bracketing linear steps are matrices.
 
 # Common Errors
-
-- **Error**: Applying the M1 matrix to gamma-encoded sRGB values instead of linear sRGB.
-  **Correction**: The matrix assumes linear input. Decode gamma first.
-
-- **Error**: Confusing the concatenated sRGB-form matrix coefficients in the C++ code with the XYZ-form M1 matrix values given separately.
-  **Correction**: The C++ code concatenates sRGB→XYZ and XYZ→LMS into one step; the numerical coefficients differ from the standalone M1 but produce the same result.
+- **Error**: Calling every matrix operation affine or claiming every colour conversion uses a single 3×3 matrix.
+  **Correction**: Specify the actual linear/nonlinear stages and coordinate domains.
+- **Error**: Demanding exact identity from rounded tables or mixing coefficient families.
+  **Correction**: Use internally matched published coefficients and allow finite numeric tolerance.
 
 # Common Confusions
 
@@ -137,10 +113,4 @@ The inverse pipeline uses M2⁻¹ and M1⁻¹. The source notes the matrices wer
 "Converting from XYZ to Oklab"; "Converting from linear sRGB to Oklab"; "How Oklab was derived" (matrices M1 and M2 as parameters to optimise).
 
 # Verification Notes
-
-- Definition source: Matrix values and pipeline structure are direct transcription from the source. The description of the operations is explicit.
-- Confidence rationale: High — matrix values, their role, and the inverse pipeline are all explicitly given.
-- Uncertainties: None significant.
-- Cross-reference status: Verified against C++ code listing and example table.
-- Rosetta Stone check: Mathematics/linear-map mapping added as rigorous.
-- OCR issues: LaTeX matrix notation extracted from katex-mathml context.
+The transformation stages were checked against Ottosson's printed formulas. Exact algebraic composition is distinguished from finite numerical results; no general-purpose converter was introduced.

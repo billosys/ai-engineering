@@ -19,7 +19,7 @@ extends: []
 related:
   - "colour-space"
   - "oklab"
-  - "cielab"
+  - "colour-space-comparison"
 contrasts_with: []
 answers_questions:
   - "What makes a colour space perceptually uniform, and why does it matter for design?"
@@ -28,13 +28,13 @@ rosetta_stone:
   -
     domain: "music"
     concept: "Equal temperament (12-TET)"
-    rating: "rigorous"
-    note: "Both solve the same problem: imposing uniform perceptual step-sizes on a physically non-linear space. Equal temperament makes semitones equal; perceptual colour spaces make colour differences equal."
+    rating: "loose"
+    note: "Loose analogy only: equal-tempered frequency ratios and fitted colour models are different mathematics; neither establishes universal equal auditory or visual distance."
   -
     domain: "mathematics"
     concept: "Metric space with uniform distance function"
     rating: "structural"
-    note: "A perceptually uniform colour space is one whose distance metric corresponds to perceived difference — equal metric distances imply equal perceived differences."
+    note: "An ideal metric would correspond to perceived difference under stated conditions; practical fitted models only approximate that correspondence."
 css_implementation:
   -
     property: "color"
@@ -43,35 +43,32 @@ css_implementation:
 ---
 
 # Quick Definition
-
-A colour space is perceptually uniform when equal numerical distances between colour values correspond to equal perceived differences in appearance.
+Perceptual uniformity is an ideal in which coordinate differences correspond consistently to perceived differences under stated conditions; practical colour models only approximate it.
 
 # Core Definition
-
-A perceptually uniform colour space is one in which the same numerical step produces the same perceived change in colour, regardless of where in the space you start. Ottosson states the goal directly: a perceptual colour space should predict "perceived lightness, chroma and hue well" so that "L, C and h should be perceived as orthogonal, so one can be altered without affecting the other two." It also requires that "blending two colors should result in even transitions. The transition colors should appear to be in between the blended colors."
-
-The test for uniformity is empirical: given pairs of colours that humans judge to be equally different, a uniform space will assign equal distances to every pair.
+A uniform colour space aims to make equal coordinate differences correspond to equal perceived differences. Actual agreement depends on model, dataset, viewing conditions, display and gamut. Oklab is a fitted approximation, not an exact or universal law. Its coordinates are designed to reduce cross-effects, but that goal does not make axes perceptually independent in every context. A constant-L/C hue sweep is an example construction; it must be checked for destination gamut and rendering.
 
 # Prerequisites
 
 This is a foundational concept with no prerequisites within this source.
 
 # Key Properties
-
-1. Equal numerical distances correspond to equal perceived colour differences.
-2. Lightness, chroma, and hue axes are perceptually orthogonal — changing one does not appear to change the others.
-3. Colour interpolation (blending) produces smooth, even-looking transitions without unexpected hue shifts or lightness jumps.
+1. Uniformity is an ideal/model property assessed against specified observations and conditions.
+2. Oklab approximates perceptual behaviour; equal numerical distance is not guaranteed to mean equal appearance everywhere.
+3. Model-coordinate independence is a design goal, not a universal perceptual result.
+4. A hue sweep holds L and C constant while varying h; output gamut and context affect the result.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose a reference set of experimental colour-difference judgements (e.g., Munsell data, Luo-Rigg dataset, CAM16 predictions).
-2. Optimise a mathematical transform of physical colour values so that distances in the transformed space minimise error against the reference judgements.
-3. Verify with held-out data: equal-lightness pairs should have equal L values, equal-chroma pairs equal C, equal-hue pairs equal h.
+1. Name the colour model and viewing/output conditions.
+2. Select equal coordinate increments as a model-based candidate.
+3. Render/check the result and compare the relevant colour differences; avoid a universal-equality claim.
 
 ## To Identify/Recognise:
-1. Check whether a constant-hue, constant-chroma gradient appears uniform in perceived brightness across all hues — non-uniform spaces show yellow and cyan much lighter than red and blue (as HSV does).
-2. Check whether blending two colours produces midpoints that appear between the originals in lightness and hue, without passing through an unexpected third colour.
+1. Ask which dataset, difference metric and conditions support a uniformity claim.
+2. For a hue sweep, identify constant L and C with varying hue, then check actual gamut/rendering.
+3. Numerical equality alone does not establish equal visual appearance.
 
 # Context & Application
 
@@ -79,60 +76,39 @@ This is a foundational concept with no prerequisites within this source.
 - **Common applications**: Turning an image grayscale while preserving perceived lightness; increasing saturation without introducing hue shifts; creating smooth transitions between colours.
 
 ## Cross-Domain Connections
-
-**Music → RIGOROUS**: Equal temperament (12-TET) and perceptual colour uniformity solve the same structural problem — imposing equal perceptual steps on a physically non-linear space. In equal temperament, frequency ratios are made uniform so that every semitone step sounds equally distant; in Oklab/CIELAB, colour coordinates are transformed so that every unit step looks equally distant.
-The mathematical structure is identical: a non-linear (e.g., cube-root) transform of the physical measurement space followed by a linear recombination, producing a space where differences match perception rather than physics.
-
-**Mathematics → STRUCTURAL**: A perceptually uniform colour space is a metric space in which the distance function is calibrated to human perception rather than to physical signal values. Equal distances in the metric correspond to equal perceived differences — the key invariant that justifies using Euclidean distance for colour difference calculations.
+**Music → LOOSE analogy**: A 12-tone equal-tempered frequency ratio and a fitted three-dimensional colour transform are different mathematics. Neither establishes universal equal auditory or visual distance. **Mathematical operation**: The stated coordinate calculation can be rigorous as arithmetic while its perceptual interpretation remains approximate.
 
 # Examples
-
-**Example 1** (from source): An Oklab gradient with varying hue, constant lightness and chroma, appears even and uniform across all hues. Compare this to an HSV gradient with constant value and saturation, where yellow, magenta, and cyan appear much lighter than red and blue — a direct failure of perceptual uniformity. (Section: "Comparing Oklab to HSV")
-
-**Example 2** (from source): The quantitative error table shows Oklab achieving L RMS = 0.20, versus CIELAB at 1.70 and HSV at 11.59, demonstrating Oklab's superior perceptual uniformity in lightness prediction. (Section: "Comparison with other color spaces")
+**Example 1** (source description): Ottosson describes an Oklab hue sweep with constant L/C and varying h, alongside an HSV comparison. This is attributed to that example; the image was not independently inspected, and it is not a universal guarantee. (Section: “Comparing Oklab to HSV”)
 
 # Relationships
-
 ## Builds Upon
-- **Human visual perception of lightness, chroma, and hue** — Uniformity is defined relative to what humans perceive, not to physical measurements.
+- **Colour space** — Uniformity is assessed for a model under conditions.
 
 ## Enables
-- **Oklab colour space** — Oklab is defined as a colour space engineered to achieve perceptual uniformity.
-- **Colour interpolation (perceptual)** — Perceptual uniformity is the prerequisite for interpolation that produces visually even transitions.
-- **Palette construction** — Requires uniformity to guarantee predictable lightness steps across hues.
+- **Colour interpolation** — Approximate uniformity may inform path selection but does not guarantee rendered evenness.
+- **Palette construction** — Coordinates provide candidates for later gamut, rendering and pair checks.
 
 ## Related
-- **CIELAB** — CIELAB is an earlier attempt at perceptual uniformity that Oklab improves upon.
-- **Colour space comparison** — The comparison table in the source ranks colour spaces by their approximation to perceptual uniformity.
+- **Oklab** — A fitted approximate model.
+- **Colour-space-comparison** — The article reports dataset- and metric-specific results.
 
 ## Contrasts With
-- **HSV** — HSV uses sRGB coordinates directly and provides no perceptual uniformity; the source notes it "does not meet any of the requirements except having a D65 whitepoint."
+- **Nonuniform models** — Equal coordinate steps may not correspond consistently to observed differences.
 
 # Common Errors
-
-- **Error**: Assuming any Lab-like space is automatically perceptually uniform.
-  **Correction**: Uniformity is a matter of degree; CIELAB, CIELUV, and OSA-UCS all have known failures. Uniformity must be verified against experimental data, not assumed from structure.
-
-- **Error**: Treating HSV or HSL hue sweeps as perceptually uniform hue gradients.
-  **Correction**: HSV hue gradients are highly non-uniform — yellow, magenta, and cyan appear far lighter than red and blue at constant V and S.
+- **Error**: Saying constant L/C appears equally light/colourful across every hue or display.
+  **Correction**: Describe the constant-L/C, varying-h hue-sweep construction and qualify the appearance claim.
+- **Error**: Treating a loose music analogy as a mathematical or perceptual equivalence.
+  **Correction**: State the literal operation separately from its limited analogy.
 
 # Common Confusions
-
-- **Confusion**: "Perceptual uniformity" means the space looks like a rainbow or colour wheel to the human eye.
-  **Clarification**: It means that equal steps in the coordinate system correspond to equal perceived differences — not that the coordinate layout is visually intuitive or aesthetically pleasing.
-
-- **Confusion**: Uniformity applies only to lightness.
-  **Clarification**: Perceptual uniformity applies to all three axes: lightness (L), chroma (C), and hue (h) must each be individually uniform, and they must be orthogonal to each other.
+- **Confusion**: A perceptually motivated space makes every equal coordinate step visually equal.
+  **Clarification**: Uniformity is an approximate model fit assessed under conditions; it is not an all-context guarantee.
 
 # Source Reference
 
 "Motivation and derivation of Oklab" and "Comparison with other color spaces" sections; no page numbers (web article).
 
 # Verification Notes
-
-- Definition source: Synthesised from the requirements list in "Motivation and derivation of Oklab" and from the comparison table and gradient examples throughout.
-- Confidence rationale: High — the source explicitly states the uniformity requirements and provides quantitative evidence; the concept is central to the entire article.
-- Uncertainties: The source does not define "perceptual uniformity" with a single sentence; the definition has been synthesised from multiple passages.
-- Cross-reference status: Verified against both qualitative descriptions and quantitative error table.
-- Rosetta Stone check: Music/equal-temperament mapping added as rigorous per instructions; mathematics/metric-space mapping added as structural.
-- OCR issues: HTML div/img/span artifacts present throughout; ignored. LaTeX extracted from context.
+The uniformity definition and Oklab scope were checked against CSS Color 4 CRD 2026-10-09 §9.2 and Ottosson's stated model goals. Music comparisons remain loose analogies; no psychophysical investigation was performed.

@@ -237,15 +237,16 @@ ratios (yellow:violet = 1:3, orange:blue = 1:2, red:green = 1:1).
 Condensed version *Elements of Color* (\~96 pages, Wiley) is more
 accessible.
 
-**OKLCH/OKLAB (Björn Ottosson, 2020).** The most important modern colour
-space for web design. Mathematical structure: XYZ → LMS via matrix M₁ →
-cube-root nonlinearity → opponent-colour transform via M₂. Unlike HSL, OKLCH is designed for more perceptually consistent
-lightness/chroma/hue coordinates. Equal L changes are not an exact guarantee
-of equal appearance across hues, contexts or displays and do not establish
-contrast or accessibility. CSS support
-is now baseline: `oklch(L C H)`. The relative colour syntax
-`oklch(from var(--base) calc(l + 0.15) c h)` enables dynamic palette
-manipulation from a single token.
+**OKLCH/OKLAB (Björn Ottosson, 2020).** Oklab is a D65-referenced model
+whose coordinates aim to approximate perceived lightness, chroma and hue;
+its uniformity is a fitted approximation, not a guarantee across hues,
+contexts, displays or destination gamuts. The linear-sRGB route uses a linear
+transform, a pointwise real cube root and a second linear transform; encoded
+sRGB must first be decoded. CSS supports explicit forms such as
+`oklch(L C H)` and relative colour syntax such as
+`oklch(from var(--base) calc(l + 0.15) c h)` where implemented. Select
+candidates, inspect destination gamut/rendering and check actual colour pairs
+when contrast matters; equal L does not certify appearance or accessibility.
 
 **CIE colour science** provides the mathematical foundation. Colour
 difference formulas progress from simple Euclidean distance in CIELAB
@@ -372,8 +373,9 @@ mappings).
 Explains why design systems use geometric spacing scales: visual area
 has exponent n ≈ 0.7 (compressive), meaning doubling physical area does
 NOT double perceived size --- you need \~2.7× the area. Brightness has n
-≈ 0.33, explaining why gamma correction and perceptually uniform colour
-spaces are necessary.
+≈ 0.33 in this account; that observation does not derive either a display
+transfer curve or a colour-space nonlinearity. A display transfer curve and
+Oklab's chosen cube-root stage have different purposes and assumptions.
 :::
 
 ::: formula

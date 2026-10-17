@@ -29,22 +29,10 @@ css_implementation: []
 ---
 
 # Quick Definition
-
-LMS cone responses are the outputs of the three types of colour-sensitive photoreceptors in the human eye — Long (L), Medium (M), and Short (S) wavelength cones — which together form the biological basis for colour perception.
+Oklab's lowercase l, m and s are fitted cone-like intermediate coordinates; they are not direct physiological cone measurements or final uppercase Oklab L.
 
 # Core Definition
-
-The source introduces LMS responses as an intermediate computational step in converting colours to Oklab. Given XYZ coordinates, the first matrix multiplication (M1) converts them to "approximate cone responses":
-
-(l, m, s)^T = M1 × (X, Y, Z)^T
-
-The matrix M1 is:
-
-M1 = [[+0.8189330101, +0.3618667424, -0.1288597137],
-       [+0.0329845436, +0.9293118715, +0.0361456387],
-       [+0.0482003018, +0.2643662691, +0.6338517070]]
-
-The source uses lowercase (l, m, s) to denote these approximate cone-space values, distinguishing them from the final Oklab coordinate L (perceived lightness). The word "approximate" signals that M1 does not correspond to a standard cone-response matrix but is instead optimised for Oklab's perceptual goals.
+In the article's XYZ-form expression, M1 multiplies XYZ to produce approximate l, m, s intermediates, followed by a real cube root and a second transform. The separately printed linear-sRGB code folds the sRGB-to-XYZ and XYZ-to-LMS linear stages into coefficients applied directly to linear RGB. These values serve Oklab's fitted model; the article does not establish physiological accuracy or non-negativity over every extended input domain. Signed real cube roots are defined for negative intermediates.
 
 # Prerequisites
 
@@ -52,11 +40,10 @@ The source uses lowercase (l, m, s) to denote these approximate cone-space value
 - **XYZ colour space** — LMS values are derived from XYZ via matrix multiplication; XYZ must be understood first.
 
 # Key Properties
-
-1. Three channels (l, m, s) corresponding to the long-, medium-, and short-wavelength cone responses.
-2. In the Oklab pipeline, LMS values are intermediate — they are further processed by a cube-root non-linearity and a second matrix.
-3. The M1 matrix in Oklab produces "approximate" cone responses, not exact CIE cone-response values.
-4. All three components are non-negative for colours within the physical gamut (visible spectrum).
+1. Lowercase l/m/s denote Oklab intermediates; uppercase L is the final lightness coordinate.
+2. The article's printed XYZ M1 acts on XYZ; its separate linear-sRGB implementation combines stages.
+3. 'Approximate cone responses' is a model description, not measured biological activity.
+4. Negative intermediate values are possible outside restricted inputs and require signed real cube roots.
 
 # Construction / Recognition
 
@@ -101,9 +88,10 @@ float s = 0.0883024619f * c.r + 0.2817188376f * c.g + 0.6299787005f * c.b;
 - **XYZ** — XYZ is a linear transform of LMS (they represent the same physical information but with different axes).
 
 # Common Errors
-
-- **Error**: Treating the l, m, s in Oklab's M1 output as identical to standard CIE LMS cone fundamentals.
-  **Correction**: The source explicitly calls these "approximate" cone responses; M1 is optimised for Oklab's perceptual error, not for exact physiological accuracy.
+- **Error**: Calling the intermediate values exact cone responses or asserting they are non-negative for all physical/extended colours.
+  **Correction**: Describe the fitted approximate intermediate and state input-domain conditions.
+- **Error**: Applying the printed XYZ M1 directly to RGB.
+  **Correction**: Use the appropriate XYZ or combined linear-sRGB coefficient set.
 
 # Common Confusions
 
@@ -115,10 +103,4 @@ float s = 0.0883024619f * c.r + 0.2817188376f * c.g + 0.6299787005f * c.b;
 "Converting from XYZ to Oklab"; "Converting from linear sRGB to Oklab" sections.
 
 # Verification Notes
-
-- Definition source: The source states "XYZ coordinates are converted to an approximate cone responses" — direct quote. The word "approximate" is explicit in the source.
-- Confidence rationale: Medium — the source uses LMS as a computational step without explaining the underlying physiology; the biological definition was inferred from the colour science context.
-- Uncertainties: The source does not discuss LMS cone fundamentals in depth or compare M1 to standard LMS matrices (e.g., Hunt-Pointer-Estévez). The characterisation as "approximate" is noted but not elaborated.
-- Cross-reference status: Verified against C++ code listing.
-- Rosetta Stone check: No rosetta stone mappings.
-- OCR issues: LaTeX matrix equations extracted from context; katex spans ignored.
+The matrix input and signed-root behavior were checked from the prepared article's two implementations. No physiological measurement or universal-domain claim is made.

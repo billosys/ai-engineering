@@ -32,19 +32,15 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Linear vector space"
     rating: "rigorous"
-    note: "XYZ is a linear colour space — all operations on it are linear transformations (matrix multiplications). Non-linear steps are applied after leaving XYZ."
+    note: "XYZ is a linear tristimulus representation and linear stages can be expressed as matrix operations; a complete conversion or other operation involving XYZ may include nonlinear steps."
 css_implementation: []
 ---
 
 # Quick Definition
-
-CIE XYZ is a device-independent, linear colour space that serves as the universal reference intermediary for converting between all other colour spaces; Oklab's conversion pipeline passes through XYZ.
+CIE XYZ is a linear tristimulus representation defined for a specified standard observer; its coordinates are not standalone chrominance channels or a mandatory route for every conversion.
 
 # Core Definition
-
-The source treats XYZ as the starting point for the Oklab conversion, describing it as: "Given a color in XYZ coordinates, with a D65 whitepoint and white as Y=1." XYZ is not defined further in the source — it is assumed background knowledge — but it is used as the common reference from which cone responses and ultimately Oklab coordinates are derived.
-
-XYZ is a linear colour space: it models colour as a linear combination of three tristimulus values (X, Y, Z) calibrated to human vision by the CIE in 1931. Y corresponds to luminance. The source provides a reference table of XYZ/Oklab pairs with white at (X=0.950, Y=1.000, Z=1.089), confirming D65 normalisation.
+XYZ represents tristimulus values under defined observer/reference conventions. Linear operations on XYZ coordinates are possible within the model, but conversions may include nonlinear encoding, chromatic adaptation, gamut mapping or other operations. X and Z are not isolated chrominance channels. XYZ is a useful connection between some colour representations, not a required intermediary in every conversion. Pure-axis test vectors are arithmetic fixtures and should not be presented as verified visible display colours.
 
 # Prerequisites
 
@@ -52,12 +48,11 @@ XYZ is a linear colour space: it models colour as a linear combination of three 
 - **D65 whitepoint** — The source specifies XYZ with D65 whitepoint; the normalisation matters for the conversion.
 
 # Key Properties
-
-1. Device-independent: XYZ describes colour in terms of human tristimulus response, not device primaries.
-2. Linear: all colour operations in XYZ are linear transforms (matrix multiplications); no gamma correction.
-3. Y is luminance; X and Z carry chrominance information.
-4. D65-normalised white: (X≈0.950, Y=1.000, Z≈1.089).
-5. The entire visible gamut can be represented; it is not limited to sRGB.
+1. X, Y and Z are tristimulus coordinates under stated observer/reference conditions.
+2. They are not independent perceptual channels; X and Z are not standalone chrominance channels.
+3. The representation is linear, but complete conversion routes can include nonlinear stages.
+4. Pure-axis test values are arithmetic fixtures unless a display conversion and gamut check establish otherwise.
+5. XYZ is useful, not mandatory, as a conversion intermediate.
 
 # Construction / Recognition
 
@@ -80,8 +75,7 @@ XYZ is a linear colour space: it models colour as a linear combination of three 
 **Mathematics → RIGOROUS**: XYZ is a linear vector space — operations on XYZ coordinates are linear transformations (matrix multiplications). This is why the sRGB→XYZ and XYZ→LMS steps in the Oklab pipeline are pure matrix multiplications: linearity is preserved all the way until the cube-root non-linearity is applied to the LMS values.
 
 # Examples
-
-**Example 1** (from source): The conversion pipeline begins with XYZ input: "(l m s)^T = M1 × (X Y Z)^T". The reference table confirms four XYZ→Oklab conversions, with pure X (1,0,0) mapping to Oklab (0.450, 1.236, -0.019) — a highly saturated colour in the red-magenta direction. (Section: "Converting from XYZ to Oklab")
+The article's pure-axis XYZ vectors are arithmetic examples. Without a specified display conversion and gamut check they are not verified visible colours.
 
 # Relationships
 
@@ -102,24 +96,18 @@ XYZ is a linear colour space: it models colour as a linear combination of three 
 - **Oklab** — Oklab is perceptually uniform and non-linear; XYZ is perceptually non-uniform and linear.
 
 # Common Errors
-
-- **Error**: Using gamma-encoded sRGB values directly as XYZ inputs.
-  **Correction**: sRGB must be linearised (gamma-decoded) before conversion to XYZ. The source references this: "To compute linear sRGB values, see my previous post."
+- **Error**: Claiming every operation involving XYZ is linear, or that all space conversions must pass through it.
+  **Correction**: Scope linearity to the representation and actual linear stages; name nonlinear steps and the selected route.
+- **Error**: Calling pure X/Y/Z fixtures visible saturated colours.
+  **Correction**: Label them as arithmetic test coordinates unless display conversion and gamut have been verified.
 
 # Common Confusions
-
-- **Confusion**: XYZ is the same as xyY or xy chromaticity.
-  **Clarification**: xyY is a derived representation of XYZ (normalised chromaticity coordinates); they encode the same information differently.
+- **Confusion**: X/Z directly encode chrominance while Y is brightness.
+  **Clarification**: These are tristimulus coordinates under a defined observer; they are not independent perceptual channels.
 
 # Source Reference
 
 "Converting from XYZ to Oklab"; "Table of example XYZ and Oklab pairs" sections.
 
 # Verification Notes
-
-- Definition source: Synthesised from usage; the source assumes prior knowledge of XYZ and does not define it.
-- Confidence rationale: Medium — XYZ is used as background infrastructure in the source, not explained; definition synthesised from colour science convention and source usage.
-- Uncertainties: The source does not discuss the CIE 1931 derivation of XYZ or the meaning of individual X, Y, Z axes beyond noting Y=1 for D65 white.
-- Cross-reference status: Verified against conversion equations and example table.
-- Rosetta Stone check: Mathematics/linear-vector-space mapping added as rigorous.
-- OCR issues: None significant.
+XYZ's role and Oklab's nonlinear route were checked against the prepared article and CSS Color 4 CRD 2026-10-09. The rosetta note scopes linearity to the representation/stages. Pure-axis examples are arithmetic only.

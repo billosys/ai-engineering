@@ -35,18 +35,12 @@ css_implementation:
 ---
 
 # Quick Definition
-
-Chroma is the perceptual magnitude of a colour's colourfulness, measured as the distance from the neutral (grey) axis in a perceptual colour space — distinct from saturation, which is relative colourfulness scaled to lightness.
+Chroma in Oklab is C = hypot(a, b), the radial coordinate in its a–b plane. This model-specific coordinate is not a universal appearance step or a saturation ratio.
 
 # Core Definition
+The source defines Oklab polar chroma from Cartesian coordinates as C = sqrt(a²+b²), with hue obtained from atan2(b,a). This is an exact coordinate relation within Oklab. Its perceptual interpretation is an approximate correlate, conditioned by the model and viewing context. The source's stated goal that L, C and h be perceived as orthogonal describes a design aim, not a guarantee for every hue, display or gamut.
 
-The source introduces chroma as the C coordinate in Oklab's polar (LCh) form. Chroma is defined geometrically as:
-
-C = sqrt(a² + b²)
-
-where a and b are the Oklab Cartesian coordinates (red-green and blue-yellow axes respectively). The source links to the Wikipedia definition of chroma (colorfulness) and distinguishes it from saturation implicitly by framing it as an absolute distance in colour space rather than a ratio relative to lightness.
-
-The source's requirements state that a perceptual colour space should "predict lightness, chroma and hue well. L, C and h should be perceived as orthogonal, so one can be altered without affecting the other two."
+CIE terminology distinguishes chroma from saturation: chroma relates colourfulness to a similarly illuminated achromatic reference; saturation relates colourfulness to the stimulus's own brightness. These appearance terms do not license a general C/L formula. HSL and HSV parameters called “saturation” are model-specific quantities.
 
 # Prerequisites
 
@@ -54,73 +48,63 @@ The source's requirements state that a perceptual colour space should "predict l
 - **Perceptual uniformity** — Chroma's value as a concept depends on the space being perceptually uniform; otherwise equal C steps do not equal equal perceived colourfulness steps.
 
 # Key Properties
-
-1. Chroma is the Euclidean distance from the achromatic axis in the ab plane of Oklab.
-2. Achromatic colours (greys, black, white) have C = 0.
-3. Increasing C while holding L and h constant makes a colour appear more colourful without shifting its perceived lightness or hue.
-4. Chroma is an absolute measure of colourfulness; saturation is relative (chroma divided by lightness).
-5. In Oklab, C for typical sRGB colours ranges from 0 to approximately 0.4, with fully saturated colours near the edges of the sRGB gamut having the highest values.
+1. C = hypot(a,b); C=0 when a=b=0, where polar hue is undefined.
+2. C is measured in the chosen Oklab coordinates; it is not a universal absolute colourfulness scale.
+3. Varying C while fixing L and hue changes the model coordinates as intended, but does not guarantee unchanged perceived lightness/hue or equal-looking steps.
+4. CSS OkLCh's percentage reference of 0.4 is a syntax scale, not a maximum chroma. Reachable chroma depends on lightness, hue and destination gamut.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Convert a colour to Oklab (L, a, b).
-2. Compute C = sqrt(a² + b²).
-3. Optionally compute hue: h = atan2(b, a).
-4. To construct a colour at a specific chroma: set a = C·cos(h), b = C·sin(h).
+1. Convert the colour to Oklab (L,a,b) using the intended reference and conversion.
+2. Compute C = hypot(a,b); when C>0, h = atan2(b,a), converted to the desired angle unit.
+3. Recover a=C cos(h), b=C sin(h), converting degrees to radians where required.
+4. Check the resulting colour against the intended output gamut and rendering.
 
 ## To Identify/Recognise:
-1. Chroma = 0: pure grey (a=0, b=0 at any L).
-2. Chroma increases as a colour becomes more saturated.
-3. In a Munsell-like plot in Oklab, equal-chroma colours form approximate circles in the ab plane.
+1. C=0 identifies the neutral axis in these coordinates; hue is undefined there.
+2. A constant-C locus is a circle in the Oklab a–b plane by definition. This geometry alone does not establish equal perceived colourfulness in every condition.
 
 # Context & Application
-
-- **Typical contexts**: Palette design (holding C constant across hues produces uniformly colourful palettes); increasing colourfulness in image processing.
-- **Common applications**: CSS `oklch()` where the second parameter is chroma; colour picker interfaces that separate colourfulness from lightness.
+- **Typical contexts**: Comparing or constructing Oklab coordinates in palette tools and colour models.
+- **Common applications**: CSS `oklch()` uses a chroma coordinate; select candidates, check destination gamut/rendering, then assess actual foreground/background pairs when contrast matters.
 
 # Examples
+**Example 1** (source description, not an independent visual inspection): Ottosson describes an Oklab hue sweep with fixed L and C and varying hue, and compares it with an HSV sweep. This is an attributed example, not a guarantee for arbitrary output devices or a claim that the embedded image was inspected. (Section: “Comparing Oklab to HSV”)
 
-**Example 1** (from source): The hue gradient comparison shows Oklab with constant C and L across all hues appearing visually even, while HSV at constant value and saturation appears highly uneven in perceived lightness and colourfulness. (Section: "Comparing Oklab to HSV")
-
-**Example 2** (from source): Munsell data plotted in Oklab forms approximate circles in the ab plane (chroma as radius), while other spaces (CIELAB, CIELUV, IPT) show squashed or distorted circles, demonstrating better chroma prediction by Oklab. (Section: "Munsell data")
+**Example 2** (source description): The article describes Oklab Munsell data plotted as approximately circular in the a–b plane. This is evidence from the stated dataset and plot, not a universal result. (Section: “Munsell data”)
 
 # Relationships
 
 ## Builds Upon
-- **Oklab** — Chroma is derived from Oklab's a and b coordinates.
-- **Perceptual uniformity** — Chroma is only meaningful as a perceptual quantity if the underlying space is uniform.
+- **Oklab** — The coordinate model that defines a and b.
 
 ## Enables
-- **Colour interpolation (perceptual)** — Holding C constant during hue interpolation produces transitions without desaturation artefacts.
-- **Palette design** — Constant-C, varying-h, varying-L palettes can be systematically designed.
+- **Colour interpolation (perceptual)** — C can be one chosen coordinate to hold or vary; the path still requires gamut and appearance checks.
+- **Palette design** — Supports candidate construction in explicit model coordinates, not a universal palette recipe.
 
 ## Related
-- **Lightness (perceptual)** — Chroma and lightness are orthogonal axes in Oklab; changing one should not appear to change the other.
-- **Hue** — Chroma and hue together define the chromaticity in LCh polar form.
+- **Lightness (perceptual)** — L and C are distinct coordinates in Oklab; coordinate independence does not guarantee perceptual independence.
+- **Hue** — Along with L and C, hue describes the polar form when C is nonzero.
 
 ## Contrasts With
-- **Saturation (HSV/HSL)** — Saturation is relative (chroma/lightness ratio); HSV saturation is not perceptually uniform. The source notes that HSV "does not meet any of the requirements" for perceptual uniformity.
+- **Saturation (HSV/HSL)** — CIE appearance saturation and model parameters labelled HSL/HSV saturation are distinct; neither is generally C/L.
 
 # Common Errors
-
-- **Error**: Using HSV saturation as a proxy for perceptual chroma.
-  **Correction**: HSV saturation is not perceptually uniform — equal saturation steps in HSV produce very different perceived colourfulness changes. Use Oklab C instead.
+- **Error**: Treating a constant-C hue sweep as equally colourful and displayable everywhere.
+  **Correction**: Treat it as a coordinate construction; check target gamut, rendering, and the intended viewing context.
+- **Error**: Using `C/L` as a universal saturation definition.
+  **Correction**: Distinguish the CIE appearance term from model-specific HSL/HSV parameters and from Oklab C.
 
 # Common Confusions
-
-- **Confusion**: Chroma and saturation are synonyms.
-  **Clarification**: In perceptual colour science, chroma is absolute colourfulness from the neutral axis; saturation is chroma relative to lightness. The source links specifically to the Wikipedia "colorfulness" article when introducing chroma, signalling this distinction.
+- **Confusion**: Chroma is an absolute, context-free amount of colourfulness.
+  **Clarification**: The formula is exact for the coordinate system; its perceptual interpretation is model- and condition-dependent. The source's Wikipedia link does not establish a C/L saturation law.
 
 # Source Reference
 
 "The Oklab color space" (C formula); "Munsell data" (chroma prediction comparison); comparison table in "Comparison with other color spaces".
 
 # Verification Notes
-
-- Definition source: Formula C = sqrt(a²+b²) is explicit in the source. The distinction from saturation is inferred from the Wikipedia link and the source's consistent use of "chroma" alongside "lightness" and "hue" as orthogonal perceptual attributes.
-- Confidence rationale: High — formula and context are explicit; the saturation distinction is strongly implied.
-- Uncertainties: The source does not give an explicit numerical range for C in sRGB colours; the approximate range stated in Key Properties was inferred from the example table values and colour science convention.
-- Cross-reference status: Verified against LCh formula, Munsell discussion, and comparison table.
-- Rosetta Stone check: No rosetta stone mappings.
-- OCR issues: None significant.
+- The formula and Oklab coordinate reading are explicit in the prepared article. The CIE distinction follows CIE S 017:2020 entries 17-22-073 and 17-22-074.
+- Predecessor extraction confidence is preserved as historical metadata; it is not a new evidence grade.
+- Current technical support is limited to the stated formula, terminology distinction, and attributed article examples. No original capture, browser behaviour, or embedded plots were independently verified.

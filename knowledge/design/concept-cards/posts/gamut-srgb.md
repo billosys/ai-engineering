@@ -35,16 +35,10 @@ css_implementation:
 ---
 
 # Quick Definition
-
-The sRGB gamut is the set of colours representable in the sRGB colour space — a triangular subset of the full visible colour range defined by three primary colours (red, green, blue) at a D65 whitepoint.
+sRGB gamut is the bounded set of colours representable by the sRGB encoding and primaries; its chromaticity triangle is a projection of a three-dimensional colour volume.
 
 # Core Definition
-
-The source references the sRGB gamut in two key ways. First, as a practical scope constraint on Oklab's design: "when looking at the sRGB gamut, the blue colors folded in on themselves slightly, resulting in a non-convex sRGB gamut." This led to adding a constraint during Oklab's derivation to prevent this: "By forcing the value of γ to 1/3 and adding a constraint the blue colors to not fold inwards, the final Oklab model was derived."
-
-Second, the Luo-Rigg plots show "a slice of the sRGB gamut" alongside the full visible gamut, making the sRGB gamut a visual reference for comparing colour spaces.
-
-The source also notes HSV "does not handle colors outside sRGB gamut" — confirming sRGB as a bounded subset of the full colour space.
+Distinguish a coordinate value being syntactically valid, a colour being mathematically convertible, and its being representable in the destination sRGB gamut. A practical linear-sRGB check tests all channels against [0,1] with an explicitly stated numerical tolerance. The familiar triangle is a chromaticity projection, not the full 3D gamut. A local blue-fold constraint does not prove global convexity. Wide-gamut primaries and HDR are distinct properties; P3 or Rec.2020 do not universally supersede sRGB. Pointer's cited dataset is a bounded empirical surface-colour dataset, not all physically possible colours.
 
 # Prerequisites
 
@@ -52,12 +46,11 @@ The source also notes HSV "does not handle colors outside sRGB gamut" — confir
 - **D65 whitepoint** — sRGB uses D65; the gamut is defined relative to this white.
 
 # Key Properties
-
-1. sRGB gamut is a bounded triangular region in chromaticity: the set of colours achievable by mixing three specific red, green, and blue primaries.
-2. sRGB is a subset of the full visible gamut; many natural colours (especially highly saturated ones) fall outside it.
-3. In Oklab, the sRGB gamut forms a convex body in (L, a, b) space — Oklab's derivation explicitly enforced this convexity for blue colours.
-4. The sRGB gamut shares D65 as its whitepoint with Oklab, Display P3, and Rec. 2020.
-5. Colours outside the sRGB gamut cannot be directly displayed on standard sRGB monitors; they require gamut mapping.
+1. The chromaticity triangle is a projection; the bounded sRGB gamut has three dimensions.
+2. Valid Oklab/OkLCh coordinates can convert outside sRGB. Conversion is not gamut mapping.
+3. Test destination linear RGB using a declared tolerance.
+4. Wide gamut and HDR are distinct; the appropriate destination depends on task and output.
+5. The Pointer dataset does not exhaust physically possible colours.
 
 # Construction / Recognition
 
@@ -101,9 +94,10 @@ The source also notes HSV "does not handle colors outside sRGB gamut" — confir
 - **Display P3, Rec. 2020** — Wider gamuts that supersede sRGB for HDR and cinema displays.
 
 # Common Errors
-
-- **Error**: Assuming all real-world colours fall within the sRGB gamut.
-  **Correction**: The source shows (via Luo-Rigg plots) that highly saturated real surface colours exist outside sRGB; "Pointer's Gamut — the set of possible surface colors" is used as a superset in the Oklab derivation data.
+- **Error**: Treating a plotted triangle as the complete RGB gamut or inferring global convexity from one boundary constraint.
+  **Correction**: State the projection and prove any global geometric claim separately.
+- **Error**: Treating a valid coordinate as displayable in sRGB.
+  **Correction**: Convert, test the destination gamut, then select a mapping/rendering policy.
 
 # Common Confusions
 
@@ -115,10 +109,4 @@ The source also notes HSV "does not handle colors outside sRGB gamut" — confir
 "How Oklab was derived" (gamut convexity constraint); "Luo-Rigg dataset and full gamut" (gamut slice in plots); HSV limitation note.
 
 # Verification Notes
-
-- Definition source: Synthesised from references to "sRGB gamut" throughout the source; the source does not define sRGB gamut explicitly.
-- Confidence rationale: Medium — the concept is referenced functionally (gamut convexity, gamut slice, HSV gamut limit) without a formal definition; definition synthesised from usage.
-- Uncertainties: The source does not provide explicit sRGB primary chromaticities or a formal gamut definition.
-- Cross-reference status: Verified against derivation section and Luo-Rigg discussion.
-- Rosetta Stone check: No rosetta stone mappings.
-- OCR issues: None significant.
+CSS Color 4 CRD 2026-10-09 §§13–14 distinguishes interpolation, gamut mapping and display. Pointer evidence is limited to its empirical dataset. No gamut map or browser render was tested here.

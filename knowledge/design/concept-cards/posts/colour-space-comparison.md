@@ -42,19 +42,10 @@ css_implementation:
 ---
 
 # Quick Definition
-
-Compared across perceptual error metrics, Oklab outperforms CIELAB on lightness and chroma prediction while matching or exceeding most spaces on hue uniformity; HSL/HSV provides no perceptual uniformity at all.
+Ottosson compares selected colour models using stated datasets and error measures. The results describe those tests; they are not a universal ranking.
 
 # Core Definition
-
-The source provides a systematic comparison of eight colour spaces — Oklab, CIELAB, CIELUV, OSA-UCS, IPT, JzAzBz, HSV, and CAM16-UCS — across three error metrics (L RMS, C RMS, H RMS) and three supplementary metrics (L 95, C 95, H 95).
-
-Key verdicts from the source on the main competitors:
-
-- **CIELAB**: "Largest issue is their inability to predict hue. In particular blue hues are predicted badly."
-- **CAM16-UCS**: "Does a good job at being perceptually uniform overall, but doesn't meet other requirements: Bad numerical behavior, it is not scale invariant and blending does not behave well because of its compression of chroma."
-- **HSV**: "Only on this list because it is widely used. Does not meet any of the requirements except having a D65 whitepoint."
-- **IPT**: "Does a great job modelling hue uniformity. Doesn't predict lightness and chroma well unfortunately."
+The prepared article compares Oklab, CIELAB, CIELUV, OSA-UCS, IPT, JzAzBz, HSV and CAM16-UCS. Its table includes HSV, not HSL. The reference predictions were generated from CAM16 and are not independent human ground truth. Preserve the reported values as attributed results scoped to the source's data and metric. The author's qualitative assessments describe those tested models and tasks, not categorical usability across all work.
 
 Error table (RMS errors; best non-CAM16 in bold):
 
@@ -72,25 +63,23 @@ Error table (RMS errors; best non-CAM16 in bold):
 - **Chroma (perceptual)** and **Lightness (perceptual)** — The metrics being compared.
 
 # Key Properties
-
-1. Oklab achieves the lowest L RMS and C RMS of all compared spaces except CAM16-UCS.
-2. Oklab achieves H RMS comparable to IPT and OSA-UCS; JzAzBz is slightly better on hue.
-3. HSV/HSL provides no perceptual uniformity for lightness or chroma (L RMS = 11.59; C RMS = 3.38).
-4. CIELAB's primary weakness is hue prediction, especially for blues.
-5. CAM16-UCS's chroma compression makes it poor for colour blending despite its perceptual accuracy.
-6. Blending: CIELAB, CIELUV, and HSV all show hue shifts toward purple when blending blue with white; Oklab does not.
+1. The seven displayed non-CAM16 RMS columns and values are retained from the article.
+2. 1.70/0.20=8.5 is the table's L RMS ratio, not an 8.5-fold perceptual-quality result.
+3. HSV appears in the table; HSL does not.
+4. Metric rankings do not establish universal superiority; CAM16-derived reference data are not independent human ground truth.
+5. Source plot descriptions are attributed and were not visually inspected here.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. To compare colour spaces, convert a test set of experimentally judged equal-L, equal-C, and equal-H pairs to each space.
-2. Swap the relevant coordinate between pairs (e.g., swap L values for the lightness test) and measure CIEDE2000 colour difference.
-3. RMSE across all pairs gives the error metric per space.
+1. The article's coordinate-swap method selects relevant pairs and swaps the tested coordinate.
+2. It measures two colour differences for each pair and retains the smaller difference before computing RMS across pairs.
+3. Interpret values with the stated dataset, metric, coordinate scaling and CAM16-derived reference caveat. This is a method readback, not an independent reproduction.
 
 ## To Identify/Recognise:
-1. A space with low L RMS produces hue-sweep gradients at constant L that appear visually even in brightness.
-2. A space with good chroma prediction shows Munsell rings as circles in the ab plane.
-3. A space with poor blending behaviour shows hue shifts in gradient transitions.
+1. Read each result as a dataset- and metric-specific prediction error.
+2. A low L RMS alone does not prove all constant-L hue sweeps look even.
+3. Plot descriptions support only their stated examples and conditions.
 
 # Context & Application
 
@@ -106,42 +95,35 @@ Error table (RMS errors; best non-CAM16 in bold):
 **Example 3** (from source): Luo-Rigg ellipses: "The shape of the full gamut is quite odd in CIELAB and OSA-UCS, which likely means that their predictions are quite bad for highly saturated colors." (Section: "Luo-Rigg dataset and full gamut")
 
 # Relationships
-
 ## Builds Upon
-- **Perceptual uniformity** — This is what is being measured and compared.
-- **All individual colour spaces listed** — Understanding each space's design is required to interpret the comparison.
+- **Perceptual uniformity** — The comparison operationalizes selected measures.
+- **Individual colour models** — Needed to interpret reported metrics.
 
 ## Enables
-- **Colour space selection** — The comparison provides the basis for choosing Oklab for image processing tasks.
-- **Understanding tradeoffs** — The comparison makes explicit that no single space is optimal on all metrics; Oklab is chosen for the best overall balance.
+- **Colour-space selection** — Provides one scoped input to a task-specific choice.
+- **Tradeoff analysis** — Keeps reported metrics separate.
 
 ## Related
-- **Colour interpolation (perceptual)** — The blending comparison is a practical consequence.
-- **Chroma (perceptual)** — Chroma prediction is one of the three metrics.
+- **Colour interpolation** — The article reports selected blend examples.
+- **Chroma / Lightness** — Included as metrics.
 
 ## Contrasts With
-- **HSV/HSL** — The comparison makes quantitative the intuitive failure of HSV/HSL for perceptual tasks.
-- **CIELAB** — Closely related structure but inferior lightness, chroma, and blue-hue prediction.
+- **HSV** — Included in the table; HSL is not.
+- **CIELAB** — The article reports selected outcomes, not categorical unusability.
 
 # Common Errors
-
-- **Error**: Assuming CIELAB is "good enough" because it has been the standard for decades.
-  **Correction**: The quantitative comparison shows Oklab's L RMS is 8.5x lower than CIELAB's and C RMS is 2.3x lower; the blue hue failure in CIELAB is particularly problematic for design use.
+- **Error**: Treating 8.5× lower L RMS as 8.5× better perception.
+  **Correction**: It is the ratio of the reported L RMS values under the article's data and method.
+- **Error**: Applying the HSV measurements to HSL or all design tasks.
+  **Correction**: Keep model, dataset and metric explicit.
 
 # Common Confusions
-
-- **Confusion**: A lower hue error (H RMS) is always better.
-  **Clarification**: JzAzBz achieves the lowest H RMS (0.43) but at the cost of introducing a dependence on scale/exposure that makes it impractical for general image processing. The best H RMS does not determine the best overall choice.
+- **Confusion**: The smallest RMS makes a model best overall.
+  **Clarification**: The table separates metrics and uses CAM16-derived predictions; it is not independent human ground truth.
 
 # Source Reference
 
 "What about existing models?"; "Comparison with other color spaces"; "Blending colors"; "Munsell data"; "Luo-Rigg dataset and full gamut" sections.
 
 # Verification Notes
-
-- Definition source: Error table reproduced from source; verdict quotes are direct from "What about existing models?" bullet list.
-- Confidence rationale: High — quantitative data and qualitative verdicts are all explicit in the source.
-- Uncertainties: The error data was generated against CAM16-derived test data, which the source acknowledges may not perfectly represent human perception.
-- Cross-reference status: Verified against table, Munsell plots description, and blending description.
-- Rosetta Stone check: No rosetta stone mappings.
-- OCR issues: Markdown table extracted successfully; HTML div columns with images ignored.
+Seven non-CAM16 columns were checked against the prepared comparison table. The method readback includes the per-pair minimum before RMS. No experiment was reproduced and source plots were not visually inspected.

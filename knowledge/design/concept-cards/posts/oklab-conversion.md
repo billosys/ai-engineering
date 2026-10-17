@@ -30,9 +30,9 @@ answers_questions:
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Composed function: affine transform → pointwise nonlinearity → affine transform"
+    concept: "Linear transform → pointwise real cube root → linear transform"
     rating: "rigorous"
-    note: "The sRGB→Oklab conversion is exactly this structure: matrix multiply (M1), then cube-root applied elementwise, then matrix multiply (M2)."
+    note: "For already-linear sRGB, the article's route is a linear transform, pointwise real cube root, then a linear transform; encoded sRGB must first be decoded. This is rigorous for the stated composition."
 css_implementation:
   -
     property: "color"
@@ -41,42 +41,10 @@ css_implementation:
 ---
 
 # Quick Definition
-
-The sRGB-to-Oklab conversion is a three-step pipeline: (1) a 3×3 matrix multiplication to approximate cone responses, (2) a cube-root non-linearity applied elementwise, and (3) a second 3×3 matrix multiplication to produce the final L, a, b coordinates.
+Oklab conversion from encoded sRGB first decodes to linear sRGB, applies a linear transform, a real cube-root stage and another linear transform; reverse conversion reverses those stages and re-encodes when encoded output is wanted.
 
 # Core Definition
-
-The source provides both the matrix form and the C++ implementation explicitly. The conversion from linear sRGB to Oklab proceeds as:
-
-**Step 1**: Multiply by M1 (concatenating the sRGB→XYZ and XYZ→LMS transforms) to get approximate cone responses (l, m, s).
-
-**Step 2**: Apply cube-root (γ = 1/3):
-l' = l^(1/3), m' = m^(1/3), s' = s^(1/3)
-
-**Step 3**: Multiply by M2 to get (L, a, b):
-
-M2 = [[+0.2104542553, +0.7936177850, -0.0040720468],
-       [+1.9779984951, -2.4285922050, +0.4505937099],
-       [+0.0259040371, +0.7827717662, -0.8086757660]]
-
-In C++:
-```c
-Lab linear_srgb_to_oklab(RGB c) {
-    float l = 0.4122214708f*c.r + 0.5363325363f*c.g + 0.0514459929f*c.b;
-    float m = 0.2119034982f*c.r + 0.6806995451f*c.g + 0.1073969566f*c.b;
-    float s = 0.0883024619f*c.r + 0.2817188376f*c.g + 0.6299787005f*c.b;
-    float l_ = cbrtf(l);
-    float m_ = cbrtf(m);
-    float s_ = cbrtf(s);
-    return {
-        0.2104542553f*l_ + 0.7936177850f*m_ - 0.0040720468f*s_,
-        1.9779984951f*l_ - 2.4285922050f*m_ + 0.4505937099f*s_,
-        0.0259040371f*l_ + 0.7827717662f*m_ - 0.8086757660f*s_,
-    };
-}
-```
-
-The inverse (Oklab to linear sRGB) applies M2⁻¹, cubing, then M1⁻¹.
+The article presents a compact linear-sRGB implementation and an XYZ-form matrix sequence. In the XYZ form, M1 takes XYZ to approximate LMS-like values; in the RGB implementation, combined coefficients already include the linear-sRGB-to-XYZ stage. The forward route is linear transform → pointwise real cube root → linear transform. Its inverse reverses the stages, followed by sRGB encoding for encoded output. Adjacent linear stages compose, but the complete route is nonlinear. Use a matched published coefficient family; the article's 2021 update refers to its linear-sRGB code, not every XYZ matrix. The neural-network comparison is an analogy, not a biological or learned equivalence.
 
 # Prerequisites
 
@@ -86,12 +54,11 @@ The inverse (Oklab to linear sRGB) applies M2⁻¹, cubing, then M1⁻¹.
 - **Matrix transformation in colour conversion** — The algorithm consists of matrix multiplications.
 
 # Key Properties
-
-1. Input must be linear sRGB (gamma must be decoded before conversion).
-2. Three steps: M1 × (r,g,b) → cube root → M2 × (l',m',s').
-3. The matrices were updated 2021-01-25 for higher precision; current matrices are derived from a high-precision sRGB matrix and exactly matching D65 values.
-4. The algorithm is bijective (invertible): Oklab to sRGB uses M2⁻¹ then cubing then M1⁻¹.
-5. Available in public domain and MIT licence.
+1. Decode encoded sRGB before using linear-sRGB conversion coefficients.
+2. Distinguish the XYZ M1 input from the article's combined linear-sRGB coefficients.
+3. The full transformation includes pointwise real cube roots; adjacent linear stages alone compose.
+4. The inverse reverses stages; re-encode only when encoded sRGB output is needed.
+5. The article's 2021 update note applies to its linear-sRGB code. Rounded coefficients do not promise exact equality.
 
 # Construction / Recognition
 
@@ -113,8 +80,7 @@ The inverse (Oklab to linear sRGB) applies M2⁻¹, cubing, then M1⁻¹.
 - **Common applications**: CSS `oklab()` and `oklch()` functions (browser-native); Photoshop gradient interpolation; game engine colour systems.
 
 ## Cross-Domain Connections
-
-**Mathematics → RIGOROUS**: The sRGB→Oklab conversion is the composition of two affine transforms (matrix multiplications) with a pointwise non-linear function (cube root) in between. This pattern — linear transform, then nonlinearity, then linear transform — is also the structure of a single layer in a neural network (minus the optimisation), and more precisely corresponds to the IPT family of colour transforms from which Oklab inherits its architecture.
+**Mathematics → RIGOROUS**: For already-linear sRGB, the literal operation is a linear transform, pointwise real cube root, then a linear transform. Encoded sRGB first requires decoding. The neural-network comparison is a structural analogy only; it does not imply physiology or learned equivalence.
 
 # Examples
 
@@ -138,12 +104,12 @@ The inverse (Oklab to linear sRGB) applies M2⁻¹, cubing, then M1⁻¹.
 - **gamut-srgb** — Conversions operate within (or out of) the sRGB gamut.
 
 # Common Errors
-
-- **Error**: Applying the conversion to gamma-encoded sRGB values (e.g., HTML hex colours) without first linearising.
-  **Correction**: Decode gamma first. The source notes: "To compute linear sRGB values, see my previous post."
-
-- **Error**: Using the pre-2021-01-25 matrices, which differ slightly after the third decimal.
-  **Correction**: The updated matrices (given in the source) use higher-precision sRGB coefficients and exactly matching D65 values.
+- **Error**: Applying Oklab matrices to gamma-encoded sRGB.
+  **Correction**: Decode first, or use the article's explicitly combined formula with its stated input.
+- **Error**: Saying the printed XYZ M1 accepts RGB or dates from the 2021 update.
+  **Correction**: Keep XYZ and combined RGB forms and their source notes separate.
+- **Error**: Calling the complete pipeline linear or affine.
+  **Correction**: Name the pointwise real cube-root stage.
 
 # Common Confusions
 
@@ -155,10 +121,4 @@ The inverse (Oklab to linear sRGB) applies M2⁻¹, cubing, then M1⁻¹.
 "Converting from XYZ to Oklab"; "Converting from linear sRGB to Oklab"; C++ code listing.
 
 # Verification Notes
-
-- Definition source: Direct transcription of matrix values, C++ code, and conversion steps from the source.
-- Confidence rationale: High — the full implementation is explicitly provided in the source with numerical coefficients.
-- Uncertainties: The concatenation of sRGB→XYZ and XYZ→LMS into the single C++ coefficient rows is inferred from context (not stated explicitly in the article prose).
-- Cross-reference status: Verified against example table.
-- Rosetta Stone check: Mathematics/composed-function mapping added as rigorous.
-- OCR issues: LaTeX matrix content extracted from katex-mathml context; HTML spans ignored.
+Formulas and article versions were checked against the prepared source. The pipeline description is exact at the stated stage level; numerical examples use the article's literal coefficient family and ordinary precision. The article's neural-network comparison is retained only as analogy.

@@ -34,12 +34,10 @@ css_implementation: []
 ---
 
 # Quick Definition
-
-Chroma is an absolute measure of a colour's colourfulness; saturation is a relative measure, expressing colourfulness as a proportion of the maximum possible at the same lightness. They are distinct perceptual quantities that are frequently confused in colour space nomenclature.
+Chroma is a model-specific colourfulness coordinate; saturation is an appearance term or a model parameter whose meaning depends on its definition. HSL/HSV saturation parameters are not interchangeable with CIE perceptual saturation.
 
 # Core Definition
-
-Ottosson distinguishes the two clearly in his critique of HSL's terminology: HSL's "Saturation" parameter is "roughly the chroma of the color relative to the most colorful color with the same 'lightness' and 'hue.'" He notes it is "confusingly referred to as saturation, which it is not comparable to. In the original paper it was referred to as 'relative chroma', which is more accurate." In the Munsell system, as Ottosson discusses, colours are described by "Hue, Chroma and Value" — chroma there is an independent perceptual dimension. Saturation in the perceptual sense is the colourfulness of a stimulus relative to its own brightness, meaning a pale pastel can have high saturation at low chroma if it is also low in brightness. The practical consequence for picker design is that Orthogonal Chroma and Orthogonal Saturation are distinct design goals: "Orthogonal Chroma — Lightness/Hue can be altered, while keeping perceived Chroma constant" and "Orthogonal Saturation — Lightness/Hue can be altered, while keeping perceived Saturation constant."
+Ottosson describes HSL's parameter as roughly chroma relative to the most colourful colour at the same model lightness and hue, and notes that “relative chroma” is the more accurate name. HSV uses a different model-specific parameter. CIE chroma relates colourfulness to a similarly illuminated achromatic reference; CIE saturation relates it to the stimulus's own brightness. These terms should not be collapsed into a general formula. The prepared picker discussion compares orthogonal-chroma and orthogonal-saturation goals; these are design goals, not proof that either parameter is perceptually independent across all conditions. HSLuv's attributed rescaling and its gamut-shape tradeoff remain useful examples, not universal numerical tests.
 
 # Prerequisites
 
@@ -47,18 +45,18 @@ Ottosson distinguishes the two clearly in his critique of HSL's terminology: HSL
 - **HSV colour space** — HSV Saturation is also a relative quantity but differently defined from HSL Saturation
 
 # Key Properties
-
-1. Chroma: absolute colourfulness, independent of lightness — used in Munsell, CIELab, Oklab
-2. Saturation: colourfulness relative to maximum possible at same lightness/hue — used in HSL, HSV (differently in each)
-3. HSL "Saturation" is more accurately called "relative chroma" — it does not correspond to perceptual saturation
-4. HSV "Saturation" and HSL "Saturation" are not the same quantity, even though both use the same name
+1. Oklab C = hypot(a,b) within that coordinate model; its perceptual interpretation is approximate.
+2. CIE chroma and saturation use different reference relationships; neither yields a universal C/L rule.
+3. HSL and HSV parameters named saturation have different model definitions and are not CIE perceptual saturation.
+4. HSLuv's attributed saturation rescales chroma relative to an sRGB boundary; retain that as a model-specific comparison.
+5. Picker goals such as holding chroma or saturation while changing other coordinates require explicit model definitions and validation.
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. If two colours look equally colourful despite having different brightnesses, they have similar chroma but different saturation
-2. A pale lemon yellow and a deep olive may have equal saturation but very different chroma
-3. In a picker: if reducing lightness while keeping the "Saturation" slider constant visually changes the purity of the colour disproportionately, the slider is controlling relative chroma, not true saturation
+1. Identify whether “saturation” means a CIE appearance term or a named HSL/HSV/HSLuv parameter.
+2. For an HSL or HSV control, inspect its model formula; do not infer CIE saturation from the label.
+3. The attributed HSLuv comparison concerns its chroma rescaling and gamut shape; it is not a universal test for perceptual smoothness.
 
 # Context & Application
 
@@ -85,27 +83,22 @@ Ottosson distinguishes the two clearly in his critique of HSL's terminology: HSL
 - **Okhsl / Okhsv** — Both provide saturation parameters that are defined carefully to avoid confusion
 
 # Common Errors
-
-- **Error**: Assuming HSL Saturation = HSV Saturation.
-  **Correction**: Ottosson explicitly states these are not the same. They are both relative quantities but relative to different reference colours.
-
-- **Error**: Using "saturation" and "chroma" interchangeably in discussion of perceptual colour spaces.
-  **Correction**: Chroma is absolute; saturation is relative. In Munsell and Oklab, chroma is the appropriate term.
+- **Error**: Assuming HSL and HSV saturation are the same quantity.
+  **Correction**: They are different model parameters.
+- **Error**: Calling chroma absolute/context-free or saturation universally relative to maximum same-L/hue chroma.
+  **Correction**: State the model or CIE appearance definition.
+- **Error**: Treating a pale pastel, a fixed 50% lightness, or a universal maximum-chroma location as a general perceptual test.
+  **Correction**: Remove these unverified tests; evaluate a defined model and context.
 
 # Common Confusions
-
-- **Confusion**: Maximum HSL Saturation (100%) always gives the most colourful colour.
-  **Clarification**: At HSL Lightness of 0% or 100%, the colour is black or white regardless of Saturation. Maximum perceived chroma occurs around L=50% for most hues.
+- **Confusion**: HSL/HSV saturation equals perceptual saturation or can be derived as C/L.
+  **Clarification**: These are model-specific parameters; CIE defines appearance terms through their reference relationships.
+- **Confusion**: Chroma is independent of lightness in every perceptual sense.
+  **Clarification**: Oklab coordinates are distinct by construction, but perception and available gamut can depend on lightness and hue.
 
 # Source Reference
 
 "HSL" section under "Color spaces for color picking" and "What makes a good color picker?" section, Okhsv and Okhsl (Björn Ottosson).
 
 # Verification Notes
-
-- Definition source: Direct quotes from Ottosson
-- Confidence rationale: High — Ottosson makes this distinction explicit and central to his argument
-- Uncertainties: None significant
-- Cross-reference status: Not explicitly discussed in Drasner source
-- Rosetta Stone check: No mappings added
-- OCR issues: None significant
+This bounded consistency repair uses Ottosson's prepared picker discussion for HSL/HSV/HSLuv distinctions and CIE S 017:2020 terms 17-22-073/074. Existing source citation and header remain frozen. Other edges, questions and unrelated card claims were not reviewed or accepted.

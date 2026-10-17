@@ -28,25 +28,20 @@ answers_questions:
 ---
 
 # Quick Definition
-
-A colour space is a mathematical coordinate system in which every colour is represented as a point, allowing colours to be specified, compared, and manipulated numerically.
+A colour space assigns coordinates to colours under stated model, observer, reference conditions and representable domain.
 
 # Core Definition
-
-The source uses the term "color space" throughout to refer to systems that assign numerical coordinates to colours. Multiple colour spaces are compared: CIELAB, CIELUV, HSV, sRGB, XYZ, IPT, JzAzBz, CAM16-UCS, OSA-UCS, and Oklab. Each represents the same physical colours with different coordinate systems, chosen for different purposes — device representation (sRGB), perceptual uniformity (CIELAB, Oklab), or computational simplicity (HSV).
-
-A colour space involves at minimum: a set of axes (dimensions), a whitepoint reference, and a conversion relationship to other colour spaces. Many colour spaces are derived by applying a mathematical transform to another space.
+A colour space is a coordinate representation whose meaning depends on its model and reference conditions. Coordinates may be constrained by a device gamut or defined over a wider mathematical domain. A representation does not promise a unique polar hue when chroma is zero, nor that every visible colour is representable by every device space. XYZ is a useful tristimulus representation and conversion route, but not a mandatory intermediary for all colour-space conversions.
 
 # Prerequisites
 
 This is a foundational concept with no prerequisites within this source.
 
 # Key Properties
-
-1. Each colour space assigns a unique coordinate tuple to every representable colour.
-2. Colour spaces are related by mathematical transforms (often matrix multiplication plus non-linear functions).
-3. A colour space's usefulness depends on its purpose: device encoding, perceptual uniformity, or gamut coverage.
-4. All colour spaces discussed in the source share a common whitepoint (D65) for meaningful comparison.
+1. Coordinate values are meaningful only with their model, observer/reference and encoding conventions.
+2. Device spaces such as sRGB have bounded representable gamuts; a mathematical coordinate may convert outside that gamut.
+3. Polar hue is undefined at zero chroma.
+4. Different representations can describe overlapping colours without identical coordinates or encoding.
 
 # Construction / Recognition
 
@@ -90,24 +85,18 @@ This is a foundational concept with no prerequisites within this source.
 - (No specific contrasts defined at this foundational level — the concept encompasses all colour spaces equally.)
 
 # Common Errors
-
-- **Error**: Assuming all colour spaces represent the same range of colours.
-  **Correction**: Different colour spaces have different gamuts; sRGB cannot represent all colours in the visible gamut, while XYZ can.
+- **Error**: Assuming every colour space uniquely represents every visible colour.
+  **Correction**: State the represented domain and distinguish device gamut from a model's mathematical coordinates.
+- **Error**: Assuming all conversions must pass through XYZ.
+  **Correction**: XYZ is useful, but direct conversions may use another valid route.
 
 # Common Confusions
-
-- **Confusion**: A colour space and a colour model are the same thing.
-  **Clarification**: A colour model defines the type of axes (e.g., RGB, Lab, LCh); a colour space is a specific instantiation with defined primaries, whitepoint, and transform.
+- **Confusion**: All colour spaces cover every visible colour and provide a unique hue coordinate.
+  **Clarification**: Device gamuts are bounded, and polar hue is undefined at zero chroma.
 
 # Source Reference
 
 "A perceptual color space for image processing" (introduction); colour space comparisons throughout "Comparison with other color spaces" and "What about existing models?".
 
 # Verification Notes
-
-- Definition source: Synthesised from usage across the entire article; the source assumes prior knowledge of colour spaces rather than defining the concept explicitly.
-- Confidence rationale: Medium — the concept is implicit rather than explicitly defined in the source; definition was constructed from the article's consistent usage.
-- Uncertainties: The source does not offer a single-sentence definition of "colour space" — it is background knowledge assumed of the reader.
-- Cross-reference status: Verified as consistent with all colour space references throughout the source.
-- Rosetta Stone check: No rosetta stone mappings for this foundational concept.
-- OCR issues: None significant.
+The prepared article and CSS Color 4 distinguish model coordinates, reference white and destination gamut. These notes correct scope; they do not establish full-corpus conformance or original-capture fidelity.

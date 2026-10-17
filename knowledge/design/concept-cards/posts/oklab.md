@@ -47,22 +47,10 @@ css_implementation:
 ---
 
 # Quick Definition
-
-Oklab is a perceptual colour space designed by Björn Ottosson that represents colours with three coordinates (L, a, b) where equal numerical distances correspond to equal perceived differences in lightness, chroma, and hue.
+Oklab is a D65-referenced colour model designed to approximate lightness, chroma and hue judgements with a simple transform; uniformity is an approximate fit, not a guarantee.
 
 # Core Definition
-
-Ottosson describes Oklab as "a new perceptual color space, designed to be simple to use, while doing a good job at predicting perceived lightness, chroma and hue." The name means "an OK Lab color space." A colour in Oklab is represented with three coordinates:
-
-- **L** — perceived lightness
-- **a** — how green/red the colour is
-- **b** — how blue/yellow the colour is
-
-Oklab uses a D65 whitepoint, matching sRGB and other common colour spaces. It can also be expressed in polar form as LCh (lightness, chroma, hue), where:
-
-C = sqrt(a² + b²), h° = atan2(b, a)
-
-Oklab was derived by optimising the matrices M1 and M2 (3×3) and the exponent γ = 1/3 to minimise prediction errors across datasets for lightness, chroma, and hue simultaneously — following the same computational structure as IPT but calibrated to match CAM16-UCS performance.
+Oklab represents a colour with L, a and b coordinates and may be expressed in polar form as L, C and h. Ottosson describes the model as intended to do a good job predicting perceived lightness, chroma and hue. The transform is fitted and approximate; coordinate independence is a modelling goal, not a promise of perceptual independence at every hue, context, display or gamut. Oklab uses D65 reference conditions. CSS Lab/LCH use D50, while CSS Oklab/OkLCh use D65. The article's coefficient family and CSS Color's standardized values should not be silently mixed.
 
 # Prerequisites
 
@@ -71,12 +59,11 @@ Oklab was derived by optimising the matrices M1 and M2 (3×3) and the exponent �
 - **XYZ colour space** — The conversion pipeline from sRGB to Oklab goes through XYZ; the intermediate representation is XYZ.
 
 # Key Properties
-
-1. Perceptually uniform: equal distances in L, a, b correspond to equal perceived colour differences.
-2. Uses D65 whitepoint, matching sRGB, Display P3, and Rec. 2020.
-3. Numerically simple: composed of two 3×3 matrix multiplications and a cube-root non-linearity (γ = 1/3).
-4. L and C axes are orthogonal — changing lightness does not change hue, and vice versa.
-5. Blending two colours in Oklab coordinates produces visually even transitions without unexpected hue shifts.
+1. Oklab uses a D65 reference; diffuse reference white does not set a display's absolute maximum.
+2. The route for linear sRGB uses two linear transforms around real cube roots; encoded sRGB must first be decoded.
+3. Approximate uniformity and model-coordinate independence do not guarantee equal appearance across all conditions.
+4. Oklab coordinates can convert outside a destination gamut; conversion and gamut mapping are distinct.
+5. The article's examples and comparisons remain attributed to its stated conditions and datasets.
 
 # Construction / Recognition
 
@@ -93,9 +80,8 @@ Oklab was derived by optimising the matrices M1 and M2 (3×3) and the exponent �
 3. Typical sRGB red maps to approximately (L=0.63, a=0.22, b=0.13) — highly saturated colours have large a or b magnitude.
 
 # Context & Application
-
-- **Typical contexts**: Gradient generation, palette design, image saturation adjustment, greyscale conversion, colour pickers, game engine colour systems.
-- **Common applications**: Now the default gradient interpolation method in Photoshop; part of CSS Color Level 4/5 (supported by major browsers as `oklab()` and `oklch()`); used in Unity gradients and Godot's colour picker.
+- **Typical contexts**: Colour transformations and candidate palette construction, followed by destination gamut/render checks.
+- **Common applications**: CSS Color 4 defines `oklab()` and `oklch()` syntax and explicit interpolation-space choices; actual host support was not tested here.
 
 # Examples
 
@@ -106,36 +92,27 @@ Oklab was derived by optimising the matrices M1 and M2 (3×3) and the exponent �
 **Example 3** (from source): Blending white with blue in Oklab produces no hue shift toward purple — unlike CIELAB, CIELUV, and HSV, which all show a purple shift when blending blue. (Section: "Blending colors")
 
 # Relationships
-
 ## Builds Upon
-- **Perceptual uniformity** — Oklab is built to achieve this.
-- **XYZ colour space** — The conversion route passes through XYZ.
-- **LMS cone responses** — M1 converts XYZ to approximate cone responses as an intermediate step.
-- **IPT colour space** — Oklab adopts IPT's computational structure (matrix × cube-root × matrix).
-- **CAM16-UCS** — Oklab's training data was generated from CAM16, and Oklab is calibrated to match CAM16's lightness and chroma predictions.
+- **Perceptual uniformity** — A fitted approximation, not an exact law.
+- **Colour space** — Oklab is a model-specific coordinate system.
+- **XYZ colour space** — One useful route in the article's conversion.
 
 ## Enables
-- **Colour interpolation (perceptual)** — Oklab coordinates can be linearly interpolated to produce perceptually smooth gradients.
-- **Uniform palette construction** — Holding L and C constant while varying h produces a hue palette with equal perceived lightness.
-- **CSS colour functions** — `oklab()` and `oklch()` in CSS Color Level 4/5.
+- **Colour interpolation** — A host may select Oklab coordinates for a particular path.
+- **Palette construction** — Use coordinates for candidates, then check gamut and appearance.
 
 ## Related
-- **CIELAB** — Same coordinate structure (L, a, b with a D65 whitepoint), but CIELAB has inferior hue uniformity, especially for blues.
-- **Chroma (perceptual)** — C in the LCh polar form.
-- **Lightness (perceptual)** — L is the first coordinate.
+- **CIELAB** — Similar Lab-like form, but different reference conditions and behaviour.
+- **Chroma / Lightness** — Oklab coordinates with approximate perceptual interpretation.
 
 ## Contrasts With
-- **HSL / HSV** — These do not predict perceptual uniformity at all; the source rates HSV as meeting none of the requirements.
-- **CIELAB** — Shares the coordinate structure but Oklab has substantially lower lightness and chroma prediction error.
-- **CAM16-UCS** — Higher overall perceptual accuracy but poor numerical behaviour and bad blending due to chroma compression.
+- **HSL/HSV** — Different model coordinates and parameter meanings.
 
 # Common Errors
-
-- **Error**: Using Oklab coordinates on gamma-encoded (standard) sRGB values rather than linear sRGB.
-  **Correction**: The conversion formula requires linear sRGB input. Gamma must be decoded first (see Ottosson's prior post on the topic).
-
-- **Error**: Assuming Oklab and CIELAB are interchangeable because they share the L, a, b coordinate names.
-  **Correction**: The matrix coefficients and the intermediate LMS step differ significantly; values are not compatible between the two spaces.
+- **Error**: Treating equal Oklab distances or fixed L/C hue sweeps as universally equal-looking and displayable.
+  **Correction**: Treat uniformity as approximate, then check output gamut, rendering and context.
+- **Error**: Treating Oklab L as WCAG luminance or using article coefficients as identical to CSS standardized coefficients.
+  **Correction**: Keep measures and coefficient families distinct.
 
 # Common Confusions
 
@@ -150,10 +127,4 @@ Oklab was derived by optimising the matrices M1 and M2 (3×3) and the exponent �
 "The Oklab color space", "Implementation", "How Oklab was derived", "Comparison with other color spaces" sections.
 
 # Verification Notes
-
-- Definition source: Direct quotes from "The Oklab color space" section; coordinate descriptions and formulae from Implementation section.
-- Confidence rationale: High — Oklab is the primary subject of the entire article; definition, equations, and context are all explicit.
-- Uncertainties: Numerical ranges of typical L, a, b values were inferred from the example table (XYZ/Oklab pairs), not stated as ranges in prose.
-- Cross-reference status: Verified against example table, comparison table, and C++ code listing.
-- Rosetta Stone check: No rosetta stone mapping for Oklab itself (it is the subject, not an analogy); mappings are on perceptual-uniformity card.
-- OCR issues: HTML anchor-link fragments and base64 SVG strings present throughout; ignored.
+Definitions and stage order were checked against Ottosson and CSS Color 4 CRD 2026-10-09 §§9–10. CSS Color is a work-in-progress Candidate Recommendation Draft. The article's hue-sweep image was not visually inspected, and reported data are not new experiments.

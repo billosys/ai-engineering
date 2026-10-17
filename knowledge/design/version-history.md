@@ -1,3 +1,8 @@
+## Version 1.0.14 - 2026-10-17
+
+- Corrected assigned Oklab model, conversion, gamut, interpolation, terminology and foundations guidance claims.
+- Preserved card identity and predecessor metadata except the enumerated Slice17 scalar corrections.
+
 # visual-design-system Version History
 
 ## Version 1.0.13 - 2026-10-16
