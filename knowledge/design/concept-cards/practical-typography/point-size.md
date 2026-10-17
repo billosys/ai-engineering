@@ -45,7 +45,12 @@ Point size is a nominal type-size measure, not a direct measure of visible lette
 
 Butterick recommends 10–12pt print and 15–25px web body text. Preserve these as his rules of thumb, not universal optima: rendered appearance depends on the typeface, script, content, environment and reader settings.
 
-Crucially, the point-size system is not absolute: "different fonts set at the same point size won't necessarily appear the same on the page." This is because digital fonts are drawn inside a rectangle called the em, and "Two fonts set at the same point size will appear to be different sizes if one occupies less space on its em."
+A nominal point size scales the font's em coordinate space; it does not set cap
+height, x-height or visible glyph bounds. In digital fonts, glyph outlines can
+extend beyond the em square, and different faces use that space in different
+proportions. Butterick's example explains apparent-size differences: two fonts
+set at the same nominal size can look different when their outlines occupy
+different proportions of the em.
 
 CSS defines 72pt per CSS inch and 96px per CSS inch. These are CSS reference lengths, not promises about physical screen inches or device pixels. Butterick’s half-point emphasis advice is a source recommendation to evaluate in context.
 
@@ -104,8 +109,8 @@ CSS defines 72pt per CSS inch and 96px per CSS inch. These are CSS reference len
 - **Error**: Using the 12pt default without evaluating whether it's appropriate.
   **Correction**: Use Butterick’s print range as an attributed starting point; review the typeface, script, output conditions and reader needs.
 
-- **Error**: Doubling point size for headings (e.g., 12pt body to 24pt heading).
-  **Correction**: "There is no typographic universe in which you need to double the point size to achieve emphasis." Use subtler increments.
+- **Error**: Choosing heading sizes mechanically without evaluating the hierarchy.
+  **Correction**: Butterick recommends the smallest size increment that makes a visible difference and gives subtler increments as examples. This is contextual advice, not a ban on larger steps: a 12pt-to-24pt heading can be justified when the hierarchy and task call for it.
 
 # Common Confusions
 

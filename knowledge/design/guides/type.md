@@ -95,18 +95,21 @@ both treatments by default:
 The `65ch`, `1.35` and `.75em` values illustrate a candidate. `ch` uses the
 zero glyph advance with specification fallbacks; it does not promise a character
 count. A unitless CSS `line-height` is inherited as a number and multiplies each
-element's own font size. A percentage computes from the parent value before
-inheritance: for a 20px parent and 12px child, `1.5` produces 30px on the parent
-and 18px on the child, while `150%` produces 30px on both absent an override.
-Lengths also compute before inheritance. CSS `em` usually uses the element's
+element's own font size. A percentage computes from the font size of the element
+where it is specified, then the resulting length is inherited. A 20px parent
+declaring `150%` computes 30px; a 12px child inherits 30px unless it overrides
+that value. If the child explicitly declares `150%`, it computes 18px. Lengths
+also compute before inheritance. CSS `em` usually uses the element's
 computed font size, but on `font-size` it resolves against the inherited size;
 `rem` uses the root size.
 
 Preserve text enlargement and reflow. [WCAG 2.2 Success Criterion 1.4.12](https://www.w3.org/TR/WCAG22/#text-spacing) is AA:
 it requires no loss of content or functionality when users apply its specified
-spacing overrides (1.5 times line height, 2 times following-paragraph spacing,
-.12em letter spacing and .16em word spacing), subject to language and script
-applicability. It does not require those authored defaults. [Success Criterion 1.4.8](https://www.w3.org/TR/WCAG22/#visual-presentation) is a separate AAA criterion with visual-presentation conditions including
+spacing overrides: line height at least 1.5 times font size, following-paragraph
+spacing at least 2 times font size, letter spacing .12 times font size and word
+spacing .16 times font size. Some languages and scripts do not use every spacing
+property; the criterion has an exception for those combinations. It does not
+require these authored defaults. [Success Criterion 1.4.8](https://www.w3.org/TR/WCAG22/#visual-presentation) is a separate AAA criterion with visual-presentation conditions including
 a user mechanism, width limits and non-justified text. This guidance is not a
 test or conformance claim; validate user overrides and reflow in the adopting
 project without hiding overflow or clamping text height.

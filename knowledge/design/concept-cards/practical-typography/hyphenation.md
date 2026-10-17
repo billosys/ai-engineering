@@ -68,7 +68,7 @@ Butterick says hyphenation becomes more useful as lines shorten; this is a recom
 4. Consider `hyphens: none` for headings when it suits the language and layout; review actual wrapping.
 
 ## To Identify/Recognise:
-1. Justified text without hyphenation: visible rivers of white space.
+1. In justified text, uneven word spacing can sometimes form visible rivers; hyphenation may help in some languages, measures and engines, but does not guarantee their removal.
 2. Over-hyphenation: too many consecutive lines ending with hyphens.
 
 # Examples
@@ -83,17 +83,17 @@ Butterick says hyphenation becomes more useful as lines shorten; this is a recom
 
 ## Related
 - **Hyphens and Dashes** — Distinguish automatic line-break hyphens, discretionary soft hyphens, editorial hyphens and emergency overflow wrapping.
-- **Headings** — Suppress hyphenation in headings.
+- **Headings** — Butterick advises suppressing hyphenation in short headings where breaks disrupt the text; check the actual language, layout and wrapping.
 
 # Common Errors
 
-- **Error**: Using justified text without turning on hyphenation.
-  **Correction**: Butterick recommends it; check language, resources and actual output, since a declaration alone does not ensure breaks.
+- **Error**: Treating hyphenation as an automatic requirement for justified text.
+  **Correction**: Butterick recommends it to reduce conspicuous word gaps. Whether it helps depends on the script, language data, measure and engine; inspect the actual output.
 
 # Common Confusions
 
-- **Confusion**: `hyphens:auto` always works when declared.
-  **Clarification**: For left-aligned text, hyphenation is optional. Butterick advises suppressing breaks in headings; evaluate the language and layout context.
+- **Confusion**: Does declaring `hyphens: auto` always produce automatic word breaks?
+  **Clarification**: No. The content language must be known and a suitable hyphenation resource must be available; a declaration alone does not establish that breaks occur. The language may come from the element or an ancestor. Inspect the actual output. Butterick treats hyphenation as optional for left-aligned text and advises suppressing it in short headings when breaks disrupt them; these are contextual recommendations.
 
 # Source Reference
 
