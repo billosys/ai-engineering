@@ -237,3 +237,59 @@ validator, source acquisition, schema or successor. Routine same-slice repair
 does not change project/arc plans or any parent criterion. Existing P10-11,
 full-corpus/global/live, actual browser/AT, hosted, composition and release
 requirements remain open with their recorded owners. Slice18 is not closed.
+
+
+## Iteration02 independent acceptance and Slice18 closure — 2026-10-17
+
+CDC Sofie independently accepts CC planning `b4b0289236b574e5999df4fe0fd63133189abc29`
+against issue `de3560d169151f00ec03ac0523c81f74be89b667`. SOURCE remains
+`7068045aacd6cb75b856786a1de070791f21c2a8`. **All four Slice18 rows are done;
+Slice18 is closed.** Previous failed results remain historical above.
+
+Reproduced the full65-row body comparison to planningc5670897: all identities
+and three-cell rows restored, exactly row11's final clause differs. Every
+rephrased final clause occurs in the frozen source card; removed rows retain
+reasons and the six final additions are byte-identical to the predecessor.
+The four-cell corrupted table at0cf5991e fails this same shape check. All66
+header tuples have exactly one membership across19 groups. Inspected W05's five
+explicit learning-background groups and their17 members; W09 now compares
+Okhsl/HSL rather than HSLuv; W14 uses the actual Okhsl513–531/659–758 premises.
+Their cited endpoint statements and previously inspected prepared source support
+these bounded editorial associations/comparisons. F04/F05 are resolved.
+
+The15 CQ occurrences and three bounded answers are unchanged from the
+Iteration01 return; source/body teaching accepted there is unchanged. Retain
+that independent review, the initial toe/rational/Okhwb witnesses and native/
+package results under their recorded applicability checks; no math/build rerun
+is claimed. Current source revision and tracked bytes are unchanged. Its only
+untracked work remains the preserved LFE directory.
+
+Exact two-file CC commit, parentde3560d1, both trailers and whitespace checks
+pass. Ledger/plans/issued prompts/CDC bytes were protected. Closure link checking
+found a ledger anchor made stale by the shortened CC report; CDC corrected its
+Evidence pointer to the current report section. The current report
+accounts for all four rows, sole artifact `artifacts/batch-record.md`, delivered
+scope and remaining gates. Local close-set link/LF/EOF checks pass. No source
+edits or independent self-acceptance by CC.
+
+| Row | Final CDC disposition | Independent evidence |
+|---|---|---|
+| S18-01 | done | Iteration01 full five-body teaching check plus applicable unchanged six-card results; SOURCE7068045a unchanged. |
+| S18-02 | done | Reproduced65 dispositions/one update/six additions;66 exact header memberships/19 meaningful groups; retained bounded CQ answers. |
+| S18-03 | done | Iteration01 complete233/header/citation/heading/protected-input replay retained at identical source. |
+| S18-04 | done | Initial independent native/package gates plus Iteration01 unchanged-input/8-member comparison retained; current two-file planning integrity reproduced. |
+
+### Bubble-up to the arc
+
+Delivered eleven corrected, usable picker-family cards and owning1.0.15,
+including arithmetic recipes, subjective tradeoffs and actual local semantics.
+The initial13-path source delivery and five-body refinement preserve the exact
+metadata exceptions, all citations/identities and source originals. The silent-
+drop comparison finds no missing bounded obligation. P10-11 fidelity, whole
+corpus/global/live review, actual browser/AT, final hosted rendering, parent
+composition and release remain open; they were never satisfied by this slice.
+
+No new architecture, scope, input or sequencing dependency emerged. Update
+Arc02's child/current status only; its ten criteria and the thirteen project
+criteria remain unchanged. Expedited Mode advances to the next ready connected
+source/topic batch after a complete open set and author-readiness check.
