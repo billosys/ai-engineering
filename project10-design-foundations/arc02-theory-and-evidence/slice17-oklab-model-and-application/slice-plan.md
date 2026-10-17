@@ -6,7 +6,7 @@ depends-on: [accepted corpus and prepared-source records, Slice16 accepted colou
 
 # Slice17 — Oklab Model and Application
 
-Revision **1.1**, updated2026-10-17 (opened2026-10-17). Two contributors; CDC Sofie authors/reviews,
+Revision **1.2**, updated2026-10-17 (opened2026-10-17). Two contributors; CDC Sofie authors/reviews,
 separate CC implements through Operator relay; Expedited Mode.
 [Project](../../project-plan.md), [arc](../arc-plan.md), [ledger](ledger.md) and
 [initial assignment](cc-prompt.md) govern. SOURCE/main pin
@@ -108,9 +108,9 @@ The complete bounded inputs leave context for implementation/review; no arbitrar
 card quota or new scope/approval gate. Ready: source-grounded, design-complete,
 guideline-applied, executable, falsifiable and coherent with the four criteria.
 
-## Current refinement contract
+## Iteration01 contract — superseded write allowance
 
-The [initial CDC review](cdc-verification.md) accepts S17-03 and retains the
+The [CDC review](cdc-verification.md) accepts S17-03 and retains the
 passing dependent terminology, guide and native/package components. S17-01/02/04
 remain open. Iteration01 completes this source delivery, rather than creating
 another analysis-only packet. Project1.73 and Arc02 1.52 remain governing.
@@ -145,13 +145,42 @@ discretion. The existing bounded review is authorized; no investigation extensio
   `1855cdea5cdcda4c78c4350b5901cf2c77965e2a` (2026-10-17), predecessor
   bddbda7b; SOURCE pin4acfec6d. SOURCE return485585ef / planning return61b3c427.
   CDC accepts preservation only as a whole row; refinements are F01–F03.
-- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-17 by the commit
+- **Returned, refinement required:** `cc-prompt-iteration01.md`, issued2026-10-17 by the commit
   adding it, predecessor61b3c427; SOURCE485585ef. Finish contradictory teaching,
   restore usable examples and complete existing semantic joins. Execute as CC;
   return to CDC through Operator. No successor authorized before review/close.
 
+- **Current / active:** `cc-prompt-iteration02.md`, issued2026-10-17 by its
+  adding commit, predecessor9214210a; SOURCEc884b8f9. Execute F04–F06 repairs
+  in four card bodies and existing evidence, then return to CDC.
+
+## Current refinement contract — Iteration02
+
+SOURCE pin `c884b8f9ebc6c2c80385b8f1f3db9ecd63cb67fb`; planning return
+`9214210a11443f12b70d7d9b7d83cdc7b4012694`. Current assignment is
+`cc-prompt-iteration02.md`, issued2026-10-17 by the commit adding it, predecessor
+9214210a; prior Iteration01 issue de960367 returned with remaining F04–F06.
+One refinement pass has executed. Two contributors and current row states persist.
+
+Only bodies of oklab-conversion, lightness-perceptual, lms-cone-responses and
+colour-interpolation-perceptual may change. Their metadata, citations and heading
+sequences remain frozen; all other229 cards,161 sources, guides, owning1.0.14
+entrypoint/history and packaging/helper inputs are protected at this pin.
+The same three CC return files remain authorized; no criteria/status changes.
+This current restriction supersedes the earlier thirteen-body write allowance.
+
+CDC read the four current bodies, complete source delta and affected evidence;
+compared actual prepared stages and IPT passage; reproduced published coefficient
+rows and forward/reverse example; identified exact false baseline/current joins
+and worked the missing palette step. No unresolved design decision or new
+investigation is delegated. The review gives direct repairs and actual known
+premises. Finish them in the existing delivery; retain unaffected substantive
+review, arithmetic and integration evidence after checking applicability.
+
 ## Version History
 
+- 1.2 (2026-10-17): Review Iteration01; retain passing proof and issue a four-body
+  correction plus precise existing-map repairs. No parent or release change.
 - 1.1 (2026-10-17): Record initial partial review, retain passing evidence and
   issue body-only refinement without expanding the approved delivery.
 - 1.0 (2026-10-17): Open a coherent Oklab model/application source-fix batch with
