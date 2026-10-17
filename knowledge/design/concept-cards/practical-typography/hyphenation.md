@@ -30,7 +30,7 @@ rosetta_stone: []
 css_implementation:
   -
     property: "hyphens"
-    example: "p { hyphens: auto; } /* requires lang attribute on html element */"
+    example: "p { hyphens: auto; } /* needs known content language and a suitable resource; HTML lang may be on this element or an ancestor */"
     support: "baseline"
 ---
 

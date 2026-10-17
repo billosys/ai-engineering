@@ -30,7 +30,7 @@ rosetta_stone: []
 css_implementation:
   -
     property: "text-align"
-    example: "p { text-align: justify; hyphens: auto; } /* always pair with hyphenation */"
+    example: "p { text-align: justify; hyphens: auto; } /* illustrative; Butterick recommends hyphenation for suitable prose; check language, resources and output */"
     support: "baseline"
 ---
 
