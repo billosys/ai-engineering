@@ -1,18 +1,26 @@
 ---
 slice: slice17-oklab-model-and-application
-status: active
+status: closed
 depends-on: [accepted corpus and prepared-source records, Slice16 accepted colour mechanics]
 ---
 
 # Slice17 — Oklab Model and Application
 
-Revision **1.2**, updated2026-10-17 (opened2026-10-17). Two contributors; CDC Sofie authors/reviews,
+Revision **1.3**, updated2026-10-17 (opened2026-10-17). Two contributors; CDC Sofie authors/reviews,
 separate CC implements through Operator relay; Expedited Mode.
 [Project](../../project-plan.md), [arc](../arc-plan.md), [ledger](ledger.md) and
 [initial assignment](cc-prompt.md) govern. SOURCE/main pin
 `4acfec6d8fa17e1ecb869bda28a6e71d17ef771e`; planning predecessor
 `bddbda7bbcce1955164c7bad4074c7cecdf90873` closes Slice16. Issue is the commit
 adding this open set. No source work or row is accepted by opening the slice.
+
+## Current state
+
+Independently closed2026-10-17 at SOURCE4e635bb3 / CC planning58905959;
+[CDC acceptance](cdc-verification.md#iteration02-independent-acceptance-and-slice17-closure)
+closes all four unchanged criteria. Both refinement passes executed. No current
+CC assignment remains. Original fidelity and parent gates retain their owners.
+The initial/iteration contracts below are preserved historical execution scope.
 
 ## Usable result and coverage
 
@@ -150,11 +158,11 @@ discretion. The existing bounded review is authorized; no investigation extensio
   restore usable examples and complete existing semantic joins. Execute as CC;
   return to CDC through Operator. No successor authorized before review/close.
 
-- **Current / active:** `cc-prompt-iteration02.md`, issued2026-10-17 by its
+- **Accepted / completed:** `cc-prompt-iteration02.md`, issued2026-10-17 by its
   adding commit, predecessor9214210a; SOURCEc884b8f9. Execute F04–F06 repairs
   in four card bodies and existing evidence, then return to CDC.
 
-## Current refinement contract — Iteration02
+## Iteration02 contract — completed
 
 SOURCE pin `c884b8f9ebc6c2c80385b8f1f3db9ecd63cb67fb`; planning return
 `9214210a11443f12b70d7d9b7d83cdc7b4012694`. Current assignment is
@@ -179,6 +187,8 @@ review, arithmetic and integration evidence after checking applicability.
 
 ## Version History
 
+- 1.3 (2026-10-17): Independently accept Iteration02, reconcile clerical return
+  discrepancies in the review and close four rows; retain parent/input gates.
 - 1.2 (2026-10-17): Review Iteration01; retain passing proof and issue a four-body
   correction plus precise existing-map repairs. No parent or release change.
 - 1.1 (2026-10-17): Record initial partial review, retain passing evidence and

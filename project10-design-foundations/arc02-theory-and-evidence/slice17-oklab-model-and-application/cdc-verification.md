@@ -1,7 +1,7 @@
 # Slice17 CDC verification — initial return
 
 2026-10-17; CDC Sofie; Two-Contributor Workflow, Expedited Mode.
-**Current verdict: Iteration01 requires refinement; Slice17 remains open.**
+**Current verdict: Slice17 independently accepted and closed after Iteration02.**
 The initial review below remains evidence at its stated revisions.
 
 ## Reviewed identities and governing scope
@@ -295,3 +295,123 @@ and diff whitespace pass. All criteria/verification/significance/origin/status
 cells match9214210a; only Evidence/Notes change. Both issued prompts, CC batch
 and CC closing report remain byte-identical. SOURCE remainsc884b8f9. This review
 and Iteration02 are committed together; no receipt-only follow-up is needed.
+
+## Iteration02 independent acceptance and Slice17 closure
+
+2026-10-17, CDC Sofie, Two-Contributor Workflow. **All four rows done.**
+Accepted SOURCE `4e635bb39b2c6151014b316f45f279d3682416d4`; CC planning
+return `589059593368261f65fc996c25b04b137ef9c95b`; issue
+`d8b82d588275ee68f94f5a29b4fa9b4659880a8e` for
+[Iteration02](cc-prompt-iteration02.md). All earlier unsuccessful reviews remain
+historical at their explicit revisions. No product/source repair by CDC.
+
+### Source and semantic verification
+
+Read the complete source delta and affected current teaching; independently
+compared the corrected F04 sentences with the published stage definitions and
+prior review. Conversion consistently identifies the optional neural analogy as
+author synthesis; matrix-only and interchangeable-coefficient claims are gone.
+Unprimed/primed/final coordinates, model-L greyscale construction and selected
+interpolation space agree across their affected sections. Restored useful
+coefficient recipes, worked inverse, axes and qualified source examples survive.
+
+The actual L sequence definition gives n+1 targets for integer n>0; independently
+computed(.4,.8,n=2)=(.4,.6000000000000001,.8), agreeing with printed.4/.6/.8
+within1e-12. The written method explicitly carries those targets across chosen
+hues, checks contextual chroma/gamut/mapping/rendering and actual-pair contrast,
+and reports adjustments without promising equal appearance.
+
+Reviewed the corrected baseline/current joins and component premises against
+literal source statements, including all F05 pairs and additional B027/B029/B086
+retypings. Supported old content is distinguished from retired overclaims;
+B083/B084 merge to F74, B089/B097 change relation type, and B077 acknowledges
+IPT's source connection. E69 now compares model/evaluation reading roles.
+The compact premises replace repeated Core quotations without upgrading
+editorial navigation to author taxonomy, strict dependency or global graph proof.
+All E79/B102/F86/Q20 identities remain accounted for; current F statements match
+the unchanged Relationships sections. Q11 now has the actual sequence method;
+Q15/Q16 remain partial, and the five combined answers retain their limits.
+
+Retained complete thirteen-card available-evidence outcomes and source/claim
+coverage from prior review after checking changed versus unchanged inputs;
+affected dimensions were reviewed here. Prepared agreement, independent
+technical truth, appearance inference and unavailable original fidelity remain
+separate. No missing historical capture is converted into a pass. Complete
+body reads from this delivery, rechecked changed sections and a bounded scan
+find no additional body CQ assertion: the two remaining question-mark lines
+are literal source-section titles, not extra questions. The scan alone is not
+a completeness argument. The dependent terminology and two guide components
+accepted in the initial review remain byte-identical and accepted at that scope;
+this closes those Slice17 obligations, not the rest of the picker source family.
+
+### Independent preservation and evidence retention
+
+Reproduced exact four-body delta, source/return parentage, exact three-file CC
+planning return, trailers and clean commit diffs. Full edited metadata prefixes,
+literal Source References and heading sequences matchc884b8f9. All233 identities,
+other229 cards and161 source files match. Earlier thirteen/fourteen-card and
+11-scalar preservation results retain applicability through the checked chain.
+All issued prompts, plan and preceding CDC record match their issue bytes.
+Untracked knowledge/lfe/ is untouched; SOURCE remains unpushed.
+
+The conversion Construction/Examples bytes are identical to the independently
+calculated c884b8f9 version. Retain that forward/inverse evidence and applicable
+signed-root, hue, gamut and nonlinear witnesses; no automatic numerical rerun.
+Only unbundled card bodies changed: all metadata/guide/package/build inputs are
+identical. Retain initial CDC-fresh native gates at485585ef with their actual
+warning/recovery records; do not call them freshly run. Direct fresh ZIP member
+comparison again passes8/8 against current source. No new browser, AT, hosted,
+psychophysical or original-capture check. Temporary execution output:
+`/private/tmp/p10-s17-i2-cdc.json`; this record is the durable result.
+
+### Reconciliation of clerical return discrepancies
+
+These are independently resolved here, without editing or rewriting CC's
+attestation or implementing a source repair:
+
+- CC applied the Q15/Q16 summary correction to historical line48 instead of the
+  active thirteen-outcome cell, despite the instruction to retain the initial
+  230-line portion. This is a disclosed record-preservation deviation. The exact
+  original row remains at planningd8b82d58; no source/provenance input was lost.
+  Its original final cell is “Verify all repeated claims and answer its eight
+  uniformity/five palette CQs by occurrence.” It is historical, not current work.
+- The active Oklab outcome cell still says “Uniformity/palette full bounded;
+  conversion partial.” The current accurate result is **Q15 uniformity partial,
+  Q16 palette partial, conversion partial**, as its actual CQ rows state. The
+  full bounded palette procedure is contributed by lightness/Q11; uniformity by
+  perceptual-uniformity/Q18. This independent finding supersedes that stale cell.
+- Q11's procedure locator is **Construction / Recognition, To Construct/Create,
+  steps1–3**, not1–5. All claimed components occur in those three steps.
+
+The relevant evidence and components are present and independently checked;
+these clerical discrepancies do not conceal missing source delivery or alter a
+criterion. No further source/evidence-generation iteration is needed. The CC
+report's remaining body-question/dependent/guide review is discharged by this
+review and retained scoped evidence, not deferred to another slice. Its open
+proposals remain historical attestations; this record and ledger own acceptance.
+
+### Final row walk
+
+| Row | Final state | Independent basis |
+|---|---|---|
+| S17-01 | done | All13 complete available-evidence outcomes reconciled through the source chain; supported full-card corrections, positive recipes/examples and affected witnesses checked. Historical fidelity remains expressly unestablished where inputs are missing. |
+| S17-02 | done | Local E79/B102/F86/Q20 meanings/lineage/component coverage reconciled; body-question scope checked; dependent terminology and two guide repetitions retain independent scoped acceptance. |
+| S17-03 | done | Initial preservation accepted and both body-only refinements independently reproduced; all233 identities and protected source populations survive. |
+| S17-04 | done | Owning1.0.14/history and applicable native/package integration retained with checked inputs; complete bounded return independently reconciled, including disclosed clerical deviations. |
+
+### Bubble-up to the arc
+
+Delivered the assigned thirteen-card Oklab capability at4e635bb3: useful
+conversion, palette/interpolation choices, approximate-perception boundaries,
+local semantics and preserved identity, with dependent terminology/guide fixes.
+One supporting artifact exists: `artifacts/batch-record.md`. Initial and both
+iteration prompts, CC report and CDC record remain first-class slice documents.
+Opening/final row counts are four/four; none is silently removed or deferred.
+
+No new architecture, project scope or input dependency was discovered. Update
+Arc02 only for child closure and its next ready cohort; parent ten/thirteen
+criteria retain their states. Continue the remaining Okhsv/Okhsl picker family
+under the existing source/topic roadmap, preserving the accepted dependent
+terminology result. Missing originals/captures, full233/eight-live/global review,
+actual behavior, final hosted/package/release composition and Operator gates
+remain owned and open. Slice17 closure is not arc/project/release acceptance.
