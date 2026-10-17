@@ -51,3 +51,40 @@ keep all four ledger rows open unless CDC independently accepts the evidence.
 
 The exact-path planning commit carrying this report is identified in the
 Operator return.
+
+
+## Iteration01 return — F01–F03 addressed; CDC review pending
+
+This section supersedes the initial report's S19-01/02 proposal at SOURCE
+`096fb4b38b5eb2bacd0150347e732462ae85dd19` for the corrected candidate only.
+The historical report remains intact. Current implementation is SOURCE
+`0428cbfd6adedfa83305086d3b5ea4e54cfe2a5a`; iteration issue is planning
+`ca97cd41ec431734b65530f059d7c426fc9404f5`; return planning commit is recorded
+below. Exact source writes: the packaged type guide and the point-size and
+hyphenation card bodies. Planning writes: this report, the existing batch record
+and ledger Evidence/Notes cells. No version bump, status change, new artifact,
+push, publication, successor or closure.
+
+| Criterion | CC return | Evidence and boundary |
+|---|---|---|
+| S19-01 | **Proposed met for this bounded correction.** | F02 is repaired in both complete bodies; source recommendations and limits remain explicit. See [final body dispositions](artifacts/batch-record.md#f03--disposition-of-all-47-predecessor-body-statements). Original capture/conversion fidelity, other cohort review and actual browser/AT/readability behavior remain open. |
+| S19-02 | **Proposed met for this bounded correction.** | F01 calculations now use the element's font-size reference and WCAG's font-size multipliers; F03 maps all49 header tuples and47 predecessor body statements to explicit current premises. Six CQ texts/16 memberships retain partial-answer limits; CQ1 and CQ19 were rechecked. See [F01 witnesses and edge warrants](artifacts/batch-record.md). |
+| S19-03 | **CDC-done at C/H; current preservation rechecked.** | The accepted roster remains233/233; current headers match C byte-for-byte;231 cards are unchanged from C; source inputs and protected guides/SKILL/history remain unchanged. The existing independent acceptance is retained at its recorded revision. |
+| S19-04 | **CDC-done at C/H; affected guide package rebuilt.** | Ordered final gates passed; fresh design ZIP has8/8 Markdown members byte-identical. Existing independent acceptance of version1.0.16 remains at C/H. No hosted rendering or release conclusion. |
+
+The corrected prose is supported by CSS Inline §5.1, WCAG2.2 SC1.4.12 and the
+OpenType em-square definition. Arithmetic is direct and does not constitute a
+browser fixture or conformance result. The final body table marks each predecessor
+statement retained-with-limit or reworded and states there are no removed or
+added body memberships. The exact header table identifies the scoped premise and
+direction for each original tuple. Full endpoint cards remain outside review.
+
+The single supporting record includes actual intake/query coverage, readback,
+primary-source and prepared-source observations, final warrants/dispositions,
+CQ limits, preservation comparisons, gate results and retained owners. Original
+source-fidelity obligations remain P10-11; broader corpus/arc composition remains
+Arc02/P10-06/09; live behavior and browser/AT remain A02-10; hosted exact-revision
+rendering remains P10-13/Arc04; release gates remain Arc04/P10-13.
+
+No push or publication was performed. S19-01/02 remain open pending independent
+CDC review through the Operator; S19-03/04 remain done at the recorded C/H scope.
