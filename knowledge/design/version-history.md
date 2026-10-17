@@ -5,6 +5,12 @@
 
 # visual-design-system Version History
 
+## Version 1.0.15 - 2026-10-17
+
+- Corrected evidence-bounded colour picker, HSL/HSV, gamut, Okhsl/Okhsv, Munsell/NCS and orthogonality teaching across Slice18's eleven-card source set.
+- Clarified picker comparison scope and the distinctions among coordinate construction, perceptual behavior, destination gamut mapping and host UI behavior.
+- Corrected the picker card's HTML-input classification and six pre-authorized cross-domain analogy metadata scalars.
+
 ## Version 1.0.13 - 2026-10-16
 
 - Correct CSS colour mechanics, scoped relationship/CQ explanations, WCAG pair

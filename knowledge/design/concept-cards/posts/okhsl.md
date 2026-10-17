@@ -35,88 +35,112 @@ rosetta_stone:
   -
     domain: "music"
     concept: "Equal temperament tuning"
-    rating: "rigorous"
-    note: "Okhsl achieves perceptual uniformity in colour the same way equal temperament achieves perceptual uniformity in pitch: equal numerical steps (slider increments) produce equal perceived differences, regardless of where on the scale you start."
+    rating: "loose"
+    note: "Numeric colour-model parameters and equal frequency ratios/Euclidean basis vectors do not establish equal visual or auditory differences or perceptual independence."
 ---
 
 # Quick Definition
 
-Okhsl is a colour space designed by Björn Ottosson as a perceptually-improved replacement for HSL, built on the Oklab colour space. It maps the sRGB gamut to a cylinder while achieving orthogonal lightness and hue — properties HSL lacks.
+
+Okhsl is an Oklab-derived picker coordinate model introduced by Björn Ottosson. Its nonlinear remapping aims for a convenient sRGB picker compromise; its source comparison rates the goals subjectively and does not promise exact perceptual uniformity, accessibility, or numeric compatibility with HSL.
 
 # Core Definition
 
-Ottosson introduces Okhsl as part of a pair: "For consistency with the naming of Oklab, these new color spaces will be called Okhsl and Okhsv." Okhsl is derived from OkLCh (the cylindrical form of Oklab): "To derive Okhsl we also start with OkLCh. L_r and h are kept as is, with L_r referred to as l instead for consistency." The lightness L_r is a new perceptual lightness estimate introduced in the same post, which "closely matches the lightness estimate of CIELab overall." The saturation parameter s is constructed using three chroma reference values — C_0 (hue-independent, used for low-saturation colours), C_mid (an optimised smooth mid-range value), and C_max (the maximum chroma in the sRGB gamut for the given lightness and hue) — interpolated so that: at s=0 the slope matches C_0; at s=0.8 the value matches C_mid; at s=1.0 it reaches C_max. This construction keeps the interior of the colour space smooth while confining the gamut irregularity to the high-saturation edge. "Altogether this gives a model with a simple geometrical shape that has parameters for lightness and hue that closely match perception."
+
+The source toe constants are k1=.206, k2=.03 and k3=(1+k1)/(1+k2); toe(L)=(k3L−k1+sqrt((k3L−k1)^2+4k2k3L))/2 and toe_inv(l)=l(l+k1)/(k3(l+k2)). Ottosson derives Okhsl from Oklab in polar form. For non-neutral input, hue comes from the a,b direction and chroma C; a nonlinear toe maps base Oklab lightness L to picker lightness l=toe(L). Saturation is constructed from three hue/lightness-dependent references: C=0 with initial slope C0 at s=0, C=Cmid at s=.8, and C=Cmax at s=1. C0 is a derivative/slope, not the chroma value at s=0. The source uses a piecewise rational mapping and inverse, not C=s·Cmax. Its helper get_Cs receives base Oklab L and unit a/b; compute those references before replacing L with toe(L). In the source’s comparison, Okhsl is rated yes for orthogonal lightness, orthogonal hue, simple geometry and smooth change; no for orthogonal chroma, orthogonal saturation, max chroma at edge and even change. These are subjective sRGB judgments, not guarantees.
 
 # Prerequisites
 
-- **HSL colour space** — Okhsl is designed as a drop-in improvement for HSL pickers
-- **Colour gamut** — The sRGB gamut shape drives the construction of C_0, C_mid, and C_max
-- **Orthogonal colour properties** — Okhsl is designed to achieve Orthogonal Lightness and Orthogonal Hue
+
+- **HSL colour space** — Familiar H/S/L labels provide a comparison route, but Okhsl has a distinct construction and values.
+- **Colour gamut** — The article’s C0, Cmid and Cmax references are calculated for its sRGB target and hue/lightness conditions.
+- **Orthogonal colour properties** — The source uses these as proposed comparison goals; the table is subjective and sRGB-scoped.
 
 # Key Properties
 
-1. Achieves Orthogonal Lightness (yes) and Orthogonal Hue (yes) — improvements over HSL (both no)
-2. Uses a cylindrical shape identical to HSL in structure, making it a usable drop-in replacement
-3. Saturation varies smoothly even where the gamut boundary is irregular, by using a three-point interpolation (C_0, C_mid, C_max)
-4. Does NOT achieve Orthogonal Chroma (no) — the price paid for the simple cylindrical shape
+
+1. Okhsl’s picker lightness l is nonlinear toe(L), where L is base Oklab lightness; l is not the argument to get_Cs.
+2. The s-to-C mapping uses C0 as the initial slope, Cmid at s=.8 and Cmax at s=1, with rational piecewise functions.
+3. Exact neutral input has C=0 and powerless hue: choose s=0, l=toe(L), and a conventional h=0 only for a serialized coordinate; do not normalize a,b by C or call gamut-cusp helpers.
+4. Black and white have degenerate hue/saturation coordinates; use explicit canonical coordinates only as a recipe convention. Near-neutral classification needs a declared tolerance.
+5. Source ratings are subjective and scoped to sRGB. “Smooth” is not “even,” and no universal drop-in or accessibility result follows.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Convert sRGB to linear sRGB
-2. Convert to Oklab using the Oklab matrix transform
-3. Compute hue h from atan2(b, a)
-4. Apply the toe function to obtain L_r from L
-5. Compute C_0, C_mid, C_max for the given h and L_r
-6. Interpolate to obtain s from chroma C using the three-point scheme
-7. The result is (h, s, l=L_r)
+
+1. Decode encoded sRGB, convert through the complete Oklab pipeline, then derive base L, C and h from a,b. For C>0, h=atan2(b,a)/(2π) modulo 1; normalize a,b by C only in this chromatic case.
+2. For exact neutral C=0, set s=0 and l=toe(L); use h=0 as an explicit powerless-hue convention. Handle canonical black as (0,0,0) and white as (0,0,1) in (h,s,l), without zero-divisor helper calls.
+3. For chromatic values compute get_Cs(base L, unit a/b), yielding C0,Cmid,Cmax. Forward s-to-C uses two rational branches: for s<.8, t=1.25s, k1=.8C0, k2=1−k1/Cmid, C=t·k1/(1−k2t); otherwise t=(s−.8)/.2, k0=Cmid, k1=.2·Cmid²·1.25²/C0, k2=1−k1/(Cmax−Cmid), C=k0+t·k1/(1−k2t). The inverse uses t=C/(k1+k2C), s=.8t below Cmid; above, t=(C−Cmid)/(k1+k2(C−Cmid)), s=.8+.2t. These formulas require valid source helper outputs and nonzero denominators; set l=toe(L).
+4. In reverse, recover base L=toe_inv(l) before get_Cs, then map s to C, construct Oklab a,b from C and h, and run the matched inverse conversion and encoding.
+5. State helper domains and gamut assumptions. The article excerpts depend on omitted gamut helpers and are not a complete robust converter.
 
 ## To Identify/Recognise:
-1. A constant-lightness hue ring in Okhsl shows visually uniform brightness across all hues (unlike HSL, which shows yellow as much brighter than blue)
-2. Moving the saturation slider from 0 to 1 produces a smooth, gradual colour change without abrupt jumps (unlike HSLuv)
+
+1. The construction uses an Oklab-derived hue/chroma and a nonlinear lightness toe, not HSL’s RGB formula.
+2. Hue is powerless at C=0; a stored zero hue is convention, not measurement.
+3. Compare the source table as an author-reported sRGB profile. Equal numeric changes or matching HSL labels do not establish equal appearance or interchangeable values.
 
 # Context & Application
 
-- **Typical contexts**: Colour picker design, programmatic colour manipulation where lightness constancy matters, design system palette generation
-- **Common applications**: Generating accessible colour palettes by stepping lightness uniformly; creating harmonious colour scales where all hues at the same Okhsl lightness appear equally bright
+
+- **Typical contexts**: Candidate controls for a picker where an Oklab-derived lightness coordinate and a smooth chroma mapping are useful tradeoffs.
+- **Common applications**: Generate candidates, convert for the specified destination, then inspect gamut and actual rendered pairs. The source comparison alone does not establish contrast or accessibility.
 
 ## Cross-Domain Connections
 
-**Music → RIGOROUS**: Equal temperament divides the octave into 12 equal semitones so that every half-step sounds the same size regardless of starting pitch. Okhsl achieves the analogous goal for colour: equal-sized slider steps in lightness or hue produce equally-perceived colour differences regardless of starting position. Both are deliberate calibration systems designed to make a non-linear perceptual continuum behave linearly for practical use.
+
+**Music → LOOSE**: Okhsl parameters and equal frequency ratios can serve as a limited analogy for model coordinates and chosen steps. Numeric steps do not establish equal visual or auditory differences or perceptual independence; the mapping is not rigorous.
 
 # Examples
 
-**Example 1** (from source): "Altogether this gives a model with a simple geometrical shape that has parameters for lightness and hue that closely match perception. The model is quite different from regular HSL, in order to achieve a better lightness estimate. I believe Okhsl delivers a better overall compromise, and keeps many of the benefits of Lab-like color spaces, without the complexity of an irregular shape."
 
-**Example 2** (from source — summary table): Okhsl achieves Orthogonal Lightness: yes; Orthogonal Hue: yes; Simple Geometrical Shape: yes; Varies Smoothly: yes; Orthogonal Chroma: no; Max Chroma at Edge: no.
+**Example 1** (from source): The article proposes an Okhsl compromise with parameters that “closely match perception”; this is the author’s qualified claim, not a universal guarantee. Figures were not independently inspected.
+
+**Example 2** (source table): The subjective sRGB comparison rates Orthogonal Lightness/Hue, Simple Geometrical Shape and Varies Smoothly yes; Orthogonal Chroma/Saturation, Max Chroma at Edge and Varies Evenly no.
+
+**Example 3** (synthetic arithmetic witness, not a measured colour): With C0=.1, Cmid=.12, Cmax=.2, the source’s rational construction gives C(0)=0, C(.4)=.048, C(.8)=.12, C(.9)=.1488 and C(1)=.2. The linear shortcut s·Cmax gives .16 at s=.8 and therefore does not reproduce the reference.
 
 # Relationships
 
 ## Builds Upon
-- **Oklab** — Okhsl derives its hue and lightness from Oklab coordinates
-- **HSL** — Okhsl was designed as a structural successor to HSL for picker use
+
+- **Oklab** — The article derives chroma and hue from Oklab coordinates and then remaps them.
+- **HSL** — Familiar parameter labels and picker context do not establish numeric compatibility.
 
 ## Enables
-- **Perceptually uniform colour pickers** — Okhsl enables pickers where lightness feels consistent across hues
-- **Accessible colour palette generation** — Uniform lightness enables all-hue palettes with consistent perceived contrast
+
+- **Picker candidates** — Its stated coordinate tradeoffs can inform a candidate control; output and interaction still need task-specific review.
+- **Palette candidates** — It can generate coordinates for evaluation, but equal lightness values do not certify contrast or accessibility.
 
 ## Related
-- **Okhsv** — Sibling space optimised for a different set of tradeoffs (Value-based rather than Lightness-based)
+
+- **Okhsv** — Sibling mapping with a value-like coordinate and a different profile of tradeoffs; their values are not interchangeable.
 
 ## Contrasts With
-- **HSL** — HSL has non-orthogonal lightness and hue; Okhsl corrects both
-- **Okhsv** — Okhsv preserves maximum chroma at the edge (good for finding vivid colours); Okhsl prioritises orthogonal lightness (good for uniform brightness)
-- **HSLuv** — HSLuv also attempts uniform lightness but fails on smooth saturation variation; Okhsl is smoother
+
+
+- **HSL** — Distinct underlying RGB versus Oklab-derived constructions; do not equate corresponding values.
+- **Okhsv** — Different coordinate mappings and source-reported tradeoff profiles.
+- **HSLuv** — The article gives an attributed comparison of mapping tradeoffs; it is not a general measurement of user experience.
 
 # Common Errors
 
-- **Error**: Assuming Okhsl Saturation values are directly comparable to HSL Saturation values.
-  **Correction**: The two saturation parameters are differently constructed; they share a 0–1 range but represent different quantities.
+
+**Error**: Feeding toe(L) into get_Cs or using C=s·Cmax.
+  **Correction**: Calculate the three references from base Oklab L first; use the source’s piecewise rational mapping.
+
+**Error**: Dividing a,b by C or using a cusp helper at a neutral.
+  **Correction**: Branch on C=0, set s=0 and l=toe(L), and use a stated conventional hue.
+
+**Error**: Treating Okhsl as an accessible palette guarantee or universal drop-in HSL replacement.
+  **Correction**: It is a distinct coordinate model; verify destination output, actual pairs and interaction for the use case.
 
 # Common Confusions
 
-- **Confusion**: Okhsl and Okhsv are the same space with a different axis name.
-  **Clarification**: They are distinct spaces with different constructions. Okhsl prioritises orthogonal lightness (good for creating palettes with consistent perceived brightness); Okhsv preserves the HSV-style "value" axis where the most vivid colours appear at the edge at V=1.
+
+**Confusion**: Okhsl and Okhsv are the same space with one renamed axis.
+  **Clarification**: They use distinct remappings and tradeoffs. Neither model name makes corresponding numbers equivalent to each other or to HSL.
 
 # Source Reference
 
@@ -124,9 +148,5 @@ Ottosson introduces Okhsl as part of a pair: "For consistency with the naming of
 
 # Verification Notes
 
-- Definition source: Direct quotes and close paraphrase from Ottosson
-- Confidence rationale: High — Okhsl is defined, derived, and fully documented in source including C++ implementation
-- Uncertainties: The saturation construction involves an optimised polynomial (C_mid); details require reference to source code
-- Cross-reference status: Not present in Drasner source
-- Rosetta Stone check: Music/equal-temperament mapping added as rigorous
-- OCR issues: Mathematical notation rendered via KaTeX; cleaned for extraction
+
+This full available-evidence review checked the construction, toe order, helper inputs, rational saturation map and table profile against the complete prepared picker article and accepted Slice17 Oklab/conversion terminology. The synthetic fixture is arithmetic only, not a measured colour. Exact neutral conventions are explicit recipes; omitted gamut helpers were not executed. Figures were not visually inspected; original capture fidelity, browser behavior and accessibility remain unverified. Extraction-confidence metadata is unchanged.

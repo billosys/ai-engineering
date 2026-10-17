@@ -35,45 +35,50 @@ rosetta_stone:
   -
     domain: "music"
     concept: "Equal temperament tuning"
-    rating: "rigorous"
-    note: "Like Okhsl, Okhsv makes perceptual hue steps uniform across the hue circle, analogous to equal temperament making semitone intervals perceptually equal across pitch registers."
+    rating: "loose"
+    note: "Numeric colour-model parameters and equal frequency ratios/Euclidean basis vectors do not establish equal visual or auditory differences or perceptual independence."
 ---
 
 # Quick Definition
 
-Okhsv is a colour space designed by Björn Ottosson as a perceptually-improved replacement for HSV, built on the Oklab colour space. It retains HSV's cylindrical shape and its "max chroma at edge" property while correcting HSV's severe hue distortions.
+
+Okhsv is an Oklab-derived coordinate model proposed as an sRGB picker tradeoff. The source rates its profile subjectively; it does not promise equal brightness, even change, universal HSL/HSV compatibility, or a complete conversion implementation.
 
 # Core Definition
 
-Ottosson derives Okhsv from OkLCh: "To derive Okhsv, we will start with OkLCh, use its estimate for hue, h, as is and introduce s and v parameters that are calculated based on lightness, L_r, and chroma, C." The construction remaps the sRGB gamut cross-sections (which are triangular in OkLCh space) into a square by stretching the lower part of the triangle. The key step locates the "cusp" of each hue's triangular cross-section — the point of maximum chroma — and maps it to the corner (s=1, v=1). After this remapping, a small curve at the top of the triangle is removed by scaling v. An additional adjustment makes saturation more uniform for low-saturation colours. The result is "a new model with a simple geometrical shape and a hue parameter that closely matches perception. Overall the space will be very familiar to someone who is used to HSV, but with improved perceptual uniformity." Okhsv can also be converted to HWB (hue, whiteness, blackness) form using the relationships: w = (1-s)v and b = 1-v.
+
+The source toe constants are k1=.206, k2=.03 and k3=(1+k1)/(1+k2); toe(L)=(k3L−k1+sqrt((k3L−k1)^2+4k2k3L))/2 and toe_inv(l)=l(l+k1)/(k3(l+k2)). Ottosson derives Okhsv from Oklab polar coordinates. The article’s figures use lightness-like Lr vertically and C·Lr/L horizontally, not plain C. A hue-specific cusp anchors a triangular gamut construction; the remapping approximates it with a curved top and compensating v adjustment, with a further low-saturation correction. This is an approximation within the article’s sRGB target, not a physical perceptual cylinder. The source table rates Okhsv yes for Orthogonal Hue, Simple Geometrical Shape, Max Chroma at Edge and Varies Smoothly; no for Orthogonal Lightness, Orthogonal Chroma and Varies Evenly; Orthogonal Saturation is partial. A constant-v band therefore does not promise equal brightness. The related Okhwb coordinates are w=(1−s)v and b=1−v; inverse s=1−w/(1−b), v=1−b is valid only for b≠1. At black b=1 the coordinates are degenerate.
 
 # Prerequisites
 
-- **HSV colour space** — Okhsv is designed as a structural successor to HSV
-- **Colour gamut** — The triangular cross-sections of the sRGB gamut in OkLCh drive the construction
-- **Orthogonal colour properties** — Okhsv is designed to achieve Orthogonal Hue
+
+- **HSV colour space** — Provides a familiar comparison in the article; Okhsv coordinates are not numerically compatible by name.
+- **Colour gamut** — The article’s cusp and remapping discussion is for the sRGB target.
+- **Orthogonal colour properties** — The source uses these as comparison labels; its ratings are subjective and scope-limited.
 
 # Key Properties
 
-1. Achieves Orthogonal Hue (yes) and Simple Geometrical Shape (yes) — same as HSV, but with perceptual hue accuracy
-2. Achieves Max Chroma at Edge (yes) — the most vivid colour for any hue is at s=1, v=1
-3. Does NOT achieve Orthogonal Lightness (no) — the cusp varies in lightness across hues
-4. Saturation is adjusted for low-saturation uniformity: "This makes it easier to compare saturation values for different colors, when saturation is low"
+
+1. The illustrated cross-section uses axes Lr and C·Lr/L; its triangular remapping and curved-top compensation are approximate.
+2. The source’s cusp maps to s=1,v=1 for the specified hue; this is the author’s Max Chroma at Edge criterion within the target construction.
+3. Okhsv is rated no for Orthogonal Lightness and Varies Evenly; constant v is not equal physical or perceived brightness.
+4. Okhwb has w=(1−s)v and b=1−v. Inversion divides by 1−b and is undefined at black (b=1).
+5. These are article-specific sRGB constructions, not universal display properties or proof of current tool adoption.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Convert sRGB to Oklab
-2. Compute chroma C and hue h from Oklab a,b components
-3. Find the cusp (L_cusp, C_cusp) for the given hue
-4. Compute L_r using the toe function
-5. Remap the triangular gamut cross-section to a square to obtain s and v
-6. Apply a final v-scaling to remove the curved top
-7. Apply low-saturation uniformity adjustment to s
+
+1. Decode encoded sRGB and use the matched complete Oklab conversion. For C>0, derive C=hypot(a,b), h=atan2(b,a)/(2π) modulo 1, normalizing a,b only when C>0.
+2. For exact neutral, set s=0 and v=toe(L), use h=0 only as a serialization convention, and skip chroma normalization/cusp helpers. Canonical black (0,0,0) and white (0,0,1) in (h,s,v) are explicit conventions for degenerate coordinates.
+3. For chromatic inputs, follow the source’s hue cusp, triangular approximation, curved-top compensation and low-saturation correction; its helpers include omitted gamut code and are not a full robust converter.
+4. To convert to Okhwb use w=(1−s)v and b=1−v. Invert only when b≠1: v=1−b and s=1−w/(1−b). Black requires a separate degenerate branch.
 
 ## To Identify/Recognise:
-1. A constant-v horizontal band in Okhsv shows equal perceived brightness across hues (much better than HSV)
-2. The most saturated version of any hue always appears at the top-right corner of the picker square
+
+1. Distinguish this Oklab-derived construction from HSV by its hue/chroma pipeline and nonlinear toe.
+2. The source comparison says its constant-v bands do not achieve orthogonal lightness; do not call them equal brightness.
+3. Hue is powerless at C=0; any stored zero is a convention. For near-neutrals, state a numerical tolerance before branching.
 
 # Context & Application
 
@@ -82,40 +87,59 @@ Ottosson derives Okhsv from OkLCh: "To derive Okhsv, we will start with OkLCh, u
 
 ## Cross-Domain Connections
 
-**Music → RIGOROUS**: Okhsv's perceptually uniform hue is analogous to equal temperament: stepping the hue angle by equal amounts produces equally-perceived hue changes, just as equal-tempered semitones produce equally-perceived pitch intervals.
+
+**Music → LOOSE**: Okhsv’s numeric hue coordinate and equal frequency ratios offer only a limited structural analogy. Equal numeric steps do not establish equal visual or auditory differences or perceptual independence.
 
 # Examples
 
-**Example 1** (from source): The series of images showing the OkLCh cross-section for yellow, blue, and magenta hues being progressively remapped — from irregular triangle to square — illustrates the Okhsv construction process visually.
 
-**Example 2** (from source — summary table): Okhsv achieves: Orthogonal Hue: yes; Simple Geometrical Shape: yes; Max Chroma at Edge: yes; Varies Smoothly: yes; Orthogonal Lightness: no; Orthogonal Chroma: no; Varies Evenly: no.
+**Example 1** (source description): The article describes hue-specific Oklab-derived cross-sections remapped toward a simple picker shape; the diagrams are attributed and were not independently inspected.
+
+**Example 2** (source table): The subjective sRGB profile rates Okhsv yes for hue, simple geometry, maximum chroma at edge and smooth variation; no for orthogonal lightness, orthogonal chroma and even variation; orthogonal saturation is partial.
+
+**Example 3** (algebraic boundary): At s=.4,v=.5, Okhwb gives w=.3,b=.5; inverse recovers s=.4,v=.5. At black s=0,v=0 gives w=0,b=1 and the inverse denominator is zero, so black must be handled separately.
 
 # Relationships
 
 ## Builds Upon
-- **Oklab** — Okhsv derives hue from Oklab's perceptually uniform hue angle
-- **HSV** — Okhsv is a structural drop-in for HSV, retaining its shape and conventions
+
+- **Oklab** — The source derives hue/chroma through Oklab-based coordinates; perceptual uniformity remains approximate.
+- **HSV** — The construction is intended to offer a familiar value-like control tradeoff, not a drop-in with numerically compatible values.
 
 ## Enables
-- **Perceptual HSV-style pickers** — Enables pickers that feel like HSV but with correct hue representation
+
+- **Picker candidates** — Can inform an Oklab-derived sRGB picker candidate; host controls, output checks and accessibility require separate assessment.
 
 ## Related
-- **Okhsl** — Sibling space prioritising orthogonal lightness instead of max-chroma-at-edge
-- **Okhwb** — A whiteness/blackness reparameterisation of Okhsv, analogous to HWB for HSV
+
+- **Okhsl** — Sibling mapping with a different tradeoff profile; matching numbers do not imply matching colours.
+- **Okhwb** — Whiteness/blackness reparameterization with a singular black boundary in the inverse.
 
 ## Contrasts With
-- **HSV** — HSV has severe hue distortions (purple shift in deep blues); Okhsv corrects these
-- **Okhsl** — Okhsl achieves orthogonal lightness (uniform brightness across hues at constant L); Okhsv does not
+
+- **HSV** — Distinct coordinate construction and parameter meanings; not numeric-compatible by name.
+- **Okhsl** — Source ratings differ for Orthogonal Lightness and Max Chroma at Edge; both are rated no for Varies Evenly. Claims remain source-attributed and sRGB-scoped.
 
 # Common Errors
 
-- **Error**: Treating Okhsv Value as equivalent to perceived luminance.
-  **Correction**: Value in Okhsv, like in HSV, is not perceptual luminance — it is a normalised position within the gamut triangle remapped to [0,1]. Yellow's cusp is at high perceptual lightness; blue's is at low perceptual lightness.
+
+**Error**: Calling constant-v Okhsv bands equal-brightness or perceptually even.
+  **Correction**: The source rates Orthogonal Lightness and Varies Evenly no.
+
+**Error**: Using C alone as the figure’s horizontal axis.
+  **Correction**: The article labels the axis C·Lr/L.
+
+**Error**: Inverting Okhwb at b=1 or dividing a,b by C for a neutral.
+  **Correction**: Handle exact neutral/black separately; use the stated convention and avoid zero divisors.
+
+**Error**: Calling the excerpt a complete robust converter.
+  **Correction**: It depends on omitted gamut helpers; this card records the method and boundaries, not a library.
 
 # Common Confusions
 
-- **Confusion**: Okhsv corrects all of HSV's problems.
-  **Clarification**: Okhsv corrects HSV's hue distortions (the most significant problem) but does not achieve Orthogonal Lightness. The lightness axis still changes with hue. Use Okhsl if consistent perceived brightness across hues is required.
+
+**Confusion**: Okhsv corrects every HSV problem or guarantees all hues look equally bright.
+  **Clarification**: The source claims a qualified improvement and rates Orthogonal Lightness and Varies Evenly no. Use its tradeoff profile for the stated sRGB context.
 
 # Source Reference
 
@@ -123,9 +147,5 @@ Ottosson derives Okhsv from OkLCh: "To derive Okhsv, we will start with OkLCh, u
 
 # Verification Notes
 
-- Definition source: Direct quotes and close paraphrase from Ottosson
-- Confidence rationale: High — Okhsv is defined, derived, and documented with C++ implementation in source
-- Uncertainties: The cusp-finding algorithm references a separate post on sRGB gamut clipping
-- Cross-reference status: Not present in Drasner source
-- Rosetta Stone check: Music/equal-temperament mapping added as rigorous
-- OCR issues: KaTeX math notation cleaned for extraction
+
+This full available-evidence review checked the construction, figure-axis labels, toe/conversion boundaries, Okhwb relation and comparison profile against the complete prepared picker article and accepted Slice17 Oklab/conversion terminology. The inverse-boundary examples are algebraic checks; omitted gamut helpers were not executed. Figures were not visually inspected. Original capture fidelity, actual widget/browser behavior and accessibility remain unverified; extraction-confidence metadata is unchanged.

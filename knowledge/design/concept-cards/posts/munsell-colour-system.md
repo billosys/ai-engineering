@@ -33,28 +33,34 @@ css_implementation: []
 
 # Quick Definition
 
-The Munsell Colour System is a perceptual colour ordering system developed in the early 20th century that describes colours by three independent dimensions — Hue, Chroma, and Value — each with a uniform perceptual scale, resulting in an irregular colour solid.
+
+The Munsell Colour System orders colour samples using Hue, Value and Chroma (HVC). Its colour solid is irregular; this card retains bounded notation and historical context from the prepared picker article, not a full technical or historical review.
 
 # Core Definition
 
-Ottosson describes the Munsell system as one of "two important color systems" that "emerged" during the 20th century, both "based on human perception and derived using experiments." "In the Munsell color system, colors are described with three parameters, designed to match the perceived appearance of colors: Hue, Chroma and Value. The parameters are designed to be independent and each have a uniform scale. This results in a color solid with an irregular shape." Drasner notes in Working With Colors Guide that the HSL system "is based on a Munsell color system (he was the first to separate out color into these three channels, or create a three dimensional system based on mathematical principles tied to actual human vision)." Ottosson further notes that "Modern color spaces and models, such as CIELab, Cam16 and my own Oklab, are very similar in their construction" to Munsell.
+
+Ottosson describes Munsell as a perceptually motivated system with Hue, Chroma and Value, intended to be independent and use uniform scales, producing an irregular solid. Those are design aims and a source-attributed account, not proof of exact uniformity in every viewing condition. The prepared article reports that later Lab-like systems have a similar construction; this is an attributed structural comparison. Drasner’s prepared text says HSL is “based on” Munsell, but that secondary statement does not establish direct mathematical derivation or a first-ever historical claim. The full Munsell source-owner page was unavailable for this assignment, so no additional historical or quantitative claim is made.
 
 # Prerequisites
 
-- None — Munsell is a foundational historical system
+
+- No prerequisite is needed for this bounded HVC notation and source-attributed overview.
 
 # Key Properties
 
-1. Three independent dimensions: Hue (10 principal hues in a circle), Value (0=black to 10=white), Chroma (0=neutral to ~20 for strongest colours)
-2. Perceptually uniform scales — equal numerical steps correspond to equal perceived colour differences
-3. Irregular shape — the gamut boundary is non-cylindrical because maximum chroma varies across hues and values
-4. Predecessor to modern perceptual colour spaces (CIELab, Oklab)
+
+1. HVC means Hue, Value and Chroma; retain the notation order and the source’s attributed irregular-solid description.
+2. Maximum available chroma varies with hue and value; “about 20” is not a universal ceiling.
+3. Uniformity and independence are design aims subject to samples, viewing conditions and method, not context-free guarantees.
+4. The prepared article compares Munsell conceptually with later models; it does not establish a direct derivation of HSL or Oklab.
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
-1. Munsell notation: H V/C — e.g. 5R 5/10 means Hue=5R (red), Value=5, Chroma=10
-2. The Munsell colour tree image shows the irregular, uneven solid that results from perceptually uniform spacing
+
+1. Munsell notation is written H V/C; for example, 5R 5/10 names hue 5R, value 5 and chroma 10 within the system.
+2. Treat the tree illustration as described by the source; its image was not independently inspected here.
+3. Munsell Chroma is a system coordinate, not a context-free absolute quantity transferable to HSL saturation.
 
 # Context & Application
 
@@ -63,31 +69,38 @@ Ottosson describes the Munsell system as one of "two important color systems" th
 
 # Examples
 
-**Example 1** (from source): Ottosson includes the Munsell colour tree photo and notes the irregular shape — "a color solid with an irregular shape" — as a consequence of perceptual uniformity. This irregular shape is the same problem that makes Lab-like colour spaces difficult to use in colour pickers.
 
-**Example 2** (from source — Drasner): "hsl values work with hue, saturation, lightness values. This system is based on a Munsell color system (he was the first to separate out color into these three channels, or create a three dimensional system based on mathematical principles tied to actual human vision)."
+**Example 1** (source description): Ottosson describes Munsell’s colour solid as irregular. The figure/photo was not independently inspected.
+
+**Example 2** (attributed secondary statement): Drasner says HSL is based on Munsell. This preserves what her prepared article reports; it does not establish HSL’s direct derivation or an independent history claim.
 
 # Relationships
 
 ## Builds Upon
-- **Perceptual colour research** — Munsell derived dimensions from perceptual experiments
+
+- **Perceptual colour research** — Ottosson describes Munsell as based on perceptual work; detailed methods are outside the inspected source scope.
 
 ## Enables
-- **CIELab, Oklab** — Modern perceptual spaces directly continue Munsell's approach with more rigorous mathematical grounding
-- **HSL** — Drasner notes HSL's three-channel structure traces to Munsell's conceptual framework
+
+
+- **CIELab, Oklab** — The prepared article describes similar construction; it does not establish direct derivation.
+- **HSL** — Drasner reports a conceptual relation; this does not establish direct mathematical derivation.
 
 ## Related
-- **Natural Colour System (NCS)** — A contemporary perceptual system using different principles
-- **Oklab** — Ottosson's own colour space, which follows "very similar construction" to Munsell
+
+- **Natural Colour System (NCS)** — The sources describe different representational constructions.
+- **Oklab** — Ottosson reports a structural similarity, not direct inheritance.
 
 ## Contrasts With
-- **NCS** — Munsell uses independent dimensions; NCS uses resemblance to elementary colours
-- **HSL/HSV** — These are simple RGB transformations, not perceptually uniform in the way Munsell is
+
+- **NCS** — The sources describe different descriptive constructions: HVC coordinates versus resemblance to elementary colours. This is a bounded conceptual distinction.
+- **HSL/HSV** — These are RGB transformations with different parameter definitions; they do not inherit Munsell’s aims simply by using three coordinates.
 
 # Common Confusions
 
-- **Confusion**: Munsell Chroma and HSL Saturation are equivalent.
-  **Clarification**: They are not. Munsell Chroma is an independent, absolute perceptual quantity. HSL "Saturation" is a relative quantity (relative chroma at fixed lightness), and is not perceptually uniform.
+
+**Confusion**: Munsell Chroma is an absolute, context-free measure, or HSL saturation is equivalent to it.
+  **Clarification**: Keep the Munsell system coordinate distinct from model-specific HSL/HSV saturation and scope perceptual claims to the stated conditions.
 
 # Source Reference
 
@@ -95,9 +108,6 @@ Ottosson describes the Munsell system as one of "two important color systems" th
 
 # Verification Notes
 
-- Definition source: Direct quotes from both sources
-- Confidence rationale: Medium — both sources reference Munsell briefly; detailed technical content requires separate Munsell-specific sources
-- Uncertainties: This card is a cross-reference; deeper content is expected to exist in a dedicated munsell-colour-system source
-- Cross-reference status: Verified in both sources; abbreviated by instruction
-- Rosetta Stone check: No mappings added
-- OCR issues: None significant
+
+
+This full available-evidence review retained only bounded HVC, notation, irregular-solid and attributed comparison claims supported by the prepared picker article. The full Munsell source-owner page remained unavailable; no new historical investigation, universal maximum, direct-derivation or uniformity claim was added. The prepared figures were not visually inspected. Extraction-confidence metadata remains unchanged and is not a new evidence grade.

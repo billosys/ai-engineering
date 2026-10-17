@@ -35,11 +35,13 @@ css_implementation: []
 
 # Quick Definition
 
-HSV (also called HSB) is a cylindrical colour model introduced in 1978 that describes colours by Hue (angular position), Saturation (colourfulness relative to maximum for a given hue), and Value (a measure of brightness, ranging from black to the maximum coloured light).
+
+HSV (also called HSB) re-parameterizes an RGB cube using hue, saturation and value. For normalized encoded sRGB r,g,b in [0,1], V is the maximum encoded component; it is not physical brightness or perceptual lightness.
 
 # Core Definition
 
-HSV describes colours with three parameters, as Ottosson defines them: Hue, which "roughly corresponds to perceived hue, but it has quite severe distortions"; Saturation, which "roughly corresponds to saturation relative to maximum possible saturation in sRGB of the same hue"; and Value, which is "a bit hard to define" and "can be seen as how much to mix the color with black, with 100% being no black and 0% completely black." Value is "sometimes also referred to as Brightness." Like HSL, HSV is "not quite a color space on its own" but is a "transformation from a source RGB color space," most commonly sRGB. HSV maps the sRGB gamut to a cylinder with a cone-like internal structure (a pointed bottom at V=0 and a circular top face at V=1).
+
+Ottosson describes HSV saturation as relative to the maximum for the same hue at V=1 and notes hue distortion. For encoded sRGB components r,g,b∈[0,1], let M=max(r,g,b), m=min(r,g,b), and Δ=M−m. Then V=M and S=0 when M=0, otherwise S=Δ/M. For Δ>0, define h′=(g−b)/Δ when M=r, (b−r)/Δ+2 when M=g, and (r−g)/Δ+4 when M=b; H=60·(h′ mod 6) degrees (equivalently a normalized turn). Hue has no measured value at achromatic colours (Δ=0). This is an RGB coordinate transformation, commonly applied to encoded sRGB, not a perceptual colour appearance model. At S<1, the other channel contributions mean the result is not simply a fully saturated hue mixed only with black.
 
 # Prerequisites
 
@@ -47,21 +49,25 @@ HSV describes colours with three parameters, as Ottosson defines them: Hue, whic
 
 # Key Properties
 
-1. V=0 always yields black regardless of H or S; V=1 and S=1 yields the purest colour for a given hue
-2. The maximum chroma colour for any hue sits on the edge of the colour solid (V=1, S=1), satisfying the "Max Chroma at Edge" design goal
-3. Maps sRGB to a simple cylindrical shape, preventing out-of-gamut values when parameters are adjusted independently
-4. Hue angle has severe perceptual non-uniformity — equal angular steps do not correspond to equally-perceived hue differences
+
+1. V=0 gives black; S=0 gives a neutral axis at every V. Hue is powerless when Δ=0.
+2. At V=1 and S=1, the model reaches a primary/secondary edge for its hue; this is the source’s “Max Chroma at Edge” criterion, not a universal perceptual maximum claim.
+3. The encoded sRGB cube maps to bounded HSV coordinates; coordinate independence does not imply perceptual independence.
+4. Equal hue-angle steps need not be equally perceived; the source reports hue shifts and subjective comparisons.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the hue angle (0–360 or 0–1 normalised)
-2. Set Saturation: 0 = grey axis, 1 = maximum colourfulness for the hue
-3. Set Value: 0 = black, 1 = maximum brightness; the resulting colour is a mixture of the fully-saturated hue and black
+
+1. For the classic normalized encoded-sRGB model, choose hue in turns or degrees, saturation S∈[0,1], and value V∈[0,1].
+2. S=0 produces gray for any hue; V=0 produces black.
+3. Interpret V as max(r,g,b), not brightness. Changing S at fixed V changes channel proportions, not merely the amount of a saturated hue mixed with black.
 
 ## To Identify/Recognise:
-1. Look for a square two-dimensional picker widget where the horizontal axis is Saturation and the vertical axis is Value, with a separate hue slider
-2. The bottom-left corner of such a picker is always pure black
+
+1. A square saturation/value field plus hue slider is one common interface arrangement, not part of the HSV definition.
+2. Derive the coordinate convention from the RGB encoding and formula; do not infer model identity from a widget alone.
+3. Hue is undefined/powerless at gray and black even when software stores a conventional numeric hue.
 
 # Context & Application
 
@@ -70,34 +76,42 @@ HSV describes colours with three parameters, as Ottosson defines them: Hue, whic
 
 # Examples
 
-**Example 1** (from source): Ottosson illustrates HSV's hue distortion: deep blue colours in HSV show "a purple shift as saturation decreases," demonstrating that S=0 achromatic axis produces different perceived hues than expected.
+**Example 1** (source description): Ottosson illustrates HSV's hue distortion; the figure was not independently inspected: deep blue colours in HSV show "a purple shift as saturation decreases," demonstrating that S=0 achromatic axis produces different perceived hues than expected.
 
 **Example 2** (from source): The comparison table shows that HSV achieves "yes" for Simple Geometrical Shape and Max Chroma at Edge, but "no" for Orthogonal Lightness and Orthogonal Chroma, and only "partial" for Orthogonal Hue and Saturation.
 
 # Relationships
 
 ## Builds Upon
-- **sRGB colour model** — HSV is a coordinate transformation of sRGB
+
+- **RGB colour model** — The classic equations re-parameterize a specified RGB representation; the formulas in this card are for encoded sRGB.
 
 ## Enables
-- **Okhsv** — Okhsv was designed as a perceptually-improved replacement for HSV while preserving its cylindrical structure
-- **HWB colour model** — HSV can be transformed to HWB (hue, whiteness, blackness) form, which is structurally similar to NCS
+
+- **Okhsv** — Ottosson presents a different Oklab-derived picker construction with familiar value-like controls; the coordinates are not numerically interchangeable.
+- **HWB colour model** — HSV and HWB have an algebraic relationship for the same RGB convention; structural similarity to NCS does not make them equivalent.
 
 ## Related
-- **HSL** — Sibling model from the same 1978 paper; shares the hue calculation
-- **Natural Colour System (NCS)** — Ottosson notes "HSV is quite similar to the Natural Color System in its structure"
+
+- **HSL** — Both are RGB transformations but define S and the third coordinate differently.
+- **Natural Colour System (NCS)** — Ottosson notes a structural similarity; NCS has a separate perceptual notation and sample context.
 
 ## Contrasts With
-- **Okhsv** — Okhsv corrects HSV's perceptual distortions using Oklab while maintaining cylindrical geometry
-- **HSL** — Different lightness axis: HSL places grey at L=50%, S=0; HSV has grey at V=any, S=0
+
+- **Okhsv** — Distinct coordinate construction and source-reported tradeoffs; avoid “drop-in” or numeric-compatibility claims.
+- **HSL** — At S=0, HSV V and HSL L describe different parameterizations of neutrals.
 
 # Common Errors
 
-- **Error**: Assuming that decreasing Saturation in HSV while keeping H and V constant preserves the perceived hue.
-  **Correction**: Ottosson documents that blue colours shift toward purple as saturation decreases in HSV.
 
-- **Error**: Treating Value as equivalent to perceived lightness.
-  **Correction**: Value is not perceptual lightness; a yellow at V=0.5 will appear far brighter than a blue at V=0.5 due to the differing luminance contributions of the RGB primaries.
+**Error**: Treating Value as physical brightness or lightness.
+  **Correction**: V is the largest encoded RGB component. Relative luminance and perceptual lightness use different definitions.
+
+**Error**: Describing S<1 as only mixing the fully saturated hue with black.
+  **Correction**: HSV scales the channel distance from the maximum; at fixed V the channels vary together according to hue and S.
+
+**Error**: Assuming hue stays perceptually fixed as S changes.
+  **Correction**: The source documents hue distortions; describe this as its attributed example and not a universal quantified result.
 
 # Common Confusions
 
@@ -110,9 +124,5 @@ HSV describes colours with three parameters, as Ottosson defines them: Hue, whic
 
 # Verification Notes
 
-- Definition source: Direct quotes from Ottosson
-- Confidence rationale: High — source dedicates a full named section to HSV with properties table
-- Uncertainties: None significant
-- Cross-reference status: Verified within source; no substantial HSV content in Drasner source
-- Rosetta Stone check: No rigorous cross-domain mappings added
-- OCR issues: HTML artifacts present; prose content clean
+
+This full available-evidence review checked the encoded-sRGB equations and bounded claims against the complete prepared picker article, with Oklab/chroma terminology from the accepted Slice17 endpoint. The RGB witness is arithmetic, not perceptual measurement. Source-table ratings and hue examples are attributed, subjective and scoped to the article. No picker, display, browser or accessibility behavior was tested; figures and original capture fidelity remain unverified. Extraction-confidence metadata is unchanged.

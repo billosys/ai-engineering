@@ -42,11 +42,13 @@ css_implementation:
 
 # Quick Definition
 
-HSL is a cylindrical colour model that describes colours by three parameters — Hue (0–360 degrees), Saturation (0–100%), and Lightness (0–100%) — designed as a more human-readable alternative to RGB.
+
+HSL is an RGB-derived coordinate transformation using hue, saturation and lightness. The normalized classic formulas below apply to encoded sRGB r,g,b∈[0,1]; HSL S is not CIE saturation, and HSL L is not physical brightness or perceptual lightness.
 
 # Core Definition
 
-HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describes colours with three parameters: Hue, which is identical to Hue in HSV (and shares the same perceptual distortions); Saturation, described by Ottosson as "roughly the chroma of the color relative to the most colorful color with the same 'lightness' and 'hue'" (referred to as "relative chroma" in the original paper, not true perceptual saturation); and Lightness, which has "some correlation with the perception of lightness, with 0% corresponding to black and 100% to white" but "does not match the perception of lightness well at all for saturated colors" (referred to as "Intensity" in the original paper). As Drasner notes, "hsl values work with hue, saturation, lightness values" and compares the system with Munsell. This records Drasner’s comparison, not a verified history or mathematical equivalence.
+
+For encoded sRGB let M=max(r,g,b), m=min(r,g,b), Δ=M−m, and L=(M+m)/2. Then HSL S=0 when Δ=0; otherwise S=Δ/(1−|2L−1|). For Δ>0, define h′=(g−b)/Δ when M=r, (b−r)/Δ+2 when M=g, and (r−g)/Δ+4 when M=b; H=60·(h′ mod 6) degrees. Hue is powerless for achromatic colours. The model is a transform from a source RGB space, not an independent perceptual space. This formula is a bounded normalized example, distinct from CSS syntax rules and extended values. CSS HSL resolves to sRGB: modern syntax accepts numeric or percentage S/L on a 0–100 reference scale, while legacy comma syntax requires percentages; hue angles wrap. Sass examples are historical Sass, not standalone CSS.
 
 # Prerequisites
 
@@ -54,21 +56,27 @@ HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describe
 
 # Key Properties
 
-1. Hue rotates through 360 degrees as a full circle
-2. Saturation and Lightness are percentages from 0% to 100%
-3. Maps sRGB gamut to a cylinder, allowing independent parameter changes without out-of-gamut colours
-4. Lightness of 50% at full saturation does not correspond to perceptual midpoint for most hues
+
+1. HSL parameters are derived from a specified RGB encoding; the classic formulas here use encoded sRGB in [0,1].
+2. S=0 gives gray at every L; hue is powerless whenever Δ=0. Black and white make the saturation denominator degenerate, so use the Δ=0 branch.
+3. HSL L=(M+m)/2 is not WCAG relative luminance or a perceptually uniform brightness scale.
+4. CSS modern HSL accepts S/L numbers or percentages on a 0–100 reference scale; legacy comma syntax requires percentages. Hue wraps, and HSL resolves to sRGB.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose a Hue angle (0–360): 0/360 = red, 120 = green, 240 = blue
-2. Choose Saturation (0% = achromatic grey, 100% = most vivid at this hue/lightness)
-3. Choose Lightness (0% = black, 50% = nominal colour, 100% = white)
+
+1. For classic encoded sRGB, calculate M, m, Δ and L=(M+m)/2.
+2. If Δ=0, set S=0 and use a conventional hue only if an interface needs one. Otherwise calculate S=Δ/(1−|2L−1|) and hue from the channel ordering.
+3. For CSS, follow the selected modern or legacy syntax. Modern numeric S/L use 0–100 reference values; legacy comma syntax requires percentages.
+4. Check rendered output for the actual destination and use relative luminance, not HSL L, for contrast calculations.
 
 ## To Identify/Recognise:
-1. Look for `hsl(H, S%, L%)` or `hsla(H, S%, L%, A)` syntax
-2. Yellow at 50% lightness appears far brighter than blue at 50% lightness — a sign of HSL's perceptual non-uniformity
+
+1. Recognize modern space-separated/slash syntax and legacy comma syntax as distinct accepted forms.
+2. Modern S/L numbers and percentages both use a 0–100 reference range; the legacy comma form requires percentages.
+3. Hue is an angle that wraps; S=0 makes hue powerless.
+4. Sass code and preprocessor functions must be identified as Sass, not standalone CSS.
 
 # Context & Application
 
@@ -77,34 +85,45 @@ HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describe
 
 # Examples
 
-**Example 1** (from source — Working With Colors Guide): Drasner shows `hsla(150, 50%, 50%, 0.5)` as a canonical usage and a Sass mixin that steps through `hsl(($i - 10)*($color*1.25), ($i - 1)*($color / $color-frequency), 40%)` to generate fruit-loop colour sequences.
 
-**Example 2** (from source — Okhsv and Okhsl): Ottosson illustrates HSL's failure: "colors HSL considers to have the same lightness" includes a bright yellow and a dim blue at equal L values — a perceptual inconsistency.
+**Example 1** (from prepared Drasner source): `hsla(150, 50%, 50%, 0.5)` is a legacy comma-form example.
+
+**Example 2** (current CSS syntax): `hsl(180 100 50 / 50%)` and `hsl(180 100% 50% / 50%)` use equivalent modern S/L reference values; `hsl(180, 100, 50)` is invalid legacy syntax because S/L need percentages.
+
+**Example 3** (arithmetic witness, encoded sRGB): r,g,b=(.8,.2,.2) gives Δ=.6, L=.5 and S=.6; neutral (.5,.5,.5) gives S=0 and no measured hue.
 
 # Relationships
 
 ## Builds Upon
-- **sRGB colour model** — HSL is a transformation of sRGB coordinates
+
+- **sRGB colour model** — CSS HSL resolves to sRGB; classic equations here use encoded sRGB in [0,1].
 
 ## Enables
-- **Okhsl** — Okhsl was built to improve upon HSL's perceptual shortcomings while retaining its cylindrical structure
-- **Generative colour** — Predictable 0–360 hue cycle enables looping colour sequences
+
+- **Okhsl** — Ottosson introduces a distinct Oklab-derived alternative for picker use, not a numeric-compatible replacement.
+- **Generative colour** — Hue iteration can enumerate coordinates; it does not promise even perceived steps.
 
 ## Related
-- **HSV** — Sibling model from the same 1978 paper; shares the same hue calculation
-- **Munsell colour system** — Drasner compares HSL with Munsell; the prepared passage does not establish a direct historical derivation or mathematical equivalence
+
+- **HSV** — Both re-parameterize RGB but their saturation and third-coordinate definitions differ.
+- **Munsell colour system** — Drasner makes an attributed conceptual comparison; it does not show direct derivation.
 
 ## Contrasts With
-- **Okhsl** — Okhsl corrects HSL's lightness and hue distortions using Oklab
-- **HSV** — Different arrangement of axes; HSL places white/black at L extremes whereas HSV places white at V=1, S=0
+
+- **Okhsl** — Different formulas and parameter meanings; matching labels do not make values interchangeable.
+- **HSV** — HSL S and HSV S use different formulas.
 
 # Common Errors
 
-- **Error**: Assuming equal Lightness values mean equal perceived brightness.
-  **Correction**: Yellow at hsl(60, 100%, 50%) is far brighter perceptually than blue at hsl(240, 100%, 50%); Lightness in HSL does not match perceived luminance for saturated colours.
 
-- **Error**: Treating HSL Saturation as equivalent to HSV Saturation.
-  **Correction**: Ottosson explicitly notes these are "not the same as 'saturation' in HSV"; HSL Saturation is relative chroma normalised to the same lightness and hue, not the same quantity.
+**Error**: Assuming HSL grey occurs only at L=.5, or that S=0 has a meaningful hue.
+  **Correction**: S=0 is gray at every L, and hue is powerless for achromatic values.
+
+**Error**: Using HSL L as brightness or contrast luminance.
+  **Correction**: It is an RGB-derived coordinate; compute contrast from the actual rendered pair.
+
+**Error**: Treating modern numeric S/L as 0–1 or allowing bare numbers in legacy comma syntax.
+  **Correction**: Modern numeric S/L use the 0–100 reference scale; legacy comma syntax requires percentages.
 
 # Common Confusions
 
@@ -120,9 +139,6 @@ HSL, introduced in the 1978 paper "Color Spaces for Computer Graphics," describe
 
 # Verification Notes
 
-- Definition source: Direct quotes from both Ottosson (perceptual critique) and Drasner (CSS usage)
-- Confidence rationale: High — both sources discuss HSL explicitly with code examples and comparative analysis
-- Uncertainties: Drasner's article predates CSS Color 4; some syntax notes may be dated
-- Cross-reference status: Verified across both sources
-- Rosetta Stone check: No mappings added — no strong cross-domain analogies with rigorous correspondence found for HSL alone (distinct from Okhsl)
-- OCR issues: HTML artifacts present in source; prose content clean
+
+
+This full available-evidence review checked the classic normalized encoded-sRGB formula against the prepared picker article and checked CSS syntax against CSS Color 4 CRD 2026-10-09 §§7–7.2 and the linked accepted `hsl-css-syntax` card. Formula examples are bounded arithmetic witnesses, not a claim about all CSS extended values. Prepared Drasner syntax is distinguished from current CSS; original capture fidelity, browser behavior and actual rendered contrast were not tested. Extraction-confidence metadata remains unchanged.
