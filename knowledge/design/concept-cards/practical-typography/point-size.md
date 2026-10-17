@@ -39,15 +39,15 @@ css_implementation:
 
 # Quick Definition
 
-Point size is the measurement of how large a font renders — optimally 10-12 points in print and 15-25 pixels on the web, though different fonts appear different sizes at the same point size.
+Point size is a nominal type-size measure, not a direct measure of visible letter height. Butterick recommends 10–12pt for print body text and 15–25px for web body text; these are contextual suggestions, not universal or accessibility thresholds.
 
 # Core Definition
 
-Butterick states: "In print, the optimal point size for body text is 10-12 point. On the web, the optimal size is 15-25 pixels."
+Butterick recommends 10–12pt print and 15–25px web body text. Preserve these as his rules of thumb, not universal optima: rendered appearance depends on the typeface, script, content, environment and reader settings.
 
 Crucially, the point-size system is not absolute: "different fonts set at the same point size won't necessarily appear the same on the page." This is because digital fonts are drawn inside a rectangle called the em, and "Two fonts set at the same point size will appear to be different sizes if one occupies less space on its em."
 
-There are 72 points to an inch. Half-point differences are meaningful at body text sizes.
+CSS defines 72pt per CSS inch and 96px per CSS inch. These are CSS reference lengths, not promises about physical screen inches or device pixels. Butterick’s half-point emphasis advice is a source recommendation to evaluate in context.
 
 # Prerequisites
 
@@ -55,19 +55,18 @@ There are 72 points to an inch. Half-point differences are meaningful at body te
 
 # Key Properties
 
-1. **72 points per inch**: The fundamental measurement unit.
-2. **Not absolute**: Different fonts appear different sizes at the same point value.
-3. **Print range**: 10-12pt for body text (12pt default is often too large).
-4. **Web range**: 15-25px for body text (larger to compensate for reading distance and screen rendering).
-5. **Half-point sensitivity**: At body text sizes, half-point increments are visually meaningful.
-6. **Emphasis tool**: Point size changes can provide emphasis, but subtly — start with half-point increments.
+1. A nominal size does not equal cap height, x-height, visible glyph bounds or line-box height.
+2. Different fonts can look different at the same nominal size.
+3. The 10–12pt print and 15–25px web ranges and half-point emphasis are Butterick’s recommendations, not universal thresholds.
+4. CSS points and pixels are reference lengths; do not equate CSS px with physical/device pixels.
+5. Compare actual content and preserve user text resizing.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Start in the recommended range (10-12pt print, 15-25px web).
-2. Use your eyes, not the number — compare visually, not numerically.
-3. Try intermediate sizes (10.5, 11.5) for fine-tuning.
+1. Use Butterick’s suggested ranges only as candidates; choose from the task, script, content and user needs.
+2. Compare representative rendered content, not numbers alone.
+3. Butterick’s half-point increments are examples to consider, not a universal threshold.
 4. When matching fonts, adjust point size until text blocks occupy the same space.
 
 ## To Identify/Recognise:
@@ -75,9 +74,9 @@ There are 72 points to an inch. Half-point differences are meaningful at body te
 
 # Context & Application
 
-- **Typical contexts**: Every document and website — point size is always specified.
+- **Typical contexts**: Documents and websites where text size must be chosen or reviewed.
 - **Common applications**: Setting body text size; creating heading hierarchy through size variation; matching fonts across documents.
-- **Historical note**: The 12pt default comes from typewriter convention, not from optimal readability.
+- **Historical note**: Butterick discusses historical conventions; this card does not establish the cause of any current default or a universal readability optimum.
 
 # Examples
 
@@ -96,22 +95,22 @@ There are 72 points to an inch. Half-point differences are meaningful at body te
 - **Headings** — Heading hierarchy relies on point size variation.
 
 ## Related
-- **Em Unit** — The em is the typographic unit underlying point size.
-- **Line Spacing** — Should be adjusted when point size changes.
+- **Em Unit** — Nominal size relates to the em coordinate space, not a fixed cap height, x-height or visible outline extent.
+- **Line Spacing** — Review leading when point size changes; the suitable line box depends on the face and actual content.
 - **Line Length** — Affected by point size choice.
 
 # Common Errors
 
 - **Error**: Using the 12pt default without evaluating whether it's appropriate.
-  **Correction**: 12pt is a typewriter convention. Most professionally typeset material uses 10-11pt. Evaluate visually.
+  **Correction**: Use Butterick’s print range as an attributed starting point; review the typeface, script, output conditions and reader needs.
 
 - **Error**: Doubling point size for headings (e.g., 12pt body to 24pt heading).
   **Correction**: "There is no typographic universe in which you need to double the point size to achieve emphasis." Use subtler increments.
 
 # Common Confusions
 
-- **Confusion**: Two fonts at the same point size will be the same visual size.
-  **Clarification**: Point size is not absolute — it defines the em square, not the apparent letter size. Different fonts use their em space differently.
+- **Confusion**: Nominal size specifies visible letter height.
+  **Clarification**: It does not specify cap height, x-height or all glyph bounds; inspect the actual face and rendered text.
 
 # Source Reference
 
@@ -119,9 +118,9 @@ There are 72 points to an inch. Half-point differences are meaningful at body te
 
 # Verification Notes
 
-- Definition source: Direct quotes from point-size.md.
-- Confidence rationale: High — explicit numeric ranges and clear explanations.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Claim review: the concept and useful source recommendations are retained with explicit scope; technical corrections above are limited to the assigned paragraph-composition claims.
+- Source basis: the prepared Practical Typography pages named in Source Reference were read. Historical extraction confidence is retained as provenance, not treated as proof of current technical correctness.
+- Technical review: CSS units, line-height, measurement, paragraph spacing, hyphenation and fragmentation claims were checked against the cited specifications where applicable. No browser, assistive-technology, font-failure or readability study was run.
+- Primary definitions: CSS Values and Units [absolute lengths §6.2](https://www.w3.org/TR/css-values-4/#absolute-lengths) and [font-relative lengths §6.1.1](https://www.w3.org/TR/css-values-4/#font-relative-lengths); OpenType [FUnits and the em square](https://learn.microsoft.com/en-us/typography/opentype/spec/ttch01#funits-and-the-em-square).
+- Source-fidelity limit: P10-11 original capture and conversion-fidelity evidence remains open; this correction does not verify fidelity to an immutable original.
+- Relationships and competency-question contribution are reconciled in Slice19 batch record; they do not establish whole-card endpoint review or full-corpus closure.

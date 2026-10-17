@@ -56,6 +56,61 @@ it. Keep values within the declared range, and compare rendered samples at the
 sizes and scripts in use. Axis labels and CSS declarations do not show how a
 font will look in the target browser.
 
+## Compose readable paragraphs
+
+Start from the reading context, language and actual content. Choose candidate
+font, size, leading and measure together, then select one coherent paragraph
+separation treatment (or a deliberate combination). Review alignment, language-
+aware word breaking and page/column flow in the target output. A width unit or
+formula is only a starting point: inspect actual lines with representative text,
+fonts, fallbacks, spaces, language and writing mode.
+
+For horizontal prose, this scoped illustration inherits the project's font and
+uses example values rather than required tokens. Set the content language on the
+surrounding HTML element, for example `<article lang="en">`; use the actual
+language for the content.
+
+```css
+.prose {
+  font-size: 1rem;
+  line-height: 1.35;
+  max-width: 65ch;
+  text-align: start;
+}
+
+.prose p { margin: 0; }
+.prose p + p { margin-block-start: .75em; }
+```
+
+An indent can replace the paragraph gap; change the rule rather than layering
+both treatments by default:
+
+```css
+.prose p + p {
+  margin-block-start: 0;
+  text-indent: 1em;
+}
+```
+
+The `65ch`, `1.35` and `.75em` values illustrate a candidate. `ch` uses the
+zero glyph advance with specification fallbacks; it does not promise a character
+count. A unitless CSS `line-height` is inherited as a number and multiplies each
+element's own font size. A percentage computes from the parent value before
+inheritance: for a 20px parent and 12px child, `1.5` produces 30px on the parent
+and 18px on the child, while `150%` produces 30px on both absent an override.
+Lengths also compute before inheritance. CSS `em` usually uses the element's
+computed font size, but on `font-size` it resolves against the inherited size;
+`rem` uses the root size.
+
+Preserve text enlargement and reflow. [WCAG 2.2 Success Criterion 1.4.12](https://www.w3.org/TR/WCAG22/#text-spacing) is AA:
+it requires no loss of content or functionality when users apply its specified
+spacing overrides (1.5 times line height, 2 times following-paragraph spacing,
+.12em letter spacing and .16em word spacing), subject to language and script
+applicability. It does not require those authored defaults. [Success Criterion 1.4.8](https://www.w3.org/TR/WCAG22/#visual-presentation) is a separate AAA criterion with visual-presentation conditions including
+a user mechanism, width limits and non-justified text. This guidance is not a
+test or conformance claim; validate user overrides and reflow in the adopting
+project without hiding overflow or clamping text height.
+
 ## Vary by context and review
 
 Different content, roles, scripts, devices or user preferences may justify

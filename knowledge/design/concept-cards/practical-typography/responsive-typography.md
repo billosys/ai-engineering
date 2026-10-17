@@ -30,56 +30,56 @@ answers_questions:
 rosetta_stone: []
 css_implementation:
   -
-    property: "clamp(), vw, max-width"
-    example: "body { font-size: clamp(1rem, 0.5rem + 1.5vw, 1.25rem); } .content { max-width: 40vw; }"
+    property: "font-size, max-width"
+    example: ".prose { font-size: 1rem; max-width: 65ch; } /* illustrative; adapt to content and test enlargement/reflow */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Responsive typography ensures that typographic rules — especially line length (45-90 characters) — are maintained across all viewport sizes, because "the rules of good typography don't change with screen size."
+Responsive typography adapts text layout to its content and viewing context. Butterick’s reminder to attend to line measure remains useful; his 45–90-character range is a rule of thumb, not a universal invariant across every viewport.
 
 # Core Definition
 
 Butterick's key reminder: "The rules of good typography don't change with screen size." Early responsive designs "had navigation and images carefully engineered to scale... Meanwhile, the body text was largely ignored — set at a fixed point size, and allowed to reflow from edge to edge."
 
-His approach prioritizes line length: "Start by considering line length, because it's the hardest to manage in a responsive layout. Regardless of screen width, the optimal line length is still 45-90 characters."
+Butterick recommends considering line length early and suggests 45–90 characters. Review actual rendered passages; the range is not a necessary or sufficient comfort test.
 
-The technique: "The easiest way to maintain consistent line length is by scaling the point size and element width at the same rate" using `vw` units. Also: "include a `max-width` CSS property on that element to ensure that the line length is bounded."
+Butterick presents viewport-scaled size and width as one technique and `max-width` as another. Font size need not track the viewport: intrinsic reflow, bounded measures or container queries can suit the content. Review actual enlargement and reflow.
 
 # Prerequisites
 
-- **Line Length** — The primary constraint that responsive typography must maintain.
-- **Point Size** — Must scale with viewport width.
-- **Page Margins** — Web margins must adapt to screen size.
+- **Line Length** — A key measure consideration as content width changes.
+- **Point Size** — Can remain fixed or vary according to content and user needs.
+- **Page Margins** — Available width and margins may adapt to the viewport.
 
 # Key Properties
 
-1. **Same rules apply**: "The rules of good typography don't change with screen size."
-2. **Line length first**: Hardest to manage and most important.
-3. **Scale together**: Point size and element width at the same rate.
-4. **Use `vw` units**: Viewport-relative sizing.
-5. **Use `max-width`**: Bound line length on wide screens.
-6. **Skip `ch` unit**: It's just the width of the zero — "not a useful proxy for average characters per line."
-7. **Beware media query thresholds**: High pixel thresholds can cause mobile layouts on desktop.
+1. **Source reminder**: Attend to typography as layout changes; its numeric advice remains contextual.
+2. **Line measure**: Butterick recommends attention to measure; it is one part of responsive text design.
+3. **Source technique**: Butterick describes scaling size and width together; font-size need not track viewport width.
+4. **Optional technique**: `vw` is one viewport-relative option, not a universal strategy.
+5. **Bounded measure**: `max-width` can constrain text width where it suits the content.
+6. **Approximate measure**: `ch` uses zero advance (with defined fallbacks), not average-character width; it can still serve as an approximate max-width checked against content.
+7. **Source-era caution**: Butterick notes that a high viewport-width threshold may select a narrow layout in a desktop window; evaluate the actual target layout.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Set line length as the primary constraint (45-90 characters at all sizes).
-2. Scale font-size with `vw` units or `clamp()`.
-3. Add `max-width` to text containers.
-4. Test at multiple viewport widths — check character count, not just appearance.
+1. Use Butterick’s 45–90 range as a candidate and inspect actual lines.
+2. Choose fixed or fluid font sizing for the content; `vw` and `clamp()` do not prove behavior.
+3. Consider a max width, intrinsic reflow or container query as suitable.
+4. Test actual content at relevant widths and user enlargement; this card reports no browser or accessibility test.
 
 ## To Identify/Recognise:
-1. Text that reflows from edge to edge on wide screens = responsive failure.
-2. Consistent line length across viewport sizes = responsive success.
+1. Unbounded text may produce a measure unsuitable for the content; assess actual layout rather than treating edge-to-edge as an automatic failure.
+2. Judge the complete rendered passage and reflow; identical line counts do not define responsive success.
 
 # Context & Application
 
 - **Typical contexts**: Any website or web application.
 - **Common applications**: Body text sizing, layout adaptation, mobile/desktop optimization.
-- **Historical note**: Responsive web design technique popularized around 2010 when CSS media query support became widespread.
+- **Historical note**: Butterick’s historical note dates responsive-design adoption to around 2010 as media-query support spread; it is not a current compatibility survey.
 
 # Examples
 
@@ -91,22 +91,22 @@ The technique: "The easiest way to maintain consistent line length is by scaling
 
 ## Builds Upon
 - **Line Length** — The primary responsive constraint.
-- **Point Size** — Must scale with viewport.
-- **Page Margins** — Must adapt to screen size.
+- **Point Size** — Select for content and viewing conditions; viewport scaling is optional.
+- **Page Margins** — May adapt to screen size and content.
 
 ## Related
-- **Body Text** — The main element that responsive design must serve.
-- **Typographic Grids** — Grid layouts must adapt responsively.
+- **Body Text** — A key element to consider when the page contains running prose.
+- **Typographic Grids** — Grid and text measures may adapt as content and available width change.
 
 # Common Errors
 
 - **Error**: Allowing text to flow from edge to edge on wide screens.
-  **Correction**: "The edges of the screen are not the end." Use `max-width` to constrain line length.
+  **Correction**: Butterick’s reminder supports considering a bounded measure; choose max-width when suitable and review actual rendered lines.
 
 # Common Confusions
 
-- **Confusion**: The CSS `ch` unit measures average character width.
-  **Clarification**: It "simply denotes the width of the zero in the font." It's not a reliable proxy for characters per line.
+- **Confusion**: `ch` guarantees a character count or is unusable for measures.
+  **Clarification**: It is based on the zero advance, not average text; use it as an approximation and inspect actual lines.
 
 # Source Reference
 
@@ -114,9 +114,9 @@ The technique: "The easiest way to maintain consistent line length is by scaling
 
 # Verification Notes
 
-- Definition source: Direct quotes from responsive-web-design.md.
-- Confidence rationale: High — specific CSS techniques and clear principles.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Claim review: source advice is attributed and scoped; the technical corrections in this assigned card are summarized in the changed teaching above.
+- Source basis: the prepared Practical Typography page named in Source Reference was read. Extraction confidence is provenance, not a current technical proof.
+- Technical review: relevant CSS behavior was checked against the cited primary specifications. No browser, assistive-technology, font-failure or readability study was run.
+- Primary definitions: CSS Values and Units [font-relative lengths §6.1.1](https://www.w3.org/TR/css-values-4/#font-relative-lengths), including the `ch` definition and fallback.
+- Source-fidelity limit: P10-11 original capture and conversion-fidelity evidence remains open.
+- Relationship and competency-question contribution is reconciled in Slice19 batch record; this does not establish whole-card endpoint review or full-corpus closure.

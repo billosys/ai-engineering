@@ -32,7 +32,7 @@ css_implementation: []
 
 # Quick Definition
 
-Widow and orphan control prevents single paragraph lines from appearing isolated at the top (widow) or bottom (orphan) of a page — optional, since the blank lines it creates at page bottoms can be more annoying than the problem it solves.
+Widows and orphans describe paragraph lines isolated across a fragmentation boundary such as a page or column. Butterick recommends using controls pragmatically and weighs their blank-space cost; a short final line in continuous scrolling is a different issue.
 
 # Core Definition
 
@@ -40,7 +40,7 @@ Butterick defines: "When only the last line of the paragraph appears at the top 
 
 His stance is pragmatic: "Do you need widow and orphan control? Try it. See how it looks." He approaches it like ligatures — "I only use it if widows and orphans are causing a visible problem. Otherwise, I find that the blank lines at the bottom of the page are more annoying."
 
-Widows are more distracting than orphans because "widows can be any length, even a single word."
+Butterick considers widows more distracting because of their possible shortness; this is a source judgment. CSS widows and orphans apply to fragmentation and are separate controls.
 
 # Prerequisites
 
@@ -48,25 +48,24 @@ Widows are more distracting than orphans because "widows can be any length, even
 
 # Key Properties
 
-1. **Widows**: Last line of paragraph alone at top of next page.
-2. **Orphans**: First line of paragraph alone at bottom of page.
-3. **All-or-nothing**: Word processors can't control widows and orphans separately.
-4. **Trade-off**: Curing them creates blank lines at page bottoms.
+1. **Widows**: Lines treated at the start of the next fragment under applicable pagination rules.
+2. **Orphans**: Lines treated at the end of the preceding fragment under applicable pagination rules.
+3. **Separate CSS controls**: CSS defines `widows` and `orphans` separately. Butterick’s all-or-nothing statement describes the word-processor controls he discusses, not all layout systems.
+4. **Trade-off**: Preventing isolated lines can leave additional blank space; inspect the trade-off in the output.
 5. **Optional**: Use only if the problems are visually distracting.
-6. **Widows worse than orphans**: Widows can be a single word; orphans are at least a full line.
-7. **Not applicable to web**: Web content doesn't span pages.
+6. **Source judgment**: Butterick finds widows more distracting because they may be short; this is not a universal preference.
+7. **Web documents can fragment**: Print and paged/column web output can have widows and orphans; continuous-scroll last lines are a different visual condition.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. In Word: Paragraph > Line and Page Breaks > Widow/Orphan control.
-2. In Pages: Format > More > Prevent widow & orphan lines.
+1. Word and Pages menu paths are source-era examples and may vary by version.
+2. CSS has separate `widows` and `orphans` properties for fragmentation contexts.
 3. Evaluate whether the cure (blank lines) is worse than the disease.
 4. Fix individual widows with judicious editing rather than global settings.
 
 ## To Identify/Recognise:
-1. Widow: a short line (possibly one word) alone at the top of a page.
-2. Orphan: first line of a paragraph alone at the bottom of a page.
+1. In page/column fragmentation, a widow concerns lines at the start of the next fragment; an orphan concerns lines at the end of the previous fragment. CSS properties address these conditions separately.
 
 # Examples
 
@@ -78,7 +77,7 @@ Widows are more distracting than orphans because "widows can be any length, even
 - **Body Text** — A body text page-flow concern.
 
 ## Related
-- **Line Spacing** — Line spacing adjustments can mitigate widows/orphans.
+- **Line Spacing** — Changes to measure, type or line spacing can affect where fragmentation occurs; verify the page/column output.
 - **Headings** — Keep-with-next prevents headings from orphaning.
 
 # Common Errors
@@ -89,7 +88,7 @@ Widows are more distracting than orphans because "widows can be any length, even
 # Common Confusions
 
 - **Confusion**: Widows and orphans are equally problematic.
-  **Clarification**: Widows are more distracting because they "can be any length, even a single word." Orphans are at least a full line.
+  **Clarification**: Butterick considers widows more distracting because they may be short; CSS treats widows and orphans as separate controls in fragmentation.
 
 # Source Reference
 
@@ -97,9 +96,9 @@ Widows are more distracting than orphans because "widows can be any length, even
 
 # Verification Notes
 
-- Definition source: Direct quotes from widow-and-orphan-control.md.
-- Confidence rationale: High — clear definitions and pragmatic advice.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Claim review: source advice is attributed and scoped; the technical corrections in this assigned card are summarized in the changed teaching above.
+- Source basis: the prepared Practical Typography page named in Source Reference was read. Extraction confidence is provenance, not a current technical proof.
+- Technical review: relevant CSS behavior was checked against the cited primary specifications. No browser, assistive-technology, font-failure or readability study was run.
+- Primary definitions: CSS Fragmentation [widows and orphans §3.3](https://www.w3.org/TR/css-break-3/#widows-orphans).
+- Source-fidelity limit: P10-11 original capture and conversion-fidelity evidence remains open.
+- Relationship and competency-question contribution is reconciled in Slice19 batch record; this does not establish whole-card endpoint review or full-corpus closure.

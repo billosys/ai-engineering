@@ -34,17 +34,17 @@ rosetta_stone: []
 css_implementation:
   -
     property: "font-size, line-height, max-width"
-    example: "body { font-size: clamp(1rem, 0.5rem + 1.5vi, 1.25rem); line-height: 1.35; max-width: 65ch; }"
+    example: ".prose { font-size: 1rem; line-height: 1.35; max-width: 65ch; } /* illustrative; test actual text, fonts and user overrides */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Body text is the default text of a document — the running paragraphs that make up the bulk of the content. Because there is more body text than anything else, it determines the overall typographic quality.
+Body text is the running prose of a document. Where prose dominates, reviewing it early is a useful way to establish a candidate type treatment; task, interface, language and supplied identity may make other content equally important.
 
 # Core Definition
 
-Butterick identifies body text as the primary determinant of document quality: "The typographic quality of your document is determined largely by how the body text looks. Why? Because there's more body text than anything else. So start every project by making the body text look good. Then worry about the rest."
+Butterick recommends starting with body text because it occupies much of many documents and strongly affects their overall appearance. Treat this as useful advice for prose-dominated work, not a universal priority or a guarantee of quality.
 
 The appearance of body text is controlled by four primary decisions: point size, line spacing, line length, and font.
 
@@ -56,17 +56,16 @@ The appearance of body text is controlled by four primary decisions: point size,
 
 1. **Highest volume**: More body text than any other element in most documents.
 2. **Four key controls**: Point size, line spacing, line length, and font.
-3. **Priority element**: Should be designed first — everything else is secondary.
-4. **Determines overall quality**: If body text looks good, the document looks good.
+3. **Contextual priority**: Often useful to review early when prose dominates, while other tasks may have different priorities.
+4. **One contribution**: Body text affects a document, but does not alone establish its overall quality.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose a font (professional, not system default).
-2. Set point size: 10-12pt in print, 15-25px on web.
-3. Set line spacing: 120-145% of point size.
-4. Set line length: 45-90 characters per line.
-5. Evaluate by reading a full paragraph — it should feel comfortable and natural.
+1. Preserve supplied typefaces and assets; compare available candidates with representative content and suitable fallbacks.
+2. Treat Butterick’s 10–12pt print and 15–25px web suggestions as his recommendations, not thresholds for every script, audience or device.
+3. Treat his 120–145% leading and 45–90 character measure suggestions as starting points; inspect rendered lines and the actual reading task.
+4. Review a representative passage with the intended fonts, language and layout, then check user enlargement and reflow. These checks do not establish conformance or universal comfort.
 
 ## To Identify/Recognise:
 1. The default text style in a document — the running paragraphs.
@@ -74,14 +73,14 @@ The appearance of body text is controlled by four primary decisions: point size,
 
 # Context & Application
 
-- **Typical contexts**: Every document with running text — reports, articles, books, web pages, emails.
-- **Common applications**: Setting the baseline typographic quality of any document; the first design decision in any project.
+- **Typical contexts**: Documents with running text, including reports, articles, books, web pages and emails.
+- **Common applications**: Establishing a candidate treatment for prose-heavy content; another task or supplied identity may lead the work.
 
 # Examples
 
-**Example 1** (typography-in-ten-minutes): "The typographic quality of your document is determined largely by how the body text looks... So start every project by making the body text look good."
+**Example 1** (typography-in-ten-minutes): Butterick’s prose-first recommendation is useful when running text dominates; it is not a universal project sequence or proof of quality.
 
-**Example 2** (body-text): Butterick recommends serif fonts for body text in print, but notes that on screen, both serif and sans-serif can work well.
+**Example 2** (body-text): Butterick recommends serif fonts for body text in print while noting that both serif and sans-serif can work on screen; treat these as contextual source recommendations.
 
 # Relationships
 
@@ -99,13 +98,13 @@ The appearance of body text is controlled by four primary decisions: point size,
 
 # Common Errors
 
-- **Error**: Spending time on headings, logos, or decorative elements before setting body text.
-  **Correction**: Always start with body text — it has the biggest impact on overall quality.
+- **Error**: Treating a source recommendation as a universal sequence.
+  **Correction**: For prose-heavy work, beginning with a representative body passage can expose useful type and measure choices. Follow the task and supplied identity where another element leads.
 
 # Common Confusions
 
-- **Confusion**: Body text is the least important element because it's "just the regular text."
-  **Clarification**: Body text is the MOST important because it constitutes the majority of the document. Getting body text right is the single biggest improvement you can make.
+- **Confusion**: Body text has the same priority in every artifact.
+  **Clarification**: Its prominence depends on content and task. Butterick’s emphasis explains his advice for documents dominated by prose; it is not a quality guarantee.
 
 # Source Reference
 
@@ -113,9 +112,9 @@ The appearance of body text is controlled by four primary decisions: point size,
 
 # Verification Notes
 
-- Definition source: Direct quotes from body-text.md and typography-in-ten-minutes.md.
-- Confidence rationale: High — Butterick is emphatic and explicit about body text's primacy.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Claim review: the concept and useful source recommendations are retained with explicit scope; technical corrections above are limited to the assigned paragraph-composition claims.
+- Source basis: the prepared Practical Typography pages named in Source Reference were read. Historical extraction confidence is retained as provenance, not treated as proof of current technical correctness.
+- Technical review: CSS units, line-height, measurement, paragraph spacing, hyphenation and fragmentation claims were checked against the cited specifications where applicable. No browser, assistive-technology, font-failure or readability study was run.
+- Primary definitions: CSS Values and Units [font-relative lengths §6.1.1](https://www.w3.org/TR/css-values-4/#font-relative-lengths) and [absolute lengths §6.2](https://www.w3.org/TR/css-values-4/#absolute-lengths) support the unit distinctions; no behavioral usability test was run.
+- Source-fidelity limit: P10-11 original capture and conversion-fidelity evidence remains open; this correction does not verify fidelity to an immutable original.
+- Relationships and competency-question contribution are reconciled in Slice19 batch record; they do not establish whole-card endpoint review or full-corpus closure.

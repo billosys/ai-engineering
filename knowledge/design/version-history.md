@@ -5,6 +5,11 @@
 
 # visual-design-system Version History
 
+## Version 1.0.16 - 2026-10-17
+
+- Correct paragraph-composition claims about type size, em metrics, line height, measure, responsive text, paragraph separation, hyphenation and fragmentation while retaining scoped source advice.
+- Add a context-led paragraph review method and illustrative, user-override-aware CSS guidance; no browser or assistive-technology conformance was tested.
+
 ## Version 1.0.15 - 2026-10-17
 
 - Corrected evidence-bounded colour picker, HSL/HSV, gamut, Okhsl/Okhsv, Munsell/NCS and orthogonality teaching across Slice18's eleven-card source set.

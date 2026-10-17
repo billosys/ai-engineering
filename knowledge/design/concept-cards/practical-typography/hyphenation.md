@@ -36,36 +36,36 @@ css_implementation:
 
 # Quick Definition
 
-Hyphenation is the automated breaking of words between lines to create more consistent text blocks — mandatory for justified text, optional for left-aligned, and should be suppressed in headings.
+Hyphenation can break words between lines. Butterick recommends it for justified text, treats it as optional with left alignment and advises suppressing it in headings; actual behavior depends on language resources and the engine.
 
 # Core Definition
 
 Butterick defines: "Hyphenation is the automated process of breaking words between lines to create more consistency across a text block."
 
-The rule is context-dependent: "In justified text, hyphenation is mandatory." Without it, justified text develops "gruesomely large spaces between words." For left-aligned text, "hyphenation evens the irregular right edge of the text, called the rag. Hyphenation is optional for left-aligned text."
+Butterick recommends hyphenation with justified text to reduce large word gaps and treats it as optional with left alignment. This is advice rather than a CSS validity condition; language resources and engines affect the result.
 
-As line length decreases, "hyphenation becomes essential" because shorter lines have fewer possible break points.
+Butterick says hyphenation becomes more useful as lines shorten; this is a recommendation that depends on language, content and engine.
 
 # Prerequisites
 
-- **Justified Text** — Hyphenation is mandatory for justification.
-- **Line Length** — Shorter lines increase the need for hyphenation.
+- **Justified Text** — Butterick recommends hyphenation with justification; language and engine affect results.
+- **Line Length** — Shorter measures may make word breaking useful.
 
 # Key Properties
 
-1. **Mandatory for justified text**: Prevents large word spaces.
-2. **Optional for left-aligned**: Evens the rag but isn't required.
-3. **Essential for short lines**: Fewer break points make hyphenation necessary.
-4. **Suppress in headings**: Hyphenation in short text "often causes more problems than it solves."
-5. **Limited web support**: CSS `hyphens: auto` has spotty browser support.
+1. **Source recommendation**: Butterick recommends hyphenation with justification to reduce large word spaces.
+2. **Optional by source advice**: Butterick says it can even a left-aligned rag; review the actual result.
+3. **May help short measures**: Fewer spaces can make word breaking useful, subject to language, content and engine support.
+4. **Heading advice**: Butterick advises suppressing breaks in short headings because they can disrupt them.
+5. **Conditional behavior**: `hyphens: auto` requires known language and a suitable hyphenation resource; a declaration alone does not prove breaks will occur. No current cross-browser support survey was performed.
 
 # Construction / Recognition
 
 ## To Construct/Create:
 1. In Word: Page Layout > Hyphenation > Automatic.
 2. In Pages: Document > Hyphenation checkbox.
-3. In CSS: `hyphens: auto` (requires `lang` attribute on `html` element).
-4. Suppress in heading styles: use `hyphens: none`.
+3. In CSS, `hyphens: auto` needs the content language to be known (for example, on an ancestor or the element) and an available resource; inspect actual breaks.
+4. Consider `hyphens: none` for headings when it suits the language and layout; review actual wrapping.
 
 ## To Identify/Recognise:
 1. Justified text without hyphenation: visible rivers of white space.
@@ -78,22 +78,22 @@ As line length decreases, "hyphenation becomes essential" because shorter lines 
 # Relationships
 
 ## Builds Upon
-- **Justified Text** — Hyphenation is a requirement for justified alignment.
-- **Line Length** — Line length determines the urgency of hyphenation.
+- **Justified Text** — Butterick recommends it with justified alignment; this is advice rather than a property requirement.
+- **Line Length** — Shorter measures may make word breaking useful; assess content and engine behavior.
 
 ## Related
-- **Hyphens and Dashes** — Automatic hyphens are distinct from editorial hyphens.
+- **Hyphens and Dashes** — Distinguish automatic line-break hyphens, discretionary soft hyphens, editorial hyphens and emergency overflow wrapping.
 - **Headings** — Suppress hyphenation in headings.
 
 # Common Errors
 
 - **Error**: Using justified text without turning on hyphenation.
-  **Correction**: "If you're using justified text, you must also turn on hyphenation to prevent gruesomely large spaces between words."
+  **Correction**: Butterick recommends it; check language, resources and actual output, since a declaration alone does not ensure breaks.
 
 # Common Confusions
 
-- **Confusion**: Hyphenation always improves text.
-  **Clarification**: For left-aligned text, hyphenation is optional. In headings, it should be suppressed. The value depends on the context.
+- **Confusion**: `hyphens:auto` always works when declared.
+  **Clarification**: For left-aligned text, hyphenation is optional. Butterick advises suppressing breaks in headings; evaluate the language and layout context.
 
 # Source Reference
 
@@ -101,9 +101,9 @@ As line length decreases, "hyphenation becomes essential" because shorter lines 
 
 # Verification Notes
 
-- Definition source: Direct quotes from hyphenation.md.
-- Confidence rationale: High — clear conditional rules.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Claim review: source advice is attributed and scoped; the technical corrections in this assigned card are summarized in the changed teaching above.
+- Source basis: the prepared Practical Typography page named in Source Reference was read. Extraction confidence is provenance, not a current technical proof.
+- Technical review: relevant CSS behavior was checked against the cited primary specifications. No browser, assistive-technology, font-failure or readability study was run.
+- Primary definitions: CSS Text [hyphenation §5.3](https://www.w3.org/TR/css-text-3/#hyphenation).
+- Source-fidelity limit: P10-11 original capture and conversion-fidelity evidence remains open.
+- Relationship and competency-question contribution is reconciled in Slice19 batch record; this does not establish whole-card endpoint review or full-corpus closure.
