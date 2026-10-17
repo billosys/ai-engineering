@@ -54,8 +54,8 @@ Ottosson describes even transitions as a design requirement and illustrates sele
 # Prerequisites
 
 - **Oklab** — The interpolation is performed in Oklab coordinates.
-- **Perceptual uniformity** — Only meaningful in a uniform space; in a non-uniform space, linear interpolation produces uneven visual transitions.
-- **Oklab conversion** — Colours must be converted to Oklab before interpolation and back to sRGB for display.
+- **Perceptual uniformity** — An approximate model property can inform a chosen interpolation path, but it is not required for interpolation to be mathematically defined. Compare the actual rendered result.
+- **Oklab conversion** — For the article’s Oklab example, convert endpoints into Oklab and convert to the selected output representation. Other spaces and output targets are also valid.
 
 # Key Properties
 1. Cartesian Oklab and polar OkLCh interpolation are not interchangeable.

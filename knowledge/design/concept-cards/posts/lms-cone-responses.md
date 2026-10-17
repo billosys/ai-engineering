@@ -49,8 +49,8 @@ In the article's XYZ-form expression, M1 multiplies XYZ to produce approximate l
 
 ## To Construct/Create:
 1. Start with normalised XYZ coordinates (D65 whitepoint, white = Y=1).
-2. Apply M1 matrix multiplication: multiply the 3×1 XYZ column vector by the 3×3 matrix M1.
-3. Result is the (l, m, s) approximate cone response tuple.
+2. Apply the published XYZ matrix with the stated order: M1 (3×3) × XYZ column (3×1).
+3. Apply the componentwise signed real cube root before the second transform; the resulting lowercase l/m/s values are fitted intermediate coordinates, not measured cone responses.
 
 ## To Identify/Recognise:
 1. LMS is an intermediate step — l, m, s values are not directly presented as the output colour; they are transformed further.

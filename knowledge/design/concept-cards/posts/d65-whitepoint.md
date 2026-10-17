@@ -47,11 +47,11 @@ Ottosson's Oklab model uses a D65 reference. With the article's normalized D65 X
 # Construction / Recognition
 
 ## To Construct/Create:
-1. When converting to Oklab, use XYZ values normalised so that D65 white = (X=0.950, Y=1.000, Z=1.089).
-2. The conversion matrices M1 and M2 in Oklab are derived with this specific normalisation — using a different whitepoint would require different matrices.
+1. For the article’s XYZ example, use the stated D65 reference and rounded normalized white (X=0.950, Y=1.000, Z=1.089). Those printed values are an example, not an exact universal constant.
+2. Convert differing input reference whites to the coefficient family’s expected D65 conditions with an appropriate chromatic-adaptation step; do not re-derive the Oklab matrices merely because an input uses another white.
 
 ## To Identify/Recognise:
-1. A colour space uses D65 if its white reference corresponds to approximately 6500 K daylight.
+1. Identify D65 by its standard illuminant/reference chromaticity and the model’s stated convention, not by treating any source near 6500 K as D65.
 2. The example table confirms: XYZ (0.950, 1.000, 1.089) → Oklab (1.000, 0.000, 0.000).
 
 # Context & Application

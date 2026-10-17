@@ -47,18 +47,25 @@ For column vectors, a zero-bias matrix operation is linear. Oklab's conversion u
 - **XYZ colour space** — M1 takes XYZ as input.
 
 # Key Properties
-1. A matrix with no added offset is a linear transformation, not a general affine transformation.
+1. A matrix with no added offset is a linear transformation and therefore also an affine transformation with zero translation.
 2. Adjacent linear stages may be composed; a nonlinear pointwise cube root cannot be absorbed into one linear matrix.
 3. Oklab's XYZ and combined linear-sRGB coefficient rows have different inputs.
 4. Rounded coefficients and finite precision produce approximate numerical round trips.
 
+**Published XYZ-form Oklab matrix rows:** The article’s rounded rows use XYZ input for M1 and rooted LMS-like values for M2. A componentwise real cube-root stage lies between them.
+
+| Matrix | Row 1 | Row 2 | Row 3 |
+|---|---|---|---|
+| M1 (XYZ → l,m,s) | 0.8189330101, 0.3618667424, −0.1288597137 | 0.0329845436, 0.9293118715, 0.0361456387 | 0.0482003018, 0.2643662691, 0.6338517070 |
+| M2 (l′,m′,s′ → L,a,b) | 0.2104542553, 0.7936177850, −0.0040720468 | 1.9779984951, −2.4285922050, 0.4505937099 | 0.0259040371, 0.7827717662, −0.8086757660 |
+
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Define the source and target colour space axes.
-2. Find (or optimise) the 3×3 coefficient matrix that maps basis colours correctly.
-3. Apply: output = M × input (standard matrix-vector multiplication).
-4. For the inverse: output = M⁻¹ × input (compute the inverse matrix once, apply as a new matrix).
+1. Define the source and target coordinate domains and vector convention.
+2. Apply M × input in the stated order. For this XYZ route: M1 (3×3) × XYZ column (3×1), componentwise signed real cube root, then M2 × rooted values.
+3. Adjacent compatible linear stages may be composed; do not fold the nonlinear cube-root stage into a linear matrix.
+4. Invertible linear stages can be reversed with their matrix inverses only when nonsingular; reverse the nonlinear stage by cubing its components. Rounded coefficients yield approximate numeric round trips.
 
 ## To Identify/Recognise:
 1. Three dot products of the input vector with three coefficient rows — visible in the C++ code as three weighted sums of r, g, b.
@@ -95,7 +102,7 @@ For column vectors, a zero-bias matrix operation is linear. Oklab's conversion u
 - **Nonlinear colour operations** — A pointwise real cube root cannot be represented by a single fixed linear matrix.
 
 # Common Errors
-- **Error**: Calling every matrix operation affine or claiming every colour conversion uses a single 3×3 matrix.
+- **Error**: Treating a zero-offset linear matrix as non-affine, or claiming every colour conversion uses a single 3×3 matrix.
   **Correction**: Specify the actual linear/nonlinear stages and coordinate domains.
 - **Error**: Demanding exact identity from rounded tables or mixing coefficient families.
   **Correction**: Use internally matched published coefficients and allow finite numeric tolerance.

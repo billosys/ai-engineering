@@ -45,7 +45,7 @@ css_implementation:
 Ottosson compares selected colour models using stated datasets and error measures. The results describe those tests; they are not a universal ranking.
 
 # Core Definition
-The prepared article compares Oklab, CIELAB, CIELUV, OSA-UCS, IPT, JzAzBz, HSV and CAM16-UCS. Its table includes HSV, not HSL. The reference predictions were generated from CAM16 and are not independent human ground truth. Preserve the reported values as attributed results scoped to the source's data and metric. The author's qualitative assessments describe those tested models and tasks, not categorical usability across all work.
+The prepared article compares Oklab, CIELAB, CIELUV, OSA-UCS, IPT, JzAzBz, HSV and CAM16-UCS. Its table includes HSV, not HSL. The lightness and chroma pairs were generated with CAM16 under normal viewing conditions and limited to Pointer’s Gamut; perceived-hue pairs come from a separate uniform-perceived-hue dataset used to derive IPT. The generated L/C data are not experimental human ground truth. Preserve each reported value as an attributed result scoped to its dataset and metric; do not transfer the CAM16 generation claim to the separate hue data. The author’s qualitative assessments describe those tested models and tasks, not categorical usability across all work.
 
 Error table (RMS errors; best non-CAM16 in bold):
 
@@ -83,8 +83,8 @@ Error table (RMS errors; best non-CAM16 in bold):
 
 # Context & Application
 
-- **Typical contexts**: Selecting a colour space for image processing, UI design, gradient generation, or palette construction.
-- **Common applications**: Choosing Oklab over HSL for CSS gradients; preferring Oklab over CIELAB when blue hue accuracy matters.
+- **Typical contexts**: Comparing model predictions for the article’s named datasets and metrics.
+- **Common applications**: Treat the table as one scoped input to a task-specific choice, then assess the intended data, output gamut and rendered use.
 
 # Examples
 

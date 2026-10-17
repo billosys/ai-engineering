@@ -45,7 +45,7 @@ CIE terminology distinguishes chroma from saturation: chroma relates colourfulne
 # Prerequisites
 
 - **Oklab** — Chroma in this source is defined specifically within Oklab (and LCh polar form).
-- **Perceptual uniformity** — Chroma's value as a concept depends on the space being perceptually uniform; otherwise equal C steps do not equal equal perceived colourfulness steps.
+- **Perceptual uniformity** — Helps interpret how coordinate differences may relate to perceived differences; the definition C=hypot(a,b) remains valid even when a model is only approximately uniform.
 
 # Key Properties
 1. C = hypot(a,b); C=0 when a=b=0, where polar hue is undefined.

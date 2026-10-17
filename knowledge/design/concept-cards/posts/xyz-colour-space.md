@@ -48,7 +48,7 @@ XYZ represents tristimulus values under defined observer/reference conventions. 
 - **D65 whitepoint** — The source specifies XYZ with D65 whitepoint; the normalisation matters for the conversion.
 
 # Key Properties
-1. X, Y and Z are tristimulus coordinates under stated observer/reference conditions.
+1. X, Y and Z are tristimulus coordinates under stated observer/reference conditions. In CSS Color 4 §10.9, relative Y is normalized to 1 at diffuse white; XYZ Y has a luminance role under those conventions but is not Oklab L.
 2. They are not independent perceptual channels; X and Z are not standalone chrominance channels.
 3. The representation is linear, but complete conversion routes can include nonlinear stages.
 4. Pure-axis test values are arithmetic fixtures unless a display conversion and gamut check establish otherwise.
@@ -67,7 +67,7 @@ XYZ represents tristimulus values under defined observer/reference conventions. 
 
 # Context & Application
 - **Typical contexts**: Colorimetry and some colour-conversion routes under stated observer/reference conditions.
-- **Common applications**: CSS Color defines XYZ-related syntax; its presence does not make XYZ mandatory for all conversions.
+- **Common applications**: CSS Color defines XYZ-related syntax; under §10.9 relative Y=1 corresponds to diffuse white. XYZ Y and Oklab L are different quantities, and XYZ’s use in some routes does not make it mandatory for all conversions.
 
 ## Cross-Domain Connections
 **Mathematics → RIGOROUS**: XYZ is a linear tristimulus representation under stated conventions. The article's sRGB→XYZ and XYZ→LMS-like stages are linear matrix operations; its complete Oklab route adds a pointwise cube-root stage.

@@ -43,7 +43,7 @@ Oklab L is produced by the model's complete conversion, including its nonlinear 
 # Prerequisites
 
 - **Oklab** — L is the first coordinate of Oklab; the space must be understood.
-- **Perceptual uniformity** — L is only a reliable lightness measure if the space is perceptually uniform.
+- **Perceptual uniformity** — Oklab is fitted to approximate perceptual behaviour; that approximation informs interpretation of L but is not a precondition for calculating or using this model coordinate.
 
 # Key Properties
 1. L is an Oklab model coordinate and depends on its defined conversion/reference.
@@ -63,7 +63,7 @@ Oklab L is produced by the model's complete conversion, including its nonlinear 
 
 # Context & Application
 
-- **Typical contexts**: Greyscale conversion; contrast checking; accessibility (WCAG contrast ratios require lightness comparison); palette construction with predictable lightness steps.
+- **Typical contexts**: Approximate neutral-ramp construction, palette candidates and contrast review. WCAG contrast is calculated from the relative luminance of the actual rendered foreground/background pair, not by comparing Oklab L values.
 - **Common applications**: Turning an image grayscale while preserving perceived lightness (set a=0, b=0 in Oklab); CSS `oklch()` first parameter; generating tonal scales for design systems.
 
 # Examples
@@ -96,8 +96,8 @@ Oklab L is produced by the model's complete conversion, including its nonlinear 
 
 # Common Confusions
 
-- **Confusion**: L in Oklab and L* in CIELAB are the same.
-  **Clarification**: Both represent perceived lightness and both range from 0 to 100 (CIELAB) or 0 to 1 (Oklab), but they are computed differently. Oklab's L achieves substantially lower prediction error against CAM16 than CIELAB's L*.
+- **Confusion**: A lower reported Oklab L error establishes universal superiority to CIELAB.
+  **Clarification**: The article reports generated CAM16 lightness data and a separate perceived-hue dataset used to derive IPT. Its lightness comparison is scoped to that generated dataset and error method; it is not a general ranking or independent human-ground-truth result.
 
 # Source Reference
 

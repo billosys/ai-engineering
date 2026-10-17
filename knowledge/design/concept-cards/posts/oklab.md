@@ -50,13 +50,13 @@ css_implementation:
 Oklab is a D65-referenced colour model designed to approximate lightness, chroma and hue judgements with a simple transform; uniformity is an approximate fit, not a guarantee.
 
 # Core Definition
-Oklab represents a colour with L, a and b coordinates and may be expressed in polar form as L, C and h. Ottosson describes the model as intended to do a good job predicting perceived lightness, chroma and hue. The transform is fitted and approximate; coordinate independence is a modelling goal, not a promise of perceptual independence at every hue, context, display or gamut. Oklab uses D65 reference conditions. CSS Lab/LCH use D50, while CSS Oklab/OkLCh use D65. The article's coefficient family and CSS Color's standardized values should not be silently mixed.
+Oklab represents a colour with L, a and b coordinates: L is fitted lightness, a is the green–red opponent axis, and b is the blue–yellow opponent axis. It may also be expressed in polar form as L, C and h. Ottosson describes the model as intended to do a good job predicting perceived lightness, chroma and hue. The transform is fitted and approximate; coordinate independence is a modelling goal, not a promise of perceptual independence at every hue, context, display or gamut. Oklab uses D65 reference conditions. CSS Lab/LCH use D50, while CSS Oklab/OkLCh use D65. The article's coefficient family and CSS Color's standardized values should not be silently mixed.
 
 # Prerequisites
 
-- **Perceptual uniformity** — Oklab is defined as an attempt to achieve this property; understanding what it means is essential for understanding why Oklab exists.
+- **Perceptual uniformity** — The model is motivated by an approximate fit to perceived differences. That motivation helps interpret its coordinates but is not required to define or calculate them.
 - **Colour space (general concept)** — Oklab is a colour space; the general concept of coordinate-based colour representation is assumed.
-- **XYZ colour space** — The conversion pipeline from sRGB to Oklab goes through XYZ; the intermediate representation is XYZ.
+- **XYZ colour space** — The article gives an XYZ route and separately a combined linear-sRGB route. XYZ is useful for the former, not mandatory for every conversion.
 
 # Key Properties
 1. Oklab uses a D65 reference; diffuse reference white does not set a display maximum.
@@ -111,8 +111,8 @@ Oklab represents a colour with L, a and b coordinates and may be expressed in po
 
 # Common Confusions
 
-- **Confusion**: "OK" in Oklab is an informal quality rating — it's just acceptable.
-  **Clarification**: Per the source, "it is called the Oklab color space, because it is an OK Lab color space" — the "OK" is a deliberate understatement, since the space performs substantially better than CIELAB on lightness and chroma metrics.
+- **Confusion**: The name “Oklab” implies an evaluative claim about overall quality.
+  **Clarification**: The author says it is called Oklab “because it is an OK Lab color space.” The source does not state a further motive for that wording; its comparison data are limited to the named datasets and metrics.
 
 - **Confusion**: Oklab and OKLch are different colour spaces.
   **Clarification**: OKLch (or Oklch) is merely Oklab expressed in polar form — same space, cylindrical coordinates.
