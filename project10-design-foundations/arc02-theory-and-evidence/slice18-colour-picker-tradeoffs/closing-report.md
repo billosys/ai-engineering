@@ -1,57 +1,74 @@
-# Slice18 CC return — proposed evidence, not CDC acceptance
+# Slice18 CC return — Iteration01 proposal, not CDC acceptance
 
-This is the bounded CC return for the assignment issued by planning commit
-`fe91602e2b732da71f29d2e790d25c7f85477da6`, against SOURCE pin
-`4e635bb39b2c6151014b316f45f279d3682416d4` and planning predecessor
-`a888e85710b18f031186b2bafde97d57bd8d0c02`. The source delivery is commit
-`7b20ccc3a7019cfad6f238522314ce8ab70e0a35`. The sole durable artifact,
-including card outcomes and occurrence-level evidence, is the
-[batch record](artifacts/batch-record.md). Ledger statuses remain open for
-independent CDC review.
+This is the bounded CC return for `cc-prompt-iteration01.md`, issued by
+planning commit `c5670897d904c4d5dcb44902dd4928d6882cfe23` from predecessor
+`5d8f3a9ffed74dbf69255956e450b855a10a3ed6`. The assignment pinned SOURCE at
+`c9d98a3ec3d0a24c30a18431d7aeaa13f6451872`; the checkout contained a later,
+unrelated README deletion at `c5e743abb40db2f14b9332cea635a30f8b8a8d5b`, which
+was preserved. The exact source delivery is commit `7068045aacd6cb75b856786a1de070791f21c2a8`,
+parented on that checkout state and limited to the five authorized card bodies.
+The sole durable evidence artifact is the
+[Iteration01 batch record](artifacts/batch-record.md). CDC review is pending;
+this report proposes two rows open and carries the two already accepted rows.
 
-## Criterion readback
+## Criterion dispositions
 
-| Criterion | CC proposal | Evidence and limit |
+| Criterion | Iteration01 CC disposition | Evidence and limit |
 |---|---|---|
-| S18-01 | **Open** | All eleven complete card reviews, five-dimension available-evidence outcomes, teaching corrections and focused witnesses are recorded in the batch. HSL/HSV, Okhsl and Okhsv claims stay tied to their stated coordinate models and sRGB scope. Subjective criteria do not establish user preference or accessible output. |
-| S18-02 | **Open** | The batch reconciles 66 header edges, 65 predecessor body-relationship statements, six new final statements and 15 header CQ occurrences across three questions. Endpoint premises and body dispositions are recorded; bounded CQ answers distinguish adequate model definitions from partial picker-selection questions. These counts do not themselves prove semantic support. |
-| S18-03 | **Open** | Exact 13-path source delta. All 233 card paths/identities remain; 222 non-target cards and all 161 prepared sources are byte-identical. Only the six named rosetta scalars and the one colour-picker CSS association were changed in metadata. Literal citations, heading sequences and all other projected metadata remain frozen. Untracked LFE and Fennel work is preserved. |
-| S18-04 | **Open** | Exact source commit carries required trailers. `make help`, `make check-skills`, recovered `make check-skill-versions`, `make check-package-paths`, and fresh `make design` passed; the independent archive replay found 8/8 Markdown members byte-identical. Full outputs and warnings are in the batch record. CDC should independently review scope and retained evidence. |
+| S18-01 | **Proposed open** | The five-body F01/F02 teaching corrections and current fixtures are recorded. All eleven cards remain within the original five-dimension available-evidence review; this iteration corrects the five CDC-identified bodies. Source examples, model profiles and CIE definitions are carefully scoped. No accessibility, rendered-perception or original capture-fidelity result is claimed. |
+| S18-02 | **Proposed open** | All 66 edge identities/directions now point to exact grouped warrants with enumerated membership; the 65 predecessor joins and 15 CQ occurrences/three texts remain preserved. The changed HSV body join and chroma/saturation CQ now include actual formula and CIE-reference content. CDC must judge the support, not counts alone. |
+| S18-03 | **CDC done; renewed preservation replay** | Against assigned c9, all 233 identities and raw metadata headers survive; only five assigned bodies differ. Their headings and literal Source Reference sections are unchanged; the other 228 cards, all 161 prepared source files, guides, helpers, skill/history, schema and package inputs remain unchanged. No metadata exception was added. |
+| S18-04 | **CDC done; retained gate applicability checked** | CDC’s fresh native and package results at c9 remain applicable: this correction changes unbundled card bodies only; SKILL/history, Make/package dependencies and all eight packaged Markdown inputs are unchanged from c9. These are retained CDC results, not fresh CC gate runs. Both commits have exact path scopes and required trailers. |
 
-## Source delivery and checks
+## F01–F03 delivery
 
-The source commit contains exactly the eleven authorized card bodies plus
-`knowledge/design/SKILL.md` and `knowledge/design/version-history.md`. The
-cards clarify classic HSL/HSV formulas and neutral behavior, the distinction
-between colour coordinates and picker UI, the source's eight subjective design
-goals and comparison profiles, and the scoped HVC/NCS contexts. Okhsl and
-Okhsv teaching now identifies their separate coordinate recipes, tradeoffs,
-neutral handling, gamut assumptions and limitations; the arithmetic witnesses
-validate equations, not perceptual outcomes. One unsupported native CSS input
-association was removed while its illustrative HTML remains in the prose. The
-skill moved from 1.0.14 to 1.0.15 with an appended history entry.
+F01 removes the false neutral-hue inference, keeps Ottosson’s attributed
+blue-shift example, replaces the neutral HSL/HSV contrast with encoded-sRGB
+RGB(.8,.2,.2), and reconciles HSV/Okhsv application and confusion text with
+their model limits. The gray cases RGB(.2,.2,.2) and RGB(.5,.5,.5) both give
+S=0 and V=L=g; hue is powerless. The chromatic case gives HSV
+S=.75,V=.8 and HSL S=.6,L=.5.
 
-The first `make check-skill-versions` attempt was blocked during package
-staging by sandbox write restrictions. Its approved rerun passed with 24 source
-skills, 24 packages and zero errors. `make check-package-paths` passed with
-zero hard failures; it reported 596 repository-wide warnings and three
-explicit exceptions, itemized by category in the artifact. Fresh `make design`
-passed, and a separate byte comparison against the committed source confirmed
-all eight Markdown ZIP members. `git diff --check` passed. These checks do not
-establish browser or assistive-technology behavior, hosted rendering,
-historical source fidelity, full-corpus conformance, or project/release gates.
+F02 records Okhsv’s Lr and C·Lr/L axes, triangular approximation, curved-top
+compensation and v adjustment as prepared-text descriptions; the figures remain
+uninspected. The CSS note identifies the 2026-10-09 Candidate Recommendation
+Draft. The principles card distinguishes the first table’s HSV/HSL/HSLuv/
+Lab-like/NCS profiles from the later Okhsv/Okhsl table; Munsell is historical
+context. Chroma/saturation restores the CIE distinction: saturation relates
+colourfulness to an area’s own brightness; chroma relates it to a similarly
+illuminated achromatic reference. The CIE viewing/reference notes, Oklab
+C=hypot(a,b), HSL/HSV formulas and limits are captured in the card and CQ
+answer without a universal C/L equation.
 
-## Scope and Bubble-up to the arc
+F03 replaces generic edge assertions with exact W-group row membership and
+endpoint-specific reasons in the batch record. The HSL/CSS syntax relationship
+is grounded in the accepted endpoint’s notation and normalization rules; the
+model-family edges distinguish source statements from editorial inference.
+The batch records the corrected #11 body join, unchanged remaining joins and CQ
+memberships, and the refreshed bounded answer for the chroma/saturation CQ.
 
-The planning write set is exactly this report, `ledger.md` Evidence/Notes
-cells, and the sole batch artifact. Source and planning commits are separate,
-exact-path commits with both required co-author trailers. No push or
-publication was performed; no successor slice is opened by this CC return.
+## Source, planning and verification scope
 
-All four S18 criteria remain open pending CDC. Arc02 should use this evidence
-when composing Slice18 against its ledger and should retain the distinction
-between source-specific perceptual goals and independently verified
-interaction/accessibility outcomes. Any effect on Arc02's plan or parent gates
-is for CDC to assess. Project10 still requires its own ledger composition and
-release gates. This return does not close Slice18 or Arc02, accept Project10,
-or claim full-corpus fidelity or hosted rendering.
+Source changes are exactly `hsv.md`, `okhsv.md`, `colour-gamut.md`,
+`colour-picker-design-principles.md` and `chroma-vs-saturation.md` under
+`knowledge/design/concept-cards/posts/`. No metadata, heading, citation, skill,
+history, helper, guide, schema, source, package-list or other card was changed.
+The unrelated source README deletion and untracked LFE work remain outside the
+source commit.
+
+Planning changes are exactly this report, the batch record, and Evidence/Notes
+cells in `ledger.md`. The initial prompt, Iteration01 prompt, slice plan, row
+criteria/statuses and CDC review are preserved. Source and planning commits are
+separate and path-limited. Current worktree check results, exact identities and
+limits are in the batch record. CDC’s toe/inverse, rational-map and Okhwb
+arithmetic are retained with the initial independent-review pointer because
+this iteration changes none of those inputs or constructions; they were not
+rerun or relabeled as current observations.
+
+The prior CDC-accepted S18-03/04 rows remain done. S18-01/02 return to CDC as
+proposals and remain open. This is not Slice18 closure, Arc02 composition,
+Project10 acceptance, source-fidelity/full-corpus review, live picker or
+accessibility verification, hosted rendering, release approval, push or
+publication. No successor slice is opened. The arc may use these findings in
+its normal composition review; any plan or parent-gate change remains for CDC
+to assess.
