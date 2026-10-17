@@ -1,0 +1,2582 @@
+{
+  "examples": 112,
+  "pass": 112,
+  "fail": 0,
+  "records": [
+    {
+      "id": "ID-01-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b12906684f004b2b0cd8ea525a3fb33812b90d9b84a67b8921d72a817b6fb9b2"
+    },
+    {
+      "id": "ID-01-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 25,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "551370aa0565f5d596244cb2290227cfd998cde116da9ced169184e71aa95891"
+    },
+    {
+      "id": "ID-02-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 44,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d7539180b92f33003bcd3b478855b5ea3637a7489c9f93839cee321284cd90c5"
+    },
+    {
+      "id": "ID-02-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 52,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "628c2799ae76153f1309255bed05624297b5afe1babf9aee69c2de4b34e5b3ca"
+    },
+    {
+      "id": "ID-03-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 72,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "40ee1255edc6e2f70831752ddc0fe52d63ddfa54cbe97807f6b875d4bf46498a"
+    },
+    {
+      "id": "ID-03-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 79,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "1ab0613d173c9001871b2f0fc0cfca1172e614345b9d8dc3a8169f2bbb5ed69c"
+    },
+    {
+      "id": "ID-04-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 98,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d2818bcf0893dc178f60c0782298851b317379938c93ca352e1e454256a94d71"
+    },
+    {
+      "id": "ID-04-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 105,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "0e4a1bf7b448d8c7d588d7ea0b97607062ea220fb14e0ea8590afd894412b7af"
+    },
+    {
+      "id": "ID-05-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 122,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-2c9yzjv0/ID-05-bad.fnl:2:11: Compile error: tried to reference a special form without calling it\n\n(local add +)\n* Try making sure to use prefix operators, not infix.\n* Try wrapping the special in a function if you need it to be first class.\n",
+      "sha256": "dd61067fe2c9fb92c6982006ad2192c9528b38fd3110eda9a14af1c2785285e6"
+    },
+    {
+      "id": "ID-05-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 128,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "128359ed18b3b6fee2a7dca0145b95f4be73a331ff1aad3312ce1d0966abab20"
+    },
+    {
+      "id": "ST-01-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "sha256": "3a373885d4bc48d0fbaaba8c6cda91b82090459fbda1ba3014eb95c0a9981688"
+    },
+    {
+      "id": "ST-01-good",
+      "guide": "02-style-and-naming.md",
+      "line": 26,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "e4607b4e200cfe694e06c7affd2f3ece298a08bccfc946cc73a206e6e0482037"
+    },
+    {
+      "id": "ST-02-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 47,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "15068ebd12c897b7aec58cfe30b1be1ecec867cf0525068ffbf7c058826ca437"
+    },
+    {
+      "id": "ST-02-good",
+      "guide": "02-style-and-naming.md",
+      "line": 54,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "c25db7453b4bc815d766420a436d26419494af9f7fe0ff86790742abb216e75b"
+    },
+    {
+      "id": "ST-03-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 74,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "f5bcb3baf8ab2df940db089bc6f27ff258ee2ce431baab50f69d2406ab92a142"
+    },
+    {
+      "id": "ST-03-good",
+      "guide": "02-style-and-naming.md",
+      "line": 80,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "3ea67fc24a1ac58709e3bbb940816632f38ad3c247319aab780c016ba2df83af"
+    },
+    {
+      "id": "ST-04-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 101,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "32c32f56fdc0baae95b5335f361f2c7c983280d2967071dfb53d7a620d6e9504"
+    },
+    {
+      "id": "ST-04-good",
+      "guide": "02-style-and-naming.md",
+      "line": 106,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "7f6a02a6eeb19bcc364079b9ac889b31da79c0f61dd4b75c5b40e803ac55ae30"
+    },
+    {
+      "id": "ST-05-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 126,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b5a7835a7460c2a30ab5f77be922cccbe1c7e24fd662562cff4334fe57b712a1"
+    },
+    {
+      "id": "ST-05-good",
+      "guide": "02-style-and-naming.md",
+      "line": 135,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "a2396ac42ca7a309ae27bca7b79ec58c0e6f52463876f59fb9017eebceef9f63"
+    },
+    {
+      "id": "DT-01-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "8a9494544c7af062eb045abffc9726f012727f492c6a985527b53472b2a40485"
+    },
+    {
+      "id": "DT-01-good",
+      "guide": "03-tables-and-data.md",
+      "line": 24,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "0e1370027c3bfc0487fcbd76a5e611c133c4694e1d9ebeaf32438056ea367d27"
+    },
+    {
+      "id": "DT-02-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 45,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "7c20e21f85befa259170cbea749076acc5c96319f0d04661e6558425da2a5b43"
+    },
+    {
+      "id": "DT-02-good",
+      "guide": "03-tables-and-data.md",
+      "line": 51,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "4f0eacb5ce3f78ef8e551ee90ca8c08f2e83516d1e418d579505c87d666753d0"
+    },
+    {
+      "id": "DT-03-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 70,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ae5a515c5a78622dc1150a1e61413e0017d56e1c91b175f86b72c722405ada25"
+    },
+    {
+      "id": "DT-03-good",
+      "guide": "03-tables-and-data.md",
+      "line": 78,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ab56c991c503fea68c5b81e7f2fc8a5cc2a1fa5f1c88266189635ad049f36dc9"
+    },
+    {
+      "id": "DT-04-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 98,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "11b85e52a42d40dc92d13cdbb1335fe70c912d0811081fde5a7c22747c5c8e3f"
+    },
+    {
+      "id": "DT-04-good",
+      "guide": "03-tables-and-data.md",
+      "line": 104,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "980bbdbf04dcd3d7d56f240bcb2ff71d9a0bc2d193c753666542b7090e5ef51a"
+    },
+    {
+      "id": "DT-05-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 122,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "9b36f3567266717a613f824c4cd656bd8b2d8519478b0b28992590cf1c73d765"
+    },
+    {
+      "id": "DT-05-good",
+      "guide": "03-tables-and-data.md",
+      "line": 130,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "06a2bec8e3888a34080ddb935cabef4647234964f4a81de2c04fc2f2f8f07f5e"
+    },
+    {
+      "id": "DT-06-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 151,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "5aaf871a09a2469bc571c7b66a790a30626db8f549dc1da59c5ecec97a45e6b7"
+    },
+    {
+      "id": "DT-06-good",
+      "guide": "03-tables-and-data.md",
+      "line": 157,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "1b1503fed330b7500f711f700d0047a9c2d045b37f4cd3c96a2cb042b9ad0cb4"
+    },
+    {
+      "id": "FN-01-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 16,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "dab374da1c24c193cdac4181a5bc900b58a0ae78d04af14b4bcdffc645733d44"
+    },
+    {
+      "id": "FN-01-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 23,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "dc57a70ea15140982db28985dba929004a9d067b09cdfef7f060d1b5466c9d60"
+    },
+    {
+      "id": "FN-02-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 46,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "623b39f941d2e0af29b60c61a4bc317235fc24648d48107771d081453da96eb1"
+    },
+    {
+      "id": "FN-02-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 52,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d665117c66598c97364825892792c7eeb7735b644ec9185eea597aad403a566b"
+    },
+    {
+      "id": "FN-03-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 75,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "8120313d5b1d627777982363378e583834401babb1c282ff2d3a9aabc70f393c"
+    },
+    {
+      "id": "FN-03-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 81,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "522e7ec1b8fda6c6b280d48da821008e8bb7afdc229607259618c7a10c27c7d0"
+    },
+    {
+      "id": "FN-04-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 107,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b6d77d989339bd6fcbb2cf0fbdb06a0d7015c5bca5805b30b6428b8967bec6c1"
+    },
+    {
+      "id": "FN-04-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 114,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b7d59bf862d2ed00a5630dfed89480f579834953a96c60b7e82b958dd40329ed"
+    },
+    {
+      "id": "FN-05-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 136,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-2c9yzjv0/FN-05-bad.fnl:4:4: Compile error: Must be in tail position\n\n    (tail! (walk (- n 1)))\n",
+      "sha256": "24b01523d50dcb0064316de19d47ca08f37c303dca0a85f41df748ced9a6f089"
+    },
+    {
+      "id": "FN-05-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 144,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "76bd8413f9237b0cb974c18f4f2ec17bd2daab8f655341c6dff09839b122d8c3"
+    },
+    {
+      "id": "PM-01-bad",
+      "guide": "05-pattern-matching.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "0ea57f952c06374b19bd190502d571be0da9f554f37a8f29552d2f4c2b39fa65"
+    },
+    {
+      "id": "PM-01-good",
+      "guide": "05-pattern-matching.md",
+      "line": 23,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "736514ae660e9b1332f00554bc83c4bd32998e6c960bcfdc37613c98ec69c0a7"
+    },
+    {
+      "id": "PM-02-bad",
+      "guide": "05-pattern-matching.md",
+      "line": 41,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "9f43fc01d38582a6b386f1114c0ab4f9ef26a8b4d444c9212d86f309f8269c17"
+    },
+    {
+      "id": "PM-02-good",
+      "guide": "05-pattern-matching.md",
+      "line": 46,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "2e7eb3e9b5a95068f1bd2f7a033c68cb73ae50510ff40d1d18ea6fb9fdc124a7"
+    },
+    {
+      "id": "PM-03-bad",
+      "guide": "05-pattern-matching.md",
+      "line": 70,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "bbb06cc749f816238a36fcf59960519ff4239167b6a987506ab49b2177410b05"
+    },
+    {
+      "id": "PM-03-good",
+      "guide": "05-pattern-matching.md",
+      "line": 75,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b658ecb7fa04fe15549f9a5fbc4c422926267fa18cc269b5c867d559211fa5a0"
+    },
+    {
+      "id": "PM-04-bad",
+      "guide": "05-pattern-matching.md",
+      "line": 99,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-2c9yzjv0/PM-04-bad.fnl:3:33: Compile error: unknown identifier: b\n\n  (where (or [a 1 2] [a b 3]) (< b 4)) a)\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.b if you really want a global.\n* Try moving this code to somewhere that b is in scope.\n* Try binding b as a local in the scope of this code.\n",
+      "sha256": "5904cc42a53cecc1498f638b747d66118b6e9911bfb0ea4cabd372f546d494f3"
+    },
+    {
+      "id": "PM-04-good",
+      "guide": "05-pattern-matching.md",
+      "line": 105,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d100e61157e533c53082bf709057be95e89fe5e43bbc635770aa8c1a31529dae"
+    },
+    {
+      "id": "MD-01-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 16,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "09f515d0e4b63c4728508d55ab69e030e0c727ec8d6f99c60e86348b1401d6b8"
+    },
+    {
+      "id": "MD-01-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 22,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "549c63617d64d85ba74366b76dbf2ac067bf4695bf96bd458ebd2003c17d3183"
+    },
+    {
+      "id": "MD-02-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 46,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d555df537f620d66d95aa923abc1d87f9f57ac22420f8fa064fb9243398d8ad4"
+    },
+    {
+      "id": "MD-02-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 57,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "c46e5312905d76a6b977f8f1452ac88e573b96913a152d6d74d1fc0d06979d79"
+    },
+    {
+      "id": "MD-03-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 83,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "a9f4db86dd6985d31c8b4a99192a28d8e0686314217d5de2e62e2daa60485e0b"
+    },
+    {
+      "id": "MD-03-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 90,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "98064d866c163663d16ca40758a6fe2c8a5d9f63aadb65f814e96a72c7ec636f"
+    },
+    {
+      "id": "MD-04-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 110,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "dcf27d38eef14aa9083c89768235debc0b54a7f06027e9d601249d9de5471a79"
+    },
+    {
+      "id": "MD-04-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 118,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "91a2917eff885bf83e13615df660345faae0d86f8eca83727410f131f115c4cf"
+    },
+    {
+      "id": "MD-05-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 138,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "34c4add986e9607fa35ecfe1b657e2e466fa2e49819cdc7925a7605f7a8f6cd2"
+    },
+    {
+      "id": "MD-05-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 148,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "2038686f40715f66d993423315a48f9f86909aa7f16bbfe27aef64f1cf4123e3"
+    },
+    {
+      "id": "ER-01-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 16,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "3cc85de7e7b96a8e342542cdf044add9508d56383435ad85e3e5e39b1e9519e7"
+    },
+    {
+      "id": "ER-01-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 22,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "15cd39a2c40744385f9c88784f9073517de64c920cc2e68667f0a0bdfbe79cb2"
+    },
+    {
+      "id": "ER-02-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 43,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "127fb741d9eb958ffdfc993b2dfd7599152dbf574228b2d32bdec57189914a6d"
+    },
+    {
+      "id": "ER-02-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 52,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "5b3221a20dce20103651f46d80134316cd2d53c141c48419d28a662ea4d19161"
+    },
+    {
+      "id": "ER-03-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 73,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "f4a05d2bdd4fa181df199fc8df63be9c922181781ecf458804c1bcf7bff7c380"
+    },
+    {
+      "id": "ER-03-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 80,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "0c9496e6fcc867ccd5bd62c45aac3c21491f747a92c0b50cabe183842ffd5e03"
+    },
+    {
+      "id": "ER-04-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 105,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "c2af28582f706bcf688f12c4b223e014c15ba310c998a877a27e88b2a5859e8b"
+    },
+    {
+      "id": "ER-04-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 112,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "8978856cd2be191692932b906c2c79e89b6b361fabb8b184a01fef5c79d21082"
+    },
+    {
+      "id": "ER-05-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 140,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "8141d3727f1fbb6ab291ccb7a5f52e01bb3dee0dcc193b8563f361abea592c08"
+    },
+    {
+      "id": "ER-05-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 146,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "686e1ccbb2d865ca28974a23ec40ff08918660c633d84f1bfc98b83fc92101ad"
+    },
+    {
+      "id": "MC-01-bad",
+      "guide": "08-macros.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "e24e8adbe8a25bc8e3e4431047bab7e6bfb6621cbef288a2daa214b6f0756490"
+    },
+    {
+      "id": "MC-01-good",
+      "guide": "08-macros.md",
+      "line": 24,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "6ebe620853737456a6c97674db5664fb136f5dbe5e5593bf42ffba3f131bdc5c"
+    },
+    {
+      "id": "MC-02-bad",
+      "guide": "08-macros.md",
+      "line": 43,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "f44ce08f62feabc86dd50ef4e9212741731678ba212052e175c6e9008767a5ea"
+    },
+    {
+      "id": "MC-02-good",
+      "guide": "08-macros.md",
+      "line": 53,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "a6db3a8cc9453c84f93575f14028ead4643ca11ad055a93f5959105ab809092e"
+    },
+    {
+      "id": "MC-03-bad",
+      "guide": "08-macros.md",
+      "line": 78,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-2c9yzjv0/MC-03-bad.fnl:2:?: Compile error: macro tried to bind value without gensym\n\n(macro twice [x] `(let [value ,x] (+ value value)))\n* Try changing to value# when introducing identifiers inside macros.\nstack traceback:\n\t[C]: in function 'error'\n\t/opt/homebrew/bin/fennel:4499: in function 'assert-compile'\n\t/opt/homebrew/bin/fennel:2899: in function ?\n\t/opt/homebrew/bin/fennel:3079: in function ?\n\t/opt/homebrew/bin/fennel:3799: in function 'destructure_sym'\n\t/opt/homebrew/bin/fennel:3976: in function 'destructure1'\n\t/opt/homebrew/bin/fennel:3989: in function 'destructure'\n\t/opt/homebrew/bin/fennel:1562: in function 'special'\n\t/opt/homebrew/bin/fennel:3520: in function ?\n\t/opt/homebrew/bin/fennel:4046: in function ?\n\t[C]: in function 'xpcall'\n\t/opt/homebrew/bin/fennel:7526: in function ?\n\t[C]: in ?\n",
+      "sha256": "7efb327a1fc5e1bbe1e8453dc6e10ed34af036eb17231fa8ea1ab296aa93b693"
+    },
+    {
+      "id": "MC-03-good",
+      "guide": "08-macros.md",
+      "line": 84,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "88f51061aa938e6a8641cf981b2715f092a02a6ccc1247b005f8a625df6c2d6a"
+    },
+    {
+      "id": "MC-04-bad",
+      "guide": "08-macros.md",
+      "line": 106,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-2c9yzjv0/MC-04-bad.fnl:3:26: Compile error: unknown identifier: helper\n\n(macro identity-form [x] (helper x))\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.helper if you really want a global.\n* Try moving this code to somewhere that helper is in scope.\n* Try binding helper as a local in the scope of this code.\n",
+      "sha256": "5f1f900989a738fdded022debc27526b6e20214974782213b499205d3653ca68"
+    },
+    {
+      "id": "MC-04-good",
+      "guide": "08-macros.md",
+      "line": 113,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "226dc8735d602f5a884e0b5a6accb33b1bac7ae8fe58b3437e499cb1d264bbeb"
+    },
+    {
+      "id": "MC-05-bad",
+      "guide": "08-macros.md",
+      "line": 135,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-2c9yzjv0/MC-05-bad.fnl:2:?: Compile error: unknown identifier: numeric\n\n(macro absolute [x] `(numeric.abs ,x))\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.numeric if you really want a global.\n* Try moving this code to somewhere that numeric is in scope.\n* Try binding numeric as a local in the scope of this code.\nstack traceback:\n\t[C]: in function 'error'\n\t/opt/homebrew/bin/fennel:4499: in function 'assert-compile'\n\t/opt/homebrew/bin/fennel:2899: in function 'assert_compile'\n\t/opt/homebrew/bin/fennel:3128: in function 'symbol_to_expression'\n\t/opt/homebrew/bin/fennel:3618: in function ?\n\t/opt/homebrew/bin/fennel:3551: in function ?\n\t/opt/homebrew/bin/fennel:4046: in function ?\n\t[C]: in function 'xpcall'\n\t/opt/homebrew/bin/fennel:7526: in function ?\n\t[C]: in ?\n",
+      "sha256": "ba901c95b18e7770f04dd71b1f6c855c7b7ba9f89c7318c139220912f29133cd"
+    },
+    {
+      "id": "MC-05-good",
+      "guide": "08-macros.md",
+      "line": 141,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "61e22c2d3608e08336cc79e4cca7a3de76c44dccace837a85482efb861c2c3fc"
+    },
+    {
+      "id": "MC-06-bad",
+      "guide": "08-macros.md",
+      "line": 162,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-2c9yzjv0/MC-06-bad.fnl:3:0: Compile error: [string \"local function _1_(forms)...\"]:2: attempt to index a number value (local 'forms')\nstack traceback:\n\t[string \"local function _1_(forms)...\"]:2: in function <[string \"local function _1_(forms)...\"]:1>\n\t(...tail calls...)\n\t[C]: in global 'xpcall'\n\t/opt/homebrew/bin/fennel:3501: in upvalue 'macroexpand_2a'\n\t/opt/homebrew/bin/fennel:3705: in upvalue 'compile1'\n\t/opt/homebrew/bin/fennel:4046: in function </opt/homebrew/bin/fennel:4015>\n\t(...tail calls...)\n\t[C]: in global 'xpcall'\n\t/opt/homebrew/bin/fennel:7526: in function </opt/homebrew/bin/fennel:7512>\n\t(...tail calls...)\n\n(first-form 42)\n",
+      "sha256": "c3062ab24b81b1a1637b26562ce894b0d78aac18fbfc9580ebecc4a3ed417036"
+    },
+    {
+      "id": "MC-06-good",
+      "guide": "08-macros.md",
+      "line": 168,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "5b8f57bc884026863a7efc088c3ef8e4cd6562a55dc8de1128c6bad3df747c78"
+    },
+    {
+      "id": "TL-01-bad",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "04122950be948836a2277a7e5ca24682879f66fd7580a5ea637b4ae19a1bd6d1"
+    },
+    {
+      "id": "TL-01-good",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 22,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b36d4744e2827e71a8197dc3d25286524d944643ee9983e24eea5ef87a97314f"
+    },
+    {
+      "id": "TL-02-bad",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 42,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-2c9yzjv0/TL-02-bad.fnl:2:1: Compile error: unknown identifier: misspelled-processor\n\n(misspelled-processor 1)\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.misspelled-processor if you really want a global.\n* Try moving this code to somewhere that misspelled-processor is in scope.\n* Try binding misspelled-processor as a local in the scope of this code.\n",
+      "sha256": "2c8ffbe8fed8fa7e3c99d50b0ee73e04d8e0e80da868e615f64b4b0c4ae3b33f"
+    },
+    {
+      "id": "TL-02-good",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 47,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "a85edee4fa3655b49a2f3a51f6e449a629832127ad49fcdcfae2e6032f000b24"
+    },
+    {
+      "id": "TL-03-bad",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 67,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "6de1fdd1ff413666e008c8ac6b72e0ca9010f903071e356154b12c95ca6c39d3"
+    },
+    {
+      "id": "TL-03-good",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 74,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "46193842d5a8d80129ede0b7609898b5f2cdf6dcd9aa70c9d08eacd1380eaaf1"
+    },
+    {
+      "id": "TL-04-bad",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 97,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "7e4ba42c2ed5b7272ea6b51ea258a617ccaced67f830564c7866c0867519f372"
+    },
+    {
+      "id": "TL-04-good",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 103,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "8f11c034fdf4b0b11ed91a8c71016f3c887e7c7fa2f36560df2157ffc9a526f3"
+    },
+    {
+      "id": "LI-01-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 16,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "453b334924e4c099a4a928d8a4cf77c88bce49169477ff551e582f24ce4a644e"
+    },
+    {
+      "id": "LI-01-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 22,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "e6b8c82504af456ae9b964e12ec2e46f2fec5a6a7c8d720866c41708f64b7a59"
+    },
+    {
+      "id": "LI-02-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 42,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "1331d085cf89a157605fc385dc04b592dbad21ead9ad2f2d9ce384db3864ff40"
+    },
+    {
+      "id": "LI-02-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 47,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "68b7c580c91d37feb0bbc29cc9a60f17c29c900383b1600bfd11a31d389cc5be"
+    },
+    {
+      "id": "LI-03-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 66,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "824c2563c5cf150ddbcccbedab7439f4d93e76669674e112f70d0a87a2a99db3"
+    },
+    {
+      "id": "LI-03-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 71,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "96d780e5451dd34dc636ad8449386c5da2fdec1dfcc3c07277091b3e35a845a7"
+    },
+    {
+      "id": "LI-04-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 91,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "7c75ef04bc049f9e801f922ed27548d0a1896089598cb7d28e9335616a407698"
+    },
+    {
+      "id": "LI-04-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 97,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "7abee399f9f2ace5416e6908e1db6b9011b379d004c8927b31e41ad02d2caa78"
+    },
+    {
+      "id": "LI-05-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 117,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "03c3e98304269d46242f8ce3cb6fbc41c25502e1fba02f0ecd403b407931c967"
+    },
+    {
+      "id": "LI-05-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 123,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "c7be2884aa41ce75e0bf31526c345c3c8f5f9cc67748b7858e4c16f5f5f5ee0f"
+    },
+    {
+      "id": "AP-01-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "bf30636ddb266612d76e44928ab4b142ed15d4d98ba461227b27b30da7f920ad"
+    },
+    {
+      "id": "AP-01-good",
+      "guide": "11-anti-patterns.md",
+      "line": 25,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ff7e72e00866da9db792d023b21de0f0a8a33f2b4bbdc8e8f834891c91839520"
+    },
+    {
+      "id": "AP-02-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 44,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "34faabad19263522b772b105652da8c269e8189c3fc035c6f9657016b842bf0f"
+    },
+    {
+      "id": "AP-02-good",
+      "guide": "11-anti-patterns.md",
+      "line": 50,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "dd750e08e435af56e123fbf3969eaf57cb9082f3d7873686e331c91b7aa95476"
+    },
+    {
+      "id": "AP-03-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 67,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "32f9f402b7b85640ed7575b22981f949bbfc48286162f8d0158e99bfedb08dab"
+    },
+    {
+      "id": "AP-03-good",
+      "guide": "11-anti-patterns.md",
+      "line": 73,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "5146a7ca1929f41575ac3347ebb867c3ff7a6666c0717cfef43de50da466a969"
+    },
+    {
+      "id": "AP-04-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 91,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "85b43f03f0d672239dad36533938ca04d70d6ef5908bb954c2dba984d1de9446"
+    },
+    {
+      "id": "AP-04-good",
+      "guide": "11-anti-patterns.md",
+      "line": 96,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "068222b827391ab61a50f0a5e0a236248b1945f601558d69b3eac20b0ba079ae"
+    },
+    {
+      "id": "AP-05-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 116,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "7846f1e9ae4162953e54f92faf7f30e80e3603f02ceb1b92835d853326f52245"
+    },
+    {
+      "id": "AP-05-good",
+      "guide": "11-anti-patterns.md",
+      "line": 123,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "999ec9d8e9de14c6c6c511954a013451de4353dbdd04bf51b3665e0e8ae78ffa"
+    },
+    {
+      "id": "AP-06-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 146,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b3e3ca8904ecb8173604da7144741e9f5f3cfaf661c2d4f9038fac17c49c008c"
+    },
+    {
+      "id": "AP-06-good",
+      "guide": "11-anti-patterns.md",
+      "line": 151,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "e3cb473f762e9f8b7e15bc6ded7cef0a193fd6cdf4d141ce3ab8e67a3b930329"
+    }
+  ]
+}

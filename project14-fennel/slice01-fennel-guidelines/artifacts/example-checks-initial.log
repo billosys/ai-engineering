@@ -1,0 +1,259 @@
+69/112 passed; 43 failed
+DT-05-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/DT-05-bad.fnl:5:32: Parse error: unexpected closing delimiter )
+
+  (assert (= 3 (length items)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+DT-05-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/DT-05-good.fnl:6:32: Parse error: unexpected closing delimiter )
+
+  (assert (= 9 (. labels "9")))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+DT-06-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/DT-06-good.fnl:5:25: Parse error: unexpected closing delimiter )
+
+  (assert (= left left))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+FN-02-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/FN-02-good.fnl:6:32: Parse error: unexpected closing delimiter )
+
+  (assert (= 1 (length items)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+PM-01-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/PM-01-bad.fnl:3:56: Parse error: unexpected closing delimiter )
+
+  (assert (= :miss (match :new expected :hit _ :miss)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+MD-03-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MD-03-good.fnl:3:62: Parse error: unexpected closing delimiter )
+
+(assert (= "libs.example.worker" (child-name "libs.example"))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+MD-04-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MD-04-bad.fnl:5:25: Parse error: unexpected closing delimiter )
+
+  (assert (= 1 (value)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+MD-04-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MD-04-good.fnl:4:29: Parse error: unexpected closing delimiter )
+
+  (assert (= 2 (api.value)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+ER-02-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-02-bad.fnl:6:32: Parse error: unexpected closing delimiter )
+
+  (assert (= "missing" reason))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+ER-02-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-02-good.fnl:5:49: Parse error: unexpected closing delimiter )
+
+  (assert (string.find reason "missing" 1 true))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+ER-03-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-03-bad.fnl:4:44: Parse error: unexpected closing delimiter )
+
+  (assert (= :default (or value :default)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+ER-03-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-03-good.fnl:8:29: Parse error: unexpected closing delimiter )
+
+  (assert (= false called?))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+ER-04-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-04-bad.fnl:4:35: Parse error: unexpected closing delimiter )
+
+  (assert (= false closed?.value))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+ER-04-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-04-good.fnl:8:25: Parse error: unexpected closing delimiter )
+
+  (assert state.closed?)))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+ER-05-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-05-bad.fnl:3:36: Parse error: unexpected closing delimiter )
+
+  (assert (not= "{:count 3}" text))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+ER-05-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-05-good.fnl:5:41: Parse error: unexpected closing delimiter )
+
+  (assert (string.find text "3" 1 true))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+MC-03-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MC-03-good.fnl:5:24: Parse error: unexpected closing delimiter )
+
+  (assert (= 99 value))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+MC-04-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MC-04-good.fnl:4:47: Parse error: unexpected closing delimiter )
+
+  (assert (= 3 (identity-form runtime-value)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+TL-01-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-01-bad.fnl:2:42: Parse error: unexpected closing delimiter )
+
+(assert (= :function (type table.unpack))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+TL-01-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-01-good.fnl:4:53: Parse error: unexpected closing delimiter )
+
+  (assert (= 3 (select :# (unpack-values [1 2 3]))))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+TL-04-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-04-bad.fnl:3:39: Parse error: unexpected closing delimiter )
+
+  (assert (= true (or enabled? true)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+TL-04-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-04-good.fnl:3:57: Parse error: unexpected closing delimiter )
+
+  (assert (= false (if (= nil enabled?) true enabled?)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-01-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-01-bad.fnl:3:38: Parse error: unexpected closing delimiter )
+
+  (assert (= :missing (object.read)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-01-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-01-good.fnl:4:38: Parse error: unexpected closing delimiter )
+
+  (assert (= 7 (object.read object)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-02-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-02-bad.fnl:2:27: Parse error: unexpected closing delimiter )
+
+(assert (= 2 (length "é"))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-02-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-02-good.fnl:3:57: Parse error: unexpected closing delimiter )
+
+(assert (= "42" (string.match "value=42" "value=(%d+)"))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-03-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-03-bad.fnl:2:23: Parse error: unexpected closing delimiter )
+
+(assert (= 2 (// 5 2))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-03-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-03-good.fnl:2:35: Parse error: unexpected closing delimiter )
+
+(assert (= 2 (math.floor (/ 5 2)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-04-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-04-bad.fnl:3:55: Parse error: unexpected closing delimiter )
+
+  (assert (= :string (type (fennel.view {:value 7}))))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-04-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-04-good.fnl:3:35: Parse error: unexpected closing delimiter )
+
+(assert (= "value=7" (describe 7))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-05-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-05-bad.fnl:3:41: Parse error: unexpected closing delimiter )
+
+  (assert (= 3 (fennel.eval "(+ 1 2)")))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+LI-05-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-05-good.fnl:4:54: Parse error: unexpected closing delimiter )
+
+  (assert (= 3 (fennel.eval "(supplied 2)" {: env})))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-01-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-01-bad.fnl:4:26: Parse error: unexpected closing delimiter )
+
+  (assert (= 2 before.n))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-01-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-01-good.fnl:4:25: Parse error: unexpected closing delimiter )
+
+  (assert (= 2 after.n))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-02-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-02-bad.fnl:3:34: Parse error: unexpected closing delimiter )
+
+(assert (= :yes (if "" :yes :no))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-02-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-02-good.fnl:3:64: Parse error: unexpected closing delimiter )
+
+  (assert (= :empty (if (= 0 (length text)) :empty :nonempty)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-03-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-03-bad.fnl:3:35: Parse error: unexpected closing delimiter )
+
+(assert (= 1 (length [(payload)]))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-03-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-03-good.fnl:4:52: Parse error: unexpected closing delimiter )
+
+(assert (= 1 (select :# (pick-values 1 (payload))))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-04-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-04-bad.fnl:2:52: Parse error: unexpected closing delimiter )
+
+(assert (= :hit (case {:hidden 1} {} :hit _ :miss))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-04-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-04-good.fnl:5:31: Parse error: unexpected closing delimiter )
+
+                    _ :miss)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-05-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-05-bad.fnl:3:25: Parse error: unexpected closing delimiter )
+
+(assert (= 9 (square 3))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-06-bad /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-06-bad.fnl:2:44: Parse error: unexpected closing delimiter )
+
+(assert (= :table (type (require :fennel)))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+
+AP-06-good /var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-06-good.fnl:3:26: Parse error: unexpected closing delimiter )
+
+(assert (= 12 (double 6))))
+* Try deleting ).
+* Try adding matching opening delimiter earlier.
+

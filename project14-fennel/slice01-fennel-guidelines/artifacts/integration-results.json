@@ -1,0 +1,165 @@
+[
+  {
+    "label": "Fennel module and macro consumer",
+    "command": [
+      "fennel",
+      "main.fnl"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "integration-ok\n",
+    "stderr": ""
+  },
+  {
+    "label": "embedded Lua host",
+    "command": [
+      "lua",
+      "host.lua"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "integration-ok\n",
+    "stderr": ""
+  },
+  {
+    "label": "AOT bundled compile with globals checking",
+    "command": [
+      "fennel",
+      "--globals",
+      "",
+      "--require-as-include",
+      "--compile",
+      "main.fnl"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "local library\npackage.preload[\"libs.example\"] = package.preload[\"libs.example\"] or function(...)\n  local worker = require(\"libs.example.worker\")\n  return {double = worker.double}\nend\npackage.preload[\"libs.example.worker\"] = package.preload[\"libs.example.worker\"] or function(...)\n  local function double(x)\n    return (x * 2)\n  end\n  return {double = double}\nend\nlibrary = require(\"libs.example\")\nlocal calls = 0\nlocal function next_21()\n  calls = (calls + 1)\n  return 3\nend\nlocal function _1_(...)\n  local value_1_auto = next_21()\n  return (value_1_auto + value_1_auto)\nend\nassert((12 == library.double(_1_(...))))\nassert((1 == calls))\ndo\n  local file = assert(io.open(\"fixture.txt\"))\n  local function close_handlers_13_(ok_14_, ...)\n    file:close()\n    if ok_14_ then\n      return ...\n    else\n      return error(..., 0)\n    end\n  end\n  local function _3_(...)\n    local args_15_ = {...}\n    local n_16_ = select(\"#\", ...)\n    local unpack_17_ = (_G.unpack or _G.table.unpack)\n    local function _4_()\n      local function _5_(...)\n        return assert((\"hello\" == file:read(\"*l\")))\n      end\n      return _5_(unpack_17_(args_15_, 1, n_16_))\n    end\n    local _7_\n    do\n      local t_6_ = _G\n      if (nil ~= t_6_) then\n        t_6_ = t_6_.package\n      else\n      end\n      if (nil ~= t_6_) then\n        t_6_ = t_6_.loaded\n      else\n      end\n      if (nil ~= t_6_) then\n        t_6_ = t_6_.fennel\n      else\n      end\n      _7_ = t_6_\n    end\n    local or_11_ = _7_ or _G.debug\n    if not or_11_ then\n      local function _12_()\n        return \"\"\n      end\n      or_11_ = {traceback = _12_}\n    end\n    return _G.xpcall(_4_, or_11_.traceback)\n  end\n  close_handlers_13_(_3_(...))\nend\nreturn print(\"integration-ok\")\n",
+    "stderr": ""
+  },
+  {
+    "label": "clean emitted artifact without loaders",
+    "command": [
+      "lua",
+      "-e",
+      "package.path=\"\"; package.cpath=\"\"; dofile(\"main.lua\")"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "integration-ok\n",
+    "stderr": ""
+  },
+  {
+    "label": "strict AOT rejects unknown globals",
+    "command": [
+      "fennel",
+      "--globals",
+      "",
+      "--compile",
+      "missing.fnl"
+    ],
+    "expected_exit": 1,
+    "exit": 1,
+    "stdout": "",
+    "stderr": "missing.fnl:1:1: Compile error: unknown identifier: misspelled-processor\n\n(misspelled-processor 1)\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.misspelled-processor if you really want a global.\n* Try moving this code to somewhere that misspelled-processor is in scope.\n* Try binding misspelled-processor as a local in the scope of this code.\n"
+  },
+  {
+    "label": "bare AOT illustrates unchecked emission",
+    "command": [
+      "fennel",
+      "--compile",
+      "missing.fnl"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "return __fnl_global__misspelled_2dprocessor(1)\n",
+    "stderr": ""
+  },
+  {
+    "label": "relocated runtime module consumer",
+    "command": [
+      "fennel",
+      "main.fnl"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "integration-ok\n",
+    "stderr": ""
+  },
+  {
+    "label": "relocated AOT relative include",
+    "command": [
+      "fennel",
+      "--globals",
+      "",
+      "--require-as-include",
+      "--compile",
+      "main.fnl"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "local library\npackage.preload[\"vendor.example\"] = package.preload[\"vendor.example\"] or function(...)\n  local worker = require(\"vendor.example.worker\")\n  return {double = worker.double}\nend\npackage.preload[\"vendor.example.worker\"] = package.preload[\"vendor.example.worker\"] or function(...)\n  local function double(x)\n    return (x * 2)\n  end\n  return {double = double}\nend\nlibrary = require(\"vendor.example\")\nlocal calls = 0\nlocal function next_21()\n  calls = (calls + 1)\n  return 3\nend\nlocal function _1_(...)\n  local value_1_auto = next_21()\n  return (value_1_auto + value_1_auto)\nend\nassert((12 == library.double(_1_(...))))\nassert((1 == calls))\ndo\n  local file = assert(io.open(\"fixture.txt\"))\n  local function close_handlers_13_(ok_14_, ...)\n    file:close()\n    if ok_14_ then\n      return ...\n    else\n      return error(..., 0)\n    end\n  end\n  local function _3_(...)\n    local args_15_ = {...}\n    local n_16_ = select(\"#\", ...)\n    local unpack_17_ = (_G.unpack or _G.table.unpack)\n    local function _4_()\n      local function _5_(...)\n        return assert((\"hello\" == file:read(\"*l\")))\n      end\n      return _5_(unpack_17_(args_15_, 1, n_16_))\n    end\n    local _7_\n    do\n      local t_6_ = _G\n      if (nil ~= t_6_) then\n        t_6_ = t_6_.package\n      else\n      end\n      if (nil ~= t_6_) then\n        t_6_ = t_6_.loaded\n      else\n      end\n      if (nil ~= t_6_) then\n        t_6_ = t_6_.fennel\n      else\n      end\n      _7_ = t_6_\n    end\n    local or_11_ = _7_ or _G.debug\n    if not or_11_ then\n      local function _12_()\n        return \"\"\n      end\n      or_11_ = {traceback = _12_}\n    end\n    return _G.xpcall(_4_, or_11_.traceback)\n  end\n  close_handlers_13_(_3_(...))\nend\nreturn print(\"integration-ok\")\n",
+    "stderr": ""
+  },
+  {
+    "label": "clean relocated emitted artifact",
+    "command": [
+      "lua",
+      "-e",
+      "package.path=\"\"; package.cpath=\"\"; dofile(\"main.lua\")"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "integration-ok\n",
+    "stderr": ""
+  },
+  {
+    "label": "native __close cleanup on raised body error",
+    "command": [
+      "fennel",
+      "--to-be-closed",
+      "native-close.fnl"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "native-cleanup-ok\n",
+    "stderr": ""
+  },
+  {
+    "label": "strict native-mode compilation",
+    "command": [
+      "fennel",
+      "--globals",
+      "",
+      "--to-be-closed",
+      "--compile",
+      "native-close.fnl"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "do\n  local state = {[\"closed?\"] = false, [\"error?\"] = false}\n  local handle\n  local function _1_(_self, reason)\n    state[\"closed?\"] = true\n    state[\"error?\"] = (nil ~= reason)\n    return nil\n  end\n  handle = setmetatable({}, {__close = _1_})\n  local function _2_()\n    local resource <close> = handle\n    return error(\"native read failed\")\n  end\n  local ok_3f,reason = pcall(_2_)\n  assert((false == ok_3f))\n  assert(string.find(reason, \"native read failed\", 1, true))\n  assert(state[\"closed?\"])\n  assert(state[\"error?\"])\nend\nreturn print(\"native-cleanup-ok\")\n",
+    "stderr": ""
+  },
+  {
+    "label": "emitted Lua native cleanup",
+    "command": [
+      "lua",
+      "native-close.lua"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "native-cleanup-ok\n",
+    "stderr": ""
+  },
+  {
+    "label": "native mode rejects close-only custom resources",
+    "command": [
+      "fennel",
+      "--to-be-closed",
+      "native-negative.fnl"
+    ],
+    "expected_exit": 1,
+    "exit": 1,
+    "stdout": "",
+    "stderr": "native-negative.fnl:2: variable 'resource' got a non-closable value\nstack traceback:\n\tnative-negative.fnl:2: in main chunk\n\t[C]: in function 'xpcall'\n\t/opt/homebrew/bin/fennel:7289: in function ?\n\t[C]: in ?\n"
+  }
+]

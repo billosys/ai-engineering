@@ -1,0 +1,2023 @@
+{
+  "examples": 112,
+  "pass": 69,
+  "fail": 43,
+  "records": [
+    {
+      "id": "ID-01-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b12906684f004b2b0cd8ea525a3fb33812b90d9b84a67b8921d72a817b6fb9b2"
+    },
+    {
+      "id": "ID-01-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 25,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "551370aa0565f5d596244cb2290227cfd998cde116da9ced169184e71aa95891"
+    },
+    {
+      "id": "ID-02-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 44,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d7539180b92f33003bcd3b478855b5ea3637a7489c9f93839cee321284cd90c5"
+    },
+    {
+      "id": "ID-02-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 52,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "628c2799ae76153f1309255bed05624297b5afe1babf9aee69c2de4b34e5b3ca"
+    },
+    {
+      "id": "ID-03-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 72,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "40ee1255edc6e2f70831752ddc0fe52d63ddfa54cbe97807f6b875d4bf46498a"
+    },
+    {
+      "id": "ID-03-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 79,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "1ab0613d173c9001871b2f0fc0cfca1172e614345b9d8dc3a8169f2bbb5ed69c"
+    },
+    {
+      "id": "ID-04-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 98,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d2818bcf0893dc178f60c0782298851b317379938c93ca352e1e454256a94d71"
+    },
+    {
+      "id": "ID-04-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 105,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "0e4a1bf7b448d8c7d588d7ea0b97607062ea220fb14e0ea8590afd894412b7af"
+    },
+    {
+      "id": "ID-05-bad",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 122,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ID-05-bad.fnl:2:11: Compile error: tried to reference a special form without calling it\n\n(local add +)\n* Try making sure to use prefix operators, not infix.\n* Try wrapping the special in a function if you need it to be first class.\n",
+      "sha256": "dd61067fe2c9fb92c6982006ad2192c9528b38fd3110eda9a14af1c2785285e6"
+    },
+    {
+      "id": "ID-05-good",
+      "guide": "01-values-and-core-idioms.md",
+      "line": 128,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "128359ed18b3b6fee2a7dca0145b95f4be73a331ff1aad3312ce1d0966abab20"
+    },
+    {
+      "id": "ST-01-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "sha256": "3a373885d4bc48d0fbaaba8c6cda91b82090459fbda1ba3014eb95c0a9981688"
+    },
+    {
+      "id": "ST-01-good",
+      "guide": "02-style-and-naming.md",
+      "line": 26,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "e4607b4e200cfe694e06c7affd2f3ece298a08bccfc946cc73a206e6e0482037"
+    },
+    {
+      "id": "ST-02-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 47,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "15068ebd12c897b7aec58cfe30b1be1ecec867cf0525068ffbf7c058826ca437"
+    },
+    {
+      "id": "ST-02-good",
+      "guide": "02-style-and-naming.md",
+      "line": 54,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "c25db7453b4bc815d766420a436d26419494af9f7fe0ff86790742abb216e75b"
+    },
+    {
+      "id": "ST-03-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 74,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "f5bcb3baf8ab2df940db089bc6f27ff258ee2ce431baab50f69d2406ab92a142"
+    },
+    {
+      "id": "ST-03-good",
+      "guide": "02-style-and-naming.md",
+      "line": 80,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "9764572fcd904771560afb0158af26fadba5e5f2ad1a36437efc3a2fc65fbbf8"
+    },
+    {
+      "id": "ST-04-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 101,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "4216241b74e7bc58dbf2dc4d21f42a1a34678622ea7e5e2a083c5fbfb7311747"
+    },
+    {
+      "id": "ST-04-good",
+      "guide": "02-style-and-naming.md",
+      "line": 106,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "67170595615a0d2e0aeb2f7d1d16d341012e9751197fc4b48a55ec19d3d94aca"
+    },
+    {
+      "id": "ST-05-bad",
+      "guide": "02-style-and-naming.md",
+      "line": 126,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "fe3ebedf817e39c85da2978d29371466b4ba254b151db49d88afb44511cb41b8"
+    },
+    {
+      "id": "ST-05-good",
+      "guide": "02-style-and-naming.md",
+      "line": 134,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "a2396ac42ca7a309ae27bca7b79ec58c0e6f52463876f59fb9017eebceef9f63"
+    },
+    {
+      "id": "DT-01-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "8a9494544c7af062eb045abffc9726f012727f492c6a985527b53472b2a40485"
+    },
+    {
+      "id": "DT-01-good",
+      "guide": "03-tables-and-data.md",
+      "line": 24,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "0e1370027c3bfc0487fcbd76a5e611c133c4694e1d9ebeaf32438056ea367d27"
+    },
+    {
+      "id": "DT-02-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 45,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "7c20e21f85befa259170cbea749076acc5c96319f0d04661e6558425da2a5b43"
+    },
+    {
+      "id": "DT-02-good",
+      "guide": "03-tables-and-data.md",
+      "line": 51,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "4f0eacb5ce3f78ef8e551ee90ca8c08f2e83516d1e418d579505c87d666753d0"
+    },
+    {
+      "id": "DT-03-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 70,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ae5a515c5a78622dc1150a1e61413e0017d56e1c91b175f86b72c722405ada25"
+    },
+    {
+      "id": "DT-03-good",
+      "guide": "03-tables-and-data.md",
+      "line": 78,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ab56c991c503fea68c5b81e7f2fc8a5cc2a1fa5f1c88266189635ad049f36dc9"
+    },
+    {
+      "id": "DT-04-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 98,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "f41d6df09222fb955f5a7e63a7d2d5307fdb0f618dfb9c69d41e8789f9cfa85f"
+    },
+    {
+      "id": "DT-04-good",
+      "guide": "03-tables-and-data.md",
+      "line": 105,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "980bbdbf04dcd3d7d56f240bcb2ff71d9a0bc2d193c753666542b7090e5ef51a"
+    },
+    {
+      "id": "DT-05-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 123,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/DT-05-bad.fnl:5:32: Parse error: unexpected closing delimiter )\n\n  (assert (= 3 (length items)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "38347e3ac8ad4d3c08f2a4b95e6dbde4ff89b53e396cf92efc6ac96382ec5b8a"
+    },
+    {
+      "id": "DT-05-good",
+      "guide": "03-tables-and-data.md",
+      "line": 131,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/DT-05-good.fnl:6:32: Parse error: unexpected closing delimiter )\n\n  (assert (= 9 (. labels \"9\")))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "a56f3b614b7259948603e5c3e69b051a27b452f29d6cb10017fd04a8dc8fdf8a"
+    },
+    {
+      "id": "DT-06-bad",
+      "guide": "03-tables-and-data.md",
+      "line": 152,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "5aaf871a09a2469bc571c7b66a790a30626db8f549dc1da59c5ecec97a45e6b7"
+    },
+    {
+      "id": "DT-06-good",
+      "guide": "03-tables-and-data.md",
+      "line": 158,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/DT-06-good.fnl:5:25: Parse error: unexpected closing delimiter )\n\n  (assert (= left left))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "f6de7a5f4ea364c0644aecfa3d4f18449eab760b2169f1677025b8c923d158da"
+    },
+    {
+      "id": "FN-01-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 16,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "dab374da1c24c193cdac4181a5bc900b58a0ae78d04af14b4bcdffc645733d44"
+    },
+    {
+      "id": "FN-01-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 23,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "5440b0ea0dcaa551b900e2704956fc7f2ff9aadf251792349da99be1fd869ccc"
+    },
+    {
+      "id": "FN-02-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 44,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "79b4e68958f9324d9f99cc65ab5d717609e06dea1a362100ee91ee9d0482f565"
+    },
+    {
+      "id": "FN-02-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 50,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/FN-02-good.fnl:6:32: Parse error: unexpected closing delimiter )\n\n  (assert (= 1 (length items)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "7f442ca769b3315f7f757174a384526be9240f0a21532869eadb9cdc373c8d13"
+    },
+    {
+      "id": "FN-03-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 73,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "8120313d5b1d627777982363378e583834401babb1c282ff2d3a9aabc70f393c"
+    },
+    {
+      "id": "FN-03-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 79,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "bba3f1a283114f511b3692e4fa158519f44ad5fd97f8ab5220f617f834c5f1cb"
+    },
+    {
+      "id": "FN-04-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 104,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b6d77d989339bd6fcbb2cf0fbdb06a0d7015c5bca5805b30b6428b8967bec6c1"
+    },
+    {
+      "id": "FN-04-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 111,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ed9c895aa1eff4d60b19f298503b4713859a059631c67050e16ad0f55f9fb3ae"
+    },
+    {
+      "id": "FN-05-bad",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 132,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/FN-05-bad.fnl:4:4: Compile error: Must be in tail position\n\n    (tail! (walk (- n 1)))\n",
+      "sha256": "24b01523d50dcb0064316de19d47ca08f37c303dca0a85f41df748ced9a6f089"
+    },
+    {
+      "id": "FN-05-good",
+      "guide": "04-functions-and-control-flow.md",
+      "line": 140,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "b75fe36c2e992d046497c55aa0464c4e3165b1d8cc7d90d8d2694009b2d35566"
+    },
+    {
+      "id": "PM-01-bad",
+      "guide": "05-pattern-matching.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/PM-01-bad.fnl:3:56: Parse error: unexpected closing delimiter )\n\n  (assert (= :miss (match :new expected :hit _ :miss)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "427bce5fe11da0aa1f53b25c6cdb07a8914ccff98f05298a1fe4560fbf0437a6"
+    },
+    {
+      "id": "PM-01-good",
+      "guide": "05-pattern-matching.md",
+      "line": 23,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "736514ae660e9b1332f00554bc83c4bd32998e6c960bcfdc37613c98ec69c0a7"
+    },
+    {
+      "id": "PM-02-bad",
+      "guide": "05-pattern-matching.md",
+      "line": 41,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "9f43fc01d38582a6b386f1114c0ab4f9ef26a8b4d444c9212d86f309f8269c17"
+    },
+    {
+      "id": "PM-02-good",
+      "guide": "05-pattern-matching.md",
+      "line": 46,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "1f5a3ce1d6f7acfd667a712365894bf82cf8c6abd95d7b0ece91249352248cfa"
+    },
+    {
+      "id": "PM-03-bad",
+      "guide": "05-pattern-matching.md",
+      "line": 69,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "bbb06cc749f816238a36fcf59960519ff4239167b6a987506ab49b2177410b05"
+    },
+    {
+      "id": "PM-03-good",
+      "guide": "05-pattern-matching.md",
+      "line": 74,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "3c45ceb02b16ddb788e1b7d574f4640bbd54c72beeaeaa25857e257d16e738ca"
+    },
+    {
+      "id": "PM-04-bad",
+      "guide": "05-pattern-matching.md",
+      "line": 97,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/PM-04-bad.fnl:3:33: Compile error: unknown identifier: b\n\n  (where (or [a 1 2] [a b 3]) (< b 4)) a)\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.b if you really want a global.\n* Try moving this code to somewhere that b is in scope.\n* Try binding b as a local in the scope of this code.\n",
+      "sha256": "5904cc42a53cecc1498f638b747d66118b6e9911bfb0ea4cabd372f546d494f3"
+    },
+    {
+      "id": "PM-04-good",
+      "guide": "05-pattern-matching.md",
+      "line": 103,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d100e61157e533c53082bf709057be95e89fe5e43bbc635770aa8c1a31529dae"
+    },
+    {
+      "id": "MD-01-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 16,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "09f515d0e4b63c4728508d55ab69e030e0c727ec8d6f99c60e86348b1401d6b8"
+    },
+    {
+      "id": "MD-01-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 22,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "12cbbe46ac6df11c1f1f2b1cd4fff6e8bdb3f2116faf9677b041e426fdaff5af"
+    },
+    {
+      "id": "MD-02-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 43,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d3e1aae8caf7557f95168e0d2e21b9c5b38c9fc92331c589e26daf61a796f445"
+    },
+    {
+      "id": "MD-02-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 53,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "0eb87ee4207ca7648a7d029bab7bd7ef628629d2bc450a0f0b428f101ef184fb"
+    },
+    {
+      "id": "MD-03-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 77,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "39076e43ac4d4978d75b98e9377fba6a516b53c1b2dea2e2ca307e54456f3947"
+    },
+    {
+      "id": "MD-03-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 83,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MD-03-good.fnl:3:62: Parse error: unexpected closing delimiter )\n\n(assert (= \"libs.example.worker\" (child-name \"libs.example\"))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "d331cb1433dc15f69e7dd2704a33ac7f51e1cd27c9a5e77ea521ec48a3cae3b1"
+    },
+    {
+      "id": "MD-04-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 103,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MD-04-bad.fnl:5:25: Parse error: unexpected closing delimiter )\n\n  (assert (= 1 (value)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "4cc471a39d1e269bd8f67cbe0a4a0e891dd668409504b9d070b76a7481db634f"
+    },
+    {
+      "id": "MD-04-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 111,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MD-04-good.fnl:4:29: Parse error: unexpected closing delimiter )\n\n  (assert (= 2 (api.value)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "0909860751f77eb41604f6350e658165c55a37a7dc00841d0f16dea410cad7c0"
+    },
+    {
+      "id": "MD-05-bad",
+      "guide": "06-modules-and-api-design.md",
+      "line": 131,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "8f36c983283e7bc08cac625d89e56d7eba31b8939328e991597d036dc51982ff"
+    },
+    {
+      "id": "MD-05-good",
+      "guide": "06-modules-and-api-design.md",
+      "line": 139,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "20906dd4454ba47c9c75c739b7e307e6d9bd87589e42b0be8a44b39a4cc2fe93"
+    },
+    {
+      "id": "ER-01-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 16,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "3cc85de7e7b96a8e342542cdf044add9508d56383435ad85e3e5e39b1e9519e7"
+    },
+    {
+      "id": "ER-01-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 22,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "15cd39a2c40744385f9c88784f9073517de64c920cc2e68667f0a0bdfbe79cb2"
+    },
+    {
+      "id": "ER-02-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 43,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-02-bad.fnl:6:32: Parse error: unexpected closing delimiter )\n\n  (assert (= \"missing\" reason))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "3e8096ba7b3a56e39bba1a3da323b4ecfe816de8e76e771430327ceac10f9423"
+    },
+    {
+      "id": "ER-02-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 52,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-02-good.fnl:5:49: Parse error: unexpected closing delimiter )\n\n  (assert (string.find reason \"missing\" 1 true))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "531667152097cfff300ba972f571fc3b189734a622b9db9e736cf761a18e6e4b"
+    },
+    {
+      "id": "ER-03-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 73,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-03-bad.fnl:4:44: Parse error: unexpected closing delimiter )\n\n  (assert (= :default (or value :default)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "236254ea4587287e150a4bbd416e2c7055214bbc6c06931c4f4d879a9ec8c2f7"
+    },
+    {
+      "id": "ER-03-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 80,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-03-good.fnl:8:29: Parse error: unexpected closing delimiter )\n\n  (assert (= false called?))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "57dd87e9285fe7fd7f07b181fe2e1f2412f99fc9e0c5529989914d965f945c62"
+    },
+    {
+      "id": "ER-04-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 104,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-04-bad.fnl:4:35: Parse error: unexpected closing delimiter )\n\n  (assert (= false closed?.value))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "5b2c034a5b4fe4b77df1e6095dec6263545366f8347c59cb78de33ae117c0d45"
+    },
+    {
+      "id": "ER-04-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 111,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-04-good.fnl:8:25: Parse error: unexpected closing delimiter )\n\n  (assert state.closed?)))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "fa60521509d03e8a2b87a84b35c525638c9fe86aa925ea03a7ca0bdba9db6c82"
+    },
+    {
+      "id": "ER-05-bad",
+      "guide": "07-errors-and-resources.md",
+      "line": 136,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-05-bad.fnl:3:36: Parse error: unexpected closing delimiter )\n\n  (assert (not= \"{:count 3}\" text))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "23fba98a3bfdadbe15b7a7ea91316c613c2a3d91b095674a14d7ab0dc4a45bc4"
+    },
+    {
+      "id": "ER-05-good",
+      "guide": "07-errors-and-resources.md",
+      "line": 142,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/ER-05-good.fnl:5:41: Parse error: unexpected closing delimiter )\n\n  (assert (string.find text \"3\" 1 true))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "81700f98d36f660f7a461145cd65e0aeaa89ea1e4e9bbebbe72bf94012bef35e"
+    },
+    {
+      "id": "MC-01-bad",
+      "guide": "08-macros.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "d1d5cd06aa9aedde3db31a92cc7b86dc479ea79941c630e03a6a9814b2483008"
+    },
+    {
+      "id": "MC-01-good",
+      "guide": "08-macros.md",
+      "line": 23,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "6ebe620853737456a6c97674db5664fb136f5dbe5e5593bf42ffba3f131bdc5c"
+    },
+    {
+      "id": "MC-02-bad",
+      "guide": "08-macros.md",
+      "line": 42,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "3e18848bcea68577c25709ac9bb74070203dad0b13e5bc32755feec6beda78ad"
+    },
+    {
+      "id": "MC-02-good",
+      "guide": "08-macros.md",
+      "line": 51,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "cee6c0daba50fd6765bff11e06534a1d26b2fe2126d9bd780e9b93ca78011e2d"
+    },
+    {
+      "id": "MC-03-bad",
+      "guide": "08-macros.md",
+      "line": 74,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MC-03-bad.fnl:2:?: Compile error: macro tried to bind value without gensym\n\n(macro twice [x] `(let [value ,x] (+ value value)))\n* Try changing to value# when introducing identifiers inside macros.\nstack traceback:\n\t[C]: in function 'error'\n\t/opt/homebrew/bin/fennel:4499: in function 'assert-compile'\n\t/opt/homebrew/bin/fennel:2899: in function ?\n\t/opt/homebrew/bin/fennel:3079: in function ?\n\t/opt/homebrew/bin/fennel:3799: in function 'destructure_sym'\n\t/opt/homebrew/bin/fennel:3976: in function 'destructure1'\n\t/opt/homebrew/bin/fennel:3989: in function 'destructure'\n\t/opt/homebrew/bin/fennel:1562: in function 'special'\n\t/opt/homebrew/bin/fennel:3520: in function ?\n\t/opt/homebrew/bin/fennel:4046: in function ?\n\t[C]: in function 'xpcall'\n\t/opt/homebrew/bin/fennel:7526: in function ?\n\t[C]: in ?\n",
+      "sha256": "7efb327a1fc5e1bbe1e8453dc6e10ed34af036eb17231fa8ea1ab296aa93b693"
+    },
+    {
+      "id": "MC-03-good",
+      "guide": "08-macros.md",
+      "line": 80,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MC-03-good.fnl:5:24: Parse error: unexpected closing delimiter )\n\n  (assert (= 99 value))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "a3d8833427d5c070b62a70d630be068e72a7aef46f41e846fd951a35b16a08ea"
+    },
+    {
+      "id": "MC-04-bad",
+      "guide": "08-macros.md",
+      "line": 101,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MC-04-bad.fnl:3:26: Compile error: unknown identifier: helper\n\n(macro identity-form [x] (helper x))\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.helper if you really want a global.\n* Try moving this code to somewhere that helper is in scope.\n* Try binding helper as a local in the scope of this code.\n",
+      "sha256": "5f1f900989a738fdded022debc27526b6e20214974782213b499205d3653ca68"
+    },
+    {
+      "id": "MC-04-good",
+      "guide": "08-macros.md",
+      "line": 108,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MC-04-good.fnl:4:47: Parse error: unexpected closing delimiter )\n\n  (assert (= 3 (identity-form runtime-value)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "07f86c701fcec7d35660c5d19cbc9fba6611998d5711a0f2a01e1f34ed3c0056"
+    },
+    {
+      "id": "MC-05-bad",
+      "guide": "08-macros.md",
+      "line": 128,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MC-05-bad.fnl:2:?: Compile error: unknown identifier: numeric\n\n(macro absolute [x] `(numeric.abs ,x))\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.numeric if you really want a global.\n* Try moving this code to somewhere that numeric is in scope.\n* Try binding numeric as a local in the scope of this code.\nstack traceback:\n\t[C]: in function 'error'\n\t/opt/homebrew/bin/fennel:4499: in function 'assert-compile'\n\t/opt/homebrew/bin/fennel:2899: in function 'assert_compile'\n\t/opt/homebrew/bin/fennel:3128: in function 'symbol_to_expression'\n\t/opt/homebrew/bin/fennel:3618: in function ?\n\t/opt/homebrew/bin/fennel:3551: in function ?\n\t/opt/homebrew/bin/fennel:4046: in function ?\n\t[C]: in function 'xpcall'\n\t/opt/homebrew/bin/fennel:7526: in function ?\n\t[C]: in ?\n",
+      "sha256": "ba901c95b18e7770f04dd71b1f6c855c7b7ba9f89c7318c139220912f29133cd"
+    },
+    {
+      "id": "MC-05-good",
+      "guide": "08-macros.md",
+      "line": 134,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ab4835af1e8943b707dd60335966923bf921888c6071b2ba1101b15326e63c9c"
+    },
+    {
+      "id": "MC-06-bad",
+      "guide": "08-macros.md",
+      "line": 154,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/MC-06-bad.fnl:3:0: Compile error: [string \"local function _1_(forms)...\"]:2: attempt to index a number value (local 'forms')\nstack traceback:\n\t[string \"local function _1_(forms)...\"]:2: in function <[string \"local function _1_(forms)...\"]:1>\n\t(...tail calls...)\n\t[C]: in global 'xpcall'\n\t/opt/homebrew/bin/fennel:3501: in upvalue 'macroexpand_2a'\n\t/opt/homebrew/bin/fennel:3705: in upvalue 'compile1'\n\t/opt/homebrew/bin/fennel:4046: in function </opt/homebrew/bin/fennel:4015>\n\t(...tail calls...)\n\t[C]: in global 'xpcall'\n\t/opt/homebrew/bin/fennel:7526: in function </opt/homebrew/bin/fennel:7512>\n\t(...tail calls...)\n\n(first-form 42)\n",
+      "sha256": "c3062ab24b81b1a1637b26562ce894b0d78aac18fbfc9580ebecc4a3ed417036"
+    },
+    {
+      "id": "MC-06-good",
+      "guide": "08-macros.md",
+      "line": 160,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "7ce196803f09464140ab85b17fedc3c058a28881a5a7620a6db933dbad81a553"
+    },
+    {
+      "id": "TL-01-bad",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-01-bad.fnl:2:42: Parse error: unexpected closing delimiter )\n\n(assert (= :function (type table.unpack))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "d4b9ee4b637f35d88edd66a35b59dbc2befdbcc5fe318b4cfc7df412e55c16b4"
+    },
+    {
+      "id": "TL-01-good",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 22,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-01-good.fnl:4:53: Parse error: unexpected closing delimiter )\n\n  (assert (= 3 (select :# (unpack-values [1 2 3]))))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "9e660eaafd6dd5d0a9549f7f5108bf81487201c2a45a04a166de6f92ad2eec04"
+    },
+    {
+      "id": "TL-02-bad",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 42,
+      "expected": "compile-error",
+      "compile_exit": 1,
+      "pass": true,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-02-bad.fnl:2:1: Compile error: unknown identifier: misspelled-processor\n\n(misspelled-processor 1)\n* Try looking to see if there's a typo.\n* Try using the _G table instead, eg. _G.misspelled-processor if you really want a global.\n* Try moving this code to somewhere that misspelled-processor is in scope.\n* Try binding misspelled-processor as a local in the scope of this code.\n",
+      "sha256": "2c8ffbe8fed8fa7e3c99d50b0ee73e04d8e0e80da868e615f64b4b0c4ae3b33f"
+    },
+    {
+      "id": "TL-02-good",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 47,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "a85edee4fa3655b49a2f3a51f6e449a629832127ad49fcdcfae2e6032f000b24"
+    },
+    {
+      "id": "TL-03-bad",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 67,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ab8cf5a87e1b12ce3e375dfe5e71957f22ad96fb73c3f3a73826fa2ad7f70c87"
+    },
+    {
+      "id": "TL-03-good",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 73,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "a44beba35a1ba0023a8fb3e11a26842f9d056239457c84a2a768cb9e19268653"
+    },
+    {
+      "id": "TL-04-bad",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 95,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-04-bad.fnl:3:39: Parse error: unexpected closing delimiter )\n\n  (assert (= true (or enabled? true)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "c5c4b54bacb359346df63bf170f5b7e15954589e59c7310f467d60f77fd906a4"
+    },
+    {
+      "id": "TL-04-good",
+      "guide": "09-setup-tooling-and-testing.md",
+      "line": 101,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/TL-04-good.fnl:3:57: Parse error: unexpected closing delimiter )\n\n  (assert (= false (if (= nil enabled?) true enabled?)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "048757a8d7a1c1828f337d77b0d455921a10df4fa0cac5aa674f162b6502b2d2"
+    },
+    {
+      "id": "LI-01-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 16,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-01-bad.fnl:3:38: Parse error: unexpected closing delimiter )\n\n  (assert (= :missing (object.read)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "b4e3f5bc14b687c8d44f64a3ce8bf9daacaf79517bf038e49f41ccc52a130136"
+    },
+    {
+      "id": "LI-01-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 22,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-01-good.fnl:4:38: Parse error: unexpected closing delimiter )\n\n  (assert (= 7 (object.read object)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "9176e4de5102510025be6aa5fde3cabc3931a06911ecb23add90831bc539f253"
+    },
+    {
+      "id": "LI-02-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 42,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-02-bad.fnl:2:27: Parse error: unexpected closing delimiter )\n\n(assert (= 2 (length \"\u00e9\"))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "9c252f6c56c57b45681b5627277b5835509390403fb01fcccebe358f03b9df3a"
+    },
+    {
+      "id": "LI-02-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 47,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-02-good.fnl:3:57: Parse error: unexpected closing delimiter )\n\n(assert (= \"42\" (string.match \"value=42\" \"value=(%d+)\"))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "f6ff6fad1f7b8c29ff5b34fcf57488bca1ed4c7c75582b0b249577b4765c818e"
+    },
+    {
+      "id": "LI-03-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 66,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-03-bad.fnl:2:23: Parse error: unexpected closing delimiter )\n\n(assert (= 2 (// 5 2))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "ab14b8117c6155173709bc6c605cb607e9fabfb2ecc8117f08d073c6c1f932bc"
+    },
+    {
+      "id": "LI-03-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 71,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-03-good.fnl:2:35: Parse error: unexpected closing delimiter )\n\n(assert (= 2 (math.floor (/ 5 2)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "3e7ffa1192af6eef21a38eb5a957af267bd4fc61243124fc78100cee395aa254"
+    },
+    {
+      "id": "LI-04-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 89,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-04-bad.fnl:3:55: Parse error: unexpected closing delimiter )\n\n  (assert (= :string (type (fennel.view {:value 7}))))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "1db498c441fc3c5076f44510f8550e834bfdf82f32962e4ff4941d1c9b379ce8"
+    },
+    {
+      "id": "LI-04-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 95,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-04-good.fnl:3:35: Parse error: unexpected closing delimiter )\n\n(assert (= \"value=7\" (describe 7))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "28f68d8d9ef55372759b9da2a37ae884f467201316602fb101f58b6ba2e62184"
+    },
+    {
+      "id": "LI-05-bad",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 115,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-05-bad.fnl:3:41: Parse error: unexpected closing delimiter )\n\n  (assert (= 3 (fennel.eval \"(+ 1 2)\")))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "5fcd1d4d4ec3d255565f56269aa1d9ba9cf5135e0bf2a6cb5415316cc606a8c4"
+    },
+    {
+      "id": "LI-05-good",
+      "guide": "10-lua-interop-and-distribution.md",
+      "line": 121,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/LI-05-good.fnl:4:54: Parse error: unexpected closing delimiter )\n\n  (assert (= 3 (fennel.eval \"(supplied 2)\" {: env})))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "7dba750994040e16b1368732d7b4e403149d01f2c9ad02cd346e04bb7a264c60"
+    },
+    {
+      "id": "AP-01-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 17,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-01-bad.fnl:4:26: Parse error: unexpected closing delimiter )\n\n  (assert (= 2 before.n))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "3edc9a7d7d7b4f076254101c641b6b30b667d0643ae8f0f2672604fe7b7c6146"
+    },
+    {
+      "id": "AP-01-good",
+      "guide": "11-anti-patterns.md",
+      "line": 24,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-01-good.fnl:4:25: Parse error: unexpected closing delimiter )\n\n  (assert (= 2 after.n))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "cbea8ebc416107779ad8d36d3a7b6a70258212d830e01674f6b4c592abc9a0ba"
+    },
+    {
+      "id": "AP-02-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 42,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-02-bad.fnl:3:34: Parse error: unexpected closing delimiter )\n\n(assert (= :yes (if \"\" :yes :no))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "1a3c3d4f56a133b30b2971477787a48f76a611483f894cf397440cd2e5fa46b4"
+    },
+    {
+      "id": "AP-02-good",
+      "guide": "11-anti-patterns.md",
+      "line": 48,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-02-good.fnl:3:64: Parse error: unexpected closing delimiter )\n\n  (assert (= :empty (if (= 0 (length text)) :empty :nonempty)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "9b2056d640e680506bdba6ab439d9d5a5f23b658b4df7b3a191d71d45b22a1d3"
+    },
+    {
+      "id": "AP-03-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 65,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-03-bad.fnl:3:35: Parse error: unexpected closing delimiter )\n\n(assert (= 1 (length [(payload)]))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "41ef4138bd7453c5d833672d99599865c5b741d66fec3b5ac859478d69130502"
+    },
+    {
+      "id": "AP-03-good",
+      "guide": "11-anti-patterns.md",
+      "line": 71,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-03-good.fnl:4:52: Parse error: unexpected closing delimiter )\n\n(assert (= 1 (select :# (pick-values 1 (payload))))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "5a952c35c5563917212a102fde86e71029736ff6cda2a5d388d78389fc24877e"
+    },
+    {
+      "id": "AP-04-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 89,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-04-bad.fnl:2:52: Parse error: unexpected closing delimiter )\n\n(assert (= :hit (case {:hidden 1} {} :hit _ :miss))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "55daa469af58de0476a51905cab2cb0249ebbc4712e0f5eb150bb8ba73ecb6fa"
+    },
+    {
+      "id": "AP-04-good",
+      "guide": "11-anti-patterns.md",
+      "line": 94,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-04-good.fnl:5:31: Parse error: unexpected closing delimiter )\n\n                    _ :miss)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "58b8a2ef4641a3893d3ed5673fa7cecfc7e12302ed2cb0aa0c7c34f4885a3169"
+    },
+    {
+      "id": "AP-05-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 114,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-05-bad.fnl:3:25: Parse error: unexpected closing delimiter )\n\n(assert (= 9 (square 3))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "c02e18ce97d7eba63f5cfc271af841b8d390b953af217f213a6464d84494cb0d"
+    },
+    {
+      "id": "AP-05-good",
+      "guide": "11-anti-patterns.md",
+      "line": 120,
+      "expected": "run-success",
+      "compile_exit": 0,
+      "runs": [
+        {
+          "command": "fennel",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "command": "lua",
+          "exit": 0,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "pass": true,
+      "format_exit": 0,
+      "sha256": "ba9c708f1da228eeaf5cd772d6bb22a3ab051bbb2e661ce1981cdfe582d0f111"
+    },
+    {
+      "id": "AP-06-bad",
+      "guide": "11-anti-patterns.md",
+      "line": 141,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-06-bad.fnl:2:44: Parse error: unexpected closing delimiter )\n\n(assert (= :table (type (require :fennel)))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "1bb1c9bb942dd1f791360f1e1459539e4d40c4f0385292e496660a294a9c39ee"
+    },
+    {
+      "id": "AP-06-good",
+      "guide": "11-anti-patterns.md",
+      "line": 146,
+      "expected": "run-success",
+      "compile_exit": 1,
+      "pass": false,
+      "diagnostic": "/var/folders/_j/0spgkqmj781_drg31_1tzgtr0000gn/T/fennel-guide-examples-d54ihns2/AP-06-good.fnl:3:26: Parse error: unexpected closing delimiter )\n\n(assert (= 12 (double 6))))\n* Try deleting ).\n* Try adding matching opening delimiter earlier.\n",
+      "format_exit": 1,
+      "sha256": "8f8d491e7d9bc7809734aa17c1afb9b7cdc7da0130b0de91feb60066041b7445"
+    }
+  ]
+}

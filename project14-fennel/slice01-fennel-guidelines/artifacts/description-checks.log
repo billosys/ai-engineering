@@ -1,0 +1,29 @@
+25 skills; 11,877 description chars; 19 over the 300-char editorial target
+3,647 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   995   1001  collaboration-framework / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/collaboration-framework/SKILL.md
+   947    951  cobalt-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/cobalt/SKILL.md
+   908    908  erlang-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/erlang/SKILL.md
+   896    896  rust-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/rust/SKILL.md
+   685    685  cpp-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/cpp/SKILL.md
+   612    612  go-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/go/SKILL.md
+   552    552  javascript-deno-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/js/SKILL.md
+   526    527  fennel-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/fennel/SKILL.md
+   498    498  scientific-methods / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/scientific-methods/SKILL.md
+   377    377  biome-linter / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/biome/SKILL-web-linter.md
+   377    377  engineering-methods / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/engineering-methods/SKILL.md
+   376    376  tailwindcss / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/tailwindcss/SKILL.md
+   374    374  methodology-stewardship / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/methodology-stewardship/SKILL.md
+   372    372  document-extraction / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/document-extraction/SKILL.md
+   371    371  laboratory-recordkeeping / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/laboratory-recordkeeping/SKILL.md
+   360    360  visual-design-system / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/design/SKILL.md
+   358    358  concept-cards / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/concept-cards/SKILL.md
+   350    350  biome-js-linter / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/biome/SKILL-js-linter.md
+   324    324  deno-js-linter / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/deno/SKILL-js-linter.md
+   298    298  agent-coordination / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/agent-coordination/SKILL.md
+   281    281  contribution-style / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/contribution-style/SKILL.md
+   278    278  code-auditing / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/code-auditing/SKILL.md
+   269    269  project-management / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/project-management/SKILL.md
+   249    249  work-verification / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/work-verification/SKILL.md
+   244    244  testing / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/testing/SKILL.md
+>> all skill descriptions within limit

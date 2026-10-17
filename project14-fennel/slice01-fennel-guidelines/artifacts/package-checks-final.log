@@ -1,0 +1,848 @@
+Skill version contract: 25 source skills, 0 packages, 0 errors
+1 skills; 298 description chars; 0 over the 300-char editorial target
+103 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   298    298  agent-coordination / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/agent-coordination/SKILL.md
+>> staging agent-coordination bundle (knowledge/agent-coordination/SKILL.md + knowledge/agent-coordination/guides + local support files)
+>> writing target/skills/agent-coordination.zip
+>> contents:
+Archive:  target/skills/agent-coordination.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   agent-coordination/
+     1874  10-17-2026 12:01   agent-coordination/version-history.md
+        0  10-17-2026 12:01   agent-coordination/guides/
+     2700  10-17-2026 12:01   agent-coordination/guides/02-context-packets.md
+     2567  10-17-2026 12:01   agent-coordination/guides/03-result-integration.md
+     3078  10-17-2026 12:01   agent-coordination/guides/04-anti-patterns.md
+     4304  10-17-2026 12:01   agent-coordination/guides/01-when-to-delegate.md
+     2456  10-17-2026 12:01   agent-coordination/SKILL.md
+---------                     -------
+    16979                     8 files
+>> done: target/skills/agent-coordination.zip
+1 skills; 278 description chars; 0 over the 300-char editorial target
+96 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   278    278  code-auditing / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/code-auditing/SKILL.md
+>> staging code-auditing bundle (knowledge/code-auditing/SKILL.md + knowledge/code-auditing/guides + local support files)
+>> writing target/skills/code-auditing.zip
+>> contents:
+Archive:  target/skills/code-auditing.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   code-auditing/
+     1633  10-17-2026 12:01   code-auditing/version-history.md
+        0  10-17-2026 12:01   code-auditing/guides/
+     4918  10-17-2026 12:01   code-auditing/guides/02-findings-and-severity.md
+     3097  10-17-2026 12:01   code-auditing/guides/05-audit-to-hardening-handoff.md
+     4927  10-17-2026 12:01   code-auditing/guides/03-scale-aware-auditing.md
+     6647  10-17-2026 12:01   code-auditing/guides/01-audit-scope-and-map.md
+     3197  10-17-2026 12:01   code-auditing/guides/04-modernization-synthesis.md
+     1867  10-17-2026 12:01   code-auditing/SKILL.md
+---------                     -------
+    26286                     9 files
+>> done: target/skills/code-auditing.zip
+1 skills; 281 description chars; 0 over the 300-char editorial target
+99 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   281    281  contribution-style / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/contribution-style/SKILL.md
+>> staging contribution-style bundle (knowledge/contribution-style/SKILL.md + knowledge/contribution-style/guides + local support files)
+>> writing target/skills/contribution-style.zip
+>> contents:
+Archive:  target/skills/contribution-style.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   contribution-style/
+     1951  10-17-2026 12:01   contribution-style/version-history.md
+        0  10-17-2026 12:01   contribution-style/guides/
+     5009  10-17-2026 12:01   contribution-style/guides/02-upstream-ticket-workflow.md
+     7607  10-17-2026 12:01   contribution-style/guides/01-contribution-style.md
+     1281  10-17-2026 12:01   contribution-style/SKILL.md
+        0  10-17-2026 12:01   contribution-style/templates/
+    10245  10-17-2026 12:01   contribution-style/templates/CONTRIBUTION-TICKET.md
+---------                     -------
+    26093                     8 files
+>> done: target/skills/contribution-style.zip
+1 skills; 377 description chars; 1 over the 300-char editorial target
+123 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   377    377  engineering-methods / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/engineering-methods/SKILL.md
+>> staging engineering-methods bundle (knowledge/engineering-methods/SKILL.md + knowledge/engineering-methods/guides + local support files)
+>> writing target/skills/engineering-methods.zip
+>> contents:
+Archive:  target/skills/engineering-methods.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   engineering-methods/
+    19096  10-17-2026 12:01   engineering-methods/version-history.md
+        0  10-17-2026 12:01   engineering-methods/guides/
+     5213  10-17-2026 12:01   engineering-methods/guides/02-knowledge-substrate.md
+     5993  10-17-2026 12:01   engineering-methods/guides/04-operational-routing.md
+    32925  10-17-2026 12:01   engineering-methods/guides/07-implementation-prompt-authoring.md
+    26542  10-17-2026 12:01   engineering-methods/guides/01-engineering-methodology.md
+     5146  10-17-2026 12:01   engineering-methods/guides/05-component-boundary-analysis.md
+     5131  10-17-2026 12:01   engineering-methods/guides/06-source-package-release-gates.md
+    13723  10-17-2026 12:01   engineering-methods/guides/03-process-rigour.md
+     3849  10-17-2026 12:01   engineering-methods/SKILL.md
+        0  10-17-2026 12:01   engineering-methods/templates/
+    11439  10-17-2026 12:01   engineering-methods/templates/cc-implementation-prompt.md
+---------                     -------
+   129057                     13 files
+>> done: target/skills/engineering-methods.zip
+1 skills; 269 description chars; 0 over the 300-char editorial target
+96 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   269    269  project-management / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/project-management/SKILL.md
+>> staging project-management bundle (knowledge/project-management/SKILL.md + knowledge/project-management/guides + local support files)
+>> writing target/skills/project-management.zip
+>> contents:
+Archive:  target/skills/project-management.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   project-management/
+    14853  10-17-2026 12:01   project-management/version-history.md
+        0  10-17-2026 12:01   project-management/guides/
+     4802  10-17-2026 12:01   project-management/guides/06-confirmation-protocol.md
+    20310  10-17-2026 12:01   project-management/guides/03-planning-top-down.md
+     7539  10-17-2026 12:01   project-management/guides/04-closing-slices.md
+     1706  10-17-2026 12:01   project-management/guides/08-maintenance.md
+    12620  10-17-2026 12:01   project-management/guides/README.md
+     4721  10-17-2026 12:01   project-management/guides/07-anti-patterns.md
+     7521  10-17-2026 12:01   project-management/guides/01-scales-of-work.md
+     8644  10-17-2026 12:01   project-management/guides/05-closing-arcs.md
+    19006  10-17-2026 12:01   project-management/guides/02-canonical-planning-worktree.md
+        0  10-17-2026 12:01   project-management/examples/
+     3237  10-17-2026 12:01   project-management/examples/01-worked-example-odm.md
+     4234  10-17-2026 12:01   project-management/SKILL.md
+---------                     -------
+   109193                     15 files
+>> done: target/skills/project-management.zip
+1 skills; 244 description chars; 0 over the 300-char editorial target
+84 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   244    244  testing / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/testing/SKILL.md
+>> staging testing bundle (knowledge/testing/SKILL.md + knowledge/testing/guides + local support files)
+>> writing target/skills/testing.zip
+>> contents:
+Archive:  target/skills/testing.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   testing/
+     1927  10-17-2026 12:01   testing/version-history.md
+        0  10-17-2026 12:01   testing/guides/
+     4533  10-17-2026 12:01   testing/guides/03-validation-gates.md
+     3430  10-17-2026 12:01   testing/guides/01-testing-discipline.md
+    13769  10-17-2026 12:01   testing/guides/02-coverage-hardening.md
+     1376  10-17-2026 12:01   testing/SKILL.md
+---------                     -------
+    25035                     7 files
+>> done: target/skills/testing.zip
+1 skills; 249 description chars; 0 over the 300-char editorial target
+90 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   249    249  work-verification / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/work-verification/SKILL.md
+>> staging work-verification bundle (knowledge/work-verification/SKILL.md + knowledge/work-verification/guides + local support files)
+>> writing target/skills/work-verification.zip
+>> contents:
+Archive:  target/skills/work-verification.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   work-verification/
+     5905  10-17-2026 12:01   work-verification/version-history.md
+        0  10-17-2026 12:01   work-verification/guides/
+     7282  10-17-2026 12:01   work-verification/guides/05-independent-verification.md
+     3670  10-17-2026 12:01   work-verification/guides/02-evidence-strength.md
+     3036  10-17-2026 12:01   work-verification/guides/04-silent-drop-checks.md
+     3692  10-17-2026 12:01   work-verification/guides/03-row-closure.md
+     4943  10-17-2026 12:01   work-verification/guides/01-ledger-discipline.md
+     2126  10-17-2026 12:01   work-verification/SKILL.md
+        0  10-17-2026 12:01   work-verification/templates/
+    30165  10-17-2026 12:01   work-verification/templates/LEDGER-DISCIPLINE.md
+---------                     -------
+    60819                     11 files
+>> done: target/skills/work-verification.zip
+1 skills; 498 description chars; 1 over the 300-char editorial target
+153 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   498    498  scientific-methods / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/scientific-methods/SKILL.md
+>> staging scientific-methods bundle (knowledge/scientific-methods/SKILL.md + knowledge/scientific-methods/guides + local support files)
+>> writing target/skills/scientific-methods.zip
+>> contents:
+Archive:  target/skills/scientific-methods.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   scientific-methods/
+      801  10-17-2026 12:01   scientific-methods/version-history.md
+        0  10-17-2026 12:01   scientific-methods/guides/
+     1473  10-17-2026 12:01   scientific-methods/guides/05-protocol-and-prompt-design.md
+     1742  10-17-2026 12:01   scientific-methods/guides/01-inquiry-framing.md
+     1423  10-17-2026 12:01   scientific-methods/guides/06-evidence-capture.md
+     1504  10-17-2026 12:01   scientific-methods/guides/07-comparison-and-regression-testing.md
+     1664  10-17-2026 12:01   scientific-methods/guides/03-controls-and-confounds.md
+     1857  10-17-2026 12:01   scientific-methods/guides/04-operational-measures.md
+     1503  10-17-2026 12:01   scientific-methods/guides/08-analysis-and-threats-to-validity.md
+     1561  10-17-2026 12:01   scientific-methods/guides/09-anti-patterns.md
+     2060  10-17-2026 12:01   scientific-methods/guides/02-experiment-design.md
+     5673  10-17-2026 12:01   scientific-methods/SKILL.md
+        0  10-17-2026 12:01   scientific-methods/templates/
+     1004  10-17-2026 12:01   scientific-methods/templates/ab-comparison-prompt.md
+      752  10-17-2026 12:01   scientific-methods/templates/experiment-protocol.md
+     1056  10-17-2026 12:01   scientific-methods/templates/evaluation-rubric.md
+---------                     -------
+    24073                     17 files
+>> done: target/skills/scientific-methods.zip
+1 skills; 374 description chars; 1 over the 300-char editorial target
+125 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   374    374  methodology-stewardship / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/methodology-stewardship/SKILL.md
+>> staging methodology-stewardship bundle (knowledge/methodology-stewardship/SKILL.md + knowledge/methodology-stewardship/guides + local support files)
+>> writing target/skills/methodology-stewardship.zip
+>> contents:
+Archive:  target/skills/methodology-stewardship.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   methodology-stewardship/
+      497  10-17-2026 12:01   methodology-stewardship/version-history.md
+        0  10-17-2026 12:01   methodology-stewardship/guides/
+    10236  10-17-2026 12:01   methodology-stewardship/guides/01-retrospectives-and-follow-through.md
+     1888  10-17-2026 12:01   methodology-stewardship/SKILL.md
+---------                     -------
+    12621                     5 files
+>> done: target/skills/methodology-stewardship.zip
+1 skills; 371 description chars; 1 over the 300-char editorial target
+124 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   371    371  laboratory-recordkeeping / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/laboratory-recordkeeping/SKILL.md
+>> staging laboratory-recordkeeping bundle (knowledge/laboratory-recordkeeping/SKILL.md + knowledge/laboratory-recordkeeping/guides + local support files)
+>> writing target/skills/laboratory-recordkeeping.zip
+>> contents:
+Archive:  target/skills/laboratory-recordkeeping.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   laboratory-recordkeeping/
+        0  10-17-2026 12:01   laboratory-recordkeeping/references/
+     3884  10-17-2026 12:01   laboratory-recordkeeping/references/sources-and-adaptations.md
+      596  10-17-2026 12:01   laboratory-recordkeeping/version-history.md
+        0  10-17-2026 12:01   laboratory-recordkeeping/guides/
+     3536  10-17-2026 12:01   laboratory-recordkeeping/guides/02-layout-and-identifiers.md
+     2804  10-17-2026 12:01   laboratory-recordkeeping/guides/05-run-records.md
+     2795  10-17-2026 12:01   laboratory-recordkeeping/guides/04-journals-and-notebooks.md
+     2917  10-17-2026 12:01   laboratory-recordkeeping/guides/07-reports-and-reconstruction.md
+     3164  10-17-2026 12:01   laboratory-recordkeeping/guides/03-creation-and-routing.md
+     2749  10-17-2026 12:01   laboratory-recordkeeping/guides/01-collections-and-stewardship.md
+     3598  10-17-2026 12:01   laboratory-recordkeeping/guides/06-storage-and-preservation.md
+        0  10-17-2026 12:01   laboratory-recordkeeping/examples/
+     3159  10-17-2026 12:01   laboratory-recordkeeping/examples/recordkeeping-decisions.md
+     4888  10-17-2026 12:01   laboratory-recordkeeping/SKILL.md
+        0  10-17-2026 12:01   laboratory-recordkeeping/templates/
+      861  10-17-2026 12:01   laboratory-recordkeeping/templates/journal-entry.md
+     1378  10-17-2026 12:01   laboratory-recordkeeping/templates/report.md
+     1114  10-17-2026 12:01   laboratory-recordkeeping/templates/experiment-readme.md
+     1697  10-17-2026 12:01   laboratory-recordkeeping/templates/run-record.md
+     1222  10-17-2026 12:01   laboratory-recordkeeping/templates/lab-readme.md
+     1042  10-17-2026 12:01   laboratory-recordkeeping/templates/evidence-inventory.md
+---------                     -------
+    41404                     22 files
+>> done: target/skills/laboratory-recordkeeping.zip
+1 skills; 372 description chars; 1 over the 300-char editorial target
+122 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   372    372  document-extraction / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/document-extraction/SKILL.md
+>> staging document-extraction bundle (knowledge/document-extraction/SKILL.md + knowledge/document-extraction/guides + local support files)
+>> writing target/skills/document-extraction.zip
+>> contents:
+Archive:  target/skills/document-extraction.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   document-extraction/
+     5273  10-17-2026 12:01   document-extraction/version-history.md
+        0  10-17-2026 12:01   document-extraction/guides/
+     6317  10-17-2026 12:01   document-extraction/guides/06-html-and-converted-markdown.md
+     7100  10-17-2026 12:01   document-extraction/guides/03-output-contract.md
+     5839  10-17-2026 12:01   document-extraction/guides/08-structure-mapping-and-splitting.md
+     5658  10-17-2026 12:01   document-extraction/guides/07-media-path-normalization.md
+     5876  10-17-2026 12:01   document-extraction/guides/09-locator-model.md
+    12796  10-17-2026 12:01   document-extraction/guides/05-epub-source-preparation.md
+     5674  10-17-2026 12:01   document-extraction/guides/02-workflow.md
+    12083  10-17-2026 12:01   document-extraction/guides/04-pdf-source-preparation.md
+     4442  10-17-2026 12:01   document-extraction/guides/01-load-contract.md
+     8235  10-17-2026 12:01   document-extraction/guides/10-validation-and-reports.md
+        0  10-17-2026 12:01   document-extraction/examples/
+     4283  10-17-2026 12:01   document-extraction/examples/concept-card-handoff.md
+     8807  10-17-2026 12:01   document-extraction/examples/pdf-marker-handoff.md
+     9011  10-17-2026 12:01   document-extraction/examples/html-markdown-handoff.md
+     8221  10-17-2026 12:01   document-extraction/examples/epub-pandoc-handoff.md
+     5951  10-17-2026 12:01   document-extraction/SKILL.md
+        0  10-17-2026 12:01   document-extraction/templates/
+     2659  10-17-2026 12:01   document-extraction/templates/concept-card-handoff.md
+     3089  10-17-2026 12:01   document-extraction/templates/structure-map.md
+     2747  10-17-2026 12:01   document-extraction/templates/locator-map.md
+     1862  10-17-2026 12:01   document-extraction/templates/caveat-record.md
+     4015  10-17-2026 12:01   document-extraction/templates/manifest.md
+     3280  10-17-2026 12:01   document-extraction/templates/validation-readiness.md
+     3162  10-17-2026 12:01   document-extraction/templates/media-report.md
+     4832  10-17-2026 12:01   document-extraction/templates/helper-script-plan.md
+---------                     -------
+   141212                     28 files
+>> done: target/skills/document-extraction.zip
+1 skills; 358 description chars; 1 over the 300-char editorial target
+116 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   358    358  concept-cards / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/concept-cards/SKILL.md
+>> staging concept-cards bundle (knowledge/concept-cards/SKILL.md + knowledge/concept-cards/guides + local support files)
+>> writing target/skills/concept-cards.zip
+>> contents:
+Archive:  target/skills/concept-cards.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   concept-cards/
+        0  10-17-2026 12:01   concept-cards/references/
+     2216  10-17-2026 12:01   concept-cards/references/vocabulary.md
+     1982  10-17-2026 12:01   concept-cards/references/operator-review-gates.md
+     3455  10-17-2026 12:01   concept-cards/references/record-field-groups.md
+     1457  10-17-2026 12:01   concept-cards/references/README.md
+     3376  10-17-2026 12:01   concept-cards/references/structural-validation-candidates.md
+     2418  10-17-2026 12:01   concept-cards/references/semantic-audit-boundaries.md
+     9960  10-17-2026 12:01   concept-cards/version-history.md
+        0  10-17-2026 12:01   concept-cards/guides/
+     9179  10-17-2026 12:01   concept-cards/guides/07-reconciliation.md
+     9542  10-17-2026 12:01   concept-cards/guides/02-operator-workflow.md
+    14744  10-17-2026 12:01   concept-cards/guides/08-validation-verification.md
+    10569  10-17-2026 12:01   concept-cards/guides/06-graph-cq.md
+     9876  10-17-2026 12:01   concept-cards/guides/09-memory-admission.md
+     6907  10-17-2026 12:01   concept-cards/guides/10-maintenance-packaging.md
+    15057  10-17-2026 12:01   concept-cards/guides/03-extraction.md
+    10194  10-17-2026 12:01   concept-cards/guides/01-load-contract.md
+    13051  10-17-2026 12:01   concept-cards/guides/05-evidence-lifecycle.md
+    14856  10-17-2026 12:01   concept-cards/guides/04-re-extraction-preservation.md
+        0  10-17-2026 12:01   concept-cards/examples/
+     1417  10-17-2026 12:01   concept-cards/examples/parallel-worker-default-recipe.md
+     1188  10-17-2026 12:01   concept-cards/examples/cq-coverage.md
+     1336  10-17-2026 12:01   concept-cards/examples/minimal-card.md
+     1139  10-17-2026 12:01   concept-cards/examples/reconciliation.md
+     1937  10-17-2026 12:01   concept-cards/examples/claim-backed-card.md
+     1009  10-17-2026 12:01   concept-cards/examples/relationship-edge.md
+     1325  10-17-2026 12:01   concept-cards/examples/extraction-run-trace.md
+     6319  10-17-2026 12:01   concept-cards/examples/rich-profile-card.md
+     1066  10-17-2026 12:01   concept-cards/examples/memory-admission.md
+     9563  10-17-2026 12:01   concept-cards/SKILL.md
+        0  10-17-2026 12:01   concept-cards/templates/
+     2624  10-17-2026 12:01   concept-cards/templates/reconciliation-result.md
+     2900  10-17-2026 12:01   concept-cards/templates/competency-question.md
+     2341  10-17-2026 12:01   concept-cards/templates/claim.md
+     2596  10-17-2026 12:01   concept-cards/templates/relationship-edge.md
+     2266  10-17-2026 12:01   concept-cards/templates/validation-result.md
+     2701  10-17-2026 12:01   concept-cards/templates/verification-result.md
+     5265  10-17-2026 12:01   concept-cards/templates/concept-card.md
+     2781  10-17-2026 12:01   concept-cards/templates/source-support.md
+     2589  10-17-2026 12:01   concept-cards/templates/preservation-decision.md
+     3014  10-17-2026 12:01   concept-cards/templates/extraction-run.md
+     3280  10-17-2026 12:01   concept-cards/templates/memory-admission.md
+     2405  10-17-2026 12:01   concept-cards/templates/source-locator.md
+---------                     -------
+   199900                     44 files
+>> done: target/skills/concept-cards.zip
+1 skills; 896 description chars; 1 over the 300-char editorial target
+248 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   896    896  rust-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/rust/SKILL.md
+>> staging rust-guidelines bundle (knowledge/rust/SKILL.md + knowledge/rust/guides)
+>> writing target/skills/rust-guidelines.zip
+>> contents:
+Archive:  target/skills/rust-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   rust-guidelines/
+      532  10-17-2026 12:01   rust-guidelines/version-history.md
+        0  10-17-2026 12:01   rust-guidelines/guides/
+    78756  10-17-2026 12:01   rust-guidelines/guides/11-anti-patterns.md
+    67303  10-17-2026 12:01   rust-guidelines/guides/02-api-design.md
+    46392  10-17-2026 12:01   rust-guidelines/guides/06-traits.md
+    41061  10-17-2026 12:01   rust-guidelines/guides/16-editions.md
+    40026  10-17-2026 12:01   rust-guidelines/guides/12-project-structure.md
+    55203  10-17-2026 12:01   rust-guidelines/guides/03-error-handling.md
+    13188  10-17-2026 12:01   rust-guidelines/guides/README.md
+    71625  10-17-2026 12:01   rust-guidelines/guides/09-unsafe-ffi.md
+        0  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/
+    18131  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/05-configuration.md
+    26466  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/04-output-and-ux.md
+    11852  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/08-advanced-topics.md
+    12903  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/07-distribution.md
+    19387  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/03-error-handling.md
+    27687  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/02-argument-parsing.md
+    16566  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/README.md
+    14729  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/06-testing.md
+     8570  10-17-2026 12:01   rust-guidelines/guides/14-cli-tools/01-project-setup.md
+    43437  10-17-2026 12:01   rust-guidelines/guides/13-documentation.md
+        0  10-17-2026 12:01   rust-guidelines/guides/15-cargo/
+    27919  10-17-2026 12:01   rust-guidelines/guides/15-cargo/02-cargo-build-system.md
+    22405  10-17-2026 12:01   rust-guidelines/guides/15-cargo/05-cargo-configuration.md
+    14369  10-17-2026 12:01   rust-guidelines/guides/15-cargo/07-lints-and-formatters.md
+    10165  10-17-2026 12:01   rust-guidelines/guides/15-cargo/CHECKPOINT.md
+    10621  10-17-2026 12:01   rust-guidelines/guides/15-cargo/README.md
+    21810  10-17-2026 12:01   rust-guidelines/guides/15-cargo/04-cargo-publishing.md
+    17826  10-17-2026 12:01   rust-guidelines/guides/15-cargo/08-manifest-and-workspace-advanced.md
+    32512  10-17-2026 12:01   rust-guidelines/guides/15-cargo/06-cargo-advanced.md
+    24263  10-17-2026 12:01   rust-guidelines/guides/15-cargo/01-cargo-basics.md
+    26997  10-17-2026 12:01   rust-guidelines/guides/15-cargo/03-cargo-plugins.md
+    39832  10-17-2026 12:01   rust-guidelines/guides/10-macros.md
+    44542  10-17-2026 12:01   rust-guidelines/guides/04-ownership-borrowing.md
+    61497  10-17-2026 12:01   rust-guidelines/guides/08-performance.md
+     8222  10-17-2026 12:01   rust-guidelines/guides/MERGE_REPORT.md
+    61403  10-17-2026 12:01   rust-guidelines/guides/07-concurrency-async.md
+    33258  10-17-2026 12:01   rust-guidelines/guides/17-observability.md
+    48975  10-17-2026 12:01   rust-guidelines/guides/01-core-idioms.md
+    40095  10-17-2026 12:01   rust-guidelines/guides/05-type-design.md
+    36127  10-17-2026 12:01   rust-guidelines/SKILL.md
+---------                     -------
+  1196652                     42 files
+>> done: target/skills/rust-guidelines.zip
+1 skills; 526 description chars; 1 over the 300-char editorial target
+157 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   526    527  fennel-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/fennel/SKILL.md
+>> staging fennel-guidelines bundle (knowledge/fennel/SKILL.md + knowledge/fennel/guides)
+>> writing target/skills/fennel-guidelines.zip
+>> contents:
+Archive:  target/skills/fennel-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   fennel-guidelines/
+      863  10-17-2026 12:01   fennel-guidelines/version-history.md
+        0  10-17-2026 12:01   fennel-guidelines/guides/
+     6547  10-17-2026 12:01   fennel-guidelines/guides/11-anti-patterns.md
+     8186  10-17-2026 12:01   fennel-guidelines/guides/10-lua-interop-and-distribution.md
+     7687  10-17-2026 12:01   fennel-guidelines/guides/07-errors-and-resources.md
+     6454  10-17-2026 12:01   fennel-guidelines/guides/06-modules-and-api-design.md
+     6277  10-17-2026 12:01   fennel-guidelines/guides/02-style-and-naming.md
+     4663  10-17-2026 12:01   fennel-guidelines/guides/05-pattern-matching.md
+     6486  10-17-2026 12:01   fennel-guidelines/guides/09-setup-tooling-and-testing.md
+     5764  10-17-2026 12:01   fennel-guidelines/guides/00-sources-and-license.md
+     6556  10-17-2026 12:01   fennel-guidelines/guides/04-functions-and-control-flow.md
+     6237  10-17-2026 12:01   fennel-guidelines/guides/01-values-and-core-idioms.md
+     7499  10-17-2026 12:01   fennel-guidelines/guides/03-tables-and-data.md
+     8001  10-17-2026 12:01   fennel-guidelines/guides/08-macros.md
+     7741  10-17-2026 12:01   fennel-guidelines/SKILL.md
+---------                     -------
+    88961                     16 files
+>> done: target/skills/fennel-guidelines.zip
+1 skills; 612 description chars; 1 over the 300-char editorial target
+176 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   612    612  go-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/go/SKILL.md
+>> staging go-guidelines bundle (knowledge/go/SKILL.md + knowledge/go/guides)
+>> writing target/skills/go-guidelines.zip
+>> contents:
+Archive:  target/skills/go-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   go-guidelines/
+      387  10-17-2026 12:01   go-guidelines/version-history.md
+        0  10-17-2026 12:01   go-guidelines/guides/
+    49360  10-17-2026 12:01   go-guidelines/guides/11-documentation.md
+    87007  10-17-2026 12:01   go-guidelines/guides/06-concurrency.md
+    70646  10-17-2026 12:01   go-guidelines/guides/05-interfaces-methods.md
+    60256  10-17-2026 12:01   go-guidelines/guides/02-api-design.md
+    12514  10-17-2026 12:01   go-guidelines/guides/12-gio-ui.md
+    61392  10-17-2026 12:01   go-guidelines/guides/03-error-handling.md
+    89777  10-17-2026 12:01   go-guidelines/guides/07-testing.md
+    78292  10-17-2026 12:01   go-guidelines/guides/08-performance.md
+    56485  10-17-2026 12:01   go-guidelines/guides/01-core-idioms.md
+    61961  10-17-2026 12:01   go-guidelines/guides/04-type-design.md
+    57226  10-17-2026 12:01   go-guidelines/guides/10-project-structure.md
+    94023  10-17-2026 12:01   go-guidelines/guides/09-anti-patterns.md
+    23179  10-17-2026 12:01   go-guidelines/SKILL.md
+---------                     -------
+   802505                     16 files
+>> done: target/skills/go-guidelines.zip
+1 skills; 685 description chars; 1 over the 300-char editorial target
+195 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   685    685  cpp-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/cpp/SKILL.md
+>> staging cpp-guidelines bundle (knowledge/cpp/SKILL.md + knowledge/cpp/guides)
+>> writing target/skills/cpp-guidelines.zip
+>> contents:
+Archive:  target/skills/cpp-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   cpp-guidelines/
+      280  10-17-2026 12:01   cpp-guidelines/version-history.md
+        0  10-17-2026 12:01   cpp-guidelines/guides/
+     6844  10-17-2026 12:01   cpp-guidelines/guides/14-c-style-and-modernization.md
+    17191  10-17-2026 12:01   cpp-guidelines/guides/11-anti-patterns.md
+    45787  10-17-2026 12:01   cpp-guidelines/guides/05-resource-management.md
+    31702  10-17-2026 12:01   cpp-guidelines/guides/12-project-structure-and-tooling.md
+    62362  10-17-2026 12:01   cpp-guidelines/guides/08-concurrency.md
+    44839  10-17-2026 12:01   cpp-guidelines/guides/02-api-design.md
+   127585  10-17-2026 12:01   cpp-guidelines/guides/10-expressions-and-statements.md
+    71691  10-17-2026 12:01   cpp-guidelines/guides/07-templates-and-generics.md
+    76241  10-17-2026 12:01   cpp-guidelines/guides/03-functions.md
+    36960  10-17-2026 12:01   cpp-guidelines/guides/06-error-handling.md
+   186376  10-17-2026 12:01   cpp-guidelines/guides/04-classes-and-value-types.md
+    18767  10-17-2026 12:01   cpp-guidelines/guides/09-performance.md
+    91626  10-17-2026 12:01   cpp-guidelines/guides/15-reference-and-glossary.md
+    27515  10-17-2026 12:01   cpp-guidelines/guides/13-standard-library.md
+    68783  10-17-2026 12:01   cpp-guidelines/guides/01-core-idioms.md
+     8371  10-17-2026 12:01   cpp-guidelines/SKILL.md
+---------                     -------
+   922920                     19 files
+>> done: target/skills/cpp-guidelines.zip
+1 skills; 552 description chars; 1 over the 300-char editorial target
+165 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   552    552  javascript-deno-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/js/SKILL.md
+>> staging javascript-deno-guidelines bundle (knowledge/js/SKILL.md + knowledge/js/guides)
+>> writing target/skills/javascript-deno-guidelines.zip
+>> contents:
+Archive:  target/skills/javascript-deno-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   javascript-deno-guidelines/
+      400  10-17-2026 12:01   javascript-deno-guidelines/version-history.md
+        0  10-17-2026 12:01   javascript-deno-guidelines/guides/
+    32988  10-17-2026 12:01   javascript-deno-guidelines/guides/11-documentation.md
+        0  10-17-2026 12:01   javascript-deno-guidelines/guides/12-deno/
+    23286  10-17-2026 12:01   javascript-deno-guidelines/guides/12-deno/12-03-task-runner.md
+    32286  10-17-2026 12:01   javascript-deno-guidelines/guides/12-deno/12-02-testing.md
+    37261  10-17-2026 12:01   javascript-deno-guidelines/guides/12-deno/12-01-runtime-basics.md
+    23538  10-17-2026 12:01   javascript-deno-guidelines/guides/12-deno/12-04-publishing.md
+    35026  10-17-2026 12:01   javascript-deno-guidelines/guides/02-api-design.md
+    22617  10-17-2026 12:01   javascript-deno-guidelines/guides/14-no-node-boundary.md
+        0  10-17-2026 12:01   javascript-deno-guidelines/guides/13-biome/
+    25580  10-17-2026 12:01   javascript-deno-guidelines/guides/13-biome/13-02-lint-rules.md
+    23709  10-17-2026 12:01   javascript-deno-guidelines/guides/13-biome/13-01-setup.md
+    17225  10-17-2026 12:01   javascript-deno-guidelines/guides/13-biome/13-03-formatting.md
+    34509  10-17-2026 12:01   javascript-deno-guidelines/guides/03-error-handling.md
+    43588  10-17-2026 12:01   javascript-deno-guidelines/guides/07-async-concurrency.md
+    37564  10-17-2026 12:01   javascript-deno-guidelines/guides/05-type-discipline.md
+    35336  10-17-2026 12:01   javascript-deno-guidelines/guides/04-values-references.md
+    39620  10-17-2026 12:01   javascript-deno-guidelines/guides/06-functions-closures.md
+    44306  10-17-2026 12:01   javascript-deno-guidelines/guides/08-performance.md
+    35513  10-17-2026 12:01   javascript-deno-guidelines/guides/01-core-idioms.md
+    32185  10-17-2026 12:01   javascript-deno-guidelines/guides/10-project-structure.md
+    45517  10-17-2026 12:01   javascript-deno-guidelines/guides/09-anti-patterns.md
+    36735  10-17-2026 12:01   javascript-deno-guidelines/SKILL.md
+---------                     -------
+   658789                     25 files
+>> done: target/skills/javascript-deno-guidelines.zip
+1 skills; 908 description chars; 1 over the 300-char editorial target
+252 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   908    908  erlang-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/erlang/SKILL.md
+>> staging erlang-guidelines bundle (knowledge/erlang/SKILL.md + knowledge/erlang/guides)
+>> writing target/skills/erlang-guidelines.zip
+>> contents:
+Archive:  target/skills/erlang-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   erlang-guidelines/
+      391  10-17-2026 12:01   erlang-guidelines/version-history.md
+        0  10-17-2026 12:01   erlang-guidelines/guides/
+    24859  10-17-2026 12:01   erlang-guidelines/guides/11-anti-patterns.md
+    23546  10-17-2026 12:01   erlang-guidelines/guides/04-data-and-types.md
+    20798  10-17-2026 12:01   erlang-guidelines/guides/16-distribution.md
+    15792  10-17-2026 12:01   erlang-guidelines/guides/02-api-design.md
+    19703  10-17-2026 12:01   erlang-guidelines/guides/14-production-ops.md
+    23219  10-17-2026 12:01   erlang-guidelines/guides/08-supervision-and-applications.md
+    15637  10-17-2026 12:01   erlang-guidelines/guides/12-project-structure.md
+    19652  10-17-2026 12:01   erlang-guidelines/guides/03-error-handling.md
+    15665  10-17-2026 12:01   erlang-guidelines/guides/15-testing.md
+    22262  10-17-2026 12:01   erlang-guidelines/guides/09-fault-tolerance.md
+    20689  10-17-2026 12:01   erlang-guidelines/guides/06-processes-and-concurrency.md
+    15040  10-17-2026 12:01   erlang-guidelines/guides/13-documentation.md
+    19026  10-17-2026 12:01   erlang-guidelines/guides/05-functions-and-pattern-matching.md
+    15339  10-17-2026 12:01   erlang-guidelines/guides/17-tooling.md
+    25877  10-17-2026 12:01   erlang-guidelines/guides/10-performance.md
+    23653  10-17-2026 12:01   erlang-guidelines/guides/07-otp-behaviours.md
+    20536  10-17-2026 12:01   erlang-guidelines/guides/01-core-idioms.md
+    13828  10-17-2026 12:01   erlang-guidelines/SKILL.md
+---------                     -------
+   355512                     21 files
+>> done: target/skills/erlang-guidelines.zip
+1 skills; 947 description chars; 1 over the 300-char editorial target
+263 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   947    951  cobalt-guidelines / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/cobalt/SKILL.md
+>> staging cobalt-guidelines bundle (knowledge/cobalt/SKILL.md + knowledge/cobalt/guides)
+>> writing target/skills/cobalt-guidelines.zip
+>> contents:
+Archive:  target/skills/cobalt-guidelines.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   cobalt-guidelines/
+      391  10-17-2026 12:01   cobalt-guidelines/version-history.md
+        0  10-17-2026 12:01   cobalt-guidelines/guides/
+    40521  10-17-2026 12:01   cobalt-guidelines/guides/01-cobalt-static-site-generation.md
+    27573  10-17-2026 12:01   cobalt-guidelines/SKILL.md
+---------                     -------
+    68485                     5 files
+>> done: target/skills/cobalt-guidelines.zip
+1 skills; 360 description chars; 1 over the 300-char editorial target
+116 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   360    360  visual-design-system / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/design/SKILL.md
+>> staging visual-design-system bundle (knowledge/design/SKILL.md + knowledge/design/guides)
+>> writing target/skills/visual-design-system.zip
+>> contents:
+Archive:  target/skills/visual-design-system.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   visual-design-system/
+     5240  10-17-2026 12:01   visual-design-system/version-history.md
+        0  10-17-2026 12:01   visual-design-system/guides/
+     5754  10-17-2026 12:01   visual-design-system/guides/colour.md
+    30952  10-17-2026 12:01   visual-design-system/guides/foundations-of-design.md
+    21764  10-17-2026 12:01   visual-design-system/guides/breaking-the-layout-monoculture.md
+    10977  10-17-2026 12:01   visual-design-system/guides/design.md
+     3396  10-17-2026 12:01   visual-design-system/guides/type.md
+    35986  10-17-2026 12:01   visual-design-system/guides/layout.md
+     8951  10-17-2026 12:01   visual-design-system/SKILL.md
+---------                     -------
+   123020                     10 files
+>> done: target/skills/visual-design-system.zip
+1 skills; 376 description chars; 1 over the 300-char editorial target
+119 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   376    376  tailwindcss / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/tailwindcss/SKILL.md
+>> staging tailwindcss bundle (knowledge/tailwindcss/SKILL.md + knowledge/tailwindcss/guides)
+>> writing target/skills/tailwindcss.zip
+>> contents:
+Archive:  target/skills/tailwindcss.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   tailwindcss/
+      440  10-17-2026 12:01   tailwindcss/version-history.md
+        0  10-17-2026 12:01   tailwindcss/guides/
+    47011  10-17-2026 12:01   tailwindcss/guides/reference.md
+    38409  10-17-2026 12:01   tailwindcss/SKILL.md
+---------                     -------
+    85860                     5 files
+>> done: target/skills/tailwindcss.zip
+1 skills; 324 description chars; 1 over the 300-char editorial target
+108 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   324    324  deno-js-linter / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/deno/SKILL-js-linter.md
+>> staging deno-js-linter bundle (knowledge/deno/SKILL-js-linter.md + knowledge/deno/guides)
+>> writing target/skills/deno-js-linter.zip
+>> contents:
+Archive:  target/skills/deno-js-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   deno-js-linter/
+      443  10-17-2026 12:01   deno-js-linter/version-history.md
+        0  10-17-2026 12:01   deno-js-linter/guides/
+     6919  10-17-2026 12:01   deno-js-linter/guides/pitfalls.md
+    15639  10-17-2026 12:01   deno-js-linter/guides/bugs.md
+     6184  10-17-2026 12:01   deno-js-linter/guides/style.md
+     5142  10-17-2026 12:01   deno-js-linter/SKILL.md
+---------                     -------
+    34327                     7 files
+>> done: target/skills/deno-js-linter.zip
+1 skills; 350 description chars; 1 over the 300-char editorial target
+115 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   350    350  biome-js-linter / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/biome/SKILL-js-linter.md
+>> staging biome-js-linter bundle (knowledge/biome/SKILL-js-linter.md + knowledge/biome/guides)
+>> writing target/skills/biome-js-linter.zip
+>> contents:
+Archive:  target/skills/biome-js-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   biome-js-linter/
+      971  10-17-2026 12:01   biome-js-linter/version-history.md
+        0  10-17-2026 12:01   biome-js-linter/guides/
+        0  10-17-2026 12:01   biome-js-linter/guides/js-linter/
+    14850  10-17-2026 12:01   biome-js-linter/guides/js-linter/pitfalls.md
+     9958  10-17-2026 12:01   biome-js-linter/guides/js-linter/bugs.md
+    10275  10-17-2026 12:01   biome-js-linter/guides/js-linter/simplification.md
+     2008  10-17-2026 12:01   biome-js-linter/guides/js-linter/performance.md
+    13918  10-17-2026 12:01   biome-js-linter/guides/js-linter/experimental.md
+    11839  10-17-2026 12:01   biome-js-linter/guides/js-linter/style.md
+      339  10-17-2026 12:01   biome-js-linter/guides/js-linter/security.md
+        0  10-17-2026 12:01   biome-js-linter/guides/web-linter/
+    21231  10-17-2026 12:01   biome-js-linter/guides/web-linter/suspicious.md
+     3410  10-17-2026 12:01   biome-js-linter/guides/web-linter/performance.md
+     9103  10-17-2026 12:01   biome-js-linter/guides/web-linter/a11y.md
+    19009  10-17-2026 12:01   biome-js-linter/guides/web-linter/nursery.md
+    16819  10-17-2026 12:01   biome-js-linter/guides/web-linter/style.md
+    17727  10-17-2026 12:01   biome-js-linter/guides/web-linter/correctness.md
+      837  10-17-2026 12:01   biome-js-linter/guides/web-linter/security.md
+    10445  10-17-2026 12:01   biome-js-linter/guides/web-linter/complexity.md
+     5547  10-17-2026 12:01   biome-js-linter/SKILL.md
+---------                     -------
+   168286                     21 files
+>> done: target/skills/biome-js-linter.zip
+1 skills; 377 description chars; 1 over the 300-char editorial target
+121 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   377    377  biome-linter / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/biome/SKILL-web-linter.md
+>> staging biome-linter bundle (knowledge/biome/SKILL-web-linter.md + knowledge/biome/guides)
+>> writing target/skills/biome-linter.zip
+>> contents:
+Archive:  target/skills/biome-linter.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   biome-linter/
+      971  10-17-2026 12:01   biome-linter/version-history.md
+        0  10-17-2026 12:01   biome-linter/guides/
+        0  10-17-2026 12:01   biome-linter/guides/js-linter/
+    14850  10-17-2026 12:01   biome-linter/guides/js-linter/pitfalls.md
+     9958  10-17-2026 12:01   biome-linter/guides/js-linter/bugs.md
+    10275  10-17-2026 12:01   biome-linter/guides/js-linter/simplification.md
+     2008  10-17-2026 12:01   biome-linter/guides/js-linter/performance.md
+    13918  10-17-2026 12:01   biome-linter/guides/js-linter/experimental.md
+    11839  10-17-2026 12:01   biome-linter/guides/js-linter/style.md
+      339  10-17-2026 12:01   biome-linter/guides/js-linter/security.md
+        0  10-17-2026 12:01   biome-linter/guides/web-linter/
+    21231  10-17-2026 12:01   biome-linter/guides/web-linter/suspicious.md
+     3410  10-17-2026 12:01   biome-linter/guides/web-linter/performance.md
+     9103  10-17-2026 12:01   biome-linter/guides/web-linter/a11y.md
+    19009  10-17-2026 12:01   biome-linter/guides/web-linter/nursery.md
+    16819  10-17-2026 12:01   biome-linter/guides/web-linter/style.md
+    17727  10-17-2026 12:01   biome-linter/guides/web-linter/correctness.md
+      837  10-17-2026 12:01   biome-linter/guides/web-linter/security.md
+    10445  10-17-2026 12:01   biome-linter/guides/web-linter/complexity.md
+     6154  10-17-2026 12:01   biome-linter/SKILL.md
+---------                     -------
+   168893                     21 files
+>> done: target/skills/biome-linter.zip
+1 skills; 995 description chars; 1 over the 300-char editorial target
+281 approximate tokens for absolute-path lines (before Codex aliasing; not an exact runtime budget)
+ CHARS  BYTES  NAME / PATH
+   995   1001  collaboration-framework / /Users/oubiwann/lab/billosys/ai-engineering/knowledge/collaboration-framework/SKILL.md
+>> staging collaboration-framework bundle
+>> writing target/skills/collaboration-framework.zip
+>> contents:
+Archive:  target/skills/collaboration-framework.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  10-17-2026 12:01   collaboration-framework/
+        0  10-17-2026 12:01   collaboration-framework/knowledge/
+        0  10-17-2026 12:01   collaboration-framework/knowledge/agent-coordination/
+     1874  10-17-2026 12:01   collaboration-framework/knowledge/agent-coordination/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/agent-coordination/guides/
+     2700  10-17-2026 12:01   collaboration-framework/knowledge/agent-coordination/guides/02-context-packets.md
+     2567  10-17-2026 12:01   collaboration-framework/knowledge/agent-coordination/guides/03-result-integration.md
+     3078  10-17-2026 12:01   collaboration-framework/knowledge/agent-coordination/guides/04-anti-patterns.md
+     4304  10-17-2026 12:01   collaboration-framework/knowledge/agent-coordination/guides/01-when-to-delegate.md
+     2456  10-17-2026 12:01   collaboration-framework/knowledge/agent-coordination/ENTRYPOINT.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/collaboration-framework/
+        0  10-17-2026 12:01   collaboration-framework/knowledge/collaboration-framework/guides/
+     4801  10-17-2026 12:01   collaboration-framework/knowledge/collaboration-framework/guides/03-collaborative-rights.md
+    29520  10-17-2026 12:01   collaboration-framework/knowledge/collaboration-framework/guides/01-posture-and-ethics.md
+     9580  10-17-2026 12:01   collaboration-framework/knowledge/collaboration-framework/guides/04-component-route-table.md
+     8766  10-17-2026 12:01   collaboration-framework/knowledge/collaboration-framework/guides/02-structural-pulls.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/methodology-stewardship/
+      497  10-17-2026 12:01   collaboration-framework/knowledge/methodology-stewardship/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/methodology-stewardship/guides/
+    10236  10-17-2026 12:01   collaboration-framework/knowledge/methodology-stewardship/guides/01-retrospectives-and-follow-through.md
+     1888  10-17-2026 12:01   collaboration-framework/knowledge/methodology-stewardship/ENTRYPOINT.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/project-management/
+    14853  10-17-2026 12:01   collaboration-framework/knowledge/project-management/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/
+     4802  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/06-confirmation-protocol.md
+    20310  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/03-planning-top-down.md
+     7539  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/04-closing-slices.md
+     1706  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/08-maintenance.md
+    12620  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/README.md
+     4721  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/07-anti-patterns.md
+     7521  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/01-scales-of-work.md
+     8644  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/05-closing-arcs.md
+    19006  10-17-2026 12:01   collaboration-framework/knowledge/project-management/guides/02-canonical-planning-worktree.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/project-management/examples/
+     3237  10-17-2026 12:01   collaboration-framework/knowledge/project-management/examples/01-worked-example-odm.md
+     4239  10-17-2026 12:01   collaboration-framework/knowledge/project-management/ENTRYPOINT.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/
+      801  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/
+     1473  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/05-protocol-and-prompt-design.md
+     1742  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/01-inquiry-framing.md
+     1423  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/06-evidence-capture.md
+     1504  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/07-comparison-and-regression-testing.md
+     1664  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/03-controls-and-confounds.md
+     1857  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/04-operational-measures.md
+     1503  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/08-analysis-and-threats-to-validity.md
+     1561  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/09-anti-patterns.md
+     2060  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/guides/02-experiment-design.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/templates/
+     1004  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/templates/ab-comparison-prompt.md
+      752  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/templates/experiment-protocol.md
+     1056  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/templates/evaluation-rubric.md
+     5673  10-17-2026 12:01   collaboration-framework/knowledge/scientific-methods/ENTRYPOINT.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/
+     1633  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/guides/
+     4918  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/guides/02-findings-and-severity.md
+     3097  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/guides/05-audit-to-hardening-handoff.md
+     4927  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/guides/03-scale-aware-auditing.md
+     6647  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/guides/01-audit-scope-and-map.md
+     3197  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/guides/04-modernization-synthesis.md
+     1867  10-17-2026 12:01   collaboration-framework/knowledge/code-auditing/ENTRYPOINT.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/testing/
+     1927  10-17-2026 12:01   collaboration-framework/knowledge/testing/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/testing/guides/
+     4533  10-17-2026 12:01   collaboration-framework/knowledge/testing/guides/03-validation-gates.md
+     3430  10-17-2026 12:01   collaboration-framework/knowledge/testing/guides/01-testing-discipline.md
+    13769  10-17-2026 12:01   collaboration-framework/knowledge/testing/guides/02-coverage-hardening.md
+     1376  10-17-2026 12:01   collaboration-framework/knowledge/testing/ENTRYPOINT.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/
+    19096  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/guides/
+     5213  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/guides/02-knowledge-substrate.md
+     5993  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/guides/04-operational-routing.md
+    32925  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/guides/07-implementation-prompt-authoring.md
+    26542  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/guides/01-engineering-methodology.md
+     5146  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/guides/05-component-boundary-analysis.md
+     5131  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/guides/06-source-package-release-gates.md
+    13723  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/guides/03-process-rigour.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/templates/
+    11439  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/templates/cc-implementation-prompt.md
+     3854  10-17-2026 12:01   collaboration-framework/knowledge/engineering-methods/ENTRYPOINT.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/
+     5905  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/guides/
+     7282  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/guides/05-independent-verification.md
+     3670  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/guides/02-evidence-strength.md
+     3036  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/guides/04-silent-drop-checks.md
+     3692  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/guides/03-row-closure.md
+     4943  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/guides/01-ledger-discipline.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/templates/
+    30165  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/templates/LEDGER-DISCIPLINE.md
+     2126  10-17-2026 12:01   collaboration-framework/knowledge/work-verification/ENTRYPOINT.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/contribution-style/
+     1951  10-17-2026 12:01   collaboration-framework/knowledge/contribution-style/version-history.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/contribution-style/guides/
+     5009  10-17-2026 12:01   collaboration-framework/knowledge/contribution-style/guides/02-upstream-ticket-workflow.md
+     7607  10-17-2026 12:01   collaboration-framework/knowledge/contribution-style/guides/01-contribution-style.md
+        0  10-17-2026 12:01   collaboration-framework/knowledge/contribution-style/templates/
+    10245  10-17-2026 12:01   collaboration-framework/knowledge/contribution-style/templates/CONTRIBUTION-TICKET.md
+     1281  10-17-2026 12:01   collaboration-framework/knowledge/contribution-style/ENTRYPOINT.md
+    18394  10-17-2026 12:01   collaboration-framework/version-history.md
+    41117  10-17-2026 12:01   collaboration-framework/SKILL.md
+---------                     -------
+   542344                     103 files
+>> done: target/skills/collaboration-framework.zip
+Skill version contract: 25 source skills, 25 packages, 0 errors
+package path check
+zips scanned: 25
+markdown files scanned: 402
+hard failures: 0
+warnings: 596
+explicit exceptions: 3
+skipped external URLs: 796
+parser-suppressed material: omitted by Markdown parser
+
+warning summary:
+unique warning locations: 594
+  repo-only/provenance: 170
+  parser false positive: 154
+  bundled-reference: 124
+  sibling-skill-reference: 97
+  example-project path: 28
+  source-clone-reference: 23
+  detailed warning rows hidden; rerun with --show-warnings to print them
+
+findings:
+explicit exception	repo-only/provenance	knowledge/code-auditing/guides/01-audit-scope-and-map.md:82	code span	knowledge/<slug>/SKILL*.md	collaboration-framework/knowledge/code-auditing/guides/knowledge/<slug>/SKILL*.md	explicit-exception	placeholder for source-clone skill discovery, not a literal bundled package path
+explicit exception	repo-only/provenance	SKILL.md:549	code span	knowledge/<domain>/SKILL.md	collaboration-framework/knowledge/<domain>/SKILL.md	explicit-exception	placeholder for source-clone domain skill layout, not a literal bundled package path
+explicit exception	repo-only/provenance	SKILL.md:434	code span	knowledge/go/workbench/skills-accepted.md	go-guidelines/knowledge/go/workbench/skills-accepted.md	explicit-exception	workbench provenance file is source-clone material and is intentionally not bundled

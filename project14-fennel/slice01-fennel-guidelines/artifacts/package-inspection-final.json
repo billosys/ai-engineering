@@ -1,0 +1,21 @@
+{
+  "package_files": [
+    "fennel-guidelines/version-history.md",
+    "fennel-guidelines/guides/11-anti-patterns.md",
+    "fennel-guidelines/guides/10-lua-interop-and-distribution.md",
+    "fennel-guidelines/guides/07-errors-and-resources.md",
+    "fennel-guidelines/guides/06-modules-and-api-design.md",
+    "fennel-guidelines/guides/02-style-and-naming.md",
+    "fennel-guidelines/guides/05-pattern-matching.md",
+    "fennel-guidelines/guides/09-setup-tooling-and-testing.md",
+    "fennel-guidelines/guides/00-sources-and-license.md",
+    "fennel-guidelines/guides/04-functions-and-control-flow.md",
+    "fennel-guidelines/guides/01-values-and-core-idioms.md",
+    "fennel-guidelines/guides/03-tables-and-data.md",
+    "fennel-guidelines/guides/08-macros.md",
+    "fennel-guidelines/SKILL.md"
+  ],
+  "package_sha256": "ccf647effde82c3db7931f3069e457fd3e959940b74867bc075cf0c88e8d5d52",
+  "source_package_bytes_equal": true,
+  "working_local_links": 80
+}
