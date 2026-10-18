@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.60**, updated2026-10-18 under the Operator-approved
+Plan revision **1.61**, updated2026-10-18 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -62,14 +62,15 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice18 — picker tradeoffs](slice18-colour-picker-tradeoffs/slice-plan.md) | Closed: [independent acceptance](slice18-colour-picker-tradeoffs/cdc-verification.md#iteration02-independent-acceptance-and-slice18-closure--2026-10-17) at SOURCE7068045a/CC planningb4b02892; eleven-card picker family, usable recipes and bounded local semantics; owning1.0.15. |
 | [Slice19 — paragraph composition](slice19-paragraph-composition/slice-plan.md) | Closed: [independent acceptance](slice19-paragraph-composition/cdc-verification.md#iteration02-independent-acceptance-and-slice19-closure--2026-10-17) at SOURCE3c31bc11/CC planningb4eaa32c; eleven connected cards, local semantic reconciliation and packaged paragraph method; owning1.0.16. |
 | [Slice20 — font choice/hierarchy](slice20-font-choice-and-hierarchy/slice-plan.md) | Closed: [independent acceptance](slice20-font-choice-and-hierarchy/cdc-verification.md#iteration01-independent-acceptance-and-slice20-closure--2026-10-18) at SOURCE52bfa463/CC planningc800b94b; nine cards, supported examples/local semantics and packaged type method; owning1.0.17. |
+| [Slice21 — font features/spacing](slice21-font-features-and-spacing/slice-plan.md) | Active: six connected Butterick feature/spacing/figure cards plus the packaged type method; source fixes and actual local semantics together. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice20 are delivery choices, not issued assignments or a fixed slice
-count. The Operator has lifted the hold; Slice20 is closed and the next ready
-connected typography batch is prepared under this roadmap. Prefer
+Rows after Slice21 are delivery choices, not issued assignments or a fixed slice
+count. The Operator has lifted the hold; Slice21 is the current connected
+font-feature/spacing batch. Prefer
 several related cards/guide contexts when coherent; split for actual input/context
 or implementation risk, not one field/card/dimension by default. The47 provisional
 groups,161 headings and460 keyword candidates are navigation, not mandatory slices
@@ -129,10 +130,11 @@ Expedited Mode. Slices01–20 are closed at their recorded bounded scopes.
 Most recent child: [Slice20](slice20-font-choice-and-hierarchy/slice-plan.md),
 accepted at SOURCE52bfa463/CC planningc800b94b by its
 [independent record](slice20-font-choice-and-hierarchy/cdc-verification.md#iteration01-independent-acceptance-and-slice20-closure--2026-10-18).
-No new architecture, capability or input dependency emerged. Next: prepare the
-connected OpenType/spacing/figure cohort with same-batch source fixes, actual
-local semantics and affected guide integration. Its open set will own exact
-scope, source revision and dispositions.
+No new architecture, capability or input dependency emerged. Active:
+[Slice21](slice21-font-features-and-spacing/slice-plan.md#assignment-history),
+six connected OpenType/spacing/figure cards with same-batch fixes, actual local
+semantics and affected guide integration. Its open set owns exact scope, source
+revision, seven existing metadata scalar corrections and dispositions.
 All ten arc/thirteen project criterion states and higher gates remain unchanged.
 The Operator's2026-10-16 reassessment hold remains lifted.
 Future handoffs need the actual source, exact scope, complete bounded reads,
@@ -144,6 +146,11 @@ composition and Operator gates remain; useful Arc04 preparation can use accepted
 inputs now that the sequencing hold is lifted.
 
 ## Version History
+
+- 1.61 (2026-10-18): After independently closed Slice20, open Slice21 for the
+  six connected feature/spacing/figure cards and packaged method. Keep source
+  opinion/current definitions distinct and retain teaching/local semantics;
+  no new investigation, parent criterion closure or release-gate change.
 
 - 1.60 (2026-10-18): Independently close Slice20 at52bfa463/c800b94b after
   teaching/review/CQ corrections and fresh package integration. Continue ready
