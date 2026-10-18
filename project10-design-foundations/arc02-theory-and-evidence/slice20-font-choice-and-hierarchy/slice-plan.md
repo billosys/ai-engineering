@@ -6,12 +6,14 @@ depends-on: [Slice19 accepted paragraph method, accepted corpus and source recor
 
 # Slice20 — Font Choice and Hierarchy
 
-Revision **1.0**, opened2026-10-17. Two contributors: CDC Sofie plans/reviews
+Revision **1.1**, opened2026-10-17; updated2026-10-18. Two contributors: CDC Sofie plans/reviews
 separate CC via Operator; Expedited Mode. [Project](../../project-plan.md)1.73,
-[arc](../arc-plan.md)1.59, [ledger](ledger.md), [assignment](cc-prompt.md).
-SOURCE/main `3c31bc11e8513ddce10fd6a9c9227e82abd51092`; planning predecessor
+[arc](../arc-plan.md)1.59, [ledger](ledger.md), [current assignment](cc-prompt-iteration01.md).
+Initial SOURCE/main `3c31bc11e8513ddce10fd6a9c9227e82abd51092`; initial predecessor
 `ea1e8392abda378f1deaac9e1a64b8b2bfb9ef19` independently closes Slice19.
-The adding commit issues this open set. No source edits are accepted at opening.
+Initial issue7acd1465; current Iteration01 uses SOURCE2b0f5d25 and planning
+predecessore402e5a6. Independent initial review accepts S20-03/04 at that
+candidate; S20-01/02 remain open. See the preserved history below.
 
 ## Useful delivery and scope
 
@@ -101,11 +103,26 @@ needed. Ready for CC execution, with evidence-dependent outcomes honestly open.
 
 ## Assignment history
 
-- **Current / active:** `cc-prompt.md`, issued2026-10-17 by the adding commit;
-  predecessorea1e8392, SOURCE3c31bc11. Correct source and return evidence for
-  CDC review. Four rows open; no semantic/full-corpus acceptance by opening.
+- **Initial / returned, partially accepted:** `cc-prompt.md`, issued2026-10-17
+  at7acd1465, predecessorea1e8392/SOURCE3c31bc11. CC returned source2b0f5d25 /
+  planninge402e5a6. CDC accepts preservation/native-package rows03/04; teaching,
+  actual five-dimension outcomes and CQ answer-component rows01/02 remain open.
+- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-18 by the adding
+  commit; predecessore402e5a6/SOURCE2b0f5d25. F01–F03 in
+  [CDC review](cdc-verification.md#findings-requiring-iteration01): restore useful
+  examples in five bodies and guide preservation/routing; record actual nine-card
+  review-dimension results and reassess five CQ answers against their real asks.
+  Freeze current headers/owning1.0.17; maximum six source paths plus the existing
+  three CC planning outputs. No new inquiry/schema/fixture/phase or parent-plan
+  change. All accepted technical corrections remain. Author-ready recipe and
+  discriminating positive-example/component checks are supplied in the prompt.
 
 ## Version History
+
+- 1.1 (2026-10-18): Review initial return2b0f5d25/e402e5a6; accept S20-03/04
+  and issue Iteration01 for useful source teaching, the actual five review
+  dimensions and question-faithful CQ answers. Preserve four criteria and
+  successful technical/representation changes; no parent or release-gate change.
 
 - 1.0 (2026-10-17): Open the connected nine-card font/hierarchy correction and
   packaged method after Slice19 closure; preserve all source/corpus/release gates.
