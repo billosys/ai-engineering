@@ -1,8 +1,8 @@
 # Slice20 CDC verification
 
-2026-10-18. CDC Sofie independently reviews the initial CC return under the
-Two-Contributor Workflow and Expedited Mode. **S20-03/04 done at the checked
-candidate; S20-01/02 open. Slice20 stays active for Iteration01.**
+Current verdict — 2026-10-18: **all four criteria done; Slice20 closed** at
+SOURCE52bfa463 / CC planningc800b94b. See [Iteration01 acceptance](#iteration01-independent-acceptance-and-slice20-closure--2026-10-18).
+The initial review and findings below remain historical.
 
 ## Inputs and reproduced checks
 
@@ -141,3 +141,84 @@ Freeze all current headers and owning1.0.17/history; preserve accepted technical
 corrections and unaffected body/edge results. Parent plans/criteria/gates do not
 change; no slice closure or successor. Original fidelity, corpus/live/global,
 actual behavior/AT/font-failure, final hosted and release owners remain in force.
+
+## Iteration01 independent acceptance and Slice20 closure — 2026-10-18
+
+CDC Sofie independently accepts the bounded return under the Two-Contributor
+Workflow and Expedited Mode. Assignment `cc-prompt-iteration01.md`, issue
+`859ea8efe8bb6fc47320fed2cee48d49d5037897`; SOURCE
+`52bfa46332592106f9301226571d6f441df8ce2d`, direct child of2b0f5d25;
+CC planning `c800b94b46b80dedf62fbede13eb9359ac70d354`, direct child of issue.
+Project1.73, Arc02 1.59 and the unchanged four criteria govern this review.
+
+### Findings resolved and independent checks
+
+Read the complete six-path delta, changed card teaching and full type guide,
+current batch addendum including nine dimension rows/five CQ answers, and
+closing report. Prepared examples were freshly read at headings16–56,
+small-caps27–55, font-basics60–66, mixing-fonts26–34, bold-or-italic22–24.
+Retain the earlier complete nine-card/prepared-page/endpoint semantic review
+only where current bytes and claims are unaffected.
+
+- F01 passes: five concrete source-attributed examples again teach naming,
+  role contrast/consistency, structural signposting and optical compensation,
+  serif form distinction, and the source-described small-cap height/weight
+  comparison. They retain contextual limits and useful technical repairs.
+  Guide token preservation and the real sibling colour link are restored.
+- F02 passes: nine cards have separate source-fidelity, correctness, scope,
+  consistency and local relationship/CQ assessments in the sole batch artifact.
+  Pedagogical focus bullets are distinguished from review dimensions. Available
+  prepared support is separated from input-blocked original-capture fidelity.
+  Minor transcription clarification: the headings row's “six, six, and one”
+  wording refers imprecisely to cohort counts; exact query/table is CQ1=6,
+  CQ12=6, CQ19=2 across the cohort, with one membership per question on headings.
+  The exact CQ membership table is correct and governs; no source repair or
+  further implementation iteration is needed for this narrative ambiguity.
+- F03 passes: CQ1 defines hierarchy and its cues; CQ12 explains their combined
+  contribution; CQ26 supplies a resource/role-led evaluation method and concrete
+  contrast/coherence components. Missing artifacts limit actual validation,
+  not those conceptual answers. CQ6 retains its basic shape answer and missing
+  history/function component; CQ19 retains hypotheses without claiming an actual
+  hero diagnosis. No forced full answer or global competency claim.
+- Reproduced exact six source/three planning path sets, direct parents, separate
+  required trailers and whitespace. All233 identities/raw headers survive;
+  228 other complete cards, nine heading/citation/Relationships sections,
+  161 source files, five other guides, owning1.0.17/history, Make/helper and
+  guide sections outside the authorized section are unchanged. Four ledger
+  criteria and pre-review statuses are preserved by CC. Current44 exact typed
+  header identities/44 body statements/17 CQ memberships/five texts reproduce.
+- Local scope checks:13 source/planning files,32 local links/13 fragments resolve;
+  LF/EOF passes. An incidental first helper launch used unavailable `python`;
+  corrected `python3` ran successfully. Failed invocation is not evidence.
+- Fresh sequential `make help`, `make check-skills`, `make check-skill-versions`,
+  `make check-package-paths`, separate `make design`: all exit0.25 source skills/
+  25 packages/zero version errors;25 ZIPs/402 Markdown files,zero hard failures,
+  596 warnings at594 locations,3 exceptions,798 skipped external URLs. All8
+  fresh design Markdown members equal committed SOURCE52bfa463. ZIP SHA-256:
+  `c1589616ee03473d8595ae6dfbd5912b8e59deb9cb4bba3a280ec4775c232829`.
+  Whole version/history evidence is retained from C0 after owner-byte equality,
+  with fresh native source/package checks above. No browser/font/AT or hosted
+  behavior is inferred from packaging.
+
+| Row | CDC final disposition | Evidence / limit |
+|---|---|---|
+| S20-01 | done | Nine bounded five-dimension outcomes, restored teaching and independently reviewed source/technical distinctions; original-capture fidelity remains blocked. |
+| S20-02 | done |44 typed warrants separately from44 body statements;17 memberships/five component answers and coherent packaged type method. No full endpoint/global acceptance. |
+| S20-03 | done | Initial exact three-scalar lineage plus fresh233-header/identity and protected-byte checks above. |
+| S20-04 | done | Owning1.0.17 history/version contract, fresh required native/package gates and8/8 committed-source comparison; exact scoped return. |
+
+### Bubble-up and scope accounting
+
+Delivered nine corrected font/hierarchy cards and a usable packaged role-led
+method on main. Sole supporting artifact: `artifacts/batch-record.md`; both
+issued prompts and prior review evidence remain in place. All four original
+criteria are accounted for, with no silent drop. The local correction restored
+teaching rather than adding an investigation or validation subsystem.
+
+Arc plan requires child-close/current-sequence updates only. No new architecture,
+capability or acquisition dependency emerged. Continue the ready connected
+OpenType/spacing/figure typography cohort under the existing roadmap. All parent
+criteria retain their current states. P10-11 fidelity, full corpus/live/global
+composition, actual rendering/browser/AT/font-failure, final hosted and release/
+Operator gates remain open with existing owners. Neither source nor planning
+was pushed or published by CDC.

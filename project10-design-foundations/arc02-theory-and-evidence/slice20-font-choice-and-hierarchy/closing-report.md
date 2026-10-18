@@ -26,3 +26,18 @@ The corrected material gives a source-grounded method: start with content roles 
 Original capture/conversion fidelity and source-readiness remain with P10-11. Broader corpus and live/global-union composition remain open. Actual browser, assistive-technology, font-feature failure, and exact-revision hosted checks remain with their designated owners. P10-13, Arc04, A02-10, and release owners retain their gates. Local package checks do not establish those outcomes.
 
 CDC should independently review source commit `52bfa46332592106f9301226571d6f441df8ce2d` against the issued Iteration01 prompt and the sole batch artifact. This return does not close Slice20 or either parent ledger.
+
+## CDC acceptance and bubble-up — 2026-10-18
+
+CDC independently accepts SOURCE52bfa463 / CC planningc800b94b:
+**S20-01/02/03/04 done; Slice20 closed**. The CC proposals above are historical;
+[current independent row walk and reproduced checks](cdc-verification.md#iteration01-independent-acceptance-and-slice20-closure--2026-10-18)
+record the final authority, preserved limits and minor cohort-count clarification.
+
+Delivered the assigned nine-card font/hierarchy correction and packaged type
+method with source examples, role choices, conditional feature handling and
+actual conceptual CQ answers. One supporting artifact: `artifacts/batch-record.md`.
+Both issued prompts are preserved. All four criteria are accounted for; nothing
+is silently dropped. No new architecture or dependency emerged. Arc02 records
+the close and continues ready connected typography work; parent fidelity/global/
+behavior/hosted/composition/release gates remain open. No push/publication.

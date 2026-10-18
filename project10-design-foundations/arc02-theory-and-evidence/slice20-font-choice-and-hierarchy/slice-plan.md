@@ -1,19 +1,19 @@
 ---
 slice: slice20-font-choice-and-hierarchy
-status: active
+status: closed
 depends-on: [Slice19 accepted paragraph method, accepted corpus and source records]
 ---
 
 # Slice20 — Font Choice and Hierarchy
 
-Revision **1.1**, opened2026-10-17; updated2026-10-18. Two contributors: CDC Sofie plans/reviews
+Revision **1.2**, opened2026-10-17; updated2026-10-18. Two contributors: CDC Sofie plans/reviews
 separate CC via Operator; Expedited Mode. [Project](../../project-plan.md)1.73,
-[arc](../arc-plan.md)1.59, [ledger](ledger.md), [current assignment](cc-prompt-iteration01.md).
+[arc](../arc-plan.md)1.60, [ledger](ledger.md), [accepted final assignment](cc-prompt-iteration01.md).
 Initial SOURCE/main `3c31bc11e8513ddce10fd6a9c9227e82abd51092`; initial predecessor
 `ea1e8392abda378f1deaac9e1a64b8b2bfb9ef19` independently closes Slice19.
 Initial issue7acd1465; current Iteration01 uses SOURCE2b0f5d25 and planning
-predecessore402e5a6. Independent initial review accepts S20-03/04 at that
-candidate; S20-01/02 remain open. See the preserved history below.
+predecessore402e5a6. Independent Iteration01 acceptance at SOURCE52bfa463 / CC planningc800b94b
+closes all four criteria. Earlier assignments and dispositions remain below.
 
 ## Useful delivery and scope
 
@@ -107,7 +107,7 @@ needed. Ready for CC execution, with evidence-dependent outcomes honestly open.
   at7acd1465, predecessorea1e8392/SOURCE3c31bc11. CC returned source2b0f5d25 /
   planninge402e5a6. CDC accepts preservation/native-package rows03/04; teaching,
   actual five-dimension outcomes and CQ answer-component rows01/02 remain open.
-- **Current / active:** `cc-prompt-iteration01.md`, issued2026-10-18 by the adding
+- **Final / accepted:** `cc-prompt-iteration01.md`, issued2026-10-18 by the adding
   commit; predecessore402e5a6/SOURCE2b0f5d25. F01–F03 in
   [CDC review](cdc-verification.md#findings-requiring-iteration01): restore useful
   examples in five bodies and guide preservation/routing; record actual nine-card
@@ -118,6 +118,10 @@ needed. Ready for CC execution, with evidence-dependent outcomes honestly open.
   discriminating positive-example/component checks are supplied in the prompt.
 
 ## Version History
+
+- 1.2 (2026-10-18): Independently accept Iteration01 at52bfa463/c800b94b;
+  all four rows done and Slice20 closed. Preserve useful examples, five actual
+  review dimensions, question-faithful answers and parent gates.
 
 - 1.1 (2026-10-18): Review initial return2b0f5d25/e402e5a6; accept S20-03/04
   and issue Iteration01 for useful source teaching, the actual five review
