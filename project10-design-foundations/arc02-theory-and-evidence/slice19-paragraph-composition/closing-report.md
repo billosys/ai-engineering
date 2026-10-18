@@ -120,3 +120,19 @@ A02-10; exact-revision hosted rendering remains P10-13/Arc04; package release an
 publication remain Arc04/P10-13. No push, publication, closure or successor was
 performed. S19-01/02 stay open for CDC review; S19-03/04 retain their accepted C1
 scope.
+
+## CDC acceptance and bubble-up — 2026-10-17
+
+CDC independently accepts the final Iteration02 return at SOURCE3c31bc11 /
+CC planningb4eaa32c: **S19-01/02/03/04 done; Slice19 closed**. The CC proposals
+above remain historical. [Independent acceptance and final row walk](cdc-verification.md#iteration02-independent-acceptance-and-slice19-closure--2026-10-17)
+records reproduced scalar reversals,47 literal joins and retained package proof.
+
+The delivered piece is eleven corrected paragraph-control cards and the packaged
+context-led paragraph method, with eight explicit metadata scalar corrections.
+One supporting artifact: `artifacts/batch-record.md`. All issued prompts are
+preserved in the slice root. Initial/source/iteration limits remain visible;
+there is no silent drop. The freeze omission needed a local explicit amendment,
+not a new architecture or input dependency. Arc02 records child closure and
+continues ready connected typography work. All parent fidelity/global/behavior/
+final hosted/composition/release gates remain open; no push/publication.

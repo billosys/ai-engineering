@@ -1,7 +1,7 @@
 # Slice19 CDC verification
 
-Current review: [Iteration01](#iteration01-independent-review--2026-10-17);
-S19-01/02 open, S19-03/04 done at their recorded checked scope. Iteration02 active.
+Current verdict: **all four rows done; Slice19 closed** at SOURCE3c31bc11 /
+CC planningb4eaa32c. See [Iteration02 acceptance](#iteration02-independent-acceptance-and-slice19-closure--2026-10-17).
 The initial review below is preserved as history.
 
 2026-10-17. CDC Sofie independently reviewed the initial CC return under the
@@ -239,3 +239,66 @@ hosted rendering, corpus/live/global, actual browser/AT and release owners.
 Slice19 remains active; no successor is opened. No source edits, push or
 publication were performed by CDC. Arc's parent criteria/statuses are unchanged;
 its routine wording now leaves exact metadata bounds in the slice's one home.
+
+## Iteration02 independent acceptance and Slice19 closure — 2026-10-17
+
+CDC Sofie reviewed the actual Iteration02 return under the Two-Contributor
+Workflow. **All four criteria are done; Slice19 is closed.**
+
+Assignment: `cc-prompt-iteration02.md`, issuea0ab108d. Source C2:
+`3c31bc11e8513ddce10fd6a9c9227e82abd51092`, direct child of0428cbfd.
+CC planning H2:`b4eaa32c7d244dc364b2c553574d1a37d9bab306`, direct child of issue.
+Read both exact source scalar deltas and complete changed evidence/report
+addenda. Prior body/guide and relationship semantic review is retained under
+its pins because this delta changes no body or current relationship premise.
+
+### Reproduced final corrections and preservation
+
+- F04: both existing example scalars equal the two exact issued replacement
+  values. Reversing each restores its complete C1 card blob. All233 bodies,
+  identities and all remaining header bytes are unchanged;231 complete other
+  cards match. This also preserves every citation/heading,161 source files,
+  owning1.0.16/history, all guides and unrelated source paths. Source path set
+  is exactly two; planning exactly the batch, closing report and ledger
+  Evidence/Notes. Parent pins, separate trailers and commit whitespace pass.
+- F05: all47 predecessor cells now match original7068045a Relationships
+  statements and all47 final cells match current bodies. Each membership occurs
+  once;25 retained-with-limit/22 reworded. The two repaired cells have the
+  correct retained classification; other45 rows,49 warrants and CQ table are
+  unchanged. The original paraphrases remain explicitly superseded history.
+- Local checks on two source cards/three returned records:5 files,19 local
+  links and10 fragments resolve; LF/EOF passes. CC left criteria/statuses,
+  issued prompts and review records unchanged.
+- Independently retained C1 native/version/package evidence: all8 Markdown ZIP
+  members equal C1 and C2 source; Makefile, package/version checkers and path
+  exceptions are byte-identical. ZIP SHA-256 remains
+  `94273e08587c3afe8d37477da4180c5e0856c45a2e469e9674a9c721d49c36d4`.
+  Neither changed card is bundled. No new build is required for these two
+  unbundled scalar edits; the earlier fresh sequential gates remain checks at
+  C1, not freshly executed at C2. No required/affected gate was skipped.
+
+| Row | CDC final disposition | Evidence / scope |
+|---|---|---|
+| S19-01 | done | Original eleven five-dimension outcomes plus independently accepted body/guide repairs and final F04 examples; available-evidence scope only. |
+| S19-02 | done |49 typed local warrants/directions,47 exact predecessor/final dispositions,16 CQ occurrences/six partial answers and the integrated type method; no full endpoint/global acceptance. |
+| S19-03 | done | Full233 roster and exact eight-scalar total lineage, eleven frozen citation/heading sequences and protected bytes; current two edits reverse to C1. |
+| S19-04 | done | Independently accepted1.0.16 owner/history and native/package integration; final input-equality retention above, exact2/3-path return and sole batch artifact. |
+
+### Bubble-up check and what worked
+
+Delivered the assigned connected paragraph-composition correction on main and
+its usable packaged type method. The only supporting artifact is
+`artifacts/batch-record.md`; prompts/review/closing records remain first-class.
+Initial and both iteration assignments are preserved. No scope was silently
+dropped: two metadata corrections omitted by CDC's freeze were explicitly
+added to the eight-scalar boundary and checked. Direct reversal and literal
+joins resolved the final defects without new tooling or repeated native builds.
+
+Arc plan needs the routine child-close/current-sequence update; this slice
+reveals no new capability, acquisition dependency or architecture change.
+Remaining connected typography cohorts are ready under the existing roadmap.
+No project/arc ledger criterion is closed. P10-11 immutable fidelity, full corpus/
+live/global union, actual browser/AT/font-failure behavior, final hosted rendering
+and independent/Operator release gates retain their owners. Source is unpushed;
+publication was not authorized or performed. Proceed to the next ready slice
+under Expedited Mode, with its complete source-grounded open set.

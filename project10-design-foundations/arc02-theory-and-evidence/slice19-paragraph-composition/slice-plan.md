@@ -1,18 +1,18 @@
 ---
 slice: slice19-paragraph-composition
-status: active
+status: closed
 depends-on: [accepted corpus and source records, Slice18 closure]
 ---
 
 # Slice19 — Paragraph Composition
 
-Revision **1.2**, opened2026-10-17; updated2026-10-17. Two contributors: CDC Sofie plans/reviews
+Revision **1.3**, opened2026-10-17; updated2026-10-17. Two contributors: CDC Sofie plans/reviews
 separate CC through the Operator; Expedited Mode. [Project](../../project-plan.md)1.73,
-[arc](../arc-plan.md)1.57, [ledger](ledger.md), [current assignment](cc-prompt-iteration02.md).
+[arc](../arc-plan.md)1.58, [ledger](ledger.md), [accepted final assignment](cc-prompt-iteration02.md).
 Initial SOURCE/main pin `7068045aacd6cb75b856786a1de070791f21c2a8`; initial planning
 predecessor `da8dfaeb9950c55b3e6992664a3535bf5464d020` independently closes Slice18.
-Current Iteration02 uses SOURCE0428cbfd and planning predecessorcfb084c2;
-its narrower mutation boundary and preserved handoff are recorded below.
+Closed at SOURCE3c31bc11 / CC planningb4eaa32c after independent Iteration02
+acceptance. The accepted assignments and their exact scopes remain below.
 
 ## Usable delivery and bounds
 
@@ -127,17 +127,22 @@ implementation and independent acceptance remain separate. Ready for execution.
   Retain accepted preservation/package evidence at its recorded revision;
   rerun affected checks for the return. No closure or successor authority.
 
-- **Current / active:** `cc-prompt-iteration02.md`, issued2026-10-17 by the
-  adding commit; planning predecessorcfb084c2, SOURCE0428cbfd. F01/F02 body/guide
+- **Final / accepted:** `cc-prompt-iteration02.md`, issued2026-10-17 at
+  a0ab108d; planning predecessorcfb084c2, SOURCE0428cbfd. F01/F02 body/guide
   work passes; F03 current joins pass with two predecessor transcriptions still
   to repair. Correct only two frozen existing CSS example scalars and two batch
   predecessor/status cells (F04/F05). Explicit six→eight exception amendment and
-  matching S19-03 count preserve all other metadata/bodies and1.0.16. S19-01/02
-  open;03/04 independently checked atC1 with affected return checks required.
+  matching S19-03 count preserve all other metadata/bodies and1.0.16. Returned
+  SOURCE3c31bc11/CC planningb4eaa32c is accepted: all four rows done, including
+  fresh affected checks and unchanged-input retention of C1 package evidence.
   The iteration's literal replacements/reversal/join recipe is author-ready;
   no new inquiry or build machinery. No closure or successor authority.
 
 ## Version History
+
+- 1.3 (2026-10-17): Independently accept Iteration02 at3c31bc11/b4eaa32c;
+  all four criteria done, Slice19 closed. Preserve source/fidelity/semantic
+  boundaries and unchanged package evidence; routine Arc02 status roll-up only.
 
 - 1.2 (2026-10-17): Review Iteration01 at0428cbfd/cfb084c2; issue Iteration02 for
   two existing CSS comments overlooked by CDC's freeze and two predecessor-table
