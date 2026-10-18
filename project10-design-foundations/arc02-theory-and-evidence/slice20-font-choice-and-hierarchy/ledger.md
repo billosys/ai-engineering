@@ -1,0 +1,11 @@
+# Slice20 Ledger
+
+Four criteria, all open at issue. [Plan](slice-plan.md), [prompt](cc-prompt.md).
+CC may update Evidence/Notes only; independent CDC acceptance governs closure.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S20-01 | All nine font/hierarchy cards have complete five-dimension available-evidence review and usable, supported, contextually scoped teaching | Read every final section/metadata mapping against complete prepared pages and current primary definitions; inspect repeated claims and focused face/synthesis/hierarchy cases | correctness-grade | P10-03/06/09; connected source correction | open | — | Preserve useful examples and expressive craft; missing capture/conversion fidelity stays P10-11-owned. |
+| S20-02 | Local relationships, CQ answer components and packaged type method agree with the corrected font/hierarchy teaching | Reconcile44 typed tuples separately from44 original body statements/final changes; inspect17 CQ memberships/five actual questions, named endpoint premises and the complete affected guide | correctness-grade | A02-04/05/06; local semantic and live-use reconciliation | open | — | Direction, actual connecting premises and partial answers matter; counts/resolution alone are not warrant. |
+| S20-03 | All233 identities and protected representations survive outside the nine-body/three-scalar/guide correction | Compare baseline/current233 roster and raw/typed headers under exactly three scalar exceptions; nine frozen citations/headings,224 other cards,161 sources and protected source paths | serious | Arc06 preservation; P10-10/12 | open | — | No invented fields/provenance/confidence or silent metadata changes. |
+| S20-04 | Owning1.0.17 and corrected type method integrate in a fresh design package with required native gates and complete bounded return | Sequential Make gates/separate fresh design build;8/8 committed Markdown comparison; whole version/history contract; exact source/planning scopes/trailers and four-row closing report/sole artifact | correctness-grade | Repository gates; A02-08 | open | — | No hosted/browser/AT, corpus composition or release acceptance follows from local gates. |
