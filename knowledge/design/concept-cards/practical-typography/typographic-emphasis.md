@@ -77,9 +77,9 @@ Use for words or phrases that need distinction in prose, interfaces, and other t
 
 # Examples
 
-**Example 1** (bold-or-italic): The source's “overemphasizer” illustrates how highlighting every paragraph can remove contrast. It is a rhetorical example, not evidence of retina damage.
+**Example 1** (bold-or-italic): The source describes a serif as having small projecting strokes or “feet” at the ends of some letterforms, while a sans-serif lacks those projections. This is a basic shape distinction; the labels alone do not determine which emphasis treatment works.
 
-**Example 2** (bold-or-italic): The source compares bold and semibold as possible emphasis. Actual distinction depends on the supplied face and rendered result.
+**Example 2** (bold-or-italic): The source's “overemphasizer” illustrates how highlighting every paragraph can remove contrast. It is a rhetorical example, not evidence of retina damage; the source's preference for bold or semibold remains a candidate to compare in the supplied face and output.
 
 # Relationships
 
@@ -109,7 +109,7 @@ Use for words or phrases that need distinction in prose, interfaces, and other t
 
 # Verification Notes
 
-- Five outcomes: identify the intended meaning; select semantic markup independently; compare available styles; use emphasis proportionately; permit combined stress and importance when both meanings apply.
+- Teaching focus: identify the intended meaning; select semantic markup independently; compare available styles; use emphasis proportionately; permit combined stress and importance when both meanings apply. These focus points are separate from the five review dimensions recorded in the batch assessment.
 - Support: the assigned page supports Butterick's attributed preference for restraint and style selection. HTML Standard definitions support the `em`/`strong` meanings.
 - Limitation: no face inventory, actual page, accessibility tree, or assistive-technology output was tested. The source's “retina” wording is not adopted as a physiological finding.
 - Confidence records extraction confidence, not a guarantee that any visual style communicates the intended meaning.

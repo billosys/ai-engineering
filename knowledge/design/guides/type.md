@@ -23,11 +23,12 @@ than inferring coverage.
    including relevant scripts, fallback runs and code. Reuse one supplied family
    when it meets the roles; a pairing is optional and useful only when it solves
    an identified need. There is no fixed family count or point-size increment.
+   Keep existing semantic token names and relationships.
 3. Choose deliberate visible distinction through available size, weight, spacing
    and colour. Treat caps and bold/italic choices as contextual options, not bans.
 4. Review real strings, fallback, enlargement and the complete foreground/
    background colour pairs and states. Density of a text block differs from
-   literal colour; route pair contrast checks through sibling `colour.md`.
+   literal colour; route pair contrast checks through the [colour guide](colour.md).
 
 When genuine small-cap glyphs are intended, this optional request also suppresses
 other synthesized styles; it does not supply missing glyphs or prove what the

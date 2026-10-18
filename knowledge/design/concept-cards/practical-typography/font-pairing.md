@@ -67,9 +67,9 @@ Butterick says mixing fonts is optional, describes diminishing returns, recommen
 
 # Examples
 
-**Example 1** (mixing-fonts): Butterick points to newspapers as an example of pairing serif faces for body and headlines. It is an attributed illustration, not a universal low-contrast rule.
+**Example 1** (mixing-fonts): Butterick points to newspapers that use different serif faces for body text and headlines. The faces may contrast while their roles remain clear; compare their visible distinction in the actual text rather than assuming serif faces must be alike or different.
 
-**Example 2** (mixing-fonts): The source assigns fonts to central and peripheral content roles. This is one possible role model; actual interface roles may differ.
+**Example 2** (mixing-fonts): Butterick distinguishes central from peripheral content roles and recommends consistent treatment within a chosen role. A pairing can contrast across roles while repeating each role's treatment; this is a contextual example, not a guarantee, metric, or required role taxonomy.
 
 # Relationships
 
@@ -97,7 +97,7 @@ Butterick says mixing fonts is optional, describes diminishing returns, recommen
 
 # Verification Notes
 
-- Five outcomes: identify available resources; assign roles; compare actual text and styles; account for scripts, fallback, and mixed runs; treat pairings and counts as context-dependent candidates.
+- Teaching focus: identify available resources; assign roles; compare actual text and styles; account for scripts, fallback, and mixed runs; treat pairings and counts as context-dependent candidates. These focus points are separate from the five review dimensions recorded in the batch assessment.
 - Support: the assigned source makes pairing optional and offers role-based and same-designer heuristics. The OpenType variations overview supports the bounded possibility of multiple instances in one resource.
 - Limitation: no actual web application, strings, font inventory, target output, or license was supplied; CQ26 can be answered only as a general method, not a concrete pairing recommendation.
 - Confidence records extraction confidence, not the success of an unobserved pairing.

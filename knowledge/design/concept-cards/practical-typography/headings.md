@@ -78,9 +78,9 @@ Use in documents, web pages, and interfaces. A 12-to-12.5-point increment may be
 
 # Examples
 
-**Example 1** (headings): Butterick recommends distinct but restrained heading treatments. Treat his caps, centering, and level-count advice as his preferences.
+**Example 1** (headings): Butterick's `5(a)(1)(iv)` example shows how deeply nested signposting can leave a heading over-formatted and hard to scan. Inspect whether the content structure needs that many levels and whether the visual treatment makes the hierarchy legible; the example is not a universal level ban.
 
-**Example 2** (headings): A larger size is one available way to distinguish a heading, but weight, spacing, or colour may also contribute.
+**Example 2** (headings): Butterick notes that a relatively heavy bold heading can look darker than intended; trying it half a point or a full point smaller may optically compensate. Compare relative weight, size, spacing, and signposting in context rather than always enlarging headings.
 
 # Relationships
 
@@ -110,7 +110,7 @@ Use in documents, web pages, and interfaces. A 12-to-12.5-point increment may be
 
 # Verification Notes
 
-- Five outcomes: derive semantic levels from structure; distinguish levels visually; use multiple possible visual properties; select sizes and spacing contextually; inspect actual reading order and output behavior.
+- Teaching focus: derive semantic levels from structure; distinguish levels visually; use multiple possible visual properties; select sizes and spacing contextually; inspect actual reading order and output behavior. These focus points are separate from the five review dimensions recorded in the batch assessment.
 - Support: Butterick's page provides contextual visual advice. The HTML Standard defines headings structurally and distinguishes `em` stress from `strong` importance; the full guide is the source for the semantics distinction.
 - Limitation: no rendered document, browser pagination, or assistive-technology output was tested. HTML semantics do not guarantee a particular visual result.
 - Confidence records extraction confidence, not proof that a particular hierarchy works for every audience.

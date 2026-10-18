@@ -76,7 +76,7 @@ Abbreviations, acronyms, headings, and citations are source examples, not univer
 
 # Examples
 
-**Example 1** (small-caps): Butterick compares scaled and designed forms. The prepared illustration is not newly rendered evidence for this review.
+**Example 1** (small-caps): In the prepared Witness Protection comparison, Butterick says mechanically scaled capitals appear too tall and their vertical strokes too light beside the surrounding text. Use height and stroke-weight consistency as inspection cues alongside checking whether the supplied font actually supports small-cap forms. This describes the source comparison, not a newly rendered image or font test.
 
 **Example 2** (small-caps): A bibliographic citation illustrates one possible use; verify the font feature and actual output before relying on it.
 
@@ -109,7 +109,7 @@ Abbreviations, acronyms, headings, and citations are source examples, not univer
 
 # Verification Notes
 
-- Five outcomes: distinguish designed and scaled forms; identify the requested OpenType feature; check actual font/script support; understand synthesis suppression and its wider effects; choose fallback and inspect actual output.
+- Teaching focus: distinguish designed and scaled forms; identify the requested OpenType feature; check actual font/script support; understand synthesis suppression and its wider effects; choose fallback and inspect actual output. These focus points are separate from the five review dimensions recorded in the batch assessment.
 - Support: CSS Fonts 4 draft §§6.6 and 2.8 describe feature mapping and synthesis. The specification is a draft and this card claims no browser support survey.
 - Limitation: no actual font lacking small caps, real supported font, browser, or output was tested. The prepared comparison image is not newly observed evidence.
 - Existing `css_implementation[0].property` and `.example` are corrected to the exact prompt-authorized values; `support` and all other metadata remain frozen.

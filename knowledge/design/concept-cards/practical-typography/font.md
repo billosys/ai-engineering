@@ -79,7 +79,7 @@ Fonts are used in print, web, and application rendering. `font.woff2` and `MyFon
 
 **Example 1** (font-basics): Butterick explains the historical family-versus-instance distinction and observes that technology has changed common usage. Preserve the distinction as useful terminology, not as a rigid universal vocabulary.
 
-**Example 2** (font-basics): The source's price and quality recommendation is an attributed example from its publication context, not a current price or quality guarantee.
+**Example 2** (font-basics): Butterick uses Stempel Garamond and ITC Garamond to show that a shared historical name does not identify the same face, design, or properties. These are source examples for checking the actual resource, not a recommended font roster or a legal conclusion.
 
 # Relationships
 
@@ -110,7 +110,7 @@ Fonts are used in print, web, and application rendering. `font.woff2` and `MyFon
 
 # Verification Notes
 
-- Five outcomes: distinguish resource terminology; inventory available faces and axes; check coverage/features on actual text; respect project-supplied assets and actual license terms; treat price/category and file-count claims as non-universal.
+- Teaching focus: distinguish resource terminology; inventory available faces and axes; check coverage/features on actual text; respect project-supplied assets and actual license terms; treat price/category and file-count claims as non-universal. These focus points are separate from the five review dimensions recorded in the batch assessment.
 - Support: the assigned page discusses fonts, glyphs, spacing, kerning, features, and source recommendations. OpenType variations documentation supports multiple variable instances; TrueType documentation supports the limited instruction-stream qualification.
 - Limitation: no actual project font inventory, license review, security review, browser support survey, or rendered comparison was performed.
 - The CSS mapping is retained as a baseline illustration with placeholder names; it does not identify a bundled resource.
