@@ -30,72 +30,69 @@ answers_questions:
 rosetta_stone: []
 css_implementation:
   -
-    property: "font-feature-settings"
-    example: "body { font-feature-settings: 'kern' 1, 'liga' 1; } .sc { font-feature-settings: 'smcp' 1; }"
+    property: "font-variant-ligatures, font-variant-numeric"
+    example: ".text { font-variant-ligatures: common-ligatures; } .numbers { font-variant-numeric: tabular-nums; } /* requests depend on supplied font and shaping; no feature guarantee */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-OpenType features are layout capabilities embedded in fonts that enable typographic luxuries like small caps, alternate figures, ligatures, and ordinals — but usable only when both the font and the application support them.
+OpenType layout features let a font provide alternate glyphs and shaping rules. A usable result depends on the supplied font and the shaping application; language-required shaping and optional refinements such as Latin discretionary forms are different cases.
 
 # Core Definition
 
-Butterick explains: "OpenType includes layout features — commonly known as OpenType features — that allow fonts to specify alternate letterforms, and rules for how they should be inserted into the text."
+Butterick describes OpenType features as font-provided alternate letterforms and rules for inserting them into text. His prepared page says OpenType layout features are necessary for languages such as Arabic and Urdu, while examples such as small caps, alternate figures, ordinals and fractions are optional typographic refinements. Feature availability varies by font, and the application must support the requested feature.
 
-The catch: "Merely selecting an OpenType font doesn't make its features available. Rather, your typesetting program also has to support the features you want to use." This means "you can only use a given feature if it's supported by both the font and the application."
-
-Type designers add features at their discretion: "an OpenType-format font can have any number of OpenType features, including none."
+The prepared page reports browser and desktop/mobile support and names Word versions and application controls from its source era. Treat those as attributed, time-bounded reports, not a current compatibility list. Check the actual font, application, script and text. A declaration requests a feature; it cannot supply missing glyphs or feature data.
 
 # Prerequisites
 
-- **Font** — OpenType features are embedded in font files.
+- **Font** — The selected resource must provide the relevant feature or glyphs; the shaping environment must support their use.
 
 # Key Properties
 
-1. **Dual requirement**: Both font and application must support the feature.
-2. **Designer discretion**: Features vary per font.
-3. **Key features**: Small caps (`smcp`), ligatures (`liga`), kerning (`kern`), alternate figures, ordinals, fractions.
-4. **Best support**: Professional page-layout apps (InDesign, Illustrator).
-5. **Web support**: All major desktop browsers; spottier on mobile.
-6. **Word support**: Limited — ligatures, alternate figures, stylistic sets (Word 2010+).
+1. **Two-sided availability**: inspect both the supplied font and the shaping application.
+2. **Font-specific selection**: designers may include different features, or none.
+3. **Different purposes**: required script shaping is not equivalent to optional Latin refinements such as stylistic forms or discretionary ligatures.
+4. **High-level controls**: use purpose-specific CSS properties when available; low-level feature tags are for specific controls and may override higher-level requests.
+5. **No behavior claim from syntax**: verify representative strings and fallback in the target environment.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. In Word: Font > Advanced > Advanced Typography panel.
-2. In Pages: Font panel (Cmd+T) > gear icon > Typography.
-3. In CSS: `font-feature-settings` with feature tags.
-4. Check font specimen sheets for available features.
+1. Identify the actual language, script, text and reading role.
+2. Inspect supplied font documentation or feature metadata, then choose controls supported by the target application.
+3. Compare real strings in the selected face and fallback, including the styles that will be used.
+4. Treat source-era Word, Pages and browser steps as historical guidance; consult current application documentation for a current procedure.
 
 ## To Identify/Recognise:
-1. Professional fonts with OpenType features: specimen sheets list available features.
-2. Active features: alternate letterforms appear in the text.
+1. A specimen or font inspection can show which features are supplied; it does not establish how the target stack will shape the text.
+2. Compare actual output for the relevant script and string. A Latin sample cannot establish coverage for another writing system.
 
 # Examples
 
-**Example 1** (opentype-features): OpenType enabled small caps, ligatures, and alternate figures — "luxuries" that "had previously been difficult or impossible."
+**Example 1** (opentype-features): Butterick presents small caps, ligatures and alternate figures as optional refinements made possible by OpenType. His prepared page separately notes that layout features are required for scripts such as Arabic and Urdu. The example is a distinction of purpose, not a test of a named font.
 
 # Relationships
 
 ## Builds Upon
-- **Font** — OpenType features are part of font files.
+- **Font** — Font resources may contain layout features; actual availability and shaping also depend on application and text.
 
 ## Related
-- **Small Caps** — Accessed via `smcp` OpenType feature.
-- **Ligatures** — Accessed via `liga` OpenType feature.
-- **Alternate Figures** — Accessed via OpenType figure features.
-- **Kerning** — Accessed via `kern` OpenType feature.
+- **Small Caps** — `smcp` is one possible feature; inspect the font and target shaping behavior.
+- **Ligatures** — Ligature classes differ; optional common forms do not replace required script shaping.
+- **Alternate Figures** — Figure forms and widths are optional font features with separate typographic choices.
+- **Kerning** — Kerning is a specific spacing feature, distinct from other substitutions and positioning behavior.
 
 # Common Errors
 
-- **Error**: Assuming OpenType features are automatically active.
-  **Correction**: Features must be explicitly enabled in most applications. Check both font support and application support.
+- **Error**: Assuming every OpenType font exposes the same features or that every feature must be explicitly enabled.
+  **Correction**: Inspect the actual resource and application. CSS Fonts specifies required script features and common ligatures among defaults; optional features and supported forms still vary.
 
 # Common Confusions
 
-- **Confusion**: All OpenType fonts have the same features.
-  **Clarification**: "Type designers add these features at their discretion. An OpenType-format font can have any number of OpenType features, including none."
+- **Confusion**: OpenType support means a particular feature will appear in every font and script.
+  **Clarification**: The format permits features; each resource, shaping system, language and text determines what is available and applied.
 
 # Source Reference
 
@@ -103,9 +100,7 @@ Type designers add features at their discretion: "an OpenType-format font can ha
 
 # Verification Notes
 
-- Definition source: Direct quotes from opentype-features.md.
-- Confidence rationale: High — clear explanation of dual-requirement constraint.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Definition and application-support advice are attributed to Butterick's prepared page; its compatibility statements are source-era reports.
+- CSS Fonts Module Level 4 is a Working Draft; its defaults distinguish required script features from optional feature requests.
+- No named font, application, browser, assistive technology or rendered feature was tested.
+- The local prerequisite and related entries are retained with qualified, card-specific premises; CQ1 membership is reviewed separately in the batch record.

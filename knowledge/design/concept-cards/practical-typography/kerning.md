@@ -31,75 +31,75 @@ answers_questions:
 rosetta_stone: []
 css_implementation:
   -
-    property: "font-kerning / font-feature-settings"
-    example: "body { font-kerning: normal; text-rendering: optimizeLegibility; }"
+    property: "font-kerning"
+    example: ".text { font-kerning: normal; } /* metric kerning request; inspect actual font and text */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Kerning is the adjustment of spacing between specific letter pairs to improve visual consistency — built into fonts by designers and always turned on, distinct from letterspacing which affects all pairs uniformly.
+Kerning adjusts spacing between glyphs using font-provided data or a typesetting system's adjustment. It differs from tracking, which adds spacing across text; a visible gap by itself does not show whether kerning is active.
 
 # Core Definition
 
-Butterick defines: "Kerning is the adjustment of specific pairs of letters to improve spacing and fit. (It's distinct from letterspacing, which affects all pairs.) Most fonts come with hundreds and sometimes thousands of kerning pairs inserted by the font designer."
+Butterick defines kerning as adjustment of specific letter pairs and contrasts it with letterspacing, which affects all pairs. He recommends “Always use kerning” and says built-in kerning is sufficient for most users; retain this as his advice, not a claim about every application's default or every font's data.
 
-The rule is simple: "Always use kerning." For most users, built-in kerning is sufficient: "For professional typographers, [manual kerning] is a mandatory skill, but for everyone else, the built-in kerning is just fine."
+CSS Fonts defines `font-kerning` values `auto`, `normal` and `none`. `normal` requests metric kerning for proportionally spaced glyphs. `auto` leaves application to the user agent; fonts without kerning data show no effect. This request does not promise equal gaps: glyph shapes, pair data, script, font selection and shaping affect the result. Tracking is applied in addition to kerning.
 
 # Prerequisites
 
-- **Font** — Kerning data is embedded in font files.
+- **Font** — The selected font may provide kerning data; the actual shaped result also depends on text and rendering stack.
 
 # Key Properties
 
-1. **Pair-specific**: Adjusts specific problematic letter combinations.
-2. **Built into fonts**: Hundreds to thousands of pairs per font.
-3. **Always on**: "Always use kerning."
-4. **Distinct from letterspacing**: Kerning = specific pairs; letterspacing = all pairs.
-5. **Manual kerning optional**: Built-in is adequate for non-professionals.
+1. **Pair/context sensitive**: spacing adjustments relate to glyphs in context, not a uniform addition after every character.
+2. **Data and output differ**: a font can contain kerning data without a visible change for a particular string; a CSS declaration does not prove the result.
+3. **Tracking is separate**: `letter-spacing` adds spacing after shaping and kerning rather than replacing pair adjustments.
+4. **Fixed-width glyphs**: CSS Fonts says kerning is not intended for fixed-width glyphs.
+5. **Source recommendation**: Butterick's “Always use kerning” is useful advice, not evidence that all tools have the same default.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. In Word: Font > Advanced > check "Kerning for fonts 8 Points and above."
-2. In Pages: kerning is on by default.
-3. In CSS: `font-kerning: normal` or `text-rendering: optimizeLegibility`.
-4. Include kerning settings in paragraph/character style definitions.
+1. Use a high-level control such as `font-kerning: normal` when metric kerning is intended and the target supports it.
+2. Inspect the actual font and representative text, including the script, size and style in use.
+3. Treat Butterick's Word and Pages instructions as source-era procedures; check current application guidance rather than assuming the settings remain universal.
+4. Add tracking only for a separate contextual spacing goal; judge the combined result.
 
 ## To Identify/Recognise:
-1. Without kerning: visible gaps between certain pairs (e.g., AV, To, Wa).
-2. With kerning: consistent spacing across all letter pairs.
+1. Compare actual shaped output for pairs such as AV, To or Wa, which the card uses as visual examples.
+2. A large visible gap does not prove kerning is off: the font may lack data, the pair may have no adjustment, or other shaping and spacing may affect it.
 
 # Context & Application
 
-- **Typical contexts**: All typeset text — kerning should always be active.
-- **Common applications**: Ensuring consistent letter spacing, especially important at larger sizes (headings) and with all caps.
+- **Typical contexts**: Review pair spacing in the actual text and styles, especially where large display text makes a particular pair conspicuous.
+- **Common applications**: Use the target application's current controls and inspect output; this card does not establish a current default for Word, Pages or browsers.
 
 # Examples
 
-**Example 1** (kerning): Kerning "reduces the large gaps between certain letter pairs, making them consistent with the rest of the font."
+**Example 1** (kerning): Butterick's prepared page describes kerning reducing conspicuous gaps between selected pairs so they sit more consistently with the font. This is his explanation of the example, not a newly rendered specimen.
 
 # Relationships
 
 ## Builds Upon
-- **Font** — Kerning data is part of the font file.
+- **Font** — A resource may include spacing and kerning data; its presence alone does not establish the final shaped spacing.
 
 ## Contrasts With
-- **Letterspacing** — Letterspacing affects all pairs uniformly; kerning adjusts specific pairs.
+- **Letterspacing** — Kerning uses pair/context adjustments; tracking adds spacing across typographic character units. CSS Text places letter spacing in addition to kerning.
 
 ## Related
-- **Optical vs. Metric Spacing** — InDesign's "optical" spacing overrides font kerning data.
-- **OpenType Features** — Kerning is activated as an OpenType feature (`kern`).
+- **Optical vs. Metric Spacing** — Butterick's comparison concerns InDesign's named modes; Adobe describes metrics as using font data and optical as shape-based adjustment. Do not generalize it to a CSS control.
+- **OpenType Features** — OpenType `kern` is one feature route; CSS recommends the higher-level `font-kerning` control for ordinary kerning requests.
 
 # Common Errors
 
-- **Error**: Leaving kerning turned off (the default in some word processors).
-  **Correction**: Always turn on kerning. In Word, you must manually enable it.
+- **Error**: Treating a visible gap as proof that kerning is disabled or prescribing `text-rendering: optimizeLegibility` as a universal kerning switch.
+  **Correction**: Check the font, text, shaping environment and current application controls. `font-kerning: normal` requests metric kerning, but no data can mean no visible effect.
 
 # Common Confusions
 
-- **Confusion**: Kerning and letterspacing are the same thing.
-  **Clarification**: Kerning adjusts specific problematic pairs. Letterspacing (tracking) adjusts all pairs uniformly. They serve different purposes.
+- **Confusion**: Kerning and letterspacing are interchangeable.
+  **Clarification**: Kerning adjusts spacing in glyph context; tracking adds spacing across text. Neither guarantees a particular visual result without reviewing the actual string.
 
 # Source Reference
 
@@ -107,9 +107,7 @@ The rule is simple: "Always use kerning." For most users, built-in kerning is su
 
 # Verification Notes
 
-- Definition source: Direct quotes from kerning.md.
-- Confidence rationale: High — clear definition and simple rule.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Pair-specific explanation and “Always use kerning” are attributed to Butterick; his application steps are source-era reports.
+- CSS Fonts defines metric kerning controls, proportionally spaced glyph scope, missing-data behavior and interaction with tracking.
+- No browser, font, app, assistive technology or actual pair output was tested.
+- The prerequisite, contrast and related entries state local premises; CQ5/CQ12 contributions and gaps are separately recorded in the batch.

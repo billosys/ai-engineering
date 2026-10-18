@@ -36,69 +36,69 @@ css_implementation:
 
 # Quick Definition
 
-Alternate figures are variant number designs — lining vs. oldstyle, tabular vs. proportional — that suit different typographic contexts: lining for caps, oldstyle for body text, tabular for aligned columns, proportional for running text.
+Alternate figures offer different numeral forms and advances. Figure height/form (lining or oldstyle) and width (tabular or proportional) are separate choices; suitability depends on font support, text and alignment need.
 
 # Core Definition
 
-Butterick explains that figures present a design challenge because they "rely on shapes that are found nowhere in the uppercase and lowercase alphabets." Type designers address this with alternate figure sets.
+Butterick describes figures as forms that do not come from the uppercase and lowercase alphabets, and says type designers may supply alternates for different contexts. He cautions that not every font supplies every set and that the default figures are intended to work across contexts. Preserve that as useful source advice rather than a guarantee that a default always suits a particular design.
 
-Two independent axes: **lining vs. oldstyle** (height) and **tabular vs. proportional** (width). Lining figures "line up at the top and bottom" like caps; oldstyle figures "are designed to look more like lowercase letters." Tabular figures have fixed widths for column alignment; proportional figures have natural widths.
+Lining figures often align near cap height, but Butterick notes some are between lowercase and cap height. Oldstyle figures use ascenders and descenders and may suit lowercase text; he does not say they are inherently better. His `TOP 40 IN 1987` example contrasts oldstyle figures in caps with lining figures. Separately, tabular digits share a fixed advance, while proportional figures vary in width. The four combinations are lining-proportional, lining-tabular, oldstyle-proportional and oldstyle-tabular.
 
-The defaults are always safe: "It's never wrong to use the default figures in your font."
+A line of zeroes above ones can reveal whether those two digit forms have equal advances in that font. It cannot establish equal widths for every digit, nor does tabular width alone align decimal points or values with different digit counts; those need suitable layout and formatting.
 
 # Prerequisites
 
-- **Font** — Alternate figures are font-specific features.
-- **OpenType Features** — Alternate figures are accessed as OpenType features.
+- **Font** — Available numeral forms and widths depend on the supplied font and shaping application.
+- **OpenType Features** — Alternate figures may be exposed as font features; inspect actual support.
 
 # Key Properties
 
-1. **Two axes**: Lining/oldstyle (height) and tabular/proportional (width).
-2. **Four combinations**: Lining proportional, lining tabular, oldstyle proportional, oldstyle tabular.
-3. **Defaults are fine**: "It's never wrong to use the default figures."
-4. **Lining for caps**: "Lining figures are always preferred for all caps text."
-5. **Oldstyle for body**: Work best in lowercase body text.
-6. **Tabular for columns**: Essential for vertically aligned grids of numbers.
-7. **Proportional for prose**: Better even spacing in running text.
+1. **Independent axes**: lining/oldstyle concerns figure form and height; tabular/proportional concerns advance width. These are not variable-font axes.
+2. **Four combinations**: a font may offer any subset of the four form/width combinations.
+3. **Optionality**: the prepared source says defaults are generally useful and alternates are not present in every font.
+4. **Context**: lining can fit caps; oldstyle may integrate with lowercase; proportional figures may suit prose; tabular advances can help columns.
+5. **Alignment limits**: equal digit advances aid column alignment but do not perform decimal alignment or compensate for different value lengths by themselves.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. In Word: Font > Advanced > Number spacing / Number forms menus.
-2. In CSS: `font-variant-numeric: oldstyle-nums proportional-nums` (or other combinations).
-3. Check if your font has alternates: type zeros above ones — same length = tabular.
+1. Identify whether the task needs a figure form, common digit advances, or both; choose each axis separately.
+2. Check the actual font and target application's available controls. Use a high-level numeric property such as `font-variant-numeric` when supported.
+3. For columns, request tabular figures if available and also use a layout that aligns values or decimal separators.
+4. Compare a zero/one sample only as a limited width clue; inspect other digits and representative values.
 
 ## To Identify/Recognise:
-1. Lining: all digits same height, aligned with caps.
-2. Oldstyle: digits have ascenders and descenders like lowercase.
-3. Tabular: zeros and ones occupy the same width.
-4. Proportional: narrow digits (1) take less space than wide digits (0).
+1. Lining figures often sit near cap height; some do not. Oldstyle figures may ascend or descend relative to the baseline.
+2. Compare `00000000000` with `11111111111` to check those two advances only.
+3. Compare actual column values and decimal positions; equal digit widths alone do not establish complete alignment.
 
 # Examples
 
-**Example 1** (alternate-figures): Oldstyle figures with caps text ("TOP 40 IN 1987") — looks wrong because oldstyle descends below baseline.
+**Example 1** (alternate-figures): Butterick's `TOP 40 IN 1987` comparison uses oldstyle figures as the source's poor-fit example with caps and lining figures as its preferred fit. He also notes lining figures may fall between lowercase and cap height.
 
-**Example 2** (alternate-figures): Proportional figures in a column — numbers don't align vertically. Tabular figures in the same column — numbers align correctly.
+**Example 2** (alternate-figures): Butterick contrasts proportional and tabular currency columns. Tabular advances help the digits occupy consistent widths, while layout still determines alignment of separators and values of different lengths.
+
+**Example 3** (alternate-figures): The zero-over-one test compares equal-length runs of two digits. It indicates whether zero and one have equal advances, not whether all digits do.
 
 # Relationships
 
 ## Builds Upon
-- **Font** — Alternate figures are font-specific.
-- **OpenType Features** — Accessed as OpenType features.
+- **Font** — The font and shaping application determine which forms and widths are available.
+- **OpenType Features** — Alternate figure features can expose these choices; availability is font-specific.
 
 ## Related
-- **All Caps** — Lining figures are mandatory with caps.
-- **Body Text** — Oldstyle proportional figures suit body text.
+- **All Caps** — Lining forms may suit caps, but the source's preference is not a mandatory rule and some lining figures sit below cap height.
+- **Body Text** — Proportional oldstyle figures are one possible body-text treatment; use actual content and context.
 
 # Common Errors
 
-- **Error**: Using oldstyle figures with all-caps text.
-  **Correction**: "With caps, you should not use oldstyle figures. They look wrong." Use lining figures.
+- **Error**: Treating lining figures as always cap-height, oldstyle as mandatory for prose, or tabular figures as sufficient for every alignment problem.
+  **Correction**: Inspect the actual font, keep the two axes independent, and use layout for decimal or unequal-length alignment.
 
 # Common Confusions
 
-- **Confusion**: The figure style in the default position is the only option.
-  **Clarification**: Professional fonts may include all four combinations. Check OpenType features for alternatives.
+- **Confusion**: If zero and one have equal widths, all digits and all number strings align.
+  **Clarification**: That sample tests only those two advances. Check the other digits, separators and representative values, then align them with layout.
 
 # Source Reference
 
@@ -106,9 +106,6 @@ The defaults are always safe: "It's never wrong to use the default figures in yo
 
 # Verification Notes
 
-- Definition source: Direct quotes from alternate-figures.md.
-- Confidence rationale: High — systematic explanation of all four combinations.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- The four combinations, `TOP 40 IN 1987`, currency columns and zero/one probe come from Butterick's prepared page; preferences are attributed rather than universalized.
+- CSS Fonts Working Draft separates numeric figure and spacing values; no font feature or column rendering was tested.
+- The font/OpenType and caps/body-text relations are locally qualified; CQ5 anatomy is not answered by numeral examples and remains a real gap.

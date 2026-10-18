@@ -15,6 +15,13 @@
   complete colour-pair review. No browser, assistive-technology or font-failure
   behavior was tested.
 
+## Version 1.0.18 - 2026-10-18
+
+- Corrected font-feature, kerning, tracking, ligature, numeral and InDesign
+  spacing teaching with attributed examples and qualified technical guidance.
+- Added a contextual feature and spacing check to the packaged type guide;
+  feature availability and rendered behavior were not tested.
+
 ## Version 1.0.16 - 2026-10-17
 
 - Correct paragraph-composition claims about type size, em metrics, line height, measure, responsive text, paragraph separation, hyphenation and fragmentation while retaining scoped source advice.

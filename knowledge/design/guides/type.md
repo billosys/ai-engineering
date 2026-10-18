@@ -52,6 +52,26 @@ the selected face and script. A Latin sample does not establish multilingual
 support. Do not claim font failure, browser coverage or improved readability
 without testing the named environment.
 
+### Check feature and spacing choices in context
+
+Choose the reading or number role and actual script. Inspect the supplied font's
+features, then use a suitable high-level control supported by the target. Compare
+representative strings in the face and fallback, including number alignment and
+the styles in use; keep the text meaningful and inspect the rendered output.
+
+For a column that needs equal digit advances, this scoped request can be a
+starting point when the font and shaping environment support tabular figures:
+
+```css
+.number-column { font-variant-numeric: tabular-nums; }
+```
+
+It does not align decimal separators or values with different digit counts by
+itself. `font-kerning: normal` can request metric kerning for proportionally
+spaced text when appropriate; a font without kerning data may show no change.
+Tracking is contextual and script-sensitive. These declarations are requests,
+not evidence of available features or successful output.
+
 ## Choose a scale, then judge it optically
 
 A scale may help coordinate hierarchy. One optional construction is
