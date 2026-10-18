@@ -5,6 +5,16 @@
 
 # visual-design-system Version History
 
+## Version 1.0.17 - 2026-10-18
+
+- Corrected typography, font resource, pairing, heading, emphasis, capitalization,
+  small-caps and typographic-colour guidance as contextual methods; preserved
+  supplied assets and separated semantic structure from visual styling.
+- Added a bounded hierarchy review sequence to the packaged type guide and
+  clarified small-cap feature requests, synthesis effects, fallback limits and
+  complete colour-pair review. No browser, assistive-technology or font-failure
+  behavior was tested.
+
 ## Version 1.0.16 - 2026-10-17
 
 - Correct paragraph-composition claims about type size, em metrics, line height, measure, responsive text, paragraph separation, hyphenation and fragmentation while retaining scoped source advice.

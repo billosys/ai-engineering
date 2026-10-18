@@ -40,73 +40,68 @@ css_implementation:
 
 # Quick Definition
 
-Typographic emphasis uses bold or italic — never both simultaneously — sparingly, because when everything is emphasized, nothing is emphasized.
+Typographic emphasis makes selected content stand out through visual treatment; choose it for the intended meaning and context rather than enforcing a universal bold-versus-italic rule.
 
 # Core Definition
 
-Butterick's two rules: "Bold or italic — think of them as mutually exclusive. That is rule #1." And "Rule #2: use bold and italic as little as possible. They are tools for emphasis. But if everything is emphasized, then nothing is emphasized."
-
-The choice between bold and italic depends on the font type: "With a serif font, use italic for gentle emphasis, or bold for heavier emphasis." For sans serif: "skip italic and use bold for emphasis" because "most sans serif italic fonts just have a gentle slant that doesn't stand out on the page."
+Butterick recommends using bold and italic sparingly and often treats them as alternatives. He favors italic for gentle emphasis in serif text and bold in sans-serif text, but these are source preferences; actual face design, available styles, text, and output determine whether a treatment is distinct. HTML semantics are separate: `em` indicates stress and `strong` indicates importance, seriousness, or urgency. Both can apply to the same phrase, and neither is defined by italic or bold styling.
 
 # Prerequisites
 
-- **Body Text** — Emphasis is applied relative to the body text baseline.
-- **Font** — Serif vs. sans serif determines the emphasis strategy.
+- **Body Text** — Emphasis is perceived in relation to surrounding text and its baseline.
+- **Font** — Available styles and actual appearance affect which treatments can be used.
 
 # Key Properties
 
-1. **Mutually exclusive**: Bold or italic, never both together.
-2. **Use sparingly**: "If everything is emphasized, then nothing is emphasized."
-3. **Serif strategy**: Italic for gentle emphasis, bold for heavier.
-4. **Sans serif strategy**: Bold only — sans serif italics are too subtle.
-5. **Roman is the baseline**: Unemphasized text is called *roman*.
-6. **Not for long stretches**: "Bold and italic are fine for short bits of text, but not for long stretches."
+1. **Purposeful**: Emphasize only content for which a distinction is useful.
+2. **Contextual appearance**: Bold, italic, colour, size, or other styling may work differently across faces and output.
+3. **Available styles**: Check for a real bold/italic face and how the rendering system handles a missing style.
+4. **Semantic distinction**: `em` marks stress; `strong` marks importance, seriousness, or urgency. CSS appearance does not define either meaning.
+5. **Combination is possible**: A phrase may legitimately carry both stress and importance; visual bold italic is not prohibited by this card.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Decide: does this need gentle or strong emphasis?
-2. For serif: italic = gentle, bold = strong.
-3. For sans serif: bold = all emphasis (skip italic).
-4. Never combine bold and italic. Never underline bold text.
-5. Keep emphasized passages short.
+1. Decide what meaning or hierarchy needs to be communicated.
+2. Choose markup for meaning, then choose CSS appearance for the visual task.
+3. Compare the treatment with surrounding text using the actual face and content.
+4. Check that emphasis remains useful and does not overwhelm longer passages.
 
 ## To Identify/Recognise:
-1. Overemphasis: whole paragraphs in bold or italic.
-2. Double emphasis: bold italic text, or underlined bold.
+1. Ask whether the markup expresses stress or importance, independently of visual appearance.
+2. Check that visual emphasis is perceivable and proportionate in the target output.
 
 # Context & Application
 
-- **Typical contexts**: Body text where specific words or phrases need to stand out.
-- **Common applications**: Key terms, foreign words (italic), warnings or labels (bold).
+Use for words or phrases that need distinction in prose, interfaces, and other text. Butterick's preference for bold over italic in some sans-serif faces is a useful candidate, not a universal font-class rule. Follow the intended medium's semantic and accessibility requirements; no assistive-technology behavior is claimed here.
 
 # Examples
 
-**Example 1** (bold-or-italic): An "overemphasizer" who "won't hesitate to run the whole paragraph in bold type" — self-defeating because "it gives you nowhere to go when you need to emphasize a word."
+**Example 1** (bold-or-italic): The source's “overemphasizer” illustrates how highlighting every paragraph can remove contrast. It is a rhetorical example, not evidence of retina damage.
 
-**Example 2** (bold-or-italic): "Some fonts have both a bold style and a semibold style. You can use either for emphasis." Butterick prefers bold for greater contrast.
+**Example 2** (bold-or-italic): The source compares bold and semibold as possible emphasis. Actual distinction depends on the supplied face and rendered result.
 
 # Relationships
 
 ## Builds Upon
-- **Body Text** — Emphasis contrasts with the body text baseline.
-- **Font** — Serif vs. sans serif determines the approach.
+- **Body Text** — Surrounding text establishes the visual baseline for emphasis.
+- **Font** — Available styles and their actual rendering inform possible treatments; serif/sans labels do not determine the strategy.
 
 ## Related
-- **All Caps** — Another emphasis option for short text.
-- **Small Caps** — A subtler emphasis alternative.
-- **Headings** — Heading hierarchy uses emphasis tools.
-- **Typographic Color** — Bold creates darker color on the page.
+- **All Caps** — Another possible treatment for short text; evaluate language and actual output.
+- **Small Caps** — A possible treatment when the needed glyph feature is present; synthesis and fallback must be considered.
+- **Headings** — Emphasis can contribute to heading appearance, while structure determines heading semantics.
+- **Typographic Color** — Weight may affect apparent text-block density; literal colour and contrast are separate checks.
 
 # Common Errors
 
-- **Error**: Running entire paragraphs in bold or italic.
-  **Correction**: "This habit wears down your readers' retinas and their patience." Keep emphasis to short phrases.
+- **Error**: Assuming italic and bold have fixed semantic meanings, or that all emphasized text must use one style.
+  **Correction**: Separate meaning in markup from appearance in CSS and evaluate the actual face and task.
 
 # Common Confusions
 
-- **Confusion**: Bold italic is stronger emphasis than bold alone.
-  **Clarification**: Bold and italic are mutually exclusive tools. Combining them is not "more emphasis" — it's typographic noise.
+- **Confusion**: HTML `em` means italic and `strong` means bold.
+  **Clarification**: Those are common visual treatments, not the element meanings. `em` marks stress; `strong` marks importance, seriousness, or urgency.
 
 # Source Reference
 
@@ -114,9 +109,8 @@ The choice between bold and italic depends on the font type: "With a serif font,
 
 # Verification Notes
 
-- Definition source: Direct quotes from bold-or-italic.md.
-- Confidence rationale: High — two explicit rules with clear reasoning.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Five outcomes: identify the intended meaning; select semantic markup independently; compare available styles; use emphasis proportionately; permit combined stress and importance when both meanings apply.
+- Support: the assigned page supports Butterick's attributed preference for restraint and style selection. HTML Standard definitions support the `em`/`strong` meanings.
+- Limitation: no face inventory, actual page, accessibility tree, or assistive-technology output was tested. The source's “retina” wording is not adopted as a physiological finding.
+- Confidence records extraction confidence, not a guarantee that any visual style communicates the intended meaning.
+- Cross-reference identities and literal source reference are retained. Original capture fidelity remains a Project10-11 dependency.

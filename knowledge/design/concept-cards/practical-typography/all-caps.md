@@ -39,71 +39,66 @@ css_implementation:
 
 # Quick Definition
 
-All-caps text is best used sparingly — fine for short labels under one line — but never for whole paragraphs, because capital letters create a uniform rectangular contour that is harder to read than varied lowercase shapes.
+All caps presents text with uppercase forms; use it only when it suits the content, script, and design, and distinguish CSS presentation from the underlying text.
 
 # Core Definition
 
-Butterick explains why caps reduce legibility: "We read more lowercase text, so as a matter of habit, lowercase is more familiar and thus more legible. Furthermore, cognitive research has suggested that the shapes of lowercase letters — some tall (d h k l), some short (a e n s), some descending (g y p q) — create a varied visual contour that helps our brain recognize words. Capitalization homogenizes these shapes, leaving a rectangular contour."
-
-All-caps paragraphs are "self-defeating typography": "if you need readers to pay attention to an important part of your document, the last thing you want is for them to skim over it."
+Butterick recommends avoiding long all-caps passages and adding spacing to caps. He attributes a reading difficulty explanation to familiarity and word-shape research, but this card has not independently reviewed cognitive evidence; fatigue, word-shape causation, and universal legibility claims are not established here. CSS `text-transform: uppercase` is a language-sensitive presentation transform and does not rewrite the source text. Case distinctions and mappings vary across scripts and languages.
 
 # Prerequisites
 
-- **Typographic Emphasis** — All caps is one of several emphasis tools.
+- **Typographic Emphasis** — All caps is one possible visual treatment; its suitability depends on text and context.
 
 # Key Properties
 
-1. **Short only**: "Fine for less than one line."
-2. **Harder to read**: Rectangular contour vs. varied lowercase shapes.
-3. **Self-defeating at length**: Long caps text causes readers to skim.
-4. **Always letterspace**: "Always add letterspacing to caps to make them easier to read."
-5. **Always kern**: Ensure kerning is turned on with caps.
-6. **Prefer formatting over typing**: Apply all-caps formatting via text-transform rather than retyping in caps.
+1. **Presentation**: CSS uppercase changes displayed casing without changing the underlying string.
+2. **Language-sensitive**: Use correct language metadata and inspect the transformed text, especially where case mappings are not simple.
+3. **Contextual length**: Long uppercase passages may be harder to scan for some readers; the assigned source recommends limiting them, but this slice does not establish a universal threshold.
+4. **Spacing is a design choice**: Tracking can affect appearance and readability; a fixed 5–12% range is not a universal requirement.
+5. **Actual shaping matters**: Kerning and other spacing behavior depend on the font and rendering environment; their presence is not established by a universal caps rule.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Apply via formatting (text-transform: uppercase) rather than caps lock.
-2. Add 5-12% letterspacing.
-3. Ensure kerning is on.
-4. Limit to short labels, headings under one line, headers, footers, captions.
+1. Preserve the authored text and use presentation styling when uppercase display is intended.
+2. Set the correct content language and check the actual transformed strings.
+3. Compare spacing and shaping on the supplied font and target output.
+4. Keep longer passages and non-Latin scripts in the review; do not infer behavior from English samples alone.
 
 ## To Identify/Recognise:
-1. Long all-caps passages signal amateur typography.
-2. Unletterspaced caps look too tight.
+1. Check whether displayed uppercase is a style transform or authored uppercase content.
+2. Inspect language-specific mappings and the actual spacing result.
 
 # Context & Application
 
-- **Typical contexts**: Short headings, labels, captions, headers/footers, letterhead.
-- **Common applications**: Table of contents headers, business card elements, navigation labels.
-- **Legal note**: The Ninth Circuit has ruled that caps lock is not a "make conspicuous" button — conspicuousness requires more than just capitalization.
+Short labels and headings are common contexts, but there is no universal one-line limit. Judicial or legal statements in the source remain attributed accounts; this card makes no legal finding about conspicuousness.
 
 # Examples
 
-**Example 1** (all-caps): A full paragraph in all caps demonstrating reader fatigue — "DO YOU ENJOY READING THIS? I DOUBT IT."
+**Example 1** (all-caps): Butterick's all-caps paragraph is a rhetorical demonstration, not a controlled reader-fatigue study.
 
-**Example 2** (all-caps): Better alternatives to emphasize a paragraph: "Use rules and borders. Add a heading. Run it in a larger point size. But don't capitalize it."
+**Example 2** (all-caps): The source offers rules, a heading, or larger type as alternatives for paragraph emphasis. Evaluate alternatives against the actual task and structure.
 
 # Relationships
 
 ## Builds Upon
-- **Typographic Emphasis** — All caps is an emphasis option alongside bold/italic.
+- **Typographic Emphasis** — All caps is one possible emphasis treatment, not a universal substitute or mandate.
 
 ## Related
-- **Small Caps** — A more refined alternative to all caps.
-- **Letterspacing** — Mandatory companion to all caps.
-- **Kerning** — Must be active when using caps.
-- **Headings** — Caps are sometimes used in headings (but Butterick advises against it).
+- **Small Caps** — A distinct glyph feature can be considered for appropriate text; it is not simply a universally superior all-caps treatment.
+- **Letterspacing** — Tracking may be adjusted for a particular string and font; the endpoint's broader requirements are unreviewed here.
+- **Kerning** — Kerning may affect a particular rendering; the endpoint's broader mandates are unreviewed here.
+- **Headings** — Caps can be used in headings; Butterick's advice against them is contextual rather than a ban.
 
 # Common Errors
 
-- **Error**: Capitalizing entire paragraphs for emphasis or "conspicuousness."
-  **Correction**: All-caps paragraphs are self-defeating. Use rules, borders, headings, or larger point size instead.
+- **Error**: Treating CSS uppercase as a rewrite of the source string or assuming one mapping works identically for every language.
+  **Correction**: Use language-sensitive text transformation and inspect the actual result.
 
 # Common Confusions
 
-- **Confusion**: All caps conveys authority and importance.
-  **Clarification**: All caps primarily conveys reduced legibility. For emphasis at paragraph scale, virtually any other technique works better.
+- **Confusion**: Capitalization alone makes content conspicuous or more readable.
+  **Clarification**: Appearance and reader response depend on context, wording, script, font, spacing, and output; this slice does not establish a universal effect.
 
 # Source Reference
 
@@ -111,9 +106,8 @@ All-caps paragraphs are "self-defeating typography": "if you need readers to pay
 
 # Verification Notes
 
-- Definition source: Direct quotes from all-caps.md.
-- Confidence rationale: High — emphatic advice with clear reasoning.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Five outcomes: distinguish source text from display transform; check language-sensitive mapping; evaluate actual strings and scripts; choose spacing from the actual font/output; attribute source cognitive and legal explanations rather than presenting them as proven findings.
+- Support: CSS Text 3 §2.1 describes language-sensitive transformations that do not alter underlying content. Butterick recommends restraint and spacing.
+- Limitation: no cognitive study, legal research, browser survey, or rendered comparison was performed. The 5–12% tracking rule and mandatory kerning are not adopted.
+- Confidence records extraction confidence, not a universal readability result.
+- Cross-reference identities and literal source reference are retained. Original capture fidelity remains a Project10-11 dependency.

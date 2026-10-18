@@ -15,12 +15,30 @@ than inferring coverage.
 
 ## Assign roles and hierarchy
 
-Describe the hierarchy the task needs: for example, display, section heading,
-long-form text, interface label, code or metadata. These are contextual roles,
-not a requirement for a separate family per role. Reuse a supplied family across
-roles when it works; select different families only when they solve an
-identified reading, language, hierarchy or identity need. Keep existing
-semantic token names and relationships.
+1. Describe the content roles and outline; choose semantic heading levels from
+   the structure, not from the desired CSS size. `em` marks stress and `strong`
+   marks importance, seriousness or urgency; neither is defined by italic/bold
+   styling, and both meanings can apply to one phrase.
+2. Compare supplied faces and available styles on representative project text,
+   including relevant scripts, fallback runs and code. Reuse one supplied family
+   when it meets the roles; a pairing is optional and useful only when it solves
+   an identified need. There is no fixed family count or point-size increment.
+3. Choose deliberate visible distinction through available size, weight, spacing
+   and colour. Treat caps and bold/italic choices as contextual options, not bans.
+4. Review real strings, fallback, enlargement and the complete foreground/
+   background colour pairs and states. Density of a text block differs from
+   literal colour; route pair contrast checks through sibling `colour.md`.
+
+When genuine small-cap glyphs are intended, this optional request also suppresses
+other synthesized styles; it does not supply missing glyphs or prove what the
+font or target rendered:
+
+```css
+.small-caps { font-variant-caps: small-caps; font-synthesis: none; }
+```
+Check the supplied font's feature and script coverage, actual output, and a
+truthful fallback. `font-synthesis: none` can also suppress synthesized bold or
+oblique, so review those roles as well.
 
 ## Check candidates and fallbacks
 

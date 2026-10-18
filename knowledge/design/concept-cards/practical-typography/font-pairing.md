@@ -33,70 +33,63 @@ css_implementation: []
 
 # Quick Definition
 
-Font pairing is the art of combining fonts in a document — limited to two (rarely three), with each font assigned a consistent role, and with the understanding that lower contrast between fonts can be more effective than high contrast.
+Font pairing is an optional way to assign distinct typographic roles to available faces; one family may be sufficient, and more may be appropriate when content, scripts, or fallback needs call for them.
 
 # Core Definition
 
-Butterick frames it as optional: "Mixing fonts is never a requirement — it's an option. You can get plenty of mileage out of one font using variations based on point size, bold or italic, small caps, and so on."
-
-Key principles: "The rule of diminishing returns applies. Most documents can tolerate a second font. Few can tolerate a third. Almost none can tolerate four or more."
-
-On the serif/sans-serif myth: "If you've heard that you can only mix a serif font with a sans serif font, it's not true. On the contrary, much like mixing colors, lower contrast between fonts can be more effective than higher contrast."
-
-A reliable method: "combine fonts by the same font designer."
+Butterick says mixing fonts is optional, describes diminishing returns, recommends consistent roles, and rejects a fixed serif/sans pairing rule. He also proposes same-designer pairings and avoiding multiple fonts in one paragraph. These are useful candidates to compare, not limits or guarantees. Actual web-app pairing depends on supplied resources, content, scripts, available styles, fallback, and rendered output; the assigned cards do not establish a particular app's best pairing. The method applies to web applications and other text systems, but this card has no observed target app or font roster. `font.woff2` or `MyFont` elsewhere in the assigned set is illustrative, not a bundled asset. Pairing a serif with a sans-serif or choosing faces from one designer can be tested as alternatives, not assumed to work.
 
 # Prerequisites
 
-- **Font** — Understanding what fonts are before combining them.
-- **Body Text** — Font pairing decisions center on body text.
+- **Font** — Compare actual supplied resources and available styles; labels alone do not predict suitability.
+- **Body Text** — Body text is one role that may inform a pairing decision, not a requirement that every design start with a particular face.
 
 # Key Properties
 
-1. **Optional**: One font with variations is sufficient.
-2. **Diminishing returns**: Two fonts max; three at most; four never.
-3. **Consistent roles**: "Most successful when each font has a consistent role."
-4. **Low contrast can work**: Serif + serif is fine (e.g., newspapers).
-5. **Same-designer trick**: Fonts by the same designer pair reliably.
-6. **One font per paragraph**: "It rarely works to have multiple fonts in a single paragraph."
+1. **Optional**: A single family with suitable styles may serve the needed roles.
+2. **Role-led**: Add a face only when it solves an identified reading, language, hierarchy, or identity need.
+3. **No fixed count**: One, two, three, or more faces may be suitable depending on content and supplied systems; counts do not prove quality.
+4. **Compare actual text**: Examine representative strings, scripts, sizes, weights, and fallback behavior.
+5. **Contrast and harmony are choices**: Serif/sans contrast, lower-contrast combinations, and same-designer families are candidates, not rules.
+6. **Mixed runs occur**: Inline code, script coverage, fallback, and supplied UI resources may require more than one face within a paragraph.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Start with one font for body text.
-2. If needed, add a second font for a specific role (headings, captions, etc.).
-3. Consider fonts by the same designer for reliable pairing.
-4. Change fonts only at paragraph breaks.
-5. Ensure the two fonts are "identifiably different."
+1. Inventory supplied families, faces, axes, styles, and script coverage.
+2. Assign content roles and test whether one family meets them.
+3. If a role remains underserved, compare alternatives on actual content and output.
+4. Check fallback runs, inline code, language changes, and any license constraints for the actual resources.
 
 ## To Identify/Recognise:
-1. Good pairing: each font has a clear, consistent role.
-2. Bad pairing: fonts compete or feel random.
+1. Check whether each face serves a clear role and remains distinguishable where needed.
+2. Review complete paragraphs and mixed-script text; do not apply a one-font-per-paragraph rule.
 
 # Examples
 
-**Example 1** (mixing-fonts): "Look at any American newspaper — typically, the body text and the headlines are both in serif fonts, but different ones." Low-contrast pairing works.
+**Example 1** (mixing-fonts): Butterick points to newspapers as an example of pairing serif faces for body and headlines. It is an attributed illustration, not a universal low-contrast rule.
 
-**Example 2** (mixing-fonts): Role-based pairing: "one font for things in the center of the document (body text and headings) and one font for things at the edges (line numbers, footer)."
+**Example 2** (mixing-fonts): The source assigns fonts to central and peripheral content roles. This is one possible role model; actual interface roles may differ.
 
 # Relationships
 
 ## Builds Upon
-- **Font** — Pairing requires understanding of individual fonts.
-- **Body Text** — Pairing decisions start with the body text font.
+- **Font** — Pairing compares available font resources and styles; no paid-font requirement follows.
+- **Body Text** — Body text can be one role in the comparison; the actual project may have other primary content.
 
 ## Related
-- **Headings** — The most common reason for a second font.
-- **Typographic Emphasis** — Single-font emphasis often eliminates the need for pairing.
+- **Headings** — A heading role may motivate a distinct face, but semantic structure is separate from type choice.
+- **Typographic Emphasis** — Available styles may provide emphasis without adding a family; inspect their actual appearance.
 
 # Common Errors
 
-- **Error**: Using three or more fonts in a single document.
-  **Correction**: "Few can tolerate a third. Almost none can tolerate four or more."
+- **Error**: Treating two fonts as a maximum, or always pairing serif with sans-serif.
+  **Correction**: Start from the content and supplied resources; compare alternatives that solve a concrete role need.
 
 # Common Confusions
 
-- **Confusion**: You must pair a serif with a sans serif.
-  **Clarification**: "It's not true. Lower contrast between fonts can be more effective than higher contrast."
+- **Confusion**: Same-designer pairing or role consistency guarantees a successful combination.
+  **Clarification**: Those are source heuristics. Representative text and rendered output determine whether a candidate suits the actual use.
 
 # Source Reference
 
@@ -104,9 +97,8 @@ A reliable method: "combine fonts by the same font designer."
 
 # Verification Notes
 
-- Definition source: Direct quotes from mixing-fonts.md.
-- Confidence rationale: High — six explicit principles.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Five outcomes: identify available resources; assign roles; compare actual text and styles; account for scripts, fallback, and mixed runs; treat pairings and counts as context-dependent candidates.
+- Support: the assigned source makes pairing optional and offers role-based and same-designer heuristics. The OpenType variations overview supports the bounded possibility of multiple instances in one resource.
+- Limitation: no actual web application, strings, font inventory, target output, or license was supplied; CQ26 can be answered only as a general method, not a concrete pairing recommendation.
+- Confidence records extraction confidence, not the success of an unobserved pairing.
+- Cross-reference identities and literal source reference are retained. Original capture fidelity remains a Project10-11 dependency.

@@ -32,81 +32,74 @@ rosetta_stone: []
 css_implementation:
   -
     property: "color"
-    example: "body { color: #333; } /* dark gray can be more comfortable than black on screen */"
+    example: ".text { color: inherit; } /* use the project's supplied text colour; check the rendered foreground/background pair */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Typographic color has two meanings: (1) the overall darkness/lightness of a text block as determined by font weight, size, and spacing — even when all text is black; and (2) literal color applied to type, which should be used with restraint.
+Typographic colour can mean the apparent density or texture of a text block, while literal text colour means its foreground hue/value; these are different observations and checks.
 
 # Core Definition
 
-Butterick distinguishes the dual meaning: "Typographers will sometimes speak of a font as creating a certain color on the page — even when it's black. Used this way, the word encapsulates a set of hard-to-quantify characteristics like darkness, contrast, rhythm, and texture."
-
-For literal color, key principles: "On a page of text, nothing draws the eye more powerfully than a contrast between light and dark colors. This is why a bold font creates more emphasis than an italic font." And: "The perceived intensity of colored type depends not just on the color, but also the size and weight of the font."
-
-Body text in print "must always be set in black type. No exceptions." On screen: "Consider making your text dark gray rather than black" because screens project light rather than reflecting it.
+Butterick describes typographic colour as a qualitative impression involving darkness, contrast, rhythm, and texture, even when the text is black. He also discusses literal colour and how size or weight may affect its appearance. These observations are useful design considerations, not guarantees that bold always attracts more attention, that a particular gray is comfortable, or that print body text must always be black. Evaluate the actual foreground/background pair, states, content, and medium.
 
 # Prerequisites
 
-- **Body Text** — Color decisions start with the body text.
-- **Typographic Emphasis** — Bold/italic create different typographic color.
+- **Body Text** — Text density may be considered in relation to a block of body text; no universal colour is prescribed.
+- **Typographic Emphasis** — Weight and style may change apparent density; markup meaning remains separate.
 
 # Key Properties
 
-1. **Dual meaning**: Typographic color (density/texture) vs. literal color (hue).
-2. **Light-dark contrast**: Most powerful visual attention mechanism.
-3. **Size and weight interact**: "A thin or small font can carry a more intense color than a heavy or large font."
-4. **Print: always black**: Body text in print must be black. No exceptions.
-5. **Screen: dark gray**: "Dark-gray text can be more comfortable to read than black text" on screens.
-6. **Less is more**: "When everything is emphasized, nothing is emphasized."
-7. **Web links**: Color is the idiomatic signal for clickability — don't use it on non-clickable text.
+1. **Two senses**: Density/texture is not the same as literal foreground colour.
+2. **Multiple influences**: Font, size, weight, spacing, content, and rendering can affect perceived density.
+3. **Contextual attention**: Literal colour, weight, and size can contribute to hierarchy; no single property is universally strongest.
+4. **Pairs matter**: A gray value alone does not establish contrast, comfort, or accessibility without its background and state.
+5. **Do not rely on colour alone**: Convey information and links with additional cues as appropriate.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Print body text: always black.
-2. Screen body text: consider dark gray (#333 or similar).
-3. Use color sparingly for emphasis — only where size and weight alone are insufficient.
-4. For professionally printed materials, prefer multiple shades of one color over contrasting colors.
+1. Use the project's supplied text colour unless the brief identifies a need to change it.
+2. Check actual foreground/background pairs across relevant states and output; use the existing `colour.md` method for full contrast checking.
+3. Consider density and literal colour separately when tuning hierarchy.
+4. Provide non-colour cues where colour conveys information.
 
 ## To Identify/Recognise:
-1. Consistent typographic color: text block appears even in density.
-2. Inconsistent color: light and dark patches that distract from reading.
+1. Ask whether “colour” refers to text-block density or literal hue/value.
+2. Identify both foreground and background before drawing a contrast conclusion.
+3. Check links and other meaningful states for cues beyond colour.
 
 # Context & Application
 
-- **Typical contexts**: Body text color, emphasis decisions, web link styling.
-- **Common applications**: Setting body text darkness; choosing heading color; web link colors.
-- **Historical note**: "Red has been the favored second color in typography for hundreds of years."
+Typography may appear to have consistent density even when set in one hue, and literal colour may affect hierarchy. Butterick's black-print and dark-gray-screen advice remains an attributed preference, not a fixed palette or optical-comfort guarantee.
 
 # Examples
 
-**Example 1** (color): "A bold font creates more emphasis than an italic font" — because bold creates greater color contrast with surrounding text.
+**Example 1** (color): The source says bold can create more emphasis than italic through darker apparent colour. Compare the actual face and text; the outcome is not universal.
 
-**Example 2** (color): On screen, "dark-gray text can be more comfortable to read than black text" because screens project light.
+**Example 2** (color): The source suggests dark gray on screen. A gray foreground without the actual background does not establish contrast or comfort.
 
 # Relationships
 
 ## Builds Upon
-- **Body Text** — Typographic color is primarily a body text concern.
-- **Typographic Emphasis** — Bold/italic differ in the color they produce.
+- **Body Text** — Density can be assessed in a text block; this does not prescribe its literal foreground colour.
+- **Typographic Emphasis** — Weight or style may change apparent density; neither alone determines semantic meaning or attention.
 
 ## Related
-- **Font** — Different fonts produce different typographic color at the same settings.
-- **Point Size** — Size affects the perceived intensity of color.
-- **Small Caps** — Real vs. fake small caps differ primarily in typographic color consistency.
+- **Font** — Different resources may render with different density at the same settings; inspect actual output.
+- **Point Size** — Size can affect apparent density; it does not establish pair contrast.
+- **Small Caps** — Compare forms for appearance and weight; density difference is not a contrast ratio.
 
 # Common Errors
 
-- **Error**: Using colored text for emphasis in printed body text.
-  **Correction**: "At a typical body-text point size, color isn't effective as a form of emphasis." Use bold or italic instead.
+- **Error**: Treating “dark gray” as automatically comfortable or accessible, or using colour alone to signal meaning.
+  **Correction**: Check the complete rendered pair and state, and add another cue where information depends on colour.
 
 # Common Confusions
 
-- **Confusion**: Typographic "color" means hue.
-  **Clarification**: In typography, "color" primarily refers to the overall visual density of a text block — darkness, rhythm, and texture — even when all text is black.
+- **Confusion**: Typographic colour and literal text hue are the same measure.
+  **Clarification**: Density/texture describes an impression of a text block; foreground/background contrast is a separate pair-based evaluation.
 
 # Source Reference
 
@@ -114,9 +107,9 @@ Body text in print "must always be set in black type. No exceptions." On screen:
 
 # Verification Notes
 
-- Definition source: Direct quotes from color.md.
-- Confidence rationale: High — clear dual definition with practical rules.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Five outcomes: distinguish density from hue; identify properties affecting density; judge visual hierarchy in context; check the complete colour pair/state; avoid color-only meaning and unqualified comfort claims.
+- Support: Butterick's assigned page directly distinguishes typographic colour and literal colour. WCAG 2.2 SC1.4.1 states that colour is not the only visual means for conveying information.
+- Limitation: this slice did not test a palette, contrast pair, comfort, browser rendering, or accessibility conformance. The sibling `colour.md` method owns complete contrast work.
+- Existing `css_implementation[0].example` is corrected to the exact prompt-authorized value; its other metadata is frozen.
+- Confidence records extraction confidence, not a universal attention or comfort result.
+- Cross-reference identities and literal source reference are retained. Original capture fidelity remains a Project10-11 dependency.

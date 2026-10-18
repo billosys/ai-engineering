@@ -38,75 +38,71 @@ css_implementation:
 
 # Quick Definition
 
-A font is a data file containing letter shapes, spacing, and typographic features — the primary tool for controlling how text appears visually. Professional fonts are a worthwhile investment that improves every document.
+A font is a resource used to render glyphs and typographic behavior; in current usage “font,” “typeface,” “family,” and “face” can refer to related but distinct things, so inspect the actual supplied resource and available styles.
 
 # Core Definition
 
-Butterick explains: "Fonts control the visual appearance of all text rendered by a computer." He clarifies their nature: "Fonts are not programs... They're static data files, like MP3s or PDFs. Each font file contains information that defines the shapes of the letters, plus spacing, kerning, OpenType features, and so on."
+Butterick describes fonts as controlling the visual appearance of computer-rendered text and discusses glyph shapes, spacing, kerning, and OpenType features. His static-file analogy distinguishes a font resource from an ordinary end-user application, but should not be read as saying every font contains only inert data: TrueType resources can include instructions interpreted by a rasterizer. A variable font resource may expose multiple instances across axes, so one file per style is not universal.
 
-The historical distinction between "font" (a specific instance) and "typeface" (the overall family) has largely collapsed: in modern usage, "font" covers both senses.
-
-He strongly advocates professional fonts over system and free fonts: "The best professional fonts are better than any system font or free font — and in ways that everyone... can appreciate."
+Butterick recommends professional fonts and argues they outperform system or free fonts. That is his source-era preference, not a requirement or a finding about the project's supplied assets. Price, licensing, distribution, durability, and quality depend on the actual resource and its terms; this card does not make legal or security findings.
 
 # Prerequisites
 
-- **Body Text** — Font is one of the four primary body text controls.
+- **Body Text** — The prepared source treats font choice as one control among those used to shape body text; it does not require a particular acquisition route.
 
 # Key Properties
 
-1. **Static data files**: Like MP3s or PDFs — not programs.
-2. **One file per style**: Roman, italic, bold, bold italic, small caps are separate files within a font family.
-3. **Professional > system**: Professional fonts visibly improve every document.
-4. **Durable investment**: "They don't break, they don't go obsolete in three years, and they don't need to be upgraded monthly."
-5. **Licensed software**: Fonts are sold per-user under license terms.
-6. **Names are unreliable**: Same historical names (e.g., Garamond) used by very different fonts. "Stempel Garamond and ITC Garamond are as similar as Bart Simpson and Lisa Simpson."
+1. **Resource and terminology**: A font resource supplies glyphs and related data; family, face, style, and file should not be assumed to map one-to-one.
+2. **Variable resources**: A single resource can provide multiple axis-defined instances; static files can also provide separate styles.
+3. **Features and coverage vary**: Available glyphs, scripts, styles, and OpenType features depend on the actual resource and shaping environment.
+4. **Supplied assets come first**: Assess what the project already provides before considering another resource.
+5. **Terms are resource-specific**: Check the actual license and permitted uses; no general licensing conclusion follows from “professional,” “free,” or “system.”
+6. **No quality guarantee by category**: Price, source, and platform labels do not establish suitability or visual quality.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. For body text, acquire at minimum: roman, italic, bold, bold italic, and roman small caps.
-2. Buy from font designers' websites or multi-designer retailers ($20–50 per style).
-3. Install via the OS font management tool (Font Book on Mac, Control Panel on Windows).
-4. On the web, use `@font-face` declarations with webfont files hosted locally or remotely.
+1. Inventory supplied families, files, faces, variable axes, and intended uses.
+2. Compare glyph and script coverage, available styles/features, and representative project text.
+3. Check the actual license and distribution constraints for the intended use.
+4. If a web font is needed, use the project's approved delivery mechanism and a truthful family/resource name; the CSS example below is illustrative, not a bundled asset.
 
 ## To Identify/Recognise:
-1. Any text displayed on screen or in print is rendered through a font.
-2. Professional fonts vs. system fonts: noticeable difference in spacing, consistency, and polish.
+1. Inspect the resource metadata and rendered output rather than inferring a roster from a family name.
+2. Check whether requested styles/features are supplied or synthesized in the target environment.
 
 # Context & Application
 
-- **Typical contexts**: Every document, web page, and application.
-- **Common applications**: Setting body text appearance; establishing document personality; building brand identity.
-- **Historical note**: The font/typeface distinction originated in letterpress (where each size had a separate drawer of metal type) but is now largely moot.
+Fonts are used in print, web, and application rendering. `font.woff2` and `MyFont` in the CSS example are placeholders, not repository assets or a prescribed font choice. This card does not prescribe shopping, installation, hosting, or a font-loading framework.
 
 # Examples
 
-**Example 1** (font-basics): "What's the difference between a font and a typeface? ... Historically, typeface referred to the overall family and font referred to a specific instance... But... 'technology has changed the meaning of this term.'"
+**Example 1** (font-basics): Butterick explains the historical family-versus-instance distinction and observes that technology has changed common usage. Preserve the distinction as useful terminology, not as a rigid universal vocabulary.
 
-**Example 2** (font-basics): "You can get a top-quality professional-font family for under $200... Best of all, you can put them to work without learning anything new."
+**Example 2** (font-basics): The source's price and quality recommendation is an attributed example from its publication context, not a current price or quality guarantee.
 
 # Relationships
 
 ## Builds Upon
-- **Body Text** — Font is one of body text's four primary controls.
+- **Body Text** — Font resources are one input to body-text rendering; other controls and actual content also matter.
 
 ## Enables
-- **Font Pairing** — Selecting and combining fonts effectively.
-- **Kerning** — Font files contain kerning data that affects letter spacing.
-- **OpenType Features** — Professional fonts include OpenType features like ligatures.
+- **Font Pairing** — Available resources can be compared for roles when a second face solves a need; pairing is optional.
+- **Kerning** — A font may provide kerning data, but actual shaping and spacing depend on the resource and rendering stack; broader endpoint claims are unreviewed here.
+- **OpenType Features** — Font resources may expose features; availability and behavior require checking the actual font and application.
 
 ## Related
-- **Point Size** — Fonts render differently at the same point size due to em sizing.
+- **Point Size** — Apparent size and metrics interact with the selected resource; the endpoint's broader claims are not accepted by this relationship.
 
 # Common Errors
 
-- **Error**: Using system default fonts (Calibri, Times New Roman, Arial) for professional documents.
-  **Correction**: "The best professional fonts are better than any system font or free font." Invest in professional fonts for body text.
+- **Error**: Rejecting supplied system or free resources by category, or assuming paid fonts are automatically better.
+  **Correction**: Compare the actual available resources against content, roles, coverage, features, rendering, and license constraints.
 
 # Common Confusions
 
-- **Confusion**: Font names with the same historical root are the same font.
-  **Clarification**: "Stempel Garamond and ITC Garamond are as similar as Bart Simpson and Lisa Simpson." Font names are unreliable quality indicators.
+- **Confusion**: Every style needs a separate file, or fonts are either ordinary programs or entirely inert data.
+  **Clarification**: Static and variable resources differ; a variable resource can expose multiple instances. Some font formats can include instructions used by a rasterizer, but this does not make a font an ordinary end-user application.
 
 # Source Reference
 
@@ -114,9 +110,9 @@ He strongly advocates professional fonts over system and free fonts: "The best p
 
 # Verification Notes
 
-- Definition source: Direct quotes from font-basics.md.
-- Confidence rationale: High — clear FAQ format with explicit advice.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Five outcomes: distinguish resource terminology; inventory available faces and axes; check coverage/features on actual text; respect project-supplied assets and actual license terms; treat price/category and file-count claims as non-universal.
+- Support: the assigned page discusses fonts, glyphs, spacing, kerning, features, and source recommendations. OpenType variations documentation supports multiple variable instances; TrueType documentation supports the limited instruction-stream qualification.
+- Limitation: no actual project font inventory, license review, security review, browser support survey, or rendered comparison was performed.
+- The CSS mapping is retained as a baseline illustration with placeholder names; it does not identify a bundled resource.
+- Confidence records extraction confidence, not current availability, license, or quality.
+- Cross-reference identities and the literal source reference are retained. Original capture fidelity remains a Project10-11 dependency.

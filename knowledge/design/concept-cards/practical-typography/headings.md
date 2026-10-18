@@ -40,88 +40,69 @@ css_implementation:
 
 # Quick Definition
 
-Headings are structural signposts that reveal argument structure — limited to two or three levels, emphasized subtly through space, bold, and small size increments rather than aggressive formatting like all caps, underlining, or doubling the point size.
+Headings are structural signposts whose visual treatment can distinguish levels and guide scanning; choose their semantic level from the content structure, then style them for the task.
 
 # Core Definition
 
-Butterick identifies two intertwined problems: "Headings present two problems: structural and typographic. Cure the structural problem and the typographic problem becomes simpler."
-
-The structural fix: "Limit yourself to three levels of headings. Two is better." Too many levels lead to "increasingly desperate attempts to make them visually distinct."
-
-Nine typographic parameters for headings:
-1. Don't use all caps.
-2. Don't underline.
-3. Don't center.
-4. "The best way to emphasize a heading is by putting space above and below."
-5. Use bold, not italic.
-6. "It's fine to make the point size bigger, but just a little. Use the smallest increment necessary."
-7. Only two levels of indenting.
-8. Suppress hyphenation in headings.
-9. Use keep-with-next to prevent awkward breaks.
+Butterick recommends clear contrast between headings and surrounding text, with spacing and restrained type choices. His preferences for two or three levels, subtle size increments, and avoiding caps or centering are contextual advice, not universal rules. The document's hierarchy comes from its content structure; CSS size does not determine the HTML heading level.
 
 # Prerequisites
 
-- **Body Text** — Headings supplement and contrast with body text.
-- **Typographic Emphasis** — Headings use emphasis tools.
-- **Point Size** — Heading size is relative to body text size.
+- **Body Text** — A heading's treatment is judged in relation to surrounding text.
+- **Typographic Emphasis** — Weight, size, and other emphasis choices may help distinguish levels, depending on available faces.
+- **Point Size** — Size can contribute to visual hierarchy; no specific increment is required.
 
 # Key Properties
 
-1. **Fewer levels**: Two or three maximum — "With more than three levels, that task becomes hopelessly confusing."
-2. **Subtle emphasis**: "Use the smallest increment necessary to make a visible difference."
-3. **Space is the best tool**: "Space above and below... is both subtle and effective."
-4. **Bold over italic**: "For headings, bold is easier to read than italic."
-5. **Small size increments**: "If your text is set in 12 point, you needn't go up to 14 or 15. Try 12.5 or 13."
-6. **Modular scale skepticism**: Butterick rejects modular scale for heading sizes — "When your headings look right, they are right. The ratio is irrelevant."
+1. **Structural role**: Select the heading element/level from the outline and relationships of the content.
+2. **Visible distinction**: Use size, weight, spacing, colour, or other properties as appropriate to create a perceivable hierarchy.
+3. **Contextual levels**: Two or three visual levels may be enough in a short document, but the needed structure varies.
+4. **Available face matters**: Check whether the intended bold or italic face exists; a serif/sans label alone does not establish its appearance.
+5. **Output behavior**: Breaks and keep-with-next settings need checking in the actual medium; advice about page composition is not a browser pagination guarantee.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Simplify your outline — aim for two levels of headings.
-2. Add space above and below headings.
-3. Optionally bold the heading text.
-4. Increase point size by the smallest visible increment.
-5. Suppress hyphenation; use keep-with-next paragraph.
+1. Outline the content and choose semantic heading levels from that structure.
+2. Assign visual styles that make levels and their relation to body text clear.
+3. Compare size, weight, spacing, and colour on actual content; a scale can help but does not prove correctness or beauty.
+4. Preserve reading order and check breaks in the intended output.
 
 ## To Identify/Recognise:
-1. Good headings: reader can orient themselves from headings alone.
-2. Bad headings: "trainwrecks" of mixed formatting with too many levels.
+1. Check that headings communicate the document outline and are visually distinguishable.
+2. A CSS size change alone does not justify changing the semantic level.
 
 # Context & Application
 
-- **Typical contexts**: Reports, articles, books, web pages — any multi-section document.
-- **Common applications**: Section structure, navigation, argument signposting.
+Use in documents, web pages, and interfaces. A 12-to-12.5-point increment may be too subtle in one context; 12-to-24 points may be suitable in another. Neither choice is intrinsically correct or wrong without the content and output.
 
 # Examples
 
-**Example 1** (headings): A "trainwreck" heading with excessive numbering, all caps, bold, underline, and indentation — "5(a)(1)(iv) The Target Market Has Expressed a Preference for Copious Banner Advertising."
+**Example 1** (headings): Butterick recommends distinct but restrained heading treatments. Treat his caps, centering, and level-count advice as his preferences.
 
-**Example 2** (headings): "If you're using bold in your heading, you can also try *reducing* the point size by a half or full point" — subtlety works.
+**Example 2** (headings): A larger size is one available way to distinguish a heading, but weight, spacing, or colour may also contribute.
 
 # Relationships
 
 ## Builds Upon
-- **Body Text** — Headings exist relative to the body text.
-- **Typographic Emphasis** — Headings use bold and size variation.
-- **Point Size** — Size differentiation creates heading hierarchy.
+- **Body Text** — Visual heading hierarchy is seen against surrounding body text; this does not determine the semantic outline.
+- **Typographic Emphasis** — Weight and size variation can contribute to the visual treatment when appropriate.
+- **Point Size** — Size can distinguish a heading, but no fixed increment or point-size hierarchy is established here.
 
 ## Related
-- **All Caps** — Butterick advises against caps in headings.
-- **Typographic Color** — Bold headings create color contrast.
-- **Line Spacing** — Space above and below is the best heading emphasis.
+- **All Caps** — Caps are one possible treatment; Butterick advises against them in headings, a contextual preference rather than a ban.
+- **Typographic Color** — Colour can contribute to contrast; evaluate actual foreground/background pairs.
+- **Line Spacing** — Space around a heading can distinguish it; “best” is context-dependent and the endpoint's broader claim is not accepted here.
 
 # Common Errors
 
-- **Error**: Using too many heading levels with increasingly desperate formatting.
-  **Correction**: "Limit yourself to three levels of headings. Two is better." Simplify the structure first.
-
-- **Error**: Doubling the point size for headings.
-  **Correction**: "Use the smallest increment necessary to make a visible difference." Try 12.5pt or 13pt, not 14pt or 15pt.
+- **Error**: Choosing an HTML heading level to obtain a desired font size.
+  **Correction**: Keep the semantic level aligned with content structure and set visual appearance separately.
 
 # Common Confusions
 
-- **Confusion**: Headings should be formatted as aggressively as possible to grab attention.
-  **Clarification**: "Headings are signposts for readers that reveal the structure of your argument." Subtle, consistent formatting works better than aggressive treatment.
+- **Confusion**: A heading is defined by bold or large styling.
+  **Clarification**: Structure gives the heading its semantic role; CSS appearance is separate. HTML heading elements represent section headings, not merely visual styles.
 
 # Source Reference
 
@@ -129,9 +110,8 @@ Nine typographic parameters for headings:
 
 # Verification Notes
 
-- Definition source: Direct quotes from headings.md.
-- Confidence rationale: High — nine explicit rules with clear reasoning.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. No direct mappings found.
-- OCR issues: None — HTML conversion.
+- Five outcomes: derive semantic levels from structure; distinguish levels visually; use multiple possible visual properties; select sizes and spacing contextually; inspect actual reading order and output behavior.
+- Support: Butterick's page provides contextual visual advice. The HTML Standard defines headings structurally and distinguishes `em` stress from `strong` importance; the full guide is the source for the semantics distinction.
+- Limitation: no rendered document, browser pagination, or assistive-technology output was tested. HTML semantics do not guarantee a particular visual result.
+- Confidence records extraction confidence, not proof that a particular hierarchy works for every audience.
+- Cross-reference identities and literal source reference are retained. Original capture fidelity remains a Project10-11 dependency.
