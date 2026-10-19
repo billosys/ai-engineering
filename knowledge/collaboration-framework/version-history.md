@@ -1,5 +1,13 @@
 # Collaboration Framework Version History
 
+## Version 3.0.1 - 2026-10-19
+
+Apply the Operator-requested patch version to this Autonomous Mode PR candidate,
+retaining its explicit model-selection and need-driven supporting-artifact rules.
+The earlier candidate entry below is preserved as proposal history, not a claim
+that it was released. Rebase found main unchanged at f2b1137a with metadata still
+at 2.8.0; the separately reported design landing was not yet present there.
+
 ## Version 3.0.0 - 2026-10-19
 
 Route mandatory Operator role/model/relevant-settings selection before Autonomous execution. Make the two-contributor default, compact preflight, stable ownership, automatic CI effects and full ledger obligations visible at the composer. Retain useful existing records and need-driven supporting files.

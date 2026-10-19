@@ -18,7 +18,7 @@ description: |
   separately, per-domain.
 license: MIT
 metadata:
-  version: "3.0.0"
+  version: "3.0.1"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
