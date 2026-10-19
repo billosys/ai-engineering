@@ -421,7 +421,7 @@ baseline guarantee. Check reflow, long content and text-spacing overrides.
 ::::
 
 :::: {.approach-card num="5"}
-### Progressive Disclosure via Scroll-Driven Animation
+### Decorative Pacing with Scroll-Driven Animation
 
 ::: prose
 Use optional CSS scroll-driven decoration for pacing. `view()` progresses
