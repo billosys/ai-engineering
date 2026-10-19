@@ -34,8 +34,8 @@ rosetta_stone:
   -
     domain: "music"
     concept: "Variation within a single key/mode"
-    rating: "structural"
-    note: "Monochromatic harmony is structurally analogous to musical variation within a single key — varying dynamics (value) and articulation (chroma) while maintaining the same tonal centre (hue). The parallel captures the essential idea of unity through constraint."
+    rating: "loose"
+    note: "Keeping one hue while varying other colour coordinates can be loosely compared with variation under a musical constraint. Value is not loudness, chroma is not articulation, and the comparison proves no shared mechanism or aesthetic guarantee."
 css_implementation:
   -
     property: "oklch() value/chroma variation"
@@ -45,57 +45,57 @@ css_implementation:
 
 # Quick Definition
 
-Monochromatic harmony is a colour combination strategy using a single hue with variations in value and/or chroma — described by Cleland as "practically infallible" for producing harmonious results.
+This named colour-selection strategy uses one hue while varying value and/or chroma. “Harmony” names a historical design preference, not an assured result of the selection rule.
 
 # Core Definition
 
-Cleland describes monochromatic harmony as "another very simple and practically infallible series of color harmonies... made within a single Hue" (p. 15). He identifies three variations:
+The earlier extraction attributes the following wording to Cleland; the book and prepared text are unavailable, so quotations, locators, context and historical attribution remain unverified.
 
-1. **Value contrast**: "a low Value of any Hue with a high Value of the same"
-2. **Chroma contrast**: "a weak Chroma of any Hue with a stronger Chroma of the same"
-3. **Combined**: "a low Value and weak Chroma with a high Value and stronger Chroma or vice versa"
+Retained reported wording: "another very simple and practically infallible series of color harmonies... made within a single Hue" "a low Value of any Hue with a high Value of the same" "a weak Chroma of any Hue with a stronger Chroma of the same" "a low Value and weak Chroma with a high Value and stronger Chroma or vice versa" "Experiments with the possibilities of single Hues will yield very interesting results in the great variety of colors thus obtainable"
 
-He notes that "Experiments with the possibilities of single Hues will yield very interesting results in the great variety of colors thus obtainable" (p. 15).
+The reported variants hold hue while changing value, chroma or both. These offer useful candidate strategies; “practically infallible” is an unverified attributed judgment, not an established guarantee. Changing chroma is radial, so a fixed-hue V/C path is not only vertical.
 
 # Prerequisites
 
-- **Hue** — Understanding that a single hue anchors the palette.
-- **Colour Value** — Value variation is a primary tool in monochromatic schemes.
-- **Chroma** — Chroma variation provides additional range within the single hue.
+- **Hue** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
+- **Colour Value** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
+- **Chroma** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
 
 # Key Properties
 
-1. **Single hue constraint**: All colours share the same position on the hue circle.
-2. **Value variation**: Dark to light within the same hue.
-3. **Chroma variation**: Weak (grayish) to strong (vivid) within the same hue.
-4. **Combined variation**: Both value and chroma can vary simultaneously.
-5. **"Practically infallible"**: Harmony is almost guaranteed because the unity of hue provides inherent coherence.
-6. **Great variety**: Despite the single-hue constraint, "a great variety of colors" is obtainable (p. 15).
+1. The defining selection is one hue while varying value and/or chroma; identify the diagram/model in use.
+2. Value/chroma variation can create candidates, within the available gamut and reference conditions.
+3. Recorded claims of sure or infallible harmony are attributed advice, not established guarantees.
+4. No necessary hue-count, three-step threshold or universal area recipe follows.
+5. Actual coherence, hierarchy, legibility and accessibility depend on the roles, content, viewing conditions and complete rendered pairs.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Select a hue (e.g., 5B — Blue).
-2. Choose two or more value levels (e.g., V3 and V7).
-3. Choose two or more chroma levels (e.g., /2 and /6).
-4. Combine: 5B 3/2 (dark, muted blue) with 5B 7/6 (light, vivid blue).
-5. Apply balance principles: stronger chroma/higher value = smaller area.
+
+1. Start with the brief, supplied brand colour/tokens and actual interface roles; preserve their semantics.
+2. Explore one hue while varying value and/or chroma in the named model. The recorded Munsell examples are not CSS conversions.
+3. For CSS, choose explicit OKLCH candidate values; any fixed hue or ±angle choice is optional, not a mandatory palette.
+4. Check destination gamut and rendering, then actual foreground/background pairs and relevant states; adjust for the task.
+5. If demonstrating the historical area equation, state its positive-domain approximation separately. It supplies no general neutral-background or harmony rule.
 
 ## To Identify/Recognise:
-1. All colours in the composition share the same hue family.
-2. Variation occurs only in lightness and/or saturation.
-3. The effect feels unified and cohesive.
+
+1. Identify the selection relation (one hue while varying value and/or chroma) rather than judging by a vague impression of harmony.
+2. Distinguish family proximity from exact coordinate identity; decide which the exercise requires.
+3. Check the resulting candidates in their actual task instead of inferring quality from their scheme name.
 
 # Context & Application
 
-- **Typical contexts**: Brand palettes, card/component backgrounds, data visualisation (sequential colour scales), minimalist design.
-- **Common applications**: Creating depth with a single brand colour; generating light/dark mode variants; building tint/shade scales for design tokens.
+For CQ23, begin with the supplied brand value and task, map needed roles, propose optional candidates in an explicit CSS model, inspect gamut/rendering, and check complete pairs and states. No Munsell hue-only conversion or automatic accessible palette is supplied. Scheme names can organize exploration; they do not determine a universal hue/family count.
 
 ## Cross-Domain Connections
 
-**Music Theory → Structural**: Monochromatic harmony parallels musical variation within a single key or mode — varying dynamics (loud/soft ↔ high/low value) and articulation (sharp/legato ↔ high/low chroma) while maintaining the same tonal centre (key ↔ hue). The unity principle is the same: coherence from constraint.
+**Music → Loose**: Keeping one hue can evoke variation under a musical constraint. It does not equate hue with key, value with dynamics or chroma with articulation. In the diagram, changing V is vertical and changing C is radial; fixed hue with both changes is not merely a vertical path.
 
 # Examples
+
+Recorded extraction examples below retain their reported locators; they were not checked against the missing book. Any balance or harmony result is historical advice or conditional arithmetic, not an independently observed mixing or aesthetic result.
 
 **Example 1** (p. 15): Value contrast — "a low Value of any Hue with a high Value of the same" — e.g., dark blue with light blue.
 
@@ -106,27 +106,35 @@ He notes that "Experiments with the possibilities of single Hues will yield very
 # Relationships
 
 ## Builds Upon
-- **Hue**, **Colour Value**, **Chroma** — The three dimensions constrained and varied.
+
+- **Hue**, **Colour Value**, **Chroma** — The method fixes hue while V and/or C change; realizability remains reference/gamut dependent.
 
 ## Enables
-- **Colour Harmony as Order** — Monochromatic harmony exemplifies orderly paths through colour space (vertical movement along one hue's column in the colour solid).
+
+- **Colour Harmony as Order** — Fixed hue with changing V/C moves vertically and radially, not only along a vertical line.
 
 ## Related
-- **Analogous Harmony** — Extends the principle by allowing neighbouring hues.
-- **Colour Balance** — Balance principles apply to monochromatic schemes when chroma/value differ.
+
+- **Analogous Harmony** — Allowing neighbouring hues relaxes the one-hue constraint; no harmony theorem follows.
+- **Colour Balance** — The historical area approximation is optional and does not extend into a physical monochromatic mixing law.
 
 ## Contrasts With
-- **Complementary Harmony** — Complementary uses maximum hue contrast; monochromatic uses zero hue contrast.
+
+- **Complementary Harmony** — One-hue versus opposed-hue selection distinguishes strategies, not guaranteed contrast or pleasure.
 
 # Common Errors
 
-- **Error**: Using only value variation without chroma variation, producing a dull palette.
-  **Correction**: Combine value AND chroma variation for richer monochromatic schemes.
+- **Error**: Treating the named method as a guarantee or a mandatory palette recipe.
+  **Correction**: Use it as a candidate strategy, retaining the brief, supplied values, gamut and actual pair/state checks.
+- **Error**: Treating the balance model as a requirement for every scheme.
+  **Correction**: If adopted for an exercise, require positive C,V and distinguish its conditional arithmetic from aesthetic judgment.
 
 # Common Confusions
 
-- **Confusion**: Monochromatic means only using one exact colour.
-  **Clarification**: Monochromatic means one hue with multiple values and chromas — potentially many distinct colours.
+- **Confusion**: A method called “harmony” is always harmonious or accessible.
+  **Clarification**: That historical label cannot establish either outcome; assess the actual use.
+- **Confusion**: Scheme membership determines precise colour conversion or contrast.
+  **Clarification**: Models differ; hue alone leaves V/C and conversion conditions unknown. Check the rendered pair.
 
 # Source Reference
 
@@ -134,8 +142,7 @@ Chapter 9: Color Combinations, p. 15.
 
 # Verification Notes
 
-- Definition source: Direct quotes from p. 15.
-- Confidence rationale: High — explicitly described with clear examples.
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Music theory mapping (variation within a key) rated STRUCTURAL.
+- This revision reviewed the complete available card body and local relationships/CQ components; it did not inspect the missing original book, prepared Cleland text or diagrams. All historical quotations, dates, page claims, named attributions and source-specific efficacy claims remain unassessed for fidelity.
+- Extraction-confidence metadata is preserved from the predecessor. Earlier “exact quote,” “verified planned cards” and “0010 checked” notes described historical extraction/navigation observations, not current independent semantic proof.
+- Current technical qualifications use the [RIT renotation overview](https://www.rit.edu/science/munsell-color-science-lab-educational-resources#munsell-renotation-data), [CIE appearance terminology](https://cie.co.at/eilvterm/17-22-067) and [CSS Color4](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/), with elementary conditional algebra where stated. These do not establish historical-source fidelity, exact perceptual equality, physical neutralisation or aesthetic guarantees.
+- CSS metadata/body examples are model-specific illustrations, not Munsell conversions, checked contrast pairs or mandatory project palettes. No browser, assistive-technology, disc/material experiment or hosted rendering result was produced.

@@ -26,12 +26,11 @@ The details are not the details. They make the design.
 :::
 
 ::: {.preamble style="margin-top: var(--space-m);"}
-This document is a statement of principles. It describes an approach to
-visual design that treats aesthetic decisions not as matters of taste
-but as engineering problems --- constrained, measurable, and composable.
-It argues that the best design systems are not collections of components
-but algebraic structures: closed under composition, governed by
-invariants, and provably consistent.
+This document argues for a principled approach to visual design: make
+relationships explicit, choose useful constraints, inspect what can be measured,
+and leave room for taste, context and craft. Software architecture and mathematics
+can help organize decisions; they do not make aesthetic consistency provable or
+turn every design system into a closed algebraic structure.
 
 These principles were refined through practical work with a design system.
 They are not specific to that project. They explore useful connections between
@@ -63,10 +62,6 @@ distinguishes reference, system and component tokens, and allows concrete
 component values. [Fluent 2's token documentation](https://fluent2.microsoft.design/design-tokens)
 presents global and alias layers. These are bounded documentation examples,
 not evidence that every design system requires the same layer count.
-All three use multiplicative type scales rather than arbitrary font
-sizes. All three enforce spacing systems built on a base unit with
-constrained multipliers. All three separate colour into tonal scales
-with systematic lightness progressions.
 
 Similar structures across systems can reveal useful approaches, but they do
 not establish one mandatory architecture. Tokens, scales and color models are
@@ -85,7 +80,7 @@ Section II
 ## Seven Principles
 
 ::::: {.principle-card numeral="I"}
-### Multiply, Never Add
+### Use Proportion Where It Helps
 
 ::: {.epigraph style="margin-top: var(--space-xs);"}
 Just-noticeable differences are proportional to the stimulus intensity.
@@ -104,7 +99,7 @@ the resulting hierarchy; departures are not errors by definition.
 :::::
 
 :::: {.principle-card numeral="II"}
-### Perception Is the Only Coordinate System That Matters
+### Check Perception in Context
 
 ::: prose
 OKLCH is a useful perceptual color space for exploring lightness, chroma and
@@ -134,7 +129,7 @@ not prove that its value is appropriate in every component or state.
 ::::
 
 ::::: {.principle-card numeral="IV"}
-### Constraint Liberates; Freedom Paralyses
+### Choose Constraints Deliberately
 
 ::: {.epigraph style="margin-top: var(--space-xs);"}
 Real freedom is not the absence of structure but the presence of the
@@ -171,7 +166,7 @@ contextual expression can coexist without making every project look the same.
 ::::
 
 :::: {.principle-card numeral="VI"}
-### Proximity Carries Meaning; Uniformity Erases It
+### Use Proximity to Support Meaning
 
 ::: prose
 Proximity is one cue that can help viewers infer grouping; its effect depends
@@ -217,26 +212,22 @@ Section III
 ## The Deeper Structure
 
 ::: prose
-Underneath these seven principles lies a single insight that unifies all
-of them: the visual properties that humans perceive as \"harmonious\" or
-\"consistent\" or \"professional\" are, without exception, properties
-that exhibit mathematical regularity. Geometric type scales.
-Perceptually uniform colour spaces. Proportional spacing. Systematic
-tonal progressions. Consistent axis ratios.
+These seven themes express a working commitment: make decisions and their
+relationships inspectable while judging their effects in context. A declared
+scale, a coherent role vocabulary or a repeated alignment can help a team reason
+about a composition. Irregularity, asymmetry and deliberate exceptions can also
+serve content and expression.
 
-This is not a coincidence and it is not a cultural construction. It is a
-consequence of how neural systems process sensory information. Pattern
-recognition is metabolically expensive; regular patterns are cheap to
-process and therefore experienced as pleasant. Irregular patterns demand
-more processing and are experienced as effortful --- which the mind
-interprets as \"something is wrong,\" even when it cannot identify what.
+A feeling that something “looks off” can begin a useful discussion, but it does
+not identify a mathematical violation or neural cause. Ask what the viewer is
+trying to do, which relationship is unclear, and what concrete change might
+help. Test the proposal with the content and intended audience. This manifesto
+supplies no evidence that metabolic processing cost explains aesthetic pleasure
+or that every permitted composition will look coherent.
 
-This is why \"it just looks off\" is a reliable design critique even
-from non-designers. They are detecting a violation of mathematical
-regularity that they cannot name. The purpose of a principled design
-system is to make that violation structurally impossible --- to ensure
-that every composition the system permits is one that the visual cortex
-will process as coherent.
+Coherence is a design goal to evaluate. Shared structures can reduce accidental
+variation, but they cannot make inappropriate combinations structurally
+impossible without also imposing choices that may fail a particular task.
 
 Comparisons between Material Design, Carbon and Polaris need an identified
 product generation and token category. Their available examples do not
@@ -285,22 +276,17 @@ Section V
 ## Coda
 
 ::: prose
-There is a persistent mythology that design and engineering are opposed
---- that rigour constrains creativity, that systems suppress expression,
-that mathematics is the enemy of beauty. The evidence says otherwise.
+Rigour and creativity can support each other. A grid, ratio, type rhythm or
+colour constraint can give a practitioner something productive to work with;
+its value comes from the resulting composition and use, not from mathematical
+regularity alone. The historical examples often invoked in this discussion ---
+ancient buildings, manuscripts, paintings, posters and products --- do not prove
+that every creator used the golden ratio or that one system explains enduring work.
 
-The most enduring visual works in human history --- the Parthenon, the
-illuminated manuscripts, the Renaissance canvases, the Swiss typographic
-posters, the Braun products --- are without exception works of profound
-mathematical regularity. Their creators did not experience the golden
-ratio and the modular grid and the baseline rhythm as constraints on
-their art. They experienced them as the medium through which their art
-became possible.
-
-A well-built design system is not a cage. It is an instrument. Like any
-good instrument, it has constraints --- a piano has 88 keys, not
-infinite frequencies --- and those constraints are precisely what allow
-a skilled practitioner to produce music instead of noise.
+A well-built design system can be an instrument. An instrument offers constraints
+and expressive possibilities; the practitioner still chooses, listens, adjusts
+and judges the result. A piano's finite keys illustrate that possibility, without
+making colour and music obey the same perceptual or aesthetic laws.
 
 **Build the instrument well. Tune it to human perception. Then play.**
 :::

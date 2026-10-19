@@ -37,63 +37,66 @@ rosetta_stone:
     domain: "music"
     concept: "Resolution of dissonance"
     rating: "loose"
-    note: "Complementary harmony uses maximum chromatic contrast resolved through proportional balance, loosely analogous to how musical dissonance (e.g., a tritone) resolves to consonance. Both involve tension that is managed, not avoided. The parallel is suggestive rather than formally grounded."
+    note: "The historical use of opposed hues and area choices can be loosely compared with managing musical tension. It is not a common physical law or a guarantee of visual harmony, contrast, neutralisation, or musical resolution."
 css_implementation:
   -
     property: "oklch() hue offset"
-    example: "/* Complementary palette: base hue + 180 degrees */\n--base: oklch(0.5 0.15 240);\n--complement: oklch(0.6 0.10 60);\n/* Balance: complement occupies smaller area at higher chroma */"
+    example: "/* Illustrative CSS hue-offset candidates; not Munsell complements or an area/contrast result. */\n--base: oklch(0.5 0.15 240);\n--complement: oklch(0.6 0.10 60);"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Complementary harmony is the use of opposite hues together in a design — described by Cleland as "one of the simplest and surest of color harmonies" — where maximum chromatic contrast is managed through proportional area balance.
+This named colour-selection strategy uses opposed hues. “Harmony” names a historical design preference, not an assured result of the selection rule.
 
 # Core Definition
 
-Cleland identifies complementary harmony as a fundamental colour combination: "This combination of opposites is one of the simplest and surest of color harmonies. We have seen how, if properly proportioned as to amount or area, these opposite colors will balance in perfect neutrality" (p. 15).
+The earlier extraction attributes the following wording to Cleland; the book and prepared text are unavailable, so quotations, locators, context and historical attribution remain unverified.
 
-Beyond mere balance, he notes a perceptual enhancement effect: "another interesting fact with regard to them is that when placed together these contrasting colors tend to stimulate and enhance each other" (p. 15).
+Retained reported wording: "This combination of opposites is one of the simplest and surest of color harmonies. We have seen how, if properly proportioned as to amount or area, these opposite colors will balance in perfect neutrality" "another interesting fact with regard to them is that when placed together these contrasting colors tend to stimulate and enhance each other"
 
-The key requirements are: (1) the two hues must be diametrically opposite on the hue circle, and (2) their areas must be proportioned inversely to their visual weight (Chroma × Value) to achieve balance.
+The historical preference uses opposed hues and area choices. It does not guarantee maximum contrast, enhancement, neutral mixing or aesthetic success. Any use of the area equation stays a positive-input approximation; actual CSS candidates need gamut and rendered-pair review.
 
 # Prerequisites
 
-- **Complementary Colours** — Understanding which hue pairs are opposite on the circle.
-- **Colour Balance** — The area-proportioning principle that makes complementary combinations harmonious rather than jarring.
+- **Complementary Colours** — Supplies the relevant H/V/C or diagram vocabulary for this card; this is an understanding route, not a claim of physical or historical derivation.
+- **Colour Balance** — Supplies the stipulated positive-input historical model for the conditional arithmetic; it does not establish a mixing or harmony law.
 
 # Key Properties
 
-1. **Maximum contrast**: Opposite hues provide the strongest possible hue contrast.
-2. **Mutual enhancement**: Complements "stimulate and enhance each other" when juxtaposed (p. 15).
-3. **Area-dependent**: Harmony requires correct area proportions — not equal areas, but inversely proportional to Chroma × Value.
-4. **Neutralisation test**: If mixed in their given area proportions, the colours would produce neutral gray.
-5. **"Simplest and surest"**: Cleland ranks this among the most reliable harmony types (p. 15).
+1. The defining selection is opposed hues; identify the diagram/model in use.
+2. Value/chroma variation can create candidates, within the available gamut and reference conditions.
+3. Recorded claims of sure or infallible harmony are attributed advice, not established guarantees.
+4. No necessary hue-count, three-step threshold or universal area recipe follows.
+5. Actual coherence, hierarchy, legibility and accessibility depend on the roles, content, viewing conditions and complete rendered pairs.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Select a hue (e.g., Blue 5B).
-2. Find its complement on the hue circle (Yellow-Red 5YR).
-3. Choose value and chroma levels for each.
-4. Calculate area proportions using the balance formula: Area_A/Area_B = (C_B × V_B)/(C_A × V_A).
-5. Assign the smaller area to the colour with higher visual weight.
+
+1. Start with the brief, supplied brand colour/tokens and actual interface roles; preserve their semantics.
+2. Explore opposed hues in the named model. The recorded Munsell examples are not CSS conversions.
+3. For CSS, choose explicit OKLCH candidate values; any fixed hue or ±angle choice is optional, not a mandatory palette.
+4. Check destination gamut and rendering, then actual foreground/background pairs and relevant states; adjust for the task.
+5. If demonstrating the historical area equation, state its positive-domain approximation separately. It supplies no general neutral-background or harmony rule.
 
 ## To Identify/Recognise:
-1. Two dominant hues in the composition are diametrically opposite on the hue circle.
-2. The stronger/lighter colour occupies a smaller area.
-3. The colours feel simultaneously contrasting and unified.
+
+1. Identify the selection relation (opposed hues) rather than judging by a vague impression of harmony.
+2. Distinguish family proximity from exact coordinate identity; decide which the exercise requires.
+3. Check the resulting candidates in their actual task instead of inferring quality from their scheme name.
 
 # Context & Application
 
-- **Typical contexts**: Brand identity (primary + accent), call-to-action design, data visualisation (binary categories), sports team colours.
-- **Common applications**: Accent colour selection (complement of primary brand colour); creating visual vibrance and energy; drawing attention through contrast while maintaining balance.
+For CQ23, begin with the supplied brand value and task, map needed roles, propose optional candidates in an explicit CSS model, inspect gamut/rendering, and check complete pairs and states. No Munsell hue-only conversion or automatic accessible palette is supplied. Scheme names can organize exploration; they do not determine a universal hue/family count.
 
 ## Cross-Domain Connections
 
-**Music Theory → Loose**: Complementary harmony manages maximum chromatic tension through proportional balance, loosely analogous to how musical dissonance resolves to consonance. A tritone (maximum intervallic tension) can resolve satisfyingly when voice-led correctly; likewise, complementary colours produce satisfying results when area-balanced correctly. Both involve controlled tension rather than avoidance of contrast.
+**Music → Loose**: A chosen colour constraint may evoke variation or managed tension in music. Value is not loudness, chroma is not articulation, and a key or tritone supplies no shared physical mechanism or guarantee of visual harmony.
 
 # Examples
+
+Recorded extraction examples below retain their reported locators; they were not checked against the missing book. Any balance or harmony result is historical advice or conditional arithmetic, not an independently observed mixing or aesthetic result.
 
 **Example 1** (p. 15): "This combination of opposites is one of the simplest and surest of color harmonies... these contrasting colors tend to stimulate and enhance each other."
 
@@ -104,32 +107,37 @@ The key requirements are: (1) the two hues must be diametrically opposite on the
 # Relationships
 
 ## Builds Upon
-- **Complementary Colours** — The hue relationship that makes this harmony possible.
-- **Colour Balance** — The proportioning principle that makes it work.
+
+- **Complementary Colours** — The method explores opposed positions in a named diagram; no conversion or contrast guarantee follows.
+- **Colour Balance** — The recorded approximation can supply an optional area exercise, not the source of guaranteed harmony.
 
 ## Enables
-- **Triadic Colour Balance** — Extends the complementary principle to three colours by splitting one complement into its constituent hues.
-- **Colour Harmony as Order** — Complementary harmony exemplifies orderly paths (diameters) through colour space.
+
+- **Triadic Colour Balance** — The historical split method extends this selection idea, without a physical mixing theorem.
+- **Colour Harmony as Order** — A diameter is one diagram path in the reported order thesis, not proof of harmony.
 
 ## Related
-- **Munsell Balance Formula** — Provides the mathematical tool for calculating correct proportions.
+
+- **Munsell Balance Formula** — The formula supplies conditional arithmetic with positive inputs, not uniquely correct proportions.
 
 ## Contrasts With
-- **Analogous Harmony** — Uses proximity (minimal contrast); complementary uses opposition (maximum contrast).
-- **Monochromatic Harmony** — Uses zero hue contrast; complementary uses maximum hue contrast.
+
+- **Analogous Harmony** — Neighbouring versus opposed hue selections distinguish the methods; neither ensures minimum/maximum usable contrast.
+- **Monochromatic Harmony** — One hue versus opposed hues distinguishes the methods, not aesthetic quality.
 
 # Common Errors
 
-- **Error**: Using equal areas of complementary colours regardless of their chroma and value differences.
-  **Correction**: Areas must be inversely proportional to visual weight (C × V). Equal areas only balance when both colours have the same chroma and value.
-
-- **Error**: Avoiding complementary combinations because they seem "too bold."
-  **Correction**: Complements "stimulate and enhance each other" — the boldness is a feature. Control intensity through area balance and chroma moderation.
+- **Error**: Assuming equal areas satisfy the positive inverse-product equation only when C and V separately match.
+  **Correction**: Equal products suffice: C3V4 and C2V6 both give 12. This is a conditional model result, not proof of neutralisation or harmony.
+- **Error**: Treating +180° CSS hue offset as a Munsell complement or maximum-contrast result.
+  **Correction**: It creates a CSS-model candidate only; check gamut, roles and actual rendered pairs.
 
 # Common Confusions
 
-- **Confusion**: Complementary harmony and complementary colours are the same concept.
-  **Clarification**: Complementary colours is the structural relationship (opposite on the circle); complementary harmony is the design strategy of using that relationship with proper balance for aesthetic effect.
+- **Confusion**: A method called “harmony” is always harmonious or accessible.
+  **Clarification**: That historical label cannot establish either outcome; assess the actual use.
+- **Confusion**: Scheme membership determines precise colour conversion or contrast.
+  **Clarification**: Models differ; hue alone leaves V/C and conversion conditions unknown. Check the rendered pair.
 
 # Source Reference
 
@@ -137,8 +145,7 @@ Chapter 9: Color Combinations, p. 15. Chapter 8: Balance, pp. 11-14.
 
 # Verification Notes
 
-- Definition source: Direct quotes from p. 15, supplemented by balance examples from Ch. 8.
-- Confidence rationale: High — explicitly described as "one of the simplest and surest of color harmonies."
-- Uncertainties: None.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Music theory mapping (dissonance resolution) rated LOOSE per 0010 specifications.
+- This revision reviewed the complete available card body and local relationships/CQ components; it did not inspect the missing original book, prepared Cleland text or diagrams. All historical quotations, dates, page claims, named attributions and source-specific efficacy claims remain unassessed for fidelity.
+- Extraction-confidence metadata is preserved from the predecessor. Earlier “exact quote,” “verified planned cards” and “0010 checked” notes described historical extraction/navigation observations, not current independent semantic proof.
+- Current technical qualifications use the [RIT renotation overview](https://www.rit.edu/science/munsell-color-science-lab-educational-resources#munsell-renotation-data), [CIE appearance terminology](https://cie.co.at/eilvterm/17-22-067) and [CSS Color4](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/), with elementary conditional algebra where stated. These do not establish historical-source fidelity, exact perceptual equality, physical neutralisation or aesthetic guarantees.
+- CSS metadata/body examples are model-specific illustrations, not Munsell conversions, checked contrast pairs or mandatory project palettes. No browser, assistive-technology, disc/material experiment or hosted rendering result was produced.

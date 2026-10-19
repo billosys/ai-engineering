@@ -35,7 +35,7 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Radial coordinate in cylindrical space"
     rating: "rigorous"
-    note: "Chroma is the radial coordinate (r) in the Munsell cylindrical system. Unlike hue (bounded, cyclic) and value (bounded, linear), chroma is open-ended — r ∈ [0, ∞) theoretically, limited only by available pigments or display gamut."
+    note: "Chroma is drawn radially from a neutral axis in the Munsell diagram. Abstract nonnegative coordinates do not imply unlimited realizable surface colours: available chroma depends on hue, value, reference conditions and material or destination gamut."
 css_implementation:
   -
     property: "oklch() chroma channel"
@@ -49,52 +49,63 @@ css_implementation:
 
 # Quick Definition
 
-Chroma is the third dimension of colour — the quality that measures how strong or weak a colour is, from neutral gray (chroma 0) outward to maximum colour intensity.
+Chroma describes colour departure from an achromatic reference under specified conditions. Munsell chroma is the H/V/C system’s radial coordinate; it differs from saturation and from OKLCH C.
 
 # Core Definition
 
-Cleland introduces chroma through comparison: "Both may be green and of the same Value of light, but the emerald is strong in color and the grape is weak in color or grayer. It is this difference which is measured on the dimension of Chroma" (p. 7). Chroma measures the departure from neutral gray at any given value level.
+The earlier extraction attributes the following wording to Cleland; the book and prepared text are unavailable, so quotations, locators, context and historical attribution remain unverified.
 
-The scale radiates outward from the neutral axis: "if we imagine any one of these hues on the circumference of the band to grow inward toward the gray pole in the center, growing grayer or weaker in color strength until it reaches this center pole and loses its color entirely, we have grasped the idea of the dimension known as Chroma" (p. 7).
+Retained reported wording: "Both may be green and of the same Value of light, but the emerald is strong in color and the grape is weak in color or grayer. It is this difference which is measured on the dimension of Chroma" "if we imagine any one of these hues on the circumference of the band to grow inward toward the gray pole in the center, growing grayer or weaker in color strength until it reaches this center pole and loses its color entirely, we have grasped the idea of the dimension known as Chroma" "/5, /8, /9, etc."
 
-Chroma is written in a colour formula as a numeral below a line: "/5, /8, /9, etc." (p. 7).
+Munsell chroma is drawn as departure from neutral at a specified hue/value. Realizable extent is reference/material/gamut dependent. Chroma, saturation and CSS channels require their own definitions; historic pigment examples do not establish universal maxima.
+
+Further recorded extraction wording (unverified attribution/context; these are not adopted universal claims):
+
+- "at right angles to the vertical pole" (p. 7)
+- "limited only by the strength of pigments" (p. 9)
+- "Colors differ by nature in their Chroma Strength, some being much more powerful than others. The strongest red pigment... is twice as powerful as the strongest blue-green pigment" (p. 8)
+- "All colors do not reach their maximum Chroma Strength at the same level of Value" (p. 8)
+- "We may say of an emerald that it is green and that it is light, but... there is a decided difference" (p. 7)
 
 # Prerequisites
 
-This is a foundational concept with no prerequisites within this source. It is one of the three primitive dimensions of colour.
+No card-local prerequisite is recorded in the preserved metadata. This is an editorial starting point, not proof that the concept has no dependencies in the wider domain.
 
 # Key Properties
 
-1. **Colour strength**: Chroma measures how far a colour departs from neutral gray. Zero chroma = pure gray; high chroma = vivid colour.
-2. **Radial measurement**: Measured "at right angles to the vertical pole" — perpendicular to the value axis, radiating outward from the neutral center (p. 7).
-3. **Open-ended scale**: Unlike hue (cyclic, 100 steps) and value (bounded, 0-10), chroma is "limited only by the strength of pigments" (p. 9). New pigments can extend the scale.
-4. **Unequal maxima by hue**: "Colors differ by nature in their Chroma Strength, some being much more powerful than others. The strongest red pigment... is twice as powerful as the strongest blue-green pigment" — Red reaches /10, Blue-Green only /5 (p. 8).
-5. **Unequal maxima by value**: "All colors do not reach their maximum Chroma Strength at the same level of Value" — strongest yellow is high-value, strongest blue is low-value (p. 8).
-6. **Independence from hue and value**: A colour's chroma can be assessed independently of its hue or lightness.
+1. In the diagram C=0 is neutral and hue is undefined there.
+2. Chroma is drawn radially at a chosen hue/value; this does not establish Euclidean perceptual distance.
+3. There is no single fixed maximum for all hues and values; realizable chroma depends on reference conditions, material and gamut.
+4. Red /10 versus BG /5 is a recorded pigment example, not an all-time physical limit.
+5. Distinct H/V/C coordinates do not guarantee unrestricted independence in realizable colours or perceived appearance.
+6. CIE chroma and saturation use different reference judgments; HSL saturation and OKLCH C have separate model definitions.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Start at the neutral axis (gray) at a given value level.
-2. Move radially outward in the direction of a specific hue.
-3. Count the measured steps of increasing colour strength.
-4. Each step represents one unit of chroma.
+
+1. Choose a reference hue/value and viewing context.
+2. Compare with the achromatic reference at that level.
+3. Use the reference system's calibration to assign chroma; do not measure arbitrary diagram length as physical colourfulness.
+4. Check any resulting digital candidate against its destination gamut.
 
 ## To Identify/Recognise:
-1. Compare the colour to a neutral gray of the same lightness (value).
-2. Assess how different the colour is from that gray — how "colourful" it appears.
-3. A vivid emerald is high chroma; a grayish sage is low chroma — even if both are the same hue and value.
+
+1. Identify which model or appearance definition is meant by chroma.
+2. Compare muted/vivid variation without assuming that darkness is chroma.
+3. Distinguish the coordinate value from a device/material maximum.
 
 # Context & Application
 
-- **Typical contexts**: Palette construction, colour balance calculations, accessibility (low-chroma colours are safer for backgrounds), design systems.
-- **Common applications**: The C channel in OKLCH; controlling vibrancy in design; creating muted/vivid variations of a base colour; the Munsell balance formula uses chroma as a key variable.
+Chroma helps describe and vary candidates. Low chroma alone does not make a background safe or legible; complete rendered foreground/background pairs and states need checks. A Munsell chroma number cannot be placed directly into CSS OKLCH C.
 
 ## Cross-Domain Connections
 
-**Mathematics → Rigorous**: Chroma is the radial coordinate in the Munsell cylindrical coordinate system. It is the only unbounded dimension — r ∈ [0, ∞) theoretically — which explains the asymmetric "colour tree" shape of the practical Munsell solid. The open-endedness of chroma contrasts with the closed topology of hue (cyclic) and the bounded interval of value.
+**Mathematics → Diagram geometry**: Chroma is radial in the stipulated cylindrical diagram. Nonnegative abstract radii do not imply infinite realizable surface colours. Available chroma varies with hue/value and conditions.
 
 # Examples
+
+Recorded extraction examples below retain their reported locators; they were not checked against the missing book. Any balance or harmony result is historical advice or conditional arithmetic, not an independently observed mixing or aesthetic result.
 
 **Example 1** (p. 7): The emerald vs. grape comparison — "Both may be green and of the same Value of light, but the emerald is strong in color and the grape is weak in color or grayer."
 
@@ -105,36 +116,39 @@ This is a foundational concept with no prerequisites within this source. It is o
 # Relationships
 
 ## Builds Upon
-This is a foundational primitive — it does not build upon other concepts.
+
+No additional card-local bullet is recorded here. This is navigation scope, not a verified absence or a historical-source completeness result.
 
 ## Enables
-- **Munsell Colour Notation** — Chroma is the C component in H V/C.
-- **Munsell Colour Solid** — Chroma determines the radial extent of the solid.
-- **Colour Balance** — Balance requires proportioning area inversely to chroma.
-- **Munsell Balance Formula** — Area ∝ 1/(Chroma × Value).
+
+- **Munsell Colour Notation** — Chroma supplies C in H V/C, with reference-specific calibration.
+- **Munsell Colour Solid** — Chroma supplies the radial diagram coordinate and contributes to the gamut boundary.
+- **Colour Balance** — The historical model uses positive C,V to compute inverse areas; no general visual-weight law follows.
+- **Munsell Balance Formula** — A∝1/(C×V) is a conditional positive-input approximation, not neutral-background division.
 
 ## Related
-- **Munsell Colour System** — Chroma is the third of the system's three dimensions.
-- **Neutral Axis** — Chroma is measured as departure from the neutral axis.
-- **Hue** — The first dimension, independent of chroma.
-- **Colour Value** — The second dimension, independent of chroma.
+
+- **Munsell Colour System** — Chroma is one of the named coordinates, not a universal absolute colourfulness amount.
+- **Neutral Axis** — Neutral supplies the radial origin at each value, where hue is undefined.
+- **Hue** — Hue and chroma describe distinct attributes, without unrestricted independent realizability.
+- **Colour Value** — Value and chroma describe distinct attributes, both subject to model/reference/gamut conditions.
 
 ## Contrasts With
-- **Hue** — Hue identifies which colour; chroma measures how much colour.
-- **Colour Value** — Value measures lightness; chroma measures colour strength. "We may say of an emerald that it is green and that it is light, but... there is a decided difference" (p. 7).
+
+- **Hue** — Hue identifies colour character; chroma concerns departure from a neutral reference.
+- **Colour Value** — Value concerns light/dark character; chroma concerns departure from neutral.
 
 # Common Errors
 
-- **Error**: Using maximum chroma for all colours in a design, assuming "more colourful = better."
-  **Correction**: Different hues have different maximum chromas. Using maximum chroma for every hue creates visual imbalance — red at /10 will overwhelm blue-green at /5 unless area is adjusted.
+- **Error**: Assuming maximum chroma is always best or inevitably creates imbalance.
+  **Correction**: Evaluate the actual task, roles, gamut and pairs. The historical inverse-product model is a conditional heuristic, not a general visual-weight law.
 
 # Common Confusions
 
-- **Confusion**: Chroma and saturation are the same thing.
-  **Clarification**: Munsell chroma is an absolute measure — chroma 5 means the same departure from gray regardless of hue. HSL saturation is a relative percentage of maximum for that hue/lightness combination. Red at HSL saturation 100% and blue-green at 100% have very different perceptual colour strengths, but they'd have different Munsell chroma values.
-
-- **Confusion**: Low chroma means the colour is dark.
-  **Clarification**: Low chroma means the colour is close to gray — it could be a light gray (high value, low chroma) or a dark gray (low value, low chroma). Chroma and value are independent.
+- **Confusion**: Chroma and saturation are synonyms or universal C/L ratios.
+  **Clarification**: CIE chroma relates colourfulness to an achromatic reference; saturation to the area's own brightness. Munsell C, OKLCH C and HSL/HSV saturation are model-specific.
+- **Confusion**: Low chroma means dark.
+  **Clarification**: Near-neutral colours can be light or dark; admissible chroma at each value still depends on the reference/gamut.
 
 # Source Reference
 
@@ -142,8 +156,7 @@ Chapter 3: By T. M. Cleland, p. 4 (introduction). Chapter 6: III. Chroma, pp. 7-
 
 # Verification Notes
 
-- Definition source: Direct quotes from pp. 7-8. Cleland's emerald/grape comparison is the explicit definition.
-- Confidence rationale: High — explicit definition with concrete examples; the concept is clearly and extensively described.
-- Uncertainties: None significant.
-- Cross-reference status: All referenced slugs correspond to planned cards.
-- Rosetta Stone check: Checked against 0010 tables. Mathematics (radial coordinate) included, rated RIGOROUS.
+- This revision reviewed the complete available card body and local relationships/CQ components; it did not inspect the missing original book, prepared Cleland text or diagrams. All historical quotations, dates, page claims, named attributions and source-specific efficacy claims remain unassessed for fidelity.
+- Extraction-confidence metadata is preserved from the predecessor. Earlier “exact quote,” “verified planned cards” and “0010 checked” notes described historical extraction/navigation observations, not current independent semantic proof.
+- Current technical qualifications use the [RIT renotation overview](https://www.rit.edu/science/munsell-color-science-lab-educational-resources#munsell-renotation-data), [CIE appearance terminology](https://cie.co.at/eilvterm/17-22-067) and [CSS Color4](https://www.w3.org/TR/2026/CRD-css-color-4-20261009/), with elementary conditional algebra where stated. These do not establish historical-source fidelity, exact perceptual equality, physical neutralisation or aesthetic guarantees.
+- CSS metadata/body examples are model-specific illustrations, not Munsell conversions, checked contrast pairs or mandatory project palettes. No browser, assistive-technology, disc/material experiment or hosted rendering result was produced.

@@ -4,13 +4,11 @@ Colour theory, typography, & layout-composition
 
 # Foundational Research for a Visual Design Knowledge Base
 
-The field of visual design possesses formal structure, empirical
-grounding, and mathematical depth fully comparable to graduate-level
-mathematics or post-doctoral music theory. This research validates a
-domain taxonomy, maps 55 competency questions across three tiers,
-analyses 30+ foundational sources, and documents the mathematical
-underpinnings that will give a technically sophisticated reader
-first-principles access to the discipline.
+This guide is a working organization of visual-design topics, selected questions,
+reading pointers and cross-domain connections. Some topics use formal models or
+empirical findings; others are contextual design methods and aesthetic judgments.
+The taxonomy and questions are proposals for organizing learning, not a validated
+curriculum, a completed source survey or proof of first-principles coverage.
 
 ::: tag-row
 [Research]{.tag} [Domain Taxonomy]{.tag} [Competency Questions]{.tag}
@@ -23,86 +21,56 @@ first-principles access to the discipline.
 Section 1
 :::
 
-## The Taxonomy Is Strong but Needs a Foundational Layer and Three Additions
+## A Working Taxonomy with Foundational and Cross-Cutting Topics
 
 ::: prose
-The preliminary nine-category taxonomy maps well to how foundational
-design education is structured at RISD, Parsons, and CMU. **Colour
-theory, typography, and layout-composition receive universal standalone
-treatment** across every program and textbook examined. Visual
-perception, interaction design, and accessibility have strong support.
-Information architecture, design systems, and brand identity have
-moderate support but sit at different abstraction levels.
+The working categories include colour, typography, layout-composition, visual
+perception, interaction, accessibility, information architecture, design systems
+and visual identity. Their boundaries overlap; they are a practical navigation
+choice rather than a validated description of every school or textbook.
 :::
 
 ::: finding-card
-#### Critical Gap: Visual Elements
+#### Include Visual Elements
 
-Every design foundations textbook --- Lupton & Phillips\'s *Graphic
-Design: The New Basics*, Lauer & Pentak\'s *Design Basics* --- opens
-with point, line, plane, shape, texture, and value. RISD teaches
-\"form\" as a foundational principle co-equal with colour and
-typography. These atomic building blocks are more fundamental than any
-of the nine categories and must be added as a layer-zero category.
+Point, line, plane, shape, texture and value provide useful vocabulary before
+more specialized topics. Lupton & Phillips's *Graphic Design: The New Basics*
+and Lauer & Pentak's *Design Basics* are reading pointers, not evidence that
+every foundation course follows the same sequence.
 :::
 
 ::: notes
-#### Three Categories to Add
+#### Consider Motion, Data Visualization and Imagery
 
-**Motion design** --- RISD and Parsons both offer dedicated tracks;
-Material Design 3, Carbon, Polaris, and Apple HIG all document motion as
-a standalone visual style. Animation principles (easing, timing,
-choreography) are distinct from interaction design.
-
-**Data visualization** --- Carnegie Mellon offers it as a standalone
-course; Carbon and Polaris document it as a top-level section. It
-doesn\'t fit colour, typography, or layout alone.
-
-**Imagery** --- RISD lists \"image\" as co-equal with colour and type.
-Photography direction, iconography, and illustration selection are
-fundamental design decisions with no current home in the taxonomy.
+**Motion** includes timing, easing and choreography, with interaction, preference
+and accessibility consequences. **Data visualization** combines visual encoding
+with data and task needs. **Imagery** includes photography, illustration and
+iconography. Give them navigable homes if the intended work needs them; no vendor
+or school survey establishes a mandatory category list here.
 :::
 
 ::: {.prose style="margin-top: var(--space-m);"}
-**Orthogonality issues to address.** An ontology engineer would flag
-three concerns. First, visual-perception and layout-composition overlap
-significantly --- gestalt principles *are* the perceptual laws governing
-layout. Keep them separate but cross-reference heavily. Second,
-accessibility operates as a cross-cutting quality attribute touching
-every other category, not a peer domain. Model it as a facet dimension
-or ensure each category has accessibility subconcepts. Third,
-brand-identity sits at a higher abstraction level --- it\'s an
-application context drawing on colour, typography, and design systems
-rather than a knowledge domain of equal granularity. Consider renaming
-it \"visual-identity-systems.\"
+Visual perception and layout overlap: proximity and other grouping cues help
+explain arrangements, without acting as universal layout laws. Accessibility
+cross-cuts all categories; either model it as a facet or make its requirements
+visible within each topic. Visual identity also supplies an application context,
+so its granularity differs from an individual colour or type concept.
 
-**Cross-cutting principles that span categories.** Hierarchy, contrast,
-rhythm/repetition, scale/proportion, and balance appear in every
-textbook and design system but belong to no single category. The
-knowledge base should model these as cross-cutting concept cards that
-reference multiple domains, similar to how mathematical theorems
-reference multiple branches.
+Hierarchy, contrast, rhythm, proportion and balance can connect several topics.
+Cross-reference their uses while retaining the distinction between a definition,
+a contextual design strategy, an empirical result and a theorem with assumptions.
 :::
 
 ### How Design Systems Organize Their Documentation {#how-design-systems-organize-their-documentation style="margin-top: var(--space-xl);"}
 
-Analysis of five major systems reveals a convergent six-layer
-architecture:
-
-::: {style="overflow-x: auto;"}
-  Layer           Material Design 3   Carbon              Polaris              Primer        Apple HIG
-  --------------- ------------------- ------------------- -------------------- ------------- ------------------------
-  Principles      Foundations         Guidelines          Foundations          Foundations   Foundations
-  Visual styles   Styles              Elements            Design               Primitives    Foundations
-  Tokens          Design tokens       Tokens (embedded)   Tokens (top-level)   Primitives    Implicit
-  Components      Components          Components          Components           Components    Components
-  Patterns        ---                 Patterns            Patterns             Guides        Patterns
-  Platform        Develop             Developing          ---                  ---           Platforms/Technologies
-:::
+Documentation can be compared by principles, visual styles, tokens, components,
+patterns and platform guidance. These are useful comparison questions, not an
+established shared six-layer architecture. Identify each product, generation,
+page date and category before drawing a conclusion; vendor labels and omissions
+can mean different things.
 
 ::: {.prose style="margin-top: var(--space-s);"}
-**Universal visual style categories** across all five systems: colour,
-typography, spacing/layout, motion, icons, and elevation/depth.
+
 [The DTCG 2025.10 Format Module](https://www.designtokens.org/tr/2025.10/format/)
 is a stable Final Community Group Report intended for implementation, not a
 W3C Standard or Standards Track document. It specifies a JSON interchange
@@ -118,14 +86,14 @@ categories describe value structure, not a required token-layer architecture.
 Section 2
 :::
 
-## Fifty-Five Competency Questions Bridge Perception and Implementation
+## Selected Questions Connect Perception and Implementation
 
 ::: prose
-Research into design education assessment, professional certification
-criteria, senior designer interview processes, and developer knowledge
-gaps produced 55 competency questions across five types and three tiers.
-The questions specifically bridge \"I can see it\" and \"I can build
-it\" --- connecting visual perception to systematic implementation.
+These selected prompts span definition, relationship, diagnosis, procedure and
+cross-domain reasoning. The tiers are a working teaching aid; no completed
+55-question assessment, professional certification survey or validity study is
+claimed. Answer the actual question, identify its assumptions and record what
+requires source or rendered-behavior evidence.
 :::
 
 :::: tier-section
@@ -138,7 +106,9 @@ it\" --- connecting visual perception to systematic implementation.
 (size, colour, contrast, weight, spacing) establish it? What
 distinguishes a spacing system from arbitrary padding values --- what
 problem does constraint solve? What are the three components of HSL, and
-why is it more useful than hex for palette construction?
+when might its controls help a particular palette task compared with hex notation?
+HSL is an sRGB parameterization, while hex encodes sRGB channel values; neither
+notation is universally better or a perceptual/contrast guarantee.
 
 **Relational.** How do font weight and colour work *together* with font
 size to create typographic hierarchy --- why is size alone insufficient?
@@ -146,10 +116,9 @@ How does the relationship between inter-group and intra-group spacing
 communicate which elements belong together?
 
 **Diagnostic.** A card layout uses 16px padding inside cards, 16px
-between cards, and 16px between card title and body. Why does everything
-feel flat? *Answer: identical spacing erases the distinction between
-containment and separation; intra-card spacing should be tighter than
-inter-card spacing.*
+between cards, and 16px between card title and body. Which relationships, if any, are unclear? Equal spacing alone does not prove a
+problem. Inspect content, headings, borders, alignment and intended grouping;
+closer within-group spacing is one possible cue, not a mandatory inequality.
 :::
 ::::
 
@@ -166,9 +135,10 @@ coloured status badge is accessible without relying solely on colour?
 
 **Diagnostic.** A dashboard uses teal header, red errors, green success,
 blue links, yellow warnings, purple badges. It looks like a \"clown
-car.\" What principle was violated? *Answer: no constrained palette.
-Define one primary, neutrals, and semantic colours with consistent
-shades. Reduce total unique hues.*
+car.\" What actual problem does the task reveal? Many hues alone do not establish a
+violation. Check meaning/role consistency, hierarchy, complete pair/state contrast
+and signals beyond colour. Preserve justified distinctions and supplied identity;
+propose changes for observed problems, not a prescribed number of hues.
 :::
 ::::
 
@@ -179,30 +149,27 @@ shades. Reduce total unique hues.*
 
 ::: prose
 **Relational.** How does a well-structured design token system map onto
-CSS custom properties? What is the isomorphism between design decisions
-and code architecture? How does cognitive load theory (intrinsic,
+CSS custom properties? Which design decisions map to implementation contracts, and where do the
+analogies stop? A shared vocabulary is not an isomorphism. How does cognitive load theory (intrinsic,
 extraneous, germane) relate to progressive disclosure and visual
 hierarchy?
 
 **Diagnostic.** An admin panel organises UI by database tables --- Users
-page, Orders page, Products page, each showing all columns. Diagnose the
-fundamental mistake. *Answer: UI mirrors the data model instead of user
-tasks. Reorganise around goals: \"Process orders,\" \"Handle returns.\"
-Show relevant data from multiple tables on task-focused views.*
+page, Orders page, Products page, each showing all columns. Assess whether this arrangement supports the actual users' tasks. A task-focused
+view such as processing orders or handling returns may help; a table-focused
+administration view can also be justified. Inspect what information and actions
+people need before prescribing reorganization.
 :::
 ::::
 
 ::: {.finding-card style="margin-top: var(--space-m);"}
-#### The Six Most Consequential Developer Design Mistakes
+#### Six Useful Review Questions
 
-Validated across multiple sources including Refactoring UI: (1) no
-visual hierarchy --- everything has equal weight; (2) inconsistent
-spacing --- no system; (3) unconstrained colour --- too many unrelated
-hues; (4) no type scale --- random font sizes; (5) data-model-driven
-information architecture instead of task-driven; (6) equal-weight
-buttons --- no primary/secondary distinction. These six account for the
-majority of the perceived quality gap between developer-built and
-designer-built interfaces.
+Ask whether the interface has (1) useful hierarchy, (2) understandable grouping,
+(3) coherent colour roles, (4) appropriate typography, (5) information and actions
+that support tasks, and (6) distinguishable action priorities. These are review
+prompts, not a measured ranking or an explanation of a majority of quality gaps.
+Neither a geometric scale nor a fixed palette/typeface count is a prerequisite.
 :::
 
 ------------------------------------------------------------------------
@@ -211,31 +178,26 @@ designer-built interfaces.
 Section 3
 :::
 
-## Source Analysis Reveals a Clear Intellectual Lineage
+## Reading Pointers Across Design Topics
 
-The sources form a pipeline: perception science (Arnheim, Ware, gestalt
-research) → design principles (Norman, Nielsen, Laws of UX) → practical
-patterns (Krug, Refactoring UI) → system architecture (Frost, Curtis) →
-CSS implementation (Comeau, Eckles, Every Layout, Utopia).
+The following pointers connect perception, design methods, practical patterns,
+architecture and CSS. This map does not establish a single intellectual lineage,
+complete bibliography or independent verification of each book. Check editions,
+source context and actual supporting passages before relying on a particular
+attribution or historical claim.
 
 ### Colour Theory: From Albers\'s Relativity to OKLCH\'s Perceptual Uniformity
 
 ::: prose
-**Josef Albers, *Interaction of Color* (1963).** The canonical colour
-education text. Central thesis: \"In visual perception a colour is
-almost never seen as it really is.\" Key extractable concepts: colour
-relativity, simultaneous contrast, one colour appearing as two (and vice
-versa), vibrating boundaries, transparency illusion. 272 pages,
-paperback, no ebook. Standing: universally canonical.
+**Josef Albers, *Interaction of Color* (1963).** A reading pointer for colour
+relativity, simultaneous contrast, apparent transparency and the influence of
+context. Exact passages, editions and demonstrations need source inspection;
+no exclusive print/ebook availability is asserted.
 
-**Johannes Itten, *The Art of Color* (1961).** Complements Albers with a
-classification-based approach. The seven colour contrasts (hue,
-light-dark, cold-warm, complementary, simultaneous, saturation,
-extension/proportion) are individually card-worthy concepts. The
-contrast of extension is particularly mathematical: Goethe\'s balance
-ratios (yellow:violet = 1:3, orange:blue = 1:2, red:green = 1:1).
-Condensed version *Elements of Color* (\~96 pages, Wiley) is more
-accessible.
+**Johannes Itten, *The Art of Color* (1961), and *Elements of Color*.** Reading
+pointers for classifications such as hue, light-dark, complementary, saturation
+and extension/proportion contrasts. Historical balance ratios are attributed
+design proposals, not universal physical mixture or harmony laws.
 
 **OKLCH/OKLAB (Björn Ottosson, 2020).** Oklab is a D65-referenced model
 whose coordinates aim to approximate perceived lightness, chroma and hue;
@@ -249,9 +211,8 @@ candidates, inspect destination gamut/rendering and check actual colour pairs
 when contrast matters; equal L does not certify appearance or accessibility.
 
 **CIE colour science** provides the mathematical foundation. Colour
-difference formulas progress from simple Euclidean distance in CIELAB
-(ΔE\*₇₆) through the sophisticated CIEDE2000 with its five correction
-terms. For the target user: **linear colour-space conversion stages use 3×3 matrices** --- literal
+difference formulas include Euclidean ΔE*₇₆ in CIELAB and later fitted
+corrections such as CIEDE2000. Their predictions have defined conditions and limits. For the target user: **linear colour-space conversion stages use 3×3 matrices** --- literal
 linear algebra. Complete conversions can also include nonlinear decoding
 and componentwise cube roots.
 :::
@@ -259,11 +220,10 @@ and componentwise cube roots.
 ### Typography: From Bringhurst\'s Proportions to Utopia\'s Fluid Interpolation {#typography-from-bringhursts-proportions-to-utopias-fluid-interpolation style="margin-top: var(--space-xl);"}
 
 ::: prose
-**Robert Bringhurst, *The Elements of Typographic Style* (v4.0, 2012,
-398 pages).** The \"typographers\' bible.\" Organised around principles
-(rhythm, proportion, harmony) rather than tutorials. Its mathematical
-content on proportional systems directly inspired Tim Brown\'s modular
-scale work. Standing: canonical but print-focused.
+**Robert Bringhurst, *The Elements of Typographic Style* (4.0, 2012).** A
+reading pointer for rhythm, proportion and typographic craft, with print-focused
+context. Brown quotes Bringhurst in his modular-scale discussion; this does not
+establish every claimed historical influence or validate a universal type rule.
 
 **Tim Brown\'s modular scale** connects typographic proportion with
 web implementation. A modular scale generates values by repeated
@@ -301,29 +261,23 @@ These calculations do not establish visual harmony or accessibility.
 ### UI/UX: Norman\'s Affordances Through Laws of UX to Refactoring UI {#uiux-normans-affordances-through-laws-of-ux-to-refactoring-ui style="margin-top: var(--space-xl);"}
 
 ::: prose
-**Don Norman, *The Design of Everyday Things* (revised 2013, 368
-pages).** The foundational text of interaction design. Six concepts for
-discoverability: affordances, signifiers, mapping, feedback,
-constraints, conceptual models. The 2013 revision introduced
-\"signifiers\" to resolve the widespread misuse of \"affordance.\"
+**Don Norman, *The Design of Everyday Things* (revised 2013).** A reading
+pointer for affordances, signifiers, mapping, feedback, constraints and conceptual
+models. Apply each term with its source context and the actual interaction.
 
-**Laws of UX (Jon Yablonski, lawsofux.com)** compiles 30 laws organised
-into heuristics (Fitts\'s Law, Hick\'s Law, Jakob\'s Law, Miller\'s Law,
-Doherty Threshold), gestalt principles, cognitive biases, and
-principles. Freely accessible, each law includes psychological
-foundations and practical applications --- ideal for concept card
-extraction.
+**Laws of UX (Jon Yablonski).** An organized set of laws, principles and
+heuristics to inspect individually; a label “law” does not give every UI claim
+universal empirical support.
 
-**Refactoring UI (Adam Wathan & Steve Schoger, \~218 pages, PDF).** The
-definitive developer-to-designer bridge. Core insight: **design is a set
-of systematic, repeatable decisions, not artistic intuition.** Key
-tactical patterns: constrained spacing scales, HSL-based palette
-construction, \"start with too much whitespace,\" design in greyscale
-first.
+**Refactoring UI (Adam Wathan & Steve Schoger).** A pointer for practical
+interface decisions, including hierarchy, spacing and palette exercises. Such
+methods can support systematic work while retaining intuition and contextual
+judgment. HSL construction or grayscale-first work are options, not requirements.
 
-**Brad Frost, *Atomic Design* (free at atomicdesign.bradfrost.com).**
-Five levels: atoms → molecules → organisms → templates → pages. Maps
-directly to React/Vue component architecture.
+**Brad Frost, *Atomic Design*.** Atoms, molecules, organisms, templates and pages
+provide a compositional vocabulary. It can inform component architecture;
+React/Vue components do not automatically have identical semantics or require
+those five layers.
 :::
 
 ------------------------------------------------------------------------
@@ -332,25 +286,33 @@ directly to React/Vue component architecture.
 Section 4
 :::
 
-## Design Has Rigorous Mathematical Structure
+## Use Mathematical Models Within Their Domains
 
-Not soft-discipline hand-waving --- precise formulations with empirical
-grounding.
+Formal models can clarify selected tasks when their quantities, assumptions and
+empirical parameters are identified. They do not turn aesthetic judgments or
+all interface behavior into mathematical consequences.
 
 ### Quantitative UX Laws
 
 ::: formula
-[Fitts\'s Law (ISO 9241, Shannon formulation)]{.label} MT = a + b ×
+[Fitts's model (Shannon formulation)]{.label} MT = a + b ×
 log₂(1 + D/W)
 :::
 
 ::: prose
-Where MT is movement time, D is distance to target, W is target width,
-and the Index of Difficulty ID = log₂(1 + D/W) is measured in bits.
-Fitts drew directly from Shannon\'s channel capacity theorem.
-**Throughput TP = ID/MT** ≈ 10 bits/s for mouse pointing. The Steering
-Law for path-following is derived by integral calculus: T = a + b ×
-(A/W).
+For a defined aimed-pointing task, MT is movement time, D the movement distance
+and W target width along the movement direction; D/W must be dimensionless with
+W>0. The index log₂(1+D/W) is conventionally expressed in bits. Fit a and b to the
+device, participants and task; no portable throughput of 10 bits/s follows.
+Throughput estimation requires an explicit method, including accuracy/effective
+width and aggregation, rather than interpreting one nominal ID/MT as a universal
+capacity. See [MacKenzie's model and measurement discussion](https://www.yorku.ca/mack/hhci2018.html).
+
+For a constant-width steering path, a fitted model is T=a+b(A/W), where A is path
+length and W>0 its constant width. A variable-width version may use
+T=a+b∫ds/W(s), with positive local width, specified path/task assumptions and
+empirically fitted coefficients. Neither formula by itself guarantees easier
+menus, better performance or aesthetic quality.
 :::
 
 ::: formula
@@ -358,11 +320,14 @@ Law for path-following is derived by integral calculus: T = a + b ×
 :::
 
 ::: prose
-The +1 represents the null event (temporal uncertainty of stimulus
-onset). General form uses Shannon entropy: RT = a + b × H where H = −Σ
-pᵢ log₂(pᵢ). Breaks down critically when stimulus-response compatibility
-is high (Leonard, 1959: NO set-size effect with highly compatible
-mappings).
+Here n is a defined positive number of alternatives and a,b are fitted task
+parameters. The log₂(n+1) expression is a model form, not a universal law for menu
+length. Under an appropriate probability/task model, entropy
+H=−Σpᵢlog₂pᵢ can replace a simple count, with probabilities summing to one and
+zero terms taken by their limit. Compatibility, practice, grouping and search
+strategy affect applicability. Hick's original hypothesis must be read in its
+experimental context; the primary scan was unavailable in this review, so no
+exact +1-origin story or precise Leonard (1959) result is asserted.
 :::
 
 ::: formula
@@ -370,50 +335,51 @@ mappings).
 :::
 
 ::: prose
-Explains why design systems use geometric spacing scales: visual area
-has exponent n ≈ 0.7 (compressive), meaning doubling physical area does
-NOT double perceived size --- you need \~2.7× the area. Brightness has n
-≈ 0.33 in this account; that observation does not derive either a display
-transfer curve or a colour-space nonlinearity. A display transfer curve and
-Oklab's chosen cube-root stage have different purposes and assumptions.
+For a specified stimulus, task and range, ψ denotes a measured perceptual
+response, I a positive stimulus magnitude and k,n empirically fitted parameters.
+This model supplies no portable visual-area exponent 0.7, brightness exponent
+0.33 or requirement for geometric spacing/type scales. Display transfer curves
+and Oklab's model nonlinearity serve distinct purposes.
 :::
 
 ::: formula
-[Weber-Fechner Law]{.label} ΔI / I = k
+[Weber relation]{.label} ΔI / I = k
 :::
 
 ::: prose
-Just-noticeable differences are proportional to stimulus intensity. For
-line length, k ≈ 0.03 (3%). This is why spacing scales must be geometric
-(multiplicative) rather than arithmetic (additive) to create
-perceptually equal steps.
+Within a specified discrimination task/range, I>0 is stimulus magnitude, ΔI the
+just-noticeable increment and k a fitted fraction. No universal 3% line-length
+threshold or typography/spacing necessity is established. The full Fechner
+logarithmic account is distinct and needs additional assumptions; ΔI/I=k alone
+is Weber's relation.
 :::
 
-### Group Theory Classifies All Possible Repeating Patterns {#group-theory-classifies-all-possible-repeating-patterns style="margin-top: var(--space-xl);"}
+### Periodic Pattern Symmetry Has Precise Assumptions {#group-theory-classifies-all-possible-repeating-patterns style="margin-top: var(--space-xl);"}
 
 ::: prose
-The **17 wallpaper groups** (proven by Fedorov, 1891) constitute a
-complete mathematical classification of every possible two-dimensional
-repeating pattern. The **7 frieze groups** do the same for border/strip
-patterns. The crystallographic restriction theorem proves that only 2-,
-3-, 4-, and 6-fold rotational symmetries are compatible with periodic
-lattices --- which is why 5-fold symmetry (Penrose tilings) requires
-aperiodic structures. This is not a heuristic but a mathematical
-absolute: any CSS `background-repeat` pattern, textile, or tile design
-must conform to one of these groups.
+The **17 wallpaper groups** classify planar Euclidean symmetry types with two
+independent translations; the **7 frieze groups** classify one-direction periodic
+strip patterns. Under the lattice assumptions, nontrivial rotation orders are
+2,3,4,6; identity order 1 is also allowed. A local five-fold motif can occur inside
+a repeated cell without being a symmetry of the whole periodic pattern.
+Finite crops, one-axis repeats, responsive layouts and aperiodic tilings do not
+all satisfy doubly periodic plane assumptions. A CSS background can realize a
+periodic tiling, but its actual whole-pattern symmetry must be identified before
+applying a classification. See the [IUCr periodic-group tables](https://www.iucr.org/__data/assets/pdf_file/0015/16602/ite.pdf).
 :::
 
 ### Gestalt Principles Have Computational Formalisations {#gestalt-principles-have-computational-formalisations style="margin-top: var(--space-xl);"}
 
 ::: prose
-Kubovy & Wagemans (1995, 1998) established the **Pure Distance Law**:
-grouping by proximity follows an exponential decay function of relative
-inter-element distance --- log\[p(b)/p(a)\] = −α × (\|b\|/\|a\| − 1),
-where α ≈ 3 is the attraction constant. Crucially, only *relative*
-distances matter, not absolute ones. Recent work using persistent
-homology (Chen et al., 2024) provides a unified computational framework
-where proximity appears as 0-dimensional persistence and closure as
-1-dimensional persistence in Vietoris-Rips filtrations.
+In controlled, briefly displayed dot-array experiments, the Pure Distance Law
+relates grouping log-odds to relative interdot-distance ratios. One reported form
+is ln[p(b)/p(a)]=−α(||b||/||a||−1), using the natural logarithm, defined
+responses/distances and an empirically fitted α. It is not a universal attraction
+constant or a law that only relative distance matters in every interface.
+Other grouping cues combine with proximity; stimulus construction and task affect applicability. See
+[Kubovy's scoped discussion](https://academic.oup.com/edited-volume/42044/chapter/497008788).
+A Chen et al. (2024) persistent-homology connection is an unverified reading
+pointer here; no precise technical result from that work was inspected or adopted.
 :::
 
 ------------------------------------------------------------------------
@@ -427,21 +393,23 @@ Section 5
 Where cross-domain analogies are rigorous versus merely metaphorical.
 
 ::: bridge-card
-#### Software Engineering → Design Systems: Implementations, Not Analogies
+#### Software Engineering → Design Systems: Separate the Connections
 
-Every major software engineering principle has a direct,
-non-metaphorical implementation in design systems. **Abstraction** →
-design tokens abstract visual decisions from implementation. **DRY** → a
-centralised token repository is the single source of truth. **API
-design** → a React component\'s props interface IS an API with types,
-defaults, and contracts. **Composition over inheritance** → Every Layout
-explicitly advocates this for CSS. **Dependency injection** → CSS custom
-properties are injected at root scope and consumed by children. All
-rated **RIGOROUS**: same concepts, not analogies.
+**Abstraction.** Tokens can separate reusable visual decisions from consumers;
+useful naming/layer boundaries depend on the adopting project.
+**DRY.** A shared token can reduce duplication only for consumers whose references
+actually resolve through it; literals and independent mappings remain.
+**API design.** A component props interface is an actual software API, with its
+own behavior/types/contracts; visual design choices are not all API semantics.
+**Composition.** Composing layout patterns can be useful, without proving that
+every CSS rule implements the same principle as object composition.
+**Dependency injection.** Custom properties participate in CSS cascade,
+inheritance and substitution. A root-scoped value can supply descendants; that
+mechanism alone is not software dependency injection or an isomorphism.
 :::
 
 ::: bridge-card
-#### Music Theory → Visual Design: Three Connections
+#### Music, Mathematics and Colour: Scoped Connections
 
 **Musical intervals → type scale ratios (SHARED CONSTRUCTION).** Brown's
 modular-scale discussion uses musical ratios as one source of proportions.
@@ -467,12 +435,11 @@ final matrix to obtain Oklab. Adjacent linear stages can be composed into
 one matrix; the complete pipeline cannot be collapsed across its
 nonlinear operations.
 
-**Colour harmony ↔ musical harmony (LOOSE to STRUCTURAL).** The 12-hue
-wheel / 12-semitone parallel is structurally suggestive, but colour
-perception is trichromatic while auditory perception is
-frequency-analytic. Empirical evidence for colour harmony based on
-frequency ratios is weak. The structural parallel has practical value,
-but mathematical equivalence is unsupported.
+**Colour harmony ↔ musical harmony (LOOSE).** A circular indexing analogy can
+organize discussion, but the ten-family Munsell diagram and twelve pitch classes
+have different cardinalities. 12TET ratios 2^(n/12) are a chosen construction;
+colour calibration is a different problem. Neither a universal tritone tension
+maximum nor colour harmony from musical ratios is established here.
 :::
 
 ------------------------------------------------------------------------
@@ -498,21 +465,22 @@ shared meaning or theme variation benefits, and component bindings when
 local control warrants their maintenance. Additional layers add
 indirection; fewer can couple consumers to shared values. A value change
 reaches only consumers whose references resolve through it; local literals
-and separate mappings need their own review. With CSS relative colour
-syntax now baseline, teams can define `--brand-l`, `--brand-c`,
-`--brand-h` as separate properties and generate tonal scales via
-`calc()`.
+and separate mappings need their own review. Where the target implements [relative colour syntax](https://www.w3.org/TR/css-color-5/#relative-colors),
+`oklch(from var(--brand) calc(l + 0.1) c h)` illustrates a model-coordinate
+candidate. The referenced custom property must resolve to a valid colour;
+conversion, destination gamut and actual rendered-pair checks remain necessary.
+Keeping channels as separate custom properties is another optional architecture.
 :::
 
 ::: notes
-#### Spacing Notation: 4-Point Base with 8-Point Primary Rhythm
+#### Spacing Notation: Choose Project Units and Names
 
-The 4-point vs. 8-point grid debate has converged: modern teams use a
-**4pt base** with 8pt as the primary structural rhythm. Component
-padding at 4--16px, section margins at 24--64px. For token naming, the
-dominant patterns are T-shirt sizing (`space-xs` through `space-3xl`),
-numeric scales (`space.1` through `space.8`), and semantic aliases
-(`spacing.inset.md`, `spacing.section.lg`).
+A project might choose spacing values in multiples of 4 CSS px, a ratio scale,
+content-led values or a combination. This is a local choice, not demonstrated
+industry convergence. CSS `pt` and `px` are different units: 1pt=4/3px by their
+specified relation, not interchangeable shorthand for a grid unit. T-shirt
+names, numeric labels and semantic names are options; preserve meaningful
+existing conventions and explain any exceptions.
 :::
 
 ::: notes
@@ -530,12 +498,13 @@ universal convention.
 ::: notes
 #### Responsive Notation: From Breakpoints to Fluid Ranges
 
-Breakpoint naming universally uses T-shirt sizing (`sm`, `md`, `lg`,
-`xl`), but Utopia\'s approach replaces discrete breakpoints with
-continuous `clamp()` interpolation. Container queries (`@container`)
-enable component-level responsiveness independent of viewport. Cascade
-layers (`@layer`) solve specificity wars by defining explicit cascade
-order.
+Breakpoint labels are project conventions; use names that express the actual
+behavior. Fluid `clamp()` interpolation can coexist with justified discrete
+changes. A size query requires an eligible ancestor query container with the
+appropriate containment; it does not make a component independent of every
+viewport or content condition. Cascade layers order parts of the cascade;
+importance, origin, unlayered rules and specificity within a layer still matter.
+No layer arrangement automatically solves all cascade conflicts.
 :::
 
 ------------------------------------------------------------------------
@@ -544,28 +513,29 @@ order.
 Section 7
 :::
 
-## The 2024--2025 CSS Landscape: A Generational Capability Shift
+## CSS Capabilities Need Their Own Conditions
 
 ::: prose
-Modern CSS has undergone a transformation comparable to the introduction
-of Flexbox. **Container queries** (96%+ global support) let components
-respond to their own available space. **`:has()`** enables parent
-selection based on children, previously requiring JavaScript.
-**Subgrid** (97% support) solves nested alignment. **CSS Nesting**
-eliminates the need for preprocessors. **Scroll-driven animations**
-replace GSAP ScrollTrigger for parallax and reveal effects.
+**Container queries** depend on the query type, eligible container and containment;
+see [CSS Conditional5](https://www.w3.org/TR/css-conditional-5/#container-queries).
+**`:has()`** is a relational selector that can inspect matching relatives; its
+syntax and support need target checks. **Subgrid** participates in a parent
+grid's track sizing. **Nesting** supplies CSS rule-nesting syntax; it does not
+replace every preprocessor facility. **Scroll-driven animations** require the
+appropriate timeline/property support, motion-preference behavior and testing;
+they do not universally replace an animation library.
 
-For colour: `oklch()`, `color-mix()`, relative colour syntax, and
-`color(display-p3)` are all baseline. Wide-gamut displays (Display P3
-covers \~50% more colours than sRGB) are standard on Apple devices and
-OLED screens. Variable fonts provide continuous weight, width, and
-optical size adjustment from a single file.
+CSS colour functions define model-specific values and operations. Encoded sRGB,
+linear-light and OKLCH interpolation differ; gamut mapping and actual pair/state
+checks remain necessary. A Display P3 target is not guaranteed by an asset or
+platform name. Variable fonts expose only the axes/ranges supported by the chosen
+file; weight, width and optical size are not all present in every variable font.
 
-**Figma** has matured its variables system with multi-mode support
-(light/dark, brand variants), native DTCG JSON import/export, and Code
-Connect for mapping Figma components to production code. Style
-Dictionary v4 provides first-class DTCG format support for transforming
-tokens to any platform.
+Design-tool variables, token interchange and build transforms can assist a
+workflow. Inspect the actual tool/version and exported values before claiming
+DTCG import/export, component mapping or target-platform compatibility. No current
+Figma/Style Dictionary survey, adoption metric or all-platform guarantee was
+established for this guide.
 :::
 
 ------------------------------------------------------------------------
@@ -574,41 +544,26 @@ tokens to any platform.
 Section 8
 :::
 
-## Source Availability and Acquisition Summary
+## Reading List and Input Planning
 
-::: {style="overflow-x: auto;"}
-  Source                                        Format                     Pages   Free?                 Priority
-  --------------------------------------------- -------------------------- ------- --------------------- -------------------------
-  Albers, *Interaction of Color*                Paperback (no ebook)       272     No                    [Essential]{.essential}
-  Itten, *Elements of Color*                    Paperback                  96      No                    High
-  Bringhurst, *Elements of Typographic Style*   Print only, v4.0           398     No                    [Essential]{.essential}
-  Lupton, *Thinking with Type* (3rd ed, 2024)   Print, companion site      256     No                    [Essential]{.essential}
-  Müller-Brockmann, *Grid Systems*              Print, bilingual           176     No                    High
-  Vignelli, *The Vignelli Canon*                Free PDF from RIT          96      [Yes]{.free}          [Essential]{.essential}
-  Norman, *Design of Everyday Things*           Ebook available            368     No                    [Essential]{.essential}
-  Krug, *Don\'t Make Me Think*                  Print/ebook                200     No                    High
-  Frost, *Atomic Design*                        Free online                \~200   [Yes]{.free}          High
-  Refactoring UI                                PDF only                   \~218   No (\$79--149)        [Critical]{.essential}
-  Laws of UX                                    Free website + book        ---     [Yes (site)]{.free}   [Essential]{.essential}
-  Butterick, *Practical Typography*             Free web book              ---     [Yes]{.free}          High
-  Every Layout                                  Paid website (some free)   ---     Partially             High
-  Utopia                                        Free calculators + blog    ---     [Yes]{.free}          [Essential]{.essential}
-  Comeau, CSS for JS Developers                 Paid course (blog free)    ---     Partially             High
-  Eckles, ModernCSS.dev                         Free website               ---     [Yes]{.free}          High
-  Gurney, *Color and Light*                     Print                      224     No                    Supplementary
-  Arnheim, *Art and Visual Perception*          Print                      508     No                    Supplementary
-  Ware, *Information Visualization*             Print (4th ed)             560     No                    Supplementary
-:::
+These are reading pointers. Author/title/edition labels identify intended works;
+exact source identity, relevant passages and availability must be checked before
+use. This list supplies no prices, exclusive formats, current ebook claims or
+purchase priority ranking.
 
-::: {.notes style="margin-top: var(--space-m);"}
-#### Recommended Acquisition Priority
+| Topic | Reading pointers |
+|---|---|
+| Colour | Albers, *Interaction of Color*; Itten, *Elements of Color*; Gurney, *Color and Light* |
+| Typography | Bringhurst, *The Elements of Typographic Style*; Lupton, *Thinking with Type* (3rd ed., 2024); Butterick, *Practical Typography* |
+| Layout and identity | Müller-Brockmann, *Grid Systems*; Vignelli, *The Vignelli Canon*; *Every Layout* |
+| Interaction | Norman, *The Design of Everyday Things*; Krug, *Don't Make Me Think*; Yablonski, *Laws of UX*; Wathan & Schoger, *Refactoring UI* |
+| Systems and CSS | Frost, *Atomic Design*; Utopia; Comeau, *CSS for JS Developers*; Eckles, *ModernCSS.dev* |
+| Perception and information | Arnheim, *Art and Visual Perception*; Ware, *Information Visualization* |
 
-Start with the free resources (Vignelli Canon, Atomic Design, Laws of
-UX, Butterick, Utopia, ModernCSS.dev), then acquire Refactoring UI (the
-single most valuable resource for a developer), followed by Lupton and
-Bringhurst for typography, Albers for colour, and Norman for interaction
-design principles.
-:::
+Choose a source for the actual unanswered question, access conditions and intended
+use. Inspect its relevant evidence and context; a reading list is not proof that
+its contents were reviewed, that acquisition is authorized or that one resource
+is the most valuable for every developer.
 
 ------------------------------------------------------------------------
 
@@ -616,12 +571,12 @@ design principles.
 Conclusion
 :::
 
-## The Knowledge Base Should Mirror the Field\'s Layered Architecture
+## A Working Map for Learning and Implementation
 
 ::: {.prose style="margin-bottom: var(--space-l);"}
-This research reveals that visual design is not a flat collection of
-tips but a **layered discipline** with formal mathematical structure at
-its foundation.
+The following layers are one navigational map. They connect perception, design
+judgment, domain vocabulary and implementation without claiming a validated
+curriculum or reducing all design principles to mathematical theorems.
 :::
 
 ::::::: layer-stack
@@ -633,11 +588,11 @@ Weber-Fechner]{.layer-desc}
 
 ::: {.layer-item}
 [Layer 1 --- Design Principles]{.layer-name} [Hierarchy, contrast,
-rhythm, proportion, balance --- the \"theorems\"]{.layer-desc}
+rhythm, proportion and balance --- contextual concepts]{.layer-desc}
 :::
 
 ::: {.layer-item}
-[Layer 2 --- Domain Knowledge]{.layer-name} [The ten-category taxonomy
+[Layer 2 --- Domain Knowledge]{.layer-name} [Selected topics
 with specific concepts and vocabulary]{.layer-desc}
 :::
 
@@ -648,17 +603,16 @@ tokens, component architecture, fluid systems]{.layer-desc}
 :::::::
 
 ::: {.prose style="margin-top: var(--space-l);"}
-The **cross-domain Rosetta Stone** should be woven throughout rather
-than isolated in a separate section. When a concept card explains
-modular type scales, it should note the identical mathematical structure
-to musical intervals. When it explains OKLCH\'s perceptual uniformity,
-it should reference the temperament analogy. When it explains design
-tokens, it should map directly to software engineering abstraction.
+Cross-domain connections can support learning when their shared construction
+and limits are explicit. Repeated multiplication by a chosen ratio is shared
+arithmetic; a musical interval does not guarantee visual harmony. Temperament is
+a loose colour-calibration analogy, not a precise equivalence. Tokens can provide
+abstraction in software without making every design choice a software theorem.
 
-The target user\'s existing expertise in mathematics, music theory, and
-software engineering isn\'t a gap to be bridged --- **it\'s the
-foundation on which the entire knowledge base should be built.**
+Mathematics, music and software experience can be useful starting points. Keep
+room for learning the medium's own evidence, constraints, context and craft.
 :::
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::: footer
