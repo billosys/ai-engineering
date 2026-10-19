@@ -6,7 +6,7 @@ depends-on: [Slice32 independently accepted; complete local cohort results]
 
 # Slice33 — Supported Global Composition
 
-Revision **1.1**, 2026-10-19. Project1.75/Arc1.86.
+Revision **1.2**, 2026-10-19. Project1.75/Arc1.86.
 CDC/substantive author Sofie `/root`; CC assigned by root;
 named separate final substantive reviewer. Remaining-Arc02 Autonomous Mode.
 SOURCE `88a96f72020a732f83a0ca25190de170c0761b4d`; PLANNING predecessor `4f1873cb16678729adc0c0730055001bdade552e`.
@@ -30,11 +30,17 @@ Any material source repair needs a separately preserved bounded iteration.
   only after actual committed S32 acceptance. Root owns final judgments,
   independent verification, retrospective and gate-preserving next action.
 
-- Current [Iteration01](cc-prompt-iteration01.md), SOURCE88a96f72:
+- [Iteration01](cc-prompt-iteration01.md), SOURCE88a96f72:
   correct one unsupported worked-example Container attribution plus owning1.0.30
   and append-only history; complete the original composition and actual font case.
   Initial no-SOURCE scope is superseded only by these three explicit paths;
   all four criteria, remaining work, independent/input/Operator gates survive.
+
+- Current [Iteration02](cc-prompt-iteration02.md), SOURCE fixed at e56d82ba:
+  complete inherited DES-009 dense-interface breakpoint proof in the same HTML;
+  no new SOURCE/build/artifact tree. Initial one-font-only browser scope is
+  superseded only by this bounded actual case; all four criteria and higher
+  gates remain unchanged.
 
 ## Version History
 
@@ -42,3 +48,5 @@ Any material source repair needs a separately preserved bounded iteration.
   preserve original-dependent and parent/Operator gates.
 
 - 1.1 (2026-10-19): Issue the actual global-walk local-wrapper attribution repair; preserve original composition scope and higher gates.
+
+- 1.2 (2026-10-19): Complete the actual DES-009 proof gap found in final composition using one bounded existing-fixture case; no source or scope waiver.
