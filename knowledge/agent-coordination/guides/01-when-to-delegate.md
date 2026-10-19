@@ -10,6 +10,24 @@ For self-contained handoff material, load
 evidence, load [`03-result-integration.md`](./03-result-integration.md). For
 failure modes, load [`04-anti-patterns.md`](./04-anti-patterns.md).
 
+## Autonomous Mode exception
+
+The ordinary lookup-only policy below remains the default. In explicitly
+Operator-authorized [Autonomous Mode](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
+CDC may instead assign bounded implementation and independent review to fully
+briefed contributor subagents, with CRC when useful. These contexts own their
+assigned implementation or verification judgment; CDC owns integrated design,
+source-grounded reconciliation and follow-through. This permission depends on
+the recorded mode and scope, not on task size or available tools.
+
+Use [contributor packets](./02-context-packets.md#autonomous-mode-contributor-packets),
+explicit file ownership and exact source states. Avoid overlapping writes;
+review the integrated candidate after concurrent implementation. A reviewer
+who repairs work becomes its doer and needs another verifier for the affected
+evidence. Preserve review findings and iterations rather than replacing an
+unfavorable reviewer. Operator decisions and tool restrictions remain binding.
+Outside this exception, use the ordinary policy below.
+
 ## Core Policy
 
 The [contributor workflows](../../engineering-methods/guides/01-engineering-methodology.md#roles-and-shared-invariants)

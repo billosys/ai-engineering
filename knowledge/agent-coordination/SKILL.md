@@ -7,7 +7,7 @@ description: |
   lookup task can be delegated without outsourcing design judgment.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   hermes:
     tags: [ai-engineering, collaboration, subagents, delegation]
     category: meta-skills
@@ -18,17 +18,24 @@ metadata:
 Use this component when a task may benefit from subagents, parallel lookup, or
 explicit multi-agent coordination. It owns the boundary between lookup work,
 which can be delegated, and thinking/edit/review judgment, which stays in the
-main context.
+main context outside explicitly authorized Autonomous Mode.
 
 CC implements; CDC coordinates design and, by default, review. CRC owns routine
-review and subsequent slice preparation only in the explicitly Operator-enabled
-Three-Contributor Workflow. These are assigned contributor contexts, not
+review and subsequent slice preparation in the Three-Contributor Workflow,
+enabled explicitly by the Operator or selected by CDC within authorized
+Autonomous Mode. These are assigned contributor contexts, not
 permission to outsource judgment to lookup subagents. For canonical roles,
 authority, and transitions, read the
 [methodology](../engineering-methods/guides/01-engineering-methodology.md#roles-and-shared-invariants).
 The Operator-selected One-Contributor Workflow keeps design, implementation,
 and self-review in one context without fictional role handoffs or automatic
 delegation. Existing independent-review requirements still apply.
+
+In Operator-authorized [Autonomous Mode](../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
+CDC may assign implementation and independent review to contributor subagents,
+select or change the arrangement, and retain integrated accountability. Load the
+mode definition and the contributor packet requirements below. This exception
+does not turn lookup returns into acceptance or waive independent verification.
 
 Read only the guide needed for the work:
 

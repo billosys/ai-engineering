@@ -7,7 +7,7 @@ description: |
   whether bubble-up findings require a plan update.
 license: MIT
 metadata:
-  version: "2.19.1"
+  version: "2.20.0"
   hermes:
     tags: [ai-engineering, project-management, planning, ledger]
     category: meta-skills
@@ -43,6 +43,13 @@ Load the [filename contract](./guides/02-canonical-planning-worktree.md#slice-it
 and [handoff workflow](./guides/03-planning-top-down.md#issuing-and-executing-an-iteration)
 before issuing or executing the assignment.
 
+For Operator-selected [Autonomous Mode](./guides/README.md#autonomous-mode),
+load its canonical definition and execution rules before acting. Record the
+arc-default authorization (or explicit project override), non-default source
+branch, contributor arrangement and actual independent reviewer. CDC may revise
+staffing and use direct routine handoffs within that authorization; Operator
+decisions, tool permissions and evidence gates remain binding.
+
 For Operator-mediated CRC-to-CDC escalations and CDC-to-CRC instructions, load
 [design handoff filenames](./guides/02-canonical-planning-worktree.md#design-handoff-filenames-and-preservation)
 and [the two-way handoff procedure](./guides/03-planning-top-down.md#design-escalation-and-return-handoffs).
@@ -51,7 +58,7 @@ CDC at slices by default, CRC at slices and both CRC/CDC at higher scales when
 three contributors are enabled. Preserve historical paths under the
 [compatibility rule](./guides/02-canonical-planning-worktree.md#verification-filename-compatibility).
 
-In the Three-Contributor Workflow, CDC performs a retrospective at every closing
+In the Three-Contributor Workflow and Autonomous Mode, CDC performs a retrospective at every closing
 scale. Read the [record and handoff contract](./guides/02-canonical-planning-worktree.md#retrospective-records-in-the-three-contributor-workflow)
 and [methodology-stewardship](../methodology-stewardship/SKILL.md).
 

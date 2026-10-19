@@ -145,7 +145,7 @@ first-class document set when another assignment is issued:
 | `cdc-directiveNN.md` | as needed | Preserved CDC-to-CRC assignment or response to an escalation, relayed by the Operator. |
 | `closing-report.md` | close | The per-row walk written at slice close, plus the **bubble-up to the arc** (see [`Closing slices`](./04-closing-slices.md)). |
 | `cdc-verification.md` (two contributors) or `crc-verification.md` (three contributors) | close | The assigned reviewer's independent re-run that verifies the closing report against evidence, plus the **bubble-up check** (see [`Closing slices`](./04-closing-slices.md)). |
-| `cdc-retrospective.md` (three contributors) | close | CDC methodology analysis and follow-through; separate from the acceptance verdict. See the retrospective record contract below. |
+| `cdc-retrospective.md` (three contributors or Autonomous Mode) | close | CDC methodology analysis and follow-through; separate from the acceptance verdict. See the retrospective record contract below. |
 | `artifacts/` | as needed | Default home for supporting outputs such as research, findings, logs, and analysis. Excludes the first-class slice documents above. Create only when needed or when it clarifies the handoff. |
 
 Opening the close-set documents at slice start, or leaving the open-set
@@ -219,12 +219,20 @@ and the required independent and Operator gates, not merely both files existing.
 Link them from the owning ledger and closing report. See
 [independent verification](../../work-verification/guides/05-independent-verification.md).
 
+In Autonomous Mode, the plan records the assigned independent reviewer and
+artifact convention before review. A reviewer subagent may author the normal
+`cdc-verification.md` in a two-contributor arrangement, identifying its actual
+role/context and the implementing CDC; the filename does not attribute the
+review to the implementer. Three-contributor records remain required when that
+arrangement is selected. Apply this attribution at higher-scale gates too.
+
 ### Retrospective records in the Three-Contributor Workflow
 
-CDC must perform a retrospective as part of each slice, arc and project closing
+In the Three-Contributor Workflow and Autonomous Mode, CDC must perform a
+retrospective as part of each slice, arc and project closing
 activity. Place `cdc-retrospective.md` beside that unit's plan and closing report,
 not in `artifacts/`. It is an additional first-class learning record in this
-workflow, separate from the verification records above. Other workflows may
+workflow or mode, separate from the verification records above. Other workflows may
 use the skill when requested; this rule does not add a mandatory file to them.
 
 CRC sends the closure report, verification, ledger and relevant prompt/evidence
@@ -234,6 +242,13 @@ path and actionable recommendations through the Operator. Link the record from
 the owning closing report. Follow
 [methodology-stewardship](../../methodology-stewardship/guides/01-retrospectives-and-follow-through.md)
 for content and scale-specific synthesis.
+
+In Autonomous Mode, CDC obtains these records directly from assigned contributors
+(or inspects the independent reviewer return when CDC implemented). Preserve the
+same analysis and records without a mandatory human relay. A changed arrangement
+does not remove retrospective duties. Before reporting the authorized arc or
+project fully complete, finish the required retrospectives or record an explicit
+Operator-authorized deferral. Operator acceptance gates remain separate.
 
 CRC's implementation acceptance remains valid if CDC's retrospective is pending;
 record that pending CDC responsibility in the current plan/closing report and

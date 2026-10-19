@@ -1,5 +1,12 @@
 # Engineering Methods Version History
 
+## Version 1.18.0 - 2026-10-18
+
+Defined Autonomous Mode alongside contributor workflows. Delegated arrangement
+selection and transitions to CDC within explicit authorization, with
+independent verification, arc-default scope and explicit project override,
+branch isolation, review cycles and ambiguity escalation.
+
 ## Version 1.17.1 - 2026-10-12
 
 Clarified that SDLC activities recur within delivery increments rather than

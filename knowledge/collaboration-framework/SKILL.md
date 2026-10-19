@@ -11,14 +11,14 @@ description: |
   expert systems design, or production programming; establishing the peer
   frame; planning or closing a project, arc, or slice (MUST read the
   project-management guides README first); Expedited Mode; running the 9-point
-  SDLC or a ledgered slice; commissioning an audit; hardening tests; delegating
+  SDLC or a ledgered slice; Autonomous Mode; commissioning an audit; hardening tests; delegating
   lookup work; drafting contribution tickets; or recognizing when controlled
   inquiry/regression comparison should load scientific-methods.
   Does NOT load domain/tooling skills under sibling knowledge roots — loaded
   separately, per-domain.
 license: MIT
 metadata:
-  version: "2.7.2"
+  version: "2.8.0"
   hermes:
     tags: [ai-engineering, collaboration, methodology, sdlc, code-audit, test-coverage]
     category: meta-skills
@@ -77,7 +77,8 @@ backronyms; this skill only routes to it and preserves the separation between
 collaborative planning/review authority and implementation execution.
 
 Use the **Two-Contributor Workflow** (CDC + CC) by default. Only explicit
-Operator selection enables the **Three-Contributor Workflow** (CDC + CRC + CC).
+Operator selection enables the **Three-Contributor Workflow** (CDC + CRC + CC),
+except for CDC selection within explicitly authorized Autonomous Mode.
 Read the methodology's [shared invariants, dedicated workflow sections, and transition rules](../engineering-methods/guides/01-engineering-methodology.md#roles-and-shared-invariants)
 before assigning roles. CRC advances the approved plan, not a competing design;
 escalations and CDC return directives pass explicitly through the Operator.
@@ -95,14 +96,24 @@ instruction stack.
 
 The intended translation is functional, not cosmetic: preserve the separation
 between planning/review judgment and implementation execution; use tools for
-evidence when exactness matters; keep thinking work in the main context and
-parallelize lookup work only when it can be independently checked; treat
+evidence when exactness matters; keep thinking work in the main context under the default lookup-only policy,
+or use assigned implementation/review contributors in authorized Autonomous Mode; treat
 ledger closure as proposed-done until independently verified.
 
-In the Three-Contributor Workflow, CDC also owns closing retrospectives at
+In the Three-Contributor Workflow and Autonomous Mode, CDC also owns closing retrospectives at
 slice, arc and project scale. Load
 [methodology-stewardship](../methodology-stewardship/SKILL.md) for the analysis
 and project-management for the record and closing handoff.
+
+For Operator-selected **Autonomous Mode**, read the
+[canonical mode and authority contract](../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode)
+and [execution rules](../project-management/guides/README.md#autonomous-mode)
+before acting. CDC selects and adapts contributor arrangements, works through
+the authorized arc by default using Expedited Mode, commits on a dedicated
+non-default source branch, and obtains independent review. Project-wide scope
+requires an explicit override. Preserve ledgers, bubble-up and closing
+retrospectives; pause and surface plan decisions when new information leaves
+too much ambiguity. Operator gates remain binding.
 
 ## When to use this skill
 
@@ -474,14 +485,14 @@ work demands:
 | [`guides/01-testing-discipline.md`](../testing/guides/01-testing-discipline.md) | Testing discipline | When tests need to prove behavior, weak or ignored tests need repair, or failures need root-cause triage. |
 | [`guides/02-coverage-hardening.md`](../testing/guides/02-coverage-hardening.md) | Coverage hardening | When driving a codebase to a **hard test-coverage threshold (95%+)** — fix root causes not symptoms, treat warnings as bugs, never hide failures behind `#[ignore]`, iterate until the threshold is actually met. |
 | [`guides/03-validation-gates.md`](../testing/guides/03-validation-gates.md) | Validation gates | When selecting or recording repository-native test, lint, format, package, CI, release, and generated-artifact gates. |
-| [`guides/01-when-to-delegate.md`](../agent-coordination/guides/01-when-to-delegate.md) | Agent coordination / delegation | When deciding whether work stays in the main context or can be delegated as lookup. |
-| [`guides/02-context-packets.md`](../agent-coordination/guides/02-context-packets.md) | Agent coordination / packets | When preparing self-contained lookup packets with constraints, exclusions, and evidence-return requirements. |
+| [`guides/01-when-to-delegate.md`](../agent-coordination/guides/01-when-to-delegate.md) | Agent coordination / delegation | When applying default lookup-only delegation or authorized Autonomous Mode contributor assignments. |
+| [`guides/02-context-packets.md`](../agent-coordination/guides/02-context-packets.md) | Agent coordination / packets | When preparing lookup packets or authorized contributor assignments with skills, scope, authority and evidence requirements. |
 | [`guides/03-result-integration.md`](../agent-coordination/guides/03-result-integration.md) | Agent coordination / integration | When integrating returned lookup evidence in the parent context and checking it against primary sources. |
 | [`guides/04-anti-patterns.md`](../agent-coordination/guides/04-anti-patterns.md) | Agent coordination / anti-patterns | When delegation pressure risks outsourced judgment, vague handoffs, summary trust, speed-over-quality thinking, or buried boundaries. |
 | [`guides/01-contribution-style.md`](../contribution-style/guides/01-contribution-style.md) | Contribution style / voice | When **drafting an upstream contribution ticket** against a project you don't maintain and the work needs maintainer-facing voice: friendly, specific, calibrated, respectful of ownership, no severity overclaim, and no pressure on timing. |
 | [`guides/02-upstream-ticket-workflow.md`](../contribution-style/guides/02-upstream-ticket-workflow.md) | Contribution style / workflow | When preparing local ticket drafts, line-reference checks, blockquote headers, paste boundaries, one-ticket-per-problem structure, cross-linking, filing, and template use. |
 | [`templates/CONTRIBUTION-TICKET.md`](../contribution-style/templates/CONTRIBUTION-TICKET.md) | Authoring template | Alongside the contribution style and workflow guides when actually writing a ticket. Carries the reusable ticket shape for confirmed bugs, additive features, doc fixes, and unconfirmed questions. |
-| [Methodology stewardship](../methodology-stewardship/SKILL.md) | Closing retrospectives | CDC analysis at slice, arc and project close in the Three-Contributor Workflow; recurring collaboration difficulties, evidence utility and recommendation follow-through. Included in this bundle and available standalone. |
+| [Methodology stewardship](../methodology-stewardship/SKILL.md) | Closing retrospectives | CDC analysis at slice, arc and project close in the Three-Contributor Workflow or Autonomous Mode; recurring collaboration difficulties, evidence utility and recommendation follow-through. Included in this bundle and available standalone. |
 | [`scientific-methods`](../scientific-methods/SKILL.md) | Adjacent method skill | Load when the conversation becomes a controlled inquiry: comparing versions, testing whether a change helped, detecting regressions, designing an A/B prompt or framework trial, defining operational measures, writing an experiment protocol, building an evaluation rubric, or analyzing threats to validity. It is included in `collaboration-framework.zip` and also ships as its own standalone skill. |
 
 The posture guide set and Methodology are maintained as parts of their owning skills. The five

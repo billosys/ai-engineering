@@ -8,6 +8,19 @@ For delegation decisions, load
 load [`02-context-packets.md`](./02-context-packets.md). For recurring failure
 modes, load [`04-anti-patterns.md`](./04-anti-patterns.md).
 
+## Autonomous Mode contributor returns
+
+For contributor subagents assigned under
+[Autonomous Mode](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
+CDC inspects actual diffs and evidence, reconciles findings, and records the
+verdict and follow-through against the exact candidate. Implementation returns
+remain proposed-done until independent verification. An assigned independent
+reviewer's reproduced checks may establish verification; do not reduce that
+review to lookup or promote a summary to reproduced evidence. When CDC
+implemented or repaired work, acceptance depends on another context's review
+of that work and affected evidence. Preserve attribution and unresolved findings.
+The remaining sections describe ordinary lookup integration.
+
 ## Parent-Context Responsibility
 
 The parent context must independently inspect and integrate returned evidence.

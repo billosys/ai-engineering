@@ -9,6 +9,30 @@ For the delegation decision, load
 [`01-when-to-delegate.md`](./01-when-to-delegate.md). For integrating returned
 evidence, load [`03-result-integration.md`](./03-result-integration.md).
 
+## Autonomous Mode contributor packets
+
+The lookup contract below applies to lookup workers. For implementation or
+independent review explicitly assigned in
+[Autonomous Mode](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
+provide a contributor assignment instead: role and delegated authority;
+authorized scope and endpoint; repository/worktree/branch and source baseline;
+required collaboration-framework, domain skills and local instructions;
+governing plans, ledger rows and preserved prompt history; relevant design
+choices and known risks; exact file ownership/exclusions; required validation
+and evidence-return shape; acceptance boundaries and escalation conditions.
+Require the receiving context to acknowledge the assignment and inspect source.
+
+CC assignments use engineering-methods'
+[prompt-authoring contract](../../engineering-methods/guides/07-implementation-prompt-authoring.md).
+Review assignments require direct diff/source inspection, independent checks,
+coverage of plan/ledger obligations, concrete findings with locations and
+severity, unresolved questions, and an explicit verdict tied to the candidate.
+Give reviewers the design intent and known risks without directing them toward
+a favorable conclusion. State whether they may edit; if they repair anything,
+that repair needs another independent verifier. Durable role/prompt/review
+records supplement tool messages. Return negative results and blocked/unrun
+checks as well as successful evidence.
+
 ## Packet Purpose
 
 A context packet makes lookup work reproducible. It tells the delegated context

@@ -8,6 +8,15 @@ For the positive decision rule, load
 [`02-context-packets.md`](./02-context-packets.md). For reintegration, load
 [`03-result-integration.md`](./03-result-integration.md).
 
+## Scope of these anti-patterns
+
+The lookup-only corrections below govern ordinary delegation. Explicitly
+Operator-authorized [Autonomous Mode](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode)
+permits assigned implementation and independent-review contributors with
+self-contained packets, authority boundaries and evidence. Applying that mode
+without authorization, delegating an underspecified task, or accepting summaries
+on trust remains a failure. Contributor review is not a lookup shortcut.
+
 ## Thinking Delegation
 
 Shape:

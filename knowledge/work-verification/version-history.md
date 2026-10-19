@@ -1,5 +1,11 @@
 # Work Verification Version History
 
+## Version 2.7.0 - 2026-10-18
+
+Specified independent reviewer attribution in Autonomous Mode, including
+implementing CDC, repair and higher-scale composition cases, without weakening
+workflow-specific or Operator gates.
+
 ## Version 2.6.0 - 2026-09-28
 
 Defined reviewer-assessed retention of previously reproduced evidence during

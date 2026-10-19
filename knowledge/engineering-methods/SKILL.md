@@ -8,7 +8,7 @@ description: |
   review finding into a detailed, domain-guided CC implementation prompt.
 license: MIT
 metadata:
-  version: "1.17.1"
+  version: "1.18.0"
   hermes:
     tags: [ai-engineering, methodology, sdlc, knowledge-substrate]
     category: meta-skills
@@ -27,8 +27,14 @@ the Three-Contributor Workflow for sustained design/review separation or the
 One-Contributor Workflow for proportionate single-assistant work. All preserve
 scope and evidence honesty; self-checks are not independent acceptance.
 
+For Operator-selected [Autonomous Mode](./guides/01-engineering-methodology.md#autonomous-mode),
+read the canonical authorization and contributor-transition rules before acting.
+CDC selects and adapts contributor arrangements within the authorized arc by
+default; whole-project execution requires an explicit override. Independent
+review, branch isolation, closing retrospectives and ambiguity pauses apply.
+
 For CDC retrospectives at slice, arc and project close in the Three-Contributor
-Workflow, load [methodology-stewardship](../methodology-stewardship/SKILL.md).
+Workflow or Autonomous Mode, load [methodology-stewardship](../methodology-stewardship/SKILL.md).
 Keep process observations and recommendations distinct from acceptance verdicts.
 
 Before writing or reviewing a CC implementation assignment, read

@@ -1,5 +1,11 @@
 # Collaboration Framework Version History
 
+## Version 2.8.0 - 2026-10-18
+
+Added Operator-authorized Autonomous Mode routing: arc-default scope, adaptive
+contributor arrangements, independent review, non-default source branches,
+ambiguity pauses and closing retrospectives.
+
 ## Version 2.7.2 - 2026-10-12
 
 Routed and bundled delivery-oriented planning and prompt-authoring refinements:

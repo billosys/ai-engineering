@@ -1,5 +1,11 @@
 # Methodology Stewardship Version History
 
+## Version 1.1.0 - 2026-10-18
+
+Extended mandatory CDC slice, arc and project retrospectives to Autonomous
+Mode regardless of contributor arrangement; preserved evidence, independence
+and recommendation authority.
+
 ## Version 1.0.0 - 2026-10-12
 
 Introduced the skill and supporting retrospective guide. Defines observation,
