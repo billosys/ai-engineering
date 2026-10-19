@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.79**, updated2026-10-19 under the Operator-approved
+Plan revision **1.80**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -71,15 +71,16 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice27 — perception/shape/grouping](slice27-perception-shape-and-grouping/slice-plan.md) | Closed: [independent acceptance](slice27-perception-shape-and-grouping/cdc-verification.md) at SOURCE3c29ae69/CC371d6d8b;17supported corrected cards and local semantics,owning1.0.24; original fidelity unresolved. |
 | [Slice28 — balance/tension/tonal relationships](slice28-balance-tension-and-tonal-relationships/slice-plan.md) | Closed: [independent acceptance](slice28-balance-tension-and-tonal-relationships/cdc-verification.md) at SOURCEed825a63/CC8894c56d;13supported corrected cards/local semantics,owning1.0.25; original fidelity unresolved. |
 | [Slice29 — form/projection/representation](slice29-form-projection-and-representation/slice-plan.md) | Closed: [independent acceptance](slice29-form-projection-and-representation/cdc-verification.md) at SOURCEc42f5bd5/CCe9bdde99;21supported corrected cards/local semantics,owning1.0.26; original fidelity unresolved. |
+| [Slice30 — space/depth/projection](slice30-space-depth-and-projection/slice-plan.md) | Active:25connected cards,sourcec42f5bd5,CC `/root/s30_cc`,independent CDC. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice29 are delivery choices, not issued assignments or a fixed slice
-count. Slice29 is closed; next select connected space/depth/projection work.
-Prefer related contexts; navigation groups are not compulsory slices. No future
-open set or Arc04 tree before predecessor closure.
+Rows after Slice30 are delivery choices, not issued assignments or a fixed slice
+count. Slice30 combines spatial organization and depth/projection so repeated
+claims are corrected together. Prefer coherent deliveries; navigation groups are
+not compulsory slices. No future open set or Arc04 tree before predecessor close.
 
 Review → decide → edit → check → independent review is one batch. Fix supported
 in-scope issues before return; preserve useful teaching. Complete impacted local
@@ -141,10 +142,10 @@ separate. Direct routine handoffs and CDC retrospectives now apply; all original
 criteria and Operator/input/composition gates survive. Stop at this arc's endpoint;
 no automatic Arc04 work, merge, push or publication.
 Expedited Mode. Slices01–29 closed at their recorded bounded scopes. Slice29
-corrects21form/projection/representation cards/local semantics atc42f5bd5/CCe9bdde99,
-owning1.0.26. No material independent finding required another iteration.
-Next select connected space/depth work; continue supported corrections with actual
-prior-input applicability. No successor is issued by this close alone.
+corrects21form/projection/representation cards/local semantics atc42f5bd5,owning1.0.26.
+Active [Slice30](slice30-space-depth-and-projection/slice-plan.md) combines25space/
+depth/projection cards with explicit existing-metadata and semantic decisions.
+Continue supported work; all unavailable-original/global/parent gates remain.
 Final8payload/behavior applicability and local-font/native/AT limits remain
 explicit for later composition. All ten arc/thirteen project criterion states,
 missing-original/full233global and formal composition/Operator/release gates
@@ -489,3 +490,5 @@ inputs now that the sequencing hold is lifted.
 - 1.78 (2026-10-19): Open coherent21-card form/projection/representation batch after actual Slice28 closure; all parent/input/release obligations retained.
 
 - 1.79 (2026-10-19): Independently close supported21-card form/projection/representation correction and local semantics; all higher gates retained.
+
+- 1.80 (2026-10-19): Open coherent25-card spatial organization/depth/projection correction after Slice29 close, retaining all higher gates.
