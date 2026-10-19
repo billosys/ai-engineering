@@ -28,8 +28,7 @@ related:
   - "visual-simplicity"
   - "perceptual-grouping-similarity"
   - "consistent-shape"
-contrasts_with:
-  - "reductionism-visual"
+contrasts_with: []
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
@@ -39,25 +38,25 @@ rosetta_stone:
     domain: "engineering"
     concept: "Encapsulation and cohesion / system architecture"
     rating: "structural"
-    note: "The distinction between genuine parts (structurally independent subwholes within a context) and mere portions (arbitrary cuts) maps directly to the distinction between well-encapsulated modules with high cohesion and arbitrary code partitioning."
+    note: "Cohesive modules and perceptual subwholes both use meaningful boundaries within a larger context. Software interfaces and change dependencies need their own analysis; neither arbitrary code cuts nor visual nesting establish the correspondence."
   -
     domain: "music"
     concept: "Phrase structure / motif-theme-movement hierarchy"
     rating: "structural"
-    note: "Music's hierarchical part-whole structure (motif → phrase → period → section → movement) parallels the hierarchical visual part-whole structure Arnheim describes: each level is a genuine part only when it functions as a structurally independent subwhole within the larger context."
+    note: "Motif, phrase and movement can form nested musical units. This parallels contextual part-whole relationships, without requiring that hierarchy in every musical style or making phrases fully independent."
   -
     domain: "mathematics"
     concept: "Hierarchical decomposition / recursive structure"
     rating: "structural"
-    note: "The hierarchical subdivision Arnheim describes (primary parts → secondary parts → tertiary) is structurally equivalent to recursive decomposition: each part is itself a whole that can be further subdivided by the same structural principles."
+    note: "Recursive decomposition models nested parts when a chosen representation permits it. Perceptual organisation can be overlapping or ambiguous, so it need not be a unique recursive tree."
 css_implementation:
   -
-    property: "Component hierarchy in CSS (BEM / component structure)"
-    example: "/* Block > Element > Modifier mirrors genuine part hierarchy */ .card { } .card__header { } .card__body { } .card__footer { } /* each is a genuine part, not an arbitrary slice */"
+    property: "BEM names blocks, elements and their modifiers"
+    example: "/* Modifiers apply to blocks or elements, not a third nested layer. */ .card { } .card__header { } .card__body { } .card__footer { } .card--featured { } /* Names do not prove perceptually genuine parts. */"
     support: "baseline"
   -
-    property: "CSS Grid / Flexbox nested layouts"
-    example: "/* Outer grid is the whole; inner grid is a genuine part that maintains its own internal structure */ .layout { display: grid; grid-template-columns: 1fr 2fr; } .sidebar { display: flex; flex-direction: column; }"
+    property: "Nested CSS Grid / Flexbox candidate"
+    example: ".layout { display: grid; grid-template-columns: 1fr 2fr; } .sidebar { display: flex; flex-direction: column; } /* Candidate outer/inner organisation; inspect content, placement and reading order. */"
     support: "baseline"
 ---
 
@@ -66,6 +65,8 @@ css_implementation:
 Visual whole-and-part dynamics is the reciprocal relationship between a perceptual whole and its genuine parts: each part's appearance is shaped by the whole's structure, while the whole in turn is shaped by its parts — neither is independent, and "the whole is greater than the sum of its parts" precisely because parts are not self-sufficient outside their context.
 
 # Core Definition
+
+This section presents the represented Arnheim account. Its quotations, page references and historical or experimental reports have not been checked against the unavailable original; current analytic qualifications below do not certify that fidelity.
 
 Arnheim's central claim about the gestalt: "what is seen in a particular area of the visual field depends strongly on its place and function in the total context. On the other hand, the structure of the whole may be modified by local changes" (Chapter II, p. 51). He extends this to the critical distinction between genuine parts and mere portions: "It is necessary therefore to distinguish between 'genuine parts'—that is, sections representing a segregated subwhole within the total context—and mere portions or pieces—that is, sections segregated only in relation to a limited local context or to no inherent breaks in the figure at all" (p. 55). The whole-part relationship is neither the sum of independent parts (reductionism) nor the dominance of a homogeneous whole that erases all distinction: "The appearance of any part depends, to a greater or lesser extent, on the structure of the whole, and the whole, in turn, is influenced by the nature of its parts. No portion of a work of art is ever quite self-sufficient" (p. 56).
 
@@ -90,12 +91,12 @@ Arnheim's central claim about the gestalt: "what is seen in a particular area of
 2. Design each part so that it functions as a subwhole within its context (clear shape, structural independence at its scale) while being visibly embedded in the larger whole.
 3. Ensure that the whole has a structural character that is different from (and not reducible to) the characters of its parts.
 4. Design hierarchically: primary parts first, then secondary articulation within each, then tertiary detail — each level a genuine part at its scale.
-5. Test by removing each part: does the whole feel noticeably different? (Yes = genuine part; No = mere portion, which may be eliminable.)
+5. Compare removal and isolation to understand a part's contribution. An unnoticed change does not prove a mere portion or justify removal: small details may carry essential meaning.
 
 ## To Identify/Recognise:
 1. Which units read as genuine parts (structurally independent subwholes) vs. which are mere portions (arbitrary cuts)?
 2. Does a part carry too much self-sufficiency (disrupts the whole) or too little (invisible within the whole)?
-3. Can the whole's character be inferred from any single part? (No = the whole is genuinely greater than its parts)
+3. Compare a single part with the whole to identify what relationships add; failure to infer the whole from one part is not an iff test of Gestalt organisation.
 
 # Context & Application
 
@@ -104,9 +105,9 @@ Arnheim's central claim about the gestalt: "what is seen in a particular area of
 
 ## Cross-Domain Connections
 
-**Engineering → STRUCTURAL**: Good module design in software engineering requires exactly the same calibration as Arnheim's genuine-parts principle: each module must be sufficiently self-contained (high cohesion) to be understood independently, yet clearly embedded in a larger system architecture. A module with too much self-sufficiency becomes a separate application; a module with too little is an arbitrary code slice.
+**Engineering → STRUCTURAL**: Cohesive modules have useful boundaries and defined relations to a larger architecture. This parallels contextual subwholes without requiring visual and software structures to match. An independently usable module need not become a separate application, and a context-dependent one need not be an arbitrary slice.
 
-**Music → STRUCTURAL**: Musical phrases are genuine parts: they have clear internal structure (melodic arc, harmonic motion, rhythmic pattern) that makes them independently readable, yet they function within the whole movement as structurally determined subwholes. A phrase that is "too complete" (strong perfect cadence, symmetrical phrase, no harmonic implication) resists continuation and can fracture the movement's unity.
+**Music → STRUCTURAL**: Musical phrases are genuine parts: they have clear internal structure (melodic arc, harmonic motion, rhythmic pattern) that makes them independently readable, yet they function within the whole movement as structurally determined subwholes. A strong cadence can conclude, articulate or prepare a contrast depending on musical context; self-containment alone does not fracture a movement.
 
 # Examples
 
@@ -122,18 +123,20 @@ Arnheim's central claim about the gestalt: "what is seen in a particular area of
 
 # Relationships
 
+The following are scoped conceptual reading connections. In the represented account, simplicity, axes and grouping explain one another; these links do not establish causal neural mechanisms. Unnamed downstream uses and ordinary comparisons are not automatically resolved card identities.
+
 ## Builds Upon
-- **Praegnanz** — Whole-part dynamics are governed by comparative simplicity: the configuration that gives the simplest whole consistent with legible parts wins.
+- **Praegnanz** — Comparative simplicity offers one way to interpret whole/part organisation; content and competing cues can support different readings.
 - **Visual Shape** — Understanding what makes a shape (skeleton, not just boundary) is required to understand what makes a part "genuine" (a structurally independent subwhole, not an arbitrary cut).
 - **Visual Subdivision** — Subdivision reveals genuine parts; whole-part dynamics describes what results.
 
 ## Enables
 - **Hierarchical Visual Composition** — Understanding genuine parts enables designing at multiple hierarchical levels without losing coherence.
-- **Component Architecture** — The genuine-parts principle is the perceptual foundation of component design: each component should be a genuine perceptual part of its context.
+- **Component Architecture** — Comparing perceptual parts can inform component boundaries, alongside semantic and software concerns; it is not the sole foundation of component design.
 
 ## Related
 - **Structural Skeleton** — The skeleton determines the genuine parts of a shape by determining where its structural breaks are.
-- **Visual Simplicity** — The balance between whole and part simplicity determines the optimal subdivision.
+- **Visual Simplicity** — Comparing economy at whole and part levels can guide subdivision; no uniquely optimal partition or design score follows.
 - **Perceptual Grouping by Similarity** — Similarity provides the within-part cohesion that makes a part identifiable as a subwhole.
 
 ## Contrasts With
@@ -160,6 +163,8 @@ Arnheim's central claim about the gestalt: "what is seen in a particular area of
 Chapter II: Shape, "Art and Visual Perception," pp. 51–57. Sections: "A Whole Maintains Itself," "Subdivision," "What Is a Part?"
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including their confidence, cross-reference, OCR and source-reading claims; they are not current verification. The represented original edition/page basis is unavailable, so fidelity of all quotations, locators, figures, experiments and historical claims remains unassessed. Current technical corrections and scoped analogies do not establish a neural mechanism, cultural universality or measured usability.
 
 - Definition source: Synthesised from pp. 51, 55–56; direct quotes from pp. 55–56 for genuine parts distinction and pp. 56–57 for self-sufficiency gradient.
 - Confidence rationale: High — Arnheim discusses whole-part dynamics at length with multiple concrete examples and makes the genuine-parts distinction explicitly.

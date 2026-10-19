@@ -37,25 +37,25 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Equivalence classes / partition of a set"
     rating: "structural"
-    note: "Grouping by similarity partitions the visual field into equivalence classes — elements within a class share one or more perceptual features; the partition depends on which feature defines the equivalence relation."
+    note: "Equality on a chosen feature can define equivalence classes. Perceptual similarity need not be transitive: on 0, 1, 2 with distance at most 1, 0 resembles 1 and 1 resembles 2 while 0 does not resemble 2. Thus perceptual grouping need not form a mathematical partition."
   -
     domain: "engineering"
     concept: "Type checking / duck typing"
     rating: "loose"
-    note: "The visual system groups elements that share structural properties, regardless of other differences — loosely analogous to duck typing, where elements are grouped by what they do, not what they are declared to be."
+    note: "Duck typing compares available behavior rather than declarations; visual grouping compares selected appearances. The loose match is selective comparison, not an identity between type checking and perception."
   -
     domain: "music"
     concept: "Voice leading by common tone / harmonic proximity"
     rating: "structural"
-    note: "In Piston's voice leading rule (common tones held, other voices move to nearest available note), voices are grouped by similarity of pitch location — a direct musical application of grouping by similarity of spatial location."
+    note: "The reported Piston tonal voice-leading practice can support continuity through common or nearby pitches. Pitch distance is not literal spatial location, and range, harmony and voice constraints prevent a universal nearest-note rule."
 css_implementation:
   -
-    property: "Consistent visual tokens (colour, size, weight) to signal group membership"
-    example: "/* All primary actions share --color-brand; all destructive actions share --color-danger */ .btn-primary { background: var(--color-brand); } .btn-danger { background: var(--color-danger); }"
+    property: "Shared colour as one grouping cue"
+    example: "/* Use supplied roles; colour alone must not carry action meaning. */ .btn-primary { background: var(--color-brand); } .btn-danger { background: var(--color-danger); }"
     support: "baseline"
   -
-    property: "gap / margin for proximity grouping alongside similarity"
-    example: ".form-group { display: flex; flex-direction: column; gap: 4px; } /* tight gap = similarity of location = same group */"
+    property: "gap / margin for relative proximity grouping"
+    example: ".form-group { display: flex; flex-direction: column; gap: 4px; } /* Author inner-gap candidate; compare outer gaps, content and competing cues. */"
     support: "baseline"
 ---
 
@@ -65,7 +65,9 @@ Perceptual grouping by similarity is the gestalt principle by which the visual s
 
 # Core Definition
 
-Arnheim reports that Wertheimer's pioneering 1923 study described several grouping properties, and that Musatti showed they "could be reduced to one, the rule of homogeneity or similarity" (Chapter II, p. 53). Similarity can cause grouping along any perceptual dimension: "Any aspect of percepts—shape, brightness, color, spatial location, movement, etc.—can cause grouping by similarity" (p. 53). Similarity operates alongside subdivision as an opposing tendency: "Similarity and subdivision are opposite poles. Whereas subdivision is one of the prerequisites of sight, similarity can make things invisible... Homogeneity is the limiting case, in which... vision approaches or attains the absence of structure" (p. 52). Similarity only functions as a structural principle in conjunction with separation — it is the force of attraction among segregated things. Crucially, comparisons must proceed from a common base: "Similarity is a prerequisite for the noticing of differences" (p. 54).
+This section presents the represented Arnheim account. Its quotations, page references and historical or experimental reports have not been checked against the unavailable original; current analytic qualifications below do not certify that fidelity.
+
+Arnheim reports that Wertheimer's pioneering 1923 study described several grouping properties, and that Musatti showed they "could be reduced to one, the rule of homogeneity or similarity" (Chapter II, p. 53). Similarity can cause grouping along any perceptual dimension: "Any aspect of percepts—shape, brightness, color, spatial location, movement, etc.—can cause grouping by similarity" (p. 53). Similarity operates alongside subdivision as an opposing tendency: "Similarity and subdivision are opposite poles. Whereas subdivision is one of the prerequisites of sight, similarity can make things invisible... Homogeneity is the limiting case, in which... vision approaches or attains the absence of structure" (p. 52). The account discusses grouping among distinguishable elements. Identical dots can still form two spatially separated clusters: shared appearance does not erase proximity structure; a uniform unsegregated field is a different case. Crucially, comparisons must proceed from a common base: "Similarity is a prerequisite for the noticing of differences" (p. 54).
 
 # Prerequisites
 
@@ -75,9 +77,9 @@ Arnheim reports that Wertheimer's pioneering 1923 study described several groupi
 # Key Properties
 
 1. **Multi-dimensional** — Grouping can occur along any perceptual dimension: shape, size, brightness, colour, orientation, spatial location (proximity), speed, direction.
-2. **Requires common base** — Similarity comparisons are only meaningful between elements that share some reference class; perceptual comparisons don't occur across completely unrelated categories.
+2. **Comparison basis** — State the feature and context under comparison; shared reference conditions can make a difference salient without imposing a strict category rule.
 3. **Relative judgment** — Whether elements look alike depends on how different they are from their environment: "the round shapes resemble each other compellingly despite their differences because they are surrounded by angular, straight-lined shapes" (p. 67).
-4. **Interaction with subdivision** — Similarity and subdivision (separation) work together; similarity only groups elements that are already segregated. Homogeneity (perfect similarity) eliminates structure, making elements invisible against background.
+4. **Interaction with subdivision** — Distinguishable identical dots can group into two separated clusters; a uniform unsegregated field has no such internal marks. Perfect feature similarity does not itself eliminate grouping.
 5. **Top-down and bottom-up** — Similarity operates "from below" (element-to-element) and is supplemented by overall pattern structure "from above."
 
 # Construction / Recognition
@@ -86,24 +88,24 @@ Arnheim reports that Wertheimer's pioneering 1923 study described several groupi
 1. Decide which elements should belong to the same perceptual group.
 2. Assign a shared perceptual property to all members of that group (consistent colour, shape, weight, size, orientation).
 3. Ensure the shared property distinguishes the group from non-members — similarity only works in context of difference.
-4. Stack similarity cues for stronger grouping (same colour AND same shape AND same size = very strong group signal).
+4. Add reinforcing cues when the task benefits; one clear cue can suffice and extra cues can compete or overstate grouping.
 5. Deliberately break one or more similarity cues to signal differentiation within an otherwise similar set (e.g., one different colour in an otherwise monochrome set draws the eye).
 
 ## To Identify/Recognise:
 1. Which elements share a perceptual property that others don't? Those form a group.
-2. Are the grouped elements actually perceptually distinct from the visual field (if similarity is total, grouping collapses to invisibility)?
+2. Are individual marks distinguishable from their background? Identical marks may still form separate spatial clusters; a uniform unsegregated field is different.
 3. Do competing similarity cues conflict, creating ambiguous or multiple groupings?
 
 # Context & Application
 
 - **Typical contexts**: Navigation menus, icon families, form design, data visualisation, typographic hierarchy, colour-coded systems.
-- **Common applications**: A designer using consistent colour to mark all destructive actions (red), all primary actions (blue), and all secondary actions (grey) is applying grouping by colour similarity to communicate functional groupings. An icon set achieves perceptual coherence by consistent stroke weight and corner radius (shape similarity). A mixed icon set (outlined + filled + different sizes) violates similarity along multiple dimensions simultaneously, fragmenting perceived unity.
+- **Common applications**: Supplied action colours can reinforce functional groups, with labels or other signals preserving meaning beyond colour. Similar strokes and corners can support icon-family coherence. Mixed outlined/filled styles or 16px/24px optical sizes may be deliberate role distinctions; unintended variation is a candidate explanation for an incoherent family, not an automatic perceptual-law violation.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Grouping by similarity is a perceptual partition: the visual field is divided into equivalence classes under the similarity relation. The visual system implicitly chooses which perceptual dimension defines the equivalence relation, based on which partition produces the simplest overall structure (Praegnanz).
+**Mathematics → STRUCTURAL**: Equality on a specified feature can partition a set into equivalence classes. Perceptual resemblance need not be transitive: for values 0, 1, 2 with distance at most 1, 0 resembles 1 and 1 resembles 2, but 0 does not resemble 2. Thus grouping can be ambiguous or overlapping rather than a mathematical partition.
 
-**Music → STRUCTURAL**: Piston's voice-leading principle (hold common tones, move other voices to nearest available note) implements grouping by similarity of pitch location: melodic continuity arises because each voice groups its successive pitches by spatial proximity (proximity being a limiting case of similarity of location).
+**Music → STRUCTURAL**: The reported Piston tonal practice can preserve melodic continuity by held common tones and nearby pitches. It is a comparison with selected pitch relationships, not literal spatial similarity or a universal algorithm overriding harmony, range and voice constraints.
 
 # Examples
 
@@ -117,6 +119,8 @@ Arnheim reports that Wertheimer's pioneering 1923 study described several groupi
 
 # Relationships
 
+The following are scoped conceptual reading connections. In the represented account, simplicity, axes and grouping explain one another; these links do not establish causal neural mechanisms. Unnamed downstream uses and ordinary comparisons are not automatically resolved card identities.
+
 ## Builds Upon
 - **Praegnanz** — Similarity grouping is Praegnanz applied to sets of segregated elements.
 - **Visual Shape** — Shape is one of the primary similarity dimensions for grouping.
@@ -124,7 +128,7 @@ Arnheim reports that Wertheimer's pioneering 1923 study described several groupi
 ## Enables
 - **Consistent Shape (Grouping Principle)** — The extension of similarity grouping from discrete elements to continuous lines and curves.
 - **Visual Symmetry** — Symmetry is "similarity of location" extended to mirror positions within a whole pattern.
-- **Compositional Unity** — Grouping by similarity is the primary mechanism for achieving visual unity across a composition.
+- **Compositional Unity** — Shared features can contribute to unity with spacing, continuation and other cues; similarity is not a unique or sufficient mechanism.
 
 ## Related
 - **Visual Subdivision** — The opposing pole: subdivision separates, similarity unites. Both are necessary; their balance determines the structure of the visual field.
@@ -136,15 +140,15 @@ Arnheim reports that Wertheimer's pioneering 1923 study described several groupi
 # Common Errors
 
 - **Error**: Using similarity along only one dimension when trying to establish a clear grouping.
-  **Correction**: Stacking multiple similarity cues (colour + shape + size) produces much stronger, more reliable groupings. Single-dimension similarity can be overridden by other factors.
+  **Correction**: A single cue can work. Consider additional cues when useful, and compare their effect with competing grouping signals; no monotonic strength guarantee follows from adding cues.
 
 - **Error**: Using similarity globally (everything shares a property) expecting grouping to result.
-  **Correction**: If similarity is total (all elements identical), no grouping occurs — grouping requires contrast between groups. Similarity only creates groups when it is selective.
+  **Correction**: Identical dots can form two groups when separated spatially. Distinguish equality of a feature from a uniform unsegregated field, and compare actual within-group and between-group gaps; there is no fixed required gap.
 
 # Common Confusions
 
 - **Confusion**: Proximity is a separate principle from similarity.
-  **Clarification**: Arnheim follows Musatti in treating proximity (nearness) as a special case of similarity — specifically, similarity of spatial location. The classic Gestalt distinction between "proximity" and "similarity" as separate laws is a simplification; all grouping operates through similarity along different perceptual dimensions.
+  **Clarification**: Arnheim follows Musatti in treating proximity (nearness) as a special case of similarity — specifically, similarity of spatial location. That is the attributed Arnheim/Musatti reduction, not a complete modern catalog. Keeping proximity and similarity distinct is useful when distance and appearance supply competing cues.
 
 - **Confusion**: Similarity grouping operates bottom-up only.
   **Clarification**: Similarity operates both bottom-up (element-to-element) and top-down (overall structural pattern determines which similarities are perceptually relevant). "The approach 'from below'... is quite limited, and must be supplemented by the approach 'from above'" (p. 57).
@@ -154,6 +158,8 @@ Arnheim reports that Wertheimer's pioneering 1923 study described several groupi
 Chapter II: Shape, "Art and Visual Perception," pp. 52–58, 64–67. Section: "Similarity and Difference" and "Examples from Art."
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including their confidence, cross-reference, OCR and source-reading claims; they are not current verification. The represented original edition/page basis is unavailable, so fidelity of all quotations, locators, figures, experiments and historical claims remains unassessed. Current technical corrections and scoped analogies do not establish a neural mechanism, cultural universality or measured usability.
 
 - Definition source: Direct quotes from pp. 52–54; concept named explicitly by Arnheim following Wertheimer.
 - Confidence rationale: Wertheimer's similarity principle is explicitly named and illustrated; multiple dimensions demonstrated with figures. High confidence.

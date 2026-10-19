@@ -165,3 +165,8 @@ do not guarantee outcomes across content, users or browsers.
 
 - Reconcile the nineteen connected New Typography cards as historical teaching with contextual contemporary application. Correct ideal/nominal paper geometry, alignment/composition, case display, reading-order, colour, photography, ornament and symbol claims; preserve recorded quotations and examples with explicit unavailable-original limits.
 - Correct nine existing metadata scalars and retire six unsupported CQ memberships through five existing lists; keep the unmet question requirements in slice evidence for global reconciliation. No operative guide or entrypoint prose changes.
+
+## Version 1.0.24 — 2026-10-19
+
+- Correct the connected perception, shape and grouping cards: parametric versus geometric continuity, topology and perceptual axes, similarity counterexamples, bounded complexity analogies, CSS clipping/easing and BEM examples.
+- Retain constructive historical teaching while separating represented source reports from current analytic support; original Arnheim fidelity remains unassessed. Reconcile two existing aliases and retire eleven unresolved typed contrast joins while preserving conceptual body comparisons; qualify existing Rosetta mappings and question contributions.

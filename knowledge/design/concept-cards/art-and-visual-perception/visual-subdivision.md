@@ -40,29 +40,29 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Partitioning a set / topology of connected components"
     rating: "structural"
-    note: "Visual subdivision partitions the visual field into perceptually distinct units analogous to connected components in topology — each isolated region is a perceptual unit, and the rules governing isolation are the perceptual analogue of connectedness conditions."
+    note: "Connected components require a specified space and topology. Perceptual regions likewise separate units, but proximity, overlap and task can group disconnected marks or divide connected regions; the operations are not identical."
   -
     domain: "engineering"
     concept: "Encapsulation / module boundaries"
     rating: "structural"
-    note: "Visual subdivision — isolating a region with a clear, simple shape independent of surrounding structure — is structurally analogous to encapsulation: defining a module boundary that makes internal structure independent of external context."
+    note: "Encapsulation defines interfaces and hides selected implementation details. This compares useful boundaries, not independence from all context: both software modules and perceptual parts can retain dependencies."
   -
     domain: "music"
     concept: "Phrase structure / musical segmentation"
     rating: "structural"
-    note: "Musical phrases are auditory units isolated by closure cues (cadences, rests, melodic peaks) from their context, just as visual units are isolated by shape clarity and structural independence from the visual field."
+    note: "Cadences, rests and phrase contours can suggest musical segmentation. They compare with visual boundary cues, but phrasing depends on style and listening context and is not a universal visual rule."
 css_implementation:
   -
-    property: "Whitespace (margin/padding) as subdivision mechanism"
-    example: "margin: 24px 0; /* creates visual isolation through spatial separation */"
+    property: "Whitespace as a possible separation cue"
+    example: "margin: 24px 0; /* Author candidate: compare within/between spacing with actual content. */"
     support: "baseline"
   -
-    property: "border / box-shadow as explicit boundary"
-    example: "border: 1px solid var(--color-border); /* explicit contour strengthens subdivision */"
+    property: "border / box-shadow as possible boundary cues"
+    example: "border: 1px solid var(--color-border); /* Existing token; check actual adjacent colours and whether boundary is needed. */"
     support: "baseline"
   -
-    property: "background-color contrast for region isolation"
-    example: "background: var(--surface-raised); /* distinct surface colour creates perceptual region */"
+    property: "Background difference as a possible region cue"
+    example: "background: var(--surface-raised); /* Supplied token must differ suitably from actual surround; no guaranteed isolation. */"
     support: "baseline"
 ---
 
@@ -72,19 +72,21 @@ Visual subdivision is the perceptual process by which the unified visual field i
 
 # Core Definition
 
-Arnheim argues that "subdivision of shape is of the greatest biological value because it is a principal condition for discerning objects. Goethe has observed that 'Erscheinung und Entzweien sind synonym,' meaning that appearance and segregation are one and the same" (Chapter II, p. 50). Subdivision is governed by Praegnanz: "A given area of the field stands out amidst its surroundings insofar as its shape is both clear and simple in itself and independent of the structure of the surrounding area. Conversely, an area of the field is hard to isolate when its own shape is quite irregular or when, in part or as a whole, it fits snugly into a larger context" (p. 53). The key principle for part-whole articulation: "what makes a part simpler may make the whole more complex" — subdivision depends on the relative simplicity of parts versus the whole. The whole prevails when it is simpler than its parts (as in a square divided into two rectangles); the parts prevail when they are simpler than the whole (as in a 2:1 rectangle divided into two squares).
+This section presents the represented Arnheim account. Its quotations, page references and historical or experimental reports have not been checked against the unavailable original; current analytic qualifications below do not certify that fidelity.
+
+Arnheim argues that "subdivision of shape is of the greatest biological value because it is a principal condition for discerning objects. Goethe has observed that 'Erscheinung und Entzweien sind synonym,' meaning that appearance and segregation are one and the same" (Chapter II, p. 50). Subdivision is governed by Praegnanz: "A given area of the field stands out amidst its surroundings insofar as its shape is both clear and simple in itself and independent of the structure of the surrounding area. Conversely, an area of the field is hard to isolate when its own shape is quite irregular or when, in part or as a whole, it fits snugly into a larger context" (p. 53). The key principle for part-whole articulation: "what makes a part simpler may make the whole more complex" — subdivision depends on the relative simplicity of parts versus the whole. Arnheim illustrates the comparison with a square divided into rectangles and a 2:1 rectangle divided into squares. These invite different whole/part readings, not an algorithm deciding every partition.
 
 # Prerequisites
 
 - **Praegnanz** — Subdivision is governed by the relative simplicity of whole vs. parts; Praegnanz determines which prevails.
-- **Visual Shape** — A unit can only be isolated if it has a clear, simple shape; shapelessness prevents subdivision.
+- **Visual Shape** — Region and shape cues help describe isolation; a simple contour is not necessary and irregular regions can still separate.
 - **Perceptual Concept** — Recognising an isolated region as an object requires the general category-forming capacity of perceptual concepts.
 
 # Key Properties
 
 1. **Simplicity-governed** — A region stands out when its shape is simple and independent; it fuses when its shape is complex or depends on surrounding context for closure.
-2. **Relative** — Subdivision depends on comparing simplicity of whole vs. parts; the simpler entity wins.
-3. **Multi-modal** — Shape is not the only subdivision factor: "Similarities and differences in brightness and color can be even more decisive, and so can differences between motion and repose" (p. 53).
+2. **Relative** — Comparative simplicity can favor a whole or its parts; contrast, task and other cues can compete.
+3. **Multiple visual cues** — Shape is not the only factor: "Similarities and differences in brightness and color can be even more decisive, and so can differences between motion and repose" (p. 53). These are distinct visual dimensions, not a claim about every sensory modality.
 4. **Hierarchical** — Subdivision proceeds at hierarchic levels: primary segregation into main elements, then those elements subdivide into secondary parts, etc.
 5. **Genuine parts vs. mere portions** — Subdivision reveals "genuine parts" (structurally independent subwholes within the total context) not arbitrary cuts ("portions").
 
@@ -93,24 +95,24 @@ Arnheim argues that "subdivision of shape is of the greatest biological value be
 ## To Construct/Create:
 1. To isolate a region: give it a clear, simple shape that is independent of the surrounding structure (clear edges, simple geometric form, contrast of brightness/colour).
 2. To merge a region: make its shape depend on the surrounding context for closure (use shared axes, fused edges, similar colour/brightness, irregular outline that fits the surround).
-3. To control part-whole hierarchy: ensure the whole is structurally simpler than the sum of its parts (the whole prevails); or ensure parts are simpler than the whole (parts emerge as independent units).
-4. For layout: use whitespace, colour, and border to create isolated perceptual regions; ensure each region has a simple, self-contained shape.
+3. Compare whether whole or part cues dominate at the intended scale. Relative simplicity is one consideration alongside contrast, content and task.
+4. For layout, choose whitespace, colour or boundary cues that clarify actual relationships. One cue can suffice; simple self-contained rectangles are not required.
 
 ## To Identify/Recognise:
-1. Does this region have a clear, simple shape that is independent of its surroundings? (Yes = high subdivision)
-2. Would removing the surrounding context leave this region looking complete and self-contained? (Yes = genuine part)
+1. Does this region have a clear, simple shape that is independent of its surroundings? (one cue to isolation, not a decisive test)
+2. Compare a region in context and in isolation. Apparent self-containment is one diagnostic, not a necessary-and-sufficient test of a genuine part.
 3. Are the perceptual boundaries between regions sharp (brightness/colour contrast, explicit edges) or gradual (blending into surroundings)?
 
 # Context & Application
 
 - **Typical contexts**: Layout design, navigation structure, card-based UI, information architecture, icon design, typographic hierarchy, data table design.
-- **Common applications**: Cards in UI design are perceptual regions isolated by background contrast, border, shadow, and whitespace — four simultaneous subdivision cues. A sidebar is isolated from the main content area by colour difference and position. A data table row is isolated by alternating background colour or by border lines. When subdivision fails (elements lack clear shape or share too many properties with surroundings), the UI feels "muddy" or components are hard to distinguish.
+- **Common applications**: Cards can use background contrast, border, shadow or whitespace as separation cues; they need not use all four. A sidebar is isolated from the main content area by colour difference and position. A data table row is isolated by alternating background colour or by border lines. When subdivision fails (elements lack clear shape or share too many properties with surroundings), the UI feels "muddy" or components are hard to distinguish.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: The visual field is partitioned into isolated regions (connected components under the perceptual relation of "belonging to the same unit"). The rules governing isolation (simplicity, independence, contrast) are the perceptual analogue of the conditions for topological disconnection.
+**Mathematics → STRUCTURAL**: Connected components require a specified space and topology. Visual grouping can unite disconnected dots or divide a connected figure, so perceptual belonging does not automatically partition a topological space. The useful match is articulation into units under a stated rule.
 
-**Engineering → STRUCTURAL**: Good module design isolates each module from its context — it has a clear interface (simple shape, independent of surrounding implementation details). Poorly modularised code where a module's structure depends on knowing its context is analogous to a visual region that fails to subdivide because its shape is closed by the surrounding structure.
+**Engineering → STRUCTURAL**: Module boundaries and perceptual region cues both make relationships easier to inspect. A module still depends on interfaces and context; encapsulation does not require complete independence. A visually self-contained region likewise need not be semantically independent.
 
 # Examples
 
@@ -124,13 +126,15 @@ Arnheim argues that "subdivision of shape is of the greatest biological value be
 
 # Relationships
 
+The following are scoped conceptual reading connections. In the represented account, simplicity, axes and grouping explain one another; these links do not establish causal neural mechanisms. Unnamed downstream uses and ordinary comparisons are not automatically resolved card identities.
+
 ## Builds Upon
 - **Praegnanz** — Subdivision is governed by comparative simplicity; Praegnanz determines which structure (whole or parts) wins.
 - **Visual Shape** — Subdivision requires a region to have an isolatable shape.
 
 ## Enables
 - **Visual Hierarchy** — Hierarchical subdivision (primary segregation into main elements, secondary into sub-elements) creates the structural basis of visual hierarchy.
-- **Figure-Ground** — Figure-ground is the limiting case of subdivision: one region (figure) achieves maximum isolation against an unbounded surround (ground).
+- **Figure-Ground** — Figure-ground describes assignment of a boundary to a foreground region against a surround; this is a related organisation, not a maximum-isolation score.
 
 ## Related
 - **Perceptual Grouping by Similarity** — The opposing pole: similarity unites separated elements; subdivision separates unified fields. Both operate simultaneously.
@@ -139,15 +143,15 @@ Arnheim argues that "subdivision of shape is of the greatest biological value be
 
 ## Contrasts With
 - **Perceptual Grouping by Similarity** — Grouping unites; subdivision separates. "Similarity and subdivision are opposite poles."
-- **Shape Completion** — Completion prevents isolation of parts; subdivision isolates them.
+- **Shape Completion** — Completion can unite partial cues while subdivision separates units; both can coexist, rather than completion universally preventing isolation.
 
 # Common Errors
 
 - **Error**: Relying on whitespace alone for subdivision without giving elements their own clear shape.
-  **Correction**: Subdivision is stronger when multiple cues reinforce it (shape clarity + colour contrast + spatial separation). Whitespace alone creates proximity grouping but not necessarily shape isolation.
+  **Correction**: Whitespace alone can communicate grouping in some contexts. Add boundary, shape or colour cues when they improve the intended reading; extra cues are optional and do not guarantee stronger or better organisation.
 
 - **Error**: Creating too many subdivisions at the same hierarchical level.
-  **Correction**: Hierarchical subdivision requires that primary levels be clearly dominant over secondary ones. A visual field with equal-strength subdivisions at all scales has no readable hierarchy.
+  **Correction**: Hierarchical subdivision requires that primary levels be clearly dominant over secondary ones. Equal treatment may suit peer items. When a priority order is required, compare actual size, colour, contrast, weight and spacing; nested regions alone do not establish importance.
 
 # Common Confusions
 
@@ -162,6 +166,8 @@ Arnheim argues that "subdivision of shape is of the greatest biological value be
 Chapter II: Shape, "Art and Visual Perception," pp. 51–58. Sections: "Subdivision," "Why the Eyes Often Tell the Truth," "Subdivision in the Arts," "What Is a Part?"
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including their confidence, cross-reference, OCR and source-reading claims; they are not current verification. The represented original edition/page basis is unavailable, so fidelity of all quotations, locators, figures, experiments and historical claims remains unassessed. Current technical corrections and scoped analogies do not establish a neural mechanism, cultural universality or measured usability.
 
 - Definition source: Direct quotes from pp. 50, 52–53; concept developed at length across multiple sections.
 - Confidence rationale: High — Arnheim devotes extended discussion to subdivision with experimental evidence and multiple worked examples.

@@ -38,34 +38,36 @@ rosetta_stone:
   -
     domain: "mathematics"
     concept: "Medial axis transform / skeleton in computational geometry"
-    rating: "rigorous"
-    note: "The mathematical medial axis transform computes the geometric skeleton of a shape as the locus of centres of maximal inscribed circles — this is the formal computational equivalent of Arnheim's perceptual structural skeleton."
+    rating: "structural"
+    note: "A medial axis is the locus of centres of maximal inscribed disks for a specified planar region. It can summarize geometry, but a disk has only its centre as medial axis, not a selected dominant perceptual axis. The comparison is structural rather than a computational identity."
   -
     domain: "engineering"
     concept: "Abstract syntax tree (AST) / semantic model"
     rating: "structural"
-    note: "The structural skeleton abstracts from literal contour to dominant organisational axes, just as an AST abstracts from literal syntax to the underlying semantic structure of a programme."
+    note: "An AST abstracts concrete syntax into a syntax tree, not universally into a semantic model. The match is selective structural representation; neither AST construction nor geometric extraction establishes how a viewer perceives axes."
   -
     domain: "art"
     concept: "Compositional armature / gesture drawing"
     rating: "structural"
-    note: "In figure drawing, 'gesture' captures the primary axes and energy flow of a pose (the skeleton) before rendering any contour — artists are taught to find the skeleton first, precisely as Arnheim describes."
+    note: "Gesture drawing can foreground pose, axes and directional flow before detail. This is a useful artistic construction strategy, not proof that every artist or viewer follows the same sequence."
 css_implementation:
   -
     property: "SVG path skeleton / simplified path data"
     example: "<!-- Skeleton: main axes of a figure, not its outline --> <line x1='50' y1='0' x2='50' y2='100' stroke='red'/> <!-- vertical axis -->"
     support: "baseline"
   -
-    property: "Layout grid as structural skeleton"
-    example: "display: grid; grid-template-columns: 1fr 2fr 1fr; /* The grid IS the structural skeleton of the layout */"
+    property: "Layout grid as a candidate organisational scaffold"
+    example: "display: grid; grid-template-columns: 1fr 2fr 1fr; /* Candidate track ratio; content and placement determine perceived organisation. */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-The structural skeleton is the framework of dominant axes, symmetry lines, and force correspondences that perception constructs from a shape's contours — it is the simplest structural description the contours permit, and it determines the shape's perceived character and identity more fundamentally than the literal outline does.
+The structural skeleton is the framework of dominant axes, symmetry lines, and force correspondences that perception constructs from a shape's contours — Arnheim describes it as a simple structural organisation suggested by the contours, and it can help describe shape character without being identical to the literal outline or uniquely determining identity.
 
 # Core Definition
+
+This section presents the represented Arnheim account. Its quotations, page references and historical or experimental reports have not been checked against the unavailable original; current analytic qualifications below do not certify that fidelity.
 
 Arnheim draws a sharp distinction between the artist's actual handiwork and the structural skeleton: "in speaking of 'shape' we refer to two quite different properties of visual objects: (1) the actual boundaries produced by the artist: the lines, masses, volumes, and (2) the structural skeleton created in perception by these material shapes, but rarely coinciding with them" (Chapter II, p. 63). The skeleton is constructed through Praegnanz: "The structural skeleton of each triangle derives from its contours through the law of simplicity: the resulting skeleton is the simplest structure obtainable with the given shape" (p. 65). The skeleton "consists primarily of the framework of axes, and the axes create characteristic correspondences" (p. 65). Crucially, the skeleton determines character: "Different triangles have distinctly different visual characters, which cannot be inferred from their actual shape, but only from the structural skeleton their shape creates by induction" (p. 64).
 
@@ -79,8 +81,8 @@ Arnheim draws a sharp distinction between the artist's actual handiwork and the 
 
 1. **Derived from contours through Praegnanz** — The skeleton is not the outline; it is the simplest structural description extractable from the outline.
 2. **Primarily an axis framework** — Axes of symmetry, dominant directional forces, and the correspondences they create (which edges "belong together") constitute the skeleton.
-3. **Determines identity** — The same skeleton can be embodied by many different literal contours; the skeleton is what remains constant as contours vary.
-4. **Determines character** — Two shapes with the same contours but different effective skeletons (due to context) will be perceived as having entirely different characters.
+3. **Supports recognition** — Similar axis relationships can appear in differing contours; this neither defines category membership nor guarantees recognition across viewers.
+4. **Context-sensitive character** — Fixed contour geometry can invite different axes or readings in different contexts; the mathematical geometry need not change.
 5. **Precedes contour in artistic practice** — Delacroix: "the first thing to grasp about it [an object] is the contrast of its principal lines: 'one must be well aware of this before one sets pencil to paper.'"
 
 # Construction / Recognition
@@ -100,13 +102,13 @@ Arnheim draws a sharp distinction between the artist's actual handiwork and the 
 # Context & Application
 
 - **Typical contexts**: Logo design, icon reduction, figure drawing, architectural composition, typographic letterform analysis, layout grid design.
-- **Common applications**: A logo designer creating a mark does not simply draw a shape; they design a structural skeleton (primary axis, symmetry type, dominant proportional relationship) and then choose a contour that embodies that skeleton. The skeleton survives reduction to very small sizes, embossing, watermarking, and other conditions that destroy literal contour detail. A grid in layout design is literally the structural skeleton of the composition — it defines the axes and correspondences that determine the layout's character before any content is placed.
+- **Common applications**: A mark designer can begin with axes and proportional relationships, then compare contours and actual reduced-size output. Embossing, watermarking and small sizes need their own checks. CSS Grid supplies a candidate scaffold; the actual content, alignment and placement determine whether any intended perceptual organisation emerges.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: The medial axis transform (or Blum's skeleton) is the formal computational equivalent: it computes the locus of centres of all maximal inscribed disks within a shape, producing a topological skeleton that captures the shape's dominant structure. Arnheim's perceptual skeleton is a perceptual approximation of this mathematical construct.
+**Mathematics → STRUCTURAL**: A medial axis is the locus of centres of maximal inscribed disks for a specified region. A disk's medial axis is only its centre, not a selected dominant perceptual axis. It depends on geometry and is not Arnheim's context-sensitive perceptual skeleton or its proven neural approximation. An AST similarly abstracts syntax rather than universally furnishing a semantic model: selective representation is the useful engineering comparison.
 
-**Art → STRUCTURAL**: In gesture drawing (figure drawing pedagogy), the gesture is the structural skeleton — the primary directional flow and energy of the pose. Students are taught to find and commit the gesture before rendering any anatomical detail. This directly implements Arnheim's insight: the skeleton precedes and determines the contour.
+**Art → STRUCTURAL**: In gesture drawing (figure drawing pedagogy), the gesture is the structural skeleton — the primary directional flow and energy of the pose. Students are taught to find and commit the gesture before rendering any anatomical detail. This is a useful strategy in some drawing practices; it does not establish a universal perceptual or artistic sequence.
 
 # Examples
 
@@ -118,14 +120,16 @@ Arnheim draws a sharp distinction between the artist's actual handiwork and the 
 
 # Relationships
 
+The following are scoped conceptual reading connections. In the represented account, simplicity, axes and grouping explain one another; these links do not establish causal neural mechanisms. Unnamed downstream uses and ordinary comparisons are not automatically resolved card identities.
+
 ## Builds Upon
 - **Visual Shape** — The skeleton is the perceptual product of shape's contours; shape must be understood to understand what the skeleton abstracts from.
 - **Praegnanz** — The skeleton is the Praegnanz-derived simplest structure of the contour.
 - **Contour and Boundary** — Contour is the input; the structural skeleton is the perceptual output.
 
 ## Enables
-- **Shape Completion** — Completion operates by extending or closing a structural skeleton, not by filling in a literal contour.
-- **Cross-Cultural Shape Recognition** — Because skeletons (not contours) determine identity, the same skeleton in very different stylistic realisations is universally recognisable.
+- **Shape Completion** — Axis relationships and contour continuation can both constrain completion; neither supplies a unique hidden form.
+- **Cross-Cultural Shape Recognition** — Shared axis relationships can support recognition across renderings, as in the reported stick-figure examples; universal recognition across cultures is not established.
 
 ## Related
 - **Visual Simplicity** — The skeleton is the simplest structural description of the shape; simplicity is what makes the skeleton selectively extracted from the richer contour.
@@ -137,10 +141,10 @@ Arnheim draws a sharp distinction between the artist's actual handiwork and the 
 # Common Errors
 
 - **Error**: Designing shapes by refining contour detail without attending to the skeleton.
-  **Correction**: No amount of contour refinement compensates for a weak or ambiguous skeleton. Design the skeleton first; contour detail is elaboration.
+  **Correction**: Compare contour detail and dominant relationships together. Beginning with an axis sketch can help, while deliberate ambiguity or a contour-first process may also suit the task.
 
 - **Error**: Assuming that the viewer will see the intended skeleton automatically.
-  **Correction**: When a shape permits multiple skeletal interpretations, the viewer will adopt the simplest available one (Praegnanz), which may not be the intended one. Design contours that force the intended skeleton.
+  **Correction**: When a shape permits multiple skeletal interpretations, context can favor an unintended reading; simplicity does not guarantee which reading a viewer adopts. Compare candidate contours with context and viewing conditions; contours can favor a reading without forcing it.
 
 # Common Confusions
 
@@ -148,13 +152,15 @@ Arnheim draws a sharp distinction between the artist's actual handiwork and the 
   **Clarification**: The skeleton is a perceptual construction — the framework of axes and correspondences inferred from the contour. A wireframe is a literal contour representation. The skeleton is abstract; it may consist of a single axis line where the outline is complex.
 
 - **Confusion**: The structural skeleton only matters for complex compositions.
-  **Clarification**: Every shape has a structural skeleton. Simple shapes (circle, square) have trivially clear skeletons (concentric symmetry; four-fold symmetry). The concept is most important for understanding why identical contours can produce different percepts, and why different contours can produce the same percept.
+  **Clarification**: Axes can help describe simple as well as complex shapes. A circle has rotational symmetry rather than one unique dominant axis, while a square has four symmetry axes. The concept is most important for understanding why identical contours can produce different percepts, and why different contours can produce the same percept.
 
 # Source Reference
 
 Chapter II: Shape, "Art and Visual Perception," pp. 63–66. Section: "The Structural Skeleton."
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including their confidence, cross-reference, OCR and source-reading claims; they are not current verification. The represented original edition/page basis is unavailable, so fidelity of all quotations, locators, figures, experiments and historical claims remains unassessed. Current technical corrections and scoped analogies do not establish a neural mechanism, cultural universality or measured usability.
 
 - Definition source: Direct quote from p. 63 defining the distinction between actual boundaries and structural skeleton; p. 65 for the derivation through law of simplicity.
 - Confidence rationale: Arnheim names and defines the structural skeleton explicitly in a dedicated section; experimental evidence (triangles) and artistic examples are provided.

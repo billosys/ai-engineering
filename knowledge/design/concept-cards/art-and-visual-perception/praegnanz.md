@@ -27,8 +27,7 @@ related:
   - "leveling-and-sharpening"
   - "shape-completion"
   - "visual-subdivision"
-contrasts_with:
-  - "complexity"
+contrasts_with: []
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "A developer says 'I tried making it look good by adding more colours.' The result looks chaotic. What foundational principle are they missing?"
@@ -37,32 +36,34 @@ rosetta_stone:
   -
     domain: "mathematics"
     concept: "Minimum energy / minimum description length"
-    rating: "rigorous"
-    note: "Praegnanz maps rigorously to minimum description length (MDL): the brain selects the perceptual interpretation requiring the fewest structural features to specify — equivalent to selecting the shortest programme that generates the observed data."
+    rating: "loose"
+    note: "Minimum-energy and description-length ideas suggest economy as a loose comparison. MDL includes model and residual data coding; a shortest halting program defines Kolmogorov complexity under a specified system. No such code, measured neural energy or exact perceptual objective is supplied here."
   -
     domain: "engineering"
     concept: "Occam's razor / parsimony in model selection"
     rating: "structural"
-    note: "The principle of parsimony in science (choose the simplest hypothesis that fits the data) is structurally identical to Praegnanz: the perceptual system adopts the simplest available organisation of the stimulus."
+    note: "Occam-style model selection and Praegnanz both invite economy under constraints. Scientific explanatory adequacy and perceptual organisation have different evidence and goals; this does not identify one common optimisation algorithm."
   -
     domain: "music"
     concept: "Voice leading (smoothest melodic motion between chords)"
     rating: "structural"
-    note: "The preference for minimal voice movement in harmonic progressions parallels Praegnanz: musical lines resolve to the simplest, most consistent available continuation."
+    note: "Nearby movement and held common tones can support continuity in the reported tonal voice-leading context. Other musical constraints and deliberate leaps remain legitimate; this is no universal perceptual minimum law."
 css_implementation:
   -
-    property: "Reducing visual noise: minimising competing z-index layers, colour count, font variant count"
-    example: "/* Praegnanz in CSS: fewer distinct values = simpler perceptual structure */ --font-weight-body: 400; --font-weight-heading: 700; /* only two weights */"
+    property: "Candidate font-weight role distinction"
+    example: "--font-weight-body: 400; --font-weight-heading: 700; /* Example role choices, not a required count or proof of clear hierarchy. */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Praegnanz is the fundamental perceptual law stating that any stimulus pattern tends to be seen in the way that produces the simplest, most regular, most clearly structured organisation that the given stimulus conditions permit.
+Praegnanz is the Gestalt tendency, as presented by Arnheim, stating that any stimulus pattern tends to be seen in the way that produces the simplest, most regular, most clearly structured organisation that the given stimulus conditions permit.
 
 # Core Definition
 
-Arnheim states the law directly: "Any stimulus pattern tends to be seen in such a way that the resulting structure is as simple as the given conditions permit" (Chapter II, p. 38). Gestalt psychologists called this "the law of Prägnanz." Arnheim is careful to distinguish two tendencies that both operate under Praegnanz: (1) leveling — reducing structural features to achieve symmetry and simplicity; and (2) sharpening — making ambiguous structural differences more distinct. Both are applications of the same superordinate principle: "the tendency to make perceptual structure as clear-cut as possible" (p. 48). Praegnanz is not merely about minimising elements; simplicity must be counted in structural features (axes, angles, symmetries), not raw element counts. A longer sequence with consistent structure may be simpler than a shorter, irregular one.
+This section presents the represented Arnheim account. Its quotations, page references and historical or experimental reports have not been checked against the unavailable original; current analytic qualifications below do not certify that fidelity.
+
+Arnheim states the law directly: "Any stimulus pattern tends to be seen in such a way that the resulting structure is as simple as the given conditions permit" (Chapter II, p. 38). Gestalt psychologists called this "the law of Prägnanz." Arnheim is careful to distinguish two tendencies that both operate under Praegnanz: (1) leveling — reducing structural features to achieve symmetry and simplicity; and (2) sharpening — making ambiguous structural differences more distinct. Both are applications of the same superordinate principle: "the tendency to make perceptual structure as clear-cut as possible" (p. 48). Praegnanz is not merely about minimising elements; structural features (axes, angles, symmetries) can be more informative than raw element counts, though counting depends on the representation and precision. A longer sequence with consistent structure may be simpler than a shorter, irregular one.
 
 # Prerequisites
 
@@ -71,9 +72,9 @@ Arnheim states the law directly: "Any stimulus pattern tends to be seen in such 
 # Key Properties
 
 1. **Governs ambiguous stimuli** — When stimulus control is strong, perception is constrained; Praegnanz has most freedom when stimuli are weak (distant, brief, dim).
-2. **Operates on structural features** — Simplicity is measured by counting structural features (distances, angles, axes of symmetry), not raw element counts.
+2. **Structural comparisons** — Distances, angles and symmetries support comparisons within a stated representation; they do not yield a unique complexity or quality score.
 3. **Subsumes leveling and sharpening** — Both the tendency to smooth asymmetries and the tendency to exaggerate them are Praegnanz-driven: both resolve ambiguity toward a clearer structure.
-4. **Active field process** — Praegnanz reflects field processes in the nervous system, not passive registration; the brain imposes organisation on sensory input.
+4. **Reported field account** — Arnheim interprets organisation through neural field processes; this historical account is unassessed, not current mechanistic evidence.
 5. **Relative as well as absolute** — Praegnanz applies at every complexity level: within a complex composition, each part should be as simply organised as its purpose permits (parsimony + orderliness).
 
 # Construction / Recognition
@@ -81,28 +82,28 @@ Arnheim states the law directly: "Any stimulus pattern tends to be seen in such 
 ## To Construct/Create:
 1. Identify the structural features required by your design intent (not more).
 2. For each element, ask: does it introduce a new structural feature or support existing ones?
-3. Eliminate elements that introduce novel structural features without corresponding meaning.
+3. Compare the meaning, function and expression contributed by a new feature before proposing removal.
 4. Prefer axes of symmetry and repeating angular relationships where the content supports them.
 5. When complexity is required by content, ensure it is organised at the simplest level compatible with that content (orderliness).
 
 ## To Identify/Recognise:
-1. Violations of Praegnanz appear as visual noise, tension, or confusion — "chaotic" or "unresolved" compositions.
-2. Look for near-symmetries that are not quite symmetrical without reason — these create perceptual strain.
+1. Visual noise or unresolved relationships can motivate review; tension and deliberate ambiguity can also serve the work and are not violations of a neural law.
+2. Compare near-symmetries with the intended effect; slight asymmetry can be deliberate rather than strain or error.
 3. Look for competing structural axes — multiple dominant directions that don't serve a clear hierarchy.
 4. At reduced size or viewing distance: does the composition resolve to a readable structure, or does it collapse?
 
 # Context & Application
 
 - **Typical contexts**: Layout composition, logo design, icon systems, typographic hierarchy, UI layout.
-- **Common applications**: A designer applying Praegnanz chooses alignment axes deliberately (consistent vertical and horizontal grids), uses a minimal set of font weights and sizes, and eliminates decorative elements that introduce structural complexity without semantic purpose.
+- **Common applications**: Choose alignment relationships and role distinctions deliberately. Compare whether weights, sizes and decoration serve content or expression; there is no required minimum count, symmetric grid or ban on decorative complexity.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Minimum description length (MDL) theory formalises exactly what Arnheim describes: the optimal perceptual interpretation is the one requiring the fewest bits to specify. Hochberg's attempt to quantify simplicity by counting angles and continuous lines in perceived (not drawn) shapes is an early approximation of MDL.
+**Mathematics → LOOSE**: Description-length ideas suggest economy, but MDL counts model plus data-given-model code lengths. Kolmogorov complexity instead uses the shortest halting program for specified data in a description system. No code, measured energy or unique perceptual objective is supplied here. Hochberg's reported feature counts are a historical proposal, not an established equality with MDL.
 
-**Engineering → STRUCTURAL**: Occam's razor and the principle of parsimony in scientific model selection are structurally identical to Praegnanz. A model (perceptual or scientific) should use the minimum number of independent types of elements needed to account for the observations.
+**Engineering → STRUCTURAL**: Occam-style selection and Praegnanz both discuss economy constrained by adequacy. Scientific explanation and visual organisation have different criteria and evidence; neither is a proof of the other.
 
-**Music → STRUCTURAL**: Voice leading rules in tonal harmony (moving each voice to the nearest available note) produce smooth, simple melodic lines — a direct musical application of Praegnanz to the time dimension.
+**Music → STRUCTURAL**: Held common tones and nearby movement can support tonal melodic continuity under harmonic and voice constraints. Deliberate leaps or other musical structures remain valid; this is no universal minimum-movement law.
 
 # Examples
 
@@ -110,23 +111,25 @@ Arnheim states the law directly: "Any stimulus pattern tends to be seen in such 
 
 **Example 2** (p. 47): A black square rotating around its centre is seen as rotating (not stationary), while a black disk rotating around its centre appears to rest. The square's rotation is the simplest description of the total pattern; the disk's rest is the simplest description for a circular form.
 
-**Example 3** (p. 45–47): When briefly-exposed figures are reproduced from memory, all reproductions show simplification — leveling toward symmetry, reduction of structural features — regardless of individual differences in drawing skill.
+**Example 3** (p. 45–47): When briefly-exposed figures are reproduced from memory, Arnheim reports simplification through leveling or sharpening. The original figures, population and experimental claims remain unassessed; this is not a universal claim about every memory reproduction.
 
 # Relationships
+
+The following are scoped conceptual reading connections. In the represented account, simplicity, axes and grouping explain one another; these links do not establish causal neural mechanisms. Unnamed downstream uses and ordinary comparisons are not automatically resolved card identities.
 
 ## Builds Upon
 - **Perceptual Concept** — Praegnanz selects among competing perceptual concepts; you need to understand that vision operates with generalised patterns to appreciate why "simplest" is even a meaningful criterion.
 
 ## Enables
-- **Visual Simplicity** — The measurable, designable property that results from applying Praegnanz deliberately.
+- **Visual Simplicity** — Structural economy is a useful comparative property in this account, not a uniquely measured consequence or aesthetic score.
 - **Leveling and Sharpening** — The two perceptual tendencies that implement Praegnanz in memory and perception.
-- **Shape Completion** — Praegnanz drives completion of partial shapes toward the simplest closed whole.
+- **Shape Completion** — Within this account, partial cues can favor a simple completion, without guaranteeing a unique closed whole.
 - **Visual Subdivision** — Praegnanz governs how a unified field breaks into distinct parts.
-- **Structural Skeleton** — Praegnanz determines which structural skeleton the brain assigns to a given set of contours.
+- **Structural Skeleton** — The simplicity account helps interpret which axis relationships appear salient; no unique neural assignment algorithm is established.
 
 ## Related
 - **Perceptual Grouping by Similarity** — Grouping is one mechanism through which Praegnanz organises the visual field.
-- **Figure-Ground Relationship** — Figure-ground segregation is governed by Praegnanz: the figure is the simpler, more self-contained region.
+- **Figure-Ground Relationship** — Simplicity can contribute to foreground assignment alongside enclosure and other cues; the inspected neighboring account is premise scope only, not a universal rule.
 
 ## Contrasts With
 - **Complexity** — Not opposed as such; Praegnanz demands the simplest structure compatible with the given content, which for rich content may still be complex. The contrast is with unnecessary complexity — structural features that carry no information.
@@ -134,10 +137,10 @@ Arnheim states the law directly: "Any stimulus pattern tends to be seen in such 
 # Common Errors
 
 - **Error**: Confusing Praegnanz with "make everything simple/minimal."
-  **Correction**: Praegnanz is relative, not absolute. It demands the simplest structure adequate to the content's richness. Mondrian and Rembrandt are both Praegnanz-compliant; both achieve the simplest organisation their content requires.
+  **Correction**: Praegnanz is relative, not absolute. It demands the simplest structure adequate to the content's richness. Mondrian and Rembrandt illustrate that different levels of complexity can support coherence. Their quality is not certified by a compliance test.
 
 - **Error**: Counting elements to measure simplicity.
-  **Correction**: Count structural features (axes, symmetries, angle types, distance constants), not raw element counts. A pattern with twenty equally-spaced radii is structurally simpler than one with four radii at irregular angles.
+  **Correction**: Compare structural features under a chosen representation. Twenty equally spaced radii can have a shorter regular description than four irregular ones; chosen count, extent and precision still contribute to specification.
 
 # Common Confusions
 
@@ -145,7 +148,7 @@ Arnheim states the law directly: "Any stimulus pattern tends to be seen in such 
   **Clarification**: Arnheim explicitly notes that translating Prägnanz as "pregnant" (in English) "means very nearly the opposite" of the correct meaning. Prägnanz refers to clarity, distinctness, and structural precision — the quality of being a "good gestalt."
 
 - **Confusion**: Praegnanz is only about what is seen, not about what is designed.
-  **Clarification**: Praegnanz is a perceptual law that has direct design implications: layouts, icons, and typographic systems that violate it will feel visually unresolved or chaotic; those that honour it will feel clear and coherent.
+  **Clarification**: Praegnanz suggests questions about clarity and organisation. It does not guarantee coherence, prohibit expressive tension, or make a complex or mixed-style design a neural-law violation.
 
 # Source Reference
 
@@ -153,9 +156,11 @@ Chapter II: Shape, "Art and Visual Perception," pp. 38–48. Sections: "Simplici
 
 # Verification Notes
 
+The bullets below preserve historical extraction assertions, including their confidence, cross-reference, OCR and source-reading claims; they are not current verification. The represented original edition/page basis is unavailable, so fidelity of all quotations, locators, figures, experiments and historical claims remains unassessed. Current technical corrections and scoped analogies do not establish a neural mechanism, cultural universality or measured usability.
+
 - Definition source: Direct quote from p. 38: "Any stimulus pattern tends to be seen in such a way that the resulting structure is as simple as the given conditions permit."
 - Confidence rationale: Arnheim states the law explicitly and at length; this is his primary theoretical claim for the chapter.
-- Uncertainties: The exact demarcation between Praegnanz and "simplicity" as Arnheim uses the terms is sometimes blurred in the text; this card treats them as related but distinct (Praegnanz is the law; simplicity is the measured property).
+- Uncertainties: The exact demarcation between Praegnanz and "simplicity" as Arnheim uses the terms is sometimes blurred in the text; this card treats them as related but distinct (Praegnanz is the proposed tendency; simplicity is the comparative property).
 - Cross-reference status: Verified — connects to visual-simplicity, leveling-and-sharpening, shape-completion, structural-skeleton.
 - Rosetta Stone check: Mappings added (mathematics/MDL rigorous; engineering/Occam structural; music/voice-leading structural).
 - OCR issues: Minor OCR artifact in equation on p. 37 (circle formula garbled) — not relevant to this card.

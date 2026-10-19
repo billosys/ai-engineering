@@ -23,8 +23,7 @@ related:
   - "contour-and-boundary"
   - "structural-skeleton"
   - "praegnanz"
-contrasts_with:
-  - "physical-object-shape"
+contrasts_with: []
 answers_questions:
   - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "An icon set mixes outlined and filled styles, some at 16px and some at 24px, some with rounded corners and some with sharp corners. It feels 'off.' What principle was violated?"
@@ -33,7 +32,7 @@ rosetta_stone:
     domain: "mathematics"
     concept: "Topological equivalence (continuous deformation preserving connectivity)"
     rating: "structural"
-    note: "Shapes that share a structural skeleton are perceptually equivalent in the same way topologically equivalent forms preserve identity under continuous deformation."
+    note: "Topology studies invariants under homeomorphism; perceptual shape can also remain recognizable across some changes. Circle, square and triangle boundaries are homeomorphic but visually distinct, so topological equivalence does not define perceptual category identity."
 css_implementation:
   -
     property: "clip-path / border-radius / shape-outside"
@@ -51,17 +50,19 @@ Visual shape is the perceptual outcome of the interplay between an object's phys
 
 # Core Definition
 
+This section presents the represented Arnheim account. Its quotations, page references and historical or experimental reports have not been checked against the unavailable original; current analytic qualifications below do not certify that fidelity.
+
 Arnheim distinguishes physical shape (determined by an object's actual boundaries) from perceptual shape, which is far more dynamic: "Perceptual shape is the outcome of an interplay between the physical object, the medium of light acting as the transmitter of information, and the conditions prevailing in the nervous system of the viewer" (Chapter II, p. 36). Crucially, shape is not fully reducible to boundary outlines. The brain also constructs a "structural skeleton" of axes and correspondences that determines the character and identity of the shape even when boundaries vary. The totality of past visual experience with an object type also contributes: "the shape of an object we see does not... depend only on its retinal projection at a given moment. Strictly speaking, the image is determined by the totality of visual experiences we have had with that object" (p. 36).
 
 # Prerequisites
 
-This is a foundational concept with no prerequisites within this source.
+No internal prerequisite is recorded in this extraction; this is not evidence that no other concept could aid understanding.
 
 # Key Properties
 
 1. **Boundary-based but not boundary-identical** — Shape arises from boundaries but is not identical to them; the structural skeleton (axes) often determines character more than the literal outline does.
 2. **Context-dependent** — The same physical object can yield different perceived shapes depending on spatial orientation, surrounding objects, and prior visual experience.
-3. **Whole before parts** — Shape is grasped holistically as an overall pattern, not assembled piece by piece from local detail.
+3. **Whole and parts** — Arnheim stresses overall organisation; this is no universal temporal rule excluding attention to local details.
 4. **Stable under transposition** — A triangle is recognisable at different sizes, orientations, and contrast polarities because structural features, not exact measurements, define it.
 
 # Construction / Recognition
@@ -81,11 +82,11 @@ This is a foundational concept with no prerequisites within this source.
 # Context & Application
 
 - **Typical contexts**: Logo design, iconography, pictogram systems, typographic letterform design, UI component shape language.
-- **Common applications**: A designer choosing between a circular, square, or irregular container shape for a UI card is choosing a visual shape that carries perceptual weight beyond mere geometry. Shape communicates character (circular = inclusive/complete, square = stable/reliable, irregular = dynamic/organic).
+- **Common applications**: A circular, square or irregular container can communicate differently in a particular composition. Associations such as inclusive, stable or dynamic are contextual interpretations, not fixed meanings supplied by geometry.
 
 ## Cross-Domain Connections
 
-**Mathematics → STRUCTURAL**: Topology studies what properties of forms remain invariant under continuous deformation. Arnheim's claim that structural skeleton defines shape identity parallels topological equivalence: two shapes sharing a skeleton are perceptually "the same" in the way two homeomorphic forms are mathematically equivalent.
+**Mathematics → STRUCTURAL**: Topological invariance offers a comparison for identity under some transformations, but circle, square and triangle boundaries are homeomorphic and visually distinct. Topological equivalence therefore does not define perceptual category identity; fixed geometric contours can still be organised differently in context.
 
 # Examples
 
@@ -97,8 +98,10 @@ This is a foundational concept with no prerequisites within this source.
 
 # Relationships
 
+The following are scoped conceptual reading connections. In the represented account, simplicity, axes and grouping explain one another; these links do not establish causal neural mechanisms. Unnamed downstream uses and ordinary comparisons are not automatically resolved card identities.
+
 ## Builds Upon
-- (None — foundational concept)
+- (No internal prerequisite recorded in this extraction; this is not proof of absence.)
 
 ## Enables
 - **Structural Skeleton** — The skeleton is the perceptual axis-system that shape generates and that in turn determines shape character.
@@ -111,7 +114,7 @@ This is a foundational concept with no prerequisites within this source.
 - **Visual Subdivision** — How a unified field gets parsed into distinct shape-units.
 
 ## Contrasts With
-- **Physical/Geometric Shape** — The mathematically measurable boundary of an object, which is necessary but not sufficient to explain what is perceived. Physical shape is invariant; perceptual shape changes with context, orientation, and experience.
+- **Physical/Geometric Shape** — For a fixed object and specified geometry, description can stay fixed as context changes appearance. Objects and their geometry can also deform; physical shape is not universally invariant. This is a conceptual contrast without a resolved card endpoint.
 
 # Common Errors
 
@@ -127,13 +130,15 @@ This is a foundational concept with no prerequisites within this source.
   **Clarification**: In Arnheim's framework, "shape" refers to the two-dimensional spatial configuration, while "form" often carries a broader meaning including three-dimensional structure. The chapter uses "shape" specifically; later chapters address form in depth.
 
 - **Confusion**: A photograph captures shape accurately.
-  **Clarification**: Photographs capture one retinal projection from one viewpoint. Perceptual shape includes the totality of experiences with the object type. This is why drawings by non-Western observers unfamiliar with photographic conventions often fail to recognise photographic shapes.
+  **Clarification**: A photograph records an optical projection under particular capture conditions, not a viewer's retinal or perceptual state. Prior experience and depiction conventions may matter, but the former broad claim about non-Western observers is unsupported here and supplies no general cultural explanation.
 
 # Source Reference
 
 Chapter II: Shape, "Art and Visual Perception," pp. 31–65. Specific sections: "What Is Shape?" (p. 36) and "The Structural Skeleton" (p. 63).
 
 # Verification Notes
+
+The bullets below preserve historical extraction assertions, including their confidence, cross-reference, OCR and source-reading claims; they are not current verification. The represented original edition/page basis is unavailable, so fidelity of all quotations, locators, figures, experiments and historical claims remains unassessed. Current technical corrections and scoped analogies do not establish a neural mechanism, cultural universality or measured usability.
 
 - Definition source: Synthesised from pp. 36–38 with direct quotes from "What Is Shape?" section.
 - Confidence rationale: Arnheim defines perceptual shape explicitly and contrasts it with physical shape; definition is clearly stated.
