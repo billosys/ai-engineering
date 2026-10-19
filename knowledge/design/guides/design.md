@@ -83,9 +83,10 @@ Section II
 ### Use Proportion Where It Helps
 
 ::: {.epigraph style="margin-top: var(--space-xs);"}
-Just-noticeable differences are proportional to the stimulus intensity.
+Within a specified discrimination task and range, Weber's relation treats the
+just-noticeable increment as a fitted fraction of positive stimulus intensity.
 
---- Ernst Heinrich Weber, 1834
+--- After Weber (model summary)
 :::
 
 ::: prose
