@@ -17,7 +17,7 @@ broader design-practice expansion. Planning belongs on `planning`; implementatio
 and packages normally belong on `main`; the authorized Autonomous Mode
 scope below uses its dedicated source branch. [Project ledger](ledger.md) is the acceptance contract.
 
-Plan revision **1.76**, updated2026-10-19 after the Operator-approved bounded
+Plan revision **1.77**, updated2026-10-19 after the Operator-approved bounded
 reassessment under collaboration-framework2.7.2. This refines the2026-10-12
 execution amendment; all thirteen criterion texts/deliverables remain unchanged.
 Current status changes are justified by the [Arc02 endpoint judgment](arc02-theory-and-evidence/cdc-verification.md).
@@ -29,17 +29,33 @@ and [synthesis](../project09-design-audit/artifacts/audit-modernization-synthesi
 **Was:** the corrective release was called 1.5. **Now:** its target is **1.1.0**
 (short name 1.1). The Operator corrected the original version request; scope,
 acceptance criteria and Project11's 2.0 target are unchanged. Continue compatible
-correction increments on **1.0.x** during Arc02. On successful completion and
-acceptance of [Arc02](arc02-theory-and-evidence/arc-plan.md), include the final
-**1.1.0** source version/history bump and applicable fresh version/package checks
-in its closing delivery. Record that step in the final source-scoped assignment;
-this planning correction does not bump the current skill or alter an issued prompt.
+correction increments on **1.0.x** during Arc02. The earlier rule required the
+final1.1.0 bump in an accepted Arc02 closing delivery. That coupling is superseded
+only for the supported version/PR milestone by the Operator amendment below.
 
 The owning SKILL metadata and sibling history remain the only skill version
 records. Arc04's final package/composition, independent/Operator release-readiness
 and separate publication gates remain binding after the Arc02 version milestone.
 Historical plans, audit recommendations and issued prompts using 1.5 retain their
 original wording as provenance, superseded for current targeting by this decision.
+
+## Operator amendment — supported 1.1 PR, 2026-10-19
+
+**Was:** the 1.1.0 version bump required formal Arc02 acceptance, including
+unavailable originals. **Now:** the Operator says those sources cannot be
+obtained for 1.1 and authorizes a PR to main for the reviewed corrective work.
+Promote owning metadata/history to1.1.0 on the dedicated source branch, run
+applicable fresh gates and independent review, push that branch and open the PR.
+The Operator will merge it. Only **after that merge** create/push `design-1.1`
+on the actual resulting main commit; no tag or assistant merge now.
+
+Original-source acquisition/fidelity is explicitly deferred beyond the 1.1
+milestone, not verified or deleted. Re-entry uses the existing eight actions
+when exact editions/captures/conversion inputs become available. Complete-five-
+dimension and named conceptual/domain gaps remain explicit; all existing full
+project, final package/hosted/composition/Project11 gates keep their actual states.
+The version/PR decision is not formal Arc02/Project10 closure or a claim those
+other checks passed. No additional curriculum or new arc is commissioned.
 
 ## Scope and definition of done
 
@@ -279,6 +295,11 @@ limitations handoff to Project11. Publication is separate Operator authorization
 
 ## Current status
 
+Current1.1.0 PR: [PR5](https://github.com/billosys/ai-engineering/pull/5) at SOURCE`00eac4091b65ad912d136d7ca9b621989c9bf3b9`.
+Version promotion is complete and pushed; Operator merge is pending, and
+`design-1.1` must wait for the actual merged main result. The earlier supported
+endpoint below remains historical evidence, not a competing current version.
+
 Arc01/Arc06 remain accepted and closed. Arc02's supported correction/composition
 work is delivered at dedicated-branch SOURCEe56d82ba/design1.0.30, all33 bounded
 slices closed. Its formal status remains active with A02-02/04/08 open; all D1,
@@ -287,14 +308,14 @@ P10-01/02/03/04/10/12 are done at their exact predicates; P10-05/06/07/08/09/11/
 remain open. See the [current independent judgment](arc02-theory-and-evidence/cdc-verification.md),
 [supported handoff](arc02-theory-and-evidence/closing-report.md) and [AM retrospective](arc02-theory-and-evidence/cdc-retrospective.md).
 
-Original editions/captures/conversion records remain unavailable by Operator
-confirmation; use the existing eight actions when actual inputs arrive. Full
-anatomy/CLT/state/audit and named domain/empirical components remain explicit
-Arc02/CDC/Operator decisions, not automatically commissioned curriculum or silent
-Project11 transfers. Arc04 remains unissued and retains final isolated-package,
-routes/task/hosted/composition/release work. Project09 input acceptance, final1.1.0
-and Project11 handoff still need their actual gates. No main integration, push,
-publication or successor is authorized by completing the supported AM endpoint.
+Original editions/captures/conversion records remain unavailable and are now
+explicitly deferred beyond1.1 by the amendment above; their actual fidelity
+requirements remain open for later input re-entry. Full anatomy/CLT/state/audit
+and named domain/empirical components remain Arc02/CDC/Operator decisions.
+Arc04 remains unissued with final isolated-package/routes/task/hosted/composition
+work. The1.1.0 version PR is authorized; main integration is reserved to the
+Operator, and `design-1.1` must wait for that merge. Project09/final project/
+Project11 acceptance and other release checks retain their actual open states.
 
 ## Version History
 
@@ -618,3 +639,5 @@ publication or successor is authorized by completing the supported AM endpoint.
   arcs, explicit scope decisions, verification and Project11 handoff requirements.
 
 - 1.76 (2026-10-19): Record independently accepted Arc02 supported endpoint and actual predicate-level bubble-up; six project criteria done/seven open, formal input/full-corpus/package/hosted/Operator/release gates retained; no successor.
+
+- 1.77 (2026-10-19): Following the S33 supported endpoint, Operator defers unavailable originals beyond1.1 and authorizes the version PR to main; preserve full verification obligations and reserve merge/tag order to Operator merge first.

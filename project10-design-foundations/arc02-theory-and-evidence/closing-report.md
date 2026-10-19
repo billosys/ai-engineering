@@ -1,5 +1,44 @@
 # Arc02 supported-delivery endpoint — formal closure blocked
 
+## Current Operator version/PR decision — 2026-10-19
+
+The [Operator amendment](../project-plan.md#operator-amendment--supported-11-pr-2026-10-19)
+now authorizes promotion of the supported1.0.30 result below to owning1.1.0,
+fresh checks/independent review and a PR from the dedicated branch to main.
+Unavailable original-source verification is deferred beyond1.1; all complete-
+review and formal project/package/hosted obligations retain their actual states.
+The Operator merges; create/push design-1.1 only after the actual main merge.
+No tag or assistant merge is performed now.
+
+Version promotion committed as `00eac4091b65ad912d136d7ca9b621989c9bf3b9`, direct child of e56d82ba,
+with exactly owning SKILL metadata and sibling history changed. [PR5](https://github.com/billosys/ai-engineering/pull/5)
+is open from `codex/project10-arc02-autonomous` to main, pushed head matches
+that exact commit. The Operator owns merge; design-1.1 remains uncreated.
+
+Root fresh sequential Make help/check-skills/check-skill-versions/
+check-package-paths/separate design completed with exits0. Versions25source/
+25packages/0errors; package paths0hardfailures,606warnings at605locations,
+3exceptions/816 skipped externalURLs. Fresh ZIP8/8 Markdown members equal
+committed source, SHA256`06bcddf6a093ce62d979284922335b28aab74def8fdc831e4c05622955a95e60`.
+Exact two-path source/old-entrypoint scalar reversal/append-only history,
+parsed adjacent coauthors, whitespace and clean/synchronized branch pass.
+No browser/AT/hosted/fidelity or new substantive-content proof is inferred.
+
+Independent reader `/root/s26_review` accepted the actual version/deferral
+changes, including correction of two stale current-ledger Notes; no source or
+criterion/status changed for those wording corrections. GitHub reports PR open,
+non-draft and mergeable, with merge state CLEAN. The CI job “Validate and build
+skill bundles” completed SUCCESS at2026-10-19 13:13:50UTC
+([actual run](https://github.com/billosys/ai-engineering/actions/runs/39258254161)). Initial sandboxed
+GitHub metadata requests failed connectivity; authorized retries succeeded.
+Branch push/PR creation succeeded; no planning push, main edit/merge or tag.
+
+## Preserved supported-endpoint judgment — before version promotion
+
+The following technical judgments/read ownership and pins remain at their
+accepted scope. Their former prohibition on the1.1.0 bump/source push is
+superseded only by the explicit amendment above, not by a new fidelity claim.
+
 2026-10-19. CDC Sofie `/root`, under the Operator's remainder-of-Arc02
 Autonomous Mode authorization. **The supported work is delivered; Arc02 is not
 formally closed.** All33 bounded slices are closed, seven arc criteria are done,

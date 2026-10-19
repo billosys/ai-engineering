@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.87**, updated2026-10-19 under the Operator-approved
+Plan revision **1.88**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -27,14 +27,14 @@ not issued contracts or accepted evidence. Preserve prior versions in history.
 
 The former 1.5 target is superseded by **1.1.0** under the
 [project decision](../project-plan.md#release-target--operator-correction-2026-10-15).
-Continue **1.0.x** micro increments for corrections during this arc. Include the
-final **1.1.0** owning metadata/history bump in the accepted Arc02 closing source
-delivery, with the required fresh version/package checks and independent review.
-Plan that exact source mutation in the final assignment; no immediate source bump
-or rewrite of existing issued prompts is authorized by this planning edit.
-Arc closure still requires its complete ledger and composition/Operator gates;
-version selection does not satisfy them. Project/Arc04 final readiness and
-publication retain their separate gates. Project11 remains targeted at 2.0.
+The earlier rule tied final1.1.0 to formal Arc02 closure. The
+[2026-10-19 Operator amendment](../project-plan.md#operator-amendment--supported-11-pr-2026-10-19)
+supersedes that version coupling: unavailable originals are deferred beyond1.1,
+and the supported corrected candidate is promoted to1.1.0 for a PR to main.
+Independent review/fresh version/package gates still apply. The Operator merges;
+`design-1.1` is created/pushed only after merge at the actual main result.
+Formal Arc02/full-five-dimension/project/package/hosted gates remain open at
+their actual scope. No tag, assistant merge, new arc or invented fidelity now.
 
 ## Accepted inputs and preservation
 
@@ -135,6 +135,11 @@ string-equality or endpoint-resolution checks.
 
 ## Workflow and current assignment
 
+Current1.1.0 PR: [PR5](https://github.com/billosys/ai-engineering/pull/5) at SOURCE`00eac4091b65ad912d136d7ca9b621989c9bf3b9`.
+Version promotion is complete and pushed; Operator merge is pending, and
+`design-1.1` must wait for the actual merged main result. The earlier supported
+endpoint below remains historical evidence, not a competing current version.
+
 Operator-selected Autonomous Mode for remaining Arc02, under the
 [project authorization](../project-plan.md#autonomous-mode--operator-authorization-2026-10-18).
 CDC Sofie `/root` coordinates; CC subagents implement; CDC or a named separate
@@ -154,7 +159,8 @@ its other input/package/hosted/composition/release gates remain.
 Operator reconfirmed2026-10-19: exact editions/captures remain unavailable.
 Stop without another readiness-only slice or automatic Arc04/Project11. Formal
 arc status remains active pending actual inputs, remaining review and Operator
-composition; no1.1.0 bump, main edit, merge, push or publication is authorized.
+composition. The subsequent Operator amendment authorizes only the1.1.0 bump,
+source-branch push and PR to main; the Operator owns merge, and the tag waits for it.
 The Operator's2026-10-16 reassessment hold remains lifted.
 Future handoffs need the actual source, exact scope, complete bounded reads,
 preservation and adequate checks, without copied parent chronology. Routine
@@ -511,3 +517,5 @@ inputs now that the sequencing hold is lifted.
 - 1.86 (2026-10-19): Open supported global composition after actual S32 acceptance; no formal Arc02/P10 close or1.1.0 authority.
 
 - 1.87 (2026-10-19): Close supported S33; reconcile actual233/global/live/history/DES and font/dense proofs; accept seven arc predicates while retaining02/04/08/formal closure/input/Operator gates; stop the authorized AM run without a successor.
+
+- 1.88 (2026-10-19): After supported S33 delivery, Operator authorizes1.1.0 PR while deferring unavailable originals beyond that milestone; formal arc/input/project gates remain, merge reserved to Operator and tag after merge.

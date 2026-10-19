@@ -1,5 +1,44 @@
 # Arc02 independent supported-composition judgment — 2026-10-19
 
+## Current Operator version/PR decision — 2026-10-19
+
+The [Operator amendment](../project-plan.md#operator-amendment--supported-11-pr-2026-10-19)
+now authorizes promotion of the supported1.0.30 result below to owning1.1.0,
+fresh checks/independent review and a PR from the dedicated branch to main.
+Unavailable original-source verification is deferred beyond1.1; all complete-
+review and formal project/package/hosted obligations retain their actual states.
+The Operator merges; create/push design-1.1 only after the actual main merge.
+No tag or assistant merge is performed now.
+
+Version promotion committed as `00eac4091b65ad912d136d7ca9b621989c9bf3b9`, direct child of e56d82ba,
+with exactly owning SKILL metadata and sibling history changed. [PR5](https://github.com/billosys/ai-engineering/pull/5)
+is open from `codex/project10-arc02-autonomous` to main, pushed head matches
+that exact commit. The Operator owns merge; design-1.1 remains uncreated.
+
+Root fresh sequential Make help/check-skills/check-skill-versions/
+check-package-paths/separate design completed with exits0. Versions25source/
+25packages/0errors; package paths0hardfailures,606warnings at605locations,
+3exceptions/816 skipped externalURLs. Fresh ZIP8/8 Markdown members equal
+committed source, SHA256`06bcddf6a093ce62d979284922335b28aab74def8fdc831e4c05622955a95e60`.
+Exact two-path source/old-entrypoint scalar reversal/append-only history,
+parsed adjacent coauthors, whitespace and clean/synchronized branch pass.
+No browser/AT/hosted/fidelity or new substantive-content proof is inferred.
+
+Independent reader `/root/s26_review` accepted the actual version/deferral
+changes, including correction of two stale current-ledger Notes; no source or
+criterion/status changed for those wording corrections. GitHub reports PR open,
+non-draft and mergeable, with merge state CLEAN. The CI job “Validate and build
+skill bundles” completed SUCCESS at2026-10-19 13:13:50UTC
+([actual run](https://github.com/billosys/ai-engineering/actions/runs/39258254161)). Initial sandboxed
+GitHub metadata requests failed connectivity; authorized retries succeeded.
+Branch push/PR creation succeeded; no planning push, main edit/merge or tag.
+
+## Preserved supported-endpoint judgment — before version promotion
+
+The following technical judgments/read ownership and pins remain at their
+accepted scope. Their former prohibition on the1.1.0 bump/source push is
+superseded only by the explicit amendment above, not by a new fidelity claim.
+
 **Formal arc closure: NOT ACCEPTED.** CDC Sofie `/root` accepts the supported
 predicates below, after separately reviewed CC output/current applicability.
 A02-02/04/08 remain open. SOURCE `e56d82bad1f98956aca3ffde18f7350a65557f3e`,
@@ -138,3 +177,37 @@ The reports distinguish the supported local source1.0.30 and actual current eigh
 The two retrospectives preserve actual author errors, late/read recovery, material independent catches and bounded consumption failures/corrections. Their AM claims are observations, with no measured time/token baseline or causal speed/quality/cost claim. They recommend possible later improvements without enacting a framework amendment or research programme. The current status roll-ups consistently distinguish all33 bounded children closed from the formal arc still open.
 
 Root separately owns exact twelve-path staging, links/fragments/LF/EOF/trailers, historical-byte preservation and final commit checks. I did not rerun builds/browser/AT, change SOURCE/P, commit, or grant an Operator decision. With the actual receipt inserted and no further material changes, these reviewed canonical supported-endpoint decisions are ready for root's scoped commit. No additional repair/research/receipt-only iteration is recommended.
+
+## Independent version-promotion review — verbatim
+
+# Independent bounded design1.1 promotion review
+
+2026-10-19; reviewer `/root/s26_review`. **PASS after correction of two stale current-ledger Notes.** This is review of the actual precommit WIP, not a claim that a source commit, fresh native gates, PR, merge or tag has already completed.
+
+SOURCE base: `e56d82bad1f98956aca3ffde18f7350a65557f3e` in the assigned isolated design worktree. PLANNING base: `576e380daf8a93e1ecfbddf1c2648098cecc4a44`. Root supplied the new direct Operator decision: originals cannot be obtained for1.1; open a PR of reviewed work to main, Operator merges, then `design-1.1` tags the actual resulting main commit. I apply that explicit milestone amendment; I do not treat it as source fidelity or formal Arc02/Project10 acceptance.
+
+I read the complete actual two-path SOURCE diff and six-path PLANNING diff: source SKILL/history; project plan/ledger; arc plan/ledger/closing report/cdc verification. I subsequently read the corrected current A02-08/P10-08 Notes. No SOURCE/P edit, build, browser use, commit, push, PR, merge or tag was performed by this reviewer.
+
+## Exact source/version result
+
+The only SOURCE changes are `knowledge/design/SKILL.md` and its sibling `version-history.md`. I independently compared actual bytes to the source base: replacing only the nested `metadata.version` value1.1.0 with1.0.30 restores the entire old entrypoint, and the entire old history is an exact prefix followed by the unique nine-line1.1.0 append. Parsed YAML confirms `metadata.version: "1.1.0"` with no top-level competing version. The live entrypoint/guides/history search finds the new value only at owning metadata and the sibling history heading. No guide, card, quote, example, relationship, original/source file or reviewed teaching is modified by this promotion.
+
+The new history accurately describes the independently reviewed supported correction candidate: portable identity, bounded colour/type/layout and233 current bounded outcomes/reconciled relationships/questions. It explicitly preserves prior history and leaves original fidelity, named conceptual/empirical gaps, isolated package/final hosted and formal project/release-readiness gates open. It does not invent new behavior, license/distribution readiness or a verified full corpus. The prior accepted content/applicability proof therefore retains its actual scope; root separately owns the full protected-object and fresh current archive comparison.
+
+## Operator amendment, states and wording
+
+Project1.77/Arc1.88 explicitly supersede the earlier coupling between1.1.0 promotion and formal Arc02 closure only for the supported version/PR milestone. Unavailable-original verification is deferred beyond1.1, not marked done or removed; existing eight-input re-entry actions survive. Full-five-dimensional, conceptual/domain/empirical, formal arc/project, isolated-package/task/hosted, Project09 and Project11 gates retain their actual open states. No new work unit, curriculum, source acquisition or automatic next arc is issued.
+
+I independently compared all13 project and10 arc first six ledger cells against the P base: ID/Criterion/Verify/Significance/Origin/Status are unchanged. States remain project six done/seven open and arc seven done/three open. The changed Notes communicate the Operator amendment without rewriting predicates or upgrading unavailable originals. Arc02 remains active at the supported endpoint.
+
+The newly prepended current-decision sections in arc closing/verification frame the previous accepted endpoint body as historical before version promotion. I independently checked that those entire prior bodies remain preserved. Their old version/push prohibitions and source1.0.30 pins therefore remain valid historical evidence rather than competing current instructions. Initial/promoted source/check/PR fields are explicitly pending in this reviewed WIP; root must fill them from actual completed facts before committing the final handoff, not convert this review into a fabricated completion receipt.
+
+## Material draft correction verified
+
+The first current A02-08 Note still said there was no1.1.0 milestone; P10-08 still listed that milestone as unmet even though the new decision permits the supported promotion. I reported these as current-versus-historical contradictions. Root corrected both, and I read the actual corrected rows: the supported1.1.0 version PR is separately authorized; A02-08 retains full input/complete5D/formal-composition blockage and no automatic Arc04, while P10-08 retains formal release/Project09/Project11 requirements. Both remain open and preserve Operator merge before tagging. No further material correction is needed. Historical preserved prohibitions need not be rewritten.
+
+## Handoff boundary
+
+Proceed with root's required fresh sequential skill/version/package gates, fresh design build/current8-member archive check, exact two-path SOURCE commit and authorized branch PR. Complete the six-path planning handoff from actual resulting facts. Native results and final pins/PR facts remain root-owned; I have not reproduced them in this review. The Operator performs the merge. **No assistant merge or tag now**; `design-1.1` must bind the actual resulting main revision only after that merge, under the recorded instruction. Version promotion/PR authorization does not itself establish formal arc/project/release-readiness acceptance.
+
+No extra source repair, research, browser repeat, new planning unit or receipt-only iteration is recommended. This verdict applies to the reviewed bounded delta and corrected current Notes; further material changes would need actual review.
