@@ -32,9 +32,11 @@ css_implementation: []
 
 # Quick Definition
 
-Photomontage is the assembly of separate photographs (or the combination of photos with other pictorial elements) to create a new pictorial unity — "a work of imagination, a free human creation independent of nature" that achieves a "super-natural" effect through the contrast of plastic photographs against flat surfaces.
+Photomontage is the assembly of separate photographs (or the combination of photos with other pictorial elements) to create a new pictorial unity — "a work of imagination, a free human creation independent of nature" described in the recorded argument as achieving a "super-natural" effect through the contrast of plastic photographs against flat surfaces.
 
 # Core Definition
+
+This section preserves the card’s recorded account of Tschichold’s historical programme; quotations, attributions and page claims have not been checked against the unavailable represented edition. Its polemics are not universal contemporary rules.
 
 Tschichold defines two forms: "By photomontage we understand either an assembly of separate photos which have been mounted together, or the use of a photo as one element in conjunction with other pictorial elements (photo-drawing, photo-sculpture)."
 
@@ -42,16 +44,18 @@ Its artistic status: "In photomontage, with the help of given or selected photog
 
 The key formal quality: "Photomontage achieves a really 'super-natural' effect through the deliberate contrast of plastic photographs against an area of dead white or colour. This effect could never have been achieved by drawing or painting."
 
-He credits John Heartfield as the inventor and lists key practitioners: Baumeister, Burchartz, Max Ernst, Lissitzky, Moholy-Nagy, Vordemberge-Gildewart.
+The card reports an unverified sole-inventor attribution to John Heartfield and lists practitioners: Baumeister, Burchartz, Max Ernst, Lissitzky, Moholy-Nagy, Vordemberge-Gildewart.
 
 # Prerequisites
 
-- **Typo-Photo** — Photomontage is a specific technique within the broader synthesis of photography and typography.
+- **Typo-Photo** — Typo-photo offers a learning route into montage used with type. Photomontage itself can lack lettering; not every composition of type and photography is a montage.
 
 # Key Properties
 
+The historical preferences below describe the programme; current use depends on content, audience, language/script, output, constraints and supplied identity.
+
 1. **New pictorial unity**: Not a random collage but a deliberately composed new image.
-2. **Super-natural effect**: Contrast between three-dimensional photographs and flat surfaces creates an impossible, heightened reality.
+2. **Depicted depth**: A flat photograph can represent depth, contrasted with flat graphic areas. This does not add an actual third physical dimension, and the quoted super-natural effect is an aesthetic judgment.
 3. **Imagination, not documentation**: "Unlike earlier art it is not a statement about an objective fact but a work of imagination."
 4. **Infinite variation**: "The possibilities of contrast in size and shape, in closeness and distance of objects represented, and in flat or three-dimensional form, allow infinite variations."
 5. **Suitable for advertising**: "Highly suitable for thoughtful advertising" because of its compositional flexibility.
@@ -61,21 +65,23 @@ He credits John Heartfield as the inventor and lists key practitioners: Baumeist
 
 ## To Construct/Create:
 1. Select or create photographs as raw compositional elements.
-2. Compose them against flat backgrounds (white, colour, type) for maximum contrast.
+2. Compare juxtaposition, overlap and background against the compositional purpose; white, colour or type are options, not a guaranteed maximum-contrast recipe.
 3. Use scale variation, spatial juxtaposition, and the interplay of depth and flatness.
 4. Achieve pictorial unity — every element must serve the compositional whole.
 
 ## To Identify/Recognise:
-1. Multiple photographic elements combined into a single unified composition.
-2. Deliberate contrast between photographic depth and flat graphic elements.
+1. Separate photos assembled, or a photo combined with other pictorial material, into a deliberately constructed image; lettering is optional.
+2. Contrast between represented photographic depth and flat graphic elements is one approach, not a requirement for all montage.
 
 # Context & Application
 
 - **Typical contexts**: Advertising, book covers, editorial design, political propaganda.
 - **Common applications**: Modern digital compositing, collage-based web design, mixed-media marketing materials.
-- **Historical note**: Heartfield invented photomontage c. 1919 in the Dada context. It became a major advertising technique in the 1920s-30s and remains fundamental to digital image composition.
+- **Historical note (reported, unverified here)**: Heartfield invented photomontage c. 1919 in the Dada context. It became a major advertising technique in the 1920s-30s and remains fundamental to digital image composition.
 
 # Examples
+
+These are retained reported examples and quoted wording, not newly verified figure, authorship, priority or page evidence.
 
 **Example 1** (p. 87): Max Burchartz's folder cover for the Bochum Association — "reproductions of typical products" combined with type to form a unified composition.
 
@@ -84,10 +90,10 @@ He credits John Heartfield as the inventor and lists key practitioners: Baumeist
 # Relationships
 
 ## Builds Upon
-- **Typo-Photo** — Photomontage is a specific application of the type-photography synthesis.
+- **Typo-Photo** — The typo-photo card supports understanding montage used with type; this prerequisite is a learning route, not a subtype claim or lettering requirement.
 
 ## Related
-- **Typographic Poster** — Photomontage is increasingly used in poster design.
+- **Typographic Poster** — The poster’s integrated pictorial composition can use montage; this is a technique connection, not a claim about current adoption trends.
 - **Functional Typography** — The composition serves communicative purposes in advertising.
 
 # Common Errors
@@ -105,6 +111,10 @@ He credits John Heartfield as the inventor and lists key practitioners: Baumeist
 "Photography and Typography" (pp. 84-90).
 
 # Verification Notes
+
+Current scoped review: contemporary correctness/scope, local consistency and the exact relationship/CQ occurrences are assessed in Slice26’s batch record. The unavailable edition, translation and page basis leave source fidelity, quotations, figures and historical dates/priority unassessed/input-blocked. No new original read, empirical readability result, browser/AT check or full-standard inspection is claimed.
+
+The following notes are preserved historical extraction assertions, including their old confidence, OCR and uncertainty wording. They are not newly verified results:
 
 - Definition source: Direct quotes from Ch. 13.
 - Confidence rationale: High — explicit definition with named practitioners and technical description.

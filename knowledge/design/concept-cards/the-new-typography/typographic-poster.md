@@ -34,52 +34,58 @@ css_implementation: []
 
 # Quick Definition
 
-The modernist typographic poster replaces centred, border-framed, ornamental poster design with asymmetric composition using strong type-size contrasts, functional colour, and deliberate white space — achieving "the strongest effect and utmost clarity" through typographic means alone or in combination with photography.
+Tschichold’s modernist poster programme proposes replacing centered, border-framed, ornamental poster design with asymmetric composition using strong type-size contrasts, functional colour, and deliberate white space — aiming at "the strongest effect and utmost clarity" through typography alone or with photography. The claimed effect is a historical aim, not a guaranteed outcome.
 
 # Core Definition
 
+This section preserves the card’s recorded account of Tschichold’s historical programme; quotations, attributions and page claims have not been checked against the unavailable represented edition. Its polemics are not universal contemporary rules.
+
 Tschichold prescribes a complete break with conventional poster design: "A basic fault in nearly all typo-posters is the retention of conventional centred typography." The solution is asymmetric composition driven by contrast: "Very heavy display lines... lead to strong contrasts which contradict the nature of the old typography. Only the new laws of typography allow the rhythmic setting together of large and small lines of type."
 
-Key design principles: sans-serif is mandatory ("for posters the clearest typeface, sanserif, is the only one that is right"); borders must be eliminated (they "use up part of the space — which leads to smaller sizes of type"); and white space becomes a positive design tool ("empty space however helps legibility and adds to the aesthetic effect").
+The programme’s preferences include a sans-serif mandate ("for posters the clearest typeface, sanserif, is the only one that is right"); borders must be eliminated (they "use up part of the space — which leads to smaller sizes of type"); and white space becomes a positive design tool ("empty space however helps legibility and adds to the aesthetic effect").
 
 For pictorial posters, photography replaces hand-drawn illustration: "The suggestive power that gives photo-posters the advantage over so many other kinds of poster lies in the extraordinary contrast of the richly nuanced 'plastic' grey of photographs with areas of colour."
 
 # Prerequisites
 
-- **Asymmetric Typography** — Poster composition must be asymmetric to achieve maximum visual impact.
+- **Asymmetric Typography** — Asymmetric grouping supports learning this programme’s poster approach; it does not guarantee impact or exclude effective centered posters.
 - **Typographic Contrast** — The poster depends on strong contrasts in type size, weight, and colour.
 
 # Key Properties
 
+The historical preferences below describe the programme; current use depends on content, audience, language/script, output, constraints and supplied identity.
+
 1. **Asymmetric composition**: "The asymmetric construction of the new typo-poster also helps the purpose better because the lines can be grouped in such a way as to make reading easier."
-2. **Strong type-size contrast**: A few sizes (no more than six) used with emphatic variation.
-3. **No borders**: Borders waste space and make type appear smaller.
-4. **Sans-serif only**: "Sanserif is the only one that is right" for posters.
+2. **Contextual type-size contrast**: The six-size remark addresses one recorded poster, not a global maximum or minimum.
+3. **Programme’s border critique**: Borders can consume usable area, but can also frame, group or express identity; judge the actual poster.
+4. **Attributed sans-serif exclusivity**: "Sanserif is the only one that is right" is the historical stance, not a modern typeface rule.
 5. **Functional white space**: Unprinted paper is "eye-catching, since there is almost no unprinted paper on hoardings or poster-pillars."
 6. **Functional colour**: Paper colour, ink colour, and their contrast all serve communicative purpose.
-7. **Photography over drawing**: "Only the most objective representation will communicate the poster's contents quickly and clearly."
+7. **Historical photography preference**: "Only the most objective representation will communicate the poster's contents quickly and clearly."
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose DIN poster format (A0-A3 for large posters, A4-A5 for smaller).
-2. Eliminate borders — use paper colour and white space for distinction.
-3. Compose asymmetrically with strong type-size contrast (3-6 sizes maximum).
-4. Use sans-serif exclusively.
-5. Deploy colour functionally — unusual paper colours and the contrast of unprinted white space.
-6. Integrate photography where the subject can be illustrated.
+1. Identify audience, viewing distance, content, script, supplied identity and production/display constraints. DIN A0-A3 and A4-A5 are reported format options, not mandates.
+2. Compare borders, open space and grouping for the actual purpose; empty area need not be white.
+3. Choose asymmetric or centered composition and enough hierarchy levels to make the message clear; no three-to-six count is required.
+4. Inspect appropriate serif or sans-serif faces, real strings and fallbacks at the intended distance/output.
+5. Preserve supplied colour roles, check actual pairs and use additional signals where colour conveys meaning.
+6. Choose photography, drawing or another image method for the brief; images and editing are not inherently objective.
 
 ## To Identify/Recognise:
-1. New poster: asymmetric, borderless, high contrast, white space as active element.
-2. Old poster: centred, bordered, uniform type sizes, every surface printed.
+1. Recorded new-poster cues: asymmetry, border omission, contrast and active space; they are options for deliberate adaptation.
+2. The programme contrasts centered, bordered, uniform-size or densely printed posters; these features alone do not establish contemporary failure.
 
 # Context & Application
 
 - **Typical contexts**: Advertising posters, event announcements, cinema posters, cultural event promotion.
 - **Common applications**: Digital display advertising, web hero sections, social media promotional graphics, event flyers.
-- **Historical note**: Tschichold designed cinema posters for the Phoebus-Palast in Munich in 1927, demonstrating these principles in practice. The modernist poster tradition influenced the International Typographic Style of the 1950s-60s.
+- **Historical note (reported, unverified here)**: Tschichold designed cinema posters for the Phoebus-Palast in Munich in 1927, demonstrating these principles in practice. The modernist poster tradition influenced the International Typographic Style of the 1950s-60s.
 
 # Examples
+
+These are retained reported examples and quoted wording, not newly verified figure, authorship, priority or page evidence.
 
 **Example 1** (p. 174): Tschichold's redesigned poster vs. the conventional version — "Practical, lucid appearance. Type used in the earlier poster has been mostly retained. The effect is gained chiefly by contrasts in type sizes and the use of space."
 
@@ -88,30 +94,34 @@ For pictorial posters, photography replaces hand-drawn illustration: "The sugges
 # Relationships
 
 ## Builds Upon
-- **Asymmetric Typography** — The poster is the most dramatic application of asymmetric principles.
-- **Typographic Contrast** — Poster effectiveness depends entirely on strong contrast.
+- **Asymmetric Typography** — The programme’s poster examples apply non-axial spatial grouping; the asymmetric card supplies a learning method without mandating it for every poster.
+- **Typographic Contrast** — Contrast can distinguish message levels alongside grouping and content; it does not alone guarantee poster effectiveness.
 
 ## Related
-- **Active White Space** — Unprinted space is the poster's most distinctive device.
-- **Functional Color** — Colour is used to differentiate and attract, not to decorate.
-- **Typo-Photo** — Photography integrated with type defines the modern pictorial poster.
-- **DIN Paper Formats** — Poster sizes follow the DIN standard system.
+- **Active White Space** — The programme uses dense/open area contrast for emphasis; the active-space card permits centered layouts and non-white empty areas.
+- **Functional Color** — The functional-colour card supplies hierarchy and pair/context questions; cultural and aesthetic roles can also help the poster.
+- **Typo-Photo** — The programme uses type/photo integration for pictorial posters; illustration can also suit a contemporary poster.
+- **DIN Paper Formats** — The programme’s DIN examples connect production formats to posters; the DIN card distinguishes that advocacy from standard scope and ideal geometry.
 
 # Common Errors
 
 - **Error**: Using ten type sizes when six would suffice.
-  **Correction**: "Ten sizes of type are used when certainly six at most were needed" — limit to 3-6 sizes with emphatic contrast.
+  **Correction**: "Ten sizes of type are used when certainly six at most were needed" — an attributed criticism of this example, not a universal count. Choose distinguishable levels for the actual message.
 
 # Common Confusions
 
 - **Confusion**: Geometric shapes (circles, squares) used as decoration are "modern."
-  **Clarification**: "If a circular or other such 'secondary' form is used, it must have a function (as pointer, or for emphasis), otherwise it is purely decorative" — geometric ornament is still ornament.
+  **Clarification**: "If a circular or other such 'secondary' form is used, it must have a function (as pointer, or for emphasis), otherwise it is purely decorative" — the programme’s critique of geometric ornament, not a contemporary ban on cultural or affective decoration.
 
 # Source Reference
 
 "The Typo-Poster" (pp. 174-180) and "The Pictorial Poster" (pp. 181-190).
 
 # Verification Notes
+
+Current scoped review: contemporary correctness/scope, local consistency and the exact relationship/CQ occurrences are assessed in Slice26’s batch record. The unavailable edition, translation and page basis leave source fidelity, quotations, figures and historical dates/priority unassessed/input-blocked. No new original read, empirical readability result, browser/AT check or full-standard inspection is claimed.
+
+The following notes are preserved historical extraction assertions, including their old confidence, OCR and uncertainty wording. They are not newly verified results:
 
 - Definition source: Direct quotes from Ch. 26-27.
 - Confidence rationale: High — two full chapters with explicit principles, examples, and counter-examples.

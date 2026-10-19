@@ -31,15 +31,17 @@ rosetta_stone:
     domain: "engineering"
     concept: "form follows function"
     rating: "structural"
-    note: "Tschichold explicitly draws the parallel between engineering products and typographic form — both derive shape from purpose, not aesthetics."
+    note: "The card records a comparison between typographic form and engineering products. This is a structural editorial analogy about purpose, materials and economy, not proof that either field excludes aesthetic or cultural purposes."
 css_implementation: []
 ---
 
 # Quick Definition
 
-Functional typography holds that typographic form must grow out of the text's communicative function — not from preconceived aesthetic ideas, historical convention, or decorative intent — just as the forms of engineering products grow from their purpose.
+Functional typography, in Tschichold’s programme, develops visible relationships from the text’s communicative purpose. Contemporary content-led work can use that question while also serving cultural, aesthetic and identity purposes; the engineering comparison is a structural analogy.
 
 # Core Definition
+
+This section preserves the card’s recorded account of Tschichold’s historical programme; quotations, attributions and page claims have not been checked against the unavailable represented edition. Its polemics are not universal contemporary rules.
 
 Tschichold's central principle: "The New Typography is distinguished from the old by the fact that its first objective is to develop its visible form out of the functions of the text. It is essential to give pure and direct expression to the contents of whatever is printed: just as in the works of technology and nature, 'form' must be created out of function."
 
@@ -53,7 +55,9 @@ This is a foundational concept with no prerequisites within this source.
 
 # Key Properties
 
-1. **Form from function**: Typographic form must derive from the text's communicative purpose.
+The historical preferences below describe the programme; current use depends on content, audience, language/script, output, constraints and supplied identity.
+
+1. **Historical priority**: The programme prioritizes communication, emphasis and sequence when making form; these do not exhaust the purposes of contemporary design.
 2. **No preconceived form**: "Every piece of typography which originates in a preconceived idea of form, of whatever kind, is wrong."
 3. **Engineering parallel**: Like engineering products, typographic form expresses purpose through economy and precision.
 4. **Three functions of text**: Communication, emphasis (word value), and logical sequence.
@@ -65,8 +69,8 @@ This is a foundational concept with no prerequisites within this source.
 ## To Construct/Create:
 1. Analyse the text's communicative purpose: what must be communicated, in what order of importance?
 2. Express the logical relationships between parts through type size, weight, placement, and colour.
-3. Resist preconceived visual forms — let the content determine the layout.
-4. Test: does the form serve the reading experience, or does it serve an aesthetic idea?
+3. Compare candidate forms against content, audience, script, medium, constraints and supplied identity; an established pattern can help when it fits.
+4. Inspect whether form supports reading and the brief’s cultural/aesthetic aims. These purposes can coexist; no single formula determines the layout.
 
 ## To Identify/Recognise:
 1. Functional typography: layout clearly reflects content hierarchy; form varies with content.
@@ -75,14 +79,16 @@ This is a foundational concept with no prerequisites within this source.
 # Context & Application
 
 - **Typical contexts**: Any typographic design decision.
-- **Common applications**: The functional principle underpins modern UI/UX design, content-first web design, and information architecture.
-- **Historical note**: The principle parallels Louis Sullivan's "form follows function" in architecture (1896) and Adolf Loos's ornament critique (1908). Tschichold explicitly cites both architecture and engineering as models.
+- **Common applications**: Content-first web design and information architecture can use the question of purpose without adopting the entire historical programme.
+- **Historical note (reported, unverified here)**: The principle parallels Louis Sullivan's "form follows function" in architecture (1896) and Adolf Loos's ornament critique (1908). Tschichold explicitly cites both architecture and engineering as models.
 
 ## Cross-Domain Connections
 
-**Engineering → STRUCTURAL**: Tschichold's argument that typographic form should derive from communicative function parallels the engineering principle that a product's form derives from its functional requirements. He uses cars, aeroplanes, and typewriters as exemplars. The parallel holds for the process (function determines form) but breaks down in that typography also serves aesthetic and cultural purposes that pure engineering does not.
+**Engineering → STRUCTURAL**: Tschichold's argument that typographic form should derive from communicative function parallels the engineering principle that a product's form derives from its functional requirements. He uses cars, aeroplanes, and typewriters as exemplars. The editorial parallel concerns purpose, materials and economy. Neither engineering nor typography is devoid of aesthetic or cultural purposes, and function does not uniquely determine every form.
 
 # Examples
+
+These are retained reported examples and quoted wording, not newly verified figure, authorship, priority or page evidence.
 
 **Example 1** (p. 70): The letterhead "Das politische Buch" — technically legible, no ornaments, yet Tschichold calls it "meagerness" not objectivity: dispensing with ornament alone is insufficient without functional form.
 
@@ -92,8 +98,8 @@ This is a foundational concept with no prerequisites within this source.
 
 ## Related
 - **The New Typography** — Functional typography is the core operating principle of the movement.
-- **Typographic Contrast** — The primary means through which function is expressed visually.
-- **Ornament Rejection** — A direct consequence of the functional principle.
+- **Typographic Contrast** — Size, weight, spacing and colour can expose content relationships; contrast is one compositional method, not the only possible means.
+- **Ornament Rejection** — The historical programme pairs function with anti-ornament advocacy; contemporary decoration may itself serve cultural, affective or identity functions.
 
 # Common Errors
 
@@ -103,13 +109,17 @@ This is a foundational concept with no prerequisites within this source.
 # Common Confusions
 
 - **Confusion**: Functional typography means stripping away all visual interest, producing "meagerness."
-  **Clarification**: Removing ornament is necessary but insufficient. Functional form actively expresses content through contrast, hierarchy, and spatial composition — it is neither bare nor decorative.
+  **Clarification**: For this programme, ornament removal alone is insufficient. Contrast, hierarchy and spatial composition can express content; contemporary functional work may also include purposeful decoration.
 
 # Source Reference
 
 "The Principles of the New Typography" (pp. 66-72). "The New World-View" (pp. 49-52).
 
 # Verification Notes
+
+Current scoped review: contemporary correctness/scope, local consistency and the exact relationship/CQ occurrences are assessed in Slice26’s batch record. The unavailable edition, translation and page basis leave source fidelity, quotations, figures and historical dates/priority unassessed/input-blocked. No new original read, empirical readability result, browser/AT check or full-standard inspection is claimed.
+
+The following notes are preserved historical extraction assertions, including their old confidence, OCR and uncertainty wording. They are not newly verified results:
 
 - Definition source: Synthesised from prescriptive guidance across Ch. 6 and Ch. 12. Key direct quote from p. 70.
 - Confidence rationale: Medium — the principle is argued passionately but never stated as a single formal definition; synthesis required.

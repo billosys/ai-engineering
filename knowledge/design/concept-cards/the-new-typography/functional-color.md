@@ -32,9 +32,11 @@ css_implementation: []
 
 # Quick Definition
 
-In the New Typography, colour is used functionally — "the physiological effect peculiar to each colour is used to increase or decrease the importance of a block of type" — not decoratively, with black-red on white as the most intense combination.
+In the New Typography, colour is argued to support emphasis — "the physiological effect peculiar to each colour is used to increase or decrease the importance of a block of type" — with black-red-white as a preferred historical palette. Contemporary use evaluates actual context and cultural meaning, not a fixed physiological order.
 
 # Core Definition
+
+This section preserves the card’s recorded account of Tschichold’s historical programme; quotations, attributions and page claims have not been checked against the unavailable represented edition. Its polemics are not universal contemporary rules.
 
 Tschichold distinguishes functional from decorative colour use: "In contrast with the old typography, in which colour as well as form was always used decoratively, in the New Typography colour is used functionally, i.e. the physiological effect peculiar to each colour is used to increase or decrease the importance of a block of type, a photograph, or whatever."
 
@@ -48,9 +50,11 @@ He rejects literary colour symbolism: "We do not accept a 'literary' identificat
 
 # Key Properties
 
-1. **Physiological, not symbolic**: Colour affects emphasis through its physical visual properties, not through cultural associations.
-2. **Spatial hierarchy**: White shines/reflects, red advances, black recedes. Yellow is near red; blue is near black.
-3. **Black-red-white preferred**: "The already strong contrast between black and white can be greatly enhanced by the addition of red" — the most intense combination.
+The historical preferences below describe the programme; current use depends on content, audience, language/script, output, constraints and supplied identity.
+
+1. **Historical exclusion of symbolism**: The programme privileges visual effect over literary colour symbolism; modern work can consider cultural semantics as well as actual appearance.
+2. **Attributed spatial hierarchy**: The recorded white/red/black/yellow/blue hierarchy is not a fixed contemporary law of advancing and receding colours; area, surround, pair and task matter.
+3. **Black-red-white preferred**: "The already strong contrast between black and white can be greatly enhanced by the addition of red" — a historical palette argument, not a universal intensity ranking.
 4. **Match colour to purpose**: "Colour should be used, in general, to help express the purpose of the work: a visiting-card does not require three colours, and a poster generally needs more than just black and white."
 5. **Pure colours preferred**: "Pure red, yellow, and blue, unmixed with black, will generally be preferred, because of their intensity."
 6. **Not only black-red**: Other combinations are valid: "The combination of black-red is of course not the only possibility."
@@ -59,15 +63,17 @@ He rejects literary colour symbolism: "We do not accept a 'literary' identificat
 
 ## To Construct/Create:
 1. Determine the hierarchy of importance in the content.
-2. Use colour to reinforce that hierarchy: red for the most forward/important, black for receding elements.
+2. Preserve supplied palette/identity and evaluate the actual foreground/background pair and state; red is not an imported default for importance.
 3. Choose the number of colours based on the piece's purpose and scale.
-4. Prefer pure, intense colours over mixed tones.
+4. Compare candidate values in context, checking contrast and non-colour signals; intensity alone does not establish accessibility or hierarchy.
 
 ## To Identify/Recognise:
-1. Functional colour: colour choices correspond to content hierarchy (most important elements in the most advancing colour).
-2. Decorative colour: colour choices serve aesthetic variety without functional purpose.
+1. Functional colour: colour choices support intended roles and hierarchy in their actual context, with additional signals where colour carries information.
+2. Aesthetic, affective or cultural colour choices can also serve the brief; decorative appearance alone does not establish purposelessness.
 
 # Examples
+
+These are retained reported examples and quoted wording, not newly verified figure, authorship, priority or page evidence.
 
 **Example 1** (p. 77): "The combination of black-red is of course not the only possibility, as is often mistakenly supposed, but it is often chosen because of its greater intensity."
 
@@ -80,12 +86,12 @@ He rejects literary colour symbolism: "We do not accept a 'literary' identificat
 
 ## Related
 - **Typographic Contrast** — Colour is one of the key contrast dimensions (coloured/plain).
-- **Typographic Color** — Distinct concept: typographic "colour" (density) vs. actual colour use.
+- **Typographic Color** — The endpoint distinguishes typographic "colour" as density/texture from literal foreground colour; both senses need their own context and checks.
 
 # Common Errors
 
-- **Error**: Applying colour based on literary associations (red = love, green = nature).
-  **Correction**: Use colour based on its physiological visual effect — advancing/receding, emphasis/de-emphasis.
+- **Error**: Assuming one colour meaning or advancing/receding order works for every audience, pair and state.
+  **Correction**: Consider audience and cultural associations alongside actual rendered pairs, contrast, hierarchy and non-colour cues; the quoted rejection of literary symbolism is historical.
 
 # Common Confusions
 
@@ -97,6 +103,10 @@ He rejects literary colour symbolism: "We do not accept a 'literary' identificat
 "The Principles of the New Typography," "Colour" subsection (pp. 76-78).
 
 # Verification Notes
+
+Current scoped review: contemporary correctness/scope, local consistency and the exact relationship/CQ occurrences are assessed in Slice26’s batch record. The unavailable edition, translation and page basis leave source fidelity, quotations, figures and historical dates/priority unassessed/input-blocked. No new original read, empirical readability result, browser/AT check or full-standard inspection is claimed.
+
+The following notes are preserved historical extraction assertions, including their old confidence, OCR and uncertainty wording. They are not newly verified results:
 
 - Definition source: Direct quotes from pp. 76-78.
 - Confidence rationale: High — clear definitions with explicit colour hierarchy.
