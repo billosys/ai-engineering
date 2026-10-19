@@ -1,0 +1,10 @@
+# Slice24 ledger
+
+Four open bounded correction criteria. CC updates Evidence/Notes only; CDC independently accepts. Original-fidelity/complete-corpus gates remain.
+
+| ID | Criterion | Verify | Significance | Origin | Status | Evidence | Notes |
+|---|---|---|---|---|---|---|---|
+| S24-01 | Demonstrated colour-model and research extrapolations are corrected with useful teaching and explicit evidence limits | Read 19 final bodies and two guides; inspect conditional proofs, current primary support and repeated claims; no invented book fidelity | correctness-grade | DES-002/007/008/013/015 | open | — | All 150 book originals and 83 web captures/lineage remain unavailable; no final source-fidelity or arc acceptance. |
+| S24-02 | The connected family has actual local edge/CQ and five-dimension outcomes, including unresolved inputs | Reconcile 124 typed occurrences separately from 124 body statements; 22 memberships/five questions; outcomes for all 19 cards with unavailable source fidelity explicit | correctness-grade | A02-04/05/06 | open | — | All 150 book originals and 83 web captures/lineage remain unavailable; no final source-fidelity or arc acceptance. |
+| S24-03 | Identities and protected representations survive outside the named correction | 233 roster, 214 untouched cards, 34 raw/typed scalar substitutions, 19 headings/references, 161 sources, other four guides and exact path set | correctness-grade | P10-10/12; Arc06 preservation | open | — | All 150 book originals and 83 web captures/lineage remain unavailable; no final source-fidelity or arc acceptance. |
+| S24-04 | Owning version 1.0.21 and corrected guides integrate in a fresh package with required checks and bounded handoff | Sequential native gates, fresh 8/8 package, whole version/history, links/format/commit scopes/trailers and complete four-row return | correctness-grade | A02-08; repository gates | open | — | All 150 book originals and 83 web captures/lineage remain unavailable; no final source-fidelity or arc acceptance. |
