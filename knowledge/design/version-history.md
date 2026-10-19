@@ -207,3 +207,12 @@ ordered analogy/CSS metadata without new fields or curriculum.
 Clarify the worked book composition’s local page-wrapper attribution, distinct
 from Every Layout’s unverified paid Container definition. No CSS or paid
 primitive recipe was introduced.
+
+## Version 1.1.0 — 2026-10-19
+
+Designate the independently reviewed corrective candidate as the supported
+correction milestone: portable identity, scoped colour/type/layout guidance,
+233 current bounded card outcomes and reconciled relationships/questions.
+Preserve all prior correction history. Original-source fidelity, named conceptual
+and empirical gaps, isolated-package/final hosted checks, and formal project
+and release-readiness gates remain open; this milestone does not certify them.
