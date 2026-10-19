@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.74**, updated2026-10-19 under the Operator-approved
+Plan revision **1.75**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -68,15 +68,15 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice24 — colour models/evidence boundaries](slice24-colour-models-and-evidence-boundaries/slice-plan.md) | Closed: [independent acceptance](slice24-colour-models-and-evidence-boundaries/cdc-verification.md#iteration02-independent-review--current-verdict-2026-10-18) at SOURCE154a5b76/CC72f2c482; supported19-card/two-guide corrections,owning1.0.21; original fidelity unresolved. |
 | [Slice25 — live methods/retained behavior](slice25-live-methods-and-retained-behavior/slice-plan.md) | Closed: [independent acceptance](slice25-live-methods-and-retained-behavior/cdc-verification.md) at SOURCE494a4b95/CCda690a27; actual12browser cells/3identity proposals,owning1.0.22; native/axis/fidelity/full-corpus limits retained. |
 | [Slice26 — modernist typography in context](slice26-modernist-typography-in-context/slice-plan.md) | Closed: [independent acceptance](slice26-modernist-typography-in-context/cdc-verification.md) at SOURCE523ab425/CC04469147;19contextual historical cards,local semantics/exact14metadata repairs,owning1.0.23; original fidelity unresolved. |
-| [Slice27 — perception/shape/grouping](slice27-perception-shape-and-grouping/slice-plan.md) | Active:17connected Arnheim cards; supported math/CSS/analogy/context corrections and exact local graph/CQ reconciliation; source523ab425,CC `/root/s27_cc`,independent CDC. |
+| [Slice27 — perception/shape/grouping](slice27-perception-shape-and-grouping/slice-plan.md) | Closed: [independent acceptance](slice27-perception-shape-and-grouping/cdc-verification.md) at SOURCE3c29ae69/CC371d6d8b;17supported corrected cards and local semantics,owning1.0.24; original fidelity unresolved. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
 Rows after Slice27 are delivery choices, not issued assignments or a fixed slice
-count. Slice27 is the current connected Arnheim perception/shape/grouping correction
-cohort from complete available evidence. Prefer
+count. Slice27 is closed; select the next supported connected Arnheim cohort
+from complete available evidence. Prefer
 several related cards/guide contexts when coherent; split for actual input/context
 or implementation risk, not one field/card/dimension by default. The47 provisional
 groups,161 headings and460 keyword candidates are navigation, not mandatory slices
@@ -141,12 +141,14 @@ Source branch `codex/project10-arc02-autonomous` in
 separate. Direct routine handoffs and CDC retrospectives now apply; all original
 criteria and Operator/input/composition gates survive. Stop at this arc's endpoint;
 no automatic Arc04 work, merge, push or publication.
-Expedited Mode. Slices01–26 are closed at recorded bounded scopes.
-Slice26 delivered contextual19-card Tschichold teaching, exact14metadata repairs
-and72typed/71body/CQlineage reconciliation at523ab425/04469147. All19fidelity
-results remain input-blocked. Active [Slice27](slice27-perception-shape-and-grouping/slice-plan.md) now addresses
-17connected perception/shape/grouping cards at523ab425. Continue review,
-supported fixes and local semantics together rather than another readiness phase.
+Expedited Mode. Slices01–27 are closed at recorded bounded scopes.
+Slice27 delivers17supported perception/shape/grouping corrections and82typed/
+120body/39question local reconciliation at3c29ae69/371d6d8b,owning1.0.24.
+One independent classification finding required a bounded paragraph refinement;
+all17original-fidelity outcomes remain input-blocked. Next select the connected
+balance/tension/tonal cohort so related conflicting weight claims are corrected
+together. No next open set is issued by this close itself. Continue supported
+review/fix/local semantics together, with actual prior-input applicability.
 Final8payload/behavior applicability and local-font/native/AT limits remain
 explicit for later composition. All ten arc/thirteen project criterion states,
 missing-original/full233global and formal composition/Operator/release gates
@@ -481,3 +483,5 @@ inputs now that the sequencing hold is lifted.
 - 1.73 (2026-10-19): Slice26 independently closes19-card contextual historical teaching/local semantics at523ab425/04469147; continue supported Arnheim work, with all parent/input/release gates unchanged.
 
 - 1.74 (2026-10-19): Open Slice27 connected17-card perception/shape/grouping corrections after Slice26 close075923bf; explicit existingmetadata/identifier repairs, same-batch semantics, all input/parent/release gates unchanged.
+
+- 1.75 (2026-10-19): Slice27 closes17supported corrected cards/local semantics after one classification refinement at3c29ae69/371d6d8b; continue coherent balance/tension/tonal work, retaining all original/full-corpus/parent/release gates.

@@ -1,3 +1,108 @@
+# Slice27 independent acceptance — current Iteration01 verdict,2026-10-19
+
+CDC Sofie `/root` accepts all4bounded criteria at SOURCE
+`3c29ae6949a21c0de2a3a89de41db8fd3e1e046b` / CC PLANNING
+`371d6d8b121dda0870033bb9a4b4cc65319a1c46`. Slice27 closes after one
+substantive refinement. Owning design remains1.0.24 on the isolated task branch;
+no original-fidelity/full233/Arc02/final1.1.0/release gate closes.
+
+## Current independent checks and retained evidence
+
+Named separate reviewer `/root/s26_review` owns the substantive verdict below:
+its initial complete17-final-card/578-line-batch/82typed/120body/39CQ review is
+retained; it independently reread the whole159-line repaired completion card,
+exact one-paragraph diff and affected current planning evidence. Root reviewed
+that actual report, full changed paragraph/card context and complete I01planning
+delta, retaining the clearly attributed initial inspections below. Implementer
+is `/root/s27_cc`; root made no source repair and no permanent CRC is assigned.
+
+Root independently extracted old/new literal paragraphs from the preserved I01
+prompt. Exact replacement occurs once; reversing it restores the entire1dba8bac
+card. Source commit has exactly1path, parent1dba8bac;7079otherGitobjects fixed,
+including232wholeothercards, all metadata/references/quotes/examples/headings,
+161sources,6guides,owner/history and Makefile. Thus initial exact19path/rawmetadata/
+233identity/93→82typed/120body/39CQseven-text and native evidence remains applicable
+at its actual execution scope. Root reproduced the focused continuity/similarity/
+scale controls initially; they were not misrepresented as rerun for this paragraph.
+
+Root independently matched the retained ZIP's8Markdownpayloads to current
+committed3c29ae69 and predecessor inputs; SHA256 remains
+`f93370eca21a03539c29ee6abf4ef596c494a05018eaf4b87ec7d364d920386b`.
+Initial sequential native CC execution results remain25source/25package versions
+0errors,25ZIPs402Markdown0hardfailures606warnings. No redundant Makebuild or new
+browser/AT/nativepreference/axis/hosted/perception result is claimed. Slice25's
+operative6guide/SKILLbridge is unchanged and retains only its recorded limits.
+Source/P parents, exact1/3scopes, both trailers, preserved current criterion/
+verify/origin/status cells and whitespace pass. Current P3-file check passes
+16local links/9fragments and LF/EOF. Initial supporting batch is an exact preserved
+prefix; initial closing report survives under an explicit historical boundary.
+
+## Four-row closure and bubble-up
+
+|Row|Independent CDC disposition|Evidence/limit|
+|---|---|---|
+|S27-01|done at supported bounded scope|Whole17 available-evidence outcomes plus F01 repaired whole-card classification; all17 original-fidelity outcomes remain unassessed/input-blocked.|
+|S27-02|done for local semantics|82typed/120body/39exact question joins and seven conceptual answers/gaps, with corrected Q1 closure/amodal/report distinction; CLT/disclosure/full-catalog/global components remain named gaps.|
+|S27-03|done, initial acceptance retained and affected scope reproduced|Exact metadata/source/version/package preservation plus strict one-paragraph reversal and unchanged8payload/Makefile applicability.|
+|S27-04|done|One supporting batch, current I01 handoff and preserved failed initial review; truthful checks/limits and actual independent verdict.|
+
+All4original rows survive; initial prompt and I01 remain preserved. No criterion
+was softened or empirical claim upgraded. The connected17-card correction and
+local semantics deliver the assigned slice capability. F01 required a real
+one-paragraph source correction; it is resolved without a new research program,
+metadata invention or package work. Supporting-artifact inventory remains exactly
+one batch. Retrospective is [here](cdc-retrospective.md).
+
+Bubble-up decision: update Arc02's child/current-sequence status to closed and
+continue the next supported coherent Arnheim cohort. No architecture, overall
+scope, criterion or input requirement changed. All ten arc/thirteen project
+states, original/capture/P10-11, full233/global, behavior limits, independent/
+Operator composition and final1.1.0/release gates retain their owners. No next
+slice is issued by this close alone. The initial verdict below is historical;
+this current accepted verdict supersedes its pending F01 disposition.
+
+## Named Iteration01 independent report — verbatim
+
+# Slice27 Iteration01 independent substantive review
+
+Reviewer `/root/s26_review`, separate from implementer `/root/s27_cc`; assigned by CDC `/root` under recorded remaining-Arc02 Autonomous Mode. 2026-10-19. Only this temporary report was written; no source/planning edit, build, commit or acceptance/status change was performed.
+
+**Verdict: F01 resolved; pass at the assigned bounded semantic scope. No unresolved material finding remains.** CDC retains actual ledger/slice acceptance, retrospective and integration authority.
+
+## Exact inputs and actual new inspection
+
+SOURCE `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/design-arc02-autonomous`, branch `codex/project10-arc02-autonomous`, **3c29ae6949a21c0de2a3a89de41db8fd3e1e046b**, child of reviewed initial **1dba8bacd7b2df45dbbecebd39e5e5bc6b8c73f8**. Final planning return **371d6d8b121dda0870033bb9a4b4cc65319a1c46**, parent **5901bf80934655a64a52424f82f480ad98f84e31**, in the canonical planning worktree under `project10-design-foundations/arc02-theory-and-evidence/slice27-perception-shape-and-grouping`.
+
+Read the complete preserved `cc-prompt-iteration01.md`, then the complete repaired `shape-completion.md`: **159lines/13,037bytes**, metadata through Verification Notes. Inspected the exact committed source diff against1dba8bac: only the issued Common Confusions clarification paragraph changes. The complete metadata, quoted wording, examples, Source Reference and headings of this card are unchanged by that diff. No fresh read of all17 cards or duplicate global review is claimed.
+
+After CC supplied the final planning pin, read the entire committed371d6d8b delta against5901bf80: appended batch Iteration01 section (lines579–664), the complete new current closing-report section and historical framing, and every changed ledger Evidence/Notes cell. The diff appends to the prior batch and prepends to the prior closing report; no initial body is rewritten. Criteria and statuses remain those issued for I01, including retained independently done S27-03 and the other three rows open pending CDC. This inspection is of the committed delta, not an unpinned mutable draft.
+
+## F01 result and affected reasoning
+
+The repaired clarification now distinguishes:
+
+- closure: an open outline perceived as bounding a region;
+- amodal continuation: an occluded object experienced as continuing without its hidden surface being visibly painted;
+- the card's clinical and afterimage cases: related reported context, not all certified as amodal continuation or one mechanism.
+
+This agrees with Quick Definition's broad conditional tendency, Core/Examples' reported clinical observations and unresolved mechanism, Key Properties line76's explicit distinctions, and the neighboring inference clarification. The final sentence correctly states the current review's limit with the original unavailable; it makes no new finding about what an unread original actually classifies or proves. All retained source quotations and clinical examples remain available and unassessed as before. The correction resolves the literal contradiction identified in the initial review without a new curriculum or empirical claim.
+
+The affected batch now explicitly qualifies the initial failed coherence/Q1 proposal, preserves F01 history, updates D2/D3/D4, and explains the corrected Q1 distinction. W35 and W42–W45 remain bounded interpretive connections about simplicity, visible cues, axes/contours, conditional regularity and unity/separation; none depends on one shared mechanism. The seven body relationship bullets, typed fields and both question memberships in this card are unchanged. Q4 still supplies cue-loss considerations and leaves CLT/disclosure missing.
+
+Current closing/ledger text attributes new checks versus retained checks, names the repaired candidate, preserves the initial review failure and leaves independent acceptance pending. The extra primary-search account is explicitly root-reported, including its direct-fetch limits; I did not independently inspect that remote abstract/paper and do not use it as original-fidelity or empirical proof.
+
+## Retained initial review and limits
+
+My initial review remains `/private/tmp/p10-s27-independent-review.md`, covering the complete17 final initial cards (2,623lines/205,529bytes), three external premise scopes,93→82typed occurrences,120body occurrences and39unchanged memberships/seven exact question texts at1dba8bac/395081e0. That report identified only F01. Its unaffected semantic results are retained under the exact one-paragraph source delta; this is not a fresh re-performance of those checks. The initial source-fidelity, broader-endpoint, global-question and behavioral limits remain unchanged.
+
+I did not reproduce whole-workspace/raw-metadata/package preservation, strict source reversal or ZIP matching in this review; CDC independently owns those checks. No Make target, browser/AT/native-font/axis/hosted/readability/perception test was run here. Initial native results retain their actual prior actor/revision attribution rather than being called fresh runs.
+
+All17 original-fidelity results remain **unassessed/input-blocked**. No source-book wording/figure/page/clinical/mechanistic verification, complete233/global reconciliation, arc composition, final1.1.0, Operator or release acceptance follows from this bounded pass. The substantive F01-dependent portions of S27-01/02/04 now support CDC acceptance when integrated with CDC's separate structural/handoff evidence; this report does not itself change those rows.
+
+---
+
+## Preserved initial independent review
+
 # Slice27 independent review — initial return 2026-10-19
 
 SOURCE1dba8bacd7b2df45dbbecebd39e5e5bc6b8c73f8 / CC PLANNING

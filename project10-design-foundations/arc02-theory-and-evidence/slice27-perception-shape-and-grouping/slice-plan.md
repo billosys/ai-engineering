@@ -1,16 +1,16 @@
 ---
 slice: slice27-perception-shape-and-grouping
-status: active
+status: closed
 depends-on: [accepted live methods; available Arnheim card evidence]
 ---
 
 # Slice27 — Perception, Shape and Grouping
 
-Revision **1.1**,2026-10-19. Project1.75 / Arc02 Autonomous Mode; CDC Sofie
+Revision **1.2**,2026-10-19. Project1.75 / Arc02 Autonomous Mode; CDC Sofie
 `/root`, implementing CC `/root/s27_cc`, independent review in `cdc-verification.md`.
 SOURCE `.worktrees/design-arc02-autonomous`, branch `codex/project10-arc02-autonomous`,
 exact `523ab4250793eb5d46ea433acd685829b83dcffd`. PLANNING predecessor `075923bf1520c17ca5788ccd8739f0d579dc86db`; adding commit issues
-[cc-prompt.md](cc-prompt.md). All four [criteria](ledger.md) started open; CDC now accepts S27-03, with S27-01/02/04 open for F01.
+[cc-prompt.md](cc-prompt.md). All four [criteria](ledger.md) started open; CDC now accepts all4boundedrows at3c29ae69/371d6d8b; F01 resolved, originals and higher gates open.
 
 ## Useful delivery and author readiness
 
@@ -49,7 +49,13 @@ full233/global/source/finality/Operator/release gates remain unchanged.
 ## Assignment history
 
 - Initial [cc-prompt.md](cc-prompt.md), issueda0091777, returned1dba8bac/395081e0; independently reviewed, S27-03 done and F01 unresolved.
-- Current active [cc-prompt-iteration01.md](cc-prompt-iteration01.md),2026-10-19, based on that return; one completion-classification paragraph and affected existing evidence. Initial prompt preserved, first refinement pass.
+- Current accepted [cc-prompt-iteration01.md](cc-prompt-iteration01.md),2026-10-19, based on that return; one completion-classification paragraph and affected existing evidence. Initial prompt preserved; first refinement accepted after independent whole-card repair review.
+
+## Closure
+
+[Independent acceptance](cdc-verification.md) and [retrospective](cdc-retrospective.md)
+close all4bounded rows. Named reviewer `/root/s26_review` owns its actual final
+semantic verdict; CDC `/root` integrates scope/package/evidence and accepts.
 
 ## Version History
 
@@ -57,3 +63,5 @@ full233/global/source/finality/Operator/release gates remain unchanged.
   Slice26 independent close; preserve historical teaching and all higher gates.
 
 - 1.1 (2026-10-19): Independently accept preservation/package criterion and issue bounded F01 completion classification repair; retain source-fidelity and parent gates.
+
+- 1.2 (2026-10-19): Close supported17-card correction/local semantics after independent I01 F01 acceptance at3c29ae69/371d6d8b; original-fidelity and all parent gates retained.
