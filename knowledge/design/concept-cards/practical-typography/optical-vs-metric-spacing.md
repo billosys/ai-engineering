@@ -76,7 +76,7 @@ Butterick's prepared comparison reports differences in `nu`/`un`, `un`/`no` and 
 
 # Examples
 
-**Example 1** (metrics-vs-optical-spacing): Butterick describes `nu` and `un` as visually balanced under metrics in his illustration and says optical shifts the `u`; he also discusses `un`/`no` and `nt`/`it`. Preserve this as his reported comparison, not an independently rendered result.
+**Example 1** (metrics-vs-optical-spacing): Butterick describes `nu` and `un` as visually balanced under metrics in his illustration and says optical shifts the `u` to the left. In the reported `un`/`no` comparison, metrics balances the gaps, while optical brings rounded `o` closer to flat `n`. He also describes `nt` and `it` becoming darker than the `ti` gap under optical. These are his descriptions of the prepared illustration, not an independently rendered result.
 
 **Example 2** (metrics-vs-optical-spacing): Butterick argues that small spacing differences accumulate over many pairs in body text. Adobe's separate guidance describes optical kerning as potentially useful in selected cases; compare actual output rather than treating either account as universal.
 
