@@ -1,12 +1,12 @@
 ---
 slice: slice31-light-colour-and-context
-status: active
+status: closed
 depends-on: [Slice30 independently accepted; available light and colour evidence]
 ---
 
 # Slice31 — Light, Colour and Context
 
-Revision **1.0**,2026-10-19. Project1.75 / Arc1.82. Operator-authorized Arc02
+Revision **1.1**,2026-10-19. Project1.75 / Arc1.82. Operator-authorized Arc02
 Autonomous Mode. CDC Sofie `/root`; CC `/root/s31_cc`; independent CDC or named
 separate reader. SOURCE `38123c19b9be9780dcd74b1116dcadaaa638e007` on codex/project10-arc02-autonomous;
 PLANNING predecessor `ff9b2d6cac47b629fb87f4a8ebea454aa8f91cc5`. The adding commit issues [cc-prompt.md](cc-prompt.md).
@@ -34,10 +34,17 @@ main/merge/push/publication/future tree/final1.1.0 or higher-gate closure.
 
 ## Assignment history
 
-- Initial/current [cc-prompt.md](cc-prompt.md), pins above, routine AM handoff after
+- Initial/accepted [cc-prompt.md](cc-prompt.md), pins above, routine AM handoff after
   actual Slice30 bounded acceptance. CDC owns verdict, retrospective and advance.
+
+## Closure
+
+All four bounded criteria accepted; [verdict](cdc-verification.md) and
+[retrospective](cdc-retrospective.md). Original and higher gates remain open.
 
 ## Version History
 
 - 1.0 (2026-10-19): Open connected18-card light/colour/context correction and
   local semantics while preserving unavailable-input and higher gates.
+
+- 1.1 (2026-10-19): Independently close supported18-card light/colour/context correction and local semantics; retain all higher gates.
