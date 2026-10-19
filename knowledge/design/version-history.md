@@ -152,3 +152,11 @@ do not guarantee outcomes across content, users or browsers.
   philosophy, research, psychophysical, token and CSS claims in both long guides.
   Conditional proofs and current definitions do not establish historical,
   browser, assistive-technology or full-corpus acceptance.
+
+## Version 1.0.22 - 2026-10-18
+
+- Bound layout sizing, primitive/widget distinctions, CSS enhancements and research
+  extrapolations while retaining compositional examples and expressive craft.
+- Made the worked book CSS runnable and added concrete type/fallback/axis and
+  rendered colour state-pair methods. Authored diagnostics and numeric proofs
+  remain distinct from observed browser, native preference and AT behavior.

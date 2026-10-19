@@ -35,7 +35,7 @@ create unused roles or layers merely to match this table.
 
 ## Choose candidate values
 
-For text, evaluate each actual foreground/background pair after applying alpha, overlays and the rendered background. Under WCAG 2.2 SC 1.4.3 (AA), target at least 4.5:1 for normal text and 3:1 for large-scale text; SC 1.4.6 (AAA) uses 7:1 and 4.5:1 respectively. Do not round a failing value up. Check non-text controls and essential graphics against SC 1.4.11 separately (3:1 against adjacent colours), and do not use colour alone to convey information (SC 1.4.1). Criterion exceptions and applicability depend on context. Recheck hover, focus, disabled and other relevant states in the rendered context; a palette-level result does not establish whole-page accessibility.
+For text, evaluate each actual foreground/background pair after applying alpha, overlays and the rendered background. Under WCAG 2.2 SC 1.4.3 (AA), target at least 4.5:1 for normal text and 3:1 for large-scale text; SC 1.4.6 (AAA) uses 7:1 and 4.5:1 respectively. Do not round a failing value up. Check non-text controls and essential graphics against SC 1.4.11 separately (3:1 against adjacent colours), and do not use colour alone to convey information (SC 1.4.1). Criterion exceptions and applicability depend on context. Recheck hover, focus and other applicable states in the rendered context; a palette-level result does not establish whole-page accessibility.
 
 For an opaque rendered sRGB pair, normalize each 8-bit channel as `u = channel / 255`, then decode it to linear light: use `u / 12.92` when `u <= 0.04045`, otherwise `((u + 0.055) / 1.055)^2.4`. Calculate relative luminance as `L = 0.2126R + 0.7152G + 0.0722B`, then calculate `(Llighter + 0.05) / (Ldarker + 0.05)`. For `#777`, each channel is `119/255 ≈ 0.4667`, decoding to about `0.1844749945`; its luminance is about `0.1844749945`. White has luminance 1, so `#777` against `#fff` is `(1 + 0.05)/(0.184475 + 0.05) ≈ 4.4780894536:1`, below the 4.5:1 normal-text AA threshold. Black against white is 21:1. WCAG 2.2 defines large-scale text as at least 18 pt or 14 pt bold (with equivalent CJK sizing); criterion exceptions still apply. See [SC 1.4.3](https://www.w3.org/TR/WCAG22/#contrast-minimum), [SC 1.4.6](https://www.w3.org/TR/WCAG22/#contrast-enhanced), and the WCAG [relative-luminance and contrast-ratio definitions](https://www.w3.org/TR/WCAG22/#dfn-relative-luminance).
 
@@ -76,5 +76,18 @@ normal, hover, focus, active, visited, selected and unavailable as applicable.
 Check both text and non-text information against the actual surface beneath it,
 including nested surfaces and transparency. Recheck after a theme switch,
 overlay, animation, image background or gamut conversion changes the pair.
+Keep a small record for each actual pair/state: element and role, normal/action/
+hover/focus/selected/placeholder or inactive state, computed foreground and
+resolved background, output assumptions, ratio/applicable criterion, and result.
+Resolve opaque and alpha layers against the actual backdrop before an sRGB
+calculation; note images, blending, filters or output conditions that make a
+simple opaque pair insufficient. Inspect essential focus/boundary information
+separately under non-text contrast, and use labels or other signals beyond colour.
+
+Placeholder text in an active input remains text subject to SC 1.4.3. Its
+inactive-UI exception concerns text that is part of an actually inactive control;
+it is not a blanket exemption for low-emphasis text or a rule that all disabled
+controls must pass. Record the particular exception context. For selected themes
+and forced-colours modes, carry out the actual checks or mark them untested.
 Record the target, method, results, failed pairs and untested cases. A design
 tool preview or OKLCH coordinate is not a substitute for these checks.

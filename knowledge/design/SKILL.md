@@ -8,7 +8,7 @@ description: |
   wayfinding, theming, or answering a visual design question.
 license: MIT
 metadata:
-  version: "1.0.21"
+  version: "1.0.22"
   hermes:
     tags: [design, css, color, typography, layout, oklch, cube-css, utopia]
     category: web-frontend
@@ -151,15 +151,18 @@ discrete change. Test the target sizes and preferences.
 
 - Does the hierarchy reflect the task and content?
 - Are supplied names, assets, tokens and fixed choices preserved?
-- Do colour pairs and interaction states remain legible after rendering,
-  transparency, overlays and gamut mapping?
-- Do selected typefaces cover the actual scripts and content, and do fallbacks
-  remain usable?
+- Are actual colour pairs and normal/action/hover/focus/selected/placeholder
+  states recorded against their resolved backgrounds? Use the [state-pair
+  method](guides/colour.md#review-themes-and-state-pairs); colour alone is not a signal.
+- Are font assets, available axes, loaded faces and failure fallbacks checked
+  with real strings using the [candidate method](guides/type.md#check-candidates-and-fallbacks)?
 - Do grouping and measures fit the content?
 - Are fluid and intrinsic behaviors checked where they will be used? Are
   breakpoints or optical exceptions explained by an observed need?
-- Are motion, focus, keyboard use, reflow and user preferences addressed where
-  they affect the interaction?
+- Are semantics, keyboard/focus/order, reflow, enlargement and spacing checked
+  in the target? Keep [spatial primitives](guides/layout.md#the-compositional-layer-every-layout-primitives)
+  distinct from complete widgets; keep [enhancements](guides/breaking-the-layout-monoculture.md#the-new-css-toolkit-makes-intrinsic-layout-real)
+  usable at rest and with reduced motion. Record actual checks and untested preferences.
 
 These questions support review; answering them does not by itself establish
 accessibility conformance or fresh-context usability.

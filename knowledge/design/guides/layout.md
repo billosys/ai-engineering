@@ -72,23 +72,24 @@ picks up where the other leaves off --- is the key to the whole system.
 ::: prose
 Every Layout begins with a radical premise: **the web is already
 responsive**. Before any CSS is written, browsers know how to wrap text,
-scroll content, and fit boxes to their containers. The vast majority of
-layout problems arise not from CSS\'s limitations but from designers
-fighting its built-in algorithms --- applying fixed widths where
-flexible ones would do, using pixel values where proportional ones would
-adapt, writing media queries to undo the damage of earlier rigid
-declarations.
+scroll content, and fit boxes to their containers. Intrinsic sizing and wrapping can resolve useful cases without
+manual width modes. Fixed dimensions, pixel values and media queries also have
+legitimate uses; judge each choice against content and interaction rather than
+treating it as evidence of fighting the browser.
 
 The project\'s six \"Rudiment\" chapters build up a complete
 epistemology of CSS layout from first principles. It starts with
 **Boxes** --- the insight that everything on the web occupies a
 rectangular region, and that the dimensions of that region should be
 *derived from content and context*, not prescribed. The crucial
-technical point is the difference between `width: 100%` (which
-prescribes a size and then adds padding on top of it) and `width: auto`
-(which lets the box fit its context naturally). This is not pedantry. It
-is the atomic distinction between fighting the browser and collaborating
-with it.
+technical distinction is what a declared size measures. With `box-sizing:
+content-box`, `width: 100%` sizes the content box and padding/borders add to it;
+with `border-box`, they are included in the specified size, subject to the
+content box's zero-size floor. `width: auto` has layout-dependent used sizing:
+a normal non-replaced block can fill its containing block including padding
+and borders, while flex, grid and positioned boxes follow their own rules.
+See [CSS Sizing](https://www.w3.org/TR/css-sizing-3/#box-sizing). Choosing the
+appropriate model is part of collaborating with the browser.
 
 From Boxes, Every Layout moves to **Composition** --- the explicit
 application of the Gang of Four software engineering principle
@@ -394,10 +395,10 @@ The most frequently used primitive --- nearly every block of content
 lives inside a Stack.
 
 **Mechanism:** `display: flex; flex-direction: column;` with `gap` set
-to a Utopia space token. The owl selector (`* + *`) variant is also
+to a project-supplied value. The owl selector (`* + *`) variant is also
 common.
 
-**Key parameter:** `--space` (which Utopia token to use for the gap).
+**Key parameter:** `--space` (the gap; a Utopia value is optional).
 :::
 :::::::
 
@@ -416,11 +417,11 @@ The Box
 **Responsibility:** inset padding around content. A Box is any element
 that needs uniform internal spacing.
 
-**Mechanism:** `padding` set to a Utopia space token, with optional
+**Mechanism:** `padding` set to a project-supplied value, with optional
 `border` and `background`.
 
-**Key parameter:** `--padding` (which Utopia token, typically a space
-pair like `--space-s-m` for fluid component padding).
+**Key parameter:** `--padding` (a fixed or fluid inset; a space pair such
+as `--space-s-m` is one optional construction).
 :::
 :::::::
 
@@ -439,9 +440,10 @@ The Center
 **Responsibility:** constraining content to a maximum width and centring
 it horizontally. The measure axiom is typically enforced here.
 
-**Mechanism:** `max-inline-size` with `margin-inline: auto`. Uses
-`box-sizing: content-box` so that padding does not reduce the content
-area.
+**Mechanism:** `max-inline-size` with `margin-inline: auto`. An optional
+`box-sizing: content-box` keeps padding outside that maximum content measure,
+but padding/borders can still overflow the available width. `border-box` is
+another choice; inspect the used content and outer sizes in context.
 
 **Key parameter:** `--measure`, chosen for the actual typeface, language, text
 and reading conditions; review the rendered line length.
@@ -463,8 +465,8 @@ The Cluster
 **Responsibility:** grouping items horizontally with wrapping. Tags,
 button rows, navigation links, metadata.
 
-**Mechanism:** `display: flex; flex-wrap: wrap; gap` set to a Utopia
-space token. Items wrap naturally when space runs out.
+**Mechanism:** `display: flex; flex-wrap: wrap; gap` set to a project value.
+Items wrap when their sizing and available space require it; inspect long content.
 
 **Key parameter:** `--space` and `justify-content` for alignment.
 :::
@@ -530,14 +532,19 @@ repeating equal-width columns using `auto-fit` and `minmax()`, requiring
 no column count declaration --- the number of columns is derived from
 the minimum item width and the available space. The **Frame** locks
 media to an aspect ratio. The **Reel** creates horizontal overflow
-scrolling (carousels, image strips). The **Imposter** positions an
-element outside normal flow (modals, tooltips). The **Icon** sizes an
+scrolling (for example image strips); it is not a complete carousel with
+controls or announcements. The **Imposter** positions an element outside
+normal flow; it does not supply dialog/tooltip roles, names, focus or Escape behavior. The **Icon** sizes an
 inline SVG relative to its adjacent text. The **Container** provides the
 outermost width constraint for page content.
 
 Together, these thirteen primitives offer reusable ways to describe spatial
 relationships. They can help compose cards, headers, navigation, forms and
-footers; use other structures when they better fit the content.
+footers; use other structures when they better fit the content. For interactive
+widgets, use maintained native patterns or the [ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/),
+including their keyboard/focus obligations; geometry alone is insufficient.
+Keep ordinary prose reflowing. Deliberately wide tables or Reels need labelled,
+keyboard-accessible overflow containment and a reading alternative where needed.
 :::
 ::::
 
@@ -630,13 +637,15 @@ His response was not to reject industrialisation but to insist that even
 industrially produced objects should be made with care, intention, and
 respect for the craft.
 
-The web design monoculture is our version of Morris\'s factory.
-Bootstrap, WordPress themes, and Tailwind UI templates produce layouts
-that are functional but characterless --- the metal folding chairs of
-the digital world. The CHI 2021 research confirms this: web design has
-measurably homogenised by 30% over sixteen years. Every SaaS landing
-page follows the same hero-features-testimonials-CTA-footer pattern.
-Users have learned to filter it out.
+Repetitive template use can feel like Morris's factory to a designer seeking
+more expression. That is this guide's argued stance, not a measured property
+of every Bootstrap, WordPress or Tailwind-based site. The [CHI 2021 author
+project abstract](https://cv-web-history.neocities.org/) reports screenshot
+analysis from 2003–2019, with average layout distances decreasing by over 30%
+since 2007 and interviews with 11 professionals. This is not a claim that the
+whole web became 30% alike, a monotonic sixteen-year trend, or proof that
+shared templates harm comprehension. Familiar patterns can also help people
+find their way; judge the actual task.
 
 Our response mirrors Morris\'s: not to reject the tools, but to insist
 on *craft within the tools*. Every Layout and Utopia are not
@@ -686,40 +695,54 @@ page composed from the adopting project’s content and available components.
 
 ::: prose
 Imagine a page displaying a single book: cover image, title, author,
-description, publication details, and related titles. A template
-approach would design this page once, pixel-perfect at 1440px, then add
-breakpoints at 1024px, 768px, and 375px to adapt it. That is four
-designs, four sets of spacing values, four column configurations, and a
-maintenance burden that grows with every design change.
-
-The intrinsic approach composes the page from primitives and lets the
-mathematics handle responsiveness.
+description, publication details, and related titles. An intrinsic composition
+can wrap the cover and information without assigning a fixed column mode to
+every device. A query may still be useful when content or interaction needs it.
+The example below uses deliberately chosen illustration values; the adopting
+project supplies the custom properties and reviews them with actual content.
 :::
 
-::: code-block
-[/\* Page composition illustration; evaluate queries from observed needs
-\*/]{.comment} [/\* Page: Container → Stack \*/]{.comment} [.page]{.sel}
-{ [/\* Container: max-width, centred \*/]{.comment}
-[max-inline-size]{.prop}: [1200px]{.val}; [margin-inline]{.prop}:
-[auto]{.val}; [padding-inline]{.prop}: [var(\--space-s-l)]{.val}; [/\*
-Fluid side padding \*/]{.comment} } [/\* Hero: Sidebar (cover image +
-title info) \*/]{.comment} [.book-hero]{.sel} { [/\* Sidebar primitive
-\*/]{.comment} [display]{.prop}: [flex]{.val}; [flex-wrap]{.prop}:
-[wrap]{.val}; [gap]{.prop}: [var(\--space-l-xl)]{.val}; [/\* Steep fluid
-gap \*/]{.comment} } [.book-hero \> .cover]{.sel} { [/\* Frame:
-aspect-ratio locked \*/]{.comment} [flex-basis]{.prop}: [clamp(200px,
-30%, 400px)]{.val}; [flex-grow]{.prop}: [0]{.val}; } [.book-hero \>
-.info]{.sel} { [/\* Stack: title, author, metadata \*/]{.comment}
-[flex-basis]{.prop}: [0]{.val}; [flex-grow]{.prop}: [999]{.val};
-[min-inline-size]{.prop}: [55%]{.val}; [/\* Stacks when too narrow
-\*/]{.comment} } [/\* Description: Center (measure-constrained prose)
-\*/]{.comment} [.book-description]{.sel} { [max-inline-size]{.prop}:
-[var(\--prose-measure)]{.val}; [/\* supplied project value; review with actual text \*/]{.comment} } [/\* Related
-titles: Grid (intrinsic column count) \*/]{.comment}
-[.related-grid]{.sel} { [display]{.prop}: [grid]{.val};
-[grid-template-columns]{.prop}: [repeat(auto-fit, minmax(min(100%,
-180px), 1fr))]{.val}; [gap]{.prop}: [var(\--space-s-m)]{.val}; }
-:::
+```css
+/* Chosen illustration values, not project defaults. */
+.page {
+  max-inline-size: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--space-s-l);
+  box-sizing: border-box;
+}
+.book-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-l-xl);
+}
+.book-hero > .cover {
+  flex-basis: clamp(200px, 30%, 400px);
+  flex-grow: 0;
+  align-self: start;
+  min-inline-size: 0;
+  aspect-ratio: 2 / 3;
+}
+.book-hero > .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.book-hero > .info {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 55%;
+  overflow-wrap: anywhere;
+}
+.book-description {
+  max-inline-size: var(--prose-measure);
+  margin-inline: auto;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: var(--space-s-m);
+}
+```
 
 ::: prose
 This stylesheet is an illustration to review with representative content and
@@ -749,7 +772,7 @@ where to go deeper.
   Utopia                   Fluid type and space calculators, the philosophical blog posts, utopia-core (JS/TS), utopia-core-scss, postcss-utopia, Figma plugins.                                                                                                                                                                                                                                                                                                         utopia.fyi --- free tools, free blog
   CUBE CSS                 The organisational methodology (Composition, Utility, Block, Exception) that structures how primitives and utilities interact in a stylesheet.                                                                                                                                                                                                                                                                                                cube.fyi --- free
   Vignelli Canon           Systematic restraint, syntactical consistency, the discipline of working within a chosen set of proportions.                                                                                                                                                                                                                                                                                                                                  Free PDF from RIT
-  Müller-Brockmann         Mathematical grid construction, compound grids, the Swiss typographic tradition that anticipated CSS Grid by 40 years.                                                                                                                                                                                                                                                                                                                        Grid Systems in Graphic Design
+  Müller-Brockmann         Mathematical grid construction, compound grids, the Swiss typographic tradition as a design reading pointer, not a CSS invention claim.                                                                                                                                                                                                                                                                                                                        Grid Systems in Graphic Design
   Bringhurst               Typographic measure, proportional systems, the musical-interval ratios that Tim Brown brought into web typography.                                                                                                                                                                                                                                                                                                                            Elements of Typographic Style, v4.0
   Refactoring UI           Tactical, pattern-oriented design guidance for developers. Constrained spacing scales, the \"design in greyscale first\" heuristic.                                                                                                                                                                                                                                                                                                           refactoringui.com
   Dao of Web Design        John Allsopp\'s 2000 essay arguing that web designers must relinquish control to the medium --- the philosophical ancestor of everything in this document.                                                                                                                                                                                                                                                                                    alistapart.com/article/dao/

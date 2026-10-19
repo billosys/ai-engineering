@@ -52,6 +52,21 @@ the selected face and script. A Latin sample does not establish multilingual
 support. Do not claim font failure, browser coverage or improved readability
 without testing the named environment.
 
+Make the check concrete: record the asset or actual family name, source and
+license/readiness; render representative real strings with the intended styles,
+then deliberately fail loading and inspect the fallback. For a supplied variable
+font, read axis tags and ranges from that file's metadata, request values within
+those ranges, and inspect the loaded face and rendered result. A computed CSS
+request alone proves neither the glyph face actually used nor a feature or axis.
+Record the environment, observed outcomes, failures and unavailable cases.
+
+Check 200% text enlargement, text-spacing overrides and a narrow viewport both
+separately and together, with no clipped essential content or lost controls.
+An authored CSS enlargement is a useful diagnostic, distinct from actual browser
+zoom, native font preferences and assistive-technology checks. Record which was
+performed; keep the base responsive to user enlargement rather than resetting
+it to defeat their choice.
+
 ### Check feature and spacing choices in context
 
 Choose the reading or number role and actual script. Inspect the supplied font's
