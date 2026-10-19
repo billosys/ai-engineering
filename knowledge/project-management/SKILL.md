@@ -46,7 +46,8 @@ before issuing or executing the assignment.
 For Operator-selected [Autonomous Mode](./guides/README.md#autonomous-mode),
 load its canonical definition and execution rules before acting. Record the
 arc-default authorization (or explicit project override), non-default source
-branch, contributor arrangement and actual independent reviewer. CDC may revise
+branch, contributor arrangement and actual independent reviewer where required
+(or the self-check convention for an eligible One-Contributor task). CDC may revise
 staffing and use direct routine handoffs within that authorization; Operator
 decisions, tool permissions and evidence gates remain binding.
 

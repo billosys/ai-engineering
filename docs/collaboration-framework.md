@@ -76,11 +76,14 @@ Existing paths remain valid under the
 ## Autonomous Mode
 
 The Operator may authorize CDC to execute an approved arc using Expedited Mode,
-local commits on a dedicated non-default source branch, and independent review.
+local commits on a dedicated non-default source branch, and independent review
+for substantive work and existing gates.
 CDC selects and may revise contributor arrangements as complexity demands:
 CC implementation with CDC/CRC review, or CDC implementation with independent
-reviewer subagents. Ledgers, bubble-up, review/repair cycles and CDC
-retrospectives at every closing scale remain required. Project-wide execution
+reviewer subagents. One-Contributor is limited to simple, clearly defined,
+low-risk, low-effort tasks; it cannot bypass existing verification gates, and
+unexpected complexity requires reassessment. Ledgers, bubble-up, review/repair
+cycles and CDC retrospectives at every closing scale remain required. Project-wide execution
 is an explicit override; unresolved plan ambiguity can trigger a pause and
 Operator discussion. Scope and acceptance gates remain binding.
 

@@ -6,6 +6,11 @@ Specified independent reviewer attribution in Autonomous Mode, including
 implementing CDC, repair and higher-scale composition cases, without weakening
 workflow-specific or Operator gates.
 
+Clarified the limited One-Contributor option for simple, clearly defined,
+low-risk, low-effort work. Retained mandatory retrospectives in every method,
+existing independent gates and escalation when complexity or risk increases;
+prohibited using the exception to evade review or unresolved findings.
+
 ## Version 2.6.0 - 2026-09-28
 
 Defined reviewer-assessed retention of previously reproduced evidence during

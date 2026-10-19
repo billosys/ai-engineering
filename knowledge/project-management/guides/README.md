@@ -132,7 +132,12 @@ Guardrail phrases for source and package validation: no shortcuts; no skipped va
 When the Operator selects Autonomous Mode, first read its
 [canonical definition](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode).
 It includes Expedited Mode and authorizes CDC to select and revise contributor
-arrangements within the recorded scope. The default endpoint is the named arc;
+arrangements within the recorded scope. One-Contributor is limited to simple,
+clearly defined, low-risk, low-effort tasks or slices, with recorded rationale
+and proportionate self-checks; it cannot bypass review gates or unresolved
+findings. Escalate staffing or pause when the work no longer fits that boundary.
+Retrospectives remain mandatory in all three methods. The default endpoint is
+the named arc;
 an explicit override may authorize several arcs or a whole approved project.
 At that endpoint, report back instead of following Expedited Mode's normal
 next-arc advancement beyond the authorization.

@@ -6,6 +6,11 @@ Added Autonomous Mode execution and authorization boundaries to Expedited Mode
 operations; preserved durable handoffs, reviewer attribution, scale-specific
 gates and mandatory CDC retrospectives across contributor arrangements.
 
+Clarified the limited One-Contributor option for simple, clearly defined,
+low-risk, low-effort work. Retained mandatory retrospectives in every method,
+existing independent gates and escalation when complexity or risk increases;
+prohibited using the exception to evade review or unresolved findings.
+
 ## Version 2.19.1 - 2026-10-12
 
 Refined new-project decomposition around usable increments, scoped prerequisite

@@ -6,6 +6,11 @@ Added Operator-authorized Autonomous Mode routing: arc-default scope, adaptive
 contributor arrangements, independent review, non-default source branches,
 ambiguity pauses and closing retrospectives.
 
+Clarified the limited One-Contributor option for simple, clearly defined,
+low-risk, low-effort work. Retained mandatory retrospectives in every method,
+existing independent gates and escalation when complexity or risk increases;
+prohibited using the exception to evade review or unresolved findings.
+
 ## Version 2.7.2 - 2026-10-12
 
 Routed and bundled delivery-oriented planning and prompt-authoring refinements:

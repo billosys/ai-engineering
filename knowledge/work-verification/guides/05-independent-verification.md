@@ -34,8 +34,14 @@ does not establish independence; the verifier must inspect the actual work.
 Under explicitly authorized
 [Autonomous Mode](../../engineering-methods/guides/01-engineering-methodology.md#autonomous-mode),
 CDC may assign an independent reviewer subagent or a CRC and revise contributor
-arrangements within scope. Record the actual implementer/verifier contexts and
-artifact convention before review. If CDC implements, a separate reviewer owns
+arrangements within scope. The mode permits One-Contributor only for simple,
+clearly defined, low-risk, low-effort tasks under its recorded exception; report
+those results as self-checked. It does not create an independent gate solely for
+such a task, but existing gates and unresolved findings remain binding. Required
+retrospectives still apply and are not independent verification.
+
+For work requiring independent verification, record the actual implementer/verifier
+contexts and artifact convention before review. If CDC implements, a separate reviewer owns
 the verification verdict; CDC cannot sign independent acceptance for that work.
 Use the selected workflow's records with explicit actual-author attribution,
 including a reviewer-authored `cdc-verification.md` when the two-contributor

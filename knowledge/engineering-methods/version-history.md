@@ -7,6 +7,11 @@ selection and transitions to CDC within explicit authorization, with
 independent verification, arc-default scope and explicit project override,
 branch isolation, review cycles and ambiguity escalation.
 
+Clarified the limited One-Contributor option for simple, clearly defined,
+low-risk, low-effort work. Retained mandatory retrospectives in every method,
+existing independent gates and escalation when complexity or risk increases;
+prohibited using the exception to evade review or unresolved findings.
+
 ## Version 1.17.1 - 2026-10-12
 
 Clarified that SDLC activities recur within delivery increments rather than
