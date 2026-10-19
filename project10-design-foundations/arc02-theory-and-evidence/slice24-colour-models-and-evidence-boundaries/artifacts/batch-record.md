@@ -496,3 +496,36 @@ Warning classes are accepted non-hard path categories:170 repo-only/provenance,1
 
 
 **Late intake recovery disclosure:** Final receipt audit found that the initial combined collaboration-framework output had not delivered the complete middle/tail into context. Source entrypoint lines201–567 were fully recovered after source edits/commit, before planning return. Project active-body tail245–284 was also recovered then. This is a process deviation from the before-dependent-edits contract, not a retroactive claim of preflight completeness. No new conflicting obligation was found; canonical Autonomous Mode, specific skill/guide rules, scope and all source checks already applied. Independent CDC must assess this deviation explicitly. Subsequent final-body reading covered all19 bodies plus the two complete changed guides, with final quote-only preservation additions and the two local reread corrections inspected at their changed spans.
+
+
+## Iteration02 — F01 Weber summary correction
+
+Current assignment `../cc-prompt-iteration02.md` at planning `4e3e99caa8936fbd0895d84219340c444e6620f2`; source predecessor `e95d58679c5906a3257255c2e13b98a0b8776613`. CC `/root/s24_cc`; independent reviewer `/root/s24_review`, coordinated by CDC `/root`.
+
+### Current intake before the dependent edit
+
+Read the complete Iteration02 prompt, complete current `../cdc-verification.md`, complete slice-plan 1.2 and ledger (open/done/done/done), full pinned manifesto, current Project10 active body 1–290 through its actual Version History boundary and Arc02 active body 1–160 through its Version History boundary. Reread engineering-methods guide01 Autonomous Mode 326–461, project-management guide03 iteration 202–251 and foundations' scoped Weber paragraph 346–355. All current required output was received without truncation before the literal repair. The previously completed framework/domain/card/metadata reads are retained at unchanged source bytes, not claimed re-read here. The earlier late-intake event remains historical as independently assessed; this pass makes no claim to repair past reading order.
+
+Contract readback: F01 is one live technical statement, so replace exactly the issued epigraph block once, leaving wrapper/principle/other bytes frozen. Reversal must recover the whole e95d5867 manifesto blob; a one-path committed-tree comparison freezes every other source object, including all 233 cards/34 scalars/161 sources/SKILL/history/build lists. Preserve1.0.21 as the same correction batch. Retain independently accepted 19-card/124 typed/124 body/22 CQ outcomes only at identical inputs. Run current package-path dependencies then a separate fresh design build and compare 8/8 committed payloads. Keep the four ledger statuses open/done/done/done and append only existing evidence/return records; no self-acceptance, source acquisition, closure or successor.
+
+
+### F01 result, retained applicability and fresh integration
+
+Source correction **154a5b766286966b8d6a649db2b45726dc497175**, parent e95d58679c5906a3257255c2e13b98a0b8776613, changes exactly `knowledge/design/guides/design.md`: the issued literal epigraph replacement 1/1. It now states a specified discrimination task/range, a fitted fraction and positive intensity, attributed “After Weber (model summary).” The unchanged principle keeps geometric scales optional; the unchanged foundations Weber paragraph defines ΔI/I=k with task/range and fitted fraction. No exact historical quotation/date is asserted.
+
+Reversing the new block restores the entire old manifesto byte-for-byte, SHA256 `bc82a04aa32ca982d43075015efc74567c5fc59937f268165c413e3ba9c3bb04`. New manifesto SHA256 `edc04be29accee5bfb350a3b9664bb6f4be73d440a145fb88e77f3554bfba721`. Complete committed-tree comparison found the same tracked path set and **7079 other tracked objects identical**. This freezes all 233 cards,34 metadata scalars,161 sources, other guides, SKILL/history, schema/helpers/lists. The owning metadata/history remain 1.0.21 unchanged; no version label/history was added to the changed guide. Current native version dependencies also pass.
+
+**Retained, not newly run or re-read:** independent19-card/five-dimension,79 pair-premise/124 typed,124 separate body/132 named-target and22 membership/five-CQ results at source e95d5867/planningc5e03c2b remain applicable because every input blob is identical. The independent S24-02/03 findings and unaffected parts of S24-04 are retained at their exact reviewed scope. Prior help/description checks and standalone version-check invocation are retained at unchanged Makefile/helper/metadata inputs; they are not claimed freshly invoked in this pass. Native version/build dependencies within the current package-path command are fresh and separately identified below. No semantic or arithmetic proofs were repeated merely to reproduce receipts.
+
+| Current check | Observed result |
+|---|---|
+| `make check-package-paths SKILL_PYTHON=/Users/oubiwann/lab/billosys/ai-engineering/.venv/bin/python` | exit0; native version dependencies 25 source skills/25 packages/0 errors;25 ZIPs/402 Markdown files/0 hard failures;606 warnings at605 unique locations;3 exceptions;808 external URLs skipped |
+| Separate subsequent `make design` with same SKILL_PYTHON | exit0; source-version dependency25/0 packages/0 errors;8 Markdown payloads,10 archive entries including2 directories,132038 uncompressed bytes |
+| ZIP payload vs committed source |8/8 Markdown members byte-identical to 154a5b766286966b8d6a649db2b45726dc497175; own fresh ZIP SHA256 `123dd4fbdebce82d64cc1f66c96f57fc5ca397ca2bbc623191cade9c7b507380` |
+| Literal reversal/tree preservation | replacement once, whole old manifesto recovered; exact1 source path/7079 other tracked objects unchanged |
+| Local links/fragments/format | replacement changes no headings/anchors/links; previous route proof remains applicable; current package-path gate0 hard failures; changed file LF/single EOF newline and current `git diff --check` clean |
+| Source commit/trailers | exact1-path commit; both Codex and Billo AI trailers parse; clean source checkout |
+
+Raw current logs are temporarily available at `/private/tmp/s24_i2_package_paths.log` and `/private/tmp/s24_i2_design.log` for reviewer inspection; no log/dataset/new checker was added to the artifact inventory. This pass encountered no command failure or output truncation. Source commit succeeded directly. The earlier failures/late-intake deviation and reviewer assessment remain preserved above and in `../cdc-verification.md`; this current intake is not a fictional past repair.
+
+Ledger statuses remain **open/done/done/done**. F01/S24-01 is proposed done by CC, pending independent inspection of the actual epigraph and current package. S24-04's prior done verdict stays pinned while this affected integration is submitted for independent checking. No original-fidelity, whole233 union, browser/AT/hosted/empirical, composition, Operator,1.1.0 or release result is inferred. No acquisition, maintained test framework, closure or successor.

@@ -106,3 +106,65 @@ Codex and Billo AI trailers. Prompts/plans/reviews/retrospectives are preserved.
    hosted evidence and full-corpus/release results were explicitly outside this
    supported assignment and remain open, not silently dropped. No main edit,
    merge,push,publication,closure or successor was performed.
+
+
+## Current return — Iteration02 F01 repair
+
+Assignment: [cc-prompt-iteration02.md](cc-prompt-iteration02.md), issued at
+planning4e3e99caa8936fbd0895d84219340c444e6620f2. The preceding return describes
+the preserved earlier candidate; this section is the current CC return.
+Independent reviewer `/root/s24_review` accepted S24-02/03/04 at the preceding
+bounded source e95d5867/CCc5e03c2b, leaving S24-01 open for F01.
+
+Source **154a5b766286966b8d6a649db2b45726dc497175** changes only
+`knowledge/design/guides/design.md`, with the exact issued Weber epigraph block.
+The entire old manifesto is recoverable by reversing that replacement. Every
+other 7079 tracked source object/path is identical to e95d5867, including all
+cards/metadata/sources/other guides/SKILL/history/helpers. Version remains 1.0.21.
+Both required co-author trailers parse and the source checkout is clean.
+
+| Criterion | Current disposition and evidence |
+|---|---|
+| S24-01 | **open; CC proposes done for F01.** Exact scoped model summary removes the unqualified technical statement and unverified historical quote/date. Current principle/foundations context checked; affected package 8/8 matches. Independent acceptance pending. |
+| S24-02 | **done at the independently accepted bounded predecessor; retained.** All 19 card bodies,34 scalars,79 premises,124 typed/124 separate body statements and22 CQ memberships have identical input bytes; no semantic re-review claimed. |
+| S24-03 | **done at the independently accepted predecessor; retained.** Exact1-path tree delta and full reversal preserve every other object and all protected populations. New epigraph scope is attested pending reviewer check. |
+| S24-04 | **done at predecessor integration scope; current affected proof submitted.** Current package-path gate and separate fresh design build pass; 8/8 committed payload match. Prior help/description/standalone-version invocation retained only at unchanged relevant inputs. |
+
+Fresh current runs, sequential: `make check-package-paths` then separate
+`make design`, using the existing root venv through SKILL_PYTHON; both exit0.
+Current native version dependencies report 25 source skills/25 packages/0 errors;
+path gate 25 ZIPs/402 Markdown files/0 hard failures,606 warnings605 locations,
+3 exceptions and808 skipped external URLs. Current raw logs are temporarily
+available in `/private/tmp/s24_i2_package_paths.log` and
+`/private/tmp/s24_i2_design.log`. This pass had no command failures or truncation.
+
+Fresh ZIP SHA256: `123dd4fbdebce82d64cc1f66c96f57fc5ca397ca2bbc623191cade9c7b507380`.
+All 8 Markdown members match committed source 154a5b766286966b8d6a649db2b45726dc497175. Whole version/history,
+links/fragments,LF/EOF,whitespace,exact scope and parsed trailers pass.
+
+Current required prompt/review/slice/parent/manifesto/rule reads completed before
+the dependent edit; complete visible ranges are in the
+[Iteration02 batch section](artifacts/batch-record.md#iteration02--f01-weber-summary-correction).
+Earlier late intake remains historical and independently assessed; no past
+receipt is rewritten or fabricated. Unchanged domain/card reads are retained,
+not claimed repeated. No original/history research or browser/AT/hosted behavior
+was commissioned or performed.
+
+### Iteration02 inventory and bubble-up
+
+Sole durable supporting artifact remains `artifacts/batch-record.md`; this report
+and ledger are the other two allowed planning outputs. All prior evidence is
+preserved. No added supporting file, dataset or maintained test machinery.
+Exact source allowlist: `knowledge/design/guides/design.md`.
+Exact planning allowlist: `artifacts/batch-record.md`, `closing-report.md`,
+`ledger.md` (Evidence/Notes only). Planning delivery hash is returned in the
+contributor handoff; the containing commit supplies this appended packet.
+
+The assigned missing piece is delivered as source 154a5b766286966b8d6a649db2b45726dc497175 with a fresh matching
+package, pending independent review. It changes no anticipated arc scope,
+sequencing or input dependency. The specified one-block correction, literal
+preservation and affected validation are all accounted for. All 150 book-original
+and 83 web-capture/lineage,complete corpus,actual behavior,hosted,composition,
+Operator and release gates retain their existing owners. No source main,
+merge,push,publication,closure or next slice occurred. CDC owns independent
+acceptance/retrospective and any eventual close.
