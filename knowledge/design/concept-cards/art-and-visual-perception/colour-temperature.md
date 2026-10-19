@@ -30,33 +30,34 @@ related:
 contrasts_with: []
 answers_questions:
   - "How do you construct a colour palette starting from a single brand colour using OKLCH? What systematic steps ensure adequate contrast and accessible combinations?"
-  - "How does temperament problem in music theory map to perceptual uniformity problem in colour science?"
 rosetta_stone:
   -
     domain: "engineering"
     concept: "Colour temperature in Kelvin (blackbody radiation)"
     rating: "structural"
-    note: "Physical colour temperature (Kelvin) describes the chromaticity of blackbody radiation: lower K = warmer (reddish), higher K = cooler (bluish) — the same warm/cool vocabulary applies to physical and perceptual colour temperature, though the mechanisms differ."
+    note: "Kelvin colour temperature refers to ideal blackbody radiation; CCT approximates another source chromaticity relative to that locus. Artistic warm/cool character is contextual, not a Kelvin coordinate or universal inverse scale."
 css_implementation:
   -
     property: "hue angle (oklch)"
-    example: "/* Warm: H ≈ 0–60° (reds, oranges, yellows); Cool: H ≈ 180–270° (greens, blues) */"
+    example: "/* Chosen hue candidates need contextual warm/cool comparison; no Kelvin mapping */"
     support: "baseline"
   -
-    property: "filter: hue-rotate() for temperature shift"
-    example: "filter: hue-rotate(-20deg); /* shifts toward warm (red) */"
+    property: "filter: hue-rotate() (RGB matrix effect)"
+    example: "filter: hue-rotate(-20deg); /* RGB matrix; not a Kelvin or exact OKLCH hue shift */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-Colour temperature is the perceptual quality of colours as warm (typically reds, oranges, yellows) or cool (typically blues, greens, violets), determined primarily by the direction of a colour's deviation toward red (warming) or blue (cooling).
+Artistic colour temperature describes relative warm/cool character in a composition. Arnheim's admixture-direction hypothesis is an explicitly uncertain account; Kelvin colour temperature and CCT describe different physical references.
 
 # Core Definition
 
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
+
 Colour temperature describes the perceived warmth or coolness of a colour — a quality that correlates with but is not simply determined by hue membership. Arnheim offers an analysis that distinguishes it from simple hue category: "My suggestion is that not the main color but the color toward which it deviates may determine the effect... a reddish blue looks warm whereas a bluish red looks cold" (Chapter VII, p. 394).
 
-This is Arnheim's distinctive contribution to colour temperature theory: it is not the dominant hue but the admixture direction — the "leaning" of the colour — that determines its temperature quality. A red with a blue tinge reads cold; a blue with a red tinge reads warm. This produces counterintuitive results: reddish blue (warm) vs. bluish red (cold), reddish yellow (warm) vs. bluish yellow (cold).
+This is Arnheim's represented hypothesis: admixture direction — the "leaning" of the colour — may affect its temperature quality. It is not an established universal determinant. A red with a blue tinge reads cold; a blue with a red tinge reads warm. This produces counterintuitive results: reddish blue (warm) vs. bluish red (cold), reddish yellow (warm) vs. bluish yellow (cold).
 
 Arnheim also notes that Itten designated complementary pair red-orange ↔ blue-green as the temperature poles, supporting the idea that red admixture warms and blue admixture chills. He connects colour temperature to broader expressive qualities: warm colours invite and feel outgoing; cool colours feel withdrawn and distant. This connects to Kandinsky's observations about yellow spreading outward and blue contracting inward.
 
@@ -64,42 +65,42 @@ Note: Arnheim explicitly states his account has not been systematically tested a
 
 # Prerequisites
 
-- **Hue** — Temperature is a quality of how a hue deviates toward other hues.
-- **Saturation** — Temperature is more pronounced at higher saturation; low-saturation (grey) colours are relatively temperature-neutral.
+- **Hue** — Supplies chromatic-character and admixture comparisons.
+- **Saturation** — Supplies vividness conditions; low-chroma colours can still appear warm/cool.
 
 # Key Properties
 
-1. **Admixture-determined** — Per Arnheim, it is the colour toward which a hue deviates (the admixture), not the main hue, that primarily determines temperature.
-2. **Reddish = warm, bluish = cool** — Red admixture warms any colour; blue admixture cools it.
-3. **Pure primaries are ambiguous** — Pure red, blue, or yellow cannot be clearly called warm or cold; temperature quality appears in mixtures and deviations.
-4. **Expressive** — Warm colours are outgoing, inviting, advancing; cool colours are receding, withdrawing, distancing.
-5. **Spatial depth effect** — Warm colours tend to advance (appear closer); cool colours tend to recede. This is used in depth composition.
+1. **Relative character** — Compare actual neighbouring colours and conditions.
+2. **Source hypothesis** — Reddish/bluish admixture is Arnheim's uncertain proposal, not a universal transform.
+3. **Model coordinates** — An OKLCH angle identifies a chosen hue coordinate, not Kelvin or a complete appearance.
+4. **Expression** — Warm/cool descriptions can inform interpretation without diagnosing emotion, trust or agency.
+5. **Depth** — Temperature can interact with spatial cues; warmth does not always advance or weigh more.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Evaluate a colour by asking: toward which direction does it deviate? If toward red → warmer; if toward blue → cooler.
-2. Use colour temperature deliberately: warm foreground elements against cool backgrounds create depth and advance foreground.
-3. For consistent palette temperature: ensure accent colours are in the same temperature range as the dominant unless deliberate temperature contrast is intended.
-4. In OKLCH: H angles near 0°–60° (reds, oranges) and 60°–90° (yellows) are typically warm; H angles near 180°–270° (greens, blues, blue-violets) are typically cool.
+1. Compare the supplied brand colours in their actual arrangement.
+2. Try warmer/cooler relationships only where they serve meaning or composition; a warm CTA is not required.
+3. If using OKLCH, choose hue/lightness/chroma candidates, inspect gamut and actual state pairs.
+4. Do not treat CSS hue-rotate() as white balance or a Kelvin adjustment.
 
 ## To Identify/Recognise:
-1. Ask: does this colour feel like it comes toward you or recedes? (warm = advancing, cool = receding).
-2. Ask: if there are two similar colours, which appears warmer? The one with more red/orange admixture.
-3. In a colour picker: check the hue angle and assess whether any secondary admixture is toward red or blue.
+1. Describe relative warmth/coolness alongside hue, lightness and chroma.
+2. When discussing a lamp, distinguish an ideal blackbody temperature from CCT, which approximates a source chromaticity rather than its full spectrum.
 
 # Context & Application
 
-- **Typical contexts**: Brand colour selection (warm brands feel friendly/energetic; cool brands feel professional/trustworthy), photography colour grading (warm vs. cool tones), UI design (call-to-action warmth vs. informational coolness), data visualisation diverging scales.
-- **Common applications**: Warm/cool palette split for emotional differentiation; using temperature contrast for depth in flat design; colour grading in film/photography to set emotional tone; diverging colour scales in data visualisation (warm colours for positive/high values, cool for negative/low).
+Brand, grading and diverging-data palettes may use warm/cool contrasts. Keep supplied identity, readable state pairs and meaningful labels. Emotional and depth readings depend on context; red/orange is not mandatory for action, nor blue a trust guarantee.
 
 ## Cross-Domain Connections
 
-**Engineering → STRUCTURAL**: Physical colour temperature, measured in Kelvin (K), describes the spectral output of an ideal blackbody radiator. Counterintuitively, higher K = cooler-looking light (blue-white at 6500K, e.g. daylight) and lower K = warmer-looking light (orange-red at 2700K, e.g. candlelight). The same warm/cool vocabulary applies to both physical and perceptual temperature, but the scales run in opposite directions for physical and perceptual usage (low K = perceptually "warm"). This shared vocabulary between physical photometry and perceptual psychology creates a persistent source of confusion.
+**Engineering → STRUCTURAL**: Ideal blackbody colour temperature is a Kelvin reference; CCT relates another source's chromaticity to that locus. A lower-K source can appear warm and a higher-K source cool, but this is not an inverse numerical scale for artistic warmth. CSS hue-rotate() is a specified RGB matrix: neutral (.5,.5,.5) remains neutral even at −20deg, so it cannot universally warm a photograph or rotate every OKLCH hue by that angle.
 
 # Examples
 
-**Example 1** (pp. 393–394): Arnheim's counterintuitive analysis — "a reddish blue looks warm whereas a bluish red looks cold." The admixture direction, not the dominant hue, determines temperature. This challenges the common assumption that all reds are warm and all blues are cool.
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
+
+**Example 1** (pp. 393–394): Arnheim's counterintuitive analysis — "a reddish blue looks warm whereas a bluish red looks cold." In this represented hypothesis, admixture direction rather than dominant hue is proposed to affect temperature. This challenges the common assumption that all reds are warm and all blues are cool.
 
 **Example 2** (p. 394): Itten's temperature poles — red-orange ↔ blue-green as the maximum warm/cool contrast pair, supporting the role of red admixture in warming and blue admixture in cooling.
 
@@ -110,41 +111,45 @@ Note: Arnheim explicitly states his account has not been systematically tested a
 # Relationships
 
 ## Builds Upon
-- **Hue** — Temperature is a property of hue relationships (deviation direction).
+- **Hue** — Supplies chromatic-family comparisons; saturation supplies a distinct vividness condition.
 
 ## Enables
-- **Spatial depth in composition** — Warm/cool opposition creates perceptual depth (warm advances, cool recedes).
-- **Emotional palette design** — Temperature is a key tool for establishing emotional register.
+- **Spatial depth in composition** — Warm/cool differences can contribute, without a fixed direction.
+- **Emotional palette design** — Contextual expressive choice, not a reliable psychological diagnosis.
 
 ## Related
-- **Colour harmony** — Temperature consistency is one component of harmonic unity.
-- **Colour weight** — Temperature interacts with weight: warm colours tend to feel heavier and advance; cool colours feel lighter and recede.
-- **Complementary colours** — Complementary pairs are often also warm/cool pairs (e.g., red/green, orange/blue).
+- **Colour harmony** — Temperature consistency or contrast is one option.
+- **Colour weight** — Apparent influence is distinct from warmth, wavelength and depth.
+- **Complementary colours** — Some chosen pairs contrast warm/cool; this is not required for complementarity.
 
 ## Contrasts With
-- **Colour harmony through completion** — Harmony through completeness (complementarity) is distinct from harmony through temperature consistency, though they often align.
+- **Colour harmony through completion** — Source-specific completion and temperature consistency are distinct compositional ideas, not incompatible systems.
 
 # Common Errors
 
 - **Error**: Assuming all reds and oranges are warm and all blues and greens are cool.
-  **Correction**: Per Arnheim, temperature depends on admixture direction: a bluish red is cooler than a reddish yellow; a reddish blue is warmer than a bluish green. Temperature is about deviation direction, not hue category membership.
+  **Correction**: Arnheim's explicitly uncertain admixture hypothesis supplies those comparisons, not a proven rule. Compare actual neighbours and viewing conditions rather than classify every red as warm or every blue as cool.
 
 - **Error**: Using warm/cool to describe physical colour temperature (Kelvin) and perceptual temperature interchangeably.
-  **Correction**: Physical and perceptual colour temperature scales run in opposite directions (low K = warm-appearing light; perceptual warmth = toward red). The vocabulary is shared but the reference systems differ.
+  **Correction**: Low Kelvin blackbody references can appear warm, but artistic warmth is not an inverse numerical Kelvin scale. CCT concerns source chromaticity; contextual warm/cool comparisons concern appearance.
 
 # Common Confusions
 
 - **Confusion**: "Warm colours are always better for friendly/approachable brands."
-  **Clarification**: Temperature is expressive but not deterministic. Cool colours (blue) are associated with trust and reliability; warm colours (red/orange) with energy and urgency. Context, saturation, and combinations determine the actual emotional effect.
+  **Clarification**: No temperature category ensures an emotional result. Preserve the supplied brand and assess its particular audience, content and combinations.
 
 - **Confusion**: "Adjusting colour temperature in photo editing is the same as adjusting perceived colour warmth."
-  **Clarification**: Adjusting the Kelvin value of white balance shifts the entire image's colour balance; perceived warmth of specific elements will shift accordingly. They are related but not identical operations.
+  **Clarification**: A white-balance control acts on an image under a model; particular elements may change appearance differently. CSS hue-rotate() is neither Kelvin correction nor exact OKLCH hue rotation.
 
 # Source Reference
 
 Chapter VII: Color, "Art and Visual Perception," pp. 392–395 (section "Warm and Cold").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from the "Warm and Cold" section. Arnheim's admixture-direction hypothesis is directly stated, with his own acknowledgment of uncertainty ("it has not been tested systematically and may turn out to be quite wrong").
 - Confidence rationale: Medium — Arnheim states the hypothesis explicitly but with explicit uncertainty; the card preserves this uncertainty. The warm/cool distinction itself is well-established; Arnheim's specific admixture-direction mechanism is his own speculative contribution.

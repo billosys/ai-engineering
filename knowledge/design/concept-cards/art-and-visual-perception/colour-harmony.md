@@ -34,13 +34,13 @@ answers_questions:
 rosetta_stone:
   -
     domain: "music"
-    concept: "Tonal harmony / consonance (complementary frequency ratios)"
+    concept: "Tonal harmony and contextual colour relationships (limited analogy)"
     rating: "loose"
-    note: "Musical harmony involves frequency ratios producing acoustic consonance; colour harmony involves hue relationships producing perceptual completion — both are about structured relationships in circular perceptual spaces, but the mechanisms differ entirely."
+    note: "A chosen pitch-class cycle and hue ordering provide a limited organisational comparison. Frequency ratios, acoustic consonance, colour appearance and aesthetic coherence do not share one metric or mechanism."
 css_implementation:
   -
     property: "Custom properties for palette"
-    example: "--color-primary: oklch(0.5 0.2 270); --color-accent: oklch(0.6 0.18 90); /* complementary */"
+    example: "--color-primary: oklch(0.5 0.2 270); --color-accent: oklch(0.6 0.18 90); /* chosen hue opposition; check gamut and actual pairs */"
     support: "baseline"
   -
     property: "color-mix() for palette exploration"
@@ -50,13 +50,15 @@ css_implementation:
 
 # Quick Definition
 
-Colour harmony is the quality of a colour combination in which all constituent hues relate to one another through a coherent underlying structure — producing a whole that feels balanced, complete, and unified rather than arbitrary or chaotic.
+Colour harmony is a contextual judgment of coherence among colours. Complementary, analogous or triadic relationships are options for composition; no hue scheme, frequency ratio or quota guarantees harmony.
 
 # Core Definition
 
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
+
 Colour harmony describes the condition in which a set of colours forms a visually satisfying, unified whole. For Arnheim, harmony is not the absence of contrast or tension, but the presence of coherent structure in the relationships among colours. He treats it as the compositional counterpart to the perceptual phenomenon of complementarity: "Goethe describes the interrelation of these six hues in his Theory of Color: 'Single colors affect us, as it were, pathologically... However, the need for totality inherent in our organ guides us beyond this limitation. It sets itself free by producing the opposites of the particulars forced upon it and thus brings about a satisfying completeness'" (Chapter VII, p. 385).
 
-Arnheim identifies several types of harmonic relationship:
+The represented discussion suggests several compositional relationships:
 1. **Complementary harmony** — pairs or triplets of hues that produce chromatic completeness (R/G, Y/V, B/O, or the full primary triad R/Y/B).
 2. **Structural harmony through mixture** — colours connected by common elements (shared primary components).
 3. **Saturation/brightness unity** — colours at similar levels of saturation or brightness can harmonise by tonal consistency.
@@ -66,46 +68,41 @@ He consistently emphasises that harmony is context-dependent and that the same c
 
 # Prerequisites
 
-- **Hue** — Harmonic relationships are defined in terms of hue relationships.
-- **Saturation** — Saturation consistency or contrast is part of harmonic structure.
-- **Complementary colours** — The most widely used harmonic schemes are built on complementary relationships.
+- **Hue** — Supplies a chosen hue ordering.
+- **Saturation** — Supplies distinct vividness comparisons.
+- **Complementary colours** — Supplies one source-specific opposition/completion family.
 
 # Key Properties
 
-1. **Structural, not arbitrary** — Harmony results from coherent structural relationships among colours, not from following fixed rules without understanding.
-2. **Context-dependent** — The same colours can harmonise or clash depending on proportion, arrangement, and composition.
-3. **Perceptual completeness** — Harmonic combinations satisfy the eye's demand for chromatic wholeness (the "three-legged stool" of R/Y/B).
-4. **Multiple harmonic types** — Complementary, analogous, triadic, and split-complementary schemes each produce harmony through different structural relationships.
-5. **Saturation and value matter** — Harmony is affected by all three colour dimensions; hue relationships alone do not determine harmony.
+1. **Contextual coherence** — Purpose, arrangement, proportion and viewing context shape the judgment.
+2. **Scheme options** — Complementary, analogous and triadic constructions can help exploration without guaranteeing beauty or completeness.
+3. **Source-specific primaries** — The represented "three-legged stool" RYB system is distinct from additive RGB, Cleland's Munsell ordering and OKLCH angles.
+4. **Multiple attributes** — Lightness and chroma matter alongside hue; coordinates and perceived appearance are distinct.
+5. **Meaning before decoration** — Purposeful categorical and semantic colour remains valid; decorative competition can be reduced without banning diversity.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Choose a dominant hue (primary colour of the palette).
-2. Select a harmonic scheme:
-   - **Complementary**: add 180° to the dominant H in OKLCH.
-   - **Triadic**: add 120° and 240°.
-   - **Analogous**: ±20°–40° from dominant.
-   - **Split-complementary**: ±30° from the complement.
-3. Adjust proportions: use the dominant hue for ~60–70% of chromatic area, complement/accents for smaller portions.
-4. Unify saturation levels: bring all colours to a similar saturation range unless deliberate contrast is intended.
-5. Test in context: all colours must be evaluated together, in the actual design environment.
+1. Start with supplied brand values, task and needed semantic roles.
+2. Choose any helpful scheme: a declared OKLCH H+180° opposition, H±120° triad or adjacent-hue set constructs candidates only.
+3. Try proportions suitable for the content; 60–70% dominance and similar saturation are optional heuristics.
+4. Check output gamut, actual foreground/background/state pairs and non-colour meanings.
 
 ## To Identify/Recognise:
-1. Does the palette feel unified even if varied? Are there clear structural relationships among hues?
-2. Does removing any one colour leave the others feeling incomplete (pointing to a complementary or triadic structure)?
-3. Do the colours interact productively (enhancing each other) or destructively (creating noise)?
+1. Judge coherence in the actual arrangement, not just an isolated swatch wheel.
+2. Distinguish intentional contrast, data categories and decorative competition.
 
 # Context & Application
 
-- **Typical contexts**: Brand identity palette construction, UI colour systems, data visualisation categorical palettes, interior design, fashion, editorial design.
-- **Common applications**: Primary/secondary/accent colour systems in design tokens; categorical data palettes in information visualisation; brand colour guidelines specifying relationships between primary and accent colours.
+Brand, UI and data palettes can use coherent relationships while retaining supplied identity. A dashboard with six meaningful colour roles has not violated a numeric hue quota. Inspect inconsistent meaning, competing emphasis and failing pairs first; consolidate redundant decoration and preserve necessary categories, labels and state distinctions.
 
 ## Cross-Domain Connections
 
-**Music → LOOSE**: Musical harmony refers to the consonance of simultaneously sounding tones, grounded in simple frequency ratios (octave = 2:1, perfect fifth = 3:2). The analogy to colour harmony is structural — both involve relationships among elements in a circular perceptual space — but mechanically different. Acoustic consonance results from the absence of beating between close overtones; colour harmony results from complementary opponent-process completion and coherent structural relationships. The 12-hue colour wheel does not map to 12 equal-temperament semitones in any rigorous way (Arnheim does not claim it does; those who do are making a loose structural analogy).
+**Music → LOOSE**: Frequency ratios can describe musical intervals, but acoustic consonance also depends on timbre and context. A chosen pitch-class cycle and a hue circle offer a limited organisational analogy. They do not share a perception metric, prove opponent-process completion or transfer consonance into visual harmony.
 
 # Examples
+
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
 
 **Example 1** (p. 385): Delacroix's sketchbook triangle — a triangular diagram of the six fundamental hues (three primaries + three secondaries) illustrating the harmonic structure through complementary pairs: "the simplicity of its visual logic" recommends this system to artists.
 
@@ -113,24 +110,24 @@ He consistently emphasises that harmony is context-dependent and that the same c
 
 **Example 3** (p. 383): Cézanne's late watercolours avoiding unmixed hues — "the anchorless violets, greens, and reddish yellows seem to move in a constant flux, with no rest anywhere except in the supreme balance of the picture as a whole." Here harmony exists at the compositional level, not within individual colour pairs.
 
-**Example 4** (p. 386): Van Gogh's complementary seasonal pairs as peaceful harmony (used with modulated proportions and low tension deployment), vs. the same system used for terror (equal proportions at maximum saturation). Same structural scheme, opposite harmonic effect — determined by deployment.
+**Example 4** (p. 386): Van Gogh's complementary seasonal pairs as peaceful harmony (used with modulated proportions and low tension deployment), vs. the same system used for terror (equal proportions at maximum saturation). The represented comparison attributes different expression to deployment; it does not supply a universal proportion rule.
 
 # Relationships
 
 ## Builds Upon
-- **Complementary colours** — The foundation of the most prominent harmonic schemes.
-- **Hue, saturation** — All dimensions participate in harmonic relationships.
+- **Complementary colours** — Supplies one source-specific relationship family.
+- **Hue, saturation** — Supplies distinct descriptive attributes; no scheme is mandatory.
 
 ## Enables
-- **Palette construction** — Practical palette design applies harmonic principles systematically.
-- **Compositional unity** — Harmonic colour relationships contribute to the unity of a visual composition.
+- **Palette construction** — Relationships can guide candidate exploration followed by actual role/pair checks.
+- **Compositional unity** — Coherence can be judged in arrangement and use.
 
 ## Related
-- **Simultaneous contrast** — Contrast is the mechanism; harmony is the controlled use of contrast toward aesthetic ends.
-- **Colour weight** — Weight imbalance disrupts harmony; harmonic palettes typically manage visual weight through proportion.
+- **Simultaneous contrast** — Contextual appearance can affect coherence; it is not harmony's sole mechanism.
+- **Colour weight** — Apparent influence may inform proportion without a mass or balance formula.
 
 ## Contrasts With
-- **Colour discord / clash** — When colours lack structural relationship and interact destructively (mutual repulsion without resolution).
+- **Colour discord / clash** — Local aesthetic-description construct; apparent conflict may be deliberate, not proof of missing structure.
 
 # Common Errors
 
@@ -143,16 +140,20 @@ He consistently emphasises that harmony is context-dependent and that the same c
 # Common Confusions
 
 - **Confusion**: "Colour harmony means all the colours look similar."
-  **Clarification**: Analogous schemes (similar hues) are harmonious, but complementary and triadic schemes achieve harmony through structural completeness, not similarity. Maximum contrast can be maximally harmonic.
+  **Clarification**: Similarity or strong contrast may support a composition. Neither adjacent nor opposed hue positions guarantee harmony.
 
 - **Confusion**: "There are fixed rules for colour harmony (the 60-30-10 rule, etc.)."
-  **Clarification**: These rules of thumb (e.g., 60% dominant / 30% secondary / 10% accent) are practical heuristics, not perceptual laws. Arnheim's analysis shows harmony is contextual and compositional, not formula-dependent.
+  **Clarification**: Such proportions are optional heuristics. Preserve supplied identity and meaningful categories; inspect the actual deployment.
 
 # Source Reference
 
 Chapter VII: Color, "Art and Visual Perception," pp. 381–390 (sections "Syntax of Combinations," "The Fundamental Complementaries," "Interaction of Color").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from multiple sections of Chapter VII. Arnheim does not use "colour harmony" as a section title but treats it throughout the chapter as the goal of colour composition.
 - Confidence rationale: Medium — the concept is pervasive but Arnheim's treatment is embedded in broader discussions of composition and interaction rather than isolated as a defined concept.

@@ -189,3 +189,7 @@ do not guarantee outcomes across content, users or browsers.
   retained source reports and their unresolved original-fidelity limits.
 - Corrected scoped mapping/compatibility metadata and removed non-feature CSS
   records without adding cards, fields or a mandatory spatial design system.
+
+## Version 1.0.28
+
+- 2026-10-19: Correct eighteen connected light/colour/context cards; distinguish appearance attributes, model coordinates, constancy and rendering; retain source-specific examples, scoped local relationships and competency-question gaps. Original fidelity and actual behavior gates remain separate.

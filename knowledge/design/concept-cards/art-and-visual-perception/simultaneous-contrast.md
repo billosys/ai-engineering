@@ -36,18 +36,18 @@ answers_questions:
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Lateral inhibition / opponent process (antagonistic neural computation)"
-    rating: "rigorous"
-    note: "Simultaneous contrast is the perceptual manifestation of lateral inhibition in the retina — a computational subtraction of neighbour signals that is mathematically describable as a difference-of-Gaussians spatial filter."
+    concept: "Opponent-style response models (mechanism not established here)"
+    rating: "structural"
+    note: "A centre-minus-surround filter illustrates an opponent-style response model. No empirical fit, neural identity or complete mechanism for simultaneous contrast is established here."
   -
     domain: "engineering"
     concept: "Edge sharpening / unsharp mask"
     rating: "structural"
-    note: "Unsharp mask (USM) in digital imaging deliberately amplifies the lateral inhibition effect — it exaggerates contrast at edges, producing the same kind of perceptual enhancement that simultaneous contrast creates."
+    note: "Unsharp masking subtracts a blurred component to enhance edges. This engineered analogy does not establish the same observer computation or eliminate contextual appearance."
 css_implementation:
   -
     property: "isolation: isolate (containing blend mode contexts)"
-    example: "isolation: isolate; /* prevent unintended blend mode propagation */"
+    example: "isolation: isolate; /* groups blending; does not stop perceptual induction */"
     support: "baseline"
   -
     property: "background-color (context matters)"
@@ -57,55 +57,58 @@ css_implementation:
 
 # Quick Definition
 
-Simultaneous contrast is the perceptual phenomenon in which adjacent colours mutually modify each other's appearance — a colour looks different placed against different backgrounds, shifting in apparent hue, saturation, or brightness toward the complement or opposite of its neighbour.
+Simultaneous contrast is a contextual appearance effect: adjacent/surrounding colours can alter apparent hue, saturation or light-dark character while their specified coordinates stay fixed. Direction and magnitude depend on conditions.
 
 # Core Definition
 
+This presents the represented Arnheim account. Exact edition, pages, quotations, named examples, figures, experiments, historical claims and physiological explanations remain unassessed against the unavailable original. Current analytic qualifications do not certify source fidelity.
+
 Simultaneous contrast is the perceptual effect by which a colour's apparent hue, saturation, or brightness is altered by the colours adjacent to it, viewed simultaneously. The effect was given its classical formulation by Michel Eugène Chevreul: "If one views at the same time two areas of different brightness but of the same hue, or of the same brightness but of different hue, in juxtaposition, i.e., bordering on each other, the eye will observe... modifications that bear in the first case on the intensity of the color and in the second on the optical composition of the two juxtaposed colors" (Chapter VII, p. 388, Arnheim quoting Chevreul).
 
-The effect operates in the direction of physiological complementarity — each colour shifts its neighbour toward its own complementary. A red area makes an adjacent grey look slightly green; a yellow area makes an adjacent orange look slightly redder. This is why "the same part in two different wholes is not the same thing. The same color in two different contexts is not the same color" (p. 387, Arnheim quoting Ruskin).
+A complementary-direction description is a useful represented pattern, not a universal shift law for every geometry, attribute or viewing condition. In the represented demonstrations, a red surround can make grey appear greenish and a yellow surround can make orange appear redder. These are conditional examples, not compensation formulas. This is why "the same part in two different wholes is not the same thing. The same color in two different contexts is not the same color" (p. 387, Arnheim quoting Ruskin).
 
-Arnheim treats simultaneous contrast as the primary manifestation of colour interaction and explains its physiological basis via opponent-process theory (Hering) and lateral inhibition in the retina.
+The represented account relates contrast to opponent-style explanations. These examples do not establish a specific retinal computation or a complete physiological mechanism.
 
-Note: Arnheim's account is phenomenological (1954/1974). The full physiological account (lateral inhibition, centre-surround receptive fields) was developed through the 1950s–1960s; Arnheim acknowledges the physiological basis without specifying the mechanism precisely.
+The filter comparison below is an added illustration. Neural attribution and historical chronology remain unassessed against the original; no complete physiological account is claimed.
 
 # Prerequisites
 
-- **Hue** — Contrast modifies perceived hue in the direction of the neighbour's complement.
-- **Saturation** — Contrast modifies perceived saturation.
-- **Tonal value** — Simultaneous contrast also operates on lightness (bright surrounds make a grey appear darker; dark surrounds make it appear lighter).
+- **Hue** — Supplies chromatic-character comparisons.
+- **Saturation** — Supplies distinct relative-colourfulness/model comparisons.
+- **Tonal value** — Supplies light-dark appearance comparisons.
 
 # Key Properties
 
-1. **Complementary direction** — The shift is always toward the complementary of the inducing colour.
-2. **Bidirectional** — Both colours in a juxtaposition modify each other simultaneously.
-3. **Strongest at borders** — The effect is greatest at the boundary between two colours; it decreases with distance.
-4. **Operates on hue, saturation, and value** — All three dimensions are subject to contrast modification.
-5. **Stabilised by context/composition** — In a well-organised composition, the mutual influences stabilise and become part of the visual statement; in a chaotic composition, they create visual noise.
+1. **Contextual shift** — Apparent differences can be enhanced; a complementary direction is not universal.
+2. **Mutual influence** — Both regions may be affected differently; no symmetry of magnitude is assumed.
+3. **Geometry** — Area, edge structure, spatial scale and viewing conditions can matter.
+4. **Distinct attributes** — Hue, saturation/chroma and light-dark comparisons need their own definitions.
+5. **Assimilation comparison** — Some arrangements reduce apparent differences instead; no single mechanism or universal threshold is established.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. To observe: place the same grey chip on a red background and a green background — it will appear slightly greenish on red, slightly reddish on green.
-2. To control in palette design: test each colour in its intended context, not in isolation; what is specified in a colour picker may look substantially different in the actual UI.
-3. To mitigate: use value contrast alongside hue contrast; separate strongly contrasting colours with neutral buffers (white, black, grey).
+1. Place equal specified grey chips on red and green surrounds as a demonstration candidate; record actual conditions and observed appearance.
+2. Compare actual palette surfaces and states. Neutral buffers or spacing can alter context, not remove all induction.
+3. Keep pair contrast and redundant meaning checks separate from the appearance comparison.
 
 ## To Identify/Recognise:
-1. Take a colour that looks off — greener, redder, darker than expected — and examine its background/adjacent colours.
-2. Isolate the colour from its context (cover the background with grey or view through a hole in paper) and compare appearance.
+1. Confirm coordinate equality before comparing appearance.
+2. Use a reference surround or aperture as another viewing condition, not a context-free ground truth.
 
 # Context & Application
 
-- **Typical contexts**: Multi-colour UI design, data visualisation, infographics, brand colour application across different backgrounds, print/screen colour consistency.
-- **Common applications**: Understanding why a brand colour looks different on white vs. coloured backgrounds; explaining why the same icon looks different across UI states; palette construction (testing colours in context, not in isolation).
+Brand colours, icons and charts can appear different across surfaces. Review actual combinations and meaningful roles; retain labels and state distinctions. A six-role dashboard need not be defective. Reduce inconsistent decorative competition where it harms hierarchy without imposing a hue quota.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Simultaneous contrast is the perceptual manifestation of centre-surround lateral inhibition. The retinal ganglion cells compute a difference-of-Gaussians (DoG) filter: `response = G_centre(σ₁) − G_surround(σ₂)`, where G is a Gaussian with different spatial extents. This spatial opponent process amplifies colour differences at boundaries and suppresses uniform colour regions — the mathematical structure underlying simultaneous contrast. The Jameson and Hurvich receptor-field theory cited by Arnheim describes this mechanism.
+**Mathematics → STRUCTURAL**: An opponent-style centre-minus-surround model can be illustrated with a difference of Gaussian kernels. Such a filter represents a chosen response computation; no fit, neural identity or complete explanation of these appearance effects is established here.
 
-**Engineering → STRUCTURAL**: Unsharp masking (USM) deliberately amplifies this opponent-process effect. It subtracts a blurred (low-frequency) copy of the image from the original, boosting edge contrast — the same computation that lateral inhibition performs automatically in the retina. Artists working with simultaneous contrast and engineers sharpening images are exploiting the same spatial frequency mechanism.
+**Engineering → STRUCTURAL**: Unsharp masking subtracts a blurred image component to enhance edges under an engineered algorithm. Its resemblance to an opponent model does not prove that observers use the same computation. CSS isolation creates a blending group, not perceptual isolation from neighbouring colours.
 
 # Examples
+
+These are retained reported examples from the existing extraction, not independently verified quotations, figures, experiments or historical conclusions.
 
 **Example 1** (p. 387–388): Arnheim on colour instability — "Every hue throughout your work is altered by every touch that you add in other places; so that what was warm a minute ago, becomes cold when you have put a hotter color in another place" (Ruskin, quoted by Arnheim). This is simultaneous contrast propagating through the composition.
 
@@ -113,46 +116,50 @@ Note: Arnheim's account is phenomenological (1954/1974). The full physiological 
 
 **Example 3** (p. 388): Von Allesch's experiment with greenish yellow and reddish yellow — brought together they emphasise their distinctness, each shifting toward the complementary direction of the other. Simultaneous contrast sharpened their apparent difference even though individually they appeared as pure yellows.
 
-**Example 4** (p. 388–389): Assimilation vs. contrast — the countereffect. When hues bordering each other are sufficiently similar, or areas are sufficiently small, they approach each other rather than contrast (Bezold spreading effect). The same physiological mechanism can produce assimilation when the stimulus geometry triggers broader receptive fields.
+**Example 4** (p. 388–389): Assimilation vs. contrast — the countereffect. When hues bordering each other are sufficiently similar, or areas are sufficiently small, they approach each other rather than contrast (Bezold spreading effect). This is a contextual contrast/assimilation comparison; a shared physiological mechanism is not established here.
 
 # Relationships
 
 ## Builds Upon
-- **Hue, saturation, tonal value** — Simultaneous contrast modifies all three dimensions.
+- **Hue, saturation, tonal value** — Supply the appearance descriptions being compared.
 
 ## Enables
-- **Colour harmony** — Understanding contrast is prerequisite to constructing harmonious palettes — colours that interact productively rather than destructively.
-- **Josef Albers' colour work** — "Interaction of Color" (cited by Arnheim) is a systematic study of simultaneous contrast as the basis of colour composition.
+- **Colour harmony** — Contextual comparison can inform palette choices without guaranteeing harmony.
+- **Josef Albers' colour work** — A named related work reported by the extraction, not a resolved local card.
 
 ## Related
-- **Complementary colours** — Complementary pairs produce maximum simultaneous contrast; knowing complementaries enables predicting contrast shifts.
-- **Colour assimilation** — The opposite phenomenon: when adjacent areas are similar or small enough, they merge rather than contrast.
-- **Colour constancy** — Constancy operates at the scene level; simultaneous contrast operates locally at boundaries.
+- **Complementary colours** — Chosen opposition is one comparison, not a maximum-effect theorem.
+- **Colour assimilation** — Local contextual-appearance construct: reduced apparent difference in the stated similar/small-area arrangements.
+- **Colour constancy** — Stability and contextual shifts can coexist; not simply global versus local mechanisms.
 
 ## Contrasts With
-- **Colour assimilation** — Assimilation (Bezold spreading effect) occurs when adjacent hues converge rather than contrast; the two effects are antagonistic and context-dependent.
+- **Colour assimilation** — Compares increased versus reduced apparent difference under actual conditions, without proving a common neural origin.
 
 # Common Errors
 
 - **Error**: Choosing a brand colour palette in isolation (single swatches on white), then applying it to various backgrounds without testing.
-  **Correction**: All colour decisions must be made in context. Simultaneous contrast will shift the appearance of every colour depending on what surrounds it. Palette construction must include testing in actual application contexts.
+  **Correction**: Inspect the intended neighbours, surfaces, text and states. A predicted complementary shift is not a measured compensation amount.
 
 - **Error**: Adding more colours to make a palette more vibrant, ending in a "clown car" of mutually competing contrasts.
-  **Correction**: Each colour's simultaneous contrast with every other in the composition compounds. When too many strongly chromatic colours are used, all of them mutually destabilise — none reads clearly. Reduce palette complexity: limit to a small number of hues with controlled relationships.
+  **Correction**: Check meaning, consistency and actual hierarchy. Consolidate unhelpful decoration; preserve purposeful categorical/semantic differences and non-colour cues. No fixed hue count establishes failure.
 
 # Common Confusions
 
 - **Confusion**: "Simultaneous contrast is just a trick; the colours don't really change."
-  **Clarification**: The perceptual change is real and irreducible. There is no "correct" appearance of a colour independent of its context — context is constitutive of colour perception. Designing as if colours have context-independent appearances leads to predictable colour failures.
+  **Clarification**: A specified coordinate can stay fixed while appearance changes. Comparing actual contexts is useful; no privileged context-free appearance or universal failure prediction is established by the represented demonstrations.
 
 - **Confusion**: "Simultaneous contrast and colour harmony are opposites."
-  **Clarification**: They are not opposites but related phenomena. Colour harmony is the design practice of arranging colours so their simultaneous contrast interactions are aesthetically productive rather than chaotic.
+  **Clarification**: They are related rather than opposites. Contextual appearance can affect a judgment of harmony, alongside meaning, proportions, arrangement and other attributes; simultaneous contrast is not its sole mechanism or definition.
 
 # Source Reference
 
 Chapter VII: Color, "Art and Visual Perception," pp. 387–390 (section "Interaction of Color").
 
 # Verification Notes
+
+Current bounded review separates appearance, model coordinates and rendering operations as explained above. Technical corrections and local relationship/CQ decisions are same-context proposals; original fidelity and actual rendered/observer outcomes remain unassessed. Extraction-confidence metadata is unchanged.
+
+Legacy extraction notes below are preserved as historical assertions from the predecessor card, **not current verification results**. In particular, their equivalence, chronology, physiology and “Verified” claims are not adopted by this review.
 
 - Definition source: Synthesised from the "Interaction of Color" section. Chevreul's formulation is quoted directly by Arnheim; the general account is Arnheim's own.
 - Confidence rationale: High — simultaneous contrast is explicitly named, its formulation attributed to Chevreul, its physiological basis referenced (opponent process, receptor fields), and illustrated with multiple experiments.
