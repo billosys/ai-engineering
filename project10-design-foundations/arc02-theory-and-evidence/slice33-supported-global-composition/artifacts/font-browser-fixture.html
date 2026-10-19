@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slice33 — one local URL-font width-axis case</title>
+<style>
+@font-face {
+ font-family: "P10S33FixedSFNSURL";
+ src: url("/fixed-sfns.ttf") format("truetype");
+ font-style: normal; font-weight: 1 1000; font-stretch: 30% 150%;
+ font-display: block;
+}
+body { margin: 24px; color: #111; background: white; font-family: system-ui, sans-serif; }
+.sample { display: inline-block; white-space: pre; font-family: "P10S33FixedSFNSURL", sans-serif;
+ font-size: 32px; font-weight: 400; font-style: normal; letter-spacing: 0;
+ font-optical-sizing: none; font-synthesis: none; }
+#narrow { font-variation-settings: "wght" 400, "opsz" 28, "GRAD" 400, "wdth" 75; }
+#wide { font-variation-settings: "wght" 400, "opsz" 28, "GRAD" 400, "wdth" 125; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* Separate containment keeps the preserved font sample available at narrow widths. */
+.font-case { overflow-x: auto; border: 1px solid #888; padding: 8px; }
+.diagnostic-controls { display: flex; flex-wrap: wrap; gap: .5em; margin-block: 1em; }
+.diagnostic-controls button, .order-record button { font: inherit; min-block-size: 2.75em; white-space: normal; overflow-wrap: anywhere; max-inline-size: 100%; }
+button:focus-visible { outline: 3px solid #005fcc; outline-offset: 3px; }
+#dense-case h2 { overflow-wrap: anywhere; }
+.comparison-container { container: orders / inline-size; font-size: 1rem; }
+.order-record { margin-block: 1em; border: 2px solid #555; }
+.order-record h3 { margin: .5em; overflow-wrap: anywhere; }
+.order-fields { display: grid; grid-template-columns: repeat(8, minmax(8em, 1fr)); gap: .75em; padding: .5em; margin: 0; }
+.order-field { min-inline-size: 0; overflow-wrap: anywhere; }
+.order-field dt { font-weight: 700; margin-block-end: .35em; }
+.order-field dd { margin: 0; }
+#selection { display: block; padding: .5em; border: 2px solid #555; overflow-wrap: anywhere; }
+@container orders (max-width: 72em) { .order-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container orders (max-width: 40em) { .order-fields { grid-template-columns: minmax(0, 1fr); } }
+.force-wide .order-fields { grid-template-columns: repeat(8, minmax(8em, 1fr)); }
+.large-spacing { font-size: 32px; }
+.large-spacing #dense-case, .large-spacing #dense-case * { line-height: 1.5; letter-spacing: .12em; word-spacing: .16em; }
+.large-spacing #dense-case p { margin-block: 2em; }
+</style>
+<section class="font-case" aria-label="Existing-font diagnostic; scroll horizontally if needed">
+<h1>One existing-font URL case</h1>
+<p>Same text and style; only requested width axis differs. A request alone is not proof of loading or axis use.</p>
+<h2>wdth 75</h2><span class="sample" id="narrow">Hamburgefontsiv 0123456789</span>
+<h2>wdth 125</h2><span class="sample" id="wide">Hamburgefontsiv 0123456789</span>
+<h2>Actual observations after load</h2><pre id="result" aria-live="polite">Pending font load.</pre>
+</section>
+<script type="module">
+const family = "P10S33FixedSFNSURL";
+const text = "Hamburgefontsiv 0123456789";
+const result = document.querySelector("#result");
+try {
+ const loaded = await document.fonts.load(`400 32px "${family}"`, text);
+ await document.fonts.ready;
+ await new Promise((resolve) => requestAnimationFrame(resolve));
+ const samples = ["narrow", "wide"].map((id) => {
+  const element = document.getElementById(id);
+  const css = getComputedStyle(element);
+  const range = document.createRange(); range.selectNodeContents(element);
+  return { id, text: element.textContent, width: element.getBoundingClientRect().width,
+   textWidth: range.getBoundingClientRect().width, family: css.fontFamily,
+   size: css.fontSize, weight: css.fontWeight, settings: css.fontVariationSettings,
+   opticalSizing: css.fontOpticalSizing, synthesis: css.fontSynthesis,
+   letterSpacing: css.letterSpacing, whiteSpace: css.whiteSpace,
+   transform: css.transform };
+ });
+ const observations = {
+  origin: location.origin, userAgent: navigator.userAgent, platform: navigator.platform,
+  devicePixelRatio, viewport: [innerWidth, innerHeight], status: document.fonts.status,
+  loadedFaces: loaded.map((face) => ({ family: face.family, status: face.status,
+   weight: face.weight, stretch: face.stretch, style: face.style })),
+  registeredFaces: Array.from(document.fonts).map((face) => ({ family: face.family, status: face.status })),
+  resource: performance.getEntriesByType("resource").filter((entry) => entry.name.endsWith("/fixed-sfns.ttf"))
+   .map((entry) => ({ name: entry.name, responseStatus: entry.responseStatus,
+    encodedBodySize: entry.encodedBodySize, decodedBodySize: entry.decodedBodySize })),
+  check: document.fonts.check(`400 32px "${family}"`, text), samples,
+  widthDifference: samples[1].textWidth - samples[0].textWidth
+ };
+ result.textContent = JSON.stringify(observations, null, 2);
+} catch (error) {
+ result.textContent = JSON.stringify({ outcome: "font case failed", name: error.name, message: error.message });
+}
+</script>
+
+<section id="dense-case" aria-labelledby="dense-title">
+<h2 id="dense-title">Two-order comparison</h2>
+<p>Compare both orders in the wide view. In a narrow view inspect every labelled value, then select the intended order. The query changes presentation; source order, fields and actions stay available.</p>
+<div class="diagnostic-controls" aria-label="Diagnostic presentation controls">
+<button type="button" id="normal">Normal 16px</button>
+<button type="button" id="large">Root 32px plus spacing</button>
+<button type="button" id="force" aria-pressed="false">Force eight columns (negative control)</button>
+</div>
+<div class="comparison-container" id="orders">
+<article class="order-record" aria-labelledby="order-a-title">
+<h3 id="order-a-title">Order A-1042</h3>
+<dl class="order-fields">
+<div class="order-field"><dt>Order ID</dt><dd>A-1042</dd></div>
+<div class="order-field"><dt>Customer</dt><dd>Northwind Research Co-operative</dd></div>
+<div class="order-field"><dt>Status</dt><dd>Queued</dd></div>
+<div class="order-field"><dt>Item count</dt><dd>17</dd></div>
+<div class="order-field"><dt>Total</dt><dd>$1,840.50</dd></div>
+<div class="order-field"><dt>Age</dt><dd>2 days</dd></div>
+<div class="order-field"><dt>Updated time</dt><dd>09:42 UTC</dd></div>
+<div class="order-field"><dt>Review action</dt><dd><button type="button" data-order="A-1042">Review order A-1042</button></dd></div>
+</dl>
+</article>
+<article class="order-record" aria-labelledby="order-b-title">
+<h3 id="order-b-title">Order B-2073</h3>
+<dl class="order-fields">
+<div class="order-field"><dt>Order ID</dt><dd>B-2073</dd></div>
+<div class="order-field"><dt>Customer</dt><dd>Marsh &amp; Harbour Studio</dd></div>
+<div class="order-field"><dt>Status</dt><dd>Review required</dd></div>
+<div class="order-field"><dt>Item count</dt><dd>5</dd></div>
+<div class="order-field"><dt>Total</dt><dd>$426.00</dd></div>
+<div class="order-field"><dt>Age</dt><dd>4 days</dd></div>
+<div class="order-field"><dt>Updated time</dt><dd>08:17 UTC</dd></div>
+<div class="order-field"><dt>Review action</dt><dd><button type="button" data-order="B-2073">Review order B-2073</button></dd></div>
+</dl>
+</article>
+</div>
+<output id="selection" aria-live="polite">No order selected.</output>
+<h3>Actual dense-case observations</h3><pre id="dense-result">Pending measurement.</pre>
+</section>
+<script type="module">
+const root = document.documentElement;
+const denseResult = document.getElementById("dense-result");
+const selection = document.getElementById("selection");
+function measureDense() {
+ const container = document.getElementById("orders");
+ const containerStyle = getComputedStyle(container);
+ const records = Array.from(document.querySelectorAll(".order-record")).map((record) => {
+  const fields = record.querySelector(".order-fields");
+  const bounds = record.getBoundingClientRect();
+  return { name: record.querySelector("h3").textContent, left: bounds.left, right: bounds.right,
+   width: bounds.width, scrollWidth: record.scrollWidth,
+   columns: getComputedStyle(fields).gridTemplateColumns,
+   fields: Array.from(record.querySelectorAll(".order-field")).map((field) => {
+    const box = field.getBoundingClientRect();
+    const button = field.querySelector("button");
+    const css = getComputedStyle(field);
+    return { label: field.querySelector("dt").textContent, value: field.querySelector("dd").textContent,
+     left: box.left, right: box.right, width: box.width, scrollWidth: field.scrollWidth,
+     display: css.display, visibility: css.visibility,
+     action: button ? { name: button.textContent, width: button.getBoundingClientRect().width,
+      height: button.getBoundingClientRect().height, disabled: button.disabled } : null };
+   }) };
+ });
+ denseResult.textContent = JSON.stringify({ origin: location.origin, viewport: [innerWidth, innerHeight],
+  querySupport: CSS.supports("container-type", "inline-size"), rootFont: getComputedStyle(root).fontSize,
+  container: { width: container.getBoundingClientRect().width, font: containerStyle.fontSize,
+   type: containerStyle.containerType, name: containerStyle.containerName },
+  spacing: { lineHeight: getComputedStyle(document.getElementById("dense-case")).lineHeight,
+   letterSpacing: getComputedStyle(document.getElementById("dense-case")).letterSpacing,
+   wordSpacing: getComputedStyle(document.getElementById("dense-case")).wordSpacing },
+  document: { clientWidth: document.documentElement.clientWidth, scrollWidth: document.documentElement.scrollWidth },
+  forcedWide: root.classList.contains("force-wide"), selected: selection.textContent,
+  focus: { id: document.activeElement?.id, tag: document.activeElement?.tagName }, records }, null, 2);
+}
+function afterPaint() { requestAnimationFrame(measureDense); }
+document.getElementById("normal").addEventListener("click", () => { root.classList.remove("large-spacing"); afterPaint(); });
+document.getElementById("large").addEventListener("click", () => { root.classList.add("large-spacing"); afterPaint(); });
+document.getElementById("force").addEventListener("click", (event) => {
+ const on = root.classList.toggle("force-wide"); event.currentTarget.setAttribute("aria-pressed", String(on)); afterPaint();
+});
+for (const button of document.querySelectorAll("button[data-order]")) {
+ button.addEventListener("click", () => { selection.textContent = `Selected order ${button.dataset.order}.`; afterPaint(); });
+}
+window.addEventListener("resize", afterPaint);
+afterPaint();
+</script>
+</html>
