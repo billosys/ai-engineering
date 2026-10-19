@@ -138,7 +138,7 @@ The following are scoped conceptual reading connections. In the represented acco
 # Common Confusions
 
 - **Confusion**: Shape completion is the same as the gestalt law of closure.
-  **Clarification**: Closure (closing open outlines into bounded regions) is related but distinct. Shape completion in Arnheim's sense specifically concerns the perceptual filling-in of physically absent shape portions — amodal completion. Closure concerns the tendency to perceive open outlines as closed. Both are driven by Praegnanz.
+  **Clarification**: Closure concerns perceiving an open outline as bounding a region. Amodal completion concerns experiencing an occluded object as continuing behind an occluder without its hidden surface being visibly painted. This card also reports clinical and afterimage cases; those reports are related context, not all classified here as amodal completion. Within the represented account, simplicity helps interpret partial forms. With the original unavailable, this review does not establish one phenomenon or mechanism for all these cases.
 
 - **Confusion**: Completion is an intellectual inference from past experience.
   **Clarification**: Arnheim explicitly distinguishes completion from inference: the hemianopia patient "is not merely guessing by inference from past experience, but actually sees" the complete figure. This preserves Arnheim's distinction between seeing and guessing; it does not independently establish a cortical field mechanism or rule out learned expectations.
