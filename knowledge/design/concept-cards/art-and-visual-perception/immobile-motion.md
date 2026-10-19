@@ -30,76 +30,79 @@ related:
 contrasts_with:
   - "literal-locomotion"
   - "snapshot-photography"
-answers_questions:
-  - "How does cognitive load theory (intrinsic, extraneous, germane) relate to progressive disclosure and visual hierarchy? When is simplification harmful?"
-  - "What is visual hierarchy, and what visual properties (size, colour, contrast, weight, spacing) establish it?"
+answers_questions: []
 rosetta_stone:
   -
     domain: "music"
-    concept: "Counterpoint / suspended resolution (music outside the dimension of time)"
+    concept: "Sustained harmonic tension / suspended resolution"
     rating: "structural"
-    note: "The concept of immobile motion (a timeless image that contains the quality of movement outside actual time) is structurally analogous to a sustained chord in music that contains harmonic tension outside temporal movement — both are 'frozen' states that carry dynamic quality without temporal unfolding."
+    note: "A sounded unresolved chord persists in time while resolution is delayed. Its sustained quality can be compared with a still pose, not literal zero-time music."
 css_implementation:
   -
-    property: "animation-play-state: paused (frozen dynamic frame)"
-    example: "animation-play-state: paused; /* freeze at dynamic peak of an animation to create immobile motion */"
+    property: "animation-play-state"
+    example: "animation-play-state: paused; /* pauses current playhead, does not seek a peak */"
     support: "baseline"
   -
-    property: "transform: rotate() + scale() (maximum-action pose)"
-    example: "transform: rotate(-5deg) scale(1.05); /* captures peak of implied motion in static element */"
+    property: "transform"
+    example: "transform: rotate(-5deg) scale(1.05); /* a candidate static pose, not a maximum */"
     support: "baseline"
 ---
 
 # Quick Definition
 
-In visual art and design, "immobile motion" is the quality by which a static image — a photograph, painting, or icon — conveys the sense of directed movement through the properties of its form, not by depicting a frozen moment in time, but by synthesising the quality of an action as a timeless whole.
+In Arnheim’s immobile-motion account, a static form can convey the quality of action through a composed pose. A captured temporal moment can also have expressive form; recognition and content remain relevant.
 
 # Core Definition
 
-Arnheim devotes the section "Immobile Motion" to refuting the naive view that visual dynamism in static media is achieved by depicting a frozen moment from a temporal sequence: "The most simple-minded suggestion on how this feat can be accomplished is to assume that the artist picks a momentary phase from the process of movement — a single frame, as it were from the filmstrip." He demonstrates this is wrong on two grounds. First, authentic snapshots often fail to convey motion despite being genuine frozen moments — the form properties are wrong. Second, the most effective representations of motion often correspond to no physically possible moment: Gericault's galloping horse with all four legs outstretched corresponds to no actual phase of the gallop, yet it conveys motion more effectively than the anatomically correct phases. The explanation: "in a successful work of photography, painting, or sculpture, the artist synthesizes the represented action as a whole in a way that translates the temporal sequence into a timeless pose. Consequently, the immobile image is not momentary, but outside the dimension of time." The dynamic quality comes from the formal properties of the image (directed tensions, obliqueness, convergence) not from its temporal indexicality.
+This presents the represented Arnheim account. Original edition/context, quotation fidelity, page bases, historical reports, experiments and physiology remain unassessed because the required original is unavailable. The current analytic corrections do not certify that fidelity.
+
+The represented account criticizes the claim that choosing a moment is sufficient: "The most simple-minded suggestion on how this feat can be accomplished is to assume that the artist picks a momentary phase from the process of movement — a single frame, as it were from the filmstrip." Arnheim compares snapshots that seem inert with Gericault’s outstretched flying gallop, a conventional pose rather than an accurate gallop phase. He writes: "in a successful work of photography, painting, or sculpture, the artist synthesizes the represented action as a whole in a way that translates the temporal sequence into a timeless pose. Consequently, the immobile image is not momentary, but outside the dimension of time." This is an artistic interpretation, not denial of a photograph’s temporal referent or proof that physical accuracy is a defect.
 
 # Prerequisites
 
-- **Directed tension** — Immobile motion is the perceptual result of directed tensions in form; the concept is prerequisite.
+- **Directed tension** — Supplies a vocabulary for interpreting still-form direction, without a necessary-and-sufficient perceptual law.
 - **Visual forces** — The "motion" in immobile motion is the experience of visual forces, not actual displacement.
-- **Oblique orientation** — The primary formal tool for creating immobile motion in static images.
+- **Oblique orientation** — One possible directional device, dependent on the pose and reference frame.
 
 # Key Properties
 
-1. Immobile motion is not the depiction of a frozen temporal moment — it is a timeless synthesis of the quality of an action.
-2. The quality of motion perceived in a static image depends entirely on the formal properties of the image (directed tension, obliqueness, convergence, deformation) — not on what the image depicts or what moment it captures.
-3. A photograph or painting that accurately depicts a moving subject may look completely static if the formal properties are wrong.
-4. An image may depict "no possible physical moment" yet convey maximum motion — the criterion is perceptual dynamism, not physical accuracy.
-5. The artist must "synthesize the represented action as a whole" — peak intensity of form, not peak moment of action.
-6. Combining different temporal phases in the same image is not "absurd" in the immobile arts — it is the standard technique (Donatello's David holding the rock while Goliath's head already lies at his feet).
-7. The maximum extension of a form — the "extreme of intensity" (Myron's discus thrower, Bernini's David at the top of the swing) — translates best into pictorial dynamism.
+1. The represented timeless-synthesis account concerns expressive form, not the absence of a temporal referent.
+2. Direction, convergence, deformation and posture can contribute alongside subject recognition and context.
+3. An accurate moving subject may look static; a snapshot can also convey action.
+4. A pose corresponding to "no possible physical moment" can be artistically expressive without becoming the right choice for every task.
+5. The reported "synthesize the represented action as a whole" proposal emphasizes composition rather than selection alone.
+6. Donatello’s combined phases are an artistic strategy, not an obligatory method or claim that they are always appropriate.
+7. Myron’s discus thrower and Bernini’s David are attributed extension examples; maximum extension is not a universal optimum.
 
 # Construction / Recognition
 
 ## To Identify/Recognise:
 1. A static image has immobile motion when it conveys directional force — when the eye experiences a pull or push in a direction, even though nothing is moving.
-2. Snapshot images that fail to convey motion despite depicting a moving subject: the form properties (orthogonal, symmetric, low tension) neutralise the potential dynamism.
-3. Icons or illustrations that successfully convey action: oblique orientation, maximum extension of key elements, directed tension toward the direction of implied motion.
+2. Compare snapshot form, posture and recognition when a moving subject appears still; orthogonality or symmetry alone does not explain every result.
+3. Compare recognizable candidate icons or poses; orientation and extension can contribute without supplying a maximum-action recipe.
 
 ## To Construct/Create:
-1. Identify the "maximum of intensity" for the action or quality you want to convey — not the mid-action phase, but the peak formal expression of the energy.
-2. Use oblique orientation, convergent shapes (wedge, arrow), and deformation from the rest-state norm to embed directed tension in the form.
-3. Do not be constrained by "accuracy" — if depicting an impossible position better conveys the dynamic quality, use it.
-4. In icon design: an icon for "send" that uses a maximum-extension diagonal arrow conveys more immobile motion than a slight tilt. An icon for "delete" that shows maximum tension (compressed spring, sharp point) conveys destructive energy better than a neutral trash can.
+
+1. Identify the action and intended expressive quality; compare recognizable candidate poses.
+2. Consider orientation, convergence and deformation relative to an identifiable reference.
+3. An intentionally impossible pose can fit an artwork; retain accuracy where the task requires it.
+4. For a send or delete icon, test recognizable action and meaningful labelling. A sharp compressed form need not communicate delete better than a familiar trash can.
 
 # Context & Application
 
 - **Typical contexts**: Icon design, illustration, logo design, motion poster design, still frames from animation (key pose design), loading states.
-- **Common applications**: The design of "action icons" — arrow icons, loading spinners at a particular phase, gesture icons — depends entirely on the principle of immobile motion. An arrow that is a perfect equilateral triangle pointing right has less directed tension than one with a slightly asymmetric, elongated form. A loading spinner paused at the maximum-tension point of its rotation communicates energy better than one at a neutral position. In photography, choosing the frame where all elements are at peak formal tension (maximum extension, maximum contrast, maximum obliqueness) produces the most dynamic still image.
-- **Historical/stylistic notes**: The history of the galloping horse in art is Arnheim's signature example: the "flying gallop" with all four legs extended was used in Mycenaean, Persian, Chinese, and European art despite being anatomically impossible. When photography proved it wrong, artists (including Kandinsky) continued to use it — correctly — because it best translates the intensity of galloping into pictorial form. Myron's *Discobolus* and Bernini's *David* are peak-extension compositions, not frozen moments.
+- **Common applications**: Action icons, gesture illustrations and selected still frames can use directional form. A right-pointing triangle or elongated arrow must be judged in context. A paused spinner stops at its current playhead; it does not seek maximum tension. Select a known pose explicitly when needed and keep actual loading meaning available at rest and with reduced motion.
+- **Historical/stylistic notes**: The represented flying-gallop account spans Mycenaean, Persian, Chinese and European conventions and Kandinsky’s defense after photographic comparison. Preserve its distinction between anatomical accuracy and pictorial effect without declaring artists universally correct and snapshots wrong. Myron’s *Discobolus* and Bernini’s *David* exemplify Arnheim’s expressive-pose comparison.
 
 ## Cross-Domain Connections
 
-**Music → STRUCTURAL**: A sustained chord that contains unresolved harmonic tension (e.g., a dominant seventh held without resolution) is "immobile" in the sense that time is suspended, but the tension is fully present and active — it is not a moment in a harmonic progression but a distillation of the harmonic quality. Immobile motion in visual design is structurally parallel: a static image distils the dynamic quality of an action into a timeless form that is neither "before" nor "during" nor "after" the action, but a synthesis of its essential nature.
+**Music → STRUCTURAL**: A sustained unresolved chord can hold a quality of harmonic tension while resolution is delayed. It still sounds and changes in time; it is not literally outside time. A static pose provides a different medium’s sustained directional quality, not a zero-time musical event.
 
 # Examples
 
-**Example 1** (p. 423-424): Salomon Reinach on the galloping horse: "of the four attitudes in which European art had represented the galloping horse during the various periods of its history, only one was confirmed by photographic snapshots, and this one...had been almost completely abandoned." Yet the anatomically "wrong" outstretched-leg convention better translates motion into pictorial form.
+These preserve the represented account’s examples and artistic judgments. Their original context and reported results remain unassessed; they are not universal laws or fresh observer measurements.
+
+**Example 1** (p. 423-424): The represented Reinach comparison reports: "of the four attitudes in which European art had represented the galloping horse during the various periods of its history, only one was confirmed by photographic snapshots, and this one...had been almost completely abandoned." Its anatomically "wrong" outstretched convention is an attributed pictorial judgment, not a universal best pose.
 
 **Example 2** (p. 424): "When photography gave the lie to this ancient pattern, painters maintained with good reason that the snapshots were wrong and the artists right; for only the maximum spread of the legs translates the intensity of the physical motion into pictorial dynamics, although no running horse can ever assume that position except during a leap."
 
@@ -110,39 +113,43 @@ Arnheim devotes the section "Immobile Motion" to refuting the naive view that vi
 # Relationships
 
 ## Builds Upon
-- **Directed tension** — Immobile motion is the perceptual result of directed tensions; without tension, no sense of motion is possible in a static image.
+- **Directed tension** — Supplies the represented vocabulary for still-form direction; no necessary-and-sufficient perceptual law follows.
 - **Visual forces** — The "movement" experienced in immobile motion is the experience of visual forces, not physical displacement.
-- **Oblique orientation** — The primary formal means for creating the directed tension that produces immobile motion.
+- **Oblique orientation** — One available device; reference, posture and recognition also matter.
 
 ## Enables
 - **Dynamic composition** — Immobile motion at the level of individual elements is the building block of dynamic composition at the whole-composition level.
 
 ## Related
 - **Stroboscopic effects** — The related technique of combining multiple phases of an action in one image to enhance immobile motion.
-- **Deformation tension** — Deformation from a rest-state norm (maximum extension, extreme obliqueness) is the technical means for maximising immobile motion.
+- **Deformation tension** — Recognizable norm departures can contribute to a pose; maximum departure need not maximize effectiveness.
 
 ## Contrasts With
-- **Literal locomotion** — Actual physical movement in film, animation, and interactive media; immobile motion is the property of static images only.
-- **Snapshot photography** — The naive view that capturing a moving subject at a random moment produces dynamic imagery — refuted by Arnheim's examples.
+- **Literal locomotion** — A local comparison with temporal displacement: physical object translation differs from apparent/depicted display movement and from direction in a still. The accepted perceived-locomotion vocabulary is not automatically an alias.
+- **Snapshot photography** — Compares the claim that mere capture guarantees dynamism with composed pictorial form. It does not condemn the medium or all snapshots.
 
 # Common Errors
 
 - **Error**: Choosing the "accurate" or "realistic" phase of an action for a static representation.
-  **Correction**: The most dynamically expressive phase is the one with maximum formal tension (maximum extension, maximum obliqueness, maximum deformation from rest) — which may correspond to no physically possible moment.
+  **Correction**: Compare the intended action, recognizable meaning and pose. The represented maximum-extension preference is not a reason to reject every accurate phase.
 
 - **Error**: Assuming that depicting a moving subject automatically produces a dynamic image.
-  **Correction**: A perfectly symmetrical, orthogonal snapshot of a runner can look completely static. The formal properties of the image — not the subject's real motion — produce immobile motion.
+  **Correction**: An orthogonal snapshot may seem still or communicate action through other cues. Subject recognition, context and form can all contribute; none alone guarantees the reading.
 
 # Common Confusions
 
 - **Confusion**: "Immobile motion" means the illusion that something is about to move.
-  **Clarification**: Arnheim explicitly rejects the "illusion of actual locomotion" account. Immobile motion is not an illusion of impending movement — it is the direct perception of directed forces as genuine properties of the form. The element does not "look like it might move" — it carries the quality of movement as a permanent perceptual property of its shape.
+  **Clarification**: Arnheim rejects the "illusion of actual locomotion" account in favor of experienced direction in the form. The statement that the element does not "look like it might move" expresses that theoretical distinction; this review establishes neither universal directness nor permanent observer-invariant qualities.
 
 # Source Reference
 
 Chapter IX: Dynamics, "Art and Visual Perception," pp. 423-424. See the section "Immobile Motion" and the discussion of the galloping horse convention.
 
 # Verification Notes
+
+The account’s "immobile motion" / "Immobile Motion" terminology concerns still-form direction. Donatello’s combined phases need not be "absurd", and the reported "extreme of intensity" or "maximum of intensity" is not a universal best pose. "accuracy" remains useful where needed; "send", "delete" and "action icons" need recognizable meaning. The "flying gallop" is an artistic convention. A musical comparison called "immobile" still sounds in time; "before", "during" and "after" remain temporal terms rather than a zero-time chord.
+
+- Current review boundary: the legacy extraction notes below are preserved provenance, not this review’s original-source verification. Current technical/interpretive qualifications above and local relationship/CQ checks do not establish historical fidelity or measured observer behavior.
 
 - Definition source: Direct quotes from pp. 423-424 ("the artist synthesizes the represented action as a whole in a way that translates the temporal sequence into a timeless pose"; galloping horse discussion). Synthesised from the "Immobile Motion" section and adjacent discussions.
 - Confidence rationale: High — Arnheim provides an explicit named section, a clear theoretical argument (refutation of the snapshot theory), empirical evidence (comparative effectiveness of different conventions), and multiple art-historical examples.

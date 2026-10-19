@@ -17,7 +17,6 @@ aliases:
   - "stroboscopic motion"
   - "stroboscopic movement"
   - "apparent motion"
-  - "beta movement"
 prerequisites:
   - "visual-perception"
 extends:
@@ -33,22 +32,22 @@ answers_questions:
 rosetta_stone:
   -
     domain: "engineering"
-    concept: "Frame-rate rendering / discrete sampling (e.g., 60fps display refresh)"
-    rating: "rigorous"
-    note: "The minimum threshold for continuous perceived motion (~20 frames/second) directly governs display refresh rate requirements; below threshold, phi phenomenon degrades into flicker rather than smooth motion."
+    concept: "Frame-based rendering and distinct presentation intervals"
+    rating: "structural"
+    note: "20/24/60/120fps give50/41.6666667/16.6666667/8.3333333ms intervals, not end-to-end delay or universal motion/flicker thresholds. Pure phi differs from beta object motion."
   -
     domain: "mathematics"
-    concept: "Nyquist–Shannon sampling theorem — continuous signal reconstructed from discrete samples"
-    rating: "structural"
-    note: "Phi phenomenon is the perceptual analogue of signal reconstruction from discrete frames: the visual system interpolates continuous motion from discrete positional samples, much as a DAC reconstructs a waveform."
+    concept: "Nyquist–Shannon sampling as a limited comparison"
+    rating: "loose"
+    note: "A specified signal model permits sampling/alias analysis; cos15Hz and cos5Hz sampled at20/s coincide. This is not the visual system’s interpolation algorithm or a visual Nyquist constant."
 css_implementation:
   -
     property: "animation"
-    example: "animation: slide 0.3s ease-in-out;"
+    example: "animation: slide 0.3s ease-in-out; /* optional sequence; meaningful rest state required */"
     support: "baseline"
   -
     property: "transition"
-    example: "transition: transform 200ms ease;"
+    example: "transition: transform 200ms ease; /* candidate transition, not a phi threshold */"
     support: "baseline"
   -
     property: "@keyframes"
@@ -58,69 +57,75 @@ css_implementation:
 
 # Quick Definition
 
-The phi phenomenon (stroboscopic motion) is the perception of smooth, continuous movement from a rapid succession of static images or discrete stimuli — the perceptual foundation of cinema, animation, and all frame-based motion in digital interfaces.
+Phi terminology varies historically. In precise pure-phi usage, motion can be experienced without an object appearing to translate; optimal beta is apparent object motion. Broader phi/stroboscopic labels have also been used for apparent motion generally.
 
 # Core Definition
 
-The phi phenomenon, named and studied by Max Wertheimer (whose experiments Arnheim discusses), is the perceptual illusion of continuous motion produced when discrete static images are displayed in rapid succession. Arnheim states: "With exposure to a minimum of about twenty frames per second, we can see continuous motion. The same is true for the luminous panels of advertising signboards, on which the flashing on and off of light bulbs produces the moving images of letters, geometrical shapes, or human figures, even though objectively nothing moves." The phenomenon demonstrates that motion is actively constructed by the perceptual system rather than merely passively received — the visual system interpolates continuous paths between discrete positions.
+This presents the represented Arnheim account. Original edition/context, quotation fidelity, page bases, historical reports, experiments and physiology remain unassessed because the required original is unavailable. The current analytic corrections do not certify that fidelity.
 
-Arnheim traces the history to W. G. Horner's 1834 Daedaleum toy, noting that Wertheimer's laboratory experiments confirmed the same principle that underlies cinema. The key perceptual mechanism is that gestalt grouping principles — proximity, similarity, and continuity — operate across time as well as space, causing the visual system to link successive frames into a unified, continuous motion percept.
+The represented Arnheim discussion treats successive displays under a broad apparent-motion account: "With exposure to a minimum of about twenty frames per second, we can see continuous motion. The same is true for the luminous panels of advertising signboards, on which the flashing on and off of light bulbs produces the moving images of letters, geometrical shapes, or human figures, even though objectively nothing moves." Preserve that as a reported passage, not a universal threshold. Current pure-phi/beta distinctions clarify usage; the retained aliases stroboscopic motion, stroboscopic movement and apparent motion are historical search labels, not exact pure-phi synonyms.
+
+The represented history links Horner’s 1834 Daedaleum, Wertheimer and cinema. Temporal proximity, similarity and trajectory can matter to correspondence and apparent object continuity; they are not a complete perceptual algorithm or requirements for every pure-phi stimulus.
 
 # Prerequisites
 
-- **Visual Perception / Gestalt Grouping** — Phi phenomenon depends on gestalt principles operating temporally: proximity (frames presented close together in time), similarity (similar shapes across frames), and good continuation (smooth trajectory).
+- **Visual Perception / Gestalt Grouping** — Supports understanding temporal organization. Grouping cues can support apparent object continuity without defining all pure-phi conditions.
 
 # Key Properties
 
-1. Requires temporal succession of at least two discrete stimuli — cannot occur in a single frame (unlike implied motion).
-2. Threshold: approximately 20 frames per second for smooth apparent motion; below this threshold, motion degrades into flicker or a series of discrete jumps.
-3. Depends on gestalt grouping conditions: the stimuli must be spatially close, similar in appearance, and form a continuous trajectory.
-4. Purely perceptual — the continuous motion is constructed by the visual system, not present in the physical stimulus.
-5. Speed and spatial interval interact: as spatial interval between positions increases, the inter-stimulus interval (time between frames) must decrease for phi to occur.
+1. The selected phenomenon needs temporal succession, unlike direction suggested in one still image.
+2. Pure phi need not preserve a translated object identity; optimal beta concerns apparent object motion.
+3. Historical broader usage can include frame-based apparent motion. Retained search labels do not erase the precise distinction.
+4. Frame production, display refresh, exposure/flicker, displacement and input latency are different quantities; no universal 20fps threshold follows.
+5. Stimulus conditions and observer/task affect the result; the card supplies no universal spacing/time tradeoff.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Present a sequence of static frames at sufficient rate (≥ 20fps for film; ≥ 60fps for smooth UI animation).
-2. Ensure each frame's content is spatially close to the preceding frame's content (small displacements per frame).
-3. Maintain similarity in shape, colour, and size across frames to preserve object identity.
-4. Follow a consistent trajectory (good continuation) across frames to prevent the sequence reading as separate objects rather than one moving object.
+
+1. Specify whether the intended case is pure phi, apparent object motion or an ordinary UI transition.
+2. For object continuity, choose actual positions/timing and keep relevant identity cues; equal frame counts alone prove nothing.
+3. For a UI transition, preserve useful state meaning and recognizable controls at rest and with reduced motion.
+4. Inspect the target display and task before making smoothness or response claims; no 20/60fps recipe guarantees them.
 
 ## To Identify/Recognise:
-1. The stimulus is physically a series of discrete, static states.
-2. The observer perceives a smooth, continuous flow of movement.
-3. Reducing frame rate below threshold reveals the underlying discreteness (flicker or jumpy motion).
-4. The effect degrades when shapes change too dramatically between frames (breaking similarity) or when spatial displacement per frame is too large.
+
+1. Identify the actual sequence, exposures and positions.
+2. Describe whether motion appears with or without a translated object; do not infer pure phi from any movie.
+3. Distinguish jumpy motion from flicker, and both from delayed input response.
+4. Record actual observer conditions for any perceptual judgment; metadata and timing arithmetic are not such observations.
 
 # Context & Application
 
 - **Typical contexts**: Film, video, GIF animation, CSS/JS animation, UI micro-interactions, loading states, scroll-driven animations, transition design.
-- **Common applications**: All digital animation in interfaces; lottie animations; CSS transitions; page/route transitions in SPAs; onboarding animations; state-change feedback (button press, toggle, loading indicator).
+- **Common applications**: Broad apparent-motion vocabulary can inform interface animation, Lottie sequences, CSS transitions, route changes and state feedback. These applications are not all precise pure phi; each still needs meaningful rest states and actual task/display checks.
 
 ## Cross-Domain Connections
 
-**Engineering → RIGOROUS**: Display refresh rates (60fps, 120fps) are directly governed by the phi phenomenon threshold. The 60Hz standard exceeds the ~20fps minimum by a wide margin to ensure smooth motion and avoid stroboscopic artefacts. Higher refresh rates (120Hz, 144Hz) reduce inter-frame interval further, making motion appear more fluid for fast interactions.
+**Engineering → STRUCTURAL**: Frame-based rendering supplies successive display states. At20/24/60/120frames/s, frame intervals are50/41.6666667/16.6666667/8.3333333ms. Those intervals are not end-to-end latency, flicker thresholds or a causal explanation of display standards.
 
-**Mathematics → STRUCTURAL**: Analogous to the Nyquist–Shannon sampling theorem — the visual system reconstructs a continuous motion signal from discrete positional samples (frames), just as a digital-to-analogue converter reconstructs an audio waveform from discrete samples. Below the "visual Nyquist rate" (~20fps), aliasing manifests as flicker.
+**Mathematics → LOOSE**: Sampling theory compares discrete samples and a specified signal model; it is not a visual reconstruction identity. At20samples/s, cos15Hz and cos5Hz give the same sampled sequence, an explicit alias. No universal "visual Nyquist rate" or 20fps flicker boundary follows.
 
 # Examples
 
-**Example 1** (p. 395, Stroboscopic Movement section): Arnheim notes that Wertheimer's experiments were suggested by a children's toy (the Daedaleum, 1834). Two luminous shapes in a dark room, shown in succession, blend into "a unitary flow of excitation" — perceived as a single object moving, not two objects appearing and disappearing.
+These preserve the represented account’s examples and artistic judgments. Their original context and reported results remain unassessed; they are not universal laws or fresh observer measurements.
 
-**Example 2** (p. 395, Stroboscopic Movement section): "With exposure to a minimum of about twenty frames per second, we can see continuous motion." Arnheim notes that advertising signboards with sequentially flashing bulbs produce the same phi phenomenon — letters and figures appear to move even though no element physically changes position.
+**Example 1** (p. 395, Stroboscopic Movement section): The represented Daedaleum/Wertheimer account describes two successive luminous shapes blending into "a unitary flow of excitation." Seeing one object move is an apparent-object-motion description; precise pure phi need not include that translated identity.
+
+**Example 2** (p. 395, Stroboscopic Movement section): "With exposure to a minimum of about twenty frames per second, we can see continuous motion." The represented signboard example demonstrates the intended broad apparent-motion discussion; this review does not adopt that number as a general engineering threshold.
 
 # Relationships
 
 ## Builds Upon
-- **Gestalt Grouping Principles** — Phi phenomenon is gestalt grouping operating in the temporal dimension: proximity (in time), similarity (across frames), and continuity (smooth path) all contribute.
+- **Gestalt Grouping Principles** — Temporal grouping offers contextual support for correspondence, not a definition of every phi stimulus or a neural interpolation model.
 
 ## Enables
-- **Animation Design** — All frame-based animation design depends on phi phenomenon; understanding the perceptual threshold informs decisions about frame rate, easing, and interpolation.
-- **Film Editing Principles** — The "identity problem" in film editing (Arnheim's "Some Problems of Film Editing" section) — when cuts preserve or disrupt object identity — depends entirely on phi phenomenon mechanics.
+- **Animation Design** — Apparent-motion vocabulary can inform optional transitions; precise pure phi does not underlie every animation or prescribe easing.
+- **Film Editing Principles** — Object correspondence and narrative continuity across cuts use multiple cues; neither depends entirely on phi mechanics.
 
 ## Related
 - **Implied Motion** — Both involve perceptual motion without real physical displacement, but phi phenomenon requires temporal succession while implied motion is a property of a single static frame.
-- **Common Fate** — Common fate (group movement) can operate stroboscopically: elements that move together across frames are grouped as a unit by phi phenomenon.
+- **Common Fate** — Shared changes can cue multi-object grouping across frames; this differs from one-object correspondence and pure phi.
 
 ## Contrasts With
 - **Implied Motion** — Implied motion operates within a single static frame; phi phenomenon requires multiple frames shown in succession. Phi is temporal; implied motion is atemporal.
@@ -128,10 +133,10 @@ Arnheim traces the history to W. G. Horner's 1834 Daedaleum toy, noting that Wer
 # Common Errors
 
 - **Error**: Assuming 24fps is the universal "enough" threshold for smooth motion in digital interfaces.
-  **Correction**: 24fps is the cinema standard chosen partly for economic reasons (film cost) and partly because it is above threshold. For interactive UI, 60fps is the standard because users interacting with a cursor or touch input require lower inter-frame intervals to perceive input response as immediate.
+  **Correction**: A24fps sequence has an approximately 41.67ms frame interval. Smoothness, exposure, flicker, content speed and input responsiveness need separate conditions; neither 24 nor60fps is a universal sufficiency test.
 
 - **Error**: Treating phi phenomenon as a single fixed threshold.
-  **Correction**: The threshold is variable and depends on spatial interval, luminance contrast, and stimulus similarity. For large displacements between frames, a higher frame rate is needed; for small displacements, lower rates may suffice.
+  **Correction**: Do not replace one fixed threshold with another. State actual timing, displacement, luminance and display/task conditions when assessing the effect.
 
 # Common Confusions
 
@@ -139,13 +144,17 @@ Arnheim traces the history to W. G. Horner's 1834 Daedaleum toy, noting that Wer
   **Clarification**: Phi requires temporal succession of discrete stimuli; implied motion is a property of a single static form. A photograph of a runner mid-stride exhibits implied motion without phi phenomenon.
 
 - **Confusion**: The phi phenomenon explains why we see movies as realistic.
-  **Clarification**: Phi explains the perception of continuous motion from discrete frames. The "realism" of cinema involves many other perceptual and narrative factors beyond apparent motion.
+  **Clarification**: Broad historical phi usage concerns apparent motion; precise pure phi and beta differ. Narrative, object recognition and display conditions also contribute to a movie’s perceived realism.
 
 # Source Reference
 
 Chapter VIII: Movement, "Art and Visual Perception," pp. 395–434. See especially the section "Stroboscopic Movement" (section heading at line 140 of source file).
 
 # Verification Notes
+
+The reported "a unitary flow of excitation" concerns the represented apparent-motion account. Its "identity problem" and "Some Problems of Film Editing" connect object correspondence and narrative context; neither precise pure phi nor one frame rate alone establishes cinematic "realism".
+
+- Current review boundary: the legacy extraction notes below are preserved provenance, not this review’s original-source verification. Current technical/interpretive qualifications above and local relationship/CQ checks do not establish historical fidelity or measured observer behavior.
 
 - Definition source: Directly stated in "Stroboscopic Movement" section; 20fps threshold is explicit in Arnheim's text.
 - Confidence rationale: High — the section is dedicated to stroboscopic motion; core claims are explicit.

@@ -30,125 +30,130 @@ related:
   - "structural-skeleton"
 contrasts_with: []
 answers_questions:
-  - "What are the gestalt principles of perceptual grouping, and how does each one work?"
   - "How do you systematically audit an existing interface for visual design quality? What checklist of principles and patterns do you evaluate, in what order?"
 rosetta_stone:
   -
     domain: "mathematics"
-    concept: "Mathematical isomorphism — structure-preserving mapping between two systems"
-    rating: "rigorous"
-    note: "Arnheim uses the term 'isomorphism' in its mathematical sense: a bijective mapping between two structures that preserves all structural relations. Expression occurs when the dynamic structure of a visual form and the structure of the expressed state are isomorphic — the same pattern realised in different media."
+    concept: "Mathematical isomorphism versus proposed structural kinship"
+    rating: "loose"
+    note: "Formal isomorphism requires specified structures and a relation-preserving bijection. Shared adjectives or equal cardinality do not supply that mapping between form and emotion."
   -
     domain: "music"
-    concept: "Structural analogy between musical form and emotional arc (tension-resolution curves)"
+    concept: "Musical form and contextual expressive interpretation"
     rating: "structural"
-    note: "The sadness of a slow minor melody is isomorphic to the structure of sadness (low energy, yielding, unresolved) — the same structural pattern instantiated in acoustic rather than visual medium. Arnheim's isomorphism applies cross-modally."
-css_implementation:
-  -
-    property: null
-    example: "/* Isomorphism is a theoretical concept; it governs which formal properties to choose to express a target state, but is not directly expressed in CSS */"
-    support: "baseline"
+    note: "Tempo, contour and expectation can motivate selected character comparisons, without an innate universal sadness mapping or formal acoustic/emotional isomorphism."
+css_implementation: []
 ---
 
 # Quick Definition
 
-Isomorphism in expression is the structural kinship between a visual pattern and the state it expresses — both share the same dynamic structure (e.g., both "low energy, passive, yielding") even though they are realised in entirely different media.
+In Arnheim’s expression account, isomorphism means proposed structural kinship between a pattern and a character reading. Selected similarities do not establish a formal bijection preserving every relation.
 
 # Core Definition
 
-Isomorphism is the mechanism by which Arnheim explains how visual expression works. The term is drawn from mathematics, where an isomorphism is a structure-preserving mapping between two systems. In the context of visual expression, Arnheim argues that a visual form expresses a particular mood or state because the dynamic structure of the form is isomorphic to the dynamic structure of the expressed state — they share the same pattern of forces, tensions, energies, and resolutions.
+This presents the represented Arnheim account. Original edition/context, quotation fidelity, page bases, historical reports, experiments and physiology remain unassessed because the required original is unavailable. The current analytic corrections do not certify that fidelity.
+
+The represented theory uses structural kinship to explain expression. Mathematical isomorphism instead requires specified structures and a bijection preserving the relevant operations/relations. This card supplies no such form-to-emotion structures or mapping; its comparison is interpretive.
 
 Arnheim states the principle explicitly: "'Isomorphism,' that is, the structural kinship between the stimulus pattern and the expression it conveys, can be shown most neatly in simple curves. If we compare a section of a circle with a section of a parabola, we find that the circular curve looks more rigid, the parabolic one more gentle. What is the cause of this difference? It derives from the geometric structure."
 
-The parabola is "gentle" because its varying curvature embodies a compromise between two structural conditions — it "yields" to two constraints simultaneously, which is structurally identical to the pattern of yielding that constitutes gentleness. The circle is "rigid" because its constant curvature obeys a single, uncompromising condition — structurally identical to the pattern of rigidity.
+The represented interpretation links variable curvature to yielding/gentleness and constant curvature to rigidity. For a circle curvature is 1/R; for y=ax² it is |2a|/(1+4a²x²)^(3/2). With a=1 it is 2 at x=0 and approximately .17889 at x=1. These are geometric facts, not an emotion theorem or invariant count of constraints.
 
-This mechanism frees expression from reliance on convention, association, or projected feeling. Expression works because the structural pattern of the visual form genuinely resembles the structural pattern of the expressed state — not because we have learned to associate them or because we project our feelings onto the form.
+Arnheim argues for structural expression rather than projection or learned association. The comparison here cannot exclude learning, context or convention; immediate recognition is not proof of their absence.
 
-The principle extends to complex architectural forms: Michelangelo's dome for St. Peter's expresses "massive heaviness and free rising" because its precise geometry — two offset circular arcs creating a flexible overall contour — is structurally identical to the dynamic pattern of something that is both heavy and rising, both firm and yielding.
+The represented Michelangelo/St. Peter’s dome interpretation combines "massive heaviness and free rising" through offset contours. This is a selected relation between geometry and expressive description, not identical formal structures of heaviness and rising.
 
 # Prerequisites
 
-- **Gestalt Theory** — Isomorphism is a gestalt concept; the dynamic forces within perceptual fields (gestalt dynamics) are what have structural patterns that can be matched to expressed states.
-- **Physiognomic Perception** — Isomorphism explains the mechanism underlying physiognomic perception — we perceive character in forms because the forms are structurally isomorphic to the character states they express.
+- **Gestalt Theory** — Provides the represented whole-pattern account in which structural kinship is proposed; no neural field or formal form/state mapping is established.
+- **Physiognomic Perception** — Names the experienced character for which the theory proposes structural kinship; it does not certify that explanation.
 
 # Key Properties
 
-1. Structural, not conventional: isomorphism depends on genuine structural similarity, not learned association.
-2. Cross-media: the same structural pattern can be instantiated in visual form, musical structure, bodily movement, or architectural geometry.
-3. Operates at the level of dynamic pattern: the relevant structure is the pattern of forces, energies, tensions, and resolutions — not geometric properties per se.
-4. Explains both the immediacy of expressive perception (structural kinship is perceived directly) and its universality (structure is not culture-specific).
-5. Accounts for why abstract art is expressive: even pure geometric forms can be isomorphic to emotional/dynamic states.
+1. The represented structural account is a theoretical interpretation, not proof that convention is absent.
+2. Comparing selected dynamic qualities across visual, musical and bodily media can be useful without identical structures.
+3. Name actual properties and relations rather than relying on matching adjectives.
+4. Immediacy or agreement cannot establish innateness, cross-cultural universality or a formal isomorphism.
+5. Abstract geometry can invite expressive interpretation without a defined emotion model.
 
 # Construction / Recognition
 
 ## To Construct/Create:
-1. Identify the structural pattern of the target expression (e.g., "confidence" = directed, stable, high-energy, unambiguous).
-2. Identify visual formal properties whose dynamic structure is isomorphic to that pattern (bold, direct angles, stable orientations, high contrast, unambiguous forms).
-3. Test the isomorphism: does the formal choice share the same structural dynamic as the intended expression? If yes, the expression will be structurally legible without convention.
-4. When expression fails, diagnose by checking for isomorphism: which formal properties are carrying contradictory dynamic structures?
+
+1. State the intended character as a contextual proposal, not a universal stable/high-energy recipe.
+2. Identify actual form properties and the selected comparison they motivate.
+3. Compare responses without claiming matching descriptions prove structural identity or unlearned legibility.
+4. Inspect useful contradiction and alternative readings alongside the task and supplied identity.
 
 ## To Identify/Recognise:
-1. Describe the dynamic structure of the visual form (is it tense or relaxed? directed or diffuse? rigid or yielding? compressed or expansive?).
-2. Describe the dynamic structure of the state the form is said to express.
-3. Check whether these two descriptions share the same structural pattern — if yes, isomorphism is present and expression is structurally grounded.
-4. If the structural descriptions diverge, the expression is not isomorphic and may depend on convention or context for legibility.
+
+1. Describe the actual form and viewing context.
+2. State the character attributed and the selected relation used to compare them.
+3. Distinguish interpretive resemblance from formal isomorphism: equal vertex counts do not make a triangle (degrees 2/2/2) isomorphic to a three-vertex path (1/2/1).
+4. Preserve convention/context as possible contributors even when a structural comparison seems apt.
 
 # Context & Application
 
 - **Typical contexts**: Design theory, design critique, design education, brand expression evaluation, visual identity auditing, cross-cultural design evaluation.
-- **Common applications**: Evaluating whether a brand's formal choices (type, colour, shape) are isomorphic to its intended brand character; critiquing why a design feels "off" (formal properties carry contradictory structural patterns); teaching designers to make expression-grounded formal decisions rather than arbitrary or trend-following ones.
+- **Common applications**: Compare a brand’s type, colour and shape with intended character alongside actual content and identity. A design that feels "off" invites checking candidate relations, useful counterpoint and task fit. This is a selected structural-kinship lens, not formal isomorphism or a mandatory basis for every decision.
 
 ## Cross-Domain Connections
 
-**Mathematics → RIGOROUS**: Arnheim uses "isomorphism" in its precise mathematical sense: a bijective, structure-preserving mapping. The dynamic structure of the willow's drooping branches (passive, low-energy, yielding to gravity) maps bijectively onto the dynamic structure of sadness (passive, low-energy, yielding to circumstance). Every element of one structure corresponds to an element of the other; the relational pattern is preserved.
+**Mathematics → LOOSE**: Mathematical isomorphism is a defined structure-preserving bijection. The willow/sadness comparison provides selected shared descriptions, not domains, operations and a tested bijection. Equal counts or shared adjectives cannot prove it; the graph degree counterexample above makes that gap explicit.
 
-**Music → STRUCTURAL**: The structural isomorphism concept applies directly to musical expression: the slow tempo, descending melodic lines, and minor harmonic colour of a "sad" piece are isomorphic to the low-energy, passive, gravitationally yielding structure of sadness. This is why music can express sadness without depicting it and without the listener having been told to hear sadness — the structural match is immediate and direct.
+**Music → STRUCTURAL**: Descending lines, slow tempo and harmonic expectation can be compared with a yielding character in context. They do not establish acoustic/emotional isomorphism or universally immediate sadness without learning.
 
 # Examples
 
-**Example 1** (p. 437, Expression Embedded in Structure): The circle vs. parabola comparison. The circle's rigidity and the parabola's gentleness are explained by the structural difference in their curvature conditions (one condition vs. two). This is the most precise and elegant demonstration of isomorphism in the chapter.
+These preserve the represented account’s examples and artistic judgments. Their original context and reported results remain unassessed; they are not universal laws or fresh observer measurements.
 
-**Example 2** (p. 437, Expression Embedded in Structure — Michelangelo's dome): The dome's expression of "massive heaviness and free rising" is explained by the structural geometry of its two offset circular arcs. The structural compromise between the two circular curves (flexibility within firmness) is isomorphic to the expressive compromise between heaviness and rising.
+**Example 1** (p. 437, Expression Embedded in Structure): The represented circle/parabola comparison attributes rigidity and gentleness to different curvature behavior. It is an expressive interpretation; the geometric distinction does not prove one-versus-two invariant conditions or an emotional response.
 
-**Example 3** (p. 437, Expression Embedded in Structure — Wertheimer/Binney dance): Dancers representing sadness "slowly and confined to a narrow range... mostly curved in shape and showed little tension... yielding passively to the force of gravity." Arnheim notes "the psychical mood of sadness has a similar pattern. In a depressed person the mental processes are slow and rarely go beyond matters closely related to immediate experiences." The structural patterns are explicitly compared, demonstrating isomorphism.
+**Example 2** (p. 437, Expression Embedded in Structure — Michelangelo’s dome): The represented dome’s "massive heaviness and free rising" is read through offset circular arcs. This supports an attributed contour/character comparison rather than a formal mapping to psychological states.
+
+**Example 3** (p. 437, Expression Embedded in Structure — Wertheimer/Binney dance): Dancers representing sadness "slowly and confined to a narrow range... mostly curved in shape and showed little tension... yielding passively to the force of gravity." Arnheim notes "the psychical mood of sadness has a similar pattern. In a depressed person the mental processes are slow and rarely go beyond matters closely related to immediate experiences." The represented account explicitly compares these descriptions as structural kinship. The dance report does not supply formal structures, exclude shared learning or validate a clinical characterization.
 
 # Relationships
 
 ## Builds Upon
-- **Gestalt Theory** — The dynamic forces that gestalt theory identifies in perceptual fields are what have structural patterns; isomorphism is the relationship between those patterns and the patterns of expressed states.
+- **Gestalt Theory** — The represented framework motivates comparing pattern relations, without proving a physical mechanism or a structure-preserving bijection to emotion.
 
 ## Enables
-- **Arnheim's Theory of Expression** — Isomorphism is the central explanatory mechanism of the theory; the theory is incomplete without this concept.
-- **Visual Expression (Design Principle)** — The design practice of expression-grounded formal decision-making depends on understanding isomorphism: choosing forms whose structural pattern matches the intended expression.
+- **Arnheim's Theory of Expression** — The proposed structural-kinship explanation is a central part of that represented theory, not an established mechanism.
+- **Visual Expression (Design Principle)** — A contextual design exercise can compare selected form relations with intended character; it need not require this theory or establish formal isomorphism.
 
 ## Related
-- **Physiognomic Perception** — Isomorphism explains the mechanism underlying physiognomic perception; physiognomic perception is the phenomenon, isomorphism is the explanation.
-- **Structural Skeleton** — The structural skeleton of a composition is the primary bearer of its isomorphic expression; expression is read from the skeleton before details.
+- **Physiognomic Perception** — The expressive experience is distinct from the proposed explanation in structural kinship.
+- **Structural Skeleton** — The selected shape-skeleton endpoint describes contour-induced axes; these can inform a character comparison. Composition frame/centre/axes are distinct, and neither guarantees first reading before details.
 
 ## Contrasts With
-- **Conventional Symbolism** — Conventional symbolism (a lily = virginity in Christian art) is arbitrary: there is no structural isomorphism between the lily and virginity; the connection must be learned. Isomorphic expression does not require learning.
+- **Conventional Symbolism** — The represented lily/virginity comparison relies on a learned Christian convention. Structural interpretation and learning can coexist; the contrast is not proof that expressive seeing needs none.
 
 # Common Errors
 
 - **Error**: Confusing isomorphism with analogy or metaphor.
-  **Correction**: Analogy and metaphor are intellectual connections between concepts; isomorphism is a structural relationship between dynamic patterns. Arnheim's isomorphism is perceptual, not conceptual — the structural match is perceived directly, not reasoned.
+  **Correction**: Arnheim uses structural kinship as a perceptual explanation. Without specified formal structures/mapping, do not upgrade that use to mathematical isomorphism or claim all resemblance is direct and unreasoned.
 
 - **Error**: Applying isomorphism only to figural representation.
-  **Correction**: Isomorphism operates at the level of dynamic structure, not representational content. Abstract lines and shapes can be isomorphic to emotional states; representational images may fail to be isomorphic if their formal properties contradict the intended expression.
+  **Correction**: In the represented account, abstract lines and shapes can invite structural-kinship interpretations as well as figurative images. Neither case supplies a formal mapping to emotional states; deliberate contrast can also serve the work.
 
 # Common Confusions
 
 - **Confusion**: Isomorphism requires identical elements in both the form and the expressed state.
-  **Clarification**: Isomorphism preserves structural relations, not elements. The willow branch and the depressed person's posture share no common elements (wood vs. flesh) but do share the same relational pattern of forces (both yield passively to gravity). The isomorphism is at the level of dynamic structure.
+  **Clarification**: Formal isomorphism concerns specified relations rather than material sameness. The willow/person comparison selects yielding descriptions; it does not supply a formal structure-preserving bijection.
 
 - **Confusion**: If isomorphism explains expression, then all expressions should be universally legible.
-  **Clarification**: Cross-cultural legibility is predicted for expressions grounded in universal dynamic structures (heavy/light, tense/relaxed, directed/diffuse). Cultural variation arises primarily in conventional symbolism layered on top of structural expression, and in the degree to which analytical training suppresses immediate expressive perception.
+  **Clarification**: Universal legibility does not follow from the proposed comparison. Cultural context, learning, individual variation and task can contribute; no exclusive explanation for variation is established.
 
 # Source Reference
 
 Chapter X: Expression, "Art and Visual Perception," pp. 437–449. The concept is explicitly stated and named in "Expression Embedded in Structure."
 
 # Verification Notes
+
+Descriptions such as "low energy, passive, yielding", "gentle", "yields" and "rigid" name the represented expressive comparison. Calling a form "confidence" or music "sad" does not supply formal structures; the term "isomorphism" does not make it a proved bijection.
+
+- Current review boundary: the legacy extraction notes below are preserved provenance, not this review’s original-source verification. Current technical/interpretive qualifications above and local relationship/CQ checks do not establish historical fidelity or measured observer behavior.
 
 - Definition source: Directly quoted: "'Isomorphism,' that is, the structural kinship between the stimulus pattern and the expression it conveys." The circle/parabola example is explicit in the text.
 - Confidence rationale: High — the term is explicitly used and defined by Arnheim; the examples are concrete and clearly stated.
