@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.85**, updated2026-10-19 under the Operator-approved
+Plan revision **1.86**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -74,15 +74,16 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice30 — space/depth/projection](slice30-space-depth-and-projection/slice-plan.md) | Closed: [independent acceptance](slice30-space-depth-and-projection/cdc-verification.md) at SOURCE38123c19/CC93b904dc;25supported corrected cards/local semantics,owning1.0.27; original fidelity unresolved. |
 | [Slice31 — light/colour/context](slice31-light-colour-and-context/slice-plan.md) | Closed: [independent acceptance](slice31-light-colour-and-context/cdc-verification.md) at SOURCE02963d92/CCf2e708ec;18supported corrected cards/local semantics,owning1.0.28; original fidelity unresolved. |
 | [Slice32 — motion/expression/interaction](slice32-motion-expression-and-interaction/slice-plan.md) | Closed: [independent acceptance](slice32-motion-expression-and-interaction/cdc-verification.md) at SOURCE88a96f72/CCebf4ee03;18supported corrected cards/local semantics,owning1.0.29; original fidelity unresolved. |
-| Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
+| [Slice33 — supported global composition](slice33-supported-global-composition/slice-plan.md) | Active: complete233/eight-live/global supported composition atSOURCE88a96f72, bounded actual available-font follow-up; D1/parent/Operator gates retained. |
+| Source/topic cohort union | Planned local card cohorts are boundedly closed; Slice33 verifies the actual complete233 union and current object/five-dimension applicability. Any material global defect needs an explicit bounded repair; unavailable originals remain blocked. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice32 are delivery choices,not issued assignments or a fixed count.
-All planned local card cohorts are boundedly closed;next reconcile the actual
-complete233/eight-live/global result union and remaining inputs/behavior gates.
-No future open set,Arc04 or final1.1.0 is issued by this close.
+Rows after Slice33 are unissued delivery choices, not a fixed slice count.
+Slice33 composes supported corrected content and real remaining gaps;
+unavailable originals still block formal arc/full-fidelity/final1.1.0 gates.
+No Arc04 tree or automatic release/next-arc authority follows.
 
 Review → decide → edit → check → independent review is one batch. Fix supported
 in-scope issues before return; preserve useful teaching. Complete impacted local
@@ -143,10 +144,12 @@ Source branch `codex/project10-arc02-autonomous` in
 separate. Direct routine handoffs and CDC retrospectives now apply; all original
 criteria and Operator/input/composition gates survive. Stop at this arc's endpoint;
 no automatic Arc04 work, merge, push or publication.
-Expedited Mode. Slices01–32 closed at their recorded bounded scopes. Slice32
-corrects18motion/expression/interaction cards at88a96f72/CCebf4ee03,owning1.0.29.
-All planned local cohorts are now available for actual233/eight-live/global
-composition; unavailable original and formal/Operator gates remain unchanged.
+Expedited Mode. Slices01–32 are closed at their recorded bounded scopes.
+Active [Slice33](slice33-supported-global-composition/slice-plan.md) composes the actual supported233/
+eight-live/global results atSOURCE88a96f72 with a bounded real-font case.
+Operator reconfirmed2026-10-19: missing editions/captures still unavailable; continue supported work.
+D1 and input/full-fidelity/formal composition/Operator gates remain;
+available parent dispositions require actual root independent judgment.
 Final8payload/behavior applicability and local-font/native/AT limits remain
 explicit for later composition. All ten arc/thirteen project criterion states,
 missing-original/full233global and formal composition/Operator/release gates
@@ -503,3 +506,5 @@ inputs now that the sequencing hold is lifted.
 - 1.84 (2026-10-19): Open connected18-card motion/expression/interaction correction after actual S31 acceptance;retain higher gates.
 
 - 1.85 (2026-10-19): Independently close supported18-card motion/expression/interaction correction; complete planned local-cohort coverage awaits actual global composition and all higher gates.
+
+- 1.86 (2026-10-19): Open supported global composition after actual S32 acceptance; no formal Arc02/P10 close or1.1.0 authority.
