@@ -153,6 +153,31 @@ a user mechanism, width limits and non-justified text. This guidance is not a
 test or conformance claim; validate user overrides and reflow in the adopting
 project without hiding overflow or clamping text height.
 
+## Preserve punctuation and meaningful text
+
+Identify the actual language and house style, then distinguish editable prose,
+quoted content, apostrophes, code and data. Choose punctuation for meaning: an
+English prose quotation can use “hello”, while `print("hello")`, JSON
+`{"message": "hello"}` and a literal `--help` option retain their exact syntax.
+Preserve protected spans, deliberate transcription and meaningful spaces; review
+smart-quote conversion, leading apostrophes such as ’70s, and dash substitutions.
+An en/em dash's name does not guarantee its glyph width.
+
+For quoted phrasing, optional semantic `q` markup can generate delimiters;
+explicit quotation punctuation without `q` is also valid. Do not duplicate the
+quoted span's delimiting marks inside or immediately outside `q`. Declare the
+actual content language. CSS `quotes: auto` selects language-sensitive generated
+marks; it does not rewrite stored quotes or apostrophes, and missing language
+information is not the same as disabled generation. See the [HTML q definition](https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element)
+and [CSS Generated Content Level 3 Working Draft](https://www.w3.org/TR/css-content-3/#quotes-property).
+
+Choose the sentence-space convention for the prose and house style. In web
+output, CSS can collapse or preserve spaces for rendering without rewriting the
+document data; two stored spaces do not guarantee a visibly doubled gap. See
+[CSS Text Level 3](https://www.w3.org/TR/css-text-3/#white-space-property).
+Check generated quotes, apostrophes, dash spacing and preserved/collapsed spaces
+in the target output with the actual font and content. Record untested behavior.
+
 ## Vary by context and review
 
 Different content, roles, scripts, devices or user preferences may justify
