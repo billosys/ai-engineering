@@ -104,13 +104,15 @@ On explicit Operator selection, follow the canonical mode in
 `knowledge/engineering-methods/guides/01-engineering-methodology.md` and execution
 rules in `knowledge/project-management/guides/README.md`. Before Autonomous role
 work, explicitly obtain the Operator's provider/model/settings choices for each
-planned role and expenditure/concurrency boundaries; inherited defaults are not
-approval. Default to one implementer and one independent reviewer. CDC may revise
+planned role; inherited defaults are not approval. Default to one implementer and
+one independent reviewer. CDC may revise
 staffing only within recorded authority, with justified extra contexts and explicit
 mutation/index ownership. Include automatic CI effects in external-action authority.
-Preserve complete original research records and ledger traceability under the
-canonical artifact contract. Default to
-a named arc; whole-project execution needs an explicit override. Use a dedicated
+Retain useful existing records and full ledger traceability. Follow the existing
+optional supporting-artifact rule; future research use alone does not justify new
+capture or archival work. Honor volunteered limits without requiring a budget
+response. Default to a named arc; whole-project execution needs an explicit
+override. Use a dedicated
 non-default source branch, independent review for substantive work and existing
 gates, preserved prompts/ledgers,
 bubble-up and CDC slice/arc/project retrospectives. Routine authorized handoffs

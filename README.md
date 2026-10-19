@@ -64,9 +64,10 @@ and a [CC prompt template](./knowledge/engineering-methods/templates/cc-implemen
 available standalone and through collaboration-framework.
 
 [Autonomous Mode](./knowledge/engineering-methods/guides/01-engineering-methodology.md#autonomous-mode)
-requires explicit Operator selection of role/model/settings and expenditure before
+requires explicit Operator selection of role/model/settings before
 execution. It defaults to an implementer and independent reviewer, with stable
-workspace ownership, complete ledgers and durable research records. Its
+workspace ownership, complete ledgers and retained useful records. Supporting
+artifacts remain optional and need-driven; no budget response is required. Its
 [execution and record routes](./knowledge/project-management/guides/README.md#autonomous-mode)
 retain existing review, scope and integration gates.
 

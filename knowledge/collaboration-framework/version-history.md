@@ -2,7 +2,9 @@
 
 ## Version 3.0.0 - 2026-10-19
 
-Route the mandatory Operator role/model/settings and expenditure gate before Autonomous execution. Make the two-contributor default, stable preflight, automatic CI effects and complete ledger/research-record preservation visible at the composer. The required pre-dispatch approval is an intentional execution-contract change.
+Route mandatory Operator role/model/relevant-settings selection before Autonomous execution. Make the two-contributor default, compact preflight, stable ownership, automatic CI effects and full ledger obligations visible at the composer. Retain useful existing records and need-driven supporting files.
+
+Operator review correction (2026-10-19, issue6/PR7): the initial candidate overextended the research caveat and expense concern. Mandatory budget/threshold/no-cap questions and a research-preservation programme are superseded. Retain accumulated records, honor volunteered limits, and require no budget response or routine new supporting artifacts. This narrows the unreleased candidate; earlier proposals remain in Git and planning history.
 
 ## Version 2.8.0 - 2026-10-18
 

@@ -112,11 +112,12 @@ before acting. CDC selects and adapts contributor arrangements, works through
 the authorized arc by default using Expedited Mode, commits on a dedicated
 non-default source branch, and obtains independent review for substantive work.
 Before execution, explicitly ask the Operator for each planned role's model,
-provider/settings and expenditure/concurrency boundaries; defaults or inheritance
-cannot satisfy this mandatory gate. Default to one implementer and one independent
-reviewer, justify extra contexts and preserve complete research records as well
-as every ledger obligation. Use a compact preflight backed by the full contract
-and stable worktree ownership; inspect automatic CI effects before triggering them.
+provider/relevant settings; defaults or inheritance cannot satisfy this mandatory
+gate. Default to one implementer and one independent reviewer, justify extra contexts and retain useful existing records and every
+ledger obligation. Supporting artifacts remain optional and need-driven; honor
+volunteered limits without requiring a budget response. Use a compact preflight
+backed by the full contract and stable worktree ownership; inspect automatic CI
+effects before triggering them.
 One-Contributor is a limited option for simple, clearly defined, low-risk,
 low-effort tasks; it cannot waive existing review gates. Retrospectives remain
 mandatory in all three contributor methods. Project-wide scope

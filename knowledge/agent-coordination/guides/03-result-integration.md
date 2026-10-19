@@ -20,7 +20,8 @@ review to lookup or promote a summary to reproduced evidence. When CDC
 implemented or repaired work, acceptance depends on another context's review
 of that work and affected evidence. Preserve attribution and unresolved findings.
 Link each returned claim to its actual source state and original evidence entry,
-including requested/observed model settings and any authorization deviation.
+including relevant model/settings deviations. Use the existing return record;
+separate configuration exports or observation files are not required.
 Reconcile the full assigned population, errors and coverage limits; a count,
 matching checksum or well-formed summary alone is not acceptance. Preserve
 separate independent observations even when outputs match. Retained evidence

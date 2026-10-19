@@ -16,8 +16,9 @@ permits assigned implementation and independent-review contributors with
 self-contained packets, authority boundaries and evidence. Applying that mode
 without authorization, delegating an underspecified task, or accepting summaries
 on trust remains a failure. Contributor review is not a lookup shortcut.
-Extra contributors without a named need, unapproved model/cost inheritance, and concurrent mutations that invalidate
-loaders are Autonomous execution failures. Use the canonical model/spend gate,
+Extra contributors without a named need, unapproved model inheritance or
+substitution, and concurrent mutations that invalidate loaders are Autonomous
+execution failures. Use the canonical model-selection gate,
 bounded contributor packets and stable-worktree ownership; preserve failed
 observations and apply independent review to substantive repairs.
 
