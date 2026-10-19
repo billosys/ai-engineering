@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.77**, updated2026-10-19 under the Operator-approved
+Plan revision **1.78**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -70,16 +70,17 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice26 — modernist typography in context](slice26-modernist-typography-in-context/slice-plan.md) | Closed: [independent acceptance](slice26-modernist-typography-in-context/cdc-verification.md) at SOURCE523ab425/CC04469147;19contextual historical cards,local semantics/exact14metadata repairs,owning1.0.23; original fidelity unresolved. |
 | [Slice27 — perception/shape/grouping](slice27-perception-shape-and-grouping/slice-plan.md) | Closed: [independent acceptance](slice27-perception-shape-and-grouping/cdc-verification.md) at SOURCE3c29ae69/CC371d6d8b;17supported corrected cards and local semantics,owning1.0.24; original fidelity unresolved. |
 | [Slice28 — balance/tension/tonal relationships](slice28-balance-tension-and-tonal-relationships/slice-plan.md) | Closed: [independent acceptance](slice28-balance-tension-and-tonal-relationships/cdc-verification.md) at SOURCEed825a63/CC8894c56d;13supported corrected cards/local semantics,owning1.0.25; original fidelity unresolved. |
+| [Slice29 — form/projection/representation](slice29-form-projection-and-representation/slice-plan.md) | Active:21connected Arnheim cards,sourceed825a63,CC `/root/s29_cc`,independent CDC. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
-Rows after Slice28 are delivery choices, not issued assignments or a fixed slice
-count. Slice28 is closed; select the next supported connected form/projection/
-representation cohort. Prefer related cards/guide contexts, splitting for actual
-input/context or risk; navigation groups are not mandatory slices. No futureopen
-set or Arc04 slice tree before predecessor closure.
+Rows after Slice29 are delivery choices, not issued assignments or a fixed slice
+count. Slice29 is the current coherent form/projection/representation correction.
+Prefer related cards/guide contexts, splitting for actual input/context or risk;
+navigation groups/headings/keywords are not compulsory slices or completeness
+proof. No future open set or Arc04 slice tree before predecessor closure.
 
 Review → decide → edit → check → independent review is one batch. Fix supported
 in-scope issues before return; preserve useful teaching. Complete impacted local
@@ -141,11 +142,10 @@ separate. Direct routine handoffs and CDC retrospectives now apply; all original
 criteria and Operator/input/composition gates survive. Stop at this arc's endpoint;
 no automatic Arc04 work, merge, push or publication.
 Expedited Mode. Slices01–28 closed at recorded bounded scopes. Slice28 delivers
-13balance/tension/tonal corrections/local semantics ated825a63/8894c56d,owning1.0.25.
-One independent terminology conflict required a bounded paragraph refinement;
-all13original-fidelity outcomes remain input-blocked. Next select connected form/
-projection/representation work. Continue supported corrections/local semantics
-with actual prior-input applicability; no successor issued by this close alone.
+13balance/tension/tonal corrections/local semantics ated825a63, owning1.0.25.
+Active [Slice29](slice29-form-projection-and-representation/slice-plan.md) combines
+21form/projection/representation cards with exact existingfield/local semantic
+decisions. Continue supported corrections with actual prior-input applicability.
 Final8payload/behavior applicability and local-font/native/AT limits remain
 explicit for later composition. All ten arc/thirteen project criterion states,
 missing-original/full233global and formal composition/Operator/release gates
@@ -486,3 +486,5 @@ inputs now that the sequencing hold is lifted.
 - 1.76 (2026-10-19): Open Slice28 coherent13-card balance/tension/tonal repair after Slice27 close6f4a96c2; include directly interacting repeats, retain exact corpus/graph/CQ/input/parent/release obligations.
 
 - 1.77 (2026-10-19): Close13supported balance/tension/tonal cards after one terminology refinement; all original/global/parent/release gates retained.
+
+- 1.78 (2026-10-19): Open coherent21-card form/projection/representation batch after actual Slice28 closure; all parent/input/release obligations retained.
