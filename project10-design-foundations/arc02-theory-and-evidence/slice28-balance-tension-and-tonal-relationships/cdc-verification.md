@@ -1,3 +1,96 @@
+# Slice28 independent acceptance — current Iteration01 verdict,2026-10-19
+
+CDC Sofie `/root` accepts all4bounded criteria at SOURCE`ed825a63a573b7da50874e3a632764e8d570ab8e` / CC PLANNING
+`8894c56de613d68adb2d389683160d62b385eae4` after one paragraph correction. Owning design1.0.25 remains on the
+isolated branch; no original-fidelity/full233/Arc02/final1.1.0/release gate closes.
+
+## Current review and evidence applicability
+
+Implementer `/root/s28_cc`; named independent `/root/s26_review` owns the semantic
+verdict below. Its whole13initialfinal-card/500-linebatch/80typed/97body/23CQ
+review is retained under exact input equality; it reread the whole repairedcard,
+exactdelta and current affected3Preturn. Root read that actual report, complete
+current repair context and I01planning delta, and reproduced strict oneparagraph
+reversal/currentZIP/protectedobject/scopechecks. Root did not claim another
+whole13finalsemanticread, nativeexecution or originalfidelity verification.
+
+Reversing the literal I01paragraph restores whole1c3be08ctonal-contrast. Every
+other source object is fixed, including all headers/SourceReferences/headings/
+quotes/examples,232othercards/161sources/6guides,owner/history/Makefile. Initial
+exact15path/raw23list/24note/25CSS/sixrating/233identity controls therefore retain
+applicability;95→80typed/97body/29→23CQnine/five-text lineage is unchanged. Fresh
+source1/P3scopes,parents/trailers/criteria/status/whitespace/links/LF/EOF pass.
+
+Root independently matches retained8ZIPmembers to currentcommittedsource; SHA256
+4349bbd3685e1cf9b1c81a89ca6cb65976c837a0e5fff492fe98b43989cd93cf.
+Initial captured nativeCCresults remain25source/25package versions0errors,
+25ZIP402Markdown0hardfailure606warnings. First versionrun lost session/exitmetadata;
+first/retry non-overlap cannot be proven. No result relies on uncapturedcompletion.
+The successful captured retry/package/freshdesign remain attributed; no newbuild
+was needed for this unbundled paragraph. Retained Slice25behavior requires actual
+unchangedoperativeinputs and keeps all native/axis/AT/zoom/hosted limits.
+
+## Row closure and bubble-up
+
+|Row|Independent CDC disposition|Evidence/limit|
+|---|---|---|
+|S28-01|done at supported bounded scope|Whole13available-evidence review plus repaired contrast terminology; all13original-dependent fidelity outcomes unassessed/input-blocked.|
+|S28-02|done locally|80typed/97body/23CQ memberships, allnine original requirements, actual scoped meaning/direction and partial answers/gaps; F01 comparator wording resolved.|
+|S28-03|done, initial acceptance retained|Exact source/metadata/version/package preservation plus strict oneparagraph reversal/current8payload equality.|
+|S28-04|done|One supporting batch/current truthful handoff, preserved failedinitialverdict and actual independent review; no receipt-only acceptance.|
+
+Allfouroriginalcriteria survive. [CDC retrospective](cdc-retrospective.md) completes
+AM closing duty. SourceScope and supporting inventory unchanged:13cards+2ownerpaths,
+onebatch. No new research, source acquisition, metadata invention or browserresult.
+Update only Arc02child/currentsequence status; scope/dependencies/parentcriteria
+unchanged. Continue supported coherent Arnheim work. Original/capture/P10-11,
+full233/global/eightlive/finalbehaviorapplicability, independent/Operator composition
+and final1.1.0/release gates retain their owners. Initial pendingverdict below is
+historical and superseded by this current acceptedverdict.
+
+## Named Iteration01 independent report — verbatim
+
+# Slice28 Iteration01 independent review — current bounded verdict
+
+Reviewer: Sofie, separate context `/root/s26_review`, 2026-10-19. Diagnosis-only independent support for CDC `/root`; no source/planning edits, status changes, builds, commits or publication.
+
+**PASS at the bounded correction and affected handoff scope. F01 is resolved.** No further material finding was identified. This supersedes only the pending-F01 part of `/private/tmp/p10-s28-independent-review.md`; its actual thirteen-card, external-premise, graph/CQ/model reads and all limitations remain attributed and retained, not claimed freshly rerun.
+
+## Immutable inputs and actual reads
+
+- Initial SOURCE `1c3be08c6f206e8ed09d2dbe8068479e64bb7723`; repaired SOURCE `ed825a63a573b7da50874e3a632764e8d570ab8e`, verified direct child, dedicated `codex/project10-arc02-autonomous` worktree.
+- Preserved Iteration01 prompt read completely, issued at PLANNING `fc0d917fcf0e8af9ca4a0e2afd7f522657eb4fb5`.
+- Final CC planning return `8894c56de613d68adb2d389683160d62b385eae4`, verified direct child of that issued prompt commit. I read the complete affected three-file delta: batch append88 lines, closing append49 lines and all current ledger changes/non-row context. The current files equal the committed return: batch588 lines/76,827 bytes, closing175/11,677, ledger12/2,946. I did not reread the unchanged500-line initial batch and126-line initial closing as a new audit.
+- Read the **entire repaired tonal-contrast card**, metadata through final Verification Notes:166 lines/12,486 bytes. Read its exact one-paragraph diff against the initial SOURCE. Freshly reread actual `posts/colour-contrast` Quick Definition and Core Definition, including its rendered-pair/WCAG scope; verified that endpoint is unchanged.
+
+## Repair and coherence judgment
+
+The actual sole source-path change is `knowledge/design/concept-cards/art-and-visual-perception/tonal-contrast.md`, Common Confusions clarification at line151. The diff replaces one existing line/paragraph with the exact issued text. It distinguishes chromatic hue/chroma differences from tonal light-dark differences in a selected comparison, recognizes the broader rendered foreground/background sense of “colour contrast” used by the linked accessibility card, and retains that hue/chroma difference alone does not prove an applicable contrast pass.
+
+This resolves the original categorical exclusion of luminance from “colour contrast.” The new paragraph agrees with the Quick/Core definitions, the contextual boundary cues, construction/pair criteria, Weber/WCAG distinction and actual line135 comparator. It does not assert independent physical colour attributes in every viewing condition, rename the linked endpoint, delete the useful chromatic-versus-tonal comparison or claim whole-page conformance.
+
+The full repaired read revealed no new contradiction. The exact diff contains no metadata, heading, quotation, example, source-reference or historical-note removal/change. Useful reported Alberti, Titian, repoussoir and Hering examples remain within their existing original-dependent qualification. I reviewed this as a substantive terminology correction, not as authentication of those reports.
+
+## Retained substantive evidence and current packet
+
+The source diff names only that one path and paragraph. The twelve other complete final-card reads, all selected external premise sections,95→80 typed occurrence accounting,97 body lineages,29→23 CQ memberships/nine exact requirements, and declared-model witnesses in the initial independent report retain their same inputs and scope. The changed comparator meaning has now received the required fresh whole-card/endpoint review. No metadata membership, relation direction, model quantity, CQ text or prior gap owner changes here; no second whole-thirteen audit or new global semantic claim is made.
+
+The final batch and closing append correctly separate historical initial state from current repaired candidate. I directly checked that each complete issued batch/report byte stream is a literal prefix of its current counterpart. I checked ledger criterion/status fields and all non-row text against the issued prompt commit: they remain equal; only Evidence/Notes change. S28-03 remains CDC's previously independently accepted **done**;01/02/04 remain **open** proposals pending CDC. The initial report's former all-open state and known F01 are preserved as history rather than silently rewritten.
+
+The current packet accurately describes the repair, fresh exact-reversal/preservation/package bridge and retention of initial native/graph/model/CQ results. It retains the initial version-run capture/non-overlap uncertainty and explicitly claims no new Make/browser/AT/hosted/perception run. The disclosed planning-note helper's wrong-path FileNotFoundError was a failed no-mutation edit attempt, not a failed semantic/native test being relabeled as a pass. The return adds no supporting artifact, curriculum, source acquisition, plan/gate change or self-acceptance.
+
+CDC separately owns exact inverse replacement/all-other-Git-object equality, raw preservation and the eight retained ZIP-member comparison. I read and assessed those packet claims but did not rerun those complete integrity/package procedures. This reviewer ran no build, native gate, browser, font-axis, AT, fatigue or observer experiment. No fresh primary-specification research was necessary for the bounded replacement.
+
+## Limits and handoff
+
+All thirteen original-fidelity outcomes remain **unassessed/input-blocked**. The exact original edition/page basis, quotations, figures, historical/experimental/neural claims have not been independently authenticated. Correct wording and retained analytic checks do not waive those obligations. Initial scoped CIE retrieval limits, native capture uncertainty, retained Slice25 behavior/environment limits, full233/eight-live/global union, higher composition/Operator/final1.1.0/release gates remain unchanged.
+
+At the assigned available-evidence scope, the repaired teaching and affected local semantic comparator now support S28-01/S28-02 proposals; the current truthful handoff supports S28-04. CDC owns actual ledger acceptance, closure and retrospective, integrating its separate integrity/package evidence. No remaining material repair is requested by this reviewer.
+
+---
+
+## Preserved initial independent review
+
 # Slice28 independent initial review —2026-10-19
 
 SOURCE`1c3be08c6f206e8ed09d2dbe8068479e64bb7723` / CC PLANNING`1aaacafd5072c0c5ef06d24cfd4719504e28a066`. CDC Sofie `/root` independently accepts

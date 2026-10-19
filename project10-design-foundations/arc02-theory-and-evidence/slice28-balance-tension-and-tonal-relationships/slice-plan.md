@@ -1,17 +1,17 @@
 ---
 slice: slice28-balance-tension-and-tonal-relationships
-status: active
+status: closed
 depends-on: [Slice27 supported independent acceptance; available connected Arnheim evidence]
 ---
 
 # Slice28 — Balance, Tension and Tonal Relationships
 
-Revision **1.1**,2026-10-19. Project1.75 / Arc1.76, Operator-authorized remaining
+Revision **1.2**,2026-10-19. Project1.75 / Arc1.76, Operator-authorized remaining
 Arc02 Autonomous Mode. CDC Sofie `/root`; CC `/root/s28_cc`; independent CDC or
 named separate context in `cdc-verification.md`. SOURCE dedicated branch
 `codex/project10-arc02-autonomous` at `3c29ae6949a21c0de2a3a89de41db8fd3e1e046b`, worktree
 `.worktrees/design-arc02-autonomous`; PLANNING predecessor `6f4a96c27a48f532c19e8e2f7d77989780a60797`.
-Adding commit issues [cc-prompt.md](cc-prompt.md); all4[criteria](ledger.md) open.
+Adding commit issues [cc-prompt.md](cc-prompt.md); all4[criteria](ledger.md) opened initially and are now independently accepted.
 
 ## Delivery and author readiness
 
@@ -50,7 +50,12 @@ release gates retain their owners.
 ## Assignment history
 
 - Initial [cc-prompt.md](cc-prompt.md),issued15af4e1f,returned1c3be08c/1aaacafd; S28-03 accepted, F01 remains.
-- Current [cc-prompt-iteration01.md](cc-prompt-iteration01.md), one paragraph consistency correction; initial contract preserved.
+- Current accepted [cc-prompt-iteration01.md](cc-prompt-iteration01.md), one paragraph consistency correction; initial contract preserved.
+
+## Closure
+
+All4boundedcriteria accepted after independent I01review; [verdict](cdc-verification.md),
+[retrospective](cdc-retrospective.md). All13fidelity/parentgates remainopen.
 
 ## Version History
 
@@ -58,3 +63,5 @@ release gates retain their owners.
   local semantics after Slice27 close6f4a96c2, preserving all higher gates.
 
 - 1.1 (2026-10-19): Accept preservation/package criterion and issue one material terminology correction; all higher gates retained.
+
+- 1.2 (2026-10-19): Close supported13-card correction/local semantics after independent oneparagraph repair acceptance ated825a63/8894c56d; all highergates retained.

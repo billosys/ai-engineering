@@ -8,7 +8,7 @@ depends-on: [arc01-portable-contract Operator-accepted composition]
 
 ## Capability and authority
 
-Plan revision **1.76**, updated2026-10-19 under the Operator-approved
+Plan revision **1.77**, updated2026-10-19 under the Operator-approved
 [bounded reassessment](../project-plan.md#bounded-reassessment--operator-approval-2026-10-16).
 Deliver corrected portable design content, complete233-card/eight-live-file
 review/reconciliation, and usable accessibility/typesetting with actual behavior
@@ -69,19 +69,17 @@ remain in the previous plan revision and the unchanged child/history records.
 | [Slice25 — live methods/retained behavior](slice25-live-methods-and-retained-behavior/slice-plan.md) | Closed: [independent acceptance](slice25-live-methods-and-retained-behavior/cdc-verification.md) at SOURCE494a4b95/CCda690a27; actual12browser cells/3identity proposals,owning1.0.22; native/axis/fidelity/full-corpus limits retained. |
 | [Slice26 — modernist typography in context](slice26-modernist-typography-in-context/slice-plan.md) | Closed: [independent acceptance](slice26-modernist-typography-in-context/cdc-verification.md) at SOURCE523ab425/CC04469147;19contextual historical cards,local semantics/exact14metadata repairs,owning1.0.23; original fidelity unresolved. |
 | [Slice27 — perception/shape/grouping](slice27-perception-shape-and-grouping/slice-plan.md) | Closed: [independent acceptance](slice27-perception-shape-and-grouping/cdc-verification.md) at SOURCE3c29ae69/CC371d6d8b;17supported corrected cards and local semantics,owning1.0.24; original fidelity unresolved. |
-| [Slice28 — balance/tension/tonal relationships](slice28-balance-tension-and-tonal-relationships/slice-plan.md) | Active:13connected Arnheim cards,including two tonal repeats and directed-tension; source3c29ae69,CC `/root/s28_cc`,independent CDC. |
+| [Slice28 — balance/tension/tonal relationships](slice28-balance-tension-and-tonal-relationships/slice-plan.md) | Closed: [independent acceptance](slice28-balance-tension-and-tonal-relationships/cdc-verification.md) at SOURCEed825a63/CC8894c56d;13supported corrected cards/local semantics,owning1.0.25; original fidelity unresolved. |
 | Remaining source/topic cohorts | Read complete connected cards plus affected guide passages; fix supported defects, check actual local edges/CQ components and preserve revision lineage together. Depends only on the evidence each result uses. |
 | Live methods and usage checks | Complete eight-live-file review, required identity specimens, accessibility/typesetting procedures and actual retained-behavior checks together where relevant. Use accepted local decisions; full-corpus closure is not a prerequisite for unrelated task delivery. |
 | Input completion | Use existing P10-11 actions once selected originals/captures are available. Separately authorized preparation may be evidence-only when it is the real blocker; preserve dependent gates. |
 | Final Arc02 composition | Reconcile complete result union, remaining conflicts/findings and task evidence; deliver final1.1.0 bump/checks and usable Arc04 handoff. Requires the full ledger and independent/Operator composition gate. |
 
 Rows after Slice28 are delivery choices, not issued assignments or a fixed slice
-count. Slice28 is the current connected balance/tension/tonal correction cohort
-from complete available evidence. Prefer
-several related cards/guide contexts when coherent; split for actual input/context
-or implementation risk, not one field/card/dimension by default. The47 provisional
-groups,161 headings and460 keyword candidates are navigation, not mandatory slices
-or completeness proof. Do not pre-author future open sets or an Arc04 slice tree.
+count. Slice28 is closed; select the next supported connected form/projection/
+representation cohort. Prefer related cards/guide contexts, splitting for actual
+input/context or risk; navigation groups are not mandatory slices. No futureopen
+set or Arc04 slice tree before predecessor closure.
 
 Review → decide → edit → check → independent review is one batch. Fix supported
 in-scope issues before return; preserve useful teaching. Complete impacted local
@@ -142,14 +140,12 @@ Source branch `codex/project10-arc02-autonomous` in
 separate. Direct routine handoffs and CDC retrospectives now apply; all original
 criteria and Operator/input/composition gates survive. Stop at this arc's endpoint;
 no automatic Arc04 work, merge, push or publication.
-Expedited Mode. Slices01–27 are closed at recorded bounded scopes.
-Slice27 delivers17supported perception/shape/grouping corrections and82typed/
-120body/39question local reconciliation at3c29ae69/371d6d8b,owning1.0.24.
-One independent classification finding required a bounded paragraph refinement;
-all17original-fidelity outcomes remain input-blocked. Active [Slice28](slice28-balance-tension-and-tonal-relationships/slice-plan.md)
-now combines13balance/tension/tonal cards at3c29ae69 so conflicting weight copies
-are corrected together,with exact existingfield/local semantic decisions. Continue
-supported review/fix/local semantics with actual prior-input applicability.
+Expedited Mode. Slices01–28 closed at recorded bounded scopes. Slice28 delivers
+13balance/tension/tonal corrections/local semantics ated825a63/8894c56d,owning1.0.25.
+One independent terminology conflict required a bounded paragraph refinement;
+all13original-fidelity outcomes remain input-blocked. Next select connected form/
+projection/representation work. Continue supported corrections/local semantics
+with actual prior-input applicability; no successor issued by this close alone.
 Final8payload/behavior applicability and local-font/native/AT limits remain
 explicit for later composition. All ten arc/thirteen project criterion states,
 missing-original/full233global and formal composition/Operator/release gates
@@ -488,3 +484,5 @@ inputs now that the sequencing hold is lifted.
 - 1.75 (2026-10-19): Slice27 closes17supported corrected cards/local semantics after one classification refinement at3c29ae69/371d6d8b; continue coherent balance/tension/tonal work, retaining all original/full-corpus/parent/release gates.
 
 - 1.76 (2026-10-19): Open Slice28 coherent13-card balance/tension/tonal repair after Slice27 close6f4a96c2; include directly interacting repeats, retain exact corpus/graph/CQ/input/parent/release obligations.
+
+- 1.77 (2026-10-19): Close13supported balance/tension/tonal cards after one terminology refinement; all original/global/parent/release gates retained.
