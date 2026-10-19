@@ -1,17 +1,17 @@
 ---
 slice: slice23-editorial-layout-and-structure
-status: active
+status: closed
 depends-on: [Slice22 accepted text method, seven available prepared Butterick pages]
 ---
 
 # Slice23 — Editorial Layout and Structure
 
-Revision **1.0**, opened2026-10-18; Project1.75 and current Arc02 Autonomous
+Revision **1.1**, opened2026-10-18; Project1.75 and current Arc02 Autonomous
 Mode govern. CDC `/root`, implementing CC `/root/s23_cc`, independent CDC
 review in `cdc-verification.md`. Source `/Users/oubiwann/lab/billosys/ai-engineering/.worktrees/design-arc02-autonomous` branch
 `codex/project10-arc02-autonomous`, pin `46c9506759eece6a3749c63f58766b90f1f5b29c`. Planning predecessor
 `f241f6831425ba7b97a9d25821e547fd317facd9`; the adding commit issues [prompt](cc-prompt.md).
-[Ledger](ledger.md) has four open criteria.
+[Ledger](ledger.md) has four independently done criteria.
 
 ## Useful delivery and bounded scope
 
@@ -50,12 +50,24 @@ card/source set plus bounded shared guidance leaves normal implementation and
 iteration headroom; no preparation-only slice is needed. Implementation recipes,
 five exact scalar decisions and discriminating checks are in the prompt.
 
+## Independent closure — 2026-10-18
+
+All four bounded criteria accepted at SOURCEda9cb76c/CC planningc62b896a in
+[CDC verification](cdc-verification.md). Seven editorial cards and packaged method
+delivered with independent semantic/preservation/archive review. The pre-return
+table clarification is retained. [Retrospective](cdc-retrospective.md) records the
+execution observation. Supported colour-model/evidence-boundary work is ready;
+all original-fidelity/global/behavior/hosted/Operator/release gates remain separate.
+
 ## Assignment history
 
-- Initial active: `cc-prompt.md`, source pin above, direct `/root/s23_cc`
+- Initial / independently accepted: `cc-prompt.md`, source pin above, direct `/root/s23_cc`
   assignment under recorded Arc02 Autonomous Mode. CDC reviews the return.
 
 ## Version History
+
+- 1.1 (2026-10-18): Independently accept and close four criteria; retain actual
+  evidence and pre-return correction,continue supported colour-model work.
 
 - 1.0 (2026-10-18): Open seven connected editorial-layout cards and integrated
   type method after independent Slice22 closure; preserve all higher gates.

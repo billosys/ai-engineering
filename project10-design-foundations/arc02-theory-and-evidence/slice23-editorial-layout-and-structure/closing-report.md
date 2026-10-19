@@ -95,3 +95,11 @@ explicit authorized allowlist; no gate failure is hidden.
    eight-live/global,actual behavior,final-hosted,arc composition,Operator and
    final1.1.0 gates remain open; no parent row is promoted. CDC retrospective
    and independent review are CDC duties pending this return,not CC self-signoff.
+
+## CDC closure — 2026-10-18
+
+CDC independently accepts all four bounded rows at SOURCEda9cb76c/CC return
+c62b896a; [verification](cdc-verification.md) and [retrospective](cdc-retrospective.md).
+Slice23 is closed. Package gate:606 warning rows/605 locations,0 hard failures;
+8/8 final committed payloads independently matched. All original/higher gates
+remain. Continue supported colour-model corrections; no arc closure or release.
